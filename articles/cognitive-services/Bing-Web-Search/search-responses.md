@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 07fb655af25fe590effcb885e7b366346724b50a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 85087ce5a4fa3dd733f47a35bc18d76f1f4bc652
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60642787"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606694"
 ---
 # <a name="bing-web-search-api-response-structure-and-answer-types"></a>Estrutura de resposta da API do Bing Web Search e tipos de resposta  
 
@@ -288,7 +288,7 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 
 Uma expressão matemática pode conter os seguintes símbolos:
 
-|Símbolo|DESCRIÇÃO|
+|Símbolo|Descrição|
 |------------|-----------------|
 |+|Adição|
 |-|Subtração|
@@ -302,7 +302,7 @@ Uma expressão matemática pode conter os seguintes símbolos:
 
 Uma expressão matemática pode conter as seguintes constantes:
 
-|Símbolo|DESCRIÇÃO|
+|Símbolo|Descrição|
 |------------|-----------------|
 |Pi|3,14159...|
 |Grau|Grau|
@@ -312,7 +312,7 @@ Uma expressão matemática pode conter as seguintes constantes:
 
 Uma expressão matemática pode conter as seguintes funções:
 
-|Símbolo|DESCRIÇÃO|
+|Símbolo|Descrição|
 |------------|-----------------|
 |Classificar|Raiz quadrada|
 |Sin[x], Cos[x], Tan[x]<br />Csc[x], Sec[x], Cot[x]|Funções trigonométricas (com argumentos em radianos)|
@@ -330,7 +330,7 @@ Se o usuário inserir uma consulta de data ou hora, a resposta poderá conter um
 
 A resposta `timeZone` fornece o nome do local, a data e a hora UTC atual no local especificado, e a diferença UTC. Se o limite do local estiver dentro de vários fusos horários, a resposta conterá a data e a hora UTC atual de todos os fusos horários dentro dos limites. Por exemplo, como o estado da Flórida está dentro de dois fusos horários, a resposta conteria a data e hora local em ambos os fusos horários.  
 
-Se a consulta solicitar a hora de um estado ou país, o Bing determinará a cidade primária dentro do limite da localização geográfica e a retornará no campo `primaryCityTime`. Se o limite contiver vários fusos horários, os fusos horários restantes serão retornados no campo `otherCityTimes`.
+Se a consulta solicita a hora de um estado ou país/região, o Bing determina a cidade primária dentro do limite da localização geográfica e retorna-o no `primaryCityTime` campo. Se o limite contiver vários fusos horários, os fusos horários restantes serão retornados no campo `otherCityTimes`.
 
 O exemplo a seguir mostra consultas de exemplo que retornam a resposta `timeZone`.
 
@@ -475,7 +475,7 @@ O exemplo a seguir mostra como o Bing usa a sugestão de ortografia.
 
 ![Exemplo de sugestão de ortografia do Bing](./media/cognitive-services-bing-web-api/bing-web-spellingsuggestion.GIF)  
 
-## <a name="next-steps"></a>Próximos passos  
+## <a name="next-steps"></a>Próximas etapas  
 
 * Leia a documentação de [Limitação da solicitação](throttling-requests.md).  
 

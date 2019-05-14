@@ -25,7 +25,7 @@ ms.locfileid: "60454944"
 ---
 # <a name="troubleshoot-an-object-that-is-not-synchronizing-with-azure-active-directory"></a>Solucionar problemas de um objeto que não está sincronizando com o Azure Active Directory
 
-Um objeto pode não estar sincronizando conforme o esperado com o Microsoft Azure Active Directory (Azure AD) por vários motivos. Se você recebeu uma mensagem de erro do Azure AD ou estiver vendo o erro no Azure AD Connect Health, consulte o artigo [Solucionar erros durante a sincronização](tshoot-connect-sync-errors.md). Mas se está solucionando um problema em que o objeto não está no Azure AD, este é o artigo ideal para você. Ele descreve como encontrar erros na sincronização do Azure AD Connect do componente local.
+Um objeto pode não estar sincronizando conforme o esperado com o Microsoft Azure Active Directory (Azure AD) por vários motivos. Se você recebeu uma mensagem de erro do Azure AD ou estiver vendo o erro no Azure AD Connect Health, consulte o artigo [Solucionando erros durante a sincronização](tshoot-connect-sync-errors.md). Mas se está solucionando um problema em que o objeto não está no Azure AD, este é o artigo ideal para você. Ele descreve como encontrar erros na sincronização do Azure AD Connect do componente local.
 
 >[!IMPORTANT]
 >Para a implantação do Azure AD Connect com a versão 1.1.749.0 ou posterior, use a [tarefa de solução de problemas](tshoot-connect-objectsync.md) no assistente para solucionar problemas de sincronização de objetos. 
@@ -48,7 +48,7 @@ O processo de sincronização envolve as seguintes etapas:
 
 2. **Importar do Azure AD:** os objetos do Azure AD são trazidos para o Azure AD CS.
 
-3. **Sincronização:** As regras de sincronização de entrada e as regras de sincronização de saída são executadas na ordem de número de precedência, do menor para o maior. Para exibir as regras de sincronização, vá ao Editor de Regras de Sincronização nos aplicativos da área de trabalho. As regras de sincronização de entrada trazem dados do CS para o MV. As regras de sincronização de saída movem os dados do MV para o CS.
+3. **Sincronização:** as regras de sincronização de entrada e as regras de sincronização de saída são executadas na ordem de número de precedência, do menor para o maior. Para exibir as regras de sincronização, vá ao Editor de Regras de Sincronização nos aplicativos da área de trabalho. As regras de sincronização de entrada trazem dados do CS para o MV. As regras de sincronização de saída movem os dados do MV para o CS.
 
 4. **Exportar para o AD:** após a sincronização, os objetos são exportados do Active Directory CS para o Active Directory.
 
@@ -110,7 +110,7 @@ Na caixa **Escopo**, selecione **RDN** quando desejar pesquisar o atributo CN ou
  
 ![Captura de tela de uma pesquisa do espaço conector](./media/tshoot-connect-object-not-syncing/cssearch.png)  
 
-Se você não encontrar o objeto que está procurando, talvez ele tenha sido filtrado com a [filtragem baseada em domínio](how-to-connect-sync-configure-filtering.md#domain-based-filtering) ou a [filtragem baseada em UO](how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering). Para verificar se a filtragem está configurada como esperado, leia o artigo sobre a [Sincronização do Azure AD Connect: configurar a filtragem](how-to-connect-sync-configure-filtering.md).
+Se você não encontrar o objeto que está procurando, talvez ele tenha sido filtrado com a [filtragem baseada em domínio](how-to-connect-sync-configure-filtering.md#domain-based-filtering) ou a [filtragem baseada em UO](how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering). Para verificar se a filtragem está configurada como esperado, leia o artigo sobre a [Sincronização do Azure AD Connect: Configurar a filtragem](how-to-connect-sync-configure-filtering.md).
 
 Você pode executar outra pesquisa útil selecionando o Conector do Azure AD. Na caixa **Escopo**, selecione **Importação Pendente** e, em seguida, marque a caixa de seleção **Adicionar**. Essa pesquisa fornece todos os objetos sincronizados no Azure AD que não podem ser associados a um objeto local.  
 

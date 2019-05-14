@@ -8,14 +8,14 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/13/2019
 ms.author: diberry
-ms.openlocfilehash: 241bda5c684197a43cc5564e950e924fed668b89
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 87599817ba7b50b941612c13c07842644f979fb7
+ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65147577"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65619698"
 ---
 # <a name="container-support-in-azure-cognitive-services"></a>Suporte de contêiner nos Serviços Cognitivos do Azure
 
@@ -50,14 +50,14 @@ Recursos dos serviços cognitivos estão disponíveis no [Microsoft Azure](https
 
 Os contêineres dos Serviços Cognitivos do Azure fornecem o seguinte conjunto de contêineres do Docker, cada um contendo um subconjunto de funcionalidades dos serviços dos Serviços Cognitivos do Azure:
 
-| Serviço | Suporte para o tipo de preço | Contêiner | DESCRIÇÃO |
+| Serviço | Suporte para o tipo de preço | Contêiner | Descrição |
 |---------|----------|----------|-------------|
 |[Detector de anomalias](https://go.microsoft.com/fwlink/?linkid=2083925&clcid=0x409) |F0, S0|**Detector de anomalias** |A API do Detector de anomalias permite monitorar e detectar anormalidades nos seus dados de série temporal com aprendizado de máquina.<br>[Solicitar acesso](https://aka.ms/adcontainer)|
 |[Pesquisa Visual Computacional](Computer-vision/computer-vision-how-to-install-containers.md) |F0, S1|**Reconhecimento de Texto** |Extrai texto impresso de imagens de vários objetos com diferentes superfícies e planos de fundo como recibos, pôsters e cartões de visita.<br/><br/>**Importante:** O contêiner de Reconhecimento de Texto atualmente funciona somente em inglês.<br>[Solicitar acesso](Computer-vision/computer-vision-how-to-install-containers.md#request-access-to-the-private-container-registry)|
 |[Detecção Facial](Face/face-how-to-install-containers.md) |F0, S0|**Detecção Facial** |Detecta rostos humanos em imagens e identifica atributos, incluindo referências faciais (como narizes e olhos), sexo, idade e outras características faciais previstas pelo computador. Além de detectar, a Detecção Facial pode verificar se duas faces na mesma imagem ou imagens diferentes são iguais usando uma pontuação de confiança, ou comparar faces em relação a um banco de dados para ver se uma face semelhante ou idêntica já existe. Além disso, também pode organizar rostos semelhantes em grupos, usando traços visuais compartilhados.<br>[Solicitar acesso](Face/face-how-to-install-containers.md#request-access-to-the-private-container-registry) |
 |[Reconhecedor de formulário](https://go.microsoft.com/fwlink/?linkid=2083826&clcid=0x409) |F0, S0|**Reconhecedor de formulário** |Noções básicas sobre o formulário se aplica a tecnologia de aprendizado de máquina para identificar e extrair pares chave-valor e tabelas de formulários.<br>[Solicitar acesso](https://aka.ms/FormRecognizerContainerRequestAccess)|
 |[LUIS](LUIS/luis-container-howto.md) |F0, S0|**LUIS** ([imagem](https://go.microsoft.com/fwlink/?linkid=2043204&clcid=0x409))|Carrega um modelo de reconhecimento vocal treinado ou publicado, também conhecido como um aplicativo LUIS, para um contêiner do Docker e fornece acesso às previsões de consulta dos pontos de extremidade da API do contêiner. Você pode coletar logs de consulta do contêiner e carregá-los novamente no [portal do LUIS](https://www.luis.ai) para aumentar a precisão da previsão do aplicativo.|
-|[Personalizer](https://go.microsoft.com/fwlink/?linkid=2083923&clcid=0x409) |F0, S0|**Personalizer** ([image](https://go.microsoft.com/fwlink/?linkid=2083928&clcid=0x409))|Personalizer do Azure é um serviço de API baseado em nuvem que permite que você escolha a melhor experiência para mostrar aos seus usuários, aprendendo com o seu comportamento em tempo real.|
+|[Personalizer](https://go.microsoft.com/fwlink/?linkid=2083923&clcid=0x409) |F0, S0|**Personalizer** ([image](https://go.microsoft.com/fwlink/?linkid=2083928&clcid=0x409))|O Personalizador do Azure é um serviço de API baseado em nuvem que permite que você escolha a melhor experiência a ser mostrada aos usuários, aprendendo com o comportamento deles em tempo real.|
 |[API do Serviço de Fala](https://go.microsoft.com/fwlink/?linkid=2083926&clcid=0x409) |F0, S0|**Conversão de fala em texto** |Transcreve fala em tempo real contínua em texto.<br>[Solicitar acesso](https://aka.ms/speechcontainerspreview/)|
 |[API do Serviço de Fala](https://go.microsoft.com/fwlink/?linkid=2083926&clcid=0x409) |F0, S0|**Conversão de texto em fala** |Converte o texto em fala que soa natural.<br>[Solicitar acesso](https://aka.ms/speechcontainerspreview/)|
 |[Análise de Texto](text-analytics/how-tos/text-analytics-how-to-install-containers.md) |F0, S|**Extração de Frases-Chave** ([imagem](https://go.microsoft.com/fwlink/?linkid=2018757&clcid=0x409)) |Extrai frases-chave para identificar os principais pontos. Por exemplo, para o texto de entrada "A comida estava deliciosa e a equipe era maravilhosa", a API retorna os principais pontos de discussão: "comida" e "equipe maravilhosa". |
@@ -66,17 +66,22 @@ Os contêineres dos Serviços Cognitivos do Azure fornecem o seguinte conjunto d
 
 Além disso, alguns contêineres têm suporte nos serviços Cognitivos [ **All-In-One oferta** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne) chaves de recurso. Você pode criar um recurso de tudo em um único dos serviços Cognitivos e usar a mesma chave de cobrança em todos os serviços com suporte para os seguintes serviços:
 
-* Visual Computacional
-* Face
+* Pesquisa Visual Computacional
+* Detecção Facial
 * LUIS
-* Análise de texto
+* Análise de Texto
 
 ## <a name="container-availability-in-azure-cognitive-services"></a>Disponibilidade de contêiner nos Serviços Cognitivos do Azure
 
 Os contêineres dos Serviços Cognitivos do Azure estão disponíveis publicamente por meio da assinatura do Azure e as imagens do contêiner do Docker podem ser obtidas do Registro de Contêiner a Microsoft ou Hub do Docker. É possível usar o comando [docker pull](https://docs.docker.com/engine/reference/commandline/pull/) para baixar uma imagem de contêiner do registro apropriado.
 
 > [!IMPORTANT]
-> Atualmente, é necessário concluir um processo de entrada para acessar os contêineres de [Detecção Facial](Face/face-how-to-install-containers.md) e [Reconhecimento de Texto](Computer-vision/computer-vision-how-to-install-containers.md), em que você preenche e envia um questionário com perguntas sobre você, sua empresa e o caso de uso para o qual deseja implementar os contêineres. Quando você tiver acesso e as credenciais fornecidas, poderá extrair as imagens de contêiner dos contêineres de Detecção Facial e Reconhecimento de Texto de um registro de contêiner particular hospedado pelo Registro de Contêiner do Azure.
+> No momento, você deve concluir um processo de inscrição para acessar os contêineres seguintes, em que você pode preenche e enviar um questionário com perguntas sobre você, sua empresa e o caso de uso para o qual você deseja implementar os contêineres. Quando você tiver acesso e as credenciais fornecidas, poderá extrair as imagens de contêiner dos contêineres de Detecção Facial e Reconhecimento de Texto de um registro de contêiner particular hospedado pelo Registro de Contêiner do Azure.
+> * [Anomalias dectector](Anomaly-Detector/anomaly-detector-container-howto.md#request-access-to-the-container-registry)
+> * [Detecção Facial](Face/face-how-to-install-containers.md)
+> * [Reconhecedor de formulário](form-recognizer/form-recognizer-container-howto.md#request-access-to-the-container-registry)
+> * [Reconhecimento de Texto](Computer-vision/computer-vision-how-to-install-containers.md)
+> * [Conversão de fala em texto e texto em fala](Speech-Service/speech-container-howto.md#request-access-to-the-container-registry)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -92,7 +97,7 @@ Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a
 
 Contêineres individuais podem ter seus próprios requisitos, incluindo requisitos de alocação de memória e servidor.
 
-## <a name="developer-samples"></a>Exemplos do desenvolvedor
+## <a name="developer-samples"></a>Amostras de desenvolvedor
 
 Exemplos de desenvolvedor estão disponíveis em nosso [repositório do GitHub](https://github.com/Azure-Samples/cognitive-services-containers-samples).
 

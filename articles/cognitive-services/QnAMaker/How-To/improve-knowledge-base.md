@@ -8,14 +8,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 03/21/2019
+ms.date: 05/13/2019
 ms.author: diberry
-ms.openlocfilehash: 3e54e8dcb6efa9251262c651730376a0d04edcf9
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: f80e6a765cc165033a548ba6a5ee7bead0de872e
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65144993"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65594096"
 ---
 # <a name="use-active-learning-to-improve-your-knowledge-base"></a>Use o aprendizado ativo para melhorar a sua base de dados de Conhecimento
 
@@ -60,9 +60,9 @@ O algoritmo para determinar a proximidade não é um cálculo simples. Os interv
 
 O aprendizado ativo está desativado por padrão. Ative-o para ver sugestões de perguntas. 
 
-1. Selecione **publicar** para publicar a base de dados de Conhecimento. Consultas de aprendizado ativo são coletadas do ponto de extremidade de previsão de API GenerateAnswer apenas. As consultas para o painel de teste no portal do Qna Maker não afetam o aprendizado ativo.
+1. Selecione **publicar** para publicar a base de dados de Conhecimento. Consultas de aprendizado ativo são coletadas do ponto de extremidade de previsão de API GenerateAnswer apenas. As consultas para o painel de teste no portal do QnA Maker não afetam o aprendizado ativo.
 
-1. Para desativar o aprendizado ativo, clique em seu **Nome** e vá para [**Configurações de Serviço**](https://www.qnamaker.ai/UserSettings) no portal do QnA Maker no canto superior direito.  
+1. Para desativar o Active Directory de aprendizado em, clique em seu **nome**, acesse [ **configurações de serviço** ](https://www.qnamaker.ai/UserSettings) no portal do QnA Maker, no canto superior direito.  
 
     ![Ative o aprendizado ativo sugerido alternativas de pergunta da página de configurações de serviço. Selecione seu nome de usuário no menu superior direito e selecione configurações de serviço.](../media/improve-knowledge-base/Endpoint-Keys.png)
 
@@ -173,7 +173,7 @@ Content-Type: application/json
 |--|--|--|--|
 |Parâmetro de rota de URL|ID da base de dados de Conhecimento|string|o GUID da base de dados de conhecimento.|
 |Host subdomain|Nome do recurso QnAMaker|string|O nome do host para o QnA Maker em sua assinatura do Azure. Isso está disponível na página de configurações depois de publicar a base de Conhecimento. |
-|Cabeçalho|Tipo de conteúdo|string|o tipo de mídia do corpo enviado para a API. Valor padrão é: `application/json`|
+|Cabeçalho|Tipo de Conteúdo|string|o tipo de mídia do corpo enviado para a API. Valor padrão é: `application/json`|
 |Cabeçalho|Autorização|string|sua chave de ponto de extremidade (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|
 |Corpo do POST|Objeto JSON|JSON|Os comentários de treinamento|
 
@@ -208,7 +208,7 @@ Uma resposta bem-sucedida retorna um status de 204 e nenhum corpo de resposta JS
 
 Quando seu aplicativo tenha habilitado de aprendizado ativo, e você exporta o aplicativo, o `SuggestedQuestions` coluna no arquivo tsv retém os dados de aprendizado ativo. 
 
-O `SuggestedQuestions` coluna é um objeto JSON de informações do implícita (`autosuggested`) e explícitas (`usersuggested`) comentários. Um exemplo desse objeto JSON para uma única pergunta enviado pelo usuário de `help` é:
+O `SuggestedQuestions` coluna é um objeto JSON de informações de implícita, `autosuggested`e explícito, `usersuggested` comentários. Um exemplo desse objeto JSON para uma única pergunta enviado pelo usuário de `help` é:
 
 ```JSON
 [

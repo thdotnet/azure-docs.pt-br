@@ -59,6 +59,8 @@
     - name: Tamanhos e tipos de VM
       href: sizes.md
       items:
+        - name: VM geração 2
+          href: generation-2.md
         - name: Propósito geral
           href: sizes-general.md
           displayName: Dsv3 Dv3 DSv2 Dv2 Av2

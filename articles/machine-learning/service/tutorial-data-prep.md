@@ -11,16 +11,16 @@ ms.author: MayMSFT
 ms.reviewer: trbye
 ms.date: 03/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: a717fa4191c57c21705d24884397ebb485726492
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 6e7aa231cabea9fbd76cd028f9fdc698a4dac5d6
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025109"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65470276"
 ---
 # <a name="tutorial-prepare-data-for-regression-modeling"></a>Tutorial: Preparar dados para modelagem de regressão
 
-Neste tutorial, você aprenderá a preparar dados para a modelagem de regressão usando o [SDK de Preparação de Dados do Azure Machine Learning para Python](https://aka.ms/data-prep-sdk). Você executará várias transformações para filtrar e combinar dois conjuntos diferentes de dados de táxi em Nova York.
+Neste tutorial, você aprenderá como preparar dados para a modelagem de regressão usando o [pacote de preparação de dados para o Azure Machine Learning](https://aka.ms/data-prep-sdk). Você executará várias transformações para filtrar e combinar dois conjuntos diferentes de dados de táxi em Nova York.
 
 Este tutorial é **parte uma de uma série de tutoriais de duas partes**. Depois de concluir a série de tutoriais, você poderá prever o custo de uma corrida de táxi treinando um modelo em recursos de dados. Esses recursos incluem o dia e a hora da retirada, o número de passageiros e o local de retirada.
 

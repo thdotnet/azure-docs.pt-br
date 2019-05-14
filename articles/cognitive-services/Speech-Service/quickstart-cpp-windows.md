@@ -10,15 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 12/13/2018
 ms.author: wolfma
-ms.openlocfilehash: 956dfe54cec910a09ed16d7387bc3d32babd0876
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 672a691cdad5c83583ea840907fa7dd193c7ae3a
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64692406"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466960"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-windows-by-using-the-speech-sdk"></a>Início Rápido: Reconhecer fala em C++ no Windows usando o SDK de Fala
 
+Guias de início rápido também estão disponíveis para [conversão de texto em fala](quickstart-text-to-speech-cpp-windows.md) e [tradução de fala](quickstart-translate-speech-cpp-windows.md).
+
+Se desejar, escolha uma linguagem de programação e/ou ambiente diferente:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Neste artigo, você criará um aplicativo de console C++ para o Windows. Você usará o [SDK de Fala](speech-sdk.md) dos Serviços Cognitivos para transcrever a conversão de fala em texto em tempo real do microfone do seu computador. O aplicativo é criado com o [Pacote NuGet do SDK de Fala](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017 (qualquer edição).

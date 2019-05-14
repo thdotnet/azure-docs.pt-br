@@ -8,17 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 05/02/2019
+ms.date: 05/07/2019
 ms.author: wolfma
-ms.openlocfilehash: e7bd0bf135cb20292dc2b6253cdfe901e14b4206
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: c36913cb8f6625895a293c97a6a9779cc0f1d39f
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020856"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466976"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-linux-by-using-the-speech-sdk"></a>Início Rápido: Reconhecer fala em C++ no Linux usando o SDK de Fala
 
+Guias de início rápido também estão disponíveis para [conversão de texto em fala](quickstart-text-to-speech-cpp-linux.md).
+
+Se desejar, alterne para uma linguagem de programação e/ou ambiente diferente:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Neste artigo, você criará um aplicativo de console C++ para o Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9). Você usará o [SDK de Fala](speech-sdk.md) dos Serviços Cognitivos para transcrever a conversão de fala em texto em tempo real do microfone do seu computador. O aplicativo é compilado com o [SDK de Fala para Linux](https://aka.ms/csspeech/linuxbinary) e o compilador C++ da distribuição do Linux (por exemplo, `g++`).

@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: maheshb
-ms.openlocfilehash: ed34b20073a150e38b5d5992ab4e4b8c80453fb2
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 7a60ea934c6bb9008889992726ddca5dad21a640
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510273"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595621"
 ---
 # <a name="call-your-bing-custom-search-instance-from-the-portal"></a>Chame sua instância de Pesquisa Personalizada do Bing no Portal
 
@@ -26,14 +26,14 @@ Depois de configurar sua experiência de pesquisa personalizada, você pode test
 
 Depois que você entrou no [portal](https://customsearch.ai) de Pesquisa Personalizada do Bing, selecione sua instância de pesquisa e clique na guia **Produção**. Em **Pontos de extremidade**, selecione um ponto de extremidade de API (por exemplo, API Web). Sua assinatura determina quais pontos de extremidade são mostrados.
 
-Para criar uma consulta de pesquisa, insira os valores de parâmetro para seu ponto de extremidade. Observe que os parâmetros exibidos no portal podem mudar dependendo do ponto de extremidade queescolher. Consulte a [Referência da API de Pesquisa Personalizada](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference#query-parameters) para mais informações. Para alterar a assinatura que usa sua instância de pesquisa, adicione a chave de assinatura apropriada e atualize os parâmetros de colocação no mercado e/ou o idioma apropriados.
+Para criar uma consulta de pesquisa, insira os valores de parâmetro para seu ponto de extremidade. Observe que os parâmetros exibidos no portal podem mudar dependendo do ponto de extremidade queescolher. Consulte a [referência de API de pesquisa personalizada](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference#query-parameters) para obter mais informações. Para alterar a assinatura que usa sua instância de pesquisa, adicione a chave de assinatura apropriada e atualize os parâmetros de colocação no mercado e/ou o idioma apropriados.
 
 Alguns parâmetros importantes estão abaixo:
 
 
 |Parâmetro  |Descrição  |
 |---------|---------|
-|Consultar     | O termo de pesquisa a ser pesquisado. Disponível somente para pontos de extremidade da Web, de Imagem, de Vídeo e da Sugestão Automática |
+|Consulta     | O termo de pesquisa a ser pesquisado. Disponível somente para pontos de extremidade da Web, de Imagem, de Vídeo e da Sugestão Automática |
 |ID de configuração personalizada | O ID de configuração da instância selecionada de Pesquisa Personalizada. Este campo é somente leitura. |
 |Market     | O mercado que os resultados serão originados. Disponível somente para Web, Imagem, Vídeo e ponto de extremidade da Interface do Usuário Hospedada.        |
 |Chave de Assinatura | A chave de assinatura para o teste. Selecione uma chave na lista suspensa ou inserir uma manualmente.          |
@@ -48,6 +48,10 @@ Clicar em **Parâmetros adicionais** revela os seguintes parâmetros:
 |Offset    | O número de resultados da pesquisa a ignorar antes de retornar resultados. Disponível somente para pontos de extremidade da Web, de Imagem e de Vídeo.        |
     
 Depois de especificar todas as opções necessárias, clique em **Chamar** para exibir a resposta JSON no painel direito. Se você selecionar o ponto de extremidade da Interface do Usuário Hospedada, poderá testar a experiência de pesquisa no painel inferior.
+
+## <a name="change-your-bing-custom-search-subscription"></a>Alterar sua assinatura de pesquisa personalizada do Bing
+
+Você pode alterar a assinatura associada à sua instância de pesquisa personalizada do Bing sem criar uma nova instância. Para que as chamadas de API enviadas e cobrados em uma nova assinatura, crie um novo recurso de pesquisa personalizada do Bing no portal do Azure. Usar a nova chave de assinatura em suas solicitações de API, juntamente com a ID de configuração personalizada. da sua instância
 
 ## <a name="next-steps"></a>Próximas etapas
 

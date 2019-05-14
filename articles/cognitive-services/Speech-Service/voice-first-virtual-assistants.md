@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: travisw
 ms.custom: ''
-ms.openlocfilehash: 1344de526564ab623a51eb903951b6a2e866048d
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 1c5712fa8bbdb158992127f8f48d810a0a9b6f79
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65523484"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603484"
 ---
 # <a name="about-custom-voice-first-virtual-assistants-preview"></a>Sobre a visualização de assistentes de virtual primeiro de voz personalizada
 
@@ -24,7 +24,9 @@ Assistentes virtuais personalizados usando os Serviços de Fala do Azure capacit
 
    ![Diagrama conceitual de fluxo de orquestração de serviço a linha direta fala](media/voice-first-virtual-assistants/overview.png "fluxo o canal de fala")
 
-Fala de linha direta e sua funcionalidade associada para assistentes de virtuais primeiro de voz personalizadas são um suplemento ideal para o [Virtual solução Assistant](https://docs.microsoft.com/azure/bot-service/bot-builder-virtual-assistant-introduction) e [modelo empresarial](https://docs.microsoft.com/azure/bot-service/bot-builder-virtual-assistant-introduction). Embora fala de linha direta pode funcionar com qualquer bot compatível, estes recursos fornecem uma linha de base reutilizável para experiências de alta qualidade Conversacionais, bem como as habilidades de suporte comuns e modelos para começar rapidamente.
+
+Fala de linha direta e sua funcionalidade associada para assistentes de virtuais primeiro de voz personalizadas são um suplemento ideal para o [solução de assistente Virtual e modelo empresarial](https://docs.microsoft.com/azure/bot-service/bot-builder-enterprise-template-overview). Embora fala de linha direta pode funcionar com qualquer bot compatível, estes recursos fornecem uma linha de base reutilizável para experiências de alta qualidade Conversacionais, bem como as habilidades de suporte comuns e modelos para começar rapidamente.
+
 
 ## <a name="core-features"></a>Principais recursos
 

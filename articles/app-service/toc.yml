@@ -76,6 +76,8 @@
           href: overview-authentication-authorization.md
         - name: SO e aplicação de patch ao tempo de execução
           href: overview-patch-os-runtime.md
+        - name: Atributos de segurança
+          href: app-service-security-attributes.md
     - name: IPs de entrada e saída
       href: overview-inbound-outbound-ips.md
     - name: Conexões Híbridas

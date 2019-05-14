@@ -163,7 +163,7 @@
         - name: Disparar Azure Functions
           displayName: change feed
           href: change-feed-functions.md
-    - name: Análise com o Apache Spark
+    - name: Análise interna com o Apache Spark
       href: spark-api-introduction.md
     - name: Programação do lado do servidor
       items:
@@ -517,6 +517,8 @@
           href: how-to-sql-subquery.md
     - name: Feed de alterações
       items:
+        - name: Logs de gatilho do Azure Cosmos DB
+          href: how-to-configure-cosmos-db-trigger-logs.md
         - name: Vários gatilhos do Azure Cosmos DB
           href: how-to-create-multiple-cosmos-db-triggers.md
         - name: Solucionar problemas em gatilhos do Azure Cosmos DB

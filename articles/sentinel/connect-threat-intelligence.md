@@ -56,4 +56,4 @@ Para permitir que você entre verificar seus alertas e regras com inteligência 
 Neste documento, você aprendeu como conectar-se o seu provedor de inteligência contra ameaças para Azure Sentinel. Para saber mais sobre o Azure Sentinel, consulte os artigos a seguir.
 
 - Para começar a usar o Azure Sentinel, você precisa ter uma assinatura do Microsoft Azure. Se você não tiver uma assinatura, você pode se inscrever em uma [avaliação gratuita](https://azure.microsoft.com/free/).
-- Saiba como [integrar seus dados ao Azure Sentinel](quickstart-onboard.md) e [obtenha visibilidade de seus dados, além de possíveis ameaças](quickstart-get-visibility.md).
+- Saiba como [integrar seus dados ao Azure Sentinel](quickstart-onboard.md) e [obtenha visibilidade de seus dados e de possíveis ameaças](quickstart-get-visibility.md).

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: 2352594b168f5d37ddb6a46064f9ac5801fb035f
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 8d3e25f8217f3cc8772de9fbbb06a407008ca6f6
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65508398"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593877"
 ---
 # <a name="fine-tune-text-to-speech-output"></a>Ajustar a saída da conversão de texto em fala
 
@@ -35,7 +35,7 @@ Antes de começar a ajustar a saída de texto em fala com a ferramenta de ajuste
    >Quando você cria um recurso de fala no portal do Azure, as informações de local do Azure precisam corresponder com a região de voz TTS. Voz TTS neural suporta um conjunto de sub dos locais do Azure. Para obter uma lista completa de suporte, consulte [regiões](regions.md#text-to-speech).
 
    >[!NOTE]
-   >Você precisa ter um F0 ou uma chave de S0 criada no portal do Azure antes de poder usar o serviço. Ajuste de voz **não** dão suporte a [chave de avaliação gratuita de 30 dias](https://review.docs.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started?branch=release-build-cogserv-speech-services#free-trial).
+   >Você precisa ter um F0 ou uma chave de S0 criada no portal do Azure antes de poder usar o serviço. Ajuste de voz **não** dão suporte a [chave de avaliação gratuita de 30 dias](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started?branch=release-build-cogserv-speech-services#free-trial).
 
 4. Entrar para o [voz ajuste](https://aka.ms/voicetuning) portal e conecte-se a sua assinatura dos serviços de fala. Escolha uma única assinatura de serviços de fala e, em seguida, crie um projeto.
 5. Selecione **nova ajuste**. Depois, siga estas etapas:
@@ -43,7 +43,7 @@ Antes de começar a ajustar a saída de texto em fala com a ferramenta de ajuste
    * Localize e selecione **todas as assinaturas**.  
    * Selecione **conectar-se a assinatura existente**.  
      ![Conectar-se uma assinatura existente](./media/custom-voice/custom-voice-connect-subscription.png).
-   * Insira sua chave de assinatura de serviços de fala do Azure, em seguida, selecione **adicionar**. Suas chaves de assinatura estão disponíveis no portal de personalização de fala dos [página de assinatura](https://go.microsoft.com/fwlink/?linkid=2090458). Você também pode obter as chaves no painel de gerenciamento de recursos do [portal do Azure](https://portal.azure.com/). 
+   * Insira sua chave de assinatura de serviços de fala do Azure, em seguida, selecione **adicionar**. Suas chaves de assinatura estão disponíveis no portal de personalização de fala dos [página de assinatura](https://go.microsoft.com/fwlink/?linkid=2090458). Você também pode obter as chaves no painel de gerenciamento de recursos do [portal do Azure](https://portal.azure.com/).
    * Se você tiver mais de uma assinatura de serviços de fala que você planeja usar, repita essas etapas para cada assinatura.
 
 ## <a name="customize-the-text-to-speech-output"></a>Personalizar a saída de texto em fala

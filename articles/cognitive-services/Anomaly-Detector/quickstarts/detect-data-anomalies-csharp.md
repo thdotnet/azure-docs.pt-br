@@ -9,12 +9,12 @@ ms.subservice: anomaly-detector
 ms.topic: article
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: ffa42eb2247d163dd6a146ffb26c1f8cc5cf6d82
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 04b331f3b63ad6400b4bb8efcd053d04ac88989b
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64922530"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595833"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-c"></a>Início Rápido: Detectar anomalias em seus dados de série temporal usando a API de REST do Detector de anomalias eC# 
 
@@ -29,13 +29,15 @@ Use este guia de início rápido para começar a usar os dois modos de detecçã
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Qualquer edição do [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/).
-- [Newtonsoft.Json](https://www.newtonsoft.com/json)
-    - Para instalar o newtonsoft. JSON como um pacote do NuGet no Visual studio:
-        1. Clique com botão direito no **Gerenciador de soluções**
-        2. Clique em **Gerenciar Pacotes NuGet...**
-        3. Pesquise `Newtonsoft.Json` e instale o pacote
-- Se você estiver usando Linux/MacOS, esse aplicativo pode ser executado usando [Mono](https://www.mono-project.com/).
+- Qualquer edição do [Visual Studio 2017 ou posterior](https://visualstudio.microsoft.com/downloads/),
+
+- A estrutura [Json.NET](https://www.newtonsoft.com/json), disponível como um pacote do NuGet. Para instalar o newtonsoft. JSON como um pacote do NuGet no Visual Studio:
+    
+    1. Clique com botão direito no seu projeto no **Gerenciador de soluções**.
+    2. Selecione **gerenciar pacotes NuGet**.
+    3. Pesquise *newtonsoft. JSON* e instale o pacote.
+
+- Se você estiver usando Linux/MacOS, este aplicativo pode ser executado por meio [Mono](https://www.mono-project.com/).
 
 - Pontos de dados de série de tempo que contém um JSON arquivo. Os dados de exemplo para este início rápido podem ser encontrados no [GitHub](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/request-data.json).
 

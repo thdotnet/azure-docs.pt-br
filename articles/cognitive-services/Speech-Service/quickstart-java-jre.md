@@ -10,15 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 05/02/2019
 ms.author: fmegen
-ms.openlocfilehash: 771168a13d7192581aae2ff4128e979b6924484a
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 05475dbfb7dc1ee3f5de1a9b858eaf212b674eac
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020702"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466386"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-java"></a>Início Rápido: Reconhecimento de fala com o SDK de Fala para Java
 
+Guias de início rápido também estão disponíveis para a [tradução de fala em fala](quickstart-translate-speech-java-jre.md) e o [assistente virtual que tem como prioridade o uso de voz](quickstart-virtual-assistant-java-jre.md).
+
+Se desejar, escolha uma linguagem de programação e/ou ambiente diferente:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Neste artigo, você criará um aplicativo de console Java usando o [SDK de Fala](speech-sdk.md). Você transcreve a fala em texto em tempo real por meio do microfone do computador. O aplicativo é criado com o pacote Maven do SDK de Fala e o Java IDE do Eclipse (v4.8) no Windows de 64 bits, no Linux de 64 bits (Ubuntu 16.04, Ubuntu 18.04, Debian 9) ou no macOS 10.13 ou posterior. Ele é executado em um JRE (Java Runtime Environment) 8 de 64 bits.

@@ -40,7 +40,7 @@ Primeiro, implemente a amostra de blueprint criando um blueprint no ambiente usa
    - **Nome do blueprint**: Forneça um nome para a cópia da amostra de blueprint dos Serviços Compartilhados ISO 27001.
    - **Localização da definição**: Use as reticências e selecione o grupo de gerenciamento em que deseja salvar a cópia da amostra.
 
-1. Selecione a guia _Artefatos_ na parte superior da página ou selecione **Avançar: Artefatos** na parte inferior da página.
+1. Selecione a guia _Artefatos_ na parte superior da página ou clique em **Avançar: Artefatos** na parte inferior da página.
 
 1. Examine a lista de artefatos que compõem o exemplo de blueprint. Muitos dos artefatos têm parâmetros que definiremos mais tarde. Selecione **Salvar Rascunho** quando terminar de examinar o exemplo de blueprint.
 

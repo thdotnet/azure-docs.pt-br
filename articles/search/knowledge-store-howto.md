@@ -6,20 +6,20 @@ author: HeidiSteen
 services: search
 ms.service: search
 ms.topic: quickstart
-ms.date: 05/02/2019
+ms.date: 05/08/2019
 ms.author: heidist
-ms.openlocfilehash: 2a904cfb049af413887798c8aab449561bc2b73f
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: d9006e3fcfc9691b9f3eec4b86c545fd3fea9f8a
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65030044"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65471752"
 ---
 # <a name="how-to-get-started-with-knowledge-store"></a>Introdução ao Repositório de Dados de Conhecimento
 
 O [Repositório de Dados de Conhecimento](knowledge-store-concept-intro.md) é uma nova versão prévia do recurso no Azure Search que salva os enriquecimentos de IA criados em um pipeline de indexação para mineração de conhecimento em outros aplicativos. Você também pode usar enriquecimentos salvos para entender e refinar um pipeline de indexação do Azure Search.
 
-Um repositório de dados de conhecimento é definido por um conjunto de qualificações. Para cenários comuns de pesquisa de texto completo do Azure Search, o objetivo de um conjunto de qualificações é fornecer enriquecimentos de inteligência artificial para tornar o conteúdo mais pesquisável. Para cenários de repositório de dados de conhecimento, a função de um conjunto de qualificações é criar e preencher várias estruturas de dados para minerar dados de conhecimento.
+Um repositório de dados de conhecimento é definido por um conjunto de qualificações. Para cenários comuns de pesquisa de texto completo do Azure Search, o objetivo de um conjunto de qualificações é fornecer enriquecimentos de inteligência artificial para tornar o conteúdo mais pesquisável. Para cenários de mineração de conhecimento, a função de um conjunto de qualificações é criar, popular e armazenar várias estruturas de dados para análise ou modelagem em outros aplicativos e processos.
 
 Neste exercício, comece com dados de exemplo, serviços e ferramentas para aprender o fluxo de trabalho básico para criar e usar seu primeiro repositório de dados de conhecimento, com ênfase na definição do conjunto de qualificações.
 
@@ -29,13 +29,13 @@ Os serviços, as ferramentas e os dados a seguir são usados neste início rápi
 
 + [Crie um serviço Azure Search](search-create-service-portal.md) ou [localize um serviço existente](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) na assinatura atual. Você pode usar um serviço gratuito para este tutorial. 
 
-+ [Criar uma conta de armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account) para armazenar os dados de exemplo. O repositório de dados de conhecimento continuará a existir no armazenamento do Azure.
++ [Criar uma conta de armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account) para armazenar os dados de exemplo. O repositório de dados de conhecimento continuará a existir no armazenamento do Azure. 
 
-+ [Criar um recurso de Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) na camada pós-paga do S0 para ter acesso alargado a toda a gama de habilidades usadas em enriquecimentos por IA.
++ [Criar um recurso de Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) na camada pós-paga do S0 para ter acesso alargado a toda a gama de habilidades usadas em enriquecimentos por IA. Esse recurso e seu serviço do Azure Search precisam estar na mesma região.
 
 + [Aplicativo da área de trabalho do Postman](https://www.getpostman.com/) para enviar solicitações para o Azure Search.
 
-+ [Coleção do Postman](https://github.com/Azure-Samples/azure-search-postman-samples/tree/master/caselaw) com solicitações preparadas para criar uma fonte de dados, índice, conjunto de qualificações e o indexador. Várias definições de objeto são muito longas para serem incluídas neste artigo. Obtenha essa coleção para ver todas as definições do índice e do conjunto de qualificações.
++ [Coleção do Postman](https://github.com/Azure-Samples/azure-search-postman-samples/tree/master/Caselaw) com solicitações preparadas para criar uma fonte de dados, índice, conjunto de qualificações e o indexador. Várias definições de objeto são muito longas para serem incluídas neste artigo. Obtenha essa coleção para ver todas as definições do índice e do conjunto de qualificações.
 
 + [Dados de exemplo do Caselaw](https://github.com/Azure-Samples/azure-search-sample-data/tree/master/caselaw) originário da página de download dos Dados Públicos em Massa do [Caselaw Access Project](https://case.law/bulk/download/). Especificamente, o exercício usa os primeiros 10 documentos do primeiro download (Arkansas). Para este exercício, fizemos o download de um exemplo de 10 documentos para o GitHub.
 
@@ -55,7 +55,7 @@ Todas as solicitações requerem uma chave de api em cada pedido enviado ao serv
 
 1. [Entre no portal do Azure](https://portal.azure.com), navegue até sua conta de Armazenamento do Azure, clique em **Blobs** e, em seguida, clique em **+ Contêiner**.
 
-1. [Crie um contêiner de Blob](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) para conter dados de exemplo. Você pode definir o Nível de Acesso Público para qualquer um de seus valores válidos.
+1. [Crie um contêiner de Blob](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) para conter dados de exemplo. Use o nome de contêiner "caselaw-test". Você pode definir o Nível de Acesso Público para qualquer um de seus valores válidos.
 
 1. Depois que o contêiner for criado, abra-o e selecione **Carregar** na barra de comandos.
 
@@ -66,19 +66,19 @@ Todas as solicitações requerem uma chave de api em cada pedido enviado ao serv
 
 ## <a name="set-up-postman"></a>Configurar o Postman
 
-Inicie o Postman e configure uma solicitação HTTP. Se você não estiver familiarizado com essa ferramenta, consulte [Explorar APIs REST do Azure Search usando Postman](search-fiddler.md).
+Inicie o Postman e importe a coleção Caselaw Postman. Como alternativa, configure uma série de solicitações HTTP. Se você não estiver familiarizado com essa ferramenta, consulte [Explorar APIs REST do Azure Search usando Postman](search-fiddler.md).
 
-+ O método de solicitação para cada chamada neste passo a passo é **POST**.
++ O método de solicitação de cada chamada neste passo a passo é **PUT** ou **POST**.
 + Os cabeçalhos de solicitação (2) incluem o seguinte: "Content-type" definido como "application/json" e "api-key" definido como "chave de administrador" (a chave de administrador é um espaço reservado para sua chave primária de pesquisa) respectivamente. 
 + O corpo da solicitação é onde você coloca o conteúdo real de sua chamada. 
 
   ![Pesquisa semi-estruturada](media/search-semi-structured-data/postmanoverview.png)
 
-Estamos usando o Postman fazer quatro chamadas à API para o serviço de pesquisa para criar uma fonte de dados, um índice, conjunto de qualificações e um indexador. A fonte de dados inclui um ponteiro para sua conta de armazenamento e seus dados JSON. O serviço de pesquisa faz a conexão ao importar os dados.
+Estamos usando o Postman para fazer quatro chamadas à API para o serviço de pesquisa, criando uma fonte de dados, um índice, um conjunto de qualificações e um indexador – nesta ordem. A fonte de dados inclui um ponteiro para sua conta de armazenamento do Azure e dados JSON. O serviço de pesquisa faz a conexão ao importar os dados.
 
 [Criar um conjunto de qualificações](#create-skillset) é o foco deste passo a passo: ele especifica as etapas do enriquecimento e como os dados são persistidos em um repositório de dados de conhecimento.
 
-O ponto de extremidade da URL deve especificar uma api-version e cada chamada deve retornar um **201 Criado**. A api-version da versão prévia para criar um conjunto de qualificações com suporte ao repositório de dados de conhecimento é `2019-05-06-Preview`.
+O ponto de extremidade da URL deve especificar uma api-version e cada chamada deve retornar um **201 Criado**. A api-version de versão prévia para criar um conjunto de qualificações com suporte para repositório de dados de conhecimento é `2019-05-06-Preview` (diferencia maiúsculas de minúsculas).
 
 Execute as seguintes chamadas à API do cliente REST.
 
@@ -101,10 +101,10 @@ O ponto de extremidade desta chamada é `https://[service name].search.windows.n
         "type": "azureblob",
         "subtype": null,
         "credentials": {
-            "connectionString": "DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your storage key>;EndpointSuffix=core.windows.net"
+            "connectionString": "DefaultEndpointsProtocol=https;AccountName=<YOUR-STORAGE-ACCOUNT>;AccountKey=<YOUR-STORAGE-KEY>;EndpointSuffix=core.windows.net"
         },
         "container": {
-            "name": "<your blob container name>",
+            "name": "<YOUR-BLOB-CONTAINER-NAME>",
             "query": null
         },
         "dataChangeDetectionPolicy": null,
@@ -318,24 +318,23 @@ O ponto de extremidade desta chamada é `https://[service name].search.windows.n
    }
    ```
 
-3. Primeiro, defina as chaves `cognitiveServices` e `knowledgeStore` e a cadeia de conexão. No exemplo, essas cadeias estão localizadas após a definição do conjunto de qualificações, no final do corpo da solicitação.
+3. Primeiro, defina as chaves `cognitiveServices` e `knowledgeStore` e a cadeia de conexão. No exemplo, essas cadeias estão localizadas após a definição do conjunto de qualificações, no final do corpo da solicitação. Use um recurso dos Serviços Cognitivos, provisionado na camada S0, localizado na mesma região que o Azure Search.
 
     ```json
     "cognitiveServices": {
         "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
-        "description": "<your cognitive services resource name>",
-        "key": "<your cognitive services key>"
+        "description": "YOUR-SAME-REGION-S0-COGNITIVE-SERVICES-RESOURCE",
+        "key": "YOUR-COGNITIVE-SERVICES-KEY"
     },
     "knowledgeStore": {
-        "storageConnectionString": "DefaultEndpointsProtocol=https;AccountName=<your storage account name>;AccountKey=<your storage account key>;EndpointSuffix=core.windows.net",
+        "storageConnectionString": "YOUR-STORAGE-ACCOUNT-CONNECTION-STRING",
     ```
 
 3. Analise o conjunto de qualificações, especialmente as habilidades do Shaper nas linhas 85 e 170, respectivamente. A habilidade do Shaper é importante porque reúne as estruturas de dados que você deseja ter na mineração de dados de conhecimento. Durante a execução da habilidade, essas estruturas estão apenas na memória, mas, à medida que você avança para a próxima etapa, você verá como essa saída pode ser salva em um repositório de dados de conhecimento para poder ser ainda mais explorada.
 
-   O snippet de código a seguir é da linha 207. 
+   O snippet de código a seguir é da linha 217. 
 
     ```json
-    {
     "name": "Opinions",
     "source": null,
     "sourceContext": "/document/casebody/data/opinions/*",
@@ -361,44 +360,46 @@ O ponto de extremidade desta chamada é `https://[service name].search.windows.n
                     "name": "EntityType",
                     "source": "/document/casebody/data/opinions/*/text/pages/*/entities/*/category"
                 }
-             ]
-          }
-     ]
-   }
+            ]
+        }
+    ]
    . . .
    ```
 
-3. Examine o elemento `projections` em `knowledgeStore`, começando na linha 253. As projeções especificam a composição do repositório de dados de conhecimento. As projeções são especificadas em pares de tabelas-objetos, mas, no momento, são especificadas individualmente. Como você pode ver na primeira projeção, `tables` foi especificada, mas `objects` não foi. Na segunda projeção, temos o oposto.
+3. Examine o elemento `projections` em `knowledgeStore`, começando na linha 262. As projeções especificam a composição do repositório de dados de conhecimento. As projeções são especificadas em pares de tabelas-objetos, mas, no momento, são especificadas individualmente. Como você pode ver na primeira projeção, `tables` foi especificada, mas `objects` não foi. Na segunda projeção, temos o oposto.
 
    No armazenamento do Azure, as tabelas serão criadas no armazenamento Tabela para cada tabela criada e cada objeto receberá um contêiner no armazenamento Blob.
 
-   Os objetos geralmente contêm a expressão completa de um enriquecimento. As tabelas geralmente contêm enriquecimentos parciais em combinações organizadas para fins específicos. Este exemplo mostra uma tabela Casos, mas não são mostradas outras tabelas como Entidades, Juízes e Opiniões.
+   Os objetos de blob geralmente contêm a expressão completa de um enriquecimento. As tabelas geralmente contêm enriquecimentos parciais em combinações organizadas para fins específicos. Este exemplo mostra uma tabela de Casos e uma tabela de Opiniões, mas não são mostradas outras tabelas como Entidades, Advogados, Juízes e Partes.
 
     ```json
     "projections": [
-    {
-        "tables": [
-            {
-              "tableName": "Opinions",
-              "generatedKeyName": "OpinionId",
-              "source": "/document/Case/OpinionsSnippets/*"
-            },
-          . . . 
-        ],
-        "objects": []
-    },
-    {
-        "tables": [],
-        "objects": [
-            {
-                "storageContainer": "enrichedcases",
-                "key": "/document/CaseFull/Id",
-                "source": "/document/CaseFull"
-            }
-          ]
+        {
+            "tables": [
+                {
+                    "tableName": "Cases",
+                    "generatedKeyName": "CaseId",
+                    "source": "/document/Case"
+                },
+                {
+                    "tableName": "Opinions",
+                    "generatedKeyName": "OpinionId",
+                    "source": "/document/Case/OpinionsSnippets/*"
+                }
+            ],
+            "objects": []
+        },
+        {
+            "tables": [],
+            "objects": [
+                {
+                    "storageContainer": "enrichedcases",
+                    
+                    "source": "/document/CaseFull"
+                }
+            ]
         }
-      ]
-    }
+    ]
     ```
 
 5. Enviar a solicitação. A resposta deve ser **201** e deve ser semelhante ao exemplo a seguir que exibe a primeira parte da resposta.

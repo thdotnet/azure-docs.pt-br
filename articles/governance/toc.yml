@@ -22,25 +22,12 @@
       href: policy/overview.md
     - name: Blueprints
       href: blueprints/overview.md
-- name: Implementações
-  expanded: true
+- name: Cloud Adoption Framework
   items:
-    - name: Adoção de Nuvem do Enterprise
-      items:
-        - name: O que é a governança dos recursos da nuvem?
-          href: /azure/architecture/cloud-adoption/getting-started/what-is-governance?toc=/azure/governance/toc.json
-        - name: Governança do acesso de recursos no Azure
-          href: /azure/architecture/cloud-adoption/getting-started/azure-resource-access?toc=/azure/governance/toc.json
-        - name: Design de governança para uma equipe
-          href: /azure/architecture/cloud-adoption/governance/governance-single-team?toc=/azure/governance/toc.json
-        - name: Design de governança para várias equipes
-          href: /azure/architecture/cloud-adoption/governance/governance-multiple-teams?toc=/azure/governance/toc.json
-    - name: Scaffold do Azure Enterprise
-      items:
-        - name: Governança de assinatura prescritiva
-          href: /azure/architecture/cloud-adoption/appendix/azure-scaffold?toc=/azure/governance/toc.json
-        - name: Implementação do Scaffold do Azure Enterprise
-          href: /azure/architecture/cloud-adoption/appendix/azure-scaffold-examples?toc=/azure/governance/toc.json
+    - name: Visão geral
+      href: /azure/architecture/cloud-adoption/index?toc=/azure/governance/toc.json
+    - name: Visão geral de governança
+      href: /azure/architecture/cloud-adoption/governance/index?toc=/azure/governance/toc.json
 - name: Recursos
   items:
     - name: Roteiro do Azure

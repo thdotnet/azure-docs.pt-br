@@ -11,15 +11,18 @@ ms.topic: quickstart
 ms.date: 12/06/2018
 ms.author: wolfma
 ms.custom: seodec18
-ms.openlocfilehash: 26d6e5e53968a88eaccff863b4affee6057f5952
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 674bb3f22f7b8c7c7ea3b52c2f27d862a9961fcb
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57903293"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466242"
 ---
 # <a name="quickstart-recognize-speech-in-a-uwp-app-by-using-the-speech-sdk"></a>Início Rápido: Reconhecer a fala em um aplicativo UWP usando o SDK de Fala
 
+Guias de início rápido também estão disponíveis para a [tradução de fala](quickstart-translate-speech-uwp.md) e o [assistente virtual que tem como prioridade o uso de voz](quickstart-virtual-assistant-csharp-uwp.md).
+
+Se desejar, escolha uma linguagem de programação e/ou ambiente diferente:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Neste artigo, você desenvolverá um aplicativo UWP (Plataforma Universal do Windows; Windows versão 1709 ou posterior) em C# usando o [SDK de Fala](speech-sdk.md) dos Serviços Cognitivos. O programa transcreverá a fala em texto em tempo real por meio do microfone do dispositivo. O aplicativo foi criado com o [Pacote NuGet do SDK de Fala](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017 (qualquer edição).

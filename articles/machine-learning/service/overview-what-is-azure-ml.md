@@ -10,12 +10,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 383bfbfe335300685be0ee1a43c78748f688276a
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: c9ebacd8caf992874969106df58531538ea399ed
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/09/2019
-ms.locfileid: "65472749"
+ms.locfileid: "65510426"
 ---
 # <a name="what-is-azure-machine-learning-service"></a>O que é o serviço Azure Machine Learning?
 
@@ -38,7 +38,7 @@ Explore e prepare dados, treine e teste modelos e implante-os usando ferramentas
 
 ## <a name="what-can-i-do-with-azure-machine-learning-service"></a>O que eu posso fazer com o serviço Azure Machine Learning?
 
-Usando o <a href="https://aka.ms/aml-sdk" target="_blank">SDK do Python do Azure Machine Learning</a> com pacotes do Python open-source ou usando a [interface visual (versão prévia)](ui-quickstart-run-experiment.md), é possível criar e treinar o aprendizado de máquina altamente preciso e os modelos de aprendizado profundo em um workspace do serviço do Azure Machine Learning.
+Use o <a href="https://aka.ms/aml-sdk" target="_blank">SDK do Python do Azure Machine Learning</a> com pacotes Python open-source ou use a [interface visual (versão prévia)](ui-quickstart-run-experiment.md) para criar e treinar modelos altamente precisos de machine learning e aprendizado profundo por conta própria em um workspace do Serviço do Azure Machine Learning.
 
 É possível escolher entre muitos componentes de aprendizado de máquina disponíveis em pacotes do Python open-source, como <a href="https://scikit-learn.org/stable/" target="_blank">Scikit-learn</a>, <a href="https://www.tensorflow.org" target="_blank">Tensorflow</a>, <a href="https://pytorch.org" target="_blank">PyTorch</a> e <a href="https://mxnet.io" target="_blank">MXNet</a>.
 

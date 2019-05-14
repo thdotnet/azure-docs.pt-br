@@ -7,12 +7,12 @@ ms.topic: sample
 author: cjgronlund
 ms.author: cgronlun
 ms.date: 05/02/2019
-ms.openlocfilehash: c1b86199f13454f4785a6737b25e489d45dd53f8
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: b62a2690e5879e45a14d0b06a38e8c5171dda14e
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65027542"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65442340"
 ---
 # <a name="example-jupyter-notebooks-show-how-to-enrich-data-with-open-datasets"></a>Exemplo com notebooks Jupyter mostra como aprimorar os dados com conjuntos de dados abertos 
 O exemplo com notebooks Jupyter para Conjunto de Dados Abertos do Azure mostra como carregar conjuntos de dados abertos e usá-los para aprimorar dados de demonstração. As técnicas incluem o uso do Apache Spark e Pandas para processar dados.
@@ -29,7 +29,7 @@ O exemplo com notebooks Jupyter para Conjunto de Dados Abertos do Azure mostra c
 ## <a name="join-demo-data-with-noaa-isd-data"></a>Unir dados de demonstração com os dados ISD do NOAA 
 |Bloco de notas        | DESCRIÇÃO                                    |
 |----------------|------------------------------------------------|
-|[Unir dados de demonstração com dados climáticos – Pandas ](https://github.com/Azure/OpenDatasetsNotebooks/blob/master/tutorials/data-join/02-weather-join-in-pandas.ipynb) | Una um conjunto de dados de demonstração de 1 mês sobre locais de sensores com leituras climáticas em um dataframe do Pandas.  |
+|[Unir dados de demonstração e dados climáticos – Pandas](https://github.com/Azure/OpenDatasetsNotebooks/blob/master/tutorials/data-join/02-weather-join-in-pandas.ipynb) | Una um conjunto de dados de demonstração de 1 mês sobre locais de sensores com leituras climáticas em um dataframe do Pandas.  |
 |[Unir dados de demonstração com dados climáticos – Spark](https://github.com/Azure/OpenDatasetsNotebooks/blob/master/tutorials/data-join/01-weather-join-in-spark.ipynb) | Una um conjunto de dados de demonstração mês sobre locais de sensores com leituras climáticas em um dataframe do Spark. |
 
 ## <a name="join-nyc-taxi-data-with-noaa-isd-data"></a>Unir dados de táxis de NYC com os dados de ISD do NOAA 

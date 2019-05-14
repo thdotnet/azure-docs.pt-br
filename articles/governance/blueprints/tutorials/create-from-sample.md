@@ -1,6 +1,6 @@
 ---
 title: Criar um ambiente com base em um exemplo de blueprint
-description: Use um exemplo de blueprint para criar uma definição de blueprint que configura dois grupos de recursos e configura uma atribuição de função para cada um.
+description: Use um exemplo de blueprint para criar uma definição dele que configure dois grupos de recursos e uma atribuição de função para cada grupo.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 03/05/2019
@@ -43,22 +43,22 @@ Primeiro, implemente o exemplo de blueprint. A importação cria um novo bluepri
 
 1. Insira as informações _Básicas_ do exemplo de blueprint:
 
-   - **Nome do blueprint**: Forneça um nome para a sua cópia do exemplo de blueprint. Para este tutorial, usaremos o nome _two-rgs-with-role-assignments_.
-   - **Localização da definição**: Use o botão de reticências e selecione o grupo de gerenciamento ou a assinatura em que deseja salvar sua cópia do exemplo.
+   - **Nome do blueprint**: forneça um nome para a sua cópia do exemplo de blueprint. Para este tutorial, usaremos o nome _two-rgs-with-role-assignments_.
+   - **Localização da definição**: use o botão de reticências e selecione o grupo de gerenciamento ou a assinatura em que deseja salvar sua cópia do exemplo.
 
-1. Selecione a guia _Artefatos_ na parte superior da página ou selecione **Avançar: Artefatos** na parte inferior da página.
+1. Selecione a guia _Artefatos_ na parte superior da página ou clique em **Avançar: Artefatos** na parte inferior da página.
 
-1. Examine a lista de artefatos que compõem o exemplo de blueprint. Este exemplo define dois grupos de recursos com os nomes de exibição _ProdRG_ e _PreProdRG_. O nome final e a localização de cada grupo de recursos são definidos durante a atribuição do blueprint. O grupo de recursos _ProdRG_ é atribuído à função _Colaborador_ e o grupo de recursos _PreProdRG_ é atribuído às funções _Proprietário_ e _Leitores_. As funções atribuídas na definição são estáticas, mas o usuário, o aplicativo ou o grupo ao qual a função é atribuída é definido durante a atribuição do blueprint.
+1. Examine a lista de artefatos que compõem o exemplo de blueprint. Este exemplo define dois grupos de recursos com os nomes de exibição _ProdRG_ e _PreProdRG_. O nome final e a localização de cada grupo de recursos são definidos durante a atribuição do blueprint. O grupo de recursos _ProdRG_ é atribuído à função _Colaborador_ e o grupo de recursos _PreProdRG_ é atribuído às funções _Proprietário_ e _Leitores_. As funções atribuídas na definição são estáticas, mas o usuário, o aplicativo ou o grupo aos quais a função é atribuída são definidos durante a atribuição do blueprint.
 
 1. Selecione **Salvar Rascunho** quando terminar de examinar o exemplo de blueprint.
 
-Esta etapa cria uma cópia da definição do blueprint de exemplo na assinatura ou no grupo de gerenciamento selecionado. A definição de blueprint salva é gerenciada como qualquer blueprint criado do zero. Você pode salvar o exemplo em seu grupo de gerenciamento ou na assinatura tantas vezes quanto forem necessárias. No entanto, a cada cópia deve ser fornecido um nome exclusivo.
+Esta etapa cria uma cópia da definição do blueprint de exemplo na assinatura ou no grupo de gerenciamento selecionado. A definição de blueprint salva é gerenciada como qualquer blueprint criado do zero. Você pode salvar o exemplo em seu grupo de gerenciamento ou na assinatura tantas vezes quanto forem necessárias. No entanto, forneça um nome exclusivo para cada cópia.
 
-Quando a notificação **Êxito ao salvar a definição de blueprint** do portal for exibida, avance para a próxima etapa.
+Quando a notificação do portal **Êxito ao salvar a definição de blueprint** for exibida, avance para a próxima etapa.
 
 ## <a name="publish-the-sample-copy"></a>Publicar a cópia do exemplo
 
-Agora a cópia do exemplo de blueprint foi criada em seu ambiente. Ela é criada no modo **Rascunho** e deve ser **Publicada** antes de ser atribuída e implantada. A cópia do exemplo de blueprint pode ser personalizada de acordo com as necessidades e o ambiente. Neste tutorial, nós não faremos alterações.
+Agora a cópia do exemplo de blueprint foi criada em seu ambiente. Ela é criada no modo **Rascunho** e deve ser **Publicada** antes de ser atribuída e implantada. A cópia do exemplo de blueprint pode ser personalizada de acordo com as necessidades e o ambiente. Neste tutorial, não faremos alterações.
 
 1. Selecione **Todos os serviços** no painel esquerdo. Pesquise e selecione **Blueprints**.
 
@@ -66,9 +66,9 @@ Agora a cópia do exemplo de blueprint foi criada em seu ambiente. Ela é criada
 
 1. Selecione **Publicar blueprint** na parte superior da página. No novo painel à direita, forneça a **Versão** como _1.0_ para a cópia do exemplo de blueprint. Essa propriedade será útil se você fizer uma modificação mais tarde. Forneça **Notas de alteração** como: "Primeira versão publicada com base no exemplo de blueprint de grupos de recursos com RBAC". Em seguida, selecione **Publicar** na parte inferior da página.
 
-Esta etapa possibilita atribuir o blueprint a uma assinatura. Depois de publicado, as alterações ainda poderão ser feitas. As alterações adicionais exigem a publicação com uma novo valor de **Versão** a fim de rastrear as diferenças entre as versões da mesma definição de blueprint.
+Esta etapa possibilita atribuir o blueprint a uma assinatura. Alterações poderão ser feitas mesmo após a publicação. As alterações adicionais exigem a publicação com uma novo valor de **Versão** a fim de rastrear as diferenças entre as versões da mesma definição de blueprint.
 
-Quando a notificação **Êxito ao publicar a definição de blueprint** do portal for exibida, avance para a próxima etapa.
+Quando a notificação do portal **A publicação da definição do blueprint foi bem-sucedida** for exibida, avance para a próxima etapa.
 
 ## <a name="assign-the-sample-copy"></a>Atribuir a cópia de exemplo
 
@@ -85,7 +85,7 @@ Quando a cópia do exemplo de blueprint for **Publicada** com êxito, ele poder�
    - Noções básicas
 
      - **Assinaturas**: Selecione uma ou mais das assinaturas que estão no grupo de gerenciamento em que você salvou a cópia do exemplo de blueprint. Se você selecionar mais de uma assinatura, será criada uma atribuição para cada uma, usando os parâmetros inseridos.
-     - **Nome da atribuição**: O nome é pré-preenchido para você com base no nome da definição de blueprint.
+     - **Nome da atribuição**: Com base no nome da definição de blueprint, esse nome é preenchido automaticamente.
      - **Localização**: Selecione uma região para a identidade gerenciada a ser criada. O Blueprint do Azure usa essa identidade gerenciada para implantar todos os artefatos no blueprint atribuído. Para saber mais, veja [identidades gerenciadas para recursos do Azure](../../../active-directory/managed-identities-azure-resources/overview.md).
        Para este tutorial, selecione _Leste dos EUA 2_.
      - **Versão de definição de blueprint**: Escolha a versão **Publicada** _1.0_ da sua cópia da definição de blueprint de exemplo.
@@ -116,7 +116,7 @@ Quando a cópia do exemplo de blueprint for **Publicada** com êxito, ele poder�
 
 Esta etapa implanta os recursos definidos e configura a **Atribuição de Bloqueio** selecionada. Os bloqueios de blueprint podem levar até 30 minutos para serem aplicados.
 
-Quando a notificação **Êxito ao atribuir a definição de blueprint** do portal for exibida, avance para a próxima etapa.
+Quando a notificação do portal **A atribuição da definição do blueprint foi bem-sucedida** for exibida, avance para a próxima etapa.
 
 ## <a name="inspect-resources-deployed-by-the-assignment"></a>Inspecionar recursos implantados pela atribuição
 
@@ -175,7 +175,7 @@ A remoção da atribuição não removerá os artefatos implantados.
 
 A segurança de cada grupo de recursos ainda tem as atribuições de função implantadas, mas a atribuição de blueprint não tem mais acesso de _Proprietário_.
 
-Quando a notificação **A remoção da atribuição do blueprint foi bem-sucedida** do portal for exibida, avance para a próxima etapa.
+Quando a notificação do portal **A remoção da atribuição do blueprint foi bem-sucedida** for exibida, avance para a próxima etapa.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 

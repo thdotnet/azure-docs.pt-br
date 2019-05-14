@@ -2,23 +2,24 @@
 author: SnehaGunda
 ms.service: cosmos-db
 ms.topic: include
-ms.date: 11/09/2018
+ms.date: 03/22/2019
 ms.author: sngun
-ms.openlocfilehash: e07a59ba0484910d87329be94f0fcc58b1011b95
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: b940d7308648a3a55ed031d7d57542f3b31e9f27
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51571760"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546767"
 ---
-A taxa de transferência, o armazenamento, a disponibilidade, a latência e a consistência dos recursos na conta são monitorados no Portal do Azure. Vamos analisar rapidamente essas métricas. 
+O portal do Azure monitora a taxa de transferência, armazenamento, disponibilidade, latência e consistência da conta do Cosmos DB. Gráficos de métricas associados a um [SLA (Contrato de Nível de Serviço) do Azure Cosmos DB](https://azure.microsoft.com/support/legal/sla/cosmos-db/) mostram o valor do SLA em comparação com o desempenho real. Esse conjunto de métricas torna o monitoramento dos SLAs transparente.
 
-1. Clique em **Métricas** no menu de navegação.
+Para examinar as métricas e os SLAs: 
 
-   ![Métricas no Portal do Azure](./media/cosmos-db-tutorial-review-slas/metrics.png)
-
-2. Clique em cada uma das guias para que você esteja ciente das métricas que o Azure Cosmos DB fornece. 
-
-    Cada gráfico que é associado aos [SLAs (Contratos de Nível de Serviço) do Azure Cosmos DB](https://azure.microsoft.com/support/legal/sla/cosmos-db/) fornece uma linha que mostra se um dos SLAs foi violado. O Azure Cosmos DB torna o monitoramento dos SLAs transparente com seu pacote de métricas. 
-
+1. Selecione **Métricas** no menu de navegação da sua conta do Cosmos DB.
+   
+2. Selecione uma guia, tal como **Latência**, e selecione um período à direita. Comparar as linhas **Real** e **SLA** dos gráficos.
+   
    ![Pacote de métricas do Azure Cosmos DB](./media/cosmos-db-tutorial-review-slas/metrics-suite.png)
+   
+3. Examine as métricas nas outras guias. 
+

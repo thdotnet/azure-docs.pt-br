@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 04/16/2019
+ms.date: 05/10/2019
 ms.author: tulasim
-ms.openlocfilehash: b634467381dc97e4a733e862e86632a089bf5f67
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 278040cb487df6731df1ad3e18435f6e12ca9d50
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64727317"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65594033"
 ---
 # <a name="get-a-knowledge-answer-with-the-generateanswer-api-and-metadata"></a>Obter uma resposta de dados de conhecimento com a API GenerateAnswer e metadados
 
@@ -71,7 +71,7 @@ https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 |--|--|--|--|
 |Parâmetro de rota de URL|ID da base de dados de Conhecimento|string|o GUID da base de dados de conhecimento.|
 |Parâmetro de rota de URL|Host do ponto de extremidade QnAMaker|string|o nome do host do ponto de extremidade implantado na sua assinatura do Azure. Isso está disponível na página de configurações depois de publicar a base de Conhecimento. |
-|Cabeçalho|Tipo de conteúdo|string|o tipo de mídia do corpo enviado para a API. Valor padrão é: '|
+|Cabeçalho|Tipo de Conteúdo|string|o tipo de mídia do corpo enviado para a API. Valor padrão é: '|
 |Cabeçalho|Autorização|string|sua chave de ponto de extremidade (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|
 |Corpo do POST|Objeto JSON|JSON|A pergunta com configurações|
 
@@ -117,7 +117,7 @@ Uma resposta bem-sucedida retorna um status de 200 e uma resposta JSON.
 |Perguntas|as perguntas fornecidas pelo usuário.|
 |resposta|a resposta à pergunta.|
 |fonte|o nome da fonte da qual a resposta foi extraída ou salva na base de dados de conhecimento.|
-|metadata|os metadados associados à resposta.|
+|Metadados|os metadados associados à resposta.|
 |metadata.name|nome dos metadados. (cadeia de caracteres, Comprimento máx.: 100, obrigatório)|
 |metadata.value: valor dos metadados. (cadeia de caracteres, Comprimento máx.: 100, obrigatório)|
 
@@ -148,7 +148,7 @@ Uma resposta bem-sucedida retorna um status de 200 e uma resposta JSON.
 
 ## <a name="using-metadata-allows-you-to-filter-answers-by-custom-metadata-tags"></a>Usando metadados permite que você filtre as respostas por marcas de metadados personalizados
 
-Adicionar metadados permite que você filtre as respostas por essas marcas de metadados. Considere os dados de perguntas frequentes abaixo. Adicione metadados à base de dados de conhecimento, clicando no ícone de metadados.
+Adicionar metadados permite que você filtre as respostas por essas marcas de metadados. Adicionar a coluna de metadados do **opções de exibição** menu. Adicionar metadados a sua base de dados de conhecimento clicando nos metadados **+** ícone para adicionar um par de metadados. Esse par consiste em uma chave e um valor.
 
 ![adicionar metadados](../media/qnamaker-how-to-metadata-usage/add-metadata.png)
 

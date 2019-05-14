@@ -10,15 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 12/13/2018
 ms.author: wolfma
-ms.openlocfilehash: 938efe79d4f9f0b9003fcf83196df80d71d16e75
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: f3dd4d20c6455e97b566ed435b14437d614e25b4
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59009420"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466440"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-net-core"></a>Início Rápido: Reconhecimento de fala com o SDK de Fala para .NET Core
 
+Guias de início rápido também estão disponíveis para [tradução de fala](quickstart-translate-speech-dotnetcore-windows.md).
+
+Se desejar, escolha uma linguagem de programação e/ou ambiente diferente:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Neste artigo, você criará um aplicativo de console C# para o .NET Core no Windows ou no macOS usando o [SDK de Fala](speech-sdk.md) dos Serviços Cognitivos. Você transcreve a fala em texto em tempo real por meio do microfone do computador. O aplicativo é criado com o [Pacote NuGet do SDK de Fala](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017 (qualquer edição).

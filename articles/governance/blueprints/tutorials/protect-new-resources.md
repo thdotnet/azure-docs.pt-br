@@ -43,11 +43,11 @@ Primeiro, crie uma nova definição de blueprint.
 
 1. Insira as informações _Básicas_ do exemplo de blueprint:
 
-   - **Nome do blueprint**: Forneça um nome para a sua cópia do exemplo de blueprint. Para este tutorial, usaremos o nome _locked-storageaccount_.
+   - **Nome do blueprint**: forneça um nome para a sua cópia do exemplo de blueprint. Para este tutorial, usaremos o nome _locked-storageaccount_.
    - **Descrição do blueprint**: Descreve a definição do blueprint. Use "Para testar o bloqueio em recursos de blueprint implantados."
    - **Localização da definição**: Use o botão de reticências e selecione o grupo de gerenciamento ou a assinatura em que deseja salvar sua definição de blueprint.
 
-1. Selecione a guia _Artefatos_ na parte superior da página ou selecione **Avançar: Artefatos** na parte inferior da página.
+1. Selecione a guia _Artefatos_ na parte superior da página ou clique em **Avançar: Artefatos** na parte inferior da página.
 
 1. Adicionar o grupo de recursos na assinatura: Selecione a linha **+ Adicionar artefato...** sob a **Assinatura**.
    Selecione 'Grupo de recursos' _tipo de artefato_. Defina o _Nome de exibição do artefato_ como **RGtoLock**.
@@ -101,7 +101,7 @@ Primeiro, crie uma nova definição de blueprint.
 
 Esta etapa cria a definição do blueprint de exemplo na assinatura ou no grupo de gerenciamento selecionado.
 
-Quando a notificação **Êxito ao salvar a definição de blueprint** do portal for exibida, avance para a próxima etapa.
+Quando a notificação do portal **Êxito ao salvar a definição de blueprint** for exibida, avance para a próxima etapa.
 
 ## <a name="publish-the-blueprint-definition"></a>Publique a definição do blueprint
 
@@ -113,9 +113,9 @@ Agora, sua definição de blueprint foi criada em seu ambiente. Ela é criada no
 
 1. Selecione **Publicar blueprint** na parte superior da página. No novo painel à direita, informe a **Versão** como _1.0_. Essa propriedade será útil se você fizer uma modificação mais tarde. Forneça **Notas de alteração**, como "Primeira versão publicada para bloquear recursos implantados de blueprint." Em seguida, selecione **Publicar** na parte inferior da página.
 
-Esta etapa possibilita atribuir o blueprint a uma assinatura. Depois de publicado, as alterações ainda poderão ser feitas. As alterações adicionais exigem a publicação com uma novo valor de **Versão** a fim de rastrear as diferenças entre as versões da mesma definição de blueprint.
+Esta etapa possibilita atribuir o blueprint a uma assinatura. Alterações poderão ser feitas mesmo após a publicação. As alterações adicionais exigem a publicação com uma novo valor de **Versão** a fim de rastrear as diferenças entre as versões da mesma definição de blueprint.
 
-Quando a notificação **Êxito ao publicar a definição de blueprint** do portal for exibida, avance para a próxima etapa.
+Quando a notificação do portal **A publicação da definição do blueprint foi bem-sucedida** for exibida, avance para a próxima etapa.
 
 ## <a name="assign-the-blueprint-definition"></a>Atribuir a definição de blueprint
 
@@ -132,7 +132,7 @@ Quando a definição blueprint for **Publicada** com êxito, ele poderá ser atr
    - Noções básicas
 
      - **Assinaturas**: Selecione uma ou mais das assinaturas que estão no grupo de gerenciamento em que você salvou a definição de blueprint. Se você selecionar mais de uma assinatura, será criada uma atribuição para cada uma, usando os parâmetros inseridos.
-     - **Nome da atribuição**: O nome é pré-preenchido para você com base no nome da definição de blueprint. Queremos que essa atribuição represente o bloqueio de novo grupo de recursos, portanto, altere o nome da atribuição para _ssignment-locked-storageaccount-TestingBPLocks_.
+     - **Nome da atribuição**: Com base no nome da definição de blueprint, esse nome é preenchido automaticamente. Queremos que essa atribuição represente o bloqueio de novo grupo de recursos, portanto, altere o nome da atribuição para _ssignment-locked-storageaccount-TestingBPLocks_.
      - **Localização**: Selecione uma região para a identidade gerenciada a ser criada. O Blueprint do Azure usa essa identidade gerenciada para implantar todos os artefatos no blueprint atribuído. Para saber mais, veja [identidades gerenciadas para recursos do Azure](../../../active-directory/managed-identities-azure-resources/overview.md).
        Para este tutorial, selecione _Leste dos EUA 2_.
      - **Versão de definição de blueprint**: Escolha a versão **Publicada** _1.0_ da definição de blueprint de exemplo.
@@ -159,7 +159,7 @@ Quando a definição blueprint for **Publicada** com êxito, ele poderá ser atr
 
 Esta etapa implanta os recursos definidos e configura a **Atribuição de Bloqueio** selecionada. Os bloqueios de blueprint podem levar até 30 minutos para serem aplicados.
 
-Quando a notificação **Êxito ao atribuir a definição de blueprint** do portal for exibida, avance para a próxima etapa.
+Quando a notificação do portal **A atribuição da definição do blueprint foi bem-sucedida** for exibida, avance para a próxima etapa.
 
 ## <a name="inspect-resources-deployed-by-the-assignment"></a>Inspecionar recursos implantados pela atribuição
 
@@ -211,7 +211,7 @@ A última etapa é remover a atribuição da definição de blueprint. A remoç�
 
 A segurança do grupo de recursos mostra que a atribuição de blueprint não tem mais acesso de _Proprietário_.
 
-Quando a notificação **A remoção da atribuição do blueprint foi bem-sucedida** do portal for exibida, avance para a próxima etapa.
+Quando a notificação do portal **A remoção da atribuição do blueprint foi bem-sucedida** for exibida, avance para a próxima etapa.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 

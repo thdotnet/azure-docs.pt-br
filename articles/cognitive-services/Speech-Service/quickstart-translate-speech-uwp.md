@@ -1,5 +1,5 @@
 ---
-title: 'Início rápido: Traduzir fala, C# (UWP) – Serviços de Fala'
+title: 'Início Rápido: Traduzir fala, C# (UWP) – Serviços de Fala'
 titleSuffix: Azure Cognitive Services
 description: Neste início rápido, você criará um aplicativo simples do UWP (Plataforma Universal do Windows) para capturar a fala do usuário, traduzi-la para outro idioma e produzir o texto para a linha de comando. Este guia foi projetado para usuários do Windows.
 services: cognitive-services
@@ -10,14 +10,16 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 03/13/2019
 ms.author: erhopf
-ms.openlocfilehash: 6195d9c978ccb7d9ff16454cbff9f46dbe08dbb8
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 123a05012db1494799bf523bda2972a18c8f2ff4
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57871757"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65465617"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-c-uwp"></a>Início Rápido: Tradução de fala com o Speech SDK para C# (UWP)
+
+Guias de início rápido também estão disponíveis para a [conversão de fala em texto](quickstart-csharp-uwp.md) e o [assistente virtual que tem como prioridade o uso de voz](quickstart-virtual-assistant-csharp-uwp.md).
 
 Neste início rápido, você criará um aplicativo UPW (Plataforma Universal do Windows) simples que captura a fala do usuário do microfone do seu computador, converte a fala e transcreve o texto traduzido para a linha de comando em tempo real. Este aplicativo foi projetado para ser executado no Windows de 64 bits e é criado com o [pacote NuGet do Speech SDK](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017.
 
