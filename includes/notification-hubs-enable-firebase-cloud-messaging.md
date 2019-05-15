@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/05/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: a33812dedaed81a1ed0b6fca8285f70f44decced
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 5f919a04b47aa6fdef9500f3d7e6bef4ddaa239e
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65198798"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65515501"
 ---
 1. Faça logon no [console do Firebase](https://firebase.google.com/console/). Crie um novo projeto do Firebase se você ainda não tiver um.
 2. Depois de criar seu projeto, selecione **Adicionar Firebase ao seu aplicativo Android**. 
@@ -54,6 +54,6 @@ ms.locfileid: "65198798"
 8. No console do Firebase, selecione a engrenagem para seu projeto. Em seguida, selecione **Configurações do Projeto**.
 
     ![Selecione Configurações do Projeto](./media/notification-hubs-enable-firebase-cloud-messaging/notification-hubs-firebase-console-project-settings.png)
-4. Se você não tiver baixado o arquivo **google-services.json** para a pasta **app** do projeto do Android Studio, será possível fazer isso nesta página. 
+4. Se você não tiver baixado o arquivo **google-services.json** para a pasta **aplicativo** do projeto do Android Studio, será possível fazer isso nesta página. 
 5. Mude para a guia **Mensagens de Nuvem** na parte superior. 
 6. Copie e salve a **Chave do servidor** para uso posterior. Você usará esse valor para configurar o hub de notificação.

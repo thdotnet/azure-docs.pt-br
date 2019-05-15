@@ -1,6 +1,6 @@
 ---
 title: Exemplo da CLI do Azure – Copiar discos gerenciados para uma conta de armazenamento
-description: Exemplo da CLI do Azure – Exportar ou copiar discos gerenciados para uma conta de armazenamento.
+description: Exemplo da CLI do Azure – Exporte ou copie discos gerenciados para uma conta de armazenamento.
 services: virtual-machines-linux
 documentationcenter: storage
 author: ramankumarlive
@@ -13,19 +13,19 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/17/2018
+ms.date: 05/09/2019
 ms.author: ramankum
 ms.custom: mvc,seodec18
-ms.openlocfilehash: 6252049c2258c391aa4483dd51ec0d9ee766bed0
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: c5055860df007d0f009bd08c2b211ffeeaad711f
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55727127"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510868"
 ---
 # <a name="exportcopy-a-managed-disk-to-a-storage-account-using-the-azure-cli"></a>Exportar/copiar um disco gerenciado para uma conta de armazenamento usando a CLI do Azure
 
-Esse script exporta o VHD subjacente de um disco gerenciado para uma conta de armazenamento na mesma região ou em outra região. Ele primeiro gera o URI do SAS do disco gerenciado e, em seguida, usa-o para copiar o VHD para uma conta de armazenamento. Use esse script para copiar os discos gerenciados para expansão regional. 
+Esse script exporta o VHD subjacente de um disco gerenciado para uma conta de armazenamento na mesma região ou em outra região. Ele primeiro gera o URI do SAS do disco gerenciado e, em seguida, usa-o para copiar o VHD para uma conta de armazenamento. Use esse script para copiar discos gerenciados para outra região para expansão regional. Se você desejar publicar o arquivo VHD de um disco gerenciado no Azure Marketplace, será possível usar este script para copiar o arquivo VHD para a conta de armazenamento e gerar um URI de SAS do VHD copiado para publicá-lo no Marketplace.   
 
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]

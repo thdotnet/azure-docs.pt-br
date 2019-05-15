@@ -165,7 +165,7 @@
           href: grant-access-to-create-subscription.md
         - name: Autenticar entre locatários
           href: authenticate-multi-tenant.md
-    - name: Auditar implantações
+    - name: Mudanças de auditoria
       items:
         - name: Exibir logs de atividade
           href: resource-group-audit.md

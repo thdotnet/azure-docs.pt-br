@@ -280,6 +280,9 @@
     - name: Corrigir recursos sem conformidade
       displayName: 'managed identity, task, definition, roleDefinitionIds'
       href: ./how-to/remediate-resources.md
+    - name: Habilitar o Azure Monitor para VMs (versão prévia)
+      displayName: 'insights, log analytics, builtin'
+      href: ../../azure-monitor/insights/vminsights-enable-at-scale-policy.md?toc=/azure/governance/policy/toc.json
 - name: Referência
   items:
     - name: CLI do Azure
