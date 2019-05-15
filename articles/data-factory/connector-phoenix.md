@@ -44,11 +44,11 @@ As propriedades a seguir têm suporte para o serviço vinculado do Phoenix:
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **Phoenix** | Sim |
 | host | O endereço IP ou nome do host do servidor Phoenix. (ou seja, 192.168.222.160)  | Sim |
-| porta | A porta TCP usada pelo servidor Phoenix para ouvir conexões de cliente. O valor padrão é 8765. Se você conectar ao Microsoft Azure HDInsights, especifique a porta como 443. | Não  |
+| port | A porta TCP usada pelo servidor Phoenix para ouvir conexões de cliente. O valor padrão é 8765. Se você conectar ao Microsoft Azure HDInsights, especifique a porta como 443. | Não  |
 | httpPath | A URL parcial correspondente ao servidor do Phoenix. (ou seja, /gateway/sandbox/phoenix/version). Especifique `/hbasephoenix0` se estiver usando cluster HDInsights.  | Não  |
 | authenticationType | O mecanismo de autenticação usado para se conectar ao servidor do Phoenix. <br/>Valores permitidos são: **Anonymous**, **UsernameAndPassword**, **WindowsAzureHDInsightService** | Sim |
-| Nome de Usuário | O nome de usuário usado para se conectar ao servidor do Phoenix.  | Não  |
-| Senha | A senha correspondente ao nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não  |
+| username | O nome de usuário usado para se conectar ao servidor do Phoenix.  | Não  |
+| password | A senha correspondente ao nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não  |
 | enableSsl | Especifica se as conexões com o servidor são criptografadas usando SSL. O valor padrão é falso.  | Não  |
 | trustedCertPath | O caminho completo do arquivo .pem que contém certificados de autoridade de certificação confiáveis para verificar o servidor ao se conectar via SSL. Essa propriedade só pode ser definida ao usar o SSL em IR auto-hospedado. O valor padrão é o arquivo de cacerts.pem instalado com o IR.  | Não  |
 | useSystemTrustStore | Especifica se deve usar um certificado de autoridade de certificação do repositório de confiança de sistema ou de um arquivo PEM especificado. O valor padrão é falso.  | Não  |
