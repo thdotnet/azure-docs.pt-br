@@ -55,7 +55,7 @@ As seguintes propriedades são suportadas para o serviço vinculado REST:
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| Tipo | O **tipo** propriedade deve ser definida como **RestService**. | Sim |
+| type | O **tipo** propriedade deve ser definida como **RestService**. | Sim |
 | url | A URL base do serviço REST. | Sim |
 | enableServerCertificateValidation | Se for necessário validar o certificado SSL no lado do servidor ao se conectar ao ponto de extremidade. | Não <br /> (o padrão é **verdadeiro**) |
 | authenticationType | Tipo de autenticação usado para se conectar ao serviço REST. Os valores permitidos são **Anônimo**, **Básico**, **Windows** e **ManagedServiceIdentity**. Consulte respectivamente as seções correspondentes abaixo em mais propriedades e exemplos. | Sim |
@@ -68,7 +68,7 @@ Defina a **authenticationType** na propriedade **Básico**. Além das propriedad
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | userName | O nome de usuário a ser usado para acessar o ponto de extremidade REST. | Sim |
-| Senha | A senha do usuário (o **nome de usuário** valor). Marque esse campo como um tipo **SecureString** para armazená-lo com segurança no Data Factory. Você também pode [referenciar um segredo armazenado no Cofre de Chaves do Azure](store-credentials-in-key-vault.md). | Sim |
+| password | A senha do usuário (o **nome de usuário** valor). Marque esse campo como um tipo **SecureString** para armazená-lo com segurança no Data Factory. Você também pode [referenciar um segredo armazenado no Cofre de Chaves do Azure](store-credentials-in-key-vault.md). | Sim |
 
 **Exemplo**
 
@@ -169,7 +169,7 @@ Para copiar dados do REST, há suporte para as seguintes propriedades:
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| Tipo | A propriedade **tipo** do conjunto de dados deve ser definida como**RestResource**. | Sim |
+| type | A propriedade **tipo** do conjunto de dados deve ser definida como**RestResource**. | Sim |
 | relativeUrl | Uma URL relativa para o recurso que contém os dados. Quando essa propriedade não é especificada, somente o URL especificado na definição de serviço vinculada é usado. | Não  |
 | requestMethod | O método HTTP. Valores permitidos são **Obtenha** (padrão) e **Post**. | Não  |
 | additionalHeaders | Cabeçalhos de solicitação HTTP adicionais. | Não  |
@@ -232,7 +232,7 @@ As propriedades a seguir têm suporte na seção **source** da atividade de cóp
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| Tipo | O **tipo** de propriedade da fonte da atividade de cópia deve ser definida como: **RestSource**. | Sim |
+| type | O **tipo** de propriedade da fonte da atividade de cópia deve ser definida como: **RestSource**. | Sim |
 | httpRequestTimeout | O tempo limite (o valor **TimeSpan**) para a solicitação HTTP para obter uma resposta. Esse valor é o tempo limite para obter uma resposta, não o tempo limite para ler os dados da resposta. O valor padrão é **01:00:40**.  | Não  |
 | requestInterval | O tempo de espera antes de enviar a solicitação para a próxima página. O valor padrão é **00:00:01** |  Não  |
 
