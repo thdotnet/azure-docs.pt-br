@@ -46,12 +46,12 @@ As propriedades a seguir têm suporte para o serviço vinculado do Presto:
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **Presto** | Sim |
 | host | O endereço IP ou nome do host do servidor Presto. (ou seja, 192.168.222.160)  | Sim |
-| Versão do servidor | A versão do servidor Presto. (ou seja, 0.148-t)  | Sim |
-| catálogo | O contexto de catálogo para todas as solicitações no servidor.  | Sim |
-| porta | A porta TCP usada pelo servidor Presto para ouvir conexões de cliente. O valor padrão é 8080.  | Não  |
+| serverVersion | A versão do servidor Presto. (ou seja, 0.148-t)  | Sim |
+| catalog | O contexto de catálogo para todas as solicitações no servidor.  | Sim |
+| port | A porta TCP usada pelo servidor Presto para ouvir conexões de cliente. O valor padrão é 8080.  | Não  |
 | authenticationType | O mecanismo de autenticação usado para se conectar ao servidor do Presto. <br/>Valores permitidos são: **Anônimo**, **LDAP** | Sim |
-| Nome de Usuário | O nome de usuário usado para se conectar ao servidor do Presto.  | Não  |
-| Senha | A senha correspondente ao nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não  |
+| username | O nome de usuário usado para se conectar ao servidor do Presto.  | Não  |
+| password | A senha correspondente ao nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não  |
 | enableSsl | Especifica se as conexões com o servidor são criptografadas usando SSL. O valor padrão é falso.  | Não  |
 | trustedCertPath | O caminho completo do arquivo .pem que contém certificados de autoridade de certificação confiáveis para verificar o servidor ao se conectar via SSL. Essa propriedade só pode ser definida ao usar o SSL em IR auto-hospedado. O valor padrão é o arquivo de cacerts.pem instalado com o IR.  | Não  |
 | useSystemTrustStore | Especifica se deve usar um certificado de autoridade de certificação do repositório de confiança de sistema ou de um arquivo PEM especificado. O valor padrão é falso.  | Não  |
