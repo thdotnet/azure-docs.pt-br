@@ -1,6 +1,6 @@
 ---
-title: Banco de dados SQL sem servidor (versão prévia do Azure) | Microsoft Docs
-description: Este artigo descreve a nova camada de computação sem servidor e o compara com a camada de computação provisionada existente
+title: Banco de dados SQL do Azure sem servidor (versão prévia) | Microsoft Docs
+description: Este artigo descreve a nova camada de computação sem servidor e a compara com a camada existente de computação provisionada
 services: sql-database
 ms.service: sql-database
 ms.subservice: service
@@ -11,157 +11,156 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 manager: craigg
-ms.date: 05/07/2019
-ms.openlocfilehash: 7f850f309034d128efef89ea842db41d35b8491e
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
-ms.translationtype: MT
+ms.date: 05/11/2019
+ms.openlocfilehash: ba79e2b9552f0c27ac11501b2b125a126e40eb1d
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65235748"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65551632"
 ---
-# <a name="sql-database-serverless-preview"></a>Banco de dados SQL sem servidor (visualização)
+# <a name="sql-database-serverless-preview"></a>Banco de Dados SQL sem servidor (versão prévia)
 
-## <a name="what-is-the-serverless-compute-tier"></a>O que é a camada de computação sem servidor
+## <a name="what-is-the-serverless-compute-tier"></a>O que é a camada de computação sem servidor?
 
-Banco de dados SQL sem servidor (versão prévia) é uma camada de computação cobra do computação usada por um único banco de dados por segundo. Sem servidor é o preço-desempenho otimizado para bancos de dados individuais com padrões de uso oscilantes que podem arcar com algum atraso no aquecimento de computação após períodos de uso ocioso.
-Em contraste, as ofertas disponíveis publicamente na fatura atual do banco de dados SQL do computação provisionada por hora. Essa camada de computação provisionada é o preço-desempenho otimizado para bancos de dados individuais ou Elásticos pools com uso médio de mais alto que não podem manter qualquer atraso na computação aquecimento.
+O Banco de dados SQL sem servidor (versão prévia) é uma camada de computação que cobra pela quantidade de computação usada por um banco de dados individual por segundo. A camada sem servidor é otimizada para preço/desempenho para bancos de dados individuais com padrões de uso intermitentes e imprevisíveis que podem gerar atraso no aquecimento de computação após períodos ociosos.
 
-Um banco de dados na camada do computador sem servidor é parametrizado por ele pode usar o intervalo de computação e um atraso de autopause.
+Um banco de dados na camada de computação sem servidor é parametrizado pelo intervalo de computação que pode ser usado e pelo atraso de pausa automática.
 
 ![cobrança sem servidor](./media/sql-database-serverless/serverless-billing.png)
 
 ### <a name="performance"></a>Desempenho
 
-- `MinVcore` e `MaxVcore` são parâmetros configuráveis que definem o intervalo de capacidade de computação disponível para o banco de dados. Limites de memória e e/s são proporcionais ao intervalo vCore especificado.  
-- O atraso de autopause é um parâmetro configurável que define o período de tempo que o banco de dados deve ficar inativo antes que ele está em pausa automaticamente. O banco de dados é retomado automaticamente quando ocorre o próximo logon.
+- `MinVcore` e `MaxVcore` são parâmetros configuráveis que definem o intervalo de capacidade de computação disponível para o banco de dados. Os limites de memória e E/S são proporcionais ao intervalo de vCore especificado.  
+- O atraso de pausa automática é um parâmetro configurável que define o período que o banco de dados deve ficar inativo antes que ele entre automaticamente em pausa. O banco de dados é retomado automaticamente no próximo logon.
 
 ### <a name="pricing"></a>Preços
 
-- A cobrança total para um banco de dados sem servidor é o resumo da fatura de computação e cobrança do armazenamento.
-Cobrança para a computação é baseada na quantidade de memória usada por segundo e vCores usados.
-- A computação mínima cobrada baseia-se no mínimo de vCores e memória mínima.
-- Enquanto o banco de dados está em pausa, apenas o armazenamento é cobrado.
+- A fatura total de um banco de dados sem servidor é a soma da fatura de computação e da fatura de armazenamento.
+A cobrança de computação é baseada na quantidade de memória usada por segundo e vCores usados.
+- A computação mínima cobrada baseia-se no mínimo de vCores e de memória.
+- Enquanto o banco de dados estiver em pausa, apenas o armazenamento é cobrado.
 
 ## <a name="scenarios"></a>Cenários
 
-Sem servidor é o preço-desempenho otimizado para bancos de dados individuais com padrões de uso oscilantes que podem arcar com algum atraso no aquecimento de computação após períodos de uso ocioso. A camada de computação provisionada é otimizado para bancos de dados individual ou em pool com maior uso médio que não podem manter qualquer atraso na computação aquecimento preço-desempenho.
-
-A tabela a seguir compara a camada de computação sem servidor com a camada de computação provisionada:
-
-||Computação sem servidor|Computação provisionada|
-|---|---|---|
-|**Cenário de uso típico**|Bancos de dados com o uso de intermitente, imprevisível intercalados com períodos de inatividade|Bancos de dados ou pools Elásticos com o uso mais regular|
-|**Esforço de gerenciamento de desempenho**|inferior|Maior|
-|**Dimensionamento de computação**|Automático|Manual|
-|**Capacidade de resposta de computação**|Inferior após períodos de inatividade|Imediato|
-|**Granularidade de cobrança**|por segundo|Por hora|
-|
+A camada sem servidor é otimizada para preço/desempenho para bancos de dados individuais com padrões de uso intermitentes e imprevisíveis que podem gerar atraso no aquecimento de computação após períodos ociosos. Por outro lado, a camada de computação provisionada é otimizada para preço/desempenho para bancos de dados individuais ou em pool com maior uso médio que não podem apresentar atrasos no aquecimento de computação.
 
 ### <a name="scenarios-well-suited-for-serverless-compute"></a>Cenários adequados para a computação sem servidor
 
-- Bancos de dados individuais com padrões de uso oscilantes intercalados com períodos de inatividade podem aproveitar economias de preço com base em cobrança por segundo para a quantidade de computação usada.
-- Bancos de dados individuais com demanda de recursos, é difícil prever e clientes que preferem para delegar o dimensionamento de computação para o serviço.
-- Bancos de dados individuais na camada de computação provisionada com tanta frequência alteram níveis de desempenho.
+- Bancos de dados individuais com padrões de uso intermitentes e imprevisíveis intercalados com períodos de inatividade podem se beneficiar de economias de preço com base na cobrança por segundo para a quantidade de computação usada.
+- Bancos de dados individuais com demanda de recursos difícil de prever e clientes que preferem delegar o dimensionamento de computação para o serviço.
+- Bancos de dados individuais na camada de computação provisionada que alteram os níveis de desempenho com frequência.
 
 ### <a name="scenarios-well-suited-for-provisioned-compute"></a>Cenários adequados para computação provisionada
 
-- Bancos de dados individuais regular mais e mais substanciais utilização ao longo do tempo de computação.
-- Bancos de dados que não podem tolerar vantagens e desvantagens de desempenho resultantes da mais frequentam de corte de memória ou atraso em autoresuming de um estado em pausa.
-- Vários bancos de dados com padrões de uso oscilantes que podem ser consolidados em um único servidor e usa pools Elásticos para melhor otimização de preços.
+- Bancos de dados individuais com utilização de computação mais regular e mais substancial ao longo do tempo.
+- Bancos de dados que não podem tolerar compensações de desempenho resultantes do corte mais frequente de memória ou do atraso de retomada automática após uma pausa.
+- Vários bancos de dados com padrões de uso intermitentes e imprevisíveis que podem ser consolidados em um único servidor e usar pools elásticos para melhor otimização de preços.
 
+## <a name="comparison-with-provisioned-compute-tier"></a>Comparação com a camada de computação provisionada
+
+A tabela a seguir resume as diferenças entre a camada de computação sem servidor e a camada de computação provisionada:
+
+| | **Computação sem servidor** | **Computação provisionada** |
+|:---|:---|:---|
+|**Cenário de uso típico**| Bancos de dados com uso intermitente e imprevisível intercalado com períodos de inatividade. | Bancos de dados ou pools elásticos com uso mais regular.|
+| **Esforço de gerenciamento de desempenho** |Inferior|Superior|
+|**Dimensionamento de computação**|Automático|Manual|
+|**Capacidade de resposta de computação**|Inferior após períodos de inatividade|Imediata|
+|**Granularidade de cobrança**|Por segundo|Por hora|
 
 ## <a name="purchasing-model-and-service-tier"></a>Camada de serviço e modelo de compra
 
-Banco de dados SQL sem servidor é atualmente compatível apenas com a camada de uso geral em 5 de geração de hardware em que o modelo de compra de vCore.
+Atualmente, o Banco de dados SQL sem servidor é compatível apenas com a camada de uso geral da Geração 5 de hardware no modelo de compra de vCore.
 
 ## <a name="autoscaling"></a>Dimensionamento automático
 
-### <a name="scaling-responsiveness"></a>Dimensionamento de capacidade de resposta
+### <a name="scaling-responsiveness"></a>Capacidade de resposta de dimensionamento
 
-Em geral, os bancos de dados são executados em uma máquina com capacidade suficiente para satisfazer as demandas de recursos sem interrupção para qualquer quantidade de computação solicitada dentro de limites definidos pelo `maxVcores` valor. Ocasionalmente, automaticamente de balanceamento de carga ocorre se o computador não puder atender à demanda de recursos dentro de alguns minutos. O banco de dados permanece online durante o balanceamento de carga, exceto um breve período no final da operação quando as conexões são removidas.
+Em geral, os bancos de dados são executados em um computador com capacidade suficiente para satisfazer as demandas de recursos sem interrupção para qualquer quantidade de computação solicitada dentro dos limites definidos pelo valor `maxVcores`. Ocasionalmente, o balanceamento de carga ocorrerá automaticamente se o computador não puder atender à demanda de recursos dentro de alguns minutos. O banco de dados permanece online durante o balanceamento de carga, exceto por um breve período ao final da operação, quando as conexões são perdidas.
 
 ### <a name="memory-management"></a>Gerenciamento de memória
 
-Memória para bancos de dados sem servidor é recuperada mais frequentemente que em bancos de dados provisionados. Esse comportamento é importante controlar os custos em sem servidor. Ao contrário de computação provisionada, memória do cache de SQL é recuperada de um banco de dados sem servidor quando a utilização de CPU ou de cache é baixa.
+A memória em bancos de dados sem servidor é recuperada mais frequentemente que em bancos de dados provisionados. Esse comportamento é importante para controlar os custos na camada sem servidor. Ao contrário da computação provisionada, a memória de cache SQL é recuperada de um banco de dados sem servidor quando a utilização de CPU ou de cache for baixa.
 
-## <a name="autopause-and-autoresume"></a>Autopause e autoresume
+## <a name="autopause-and-autoresume"></a>Pausa e retomada automáticas
 
-### <a name="autopause"></a>Autopause
+### <a name="autopause"></a>Pausa automática
 
-Autopause será disparada se todas as seguintes condições forem verdadeiras para a duração do atraso autopause:
+A pausa automática é ativada se todas as seguintes condições forem verdadeiras pela duração do atraso:
 
-- Número sessões = 0
-- CPU = 0 (para a carga de trabalho de usuário em execução no pool de usuário)
+- Número de sessões = 0
+- CPU = 0 (para a carga de trabalho do usuário em execução no pool de usuários)
 
-Uma opção é fornecida para desabilitar autopause se desejado.
+Se desejado, é possível desabilitar a pausa automática.
 
-### <a name="autoresume"></a>Autoresume
+### <a name="autoresume"></a>Retomada automática
 
-Autoresume será disparada se qualquer uma das seguintes condições forem verdadeiras a qualquer momento:
+A retomada automática será ativada se qualquer uma das seguintes condições for verdadeira a qualquer momento:
 
-|Recurso|Gatilho de Autoresume|
+|Recurso|Gatilho de retomada automática|
 |---|---|
 |Autenticação e autorização|Logon|
-|Detecção de ameaças|Habilitar/desabilitar as configurações de detecção de ameaças no nível do banco de dados ou servidor<br>Modificando as configurações de detecção de ameaças no nível do banco de dados ou servidor|
-|Descoberta e classificação de dados|Adicionando, modificando, excluindo ou exibindo os rótulos de confidencialidade|
-|Auditoria|Exibindo registros de auditoria.<br>Atualizando ou exibindo a política de auditoria|
-|Mascaramento de dados|Adicionar, modificar, excluir ou exibir regras de mascaramento de dados|
-|Transparent Data Encryption|Estado de exibição ou status de criptografia de dados transparente|
-|Armazenamento de dados de consulta (desempenho)|Modificar ou exibir configurações do repositório de consulta; o ajuste automático|
-|Autotuning|Aplicativo e a verificação de recomendações de autotuning, como a indexação automática|
-|Cópia de banco de dados|Criar banco de dados como cópia<br>Exportar para um arquivo BACPAC|
-|Sincronização de dados SQL|Sincronização entre bancos de dados hub e membro que são executados em uma agenda configurável ou são executadas manualmente|
-|Modificar alguns metadados do banco de dados|Adicionando novas marcas de banco de dados<br>Alterar vCores máximo, mínimo de vCores, atraso autopause|
-|SQL Server Management Studio (SSMS)|Usando o SSMS versão 18 e abrindo uma nova janela de consulta para qualquer banco de dados no servidor continuará a qualquer banco de dados em pausa automática no mesmo servidor. Esse comportamento não ocorre se usando o SSMS versão 17.9.1 com o IntelliSense desativado-off.|
+|Detecção de ameaças|Habilitar/desabilitar as configurações de detecção de ameaças no nível do banco de dados ou do servidor<br>Alterar as configurações de detecção de ameaças no nível do banco de dados ou do servidor|
+|Descoberta e classificação de dados|Adicionar, modificar, excluir ou exibir os rótulos de confidencialidade|
+|Auditoria|Exibir os registros de auditoria.<br>Atualizar ou exibir a política de auditoria|
+|Mascaramento de dados|Adicionar, modificar, excluir ou exibir as regras de mascaramento de dados|
+|Transparent Data Encryption|Exibir o estado ou status de Transparent Data Encryption|
+|Consultar o armazenamento de dados (desempenho)|Modificar ou exibir configurações do repositório de consultas; ajuste automático|
+|Ajuste automático|Aplicação e verificação de recomendações de ajuste automático, como indexação automática|
+|Cópia de banco de dados|Criar banco de dados como uma cópia<br>Exportar para um arquivo BACPAC|
+|Sincronização de dados SQL|Sincronização entre bancos de dados membro e hub que são executados em um cronograma configurável ou são executados manualmente|
+|Modificar alguns metadados do banco de dados|Adicionar novas marcas de banco de dados<br>Alterar o máximo de vCores, mínimo de vCores, atraso de pausa automática|
+|SQL Server Management Studio (SSMS)|Usar o SSMS versão 18 e abrir uma nova janela de consulta para qualquer banco de dados no servidor retomará qualquer banco de dados em pausa automática no mesmo servidor. Esse comportamento não ocorre ao usar o SSMS versão 17.9.1 com o IntelliSense desativado.|
 
 ### <a name="connectivity"></a>Conectividade
 
-Se um banco de dados sem servidor está em pausa, o primeiro logon retomar o banco de dados e retornar um erro informando que o banco de dados está disponível. Depois que o banco de dados é retomado, o logon deve ser repetido para estabelecer a conectividade. Os clientes do banco de dados com lógica de repetição de conexão não deve ser modificado.
+Se um banco de dados sem servidor estiver em pausa, o primeiro logon retomará o banco de dados e gerará um erro informando que o banco de dados está indisponível com o código de erro 40613. Depois que o banco de dados for retomado, o logon deve ser repetido para estabelecer a conectividade. Os clientes do banco de dados com lógica de repetição de conexão não devem ser modificados.
 
 ### <a name="latency"></a>Latency
 
-A latência para autopause ou autoresume um banco de dados sem servidor é geralmente na ordem de 1 minuto.
+A latência de pausa ou retomada automáticas de um banco de dados sem servidor geralmente é de 1 minuto.
 
-### <a name="feature-support"></a>Suporte ao recurso
+### <a name="feature-support"></a>Suporte a recursos
 
-Não há suporte para os seguintes recursos autopausing e autoresuming. Ou seja, se qualquer um dos seguintes recursos são usados, o banco de dados permanece online, independentemente de duração da inatividade do banco de dados:
+Os recursos a seguir não são compatíveis com pausa e retomada automáticas. Ou seja, se qualquer um dos seguintes recursos estiverem sendo usados, o banco de dados permanecerá online, independentemente da duração da inatividade:
 
-- Replicação geográfica (Active Directory automático e replicação geográfica grupos de failover)
-- Retenção de longo prazo (LTR)
+- Replicação geográfica (replicação geográfica ativa e grupos de failover automático)
+- LTR (retenção de backup de longo prazo)
 - O banco de dados de sincronização usado na sincronização de dados SQL.
 
 
-## <a name="on-boarding-into-the-serverless-compute-tier"></a>Integração com o tipo de computação sem servidor
+## <a name="on-boarding-into-the-serverless-compute-tier"></a>Integração à camada de computação sem servidor
 
-Criando um novo banco de dados ou mover que um banco de dados existente para uma camada de computação sem servidor segue o mesmo padrão como criar um novo banco de dados em provisionado de camada de computação e envolve duas etapas a seguir:
+Criar um novo banco de dados ou mover um banco de dados existente para uma camada de computação sem servidor segue o mesmo padrão que criar um novo banco de dados em uma camada de computação provisionada e envolve as duas etapas a seguir:
 
-1. Especifique o nome do objetivo de serviço. A tabela a seguir mostra a camada de serviço disponível e os tamanhos de computação atualmente disponível na visualização pública.
+1. Especificar o nome do objetivo de serviço. O objetivo de serviço prescreve a camada de serviço, a geração de hardware e o máximo de vCores. A tabela a seguir mostra as opções de objetivo de serviço:
 
-   |Camada de serviço|Tamanho da computação|
-   |---|---|
-   |Uso geral|GP_S_Gen5_1|
-   |Uso geral|GP_S_Gen5_2|
-   |Uso geral|GP_S_Gen5_4|
+   |Nome do objetivo de serviço|Camada de serviço|Geração de hardware|Máx. vCores|
+   |---|---|---|---|
+   |GP_S_Gen5_1|Uso geral|Gen5|1|
+   |GP_S_Gen5_2|Uso geral|Gen5|2|
+   |GP_S_Gen5_4|Uso geral|Gen5|4|
 
-2. Opcionalmente, especifique o atraso mínimo de vCores e autopause para alterar seus valores padrão. A tabela a seguir mostra os valores disponíveis para esses parâmetros.
+2. Opcionalmente, especifique o atraso de pausa automática e mínimo de vCores para alterar seus valores padrão. A tabela a seguir mostra os valores disponíveis para esses parâmetros.
 
    |Parâmetro|Opções de valor|Valor padrão|
    |---|---|---|---|
-   |Mínimo de vCores|Qualquer uma das {0,5, 1, 2, 4} não exceda o máximo vCores|0,5 vCores|
-   |Autopause atraso|Mín.: 360 minutos (6 horas)<br>Máx.: 10.080 minutos (7 dias)<br>Incrementos: 60 minutos<br>Desabilitar autopause: -1|360 minutos|
+   |Mínimo de vCores|{0,5, 1, 2, 4} sem exceder o máximo de vCores|vCores de 0,5|
+   |Atraso de pausa automática|Mín.: 360 minutos (6 horas)<br>Máx.: 10.080 minutos (7 dias)<br>Incrementos: 60 minutos<br>Desabilitar pausa automática: -1|360 minutos|
 
 > [!NOTE]
-> Usando o T-SQL para mover um banco de dados existente para sem servidor ou alterar seu tamanho de computação não é suportada, mas pode ser feito por meio do portal do Azure ou PowerShell.
+> Não há suporte para usar o T-SQL para mover um banco de dados existente para uma camada sem servidor ou alterar seu tamanho da computação, mas isso pode ser feito por meio do portal do Azure ou do PowerShell.
 
-### <a name="create-new-database-using-the-azure-portal"></a>Criar novo banco de dados usando o portal do Azure
+### <a name="create-new-database-using-the-azure-portal"></a>Criar um novo banco de dados usando o portal do Azure
 
-Confira [Início Rápido: Criar um banco de dados no banco de dados do SQL Azure usando o portal do Azure](sql-database-single-database-get-started.md).
+Confira [Início Rápido: Criar um banco de dados individual no Banco de Dados SQL do Azure usando o portal do Azure](sql-database-single-database-get-started.md).
 
-### <a name="create-new-database-using-powershell"></a>Criar novo banco de dados usando o PowerShell
+### <a name="create-new-database-using-powershell"></a>Criar um novo banco de dados usando o PowerShell
 
-O exemplo a seguir cria um novo banco de dados na camada de computação sem servidor definida por objetivo de serviço chamado GP_S_Gen5_4 com valores padrão para o atraso mínimo de vCores e autopause.
+O exemplo a seguir cria um novo banco de dados na camada de computação sem servidor definida pelo objetivo de serviço chamado GP_S_Gen5_4 com valores padrão para o mínimo de vCores e atraso de pausa automática.
 
-Sem servidor requer uma versão mais recente do PowerShell que está atualmente na galeria, portanto, execute `Update-Module Az.Sql` para obter os cmdlets mais recentes sem servidor habilitado.
+A camada sem servidor requer uma versão mais recente do PowerShell, portanto, execute `Update-Module Az.Sql` para obter os cmdlets sem servidor habilitado mais recentes.
 
 ```powershell
 New-AzSqlDatabase `
@@ -178,7 +177,7 @@ New-AzSqlDatabase `
 
 ### <a name="move-existing-database-into-the-serverless-compute-tier"></a>Mover o banco de dados existente para a camada de computação sem servidor
 
-O exemplo a seguir move um único banco de dados da camada de computação provisionada para a camada de computação sem servidor. Este exemplo usa os valores padrão para o mínimo de vCores, vCores max e autopause atraso.
+O exemplo a seguir move um banco de dados individual da camada de computação provisionada para a camada de computação sem servidor. Este exemplo especifica explicitamente o mínimo de vCores, o máximo de vCores e o atraso de pausa automática.
 
 ```powershell
 Set-AzSqlDatabase
@@ -193,60 +192,60 @@ Set-AzSqlDatabase
   -AutoPauseDelay 1440
 ```
 
-### <a name="move-a-database-out-of-the-serverless-compute-tier"></a>Mover um banco de dados fora da camada de computação sem servidor
+### <a name="move-a-database-out-of-the-serverless-compute-tier"></a>Mover um banco de dados para fora da camada de computação sem servidor
 
-Um banco de dados sem servidor pode ser movido para uma camada de computação provisionada da mesma forma como a movimentação de um banco de dados de computação provisionada em uma camada de computação sem servidor.
+Um banco de dados sem servidor pode ser movido para uma camada de computação provisionada da mesma forma utilizada para mover um banco de dados de computação provisionada para uma camada de computação sem servidor.
 
 ## <a name="modify-serverless-configuration-parameters"></a>Modificar parâmetros de configuração sem servidor
 
 ### <a name="maximum-vcores"></a>Máximo de vCores
 
-Modificar os vCores máximo é executada usando o [AzSqlDatabase conjunto](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) comando no PowerShell usando o `MaxVcore` argumento.
+A modificação do máximo de vCores é executada usando o comando [Set-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) no PowerShell usando o argumento `MaxVcore`.
 
 ### <a name="minimum-vcores"></a>Mínimo de vCores
 
-Modificar os vCores máximo é executada usando o [AzSqlDatabase conjunto](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) comando no PowerShell usando o `MinVcore` argumento.
+A modificação do máximo de vCores é executada usando o comando [Set-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) no PowerShell usando o argumento `MinVcore`.
 
-### <a name="autopause-delay"></a>Autopause atraso
+### <a name="autopause-delay"></a>Atraso de pausa automática
 
-Modificar os vCores máximo é executada usando o [AzSqlDatabase conjunto](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) comando no PowerShell usando o `AutoPauseDelay` argumento.
+A modificação do máximo de vCores é executada usando o comando [Set-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) no PowerShell usando o argumento `AutoPauseDelay`.
 
-## <a name="monitor-serverless-database"></a>Banco de dados sem servidor Monitor
+## <a name="monitor-serverless-database"></a>Monitorar o banco de dados sem servidor
 
-### <a name="resources-used-and-billed"></a>Recursos usados e cobrado
+### <a name="resources-used-and-billed"></a>Recursos usados e cobrados
 
 Os recursos de um banco de dados sem servidor são encapsulados pelas entidades a seguir:
 
-#### <a name="app-package"></a>Pacote do aplicativo
+#### <a name="app-package"></a>Pacote do Aplicativo
 
-O pacote do aplicativo é o limite de gerenciamento de recursos a maioria dos externo para um banco de dados, independentemente de é o banco de dados em uma camada de computação sem servidor ou provisionado. O pacote de aplicativo contém a instância do SQL e serviços externos desse escopo junto todos os recursos de usuário e do sistema usados por um banco de dados no banco de dados SQL. R e pesquisa de texto completo são exemplos de serviços externos. Em geral, a instância do SQL domina a utilização geral do recurso entre o pacote do aplicativo.
+O pacote do aplicativo é o limite externo de gerenciamento de recursos de um banco de dados, independentemente de se o banco de dados está em uma camada de computação sem servidor ou provisionada. O pacote do aplicativo contém a instância do SQL e os serviços externos que, juntos, englobam todos os recursos de usuário e do sistema usados por um banco de dados no Banco de Dados SQL. R e pesquisa de texto completo são exemplos de serviços externos. Em geral, a instância do SQL domina a utilização geral de recursos no pacote do aplicativo.
 
 #### <a name="user-resource-pool"></a>Pool de recursos do usuário
 
-O pool de recursos do usuário é interna a maioria dos limites de gerenciamento de recursos para um banco de dados, independentemente de é o banco de dados em uma camada de computação sem servidor ou provisionado. O pool de recursos do usuário escopos da CPU e e/s para carga de trabalho do usuário gerada por consultas DDL (por exemplo, CREATE, ALTER, etc.) e DML (por exemplo, SELECT, INSERT, UPDATE, DELETE, etc.). Essas consultas geralmente representam a proporção mais substancial de utilização de dentro do pacote do aplicativo.
+O pool de recursos do usuário é o limite interno de gerenciamento de recursos de um banco de dados, independentemente de se o banco de dados está em uma camada de computação sem servidor ou provisionada. O pool de recursos do usuário engloba CPU e E/S para cargas de trabalho do usuário geradas por consultas DDL (por exemplo, CREATE, ALTER etc.) e DML (por exemplo, SELECT, INSERT, UPDATE, DELETE etc.). Essas consultas geralmente representam a proporção mais substancial de utilização dentro do pacote do aplicativo.
 
 ### <a name="metrics"></a>Métricas
 
-|Entidade|Métrica|Descrição|Unidades|
+|Entidade|Métrica|DESCRIÇÃO|Unidades|
 |---|---|---|---|
-|Pacote do aplicativo|app_cpu_percent|Porcentagem de vCores usados pelo aplicativo em relação ao vCores máximo permitido para o aplicativo.|Porcentagem|
-|Pacote do aplicativo|app_cpu_billed|A quantidade de computação cobrada para o aplicativo durante o período do relatório. O valor pago durante esse período é o produto dessa métrica e o preço unitário de vCore.<br>Os valores dessa métrica são determinados pela agregação ao longo do tempo, o número máximo de CPU usado e a memória usada por segundo.<br>Se o valor usado for menor que a quantidade mínima provisionada conforme definido pelo mínimo de vCores e memória mínima, em seguida, a quantidade mínima provisionada é cobrada.  Para comparar a CPU com a memória para fins de cobrança, memória é normalizada em unidades de vCores, pelo redimensionamento a quantidade de memória em GB por 3 GB por vCore.|segundos de vCore|
-|Pacote do aplicativo|app_memory_percent|Porcentagem de memória usada pelo aplicativo em relação à memória máxima permitida para o aplicativo.|Porcentagem|
-|Pool de usuário|cpu_percent|Porcentagem de vCores usados pela carga de trabalho do usuário em relação ao vCores máximo permitido para a carga de trabalho do usuário.|Porcentagem|
-|Pool de usuário|data_IO_percent|Porcentagem de dados usado pela carga de trabalho do usuário em relação a IOPS de dados máximo de IOPS permitidos para carga de trabalho do usuário.|Porcentagem|
-|Pool de usuário|log_IO_percent|Porcentagem de log MB/s usada pela carga de trabalho do usuário em relação ao MB/s de log máximo permitido para carga de trabalho do usuário.|Porcentagem|
-|Pool de usuário|workers_percent|Porcentagem de trabalhadores usados por carga de trabalho do usuário em relação ao máximo de trabalhos permitidos para a carga de trabalho do usuário.|Porcentagem|
-|Pool de usuário|sessions_percent|Porcentagem de sessões usadas pela carga de trabalho do usuário em relação ao máximo permitido para a carga de trabalho do usuário de sessões.|Porcentagem|
+|Pacote do Aplicativo|app_cpu_percent|Percentual de vCores usados pelo aplicativo em relação ao máximo de vCores permitido para o aplicativo.|Percentual|
+|Pacote do Aplicativo|app_cpu_billed|A quantidade de computação cobrada para o aplicativo durante o período do relatório. O valor pago durante esse período é o produto dessa métrica e o preço unitário de vCore. <br><br>Os valores dessa métrica são determinados pela agregação ao longo do tempo do máximo de CPU usado e a memória usada por segundo. Se o valor usado for menor que a quantidade mínima provisionada conforme definido pelo mínimo de vCores e de memória, a quantidade mínima provisionada será cobrada. Para comparar CPU com memória para fins de cobrança, a memória é normalizada em unidades de vCores ao redimensionar a quantidade de memória em GB por 3 GB por vCore.|Segundos de vCore|
+|Pacote do Aplicativo|app_memory_percent|Percentual de memória usada pelo aplicativo em relação ao máximo de memória permitida para o aplicativo.|Percentual|
+|Pool de usuários|cpu_percent|Percentual de vCores usados pela carga de trabalho do usuário em relação ao máximo de vCores permitido para a carga de trabalho do usuário.|Percentual|
+|Pool de usuários|data_IO_percent|Percentual de IOPS de dados usados pela carga de trabalho do usuário em relação ao máximo de IOPS de dados permitido para a carga de trabalho do usuário.|Percentual|
+|Pool de usuários|log_IO_percent|Percentual de MB/s de log usados pela carga de trabalho do usuário em relação ao máximo de MB/s de log permitido para a carga de trabalho do usuário.|Percentual|
+|Pool de usuários|workers_percent|Percentual de funções de trabalho usadas pela carga de trabalho do usuário em relação ao máximo de funções de trabalho permitidas para a carga de trabalho do usuário.|Percentual|
+|Pool de usuários|sessions_percent|Percentual de sessões usadas pela carga de trabalho do usuário em relação ao máximo de sessões permitidas para a carga de trabalho do usuário.|Percentual|
 ____
 
 > [!NOTE]
-> Métricas no portal do Azure estão disponíveis no painel de banco de dados para um banco de dados sob **monitoramento**.
+> As métricas no portal do Azure estão disponíveis no painel de banco de dados para um banco de dados individual em **Monitoramento**.
 
-### <a name="pause-and-resume-status"></a>Status de pausar e retomar
+### <a name="pause-and-resume-status"></a>Pausar e retomar status
 
 No portal do Azure, o status do banco de dados é exibido no painel de visão geral do servidor que lista os bancos de dados que ele contém. O status do banco de dados também é exibido no painel de visão geral do banco de dados.
 
-Usando o seguinte comando do PowerShell para consultar a pausa e retomar o status de um banco de dados:
+Uso do seguinte comando do PowerShell para consultar o status de pausa ou retomar de um banco de dados:
 
 ```powershell
 Get-AzSqlDatabase `
@@ -258,43 +257,45 @@ Get-AzSqlDatabase `
 
 ## <a name="resource-limits"></a>Limites de recursos
 
-Para limites de recursos, consulte [camada de computação sem servidor](sql-database-vCore-resource-limits-single-databases.md#serverless-compute-tier)
+Para limites de recursos, consulte [Camada de computação sem servidor](sql-database-vCore-resource-limits-single-databases.md#serverless-compute-tier)
 
 ## <a name="billing"></a>Cobrança
 
-A quantidade de computação cobrada por segundo é o número máximo de uso de CPU e memória usada por segundo. Se usado a quantidade de CPU e memória usada é menor que a quantidade mínima provisionada para cada um, a quantidade provisionada é cobrada. Para comparar a CPU com a memória para fins de cobrança, memória é normalizada em unidades de vCores, pelo redimensionamento a quantidade de memória em GB por 3 GB por vCore.
+A quantidade de computação cobrada é a quantidade máxima de uso de CPU e memória usada por segundo. Se a quantidade de CPU e memória usada for menor que a quantidade mínima provisionada para cada uma delas, a quantidade provisionada será cobrada. Para comparar CPU com memória para fins de cobrança, a memória é normalizada em unidades de vCores ao redimensionar a quantidade de memória em GB por 3 GB por vCore.
 
 - **Recurso cobrado**: CPU e memória
-- **Valor cobrado ($)**: preço unitário de vCore * max (mínimo de vCores, vCores usado, a memória mínima do GB * memória de 1/3 GB usado * 1/3) 
-- **Frequência de cobrança**: por segundo
+- **Valor cobrado ($)**: preço unitário de vCore * máx. (mínimo de vCores, vCores usados, GB de memória mín. * 1/3, GB de memória usados * 1/3) 
+- **Frequência de cobrança**: Por segundo
+
+O preço unitário de vCore no custo por vCore por segundo. Consulte a [página de preços do Banco de Dados SQL do Azure](https://azure.microsoft.com/pricing/details/sql-database/single/) para obter os preços unitários específicos em uma determinada região.
 
 A quantidade de computação cobrada é exposta pela métrica a seguir:
 
-- **Métrica**: app_cpu_billed (vCore segundos)
-- **Definição**: max (mínimo de vCores, vCores usado, a memória mínima do GB * memória de 1/3 GB usado * 1/3) *
-- **Frequência do relatório**: Por minuto
+- **Métrica**: app_cpu_billed (segundos de vCore)
+- **Definição**: máx. (mínimo de vCores, vCores usados, GB de memória mín. * 1/3, GB de memória usados * 1/3)
+- **Frequência de relatórios**: Por minuto
 
-> [!NOTE]
-> \* Essa quantidade é calculada a cada segundo e agregada em 1 minuto.
+Essa quantidade é calculada a cada segundo e agregada a cada 1 minuto.
 
-**Exemplo**: Considere um banco de dados usando o GP_S_Gen5_4 durante um período de uma hora com o uso a seguir:
+**Exemplo**: Considere um banco de dados usando GP_S_Gen5_4 durante um período de uma hora com o uso a seguir:
 
-|Tempo (horas: minutos)|app_cpu_billed (vCore segundos)|
+|Tempo (horas: minutos)|app_cpu_billed (segundos de vCore)|
 |---|---|
 |0:01|63|
 |0:02|123|
 |0:03|95|
 |0:04|54|
 |0:05|41|
-|0:06 - 1:00|1255|
+|0:06 – 1:00|1255|
 ||Total: 1631|
 
-Suponha que o preço de unidade de computação é $0.2609/vCore/hour. Em seguida, a computação cobrada para esse período de uma hora é determinada usando a seguinte fórmula: **$0.2609/vCore/hour * 1631 vCore segundos * 1 hora/3.600 segundos = US $0.1232**
+Suponha que o preço de unidade de computação seja US$ 0,000073/vCore/segundo. Então, a computação cobrada para esse período de uma hora é determinada usando a seguinte fórmula: **$ 0,000073/vCore/segundo * 1631 segundos de vCore = $ 0,1191**
 
 ## <a name="available-regions"></a>Regiões disponíveis
 
-A camada de computação sem servidor está disponível em todas as regiões, exceto regiões a seguir: Austrália Central, China Oriental, Norte da China, Sul da França, Alemanha Central, Alemanha nordeste, Índia Ocidental, Sul da Coreia, Oeste da África do Sul, Norte do Reino Unido, Sul do Reino Unido, oeste do Reino Unido e Oeste dos EUA
+A camada de computação sem servidor está disponível em todas as regiões, exceto nas regiões a seguir: Austrália Central, Leste da China, Norte da China, Sul da França, Alemanha Central, Nordeste da Alemanha, Índia Ocidental, Sul da Coreia, Oeste da África do Sul, Norte do Reino Unido, Sul do Reino Unido, Oeste do Reino Unido e Centro-oeste dos EUA
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para limites de recursos, consulte [limites de recursos de camada de computação sem servidor](sql-database-vCore-resource-limits-single-databases.md#serverless-compute-tier).
+- Para começar, confira [Início rápido: Criar um banco de dados individual no Banco de Dados SQL do Azure usando o portal do Azure](sql-database-single-database-get-started.md).
+- Para limites de recursos, consulte [Limites de recursos de camada de computação sem servidor](sql-database-vCore-resource-limits-single-databases.md#serverless-compute-tier).

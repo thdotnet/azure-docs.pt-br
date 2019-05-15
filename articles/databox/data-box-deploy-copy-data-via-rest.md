@@ -1,19 +1,19 @@
 ---
-title: Copiar dados para o Armazenamento de Blobs do Azure Data Box por meio de APIs REST | Microsoft Docs
+title: Tutorial para copiar dados para o armazenamento de blobs do Azure Data Box por meio de APIs REST | Microsoft Docs
 description: Saiba como copiar dados para o Armazenamento de Blobs do Azure Data Box por meio de APIs REST
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 04/19/2019
+ms.date: 05/09/2019
 ms.author: alkohli
-ms.openlocfilehash: 2a4c4c7431752ade60161af84b4cc15f010af656
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: b3d53b7d5fceb303259823198731b5198cfce82c
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995737"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65508245"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Tutorial: Copiar dados para o Armazenamento de Blobs do Azure Data Box por meio de APIs REST  
 
@@ -46,7 +46,7 @@ Conecte-se ao Armazenamento de Blobs do Data Box via *HTTP* ou *HTTPS*.
 - *HTTPS* é a maneira segura e recomendada de se conectar ao Armazenamento de Blobs do Data Box.
 - *HTTP* é usado para a conexão em redes confiáveis.
 
-As etapas para se conectar ao Armazenamento de Blobs do Data Box por *HTTP* ou *HTTPS* são diferentes.
+As etapas para conectar são diferentes quando você se conecta ao Armazenamento de blobs do Data Box por *http* ou por *https*.
 
 ## <a name="connect-via-http"></a>Conectar-se via HTTP
 
