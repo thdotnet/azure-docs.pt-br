@@ -62,10 +62,10 @@ As propriedades a seguir têm suporte para o serviço vinculado do Salesforce.
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| Tipo |A propriedade type deve ser definida para **Salesforce**. |Sim |
+| type |A propriedade type deve ser definida para **Salesforce**. |Sim |
 | environmentUrl | Especifique a URL da instância do Salesforce. <br> – O padrão é `"https://login.salesforce.com"`. <br> – Para copiar dados da área restrita, especifique `"https://test.salesforce.com"`. <br> – Para copiar dados do domínio personalizado, especifique, por exemplo, `"https://[domain].my.salesforce.com"`. |Não  |
-| Nome de Usuário |Especifique um nome de usuário para a conta de usuário. |Sim |
-| Senha |Especifique um senha para a conta de usuário.<br/><br/>Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). |Sim |
+| username |Especifique um nome de usuário para a conta de usuário. |Sim |
+| password |Especifique um senha para a conta de usuário.<br/><br/>Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). |Sim |
 | securityToken |Especifique um token de segurança para a conta de usuário. Para obter instruções sobre como redefinir e obter o token de segurança, consulte [Obter token de segurança](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm). Para saber mais sobre os tokens de segurança em geral, veja [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Segurança e a API).<br/><br/>Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). |Sim |
 | connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Se não for especificado, ele usa o Integration Runtime padrão do Azure. | Não para a fonte, Sim para o coletor se o serviço vinculado à fonte não possuir integration runtime |
 
@@ -140,7 +140,7 @@ Para copiar dados do e para o Salesforce, defina a propriedade tipo do conjunto 
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| Tipo | A propriedade tipo deve ser definida para **SalesforceObject**.  | Sim |
+| type | A propriedade tipo deve ser definida para **SalesforceObject**.  | Sim |
 | objectApiName | O nome do objeto de Salesforce para recuperar dados. | Não para fonte, Sim para o coletor |
 
 > [!IMPORTANT]
@@ -171,7 +171,7 @@ Para copiar dados do e para o Salesforce, defina a propriedade tipo do conjunto 
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| tipo | A propriedade type do conjunto de dados deve ser definida como **RelationalTable**. | Sim |
+| type | A propriedade type do conjunto de dados deve ser definida como **RelationalTable**. | Sim |
 | tableName | Nome da tabela no Salesforce. | Não (se "query" na fonte da atividade for especificada) |
 
 ## <a name="copy-activity-properties"></a>Propriedades da atividade de cópia
@@ -184,7 +184,7 @@ Para copiar dados do Salesforce, defina o tipo de origem na atividade de cópia 
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| tipo | A propriedade tipo da fonte da atividade de cópia deve ser definida como: **SalesforceSource**. | Sim |
+| type | A propriedade tipo da fonte da atividade de cópia deve ser definida como: **SalesforceSource**. | Sim |
 | query |Utiliza a consulta personalizada para ler os dados. É possível usar a consulta [SOQL (Salesforce Object Query Language)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) ou a consulta SQL-92. Veja mais dicas na seção [dicas de consulta](#query-tips). Se a consulta não for especificada, todos os dados do objeto Salesforce especificado em "objectApiName" no conjunto de dados serão recuperados. | Não (se "objectApiName" no conjunto de dados for especificado) |
 | readBehavior | Indica se deve consultar os registros existentes, ou consultar todos os registros, incluindo o que foi excluído. Se não for especificado, o comportamento padrão é o primeiro. <br>Valores permitidos: **query** (padrão), **queryAll**.  | Não  |
 
@@ -234,7 +234,7 @@ Para copiar dados do Salesforce, defina o tipo de coletor na atividade de cópia
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| Tipo | A propriedade type do coletor da atividade de cópia deve ser definida como **SalesforceSink**. | Sim |
+| type | A propriedade type do coletor da atividade de cópia deve ser definida como **SalesforceSink**. | Sim |
 | writeBehavior | O comportamento da operação de gravação.<br/>Valores permitidos são **Insert** e **Upsert**. | Não (o padrão é Insert) |
 | externalIdFieldName | O nome do campo de ID externo para a operação upsert. O campo especificado deve ser definido como "Campo de ID externo" no objeto de Salesforce. Ele não pode ter valores nulos nos dados de entrada correspondentes. | Sim para "Upsert" |
 | writeBatchSize | A contagem de linhas de dados gravados no Salesforce em cada lote. | Não (o padrão é 5.000) |
@@ -315,25 +315,25 @@ Ao copiar dados do Salesforce, os seguintes mapeamentos são usados de tipos de 
 
 | Tipo de dados do Salesforce | Tipo de dados provisório do Data Factory |
 |:--- |:--- |
-| Numeração automática |Cadeia de caracteres |
-| Caixa de seleção |Boolean |
-| Moeda |Decimal |
-| Data |DateTime |
-| Data/hora |DateTime |
-| Email |Cadeia de caracteres |
-| ID |Cadeia de caracteres |
-| Relação de pesquisa |Cadeia de caracteres |
-| Lista de seleção múltipla |Cadeia de caracteres |
-| Número |Decimal |
-| Porcentagem |Decimal |
-| Telefone |Cadeia de caracteres |
-| Lista de seleção |Cadeia de caracteres |
-| Text |Cadeia de caracteres |
-| Área de texto |Cadeia de caracteres |
-| Área de texto (longo) |Cadeia de caracteres |
-| Área de texto (Rich) |Cadeia de caracteres |
-| Texto (criptografado) |Cadeia de caracteres |
-| URL |Cadeia de caracteres |
+| Auto Number |String |
+| Checkbox |Boolean |
+| Currency |Decimal |
+| Date |DateTime |
+| Date/Time |DateTime |
+| Email |String |
+| Id |String |
+| Lookup Relationship |String |
+| Multi-Select Picklist |String |
+| Number |Decimal |
+| Percent |Decimal |
+| Phone |String |
+| Picklist |String |
+| Text |String |
+| Text Area |String |
+| Text Area (Long) |String |
+| Text Area (Rich) |String |
+| Text (Encrypted) |String |
+| URL |String |
 
 ## <a name="next-steps"></a>Próximas etapas
 Para obter uma lista de armazenamentos de dados com suporte como origens e coletores pela atividade de cópia no Data Factory, consulte [Armazenamentos de dados com suporte](copy-activity-overview.md#supported-data-stores-and-formats).
