@@ -1,10 +1,10 @@
 ---
-title: Registrar um aplicativo na Microsoft Identity Platform (versão prévia) | Azure
+title: Registrar um aplicativo na plataforma de identidade da Microsoft – plataforma de identidade da Microsoft
 description: Saiba como adicionar e registrar um aplicativo na Microsoft Identity Platform.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -12,33 +12,29 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/02/2018
-ms.author: celested
+ms.date: 05/09/2019
+ms.author: ryanwi
 ms.custom: aaddev
-ms.reviewer: lenalepa, sureshja
+ms.reviewer: aragra, lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 366d6fe8921a5330f48da2879444e0b80cbc9bd2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6943ad460bb5d852220e704492f892961992a59f
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58090705"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65413597"
 ---
-# <a name="quickstart-register-an-application-with-the-microsoft-identity-platform-preview"></a>Início Rápido: Registrar um aplicativo com a plataforma de identidade da Microsoft (Versão Prévia)
+# <a name="quickstart-register-an-application-with-the-microsoft-identity-platform"></a>Início Rápido: Registrar um aplicativo na plataforma de identidade da Microsoft
 
 Os desenvolvedores corporativos e provedores de SaaS (software como serviço) podem desenvolver serviços de nuvem comerciais ou aplicativos de linha de negócios que podem ser integrados à Microsoft Identity Platform para fornecer conexão segura e autorização para seus serviços.
 
-Este início rápido mostra como adicionar e registrar um aplicativo usando a experiência **Registros do aplicativo (Versão prévia)** do portal do Azure para que o seu aplicativo possa ser integrado à plataforma de identidade da Microsoft. Para saber mais sobre os novos recursos e aprimoramentos na nova experiência de registros de aplicativo, veja [esta postagem de blog](https://developer.microsoft.com/graph/blogs/new-app-registration/). 
-
-## <a name="prerequisite"></a>Pré-requisito
-
-Para começar, você precisa aceitar a experiência de versão para registros do aplicativo no portal do Azure. As etapas neste início rápido correspondem à nova interface do usuário e só funcionarão se você aceitou a experiência de versão prévia.
+Este Início Rápido mostra como adicionar e registrar um aplicativo usando a experiência **Registros de aplicativo** do portal do Azure para que o seu aplicativo possa ser integrado à plataforma de identidade da Microsoft. Para saber mais sobre os novos recursos e aprimoramentos na nova experiência de registros de aplicativo, veja [esta postagem de blog](https://developer.microsoft.com/graph/blogs/new-app-registration/).
 
 ## <a name="register-a-new-application-using-the-azure-portal"></a>Registrar um novo aplicativo usando o portal do Azure
 
 1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta corporativa ou de estudante ou uma conta pessoal da Microsoft.
 1. Se sua conta fornecer acesso a mais de um locatário, selecione sua conta no canto superior direito e defina sua sessão do portal para o locatário desejado do Azure AD.
-1. No painel de navegação à esquerda, selecione o serviço do **Azure Active Directory** e, em seguida, selecione **Registros de aplicativo (Visualizar)> Novo registro**.
+1. No painel de navegação à esquerda, selecione o serviço **Azure Active Directory** e, em seguida, **Registros de aplicativo > Novo registro**.
 1. Quando a página **Registrar um aplicativo** for exibida, insira as informações de registro do aplicativo:
 
    - **Nome**: insira um nome de aplicativo relevante que será exibido aos usuários do aplicativo.

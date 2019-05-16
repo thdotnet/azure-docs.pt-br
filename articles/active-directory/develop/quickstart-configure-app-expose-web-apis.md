@@ -1,10 +1,10 @@
 ---
-title: Configurar um aplicativo para expor APIs Web (versão prévia) | Azure
+title: Configurar um aplicativo para expor APIs Web – plataforma de identidade da Microsoft
 description: Saiba como configurar um aplicativo para expor uma nova permissão ou escopo e função a fim de disponibilizar o aplicativo para aplicativos cliente.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/25/2018
-ms.author: celested
+ms.date: 05/08/2019
+ms.author: ryanwi
 ms.custom: aaddev
-ms.reviewer: lenalepa, sureshja
+ms.reviewer: aragra, lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a8ff17656978e6e4e8741c19cda79743560481a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1148fb221e82963ea39ece3e18598e38d633238d
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58080838"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65413964"
 ---
-# <a name="quickstart-configure-an-application-to-expose-web-apis-preview"></a>Início rápido: Configurar um aplicativo para expor APIs Web (versão prévia)
+# <a name="quickstart-configure-an-application-to-expose-web-apis"></a>Início Rápido: Configurar um aplicativo para expor APIs Web
 
 Você pode desenvolver uma API Web e disponibilizá-la aos aplicativos cliente expondo [permissões/escopos](developer-glossary.md#scopes) e [funções](developer-glossary.md#roles) de acesso. Uma API Web corretamente configurada é disponibilizada assim como outras APIs Web da Microsoft, incluindo a API do Graph e as APIs do Office 365.
 
@@ -37,15 +37,14 @@ Para começar, atenda aos seguintes pré-requisitos:
 * Leia sobre [permissões e consentimentos](v2-permissions-and-consent.md), o que é importante saber na hora de criar aplicativos que precisam ser usados por outros usuários ou aplicativos.
 * Obtenha um locatário com aplicativos registrados.
   * Se você não tiver aplicativos registrados, [saiba como registrar aplicativos com a Microsoft Identity Platform](quickstart-register-app.md).
-* Inscreva-se na experiência de versão prévia de registros de aplicativos no portal do Azure. As etapas neste início rápido correspondem à nova interface do usuário e só funcionarão se você aceitou a experiência de versão prévia.
 
 ## <a name="sign-in-to-the-azure-portal-and-select-the-app"></a>Entrar no portal do Azure e selecionar o aplicativo
 
 Antes de configurar o aplicativo, siga estas etapas:
 
 1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta corporativa ou de estudante ou uma conta pessoal da Microsoft.
-1. Se a conta der acesso a mais de um locatário, selecione sua conta no canto superior direito e defina a sessão do portal para o locatário do Azure AD desejado.
-1. No painel de navegação à esquerda, selecione o serviço **Azure Active Directory** e selecione **Registros de aplicativo (versão prévia)**.
+1. Se sua conta fornecer acesso a mais de um locatário, selecione sua conta no canto superior direito e defina sua sessão do portal para o locatário desejado do Azure AD.
+1. No painel de navegação à esquerda, selecione o serviço **Azure Active Directory** e, em seguida, **Registros de aplicativo**.
 1. Encontre e selecione o aplicativo que você deseja configurar. Depois de selecionar o aplicativo, você verá a página **Visão Geral** ou a página de registro principal.
 1. Escolha qual método você deseja usar, a interface do usuário ou o aplicativo de manifesto, para expor um novo escopo:
     * [Expor um novo escopo pela interface do usuário](#expose-a-new-scope-through-the-ui)

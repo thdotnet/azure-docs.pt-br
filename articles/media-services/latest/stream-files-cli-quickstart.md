@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.custom: ''
 ms.date: 02/19/2019
 ms.author: juliako
-ms.openlocfilehash: a323cbe4188207fa77525648297b366c9c57121b
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.openlocfilehash: bd818135f289c430416909d16c8568208936a9f8
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57244716"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65205412"
 ---
 # <a name="quickstart-stream-video-files---cli"></a>Início Rápido: Transmitir arquivos de vídeo – CLI
 
@@ -83,7 +83,7 @@ Você receberá uma resposta como esta:
 
 ## <a name="start-the-streaming-endpoint"></a>Iniciar o ponto de extremidade de streaming
 
-O seguinte comando da CLI do Azure inicia o padrão **ponto de extremidade Sstreaming**.
+O comando da CLI do Azure a seguir inicia o **Ponto de Extremidade de Streaming** padrão.
 
 ```azurecli
 az ams streaming-endpoint start  -n default -a amsaccount -g amsResourceGroup
@@ -356,4 +356,4 @@ Confira [Códigos de erro do trabalho](https://docs.microsoft.com/rest/api/media
 
 ## <a name="next-steps"></a>Próximas etapas
 
-> [Exemplos de CLI](cli-samples.md)
+[Visão geral dos Serviços de Mídia](media-services-overview.md)

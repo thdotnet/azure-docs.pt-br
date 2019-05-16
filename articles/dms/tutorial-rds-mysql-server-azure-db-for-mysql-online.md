@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 05/01/2019
-ms.openlocfilehash: 9aadfd1f3685466c8c0beb6dff3bb8d063f4bfd8
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.date: 05/08/2019
+ms.openlocfilehash: e971fd160a43be088f6d3c4a9fb6fddc7dd769b0
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65137395"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65415681"
 ---
 # <a name="tutorial-migrate-rds-mysql-to-azure-database-for-mysql-online-using-dms"></a>Tutorial: Migrar o RDS MySQL para o Banco de Dados do Azure para MySQL online usando o DMS
 
@@ -24,10 +24,9 @@ Use o Serviço de Migração de Banco de Dados do Azure para migrar bancos de da
 
 Neste tutorial, você aprenderá como:
 > [!div class="checklist"]
->
 > * Migrar o esquema de exemplo usando os utilitários mysqldump e mysql.
 > * Criar uma instância do Serviço de Migração de Banco de Dados do Azure.
-> * Criará um projeto de migração usando o Serviço de Migração de Banco de Dados do Azure.
+> * Criar um projeto de migração usando o Serviço de Migração de Banco de Dados do Azure.
 > * Executar a migração.
 > * Monitorar a migração.
 
@@ -55,7 +54,7 @@ Para concluir este tutorial, você precisará:
 
 * Baixe e instale o [banco de dados de exemplo **Employees** do MySQL](https://dev.mysql.com/doc/employee/en/employees-installation.html).
 * Crie uma instância do [Banco de Dados do Azure para MySQL](https://docs.microsoft.com/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal).
-* Crie uma VNET (Rede Virtual) do Azure para o Serviço de Migração de Banco de Dados do Azure usando o modelo de implantação do Azure Resource Manager, que fornece conectividade site a site aos servidores de origem locais usando o [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) ou a [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
+* Criar uma VNET (Rede Virtual) do Azure para o Serviço de Migração de Banco de Dados do Azure usando o modelo de implantação do Azure Resource Manager, que fornece conectividade site a site aos servidores de origem locais usando o [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) ou a [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Para obter mais informações sobre como criar uma VNET, confira a [Documentação da Rede Virtual](https://docs.microsoft.com/azure/virtual-network/) e, especificamente, os artigos de Início Rápido com detalhes passo a passo.
 * Verifique se as regras do Grupo de Segurança de Rede da VNET não bloqueiam as seguintes portas de comunicação de entrada com o Serviço de Migração de Banco de Dados do Azure: 443, 53, 9354, 445 e 12000. Para obter mais detalhes sobre a filtragem de tráfego do NSG da VNET do Azure, confira o artigo [Filtrar o tráfego de rede com Grupos de Segurança de Rede](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
 * Configurar o [Firewall do Windows para acesso ao mecanismo de banco de dados](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 * Abra o firewall do Windows para permitir que o Serviço de Migração de Banco de Dados do Azure acesse o servidor de origem do MySQL, que, por padrão, é a porta TCP 3306.
@@ -219,7 +218,7 @@ Depois que o serviço é criado, localize-o no portal do Azure, abra-o e, em seg
 
 2. Selecione **Salvar** e, na tela **Mapear para bancos de dados de destino**, mapeie os bancos de dados de origem e de destino para a migração.
 
-    Se o banco de dados de destino contém o mesmo nome de banco de dados do banco de dados de origem, o Serviço de Migração de Banco de Dados do Azure seleciona o banco de dados de destino por padrão.
+    Se o banco de dados de destino contiver o mesmo nome de banco de dados do banco de dados de origem, o Serviço de Migração de Banco de Dados do Azure selecionará o banco de dados de destino por padrão.
 
     ![Mapear para bancos de dados de destino](media/tutorial-rds-mysql-server-azure-db-for-mysql-online/dms-map-targets-activity5.png)
 

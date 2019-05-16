@@ -1,10 +1,10 @@
 ---
-title: Configurar um aplicativo para acessar APIs Web (versão prévia) | Azure
+title: Configurar um aplicativo para acessar APIs Web – plataforma de identidade da Microsoft
 description: Saiba como configurar um aplicativo registrado na Microsoft Identity Platform para incluir URIs de redirecionamento, credenciais ou permissões para acessar as APIs Web.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/25/2018
-ms.author: celested
+ms.date: 05/08/2019
+ms.author: ryanwi
 ms.custom: aaddev
-ms.reviewer: lenalepa, sureshja
+ms.reviewer: aragra, lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93e88cedfd098f450e8faeea894f7fdfc796cf17
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 7b2f5331b22f6292b00c367c6abb8cd4f439a70c
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59999579"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65413973"
 ---
-# <a name="quickstart-configure-a-client-application-to-access-web-apis-preview"></a>Início Rápido: Configurar um aplicativo cliente para acessar APIs Web (Versão Prévia)
+# <a name="quickstart-configure-a-client-application-to-access-web-apis"></a>Início Rápido: Configure um aplicativo cliente para acessar APIs Web
 
 Para que um aplicativo cliente Web/confidencial possa participar de um fluxo de concessão de autorização que requer autenticação (e obter um token de acesso), ele deverá estabelecer credenciais seguras. O método de autenticação padrão com suporte no portal do Azure é a ID do Cliente + chave secreta.
 
@@ -49,15 +49,14 @@ Para começar, atenda aos seguintes pré-requisitos:
 * Leia sobre [permissões e consentimentos](v2-permissions-and-consent.md), o que é importante saber na hora de criar aplicativos que precisam ser usados por outros usuários ou aplicativos.
 * Obtenha um locatário com aplicativos registrados.
   * Se você não tiver aplicativos registrados, [saiba como registrar aplicativos com a Microsoft Identity Platform](quickstart-register-app.md).
-* Inscreva-se na experiência de versão prévia de registros de aplicativos no portal do Azure. As etapas neste início rápido correspondem à nova interface do usuário e só funcionarão se você aceitou a experiência de versão prévia.
 
 ## <a name="sign-in-to-the-azure-portal-and-select-the-app"></a>Entrar no portal do Azure e selecionar o aplicativo
 
 Antes de configurar o aplicativo, siga estas etapas:
 
 1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta corporativa ou de estudante ou uma conta pessoal da Microsoft.
-1. Se a conta der acesso a mais de um locatário, selecione sua conta no canto superior direito e defina a sessão do portal para o locatário do Azure AD desejado.
-1. No painel de navegação à esquerda, selecione o serviço **Azure Active Directory** e selecione **Registros de aplicativo (versão prévia)**.
+1. Se sua conta fornecer acesso a mais de um locatário, selecione sua conta no canto superior direito e defina sua sessão do portal para o locatário desejado do Azure AD.
+1. No painel de navegação à esquerda, selecione o serviço **Azure Active Directory** e, em seguida, **Registros de aplicativo**.
 1. Encontre e selecione o aplicativo que você deseja configurar. Depois de selecionar o aplicativo, você verá a página **Visão Geral** ou a página de registro principal.
 1. Siga as etapas para configurar seu aplicativo e acessar APIs Web: 
     * [Adicionar URIs de redirecionamento ao aplicativo](#add-redirect-uris-to-your-application)

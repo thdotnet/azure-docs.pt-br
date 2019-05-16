@@ -13,15 +13,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 04/18/2019
+ms.date: 05/07/2019
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: 91297a02966000899ab79dfb86446890e9c4439a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 4fb42014e2c5389cf2a849ddf5114ab1f59c9e28
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148707"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65414020"
 ---
 # <a name="azure-media-services-v3-overview"></a>Visão geral dos Serviços de Mídia do Azure v3
 
@@ -48,7 +48,8 @@ Os Serviços de Mídia permitem criar uma série de fluxos de trabalho de mídia
 
 Saiba como codificar e empacotar conteúdo, transmitir vídeos sob demanda por streaming, difundir ao vivo e analisar seus vídeos com os Serviços de Mídia v3. Tutoriais, referências de API e outras documentações mostram como oferecer com segurança, sob demanda e ao vivo, fluxos de áudio ou vídeos que são dimensionados para milhões de usuários.
 
-Antes de começar a desenvolver, examine [Conceitos fundamentais](concepts-overview.md)<br/>
+> [!TIP]
+> Antes de iniciar o desenvolvimento, examine:<br/>* [Conceitos fundamentais](concepts-overview.md) (inclui conceitos importantes: empacotamento, codificação, proteção etc.)<br/>* [Desenvolvimento com APIs dos Serviços de Mídia v3](media-services-apis-overview.md) (inclui informações sobre como acessar APIs, convenções de nomenclatura etc.)
 
 ### <a name="quickstarts"></a>Guia de início rápido  
 
@@ -86,9 +87,5 @@ Confira o artigo [comunidade dos Serviços de Mídia do Azure](media-services-co
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Como posso começar a v3? 
-
-> [!div class="nextstepaction"]
-> [Saiba mais sobre conceitos fundamentais](concepts-overview.md)<br/>
-> [Desenvolver com a API dos Serviços de Mídia v3 usando SDKs](developers-guide.md) 
+[Saiba mais sobre conceitos fundamentais](concepts-overview.md)
 

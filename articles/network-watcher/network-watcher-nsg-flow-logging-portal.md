@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 04/30/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: 550755b1215dd25045845d78ab3d6248ef840062
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 3c62ad66a29943e26d1cb2f15ca71631d2feabe3
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64705957"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65467412"
 ---
 # <a name="tutorial-log-network-traffic-to-and-from-a-virtual-machine-using-the-azure-portal"></a>Tutorial: Registrar em log o tráfego de rede bidirecionalmente em uma máquina virtual usando o portal do Azure
 
@@ -93,6 +93,9 @@ O log de fluxo do NSG exige o provedor **Microsoft.Insights**. Para registrar o 
     | Grupo de recursos | Clique em **Usar existente** e selecione **myResourceGroup** |
 
     A conta de armazenamento pode levar cerca de um minuto para ser criada. Não continue com as etapas restantes até que a conta de armazenamento seja criada. Se você usar uma conta de armazenamento existente em vez de criar uma, selecione uma conta de armazenamento que tem a opção **Todas as redes** (padrão) selecionada para **Firewalls e redes virtuais**, nas **CONFIGURAÇÕES** da conta de armazenamento.
+    
+    > [!NOTE]
+    > Embora atualmente haja suporte para os provedores Microsoft.Insight e Microsoft.Network no Armazenamento do Azure, os logs de fluxo do NSG ainda não estão totalmente integrados. Para habilitar o log de fluxo do NSG, a opção **Todas as Redes** ainda precisa ser selecionada até que esse recurso esteja totalmente integrado. 
 4. No canto superior esquerdo do portal, selecione **Todos os serviços**. Na caixa **Filtro**, digite *Observador de Rede*. Quando os resultados da pesquisa exibirem **Observador de Rede**, selecione essa opção.
 5. Em **LOGS**, selecione **Logs de fluxo do NSG**, conforme mostrado na seguinte imagem:
 

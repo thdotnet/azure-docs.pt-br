@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 05/01/2019
-ms.openlocfilehash: e92c0b5e02daf08100151e15314399722ffc8763
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.date: 05/08/2019
+ms.openlocfilehash: 409fa3a501b80e225fff299980f374f73f0dbf13
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148787"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65415722"
 ---
 # <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Tutorial: Migração online do MySQL para o Banco de Dados do Azure para MySQL usando DMS
 
@@ -37,21 +37,22 @@ Neste tutorial, você aprenderá como:
 > Para obter uma experiência ideal de migração, a Microsoft recomenda a criação de uma instância do Serviço de Migração de Banco de Dados do Azure na mesma região do Azure como o banco de dados de destino. Mover dados entre regiões ou áreas geográficas pode desacelerar o processo de migração e introduzir erros.
 
 ## <a name="prerequisites"></a>Pré-requisitos
+
 Para concluir este tutorial, você precisará:
 
 * Baixar e instalar o [MySQL community edition](https://dev.mysql.com/downloads/mysql/) 5.6 ou 5.7. A versão do MySQL local deve corresponder à versão do Banco de Dados do Azure para MySQL. Por exemplo, o MySQL 5.6 só pode migrar para o Banco de Dados do Azure para MySQL 5.6; não pode ser atualizado para 5.7.
 * [Criar uma instância no Banco de Dados do Azure para MySQL](https://docs.microsoft.com/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal). Consulte o artigo [Usar o MySQL Workbench para se conectar e consultar dados](https://docs.microsoft.com/azure/mysql/connect-workbench) a fim de obter detalhes sobre como se conectar e criar um banco de dados usando o portal do Azure.  
-* Criar uma VNET (Rede Virtual) do Azure para o Serviço de Migração de Banco de Dados do Azure usando o modelo de implantação do Azure Resource Manager, que fornece conectividade site a site aos servidores de origem locais usando o [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) ou a [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
+* Criar uma VNET (Rede Virtual) do Azure para o Serviço de Migração de Banco de Dados do Azure usando o modelo de implantação do Azure Resource Manager, que fornece conectividade site a site aos servidores de origem locais usando o [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) ou a [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Para obter mais informações sobre como criar uma VNET, confira a [Documentação da Rede Virtual](https://docs.microsoft.com/azure/virtual-network/) e, especificamente, os artigos de Início Rápido com detalhes passo a passo.
 
     > [!NOTE]
-    > Durante a instalação da VNET, se você usar ExpressRoute com emparelhamento de rede para Microsoft, adicione os seguintes [pontos de extremidade](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) de serviço à sub-rede na qual o serviço será provisionado:
+    > Durante a configuração da VNET, se você usar ExpressRoute com emparelhamento de rede para Microsoft, adicione os seguintes [pontos de extremidade](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) de serviço à sub-rede na qual o serviço será provisionado:
     > * Ponto de extremidade do banco de dados de destino (por exemplo, ponto de extremidade do SQL, ponto de extremidade do Cosmos DB, e assim por diante)
     > * Ponto de extremidade de armazenamento
     > * Ponto de extremidade do barramento de serviço
     >
     > Essa configuração é necessária porque o Serviço de Migração de Banco de Dados do Azure não tem conectividade com a Internet.
 
-* Verifique se as regras do Grupo de Segurança de Rede de VNET não bloqueiam as seguintes portas de comunicação de entrada com o Serviço de Migração de Banco de Dados do Azure: 443, 53, 9354, 445, 12000. Para obter mais detalhes sobre a filtragem de tráfego do NSG da Rede Virtual do Azure, consulte o artigo [Filtrar o tráfego de rede com grupos de segurança de rede](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm).
+* Verifique se as regras do Grupo de Segurança de Rede da VNET não bloqueiam as seguintes portas de comunicação de entrada com o Serviço de Migração de Banco de Dados do Azure: 443, 53, 9354, 445, 12000. Veja mais detalhes sobre a filtragem de tráfego do NSG da VNet do Azure no artigo [Filtrar o tráfego de rede com grupos de segurança de rede](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm).
 * Configurar o [Firewall do Windows para acesso ao mecanismo de banco de dados](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 * Abra o firewall do Windows para permitir que o Serviço de Migração de Banco de Dados do Azure acesse o MySQL Server de origem, que, por padrão, é a porta TCP 3306.
 * Ao usar um dispositivo de firewall na frente de seus bancos de dados de origem, talvez seja necessário adicionar regras de firewall para permitir que o Serviço de Migração de Banco de Dados do Azure acesse os bancos de dados de origem para migração.
@@ -74,8 +75,9 @@ Para concluir este tutorial, você precisará:
     * **Expire_logs_days** = 5 (é recomendável não usar zero; relevante somente para MySQL 5.6)
     * **Binlog_row_image = full** (relevante apenas para o MySQL 5.6)
     * **log_slave_updates** = 1
- 
+
 * O usuário precisa ter a função ReplicationAdmin com os seguintes privilégios:
+
     * **CLIENTE DE REPLICAÇÃO**: obrigatório apenas para tarefas de Processamento de Alterações. Em outras palavras, tarefas somente de Carregamento Completo não exigem esse privilégio.
     * **RÉPLICA DE REPLICAÇÃO**: obrigatório apenas para tarefas de Processamento de Alterações. Em outras palavras, tarefas somente de Carregamento Completo não exigem esse privilégio.
     * **SUPER**: obrigatório somente nas versões anteriores a MySQL 5.6.6.
@@ -167,11 +169,11 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
   
 3. Na tela **Criar Serviço de Migração**, especifique um nome para o serviço, a assinatura e um grupo de recurso novo ou existente.
 
-4. Escolha uma rede virtual existente (VNET) ou criar uma nova.
+4. Selecione uma VNet existente ou crie uma.
 
-    A VNET fornece ao Serviço de Migração de Banco de Dados do Azure acesso ao SQL Server de origem e à instância do Banco de Dados SQL do Azure de destino.
+    A VNET fornece ao Serviço de Migração de Banco de Dados do Azure o acesso ao SQL Server de origem e à instância do Banco de Dados SQL do Azure de destino.
 
-    Para mais informações sobre como criar uma VNET no portal do Azure, consulte o artigo [Criar uma rede virtual usando o portal do Azure](https://aka.ms/DMSVnet).
+    Para mais informações sobre como criar uma VNet no portal do Azure, consulte o artigo [Criar uma rede virtual usando o portal do Azure](https://aka.ms/DMSVnet).
 
 5. Selecione um tipo de preço.
 

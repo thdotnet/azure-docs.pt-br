@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: da653842b09c15a5fd42bae0ed45e7b31452b972
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: f0cdd28be8c6e7390aa26fdc2dfbf32ec5542c2d
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58578740"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233913"
 ---
 # <a name="tutorial-manage-app-groups-for-windows-virtual-desktop-preview"></a>Tutorial: Gerenciar grupos de aplicativos para a Versão Prévia da Área de Trabalho Virtual do Windows
 
@@ -73,7 +73,7 @@ Antes de começar, [baixe e importe o módulo do PowerShell da Área de Trabalho
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Depois de criar os grupos de aplicativos, crie entidades de serviço e atribua funções aos usuários. Para saber como fazer isso, confira o tutorial para saber como criar entidades de serviço e atribuições de função com o PowerShell.
+Neste tutorial, você aprendeu a criar grupos de aplicativos, populá-los com o RemoteApp e atribuir usuários ao grupo de aplicativos. Para saber mais sobre como entrar na Área de Trabalho Virtual do Windows, continue com as instruções de Conectar-se à Área de Trabalho Virtual do Windows.
 
-> [!div class="nextstepaction"]
-> [Criar entidades de serviço e atribuições de função com o PowerShell](create-service-principal-role-powershell.md)
+- [Conectar-se ao cliente da Área de Trabalho Remota no Windows 7 e no Windows 10](connect-windows-7-and-10.md)
+- [Conectar-se ao cliente Web da Versão Prévia da Área de Trabalho Virtual do Windows](connect-web.md)

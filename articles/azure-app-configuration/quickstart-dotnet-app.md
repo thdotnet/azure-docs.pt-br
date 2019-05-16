@@ -14,12 +14,12 @@ ms.tgt_pltfrm: .NET
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 33deea0805ffa89bcc6a64f34a97a4e080690da9
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: acf1608257bc5416ff52ed9fbd4209008712f2d7
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60008810"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65408703"
 ---
 # <a name="quickstart-create-a-net-framework-app-with-azure-app-configuration"></a>Início Rápido: Criar um aplicativo .NET Framework com a Configuração de Aplicativo do Azure
 
@@ -37,7 +37,7 @@ Para este início rápido, instale o [Visual Studio 2017](https://visualstudio.m
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Selecione **Explorador de Chave/Valor** > **+ Criar** para adicionar os pares chave-valor a seguir:
+6. Selecione **Gerenciador de Configurações** > **+ Criar** para adicionar os seguintes pares chave-valor:
 
     | Chave | Valor |
     |---|---|

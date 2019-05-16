@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Integração do Azure Active Directory ao webMethods Integration Cloud | Microsoft Docs'
-description: Saiba como configurar o logon único entre o Azure Active Directory e o webMethods Integration Cloud.
+title: 'Tutorial: Integração do Azure Active Directory ao webMethods Integration Suite | Microsoft Docs'
+description: Saiba como configurar o logon único entre o Azure Active Directory e o webMethods Integration Suite.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -14,20 +14,20 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 11021562cd34f31564e6b4c22fcd64aac25d3469
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 8dead16c60a26e2fc53953ed65337195c3b2aa67
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57862056"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65470799"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-webmethods-integration-cloud"></a>Tutorial: Integração do Azure Active Directory ao webMethods Integration Cloud
+# <a name="tutorial-azure-active-directory-integration-with-webmethods-integration-suite"></a>Tutorial: Integração do Azure Active Directory ao webMethods Integration Suite
 
-Neste tutorial, você aprenderá a integrar o webMethods Integration Cloud ao Azure AD (Azure Active Directory).
-A integração do webMethods Integration Cloud ao Azure AD oferece os seguintes benefícios:
+Neste tutorial, você aprenderá a integrar o webMethods Integration Suite ao Azure AD (Azure Active Directory).
+A integração do webMethods Integration Suite ao Azure AD oferece os seguintes benefícios:
 
-* Você pode controlar no Azure AD quem terá acesso ao webMethods Integration Cloud.
-* Você pode permitir que os usuários sejam conectados automaticamente ao webMethods Integration Cloud (logon único) com suas contas do Azure AD.
+* Você pode controlar no Azure AD quem tem acesso ao webMethods Integration Suite.
+* Você pode permitir que os usuários sejam conectados automaticamente ao webMethods Integration Suite (logon único) com suas contas do Azure AD.
 * Você pode gerenciar suas contas em um único local central – o portal do Azure.
 
 Para conhecer mais detalhadamente a integração de aplicativos de SaaS ao AD do Azure, consulte [O que é o acesso a aplicativos e logon único com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
@@ -35,24 +35,24 @@ Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://a
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para configurar a integração do Azure AD ao webMethods Integration Cloud, você precisará dos seguintes itens:
+Para configurar a integração do Azure AD ao webMethods Integration Suite, você precisará dos seguintes itens:
 
 * Uma assinatura do Azure AD. Caso não tenha um ambiente do Azure AD, obtenha uma avaliação de um mês [aqui](https://azure.microsoft.com/pricing/free-trial/).
-* Assinatura habilitada para logon único do webMethods Integration Cloud
+* Assinatura habilitada para logon único do webMethods Integration Suite
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
 Neste tutorial, você configurará e testará o logon único do Azure AD em um ambiente de teste.
 
-* O webMethods Integration Cloud dá suporte ao SSO iniciado por **SP** e **IDP**
+* O webMethods Integration Suite dá suporte ao SSO iniciado por **SP** e **IdP**
 
-* O webMethods Integration Cloud dá suporte ao provisionamento de usuário **Just-In-Time**
+* O webMethods Integration Suite dá suporte ao provisionamento de usuário **Just-In-Time**
 
-## <a name="adding-webmethods-integration-cloud-from-the-gallery"></a>Adicionando o webMethods Integration Cloud por meio da galeria
+## <a name="adding-webmethods-integration-suite-from-the-gallery"></a>Como adicionar o webMethods Integration Suite por meio da galeria
 
-Para configurar a integração do webMethods Integration Cloud ao Azure AD, você precisará adicionar o webMethods Integration Cloud por meio da galeria à lista de aplicativos SaaS gerenciados.
+Para configurar a integração do webMethods Integration Suite ao Azure AD, você precisará adicionar o webMethods Integration Suite por meio da galeria à lista de aplicativos SaaS gerenciados.
 
-**Para adicionar o webMethods Integration Cloud por meio da galeria, execute as seguintes etapas:**
+**Para adicionar o webMethods Integration Suite por meio da galeria, execute as seguintes etapas:**
 
 1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
@@ -66,31 +66,31 @@ Para configurar a integração do webMethods Integration Cloud ao Azure AD, voc�
 
     ![O botão Novo aplicativo](common/add-new-app.png)
 
-4. Na caixa de pesquisa, digite **webMethods Integration Cloud**, selecione **webMethods Integration Cloud** no painel de resultados e, em seguida, clique no botão **Adicionar** para adicionar o aplicativo.
+4. Na caixa de pesquisa, digite **webMethods Integration Suite**, selecione **webMethods Integration Suite** no painel de resultados e, em seguida, clique no botão **Adicionar** para adicionar o aplicativo.
 
-     ![webMethods Integration Cloud na lista de resultados](common/search-new-app.png)
+     ![webMethods Integration Suite na lista de resultados](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-Nesta seção, você configurará e testará o logon único do Azure AD com o webMethods Integration Cloud, com base em um usuário de teste chamado **Brenda Fernandes**.
-Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do webMethods Integration Cloud.
+Nesta seção, você configurará e testará o logon único do Azure AD com o webMethods Integration Suite, com base em um usuário de teste chamado **Brenda Fernandes**.
+Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do webMethods Integration Suite.
 
-Para configurar e testar o logon único do Azure AD com o webMethods Integration Cloud, você precisará concluir os seguintes blocos de construção:
+Para configurar e testar o logon único do Azure AD com o webMethods Integration Suite, você precisará concluir os seguintes blocos de construção:
 
 1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** – para habilitar seus usuários a usar esse recurso.
-2. **[Configurar o logon único do webMethods Integration Cloud](#configure-webmethods-integration-cloud-single-sign-on)** – para definir as configurações de logon único no lado do aplicativo.
+2. **[Configurar o logon único do webMethods Integration Suite](#configure-webmethods-integration-suite-single-sign-on)** – para definir as configurações de logon único no lado do aplicativo.
 3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
 4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
-5. **[Criar um usuário de teste do webMethods Integration Cloud](#create-webmethods-integration-cloud-test-user)** – para ter um equivalente de Brenda Fernandes no webMethods Integration Cloud que esteja vinculado à representação de usuário do Azure AD.
+5. **[Criar um usuário de teste do webMethods Integration Suite](#create-webmethods-integration-suite-test-user)** – para ter um equivalente de Brenda Fernandes no webMethods Integration Suite que esteja vinculado à representação de usuário do Azure AD.
 6. **[Teste o logon único](#test-single-sign-on)** – para verificar se a configuração funciona.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
 
 Nesta seção, você habilitará o logon único do Azure AD no portal do Azure.
 
-Para configurar o logon único do Azure AD com o webMethods Integration Cloud, execute as seguintes etapas:
+Para configurar o logon único do Azure AD com o webMethods Integration Suite, execute as seguintes etapas:
 
-1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **webMethods Integration Cloud**, selecione **Logon único**.
+1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **webMethods Integration Suite**, selecione **Logon único**.
 
     ![Link Configurar logon único](common/select-sso.png)
 
@@ -102,9 +102,9 @@ Para configurar o logon único do Azure AD com o webMethods Integration Cloud, e
 
     ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
-4. Na seção **Configuração básica do SAML**, execute as etapas a seguir caso deseje configurar o aplicativo no modo **IDP** iniciado:
+4. Para configurar o **webMethods Integration Cloud**, na seção **Configuração Básica do SAML**, caso deseje configurar o aplicativo no modo iniciado por **IdP** execute as seguintes etapas:
 
-    ![Informações de logon único de Domínio e URLs do webMethods](common/idp-intiated.png)
+    ![Informações de logon único de Domínio e URLs do webMethods Integration Suite](common/idp-intiated.png)
 
      a. Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão:
 
@@ -122,12 +122,12 @@ Para configurar o logon único do Azure AD com o webMethods Integration Cloud, e
     | `https://<SUBDOMAIN>.webmethodscloud.eu/integration/live/saml/ssoResponse` |
     | `https://<SUBDOMAIN>.webmethodscloud.de/integration/live/saml/ssoResponse` |
 
-5. Clique em **Definir URLs adicionais** e execute o passo seguinte se quiser configurar a aplicação no modo **SP** iniciado:
+    c. Clique em **Definir URLs adicionais** e execute o passo seguinte se quiser configurar a aplicação no modo **SP** iniciado:
 
-    ![Informações de logon único de Domínio e URLs do webMethods](common/metadata-upload-additional-signon.png)
+    ![Informações de logon único de Domínio e URLs do webMethods Integration Suite](common/metadata-upload-additional-signon.png)
 
-    Na caixa de texto **URL de logon**, digite uma URL usando o seguinte padrão:
-    
+    d. Na caixa de texto **URL de logon**, digite uma URL usando o seguinte padrão:
+
     | |
     |--|
     | `https://<SUBDOMAIN>.webmethodscloud.com/integration/live/saml/ssoRequest` |
@@ -135,13 +135,48 @@ Para configurar o logon único do Azure AD com o webMethods Integration Cloud, e
     | `https://<SUBDOMAIN>.webmethodscloud.de/integration/live/saml/ssoRequest` |
 
     > [!NOTE]
-    > Esses valores não são reais. Atualize esses valores com o Identificador, a URL de Resposta e a URL de Logon reais. Contate a [equipe de suporte ao cliente do webMethods Integration Cloud](https://empower.softwareag.com/) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
+    > Esses valores não são reais. Atualize esses valores com o Identificador, a URL de Resposta e a URL de Logon reais. Contate a [equipe de suporte ao cliente do webMethods Integration Suite](https://empower.softwareag.com/) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
+
+5. Para configurar a **Nuvem da API do webMethods**, na seção **Configuração Básica do SAML**, caso deseje configurar o aplicativo no modo iniciado por **IdP**, execute as seguintes etapas:
+
+    ![Informações de logon único de Domínio e URLs do webMethods Integration Suite](common/idp-intiated.png)
+
+     a. Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão:
+
+    | |
+    |--|
+    | `<SUBDOMAIN>.webmethodscloud.com` |
+    | `<SUBDOMAIN>.webmethodscloud.eu` |
+    | `<SUBDOMAIN>.webmethodscloud.de` |
+
+    b. Na caixa de texto **URL de Resposta**, digite uma URL usando o seguinte padrão:
+
+    | |
+    |--|
+    | `https://<SUBDOMAIN>.webmethodscloud.com/umc/rest/saml/initsso` |
+    | `https://<SUBDOMAIN>.webmethodscloud.eu/umc/rest/saml/initsso` |
+    | `https://<SUBDOMAIN>.webmethodscloud.de/umc/rest/saml/initsso` |
+
+    c. Clique em **Definir URLs adicionais** e execute o passo seguinte se quiser configurar a aplicação no modo **SP** iniciado:
+
+    ![Informações de logon único de Domínio e URLs do webMethods Integration Suite](common/metadata-upload-additional-signon.png)
+
+    d. Na caixa de texto **URL de logon**, digite uma URL usando o seguinte padrão:
+
+    | |
+    |--|
+    | `https://api.webmethodscloud.com/umc/rest/saml/initsso/?tenant=<TENANTID>` |
+    | `https://api.webmethodscloud.eu/umc/rest/saml/initsso/?tenant=<TENANTID>` |
+    | `https://api.webmethodscloud.de/umc/rest/saml/initsso/?tenant=<TENANTID>` |
+
+    > [!NOTE]
+    > Esses valores não são reais. Atualize esses valores com o Identificador, a URL de Resposta e a URL de Logon reais. Contate a [equipe de suporte ao cliente do webMethods Integration Suite](https://empower.softwareag.com/) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
 6. Na página **Configurar Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Baixar** para baixar o **XML de Metadados de Federação** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
 
     ![O link de download do Certificado](common/metadataxml.png)
 
-7. Na seção **Configurar o webMethods Integration Cloud**, copie as URLs apropriadas de acordo com seus requisitos.
+7. Na seção **Configurar o webMethods Integration Suite**, copie as URLs apropriadas de acordo com suas necessidades.
 
     ![Copiar URLs de configuração](common/copy-configuration-urls.png)
 
@@ -151,11 +186,11 @@ Para configurar o logon único do Azure AD com o webMethods Integration Cloud, e
 
     c. URL de logoff
 
-### <a name="configure-webmethods-integration-cloud-single-sign-on"></a>Configurar o logon único do webMethods Integration Cloud
+### <a name="configure-webmethods-integration-suite-single-sign-on"></a>Configurar o logon único do webMethods Integration Suite
 
-Para configurar o logon único no lado do **webMethods Integration Cloud**, é necessário enviar o **XML de Metadados de Federação** baixado e as URLs apropriadas copiadas do portal do Azure para a [equipe de suporte do webMethods Integration Cloud](https://empower.softwareag.com/). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+Para configurar o logon único no lado do **webMethods Integration Suite**, é necessário enviar o **XML de Metadados de Federação** baixado e as URLs apropriadas copiadas do portal do Azure para a [equipe de suporte do webMethods Integration Suite](https://empower.softwareag.com/). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
 
-### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
+### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
 O objetivo desta seção é criar um usuário de teste no Portal do Azure chamado Brenda Fernandes.
 
@@ -171,7 +206,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     ![A caixa de diálogo Usuário](common/user-properties.png)
 
-    a. No campo **Nome**, insira **BrendaFernandes**.
+     a. No campo **Nome**, insira **BrendaFernandes**.
   
     b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
     Por exemplo, BrittaSimon@contoso.com
@@ -182,15 +217,15 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo a ela acesso ao webMethods Integration Cloud.
+Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo a ela o acesso ao webMethods Integration Suite.
 
-1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **webMethods Integration Cloud**.
+1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **webMethods Integration Suite**.
 
     ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
-2. Na lista de aplicativos, selecione **webMethods Integration Cloud**.
+2. Na lista de aplicativos, selecione **webMethods Integration Suite**.
 
-    ![O link do webMethods Integration Cloud na lista Aplicativos](common/all-applications.png)
+    ![O link do webMethods Integration Suite na lista Aplicativos](common/all-applications.png)
 
 3. No menu à esquerda, selecione **Usuários e grupos**.
 
@@ -206,15 +241,15 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 7. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
 
-### <a name="create-webmethods-integration-cloud-test-user"></a>Criar um usuário de teste do webMethods Integration Cloud
+### <a name="create-webmethods-integration-suite-test-user"></a>Criar um usuário de teste do webMethods Integration Suite
 
-Nesta seção, um usuário chamado Brenda Fernandes será criado no webMethods Integration Cloud. O webMethods Integration Cloud dá suporte ao provisionamento de usuário Just-In-Time, que está habilitado por padrão. Não há itens de ação para você nesta seção. Se um usuário ainda não existir no webMethods Integration Cloud, um novo será criado após a autenticação.
+Nesta seção, um usuário chamado Brenda Fernandes será criado no webMethods Integration Suite. O webMethods Integration Suite dá suporte ao provisionamento de usuário Just-In-Time, que está habilitado por padrão. Não há itens de ação para você nesta seção. Se um usuário ainda não existir no webMethods Integration Suite, um novo será criado após a autenticação.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 
 Nesta seção, você testará sua configuração de logon único do Azure AD usando o Painel de Acesso.
 
-Ao clicar no bloco do webMethods Integration Cloud no Painel de Acesso, você deverá ser conectado automaticamente ao webMethods Integration Cloud, para o qual você configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Ao clicar no bloco do webMethods Integration Suite no Painel de Acesso, você deverá ser conectado automaticamente ao webMethods Integration Suite, para o qual você configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

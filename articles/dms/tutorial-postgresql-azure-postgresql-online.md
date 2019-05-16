@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 05/01/2019
-ms.openlocfilehash: 67212986e0478a03ac2ef1b5f30488cc1c7f869d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.date: 05/08/2019
+ms.openlocfilehash: d7bd2555753df4c12404844c86be8f0339d88e23
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65137425"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65415698"
 ---
 # <a name="tutorial-migrate-postgresql-to-azure-database-for-postgresql-online-using-dms"></a>Tutorial: Migrar o PostgreSQL para o Banco de Dados do Azure para PostgreSQL online usando o DMS
 
@@ -24,7 +24,6 @@ Você pode usar o Serviço de Migração de Banco de Dados do Azure para migrar 
 
 Neste tutorial, você aprenderá como:
 > [!div class="checklist"]
-
 > * Migrar o esquema de exemplo usando o utilitário pg_dump.
 > * Criar uma instância do Serviço de Migração de Banco de Dados do Azure.
 > * Criar um projeto de migração usando o Serviço de Migração de Banco de Dados do Azure.
@@ -46,13 +45,13 @@ Para concluir este tutorial, você precisará:
     Além disso, a versão do PostgreSQL local deve corresponder à versão do Banco de Dados do Azure para PostgreSQL. Por exemplo, o PostgreSQL 9.5.11.5 pode migrar apenas o Banco de Dados do Azure para PostgreSQL 9.5.11, não para a versão 9.6.7.
 
     > [!NOTE]
-    > Para PostgreSQL versão 10, atualmente o DMS dá suporte apenas à versão de migração 10.3 do Banco de Dados do Azure para PostgreSQL. Planejamos dar suporte a versões mais recentes do PostgreSQL muito em breve.
+    > Para PostgreSQL versão 10, atualmente o DMS dá suporte apenas à versão de migração 10.3 do Banco de Dados do Azure para PostgreSQL.
 
 * [Criar uma instância no Banco de Dados do Azure para PostgreSQL](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal).  
-* Crie uma VNet (rede virtual) do Azure para Serviço de Migração de Banco de Dados do Azure usando o modelo de implantação do Azure Resource Manager, que fornece conectividade site a site aos servidores de origem locais usando o [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) ou a [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
+* Criar uma VNET (Rede Virtual) do Azure para o Serviço de Migração de Banco de Dados do Azure usando o modelo de implantação do Azure Resource Manager, que fornece conectividade site a site aos servidores de origem locais usando o [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) ou a [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Para obter mais informações sobre como criar uma VNET, confira a [Documentação da Rede Virtual](https://docs.microsoft.com/azure/virtual-network/) e, especificamente, os artigos de Início Rápido com detalhes passo a passo.
 
     > [!NOTE]
-    > Durante a instalação da VNET, se você usar ExpressRoute com emparelhamento de rede para Microsoft, adicione os seguintes [pontos de extremidade](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) de serviço à sub-rede na qual o serviço será provisionado:
+    > Durante a configuração da VNET, se você usar ExpressRoute com emparelhamento de rede para Microsoft, adicione os seguintes [pontos de extremidade](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) de serviço à sub-rede na qual o serviço será provisionado:
     > * Ponto de extremidade do banco de dados de destino (por exemplo, ponto de extremidade do SQL, ponto de extremidade do Cosmos DB, e assim por diante)
     > * Ponto de extremidade de armazenamento
     > * Ponto de extremidade do barramento de serviço
@@ -65,6 +64,7 @@ Para concluir este tutorial, você precisará:
 * Ao usar um dispositivo de firewall na frente de seus bancos de dados de origem, talvez seja necessário adicionar regras de firewall para permitir que o Serviço de Migração de Banco de Dados do Azure acesse os bancos de dados de origem para migração.
 * Crie uma [regra de firewall](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) no nível de servidor para o Banco de Dados do Azure para PostgreSQL a fim de permitir o acesso do Serviço de Migração de Banco de Dados do Azure aos bancos de dados de destino. Forneça o intervalo de sub-rede da VNet usado para o Serviço de Migração de Banco de Dados do Azure.
 * Há dois métodos para invocar a CLI:
+
     * No canto superior direito do portal do Azure, marque o botão Cloud Shell:
 
        ![Botão Cloud Shell no portal do Azure](media/tutorial-postgresql-to-azure-postgresql-online/cloud-shell-button.png)
@@ -210,6 +210,7 @@ Para concluir todos os objetos de banco de dados, como procedimentos armazenados
    ```
 
    Por exemplo, o seguinte comando criará um serviço em:
+
    * Localização: Leste dos EUA 2
    * Assinatura: 97181df2-909d-420b-ab93-1bff15acb6b7
    * Nome do Grupo de Recursos: PostgresDemo
@@ -525,4 +526,4 @@ Se você precisar cancelar ou excluir uma tarefa, um projeto ou um serviço DMS,
 
 * Para obter informações sobre problemas conhecidos e limitações na realização de migrações online para o Banco de Dados do Azure para PostgreSQL, confira o artigo [Problemas conhecidos e soluções alternativas nas migrações online de Banco de Dados do Azure para PostgreSQL](known-issues-azure-postgresql-online.md).
 * Para obter informações sobre o Serviço de Migração de Banco de Dados do Azure, consulte o artigo [O que é o Serviço de Migração de Banco de Dados do Azure?](https://docs.microsoft.com/azure/dms/dms-overview).
-* Confira informações sobre o Banco de Dados do Azure para PostgreSQL no artigo [O que é o Banco de Dados do Azure para PostgreSQL?](https://docs.microsoft.com/azure/postgresql/overview).
+* Para obter informações sobre o Banco de Dados do Azure para PostgreSQL, consulte o artigo [O que é o Banco de Dados do Azure para PostgreSQL?](https://docs.microsoft.com/azure/postgresql/overview).

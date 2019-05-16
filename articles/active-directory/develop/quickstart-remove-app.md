@@ -3,8 +3,8 @@ title: Remover um aplicativo registrado na Microsoft Identity Platform | Azure
 description: Saiba como remover um aplicativo registrado na Microsoft Identity Platform.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/25/2018
-ms.author: celested
+ms.date: 05/08/2019
+ms.author: ryanwi
 ms.custom: aaddev
-ms.reviewer: lenalepa, sureshja
+ms.reviewer: aragra, lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20d7218b9b1d53b3cfb72a12ee34a77956327ce2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 271fe45082749afc310e8f217e8119d3931c3cac
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58093187"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65413728"
 ---
-# <a name="quickstart-remove-an-application-registered-with-the-microsoft-identity-platform-preview"></a>Início Rápido: Remover um aplicativo registrado na plataforma de identidade da Microsoft (Versão Prévia)
+# <a name="quickstart-remove-an-application-registered-with-the-microsoft-identity-platform"></a>Início Rápido: Remover um aplicativo registrado na plataforma de identidade da Microsoft
 
 Os desenvolvedores corporativos e provedores de SaaS (software como serviço) que registraram aplicativos na Microsoft Identity Platform podem precisar remover o registro do aplicativo.
 
@@ -35,10 +35,7 @@ Neste início rápido, você aprenderá a:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para começar, atenda aos seguintes pré-requisitos:
-
-* Obtenha um locatário com aplicativos registrados. Para aprender a adicionar aplicativos registrados, confira [Registrar um aplicativo na Microsoft Identity Platform](quickstart-register-app.md).
-* Inscreva-se na experiência de versão prévia de registros de aplicativos no portal do Azure. As etapas neste início rápido correspondem à nova interface do usuário e só funcionarão se você aceitou a experiência de versão prévia.
+É necessário ter um locatário com aplicativos registrados. Para aprender a adicionar aplicativos registrados, confira [Registrar um aplicativo na Microsoft Identity Platform](quickstart-register-app.md).
 
 ## <a name="remove-an-application-authored-by-you-or-your-organization"></a>Remover um aplicativo criado por você ou por sua organização
 
@@ -47,8 +44,8 @@ Os aplicativos que você ou sua organização registraram são representados por
 ### <a name="to-remove-an-application"></a>Para remover um aplicativo
 
 1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta corporativa ou de estudante ou uma conta pessoal da Microsoft.
-2. Se a conta der acesso a mais de um locatário, selecione sua conta no canto superior direito e defina a sessão do portal para o locatário do Azure AD desejado.
-3. No painel de navegação à esquerda, selecione o serviço **Azure Active Directory** e selecione **Registros de aplicativo (versão prévia)**. Encontre e selecione o aplicativo que você deseja configurar. Depois de selecionar o aplicativo, você verá a página **Visão Geral** do aplicativo.
+2. Se sua conta fornecer acesso a mais de um locatário, selecione sua conta no canto superior direito e defina sua sessão do portal para o locatário desejado do Azure AD.
+3. No painel de navegação à esquerda, selecione o serviço **Azure Active Directory** e selecione **Registros de aplicativo**. Encontre e selecione o aplicativo que você deseja configurar. Depois de selecionar o aplicativo, você verá a página **Visão Geral** do aplicativo.
 4. Na página **Visão Geral**, selecione **Excluir**.
 5. Selecione **Sim** para confirmar que você deseja excluir o aplicativo.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 29cea7e72d6bd7f64f6cf2a68b7620090ea4eef3
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: e53f0bd1af3940b4d2f653b5ef43170212c09a43
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995922"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65408694"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Início Rápido: Criar um aplicativo ASP.NET Core com a Configuração de Aplicativo do Azure
 
@@ -28,6 +28,8 @@ A Configuração de Aplicativo do Azure é um serviço de configuração gerenci
 O ASP.NET Core cria um único objeto de configuração baseado no par chave-valor, usando as configurações de uma ou mais fontes de dados especificadas por aplicativo. Essas origens de dados são conhecidas como *provedores de configuração*. Como o cliente .NET Core da Configuração de Aplicativo é implementado como um provedor, o serviço aparece como outra fonte de dados.
 
 Você pode usar qualquer editor de código para executar as etapas deste início rápido. O [Visual Studio Code](https://code.visualstudio.com/) é uma excelente opção disponível nas plataformas Windows, macOS e Linux.
+
+![Inicialização local do aplicativo do Início Rápido](./media/quickstarts/aspnet-core-app-launch-local.png)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -39,7 +41,7 @@ Para fazer este início rápido, instale o [SDK do .NET Core](https://dotnet.mic
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Selecione **Explorador de Chave/Valor** > **+ Criar** para adicionar os pares chave-valor a seguir:
+6. Selecione **Gerenciador de Configurações** > **+ Criar** para adicionar os seguintes pares chave-valor:
 
     | Chave | Valor |
     |---|---|
@@ -64,7 +66,7 @@ Você usa a [CLI (interface de linha de comando) do .NET Core](https://docs.micr
 
 Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspnet/core/security/app-secrets) ao projeto. A ferramenta Gerenciador de Segredos armazena dados confidenciais para o trabalho de desenvolvimento fora da árvore do seu projeto. Essa abordagem ajuda a impedir o compartilhamento acidental de segredos do aplicativo no código-fonte.
 
-- Abra seu arquivo *.csproj*. Adicione um elemento `UserSecretsId`, conforme mostrado aqui e substitua o valor pelo seu próprio, que geralmente é um GUID. Salve o arquivo.
+- Abra o arquivo *.csproj*. Adicione um elemento `UserSecretsId`, conforme mostrado aqui e substitua o valor pelo seu próprio, que geralmente é um GUID. Salve o arquivo.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -86,7 +88,7 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
 
 1. Adicione uma referência ao pacote NuGet `Microsoft.Extensions.Configuration.AzureAppConfiguration`, executando o seguinte comando:
 
-        dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration --version 1.0.0-preview-007830001
+        dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration --version 1.0.0-preview-008520001
 
 2. Execute o seguinte comando para restaurar pacotes do projeto:
 
@@ -100,11 +102,11 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
 
         dotnet user-secrets set ConnectionStrings:AppConfig <your_connection_string>
 
-    O Gerenciador de Segredos é usado apenas para testar o aplicativo Web localmente. Quando o aplicativo for implantado, por exemplo, no [Serviço de Aplicativo do Azure](https://azure.microsoft.com/services/app-service/web), você usará uma configuração de aplicativo, por exemplo, **Cadeias de Conexão** no Serviço de Aplicativo. Você usa essa configuração, em vez de armazenar a cadeia de conexão com Gerenciador de Segredos.
+    O Gerenciador de Segredos é usado apenas para testar o aplicativo Web localmente. Quando o aplicativo for implantado no [Serviço de Aplicativo do Azure](https://azure.microsoft.com/services/app-service/web), por exemplo, você usará uma configuração de aplicativo **Cadeias de Conexão** no Serviço de Aplicativo, em vez de armazenar a cadeia de conexão no Gerenciador de Segredos.
 
     Esse segredo é acessado com a API de configuração. Um sinal de dois pontos (:) funciona no nome da configuração com a API de configuração em todas as plataformas com suporte. Consulte [Configuração por ambiente](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/index?tabs=basicconfiguration&view=aspnetcore-2.0).
 
-4. Abra *Program.cs* e adicione uma referência a um provedor de configuração .NET Core da Configuração de Aplicativos.
+4. Abra *Program.cs* e adicione uma referência ao provedor da Configuração de Aplicativos do .NET Core.
 
     ```csharp
     using Microsoft.Extensions.Configuration.AzureAppConfiguration;
@@ -118,15 +120,12 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
                 var settings = config.Build();
-                config.AddAzureAppConfiguration(options => {
-                    options.Connect(settings["ConnectionStrings:AppConfig"])
-                           .SetOfflineCache(new OfflineFileCache());
-                });
+                config.AddAzureAppConfiguration(settings["ConnectionStrings:AppConfig"]);
             })
             .UseStartup<Startup>();
     ```
 
-6. Abra Index.cshtml no diretório Exibições > Página Inicial e substitua o conteúdo pelo código a seguir:
+6. Abra *Index.cshtml* no diretório Views > Página Inicial e substitua o conteúdo pelo seguinte código:
 
     ```html
     @using Microsoft.Extensions.Configuration
@@ -152,7 +151,7 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
     </html>
     ```
 
-7. Abra _Layout.cshtml no diretório Exibições > Compartilhado e substitua o conteúdo pelo código a seguir:
+7. Abra *_Layout.cshtml* no diretório Views > Compartilhado e substitua o conteúdo pelo seguinte código:
 
     ```html
     <!DOCTYPE html>
@@ -190,8 +189,6 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
         dotnet run
 
 3. Abra uma janela do navegador e vá para `http://localhost:5000`, que é a URL padrão do aplicativo Web hospedado localmente.
-
-    ![Inicialização local do aplicativo do Início Rápido](./media/quickstarts/aspnet-core-app-launch-local.png)
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 

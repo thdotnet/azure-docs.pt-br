@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 06/25/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 59b390776a5e23c08d8793125747742cee4e473e
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: f010e7564f097f28269070d85e2895e73f454054
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487016"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65415567"
 ---
 # <a name="tutorial-build-an-aspnet-app-in-azure-with-sql-database"></a>Tutorial: Compilar um aplicativo ASP.NET no Azure com Banco de Dados SQL
 
@@ -44,7 +44,7 @@ Neste tutorial, você aprenderá como:
 
 Para concluir este tutorial:
 
-Instalar o <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> com a carga de trabalho **ASP.NET e desenvolvimento Web**.
+Instale o <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2019</a> com a carga de trabalho de **desenvolvimento Web e do ASP.NET**.
 
 Se você já instalou o Visual Studio, adicione as cargas de trabalho no Visual Studio clicando em **Ferramentas** > **Obter Ferramentas e Recursos**.
 
@@ -364,7 +364,7 @@ Para alterar os níveis de rastreamento e exibir outras mensagens de rastreament
 
 Clique com o botão direito do mouse no aplicativo do Azure novamente e selecione **Exibir Configurações**.
 
-Na lista suspensa **Log de Aplicativo (Sistema de Arquivos)**, selecione **detalhado**. Clique em **Salvar**.
+Na lista suspensa **Log de Aplicativo (Sistema de Arquivos)**, selecione **detalhado**. Clique em **Save** (Salvar).
 
 ![Alterar nível de rastreamento para Detalhado](./media/app-service-web-tutorial-dotnet-sqldatabase/trace-level-verbose.png)
 

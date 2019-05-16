@@ -4,22 +4,22 @@ description: Uma visão geral de como os dados de configuração são armazenado
 services: azure-app-configuration
 documentationcenter: ''
 author: yegu-ms
-manager: balans
+manager: maiye
 editor: ''
 ms.service: azure-app-configuration
 ms.devlang: na
 ms.topic: overview
 ms.workload: tbd
-ms.date: 02/24/2019
+ms.date: 04/19/2019
 ms.author: yegu
-ms.openlocfilehash: 24216d1bf82789d2d0fc312d9af4c06fa3c8cf4e
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 4c741bb86242abfb03d01c902dbaa84d83491dd9
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60011274"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65408734"
 ---
-# <a name="key-value-store"></a>Repositório de valor-chave
+# <a name="keys-and-values"></a>Chaves e valores
 
 A configuração do Aplicativo Azure AD e armazena dados de configuração como pares chave-valor. Os pares chave-valor são uma maneira simples, porém flexível, de representar vários tipos de configurações de aplicativo com os quais os desenvolvedores estão familiarizados.
 
@@ -45,29 +45,27 @@ Você pode organizar as chaves na Configuração de Aplicativo hierarquicamente 
 
 Estes são vários exemplos de como você pode estruturar os nomes de chave em uma hierarquia:
 
-* Com base em ambientes
-
-        AppName:Test:DB:Endpoint
-        AppName:Staging:DB:Endpoint
-        AppName:Production:DB:Endpoint
-
 * Com base em serviços de componentes
 
-        AppName:Service1:Test:DB:Endpoint
-        AppName:Service1:Staging:DB:Endpoint
-        AppName:Service1:Production:DB:Endpoint
-        AppName:Service2:Test:DB:Endpoint
-        AppName:Service2:Staging:DB:Endpoint
-        AppName:Service2:Production:DB:Endpoint
+        AppName:Service1:ApiEndpoint
+        AppName:Service2:ApiEndpoint
 
 * Com base em regiões de implantação
 
-        AppName:Production:Region1:DB:Endpoint
-        AppName:Production:Region2:DB:Endpoint
+        AppName:Region1:DbEndpoint
+        AppName:Region2:DbEndpoint
+
+### <a name="label-keys"></a>Chaves de rótulo
+
+Valores de chave na Configuração de Aplicativo podem, opcionalmente, ter um atributo de rótulo. Os rótulos são usados para diferenciar os valores de chave com a mesma chave. Uma chave *app1* com rótulos *A* e *B* forma duas chaves separadas em um repositório de configurações de aplicativos. Por padrão, o rótulo de um valor chave está vazio (ou `null`).
+
+O rótulo fornece uma maneira conveniente de criar variantes de uma chave. Um uso comum dos rótulos é especificar vários ambientes para a mesma chave:
+
+    Key = AppName:DbEndpoint & Label = Test
+    Key = AppName:DbEndpoint & Label = Staging
+    Key = AppName:DbEndpoint & Label = Production
 
 ### <a name="version-key-values"></a>Valores de chave de versão
-
-Valores de chave na Configuração de Aplicativo podem, opcionalmente, ter um atributo de rótulo. Os rótulos são usados para diferenciar os valores de chave com a mesma chave. Uma chave *app1* com rótulos *v1* e *v2* forma dois valores de chave em um repositório de configurações de aplicativo. Por padrão, o rótulo de um valor chave está vazio (ou `null`).
 
 A Configuração de Aplicativo não faz o controle de versão de valores-chave automaticamente conforme eles são modificados. Use rótulos como uma maneira de criar várias versões de um valor de chave. Por exemplo, você pode inserir um número de versão do aplicativo ou uma ID de confirmação do Git em rótulos para identificar valores de chave associados a um build de software específico.
 
@@ -106,5 +104,5 @@ Os dados de configuração armazenados em um repositório de configurações de 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-> [!div class="nextstepaction"]
-> [Instantâneo pontual](./concept-point-time-snapshot.md)  
+* [Instantâneo pontual](./concept-point-time-snapshot.md)  
+* [Gerenciamento de recursos](./concept-feature-management.md)  

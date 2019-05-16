@@ -13,19 +13,22 @@ ms.devlang: na
 ms.date: 04/02/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a0730073a8d17e063ee3f1364d5914200259c10f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: a4f14a1e68042704ca8e8c49f1bd76b722c90d4d
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58880042"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466295"
 ---
-# <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-private-preview"></a>Tutorial: Usar o Gerenciador de Implantação do Azure com modelos do Resource Manager (versão prévia privada)
+# <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-public-preview"></a>Tutorial: Usar o Gerenciador de Implantação do Azure com modelos do Resource Manager (versão prévia pública)
 
 Saiba como usar [Gerenciador de Implantação do Azure](./deployment-manager-overview.md) para implantar seus aplicativos em várias regiões. Para usar o Gerenciador de Implantação, você precisa criar dois modelos:
 
 * **Um modelo de topologia**: descreve os recursos do Azure que compõem seus aplicativos e em que lugar implantá-lo.
 * **Um modelo de distribuição**: descreve as etapas a serem seguidas ao implantar seus aplicativos.
+
+> [!IMPORTANT]
+> Caso sua assinatura esteja marcada como Canário para testar novos recursos do Azure, você só poderá usar o Gerenciador de Implantação do Azure para implantação nas regiões do Canário. 
 
 Este tutorial cobre as seguintes tarefas:
 
@@ -432,4 +435,4 @@ Quando os recursos do Azure já não forem necessários, limpe os recursos impla
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste tutorial, você aprendeu a usar o Gerenciador de Implantação do Azure. Para obter mais informações, veja [Documentação do Azure Resource Manager](/azure/azure-resource-manager/).
+Neste tutorial, você aprendeu a usar o Gerenciador de Implantação do Azure. Para integrar o monitoramento de integridade ao Gerenciador de Implantação do Azure, confira [Tutorial: Usar a verificação de integridade no Gerenciador de Implantação do Azure](./deployment-manager-tutorial-health-check.md).

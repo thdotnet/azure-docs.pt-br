@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: edc75711d8f727d8b1c9359835c6d5ebd575ff71
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 8a0621d0261bfbc7ab396abf837ee7b1123352d1
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59678642"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233453"
 ---
 # <a name="take-a-tour-of-the-azure-iot-central-ui"></a>Faça um tour da interface do usuário do Azure IoT Central
 
@@ -33,7 +33,6 @@ Como um _operador_, você pode usar a interface do usuário do Azure IoT Central
 - Solucionar e corrigir problemas com dispositivos.
 - Provisione novos dispositivos.
 
-
 ## <a name="use-the-left-navigation-menu"></a>Use o menu de navegação à esquerda
 
 Use o menu de navegação à esquerda para acessar as diferentes áreas do aplicativo. Você pode expandir ou recolher a barra de navegação, selecionando **<** ou **>**:
@@ -51,11 +50,14 @@ O menu superior aparece em cada página:
 - Para procurar dispositivos e modelos de dispositivo, insira um valor **Pesquisar**.
 - Para alterar o idioma da interface do usuário ou o tema, escolha o ícone **Configurações**.
 - Para sair do aplicativo, escolha o ícone **Conta**.
-- Para obter ajuda e suporte, escolha o menu suspenso da **Ajuda** para ver uma lista de recursos.
+- Para obter ajuda e suporte, escolha o menu suspenso da **Ajuda** para ver uma lista de recursos. Em um aplicativo de avaliação, os recursos de suporte incluem o acesso ao [chat ao vivo](howto-show-hide-chat.md).
 
 Você pode escolher entre um tema claro ou escuro para a interface do usuário:
 
 ![Escolher um tema para a interface do usuário](media/overview-iot-central-tour/themes.png)
+
+> [!NOTE]
+> A opção de escolher entre os temas claro e escuro não estará disponível se o administrador tiver configurado um tema personalizado para o aplicativo.
 
 ## <a name="dashboard"></a>painel
 

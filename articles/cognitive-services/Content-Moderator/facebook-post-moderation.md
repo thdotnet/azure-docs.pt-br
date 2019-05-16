@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: tutorial
 ms.date: 01/18/2019
 ms.author: pafarley
-ms.openlocfilehash: 662eca2a727f3112f169ab8d669bf18c81700275
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 5d31285ca305ba7fefdf31b4a97e3183f58b3e3b
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57871021"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233822"
 ---
 # <a name="tutorial-moderate-facebook-posts-and-commands-with-azure-content-moderator"></a>Tutorial: Moderar comandos e postagens do Facebook com o Content Moderator do Azure
 
@@ -33,6 +33,9 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 Este diagrama ilustra cada componente desse cenário:
 
 ![Diagrama do Content Moderator recebendo informações do Facebook por meio de "FBListener" e enviando informações por meio de "CMListener"](images/tutorial-facebook-moderation.png)
+
+> [!IMPORTANT]
+> Em 2018, o Facebook implementou uma habilitação mais estrita de aplicativos do Facebook. Você não poderá concluir as etapas deste tutorial caso seu aplicativo não tenha sido examinado e aprovado pela equipe de análise do Facebook.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -59,68 +62,71 @@ Teste seu fluxo de trabalho usando o botão **Executar fluxo de trabalho**.
 
 ## <a name="create-azure-functions"></a>Criar Azure Functions
 
-Entre no [Portal do Azure](https://portal.azure.com/) e siga estas etapas:
+Entre no [portal do Azure](https://portal.azure.com/) e siga estas etapas:
 
 1. Crie um Aplicativo de funções do Azure, conforme mostrado na página [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-create-function-app-portal).
-2. Vá para o Aplicativo de funções recém-criado.
-3. Dentro do aplicativo, vá para a guia **Recursos da plataforma** e selecione **Configurações do aplicativo**. Na seção **Configurações do aplicativo** da página seguinte, role até a parte inferior da lista e clique em **Adicionar nova configuração**. Adicione os seguintes pares chave/valor
+1. Vá para o Aplicativo de funções recém-criado.
+1. No aplicativo, acesse a guia **Recursos da plataforma** e selecione **Configuração**. Na seção **Configurações de aplicativo** da página seguinte, selecione **Nova configuração de aplicativo** para adicionar os seguintes pares chave/valor:
     
     | Nome da configuração do aplicativo | value   | 
     | -------------------- |-------------|
     | cm:TeamId   | ID da sua equipe do Content Moderator  | 
-    | cm:SubscriptionKey | Sua chave de assinatura Content Moderator - Consulte [Credenciais](review-tool-user-guide/credentials.md) | 
-    | cm:Região | O nome da região do Content Moderator, sem espaços. Consulte a observação anterior. |
+    | cm:SubscriptionKey | Sua chave de assinatura Content Moderator - Consulte [Credenciais](review-tool-user-guide/credentials.md) |
+    | cm:Região | O nome da região do Content Moderator, sem espaços. |
     | cm:ImageWorkflow | Nome do fluxo de trabalho para executar em Imagens |
     | cm:TextWorkflow | Nome do fluxo de trabalho para executar em Texto |
-    | cm:CallbackEndpoint | URL para o aplicativo de funções CMListener que você criará mais adiante neste guia |
-    | fb:VerificationToken | O token de segurança, também é usado para assinar os eventos do feed do Facebook |
-    | fb:PageAccessToken | O token de acesso de grafo do Facebook não expira e permite a função Ocultar/Excluir as postagens em seu nome. |
+    | cm:CallbackEndpoint | URL do aplicativo de funções CMListener que você criará mais adiante neste guia |
+    | fb:VerificationToken | Um token secreto que você criará, usado para assinar os eventos do feed do Facebook |
+    | fb:PageAccessToken | O token de acesso de grafo do Facebook não expira e permite a função Ocultar/Excluir as postagens em seu nome. Você obterá isso em uma etapa posterior. |
 
     Clique no botão **Salvar** na parte superior da página.
 
-1. Usando o botão **+** no painel esquerdo, abra o painel de Nova função.
+1. Volte para a guia **Recursos da plataforma**. Use o botão **+** no painel esquerdo para abrir o painel **Nova função**. A função que você está prestes a criar receberá eventos do Facebook.
 
     ![Painel do Azure Functions com o botão Adicionar Função realçado.](images/new-function.png)
-
-    Em seguida, clique em **+ Nova função** na parte superior da página. Esta função recebe eventos do Facebook. Crie esta função seguindo estas etapas:
 
     1. Clique no bloco **Gatilho Http**.
     1. Digite o nome **FBListener**. O campo **Nível de Autorização** deve ser definido como **Função**.
     1. Clique em **Criar**.
     1. Substitua o conteúdo de **run.csx** pelo conteúdo de **FbListener/run.csx**
 
-    [!code-csharp[FBListener: csx file](~/samples-fbPageModeration/FbListener/run.csx?range=1-160)]
+    [!code-csharp[FBListener: csx file](~/samples-fbPageModeration/FbListener/run.csx?range=1-154)]
 
 1. Crie uma nova função de **Gatilho Http** denominada **CMListener**. Esta função recebe eventos do Content Moderator. Substitua o conteúdo de **run.csx** pelo conteúdo do **CMListener/run.csx**
 
-    [!code-csharp[FBListener: csx file](~/samples-fbPageModeration/CmListener/run.csx?range=1-106)]
+    [!code-csharp[FBListener: csx file](~/samples-fbPageModeration/CmListener/run.csx?range=1-110)]
 
 ---
 
 ## <a name="configure-the-facebook-page-and-app"></a>Configure o aplicativo e página do Facebook
+
 1. Crie um aplicativo do Facebook.
 
     ![Página de desenvolvedor do Facebook](images/facebook-developer-app.png)
 
     1. Navegue até o [site de desenvolvedor do Facebook](https://developers.facebook.com/)
-    2. Clique em **Meus Aplicativos**.
-    3. Adicionar um Novo Aplicativo.
+    1. Clique em **Meus Aplicativos**.
+    1. Adicionar um Novo Aplicativo.
     1. Dê um nome a ele
     1. Selecione **Webhooks -> Configurar**
     1. Selecione **Página** no menu suspenso e selecione **Assinar este objeto**
     1. Forneça a **URL FBListener** como a URL de retorno de chamada e o **Verificar Token** configurado em**Configurações do Aplicativo de Funções**
     1. Depois que se inscreveu, vá até o feed e selecione **assinar**.
+    1. Clique no botão **Testar** da linha do **feed** para enviar uma mensagem de teste para a Função do Azure FBListener e, em seguida, pressione o botão **Enviar para Meu Servidor**. Você deverá ver a solicitação que está sendo recebida no FBListener.
 
-2. Crie uma página do Facebook.
+1. Crie uma página do Facebook.
+
+    > [!IMPORTANT]
+    > Em 2018, o Facebook implementou uma habilitação mais estrita de aplicativos do Facebook. Você não poderá executar a seções 2, 3 e 4 caso seu aplicativo não tenha sido examinado e aprovado pela equipe de análise do Facebook.
 
     1. Navegue até [Facebook](https://www.facebook.com/bookmarks/pages) e crie uma nova **página do Facebook**.
-    2. Permita que o aplicativo do Facebook acesse esta página seguindo estas etapas:
+    1. Permita que o aplicativo do Facebook acesse esta página seguindo estas etapas:
         1. Navegue até o [Explorer do API do Graph](https://developers.facebook.com/tools/explorer/).
-        2. Selecione **Aplicativo**.
-        3. Selecione o **Token de Acesso da Página**, envie uma solicitação **Obter**.
-        4. Clique em **ID de Página** na resposta.
-        5. Agora acrescente **/subscribed_apps** à URL e Envie uma solicitação **Obter** (resposta vazia).
-        6. Envie uma solicitação de **Postagem**. Obtenha a resposta como **sucesso: verdadeiro**.
+        1. Selecione **Aplicativo**.
+        1. Selecione o **Token de Acesso da Página**, envie uma solicitação **Obter**.
+        1. Clique em **ID de Página** na resposta.
+        1. Agora acrescente **/subscribed_apps** à URL e Envie uma solicitação **Obter** (resposta vazia).
+        1. Envie uma solicitação de **Postagem**. Obtenha a resposta como **sucesso: verdadeiro**.
 
 3. Crie um token de acesso de API do Graph sem expiração.
 

@@ -1,31 +1,29 @@
 ---
-title: Instalar o Ansible em máquinas virtuais do Azure
-description: Saber como instalar e configurar o Ansible para gerenciar recursos do Azure no Ubuntu, no CentOS e no SLES
-ms.service: virtual-machines-linux
+title: Início Rápido – Instalar o Ansible em Máquinas Virtuais do Linux no Azure | Microsoft Docs
+description: Neste Início Rápido, saiba como instalar e configurar o Ansible para gerenciar recursos do Azure no Ubuntu, no CentOS e no SLES
 keywords: ansible, azure, devops, bash, cloudshell, playbook, bash
+ms.topic: quickstart
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: quickstart
-ms.date: 08/21/2018
-ms.openlocfilehash: 38a1ffdc815b357f7bb7ebe2c337b55a738fb6b5
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.date: 04/30/2019
+ms.openlocfilehash: 60cefe24feab9de4262e81eb1bc313aeadc7eb05
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57790417"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65409248"
 ---
-# <a name="install-ansible-on-azure-virtual-machines"></a>Instalar o Ansible em máquinas virtuais do Azure
+# <a name="quickstart-install-ansible-on-linux-virtual-machines-in-azure"></a>Início Rápido: Instalar o Ansible em Máquinas Virtuais do Linux no Azure
 
-O Ansible permite que você automatize a implantação e a configuração de recursos em seu ambiente. Você pode usar o Ansible para gerenciar suas máquinas virtuais (VMs) no Azure, da mesma forma que faria com qualquer outro recurso. Este artigo fornece detalhes sobre como instalar o Ansible e os módulos necessários do SDK do Python no Azure para algumas das distribuições de Linux mais comuns. Você pode instalar o Ansible em outras distribuições ajustando os pacotes instalados para se adaptar a sua plataforma específica. Para criar recursos do Azure de maneira segura, você também aprenderá a criar e definir credenciais para o Ansible usar. Para obter uma lista de ferramentas adicionais disponíveis no Cloud Shell, consulte [Recursos e ferramentas para Bash no Azure Cloud Shell](../../cloud-shell/features.md#tools).
+O Ansible permite que você automatize a implantação e a configuração de recursos em seu ambiente. Este artigo mostra como configurar o Ansible para algumas das distribuições do Linux mais comuns. Para instalar o Ansible em outras distribuições, ajuste os pacotes instalados para sua plataforma específica. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- **Assinatura do Azure** - Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-
-- **Acesso ao Linux ou a uma máquina virtual do Linux** - Se você não tiver acesso a um computador do Linux, crie uma [máquina virtual do Linux](https://docs.microsoft.com/azure/virtual-network/quick-create-cli).
-
-- **Entidade de serviço do Azure**: siga as instruções na seção **Criar a entidade de serviço** do artigo [Criar uma entidade de serviço do Azure com a CLI do Azure 2.0](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). Anote os valores para o **appId**, **displayName**, **senha** e **locatário**.
+[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-sp.md](../../../includes/open-source-devops-prereqs-create-service-principal.md)]
+- **Acesso ao Linux ou a uma máquina virtual do Linux** - Se você não tiver acesso a um computador do Linux, crie uma [máquina virtual do Linux](/azure/virtual-network/quick-create-cli).
 
 ## <a name="install-ansible-on-an-azure-linux-virtual-machine"></a>Instalar o Ansible em uma máquina virtual do Linux do Azure
 
@@ -37,103 +35,133 @@ Entre no seu computador do Linux e selecione uma das distribuições a seguir pa
 
 ### <a name="centos-74"></a>CentOS 7.4
 
-Instale os pacotes necessários para os módulos de SDK de Python do Azure e o Ansible, inserindo os comandos a seguir em uma janela de Bash ou terminal:
+Nesta seção, você configurará o CentOS para usar o Ansible.
 
-```bash
-## Install pre-requisite packages
-sudo yum check-update; sudo yum install -y gcc libffi-devel python-devel openssl-devel epel-release
-sudo yum install -y python-pip python-wheel
+1. Abra uma janela de terminal.
 
-## Install Ansible and Azure SDKs via pip
-sudo pip install ansible[azure]
-```
+1. Insira o seguinte comando para instalar os pacotes necessários para os módulos do SDK do Python do Azure:
 
-Siga as instruções descritas na seção [Criar credenciais do Azure](#create-azure-credentials).
+    ```bash
+    sudo yum check-update; sudo yum install -y gcc libffi-devel python-devel openssl-devel epel-release
+    sudo yum install -y python-pip python-wheel
+    ```
+
+1. Insira o seguinte comando para instalar os pacotes necessários do Ansible:
+
+    ```bash
+    sudo pip install ansible[azure]
+    ```
+
+1. [Criar as credenciais do Azure](#create-azure-credentials).
 
 ### <a name="ubuntu-1604-lts"></a>Ubuntu 16.04 LTS
 
-Instale os pacotes necessários para os módulos de SDK de Python do Azure e o Ansible, inserindo os comandos a seguir em uma janela de Bash ou terminal:
+Nesta seção, você configurará o Ubuntu para usar o Ansible.
 
+1. Abra uma janela de terminal.
 
-```bash
-## Install pre-requisite packages
-sudo apt-get update && sudo apt-get install -y libssl-dev libffi-dev python-dev python-pip
+1. Insira o seguinte comando para instalar os pacotes necessários para os módulos do SDK do Python do Azure:
 
-## Install Ansible and Azure SDKs via pip
-sudo pip install ansible[azure]
-```
+    ```bash
+    sudo apt-get update && sudo apt-get install -y libssl-dev libffi-dev python-dev python-pip
+    ```
 
-Siga as instruções descritas na seção [Criar credenciais do Azure](#create-azure-credentials).
+1. Insira o seguinte comando para instalar os pacotes necessários do Ansible:
+
+    ```bash
+    sudo pip install ansible[azure]
+    ```
+
+1. [Criar as credenciais do Azure](#create-azure-credentials).
 
 ### <a name="sles-12-sp2"></a>SLES 12 SP2
 
-Instale os pacotes necessários para os módulos de SDK de Python do Azure e o Ansible, inserindo os comandos a seguir em uma janela de Bash ou terminal:
+Nesta seção, você configurará o SLES para usar o Ansible.
 
-```bash
-## Install pre-requisite packages
-sudo zypper refresh && sudo zypper --non-interactive install gcc libffi-devel-gcc5 make \
-    python-devel libopenssl-devel libtool python-pip python-setuptools
+1. Abra uma janela de terminal.
 
-## Install Ansible and Azure SDKs via pip
-sudo pip install ansible[azure]
+1. Insira o seguinte comando para instalar os pacotes necessários para os módulos do SDK do Python do Azure:
 
-# Remove conflicting Python cryptography package
-sudo pip uninstall -y cryptography
-```
+    ```bash
+    sudo zypper refresh && sudo zypper --non-interactive install gcc libffi-devel-gcc5 make \
+        python-devel libopenssl-devel libtool python-pip python-setuptools
+    ```
 
-Siga as instruções descritas na seção [Criar credenciais do Azure](#create-azure-credentials).
+1. Insira o seguinte comando para instalar os pacotes necessários do Ansible:
+
+    ```bash
+    sudo pip install ansible[azure]
+    ```
+
+1. Insira o seguinte comando para remover o pacote de criptografia conflitante do Python:
+
+    ```bash
+    sudo pip uninstall -y cryptography
+    ```
+
+1. [Criar as credenciais do Azure](#create-azure-credentials).
 
 ## <a name="create-azure-credentials"></a>Criar as credenciais do Azure
 
-A combinação de ID da assinatura com as informações retornadas ao criar a entidade de serviço é usada para configurar as credenciais do Ansible de uma das duas maneiras a seguir:
+Para configurar as credenciais do Ansible, você precisará ter as seguintes informações:
+
+* ID da assinatura do Azure 
+* Os valores da entidade de serviço
+
+Se você estiver usando o Ansible Tower ou o Jenkins, declare os valores da entidade de serviço como variáveis de ambiente.
+
+Configure as credenciais do Ansible usando uma das seguintes técnicas:
 
 - [Criar um arquivo de credenciais do Ansible](#file-credentials)
 - [Usar variáveis de ambiente Ansible](#env-credentials)
 
-Se você pretende usar ferramentas como o Ansible Tower ou Jenkins, você precisará usar a opção de declarar os valores da entidade de serviço como variáveis de ambiente.
-
 ### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Criar arquivo de credenciais do Ansible
 
-Esta seção explica como criar um arquivo de credenciais locais para fornecer credenciais para o Ansible. Para saber mais sobre como definir credenciais do Ansible, veja [Fornecendo credenciais para os módulos do Azure](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules).
+Nesta seção, você criará um arquivo de credenciais local para fornecer credenciais para o Ansible. 
 
-Para um ambiente de desenvolvimento, crie um arquivo de *credenciais* para o Ansible em sua máquina virtual host da seguinte maneira:
+Para obter mais informações sobre como definir as credenciais do Ansible, confira [Como fornecer credenciais para os módulos do Azure](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules).
 
-```bash
-mkdir ~/.azure
-vi ~/.azure/credentials
-```
+1. Para um ambiente de desenvolvimento, crie um arquivo chamado `credentials` na máquina virtual do host:
 
-Insira as seguintes linhas no arquivo de *credenciais* - substituindo os espaços reservados pelas informações da criação de entidade de serviço.
+    ```bash
+    mkdir ~/.azure
+    vi ~/.azure/credentials
+    ```
 
-```bash
-[default]
-subscription_id=<your-subscription_id>
-client_id=<security-principal-appid>
-secret=<security-principal-password>
-tenant=<security-principal-tenant>
-```
+1. Insira as linhas a seguir no arquivo. Substitua os espaços reservados pelos valores da entidade de serviço.
 
-Salve e feche o arquivo.
+    ```bash
+    [default]
+    subscription_id=<your-subscription_id>
+    client_id=<security-principal-appid>
+    secret=<security-principal-password>
+    tenant=<security-principal-tenant>
+    ```
+
+1. Salve e feche o arquivo.
 
 ### <a name="span-idenv-credentialsuse-ansible-environment-variables"></a><span id="env-credentials"/>Usar variáveis de ambiente Ansible
 
-Esta seção explica como configurar suas credenciais do Ansible exportando-as como variáveis de ambiente.
+Nesta seção, você exportará os valores da entidade de serviço para configurar suas credenciais do Ansible.
 
-Em uma janela de terminal ou Bash, execute os comandos a seguir:
+1. Abra uma janela de terminal.
 
-```bash
-export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
-export AZURE_CLIENT_ID=<security-principal-appid>
-export AZURE_SECRET=<security-principal-password>
-export AZURE_TENANT=<security-principal-tenant>
-```
+1. Exporte os valores da entidade de serviço:
+
+    ```bash
+    export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
+    export AZURE_CLIENT_ID=<security-principal-appid>
+    export AZURE_SECRET=<security-principal-password>
+    export AZURE_TENANT=<security-principal-tenant>
+    ```
 
 ## <a name="verify-the-configuration"></a>Verificar a configuração
-Para verificar se a configuração foi bem-sucedida, agora você pode usar o Ansible para criar um grupo de recursos.
 
-[!INCLUDE [create-resource-group-with-ansible.md](../../../includes/ansible-create-resource-group.md)]
+Para verificar a configuração bem-sucedida, use o Ansible para criar um grupo de recursos do Azure.
+
+[!INCLUDE [create-resource-group-with-ansible.md](../../../includes/ansible-snippet-create-resource-group.md)]
 
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"] 
-> [Usar o Ansible para criar uma máquina virtual do Linux no Azure](./ansible-create-vm.md)
+> [Início Rápido: Configurar uma Máquina Virtual do Linux no Azure usando o Ansible](./ansible-create-vm.md)

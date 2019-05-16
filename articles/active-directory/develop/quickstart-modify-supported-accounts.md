@@ -3,8 +3,8 @@ title: Modificar as contas que têm suporte por um aplicativo registrado na Micr
 description: Configurar um aplicativo registrado na Microsoft Identity Platform para alterar quem, ou que contas, pode acessar o aplicativo.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/25/2018
-ms.author: celested
+ms.date: 05/08/2019
+ms.author: ryanwi
 ms.custom: aaddev
-ms.reviewer: lenalepa, sureshja
+ms.reviewer: aragra, lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a2c68d607e7afc2e3eac675511734c8d054c427
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: e2c52bd0bf6c1e385248bd379a8001756d28ac2d
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56174190"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65413577"
 ---
-# <a name="quickstart-modify-the-accounts-supported-by-an-application-preview"></a>Início rápido: Modificar as contas que têm suporte por um aplicativo (Versão Prévia)
+# <a name="quickstart-modify-the-accounts-supported-by-an-application"></a>Início Rápido: Modificar as contas que têm suporte de um aplicativo
 
 Ao registrar um aplicativo na Microsoft Identity Platform, talvez você queira que ele seja acessado apenas por usuários da sua organização. Como alternativa, você talvez queira também que ele possa ser acessado por usuários em organizações externas, ou por estes e também por usuários que não fazem necessariamente parte de uma organização (contas pessoais).
 
@@ -37,15 +37,14 @@ Para começar, atenda aos seguintes pré-requisitos:
 * Leia sobre [permissões e consentimentos](v2-permissions-and-consent.md), o que é importante saber na hora de criar aplicativos que precisam ser usados por outros usuários ou aplicativos.
 * Obtenha um locatário com aplicativos registrados.
   * Se você não tiver aplicativos registrados, [saiba como registrar aplicativos com a Microsoft Identity Platform](quickstart-register-app.md).
-* Inscreva-se na experiência de versão prévia de registros de aplicativos no portal do Azure. As etapas neste início rápido correspondem à nova interface do usuário e só funcionarão se você aceitou a experiência de versão prévia.
 
 ## <a name="sign-in-to-the-azure-portal-and-select-the-app"></a>Entrar no portal do Azure e selecionar o aplicativo
 
 Antes de configurar o aplicativo, siga estas etapas:
 
 1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta corporativa ou de estudante ou uma conta pessoal da Microsoft.
-1. Se a conta der acesso a mais de um locatário, selecione sua conta no canto superior direito e defina a sessão do portal para o locatário do Azure AD desejado.
-1. No painel de navegação à esquerda, selecione o serviço **Azure Active Directory** e selecione **Registros de aplicativo (versão prévia)**.
+1. Se sua conta fornecer acesso a mais de um locatário, selecione sua conta no canto superior direito e defina sua sessão do portal para o locatário desejado do Azure AD.
+1. No painel de navegação à esquerda, selecione o serviço **Azure Active Directory** e, em seguida, **Registros de aplicativo**.
 1. Encontre e selecione o aplicativo que você deseja configurar. Depois de selecionar o aplicativo, você verá a página **Visão Geral** ou a página de registro principal.
 1. Siga as etapas para [alterar o registro do aplicativo para dar suporte a contas diferentes](#change-the-application-registration-to-support-different-accounts).
 1. Se você tem um aplicativo de página única, [habilite a concessão implícita do OAuth 2.0](#enable-oauth-20-implicit-grant-for-single-page-applications).
