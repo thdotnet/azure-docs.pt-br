@@ -23,7 +23,7 @@ Você precisa proteger as chaves de criptografia e segredos, como certificados, 
 
 ## <a name="identity-and-access-management"></a>Gerenciamento de identidade e de acesso
 
-Ao criar um cofre de chaves em uma assinatura do Azure, ele é automaticamente associado ao locatário do Azure Active Directory da assinatura. Qualquer pessoa que tentar gerenciar ou recuperar o conteúdo de um cofre deve ser autenticada pelo AD do Azure.
+Quando você cria um cofre de chaves em uma assinatura do Azure, ele é automaticamente associado ao locatário do Azure Active Directory da assinatura. Qualquer pessoa que tentar gerenciar ou recuperar o conteúdo de um cofre deve ser autenticada pelo AD do Azure.
 
 - A autenticação estabelece a identidade do chamador.
 - Autorização determina quais operações o chamador pode executar. Autorização no cofre de chaves usa uma combinação de [controle de acesso baseado em função](../role-based-access-control/overview.md) (RBAC) e políticas de acesso do Azure Key Vault.
@@ -54,7 +54,7 @@ Quando você cria um cofre de chaves em um grupo de recursos, gerenciar o acesso
 Há várias funções predefinidas. Se uma função predefinida não atender às suas necessidades, você poderá definir sua própria função. Para saber mais, confira [RBAC: funções internas](../role-based-access-control/built-in-roles.md).
 
 > [!IMPORTANT]
-> Se um usuário tem permissões `Contributor` para um plano de gerenciamento de cofre de chaves, pode conceder a si mesmo o acesso ao plano de dados ao definir a política de acesso do Key Vault. Você deve controlar rigorosamente quem tem função de acesso `Contributor` aos cofres de chaves. Certifique-se de que apenas pessoas autorizadas possam acessar e gerenciar seus cofres de chaves, chaves, segredos e certificados.
+> Se um usuário tem permissões `Contributor` para um plano de gerenciamento de cofre de chaves, pode conceder a si mesmo o acesso ao plano de dados definindo a política de acesso do Key Vault. Você deve controlar rigorosamente quem tem função de acesso `Contributor` aos cofres de chaves. Certifique-se de que apenas pessoas autorizadas possam acessar e gerenciar seus cofres de chaves, chaves, segredos e certificados.
 
 <a id="data-plane-access-control"></a>
 ### <a name="controlling-access-to-key-vault-data"></a>Controlando o acesso a dados do Key Vault
