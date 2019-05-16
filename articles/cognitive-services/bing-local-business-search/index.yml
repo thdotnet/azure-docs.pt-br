@@ -6,8 +6,8 @@ metadata:
   title: Documentação da API de Pesquisa de Locais e Negócios do Bing
   description: A API de Pesquisa de Locais e Negócios do Bing é um serviço RESTful que permite que seus aplicativos encontrem locais e negócios com base em consultas de pesquisa.
   services: cognitive-services
-  author: mikedodaro
-  manager: rosh
+  author: aahill
+  manager: nitinme
   ms.subservice: bing-local-business
   ms.tgt_pltfrm: na
   ms.devlang: na

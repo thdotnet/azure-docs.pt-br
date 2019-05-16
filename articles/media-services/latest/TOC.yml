@@ -182,7 +182,6 @@
             - name: Conectar-se com o Postman
               href: media-rest-apis-with-postman.md
         - name: Desenvolver com SDKs
-          href: developers-guide.md
           items:
             - name: Conectar-se com Java
               href: configure-connect-java-howto.md
@@ -222,10 +221,13 @@
         - name: Codificação com uma transformação personalizada
           items:
             - name: Com .NET
+              displayName: 'encode, encoding, custom, transform'
               href: customize-encoder-presets-how-to.md
             - name: Com a CLI
+              displayName: 'encode, encoding, custom, transform'
               href: custom-preset-cli-howto.md
             - name: Com REST
+              displayName: 'encode, encoding, custom, transform'
               href: custom-preset-rest-howto.md
     - name: Usar a Grade de Eventos
       items:

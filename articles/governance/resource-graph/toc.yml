@@ -15,7 +15,6 @@
       displayName: 'module, docker, Az.ResourceGraph'
       href: first-query-powershell.md
 - name: Exemplos
-  expanded: true
   items:
     - name: Consultas iniciais
       displayName: 'query language, data explorer, count, list, show'
@@ -24,7 +23,6 @@
       displayName: 'query language, data explorer, list, regex'
       href: ./samples/advanced.md
 - name: Conceitos
-  expanded: true
   items:
     - name: Noções básicas da linguagem de consulta
       displayName: 'query language, data explorer, tabular, operators, functions'
