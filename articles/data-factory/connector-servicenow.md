@@ -44,8 +44,8 @@ As propriedades a seguir têm suporte para o serviço vinculado do ServiceNow:
 | type | A propriedade type deve ser definida como: **ServiceNow** | Sim |
 | endpoint | O endpoint do servidor do ServiceNow (`http://<instance>.service-now.com`).  | Sim |
 | authenticationType | O tipo de autenticação a ser usado. <br/>Valores permitidos são: **Básica**, **OAuth2** | Sim |
-| Nome de Usuário | O nome de usuário usado para se conectar ao servidor ServiceNow para autenticação básica e OAuth2.  | Sim |
-| Senha | A senha correspondente ao nome de usuário para autenticação básica e OAuth2. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
+| username | O nome de usuário usado para se conectar ao servidor ServiceNow para autenticação básica e OAuth2.  | Sim |
+| password | A senha correspondente ao nome de usuário para autenticação básica e OAuth2. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
 | clientId | A ID do cliente para autenticação OAuth2.  | Não  |
 | clientSecret | O segredo do cliente para autenticação OAuth2. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não  |
 | useEncryptedEndpoints | Especifica se os endpoints de fonte de dados são criptografados usando HTTPS. O valor padrão é true.  | Não  |
