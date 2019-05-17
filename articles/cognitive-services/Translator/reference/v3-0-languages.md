@@ -10,14 +10,14 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 1713a05590f389a6de70d72e8d62237c7521d808
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6e0342d876db424454526637322d67d55c0432a8
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60605111"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797289"
 ---
-# <a name="translator-text-api-30-languages"></a>API de Tradução de Texto 3.0: Languages
+# <a name="translator-text-api-30-languages"></a>API de Tradução de Texto 3.0: Idiomas
 
 Obtém o conjunto de idiomas atualmente suportados por outras operações da API de Tradução de Texto. 
 
@@ -28,19 +28,19 @@ Envie uma solicitação `GET` para:
 https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 ```
 
-## <a name="request-parameters"></a>Parâmetros da solicitação
+## <a name="request-parameters"></a>Parâmetros de solicitação
 
 Os parâmetros de solicitação passados na cadeia de caracteres de consulta são:
 
 <table width="100%">
   <th width="20%">Parâmetro de consulta</th>
-  <th>DESCRIÇÃO</th>
+  <th>Descrição</th>
   <tr>
     <td>api-version</td>
     <td><em>Parâmetro obrigatório</em>.<br/>Versão da API solicitada pelo cliente. O valor precisa ser `3.0`.</td>
   </tr>
   <tr>
-    <td>scope</td>
+    <td>escopo</td>
     <td>*Parâmetro opcional*.<br/>Uma lista separada por vírgula de nomes que definem o grupo de idiomas a ser retornado. Os nomes de grupo permitidos são: `translation`, `transliteration` e `dictionary`. Se nenhum escopo é fornecido, todos os grupos são retornados, o que é equivalente a passar `scope=translation,transliteration,dictionary`. Para decidir qual conjunto de idiomas compatíveis é apropriado para seu cenário, confira a descrição do [objeto de resposta](#response-body).</td>
   </tr>
 </table> 
@@ -49,7 +49,7 @@ Os cabeçalhos de solicitação são:
 
 <table width="100%">
   <th width="20%">Cabeçalhos</th>
-  <th>DESCRIÇÃO</th>
+  <th>Descrição</th>
   <tr>
     <td>Idioma aceito</td>
     <td>*Cabeçalho de solicitação opcional*.<br/>O idioma a ser usado para cadeias de caracteres de interface do usuário. Alguns dos campos na resposta são nomes de idiomas ou nomes de regiões. Use esse parâmetro para definir o idioma no qual esses nomes são retornados. O idioma é especificado fornecendo uma marcação de idioma BCP 47 bem formada. Por exemplo, use o valor `fr` para solicitar nomes em francês ou use o valor `zh-Hant` para solicitar nomes em chinês tradicional.<br/>Os nomes são fornecidos em inglês quando um idioma de destino não é especificado ou quando a localização não está disponível.
@@ -230,7 +230,7 @@ A lista de idiomas compatíveis não será alterada com frequência. Para econom
 
 <table width="100%">
   <th width="20%">Cabeçalhos</th>
-  <th>DESCRIÇÃO</th>
+  <th>Descrição</th>
   <tr>
     <td>ETag</td>
     <td>Valor atual da marca da entidade para os grupos solicitados de idiomas compatíveis. Para tornar as solicitações seguintes mais eficientes, o cliente pode enviar o valor `ETag` em um campo de cabeçalho `If-None-Match`.
@@ -247,11 +247,11 @@ A lista de idiomas compatíveis não será alterada com frequência. Para econom
 Veja a seguir os possíveis códigos de status HTTP retornados por uma solicitação. 
 
 <table width="100%">
-  <th width="20%">Código de status</th>
-  <th>DESCRIÇÃO</th>
+  <th width="20%">Código de Status</th>
+  <th>Descrição</th>
   <tr>
     <td>200</td>
-    <td>Sucesso.</td>
+    <td>Êxito.</td>
   </tr>
   <tr>
     <td>304</td>
@@ -263,11 +263,11 @@ Veja a seguir os possíveis códigos de status HTTP retornados por uma solicita�
   </tr>
   <tr>
     <td>429</td>
-    <td>O chamador está enviando muitas solicitações.</td>
+    <td>O servidor rejeitou a solicitação porque o cliente excedeu os limites de solicitação.</td>
   </tr>
   <tr>
     <td>500</td>
-    <td>Erro inesperado. Se o erro persistir, relate-o com: data e hora da falha, identificador da solicitação do cabeçalho de resposta `X-RequestId` e identificador do cliente do cabeçalho de solicitação `X-ClientTraceId`.</td>
+    <td>Ocorreu um erro inesperado. Se o erro persistir, relate-o com: data e hora da falha, identificador da solicitação do cabeçalho de resposta `X-RequestId` e identificador do cliente do cabeçalho de solicitação `X-ClientTraceId`.</td>
   </tr>
   <tr>
     <td>503</td>

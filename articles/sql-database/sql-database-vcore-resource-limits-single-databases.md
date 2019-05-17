@@ -7,19 +7,19 @@ ms.subservice: single-database
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: CarlRabeler
-ms.author: carlrab
+author: stevestein
+ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/22/2019
-ms.openlocfilehash: 7dcbf2733ff23b0454208dbc789599cd372278ec
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 15aedaa7eedad4940945e9b1e7eff0e1780da796
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65507831"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790395"
 ---
-# <a name="azure-sql-database-vcore-based-purchasing-model-limits-for-a-single-database"></a>Limites do modelo de compra baseado em vCore do Banco de Dados SQL do Azure para um banco de dados individual
+# <a name="resource-limits-for-single-databases-using-the-vcore-based-purchasing-model"></a>Limites de recursos para bancos de dados individuais usando o modelo de compra baseado em vCore
 
 Este artigo fornece os limites de recursos detalhados para bancos de dados individuais do Banco de Dados SQL do Azure usando o modelo de compra baseado em vCore.
 
@@ -129,7 +129,7 @@ Para limites do modelo de compra baseado em DTU para bancos de dados individuais
 
 ### <a name="serverless-compute-tier"></a>Camada de computação sem servidor
 
-O [camada de computação sem servidor](sql-database-serverless.md) está em visualização pública e é apenas para bancos de dados individuais usando a compra de vCore do modelo.
+O [camada de computação sem servidor](sql-database-serverless.md) está em visualização e é apenas para bancos de dados individuais usando a compra de vCore do modelo.
 
 #### <a name="generation-5-compute-platform"></a>Plataforma de computação de Geração 5
 

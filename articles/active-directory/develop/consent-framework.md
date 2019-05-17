@@ -3,8 +3,8 @@ title: Estrutura de consentimento do Azure Active Directory
 description: Saiba mais sobre a estrutura de consentimento no Azure Active Directory e como ela facilita o desenvolvimento de aplicativos Web multilocatários e cliente nativos.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/30/2018
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: zachowd, lenalepa, jesakowi
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f01555933ca8b3d0c48a956d3deb4b3356b4e1a2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 93adedc5c1343df1eee05b653b60cfd7e810044c
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60410770"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540419"
 ---
 # <a name="azure-active-directory-consent-framework"></a>Estrutura de consentimento do Azure Active Directory
 
@@ -67,7 +67,7 @@ As etapas a seguir mostram como a experiência de consentimento funciona para o 
    > [!IMPORTANT]
    > A concessão explícita de consentimento usando o botão **Conceder permissões** é necessária atualmente para SPAs (aplicativos de página única) que usam o ADAL.js. Caso contrário, o aplicativo falhará quando o token de acesso for solicitado.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * Veja [como converter um aplicativo em multilocatário](howto-convert-app-to-be-multi-tenant.md)
 * Para se aprofundar, veja [como o consentimento tem suporte na camada de protocolo OAuth 2.0 durante o fluxo de concessão de código de autorização.](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code#request-an-authorization-code)

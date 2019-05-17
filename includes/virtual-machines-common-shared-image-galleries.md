@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/06/2019
 ms.author: akjosh; cynthn
 ms.custom: include file
-ms.openlocfilehash: 0fe1de9bb674c66d1b665de25ee579bc86e42c75
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 4063e79a9415ac35b09cc77d0110c04e191b49c7
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65192380"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546677"
 ---
 Galeria de Imagens Compartilhadas é um serviço que ajuda você a criar a estrutura e a organização em torno de suas imagens de VM gerenciadas personalizadas. Galerias de imagens compartilhadas fornecem:
 
@@ -30,7 +30,7 @@ Se você tiver um grande número de imagens gerenciadas que você precisa manter
 
 O recurso Galeria de Imagens Compartilhadas tem vários tipos de recursos:
 
-| Resource | DESCRIÇÃO|
+| Resource | Descrição|
 |----------|------------|
 | **Imagem gerenciada** | Uma imagem básica que pode ser usada sozinho ou usada para criar uma **versão da imagem** em uma galeria de imagens. Imagens gerenciadas são criadas de VMs generalizadas. Uma imagem gerenciada é um tipo especial de VHD que pode ser usado para criar várias VMs e agora pode ser usado para criar versões de imagem compartilhada. |
 | **Galeria de imagens** | Como o Azure Marketplace, uma **galeria de imagens** é um repositório para gerenciar e compartilhar imagens, mas você controla quem tem acesso. |
@@ -49,11 +49,11 @@ As definições de imagem são um agrupamento lógico de versões de uma imagem.
 
 Há três parâmetros para cada definição de imagem que são usados em combinação - **Publisher**, **oferecem** e **SKU**. Eles são usados para encontrar uma definição de imagem específico. Você pode ter versões de imagem que compartilham um ou dois, mas não todos os três valores.  Por exemplo, aqui estão três definições de imagem e seus valores:
 
-|Definição de imagem|Publicador|Oferta|Sku|
+|Definição de imagem|Editor|Oferta|Sku|
 |---|---|---|---|
 |myImage1|Contoso|Finanças|Back-end|
 |myImage2|Contoso|Finanças|Front-end|
-|myImage3|Testando|Finanças|Front-end|
+|myImage3|Testes|Finanças|Front-end|
 
 Todos os três têm conjuntos exclusivos de valores. O formato é semelhante a como você pode especificar atualmente os Editor, oferta e SKU para [imagens do Azure Marketplace](../articles/virtual-machines/windows/cli-ps-findimage.md) no Azure PowerShell para obter a versão mais recente de uma imagem do Marketplace. Cada definição de imagem precisa ter um conjunto exclusivo desses valores.
 
@@ -89,7 +89,7 @@ Regiões de origem são listados na tabela a seguir. Todas as regiões públicas
 
 
 
-## <a name="limits"></a>limites 
+## <a name="limits"></a>Limites 
 
 Há limites por assinatura, para a implantação de recursos usando Shared galerias de imagens:
 - 100 galerias de imagem compartilhada, por assinatura por região
@@ -99,7 +99,7 @@ Há limites por assinatura, para a implantação de recursos usando Shared galer
 Para obter mais informações, consulte [verificar o uso de recursos em relação aos limites](https://docs.microsoft.com/azure/networking/check-usage-against-limits) para obter exemplos sobre como verificar seu uso atual.
  
 
-## <a name="scaling"></a>Dimensionamento
+## <a name="scaling"></a>Escala
 A Galeria de Pesquisa de Imagem permite que você especifique o número de réplicas que você deseja que o Azure mantenha das imagens. Isso ajuda em cenários de implantação de várias VMs, já que as implantações de VM podem ser distribuídas para diferentes réplicas, reduzindo a chance de o processamento de criação de instância ser limitado devido à sobrecarga de uma única réplica.
 
 ![Gráfico mostrando como você pode dimensionar imagens](./media/shared-image-galleries/scaling.png)
@@ -117,11 +117,11 @@ As regiões para as quais uma versão de Imagem compartilhada é replicada podem
 
 Como a versão da Galeria de Imagem Compartilhada, Imagem Compartilhada e Imagem Compartilhada são todos recursos, eles podem ser compartilhados usando os controles nativos do Azure RBAC. Usando o RBAC, você pode compartilhar esses recursos para outros usuários, as entidades de serviço e grupos. Você pode até compartilhar o acesso a indivíduos fora do locatário do qual que eles foram criados dentro. Depois que um usuário tem acesso para a versão de imagem compartilhada, eles podem implantar uma VM ou um conjunto de dimensionamento de máquina Virtual.  Aqui está a matriz de compartilhamento que ajuda a entender ao que o usuário obtém acesso:
 
-| Compartilhado com o usuário     | Galeria de imagens compartilhadas | Imagem Compartilhada | Versão de imagem compartilhada |
+| Compartilhado com o usuário     | Galeria de Imagens Compartilhadas | Imagem Compartilhada | Versão de imagem compartilhada |
 |----------------------|----------------------|--------------|----------------------|
-| Galeria de imagens compartilhadas | Sim                  | sim          | Sim                  |
-| Imagem Compartilhada         | Não                    | sim          | Sim                  |
-| Versão de imagem compartilhada | Não                    | Não            | Sim                  |
+| Galeria de Imagens Compartilhadas | Sim                  | sim          | Sim                  |
+| Imagem Compartilhada         | Não                   | sim          | Sim                  |
+| Versão de imagem compartilhada | Não                   | Não            | Sim                  |
 
 É recomendável que o compartilhamento no nível de galeria para a melhor experiência. Para obter mais informações sobre o RBAC, consulte [gerenciar o acesso aos recursos do Azure usando o RBAC](../articles/role-based-access-control/role-assignments-portal.md).
 
@@ -137,12 +137,12 @@ Não há custo adicional para usar o serviço de Galeria de Imagens Compartilhad
 Depois de criado, você pode fazer algumas alterações para os recursos da Galeria de imagem. Eles são limitados a:
  
 Galeria de imagens compartilhadas:
-- DESCRIÇÃO
+- Descrição
 
 definição da imagem:
 - vCPUs recomendadas
 - Memória recomendada
-- DESCRIÇÃO
+- Descrição
 - Data de fim da vida útil
 
 Versão da imagem:
@@ -266,4 +266,4 @@ Para especificar a contagem de réplicas comuns na CLI, use o argumento **--repl
 
 **P.** Que versão de API devo usar para criar a Galeria de Imagens Compartilhadas, a definição de imagem, a versão da imagem e a VM/VMSS com base na Versão da Imagem?
 
- a. Para implantações de conjunto de dimensionamento de máquina virtual e VM usando uma versão de imagem, recomendamos usar a versão da API 2018-04-01 ou superior. Para trabalhar com galerias de imagens compartilhadas, definições de imagem e versões de imagem, é recomendável usar a API versão 2018-06-01. 
+ a. Para implantações de conjunto de dimensionamento de máquina virtual e VM usando uma versão de imagem, recomendamos usar a versão da API 2018-04-01 ou superior. Para trabalhar com galerias de imagens compartilhadas, definições de imagem e versões de imagem, é recomendável usar a API versão 2018-06-01. Armazenamento com redundância de zona (ZRS) requer a versão de 2019-03-01 ou posterior.

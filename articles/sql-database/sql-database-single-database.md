@@ -7,17 +7,17 @@ ms.subservice: single-database
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: CarlRabeler
-ms.author: carlrab
+author: stevestein
+ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/08/2019
-ms.openlocfilehash: 4406789e3f9a10ff814aca0c2fd114de8a2abb69
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 36b1fb96ac1dd89375588a65063ce729f6ac825d
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64572674"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794399"
 ---
 # <a name="what-is-a-single-database-in-azure-sql-database"></a>O que é um banco de dados individual no Banco de Dados SQL do Azure
 
@@ -30,7 +30,7 @@ A opção de implantação de banco de dados individual cria um banco de dados n
 
 ## <a name="dynamic-scalability"></a>Dimensionamento dinâmico
 
-Você pode criar seu primeiro aplicativo em um banco de dados individual pequeno com um baixo custo mensal na camada de serviço de baixo custo/desempenho e [alterar a camada de serviço](sql-database-single-database-scale.md) manualmente ou de forma programática a qualquer momento para a camada de serviço de maior preço/desempenho para atender às necessidades da solução. Você pode ajustar o desempenho sem tempo de inatividade para seu aplicativo ou para seus clientes. A escalabilidade dinâmica permite que o banco de dados responda de forma transparente às mudanças rápidas de requisitos de recursos e que você pague apenas pelos recursos de que precisa, quando precisar deles.
+Você pode criar seu primeiro aplicativo em um pequeno banco de dados único em baixo custo na camada de computação sem servidor (visualização) ou um tamanho de computação pequena na camada de computação provisionada. Alterar o [camada de computação ou serviço](sql-database-single-database-scale.md) manualmente ou por meio de programação a qualquer momento para atender às necessidades da sua solução. Você pode ajustar o desempenho sem tempo de inatividade para seu aplicativo ou para seus clientes. A escalabilidade dinâmica permite que o banco de dados responda de forma transparente às mudanças rápidas de requisitos de recursos e que você pague apenas pelos recursos de que precisa, quando precisar deles.
 
 ## <a name="single-databases-and-elastic-pools"></a>Bancos de dados individuais e pools elásticos
 

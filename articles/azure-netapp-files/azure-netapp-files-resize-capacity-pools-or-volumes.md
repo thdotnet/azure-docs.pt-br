@@ -12,21 +12,21 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/03/2018
+ms.date: 05/14/2019
 ms.author: b-juche
-ms.openlocfilehash: f08eaee038ad18c600826dea6fe0fd85935de59a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c58ceef57b984f46b86bb2a8577c53b75082b78b
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60452901"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794625"
 ---
 # <a name="resize-a-capacity-pool-or-a-volume"></a>Redimensionar um volume ou um pool de capacidade
 Você pode alterar o tamanho de um pool de capacidade ou de um volume, conforme necessário. 
 
 ## <a name="resize-the-capacity-pool"></a>Redimensionar o pool de capacidade 
 
-Você pode alterar o tamanho do pool de capacidade em incrementos ou decrementos de 4 TiB. Redimensionar o pool de capacidade altera a capacidade adquirida do Azure NetApp Files.
+Você pode alterar o tamanho do pool de capacidade em incrementos de 1 TiB ou diminui. No entanto, o tamanho do pool de capacidade não pode ser menor do que 4 TiB. Redimensionar o pool de capacidade altera a capacidade adquirida do Azure NetApp Files.
 
 1. Na folha Gerenciar Conta do NetApp, clique no pool de capacidade que você deseja redimensionar. 
 2. Clique com o botão direito do mouse no nome do pool de capacidade ou clique no ícone "..." no final da linha do pool de capacidade para exibir o menu de contexto. 

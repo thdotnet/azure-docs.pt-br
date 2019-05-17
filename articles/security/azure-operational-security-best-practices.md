@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/06/2019
 ms.author: terrylan
-ms.openlocfilehash: 4a4677b5db730001df75d201d8e6d3149cb928e6
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 0418d325f3b3719549181a48fc0432a677f695d5
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65409838"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795899"
 ---
 # <a name="azure-operational-security-best-practices"></a>Práticas recomendadas de Segurança Operacional do Azure
 Este artigo fornece um conjunto de práticas operacionais recomendadas para proteger seus dados, aplicativos e outros recursos no Azure.
@@ -153,7 +153,7 @@ Você pode usar o [Azure Resource Manager](https://azure.microsoft.com/documenta
 **Detalhe**: o [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index?azure-devops) é uma solução para automatizar a implantação em vários estágios e gerenciar o processo de lançamento. Crie pipelines de implantação gerenciados e contínuos, a fim de lançar com rapidez, facilidade e frequência. Com o Azure Pipelines, você pode automatizar o processo de liberação e pode ter fluxos de trabalho de aprovação predefinidos. Implante localmente e na nuvem, estenda e personalize conforme a necessidade.
 
 **Melhor prática**: Verificar o desempenho de seu aplicativo antes de iniciá-lo ou implantar atualizações na produção.  
-**Detalhe**: Executar com base em nuvem [testes de carga](https://docs.microsoft.com/azure/devops/test/load-test/overview.md?view=azure-devops#alternatives) para:
+**Detalhe**: Executar com base em nuvem [testes de carga](/azure/devops/test/load-test/overview#alternatives) para:
 
 - Localizar problemas de desempenho em seu aplicativo Web.
 - Melhorar a qualidade da implantação.

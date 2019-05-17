@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 12/15/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: d1783890ba1b304ab658e827bfd24091e208fda4
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7c1167a6170cdc0b897c57a51c417a9312b6f41a
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64699244"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794148"
 ---
 # <a name="convert-a-linux-virtual-machine-from-unmanaged-disks-to-managed-disks"></a>Converter uma máquina virtual Linux de discos não gerenciados em Managed Disks
 
@@ -98,5 +98,18 @@ Todas as VMs no conjunto de disponibilidade devem ser desalocadas antes de conve
     az vm start --resource-group myResourceGroup --name myVM
     ```
 
+## <a name="convert-using-the-azure-portal"></a>Converter usando o portal do Azure
+
+Também é possível converter discos não gerenciados em discos gerenciados usando o portal do Azure.
+
+1. Entre no [Portal do Azure](https://portal.azure.com).
+2. Selecione a VM na lista de VMs no portal.
+3. Na folha da VM, selecione **Discos** no menu.
+4. Na parte superior da folha **Discos**, selecione **Migrar para discos gerenciados**.
+5. Se sua VM estiver em um conjunto de disponibilidade, haverá um aviso na folha **Migrar para discos gerenciados** informando que você precisa converter o conjunto de disponibilidade primeiro. O aviso deve ter um link em que você pode clicar para converter o conjunto de disponibilidade. Quando o conjunto de disponibilidade for convertido ou se sua VM não estiver em um conjunto de disponibilidade, clique em **Migrar** para iniciar o processo de migração de seus discos para discos gerenciados.
+
+A VM será interrompida e reiniciada após a conclusão da migração.
+
 ## <a name="next-steps"></a>Próximas etapas
+
 Para saber mais sobre as opções de armazenamento, confira a [Visão geral dos Azure Managed Disks](../windows/managed-disks-overview.md).

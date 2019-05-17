@@ -9,12 +9,12 @@ ms.author: heidist
 manager: cgronlun
 author: HeidiSteen
 ms.custom: seodec2018
-ms.openlocfilehash: e3738980206277587ca367339d75da4f3faa643a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f76d944f614f07a4428d4e4100f6a08a375d96dc
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61316822"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795791"
 ---
 # <a name="analyzers-for-text-processing-in-azure-search"></a>Analisadores para processamento de texto no Azure Search
 
@@ -40,7 +40,7 @@ Ele é usado automaticamente em cada campo pesquisável. Você pode substituir o
 
 A lista a seguir descreve quais analisadores estão disponíveis no Azure Search.
 
-| Category | DESCRIÇÃO |
+| Category | Descrição |
 |----------|-------------|
 | [Analisador Lucene padrão](https://lucene.apache.org/core/4_0_0/analyzers-common/org/apache/lucene/analysis/standard/StandardAnalyzer.html) | Padrão. Nenhuma especificação ou a configuração é necessária. Esse analisador de uso geral funciona bem para a maioria dos idiomas e cenários.|
 | Analisadores predefinidos | Oferecidos como um produto acabado destinado a ser usado no estado em que se encontra. <br/>Há dois tipos: especializado e de idioma. O que os torna "predefinidos" é que você os referencia por nome, sem nenhuma configuração ou personalização. <br/><br/>[Analisadores especializados (independentes de idioma)](index-add-custom-analyzers.md#AnalyzerTable) são usados quando as entradas de texto exigem processamento especializado ou o mínimo de processamento. Analisadores de idioma não predefinidos incluem **Asciifolding**, **Palavra-chave**, **Padrão**, **Simples**, **Interromper**, **Espaço em branco**.<br/><br/>[Analisadores de idioma](index-add-language-analyzers.md) são usados quando você precisa de suporte linguístico avançado para idiomas individuais. O Azure Search dá suporte a 35 analisadores de idioma Lucene e 50 analisadores de processamento de idioma natural Microsoft. |
@@ -92,10 +92,6 @@ Substituir o analisador padrão requer um rebuild de índice. Se possível, esco
 ### <a name="inspect-tokenized-terms"></a>Inspecionar termos indexados
 
 Se uma pesquisa não retornar os resultados esperados, o cenário mais provável é discrepâncias de token entre as entradas de termo na consulta e os termos indexados no índice. Se os tokens não forem os mesmos, as correspondências não se materializarão. Para inspecionar a saída do indexador, é recomendável usar a [API Analisar](https://docs.microsoft.com/rest/api/searchservice/test-analyzer) como uma ferramenta de investigação. A resposta é composta por tokens gerados por um analisador específico.
-
-### <a name="compare-english-analyzers"></a>Comparar analisadores em inglês
-
-A [Demonstração do analisador de pesquisa](https://alice.unearth.ai/) é um aplicativo de demonstração de terceiros que mostra uma comparação lado a lado do analisador Lucene padrão, do analisador do idioma inglês do Lucene e do processador de idioma natural inglês da Microsoft. O índice é fixo; ele contém o texto de uma história popular. Para cada entrada de pesquisa fornecida, os resultados de cada analisador são exibidos nos painéis adjacentes, dando uma ideia de como cada analisador processa a mesma cadeia de caracteres. 
 
 <a name="examples"></a>
 
@@ -348,8 +344,6 @@ Criar uma [CustomAnalyzer](https://docs.microsoft.com/dotnet/api/microsoft.azure
 + Saiba como aplicar [analisadores léxicos específico do idioma](index-add-language-analyzers.md).
 
 + [Configurar analisadores personalizados](index-add-custom-analyzers.md) para o mínimo de processamento ou processamento especializado em campos individuais.
-
-+ [Compare os analisadores padrão e inglês](https://alice.unearth.ai/) em painéis adjacentes neste site da Web de demonstração. 
 
 ## <a name="see-also"></a>Consulte também
 

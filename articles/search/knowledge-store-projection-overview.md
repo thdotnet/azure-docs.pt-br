@@ -1,5 +1,5 @@
 ---
-title: Trabalhando com projeções em um repositório de dados de Conhecimento - Azure Search
+title: Trabalhando com projeções em um repositório de dados de Conhecimento (visualização) - Azure Search
 description: Salvar e formatar seus dados enriquecidos do pipeline de indexação do AI para uso em outros cenários além da pesquisa
 manager: eladz
 author: vkurpad
@@ -10,18 +10,22 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: vikurpad
 ms.custom: seomay2019
-ms.openlocfilehash: 3ab5ffafd1b20eb0e3e453d3e730840baf9233e1
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: f1c7278909557dc92f86c5dfc1f190fddf33f607
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65028359"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540817"
 ---
 # <a name="working-with-projections-in-a-knowledge-store-in-azure-search"></a>Trabalhando com projeções em um repositório de dados de Conhecimento no Azure Search
 
+> [!Note]
+> Armazenamento de dados de conhecimento está em versão prévia e não destina-se para uso em produção. O [API REST versão 2019-05-06-Preview](search-api-preview.md) fornece esse recurso. Não há nenhum suporte de SDK do .NET no momento.
+>
+
 O Azure Search permite o enriquecimento de conteúdo por meio de habilidades cognitivas de inteligência Artificial e habilidades personalizadas como parte da indexação. Aprimoramentos de adicionam estrutura a documentos e facilitar a pesquisa mais eficiente. Em muitos casos, os documentos enriquecidos são úteis para outros cenários além da pesquisa, por exemplo, para mineração de dados de Conhecimento.
 
-Projeções, um componente do [repositório de dados de Conhecimento (visualização)](knowledge-store-concept-intro.md), modos de exibição de documentos enriquecidos que podem ser salvos no armazenamento físico para fins de mineração de dados de Conhecimento. Uma projeção permite que você "projeto" seus dados em uma forma que se alinha com suas necessidades, preservando relações para que ferramentas como o Power BI podem ler os dados sem esforço adicional. 
+Projeções, um componente do [repositório de dados de Conhecimento](knowledge-store-concept-intro.md), modos de exibição de documentos enriquecidos que podem ser salvos no armazenamento físico para fins de mineração de dados de Conhecimento. Uma projeção permite que você "projeto" seus dados em uma forma que se alinha com suas necessidades, preservando relações para que ferramentas como o Power BI podem ler os dados sem esforço adicional. 
 
 Projeções podem ser tabulares, com dados armazenados em linhas e colunas no armazenamento de tabelas do Azure, ou objetos JSON armazenados no armazenamento de BLOBs do Azure. Você pode definir várias projeções de dados quando ele está sendo aprimorado. Isso é útil quando você deseja que os mesmos dados em relação à forma para casos de uso individual. 
 

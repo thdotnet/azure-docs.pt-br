@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/19/2019
 ms.author: pabouwer
-ms.openlocfilehash: fc95ce4aad4e8597b02b9c862be33bfcf6185541
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 12565d2b8004a5119add25473e5b088c9162035f
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65073797"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65780491"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Instalar e usar o Istio no AKS (Serviço de Kubernetes do Azure)
 
@@ -40,7 +40,7 @@ Neste artigo, você aprenderá a:
 
 As etapas detalhadas neste artigo pressupõem que você criou um cluster do AKS (Kubernetes `1.11` e acima, com o RBAC habilitado) e ter estabelecido um `kubectl` conexão com o cluster. Se você precisar de ajuda com qualquer um desses itens, consulte o [Início rápido do AKS][aks-quickstart].
 
-Você precisará [Helm] [ helm] siga estas instruções e instalar o Istio. É recomendável que você tenha a versão `2.12.2` ou posterior corretamente instalado e configurado no cluster. Se você precisar de ajuda com a instalação do Helm, consulte o [diretrizes de instalação do Helm AKS][helm-install]. Todos os compartimentos de Istio também devem ser agendados para execução em nós do Linux.
+Você precisará [Helm] [ helm] siga estas instruções e instalar o Istio. É recomendável que você tenha a versão `2.12.2` ou posterior corretamente instalado e configurado no cluster. Se você precisar de ajuda com a instalação do Helm, consulte o [diretrizes de instalação do Helm AKS][helm-install].
 
 Este artigo separa as diretrizes de instalação do Istio em várias etapas discretas. O resultado final é o mesmo na estrutura das [diretrizes][istio-install-helm] de instalação do Istio oficial.
 
@@ -195,7 +195,7 @@ Bash
 kubectl get crds | grep 'istio.io' | wc -l
 ```
 
-Powershell
+PowerShell
 
 ```powershell
 (kubectl get crds | Select-String -Pattern 'istio.io').Count
@@ -324,7 +324,7 @@ helm install install/kubernetes/helm/istio --name istio --namespace istio-system
   --set kiali.enabled=true
 ```
 
-Powershell
+PowerShell
 
 ```powershell
 helm install install/kubernetes/helm/istio --name istio --namespace istio-system `
@@ -336,9 +336,6 @@ helm install install/kubernetes/helm/istio --name istio --namespace istio-system
 ```
 
 O `istio` gráfico do Helm implanta um grande número de objetos. Você pode ver a lista da saída do seu `helm install` comando acima. A implantação dos componentes do Istio pode levar de 4 a 5 minutos para ser concluído, dependendo do seu ambiente de cluster.
-
-> [!NOTE]
-> Todos os compartimentos de Istio devem ser agendados para execução em nós do Linux. Se você tiver pools de nós do Windows Server, além de pools de nós do Linux no seu cluster, verifique se todos os compartimentos Istio foram agendados para execução em nós do Linux.
 
 Neste ponto, você implantou Istio no cluster do AKS. Para garantir que temos uma implantação bem-sucedida do Istio, vamos passar para a próxima seção para [validar a instalação do Istio](#validate-the-istio-installation).
 
@@ -517,7 +514,7 @@ Bash
 kubectl get crds -o name | grep 'istio.io' | xargs -n1 kubectl delete
 ```
 
-Powershell
+PowerShell
 ```powershell
 kubectl get crds -o name | Select-String -Pattern 'istio.io' |% { kubectl delete $_ }
 ```
@@ -535,6 +532,9 @@ Para explorar mais opções de instalação e configuração para Istio, consult
 - [Istio - Opções de instalação do Helm][istio-install-helm-options]
 
 Você também pode seguir cenários adicionais usando o [Bookinfo - Aplicação de exemplo do Istio][istio-bookinfo-example].
+
+Para saber como monitorar seu aplicativo AKS usando o Application Insights e o Istio, consulte a documentação do Azure Monitor a seguir:
+- [Monitoramento de aplicativos zero instrumentação para Kubernetes aplicativos hospedados][app-insights]
 
 <!-- LINKS - external -->
 [istio]: https://istio.io
@@ -561,6 +561,8 @@ Você também pode seguir cenários adicionais usando o [Bookinfo - Aplicação 
 [prometheus]: https://prometheus.io/
 [jaeger]: https://www.jaegertracing.io/
 [kiali]: https://www.kiali.io/
+
+[app-insights]: https://docs.microsoft.com/azure/azure-monitor/app/kubernetes
 
 <!-- LINKS - internal -->
 [aks-quickstart]: ./kubernetes-walkthrough.md

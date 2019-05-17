@@ -3,8 +3,8 @@ title: Publicar a Área de Trabalho Remota com o Proxy de Aplicativo do Azure AD
 description: Cobre as noções básicas sobre os conectores do Proxy de Aplicativo Azure AD.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.author: celested
+ms.author: mimart
 ms.custom: it-pro
 ms.reviewer: harshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 295422e0f456c4dfd4166911ef8150e8a896ba1a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2ecd55cbb3a8eefc150db731901458561d90f033
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60440674"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65783416"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Publicar a Área de Trabalho Remota com o Proxy de Aplicativo do Azure AD
 
@@ -68,7 +68,7 @@ Depois de configurar o RDS e o Proxy de Aplicativo do Azure AD em seu ambiente, 
    - URL interna: `https://\<rdhost\>.com/`, em que `\<rdhost\>` é a raiz comum que a Web da Área de Trabalho Remota e o Gateway de Área de Trabalho Remota compartilham.
    - URL Externa: Esse campo é preenchido automaticamente com base no nome do aplicativo, mas é possível modificá-lo. Os usuários serão levados a essa URL quando acessarem o RDS.
    - Método de pré-autenticação: Azure Active Directory
-   - Converter cabeçalhos de URL: Não 
+   - Converter cabeçalhos de URL: Não
 2. Atribua usuários ao aplicativo de Área de Trabalho Remota publicado. Certifique-se também de que todos eles tenham acesso ao RDS.
 3. Deixe o método de logon único para o aplicativo como **Logon único do Azure AD desabilitado**. É solicitado aos usuários que autentiquem uma vez no Azure AD e uma vez para a Web da Área de Trabalho Remota, eles têm logon único para o Gateway de Área de Trabalho Remota.
 4. Vá para **Azure Active Directory** > **Registros de Aplicativo** > *Seu aplicativo* > **Configurações**.

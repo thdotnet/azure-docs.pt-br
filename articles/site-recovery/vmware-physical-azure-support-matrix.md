@@ -6,14 +6,14 @@ manager: carmonm
 ms.service: site-recovery
 services: site-recovery
 ms.topic: conceptual
-ms.date: 04/29/2019
+ms.date: 05/10/2019
 ms.author: raynew
-ms.openlocfilehash: 8be028d11d0778c2b67788029aa400ffd3b98cb4
-ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
+ms.openlocfilehash: 2d1999077f6315658dbfd69473ddf5561bd76e0b
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64872909"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540599"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Matriz de suporte para recuperação de desastre de VMs VMware e servidores físicos para o Azure
 
@@ -53,7 +53,7 @@ Funções do Windows Server | Não habilite: <br/> - Active Directory Domain Ser
 Políticas de grupo| Não habilite: <br/> - Impedir o acesso ao prompt de comando. <br/> - Impedir o acesso às ferramentas de edição do registro. <br/> - Lógica de confiança para anexos de arquivo. <br/> - Ativar a execução do script. <br/> [Saiba mais](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)|
 IIS | Verifique se você:<br/><br/> - Não tem um site padrão preexistente <br/> - Habilitar [autenticação anônima](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx) <br/> - Habilitar configuração [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx)  <br/> - Não tem site/aplicativo preexistente ouvindo na porta 443<br/>
 Tipo de NIC | VMXNET3 (quando implantado como uma VM VMware)
-Tipo de endereço IP | estático
+Tipo de endereço IP | Static
 Portas | 443 usada para orquestração de canal de controle)<br/>9443 usada para transporte de dados
 
 ## <a name="replicated-machines"></a>Computadores replicados
@@ -64,7 +64,7 @@ O Site Recovery dá suporte para replicação de qualquer carga de trabalho em e
 --- | ---
 Configurações do computador | Os computadores que são replicados para o Azure precisam atender aos [requisitos do Azure](#azure-vm-requirements).
 Carga de trabalho do computador | O Site Recovery dá suporte para replicação de qualquer carga de trabalho (no Azure Directory, SQL Server, etc.) em execução em um computador com suporte. [Saiba mais](https://aka.ms/asr_workload).
-Sistema operacional Windows | Windows Server 2016 de 64 bits (Server Core, Server com Desktop Experience), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 com pelo menos SP1. </br></br>  [Windows Server 2008 com pelo menos o SP2 - 32 e 64 bits](migrate-tutorial-windows-server-2008.md) (somente migração). </br></br> Não há suporte para Windows 2016 Nano Server.
+Sistema operacional Windows | 2019 do Windows Server (de [9.22 versões](service-updates-how-to.md#links-to-currently-supported-update-rollups)) de 64 bits (Server Core, Server com Desktop Experience) do Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 com pelo menos SP1. </br> [9.24 versões](https://support.microsoft.com/en-in/help/4503156), 64-bit Windows 10, do Windows 8.1 de 64 bits, 64-bit Windows 8, 64-bit Windows 7 (o Windows 7 RTM não tem suporte)</br>  [Windows Server 2008 com pelo menos o SP2 - 32 e 64 bits](migrate-tutorial-windows-server-2008.md) (somente migração). </br></br> Não há suporte para Windows 2016 Nano Server.
 Arquitetura do sistema operacional Linux | Há suporte para o único sistema de 64 bits. Não há suporte para o sistema de 32 bits
 Sistema operacional Linux | Red Hat Enterprise Linux: 5.2 a 5.11<b>\*\*</b>, 6.1 a 6.10<b>\*\*</b>, 7.0 a 7.6 <br/><br/>CentOS: 5.2 a 5.11<b>\*\*</b>, 6.1 a 6.10<b>\*\*</b>, 7.0 a 7.6 <br/><br/>Servidor do Ubuntu 14.04 LTS [(suporte para versões de kernel)](#ubuntu-kernel-versions)<br/><br/>Servidor do Ubuntu 16.04 LTS [(suporte para versões de kernel)](#ubuntu-kernel-versions)<br/><br/>Debian 7/Debian 8 [(suporte para versões de kernel)](#debian-kernel-versions)<br/><br/>SUSE Linux Enterprise Server 12 SP1, SP2, SP3, SP4 [(suporte para versões de kernel)](#suse-linux-enterprise-server-12-supported-kernel-versions)<br/><br/>SUSE Linux Enterprise Server 11 SP3<b>\*\*</b>, SUSE Linux Enterprise Server 11 SP4 * </br></br>Oracle Linux 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6 executando o kernel compatível do Red Hat ou o Unbreakable Enterprise Kernel versão 3, 4 e 5 (UEK3, UEK4, UEK5) <br/><br/></br>-A atualização de máquinas replicadas do SUSE Linux Enterprise Server 11 SP3 para o SP4 não é suportada. Para atualizar, desabilite a replicação e habilite novamente após a atualização.</br></br> - [Saiba mais](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) sobre suporte para Linux e tecnologia de código aberto no Azure. O Site Recovery orquestra o failover para executar servidores Linux no Azure. No entanto, os fornecedores de Linux podem limitar o suporte a apenas versões de distribuição que não atingiram o fim da vida útil.<br/><br/> - Nas distribuições do Linux, apenas os kernels de ações que fazem parte da distribuição / versão menor da distribuição são suportados.<br/><br/> - A atualização de máquinas protegidas nas principais versões de distribuição do Linux não é suportada. Para atualizar, desabilite a replicação, atualize o sistema operacional e, em seguida, habilite a replicação novamente.<br/><br/> - Os servidores que executam o Red Hat Enterprise Linux 5.2-5.11 ou o CentOS 5.2-5.11 devem ter os [componentes do Linux Integration Services (LIS)](https://www.microsoft.com/download/details.aspx?id=55106) instalados para que as máquinas inicializem no Azure.
 
@@ -157,41 +157,42 @@ Endereço IP Reservado | Sim
 IPv4 | Sim
 Manter endereço IP de origem | Sim
 Pontos de extremidade de serviço de Rede Virtual do Azure<br/> | Sim
-Rede Acelerada | Não 
+Rede Acelerada | Não
 
 ## <a name="storage"></a>Armazenamento
 **Componente** | **Com suporte**
 --- | ---
 Dados dinâmicos | O disco do Sistema Operacional precisa ser um disco básico. <br/><br/>Os discos de Dados podem ser discos dinâmicos
-Configuração de disco do Docker | Não 
+Configuração de disco do Docker | Não
 NFS do host | Sim para VMware<br/><br/> Não para servidores físicos
 Host SAN iSCSI/FC) | Sim
 Host vSAN | Sim para VMware<br/><br/> N/D para servidores físicos
 MPIO (Múltiplos caminhos) do host | Sim, testado com Microsoft DSM, EMC PowerPath 5.7 SP4, EMC PowerPath DSM for CLARiiON
 Volumes de host Virtual (VVols) | Sim para VMware<br/><br/> N/D para servidores físicos
 VMDK do convidado/servidor | Sim
-Disco de cluster compartilhado do convidado/servidor | Não 
-Disco criptografado do convidado/servidor | Não 
-NFS do convidado/servidor | Não 
-SMB 3.0 do convidado/servidor | Não 
+Disco de cluster compartilhado do convidado/servidor | Não
+Disco criptografado do convidado/servidor | Não
+NFS do convidado/servidor | Não
+Convidado/servidor iSCSI | Não
+SMB 3.0 do convidado/servidor | Não
 RDM do convidado/servidor | Sim<br/><br/> N/D para servidores físicos
 Disco do convidado/servidor > 1 TB | Sim<br/><br/>Até 4.095 GB<br/><br/> O disco deve ser maior que 1024 MB.
 Disco do convidado/servidor com tamanho de setor lógico e físico de 4.000 cada | Sim
 Disco do convidado/servidor com tamanho de setor lógico de 4.000 e físico de 512 bytes | Sim
 Volume do convidado/servidor com discos distribuídos >4 TB <br/><br/>Gerenciamento de volumes lógicos (LVM)| Sim
-Convidado/servidor - espaços de armazenamento | Não 
-Adicionar/remover disco a quente por convidado/servidor | Não 
+Convidado/servidor - espaços de armazenamento | Não
+Adicionar/remover disco a quente por convidado/servidor | Não
 Convidado/servidor - excluir disco | Sim
-MPIO (Múltiplos caminhos) de convidado/servidor | Não 
+MPIO (Múltiplos caminhos) de convidado/servidor | Não
 Inicialização EFI/UEFI do convidado/servidor | Suporte ao migrar VMs VMware ou servidores físicos que executam o Windows Server 2012 ou posterior para o Azure.<br/><br/> Você só pode replicar VMs para a migração. Não há suporte para failback no local.<br/><br/> O servidor não deve ter mais de quatro partições no disco do sistema operacional.<br/><br/> Exige o Serviço de Mobilidade versão 9.13 ou posterior.<br/><br/> Apenas NTFS tem suporte.
 
 ## <a name="replication-channels"></a>Canais de replicação
 
 |**Tipo de replicação**   |**Com suporte**  |
 |---------|---------|
-|Transferências de dados descarregados (ODX)    |       Não   |
-|Propagação Offline        |   Não       |
-| Azure Data Box | Não 
+|Transferências de dados descarregados (ODX)    |       Não  |
+|Propagação Offline        |   Não      |
+| Azure Data Box | Não
 
 
 ## <a name="azure-storage"></a>Armazenamento do Azure
@@ -201,21 +202,21 @@ Inicialização EFI/UEFI do convidado/servidor | Suporte ao migrar VMs VMware ou
 Armazenamento com redundância local | Sim
 Armazenamento com redundância geográfica | Sim
 Armazenamento com redundância geográfica com acesso de leitura | Sim
-Armazenamento frio | Não 
-Armazenamento quente| Não 
-Blobs de bloco | Não 
+Armazenamento frio | Não
+Armazenamento quente| Não
+Blobs de bloco | Não
 Criptografia em repouso (Criptografia do Serviço de Armazenamento)| Sim
 Armazenamento Premium | Sim
-Serviço de importação/exportação | Não 
+Serviço de importação/exportação | Não
 Firewalls de armazenamento do Azure para redes virtuais configurados na conta de armazenamento de cache/armazenamento de destino (usada para armazenar dados de replicação) | Sim
-Contas de armazenamento v2 de uso geral (camadas hot e cool) | Não 
+Contas de armazenamento v2 de uso geral (camadas hot e cool) | Não
 
 ## <a name="azure-compute"></a>Computação do Azure
 
 **Recurso** | **Com suporte**
 --- | ---
 Conjuntos de disponibilidade | Sim
-Zonas de disponibilidade | Não 
+Zonas de disponibilidade | Não
 HUB | Sim
 Discos gerenciados | Sim
 
@@ -262,8 +263,8 @@ Esses são números médios, pressupondo uma sobreposição de E/S de 30%. O Sit
 
 **Ação** | **Com suporte**
 --- | ---
-Mover cofre entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não 
-Mover armazenamento, rede, VMs do Azure entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não 
+Mover cofre entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não
+Mover armazenamento, rede, VMs do Azure entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não
 
 
 ## <a name="download-latest-azure-site-recovery-components"></a>Baixe os últimos componentes do Azure Site Recovery

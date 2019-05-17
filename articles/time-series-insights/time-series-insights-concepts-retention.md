@@ -11,16 +11,16 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 04/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: ec62639988dca4b216087e8235be6053140644ee
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 443599e1b2876012bcbdf720bef7762a24e1ff90
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406366"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790423"
 ---
-# <a name="understand-data-retention-in-time-series-insights"></a>Compreender a retenção de dados no Time Series Insights
+# <a name="understand-data-retention-in-azure-time-series-insights"></a>Compreender a retenção de dados no Azure Time Series Insights
 
-Este artigo descreve duas configurações que impactam na retenção de dados no ambiente do TSI (Time Series Insights).
+Este artigo descreve duas configurações que impactam na retenção de dados em seu ambiente Azure Time Series Insights.
 
 ## <a name="video"></a>Vídeo
 
@@ -36,7 +36,7 @@ Além disso, o seu ambiente Azure Time Series tem um **limite de armazenamento e
 - **Pausar a entrada**
 
 > [!NOTE]
-> Por padrão, ao criar um novo ambiente, a retenção está configurada para **Limpar dados antigos**. Após o momento da criação, essa configuração pode ser modificada conforme necessário usando o Portal do Azure, na página **Configurar** do ambiente do TSI.
+> Por padrão, ao criar um novo ambiente, a retenção está configurada para **Limpar dados antigos**. Essa configuração pode ser alternada conforme necessário, depois usando o portal do Azure, no momento da criação do **configurar** página do ambiente do Time Series Insights.
 
 Para mais informações sobre como alternar entre os comportamentos de retenção, veja [Configuração da retenção no Azure Time Series Insights](time-series-insights-how-to-configure-retention.md).
 
@@ -44,8 +44,8 @@ Compare o comportamento de retenção de dados:
 
 ## <a name="purge-old-data"></a>Limpar dados antigos
 
-- Esse comportamento é o comportamento padrão para ambientes de TSI e exibe o mesmo comportamento que os ambientes de TSI apresentaram desde que foram lançados em visualização pública.  
-- Esse comportamento é preferível quando os usuários querem ver sempre seus *dados mais recentes* em seu ambiente de TSI. 
+- Esse comportamento é o comportamento padrão para ambientes do Time Series Insights.  
+- Esse comportamento é preferível quando os usuários querem ver sempre seus *dados mais recentes* em seu ambiente do Time Series Insights.
 - Esse comportamento *limpa* dados uma vez que os limites do ambiente (tempo de retenção, tamanho ou contagem, o que ocorrer primeiro) forem atingidos. A retenção é definida como 30 dias por padrão.
 - Os dados ingeridos mais antigos são apagados primeiro (abordagem PEPS).
 
@@ -75,7 +75,7 @@ Sempre que a taxa diária de entrada desse ambiente excede 0,166 GB, os dados n�
 
 ### <a name="example-three"></a>Exemplo três
 
-Considere um ambiente com o comportamento de retenção configurado para **Pausar entrada**. Neste exemplo, o **Período de retenção de dados** está configurado para 60 dias. A **Capacidade** está definida para 3 unidades de S1. Suponha que esse ambiente tem uma entrada de 2 GB de dados por dia. Nesse ambiente, a entrada é colocada em pausa quando a capacidade máxima é atingida.
+Considere um ambiente com o comportamento de retenção configurado para **Pausar entrada**. Neste exemplo, o **Período de retenção de dados** está configurado para 60 dias. **Capacidade** é definido como três (3) unidades do S1. Suponha que esse ambiente tem uma entrada de 2 GB de dados por dia. Nesse ambiente, a entrada é colocada em pausa quando a capacidade máxima é atingida.
 
 Nesse momento, o ambiente mostra o mesmo conjunto de dados até retoma o ingresso ou até **continuar entrada** está habilitado (que limparia os dados mais antigos para liberar espaço para novos dados).
 
@@ -91,7 +91,7 @@ Nos hubs de eventos afetados, considere ajustar a propriedade **Retenção de Me
 
 [![Retenção de mensagens do hub de eventos.](media/time-series-insights-contepts-retention/event-hub-retention.png)](media/time-series-insights-contepts-retention/event-hub-retention.png#lightbox)
 
-Se nenhuma propriedade está configurada na fonte de evento (`timeStampPropertyName`), o TSI assume como padrão o carimbo de hora de chegada no hub de eventos como o eixo x. Se `timeStampPropertyName` está configurado para ser algo, a ambiente procura configurado `timeStampPropertyName` no pacote de dados de eventos são analisados.
+Se nenhuma propriedade está configurada na fonte de evento (`timeStampPropertyName`), o Time Series Insights assume como padrão o carimbo de hora de chegada no hub de eventos como o eixo x. Se `timeStampPropertyName` está configurado para ser algo, a ambiente procura configurado `timeStampPropertyName` no pacote de dados de eventos são analisados.
 
 Se você precisar dimensionar o ambiente para acomodar a capacidade adicional ou para aumentar a duração da retenção, veja [Como dimensionar o ambiente do Time Series Insights](time-series-insights-how-to-scale-your-environment.md) para obter mais informações.  
 

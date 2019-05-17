@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: e9ad91967b5423539f28089bbf2da22edcf8f9a6
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 6a66d45028b9fbf9c421b10ffb7863fcb9be5bec
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64714957"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65779854"
 ---
 # <a name="get-started-with-custom-policies-in-azure-active-directory-b2c"></a>Introdução às políticas personalizadas no Azure Active Directory B2C
 
@@ -33,7 +33,7 @@ As [políticas personalizadas](active-directory-b2c-overview-custom.md) são arq
 1. Entre no [portal do Azure](https://portal.azure.com/) como administrador global do locatário Azure AD B2C.
 2. Verifique se que você estiver usando o diretório que contém o seu locatário do Azure AD B2C. Clique o **filtro de diretório e assinatura** no menu superior e escolher o diretório que contém o seu locatário. 
 3. Escolha **Todos os serviços** no canto superior esquerdo do portal do Azure, procure e selecione **Azure AD B2C**.
-4. Na página Visão Geral, selecione **Identity Experience Framework – VERSÃO PRÉVIA**.
+4. Na página de Visão Geral, selecione **Estrutura de Experiência de Identidade**.
 
 ### <a name="create-the-signing-key"></a>Criar a chave de assinatura
 
@@ -114,7 +114,7 @@ Cada pacote de início contém:
     git clone https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack
     ```
 
-2. Na pasta SocialAndLocalAccounts, edite todos os arquivos substituindo `yourtenant` pelo nome do locatário. Por exemplo, `contosoTenant.onmicrosoft.com`. Se você precisar de um editor de XML, [experimente o Visual Studio Code](https://code.visualstudio.com/download), um editor de plataforma cruzada leve.
+2. Na pasta SocialAndLocalAccounts, edite todos os arquivos substituindo `yourtenant` pelo nome do locatário. Por exemplo: `contosoTenant.onmicrosoft.com`. Se você precisar de um editor de XML, [experimente o Visual Studio Code](https://code.visualstudio.com/download), um editor de plataforma cruzada leve.
 
 ### <a name="add-application-ids-to-the-custom-policy"></a>Adicionar IDs de aplicativo à política personalizada
 

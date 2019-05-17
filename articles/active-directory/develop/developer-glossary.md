@@ -3,8 +3,8 @@ title: Glossário de desenvolvedor do Microsoft identity platform | Azure
 description: Uma lista de termos de recursos e conceitos de desenvolvedor do Microsoft identity platform comumente usadas.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 551512df-46fb-4219-a14b-9c9fc23998ba
 ms.service: active-directory
@@ -14,22 +14,22 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/13/2019
-ms.author: celested
+ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jmprieur, saeeda, jesakowi, nacanuma, dadobali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 968da9212b52c1e7ea09d1472b312671c7a73449
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 89ea1dba09173b20d11a5022e6666e6c865ead62
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60410377"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540087"
 ---
 # <a name="microsoft-identity-platform-developer-glossary"></a>Glossário de desenvolvedor do Microsoft identity platform
 
 Este artigo contém as definições para alguns dos conceitos de desenvolvedor e terminologia, que são úteis ao aprender sobre desenvolvimento de aplicativos usando a plataforma de identidade da Microsoft.
 
-## <a name="access-token"></a>o token de acesso
+## <a name="access-token"></a>token de acesso
 
 Um tipo de [token de segurança](#security-token) emitido por um [servidor de autorização](#authorization-server) e usado por um [aplicativo cliente](#client-application) para acessar um [servidor de recursos protegido](#resource-server). Normalmente na forma de um [JWT (Token Web JSON)][JWT], o token consiste na autorização concedida ao cliente pelo [proprietário do recurso](#resource-owner) para um nível de acesso solicitado. O token contém todas as [declarações](#claim) aplicáveis sobre a entidade, habilitando o aplicativo cliente a usá-lo como uma forma de credenciais ao acessar um recurso específico. Isso também elimina a necessidade do proprietário do recurso de expor as credenciais para o cliente.
 
@@ -64,7 +64,7 @@ Para permitir que um aplicativo se integre e delegue funções de Gerenciamento 
 
 Veja [Integrando aplicativos com o Azure Active Directory][AAD-Integrating-Apps] para saber mais.
 
-## <a name="authentication"></a>Autenticação
+## <a name="authentication"></a>autenticação
 
 O ato de desafiar uma parte para o fornecimento de credenciais legítimas, fornecendo a base para a criação de uma entidade de segurança a ser usada para controle de identidade e acesso. Durante uma [concessão de autorização OAuth2](#authorization-grant), por exemplo, a parte que está realizando a autenticação está desempenhando a função de [proprietário do recurso](#resource-owner) ou [aplicativo cliente](#client-application), dependendo da concessão usada.
 
@@ -156,7 +156,7 @@ Um servidor de recursos expõe APIs e impõe o acesso a seus recursos protegidos
 
 Assim como um aplicativo cliente, a configuração de identidade do aplicativo de recurso é estabelecida via [registro](#application-registration) em um locatário do Azure AD, fornecendo o objeto de entidade de serviço e de aplicativo. Algumas APIs fornecidas pela Microsoft, como a API do Graph do Azure AD, têm entidades de serviço previamente registradas disponíveis em todos os locatários durante o provisionamento.
 
-## <a name="roles"></a>roles
+## <a name="roles"></a>funções
 
 Assim como os [escopos](#scopes), as funções fornecem uma maneira para que um [servidor de recursos](#resource-server) governe o acesso a seus recursos protegidos. Há dois tipos: uma função de "usuário" implementa o controle de acesso baseado em função para usuários/grupos que exigem acesso ao recurso, enquanto uma função de "aplicativo" implementa o mesmo para [aplicativos cliente](#client-application) que requerem acesso.
 
@@ -182,7 +182,7 @@ Quando você registra/atualiza um aplicativo no [Portal do Azure][AZURE-portal],
 
 Para obter mais informações, consulte [Objetos de entidade de serviço e aplicativo][AAD-App-SP-Objects].
 
-## <a name="sign-in"></a>entrada
+## <a name="sign-in"></a>entrar
 
 O processo para que um [aplicativo cliente](#client-application) inicie a autenticação do usuário final e capture o estado relacionado, para adquirir um [token de segurança](#security-token) e obter o escopo da sessão do aplicativo para esse estado. O estado pode incluir artefatos, como informações de perfil de usuário, e informações derivadas de declarações de token.
 

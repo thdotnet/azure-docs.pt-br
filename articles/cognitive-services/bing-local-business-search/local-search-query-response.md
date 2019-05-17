@@ -3,18 +3,18 @@ title: Envio e usando a API de pesquisa do Bing Local negócios consultas e resp
 titleSuffix: Azure Cognitive Services
 description: Use este artigo para aprender como enviar e usar consultas de pesquisa com a API da Pesquisa de empresa local do Bing.
 services: cognitive-services
-author: mikedodaro
-manager: rosh
+author: aahill
+manager: nitinme
 ms.service: cognitive-services
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: rosh; v-gedod
-ms.openlocfilehash: 79219de775be96f35bd11ac85640efcc4a04a93b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 45f7adab684b7b6097328a42abb60c8d58c1acc2
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60582425"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796788"
 ---
 # <a name="sending-and-using-bing-local-business-search-api-queries-and-responses"></a>Envio e uso de consultas e respostas da API da Pesquisa de empresa local do Bing
 
@@ -22,7 +22,7 @@ Você pode obter resultados locais da API de Pesquisa de Empresa Local do Bing e
 
 ## <a name="creating-a-request"></a>Criando uma solicitação
 
-Para enviar uma solicitação à API de Pesquisa de Empresa Local do Bing, anexe um termo de pesquisa ao parâmetro `q=`antes de adicioná-lo ao ponto de extremidade da API e incluir o cabeçalho`Ocp-Apim-Subscription-Key`. Por exemplo: 
+Para enviar uma solicitação à API de Pesquisa de Empresa Local do Bing, anexe um termo de pesquisa ao parâmetro `q=`antes de adicioná-lo ao ponto de extremidade da API e incluir o cabeçalho`Ocp-Apim-Subscription-Key`. Por exemplo:
 
 `https://api.cognitive.microsoft.com/bing/localbusinesses/v7.0/search?q=restaurant+in+Bellevue`
 
@@ -58,7 +58,7 @@ Os resultados do JSON retornados pela API incluem os seguintes atributos:
 * entityPresentationInfo
 * área geográfica
 * ID
-* Nome
+* nome
 * routeablePoint
 * telefone
 * url
@@ -143,7 +143,7 @@ Expires: Tue, 16 Oct 2018 16:25:15 GMT
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../includes/cognitive-services-bing-throttling-requests.md)]
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 - [ Início Rápido da Pesquisa de empresa local ](quickstarts/local-quickstart.md)
 - [Início rápido de negócios pesquisa Java local](quickstarts/local-search-java-quickstart.md)
 - [Início rápido de negócios o nó de pesquisa local](quickstarts/local-search-node-quickstart.md)

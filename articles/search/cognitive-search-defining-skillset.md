@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 9eedf0be6089764c8111ae81d558f7e65af0a66d
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 010880304c5011bd5a767650aa0ae6b6103bdde2
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65021779"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540871"
 ---
 # <a name="how-to-create-a-skillset-in-an-enrichment-pipeline"></a>Como criar um conjunto de habilidades em um pipeline de enriquecimento
 
@@ -173,7 +173,7 @@ Vamos examinar a habilidade primeiro, o que é o interno [habilidade de reconhec
 
 * A habilidade tem uma saída chamada ```"organizations"```. As saídas existem somente durante o processamento. Para encadear essa saída à entrada de uma habilidade downstream, faça referência à saída como ```"/document/organizations"```.
 
-* Para um documento específico, o valor de ```"/document/organizations"``` é uma matriz de organizações extraída do texto. Por exemplo: 
+* Para um documento específico, o valor de ```"/document/organizations"``` é uma matriz de organizações extraída do texto. Por exemplo:
 
   ```json
   ["Microsoft", "LinkedIn"]
@@ -249,7 +249,7 @@ Até agora, essa estrutura foi somente interno, somente de memória e usado apen
 
 ## <a name="add-a-knowledge-store"></a>Adicionar um repositório de dados de Conhecimento
 
-[Dados de Conhecimento Store](knowledge-store-concept-intro.md) é um recurso de visualização no Azure Search para salvar seu documento rico. Um repositório de dados de conhecimento que você cria, apoiada por uma conta de armazenamento do Azure é o repositório em que os dados enriquecidos chegam. 
+[Armazenamento de dados de Conhecimento](knowledge-store-concept-intro.md) é um recurso de visualização no Azure Search para salvar seu documento rico. Um repositório de dados de conhecimento que você cria, apoiada por uma conta de armazenamento do Azure é o repositório em que os dados enriquecidos chegam. 
 
 Uma definição de repositório de dados de Conhecimento é adicionada a um conjunto de qualificações. Para obter uma explicação de todo o processo, consulte [como começar com o armazenamento de dados de Conhecimento](knowledge-store-howto.md).
 

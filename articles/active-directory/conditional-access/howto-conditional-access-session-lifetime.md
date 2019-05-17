@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ff9ad850b111cf080447b699d35b4ef8205e006
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 45ea34a673b46dda2ec9606952c707a13d1b72d9
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190213"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65766866"
 ---
 # <a name="configure-authentication-session-management-with-conditional-access"></a>Configurar o gerenciamento de sessão de autenticação com o acesso condicional
 
@@ -80,7 +80,7 @@ Se você tiver configurado a frequência de entrada diferente para aplicativos d
 1. Escolha todas as condições necessárias.
 
    > [!NOTE]
-   > Observe que esse controle requer escolher "Todos os aplicativos de nuvem" como uma condição
+   > Observe que esse controle requer escolher "Todos os aplicativos de nuvem" como uma condição. Persistência de sessão do navegador é controlada pelo token de sessão de autenticação. Todas as guias em uma sessão de navegador compartilham um token de sessão único e, portanto, todos eles devem compartilhar o estado de persistência.
 
 1. Vá para **controles de acesso** > **sessão** e clique em **sessão persistente do navegador**
 1. Selecione um valor na lista suspensa

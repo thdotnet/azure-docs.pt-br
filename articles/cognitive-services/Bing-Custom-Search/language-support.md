@@ -3,19 +3,19 @@ title: Suporte de idioma – API de Pesquisa Personalizada do Bing
 titleSuffix: Azure Cognitive Services
 description: Uma lista de idiomas e regiões compatíveis com a API de Pesquisa Personalizada do Bing.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 09/25/2018
-ms.author: v-gedod
-ms.openlocfilehash: 1f53dc60a74f0b558525897bef97bf2500442b54
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.author: aahi
+ms.openlocfilehash: 56870a63f42c10b48cc2d8f0ae2995862be46d8f
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64867825"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790237"
 ---
 # <a name="language-and-region-support-for-the-bing-custom-search-api"></a>Suporte de idioma e região para a API de Pesquisa Personalizada do Bing
 
@@ -29,23 +29,23 @@ O cabeçalho `Accept-Language` e o parâmetro de consulta `setLang` são mutuame
 
 ## <a name="countriesregions"></a>Países/Regiões
 
-|País/Região|Código|
+|País/região|Código|
 |-------|----|
 |Argentina|AR|
 |Austrália|AU|
 |Áustria|AT|
 |Bélgica|BE|
 |Brasil|BR|
-|Canadá|CA|
+|Canadá|AC|
 |Chile|CL|
 |Dinamarca|DK|
 |Finlândia|FI|
 |França|FR|
 |Alemanha|DE|
-|RAE de Hong Kong|HK|
+|Região Administrativa Especial de Hong Kong|HK|
 |Índia|IN|
 |Indonésia|ID|
-|Itália|IT|
+|Itália|it|
 |Japão|JP|
 |Coreia do Sul|KR|
 |Malásia|MY|
@@ -71,7 +71,7 @@ O cabeçalho `Accept-Language` e o parâmetro de consulta `setLang` são mutuame
 
 ## <a name="markets"></a>Mercados
 
-|País/Região|Linguagem|Código de mercado|
+|País/região|Linguagem|Código de mercado|
 |-------|--------|-----------|
 |Argentina|Espanhol|es-AR|
 |Austrália|Inglês|en-AU|
@@ -86,7 +86,7 @@ O cabeçalho `Accept-Language` e o parâmetro de consulta `setLang` são mutuame
 |Finlândia|Finlandês|fi-FI|
 |França|Francês|fr-FR|
 |Alemanha|Alemão|de-DE|
-|RAE de Hong Kong|Chinês tradicional|zh-HK|
+|RAE de Hong Kong|Chinês Tradicional|zh-HK|
 |Índia|Inglês|en-IN|
 |Indonésia|Inglês|en-ID|
 |Itália|Italiano|it-IT|
@@ -108,8 +108,8 @@ O cabeçalho `Accept-Language` e o parâmetro de consulta `setLang` são mutuame
 |Suécia|Sueco|sv-SE|
 |Suíça|Francês|fr-CH|
 |Suíça|Alemão|de-CH|
-|Taiwan|Chinês tradicional|zh-TW|
+|Taiwan|Chinês Tradicional|zh-TW|
 |Turquia|Turco|tr-TR|
 |Reino Unido|Inglês|en-GB|
-|Estados Unidos|Inglês|en-US|
+|Estados Unidos|Inglês|pt-BR|
 |Estados Unidos|Espanhol|es-US|

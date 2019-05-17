@@ -10,36 +10,47 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: 97b0b6256b7aaf7b42565fe9453fb87a0c414569
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 91cc002f373318e5124fc21f76edbfd000d17238
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60605233"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796902"
 ---
 # <a name="request-limits-for-translator-text"></a>Limites de solicitação para a Tradução de Texto
 
 Este artigo fornece limites de limitação para a API de Tradução de Texto. Os serviços incluem tradução, transliteração, detecção de comprimento de frase, detecção de idioma e traduções alternativas.
 
-## <a name="character-limits-per-request"></a>Limites de caracteres por solicitação
+## <a name="character-and-array-limits-per-request"></a>Limites de matriz e de caractere por solicitação
 
-Cada solicitação é limitada a 5.000 caracteres. Você é cobrado por personagem, não pelo número de solicitações. É recomendável enviar solicitações mais curtas e ter algumas solicitações pendentes a qualquer momento.
+Cada solicitação de traduzir é limitada a 5.000 caracteres. Você é cobrado por personagem, não pelo número de solicitações. É recomendável para enviar solicitações mais curtas.
 
-Não há limite no número de solicitações pendentes para a API de Tradução de Texto.
+As seguinte tabela listas matriz elemento e o caractere de limites para cada operação de API de tradução de texto.
+
+| Operação | Tamanho máximo do elemento de matriz |   Número máximo de elementos de matriz |  Tamanho do máximo de solicitação (caracteres) |
+|:----|:----|:----|:----|
+| Traduzir | 5.000 | 100   | 5.000 |
+| Transliterate | 5.000 | 10    | 5.000 |
+| Detectar | 10.000 | 100 |   50.000 |
+| BreakSentence | 10.000    | 100 | 5,0000 |
+| Pesquisa no dicionário| 100 |  10  | 1.000 |
+| Exemplos de dicionário | 100 para texto e 100 para tradução (total de 200)| 10|   2.000 |
 
 ## <a name="character-limits-per-hour"></a>Limites de caractere por hora
 
-Seu limite de caractere por hora baseia-se em sua camada de assinatura de Tradução de Texto. Se você atinge ou ultrapassar esses limites, você provavelmente receberá uma falta de resposta de cota:
+Seu limite de caractere por hora baseia-se em sua camada de assinatura de Tradução de Texto. A cota por hora deve ser consumida uniformemente ao longo da hora. Se você atinge ou ultrapassar esses limites ou envia muito grande de uma parte da cota em um curto período de tempo, você provavelmente receberá uma falta de resposta de cota. 
 
-| Camada | Limite de caracteres |
+| Tipo | Limite de caracteres |
 |------|-----------------|
 | F0 | 2 milhões de caracteres por hora |
 | S1 | 40 milhões de caracteres por hora |
-| S2 | 40 milhões de caracteres por hora |
-| S3 | 120 milhões de caracteres por hora |
-| S4 | 200 milhões de caracteres por hora |
+| S2 / C2 | 40 milhões de caracteres por hora |
+| S3 / C3 | 120 milhões de caracteres por hora |
+| S4 / C4 | 200 milhões de caracteres por hora |
 
-Esses limites são restritos aos sistemas genéricos da Microsoft. Sistemas de conversão personalizada que usam o Hub do Microsoft Translator são limitados a caracteres 1.800 por segundo.
+Limites para [multi-Service assinaturas](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication) são o mesmo que a camada S1.
+
+Esses limites são restritos aos modelos de tradução padrão da Microsoft. Modelos de conversão personalizada que usam o conversor personalizado são limitados a caracteres 1.800 por segundo.
 
 ## <a name="latency"></a>Latency
 
@@ -58,12 +69,12 @@ Ao usar a função [BreakSentence](https://docs.microsoft.com/azure/cognitive-se
 | Português | pt | 290 |
 | Espanhol | es | 280 |
 | Italiano | it | 280 |
-| Tailandês | th | 258 |
+| Tailandês | º | 258 |
 
 > [!NOTE]
 > Esse limite não se aplica a traduções.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Preços](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/)
 * [Disponibilidade regional](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)

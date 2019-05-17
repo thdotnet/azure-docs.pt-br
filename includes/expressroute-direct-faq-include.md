@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/25/2019
 ms.author: jaredro
 ms.custom: include file
-ms.openlocfilehash: 41f62d095c1a0cbdd0a888326b263a3294066637
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.openlocfilehash: 1bcadc18172535649a0ceb482939ca6a75477e25
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60118348"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794749"
 ---
 ### <a name="what-is-expressroute-direct"></a>O que é o ExpressRoute Direct?
 
@@ -32,13 +32,19 @@ As portas disponíveis serão dinâmicas e estarão disponíveis pelo PowerShell
 * Chicago
 * Washington, D.C.
 * Dallas 
-* RAE de Hong Kong
+* Região Administrativa Especial de Hong Kong
+* Londres
 * Los Angeles
 * Cidade de Nova York
 * Paris
+* Perth
+* Toronto
 * San Antonio
+* Seattle
+* Seul
 * Vale do Silício
-* Singapura 
+* Cingapura 
+* Sydney
 
 ### <a name="what-is-the-sla-for-expressroute-direct"></a>O que é o SLA para ExpressRoute Direct?
 

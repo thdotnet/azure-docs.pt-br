@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/09/2018
+ms.date: 05/03/2019
 ms.author: celested
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e00ecde5550b5ef4f1698fa879a039dee8aad12
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3880a62d58b15ef07e524d69c38ba723ea56178f
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60441674"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65781085"
 ---
 # <a name="end-user-experiences-for-applications-in-azure-active-directory"></a>Experiências do usuário final para aplicativos no Active Directory Domain Services do Azure
 Azure Active Directory Domain Services (Azure AD) fornece várias maneiras personalizáveis para implantar aplicativos para usuários finais em sua organização:
@@ -53,7 +53,9 @@ A maioria dos aplicativos federados que oferecem suporte à conexão SAML 2.0, W
 ## <a name="direct-sign-on-links"></a>Links diretos logon
 O Microsoft Azure Active Directory também oferece suporte a links de logon únicos diretos para aplicativos individuais que oferecem suporte baseado em senha de logon único, logon único vinculado e qualquer forma de logon único federado.
 
-Esses links são URLs criadas especificamente que enviam um usuário por meio do processo de entrada do Azure AD para um aplicativo específico sem exigir que o usuário as inicie do painel de acesso do Azure AD ou do Office 365. Eles **URLs de acesso do usuário** podem ser encontradas nas propriedades de aplicativos da empresa que estão disponíveis em Azure Active Directory no portal do Azure.
+Esses links são URLs criadas especificamente que enviam um usuário por meio do processo de entrada do Azure AD para um aplicativo específico sem exigir que o usuário as inicie do painel de acesso do Azure AD ou do Office 365. Eles **URLs de acesso do usuário** podem ser encontradas nas propriedades de aplicativos corporativos disponíveis. No portal do Azure, selecione **Azure Active Directory** > **aplicativos empresariais**. Selecione o aplicativo e, em seguida, selecione **propriedades**.
+
+![Exemplo de como a URL de acesso do usuário nas propriedades do Twitter](media/end-user-experiences/direct-sign-on-link.png)
 
 Esses links podem ser copiados e colados em qualquer lugar em que você deseja fornecer um link de entrada para o aplicativo selecionado. Essa entrada poderia ser em um email ou em qualquer portal personalizado baseado na Web que você configurou o aplicativo para acesso de usuário. Aqui está um exemplo de uma URL de logon único direto do AD do Azure para o Twitter:
 

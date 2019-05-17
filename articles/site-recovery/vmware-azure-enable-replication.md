@@ -3,15 +3,15 @@ title: Habilitar a replicação de VMs VMware para recuperação de desastres no
 description: Este artigo descreve como habilitar a VMs do VMware para replicação no Azure para recuperação de desastres usando o Azure Site Recovery.
 author: Rajeswari-Mamilla
 ms.service: site-recovery
-ms.date: 4/18/2019
+ms.date: 05/10/2019
 ms.topic: conceptual
 ms.author: ramamill
-ms.openlocfilehash: ba55afbd62bbbc2290d1daaebf77becc249c1d8b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: add0f8252bdae6857b28deeb7de4c1d09973e452
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60922680"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540783"
 ---
 # <a name="enable-replication-to-azure-for-vmware-vms"></a>Habilitar a replicação no Azure de VMs VMware
 
@@ -43,16 +43,17 @@ Antes de seguir as etapas nesta seção, observe as seguintes informações:
 * A replicação para contas de armazenamento para uma nova máquina virtual só está disponível por meio de uma transferência REST (Representational State) API e Powershell. Use a API de REST do Azure versão 2016-08-10 ou 2018-01-10 para a replicação para contas de armazenamento.
 
 1. Vá para **etapa 2: Replicar aplicativo** > **Origem**. Depois de habilitar a replicação pela primeira vez, selecione **+ replicar** no cofre para habilitar a replicação para máquinas virtuais adicionais.
-1. Na página **Origem** > **Origem**, selecione o servidor de configuração.
-1. Para **tipo de computador**, selecione **máquinas virtuais** ou **máquinas físicas**.
-1. Em **Hipervisor do vCenter/vSphere**, selecione o servidor vCenter que gerencia o host vSphere ou selecione o host. Essa configuração não é relevante se você estiver replicando computadores físicos.
-1. Selecione o servidor de processo, que será o servidor de configuração se você ainda não criou nenhum servidor de processo adicional. Depois, selecione **OK**.
+2. Na página **Origem** > **Origem**, selecione o servidor de configuração.
+3. Para **tipo de computador**, selecione **máquinas virtuais** ou **máquinas físicas**.
+4. Em **Hipervisor do vCenter/vSphere**, selecione o servidor vCenter que gerencia o host vSphere ou selecione o host. Essa configuração não é relevante se você estiver replicando computadores físicos.
+5. Selecione o servidor de processo. Se não houver nenhum servidor de processo adicional criado, o servidor incorporados ao processo do servidor de configuração estará disponível na lista suspensa. Status de integridade de cada servidor de processo é indicado, de acordo com limites recomendados e outros parâmetros. Escolha um servidor de processo íntegro. Um [críticos](vmware-physical-azure-monitor-process-server.md#process-server-alerts) servidor de processo não pode ser escolhido. Você pode [solucionar problemas e resolver](vmware-physical-azure-troubleshoot-process-server.md) os erros **ou** configurar uma [servidor de processo de expansão](vmware-azure-set-up-process-server-scale.md).
+    ![Habilitar janela de origem de replicação](media/vmware-azure-enable-replication/ps-selection.png)
 
-    ![Habilitar janela de origem de replicação](./media/vmware-azure-enable-replication/enable-replication2.png)
+> [!NOTE]
+> Partir [9.24 versões](service-updates-how-to.md#links-to-currently-supported-update-rollups), alertas adicionais são introduzidas para aprimorar os alertas de integridade do servidor de processo. Atualize os componentes do Site Recovery para 9.24 versões ou superior para todos os alertas sejam gerados.
 
-1. Para **destino**, selecione o grupo de recursos e assinatura em que você deseja criar as máquinas virtuais de failover. Escolha o modelo de implantação que você deseja usar no Azure para as VMs de failover.
-
-1. Selecione a rede do Azure e a sub-rede que irão se conectar a VMs do Azure após o failover. A rede deve estar na mesma região que o cofre do serviço de recuperação de Site.
+6. Para **destino**, selecione o grupo de recursos e assinatura em que você deseja criar as máquinas virtuais de failover. Escolha o modelo de implantação que você deseja usar no Azure para as VMs de failover.
+2. Selecione a rede do Azure e a sub-rede que irão se conectar a VMs do Azure após o failover. A rede deve estar na mesma região que o cofre do serviço de recuperação de Site.
 
    Selecione **configurar agora para computadores selecionados** para aplicar a configuração de rede para todas as máquinas virtuais que você selecionou para proteção. Selecione **configurar mais tarde** para selecionar a rede do Azure por máquina virtual. Se você não tiver uma rede, precisará criar uma. Para criar uma rede usando o Azure Resource Manager, selecione **criar novo**. Selecione uma sub-rede, se aplicável e, em seguida, selecione **Okey**.
    

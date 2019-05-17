@@ -7,17 +7,17 @@ services: search
 ms.service: search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 05/06/2019
+ms.date: 05/10/2019
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: f540bc304920073bcd823adcf6c9dd47cb2cf93b
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: a59deed4ac0cec669ddc5e0335f7274586c702e8
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65159744"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65541757"
 ---
-# <a name="upgrading-to-the-azure-search-net-sdk-version-9"></a>Atualizando para o SDK do .NET do Azure Search versão 9
+# <a name="upgrade-to-the-azure-search-net-sdk-version-9"></a>Atualizar para o SDK .NET do Azure Search versão 9
 
 Se você estiver usando a versão 7.0-preview ou mais antiga do [o SDK do .NET do Azure Search](https://aka.ms/search-sdk), este artigo o ajudará a atualizar seu aplicativo para usar a versão 9.
 
@@ -70,7 +70,7 @@ Há várias alterações significativas na versão 9 que pode exigir alteraçõe
 > [!NOTE]
 > A lista de alterações abaixo não é exaustiva. Algumas alterações provavelmente não resultará em erros de compilação, mas são tecnicamente significativas, pois eles interrompem a compatibilidade binária com assemblies que dependem de versões anteriores dos assemblies do SDK do .NET do Azure Search. Essas alterações não são listadas abaixo. Recompile seu aplicativo ao atualizar para a versão 9 para evitar quaisquer problemas de compatibilidade binária.
 
-### <a name="making-properties-immutable"></a>Tornando as propriedades imutáveis
+### <a name="immutable-properties"></a>Propriedades imutáveis
 
 As propriedades públicas de várias classes de modelo agora são imutáveis. Se você precisar criar personalizadas instâncias dessas classes para teste, você pode usar os novos construtores com parâmetros:
 
@@ -103,7 +103,7 @@ Isso ocorre porque essas propriedades agora devem ser `null` no caso de campos c
 
 O construtor sem parâmetros de `Field` foi feita `internal`. De agora em diante, cada `Field` requer um tipo de dados e o nome explícito no momento da construção.
 
-### <a name="simplification-of-batch-and-results-types"></a>Simplificação dos tipos de lotes e resultados
+### <a name="simplified-batch-and-results-types"></a>Tipos de lote e os resultados simplificados
 
 Na versão 7.0-preview e anterior, as várias classes que encapsulam os grupos de documentos eram estruturadas em hierarquias de classe parallel:
 
@@ -118,7 +118,7 @@ Os tipos derivados sem um parâmetro de tipo genérico foram deve ser usado em c
 
 A partir da versão 8.0-preview, as classes base e classes derivadas de não-genérica todos foram removidas. Para cenários de tipo dinâmico, você pode usar `IndexBatch<Document>`, `DocumentSearchResult<Document>`e assim por diante.
  
-### <a name="removal-of-extensibleenum"></a>Remoção de ExtensibleEnum
+### <a name="removed-extensibleenum"></a>ExtensibleEnum removido
 
 O `ExtensibleEnum` classe base tiver sido removido. Todas as classes derivam dele agora são structs, tais como `AnalyzerName`, `DataType`, e `DataSourceType` por exemplo. Seus `Create` métodos também foram removidos. Você pode remover chamadas para `Create` , pois esses tipos são implicitamente conversíveis de cadeias de caracteres. Se o que resulta em erros de compilador, você pode invocar explicitamente o operador de conversão por meio de conversão para resolver a ambiguidade de tipos. Por exemplo, você pode alterar o código como este:
 
@@ -150,9 +150,9 @@ var index = new Index()
 
 Propriedades que são mantidos opcionais valores desses tipos agora são tipadas explicitamente como anuláveis para que elas continuem a ser opcional.
 
-### <a name="removal-of-facetresults-and-hithighlights"></a>Remoção de FacetResults e HitHighlights
+### <a name="removed-facetresults-and-hithighlights"></a>Removido FacetResults e HitHighlights
 
-O `FacetResults` e `HitHighlights` foram removidas. Agora, os resultados da faceta são digitados como `IDictionary<string, IList<FacetResult>>` e pressione destaca como `IDictionary<string, IList<string>>`. Uma maneira rápida de resolver erros de compilação introduzidos por essa alteração é adicionar `using` aliases na parte superior de cada arquivo que usa os tipos removidos. Por exemplo: 
+O `FacetResults` e `HitHighlights` foram removidas. Agora, os resultados da faceta são digitados como `IDictionary<string, IList<FacetResult>>` e pressione destaca como `IDictionary<string, IList<string>>`. Uma maneira rápida de resolver erros de compilação introduzidos por essa alteração é adicionar `using` aliases na parte superior de cada arquivo que usa os tipos removidos. Por exemplo:
 
 ```csharp
 using FacetResults = System.Collections.Generic.IDictionary<string, System.Collections.Generic.IList<Models.FacetResult>>;

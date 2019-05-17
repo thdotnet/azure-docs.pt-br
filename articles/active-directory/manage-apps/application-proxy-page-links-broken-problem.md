@@ -3,8 +3,8 @@ title: Os links na página não funcionam para um aplicativo de Proxy de Aplicat
 description: Como solucionar problemas com links desfeitos em aplicativos de Proxy de Aplicativo integrados com o Azure AD
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/10/2018
-ms.author: celested
+ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d860ac77653a97855248c45e43d28ea4c694979e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f8bb7326ed22217e56bdaf9a119529ba775b69a3
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60442243"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65783235"
 ---
 # <a name="links-on-the-page-dont-work-for-an-application-proxy-application"></a>Os links na página não funcionam para um aplicativo de Proxy de Aplicativo
 
@@ -46,6 +46,6 @@ Há três maneiras de resolver esse problema. As escolhas abaixo estão listadas
 
 3.  Se nenhuma dessas opções for viável, há várias opções para habilitar a conversão de link embutido. Essas opções incluem o uso do Intune Managed Browser, da extensão My Apps ou o uso da configuração de conversão de link em seu aplicativo. Para saber mais sobre cada uma dessas opções e como habilitá-las, confira [Redirecionar links codificados para aplicativos publicados com o Proxy de Aplicativo do Azure AD](application-proxy-configure-hard-coded-link-translation.md).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 [Trabalhar com servidores proxy locais existentes](application-proxy-configure-connectors-with-proxy-servers.md)
 

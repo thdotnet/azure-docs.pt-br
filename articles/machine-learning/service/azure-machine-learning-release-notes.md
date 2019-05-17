@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: reference
 ms.author: larryfr
 author: Blackmist
-ms.date: 05/06/2019
+ms.date: 05/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: 186ecf055cdf7b10690fdb4cbc574778a841b85a
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 892b9bc63f9f2d9abc7108587a7bf929473e4648
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65464799"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65779443"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Notas de versão do serviço de aprendizado de máquina do Azure
 
@@ -24,6 +24,12 @@ Neste artigo, conheça os lançamentos de serviços do Aprendizado de Máquina d
 + O [**SDK de Preparação de Dados do Azure Machine Learning**](https://aka.ms/data-prep-sdk)
 
 Veja [a lista de problemas conhecidos](resource-known-issues.md) para aprender sobre erros e soluções conhecidas.
+
+## <a name="2019-05-14"></a>2019-05-14
+
+### <a name="azure-machine-learning-sdk-for-python-v1039"></a>Azure Machine Learning SDK for Python v1.0.39
++ **Alterações**
+  + Opção de configuração de execução de auto_prepare_environment está sendo preterida, com auto preparar se tornando o padrão.
 
 ## <a name="2019-05-06"></a>2019-05-06
 

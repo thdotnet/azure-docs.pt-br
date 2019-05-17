@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 05/10/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 78c445e70fcf972be81ef6dfd5d675f8e4843621
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 2677c993b759988b0a9906b357bcd352b243b5a7
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65541501"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65792670"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Melhores práticas de uma base de dados de conhecimento do QnA Maker
 O [ciclo de vida de desenvolvimento da base de dados de conhecimento](../Concepts/development-lifecycle-knowledge-base.md) informa como gerenciar a base de dados de conhecimento de ponta a ponta. Use essas melhores práticas para melhorar a base de dados de conhecimento e fornecer melhores resultados aos usuários finais do aplicativo/chat.
@@ -87,7 +87,7 @@ A pontuação de confiança padrão usada como limite é 50, no entanto, você p
 Os [Metadados](../How-To/edit-knowledge-base.md) adicionam a capacidade de restringir os resultados de uma consulta do usuário com base em marcas de metadados. A resposta da base de dados de conhecimento poderá variar com base na marca de metadados, mesmo se a consulta for a mesma. Por exemplo, *"onde o estacionamento está localizado"* poderá ter uma resposta diferente se a localização da filial do restaurante for diferente – ou seja, se os metadados forem *Localização: Seattle* versus *Localização: Redmond*.
 
 ### <a name="use-synonyms"></a>Usar sinônimos
-Embora haja algum suporte para sinônimos no idioma inglês, use [alterações de palavras](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fd) que não diferenciem maiúsculas de minúsculas para adicionar sinônimos a palavras-chave que apresentem formas diferentes. Os sinônimos devem ser adicionados no nível de serviço do QnA Maker e compartilhados por todas as bases de dados de conhecimento no serviço.
+Embora haja algum suporte para sinônimos no idioma inglês, use [alterações de palavras](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) que não diferenciem maiúsculas de minúsculas para adicionar sinônimos a palavras-chave que apresentem formas diferentes. Os sinônimos devem ser adicionados no nível de serviço do QnA Maker e compartilhados por todas as bases de dados de conhecimento no serviço.
 
 |Palavra original|Sinônimos|
 |--|--|

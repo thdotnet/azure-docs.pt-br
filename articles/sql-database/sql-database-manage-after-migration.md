@@ -12,12 +12,12 @@ ms.author: josack
 ms.reviewer: sstein
 manager: craigg
 ms.date: 02/13/2019
-ms.openlocfilehash: a83bc6518409add8a0732e5a0b17ab46c36564af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4424e53689714625ebc791df250956463452c3cb
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60703245"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65791490"
 ---
 # <a name="new-dba-in-the-cloud--managing-your-single-and-pooled-databases-in-azure-sql-database"></a>DBA novo na nuvem – gerenciamento de bancos de dados individuais e em pool no Banco de Dados SQL do Azure
 
@@ -127,7 +127,7 @@ Outra opção é provisionar [IPs reservados](../virtual-network/virtual-network
 
 ### <a name="what-port-do-i-connect-to-sql-database-on"></a>Em qual porta eu me conecto ao Banco de Dados SQL
 
-Porta 1433. O Banco de Dados SQL se comunica por essa porta. Para se conectar de uma rede corporativa, você precisa adicionar uma regra de saída nas configurações do firewall da sua organização. Como uma orientação, evite a exposição da porta 1433 fora do limite do Azure. Você pode executar o SSMS no Azure usando o [Azure RemoteApp](https://www.microsoft.com/cloud-platform/azure-remoteapp-client-apps). Isso não exige que você abra conexões de saída para a porta 1433; o IP é estático para que o banco de dados só possa ser aberto para o RemoteApp e dá suporte à MFA (Autenticação Multifator).
+Porta 1433. O Banco de Dados SQL se comunica por essa porta. Para se conectar de uma rede corporativa, você precisa adicionar uma regra de saída nas configurações do firewall da sua organização. Como uma orientação, evite a exposição da porta 1433 fora do limite do Azure.
 
 ### <a name="how-can-i-monitor-and-regulate-activity-on-my-server-and-database-in-sql-database"></a>Como eu monitoro e controlo a atividade no meu servidor e banco de dados no Banco de Dados SQL
 

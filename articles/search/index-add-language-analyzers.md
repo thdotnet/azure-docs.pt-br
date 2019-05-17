@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 39fbe30ccf4429003dc0c9f11165c5dd057a89cd
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: deea16b8670623acd2ae92ba62f579f5474d12ec
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62121785"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790898"
 ---
 # <a name="add-language-analyzers-to-an-azure-search-index"></a>Adicionar analisadores de idioma a um índice do Azure Search
 
@@ -46,9 +46,6 @@ O analisador padrão é Lucene Standard, que funciona bem para o inglês, mas ta
 
 + O analisador de inglês da Microsoft executa a derivação em vez da lematização. Isso significa que ele pode tratar muito melhor as formas irregulares e inflexivas de palavras, o que gera resultados da pesquisa mais relevantes 
 
-  > [!Tip]
-  > A [demonstração do analisador de pesquisa](https://alice.unearth.ai/) fornece uma comparação lado a lado dos resultados produzidos pelo analisador Lucene padrão, do analisador de idioma inglês do Lucene e do processador de idioma inglês natural da Microsoft. Para cada entrada de pesquisa fornecida por você, resultados de cada analisador são exibidos nos painéis adjacentes.
-
 ## <a name="configuring-analyzers"></a>Configurar analisadores
 
 Os analisadores de idiomas são usados no estado em que se encontram. Para cada campo na definição do índice, você pode definir a propriedade **analyzer** para um nome de analisador que especifica a pilha de idiomas e linguística (Microsoft ou Lucene). O mesmo analisador será aplicado durante a indexação e a pesquisa desse campo. Por exemplo, você pode ter campos separados para descrições de hotéis em inglês, francês e espanhol, existentes lado a lado no mesmo índice. Como alternativa, em vez do **analyzer**, você pode usar o **indexAnalyzer** e o **searchAnalyzer** para ter regras de análises diferentes no tempo de consulta e de indexação. 
@@ -66,7 +63,7 @@ Para obter mais informações sobre campos filtráveis, confira [Criar Índice &
 |--------------|-----------------------------|--------------------------|  
 |Árabe|ar.microsoft|ar.lucene|  
 |Armênia||hy.Lucene|  
-|Bangla|bn.microsoft||  
+|Bengali|bn.microsoft||  
 |Basco||Eu.Lucene|  
 |Búlgaro|bg.microsoft|BG.Lucene|  
 |Catalão|ca.microsoft|CA.Lucene|  

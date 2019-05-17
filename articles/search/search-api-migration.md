@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: brjohnst
-ms.openlocfilehash: 286d8bbc01b5916e842c196aed5a49ef1c76bc3c
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 85a8ddf4ce87d7ac8ce460c0aff56311a2ea4578
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025192"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540686"
 ---
 # <a name="upgrade-to-the-latest-azure-search-service-rest-api-version"></a>Atualizar para a última versão da API REST do serviço Azure Search
 Se você estiver usando uma versão anterior da [API de REST do serviço Azure Search](https://docs.microsoft.com/rest/api/searchservice/), este artigo o ajudará a atualizar seu aplicativo para usar a versão de API disponível mais recente, 2019-05-06.
@@ -39,7 +39,7 @@ Versão de 2019-05-06 é a versão mais recente disponível da API de REST do se
 
 Várias versões de recurso de visualização coincidirem com essa atualização estará disponível. Para revisar a lista de novos recursos de visualização, consulte [-versão da api REST de pesquisa de 2019-05-06-Preview](search-api-preview.md).
 
-## <a name="breaking-changes"></a>Alterações de última hora
+## <a name="breaking-changes"></a>Alterações da falha
 
 Que contém a seguinte funcionalidade de código existente interromperá na api-version = 2019-05-06.
 
@@ -72,7 +72,9 @@ Se alguma dessas situações se aplicar a você, talvez seja necessário alterar
 
 Se você estiver atualizando de uma versão de API de visualização, os itens acima também se aplica, mas você também deve estar ciente de que alguns recursos de visualização não estão disponíveis na versão de 2019-05-06:
 
-* [Consultas "Mais como isso"](search-more-like-this.md) continuam a ser um recurso apenas para visualização.
+* [Consultas "Mais como esta"](search-more-like-this.md)
+* [Indexação de BLOBs do CSV](search-howto-index-csv-blobs.md)
+* [Suporte de API do MongoDB para indexadores do Cosmos DB](search-howto-index-cosmosdb.md)
 
 Se seu código usa esses recursos, você não poderá atualizar para a API versão 2019-05-06 sem remover o uso deles.
 

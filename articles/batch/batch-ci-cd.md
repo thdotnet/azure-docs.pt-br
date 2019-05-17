@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 ms.topic: conceptual
 ms.custom: fasttrack-new
 services: batch
-ms.openlocfilehash: 5b7c44d3ea3394ff728adfb9d9fd72293138fb2e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a811a9cb1b124aff7c64d25cf71a1b84bff0c173
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60880747"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65541735"
 ---
 # <a name="use-azure-pipelines-to-build-and-deploy-hpc-solutions"></a>Usar Pipelines do Azure para criar e implantar soluções HPC
 
@@ -363,7 +363,7 @@ Neste exemplo, nos concentraremos na **aplicativo de hpc** pasta. O **aplicativo
 
 ## <a name="continuous-deployment"></a>Implantação contínua
 
-Pipelines do Azure também é usados para implantar seu aplicativo e a infraestrutura subjacente. [Liberar pipelines](https://docs.microsoft.com/azure/devops/pipelines/release/what-is-release-management?view=azure-devops) é o componente que permite a implantação contínua e automatiza o processo de liberação.
+Pipelines do Azure também é usados para implantar seu aplicativo e a infraestrutura subjacente. [Liberar pipelines](https://docs.microsoft.com/azure/devops/pipelines/release) é o componente que permite a implantação contínua e automatiza o processo de liberação.
 
 ### <a name="deploying-your-application-and-underlying-infrastructure"></a>Implantando seu aplicativo e a infra-estrutura subjacente
 

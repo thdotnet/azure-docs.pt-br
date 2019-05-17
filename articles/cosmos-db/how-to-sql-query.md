@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: mjbrown
-ms.openlocfilehash: a5cc6bfca67f3d90467fa2339bc991c1f0bbeadf
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 4d1ef650a3f12d8b97cbad3e9aecf31c8b81a038
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148946"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796157"
 ---
 # <a name="sql-query-examples-for-azure-cosmos-db"></a>Exemplos de consulta SQL para o Azure Cosmos DB
 
@@ -139,7 +139,7 @@ Os resultados da consulta são:
     }]
 ```
 
-A consulta a seguir retorna todos os nomes dos filhos na família cuja `id` corresponde a `WakefieldFamily`, ordenada por cidade de residência.
+A consulta a seguir retorna todos os nomes dos filhos na família cuja `id` corresponde a `WakefieldFamily`, ordenada por cidade.
 
 ```sql
     SELECT c.givenName
@@ -869,6 +869,13 @@ Os resultados são:
     ]
 ```
 
+A seguinte consulta SQL é outro exemplo de como usar a matriz dentro em subconsultas. Essa consulta obtém todos os nomes distintos de filhos em uma matriz.
+
+```sql
+SELECT f.id, ARRAY(SELECT DISTINCT VALUE c.givenName FROM c IN f.children) as ChildNames
+FROM f
+```
+
 
 ## <a id="Iteration"></a>Iteração
 
@@ -1285,12 +1292,12 @@ Os resultados são:
 
 A API de SQL suporta as seguintes funções de agregação. SUM e AVG operam em valores numéricos e COUNT, MIN e MAX trabalham em números, cadeias de caracteres, boolianos e nulos.
 
-| Função | DESCRIÇÃO |
+| Função | Descrição |
 |-------|-------------|
-| COUNT | Retorna o número de itens na expressão. |
+| CONTAGEM | Retorna o número de itens na expressão. |
 | SUM   | Retorna a soma de todos os valores na expressão. |
 | MÍN.   | Retorna o valor mínimo na expressão. |
-| MÁX.   | Retorna o valor máximo na expressão. |
+| MÁX   | Retorna o valor máximo na expressão. |
 | AVG   | Retorna a média dos valores na expressão. |
 
 Você também pode agregar os resultados de uma iteração de matriz. Para obter mais informações, consulte o [iteração](#Iteration) seção.
@@ -1319,7 +1326,7 @@ A principal diferença entre as funções de Cosmos DB e ANSI SQL é que funçõ
 
 As funções matemáticas executam um cálculo, com base em valores de entrada fornecidos como argumentos e retornam um valor numérico. Aqui está uma tabela de funções matemáticas internas com suporte.
 
-| Uso | DESCRIÇÃO |
+| Uso | Descrição |
 |----------|--------|
 | ABS (num_expr) | Retorna o valor absoluto (positivo) da expressão numérica especificada. |
 | CEILING (num_expr) | Retorna o menor valor de número inteiro maior ou igual à expressão numérica especificada. |
@@ -1388,7 +1395,7 @@ O resultado é:
 
 As funções escalares a seguir executam uma operação em um valor de cadeia de caracteres de entrada e retornam um valor de cadeia de caracteres, numéricos ou booleanos. Aqui temos uma tabela de funções de cadeia de caracteres internas:
 
-| Uso | DESCRIÇÃO |
+| Uso | Descrição |
 | --- | --- |
 | [LENGTH (str_expr)](sql-api-query-reference.md#bk_length) | Retorna o número de caracteres da expressão de cadeia de caracteres especificada. |
 | [CONCAT (str_expr, str_expr [, str_expr])](sql-api-query-reference.md#bk_concat) | Retorna uma cadeia de caracteres que é o resultado da concatenação de dois ou mais valores de cadeia de caracteres. |
@@ -1464,7 +1471,7 @@ Os resultados são:
 
 As funções escalares a seguir executam uma operação em um valor de matriz de entrada e retornam um numérico, booliano ou valor de matriz. Aqui temos uma tabela de funções de matriz internas:
 
-| Uso | DESCRIÇÃO |
+| Uso | Descrição |
 | --- | --- |
 | [ARRAY_LENGTH (arr_expr)](sql-api-query-reference.md#bk_array_length) |Retorna o número de elementos da expressão de matriz especificada. |
 | [ARRAY_CONCAT (arr_expr, arr_expr [, arr_expr])](sql-api-query-reference.md#bk_array_concat) |Retorna uma matriz que é o resultado da concatenação de dois ou mais valores de matriz. |
@@ -1527,7 +1534,7 @@ Os resultados são:
 
 O cosmos DB suporta as seguintes funções internas do Open Geospatial Consortium (OGC) para consultas geoespaciais: 
 
-| Uso | DESCRIÇÃO |
+| Uso | Descrição |
 | --- | --- |
 | ST_DISTANCE (point_expr, point_expr) | Retorna a distância entre os dois GeoJSON `Point`, `Polygon`, ou `LineString` expressões. |
 | T_WITHIN (point_expr, polygon_expr) | Retorna uma expressão booleana que indica se o primeiro objeto GeoJSON (`Point`, `Polygon`, ou `LineString`) está dentro do segundo objeto GeoJSON (`Point`, `Polygon`, ou `LineString`). |
@@ -1979,7 +1986,7 @@ O provedor de consulta dá suporte a expressões escalares a seguir:
 
 - Valores de constantes, incluindo valores de constantes de tipos de dados primitivos no momento da avaliação de consulta.
   
-- Expressões de índice de matriz/propriedade se refere à propriedade de um objeto ou um elemento de matriz. Por exemplo: 
+- Expressões de índice de matriz/propriedade se refere à propriedade de um objeto ou um elemento de matriz. Por exemplo:
   
   ```
     family.Id;

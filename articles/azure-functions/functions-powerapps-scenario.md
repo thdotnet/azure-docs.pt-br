@@ -12,12 +12,12 @@ ms.date: 12/14/2017
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
-ms.openlocfilehash: afb97c1c14422f15a3fc2c00b2101c4a36675556
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 26f6502f63b39d3f1ecf8dfeb09c8df4daa63b68
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61025367"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786129"
 ---
 # <a name="call-a-function-from-powerapps"></a>Chamar uma função do PowerApps
 A plataforma [PowerApps](https://powerapps.microsoft.com) destina-se a especialistas comerciais para o build de aplicativos sem código de aplicativo tradicional. Desenvolvedores profissionais podem usar o Azure Functions para estender os recursos do PowerApps e, ao mesmo tempo, proteger os construtores de aplicativo do PowerApps de detalhes técnicos.
@@ -39,8 +39,7 @@ Neste tópico, você aprenderá a:
 > * Adicionar controles para chamar a função e exibir dados.
 > * Executar o aplicativo para determinar se um reparo é econômico.
 
-> [!IMPORTANT]
-> Atualmente, o recurso OpenAPI está em versão prévia e está disponível somente para a versão 1.x do tempo de execução do Azure Functions.
+[!INCLUDE [functions-openapi-note](../../includes/functions-openapi-note.md)]
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -137,7 +136,7 @@ Agora que as fontes de dados estão disponíveis no aplicativo, adicione uma tel
 
 1. No painel **Dados**, selecione **Turbines** na lista.
 
-    ![Selecione uma fonte de dados](media/functions-powerapps-scenario/select-data-source.png)
+    ![Selecionar fonte de dados](media/functions-powerapps-scenario/select-data-source.png)
 
     O conjunto de dados não contém uma imagem, então, em seguida, altere o layout para ajustar melhor os dados. 
 

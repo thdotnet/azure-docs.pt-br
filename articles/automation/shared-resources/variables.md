@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: shared-capabilities
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/01/2019
+ms.date: 05/14/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: fc26c0357dcb071c4c75e8684fe47144a04177e4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0ac34f1d1e7fc2a967c7608f31f3b943f9380d01
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60880228"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786200"
 ---
 # <a name="variable-assets-in-azure-automation"></a>Ativos variáveis na Automação do Azure
 
@@ -41,17 +41,17 @@ Você pode armazenar vários valores para uma única variável criando uma matri
 
 A seguir está uma lista de tipos de variáveis disponíveis na automação:
 
-* Cadeia de caracteres
-* Número inteiro
+* String
+* Integer
 * DateTime
 * Boolean
-* Nulo
+* Null
 
 ## <a name="azurerm-powershell-cmdlets"></a>Cmdlets do AzureRM PowerShell
 
 Para o AzureRM, os cmdlets na tabela a seguir são usados para criar e gerenciar ativos de credenciais de automação com o Windows PowerShell. Eles são fornecidos como parte dos [módulo Azurerm](/powershell/azure/overview), que está disponível para uso em runbooks de automação e configurações de DSC.
 
-| Cmdlets | DESCRIÇÃO |
+| Cmdlets | Descrição |
 |:---|:---|
 |[Get-AzureRmAutomationVariable](/powershell/module/AzureRM.Automation/Get-AzureRmAutomationVariable)|Recupera o valor de uma variável existente.|
 |[New-AzureRmAutomationVariable](/powershell/module/AzureRM.Automation/New-AzureRmAutomationVariable)|Cria uma nova variável e define o seu valor.|
@@ -62,7 +62,7 @@ Para o AzureRM, os cmdlets na tabela a seguir são usados para criar e gerenciar
 
 As atividades na tabela a seguir são usadas para acessar credenciais em um runbook ou em uma configuração DSC.
 
-| Atividades | DESCRIÇÃO |
+| Atividades | Descrição |
 |:---|:---|
 |Get-AutomationVariable|Recupera o valor de uma variável existente.|
 |Set-AutomationVariable|Define o valor de uma variável existente.|
@@ -72,7 +72,7 @@ As atividades na tabela a seguir são usadas para acessar credenciais em um runb
 
 As funções na tabela a seguir são usadas para acessar e recuperar variáveis em um runbook Python2.
 
-|Funções Python2|DESCRIÇÃO|
+|Funções Python2|Descrição|
 |:---|:---|
 |automationassets.get_automation_variable|Recupera o valor de uma variável existente. |
 |automationassets.set_automation_variable|Define o valor de uma variável existente. |
@@ -135,45 +135,6 @@ for ($i = 1; $i -le $NumberOfIterations; $i++) {
     Write-Output "$i`: $SampleMessage"
 }
 Set-AzureRmAutomationVariable -ResourceGroupName "ResourceGroup01" –AutomationAccountName "MyAutomationAccount" –Name NumberOfRunnings –Value ($NumberOfRunnings += 1)
-```
-
-#### <a name="setting-and-retrieving-a-complex-object-in-a-variable"></a>Definindo e recuperando um objeto complexo em uma variável
-
-O código de exemplo a seguir mostra como atualizar uma variável com um valor complexo em um runbook textual. Nesse exemplo, uma máquina virtual do Azure é recuperada com **Get-AzureVM** e salva em uma variável de automação existente.  Como explicado em [Tipos de variáveis](#variable-types), ela é armazenada como um PSCustomObject.
-
-```powershell
-$vm = Get-AzureVM -ServiceName "MyVM" -Name "MyVM"
-Set-AutomationVariable -Name "MyComplexVariable" -Value $vm
-```
-
-No código a seguir, o valor é recuperado da variável e usado para iniciar a máquina virtual.
-
-```powershell
-$vmObject = Get-AutomationVariable -Name "MyComplexVariable"
-if ($vmObject.PowerState -eq 'Stopped') {
-    Start-AzureVM -ServiceName $vmObject.ServiceName -Name $vmObject.Name
-}
-```
-
-#### <a name="setting-and-retrieving-a-collection-in-a-variable"></a>Definindo e recuperando uma coleção em uma variável
-
-O código de exemplo a seguir mostra como usar uma variável com uma coleção de valores complexos em um runbook textual. Nesse exemplo, várias máquinas virtuais do Azure são recuperadas com **Get-AzureVM** e salvas em uma variável de automação existente. Como explicado em [Tipos de variáveis](#variable-types), elas são armazenadas como uma coleção de PSCustomObjects.
-
-```powershell
-$vms = Get-AzureVM | Where -FilterScript {$_.Name -match "my"}
-Set-AutomationVariable -Name 'MyComplexVariable' -Value $vms
-```
-
-No código a seguir, a coleção é recuperada da variável e usada para iniciar cada máquina virtual.
-
-```powershell
-$vmValues = Get-AutomationVariable -Name "MyComplexVariable"
-ForEach ($vmValue in $vmValues)
-{
-    if ($vmValue.PowerState -eq 'Stopped') {
-        Start-AzureVM -ServiceName $vmValue.ServiceName -Name $vmValue.Name
-    }
-}
 ```
 
 #### <a name="setting-and-retrieving-a-variable-in-python2"></a>Configurando e recuperando uma variável em Python2

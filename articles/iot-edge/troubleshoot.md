@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 02d50b81cb91a74e2cdb039c56195e2a15858ca1
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 00147002317f15345f01c88e81973837d16e6669
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65142854"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797619"
 ---
 # <a name="common-issues-and-resolutions-for-azure-iot-edge"></a>Problemas comuns e resoluções para o Azure IoT Edge
 
@@ -351,7 +351,7 @@ O Azure IoT Edge permite a comunicação de um servidor de local para nuvem do A
 
 Embora o IoT Edge forneça configuração avançada para proteger o tempo de execução do Azure IoT Edge e os módulos implantados, ele ainda depende da configuração do computador e da rede subjacente. Portanto, é fundamental para garantir que a rede adequada e regras de firewall são configuradas para a borda segura para comunicação em nuvem. A tabela a seguir pode ser usada como uma diretriz quando regras de firewall de configuração para os servidores subjacentes em que o tempo de execução do IoT Edge do Azure está hospedado:
 
-|Protocol|Porta|Entrada|Saída|Diretrizes|
+|Protocol|Port|Entrada|Saída|Diretrizes|
 |--|--|--|--|--|
 |MQTT|8883|BLOQUEADO (padrão)|BLOQUEADO (padrão)|<ul> <li>Configure a Saída como Aberta ao usar o MQTT como o protocolo de comunicação.<li>Não há suporte para o 1883 para MQTT no IoT Edge. <li>As conexões de Entrada devem ser bloqueadas.</ul>|
 |AMQP|5671|BLOQUEADO (padrão)|ABERTO (padrão)|<ul> <li>Protocolo de comunicação padrão do IoT Edge. <li> Precisa ser configurado como Aberto, quando o Azure IoT Edge não está configurado para outros protocolos com suporte ou quando o AMQP é o protocolo de comunicação desejado.<li>Não há suporte para o 5672 para AMQP no IoT Edge.<li>Bloqueie essa porta quando o Azure IoT Edge usar outro protocolo do Hub IoT com suporte.<li>As conexões de Entrada devem ser bloqueadas.</ul></ul>|
@@ -368,7 +368,7 @@ Por padrão, o IoT Edge inicia módulos em sua própria rede de contêiner isola
 
 **Opção 1: Defina o servidor DNS no contêiner de configurações do mecanismo**
 
-Especifique o servidor DNS para seu ambiente nas configurações do mecanismo de contêiner que serão aplicado a todos os módulos de contêiner iniciados pelo mecanismo. Crie um arquivo chamado `daemon.json` especificando o servidor DNS para usar. Por exemplo: 
+Especifique o servidor DNS para seu ambiente nas configurações do mecanismo de contêiner que serão aplicado a todos os módulos de contêiner iniciados pelo mecanismo. Crie um arquivo chamado `daemon.json` especificando o servidor DNS para usar. Por exemplo:
 
 ```
 {
@@ -383,7 +383,7 @@ Local `daemon.json` no local certo para sua plataforma:
 | Plataforma | Local padrão |
 | --------- | -------- |
 | Linux | `/etc/docker` |
-| Host do Windows com contêineres do Windows | `C:\ProgramData\iotedge-moby-data\config` |
+| Host do Windows com contêineres do Windows | `C:\ProgramData\iotedge-moby\config` |
 
 Se o local já contiver `daemon.json` do arquivo, adicione o **dns** a ele da chave e salve o arquivo.
 
@@ -396,7 +396,7 @@ Se o local já contiver `daemon.json` do arquivo, adicione o **dns** a ele da ch
 
 **Opção 2: Defina o servidor DNS na implantação do IoT Edge por módulo**
 
-Você pode definir o servidor DNS para cada módulo *createOptions* na implantação do IoT Edge. Por exemplo: 
+Você pode definir o servidor DNS para cada módulo *createOptions* na implantação do IoT Edge. Por exemplo:
 
 ```
 "createOptions": {

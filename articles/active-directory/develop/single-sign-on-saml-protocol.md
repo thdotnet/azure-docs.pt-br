@@ -3,8 +3,8 @@ title: Protocolo SAML de Logon Único do Azure | Microsoft Docs
 description: Este artigo descreve o protocolo SAML de logon único no Azure Active Directory
 services: active-directory
 documentationcenter: .net
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: ad8437f5-b887-41ff-bd77-779ddafc33fb
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
-ms.author: celested
+ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 033740d1ae75bb6f6fe8509d9ad123d55d9c6770
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 593f07b27fec16c3df90a073479effb130bc5721
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64704997"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545290"
 ---
 # <a name="single-sign-on-saml-protocol"></a>Protocolo SAML de Logon Único
 
@@ -47,7 +47,7 @@ xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
 </samlp:AuthnRequest>
 ```
 
-| Parâmetro |  | DESCRIÇÃO |
+| Parâmetro |  | Descrição |
 | --- | --- | --- |
 | ID | Obrigatório | O Azure AD usa esse atributo para popular o atributo `InResponseTo` da resposta retornada. A ID não deve começar com um número. Uma estratégia comum é anexar uma cadeia de caracteres como "id" à representação de cadeia de caracteres de um GUID. Por exemplo, `id6c1c178c166d486687be4aaf5e482730` é uma ID válida. |
 | Version | Obrigatório | Esse parâmetro deve ser definido como **2.0**. |
@@ -97,7 +97,7 @@ O elemento `Scoping`, que inclui uma lista de provedores de identidade, é opcio
 
 Se fornecido, não inclua o atributo `ProxyCount` ou elemento `IDPListOption` ou `RequesterID`, pois eles não têm suporte.
 
-### <a name="signature"></a>Signature
+### <a name="signature"></a>Assinatura
 Não inclua um elemento `Signature` nos elementos `AuthnRequest`, pois o Azure AD não dá suporte a solicitações de autenticação assinadas.
 
 ### <a name="subject"></a>Subject
@@ -199,7 +199,7 @@ Isso é definido como `https://sts.windows.net/<TenantIDGUID>/`onde \<TenantIDGU
 <Issuer>https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>
 ```
 
-#### <a name="signature"></a>Signature
+#### <a name="signature"></a>Assinatura
 
 O Azure AD assina a asserção em resposta a um logon bem-sucedido. O elemento `Signature` contém uma assinatura digital que o serviço de nuvem pode usar para autenticar e verificar a integridade da asserção.
 
@@ -243,7 +243,7 @@ Os atributos `NotBefore` e `NotOnOrAfter` especificam o intervalo durante o qual
 * O valor do atributo `NotBefore` é igual ou ligeiramente mais lento (menos de um segundo) do que o valor do atributo `IssueInstant` do elemento `Assertion`. O Azure AD não conta diferenças de tempo entre ele mesmo e o serviço de nuvem (provedor de serviços) e não adiciona buffer a esse tempo.
 * O valor do atributo `NotOnOrAfter` é 70 minutos depois do valor do atributo `NotBefore`.
 
-#### <a name="audience"></a>Público-alvo
+#### <a name="audience"></a>Audiência
 
 Ele contém um URI que identifica um público-alvo. O Azure AD define o valor desse elemento como o valor do elemento `Issuer` da `AuthnRequest` que iniciou o logon. Para avaliar o valor `Audience`, use o valor do `App ID URI` que foi especificado durante o registro do aplicativo.
 

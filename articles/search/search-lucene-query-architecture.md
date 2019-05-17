@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: jlembicz
 ms.custom: seodec2018
-ms.openlocfilehash: cb8e42400847ba9fb13568d05dffac86d9cec85f
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: bc183cb8ac2155b8dd31dc603d70506ad3d5e20a
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024613"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797475"
 ---
 # <a name="how-full-text-search-works-in-azure-search"></a>Como funciona a pesquisa de texto completo no Azure Search
 
@@ -291,7 +291,7 @@ Para o campo **descrição**, o índice é o seguinte:
 | para | 1
 | view | 1, 2, 3
 | a pé | 1
-| por: | 3
+| com | 3
 
 
 **Correspondência de termos de consulta com os termos indexados**
@@ -392,8 +392,6 @@ Este artigo explorou a pesquisa de texto completo no contexto do Azure Search. E
 + Saiba como aplicar [analisadores léxicos específico do idioma](https://docs.microsoft.com/rest/api/searchservice/language-support).
 
 + [Configurar analisadores personalizados](https://docs.microsoft.com/rest/api/searchservice/custom-analyzers-in-azure-search) para o mínimo de processamento ou processamento especializado em campos específicos.
-
-+ [Compare os analisadores padrão e inglês](https://alice.unearth.ai/) lado a lado neste site da Web de demonstração. 
 
 ## <a name="see-also"></a>Consulte também
 

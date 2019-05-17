@@ -1,23 +1,17 @@
 ---
 title: Mover recursos do Azure para uma nova assinatura ou um novo grupo de recursos | Microsoft Docs
 description: Use o Azure Resource Manager para mover recursos para um novo grupo de recursos ou uma nova assinatura.
-services: azure-resource-manager
-documentationcenter: ''
 author: tfitzmac
-ms.assetid: ab7d42bd-8434-4026-a892-df4a97b60a9b
 ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/25/2019
+ms.date: 05/16/2019
 ms.author: tomfitz
-ms.openlocfilehash: 4e94bc7686203bfbcd93200e5a1fb65b43ceeb91
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 076d120d9c02b15837e92b71bc2a015377f54594
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64698481"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65792692"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Mover recursos para um novo grupo de recursos ou uma nova assinatura
 
@@ -64,7 +58,7 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que podem ser mo
 * Banco de Dados do Azure para MySQL
 * Banco de Dados do Azure para PostgreSQL
 * DevOps do Azure – siga as etapas para [alterar a assinatura do Azure usada para cobrança](/azure/devops/organizations/billing/change-azure-subscription?view=azure-devops).
-* Mapas do Azure
+* Azure Mapas
 * Logs do Azure Monitor
 * Retransmissão do Azure
 * Azure Stack - registros
@@ -95,9 +89,9 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que podem ser mo
 * Aprendizado de Máquina - os serviços Web do Machine Learning Studio podem ser movidos para um grupo de recursos na mesma assinatura, mas não uma assinatura diferente. Outros recursos de Microsoft Machine Learning podem ser movidos entre assinaturas.
 * Managed Disks - Managed Disks em zonas de disponibilidade não podem ser movidos para uma assinatura diferente
 * Identidade gerenciada - atribuída pelo usuário
-* Serviços de mídia
+* Serviços de Mídia
 * Monitor - verifique se mover para nova assinatura não excede as [cotas de assinatura](../azure-subscription-service-limits.md#monitor-limits)
-* Hubs de Notificação
+* Hubs de notificações
 * Insights Operacionais
 * Gerenciamento de Operações
 * Painéis do portal do Azure
@@ -113,6 +107,7 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que podem ser mo
 * Serviço SignalR
 * Armazenamento – as contas de armazenamento em regiões diferentes não podem ser movidas na mesma operação. Nesse caso, use operações separadas para cada região.
 * Armazenamento (clássico) - consulte [Limitações da implantação clássica](#classic-deployment-limitations)
+* Serviço de Sincronização de Armazenamento
 * Stream Analytics – os trabalhos do Stream Analytics não podem ser movidos durante o estado de execução.
 * Servidor de Banco de Dados SQL – o banco de dados e o servidor devem estar no mesmo grupo de recursos. Quando você move um SQL Server, todos os seus bancos de dados também são movidos. Este comportamento se aplica ao Banco de Dados SQL do Azure e ao banco de dados SQL Data Warehouse do Azure.
 * Time Series Insights
@@ -138,14 +133,14 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que não podem s
 * Azure NetApp Files
 * Certificados - Os certificados do Serviço de Aplicativo podem ser movidos, mas os certificados carregados têm [limitações](#app-service-limitations).
 * Aplicativos clássicos
-* Instâncias de Contêiner
+* Instâncias de contêiner
 * Serviço de Contêiner
 * Data Box
 * Espaços de Desenvolvimento
 * Dynamics LCS
 * ExpressRoute
 * Serviços de laboratório - laboratórios de sala de aula não podem ser movidos para um novo grupo de recursos ou assinatura. DevTest Labs podem ser movidos para um novo grupo de recursos na mesma assinatura, mas não entre assinaturas.
-* Aplicativos gerenciados
+* Aplicativos Gerenciados
 * Microsoft Genomics
 * Segurança
 * Site Recovery

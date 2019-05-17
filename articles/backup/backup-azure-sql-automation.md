@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: pullabhk
 ms.assetid: 57854626-91f9-4677-b6a2-5d12b6a866e1
-ms.openlocfilehash: 3a424335a1e7d7775f6be0980e7009669e354ea7
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 6d17d5c2c0eaebc694abe820318f6ac0c70b0be8
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64717912"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544602"
 ---
 # <a name="back-up-and-restore-sql-databases-in-azure--vms-with-powershell"></a>Fazer backup e restaurar bancos de dados SQL em VMs do Azure com o PowerShell
 
@@ -110,7 +110,7 @@ O cofre dos Serviços de Recuperação é um recurso do Resource Manager e, port
 3. Especifique o tipo de redundância para usar para o armazenamento de cofre.
 
     * Você pode usar [armazenamento com redundância local](../storage/common/storage-redundancy-lrs.md) ou [armazenamento com redundância geográfica](../storage/common/storage-redundancy-grs.md).
-    * O exemplo a seguir define o **- BackupStorageRedundancy** opção para o[AzRecoveryServicesBackupProperties conjunto](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperties?view=azps-1.4.0) cmd para **testvault** definido como  **GeoRedundant**.
+    * O exemplo a seguir define o **- BackupStorageRedundancy** opção para o[AzRecoveryServicesBackupProperty conjunto](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) cmd para **testvault** definido como  **GeoRedundant**.
 
     ```powershell
     $vault1 = Get-AzRecoveryServicesVault -Name "testvault"
@@ -489,7 +489,7 @@ $SQLContainer = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVMAppC
 Register-AzRecoveryServicesBackupContainer -Container $SQLContainer -BackupManagementType AzureWorkload -WorkloadType MSSQL -VaultId $targetVault.ID
 ````
 
-### <a name="stop-protection"></a>Parar a proteção
+### <a name="stop-protection"></a>Interromper proteção
 
 #### <a name="retain-data"></a>Reter dados
 
@@ -530,7 +530,7 @@ $SQLContainer = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVMAppC
 
 É importante observar que o Backup do Azure apenas rastreia os trabalhos de usuário disparado no backup do SQL. Backups agendados (incluindo backups de log) não são visíveis no portal/powershell. No entanto, se houver agendada trabalhos falharem, uma [alerta de backup](backup-azure-monitoring-built-in-monitor.md#backup-alerts-in-recovery-services-vault) é gerado e exibido no portal. [Usar o Azure Monitor](backup-azure-monitoring-use-azuremonitor.md) para acompanhar todos os trabalhos agendados e outras informações relevantes.
 
-Os usuários podem controlar as operações do ad hoc/usuário disparado com a JobID que é retornado na [saída](#on-demand-backup) de trabalhos assíncronos, como backup. Use [Get-AzRecoveryServicesBackupJobDetails](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupJobDetails?view=azps-1.5.0) cmdlet do PS para acompanhar o trabalho e seus detalhes.
+Os usuários podem controlar as operações do ad hoc/usuário disparado com a JobID que é retornado na [saída](#on-demand-backup) de trabalhos assíncronos, como backup. Use [Get-AzRecoveryServicesBackupJobDetail](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupJobDetail) cmdlet do PS para acompanhar o trabalho e seus detalhes.
 
 ````powershell
  Get-AzRecoveryServicesBackupJobDetails -JobId 2516bb1a-d3ef-4841-97a3-9ba455fb0637 -VaultId $targetVault.ID

@@ -1,6 +1,6 @@
 ---
 title: Serviço de Metadados de Instância do Azure | Microsoft Docs
-description: A Interface RESTful para obter informações sobre a computação, a rede e os eventos de manutenção futura da VM do Linux.
+description: Interface rESTful para obter informações sobre de Linux VM computação, rede e eventos de manutenção futura.
 services: virtual-machines-linux
 documentationcenter: ''
 author: KumariSupriya
@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: sukumari
 ms.reviewer: azmetadata
-ms.openlocfilehash: 84821a24ceb8624a1a7033c43c44548fe5eff315
-ms.sourcegitcommit: abeefca6cd5ca01c3e0b281832212aceff08bf3e
+ms.openlocfilehash: 88de601caf984d2511229cd68190554086c3da38
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993137"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65779554"
 ---
 # <a name="azure-instance-metadata-service"></a>Serviço de Metadados de Instância do Azure
 
@@ -359,10 +359,10 @@ azEnvironment | Ambiente do Azure onde a VM está em execução em | 01-10-2018
 customData | Consulte [dados personalizados](#custom-data) | 2019-02-01
 location | Região do Azure na qual a máquina virtual está sendo executada | 2017-04-02
 Nome | Nome da VM | 2017-04-02
-oferta | Oferece informações para a imagem VM. Esse valor só está presente para as imagens implantadas na Galeria de imagens do Azure. | 2017-04-02
+oferta | Oferece informações para a imagem da VM e está presente somente para as imagens implantada na Galeria de imagens do Azure | 2017-04-02
 osType | Linux ou Windows | 2017-04-02
 placementGroupId | [Grupo de Posicionamento](../../virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) do conjunto de dimensionamento da sua Máquina Virtual | 2017-08-01
-plan | [Planejar](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#plan) para uma VM no seu uma imagem do Marketplace do Azure, contém o nome, o produto e o publicador | 2018-04-02
+plan | [Planejar](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#plan) que contém o nome, o produto e o publicador para uma VM se suas uma imagem do Marketplace do Azure | 2018-04-02
 platformUpdateDomain |  [Domínio de atualização](manage-availability.md) no qual a máquina virtual está sendo executada | 2017-04-02
 platformFaultDomain | [Domínio de falha](manage-availability.md) no qual a máquina virtual está sendo executada | 2017-04-02
 provider | Provedor da VM | 01-10-2018
@@ -688,9 +688,17 @@ route add 169.254.169.254/32 10.0.1.10 metric 1 -p
 ```
 
 ### <a name="custom-data"></a>Dados Personalizados
-Instância Metadata Service fornece a capacidade para a VM tenha acesso a seus dados personalizados. Os dados binários devem ser menor que 64 KB e são fornecidos para a máquina virtual no formato codificado na base64. Para obter detalhes sobre como criar uma VM com dados personalizados, consulte [implantar uma máquina Virtual com CustomData](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata).
+Instância Metadata Service fornece a capacidade para a VM tenha acesso a seus dados personalizados. Os dados binários devem ser menor que 64 KB e são fornecidos para a máquina virtual no formato codificado na base64.
+
+Dados personalizados do Azure podem ser inseridos para a VM por meio de APIs REST, Cmdlets do PowerShell, Interface de linha de comando (CLI do Azure) ou um modelo ARM.
+
+Para obter um exemplo de Interface de linha de comando do Azure, consulte [dados personalizados e Cloud-Init no Microsoft Azure](https://azure.microsoft.com/blog/custom-data-and-cloud-init-on-windows-azure/).
+
+Para obter um exemplo de modelo do ARM, consulte [implantar uma máquina Virtual com CustomData](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata).
 
 Dados personalizados estão disponíveis para todos os processos em execução na VM. É aconselhável que os clientes não inserir informações secretas em dados personalizados.
+
+Atualmente, os dados personalizados são garantidos esteja disponível durante a inicialização de uma VM. Se as atualizações são feitas para a VM como a adição de discos ou redimensionar a VM, serviço de metadados de instância não fornecerá dados personalizados. Fornecer dados personalizados persistentemente por meio do serviço de metadados de instância está atualmente em andamento.
 
 #### <a name="retrieving-custom-data-in-virtual-machine"></a>Recuperando dados personalizados na máquina Virtual
 Instância Metadata Service fornece dados personalizados para a máquina virtual em formato codificado na base64. O exemplo a seguir decodifica a cadeia de caracteres codificada em base64.

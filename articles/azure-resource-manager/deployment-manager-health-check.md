@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/08/19
 ms.author: jgao
-ms.openlocfilehash: 1006cc902cf4b6f763d86165a039a1fec5dc97a1
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 41b16498fb79166b2c77c77a517ee5c443ebec75
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65467079"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796253"
 ---
 # <a name="introduce-health-integration-rollout-to-azure-deployment-manager-public-preview"></a>Introduzir a distribuição de integração de integridade para o Azure Deployment Manager (visualização pública)
 
@@ -24,7 +24,7 @@ ms.locfileid: "65467079"
 
 ## <a name="health-monitoring-providers"></a>Provedores de monitoramento de integridade
 
-Para fazer a integração de integridade tão fácil quanto possível, Microsoft tem trabalhado com algumas das empresas para fornecer uma solução simples de copiar/colar para integrar verificações de integridade de suas implantações de monitoramento de integridade de serviço superior. Se você ainda não estiver usando um monitor de integridade, estes são soluções excelentes para começar:
+Para facilitar ao máximo a integração de integridade, a Microsoft tem trabalhado com algumas das principais empresas de monitoramento de integridade de serviço para fornecer uma solução copiar/colar simples visando integrar as verificações de integridade às suas implantações. Se você ainda não estiver usando um monitor de integridade, estes são soluções excelentes para começar:
 
 | ![implantação do Azure manager health monitor provedor datadog](./media/deployment-manager-health-check/azure-deployment-manager-health-monitor-provider-datadog.svg) | ![implantação do Azure manager health monitor provedor site24x7](./media/deployment-manager-health-check/azure-deployment-manager-health-monitor-provider-site24x7.svg) | ![implantação do Azure manager health monitor provedor wavefront](./media/deployment-manager-health-check/azure-deployment-manager-health-monitor-provider-wavefront.svg) |
 |-----|------|------|
@@ -32,7 +32,7 @@ Para fazer a integração de integridade tão fácil quanto possível, Microsoft
 
 ## <a name="how-service-health-is-determined"></a>Como a integridade do serviço é determinada
 
-[Provedores de monitoramento de integridade](#health-monitoring-providers) oferecem vários mecanismos para serviços de monitoramento e alerta você de quaisquer problemas de integridade do serviço. [O Azure Monitor](/services/monitor/) é um exemplo de um tal oferta. O Azure Monitor pode ser usado para criar alertas quando determinados limites forem excedidos. Por exemplo, sua utilização de memória e CPU pico além dos níveis esperados quando você implanta uma nova atualização em seu serviço. Quando receber a notificação, você pode tomar ações corretivas.
+[Provedores de monitoramento de integridade](#health-monitoring-providers) oferecem vários mecanismos para serviços de monitoramento e alerta você de quaisquer problemas de integridade do serviço. [O Azure Monitor](../azure-monitor/overview.md) é um exemplo de um tal oferta. O Azure Monitor pode ser usado para criar alertas quando determinados limites forem excedidos. Por exemplo, sua utilização de memória e CPU pico além dos níveis esperados quando você implanta uma nova atualização em seu serviço. Quando receber a notificação, você pode tomar ações corretivas.
 
 Normalmente, esses provedores de integridade oferecem APIs REST para que o status dos monitores do seu serviço pode ser examinado por meio de programação. As APIs REST pode vir novamente com um sinal íntegros/não íntegros simple (determinado pelo código de resposta de HTTP) e/ou com informações detalhadas sobre os sinais que está recebendo.
 
@@ -134,7 +134,7 @@ O fluxo para a conclusão da instalação com verificações de integridade do G
     ]
     ```
 
-Para percorrer um exemplo, consulte [Tutorial: Use a verificação de integridade do Gerenciador de implantação do Azure](./deployment-manager-health-check.md).
+Para percorrer um exemplo, consulte [Tutorial: Usar a verificação de integridade no Gerenciador de Implantação do Azure](./deployment-manager-health-check.md).
 
 ## <a name="phases-of-a-health-check"></a>Fases de uma verificação de integridade
 

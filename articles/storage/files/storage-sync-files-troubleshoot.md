@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/31/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 2893960c3351b1f8a5caf0c69ca961851528007d
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 26055727e308f8c05aece31746434d7e9a0a5abd
+ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510833"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65555956"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Solução de problemas da Sincronização de Arquivos do Azure
 Use a Sincronização de Arquivos do Azure para centralizar os compartilhamentos de arquivos da sua organização em Arquivos do Azure enquanto mantém a flexibilidade, o desempenho e a compatibilidade de um servidor de arquivos local. A Sincronização de arquivos do Azure transforma o Windows Server em um cache rápido do compartilhamento de arquivos do Azure. Use qualquer protocolo disponível no Windows Server para acessar seus dados localmente, incluindo SMB, NFS e FTPS. Você pode ter tantos caches quantos precisar em todo o mundo.
@@ -300,6 +300,17 @@ As sessões de sincronização podem falhar por diversos motivos, incluindo o se
 | **Correção necessária** | Não |
 
 Nenhuma ação é necessária; o servidor tentará novamente. Se esse erro persistir por mais de algumas horas, crie uma solicitação de suporte.
+
+<a id="-2134364043"></a>**A sincronização está bloqueada até a conclusão da detecção de alteração após a restauração**  
+
+| | |
+|-|-|
+| **HRESULT** | 0x80c83075 |
+| **HRESULT (decimal)** | -2134364043 |
+| **Cadeia de caracteres de erro** | ECS_E_SYNC_BLOCKED_ON_CHANGE_DETECTION_POST_RESTORE |
+| **Correção necessária** | Não |
+
+Nenhuma ação é necessária. Quando um arquivo ou compartilhamento de arquivos (ponto de extremidade de nuvem) é restaurado usando o Backup do Azure, a sincronização está bloqueada até a conclusão da detecção de alteração no compartilhamento de arquivos do Azure. Detecção de alteração é executada imediatamente quando a restauração for concluída e a duração é baseada no número de arquivos no compartilhamento de arquivos.
 
 <a id="-2134364065"></a>**A sincronização não pode acessar o compartilhamento de arquivos do Azure especificado no ponto de extremidade da nuvem.**  
 

@@ -9,12 +9,12 @@ ms.date: 01/18/2019
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: 515081ca14d1c477f20d86e84ce302b5358bfaae
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 7006e19616be51d79dc3e1319064d19024400bcc
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65150069"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789990"
 ---
 # <a name="azure-storage-redundancy"></a>Redundância do Armazenamento do Azure
 
@@ -36,9 +36,9 @@ A tabela a seguir fornece uma visão geral rápida do escopo de durabilidade e d
 | Cenário                                                                                                 | LRS                             | ZRS                              | GRS                                  | RA-GRS                               |
 | :------------------------------------------------------------------------------------------------------- | :------------------------------ | :------------------------------- | :----------------------------------- | :----------------------------------- |
 | Indisponibilidade de nó dentro de um datacenter                                                                 | Sim                             | sim                              | sim                                  | Sim                                  |
-| Um data center inteiro (zonal ou não zonal) fica indisponível                                           | Não                               | sim                              | sim                                  | Sim                                  |
-| Uma interrupção em toda a região                                                                                     | Não                               | Não                                | sim                                  | Sim                                  |
-| Acesso de leitura aos dados (em uma região remota e replicada geograficamente) no caso de indisponibilidade em toda a região | Não                               | Não                               | Não                                    | Sim                                  |
+| Um data center inteiro (zonal ou não zonal) fica indisponível                                           | Não                              | sim                              | sim                                  | Sim                                  |
+| Uma interrupção em toda a região                                                                                     | Não                              | Não                                | sim                                  | Sim                                  |
+| Acesso de leitura aos dados (em uma região remota e replicada geograficamente) no caso de indisponibilidade em toda a região | Não                              | Não                               | Não                                    | Sim                                  |
 | Projetado para fornecer \_\_ durabilidade de objetos em um determinado ano                                          | no mínimo 99,999999999% (11 9's) | no mínimo 99,9999999999% (12 9's) | no mínimo 99,99999999999999% (16 9's) | no mínimo 99,99999999999999% (16 9's) |
 | Tipos de conta de armazenamento suportados                                                                   | GPv2, GPv1, Blob                | GPv2                             | GPv2, GPv1, Blob                     | GPv2, GPv1, Blob                     |
 | SLA de disponibilidade para solicitações de leitura | Pelo menos 99,9% (99% para a camada de acesso esporádico) | Pelo menos 99,9% (99% para a camada de acesso esporádico) | Pelo menos 99,9% (99% para a camada de acesso esporádico) | Pelo menos 99,99% (99,9% para a camada de acesso estática) |
@@ -52,7 +52,7 @@ Para obter informações sobre o armazenamento do Azure garante para durabilidad
 > O Armazenamento Premium dá suporte apenas ao LRS (armazenamento com redundância local).
 
 ## <a name="changing-replication-strategy"></a>Alterar estratégia de replicação
-Você pode alterar a estratégia de replicação da sua conta de armazenamento usando o [portal do Azure](https://portal.azure.com/), [do Azure Powershell](storage-powershell-guide-full.md), [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), ou uma da [cliente do Azure bibliotecas](https://docs.microsoft.com/azure/index?view=azure-dotnet#pivot=sdkstools). Alterar o tipo de replicação da sua conta de armazenamento não resulta em tempo de inatividade.
+Você pode alterar a estratégia de replicação da sua conta de armazenamento usando o [portal do Azure](https://portal.azure.com/), [do Azure Powershell](storage-powershell-guide-full.md), [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), ou uma da [cliente do Azure bibliotecas](https://docs.microsoft.com/azure/index#pivot=sdkstools). Alterar o tipo de replicação da sua conta de armazenamento não resulta em tempo de inatividade.
 
    > [!NOTE]
    > Atualmente, você não pode usar o Portal ou a API para converter sua conta no ZRS. Se você quiser converter a replicação da conta para ZRS, consulte [Armazenamento com redundância de zona (ZRS)](storage-redundancy-zrs.md) para mais detalhes.

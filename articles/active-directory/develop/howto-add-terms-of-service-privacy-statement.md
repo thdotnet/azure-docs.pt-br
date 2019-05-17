@@ -3,8 +3,8 @@ title: Termos de serviço e a declaração de privacidade para aplicativos | Azu
 description: Saiba como você pode configurar os termos de declaração de privacidade e de serviço de aplicativo registrado para usar o AD do Azure.
 services: active-directory
 documentationcenter: dev-center-name
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/24/2018
-ms.author: celested
+ms.author: ryanwi
 ms.reviwer: lenalepa, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97728fa70f0c5f58510e0e68d27a379b20887703
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b2242c6fc46f5556de0b0dd63659670e9c3f998d
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60410514"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540198"
 ---
 # <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Como: Configurar os termos de serviço e a declaração de privacidade para um aplicativo
 
@@ -44,7 +44,7 @@ Os exemplos a seguir mostram o usuário experiência de consentimento quando as 
 
 Antes de adicionar links aos termos de serviço e aos documentos da declaração de privacidade do seu aplicativo, verifique se os URLs seguem essas diretrizes.
 
-| Diretriz     | DESCRIÇÃO                           |
+| Diretriz     | Descrição                           |
 |---------------|---------------------------------------|
 | Formatar        | URL Válida                             |
 | Esquemas válidos | HTTP e HTTPS<br/>Recomendamos HTTPS |

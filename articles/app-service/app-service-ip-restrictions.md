@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 04/22/2018
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 558b67b5b0e1ce4f452ce2ca2e97dd7e785c80b6
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: de898a7ebb9611f469f42bb23774b3b0a0c2410d
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64728708"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65541680"
 ---
 # <a name="azure-app-service-access-restrictions"></a>Restrições de acesso do serviço de aplicativo do Azure #
 
@@ -32,7 +32,7 @@ Quando é feita uma solicitação para seu aplicativo, o endereço de é avaliad
 
 O recurso de restrições de acesso é implementado de funções de front-end do serviço de aplicativo, que são upstream dos hosts de trabalho em que seu código é executado. Portanto, as restrições de acesso são efetivamente as ACLs de rede.
 
-A capacidade de restringir o acesso ao seu aplicativo web de uma rede Virtual do Azure (VNet) é chamada [pontos de extremidade de serviço][serviceendpoints]. Pontos de extremidade de serviço permitem restringir o acesso a um serviço de multilocatário de subredes selecionadas. Ele deve ser habilitado no lado do sistema de rede, bem como o serviço que ela está sendo habilitada com. 
+A capacidade de restringir o acesso ao seu aplicativo web de uma rede Virtual do Azure (VNet) é chamada [pontos de extremidade de serviço][serviceendpoints]. Pontos de extremidade de serviço permitem restringir o acesso a um serviço de multilocatário de subredes selecionadas. Ele deve ser habilitado no lado do sistema de rede, bem como o serviço que ela está sendo habilitada com. Ele não funciona para restringir o tráfego para aplicativos que são hospedados em um ambiente de serviço de aplicativo.  Se você estiver em um ambiente de serviço de aplicativo, você pode controlar o acesso ao seu aplicativo com regras de endereço IP.
 
 ![fluxo de restrições de acesso](media/app-service-ip-restrictions/access-restrictions-flow.png)
 
@@ -59,6 +59,8 @@ Para definir um endereço IP com base em regra, selecione um tipo de IPv4 ou IPv
 ![Adicionar uma regra de restrição de acesso de rede virtual](media/app-service-ip-restrictions/access-restrictions-vnet-add.png)
 
 Para restringir o acesso às sub-redes selecionadas, selecione um tipo de rede Virtual. Abaixo disso, você poderá escolher a assinatura, VNet e sub-rede que deseja permitir ou negar acesso com. Se os pontos de extremidade de serviço não já estarão habilitados com o Microsoft. Web para a sub-rede que você selecionou, ele automaticamente será ativado para você, a menos que você marcar a caixa pedindo para não fazer isso. A situação em que você desejaria para habilitá-lo no aplicativo, mas não a sub-rede está amplamente relacionada à se você tiver as permissões para habilitar os pontos de extremidade de serviço na sub-rede ou não. Se você precisar obter outra pessoa para habilitar pontos de extremidade de serviço na sub-rede, você pode a caixa de seleção e seu aplicativo configurado para pontos de extremidade de serviço em antecipação a ele que está sendo habilitado mais tarde na sub-rede. 
+
+Pontos de extremidade de serviço não podem ser usados para restringir o acesso a aplicativos que são executados em um ambiente de serviço de aplicativo. Quando seu aplicativo estiver em um ambiente de serviço de aplicativo, você pode controlar o acesso ao seu aplicativo com regras de acesso IP. 
 
 Você pode clicar em qualquer linha para editar uma regra de restrição de acesso existente. As edições são eficazes imediatamente, incluindo as alterações na ordem de prioridade.
 

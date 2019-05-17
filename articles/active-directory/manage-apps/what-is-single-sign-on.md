@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/12/2019
+ms.date: 05/15/2019
 ms.author: celested
 ms.reviewer: arvindh, japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75aa0f4755fe3d124094ace3c3e6b8e6ea3b65e0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 12c68a268b901f3525c2af9cd381dc277d6d8167
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60441473"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65770899"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Logon único para aplicativos no Azure Active Directory
 
@@ -45,7 +45,7 @@ A tabela a seguir resume os métodos de logon único e os links para obter mais 
 | [OpenID Connect e OAuth](#openid-connect-and-oauth) | somente na nuvem | Use o OpenID Connect e o OAuth ao desenvolver um novo aplicativo. Esse protocolo simplifica a configuração de aplicativo, tem SDKs fáceis de usar e permite que seu aplicativo use o MS Graph.
 | [SAML](#saml-sso) | nuvem e local | Escolha SAML sempre que possível para aplicativos existentes que não usam o OpenID Connect nem o OAuth. O SAML funciona para aplicativos que são autenticados usando um dos protocolos SAML.|
 | [Baseado em senha](#password-based-sso) | nuvem e local | Escolha o método baseado em senha quando o aplicativo é autenticado com o nome de usuário e senha. O logon único baseado em senha permite o armazenamento e a reprodução segura de senhas do aplicativo usando uma extensão de navegador da Web ou aplicativo móvel. Esse método utiliza o processo de entrada existente fornecido pelo aplicativo, mas permite que um administrador gerencie as senhas. |
-| [Vinculado](#linked-sso) | nuvem e local | Escolha logon único vinculado quando o aplicativo estiver configurado para o logon único em outro serviço de provedor de identidade. Essa opção não adiciona o logon único ao aplicativo. No entanto, o aplicativo pode já ter o logon único implementado usando outro serviço, como Serviços de Federação do Active Directory (AD FS).|
+| [Vinculado](#linked-sign-on) | nuvem e local | Escolha logon vinculado quando o aplicativo é configurado para logon único em outro serviço de provedor de identidade. Essa opção não adiciona o logon único ao aplicativo. No entanto, o aplicativo pode já ter o logon único implementado usando outro serviço, como Serviços de Federação do Active Directory (AD FS).|
 | [Desabilitado](#disabled-sso) | nuvem e local | Escolha o logon único desabilitado quando o aplicativo não estiver pronto para ser configurado para logon único. Os usuários precisam inserir seu nome de usuário e senha toda vez que iniciarem este aplicativo.|
 | [IWA (Autenticação Integrada do Windows)](#integrated-windows-authentication-iwa-sso) | apenas local | Escolha esse logon único de IWA para aplicativos que usam a [IWA (Autenticação Integrada do Windows)](/aspnet/web-api/overview/security/integrated-windows-authentication) ou aplicativos com reconhecimento de declaração. Para IWA, os conectores de Proxy de Aplicativo usam a KCD (Delegação Restrita de Kerberos) para autenticar os usuários no aplicativo. | 
 | [Baseado em cabeçalho](#header-based-sso) | apenas local | Use o logon único baseado em cabeçalho quando o aplicativo usar cabeçalhos para autenticação. O logon único baseado em cabeçalho requer o PingAccess para o Azure AD. O Proxy de Aplicativo usa o Azure AD para autenticar o usuário e, em seguida, passa o tráfego pelo serviço de conector.  | 
@@ -68,7 +68,7 @@ Escolha o logon único baseado em SAML quando o aplicativo der suporte a ele.
 O logon único baseado em SAML é compatível com aplicativos que usam qualquer um desses protocolos:
 
 - SAML 2.0
-- O certificado do provedor de identidade do Web Services Federation
+- Web Services Federation
 
 Para configurar um aplicativo SaaS de baseado em SAML single sign-on, consulte [baseado em SAML de configurar o logon único no](configure-single-sign-on-portal.md). Além disso, muitos aplicativos SaaS (Software como Serviço) têm um [tutorial específico de aplicativo](../saas-apps/tutorial-list.md) que explica a configuração para logon único baseado em SAML.
 
@@ -122,12 +122,12 @@ Quando o usuário final gerencia as credenciais:
 - Os administradores ainda são capazes de definir novas credenciais para o aplicativo.
 
 
-## <a name="linked-sso"></a>SSO vinculado
+## <a name="linked-sign-on"></a>Logon vinculado
 O logon vinculado permite que o Azure AD forneça o logon único para um aplicativo que já está configurado para um logon único em outro serviço. O aplicativo vinculado pode aparecer para os usuários finais no portal do Office 365 ou portal MyApps do Azure AD. Por exemplo, um usuário pode iniciar um aplicativo que está configurado para logon único no Serviços de Federação do Active Directory (AD FS) 2.0 no portal do Office 365. Relatórios adicionais também estão disponíveis para aplicativos vinculados que são iniciados no portal do Office 365 ou no portal MyApps do Azure AD. 
 
-### <a name="linked-sso-for-application-migration"></a>SSO vinculado para migração de aplicativo
+### <a name="linked-sign-on-for-application-migration"></a>Logon vinculado para migração de aplicativo
 
-O SSO vinculado pode fornecer uma experiência de usuário consistente enquanto você migra aplicativos durante um período. Se você estiver migrando aplicativos para o Azure Active Directory, poderá usar o logon único vinculado para publicar rapidamente links para todos os aplicativos que pretende migrar.  Os usuários podem encontrar todos os links no [portal MyApps](../user-help/active-directory-saas-access-panel-introduction.md) ou no [iniciador de aplicativos do Office 365](https://support.office.com/article/meet-the-office-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a). Os usuários não saberão que estão acessando um aplicativo vinculado ou migrado.  
+Logon vinculado pode fornecer uma experiência de usuário consistente enquanto você migra aplicativos durante um período de tempo. Se você estiver migrando aplicativos para o Azure Active Directory, você pode usar o logon vinculado publique rapidamente os links a todos os aplicativos que você pretende migrar.  Os usuários podem encontrar todos os links no [portal MyApps](../user-help/active-directory-saas-access-panel-introduction.md) ou no [iniciador de aplicativos do Office 365](https://support.office.com/article/meet-the-office-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a). Os usuários não saberão que estão acessando um aplicativo vinculado ou migrado.  
 
 Depois que um usuário for autenticado com um aplicativo vinculado, um registro de conta precisa ser criado antes que o usuário final receba o acesso de logon único. O provisionamento deste registro de conta pode ocorrer automaticamente ou manualmente por um administrador.
 
@@ -175,7 +175,7 @@ Escolha o logon único baseado em cabeçalho quando:
 
 Para configurar a autenticação baseada em cabeçalho, confira [Autenticação baseada em cabeçalho para logon único com o Proxy de Aplicativo](application-proxy-configure-single-sign-on-with-ping-access.md). 
 
-### <a name="what-is-pingaccess-for-azure-ad"></a>O que é PingAccess para Azure AD?
+### <a name="what-is-pingaccess-for-azure-ad"></a>O que é o PingAccess para Azure AD?
 
 Usando o PingAccess para o Azure AD, os usuários podem acessar e realizar o logon único em aplicativos que usam cabeçalhos para autenticação. O Proxy de Aplicativo trata esses aplicativos como qualquer outro, usando o Azure AD para autenticar o acesso e, depois, passando o tráfego por meio do serviço de conector. Após a autenticação, o serviço de PingAccess converte o token de acesso do Azure AD em um formato de cabeçalho que é enviado para o aplicativo.
 

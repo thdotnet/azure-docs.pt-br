@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 4811e40f87962ecde75c7b2bb14e1d033e82ad44
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cd7fee34f020f16d1511bc57b4ad86dbd5eb168d
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60605093"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796954"
 ---
 # <a name="translator-text-api-30-transliterate"></a>API de Tradução de Texto 3.0: Transliterate
 
@@ -29,13 +29,13 @@ Envie uma solicitação `POST` para:
 https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
 ```
 
-## <a name="request-parameters"></a>Parâmetros da solicitação
+## <a name="request-parameters"></a>Parâmetros de solicitação
 
 Os parâmetros de solicitação passados na cadeia de caracteres de consulta são:
 
 <table width="100%">
   <th width="20%">Parâmetro de consulta</th>
-  <th>DESCRIÇÃO</th>
+  <th>Descrição</th>
   <tr>
     <td>api-version</td>
     <td>*Parâmetro obrigatório*.<br/>Versão da API solicitada pelo cliente. O valor precisa ser `3.0`.</td>
@@ -58,13 +58,13 @@ Os cabeçalhos de solicitação incluem:
 
 <table width="100%">
   <th width="20%">Cabeçalhos</th>
-  <th>DESCRIÇÃO</th>
+  <th>Descrição</th>
   <tr>
     <td>Cabeçalhos de autenticação</td>
     <td><em>Cabeçalho de solicitação obrigatório</em>.<br/>Veja <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">Opções disponíveis para autenticação</a>.</td>
   </tr>
   <tr>
-    <td>Tipo de conteúdo</td>
+    <td>Tipo de Conteúdo</td>
     <td>*Cabeçalho de solicitação obrigatório*.<br/>Especifica o tipo de conteúdo da carga. Os valores possíveis são: `application/json`.</td>
   </tr>
   <tr>
@@ -115,7 +115,7 @@ Um exemplo de resposta JSON é:
 
 <table width="100%">
   <th width="20%">Cabeçalhos</th>
-  <th>DESCRIÇÃO</th>
+  <th>Descrição</th>
   <tr>
     <td>X-RequestId</td>
     <td>Valor gerado pelo serviço para identificar a solicitação. É usado para fins de solução de problemas.</td>
@@ -127,11 +127,11 @@ Um exemplo de resposta JSON é:
 Veja a seguir os possíveis códigos de status HTTP retornados por uma solicitação. 
 
 <table width="100%">
-  <th width="20%">Código de status</th>
-  <th>DESCRIÇÃO</th>
+  <th width="20%">Código de Status</th>
+  <th>Descrição</th>
   <tr>
     <td>200</td>
-    <td>Sucesso.</td>
+    <td>Êxito.</td>
   </tr>
   <tr>
     <td>400</td>
@@ -147,11 +147,11 @@ Veja a seguir os possíveis códigos de status HTTP retornados por uma solicita�
   </tr>
   <tr>
     <td>429</td>
-    <td>O chamador está enviando muitas solicitações.</td>
+    <td>O servidor rejeitou a solicitação porque o cliente excedeu os limites de solicitação.</td>
   </tr>
   <tr>
     <td>500</td>
-    <td>Erro inesperado. Se o erro persistir, relate-o com: data e hora da falha, identificador da solicitação do cabeçalho de resposta `X-RequestId` e identificador do cliente do cabeçalho de solicitação `X-ClientTraceId`.</td>
+    <td>Ocorreu um erro inesperado. Se o erro persistir, relate-o com: data e hora da falha, identificador da solicitação do cabeçalho de resposta `X-RequestId` e identificador do cliente do cabeçalho de solicitação `X-ClientTraceId`.</td>
   </tr>
   <tr>
     <td>503</td>

@@ -8,15 +8,15 @@ services: search
 ms.service: search
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 05/16/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: bf78cd9b70aa4a82ef96fdd529d3ee5b1641038c
-ms.sourcegitcommit: eea74d11a6d6ea6d187e90e368e70e46b76cd2aa
+ms.openlocfilehash: 3fa463cb7178fa5cc2108383047a7ca94ffb48a3
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65035363"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797372"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Monitorar a atividade de consulta e o consumo de recursos no Azure Search
 
@@ -58,7 +58,7 @@ O Azure Search não armazena nenhum dado além dos objetos que ele gerencia, o q
 
 A tabela a seguir compara as opções para armazenar logs, adicionar monitoramento detalhado das operações de serviço e consultar cargas de trabalho por meio do Application Insights.
 
-| Resource | Usado para |
+| Resource | Utilizado para |
 |----------|----------|
 | [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) | Eventos registrados em log e métricas de consulta, com base nos esquemas de abaixo, correlacionadas com eventos de usuário em seu aplicativo. Essa é a única solução que considera as ações ou os sinais do usuário, os eventos de mapeamento de pesquisas iniciadas pelo usuário, ao invés das solicitações de filtro enviadas pelo código do aplicativo. Para usar essa abordagem, copie e cole o código de instrumentação em seus arquivos de origem para direcionar as informações de solicitação para o Application Insights. Para saber mais, confira [Análise de tráfego de pesquisa](search-traffic-analytics.md). |
 | [Logs do Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview) | Eventos registrados em log e métricas de consulta, com base nos esquemas de abaixo. Eventos são registrados para um espaço de trabalho do Log Analytics. É possível executar as consultas em um espaço de trabalho para retornar informações detalhadas do log. Para obter mais informações, consulte [começar com os logs do Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata) |
@@ -77,13 +77,15 @@ Nesta seção, você aprenderá como usar o armazenamento de blob para armazenar
 
 1. [Crie uma conta de armazenamento](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account) se ainda não tiver uma. Você pode colocá-la no mesmo grupo de recursos do Azure Search para simplificar a limpeza posteriormente, se quiser excluir todos os recursos usados neste exercício.
 
+   Sua conta de armazenamento deve existir na mesma região do Azure Search.
+
 2. Abra a página Visão geral do serviço de pesquisa. No painel de navegação à esquerda, role para baixo até **Monitoramento** e clique em **Habilitar o monitoramento**.
 
    ![Habilitar o monitoramento](./media/search-monitor-usage/enable-monitoring.png "Habilitar monitoramento")
 
 3. Escolha os dados que deseja exportar: Logs, Métricas ou ambos. Você pode copiá-lo para uma conta de armazenamento, enviá-lo para um hub de eventos ou exportá-lo para os logs do Azure Monitor.
 
-   Para arquivamento no armazenamento de blobs, só deve existir a conta de armazenamento. Contêineres e blobs são criados quando os dados de log são exportados.
+   Para arquivamento no armazenamento de blobs, só deve existir a conta de armazenamento. Contêineres e blobs serão criadas conforme necessário quando os dados de log são exportados.
 
    ![Configurar arquivamento de armazenamento de blobs](./media/search-monitor-usage/configure-blob-storage-archive.png "Configurar arquivamento de armazenamento de blobs")
 
@@ -125,7 +127,7 @@ Os blobs que contêm os logs de tráfego do serviço de pesquisa são estruturad
 
 | NOME | Type | Exemplo | Observações |
 | --- | --- | --- | --- |
-| DESCRIÇÃO |string |"GET /indexes('content')/docs" |Ponto de extremidade da operação |
+| Descrição |string |"GET /indexes('content')/docs" |Ponto de extremidade da operação |
 | Consultar |string |"?search=AzureSearch&$count=true&api-version=2019-05-06" |Parâmetros da consulta |
 | Documentos |int |42 |Número de documentos processados |
 | IndexName |string |"testindex" |Nome do índice associado à operação |
@@ -143,7 +145,7 @@ As métricas são capturadas para solicitações de consulta.
 | mínimo |int |37 |O valor mínimo das amostras brutas no intervalo de agregação da métrica |
 | máximo |int |78 |O valor máximo das amostras brutas no intervalo de agregação da métrica |
 | total |int |258 |O valor total das amostras brutas no intervalo de agregação da métrica |
-| count |int |4 |O número de amostras brutas usadas para gerar a métrica |
+| Contagem |int |4 |O número de amostras brutas usadas para gerar a métrica |
 | intervalo de tempo |string |"PT1M" |O intervalo de agregação da métrica no ISO 8601 |
 
 Todas as métricas são reportadas em intervalos de um minuto. Cada métrica expõe valores mínimo, máximo e médios por minuto.

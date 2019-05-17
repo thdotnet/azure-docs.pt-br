@@ -1,23 +1,17 @@
 ---
 title: Implantar recursos com o PowerShell e o modelo | Microsoft Docs
 description: Use o Azure Resource Manager e o Azure PowerShell para implantar recursos no Azure. Os recursos são definidos em um modelo do Resource Manager.
-services: azure-resource-manager
-documentationcenter: na
 author: tfitzmac
-ms.assetid: 55903f35-6c16-4c6d-bf52-dbf365605c3f
 ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 03/28/2019
+ms.date: 05/14/2019
 ms.author: tomfitz
-ms.openlocfilehash: 2ef5cc702bd5035c958a8feb9b6f5051781cd3cc
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 5203519b1553de54d4e3cd1fafe6fb3d1c18ebd6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649787"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65779950"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-powershell"></a>Implantar recursos com modelos do Resource Manager e o Azure PowerShell
 
@@ -103,9 +97,9 @@ Para colar o código no shell, clique com o botão direito do mouse dentro do sh
 
 ## <a name="redeploy-when-deployment-fails"></a>Reimplantar quando ocorrer falha na implantação
 
-Esse recurso também é conhecido como *reversão em erro*. Quando uma implantação falha, é possível reimplantar automaticamente uma implantação anterior bem-sucedida com base em seu histórico de implantações. Para especificar a reimplantação, use o parâmetro `-RollbackToLastDeployment` ou `-RollBackDeploymentName` no comando de implantação. Essa funcionalidade é útil se você tem um bom estado conhecido para sua implantação de infra-estrutura e quiser que isso ser revertido para. Há uma série de limitações e restrições:
+Esse recurso também é conhecido como *reversão em erro*. Quando uma implantação falha, é possível reimplantar automaticamente uma implantação anterior bem-sucedida com base em seu histórico de implantações. Para especificar a reimplantação, use o parâmetro `-RollbackToLastDeployment` ou `-RollBackDeploymentName` no comando de implantação. Essa funcionalidade é útil se você tem um bom estado conhecido para sua implantação de infra-estrutura e deseja reverter para esse estado. Há uma série de limitações e restrições:
 
-- A reimplantação é executada exatamente como ele foi executado anteriormente com os mesmos parâmetros. Não é possível alterar os parâmetros.
+- A reimplantação é executada exatamente como ele foi executado anteriormente com os mesmos parâmetros. Você não pode alterar os parâmetros.
 - A implantação anterior é executada usando o [modo completo](./deployment-modes.md#complete-mode). Todos os recursos não incluídos na implantação anterior são excluídos e quaisquer configurações de recurso são definidas para seu estado anterior. Certifique-se de entender completamente o [modos de implantação](./deployment-modes.md).
 - A reimplantação afeta apenas os recursos, as alterações de dados não são afetadas.
 - Esse recurso só tem suporte em implantações do grupo de recursos, não implantações de nível da assinatura. Para obter mais informações sobre a implantação de nível de assinatura, consulte [criar grupos de recursos e recursos no nível da assinatura](./deploy-to-subscription.md).
@@ -159,6 +153,18 @@ New-AzResourceGroupDeployment -ResourceGroupName testgroup `
 ```
 
 Obtendo um valor de parâmetro de um arquivo é útil quando você precisa fornecer valores de configuração. Por exemplo, você pode fornecer [valores de cloud-init para uma máquina virtual Linux](../virtual-machines/linux/using-cloud-init.md).
+
+Se você precisar passar uma matriz de objetos, criar tabelas de hash no PowerShell e adicioná-los para uma matriz. Passe essa matriz como um parâmetro durante a implantação.
+
+```powershell
+$hash1 = @{ Name = "firstSubnet"; AddressPrefix = "10.0.0.0/24"}
+$hash2 = @{ Name = "secondSubnet"; AddressPrefix = "10.0.1.0/24"}
+$subnetArray = $hash1, $hash2
+New-AzResourceGroupDeployment -ResourceGroupName testgroup `
+  -TemplateFile c:\MyTemplates\demotemplate.json `
+  -exampleArray $subnetArray
+```
+
 
 ### <a name="parameter-files"></a>Arquivos de parâmetros
 
