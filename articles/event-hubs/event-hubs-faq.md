@@ -8,14 +8,14 @@ manager: timlt
 ms.service: event-hubs
 ms.topic: article
 ms.custom: seodec18
-ms.date: 12/06/2018
+ms.date: 05/15/2019
 ms.author: shvija
-ms.openlocfilehash: ce9c6a83d664bc9ad1798792f7762556c9a0d541
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: acc756ac04e5127d07760746bd0178f0f6cb1d6f
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64690281"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789257"
 ---
 # <a name="event-hubs-frequently-asked-questions"></a>Perguntas frequentes sobre os Hubs de Eventos
 
@@ -23,6 +23,15 @@ ms.locfileid: "64690281"
 
 ### <a name="what-is-an-event-hubs-namespace"></a>O que é um namespace dos Hubs de Eventos?
 Um namespace é um contêiner de escopo do Hub de Eventos/Tópicos do Kafka. Ele fornece a você um [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) único. Um namespace serve como um contêiner de aplicativo que pode hospedar vários Hub de Eventos/Tópicos do Kafka. 
+
+### <a name="when-do-i-create-a-new-namespace-vs-use-an-existing-namespace"></a>Quando criar um novo namespace versus usar um namespace existente?
+Alocações de capacidade ([taxa de transferência TUs (unidades)](#throughput-units)) são cobrados no nível de namespace. Um namespace também está associado uma região.
+
+Você talvez queira criar um novo namespace em vez de usar um um existente em um dos seguintes cenários: 
+
+- Você precisa de um Hub de eventos associado com uma nova região.
+- Você precisa de um Hub de eventos associado com uma assinatura diferente.
+- Você precisa de um Hub de eventos com uma alocação de capacidade distintas (ou seja, a capacidade precisa para o namespace com o hub de evento adicionado excederia o limite de TUS 40 e você não deseja ir para o cluster dedicado)  
 
 ### <a name="what-is-the-difference-between-event-hubs-basic-and-standard-tiers"></a>Qual é a diferença entre os níveis Basic e Standard dos Hubs de Eventos?
 
@@ -111,7 +120,7 @@ Observação: Se sasl.jaas.config não for uma configuração compatível com su
 ### <a name="what-is-the-messageevent-size-for-kafka-enabled-event-hubs"></a>Qual é o tamanho de mensagem/evento para Hubs de Eventos habilitados para Kafka?
 O tamanho máximo de mensagem permitido para os Hubs de Eventos habilitados para Kafka é de 1MB.
 
-## <a name="throughput-units"></a>Unidades de transferência
+## <a name="throughput-units"></a>Unidades de produtividade
 
 ### <a name="what-are-event-hubs-throughput-units"></a>O que são unidades de produtividade dos Hubs de Eventos?
 A taxa de transferência nos Hubs de Eventos define a quantidade de dados em megabytes ou o número (em milhares) de eventos de 1 KB que entram e saem por meio dos Hubs de Eventos. Essa taxa de transferência é medida em unidades de produtividade (TUs). Compre TUs antes de começar a usar o serviço Hubs de Eventos. Seleciona explicitamente as TUs dos Hubs de Eventos usando o portal do Azure ou de modelos do Resource Manager dos Hubs de Eventos. 

@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: pabutler
-ms.openlocfilehash: 32002f8b88a2fbeba29f15b3b9289ecf3d7560d0
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: c639389fdd0d4624152fcdfa4432be09a18a97bc
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942726"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794335"
 ---
 # <a name="prepare-your-container-technical-assets"></a>Prepare seus recursos técnicos de contêiner
 
@@ -45,7 +45,7 @@ Além disso, é recomendável adicionar as seguintes ferramentas ao ambiente de 
 
 -   [Gerenciador de Armazenamento do Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
 -   [Visual Studio Code](https://code.visualstudio.com/)
-    *   Extensão: [Ferramentas do Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
+    *   Ramal: [Ferramentas do Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
     *   Extensão: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
     *   Extensão: [Prettify JSON](https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json)
 
@@ -53,9 +53,10 @@ Também é recomendável que você revise as ferramentas disponíveis na página
 
 ## <a name="create-the-container-image"></a>Crie a imagem do contêiner
 
-- Crie e configure o disco rígido virtual (VHD) para sua máquina virtual de contêiner (VM). Este VHD contém o sistema operacional (Windows, Linux ou Ubuntu) para o contêiner. Discos de dados adicionais podem ser necessários.
-- Configure o sistema operacional da VM, o tamanho da VM, as portas a serem abertas e os discos de dados conectados.
-- Instale o aplicativo e outro software necessário para sua oferta. Por exemplo: software de banco de dados, software de terceiros ou um aplicativo personalizado.
+Veja o seguinte para obter mais informações:
+
+* [Tutorial: Criar uma imagem de contêiner para implantação nas instâncias de contêiner do Azure](https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-app)
+* [Tutorial: Criar e implantar imagens de contêiner na nuvem com as tarefas de registro de contêiner do Azure](https://docs.microsoft.com/azure/container-registry/container-registry-tutorial-quick-task)
 
 ## <a name="next-steps"></a>Próximas etapas
 

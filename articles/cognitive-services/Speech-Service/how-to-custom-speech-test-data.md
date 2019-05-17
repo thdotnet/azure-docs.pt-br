@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: 1e689d7ce65fda43e5657383ed44890c90c095cd
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: af801600eebed7c0d4ff01dd1edf01fa595840eb
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025878"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785768"
 ---
 # <a name="prepare-data-for-custom-speech"></a>Preparar dados para conversão de fala personalizado
 
@@ -27,9 +27,9 @@ Esta tabela lista os tipos de dados aceitos, quando cada tipo de dados deve ser 
 
 | Tipo de dados | Usado de teste | Quantidade | Usado para treinamento | Quantidade |
 |-----------|-----------------|----------|-------------------|----------|
-| [Áudio](#audio-data-for-testing) | Sim<br>Usado para inspeção visual | arquivos de áudio 5 + | Não  | N/a |
+| [Áudio](#audio-data-for-testing) | Sim<br>Usado para inspeção visual | arquivos de áudio 5 + | Não | N/a |
 | [Transcrições de áudio + rotulada como humanos](#audio--human-labeled-transcript-data-for-testingtraining) | Sim<br>Usado para avaliar a precisão | 0,5 - 5 horas de áudio | Sim | 1 - 1.000 horas de áudio |
-| [Texto relacionado](##related-text-data-for-training) | Não  | N/a | Sim | 1 a 200 MB de texto relacionado |
+| [Texto relacionado](##related-text-data-for-training) | Não | N/a | Sim | 1 a 200 MB de texto relacionado |
 
 Os arquivos devem ser agrupados por tipo de um conjunto de dados e carregados como um arquivo zip. Cada conjunto de dados pode conter apenas um único tipo de dados.
 
@@ -55,7 +55,7 @@ Use esta tabela para garantir que seus arquivos de áudio estão formatados corr
 | Propriedade | Value |
 |----------|-------|
 | Formato de arquivo | RIFF (WAV) |
-| Taxa de amostragem | 8.000 ou 16.000 Hz |
+| Taxa de amostra | 8.000 ou 16.000 Hz |
 | Canais | 1 (mono) |
 | Comprimento máximo por áudio | 2 horas |
 | Formato de exemplo | PCM, 16 bits |
@@ -64,7 +64,7 @@ Use esta tabela para garantir que seus arquivos de áudio estão formatados corr
 
 Se o seu áudio não atendem a essas propriedades ou você deseja verificar se ele faz, sugerimos baixando [sox](http://sox.sourceforge.net) para verificar ou converta o áudio. Abaixo estão alguns exemplos de como cada uma dessas atividades pode ser feita por meio da linha de comando:
 
-| Atividade | DESCRIÇÃO | Comando SOX |
+| Atividade | Descrição | Comando SOX |
 |----------|-------------|-------------|
 | Verifique o formato de áudio | Use este comando para verificar o formato de arquivo de áudio. | `soxi <filename>.wav` |
 | Converter o formato de áudio | Use este comando para converter o arquivo de áudio para o canal único, de 16 bits, 48 KHz. | `sox <filename>.wav -b 16 -3 signed-integer -c l -r 48k -t wav <filename>.wav` |
@@ -76,7 +76,7 @@ Para medir a precisão de precisão de fala em texto da Microsoft durante o proc
 | Propriedade | Value |
 |----------|-------|
 | Formato de arquivo | RIFF (WAV) |
-| Taxa de amostragem | 8.000 ou 16.000 Hz |
+| Taxa de amostra | 8.000 ou 16.000 Hz |
 | Canais | 1 (mono) |
 | Comprimento máximo por áudio | 60 s |
 | Formato de exemplo | PCM, 16 bits |
@@ -85,7 +85,7 @@ Para medir a precisão de precisão de fala em texto da Microsoft durante o proc
 
 Para resolver problemas como a exclusão do word ou substituição, uma quantidade significativa de dados é necessário para melhorar o reconhecimento. Em geral, é recomendável fornecer transcrições de palavra por palavra por aproximadamente 10 a 1.000 horas de áudio. As transcrições para todos os arquivos WAV devem estar contidas em um único arquivo de texto sem formatação. Cada linha do arquivo de transcrição deve conter o nome de um dos arquivos de áudio, seguido pela transcrição correspondente. O nome do arquivo e transcrição devem ser separados por uma tabulação (\t).
 
-  Por exemplo: 
+  Por exemplo:
 ```
   speech01.wav  speech recognition is awesome
   speech02.wav  the quick brown fox jumped all over the place
@@ -142,15 +142,15 @@ Isso inclui exemplos de uma declaração falada e uma pronúncia personalizada p
 |--------------|--------------------------|
 | o três p de c | 3CPO |  
 | k c t n | CNTK |
-| i triplo e | IEE |
+| i triplo e | IEEE |
 
 A forma falada é a sequência de fonética Esclarecida. Ele pode ser composto de letras, palavras, sílabas ou uma combinação de todos os três.
 
 Pronúncia personalizada está disponível em inglês (en-US) e alemão (de-DE). Esta tabela mostra os caracteres com suporte pela linguagem:
 
-| Linguagem | Local | Caracteres |
+| Linguagem | Localidade | Personagens |
 |----------|--------|------------|
-| Inglês | en-US | a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z |
+| Inglês | pt-BR | a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z |
 | Alemão | de-DE | ä, ö, ü, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z |
 
 Use esta tabela para garantir que seu arquivo de dados relacionados para pronúncia está formatado corretamente. Arquivos de pronúncia são pequenos e não devem exceder algumas KBs.

@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 02/13/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: ba4af5d3b6612614dee54db7fdb1287ff7136321
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d41f1b61345d365bb315a7a5c5570f729f140324
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60913491"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65791096"
 ---
 # <a name="how-to-use-the-qna-maker-rest-api-with-nodejs"></a>Como usar a API REST de QnA Maker com Node.js 
 <a name="HOLTop"></a>
@@ -50,7 +50,7 @@ Este artigo mostra como usar a [API de QnA Maker da Microsoft](../Overview/overv
 
 ## <a name="create-knowledge-base"></a>Criar base de dados de conhecimento
 
-O código a seguir cria uma nova base de dados conhecimento, usando o método [Criar](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff).
+O código a seguir cria uma nova base de dados conhecimento, usando o método [Criar](https://go.microsoft.com/fwlink/?linkid=2092179).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -162,7 +162,7 @@ let req = {
   "qnaList": [
     {
       "id": 0,
-      "answer": "You can use our REST APIs to manage your Knowledge Base. See here for details: https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600",
+      "answer": "You can use our REST APIs to manage your Knowledge Base. See here for details: https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update",
       "source": "Custom Editorial",
       "questions": [
         "How do I programmatically update my Knowledge Base?"
@@ -246,7 +246,7 @@ Uma resposta com êxito é retornada em JSON, conforme mostrado no seguinte exem
 
 ## <a name="update-knowledge-base"></a>Atualizar a base de dados de conhecimento
 
-O código a seguir atualiza uma base de dados de conhecimento existente, usando o método [Atualizar](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600).
+O código a seguir atualiza uma base de dados de conhecimento existente, usando o método [Atualizar](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -361,7 +361,7 @@ let req = {
     'qnaList': [
       {
         'id': 1,
-        'answer': 'You can change the default message if you use the QnAMakerDialog. See this for details: https://docs.botframework.com/en-us/azure-bot-service/templates/qnamaker/#navtitle',
+        'answer': 'You can change the default message if you use the QnAMakerDialog. See this for details: https://docs.botframework.com/azure-bot-service/templates/qnamaker/#navtitle',
         'source': 'Custom Editorial',
         'questions': [
           'How can I change the default message from QnA Maker?'
@@ -439,7 +439,7 @@ Press any key to continue.
 
 ## <a name="get-request-status"></a>Obter status da solicitação
 
-É possível chamar o método [Operação](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/operations_getoperationdetails) para verificar o status de uma solicitação para criar ou atualizar uma base de dados de conhecimento. Para ver como esse método é utilizado, confira o código de exemplo do método [Create](#Create) ou [Update](#Update).
+É possível chamar o método [Operação](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/operations/getdetails) para verificar o status de uma solicitação para criar ou atualizar uma base de dados de conhecimento. Para ver como esse método é utilizado, confira o código de exemplo do método [Create](#Create) ou [Update](#Update).
 
 [Voltar ao início](#HOLTop)
 
@@ -447,7 +447,7 @@ Press any key to continue.
 
 ## <a name="publish-knowledge-base"></a>Publicar base de dados de conhecimento
 
-O código a seguir publica uma base de dados de conhecimento existente, usando o método [Publicar](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fe).
+O código a seguir publica uma base de dados de conhecimento existente, usando o método [Publicar](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -559,7 +559,7 @@ Uma resposta com êxito é retornada em JSON, conforme mostrado no seguinte exem
 
 ## <a name="replace-knowledge-base"></a>Substituir base de dados de conhecimento
 
-O código a seguir substitui o conteúdo da base de dados de conhecimento especificada, usando o método [Substituir](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_publish).
+O código a seguir substitui o conteúdo da base de dados de conhecimento especificada, usando o método [Substituir](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/replace).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -653,7 +653,7 @@ let req = {
   'qnaList': [
     {
       'id': 0,
-      'answer': 'You can use our REST APIs to manage your Knowledge Base. See here for details: https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600',
+      'answer': 'You can use our REST APIs to manage your Knowledge Base. See here for details: https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update',
       'source': 'Custom Editorial',
       'questions': [
         'How do I programmatically update my Knowledge Base?'
@@ -692,7 +692,7 @@ Uma resposta com êxito é retornada em JSON, conforme mostrado no seguinte exem
 
 ## <a name="download-the-contents-of-a-knowledge-base"></a>Baixar o conteúdo de uma base de dados de conhecimento
 
-O código a seguir baixa o conteúdo da base de dados de conhecimento especificada, usando o método [Baixar base de dados de conhecimento](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_download).
+O código a seguir baixa o conteúdo da base de dados de conhecimento especificada, usando o método [Baixar base de dados de conhecimento](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/download).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -791,7 +791,7 @@ Uma resposta com êxito é retornada em JSON, conforme mostrado no seguinte exem
   "qnaDocuments": [
     {
       "id": 1,
-      "answer": "You can use our REST APIs to manage your Knowledge Base. See here for details: https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600",
+      "answer": "You can use our REST APIs to manage your Knowledge Base. See here for details: https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update",
       "source": "Custom Editorial",
       "questions": [
         "How do I programmatically update my Knowledge Base?"
@@ -954,7 +954,7 @@ Uma resposta com êxito é retornada em JSON, conforme mostrado no seguinte exem
 
 ## <a name="get-information-about-a-knowledge-base"></a>Obter informações sobre uma base de dados de conhecimento
 
-O código a seguir obtém informações sobre a base de dados de conhecimento especificada, usando o método [Obter detalhes da base de dados de conhecimento](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_getknowledgebasedetails).
+O código a seguir obtém informações sobre a base de dados de conhecimento especificada, usando o método [Obter detalhes da base de dados de conhecimento](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/getdetails).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -1069,7 +1069,7 @@ Uma resposta com êxito é retornada em JSON, conforme mostrado no seguinte exem
 
 ## <a name="get-all-knowledge-bases-for-a-user"></a>Obter todas as bases de dados de conhecimento para um usuário
 
-O código a seguir obtém informações sobre todas as bases de dados de conhecimento para um usuário especificado, usando o método [Obter bases de dados de conhecimento para usuário](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_getknowledgebasesforuser).
+O código a seguir obtém informações sobre todas as bases de dados de conhecimento para um usuário especificado, usando o método [Obter bases de dados de conhecimento para usuário](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/listall).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -1197,7 +1197,7 @@ Press any key to continue.
 
 ## <a name="delete-a-knowledge-base"></a>Excluir uma base de dados de conhecimento
 
-O código a seguir exclui a base de dados de conhecimento especificada, usando o método [Excluir base de dados de conhecimento](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_delete).
+O código a seguir exclui a base de dados de conhecimento especificada, usando o método [Excluir base de dados de conhecimento](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/delete).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -1309,7 +1309,7 @@ Uma resposta com êxito é retornada em JSON, conforme mostrado no seguinte exem
 
 ## <a name="get-endpoint-keys"></a>Obter chaves de ponto de extremidade
 
-O código a seguir obtém as chaves do ponto de extremidade atual, usando o método [Obter chaves de ponto de extremidade](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/endpointkeys_getendpointkeys).
+O código a seguir obtém as chaves do ponto de extremidade atual, usando o método [Obter chaves de ponto de extremidade](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/endpointkeys/getkeys).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -1410,7 +1410,7 @@ Uma resposta com êxito é retornada em JSON, conforme mostrado no seguinte exem
 
 ## <a name="refresh-endpoint-keys"></a>Atualizar chaves do ponto de extremidade
 
-O código a seguir gera novamente as chaves do ponto de extremidade atual, usando o método [Atualizar chaves do ponto de extremidade](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/endpointkeys_refreshendpointkeys).
+O código a seguir gera novamente as chaves do ponto de extremidade atual, usando o método [Atualizar chaves do ponto de extremidade](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/endpointkeys/refreshkeys).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -1536,7 +1536,7 @@ Uma resposta com êxito é retornada em JSON, conforme mostrado no seguinte exem
 
 ## <a name="get-word-alterations"></a>Obter alterações de palavras
 
-O código a seguir obtém as alterações de palavras atuais, usando o método [Baixar alterações](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fc).
+O código a seguir obtém as alterações de palavras atuais, usando o método [Baixar alterações](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/get).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -1643,7 +1643,7 @@ Uma resposta com êxito é retornada em JSON, conforme mostrado no seguinte exem
 
 ## <a name="replace-word-alterations"></a>Substituir alterações de palavras
 
-O código a seguir substitui as alterações de palavras atuais, usando o método [Substituir alterações](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fd).
+O código a seguir substitui as alterações de palavras atuais, usando o método [Substituir alterações](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace).
 
 1. Crie um novo projeto Node.js no IDE favorito.
 2. Adicione o código fornecido abaixo.
@@ -1764,7 +1764,7 @@ Uma resposta com êxito é retornada em JSON, conforme mostrado no seguinte exem
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Referência da API REST do QnA Maker (V4)](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff)
+> [Referência da API REST do QnA Maker (V4)](https://go.microsoft.com/fwlink/?linkid=2092179)
 
 ## <a name="see-also"></a>Consulte também 
 

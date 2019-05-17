@@ -3,25 +3,25 @@ title: Criar identidade para o aplicativo do Azure no portal | Microsoft Docs
 description: Descreve como criar um novo aplicativo do Azure Active Directory e uma nova entidade de serviço, que possam ser usados com o controle de acesso baseado em função no Azure Resource Manager para gerenciar o acesso aos recursos.
 services: active-directory
 documentationcenter: na
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/08/2019
-ms.author: celested
+ms.date: 05/14/2019
+ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9affec9ccc1b87f36d6f30aff4795d85532be8c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d0208d25e4583672ad2110d959f8e255affbf3e0
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60300661"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65764818"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Como: Usar o portal para criar um aplicativo e uma entidade de serviço do Microsoft Azure Active Directory que possa acessar recursos
 
@@ -42,7 +42,7 @@ Vamos diretamente para a criação da identidade. Se você encontrar um problema
 
 1. Selecione **Novo registro de aplicativo**.
 
-   ![Adicione o aplicativo](./media/howto-create-service-principal-portal/select-add-app.png)
+   ![Adicionar aplicativo](./media/howto-create-service-principal-portal/select-add-app.png)
 
 1. Forneça um nome e uma URL para o aplicativo. Selecione **aplicativo Web/API** para o tipo de aplicativo que você deseja criar. Não é possível criar as credenciais para um [Aplicativo nativo](../manage-apps/application-proxy-configure-native-client-application.md). Não é possível usar esse tipo para um aplicativo automatizado. Depois de definir os valores, selecione **Criar**.
 
@@ -104,20 +104,20 @@ Você também precisa da ID para seu aplicativo e de uma chave de autenticação
 
 1. Copie a **ID do aplicativo** e armazene-a no código do aplicativo.
 
-   ![ID do cliente](./media/howto-create-service-principal-portal/copy-app-id.png)
+   ![ID do Cliente](./media/howto-create-service-principal-portal/copy-app-id.png)
 
-1. Escolha a opção **Configurações**.
+1. Selecione **certificados e segredos**.
 
-   ![Selecionar configurações](./media/howto-create-service-principal-portal/select-settings.png)
+   ![Selecionar configurações](./media/howto-create-service-principal-portal/select-certs-secrets.png)
 
-1. Selecione **Chaves**.
-1. Forneça uma descrição da chave e uma duração para a chave. Ao terminar, escolha **Salvar**.
+1. Selecione **segredos de cliente -> novo segredo do cliente**.
+1. Forneça uma descrição de uma duração e o segredo. Quando terminar, selecione **adicionar**.
 
-   ![Salve a chave](./media/howto-create-service-principal-portal/save-key.png)
+   ![Salve o segredo](./media/howto-create-service-principal-portal/save-secret.png)
 
-   Após salvar a chave, o valor da chave é exibido. Copie este valor, pois não é possível recuperar a chave posteriormente. Forneça o valor da chave com a ID do aplicativo para fazer logon como o aplicativo. Armazene o valor da chave onde seu aplicativo possa recuperá-lo.
+   Depois de salvar o segredo do cliente, o valor do segredo do cliente é exibido. Copie este valor, pois não é possível recuperar a chave posteriormente. Forneça o valor da chave com a ID do aplicativo para fazer logon como o aplicativo. Armazene o valor da chave onde seu aplicativo possa recuperá-lo.
 
-   ![Chave salva](./media/howto-create-service-principal-portal/copy-key.png)
+   ![Copiar o segredo](./media/howto-create-service-principal-portal/copy-secret.png)
 
 ## <a name="required-permissions"></a>Permissões necessárias
 
@@ -146,7 +146,7 @@ Em sua assinatura do Azure, sua conta deve ter acesso de `Microsoft.Authorizatio
 
 Para verificar suas permissões de assinatura:
 
-1. Selecione sua conta no canto superior direito, depois selecione **Minhas permissões**.
+1. Selecione sua conta no canto superior direito e selecione **... -> Minhas permissões**.
 
    ![Selecione as permissões de usuário](./media/howto-create-service-principal-portal/select-my-permissions.png)
 
@@ -154,7 +154,7 @@ Para verificar suas permissões de assinatura:
 
    ![Localize o usuário](./media/howto-create-service-principal-portal/view-details.png)
 
-1. Exiba suas funções atribuídas e determine se você tem as permissões adequadas para atribuir um aplicativo do AD a uma função. Caso contrário, peça ao administrador da assinatura para adicioná-lo à função Administrador de Acesso do Usuário. Na imagem a seguir, o usuário é atribuído à função Proprietário, o que significa que o usuário tem as permissões adequadas.
+1. Selecione **atribuições de função** para exibir suas funções atribuídas e determine se você tem as permissões adequadas para atribuir um aplicativo do AD a uma função. Caso contrário, peça ao administrador da assinatura para adicioná-lo à função Administrador de Acesso do Usuário. Na imagem a seguir, o usuário é atribuído à função Proprietário, o que significa que o usuário tem as permissões adequadas.
 
    ![Mostre as permissões](./media/howto-create-service-principal-portal/view-user-role.png)
 

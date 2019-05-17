@@ -1,6 +1,6 @@
 ---
-title: Formatos e codecs Media Encoder Standard - Azure
-description: Este tópico oferece uma visão geral dos codecs e dos formatos do Codificador de Mídia Padrão.
+title: Formatos do codificador padrão e codecs - Azure
+description: Este tópico fornece uma visão geral dos codecs e formatos do codificador padrão.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako;anilmur
-ms.openlocfilehash: 4c7e0e091aeecb205c63b8fa7e97d7592f15b856
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 730ff68e70999307417eea276761d56f4a44046a
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60322260"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65520021"
 ---
-# <a name="media-encoder-standard-formats-and-codecs"></a>Codecs e formatos padrão do codificador de mídia
+# <a name="standard-encoder-formats-and-codecs"></a>Codecs e formatos do codificador padrão
 
 Este artigo contém uma lista dos formatos de arquivo de importação e exportação mais comuns que você pode usar com [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset). Para obter informações sobre como criar predefinições personalizadas usando **StandardEncoderPreset**, veja [Criar uma transformação com uma predefinição personalizada](customize-encoder-presets-how-to.md).
 
@@ -41,12 +41,12 @@ Este artigo contém uma lista dos formatos de arquivo de importação e exporta�
 | QuickTime (.mov) |Sim |
 
 > [!NOTE]
-> Acima há uma lista das extensões de arquivo encontradas mais comumente. O Media Encoder Standard dá suporte a muitos outros (por exemplo: .m2ts, .mpeg2video, .qt). Se você tentar codificar um arquivo e receber uma mensagem de erro que diz que o formato não tem suporte, forneça comentários [aqui](https://feedback.azure.com/forums/169396-media-services/category/144411-encoding-and-processing/).
 > 
 > 
 
 ### <a name="audio-formats-in-input-containers"></a>Formatos de áudio em contêineres de entrada
-O Padrão do Codificador de Mídia oferece suporte à execução dos seguintes formatos de áudio em contêineres de entrada:
+
+Codificador padrão dá suporte a realizar os seguintes formatos de áudio em contêineres de entrada:
 
 * Arquivos do MXF, GXF e QuickTime que têm faixas de áudio com exemplos em estéreo intercalado ou de 5.1
 
@@ -65,7 +65,7 @@ ou o
 | MPEG-2 (até perfil e de alto nível 422; incluindo variantes como XDCAM, XDCAM HD, XDCAM IMX, CableLabs ® e D10) |Até perfil 422 |
 | MPEG-1 |Sim |
 | VC-1/WMV9 |Sim |
-| Canopus HQ/HQX |Não  |
+| Canopus HQ/HQX |Não |
 | MPEG-4, parte 2 |Sim |
 | [Theora](https://en.wikipedia.org/wiki/Theora) |Sim |
 | YUV420 descompactado, ou mezzanine |Sim |
@@ -89,10 +89,10 @@ ou o
 | [Opus](https://go.microsoft.com/fwlink/?LinkId=822667) |Sim |
 | [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a> |Sim |
 | AMR (multitaxa adaptável) |Sim |
-| AES (SMPTE 331M e 302M, AES3-2003) |Não  |
-| Dolby® E |Não  |
-| Dolby® Digital (AC3) |Não  |
-| Dolby® Digital Plus (E-AC3) |Não  |
+| AES (SMPTE 331M e 302M, AES3-2003) |Não |
+| Dolby® E |Não |
+| Dolby® Digital (AC3) |Não |
+| Dolby® Digital Plus (E-AC3) |Não |
 
 ## <a name="output-formats-and-codecs"></a>Codecs e formatos de saída
 A tabela a seguir lista os codecs e formatos de arquivo com suporte para exportação.

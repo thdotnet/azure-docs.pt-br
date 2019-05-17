@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: yegu
-ms.openlocfilehash: 6757a038a945bf153cb62662bee8c715c87baf19
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6960c21091e0bc01c198e713c0c276984566ac41
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60829813"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786071"
 ---
 # <a name="introduction-to-the-azure-cache-for-redis-premium-tier"></a>Introdução à camada Premium do Cache do Azure para Redis
 O Cache do Azure para Redis é um cache distribuído e gerenciado que ajuda você a criar aplicativos altamente escalonáveis e responsivos, fornecendo acesso extremamente rápido aos seus dados. 
@@ -50,7 +50,7 @@ Os caches criados na camada Básica ou Standard podem ser acessados na Internet 
 
 Para obter mais informações, consulte [Como configurar o suporte de Rede Virtual para um Cache do Azure Premium para Redis](cache-how-to-premium-vnet.md).
 
-## <a name="importexport"></a>Importar/exportar
+## <a name="importexport"></a>Importar/Exportar
 A Importação/Exportação é uma operação de gerenciamento de dados do Cache do Azure para Redis que permite importar dados para o Cache do Azure para Redis ou exportar dados do Cache do Azure para Redis, importando e exportando um instantâneo (RBD) do Banco de Dados do Cache do Azure para Redis de um cache premium para um blob de páginas em uma Conta de Armazenamento do Azure. Isso permite migrar entre diferentes instâncias do Cache do Azure para Redis ou preencher o cache com dados, antes do uso.
 
 A importação pode ser usada para trazer arquivos RDB compatíveis com o Redis de qualquer servidor Redis em execução em qualquer nuvem ou ambiente, incluindo o Redis em execução no Linux, Windows ou qualquer provedor de nuvem como Amazon Web Services e similares. Importar os dados é uma maneira fácil de criar um cache com dados previamente populados. Durante o processo de importação, o Cache do Azure para Redis carrega os arquivos RDB do armazenamento do Azure na memória e insere as chaves no cache.
@@ -59,13 +59,13 @@ A exportação permite exportar os dados armazenados no Cache do Azure para Redi
 
 Para obter mais informações, consulte [Como importar dados e exportar dados do Cache do Azure para Redis](cache-how-to-import-export-data.md).
 
-## <a name="reboot"></a>Reboot
+## <a name="reboot"></a>Reinicializar
 A camada premium permite a reinicialização de um ou mais nós de seu cache sob demanda. Isso permite que você teste seu aplicativo para garantir a resiliência em caso de falhas. Você pode reinicializar os seguintes nós.
 
 * Nó mestre do cache
-* Nó subordinado do cache
-* Nós mestre e subordinado do cache
-* Ao usar um cache premium com clustering, você pode reinicializar o nó mestre, o nó subordinado ou ambos para fragmentos individuais no cache
+* Nó secundário do cache
+* Nós primários e secundários do cache
+* Ao usar um cache premium com clustering, você pode reinicializar o primário, secundário ou ambos os nós para fragmentos individuais no cache
 
 Para obter mais informações, consulte [Reinicializar](cache-administration.md#reboot) e [Perguntas frequentes sobre reinicialização](cache-administration.md#reboot-faq).
 
@@ -74,7 +74,7 @@ Para obter mais informações, consulte [Reinicializar](cache-administration.md#
 >
 >
 
-## <a name="schedule-updates"></a>Agende atualizações
+## <a name="schedule-updates"></a>Agendar atualizações
 O recurso de atualizações agendadas permite designar uma janela de manutenção para seu cache. Quando a janela de manutenção é especificada, as atualizações do servidor Redis são feitas durante essa janela. Para designar uma janela de manutenção, selecione os dias desejados e especifique o horário de início da janela de manutenção para cada dia. Observe que o horário da janela de manutenção é em UTC. 
 
 Para obter mais informações, consulte [Agendar atualizações](cache-administration.md#schedule-updates) e [Perguntas frequentes sobre agendamento de atualizações](cache-administration.md#schedule-updates-faq).
@@ -84,7 +84,7 @@ Para obter mais informações, consulte [Agendar atualizações](cache-administr
 > 
 > 
 
-## <a name="geo-replication"></a>Replicação geográfica
+## <a name="geo-replication"></a>Replicação Geográfica
 
 A **replicação geográfica** fornece um mecanismo para vincular duas instâncias do Cache do Azure para Redis de camada Premium. Um cache é designado como o cache vinculado primário e o outro como o cache vinculado secundário. O cache vinculado secundário se torna somente leitura e os dados gravados no cache primário são replicados para o cache vinculado secundário. Essa funcionalidade pode ser usada para replicar um cache entre regiões do Azure.
 

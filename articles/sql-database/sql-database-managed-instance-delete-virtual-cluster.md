@@ -12,18 +12,18 @@ ms.author: danil
 ms.reviewer: douglas, carlrab, sstein
 manager: craigg
 ms.date: 05/07/2019
-ms.openlocfilehash: 95d1681c9ff9981990d873a58a2d01833d690e0f
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 61f6c25031c4906e65c2f75a7679600741e8311a
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65411980"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65791384"
 ---
 # <a name="delete-subnet-after-deleting-azure-sql-database-managed-instance"></a>Excluir sub-rede depois de excluir o banco de dados SQL de instância gerenciada
 
 Este artigo fornece diretrizes sobre como excluir manualmente a sub-rede depois de excluir o último banco de dados SQL a instância gerenciada do que residem nele.
 
-O [cluster virtual](sql-database-managed-instance-connectivity-architecture.md#virtual-cluster-connectivity-architecture) que continha o excluído a instância gerenciada será mantida por 12 horas contra a exclusão da instância. O cluster virtual é mantido ativo por design para habilitar agiliza a criação de instâncias gerenciadas na mesma sub-rede. Durante esse período, a sub-rede associada ao cluster virtual não pode ser excluída.
+O [cluster virtual](sql-database-managed-instance-connectivity-architecture.md#virtual-cluster-connectivity-architecture) que continha o excluído a instância gerenciada será mantida por 12 horas contra a exclusão da instância. O cluster virtual é mantido ativo por design para habilitar agiliza a criação de instâncias gerenciadas na mesma sub-rede. Manter um cluster virtual vazio está disponível gratuitamente. Durante esse período, a sub-rede associada ao cluster virtual não pode ser excluída.
 
 Versão imediata da sub-rede usada por um cluster virtual vazio é possível por meio de exclusão manual do cluster virtual. Exclusão do cluster virtual pode ser obtido por meio do portal do Azure ou API de clusters virtuais.
 

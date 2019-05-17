@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/27/2018
 ms.author: magoedte
-ms.openlocfilehash: 5f9fc128af4e89788e648fcfc238da300ff91724
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 2e3e39ef24d82393d981c0ce276b3338419e0b2d
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65068763"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65521762"
 ---
 # <a name="troubleshooting-azure-monitor-for-containers"></a>Solução de problemas do Azure Monitor para contêineres
 
@@ -80,7 +80,7 @@ Se o Monitor do Azure para contêineres com êxito é habilitado e configurado, 
 
 4. Verifique os logs de agente. Quando o agente em contêineres é implantado, ele executa uma verificação rápida executando comandos do OMI e mostra a versão do agente e do provedor. 
 
-5. Para verificar se o agente foi integrado com êxito, execute o comando: `kubectl logs omsagent-484hw --namespace=kube-system`
+5. Para verificar se o agente foi implantado com êxito, execute o comando: `kubectl logs omsagent-484hw --namespace=kube-system`
 
     O status deve ser semelhante a este exemplo:
 
@@ -113,7 +113,7 @@ A tabela abaixo resume os erros conhecidos que você pode encontrar ao usar o Mo
 | ---- | --- |  
 | Mensagem de erro `No data for selected filters`  | Pode levar algum tempo para estabelecer o fluxo de dados de monitoramento para clusters recém-criados. Permitir pelo menos 10 a 15 minutos para que dados sejam exibidos para o cluster. |   
 | Mensagem de erro `Error retrieving data` | Enquanto o cluster do Serviço Azure Kubernetes está sendo configurado para monitoramento de integridade e desempenho, é estabelecida uma conexão entre o cluster e o espaço de trabalho do Azure Log Analytics. Um espaço de trabalho do Log Analytics é usado para armazenar todos os dados de monitoramento do cluster. Este erro pode ocorrer quando seu espaço de trabalho do Log Analytics for excluído ou perdido. Verifique se o seu espaço de trabalho está disponível, revisando [gerenciar o acesso](../platform/manage-access.md#view-workspace-details). Se o espaço de trabalho estiver ausente, você precisará habilitar novamente o monitoramento do seu cluster com o Azure Monitor para contêineres. Para habilitar novamente, você precisará [desabilite](container-insights-optout.md) de monitoramento para o cluster e [habilitar](container-insights-enable-new-cluster.md) Azure Monitor para contêineres novamente. |  
-| `Error retrieving data` Depois de adicionar o Azure Monitor para contêineres por meio da cli do az aks | Quando habilitar o monitoramento usando `az aks cli`, Monitor do Azure para contêineres podem não estar corretamente integrado. Verifique se a solução é integrada. Para fazer isso, vá para o espaço de trabalho do Log Analytics e veja se a solução está disponível selecionando **Soluções** no painel à esquerda. Para resolver esse problema, você precisará reimplantar a solução seguindo as instruções em [como implantar o Monitor do Azure para contêineres](container-insights-onboard.md) |  
+| `Error retrieving data` Depois de adicionar o Azure Monitor para contêineres por meio da cli do az aks | Quando habilitar o monitoramento usando `az aks cli`, Monitor do Azure para contêineres não podem ser implantado corretamente. Verifique se a solução for implantada. Para fazer isso, vá para o espaço de trabalho do Log Analytics e veja se a solução está disponível selecionando **Soluções** no painel à esquerda. Para resolver esse problema, você precisará reimplantar a solução seguindo as instruções em [como implantar o Monitor do Azure para contêineres](container-insights-onboard.md) |  
 
 Para ajudar a diagnosticar o problema, fornecemos um script de solução de problemas disponível [aqui](https://github.com/Microsoft/OMS-docker/tree/ci_feature_prod/Troubleshoot#troubleshooting-script).  
 

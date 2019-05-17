@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: mimart
 author: msmimart
-manager: daveba
+manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7015abcfe3c53e2180d617bd2c78ecd44c42af7a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3f93586d46aa01116990f8f02f344c6952d3c1b1
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60412727"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65768361"
 ---
 # <a name="the-elements-of-the-b2b-collaboration-invitation-email---azure-active-directory"></a>Os elementos do email de convite para colaboração B2B – Azure Active Directory
 
@@ -31,10 +31,10 @@ Vamos examinar alguns elementos do email para que você conheça a melhor maneir
 ### <a name="subject"></a>Subject
 O assunto do email segue o seguinte padrão: Você foi convidado para a organização &lt;tenantname&gt;
 
-### <a name="from-address"></a>Do endereço
+### <a name="from-address"></a>Endereço do remetente
 Usamos um padrão parecido com o do LinkedIn para o endereço De.  Você deve deixar claro quem é o emissor do convite e de qual empresa, e também esclarecer que o email é proveniente de um endereço de email da Microsoft. O formato é: Microsoft Invitations <invites@microsoft.com> ou &lt;nome de exibição do emissor do convite&gt; partir &lt;tenantname&gt; (via Microsoft) <invites@microsoft.com>.
 
-### <a name="reply-to"></a>Responder Para
+### <a name="reply-to"></a>Responder a
 O email para resposta é definido como o email do emissor do convite, quando houver um disponível, para que a resposta envie um email ao emissor do convite.
 
 ### <a name="branding"></a>Identidade visual

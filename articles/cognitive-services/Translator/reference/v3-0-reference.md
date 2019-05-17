@@ -10,16 +10,16 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: 4a5bed67252c3b87233c8d2e677e3c620adb8a17
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b59e4d574264f82a5875edad65e99bfb57150197
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60605221"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796871"
 ---
 # <a name="translator-text-api-v30"></a>API de Tradução de Texto v3.0
 
-## <a name="whats-new"></a>O que há de novo?
+## <a name="whats-new"></a>Novidades?
 
 A versão 3 do API de tradução de texto fornece uma API de Web modernos baseados em JSON. Ela melhora o uso e o desempenho por meio da consolidação dos recursos existentes em menos operações, além de fornecer novos recursos.
 
@@ -41,7 +41,7 @@ As solicitações para a API de Tradução de Texto da Microsoft são na maioria
 
 Para forçar a solicitação para ser manipulada por um datacenter específico, altere o ponto de extremidade Global na solicitação de API para o ponto de extremidade regional desejado:
 
-|DESCRIÇÃO|Região|URL base|
+|Descrição|Região|URL Base|
 |:--|:--|:--|
 |Azure|Global|  api.cognitive.microsofttranslator.com|
 |Azure|América do Norte|   api-nam.cognitive.microsofttranslator.com|
@@ -55,7 +55,7 @@ Inscrever-se à API de tradução de texto ou [serviço de vários serviços Cog
 
 Há três cabeçalhos que você pode usar para autenticar sua assinatura. Esta tabela descreve como cada um é usado:
 
-|Cabeçalhos|DESCRIÇÃO|
+|Cabeçalhos|Descrição|
 |:----|:----|
 |Ocp-Apim-Subscription-Key|*Use com a assinatura dos Serviços Cognitivos se você estiver passando a chave secreta*.<br/>O valor é a chave secreta do Azure da sua assinatura para a API de Tradução de Texto.|
 |Autorização|*Use com a assinatura dos Serviços Cognitivos se você estiver passando um token de autenticação.*<br/>O valor é o token de portador: `Bearer <token>`.|
@@ -126,7 +126,7 @@ Por exemplo, um cliente com uma assinatura de avaliação gratuita receberia o s
 ```
 O código de erro é um número de 6 dígitos que combina o código de status HTTP de 3 dígitos seguido por um número de 3 dígitos para categorizar ainda mais o erro. Códigos de erro comuns são:
 
-| Código | DESCRIÇÃO |
+| Código | Descrição |
 |:----|:-----|
 | 400000| Uma das entradas de solicitação não é válida.|
 | 400001| O parâmetro "scope" é inválido.|
@@ -161,7 +161,7 @@ O código de erro é um número de 6 dígitos que combina o código de status HT
 | 405000| O método de solicitação não é suportado para o recurso solicitado.|
 | 408001| O sistema de conversão personalizada solicitado ainda não está disponível. Tente novamente em alguns minutos.|
 | 415000| O cabeçalho Content-Type está ausente ou é inválido.|
-| 429000, 429001, 429002| O servidor rejeitou a solicitação porque o cliente está enviando muitas solicitações. Reduza a frequência de solicitações para evitar o afogamento.|
-| 500000| Erro inesperado. Se o erro persistir, informe-o com data / hora do erro, solicite o identificador do cabeçalho de resposta X-RequestId e o identificador de cliente do cabeçalho de solicitação X-ClientTraceId.|
+| 429000, 429001, 429002| O servidor rejeitou a solicitação porque o cliente excedeu os limites de solicitação.|
+| 500000| Ocorreu um erro inesperado. Se o erro persistir, informe-o com data / hora do erro, solicite o identificador do cabeçalho de resposta X-RequestId e o identificador de cliente do cabeçalho de solicitação X-ClientTraceId.|
 | 503000| O serviço está temporariamente indisponível. Tente novamente. Se o erro persistir, informe-o com data / hora do erro, solicite o identificador do cabeçalho de resposta X-RequestId e o identificador de cliente do cabeçalho de solicitação X-ClientTraceId.|
 

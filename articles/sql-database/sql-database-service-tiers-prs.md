@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: e12b89d0469587d7d7326bbee30f6467ada06bd5
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7f184178343f69f522148777752c51afc5c5dcb6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64574075"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790401"
 ---
 # <a name="azure-sql-database-premium-rs-service-tier-preview-is-being-retired---options-for-migration"></a>A camada de serviço Premium RS do Banco de Dados SQL do Azure (versão prévia) está sendo desativada - opções para migração
 
@@ -27,7 +27,7 @@ A seguir, estão os destinos de migração e as opções de preços que podem se
 
 - Camadas de serviço vCore
 
-  As camadas de serviço **Uso Geral** e **Comercialmente Crítico** no [modelo de compra com base em vCore](sql-database-service-tiers-vcore.md). Essas duas camadas de serviço estão na disponibilidade geral. O modelo de compra baseado em vCore também oferece a camada de serviço **Hiperescala** (visualização pública) que adapta-se sob demanda às necessidades da carga de trabalho com dimensionamento automático de até 100 TB por banco de dados. A camada de serviço Hiperescala fornece desempenho de E/S comparável à camada de serviço Premium no [Modelo de compra baseado em DTU](sql-database-service-tiers-dtu.md) a um preço mais próximo da camada de serviço Premium RS.
+  As camadas de serviço **Uso Geral** e **Comercialmente Crítico** no [modelo de compra com base em vCore](sql-database-service-tiers-vcore.md). Essas duas camadas de serviço estão na disponibilidade geral. O modelo de compra baseado em vCore também oferece o **hiperescala** camada de serviço que se adapta sob demanda para necessidades de sua carga de trabalho com o dimensionamento automático até 100 TB por banco de dados. A camada de serviço Hiperescala fornece desempenho de E/S comparável à camada de serviço Premium no [Modelo de compra baseado em DTU](sql-database-service-tiers-dtu.md) a um preço mais próximo da camada de serviço Premium RS.
 - Preço de Desenvolvimento/Teste
 
   O [Preço de desenvolvimento/teste](https://azure.microsoft.com/pricing/dev-test/) proporciona economia de até 55% em relação às taxas incluídas na licença com a assinatura do Visual Studio.
@@ -70,10 +70,10 @@ Para as cargas de trabalho Premium RS de computação intensiva, é recomendáve
 
 |**Se atualmente você estiver em...**|**Migrar para comparável com base em vCore...**|**Migrar para comparável com base em DTU…**|
 |---|---|---|
-|Premium RS 1|(Versão prévia) 1 vCore de Hiperescala (Gen4) ou 1 vCore Comercialmente Crítico (Gen4)|Premium 1|
-|Premium RS 2|(Versão prévia) 2 vCores de Hiperescala (Gen4) ou 2 vCores Comercialmente Críticos (Gen4)|Premium 2|
-|Premium RS 4|(Versão prévia) 4 vCores de Hiperescala (Gen4) ou 4 vCores Comercialmente Críticos (Gen4)|Premium 4
-|Premium RS 6|(Versão prévia) 6 vCores de Hiperescala (Gen4) ou 6 vCores Comercialmente Críticos (Gen4)|Premium 6|
+|Premium RS 1| Em hiperescala 1 vCore (Gen4) ou negócios críticos 1 vCore (Gen4)|Premium 1|
+|Premium RS 2| Em hiperescala 2 vCores (Gen4) ou vCores 2 críticos de negócios (Gen4|Premium 2|
+|Premium RS 4| Hiperescala 4 vCores (Gen4) ou vCores 4 críticos de negócios (Gen4)|Premium 4
+|Premium RS 6| 6 de hiperescala vCores (Gen4) ou vCores 6 críticos de negócios (Gen4)|Premium 6|
 
 |**Se atualmente você estiver em...**|**Migrar para comparável com base em vCore...**|**Migrar para comparável com base em DTU…**|
 |---|---|---|

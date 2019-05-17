@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 02/25/2018
 ms.author: glenga
-ms.openlocfilehash: 4e9bd4e9ea467446c2814cdb8956a40b1503b027
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e15d6ad445c3fdde0632c3ad468eee7da836a394
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61020478"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785952"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Gerenciar conexões no Azure Functions
 
@@ -21,7 +21,7 @@ Funções em um aplicativo de funções compartilham recursos. Entre esses recur
 
 ## <a name="connection-limit"></a>Limite de Conexão
 
-O número de conexões disponíveis é limitado em parte porque um aplicativo de funções é executado em um [ambiente de área restrita](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox). Uma das restrições do que a área restrita impõe no seu código é um [limite o número de conexões (no momento em 600 conexões ativas e o total de conexões de 1.200)](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox#numerical-sandbox-limits) por instância. Ao alcançar esse limite, o tempo de execução das funções criará um log com a seguinte mensagem: `Host thresholds exceeded: Connections`.
+O número de conexões disponíveis é limitado em parte porque um aplicativo de funções é executado em um [ambiente de área restrita](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox). Uma das restrições do que a área restrita impõe no seu código é um limite no número de conexões (no momento em 600 conexões ativas e o total de conexões de 1.200) por instância. Ao alcançar esse limite, o tempo de execução das funções criará um log com a seguinte mensagem: `Host thresholds exceeded: Connections`.
 
 Esse limite é por instância.  Quando o [controlador de escala adiciona as instâncias do aplicativo de função](functions-scale.md#how-the-consumption-and-premium-plans-work) para tratar mais solicitações, cada instância possui um limite de conexão independente. Isso significa que não há nenhum limite de conexão global, e você pode ter muito mais de 600 conexões ativas em todas as instâncias ativas.
 

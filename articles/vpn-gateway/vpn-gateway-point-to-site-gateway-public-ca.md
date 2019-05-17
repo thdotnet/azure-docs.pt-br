@@ -2,18 +2,17 @@
 title: Transição para Certificados de Autoridade de Certificação públicos para gateways P2S | Gateway de VPN do Azure | Microsoft Docs
 description: Este artigo ajuda você a realizar a transição com êxito para os novos Certificados de Autoridade de Certificação públicos para gateways P2S.
 services: vpn-gateway
-author: WenJason
+author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-origin.date: 03/12/2019
-ms.date: 04/29/2019
-ms.author: v-jay
-ms.openlocfilehash: 29f2aeee53e07adfeafb8017c489c0b830f24b36
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 03/15/2019
+ms.author: cherylmc
+ms.openlocfilehash: ea3ee00e60ae5eaff5c7220e9502da11358c8793
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60859640"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786737"
 ---
 # <a name="transition-to-a-public-ca-gateway-certificate-for-p2s"></a>Fazer a transição para um certificado de gateway de autoridade de certificação pública para P2S
 
@@ -30,6 +29,8 @@ Anteriormente, um certificado autoassinado para o gateway (emitido pelo Azure no
 Apenas os gateways mais antigos serão afetados por essa alteração. Se o certificado do gateway precisar ser transferido, você receberá comunicação ou notificação no portal do Azure. É possível verificar se o seu gateway é afetado, usando as etapas neste artigo.
 
 > [!IMPORTANT]
+> **Essa transição foi concluída em 12 de maio de 2019.**
+>
 > A transição está agendada para 12 de março de 2019, a partir das 18:00 UTC. Se você preferir uma janela de tempo diferente, poderá criar um caso de suporte. Faça e finalize sua solicitação com pelo menos 24 horas de antecedência.  É possível solicitar uma das seguintes janelas:
 >
 > * 06:00 UTC em 25 de fevereiro
@@ -37,7 +38,7 @@ Apenas os gateways mais antigos serão afetados por essa alteração. Se o certi
 > * 06:00 UTC em 1º de março
 > * 18:00 UTC em 1º de março
 >
-> **Todos os demais gateways farão a transição em 12 de março de 2019, a partir das 18:00 UTC**.
+> Todos os gateways restantes farão a transição em 12 de março de 2019 começando às 18:00 UTC.
 >
 > Os clientes receberão um email quando o gateway concluir o processo de transição.
 > 

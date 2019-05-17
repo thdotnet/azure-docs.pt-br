@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: raynew
-ms.openlocfilehash: 1b03cf648ad65960cce4ffc874cf32ad91ef7dc1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fe86c758dbf05f91d53cb918b7794c12ab3f39bc
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60596713"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65518749"
 ---
 # <a name="discover-and-assess-a-large-vmware-environment"></a>Descobrir e avaliar um grande ambiente VMware
 
@@ -52,13 +52,13 @@ Com base no número de VMs que você está planejando descobrir, você pode cria
 No caso de descoberta única (agora preterida), a descoberta funciona em um modelo fire-and-forget e, uma vez que uma descoberta for feita, será possível usar o mesmo coletor para coletar dados de um vCenter Server diferente ou enviá-lo para um projeto de migração diferente.
 
 > [!NOTE]
-> O dispositivo de descoberta única já foi preterido, pois esse método se baseou nas configurações de estatísticas do vCenter Server para disponibilidade de pontos de dados de desempenho e contadores de desempenho médios coletados, o que resultou em subdimensionamento de VMs para migração para o Azure. É recomendável passar para o dispositivo de descoberta única.
+> O dispositivo de descoberta única já foi preterido, pois esse método se baseou nas configurações de estatísticas do vCenter Server para disponibilidade de pontos de dados de desempenho e contadores de desempenho médios coletados, o que resultou em subdimensionamento de VMs para migração para o Azure. É recomendável mover para o dispositivo de descoberta contínua.
 
 Planeje suas descobertas e avaliações com base nos limites a seguir:
 
 | **Entidade** | **Limite de máquinas** |
 | ---------- | ----------------- |
-| Project    | 1.500             |
+| Projeto    | 1.500             |
 | Descoberta  | 1.500             |
 | Avaliação | 1.500             |
 

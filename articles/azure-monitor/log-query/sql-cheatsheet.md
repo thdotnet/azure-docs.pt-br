@@ -13,20 +13,20 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: bwren
-ms.openlocfilehash: a0233774deaffe25a8e59f79511a0031b1535ba4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b756b9484273c098dbeb6685430f70626b3af787
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61425019"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789225"
 ---
 # <a name="sql-to-azure-monitor-log-query-cheat-sheet"></a>Folha de referências de SQL para a consulta de log do Azure Monitor 
 
-A tabela abaixo ajuda os usuários que estão familiarizados com o SQL a aprender a linguagem de consulta do Kusto para gravar consultas de log no Azure Monitor. Dê uma olhada no comando T-SQL para resolver um cenário comum e o equivalente usando a consulta de log do Azure Monitor.
+A tabela abaixo ajuda os usuários que estão familiarizados com o SQL a aprender a linguagem de consulta do Kusto para gravar consultas de log no Azure Monitor. Dê uma olhada no comando T-SQL para resolver cenários comuns e o equivalente em uma consulta de log do Azure Monitor.
 
 ## <a name="sql-to-azure-monitor"></a>SQL para Azure Monitor
 
-DESCRIÇÃO                             |Consulta SQL                                                                                          |Consulta de log do Azure Monitor
+Descrição                             |Consulta SQL                                                                                          |Consulta de log do Azure Monitor
 ----------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------
 Selecionar todos os dados de uma tabela            |`SELECT * FROM dependencies`                                                                       |<code>dependencies</code>
 Selecionar colunas específicas em uma tabela    |`SELECT name, resultCode FROM dependencies`                                                        |<code>dependencies <br>&#124; project name, resultCode</code>
@@ -50,4 +50,4 @@ Ingressar                                    |`SELECT * FROM dependencies JOIN e
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Faça uma lição sobre como [escrever consultas de log no Azure Monitor](get-started-queries.md).
+- Percorra as lições [escrever consultas de log no Azure Monitor](get-started-queries.md).

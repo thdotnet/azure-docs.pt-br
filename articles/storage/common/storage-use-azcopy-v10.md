@@ -9,12 +9,12 @@ ms.date: 04/23/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: d05cbd30565ced73352736508fc4bcc376985554
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: b5a13dfd760f0c94343b151c9b4c1148c949e854
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149029"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790004"
 ---
 # <a name="transfer-data-with-azcopy-v10"></a>Transferir dados com AzCopy v10
 
@@ -53,7 +53,7 @@ O AzCopy não exige uma instalação. Abra seu aplicativo de linha de comando pr
 
 O AzCopy suporta as seguintes opções ao autenticar com o armazenamento do Azure:
 - **O Azure Active Directory** (suporte para **serviços Blob e Data Lake armazenamento Gen2**). Use ```.\azcopy login``` para entrar com o Azure Active Directory.  O usuário deve ter [função "Colaborador de dados de Blob de armazenamento" atribuída](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac) para gravar no armazenamento de Blob com a autenticação do Active Directory do Azure. Para a autenticação por meio de identidades gerenciadas para recursos do Azure, use `azcopy login --identity`.
-- **Compartilhado tokens de assinatura de acesso [com suporte para serviços Blob e arquivo]**. Acrescente o token SAS (assinatura) de acesso compartilhado para o caminho de blob na linha de comando para usá-lo. Você pode gerar tokens SAS com o portal do Azure, [Gerenciador de armazenamento](https://blogs.msdn.microsoft.com/jpsanders/2017/10/12/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer/), [PowerShell](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageblobsastoken), ou outras ferramentas de sua escolha. Para obter mais informações, confira [exemplos](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2).
+- **Compartilhado tokens de assinatura de acesso [com suporte para serviços Blob e arquivo]**. Acrescente o token SAS (assinatura) de acesso compartilhado para o caminho de blob na linha de comando para usá-lo. Você pode gerar tokens SAS com o portal do Azure, [Gerenciador de armazenamento](https://blogs.msdn.microsoft.com/jpsanders/2017/10/12/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer/), [PowerShell](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageblobsastoken), ou outras ferramentas de sua escolha. Para obter mais informações, confira [exemplos](https://docs.microsoft.com/azure/storage/blobs/common/storage-dotnet-shared-access-signature-part-1).
 
 ## <a name="getting-started"></a>Introdução
 

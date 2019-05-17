@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/30/2018
+ms.date: 05/14/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 76585f91358ad4744dd5ae1f426afda0650d9a8f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: bae5759beb6a817c411ee52d7eb27dbff4cfe01c
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64704007"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785243"
 ---
 # <a name="set-up-sign-in-for-a-specific-azure-active-directory-organization-in-azure-active-directory-b2c"></a>Configurar assinatura para uma organização do Active Directory do Azure específica no Azure Active Directory B2C
 
@@ -29,39 +29,41 @@ Para usar um Azure Active Directory (Azure AD) como um [provedor de identidade](
 Para habilitar a entrada para usuários de uma organização específica do Azure AD, você precisa registrar um aplicativo no locatário organizacional do Azure AD, que não é o mesmo que o seu locatário do Azure Active Directory B2C.
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. Verifique se você está usando o diretório que contém seu locatário do Azure AD clicando nos filtros de pastas e de assinatura no menu superior e, então, escolhendo o diretório que contém o locatário do Azure AD.
+2. Verifique se que você estiver usando o diretório que contém o seu locatário do AD do Azure. Selecione o **filtro de diretório e assinatura** no menu superior e escolha o diretório que contém o seu locatário do AD do Azure. Isso não é o mesmo locatário que seu locatário do Azure AD B2C.
 3. Escolha **Todos os serviços** no canto superior esquerdo do portal do Azure e pesquise e selecione **Registros de aplicativo**.
-4. Selecione **Novo registro de aplicativo**.
-5. Insira um nome para seu aplicativo. Por exemplo, `Azure AD B2C App`.
-6. Para o **Tipo de aplicativo**, selecione `Web app / API`.
-7. Para a **URL de Logon**, digite a seguinte URL em letras minúsculas, em que `your-B2C-tenant-name` é substituído pelo nome do seu locatário do B2C do Azure AD. Por exemplo `https://fabrikam.b2clogin.com/fabrikam.onmicrosoft.com/oauth2/authresp`:
+4. Selecione **Novo registro**.
+5. Insira um nome para seu aplicativo. Por exemplo: `Azure AD B2C App`.
+6. Aceite a seleção de **contas neste diretório organizacional apenas** para este aplicativo.
+7. Para o **URI de redirecionamento**, aceite o valor de **Web**e digite a seguinte URL em letras minúsculas, onde `your-B2C-tenant-name` é substituído pelo nome do seu locatário do Azure AD B2C. Por exemplo `https://fabrikam.b2clogin.com/fabrikam.onmicrosoft.com/oauth2/authresp`:
 
     ```
-    https://your-tenant-name.b2clogin.com/your-B2C-tenant-name.onmicrosoft.com/oauth2/authresp
+    https://your--B2C-tenant-name.b2clogin.com/your-B2C-tenant-name.onmicrosoft.com/oauth2/authresp
     ```
 
     Agora todas as URLs devem estar usando [b2clogin.com](b2clogin.md).
 
-8. Clique em **Criar**. Copie a **ID do aplicativo** a ser usada posteriormente.
-9. Selecione o aplicativo e, em seguida, selecione **Configurações**.
-10. Selecione **Chaves**, insira a descrição da chave, selecione uma duração e, em seguida, clique em **Salvar**. Copie o valor da chave exibido para ser usado mais tarde.
+8. Clique em **Registrar**. Cópia de **ID do aplicativo (cliente)** a ser usado posteriormente.
+9. Selecione **certificados e segredos** no menu de aplicativo e, em seguida, selecione **novo segredo do cliente**.
+10. Insira um nome para o segredo do cliente. Por exemplo: `Azure AD B2C App Secret`.
+11. Selecione o período de validade. Para este aplicativo, aceite a seleção de **em 1 ano**.
+12. Selecione **adicionar** e copie o valor do novo segredo do cliente que é exibido para ser usado mais tarde.
 
 ## <a name="configure-azure-ad-as-an-identity-provider"></a>Configurar o Azure AD como um provedor de identidade
 
-1. Verifique se você está usando o diretório que contém o locatário do B2C do Azure AD clicando nos **filtros de pastas e de assinatura** no menu superior e escolhendo o diretório que contém seu locatário do B2C do Azure AD.
+1. Verifique se que você estiver usando o diretório que contém o locatário do Azure AD B2C. Selecione o **filtro de diretório e assinatura** no menu superior e escolha o diretório que contém o seu locatário do Azure AD B2C.
 2. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
 3. Escolha **Provedores de identidade** e escolha **Adicionar**.
-4. Insira um **Nome**. Por exemplo, digite "Contoso Azure AD".
+4. Insira um **Nome**. Por exemplo, insira: `Contoso Azure AD`.
 5. Selecione **Tipo de provedor de identidade**, **Open ID Connect (versão prévia)** e, em seguida, clique em **OK**.
-6. Clique em **Configurar este provedor de identidade**
+6. Selecione **configurar este provedor de identidade**
 7. Para a **URL dos metadados**, insira a seguinte URL, substituindo `your-AD-tenant-domain` pelo nome de domínio do locatário do Azure AD. Por exemplo `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`:
 
     ```
     https://login.microsoftonline.com/your-AD-tenant-domain/.well-known/openid-configuration
     ```
 
-8. Para **ID do cliente**, insira a ID do aplicativo que você registrou anteriormente e, para **Segredo do cliente**, insira o valor da chave que você registrou anteriormente.
-9. Opcionalmente, digite um valor para **Domain_hint**. Por exemplo, `ContosoAD`. Esse é o valor a ser usado ao fazer referência a esse provedor de identidade usando *domain_hint* na solicitação. 
+8. Para **ID do cliente**, insira a ID do aplicativo que você registrou anteriormente e para **segredo do cliente**, insira o segredo do cliente que você registrou anteriormente.
+9. Opcionalmente, digite um valor para **Domain_hint**. Por exemplo: `ContosoAD`. Esse é o valor a ser usado ao fazer referência a esse provedor de identidade usando *domain_hint* na solicitação. 
 10. Clique em **OK**.
 11. Selecione **Mapear declarações do provedor de identidade** e defina as seguintes declarações:
     

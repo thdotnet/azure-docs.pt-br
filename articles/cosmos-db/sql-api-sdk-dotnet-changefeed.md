@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 01/30/2019
 ms.author: maquaran
-ms.openlocfilehash: a878ab1937b06f06a27b18f793fc1bfa190969ed
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 56ec4d867abd5f2767c64b0800eeb017c0fb9923
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60626980"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65792999"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>SDK do Processador do Feed de Alterações do .NET: download e notas sobre a versão
 > [!div class="op_single_selector"]
@@ -40,6 +40,11 @@ ms.locfileid: "60626980"
 ## <a name="release-notes"></a>Notas de versão
 
 ### <a name="v2-builds"></a>v2 builds
+
+### <a name="a-name227227"></a><a name="2.2.7"/>2.2.7
+* Melhor balanceamento de carga estratégia para o cenário quando obtendo todas as concessões demora mais do que o intervalo de expiração de concessão, por exemplo, devido a problemas de rede:
+  * Esse algoritmo usado para considerar falsamente concessões como expirada de balanceamento de carga de cenário, causando o furto de concessões de proprietários de ativos. Isso poderia disparar desnecessárias muita concessões balanceamento novamente.
+  * Esse problema foi corrigido nesta versão, evitando a repetição em caso de conflito enquanto adquirindo concessão expirada quais proprietário não tiver sido alterado e a aquisição de posponing expiraram concessão para a próxima iteração de balanceamento de carga.
 
 ### <a name="a-name226226"></a><a name="2.2.6"/>2.2.6
 * Melhoria no tratamento de exceções de Observador.
@@ -163,6 +168,7 @@ Qualquer solicitação feita ao Cosmos DB com o uso de um SDK desativado será r
 
 | Version | Data do lançamento | Data de desativação |
 | --- | --- | --- |
+| [2.2.7](#2.2.7) |14 de maio de 2019 |--- |
 | [2.2.6](#2.2.6) |29 janeiro de 2019 |--- |
 | [2.2.5](#2.2.5) |13 de dezembro de 2018 |--- |
 | [2.2.4](#2.2.4) |29 de novembro de 2018 |--- |

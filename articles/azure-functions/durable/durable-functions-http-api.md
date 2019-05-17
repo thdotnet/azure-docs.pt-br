@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 5bd977826f489ca8452432babe6126b8553450fb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2f0b01601dfb28b2b6b8ee8ca53398ec3dccb803
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60730700"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787295"
 ---
 # <a name="http-apis-in-durable-functions-azure-functions"></a>APIs HTTP nas Funções Duráveis (Azure Functions)
 
@@ -44,7 +44,7 @@ A classe [DurableOrchestrationClient](https://azure.github.io/azure-functions-du
 
 Estas funções de exemplo produzem os seguintes dados de resposta JSON. O tipo de dados de todos os campos é `string`.
 
-| Campo                   |DESCRIÇÃO                           |
+| Campo                   |Descrição                           |
 |-------------------------|--------------------------------------|
 | **`id`**                |A ID da instância de orquestração. |
 | **`statusQueryGetUri`** |A URL de status da instância de orquestração. |
@@ -90,11 +90,11 @@ Este protocolo permite coordenar processos de execução longa com clientes ou s
 
 Todas as APIs HTTP implementadas pela extensão têm os seguintes parâmetros. O tipo de dados de todos os parâmetros é `string`.
 
-| Parâmetro        | Tipo de Parâmetro  | DESCRIÇÃO |
+| Parâmetro        | Tipo de Parâmetro  | Descrição |
 |------------------|-----------------|-------------|
-| **`taskHub`**    | Cadeia de consulta    | O nome do [hub de tarefas](durable-functions-task-hubs.md). Se não for especificado, o nome do hub de tarefas do aplicativo de funções será presumido. |
-| **`connection`** | Cadeia de consulta    | O **nome** da cadeia de conexão para a conta de armazenamento. Se não for especificada, a cadeia de conexão padrão do aplicativo de funções será presumida. |
-| **`systemKey`**  | Cadeia de consulta    | A chave de autorização necessária para invocar a API. |
+| **`taskHub`**    | Cadeia de caracteres de consulta    | O nome do [hub de tarefas](durable-functions-task-hubs.md). Se não for especificado, o nome do hub de tarefas do aplicativo de funções será presumido. |
+| **`connection`** | Cadeia de caracteres de consulta    | O **nome** da cadeia de conexão para a conta de armazenamento. Se não for especificada, a cadeia de conexão padrão do aplicativo de funções será presumida. |
+| **`systemKey`**  | Cadeia de caracteres de consulta    | A chave de autorização necessária para invocar a API. |
 
 `systemKey` é uma chave de autorização gerada automaticamente pelo host do Azure Functions. Ela concede acesso especificamente às APIs da extensão de Tarefas Duráveis e pode ser gerenciada da mesma maneira que as [outras chaves de autorização](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Key-management-API). A maneira mais simples de descobrir o valor de `systemKey` é usar a API `CreateCheckStatusResponse` mencionada anteriormente.
 
@@ -132,15 +132,15 @@ GET /runtime/webhooks/durabletask/instances/{instanceId}
 
 Parâmetros de solicitação para essa API incluem o conjunto padrão mencionado anteriormente, bem como o parâmetro exclusivo a seguir:
 
-| Campo                   | Tipo de parâmetro  | DESCRIÇÃO |
+| Campo                   | Tipo de parâmetro  | Descrição |
 |-------------------------|-----------------|-------------|
 | **`instanceId`**        | URL             | A ID da instância de orquestração. |
-| **`showInput`**         | Cadeia de consulta    | Parâmetro opcional. Se definido como `false`, a função de entrada não será incluído no conteúdo da resposta.|
-| **`showHistory`**       | Cadeia de consulta    | Parâmetro opcional. Se definido como `true`, o histórico de execução da orquestração será incluído na carga da resposta.|
-| **`showHistoryOutput`** | Cadeia de consulta    | Parâmetro opcional. Se definido como `true`, a função gera saída serão incluídos no histórico de execução de orquestração.|
-| **`createdTimeFrom`**   | Cadeia de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas que foram criados em ou após o carimbo de hora ISO8601 determinado.|
-| **`createdTimeTo`**     | Cadeia de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas que foram criados em ou antes do carimbo de hora ISO8601 determinado.|
-| **`runtimeStatus`**     | Cadeia de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas com base em seu status de tempo de execução. Para ver a lista de possíveis valores de status de tempo de execução, consulte o tópico [Consultando Instâncias](durable-functions-instance-management.md). |
+| **`showInput`**         | Cadeia de caracteres de consulta    | Parâmetro opcional. Se definido como `false`, a função de entrada não será incluído no conteúdo da resposta.|
+| **`showHistory`**       | Cadeia de caracteres de consulta    | Parâmetro opcional. Se definido como `true`, o histórico de execução da orquestração será incluído na carga da resposta.|
+| **`showHistoryOutput`** | Cadeia de caracteres de consulta    | Parâmetro opcional. Se definido como `true`, a função gera saída serão incluídos no histórico de execução de orquestração.|
+| **`createdTimeFrom`**   | Cadeia de caracteres de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas que foram criados em ou após o carimbo de hora ISO8601 determinado.|
+| **`createdTimeTo`**     | Cadeia de caracteres de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas que foram criados em ou antes do carimbo de hora ISO8601 determinado.|
+| **`runtimeStatus`**     | Cadeia de caracteres de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas com base em seu status de tempo de execução. Para ver a lista de possíveis valores de status de tempo de execução, consulte o tópico [Consultando Instâncias](durable-functions-instance-management.md). |
 
 #### <a name="response"></a>Response
 
@@ -154,7 +154,7 @@ Vários valores de código de status possíveis podem ser retornados.
 
 A carga de resposta para os casos de **HTTP 200** e **HTTP 202** é um objeto JSON com os campos a seguir:
 
-| Campo                 | Tipo de dados | DESCRIÇÃO |
+| Campo                 | Tipo de dados | Descrição |
 |-----------------------|-----------|-------------|
 | **`runtimeStatus`**   | string    | O status de tempo de execução da instância. Os valores incluem *Em execução*, *Pendente*, *Falha*, *Cancelado*, *Encerrado*, *Concluído*. |
 | **`input`**           | JSON      | Os dados JSON usados para inicializar a instância. Este campo é `null` se o `showInput` parâmetro da cadeia de caracteres de consulta for definido para `false`.|
@@ -260,16 +260,16 @@ GET /runtime/webhooks/durableTask/instances?
 
 Parâmetros de solicitação para essa API incluem o conjunto padrão mencionado anteriormente, bem como o parâmetro exclusivo a seguir:
 
-| Campo                   | Tipo de parâmetro  | DESCRIÇÃO |
+| Campo                   | Tipo de parâmetro  | Descrição |
 |-------------------------|-----------------|-------------|
 | **`instanceId`**        | URL             | A ID da instância de orquestração. |
-| **`showInput`**         | Cadeia de consulta    | Parâmetro opcional. Se definido como `false`, a função de entrada não será incluído no conteúdo da resposta.|
-| **`showHistory`**       | Cadeia de consulta    | Parâmetro opcional. Se definido como `true`, o histórico de execução da orquestração será incluído na carga da resposta.|
-| **`showHistoryOutput`** | Cadeia de consulta    | Parâmetro opcional. Se definido como `true`, a função gera saída serão incluídos no histórico de execução de orquestração.|
-| **`createdTimeFrom`**   | Cadeia de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas que foram criados em ou após o carimbo de hora ISO8601 determinado.|
-| **`createdTimeTo`**     | Cadeia de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas que foram criados em ou antes do carimbo de hora ISO8601 determinado.|
-| **`runtimeStatus`**     | Cadeia de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas com base em seu status de tempo de execução. Para ver a lista de possíveis valores de status de tempo de execução, consulte o tópico [Consultando Instâncias](durable-functions-instance-management.md). |
-| **`top`**               | Cadeia de consulta    | Parâmetro opcional. Quando especificado, limita o número de instâncias retornadas pela consulta. |
+| **`showInput`**         | Cadeia de caracteres de consulta    | Parâmetro opcional. Se definido como `false`, a função de entrada não será incluído no conteúdo da resposta.|
+| **`showHistory`**       | Cadeia de caracteres de consulta    | Parâmetro opcional. Se definido como `true`, o histórico de execução da orquestração será incluído na carga da resposta.|
+| **`showHistoryOutput`** | Cadeia de caracteres de consulta    | Parâmetro opcional. Se definido como `true`, a função gera saída serão incluídos no histórico de execução de orquestração.|
+| **`createdTimeFrom`**   | Cadeia de caracteres de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas que foram criados em ou após o carimbo de hora ISO8601 determinado.|
+| **`createdTimeTo`**     | Cadeia de caracteres de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas que foram criados em ou antes do carimbo de hora ISO8601 determinado.|
+| **`runtimeStatus`**     | Cadeia de caracteres de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias retornadas com base em seu status de tempo de execução. Para ver a lista de possíveis valores de status de tempo de execução, consulte o tópico [Consultando Instâncias](durable-functions-instance-management.md). |
+| **`top`**               | Cadeia de caracteres de consulta    | Parâmetro opcional. Quando especificado, limita o número de instâncias retornadas pela consulta. |
 
 #### <a name="response"></a>Response
 
@@ -358,7 +358,7 @@ DELETE /runtime/webhooks/durabletask/instances/{instanceId}
 
 Parâmetros de solicitação para essa API incluem o conjunto padrão mencionado anteriormente, bem como o parâmetro exclusivo a seguir:
 
-| Campo             | Tipo de parâmetro  | DESCRIÇÃO |
+| Campo             | Tipo de parâmetro  | Descrição |
 |-------------------|-----------------|-------------|
 | **`instanceId`**  | URL             | A ID da instância de orquestração. |
 
@@ -371,7 +371,7 @@ Os seguintes valores de código de status HTTP podem ser retornados.
 
 A carga de resposta para o **HTTP 200** caso é um objeto JSON com o seguinte campo:
 
-| Campo                  | Tipo de dados | DESCRIÇÃO |
+| Campo                  | Tipo de dados | Descrição |
 |------------------------|-----------|-------------|
 | **`instancesDeleted`** | inteiro   | O número de instâncias excluídas. No caso de única instância, esse valor deve ser sempre `1`. |
 
@@ -415,13 +415,11 @@ DELETE /runtime/webhooks/durabletask/instances
 
 Parâmetros de solicitação para essa API incluem o conjunto padrão mencionado anteriormente, bem como o parâmetro exclusivo a seguir:
 
-| Campo                 | Tipo de parâmetro  | DESCRIÇÃO |
+| Campo                 | Tipo de parâmetro  | Descrição |
 |-----------------------|-----------------|-------------|
-| **`createdTimeFrom`** | Cadeia de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias limpas que foram criados em ou após o carimbo de hora ISO8601 determinado.|
-| **`createdTimeTo`**   | Cadeia de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias limpas que foram criados em ou antes do carimbo de hora ISO8601 determinado.|
-| **`runtimeStatus`**   | Cadeia de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias limpas com base em seu status de tempo de execução. Para ver a lista de possíveis valores de status de tempo de execução, consulte o tópico [Consultando Instâncias](durable-functions-instance-management.md). |
-
-Se nenhum parâmetro for especificado, todas as instâncias no hub de tarefas serão limpos.
+| **`createdTimeFrom`** | Cadeia de caracteres de consulta    | Filtra a lista de instâncias limpas que foram criados em ou após o carimbo de hora ISO8601 determinado.|
+| **`createdTimeTo`**   | Cadeia de caracteres de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias limpas que foram criados em ou antes do carimbo de hora ISO8601 determinado.|
+| **`runtimeStatus`**   | Cadeia de caracteres de consulta    | Parâmetro opcional. Quando especificado, filtra a lista de instâncias limpas com base em seu status de tempo de execução. Para ver a lista de possíveis valores de status de tempo de execução, consulte o tópico [Consultando Instâncias](durable-functions-instance-management.md). |
 
 > [!NOTE]
 > Essa operação pode ser muito cara em termos de e/s de armazenamento do Azure, se houver muito de linhas em instâncias e/ou histórico de tabelas. Para obter mais detalhes sobre essas tabelas podem ser encontrados na [desempenho e escala nas funções duráveis (Azure Functions)](durable-functions-perf-and-scale.md#instances-table) documentação.
@@ -435,7 +433,7 @@ Os seguintes valores de código de status HTTP podem ser retornados.
 
 A carga de resposta para o **HTTP 200** caso é um objeto JSON com o seguinte campo:
 
-| Campo                   | Tipo de dados | DESCRIÇÃO |
+| Campo                   | Tipo de dados | Descrição |
 |-------------------------|-----------|-------------|
 | **`instancesDeleted`**  | inteiro   | O número de instâncias excluídas. |
 
@@ -473,7 +471,7 @@ POST /runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/{eventName}
 
 Parâmetros de solicitação para essa API incluem o conjunto padrão mencionado anteriormente, bem como o parâmetro exclusivo a seguir:
 
-| Campo             | Tipo de parâmetro  | DESCRIÇÃO |
+| Campo             | Tipo de parâmetro  | Descrição |
 |-------------------|-----------------|-------------|
 | **`instanceId`**  | URL             | A ID da instância de orquestração. |
 | **`eventName`**   | URL             | O nome do evento que a instância de orquestração de destino está esperando. |
@@ -528,10 +526,10 @@ POST /runtime/webhooks/durabletask/instances/{instanceId}/terminate
 
 Parâmetros de solicitação para essa API incluem o conjunto padrão mencionado anteriormente, bem como o seguinte parâmetro exclusivo.
 
-| Campo             | Tipo de Parâmetro  | DESCRIÇÃO |
+| Campo             | Tipo de Parâmetro  | Descrição |
 |-------------------|-----------------|-------------|
 | **`instanceId`**  | URL             | A ID da instância de orquestração. |
-| **`reason`**      | Cadeia de consulta    | Opcional. O motivo para encerrar a instância de orquestração. |
+| **`reason`**      | Cadeia de caracteres de consulta    | Opcional. O motivo para encerrar a instância de orquestração. |
 
 #### <a name="response"></a>Response
 
@@ -577,10 +575,10 @@ POST /runtime/webhooks/durabletask/instances/{instanceId}/rewind
 
 Parâmetros de solicitação para essa API incluem o conjunto padrão mencionado anteriormente, bem como o seguinte parâmetro exclusivo.
 
-| Campo             | Tipo de Parâmetro  | DESCRIÇÃO |
+| Campo             | Tipo de Parâmetro  | Descrição |
 |-------------------|-----------------|-------------|
 | **`instanceId`**  | URL             | A ID da instância de orquestração. |
-| **`reason`**      | Cadeia de consulta    | Opcional. O motivo para retroceder a instância de orquestração. |
+| **`reason`**      | Cadeia de caracteres de consulta    | Opcional. O motivo para retroceder a instância de orquestração. |
 
 ### <a name="response"></a>Response
 

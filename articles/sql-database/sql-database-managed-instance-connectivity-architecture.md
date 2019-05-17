@@ -12,12 +12,12 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 manager: craigg
 ms.date: 04/16/2019
-ms.openlocfilehash: 399e2585f541f28b3880e69b508cfd643b2f2263
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: dbb5ee122e715aeaa66d786f02966beedd2447c3
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64686285"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522325"
 ---
 # <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Arquitetura de conectividade para uma instância gerenciada SQL do Azure
 
@@ -86,7 +86,7 @@ Quando conexões iniciar dentro da instância gerenciada (assim como acontece co
 
 Implante uma instância gerenciada em uma sub-rede dedicada dentro da rede virtual. A sub-rede deve ter as seguintes características:
 
-- **Sub-rede dedicada:** Sub-rede da instância gerenciada não pode conter qualquer outro serviço de nuvem que está associada com ele, e não pode ser uma sub-rede de gateway. A sub-rede não pode conter qualquer recurso, mas a instância gerenciada e, posteriormente, você não pode adicionar recursos na sub-rede.
+- **Sub-rede dedicada:** Sub-rede da instância gerenciada não pode conter qualquer outro serviço de nuvem que está associada com ele, e não pode ser uma sub-rede de gateway. A sub-rede não pode conter qualquer recurso, mas a instância gerenciada e mais tarde você não pode adicionar outros tipos de recursos na sub-rede.
 - **NSG (Grupo de Segurança de Rede):** Um NSG que está associada com a rede virtual deve definir [regras de segurança de entrada](#mandatory-inbound-security-rules) e [regras de segurança de saída](#mandatory-outbound-security-rules) antes de qualquer outra regra. Você pode usar um NSG para controlar o acesso ao ponto de extremidade da instância gerenciada dados filtrando o tráfego na porta 1433 e portas de 11000-11999 quando a instância gerenciada está configurada para redirecionar conexões.
 - **Tabela de rotas definida (UDR) de usuário:** Uma tabela UDR que está associada com a rede virtual deve incluir específico [entradas](#user-defined-routes).
 - **Nenhum ponto de extremidade de serviço:** Nenhum ponto de extremidade de serviço deve ser associado com a sub-rede da instância gerenciada. Certifique-se de que a opção de pontos de extremidade de serviço é desabilitada quando você cria a rede virtual.
@@ -97,7 +97,7 @@ Implante uma instância gerenciada em uma sub-rede dedicada dentro da rede virtu
 
 ### <a name="mandatory-inbound-security-rules"></a>Regras de segurança de entrada obrigatórias
 
-| NOME       |Porta                        |Protocol|Fonte           |Destino|Ação|
+| NOME       |Port                        |Protocol|`Source`           |Destino|Ação|
 |------------|----------------------------|--------|-----------------|-----------|------|
 |gerenciamento  |9000, 9003, 1438, 1440, 1452|TCP     |Qualquer              |SUB-REDE DA MI  |PERMITIR |
 |mi_subnet   |Qualquer                         |Qualquer     |SUB-REDE DA MI        |SUB-REDE DA MI  |PERMITIR |
@@ -105,7 +105,7 @@ Implante uma instância gerenciada em uma sub-rede dedicada dentro da rede virtu
 
 ### <a name="mandatory-outbound-security-rules"></a>Regras de segurança de saída obrigatórias
 
-| NOME       |Porta          |Protocol|Fonte           |Destino|Ação|
+| NOME       |Port          |Protocol|`Source`           |Destino|Ação|
 |------------|--------------|--------|-----------------|-----------|------|
 |gerenciamento  |80, 443, 12000|TCP     |SUB-REDE DA MI        |AzureCloud |PERMITIR |
 |mi_subnet   |Qualquer           |Qualquer     |SUB-REDE DA MI        |SUB-REDE DA MI  |PERMITIR |

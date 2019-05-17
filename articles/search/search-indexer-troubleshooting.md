@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: magottei
 ms.custom: seodec2018
-ms.openlocfilehash: 81987115ba0406e704f2198061c6ee3cae8a72df
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 256a38320c9b3ca826ee9c12ac0a437957f988e2
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024684"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65539273"
 ---
 # <a name="troubleshooting-common-indexer-issues-in-azure-search"></a>Solução de problemas comuns no Azure Search
 
@@ -27,7 +27,7 @@ Indexadores poderão ser executados em um número de problemas durante a indexa�
 
 ## <a name="data-source-connection-errors"></a>Erros de Conexão da Fonte de Dados
 
-### <a name="blob-storage"></a>Armazenamento de Blobs
+### <a name="blob-storage"></a>Armazenamento de Blob
 
 #### <a name="storage-account-firewall"></a>Failover da conta de Armazenamento
 
@@ -42,7 +42,7 @@ Você pode verificar se o firewall está habilitado no [portal](https://docs.mic
 
 `nslookup <service name>.search.windows.net`
 
-Exceções não funcionam com [Pesquisa Cognitiva](cognitive-search-concept-intro.md). A única solução alternativa é desabilitar o firewall.
+Exceções não funcionam com [pesquisa cognitiva](cognitive-search-concept-intro.md). A única solução alternativa é desabilitar o firewall.
 
 ### <a name="cosmos-db"></a>Cosmos DB
 
@@ -71,7 +71,7 @@ api-key: [admin key]
 
 O indexador de Blob [localiza e extrai o texto de blobs em um contêiner](search-howto-indexing-azure-blob-storage.md#how-azure-search-indexes-blobs). Alguns problemas com a extração de texto incluem:
 
-* O documento contém apenas imagens digitalizadas. Blobs PDF que têm conteúdo não textual, como imagens digitalizadas (JPGs), não produzem resultados em um pipeline de indexação de Blob padrão. Se você tiver o conteúdo de imagem com elementos de texto, você pode usar a [Pesquisa Cognitiva](cognitive-search-concept-image-scenarios.md) para localizar e extrair o texto.
+* O documento contém apenas imagens digitalizadas. Blobs PDF que têm conteúdo não textual, como imagens digitalizadas (JPGs), não produzem resultados em um pipeline de indexação de Blob padrão. Se você tiver o conteúdo de imagem com elementos de texto, você pode usar [pesquisa cognitiva](cognitive-search-concept-image-scenarios.md) para localizar e extrair o texto.
 * O indexador de Blob está configurado para metadados do índice. Para extrair o conteúdo, o indexador de Blob deve ser configurado para [extrair o conteúdo e metadados](search-howto-indexing-azure-blob-storage.md#controlling-which-parts-of-the-blob-are-indexed):
 
 ```
@@ -94,5 +94,5 @@ Os indexadores encontram documentos de uma [fonte de dados](https://docs.microso
 * O documento ainda não foi indexado. Verifique o portal para uma execução bem-sucedida do indexador.
 * O documento foi atualizado após o execução do indexador. Se o indexador estiver em um [agendamento](https://docs.microsoft.com/rest/api/searchservice/create-indexer#indexer-schedule), eventualmente será executado novamente e pegará o documento.
 * A [consulta](https://docs.microsoft.com/rest/api/searchservice/create-data-source#request-body-syntax) especificada nos dados de origem exclui o documento. Os indexadores não podem indexar documentos que não fazem parte da fonte de dados.
-* [Mapeamentos de campo](https://docs.microsoft.com/rest/api/searchservice/create-indexer#fieldmappings) ou [Pesquisa Cognitiva](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro) alteraram o documento e ele tem uma aparência diferente do que o esperado.
+* [Mapeamentos de campo](https://docs.microsoft.com/rest/api/searchservice/create-indexer#fieldmappings) ou [pesquisa cognitiva](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro) alterou o documento e ele tem uma aparência diferente do que o esperado.
 * Use a [API Procurar documento](https://docs.microsoft.com/rest/api/searchservice/lookup-document) para localizar seu documento.

@@ -18,12 +18,12 @@ ms.date: 12/07/2017
 ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 482b69752cc889ff99c3d9082d3bc20a7caa6d76
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0065ec03695ee977133ae2ec43aafba7d5bfff78
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60294444"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65784352"
 ---
 # <a name="azure-active-directory-identity-protection-notifications"></a>Notificações do Azure Active Directory Identity Protection
 
@@ -39,6 +39,8 @@ Este artigo fornece uma visão geral de ambos os emails de notificação.
 
 Em resposta a uma conta detectada em risco, o Azure AD Identity Protection gera um alerta de email com **Usuários em risco detectado** como assunto. O email inclui um link para o relatório **[Usuários sinalizados por risco](../reports-monitoring/concept-user-at-risk.md)**. Como prática recomendada, você deve investigar imediatamente os usuários em risco.
 
+A configuração para esse alerta permite que você especifique qual o nível de risco do usuário você deseja que o alerta seja gerado. O email será gerado quando o nível de risco do usuário atinge o que você especificou; No entanto, você não receberá novos usuários em alertas de email de risco detectado para este usuário terem sido movidos para este nível de risco do usuário. Por exemplo, se você definir a política para alertar sobre o risco de usuário medium e o usuário que John mudar para risco médio, você receberá os usuários no email de risco detectado para John. No entanto, você não receberá um segundo de usuários em alerta de risco detectado se John, em seguida, move para alto risco ou se tiver eventos de risco adicionais.
+
 ![Email de usuários em risco detectado](./media/notifications/01.png)
 
 
@@ -46,7 +48,7 @@ Em resposta a uma conta detectada em risco, o Azure AD Identity Protection gera 
 
 Como administrador, você pode definir:
 
-- **O nível de risco que dispara a geração desse email** -Por padrão, o nível de risco é definido como "Alto".
+- **O nível de risco que dispara a geração desse email** -por padrão, o nível de risco é definido como "alto".
 - **Os destinatários deste email** -Por padrão, os destinatários incluem todos os administradores globais. Os administradores globais também podem adicionar outros administradores globais, administradores de segurança, leitores de segurança como destinatários.  
 
 

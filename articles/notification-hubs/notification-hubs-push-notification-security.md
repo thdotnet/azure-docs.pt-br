@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: bd9df12cbe941b868c769daccd02c1d81b39f7bd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2ca3c69178dde830e226812da34917246781c1ee
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60776483"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65762148"
 ---
 # <a name="security-model-of-azure-notification-hubs"></a>Modelo de segurança dos Hubs de Notificação do Azure
 
@@ -43,10 +43,12 @@ Não é recomendável que você insira o valor da chave em aplicativos cliente d
 
 Semelhantes a outras entidades, as operações de Hub de notificação são permitidas para três declarações de segurança: Ouvir, Enviar e Gerenciar.
 
-| Declaração   | DESCRIÇÃO                                          | Operações permitidas |
+| Declaração   | Descrição                                          | Operações permitidas |
 | ------- | ---------------------------------------------------- | ------------------ |
 | Escutar  | Criar/atualizar, ler e excluir registros simples | Criar/Atualizar o registro<br><br>Ler registro<br><br>Ler todos os registros para um identificador<br><br>Excluir registro |
 | Enviar    | Enviar mensagens ao hub de notificação                | Enviar mensagem |
 | Gerenciar  | CRUDs nos Hubs de notificação (incluindo atualização de credenciais PNS e chaves de segurança) e ler registros baseados em marcas |Criar/Atualizar/Ler/Excluir hubs de notificação<br><br>Ler registros por marca |
 
 Os hubs de notificação aceitam declarações concedidas pelos tokens de controle de acesso do Microsoft Azure e por tokens de assinatura gerados com chaves compartilhadas configuradas diretamente no hub de notificação.
+
+Não é possível enviar uma notificação para mais de um namespace. Namespaces são um contêiner lógico para os hubs de notificação e não estão envolvidos com o envio de notificações. As políticas de acesso de nível de namespace (credenciais) podem ser usadas para operações de nível de namespace, por exemplo: listando os hubs de notificação, criação ou exclusão de hubs de notificação, etc. Somente as políticas de acesso de nível de hub seriam permitem que você envie notificações.

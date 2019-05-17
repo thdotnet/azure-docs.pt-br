@@ -6,14 +6,14 @@ manager: philmea
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 07/03/2017
+ms.date: 05/11/2019
 ms.author: robinsh
-ms.openlocfilehash: 274b77644326cbf73696aae77b48afcbc63aa4c2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5dd93af7deec2b0c8c90f6a8586de905207ad0a6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61322625"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796353"
 ---
 # <a name="import-and-export-iot-hub-device-identities-in-bulk"></a>Importar e exportar identidades de dispositivo do IoT Hub em massa
 
@@ -84,6 +84,10 @@ while(true)
   await Task.Delay(TimeSpan.FromSeconds(5));
 }
 ```
+
+## <a name="device-importexport-job-limits"></a>Limites de trabalho de importação/exportação do dispositivo
+
+Importar apenas 1 dispositivo ativo ou trabalho de exportação é permitido por vez para todas as camadas do IoT Hub. O IoT Hub também tem limites de taxa de operações de trabalhos. Para obter mais informações, consulte [referência - cotas do IoT Hub e limitação](iot-hub-devguide-quotas-throttling.md).
 
 ## <a name="export-devices"></a>Exportar dispositivos
 
@@ -253,11 +257,11 @@ Se o arquivo de importação incluir metadados gêmeos, esses metadados substitu
 
 Use a propriedade opcional **importMode** nos dados de serialização de importação para cada dispositivo para controlar o processo de importação por dispositivo. A propriedade **importMode** tem as seguintes opções:
 
-| importMode | DESCRIÇÃO |
+| importMode | Descrição |
 | --- | --- |
 | **createOrUpdate** |Se não existir um dispositivo com a especificada **ID**, foi registrado recentemente. <br/>Se o dispositivo já existir, as informações existentes serão substituídas pelos dados de entrada fornecidos sem considerar o valor de **ETag** . <br> Opcionalmente, o usuário pode especificar dados gêmeos junto com os dados do dispositivo. A etag do gêmeo, se especificada, será processada independentemente da etag do dispositivo. Se houver uma incompatibilidade com a etag do gêmeo existente, um erro será registrado no arquivo de log. |
 | **create** |Se não existir um dispositivo com a especificada **ID**, foi registrado recentemente. <br/>Se o dispositivo já existir, um erro será gravado no arquivo de log. <br> Opcionalmente, o usuário pode especificar dados gêmeos junto com os dados do dispositivo. A etag do gêmeo, se especificada, será processada independentemente da etag do dispositivo. Se houver uma incompatibilidade com a etag do gêmeo existente, um erro será registrado no arquivo de log. |
-| **atualizar** |Se já existir um dispositivo com o especificado **identificação**, informações existentes serão substituídas pelos dados de entrada fornecidos sem considerar para o **ETag** valor. <br/>Se o dispositivo não existir, um erro será gravado no arquivo de log. |
+| **update** |Se já existir um dispositivo com o especificado **identificação**, informações existentes serão substituídas pelos dados de entrada fornecidos sem considerar para o **ETag** valor. <br/>Se o dispositivo não existir, um erro será gravado no arquivo de log. |
 | **updateIfMatchETag** |Se já existir um dispositivo com o especificado **identificação**, informações existentes serão substituídas pelos dados de entrada fornecidos somente se houver um **ETag** corresponder. <br/>Se o dispositivo não existir, um erro será gravado no arquivo de log. <br/>Se não houver uma correspondência de **ETag** , um erro será gravado no arquivo de log. |
 | **createOrUpdateIfMatchETag** |Se não existir um dispositivo com a especificada **ID**, foi registrado recentemente. <br/>Se o dispositivo já existir, as informações existentes serão substituídas pelos dados de entrada fornecidos somente se houver uma correspondência de **ETag** . <br/>Se não houver uma correspondência de **ETag** , um erro será gravado no arquivo de log. <br> Opcionalmente, o usuário pode especificar dados gêmeos junto com os dados do dispositivo. A etag do gêmeo, se especificada, será processada independentemente da etag do dispositivo. Se houver uma incompatibilidade com a etag do gêmeo existente, um erro será registrado no arquivo de log. |
 | **delete** |Se já existir um dispositivo com o especificado **identificação**, ele é excluído sem considerar a **ETag** valor. <br/>Se o dispositivo não existir, um erro será gravado no arquivo de log. |
@@ -390,7 +394,7 @@ while(true)
 
 ## <a name="get-the-container-sas-uri"></a>Obter o URI de SAS do contêiner
 
-O exemplo de código a seguir mostra como gerar um [URI SAS](../storage/blobs/storage-dotnet-shared-access-signature-part-2.md) com as permissões de leitura, gravação e exclusão para um contêiner de blobs:
+O exemplo de código a seguir mostra como gerar um [URI SAS](../storage/common/storage-dotnet-shared-access-signature-part-1.md) com as permissões de leitura, gravação e exclusão para um contêiner de blobs:
 
 ```csharp
 static string GetContainerSasUri(CloudBlobContainer container)
@@ -420,7 +424,7 @@ static string GetContainerSasUri(CloudBlobContainer container)
 Neste artigo, você aprendeu a realizar operações em massa no registro de identidade em um Hub IoT. Para saber mais sobre o gerenciamento do Hub IoT do Azure, siga estes links:
 
 * [Métricas do IoT Hub](iot-hub-metrics.md)
-* [Monitoramento de operações](iot-hub-operations-monitoring.md)
+* [Logs do IoT Hub](iot-hub-monitor-resource-health.md)
 
 Para explorar melhor as funcionalidades do Hub IoT, consulte:
 

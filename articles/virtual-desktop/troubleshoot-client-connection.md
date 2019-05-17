@@ -7,14 +7,14 @@ ms.service: virtual-desktop
 ms.topic: troubleshoot
 ms.date: 04/08/2019
 ms.author: v-chjenk
-ms.openlocfilehash: c5a67e22c301a2afc73a46a6def9a514426c497f
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 99295fd4581cd81751f7d64b694c853efe51a106
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64928041"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522935"
 ---
-# <a name="remote-desktop-client-connections"></a>Conexões de cliente de área de trabalho remota
+# <a name="remote-desktop-client-connections"></a>Conexões do cliente da Área de Trabalho Remota
 
 Use este artigo para resolver problemas com conexões de cliente de área de trabalho Virtual do Windows.
 
@@ -108,22 +108,21 @@ Siga estas instruções gerais de solução de problemas para códigos de erro d
 1. Confirme o nome de usuário e a hora quando o problema ocorreu.
 2. Abra **PowerShell** e estabelecer a conexão para o locatário de área de trabalho Virtual do Windows onde o problema foi relatado.
 3. Confirme se a conexão para o locatário correto com **RdsTenant Get.**
-4. Se necessário, defina o locatário do contexto de grupo com **RdsContext conjunto – TenantGroupt\<TenantGroup\>**.
-5. Usando o **Get-RdsHostPool** e **Get-RdsSessionHost** cmdlets, confirme que a solução de problemas está sendo feita no pool de host correto.
-6. Execute o comando a seguir para obter uma lista de todas as atividades com falha de conexão de tipo para a janela de tempo especificado:
+4. Usando o **Get-RdsHostPool** e **Get-RdsSessionHost** cmdlets, confirme que a solução de problemas está sendo feita no pool de host correto.
+5. Execute o comando a seguir para obter uma lista de todas as atividades com falha de conexão de tipo para a janela de tempo especificado:
 
     ```cmd
      Get-RdsDiagnosticActivities -TenantName <TenantName> -username <UPN> -StartTime
      "11/21/2018 1:07:03 PM" -EndTime "11/21/2018 1:27:03 PM" -Outcome Failure -ActivityType Connection
     ```
 
-7. Usando o **ActivityId** na saída do cmdlet anterior, execute o comando a seguir:
+6. Usando o **ActivityId** na saída do cmdlet anterior, execute o comando a seguir:
 
     ```
     (Get-RdsDiagnosticActivities -TenantName $tenant -ActivityId <ActivityId> -Detailed).Errors
     ```
 
-8. O comando produz uma saída semelhante à saída mostrada abaixo. Use **ErrorCodeSymbolic** e **ErrorMessage** para diagnosticar a causa raiz.
+7. O comando produz uma saída semelhante à saída mostrada abaixo. Use **ErrorCodeSymbolic** e **ErrorMessage** para diagnosticar a causa raiz.
 
     ```
     ErrorSource       : <Source>

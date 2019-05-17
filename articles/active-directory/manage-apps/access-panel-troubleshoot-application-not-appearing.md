@@ -3,8 +3,8 @@ title: Um aplicativo atribuído não aparece no painel de acesso | Microsoft Doc
 description: Solucionar problemas por que um aplicativo não aparece no Painel de Acesso
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/09/2018
-ms.author: celested
+ms.author: mimart
 ms.reviwer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bac0e78c53657cda1716dd8ab6ffd0e2453290f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9d16efbd8ea2fa37ac9572e9dc1ba3ef67deaeaf
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60294014"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65784391"
 ---
 # <a name="an-assigned-application-is-not-appearing-on-the-access-panel"></a>Um aplicativo atribuído não aparece no painel de acesso
 
@@ -670,6 +670,6 @@ Para atribuir uma licença a um grupo, siga as etapas abaixo:
 >
 >
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 [Adicionar novos usuários ao Azure Active Directory](./../fundamentals/add-users-azure-active-directory.md)
 

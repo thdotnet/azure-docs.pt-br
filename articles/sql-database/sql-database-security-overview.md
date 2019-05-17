@@ -11,13 +11,13 @@ author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto, carlrab, emlisa
 manager: craigg
-ms.date: 04/26/2019
-ms.openlocfilehash: 584f30cc12aee722aed1079d5cefaee06d403cba
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.date: 05/14/2019
+ms.openlocfilehash: 7916e9493a5d572f844bca23a1dd7806e5fbe572
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64867660"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790154"
 ---
 # <a name="an-overview-of-azure-sql-database-security-capabilities"></a>Uma visão geral dos recursos de segurança do Banco de Dados SQL do Azure
 
@@ -125,17 +125,11 @@ O suporte BYOK [(Bring Your Own Key)](transparent-data-encryption-byok-azure-sql
 
 [Always Encrypted](/sql/relational-databases/security/encryption/always-encrypted-database-engine) é um recurso criado para proteger dados confidenciais armazenados em colunas de banco de dados específicas contra acesso (por exemplo, números de cartão de crédito, números de identificação nacional ou dados de _conhecimento obrigatório_). Isso inclui administradores de banco de dados ou outros usuários com privilégios que têm autorização para acessar o banco de dados para executar tarefas de gerenciamento, mas não têm a necessidade comercial de acessar os dados específicos nas colunas criptografadas. Os dados sempre são criptografados, o que significa que eles são descriptografados apenas para o processamento realizado por aplicativos cliente com acesso à chave de criptografia.  A chave de criptografia nunca é exposta ao SQL e pode ser armazenada no [Repositório de Certificados do Windows](sql-database-always-encrypted.md) ou no [Azure Key Vault](sql-database-always-encrypted-azure-key-vault.md).
 
-### <a name="masking"></a>Mascaramento
+### <a name="dynamic-data-masking"></a>Mascaramento de dados dinâmicos
 
 ![azure-database-ddm.png](media/sql-database-security-overview/azure-database-ddm.png)
 
-#### <a name="dynamic-data-masking"></a>Mascaramento de dados dinâmicos
-
 A máscara de dados dinâmicos do Banco de Dados SQL limita a exposição de dados confidenciais através do mascaramento dos dados para usuários sem privilégios. O mascaramento de dados dinâmicos detecta de forma automática os dados potencialmente confidenciais no Banco de Dados SQL do Azure e fornece recomendações viáveis para mascarar esses campos, com impacto mínimo sobre a camada de aplicativo. Funciona ao ocultar os dados confidenciais no conjunto de resultados de uma consulta em relação aos campos do banco de dados designado, enquanto os dados no banco de dados não são alterados. Para obter mais informações, consulte [Introdução à máscara de dados dinâmicos do Banco de Dados SQL](sql-database-dynamic-data-masking-get-started.md).
-
-#### <a name="static-data-masking"></a>Mascaramento de dados estáticos
-
-O [mascaramento de dados estáticos](/sql/relational-databases/security/static-data-masking) é uma ferramenta de cliente disponível no [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) 18.0 versão prévia 5 e superior.  O mascaramento de dados estáticos permite aos usuários criar uma cópia de um banco de dados no qual os dados nas colunas selecionadas foram mascarados permanentemente. As funções de mascaramento disponíveis incluem o mascaramento NULL, mascaramento de valor único, ordem aleatória e máscara de ordem aleatória de grupo e mascaramento composto de cadeia de caracteres. Com a cópia mascarada do banco de dados, as organizações são capazes de separar os ambientes de produção e de teste por meio do compartilhamento da cópia mascarada. Os dados confidenciais são suficientemente protegidos e todas as outras características do banco de dados foram mantidas. O mascaramento de bancos de dados é recomendado quando é necessário que terceiros tenham acesso a bancos de dados.
 
 ## <a name="security-management"></a>Gerenciamento de segurança
 

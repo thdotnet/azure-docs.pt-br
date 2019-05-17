@@ -4,14 +4,14 @@ ms.service: storage
 ms.topic: include
 ms.date: 4/20/2019
 ms.author: tamram
-ms.openlocfilehash: d96f400332b7953b34a157b3b52cf00bb20db76e
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.openlocfilehash: aab17966862c57a52f252b3c4e9b757673078b0a
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60012483"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787663"
 ---
-| Recurso | Destino        |
+| Resource | Destino        |
 |----------|---------------|
 | Tamanho máximo de um único contêiner de blob | Mesmo que a capacidade da conta de armazenamento máximo |
 | Número máximo de blocos em um bloco de BLOBs ou de acréscimo | 50.000 blocos |
@@ -23,4 +23,4 @@ ms.locfileid: "60012483"
 | Número máximo de políticas de acesso armazenadas por contêiner de blob | 5 |
 |Taxa de transferência de destino para blob único |Até os limites de entrada/saída de conta de armazenamento<sup>1</sup> |
 
-<sup>1</sup> taxa de transferência do único objeto depende de vários fatores, incluindo, mas não limitado a: simultaneidade, tamanho da solicitação, o nível de desempenho, velocidade do código-fonte para carregamentos e destino para downloads. Para aproveitar [blob de blocos de alta taxa de transferência](https://azure.microsoft.com/blog/high-throughput-with-azure-blob-storage/) aprimoramentos de desempenho, use um tamanho de solicitação Put Blob ou Put Block > 4 MiB (> 256 MiB para o armazenamento de blobs de bloco de desempenho premium ou para o Data Lake armazenamento Gen2).
+<sup>1</sup> taxa de transferência do único objeto depende de vários fatores, incluindo, mas não limitado a: simultaneidade, tamanho da solicitação, o nível de desempenho, velocidade do código-fonte para carregamentos e destino para downloads. Para aproveitar [blob de blocos de alta taxa de transferência](https://azure.microsoft.com/blog/high-throughput-with-azure-blob-storage/) aprimoramentos de desempenho, use um tamanho de solicitação Put Blob ou Put Block > 4 MiB (> 256 KiB para armazenamento de blobs de bloco de desempenho premium ou para o Data Lake armazenamento Gen2).

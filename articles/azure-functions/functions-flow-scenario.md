@@ -12,12 +12,12 @@ ms.date: 12/14/2017
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
-ms.openlocfilehash: 31e18285bf6211e73d994e037a91adc396972715
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: d3e777b5611dec382dc4eaaac5ec1594abcdab31
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62106963"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787683"
 ---
 # <a name="call-a-function-from-microsoft-flow"></a>Chamar uma função do Microsoft Flow
 
@@ -36,6 +36,8 @@ Neste tópico, você aprenderá a:
 > * Crie um fluxo para enviar email se um reparo for econômico.
 > * Execute o fluxo.
 
+[!INCLUDE [functions-openapi-note](../../includes/functions-openapi-note.md)]
+
 ## <a name="prerequisites"></a>Pré-requisitos
 
 + Uma [conta do Microsoft Flow](https://flow.microsoft.com/documentation/sign-up-sign-in/) ativa com as mesmas credenciais de entrada da sua conta do Azure. 
@@ -48,7 +50,7 @@ Você começa criando uma lista que usa como uma fonte de dados para o fluxo. A 
 | Coluna de lista     | Tipo de Dados           | Observações                                    |
 |-----------------|---------------------|------------------------------------------|
 | **Título**           | Linha única de texto | Nome da turbina                      |
-| **LastServiceDate** | Data                |                                          |
+| **LastServiceDate** | Date                |                                          |
 | **MaxOutput**       | Número              | Saída de turbina, em KwH            |
 | **ServiceRequired** | Sim/Não              |                                          |
 | **EstimatedEffort** | Número              | Tempo estimado para o reparo, em horas |
@@ -126,11 +128,11 @@ Você primeiro cria um fluxo de espaço em branco (sem um modelo) e adiciona um 
 
 3. Para **Endereço do site**, digite o nome do site do SharePoint e, para **Nome da lista**, insira a lista que contém os dados da turbina.
 
-    ![Escolher um gatilho](media/functions-flow-scenario/site-list.png)
+    ![Escolha um gatilho](media/functions-flow-scenario/site-list.png)
 
 4. Clique em **Nova etapa** e, em seguida, **Adicionar uma condição**.
 
-    ![Adicione uma condição](media/functions-flow-scenario/add-condition.png)
+    ![Adicionar uma condição](media/functions-flow-scenario/add-condition.png)
 
     Microsoft Flow adiciona duas ramificações ao fluxo: **Em caso afirmativo** e **se nenhum**. Você adiciona etapas a uma ou ambas as ramificações depois de definir a condição que você deseja corresponder.
 
@@ -170,13 +172,13 @@ Agora, você adiciona o conector personalizado que chama a função no Azure. Vo
 
     Para **Horas**, selecione **EstimatedEffort** e, para **Capacidade**, selecione **MaxOutput**.
 
-    ![Escolher uma ação](media/functions-flow-scenario/calculates-costs-fields.png)
+    ![Escolha uma ação](media/functions-flow-scenario/calculates-costs-fields.png)
 
      Agora você adiciona outra condição baseada na saída da função.
 
 4. Na parte inferior da ramificação **Se sim**, clique em **Mais** e, em seguida, **Adicionar uma condição**.
 
-    ![Adicione uma condição](media/functions-flow-scenario/condition2-add.png)
+    ![Adicionar uma condição](media/functions-flow-scenario/condition2-add.png)
 
 5. No cartão **Condição 2**, clique na primeira caixa e selecione **Mensagem** na caixa de diálogo **Conteúdo dinâmico**.
 
@@ -244,7 +246,7 @@ Agora que o fluxo está concluído, você adiciona uma linha à lista do SharePo
 
 5. Em **HISTÓRICO DE EXECUÇÃO**, clique na execução do fluxo.
 
-    ![Histórico da execução](media/functions-flow-scenario/run-history.png)
+    ![Hist. de ex.](media/functions-flow-scenario/run-history.png)
 
     Se a execução tiver sido bem-sucedida, você poderá examinar as operações de fluxo na próxima página. Se a execução falhar por algum motivo, a próxima página fornecerá informações de solução de problemas.
 

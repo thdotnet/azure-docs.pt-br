@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/26/2019
+ms.date: 05/14/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2e783a7c34216624126946eef84f56977d4c049
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 60453c320a66a8eebd7460b3930241f9e81b8a1b
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64572418"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65784322"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect: Histórico de lançamento de versões
 A equipe do Azure AD (Azure Active Directory) atualiza regularmente o Azure AD Connect com novos recursos e funcionalidades. Nem todas as adições são aplicáveis a todos os públicos.
@@ -42,6 +42,17 @@ Download | [Baixar o Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=6
 >Lançando uma nova versão do Azure AD Connect é um processo que requer várias etapa de controle de qualidade para garantir que a funcionalidade de operação do serviço, e enquanto percorrermos todo esse processo será atualizado o número de versão de uma nova versão, bem como o status de liberação para refletir o estado mais recente.
 Enquanto percorrermos todo esse processo, o número de versão da versão será mostrado com um "X" na posição número versão secundária, como em "1.3.X.0" – Isso indica que as notas de versão neste documento são válidas para todas as versões começando com "1.3". Assim tiver finalizado o processo de lançamento o número de versão de lançamento será atualizado para a versão lançada mais recentemente e o status de liberação será atualizado para "Liberado para download e atualização automática".
 Nem todas as versões do Azure AD Connect serão disponibilizadas para atualização automática. O status da versão indicará se uma versão foi disponibilizada para atualização automática ou apenas para baixar. Se a atualização automática foi habilitada no seu servidor do Azure AD Connect, então esse servidor atualizará automaticamente para a versão mais recente do Azure AD Connect que é liberado para atualização automática. Observe que nem todas as configurações do Azure AD Connect estão qualificadas para atualização automática. Siga este link para ler mais sobre [atualização automática](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-automatic-upgrade)
+
+## <a name="13210"></a>1.3.21.0
+
+### <a name="release-status"></a>Status de liberação 
+
+05/14/2019: TBD
+
+
+### <a name="fixed-issues"></a>Problemas corrigidos 
+
+- Correção de uma vulnerabilidade de elevação de privilégio que existe no Microsoft Azure Active Directory Connect compilação 1.3.20.0.  Essa vulnerabilidade, sob determinadas condições, pode permitir que um invasor execute dois cmdlets do powershell no contexto de uma conta privilegiada e executam ações privilegiadas.  Essa atualização de segurança resolve o problema desabilitando esses cmdlets. Para obter mais informações, consulte [atualização de segurança](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-1000).
 
 ## <a name="13200"></a>1.3.20.0 
 
@@ -387,7 +398,7 @@ Bloqueie o acesso à conta do AD DS implementando as seguintes alterações de p
 *   Remova todas as ACEs no objeto especificado, exceto as ACEs específicas ao SELF. Queremos manter as permissões padrão intactas quando se trata do SELF.
 *   Atribua essas permissões específicas:
 
-Type     | NOME                          | Access               | Aplica-se A
+Type     | NOME                          | Access               | Aplica-se a
 ---------|-------------------------------|----------------------|--------------|
 PERMITIR    | SYSTEM                        | Controle Total         | Este objeto  |
 PERMITIR    | Administradores Corporativos             | Controle Total         | Este objeto  |
@@ -412,7 +423,7 @@ Para usar o script do PowerShell, para aplicar essas configurações, para uma c
 Set-ADSyncRestrictedPermissions -ObjectDN <$ObjectDN> -Credential <$Credential>
 ```
 
-Where 
+Onde 
 
 **$ObjectDN** = A conta do Active Directory cujas permissões precisam ser reforçadas.
 
@@ -731,13 +742,13 @@ CBool(
     |CertFormat|CertNotAfter|CertPublicKeyOid|
     |CertSerialNumber|CertNotBefore|CertPublicKeyParametersOid|
     |CertVersion|CertSignatureAlgorithmOid|Selecionar|
-    |CertKeyAlgorithmParams|CertHashString|Where|
+    |CertKeyAlgorithmParams|CertHashString|Onde|
     |||With|
 
 * As seguintes alterações de esquema foram introduzidas para permitir que os clientes criem regras de sincronização personalizadas para transmitir sAMAccountName, domainNetBios e domainFQDN para objetos de grupo, bem como transmitir distinguishedName para objetos de usuário:
 
   * Os atributos a seguir foram adicionados ao esquema do MV:
-    * Grupo: AccountName
+    * Grupo: Nome da Conta
     * Grupo: domainNetBios
     * Grupo: domainFQDN
     * Pessoa: distinguishedName
@@ -894,7 +905,7 @@ Autenticação de Passagem
 * Correção de um problema que causa uma falha do assistente do Azure AD Connect se a Autenticação de Passagem é selecionada, mas o registro de seu conector falha.
 * Correção de um problema que faz com que o assistente do Azure AD Connect ignore as verificações de validação no método de conexão selecionado quando o recurso SSO da Área de Trabalho está habilitado.
 
-Redefinição de senha
+Redefinição de Senha
 * Correção de um problema que pode fazer com que o servidor do Azure AAD Connect não tente se reconectar se a conexão for interrompida por um firewall ou proxy.
 
 **Novos recursos/melhorias:**
@@ -909,7 +920,7 @@ Gerenciamento dos AD FS
 * Agora é possível especificar uma gMSA (Conta de Serviço Gerenciado de Grupo) existente durante a instalação do AD FS.
 * Agora é possível configurar o SHA-256 como o algoritmo de hash de assinatura para o objeto de confiança de terceira parte confiável do Azure AD.
 
-Redefinição de senha
+Redefinição de Senha
 * Introdução de aprimoramentos para permitir que o produto funcione em ambientes com regras de firewall mais rígidas.
 * Aumento na confiabilidade de conexão com o Barramento de Serviço do Azure.
 

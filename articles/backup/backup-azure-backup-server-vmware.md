@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.author: raynew
-ms.openlocfilehash: 6fb95d43bff79ca91988549114daa91e5d41f358
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f034f31f2c8c49bbdfb88e2ba0a009ff5b795fa2
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60649499"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789615"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Faça backup de VMs VMware com o Servidor de Backup do Azure
 
@@ -39,7 +39,7 @@ Por padrão, o Servidor de Backup do Azure se comunica com servidores VMware via
 
 ### <a name="before-you-start"></a>Antes de começar
 
-- Se você não quiser usar HTTPS, poderá [desabilitar a configuração padrão](backup-azure-backup-server-vmware.md).
+- Se você não quiser usar HTTPS, você pode [desabilitar a validação do certificado HTTPS para todos os servidores VMware](backup-azure-backup-server-vmware.md#disable-https-certificate-validation).
 - Você normalmente se conecta de um navegador no computador do Servidor de Backup do Azure para o servidor vCenter/ESXi usando o cliente Web vSphere. Na primeira vez em que você fizer isso, a conexão não será segura e mostrará o seguinte.
 - É importante entender como o Servidor de Backup do Azure lida com backups.
     - Como uma primeira etapa, o Servidor de Backup do Azure faz backup dos dados para armazenamento em disco local. O Servidor de Backup do Azure usa um pool de armazenamento, um conjunto de discos e volumes nos quais o Servidor de Backup do Azure armazena os pontos de recuperação de disco para seus dados protegidos. O pool de armazenamento pode ser DAS (armazenamento diretamente anexado), uma SAN Fibre Channel ou uma SAN ou dispositivo de armazenamento iSCSI. É importante garantir que você tenha armazenamento suficiente para backup local dos seus dados de VM do VMware.
@@ -101,7 +101,7 @@ Configure um canal seguro da seguinte maneira:
 
 
 
-### <a name="disable-default-https"></a>Desabilitar HTTPS padrão
+### <a name="disable-https-certificate-validation"></a>Desabilitar a validação do certificado HTTPS
 
 Se você tiver limites de segurança dentro da sua organização e não quiser usar o protocolo HTTPS entre servidores VMware e o computador do Servidor de Backup do Azure, desabilite HTTPS da seguinte maneira:
 1. Copie e cole o texto a seguir em um aquivo .txt.

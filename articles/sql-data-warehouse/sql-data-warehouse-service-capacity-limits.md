@@ -2,20 +2,20 @@
 title: Limites de capacidade do SQL Data Warehouse do Azure | Microsoft Docs
 description: Valores máximos permitidos para vários componentes do Azure SQL Data Warehouse.
 services: sql-data-warehouse
-author: sachinpMSFT
+author: happynicolle
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: implement
+ms.subservice: design
 ms.date: 11/14/2018
-ms.author: anvang
+ms.author: nicw
 ms.reviewer: igorstan
-ms.openlocfilehash: ad285d71c2bb90f4b5a59eba25c6cc6a6d8588d6
-ms.sourcegitcommit: 1d257ad14ab837dd13145a6908bc0ed7af7f50a2
+ms.openlocfilehash: f3c2ecbb4c83132b674b4c296adc1339027f5215
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501843"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797792"
 ---
 # <a name="sql-data-warehouse-capacity-limits"></a>Limites de capacidade do SQL Data Warehouse
 Valores máximos permitidos para vários componentes do Azure SQL Data Warehouse.
@@ -59,10 +59,10 @@ Valores máximos permitidos para vários componentes do Azure SQL Data Warehouse
 ## <a name="queries"></a>Consultas
 | Category | Descrição | Máximo |
 |:--- |:--- |:--- |
-| Consultar |Consultas em fila em tabelas de usuário. |1000 |
-| Consultar |Consultas simultâneas em exibições do sistema. |100 |
-| Consultar |Consultas em fila em exibições do sistema |1000 |
-| Consultar |Máximo de parâmetros |2098 |
+| Consulta |Consultas em fila em tabelas de usuário. |1000 |
+| Consulta |Consultas simultâneas em exibições do sistema. |100 |
+| Consulta |Consultas em fila em exibições do sistema |1000 |
+| Consulta |Máximo de parâmetros |2098 |
 | Lote |Tamanho máximo |65.536*4096 |
 | Resultados de SELECT |Colunas por linha |4096<br/><br/>Nunca será possível ter mais de 4.096 colunas por linha no resultado de SELECT. Não há garantia de que você sempre terá 4096. Se o plano de consulta exigir uma tabela temporária, poderão ser aplicadas no máximo 1024 colunas por tabela. |
 | SELECT |Subconsultas aninhadas |32<br/><br/>Nunca será possível ter mais de 32 subconsultas aninhadas em uma instrução SELECT. Não há garantia de que você sempre terá 32. Por exemplo, JOIN pode introduzir uma subconsulta no plano de consulta. O número de subconsultas também pode ser limitado pela memória disponível. |
