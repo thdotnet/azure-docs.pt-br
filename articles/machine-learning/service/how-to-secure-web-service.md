@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.date: 04/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: 50e42172af6ca6b966f9f60d3e037f9ae3dc5cbe
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 0487fe0331bfce3d0302fe997562cb124ac317d6
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65023772"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65561075"
 ---
 # <a name="use-ssl-to-secure-web-services-with-azure-machine-learning-service"></a>Usar o SSL para proteger os serviços Web com o Serviço do Azure Machine Learning
 
@@ -72,36 +72,10 @@ Ao solicitar um certificado, você precisa fornecer o FQDN (nome de domínio tot
 
 Para implantar (ou reimplantar) o serviço com SSL habilitado, defina as `ssl_enabled` parâmetro para `True`, onde aplicável. Defina o parâmetro `ssl_certificate` como o valor do arquivo __certificate__ e a `ssl_key` como o valor do arquivo __key__.
 
-+ **Visual interface - criar segura do Azure o AKS (serviço) para implantação** 
-    
-    Consulte este se você estiver tentando criar computação implantação segura para a interface visual. Ao provisionar o cluster do AKS, forneça valores para parâmetros de SSL e criar um novo AKS.  Consulte abaixo um trecho de código:
-    
-
-    > [!TIP]
-    >  Se você não estiver familiarizado com o SDK do Python, comece de [visão geral do SDK de Python do Azure Machine Learning.](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)
-
-
-    ```python
-    from azureml.core.compute import AksCompute, ComputeTarget
-
-    # Provide SSL-related parameters when provisioning the AKS cluster
-    prov_config = AksCompute.provisioning_configuration(ssl_cert_pem_file="cert.pem", ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")   
- 
-    aks_name = 'secure-aks'
-    # Create the cluster
-    aks_target = ComputeTarget.create(workspace = ws,
-                                        name = aks_name,
-                                        provisioning_configuration = prov_config)
-    
-    # Wait for the create process to complete
-    aks_target.wait_for_completion(show_output = True)
-    print(aks_target.provisioning_state)
-    print(aks_target.provisioning_errors)
-    ```
-    
-   
-
 + **Implantar no serviço de Kubernetes do Azure (AKS) e FPGA**
+
+  > [!NOTE]
+  > As informações nesta seção também se aplica ao implantar um serviço web seguro para a interface visual. Se você não estiver familiarizado com o usando o SDK do Python, consulte o [visão geral do SDK de Python do Azure Machine Learning.](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 
   Ao implantar AKS, você pode criar um novo cluster do AKS ou anexará um existente. Criar um novo cluster usos [AksCompute.provisionining_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#provisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none-) enquanto a anexação de um cluster existente usa [AksCompute.attach_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#attach-configuration-resource-group-none--cluster-name-none--resource-id-none-). Ambos retornam um objeto de configuração que tem um `enable_ssl` método.
 
@@ -119,23 +93,26 @@ Para implantar (ou reimplantar) o serviço com SSL habilitado, defina as `ssl_en
     ```python
     from azureml.core.compute import AksCompute
     # Config used to create a new AKS cluster and enable SSL
-    provisioning_config = AksCompute.provisioning_configuration().enable_ssl(leaf_domain_label = "myservice")
+    provisioning_config = AksCompute.provisioning_configuration()
+    provisioning_config.enable_ssl(leaf_domain_label = "myservice")
     # Config used to attach an existing AKS cluster to your workspace and enable SSL
     attach_config = AksCompute.attach_configuration(resource_group = resource_group,
-                                          cluster_name = cluster_name).enable_ssl(leaf_domain_label = "myservice")
+                                          cluster_name = cluster_name)
+    attach_config.enable_ssl(leaf_domain_label = "myservice")
     ```
 
-  * Ao usar __um certificado adquirido__, use o `ssl_cert_pem_file`, `ssl_key_pem_file`, e `ssl_cname` parâmetros.  O exemplo a seguir demonstra como criar configurações que usam um certificado SSL que você fornecer usando `.pem` arquivos:
+  * Ao usar __um certificado adquirido__, use o `ssl_cert_pem_file`, `ssl_key_pem_file`, e `ssl_cname` parâmetros. O exemplo a seguir demonstra como criar configurações que usam um certificado SSL que você fornecer usando `.pem` arquivos:
 
     ```python
     from azureml.core.compute import AksCompute
     # Config used to create a new AKS cluster and enable SSL
-    provisioning_config = AksCompute.provisioning_configuration(ssl_cert_pem_file="cert.pem", ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
-    provisioning_config = AksCompute.provisioning_configuration().enable_ssl(ssl_cert_pem_file="cert.pem",
+    provisioning_config = AksCompute.provisioning_configuration()
+    provisioning_config.enable_ssl(ssl_cert_pem_file="cert.pem",
                                         ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
     # Config used to attach an existing AKS cluster to your workspace and enable SSL
     attach_config = AksCompute.attach_configuration(resource_group = resource_group,
-                                         cluster_name = cluster_name).enable_ssl(ssl_cert_pem_file="cert.pem",
+                                         cluster_name = cluster_name)
+    attach_config.enable_ssl(ssl_cert_pem_file="cert.pem",
                                         ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
     ```
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: mbullwin
-ms.openlocfilehash: 54b9888e22cc5fb537bf3383d62e6424280f4d32
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: c3bb09b3e93d708ad95361f4949ed868dfbb5cd4
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65203785"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785646"
 ---
 # <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>Endereços IP usados pelo Application Insights e pelo Log Analytics
 O serviço [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) usa vários endereços IP. Talvez seja necessário conhecer esses endereços se o aplicativo que você está monitorando estiver hospedado atrás de um firewall.
@@ -37,7 +37,7 @@ Você precisa abrir algumas portas de saída no firewall do servidor para permit
 
 | Finalidade | URL | IP | Portas |
 | --- | --- | --- | --- |
-| Telemetria |dc.services.visualstudio.com<br/>dc.applicationinsights.microsoft.com |40.114.241.141<br/>104.45.136.42<br/>40.84.189.107<br/>168.63.242.221<br/>52.167.221.184<br/>52.169.64.244<br/>40.85.218.175<br/>104.211.92.54<br/>52.175.198.74<br/>51.140.6.23<br/>40.71.12.231<br/>13.69.65.22<br/>13.78.108.165<br/>13.70.72.233<br/>20.44.8.7<br/>13.86.218.248<br/>40.79.138.41<br/>52.231.18.241<br/>13.75.38.7<br/>102.133.162.117 | 443 |
+| Telemetria |dc.services.visualstudio.com<br/>dc.applicationinsights.microsoft.com |40.114.241.141<br/>104.45.136.42<br/>40.84.189.107<br/>168.63.242.221<br/>52.167.221.184<br/>52.169.64.244<br/>40.85.218.175<br/>104.211.92.54<br/>52.175.198.74<br/>51.140.6.23<br/>40.71.12.231<br/>13.69.65.22<br/>13.78.108.165<br/>13.70.72.233<br/>20.44.8.7<br/>13.86.218.248<br/>40.79.138.41<br/>52.231.18.241<br/>13.75.38.7<br/>102.133.162.117<br/>40.73.65.143 | 443 |
 | Live Metrics Stream |rt.services.visualstudio.com<br/>rt.applicationinsights.microsoft.com |23.96.28.38<br/>13.92.40.198 |443 |
 
 ## <a name="status-monitor"></a>Monitor de status
@@ -397,9 +397,9 @@ East US
 
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
-| Portal da análise | analytics.applicationinsights.io | dinâmico | 80.443 |
-| CDN | applicationanalytics.azureedge.net | dinâmico | 80.443 |
-| Mídia CDN | applicationanalyticsmedia.azureedge.net | dinâmico | 80.443 |
+| Portal da análise | analytics.applicationinsights.io | dinâmica | 80.443 |
+| CDN | applicationanalytics.azureedge.net | dinâmica | 80.443 |
+| Mídia CDN | applicationanalyticsmedia.azureedge.net | dinâmica | 80.443 |
 
 Observação: o domínio *.applicationinsights.io pertence à equipe do Application Insights.
 
@@ -407,8 +407,8 @@ Observação: o domínio *.applicationinsights.io pertence à equipe do Applicat
 
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
-| Portal | portal.loganalytics.io | dinâmico | 80.443 |
-| CDN | applicationanalytics.azureedge.net | dinâmico | 80.443 |
+| Portal | portal.loganalytics.io | dinâmica | 80.443 |
+| CDN | applicationanalytics.azureedge.net | dinâmica | 80.443 |
 
 Observação: o domínio *.loganalytics.io pertence à equipe do Log Analytics.
 
@@ -416,15 +416,15 @@ Observação: o domínio *.loganalytics.io pertence à equipe do Log Analytics.
 
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
-| Extensão do Application Insights | stamp2.app.insightsportal.visualstudio.com | dinâmico | 80.443 |
-| Extensão do Application Insights CDN | insightsportal-prod2-cdn.aisvc.visualstudio.com<br/>insightsportal-prod2-asiae-cdn.aisvc.visualstudio.com<br/>insightsportal-cdn-aimon.applicationinsights.io | dinâmico | 80.443 |
+| Extensão do Application Insights | stamp2.app.insightsportal.visualstudio.com | dinâmica | 80.443 |
+| Extensão do Application Insights CDN | insightsportal-prod2-cdn.aisvc.visualstudio.com<br/>insightsportal-prod2-asiae-cdn.aisvc.visualstudio.com<br/>insightsportal-cdn-aimon.applicationinsights.io | dinâmica | 80.443 |
 
 ## <a name="application-insights-sdks"></a>SDKs do Application Insights
 
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
-| SDK do Application Insights JS CDN | az416426.vo.msecnd.net | dinâmico | 80.443 |
-| Application Insights Java SDK | aijavasdk.blob.Core.Windows.net | dinâmico | 80.443 |
+| SDK do Application Insights JS CDN | az416426.vo.msecnd.net | dinâmica | 80.443 |
+| Application Insights Java SDK | aijavasdk.blob.Core.Windows.net | dinâmica | 80.443 |
 
 ## <a name="alert-webhooks"></a>Webhooks de alerta
 
@@ -432,13 +432,13 @@ Observação: o domínio *.loganalytics.io pertence à equipe do Log Analytics.
 | --- | --- | --- |
 | Alertas | 23.96.11.4 | 443 |
 
-## <a name="profiler"></a>Criador de perfil
+## <a name="profiler"></a>Profiler
 
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
 | Agente | agent.azureserviceprofiler.net<br/>*.agent.azureserviceprofiler.net | 40.68.32.221<br/>40.85.246.0<br/>40.85.246.57<br/>40.117.252.0<br/>40.117.253.100<br/>51.140.140.162<br/>51.140.140.184<br/>51.143.96.206<br/>51.143.98.157<br/>52.161.8.88<br/>52.161.29.225<br/>52.178.147.66<br/>52.178.149.106<br/>52.230.122.9<br/>52.230.124.46<br/>104.40.217.71<br/>104.211.89.26<br/>104.211.90.232 | 443
-| Portal | gateway.azureserviceprofiler.net | dinâmico | 443
-| Armazenamento | *.core.windows.net | dinâmico | 443
+| Portal | gateway.azureserviceprofiler.net | dinâmica | 443
+| Armazenamento | *.core.windows.net | dinâmica | 443
 
 ## <a name="snapshot-debugger"></a>Depurador de instantâneo
 
@@ -448,5 +448,5 @@ Observação: o domínio *.loganalytics.io pertence à equipe do Log Analytics.
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
 | Agente | ppe.azureserviceprofiler.net<br/>*.ppe.azureserviceprofiler.net | 40.68.32.221<br/>40.85.246.0<br/>40.85.246.57<br/>40.117.252.0<br/>40.117.253.100<br/>51.140.140.162<br/>51.140.140.184<br/>51.143.96.206<br/>51.143.98.157<br/>52.161.8.88<br/>52.161.29.225<br/>52.178.147.66<br/>52.178.149.106<br/>52.230.122.9<br/>52.230.124.46<br/>104.40.217.71<br/>104.211.89.26<br/>104.211.90.232 | 443
-| Portal | ppe.gateway.azureserviceprofiler.net | dinâmico | 443
-| Armazenamento | *.core.windows.net | dinâmico | 443
+| Portal | ppe.gateway.azureserviceprofiler.net | dinâmica | 443
+| Armazenamento | *.core.windows.net | dinâmica | 443

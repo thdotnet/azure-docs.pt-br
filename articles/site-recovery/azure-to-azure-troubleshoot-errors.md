@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/08/2019
 ms.author: sujayt
-ms.openlocfilehash: fafa791039397e93e9bf8ab6be04a2190e8ed784
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 3c87e159022b6dcf13daf2a2659c88c0529a8f48
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64699088"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796420"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-issues"></a>Solucionar problemas de replicação de VM do Azure para o Azure
 
@@ -232,10 +232,10 @@ Você pode optar por proteger os discos ou ignorar o aviso para tornar o status 
  ![add_disks](./media/azure-to-azure-troubleshoot-errors/add-disk.png)
 2. Para ignorar o aviso. Vá para itens replicados > máquina virtual > clique no alerta ignorar na seção de visão geral.
 ![dismiss_warning](./media/azure-to-azure-troubleshoot-errors/dismiss-warning.png)
-## <a name="unable-to-see-the-azure-vm-for-selection-in-enable-replication"></a>Não é possível visualizar a VM do Azure para seleção "habilitar a replicação"
+## <a name="unable-to-see-the-azure-vm-or-resource-group--for-selection-in-enable-replication"></a>Não é possível ver o VM do Azure ou grupo de recursos para a seleção em "habilitar replicação"
 
  **Causa 1:  O grupo de recursos e a Máquina Virtual de origem estão em uma localização diferente** <br>
-O Azure Site Recovery atualmente determinou que o grupo de recursos da região de origem e as máquinas virtuais estejam no mesmo local. Se esse não for o caso, não será possível localizar a máquina virtual durante o tempo de proteção.
+O Azure Site Recovery atualmente normas que o grupo de recursos de região e as máquinas virtuais de origem devem estar no mesmo local. Se esse não for o caso, não será possível localizar a máquina virtual durante o tempo de proteção. Como alternativa, você pode habilitar a replicação da VM, em vez do cofre dos serviços de recuperação. Vá para a VM Sourece > Propriedades > Habilitar a replicação e recuperação de desastres.
 
 **Causa 2: O grupo de recursos não faz parte da assinatura selecionada** <br>
 Talvez não seja possível localizar o grupo de recursos no momento da proteção, se ele não fizer parte da assinatura fornecida. Certifique-se de que o grupo de recursos pertence à assinatura que está sendo usada.
@@ -252,7 +252,7 @@ Se VM que você deseja habilitar para replicação não é exibida, pode haver u
 >
 >Atualize o módulo ""AzureRM.Resources"" antes de usar o script abaixo.
 
-Você pode usar [Remover configuração de script ASR obsoleta](https://gallery.technet.microsoft.com/Azure-Recovery-ASR-script-3a93f412) e remover a configuração de recuperação de Site obsoleta na máquina virtual da Azure. Você deve ser capaz de ver a VM depois de remover a configuração obsoleta.
+Você pode usar [Remover configuração de script ASR obsoleta](https://github.com/AsrOneSdk/published-scripts/blob/master/Cleanup-Stale-ASR-Config-Azure-VM.ps1) e remover a configuração de recuperação de Site obsoleta na máquina virtual da Azure. Você deve ser capaz de ver a VM depois de remover a configuração obsoleta.
 
 ## <a name="unable-to-select-virtual-machine-for-protection"></a>Não é possível selecionar a máquina virtual para proteção
  **Causa 1:  A máquina virtual tem uma extensão instalada em um estado com falha ou sem resposta** <br>
@@ -311,7 +311,7 @@ Para habilitar a replicação na VM, o estado de provisionamento deve ser **Com 
 ## <a name="enable-protection-failed-as-device-name-mentioned-in-the-grub-configuration-instead-of-uuid-error-code-151126"></a>A habilitação da proteção falhou porque o nome do dispositivo foi mencionado na configuração do GRUB em vez do UUID (código de erro 151126)
 
 **Possível causa:** </br>
-Os arquivos de configuração do GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" ou "/etc/default/grub") podem conter o valor dos parâmetros **root** e **resume** como os nomes de dispositivo reais em vez do UUID. O Site Recovery exige a abordagem com UUID, pois o nome dos dispositivos poderá ser alterado quando ocorrer uma reinicialização da VM, uma vez que a VM poderá não ter o mesmo nome após um failover, causando problemas. Por exemplo:  </br>
+Os arquivos de configuração do GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" ou "/etc/default/grub") podem conter o valor dos parâmetros **root** e **resume** como os nomes de dispositivo reais em vez do UUID. O Site Recovery exige a abordagem com UUID, pois o nome dos dispositivos poderá ser alterado quando ocorrer uma reinicialização da VM, uma vez que a VM poderá não ter o mesmo nome após um failover, causando problemas. Por exemplo: </br>
 
 
 - A seguinte linha é do arquivo GRUB **/boot/grub2/grub.cfg**. <br>
@@ -327,7 +327,7 @@ Se você observar a cadeia de caracteres em negrito acima, o GRUB terá nomes de
 os nomes de dispositivo devem ser substituídos pelo UUID correspondente.<br>
 
 
-1. Localizar o UUID do dispositivo executando o comando "blkid \<nome do dispositivo >". Por exemplo: <br>
+1. Localizar o UUID do dispositivo executando o comando "blkid \<nome do dispositivo >". Por exemplo:<br>
    ```
    blkid /dev/sda1
    ```<br>

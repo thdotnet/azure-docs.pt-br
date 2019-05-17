@@ -5,15 +5,15 @@ author: dkamstra
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 4/12/2019
+ms.date: 5/10/2019
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: 1c772756a90c3eee4e2b3fb4fd4a0ec9e98fa0da
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: fba5119feb1ff7a0170a573371e479caa5fc33eb
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64919082"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544462"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Criar e gerenciar grupos de ações no portal do Azure
 ## <a name="overview"></a>Visão geral ##
@@ -26,8 +26,8 @@ Este artigo mostra como criar e gerenciar grupos de ação no Portal do Azure.
 Cada ação é composta das seguintes propriedades:
 
 * **Nome**: um identificador exclusivo dentro do grupo de ações.  
-* **Tipo de ação**: A ação executada. Exemplos incluem o envio de um email de chamada, SMS, voz; ou disparando vários tipos de ações automatizadas. Veja os tipos mais adiante neste artigo. 
-* **Detalhes**: Os detalhes correspondentes que variam de acordo com *tipo de ação*. 
+* **Tipo de ação**: A ação executada. Exemplos incluem o envio de um email de chamada, SMS, voz; ou disparando vários tipos de ações automatizadas. Veja os tipos mais adiante neste artigo.
+* **Detalhes**: Os detalhes correspondentes que variam de acordo com *tipo de ação*.
 
 Para saber mais sobre como usar modelos do Azure Resource Manager para configurar grupos de ação, veja [Modelos do Resource Manager de grupos de ações](../../azure-monitor/platform/action-groups-create-resource-manager-template.md).
 
@@ -69,7 +69,7 @@ Depois de criar um grupo de ação, ele ficará visível na **grupos de ação**
 > [!NOTE]
 > Ver [limites de serviço de subscrição para monitoramento](https://docs.microsoft.com/azure/azure-subscription-service-limits#monitor-limits) para limites numéricos em cada um dos itens abaixo.  
 
-**Aplicativo do Azure por Push** -você pode ter um número limitado de ações de aplicativo do Azure em um grupo de ações. Neste momento, a ação de aplicativo do Azure dá suporte apenas aos alertas do ServiceHealth. Qualquer outro tipo de alerta será ignorado. Consulte [configurar alertas sempre que uma notificação de integridade do serviço for postada](../../azure-monitor/platform/alerts-activity-log-service-notifications.md).
+**Aplicativo do Azure por Push** -você pode ter um número limitado de ações de aplicativo do Azure em um grupo de ação.
 
 **E-mail**: os e-mails serão enviados dos seguintes endereços de e-mail. Certifique-se de que a filtragem de email esteja configurada adequadamente
 - azure-noreply@microsoft.com
@@ -101,6 +101,7 @@ Intervalos de endereços IP de fonte
  - 13.106.38.148
  - 13.106.57.196
  - 52.244.68.117
+ - 52.244.65.137
  - 51.4.138.199
  - 51.5.148.86
  - 51.5.149.19

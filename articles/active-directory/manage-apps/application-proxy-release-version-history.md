@@ -4,7 +4,7 @@ description: Este artigo lista todas as versões do Proxy de aplicativo do Azure
 services: active-directory
 documentationcenter: ''
 author: msmimart
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.assetid: ''
 ms.service: active-directory
@@ -16,19 +16,19 @@ ms.date: 04/05/2019
 ms.subservice: manage-apps
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf9ee43c6c6b332c05286da8e330812d7e0db6c2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7af05769861f98ec192789d90f8a61f5b6638d1d
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60441654"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65783297"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Proxy de Aplicativo Azure AD: Histórico de lançamento de versões
 Este artigo lista as versões e recursos de Proxy de aplicativo do Azure Active Directory (Azure AD) que foram lançados. A equipe do AD do Azure atualiza regularmente o Proxy de aplicativo com novos recursos e funcionalidades. Conectores de Proxy de aplicativo são atualizadas automaticamente quando uma nova versão for lançada.
 
 Aqui está uma lista de recursos relacionados:
 
-Recurso |  Detalhes
+Resource |  Detalhes
 --------- | --------- |
 Como habilitar o Proxy de aplicativo | Pré-requisitos para habilitar o Proxy de aplicativo e instalar e registrar um conector são descritas neste [tutorial](application-proxy-add-on-premises-application.md).
 Noções básicas sobre conectores de Proxy de Aplicativo Azure AD | Saiba mais sobre [gerenciamento de conector](application-proxy-connectors.md) e como conectores [atualização automática](application-proxy-connectors.md#automatic-updates).
@@ -88,6 +88,6 @@ Controle aprimorado sobre limites de conexão de saída dos conectores.
 
 Se você estiver usando uma versão do conector de Proxy de aplicativo anterior ao 1.5.36.0, atualize para a versão mais recente para garantir que você tenha a versão mais recente totalmente recursos com suporte.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 - Saiba mais sobre [de acesso remoto a aplicativos locais por meio do Proxy de aplicativo do Azure AD](application-proxy.md).
 - Para começar a usar o Proxy de a Aplicativo, consulte [Tutorial: Adicionar um aplicativo local para acesso remoto por meio do Proxy de Aplicativo](application-proxy-add-on-premises-application.md).

@@ -3,8 +3,8 @@ title: Tópicos de ajuda do Portal de Registro de Aplicativos | Microsoft Docs
 description: Uma descrição de vários recursos no Portal de Registro de Aplicativos da Microsoft.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: f0507c28-9464-4d3e-bd53-de9053fd5278
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 08/28/2018
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: lenalepa
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b77f2a403bd4f410665d00bc69b3b1bcf0c3aaa
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: ec615e1c6229539958f66d0dca15cf7eb788e597
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65139167"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546106"
 ---
 # <a name="app-registration-reference"></a>Referência de registro de aplicativo
 Este documento fornece contexto e descrições de vários recursos encontrados no [Portal de Registro de Aplicativo](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/).
@@ -34,13 +34,13 @@ Este documento fornece contexto e descrições de vários recursos encontrados n
 ## <a name="my-applications-or-converged-applications"></a>Meus aplicativos ou Aplicativos convergidos
 Esta lista contém todos os aplicativos registrados para uso com o ponto de extremidade v2.0 do Azure AD. Esses aplicativos permitem que usuários com contas pessoais da Microsoft e contas corporativas/de estudante do Azure Active Directory façam logon. Para saber mais sobre o ponto de extremidade v2.0 do Azure AD, consulte a [Visão geral do v2.0](active-directory-appmodel-v2-overview.md). Esses aplicativos também podem ser usados para integração com o ponto de extremidade de autenticação da conta da Microsoft, `https://login.live.com`.
 
-## <a name="azure-ad-only-applications"></a>Aplicativos somente do Azure AD
+## <a name="azure-ad-only-applications"></a>Somente aplicativos do Azure AD
 Esta lista contém todos os aplicativos registrados para uso com o ponto de extremidade do Azure AD v1.0. Esses aplicativos têm somente a capacidade de fazer logon dos usuários com contas corporativas/de estudante do Azure Active Directory. Essa lista inclui os aplicativos que foram registrados usando a experiência **Registros de aplicativo** no [portal do Azure](https://portal.azure.com).
 
 ## <a name="live-sdk-applications"></a>Aplicativos do Live SDK
 Esta lista contém todos os aplicativos registrados para uso exclusivo com uma conta da Microsoft. Eles não são habilitados para uso com o Azure Active Directory. Nessa lista você encontrará todos os aplicativos registrados anteriormente com o portal do desenvolvedor MSA em `https://account.live.com/developers/applications`. Todas as funções executadas anteriormente em `https://account.live.com/developers/applications` podem ser executadas agora nesse novo portal, `https://apps.dev.microsoft.com`.
 
-## <a name="application-secrets"></a>Segredos do aplicativo
+## <a name="application-secrets"></a>Segredos do Aplicativo
 Segredos do aplicativo são credenciais que permitem ao aplicativo executar a [autenticação de cliente](https://tools.ietf.org/html/rfc6749#section-2.3) confiável com o Azure AD. No OAuth e no OpenID Connect, o segredo do aplicativo é conhecido como `client_secret`. No protocolo v 2.0, qualquer aplicativo que receba um token de segurança em um local endereçável da Web (usando um esquema `https` ) deve usar um segredo do aplicativo para se identificar ao Azure AD durante o resgate desse token de segurança. Além disso, qualquer cliente nativo que receba os tokens em um dispositivo será proibido de usar o segredo do aplicativo para executar a autenticação do cliente. Isso desencoraja o armazenamento de segredos em ambientes inseguros.
 
 Cada aplicativo pode conter dois segredos do aplicativo válidos em qualquer momento. Mantendo dois segredos, você pode executar a substituição de chave periódica em todo o ambiente de seu aplicativo. Depois de migrar todo o seu aplicativo para um novo segredo, você pode excluir o segredo antigo e provisionar um novo.

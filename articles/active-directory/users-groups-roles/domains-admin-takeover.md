@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f9a33b6bce8cef5bf790efeb43259dfb8013487
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b32ef37c6d61c88a18acd5ddc80cc6154369ca29
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60472410"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65780533"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Controlar um diretório não gerenciado como administrador no Azure Active Directory
 
@@ -37,7 +37,7 @@ Durante o processo de controle do administrador, você pode comprovar a propried
 
 Alguns produtos que incluem o SharePoint e OneDrive, como o Office 365, não dão suporte a controle externo. Se esse for o seu cenário ou se você for um administrador e deseja controlar um locatário de “sombra” não gerenciado criado pelos usuários que usaram inscrição de autoatendimento, faça isso por meio do controle de administrador interno.
 
-1. Crie um contexto de usuário no locatário não gerenciado por meio da inscrição com Power BI, por exemplo. Para fins de conveniência do exemplo, essas etapas pressupõem esse caminho.
+1. Crie um contexto de usuário no locatário não gerenciado por meio da inscrição para o Power BI. Para fins de conveniência do exemplo, essas etapas pressupõem esse caminho.
 
 2. Abra o [site do Power BI](https://powerbi.com) e selecione **Iniciar gratuitamente**. Insira uma conta de usuário que usa o nome de domínio para a organização como, por exemplo, `admin@fourthcoffee.xyz`. Depois que você inserir o código de verificação, confira seu email para ver o código de confirmação.
 
@@ -82,7 +82,7 @@ Se você já gerencia um locatário com os serviços do Azure ou o Office 365, n
 Quando você verificar a propriedade do nome de domínio, o Azure AD remove o nome de domínio do locatário não gerenciado e o migra para o locatário existente. O controle de administrador externo de um diretório não gerenciado requer o mesmo processo de validação de TXT do DNS que o controle de administrador interno. A diferença é que os itens a seguir também são movidos com o nome de domínio:
 
 - Usuários
-- Assinaturas
+- Inscrições
 - Atribuições de licença
 
 ### <a name="support-for-external-admin-takeover"></a>Suporte para controle de administrador externo
@@ -153,7 +153,7 @@ cmdlet | Uso
     Get-MsolDomainVerificationDns –DomainName contoso.com –Mode DnsTxtRecord
    ```
 
-4. Copie o valor (o desafio) que é retornado deste comando. Por exemplo: 
+4. Copie o valor (o desafio) que é retornado deste comando. Por exemplo:
    ```powershell
     MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
    ```
@@ -164,7 +164,7 @@ cmdlet | Uso
     Confirm-MsolEmailVerifiedDomain -DomainName *your_domain_name*
    ```
   
-   Por exemplo: 
+   Por exemplo:
   
    ```powershell
     Confirm-MsolEmailVerifiedDomain -DomainName contoso.com

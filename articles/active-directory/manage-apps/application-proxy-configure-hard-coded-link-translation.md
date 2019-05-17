@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2949559542759cadf90d329bc50b352998b3eb7e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ec6caecde3e90f7113f60286e95cdaeb996003f7
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60437706"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65784031"
 ---
 # <a name="redirect-hardcoded-links-for-apps-published-with-azure-ad-application-proxy"></a>Redirecione os links inseridos no código para aplicativos publicados com o Proxy de Aplicativo do Azure AD
 
@@ -59,13 +59,14 @@ Com a extensão de navegador My Apps, todas as URLs internas publicadas com o Pr
 
 Para usar esse recurso, o usuário deve fazer o download da extensão e estar conectado. Não há nenhuma outra configuração necessária para os administradores ou usuários. 
 
- 
+Para obter mais informações, incluindo como configurar essa opção, consulte a [extensão de navegador MyApps](https://docs.microsoft.com/en-us/azure/active-directory/user-help/my-apps-portal-end-user-access#download-and-install-the-my-apps-secure-sign-in-extension) documentação.
 
 ### <a name="option-3-link-translation-setting"></a>Opção 3: Configuração de conversão de link 
 
-Quando a translação de link está habilitada, o serviço de Proxy de Aplicativo pesquisa o HTML e o CSS para links internos publicados e converte-os para que seus usuários obtenham uma experiência ininterrupta. 
+Quando a translação de link está habilitada, o serviço de Proxy de Aplicativo pesquisa o HTML e o CSS para links internos publicados e converte-os para que seus usuários obtenham uma experiência ininterrupta. Usando a extensão de navegador MyApps é preferencial para a configuração de translação de Link, já que ele oferece uma experiência mais de alto desempenho para os usuários.
 
-
+> [!NOTE]
+> Se você estiver usando a opção 2 ou 3, somente uma delas deve estar habilitada por vez.
 
 ## <a name="how-link-translation-works"></a>Como a translação de link funciona
 
@@ -103,7 +104,7 @@ A lista completa de marcas de código HTML que o Proxy de aplicativo dá suporte
 * script
 * fonte
 * Faixa
-* video
+* vídeo
 
 Além disso, dentro do CSS o atributo URL também é convertido.
 

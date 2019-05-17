@@ -5,85 +5,150 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 09/24/2018
+ms.date: 05/10/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 3b596e5bad8202d88ea06c7eee114bec1063a35f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 495326c172f900dc8bcff78b0df38f2cb64ed27e
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075669"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546536"
 ---
-# <a name="enabling-azure-ultra-ssds"></a>Habilitando o SSDs ultra do Azure
+# <a name="enable-and-deploy-azure-ultra-ssds-preview"></a>Habilitar e implantar o SSDs ultra do Azure (visualização)
 
-O ultra SSD do Azure proporciona uma alta taxa de transferência, alta IOPS e armazenamento em disco de baixa latência e consistente para as VMs de IaaS do Azure. Essa nova oferta fornece o melhor em desempenho de linha, nos mesmos níveis de disponibilidade que nossas ofertas de discos atuais. Os benefícios adicionais do ultra SSD incluem a capacidade de alterar dinamicamente o desempenho do disco, junto com suas cargas de trabalho, sem a necessidade de reiniciar as máquinas virtuais. O ultra SSD é adequado a cargas de trabalho de grande volume de dados, como SAP HANA, bancos de dados de camada superior e cargas de trabalho de transações pesadas.
+Unidades de estado sólido de ultra do Azure alta taxa de transferência de oferta da (SSD) (versão prévia), IOPS alta e armazenamento de disco de baixa latência consistente para máquinas virtuais de IaaS do Azure (VMs). Essa nova oferta fornece o melhor em desempenho de linha, nos mesmos níveis de disponibilidade que nossas ofertas de discos atuais. Um dos maiores benefícios do SSDs ultra é a capacidade de alterar dinamicamente o desempenho da SSD, juntamente com suas cargas de trabalho sem a necessidade de reiniciar as VMs. Ultra SSDs é adequado para cargas de trabalho de grande volume de dados, como SAP HANA, bancos de dados de camada superior e cargas de trabalho pesadas de transação.
 
-No momento, o ultra SSD está na versão prévia e é necessário [registrar-se](https://aka.ms/UltraSSDPreviewSignUp) para acessá-lo.
+Atualmente, o SSDs ultra estão em visualização e você deve [registrar](https://aka.ms/UltraSSDPreviewSignUp) na visualização para acessá-los.
 
-Após a aprovação, execute um dos seguintes comandos para determinar em qual zona no Leste dos EUA 2 implantar o ultradisco:
+## <a name="determine-your-availability-zone"></a>Determinar sua zona de disponibilidade
+
+Após a aprovação, você precisa determinar qual zona de disponibilidade que você está, para usar o ultra SSDs. Execute um dos comandos a seguir para determinar qual zona no Leste dos EUA 2 para implantar seu disco ultra para:
 
 PowerShell: `Get-AzComputeResourceSku | where {$_.ResourceType -eq "disks" -and $_.Name -eq "UltraSSD_LRS" }`
 
-CLI: `az vm list-skus --resource-type disks --query “[?name==’UltraSSD_LRS’]”`
+CLI: `az vm list-skus --resource-type disks --query “[?name==UltraSSD_LRS]”`
 
-A resposta será semelhante à forma abaixo, em que X é a zona a ser usada para implantação no Leste dos EUA 2. X pode ser 1, 2 ou 3.
+A resposta será semelhante ao formulário abaixo, onde X é a zona a ser usado para implantar no Leste dos EUA 2. X pode ser 1, 2 ou 3.
+
+Preservar os **zonas** valor, ele representa a zona de disponibilidade e você precisará dele para implantar um SSD ultra.
 
 |ResourceType  |NOME  |Local padrão  |Zonas  |Restrição  |Recurso  |Value  |
 |---------|---------|---------|---------|---------|---------|---------|
-|disks     |UltraSSD_LRS         |eastus2         |X         |         |         |         |
+|discos     |UltraSSD_LRS         |eastus2         |X         |         |         |         |
 
-Se não houve resposta do comando, significa que seu registro no recurso ainda está pendente ou não foi aprovado ainda.
+Se não houve resposta do comando e, em seguida, seu registro para o recurso é ainda pendente ou aprovado ainda.
 
 Agora que você sabe em qual zona implantar, siga as etapas neste artigo para fazer sua primeira implantação de VMs com o ultra SSD.
 
-## <a name="deploying-an-ultra-ssd"></a>Implantando um ultra SSD
+## <a name="deploy-an-ultra-ssd-using-azure-resource-manager"></a>Implantar um SSD ultra usando o Azure Resource Manager
 
-Primeiro, determine o tamanho da VM a ser implantada. Como parte dessa versão prévia, há suporte apenas para as famílias de VM DsV3 e EsV3. Confira a segunda tabela neste [blog](https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/) para obter mais detalhes sobre esses tamanhos de VM.
-Consulte também o exemplo em [Criar uma VM com um ultra SSD múltiplo](https://aka.ms/UltraSSDTemplate), que mostra como criar uma VM com um ultra SSD múltiplo.
+Primeiro, determine o tamanho da VM para implantar. Como parte dessa versão prévia, há suporte apenas para as famílias de VM DsV3 e EsV3. Confira a segunda tabela neste [blog](https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/) para obter mais detalhes sobre esses tamanhos de VM.
 
-A seguir, são descritas as alterações novas/modificadas no modelo do Resource Manager: **apiVersion** para `Microsoft.Compute/virtualMachines` e `Microsoft.Compute/Disks` deve ser definido como `2018-06-01` (ou posterior).
+Se você quiser criar uma VM com vários SSDs ultra, consulte o exemplo [criar uma VM com vários SSD ultra](https://aka.ms/UltraSSDTemplate).
 
-Especifique o Sku do Disco UltraSSD_LRS, a capacidade do disco, a IOPS e a taxa de transferência em MBps para criar um ultradisco. A seguir há um exemplo que cria um disco com 1.024 GiB (GiB = 2^30 bytes), 80.000 IOPS e 1.200 MBps (MBps = 10^6 Bytes por segundo):
+Se você pretende usar seu próprio modelo, verifique se **apiVersion** para `Microsoft.Compute/virtualMachines` e `Microsoft.Compute/Disks` está definido como `2018-06-01` (ou posterior).
 
-```json
-"properties": {  
-    "creationData": {  
-    "createOption": "Empty"  
-},  
-"diskSizeGB": 1024,  
-"diskIOPSReadWrite": 80000,  
-"diskMBpsReadWrite": 1200,  
-}
-```
-
-Adicione uma funcionalidade extra nas propriedades da VM para indicar seu ultra SSD habilitado (consulte o [exemplo](https://aka.ms/UltraSSDTemplate) para obter o modelo do Resource Manager completo):
-
-```json
-{
-    "apiVersion": "2018-06-01",
-    "type": "Microsoft.Compute/virtualMachines",
-    "properties": {
-                    "hardwareProfile": {},
-                    "additionalCapabilities" : {
-                                    "ultraSSDEnabled" : "true"
-                    },
-                    "osProfile": {},
-                    "storageProfile": {},
-                    "networkProfile": {}
-    }
-}
-```
+Defina a sku de disco para **UltraSSD_LRS**, em seguida, defina a capacidade do disco, IOPS, zona de disponibilidade e taxa de transferência em MBps para criar um disco ultra.
 
 Depois que a VM for provisionada, será possível particionar e formatar os discos de dados e configurá-los para suas cargas de trabalho.
 
-## <a name="additional-ultra-ssd-scenarios"></a>Outros cenários do ultra SSD
+## <a name="deploy-an-ultra-ssd-using-cli"></a>Implantar um SSD ultra usando a CLI
 
-- Durante a Criação da VM, o ultra SSD pode ser criado implicitamente também. No entanto, esses discos receberão um valor padrão de IOPS (500) e taxa de transferência (8 MiB/s).
-- Outro ultra SSD pode ser anexado às VMs compatíveis.
-- O ultra SSD dá suporte ao ajuste dos atributos de desempenho do disco (IOPS e taxa de transferência) durante a execução sem desanexar o disco da máquina virtual. Depois que uma operação de redimensionamento de desempenho do disco tiver sido emitida em um disco, poderá levar até uma hora para que a alteração entre em vigor efetivamente.
-- O aumento da capacidade do disco requer que uma máquina virtual seja desalocada.
+Primeiro, determine o tamanho da VM para implantar. Como parte dessa versão prévia, há suporte apenas para as famílias de VM DsV3 e EsV3. Confira a segunda tabela neste [blog](https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/) para obter mais detalhes sobre esses tamanhos de VM.
+
+Para usar o ultra SSDs, você deve criar uma VM que é capaz de usar o ultra SSDs.
+
+Substituir ou definir as **$vmname**, **$rgname**, **$diskname**, **$location**, **$password**, **$user** variáveis com seus próprios valores. Definir **$zone** para o valor de sua zona de disponibilidade que você obteve o [início deste artigo](#determine-your-availability-zone). Em seguida, execute o seguinte comando CLI para criar uma VM habilitada ultra:
+
+```azurecli-interactive
+az vm create --subscription $subscription -n $vmname -g $rgname --image Win2016Datacenter --ultra-ssd-enabled --zone $zone --authentication-type password --admin-password $password --admin-username $user --attach-data-disks $diskname --size Standard_D4s_v3 --location $location
+```
+
+### <a name="create-an-ultra-ssd-using-cli"></a>Criar um SSD ultra usando a CLI
+
+Agora que você tem uma VM que é capaz de usar o ultra SSDs, você pode criar e anexar um SSD ultra a ele.
+
+```azurecli-interactive
+location="eastus2"
+subscription="xxx"
+rgname="ultraRG"
+diskname="ssd1"
+vmname="ultravm1"
+zone=123
+
+#create an Ultra SSD disk
+az disk create `
+--subscription $subscription `
+-n $diskname `
+-g $rgname `
+--size-gb 4 `
+--location $location `
+--zone $zone `
+--sku UltraSSD_LRS `
+--disk-iops-read-write 1000 `
+--disk-mbps-read-write 50
+```
+
+### <a name="adjust-the-performance-of-an-ultra-ssd-using-cli"></a>Ajustar o desempenho de um SSD ultra usando a CLI
+
+SSDs Ultra oferecem um recurso exclusivo que permite que você ajuste seu desempenho, o comando a seguir ilustra como usar esse recurso:
+
+```azurecli-interactive
+az disk update `
+--subscription $subscription `
+--resource-group $rgname `
+--name $diskName `
+--set diskIopsReadWrite=80000 `
+--set diskMbpsReadWrite=800
+```
+
+## <a name="deploy-an-ultra-ssd-using-powershell"></a>Implantar um SSD ultra usando o PowerShell
+
+Primeiro, determine o tamanho da VM para implantar. Como parte dessa versão prévia, há suporte apenas para as famílias de VM DsV3 e EsV3. Confira a segunda tabela neste [blog](https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/) para obter mais detalhes sobre esses tamanhos de VM.
+
+Para usar o ultra SSDs, você deve criar uma VM que é capaz de usar o ultra SSDs. Substituir ou definir as **$resourcegroup** e **$vmName** variáveis com seus próprios valores. Definir **$zone** para o valor de sua zona de disponibilidade que você obteve o [início deste artigo](#determine-your-availability-zone). Em seguida, execute o seguinte [New-AzVm](/powershell/module/az.compute/new-azvm) comando para criar um ultra habilitado VM:
+
+```powershell
+New-AzVm `
+    -ResourceGroupName $resourcegroup `
+    -Name $vmName `
+    -Location "eastus2" `
+    -Image "Win2016Datacenter" `
+    -EnableUltraSSD `
+    -size "Standard_D4s_v3" `
+    -zone $zone
+```
+
+### <a name="create-an-ultra-ssd-using-powershell"></a>Criar um SSD ultra usando o PowerShell
+
+Agora que você tem uma VM que é capaz de usar o ultra SSDs, você pode criar e anexar um SSD ultra a ele:
+
+```powershell
+$diskconfig = New-AzDiskConfig `
+-Location 'EastUS2' `
+-DiskSizeGB 8 `
+-DiskIOPSReadWrite 1000 `
+-DiskMBpsReadWrite 100 `
+-AccountType UltraSSD_LRS `
+-CreateOption Empty `
+-zone $zone;
+
+New-AzDisk `
+-ResourceGroupName $resourceGroup `
+-DiskName 'Disk02' `
+-Disk $diskconfig;
+```
+
+### <a name="adjust-the-performance-of-an-ultra-ssd-using-powershell"></a>Ajustar o desempenho de um SSD ultra usando o PowerShell
+
+Ultra SSDs têm uma funcionalidade exclusiva que permite que você ajuste seu desempenho, o comando a seguir está um exemplo que ajusta o desempenho sem a necessidade de desanexar o disco:
+
+```powershell
+$diskupdateconfig = New-AzDiskUpdateConfig -DiskMBpsReadWrite 2000
+Update-AzDisk -ResourceGroupName $resourceGroup -DiskName $diskName -DiskUpdate $diskupdateconfig
+```
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Se desejar experimentar o novo tipo de disco e ainda não tiver inscrito na versão prévia, [solicite o acesso por meio desta pesquisa](https://aka.ms/UltraSSDPreviewSignUp).
+Se você quiser experimentar o novo tipo de disco [solicitar acesso à visualização com essa pesquisa](https://aka.ms/UltraSSDPreviewSignUp).

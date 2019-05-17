@@ -3,8 +3,8 @@ title: Gerenciamento de provisionamento de usuário para aplicativos empresariai
 description: Saiba como gerenciar o provisionamento de contas de usuário para aplicativos empresariais usando o Azure Active Directory
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.devlang: na
@@ -12,15 +12,15 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/01/2019
-ms.author: celested
+ms.author: mimart
 ms.reviewer: asmalser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d03ca64f3f3d2f034433f2aaa49f6babb7f9e5b4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a7319a108cb52c603396f8c654697e16438fa7d6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60442076"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65780974"
 ---
 # <a name="managing-user-account-provisioning-for-enterprise-apps-in-the-azure-portal"></a>Gerenciamento de provisionamento de conta de usuário para aplicativos empresariais no Portal do Azure
 
@@ -56,7 +56,7 @@ O **provisionamento** painel começa com um **modo** menu, que mostra os modos d
 
 Selecione o **automática** opção para especificar configurações de credenciais de administrador, mapeamentos, iniciando e parando e sincronização.
 
-### <a name="admin-credentials"></a>Credenciais de administrador
+### <a name="admin-credentials"></a>Credenciais de Administrador
 
 Expandir **credenciais de administrador** para inserir as credenciais necessárias para o Azure AD para se conectar à API de gerenciamento de usuário do aplicativo. A entrada necessária varia dependendo do aplicativo. Para saber mais sobre os tipos de credencial e os requisitos para aplicativos específicos, confira o [tutorial de configuração para o aplicativo específico](user-provisioning.md).
 

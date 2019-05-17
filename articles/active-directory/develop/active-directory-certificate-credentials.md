@@ -3,8 +3,8 @@ title: Credenciais de certificado no Azure AD | Microsoft Docs
 description: Este artigo aborda o registro e uso de credenciais de certificado para autenticação do aplicativo
 services: active-directory
 documentationcenter: .net
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 88f0c64a-25f7-4974-aca2-2acadc9acbd8
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c4ee1ce56723e4a2c9ab80c12456bbc1b66f6d5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 34a499ac12bcf6f4aee671eb209b709390ca6139
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60411396"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545133"
 ---
 # <a name="certificate-credentials-for-application-authentication"></a>Credenciais de certificado para autenticação do aplicativo
 
@@ -53,7 +53,7 @@ Para calcular a asserção, você pode usar uma das muitas bibliotecas [JSON Web
 | `nbf` | Não Antes de: a data anterior à qual o token não pode ser usado. A hora é representada como o número de segundos de 1º de janeiro de 1970 (1970-01-01T0:0:0Z) UTC até a hora em que o token foi emitido. |
 | `sub` | Assunto: Quanto a `iss`, deve ser a client_id (ID do aplicativo de serviço do cliente) |
 
-### <a name="signature"></a>Signature
+### <a name="signature"></a>Assinatura
 
 A assinatura é calculada aplicando o certificado conforme descrito na [especificação Token Web JSON RFC7519](https://tools.ietf.org/html/rfc7519)
 

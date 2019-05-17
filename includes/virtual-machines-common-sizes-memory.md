@@ -5,19 +5,21 @@ services: virtual-machines
 author: jonbeck7
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 07/06/2018
+ms.date: 05/13/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
-ms.openlocfilehash: 39c64b9fe4e03bb0b7216a8d1ba607bec10b4708
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 8cc13e9aec679a79d31d2724ba412efd2d58dfd1
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64743861"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65561273"
 ---
 Os tamanhos de VM otimizados para memória oferecem uma taxa de memória alta para CPU que são ideais para servidores de banco de dados relacionais, caches médio a grande e análises in-memory. Este artigo fornece informações sobre o número de vCPUs, discos de dados e NICs, bem como a taxa de transferência de armazenamento e largura de banda de rede para cada tamanho neste agrupamento. 
 
-* A série M oferece a contagem de vCPU mais alta (até 128 vCPUs) e a memória maior (até 3,8 TiB) de qualquer máquina virtual na nuvem.  Ele é ideal para bancos de dados muito grandes ou outros aplicativos que se beneficiam de altas contagens de vCPU e de grandes quantidades de memória.
+* A série Mv2 oferece a contagem de vCPU mais alta (até 208 vCPUs) e a memória maior (até 5.7 TiB de qualquer máquina virtual na nuvem). Ele é ideal para bancos de dados muito grandes ou outros aplicativos que se beneficiam de altas contagens de vCPU e de grandes quantidades de memória.
+ 
+* A série M oferece uma contagem de vCPU alta (até 128 vCPUs) e uma grande quantidade de memória (até 3,8 TiB). Também é ideal para bancos de dados extremamente grandes ou outros aplicativos que se beneficiam de altas contagens de vCPU e grandes quantidades de memória.
 
 * Série Dv2, G-series e as equivalentes DSv2/GS são ideais para aplicativos que exigem CPUs mais rápidas, melhor desempenho de armazenamento temporário, ou que têm maior demanda de memória. Elas oferecem uma combinação poderosa para vários aplicativos de nível empresarial.
 
@@ -61,9 +63,9 @@ As instâncias ESv3-series são baseadas no processador Intel XEON ® E5-2673 v4
 
 ACU: 160 - 190 <sup>1</sup>
 
-Armazenamento Premium:  Sem suporte
+Armazenamento Premium:  Sem Suporte
 
-Cache de armazenamento Premium:  Sem suporte
+Cache de armazenamento Premium:  Sem Suporte
 
 As instâncias Ev3-series são baseadas no processador Intel XEON ® E5-2673 v4 (Broadwell) de 2.3 GHz e podem atingir 3.5 GHz com a Tecnologia Intel Turbo Boost 2.0. As instâncias Ev3-series são ideais para aplicativos empresariais com uso intensivo de memória.
 
@@ -86,6 +88,24 @@ O armazenamento do disco de dados é faturado separadamente das máquinas virtua
 <sup>2</sup> Tamanhos limitados de núcleos disponíveis.
 
 <sup>3</sup> A instância é isolada em hardware dedicado a um único cliente.
+
+
+## <a name="mv2-series"></a>Série Mv2
+
+Armazenamento Premium: Com suporte
+
+Cache de armazenamento Premium: Com suporte
+
+Acelerador de Gravação: [Com suporte](https://docs.microsoft.com/azure/virtual-machines/windows/how-to-enable-write-accelerator)
+
+|Tamanho | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Discos de dados máximos | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps (tamanho do cache em GiB) | Taxa de transferência de disco sem cache: IOPS / MBps | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
+|-----------------|------|-------------|----------------|----------------|-----------------------------------------------------------------------|-------------------------------------------|------------------------------|
+| Standard_M208ms_v22<sup>1</sup> | 208 | 5700 | 4096 | 64 | 80,000 / 800 (7,040) | 40.000 / 1000 | 8 / 16000 |
+| Standard_M208s_v22<sup>1</sup> | 208 | 2850 | 4096 | 64 | 80,000 / 800 (7,040) | 40.000 / 1000 | 8 / 16000 |
+
+A tecnologia Intel® Hyper-Threading de recursos da VM série Mv2  
+
+<sup>1</sup> essas grandes Vcpus exigem um destes sistemas operacionais convidados com suporte: Windows Server 2016, Windows Server 2019, SLES 12 SP4, SLES 15 e RHEL 7.6
 
 
 ## <a name="m-series"></a>Série M 
@@ -154,9 +174,9 @@ Cache de armazenamento Premium:  Com suporte
 
 ACU: 180 - 240
 
-Armazenamento Premium:  Sem suporte
+Armazenamento Premium:  Sem Suporte
 
-Cache de armazenamento Premium:  Sem suporte
+Cache de armazenamento Premium:  Sem Suporte
 
 | Tamanho         | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps de leitura / MBps de gravação | Discos de dados máximos / taxa de transferência: IOPS | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
 |--------------|-----------|-------------|----------------|----------------------------------------------------------|-----------------------------------|------------------------------|
@@ -164,7 +184,7 @@ Cache de armazenamento Premium:  Sem suporte
 | Standard_G2  | 4         | 56          | 768            | 12000 / 187 / 93                                         | 16 / 16 x 500                       | 2 / 4000                     |
 | Standard_G3  | 8         | 112         | 1.536          | 24000 / 375 / 187                                        | 32 / 32 x 500                     | 4 / 8000                |
 | Standard_G4  | 16        | 224         | 3.072          | 48000 / 750 / 375                                        | 64 / 64 x 500                     | 8 / 16000          |
-| Standard_G5&nbsp;<sup>1</sup> | 32        | 448         | 6.144          | 96000 / 1500 / 750                                       | 64 / 64 x 500                     | 8 / 20000           |
+| Standard_G5&nbsp;<sup>1</sup> | 32        | 448         | 6,144          | 96000 / 1500 / 750                                       | 64 / 64 x 500                     | 8 / 20000           |
 
 <sup>1</sup> A instância é isolada em hardware dedicado a um único cliente.
 <br>
@@ -196,9 +216,9 @@ Cache de armazenamento Premium:  Com suporte
 
 ACU: 210 - 250
 
-Armazenamento Premium:  Sem suporte
+Armazenamento Premium:  Sem Suporte
 
-Cache de armazenamento Premium:  Sem suporte
+Cache de armazenamento Premium:  Sem Suporte
 
 | Tamanho              | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps de leitura / MBps de gravação | Discos de dados máximos / taxa de transferência: IOPS | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
 |-------------------|-----------|-------------|----------------|----------------------------------------------------------|-----------------------------------|------------------------------|

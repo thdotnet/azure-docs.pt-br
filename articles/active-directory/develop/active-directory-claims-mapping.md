@@ -2,23 +2,23 @@
 title: Personalizar declarações emitidas em tokens para um aplicativo específico em um locatário do Azure AD (versão prévia pública)
 description: Esta página descreve o mapeamento de declarações no Azure Active Directory.
 services: active-directory
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2076aec1585ff8b60ee2b593621b75abfaeaa1ac
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8b770ee476fc5c1c334f53904539cc34cf962c62
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60300471"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546196"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Como: personalizar declarações emitidas em tokens para um aplicativo específico em um locatário (versão prévia)
 
@@ -44,7 +44,7 @@ Uma política de mapeamento de declarações é um tipo de objeto de **Política
 
 Há determinados conjuntos de declarações que definem como e quando elas são usadas em tokens.
 
-| Conjunto de declarações | DESCRIÇÃO |
+| Conjunto de declarações | Descrição |
 |---|---|
 | Conjunto de declarações de núcleo | Estão presentes em todos os tokens, independentemente da política. Essas declarações também são consideradas restritas e não podem ser modificadas. |
 | Conjunto de declarações básicas | Inclui as declarações que são emitidas por padrão para os tokens (além do conjunto de declarações principais). Você pode omitir ou modificar as declarações básicas usando as políticas de mapeamento de declarações. |
@@ -105,7 +105,7 @@ Há determinados conjuntos de declarações que definem como e quando elas são 
 | grant_type |
 | grafo |
 | group_sids |
-| groups |
+| Grupos |
 | hasgroups |
 | hash_alg |
 | home_oid |
@@ -142,7 +142,7 @@ Há determinados conjuntos de declarações que definem como e quando elas são 
 | onprem_sam_account_name |
 | onprem_sid |
 | openid2_id |
-| Senha |
+| password |
 | platf |
 | polids |
 | pop_jwk |
@@ -156,10 +156,10 @@ Há determinados conjuntos de declarações que definem como e quando elas são 
 | refresh_token |
 | refreshtoken |
 | request_nonce |
-| recurso |
+| Recurso |
 | função |
-| roles |
-| scope |
+| funções |
+| escopo |
 | scp |
 | sid |
 | signature |
@@ -177,7 +177,7 @@ Há determinados conjuntos de declarações que definem como e quando elas são 
 | unique_name |
 | upn |
 | user_setting_sync_url |
-| Nome de Usuário |
+| username |
 | uti |
 | ver |
 | verified_primary_email |
@@ -284,11 +284,11 @@ O elemento ID identifica qual propriedade na origem fornece o valor da declaraç
 
 #### <a name="table-3-valid-id-values-per-source"></a>Tabela 3: valores de ID válidos por fonte
 
-| Fonte | ID | DESCRIÇÃO |
+| `Source` | ID | Descrição |
 |-----|-----|-----|
 | Usuário | sobrenome | Nome da família |
 | Usuário | givenname | Nome |
-| Usuário | displayname | Nome de exibição |
+| Usuário | displayname | Nome para exibição |
 | Usuário | objectid | ObjectID |
 | Usuário | mail | Endereço de Email |
 | Usuário | userprincipalname | Nome UPN |
@@ -321,11 +321,11 @@ O elemento ID identifica qual propriedade na origem fornece o valor da declaraç
 | Usuário | othermail | Outro email |
 | Usuário | country | País/Região |
 | Usuário | city | City |
-| Usuário | state | Estado |
+| Usuário | estado | Estado |
 | Usuário | jobtitle | Cargo |
 | Usuário | employeeid | ID do funcionário |
 | Usuário | facsimiletelephonenumber | Número de telefone de fax |
-| aplicativo, recurso, público-alvo | displayname | Nome de exibição |
+| aplicativo, recurso, público-alvo | displayname | Nome para exibição |
 | aplicativo, recurso, público-alvo | objected | ObjectID |
 | aplicativo, recurso, público-alvo | marcas | Marcação da entidade de serviço |
 | Empresa | tenantcountry | País/Região do locatário |
@@ -358,7 +358,7 @@ Com base no método escolhido, um conjunto de entradas e saídas é esperado. De
 
 #### <a name="table-4-transformation-methods-and-expected-inputs-and-outputs"></a>Tabela 4: métodos de transformação e entradas e saídas esperadas
 
-|TransformationMethod|Entrada esperada|Saída esperada|DESCRIÇÃO|
+|TransformationMethod|Entrada esperada|Saída esperada|Descrição|
 |-----|-----|-----|-----|
 |Ingressar|cadeia1, cadeia2, separador|outputClaim|Une cadeias de entrada usando um separador entre elas. Por exemplo: cadeia1: "foo@bar.com", cadeia2: "sandbox", separador: "." resulta no outputClaim: "foo@bar.com.sandbox"|
 |ExtractMailPrefix|mail|outputClaim|Extrai a parte local do endereço de email. Por exemplo: email: "foo@bar.com" resulta no outputClaim: "foo". Se não houver nenhum sinal \@ presente, a cadeia de caracteres de entrada original será retornada sem alterações.|
@@ -384,7 +384,7 @@ Com base no método escolhido, um conjunto de entradas e saídas é esperado. De
 
 #### <a name="table-5-attributes-allowed-as-a-data-source-for-saml-nameid"></a>Tabela 5: atributos permitidos como fonte de dados para NameID SAML
 
-|Fonte|ID|DESCRIÇÃO|
+|`Source`|ID|Descrição|
 |-----|-----|-----|
 | Usuário | mail|Endereço de Email|
 | Usuário | userprincipalname|Nome UPN|

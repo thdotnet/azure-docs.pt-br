@@ -3,8 +3,8 @@ title: Permissões no Azure Active Directory | Microsoft Docs
 description: Saiba mais sobre permissões no Microsoft Azure Active Directory e como usá-las.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 6c0dc122-2cd8-4d70-be5a-3943459d308e
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: jesakowi, justhu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ee58c2a3bed7544ff68e7d6ec756c35bee1d05b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6fb4342e024d826c65ed33184aaf33012d09190a
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60250803"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545204"
 ---
 # <a name="permissions-and-consent-in-the-azure-active-directory-v10-endpoint"></a>Permissões e consentimento no ponto de extremidade v1.0 do Azure Active Directory
 
@@ -61,7 +61,7 @@ As permissões no AD do Azure têm um número de propriedades que ajudam, admini
 > (Get-AzureADServicePrincipal -filter "DisplayName eq 'Microsoft Graph'").AppRoles
 > ```
 
-| Nome da propriedade | DESCRIÇÃO | Exemplo |
+| Nome da propriedade | Descrição | Exemplo |
 | --- | --- | --- |
 | `ID` | É um valor de GUID que identifica exclusivamente esta permissão. | 570282fd-fa5c-430d-a7fd-fc8dc98a9dca |
 | `IsEnabled` | Indica se essa permissão está disponível para uso. | verdadeiro |
@@ -106,7 +106,7 @@ Os aplicativos no Microsoft Azure Active Directory dependem de autorização par
   - `Permission` corresponde à ação que um usuário pode realizar em relação aos dados
   - `Modifier` é usado, opcionalmente, para descrever especializações de outra permissão
     
-    Por exemplo: 
+    Por exemplo:
   - Mail.Read - permite que os usuários leiam o email.
   - Mail.Read - permite que os usuários leiam o email.
   - Mail.ReadWrite.All - permite que um administrador ou usuário acesse todos os emails da organização.

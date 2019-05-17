@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 04/15/2019
-ms.openlocfilehash: e191c656c5485377f62073f52dec0b3dbee7537b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b78671cc61a4fe755b908ed9f71052cbd0a70b38
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61041268"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65550501"
 ---
 # <a name="limitations-in-azure-database-for-mariadb"></a>Limitações no Banco de Dados do Azure para o MariaDB
 As seções a seguir descrevem a capacidade, suporte do mecanismo de armazenamento, suporte de privilégio, suporte à instrução de manipulação de dados e limites funcionais no serviço do banco de dados.
@@ -29,11 +29,11 @@ O número máximo de conexões por tipo de preço e vCores é o seguinte:
 |Uso geral| 16| 2500|
 |Uso geral| 32| 5.000|
 |Uso geral| 64| 10000|
-|Otimizado para memória| 2| 600|
-|Otimizado para memória| 4| 1250|
-|Otimizado para memória| 8| 2500|
-|Otimizado para memória| 16| 5.000|
-|Otimizado para memória| 32| 10000|
+|Memória Otimizada| 2| 600|
+|Memória Otimizada| 4| 1250|
+|Memória Otimizada| 8| 2500|
+|Memória Otimizada| 16| 5.000|
+|Memória Otimizada| 32| 10000|
 
 Quando as conexões excederem o limite, você poderá receber o seguinte erro:
 > ERRO 1040 (08004): Muitas conexões
@@ -77,11 +77,14 @@ Quando as conexões excederem o limite, você poderá receber o seguinte erro:
 - Ao usar o recurso PITR, o novo servidor é criado com as mesmas configurações nas quais o servidor está baseado.
 - Não há suporte para restaurar um servidor eliminado.
 
-### <a name="subscription-management"></a>Gerenciamento de assinaturas
+### <a name="subscription-management"></a>Gerenciamento de assinatura
 - Não há suporte para mover dinamicamente servidores criados previamente entre a assinatura e o grupo de recursos.
 
 ### <a name="vnet-service-endpoints"></a>Ponto de extremidade de serviço VNet
 - O suporte para ponto de extremidade de serviço de VNet é apenas para servidores de Uso Geral e Otimizados para Memória.
+
+### <a name="storage-size"></a>Tamanho do armazenamento
+- Consulte a [tipos de preço](concepts-pricing-tiers.md) para os limites de tamanho de armazenamento por tipo de preço.
 
 ## <a name="current-known-issues"></a>Problemas frequentes conhecidos
 - Instância de servidor MariaDB exibe a versão de servidor incorreto após o estabelecimento de conexão. Para obter a versão correta do mecanismo de instância de servidor, use o comando `select version();`.

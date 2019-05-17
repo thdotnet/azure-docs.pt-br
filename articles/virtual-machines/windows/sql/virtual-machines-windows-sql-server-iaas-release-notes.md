@@ -13,36 +13,41 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 2/13/2019
-ms.openlocfilehash: 23e072369aa8ac6ca6ada5ec185df1a8d7e03c5b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f929369030b6f0a634eb2c84e33eee24af8cb6a2
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61477171"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787505"
 ---
 # <a name="sql-server-on-azure-virtual-machine-release-notes"></a>Notas de versão do SQL Server no Virtual Machine do Azure
 
 O Azure permite implantar uma máquina virtual com uma imagem do SQL Server incorporada. Este artigo resume os novos recursos e melhorias nas versões recentes do [SQL Server em máquinas virtuais do Azure](https://azure.microsoft.com/services/virtual-machines/sql-server/). O artigo também lista importantes atualizações de conteúdo que não estão diretamente vinculadas à versão, mas foram publicadas no mesmo período. Para encontrar melhorias em outros serviços do Azure, confira [Atualizações de serviço](https://azure.microsoft.com/updates)
 
-## <a name="march-2019"></a>Março de 2019
+## <a name="april-2019"></a>Abril de 2019
 
 ### <a name="service-improvements"></a>Melhorias nos serviços
 
 | Melhorias nos serviços | Detalhes |
 | --- | --- |
-| **Capacidade de suporte de imagem personalizada** | Agora você pode instalar o [extensão SQL IaaS](virtual-machines-windows-sql-server-agent-extension.md#installation) às imagens do sistema operacional e o SQL personalizadas, que oferece a funcionalidade limitada do [licenciamento flexível](virtual-machines-windows-sql-ahb.md). Ao registrar sua imagem personalizada com o provedor de recursos do SQL, especifique o tipo de licença como 'AHUB' como caso contrário, o registro falhará.  | 
-| **Capacidade de suporte da instância nomeada** | Você pode utilizar o [extensão SQL IaaS](virtual-machines-windows-sql-server-agent-extension.md#installation) com uma instância nomeada, se a instância padrão tiver sido desinstalada corretamente. | 
-| **Aprimoramento do Portal** | A experiência do portal do Azure para implantar uma VM do SQL Server foi remodelada para melhorar a usabilidade. Para obter mais informações, consulte o resumo [Quickstart](quickstart-sql-vm-create-portal.md) e mais completa [instruções](virtual-machines-windows-portal-sql-server-provision.md) guia para implantar uma VM do SQL Server. |
+| **Estender o suporte para SQL Server 2008/2008R2** | [Estender o suporte](virtual-machines-windows-sql-server-2008-eos-extend-support.md) para o SQL Server 2008 e SQL Server 2008 R2 migrando *como-está* para uma VM do Azure. | 
 | &nbsp; | &nbsp; |
 
 ### <a name="documentation-improvements"></a>Melhorias na documentação
 
 Nenhum
 
+## <a name="march-2019"></a>Março de 2019
+
+| Melhorias nos serviços | Detalhes |
+| --- | --- |
+| **Capacidade de suporte de imagem personalizada** | Agora você pode instalar o [extensão SQL IaaS](virtual-machines-windows-sql-server-agent-extension.md#installation) às imagens do sistema operacional e o SQL personalizadas, que oferece a funcionalidade limitada do [licenciamento flexível](virtual-machines-windows-sql-ahb.md). Ao registrar sua imagem personalizada com o provedor de recursos do SQL, especifique o tipo de licença como 'AHUB' como caso contrário, o registro falhará.  | 
+| **Capacidade de suporte da instância nomeada** | Você pode utilizar o [extensão SQL IaaS](virtual-machines-windows-sql-server-agent-extension.md#installation) com uma instância nomeada, se a instância padrão tiver sido desinstalada corretamente. | 
+| **Aprimoramento do Portal** | A experiência do portal do Azure para implantar uma VM do SQL Server foi remodelada para melhorar a usabilidade. Para obter mais informações, consulte o resumo [Quickstart](quickstart-sql-vm-create-portal.md) e mais completa [instruções](virtual-machines-windows-portal-sql-server-provision.md) guia para implantar uma VM do SQL Server.|
+| &nbsp; | &nbsp; |
+
 
 ## <a name="february-2019"></a>fevereiro de 2019
-
-### <a name="service-improvements"></a>Melhorias nos serviços
 
 | Melhorias nos serviços | Detalhes |
 | --- | --- |

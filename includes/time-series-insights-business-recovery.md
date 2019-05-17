@@ -8,12 +8,12 @@ ms.service: time-series-insights
 author: kingdomofends
 ms.author: adgera
 ms.date: 04/29/2019
-ms.openlocfilehash: cf07d19966c08a63b9aa50475622aa0a1e5e1600
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: e87a82e985ed1d1794f9da00546f167ef01e1779
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236527"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65815466"
 ---
 ## <a name="business-disaster-recovery"></a>Recuperação de desastre de negócios
 
@@ -48,10 +48,10 @@ A integração com esses outros serviços do Time Series Insights fornece desast
 
 Há várias maneiras de manter seus dados de séries temporais, aplicativos e serviços em execução, mesmo se elas são interrompidas. Você também pode determinar que uma cópia completa, duplicada, o backup do seu ambiente Azure Time Series é necessária:
 
-1. Como um específico TSI **instância failover** para redirecionar dados e para o tráfego.
+1. Como uma série de tempo específico Insights **instância failover** para redirecionar dados e para o tráfego.
 1. Para fins de preservação de dados e de auditoria.
 
-Em geral, a melhor maneira para duplicar um ambiente do TSI é criar um ambiente de TSI de segundo em um backup de região do Azure. Eventos também são enviados para esse ambiente secundário da fonte de evento principal. Certifique-se de usar um grupo de consumidores dedicado, segundo e seguir as diretrizes de recuperação desastre business que da origem (fornecidas acima).
+Em geral, a melhor maneira para duplicar um ambiente do Time Series Insights é criar um segundo ambiente de Time Series Insights em um backup de região do Azure. Eventos também são enviados para esse ambiente secundário da fonte de evento principal. Certifique-se de usar um grupo de consumidores dedicado, segundo e seguir as diretrizes de recuperação desastre business que da origem (fornecidas acima).
 
 Especificamente, para criar um ambiente duplicado:
 
@@ -63,7 +63,7 @@ Especificamente, para criar um ambiente duplicado:
 Por fim:
 
 * Se a região primária for afetada durante um incidente de desastres, redirecione as operações para o backup do ambiente do Time Series Insights.
-* Use sua segunda região para fazer backup e recuperar todos os dados de telemetria e consulta TSI.
+* Use sua segunda região para fazer backup e recuperar todos os dados de telemetria e consulta do Time Series Insights.
 
 > [!IMPORTANT]
 > * Pode haver atraso no evento no caso de failover.

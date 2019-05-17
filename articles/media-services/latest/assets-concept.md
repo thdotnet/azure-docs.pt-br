@@ -9,30 +9,27 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 05/02/2019
+ms.date: 05/11/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 0fc44bfdb98b81bf218cb2f1824f0f1bb14de4fa
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 2afcf2066238414cd08e32901ffccf2a44718b6d
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65235668"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65551773"
 ---
 # <a name="assets"></a>Ativos
 
-Nos Serviços de Mídia do Azure, um [Ativo](https://docs.microsoft.com/rest/api/media/assets) contém arquivos digitais (incluindo vídeo, áudio, imagens, coleções de miniaturas, faixas de texto e arquivos de legenda oculta) e os metadados sobre esses arquivos. Depois que os arquivos digitais são carregados em um Ativo, eles podem ser usados na análise de fluxos de trabalho de conteúdo, streaming e codificação dos Serviços de Mídia. Para obter mais informações, consulte [Carregar arquivos digitais na seção Ativos](#upload-digital-files-into-assets) abaixo.
+Nos serviços de mídia do Azure, uma [ativo](https://docs.microsoft.com/rest/api/media/assets) contém informações sobre arquivos digitais armazenados no armazenamento do Azure (incluindo vídeo, áudio, imagens, coleções de miniaturas, faixas de texto e arquivos de legenda oculta). 
 
 Um ativo é mapeado para um contêiner de blob na [conta de Armazenamento do Microsoft Azure](storage-account-concept.md) e os arquivos no ativo são armazenados como blob de blocos nesse contêiner. Os Serviços de Mídia oferecem suporte a camadas de Blob quando a conta usa Armazenamento de uso geral v2 (GPv2). Com o GPv2, você pode mover arquivos para o [armazenamento esporádico ou para arquivar](https://docs.microsoft.com/azure/storage/blobs/storage-blob-storage-tiers). O armazenamento **de Arquivamento** é adequado para arquivar arquivos fontes quando não forem mais necessário (por exemplo, após terem sido decodificados).
 
 A camada de armazenamento de **Arquivamento** só é recomendada para arquivos de origem muito grandes que já tenham sido codificados e a saída do trabalho de codificação foi colocada em um contêiner de blobs de saída. Os blobs no contêiner de saída que você deseja associar a um ativo e usar para transmitir ou analisar seu conteúdo, deve existir em uma camada de armazenamento de **frequente** ou **esporádico**.
 
-> [!NOTE]
-> As propriedades de ativos do tipo Datetime estão sempre no formato UTC.
-
 ## <a name="upload-digital-files-into-assets"></a>Carregar os arquivos digitais em Ativos
 
-Um dos fluxos de trabalho dos Serviços de Mídia do Azure comuns é carregar, codificar e transmitir um arquivo. Esta seção descreve as etapas gerais.
+Depois que os arquivos digitais são carregados no armazenamento e associados a um ativo, pode ser usados nos serviços de mídia, codificação, streaming, analisando os fluxos de trabalho de conteúdo. Um dos fluxos de trabalho dos Serviços de Mídia do Azure comuns é carregar, codificar e transmitir um arquivo. Esta seção descreve as etapas gerais.
 
 > [!TIP]
 > Antes de começar a desenvolver, examine [desenvolver com APIs dos serviços de mídia v3](media-services-apis-overview.md) (inclui informações sobre como acessar as APIs, as convenções de nomenclatura, etc.)
@@ -54,6 +51,9 @@ Um dos fluxos de trabalho dos Serviços de Mídia do Azure comuns é carregar, c
 Para obter um exemplo de .NET completo que mostra como: criar o ativo, obter uma URL SAS gravável para o contêiner do ativo no armazenamento, carregue o arquivo no contêiner no armazenamento usando a URL de SAS, consulte [Criar uma entrada de trabalho de um arquivo local](job-input-from-local-file-how-to.md).
 
 ### <a name="create-a-new-asset"></a>Criar um novo ativo
+
+> [!NOTE]
+> As propriedades de ativos do tipo Datetime estão sempre no formato UTC.
 
 #### <a name="rest"></a>REST
 

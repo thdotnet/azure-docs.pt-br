@@ -2,23 +2,23 @@
 title: Proxy e Tableau do Aplicativo do Azure Active Directory | Microsoft Docs
 description: Saiba como usar o Proxy de aplicativo do Azure Active Directory (AD do Azure) para fornecer acesso remoto para sua implantação Tableau.
 services: active-directory
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/20/2018
-ms.author: celested
+ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5d80381815524658d91067ee880eba47c394058
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a1aa99e7e71ad78a62c1a9da303b2ecc8347ebeb
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60292887"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65783859"
 ---
 # <a name="azure-active-directory-application-proxy-and-tableau"></a>Proxy e Tableau do Aplicativo do Azure Active Directory 
 
@@ -60,7 +60,7 @@ Para:
 
 5. Preencha os campos obrigatórios com informações sobre seu novo aplicativo. Use as diretrizes a seguir para as configurações: 
 
-    - **URL Interna**: Esse aplicativo deve ter um URL interno que seja o próprio URL do Tableau. Por exemplo, `https://adventure-works.tableau.com`. 
+    - **URL Interna**: Esse aplicativo deve ter um URL interno que seja o próprio URL do Tableau. Por exemplo: `https://adventure-works.tableau.com`. 
 
     - **Método de pré-autenticação**: Azure Active Directory (recomendado, mas não obrigatório). 
 
@@ -74,13 +74,13 @@ Para:
 
  
 
-## <a name="testing"></a>Testando 
+## <a name="testing"></a>Testes 
 
 Seu aplicativo agora está pronto para teste. Acesse o URL externo que você usou para publicar o Tableau e faça o login como um usuário atribuído aos dois aplicativos.
 
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Para obter mais informações sobre o Proxy de Aplicativo do Azure AD, consulte [Como fornecer acesso remoto seguro a aplicativos locais](application-proxy.md).
 

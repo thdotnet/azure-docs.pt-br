@@ -12,14 +12,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 05/15/2019
 ms.author: apimpm
-ms.openlocfilehash: 8e3f34210627fbb455a1eca0b415cdd6de9b3681
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e2362d06fa0ef795122a2d47a7a621b66fdd9470
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60527877"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65780348"
 ---
 # <a name="use-an-external-azure-cache-for-redis-in-azure-api-management"></a>Usar um Cache do Azure para Redis externo no Gerenciamento de API do Azure
 
@@ -40,11 +40,6 @@ O que você aprenderá:
 
 > [!div class="checklist"]
 > * Adicionar um cache externo no Gerenciamento de API
-
-## <a name="availability"></a>Disponibilidade
-
-> [!NOTE]
-> Atualmente, esse recurso está disponível apenas na camada **Consumo** do Gerenciamento de API do Azure.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -94,6 +89,7 @@ Siga as etapas abaixo para adicionar um Cache do Azure para Redis externo no Ger
 Depois que o cache externo é configurado no Gerenciamento de API do Azure, ele pode ser usado pelas políticas de cache. Confira [Adicionar cache para melhorar o desempenho no Gerenciamento de API do Azure](api-management-howto-cache.md) para ver etapas detalhadas.
 
 ## <a name="next-steps"> </a>Próximas etapas
+
 * Para saber mais sobre as políticas de cache, veja [Políticas de cache][Caching policies] na [Referência de política do Gerenciamento de API][API Management policy reference].
 * Para saber mais sobre itens de cache por chave usando expressões de política, confira [Cache personalizado no Gerenciamento de API do Azure](api-management-sample-cache-by-key.md).
 
