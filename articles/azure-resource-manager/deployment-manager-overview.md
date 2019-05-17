@@ -9,15 +9,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/09/2018
+ms.date: 05/13/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: dd7e29f8f37572565e505aade97b964254b6d72c
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: d93d9999c407e64658b88025feda48d33e1a5ad1
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65466554"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595792"
 ---
 # <a name="enable-safe-deployment-practices-with-azure-deployment-manager-public-preview"></a>Habilitar práticas de implantação segura com o Azure Deployment Manager (visualização pública)
 
@@ -38,15 +38,11 @@ Você implanta o modelo de topologia antes de implantar o modelo de implementaç
 
 A referência à API REST do Gerenciador de Implantação do Azure pode ser encontrada [aqui](https://docs.microsoft.com/rest/api/deploymentmanager/).
 
-## <a name="supported-locations"></a>Locais com suporte
-
-Para a visualização, os recursos do Gerenciador de Implantação são suportados no Central dos EUA e no Leste dos EUA 2. Ao definir recursos em sua topologia e modelos de lançamento, como unidades de serviço, fontes de artefatos e rollouts descritos neste artigo, você deve especificar uma dessas regiões para o local. No entanto, os recursos que você implanta para criar seu serviço, como máquinas virtuais, contas de armazenamento e aplicativos da web, são suportados em todos os [locais padrão](https://azure.microsoft.com/global-infrastructure/services/?products=all).  
-
 ## <a name="identity-and-access"></a>Identidade e acesso
 
 Com o Gerenciador de implantação, uma [atribuída ao usuário a identidade gerenciada](../active-directory/managed-identities-azure-resources/overview.md) executa as ações de implantação. Você cria essa identidade antes de iniciar sua implantação. Deve ter acesso à assinatura para a qual você está implantando o serviço e permissão suficiente para concluir a implantação. Para obter informações sobre as ações concedidas por meio de funções, consulte [Funções internas dos recursos do Azure](../role-based-access-control/built-in-roles.md).
 
-A identidade deve residir em um dos locais com suporte do Deployment Manager e deve residir no mesmo local que o rollout.
+A identidade deve residir no mesmo local que a distribuição.
 
 ## <a name="topology-template"></a>Modelo de topologia
 
@@ -221,7 +217,9 @@ A etapa de espera faz uma pausa na implantação antes de continuar. Ele permite
 
 A propriedade duration usa [padrão ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations). O exemplo anterior Especifica uma espera de um minuto.
 
-Para obter mais informações sobre a etapa de verificação de integridade, consulte [ ]() e [ ]() para obter mais informações, consulte [as etapas de referência de modelo](/azure/templates/Microsoft.DeploymentManager/steps).
+Para obter mais informações sobre a etapa de verificação de integridade, consulte [introduzir a distribuição de integração de integridade para o Gerenciador de implantação do Azure](./deployment-manager-health-check.md) e [Tutorial: Usar a verificação de integridade no Gerenciador de Implantação do Azure](./deployment-manager-tutorial-health-check.md).
+
+Para obter mais informações, consulte [as etapas de referência de modelo](/azure/templates/Microsoft.DeploymentManager/steps).
 
 ### <a name="rollouts"></a>Distribuições
 

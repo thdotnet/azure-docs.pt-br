@@ -9,12 +9,12 @@ author: mgottein
 manager: cgronlun
 ms.author: magottei
 ms.custom: seodec2018
-ms.openlocfilehash: b7e7ecd2a82a8d64967288def9c6ede7a292f72a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b6bb70e4c56adb162006d2597d301c73b12d2a8a
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61127563"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540883"
 ---
 # <a name="searching-blob-storage-with-azure-search"></a>Pesquisando no Armazenamento de Blobs com o Azure Search
 
@@ -45,7 +45,7 @@ O Azure Search pode ser configurado para extrair o conteúdo estruturado encontr
 
 Atualmente a análise de JSON não é configurável por meio do Portal. [Saiba mais sobre análise de JSON no Azure Search.](https://aka.ms/azsjsonblobindexing)
 
-## <a name="quick-start"></a>Início rápido
+## <a name="quick-start"></a>Início Rápido
 O Azure Search pode ser adicionado para blobs diretamente da página do portal de Armazenamento de Blobs.
 
 ![](./media/search-blob-storage-integration/blob-blade.png)

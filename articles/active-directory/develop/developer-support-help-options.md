@@ -3,8 +3,8 @@ title: Opções de suporte e ajuda para desenvolvedores do de aplicativos do Azu
 description: Saiba como obter ajuda e suporte para problemas e dúvidas relacionados ao desenvolvimento ao criar aplicativos que se integram com as identidades da Microsoft (conta Azure Active Directory e Microsoft)
 services: active-directory
 documentationcenter: dev-center-name
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/14/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: jmprieur, dadobali
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0de9b3e3535253724d068f806b219736f6889477
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6c4882e991045b4a79c0ea0a19ad8fedc2fb8892
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60299729"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540378"
 ---
 # <a name="support-and-help-options-for-developers"></a>Opções de suporte e ajuda para desenvolvedores
 
@@ -52,7 +52,7 @@ Em que *{Seus Termos de Pesquisa}* correspondem às palavras-chave de pesquisa.
 
 ## <a name="use-the-development-support-tools"></a>Use as ferramentas de suporte de desenvolvimento
 
-| Ferramenta  | DESCRIÇÃO  |
+| Tool  | Descrição  |
 |---------|---------|
 | [jwt.ms](https://jwt.ms) | Cole uma ID ou token de acesso para decodificar os nomes das declarações e valores. |
 | [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)| Ferramentas que permitem fazer solicitações e ver as respostas na API do Microsoft Graph. |
@@ -63,7 +63,7 @@ O Stack Overflow é o canal preferido para o desenvolvimento de questões relaci
 
 Se não conseguir encontrar uma resposta para sua pergunta por meio da pesquisa, envie uma nova pergunta ao Stack Overflow. Use uma das seguintes marcas ao fazer perguntas para ajudar a comunidade a identificar e responder a pergunta com mais rapidez:
 
-|Componente/área  | Marcas |
+|Componente/área  | tags |
 |---------|---------|
 | Biblioteca ADAL | [[adal]](https://stackoverflow.com/questions/tagged/adal) |
 | Biblioteca MSAL     | [[msal]](https://stackoverflow.com/questions/tagged/msal) |

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/01/2016
 ms.author: jonor;sivae
-ms.openlocfilehash: e0271c9212b093bd803518ebeaa4b7d9682cc773
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c1c64945aaa0bc4cd83cc769dab1c2a755896c01
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60868296"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603429"
 ---
 # <a name="example-2-build-a-perimeter-network-to-protect-applications-with-a-firewall-and-nsgs"></a>Exemplo 2: Crie uma rede de perímetro para proteger aplicativos com um firewall e NSGs
 [Retornar para a página segurança de rede e serviços de nuvem da Microsoft][HOME]
@@ -89,7 +89,7 @@ Há uma regra de saída padrão que permite que o tráfego de saída à internet
 
 As regras NSG descritas aqui são semelhantes às regras NSG no [exemplo 1: criar uma DMZ simples com NSGs][Example1]. Revise a descrição NSG nesse artigo para uma visão detalhada de cada regra NSG e seus atributos.
 
-## <a name="firewall-rules"></a>Regras de firewall
+## <a name="firewall-rules"></a>Regras de Firewall
 Você precisa instalar um cliente de gerenciamento em um computador para gerenciar o firewall e criar as configurações necessárias. Consulte o fornecedor de documentação do seu firewall (ou outro NVA) sobre como gerenciar o dispositivo. O restante desta seção descreve a configuração do firewall em si, por meio do cliente de gerenciamento do fornecedor (não o portal do Azure ou o PowerShell).
 
 Ver [administrador do NG Barracuda](https://techlib.barracuda.com/NG61/NGAdmin) para obter instruções de download do cliente e a conexão com o firewall Barracuda usado neste exemplo.
@@ -550,7 +550,7 @@ Você deve executar este script do PowerShell localmente em um computador conect
 Salve esse arquivo XML com locais atualizados e, em seguida, adicionar um link para esse arquivo na variável $NetworkConfigFile no script anterior.
 
 ```xml
-    <NetworkConfiguration xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
+    <NetworkConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
       <VirtualNetworkConfiguration>
         <Dns>
           <DnsServers>

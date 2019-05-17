@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 2/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: f29625ed8ddd6eabf8b75380d84d7a7b64396d7a
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7cbb934b87440d23e65fce53d7da40c5ffbd3150
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64696509"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65597080"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planejando uma implantação da Sincronização de Arquivos do Azure
 Use a Sincronização de Arquivos do Azure para centralizar os compartilhamentos de arquivos da sua organização em Arquivos do Azure enquanto mantém a flexibilidade, o desempenho e a compatibilidade de um servidor de arquivos local. A Sincronização de arquivos do Azure transforma o Windows Server em um cache rápido do compartilhamento de arquivos do Azure. Use qualquer protocolo disponível no Windows Server para acessar seus dados localmente, incluindo SMB, NFS e FTPS. Você pode ter tantos caches quantos precisar em todo o mundo.
@@ -110,7 +110,7 @@ Para exibir os resultados em CSV:
     $errors | Select-Object -Property Type, Path, Level, Description | Export-Csv -Path <csv path>
 ```
 
-### <a name="system-requirements"></a>Requisitos do Sistema
+### <a name="system-requirements"></a>Requisitos do sistema
 - Um servidor executando o Windows Server 2012 R2, o Windows Server 2016 ou o Windows Server 2019:
 
     | Version | SKUs com suporte | Opções de implantação com suporte |
@@ -236,13 +236,13 @@ A Sincronização de Arquivos do Azure está disponível apenas nas seguintes re
 | Região | Localização do Datacenter |
 |--------|---------------------|
 | Leste da Austrália | Nova Gales do Sul |
-| Sudeste da Austrália | Vitória |
+| Sudeste da Austrália | Victoria |
 | Sul do Brasil | Estado de Paolo são |
 | Canadá Central | Toronto |
 | Leste do Canadá | Cidade de Quebec |
 | Índia Central | Pune |
 | Centro dos EUA | Iowa |
-| Ásia Oriental | RAE de Hong Kong |
+| Ásia Oriental | Região Administrativa Especial de Hong Kong |
 | Leste dos EUA | Virgínia |
 | Leste dos EUA 2 | Virgínia |
 | Coreia Central| Seul |
@@ -253,13 +253,21 @@ A Sincronização de Arquivos do Azure está disponível apenas nas seguintes re
 | Norte da Europa | Irlanda |
 | Centro-Sul dos Estados Unidos | Texas |
 | Sul da Índia | Chennai |
-| Sudeste Asiático | Singapura |
+| Sudeste Asiático | Cingapura |
 | Sul do Reino Unido | Londres |
 | Oeste do Reino Unido | Cardiff |
+| US gov – Arizona (visualização) | Arizona |
+| US gov – Texas (visualização) | Texas |
+| Gov. EUA Virgínia (visualização) | Virgínia |
 | Europa Ocidental | Países Baixos |
+| Centro-Oeste dos EUA | Wyoming |
 | Oeste dos EUA | Califórnia |
+| Oeste dos EUA 2 | Washington |
 
 A Sincronização de Arquivos do Azure é compatível apenas com um compartilhamento de arquivo do Azure que esteja na mesma região que o Serviço de Sincronização de Armazenamento.
+
+> [!Note]  
+> A sincronização de arquivos do Azure está disponível atualmente apenas na versão prévia privada para as regiões do governo. Consulte nosso [notas de versão](https://docs.microsoft.com/azure/storage/files/storage-files-release-notes#agent-version-5020) para obter instruções sobre como registrar no programa de visualização.
 
 ### <a name="azure-disaster-recovery"></a>Recuperação de desastre do Azure
 Para proteger-se contra a perda de uma região do Azure, a Sincronização de Arquivos do Azure integra-se com a opção de GRS ([redundância de armazenamento com redundância geográfica](../common/storage-redundancy-grs.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)). O armazenamento GRS funciona usando a replicação de bloco assíncrono entre o armazenamento na região primária, com o qual você normalmente interage, e o armazenamento na região secundária emparelhada. Caso um desastre que faça uma região do Azure fique temporária ou permanentemente offline, a Microsoft fará failover do armazenamento para a região emparelhada. 
@@ -271,8 +279,9 @@ Para dar suporte à integração de failover entre o armazenamento com redundân
 
 | Região primária      | Região emparelhada      |
 |---------------------|--------------------|
-| Leste da Austrália      | Sudeste da Austrália |
+| Leste da Austrália      | Sudeste da Austrália|
 | Sudeste da Austrália | Leste da Austrália     |
+| Sul do Brasil        | Centro-Sul dos Estados Unidos   |
 | Canadá Central      | Leste do Canadá        |
 | Leste do Canadá         | Canadá Central     |
 | Índia Central       | Sul da Índia        |
@@ -280,16 +289,24 @@ Para dar suporte à integração de failover entre o armazenamento com redundân
 | Ásia Oriental           | Sudeste Asiático     |
 | Leste dos EUA             | Oeste dos EUA            |
 | Leste dos EUA 2           | Centro dos EUA         |
+| Leste do Japão          | Oeste do Japão         |
+| Oeste do Japão          | Leste do Japão         |
 | Coreia Central       | Sul da Coreia        |
 | Sul da Coreia         | Coreia Central      |
 | Norte da Europa        | Europa Ocidental        |
 | Centro-Norte dos EUA    | Centro-Sul dos Estados Unidos   |
+| Centro-Sul dos Estados Unidos    | Centro-Norte dos EUA   |
 | Sul da Índia         | Índia Central      |
 | Sudeste Asiático      | Ásia Oriental          |
 | Sul do Reino Unido            | Oeste do Reino Unido            |
 | Oeste do Reino Unido             | Sul do Reino Unido           |
+| US Gov – Arizona      | US Gov – Texas       |
+| US Gov Iowa         | Gov. dos EUA – Virgínia    |
+| US Gov Virgini      | US Gov – Texas       |
 | Europa Ocidental         | Norte da Europa       |
+| Centro-Oeste dos EUA     | Oeste dos EUA 2          |
 | Oeste dos EUA             | Leste dos EUA            |
+| Oeste dos EUA 2           | Centro-Oeste dos EUA    |
 
 ## <a name="azure-file-sync-agent-update-policy"></a>Política de atualização do agente de Sincronização de Arquivo do Azure
 [!INCLUDE [storage-sync-files-agent-update-policy](../../../includes/storage-sync-files-agent-update-policy.md)]

@@ -4,7 +4,7 @@ description: Saiba mais sobre a inicialização de aplicativos de cliente usando
 services: active-directory
 documentationcenter: dev-center-name
 author: rwike77
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7990566ca9cd93e79b8356cfd15fda03a7469695
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: cd26f36356affbc8c272bd093757a8482773baf2
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138311"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544019"
 ---
 # <a name="initialize-client-applications-using-msaljs"></a>Inicializar os aplicativos cliente usando msal
 Este artigo descreve a biblioteca de autenticação ao inicializar Microsoft para JavaScript (msal) com uma instância de um aplicativo de agente do usuário. O aplicativo do agente do usuário é um formulário do aplicativo de cliente público no qual o código do cliente é executado em um agente do usuário, como um navegador da web. Esses clientes não armazenarem segredos, como o contexto do navegador é acessível abertamente. Para saber mais sobre os tipos de aplicativos cliente e as opções de configuração de aplicativo, leia as [visão geral](msal-client-applications.md).
@@ -123,7 +123,7 @@ Abaixo está o conjunto total de opções configuráveis que têm suporte no mom
 
 - **validateAuthority**: Opcional.  Valide o emissor de tokens. O padrão é `true`. Para aplicativos B2C, já que o valor de autoridade é conhecido e pode ser diferente de acordo com a política, a validação de autoridade não funcionará e precisa ser definida como `false`.
 
-- **redirectUri**: Opcional.  O URI de redirecionamento do seu aplicativo, onde as respostas de autenticação podem ser enviadas e recebidas pelo aplicativo. Ele deve corresponder exatamente a um dos URIs de redirecionamento que você registrou no portal, com exceção de que ele deve ser codificado por URL. Usa `window.location.href` como padrão.
+- **redirectUri**: Opcional.  O URI de redirecionamento do seu aplicativo, onde as respostas de autenticação podem ser enviadas e recebidas pelo aplicativo. Ele deve corresponder exatamente a um dos URIs de redirecionamento que você registrou no portal, com exceção de que ele deve ser codificado por URL. Assume o padrão de `window.location.href`.
 
 - **postLogoutRedirectUri**: Opcional.  Redireciona o usuário para `postLogoutRedirectUri` depois de sair. O padrão é `redirectUri`.
 
@@ -140,6 +140,6 @@ Abaixo está o conjunto total de opções configuráveis que têm suporte no mom
 - **tokenRenewalOffsetSeconds**: Opcional. O número de milissegundos que define a janela de deslocamento necessária para renovar o token antes da expiração. Padrão é 300 milissegundos.
 
 Eles só são aplicáveis a serem passados para baixo da biblioteca MSAL Angular wrapper:
-- **unprotectedResources**: Opcional.  Matriz de URIs que são recursos desprotegidos. A MSAL não anexará um token para solicitações de saída que têm esses URI. Usa `null` como padrão.
+- **unprotectedResources**: Opcional.  Matriz de URIs que são recursos desprotegidos. A MSAL não anexará um token para solicitações de saída que têm esses URI. Assume o padrão de `null`.
 
-- **protectedResourceMap**: Opcional.  Isso é o mapeamento de recursos para os escopos usados pela MSAL para anexar automaticamente os tokens de acesso nas chamadas à API da web. Um token de acesso é obtido do recurso. Portanto, você pode mapear um caminho de recurso específico da seguinte maneira: {"https://graph.microsoft.com/v1.0/me", ["Read"]}, ou a URL do aplicativo do recurso como: {"https://graph.microsoft.com/", ["Read", "mail.send"]}. Isso é necessário para chamadas CORS. Usa `null` como padrão.
+- **protectedResourceMap**: Opcional.  Isso é o mapeamento de recursos para os escopos usados pela MSAL para anexar automaticamente os tokens de acesso nas chamadas à API da web. Um token de acesso é obtido do recurso. Portanto, você pode mapear um caminho de recurso específico da seguinte maneira: {"https://graph.microsoft.com/v1.0/me", ["Read"]}, ou a URL do aplicativo do recurso como: {"https://graph.microsoft.com/", ["Read", "mail.send"]}. Isso é necessário para chamadas CORS. Assume o padrão de `null`.

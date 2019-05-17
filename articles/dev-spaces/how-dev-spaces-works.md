@@ -10,12 +10,12 @@ ms.date: 03/04/2019
 ms.topic: conceptual
 description: Descreve os processos que espaços de desenvolvimento do Azure power e como eles são configurados no arquivo de configuração azds.yaml
 keywords: azds.yaml, Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: 494dd3774ec47598a95c6e20de6283abc2e4ff94
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: f7cf5ae875fa0fb87322052df036d35e8e5e89a4
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60687122"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65605416"
 ---
 # <a name="how-azure-dev-spaces-works-and-is-configured"></a>Como os espaços de desenvolvimento do Azure funciona e é configurado
 
@@ -29,7 +29,7 @@ Este artigo descreve os processos que espaços de desenvolvimento do Azure power
 
 * [Java com o Visual Studio Code e CLI](quickstart-java.md)
 * [.NET core com o Visual Studio Code e CLI](quickstart-netcore.md)
-* [.NET core com o Visual Studio 2017](quickstart-netcore-visualstudio.md)
+* [.NET core com o Visual Studio](quickstart-netcore-visualstudio.md)
 * [Node. js com o Visual Studio Code e CLI](quickstart-nodejs.md)
 
 ## <a name="how-azure-dev-spaces-works"></a>Como funciona a espaços de desenvolvimento do Azure
@@ -66,7 +66,7 @@ Enquanto seu aplicativo é executado, o cliente de ferramentas também:
 Você pode usar o cliente de ferramentas da linha de comando como parte do `azds` comando. Você também pode usar o cliente de ferramentas com:
 
 * Visual Studio Code usando o [extensão de espaços de desenvolvimento do Azure](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds).
-* Visual Studio 2017 com [ferramentas do Visual Studio para Kubernetes](https://aka.ms/get-vsk8stools).
+* Visual Studio com o [ferramentas do Visual Studio para Kubernetes](https://aka.ms/get-vsk8stools).
 
 Aqui está o fluxo básico para configurar e usar espaços de desenvolvimento do Azure:
 1. Preparar o cluster do AKS para espaços de desenvolvimento do Azure
@@ -337,7 +337,7 @@ O *install.set* propriedade permite que você configure um ou mais valores que v
 
 No exemplo acima, o *install.set.replicaCount* propriedade informa o controlador de quantas instâncias do seu aplicativo seja executado em seu espaço de desenvolvimento. Dependendo do cenário, você pode aumentar esse valor, mas ele terá um impacto sobre como anexar um depurador para o pod do seu aplicativo. Para obter mais informações, consulte o [artigo de solução de problemas](troubleshooting.md).
 
-O gráfico do Helm gerado, a imagem de contêiner é definida como *{{. Values.Image.Repository}} :{{. Values.Image.tag}}*. O `azds.yaml` arquivo define *install.set.image.tag* a propriedade como *$(tag)* por padrão, que é usado como o valor para *{{. Values.Image.tag}}*. Definindo o *install.set.image.tag* propriedade dessa forma, ele permite que a imagem de contêiner para seu aplicativo a ser marcado de forma distinta, durante a execução de espaços de desenvolvimento do Azure. Nesse caso específico, a imagem é marcada como  *<value from image.repository>: $(tag)*. Você deve usar o *$(tag)* variável como o valor de *install.set.image.tag* para espaços de desenvolvimento que reconhecer e localizar o contêiner no cluster AKS.
+O gráfico do Helm gerado, a imagem de contêiner é definida como *{{. Values.Image.Repository}} :{{. Values.Image.tag}}*. O `azds.yaml` arquivo define *install.set.image.tag* a propriedade como *$(tag)* por padrão, que é usado como o valor para *{{. Values.Image.tag}}*. Definindo o *install.set.image.tag* propriedade dessa forma, ele permite que a imagem de contêiner para seu aplicativo a ser marcado de forma distinta, durante a execução de espaços de desenvolvimento do Azure. Nesse caso específico, a imagem é marcada como  *\<o valor de image.repository >: $(tag)*. Você deve usar o *$(tag)* variável como o valor de *install.set.image.tag* para espaços de desenvolvimento que reconhecer e localizar o contêiner no cluster AKS.
 
 No exemplo acima, `azds.yaml` define *install.set.ingress.hosts*. O *install.set.ingress.hosts* propriedade define um formato de nome de host para pontos de extremidade públicos. Essa propriedade também utiliza *$(spacePrefix)*, *$(rootSpacePrefix)*, e *$(hostSuffix)*, que são fornecidos pelo controlador de valores. 
 
@@ -404,11 +404,11 @@ ingress:
 
 ## <a name="debug-your-code"></a>Depurar seu código
 
-Para aplicativos Java, .NET e Node. js, você pode depurar seu aplicativo em execução diretamente no seu espaço de desenvolvimento usando o Visual Studio Code ou Visual Studio 2017. O Visual Studio Code e Visual Studio 2017 fornecem ferramentas para conectar-se ao seu espaço de desenvolvimento, inicie seu aplicativo e anexar um depurador. Após a execução `azds prep`, você pode abrir seu projeto no Visual Studio Code ou Visual Studio 2017. Visual Studio Code ou Visual Studio 2017 irá gerar seus próprios arquivos de configuração para conectar-se de que é separada da execução `azds prep`. De dentro do Visual Studio Code ou Visual Studio 2017, você pode definir pontos de interrupção e iniciar o aplicativo em seu espaço de desenvolvimento.
+Para aplicativos Java, .NET e Node. js, você pode depurar seu aplicativo em execução diretamente no seu espaço de desenvolvimento usando o Visual Studio Code ou Visual Studio. Visual Studio Code e Visual Studio fornecem ferramentas para conectar-se ao seu espaço de desenvolvimento, inicie seu aplicativo e anexar um depurador. Após a execução `azds prep`, você pode abrir seu projeto no Visual Studio Code ou Visual Studio. Visual Studio Code ou o Visual Studio irá gerar seus próprios arquivos de configuração para conectar-se de que é separada da execução `azds prep`. De dentro do Visual Studio Code ou Visual Studio, você pode definir pontos de interrupção e iniciar o aplicativo em seu espaço de desenvolvimento.
 
 ![Depurando seu código](media/get-started-node/debug-configuration-nodejs2.png)
 
-Quando você inicia seu aplicativo usando o Visual Studio Code ou Visual Studio 2017 para depuração, tratam de iniciar e conectar-se ao seu espaço de desenvolvimento da mesma forma como em execução `azds up`. As ferramentas do lado do cliente no Visual Studio Code e Visual Studio 2017 também fornecem um parâmetro adicional com informações específicas para a depuração. O parâmetro contém o nome da imagem do depurador, o local do depurador dentro na imagem do depurador e o local de destino dentro do contêiner do aplicativo para montar a pasta do depurador. 
+Quando você inicia seu aplicativo usando o Visual Studio Code ou Visual Studio para depuração, tratam de iniciar e conectar-se ao seu espaço de desenvolvimento da mesma forma como em execução `azds up`. As ferramentas do lado do cliente no Visual Studio Code e Visual Studio também fornecem um parâmetro adicional com informações específicas para a depuração. O parâmetro contém o nome da imagem do depurador, o local do depurador dentro na imagem do depurador e o local de destino dentro do contêiner do aplicativo para montar a pasta do depurador. 
 
 A imagem de depurador é determinada automaticamente pelas ferramentas de cliente. Ele usa um método semelhante àquele usado durante o Dockerfile e o gráfico do Helm gerar durante a execução `azds prep`. Depois que o depurador é montado na imagem do aplicativo, ele é executado usando `azds exec`.
 
@@ -420,7 +420,7 @@ Você também pode criar um novo espaço de desenvolvimento é derivado de outro
 
 O espaço de desenvolvimento derivada também inteligentemente irá rotear solicitações entre seus próprios aplicativos e os aplicativos compartilhados a partir de seu pai. O roteamento funciona a tentativa de solicitação de rota para um aplicativo no espaço de desenvolvimento derivada e voltando para o aplicativo compartilhado do espaço de desenvolvimento do pai. O roteamento fará o fallback para o aplicativo compartilhado no espaço de avô se o aplicativo não está no espaço do pai.
 
-Por exemplo: 
+Por exemplo:
 * O espaço de desenvolvimento *padrão* tem aplicativos *serviceA* e *serviceB* .
 * O espaço de desenvolvimento *azureuser* é derivado de *padrão*.
 * Uma versão atualizada do *serviceA* é implantado *azureuser*.
@@ -433,12 +433,12 @@ Para começar a usar os espaços de desenvolvimento do Azure, consulte os iníci
 
 * [Java com o Visual Studio Code e CLI](quickstart-java.md)
 * [.NET core com o Visual Studio Code e CLI](quickstart-netcore.md)
-* [.NET core com o Visual Studio 2017](quickstart-netcore-visualstudio.md)
+* [.NET core com o Visual Studio](quickstart-netcore-visualstudio.md)
 * [Node. js com o Visual Studio Code e CLI](quickstart-nodejs.md)
 
 Para começar com o desenvolvimento em equipe, consulte os artigos de instruções a seguir:
 
 * [Desenvolvimento em equipe - Java com o Visual Studio Code e CLI](team-development-java.md)
 * [Desenvolvimento em equipe - .NET Core com o Visual Studio Code e CLI](team-development-netcore.md)
-* [Desenvolvimento em equipe - .NET Core com o Visual Studio 2017](team-development-netcore-visualstudio.md)
+* [Desenvolvimento em equipe - .NET Core com o Visual Studio](team-development-netcore-visualstudio.md)
 * [Desenvolvimento em equipe - Node. js com o Visual Studio Code e CLI](team-development-nodejs.md)

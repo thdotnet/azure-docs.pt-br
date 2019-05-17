@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
-ms.openlocfilehash: 49615dcb2f077d2e1d8b93a4bb900b435e4c87bf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 04163d1fa2a46a2de877702d479f439a5e8711d7
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60589070"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603141"
 ---
 # <a name="azure-customer-data-protection"></a>Proteção de dados do cliente do Azure   
 O acesso aos dados de clientes pela equipe de operações e suporte da Microsoft é negado por padrão. Quando é concedido acesso aos dados do cliente, é necessária a aprovação de liderança e, em seguida, o acesso é cuidadosamente gerenciado e registrado. Os requisitos de controle de acesso são estabelecidos pela seguinte Política de Segurança do Azure:
@@ -48,8 +48,8 @@ O Azure fornece aos clientes segurança de dados forte, por padrão e como opç�
 
 **Redundância de dados**: a Microsoft ajuda a garantir a proteção dos dados em caso de ataque cibernético ou danos físicos a um datacenter. Os clientes podem optar por:
 
-- Armazenamento no país para considerações de conformidade ou latência.
-- Armazenamento fora do país para fins de segurança ou recuperação de desastres.
+- Armazenamento de país/no-região para considerações de latência ou de conformidade.
+- Armazenamento fora do país/fora-de-região para fins de recuperação de desastre ou de segurança.
 
 Os dados podem ser replicados em uma área geográfica selecionada para redundância, mas não podem ser transmitidos fora dela. Os clientes têm várias opções para replicar dados, incluindo o número de cópias e o número e a localização dos datacenters de replicação.
 

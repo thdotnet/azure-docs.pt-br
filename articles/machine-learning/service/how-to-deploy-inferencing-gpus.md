@@ -1,5 +1,5 @@
 ---
-title: Como implantar um modelo de aprendizado profundo para inferência com GPU
+title: Implantar o modelo para inferência com GPU
 titleSuffix: Azure Machine Learning service
 description: Saiba como implantar um modelo de aprendizado profundo como um serviço web que usa uma GPU para inferência. Neste artigo, um modelo do Tensorflow é implantado em um cluster do serviço de Kubernetes do Azure. O cluster usa uma VM habilitada para GPU para hospedar o serviço web e solicitações de inferência de pontuação.
 services: machine-learning
@@ -10,33 +10,30 @@ ms.author: vaidyas
 author: csteegz
 ms.reviewer: larryfr
 ms.date: 05/02/2019
-ms.openlocfilehash: 5cc0fe0526937245d3ca913afc477f0259e2afd4
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 7796e8dc07889c9816e4227f3b38904d91a24da3
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65515168"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595684"
 ---
-# <a name="how-to-do-gpu-inferencing"></a>Como fazer a inferência GPU
+# <a name="deploy-a-deep-learning-model-for-inferencing-with-gpu"></a>Implantar um modelo de aprendizado profundo para inferência com GPU
 
 Saiba como usar a inferência GPU para um modelo implantado como um serviço web de aprendizado de máquina. Neste artigo, você aprenderá como usar o serviço de Azure Machine Learning para implantar um modelo de aprendizado profundo de Tensorflow do exemplo. O modelo é implantado em um cluster do serviço de Kubernetes do Azure (AKS) que usa uma VM habilitada para GPU para hospedar o serviço. Quando as solicitações são enviadas para o serviço, o modelo usa a GPU para realizar a inferência.
 
 GPUs oferecem vantagens de desempenho sobre CPUs na computação altamente paralelizável. Modelos (especialmente para grandes lotes de solicitações) de aprendizagem profunda de inferência e treinamento são casos de uso excelente para GPUs.  
 
-Este exemplo mostra como implantar um modelo do TensorFlow salvo no Azure Machine Learning. 
+Este exemplo mostra como implantar um modelo do TensorFlow salvo no Azure Machine Learning por:
+* Criar um cluster AKS habilitadas para GPU
+* Implantando um modelo com a GPU do Tensorflow
 
-## <a name="goals-and-prerequisites"></a>Pré-requisitos e objetivos
+## <a name="prerequisites"></a>Pré-requisitos
 
-Siga as instruções para:
-* Criar uma GPU habilitada cluster AKS
-* Implantar um modelo com a GPU do Tensorflow
-
-Pré-requisitos:
 * O espaço de trabalho do Azure Machine Learning services
 * Python
 * Tensorflow SavedModel registrado. Para saber como registrar modelos, consulte [implantar modelos](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where#registermodel)
 
-Este artigo se baseia [implantando modelos de Tensorflow no AKS](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks-gpu/production-deploy-to-aks-gpu.ipynb), que usa o TensorFlow salvada modelos e implanta um cluster do AKS. No entanto, com pequenas alterações para o arquivo de pontuação e o arquivo de ambiente é aplicável a qualquer estrutura de aprendizado de máquina que dão suporte a GPUs.  
+Este artigo se baseia no bloco de anotações do Jupyter [implantando modelos de Tensorflow no AKS](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks-gpu/production-deploy-to-aks-gpu.ipynb), que usa o TensorFlow salvada modelos e implanta um cluster do AKS. No entanto, com pequenas alterações para o arquivo de pontuação e o arquivo de ambiente é aplicável a qualquer estrutura de aprendizado de máquina que dão suporte a GPUs.  
 
 ## <a name="provision-aks-cluster-with-gpus"></a>Cluster do AKS provisionar com GPUs
 O Azure tem várias opções diferentes de GPU, que pode ser usado para inferência. Ver [a lista de série N](https://azure.microsoft.com/pricing/details/virtual-machines/linux/#n-series) para obter uma análise completa de recursos e os custos. 

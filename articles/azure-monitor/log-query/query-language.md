@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: bwren
-ms.openlocfilehash: ecbea91cef69c80975dd105c35f526b357033a6b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6fae245e4d72f7f6f7809d85da17023deb1518e5
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61425955"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65560844"
 ---
 # <a name="azure-monitor-log-queries"></a>Consultas de log do Azure Monitor
 Os logs do Azure Monitor baseiam-se no Azure Data Explorer e as consultas de log do Azure Monitor usam uma versão da mesma linguagem de consulta do Kusto. A [Documentação da linguagem de consulta do Kusto](/azure/kusto/query) tem todos os detalhes da linguagem e deve ser seu principal recurso para escrever consultas de log do Azure Monitor. Esta página fornece links para outros recursos para saber mais sobre como escrever consultas e sobre diferenças na implementação da linguagem no Azure Monitor.
@@ -61,7 +61,7 @@ Os logs do Azure Monitor baseiam-se no Azure Data Explorer e as consultas de log
 ## <a name="cheatsheets"></a>Folhas de cola
 
 -  [SQL para consultas de log do Azure Monitor](sql-cheatsheet.md) auxilia usuários que já estão familiarizados com o SQL.
--  [Splunk para consultas de log do Azure Monitor](sql-cheatsheet.md) auxilia usuários que já estão familiarizados com o Splunk.
+-  [Splunk para consultas de log do Azure Monitor](splunk-cheatsheet.md) auxilia usuários que já estão familiarizados com o Splunk.
  
 ## <a name="next-steps"></a>Próximas etapas
 

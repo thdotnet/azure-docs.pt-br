@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
-ms.openlocfilehash: 67a918b227ad3b33a2f63b17f86b94f36fbc9fa3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 10a6e5c33f6a3c23d98e6eb3380de0d6dc6ac216
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60404974"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544468"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Instalar o gateway de dados no local para os Aplicativos Lógicos do Azure
 
@@ -32,7 +32,7 @@ O gateway dá suporte a [conectores locais](../connectors/apis-list.md#on-premis
 *   IBM Informix
 *   IBM MQ
 *   MySQL
-*   Banco de dados Oracle
+*   Oracle Database
 *   PostgreSQL
 *   Servidor de aplicativos SAP 
 *   Servidor de mensagens SAP
@@ -51,7 +51,7 @@ Para obter informações sobre como usar o gateway com outros serviços, consult
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma [conta de trabalho ou escola](../active-directory/fundamentals/sign-up-organization.md) que tenha uma [assinatura do Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption-guide/adoption-intro/subscription-explainer) 
+* Uma [conta de trabalho ou escola](../active-directory/fundamentals/sign-up-organization.md) que tenha uma [assinatura do Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/resource-consistency/azure-resource-access) 
 
   Durante a instalação do gateway, você entra nessa conta para poder associar a instalação do gateway à assinatura do Azure. 
   Posteriormente, também é possível usar a mesma conta ao criar um recurso do Azure para a instalação do gateway no portal do Azure. 
@@ -238,7 +238,7 @@ O gateway cria uma conexão de saída para o [Barramento de Serviço do Azure](h
 
 O gateway usa estes nomes de domínio totalmente qualificados:
 
-| Nomes de domínio | Portas de saída | DESCRIÇÃO | 
+| Nomes de domínio | Portas de saída | Descrição | 
 | ------------ | -------------- | ----------- | 
 | *.analysis.windows.net | 443 | HTTPS | 
 | *.core.windows.net | 443 | HTTPS | 
@@ -363,7 +363,7 @@ Estas etapas descrevem o que acontece quando um usuário na nuvem interage com u
 **P**: O serviço Windows do gateway pode ser executado com uma conta do Azure Active Directory? <br/>
 **R**: Não, o serviço Windows deve ter uma conta do Windows válida.
 
-### <a name="disaster-recovery"></a>Recuperação de desastre
+### <a name="disaster-recovery"></a>Recuperação de desastres
 
 **P**: Quais opções estão disponíveis para recuperação de desastre? <br/>
 **R**: Você pode usar a chave de recuperação para restaurar ou mover um gateway. Ao instalar o gateway, especifique a chave de recuperação.
@@ -485,7 +485,7 @@ Para determinar a duração de uma consulta, siga estas etapas:
 
    2. Para localizar uma consulta, pesquise um tipo de atividade, por exemplo: 
 
-      | Tipo de atividade | DESCRIÇÃO | 
+      | Tipo de atividade | Descrição | 
       |---------------|-------------| 
       | MGEQ | Consultas que são executadas no ADO.NET. | 
       | MGEO | Consultas que são executadas no OLEDB. | 
@@ -508,7 +508,7 @@ Para determinar a duração de uma consulta, siga estas etapas:
 
 [Fiddler](https://www.telerik.com/fiddler) é uma ferramenta gratuita da Telerik que monitora o tráfego HTTP. Você pode examinar esse tráfego com o serviço do Power BI da máquina cliente. Esse serviço pode mostrar erros e outras informações relacionadas.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
     
 * [Conectar-se a dados locais de aplicativos lógicos](../logic-apps/logic-apps-gateway-connection.md)
 * [Recursos de integração corporativa](../logic-apps/logic-apps-enterprise-integration-overview.md)

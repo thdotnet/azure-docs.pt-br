@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 6eb0fe592196466f7f49c21ce38afdf13b254d86
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 88cbd942413757388278d69d728d407271e4c4a3
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61061432"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606377"
 ---
 # <a name="core-reports-from-verizon"></a>Relatórios de núcleo da Verizon
 
@@ -29,7 +29,7 @@ Usando os Relatórios de núcleo da Verizon por meio do portal Gerenciar para pe
 
 * Largura de banda
 * Dados Transferidos
-* Acertos
+* Ocorrências
 * Status do Cache
 * Taxa de Acertos do Cache
 * Dados IPv4/IPV6 Transferidos

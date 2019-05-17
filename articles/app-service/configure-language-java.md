@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 04/12/2019
 ms.author: jafreebe;cephalin
 ms.custom: seodec18
-ms.openlocfilehash: efeab014c7d92a6c19d516a121fbc4436925be75
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 82e8936a888cbc99088ab18423e55dd57a3c2e77
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60850980"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604175"
 ---
 # <a name="configure-a-windows-java-app-for-azure-app-service"></a>Configurar um Windows aplicativo Java para o serviço de aplicativo do Azure
 
@@ -27,7 +27,7 @@ Serviço de aplicativo do Azure permite aos desenvolvedores de Java para rapidam
 Este guia fornece instruções para desenvolvedores de Java usando o serviço de aplicativo e principais conceitos. Se você nunca usou o serviço de aplicativo do Azure, você deve ler por meio de [início rápido de Java](app-service-web-get-started-java.md) primeiro. Perguntas gerais sobre como usar o serviço de aplicativo que não são específicas para o desenvolvimento de Java são respondidas na [perguntas frequentes sobre o aplicativo de serviço Windows](faq-configuration-and-management.md).
 
 > [!NOTE]
-> Não encontrou o que você está procurando? Consulte a [perguntas frequentes sobre sistemas operacionais do Windows](faq-configuration-and-management.md) ou o [guia de configuração do Linux de Java](containers/app-service-linux-java.md) para obter informações sobre como implantar e proteger seu aplicativo Java.
+> Não encontrou o que você está procurando? Consulte a [perguntas frequentes sobre sistemas operacionais do Windows](faq-configuration-and-management.md) ou o [guia de configuração do Linux de Java](containers/configure-language-java.md) para obter informações sobre como implantar e proteger seu aplicativo Java.
 
 ## <a name="configuring-tomcat"></a>Configuração do Tomcat
 

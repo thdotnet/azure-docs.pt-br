@@ -12,15 +12,15 @@ ms.workload: big-compute
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/27/2019
+ms.date: 05/13/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: e33d014bd2dddf0c7310727229f8137c9f181325
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 820eddff7da3bb52ca94ea0cb7e2361d89892a4a
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60776351"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595314"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Cotas e limites de serviço do Lote
 
@@ -34,8 +34,6 @@ Se você planeja executar cargas de trabalho de produção em Lote, talvez seja 
 
 > [!NOTE]
 > Uma cota é um limite de crédito, não uma garantia de capacidade. Se você precisar de capacidade em larga escala, entre em contato com o suporte do Azure.
-> 
-> 
 
 ## <a name="resource-quotas"></a>Cotas de recursos
 [!INCLUDE [azure-batch-limits](../../includes/azure-batch-limits.md)]
@@ -68,7 +66,7 @@ Se você tiver criado uma conta de Lote com modo de alocação de pool definido 
 | Pacotes de aplicativos por pool | 10 |
 | Tempo de vida máximo da tarefa | 180 dias<sup>1</sup> |
 
-<sup>1</sup> O tempo de vida máximo de uma tarefa, desde quando é adicionada ao trabalho até ser concluída, é de 180 dias. As tarefas concluídas persistem por 7 dias. Os dados das tarefas não concluídas dentro do tempo de vida máximo não podem ser acessados.
+<sup>1</sup> O tempo de vida máximo de uma tarefa, desde quando é adicionada ao trabalho até ser concluída, é de 180 dias. As tarefas concluídas persistem por sete dias; dados para tarefas não concluídas dentro do tempo de vida máximo não estão acessíveis.
 
 ## <a name="view-batch-quotas"></a>Exibir cotas do Lote
 
@@ -84,45 +82,57 @@ Exibir suas cotas de conta do Lote no [portal do Azure][portal].
 
 Siga estas etapas para solicitar uma cota aumentam para sua conta de lote ou sua assinatura usando o [portal do Azure][portal]. O tipo de aumento de cota depende do modo de alocação de pool de sua conta do lote. Para solicitar um aumento de cota, você deve incluir a série VM para que você gostaria de aumentar a cota. Quando o aumento de cota é aplicado, ela é aplicada a todas as séries de VMs.
 
-### <a name="increase-a-batch-cores-quota"></a>Aumentar a cota de núcleos de lote 
+### <a name="increase-cores-quota-in-batch"></a>Aumentar a cota de núcleos em lote 
 
 1. Selecione o bloco **Ajuda + suporte** no painel do portal ou o ponto de interrogação (**?**) no canto superior direito do portal.
 1. Selecione **Nova solicitação de suporte** > **Fundamentos**.
 1. Em **Noções básicas**:
    
-     a. **Tipo de Problema** > **Cota**
+     a. **Tipo de problema** > **limites de serviço e assinatura (cotas)**
    
     b. Selecione sua assinatura.
    
     c. **Tipo de cota** > **Lote**
-   
-    d. **Plano de suporte** > **Suporte da cota - Incluído**
-   
-    Clique em **Avançar**.
-1. Em **Problema**:
-   
-     a. Selecione uma **Gravidade** de acordo com o [impacto nos negócios][support_sev].
-   
-    b. Em **Detalhes**, especifique cada cota que você deseja alterar, o nome da conta do Lote e o novo limite.
-   
-    Clique em **Avançar**.
+      
+    Selecione **Avançar**.
+    
+1. Em **Detalhes**:
+      
+     a. Na **fornecem detalhes**, especifique o local, o tipo de cota e conta do lote.
+    
+    ![Aumento de cota do lote][quota_increase]
+
+    Tipos de cota:
+
+    * **Por conta do lote**  
+        Valores específicos para um único lote de conta, incluindo núcleos dedicados e de baixa prioridade e o número de trabalhos e pools.
+        
+    * **Por região**  
+        Valores que se aplicam a todas as contas do lote em uma região e incluem o número de contas do lote por região e assinatura.
+
+    Cota de baixa prioridade é um único valor em todas as séries VM. Se você precisar SKUs restritas, você deve selecionar **núcleos de baixa prioridade** e incluem as famílias VM para solicitar.
+
+    b. Selecione uma **Gravidade** de acordo com o [impacto nos negócios][support_sev].
+
+    Selecione **Avançar**.
+
 1. Em **Informações de contato**:
    
      a. Selecione um **método de contato preferencial**.
    
     b. Verifique e insira os detalhes de contato necessários.
    
-    Clique em **Criar** para enviar a solicitação de suporte.
+    Selecione **criar** para enviar a solicitação de suporte.
 
-Depois que a solicitação de suporte foi enviada, o suporte do Azure entrará em contato com você. Observe que a conclusão do pedido pode levar até dois dias úteis.
+Depois que a solicitação de suporte foi enviada, o suporte do Azure entrará em contato com você. Solicitações de cota podem ser concluídas em alguns minutos ou até dois dias úteis.
 
 ## <a name="related-quotas-for-vm-pools"></a>Cotas relacionadas para pools VM
 
 Os pools de lota na Configuração de Máquina virtual implantada em uma rede virtual do Azure automaticamente aloca os recursos de rede adicionais do Azure. Os recursos a seguir são necessárias para cada nós de pool de 50 em uma rede virtual:
 
-* 1 [grupo de segurança de rede](../virtual-network/security-overview.md#network-security-groups)
-* 1 [endereço IP público](../virtual-network/virtual-network-ip-addresses-overview-arm.md)
-* 1 [balanceador de carga](../load-balancer/load-balancer-overview.md)
+* Um [grupo de segurança de rede](../virtual-network/security-overview.md#network-security-groups)
+* Um [endereço IP público](../virtual-network/virtual-network-ip-addresses-overview-arm.md)
+* Um [balanceador de carga](../load-balancer/load-balancer-overview.md)
 
 Esses recursos são alocados na assinatura que contém a rede virtual fornecida ao criar o pool de Lote. Esses recursos são limitados pelas [cotas de recursos](../azure-subscription-service-limits.md) da assinatura. Se você planejar implantações de grande pool em uma rede virtual, verifique as cotas da assinatura para esses recursos. Se necessário, solicite um aumento no portal do Azure, selecionando **Ajuda + suporte**.
 
@@ -137,3 +147,4 @@ Esses recursos são alocados na assinatura que contém a rede virtual fornecida 
 [support_sev]: https://aka.ms/supportseverity
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.png
+[quota_increase]: ./media/batch-quota-limit/quota-increase.png

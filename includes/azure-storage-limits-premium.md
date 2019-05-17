@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/23/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: da796f8eeb6b24dfbbe8418cc728f09b424228cf
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 7b75e24e5d59206ee8330c3ca9eaf86eacbad13d
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59528485"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65751554"
 ---
 ### <a name="premium-performance-block-blob-storage"></a>Armazenamento de blob de bloco de desempenho Premium
 
@@ -25,9 +25,9 @@ Arquivos Premium usam uma conta de armazenamento exclusivo chamada **FileStorage
 
 |Área  |Destino  |
 |---------|---------|
-|Max provisionado tamanho     |5 TiB (visualização pública), 100 TiB (visualização pública limitada)     |
+|Max provisionado tamanho     |100 TiB     |
 |Compartilhamentos   |Ilimitado  |
-|IOPS     |100.000 (visualização pública limitada)    |
+|IOPS     |100.000    |
 |Entrada|4,136 MiB/s     |
 |Saída|6,204 MiB/s |
 

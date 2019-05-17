@@ -17,12 +17,12 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d9af3b1b9c267bc09b370717913722a6c53ad5a1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2ffebdd5b88603113dd7624e97dcf7353ab5d1ba
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60371052"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65605572"
 ---
 # <a name="transfer-ownership-of-an-azure-subscription-to-another-account"></a>Transferir a propriedade de uma assinatura do Azure para outra conta
 
@@ -64,7 +64,7 @@ Transfira sua assinatura para outro usuário no Centro de Contas para alterar o 
    ![Primeira página da Web de transferência de assinatura](./media/billing-subscription-transfer/image4.png)
 
    ![Segunda página da Web de transferência de assinatura](./media/billing-subscription-transfer/image5.png)
-1. Sucesso! Agora a assinatura será transferida.
+1. Êxito! Agora a assinatura será transferida.
 
 <a id="EA"></a>
 
@@ -87,7 +87,7 @@ O Administrador Corporativo pode transferir a propriedade das assinaturas em um 
 
 A transferência de assinatura de autoatendimento está disponível para as ofertas ou tipos de assinatura listados na tabela a seguir. Atualmente, não é possível transferir assinaturas de Avaliação Gratuita ou [AIO (Azure via Open)](https://azure.microsoft.com/offers/ms-azr-0111p/). Para uma solução alternativa, consulte [Mover recursos para um novo grupo de recursos ou uma nova assinatura](../azure-resource-manager/resource-group-move-resources.md). Para transferir outras assinaturas, como [Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/) ou planos de suporte, [contate o Suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
-| Nome da oferta                                                                             | Número da oferta |
+| Nome da Oferta                                                                             | Número da oferta |
 |----------------------------------------------------------------------------------------|--------------|
 | [EA (Contrato Enterprise)](https://azure.microsoft.com/pricing/enterprise-agreement/)\*|MS-AZR-0017P        |
 | [Microsoft Partner Network](https://azure.microsoft.com/offers/ms-azr-0025p/)          | MS-AZR-0025P        |
@@ -119,7 +119,7 @@ Todos os recursos, como VMs, discos e sites, são transferidos para o novo propr
 
 ### <a id="no-button"></a> Por que não vejo o botão “Transferir Assinatura”?
 
-Infelizmente, a transferência de assinatura de autoatendimento não está disponível para seu país/região ou oferta. Para transferir a sua assinatura, [entre em contato com o suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+Infelizmente, transferência de assinatura de autoatendimento não está disponível para sua oferta ou país/região. Para transferir a sua assinatura, [entre em contato com o suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 ### <a name="does-a-subscription-transfer-result-in-any-service-downtime"></a>Uma transferência de assinatura resulta em qualquer tempo de inatividade do serviço?
 
@@ -156,9 +156,9 @@ O remetente é responsável pelo pagamento por qualquer uso que foi relatado at�
 
 A oferta deve permanecer a mesma. Para alterar sua oferta, confira [Switch your Azure subscription to another offer](billing-how-to-switch-azure-offer.md) (Alternar assinatura do Azure para outra oferta).
 
-### <a name="can-i-transfer-a-subscription-to-a-user-account-in-another-country"></a>Posso transferir uma assinatura para uma conta de usuário em outro país?
+### <a name="can-i-transfer-a-subscription-to-a-user-account-in-another-countryregion"></a>Posso transferir uma assinatura para uma conta de usuário em outro país/região?
 
-Não, não há suporte para transferir uma assinatura para uma conta de usuário em outro país. A conta de usuário do destinatário deve estar no mesmo país.
+Não, não há suporte para transferir uma assinatura para uma conta de usuário em outro país/região. Conta de usuário do destinatário deve estar no mesmo país/região.
 
 ### <a name="can-the-recipient-use-a-different-payment-method"></a>O destinatário pode usar um método de pagamento diferente?
 

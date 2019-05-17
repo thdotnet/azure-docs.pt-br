@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/03/2018
 ms.author: magoedte
-ms.openlocfilehash: d295a5a7eae2bdc7983e7271aa11bce1840b92dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b7968de8ad4357241eb8d86d51e991f4bbab959d
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61387129"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65601576"
 ---
 # <a name="wire-data-20-preview-solution-in-azure-monitor"></a>Solução de transmissão de dados 2.0 (visualização) no Azure Monitor
 
@@ -400,7 +400,7 @@ Um registro com um tipo de _WireData_ é criado para cada tipo de dados de entra
 | Direction | Entrada ou saída |
 | MaliciousIP | Endereço IP de uma fonte mal-intencionada conhecida |
 | Severity | Gravidade de suspeita de malware |
-| RemoteIPCountry | País do endereço IP remoto |
+| RemoteIPCountry | País/região do endereço IP remoto |
 | ManagementGroupName | Nome do grupo de gerenciamento do Operations Manager |
 | SourceSystem | Fonte na qual o dados foram coletados |
 | SessionStartTime | Hora de início da sessão |

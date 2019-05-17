@@ -8,13 +8,13 @@ author: kevinlam1
 ms.author: klam
 ms.reviewer: estfan, LADocs
 ms.topic: article
-ms.date: 03/18/2019
-ms.openlocfilehash: 0fbe56ceeeba71bcbb5ef358cd66de15e36508fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/13/2019
+ms.openlocfilehash: 45eeb20e5c572ddd98244b2e751322fcce1d4b76
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60511757"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65597201"
 ---
 # <a name="test-logic-apps-with-mock-data-by-setting-up-static-results"></a>Testar o aplicativo lógico com dados fictícios, configurando resultados estáticos
 
@@ -46,7 +46,7 @@ Por exemplo, se você configurar resultados de estáticos para o Outlook 365 env
 
       Por exemplo, aqui estão as propriedades necessárias para a ação de HTTP:
 
-      | Propriedade | DESCRIÇÃO |
+      | Propriedade | Descrição |
       |----------|-------------|
       | **Status** | O status da ação para retornar |
       | **Código de status** | O código de status específico para retornar |
@@ -137,12 +137,10 @@ Desativar resultados estáticos não jogar fora os valores de sua última config
 
    ![Desabilitar estáticos resultados](./media/test-logic-apps-mock-data-static-results/disable-static-results-button.png)
 
-## <a name="get-support"></a>Obter suporte
+## <a name="reference"></a>Referência
 
-* Em caso de dúvidas, visite o [Fórum dos Aplicativos Lógicos do Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
+Para obter mais informações sobre essa configuração em suas definições de fluxo de trabalho subjacente, consulte [resultados estáticos - referência de esquema para a linguagem de definição de fluxo de trabalho](../logic-apps/logic-apps-workflow-definition-language.md#static-results) e [runtimeConfiguration.staticResult - tempo de execução definições de configuração](../logic-apps/logic-apps-workflow-actions-triggers.md#runtime-configuration-settings)
 
-* Para enviar ou votar em ideias de recurso, visite o [site de comentários do usuário de Aplicativos Lógicos](https://aka.ms/logicapps-wish).
-
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * Saiba mais sobre [aplicativos lógicos do Azure](../logic-apps/logic-apps-overview.md)

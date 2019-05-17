@@ -4,7 +4,7 @@ description: Saiba como um usuário pode obter o consentimento de pré-lançamen
 services: active-directory
 documentationcenter: dev-center-name
 author: rwike77
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45bad9a03e8eff6f22ebb99fd2ef4bcd5fecf9b5
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 8f7d24a1e14cfbb1163ab78b94dd36ec288dce50
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65158814"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544041"
 ---
 # <a name="user-gets-consent-for-several-resources-using-msalnet"></a>Usuário recebe consentimento para vários recursos usando MSAL.NET
 O ponto de extremidade de plataforma do Microsoft identity não permite que você obtenha um token para vários recursos ao mesmo tempo. Ao usar a biblioteca de autenticação da Microsoft para .NET (MSAL.NET), o parâmetro no método de token de aquisição escopos deve conter apenas escopos para um único recurso. No entanto, você pode previamente autoriza antecipadamente vários recursos especificando escopos adicionais usando o `.WithExtraScopeToConsent` método de construtor.

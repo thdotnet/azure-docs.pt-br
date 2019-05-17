@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 04/26/2019
+ms.date: 05/13/2019
 ms.author: alkohli
-ms.openlocfilehash: 329ea6ac52e972c42e0e2aab247a7ad8e04c76e7
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 1126002a93419371be3216c55114385c9c600419
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64927351"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65594007"
 ---
 # <a name="troubleshoot-issues-related-to-azure-data-box"></a>Solucionar problemas relacionados ao Azure Data Box
 
@@ -36,7 +36,7 @@ Todos os erros que são vistos durante a cópia de dados são resumidos nas seç
     - Os nomes podem ter apenas letras, números e hifens.
     - Os nomes não podem começar ou terminar com hifens.
     - Os nomes não podem ter hifens consecutivos.
-    - Exemplos de nomes válidos: `my-folder-1`, `my-really-extra-long-folder-111`</li><li>
+    - Exemplos de nomes válidos: `my-folder-1`, `my-really-extra-long-folder-111`.
     - Exemplos de nomes que não são válidos: `my-folder_1`, `my`, `--myfolder`, `myfolder--`, `myfolder!`
 
     Para obter mais informações, consulte as convenções de nomenclatura do Azure para [nomes de contêiner](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) e [nomes de compartilhamento](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).

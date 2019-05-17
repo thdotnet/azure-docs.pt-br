@@ -4,7 +4,7 @@ description: Saiba mais sobre as considerações específicas ao usar o Azure AD
 services: active-directory
 documentationcenter: dev-center-name
 author: rwike77
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c608518a9eb80d807297f010778ae452c0f61f5
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 6c26a5007c2dcaa5d41be46f685f0f259866ca2c
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65075769"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544068"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Use MSAL.NET para conectar os usuários com identidades sociais
 
@@ -40,7 +40,7 @@ A autoridade a ser usada é `https://login.microsoftonline.com/tfp/{tenant}/{pol
 - `tenant` é o nome do locatário do Azure AD B2C, 
 - `policyName` o nome da política a ser aplicado (por exemplo "b2c_1_susi" para entrada-no/inscrição).
 
-A orientação atual do Azure AD B2C é usar `b2clogin.com` como a autoridade. Por exemplo, `$"https://{your-tenant-name}.b2clogin.com/tfp/{your-tenant-ID}/{policyname}"`. Para obter mais informações, consulte este [documentação](/azure/active-directory-b2c/b2clogin).
+A orientação atual do Azure AD B2C é usar `b2clogin.com` como a autoridade. Por exemplo: `$"https://{your-tenant-name}.b2clogin.com/tfp/{your-tenant-ID}/{policyname}"`. Para obter mais informações, consulte este [documentação](/azure/active-directory-b2c/b2clogin).
 
 ## <a name="instantiating-the-application"></a>Criando uma instância do aplicativo
 
@@ -78,7 +78,7 @@ AuthenticationResult ar = await application .AcquireToken(scopes, parentWindow)
 por:
 
 - `policy` sendo uma das cadeias de caracteres anteriores (por exemplo `PolicySignUpSignIn`).
-- `GetAccountByPolicy(IEnumerable<IAccount>, string)` é um método que localiza uma conta para uma determinada política. Por exemplo: 
+- `GetAccountByPolicy(IEnumerable<IAccount>, string)` é um método que localiza uma conta para uma determinada política. Por exemplo:
 
   ```csharp
   private IAccount GetAccountByPolicy(IEnumerable<IAccount> accounts, string policy)
@@ -183,6 +183,6 @@ Uma opção é usar a declaração de "nome" como o nome de usuário preferido. 
 
 Para obter mais detalhes sobre a aquisição de tokens interativamente com MSAL.NET para aplicativos do Azure AD B2C são fornecidos no exemplo a seguir.
 
-| Amostra | Plataforma | DESCRIÇÃO|
+| Amostra | Plataforma | Descrição|
 |------ | -------- | -----------|
 |[active-directory-b2c-xamarin-native](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Xamarin iOS, Xamarin Android, UWP | Um aplicativo Xamarin Forms simples, mostrando como usar MSAL.NET para autenticar usuários por meio do Azure AD B2C e acessar uma API Web com os tokens resultantes.|

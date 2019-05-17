@@ -4,7 +4,7 @@ description: Saiba como adicionar funções de aplicativo em um aplicativo regis
 services: active-directory
 documentationcenter: ''
 author: kkrishna
-manager: mtillman
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: kkrishna
 ms.reviewer: ''
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df0d0b02efe7e99253b64ba02a5d9e77bb968993
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: fd78e98c37bea0fed1787e1e07a026fa35597f47
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138349"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593920"
 ---
 # <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Como: adicionar funções de aplicativo em seu aplicativo e recebê-las no token
 
@@ -62,7 +62,7 @@ Essas funções de aplicativo são definidas no [portal do Azure](https://portal
 O exemplo a seguir mostra o `appRoles` que você pode atribuir a `users`.
 
 > [!NOTE]
->  O `id` precisa ser um GUID exclusivo.
+>O `id` precisa ser um GUID exclusivo.
 
 ```Json
 "appId": "8763f1c4-f988-489c-a51e-158e9ef97d6a",
@@ -80,6 +80,9 @@ O exemplo a seguir mostra o `appRoles` que você pode atribuir a `users`.
   ],
 "availableToOtherTenants": false,
 ```
+
+> [!NOTE]
+>O `displayName` não pode conter espaços.
 
 Você pode definir funções de aplicativo para o `users` de destino, para `applications` ou ambos. Quando disponíveis para `applications`, as funções de aplicativo aparecem como permissões de aplicativo na folha **Permissões Necessárias**. O exemplo a seguir mostra uma função de aplicativo destinada a um `Application`.
 
@@ -99,6 +102,8 @@ Você pode definir funções de aplicativo para o `users` de destino, para `appl
   ],
 "availableToOtherTenants": false,
 ```
+
+O número de funções definidas afeta os limites que tem o manifesto do aplicativo. Eles foram discutidos em detalhes sobre o [limites de manifesto](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest#manifest-limits) página.
 
 ### <a name="assign-users-and-groups-to-roles"></a>Atribuir usuários e grupos a funções
 

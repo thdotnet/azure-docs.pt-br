@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: pabutler
-ms.openlocfilehash: e1715c2cb66398ff7ca55c0ccdbfe50685fae76e
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 433059dc1b1567c5cbcb1091f2d616001d1dbf44
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64941990"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65762282"
 ---
 # <a name="saas-fulfillment-apis-version-2"></a>Versão de APIs de preenchimento SaaS 2 
 
@@ -67,7 +67,7 @@ Este estado indica que o pagamento do cliente ainda não foram recebido. Por dir
 Assinaturas atinjam esse estado em resposta a uma solicitação de cliente explícita ou como uma resposta ao não pagamento de dívidas. A expectativa do ISV é que os dados do cliente é retidos para recuperação de solicitação por um mínimo de X dias e, em seguida, excluídos. 
 
 
-## <a name="api-reference"></a>Referência de API
+## <a name="api-reference"></a>Referência da API
 
 Esta seção documenta o SaaS *API de assinatura* e *operações API*.  O valor de `api-version` APIs de parâmetro para a versão 2 é `2018-08-31`.  
 
@@ -105,7 +105,7 @@ O ponto de extremidade de resolução permite que o Editor resolver um token do 
  
 |                    |                   |
 |  ---------------   |  ---------------  |
-|  Tipo de conteúdo      | `application/json` |
+|  Tipo de Conteúdo      | `application/json` |
 |  x-ms-requestid    |  Valor de cadeia de caracteres exclusiva para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 |  x-ms-correlationid |  Valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  autorização     |  [Obter o token de portador do JSON web token (JWT)](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app) |
@@ -169,14 +169,14 @@ Lista todas as assinaturas para um publicador do SaaS.
 
 |                    |                   |
 |  ---------------   |  ---------------  |
-| Tipo de conteúdo       |  `application/json`  |
+| Tipo de Conteúdo       |  `application/json`  |
 | x-ms-requestid     |  Valor de cadeia de caracteres exclusiva para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 | x-ms-correlationid |  Valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 | autorização      |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Códigos de resposta:*
 
-Código: 200<br>
+Código: 200 <br/>
 Com base no token de autenticação, obtenha o publicador e o correspondentes assinaturas para ofertas de todas as do Editor.<br> Carga de resposta:<br>
 
 ```json
@@ -207,7 +207,6 @@ Com base no token de autenticação, obtenha o publicador e o correspondentes as
 ```
 
 O token de continuação estarão presente somente se houver adicionais "páginas" de planos para recuperar. 
-
 
 Código: 403 <br>
 Não autorizado. O token de autenticação não foi fornecido, é inválido, ou a solicitação está tentando acessar uma aquisição que não pertence do publicador atual. 
@@ -240,7 +239,7 @@ Obtém a assinatura especificada de SaaS. Use essa chamada para obter informaç�
 
 |                    |                   |
 |  ---------------   |  ---------------  |
-|  Tipo de conteúdo      |  `application/json`  |
+|  Tipo de Conteúdo      |  `application/json`  |
 |  x-ms-requestid    |  Valor de cadeia de caracteres exclusiva para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 |  x-ms-correlationid |  Valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
@@ -304,7 +303,7 @@ Use essa chamada para descobrir se há qualquer oferta privada/pública para o p
 
 |                    |                   |
 |  ---------------   |  ---------------  |
-|   Tipo de conteúdo     |  `application/json` |
+|   Tipo de Conteúdo     |  `application/json` |
 |   x-ms-requestid   |   Valor de cadeia de caracteres exclusiva para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 |  x-ms-correlationid  | Valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 |  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app) |
@@ -358,7 +357,7 @@ Erro interno do servidor<br>
  
 |                    |                   |
 |  ---------------   |  ---------------  |
-|  Tipo de conteúdo      | `application/json`  |
+|  Tipo de Conteúdo      | `application/json`  |
 |  x-ms-requestid    | Valor de cadeia de caracteres exclusiva para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  x-ms-correlationid  | Valor de cadeia de caracteres exclusiva para a operação no cliente. Essa cadeia de caracteres se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app) |
@@ -374,7 +373,7 @@ Erro interno do servidor<br>
 
 *Códigos de resposta:*
 
-Código: 202<br>
+Código: 200<br>
 Ativa a assinatura.<br>
 
 Código: 404<br>
@@ -415,7 +414,7 @@ Atualize o plano na assinatura.
 
 |                    |                   |
 |  ---------------   |  ---------------  |
-|  Tipo de conteúdo      | `application/json` |
+|  Tipo de Conteúdo      | `application/json` |
 |  x-ms-requestid    |   Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  x-ms-correlationid  |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.    |
 | autorização      |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
@@ -481,7 +480,7 @@ Atualize a quantidade na assinatura.
 
 |                    |                   |
 |  ---------------   |  ---------------  |
-|  Tipo de conteúdo      | `application/json` |
+|  Tipo de Conteúdo      | `application/json` |
 |  x-ms-requestid    |   Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  x-ms-correlationid  |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.    |
 | autorização      |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
@@ -547,14 +546,14 @@ Cancelar a assinatura e exclua a assinatura especificada.
  
 |                    |                   |
 |  ---------------   |  ---------------  |
-|   Tipo de conteúdo     |  `application/json` |
+|   Tipo de Conteúdo     |  `application/json` |
 |  x-ms-requestid    |   Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.   |
 |  x-ms-correlationid  |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.   |
 |  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Códigos de resposta:*
 
-Código: 200<br>
+Código: 202<br>
 Chamada de ISV iniciada para indicar que cancelar a assinatura em uma assinatura de SaaS.<br>
 
 Código: 404<br>
@@ -600,7 +599,7 @@ Lista as operações pendentes para o publicador atual.
  
 |                    |                   |
 |  ---------------   |  ---------------  |
-|   Tipo de conteúdo     |  `application/json` |
+|   Tipo de Conteúdo     |  `application/json` |
 |  x-ms-requestid    |  Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  x-ms-correlationid |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
@@ -663,7 +662,7 @@ Permite que o Editor acompanhar o status da operação especificada assíncrona 
 
 |                    |                   |
 |  ---------------   |  ---------------  |
-|  Tipo de conteúdo      |  `application/json`   |
+|  Tipo de Conteúdo      |  `application/json`   |
 |  x-ms-requestid    |   Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  x-ms-correlationid |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  autorização     |[Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
@@ -726,7 +725,7 @@ Atualize o status de uma operação para indicar êxito/falha com os valores for
 
 |                    |                   |
 |  ---------------   |  ---------------  |
-|   Tipo de conteúdo     | `application/json`   |
+|   Tipo de Conteúdo     | `application/json`   |
 |   x-ms-requestid   |   Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 |  x-ms-correlationid |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 |  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
@@ -786,25 +785,29 @@ O publicador deve implementar um webhook neste serviço de SaaS para notificar o
     "action": "Subscribe",
     "timeStamp": "2018-12-01T00:00:00"
 }
-
-Where action can be one of these: 
-       Subscribe, (When the resource has been activated)
-       Unsubscribe, (When the resource has been deleted)
-       ChangePlan, (When the change plan operation has completed)
-       ChangeQuantity, (When the change quantity operation has completed),
-       Suspend, (When resource has been suspended)
-       Reinstate, (When resource has been reinstated after suspension)
 ```
+
+Onde a ação pode ser um destes procedimentos: 
+- `Subscribe`  (Quando o recurso tiver sido ativado)
+- `Unsubscribe` (Quando o recurso foi excluído)
+- `ChangePlan` (Quando estiver concluída, a operação de alteração de plano)
+- `ChangeQuantity` (Quando estiver concluída, a operação de quantidade de alteração)
+- `Suspend` (Quando o recurso foi suspenso)
+- `Reinstate` (Quando recursos foi restabelecido após suspensão)
 
 
 ## <a name="mock-api"></a>API de simulação
 
 Você pode usar nossas APIs fictícios para ajudá-lo a começar com o desenvolvimento, especialmente criação de protótipos, e projetos de teste. 
 
-Ponto de extremidade do host: `https://marketplaceapi.microsoft.com/api` Versão da API: `2018-09-15` Nenhuma autenticação necessária Uri de exemplo: `https://marketplaceapi.microsoft.com/api/saas/subscriptions?api-version=2018-09-15`
+Ponto de extremidade do host: `https://marketplaceapi.microsoft.com/api` <br/>
+Versão da API: `2018-09-15` <br/>
+Nenhuma autenticação necessária <br/>
+Uri de exemplo: `https://marketplaceapi.microsoft.com/api/saas/subscriptions?api-version=2018-09-15` <br/>
 
-Qualquer uma das chamadas à API neste artigo podem ser feitas para o ponto de extremidade do host fictício. Você pode esperar obter os dados fictícios, como uma resposta.
+Os caminhos de ponto de extremidade de API são os mesmos em simulação e APIs Real, mas as versões de API são diferentes. A versão é 2018-09-15 para simulação e 2018-08-31 para a versão de produção. 
 
+Qualquer uma das chamadas à API neste artigo podem ser feitas para o ponto de extremidade do host fictício. Você pode esperar obter os dados fictícios, como uma resposta. Em geral, você pode esperar obter os dados fictícios, como uma resposta. Chamadas para os métodos de assinatura de atualização sobre a API de simulação sempre retornam 500. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

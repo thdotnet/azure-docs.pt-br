@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/21/2017
 ms.author: rli
-ms.openlocfilehash: 75fe965a04bd02a1086551053c28d2072eae6468
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: f87667516d6c76bc1c21ba5e175b3b2a7ebc3f39
+ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64869523"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65556324"
 ---
 # <a name="azure-cdn-rules-engine-match-conditions"></a>Condições de correspondência do mecanismo de regras da CDN do Azure 
 Este artigo lista descrições detalhadas das condições de correspondência disponíveis para o [mecanismo de regras](cdn-rules-engine.md) da CDN (Rede de Distribuição de Conteúdo) do Azure.
@@ -101,8 +101,11 @@ NOME | Finalidade
 
 
 ## <a name="reference-for-rules-engine-match-conditions"></a>Referência para condições de correspondência do mecanismo de regras
+
 <a name="main"></a>
+
 ---
+
 ### <a name="always"></a>Sempre
 
 A condição de correspondência Sempre aplica um conjunto de recursos padrão a todas as solicitações.
@@ -158,10 +161,10 @@ A opção **Corresponde**/**Não corresponde** determina as condições sob as q
 
 Informações de chave:
 - Use a notação CIDR.
-- Especifique vários endereços IP e/ou blocos de endereços IP delimitando cada um com um único espaço. Por exemplo: 
+- Especifique vários endereços IP e/ou blocos de endereços IP delimitando cada um com um único espaço. Por exemplo:
   - **Exemplo de IPv4**: 1.2.3.4 10.20.30.40 corresponde a qualquer solicitação que chega dos endereços 1.2.3.4 ou 10.20.30.40.
   - **Exemplo de IPv6**: 1:2:3:4:5:6:7:8 10:20:30:40:50:60:70:80 corresponde a qualquer solicitação que chega dos endereços 1:2:3:4:5:6:7:8 ou 10:20:30:40:50:60:70:80.
-- A sintaxe para um bloco de endereços IP é o endereço IP básico seguido por uma barra invertida e o tamanho do prefixo. Por exemplo: 
+- A sintaxe para um bloco de endereços IP é o endereço IP básico seguido por uma barra invertida e o tamanho do prefixo. Por exemplo:
   - **Exemplo de IPv4**: 5.5.5.64/26 corresponde a qualquer solicitação que chega dos endereços 5.5.5.64 a 5.5.5.127.
   - **Exemplo de IPv6**: 1:2:3:/48 corresponde a qualquer solicitação que chega dos endereços 1:2:3:0:0:0:0:0 por meio de 1:2:3:ffff:ffff:ffff:ffff:ffff.
 - Devido à maneira como as configurações de cache são acompanhadas, essa condição de correspondência é incompatível com os recursos a seguir:
@@ -285,7 +288,7 @@ Informações de chave:
 </br>
 
 ---
-### <a name="device"></a>Dispositivo
+### <a name="device"></a>Dispositivos
 
 A condição de correspondência Dispositivo identifica solicitações feitas de um dispositivo móvel baseadas em suas propriedades. A detecção de dispositivos móveis é alcançada por meio de [WURFL](http://wurfl.sourceforge.net/). 
 
@@ -306,7 +309,7 @@ Informações de chave:
 #### <a name="string-type"></a>Tipo de cadeia de caracteres
 Normalmente, um recurso WURFL aceita qualquer combinação de números, letras e símbolos. Devido à natureza flexível dessa funcionalidade, você deve escolher como o valor associado a essa condição de correspondência é interpretado. A tabela a seguir descreve o conjunto disponível de opções:
 
-Type     | DESCRIÇÃO
+Type     | Descrição
 ---------|------------
 Literal  | Selecione esta opção para impedir que a maioria dos caracteres tenham um significado especial usando seus [valores literal](cdn-rules-engine-reference.md#literal-values).
 Curinga | Selecione esta opção para aproveitar todos os [caracteres curinga] ([valores curinga](cdn-rules-engine-reference.md#wildcard-values).
@@ -320,9 +323,9 @@ A tabela a seguir lista recursos WURFL e suas variáveis para o mecanismo de reg
 > [!NOTE] 
 > As variáveis a seguir têm suporte nos recursos **Modificar Cabeçalho de Solicitação do Cliente** e **Modificar Cabeçalho de Resposta do Cliente**.
 
-Recurso | Variável | DESCRIÇÃO | Valores de exemplo
+Recurso | Variável | Descrição | Valores de exemplo
 -----------|----------|-------------|----------------
-Nome da marca | %{wurfl_cap_brand_name} | Uma cadeia de caracteres que indica o nome da marca do dispositivo. | Samsung
+Nome da Marca | %{wurfl_cap_brand_name} | Uma cadeia de caracteres que indica o nome da marca do dispositivo. | Samsung
 SO do dispositivo | %{wurfl_cap_device_os} | Uma cadeia de caracteres que indica o sistema operacional instalado no dispositivo. | IOS
 Versão do SO do dispositivo | %{wurfl_cap_device_os_version} | Uma cadeia de caracteres que indica o número de versão do sistema operacional instalado no dispositivo. | 1.0.1
 Orientação dupla | %{wurfl_cap_dual_orientation} | Um booliano que indica se o dispositivo dá suporte a orientação dupla. | verdadeiro
@@ -339,7 +342,7 @@ Navegador de dispositivo móvel | %{wurfl_cap_mobile_browser} | Uma cadeia de ca
 Versão do navegador móvel | %{wurfl_cap_mobile_browser_version} | Uma cadeia de caracteres que indica a versão do navegador que é usado para solicitar conteúdo do dispositivo. | 31
 Nome do modelo | %{wurfl_cap_model_name} | Uma cadeia de caracteres que indica o nome do modelo do dispositivo. | s3
 Download progressivo | %{wurfl_cap_progressive_download} | Um booliano que indica se o dispositivo dá suporte a reprodução de áudio e vídeo enquanto ele ainda está sendo baixado. | verdadeiro
-Data do lançamento | %{wurfl_cap_release_date} | Uma cadeia de caracteres que indica o ano e o mês em que o dispositivo foi adicionado ao banco de dados WURFL.<br/><br/>Formato: `yyyy_mm` | 2013_december
+Data do Lançamento | %{wurfl_cap_release_date} | Uma cadeia de caracteres que indica o ano e o mês em que o dispositivo foi adicionado ao banco de dados WURFL.<br/><br/>Formato: `yyyy_mm` | 2013_december
 Altura de resolução | %{wurfl_cap_resolution_height} | Um inteiro que indica a altura do dispositivo em pixels. | 768
 Largura de resolução | %{wurfl_cap_resolution_width} | Um inteiro que indica a largura do dispositivo em pixels. | 1024
 
@@ -472,7 +475,7 @@ A condição de correspondência do Método de Solicitação é atendido somente
 - POST 
 - OPÇÕES 
 - PUT 
-- EXCLUIR 
+- DELETE 
 - RASTREAMENTO 
 - CONECTAR 
 
@@ -904,7 +907,7 @@ Informações de chave:
 
 - Caracteres de expressão regular especiais de escape duplo (por exemplo, \^$.+) para incluir uma barra invertida na expressão regular.
 
-   Por exemplo: 
+   Por exemplo:
 
    Value | Interpretado como 
    ------|---------------
@@ -944,7 +947,7 @@ Informações de chave:
 
 - Especifique vários valores delimitando cada um deles com um único espaço.
 
-   Por exemplo:  *Parameter1=ValueA* *ValueB* *Parameter1=ValueC&Parameter2=ValueD*
+   Por exemplo: *Parameter1=ValueA* *ValueB* *Parameter1=ValueC&Parameter2=ValueD*
 
 - Apenas as correspondências exatas a pelo menos um dos padrões de cadeia de caracteres de consulta especificados satisfazem essa condição de correspondência.
     
@@ -960,7 +963,7 @@ Informações de chave:
 #### <a name="sample-scenarios"></a>Cenários de exemplo
 O exemplo a seguir demonstra como essa opção funciona em situações específicas:
 
- NOME                 | DESCRIÇÃO
+ NOME                 | Descrição
  ---------------------|------------
 user=joe              | Esse padrão é correspondido quando a cadeia de caracteres de consulta para uma URL solicitada é "?user=joe."
 \*user=\* \*optout=\* | Esse padrão é correspondido quando a consulta de URL CDN contém o parâmetro opcional ou de usuário.

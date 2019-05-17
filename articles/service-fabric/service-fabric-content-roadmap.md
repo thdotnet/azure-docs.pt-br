@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/08/2017
 ms.author: atsenthi
-ms.openlocfilehash: dfe08152f986ccac3dabe7b3bb21e7653ee812a4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a95baeb60ddff38e2aa1e36e7728c012d9d44930
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60394365"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540711"
 ---
 # <a name="so-you-want-to-learn-about-service-fabric"></a>Então você deseja saber mais sobre o Service Fabric?
 O Azure Service Fabric é uma plataforma de sistemas distribuídos que facilita o empacotamento, implantação e gerenciamento de microsserviços escalonáveis e confiáveis.  No entanto, o Service Fabric tem uma área de superfície grande, e há muito a aprender.  Este artigo fornece um resumo do Service Fabric e descreve os principais conceitos, modelos de programação, ciclo de vida do aplicativo, teste, clusters e monitoramento de integridade. Leia a [Visão geral](service-fabric-overview.md) e [O que são microsserviços?](service-fabric-overview-microservices.md) para obter uma introdução e saber como o Service Fabric pode ser usado para criar microsserviços. Este artigo não contém uma lista abrangente de conteúdo, mas vincula a visão geral e os artigos de introdução de cada área do Service Fabric. 
@@ -30,7 +30,7 @@ O Azure Service Fabric é uma plataforma de sistemas distribuídos que facilita 
 ### <a name="design-time-application-type-service-type-application-package-and-manifest-service-package-and-manifest"></a>Tempo de design: o tipo de aplicativo, tipo de serviço, o pacote de aplicativos e manifesto, pacote de serviço e manifesto
 Um tipo de aplicativo é o nome/versão atribuído a uma coleção de tipos de serviço. Isso é definido em um arquivo *ApplicationManifest.xml*, que é inserido em um diretório do pacote de aplicativos. O pacote de aplicativos é então copiado para o repositório de imagens do cluster do Service Fabric. Assim, você pode criar um aplicativo nomeado desse tipo de aplicativo que, em seguida, é executado no cluster. 
 
-Um tipo de serviço é o nome/versão atribuída aos pacotes de códigos, pacotes de dados e pacotes de configuração de um serviço. Isso é definido em um arquivo ServiceManifest.xml, que é inserido em um diretório do pacote de serviço. Em seguida, o diretório do pacote de serviço é referenciado por um arquivo *ApplicationManifest.xml* do pacote de aplicativos. Dentro do cluster, depois de criar um aplicativo nomeado, você pode criar um serviço nomeado a partir de um dos tipos de serviço do tipo de aplicativo. Um tipo de serviço é descrito pelo seu arquivo *ServiceManifest.xml*. O tipo de serviço é composto por definições de configuração de serviço do código executável, que são carregadas em tempo de execução e por dados estáticos que são consumidos pelo serviço.
+Um tipo de serviço é o nome/versão atribuída aos pacotes de códigos, pacotes de dados e pacotes de configuração de um serviço. Isso é definido em um arquivo ServiceManifest.xml, que é inserido em um diretório do pacote de serviço. Em seguida, o diretório do pacote de serviço é referenciado por um arquivo *ApplicationManifest.xml* do pacote de aplicativos. Dentro do cluster, depois de criar um aplicativo nomeado, você pode criar um serviço nomeado a partir de um dos tipos de serviço do tipo de aplicativo. Um tipo de serviço é descrito pelo seu arquivo *ServiceManifest.xml*. O tipo de serviço é composto de código executável e definições de configuração de serviço, que são carregadas em tempo de execução, e dados estáticos que são consumidos pelo serviço.
 
 ![Tipos de aplicativos do Service Fabric e tipos de serviço][cluster-imagestore-apptypes]
 
@@ -144,7 +144,7 @@ Os cenários de segurança do cluster são:
 
 Para obter mais informações, leia [Proteger um cluster](service-fabric-cluster-security.md).
 
-### <a name="scaling"></a>Dimensionamento
+### <a name="scaling"></a>Escala
 Se você adiciona novos nós ao cluster, o Service Fabric reequilibra as réplicas de partição e instâncias entre o número aumentado de nós. O desempenho geral do aplicativo é melhorado e a contenção para o acesso à memória é reduzida. Se os nós no cluster não estiverem sendo usados com eficiência, você poderá diminuir o número de nós no cluster. O Service Fabric redistribui novamente as réplicas de partição e instâncias entre o número reduzido de nós, para fazer melhor uso do hardware em cada nó. Você pode dimensionar clusters no Azure [manualmente](service-fabric-cluster-scale-up-down.md) ou [programaticamente](service-fabric-cluster-programmatic-scaling.md). Clusters autônomos podem ser dimensionados [manualmente](service-fabric-cluster-windows-server-add-remove-nodes.md).
 
 ### <a name="cluster-upgrades"></a>Atualizações do cluster

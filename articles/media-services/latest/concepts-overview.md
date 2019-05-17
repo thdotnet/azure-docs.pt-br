@@ -9,15 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/21/2019
+ms.date: 05/13/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 8a4ffdc09cb12f7a16173c86bd3d0e3aee78d46d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 1e76569c7f5157dce681d15ec8d499b90e080102
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65152640"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65762300"
 ---
 # <a name="media-services-concepts"></a>Conceitos de serviços de mídia
 
@@ -26,7 +26,7 @@ Este tópico fornece uma visão geral dos conceitos e terminologia de serviços 
 Os conceitos fundamentais descritos nestes tópicos devem ser examinados antes do início do desenvolvimento.
 
 > [!NOTE]
-> Atualmente, você não pode usar o portal do Azure para gerenciar recursos da v3. Use a [API REST](https://aka.ms/ams-v3-rest-ref), a [CLI](https://aka.ms/ams-v3-cli-ref) ou um dos [SDKs](developers-guide.md) com suporte.
+> Atualmente, você não pode usar o portal do Azure para gerenciar recursos da v3. Use a [API REST](https://aka.ms/ams-v3-rest-ref), a [CLI](https://aka.ms/ams-v3-cli-ref) ou um dos [SDKs](media-services-apis-overview.md#sdks) com suporte.
 
 ## <a name="terminology"></a>Terminologia
 
@@ -62,7 +62,7 @@ Para codificar com os serviços de mídia v3, você precisará criar **transform
 - [Transformações e Trabalhos](transforms-jobs-concept.md)
 - [Codificação com os serviços de mídia](encoding-concept.md)
 
-## <a name="media-analytics"></a>Análise de mídia
+## <a name="media-analytics"></a>Análise de Mídia
 
 Para analisar seus arquivos de áudio e vídeos, você também precisará criar **transforma** e **trabalhos**.
 
@@ -76,7 +76,7 @@ Ao criar o **localizador de Streaming**, além do nome do ativo, você precisar�
 
 Empacotamento dinâmico é usado se você transmitir seu conteúdo ao vivo ou sob demanda. O diagrama a seguir mostra o streaming sob demanda com o fluxo de trabalho de empacotamento dinâmico.
 
-![Empacotamento dinâmico](./media/dynamic-packaging-overview/media-services-dynamic-packaging.svg)
+![Empacotamento dinâmico](./media/dynamic-packaging-overview/media-services-dynamic-packaging.png)
 
 Com os serviços de mídia, você pode entregar seu conteúdo ao vivo e sob demanda criptografado dinamicamente com criptografia AES (AES-128) ou / e qualquer um dos três sistemas DRM (gerenciamento) principais de direitos digitais: Microsoft PlayReady, Google Widevine e Apple FairPlay. Os serviços de mídia também fornecem um serviço de distribuição de chaves AES e licenças DRM (PlayReady, Widevine e FairPlay) para os clientes autorizados.
 
@@ -134,7 +134,7 @@ Você pode usar o Player de mídia do Azure para reproduzir conteúdo de mídia 
 
 - [Visão geral do Player de Mídia do Azure](use-azure-media-player.md)
 
-## <a name="ask-questions-give-feedback-get-updates"></a>Faça perguntas, comentários, obtenha atualizações
+## <a name="ask-questions-give-feedback-get-updates"></a>Fazer perguntas, comentar, obter atualizações
 
 Confira o artigo [comunidade dos Serviços de Mídia do Azure](media-services-community.md) para ver diferentes maneiras de fazer perguntas, comentários e obter atualizações sobre os serviços de mídia.
 

@@ -2,9 +2,9 @@
 title: Saiba como fornecer declarações opcionais para o aplicativo Azure AD | Microsoft Docs
 description: Um guia para adicionar declarações adicionais ou personalizadas aos tokens SAML 2.0 e JSON Web Tokens (JWT) emitidos pelo Azure Active Directory.
 documentationcenter: na
-author: CelesteDG
+author: rwike77
 services: active-directory
-manager: mtillman
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -13,16 +13,16 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 03/27/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fd7b05a5411c03e1324871fbff3c29061ce7b3d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 593289e64c0f9cd13251a0f7b47b860158100b36
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65139235"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544574"
 ---
 # <a name="how-to-provide-optional-claims-to-your-azure-ad-app"></a>Como: Fornecer declarações opcionais para seu aplicativo do AD do Azure
 
@@ -52,13 +52,13 @@ O conjunto de declarações opcionais disponíveis por padrão para uso pelos ap
 
 **Tabela 2: Conjunto de declarações de v1.0 e V2.0 opcionais**
 
-| NOME                       |  DESCRIÇÃO   | Tipo de token | Tipo de Usuário | Observações  |
+| NOME                       |  Descrição   | Tipo de Token | Tipo de Usuário | Observações  |
 |----------------------------|----------------|------------|-----------|--------|
 | `auth_time`                | Hora em que o usuário foi autenticado pela última vez. Confira especificações de OpenID Connect.| JWT        |           |  |
 | `tenant_region_scope`      | Região do locatário do recurso | JWT        |           | |
 | `home_oid`                 | Para usuários convidados, a ID de objeto do usuário no locatário inicial do usuário.| JWT        |           | |
 | `sid`                      | ID de sessão usada para entrada do usuário por sessão out. | JWT        |  Pessoal e contas do Azure AD.   |         |
-| `platf`                    | Plataforma de dispositivos    | JWT        |           | Restrito aos dispositivos gerenciados que podem verificar o tipo de dispositivo.|
+| `platf`                    | Plataforma do dispositivo    | JWT        |           | Restrito aos dispositivos gerenciados que podem verificar o tipo de dispositivo.|
 | `verified_primary_email`   | Originado de PrimaryAuthoritativeEmail do usuário      | JWT        |           |         |
 | `verified_secondary_email` | Originado de SecondaryAuthoritativeEmail do usuário   | JWT        |           |        |
 | `enfpolids`                | IDs de política aplicada. Uma lista de IDs de política que foram avaliadas para o usuário atual. | JWT |  |  |
@@ -81,7 +81,7 @@ Essas declarações são sempre incluídas nos tokens do Azure AD v 1.0, mas nã
 
 **Tabela 3: Declarações opcionais somente V2.0**
 
-| Declaração JWT     | NOME                            | DESCRIÇÃO                                | Observações |
+| Declaração JWT     | NOME                            | Descrição                                | Observações |
 |---------------|---------------------------------|-------------|-------|
 | `ipaddr`      | Endereço IP                      | O endereço IP com o qual o cliente se conectou.   |       |
 | `onprem_sid`  | Identificador de Segurança Local |                                             |       |
@@ -90,7 +90,7 @@ Essas declarações são sempre incluídas nos tokens do Azure AD v 1.0, mas nã
 | `in_corp`     | Dentro da Rede Corporativa        | Indica se o cliente está se conectando da rede corporativa. Se não estiver, a declaração não está incluída.   |  Baseado nas configurações de [IPs confiáveis](../authentication/howto-mfa-mfasettings.md#trusted-ips) na Autenticação Multifator.    |
 | `nickname`    | Apelido                        | Um nome adicional para o usuário, separado do nome ou sobrenome. | 
 | `family_name` | Sobrenome                       | Fornece o último nome, sobrenome ou nome da família do usuário conforme definido no objeto de usuário. <br>"family_name":"Barros" | Com suporte no MSA e AAD   |
-| `given_name`  | Nome                      | Fornece o nome ou o nome "determinado" do usuário, conforme definido no objeto do usuário.<br>"given_name": "Davi"                   | Com suporte no MSA e AAD  |
+| `given_name`  | Primeiro nome                      | Fornece o nome ou o nome "determinado" do usuário, conforme definido no objeto do usuário.<br>"given_name": "Davi"                   | Com suporte no MSA e AAD  |
 | `upn`         | Nome UPN | Um identificador para o usuário que pode ser usado com o parâmetro username_hint.  Não é um identificador durável para o usuário e não deve ser usado para dados de chave. | Ver [propriedades adicionais](#additional-properties-of-optional-claims) abaixo para a configuração da declaração. |
 
 ### <a name="additional-properties-of-optional-claims"></a>Propriedades adicionais de declarações opcionais
@@ -99,7 +99,7 @@ Algumas declarações opcionais podem ser configuradas para alterar o modo como 
 
 **Tabela 4: Valores de configuração para declarações opcionais**
 
-| Nome da propriedade  | Nome de Propriedade Adicional | DESCRIÇÃO |
+| Nome da propriedade  | Nome de Propriedade Adicional | Descrição |
 |----------------|--------------------------|-------------|
 | `upn`          |                          | Pode ser usada para respostas SAML e JWT e para tokens v1.0 e v2.0. |
 |                | `include_externally_authenticated_upn`  | Inclui o UPN de convidado conforme armazenado no locatário do recurso. Por exemplo, `foo_hometenant.com#EXT#@resourcetenant.com` |             
@@ -163,7 +163,7 @@ Declara as declarações opcionais solicitadas por um aplicativo. Um aplicativo 
 
 **Tabela 5: Propriedades do tipo OptionalClaims**
 
-| NOME        | Type                       | DESCRIÇÃO                                           |
+| NOME        | Type                       | Descrição                                           |
 |-------------|----------------------------|-------------------------------------------------------|
 | `idToken`     | Coleção (OptionalClaim) | As declarações opcionais retornadas no token de ID JWT. |
 | `accessToken` | Coleção (OptionalClaim) | As declarações opcionais retornadas no token de acesso JWT. |
@@ -176,7 +176,7 @@ Caso haja suporte por uma declaração específica, você também poderá modifi
 
 **Tabela 6: Propriedades do tipo OptionalClaim**
 
-| NOME                 | Type                    | DESCRIÇÃO                                                                                                                                                                                                                                                                                                   |
+| NOME                 | Type                    | Descrição                                                                                                                                                                                                                                                                                                   |
 |----------------------|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`                 | Edm.String              | O nome da declaração opcional.                                                                                                                                                                                                                                                                           |
 | `source`               | Edm.String              | A origem (objeto de diretório) da declaração. Há declarações predefinidas e definidas pelo usuário de propriedades de extensão. Se o valor de origem for nulo, a declaração será uma declaração opcional predefinida. Se o valor de origem for um usuário, o valor na propriedade name será a propriedade de extensão do objeto de usuário. |
@@ -217,7 +217,7 @@ Esta seção aborda as opções de configuração em declarações opcionais par
    - "DistributionList"
    - "DirectoryRole"
 
-   Por exemplo: 
+   Por exemplo:
 
    ```json
    "groupMembershipClaims": "SecurityGroup"

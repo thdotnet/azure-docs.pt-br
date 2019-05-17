@@ -3,8 +3,8 @@ title: Protocolo SAML de Logout Único do Azure | Microsoft Docs
 description: Este artigo descreve o protocolo SAML de Logout Único no Azure Active Directory
 services: active-directory
 documentationcenter: .net
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 0e4aa75d-d1ad-4bde-a94c-d8a41fb0abe6
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
-ms.author: celested
+ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d4f9c69d6ddcbef96a88a0df10c3b0974cd5b74
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 06fd36935c1f43cc14697748666eccd9e6d31168
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60297758"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545957"
 ---
 # <a name="single-sign-out-saml-protocol"></a>Protocolo SAML de Logout Único
 
@@ -47,7 +47,7 @@ O serviço de nuvem envia uma mensagem `LogoutRequest` ao Azure AD para indicar 
 O elemento `LogoutRequest` enviado ao Azure AD requer os seguintes atributos:
 
 * `ID` - isso identifica a solicitação de saída. O valor de `ID` não deve começar com um número. A prática comum é acrescentar **id** à representação de cadeia de caracteres de um GUID.
-* `Version` - Defina o valor desse elemento como **2.0**. Esse valor é obrigatório.
+* `Version` - Defina o valor desse elemento como **2.0**. Esse valor é necessário.
 * `IssueInstant` - esta é uma cadeia de caracteres `DateTime` com um valor de UTC (Tempo Universal Coordenado) e [formato de ida e volta ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). O Microsoft Azure Active Directory espera um valor desse tipo, mas não é obrigatório.
 
 ### <a name="issuer"></a>Emissor

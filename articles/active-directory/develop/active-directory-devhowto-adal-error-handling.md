@@ -3,9 +3,9 @@ title: Práticas recomendadas em tratamento de erro para clientes da Biblioteca 
 description: Apresenta diretrizes e práticas recomendadas em tratamento de erro para aplicativos cliente ADAL.
 services: active-directory
 documentationcenter: ''
-author: danieldobalian
-manager: mtillman
-ms.author: celested
+author: rwike77
+manager: CelesteDG
+ms.author: ryanwi
 ms.service: active-directory
 ms.subservice: develop
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 02/27/2017
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e92c3b302ab18aaaf20d187d61a488603ce81a7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 652175e99c800b8e4aa69c639f0bdb9aba838987
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60411430"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544630"
 ---
 # <a name="error-handling-best-practices-for-azure-active-directory-authentication-library-adal-clients"></a>Práticas recomendadas em tratamento de erro para clientes da Biblioteca de autenticação do Azure Active Directory (ADAL)
 
@@ -52,7 +52,7 @@ Há um conjunto de erros gerados pelo sistema operacional, que pode exigir um tr
 
 Basicamente, há dois casos de erros AcquireTokenSilent:
 
-| Caixa | DESCRIÇÃO |
+| Caso | Descrição |
 |------|-------------|
 | **Caso 1**: O erro pode ser resolvido com credenciais interativas | Para erros causados pela falta de tokens válidos, uma solicitação interativa é necessária. Mais especificamente, a pesquisa de cache e um token de atualização inválido/expirado exigem uma chamada AcquireToken para serem resolvidos.<br><br>Nesses casos, o usuário final precisa ser solicitado a entrar. O aplicativo pode optar por fazer uma solicitação interativa imediatamente, após a interação do usuário final (como apertar um botão de entrada) ou posterior. A escolha depende do comportamento desejado do aplicativo.<br><br>Consulte o código na seção a seguir para esse caso específico e os erros que fazem o diagnóstico dele.|
 | **Caso 2**: O erro não pode ser resolvido com credenciais interativas | Para erros de rede e transitórios/temporários ou outras falhas, a execução de uma solicitação AcquireToken interativa não resolve o problema. Avisos de entrada interativa desnecessários também podem frustrar usuários finais. A ADAL tenta automaticamente uma nova tentativa única para a maioria dos erros em falha AcquireTokenSilent.<br><br>O aplicativo cliente também poderá tentar novamente depois, mas quando e como fazer isso depende do comportamento do aplicativo e da experiência do usuário final desejada. Por exemplo, o aplicativo poderá fazer uma nova tentativa AcquireTokenSilent depois de alguns minutos, ou em resposta a uma ação do usuário final. Uma repetição imediata resultará na limitação do aplicativo e não deve ser tentada.<br><br>Uma falha em nova tentativa subsequente com o mesmo erro não significa que o cliente deva fazer uma solicitação interativa usando AcquireToken, pois isso não resolve o erro.<br><br>Consulte o código na seção a seguir para esse caso específico e os erros que fazem o diagnóstico dele. |

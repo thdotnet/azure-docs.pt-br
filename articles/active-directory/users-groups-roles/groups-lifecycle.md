@@ -10,21 +10,21 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 04/24/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1be88f0938a16302be4cf2308ba463900c067104
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 1de17429dfe89506445b2d47999b102f3becb15b
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920162"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604390"
 ---
 # <a name="configure-the-expiration-policy-for-office-365-groups"></a>Configurar a política de expiração de grupos do Office 365
 
-Agora é possível gerenciar o ciclo de vida de grupos do Office 365 definindo-se uma política de expiração para eles. Você pode configurar a política de expiração apenas dos grupos do Office 365 no Azure Active Directory (Azure AD). 
+Agora é possível gerenciar o ciclo de vida de grupos do Office 365 definindo-se uma política de expiração para eles. Você pode configurar a política de expiração apenas dos grupos do Office 365 no Azure Active Directory (Azure AD).
 
 Depois de configurar a expiração de um grupo:
 
@@ -54,7 +54,7 @@ Para saber mais sobre permissões para restaurar um grupo excluído, confira [Re
 
 1. Abra o [Centro de administração do Azure AD ](https://aad.portal.azure.com) com uma conta de administrador global no seu locatário do Azure AD.
 
-2. Selecione **Grupos** e, em seguida, selecione **Vencimento** para abrir as configurações de vencimento.
+2. Selecione **grupos**, em seguida, selecione **expiração** para abrir as configurações de expiração.
   
    ![Configurações de expiração para grupos](./media/groups-lifecycle/expiration-settings.png)
 
@@ -66,8 +66,8 @@ Para saber mais sobre permissões para restaurar um grupo excluído, confira [Re
   * Salve as configurações quando terminar selecionando **Salvar**.
 
 > [!NOTE]
-> * Quando você configura a expiração pela primeira vez, todos os grupos mais antigos que o intervalo de expiração são definidos como 30 dias até a expiração. O primeiro email de notificação de renovação é enviado dentro de um dia. Por exemplo, um grupo foi criado 400 dias atrás e o intervalo de vencimento é definido para 180 dias. Ao aplicar as configurações de vencimento, um grupo tem 30 dias antes de ser excluído, a menos que seja renovado pelo proprietário.
-> * Quando um grupo dinâmico é excluído e restaurado, ele é visto como um grupo novo e preenchido novamente de acordo com a regra. Esse processo pode levar até 24 horas.
+> Quando você configura a expiração pela primeira vez, todos os grupos mais antigos que o intervalo de expiração são definidos como 30 dias até a expiração. O primeiro email de notificação de renovação é enviado dentro de um dia. Por exemplo, um grupo foi criado 400 dias atrás e o intervalo de vencimento é definido para 180 dias. Quando você aplica a política de expiração, um grupo tem 30 dias antes de ser excluído, a menos que o proprietário renova-lo.
+> Quando um grupo dinâmico é excluído e restaurado, ele tem visto como um novo grupo e preenchido novamente de acordo com a regra. Esse processo pode levar até 24 horas.
 
 ## <a name="email-notifications"></a>Notificações por email
 

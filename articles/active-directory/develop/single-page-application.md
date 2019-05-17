@@ -3,8 +3,8 @@ title: Aplicativos de página única no Azure Active Directory
 description: Descreve quais são os SPAs (aplicativos de página única) e as noções básicas sobre fluxo de protocolo, registro e expiração de token para esse tipo de aplicativo.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur, andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6704c00734d18b9918378db6e056696407421014
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1f6f66779bec9ed4e38e5a662c2d3728ba2034b6
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60297792"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545295"
 ---
 # <a name="single-page-applications"></a>Aplicativos de página única
 
@@ -65,7 +65,7 @@ Usar o ADAL.js ajuda a:
 
 Após uma autenticação bem-sucedida, o Azure AD grava um cookie no navegador do usuário para estabelecer uma sessão. A sessão existe entre o usuário e o Azure AD, e não entre o usuário e o aplicativo Web. Quando um token expira, o ADAL.js usa essa sessão para obter silenciosamente outro token. O ADAL.js faz isso usando um iFrame oculto para enviar e receber a solicitação usando o protocolo de concessão implícita OAuth. O ADAL.js também pode usar o mesmo mecanismo para obter silenciosamente os tokens de acesso para outros recursos da API da Web que o aplicativo chama, contanto que esses recursos ofereçam suporte a CORS (compartilhamento de recursos entre origens), que eles estejam registrados no diretório do usuário e que qualquer consentimento necessário tenha sido fornecido pelo usuário durante o logon.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * Saiba mais sobre outros [Tipos e cenários de aplicativo](app-types.md)
 * Saiba mais sobre as [noções básicas de autenticação](authentication-scenarios.md) do Azure AD

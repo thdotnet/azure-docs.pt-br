@@ -8,16 +8,16 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 3/11/2019
+ms.date: 5/14/2019
 author: swinarko
 ms.author: sawinark
 manager: craigg
-ms.openlocfilehash: 58bdc0e698fc28929c2080b1737770275b1164ad
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: a67436f09d6e28db8d19679e446ac4cf98383709
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57848721"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593807"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Habilitar a autenticação do Azure Active Directory para o Azure-SSIS Integration Runtime
 
@@ -60,7 +60,7 @@ O servidor do Banco de Dados SQL do Azure oferece suporte à criação de um ban
     6de75f3c-8b2f-4bf4-b9f8-78cc60a18050 SSISIrGroup
     ```
 
-3.  Adicione a identidade gerenciada para o seu ADF ao grupo. Você pode seguir o artigo [identiy gerenciado para o Data Factory](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) para obter a ID de identidade de serviço principal (por exemplo, 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc, mas não use a ID do aplicativo de identidade de serviço para essa finalidade).
+3.  Adicione a identidade gerenciada para o seu ADF ao grupo. Você pode seguir o artigo [identiy gerenciado para o Data Factory](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) para obter a ID de objeto de identidade gerenciada principal (por exemplo, 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc, mas não usar a ID do aplicativo de identidade gerenciada para essa finalidade).
 
     ```powershell
     Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc
@@ -170,12 +170,12 @@ Para esta próxima etapa, você precisará [Microsoft SQL Server Management Stu
 
 4.  Clique com o botão direito do mouse no banco de dados **mestre** e selecione **Nova consulta**.
 
-5.  Obtenha a identidade gerenciada para o ADF. Você pode seguir o artigo [identiy gerenciado para o Data Factory](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) para obter a ID de aplicativo de identidade de serviço principal (mas não use a ID de identidade de serviço para essa finalidade).
+5.  Obtenha a identidade gerenciada para o ADF. Você pode seguir o artigo [identiy gerenciado para o Data Factory](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) para obter a ID do aplicativo de identidade gerenciada principal (mas não use a ID de objeto de identidade gerenciada para essa finalidade).
 
 6.  Na janela de consulta, execute o seguinte script T-SQL para converter a identidade gerenciada do ADF para tipo binário:
 
     ```sql
-    DECLARE @applicationId uniqueidentifier = '{your SERVICE IDENTITY APPLICATION ID}'
+    DECLARE @applicationId uniqueidentifier = '{your Managed Identity Application ID}'
     select CAST(@applicationId AS varbinary)
     ```
     
@@ -184,7 +184,7 @@ Para esta próxima etapa, você precisará [Microsoft SQL Server Management Stu
 7.  Limpar a janela de consulta e executar o script T-SQL a seguir para adicionar a identidade gerenciada para o ADF como um usuário
 
     ```sql
-    CREATE LOGIN [{a name for the managed identity}] FROM EXTERNAL PROVIDER with SID = {your SERVICE IDENTITY APPLICATION ID as binary}, TYPE = E
+    CREATE LOGIN [{a name for the managed identity}] FROM EXTERNAL PROVIDER with SID = {your Managed Identity Application ID as binary}, TYPE = E
     ALTER SERVER ROLE [dbcreator] ADD MEMBER [{the managed identity name}]
     ALTER SERVER ROLE [securityadmin] ADD MEMBER [{the managed identity name}]
     ```

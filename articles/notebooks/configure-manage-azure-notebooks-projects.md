@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/25/2019
+ms.date: 05/13/2019
 ms.author: kraigb
-ms.openlocfilehash: d1f94c5fd774b51f57da2885d1ccd8eb909cd3c0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0440e498451ee141fa03851b78418caf911d0e32
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60234954"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65596748"
 ---
 # <a name="manage-and-configure-projects"></a>Gerenciar e configurar projetos
 
@@ -37,38 +37,7 @@ O Azure Notebooks inicia a máquina virtual subjacente sempre que você executa 
 
 ## <a name="compute-tier"></a>Camada de computação
 
-A lista suspensa **Executar** no painel do projeto é onde você pode selecionar a camada de computação na qual o projeto é executado. Por padrão, os projetos são executados na camada **Computação Gratuita**, que é limitada a 4 GB de memória e 1 GB de dados para evitar abusos:
-
-![Lista suspensa de camada de computação no painel do projeto](media/project-compute-tier-list.png)
-
-Você pode ignorar essas limitações usando uma máquina virtual diferente da provisionada em uma assinatura do Azure. Instale e execute o JupyterHub nessa máquina virtual. As imagens da Máquina Virtual de Ciência de Dados (qualquer sistema operacional) são boas opções, pois elas incluem o JupyterHub por padrão.
-
-Após configurar uma máquina virtual do Azure adequadamente, selecione a opção **Computação Direta** na lista suspensa, que solicita um nome (que aparecerá na lista), o endereço IP e a porta da VM (normalmente 8000, a porta padrão que o JupyterHub escuta) e as credenciais da VM:
-
-![Prompt que coleta informações do servidor para a opção de Computação Direta](media/project-compute-tier-direct.png)
-
-Se as seguintes condições forem verdadeiras, a lista suspensa também mostrará instâncias de [DSVM (Máquina Virtual de Ciência de Dados)](/azure/machine-learning/data-science-virtual-machine). (Se alguma dessas condições não for atendida, você poderá se conectar com a DSVM usando a opção de Computação Direta e inserindo os valores obtidos no portal do Azure.)
-
-- Você está conectado ao Azure Notebooks com uma conta que usa o AAD (Azure Active Directory), por exemplo, uma conta corporativa.
-- Sua conta está conectada a uma assinatura do Azure.
-- Você tem uma ou mais máquinas virtuais na assinatura, com, no mínimo, acesso de Leitura, que usam a Máquina Virtual de Ciência de Dados para a imagem do Linux (Ubuntu).
-
-![Instâncias de Máquina Virtual de Ciência de Dados na lista suspensa no painel do projeto](media/project-compute-tier-dsvm.png)
-
-Quando você seleciona uma instância de DSVM, o Azure Notebooks pode solicitar as credenciais de máquina específicas que usou quando criou a VM.
-
-Para criar uma nova instância de DSVM, siga as instruções para [Criar uma VM de Ciência de Dados do Ubuntu](/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro). Use a imagem da **Máquina Virtual de Ciência de Dados para Linux (Ubuntu)** se quiser que a DSVM seja exibida na lista suspensa no Azure Notebooks.  Se, por outros motivos, você tiver que usar a imagem do Windows ou CentOS, use a opção **Computação Direta** para se conectar manualmente à DSVM.
-
-> [!IMPORTANT]
-> Ao usar as máquinas virtuais de computação direta ou de ciência de dados, os blocos de anotações que podem ser executadas neles devem ser totalmente autossuficiente. No momento, o Azure Notebooks copia apenas a *ipynb* arquivo para a máquina virtual, mas não copia todos os outros arquivos no projeto. Como resultado, não conseguir encontrar outros arquivos de projeto notebooks em execução em outras VMs.
->
-> Você pode contornar esse comportamento de duas maneiras:
->
-> 1. Copie os arquivos de projeto manualmente para a VM.
->
-> 2. Inserir os arquivos dentro de um bloco de anotações do programa de instalação que você execute primeiro, antes do principal bloco de anotações. No bloco de notas de instalação, crie uma célula de código para cada arquivo em que a célula contém o conteúdo do arquivo. Em seguida, na parte superior de cada célula, insira o comando `%%writefile <filename>`, onde `<filename>` é o nome do arquivo para receber o conteúdo. Quando você executa o bloco de anotações, ele cria todos os arquivos na VM. Por exemplo, consulte o [setup.ipynb arquivo na demonstração Microsoft animal de estimação Detector](https://github.com/Microsoft/connect-petdetector/blob/master/setup.ipynb) (GitHub).
->
->     ![Usando um % % comando writefile no início de uma célula de código](media/setup-notebook-writefile-command.png)
+Por padrão, os projetos executados **computação gratuita** camada, o que é limitada a 4 GB de memória e 1 GB de dados para evitar abusos. Você pode ignorar essas limitações e aumentar a potência de computação por meio de uma máquina virtual diferente que você tiver provisionado em uma assinatura do Azure. Para obter mais informações, consulte [como usar as máquinas virtuais de ciência de dados](use-data-science-virtual-machine.md).
 
 ## <a name="edit-project-metadata"></a>Editar metadados do projeto
 
@@ -77,7 +46,7 @@ No painel do projeto, selecione **Configurações do Projeto** e, em seguida, se
 | Configuração | DESCRIÇÃO |
 | --- | --- |
 | Nome do projeto | Um nome amigável para seu projeto que usa o Azure Notebooks para fins de exibição. Por exemplo, "Olá, Mundo no Python". |
-| ID do projeto | Um identificador personalizado que se torna parte da URL que você usa para compartilhar um projeto. Essa ID pode usar apenas letras, números e hifens, é limitada a 30 caracteres e não pode ser um [reservado da ID do projeto](create-clone-jupyter-notebooks.md#reserved-project-ids). Se você não tiver certeza sobre o que usar, uma convenção comum é usar uma versão em letras minúsculas do nome do seu projeto, na qual espaços são transformados em hifens, por exemplo “projeto-meu-notebook” (truncado se necessário para encaixar o limite de comprimento). |
+| ID do Projeto | Um identificador personalizado que se torna parte da URL que você usa para compartilhar um projeto. Essa ID pode usar apenas letras, números e hifens, é limitada a 30 caracteres e não pode ser um [reservado da ID do projeto](create-clone-jupyter-notebooks.md#reserved-project-ids). Se você não tiver certeza sobre o que usar, uma convenção comum é usar uma versão em letras minúsculas do nome do seu projeto, na qual espaços são transformados em hifens, por exemplo “projeto-meu-notebook” (truncado se necessário para encaixar o limite de comprimento). |
 | Projeto público | Se definido, permite que qualquer pessoa com o link acesse o projeto. Ao criar um projeto privado, desmarque essa opção. |
 | Ocultar clones | Se definido, outros usuários não poderão ver uma lista de clones que foram feitos para este projeto. Ocultar clones é útil para projetos que são compartilhados com muitas pessoas que não fazem parte da mesma organização, como ao usar um notebook para dar uma aula. |
 

@@ -13,16 +13,16 @@ ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/13/2018
+ms.date: 05/13/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64bd2247a3437a2cc960da1820d9be417eedff8e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8d4d02f9e99acb68db126ccde465f73cc2294e06
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60285175"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65594025"
 ---
 # <a name="azure-active-directory-reporting-latencies"></a>Latências de relatórios do Azure Active Directory
 
@@ -41,10 +41,10 @@ A tabela a seguir lista as informações de latência para relatórios de ativid
 > **Latência (95º percentil)** refere-se ao tempo em que 95% dos logs serão relatados, e **Latência (99º percentil)** refere-se ao tempo em que 99% dos logs serão relatados. 
 >
 
-| Relatório | Latência (95º percentil) |Latência (99º percentil)|Intervalo de tempo dentro do qual os logs serão relatados|
-| :-- | --- | --- | --- |
-| Logs de auditoria | 2 minutos  | 5 min  | 2 a 60 minutos |
-| Entradas | 2 minutos  | 5 min | 2 a 120 minutos |
+| Relatório | Latência (95º percentil) |Latência (99º percentil)|
+| :-- | --- | --- |
+| Logs de auditoria | 2 minutos  | 5 min  |
+| Entradas | 2 minutos  | 5 min |
 
 ### <a name="how-soon-can-i-see-activities-data-after-getting-a-premium-license"></a>Em quanto tempo devo ver os dados das atividades após obter uma licença Premium?
 
@@ -62,7 +62,7 @@ A tabela a seguir lista as informações de latência para relatórios de segura
 | Relatório | Mínimo | Média | Máximo |
 | :-- | --- | --- | --- |
 | Usuários em risco          | 5 minutos   | 15 minutos  | 2 horas  |
-| Entradas de risco         | 5 minutos   | 15 minutos  | 2 horas  |
+| Entradas arriscadas         | 5 minutos   | 15 minutos  | 2 horas  |
 
 ## <a name="risk-events"></a>Eventos de risco
 
@@ -75,12 +75,12 @@ A tabela a seguir lista as informações de latência para eventos de risco.
 | Entradas de endereços IP anônimos |5 minutos |15 minutos |2 horas |
 | Entradas de locais desconhecidos |5 minutos |15 minutos |2 horas |
 | Usuários com credenciais vazadas |2 horas |4 horas |8 horas |
-| Viagem impossível a locais atípicos |5 minutos |1 hora |8 horas  |
+| Viagem impossível a localizações atípicas |5 minutos |1 hora |8 horas  |
 | Entradas de dispositivos infectados |2 horas |4 horas |8 horas  |
 | Entradas de endereços IP com atividade suspeita |2 horas |4 horas |8 horas  |
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Visão geral dos relatórios do Azure AD](overview-reports.md)
 * [Acesso programático aos relatórios do Microsoft Azure Active Directory](concept-reporting-api.md)

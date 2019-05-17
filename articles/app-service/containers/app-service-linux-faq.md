@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: yili
 ms.custom: seodec18
-ms.openlocfilehash: 7cc3a4d98901e618369c98ceee8125d2abbe94e3
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: dbf63ff47b11c2e75966b4a4b91fb1b00b40d216
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64919964"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65594268"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Perguntas frequentes sobre o Serviço de Aplicativo do Azure no Linux
 
@@ -39,13 +39,15 @@ Se você tiver qualquer dúvida, comente este artigo.
 
 **Quais são os valores esperados para a seção Arquivo de Inicialização quando configuro a pilha de tempo de execução?**
 
-| Pilha     | Valor Esperado                                                                |
-|-----------|-------------------------------------------------------------------------------|
-| Java SE   | um comando para iniciar seu `.jar` aplicativo                                    |
-| Tomcat    | o local de um script para executar todas as configurações para seu aplicativo          |
-| Node.js   | o arquivo de configuração de PM2 ou o arquivo de script                                |
-| .NET Core | o nome da DLL compilada como `dotnet <myapp>.dll`                                 |
-| Ruby      | o script Ruby que você deseja inicializar o aplicativo                     |
+| Pilha           | Valor Esperado                                                                         |
+|-----------------|----------------------------------------------------------------------------------------|
+| Java SE         | o comando para iniciar seu aplicativo JAR (por exemplo, `java -jar my-app.jar --server.port=80`) |
+| Tomcat, Wildfly | o local de um script para executar todas as configurações necessárias (por exemplo, `/home/site/deployments/tools/startup_script.sh`)          |
+| Node.js         | o arquivo de configuração de PM2 ou o arquivo de script                                |
+| .NET Core       | o nome da DLL compilada como `dotnet <myapp>.dll`                                 |
+| Ruby            | o script Ruby que você deseja inicializar o aplicativo                     |
+
+Esses comandos ou scripts são executados depois que o contêiner do Docker interno é iniciado, mas antes que seu aplicativo o código é iniciado.
 
 ## <a name="management"></a>Gerenciamento
 
@@ -65,7 +67,7 @@ Sim, você pode fazer isso por meio do site de gerenciamento do controle de orig
 
 Você deve definir o campo **reservado** do serviço de aplicativo para *true*.
 
-## <a name="continuous-integration-and-deployment"></a>Integração e implantação contínuas
+## <a name="continuous-integration-and-deployment"></a>Integração contínua e implantação
 
 **Meu aplicativo Web ainda usa uma imagem de contêiner antiga do Docker depois que atualizei a imagem no Hub do Docker. Há suporte para implantação/integração contínua de contêineres personalizados?**
 
@@ -93,7 +95,7 @@ Se a implantação do Git falhar no aplicativo Web do Linux, escolha uma das op�
 
    Se você receber uma mensagem de erro informando que o comando `curl` não foi encontrado, instale a ondulação usando `apt-get install curl` antes de executar o comando `curl` anterior.
 
-## <a name="language-support"></a>Suporte ao idioma
+## <a name="language-support"></a>Suporte de idioma
 
 **Eu quero usar websockets no aplicativo Node.js, há definições ou configurações especiais a serem definidas?**
 
@@ -202,5 +204,5 @@ Você pode usar apenas letras (A-Z, a-z), números (0-9) e o caractere de sublin
 ## <a name="next-steps"></a>Próximas etapas
 
 - [O que é o Serviço de Aplicativo do Azure no Linux?](app-service-linux-intro.md)
-- [Configurar ambientes de preparo no Serviço de Aplicativo do Azure](../../app-service/deploy-staging-slots.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
+- [Configurar ambientes de preparo no serviço de aplicativo do Azure](../../app-service/deploy-staging-slots.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 - [Implantação Contínua com o Aplicativo Web para Contêineres](./app-service-linux-ci-cd.md)

@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 04/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3de444d509684f0b4227abe91ec3c967f2bf8f03
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 6fd9ce1947b8207aced44204fc2989622a1998f2
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64926275"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65761912"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Perguntas frequentes do Azure Disk Encryption para VMs de IaaS
 
@@ -59,12 +59,7 @@ Distribuições do Linux e de servidor que não são endossadas pelo Azure não 
 | CentOS | 7.4 | SO e disco de dados |
 | CentOS | 7.3 | SO e disco de dados |
 | CentOS | 7.2n | SO e disco de dados |
-| CentOS | 6,8 | SO e disco de dados |
-| CentOS | 7.1 | Disco de dados |
-| CentOS | 7.0 | Disco de dados |
-| CentOS | 6.7 | Disco de dados |
-| CentOS | 6.6 | Disco de dados |
-| CentOS | 6.5 | Disco de dados |
+| CentOS | 6,8 | Disco de dados |
 | openSUSE | 42.3 | Disco de dados |
 | SLES | 12-SP4 | Disco de dados |
 | SLES | 12-SP3 | Disco de dados |
@@ -158,7 +153,7 @@ No Windows, o ADE usa o método de criptografia AES256 do BitLocker (AES256WithD
 Não, os dados não serão apagados de unidades de dados que já tiverem sido criptografadas usando o Azure Disk Encryption. Semelhante ao modo como o EncryptFormatAll não criptografou novamente a unidade do sistema operacional, ele não criptografará novamente a unidade de dados já criptografada. Para obter mais informações, veja os [critérios do EncryptFormatAll](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).        
 
 ## <a name="is-xfs-filesystem-supported"></a>Há suporte para sistema de arquivos XFS
-Volumes XFS têm suporte para criptografia de disco de dados apenas com o EncryptFormalAll. Reformata o volume, apagando todos os dados anteriormente lá. Para obter mais informações, veja os [critérios do EncryptFormatAll](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).
+Volumes XFS têm suporte para criptografia de disco de dados apenas com o EncryptFormatAll. Reformata o volume, apagando todos os dados anteriormente lá. Para obter mais informações, veja os [critérios do EncryptFormatAll](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).
 
 ## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>É possível fazer backup e restaurar uma VM criptografada? 
 

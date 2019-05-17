@@ -4,7 +4,7 @@ description: Saiba mais sobre as opções de configuração de cliente público 
 services: active-directory
 documentationcenter: dev-center-name
 author: rwike77
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a48eea9fedd2d82f44693d58b31ee0d5c8c288d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 4d731a8153dc6a70382c0d87cc20d8c961d9fe24
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138543"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546020"
 ---
 # <a name="application-configuration-options"></a>Opções de configuração de aplicativo
 
@@ -35,7 +35,7 @@ Em seu código, você inicializa um novo cliente público ou confidencial (ou o 
     - [segredo do cliente](#client-secret) (para aplicativos de cliente confidencial).
 - [Opções de log](#logging), incluindo o nível de log, controle de dados pessoais e o nome do componente usando a biblioteca.
 
-## <a name="authority"></a>Authority
+## <a name="authority"></a>Autoridade
 A autoridade é uma URL que indica um diretório que o MSAL pode solicitar tokens do. Autoridades comuns são:
 
 - https://login.microsoftonline.com/&lt; locatário&gt;/, onde &lt;locatário&gt; é a ID de locatário do locatário do Azure AD ou um domínio associado a este locatário do Azure AD.  Usado somente para entrada de usuários de uma organização específica.
@@ -58,7 +58,7 @@ Autoridades de nuvem do Azure AD tem duas partes:
 
 A instância e o público-alvo podem ser concatenados e fornecidos como a URL de autoridade. Nas versões do MSAL.NET antes da MSAL 3. x, você tinha que compõem a autoridade por conta própria, dependendo da nuvem que você quisesse o público entrar e de destino.  O diagrama a seguir mostra como a URL de autoridade é composta.
 
-![Authority](media/msal-client-application-configuration/authority.png)
+![Autoridade](media/msal-client-application-configuration/authority.png)
 
 ## <a name="cloud-instance"></a>Instância de nuvem
 O **instância** é usado para especificar se seu aplicativo está se conectando a usuários de nuvem pública do Microsoft Azure ou de nuvens nacionais. Usando a MSAL em seu código, a instância de nuvem do Azure pode ser definida usando uma enumeração ou passando a URL para o [instância de nuvem nacional](authentication-national-cloud.md#azure-ad-authentication-endpoints) como o `Instance` membro (se souber).
@@ -95,10 +95,10 @@ Atualmente, a única maneira de obter um aplicativo para conectar usuários com 
 - Defina o público de registro de aplicativo como "Trabalho e contas de estudante e contas pessoais" e,
 - e, defina o público em seu código / configuração de `AadAuthorityAudience.PersonalMicrosoftAccount` (ou `TenantID `= "clientes")
 
-## <a name="client-id"></a>ID do cliente
+## <a name="client-id"></a>ID do Cliente
 A ID do aplicativo exclusiva ao aplicativo (cliente) atribuída ao seu aplicativo pelo AD do Azure quando o aplicativo foi registrado.
 
-## <a name="redirect-uri"></a>URI de redirecionamento
+## <a name="redirect-uri"></a>URI de Redirecionamento
 O URI de redirecionamento é o URI no qual o provedor de identidade enviará os tokens de segurança novamente. 
 
 ### <a name="redirect-uri-for-public-client-applications"></a>URI de redirecionamento para aplicativos de cliente público
@@ -127,7 +127,7 @@ Para aplicativos de daemon, você não precisa especificar um URI de redireciona
 ## <a name="client-secret"></a>Segredo do cliente
 O segredo do cliente para o aplicativo cliente confidencial. Esse segredo (senha de aplicativo) é fornecido pelo portal de registro do aplicativo ou fornecido para o Azure AD durante o registro de aplicativo com o PowerShell AzureAD, PowerShell AzureRM ou CLI do Azure.
 
-## <a name="logging"></a>Registro em log
+## <a name="logging"></a>Registro em Log
 As outras opções de habilitar o registro em log e solução de problemas. Para obter mais informações, consulte o [registro em log](msal-logging.md) para obter mais detalhes sobre como usá-los.
 
 ## <a name="next-steps"></a>Próximas etapas

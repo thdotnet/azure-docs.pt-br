@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/28/2019
+ms.date: 05/11/2019
 ms.author: juliako
-ms.openlocfilehash: 96c3a3eb5e4c07ad9cad8ea5060a27c0c33eec5f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9cbb995eb3310a2263185d6fd6dba20efce37f38
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61466809"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65550160"
 ---
 # <a name="cloud-upload-and-storage"></a>Upload e armazenamento na nuvem
 
@@ -44,13 +44,24 @@ Em serviços de mídia v3, as APIs de armazenamento são usadas para carregar ar
 
 Para proteger os Ativos em repouso, os ativos devem ser criptografados pela criptografia do armazenamento. A tabela a seguir mostra como a criptografia do armazenamento funciona nos Serviços de Mídia v3:
 
-|Opção de criptografia|DESCRIÇÃO|Serviços de Mídia v3|
+|Opção de criptografia|Descrição|Serviços de Mídia v3|
 |---|---|---|
 |Criptografia do Armazenamento dos Serviços de Mídia| Criptografia AES-256, chave gerenciada pelos Serviços de Mídia|Não é compatível<sup>(1)</sup>|
 |[Criptografia do Serviço de Armazenamento para dados em repouso](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Criptografia do servidor oferecida pelo Armazenamento do Microsoft Azure, chave gerenciada pelo Azure ou pelo cliente|Com suporte|
 |[Criptografia do cliente de armazenamento](https://docs.microsoft.com/azure/storage/common/storage-client-side-encryption)|Criptografia do cliente oferecida pelo armazenamento do Azure, chave gerenciada pelo cliente no Key Vault|Sem suporte|
 
 <sup>1</sup> Nos Serviços de Mídia v3, a criptografia de armazenamento (criptografia AES-256) somente terá suporte para compatibilidade com versões anteriores quando os Ativos tiverem sido criados com os Serviços de Mídia v2. Isso significa que o v3 funciona com recursos criptografados de armazenamento existentes, mas não permite a criação de novos recursos.
+
+## <a name="storage-account-errors"></a>Erros de conta de armazenamento
+
+O estado de "Desconectado" para uma conta de serviços de mídia indica que a conta não tem mais acesso a um ou mais contas de armazenamento anexado devido a uma alteração nas chaves de acesso de armazenamento. Chaves de acesso de armazenamento atualizado são necessárias pelos serviços de mídia para executar muitas tarefas na conta.
+
+A seguir estão os principais cenários que resultariam em uma conta de serviços de mídia não ter acesso às contas de armazenamento anexado. 
+
+|Problema|Solução|
+|---|---|
+|A conta de serviços de mídia ou a conta de armazenamento anexado (s) foram migrados para separar as assinaturas. |Migre a conta de serviços de mídia ou contas de armazenamento para que eles estejam todos na mesma assinatura. |
+|A conta de serviços de mídia está usando uma conta de armazenamento anexado em uma assinatura diferente, como ele era uma conta de serviços de mídia antecipada em que isso tinha suporte. Todas as contas de serviços de mídia iniciais foram convertidas em contas de Gerenciador de recursos da Azure (ARM) com base em modernos e terão um estado desconectado. |Migre a conta de armazenamento ou a conta de serviços de mídia para que eles estejam todos na mesma assinatura.|
 
 ## <a name="next-steps"></a>Próximas etapas
 

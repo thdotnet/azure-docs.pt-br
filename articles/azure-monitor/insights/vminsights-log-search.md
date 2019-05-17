@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/10/2019
 ms.author: magoedte
-ms.openlocfilehash: bca1b96e7dc5673cabef26fe6b2cfb8daa41fbf5
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 38979aa5cbb7eff0a949dfb77d6a29b2cdb5c67b
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64702514"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65602086"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms-preview"></a>Como consultar logs do Azure Monitor para VMs (versão prévia)
 O Azure Monitor para VMs coleta de desempenho e métricas de conexão, computador e dados de inventário do processo e informações de estado de integridade e a encaminha para o espaço de trabalho do Log Analytics no Azure Monitor.  Esses dados estão disponíveis para [consulta](../../azure-monitor/log-query/log-query-overview.md) no Azure Monitor. Você pode aplicar esses dados a cenários que incluem planejamento de migração, análise de capacidade, descoberta e solução de problemas de desempenho sob demanda.
@@ -101,7 +101,7 @@ Para sua conveniência, o endereço IP da extremidade remota de uma conexão é 
 
 | Propriedade | Description |
 |:--|:--|
-|RemoteCountry |O nome do país que hospeda RemoteIp.  Por exemplo: *Estados Unidos* |
+|RemoteCountry |O nome do país/região RemoteIp de hospedagem.  Por exemplo: *Estados Unidos* |
 |RemoteLatitude |A latitude da localização geográfica. Por exemplo: *47,68* |
 |RemoteLongitude |A longitude da localização geográfica. Por exemplo: *-122,12* |
 
@@ -130,7 +130,7 @@ Portas em um computador que ativamente aceitam tráfego de entrada ou potencialm
 >- Leste dos EUA  
 >- Europa Ocidental
 >
-> Coleta desses dados está habilitado na outra [regiões com suporte](vminsights-onboard.md#log-analytics) para o Azure Monitor para VMs. 
+> Coleta desses dados está habilitado na outra [regiões com suporte](vminsights-enable-overview.md#log-analytics) para o Azure Monitor para VMs. 
 
 Todos os registros VMBoundPort é identificado pelos seguintes campos: 
 
