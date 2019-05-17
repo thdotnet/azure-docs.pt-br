@@ -1,261 +1,242 @@
 ---
-title: 'Tutorial: Integração do Azure Active Directory ao EverBridge | Microsoft Docs'
-description: Saiba como configurar o logon único entre o Azure Active Directory e o EverBridge.
+title: 'Tutorial: Integração do Azure Active Directory ao Everbridge | Microsoft Docs'
+description: Saiba como configurar o logon único entre o Azure Active Directory e o Everbridge.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 58d7cd22-98c0-4606-9ce5-8bdb22ee8b3e
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 11/29/2018
+ms.topic: tutorial
+ms.date: 04/18/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1bb62c9a11971f72a6c96c4652b136c19812cb3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: f8dd11e7fb0b9fda0e0f1c7d3f794f6bfd766cdf
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60279294"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65231456"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-everbridge"></a>Tutorial: Integração do Azure Active Directory ao EverBridge
+# <a name="tutorial-azure-active-directory-integration-with-everbridge"></a>Tutorial: Integração do Azure Active Directory ao Everbridge
 
-Neste tutorial, você aprenderá a integrar o EverBridge ao Azure AD (Azure Active Directory).
+Neste tutorial, você aprenderá a integrar o Everbridge ao Azure AD (Azure Active Directory).
+Ao integrar o Everbridge ao Azure AD, você pode:
 
-A integração do EverBridge ao Azure AD oferece os seguintes benefícios:
-
-- Você pode controlar no Azure AD quem tem acesso ao EverBridge.
-- Você pode permitir que seus usuários façam logon automaticamente no EverBridge (Single Sign-On) com suas contas do Azure AD.
-- Você pode gerenciar suas contas em um único local central – o portal do Azure.
-
-Se você quiser saber mais detalhes sobre a integração de aplicativos SaaS com o Azure AD, consulte [o que é acesso de aplicativos e logon único com o Active Directory do Azure](../manage-apps/what-is-single-sign-on.md)
+* Controlar no Azure AD quem tem acesso ao Everbridge.
+* Permitir que seus usuários entrem automaticamente no Everbridge usando suas contas do Azure AD. Esse controle de acesso é chamado de logon único (SSO).
+* Gerenciar suas contas em um local central usando o portal do Azure.
+Para obter mais informações sobre a integração de aplicativos de SaaS (software como serviço) ao Azure AD, consulte [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para configurar a integração do Azure AD ao EverBridge, você precisa dos seguintes itens:
+Para configurar a integração do Azure AD com o Everbridge, você precisa dos seguintes itens:
 
-- Uma assinatura do Azure AD
-- Uma assinatura habilitada para logon único do EverBridge
-
-> [!NOTE]
-> Para testar as etapas deste tutorial, nós não recomendamos o uso de um ambiente de produção.
-
-Para testar as etapas deste tutorial, você deve seguir estas recomendações:
-
-- Não use o ambiente de produção, a menos que seja necessário.
-- Se não tiver um ambiente de avaliação do Azure AD, você pode [obter uma versão de avaliação de um mês](https://azure.microsoft.com/pricing/free-trial/).
+* Uma assinatura do Azure AD. Se não tiver um ambiente do Azure AD, poderá obter uma [conta gratuita](https://azure.microsoft.com/free/).
+* Uma assinatura do Everbridge que usa logon único.
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
-Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste.  O cenário descrito neste tutorial consiste em dois blocos de construção principais:
+Neste tutorial, você configurará e testará o logon único do Azure AD em um ambiente de teste.
 
-1. Adicionar EverBridge da galeria
-2. configurar e testar o logon único do AD do Azure
+* O Everbridge dá suporte ao SSO iniciado por IDP.
 
-## <a name="adding-everbridge-from-the-gallery"></a>Adicionar EverBridge da galeria
+## <a name="add-everbridge-from-the-azure-marketplace"></a>Adicionar o Everbridge do Azure Marketplace
 
-Para configurar a integração do EverBridge ao Azure AD, você precisará adicionar o EverBridge da galeria à sua lista de aplicativos SaaS gerenciados.
+Para configurar a integração do Everbridge ao Azure AD, adicione o Everbridge do Azure Marketplace à sua lista de aplicativos SaaS gerenciados.
 
-**Para adicionar o EverBridge da galeria, execute as seguintes etapas:**
+Para adicionar o Everbridge do Azure Marketplace, siga estas etapas.
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
+1. No [Portal do Azure Microsoft](https://portal.azure.com), no painel de navegação esquerdo, selecione **Azure Active Directory**.
 
-    ![O botão Azure Active Directory][1]
+    ![Botão do Azure Active Directory](common/select-azuread.png)
 
-2. Navegue até **aplicativos empresariais**. Em seguida, vá para **todos os aplicativos**.
+2. Vá para **Aplicativos da empresa**, em seguida, selecione **Todos os aplicativos**.
 
-    ![A folha Aplicativos empresariais][2]
-    
-3. Clique no botão **Novo aplicativo** na parte superior da caixa de diálogo para adicionar o novo aplicativo.
+    ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
-    ![O botão Novo aplicativo][3]
+3. Para adicionar um novo aplicativo, selecione **Novo aplicativo** na parte superior da caixa de diálogo.
 
-4. Na caixa de pesquisa, digite **EverBridge**, selecione **EverBridge** no painel de resultados e clique no botão **Adicionar** para adicionar o aplicativo.
+    ![Botão Novo aplicativo](common/add-new-app.png)
 
-    ![EverBridge na lista de resultados](./media/everbridge-tutorial/tutorial_everbridge_addfromgallery.png)
+4. Na caixa de pesquisa, insira **Everbridge**. Selecione **Everbridge** no painel de resultados e selecione **Adicionar**.
+
+     ![Everbridge na lista de resultados](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-Nesta seção, você configurará e testará o logon único do Azure AD com o EverBridge com base em um usuário de teste chamado “Brenda Fernandes”.
+Nesta seção, você configurará e testará o logon único do Azure AD com o Everbridge com base em um usuário de teste Brenda Fernandes.
+Para que o logon único funcione, estabeleça uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Everbridge.
 
-Para que o logon único funcione, o Azure AD precisa saber qual usuário do EverBridge é equivalente a um usuário do Azure AD. Em outras palavras, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado no EverBridge.
+Para configurar e testar o logon único do Azure AD com o Everbridge, conclua os seguintes blocos de construção:
 
-Para configurar e testar o logon único do Azure AD com o EverBridge, você precisará concluir os seguintes blocos de construção:
+- [Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on) para habilitar seus usuários a usar esse recurso.
+- [Configurar o Everbridge como o logon único do portal do gerenciador Everbridge](#configure-everbridge-as-everbridge-manager-portal-single-sign-on) para definir as configurações de logon único no lado do aplicativo.
+- [Configurar o Everbridge como o logon único do portal do membro Everbridge](#configure-everbridge-as-everbridge-member-portal-single-sign-on) para definir as configurações de logon único no lado do aplicativo.
+- [Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user) para testar o logon único do Azure AD com Brenda Fernandes.
+- [Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user) para permitir que Brenda Fernandes use o logon único do Azure AD.
+- [Criar um usuário de teste do Everbridge](#create-an-everbridge-test-user) para ter um equivalente de Brenda Fernandes no Everbridge que esteja vinculado à representação desse usuário no Azure AD.
+- [Testar o logon único](#test-single-sign-on) para verificar se a configuração funciona.
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** - para habilitar seus usuários a usar esse recurso.
-2. **[Criação de um usuário de teste do AD do Azure](#creating-an-azure-ad-test-user)** – para testar o logon único do AD do Azure com Brenda Fernandes.
-3. **[Criar um usuário de teste do EverBridge](#creating-an-everbridge-test-user)** – para ter um equivalente de Brenda Fernandes no EverBridge que esteja vinculado à representação desse usuário no Azure AD.
-4. **[Atribuição do usuário de teste do AD do Azure](#assigning-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do AD do Azure.
-5. **[Teste do logon único](#testing-single-sign-on)** – para verificar se a configuração funciona.
+### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Configuração do logon único do Azure AD
+Nesta seção, você habilitará o logon único do Azure AD no portal do Azure.
 
-Nesta seção, você habilitará o logon único do Azure AD no portal do Azure e configurará o logon único em seu aplicativo EverBridge.
+Para configurar o logon único do Azure AD com o Everbridge, siga estas etapas.
 
-**Para configurar o logon único do Azure AD com o EverBridge, execute as seguintes etapas:**
+1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **Everbridge**, clique em **Logon Único**.
 
-1. No portal do Azure, na página de integração de aplicativos do **EverBridge**, clique em **Logon único**.
+    ![Link Configurar logon único](common/select-sso.png)
 
-    ![Link Configurar logon único][4]
+2. Na caixa de diálogo **Selecionar um método de logon único**, selecione o modo **SAML/WS-Fed** para habilitar o logon único.
 
-2. Na caixa de diálogo **Selecionar um método de logon único**, clique em **Selecionar** do modo **SAML** para habilitar o logon único.
+    ![Modo de seleção de logon único](common/select-saml-option.png)
 
-    ![Configurar o logon único](common/tutorial_general_301.png)
+3. Na página **Configurar logon único com o SAML**, selecione **Editar** para abrir a caixa de diálogo **Configuração Básica de SAML**.
 
-3. Na página **Definir logon único com SAML**, clique no ícone **Editar** para abrir a caixa de diálogo **Configuração básica do SAML**.
-
-    ![Configurar o logon único](common/editconfigure.png)
+    ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
     >[!NOTE]
-    >Você precisa fazer as configurações do aplicativo OU como o Portal do Gerente OU como o Portal do Membro em ambas as extremidades, ou seja, no Portal do Azure e no Portal Everbridge.
+    >Configure o aplicativo como o portal do gerente *ou* como o portal do membro no portal do Azure e no portal do Everbridge.
 
-4. Para configurar o aplicativo **EverBridge** como o **Portal do EverBridge Manager**, na seção **Configuração Básica do SAML** execute as seguintes etapas:
+4. Para configurar o aplicativo **Everbridge** como o **Portal do gerente do Everbridge**, na seção **Configuração Básica do SAML** execute as seguintes etapas:
 
-    ![Informações de logon único do domínio e URLs do EverBridge](./media/everbridge-tutorial/tutorial_everbridge_url.png)
+    ![Informações de logon único do domínio e URLs do Everbridge](common/idp-intiated.png)
 
-     a. Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão: `https://sso.everbridge.net/<API_Name>`
+     a. Na caixa **Identificador**, insira uma URL que siga o padrão `https://sso.everbridge.net/<API_Name>`
 
-    b. Na caixa de texto **URL de resposta**, digite uma URL no seguinte padrão: `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`
+    b. Na caixa **URL de Resposta**, insira uma URL que siga o padrão `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`
 
     > [!NOTE]
-    > Esses valores não são reais. Atualize esses valores com o Identificador e a URL de Resposta reais. Entre em contato com a [equipe de suporte do EverBridge](mailto:support@everbridge.com) para obter esses valores.
+    > Esses valores não são reais. Atualize esses valores com os valores reais de Identificador e URL de Resposta. Para obter esses valores, entre em contato com a equipe de suporte do [Everbridge](mailto:support@everbridge.com). Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
-5. Para configurar o aplicativo **EverBridge** como o **Portal de Membros do EverBridge**, na seção **Configuração Básica do SAML**, execute as seguintes etapas:
+5. Para configurar o aplicativo **Everbridge** como o **Portal de membro do Everbridge**, na seção **Configuração Básica do SAML**, siga as etapas:
 
-   * Se você deseja configurar o aplicativo no **modo iniciado pelo IDP**:
+  * Se você quiser configurar o aplicativo no modo iniciado pelo IDP, siga estas etapas:
 
-       ![Informações de logon único do domínio e URLs do EverBridge](./media/everbridge-tutorial/tutorial_everbridge_url1.png)
+     ![Domínio Everbridge e informações de logon único de URLs para o modo iniciado pelo IDP](common/idp-intiated.png)
 
-       * Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão: `https://sso.everbridge.net/<API_Name>/<Organization_ID>`
+     a. Na caixa **Identificador**, insira uma URL que siga o padrão `https://sso.everbridge.net/<API_Name>/<Organization_ID>`
 
-       * Na caixa de texto **URL de resposta**, digite uma URL no seguinte padrão: `https://member.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`
+    b. Na caixa **URL de Resposta**, insira uma URL que siga o padrão `https://member.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`
 
-   * Clique em **Definir URLs adicionais** e execute o passo seguinte se quiser configurar a aplicação no modo **SP** iniciado:
+   * Caso queira configurar o aplicativo no modo iniciado por SP, selecione **Definir URLs adicionais** e siga esta etapa:
 
-       ![Informações de logon único do domínio e URLs do EverBridge](./media/everbridge-tutorial/tutorial_everbridge_url2.png)
+     ![Domínio Everbridge e informações de logon único de URLs para o modo iniciado pelo SP](common/both-signonurl.png)
 
-       * Na caixa de texto **URL de Logon**, digite uma URL usando o seguinte padrão: `https://member.everbridge.net/saml/login/<API_Name>/<Organization_ID>/alias/defaultAlias?disco=true`
+      a. Na caixa **URL de Entrada**, insira uma URL que siga o padrão `https://member.everbridge.net/saml/login/<API_Name>/<Organization_ID>/alias/defaultAlias?disco=true`
 
      > [!NOTE]
-     > Esses valores não são reais. Atualize esses valores com o Identificador, a URL de Resposta e a URL de Logon reais. Entre em contato com a [equipe de suporte do EverBridge](mailto:support@everbridge.com) para obter esses valores.
+     > Esses valores não são reais. Atualize esses valores com os valores do Identificador, da URL de Resposta e da URL de Logon reais. Para obter esses valores, entre em contato com a equipe de suporte do [Everbridge](mailto:support@everbridge.com). Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
-6. Na página **Certificado de Assinatura SAML**, na seção **Certificado de Assinatura SAML**, clique em **Download** para fazer o download do **XML de Metadados da Federação** e salve o arquivo de metadados no computador.
+6. Na página **Configurar Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, selecione **Download** para baixar o **XML de metadados de Federação**. Salve-o no computador.
 
-    ![O link de download do Certificado](./media/everbridge-tutorial/tutorial_everbridge_certificate.png) 
+    ![Link de download do certificado](common/metadataxml.png)
 
-7. Na seção **Configurar o EverBridge**, copie o URL apropriado de acordo com sua exigência.
+7. Na seção **Configurar o Everbridge**, copie as URLs necessárias para seus requisitos:
 
-     a. URL de logon
+    ![Copiar URLs de configuração](common/copy-configuration-urls.png)
 
-    b. Identificador do Azure AD
+    - URL de logon
+    - Identificador do Azure AD
+    - URL de logoff
 
-    c. URL de logoff
+### <a name="configure-everbridge-as-everbridge-manager-portal-single-sign-on"></a>Configurar o Everbridge como logon único do portal do gerente Everbridge
 
-    ![Configuração do EverBridge](common/configuresection.png)
-
-8. Para obter o SSO configurado para o **EverBridge** como o aplicativo do **EverBridge Manager Portal**, execute as seguintes etapas: 
+Para configurar o SSO no **Everbridge** como um aplicativo do **portal do gerente Everbridge**, siga estas etapas.
  
-9. Em uma janela do navegador da Web diferente, faça o login no EverBridge como administrador.
+1. Em uma janela do navegador da Web diferente, entre no Everbridge como administrador.
 
-9. No menu na parte superior, clique na guia **Configurações** e selecione **Logon Único** em **Segurança**.
+1. No menu na parte superior, selecione a guia **Configurações**. Em **Segurança**, selecione **Logon Único**.
    
      ![Configurar o logon único](./media/everbridge-tutorial/tutorial_everbridge_002.png)
    
-      a. Na caixa de texto **Nome**, digite o nome do Provedor do Identificador (por exemplo: o nome de sua empresa).
+      a. Na caixa **Nome**, insira o nome do provedor do identificador. Um exemplo é o nome da sua empresa.
    
-     b. Na caixa de texto **Nome da API** , digite o nome da API.
+     b. Na caixa **Nome da API**, insira o nome da API.
    
-     c. Clique no botão **Escolher Arquivo** para carregar o arquivo de metadados que você baixou do portal do Azure.
+     c. Selecione **Escolher Arquivo** para carregar o arquivo de metadados que você baixou do portal do Azure.
    
-     d. No Local de Identidade do SAML, selecione **A identidade está no elemento NameIdentifier da instrução Subject**.
+     d. Para **Local de Identidade do SAML**, selecione **A identidade está no elemento NameIdentifier da declaração Subject**.
    
-     e. Na caixa de texto **URL de login do Provedor de identidade**, cole o valor de **URL de login** que você copiou do portal do Azure.
+     e. Na caixa **URL de Logon do Provedor de Identidade**, cole a **URL de Logon** que você copiou do portal do Azure.
    
-     f. Na Associação de Solicitação Iniciada pelo Provedor de Serviço, selecione **Redirecionamento HTTP**.
+     f. Para **Associação de Solicitação Iniciada do Provedor de Serviço**, selecione **Redirecionamento HTTP**.
 
-     g. Clique em **Salvar**
+     g. Clique em **Salvar**.
 
-10. Para configurar o single sign-on no **aplicativo EverBridge** como **EverBridge Member Portal**, você precisa enviar o **XML Metadata de Federação** para [equipe de suporte Everbridge](mailto:support@everbridge.com). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+### <a name="configure-everbridge-as-everbridge-member-portal-single-sign-on"></a>Configurar o Everbridge como logon único do portal do membro Everbridge
 
-### <a name="creating-an-azure-ad-test-user"></a>Criação de um usuário de teste do AD do Azure
+Para configurar o logon único no **Everbridge** como um **Portal de membro do Everbridge**, envie o **XML de Metadados de Federação** baixado para a [equipe de suporte do Everbridge](mailto:support@everbridge.com). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
 
-O objetivo desta seção é criar um usuário de teste no Portal do Azure chamado Brenda Fernandes.
+### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 
-1. No Portal do Azure, no painel esquerdo, selecione **Azure Active Directory**, selecione **Usuários** e, em seguida, **Todos os usuários**.
+Para criar o usuário de teste Brenda Fernandes no portal do Azure, siga estas etapas.
 
-    ![Criar um usuário do AD do Azure][100]
+1. No portal do Azure, no painel esquerdo, selecione **Azure Active Directory** > **Usuários** > **Todos os usuários**.
+
+    ![Links Usuários e Todos os Usuários](common/users.png)
 
 2. Selecione **Novo usuário** na parte superior da tela.
 
-    ![Criação de um usuário de teste do AD do Azure](common/create_aaduser_01.png) 
+    ![Botão novo usuário](common/new-user.png)
 
-3. Nas Propriedades do usuário, execute as etapas a seguir.
+3. Na caixa de diálogo **Usuário**, siga estas etapas.
 
-    ![Criação de um usuário de teste do AD do Azure](common/create_aaduser_02.png)
+    ![Caixa de diálogo Usuário](common/user-properties.png)
 
-    a. No campo **Nome**, insira **BrendaFernandes**.
+     a. Na caixa **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
-    Por exemplo, BrittaSimon@contoso.com
+    b. Na caixa **Nome de Usuário**, insira `brittasimon@yourcompanydomain.extension`. Um exemplo é BrittaSimon@contoso.com.
 
-    c. Selecione **Propriedades**, marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
+    c. Selecione a caixa de seleção **Mostrar Senha**. Anote o valor exibido na caixa **Senha**.
 
     d. Selecione **Criar**.
-  
-### <a name="creating-an-everbridge-test-user"></a>Criar um usuário de teste do EverBridge
 
-Nesta seção, você criará uma usuária chamada Brenda Fernandes no Everbridge. Trabalhe com a [equipe de suporte do EverBridge](mailto:support@everbridge.com) para adicionar os usuários na plataforma do Everbridge.
+### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-### <a name="assigning-the-azure-ad-test-user"></a>Atribuição do usuário de teste do AD do Azure
+Permita que Brenda Fernandes use o logon único do Azure concedendo acesso ao Everbridge.
 
-Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo a ela acesso ao EverBridge.
+1. No portal do Azure, selecione **Aplicativos Empresariais** > **Todos os aplicativos** >**Everbridge**.
 
-1. No Portal do Azure, selecione **Aplicativos Empresariais**, selecione **Todos os aplicativos**.
+    ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
-    ![Atribuir usuário][201]
+2. Na lista de aplicativos, escolha **Everbridge**.
 
-2. Na lista de aplicativos, selecione **EverBridge**.
+    ![Link Everbridge na lista de aplicativos](common/all-applications.png)
 
-    ![Configurar o logon único](./media/everbridge-tutorial/tutorial_everbridge_app.png) 
+3. No menu à esquerda, selecione **Usuários e grupos**.
 
-3. No menu à esquerda, clique em **usuários e grupos**.
+    ![Link Usuários e Grupos](common/users-groups-blade.png)
 
-    ![Atribuir usuário][202]
+4. Selecione **Adicionar usuário**. Na caixa de diálogo **Adicionar Atribuição**, selecione **Usuários e grupos**.
 
-4. Clique no botão **Adicionar**. Em seguida, selecione **usuários e grupos** na **Adicionar atribuição** caixa de diálogo.
+    ![Caixa de diálogo Adicionar Atribuição](common/add-assign-user.png)
 
-    ![Atribuir usuário][203]
+5. Na caixa de diálogo **Usuários e grupos**, selecione **Brenda Fernandes** na lista de usuários. Escolha **Selecionar** na parte inferior da tela.
 
-5. Na caixa de diálogo **Usuários e grupos**, escolha **Brenda Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
+6. Se você esperar qualquer valor de função na declaração SAML, na caixa de diálogo **Selecionar Função**, selecione a função apropriada para o usuário na lista. Escolha **Selecionar** na parte inferior da tela.
 
-6. Na caixa de diálogo **Adicionar Atribuição** selecione o botão **Atribuir**.
+7. Na caixa de diálogo **Adicionar Atribuição**, selecione **Atribuir**.
 
-### <a name="testing-single-sign-on"></a>Teste do logon único
+### <a name="create-an-everbridge-test-user"></a>Criar um usuário de teste do Everbridge
 
-Nesta seção, você testará sua configuração de logon único do Azure AD usando o Painel de Acesso.
+Nesta seção, você cria o usuário de teste Brenda Fernandes no Everbridge. Para adicionar usuários na plataforma Everbridge, trabalhe com a equipe de suporte do [Everbridge](mailto:support@everbridge.com). Os usuários devem ser criados e ativados no Everbridge para você poder usar o logon único. 
 
-Quando você clica na peça EverBridge no Painel de Acesso, você deve ser conectado automaticamente ao seu aplicativo EverBridge.
-Para saber mais sobre o Painel de Acesso, confira [Introdução ao Painel de Acesso](../user-help/active-directory-saas-access-panel-introduction.md).
+### <a name="test-single-sign-on"></a>Testar logon único 
+
+Teste sua configuração de logon único do Azure AD usando o Painel de Acesso.
+
+Ao selecionar a peça do Everbridge no Painel de Acesso, você deverá ser conectado automaticamente à conta do Everbridge, para a qual você configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure](tutorial-list.md)
-* [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Lista de tutoriais sobre como integrar aplicativos SaaS ao Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-<!--Image references-->
-
-[1]: common/tutorial_general_01.png
-[2]: common/tutorial_general_02.png
-[3]: common/tutorial_general_03.png
-[4]: common/tutorial_general_04.png
-
-[100]: common/tutorial_general_100.png
-
-[201]: common/tutorial_general_201.png
-[202]: common/tutorial_general_202.png
-[203]: common/tutorial_general_203.png

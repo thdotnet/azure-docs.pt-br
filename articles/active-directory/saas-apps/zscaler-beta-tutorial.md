@@ -8,87 +8,88 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 56b846ae-a1e7-45ae-a79d-992a87f075ba
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/16/2018
+ms.date: 04/24/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b09e14bfee700750192c5a007cbb3140fd49d137
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f31361dc3d7e24092677f1a78b2c405ae84578ed
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57885480"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65230065"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-beta"></a>Tutorial: Integração do Azure Active Directory ao Zscaler Beta
 
 Neste tutorial, você aprenderá como integrar o Zscaler Beta ao Azure AD (Azure Active Directory).
-A integração do Zscaler Beta com o Azure AD oferece os seguintes benefícios:
+Ao integrar o Zscaler Beta ao Azure AD, você pode:
 
-* No Azure AD, é possível controlar quem tem acesso ao Zscaler Beta.
-* Você pode permitir que seus usuários entrem automaticamente no Zscaler Beta (Logon Único) usando suas contas do Azure AD.
-* Você pode gerenciar suas contas em um único local central – o portal do Azure.
+* Controlar quem tem acesso ao Zscaler Beta no Azure AD.
+* Permitir que seus usuários entrem automaticamente no Zscaler Beta usando suas contas do Azure AD. Esse controle de acesso é chamado de logon único (SSO).
+* Gerenciar suas contas em um local central usando o portal do Azure.
 
-Para conhecer mais detalhadamente a integração de aplicativos de SaaS ao AD do Azure, consulte [O que é o acesso a aplicativos e logon único com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Para obter mais informações sobre a integração de aplicativos de SaaS (software como serviço) ao Azure AD, consulte [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Para configurar a integração do Azure AD com o Zscaler Beta, são necessários os seguintes itens:
 
-* Uma assinatura do Azure AD. Se não tiver um ambiente do Azure AD, você pode obter uma versão de avaliação de um mês [aqui](https://azure.microsoft.com/pricing/free-trial/)
-* Assinatura do Zscaler Beta habilitada para logon único
+* Uma assinatura do Azure AD. Se não tiver um ambiente do Azure AD, poderá obter uma [conta gratuita](https://azure.microsoft.com/free/).
+* Uma assinatura do Zscaler Beta que usa logon único.
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
 Neste tutorial, você configurará e testará o logon único do Azure AD em um ambiente de teste.
 
-* O Zscaler Beta dá suporte ao SSO iniciado por **SP**
-* O Zscaler Beta dá suporte ao provisionamento de usuário **Just In Time**
+* O Zscaler Beta dá suporte ao SSO iniciado por SP.
+* O Zscaler Beta dá suporte ao provisionamento de usuário Just-In-Time.
 
-## <a name="adding-zscaler-beta-from-the-gallery"></a>Adicionar o Zscaler Beta da galeria
+## <a name="add-zscaler-beta-from-the-azure-marketplace"></a>Adicionar o Zscaler Beta do Azure Marketplace
 
-Para configurar a integração do Zscaler Beta com o Azure AD, é necessário adicionar o Zscaler Beta da galeria à sua lista de aplicativos SaaS gerenciados.
+Para configurar a integração do Zscaler Beta ao Azure AD, adicione o Zscaler Beta do Azure Marketplace à sua lista de aplicativos SaaS gerenciados.
 
-**Para adicionar o Zscaler Beta da galeria, siga as etapas abaixo:**
+Para adicionar o Zscaler Beta do Azure Marketplace, siga estas etapas.
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No [Portal do Azure Microsoft](https://portal.azure.com), no painel de navegação esquerdo, selecione **Azure Active Directory**.
 
-    ![O botão Azure Active Directory](common/select-azuread.png)
+    ![Botão do Azure Active Directory](common/select-azuread.png)
 
-2. Navegue até **Aplicativos Empresariais** e, em seguida, selecione a opção **Todos os Aplicativos**.
+2. Vá para **Aplicativos da empresa**, em seguida, selecione **Todos os aplicativos**.
 
-    ![A folha Aplicativos empresariais](common/enterprise-applications.png)
+    ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
-3. Clique no botão **Novo aplicativo** na parte superior da caixa de diálogo para adicionar o novo aplicativo.
+3. Para adicionar um novo aplicativo, selecione **Novo aplicativo** na parte superior da caixa de diálogo.
 
-    ![O botão Novo aplicativo](common/add-new-app.png)
+    ![Botão Novo aplicativo](common/add-new-app.png)
 
-4. Na caixa de pesquisa, digite **Zscaler Beta**, selecione **Zscaler Beta** no painel de resultados e, em seguida, clique no botão **Adicionar** para adicionar o aplicativo.
+4. Na caixa de pesquisa, insira **Zscaler Beta**. Selecione **Zscaler Beta** no painel de resultados e, em seguida, selecione **Adicionar**.
 
      ![Zscaler Beta na lista de resultados](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-Nesta seção, você configurará e testará o logon único do Azure AD com o Zscaler Beta com base em um usuário de teste chamado **Brenda Fernandes**.
-Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Zscaler Beta.
+Nesta seção, você configurará e testará o logon único do Azure AD com o Zscaler Beta com base em um usuário de teste chamado Brenda Fernandes.
+Para que o logon único funcione, estabeleça uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Zscaler Beta.
 
-Para configurar e testar o logon único do Azure AD com o Zscaler Beta, é necessário concluir os seguintes blocos de construção:
+Para configurar e testar o logon único do Azure AD com o Zscaler Beta, conclua os seguintes blocos de construção:
 
-1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** – para habilitar seus usuários a usar esse recurso.
-2. **[Configurar logon único do Zscaler Beta](#configure-zscaler-beta-single-sign-on)** – para definir as configurações de logon único no lado do aplicativo.
-3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
-4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
-5. **[Criar um usuário de teste do Zscaler Beta](#create-zscaler-beta-test-user)** – para ter um equivalente de Brenda Fernandes no Zscaler Beta que esteja vinculado à representação de usuário no Azure AD.
-6. **[Teste o logon único](#test-single-sign-on)** – para verificar se a configuração funciona.
+- [Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on) para habilitar seus usuários a usar esse recurso.
+- [Configurar o logon único do Zscaler Beta](#configure-zscaler-beta-single-sign-on) para definir as configurações de logon único no lado do aplicativo.
+- [Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user) para testar o logon único do Azure AD com Brenda Fernandes.
+- [Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user) para permitir que Brenda Fernandes use o logon único do Azure AD.
+- [Criar um usuário de teste do Zscaler Beta](#create-a-zscaler-beta-test-user) para ter um equivalente de Brenda Fernandes no Zscaler Beta que esteja vinculado à representação de usuário no Azure AD.
+- [Testar o logon único](#test-single-sign-on) para verificar se a configuração funciona.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
 
 Nesta seção, você habilitará o logon único do Azure AD no portal do Azure.
 
-Para configurar o logon único do Azure AD com o Zscaler Beta, siga as etapas abaixo:
+Para configurar o logon único do Azure AD com Zscaler Beta, siga estas etapas.
 
 1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **Zscaler Beta**, clique em **Logon único**.
 
@@ -98,210 +99,213 @@ Para configurar o logon único do Azure AD com o Zscaler Beta, siga as etapas ab
 
     ![Modo de seleção de logon único](common/select-saml-option.png)
 
-3. Na página **Definir logon único com SAML**, clique no ícone **Editar** para abrir a caixa de diálogo **Configuração básica do SAML**.
+3. Na página **Configurar logon único com o SAML**, selecione **Editar** para abrir a caixa de diálogo **Configuração Básica de SAML**.
 
     ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
-4. Na seção **Configuração básica de SAML**, realize as seguintes etapas:
+4. Na seção **Configuração Básica de SAML**, siga esta etapa:
 
-    ![Informações de logon único em Domínio e URLs do Zscaler Beta](common/sp-intiated.png)
+    ![Informações de logon único em domínio e URLs do Zscaler Beta](common/sp-intiated.png)
 
-    Na caixa de texto URL de Entrada, digite a URL usada pelos usuários para entrar no aplicativo Zscaler Beta.
+    - Na caixa **URL de Entrada**, insira a URL usada pelos usuários para entrar no aplicativo Zscaler Beta.
 
     > [!NOTE]
-    > O valor não é real. Atualize o valor com a URL de Logon real. Entre em contato com a [equipe de suporte ao cliente do Zscaler Beta](https://www.zscaler.com/company/contact) para obter o valor.
+    > O valor não é real. Atualize o valor com o valor da URL de Entrada real. Para obtê-lo, entre em contato com a [equipe de suporte ao cliente do Zscaler Beta](https://www.zscaler.com/company/contact).
 
-5. O aplicativo Zscaler Beta espera que as declarações SAML estejam em um formato específico. Configure as declarações a seguir para este aplicativo. Você pode gerenciar os valores desses atributos da seção **Atributos de Usuário** na página de integração de aplicativos. Na página **Definir Logon Único com SAML**, clique no botão **Editar** para abrir a caixa de diálogo **Atributos do Usuário**.
+5. O aplicativo Zscaler Beta espera que as declarações SAML estejam em um formato específico. Você deve adicionar mapeamentos de atributos personalizados à configuração de atributos de token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Selecione  **Editar** para abrir a caixa de diálogo **Atributos do Usuário** .
 
-    ![image](common/edit-attribute.png)
+    ![Caixa de diálogo Atributos do Usuário](common/edit-attribute.png)
 
-6. Na seção **Declarações de Usuário** da caixa de diálogo **Atributos de Usuário**, edite as declarações usando o **ícone Editar** ou adicione as declarações usando **Adicionar nova declaração** para configurar o atributo de token SAML conforme mostrado na imagem acima e executar as seguintes etapas:
+6. O aplicativo Zscaler Beta espera que mais alguns atributos sejam passados novamente na resposta SAML. Na seção **Declarações de Usuário** da caixa de diálogo **Atributos de Usuário**, siga as seguintes etapas para adicionar o atributo de token SAML, conforme mostrado na tabela abaixo.
     
-    | NOME | Atributo de Origem | 
+    | NOME | Atributo de origem | 
     | ---------------| --------------- |
     | memberOf  | user.assignedroles |
 
-     a. Clique em **Adicionar nova reivindicação** para abrir a caixa de diálogo **Gerenciar declarações de usuários**.
+     a. Selecione **Adicionar nova declaração** para abrir a caixa de diálogo **Gerenciar declarações de usuários**.
 
-    ![image](common/new-save-attribute.png)
+    ![Caixa de diálogo Declarações de usuário](common/new-save-attribute.png)
 
-    ![image](common/new-attribute-details.png)
+    ![Gerenciar a caixa de diálogo de declarações do usuário](common/new-attribute-details.png)
 
-    b. Na caixa de texto **Nome** , digite o nome do atributo mostrado para essa linha.
+    b. Na caixa **Nome**, insira o nome do atributo mostrado para aquela linha.
 
-    c. Deixe o **Namespace** em branco.
+    c. Deixe a caixa **Namespace** em branco.
 
-    d. Escolha Origem como **Atributo**.
+    d. Para **Origem**, selecione **Atributo**.
 
-    e. Na lista **Atributo de origem**, digite o valor do atributo mostrado para essa linha.
+    e. Na lista **Atributo de origem**, insira o valor do atributo mostrado para essa linha.
 
-    f. Clique em **Ok**
+    f. Selecione **OK**.
 
     g. Clique em **Salvar**.
 
     > [!NOTE]
-    > Clique [aqui](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management) para saber como configurar a Função no Azure AD
+    > Para saber como configurar funções no Azure AD, confira [Configurar a declaração de função](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management).
 
-7. Na página **Configurar logon único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Fazer o download** para fazer o download do **Certificado (Base64)** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
+7. Na página **Configurar logon único com SAML**, na seção **Certificado de assinatura SAML**, selecione **Download** para baixar o certificado **(Base64)**. Salve-o no computador.
 
-    ![O link de download do Certificado](common/certificatebase64.png)
+    ![Link de download do certificado](common/certificatebase64.png)
 
-8. Na seção **Configurar o Zscaler Beta**, copie as URLs apropriadas de acordo com suas necessidades.
+8. Na seção **Configurar o Zscaler Beta**, copie as URLs necessárias para seus requisitos:
 
     ![Copiar URLs de configuração](common/copy-configuration-urls.png)
 
-    a. URL de logon
-
-    b. Identificador do Azure Ad
-
-    c. URL de logoff
+    - URL de logon
+    - Identificador do Azure AD
+    - URL de logoff
 
 ### <a name="configure-zscaler-beta-single-sign-on"></a>Configurar logon único do Zscaler Beta
 
-1. Em uma janela diferente do navegador da Web, faça logon no site da sua empresa Zscaler Beta como administrador.
+1. Para automatizar a configuração no Zscaler Beta, instale a **Extensão do navegador de Entrada Segura dos Meus Aplicativos**, selecionando **Instalar a extensão**.
 
-2. Vá até **Administração > Autenticação > Configurações de Autenticação** e execute as seguintes etapas:
+    ![Extensão Meus Aplicativos](common/install-myappssecure-extension.png)
+
+2. Depois de adicionar a extensão ao navegador, selecionar **Configurar o Zscaler Beta** direciona você para o aplicativo Zscaler Beta. Em seguida, forneça as credenciais de administrador para entrar no Zscaler Beta. A extensão do navegador configura automaticamente o aplicativo e automatiza as etapas de 3 a 6.
+
+    ![Configuração da instalação](common/setup-sso.png)
+
+3. Para configurar o Zscaler Beta manualmente, abra uma nova janela do navegador da Web. Entre em seu site de empresa do Zscaler Beta como administrador e siga estas etapas.
+
+4. Acesse **Administração** > **Autenticação** > **Configurações de Autenticação**, e siga estas etapas.
    
     ![Administração](./media/zscaler-beta-tutorial/ic800206.png "Administração")
 
-     a. Em Tipo de Autenticação, escolha **SAML**.
+     a. Em **Tipo de Autenticação**, selecione **SAML**.
 
-    b. Clique em **Configurar SAML**.
+    b. Selecione **Configurar SAML**.
 
-3. Na janela **Editar SAML**, execute as seguintes etapas: e clique em Salvar.  
+5. Na janela **Editar SAML**, siga estas etapas: 
             
     ![Gerenciar usuários e autenticação](./media/zscaler-beta-tutorial/ic800208.png "Gerenciar usuários e autenticação")
     
-     a. Na caixa de texto **URL do Portal SAML**, cole o a **URL de Logon** copiada do portal do Azure.
+     a. Na caixa **URL do Portal SAML**, cole a **URL de Logon** copiada do portal do Azure.
 
-    b. Na caixa de texto **Atributo de Nome de Logon**, insira **NameID**.
+    b. Na caixa **Atributo de Nome de Logon**, insira **NameID**.
 
-    c. Clique em **Upload** para fazer upload do certificado de assinatura SAML do Azure que você baixou do portal do Azure para o **Certificado SSL Público**.
+    c. Na caixa **Certificado SSL Público**, selecione **Upload** para fazer upload do certificado de assinatura SAML do Azure que você baixou do portal do Azure.
 
-    d. Acione **Habilitar Provisionamento Automático do SAML**.
+    d. Alternar **Habilitar Provisionamento Automático do SAML**.
 
-    e. Na caixa de texto **Atributo de Nome de Exibição do Usuário**, insira **displayName** se você quiser habilitar o provisionamento automático do SAML para atributos de displayName.
+    e. Na caixa **Atributo de Nome de Exibição do Usuário**, insira **displayName** se você quiser habilitar o provisionamento automático do SAML para atributos de displayName.
 
-    f. Na caixa de texto **Atributo de Nome do Grupo**, insira **memberOf** se você quiser habilitar o provisionamento automático do SAML para atributos de memberOf.
+    f. Na caixa **Atributo de Nome do Grupo**, insira **memberOf** se você quiser habilitar o provisionamento automático do SAML para atributos de memberOf.
 
-    g. Em **Atributo de Nome do Departamento**, insira **departamento** se você quiser habilitar o provisionamento automático do SAML para atributos de departamento.
+    g. Na caixa **Atributo de Nome do Departamento**, insira **departamento** se você quiser habilitar o provisionamento automático do SAML para atributos de departamento.
 
     h. Clique em **Salvar**.
 
-4. Na página de caixa de diálogo **Configurar Autenticação de Usuário** , execute as seguintes etapas:
+6. Na página de caixa de diálogo **Configurar Autenticação de Usuário**, siga as etapas:
 
-    ![Administração](./media/zscaler-beta-tutorial/ic800207.png)
+    ![Menu Ativação e botão Ativar](./media/zscaler-beta-tutorial/ic800207.png)
 
      a. Passe o mouse sobre o menu **Ativação** na parte inferior esquerda.
 
-    b. Clique em **Ativar**.
+    b. Selecione **Ativar**.
 
-## <a name="configuring-proxy-settings"></a>Definindo as configurações de proxy
-### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Para definir as configurações de proxy no Internet Explorer
+## <a name="configure-proxy-settings"></a>Definir configurações de proxy
+Para definir as configurações de proxy no Internet Explorer, siga estas etapas.
 
 1. Inicie o **Internet Explorer**.
 
-2. Selecione **Opções da Internet** no menu **Ferramentas** para abrir a caixa de diálogo **Opções da Internet**.   
+2. Selecione **Opções da Internet** no menu **Ferramentas** para abrir a caixa de diálogo **Opções da Internet**. 
     
-     ![Opções da Internet](./media/zscaler-beta-tutorial/ic769492.png "Opções da Internet")
+     ![Caixa de diálogo Opções da Internet](./media/zscaler-beta-tutorial/ic769492.png "Opções da Internet")
 
-3. Clique na guia **Conexões** .   
+3. Selecione a guia **Conexões**. 
   
-     ![Conexões](./media/zscaler-beta-tutorial/ic769493.png "Conexões")
+     ![Guia Conexões](./media/zscaler-beta-tutorial/ic769493.png "Conexões")
 
-4. Clique em **Configurações da LAN** para abrir a caixa de diálogo **Configurações da LAN**.
+4. Selecione **Configurações da LAN** para abrir a caixa de diálogo **Configurações da Rede Local (LAN)**.
 
-5. Na seção Servidor de proxy, execute as seguintes etapas:   
+5. Na seção **Servidor Proxy**, siga estas etapas: 
    
-    ![Servidor proxy](./media/zscaler-beta-tutorial/ic769494.png "Servidor proxy")
+    ![Seção Servidor Proxy](./media/zscaler-beta-tutorial/ic769494.png "Servidor Proxy")
 
-     a. Selecione **Usar um servidor proxy para LAN**.
+     a. Selecione a caixa de seleção **Usar um Servidor Proxy para LAN**.
 
-    b. Na caixa de texto Endereço, digite **gateway.Zscaler Beta.net**.
+    b. Na caixa **Endereço**, insira **gateway.Zscaler Beta.net**.
 
-    c. Na caixa de texto Porta, digite **80**.
+    c. Na caixa **Porta**, insira **80**.
 
-    d. Selecione **Ignorar servidor proxy para endereços locais**.
+    d. Selecione **Não usar servidor proxy para endereços locais**.
 
-    e. Clique em **OK** para fechar a caixa de diálogo **Configurações da Rede Local (LAN)**.
+    e. Selecione **OK** para fechar a caixa de diálogo **Configurações da Rede Local (LAN)**.
 
-6. Clique em **OK** para fechar a caixa de diálogo **Opções da Internet**.
+6. Selecione **OK** para fechar a caixa de diálogo **Opções da Internet**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 
-O objetivo desta seção é criar um usuário de teste no Portal do Azure chamado Brenda Fernandes.
+Crie um usuário de teste no portal do Azure chamado Brenda Fernandes.
 
-1. No Portal do Azure, no painel esquerdo, selecione **Azure Active Directory**, selecione **Usuários** e, em seguida, **Todos os usuários**.
+1. No portal do Azure, no painel esquerdo, selecione **Azure Active Directory** > **Usuários** > **Todos os usuários**.
 
-    ![Os links “Usuários e grupos” e “Todos os usuários”](common/users.png)
+    ![Links Usuários e Todos os Usuários](common/users.png)
 
 2. Selecione **Novo usuário** na parte superior da tela.
 
-    ![Botão Novo usuário](common/new-user.png)
+    ![Botão novo usuário](common/new-user.png)
 
-3. Nas Propriedades do usuário, execute as etapas a seguir.
+3. Na caixa de diálogo **Usuário**, siga estas etapas:
 
-    ![A caixa de diálogo Usuário](common/user-properties.png)
+    ![Caixa de diálogo Usuário](common/user-properties.png)
 
-    a. No campo **Nome**, insira **BrendaFernandes**.
+     a. Na caixa **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
-    Por exemplo, BrittaSimon@contoso.com
+    b. Na caixa **Nome de Usuário**, insira `brittasimon@yourcompanydomain.extension`. Um exemplo é BrittaSimon@contoso.com.
 
-    c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
+    c. Selecione a caixa de seleção **Mostrar Senha**. Anote o valor exibido na caixa **Senha**.
 
-    d. Clique em **Criar**.
+    d. Selecione **Criar**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo acesso ao Zscaler Beta.
+Permita que Brenda Fernandes use o logon único do Azure concedendo acesso ao Zscaler Beta.
 
-1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **Zscaler Beta**.
+1. No portal do Azure, selecione **Aplicativos Empresariais** > **Todos os aplicativos** > **Zscaler Beta**.
 
     ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
-2. Na lista de aplicativos, digite e escolha **Zscaler Beta**.
+2. Na lista de aplicativos, insira e selecione **Zscaler Beta**.
 
-    ![O link do Zscaler Beta na lista Aplicativos](common/all-applications.png)
+    ![Link do Zscaler Beta na lista Aplicativos](common/all-applications.png)
 
 3. No menu à esquerda, selecione **Usuários e grupos**.
 
-    ![O link “Usuários e grupos”](common/users-groups-blade.png)
+    ![Link Usuários e Grupos](common/users-groups-blade.png)
 
-4. Escolha o botão **Adicionar usuário** e, em seguida, escolha **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
+4. Selecione **Adicionar usuário**. Na caixa de diálogo **Adicionar Atribuição**, selecione **Usuários e grupos**.
 
-    ![O painel Adicionar Atribuição](common/add-assign-user.png)
+    ![Botão Adicionar usuário](common/add-assign-user.png)
 
-5. Na caixa de diálogo **Usuários e grupos**, selecione o usuário como **Brenda Fernandes** na lista e, em seguida, clique no botão **Selecionar** na parte inferior da tela.
+5. Na caixa de diálogo **Usuários e Grupos**, selecione o usuário **Brenda Fernandes** na lista. Em seguida, escolha **Selecionar** na parte inferior da tela.
 
-    ![image](./media/zscaler-beta-tutorial/tutorial_zscalerbeta_users.png)
+    ![Caixa de diálogo Usuários e Grupos](./media/zscaler-beta-tutorial/tutorial_zscalerbeta_users.png)
 
-6. Na caixa de diálogo **Selecionar Função**, escolha a função de usuário apropriada na lista e clique no botão **Selecionar** na parte inferior da tela.
+6. Na caixa de diálogo **Selecionar Função**, selecione a função de usuário apropriada na lista. Em seguida, escolha **Selecionar** na parte inferior da tela.
 
-    ![image](./media/zscaler-beta-tutorial/tutorial_zscalerbeta_roles.png)
+    ![Caixa de diálogo Selecionar Função](./media/zscaler-beta-tutorial/tutorial_zscalerbeta_roles.png)
 
-7. Na caixa de diálogo **Adicionar Atribuição** selecione o botão **Atribuir**.
+7. Na caixa de diálogo **Adicionar Atribuição**, selecione **Atribuir**.
 
-    ![image](./media/zscaler-beta-tutorial/tutorial_zscalerbeta_assign.png)
+    ![Caixa de diálogo Adicionar Atribuição](./media/zscaler-beta-tutorial/tutorial_zscalerbeta_assign.png)
 
-### <a name="create-zscaler-beta-test-user"></a>Criar um usuário de teste do Zscaler Beta
+### <a name="create-a-zscaler-beta-test-user"></a>Criar um usuário de teste do Zscaler Beta
 
-Nesta seção, uma usuária chamada Brenda Fernandes será criada no Zscaler Beta. O Zscaler Beta dá suporte ao **provisionamento de usuário Just-In-Time**, que está habilitado por padrão. Não há itens de ação para você nesta seção. Se um usuário ainda não existir no Zscaler Beta, um novo será criado após a autenticação.
+Nesta seção, a usuária Brenda Fernandes será criada no Zscaler Beta. O Zscaler Beta dá suporte ao **provisionamento de usuário Just-In-Time**, que está habilitado por padrão. Não há nada a fazer nesta seção. Se um usuário ainda não existir no Zscaler Beta, um novo será criado após a autenticação.
 
 >[!Note]
->Se for necessário criar um usuário manualmente, entre em contato com a  [Equipe de suporte do Zscaler Beta](https://www.zscaler.com/company/contact).
+>Para criar um usuário manualmente, entre em contato com a [Equipe de suporte do Zscaler Beta](https://www.zscaler.com/company/contact).
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 
-Nesta seção, você testará sua configuração de logon único do Azure AD usando o Painel de Acesso.
+Teste sua configuração de logon único do Azure AD usando o Painel de Acesso.
 
-Ao clicar no bloco do Zscaler Beta no Painel de Acesso, você deverá ser conectado automaticamente ao Zscaler Beta para o qual configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Ao selecionar a peça do Zscaler Beta no Painel de Acesso, você deverá ser conectado automaticamente ao Zscaler Beta para o qual configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
-
+- [Lista de tutoriais sobre como integrar aplicativos SaaS ao Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-
 - [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
