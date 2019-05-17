@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/14/2019
 ms.author: cynthn;kareni
 ms.custom: include file
-ms.openlocfilehash: be8c3d3be4410d15ba132a24a417e7a7b0418352
-ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
+ms.openlocfilehash: ba41f6cce5233491020a0b42f4fd40dac060be57
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65620241"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65815624"
 ---
 **Última atualização do documento**: 14 de maio de 2019 10 10h PST.
 
@@ -29,7 +29,7 @@ Mais informações sobre como a segurança é integrada em todos os aspectos do 
 > Desde a primeira publicação deste documento, foram divulgadas várias variantes dessa classe de vulnerabilidade. A Microsoft continua investindo intensamente na proteção de nossos clientes e no fornecimento de diretrizes. Esta página será atualizada conforme continuamos liberando correções adicionais. 
 > 
 > No dia 14 de maio de 2019 [Intel divulgada](https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00233.html) um novo conjunto de vulnerabilidade de canal do lado de execução especulativa conhecido como microarquitetura amostragem de dados (MDS consulte as diretrizes de segurança da Microsoft [ADV190013](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV190013)), que recebeu vários CVEs: 
-> - CVE-2018-11091 - dados microarquitetura amostragem de memória Uncacheable (MDSUM)
+> - CVE-2019-11091 - dados microarquitetura amostragem de memória Uncacheable (MDSUM)
 > - CVE-2018-12126 - Store microarquitetura Buffer os dados de amostragem (MSBDS) 
 > - CVE-2018-12127 - dados de carga da porta microarquitetura amostragem (MLPDS)
 > - CVE-2018-12130 - microarquitetura preenchimento Buffer os dados de amostragem (MFBDS)
@@ -123,7 +123,7 @@ Se a saída mostra `MDS mitigation is enabled: False`, por favor [entre em conta
 <a name="linux"></a>A habilitação do conjunto de recursos de segurança adicionais internamente exige que o sistema operacional de destino esteja totalmente atualizado. Algumas mitigações serão habilitadas por padrão. A seção a seguir descreve os recursos que estão desativados por padrão e/ou que são dependentes de suporte de hardware (microcódigo). A habilitação desses recursos pode causar um impacto no desempenho. Referencie a documentação do provedor do sistema operacional para obter mais instruções
 
 
-**Etapa 1: Desabilitar o hyperthreading na VM** – os clientes que executam código não confiável em um Hyper-threaded VM será necessário desabilitar o hyperthreading ou mover para uma VM não Hyper-threaded.  Para verificar se você estiver executando uma VM do Hyper-threaded, execute o `lspcu` comando na VM do Linux. 
+**Etapa 1: Desabilitar o hyperthreading na VM** – os clientes que executam código não confiável em um Hyper-threaded VM será necessário desabilitar o hyperthreading ou mover para uma VM não Hyper-threaded.  Para verificar se você estiver executando uma VM do Hyper-threaded, execute o `lscpu` comando na VM do Linux. 
 
 Se `Thread(s) per core = 2`, em seguida, o hyperthreading tiver sido habilitado. 
 
@@ -146,7 +146,7 @@ NUMA node(s):          1
 
 ```
 
-Se você estiver executando uma VM do Hyper-threaded, por favor [entre em contato com o suporte do Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) para obter o hyperthreading desabilitado.  Observação: Depois que o hyperthreading está desativado, **o suporte exigirá uma reinicialização completa da VM**.
+Se você estiver executando uma VM do Hyper-threaded, por favor [entre em contato com o suporte do Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) para obter o hyperthreading desabilitado.  Depois que o hyperthreading está desativado, **o suporte exigirá uma reinicialização completa da VM**.
 
 
 **Etapa 2**: Para atenuar qualquer um do abaixo de vulnerabilidades de canal lateral de execução especulativa, consulte a documentação do provedor do sistema operacional:   
@@ -159,18 +159,18 @@ Se você estiver executando uma VM do Hyper-threaded, por favor [entre em contat
 
 Este artigo fornece orientações para o abaixo de ataques de canal lateral de execução especulativa que afetam o número de processadores modernos:
 
-[Spectre Meltdown](https://portal.msrc.microsoft.com/security-guidance/advisory/ADV180002):
+[Spectre Meltdown](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV180002):
 - CVE-2017-5715 - injeção de ramificação de destino (BTI)  
 - CVE-2017-5754 - o isolamento de tabela de página de Kernel (kpti e)
 - CVE-2018-3639 – Store especulativa Bypass (kpti e) 
  
-[L1 Falha de Terminal (L1TF)](https://portal.msrc.microsoft.com/security-guidance/advisory/ADV180018):
+[L1 Falha de Terminal (L1TF)](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV180018):
 - CVE-2018-3615 - extensões de proteção de Software do Intel (Intel SGX)
 - CVE-2018-3620 - sistemas operacionais (SO) e o modo de gerenciamento do sistema (SMM)
 - CVE-2018-3646 – impactos do Virtual Machine Manager (VMM)
 
-[Amostragem de dados microarquitetura](https://portal.msrc.microsoft.com/security-guidance/advisory/ADV190013): 
-- CVE-2018-11091 - dados microarquitetura amostragem de memória Uncacheable (MDSUM)
+[Amostragem de dados microarquitetura](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190013): 
+- CVE-2019-11091 - dados microarquitetura amostragem de memória Uncacheable (MDSUM)
 - CVE-2018-12126 - Store microarquitetura Buffer os dados de amostragem (MSBDS)
 - CVE-2018-12127 - dados de carga da porta microarquitetura amostragem (MLPDS)
 - CVE-2018-12130 - microarquitetura preenchimento Buffer os dados de amostragem (MFBDS)
