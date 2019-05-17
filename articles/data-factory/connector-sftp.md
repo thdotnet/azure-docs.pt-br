@@ -53,7 +53,7 @@ As propriedades a seguir têm suporte para o serviço vinculado do SFTP:
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **Sftp**. |Sim |
 | host | Nome ou endereço IP do servidor SFTP. |Sim |
-| porta | Porta na qual o servidor SFTP está escutando.<br/>Os valores permitidos são: inteiro, o valor padrão é **22**. |Não |
+| port | Porta na qual o servidor SFTP está escutando.<br/>Os valores permitidos são: inteiro, o valor padrão é **22**. |Não |
 | skipHostKeyValidation | Especifique se deseja ignorar a validação da chave de host.<br/>Os valores permitidos são: **true**, **false** (padrão).  | Não |
 | hostKeyFingerprint | Especifique a impressão digital da chave de host. | Sim se "skipHostKeyValidation" estiver definida como false.  |
 | authenticationType | Especifique o tipo de autenticação.<br/>Valores permitidos são: **Básico**, **SshPublicKey**. Consulte as seções [Usando a autenticação Básica](#using-basic-authentication) e [Usando autenticação de chave pública SSH](#using-ssh-public-key-authentication) para ver mais propriedades e amostras do JSON, respectivamente. |Sim |
@@ -105,7 +105,7 @@ Para usar a chave pública SSH, defina a propriedade "authenticationType" como *
 | userName | Usuário que tem acesso ao servidor SFTP |Sim |
 | privateKeyPath | Especifica o caminho absoluto para o arquivo de chave privada que pode ser acessado pelo Integration Runtime. Aplica-se apenas quando o tipo auto-hospedado do Integration Runtime é especificado em "connectVia". | Especifique `privateKeyPath` ou `privateKeyContent`.  |
 | privateKeyContent | Conteúdo da chave privada SSH codificada em Base64. A chave privada SSH deve estar no formato OpenSSH. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Especifique `privateKeyPath` ou `privateKeyContent`. |
-| Senha | Especifique a senha/frase secreta para descriptografar a chave particular se o arquivo de chave for protegido por uma frase secreta. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim, se o arquivo de chave privada for protegido por uma frase secreta. |
+| passPhrase | Especifique a senha/frase secreta para descriptografar a chave particular se o arquivo de chave for protegido por uma frase secreta. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim, se o arquivo de chave privada for protegido por uma frase secreta. |
 
 > [!NOTE]
 > O conector SFTP fornece suporte para a chave OpenSSH RSA/DSA. Certifique-se de que o conteúdo do arquivo da chave inicia com "-----BEGIN [RSA/DSA] PRIVATE KEY-----". Se o arquivo da chave privada for um arquivo ppk-format, utilize a ferramenta Putty para converter de .ppk para o formato OpenSSH. 
@@ -182,7 +182,7 @@ Para copiar dados do SFTP em **Parquet ou o formato de texto delimitado**, consu
 
 | Propriedade   | DESCRIÇÃO                                                  | Obrigatório |
 | ---------- | ------------------------------------------------------------ | -------- |
-| tipo       | A propriedade type sob `location` no conjunto de dados deve ser definida como **SftpLocation**. | Sim      |
+| type       | A propriedade type sob `location` no conjunto de dados deve ser definida como **SftpLocation**. | Sim      |
 | folderPath | O caminho para a pasta. Se você quiser usar o caractere curinga para a pasta de filtro, ignore essa configuração e especificar nas configurações de fonte da atividade. | Não        |
 | fileName   | Nome do arquivo em determinado folderPath. Se você quiser usar o caractere curinga para filtrar arquivos, ignore essa configuração e especificar nas configurações de fonte da atividade. | Não        |
 
@@ -281,7 +281,7 @@ Para copiar dados do SFTP em **Parquet ou o formato de texto delimitado**, consu
 
 | Propriedade                 | DESCRIÇÃO                                                  | Obrigatório                                      |
 | ------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
-| tipo                     | A propriedade type sob `storeSettings` deve ser definida como **SftpReadSetting**. | Sim                                           |
+| type                     | A propriedade type sob `storeSettings` deve ser definida como **SftpReadSetting**. | Sim                                           |
 | recursive                | Indica se os dados são lidos recursivamente das subpastas ou somente da pasta especificada. Observe que quando recursiva é definida como true e o coletor é um armazenamento baseado em arquivo, uma pasta vazia ou subpasta não é copiada ou criada no coletor. Os valores permitidos são **true** (padrão) e **false**. | Não                                             |
 | wildcardFolderPath       | O caminho da pasta com caracteres curinga para filtrar as pastas de origem. <br>Os curingas permitidos são: `*` (corresponde a zero ou mais caracteres) e `?` (corresponde a zero ou caractere único); use `^` para escape se o nome de pasta atual tiver curinga ou esse caractere interno de escape. <br>Veja mais exemplos em [Exemplos de filtro de pastas e arquivos](#folder-and-file-filter-examples). | Não                                             |
 | wildcardFileName         | O nome de arquivo com caracteres curinga em determinado folderPath/wildcardFolderPath para filtrar arquivos de origem. <br>Os curingas permitidos são: `*` (corresponde a zero ou mais caracteres) e `?` (corresponde a zero ou caractere único); use `^` para escape se o nome de pasta atual tiver curinga ou esse caractere interno de escape.  Veja mais exemplos em [Exemplos de filtro de pastas e arquivos](#folder-and-file-filter-examples). | Sim se `fileName` não for especificado no conjunto de dados |
