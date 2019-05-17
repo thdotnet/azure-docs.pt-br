@@ -11,7 +11,7 @@ metadata:
   manager: jhubbard
   author: j-martens
   ms.author: jmartens
-  ms.date: 05/06/2019
+  ms.date: 05/14/2019
   ms.custom: seodec18
   ms.tgt_pltfrm: na
   ms.devlang: na
@@ -36,6 +36,7 @@ sections:
         items:
           - html: <a href="quickstart-run-cloud-notebook">Executar um teste na nuvem</a> (nenhuma instalação é necessária).
           - html: <a href="quickstart-run-local-notebook">Executar um experimento usando um servidor de notebook local</a> (instalação local do SDK).
+          - html: <a href="ui-quickstart-run-experiment">Preparar e visualizar dados sem escrever código</a> na interface visual.
   - title: Tutoriais Passo a Passo
     items:
       - type: paragraph
@@ -45,6 +46,7 @@ sections:
         items:
           - html: <a href="tutorial-train-models-with-aml">Treinar</a> e <a href="tutorial-deploy-models-with-aml">implantar</a> modelos de classificação de imagens (<b>série de duas partes</b>).
           - html: <a href="tutorial-data-prep">Preparação de dados</a> e <a href="tutorial-auto-train-models">uso do aprendizado de máquina automatizado</a> para treinar e ajustar os modelos de regressão (<b>série de duas partes</b>).
+          - html: <a href="ui-tutorial-automobile-price-train-score">Prever o preço de automóveis</a> com a interface visual e <a href="ui-tutorial-automobile-price-deploy">implantar</a> o modelo de regressão.
   - title: Exemplos
     items:
       - type: paragraph

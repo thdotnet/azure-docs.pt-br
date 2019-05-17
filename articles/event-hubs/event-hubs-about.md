@@ -10,12 +10,12 @@ ms.topic: overview
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 80c98bea08018780ba1d439e369ab42343d1e615
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 83a1026cd9426e1b1651e0ec4f556b8babccb107
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59680318"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236229"
 ---
 # <a name="azure-event-hubs--a-big-data-streaming-platform-and-event-ingestion-service"></a>Hubs de Eventos do Azure – uma plataforma de streaming de Big Data e um serviço de ingestão de eventos
 Os Hubs de Eventos do Azure são uma plataforma de streaming de Big Data e um serviço de ingestão de eventos. Ele pode receber e processar milhões de eventos por segundo. Os dados enviados para um hub de eventos podem ser transformados e armazenados usando qualquer provedor de análise em tempo real ou adaptadores de envio em lote/armazenamento.
@@ -87,6 +87,7 @@ Para começar a usar os Hubs de Eventos, consulte os tutoriais **Enviar e recebe
 - [Go](event-hubs-go-get-started-send.md)
 - [C (somente enviar)](event-hubs-c-getstarted-send.md)
 - [Apache Storm (somente receber)](event-hubs-storm-getstarted-receive.md)
+
 
 Para saber mais sobre os Hubs de Eventos, consulte os artigos a seguir:
 

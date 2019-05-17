@@ -1,6 +1,6 @@
 ---
-title: Fazer backup de bancos de dados SQL Server para o Azure | Microsoft Docs
-description: Este tutorial explica como fazer backup do SQL Server para o Azure.
+title: Fazer backup de bancos de dados do SQL Server em VMs do Azure | Microsoft Docs
+description: Saiba como fazer backup de bancos de dados do SQL Server em VMs do Azure
 services: backup
 author: sachdevaswati
 manager: vijayts
@@ -8,149 +8,177 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/23/2019
 ms.author: sachdevaswati
-ms.openlocfilehash: 08eff24dc42f594424d109b82933b01b5c1be454
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: ae1f5f9148fa516c98d78afdd57887d4279f92dc
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64690080"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827678"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Fazer backup de bancos de dados do SQL Server nas VMs do Azure
 
-Os bancos de dados SQL Server são cargas de trabalho críticas que exigem um baixo RPO (objetivo de ponto de recuperação) e retenção de longo prazo. Faça backup de bancos de dados do SQL Server em execução em VMs do Azure usando o [Backup do Azure](backup-overview.md).
+Bancos de dados do SQL Server são cargas de trabalho críticas que exigem um objetivo de baixa de ponto de recuperação (RPO) e a retenção de longo prazo. Você pode fazer backup de bancos de dados do SQL Server em execução em máquinas virtuais (VMs) usando [Backup do Azure](backup-overview.md).
 
-Este artigo mostra como fazer backup de um banco de dados do SQL Server em execução em uma VM do Azure em um cofre dos Serviços de Recuperação do Backup do Azure. Neste artigo, você aprenderá a:
+Este artigo mostra como fazer backup de um banco de dados do SQL Server que está executando em uma VM do Azure para um cofre dos serviços de recuperação de Backup do Azure.
+
+Neste artigo, você aprenderá como:
 
 > [!div class="checklist"]
 > * Criar e configurar um cofre.
-> * Descobrir bancos de dados e configurar backups.
+> * Descobrir bancos de dados e configurar os backups.
 > * Configurar a proteção automática para bancos de dados.
 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Antes de fazer backup de seu banco de dados do SQL Server, verifique as condições a seguir:
+Antes de você fazer backup de um banco de dados do SQL Server, verifique os seguintes critérios:
 
-1. Identificar ou [criar](backup-sql-server-database-azure-vms.md#create-a-recovery-services-vault) um cofre de serviços de recuperação na mesma região ou a localidade que a VM que hospeda a instância do SQL Server.
-2. [Verifique as permissões da VM](backup-azure-sql-database.md#fix-sql-sysadmin-permissions) necessárias para fazer backup dos bancos de dados SQL.
+1. Identifique ou crie uma [cofre dos Recovery Services](backup-sql-server-database-azure-vms.md#create-a-recovery-services-vault) na mesma região ou a localidade que a VM que hospeda a instância do SQL Server.
+2. Verifique as [permissões de VM necessárias](backup-azure-sql-database.md#fix-sql-sysadmin-permissions) para fazer backup de bancos de dados SQL.
 3. Verifique se a VM tem [conectividade de rede](backup-sql-server-database-azure-vms.md#establish-network-connectivity).
-4. Verifique se os bancos de dados do SQL Server estão nomeados de acordo com as [diretrizes de nomenclatura](#verify-database-naming-guidelines-for-azure-backup) do Backup do Azure.
-5. Verifique se não há nenhuma outra solução de backup habilitada para o banco de dados. Desabilite todos os outros backups do SQL Server antes de configurar esse cenário. Você pode habilitar o Backup do Azure para uma VM do Azure, juntamente com o Backup do Azure para um banco de dados do SQL Server em execução na VM sem nenhum conflito.
+4. Certifique-se de que os bancos de dados do SQL Server execute o [diretrizes de nomenclatura de banco de dados para o Azure Backup](#database-naming-guidelines-for-azure-backup).
+5. Verifique se você não tem qualquer outras soluções de backup habilitadas para o banco de dados. Desabilite todos os outros backups do SQL Server antes de fazer backup do banco de dados.
+
+> [!NOTE]
+> Você pode habilitar o Backup do Azure para uma VM do Azure e também para um banco de dados do SQL Server em execução na máquina virtual sem conflito.
 
 
 ### <a name="establish-network-connectivity"></a>Estabelecer conectividade de rede
 
-Para todas as operações, a máquina virtual (VM) do SQL Server precisa ter conectividade com os endereços IP públicos do Azure. Operações de VM (descoberta de banco de dados, configurar backups, agendar backups, restaurar pontos de recuperação e assim por diante) falharem sem conectividade com os endereços IP públicos. Estabeleça a conectividade com uma destas opções:
+Todas as operações, uma VM do SQL Server exige conectividade com endereços IP públicos do Azure. Operações de VM (descoberta de banco de dados, configurar backups, agendar backups, restaurar pontos de recuperação e assim por diante) falharem sem conectividade com endereços IP públicos do Azure.
 
-- **Permitir os intervalos de IP do datacenter do Azure**: Permita os [intervalos de IP](https://www.microsoft.com/download/details.aspx?id=41653) no download. Para acessar o grupo de segurança de rede (NSG), use o **Set-AzureNetworkSecurityRule** cmdlet.
-- **Implantar um servidor proxy HTTP para rotear o tráfego**: Quando você faz backup de um banco de dados do SQL Server em uma VM do Azure, a extensão de backup na VM usa as APIs HTTPS para enviar comandos de gerenciamento para o Backup do Azure e dados para o Armazenamento do Azure. A extensão de backup também usa o Azure AD (Azure Active Directory) para autenticação. Roteie o tráfego de extensão de backup para esses três serviços por meio do proxy HTTP. A extensão é o único componente que está configurado para acesso à internet pública.
+Estabelece conectividade, usando uma das seguintes opções:
 
-Cada opção tem vantagens e desvantagens
+- **Permitir que os intervalos de IP do datacenter do Azure**. Essa opção permite [intervalos de IP](https://www.microsoft.com/download/details.aspx?id=41653) no download. Para acessar um grupo de segurança de rede (NSG), use o cmdlet Set-AzureNetworkSecurityRule. Se você estiver específica de região única lista de permissões IPs, você será também necessário à lista de permissões do Azure Active Directory (Azure AD) marca de serviço para habilitar a autenticação.
+
+- **Permitir o acesso usando marcas NSG**. Se você usar NSGs para restringir a conectividade, essa opção adiciona uma regra para o NSG que permita o acesso de saída para o Backup do Azure usando a marca AzureBackup. Além dessa marca, você também precisará correspondente [regras](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview#service-tags) para o Azure AD e o armazenamento do Azure para permitir a conectividade para autenticação e transferência de dados. A marca AzureBackup só está disponível atualmente no PowerShell. Para criar uma regra usando a marca AzureBackup:
+
+    - Adicione as credenciais da conta do Azure e atualize as nuvens nacionais<br/>
+    `Add-AzureRmAccount`
+
+    - Selecione a assinatura de NSG<br/>
+    `Select-AzureRmSubscription "<Subscription Id>"`
+
+     - Selecione o NSG<br/>
+    `$nsg = Get-AzureRmNetworkSecurityGroup -Name "<NSG name>" -ResourceGroupName "<NSG resource group name>"`
+
+    - Adicionar permitir regra de saída para a marca de serviço de Backup do Azure<br/>
+    `Add-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg -Name "AzureBackupAllowOutbound" -Access Allow -Protocol * -Direction Outbound -Priority <priority> -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix "AzureBackup" -DestinationPortRange 443 -Description "Allow outbound traffic to Azure Backup service"`
+
+  - Salve o NSG<br/>
+    `Set-AzureRmNetworkSecurityGroup -NetworkSecurityGroup $nsg`
+- **Permitir o acesso usando marcas de Firewall do Azure**. Se você estiver usando o Firewall do Azure, crie uma regra de aplicativo usando o AzureBackup [marca FQDN](https://docs.microsoft.com/en-us/azure/firewall/fqdn-tags). Isso permite que o acesso de saída para o Backup do Azure.
+- **Implantar um servidor proxy HTTP para rotear o tráfego**. Quando você faz backup de um banco de dados do SQL Server em uma VM do Azure, a extensão de backup na VM usa as APIs de HTTPS para enviar comandos de gerenciamento para o Backup do Azure e os dados no armazenamento do Azure. A extensão de backup também usa o Azure AD para autenticação. Roteie o tráfego de extensão de backup para esses três serviços por meio do proxy HTTP. As extensões são o único componente que está configurado para acesso à internet pública.
+
+Opções de conectividade incluem as seguintes vantagens e desvantagens:
 
 **Opção** | **Vantagens** | **Desvantagens**
 --- | --- | ---
-Permitir intervalos de IP | Sem custo adicional. | É complexa de ser gerenciada porque os intervalos de endereços IP mudam com o tempo. <br/><br/> Fornece acesso a todo o Azure, não somente ao Armazenamento do Azure.
-Usar um proxy HTTP   | É permitido o controle granular no proxy em relação às URLs de armazenamento. <br/><br/> Único ponto de acesso à Internet para VMs. <br/><br/> Não está sujeito a alterações do endereço IP do Azure | Custos adicionais para executar uma VM com o software de proxy.
+Permitir intervalos de IP | Não há custos adicionais | Complexo de gerenciar porque os intervalos de endereços IP mudam ao longo do tempo <br/><br/> Fornece acesso a todo do Azure, não apenas o armazenamento do Azure
+Usar marcas de serviço do NSG | Mais fácil de gerenciar como alterações de intervalo são mescladas automaticamente <br/><br/> Não há custos adicionais <br/><br/> | Pode ser usado apenas com NSGs <br/><br/> Fornece acesso a todo o serviço
+Usar marcas de FQDN de Firewall do Azure | Mais fácil de gerenciar como os FQDNs necessários são automaticamente gerenciados | Pode ser usado apenas com o Firewall do Azure
+Usar um proxy HTTP | Controle granular no proxy do armazenamento de URLs permitidas <br/><br/> Único ponto de acesso à internet para VMs <br/><br/> Não estão sujeitas a alterações de endereço IP do Azure | Custos adicionais para executar uma VM com o software de proxy
 
 ### <a name="set-vm-permissions"></a>Definir permissões da VM
 
-O Backup do Azure realiza uma série de ações quando você configura o backup de um banco de dados do SQL Server:
+Quando você configura um backup para um banco de dados do SQL Server, o Backup do Azure faz o seguinte:
 
-- Adiciona a extensão **AzureBackupWindowsWorkload**.
-- Para descobrir bancos de dados na máquina virtual, o Backup do Azure cria uma conta **NT SERVICE\AzureWLBackupPluginSvc**. Essa conta é usada para backup e restauração e exige permissões de sysadmin do SQL.
-- O Backup do Azure aproveita a conta **NT AUTHORITY\SYSTEM** para descoberta/consulta de banco de dados e, portanto, essa conta precisa ser um logon público no SQL.
+- Adiciona a extensão AzureBackupWindowsWorkload.
+- Cria uma conta NT SERVICE\AzureWLBackupPluginSvc para descobrir os bancos de dados na máquina virtual. Essa conta é usada para um backup e restauração e requer permissões de sysadmin do SQL.
+- Descobre os bancos de dados que estão em execução em uma VM do Backup do Azure usa a conta NT AUTHORITY\SYSTEM. Essa conta deve ser um público entrar em SQL.
 
-Se você não criou a VM do SQL Server no Azure Marketplace, talvez você receba um erro **UserErrorSQLNoSysadminMembership**. Se isso ocorrer [siga estas instruções](backup-azure-sql-database.md#fix-sql-sysadmin-permissions).
+Se você não criou a VM do SQL Server no Azure Marketplace, você poderá receber um erro de UserErrorSQLNoSysadminMembership. Para obter mais informações, consulte a seção de considerações e limitações de recurso localizados no [sobre o Backup do SQL Server em VMs do Azure](backup-azure-sql-database.md#fix-sql-sysadmin-permissions).
 
-### <a name="verify-database-naming-guidelines-for-azure-backup"></a>Verificar as diretrizes de nomenclatura de banco de dados do Backup do Azure
+### <a name="database-naming-guidelines-for-azure-backup"></a>Diretrizes de nomenclatura para o Azure Backup de banco de dados
 
-Evite a abaixo para nomes de banco de dados:
+Evite usando os seguintes elementos em nomes de banco de dados:
 
-  * Espaços à esquerda ou à direita
-  * '!' à direita
-  * Colchete de fechamento ‘]’
-  * Nomes de bancos de dados que começam com 'F:\'
+  * À direita e espaços à esquerda
+  * À direita de pontos de exclamação (!)
+  * Colchetes fechamento (])
+  * Começando com F:\
 
-Temos nomes alternativos para caracteres não compatíveis com a tabela do Azure, mas recomendamos evitá-los. [Saiba mais](https://docs.microsoft.com/rest/api/storageservices/Understanding-the-Table-Service-Data-Model?redirectedfrom=MSDN).
+Alias está disponível para caracteres sem suporte, mas é recomendável evitá-los. Para obter informações, consulte [Noções básicas sobre o modelo de dados do serviço Tabela](https://docs.microsoft.com/rest/api/storageservices/Understanding-the-Table-Service-Data-Model?redirectedfrom=MSDN).
 
 
 [!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
 
 ## <a name="discover-sql-server-databases"></a>Descobrir bancos de dados do SQL Server
 
-Descubra os bancos de dados em execução na VM.
+Como descobrir bancos de dados em execução em uma VM:
 
 1. No [portal do Azure](https://portal.azure.com), abra o cofre dos Serviços de Recuperação usado para fazer backup do banco de dados.
 
-2. No painel **Cofre dos serviços de recuperação**, selecione **Backup**.
+2. No **cofre dos serviços de recuperação** dashboard, selecione **Backup**.
 
    ![Selecione Backup para abrir o menu Meta de Backup](./media/backup-azure-sql-database/open-backup-menu.png)
 
-3. Em **Meta de Backup**, defina **Localização na qual a carga de trabalho está sendo executada** como **Azure** (o padrão).
+3. Na **meta de Backup**, defina **onde sua carga de trabalho é executada?** para **Azure**.
 
 4. Em **Do que você deseja fazer backup**, selecione **SQL Server em uma VM do Azure**.
 
     ![Selecione o SQL Server na VM do Azure para o backup](./media/backup-azure-sql-database/choose-sql-database-backup-goal.png)
 
-5. Em **Meta de Backup** > **Descobrir BDs em VMs**, selecione **Iniciar Descoberta** para pesquisar as VMs não protegidas na assinatura. Isso poderá levar alguns instantes, dependendo do número de máquinas virtuais não protegidas na assinatura.
+5. Em **Meta de Backup** > **Descobrir BDs em VMs**, selecione **Iniciar Descoberta** para pesquisar as VMs não protegidas na assinatura. Essa pesquisa pode demorar um pouco, dependendo do número de VMs desprotegidos na assinatura.
 
    - As VMs não protegidas devem ser exibidas na lista após a descoberta, listadas por nome e grupo de recursos.
-   - Se uma VM não estiver listada conforme o esperado, verifique se ela já foi copiada em backup em um cofre.
-   - Várias VMs podem ter o mesmo nome, mas elas pertencerão a diferentes grupos de recursos.
+   - Se uma VM não estiver listada, conforme o esperado, ver se ele já é feito em um cofre.
+   - Várias VMs podem ter o mesmo nome, mas vai pertencem a diferentes grupos de recursos.
 
      ![O backup está pendente durante a pesquisa por BDs em VMs](./media/backup-azure-sql-database/discovering-sql-databases.png)
 
 6. Na lista de VM, selecione a VM que executa o banco de dados do SQL Server > **Descobrir BDs**.
 
-7. Acompanhe a descoberta de banco de dados na área **Notificações**. Poderá levar alguns instantes para o trabalho ser concluído, dependendo de quantos bancos de dados existem na VM. Quando os bancos de dados selecionados são descobertos, é exibida uma mensagem de êxito.
+7. Descoberta de banco de dados de controle no **notificações**. O tempo necessário para esta ação depende do número de bancos de dados da VM. Quando os bancos de dados selecionados são descobertos, é exibida uma mensagem de êxito.
 
     ![Mensagem de êxito na implantação](./media/backup-azure-sql-database/notifications-db-discovered.png)
 
-8. O Backup do Azure descobre todos os bancos de dados do SQL Server na VM. Durante a descoberta a seguir ocorre em segundo plano:
+8. O Backup do Azure descobre todos os bancos de dados do SQL Server na VM. Durante a descoberta, os elementos a seguir ocorrem em segundo plano:
 
-    - O Backup do Azure registra a VM no cofre para backup da carga de trabalho. Todos os bancos de dados na VM registrada só podem ser copiados em backup nesse cofre.
-    - O Backup do Azure instala a extensão **AzureBackupWindowsWorkload** na VM. Nenhum agente é instalado no Banco de Dados SQL.
-    - O Backup do Azure cria a conta de serviço **NT Service\AzureWLBackupPluginSvc** na VM.
+    - O Backup do Azure registra a VM com o Cofre de backup de carga de trabalho. Todos os bancos de dados na VM registrado podem ser feitos neste cofre somente.
+    - O Backup do Azure instala a extensão de AzureBackupWindowsWorkload na VM. Nenhum agente é instalado em um banco de dados SQL.
+    - O Backup do Azure cria a conta de serviço NT Service\AzureWLBackupPluginSvc na VM.
       - Todas as operações de backup e restauração usam a conta de serviço.
-      - **NT Service\AzureWLBackupPluginSvc** precisa de permissões de sysadmin do SQL. Todas as VMs do SQL Server criadas no Azure Marketplace são fornecidas com a **SqlIaaSExtension** instalada. A extensão **AzureBackupWindowsWorkload** usa a **SQLIaaSExtension** para obter automaticamente as permissões necessárias.
-    - Se você não criou a VM por meio do marketplace, a VM não tem a **SqlIaaSExtension** instalada e a operação de descoberta falha com a mensagem de erro **UserErrorSQLNoSysAdminMembership**. Siga as [instruções](backup-azure-sql-database.md#fix-sql-sysadmin-permissions) para corrigir esse problema.
+      - NT Service\AzureWLBackupPluginSvc requer permissões de sysadmin do SQL. Todas as VMs do SQL Server criado no Marketplace são fornecidas com o SqlIaaSExtension instalado. A extensão de AzureBackupWindowsWorkload usa o SQLIaaSExtension para obter automaticamente as permissões necessárias.
+    - Se você não criou a VM do Marketplace, a VM não terá o SqlIaaSExtension instalado e a operação de descoberta falha com a mensagem de erro UserErrorSQLNoSysAdminMembership. Para corrigir esse problema, siga as [instruções](backup-azure-sql-database.md#fix-sql-sysadmin-permissions).
 
         ![Selecionar a VM e o banco de dados](./media/backup-azure-sql-database/registration-errors.png)
 
 ## <a name="configure-backup"></a>Configurar o backup  
 
-Configure o backup da seguinte maneira:
-
-1. Em **Meta de Backup**, selecione **Configurar Backup**.
+1. Na **meta de Backup** > **etapa 2: Configurar o Backup**, selecione **Configurar Backup**.
 
    ![Selecione Configurar Backup](./media/backup-azure-sql-database/backup-goal-configure-backup.png)
 
-2. Clique em **configurar o Backup**, o **selecionar itens para backup** folha é exibida. Isso lista todos os grupos de disponibilidade registrado e autônomo SQL Servers. A divisa de expansão à esquerda da linha para ver todos os bancos de dados desprotegidos nessa instância ou AlwaysOn AG.  
+2. Na **selecionar itens para backup**, você verá todos os grupos de disponibilidade registrado e instâncias do SQL Server autônomo. Selecione a seta à esquerda de uma linha para expandir a lista de todos os bancos de dados desprotegidos nessa instância ou grupo de disponibilidade Always On.  
 
     ![Exibindo todas as Instâncias do SQL Server com bancos de dados autônomos](./media/backup-azure-sql-database/list-of-sql-databases.png)
 
-3. Selecione todos os bancos de dados que deseja proteger > **OK**.
+3. Escolha todos os bancos de dados que você deseja proteger e, em seguida, selecione **Okey**.
 
    ![Proteção do banco de dados](./media/backup-azure-sql-database/select-database-to-protect.png)
 
    Para otimizar as cargas de backup, o Backup do Azure define um número máximo de bancos de dados em um trabalho de backup como 50.
 
      * Para proteger mais de 50 bancos de dados, configure vários backups.
-     * Como alternativa, você pode habilitar a [proteção automática](#enable-auto-protection) no grupo instância inteira ou grupo de disponibilidade Always On selecionando a opção **ATIVAR** na lista suspensa correspondente na coluna **PROTEÇÃO AUTOMÁTICA**. O recurso de [proteção automática](#enable-auto-protection) não só permite a proteção em todos os bancos de dados existentes de uma só vez, mas protege automaticamente quaisquer novos bancos de dados que serão adicionados no futuro para essa instância ou o grupo de disponibilidade.  
+     * Para habilitar [ ](#enable-auto-protection) toda a instância ou o grupo de disponibilidade Always On. No **AUTOPROTECT** lista suspensa, selecione **ON**e, em seguida, selecione **Okey**.
+     
+    > [!NOTE]
+    > O [proteção automática](#enable-auto-protection) recurso não só permite a proteção em todos os bancos de dados existentes ao mesmo tempo, mas protege automaticamente quaisquer novos bancos de dados adicionados a essa instância ou o grupo de disponibilidade.  
 
-4. Clique em **Okey** para abrir o **política de Backup** folha.
+4. Selecione **Okey** para abrir **política de Backup**.
 
-    ![Habilite a proteção automática no grupo de disponibilidade Always On](./media/backup-azure-sql-database/enable-auto-protection.png)
+    ![Habilitar a proteção automática para o grupo de disponibilidade Always On](./media/backup-azure-sql-database/enable-auto-protection.png)
 
-5. Na **escolher política de backup**, selecione uma política e clique em **Okey**.
+5. Na **política de Backup**, escolha uma política e, em seguida, selecione **Okey**.
 
-   - Selecionar a política padrão: HourlyLogBackup.
+   - Selecione a política padrão como HourlyLogBackup.
    - Escolher uma política de backup existente criada anteriormente para SQL.
    - Defina uma nova política baseada no período de retenção e o RPO.
 
      ![Selecionar a Política de backup](./media/backup-azure-sql-database/select-backup-policy.png)
 
-6. Na **Backup** menu, selecione **habilitar backup**.
+6. Na **Backup**, selecione **habilitar backup**.
 
     ![Habilitar a política de backup escolhida](./media/backup-azure-sql-database/enable-backup-button.png)
 
@@ -166,34 +194,34 @@ Uma política de backup define quando os backups são feitos e por quanto tempo 
 - Vários cofres podem usar a mesma política de backup, mas você deve aplicar a política de backup a cada cofre.
 - Quando você cria uma política de backup, um backup completo diário é o padrão.
 - Você poderá adicionar um backup diferencial, mas somente se configurar backups completos para que ocorram semanalmente.
-- [Saiba mais sobre](backup-architecture.md#sql-server-backup-types) os diferentes tipos de políticas de backup.
+- Saiba mais sobre [diferentes tipos de políticas de backup](backup-architecture.md#sql-server-backup-types).
 
 Para criar uma política de backup:
 
-1. No cofre, clique em **Políticas de backup** > **Adicionar**.
-2. No menu **Adicionar**, clique em **SQL Server em uma VM do Azure**. Para define o tipo de política.
+1. No cofre, selecione **políticas de Backup** > **Add**.
+2. Na **Add**, selecione **SQL Server na VM do Azure** para definir o tipo de política.
 
    ![Escolha um tipo de política para a nova política de backup](./media/backup-azure-sql-database/policy-type-details.png)
 
 3. Em **Nome da política**, insira um nome para a nova política.
-4. Em **Política de Backup Completo**, selecione uma **Frequência de Backup** escolhendo **Diária** ou **Semanal**.
+4. Na **política de Backup completo**, selecione um **frequência de Backup**. Escolha **diária** ou **semanal**.
 
    - Para **Diária**, selecione a hora e fuso horário quando o trabalho de backup começar.
-   - Você deve executar um backup completo, pois não é possível desativar o **Backup completo** opção.
-   - Clique em **Backup Completo** para exibir a política.
-   - Você não pode criar backups diferenciais para backups diários completos.
    - Para **Semanal**, selecione o dia da semana, a hora e o fuso horário do início do trabalho de backup.
+   - Executar um backup completo, pois não é possível desativar o **Backup completo** opção.
+   - Selecione **Backup completo** para exibir a política.
+   - Você não pode criar backups diferenciais para backups diários completos.
 
      ![Novos campos de política de backup](./media/backup-azure-sql-database/full-backup-policy.png)  
 
-5. Em **Período de Retenção**, por padrão, todas as opções estão selecionadas. Desmarque os limites de período de retenção que não deseja usar e defina os intervalos a serem usados.
+5. Na **período de retenção**, todas as opções são selecionadas por padrão. Limpe qualquer período de retenção limita o que você não deseja usar e, em seguida, definir os intervalos de usar.
 
-    - Período de retenção mínimo para qualquer tipo de backup (completo/diferencial/log) é 7 dias.
+    - Período de retenção mínimo para qualquer tipo de backup (completo, diferencial e log) é de sete dias.
     - Os pontos de recuperação são marcados para retenção com base em seu intervalo de retenção. Por exemplo, se você selecionar um backup completo diário, apenas um backup completo será disparado a cada dia.
-    - O backup para um dia específico é marcado e mantido com base no intervalo de retenção semanal e sua configuração de retenção semanal.
-    - Os intervalos de retenção mensal e anual comportam-se de maneira semelhante.
+    - O backup para um dia específico é marcado e mantido com base no período de retenção semanal e a configuração de retenção semanal.
+    - Intervalos de retenção mensal e anual se comportam de maneira semelhante.
 
-   ![Configuração de intervalo do período de retenção](./media/backup-azure-sql-database/retention-range-interval.png)
+       ![Configuração de intervalo do período de retenção](./media/backup-azure-sql-database/retention-range-interval.png)
 
 6. No menu de **política de Backup Completo**, clique em **OK** para aceitar as configurações.
 7. Para adicionar uma política de backup diferencial, selecione **Backup Diferencial**.
@@ -203,13 +231,13 @@ Para criar uma política de backup:
 
 8. Em **Política de Backup Diferencial**, selecione **Habilitar** para abrir os controles de retenção e frequência.
 
-    - No máximo, você pode acionar um backup diferencial por dia.
-    - Backups diferenciais podem ser retidos por até 180 dias. Se você precisar de retenção mais longa, deverá usar os backups completos.
+    - Você pode disparar apenas um backup diferencial por dia.
+    - Backups diferenciais podem ser retidos por até 180 dias. Para a retenção mais longa, use backups completos.
 
 9. Selecione **OK** para salvar a política e retornar para o menu principal da **Política de backup**.
 
 10. Para adicionar uma política de backup de log transacional, selecione **Backup de Log**.
-11. Em **Backup de Log**, selecione **Habilitar** e, em seguida, defina os controles de retenção e frequência. Os Backups de log podem ocorrer a cada 15 minutos e podem ser mantidos por 35 dias.
+11. Em **Backup de Log**, selecione **Habilitar** e, em seguida, defina os controles de retenção e frequência. Backups de log podem ocorrer tão frequentemente quanto a cada 15 minutos e podem ser retidos por até 35 dias.
 12. Selecione **OK** para salvar a política e retornar para o menu principal da **Política de backup**.
 
     ![Editar a política de backup de log](./media/backup-azure-sql-database/log-backup-policy-editor.png)
@@ -234,27 +262,29 @@ No painel do cofre, acesse **Manage** > **políticas de Backup** e escolha a pol
 
 ## <a name="enable-auto-protection"></a>Habilitar a proteção automática  
 
-Habilite a proteção automática para automaticamente fazer backup de todos os bancos de dados e bancos de dados que serão adicionados no futuro para uma instância do SQL Server autônomo ou um SQL Server sempre no grupo de disponibilidade.
+Você pode habilitar a proteção automática para backup automaticamente todos os bancos de dados existentes e futuros para uma instância do SQL Server autônomo ou para um grupo de disponibilidade Always On.
 
 - Não há nenhum limite no número de bancos de dados que podem ser selecionados para proteção automática de uma só vez.
-- Você não pode proteger ou excluir bancos de dados da proteção em uma instância no momento da habilitação da proteção automática seletivamente.
-- Se sua instância já inclua alguns bancos de dados protegidos, elas continuariam a ser protegido em suas respectivas políticas, mesmo depois que você ativar a proteção automática. No entanto, todos os bancos de dados desprotegidos e bancos de dados que serão adicionados no futuro, terá apenas uma única política que você definir no momento da habilitação da proteção automática, sob **configurar o Backup**. No entanto, você pode alterar a política associada a um banco de dados protegida automaticamente mais tarde.  
+- Você não pode proteger ou excluir bancos de dados da proteção em uma instância no momento em que você habilitar a proteção automática seletivamente.
+- Se sua instância já inclua alguns bancos de dados protegidos, eles serão permanecem protegidos em suas respectivas políticas mesmo depois que você ativar a proteção automática. Todos os bancos de dados desprotegidos adicionados posteriormente terá apenas uma única política que você definir no momento da habilitação da proteção automática, listada sob **configurar o Backup**. No entanto, você pode alterar a política associada a um banco de dados protegida automaticamente mais tarde.  
 
-Etapas para habilitar a proteção automática são da seguinte maneira:
+Para habilitar a proteção automática:
 
   1. Em **Itens para backup**, selecione a instância na qual deseja habilitar a proteção automática.
-  2. Selecione a lista suspensa em **Proteção automática** e defina essa opção como **Ativado**. Em seguida, clique em **OK**.
+  2. Selecione a lista suspensa sob **AUTOPROTECT**, escolha **ON**e, em seguida, selecione **Okey**.
 
-      ![Habilite a proteção automática no grupo de disponibilidade Always On](./media/backup-azure-sql-database/enable-auto-protection.png)
+      ![Habilitar a proteção automática no grupo de disponibilidade](./media/backup-azure-sql-database/enable-auto-protection.png)
 
   3. O backup é configurado para todos os bancos de dados juntos e pode ser acompanhado em **Trabalhos de Backup**.
 
-Se você precisar desativar proteção automática, clique no nome de instância sob **configurar o Backup**e selecione **desabilitar proteger automaticamente** para a instância. Todos os bancos de dados continuará a fazer backup, mas bancos de dados futuros não estarão protegidos automaticamente.
+Se você precisar desativar proteção automática, selecione o nome da instância sob **configurar o Backup**e, em seguida, selecione **desabilitar Autoprotect** para a instância. Todos os bancos de dados continuará a ser feito, mas bancos de dados futuros não estarão protegidos automaticamente.
 
 ![Desabilite a proteção automática nessa instância](./media/backup-azure-sql-database/disable-auto-protection.png)
 
  
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Saiba mais sobre](restore-sql-database-azure-vm.md) como restaurar bancos de dados do SQL Server copiados em backup.
-- [Saiba mais sobre](manage-monitor-sql-database-backup.md) como gerenciar bancos de dados do SQL Server copiados em backup.
+Saiba como:
+
+- [Restaurar bancos de dados do backup do SQL Server](restore-sql-database-azure-vm.md)
+- [Gerenciar bancos de dados do backup do SQL Server](manage-monitor-sql-database-backup.md)

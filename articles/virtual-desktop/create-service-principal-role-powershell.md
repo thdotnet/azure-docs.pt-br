@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 04/12/2019
 ms.author: helohr
-ms.openlocfilehash: 93725fc9d77552d779378d0c14294a5bbb11c926
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: d3357cec426585ba8550301dfa703f583a930ad0
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65146135"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236932"
 ---
 # <a name="tutorial-create-service-principals-and-role-assignments-with-powershell"></a>Tutorial: Criar entidades de serviço e atribuições de função com o PowerShell
 
@@ -38,7 +38,7 @@ Antes de criar entidades de serviço e atribuições de função, você precisar
     Install-Module AzureAD
     ```
 
-2. Execute os cmdlets a seguir com os valores entre aspas substituídos pelos valores relevantes à sua sessão.
+2. Execute os cmdlets a seguir com os valores entre aspas substituídos pelos valores relevantes à sua sessão. Se você acabou de criar seu locatário da Área de Trabalho Virtual do Windows no tutorial [​​Criar um locatário na Área de Trabalho Virtual do Windows](./tenant-setup-azure-active-directory.md), use "Grupo de Locatários Padrão" como nome do grupo de locatários.
 
     ```powershell
     $myTenantGroupName = "<my-tenant-group-name>"
@@ -109,7 +109,7 @@ Estas são as três credenciais que você deverá anotar e os cmdlets que você 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste tutorial, você aprendeu a criar uma entidade de serviço e entrar na Área de Trabalho Virtual do Windows com ela. Para saber mais sobre como entrar na Área de Trabalho Virtual do Windows, continue com as instruções de Conectar-se à Área de Trabalho Virtual do Windows.
+Depois de criar a entidade de serviço e atribuí-la uma função no locatário da Área de Trabalho Virtual do Windows, você poderá usá-la para criar um pool de host. Para saber mais sobre os pools de host, continue com o tutorial para criar um pool de hosts na Área de Trabalho Virtual do Windows.
 
-- [Conectar-se do Windows 10 ou Windows 7](connect-windows-7-and-10.md)
-- [Conectar-se de um navegador da Web](connect-web.md)
+ > [!div class="nextstepaction"]
+ > [Tutorial de pool de hosts da Área de Trabalho Virtual do Windows](./create-host-pools-azure-marketplace.md)

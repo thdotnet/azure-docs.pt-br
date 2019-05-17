@@ -1,36 +1,47 @@
 ---
-title: Criar e configurar um servidor do Banco de Dados do Azure para MySQL usando o Ansible
+title: Tutorial – Configurar bancos de dados no Banco de Dados do Azure para MySQL usando o Ansible | Microsoft Docs
 description: Saiba como usar o Ansible para criar e configurar um servidor do Banco de Dados do Azure para MySQL
-ms.service: azure
 keywords: ansible, azure, devops, bash, guia estratégico, mysql, banco de dados
+ms.topic: tutorial
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: tutorial
-ms.date: 09/23/2018
-ms.openlocfilehash: 63472cf9c4b6b16f74ececfb6c6e61cf5f89ff9d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 04/30/2019
+ms.openlocfilehash: 1170ae9d609a07dbdaebf50e145de65faefa60ec
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58095391"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65230920"
 ---
-# <a name="create-and-configure-an-azure-database-for-mysql-server-by-using-ansible"></a>Criar e configurar um servidor do Banco de Dados do Azure para MySQL usando o Ansible
-O [Banco de Dados do Azure para MySQL](https://docs.microsoft.com/azure/mysql/) é um serviço gerenciado usado para executar, gerenciar e dimensionar Bancos de Dados MySQL altamente disponíveis na nuvem. O Ansible permite que você automatize a implantação e a configuração de recursos em seu ambiente. 
+# <a name="tutorial-configure-databases-in-azure-database-for-mysql-using-ansible"></a>Tutorial: Configurar bancos de dados no Banco de Dados do Azure para MySQL usando o Ansible
 
-Este início rápido mostra como usar o Ansible para criar um servidor do Banco de Dados do Azure para MySQL e configurar sua regra de firewall. Você pode concluir essas tarefas em aproximadamente cinco minutos usando o portal do Azure.
+[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+
+O [Banco de Dados do Azure para MySQL](/azure/mysql/overview) é um serviço de banco de dados relacional baseado no MySQL Community Edition. O Banco de Dados do Azure para MySQL permite gerenciar bancos de dados do MySQL em seus aplicativos Web.
+
+[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+
+> [!div class="checklist"]
+>
+> * Criar um servidor MySql
+> * Criar um banco de dados MySql
+> * Configurar uma regra de firewall para que um aplicativo externo possa se conectar ao servidor
+> * Conectar-se ao servidor MySql a partir do Azure Cloud Shell
+> * Consultar os servidores disponíveis do MySQL
+> * Listar todos os bancos de dados nos servidores conectados
 
 ## <a name="prerequisites"></a>Pré-requisitos
-- **Assinatura do Azure**: caso você não tenha uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) antes de começar.
-- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 
-> [!Note]
-> O Ansible 2.7 é necessário para executar os guias estratégicos de exemplo contidos neste tutorial. 
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-a-resource-group"></a>Criar um grupo de recursos
-Um grupo de recursos é um contêiner lógico no qual os recursos do Azure são implantados e gerenciados.  
 
-O exemplo a seguir cria um grupo de recursos chamado **myResourceGroup** na localização **eastus**:
+O código do guia estratégico nesta seção cria um grupo de recursos do Azure. Um grupo de recursos é um contêiner lógico no qual os recursos do Azure são implantados e gerenciados.  
+
+Salve o guia estratégico a seguir como `rg.yml`:
 
 ```yml
 - hosts: localhost
@@ -44,15 +55,24 @@ O exemplo a seguir cria um grupo de recursos chamado **myResourceGroup** na loca
         location: "{{ location }}"
 ```
 
-Salve o guia estratégico anterior como **rg.yml**. Para executar o guia estratégico, use o comando **ansible-playbook** da seguinte maneira:
+Antes de executar o guia estratégico, confira as observações a seguir:
+
+* Um grupo de recursos chamado `myResourceGroup` é criado.
+* O grupo de recursos é criado na localização `eastus`:
+
+Execute o guia estratégico usando o comando `ansible-playbook`:
+
 ```bash
 ansible-playbook rg.yml
 ```
 
 ## <a name="create-a-mysql-server-and-database"></a>Criar um banco de dados e um servidor MySQL
-O exemplo a seguir cria um servidor MySQL chamado **mysqlserveransible** e um Banco de Dados do Azure para MySQL chamado **mysqldbansible**. Trata-se de um servidor Gen 5 de Uso Básico com um vCore. 
 
-O valor de **mysqlserver_name** deve ser exclusivo. Para entender os valores válidos por região e por tipo, consulte a [documentação sobre tipos de preços](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers). Substitua `<server_admin_password>` por uma senha.
+O código do guia estratégico nesta seção cria um servidor MySQL e um Banco de Dados do Azure para MySQL. O novo servidor MySQL é um servidor Gen 5 de Propósito Básico com um vCore e é chamado `mysqlserveransible`. A instância de banco de dados é chamada `mysqldbansible`.
+
+Para saber mais sobre tipos de preço, confira [Tipos de preço do Banco de Dados do Azure para MySQL](/azure/mysql/concepts-pricing-tiers). 
+
+Salve o guia estratégico a seguir como `mysql_create.yml`:
 
 ```yml
 - hosts: localhost
@@ -84,16 +104,24 @@ O valor de **mysqlserver_name** deve ser exclusivo. Para entender os valores vá
         name: "{{ mysqldb_name }}"
 ```
 
-Salve o guia estratégico anterior como **mysql_create.yml**. Para executar o guia estratégico, use o comando **ansible-playbook** da seguinte maneira:
+Antes de executar o guia estratégico, confira as observações a seguir:
+
+* Na seção `vars`, o valor de `mysqlserver_name` deve ser exclusivo.
+* Na seção `vars`, substitua `<server_admin_password>` por uma senha.
+
+Execute o guia estratégico usando o comando `ansible-playbook`:
+
 ```bash
 ansible-playbook mysql_create.yml
 ```
 
 ## <a name="configure-a-firewall-rule"></a>Configurar uma regra de firewall
-Uma regra de firewall de nível de servidor permite que um aplicativo externo se conecte ao servidor por meio do firewall do serviço Azure MySQL. Um exemplo de um aplicativo externo é a ferramenta de linha de comando **mysql** ou o MySQL Workbench.
-O exemplo a seguir cria uma regra de firewall chamada **extenalaccess**, que permite conexões de qualquer endereço IP externo. 
 
-Insira seus próprios valores de **startIpAddress** e **endIpAddress**. Use o intervalo de endereços IP que corresponde ao local de origem da conexão. 
+Uma regra de firewall de nível de servidor permite que um aplicativo externo se conecte ao servidor por meio do firewall do serviço do Azure MySQL. Exemplos de aplicativos externos são a ferramenta de linha de comando `mysql` e o MySQL Workbench.
+
+O código do guia estratégico nesta seção cria uma regra de firewall chamada `extenalaccess` que permite conexões de qualquer endereço IP externo. 
+
+Salve o guia estratégico a seguir como `mysql_firewall.yml`:
 
 ```yml
 - hosts: localhost
@@ -117,76 +145,81 @@ Insira seus próprios valores de **startIpAddress** e **endIpAddress**. Use o in
           endIpAddress: "255.255.255.255"
 ```
 
-> [!NOTE]
-> As conexões ao Banco de Dados do Azure para MySQL se comunicam pela porta 3306. Se estiver tentando se conectar em uma rede corporativa, talvez o tráfego de saída pela porta 3306 não seja permitido. Nesse caso, só será possível se conectar a seu servidor se seu departamento de TI abrir a porta 3306.
-> 
+Antes de executar o guia estratégico, confira as observações a seguir:
 
-Aqui, o módulo **azure_rm_resource** é usado para executar essa tarefa. Ele permite o uso direto da API REST.
+* Na seção vars, substitua `startIpAddress` e `endIpAddress`. Use o intervalo de endereços IP que corresponde ao intervalo do qual você vai se conectar.
+* As conexões ao Banco de Dados do Azure para MySQL se comunicam pela porta 3306. Se estiver tentando se conectar em uma rede corporativa, talvez o tráfego de saída pela porta 3306 não seja permitido. Nesse caso, só será possível se conectar a seu servidor se seu departamento de TI abrir a porta 3306.
+* O guia estratégico usa o módulo `azure_rm_resource` que permite o uso direto da API REST.
 
-Salve o guia estratégico anterior como **mysql_firewall.yml**. Para executar o guia estratégico, use o comando **ansible-playbook** da seguinte maneira:
+Execute o guia estratégico usando o comando `ansible-playbook`:
+
 ```bash
 ansible-playbook mysql_firewall.yml
 ```
 
-## <a name="connect-to-the-server-by-using-the-command-line-tool"></a>Conectar-se ao servidor usando a ferramenta de linha de comando
-Você pode [baixar o MySQL](https://dev.mysql.com/downloads/) e instalá-lo em seu computador. Em vez disso, você pode selecionar o botão **Experimente** nos exemplos de código, ou o botão **>_** da barra de ferramentas superior direita no portal do Azure e iniciar o **Azure Cloud Shell**.
+## <a name="connect-to-the-server"></a>Conectar ao servidor
 
-Insira os seguintes comandos: 
+Nesta seção, você usará o Azure Cloud Shell para se conectar ao servidor criado anteriormente.
 
-1. Conecte-se ao servidor usando a ferramenta de linha de comando do **mysql**:
-   ```azurecli-interactive
-   mysql -h mysqlserveransible.mysql.database.azure.com -u mysqladmin@mysqlserveransible -p
-   ```
+1. Marque o botão **Experimente** no código a seguir:
 
-2. Exiba o status do servidor:
-   ```sql
-   mysql> status
-   ```
+    ```azurecli-interactive
+    mysql -h mysqlserveransible.mysql.database.azure.com -u mysqladmin@mysqlserveransible -p
+    ```
 
-Se tudo correr bem, a ferramenta de linha de comando deve gerar o seguinte texto:
+1. No prompt, insira o seguinte comando para consultar o status do servidor:
 
-```
-demo@Azure:~$ mysql -h mysqlserveransible.mysql.database.azure.com -u mysqladmin@mysqlserveransible -p
-Enter password:
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 65233
-Server version: 5.6.39.0 MySQL Community Server (GPL)
+    ```sql
+    mysql> status
+    ```
+    
+    Se tudo correr bem, você verá um resultado semelhante para os seguintes resultados:
+    
+    ```
+    demo@Azure:~$ mysql -h mysqlserveransible.mysql.database.azure.com -u mysqladmin@mysqlserveransible -p
+    Enter password:
+    Welcome to the MySQL monitor.  Commands end with ; or \g.
+    Your MySQL connection id is 65233
+    Server version: 5.6.39.0 MySQL Community Server (GPL)
+    
+    Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+    
+    Oracle is a registered trademark of Oracle Corporation and/or its
+    affiliates. Other names may be trademarks of their respective
+    owners.
+    
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+    
+    mysql> status
+    --------------
+    mysql  Ver 14.14 Distrib 5.7.23, for Linux (x86_64) using  EditLine wrapper
+    
+    Connection id:          65233
+    Current database:
+    Current user:           mysqladmin@13.76.42.93
+    SSL:                    Cipher in use is AES256-SHA
+    Current pager:          stdout
+    Using outfile:          ''
+    Using delimiter:        ;
+    Server version:         5.6.39.0 MySQL Community Server (GPL)
+    Protocol version:       10
+    Connection:             mysqlserveransible.mysql.database.azure.com via TCP/IP
+    Server characterset:    latin1
+    Db     characterset:    latin1
+    Client characterset:    utf8
+    Conn.  characterset:    utf8
+    TCP port:               3306
+    Uptime:                 36 min 21 sec
+    
+    Threads: 5  Questions: 559  Slow queries: 0  Opens: 96  Flush tables: 3  Open tables: 10  Queries per second avg: 0.256
+    --------------
+    ```
+    
+## <a name="query-mysql-servers"></a>Consultar servidores MySQL
 
-Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+O código do guia estratégico nesta seção consulta servidores MySQL em `myResourceGroup` e lista os bancos de dados nos servidores encontrados.
 
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql> status
---------------
-mysql  Ver 14.14 Distrib 5.7.23, for Linux (x86_64) using  EditLine wrapper
-
-Connection id:          65233
-Current database:
-Current user:           mysqladmin@13.76.42.93
-SSL:                    Cipher in use is AES256-SHA
-Current pager:          stdout
-Using outfile:          ''
-Using delimiter:        ;
-Server version:         5.6.39.0 MySQL Community Server (GPL)
-Protocol version:       10
-Connection:             mysqlserveransible.mysql.database.azure.com via TCP/IP
-Server characterset:    latin1
-Db     characterset:    latin1
-Client characterset:    utf8
-Conn.  characterset:    utf8
-TCP port:               3306
-Uptime:                 36 min 21 sec
-
-Threads: 5  Questions: 559  Slow queries: 0  Opens: 96  Flush tables: 3  Open tables: 10  Queries per second avg: 0.256
---------------
-```
-
-## <a name="using-facts-to-query-mysql-servers"></a>Usando fatos para consultar servidores MySQL
-O exemplo a seguir consulta os servidores MySQL em **myResourceGroup** e, posteriormente, todos os bancos de dados nos servidores:
+Salve o guia estratégico a seguir como `mysql_query.yml`:
 
 ```yml
 - hosts: localhost
@@ -214,13 +247,14 @@ O exemplo a seguir consulta os servidores MySQL em **myResourceGroup** e, poster
         var: mysqldatabasefacts
 ```
 
-Salve o guia estratégico anterior como **mysql_query.yml**. Para executar o guia estratégico, use o comando **ansible-playbook** da seguinte maneira:
+Execute o guia estratégico usando o comando `ansible-playbook`:
 
 ```bash
 ansible-playbook mysql_query.yml
 ```
 
-Em seguida, você verá a seguinte saída para o servidor MySQL: 
+Depois de executar o guia estratégico, você verá resultados semelhantes aos seguintes:
+
 ```json
 "servers": [
     {
@@ -244,7 +278,8 @@ Em seguida, você verá a seguinte saída para o servidor MySQL:
 ]
 ```
 
-Você também verá a seguinte saída para o banco de dados MySQL:
+Você também verá o seguinte resultado para o banco de dados do MySQL:
+
 ```json
 "databases": [
     {
@@ -280,7 +315,9 @@ Você também verá a seguinte saída para o banco de dados MySQL:
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Se não precisar desses recursos, poderá excluí-los executando o exemplo a seguir. Ele exclui um grupo de recursos chamado **myResourceGroup**. 
+Quando não forem mais necessários, exclua os recursos criados neste artigo. 
+
+Salve o guia estratégico a seguir como `cleanup.yml`:
 
 ```yml
 - hosts: localhost
@@ -293,31 +330,13 @@ Se não precisar desses recursos, poderá excluí-los executando o exemplo a seg
         state: absent
 ```
 
-Salve o guia estratégico anterior como **rg_delete.yml**. Para executar o guia estratégico, use o comando **ansible-playbook** da seguinte maneira:
+Execute o guia estratégico usando o comando `ansible-playbook`:
+
 ```bash
-ansible-playbook rg_delete.yml
-```
-
-Se você quiser excluir apenas o servidor MySQL criado recentemente, execute o exemplo abaixo:
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-    mysqlserver_name: mysqlserveransible
-  tasks:
-    - name: Delete MySQL Server
-      azure_rm_mysqlserver:
-        resource_group: "{{ resource_group }}"
-        name: "{{ mysqlserver_name }}"
-        state: absent
-```
-
-Salve o guia estratégico anterior como **mysql_delete.yml**. Para executar o guia estratégico, use o comando **ansible-playbook** da seguinte maneira:
-```bash
-ansible-playbook mysql_delete.yml
+ansible-playbook cleanup.yml
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
+
 > [!div class="nextstepaction"] 
-> [Ansible no Azure](https://docs.microsoft.com/azure/ansible/)
+> [Ansible no Azure](/azure/ansible/)

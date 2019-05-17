@@ -167,6 +167,8 @@
           href: application-provisioning-config-problem.md
         - name: Problema ao salvar credenciais do administrador ao configurar o aplicativo da galeria de aprovisionamento de usuário
           href: application-provisioning-config-problem-storage-limit.md
+        - name: Sincronizar um atributo para mapeamento – aplicativo de galeria
+          href: user-provisioning-sync-attributes-for-mapping.md
         - name: Os usuários não são provisionados - aplicativo da galeria
           href: application-provisioning-config-problem-no-users-provisioned.md
         - name: Usuários incorretos provisionados - aplicativo da galeria

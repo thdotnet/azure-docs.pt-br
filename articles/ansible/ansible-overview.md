@@ -1,35 +1,35 @@
 ---
-title: Usando Ansible com o Azure
+title: Usar o Ansible com o Azure | Microsoft Docs
 description: Introdução ao uso do Ansible para automatizar o provisionamento de nuvem, o gerenciamento de configurações e implantações de aplicativos.
-ms.service: azure
 keywords: ansible, azure, devops, visão geral, provisionamento de nuvem, gerenciamento de configuração, implantação de aplicativo, módulos ansible, manuais do ansible
+ms.topic: overview
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.date: 09/02/2018
-ms.topic: overview
-ms.openlocfilehash: d7fc86f9968ede37623ea9c89a666a35cba7eee8
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.date: 04/30/2019
+ms.openlocfilehash: 4d7e9f8a0527587106985d8a6f0a95e19e640245
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57791589"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65230129"
 ---
-# <a name="ansible-with-azure"></a>Ansible com o Azure
+# <a name="using-ansible-with-azure"></a>Usando Ansible com o Azure
 
-[Ansible](https://www.ansible.com) é um produto de código-fonte aberto que automatiza o provisionamento de nuvem, o gerenciamento de configurações e as implantações de aplicativos. Usando o Ansible você pode provisionar máquinas virtuais, contêineres e rede e completar infraestruturas de nuvem. Além disso, o Ansible permite automatizar a implantação e configuração de recursos em seu ambiente.
+[Ansible](https://www.ansible.com) é um produto de código-fonte aberto que automatiza o provisionamento de nuvem, o gerenciamento de configurações e as implantações de aplicativos. Usando o Ansible você pode provisionar máquinas virtuais, contêineres e rede e completar infraestruturas de nuvem. Além disso, o Ansible permite que você automatize a implantação e a configuração de recursos em seu ambiente.
 
 Este artigo fornece uma visão geral básica de alguns dos benefícios de usar o Ansible com o Azure.
 
 ## <a name="ansible-playbooks"></a>Manuais do Ansible
 
-Os [manuais do Ansible](https://docs.ansible.com/ansible/latest/playbooks.html) são a linguagem de configuração, implantação e orquestração do Ansible. Eles podem descrever uma política que você deseja que seus sistemas remotos imponham ou um conjunto de etapas em um processo geral de TI. Quando você cria um manual você faz isso usando YAML, que define um modelo de uma configuração ou um processo.
+[Guias estratégicos do Ansible](https://docs.ansible.com/ansible/latest/playbooks.html) permitem que você direcione o Ansible para configurar seu ambiente. Os guias estratégicos são codificados usando YAML para serem legíveis por humanos. A seção Tutoriais fornece muitos exemplos de uso de guias estratégicos para instalar e configurar recursos do Azure. 
 
 ## <a name="ansible-modules"></a>Módulos do Ansible
 
-O Ansible inclui um pacote de [módulos do Ansible](https://docs.ansible.com/ansible/latest/modules_by_category.html) que pode ser executado diretamente em hosts remotos ou através dos [manuais](https://docs.ansible.com/ansible/latest/playbooks.html). Os usuários também podem criar seus próprios módulos. OS módulos podem ser usados para controlar recursos do sistema - como serviços, pacotes ou arquivos – ou executar comandos do sistema.
+O Ansible inclui um conjunto de [módulos do Ansible](https://docs.ansible.com/ansible/latest/modules_by_category.html) que são executados diretamente em hosts remotos ou através de [guias estratégicos](https://docs.ansible.com/ansible/latest/playbooks.html). Os usuários podem criar seus próprios módulos. OS módulos são usados para controlar recursos do sistema – como serviços, pacotes ou arquivos – ou executar comandos do sistema.
 
-Para interagir com os serviços do Azure, o Ansible inclui um pacote de [módulos de nuvem do Ansible](https://docs.ansible.com/ansible/list_of_cloud_modules.html#azure) que fornece as ferramentas para criar e orquestrar facilmente sua infraestrutura no Azure. 
+Para interagir com os serviços do Azure, o Ansible inclui um conjunto de [módulos de nuvem do Ansible](https://docs.ansible.com/ansible/list_of_cloud_modules.html#azure). Esses módulos permitem criar e orquestrar sua infraestrutura no Azure. 
 
 ## <a name="migrate-existing-workload-to-azure"></a>Migrar cargas de trabalho existentes para o Azure
 
@@ -40,15 +40,25 @@ Depois que você tiver usado o Ansible para definir sua infraestrutura, você po
 O Ansible permite que você automatize aplicativos nativos de nuvem no Azure usando os microsserviços do Azure como o [Azure Functions](https://azure.microsoft.com//services/functions/) e o [Kubernetes no Azure](https://azure.microsoft.com/services/container-service/kubernetes/).  
 
 ## <a name="manage-deployments-with-dynamic-inventory"></a>Gerenciar implantações com inventário dinâmico
+
 O Ansible oferece, por meio do recurso [inventário dinâmico](https://docs.ansible.com/ansible/intro_dynamic_inventory.html), a capacidade de fazer um inventário dos recursos do Azure. Você pode então marcar as implantações existentes do Azure e gerenciar as implantações marcadas através do Ansible.
 
 ## <a name="additional-azure-marketplace-options"></a>Opções adicionais do Azure Marketplace
-A imagem do Azure Marketplace do [Ansible Tower](https://azuremarketplace.microsoft.com/marketplace/apps/redhat.ansible-tower) da Red Hat ajuda as organizações a dimensionar a automação de TI e a gerenciar implantações complexas em infraestruturas físicas, virtuais e de nuvem. O Ansible Tower inclui recursos que fornecem níveis adicionais de visibilidade, controle, segurança e eficiência necessários para as empresas de hoje. O Ansible Tower criptografa as credenciais, como chaves do Azure e SSH para que você possa delegar trabalhos para funcionários menos experientes sem o risco de expor suas credenciais.
+
+A [Ansible Tower](https://azuremarketplace.microsoft.com/marketplace/apps/redhat.ansible-tower) é uma imagem do Azure Marketplace da Red Hat. 
+
+O Ansible Tower é uma interface do usuário e painel do Ansible com os seguintes recursos:
+
+* Permite definir o controle de acesso baseado em função, o agendamento de tarefas e o gerenciamento de inventário gráfico. 
+* Inclui uma API REST e CLI para que você possa inserir o Tower em ferramentas e processos existentes. 
+* Suporta a saída em tempo real de execuções do guia estratégico. 
+* Criptografa as credenciais, tais como chaves do Azure e SSH, para que você pode delegar tarefas sem expor credenciais.
 
 ## <a name="ansible-module-and-version-matrix-for-azure"></a>Matriz de módulo e versão Ansible do Azure
-O Ansible vem com vários módulos que podem ser executados diretamente em hosts remotos ou por meio de manuais.
-O artigo [Matriz de versão e módulo do Ansible](./ansible-matrix.md) lista os módulos do Ansible do Azure que podem provisionar recursos de nuvem do Azure, como a máquina virtual, rede e serviços de contêiner. 
+
+O Ansible inclui um conjunto de módulos para uso no provisionamento e configuração de recursos do Azure. Esses recursos incluem máquinas virtuais, conjuntos de dimensionamento, serviços de rede e serviços de contêiner. A matriz do [Ansible](./ansible-matrix.md) lista os módulos do Ansible para o Azure e as versões do Ansible nas quais eles são fornecidos.
 
 ## <a name="next-steps"></a>Próximas etapas
-- [Configurar o Ansible](/azure/virtual-machines/linux/ansible-install-configure?toc=%2Fen-us%2Fazure%2Fansible%2Ftoc.json&bc=%2Fen-us%2Fazure%2Fbread%2Ftoc.json)
-- [Criar uma VM Linux](/azure/virtual-machines/linux/ansible-create-vm?toc=%2Fen-us%2Fazure%2Fansible%2Ftoc.json&bc=%2Fen-us%2Fazure%2Fbread%2Ftoc.json)
+
+- [Início Rápido: Implantar o modelo de solução Ansible para Azure para o CentOS](./ansible-deploy-solution-template.md)
+- [Início Rápido: Configurar máquinas virtuais do Linux no Azure usando o Ansible](/azure/virtual-machines/linux/ansible-install-configure?toc=%2Fazure%2Fansible%2Ftoc.json&bc=%2Fazure%2Fbread%2Ftoc.json)

@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: 7665050dfc9a561f42fec00c40d0a40dfa5cc183
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 92c55c7f15b3f350ad802157bf401f3e75983789
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64941566"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606444"
 ---
 # <a name="azure-resource-manager-test-drive"></a>Test Drive do Azure Resource Manager
 
@@ -82,14 +82,14 @@ Também é importante observar que **todos os parâmetros são opcionais**. Port
 
 ### <a name="accepted-parameter-metadata-types"></a>Tipos de metadados de parâmetros aceitos
 
-| Tipo de metadados   | Tipo de Parâmetro  | DESCRIÇÃO     | Valor de exemplo    |
+| Tipo de metadados   | Tipo de Parâmetro  | Descrição     | Valor de exemplo    |
 |---|---|---|---|
 | **baseuri**     | string          | URI base do seu pacote de implantação| https:\//\<\..\>.blob.core.windows.net/\<\..\> |
 | **username**    | string          | Novo nome de usuário aleatório.| admin68876      |
 | **password**    | cadeia de caracteres segura    | Nova senha aleatória | Lp!ACS\^2kh     |
 | **ID da sessão**   | string          | ID da sessão exclusiva do Test Drive (GUID)    | b8c8693e-5673-449c-badd-257a405a6dee |
 
-#### <a name="username"></a>Nome de Usuário
+#### <a name="username"></a>username
 
 O Test Drive inicializa esse parâmetro com um **URI base** do seu pacote de implantação; portanto, você pode usar esse parâmetro para construir o URI de qualquer arquivo incluído no seu pacote.
 
@@ -116,7 +116,7 @@ Dentro do seu modelo, é possível usar esse parâmetro para construir um URI de
 }
 ```
 
-#### <a name="username"></a>Nome de Usuário
+#### <a name="username"></a>username
 
 O Test Drive inicializa esse parâmetro com um novo nome de usuário aleatório:
 
@@ -140,7 +140,7 @@ Valor de exemplo:
 
 É possível usar nomes de usuário aleatórios ou constantes para sua solução.
 
-#### <a name="password"></a>Senha
+#### <a name="password"></a>password
 
 O Test Drive inicializa esse parâmetro com uma nova senha aleatória:
 
@@ -257,7 +257,7 @@ E, em seguida, usar esse local para todos os recursos para uma instância de lab
 
 Você precisa certificar-se de que sua assinatura tem permissão para implantar todos os recursos que deseja implantar em cada uma das regiões que está selecionando. Além disso, precisa certificar-se de que suas imagens de máquina virtual estão disponíveis em todas as regiões que pretende habilitar; caso contrário, seu modelo de implantação não funcionará para algumas regiões.
 
-### <a name="outputs"></a>outputs
+### <a name="outputs"></a>Saídas
 
 Normalmente, com modelos do Resource Manager, é possível implantar sem produzir nenhuma saída. Isso acontece porque você conhece todos os valores que usa para preencher parâmetros do modelo e pode sempre inspecionar manualmente as propriedades de qualquer recurso.
 
@@ -382,7 +382,7 @@ Caso contrário, crie um novo Locatário no Azure Active Directory.
 
 ![Lista de locatários do Azure Active Directory](./media/azure-resource-manager-test-drive/subdetails4.png)
 
-![Definir a organização, o domínio e o país/região do locatário do Azure AD](./media/azure-resource-manager-test-drive/subdetails5.png)
+![Definir a organização, o domínio e o país/região para o locatário do Azure AD](./media/azure-resource-manager-test-drive/subdetails5.png)
 
 ![Confirmar a seleção](./media/azure-resource-manager-test-drive/subdetails6.png)
 

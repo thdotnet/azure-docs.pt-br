@@ -36,6 +36,8 @@
           items:
             - name: Ler as diretrizes de segurança
               href: data-box-safety.md
+            - name: Acompanhamento e registro em log
+              href: data-box-logs.md
             - name: Examinar os requisitos
               items:
                 - name: Para o Data Box

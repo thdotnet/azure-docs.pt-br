@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 04/05/2019
 ms.author: helohr
-ms.openlocfilehash: c4ab209d63a01d9e1089eec351eff64fc116f403
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 21979f1dee50fa846fb7888cfc95908b9d833392
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64924967"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236800"
 ---
 # <a name="tutorial-create-a-host-pool-with-azure-marketplace"></a>Tutorial: Criar um pool de host com o Azure Marketplace
 
@@ -70,7 +70,7 @@ Para a folha de informações de locatário da Área de Trabalho Virtual do Wind
 
 1. Insira o **nome do grupo de locatário da Área de Trabalho Virtual do Windows** para o grupo de locatário que contém seu locatário. Se você não tiver um nome de grupo de locatário específico planejado, deixe-o como o padrão.
 2. Insira o **Nome de locatário da Área de Trabalho Virtual do Windows** para o locatário no qual você criará esse pool de hosts.
-3. Especifique o tipo de credenciais que você deseja usar para autenticar como o proprietário RDS do locatário da Área de Trabalho Virtual do Windows. Se você selecionar **Entidade de serviço**, você também deverá fornecer a **ID de locatário do Azure AD** associada à entidade de serviço.
+3. Especifique o tipo de credenciais que você deseja usar para autenticar como o proprietário RDS do locatário da Área de Trabalho Virtual do Windows. Se você concluiu o [Criar entidades de serviço e atribuições de função com o PowerShell](./create-service-principal-role-powershell.md), selecione **Entidade de Serviço**. Agora você precisará inserir a **ID do locatário do Azure AD** do Azure Active Directory que contém a entidade de serviço.
 4. Insira as credenciais para a conta do administrador do locatário. Há suporte apenas para entidades de serviço com uma credencial de senha.
 5. Selecione **OK**.
 

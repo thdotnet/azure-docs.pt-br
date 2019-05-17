@@ -3,7 +3,7 @@ title: Melhorar a conformidade regulatória usando a Central de Segurança do Az
 description: 'Tutorial: Saiba como melhorar a conformidade regulatória usando a Central de Segurança do Azure.'
 services: security-center
 documentationcenter: na
-author: rkarlin
+author: monhaber
 manager: barbkess
 editor: ''
 ms.assetid: 5f50c4dc-ea42-418d-9ea8-158ffeb93706
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 1/15/2019
-ms.author: rkarlin
-ms.openlocfilehash: 2e73cbd1de4336a08e26a609dfe704da0a068860
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.date: 4/30/2019
+ms.author: monhaber
+ms.openlocfilehash: 111a32983472d18c1435feaf2456e5b9416b5112
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56105995"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65442247"
 ---
 # <a name="tutorial-improve-your-regulatory-compliance"></a>Tutorial: Melhorar sua conformidade regulatória
 ---
@@ -47,8 +47,7 @@ A exibição do painel Conformidade regulatória pode ajudar você a concentrar 
 
 >[!NOTE]
 > No momento, os padrões regulatórios compatíveis são: Azure CIS, PCI DSS 3.2, ISO 27001 e SOC TSP. Padrões adicionais serão refletidos no painel durante seu desenvolvimento.
-
-1.  No menu principal da Central de Segurança, em **POLÍTICA E CONFORMIDADE**, selecione **Painel Conformidade regulatória**. <br>
+1.  No menu principal da Central de Segurança, em **POLÍTICA E CONFORMIDADE**, escolha **Conformidade regulatória**. <br>
 Na parte superior da tela, você verá um painel com uma visão geral de seu status de conformidade com o conjunto de regulamentos de conformidade compatíveis. Você poderá ver sua pontuação geral de conformidade e o número de avaliações aprovadas vs. reprovadas associadas a cada padrão.
 
     ![alta confiança da descrição do computador](./media/security-center-compliance-dashboard/compliance-dashboard.png)
@@ -58,12 +57,17 @@ Na parte superior da tela, você verá um painel com uma visão geral de seu sta
 
     ![guia Conformidade](./media/security-center-compliance-dashboard/compliance-pci.png)
 
-3.  Selecione a guia **Todos** para ver uma exibição de todas as recomendações da Central de Segurança relevantes e seus padrões associados. Essa exibição pode ser útil para identificar todos os diferentes padrões afetados por uma recomendação específica. <br> Potencialmente, você poderá usar essa exibição para priorizar as recomendações que precisa resolver. Por exemplo, se você observar que a recomendação **Habilitar o MFA para contas com permissões de proprietário em sua assinatura** estiver sendo reprovada em vários recursos e estiver associada a vários padrões, a resolução dessa recomendação terá um grande impacto sobre sua pontuação geral de conformidade.
+3. Selecione a guia **Todos** para ver uma exibição de todas as recomendações da Central de Segurança relevantes e seus padrões associados. Essa exibição pode ser útil para identificar todos os diferentes padrões afetados por uma recomendação específica. <br> Potencialmente, você poderá usar essa exibição para priorizar as recomendações que precisa resolver. Por exemplo, se você observar que a recomendação **Habilitar o MFA para contas com permissões de proprietário em sua assinatura** estiver sendo reprovada em vários recursos e estiver associada a vários padrões, a resolução dessa recomendação terá um grande impacto sobre sua pontuação geral de conformidade.
 
     ![impacto sobre a pontuação de conformidade](./media/security-center-compliance-dashboard/compliance-all-tabs.png)
 
-## <a name="improve-your-compliance-posture"></a>Melhorar sua postura de conformidade
+1. Para gerar e fazer o download de um relatório em PDF que resuma seu status de conformidade atual para um padrão específico, clique em **Baixar o relatório**.
 
+    O relatório fornece um resumo de alto nível do status de conformidade para o padrão escolhido tendo como base os dados das avaliações da Central de Segurança e é organizado de acordo com os controles desse padrão específico. O relatório pode ser compartilhado com stakeholders relevantes e pode servir para fornecer evidências aos auditores internos e externos.
+
+    ![baixar](./media/security-center-compliance-dashboard/download-report.png)
+
+## <a name="improve-your-compliance-posture"></a>Melhorar sua postura de conformidade
 
 Considerando as informações do painel Conformidade regulatória, você poderá melhorar sua postura de conformidade resolvendo as recomendações diretamente no painel.
 

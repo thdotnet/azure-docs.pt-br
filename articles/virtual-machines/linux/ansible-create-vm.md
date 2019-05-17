@@ -1,30 +1,31 @@
 ---
-title: Usar o Ansible para criar uma máquina virtual do Linux no Azure
-description: Saiba como usar o Ansible para criar uma máquina virtual do Linux no Azure
-ms.service: virtual-machines-linux
+title: Início Rápido – Configurar Máquinas Virtuais do Linux no Azure usando o Ansible | Microsoft Docs
+description: Neste Início Rápido, saiba como criar uma máquina virtual do Linux no Azure usando o Ansible
 keywords: ansible, azure, devops, máquina virtual
+ms.topic: tutorial
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: quickstart
-ms.date: 08/22/2018
-ms.openlocfilehash: 38cc6cd8f375fe7c60a706541bc74313e8ea2c4f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 04/30/2019
+ms.openlocfilehash: ce99b537dd5958c2bec43759c58a9c182dd05142
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58090246"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65237045"
 ---
-# <a name="use-ansible-to-create-a-linux-virtual-machine-in-azure"></a>Usar o Ansible para criar uma máquina virtual do Linux no Azure
-Usando uma linguagem declarativa, o Ansible permite automatizar a criação, configuração e implantação dos recursos do Azure por meio dos *guias estratégicos* do Ansible. Cada seção deste artigo mostra a aparência de cada seção de um guia estratégico do Ansible para criar e configurar os diferentes aspectos de uma máquina virtual do Linux. O [guia estratégico completo do Ansible](#complete-sample-ansible-playbook) está listado no final deste artigo.
+# <a name="quickstart-configure-linux-virtual-machines-in-azure-using-ansible"></a>Início Rápido: Configurar máquinas virtuais do Linux no Azure usando o Ansible
+
+Usando uma linguagem declarativa, o Ansible permite automatizar a criação, configuração e implantação dos recursos do Azure por meio dos *guias estratégicos* do Ansible. Este artigo apresenta um guia estratégico de exemplo do Ansible para configurar máquinas virtuais do Linux. O [guia estratégico completo do Ansible](#complete-sample-ansible-playbook) está listado no final deste artigo.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- **Assinatura do Azure** - Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-
-- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation1.md](../../../includes/ansible-prereqs-cloudshell-use-or-vm-creation1.md)]
 
 ## <a name="create-a-resource-group"></a>Criar um grupo de recursos
+
 O Ansible precisa de um grupo de recursos para implantar todos os seus recursos. A seção do guia estratégico de exemplo do Ansible a seguir cria um grupo de recursos denominado `myResourceGroup` no local `eastus`:
 
 ```yaml
@@ -35,6 +36,7 @@ O Ansible precisa de um grupo de recursos para implantar todos os seus recursos.
 ```
 
 ## <a name="create-a-virtual-network"></a>Criar uma rede virtual
+
 Ao criar uma máquina virtual do Azure, você deve criar uma [rede virtual](/azure/virtual-network/virtual-networks-overview) ou usar uma rede virtual existente. Você também precisa decidir como suas máquinas virtuais devem ser acessadas na rede virtual. A seção a seguir do guia estratégico de exemplo do Ansible cria uma rede virtual chamada `myVnet` no espaço de endereço `10.0.0.0/16`:
 
 ```yaml
@@ -59,7 +61,12 @@ A seção a seguir do guia estratégico de exemplo do Ansible cria uma sub-rede 
 ```
 
 ## <a name="create-a-public-ip-address"></a>Criar um endereço IP público
-[Endereços IP públicos](/azure/virtual-network/virtual-network-ip-addresses-overview-arm) permitem recursos de Internet para comunicar a entrada para recursos do Azure. Endereços IP públicos também habilitam recursos do Azure para comunicar a saída à Internet e serviços do Azure voltados ao público com um endereço IP atribuído ao recurso. O endereço é dedicado para o recurso, até que ele seja desatribuído por você. Se um endereço IP público não está atribuído a um recurso, o recurso ainda pode comunicar a saída à Internet, mas o Azure atribui dinamicamente um endereço IP disponível que não é dedicado ao recurso. 
+
+
+
+
+
+[Endereços IP públicos](/azure/virtual-network/virtual-network-ip-addresses-overview-arm) permitem recursos de Internet para comunicar a entrada para recursos do Azure. Endereços IP públicos também habilitam recursos do Azure para comunicar a saída a serviços do Azure voltados ao público. Nos dois cenários, um endereço IP atribuído ao recurso que está sendo acessado. O endereço é dedicado ao recurso até que você cancele a atribuição. Se um endereço IP público não está atribuído a um recurso, o recurso ainda pode se comunicar externamente com a Internet. A conexão é feita pelo Azure, atribuindo dinamicamente um endereço IP disponível. O endereço atribuído dinamicamente não é dedicado ao recurso.
 
 A seção a seguir do guia estratégico de exemplo do Ansible cria um endereço IP público chamado `myPublicIP`:
 
@@ -72,9 +79,10 @@ A seção a seguir do guia estratégico de exemplo do Ansible cria um endereço 
 ```
 
 ## <a name="create-a-network-security-group"></a>Criar um grupo de segurança de rede
-Um [grupo de segurança de rede](/azure/virtual-network/security-overview) permite filtrar o tráfego de rede de e para recursos do Azure em uma rede virtual do Azure. Um grupo de segurança de rede contém regras de segurança que permitem ou negam o tráfego de rede de entrada ou de saída em relação a vários tipos de recursos do Azure. 
 
-A seção do guia estratégico de exemplo do Ansible a seguir cria um grupo de segurança de rede denominado `myNetworkSecurityGroup` e define uma regra para permitir o tráfego de SSH na porta TCP 22:
+Os [Grupos de Segurança de Rede](/azure/virtual-network/security-overview) filtram o tráfego de rede entre os recursos do Azure em uma rede virtual. São definidas regras de segurança que controlam o tráfego de entrada e saída de e para os recursos do Azure. Para obter mais informações sobre recursos do Azure e grupos de segurança de rede, confira [Integração de rede virtual para serviços do Azure](/azure/virtual-network/virtual-network-for-azure-services)
+
+O guia estratégico a seguir cria um grupo de segurança de rede chamado `myNetworkSecurityGroup`. O grupo de segurança de rede inclui uma regra que permite o tráfego na porta TCP 22.
 
 ```yaml
 - name: Create Network Security Group that allows SSH
@@ -90,8 +98,8 @@ A seção do guia estratégico de exemplo do Ansible a seguir cria um grupo de s
         direction: Inbound
 ```
 
-
 ## <a name="create-a-virtual-network-interface-card"></a>Criar uma placa de adaptador de rede virtual
+
 Uma placa de adaptador de rede virtual conecta-se à máquina virtual para uma determinada rede virtual, um endereço IP público e um grupo de segurança de rede. 
 
 A seção a seguir do guia estratégico de exemplo do Ansible cria uma placa de adaptador da rede virtual denominada `myNIC` conectada aos recursos da rede virtual que você criou:
@@ -108,6 +116,7 @@ A seção a seguir do guia estratégico de exemplo do Ansible cria uma placa de 
 ```
 
 ## <a name="create-a-virtual-machine"></a>Criar uma máquina virtual
+
 A etapa final é criar uma máquina virtual que usa todos os recursos que você criou nas seções anteriores deste artigo. 
 
 A seção de guia estratégico de exemplo do Ansible apresentada nesta seção cria uma máquina virtual denominada `myVM` e anexa a placa de adaptador de rede virtual denominada `myNIC`. Substitua o espaço reservado &lt;your-key-data> pelos seus próprios dados de chave pública completos.
@@ -278,5 +287,6 @@ Esta seção orienta você na execução do guia estratégico de exemplo do Ansi
     ```
 
 ## <a name="next-steps"></a>Próximas etapas
+
 > [!div class="nextstepaction"] 
-> [Usar o Ansible para gerenciar uma máquina virtual do Linux no Azure](./ansible-manage-linux-vm.md)
+> [Início Rápido: Configurar uma máquina virtual do Linux no Azure usando o Ansible](./ansible-manage-linux-vm.md)

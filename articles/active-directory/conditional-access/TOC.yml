@@ -50,6 +50,8 @@
       href: app-protection-based-conditional-access.md
     - name: Requer dispositivos gerenciados
       href: require-managed-devices.md
+    - name: Requer redes confiáveis para registro de MFA
+      href: '../authentication/howto-registration-mfa-sspr-combined.md#conditional-access-policies-for-combined-registration'
     - name: Requer MFA para as tentativas de acesso por redes não confiáveis
       href: untrusted-networks.md
     - name: Requer Termos de uso

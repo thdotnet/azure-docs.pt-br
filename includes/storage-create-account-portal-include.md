@@ -5,15 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: include
-ms.date: 09/18/2018
+ms.date: 05/06/2019
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 3b770c3e51b17fa5d70abb03360e17e1073974d8
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: 56545b02c35d68455497c93582073c73d6c75da5
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51222159"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65815638"
 ---
 Para criar uma conta de armazenamento de uso geral v2 no portal do Azure, siga estas etapas:
 
@@ -33,7 +33,7 @@ Para criar uma conta de armazenamento de uso geral v2 no portal do Azure, siga e
    |Modelo de implantação     |Gerenciador de Recursos         |
    |Desempenho     |Standard         |
    |Tipo de conta     |StorageV2 (uso geral v2)         |
-   |Replicação     |Armazenamento com redundância local (LRS)         |
+   |Replicação     |Armazenamento com redundância geográfica com acesso de leitura (RA-GRS)         |
    |Camada de acesso     |Dinâmica         |
 
 1. Selecione **Revisar + Criar** para examinar as configurações da conta de armazenamento e criar a conta.

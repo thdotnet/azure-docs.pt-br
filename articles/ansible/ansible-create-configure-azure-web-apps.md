@@ -1,36 +1,47 @@
 ---
-title: Criar aplicativos Web do Azure usando o Ansible
-description: Saiba como usar o Ansible para criar um aplicativo Web com tempo de execução de contêiner Java 8 e Tomcat no Serviço de Aplicativo no Linux
-ms.service: azure
+title: Tutorial – Configurar aplicativos no Serviço de Aplicativo do Azure usando o Ansible | Microsoft Docs
+description: Saiba como criar um aplicativo no Serviço de Aplicativo do Azure com Java 8 e o tempo de execução do contêiner Tomcat
 keywords: ansible, azure, devops, bash, guia estratégico, Serviço de Aplicativo do Azure, aplicativo Web, Java
+ms.topic: tutorial
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: tutorial
-ms.date: 12/08/2018
-ms.openlocfilehash: 5f67a9f7d629eec9ab1462a25940355869c1cd28
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.date: 04/30/2019
+ms.openlocfilehash: aed09baf410ce25f2e5383aa746344a440e2a052
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57791215"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65231247"
 ---
-# <a name="create-azure-app-service-web-apps-by-using-ansible"></a>Criar aplicativos Web do Serviço de Aplicativo do Azure usando o Ansible
-Os [Aplicativos Web do Serviço de Aplicativo do Azure](https://docs.microsoft.com/azure/app-service/overview) (ou apenas Aplicativos Web) hospedam aplicativos Web, APIs REST e back-ends móveis. Você pode desenvolver usando sua linguagem favorita&mdash;.NET, .NET Core, Java, Ruby, Node.js, PHP ou Python.
+# <a name="tutorial-configure-apps-in-azure-app-service-using-ansible"></a>Tutorial: Configurar aplicativos no Serviço de Aplicativo do Azure usando o Ansible
 
-O Ansible permite que você automatize a implantação e a configuração de recursos em seu ambiente. Este artigo mostra como usar o Ansible para criar um aplicativo Web usando o tempo de execução Java. 
+[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+
+[!INCLUDE [open-source-devops-intro-app-service.md](../../includes/open-source-devops-intro-app-service.md)]
+
+[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+
+> [!div class="checklist"]
+>
+> * Criar um aplicativo no Serviço de Aplicativo do Azure com Java 8 e o tempo de execução do contêiner Tomcat
+> * Criar um perfil do Gerenciador de Tráfego do Azure
+> * Definir um ponto de extremidade do Gerenciador de Tráfego usando o aplicativo criado
 
 ## <a name="prerequisites"></a>Pré-requisitos
-- **Assinatura do Azure**: caso você não tenha uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) antes de começar.
-- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 
-> [!Note]
-> O Ansible 2.7 é necessário para executar os guias estratégicos de exemplo contidos neste tutorial.
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
-## <a name="create-a-simple-app-service"></a>Criar um serviço de aplicativo simples
-Esta seção apresenta um guia estratégico de exemplo do Ansible que define os seguintes recursos:
-- Grupo de recursos no qual seu Plano do Serviço de Aplicativo e aplicativo Web serão implantados
-- Aplicativo Web com tempo de execução de contêiner Tomcat e Java 8 no Serviço de Aplicativo no Linux
+## <a name="create-a-basic-app-service"></a>Criar um serviço de aplicativo básico
+
+O código do guia estratégico nesta seção define os seguintes recursos:
+
+* Grupo de recursos do Azure no qual o plano e o aplicativo do Serviço de Aplicativo são implantados
+* Serviço de aplicativo no Linux com o Java 8 e o tempo de execução do contêiner Tomcat
+
+Salve o guia estratégico a seguir como `firstwebapp.yml`:
 
 ```yml
 - hosts: localhost
@@ -63,46 +74,49 @@ Esta seção apresenta um guia estratégico de exemplo do Ansible que define os 
               java_container: tomcat
               java_container_version: 8.5
 ```
-Salve o guia estratégico anterior como **firstwebapp.yml**.
 
-Para executar o guia estratégico, use o comando **ansible-playbook** da seguinte maneira:
+Execute o guia estratégico usando o comando `ansible-playbook`:
+
 ```bash
 ansible-playbook firstwebapp.yml
 ```
 
-A saída da execução do guia estratégico do Ansible mostra que o aplicativo Web foi criado com êxito:
+Depois de executar o guia estratégico, você verá resultados semelhantes aos seguintes:
 
 ```Output
-PLAY [localhost] *************************************************
+PLAY [localhost] 
 
-TASK [Gathering Facts] *************************************************
+TASK [Gathering Facts] 
 ok: [localhost]
 
-TASK [Create a resource group] *************************************************
+TASK [Create a resource group] 
 changed: [localhost]
 
-TASK [Create App Service on Linux with Java Runtime] *************************************************
+TASK [Create App Service on Linux with Java Runtime] 
  [WARNING]: Azure API profile latest does not define an entry for WebSiteManagementClient
 
 changed: [localhost]
 
-PLAY RECAP *************************************************
+PLAY RECAP 
 localhost                  : ok=3    changed=2    unreachable=0    failed=0
 ```
 
-## <a name="create-an-app-service-by-using-traffic-manager"></a>Criar um serviço de aplicativo usando o Gerenciador de Tráfego
-Você pode usar o [Gerenciador de Tráfego do Azure](https://docs.microsoft.com/azure/app-service/web-sites-traffic-manager) para controlar como as solicitações de clientes Web são distribuídas aos aplicativos no Serviço de Aplicativo do Azure. Quando os pontos de extremidade do Serviço de Aplicativo são adicionados a um perfil do Gerenciador de Tráfego do Azure, o Gerenciador de Tráfego rastreia o status dos aplicativos do Serviço de Aplicativo. Os status incluem em execução, parado e excluído. O Gerenciador de Tráfego, em seguida, pode decidir quais desses pontos de extremidade devem receber tráfego.
+## <a name="create-an-app-and-use-azure-traffic-manager"></a>Criar um aplicativo e usar o Gerenciador de Tráfego do Azure
 
-No Serviço de Aplicativo, um aplicativo é executado em um [Plano de Serviço de Aplicativo](https://docs.microsoft.com/azure/app-service/overview-hosting-plans
-). Um plano de serviço de aplicativo define um conjunto de recursos de computação para um aplicativo Web ser executado. Você pode gerenciar o Plano do Serviço de Aplicativo e o aplicativo Web em grupos diferentes.
+O [Gerenciador de Tráfego do Azure](/azure/app-service/web-sites-traffic-manager) permite controlar como as solicitações de clientes Web são distribuídas aos aplicativos no Serviço de Aplicativo do Azure. Quando os pontos de extremidade do Serviço de Aplicativo são adicionados a um perfil do Gerenciador de Tráfego do Azure, o Gerenciador de Tráfego rastreia o status dos aplicativos do Serviço de Aplicativo. Os status incluem em execução, parado e excluído. O Gerenciador de Tráfego é usado para decidir quais pontos de extremidade devem receber o tráfego.
 
-Esta seção apresenta um guia estratégico de exemplo do Ansible que define os seguintes recursos:
-- Grupo de recursos no qual seu plano do serviço de aplicativo será implantado
-- Plano do Serviço de Aplicativo
-- Grupo de recursos secundário no qual seu aplicativo Web será implantado
-- Aplicativo Web com tempo de execução de contêiner Tomcat e Java 8 no Serviço de Aplicativo no Linux
-- Perfil do Gerenciador de Tráfego
-- Ponto de extremidade do Gerenciador de Tráfego usando o site criado
+No Serviço de Aplicativo, um aplicativo é executado em um [Plano de Serviço de Aplicativo](/azure/app-service/overview-hosting-plans). Um plano de serviço de aplicativo define um conjunto de recursos de computação para um aplicativo ser executado. Você pode gerenciar o Plano do Serviço de Aplicativo e o aplicativo Web em grupos diferentes.
+
+O código do guia estratégico nesta seção define os seguintes recursos:
+
+* Grupo de recursos do Azure no qual o plano do Serviço de Aplicativo é implantado
+* Plano do Serviço de Aplicativo
+* Grupo de recursos do Azure no qual o aplicativo é implantado
+* Serviço de aplicativo no Linux com o Java 8 e o tempo de execução do contêiner Tomcat
+* Perfil do Gerenciador de Tráfego
+* Ponto de extremidade do Gerenciador de Tráfego usando o aplicativo criado
+
+Salve o guia estratégico a seguir como `webapp.yml`:
 
 ```yml
 - hosts: localhost
@@ -184,52 +198,54 @@ Esta seção apresenta um guia estratégico de exemplo do Ansible que define os 
       location: "{{ location }}"
       target_resource_id: "{{ webapp.webapps[0].id }}"
 ```
-Salve o guia estratégico acima como **webapp.yml** ou [baixe o guia estratégico](https://github.com/Azure-Samples/ansible-playbooks/blob/master/webapp.yml).
 
-Para executar o guia estratégico, use o comando **ansible-playbook** da seguinte maneira:
+Execute o guia estratégico usando o comando `ansible-playbook`:
+
 ```bash
 ansible-playbook webapp.yml
 ```
 
-A saída da execução do guia estratégico do Ansible mostra que o Plano do Serviço de Aplicativo, o aplicativo Web, o perfil do Gerenciador de Tráfego e o ponto de extremidade foram criados com êxito:
-```Output
-PLAY [localhost] *************************************************
+Depois de executar o guia estratégico, você verá resultados semelhantes aos seguintes:
 
-TASK [Gathering Facts] *************************************************
+```Output
+PLAY [localhost] 
+
+TASK [Gathering Facts] 
 ok: [localhost]
 
-TASK [Create resource group] ****************************************************************************
+TASK [Create resource group] 
 changed: [localhost]
 
-TASK [Create resource group for app service plan] ****************************************************************************
+TASK [Create resource group for app service plan] 
 changed: [localhost]
 
-TASK [Create App Service Plan] ****************************************************************************
+TASK [Create App Service Plan] 
  [WARNING]: Azure API profile latest does not define an entry for WebSiteManagementClient
 
 changed: [localhost]
 
-TASK [Create App Service on Linux with Java Runtime] ****************************************************************************
+TASK [Create App Service on Linux with Java Runtime] 
 changed: [localhost]
 
-TASK [Get web app facts] *****************************************************************************
+TASK [Get web app facts] 
 ok: [localhost]
 
-TASK [Create Traffic Manager Profile] *****************************************************************************
+TASK [Create Traffic Manager Profile] 
  [WARNING]: Azure API profile latest does not define an entry for TrafficManagerManagementClient
 
 changed: [localhost]
 
-TASK [Add endpoint to traffic manager profile, using the web site created above] *****************************************************************************
+TASK [Add endpoint to traffic manager profile, using the web site created above] 
 changed: [localhost]
 
-TASK [Get Traffic Manager Profile facts] ******************************************************************************
+TASK [Get Traffic Manager Profile facts] 
 ok: [localhost]
 
-PLAY RECAP ******************************************************************************
+PLAY RECAP 
 localhost                  : ok=9    changed=6    unreachable=0    failed=0
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
+
 > [!div class="nextstepaction"] 
-> [Dimensionar aplicativos Web do Serviço de Aplicativo do Azure usando o Ansible](https://docs.microsoft.com/azure/ansible/ansible-scale-azure-web-apps)
+> [Tutorial: Dimensionar aplicativos no Serviço de Aplicativo do Azure usando o Ansible](/azure/ansible/ansible-scale-azure-web-apps)
