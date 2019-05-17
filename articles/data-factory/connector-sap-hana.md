@@ -59,10 +59,10 @@ As propriedades a seguir têm suporte para o serviço vinculado do SAP HANA:
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **SapHana** | Sim |
-| Servidor | Nome do servidor no qual reside a instância do SAP HANA. Se o servidor estiver usando uma porta personalizada, especifique `server:port`. | Sim |
+| server | Nome do servidor no qual reside a instância do SAP HANA. Se o servidor estiver usando uma porta personalizada, especifique `server:port`. | Sim |
 | authenticationType | Tipo de autenticação usado para se conectar ao banco de dados SAP HANA.<br/>Valores permitidos são: **Básica** e **Windows** | Sim |
 | userName | Nome do usuário que tem acesso ao servidor SAP. | Sim |
-| Senha | Senha do usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
+| password | Senha do usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
 | connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. É necessário um Integration Runtime auto-hospedado, conforme mencionado nos [Pré-requisitos](#prerequisites). |Sim |
 
 **Exemplo:**
@@ -162,23 +162,23 @@ Ao copiar dados do SAP HANA, os seguintes mapeamentos são usados de tipos de da
 
 | Tipo de dados do SAP HANA | Tipo de dados provisório do Data Factory |
 |:--- |:--- |
-| ALPHANUM | Cadeia de caracteres |
+| ALPHANUM | String |
 | BIGINT | Int64 |
 | BLOB | Byte[] |
 | BOOLEAN | Byte |
 | CLOB | Byte[] |
-| DATE | Datetime |
+| DATE | DateTime |
 | DECIMAL | Decimal |
 | DOUBLE | Single |
 | INT | Int32 |
-| NVARCHAR | Cadeia de caracteres |
+| NVARCHAR | String |
 | REAL | Single |
-| SECONDDATE | Datetime |
+| SECONDDATE | DateTime |
 | SMALLINT | Int16 |
 | TIME | TimeSpan |
-| TIMESTAMP | Datetime |
+| TIMESTAMP | DateTime |
 | TINYINT | Byte |
-| VARCHAR | Cadeia de caracteres |
+| VARCHAR | String |
 
 ## <a name="known-limitations"></a>Limitações conhecidas
 
