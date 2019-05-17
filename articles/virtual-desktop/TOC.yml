@@ -32,8 +32,6 @@
       href: create-host-pools-user-profile.md
     - name: Configurar o método de balanceamento de carga da Área de Trabalho Virtual do Windows
       href: configure-host-pool-load-balancing.md
-    - name: Identificar problemas com o recurso de diagnóstico
-      href: diagnostics-role-service.md
     - name: Preparar e personalizar uma imagem de VHD mestre
       href: set-up-customize-master-image.md
     - name: Instalar o Office em uma imagem de VHD mestre
@@ -54,6 +52,8 @@
   items:
     - name: 'Visão geral da solução de problemas, comentários e suporte'
       href: troubleshoot-set-up-overview.md
+    - name: Identificar problemas com o recurso de diagnóstico
+      href: diagnostics-role-service.md
     - name: Criação do pool de host e de locatário
       href: troubleshoot-set-up-issues.md
     - name: Configuração da máquina virtual do host da sessão
