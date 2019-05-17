@@ -5,51 +5,51 @@ services: networking
 author: anavinahar
 ms.service: networking
 ms.topic: include
-ms.date: 04/10/2019
+ms.date: 05/15/2019
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: 79c4530878783cbdb62cac630d81b65dc73c52a4
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 8cee74696d9636a8ac1d6fcbab493f18184355e1
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64733759"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787644"
 ---
-<a name="virtual-networking-limits-classic"></a>Os limites a seguir aplicam-se apenas a recursos de rede gerenciados pelo modelo de implantação clássico por assinatura. Saiba como [exibir seu uso de recursos atual em relação a seus limites de assinatura](../articles/networking/check-usage-against-limits.md).
+<a name="virtual-networking-limits-classic"></a>Os limites a seguir aplicam-se apenas recursos gerenciados por meio de rede a **clássico** modelo de implantação por assinatura. Saiba como [exibir seu uso de recursos atual em relação a seus limites de assinatura](../articles/networking/check-usage-against-limits.md).
 
 | Resource | Limite padrão | Limite máximo |
 | --- | --- | --- |
-| Redes virtuais |50 |100 |
+| Redes Virtuais |50 |100 |
 | Sites de redes locais |20 |Entre em contato com o suporte. |
 | Servidores DNS por rede virtual |20 |20 |
 | Endereços IP privados por rede virtual |4.096 |4.096 |
 | Fluxos TCP ou UDP simultâneos por NIC de uma máquina virtual ou instância de função |500.000 até 1.000.000 para duas ou mais NICs. |500.000 até 1.000.000 para duas ou mais NICs. |
-| Grupos de segurança de rede (NSG) |100 |200 |
-| Regras de NSG por NSG |200 |1.000 |
-| Tabelas de rotas definidas pelo usuário |100 |200 |
-| Rotas definidas pelo usuário por tabela de rotas |100 |400 |
-| Endereços IP públicos (dinâmicos) |5 |Entre em contato com o suporte. |
-| Endereços IP públicos reservados |20 |Entre em contato com o suporte. |
-| VIP público por implantação |5 |Entre em contato com o suporte. |
+| Grupos de segurança de rede (NSG) |200 |200 |
+| Regras de NSG por NSG |1.000 |1.000 |
+| Tabelas de rotas definidas pelo usuário |200 |200 |
+| Rotas definidas pelo usuário por tabela de rotas |400 |400 |
+| Endereços IP públicos (dinâmicos) |5 |Contatar o suporte |
+| Endereços IP públicos reservados |20 |Contatar o suporte |
+| VIP público por implantação |5 |Contatar o suporte |
 | VIP privado (balanceamento de carga interno) por implantação |1 |1 |
 | Listas de controle de acesso do ponto de extremidade (ACLs) |50 |50 |
 
 #### <a name="azure-resource-manager-virtual-networking-limits"></a>Limites de rede – Azure Resource Manager
-Os limites a seguir aplicam-se apenas a recursos de rede gerenciados pelo Azure Resource Manager por região e assinatura. Saiba como [exibir seu uso de recursos atual em relação a seus limites de assinatura](../articles/networking/check-usage-against-limits.md).
+Os limites a seguir aplicam-se apenas recursos gerenciados por meio de rede **do Azure Resource Manager** por região e assinatura. Saiba como [exibir seu uso de recursos atual em relação a seus limites de assinatura](../articles/networking/check-usage-against-limits.md).
 
 > [!NOTE]
 > Recentemente, aumentamos todos os limites padrão para seus limites máximos. Se não houver nenhuma coluna de limite máximo, o recurso não tem limites ajustáveis. Se você tivesse esses limites aumentados pelo suporte no passado e não vir os limites atualizados nas tabelas a seguir, [abrir uma solicitação de suporte do cliente online sem custo adicional](../articles/azure-resource-manager/resource-manager-quota-errors.md)
 
-| Resource | Limite de limite/máximo padrão | 
+| Resource | Limite máximo/padrão | 
 | --- | --- |
-| Redes virtuais |1.000 |
+| Redes Virtuais |1.000 |
 | Sub-redes por rede virtual |3.000 |
 | Emparelhamentos de rede virtual por rede virtual |500 |
 | Servidores DNS por rede virtual |20 |
 | Endereços IP privados por rede virtual |65,536 |
 | Endereços IP privados por interface de rede |256 |
 | Endereços IP privados por máquina virtual |256 |
-| Fluxos TCP ou UDP simultâneos por NIC de uma máquina virtual ou instância de função |500.000 |
+| Fluxos TCP ou UDP simultâneos por NIC de uma máquina virtual ou instância de função |500,000 |
 | Placas de interface de rede |65,536 |
 | Grupos de segurança de rede |5.000 |
 | Regras de NSG por NSG |1.000 |
@@ -70,12 +70,12 @@ Os limites a seguir aplicam-se apenas a recursos de rede gerenciados pelo Azure 
 | Endereços IP públicos - dinâmicos | 1.000 para Basic. |Entre em contato com o suporte. |
 | Endereços IP públicos - estáticos | 1.000 para Basic. |Entre em contato com o suporte. |
 | Endereços IP públicos - estáticos | 200 para Standard.|Entre em contato com o suporte. |
-| Tamanho de prefixo IP público (visualização) | / 28 | / 28 |
+| Tamanho de prefixo IP público (visualização) | / 28 | Entre em contato com o suporte. |
 
 #### <a name="load-balancer"></a>Limites do balanceador de carga
 Os limites a seguir aplicam-se apenas a recursos de rede gerenciados pelo Azure Resource Manager por região e assinatura. Saiba como [exibir seu uso de recursos atual em relação a seus limites de assinatura](../articles/networking/check-usage-against-limits.md).
 
-| Resource | Limite padrão |
+| Resource | Limite máximo/padrão |
 | --- | --- |
 | Balanceadores de carga | 1.000 | 
 | Regras por recurso, Básico | 250 |

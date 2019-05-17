@@ -9,21 +9,21 @@ ms.topic: conceptual
 ms.date: 05/21/2018
 ms.author: mimart
 author: msmimart
-manager: daveba
+manager: celestedg
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1dca03f84b821d20ee6fecbaec24a1aa840836b5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5db5eb9c0e0493d906345892fcc5f2872a3e0e14
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60357130"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65812452"
 ---
 # <a name="add-b2b-collaboration-guest-users-without-an-invitation-link-or-email"></a>Adicionar os usuários convidados de colaboração B2B sem um link de convite ou um email
 
 Agora é possível convidar um usuário enviando um link direto para um aplicativo compartilhado. Com esse método, usuários convidados não precisam mais usar o email de convite, exceto em alguns casos especiais. Um usuário convidado clica no link do aplicativo, analisa e aceita os termos de privacidade e, em seguida, acessa diretamente o aplicativo. Para obter mais informações, consulte [Resgate do convite de colaboração B2B](redemption-experience.md).   
 
-Antes desse novo método ser disponibilizado, era possível convidar usuários sem a necessidade de um email de convite, adicionando um emissor do convite (de sua organização ou de uma organização parceira) à função do diretório **emissor do convite convidado** e, em seguida, solicitando ao emissor do convite que adicionasse usuários convidados ao diretório, grupos ou aplicativos por meio da interface do usuário ou do PowerShell. (Se estiver usando o PowerShell, você poderá suprimir o email de convite completamente). Por exemplo: 
+Antes desse novo método ser disponibilizado, era possível convidar usuários sem a necessidade de um email de convite, adicionando um emissor do convite (de sua organização ou de uma organização parceira) à função do diretório **emissor do convite convidado** e, em seguida, solicitando ao emissor do convite que adicionasse usuários convidados ao diretório, grupos ou aplicativos por meio da interface do usuário ou do PowerShell. (Se estiver usando o PowerShell, você poderá suprimir o email de convite completamente). Por exemplo:
 
 1. Um usuário na organização host (por exemplo, WoodGrove) convida um usuário da organização parceira (por exemplo, Sam@litware.com) como Convidado.
 2. O administrador da organização host [define as políticas](delegate-invitations.md) que permitem ao Sam identificar e adicionar outros usuários da organização parceira (Litware). (Sam deve ser adicionado à função **emissor do convite convidado**.)
@@ -33,7 +33,7 @@ Esse método original ainda funciona. No entanto, há uma pequena diferença no 
 
 Se você convidar um usuário para o diretório, o convidado deverá acessar o portal do Azure do recurso específico do locatário diretamente na URL (como https://portal.azure.com/*resourcetenant*.onmicrosoft.com) para exibir e aceitar os termos de privacidade.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [O que é a colaboração B2B do AD do Azure?](what-is-b2b.md)
 - [Resgate de convite de colaboração B2B](redemption-experience.md)

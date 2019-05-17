@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 6b144f126e097a8db9fbbf29e47162fd6a1c2fbe
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 7596670e794c090b04f81cf6b235a4bc54c1f3c4
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64916830"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65800094"
 ---
 # <a name="what-is-speech-to-text"></a>O que é a conversão de fala em texto?
 
@@ -24,22 +24,22 @@ Conversão de fala em texto fala dos serviços do Azure, também conhecido como 
 
 Por padrão, o serviço de fala em texto usa o modelo de linguagem Universal. Esse modelo foi treinado usando dados de propriedade da Microsoft e é implantado na nuvem. Ele é ideal para o formato de conversação e cenários de ditado. Se estiver usando a conversão de fala em texto para funcionalidades de reconhecimento e transcrição em um ambiente exclusivo, você poderá criar e treinar modelos acústicos, de idioma e de pronúncia personalizados para lidar com o ruído ambiente ou vocabulário específico do setor. 
 
-Você pode facilmente capturar áudio do microfone, ler de um fluxo ou acessar arquivos de áudio de armazenamento com o SDK de fala e APIs REST. O Speech SDK dá suporte a WAV/PCM de 16 bits, 16 kHz, canal único áudio para reconhecimento de fala. Há suporte para formatos de áudio adicionais usando o [ponto de extremidade REST de fala em texto](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) ou o [transcrição de serviço de lote](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats).
+Você pode facilmente capturar áudio do microfone, ler de um fluxo ou acessar arquivos de áudio de armazenamento com o SDK de fala e APIs REST. O Speech SDK dá suporte a WAV/PCM 16 bits, 16 kHz/8 kHz, um canal áudio para reconhecimento de fala. Há suporte para formatos de áudio adicionais usando o [ponto de extremidade REST de fala em texto](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) ou o [transcrição de serviço de lote](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats).
 
 ## <a name="core-features"></a>Principais recursos
 
 Aqui estão os recursos disponíveis por meio do SDK de fala e APIs REST:
 
-| Caso de uso | . | REST |
+| Caso de uso | SDK | REST |
 |----------|-----|------|
 | Transcrever declarações curtas (< 15 segundos). Suporta apenas o resultado final de transcrição. | Sim | Sim |
-| Transcrição contínua de declarações longo e fluxo de áudio (> 15 segundos). Oferece suporte a resultados de transcrição intermediárias e finais. | Sim | Não  |
+| Transcrição contínua de declarações longo e fluxo de áudio (> 15 segundos). Oferece suporte a resultados de transcrição intermediárias e finais. | Sim | Não |
 | Derivar as intenções de resultados do reconhecimento com [LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/what-is-luis). | Sim | Não\* |
-| Transcrição de arquivos de áudio do lote assincronamente. | Não  | Sim\** |
-| Criar e gerenciar modelos de fala. | Não  | Sim\** |
-| Criar e gerenciar implantações de modelo personalizado. | Não  | Sim\** |
-| Crie testes de precisão para medir a precisão do modelo de linha de base versus modelos personalizados. | Não  | Sim\** |
-| Gerencie assinaturas. | Não  | Sim\** |
+| Transcrição de arquivos de áudio do lote assincronamente. | Não | Sim\** |
+| Criar e gerenciar modelos de fala. | Não | Sim\** |
+| Criar e gerenciar implantações de modelo personalizado. | Não | Sim\** |
+| Crie testes de precisão para medir a precisão do modelo de linha de base versus modelos personalizados. | Não | Sim\** |
+| Gerencie assinaturas. | Não | Sim\** |
 
 \* *entidades e intenções de LUIS podem ser derivadas usando uma assinatura do LUIS separada. Com essa assinatura, o SDK pode chamar LUIS para você e fornecer a entidade e intenção de resultados. Com a API REST, você mesmo pode chamar o LUIS para derivar intenções e entidades com assinatura do LUIS.*
 
@@ -49,7 +49,7 @@ Aqui estão os recursos disponíveis por meio do SDK de fala e APIs REST:
 
 Nós oferecemos guias de início rápido nas linguagens de programação mais populares, todos eles desenvolvidos para que você executar o código em menos de 10 minutos. Essa tabela inclui uma lista completa dos guias de início rápido do SDK de fala organizados por idioma.
 
-| Início rápido | Plataforma | Referência de API |
+| Início rápido | Plataforma | Referência da API |
 |------------|----------|---------------|
 | [C#, .NET Core](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnetcore-windows) |  Windows | [Browse](https://aka.ms/csspeech/csharpref) |
 | [C#, .NET Framework](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows) |  Windows | [Browse](https://aka.ms/csspeech/csharpref) |
@@ -80,10 +80,10 @@ Código de exemplo para o Speech SDK está disponível no GitHub. Esses exemplos
 
 Além do modelo Universal usado pelos serviços de fala, você pode criar modelos personalizados de acústicos, idioma e pronúncia específica à sua experiência. Aqui está uma lista de opções de personalização:
 
-| Modelo | DESCRIÇÃO |
+| Modelo | Descrição |
 |-------|-------------|
 | [Modelo acústico](how-to-customize-acoustic-models.md) | Criar um modelo acústico personalizado é útil se seu aplicativo, ferramentas ou dispositivos são usados em um ambiente específico, como em um carro ou fábrica com condições específicas de gravação. Os exemplos envolvem fala e ruídos de fundo específicos ou o uso de um microfone específico para gravação. |
-| [Modelo de linguagem](how-to-customize-language-model.md) | Crie um modelo de linguagem personalizados para melhorar a transcrição do vocabulário específico do setor e a gramática, como a terminologia médica ou jargão IT. |
+| [Modelo de linguagem](how-to-customize-language-model.md) | Crie um modelo de linguagem personalizado para melhorar a transcrição do vocabulário e da gramática específicos de um setor, por exemplo, terminologia médica ou jargão de TI. |
 | [Modelo de pronúncia](how-to-customize-pronunciation.md) | Usando um modelo de pronúncia personalizado, você pode definir a forma fonética e a exibição de uma palavra ou termo. É útil para lidar com termos personalizados, como nomes de produtos ou acrônimos. Tudo o que você precisa para começar é de um arquivo de pronúncia (um arquivo .txt simples). |
 
 > [!NOTE]

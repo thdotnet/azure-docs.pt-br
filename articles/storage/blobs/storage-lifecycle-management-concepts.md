@@ -5,16 +5,16 @@ services: storage
 author: mhopkins-msft
 ms.service: storage
 ms.topic: conceptual
-ms.date: 4/29/2019
+ms.date: 05/09/2019
 ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: common
-ms.openlocfilehash: 560f7eb8a8809cdd6ef410a610be9806f9709754
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
-ms.translationtype: HT
+ms.openlocfilehash: 26ff592ea0d0a57049ae11a981fe8d8e77ca876f
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65409971"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606952"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Gerenciar o ciclo de vida de armazenamento de BLOBs do Azure
 
@@ -27,23 +27,30 @@ A política de gerenciamento do ciclo de vida permite:
 - Definir regras a serem executadas uma vez por dia no nível da conta de armazenamento
 - Aplicar regras a contêineres ou a um subconjunto de blobs (usando prefixos como filtros)
 
-Considere o cenário em que um conjunto de dados obtém acesso frequente durante os estágios iniciais do ciclo de vida, mas posteriormente apenas ocasionalmente após duas semanas. Após o primeiro mês, o conjunto de dados raramente é acessado. Nesse cenário, o armazenamento frequente é melhor durante os estágios iniciais. O armazenamento esporádico é mais apropriado para o acesso ocasional e o armazenamento de arquivos é a melhor opção de camada depois que os dados envelhecem mais de um mês. Ajustando as camadas de armazenamento em relação à idade dos dados, você pode criar as opções de armazenamento menos dispendiosas para suas necessidades. Para conseguir essa transição, as regras de política de gerenciamento do ciclo de vida estão disponíveis para mover os dados antigos para camadas mais frias.
+Considere um cenário em que dados obtém acesso frequente durante os estágios iniciais do ciclo de vida, mas apenas ocasionalmente, depois de duas semanas. Após o primeiro mês, o conjunto de dados raramente é acessado. Nesse cenário, o armazenamento frequente é melhor durante os estágios iniciais. Armazenamento estático é mais apropriado para acesso ocasional. O armazenamento de arquivos é a melhor opção de camada após os dados envelhecem mais de um mês. Ajustando as camadas de armazenamento em relação à idade dos dados, você pode criar as opções de armazenamento menos dispendiosas para suas necessidades. Para conseguir essa transição, as regras de política de gerenciamento do ciclo de vida estão disponíveis para mover os dados antigos para camadas mais frias.
 
 ## <a name="storage-account-support"></a>Suporte da conta de armazenamento
 
-A política de gerenciamento do ciclo de vida está disponível nas contas GPv2 (Uso Geral v2) e do Armazenamento de Blobs. No portal do Azure, atualize uma conta GPv1 (Uso Geral) existente para uma conta GPv2 com um processo simples de um clique. Para saber mais sobre as contas de armazenamento, confira [Visão geral da conta de armazenamento do Azure](../common/storage-account-overview.md).  
+A política de gerenciamento do ciclo de vida está disponível nas contas GPv2 (Uso Geral v2) e do Armazenamento de Blobs. No portal do Azure, você pode atualizar uma conta de finalidade geral (GPv1) existente para uma conta de GPv2. Para saber mais sobre as contas de armazenamento, confira [Visão geral da conta de armazenamento do Azure](../common/storage-account-overview.md).  
 
-## <a name="pricing"></a>Preços 
+## <a name="pricing"></a>Preços
 
 O recurso de gerenciamento do ciclo de vida é gratuito. O custo de operação normal para as chamadas à API [Listar Blobs](https://docs.microsoft.com/rest/api/storageservices/list-blobs) e [Definir Camada de Blob](https://docs.microsoft.com/rest/api/storageservices/set-blob-tier) é cobrado dos clientes. Operação de exclusão é gratuita. Para obter mais informações sobre preços, confira [Preços do Blob de Blocos](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
-## <a name="regional-availability"></a>Disponibilidade regional 
-O recurso de gerenciamento do ciclo de vida está disponível em todas as regiões públicas do Azure. 
+## <a name="regional-availability"></a>Disponibilidade regional
 
+O recurso de gerenciamento do ciclo de vida está disponível em todas as regiões globais do Azure.
 
-## <a name="add-or-remove-a-policy"></a>Adicionar ou remover uma política 
+## <a name="add-or-remove-a-policy"></a>Adicionar ou remover uma política
 
-Você pode adicionar, editar ou remover uma política por meio do portal do Azure, [Azure PowerShell](https://github.com/Azure/azure-powershell/releases), a CLI do Azure, [APIs REST](https://docs.microsoft.com/rest/api/storagerp/managementpolicies), ou uma ferramenta de cliente. Este artigo mostra como gerenciar a política usando o portal e métodos do PowerShell.  
+Você pode adicionar, editar ou remover uma política, usando qualquer um dos seguintes métodos:
+
+* [Portal do Azure](https://portal.azure.com)
+* [PowerShell do Azure](https://github.com/Azure/azure-powershell/releases)
+* [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli)
+* [APIs REST](https://docs.microsoft.com/rest/api/storagerp/managementpolicies)
+
+Este artigo mostra como gerenciar a política usando o portal e métodos do PowerShell.  
 
 > [!NOTE]
 > Se você habilitar as regras de firewall para sua conta de armazenamento, as solicitações de gerenciamento do ciclo de vida poderão ser bloqueadas. Desbloqueie essas solicitações fornecendo exceções. O bypass necessário são: `Logging,  Metrics,  AzureServices`. Para obter mais informações, confira a seção Exceções em [Configurar firewalls e redes virtuais](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
@@ -56,14 +63,51 @@ Você pode adicionar, editar ou remover uma política por meio do portal do Azur
 
 3. Sob **serviço Blob**, selecione **gerenciamento de ciclo de vida** para exibir ou alterar sua política.
 
+4. O JSON a seguir está um exemplo de uma regra que pode ser colado na **gerenciamento de ciclo de vida** página do portal.
+
+   ```json
+   {
+     "rules": [
+       {
+         "name": "ruleFoo",
+         "enabled": true,
+         "type": "Lifecycle",
+         "definition": {
+           "filters": {
+             "blobTypes": [ "blockBlob" ],
+             "prefixMatch": [ "container1/foo" ]
+           },
+           "actions": {
+             "baseBlob": {
+               "tierToCool": { "daysAfterModificationGreaterThan": 30 },
+               "tierToArchive": { "daysAfterModificationGreaterThan": 90 },
+               "delete": { "daysAfterModificationGreaterThan": 2555 }
+             },
+             "snapshot": {
+               "delete": { "daysAfterCreationGreaterThan": 90 }
+             }
+           }
+         }
+       }
+     ]
+   }
+   ```
+
+5. Para obter mais informações sobre este exemplo JSON, consulte o [diretiva](#policy) e [regras](#rules) seções.
+
 ### <a name="powershell"></a>PowerShell
+
+O seguinte script do PowerShell pode ser usado para adicionar uma política à sua conta de armazenamento. O `$rgname` variável deve ser inicializada com o nome do seu grupo de recursos. O `$accountName` variável deve ser inicializada com o nome da sua conta de armazenamento.
 
 ```powershell
 #Install the latest module
-Install-Module -Name Az -Repository PSGallery 
+Install-Module -Name Az -Repository PSGallery
+
+#Initialize the following with your resource group and storage account names
+$rgname = ""
+$accountName = ""
 
 #Create a new action object
-
 $action = Add-AzStorageAccountManagementPolicyAction -BaseBlobAction Delete -daysAfterModificationGreaterThan 2555
 $action = Add-AzStorageAccountManagementPolicyAction -InputObject $action -BaseBlobAction TierToArchive -daysAfterModificationGreaterThan 90
 $action = Add-AzStorageAccountManagementPolicyAction -InputObject $action -BaseBlobAction TierToCool -daysAfterModificationGreaterThan 30
@@ -71,23 +115,23 @@ $action = Add-AzStorageAccountManagementPolicyAction -InputObject $action -Snaps
 
 # Create a new filter object
 # PowerShell automatically sets BlobType as “blockblob” because it is the only available option currently
-$filter = New-AzStorageAccountManagementPolicyFilter -PrefixMatch ab,cd 
+$filter = New-AzStorageAccountManagementPolicyFilter -PrefixMatch ab,cd
 
 #Create a new rule object
 #PowerShell automatically sets Type as “Lifecycle” because it is the only available option currently
 $rule1 = New-AzStorageAccountManagementPolicyRule -Name Test -Action $action -Filter $filter
 
-#Set the policy 
+#Set the policy
 $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -StorageAccountName $accountName -Rule $rule1
-
 ```
-## <a name="arm-template-with-lifecycle-management-policy"></a>Modelo ARM com política de gerenciamento do ciclo de vida
 
-Você pode definir e implantar o gerenciamento de ciclo de vida como parte da sua implantação de solução do Azure usando modelos do ARM. A seguir é um exemplo de modelo para implantar uma conta de armazenamento de GPv2 de RA-GRS com uma política de gerenciamento do ciclo de vida. 
+## <a name="azure-resource-manager-template-with-lifecycle-management-policy"></a>Modelo do Gerenciador de recursos do Azure com a política de gerenciamento do ciclo de vida
+
+Você pode definir o gerenciamento de ciclo de vida usando modelos do Azure Resource Manager. Aqui está um exemplo de modelo para implantar uma conta de armazenamento de GPv2 de RA-GRS com uma política de gerenciamento do ciclo de vida.
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {},
   "variables": {
@@ -145,28 +189,28 @@ Uma política de gerenciamento do ciclo de vida é uma coleção de regras em um
 }
 ```
 
-
 Uma política é uma coleção de regras:
 
 | Nome do parâmetro | Tipo de parâmetro | Observações |
 |----------------|----------------|-------|
-| regras          | Uma matriz de objetos de regra | Pelo menos uma regra é necessária em uma política. Você pode definir até 100 regras em uma política.|
+| `rules`        | Uma matriz de objetos de regra | Pelo menos uma regra é necessária em uma política. Você pode definir até 100 regras em uma política.|
 
 Cada regra na política tem vários parâmetros:
 
 | Nome do parâmetro | Tipo de parâmetro | Observações | Obrigatório |
 |----------------|----------------|-------|----------|
-| nome           | String |Um nome de regra pode incluir até 256 caracteres alfanuméricos. A regra de nome diferencia maiúsculas de minúsculas.  Ela deve ser exclusiva em uma política. | True |
-| enabled | Boolean | Um booliano opcional para permitir que uma regra para ser temporário desabilitado. Valor padrão é true se não for definido. | Falso | 
-| tipo           | Um valor de enumeração | O tipo atual de válido é `Lifecycle`. | True |
-| definição     | Um objeto que define a regra de ciclo de vida | Cada definição é composta por um conjunto de filtros e um conjunto de ações. | True |
+| `name`         | String |Um nome de regra pode incluir até 256 caracteres alfanuméricos. A regra de nome diferencia maiúsculas de minúsculas.  Ela deve ser exclusiva em uma política. | True |
+| `enabled`      | Boolean | Um booliano opcional para permitir que uma regra para ser temporário desabilitado. Valor padrão é true se não for definido. | Falso | 
+| `type`         | Um valor de enumeração | O tipo atual de válido é `Lifecycle`. | True |
+| `definition`   | Um objeto que define a regra de ciclo de vida | Cada definição é composta por um conjunto de filtros e um conjunto de ações. | True |
 
 ## <a name="rules"></a>Regras
 
 Cada definição de regra inclui um conjunto de filtros e um conjunto de ações. O [conjunto de filtros](#rule-filters) limita as ações de regras a determinado conjunto de objetos em um contêiner ou a nomes de objetos. O [conjunto de ações](#rule-actions) aplica-se a camada ou excluir ações para o conjunto filtrado de objetos.
 
 ### <a name="sample-rule"></a>Regra de exemplo
-A regra de exemplo a seguir filtra a conta para executar as ações em objetos que existem dentro `container1` **AND** começar com `foo`.  
+
+A regra de exemplo a seguir filtra a conta para executar as ações em objetos que existem dentro `container1` e que começam com `foo`.  
 
 - Colocar o blob na camada esporádica 30 dias após a última modificação
 - Colocar o blob na camada de arquivos 90 dias após a última modificação
@@ -199,19 +243,18 @@ A regra de exemplo a seguir filtra a conta para executar as ações em objetos q
     }
   ]
 }
-
 ```
 
 ### <a name="rule-filters"></a>Filtros de regra
 
 Os filtros limitam as ações de regra a um subconjunto de blobs na conta de armazenamento. Se mais de um filtro for definido, um `AND` lógico será executado em todos os filtros.
 
-Filtros válidos incluem:
+Filtros incluem:
 
 | Nome do filtro | Tipo de filtro | Observações | É Necessário |
 |-------------|-------------|-------|-------------|
 | blobTypes   | Uma matriz de valores de enumeração predefinidos. | A versão atual dá suporte a `blockBlob`. | Sim |
-| prefixMatch | Uma matriz de cadeias de caracteres para prefixos a serem correspondidos. Cada regra pode definir até 10 prefixos. Uma cadeia de caracteres de prefixo deve começar com um nome de contêiner. Por exemplo, se você deseja encontrar uma correspondência para todos os blobs em "https://myaccount.blob.core.windows.net/container1/foo/..." em uma regra, o prefixMatch é `container1/foo`. | Se você não definir prefixMatch, a regra se aplica a todos os blobs na conta de armazenamento.  | Não |
+| prefixMatch | Uma matriz de cadeias de caracteres para prefixos a serem correspondidos. Cada regra pode definir até 10 prefixos. Uma cadeia de caracteres de prefixo deve começar com um nome de contêiner. Por exemplo, se você deseja correspondência com todos os blobs sob `https://myaccount.blob.core.windows.net/container1/foo/...` uma regra, o prefixMatch é `container1/foo`. | Se você não definir prefixMatch, a regra se aplica a todos os blobs na conta de armazenamento.  | Não |
 
 ### <a name="rule-actions"></a>Ações de regra
 
@@ -225,17 +268,18 @@ Gerenciamento de ciclo de vida dá suporte a disposição em camadas e exclusão
 | tierToArchive | Dá suporte aos blobs atualmente presentes na camada frequente ou esporádica | Sem suporte |
 | excluir        | Com suporte                                   | Com suporte     |
 
->[!NOTE] 
+>[!NOTE]
 >Se você definir mais de uma ação no mesmo blob, o gerenciamento do ciclo de vida aplicará a ação mais barata ao blob. Por exemplo, a ação `delete` é mais barata do que a ação `tierToArchive`. A ação `tierToArchive` é mais barata do que a ação `tierToCool`.
 
 As condições de execução são com base na idade. Os blobs base usam a hora da última modificação para acompanhar a idade, enquanto os instantâneos de blob usam a hora de criação do instantâneo para executar a mesma tarefa.
 
-| Executar a condição de ação | Valor de condição | Descrição |
-|----------------------------|-----------------|-------------|
-| daysAfterModificationGreaterThan | Valor inteiro que indica a idade em dias | Condição válida para ações de blob de base |
-| daysAfterCreationGreaterThan     | Valor inteiro que indica a idade em dias | Condição válida para ações de instantâneo de blob | 
+| Executar a condição de ação             | Valor de condição                          | Descrição                             |
+|----------------------------------|------------------------------------------|-----------------------------------------|
+| daysAfterModificationGreaterThan | Valor inteiro que indica a idade em dias | A condição para ações de blob de base     |
+| daysAfterCreationGreaterThan     | Valor inteiro que indica a idade em dias | A condição para ações de instantâneo de blob |
 
 ## <a name="examples"></a>Exemplos
+
 Os exemplos a seguir demonstram como tratar cenários comuns com as regras de política de ciclo de vida.
 
 ### <a name="move-aging-data-to-a-cooler-tier"></a>Mover dados antigos para uma camada mais fria
@@ -266,7 +310,7 @@ Este exemplo mostra como fazer a transição de blobs de blocos prefixados com `
 }
 ```
 
-### <a name="archive-data-at-ingest"></a>Arquivar dados em ingestão 
+### <a name="archive-data-at-ingest"></a>Arquivar dados em ingestão
 
 Alguns dados permanecem ociosos na nuvem e raramente ou nunca são acessados depois de armazenados. A seguinte política de ciclo de vida está configurada para arquivar os dados depois que eles são consumidos. Este exemplo faz a transição bloquear blobs na conta de armazenamento dentro do contêiner `archivecontainer` em uma camada de arquivo morto. A transição é conseguida atuando em blobs 0 dias após a hora da última modificação:
 
@@ -296,7 +340,7 @@ Alguns dados permanecem ociosos na nuvem e raramente ou nunca são acessados dep
 
 ### <a name="expire-data-based-on-age"></a>Expirar os dados com base na idade
 
-Espera-se que alguns dados expirem dias ou meses após a criação para reduzir custos ou atender aos requisitos governamentais. Configure uma política de gerenciamento do ciclo de vida para expirar os dados por exclusão com base na idade deles. O exemplo a seguir mostra uma política que exclui todos os blobs de bloco (sem nenhum prefixo especificado) mais antigos do que 365 dias.
+Alguns dados deve expirar dias ou meses após a criação. Configure uma política de gerenciamento do ciclo de vida para expirar os dados por exclusão com base na idade deles. O exemplo a seguir mostra uma política que exclui todos os blobs de blocos com mais de 365 dias.
 
 ```json
 {
@@ -330,7 +374,7 @@ Para dados que são modificados e acessados regularmente durante seu ciclo de vi
     {
       "name": "snapshotRule",
       "enabled": true,
-      "type": "Lifecycle",      
+      "type": "Lifecycle",
     "definition": {
         "filters": {
           "blobTypes": [ "blockBlob" ],
@@ -346,9 +390,11 @@ Para dados que são modificados e acessados regularmente durante seu ciclo de vi
   ]
 }
 ```
-## <a name="faq"></a>Perguntas frequentes 
+
+## <a name="faq"></a>Perguntas frequentes
+
 **Eu criei uma nova política, por que as ações não são executadas imediatamente?**  
-A plataforma executa a política de ciclo de vida uma vez por dia. Depois de configurar uma política, ele pode levar até 24 horas para algumas ações (como disposição em camadas e exclusão) para ser executado pela primeira vez.  
+A plataforma executa a política de ciclo de vida uma vez por dia. Depois de configurar uma política, ele pode levar até 24 horas para algumas ações ser executado pela primeira vez.  
 
 ## <a name="next-steps"></a>Próximas etapas
 

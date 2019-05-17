@@ -10,39 +10,39 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 01/09/2018
 ms.author: magoedte
-ms.openlocfilehash: ade12225a470b64278b9d27676ceab768f64d904
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 420ba9d74532095c2d028fef8f549d532e5dfa05
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60596595"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522204"
 ---
 # <a name="azure-monitor-for-vms-preview-frequently-asked-questions"></a>Perguntas frequentes sobre o Azure Monitor para VMs (versão prévia)
 Essas perguntas frequentes da Microsoft são uma lista de perguntas frequentes sobre o Azure Monitor para VMs. Caso tenha outras dúvidas sobre a solução, acesse o [fórum de discussão](https://feedback.azure.com/forums/34192--general-feedback) e poste suas perguntas. Quando uma pergunta for frequente, ela será adicionada a este artigo para que possa ser encontrada com rapidez e facilidade.
 
 ## <a name="can-i-onboard-to-an-existing-workspace"></a>É possível fazer a integração com um workspace existente?
-Se as máquinas virtuais já estiverem conectadas a um espaço de trabalho do Log Analytics, você poderá continuar usando esse espaço de trabalho durante a integração com o Azure Monitor para VMs, desde que ele esteja em uma das regiões compatíveis listadas [aqui](vminsights-onboard.md#prerequisites).
+Se as máquinas virtuais já estiverem conectadas a um espaço de trabalho do Log Analytics, você poderá continuar usando esse espaço de trabalho durante a integração com o Azure Monitor para VMs, desde que ele esteja em uma das regiões compatíveis listadas [aqui](vminsights-enable-overview.md#prerequisites).
 
 Durante a integração, configuramos contadores de desempenho para o workspace, o que fará com que todas as VMs que relatam os dados para o workspace iniciem a coleta dessas informações para exibição e análise no Azure Monitor para VMs.  Como resultado, você verá os dados de desempenho de todas as VMs conectadas ao workspace selecionado.  Os recursos Integridade e Mapa estão habilitados somente para as VMs especificadas para integração.
 
-Para obter mais informações sobre quais contadores de desempenho estão habilitados, consulte nosso artigo sobre [integração](vminsights-onboard.md).
+Para obter mais informações sobre o qual desempenho contadores estão habilitados, consulte nosso [visão geral de habilitar](vminsights-enable-overview.md#performance-counters-enabled) artigo.
 
 ## <a name="can-i-onboard-to-a-new-workspace"></a>É possível fazer a integração com um novo workspace? 
-Se, atualmente, as VMs não estiverem conectadas a um espaço de trabalho do Log Analytics existente, você precisará criar um espaço de trabalho para armazenar os dados.  A criação de um workspace padrão será feita automaticamente se você configurar uma VM individual do Azure para o Azure Monitor para VMs por meio do portal do Azure.
+Se, atualmente, as VMs não estiverem conectadas a um espaço de trabalho do Log Analytics existente, você precisará criar um espaço de trabalho para armazenar os dados. A criação de um workspace padrão será feita automaticamente se você configurar uma VM individual do Azure para o Azure Monitor para VMs por meio do portal do Azure.
 
-Caso você opte por usar o método baseado em script, essas etapas serão abordadas no artigo sobre [integração](vminsights-onboard.md). 
+Se você optar por usar o método baseado em script, essas etapas são abordadas os [habilitar o Azure Monitor para máquinas virtuais (versão prévia) usando o modelo do Azure PowerShell ou do Resource Manager](vminsights-enable-at-scale-powershell.md) artigo. 
 
 ## <a name="what-do-i-do-if-my-vm-is-already-reporting-to-an-existing-workspace"></a>O que fazer se minha VM já estiver subordinada a um workspace existente?
 Caso você já esteja coletando dados de suas máquinas virtuais, talvez você já tenha configurado uma delas para relatar os dados para um espaço de trabalho do Log Analytics existente.  Desde que esse workspace esteja em uma de nossas regiões compatíveis, você poderá habilitar o Azure Monitor para VMs nesse workspace pré-existente.  Se o workspace que você já está usando não estiver em uma de nossas regiões compatíveis, você não conseguirá fazer a integração com o Azure Monitor para VMs no momento.  Estamos trabalhando ativamente para dar suporte a outras regiões.
 
 >[!NOTE]
->Configuramos contadores de desempenho para o workspace que afeta todas as VMs subordinadas ao workspace, caso você tenha optado ou não por integrá-las ao Azure Monitor para VMs. Para obter mais detalhes sobre como os contadores de desempenho são configurados para o workspace, consulte nossa [documentação](../../azure-monitor/platform/data-sources-performance-counters.md). Para obter informações sobre os contadores configurados para o Azure Monitor para VMs, confira nossa [documentação sobre integração](vminsights-onboard.md#performance-counters-enabled).  
+>Configuramos contadores de desempenho para o workspace que afeta todas as VMs subordinadas ao workspace, caso você tenha optado ou não por integrá-las ao Azure Monitor para VMs. Para obter mais detalhes sobre como os contadores de desempenho são configurados para o workspace, consulte nossa [documentação](../../azure-monitor/platform/data-sources-performance-counters.md). Para obter informações sobre os contadores configurados para o Azure Monitor para máquinas virtuais, consulte nosso [habilitar o Azure Monitor para VMs](vminsights-enable-overview.md#performance-counters-enabled) artigo.  
 
 ## <a name="why-did-my-vm-fail-to-onboard"></a>Por que minha VM não pôde ser integrada?
 Ao fazer a integração de uma VM do Azure por meio do portal do Azure, ocorrem as seguintes etapas:
 
 * Um espaço de trabalho do Log Analytics padrão é criado, caso essa opção tenha sido selecionada.
-* Os contadores de desempenho são configurados para o workspace selecionado. Se essa etapa falhar, você observará que algumas das tabelas e alguns dos gráficos de desempenho não mostrarão os dados da VM integrada. Corrija isso executando o script do PowerShell documentado [aqui](vminsights-onboard.md#enable-with-powershell).
+* Os contadores de desempenho são configurados para o workspace selecionado. Se essa etapa falhar, você observará que algumas das tabelas e alguns dos gráficos de desempenho não mostrarão os dados da VM integrada. Corrija isso executando o script do PowerShell documentado [aqui](vminsights-enable-at-scale-powershell.md#enable-performance-counters).
 * O agente do Log Analytics será instalado nas VMs do Azure usando uma extensão de VM, se for determinado que isso é necessário.  
 * O Dependency Agent do Mapa do Azure Monitor para VMs será instalado nas VMs do Azure usando uma extensão, se for determinado que isso é necessário.  
 * Os componentes do Azure Monitor que dão suporte ao recurso Integridade são configurados, se necessário, e a VM é configurada para relatar dados de integridade.
@@ -89,7 +89,7 @@ Os limites para os critérios de integridade do Linux a seguir não são modific
 As regras de alerta definidas para cada critério de integridade não são exibidas no portal do Azure. É possível habilitar ou desabilitar uma regra de alerta de integridade somente na [API do Monitor da Carga de Trabalho](https://docs.microsoft.com/rest/api/monitor/microsoft.workloadmonitor/components). Além disso, não é possível atribuir um [grupo de ações do Azure Monitor](../../azure-monitor/platform/action-groups.md) para alertas de integridade no portal do Azure. Você só pode usar a API de configuração de notificação para configurar um grupo de ação a ser acionado sempre que um alerta de integridade for disparado. No momento, você pode atribuir grupos de ações em uma VM para que todos os *alertas de integridade* disparados na VM disparem os mesmos grupos de ações. Ao contrário dos alertas tradicionais do Azure, não há um conceito de grupo de ações separado para cada regra de alerta de integridade. Além disso, há suporte apenas para os grupos de ações configurados para fornecer notificações por SMS ou email quando os alertas de integridade são disparados. 
 
 ## <a name="i-dont-see-some-or-any-data-in-the-performance-charts-for-my-vm"></a>Não vejo alguns dados ou nenhum dado nos gráficos de desempenho de minha VM
-Se você não vir dados de desempenho na tabela de disco ou em alguns dos gráficos de desempenho, os contadores de desempenho poderão não estar configurados no workspace. Para resolver isso, execute o [script do PowerShell](vminsights-onboard.md#enable-with-powershell) a seguir.
+Se você não vir dados de desempenho na tabela de disco ou em alguns dos gráficos de desempenho, os contadores de desempenho poderão não estar configurados no workspace. Para resolver isso, execute o [script do PowerShell](vminsights-enable-at-scale-powershell.md#enable-with-powershell) a seguir.
 
 ## <a name="how-is-azure-monitor-for-vms-map-feature-different-from-service-map"></a>Qual a diferença entre o recurso Mapa do Azure Monitor para VMs e o Mapa do Serviço?
 O recurso Mapa do Azure Monitor para VMs baseia-se no Mapa do Serviço, mas tem as seguintes diferenças:
@@ -138,4 +138,4 @@ Se você configurou o Azure Monitor com um espaço de trabalho do Log Analytics 
 Nessa condição, uma opção **Experimentar Agora** será exibida quando você abrir a VM e selecionar **Insights (versão prévia)** no painel esquerdo, mesmo após já ter sido instalado na VM.  No entanto, não serão exibidas as opções como normalmente ocorreria se essa VM não estivesse incorporada ao Azure Monitor para VMs. 
 
 ## <a name="next-steps"></a>Próximas etapas
-Examine [Integrar o Azure Monitor para VMs](vminsights-onboard.md) para entender os requisitos e os métodos usados para habilitar o monitoramento das máquinas virtuais.
+Revisão [habilitar o Azure Monitor para VMs](vminsights-enable-overview.md) para entender os requisitos e métodos para habilitar o monitoramento de suas máquinas virtuais.

@@ -14,22 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/01/2019
 ms.author: brkhande
-ms.openlocfilehash: ef2b1bd9cfe9aed1e82335d62bb09b5ffcbe1016
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: aca34ee40bfe10c55c478d9aaeb01a65d139e1e2
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65471773"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522372"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Patch do sistema operacional Windows em seu cluster do Service Fabric
 
 > 
 > [!IMPORTANT]
 > A versão 1.2 do aplicativo. * vai sem suporte em 30 de abril de 2019. Atualize para a versão mais recente.
-
-> 
-> [!IMPORTANT]
-> O aplicativo de orquestração de patch no linux foi preterido. Visite [atualizações automáticas de imagem do sistema operacional do conjunto de dimensionamento de máquina virtual do Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) para orquestrar as atualizações no linux.
 
 
 [A escalabilidade da máquina virtual do conjunto do Azure para atualizações de imagem do sistema operacional](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) é a melhor prática para manter seus sistemas operacionais corrigidos no Azure e o POA (Patch Orchestration Application) é um wrapper do serviço Service Fabric RepairManager Systems que ativa o SO baseado em configuração agendamento de patch para clusters hospedados que não são do Azure. O POA não é necessário para clusters hospedados que não sejam do Azure, mas o agendamento da instalação de patches por domínios de atualização é necessário para corrigir os hosts dos clusters do Service Fabric sem tempo de inatividade.
@@ -241,7 +237,7 @@ RebootRequired | true - a reinicialização foi necessária<br> false - a reinic
 
 Se nenhuma atualização estiver agendada ainda, o resultado JSON estará vazio.
 
-Faça logon no cluster para consultar os resultados do Windows Update. Em seguida, descubra o endereço de réplica para o primário do Serviço do Coordenador e pressione a URL do navegador: http://&lt;REPLICA-IP&gt;:&lt;ApplicationPort&gt;/PatchOrchestrationApplication/v1/GetWindowsUpdateResults.
+Entrar no cluster para consultar o Windows Update resultados. Em seguida, descubra o endereço de réplica para o primário do Serviço do Coordenador e pressione a URL do navegador: http://&lt;REPLICA-IP&gt;:&lt;ApplicationPort&gt;/PatchOrchestrationApplication/v1/GetWindowsUpdateResults.
 
 O ponto de extremidade REST para o Serviço do Coordenador tem uma porta dinâmica. Para verificar a URL exata, consulte o Service Fabric Explorer. Por exemplo, os resultados estão disponíveis em `http://10.0.0.7:20000/PatchOrchestrationApplication/v1/GetWindowsUpdateResults`.
 
@@ -263,7 +259,7 @@ Para habilitar o proxy reverso no cluster, siga as etapas em [Proxy reverso no A
 
 Os logs do aplicativo de orquestração de patch são coletados como parte dos logs do tempo de execução do Service Fabric.
 
-Caso você queira capturar logs por meio da ferramenta de diagnóstico/pipeline de sua escolha. O aplicativo de orquestração de patch usa as IDs de provedores fixos abaixo para registrar eventos por meio do [eventsource](https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource?view=netframework-4.5.1)
+Caso você queira capturar logs por meio da ferramenta de diagnóstico/pipeline de sua escolha. Aplicativo de orquestração de patch usa abaixo provedor fixa IDs para registrar eventos por meio [origem do evento](https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource?view=netframework-4.5.1)
 
 - e39b723c-590c-4090-abb0-11e3e6616346
 - fc0028ff-bfdc-499f-80dc-ed922c52c5e9
@@ -312,7 +308,7 @@ P. **O que fazer se o cluster não está íntegro e preciso fazer uma atualizaç
 
 a. O aplicativo de orquestração de patch não instala atualizações enquanto o cluster não está íntegro. Tente colocar o cluster em um estado íntegro para desbloquear o fluxo de trabalho do aplicativo de orquestração de patch.
 
-P. **Eu devo definir TaskApprovalPolicy como 'NodeWise' ou 'UpgradeDomainWise' para meu cluster?**
+P. **Eu devo definir a TaskApprovalPolicy como 'NodeWise' ou 'UpgradeDomainWise' para meu cluster?**
 
 a. 'UpgradeDomainWise' acelera a aplicação de patch do cluster em termos gerais, por meio da aplicação de patch em paralelo a todos os nós que pertencem a um determinado domínio de atualização. Isso significa que nós que pertencem a um domínio de atualização inteiro ficariam indisponíveis (no estado [Desabilitado](https://docs.microsoft.com/dotnet/api/system.fabric.query.nodestatus?view=azure-dotnet#System_Fabric_Query_NodeStatus_Disabled)) durante o processo de aplicação de patch.
 
@@ -346,6 +342,10 @@ a. Algumas atualizações de produtos aparecem somente no respectivo histórico 
 P. **O aplicativo de Orquestração de Patch pode ser usado para o cluster de desenvolvimento (cluster de um nó) do patch?**
 
 a. Não, o aplicativo de Orquestração de Patch não pode ser usado para cluster de um nó do patch. Essa limitação ocorre por design, uma vez que os [serviços de sistema do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-technical-overview#system-services) ou todos os aplicativos cliente enfrentam tempo de inatividade e, portanto, qualquer trabalho de reparo para aplicação de patch nunca seria aprovado pelo gerenciador de reparo.
+
+P. **Como aplicar patches de nós de cluster no Linux?**
+
+a. Ver [atualizações automáticas de imagem do sistema operacional do conjunto de dimensionamento de máquina virtual do Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) para orquestrar as atualizações no linux.
 
 ## <a name="disclaimers"></a>Avisos de Isenção de Responsabilidade
 
@@ -413,7 +413,7 @@ Um administrador deve intervir e determinar por que o aplicativo ou cluster se t
 
 - A definição de InstallWindowsOSOnlyUpdates como falso agora instala todas as atualizações disponíveis.
 - Alteração da lógica de desabilitação de atualizações automáticas. Isso corrige um bug em que as atualizações Automáticas não são desabilitadas no Server 2016 e posterior.
-- Restrição de posicionamento parametrizado para os dois microsserviços do POA para casos de uso avançados.
+- Restrição de posicionamento com parâmetros para microsserviços de POA para casos de uso avançado.
 
 ### <a name="version-131"></a>Versão 1.3.1
 - Correção da regressão, em que o POA 1.3.0 não funcionará no Windows Server 2012 R2 ou anterior devido a uma falha ao desabilitar as atualizações automáticas. 
@@ -421,4 +421,4 @@ Um administrador deve intervir e determinar por que o aplicativo ou cluster se t
 - Alteração do valor padrão de InstallWindowsOSOnlyUpdates para False.
 
 ### <a name="version-132"></a>Versão 1.3.2
-- Corrigindo um problema que afetado a aplicação de patch cyle de vida em um nó em caso de nós com o nome que é um subconjunto do nome do nó atual. Para esses nós, é possível que aplicação de patch seja ignorada ou a reinicialização fique pendente. 
+- Corrigindo um problema que efetuado o ciclo de vida de aplicação de patch em um nó em caso de nós com o nome que é um subconjunto do nome do nó atual. Para esses nós, é possível que aplicação de patch seja ignorada ou a reinicialização fique pendente. 

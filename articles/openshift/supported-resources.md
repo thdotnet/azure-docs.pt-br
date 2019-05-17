@@ -7,13 +7,13 @@ ms.author: twhitney
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 05/06/2019
-ms.openlocfilehash: 22cc195b7808ad4a9111aafcf883a68c51f3709f
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.date: 05/15/2019
+ms.openlocfilehash: 5182a5e325bd7883af1a7d102d3e02b277a5089e
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65076099"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65788709"
 ---
 # <a name="azure-red-hat-openshift-resources"></a>Recursos do Azure do Red Hat OpenShift
 
@@ -21,19 +21,9 @@ Este tópico lista as regiões do Azure e os tamanhos de máquina virtual com su
 
 ## <a name="azure-regions"></a>Regiões do Azure
 
-Você pode implantar clusters do Azure Red Hat OpenShift para as seguintes regiões do Azure em todo o mundo:
+Ver [produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/?products=openshift&regions=all) para obter uma lista atual de regiões em que você pode implantar o Azure Red Hat OpenShift clusters.
 
-|Região|Código CLI|
-|-|-|
-|🇦🇺 Austrália Oriental|`australiaeast`|
-|🇨🇦 Canada Central|`canadacentral`|
-|Leste do Canadá 🇨🇦|`canadaeast`|
-|Leste dos EUA do 🇺🇸|`eastus`|
-|Oeste dos EUA do 🇺🇸|`westus`|
-|🇪🇺 West Europe|`westeurope`|
-|🇪🇺 Norte da Europa|`northeurope`|
-
-## <a name="virtual-machine-sizes"></a>Tamanhos de máquina virtual
+## <a name="virtual-machine-sizes"></a>Tamanhos das máquinas virtuais
 
 Estes são os tamanhos de máquina virtual com suporte que você pode especificar os nós de computação no cluster do Azure Red Hat OpenShift.
 

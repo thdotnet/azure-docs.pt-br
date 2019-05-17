@@ -1,7 +1,7 @@
 ---
 title: 'Regressão: Prever o preço'
 titleSuffix: Azure Machine Learning service
-description: Este experimento de exemplo de interface visual demonstra como criar um modelo de regressão para prever o preço de um automóvel. O processo inclui treinamento, teste e avaliar o modelo em que o conjunto de dados de dados (brutos) de preço de automóvel.
+description: Saiba como criar um modelo de machine learning para prever o preço de um automóvel sem escrever uma única linha de código.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,17 +9,30 @@ ms.topic: article
 author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
-ms.date: 05/02/2019
-ms.openlocfilehash: fa9b9179cda767d69d08dcd357a03123bde901cb
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.date: 05/10/2019
+ms.openlocfilehash: 9dfa4b62f5cb79a5716f6f29651e85d0f8a3a409
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65028884"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787853"
 ---
 # <a name="sample-1---regression-predict-price"></a>Exemplo 1: regressão: Prever o preço
 
-Este experimento de exemplo de interface visual mostra como criar um modelo de regressão para prever o preço de um automóvel. O processo inclui treinamento, teste e avaliar o modelo usando o **dados de preço de automóvel (brutos)** conjunto de dados.
+Saiba como criar um modelo de regressão de aprendizado sem escrever uma única linha de código usando a interface visual.
+
+Experimento treina uma **regressor de floresta de decisão** para prever um carro do preço com base em recursos técnicos, como fabricante, modelo, potência e tamanho. Porque estamos tentando responder à pergunta "Quanto?" Isso é chamado um problema de regressão. No entanto, você pode aplicar as mesmas etapas fundamentais nesse experimento para lidar com qualquer tipo de problema de aprendizado de máquina, seja em regressão, classificação, clustering e assim por diante.
+
+As etapas fundamentais de uma modelo de aprendizado de máquina de treinamento são:
+
+1. Obter os dados
+1. Pré-processar os dados
+1. Treinar o modelo
+1. Avalie o modelo
+
+Aqui está o gráfico final, concluído do teste, trabalharemos no. Forneceremos a lógica para todos os módulos para que possa tomar decisões semelhantes por conta própria.
+
+![Grafo do experimento](media/ui-sample-regression-predict-automobile-price-basic/overall-graph.png)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -28,23 +41,6 @@ Este experimento de exemplo de interface visual mostra como criar um modelo de r
 4. Selecione o **abrir** botão para o experimento de exemplo 1:
 
     ![Abra o teste](media/ui-sample-regression-predict-automobile-price-basic/open-sample1.png)
-
-## <a name="related-sample"></a>Exemplo relacionado
-
-[Exemplo 2: regressão: Previsão de preço de automóvel (comparar algoritmos)](ui-sample-regression-predict-automobile-price-compare-algorithms.md) fornece um experimento de exemplo mais complicado que resolva o problema mesmo como esse teste usando dois modelos diferentes de regressão. Ele mostra como comparar rapidamente algoritmos diferentes. Confira se você estiver procurando um exemplo mais avançado.
-
-## <a name="experiment-summary"></a>Resumo do teste
-
-Usamos estas etapas para criar o experimento:
-
-1. Obter os dados.
-1. Pré-processe os dados.
-1. Treine o modelo.
-1. Testar, avaliar e comparar os modelos.
-
-Aqui está o gráfico completo do teste:
-
-![Grafo do experimento](media/ui-sample-regression-predict-automobile-price-basic/overall-graph.png)
 
 ## <a name="get-the-data"></a>Obter os dados
 
@@ -59,6 +55,7 @@ Podemos usar o **selecionar colunas no conjunto de dados** módulo para excluir 
 ![Pré-processamento de dados](./media/ui-sample-regression-predict-automobile-price-basic/data-processing.png)
 
 ## <a name="train-the-model"></a>Treinar o modelo
+
 Problemas de aprendizado de máquina variam de acordo. Tarefas comuns de aprendizado de máquina incluem classificação, clustering, regressão e sistemas de recomendação, cada um deles pode exigir um algoritmo diferente. Sua escolha de algoritmo geralmente depende dos requisitos de caso de uso. Depois que você escolher um algoritmo, você precisará ajustar seus parâmetros para treinar um modelo mais preciso. Em seguida, você precisa avaliar todos os modelos com base nas métricas, como precisão, inteligibilidade e eficiência.
 
 Como o objetivo deste experimento é prever preços de automóveis, e a coluna de rótulo (preço) contém números reais, um modelo de regressão é uma boa opção. Considerando que o número de recursos é relativamente pequeno (menos de 100) e esses recursos não são esparsos, o limite de decisão é provavelmente não linear. Portanto, usamos **regressão da floresta de decisão** para esse teste.

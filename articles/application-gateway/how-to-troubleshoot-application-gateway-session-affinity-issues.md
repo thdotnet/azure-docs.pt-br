@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 02/22/2019
 ms.author: absha
-ms.openlocfilehash: 90a57483fc7a530f214d34bf619a718b4c196e79
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 07165a497e75934a65719e48a9af7d8d6906ee7b
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59683133"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65538320"
 ---
 # <a name="troubleshoot-azure-application-gateway-session-affinity-issues"></a>Solucionar problemas de afinidade de sessão de Gateway de aplicativo do Azure
 
@@ -53,7 +53,7 @@ O problema em manter a afinidade de sessão baseada em cookie pode ocorrer pelos
 
 Você também pode verificar o valor da "**CookieBasedAffinity**" é definido como *Enabled*sob "**backendHttpSettingsCollection**" usando um dos seguintes métodos:
 
-- Execute [Get-AzApplicationGatewayBackendHttpSettings](https://docs.microsoft.com/powershell/module/az.network/get-azapplicationgatewaybackendhttpsettings) no PowerShell
+- Execute [Get-AzApplicationGatewayBackendHttpSetting](https://docs.microsoft.com/powershell/module/az.network/get-azapplicationgatewaybackendhttpsetting) no PowerShell
 - Examine o arquivo JSON usando o modelo do Azure Resource Manager
 
 ```
@@ -82,7 +82,7 @@ Para identificar esse problema, siga as instruções:
     **Dica** se você não souber como usar o Fiddler, marque a opção "**quero coletar o tráfego de rede e analise-os usando o depurador da web**" na parte inferior.
 
 2. Verificar e analisar os logs de sessão, para determinar se os cookies fornecidos pelo cliente têm os detalhes de ARRAffinity. Se você não encontrar os detalhes de ARRAffinity, tal como "**ARRAffinity =** *ARRAffinityValue*" dentro do conjunto de cookie, o que significa que o cliente não está respondendo com o cookie ARRANJAR, que é fornecido pelo Gateway de aplicativo.
-    Por exemplo: 
+    Por exemplo:
 
     ![solução de problemas-sessão-afinidade-problemas-3](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-3.png)
 
@@ -144,7 +144,7 @@ Habilitar o log por meio do portal do Azure
 - **ClientPort** -essa é a porta de origem do cliente está se conectando para a solicitação.
 - **RequestQuery** – isso indica que o servidor de destino que a solicitação é recebida.
 - **Server-Routed**: Instância de pool de back-end que a solicitação é recebida.
-- **X-AzureApplicationGateway-LOG-ID**: ID de correlação usado para a solicitação. Ela pode ser usada para solucionar problemas de tráfego nos servidores back-end. Por exemplo:  X-AzureApplicationGateway-ACERTOS de CACHE = 0 & SERVER-ROUTED = 10.0.2.4.
+- **X-AzureApplicationGateway-LOG-ID**: ID de correlação usado para a solicitação. Ela pode ser usada para solucionar problemas de tráfego nos servidores back-end. Por exemplo: X-AzureApplicationGateway-ACERTOS de CACHE = 0 & SERVER-ROUTED = 10.0.2.4.
 
   - **SERVER-STATUS**: Código de resposta HTTP que o Gateway de Aplicativo recebeu do back-end.
 
@@ -205,6 +205,6 @@ Use o depurador da web de sua escolha. Neste exemplo usaremos o Fiddler para cap
 
  
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Se as etapas anteriores não resolverem o problema, abra um [tíquete de suporte](https://azure.microsoft.com/support/options/).

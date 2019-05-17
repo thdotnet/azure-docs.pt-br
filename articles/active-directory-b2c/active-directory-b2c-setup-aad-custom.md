@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: d323a93773a8459d097c1fe3502d2ccd88ae9695
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 9ad4a1a9fff8e011638eb7c532bf7619c87c1996
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64687899"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785199"
 ---
 # <a name="set-up-sign-in-with-an-azure-active-directory-account-using-custom-policies-in-azure-active-directory-b2c"></a>Configurar login com uma conta do Azure Active Directory usando políticas personalizadas no Azure Active Directory B2C 
 
@@ -35,7 +35,7 @@ Para habilitar a entrada para usuários de uma organização específica do Azur
 2. Verifique se você está usando o diretório que contém o inquilino organizacional do Azure AD (contoso.com) clicando no **Diretório e no filtro de inscrição** no menu superior e escolhendo o diretório que contém seu inquilino.
 3. Escolha **Todos os serviços** no canto superior esquerdo do portal do Azure e pesquise e selecione **Registros de aplicativo**.
 4. Selecione **Novo registro de aplicativo**.
-5. Insira um nome para seu aplicativo. Por exemplo, `Azure AD B2C App`.
+5. Insira um nome para seu aplicativo. Por exemplo: `Azure AD B2C App`.
 6. Para o **Tipo de aplicativo**, selecione `Web app / API`.
 7. Para a **URL de Logon**, digite a seguinte URL em letras minúsculas, em que `your-B2C-tenant-name` é substituído pelo nome do seu locatário do Microsoft Azure Active Directory B2C:
 
@@ -43,7 +43,7 @@ Para habilitar a entrada para usuários de uma organização específica do Azur
     https://your-B2C-tenant-name.b2clogin.com/your-B2C-tenant-name.onmicrosoft.com/oauth2/authresp
     ```
 
-    Por exemplo, `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.
+    Por exemplo: `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.
 
 8. Clique em **Criar**. Copie a **ID do aplicativo** a ser usada posteriormente.
 9. Selecione o aplicativo e, em seguida, selecione **Configurações**.
@@ -55,10 +55,10 @@ Você precisa armazenar a chave do aplicativo que criou em seu locatário do Azu
 
 1. Verifique se você está usando o diretório que contém o locatário do Azure AD B2C clicando no **filtro Diretório e assinatura** no menu superior e escolhendo o diretório que contém seu locatário.
 2. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
-3. Na página Visão Geral, selecione **Identity Experience Framework – VERSÃO PRÉVIA**.
+3. Na página de Visão Geral, selecione **Estrutura de Experiência de Identidade**.
 4. Selecione **Chaves de Política** e, em seguida, escolha **Adicionar**.
 5. Para **Opções**, escolha `Manual`.
-6. Insira um **Nome** para a chave de política. Por exemplo, `ContosoAppSecret`.  O prefixo `B2C_1A_` será adicionado automaticamente ao nome da chave.
+6. Insira um **Nome** para a chave de política. Por exemplo: `ContosoAppSecret`.  O prefixo `B2C_1A_` será adicionado automaticamente ao nome da chave.
 7. Em**segredo**, insira a chave do aplicativo que você registrou anteriormente.
 8. Para **Uso de chave**, selecione `Signature`.
 9. Clique em **Criar**.
@@ -132,7 +132,7 @@ Para obter um token do ponto de extremidade do Azure AD, você precisa definir o
 5. Defina o valor de **METADATA** para `https://login.windows.net/your-AD-tenant-name.onmicrosoft.com/.well-known/openid-configuration`, em que `your-AD-tenant-name` é o nome do seu locatário do Azure AD. Por exemplo, `https://login.windows.net/fabrikam.onmicrosoft.com/.well-known/openid-configuration`
 6. Abra seu navegador e acesse a URL **METADATA** que acabou de atualizar, procure o objeto **emissor**, copie e cole o valor no valor de **ProviderName** no Arquivo XML.
 8. Defina **client_id** e **IdTokenAudience** como o ID do aplicativo do registro do aplicativo.
-9. Em **CryptograhicKeys**, atualize o valor de **StorageReferenceId** para a chave de política que você definiu. Por exemplo, `ContosoAppSecret`.
+9. Em **CryptograhicKeys**, atualize o valor de **StorageReferenceId** para a chave de política que você definiu. Por exemplo: `ContosoAppSecret`.
 
 ### <a name="upload-the-extension-file-for-verification"></a>Carregar o arquivo de extensão para verificação
 
@@ -150,7 +150,7 @@ Neste ponto, o provedor de identidade foi definido, mas não está disponível e
 2. Localize e copie todo o conteúdo do elemento **UserJourney** que inclui `Id="SignUpOrSignIn"`.
 3. Abra o *TrustFrameworkExtensions.xml* e localize o elemento **UserJourneys**. Se o elemento não existir, adicione um.
 4. Cole todo o conteúdo do elemento **UserJourney** que você copiou como filho do elemento **UserJourneys**.
-5. Renomeie a ID do percurso do usuário. Por exemplo, `SignUpSignInContoso`.
+5. Renomeie a ID do percurso do usuário. Por exemplo: `SignUpSignInContoso`.
 
 ### <a name="display-the-button"></a>Exibir o botão
 
@@ -174,7 +174,7 @@ Agora que implementou um botão, você precisará vinculá-lo a uma ação. Ness
     <ClaimsExchange Id="ContosoExchange" TechnicalProfileReferenceId="ContosoProfile" />
     ```
     
-    Atualize o valor de **TechnicalProfileReferenceId** para a **ID** do perfil técnico você já criou. Por exemplo, `ContosoProfile`.
+    Atualize o valor de **TechnicalProfileReferenceId** para a **ID** do perfil técnico você já criou. Por exemplo: `ContosoProfile`.
 
 3. Salve o arquivo *TrustFrameworkExtensions.xml* e carregue-o novamente para verificação.
 
@@ -195,7 +195,7 @@ A comunicação com o Azure AD B2C ocorre por meio de um aplicativo que você cr
 Atualize o arquivo de RP (terceira parte confiável) que iniciará o percurso do usuário que você criou.
 
 1. Faça uma cópia do *SignUpOrSignIn.xml* no diretório de trabalho e renomeie-a. Por exemplo, renomeie-o para *SignUpSignInContoso.xml*.
-2. Abra o novo arquivo e atualize o valor do atributo **PolicyId** para **TrustFrameworkPolicy** com um valor exclusivo. Por exemplo, `SignUpSignInContoso`.
+2. Abra o novo arquivo e atualize o valor do atributo **PolicyId** para **TrustFrameworkPolicy** com um valor exclusivo. Por exemplo: `SignUpSignInContoso`.
 3. Atualize o valor de **PublicPolicyUri** com o URI da política. Por exemplo,`http://contoso.com/B2C_1A_signup_signin_contoso`
 4. Atualize o valor do atributo **ReferenceId** em **DefaultUserJourney** para corresponder ao ID da nova jornada de usuário que você criou (SignUpSignInContoso).
 5. Salve suas alterações, faça o upload do arquivo e, em seguida, selecione a nova política na lista.

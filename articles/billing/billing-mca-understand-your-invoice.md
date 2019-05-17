@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/19/2019
 ms.author: banders
-ms.openlocfilehash: ee6317f61f95b19effd64308b88f53c027582b63
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: aee51793c66ae57f740300797b8fdc1799e685cd
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60371372"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604046"
 ---
 # <a name="understand-terms-on-your-microsoft-customer-agreement-invoice"></a>Compreender os termos na sua fatura de contrato de cliente da Microsoft
 
@@ -41,11 +41,11 @@ O **Resumo da fatura** está na parte superior da primeira página e mostra info
 
 ![Seção Resumo da fatura](./media/billing-understand-your-invoice-mca/invoicesummary.png)
 
-| Termo | DESCRIÇÃO |
+| Termo | Descrição |
 | --- | --- |
 | Vendido para |Endereço da entidade legal, encontrado em Propriedades da conta de cobrança|
 | Enviar cobrança para |Endereço do perfil de cobrança do recebimento da fatura de cobrança, encontrado em Propriedades de perfil de cobrança|
-| Perfil de Cobrança |O nome do perfil de cobrança do recebimento da fatura |
+| Perfil de cobrança |O nome do perfil de cobrança do recebimento da fatura |
 | P.O. número |Um número de ordem de compra opcional, atribuído por você para acompanhamento |
 | Número da nota fiscal |Um número de fatura exclusivo gerado pelo Microsoft usado para fins de acompanhamento |
 | Data da fatura |Data em que a fatura é gerada, normalmente 5 a 12 dias após o fim do ciclo de cobrança. Você pode verificar a data da nota fiscal nas propriedades de perfil de cobrança.|
@@ -57,13 +57,13 @@ O **resumo de cobrança** mostra os encargos em relação ao perfil de cobrança
 
 ![Seção de resumo de cobrança](./media/billing-understand-your-invoice-mca/billingsummary.png)
 
-| Termo | DESCRIÇÃO |
+| Termo | Descrição |
 | --- | --- |
-| Charges|Número total de encargos da Microsoft para este perfil de cobrança desde o último período de cobrança |
-| Credits |Créditos que você recebeu da retorna |
+| Encargos|Número total de encargos da Microsoft para este perfil de cobrança desde o último período de cobrança |
+| Créditos |Créditos que você recebeu da retorna |
 | Créditos do Azure aplicados | Créditos do Azure que são aplicados automaticamente para o Azure cobra cada período de cobrança |
 | Subtotal |O valor antes do imposto devido |
-| Imposto |O tipo e o valor do imposto que você paga, dependendo do país do seu perfil de cobrança. Se você não precisa pagar impostos, você não verá o imposto sobre sua fatura. |
+| Imposto |O tipo e o valor do imposto que você paga, dependendo do país/região do seu perfil de cobrança. Se você não precisa pagar impostos, você não verá o imposto sobre sua fatura. |
 | Economia total estimada |A quantidade total estimada que você salvou de descontos em vigor. Se aplicável, taxas de desconto em vigor serão listadas abaixo os itens de linha de compra em detalhes pela seção de nota fiscal. |
 
 ### <a name="invoice-sections"></a>Seções de fatura
@@ -82,13 +82,13 @@ O valor total devido para cada família de serviços é calculada subtraindo *cr
 
 ![Detalhes pela seção de nota fiscal](./media/billing-understand-your-invoice-mca/invoicesectiondetails.png)
 
-| Termo |DESCRIÇÃO |
+| Termo |Descrição |
 | --- | --- |
 | Preço unitário | O preço de unidade efetivo do serviço (no preço moeda) que é usado para a taxa de uso. Isso é exclusivo para um produto, família de serviços, medidor e oferta. |
 | Qtd. | Quantidade adquiridos ou consumido durante o período de cobrança |
 | Encargos/créditos | Valor líquido de encargos após a aplicação de créditos/reembolsos |
 | Crédito do Azure | A quantidade de créditos aplicados aos encargos/créditos|
-| Taxa de imposto | Impostos dependendo do país |
+| Taxa de imposto | Impostos dependendo do país/região |
 | Valor do imposto | Valor do imposto aplicado para compra com base na taxa de imposto |
 | Total | O valor total devido para a compra |
 

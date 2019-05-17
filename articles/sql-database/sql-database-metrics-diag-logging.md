@@ -12,12 +12,12 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: fe53dd4419c06d376a1cc46db0d2621ccbc06f23
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 089f5335a65151c9c576346995f0bee34b5d10b4
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59548621"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65791958"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Métricas de banco de dados SQL do Azure e o log de diagnóstico
 
@@ -64,7 +64,7 @@ Você pode configurar bancos de dados SQL do Azure e bancos de dados de instânc
 
 | Telemetria de monitoramento para bancos de dados | Suporte a banco de dados individual e banco de dados em pool | Suporte de banco de dados de instância |
 | :------------------- | ----- | ----- |
-| [Todas as métricas](#all-metrics): contém o percentual de DTU/CPU, o limite de DTU/CPU, o percentual de leitura de dados físicos, o percentual de gravação em log, êxito/falha/bloqueio por conexões de firewall, o percentual de sessões, o percentual de funcionários, o armazenamento, o percentual de armazenamento e o percentual de armazenamento XTP. | Sim | Não  |
+| [As métricas básicas](#basic-metrics): contém o percentual de DTU/CPU, o limite de DTU/CPU, o percentual de leitura de dados físicos, o percentual de gravação em log, êxito/falha/bloqueio por conexões de firewall, o percentual de sessões, o percentual de funcionários, o armazenamento, o percentual de armazenamento e o percentual de armazenamento XTP. | Sim | Não  |
 | [QueryStoreRuntimeStatistics](#query-store-runtime-statistics): contém informações sobre as estatísticas de tempo de execução da consulta, como estatísticas de uso de CPU e duração da consulta. | Sim | Sim |
 | [QueryStoreWaitStatistics](#query-store-wait-statistics): Contém informações sobre as estatísticas de espera de consulta (o que suas consultas aguardaram) como são CPU, LOG e LOCKING. | Sim | Sim |
 | [Erros](#errors-dataset): Contém informações sobre erros do SQL em um banco de dados. | Sim | Sim |
@@ -93,7 +93,7 @@ Você pode configurar um recurso de pool elástico para coletar a telemetria de 
 
 | Recurso | Telemetria de monitoramento |
 | :------------------- | ------------------- |
-| **Pool elástico** | [Todas as métricas](sql-database-metrics-diag-logging.md#all-metrics) contém o percentual de eDTU/CPU, o limite de eDTU/CPU, o percentual de leitura de dados físicos, o percentual de gravação de log, o percentual de sessões, o percentual de funcionários, o armazenamento, o percentual de armazenamento, o limite de armazenamento e o percentual de armazenamento XTP. |
+| **Pool elástico** | [As métricas básicas](sql-database-metrics-diag-logging.md#basic-metrics) contém o percentual de eDTU/CPU, o limite de eDTU/CPU, a física dados percentual de leitura, gravação de log, percentual, porcentagem de sessões, porcentagem de funcionários, armazenamento, porcentagem de armazenamento, limite de armazenamento e percentual de armazenamento XTP. |
 
 Para configurar a transmissão de telemetria de diagnóstico para pools Elásticos e bancos de dados em pools Elásticos, você precisará configurar separadamente **ambos** das seguintes opções:
 
@@ -113,7 +113,7 @@ Para habilitar o streaming de telemetria de diagnóstico para recursos de um poo
 1. Insira um nome de configuração para sua própria referência.
 1. Selecione um recurso de destino para os dados de diagnóstico de streaming: **Arquivar na conta de armazenamento**, **Transmitir para um hub de eventos** e **Enviar para Log Analytics**.
 1. Para o log analytics, selecione **configurar** e crie um novo espaço de trabalho selecionando **+ criar novo espaço de trabalho**, ou selecione um espaço de trabalho.
-1. Marque a caixa de seleção para telemetria de diagnóstico de pool elástico: **AllMetrics**.
+1. Marque a caixa de seleção para telemetria de diagnóstico de pool elástico: **Básico** métricas.
    ![Configurar o diagnóstico para pools Elásticos](./media/sql-database-metrics-diag-logging/diagnostics-settings-container-elasticpool-selection.png)
 1. Clique em **Salvar**.
 1. Além disso, configure a transmissão de telemetria de diagnóstico para cada banco de dados dentro do pool Elástico que você deseja monitorar seguindo as etapas descritas na próxima seção.
@@ -137,7 +137,7 @@ Para habilitar o streaming de telemetria de diagnóstico para bancos de dados in
 1. Insira um nome de configuração para sua própria referência.
 1. Selecione um recurso de destino para os dados de diagnóstico de streaming: **Arquivar na conta de armazenamento**, **Transmitir para um hub de eventos** e **Enviar para Log Analytics**.
 1. Para obter a experiência de monitoramento padrão baseada em eventos, marque as seguintes caixas de seleção para telemetria de log de diagnóstico do banco de dados: **SQLInsights**, **AutomaticTuning**, **QueryStoreRuntimeStatistics**, **QueryStoreWaitStatistics**, **Errors**, **DatabaseWaitStatistics**, **Timeouts**, **Blocks** e **Deadlocks**.
-1. Para obter uma experiência de monitoramento avançada com base em um minuto, marque a caixa de seleção **AllMetrics**.
+1. Para obter uma experiência de monitoramento avançada, com base em minutos um, selecione a caixa de seleção **básica** métricas.
    ![Configurar o diagnóstico de um único, em pool ou bancos de dados da instância](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-sql-selection.png)
 1. Clique em **Salvar**.
 1. Repita essas etapas para cada banco de dados que você deseja monitorar.
@@ -385,7 +385,7 @@ Ou, simplesmente:
 insights-{metrics|logs}-{category name}/resourceId=/{resource Id}/y={four-digit numeric year}/m={two-digit numeric month}/d={two-digit numeric day}/h={two-digit 24-hour clock hour}/m=00/PT1H.json
 ```
 
-Por exemplo, um nome de blob para todas as métricas pode ser:
+Por exemplo, pode ser um nome de blob para métricas básicas:
 
 ```powershell
 insights-metrics-minute/resourceId=/SUBSCRIPTIONS/s1id1234-5679-0123-4567-890123456789/RESOURCEGROUPS/TESTRESOURCEGROUP/PROVIDERS/MICROSOFT.SQL/ servers/Server1/databases/database1/y=2016/m=08/d=22/h=18/m=00/PT1H.json
@@ -411,23 +411,26 @@ Se você estiver usando a Análise de SQL do Azure, poderá monitorar o consumo 
 
 Monitorando telemetria disponível para o banco de dados SQL, pools Elásticos e a instância gerenciada está documentada abaixo. Telemetria coletada de monitoramento dentro de análise de SQL pode ser usada para suas próprias análises personalizadas e desenvolvimento de aplicativo usando [consultas de log do Azure Monitor](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries) idioma.
 
-## <a name="all-metrics"></a>Todas as métricas
+## <a name="basic-metrics"></a>Métricas básicas
 
-Consulte as tabelas a seguir para obter detalhes sobre todas as métricas por recurso.
+Consulte as tabelas a seguir para obter detalhes sobre as métricas básicas por recurso.
 
-### <a name="all-metrics-for-elastic-pools"></a>Todas as métricas para pools elásticos
+> [!NOTE]
+> Opção de métricas básicas era conhecida anteriormente como todas as métricas. A alteração feita à nomeação apenas e não há nenhuma alteração para as métricas monitoradas. Essa alteração foi iniciada para permitir a introdução das categorias de métrica adicionais no futuro.
+
+### <a name="basic-metrics-for-elastic-pools"></a>Métricas básicas para pools Elásticos
 
 |**Recurso**|**Métricas**|
 |---|---|
 |Pool elástico|O percentual de eDTU, eDTU usado, limite de eDTU, percentual de CPU, percentual de leitura de dados físicos, percentual de gravação de log, percentual de sessões, percentual de funcionários, armazenamento, percentual de armazenamento, limite de armazenamento, percentual de armazenamento XTP |
 
-### <a name="all-metrics-for-azure-sql-databases"></a>Todas as métricas para o Banco de Dados SQL do Azure
+### <a name="basic-metrics-for-azure-sql-databases"></a>Métricas básicas para bancos de dados SQL do Azure
 
 |**Recurso**|**Métricas**|
 |---|---|
 |Banco de Dados SQL do Azure|O percentual de DTU, DTU usado, o limite de DTU, percentual de CPU, percentual de leitura de dados físicos, percentual de gravação de log, êxito/falha/bloqueio por conexões de firewall, percentual de sessões, percentual de funcionários, armazenamento, percentual de armazenamento, percentual de armazenamento XTP e deadlocks |
 
-## <a name="all-logs"></a>Todos os logs
+## <a name="basic-logs"></a>Logs básicos
 
 Detalhes da telemetria disponível para todos os logs são documentadas nas tabelas a seguir. Consulte [suporte para o log de diagnóstico](#supported-diagnostic-logging-for-azure-sql-databases-and-instance-databases) para compreender os logs que têm suporte para um tipo específico de banco de dados - SQL do Azure único, colocado em pool, ou na instância do banco de dados.
 

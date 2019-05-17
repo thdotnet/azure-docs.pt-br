@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: asmalser
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fba0a9bc0886b9487b0c61b6091bd122fe6e370d
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 04dde608f5885cdafe18b49a388de8dbb596cbfe
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65191550"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65539349"
 ---
 # <a name="using-system-for-cross-domain-identity-management-scim-to-automatically-provision-users-and-groups-from-azure-active-directory-to-applications"></a>Usar o SCIM (Sistema de Gerenciamento de Identidades entre Domínios) para provisionar automaticamente usuários e grupos do Azure Active Directory para aplicativos
 
@@ -437,7 +437,7 @@ Esta seção fornece a solicitações SCIM do exemplo emitida pelo cliente do SC
 }
 ```
 
-#### <a name="delete-user"></a>Excluir usuário
+#### <a name="delete-user"></a>Excluir Usuário
 
 ##### <a name="request"></a>Solicitação
 *Excluir /Users/5171a35d82074e068ce2 HTTP/1.1*
@@ -460,7 +460,6 @@ Esta seção fornece a solicitações SCIM do exemplo emitida pelo cliente do SC
 {
     "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group", "http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/2.0/Group"],
     "externalId": "8aa1a0c0-c4c3-4bc0-b4a5-2ef676900159",
-    "id": "c4d56c3c-bf3b-4e96-9b64-837018d6060e",
     "displayName": "displayName",
     "members": [],
     "meta": {
@@ -595,7 +594,7 @@ Esta seção fornece a solicitações SCIM do exemplo emitida pelo cliente do SC
 ##### <a name="response"></a>Response
 *HTTP/1.1 204 sem conteúdo*
 
-#### <a name="delete-group"></a>Excluir grupo
+#### <a name="delete-group"></a>Excluir Grupo
 
 ##### <a name="request"></a>Solicitação
 *Excluir /Groups/cdb1ce18f65944079d37 HTTP/1.1*
@@ -614,7 +613,7 @@ Veja como ele funciona:
 3. A URL do ponto de extremidade é registrada no AD do Azure como parte de um aplicativo personalizado na galeria de aplicativos.
 4. Os usuários e grupos são atribuídos a esse aplicativo no AD do Azure. Após a atribuição, eles são enfileirados e esperarão a serem sincronizados com o aplicativo de destino. O processo de sincronização que trata a fila é executado a cada 40 minutos.
 
-### <a name="code-samples"></a>Exemplos de código
+### <a name="code-samples"></a>Exemplos de Código
 Para facilitar esse processo, [exemplos de código](https://github.com/Azure/AzureAD-BYOA-Provisioning-Samples/tree/master) forem fornecidos, que criam um SCIM ponto de extremidade de serviço web e demonstre o provisionamento automático. O exemplo é de um provedor que mantém um arquivo com linhas de valores separados por vírgula representando usuários e grupos.    
 
 **Pré-requisitos**
@@ -1236,9 +1235,9 @@ Os recursos do grupo são identificados pelo identificador de esquema, `urn:ietf
 | jobTitle |título |
 | mail |emails[type eq "work"].value |
 | mailNickname |externalId |
-| manager |manager |
+| gerenciador |manager |
 | Serviço Móvel |phoneNumbers[type eq "mobile"].value |
-| ID do objeto |ID |
+| objectId |ID |
 | postalCode |addresses[type eq "work"].postalCode |
 | proxy-Addresses |emails[type eq "other"].Value |
 | physical-Delivery-OfficeName |addresses[type eq "other"].Formatted |
@@ -1249,13 +1248,13 @@ Os recursos do grupo são identificados pelo identificador de esquema, `urn:ietf
 
 ### <a name="table-2-default-group-attribute-mapping"></a>Tabela 2: Mapeamento padrão de atributo do grupo
 
-| Grupo do Active Directory do Azure | urn:ietf:params:scim:schemas:core:2.0:Group |
+| Grupo do Azure Active Directory | urn:ietf:params:scim:schemas:core:2.0:Group |
 | --- | --- |
 | displayName |externalId |
 | mail |emails[type eq "work"].value |
 | mailNickname |displayName |
 | membros |membros |
-| ID do objeto |ID |
+| objectId |ID |
 | proxyAddresses |emails[type eq "other"].Value |
 
 

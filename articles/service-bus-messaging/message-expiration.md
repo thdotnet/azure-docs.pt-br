@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 1ea645ee53f91a62bd49fb1da0d44e2962708b88
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fdfd7794961b0254526b124525c6e978d13b0114
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60402761"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65800271"
 ---
 # <a name="message-expiration-time-to-live"></a>Expiração da mensagem (vida útil)
 
@@ -35,6 +35,11 @@ Enquanto a mensagem está em um bloqueio, o aplicativo pode estar em posse de um
 ## <a name="entity-level-expiration"></a>Expiração de nível de entidade
 
 Todas as mensagens enviadas para uma fila ou tópico estão sujeitas a uma expiração padrão que é definida no nível da entidade com a propriedade [defaultMessageTimeToLive](/azure/templates/microsoft.servicebus/namespaces/queues) e que também pode ser definida no portal durante a criação e ajustada posteriormente. A expiração padrão é usada para todas as mensagens enviadas para a entidade em que [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive) não é definida explicitamente. A expiração padrão também funciona como um limite para o valor de **TimeToLive**. Mensagens que têm uma expiração de **TimeToLive** maior do que o valor padrão são silenciosamente ajustadas para o valor de **defaultMessageTimeToLive** antes de serem enfileiradas.
+
+> [!NOTE]
+> O padrão [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive) valor de uma mensagem agenciada é [TimeSpan.Max](https://docs.microsoft.com/dotnet/api/system.timespan.maxvalue) se não for especificado.
+>
+> Para entidades (filas e tópicos) de mensagens, o tempo de expiração padrão é também [TimeSpan.Max](https://docs.microsoft.com/dotnet/api/system.timespan.maxvalue) para as camadas standard e premium do barramento de serviço.  Para a camada básica, o tempo de expiração padrão é 14 dias.
 
 As mensagens expiradas podem, opcionalmente, ser movidas para uma [fila de mensagens mortas](service-bus-dead-letter-queues.md) definindo a propriedade [EnableDeadLetteringOnMessageExpiration](/dotnet/api/microsoft.servicebus.messaging.queuedescription.enabledeadletteringonmessageexpiration#Microsoft_ServiceBus_Messaging_QueueDescription_EnableDeadLetteringOnMessageExpiration) ou marcando a caixa respectiva no portal. Se a opção estiver desabilitada, as mensagens expiradas serão descartadas. As mensagens expiradas movidas para a fila de mensagens mortas podem ser distinguidas de outras mensagens mortas avaliando a propriedade [DeadletterReason](service-bus-dead-letter-queues.md#moving-messages-to-the-dlq) que o agente armazena na seção de propriedades do usuário, o valor é [TTLExpiredException](service-bus-dead-letter-queues.md#moving-messages-to-the-dlq) nesse caso.
 
@@ -69,7 +74,7 @@ Aqui está o que é considerado ociosidade de entidades (filas, tópicos e assin
     - Não há envios  
     - Não há atualizações para o tópico  
     - Não há mensagens agendadas 
-- Assinaturas
+- Inscrições
     - Não recebe  
     - Não há atualizações para a assinatura  
     - Não há novas regras adicionadas à assinatura  

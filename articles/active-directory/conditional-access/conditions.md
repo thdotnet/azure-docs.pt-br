@@ -18,12 +18,12 @@ ms.date: 12/14/2018
 ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f95fd85b5a0fd9e905b93b9b90f18f963dbf1690
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9da23b0c0b0b0c0bfc238b1504811a9c1c55a9ef
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60355594"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785389"
 ---
 # <a name="what-are-conditions-in-azure-active-directory-conditional-access"></a>Quais são as condições no acesso condicional do Active Directory do Azure? 
 
@@ -57,29 +57,23 @@ Quando você **selecionar usuários e grupos**, poderá definir as seguintes op�
 
 * **Usuários e grupos** segmentam conjuntos específicos de usuários. Por exemplo, você pode selecionar um grupo que contenha todos os membros do departamento de RH quando um aplicativo de RH for selecionado como o aplicativo na nuvem. Um grupo pode ser qualquer tipo de grupo no Azure AD, incluindo grupos de segurança e distribuição dinâmicos ou atribuídos.
 
-Você também pode excluir usuários ou grupos específicos de uma política. Um caso de uso comum é as contas de serviço, se a sua política aplicar a autenticação multifator (MFA). 
+Você também pode excluir usuários ou grupos específicos de uma política. Um caso de uso comum é as contas de serviço, se a sua política aplicar a autenticação multifator (MFA).
 
-Especificar determinados conjuntos de usuários é útil para a implantação de uma nova política. Em uma nova política, você deve ter como destino apenas um conjunto inicial de usuários para validar o comportamento da política. 
+Especificar determinados conjuntos de usuários é útil para a implantação de uma nova política. Em uma nova política, você deve ter como destino apenas um conjunto inicial de usuários para validar o comportamento da política.
 
+## <a name="cloud-apps-and-actions"></a>Aplicativos de nuvem e ações
 
+Um aplicativo de nuvem é um site, serviço ou ponto de extremidade protegidos pelo Proxy de aplicativo do Azure AD. Para uma descrição detalhada dos aplicativos na nuvem compatíveis, consulte [atribuições de aplicativos em nuvem](technical-reference.md#cloud-apps-assignments). O **ações ou aplicativos de nuvem** condição é obrigatória em uma política de acesso condicional. Em sua política, você pode selecionar **todos os aplicativos de nuvem** ou especifique aplicativos com **selecionar aplicativos**.
 
-## <a name="cloud-apps"></a>Aplicativos na nuvem 
+As organizações podem escolher entre as seguintes opções:
 
-Um aplicativo na nuvem é um site ou serviço. Os sites protegidos pelo Proxy de Aplicativo do Azure AD também são aplicativos na nuvem. Para uma descrição detalhada dos aplicativos na nuvem compatíveis, consulte [atribuições de aplicativos em nuvem](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#cloud-apps-assignments). 
+* **Todos os aplicativos em nuvem** ao aplicar diretivas de linha de base a ser aplicado em toda a organização. Use esta seleção para as políticas que exigem a autenticação multifator quando o risco de entrada for detectado para qualquer aplicativo de nuvem. Uma política aplicada a todos os aplicativos de nuvem se aplica ao acesso a todos os sites e serviços. Essa configuração não se limita aos aplicativos de nuvem que aparecem na lista de aplicativos selecionados.
+* **Selecionar aplicativos** para destinar sua política a serviços específicos. Por exemplo, você pode exigir que os usuários tenham um dispositivo compatível para acessar o SharePoint Online. Essa política também é aplicada a outros serviços quando eles acessam o conteúdo do SharePoint. Um exemplo é o Microsoft Teams.
 
-A condição **de aplicativos na nuvem** é obrigatória em uma política de acesso condicional. Em sua política, é possível selecionar **Todos os aplicativos em nuvem** ou escolher aplicativos específicos.
+> [!NOTE]
+> Você pode excluir aplicativos específicos de uma política. No entanto, esses aplicativos ainda estão sujeitos às políticas aplicadas aos serviços que acessam.
 
-![Incluir aplicativos de nuvem](./media/conditions/03.png)
-
-Selecione:
-
-- **Todos os aplicativos na nuvem** para as políticas de linha de base a serem aplicadas a toda a organização. Um caso de uso comum para essa seleção é uma política que exige autenticação multifator quando o risco de entrada for detectado para qualquer aplicativo de nuvem. Uma política aplicada a **Todos os aplicativos na nuvem** se aplica ao acesso a todos os sites e serviços. Essa configuração não se limita aos aplicativos em nuvem exibidos na lista **Selecionar aplicativos**. 
-
-- **Selecionar aplicativos** para destinar sua política a serviços específicos. Por exemplo, você pode exigir que os usuários tenham um [dispositivo compatível](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam#app-based-or-compliant-device-policy-for-exchange-online-and-sharepoint-online) para acessar o SharePoint Online. Essa política também é aplicada a outros serviços quando eles acessam o conteúdo do SharePoint. Um exemplo é o Microsoft Teams. 
-
-Você pode excluir aplicativos específicos de uma política. No entanto, esses aplicativos ainda estão sujeitos às políticas aplicadas aos serviços que acessam. 
-
-
+**Ações do usuário** são tarefas que podem ser executadas por um usuário. É a única ação com suporte no momento **registrar informações de segurança (visualização)**, que permite que a política de acesso condicional será imposta quando um usuário se registra as informações de segurança.
 
 ## <a name="sign-in-risk"></a>Risco de entrada
 
@@ -96,7 +90,7 @@ Casos de uso comuns para essa condição são políticas que possuem as seguinte
 
 Para obter mais informações, veja [bloquear acesso quando for detectado um risco na sessão](app-sign-in-risk.md).  
 
-## <a name="device-platforms"></a>Plataformas de dispositivo
+## <a name="device-platforms"></a>Plataforma de dispositivo
 
 A plataforma do dispositivo é caracterizada pelo sistema operacional que é executado no seu dispositivo. O Microsoft Azure Active Directory identifica a plataforma usando as informações fornecidas pelo dispositivo, como o agente do usuário. Esta informação não é verificada. Recomendamos que todas as plataformas tenham uma política aplicada a elas. A política deve bloquear o acesso, exigir conformidade com as políticas do Microsoft Intune ou exigir que o dispositivo seja associado ao domínio. O padrão é aplicar uma política a todas as plataformas de dispositivos. 
 
@@ -170,11 +164,11 @@ Você só pode selecionar **clientes do Exchange ActiveSync** se:
 
 - O Microsoft Office 365 Exchange Online é o único aplicativo de nuvem que você selecionou.
 
-    ![Aplicativos na nuvem](./media/conditions/32.png)
+    ![Aplicativos de nuvem](./media/conditions/32.png)
 
 - Você não tem outras condições configuradas em uma política. No entanto, você pode restringir o escopo dessa condição para se aplicar apenas a [plataformas compatíveis](technical-reference.md#device-platform-condition).
  
-    ![Aplicar política apenas a plataformas suportadas](./media/conditions/33.png)
+    ![Aplicar a política somente para as plataformas com suporte](./media/conditions/33.png)
 
 
 Quando o acesso é bloqueado porque um [dispositivo gerenciado](require-managed-devices.md) é necessário, os usuários afetados obtêm um único email orientando-os a usar o Intune. 

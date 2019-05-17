@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/01/2019
 ms.author: anavin
-ms.openlocfilehash: 18d913339556c0d4b0a06bd62f4495da6a4d4223
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: ee7ffba182cdbc2a77df5edf112e29c49cd610ad
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925908"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65519666"
 ---
 # <a name="create-change-or-delete-a-virtual-network-peering"></a>Criar, alterar ou excluir um emparelhamento da rede virtual
 
@@ -46,7 +46,7 @@ Antes de criar um emparelhamento, familiarize-se com os requisitos e restriçõe
 1. Na caixa de pesquisa na parte superior do Portal do Azure, digite *redes virtuais* na caixa de pesquisa. Quando **Redes virtuais** aparecer nos resultados da pesquisa, selecione essa opção. Não selecione **redes virtuais (clássicas)** se for exibido na lista, pois não é possível criar um emparelhamento de uma rede virtual implantada por meio do modelo de implantação clássico.
 2. Selecione na lista a rede virtual para a qual você deseja criar um emparelhamento.
 3. Em **CONFIGURAÇÕES**, selecione **Emparelhamentos**.
-4. Selecione **+ Adicionar**. 
+4. Selecione **+ adicionar**. 
 5. <a name="add-peering"></a>Insira ou selecione valores para as seguintes configurações:
     - **Nome:** o nome para o emparelhamento deve ser exclusivo na rede virtual.
     - **Modelo de implantação de rede virtual**: selecione com qual modelo a rede virtual que você deseja emparelhar foi implantada.
@@ -146,7 +146,7 @@ Se sua conta não está atribuída a uma das funções anteriores, ela deve ser 
 |---                                                              |---   |
 | Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write  | Necessário para criar um emparelhamento de a rede virtual A com a rede virtual B. A rede virtual A um deve ser uma rede virtual (Gerenciador de Recursos)          |
 | Microsoft.Network/virtualNetworks/peer/action                   | Necessário para criar um emparelhamento de rede virtual B (Gerenciador de Recursos) com a rede virtual A                                                       |
-| Microsoft.ClassicNetwork/virtualNetworks/peer                   | Necessário para criar um emparelhamento de rede virtual B (clássica) com a rede virtual A                                                                |
+| Microsoft.ClassicNetwork/virtualNetworks/peer/action                   | Necessário para criar um emparelhamento de rede virtual B (clássica) com a rede virtual A                                                                |
 | Microsoft.Network/virtualNetworks/virtualNetworkPeerings/read   | Ler um emparelhamento de rede virtual   |
 | Microsoft.Network/virtualNetworks/virtualNetworkPeerings/delete | Excluir um emparelhamento de rede virtual |
 

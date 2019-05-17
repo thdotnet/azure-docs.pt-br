@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/13/2019
 ms.author: magoedte
-ms.openlocfilehash: a60413ee6614b638db58748ee2c0aea5d7ea32ea
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7d86b3fe9aeddd603d0c40b1c760cabdee42e396
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60199895"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522100"
 ---
 # <a name="what-is-azure-monitor-for-vms-preview"></a>O que é o Azure Monitor para VMs (versão prévia)?
 
@@ -36,7 +36,7 @@ Os recursos são organizados em três perspectivas:
 
 * Saúde
 * Desempenho
-* Mapear
+* Mapa
 
 >[!NOTE]
 >Atualmente, o recurso de integridade é oferecido somente para máquinas virtuais do Azure. Desempenho e recursos de mapa de suportam a VMs do Azure, conjuntos de dimensionamento de VM do Azure e máquinas virtuais que são hospedadas em seu ambiente ou outro provedor de nuvem.
@@ -64,4 +64,4 @@ Quando você implanta o Azure Monitor para VMs, os dados coletados pelas VMs sã
 Varia de acordo com o tamanho do log com os comprimentos de cadeia de caracteres de contadores de desempenho, e ele pode aumentar com o número de discos lógicos e adaptadores de rede alocados para a VM. Se você já tiver um workspace e estiver coletando esses contadores, nenhum encargo duplicado será aplicado. Se você já estiver usando o Mapa do Serviço, a única alteração que você verá serão os dados de conexão adicionais enviados ao Azure Monitor.
 
 ## <a name="next-steps"></a>Próximas etapas
-Para entender os requisitos e os métodos que ajudam você a monitorar suas máquinas virtuais, examine [Implantar o Azure Monitor para VMs](vminsights-onboard.md).
+Para entender os requisitos e os métodos que ajudam você a monitorar suas máquinas virtuais, examine [Implantar o Azure Monitor para VMs](vminsights-enable-overview.md).

@@ -4,16 +4,15 @@ description: Este artigo fornece informações sobre limites de tamanho de solic
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.workload: infrastructure-services
-ms.date: 1/29/2019
+ms.date: 5/15/2019
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: a814fc6e9a72ba92d915821bd1e1694366844555
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 5ddcdeca41e2f21fa27db25f7e0721c7ef87e491
+ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59791752"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65620280"
 ---
 # <a name="web-application-firewall-request-size-limits-and-exclusion-lists"></a>Limites de tamanho de solicitação e listas de exclusões de firewall do aplicativo Web
 
@@ -25,10 +24,10 @@ O WAF (firewall de aplicativo Web) do Gateway de Aplicativo do Azure fornece pro
 
 O firewall do aplicativo Web permite a você configurar limites de tamanho de solicitação dentro de limites inferior e superior. As duas configurações de limites de tamanho a seguir estão disponíveis:
 
-- O campo de tamanho de corpo de solicitação máximo é especificado em KBs e controla o limite de tamanho de solicitação geral excluindo qualquer carregamento de arquivo. Este campo pode variar de mínimo de 1 KB para o valor máximo de 128 KB. O valor padrão para o tamanho do corpo da solicitação é 128 KB.
+- O campo de tamanho de corpo de solicitação máxima é especificado em quilobytes e controles de limite de tamanho de solicitação geral excluindo qualquer arquivo carrega. Este campo pode variar de mínimo de 1 KB para o valor máximo de 128 KB. O valor padrão para o tamanho do corpo da solicitação é 128 KB.
 - O campo de limite de carregamento de arquivo é especificado em MB e controla o tamanho máximo de carregamento de arquivos permitido. Esse campo pode ter um valor mínimo de 1 MB e um máximo de 500 MB para instâncias de SKU grande, enquanto o SKU médio tem um máximo de 100 MB. O valor padrão para o limite de carregamento de arquivos é 100 MB.
 
-O WAF também oferece um botão configurável para ativar ou desativar a inspeção de corpo da solicitação. Por padrão, a inspeção de corpo da solicitação está habilitada. Se a inspeção de corpo da solicitação estiver desativada, o WAF não avalia o conteúdo do corpo da mensagem HTTP. Nesses casos, o WAF continua a impor regras de WAF no URI, cookies e cabeçalhos. Se a inspeção do corpo da solicitação estiver desativada, o campo de tamanho máximo do corpo da solicitação não será aplicável e não poderá ser definido. Desativar a inspeção de corpo da solicitação permite que mensagens maiores que 128 KB sejam enviadas ao WAF, mas o corpo da mensagem não é inspecionado quanto a vulnerabilidades.
+O WAF também oferece um botão configurável para ativar ou desativar a inspeção de corpo da solicitação. Por padrão, a inspeção de corpo da solicitação está habilitada. Se a inspeção de corpo de solicitação estiver desativada, o WAF não avalie o conteúdo do corpo da mensagem HTTP. Nesses casos, o WAF continua a impor regras de WAF no URI, cookies e cabeçalhos. Se a inspeção do corpo da solicitação estiver desativada, o campo de tamanho máximo do corpo da solicitação não será aplicável e não poderá ser definido. Desativar a inspeção de corpo da solicitação permite que mensagens maiores que 128 KB sejam enviadas ao WAF, mas o corpo da mensagem não é inspecionado quanto a vulnerabilidades.
 
 ## <a name="waf-exclusion-lists"></a>Listas de exclusão de WAF
 
@@ -40,11 +39,12 @@ Os seguintes atributos podem ser adicionados a listas de exclusão:
 
 * Cabeçalhos de solicitação
 * Cookies de solicitação
-* Corpo da solicitação
+* Nome do atributo de solicitação (args)
 
    * Dados de várias partes do formulário
    * XML
    * JSON
+   * Args de consulta de URL
 
 Você pode especificar um cabeçalho de solicitação exato, corpo, cookie ou uma correspondência de atributo de cadeia de consulta.  Outra opção é especificar correspondências parciais. A exclusão está sempre em um campo de cabeçalho, nunca em seu valor. Regras de exclusão são de escopo global e se aplicam a todas as páginas e todas as regras.
 
@@ -62,37 +62,36 @@ Em todos os casos, a correspondência diferencia maiúsculas de minúsculas e a 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-O seguinte snippet do Azure PowerShell demonstra o uso de exclusões:
+Os exemplos a seguir demonstram o uso de exclusões.
+
+### <a name="example-1"></a>Exemplo 1
+
+Neste exemplo, você deseja excluir o cabeçalho de agente do usuário. O cabeçalho de solicitação do agente do usuário contém uma cadeia de caracteres de característica que permite que os pares de protocolo de rede identificar o tipo de aplicativo, o sistema operacional, o fornecedor de software ou a versão do software do agente do usuário solicitante do software. Para obter mais informações, consulte [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent).
+
+Pode haver vários motivos para desabilitar a avaliar esse cabeçalho. Pode haver uma cadeia de caracteres que o WAF vê e suponha que ele seja mal-intencionado. Por exemplo, o ataque clássico de SQL "x = x" em uma cadeia de caracteres. Em alguns casos, isso pode ser um tráfego legítimo. Portanto, talvez seja necessário excluir esse cabeçalho de avaliação do WAF.
+
+O seguinte cmdlet do PowerShell do Azure exclui o cabeçalho de agente do usuário da avaliação:
 
 ```azurepowershell
-// exclusion 1: exclude request head start with xyz
-// exclusion 2: exclude request args equals a
-
-$exclusion1 = New-AzApplicationGatewayFirewallExclusionConfig -MatchVariable "RequestHeaderNames" -SelectorMatchOperator "StartsWith" -Selector "xyz"
-
-$exclusion2 = New-AzApplicationGatewayFirewallExclusionConfig -MatchVariable "RequestArgNames" -SelectorMatchOperator "Equals" -Selector "a"
-
-// add exclusion lists to the firewall config
-
-$firewallConfig = New-AzApplicationGatewayWebApplicationFirewallConfiguration -Enabled $true -FirewallMode Prevention -RuleSetType "OWASP" -RuleSetVersion "2.2.9" -DisabledRuleGroups $disabledRuleGroup1,$disabledRuleGroup2 -RequestBodyCheck $true -MaxRequestBodySizeInKb 80 -FileUploadLimitInMb 70 -Exclusions $exclusion1,$exclusion2
+$exclusion1 = New-AzApplicationGatewayFirewallExclusionConfig `
+   -MatchVariable "RequestHeaderNames" `
+   -SelectorMatchOperator "Equals" `
+   -Selector "User-Agent"
 ```
 
-O seguinte snippet de código JSON demonstra o uso de exclusões:
+### <a name="example-2"></a>Exemplo 2
 
-```json
-"webApplicationFirewallConfiguration": {
-          "enabled": "[parameters('wafEnabled')]",
-          "firewallMode": "[parameters('wafMode')]",
-          "ruleSetType": "[parameters('wafRuleSetType')]",
-          "ruleSetVersion": "[parameters('wafRuleSetVersion')]",
-          "disabledRuleGroups": [],
-          "exclusions": [
-            {
-                "matchVariable": "RequestArgNames",
-                "selectorMatchOperator": "StartsWith",
-                "selector": "a^bc"
-            }
+Este exemplo exclui o valor de *usuário* parâmetro que é passado na solicitação por meio da URL. Por exemplo, é comum em seu ambiente para o campo de usuário conter uma cadeia de caracteres que o WAF exibições como conteúdo mal-intencionado, portanto, bloqueia-lo.  Você pode excluir o parâmetro de usuário nesse caso, para que o WAF não foi avaliada nada no campo.
+
+O seguinte cmdlet do PowerShell do Azure exclui o parâmetro de usuário de avaliação:
+
+```azurepowershell
+$exclusion2 = New-AzApplicationGatewayFirewallExclusionConfig `
+   -MatchVariable "RequestArgNames" `
+   -SelectorMatchOperator "Equals" `
+   -Selector "user"
 ```
+Portanto, se a URL **http://www.contoso.com/?user=fdafdasfda** é passado para o WAF, ele não avalia a cadeia de caracteres **fdafdasfda**.
 
 ## <a name="next-steps"></a>Próximas etapas
 

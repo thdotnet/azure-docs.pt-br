@@ -7,12 +7,12 @@ ms.author: tacox
 ms.reviewer: jasonh
 ms.topic: howto
 ms.date: 04/24/2019
-ms.openlocfilehash: b181edc08c51a5afa8682858b330acc84da7d73d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: b39279e560cb1738ff9b33ec587562efd2ed4e8d
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64707003"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65800944"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Migrar cargas de trabalho de Hive do Azure HDInsight 3.6 HDInsight 4.0
 
@@ -29,8 +29,8 @@ Este artigo aborda os seguintes assuntos:
 
 Uma vantagem do Hive é a capacidade de exportar metadados para um banco de dados externo (conhecido como o Metastore do Hive). O **Metastore Hive** é responsável por armazenar as estatísticas de tabela, incluindo o local de armazenamento de tabela, nomes de coluna e informações de índice de tabela. O esquema de banco de dados do metastore é diferente entre as versões do Hive. Faça o seguinte para atualizar um Metastore do Hive do HDInsight 3.6 para que ele seja compatível com o HDInsight 4.0.
 
-1. Crie uma nova cópia do seu metastore externo. A versão 3.6 do HDInsight e HDInsight 4.0 exigem metastore diferentes esquemas e não é possível compartilhar um único metastore.
-1. Anexe a nova cópia do metastore a) um cluster HDInsight 4.0 existente ou b) um cluster que você está criando pela primeira vez. Ver [usar armazenamentos de metadados externos no Azure HDInsight](../hdinsight-use-external-metadata-stores.md) para saber mais sobre como anexar um metastore externo a um cluster HDInsight. Depois que o Metastore é anexado, ele será convertido automaticamente em um metastore 4.0 compatível.
+1. Crie uma nova cópia do seu metastore externo. A versão 3.6 do HDInsight e HDInsight 4.0 exigem metastore diferentes esquemas e não é possível compartilhar um único metastore. Ver [usar armazenamentos de metadados externos no Azure HDInsight](../hdinsight-use-external-metadata-stores.md) para saber mais sobre como anexar um metastore externo a um cluster HDInsight. 
+2. Inicie uma ação de script em relação a seu cluster do HDI 3.6, com "Nós de cabeça" como o tipo de nó para execução. Cole o URI a seguir na caixa de texto marcado como "URI do Script Bash": https://hdiconfigactions.blob.core.windows.net/hivemetastoreschemaupgrade/launch-schema-upgrade.sh. Na caixa de texto marcado como "Argumentos", insira o nome do servidor, banco de dados, nome de usuário e senha para o **copiados** Hive metastore, separado por espaços. Não inclua ". database.windows.net" ao especificar o nome do servidor.
 
 > [!Warning]
 > A atualização que converte o esquema de metadados 3.6 do HDInsight para o esquema de HDInsight 4.0, não poderá ser revertida.

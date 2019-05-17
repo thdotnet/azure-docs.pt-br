@@ -6,15 +6,16 @@ services: media-services
 author: Juliako
 manager: femila
 ms.service: media-services
+ms.subservice: video-indexer
 ms.topic: article
-ms.date: 02/25/2019
+ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: 07b3c806dc5df5f93bee3206cbca53485675e7dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 93376059dac2a8336e581269d8289d893779b291
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60560312"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65799102"
 ---
 # <a name="find-exact-moments-within-videos"></a>Localizar os minutos exatos nos vídeos
 
@@ -49,8 +50,8 @@ Este tópico mostra as opções de pesquisa que permitem que você localize os m
 
 Depois de encontrar o vídeo com o qual você deseja trabalhar, será possível continuar processando-o, conforme descrito em um destes tópicos: 
 
-- [Criar novos insights de vídeo com base no vídeo existente](video-indexer-create-new.md)
-- [Processar conteúdo com a API REST do Video Indexer](video-indexer-use-apis.md)
+- [Use o aprofundamento dos seus vídeos](use-editor-create-project.md)
+- [Processar o conteúdo com a API REST do Video Indexer](video-indexer-use-apis.md)
 - [Inserir widgets visuais em seu aplicativo](video-indexer-embed-widgets.md)
 
 ## <a name="see-also"></a>Consulte também

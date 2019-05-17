@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 author: nishankgu
 ms.author: nigup
-ms.date: 12/04/2018
+ms.date: 05/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: aa425b6dfeb076448d14fc35cbea964516d603b0
-ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.openlocfilehash: f9734a5d8f34536558fbf0c861889f3c7d6719da
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63765861"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65523996"
 ---
 # <a name="manage-and-request-quotas-for-azure-resources"></a>Gerenciar e solicitar cotas para recursos do Azure
 
@@ -52,9 +52,9 @@ Para obter uma lista mais detalhada e atualizada de limites de cota, confira o s
 Para a Computação do Azure Machine Learning, há um limite de cota padrão para o número de núcleos e o número de recursos de computação exclusivos permitidos por região em uma assinatura. Essa cota é separada da cota do núcleo da VM acima e os limites de núcleo não são compartilhados no momento entre os dois tipos de recurso.
 
 Recursos disponíveis:
-+ Os núcleos dedicados por região têm um limite padrão de 10 a 24.  O número de núcleos dedicados por assinatura pode ser aumentado. Entre em contato com o suporte do Azure para discutir opções de aumento.
++ Núcleos dedicados por região tem um limite padrão de 300 24 dependendo de seu tipo de oferta de assinatura.  O número de núcleos dedicados por assinatura pode ser aumentado. Entre em contato com o suporte do Azure para discutir opções de aumento.
 
-+ Núcleos de baixa prioridade por região têm um limite padrão de 10 a 24.  O número de núcleos de baixa prioridade por assinatura pode ser aumentado. Entre em contato com o suporte do Azure para discutir opções de aumento.
++ Núcleos de baixa prioridade por região tem um limite padrão de 24-300, dependendo do seu tipo de oferta de assinatura.  O número de núcleos de baixa prioridade por assinatura pode ser aumentado. Entre em contato com o suporte do Azure para discutir opções de aumento.
 
 + Os clusters por região têm um limite padrão de 100 e um limite máximo de 200. Contate o suporte do Azure se desejar solicitar um aumento além desse limite.
 
@@ -66,10 +66,12 @@ Recursos disponíveis:
 | Máximo de nós em um único recurso de Computação do Azure Machine Learning (AmlCompute) | 100 nós |
 | Máximo de processos de MPI de GPU nó | 1-4 |
 | Máximo de trabalhos de GPU nó | 1-4 |
-| Tempo de vida máximo do trabalho | 7 dias<sup>1</sup> |
+| Tempo de vida máximo do trabalho | 90 dias<sup>1</sup> |
+| Tempo de vida máximo do trabalho em um nó de prioridade baixa | 1 dia<sup>2</sup> |
 | Máximo de servidores de parâmetro por nó | 1 |
 
 <sup>1</sup> O tempo de vida máximo se refere ao tempo desde que a execução começa até que seja concluída. Execuções concluídas persistem indefinidamente; dados de execuções não concluídas dentro do tempo de vida máximo não ficam acessíveis.
+<sup>2</sup> trabalhos em um nó de baixa prioridade podem ser evitados sempre que houver uma restrição de capacidade. É recomendável implementar pontos de verificação no seu trabalho.
 
 ### <a name="container-instances"></a>Instâncias de contêiner
 
@@ -80,20 +82,20 @@ Também há um limite no número de instâncias de contêiner que você pode cri
 Para obter uma lista mais detalhada e atualizada de limites de cota, confira o site de cota de todo o Azure [aqui](https://docs.microsoft.com/azure/azure-subscription-service-limits#container-instances-limits).
 
 ### <a name="storage"></a>Armazenamento
-Há um limite no número de contas de armazenamento por região também em uma determinada assinatura. O limite padrão é 200 e inclui contas de armazenamento Standard e Premium. Se você precisar de mais de 200 contas de armazenamento em uma única região, faça uma solicitação por meio do [Suporte do Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/). A equipe de Armazenamento do Microsoft Azure examinará seu caso de negócios e poderá aprovar até 250 contas de armazenamento.
+Há um limite no número de contas de armazenamento por região também em uma determinada assinatura. O limite padrão é 200 e inclui contas de armazenamento Standard e Premium. Se você precisar de mais de 200 contas de armazenamento em uma única região, faça uma solicitação por meio do [Suporte do Microsoft Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/). A equipe de Armazenamento do Microsoft Azure examinará seu caso de negócios e poderá aprovar até 250 contas de armazenamento.
 
 
 ## <a name="find-your-quotas"></a>Localizar suas cotas
 
 Por meio do portal do Azure, é fácil exibir sua cota para vários recursos, como Máquinas Virtuais, Armazenamento e Rede.
 
-1. No painel esquerdo, selecione **Todos os serviços** e, em seguida, selecione **Assinaturas** na categoria Geral.
+1. No painel esquerdo, selecione **Todos os serviços** e, em seguida, selecione **Assinaturas** na categoria Geral.
 
 1. Na lista de assinaturas, selecione a assinatura cuja cota você está procurando.
 
    **Há uma limitação**, especificamente para exibir a cota de Computação do Azure Machine Learning. Conforme mencionado acima, essa cota é separada da cota de computação em sua assinatura.
 
-1. No painel esquerdo, selecione **Serviço do Machine Learning** e, em seguida, selecione qualquer workspace na lista mostrada
+1. No painel esquerdo, selecione **serviço de Machine Learning** e, em seguida, selecione qualquer espaço de trabalho na lista mostrada
 
 1. Na folha seguinte, na seção **Suporte + solução de problemas**, selecione **Uso + cotas** para exibir os limites de cota e o uso atual.
 
@@ -102,7 +104,7 @@ Por meio do portal do Azure, é fácil exibir sua cota para vários recursos, co
 
 ## <a name="request-quota-increases"></a>Solicitar aumentos de cota
 
-Se você desejar aumentar o limite ou a cota acima do limite padrão,  [abra uma solicitação de suporte ao cliente online](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/) sem custo.
+Se você desejar aumentar o limite ou a cota acima do limite padrão, [abra uma solicitação de suporte ao cliente online](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/) sem custo.
 
 Os limites não podem ser aumentados acima do valor limite máximo mostrado nas tabelas. Se não houver limite máximo, então o recurso não terá limites ajustáveis. [Este](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quota-errors) artigo aborda o processo de aumento da cota em mais detalhes.
 

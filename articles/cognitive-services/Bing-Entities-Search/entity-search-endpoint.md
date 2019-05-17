@@ -3,19 +3,19 @@ title: O ponto de extremidade da API de Pesquisa de Entidade do Bing
 titlesuffix: Azure Cognitive Services
 description: Saiba mais sobre o ponto de extremidade da API de Pesquisa de Entidade do Bing e envie solicitações para ele.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.author: v-gedod
-ms.openlocfilehash: 3c2aa4b22c8e679f73692978d9e1f8009f11a46b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: aahi
+ms.openlocfilehash: b29e568d6b3b1382b5be434500014f10740b58f8
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60598515"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65788555"
 ---
 # <a name="bing-entity-search-api-endpoint"></a>Ponto de extremidade da API de Pesquisa de Entidade do Bing
 
@@ -30,7 +30,7 @@ Para obter os resultados da entidade usando a **API do Bing**, envie uma solicit
  GET https://api.cognitive.microsoft.com/bing/v7.0/entities
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
 > [O que é a API de Pesquisa de Entidade do Bing?](overview.md)

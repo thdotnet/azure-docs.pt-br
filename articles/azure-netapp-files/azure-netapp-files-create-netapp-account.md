@@ -14,20 +14,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: b-juche
-ms.openlocfilehash: bb43a75b6a221c15c8724302797d04c22e04c8d2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 25cae58663f6fa7ef27995c10509eb33e49dd4c7
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61086101"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522826"
 ---
 # <a name="create-a-netapp-account"></a>Criar uma conta do NetApp
 Criar uma conta do NetApp permite que você configure um pool de capacidade e, subsequentemente, crie um volume. Você pode usar a folha de Azure NetApp Files para criar uma nova conta do NetApp.
 
 ## <a name="before-you-begin"></a>Antes de começar
-É necessário ter registrado sua assinatura para usar o Provedor de Recursos do NetApp e a versão prévia do recurso.
+Você deve ter recebido um email da equipe do Azure NetApp arquivos confirmando que você recebeu acesso ao serviço. Ver [enviar uma solicitação de uma lista de espera para acessar o serviço](azure-netapp-files-register.md#waitlist).
 
-[Registro no Azure NetApp Files](azure-netapp-files-register.md)
+Você também deve ter registrado sua assinatura para usar o provedor de recursos do NetApp. Ver [registrar o provedor de recursos do NetApp](azure-netapp-files-register.md#resource-provider).
 
 ## <a name="steps"></a>Etapas 
 
@@ -56,6 +56,11 @@ Criar uma conta do NetApp permite que você configure um pool de capacidade e, s
 
 5. Clique em **Criar**.     
    A conta do NetApp que você criou agora aparece na folha Azure NetApp Files. 
+
+> [!NOTE] 
+> Se você não recebeu acesso ao serviço de arquivos do Azure NetApp, você receberá o seguinte erro ao tentar criar a primeira conta NetApp:  
+>
+> `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"NotFound","message":"{\r\n \"error\": {\r\n \"code\": \"InvalidResourceType\",\r\n \"message\": \"The resource type could not be found in the namespace 'Microsoft.NetApp' for api version '2017-08-15'.\"\r\n }\r\n}"}]}`
 
 ## <a name="next-steps"></a>Próximas etapas  
 

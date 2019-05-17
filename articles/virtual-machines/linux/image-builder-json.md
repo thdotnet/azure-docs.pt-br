@@ -3,16 +3,16 @@ title: Criar um modelo do construtor de imagens do Azure (visualização)
 description: Saiba como criar um modelo a ser usado com o construtor de imagens do Azure.
 author: cynthn
 ms.author: cynthn
-ms.date: 05/02/2019
+ms.date: 05/10/2019
 ms.topic: article
 ms.service: virtual-machines-linux
 manager: jeconnoc
-ms.openlocfilehash: b4646879eb7eeecf41852baab7ab64e4053b05e1
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: cf8264cbad3c5c88c58cff3b95cb5c68adf0686c
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65159594"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65538289"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Visualização: Criar um modelo do construtor de imagens do Azure 
 
@@ -32,7 +32,7 @@ Este é o formato do modelo básico:
     "identity":{},           
     "dependsOn": [], 
     "properties": { 
-        "<build timeout in minutes>": {}, 
+        "buildTimeoutInMinutes": <minutes>, 
         "build": {}, 
         "customize": {}, 
         "distribute": {} 
@@ -447,7 +447,7 @@ Distribua as propriedades para galerias de imagens compartilhadas:
 > [!NOTE]
 > Você pode usar o construtor de imagens do Azure em uma região diferente para a Galeria, mas o serviço Azure Image Builder será necessário transferir a imagem entre os data centers e levará mais tempo. Image Builder será automaticamente versão a imagem, com base em um inteiro monotônico, não é possível especificá-lo no momento. 
 
-### <a name="distribute-vhd"></a>Distribua: VHD   
+### <a name="distribute-vhd"></a>Distribua: VHD  
 Você pode dar saída a um VHD. Você pode, em seguida, copie o VHD e usá-lo para publicar no Azure MarketPlace ou usar com o Azure Stack.  
 
 ```json

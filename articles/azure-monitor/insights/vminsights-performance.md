@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/22/2019
+ms.date: 05/07/2019
 ms.author: magoedte
-ms.openlocfilehash: 4fa2553622d5ef2d08ec148b6a70aab6de257407
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c83a862a37dbf28c6933877bf4a0aecc4364e6c5
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61385866"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522082"
 ---
 # <a name="how-to-chart-performance-with-azure-monitor-for-vms-preview"></a>Como mapear o desempenho com o Azure Monitor para VMs (versão prévia)
 O Monitor do Azure para VMs inclui um conjunto de gráficos de desempenho que segmentam vários KPIs (principais indicadores de desempenho) para ajudá-lo a determinar o desempenho de uma máquina virtual. Os gráficos mostram a utilização de recursos durante um período de tempo para que você possa identificar afunilamentos, anomalias ou alternar para uma perspectiva listando cada máquina para exibir a utilização de recursos com base na métrica selecionada. Embora haja vários elementos a serem considerados ao lidar com o desempenho, Monitor do Azure para VMs indicadores de desempenho de chave do sistema operacional de monitores relacionados ao processador, memória, adaptador de rede e utilização de disco. O desempenho complementa o recurso de monitoramento de integridade e ajuda a expor problemas que indicam uma possível falha do componente do sistema, suporte ao ajuste e otimização para obter eficiência ou suportar o planejamento da capacidade.  
@@ -105,6 +105,21 @@ Os seguintes gráficos de utilização de capacidade são fornecidos:
 Clicar no ícone de pino no canto superior direito de qualquer um dos pinos gráficos no gráfico selecionado ao último painel do Azure, você exibiu. No painel, você pode redimensionar e reposicionar o gráfico. Selecionar o gráfico do painel redireciona você para o Azure Monitor para VMs e carrega o modo de exibição de detalhes de desempenho para a VM.  
 
 ![Diretamente o insights VM-desempenho da VM a exibir](./media/vminsights-performance/vminsights-performance-directvm-01.png)
+
+## <a name="view-performance-directly-from-an-azure-virtual-machine-scale-set"></a>Exibir desempenho diretamente de um conjunto de dimensionamento de máquina virtual do Azure
+Para acessar diretamente a partir de um conjunto de dimensionamento de máquina virtual do Azure, execute as seguintes etapas.
+
+1. No portal do Azure, selecione **conjuntos de dimensionamento de máquina Virtual**.
+2. Na lista, escolha uma máquina virtual e, na **monitoramento** seção escolher **Insights (visualização)** para exibir o **desempenho** guia.
+
+Esta página é carregada a exibição de desempenho do Azure Monitor, como escopo o conjunto de dimensionamento selecionada. Isso permite ver as principais N instâncias no conjunto de dimensionamento em um conjunto de métricas monitoradas, exibir o desempenho de agregação em todo o conjunto de dimensionamento e ver as tendências de métricas selecionadas entre o n instâncias individuais de dimensionamento definido. Seleção de uma instância da exibição de lista permite carregar mapa de TI ou navegar em uma exibição de desempenho detalhados para essa instância.
+
+Clicar no ícone de pino no canto superior direito de qualquer um dos pinos gráficos no gráfico selecionado ao último painel do Azure, você exibiu. No painel, você pode redimensionar e reposicionar o gráfico. Selecionar o gráfico do painel redireciona você para o Azure Monitor para VMs e carrega o modo de exibição de detalhes de desempenho para a VM.  
+
+![Exibição do conjunto de desempenho de insights VM diretamente do dimensionamento de máquinas virtuais](./media/vminsights-performance/vminsights-performance-directvmss-01.png)
+
+>[!NOTE]
+>Você também pode acessar um modo de exibição de desempenho detalhados para uma instância específica do modo de exibição de instâncias para seu conjunto de dimensionamento. Navegue até **instâncias** sob o **configurações** seção e, em seguida, escolha **Insights (visualização)**.
 
 ## <a name="alerts"></a>Alertas  
 As métricas de desempenho ativadas como parte do Monitor do Azure para VMs não incluem regras de alerta pré-configuradas. Há [alertas de integridade](vminsights-health.md#alerts) correspondentes a problemas de desempenho detectados em sua VM do Azure, como alta utilização da CPU, espaço em disco disponível, baixa memória baixa, etc.  No entanto, esses alertas de integridade só se aplicam a todas as VMs habilitadas para o Azure Monitor para VMs. 

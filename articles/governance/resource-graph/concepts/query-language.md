@@ -3,17 +3,17 @@ title: Noções básicas da linguagem de consulta
 description: Descreve os operadores disponíveis do Kusto e funções a ser usadas com o gráfico de recursos do Azure.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 12/11/2018
+ms.date: 04/22/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 08e4f09665a3501073f55b7f5b82bf51cf508ea9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: dcb21a6aedf16b034fad4f0822e22758dda03c33
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59276670"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65800501"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Noções básicas sobre a linguagem de consulta do Azure Resource Graph
 
@@ -53,7 +53,39 @@ Aqui está a lista de funções compatíveis no Resource Graph:
 - [tostring()](/azure/kusto/query/tostringfunction)
 - [zip()](/azure/kusto/query/zipfunction)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="escape-characters"></a>Caracteres de escape
+
+Alguns nomes de propriedade, como aquelas que incluem uma `.` ou `$`, deve ser encapsulado ou escape na consulta ou a propriedade nome é interpretado incorretamente e não fornece os resultados esperados.
+
+- `.` -Wrap como tal, o nome da propriedade: `['propertyname.withaperiod']`
+  
+  Exemplo de consulta que encapsula a propriedade _OData. Type_:
+
+  ```kusto
+  where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.['odata.type']
+  ```
+
+- `$` -Escape do caractere no nome da propriedade. O caractere de escape usado depende do shell em que gráfico de recursos é executado.
+
+  - **bash** - `\`
+
+    Exemplo de consulta que ignora a propriedade  _\$tipo_ no bash:
+
+    ```kusto
+    where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.\$type
+    ```
+
+  - **cmd** -não saiam de `$` caracteres.
+
+  - **PowerShell** - ``` ` ```
+
+    Exemplo de consulta que ignora a propriedade  _\$tipo_ no PowerShell:
+
+    ```kusto
+    where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.`$type
+    ```
+
+## <a name="next-steps"></a>Próximas etapas
 
 - Consulte o idioma em uso no [consultas Starter](../samples/starter.md)
 - Ver usos avançados em [Consultas avançadas](../samples/advanced.md)

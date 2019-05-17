@@ -4,16 +4,16 @@ description: Aprenda a solucionar problemas com o Gerenciamento de Atualizaçõe
 services: automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/05/2019
+ms.date: 05/07/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 22e3ea1c90946902fc2a16d947ff2884e5e0a44b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f286877c6a9e787c06a8a846efaf94668c04fc4e
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60597615"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787702"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Resolução de problemas com o Gerenciamento de Atualizações
 
@@ -45,7 +45,7 @@ Esse erro pode ser causado pelos seguintes motivos:
 1. Visite [Planejamento de rede](../automation-hybrid-runbook-worker.md#network-planning) para saber mais sobre quais endereços e portas devem ter permissão para que Gerenciamento de Atualizações funcione.
 2. Se estiver usando uma imagem clonada:
    1. No espaço de trabalho do Log Analytics, remova a VM da pesquisa salva para a configuração de escopo `MicrosoftDefaultScopeConfig-Updates` se ele for exibido. As pesquisas salvas podem ser encontradas em **Geral** no espaço de trabalho.
-   2. Execute o `Remove-Item -Path "HKLM:\software\microsoft\hybridrunbookworker" -Recurse -Force`
+   2. Execute `Remove-Item -Path "HKLM:\software\microsoft\hybridrunbookworker" -Recurse -Force`
    3. Execute `Restart-Service HealthService` para reiniciar o `HealthService`. Isso recriará a chave e gerará um novo UUID.
    4. Se isso não funcionar, a imagem de sysprep primeiro e instale o agente MMA após o fato.
 
@@ -160,6 +160,38 @@ O Hybrid Runbook Worker não conseguiu gerar um certificado auto-assinado
 
 Verifique se a conta do sistema tem acesso de leitura à pasta **C:\ProgramData\Microsoft\Crypto\RSA** e tente novamente.
 
+### <a name="failed-to-start"></a>Cenário: Falha ao iniciar em uma implantação de atualização de mostra uma máquina
+
+#### <a name="issue"></a>Problema
+
+Uma máquina tem o status **falhou ao iniciar** para uma máquina. Quando você exibir os detalhes específicos para a máquina, você verá o seguinte erro:
+
+```error
+Failed to start the runbook. Check the parameters passed. RunbookName Patch-MicrosoftOMSComputer. Exception You have requested to create a runbook job on a hybrid worker group that does not exist.
+```
+
+#### <a name="cause"></a>Causa
+
+Este erro pode ocorrer devido a um dos seguintes motivos:
+
+* A máquina não existe mais.
+* A máquina está ativada, desativado e inacessível.
+* O computador tem um problema de conectividade de rede e o hybrid worker no computador está inacessível.
+* Houve uma atualização para o Microsoft Monitoring Agent que alterou o SourceComputerId
+* Sua execução de atualização pode ter sido limitada se você atingir o limite de 2.000 trabalhos simultâneos em uma conta de automação. Cada implantação é considerada um trabalho e cada computador em uma contagem de implantação de atualização como um trabalho. Qualquer outra automação atualização ou trabalho de implantação em execução no momento em sua contagem de conta de automação até o limite de trabalhos simultâneos.
+
+#### <a name="resolution"></a>Resolução
+
+Quando uso aplicáveis [grupos dinâmicos](../automation-update-management.md#using-dynamic-groups) para suas implantações de atualização.
+
+* Verifique se a máquina ainda existe e está acessível. Se não existir, edite sua implantação e remova a máquina.
+* Consulte a seção sobre [planejamento de rede](../automation-update-management.md#ports) para obter uma lista de portas e endereços que são necessárias para o gerenciamento de atualizações e verifique se seu computador atende a esses requisitos.
+* Execute a seguinte consulta no Log Analytics localizar computadores em seu ambiente cujo `SourceComputerId` alterado. Procure por computadores que têm o mesmo `Computer` valor, mas diferentes `SourceComputerId` valor. Depois de encontrar máquinas afetadas, você deve editar as implantações de atualização que essas máquinas de destino e removem e adicionar novamente as máquinas para que o `SourceComputerId` reflete o valor correto.
+
+   ```loganalytics
+   Heartbeat | where TimeGenerated > ago(30d) | distinct SourceComputerId, Computer, ComputerIP
+   ```
+
 ### <a name="hresult"></a>Cenário: O computador é exibido como Não avaliado e mostra uma exceção HResult
 
 #### <a name="issue"></a>Problema
@@ -177,7 +209,9 @@ Clique duas vezes na exceção exibida em vermelho para ver a mensagem de exceç
 |Exceção  |Resolução ou ação  |
 |---------|---------|
 |`Exception from HRESULT: 0x……C`     | Pesquisar o código de erro relevante na [Lista de códigos de erro da atualização do Windows](https://support.microsoft.com/help/938205/windows-update-error-code-list) para localizar detalhes adicionais sobre a causa da exceção.        |
-|`0x8024402C` ou `0x8024401C`     | Esses erros são problemas de conectividade de rede. Verifique se seu computador tem a conectividade de rede apropriada para o Gerenciamento de Atualizações. Consulte a seção sobre [planejamento de rede](../automation-update-management.md#ports) para obter uma lista de portas e endereços que são necessários.        |
+|`0x8024402C`</br>`0x8024401C`</br>`0x8024402F`      | Esses erros são problemas de conectividade de rede. Verifique se seu computador tem a conectividade de rede apropriada para o Gerenciamento de Atualizações. Consulte a seção sobre [planejamento de rede](../automation-update-management.md#ports) para obter uma lista de portas e endereços que são necessários.        |
+|`0x8024001E`| A operação de atualização não foi concluída porque o serviço ou sistema estava sendo desligado.|
+|`0x8024002E`| Serviço Windows Update está desabilitado.|
 |`0x8024402C`     | Se você estiver usando um servidor WSUS, verifique se os valores do registro para `WUServer` e `WUStatusServer` sob a chave do registro `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate` têm o servidor WSUS correto.        |
 |`The service cannot be started, either because it is disabled or because it has no enabled devices associated with it. (Exception from HRESULT: 0x80070422)`     | Verifique se o serviço Windows Update (wuauserv) está em execução e não está desabilitado.        |
 |Qualquer outra exceção genérica     | Faça uma pesquisa na Internet para as soluções possíveis e trabalhe com o suporte de TI local.         |
@@ -221,7 +255,7 @@ Causas possíveis podem ser:
 
 * Gerenciador de pacotes não é saudável
 * Pacotes específicos podem interferir na correção baseada em nuvem
-* Outras razões
+* Outros motivos
 
 #### <a name="resolution"></a>Resolução
 

@@ -6,15 +6,16 @@ services: media-services
 author: anikaz
 manager: johndeu
 ms.service: media-services
+ms.subservice: video-indexer
 ms.topic: article
-ms.date: 12/03/2018
+ms.date: 05/15/2019
 ms.author: anzaman
-ms.openlocfilehash: 2522ede85c290fa238c0d5a5604d2dfbab984cdc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 721fde63aeae8704761b3c21f489dcad77cb89e3
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60535487"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65799608"
 ---
 # <a name="customize-a-brands-model-with-the-video-indexer-website"></a>Personalizar um modelo de marcas com o site do Video Indexer
 
@@ -88,6 +89,6 @@ A seção **Excluir marcas** representa as marcas que você deseja que o Video I
 1. Clique no ícone de lixeira ao lado da marca que você deseja excluir.
 2. Clique em "Excluir" e a marca não aparecerá mais na sua lista *Excluir marcas*.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 [Personalizar o modelo de Marcas usando APIs](customize-brands-model-with-api.md)

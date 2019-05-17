@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/05/2018
 ms.author: magoedte
-ms.openlocfilehash: c6a8322998b391b9021292a3a7213ded56b67feb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0f35ea3e35277ee7f1afd8278a31f45ed20c6995
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386437"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522128"
 ---
 # <a name="how-to-disable-monitoring-of-your-virtual-machines-with-azure-monitor-for-vms-preview"></a>Como desabilitar o monitoramento de suas máquinas virtuais com o Azure Monitor para VMs (versão prévia)
 
@@ -56,7 +56,7 @@ As etapas a seguir descrevem como remover completamente o Azure Monitor para VMs
 5. Na lista de soluções, selecione **InfrastructureInsights (nome da área de trabalho)** e, em seguida, na página **Visão geral** da solução, clique em **Excluir**.  Quando solicitado a confirmar, clique em **Sim**.  
 6. Na lista de soluções, selecione **ServiceMap (nome da área de trabalho)** e, em seguida, na página **Visão geral** da solução, clique em **Excluir**.  Quando solicitado a confirmar, clique em **Sim**.  
 
-Se antes de integrar o Azure Monitor para VMs, você não estava [coletando os contadores de desempenho habilitados](vminsights-onboard.md?toc=/azure/azure-monitor/toc.json#performance-counters-enabled) para as VMs baseadas em Windows ou Linux em sua área de trabalho, precisa desabilitar essas regras seguindo as etapas descritas [aqui](../../azure-monitor/platform/data-sources-performance-counters.md?toc=/azure/azure-monitor/toc.json#configuring-performance-counters) para Windows e para Linux.
+Se antes de integrar o Azure Monitor para VMs, você não estava [coletando os contadores de desempenho habilitados](vminsights-enable-overview.md#performance-counters-enabled) para as VMs baseadas em Windows ou Linux em sua área de trabalho, precisa desabilitar essas regras seguindo as etapas descritas [aqui](../platform/data-sources-performance-counters.md#configuring-performance-counters) para Windows e para Linux.
 
 ## <a name="disable-monitoring-for-an-azure-vm-and-retain-workspace"></a>Desativar o monitoramento de uma VM do Azure e manter o espaço de trabalho  
 
