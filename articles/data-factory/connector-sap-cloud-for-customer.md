@@ -44,8 +44,8 @@ As propriedades a seguir são compatíveis com o serviço vinculado SAP Cloud fo
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **SapCloudForCustomer**. | Sim |
 | url | A URL do serviço SAP C4C OData. | Sim |
-| Nome de Usuário | Especifique o nome de usuário para se conectar ao SAP C4C. | Sim |
-| Senha | Especifique a senha da conta de usuário que você especificou para o nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
+| username | Especifique o nome de usuário para se conectar ao SAP C4C. | Sim |
+| password | Especifique a senha da conta de usuário que você especificou para o nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
 | connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Se não for especificado, ele usa o Integration Runtime padrão do Azure. | Não para fonte, Sim para o coletor |
 
 >[!IMPORTANT]
@@ -83,7 +83,7 @@ Para copiar dados do SAP Cloud for Customer, defina a propriedade type do conjun
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | type | A propriedade type do conjunto de dados deve ser definida como: **SapCloudForCustomerResource** |Sim |
-| caminho | Especifique o caminho da entidade SAP C4C OData. |Sim |
+| path | Especifique o caminho da entidade SAP C4C OData. |Sim |
 
 **Exemplo:**
 
