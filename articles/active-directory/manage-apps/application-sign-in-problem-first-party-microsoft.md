@@ -3,8 +3,8 @@ title: Problemas ao entrar em um aplicativo Microsoft | Microsoft Docs
 description: Solucionar problemas comuns enfrentados ao entrar em aplicativos primários da Microsoft usando o Azure AD (como o Office 365)
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/10/2018
-ms.author: celested
+ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 256ca5c2f26a6bac6bdfd09e4dd6294ec5a569ca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 26acb32828ae4829b3da5c3a1181dbde19b23d05
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60292190"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65825226"
 ---
 # <a name="problems-signing-in-to-a-microsoft-application"></a>Problemas ao entrar em um aplicativo Microsoft
 
@@ -205,7 +205,7 @@ Para verificar o status da Autenticação Multifator de um usuário, siga estas 
 
 9. Selecione o usuário na lista de usuários e **Habilite**, **Desabilite** ou **Imponha** a autenticação multifator conforme o desejado.
 
-   * **Observação**: Se um usuário estiver em um estado Imposto, defina-o temporariamente como **Desabilitado** para deixá-lo entrar novamente na conta. Quando ele puder entrar novamente, altere novamente o estado para **Habilitado** para exigir o novo registro de suas informações de contato durante o próximo logon. Como alternativa, execute as etapas em [Verificar as informações de contato de autenticação do usuário](#check-a-users-authentication-contact-info) para verificar ou definir esses dados para eles.
+   * **Observação**: Se um usuário estiver em um estado **Imposto**, defina-o temporariamente como **Desabilitado** para deixá-lo entrar novamente na conta. Quando ele puder entrar novamente, altere novamente o estado para **Habilitado** para exigir o novo registro de suas informações de contato durante o próximo logon. Como alternativa, execute as etapas em [Verificar as informações de contato de autenticação do usuário](#check-a-users-authentication-contact-info) para verificar ou definir esses dados para eles.
 
 ### <a name="check-a-users-authentication-contact-info"></a>Verificar as informações de contato de autenticação de um usuário
 
@@ -435,7 +435,7 @@ Para verificar ou validar uma política de acesso condicional única:
 
 6. clique na política que você pretende inspecionar.
 
-7. Analise se não há condições, atribuições ou outras configurações específicas que podem estar bloqueando o acesso do usuário.
+7. Revisão do que há não há condições específicas, atribuições ou outras configurações que possam estar bloqueando o acesso do usuário.
 
    >[!NOTE]
    >Talvez você queira desabilitar temporariamente essa política para garantir que ela não está afetando entradas. Para fazer isso, defina a alternância **Habilitar política** para **Não** e clique no botão **Salvar**.
@@ -456,7 +456,7 @@ Para verificar ou validar uma política de acesso condicional configurada atualm
 
 5.  clique em **Todos os aplicativos**.
 
-6.  Procure o aplicativo de seu interesse, o usuário que está tentando entrar pelo nome de exibição do aplicativo ou ID do aplicativo.
+6.  Procure o aplicativo que você está interessado, ou o usuário está tentando entrar pelo aplicativo exibir ID ou nome de aplicativo.
 
      >[!NOTE]
      >Se você não encontrar o aplicativo que está procurando, clique no botão **Filtrar** e expanda o escopo da lista para **Todos os aplicativos**. Se você quiser ver mais colunas, clique no botão **Colunas** para adicionar detalhes complementares a seus aplicativos.
@@ -528,6 +528,6 @@ O acesso do aplicativo pode ser bloqueado porque a operação de consentimento d
 
 -   É possível impor que esse consentimento de nível de administrador ocorra, seguindo as instruções na seção **Solicitar permissões de um administrador de diretório** de [Usando o ponto de extremidade de consentimento do administrado](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes#using-the-admin-consent-endpoint).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 [Usando o ponto de extremidade de consentimento do administrador](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes#using-the-admin-consent-endpoint)
 

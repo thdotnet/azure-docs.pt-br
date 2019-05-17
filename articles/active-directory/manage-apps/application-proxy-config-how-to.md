@@ -1,10 +1,10 @@
 ---
 title: Como configurar um aplicativo de Application Proxy| Microsoft Docs
-description: Saiba como criar e configurar um aplicativo de Application Proxy em poucas etapas simples
+description: Saiba como criar e configurar um aplicativo de application Proxy em poucas etapas simples
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/18/2018
-ms.author: celested
+ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95f22f064043467bf52c23cab547a7e6c8ba2205
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fc9287aac567c8989564094564b92b82662e603f
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60443159"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65825927"
 ---
 # <a name="how-to-configure-an-application-proxy-application"></a>Como configurar um aplicativo de Application Proxy
 
-Este artigo o ajudará a compreender como configurar um aplicativo de Application Proxy no Azure AD para expor seus aplicativos locais para a nuvem.
+Este artigo ajuda você a entender como configurar um aplicativo de Proxy de aplicativo no Azure AD para expor seus aplicativos locais para a nuvem.
 
 ## <a name="recommended-documents"></a>Documentos recomendados 
 
@@ -49,7 +49,7 @@ Se você estiver seguindo as etapas na documentação [publicar aplicativos usan
 
 -   A URL deve ser um nome de domínio, não um endereço IP
 
-A mensagem de erro deve ser exibida no canto superior direito ao criar o aplicativo. Você também pode selecionar o ícone de notificação para ver as mensagens de erro.
+A mensagem de erro deve exibir no canto superior direito, quando você cria o aplicativo. Você também pode selecionar o ícone de notificação para ver as mensagens de erro.
 
    ![Prompt de notificação](./media/application-proxy-config-how-to/error-message.png)
 
@@ -71,7 +71,7 @@ Se você estiver encontrando problemas ao carregar o certificado, procure as men
 
 -   Certificado está sem a chave privada
 
-A mensagem de erro é exibida no canto superior direito ao tentar carregar o certificado. Você também pode selecionar o ícone de notificação para ver as mensagens de erro.
+A mensagem de erro exibida no canto superior direito ao tentar carregar o certificado. Você também pode selecionar o ícone de notificação para ver as mensagens de erro.
 
    ![Prompt de notificação](./media/application-proxy-config-how-to/error-message2.png)
 

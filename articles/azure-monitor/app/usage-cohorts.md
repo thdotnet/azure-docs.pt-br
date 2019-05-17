@@ -13,12 +13,12 @@ ms.date: 04/10/2018
 ms.reviewer: mbullwin
 ms.pm_owner: daviste;NumberByColors
 ms.author: daviste
-ms.openlocfilehash: a575161be0a339973f9c59cc13c2320b38939d04
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 263316028e7b35a1a515322dddc4ee867011dcac
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60785028"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604109"
 ---
 # <a name="application-insights-cohorts"></a>Coortes do Application Insights
 
@@ -123,13 +123,13 @@ As duas coortes anteriores foram definidas usando caixas suspensas. Mas você ta
     | where client_CountryOrRegion == "United Kingdom"
     ```
 
-3. Selecione **Executar Consulta**. Se as IDs de usuário não forem exibidas na tabela, altere para um país no qual o aplicativo tenha usuários.
+3. Selecione **Executar Consulta**. Se você não vir as IDs de usuário aparecem na tabela, altere para um país/região em que seu aplicativo tenha usuários.
 
 4. Salve e nomeie a coorte.
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
 
-_Eu defini uma coorte de usuários de um determinado país. Quando comparo essa coorte na ferramenta Usuários apenas para definir um filtro nesse país, vejo resultados diferentes. Por quê?_
+_Eu defini uma coorte de usuários de um determinado país/região. Quando eu comparo esse coorte na ferramenta de usuários para definir apenas um filtro em que país/região, vejo resultados diferentes. Por quê?_
 
 Coortes e filtros são diferentes. Suponha que você tenha uma coorte de usuários do Reino Unido (definidos como o exemplo anterior) e compare os resultados com a configuração do filtro “País ou região = Reino Unido.”
 

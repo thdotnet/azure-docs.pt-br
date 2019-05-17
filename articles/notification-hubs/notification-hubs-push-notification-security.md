@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 2ca3c69178dde830e226812da34917246781c1ee
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 22494984ca45cde7255fb5e1a30548c859bfad68
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65762148"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65826504"
 ---
 # <a name="security-model-of-azure-notification-hubs"></a>Modelo de segurança dos Hubs de Notificação do Azure
 
@@ -51,4 +51,5 @@ Semelhantes a outras entidades, as operações de Hub de notificação são perm
 
 Os hubs de notificação aceitam declarações concedidas pelos tokens de controle de acesso do Microsoft Azure e por tokens de assinatura gerados com chaves compartilhadas configuradas diretamente no hub de notificação.
 
-Não é possível enviar uma notificação para mais de um namespace. Namespaces são um contêiner lógico para os hubs de notificação e não estão envolvidos com o envio de notificações. As políticas de acesso de nível de namespace (credenciais) podem ser usadas para operações de nível de namespace, por exemplo: listando os hubs de notificação, criação ou exclusão de hubs de notificação, etc. Somente as políticas de acesso de nível de hub seriam permitem que você envie notificações.
+Não é possível enviar uma notificação para mais de um namespace. Namespaces são um contêiner lógico para os hubs de notificação e não estão envolvidos com o envio de notificações.
+As políticas de acesso de nível de namespace (credenciais) podem ser usadas para operações de nível de namespace, por exemplo: listando os hubs de notificação, criação ou exclusão de hubs de notificação, etc. Somente as políticas de acesso de nível de hub seriam permitem que você envie notificações.

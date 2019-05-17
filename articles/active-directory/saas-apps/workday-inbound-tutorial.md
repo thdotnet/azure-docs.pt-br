@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/19/2019
+ms.date: 05/16/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 267b6afd7cd3131dcd138dfb631335f58cec833a
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 31cf1f6da515aa9b453987383e78f466c5ba4fb9
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407921"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827286"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Tutorial: Configurar o Workday para provisionamento automático do usuário
 
-O objetivo deste tutorial é mostrar as etapas necessárias para importar perfis de trabalho do Workday para o Active Directory e o Azure Active Directory, com write-back opcional de alguns endereços de email para o Workday.
+O objetivo deste tutorial é mostrar as etapas que você precisa executar para importar perfis de trabalho do Workday para Active Directory e o Azure Active Directory, com write-back opcional de endereço de email e nome de usuário para Workday.
 
 ## <a name="overview"></a>Visão geral
 
@@ -34,7 +34,7 @@ O [serviço de provisionamento de usuário do Azure Active Directory](../manage-
 
 * **Provisionamento de usuários somente na nuvem para o Azure Active Directory** - Nos cenários em que o Active Directory local não for usado, os usuários poderão ser provisionados diretamente do Workday para o Azure Active Directory usando o serviço de provisionamento de usuário do Microsoft Azure AD.
 
-* **Fazer write-back de endereços de email para Workday** - o serviço de provisionamento de usuário do Microsoft Azure AD pode gravar os endereços de email dos usuários do Microsoft Azure AD de volta no Workday.
+* **Write-back nome de usuário e endereço de email para Workday** -serviço de provisionamento de usuário do Azure AD pode gravar o nome de usuário e endereços de email do AD do Azure novamente para Workday.
 
 ### <a name="what-human-resources-scenarios-does-it-cover"></a>Quais cenários de recursos humanos ele cobre?
 
@@ -67,7 +67,7 @@ Essa solução de provisionamento de usuário do Workday é ideal para:
 Esta seção descreve a arquitetura da solução de provisionamento do usuário de ponta a ponta para ambientes híbridos comuns. Há dois fluxos relacionados:
 
 * **Fluxo de Dados de RH Autoritativo – do Workday para o Active Directory local:** Nesse fluxo, os eventos de trabalho (como Novas Contratações, Transferências, Demissões) ocorrem primeiro no locatário de RH do Workday na nuvem e, em seguida, os dados do evento fluem para o Active Directory local por meio do Azure AD e do Agente de Provisionamento. Dependendo do evento, pode levar a operações de criar/atualizar/habilitar/desabilitar no AD.
-* **Fluxo de Write-Back de Email – do Active Directory local para o Workday:** Depois que a criação da conta for concluída no Active Directory, ela será sincronizada com o Azure AD por meio do Azure AD Connect e o atributo de email originado do Active Directory poderá ser gravado novamente no Workday.
+* **Write-back de nome de usuário e email fluem – do Active Directory local ao Workday:** Quando a criação da conta estiver concluída no Active Directory, ele é sincronizado com o Azure AD por meio do Azure AD Connect e o atributo de email e nome de usuário pode ser gravado de volta ao Workday.
 
 ![Visão geral](./media/workday-inbound-tutorial/wd_overview.png)
 
@@ -79,7 +79,7 @@ Esta seção descreve a arquitetura da solução de provisionamento do usuário 
 4. O Agente de Provisionamento do Azure AD Connect usa uma conta de serviço para adicionar/atualizar dados de conta do AD.
 5. O mecanismo do Azure AD Connect/AD Sync executa uma sincronização delta para efetuar pull das atualizações no AD.
 6. As atualizações do Active Directory são sincronizadas com o Azure Active Directory.
-7. Se o conector de Write-back do Workday estiver configurado, ele fará write-back do atributo de email para o Workday com base no atributo correspondente usado.
+7. Se o conector de write-back de Workday estiver configurado, ele grava de volta o atributo de email e nome de usuário ao Workday, com base no atributo correspondente usado.
 
 ## <a name="planning-your-deployment"></a>Planejamento da implantação
 
@@ -285,7 +285,8 @@ Nesta etapa, você concederá permissões de política de “segurança de domí
    * *Dados do Trabalhador: Todos os Cargos*
    * *Dados do Trabalhador: Informação da Equipe Atual*
    * *Dados do Trabalhador: Título Comercial no Perfil do Trabalhador*
-
+   * *Contas do WORKDAY*
+   
      ![Políticas de Segurança de Domínio](./media/workday-inbound-tutorial/wd_isu_07.png "Políticas de Segurança de Domínio")  
 
      ![Políticas de Segurança de Domínio](./media/workday-inbound-tutorial/wd_isu_08.png "Políticas de Segurança de Domínio") 
@@ -313,6 +314,7 @@ Nesta etapa, você concederá permissões de política de “segurança de domí
    | Obter | Dados do Trabalhador: Todos os Cargos |
    | Obter | Dados do Trabalhador: Informação da Equipe Atual |
    | Obter | Dados do Trabalhador: Título Comercial no Perfil do Trabalhador |
+   | Get e Put | Contas do WORKDAY |
 
 ### <a name="configuring-business-process-security-policy-permissions"></a>Configurar permissões da política de segurança de processo empresarial
 
@@ -369,18 +371,21 @@ Para provisionar no Active Directory local, um agente deverá ser instalado em u
 Após ter implantado o .NET 4.7.1+, você poderá baixar o **[agente de provisionamento local aqui](https://go.microsoft.com/fwlink/?linkid=847801)** e seguir as etapas fornecidas abaixo para concluir a configuração do agente.
 
 1. Entrar para o Windows Server em que você deseja instalar o novo agente.
-2. Inicie o Instalador do Agente de Provisionamento, aceite os termos e clique no botão **Instalar**.
+
+1. Inicie o instalador do agente de provisionamento, aceite os termos e clique no **instalar** botão.
 
    ![Tela Instalar](./media/workday-inbound-tutorial/pa_install_screen_1.png "Tela Instalar")
-3. Após a instalação ser concluída, o assistente será iniciado e você verá a tela **Conectar o Azure AD**. Clique no botão **Autenticar** para se conectar à sua instância do Azure AD.
+   
+1. Após a instalação ser concluída, o assistente será iniciado e você verá a tela **Conectar o Azure AD**. Clique no botão **Autenticar** para se conectar à sua instância do Azure AD.
 
    ![Conectar o Azure AD](./media/workday-inbound-tutorial/pa_install_screen_2.png "Conectar o Azure AD")
+   
 1. Autentique-se na instância do Azure AD usando Credenciais de Administrador Global.
 
    ![Autenticação de Administrador](./media/workday-inbound-tutorial/pa_install_screen_3.png "Autenticação de Administrador")
 
-> [!NOTE]
-> As credenciais de administrador do AD do Azure são usadas apenas para se conectar ao seu locatário do Azure AD. O agente não armazena as credenciais localmente no servidor.
+   > [!NOTE]
+   > As credenciais de administrador do AD do Azure são usadas apenas para se conectar ao seu locatário do Azure AD. O agente não armazena as credenciais localmente no servidor.
 
 1. Após a autenticação bem-sucedida no Azure AD, você verá a tela **Conectar o Active Directory**. Nesta etapa, insira seu nome de domínio do AD e clique no botão **Adicionar Diretório**.
 
@@ -389,21 +394,27 @@ Após ter implantado o .NET 4.7.1+, você poderá baixar o **[agente de provisio
 1. Agora, será solicitado que você insira as credenciais necessárias para se conectar ao domínio do AD. Na mesma tela, você pode usar **Selecionar prioridade do controlador de domínio** para especificar os controladores de domínio que o agente deve usar para enviar solicitações de provisionamento.
 
    ![Credenciais do domínio](./media/workday-inbound-tutorial/pa_install_screen_5.png)
+   
 1. Depois de configurar o domínio, o instalador exibe uma lista de domínios configurados. Nessa tela, você pode repetir as etapas 5 e 6 para adicionar mais domínios ou clicar em **Avançar** para prosseguir para o registro do agente.
 
    ![Domínios Configurados](./media/workday-inbound-tutorial/pa_install_screen_6.png "Domínios Configurados")
 
    > [!NOTE]
-   > Se você tiver vários domínios do AD (por exemplo, na.contoso.com, emea.contoso.com), adicione cada domínio individualmente à lista. Não é suficiente apenas adicionar o domínio pai (por exemplo, contoso.com). Você deve registrar cada domínio filho com o agente.
+   > Se você tiver vários domínios do AD (por exemplo, na.contoso.com, emea.contoso.com), adicione cada domínio individualmente à lista.
+   > Não é suficiente apenas adicionar o domínio pai (por exemplo, contoso.com). Você deve registrar cada domínio filho com o agente.
+   
 1. Examine os detalhes de configuração e clique em **Confirmar** para registrar o agente.
   
    ![Tela Confirmar](./media/workday-inbound-tutorial/pa_install_screen_7.png "Tela Confirmar")
+   
 1. O assistente de configuração exibe o progresso do registro do agente.
   
    ![Registro do Agente](./media/workday-inbound-tutorial/pa_install_screen_8.png "Registro do Agente")
+   
 1. Depois que o registro do agente for bem-sucedido, você poderá clicar em **Sair** para sair do Assistente.
   
    ![Tela Sair](./media/workday-inbound-tutorial/pa_install_screen_9.png "Tela Sair")
+   
 1. Verifique a instalação do Agente e certifique-se de que ele esteja em execução abrindo o Snap-In de “Serviços” e procurando pelo Serviço chamado “Agente de Provisionamento do Microsoft Azure AD Connect”
   
    ![Serviços](./media/workday-inbound-tutorial/services.png)
@@ -438,13 +449,14 @@ Após ter implantado o .NET 4.7.1+, você poderá baixar o **[agente de provisio
 
    * **Contêiner do Active Directory –** insira o DN do contêiner em que o agente deve criar contas de usuário por padrão.
         Exemplo: *OU=Standard Users,OU=Users,DC=contoso,DC=test*
+        
      > [!NOTE]
      > Essa configuração só entra em vigor para criações de contas de usuário quando o atributo *parentDistinguishedName* não está configurado nos mapeamentos de atributo. Essa configuração não é usada para operações de atualização e pesquisa de usuários. A subárvore de todo o domínio se enquadra no escopo da operação de pesquisa.
 
    * **Email de notificação –** digite seu endereço de email e marque a caixa de seleção “enviar email se ocorrer falha”.
 
-> [!NOTE]
-> O Serviço de Provisionamento do Azure AD envia uma notificação por email quando o trabalho de provisionamento entra no estado de [quarentena](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning#quarantine).
+     > [!NOTE]
+     > O Serviço de Provisionamento do Azure AD envia uma notificação por email quando o trabalho de provisionamento entra no estado de [quarentena](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning#quarantine).
 
    * Clique no botão **Conexão de Teste**. Se o teste de conexão for bem-sucedido, clique no botão **Salvar** na parte superior. Se ele falhar, verifique se as credenciais do Workday e as credenciais do AD configuradas na instalação de agente são válidas.
 
@@ -458,7 +470,7 @@ Nesta seção, você irá configurar o fluxo de dados de usuário do Workday par
 
 1. Na guia Provisionamento, em **Mapeamentos**, clique em **Sincronizar trabalhadores do Workday com o Active Directory local**.
 
-2. No campo **Escopo do objeto de origem** é possível selecionar quais conjuntos de usuários no Workday devem estar no escopo de provisionamento para AD, definindo um conjunto de filtros baseados em atributo. O escopo padrão é "todos os usuários no Workday". Filtros de exemplo:
+1. No campo **Escopo do objeto de origem** é possível selecionar quais conjuntos de usuários no Workday devem estar no escopo de provisionamento para AD, definindo um conjunto de filtros baseados em atributo. O escopo padrão é "todos os usuários no Workday". Filtros de exemplo:
 
    * Exemplo: Escopo para usuários com IDs de trabalho entre 1000000 e 2000000 (exceto 2000000)
 
@@ -474,8 +486,8 @@ Nesta seção, você irá configurar o fluxo de dados de usuário do Workday par
 
       * Operador: IS NOT NULL
 
-> [!TIP]
-> Quando você estiver configurando o aplicativo de provisionamento de aplicativo pela primeira vez, você precisará testar e verificar seus mapeamentos de atributo e expressões para certificar-se de que ele está dando a você o resultado desejado. A Microsoft recomenda usar os filtros de escopo sob **Escopo do objeto de origem** para testar seus mapeamentos com alguns usuários de teste do Workday. Após ter verificado que os mapeamentos funcionam, você pode remover o filtro ou expandi-lo gradualmente para incluir mais usuários.
+   > [!TIP]
+   > Quando você estiver configurando o aplicativo de provisionamento de aplicativo pela primeira vez, você precisará testar e verificar seus mapeamentos de atributo e expressões para certificar-se de que ele está dando a você o resultado desejado. A Microsoft recomenda usar os filtros de escopo sob **Escopo do objeto de origem** para testar seus mapeamentos com alguns usuários de teste do Workday. Após ter verificado que os mapeamentos funcionam, você pode remover o filtro ou expandi-lo gradualmente para incluir mais usuários.
 
 1. No campo **Ações do objeto de destino** é possível filtrar globalmente quais ações são executadas no Active Directory. **Criar** e **Atualizar** são as mais comuns.
 
@@ -649,9 +661,9 @@ Nesta seção, você irá configurar o fluxo dos dados do usuário do Workday pa
 
 Uma vez concluída a configuração do mapeamento de atributo, você pode agora [habilitar e iniciar o serviço de provisionamento de usuário](#enable-and-launch-user-provisioning).
 
-## <a name="configuring-writeback-of-email-addresses-to-workday"></a>Configurando write-back de endereços de email para Workday
+## <a name="configuring-azure-ad-attribute-writeback-to-workday"></a>Configurar write-back de atributo do Azure AD ao Workday
 
-Siga essas instruções para configurar o write-back de endereços de email do usuário do Azure Active Directory para Workday.
+Siga estas instruções para configurar o write-back de endereços de email do usuário e o nome de usuário do Azure Active Directory para Workday.
 
 * [Adicionar o aplicativo conector de write-back e criar a conexão com o Workday](#part-1-adding-the-writeback-connector-app-and-creating-the-connection-to-workday)
 * [Configurar mapeamentos de atributos de write-back](#part-2-configure-writeback-attribute-mappings)
@@ -689,7 +701,7 @@ Siga essas instruções para configurar o write-back de endereços de email do u
 
 ### <a name="part-2-configure-writeback-attribute-mappings"></a>Parte 2: Configurar mapeamentos de atributos de write-back
 
-Nesta seção, você irá configurar como os atributos de write-back fluem do Azure AD para o Workday.
+Nesta seção, você irá configurar como os atributos de write-back fluem do Azure AD para o Workday. No momento, o conector só dá suporte a write-back do endereço de email e nome de usuário para Workday.
 
 1. Na guia Provisionamento em **Mapeamentos**, clique em **Sincronizar usuários do Azure Active Directory para Workday**.
 
@@ -697,9 +709,9 @@ Nesta seção, você irá configurar como os atributos de write-back fluem do Az
 
 3. Na seção **Mapeamentos de atributo**, atualize a ID correspondente para indicar o atributo no Azure Active Directory em que a ID de trabalho do Workday ou a ID de funcionário é armazenada. Um método de correspondência popular é sincronizar o ID de Trabalho do Workday ou o ID de Funcionário para extensionAttribute1-15 no Azure AD e, em seguida, utilizar esse atributo no Azure AD para corresponder os usuários no Workday.
 
-4. Para salvar seus mapeamentos, clique em **Salvar** na parte superior da seção Mapeamento de Atributos.
+4. Normalmente você pode mapear o Azure AD *userPrincipalName* atributo WORKDAY *UserID* de atributos e mapear o Azure AD *mail* atributo para o Workday  *EmailAddress* atributo. Para salvar seus mapeamentos, clique em **Salvar** na parte superior da seção Mapeamento de Atributos.
 
-Uma vez concluída a configuração do mapeamento de atributo, você pode agora [habilitar e iniciar o serviço de provisionamento de usuário](#enable-and-launch-user-provisioning). 
+Uma vez concluída a configuração do mapeamento de atributo, você pode agora [habilitar e iniciar o serviço de provisionamento de usuário](#enable-and-launch-user-provisioning).
 
 ## <a name="enable-and-launch-user-provisioning"></a>Habilitar e iniciar o provisionamento de usuário
 
@@ -782,6 +794,7 @@ Atualmente, a solução usa as seguintes APIs do Workday:
 
 * Get_Workers (v21.1) para buscar informações de trabalho
 * Maintain_Contact_Information (v26.1) para o recurso de write-back de email de trabalho
+* Update_Workday_Account (v31.2) para o recurso de Username Writeback
 
 #### <a name="can-i-configure-my-workday-hcm-tenant-with-two-azure-ad-tenants"></a>Posso configurar meu locatário do HCM do Workday com dois locatários do Azure AD?
 
@@ -952,7 +965,6 @@ Aqui está como você pode lidar com tais requisitos para construir *CN* ou *dis
 
 * Cada atributo do Workday é recuperado usando uma expressão de API XPATH subjacente, que pode ser configurada em **Mapeamento de Atributos -> Seção Avançada -> Editar lista de atributos para Workday**. Aqui está a expressão de API padrão do XPATH para os atributos *PreferredFirstName*, *PreferredLastName*, *empresa* e *SupervisoryOrganization* do Workday.
 
-     [!div class="mx-tdCol2BreakAll"]
      | Atributo do Workday | Expressão XPATH da API |
      | ----------------- | -------------------- |
      | PreferredFirstName | wd:Worker/wd:Worker_Data/wd:Personal_Data/wd:Name_Data/wd:Preferred_Name_Data/wd:Name_Detail_Data/wd:First_Name/text() |
@@ -1008,7 +1020,7 @@ Digamos que você deseja gerar valores exclusivos para o atributo *samAccountNam
 SelectUniqueValue(
     Replace(Mid(Replace(NormalizeDiacritics(StripSpaces(Join("",  Mid([FirstName],1,1), [LastName]))), , "([\\/\\\\\\[\\]\\:\\;\\|\\=\\,\\+\\*\\?\\<\\>])", , "", , ), 1, 20), , "(\\.)*$", , "", , ),
     Replace(Mid(Replace(NormalizeDiacritics(StripSpaces(Join("",  Mid([FirstName],1,2), [LastName]))), , "([\\/\\\\\\[\\]\\:\\;\\|\\=\\,\\+\\*\\?\\<\\>])", , "", , ), 1, 20), , "(\\.)*$", , "", , ),
-    Replace(Mid(Replace(NormalizeDiacritics(StripSpaces(Join("",  Mid([FirstName],1,3), [LastName]))), , "([\\/\\\\\\[\\]\\:\\;\\|\\=\\,\\+\\*\\?\\<\\>])", , "", , ), 1, 20), , "(\\.)*$", , "", , ),
+    Replace(Mid(Replace(NormalizeDiacritics(StripSpaces(Join("",  Mid([FirstName],1,3), [LastName]))), , "([\\/\\\\\\[\\]\\:\\;\\|\\=\\,\\+\\*\\?\\<\\>])", , "", , ), 1, 20), , "(\\.)*$", , "", , )
 )
 ```
 
@@ -1236,7 +1248,7 @@ Para fazer essa alteração, você deve usar o [Workday Studio](https://communit
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
-    <env:Envelope xmlns:env="https://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="https://www.w3.org/2001/XMLSchema">
+    <env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="https://www.w3.org/2001/XMLSchema">
       <env:Body>
         <wd:Get_Workers_Request xmlns:wd="urn:com.workday/bsvc" wd:version="v21.1">
           <wd:Request_References wd:Skip_Non_Existing_Instances="true">

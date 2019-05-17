@@ -3,8 +3,8 @@ title: Usar restrições de locatário para gerenciar o acesso ao SaaS na nuvem 
 description: Como usar restrições de locatário para gerenciar quais usuários podem acessar aplicativos com base em seu locatário do AD do Azure.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/28/2019
-ms.author: celested
+ms.author: mimart
 ms.reviewer: richagi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa4eeb0a21525d636c7c1193c125d525774fa3fe
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 4a340663a1ec4ddf748c6dc2bc3a4e2ce0c4228e
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64707181"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65824392"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Usar restrições de locatário para gerenciar o acesso a aplicativos de nuvem de SaaS
 
@@ -32,7 +32,7 @@ As restrições de locatário, as organizações podem especificar a lista de lo
 
 Este artigo se concentra em restrições de locatário para o Office 365, mas o recurso deve funcionar com qualquer aplicativo de nuvem de SaaS que usa protocolos de autenticação moderna com o Azure AD para logon único. Se você usar aplicativos de SaaS com um locatário do Azure AD diferente do usado pelo Office 365, certifique-se de que todos os locatários necessários sejam permitidos. Para obter mais informações sobre os aplicativos de nuvem de SaaS, consulte o [Marketplace do Active Directory](https://azure.microsoft.com/marketplace/active-directory/).
 
-## <a name="how-it-works"></a>Como ele funciona
+## <a name="how-it-works"></a>Como funciona
 
 A solução geral inclui os seguintes componentes:
 
@@ -136,7 +136,7 @@ Outlook e Skype para clientes de negócios que suportam autenticação moderna a
 
 Para o Outlook no Windows, os clientes podem optar por implementar restrições que impedem que os usuários finais adicionem contas de email não aprovadas aos seus perfis. Por exemplo, consulte a configuração da política de grupo [Prevent adding non-default Exchange accounts](https://gpsearch.azurewebsites.net/default.aspx?ref=1) (Impedir a adição de contas do Exchange não padrão).
 
-## <a name="testing"></a>Testando
+## <a name="testing"></a>Testes
 
 Se você quiser experimentar as restrições de locatário antes de implementá-lo para toda a organização, você tem duas opções: uma abordagem baseada em host usando uma ferramenta como o Fiddler ou uma distribuição em etapas das configurações de proxy.
 
@@ -166,7 +166,7 @@ O Fiddler é um proxy de depuração da Web gratuito que pode ser usado para cap
       }
       ```
 
-      Se você precisar permitir vários locatários, use uma vírgula para separar os nomes de locatário. Por exemplo: 
+      Se você precisar permitir vários locatários, use uma vírgula para separar os nomes de locatário. Por exemplo:
 
       `oSession.oRequest["Restrict-Access-To-Tenants"] = "contoso.onmicrosoft.com,fabrikam.onmicrosoft.com";`
 

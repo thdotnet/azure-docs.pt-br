@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: ff291bda87ca4b2b4055e36989b035cf410b3b0f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 082abd89cd84fc34180f333b54664d7dddfa0ccf
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60744210"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65561204"
 ---
 # <a name="describing-a-service-fabric-cluster"></a>Descrevendo um cluster do Service Fabric
 O Gerenciador de Recursos de Cluster do Service Fabric fornece vários mecanismos para descrever um cluster. Durante o tempo de execução, o Cluster Resource Manager usa essas informações para garantir a alta disponibilidade dos serviços executados no cluster. Ao aplicar essas regras importantes, ele também tenta otimizar o consumo de recursos dentro do cluster.
@@ -32,8 +32,8 @@ Os recursos do Gerenciador de Recursos de Cluster oferecem suporte a vários rec
 * Propriedades de nó
 * Capacidades de nó
 
-## <a name="fault-domains"></a>Domínios de falha
-Um domínio de falha é qualquer área da falha coordenada. Um único computador é um domínio de falha (já que ele pode falhar sozinho por vários motivos diferentes, desde falhas de fornecimento de energia até falhas de unidade devido a firmware NIC inválido). Computadores conectados ao mesmo comutador Ethernet estão no mesmo domínio de falha, assim como computadores que compartilham uma única fonte de alimentação ou em um único local. Uma vez que é natural que essas falhas de hardware se sobreponham, os domínios de falha são hierárquicos por natureza e são representados como URIs no Service Fabric.
+## <a name="fault-domains"></a>Domínios com falha
+Um domínio de falha é qualquer área da falha coordenada. Um único computador é um domínio de falha (já que ele pode falhar sozinho por vários motivos diferentes, desde falhas de fornecimento de energia até falhas de unidade devido a firmware NIC inválido). Computadores conectados ao mesmo comutador Ethernet estão no mesmo domínio de falha, assim como computadores que compartilham uma única fonte de alimentação ou em um único local. Uma vez que é natural para falhas de hardware se sobreponham, os domínios de falha são hierárquicos por natureza e são representados como URIs no Service Fabric.
 
 É importante que os domínios de falha sejam definidos corretamente uma vez que o Service Fabric usa essas informações para posicionar os serviços com segurança. O Service Fabric não quer posicionar os serviços de modo que a perda de um domínio de falha (causada pela falha de algum componente) faça com que os serviços fiquem inativos. No ambiente do Azure, o Service Fabric usa as informações do domínio de falha fornecidas pelo ambiente para configurar corretamente os nós no cluster em seu nome. Para o Service Fabric Autônomo, os Domínios de Falha são definidos no momento em que o cluster é configurado 
 
@@ -95,13 +95,17 @@ Não há um limite real para o número total de domínios de falha ou de atualiz
 ![Layouts de falha e domínio de atualização][Image4]
 </center>
 
-Não existe uma solução ideal sobre qual layout deve ser escolhido. Cada um deles tem prós e contras. Por exemplo, o modelo de 1FD:1UD é simples de configurar. O modelo de um domínio de atualização por nó é mais parecido com o modelo a que a maioria das pessoas estão acostumadas. Durante atualizações, cada nó é atualizado de forma independente. Isso é semelhante à forma como pequenos conjuntos de computadores eram atualizados manualmente no passado. 
+Não existe uma solução ideal sobre qual layout deve ser escolhido. Cada um deles tem prós e contras. Por exemplo, o modelo de 1FD:1UD é simples de configurar. O modelo de um domínio de atualização por nó é mais parecido com o modelo a que a maioria das pessoas estão acostumadas. Durante atualizações, cada nó é atualizado de forma independente. Isso é semelhante à forma como pequenos conjuntos de computadores eram atualizados manualmente no passado.
 
 O modelo mais comum é a matriz de FD/UD, em que os FDs e os UDs formam uma tabela e os nós são posicionados começando ao longo da diagonal. Esse é o modelo usado por padrão nos clusters do Service Fabric no Azure. Para clusters com muitos nós, tudo acaba ficando parecido com o padrão de matriz denso acima.
 
+> [!NOTE]
+> Clusters do Service Fabric hospedados no Azure não têm suporte para alterar a estratégia padrão. Somente os clusters autônomos oferecem essa personalização.
+>
+
 ## <a name="fault-and-upgrade-domain-constraints-and-resulting-behavior"></a>Restrições de domínio de falha e de atualização e o comportamento resultante
 ### <a name="default-approach"></a>*Abordagem padrão*
-Por padrão, o Gerenciador de Recursos de Cluster mantém os serviços balanceados entre os Domínios de Falha e de Atualização. Isso é modelado como uma [restrição](service-fabric-cluster-resource-manager-management-integration.md). Os estados de restrição do domínio de falha e de atualização: “Para uma partição de serviço específica, nunca deve haver uma diferença maior que um no número de objetos de serviço (instâncias de serviço sem estado ou réplicas de serviço com estado) entre dois domínios no mesmo nível de hierarquia”. Digamos que essa restrição forneça uma garantia de “diferença máxima”. A restrição de Domínio de Falha e de Atualização impede determinadas movimentações ou disposições que violam a regra mencionada acima. 
+Por padrão, o Gerenciador de Recursos de Cluster mantém os serviços balanceados entre os Domínios de Falha e de Atualização. Isso é modelado como uma [restrição](service-fabric-cluster-resource-manager-management-integration.md). Os estados de restrição do domínio de falha e de atualização: “Para uma partição de serviço específica, nunca deve haver uma diferença maior que um no número de objetos de serviço (instâncias de serviço sem estado ou réplicas de serviço com estado) entre dois domínios no mesmo nível de hierarquia”. Digamos que essa restrição forneça uma garantia de “diferença máxima”. A restrição de Domínio de Falha e de Atualização impede determinadas movimentações ou disposições que violam a regra mencionada acima.
 
 Vejamos um exemplo. Digamos que temos um cluster com seis nós, configurados com cinco domínios de falha e cinco domínios de atualização.
 
@@ -339,7 +343,7 @@ por meio de ClusterConfig.json para implantações autônomas
 >
 
 ## <a name="node-properties-and-placement-constraints"></a>Restrições de posicionamento e propriedades do nó
-Às vezes (na verdade, na maioria das vezes), convém assegurar que determinadas cargas de trabalho sejam executadas apenas em alguns tipos de nós no cluster. Por exemplo, algumas cargas de trabalho podem exigir GPUs ou SSDs, enquanto outras, não. Um ótimo exemplo de direcionamento de hardware para cargas de trabalho específicas é praticamente toda arquitetura de n camadas por aí. Determinados computadores servem como o lado de serviço de front-end ou API do aplicativo e, portanto, são expostos aos clientes ou à Internet. Diferentes computadores, normalmente com recursos de hardware diferentes, lidam com o trabalho das camadas de computação ou armazenamento. Normalmente, eles _não_ são expostos diretamente a clientes ou à Internet. O Service Fabric espera que haja casos em que cargas de trabalho específicas precisem ser executadas em configurações de hardware específicas. Por exemplo: 
+Às vezes (na verdade, na maioria das vezes), convém assegurar que determinadas cargas de trabalho sejam executadas apenas em alguns tipos de nós no cluster. Por exemplo, algumas cargas de trabalho podem exigir GPUs ou SSDs, enquanto outras, não. Um ótimo exemplo de direcionamento de hardware para cargas de trabalho específicas é praticamente toda arquitetura de n camadas por aí. Determinados computadores servem como o lado de serviço de front-end ou API do aplicativo e, portanto, são expostos aos clientes ou à Internet. Diferentes computadores, normalmente com recursos de hardware diferentes, lidam com o trabalho das camadas de computação ou armazenamento. Normalmente, eles _não_ são expostos diretamente a clientes ou à Internet. O Service Fabric espera que haja casos em que cargas de trabalho específicas precisem ser executadas em configurações de hardware específicas. Por exemplo:
 
 * um aplicativo de n camadas existente foi "transferido e posicionado" em um ambiente do Service Fabric
 * uma carga de trabalho deseja ser executada em um hardware específico por motivos de desempenho, escala ou isolamento de segurança

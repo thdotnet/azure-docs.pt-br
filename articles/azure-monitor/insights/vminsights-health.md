@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/12/2019
 ms.author: magoedte
-ms.openlocfilehash: f2a0d64da5a88e82c0ae1fd893af52f2070268f8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 45c9a8da8344aa6aaaa19b534451a7276e96911a
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60402010"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522183"
 ---
 # <a name="understand-the-health-of-your-azure-virtual-machines"></a>Entender a integridade de suas máquinas virtuais do Azure
 
@@ -28,13 +28,13 @@ Exibir o estado geral de integridade da VM do Azure e do sistema operacional sub
 
 Este artigo ajudará você a entender como avaliar, investigar e resolver rapidamente os problemas de integridade detectados.
 
-Para obter informações sobre como configurar o Monitor do Azure para VMs, consulte [Ativar o Monitor do Azure para VMs](vminsights-onboard.md).
+Para obter informações sobre como configurar o Monitor do Azure para VMs, consulte [Ativar o Monitor do Azure para VMs](vminsights-enable-overview.md).
 
 ## <a name="monitoring-configuration-details"></a>Detalhes de configuração de monitoramento
 
 Esta seção descreve os critérios de integridade padrão definidos para monitorar as máquinas virtuais do Windows e Linux do Azure. Todos os critérios de integridade são pré-configurados para o alerta quando a condição não íntegra é atendida. 
 
-### <a name="windows-vms"></a>VMs Windows
+### <a name="windows-vms"></a>VMs do Windows
 
 - Megabytes Disponíveis de Memória 
 - Média de Segundos de Disco por Gravação (Disco Lógico)
@@ -65,7 +65,7 @@ Esta seção descreve os critérios de integridade padrão definidos para monito
 - Integridade de serviço de Firewall do Windows
 - Integridade de serviço de gerenciamento remoto do Windows
 
-### <a name="linux-vms"></a>VMs Linux
+### <a name="linux-vms"></a>VMs do Linux
 - Disk Avg. de segundos/Transferência do Disco 
 - Disk Avg. de segundos/Leitura do Disco 
 - Disk Avg. de segundos/Gravação do Disco 
@@ -95,10 +95,10 @@ Na guia **Integridade**, na seção **Integridade Convidada da VM**, a tabela mo
 
 Os estados de integridade definidos para uma VM estão descritos na seguinte tabela: 
 
-|ícone |Estado de integridade |Significado |
+|Ícone |Estado de integridade |Significado |
 |-----|-------------|------------|
-| |Healthy |O estado de integridade é íntegro se está dentro das condições de integridade definidas, que indicam ausência de problemas detectados na VM e que ela funciona conforme necessário. Com um monitor de acumulação pai, o Rollup de integridade e ele reflete o estado mais favorável, ou pior do filho.|
-| |Crítico |O estado de integridade é crítico se ele não está dentro da condição de integridade definida, o que indica que um ou mais problemas críticos foram detectados e precisam ser resolvidos para restaurar a funcionalidade normal. Com um monitor de acumulação pai, o Rollup de integridade e ele reflete o estado mais favorável, ou pior do filho.|
+| |Adequado |O estado de integridade é íntegro se está dentro das condições de integridade definidas, que indicam ausência de problemas detectados na VM e que ela funciona conforme necessário. Com um monitor de acumulação pai, o Rollup de integridade e ele reflete o estado mais favorável, ou pior do filho.|
+| |Crítica |O estado de integridade é crítico se ele não está dentro da condição de integridade definida, o que indica que um ou mais problemas críticos foram detectados e precisam ser resolvidos para restaurar a funcionalidade normal. Com um monitor de acumulação pai, o Rollup de integridade e ele reflete o estado mais favorável, ou pior do filho.|
 | |Aviso |O estado de integridade será de Aviso se estiver entre dois limites para a condição de integridade definida, em que um indica um estado de *Aviso* e o outro indica um estado *Crítico* (três limites de estado de integridade podem ser configurados), ou quando um problema não crítico é detectado, podendo vir a causar problemas críticos se não for resolvido. Com rollup pai monitor, se um ou mais filhos estão em um estado de aviso, em seguida, o pai refletirá *aviso* estado. Se houver um filho que esteja em um *Crítico* e outro filho em um estado *Aviso*, o pacote pai mostrará um estado de integridade de *Crítico*.|
 | |Desconhecido |O estado de integridade está em um estado *Desconhecido* quando o estado de integridade não pode ser calculado por vários motivos, como não conseguir coletar dados, serviço não inicializado, etc. Esse estado de integridade não é configurável.| 
 
@@ -249,15 +249,15 @@ Alertas de outros tipos de recursos ou serviços não devem ser incluídos nessa
 
 É possível filtrar essa exibição, selecionando valores nos menus suspensos na parte superior da página.
 
-|Coluna |DESCRIÇÃO | 
+|Coluna |Descrição | 
 |-------|------------| 
 |Assinatura |Selecione uma assinatura do Azure. Apenas alertas na assinatura selecionada são incluídos na exibição. | 
 |Grupo de recursos |Selecione um único grupo de recursos. Somente alertas com destinos no grupo de recursos selecionado são incluídos na exibição. | 
 |Tipo de recurso |Selecione um ou mais tipos de recurso. Por padrão, somente os alertas de destino **Máquinas virtuais** estão selecionados e incluídos nessa exibição. Essa coluna somente estará disponível depois que um grupo de recursos for especificado. | 
-|Recurso |Selecione um recurso. Apenas alertas com esse recurso como um destino são incluídos na exibição. Essa coluna somente estará disponível depois que um tipo de recurso for especificado. | 
+|Resource |Selecione um recurso. Apenas alertas com esse recurso como um destino são incluídos na exibição. Essa coluna somente estará disponível depois que um tipo de recurso for especificado. | 
 |Severity |escolha uma gravidade de alerta ou selecione *Tudo* para incluir alertas de todas as gravidades. | 
-|Monitorar condição |Selecione uma condição de monitor para filtrar alertas se eles foram *Disparados* pelo sistema ou *Resolvidos* pelo sistema se a condição não estiver mais ativa. Ou selecione *todos* para incluir alertas de todas as condições. | 
-|Estado de alerta |Selecione um estado de alerta, *Novo*, *Confirme*, *Fechado* ou selecione *Todos* para incluir alertas de todos os estados. | 
+|Condição do Monitor |Selecione uma condição de monitor para filtrar alertas se eles foram *Disparados* pelo sistema ou *Resolvidos* pelo sistema se a condição não estiver mais ativa. Ou selecione *todos* para incluir alertas de todas as condições. | 
+|Estado do alerta |Selecione um estado de alerta, *Novo*, *Confirme*, *Fechado* ou selecione *Todos* para incluir alertas de todos os estados. | 
 |Monitorar serviço |Selecione um serviço ou selecione *Todos* para incluir todos os serviços. Apenas alertas do *VM Insights* são compatíveis com esse recurso.| 
 |Intervalo de tempo| Apenas alertas acionados dentro da janela de tempo selecionada são incluídos na exibição. Os valores com suporte são a última hora, as últimas 24 horas, os últimos 7 dias e os últimos 30 dias. | 
 

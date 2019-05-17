@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/12/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: d067f1af3d5479aef28ddf2290cebe3fe45726b0
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c025c431d826d3a2951a9eb5c09308695e172887
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64733730"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65551217"
 ---
 | Resource | Limite máximo/padrão |
 | --- | --- |
@@ -25,7 +25,7 @@ ms.locfileid: "64733730"
 | Número máximo de rotas para emparelhamento do Microsoft Azure com o padrão do ExpressRoute |200 |
 | Número máximo de rotas para emparelhamento do Microsoft Azure com o complemento ExpressRoute Premium |200 |
 | Número máximo de circuitos do ExpressRoute vinculado à mesma rede virtual no mesmo local de emparelhamento |4 |
-| Número máximo de circuitos do ExpressRoute vinculados à mesma rede virtual em diferentes locais de emparelhamento |> 4, depende do tamanho da GatewaySubnet|
+| Número máximo de circuitos do ExpressRoute vinculados à mesma rede virtual em diferentes locais de emparelhamento |4 |
 | Número de links de rede virtual permitido por circuito do ExpressRoute |Consulte a tabela a seguir. |
 
 #### <a name="number-of-virtual-networks-per-expressroute-circuit"></a>Número de redes virtuais por circuito do ExpressRoute
@@ -39,4 +39,7 @@ ms.locfileid: "64733730"
 | 2 Gbps |10 |60 |
 | 5 Gbps |10 |75 |
 | 10 Gbps |10 |100 |
+| 40 Gbps * |10 |100 |
+| Gbps de 100 * |10 |100 |
 
+* Somente diretos do ExpressRoute

@@ -9,18 +9,18 @@ ms.date: 01/30/2018
 ms.topic: article
 ms.service: storage
 ms.subservice: blobs
-ms.openlocfilehash: b03d7d98fe43eacab63f45ccacd7d8dea9598c8e
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 146b33c1a52838279f000a7f793902e2f35dbfaa
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65142155"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65826488"
 ---
 # <a name="reacting-to-blob-storage-events"></a>Reagir aos eventos de armazenamento de Blobs
 
 Eventos de Armazenamento do Azure permitem que aplicativos reajam à criação e exclusão de blobs usando modernas arquiteturas sem servidor. Isso é feito sem a necessidade de código complicado ou serviços de sondagem caros e ineficientes.  Em vez disso, os eventos são enviados por push pela [Grade de Eventos do Azure](https://azure.microsoft.com/services/event-grid/) aos assinantes como [Azure Functions](https://azure.microsoft.com/services/functions/), [Aplicativos Lógicos do Azure](https://azure.microsoft.com/services/logic-apps/), ou até mesmo seu próprio ouvinte http personalizado, e você só pague pelo que usa.
 
-Eventos de armazenamento de blob confiável são enviados para o serviço de grade de eventos que fornece serviços de entrega confiável para seus aplicativos por meio de políticas de repetição avançadas e entrega de inatividade.
+Eventos de armazenamento de blob confiável são enviados para o serviço de grade de eventos que fornece serviços de entrega confiável para seus aplicativos por meio de políticas de repetição avançadas e entrega de inatividade. Para obter mais informações, consulte [entrega de mensagens da grade de eventos e tente novamente](https://docs.microsoft.com/azure/event-grid/delivery-and-retry).
 
 Os cenários comuns de eventos de armazenamento de Blobs incluem processamento de vídeo ou imagem, indexação de pesquisa ou qualquer fluxo de trabalho orientado a arquivos.  Os carregamentos de arquivo assíncronos são uma excelente opção para eventos.  Quando as alterações não forem frequentes, mas seu cenário exigir uma capacidade de resposta imediata, a arquitetura baseada em eventos pode ser especialmente eficaz.
 
@@ -34,7 +34,7 @@ Os eventos de armazenamento de blobs estão disponíveis nas contas de armazenam
 ## <a name="available-blob-storage-events"></a>Eventos do Armazenamento de Blobs disponíveis
 A Grade de eventos usa [assinaturas de evento](../../event-grid/concepts.md#event-subscriptions) para rotear mensagens de evento para os assinantes.  As assinaturas de evento do armazenamento de blobs podem incluir os dois tipos de eventos:  
 
-> |Nome do evento|DESCRIÇÃO|
+> |Nome do Evento|Descrição|
 > |----------|-----------|
 > |`Microsoft.Storage.BlobCreated`|Acionado quando um blob é criado ou substituído por meio de operações `PutBlob`, `PutBlockList` ou `CopyBlob`|
 > |`Microsoft.Storage.BlobDeleted`|Acionado quando um blob é excluído por meio de uma operação `DeleteBlob`|
@@ -42,16 +42,16 @@ A Grade de eventos usa [assinaturas de evento](../../event-grid/concepts.md#even
 ## <a name="event-schema"></a>Esquema do evento
 Eventos do armazenamento de blobs contêm todas as informações que você precisa para responder às alterações em seus dados.  Você pode identificar um evento do Armazenamento de Blobs porque a propriedade eventType começa com "Microsoft.Storage". Encontre informações adicionais sobre o uso de propriedades de evento da Grade de Eventos em [Esquema de eventos da Grade de Eventos](../../event-grid/event-schema.md).  
 
-> |Propriedade|Type|DESCRIÇÃO|
+> |Propriedade|Type|Descrição|
 > |-------------------|------------------------|-----------------------------------------------------------------------|
 > |topic|string|Id completa do Azure Resource Manager da conta de armazenamento que emite o evento.|
-> |subject|string|O caminho relativo do recurso até o objeto que é o assunto do evento, usando o mesmo formato estendido do Azure Resource Manager que usamos para descrever as contas de armazenamento, serviços e contêineres para o Azure RBAC.  Esse formato inclui um nome de blob que preserva as maiúsculas e minúsculas.|
+> |assunto|string|O caminho relativo do recurso até o objeto que é o assunto do evento, usando o mesmo formato estendido do Azure Resource Manager que usamos para descrever as contas de armazenamento, serviços e contêineres para o Azure RBAC.  Esse formato inclui um nome de blob que preserva as maiúsculas e minúsculas.|
 > |eventTime|string|Data/hora de geração do evento, no formato ISO 8601|
 > |eventType|string|"Microsoft.Storage.BlobCreated" ou "Microsoft.Storage.BlobDeleted"|
 > |ID|string|Identificador exclusivo deste evento|
-> |dataVersion|string|A versão do esquema do objeto de dados.|
+> |dataVersion|string|A versão de esquema do objeto de dados.|
 > |metadataVersion|string|A versão do esquema de propriedades de nível superior.|
-> |data|objeto|Coleta de dados de evento específicos do Armazenamento de Blobs|
+> |dados|objeto|Coleta de dados de evento específicos do Armazenamento de Blobs|
 > |data.contentType|string|O tipo de conteúdo do blob, como seria retornado no cabeçalho Content-Type do blob|
 > |data.contentLength|número|O tamanho do blob como um inteiro que representa um número de bytes, como seria retornado no cabeçalho Content-Length do blob.  Enviado com o evento BlobCreated, mas não com BlobDeleted.|
 > |data.url|string|A url do objeto que é o assunto do evento|

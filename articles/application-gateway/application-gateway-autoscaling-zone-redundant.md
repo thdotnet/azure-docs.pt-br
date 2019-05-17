@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 5/7/2019
+ms.date: 5/16/2019
 ms.author: victorh
-ms.openlocfilehash: dfb5b8b69b2ca9bea118603406f4747036d2641c
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 0da5d8a3eec0faa4001ccf229c6748c253f1b6e5
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510831"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827435"
 ---
 # <a name="autoscaling-and-zone-redundant-application-gateway"></a>Dimensionamento automático e o Gateway de aplicativo com redundância de zona 
 
@@ -62,7 +62,7 @@ Diretrizes de unidade de computação:
 | Standard_v2                                       |    0.20             | 0.0080                          |
 | WAF_v2                                            |    0.36             | 0.0144                          |
 
-O [página de preços](https://azure.microsoft.com/pricing/details/application-gateway/) será atualizada para refletir os preços regionais em 14 de maio de 2019. A cobrança está agendada para iniciar em 1 de junho de 2019.
+Para obter mais informações sobre preços, consulte o [página de preços](https://azure.microsoft.com/pricing/details/application-gateway/). A cobrança está agendada para iniciar em 1 de julho de 2019.
 
 **Exemplo 1**
 
@@ -100,7 +100,7 @@ O [página de preços](https://azure.microsoft.com/pricing/details/application-g
 O Gateway de aplicativo e WAF podem ser configurados para escala em dois modos:
 
 - **Dimensionamento automático** – com o dimensionamento automático habilitado, o Gateway de aplicativo e WAF v2 SKUs escalar ou reduzir verticalmente com base nos requisitos de tráfego do aplicativo. Esse modo oferece melhor elasticidade ao seu aplicativo e elimina a necessidade de adivinhar a contagem de tamanho ou a instância de gateway do aplicativo. Esse modo também permite que você economize ao não exigir a execução de gateways com capacidade de máxima provisionada para a carga de tráfego máximo esperado. Os clientes devem especificar uma contagem de instância, opcionalmente, máximo e mínimo. Capacidade mínima garante que o Gateway de aplicativo e WAF v2 não se enquadram abaixo da contagem mínima de instâncias especificada, mesmo na ausência de tráfego. Você será cobrado por essa capacidade mínima até mesmo na ausência de qualquer tráfego. Você também pode especificar uma contagem máxima de instâncias, que garante que o Gateway de aplicativo não ultrapassará o número especificado de instâncias. Você continuará a ser cobrado pela quantidade de tráfego atendido pelo Gateway. As contagens de instância podem variar de 0 para 125. O valor padrão para a contagem máxima de instâncias é 20, se não especificado.
-- **Manual** – como alternativa, você pode escolher em que o gateway não usa dimensionamento automático de modo Manual. Nesse modo, se houver mais tráfego do que o Gateway de aplicativo ou WAF é capaz de lidar, ele pode resultar em perda de tráfego. Com o modo manual, especificando a contagem de instâncias é obrigatório. Contagem de instâncias pode variar de 1 a instâncias de 125.
+- **Manual** – como alternativa, você pode escolher em que o gateway não usa dimensionamento automático de modo Manual. Nesse modo, se houver mais tráfego do que o que o Gateway de aplicativo ou WAF pode manipular, ele pode resultar em perda de tráfego. Com o modo manual, especificando a contagem de instâncias é obrigatório. Contagem de instâncias pode variar de 1 a instâncias de 125.
 
 ## <a name="feature-comparison-between-v1-sku-and-v2-sku"></a>Comparação de recursos entre o SKU de v1 e v2 SKU
 

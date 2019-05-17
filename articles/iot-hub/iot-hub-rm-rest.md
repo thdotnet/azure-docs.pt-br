@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/08/2017
-ms.openlocfilehash: ca893670e01f4bccc211cd08064b6638e9224a9a
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.openlocfilehash: 6d91f5e61dfd7c3cb4d1869edf0c6cb8c2c85190
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59606779"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827486"
 ---
 # <a name="create-an-iot-hub-using-the-resource-provider-rest-api-net"></a>Criar um Hub IoT usando a API REST do provedor de recursos (.NET)
 
@@ -26,7 +26,7 @@ Você pode usar o [API REST do provedor de recursos do IoT Hub](https://docs.mic
 
 Para concluir este tutorial, você precisará do seguinte:
 
-* Visual Studio 2015 ou Visual Studio 2017.
+* Visual Studio.
 
 * Uma conta ativa do Azure. Se você não tem uma conta, pode criar uma [conta gratuita](https://azure.microsoft.com/pricing/free-trial/) em apenas alguns minutos.
 
@@ -171,7 +171,7 @@ Agora, você pode concluir o aplicativo chamando o método **CreateIoTHub** ante
 > [!NOTE]
 > Este aplicativo de exemplo adiciona um Hub IoT Standard S1 pelo qual você será cobrado. Quando tiver terminado, você pode excluir o hub IoT por meio de [portal do Azure](https://portal.azure.com/) ou usando o **AzResource remover** cmdlet do PowerShell quando tiver terminado.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Agora que você implantou um Hub IoT usando a API REST do provedor de recursos, convém explorar ainda mais:
 

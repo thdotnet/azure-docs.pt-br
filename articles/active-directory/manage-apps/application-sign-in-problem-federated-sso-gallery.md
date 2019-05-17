@@ -3,8 +3,8 @@ title: Problemas ao entrar em um aplicativo na galeria configurado para logon ú
 description: Diretrizes para os erros específicos ao entrar em um aplicativo configurado para o logon único federado baseado em SAML com Azure AD
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/18/2019
-ms.author: celested
+ms.author: mimart
 ms.reviewer: luleon, asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 623d684f701df8b1a7c4b84a2bd3840f039ad174
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1985b7bbcfdaab2aa303f67a9b1d090c85eedd5d
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60292207"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65825204"
 ---
 # <a name="problems-signing-in-to-a-gallery-application-configured-for-federated-single-sign-on"></a>Problemas ao entrar em um aplicativo na galeria configurado para logon único federado
 
@@ -57,7 +57,7 @@ Certifique-se de que o `Issuer` atributo na solicitação SAML corresponde ao va
 
 1.  Selecione o aplicativo para o qual você deseja configurar o logon único.
 
-1.  Depois que o carregamento do aplicativo, abra **configuração SAML básico**. Verifique se o valor na caixa de texto identificador corresponde o valor para o valor do identificador exibido no erro.
+1.  Depois que o aplicativo for carregado, abra **Configuração Básica de SAML**. Verifique se o valor na caixa de texto identificador corresponde o valor para o valor do identificador exibido no erro.
 
 
 
@@ -87,7 +87,7 @@ Certifique-se de que o `AssertionConsumerServiceURL` valor na solicitação SAML
 
 1.  Selecione o aplicativo para o qual você deseja configurar o logon único.
 
-1.  Depois que o carregamento do aplicativo, abra **configuração SAML básico**. Verifique ou atualize o valor na caixa de texto URL de resposta para corresponder a `AssertionConsumerServiceURL` valor na solicitação SAML.    
+1.  Depois que o aplicativo for carregado, abra **Configuração Básica de SAML**. Verifique ou atualize o valor na caixa de texto URL de resposta para corresponder a `AssertionConsumerServiceURL` valor na solicitação SAML.    
     
 Depois que você atualizou o valor de URL de resposta no Azure AD, e ele corresponde ao valor enviado pelo aplicativo na solicitação SAML, você poderá entrar aplicativo.
 
@@ -123,7 +123,7 @@ Para atribuir um ou mais usuários diretamente a um aplicativo, siga as etapas a
 
 1.  Clique no seletor **Usuários e grupos** do painel **Adicionar Atribuição**.
 
-1. No **pesquisar por nome ou endereço de email** caixa de pesquisa, digite o nome completo ou endereço de email do usuário que você deseja adicionar.
+1. Na caixa de pesquisa **Pesquisar por nome ou endereço de email**, digite o nome completo ou o endereço de email do usuário que você deseja adicionar.
 
 1. Passe o mouse sobre o **usuário** na lista para mostrar uma **caixa de seleção**. Clique na caixa de seleção ao lado de foto de perfil do usuário ou o logotipo para adicionar o usuário para o **selecionados** lista.
 
@@ -186,7 +186,7 @@ Certifique-se de que o `Issuer` atributo na solicitação SAML corresponde ao va
 
 1.  Selecione o aplicativo para o qual você deseja configurar o logon único.
 
-1.  Depois que o carregamento do aplicativo, abra **configuração SAML básico**. Verifique se o valor na caixa de texto identificador corresponde o valor para o valor do identificador exibido no erro.
+1.  Depois que o aplicativo for carregado, abra **Configuração Básica de SAML**. Verifique se o valor na caixa de texto identificador corresponde o valor para o valor do identificador exibido no erro.
 
 
 ## <a name="certificate-or-key-not-configured"></a>Chave ou certificado não configurado
@@ -263,7 +263,7 @@ Exclua as URLs de resposta não utilizados, configurados para o aplicativo.
 
 6.  Selecione o aplicativo para o qual você deseja configurar o logon único.
 
-7.  Depois que o carregamento do aplicativo, abra **configuração SAML básico**. No **URL de resposta (URL de serviço do consumidor de declaração)**, delete não utilizado ou URLs de resposta padrão criado pelo sistema. Por exemplo, `https://127.0.0.1:444/applications/default.aspx`.
+7.  Depois que o aplicativo for carregado, abra **Configuração Básica de SAML**. No **URL de resposta (URL de serviço do consumidor de declaração)**, delete não utilizado ou URLs de resposta padrão criado pelo sistema. Por exemplo: `https://127.0.0.1:444/applications/default.aspx`.
 
 ## <a name="problem-when-customizing-the-saml-claims-sent-to-an-application"></a>Problema ao personalizar as declarações SAML enviadas para um aplicativo
 

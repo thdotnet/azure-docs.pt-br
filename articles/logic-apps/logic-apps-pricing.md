@@ -10,12 +10,12 @@ ms.reviewer: estfan, LADocs
 ms.assetid: f8f528f5-51c5-4006-b571-54ef74532f32
 ms.topic: article
 ms.date: 03/25/2019
-ms.openlocfilehash: 7e1868dd5ce62c28c9a8aac724862c58a5e0e1da
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c3d06d3c0f9c86b4fe6495632b48051fd69dc663
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60598485"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544534"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Modelo de preços para os Aplicativos Lógicos do Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "60598485"
 
 ## <a name="consumption-pricing-model"></a>Modelo de preço por consumo
 
-Para novos aplicativos lógicos que são executados no serviço de aplicativo lógico do Azure público ou "global", você paga apenas pelo que usar. Esses aplicativos lógicos usam um plano baseado em consumo e modelo de preços. Na sua definição de aplicativo lógico, cada etapa é uma ação. Por exemplo, as ações incluem: 
+Para novos aplicativos lógicos que são executados no serviço de aplicativo lógico do Azure público ou "global", você paga apenas pelo que usar. Esses aplicativos lógicos usam um plano baseado em consumo e modelo de preços. Na sua definição de aplicativo lógico, cada etapa é uma ação. Por exemplo, as ações incluem:
 
 * Gatilhos são ações especiais. Todos os aplicativos lógicos precisam de um gatilho como a primeira etapa.
 * "Internas" ou nativas ações, como HTTP, chamadas para o Azure Functions e o gerenciamento de API e assim por diante
@@ -38,12 +38,16 @@ Aplicativos lógicos do Azure medidores todas as ações que são executados em 
 
 ## <a name="fixed-pricing-model"></a>Modelo de preços fixo
 
-Uma [ *ambiente do serviço de integração* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) fornece uma maneira particular, isolada e dedicada para que você possa criar e executar aplicativos lógicos que podem acessar recursos em uma rede virtual do Azure. Para novos aplicativos lógicos que são executados dentro de um ISE, você paga um preço mensal fixo para conectores padrão e as ações internas. O ISE também inclui um conector gratuito do Enterprise, que inclui todas as conexões que você deseja. Uso de conectores adicionais do Enterprise é cobrado com base no preço de consumo do Enterprise. 
+Uma [ *ambiente do serviço de integração* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) fornece uma maneira particular, isolada e dedicada para que você possa criar e executar aplicativos lógicos que podem acessar recursos em uma rede virtual do Azure. Para novos aplicativos lógicos que são executados dentro de um ISE, você paga um preço mensal fixo para gatilhos e ações internas e também para conectores padrão.
 
-A unidade base do ISE corrigiu capacidade, portanto, se você precisar de mais taxa de transferência, você pode [adicionar mais unidades de escala](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#add-capacity), durante a criação ou posteriormente.
+O ISE também inclui um conector gratuito do Enterprise, que inclui todas as conexões que você deseja. Uso de conectores adicionais do Enterprise é cobrado com base no preço de consumo do Enterprise.
 
 > [!NOTE]
-> O ISE está na [ *visualização pública*](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Para informações específico sobre preços, consulte [preços de aplicativos lógicos do Azure](https://azure.microsoft.com/pricing/details/logic-apps).
+> Dentro de um ISE, interna de gatilhos e ações de exibir o **Core** rotular e executar no ISE do mesmo como seus aplicativos lógicos. Conectores Standard e Enterprise que exibem a **ISE** rótulo executado no ISE do mesmo como seus aplicativos lógicos. Os conectores que não exibem o rótulo ISE executados no serviço global de aplicativos lógicos.
+
+A unidade base do ISE corrigiu capacidade, portanto, se você precisar de mais taxa de transferência, você pode [adicionar mais unidades de escala](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#add-capacity), durante a criação ou posteriormente. 
+
+Para informações específico sobre preços, consulte [preços de aplicativos lógicos do Azure](https://azure.microsoft.com/pricing/details/logic-apps).
 
 <a name="connectors"></a>
 

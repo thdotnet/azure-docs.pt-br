@@ -8,13 +8,13 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: derek1ee, LADocs
 ms.topic: article
-ms.date: 05/06/2019
-ms.openlocfilehash: 9ef11eb2099ff617fb4da4b9a924dc3f0550f226
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.date: 05/14/2019
+ms.openlocfilehash: 0bfa98396ee3afb80b486a5a17959664dfbe603c
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65160539"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65602125"
 ---
 # <a name="add-and-run-code-snippets-by-using-inline-code-in-azure-logic-apps"></a>Adicionar e executar trechos de código usando o código embutido em aplicativos lógicos do Azure
 
@@ -23,7 +23,10 @@ Quando você quiser executar um trecho de código dentro de seu aplicativo lógi
 * É executado em JavaScript. Mais linguagens em breve.
 * Fim da execução em cinco segundos ou menos.
 * Lida com dados de até 50 MB de tamanho.
-* Usa o Node. js versão 8.11.1. Para obter mais informações, consulte [objetos internos padrão](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects).
+* Usa o Node. js versão 8.11.1. Para obter mais informações, consulte [objetos internos padrão](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects). 
+
+  > [!NOTE]
+  > A função require() não há suporte para o **código embutido** ação para a execução do JavaScript.
 
 Esta ação executa o trecho de código e retorna a saída do trecho de código como um token nomeado **resultado**, que você pode usar em ações subsequentes em seu aplicativo lógico. Para outros cenários em que você deseja criar uma função para seu código, tente [criando e chamando uma função do Azure](../logic-apps/logic-apps-azure-functions.md) em seu aplicativo lógico.
 
@@ -124,7 +127,7 @@ O `workflowContext` objeto tem esta estrutura, que inclui o `actions`, `trigger`
 
 Esta tabela contém mais informações sobre estas subpropriedades:
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Type | Descrição |
 |----------|------|-------|
 | `actions` | Coleção de objetos | Objetos de resultado de ações que são executadas antes de seu trecho de código é executado. Cada objeto tem um *chave-valor* par em que a chave é o nome de uma ação e o valor é equivalente a chamar o [função actions()](../logic-apps/workflow-definition-language-functions-reference.md#actions) com `@actions('<action-name>')`. Nome da ação usa o mesmo nome de ação que é usado na definição de fluxo de trabalho subjacente, que substitui espaços ("") no nome da ação por sublinhados (_). Esse objeto fornece acesso aos valores de propriedade de ação da instância atual do fluxo de trabalho execute. |
 | `trigger` | Object | Objeto de resultado do gatilho e equivalente a chamar o [trigger() função](../logic-apps/workflow-definition-language-functions-reference.md#trigger). Esse objeto fornece acesso aos valores de propriedade de gatilho da instância atual do fluxo de trabalho execute. |
@@ -214,7 +217,7 @@ Para adicionar esses parâmetros, abra o **adicionar novo parâmetro** lista e, 
 
    ![Adicionar parâmetros](./media/logic-apps-add-run-inline-code/inline-code-action-add-parameters.png)
 
-   | Parâmetro | DESCRIÇÃO |
+   | Parâmetro | Descrição |
    |-----------|-------------|
    | **Ações** | Inclua resultados de ações anteriores. Ver [incluir resultados de ação](#action-results). |
    | **Gatilho** | Inclua resultados do gatilho. Ver [resultados de gatilho de inclusão](#trigger-results). |

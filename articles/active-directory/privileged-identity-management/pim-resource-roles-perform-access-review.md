@@ -16,12 +16,12 @@ ms.date: 03/30/2018
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e49f0077444f86eabeed22cc7cecf5e0ac7f8b5
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: ede412292caf682c3078002d23e1956bd68d1378
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65141196"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65602227"
 ---
 # <a name="review-access-to-azure-resource-roles-in-pim"></a>Examinar o acesso a funções de recurso do Azure no PIM
 Azure Active Directory (Azure AD) Identity Management PIM (Privileged) simplifica como as empresas gerenciam o acesso privilegiado aos recursos no Azure. 
@@ -45,12 +45,12 @@ Siga estas etapas para localizar e concluir a análise de acesso:
 1. Navegue até o aplicativo do Azure AD PIM.
 2. Selecione a folha **Revisar acesso**.
 
-   ![Captura de tela do aplicativo PIM, com folha Revisar acesso selecionada](media/azure-pim-resource-rbac/rbac-access-review-complete.png)
+   ![Captura de tela do aplicativo PIM, com folha Revisar acesso selecionada](media/pim-resource-roles-perform-access-review/rbac-access-review-complete.png)
 
 3. Selecione a análise que deseja concluir. 
 4. Escolha **Aprovar** ou **Negar**. Na caixa de texto **Fornecer um motivo**, talvez seja necessário incluir um motivo para a sua decisão.
 
-   ![Captura de tela Revisar detalhes](media/azure-pim-resource-rbac/rbac-access-review-choice.png)
+   ![Captura de tela Revisar detalhes](media/pim-resource-roles-perform-access-review/rbac-access-review-choice.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

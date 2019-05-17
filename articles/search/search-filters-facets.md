@@ -6,15 +6,15 @@ manager: cgronlun
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 10/13/2017
+ms.date: 5/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: ec87bdadc0e7f77cdeebb16403758026fd956c30
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 8dffc5b87aefe23953d3a74f1d96b5ee03e0315d
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64939851"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65597382"
 ---
 # <a name="how-to-build-a-facet-filter-in-azure-search"></a>Como criar um filtro de faceta no Azure Search 
 
@@ -37,50 +37,48 @@ Novo com navegação por faceta e deseja mais detalhes? Consulte [Como implement
 
 As facetas podem ser calculadas por campos de valor único e por coleções. Campos que funcionam melhor em navegação facetada têm baixa cardinalidade: um pequeno número de valores distintos que se repetem em documentos em seu corpo de pesquisa (por exemplo, uma lista de nomes de marca, países/regiões ou cores). 
 
-A faceta é habilitada campo a campo quando você cria o índice, definindo os seguintes atributos como TRUE: `filterable`, `facetable`. Somente campos filtráveis podem ser facetados.
+A facetagem está habilitada em uma base campo por campo quando você cria o índice, definindo o `facetable` atributo `true`. Você geralmente deve também definir a `filterable` atributo `true` para tal campos para que seu aplicativo de pesquisa pode filtrar esses campos com base em facetas que o usuário final seleciona. 
 
-Todos os [tipos de campo](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) que poderiam ser usados na navegação facetada são marcados como “facetável”:
+Ao criar um índice usando a API REST, qualquer [tipo de campo](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) que poderiam ser usados na navegação facetada são marcados como `facetable` por padrão:
 
-+ Edm.String
-+ Edm.DateTimeOffset
-+ Edm.Boolean
-+ Edm.Collections
-+ Tipos de campo numérico: Edm.Int32, Edm.Int64, Edm.Double
++ `Edm.String`
++ `Edm.DateTimeOffset`
++ `Edm.Boolean`
++ Tipos de campo numérico: `Edm.Int32`, `Edm.Int64`, `Edm.Double`
++ Coleções dos tipos acima (por exemplo, `Collection(Edm.String)` ou `Collection(Edm.Double)`)
 
-Não é possível usar Edm.GeographyPoint na navegação facetada. Facetas são construídas com texto ou números legíveis para humanos. Dessa maneira, as facetas não têm suporte para coordenadas geográficas. Seria necessário um campo de cidade ou região para facetar por local.
+Não é possível usar `Edm.GeographyPoint` ou `Collection(Edm.GeographyPoint)` campos no painel de navegação facetada. Facetas funcionam melhor em campos com baixa cardinalidade. Devido à resolução de coordenadas geográficas, é raro que quaisquer dois conjuntos de coordenadas será iguais em um determinado conjunto de dados. Dessa maneira, as facetas não têm suporte para coordenadas geográficas. Seria necessário um campo de cidade ou região para facetar por local.
 
 ## <a name="set-attributes"></a>Definir atributos
 
-Atributos de índice que controlam como um campo é usado são adicionados às definições de campo individual no índice. No exemplo a seguir, os campos com baixa cardinalidade, úteis para a faceta, consistem em: categoria (hotel, motel, hostel), comodidades e classificações. 
-
-Na API do .NET, os atributos de filtragem precisam ser definidos explicitamente. Na API REST, facetar e filtrar estão habilitados por padrão, o que significa que você só precisa definir explicitamente os atributos quando quiser desativá-los. Embora não seja tecnicamente necessário, mostramos as atribuições no seguinte exemplo de REST para fins de instrução. 
+Atributos de índice que controlam como um campo é usado são adicionados às definições de campo individual no índice. No exemplo a seguir, os campos com baixa cardinalidade, úteis para a faceta, consistem em: `category` (hotel, motel, hostel), `tags`, e `rating`. Esses campos têm o `filterable` e `facetable` atributos conjunto explicitamente no exemplo a seguir para fins ilustrativos. 
 
 > [!Tip]
-> Como uma prática recomendada para o desempenho e otimização de armazenamento, desative a faceta para os campos que nunca devem ser usados como uma faceta. Em particular, os campos de cadeia de caracteres para valores únicos, como uma ID ou nome de produto, devem ser definidos como “Facetável”:false para evitar seu uso acidental (e ineficaz) na navegação facetada.
+> Como uma prática recomendada para o desempenho e otimização de armazenamento, desative a faceta para os campos que nunca devem ser usados como uma faceta. Em particular, os campos de cadeia de caracteres para valores exclusivos, como uma ID ou nome de produto, devem ser definidos `"facetable": false` para evitar seu uso acidental (e ineficaz) na navegação facetada.
 
 
-```http
+```json
 {
-    "name": "hotels",  
-    "fields": [
-        {"name": "hotelId", "type": "Edm.String", "key": true, "searchable": false, "sortable": false, "facetable": false},
-        {"name": "baseRate", "type": "Edm.Double"},
-        {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false},
-        {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "analyzer": "fr.lucene"},
-        {"name": "hotelName", "type": "Edm.String", "facetable": false},
-        {"name": "category", "type": "Edm.String", "filterable": true, "facetable": true},
-        {"name": "tags", "type": "Collection(Edm.String)", "filterable": true, "facetable": true},
-        {"name": "parkingIncluded", "type": "Edm.Boolean",  "filterable": true, "facetable": true, "sortable": false},
-        {"name": "smokingAllowed", "type": "Edm.Boolean", "filterable": true, "facetable": true, "sortable": false},
-        {"name": "lastRenovationDate", "type": "Edm.DateTimeOffset"},
-        {"name": "rating", "type": "Edm.Int32", "filterable": true, "facetable": true},
-        {"name": "location", "type": "Edm.GeographyPoint"}
-    ]
+  "name": "hotels",  
+  "fields": [
+    { "name": "hotelId", "type": "Edm.String", "key": true, "searchable": false, "sortable": false, "facetable": false },
+    { "name": "baseRate", "type": "Edm.Double" },
+    { "name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false },
+    { "name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "analyzer": "fr.lucene" },
+    { "name": "hotelName", "type": "Edm.String", "facetable": false },
+    { "name": "category", "type": "Edm.String", "filterable": true, "facetable": true },
+    { "name": "tags", "type": "Collection(Edm.String)", "filterable": true, "facetable": true },
+    { "name": "parkingIncluded", "type": "Edm.Boolean",  "filterable": true, "facetable": true, "sortable": false },
+    { "name": "smokingAllowed", "type": "Edm.Boolean", "filterable": true, "facetable": true, "sortable": false },
+    { "name": "lastRenovationDate", "type": "Edm.DateTimeOffset" },
+    { "name": "rating", "type": "Edm.Int32", "filterable": true, "facetable": true },
+    { "name": "location", "type": "Edm.GeographyPoint" }
+  ]
 }
 ```
 
 > [!Note]
-> Esta definição de índice é copiada de [Criar um índice do Azure Search usando a API REST](https://docs.microsoft.com/azure/search/search-create-index-rest-api). Ela é idêntica, exceto por diferenças superficiais nas definições de campo. Os atributos filtráveis e facetáveis são adicionados explicitamente nos campos de categoria, marcas, parkingIncluded, smokingAllowed e classificação. Na prática, você pode ser filtrado e facetado gratuitamente em tipos de campo de Edm.String, Edm.Boolean e Int32. 
+> Esta definição de índice é copiada de [Criar um índice do Azure Search usando a API REST](https://docs.microsoft.com/azure/search/search-create-index-rest-api). Ela é idêntica, exceto por diferenças superficiais nas definições de campo. O `filterable` e `facetable` atributos são adicionados explicitamente nos `category`, `tags`, `parkingIncluded`, `smokingAllowed`, e `rating` campos. Na prática, `filterable` e `facetable` seriam habilitados por padrão, esses campos ao usar a API REST. Ao usar o SDK do .NET, esses atributos devem ser habilitados explicitamente.
 
 ## <a name="build-and-load-an-index"></a>Criar e carregar um índice
 
@@ -91,25 +89,26 @@ Uma etapa intermediária (e talvez óbvia) é que você precisa [criar e preench
 No código do aplicativo, construa uma consulta que especifica todas as partes de uma consulta válida, incluindo expressões de pesquisa, facetas, filtros, perfis de pontuação – tudo o que for usado para formular uma solicitação. O exemplo a seguir cria uma solicitação que cria a navegação por faceta com base no tipo de acomodação, classificação e outras comodidades.
 
 ```csharp
-SearchParameters sp = new SearchParameters()
+var sp = new SearchParameters()
 {
-  ...
-  // Add facets
-  Facets = new List<String>() { "category", "rating", "parkingIncluded", "smokingAllowed" },
+    ...
+    // Add facets
+    Facets = new[] { "category", "rating", "parkingIncluded", "smokingAllowed" }.ToList()
 };
 ```
 
 ### <a name="return-filtered-results-on-click-events"></a>Retornar resultados filtrados em eventos de clique
 
-A expressão de filtro manipula o evento de clique no valor da faceta. Dada uma faceta de Categoria, clicar na categoria "motel" é implementado por meio de uma expressão `$filter` que seleciona acomodações desse tipo. Quando um usuário clica em "motéis" para indicar que somente motéis devem ser mostrados, a próxima consulta que o aplicativo envia inclui $filter=category eq ‘motéis’.
+Quando o usuário final clica em um valor de faceta, o manipulador para o evento de clique deve usar uma expressão de filtro para perceber a intenção do usuário. Considerando um `category` faceta, clicando na categoria "motel" é implementado com um `$filter` expressão que seleciona acomodações desse tipo. Quando um usuário clica em "motel" para indicar que somente motéis devem ser mostrados, a próxima consulta que o aplicativo envia inclui `$filter=category eq 'motel'`.
 
 O seguinte snippet de código adiciona a categoria ao filtro se um usuário seleciona um valor usando a faceta de categoria.
 
 ```csharp
-if (categoryFacet != "")
-  filter = "category eq '" + categoryFacet + "'";
+if (!String.IsNullOrEmpty(categoryFacet))
+    filter = $"category eq '{categoryFacet}'";
 ```
-Ao usar a API REST, a solicitação seria articulada como `$filter=category eq 'c1'`. Para tornar a categoria um campo de múltiplos valores, use a seguinte sintaxe: `$filter=category/any(c: c eq 'c1')`
+
+Se o usuário clica em um valor de faceta para um campo de coleção como `tags`, por exemplo, o "grupo" de valor, seu aplicativo deve usar a seguinte sintaxe de filtro: `$filter=tags/any(t: t eq 'pool')`
 
 ## <a name="tips-and-workarounds"></a>Dicas e soluções alternativas
 

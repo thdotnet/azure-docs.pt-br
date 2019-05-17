@@ -12,12 +12,12 @@ ms.author: arib
 ms.reviewer: vanto
 manager: craigg
 ms.date: 04/16/2019
-ms.openlocfilehash: 15d195361b9fe8523ae6e46ba035ca5927c4d242
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 3efdf5c256a22529c9d19e9ae1dce5d2db9516a5
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64924752"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827766"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Introdução à auditoria do banco de dados SQL
 
@@ -110,10 +110,11 @@ A seção a seguir descreve a configuração de auditoria usando o Portal do Azu
 10. Se quiser personalizar os eventos auditados, você poderá fazer isso por meio de [cmdlets do PowerShell](#subheading-7) ou da [API REST](#subheading-9).
 11. Depois de definir as configurações de auditoria, você poderá ativar o novo recurso de detecção de ameaças e configurar emails para receber alertas de segurança. Ao usar a detecção de ameaças, você recebe alertas proativos sobre atividades anômalas do banco de dados que podem indicar possíveis ameaças à segurança. Para obter mais informações, consulte [Introdução à detecção de ameaças](sql-database-threat-detection-get-started.md).
 
-
 > [!IMPORTANT]
->Habilitar a auditoria em um Azure SQL Data Warehouse ou em um servidor que tenha um Azure SQL Data Warehouse **fará com que o Data Warehouse seja retomado**, mesmo que ele estivesse em pausa anteriormente. **Por favor, certifique-se de pausar o Data Warehouse novamente após ativar a auditoria**. '
+> Não é possível habilitar a auditoria em um Azure SQL Data Warehouse em pausa. Para habilitá-lo, un-pausar o Data Warehouse.
 
+> [!WARNING]
+> Habilitar a auditoria em um servidor que tem um Azure SQL Data Warehouse nele **resultará no Data Warehouse que está sendo continuado e novamente em pausa novamente** que pode incorrer em encargos de cobrança.
 
 ## <a id="subheading-3"></a>Analisar os logs e relatórios de auditoria
 

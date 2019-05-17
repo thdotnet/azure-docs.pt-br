@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/28/2018
 ms.author: oanapl
-ms.openlocfilehash: caeef04a27cec7bbeda5dd96335d9b7bd1a8eca0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d5cfe91cfcc124ef3073cfb6bbeda683505ff8e1
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60716261"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65561373"
 ---
 # <a name="use-system-health-reports-to-troubleshoot"></a>Usar relatórios de integridade do sistema para solução de problemas
 Os componentes do Service Fabric do Azure apresentam relatórios de integridade do sistema em todas as entidades no cluster prontos para uso. O [repositório de integridade](service-fabric-health-introduction.md#health-store) cria e exclui entidades baseado nos relatórios do sistema. Ele também os organiza em uma hierarquia que captura interações de entidade.
@@ -57,7 +57,7 @@ O relatório especifica o tempo limite de concessão global como a TTL (vida út
 * **Propriedade**: Começa com **vizinhança** e inclui informações sobre o nó.
 * **Próximas etapas**: Investigue por que a vizinhança foi perdida. Por exemplo, verifique a comunicação entre os nós do cluster.
 
-### <a name="rebuild"></a>Recompilação
+### <a name="rebuild"></a>Recompilar
 
 O serviço FM (Gerenciador de Failover) gerencia as informações sobre os nós de cluster. Quando o FM perde os dados e entra na perda de dados, ele não pode garantir que tem as informações mais atualizadas sobre os nós de cluster. Nesse caso, o sistema passa por uma recompilação e o System.FM coleta dados de todos os nós no cluster para recompilar o estado. Às vezes, devido a questões de rede ou nó, a recompilação pode ficar atrasada ou paralisada. O mesmo pode acontecer com o serviço FMM (Failover Manager Master). O FMM é um serviço de sistema sem estado que controla onde todos os FMs estão no cluster. O primário do FMM é sempre o nó com a ID mais próxima de 0. Se esse nó for removido, uma recompilação será disparada.
 Quando uma das condições anteriores ocorre, o **System.FM** ou **System.FMM** sinaliza um relatório de erros. A recompilação pode ficar paralisada em uma das duas fases:
@@ -632,11 +632,11 @@ A propriedade e o texto indicam qual API ficou paralisada. As próximas etapas a
 
 - **Istatefulservicereplica. Close** e **Istatefulservicereplica**: O caso mais comum é um serviço não respeitar o token de cancelamento passado para `RunAsync`. Também pode ser que `ICommunicationListener.CloseAsync` ou, se substituído, `OnCloseAsync` esteja paralisado.
 
-- **Changerole (S)** e **Istatefulservicereplica**: O caso mais comum é um serviço não respeitar o token de cancelamento passado para `RunAsync`.
+- **Changerole (S)** e **Istatefulservicereplica**: O caso mais comum é um serviço não respeitar o token de cancelamento passado para `RunAsync`. Nesse cenário, a melhor solução é reiniciar a réplica.
 
 - **IStatefulServiceReplica.ChangeRole(P)**: O caso mais comum é que o serviço não retornou uma tarefa de `RunAsync`.
 
-Outras chamadas à API que podem ficar paralisadas estão na interface **IReplicator**. Por exemplo: 
+Outras chamadas à API que podem ficar paralisadas estão na interface **IReplicator**. Por exemplo:
 
 - **IReplicator.CatchupReplicaSet**: Este aviso indica que uma das duas coisas. Há réplicas insuficientes. Para verificar se esse é o caso, observe o status de réplica das réplicas na partição ou o relatório de integridade System.FM para uma reconfiguração paralisada. Ou as réplicas não estão confirmando operações. O cmdlet do PowerShell `Get-ServiceFabricDeployedReplicaDetail` pode ser utilizado para determinar o progresso de todas as réplicas. O problema está nas réplicas cujo valor `LastAppliedReplicationSequenceNumber` está atrás do valor `CommittedSequenceNumber` do primário.
 

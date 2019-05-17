@@ -1,5 +1,5 @@
 ---
-title: Hospedagem de alta densidade usando dimensionamento por aplicativo – Serviço de Aplicativo do Azure| Microsoft Docs
+title: Hospedagem de alta densidade por aplicativo usando o dimensionamento - serviço de aplicativo do Azure | Microsoft Docs
 description: Hospedagem de alta densidade no Serviço de Aplicativo do Azure
 author: btardif
 manager: erikre
@@ -12,27 +12,31 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
-ms.date: 01/22/2018
+ms.date: 05/13/2019
 ms.author: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 08d6d0c31e1cff799e952c50bae3446e41477aba
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 824abbdfd1b3980b419e6d6c46814bb0318adf13
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56104562"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65602339"
 ---
-# <a name="high-density-hosting-on-azure-app-service-using-per-app-scaling"></a>Hospedagem de alta densidade no Serviço de Aplicativo do Azure usando escalonamento por aplicativo
+# <a name="high-density-hosting-on-azure-app-service-using-per-app-scaling"></a>Hospedagem de alta densidade no serviço de aplicativo do Azure usando o dimensionamento por aplicativo
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Por padrão, você escalona aplicativos do Serviço de Aplicativo escalando [Plano de Serviço do Aplicativo](overview-hosting-plans.md) que executam. Quando vários aplicativos são executados no mesmo plano de serviço de aplicativo, cada instância dimensionada executa todos os aplicativos no plano.
+Ao usar o serviço de aplicativo, você pode dimensionar seus aplicativos por meio do dimensionamento do [plano do serviço de aplicativo](overview-hosting-plans.md) serem executados em. Quando vários aplicativos são executados no mesmo plano de serviço de aplicativo, cada instância dimensionada executa todos os aplicativos no plano.
 
-Você pode habilitar *escalonamento por aplicativo* no nível de plano do Serviço do Aplicativo. Escalona um aplicativo independentemente do plano do Serviço de Aplicativo que o hospeda. Dessa forma, um Plano do Serviço de Aplicativo pode ser dimensionado para 10 instâncias, mas um aplicativo pode ser configurado para usar apenas cinco.
+*Dimensionamento por aplicativo* pode ser habilitado no nível do plano de serviço de aplicativo para permitir o dimensionamento de um aplicativo independentemente do plano de serviço de aplicativo que o hospeda. Dessa forma, um Plano do Serviço de Aplicativo pode ser dimensionado para 10 instâncias, mas um aplicativo pode ser configurado para usar apenas cinco.
 
 > [!NOTE]
 > O dimensionamento por aplicativo está disponível somente para camadas de preço **Standard**, **Premium**, **Premium V2** e **Isolado** 
 >
+
+Aplicativos são alocados para o plano de serviço de aplicativo disponível usando uma abordagem melhor do esforço para uma distribuição uniforme entre instâncias. Enquanto uma distribuição uniforme não é garantida, a plataforma garantirá que as duas instâncias do mesmo aplicativo não serão hospedadas na mesma instância de plano do serviço de aplicativo.
+
+A plataforma não depende de métricas para decidir sobre a alocação de trabalho. Aplicativos são balanceados somente quando as instâncias são adicionadas ou removidas do plano de serviço de aplicativo.
 
 ## <a name="per-app-scaling-using-powershell"></a>Dimensionamento por aplicativo usando PowerShell
 
@@ -60,10 +64,10 @@ No exemplo abaixo, o aplicativo está limitado a duas instâncias, independentem
 ```powershell
 # Get the app we want to configure to use "PerSiteScaling"
 $newapp = Get-AzWebApp -ResourceGroupName $ResourceGroup -Name $webapp
-    
+
 # Modify the NumberOfWorkers setting to the desired value.
 $newapp.SiteConfig.NumberOfWorkers = 2
-    
+
 # Post updated app back to azure
 Set-AzWebApp $newapp
 ```
@@ -127,18 +131,19 @@ O Plano do Serviço de Aplicativo está definindo a propriedade **PerSiteCalling
 }
 ```
 
-## <a name="recommended-configuration-for-high-density-hosting"></a>Configuração recomendada para hospedagem de alta densidade
-O dimensionamento por aplicativo é um recurso que está habilitado em regiões globais do Azure e Ambientes do [Serviço de Aplicativo](environment/app-service-app-service-environment-intro.md). No entanto, a estratégia recomendada é usar Ambientes de Serviço de Aplicativo para aproveitar os recursos avançados e os pools de maior capacidade.  
+## <a name="recommended-configuration-for-high-density-hosting"></a>Configuração recomendada para Hospedagem de Alta Densidade
+
+O dimensionamento por aplicativo é um recurso que está habilitado em regiões globais do Azure e Ambientes do [Serviço de Aplicativo](environment/app-service-app-service-environment-intro.md). No entanto, a estratégia recomendada é usar ambientes do serviço de aplicativo para aproveitar os recursos avançados e maior capacidade de plano de serviço de aplicativo.  
 
 Siga estas etapas para configurar a hospedagem de alta densidade para seus aplicativos:
 
-1. Configure o Ambiente de Serviço de Aplicativo e escolha um pool de trabalho dedicado ao cenário de hospedagem de alta densidade.
-2. Crie um único plano do Serviço de Aplicativo e o dimensione para usar toda a capacidade disponível no pool de trabalho.
-3. Defina o sinalizador `PerSiteScaling` como verdadeiro no Plano do Serviço de Aplicativo.
-4. Novos aplicativos são criados e atribuídos a esse Plano do Serviço de Aplicativo com a propriedade **numberOfWorkers** definida como **1**. O uso dessa configuração produz a densidade mais alta possível neste pool de trabalho.
-5. O número de trabalhadores pode ser configurado independentemente por aplicativo, a fim de conceder recursos adicionais conforme necessário. Por exemplo: 
-    - Um aplicativo de alto consumo pode definir o **numberOfWorkers** como **3** para ter mais capacidade de processamento para esse aplicativo. 
-    - Os aplicativos de baixo consumo definiriam o **numberOfWorkers** como **1**.
+1. Designar um plano do serviço de aplicativo como o plano de alta densidade e dimensioná-lo para a capacidade desejada.
+1. Defina o sinalizador `PerSiteScaling` como verdadeiro no Plano do Serviço de Aplicativo.
+1. Novos aplicativos são criados e atribuídos a esse Plano do Serviço de Aplicativo com a propriedade **numberOfWorkers** definida como **1**.
+   - Uso dessa configuração produz a densidade mais alta possível.
+1. O número de trabalhadores pode ser configurado independentemente por aplicativo, a fim de conceder recursos adicionais conforme necessário. Por exemplo:
+   - Um aplicativo de alto consumo pode definir o **numberOfWorkers** como **3** para ter mais capacidade de processamento para esse aplicativo.
+   - Os aplicativos de baixo consumo definiriam o **numberOfWorkers** como **1**.
 
 ## <a name="next-steps"></a>Próximas etapas
 

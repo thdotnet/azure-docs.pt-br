@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 04/23/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 6b3b49049ea1ed36a08fad9619183017b0f07d99
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 8ceb84ab9e9c41ff6a9cbde62571fb12ae67d790
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65077734"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65596082"
 ---
 # <a name="durable-functions-20-preview-azure-functions"></a>Versão prévia 2.0 de funções durável (Azure Functions)
 
@@ -26,7 +26,7 @@ As funções duráveis é um recurso de GA (disponibilidade geral) do Azure Func
 > [!NOTE]
 > Estes recursos de visualização são parte de uma versão 2.0 de funções duráveis, o que é atualmente uma **versão alfa qualidade** com várias alterações significativas. O Azure Functions durável compilações do pacote de extensão podem ser encontrada em nuget.org com versões na forma de **2.0.0-alpha**. Essas compilações não são adequadas para quaisquer cargas de trabalho de produção e versões posteriores podem conter alterações significativas adicionais.
 
-## <a name="breaking-changes"></a>Alterações de última hora
+## <a name="breaking-changes"></a>Alterações da falha
 
 Várias alterações significativas são apresentadas no 2.0 de funções duráveis. Os aplicativos existentes não devem ser compatíveis com 2.0 de funções duráveis sem alterações de código. Esta seção lista algumas das alterações:
 
@@ -36,7 +36,7 @@ Suporte para o .NET Framework (e, portanto, o Functions 1.0) foi descartado para
 
 ### <a name="hostjson-schema"></a>Esquema de host. JSON
 
-O trecho a seguir mostra o novo esquema para o host. JSON. A principal mudança nos conhecer o novo `"storageProvider"` seção e o `"azureStorage"` seção abaixo dela. Essa alteração foi feita para apoiar [alternativos de provedores de armazenamento](durable-functions-preview.md#alternate-storage-providers).
+O trecho a seguir mostra o novo esquema para o host. JSON. A principal mudança estar ciente é o novo `"storageProvider"` seção e o `"azureStorage"` seção abaixo dela. Essa alteração foi feita para apoiar [alternativos de provedores de armazenamento](durable-functions-preview.md#alternate-storage-providers).
 
 ```json
 {
@@ -93,11 +93,12 @@ No caso em que uma classe base abstrata contido métodos virtuais, esses método
 
 Definem as funções da entidade operações para ler e atualizar pequenos pedaços de estado, conhecido como *entidades duráveis*. Como funções de orquestrador, funções de entidade são funções com um tipo especial de gatilho, *disparador entidade*. Diferentemente das funções de orquestrador, funções da entidade não tem quaisquer restrições de código específico. Funções de entidade também gerenciam estado explicitamente em vez de implicitamente que representa o estado por meio do fluxo de controle.
 
-O código a seguir é um exemplo de uma função de entidade simples que define uma *contador* entidade. A função define três operações, `add`, `remove`, e `reset`, cada do que atualizar um valor inteiro, `currentValue`.
+O código a seguir é um exemplo de uma função de entidade simples que define uma *contador* entidade. A função define três operações, `add`, `subtract`, e `reset`, cada do que atualizar um valor inteiro, `currentValue`.
 
 ```csharp
+[FunctionName("Counter")]
 public static async Task Counter(
-    [EntityTrigger(EntityName = "Counter")] IDurableEntityContext ctx)
+    [EntityTrigger] IDurableEntityContext ctx)
 {
     int currentValue = ctx.GetState<int>();
     int operand = ctx.GetInput<int>();
@@ -200,21 +201,25 @@ A seção crítica termina e todos os bloqueios são liberados, quando termina a
 Por exemplo, considere uma orquestração que precisa para testar se dois jogadores estão disponíveis e, em seguida, atribuí-los para um jogo. Essa tarefa pode ser implementada usando uma seção crítica da seguinte maneira:
 
 ```csharp
-
-EntityId player1 = /* ... */;
-EntityId player2 = /* ... */;
-
-using (await ctx.LockAsync(player1, player2))
+[FunctionName("Orchestrator")]
+public static async Task RunOrchestrator(
+    [OrchestrationTrigger] IDurableOrchestrationContext ctx)
 {
-    bool available1 = await ctx.CallEntityAsync<bool>(player1, "is-available");
-    bool available2 = await ctx.CallEntityAsync<bool>(player2, "is-available");
+    EntityId player1 = /* ... */;
+    EntityId player2 = /* ... */;
 
-    if (available1 && available2)
+    using (await ctx.LockAsync(player1, player2))
     {
-        Guid gameId = ctx.NewGuid();
+        bool available1 = await ctx.CallEntityAsync<bool>(player1, "is-available");
+        bool available2 = await ctx.CallEntityAsync<bool>(player2, "is-available");
 
-        await ctx.CallEntityAsync(player1, "assign-game", gameId);
-        await ctx.CallEntityAsync(player2, "assign-game", gameId);
+        if (available1 && available2)
+        {
+            Guid gameId = ctx.NewGuid();
+
+            await ctx.CallEntityAsync(player1, "assign-game", gameId);
+            await ctx.CallEntityAsync(player2, "assign-game", gameId);
+        }
     }
 }
 ```

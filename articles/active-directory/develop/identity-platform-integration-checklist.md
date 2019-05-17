@@ -16,12 +16,12 @@ ms.date: 05/07/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev
-ms.openlocfilehash: e9070127780659142ab8f956a8016622ecfea144
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 0d44e5d9f0d1ed893a16c318e3cfa0ee1bfc123b
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65540144"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65823342"
 ---
 # <a name="microsoft-identity-platform-integration-checklist"></a>Lista de verificação de integração do Microsoft identity platform
 
@@ -31,13 +31,13 @@ Se você estiver apenas começando, confira a [documentação](index.yml) para s
 
 ## <a name="testing-your-integration"></a>Testar sua integração
 
-Use a seguinte lista de verificação para garantir que seu aplicativo com eficiência é integrado com o [plataforma de identidade Microsoft](https://docs.microsoft.com/legal/mdsa).
+Use a seguinte lista de verificação para garantir que seu aplicativo com eficiência é integrado com o [plataforma de identidade Microsoft](https://docs.microsoft.com/azure/active-directory/develop/).
 
 ### <a name="basics"></a>Noções básicas
 
 |   |   |
 |---|---|
-| ![caixa de seleção](./media/active-directory-integration-checklist/checkbox-two.svg) | Ler e entender as [as políticas da plataforma Microsoft](https://docs.microsoft.com/legal/mdsa). Certifique-se de que seu aplicativo cumpre com os termos descritos conforme eles são projetados para proteger os usuários e a plataforma. |
+| ![caixa de seleção](./media/active-directory-integration-checklist/checkbox-two.svg) | Ler e entender as [as políticas da plataforma Microsoft](https://go.microsoft.com/fwlink/?linkid=2090497&clcid=0x409). Certifique-se de que seu aplicativo cumpre com os termos descritos conforme eles são projetados para proteger os usuários e a plataforma. |
 
 ### <a name="ownership"></a>Propriedade
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 12ce37579a6f93ba600c39416c7566ac673e9560
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 6bcb8e8d5b8b6ef1ebac8141dd13964ecf62af6f
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64723334"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65601693"
 ---
 # <a name="tutorial-create-an-azure-active-directory-b2c-tenant"></a>Tutorial: Criar um locatário do Azure Active Directory B2C
 
@@ -40,7 +40,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 3. Escolha **Criar um recurso** no canto superior esquerdo do portal do Azure.
 4. Pesquise e selecione **Active Directory B2C**; depois, clique em **Criar**.
-5. Escolha **Criar um novo locatário do Azure AD B2C**, insira um nome de organização e nome de domínio inicial, que é usado no nome do locatário, selecione o país/região (não pode ser alterado depois) e, em seguida, clique em **Criar**.
+5. Escolher **criar um novo locatário do Azure AD B2C**, insira um nome de organização e o nome de domínio inicial, que é usado no nome do locatário, selecione o país/região (ele não pode ser alterado posteriormente) e, em seguida, clique em **criar** .
 
     ![Criar um locatário](./media/tutorial-create-tenant/create-tenant.png)
 

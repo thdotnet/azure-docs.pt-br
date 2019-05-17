@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: b-juche
-ms.openlocfilehash: 2afd5f0a574fd15c4327b141901d2651dbe2b9e5
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: fa2de14ada5d24531dfecc7f2f709a87f39ea6cb
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65524229"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65826475"
 ---
 # <a name="guidelines-for-azure-netapp-files-network-planning"></a>Diretrizes para planejamento de rede do Azure NetApp Files
 
@@ -42,7 +42,7 @@ Os recursos a seguir atualmente não há suportados para arquivos do NetApp do A
 
 As restrições de rede a seguir se aplicam aos arquivos do NetApp do Azure:
 
-* O número de IPs de uma rede virtual (inclui VNets emparelhadas) que se conectam a um volume em uma rede virtual não pode exceder 1000.
+* O número de VMs que podem se conectar a um volume (com uma rede virtual ou em VNets emparelhadas) não pode exceder 1000.
 * Em cada VNet (Rede virtual do Azure), apenas uma sub-rede pode ser delegada para o Azure NetApp Files.
 
 

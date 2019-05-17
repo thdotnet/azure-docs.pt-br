@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/25/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: cb7cf932433927d4ead853952ff74d55c55b9cf7
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 499aeccdf00980eeb66ac6ee06e45267fd515143
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65160014"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546755"
 ---
 Galerias de imagens compartilhadas permitem que você tenha imagens de compartilhamento usando o RBAC. Você pode usar o RBAC para compartilhar imagens dentro do seu locatário e até mesmo pessoas fora do seu locatário. Mas, se você quiser compartilhar imagens fora do seu locatário do Azure, em grande escala, você deve criar um registro de aplicativo para facilitar o compartilhamento.  Usar um registro de aplicativo pode habilitar cenários de compartilhamento mais complexos, como: 
 
@@ -44,7 +44,9 @@ Conceda a permissão de registro de aplicativo para usar a Galeria de imagens co
 1. Sob **selecionar**, digite *myGalleryApp* e selecione-o quando ele aparece na lista. Quando você terminar, selecione **salvar**.
 
 
-Crie uma entidade de serviço para o locatário 2 a ser usado para acessar o aplicativo, solicitando uma entrada usando um navegador. Substitua *<Tenant2 ID>* com a ID do locatário para o locatário que você gostaria de compartilhar com sua galeria de imagens. Substitua *< ID do aplicativo (cliente) >* com a ID do aplicativo de registro de aplicativo que você criou. Quando terminar de fazer as substituições, cole a URL em um navegador e siga os prompts de entrada para entrar no locatário 2.
+## <a name="give-tenant-2-access"></a>Conceder acesso de locatário 2
+
+Conceder acesso de locatário 2 para o aplicativo, solicitando uma entrada usando um navegador. Substitua *<Tenant2 ID>* com a ID do locatário para o locatário que você gostaria de compartilhar com sua galeria de imagens. Substitua *< ID do aplicativo (cliente) >* com a ID do aplicativo de registro de aplicativo que você criou. Quando terminar de fazer as substituições, cole a URL em um navegador e siga os prompts de entrada para entrar no locatário 2.
 
 ```
 https://login.microsoftonline.com/<Tenant 2 ID>/oauth2/authorize?client_id=<Application (client) ID>&response_type=code&redirect_uri=https%3A%2F%2Fwww.microsoft.com%2F 

@@ -8,26 +8,33 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.topic: article
-ms.date: 08/23/2018
-ms.openlocfilehash: e008d9fd2734af6a355771c321ecaea9150bcc33
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/08/2019
+ms.openlocfilehash: c02361cf69b98da61a0f551ac037e6d35ea42efc
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64722979"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65551860"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Conectores de Aplicativos Lógicos do Azure
 
 Conectores fornecem acesso rápido de aplicativos lógicos do Azure, eventos, dados e ações em outros aplicativos, serviços, sistemas, protocolos e plataformas. Usando conectores em seus aplicativos lógicos, é possível expandir os recursos para seus aplicativos de nuvem e locais executar tarefas com os dados que você crie e já tiver.
 
-Embora os Aplicativos Lógicos ofereçam [mais de 200 conectores](https://docs.microsoft.com/connectors), este arquivo descreve conectores mais comuns que são usados com sucesso por milhares de aplicativos e milhões de execuções para processar dados e informações. Para encontrar a lista completa de conectores e informações de referência do cada conector, como gatilhos, ações e limites, examine as páginas de referência do conector sob [visão geral dos conectores](https://docs.microsoft.com/connectors). Além disso, saiba mais sobre [gatilhos e ações](#triggers-actions).
+Embora os Aplicativos Lógicos ofereçam [mais de 200 conectores](https://docs.microsoft.com/connectors), este arquivo descreve conectores mais comuns que são usados com sucesso por milhares de aplicativos e milhões de execuções para processar dados e informações. Para encontrar a lista completa de conectores e informações de referência do cada conector, como gatilhos, ações e limites, examine as páginas de referência do conector sob [visão geral dos conectores](https://docs.microsoft.com/connectors). Além disso, saiba mais sobre [gatilhos e ações](#triggers-actions), [os aplicativos lógicos modelo de preços](../logic-apps/logic-apps-pricing.md), e [detalhes de preços de aplicativos de lógicos](https://azure.microsoft.com/pricing/details/logic-apps/). 
 
 > [!NOTE]
 > Para integrar um serviço ou uma API que não tem o conector, você pode diretamente chamar o serviço por um protocolo como HTTP ou criar uma [conector personalizado](#custom).
 
 Conectores estão disponíveis como ações e gatilhos internos ou conectores gerenciados:
 
-* [**Internos**](#built-ins): Essas ações internas e gatilhos são "nativos" para aplicativos lógicos do Azure e ajudam a que criar aplicativos lógicos que são executados em agendas personalizadas, se comunicar com outros pontos de extremidade, receberam e respondem a solicitações e chamam funções do Azure, aplicativos de API do Azure (aplicativos Web), suas próprias APIs gerenciado e publicado com o gerenciamento de API e aplicativos lógicos aninhados que podem receber solicitações. Também é possível usar ações internas que ajudam você a organizar e controlar o fluxo de trabalho do aplicativo lógico e trabalhar com dados.
+* [**Internos**](#built-ins): Essas ações e gatilhos internos são "nativas" para aplicativos lógicos do Azure e ajudam a que criar aplicativos lógicos que são executados em agendas personalizadas, se comunicar com outros pontos de extremidade, receberam e respondem a solicitações e chamam funções do Azure, aplicativos de API do Azure (aplicativos Web), suas próprias APIs gerenciado e publicado com o gerenciamento de API e aplicativos lógicos aninhados que podem receber solicitações. Também é possível usar ações internas que ajudam você a organizar e controlar o fluxo de trabalho do aplicativo lógico e trabalhar com dados.
+
+  > [!NOTE]
+  > Aplicativos lógicos dentro de um [ambiente de serviço de integração (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) pode acessar diretamente os recursos em uma rede virtual do Azure.
+  > Quando você usa um ISE, ações e gatilhos internos que exibe a **Core** rótulo executado no ISE do mesmo como seus aplicativos lógicos. Aplicativos lógicos, interna de gatilhos e ações internas que são executados durante o uso do ISE um plano de preços diferente do plano de preços baseado em consumo.
+  >
+  > Para obter mais informações sobre como criar ISEs, consulte [conectar redes virtuais do Azure de aplicativos lógicos do Azure](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#create-logic-apps-environment). 
+  > Para obter mais informações sobre preços, consulte [modelo de preços de aplicativos de lógicos](../logic-apps/logic-apps-pricing.md).
 
 * **Conectores gerenciados**: Implantado e gerenciado pela Microsoft, esses conectores fornecem gatilhos e ações para acessar os serviços de nuvem, em sistemas locais ou ambos, incluindo o Office 365, o armazenamento de BLOBs do Azure, SQL Server, Dynamics, Salesforce, SharePoint e muito mais. Alguns conectores dão suporte a cenários de comunicação do business-to-business (B2B) e requerem especificamente uma [conta de integração](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) que esteja vinculado ao seu aplicativo lógico. Antes de usar determinados conectores, você talvez precise primeiro criar conexões, que são gerenciadas pelo aplicativo lógico do Azure. 
 
@@ -36,7 +43,7 @@ Conectores estão disponíveis como ações e gatilhos internos ou conectores ge
 
   Conectores são classificados como Standard ou Enterprise. 
   [Conectores empresariais](#enterprise-connectors) fornecem acesso a sistemas empresariais como SAP, IBM MQ e 3270 IBM por um custo adicional. Para determinar se um conector é Standard ou Enterprise, consulte os detalhes técnicos na página de referência do cada conector sob [visão geral dos conectores](https://docs.microsoft.com/connectors). 
-  
+
   Você também pode identificar conectores usando essas categorias, embora alguns conectores podem cruzar várias categorias. 
   Por exemplo, o SAP é um conector empresarial e um conector local:
 
@@ -47,8 +54,15 @@ Conectores estão disponíveis como ações e gatilhos internos ou conectores ge
   | [**Conectores da conta de integração**](#integration-account-connectors) | Disponível quando você cria e paga por uma conta de integração, esses conectores transformam e validam XML, codificam e decodificam arquivos simples e processam mensagens B2B (business-to-business) com protocolos AS2, EDIFACT e X12. |
   |||
 
-> [!NOTE]
-> Para obter a lista completa de conectores e informações de referência do cada conector, como ações e gatilhos, que é definido por um OpenAPI (anteriormente conhecido como Swagger) descrição, além de quaisquer limites, você pode encontrar a lista completa sob o [visão geral dos conectores ](/connectors/). Para obter informações sobre preço, veja [Detalhes de preços de Aplicativos Lógicos](https://azure.microsoft.com/pricing/details/logic-apps/) e [Modelo de preços de Aplicativos Lógicos](../logic-apps/logic-apps-pricing.md). 
+  > [!NOTE]
+  > Aplicativos lógicos dentro de um [ambiente de serviço de integração (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) pode acessar diretamente os recursos em uma rede virtual do Azure. Quando você usa um ISE, conectores Standard e Enterprise que exibem a **ISE** rótulo executado no ISE do mesmo como seus aplicativos lógicos. Os conectores que não exibem o rótulo ISE executados no serviço global de aplicativos lógicos.
+  >
+  > Para sistemas locais que estão conectados a uma rede virtual do Azure, injetar o ISE nessa rede para que seus aplicativos lógicos possam acessar diretamente esses sistemas usando qualquer um dos conectores que tem um **ISE** rótulo, uma ação de HTTP ou um [conector personalizado](#custom). Aplicativos lógicos e conectores que são executados durante o uso do ISE um preço planejam diferente do plano de preços baseado em consumo. 
+  >
+  > Para obter mais informações sobre como criar ISEs, consulte [conectar redes virtuais do Azure de aplicativos lógicos do Azure](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#create-logic-apps-environment).
+  > Para obter mais informações sobre preços, consulte [modelo de preços de aplicativos de lógicos](../logic-apps/logic-apps-pricing.md).
+
+  Para obter a lista completa de conectores e informações de referência do cada conector, como ações e gatilhos, que é definido por um OpenAPI (anteriormente conhecido como Swagger) descrição, além de quaisquer limites, você pode encontrar a lista completa sob o [visão geral dos conectores ](/connectors/). Para obter informações sobre preços, consulte [aplicativos de lógica de modelo de preços](../logic-apps/logic-apps-pricing.md), e [os detalhes de preços de aplicativos de lógicos](https://azure.microsoft.com/pricing/details/logic-apps/). 
 
 <a name="built-ins"></a>
 
@@ -66,7 +80,7 @@ Os Aplicativos Lógicos fornecem gatilhos e ações internos para que você poss
 
 ### <a name="control-workflow"></a>Controlar o fluxo de trabalho
 
-Aqui estão as ações internas para estruturar e controlar as ações no fluxo de trabalho do aplicativo lógico:
+Os aplicativos lógicos fornecem ações internas para estruturar e controlar as ações no fluxo de trabalho do aplicativo lógico:
 
 |   |   |   |   | 
 |---|---|---|---| 
@@ -77,7 +91,7 @@ Aqui estão as ações internas para estruturar e controlar as ações no fluxo 
 
 ### <a name="manage-or-manipulate-data"></a>Gerenciar ou manipular dados
 
-Aqui estão as ações internas para trabalhar com saídas de dados e seus formatos:  
+Os aplicativos lógicos fornecem ações internas para trabalhar com saídas de dados e seus formatos:  
 
 |   |   | 
 |---|---| 
@@ -90,7 +104,7 @@ Aqui estão as ações internas para trabalhar com saídas de dados e seus forma
 
 ## <a name="managed-api-connectors"></a>Conectores de API Gerenciada
 
-Aqui estão os conectores mais populares para automatizar tarefas, processos e fluxos de trabalho com esses serviços ou sistemas:
+Os aplicativos lógicos fornecem esses conectores padrão populares para automatizar tarefas, processos e fluxos de trabalho com esses serviços ou sistemas.
 
 |   |   |   |   | 
 |---|---|---|---| 
@@ -100,25 +114,25 @@ Aqui estão os conectores mais populares para automatizar tarefas, processos e f
 | [![Ícone da API][dynamics-365-icon]<br/>**Dynamics 365<br/>CRM Online**][dynamics-365-doc] | Conecte-se à sua conta do Dynamics 365 para que você possa criar e gerenciar registros, itens e muito mais. | [![Ícone da API][ftp-icon]<br/>**FTP**][ftp-doc] | Conecte-se aos servidores FTP que você pode acessar da Internet para que possa trabalhar com seus arquivos e pastas. | 
 | [![Ícone da API][salesforce-icon]<br/>**Salesforce**][salesforce-doc] | Conecte-se à sua conta do Salesforce para que você possa criar e gerenciar itens como registros, trabalhos, objetos e muito mais. | [![Ícone da API][twitter-icon]<br/>**Twitter**][twitter-doc] | Conecte-se à sua conta do Twitter para que você possa gerenciar tweets, seguidores, sua linha do tempo e muito mais. Salve seus tweets em SQL, o Excel ou SharePoint. | 
 | [![Ícone da API][azure-event-hubs-icon]<br/>**Hubs de Eventos do Azure**][azure-event-hubs-doc] | Como consumir e publicar eventos por meio de um Hub de Eventos. Por exemplo, obtenha uma saída do seu aplicativo lógico com os Hubs de Eventos e, em seguida, envie essa saída para um provedor de análise em tempo real. | [![Ícone da API][azure-event-grid-icon]<br/>**Grade de Eventos**</br>**do Azure**][azure-event-grid-doc] | Monitore eventos publicados por uma grade de eventos, por exemplo, quando recursos do Azure ou recursos de terceiros são alterados. | 
-||||| 
+|||||
 
 <a name="on-premises-connectors"></a>
 
 ## <a name="on-premises-connectors"></a>Conectores locais 
 
-Aqui estão alguns conectores comumente usados que fornecem acesso a dados e recursos em sistemas locais. Antes de criar uma conexão com um sistema local, você deve primeiro [fazer o download, instalar e configurar um gateway de dados local][gateway-doc]. Esse gateway fornece um canal de comunicação seguro sem ter que configurar a infraestrutura de rede necessária. 
+Aqui estão alguns conectores padrão comumente usados que aplicativos lógicos fornece para acessar dados e recursos em sistemas locais. Antes de criar uma conexão com um sistema local, você deve primeiro [fazer o download, instalar e configurar um gateway de dados local][gateway-doc]. Esse gateway fornece um canal de comunicação seguro sem ter que configurar a infraestrutura de rede necessária. 
 
 |   |   |   |   |   | 
 |---|---|---|---|---| 
 | ![Ícone de API][biztalk-server-icon]<br/>**BizTalk**</br> **Servidor** | [![Ícone da API][file-system-icon]<br/>**Sistema</br> de Arquivos**][file-system-doc] | [![Ícone da API][ibm-db2-icon]<br/>**IBM DB2**][ibm-db2-doc] | [![Ícone da API][ibm-informix-icon]<br/>**IBM**</br> **Informix**][ibm-informix-doc] | ![Ícone de API][mysql-icon]<br/>**MySQL** | 
 | [![Ícone da API][oracle-db-icon]<br/>**Oracle DB**][oracle-db-doc] | ![Ícone de API][postgre-sql-icon]<br/>**PostgreSQL** | [![Ícone da API][sharepoint-server-icon]<br/>**SharePoint</br> Server**][sharepoint-server-doc] | [![Ícone da API][sql-server-icon]<br/>**SQL</br> Server**][sql-server-doc] | ![Ícone de API][teradata-icon]<br/>**Teradata** | 
-||||| 
+|||||
 
 <a name="integration-account-connectors"></a>
 
-## <a name="integration-account-connectors"></a>Conectores da conta de integração 
+## <a name="integration-account-connectors"></a>Conectores da conta de integração
 
-Aqui estão os conectores para criar soluções de B2B (business-to-business) com seus aplicativos lógicos quando você cria e paga por uma [conta de integração](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md), o que está disponível por meio do Enterprise Integration Pack (EIP) no Azure. Com essa conta, você pode criar e armazenar os artefatos B2B, como parceiros comerciais, contratos, mapas, esquemas, certificados e assim por diante. Para usar esses artefatos, associe seus aplicativos lógicos com sua conta de integração. Se você usa o BizTalk Server atualmente, esses conectores poderão parecer familiares.
+Os aplicativos lógicos fornecem conectores padrão para criar soluções de business-to-business (B2B) com seus aplicativos lógicos, quando você cria e paga por um [conta de integração](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md), que está disponível por meio do pacote de EIP (Enterprise Integration) no Azure. Com essa conta, você pode criar e armazenar os artefatos B2B, como parceiros comerciais, contratos, mapas, esquemas, certificados e assim por diante. Para usar esses artefatos, associe seus aplicativos lógicos com sua conta de integração. Se você usa o BizTalk Server atualmente, esses conectores poderão parecer familiares.
 
 |   |   |   |   | 
 |---|---|---|---| 
@@ -131,7 +145,7 @@ Aqui estão os conectores para criar soluções de B2B (business-to-business) co
 
 ## <a name="enterprise-connectors"></a>Conectores empresariais
 
-Seus aplicativos lógicos podem acessar sistemas corporativos, como SAP e IBM MQ:
+Os aplicativos lógicos fornecem estes conectores corporativos para acessar sistemas corporativos, como SAP e IBM MQ:
 
 |   |   |   | 
 |---|---|---| 
@@ -172,11 +186,13 @@ As conexões podem acessar o serviço de destino ou o sistema para desde que o s
 Para chamar as APIs que executam o código personalizado ou não estão disponíveis como conectores, você pode estender a plataforma dos Aplicativos Lógicos [criando Aplicativos de API personalizados](../logic-apps/logic-apps-create-api-app.md). Você também pode [criar conectores personalizados](../logic-apps/custom-connector-overview.md) para *qualquer* API REST ou baseadas em SOAP, o que torna essas APIs disponíveis para qualquer aplicativo lógico em sua assinatura do Azure.
 Para tornar Aplicativos de API personalizado ou conectores público disponíveis para qualquer pessoa para uso no Azure, você pode [enviar conectores para certificação da Microsoft](../logic-apps/custom-connector-submit-certification.md).
 
-## <a name="get-support"></a>Obter suporte
-
-* Em caso de dúvidas, visite o [Fórum dos Aplicativos Lógicos do Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-
-* Para enviar ou votar em ideias para os Aplicativos Lógicos do Azure e conectores, visite o [site de comentários do usuário dos Aplicativos Lógicos](https://aka.ms/logicapps-wish).
+> [!NOTE]
+> Aplicativos lógicos dentro de um [ambiente de serviço de integração (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) pode acessar diretamente os recursos em uma rede virtual do Azure.
+> Se você tiver conectores personalizados que exigem o gateway de dados local, e você criou esses conectores fora um ISE, aplicativos lógicos em um ISE também podem usar esses conectores.
+>
+> Conectores personalizados criados dentro de um ISE não funcionam com o gateway de dados local. No entanto, esses conectores podem acessar diretamente fontes de dados locais que estão conectadas a uma rede virtual do Azure hospedando o ISE. Portanto, aplicativos lógicos em um ISE provavelmente não é necessário o gateway de dados ao se comunicar com esses recursos.
+>
+> Para obter mais informações sobre como criar ISEs, consulte [conectar redes virtuais do Azure de aplicativos lógicos do Azure](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#create-logic-apps-environment).
 
 ## <a name="next-steps"></a>Próximas etapas
 

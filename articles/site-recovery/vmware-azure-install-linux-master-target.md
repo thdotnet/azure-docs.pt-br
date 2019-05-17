@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/06/2019
 ms.author: mayg
-ms.openlocfilehash: 98718709038d7fd753e5eb3d45c130085c5accd9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: bcfeca34eb11caaddac06971fe7f825a142586a2
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60600044"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65602072"
 ---
 # <a name="install-a-linux-master-target-server-for-failback"></a>Instalar um servidor de destino mestre Linux para failback
 Após o failover de suas máquinas virtuais para o Azure, você poderá executar failback das máquinas virtuais para o site local. Para realizar failback, você precisa proteger novamente a máquina virtual do Azure para o site local. Para este processo, é necessário um servidor de destino mestre para receber o tráfego. 
@@ -67,7 +67,7 @@ Mantenha um ISO do Ubuntu 16.04.2 Minimal de 64 bits na unidade de DVD e inicie 
 
 1.  Selecione **Inglês** como o idioma de preferência e selecione **Enter**.
     
-    ![Selecionar um idioma](./media/vmware-azure-install-linux-master-target/image1.png)
+    ![Selecione um idioma](./media/vmware-azure-install-linux-master-target/image1.png)
 1. Selecione **Instalar Servidor Ubuntu** e pressione **Enter**.
 
     ![Selecionar Instalar Ubuntu Server](./media/vmware-azure-install-linux-master-target/image2.png)
@@ -83,7 +83,7 @@ Mantenha um ISO do Ubuntu 16.04.2 Minimal de 64 bits na unidade de DVD e inicie 
 1. Selecione **Não** (a opção padrão) e selecione **Enter**.
 
      ![Configurar o teclado](./media/vmware-azure-install-linux-master-target/image5.png)
-1. Selecione **Inglês (EUA)** como um país de origem para o teclado e selecione **Enter**.
+1. Selecione **inglês (EUA)** como o país/região de origem para o teclado e, em seguida, selecione **Enter**.
 
 1. Selecione **inglês (EUA)** como o layout do teclado e selecione **Enter**.
 
@@ -91,7 +91,7 @@ Mantenha um ISO do Ubuntu 16.04.2 Minimal de 64 bits na unidade de DVD e inicie 
 
 1. Para criar uma conta de usuário, digite o nome de usuário e selecione **Continuar**.
 
-      ![Criar uma conta do usuário](./media/vmware-azure-install-linux-master-target/image9.png)
+      ![Criar uma conta de usuário](./media/vmware-azure-install-linux-master-target/image9.png)
 
 1. Digite a senha para a nova conta de usuário e selecione **Continuar**.
 
@@ -247,7 +247,7 @@ Use as etapas a seguir para criar um disco de retenção:
 
 3. Formate a unidade e, em seguida, crie um sistema de arquivos na nova unidade: **mkfs.ext4 dev/mapper/<ID de vários caminhos do disco de retenção>**.
     
-    ![Sistema de arquivos](./media/vmware-azure-install-linux-master-target/image23-centos.png)
+    ![Sistema de arquivo](./media/vmware-azure-install-linux-master-target/image23-centos.png)
 
 4. Depois de criar o sistema de arquivos, monte o disco de retenção.
 
@@ -262,7 +262,7 @@ Use as etapas a seguir para criar um disco de retenção:
     
     Selecione **Inserir** para começar a editar o arquivo. Crie uma nova linha e insira o texto a seguir. Edite a ID de vários caminhos de disco com base na ID de vários caminhos realçada no comando anterior.
 
-    **/dev/mapper/<Retention disks multipath id> /mnt/retention ext4 rw 0 0**
+    **dev/mapeador/\<id de vários caminhos de discos de retenção > /mnt/Retention/ retenção ext4 rw 0 0**
 
     Selecione **Esc** e digite **:wq** (gravar e sair) para fechar a janela do editor.
 

@@ -3,8 +3,8 @@ title: Problemas ao entrar em um aplicativo inexistente na galeria configurado p
 description: Diretrizes para os problemas específicos que você pode enfrentar ao entrar em um aplicativo configurado para o logon único federado baseado em SAML com Azure AD
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/11/2017
-ms.author: celested
+ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cb0139227012be610977df3240f74a03f53be7e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 38decf98707231c21427f7a22dd4d12adb41852b
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60440191"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65825431"
 ---
 # <a name="problems-signing-in-to-a-non-gallery-application-configured-for-federated-single-sign-on"></a>Problemas ao entrar em um aplicativo inexistente na galeria configurado para logon único federado
 
@@ -58,7 +58,7 @@ Certifique-se de que o `Issuer` atributo na solicitação SAML corresponde ao va
 
 7. Após o carregamento do aplicativo, clique em **Logon único** no menu de navegação esquerdo do aplicativo.
 
-8. Depois que o carregamento do aplicativo, abra **configuração SAML básico**. Verifique se o valor na caixa de texto identificador corresponde o valor para o valor do identificador exibido no erro.
+8. Depois que o aplicativo for carregado, abra **Configuração Básica de SAML**. Verifique se o valor na caixa de texto identificador corresponde o valor para o valor do identificador exibido no erro.
 
 ## <a name="the-reply-address-does-not-match-the-reply-addresses-configured-for-the-application"></a>O endereço de resposta não corresponde aos endereços de resposta configurados para o aplicativo. 
 
@@ -88,7 +88,7 @@ Certifique-se de que o `Issuer` atributo na solicitação SAML corresponde ao va
 
 7. Após o carregamento do aplicativo, clique em **Logon único** no menu de navegação esquerdo do aplicativo.
 
-8. Depois que o carregamento do aplicativo, abra **configuração SAML básico**. Verifique ou atualize o valor na caixa de texto URL de resposta para corresponder a `AssertionConsumerServiceURL` valor na solicitação SAML.    
+8. Depois que o aplicativo for carregado, abra **Configuração Básica de SAML**. Verifique ou atualize o valor na caixa de texto URL de resposta para corresponder a `AssertionConsumerServiceURL` valor na solicitação SAML.    
     
 Depois que você atualizou o valor de URL de resposta no Azure AD, e ele corresponde ao valor enviado pelo aplicativo na solicitação SAML, você poderá entrar aplicativo.
 
@@ -188,7 +188,7 @@ Certifique-se de que o `Issuer` atributo na solicitação SAML corresponde ao va
 
 1.  Selecione o aplicativo para o qual você deseja configurar o logon único.
 
-1.  Depois que o carregamento do aplicativo, abra **configuração SAML básico**. Verifique se o valor na caixa de texto identificador corresponde o valor para o valor do identificador exibido no erro.
+1.  Depois que o aplicativo for carregado, abra **Configuração Básica de SAML**. Verifique se o valor na caixa de texto identificador corresponde o valor para o valor do identificador exibido no erro.
 
 ## <a name="certificate-or-key-not-configured"></a>Chave ou certificado não configurado
 
@@ -264,7 +264,7 @@ Exclua as URLs de resposta não utilizados, configurados para o aplicativo.
 
 6.  Selecione o aplicativo para o qual você deseja configurar o logon único.
 
-7.  Depois que o carregamento do aplicativo, abra **configuração SAML básico**. No **URL de resposta (URL de serviço do consumidor de declaração)**, delete não utilizado ou URLs de resposta padrão criado pelo sistema. Por exemplo, `https://127.0.0.1:444/applications/default.aspx`.
+7.  Depois que o aplicativo for carregado, abra **Configuração Básica de SAML**. No **URL de resposta (URL de serviço do consumidor de declaração)**, delete não utilizado ou URLs de resposta padrão criado pelo sistema. Por exemplo: `https://127.0.0.1:444/applications/default.aspx`.
 
 
 

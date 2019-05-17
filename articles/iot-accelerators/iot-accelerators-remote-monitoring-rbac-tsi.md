@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 08/06/2018
 ms.topic: conceptual
-ms.openlocfilehash: 778637b7488b7c5c21b600673890da79a76b4997
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9d5d572c3e32e3645e65ba8d6fc28b567b3c1e9a
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61443138"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827183"
 ---
 # <a name="configure-access-controls-for-the-time-series-insights-telemetry-explorer"></a>Configurar controles de acesso para o explorador de telemetria do Time Series Insights
 
@@ -21,7 +21,38 @@ Este artigo fornece informações sobre como configurar controles de acesso para
 
 As políticas de acesso a dados concedem permissões para emitir consultas de dados, manipular dados de referência no ambiente e salvar consultas compartilhadas e perspectivas associadas ao ambiente.
 
-[!INCLUDE [iot-tsi-data-access](../../includes/iot-tsi-data-access.md)]
+## <a name="grant-data-access"></a>Conceder acesso a dados
+
+Siga estas etapas para conceder acesso a dados para uma entidade de usuário:
+
+1. Entre no [Portal do Azure](https://portal.azure.com).
+
+2. Localize o seu ambiente do Time Series Insights. Digite **Time Series** na caixa **pesquisar**. Selecione **Ambiente do Time Series** nos resultados da pesquisa. 
+
+3. Selecione o seu ambiente de Análise de Séries Temporais na lista.
+
+4. Selecione **Políticas de Acesso a Dados** e depois **+Adicionar**.
+    ![Gerenciar a fonte do Time Series Insights – ambiente](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access1.png)
+
+5. Selecione **Selecionar usuário**.  Pesquise o nome de usuário ou endereço de email para localizar o usuário que deseja adicionar. Clique em **Selecionar** para confirmar a seleção. 
+
+    ![Gerenciar a fonte das Análise de Séries Temporais - adicionar](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access2.png)
+
+6. Selecione **Selecionar função**. Escolha a função de acesso apropriada para o usuário:
+   - Selecione **Colaborador** se quiser permitir que o usuário altere os dados de referência e compartilhe consultas salvas e perspectivas com outros usuários do ambiente. 
+   - Caso contrário, selecione **Leitor** para permitir que o usuário consulte dados no ambiente e salve as consultas pessoais (não compartilhadas) no ambiente.
+
+     Selecione **OK** para confirmar a escolha da função.
+
+     ![Gerenciar a fonte das Análise de Séries Temporais - selecionar usuário](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access3.png)
+
+7. Selecione **Ok** na página **Selecionar Função do Usuário**.
+
+    ![Gerenciar a fonte das Análise de Séries Temporais - selecionar função](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access4.png)
+
+8. A página **Políticas de Acesso de Dados** lista os usuários e suas funções.
+
+    ![Gerenciar a fonte das Análise de Séries Temporais - resultados](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access5.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

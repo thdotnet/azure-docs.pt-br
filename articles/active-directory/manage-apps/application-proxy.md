@@ -12,12 +12,12 @@ ms.date: 05/09/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb3a3d85c9cac85b6658167806cea59b6d5163de
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: c2ecc458183006872d5a4c6712cdf00a97993dbc
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782842"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65825547"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-active-directorys-application-proxy"></a>Acesso remoto a aplicativos locais por meio do Proxy de Aplicativo do Azure Active Directory 
 
@@ -44,7 +44,7 @@ O Proxy de Aplicativo funciona com:
 
 O Proxy de Aplicativo é compatível com o logon único. Para obter mais informações sobre métodos com suporte, consulte [Escolhendo um método de logon único](what-is-single-sign-on.md#choosing-a-single-sign-on-method).
 
-O Proxy de aplicativo é recomendado para dando externos usuários remotos acesso aos recursos internos. O Proxy de aplicativo substitui a necessidade de uma VPN ou um proxy reverso. Ele não se destina a usuários internos na rede corporativa.  Usuários internos que usam desnecessariamente o Proxy de aplicativo podem apresentar problemas de desempenho inesperado e indesejado.
+O Proxy de aplicativo é recomendado para dando a usuários remotos acesso aos recursos internos. O Proxy de aplicativo substitui a necessidade de uma VPN ou um proxy reverso. Ele não se destina a usuários internos na rede corporativa.  Esses usuários que usam desnecessariamente o Proxy de aplicativo podem apresentar problemas de desempenho inesperado e indesejado.
 
 ## <a name="how-application-proxy-works"></a>Como o Proxy de Aplicativo funciona
 

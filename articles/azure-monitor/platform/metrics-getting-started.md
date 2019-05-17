@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: e611f1564896cfdecb3ce34ab7c5361e5200b48a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3306e888970d99132d17d4ccf967f074302412ca
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60254115"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595443"
 ---
 # <a name="getting-started-with-azure-metrics-explorer"></a>Introdução ao Gerenciador de métricas do Azure
 
@@ -24,7 +24,7 @@ O Azure Monitor Metrics Explorer é um componente do portal do Microsoft Azure q
 
 1. Tente [aplicação dos filtros de dimensão e dividindo](#apply-dimension-filters-and-splitting). Os filtros e dividindo permitem analisar quais segmentos da métrica contribuem para o valor da métrica geral e a identificar exceções possíveis.
 
-1. Use [configurações avançadas](#advanced-chart-settings-and-next-steps) para personalizar o gráfico antes de fixar nos dashboards. [Configurar alertas](alerts-metric-overview.md) para receber notificações quando o valor da métrica excede ou cair abaixo do limite.
+1. Use [configurações avançadas](#advanced-chart-settings) para personalizar o gráfico antes de fixar nos dashboards. [Configurar alertas](alerts-metric-overview.md) para receber notificações quando o valor da métrica excede ou cair abaixo do limite.
 
 ## <a name="create-your-first-metric-chart"></a>Criar seu primeiro gráfico de métrica
 
@@ -32,7 +32,7 @@ Para criar um gráfico de métricas do seu recurso, grupo de recursos, assinatur
 
 1. Usando o seletor de recurso, selecione o recurso para o qual você deseja ver as métricas. (O recurso é pré-selecionada, se você abriu **métricas** no contexto de um recurso específico).
 
-    > ![Selecionar um recurso](./media/metrics-getting-started/resource-picker.png)
+    > ![Selecione um recurso](./media/metrics-getting-started/resource-picker.png)
 
 2. Para alguns recursos, você deve escolher um namespace. O namespace é apenas uma maneira de organizar as métricas para que você possa localizá-los. Por exemplo, contas de armazenamento têm namespaces separados para armazenar as métricas de arquivos, tabelas, Blobs e filas. Muitos tipos de recurso tem apenas um namespace.
 
@@ -61,12 +61,13 @@ Por padrão, o gráfico mostra as últimas 24 horas de dados de métricas. Use o
 
 Ver [exemplos de gráficos](metric-chart-samples.md) que tenham filtrando e dividindo aplicadas. O artigo mostra que as etapas foram usadas para configurar os gráficos.
 
-## <a name="advanced-chart-settings-and-next-steps"></a>Configurações de gráfico avançado e as próximas etapas
+## <a name="advanced-chart-settings"></a>Configurações avançadas de gráfico
 
 Você pode personalizar o estilo do gráfico, título e modificar as configurações de gráfico avançado. Quando terminar com a personalização, fixá-lo em um painel para salvar seu trabalho. Você também pode configurar alertas de métricas. Siga [documentação do produto](metrics-charts.md) saber mais sobre esses e outros recursos avançados do Gerenciador de métricas do Azure Monitor.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Ver uma lista de métricas disponíveis para serviços do Azure](metrics-supported.md)
 * [Saiba mais sobre os recursos avançados do Metrics Explorer](metrics-charts.md)
+* [Solução de problemas do Metrics Explorer](metrics-troubleshoot.md)
+* [Ver uma lista de métricas disponíveis para serviços do Azure](metrics-supported.md)
 * [Consulte exemplos de gráficos configurados](metric-chart-samples.md)

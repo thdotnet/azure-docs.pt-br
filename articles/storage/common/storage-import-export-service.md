@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 5bb68f3f0139a98f10e28957209f8530a762b76c
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: 97a3ac275613b644dfd90144039e4f3127186997
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65413899"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603100"
 ---
 # <a name="what-is-azure-importexport-service"></a>O que é o serviço de Importação/exportação do Azure?
 
@@ -74,9 +74,9 @@ Em um alto nível, um trabalho de importação envolve as seguintes etapas:
 8. As unidades são enviadas usando sua conta da transportadora para o endereço de retorno fornecido no trabalho de importação.
 
 > [!NOTE]
-> Para remessas de locais (no país do Centro de dados), compartilhe uma conta da transportadora nacionais 
+> Compartilhe uma conta da transportadora nacionais para remessas de locais (no data center país/região) 
 >
-> Para remessas abroad (fora do país do Centro de dados), compartilhe uma conta da transportadora internacionais
+> Para remessas abroad (fora do data center país/região), compartilhe uma conta da transportadora internacionais
 
  ![Figura 1: Importar o fluxo de trabalho](./media/storage-import-export-service/importjob.png)
 
@@ -104,9 +104,9 @@ Em um alto nível, um trabalho de exportação envolve as seguintes etapas:
 10. As unidades são enviadas usando sua conta da transportadora para o endereço de retorno fornecido no trabalho de importação.
 
 > [!NOTE]
-> Para remessas de locais (no país do Centro de dados), compartilhe uma conta da transportadora nacionais 
+> Compartilhe uma conta da transportadora nacionais para remessas de locais (no data center país/região) 
 >
-> Para remessas abroad (fora do país do Centro de dados), compartilhe uma conta da transportadora internacionais
+> Para remessas abroad (fora do data center país/região), compartilhe uma conta da transportadora internacionais
   
  ![Figura 2: Exportar o fluxo de trabalho](./media/storage-import-export-service/exportjob.png)
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 491545aabd3415850eb1b1d712a46401b73ad845
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 749216d3fe9164857bd4abce7ba7c766e466e7d3
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190721"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65823290"
 ---
 # <a name="what-is-password-writeback"></a>O que é write-back de senha?
 
@@ -42,9 +42,8 @@ O Write-back de senha fornece:
 * **Com suporte a write-back de senha quando um administrador as redefine no Portal do Azure**: sempre que um administrador redefine uma senha de usuário no [Portal do Azure](https://portal.azure.com), se esse usuário for federado ou sincronizado com hash de senha, o write-back de senha é efetuado no local. Essa funcionalidade não é compatível atualmente com o Portal de Administração do Office.
 * **Não exige nenhuma regra de firewall de entrada**: o write-back de senha usa uma retransmissão do Barramento de Serviço do Azure como um canal de comunicação subjacente. Toda a comunicação é de saída pela porta 443.
 
-> [!Note]
+> [!NOTE]
 > Contas de usuários existentes em grupos protegidos no Active Directory local não podem ser usadas com o write-back de senha. Contas de administrador existentes em grupos protegidos no AD local podem ser usadas com o write-back de senha. Para obter mais informações sobre grupos protegidos, consulte [Contas e grupos protegidos do Active Directory](https://technet.microsoft.com/library/dn535499.aspx).
->
 
 ## <a name="licensing-requirements-for-password-writeback"></a>Requisitos de licenciamento do write-back de senha
 
@@ -63,7 +62,6 @@ Para usar o write-back de senha, você deve ter uma das licenças a seguir atrib
 
 > [!WARNING]
 > Os planos de licenciamento do Office 365 autônomo *não oferecem suporte à/ao "Redefinição/alteração/desbloqueio de senha de autoatendimento com write-back local"* e exigem que você tenha um dos planos anteriores para que esse recurso funcione.
->
 
 ## <a name="how-password-writeback-works"></a>Como funciona o write-back de senha
 
@@ -90,7 +88,6 @@ Quando um usuário federado ou sincronizado com hash de senha tenta redefinir ou
 1. Se a operação de definição de senha for realizada com êxito, o usuário será informado de que a senha foi alterada.
    > [!NOTE]
    > Se o hash de senha do usuário for sincronizado com o Azure AD usando a sincronização de hash de senha, haverá uma chance da política de senha local ser mais fraca que a política de senha na nuvem. Nesse caso, a política local é imposta. Essa política garante que a política local seja imposta na nuvem, independentemente de você usar federação ou sincronização de hash de senha para fornecer logon único.
-   >
 
 1. Se a operação de definição de senha falhar, um erro solicitará que o usuário tente novamente. A operação poderá falhar porque:
     * O serviço foi desativado.
@@ -155,6 +152,7 @@ O tamanho de cada mensagem descrita anteriormente normalmente é inferior a 1 KB
    * Qualquer operação para forçar o autoatendimento de alteração de senha do administrador, por exemplo, expiração de senha
    * Qualquer redefinição de senha de autoatendimento do administrador originada do [portal de redefinição de senha](https://passwordreset.microsoftonline.com)
    * Qualquer redefinição de senha do usuário final iniciada pelo administrador no [portal do Azure](https://portal.azure.com)
+   * Qualquer do usuário final iniciada pelo administrador de redefinição de senha das [Centro de administração do Microsoft 365](https://admin.microsoft.com)
 
 ## <a name="unsupported-writeback-operations"></a>Operações de write-back sem suporte
 
@@ -163,11 +161,10 @@ O tamanho de cada mensagem descrita anteriormente normalmente é inferior a 1 KB
 * **Operações do usuário final sem suporte**
    * Qualquer usuário final que redefine sua própria senha usando o PowerShell versão 1, versão 2 ou a API do Graph do Azure AD
 * **Operações do administrador sem suporte**
-   * Qualquer redefinição de senha do usuário final iniciada pelo administrador no [portal de gerenciamento do Office](https://portal.office.com)
    * Qualquer redefinição de senha do usuário final iniciada pelo administrador do PowerShell versão 1, versão 2 ou da API do Graph do Azure AD
 
 > [!WARNING]
-> Não há suporte para o uso da caixa de seleção "usuário deve alterar a senha no próximo logon" em Ferramentas administrativas do Active Directory local, como usuários do Active Directory e computadores ou o Centro Administrativo do Active Directory. Ao alterar uma senha local não marque esta opção. 
+> Não há suporte para o uso da caixa de seleção "usuário deve alterar a senha no próximo logon" em Ferramentas administrativas do Active Directory local, como usuários do Active Directory e computadores ou o Centro Administrativo do Active Directory. Ao alterar uma senha local não marque esta opção.
 
 ## <a name="next-steps"></a>Próximas etapas
 

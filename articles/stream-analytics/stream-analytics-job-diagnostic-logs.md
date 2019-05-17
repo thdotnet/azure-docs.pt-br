@@ -7,14 +7,13 @@ ms.author: jeanb
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 01/19/2019
-ms.custom: seodec18
-ms.openlocfilehash: cc62a6b9f03bdd6dc8671a6cf96113a2234fc092
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/15/2019
+ms.openlocfilehash: e784cfd2956479327cff9c97a09dd0ada6a154c2
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61480103"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65826570"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-diagnostics-logs"></a>Solucionar problemas do Stream Analytics do Azure usando logs de diagnóstico
 
@@ -83,7 +82,7 @@ Ativar os logs de diagnóstico e enviá-los aos logs do Azure Monitor é altamen
 
 ## <a name="diagnostics-log-categories"></a>Categorias de logs de diagnóstico
 
-Atualmente, capturamos duas categorias de logs de diagnóstico:
+O Azure Stream Analytics captura duas categorias de logs de diagnóstico:
 
 * **Criação**: Captura eventos de log relacionados a operações de criação de trabalho, como criação de trabalho, adição e exclusão de entradas e saídas, adição e atualização da consulta e início e parada do trabalho.
 
@@ -110,7 +109,7 @@ propriedades | Detalhes específicos à entrada de log, serializados como uma ca
 
 ### <a name="execution-log-properties-schema"></a>Esquema de propriedades do log de execução
 
-Os logs de execução trazem informações sobre eventos que ocorreram durante a execução do trabalho do Stream Analytics. O esquema de propriedades varia, dependendo do tipo de evento. No momento, temos os seguintes tipos de logs de execução:
+Os logs de execução trazem informações sobre eventos que ocorreram durante a execução do trabalho do Stream Analytics. O esquema de propriedades varia dependendo se o evento é um erro de dados ou um evento genérico.
 
 ### <a name="data-errors"></a>Erros de dados
 
@@ -124,10 +123,14 @@ Type | Tipo de erro. Por exemplo, **DataConversionError**, **CsvParserError** ou
 Dados | Contém dados que são úteis para localizar com precisão a origem do erro. Sujeito a truncamento, dependendo do tamanho.
 
 Dependendo do valor de **operationName**, os erros de dados terão o seguinte esquema:
-* **Serializar eventos**. Serializar os eventos ocorridos durante operações de leitura de eventos. Eles ocorrem quando os dados na entrada não atendem ao esquema de consulta por um destes motivos:
-    * *Tipos incompatíveis durante a (des)serialização do evento*: identifica o campo que está causando o erro.
-    * *Não é possível ler um evento, serialização inválida*: lista informações sobre a localização nos dados de entrada em que ocorreu o erro. Inclui o nome do blob para a entrada do blob, o deslocamento e uma amostra dos dados.
-* **Enviar eventos**. Envia eventos ocorridos durante operações de gravação. Ele identifica o evento de streaming que causou o erro.
+
+* **Serializar eventos** ocorrem durante operações de leitura de eventos. Eles ocorrem quando os dados na entrada não atendem ao esquema de consulta por um destes motivos:
+
+   * *Tipos incompatíveis durante a (des)serialização do evento*: identifica o campo que está causando o erro.
+
+   * *Não é possível ler um evento, serialização inválida*: lista informações sobre a localização nos dados de entrada em que ocorreu o erro. Inclui o nome do blob para a entrada do blob, o deslocamento e uma amostra dos dados.
+
+* **Enviar eventos** ocorrem durante operações de gravação. Ele identifica o evento de streaming que causou o erro.
 
 ### <a name="generic-events"></a>Eventos genéricos
 

@@ -1,26 +1,26 @@
 ---
 title: Dimensionar tamanhos de cluster – Azure HDInsight
-description: Dimensione um cluster HDInsight para sua carga de trabalho.
+description: Dimensione um cluster Azure HDInsight elasticamente para corresponder a sua carga de trabalho.
 author: ashishthaps
+ms.author: ashish
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 02/26/2019
-ms.author: ashish
-ms.openlocfilehash: a172024e4662e647b39fe999f1be3cfcef04b5ce
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/13/2019
+ms.openlocfilehash: 59b9c2bf6e17dadc0d084d3e3f257f8ad91073ca
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64698241"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595857"
 ---
 # <a name="scale-hdinsight-clusters"></a>Dimensionar clusters HDInsight
 
 O HDInsight proporciona elasticidade, oferecendo a opção de escalar e reduzir verticalmente o número de nós de trabalho em seus clusters. Isso permite que você reduza um cluster depois do horário comercial ou nos finais de semana e o expanda durante picos de demanda corporativa.
 
-Por exemplo, se você tem algum processamento em lotes que ocorre uma vez por dia ou uma vez por mês, o cluster HDInsight pode ser escalonado verticalmente alguns minutos antes desse evento agendado para que haja memória e capacidade de computação de CPU suficientes.  Posteriormente, depois que o processamento for concluído e uso reduzir novamente, você poderá reduzir verticalmente o cluster HDInsight, obtendo menos nós de trabalho.
+Por exemplo, se você tiver algum processamento em lotes que ocorre uma vez por dia ou uma vez por mês, o cluster HDInsight pode ser escalado verticalmente alguns minutos antes desse evento agendado para que haja memória adequada e poder de computação de CPU.  Posteriormente, depois que o processamento for concluído e uso reduzir novamente, você poderá reduzir verticalmente o cluster HDInsight, obtendo menos nós de trabalho.
 
+Você pode dimensionar um cluster manualmente usando um dos métodos descritos abaixo ou usar [AutoEscala](hdinsight-autoscale-clusters.md) opções para que o sistema automaticamente aumentar e diminuir em resposta a CPU, memória e outras métricas.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -28,15 +28,15 @@ Por exemplo, se você tem algum processamento em lotes que ocorre uma vez por di
 
 A Microsoft fornece os seguintes utilitários para dimensionar clusters:
 
-|Utilitário | DESCRIÇÃO|
+|Utilitário | Descrição|
 |---|---|
 |[PowerShell Az](https://docs.microsoft.com/powershell/azure)|[Conjunto AzHDInsightClusterSize](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) - ClusterName \<nome do Cluster > - TargetInstanceCount \<NewSize >|
 |[PowerShell AzureRM](https://docs.microsoft.com/powershell/azure/azurerm) |[Conjunto AzureRmHDInsightClusterSize](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) - ClusterName \<nome do Cluster > - TargetInstanceCount \<NewSize >|
-|[CLI do Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)|[hdinsight AZ redimensionar](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) – grupo de recursos \<grupo de recursos > – nome \<nome do Cluster >-contagem de instância de destino \<NewSize >|
-|[CLI clássica do Azure](hdinsight-administer-use-command-line.md)|redimensionamento do cluster hdinsight do Azure \<clusterName > \<contagem de instâncias de destino >|
+|[CLI do Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)| [hdinsight AZ redimensionar](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) – grupo de recursos \<grupo de recursos > – nome \<nome do Cluster >-contagem de instância de destino \<NewSize >|
+|[CLI clássica do Azure](hdinsight-administer-use-command-line.md)|redimensionamento do cluster hdinsight do Azure \<clusterName > \<contagem de instâncias de destino > |
 |[Portal do Azure](https://portal.azure.com)|Abra o painel do cluster HDInsight, selecione **tamanho do Cluster** no menu à esquerda, em seguida, no painel de tamanho do Cluster, digite o número de nós de trabalho e selecione Salvar.|  
 
-![Dimensionar Cluster](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
+![Dimensionar cluster](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
 
 Usando qualquer um desses métodos, você pode aumentar ou reduzir verticalmente seu cluster HDInsight em apenas alguns minutos.
 
@@ -74,7 +74,7 @@ Para eliminar manualmente o aplicativo que está em execução, execute o seguin
 yarn application -kill <application_id>
 ```
 
-Por exemplo: 
+Por exemplo:
 
 ```bash
 yarn application -kill "application_1499348398273_0003"
@@ -326,6 +326,6 @@ A opção final é observar as raras ocasiões em que o HDFS entra em modo de se
     
 ## <a name="next-steps"></a>Próximas etapas
 
+* [Dimensionar automaticamente os clusters de HDInsight do Azure](hdinsight-autoscale-clusters.md)
 * [Introdução ao Azure HDInsight](hadoop/apache-hadoop-introduction.md)
 * [Dimensionar clusters](hdinsight-administer-use-portal-linux.md#scale-clusters)
-* [Gerenciar clusters HDInsight usando a interface do usuário da Web do Apache Ambari](hdinsight-hadoop-manage-ambari.md)

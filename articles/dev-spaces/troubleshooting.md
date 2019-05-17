@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s '
-ms.openlocfilehash: 508fe597a494ed89b4c2f406337c6b565943387a
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: d5b08a22aa3896fb7158ef3535b115e3e0189142
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64728819"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65596972"
 ---
 # <a name="troubleshooting-guide"></a>Guia de Solução de Problemas
 
@@ -389,3 +389,18 @@ Para atualizar a função RBAC do usuário para o controlador:
     * Para *atribuir acesso a* selecionar *usuário, grupo ou entidade de serviço do Azure AD*.
     * Para *selecionar* pesquisa para o usuário que você deseja conceder permissões.
 1. Clique em *Salvar*.
+
+## <a name="controller-create-failing-due-to-controller-name-length"></a>Criar do controlador com falha devido ao comprimento do nome do controlador
+
+### <a name="reason"></a>Motivo
+Nome do controlador um espaços de desenvolvimento do Azure não pode ter mais de 31 caracteres. Se o nome do seu controlador exceder 31 caracteres quando você habilita espaços de desenvolvimento em um cluster do AKS ou cria um controlador, você receberá um erro como:
+
+*Falha ao criar um controlador de espaços de desenvolvimento para o cluster 'a-controller-name-that-is-way-too-long-aks-east-us': Nome do controlador de espaços de desenvolvimento do Azure 'a-controller-name-that-is-way-too-long-aks-east-us' é inválido. Ões violado: Nomes de controladores de espaços de desenvolvimento do Azure só podem ter no máximo 31 caracteres*
+
+### <a name="try"></a>Experimente
+
+Crie um controlador com um nome alternativo:
+
+```cmd
+azds controller create --name my-controller --target-name MyAKS --resource-group MyResourceGroup
+```

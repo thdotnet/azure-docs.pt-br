@@ -9,12 +9,12 @@ ms.author: johndeu
 ms.date: 01/17/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: c7d895cd87122374a79a520643580a179961fba3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 50b22cefccf620d7b79202a5c432e2e6a4e3e3be
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60405351"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65550047"
 ---
 # <a name="recommended-live-streaming-encoders"></a>Codificadores de transmissão ao vivo recomendados
 
@@ -59,6 +59,9 @@ Os Serviços de Mídia recomendam usar um dos seguintes codificadores dinâmicos
 - Envivio 4Caster C4 Gen III
 - Imagine Communications Selenio MCP3
 - Mídia Hero ao vivo e Hero 4K (UHD/HEVC) do Excel
+
+> [!TIP]
+>  Se você estiver transmitindo eventos ao vivo em vários idiomas (por exemplo, uma faixa de áudio em inglês e uma faixa de áudio espanhol), você pode fazer isso com o codificador ao vivo de mídia Excel configurado para enviar a transmissão ao vivo para um evento de passagem e ao vivo.
 
 ## <a name="configuring-on-premises-live-encoder-settings"></a>Definir as configurações do codificador dinâmico local
 
@@ -126,6 +129,6 @@ Siga as mesmas etapas que as da [verificação de evento ao vivo de passagem](#p
 
 Por fim, envie por email as configurações registradas e os parâmetros dos arquivos ao vivo aos Serviços de Mídia do Azure em amsstreaming@microsoft.com como uma notificação de que todas as verificações de autoverificação foram aprovadas. Além disso, inclua suas informações de contato para quaisquer acompanhamentos. Contate a equipe dos Serviços de Mídia do Azure para tratar quaisquer questões sobre esse processo.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 [Transmissão ao vivo com os Serviços de Mídia v3](live-streaming-overview.md)

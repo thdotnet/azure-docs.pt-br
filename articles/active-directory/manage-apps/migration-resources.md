@@ -2,28 +2,28 @@
 title: Recursos para migrar aplicativos para o Azure Active Directory | Microsoft Docs
 description: Recursos para ajudá-lo a migrar o acesso e a autenticação de aplicativos para o Azure AD (Azure Active Directory).
 services: active-directory
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 09/19/2018
-ms.author: celested
+ms.author: mimart
 ms.reviewer: baselden
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92ce62d745bfb0299dc8f3eb401f5a66e38580f2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 12370d54500dbc1fcd6f812206fdfea3e5298112
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60440655"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65826088"
 ---
 # <a name="resources-for-migrating-applications-to-azure-active-directory"></a>Recursos para migrar aplicativos para o Azure Active Directory
 
 Recursos para ajudá-lo a migrar o acesso e a autenticação de aplicativos para o Azure AD (Azure Active Directory). Responda a esta pequena pesquisa (https://aka.ms/AppsMigrationFeedback) para fornecer feedback sobre sua experiência de migração de aplicativos para o Azure AD (incluindo bloqueadores para migração, necessidade de ferramentas / orientação ou motivos para manter seu IDP local). 
 
-| Recurso  | DESCRIÇÃO  |
+| Resource  | Descrição  |
 |:-----------|:-------------|
 |[Migrando os aplicativos para o Azure AD](https://aka.ms/migrateapps/whitepaper) | Este white paper apresenta os benefícios da migração e descreve como planejar a migração em quatro fases claramente definidas: descoberta, classificação, migração e gerenciamento contínuo. Você será orientado em como pensar sobre o processo e dividir o projeto em partes fáceis de consumir. Ao longo do documento, haverá links para recursos importantes que irão ajudá-lo durante o processo. |
 |[Guia de soluções: migrar aplicativos dos Serviços de Federação do Active Directory (AD FS) para o Azure AD](https://aka.ms/migrateapps/adfssolutionguide) | Este guia de solução explica as mesmas quatro fases de planejamento e execução de um projeto de migração de aplicativo descrito em um nível superior no white paper de migração. Neste guia, você aprenderá como aplicar essas fases ao objetivo específico de mover um aplicativo do Serviços de Federação do Active Directory (AD FS) para o Azure AD.|

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 02/21/2019
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 82b568d5a6abae1f061166afc1c80ef639df036c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 245e5ca6e2d7d1f48951d63ba6539180a35f1358
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60371539"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604151"
 ---
 # <a name="view-the-tax-documents-for-your-microsoft-customer-agreement"></a>Exibir os documentos de imposto para o contrato de cliente da Microsoft
 
@@ -36,12 +36,12 @@ Você deve ser o proprietário, colaborador, leitor ou Gerenciador de faturas do
 3. Selecione **Faturas**.
 4. Na grade de nota fiscal, localize a linha da fatura correspondente ao documento de impostos que você deseja baixar.
 5. Clique nas reticências (`...`) no final da linha.
-6. Selecione **documentos de imposto**. Dependendo do país do seu perfil de cobrança, você poderá ver mais de um documento de imposto por fatura.
+6. Selecione **documentos de imposto**. Dependendo do país/região do seu perfil de cobrança, você poderá ver mais de um documento de imposto por fatura.
 
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Verificar o acesso a um contrato de cliente da Microsoft
 [!INCLUDE [billing-check-mca](../../includes/billing-check-mca.md)]
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Exiba os preços do Azure da sua organização](billing-ea-pricing.md)
 - [Exibir e baixar sua fatura do Microsoft Azure](billing-download-azure-invoice.md)

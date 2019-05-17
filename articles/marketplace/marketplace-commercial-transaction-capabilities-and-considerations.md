@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 10/29/2018
 ms.author: yijenj
-ms.openlocfilehash: bf0c6a5234846499d7b8a49f427dba7af36edc15
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 5dc311538055d9ecb7aba21f95d819a914cd1db7
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64937966"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65826562"
 ---
 # <a name="azure-marketplace-commercial-transaction-capabilities-and-considerations"></a>Recursos e considerações sobre transações comerciais do Azure Marketplace
 
@@ -137,11 +137,14 @@ Essa opção deve ser configurada para vender através da Microsoft e pode ser p
 |*O cliente é cobrado pela Microsoft*    |  *US $ 100,00 por mês (observação: o editor deve contabilizar quaisquer custos incorridos ou de infraestrutura de passagem no valor da licença)*  |
 
 * Nesse cenário, a Microsoft cobra US $ 100,00 pela sua licença de software e paga US $ 80,00 ao editor.
+* Parceiros que qualificaram para a taxa de serviço do Marketplace reduzido verá que uma taxa de transação reduzido o SaaS oferece desde maio de 2019 até de 2020 de junho. Nesse cenário, a Microsoft cobra $100,00 pelos sua licença de software e paga out US $90,00 ao publicador.
 
 |Faturas da Microsoft  | US $100,00 por mês  |
 |---------|---------|
-|A Microsoft paga para você 80% do seu custo de licença    |   US $80,00 por mês     |
-|A Microsoft mantém 20% do seu custo de licença   |  US $20,00 por mês       |
+|A Microsoft paga para você 80% do seu custo de licença <br> \* A Microsoft paga 90% do seu custo de licença para todos os aplicativos SaaS qualificados   |   US $80,00 por mês <br> \* US $90,00 por mês    |
+|A Microsoft mantém 20% do seu custo de licença <br> \* A Microsoft mantém a 10% do seu custo de licença para todos os aplicativos SaaS qualificados.  |  US $20,00 por mês <br> \* $10.00     |
+
+* **Tarifa de serviço do Marketplace reduzido:** Para determinados produtos de SaaS que você publicar em nosso Marketplace comerciais, Microsoft reduzirá sua taxa de serviço do Marketplace de 20% (conforme descrito no contrato de Editor do Microsoft) a 10%.  Em ordem para o seu produto qualificar, pelo menos um dos seus produtos deve ser designado pela Microsoft como IP co-sell ready ou priorizada de venda conjunta de IP. Para receber essa taxa de serviço do Marketplace reduzida para o mês, qualificação deve ser atendida pelo menos cinco (5) dias úteis antes do final do mês do calendário. Reduzido o serviço Marketplace taxa não se aplicam a VMs, aplicativos gerenciados ou quaisquer outros produtos disponibilizados por meio de nosso Marketplace comercial.  Essa taxa de serviço do Marketplace reduzido estará disponível para ofertas qualificadas, com encargos de licença, coletados pela Microsoft entre 31 de maio de 2019 e 30 de junho de 2020.  Após esse tempo, a taxa de serviço do Marketplace retornará ao seu valor normal.
 
 ### <a name="customer-invoicing-payment-billing-and-collections"></a>Faturamento, pagamento, faturamento e cobrança do cliente
 
@@ -159,7 +162,7 @@ Os clientes também podem pagar usando um cartão de crédito e uma fatura mensa
 
 Por exemplo, se o cliente compra usando um cartão de crédito:
 
-|DESCRIÇÃO    |    Data  |
+|Descrição    |    Date  |
 |----------|----------|
 |Período de ordem   | 15 de agosto de 2018 – 30 de agosto de 2018 |
 |Prazo final (mês)   | 30 de agosto de 2018 |
@@ -173,7 +176,7 @@ Por exemplo, se o cliente compra usando um cartão de crédito:
 
 Se o cliente comprar usando um Enterprise Agreement:
 
-| DESCRIÇÃO |    Data  |
+| Descrição |    Date  |
 |----------|----------|
 |Período de ordem | 15 de agosto de 2018 – 30 de agosto de 2018 |
 |Prazo final (trimestre) | 30 de setembro de 2018 |

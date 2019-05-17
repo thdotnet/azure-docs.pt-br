@@ -8,13 +8,13 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
-ms.date: 05/06/2019
-ms.openlocfilehash: 634f3948f9a5e28454e9b2b29f950c3fb00f6c19
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.date: 05/10/2019
+ms.openlocfilehash: a320f584ff82f2b8a2b3d784e1995aa043004587
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65147737"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65597495"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Informações de limites e configuração para os Aplicativos Lógicos do Azure
 
@@ -120,7 +120,7 @@ Para ultrapassar esses limites no processamento normal ou executar um teste de c
 
 Estes são os limites para uma única solicitação HTTP ou chamada de conector síncrona:
 
-#### <a name="timeout"></a>Tempo limite
+#### <a name="timeout"></a>Tempo Limite
 
 Algumas operações de conector fazem chamadas assíncronas ou escutam solicitações de webhook, portanto o tempo limite para essas operações pode ter mais do que esses limites. Para obter mais informações, consulte os detalhes técnicos para o conector específico e também [Gatilhos e ações de fluxo de trabalho](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action).
 
@@ -139,7 +139,7 @@ Algumas operações de conector fazem chamadas assíncronas ou escutam solicita�
 | Limite de avaliação da expressão | 131.072 caracteres | 131.072 caracteres | As expressões `@concat()`, `@base64()`, `@string()` não podem ser maiores do que esse limite. |
 |||||
 
-#### <a name="retry-policy"></a>Política de repetição
+#### <a name="retry-policy"></a>Política de novas tentativas
 
 | NOME | Limite | Observações |
 | ---- | ----- | ----- |

@@ -1,6 +1,6 @@
 ---
-title: O Azure Monitor - Zero de monitoramento para o Kubernetes aplicativos hospedados do aplicativo de instrumentação | Microsoft Docs
-description: Zero monitoramento para aplicativos do Kubernetes hospedado de aplicativos de instrumentação é uma solução de monitoramento que permite que você colete a telemetria do Application Insights que pertencem às solicitações de entrada e saídas para e de pods em execução em seu cluster do Kubernetes por utilizando a tecnologia de malha de serviço chamado Istio.
+title: Use o Application Insights para monitorar seu serviço de Kubernetes do Azure (AKS) ou outros Kubernetes hospedado aplicativos - Azure Monitor | Microsoft Docs
+description: O Azure Monitor usa tecnologia de malha do serviço, Istio, no seu cluster Kubernetes para fornecer monitoramento de aplicativos para qualquer aplicativo do Kubernetes hospedado. Isso permite que a coleta de telemetria do Application Insights que pertencem às solicitações de entrada e saídas para e de pods em execução em seu cluster.
 services: application-insights
 author: tokaplan
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: application-insights
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: alkaplan
-ms.openlocfilehash: 42b81ec0fa01841791a5b2651d1c1189db5e27ff
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
-ms.translationtype: HT
+ms.openlocfilehash: c94d589875195207ec6f71c35ad077cac281fda5
+ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65408220"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65555827"
 ---
-# <a name="zero-instrumentation-application-monitoring-for-kubernetes-hosted-apps"></a>Aplicativos hospedados pelo zero monitoramento de aplicativos de instrumentação para Kubernetes
+# <a name="zero-instrumentation-application-monitoring-for-kubernetes-hosted-applications"></a>Monitoramento de aplicativos zero instrumentação para Kubernetes aplicativos hospedados
 
 > [!IMPORTANT]
 > Essa funcionalidade está atualmente em visualização pública.

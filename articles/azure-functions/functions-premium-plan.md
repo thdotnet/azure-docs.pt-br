@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: jehollan
-ms.openlocfilehash: d327146c4a1fa61e55bb904308038c1ce717123d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 75987e7cba9f373af5a434de9f273948c3c9ae75
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031145"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544752"
 ---
 # <a name="azure-functions-premium-plan-preview"></a>Plano Premium de funções do Azure (visualização)
 
@@ -44,7 +44,7 @@ Se nenhum eventos e execuções de hoje ocorrem no plano de consumo, seu aplicat
 
 No plano Premium, você pode ter seu aplicativo previamente começando em um número especificado de instâncias, até o tamanho mínimo de plano.  Pré-começando instâncias também permitem que você previamente escalar um aplicativo antes de alta carga. Conforme o aplicativo for escalado horizontalmente, ele é dimensionado primeiro nas instâncias da warmed previamente. Continuam instâncias adicionais para armazenar em buffer out e passiva imediatamente em preparação para a próxima operação de escala. Por ter um buffer de instâncias previamente prontas, você pode evitar efetivamente latências de inicialização a frio.  Instâncias previamente prontas é um recurso do plano Premium e você precisa manter pelo menos uma instância em execução e disponíveis em todos os momentos em que o plano está ativo.
 
-Você pode configurar o número de instâncias prontas previamente no portal do Azure, selecionando **Scale Out** na **recursos de plataforma** guia.
+Você pode configurar o número de instâncias previamente prontas no Azure portal selecionando sua **aplicativo de funções**, indo para o **recursos da plataforma** guia e, em seguida, selecionando o **Scale Out**opções. Na janela de edição de aplicativo de função, começando previamente instâncias é específicas do aplicativo, mas as instâncias de mínimas e máxima se aplicam a todo o seu planejamento.
 
 ![Configurações de escala elástica](./media/functions-premium-plan/scale-out.png)
 
@@ -114,6 +114,7 @@ Abaixo estão as regiões com suporte no momento para a visualização pública.
 |França Central|
 |Oeste do Japão|
 |Coreia Central|
+|Centro-Norte dos EUA|
 |Norte da Europa|
 |Centro-Sul dos Estados Unidos|
 |Sul da Índia|

@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 04/03/2019
+ms.date: 05/15/2019
 ms.author: rolyon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1f03cd518a15d08971968e04fa69954951c77e0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8659ecab649216650403f3a992cc6e356e5de5d0
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60356718"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65823594"
 ---
 # <a name="azure-active-directory-terms-of-use-feature"></a>Recurso Termos de uso do Azure Active Directory
 Os Termos de uso do Azure AD fornecem um método simples que as organizações podem usar para apresentar informações aos usuários finais. Essa apresentação faz com que os usuários vejam os avisos de isenção de responsabilidade relevantes para os requisitos de conformidade ou legais. Este artigo descreve como começar a usar os Termos de uso.
@@ -37,7 +37,7 @@ Para ver outros vídeos, consulte:
 - [Como implantar os Termos de uso no Azure Active Directory](https://www.youtube.com/embed/N4vgqHO2tgY)
 - [Como implementar os Termos de uso no Azure Active Directory](https://www.youtube.com/embed/t_hA4y9luCY)
 
-## <a name="what-can-i-do-with-terms-of-use"></a>O que posso fazer com os Termos de uso?
+## <a name="what-can-i-do-with-terms-of-use"></a>O que fazer com os Termos de uso?
 Os Termos de uso do Azure AD têm as seguintes funcionalidades:
 - Exigir que funcionários ou convidados aceitem os Termos de uso antes de obterem acesso.
 - Exigir que funcionários ou convidados aceitem os Termos de uso em cada dispositivo antes de obterem acesso.
@@ -57,11 +57,11 @@ Para usar e configurar os Termos de uso do Azure AD, você deve ter:
 - Assinatura do Azure AD Premium P1, P2, EMS E3 ou EMS E5.
     - Se você não tiver uma dessas assinaturas, poderá [obter o Azure AD Premium](../fundamentals/active-directory-get-started-premium.md) ou [habilitar a avaliação do Azure AD Premium](https://azure.microsoft.com/trial/get-started-active-directory/).
 - Uma das seguintes contas de administrador para o diretório que você deseja configurar:
-    - Administrador global
-    - Administrador de segurança
-    - Administrador de acesso condicional
+    - Administrador Global
+    - Administrador de Segurança
+    - Administrador de Acesso Condicional
 
-## <a name="terms-of-use-document"></a>Documento Termos de uso
+## <a name="terms-of-use-document"></a>Documento dos Termos de uso
 
 O conteúdo dos Termos de uso do Azure AD são apresentados em formato PDF. O arquivo em PDF pode ter qualquer conteúdo, por exemplo, contratos existentes, o que permite que você colete os contratos do usuário final na entrada do usuário. Para dar suporte a usuários em dispositivos móveis, o tamanho de fonte recomendado em PDF é de 24 pontos.
 
@@ -98,8 +98,8 @@ Depois de preparar o documento dos Termos de uso, use o procedimento a seguir pa
 
     | Expirar a partir de | Frequência | Result |
     | --- | --- | --- |
-    | Data de hoje  | Mensal | A partir de hoje, os usuários devem aceitar os Termos de uso e depois aceitarem novamente todos os meses. |
-    | Data no futuro  | Mensal | A partir de hoje, os usuários devem aceitar os Termos de uso. Quando a data futura chegar, os consentimentos irão expirar e depois os usuários devem aceitar novamente a todos os meses.  |
+    | Data de hoje  | Mensalmente | A partir de hoje, os usuários devem aceitar os Termos de uso e depois aceitarem novamente todos os meses. |
+    | Data no futuro  | Mensalmente | A partir de hoje, os usuários devem aceitar os Termos de uso. Quando a data futura chegar, os consentimentos irão expirar e depois os usuários devem aceitar novamente a todos os meses.  |
 
     Por exemplo, se você definir a expiração a partir da data para **1 de janeiro** e a frequência para **Mensal**, segue como ocorreriam as expirações para dois usuários:
 
@@ -121,7 +121,7 @@ Depois de preparar o documento dos Termos de uso, use o procedimento a seguir pa
 
     ![Políticas de acesso condicional](./media/terms-of-use/conditional-access-templates.png)
 
-    | Modelo | DESCRIÇÃO |
+    | Modelo | Descrição |
     | --- | --- |
     | **Acesso a aplicativos de nuvem para todos os convidados** | Uma política de acesso condicional será criada para todos os convidados e todos os aplicativos de nuvem. Essa política afeta o portal do Azure. Após ela ser criada, talvez seja necessário sair e entrar novamente. |
     | **Acesso a aplicativos de nuvem para todos os usuários** | Uma política de acesso condicional será criada para todos os usuários e todos os aplicativos de nuvem. Essa política afeta o portal do Azure. Após ela ser criada, será necessário sair e entrar novamente. |
@@ -260,7 +260,7 @@ A configuração **Exigir consentimento dos usuários finais em cada dispositivo
 Segue uma lista dos softwares e plataformas com suporte.
 
 > [!div class="mx-tableFixed"]
-> |  | iOS | Android | Windows 10 | Outros |
+> |  | iOS | Android | Windows 10 | Outro |
 > | --- | --- | --- | --- | --- |
 > | **Aplicativo nativo** | Sim | sim | Sim |  |
 > | **Microsoft Edge** | Sim | sim | Sim |  |
@@ -383,6 +383,9 @@ R: Você pode [revisar os Termos de uso anteriormente aceitos](#how-users-can-re
 
 **P: O que acontece se também estiver usando os termos e condições do Intune?**<br />
 R: Caso já tenha configurado os Termos de uso do Azure AD e os [Termos e condições do Intune](/intune/terms-and-conditions-create), o usuário será solicitado a aceitar ambos. Para obter mais informações, consulte a [Escolha da solução de Termos correta para a publicação do seu blog da organização](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
+
+**P: Quais pontos de extremidade os termos de uso de serviço pode usar para autenticação?**<br />
+R: Termos de uso utiliza os seguintes pontos de extremidade para autenticação: https://tokenprovider.termsofuse.identitygovernance.azure.com e https://account.activedirectory.windowsazure.com. Se sua organização tiver uma lista de permissões de URLs para o registro, você precisará adicionar esses pontos de extremidade para sua lista de permissões, juntamente com os pontos de extremidade do Azure AD para entrar.
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -8,14 +8,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 04/29/2019
+ms.date: 05/13/2019
 ms.author: jingwang
-ms.openlocfilehash: 3fcedc74cde9e26ea53d2475f0e9805788787f2d
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 355f61d6282c822e18cf4752044c1e1a5cbbc6a0
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65228619"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65560769"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen2-using-azure-data-factory"></a>Copiar dados de/para o Azure Data Lake Storage Gen2 usando o Azure Data Factory
 
@@ -516,6 +516,66 @@ Esta seção descreve o comportamento resultante da operação de cópia para di
 | falso |preserveHierarchy | Pasta1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Arquivo1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Arquivo2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subpasta1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo5 | A pasta de destino Pasta1 é criada com a seguinte estrutura: <br/><br/>Pasta1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Arquivo1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Arquivo2<br/><br/>A Subpasta1 com Arquivo3, Arquivo4 e Arquivo5 não é selecionada. |
 | falso |flattenHierarchy | Pasta1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Arquivo1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Arquivo2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subpasta1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo5 | A pasta de destino Pasta1 é criada com a seguinte estrutura: <br/><br/>Pasta1<br/>&nbsp;&nbsp;&nbsp;&nbsp;nome gerado automaticamente para o Arquivo1<br/>&nbsp;&nbsp;&nbsp;&nbsp;nome gerado automaticamente para o Arquivo2<br/><br/>A Subpasta1 com Arquivo3, Arquivo4 e Arquivo5 não é selecionada. |
 | falso |mergeFiles | Pasta1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Arquivo1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Arquivo2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subpasta1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo5 | A pasta de destino Pasta1 é criada com a seguinte estrutura<br/><br/>Pasta1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Os conteúdos de Arquivo1 + Arquivo2 são mesclados em um arquivo com um nome de arquivo gerado automaticamente. nome gerado automaticamente para o Arquivo1<br/><br/>A Subpasta1 com Arquivo3, Arquivo4 e Arquivo5 não é selecionada. |
+
+## <a name="preserve-acls-from-data-lake-storage-gen1"></a>Preservar as ACLs do Data Lake Storage Gen1
+
+>[!TIP]
+>Para copiar dados do armazenamento do Azure Data Lake Gen1 em Gen2 em geral, consulte [copiar dados do Azure Data Lake armazenamento Gen1 para Gen2 com o Azure Data Factory](load-azure-data-lake-storage-gen2-from-gen1.md) com instruções passo a passo e práticas recomendadas.
+
+Ao copiar arquivos do Azure Data Lake Storage (ADLS) Gen1 para Gen2, você pode optar por preservar as listas de controle de acesso (ACLs) POSIX junto com dados. Para o controle de acesso nos detalhes, consulte [controle de acesso no Azure Data Lake armazenamento Gen1](../data-lake-store/data-lake-store-access-control.md) e [controle de acesso no armazenamento do Azure Data Lake Gen2](../storage/blobs/data-lake-storage-access-control.md).
+
+Os seguintes tipos de ACLs podem ser preservados usando a atividade de cópia de fábrica de dados do Azure, você pode selecionar um ou mais tipos:
+
+- **ACL**: Copie e preservar **listas de controle de acesso do POSIX** em arquivos e diretórios. Ele copiará as ACLs existentes completas da origem para o coletor. 
+- **Proprietário**: Copie e preservar **o usuário proprietário** de arquivos e diretórios. É necessário acesso de superusuário para o coletor Gen2 ADLS.
+- **Grupo**: Copie e preservar **o grupo proprietário** de arquivos e diretórios. É necessário acesso de superusuário para o coletor Gen2 ADLS ou o usuário proprietário (se o usuário proprietário também for um membro do grupo de destino).
+
+Se você especificar para copiar de uma pasta, o Data Factory replica as ACLs para determinada pasta, bem como os arquivos e diretórios sob ele (se `recursive` é definido como true). Se você especificar para copiar de um único arquivo, as ACLs no arquivo é copiado.
+
+>[!IMPORTANT]
+>Quando você optar por preservar as ACLs, certifique-se de que alto, você concede permissões suficientes para o ADF para operar em sua conta do ADLS Gen2 do coletor. Por exemplo, usar a autenticação de chave de conta ou atribuir a função de proprietário de dados de Blob de armazenamento à identidade do serviço principal/gerenciados.
+
+Quando você configura fonte como Gen1 ADLS com formato da opção/binário de cópia binária e coletor como Gen2 ADLS com o formato da opção/binário de cópia binária, você pode encontrar **preservar** opção **página de configurações da ferramenta Copy Data** ou na **atividade de cópia -> configurações** guia para a criação de atividade.
+
+![Preservar a ACL ADLS Gen1 para Gen2](./media/connector-azure-data-lake-storage/adls-gen2-preserve-acl.png)
+
+Aqui está um exemplo de configuração JSON (consulte `preserve`): 
+
+```json
+"activities":[
+    {
+        "name": "CopyFromGen1ToGen2",
+        "type": "Copy",
+        "typeProperties": {
+            "source": {
+                "type": "AzureDataLakeStoreSource",
+                "recursive": true
+            },
+            "sink": {
+                "type": "AzureBlobFSSink",
+                "copyBehavior": "PreserveHierarchy"
+            },
+            "preserve": [
+                "ACL",
+                "Owner",
+                "Group"
+            ]
+        },
+        "inputs": [
+            {
+                "referenceName": "<Azure Data Lake Storage Gen1 input dataset name>",
+                "type": "DatasetReference"
+            }
+        ],
+        "outputs": [
+            {
+                "referenceName": "<Azure Data Lake Storage Gen2 output dataset name>",
+                "type": "DatasetReference"
+            }
+        ]
+    }
+]
+```
 
 ## <a name="mapping-data-flow-properties"></a>Propriedades do mapeamento de fluxo de dados
 

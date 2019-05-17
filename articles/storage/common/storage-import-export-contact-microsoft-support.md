@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/29/2018
 ms.author: alkohli;
 ms.subservice: common
-ms.openlocfilehash: b01c8a3fe9b0c0856dceb5c05f449504ce8c75d6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 42c8c9c89a69224b222aabe8e929d800d22162ce
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61483164"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604229"
 ---
 # <a name="open-a-support-ticket-for-an-importexport-job"></a>Abra um tíquete de suporte para um trabalho de Importação/Exportação
 
@@ -58,7 +58,7 @@ Execute as seguintes etapas para criar uma solicitação de suporte:
 4. Em **Nova solicitação de suporte**, clique **Etapa 3 Informações de contato**. Em **Informações de contato**, execute as seguintes etapas:
 
    1. Nas **Opções de contato**, forneça seu método de contato preferencial (telefone ou email) e o idioma. O tempo de resposta é selecionado automaticamente com base em seu plano de assinatura.
-   2. Nas Informações de contato, informe seu nome, email, contato opcional e país. Marque a caixa de seleção **Salvar alterações de contato para futuras solicitações de suporte**.
+   2. As informações de contato, forneça seu nome, o email, o contato opcional, o país/região. Marque a caixa de seleção **Salvar alterações de contato para futuras solicitações de suporte**.
    3. Clique em **Criar**.
    
        ![Informações de contato](./media/storage-import-export-contact-microsoft-support/import-export-support7.png)   

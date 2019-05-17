@@ -3,8 +3,8 @@ title: Personalizar declarações emitidas no token SAML para aplicativos empres
 description: Aprenda a personalizar as declarações emitidas no token SAML para aplicativos empresariais no Azure AD.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: f1daad62-ac8a-44cd-ac76-e97455e47803
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/03/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b137b8cd4e3a2b7a308170904e9b3d09b11137f9
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 4c1f8640918d433956935e9428e23aac59e36334
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65231334"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65764659"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Como: Personalizar declarações emitidas no token SAML para aplicativos empresariais
 
@@ -121,7 +121,7 @@ Você também pode usar as funções de transformações de declarações.
 | **Extract () - antes da correspondência** | Retorna a subcadeia de caracteres até que ele corresponde ao valor especificado.<br/>Por exemplo, se o valor da entrada é "BSimon_US", o valor correspondente é "_US", então saída da declaração é "BSimon". |
 | **Extract () - entre correspondência** | Retorna a subcadeia de caracteres até que ele corresponde ao valor especificado.<br/>Por exemplo, se o valor da entrada é "Finance_BSimon_US", o primeiro valor correspondente é "Finance_", o segundo valor correspondente é "_US" e saída da declaração é "BSimon". |
 | **ExtractAlpha() - Prefix** | Retorna a parte em ordem alfabética de prefixo da cadeia de caracteres.<br/>Por exemplo, se o valor da entrada é "BSimon_123", em seguida, ele retorna "BSimon". |
-| **ExtractAlpha() - Suffix** | Retorna a parte em ordem alfabética de sufixo da cadeia de caracteres.<br/>Por exemplo, se o valor da entrada é "123_Simon", em seguida, ele retorna "BSimon". |
+| **ExtractAlpha() - Suffix** | Retorna a parte em ordem alfabética de sufixo da cadeia de caracteres.<br/>Por exemplo, se o valor da entrada é "123_Simon", em seguida, ele retorna "Fernandes". |
 | **ExtractNumeric() - Prefix** | Retorna a parte numérica do prefixo da cadeia de caracteres.<br/>Por exemplo, se o valor da entrada é "123_BSimon", em seguida, ele retorna "123". |
 | **ExtractNumeric() - Suffix** | Retorna a parte numérica do sufixo da cadeia de caracteres.<br/>Por exemplo, se o valor da entrada é "BSimon_123", em seguida, ele retorna "123". |
 | **IfEmpty()** | Gera um atributo ou uma constante se a entrada for nulo ou vazio.<br/>Por exemplo, se deseja gerar um atributo armazenado em um extensionattribute se employeeid para um determinado usuário está vazia. Para fazer isso, você poderia configurar os seguintes valores:<br/>Parâmetro 1(input): EmployeeID<br/>Parameter 2 (output): user.extensionattribute1<br/>O parâmetro 3 (se não houver nenhuma correspondência de saída): EmployeeID |
