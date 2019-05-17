@@ -56,8 +56,8 @@ As propriedades a seguir têm suporte para o serviço vinculado do SAP ECC:
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **SapEcc** | Sim |
 | url | A URL do serviço OData do SAP ECC. | Sim |
-| Nome de Usuário | O nome de usuário usado para conectar ao SAP ECC. | Não  |
-| Senha | A senha de texto não criptografado usada para conectar ao SAP ECC. | Não  |
+| username | O nome de usuário usado para conectar ao SAP ECC. | Não  |
+| password | A senha de texto não criptografado usada para conectar ao SAP ECC. | Não  |
 | connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode usar o Integration Runtime auto-hospedado ou o Integration Runtime do Azure (se seu armazenamento de dados estiver publicamente acessível). Se não for especificado, ele usa o Integration Runtime padrão do Azure. |Não  |
 
 **Exemplo:**
@@ -91,7 +91,7 @@ Para copiar dados do SAP ECC, defina a propriedade do tipo do conjunto de dados 
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| caminho | Caminho da entidade OData do SAP ECC. | Sim |
+| path | Caminho da entidade OData do SAP ECC. | Sim |
 
 **Exemplo**
 
@@ -162,14 +162,14 @@ Ao copiar dados do SAP ECC, os seguintes mapeamentos são usados dos tipos de da
 
 | Tipo de dados OData | Tipo de dados provisório do Data Factory |
 |:--- |:--- |
-| Edm.Binary | Cadeia de caracteres |
+| Edm.Binary | String |
 | Edm.Boolean | Bool |
-| Edm.Byte | Cadeia de caracteres |
+| Edm.Byte | String |
 | Edm.DateTime | DateTime |
 | Edm.Decimal | Decimal |
 | Edm.Double | Double |
 | Edm.Single | Single |
-| Edm.Guid | Cadeia de caracteres |
+| Edm.Guid | String |
 | Edm.Int16 | Int16 |
 | Edm.Int32 | Int32 |
 | Edm.Int64 | Int64 |
