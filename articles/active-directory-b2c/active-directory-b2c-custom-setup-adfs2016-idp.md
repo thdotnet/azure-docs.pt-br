@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/07/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 91db42a003bdbb7614faba2122c30826b62ee20f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: df4acf72a1a6ea134e1192512fda1d8cf1e92f0a
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64698655"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65767984"
 ---
 # <a name="add-adfs-as-a-saml-identity-provider-using-custom-policies-in-azure-active-directory-b2c"></a>Adicionar ADFS como um provedor de identidade SAML usando políticas personalizadas no Azure Active Directory B2C
 
@@ -35,10 +35,10 @@ Você precisa armazenar o certificado em seu locatário do Azure AD B2C.
 1. Entre no [Portal do Azure](https://portal.azure.com/).
 2. Verifique se que você estiver usando o diretório que contém o seu locatário do Azure AD B2C. Selecione o **filtro de diretório e assinatura** no menu superior e escolha o diretório que contém o seu locatário.
 3. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
-4. Na página Visão Geral, selecione **Identity Experience Framework – VERSÃO PRÉVIA**.
+4. Na página de Visão Geral, selecione **Estrutura de Experiência de Identidade**.
 5. Selecione **Chaves de Política** e, em seguida, escolha **Adicionar**.
 6. Para **Opções**, escolha `Upload`.
-7. Insira um **Nome** para a chave de política. Por exemplo, `SamlCert`. O prefixo `B2C_1A_` será adicionado automaticamente ao nome da chave.
+7. Insira um **Nome** para a chave de política. Por exemplo: `SamlCert`. O prefixo `B2C_1A_` será adicionado automaticamente ao nome da chave.
 8. Procure e selecione o arquivo .pfx do certificado com a chave privada.
 9. Clique em **Criar**.
 
@@ -110,7 +110,7 @@ Neste ponto, o provedor de identidade já foi definido, mas não está disponív
 2. Localize e copie todo o conteúdo do elemento **UserJourney** que inclui `Id="SignUpOrSignIn"`.
 3. Abra o *TrustFrameworkExtensions.xml* e localize o elemento **UserJourneys**. Se o elemento não existir, adicione um.
 4. Cole todo o conteúdo do elemento **UserJourney** que você copiou como filho do elemento **UserJourneys**.
-5. Renomeie a ID do percurso do usuário. Por exemplo, `SignUpSignInADFS`.
+5. Renomeie a ID do percurso do usuário. Por exemplo: `SignUpSignInADFS`.
 
 ### <a name="display-the-button"></a>Exibir o botão
 
@@ -134,7 +134,7 @@ Agora que implementou um botão, você precisará vinculá-lo a uma ação. A a�
     <ClaimsExchange Id="ContosoExchange" TechnicalProfileReferenceId="Contoso-SAML2" />
     ```
     
-    Atualize o valor de **TechnicalProfileReferenceId** para a ID do perfil técnico que você criou anteriormente. Por exemplo, `Contoso-SAML2`.
+    Atualize o valor de **TechnicalProfileReferenceId** para a ID do perfil técnico que você criou anteriormente. Por exemplo: `Contoso-SAML2`.
 
 3. Salve o arquivo *TrustFrameworkExtensions.xml* e carregue-o novamente para verificação.
 
@@ -173,7 +173,7 @@ Abra um navegador e navegue até a URL. Certifique-se de digitar a URL correta e
     | Sobrenome | family_name |
     | Given-Name | given_name |
     | E-Mail-Address | email |
-    | Display-Name | Nome |
+    | Display-Name | nome |
     
 12.  Com base no tipo de certificado, talvez seja necessário definir o algoritmo de HASH. Na janela de propriedades de confiança de terceira parte confiável (Demonstração B2C), selecione a guia **Avançado** e altere o **algoritmo de Secure hash** para `SHA-256`, e clique em **OK**.  
 13. No Gerenciador do Servidor, selecione **Ferramentas** e, em seguida, selecione **Gerenciamento do ADFS**.
@@ -196,7 +196,7 @@ A comunicação com o Azure AD B2C ocorre por meio de um aplicativo que você cr
 Atualize o arquivo de RP (terceira parte confiável) que iniciará o percurso do usuário que você criou.
 
 1. Faça uma cópia do *SignUpOrSignIn.xml* no diretório de trabalho e renomeie-a. Por exemplo, renomeie-a para *SignUpSignInADFS.xml*.
-2. Abra o novo arquivo e atualize o valor do atributo **PolicyId** para **TrustFrameworkPolicy** com um valor exclusivo. Por exemplo, `SignUpSignInADFS`.
+2. Abra o novo arquivo e atualize o valor do atributo **PolicyId** para **TrustFrameworkPolicy** com um valor exclusivo. Por exemplo: `SignUpSignInADFS`.
 3. Atualize o valor de **PublicPolicyUri** com o URI da política. Por exemplo, `http://contoso.com/B2C_1A_signup_signin_adfs`
 4. Atualize o valor do atributo **ReferenceId** em **DefaultUserJourney** para corresponder à ID do novo percurso do usuário que você criou (SignUpSignInADFS).
 5. Salve suas alterações, faça upload do arquivo e, em seguida, selecione a nova política na lista.

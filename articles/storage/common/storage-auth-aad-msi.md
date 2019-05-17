@@ -9,12 +9,12 @@ ms.date: 04/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 4245c44ceaf907512187d7db4a9d6f087a855f70
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: f7525c3e125010bb4db9655bc214861e22dc8875
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65507886"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787972"
 ---
 # <a name="authenticate-access-to-blobs-and-queues-with-azure-active-directory-and-managed-identities-for-azure-resources"></a>Autenticar o acesso a blobs e filas com o Azure Active Directory e identidades gerenciadas para recursos do Azure
 
@@ -48,12 +48,12 @@ Para autorizar solicitações em relação ao armazenamento de Blob e fila com u
 
 A biblioteca de cliente de autenticação do aplicativo gerencia a autenticação automaticamente. A biblioteca usa as credenciais do desenvolvedor para autenticação durante o desenvolvimento local. O uso das credenciais do desenvolvedor durante o desenvolvimento local é mais seguro, porque você não precisa criar credenciais do Azure AD nem compartilhar credenciais entre desenvolvedores. Quando a solução é implantada posteriormente no Azure, a biblioteca alterna automaticamente usando credenciais do aplicativo.
 
-Para usar a biblioteca de autenticação de aplicativo em um aplicativo de armazenamento do Azure, instale o pacote de visualização mais recente do [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication), bem como a versão mais recente do [biblioteca de cliente de armazenamento do Azure para .NET](https://www.nuget.org/packages/WindowsAzure.Storage/). Adicione o seguinte **usando** instruções ao seu código:
+Para usar a biblioteca de autenticação de aplicativo em um aplicativo de armazenamento do Azure, instale o pacote de visualização mais recente do [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication), bem como a versão mais recente do [biblioteca de cliente comum do armazenamento do Azure para .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/) e o [biblioteca de cliente de armazenamento de BLOBs do Azure para .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/). Adicione o seguinte **usando** instruções ao seu código:
 
 ```csharp
 using Microsoft.Azure.Services.AppAuthentication;
-using Microsoft.WindowsAzure.Storage.Blob;
-using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.Azure.Storage.Auth;
+using Microsoft.Azure.Storage.Blob;
 ```
 
 A biblioteca de autenticação de aplicativo fornece o **o AzureServiceTokenProvider** classe. Uma instância dessa classe pode ser passada para um retorno de chamada que obtém um token e, em seguida, renova o token antes de expirar.

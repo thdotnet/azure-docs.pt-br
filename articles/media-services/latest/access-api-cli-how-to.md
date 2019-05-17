@@ -10,14 +10,14 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.custom: mvc
-ms.date: 05/01/2019
+ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: a27f7597ddc934b925d63507a816ac5816b682d6
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 5dbcf446a609adcd0f1902fcca2ac19ad87f17b1
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65151039"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65779663"
 ---
 # <a name="access-azure-media-services-api-with-the-azure-cli"></a>Acessar a API dos Serviços de Mídia do Azure com a CLI do Azure
  
@@ -45,14 +45,15 @@ Lembre-se dos valores que você usou para o nome do grupo de recursos e o nome d
 ## <a name="see-also"></a>Consulte também
 
 - [Dimensionar as unidades reservadas para mídia – CLI](media-reserved-units-cli-how-to.md)
-- [Criar uma conta dos Serviços de Mídia – CLI](./scripts/cli-create-account.md) 
-- [Redefinir as credenciais da conta – CLI](./scripts/cli-reset-account-credentials.md)
-- [Criar ativos – CLI](./scripts/cli-create-asset.md)
-- [Carregar um arquivo – CLI](./scripts/cli-upload-file-asset.md)
-- [Criar transformações – CLI](./scripts/cli-create-transform.md)
-- [Criar trabalhos – CLI](./scripts/cli-create-jobs.md)
-- [Criar uma EventGrid – CLI](./scripts/cli-create-event-grid.md)
-- [Publicar um ativo – CLI](./scripts/cli-publish-asset.md)
+- [Criar uma conta dos Serviços de Mídia – CLI](create-account-cli-how-to.md) 
+- [Redefinir as credenciais da conta – CLI](cli-reset-account-credentials.md)
+- [Criar ativos – CLI](cli-create-asset.md)
+- [Carregar um arquivo – CLI](cli-upload-file-asset.md)
+- [Criar transformações – CLI](cli-create-transform.md)
+- [Codificar com uma transformação personalizada - CLI](custom-preset-cli-howto.md)
+- [Criar trabalhos – CLI](cli-create-jobs.md)
+- [Criar uma EventGrid – CLI](job-state-events-cli-how-to.md)
+- [Publicar um ativo – CLI](cli-publish-asset.md)
 - [Filtro – CLI](filters-dynamic-manifest-cli-howto.md)
 - [CLI do Azure](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
 
@@ -60,5 +61,5 @@ Lembre-se dos valores que você usou para o nome do grupo de recursos e o nome d
 
 O ponto de extremidade de Streaming do qual você deseja transmitir o conteúdo deve estar no estado em execução. O seguinte comando CLI começa seu ponto de extremidade de Streaming padrão:
 
-
 `az ams streaming-endpoint start -n default -a <amsaccount> -g <amsResourceGroup>`
+

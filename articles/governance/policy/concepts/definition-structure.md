@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 0783251eaeef188c49c5b3aa61b5ecaec48127b7
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: b9fe723ca13cbee0e31b14e60a6bd740d2a282df
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506703"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65779285"
 ---
 # <a name="azure-policy-definition-structure"></a>Estrutura de definição da Política do Azure
 
@@ -238,7 +238,7 @@ Uma condição avalia se um **campo** ou um acessador de **valor** atende a dete
 Ao usar as condições **like** e **notLike**, você fornece um curinga (`*`) no valor.
 O valor não deve ter mais de um curinga `*`.
 
-Ao usar as condições **match** e **notMatch**, forneça `#` para corresponder a um dígito, `?` para uma letra, `.` para corresponder a todos os caracteres e qualquer outro caractere para corresponder ao caractere real.
+Ao usar o **corresponder** e **notMatch** condições, fornecer `#` para corresponder a um dígito, `?` para uma letra, `.` para corresponder a qualquer caractere e qualquer outro caractere para corresponder caractere real.
 As condições **corresponder** e **notMatch** diferenciam maiúsculas de minúsculas. Estão disponíveis alternativas que diferenciam maiúsculas de minúsculas em **matchInsensitively** e **notMatchInsensitively**. Para obter exemplos, veja [Permitir vários padrões de nome](../samples/allow-multiple-name-patterns.md).
 
 ### <a name="fields"></a>Campos

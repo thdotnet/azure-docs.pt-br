@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e87a4c7ebafd8ddcfa54c87b189316b0ce98b0f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 3b10a91499dbe7e627025be8487efa15890861b9
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60301185"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65764736"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Referência de configurações de acesso condicional do Active Directory do Azure | Microsoft Docs
 
@@ -33,7 +33,7 @@ Se essa não é a informação que você está procurando, deixe um comentário 
 
 ## <a name="cloud-apps-assignments"></a>Atribuições de aplicativos de nuvem
 
-Com as políticas de acesso condicional, você controla como os usuários acessam seus [aplicativos de nuvem](conditions.md#cloud-apps). Ao configurar uma política de acesso condicional, será necessário selecionar pelo menos um aplicativo na nuvem. 
+Com as políticas de acesso condicional, você controla como os usuários acessam seus [aplicativos de nuvem](conditions.md#cloud-apps-and-actions). Ao configurar uma política de acesso condicional, será necessário selecionar pelo menos um aplicativo na nuvem. 
 
 ![Selecione os aplicativos em nuvem para sua política](./media/technical-reference/09.png)
 
@@ -63,7 +63,7 @@ Você pode atribuir uma política de acesso condicional aos seguintes aplicativo
 - Pesquisa da Microsoft no Bing
 - Microsoft StaffHub
 - Microsoft Stream
-- Equipes da Microsoft
+- Microsoft Teams
 - Office 365 Exchange Online
 - Office 365 SharePoint Online
 - Office 365 Yammer
@@ -141,7 +141,7 @@ Para implantar automaticamente essa extensão para os navegadores Chrome, crie a
 
 |    |    |
 | --- | --- |
-| Caminho | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
+| `Path` | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
 | NOME | 1 |
 | Type | REG_SZ (String) |
 | Dados | ppnbnpeolgkicgegkbkbjmhlideopiji; https://clients2.google.com/service/update2/crx |
@@ -150,7 +150,7 @@ Para obter suporte ao Chrome no **Windows 8.1 e 7**, crie a seguinte chave do re
 
 |    |    |
 | --- | --- |
-| Caminho | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
+| `Path` | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
 | NOME | 1 |
 | Type | REG_SZ (String) |
 | Dados | {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}} |
@@ -171,7 +171,7 @@ Essa configuração tem um impacto nas tentativas de acesso feitas a partir dos 
 | Aplicativo Dynamics CRM | Dynamics CRM | Windows 10, Windows 8.1, iOS e Android |
 | Aplicativo de Calendário/Email/Pessoas, Outlook 2016 Outlook 2013 (com autenticação moderna)| Office 365 Exchange Online | Windows 10 |
 | Política de localização e MFA para aplicativos. Políticas baseadas em dispositivos não têm suporte.| Qualquer serviço de aplicativo de Meus Aplicativos| Android e iOS |
-| Microsoft Teams Services – controla todos os serviços que dão suporte ao Microsoft Teams e todos os seus aplicativos cliente – Windows Desktop, iOS, Android, WP e cliente da Web | Equipes da Microsoft | Windows 10, Windows 8.1, Windows 7, iOS, Android e macOS |
+| Microsoft Teams Services – controla todos os serviços que dão suporte ao Microsoft Teams e todos os seus aplicativos cliente – Windows Desktop, iOS, Android, WP e cliente da Web | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android e macOS |
 | Aplicativos do Office 2016, Office 2013 (com autenticação moderna), cliente de sincronização do OneDrive (veja as [observações](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
 | Aplicativos do Office 2016, aplicativos universais do Office, Office 2013 (com autenticação moderna), cliente de sincronização do OneDrive (veja as [observações](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)), suporte aos Grupos do Office planejado para o futuro, suporte aos aplicativos do SharePoint planejado para o futuro | Office 365 SharePoint Online | Windows 10 |
 | Office 2016 (somente Word, Excel, PowerPoint, OneNote). Suporte para OneDrive for Business planejado para o futuro| Office 365 SharePoint Online| macOS|
@@ -203,6 +203,7 @@ Em sua política de acesso condicional, você pode exigir que uma tentativa de a
 Essa configuração se aplica aos seguintes aplicativos cliente:
 
 - Proteção de Informações do Microsoft Azure
+- Microsoft Bookings
 - Microsoft Edge
 - Microsoft Excel
 - Microsoft Flow
@@ -221,7 +222,7 @@ Essa configuração se aplica aos seguintes aplicativos cliente:
 - Microsoft Skype for Business
 - Microsoft StaffHub
 - Microsoft Stream
-- Equipes da Microsoft
+- Microsoft Teams
 - Microsoft To-Do
 - Microsoft Visio
 - Microsoft Word

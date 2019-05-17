@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: apurvajo;cephalin
 ms.custom: seodec18
-ms.openlocfilehash: b561091eedb43e1c77f3c97951beeb92bfcf4751
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 15441f70052950748f07b96ff234557462f268cd
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65202935"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786334"
 ---
 # <a name="buy-and-configure-an-ssl-certificate-for-azure-app-service"></a>Comprar e configurar um certificado SSL para o Serviço de Aplicativo do Azure
 
@@ -53,7 +53,7 @@ Use a tabela a seguir para ajudá-lo a configurar o certificado. Ao terminar, cl
 | Nome do Host do Domínio Raiz | Se você especificar o domínio raiz aqui, você obtém um certificado que protege *os dois*: o domínio raiz e o subdomínio `www`. Para proteger apenas um subdomínio qualquer, especifique aqui o nome de domínio totalmente qualificado do subdomínio (por exemplo, `mysubdomain.contoso.com`). |
 | Assinatura | O datacenter onde o aplicativo Web está hospedado. |
 | Grupo de recursos | O grupo de recursos que contém o certificado. Você pode usar um novo grupo de recursos ou selecionar o mesmo grupo de recursos que seu aplicativo de Serviço de Aplicativo, por exemplo. |
-| Certificado SKU | Determina o tipo de certificado para criar, se um certificado padrão ou uma [certificado curinga](https://wikipedia.org/wiki/Wildcard_certificate). |
+| SKU do Certificado | Determina o tipo de certificado para criar, se um certificado padrão ou uma [certificado curinga](https://wikipedia.org/wiki/Wildcard_certificate). |
 | Termos legais | Clique para confirmar que você concorda com os termos legais. Os certificados são obtidos do GoDaddy. |
 
 ## <a name="store-in-azure-key-vault"></a>Armazenar no Azure Key Vault
@@ -111,7 +111,7 @@ Agora que o certificado foi importado, você precisa associá-lo a um nome de do
 
 Use a tabela a seguir para ajudá-lo a configurar a associação na caixa de diálogo **Associações SSL** e, em seguida, clique em **Adicionar Associação**.
 
-| Configuração | DESCRIÇÃO |
+| Configuração | Descrição |
 |-|-|
 | Nome do host | O nome de domínio ao qual adicionar a associação SSL. |
 | Impressão Digital do Certificado Privado | O certificado a ser associado. |
@@ -166,4 +166,4 @@ Depois que a operação de renovação for concluída, clique em **sincronizaç�
 * [Impor HTTPS](app-service-web-tutorial-custom-ssl.md#enforce-https)
 * [Impor o TLS 1.1/1.2](app-service-web-tutorial-custom-ssl.md#enforce-tls-versions)
 * [Usar um certificado SSL no código de aplicativo no Serviço de Aplicativo do Azure](app-service-web-ssl-cert-load.md)
-* [Perguntas frequentes: Certificados do Serviço de Aplicativo](https://blogs.msdn.microsoft.com/appserviceteam/2017/07/24/faq-app-service-certificates/)
+* [Perguntas frequentes: Certificados do Serviço de Aplicativo](https://docs.microsoft.com/en-us/azure/app-service/faq-configuration-and-management/)

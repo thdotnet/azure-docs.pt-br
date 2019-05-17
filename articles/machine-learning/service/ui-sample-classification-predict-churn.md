@@ -9,17 +9,25 @@ ms.topic: article
 author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
-ms.date: 05/02/2019
-ms.openlocfilehash: 1cb533348236905b7c4e9b58968041745af0e71b
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.date: 05/10/2019
+ms.openlocfilehash: 42724f5fcb3101015cef0d218a3d548f349646be
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65028434"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785832"
 ---
 # <a name="sample-5---classification-predict-churn-appetency-and-up-selling"></a>Exemplo 5: classificação: Prever a rotatividade, desejo e venda 
 
-Este experimento de exemplo de interface visual mostra a previsão de classificação binária de variação, desejo e venda, uma tarefa comum para gerenciamento de relacionamento do cliente (CRM).
+Saiba como criar um experimento de aprendizado de máquina complexos sem escrever uma única linha de código usando a interface visual.
+
+Nesse experimento treina três, **árvore de decisão aumentada de duas classes** classificadores para prever as tarefas comuns de sistemas CRM (gerenciamento) de relacionamento do cliente: variação, desejo e venda. Os valores de dados e os rótulos são divididos em várias fontes de dados e o mexeu para anonimizar informações do cliente, no entanto, podemos ainda pode usar a interface visual para combinar conjuntos de dados e treinar um modelo usando os valores embaralhados.
+
+Porque estamos tentando responder à pergunta "Qual deles?" Isso é chamado um problema de classificação. No entanto, você pode aplicar as mesmas etapas nesse experimento para lidar com qualquer tipo de problema de aprendizado de máquina, seja em regressão, classificação, clustering e assim por diante.
+
+Aqui está o gráfico completo para esse teste:
+
+![Grafo de experimento](./media/ui-sample-classification-predict-churn/experiment-graph.png)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -31,13 +39,11 @@ Este experimento de exemplo de interface visual mostra a previsão de classifica
 
 ## <a name="data"></a>Dados
 
-Os dados que usamos para esse teste são da KDD Cup 2009. O conjunto de dados tem 50.000 linhas e colunas de recurso 230. A tarefa é prever a rotatividade, desejo e venda para os clientes que usam esses recursos. Consulte a [site KDD](https://www.kdd.org/kdd-cup/view/kdd-cup-2009) para obter mais detalhes sobre os dados e a tarefa.
+Os dados que usamos para esse teste são da KDD Cup 2009. O conjunto de dados tem 50.000 linhas e colunas de recurso 230. A tarefa é prever a rotatividade, desejo e venda para os clientes que usam esses recursos. Para obter mais informações sobre os dados e a tarefa, consulte o [site KDD](https://www.kdd.org/kdd-cup/view/kdd-cup-2009).
 
 ## <a name="experiment-summary"></a>Resumo do teste
 
-Aqui está o grafo de experimento completa:
-
-![Grafo de experimento](./media/ui-sample-classification-predict-churn/experiment-graph.png)
+Este experimento de exemplo de interface visual mostra a previsão de classificação binária de variação, desejo e venda, uma tarefa comum para gerenciamento de relacionamento do cliente (CRM).
 
 Primeiro, podemos fazer algum processamento de dados simple.
 
@@ -46,11 +52,10 @@ Primeiro, podemos fazer algum processamento de dados simple.
     ![Limpar o conjunto de dados](./media/ui-sample-classification-predict-churn/cleaned-dataset.png)
 
 - Os recursos e correspondente de variação, desejo, e rótulos de venda estão em diferentes conjuntos de dados. Podemos usar o **adicionar colunas** módulo para acrescentar as colunas de rótulo para as colunas de recurso. A primeira coluna, **Col1**, é a coluna de rótulo. O restante das colunas, **Var1**, **Var2**e assim por diante, são as colunas de recurso.
- 
+
     ![Adicionar o conjunto de dados de coluna](./media/ui-sample-classification-predict-churn/added-column1.png)
 
 - Podemos usar o **dividir dados** módulo dividir o conjunto de dados em treinamento e conjuntos de testes.
-
 
     Em seguida, usamos o classificador binário da árvore de decisão aumentada com os parâmetros padrão para criar modelos de previsão. Vamos criar um modelo para cada tarefa, ou seja, um modelo para prever a venda, desejo e variação de cada.
 

@@ -3,8 +3,8 @@ title: Autenticação baseada em cabeçalho com o PingAccess para Proxy de Aplic
 description: Publique aplicativos com o PingAccess e o Proxy de Aplicativo a fim de oferecer suporte à autenticação baseada em cabeçalho.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,22 +12,22 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/11/2017
-ms.author: celested
+ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8eef15098eed8959655ae2904bf41a8c3dffc9f4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ecba35a54c530e97a3f96bd8cfb5fa217d300f83
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60293787"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65783587"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Autenticação baseada em cabeçalho para logon único com Proxy de Aplicativo e PingAccess
 
 O Proxy de Aplicativo do Azure Active Directory e o PingAccess fizeram uma parceria para fornecer aos clientes do Azure Active Directory acesso a ainda mais aplicativos. O PingAccess expande as [ofertas existentes do Proxy de Aplicativo](application-proxy.md) para incluir acesso de logon único a aplicativos que usam cabeçalhos para autenticação.
 
-## <a name="what-is-pingaccess-for-azure-ad"></a>O que é PingAccess para Azure AD?
+## <a name="what-is-pingaccess-for-azure-ad"></a>O que é o PingAccess para Azure AD?
 
 PingAccess para Azure Active Directory é uma oferta de PingAccess que permite que você conceda acesso de usuários e logon único para aplicativos que usam cabeçalhos de autenticação. O Proxy de Aplicativo trata esses aplicativos como qualquer outro, usando o Azure AD para autenticar o acesso e, depois, passando o tráfego por meio do serviço de conector. O PingAccess fica na frente dos aplicativos e converte o token de acesso do Azure AD em um cabeçalho, para que o aplicativo receba a autenticação em um formato que consiga ler.
 
@@ -80,7 +80,7 @@ Siga estas etapas para publicar seu aplicativo. Para um passo a passo mais detal
      > Para este tipo de SSO, a URL interna deve usar https e não pode usar o http.
 
    - **Método de pré-autenticação**: Azure Active Directory
-   - **Traduzir URL nos cabeçalhos**: Não 
+   - **Traduzir URL nos cabeçalhos**: Não
 
    >[!NOTE]
    >Se este for seu primeiro aplicativo, use a porta 3000 para iniciar e retorne para atualizar essa configuração se alterar a configuração de PingAccess. Se esse for o seu segundo aplicativo ou posterior, isso será necessário para combinar o Ouvinte configurado no PingAccess. Saiba mais sobre [ouvintes no PingAccess](https://documentation.pingidentity.com/pingaccess/pa31/index.shtml#Listeners.html).

@@ -6,22 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 03/26/2019
+ms.date: 05/15/2019
 ms.author: alkohli
-ms.openlocfilehash: 58c4f42859f735a81a3e3edc801daff5d26194a0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a90475cfd1d166b8fae1c2b872cbbb9d48b50392
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60757813"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785805"
 ---
 # <a name="manage-compute-on-your-azure-data-box-edge"></a>Gerenciar computação no Azure Data Box Edge
 
 Este artigo descreve como gerenciar a computação em seu Azure Data Box Edge. É possível gerenciar a computação pelo portal do Azure ou pela IU da Web local. Use o portal do Azure para gerenciar módulos, gatilhos e configuração de computação e a IU da Web local para gerenciar configurações de computação.
-
-> [!IMPORTANT]
-> O Data Box Edge está em versão prévia. Examine os [termos de serviço do Azure para a versão prévia](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) antes de solicitar e implantar essa solução.
-
 
 Neste artigo, você aprenderá a:
 
@@ -38,7 +34,7 @@ Os eventos são coisas que acontecem dentro de seu ambiente de nuvem ou em seu d
 - **Scheduled**: esses gatilhos são em resposta a uma agenda que você pode definir com uma data de início, hora de início e o intervalo de repetição.
 
 
-### <a name="add-a-trigger"></a>Adicionar um gatilho
+### <a name="add-a-trigger"></a>Adicione um gatilho
 
 Siga estas etapas no portal do Azure para criar um gatilho.
 

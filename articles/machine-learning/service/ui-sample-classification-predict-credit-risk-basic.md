@@ -1,7 +1,7 @@
 ---
 title: 'Classificação: Prever risco de crédito'
 titleSuffix: Azure Machine Learning service
-description: Este experimento de exemplo de interface visual demonstra como executar classificação binária para prever o risco de crédito com base nas informações fornecidas em um aplicativo de crédito.
+description: Saiba como criar um classificador de aprendizado sem escrever uma única linha de código usando a interface visual.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,17 +9,23 @@ ms.topic: article
 author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
-ms.date: 05/02/2019
-ms.openlocfilehash: 3d4ec3c71aaed6bddb012fb17ee5bb96da00cd76
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.date: 05/10/2019
+ms.openlocfilehash: f37c945758cfbd03889d79acf764e7f67022267a
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65028524"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789410"
 ---
 # <a name="sample-3---classification-predict-credit-risk"></a>Exemplo 3: classificação: Prever risco de crédito
 
-Este experimento de exemplo de interface visual demonstra como executar classificação binária para prever o risco de crédito com base nas informações fornecidas em um aplicativo de crédito. Ele mostra como você pode realizar a classificação básica, incluindo operações de processamento de dados, dividir o conjunto de dados em conjuntos de treinamento e teste, treinar o modelo, pontuar o conjunto de dados de teste e avaliar as previsões.
+Saiba como criar um classificador de aprendizado sem escrever uma única linha de código usando a interface visual. Este exemplo treina uma **árvore de decisão aumentada de duas classes** para prever o crédito risco (alto ou baixo) com base nas informações de aplicativo de crédito, como o histórico de crédito, a idade e o número de cartões de crédito.
+
+Porque estamos tentando responder à pergunta "Qual deles?" Isso é chamado um problema de classificação. No entanto, você pode aplicar o mesmo processo fundamental para lidar com qualquer tipo de problema de aprendizado de máquina, seja em regressão, classificação, clustering e assim por diante.
+
+Aqui está o gráfico completo para esse teste:
+
+![Grafo do experimento](media/ui-sample-classification-predict-credit-risk-basic/overall-graph.png)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -40,7 +46,6 @@ O conjunto de dados contém 1.000 amostras com 1 rótulo e 20 recursos. Cada exe
 
 ## <a name="experiment-summary"></a>Resumo do teste
 
-
 Vamos seguir estas etapas para criar o experimento:
 
 1. Arraste o módulo de conjunto de dados de dados de UCI de cartão de crédito alemão na tela do experimento.
@@ -50,11 +55,10 @@ Vamos seguir estas etapas para criar o experimento:
 1. Adicionar um **modelo de treinamento** módulo. Conectar-se a classificação da etapa anterior para a porta de entrada esquerda do **modelo de treinamento**. Adicionar conjunto de treinamento (porta de saída de esquerda a **dividir dados**) para a porta de entrada direita o **treinar modelo**. O **treinar modelo** será treinar o classificador.
 1. Adicionar um **modelo de pontuação** módulo e conecte-se a **treinar modelo** módulo a ele. Em seguida, adicione o conjunto de teste (a porta de direita o **dividir dados**) para o **modelo de pontuação**. O **modelo de pontuação** fará as previsões. Você pode selecionar sua porta de saída para ver as previsões e as probabilidades de classe positiva.
 1. Adicionar um **avaliar modelo** módulo e conecte-se o conjunto de dados à sua porta de entrada à esquerda. Para ver os resultados da avaliação, selecione a porta de saída a **modelo de avaliação** módulo e selecione **visualizar**.
-    
+
 Aqui está o grafo de experimento completa:
 
 ![Grafo do experimento](media/ui-sample-classification-predict-credit-risk-basic/overall-graph.png)
-
 
 ## <a name="results"></a>Resultados
 

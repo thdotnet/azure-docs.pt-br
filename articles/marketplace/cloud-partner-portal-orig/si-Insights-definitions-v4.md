@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: e23297d8cd6cab5abeedc1a12fa1a37c93e94283
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 8b3447b8094eb95bd2f61baed7371bf718fdf730
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64943610"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606916"
 ---
 <a name="seller-insights-definitions"></a>Definições do Seller Insights
 =======================
@@ -37,7 +37,7 @@ A tabela a seguir fornece definições para muitos dos termos usados no Seller I
 | **Cidade do cliente**  | O nome da cidade fornecido pelo cliente. Isso pode ser diferente da cidade na assinatura do Azure do cliente.  |
 | **Idioma de comunicação do cliente**        | O idioma preferido pelo cliente para comunicação.                                  |
 | **Nome da empresa do cliente**                  | O nome da empresa fornecido pelo cliente. Isso pode ser diferente da cidade na assinatura do Azure do cliente.                                  |
-| **País do cliente**                       | O nome de país fornecido pelo cliente.  Isso pode ser diferente de país na assinatura do Azure do cliente.                               |
+| **País do cliente**                       | O nome de país/região fornecido pelo cliente.  Isso pode ser diferente de país/região na assinatura do Azure do cliente.                               |
 | **Moeda do cliente (CC)**                 | A moeda preferida pelo cliente para preço e cobrança.                            |
 | **Email do cliente**                         | O endereço de email fornecido pelo cliente final.  Isso pode ser diferente do endereço de email na assinatura do Azure do cliente.                   |
 | **Nome do cliente**                              | O nome fornecido pelo cliente.  Isso pode ser diferente do nome fornecido na assinatura do Azure do cliente.                    |

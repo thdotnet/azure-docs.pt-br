@@ -12,12 +12,12 @@ ms.author: moslake
 ms.reviewer: sstein, carlrab
 manager: craigg
 ms.date: 05/11/2019
-ms.openlocfilehash: ba79e2b9552f0c27ac11501b2b125a126e40eb1d
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: 7ab22a1d1b44327b28264ec5bd6ba0c44b1d65a7
+ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65551632"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65620155"
 ---
 # <a name="sql-database-serverless-preview"></a>Banco de Dados SQL sem servidor (versão prévia)
 
@@ -66,7 +66,7 @@ A tabela a seguir resume as diferenças entre a camada de computação sem servi
 |**Cenário de uso típico**| Bancos de dados com uso intermitente e imprevisível intercalado com períodos de inatividade. | Bancos de dados ou pools elásticos com uso mais regular.|
 | **Esforço de gerenciamento de desempenho** |Inferior|Superior|
 |**Dimensionamento de computação**|Automático|Manual|
-|**Capacidade de resposta de computação**|Inferior após períodos de inatividade|Imediata|
+|**Capacidade de resposta de computação**|Inferior após períodos de inatividade|Imediato|
 |**Granularidade de cobrança**|Por segundo|Por hora|
 
 ## <a name="purchasing-model-and-service-tier"></a>Camada de serviço e modelo de compra
@@ -204,11 +204,11 @@ A modificação do máximo de vCores é executada usando o comando [Set-AzSqlDat
 
 ### <a name="minimum-vcores"></a>Mínimo de vCores
 
-A modificação do máximo de vCores é executada usando o comando [Set-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) no PowerShell usando o argumento `MinVcore`.
+Modificar os vCores mínimo é executada usando o [AzSqlDatabase conjunto](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) comando no PowerShell usando o `MinVcore` argumento.
 
 ### <a name="autopause-delay"></a>Atraso de pausa automática
 
-A modificação do máximo de vCores é executada usando o comando [Set-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) no PowerShell usando o argumento `AutoPauseDelay`.
+Modificar o atraso autopause é executada usando o [AzSqlDatabase conjunto](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) comando no PowerShell usando o `AutoPauseDelay` argumento.
 
 ## <a name="monitor-serverless-database"></a>Monitorar o banco de dados sem servidor
 
@@ -226,16 +226,16 @@ O pool de recursos do usuário é o limite interno de gerenciamento de recursos 
 
 ### <a name="metrics"></a>Métricas
 
-|Entidade|Métrica|DESCRIÇÃO|Unidades|
+|Entidade|Métrica|Descrição|Unidades|
 |---|---|---|---|
-|Pacote do Aplicativo|app_cpu_percent|Percentual de vCores usados pelo aplicativo em relação ao máximo de vCores permitido para o aplicativo.|Percentual|
+|Pacote do Aplicativo|app_cpu_percent|Percentual de vCores usados pelo aplicativo em relação ao máximo de vCores permitido para o aplicativo.|Porcentagem|
 |Pacote do Aplicativo|app_cpu_billed|A quantidade de computação cobrada para o aplicativo durante o período do relatório. O valor pago durante esse período é o produto dessa métrica e o preço unitário de vCore. <br><br>Os valores dessa métrica são determinados pela agregação ao longo do tempo do máximo de CPU usado e a memória usada por segundo. Se o valor usado for menor que a quantidade mínima provisionada conforme definido pelo mínimo de vCores e de memória, a quantidade mínima provisionada será cobrada. Para comparar CPU com memória para fins de cobrança, a memória é normalizada em unidades de vCores ao redimensionar a quantidade de memória em GB por 3 GB por vCore.|Segundos de vCore|
-|Pacote do Aplicativo|app_memory_percent|Percentual de memória usada pelo aplicativo em relação ao máximo de memória permitida para o aplicativo.|Percentual|
-|Pool de usuários|cpu_percent|Percentual de vCores usados pela carga de trabalho do usuário em relação ao máximo de vCores permitido para a carga de trabalho do usuário.|Percentual|
-|Pool de usuários|data_IO_percent|Percentual de IOPS de dados usados pela carga de trabalho do usuário em relação ao máximo de IOPS de dados permitido para a carga de trabalho do usuário.|Percentual|
-|Pool de usuários|log_IO_percent|Percentual de MB/s de log usados pela carga de trabalho do usuário em relação ao máximo de MB/s de log permitido para a carga de trabalho do usuário.|Percentual|
-|Pool de usuários|workers_percent|Percentual de funções de trabalho usadas pela carga de trabalho do usuário em relação ao máximo de funções de trabalho permitidas para a carga de trabalho do usuário.|Percentual|
-|Pool de usuários|sessions_percent|Percentual de sessões usadas pela carga de trabalho do usuário em relação ao máximo de sessões permitidas para a carga de trabalho do usuário.|Percentual|
+|Pacote do Aplicativo|app_memory_percent|Percentual de memória usada pelo aplicativo em relação ao máximo de memória permitida para o aplicativo.|Porcentagem|
+|Pool de usuários|cpu_percent|Percentual de vCores usados pela carga de trabalho do usuário em relação ao máximo de vCores permitido para a carga de trabalho do usuário.|Porcentagem|
+|Pool de usuários|data_IO_percent|Percentual de IOPS de dados usados pela carga de trabalho do usuário em relação ao máximo de IOPS de dados permitido para a carga de trabalho do usuário.|Porcentagem|
+|Pool de usuários|log_IO_percent|Percentual de MB/s de log usados pela carga de trabalho do usuário em relação ao máximo de MB/s de log permitido para a carga de trabalho do usuário.|Porcentagem|
+|Pool de usuários|workers_percent|Percentual de funções de trabalho usadas pela carga de trabalho do usuário em relação ao máximo de funções de trabalho permitidas para a carga de trabalho do usuário.|Porcentagem|
+|Pool de usuários|sessions_percent|Percentual de sessões usadas pela carga de trabalho do usuário em relação ao máximo de sessões permitidas para a carga de trabalho do usuário.|Porcentagem|
 ____
 
 > [!NOTE]

@@ -5,17 +5,17 @@ services: frontdoor
 author: sharad4u
 ms.service: frontdoor
 ms.topic: include
-ms.date: 9/17/2018
+ms.date: 05/09/2019
 ms.author: sharadag
 ms.custom: include file
-ms.openlocfilehash: a3a43c56a49c243390eac964d31988b7d30fbb56
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
+ms.openlocfilehash: e1f5a1c8229544d97d9ff64748390f0d5237ab97
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407974"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65754100"
 ---
-| Recurso | Limite padrão |
+| Resource | Limite máximo/padrão |
 | --- | --- |
 | Recursos de serviço de porta da frente do Azure por assinatura | 100 |
 | Hosts de front-end, que inclui os domínios personalizados por recurso | 100 |

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2be8455a3fb0a60cea056e9bda1f41b076dfec9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c3d1a8afdbad1878f4ce134edeeb95dad79e98a1
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60350698"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65784827"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Instalação do Agente do Azure AD Connect Health
 
@@ -30,9 +30,9 @@ Este documento explica como instalar e configurar os Agentes do Azure AD Connect
 
 A tabela a seguir é uma lista de requisitos para o uso do Azure AD Connect Health.
 
-| Requisito | DESCRIÇÃO |
+| Requisito | Descrição |
 | --- | --- |
-| AD Premium do Azure |O Azure AD Connect Health é um recurso do Azure AD Premium e requer o Azure AD Premium. <br /><br />Para saber mais, consulte [Introdução ao AD Premium do Azure](../fundamentals/active-directory-get-started-premium.md) <br />Para iniciar uma avaliação gratuita de 30 dias, confira [Iniciar uma avaliação.](https://azure.microsoft.com/trial/get-started-active-directory/) |
+| Azure AD Premium |O Azure AD Connect Health é um recurso do Azure AD Premium e requer o Azure AD Premium. <br /><br />Para saber mais, consulte [Introdução ao AD Premium do Azure](../fundamentals/active-directory-get-started-premium.md) <br />Para iniciar uma avaliação gratuita de 30 dias, confira [Iniciar uma avaliação.](https://azure.microsoft.com/trial/get-started-active-directory/) |
 | Você deve ser um administrador global do Azure AD para começar a usar o Azure AD Connect Health |Por padrão, somente os administradores globais podem instalar e configurar os agentes de integridade para começar, acessar o portal e realizar operações no Azure AD Connect Health. Para saber mais, consulte [Administrar seu diretório do Azure AD](../fundamentals/active-directory-administer.md). <br /><br />  Usando o Controle de Acesso com Base em Funções, você pode permitir acesso ao Azure AD Connect Health para outros usuários em sua organização. Para saber mais, confira [Controle de Acesso com Base em Função para o Azure AD Connect Health.](how-to-connect-health-operations.md#manage-access-with-role-based-access-control) <br /><br />**Importante:** A conta usada ao instalar os agentes deve ser uma conta corporativa ou de estudante. Não pode ser uma conta da Microsoft. Para saber mais, confira [Inscrever-se no Azure como uma organização](../fundamentals/sign-up-organization.md) |
 | O Agente do Azure AD Connect Health é instalado em cada servidor de destino | O Azure AD Connect Health requer que os agentes de integridade sejam instalados e configurados nos servidores de destino para receber os dados e fornecer os recursos de Monitoramento e Análise. <br /><br />Por exemplo, para obter dados da sua infraestrutura do AD FS, o agente deverá ser instalado nos servidores do AD FS e do Proxy de Aplicativo Web. Da mesma forma, para obter dados da infraestrutura do AD DS local, o agente deve ser instalado nos controladores de domínio. <br /><br /> |
 | Conectividade de saída para os pontos de extremidade de serviço do Azure | Durante a instalação e o tempo de execução, o agente requer conectividade com os pontos de extremidade de serviço do Azure AD Connect Health. Se a conectividade de saída estiver bloqueada por meio de Firewalls, verifique se os pontos de extremidade a seguir foram adicionados à lista de permissões. Veja [Controle de conectividade de saída](how-to-connect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints) |
@@ -45,7 +45,7 @@ A tabela a seguir é uma lista de requisitos para o uso do Azure AD Connect Heal
 
 ### <a name="outbound-connectivity-to-the-azure-service-endpoints"></a>Conectividade de saída para os pontos de extremidade de serviço do Azure
 
- Durante a instalação e o tempo de execução, o agente requer conectividade com os pontos de extremidade de serviço do Azure AD Connect Health. Se a conectividade de saída estiver bloqueada por firewalls, verifique se as URLs a seguir não estão bloqueadas por padrão. Permita o monitoramento de segurança ou a inspeção dessas URLs, como você faria com outro tráfego de Internet. Elas possibilitam a comunicação com pontos de extremidade de serviço do Azure AD Connect Health. Leia mais sobre [verificar a conectividade de saída](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections)
+ Durante a instalação e o tempo de execução, o agente requer conectividade com os pontos de extremidade de serviço do Azure AD Connect Health. Se a conectividade de saída estiver bloqueada por firewalls, verifique se as URLs a seguir não estão bloqueadas por padrão. Permita o monitoramento de segurança ou a inspeção dessas URLs, como você faria com outro tráfego de Internet. Elas possibilitam a comunicação com pontos de extremidade de serviço do Azure AD Connect Health. Saiba como [verificar a conectividade de saída com Test-AzureADConnectHealthConnectivity](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-agent-install#test-connectivity-to-azure-ad-connect-health-service).
 
 | Ambiente de Domínio | Pontos de extremidade de serviço do Azure exigidos |
 | --- | --- |

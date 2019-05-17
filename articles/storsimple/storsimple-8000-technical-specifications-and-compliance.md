@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
-ms.openlocfilehash: b36d721896bd7b4f95d831eded500a96969937c5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 33becd46747f957cce67fb7b2ace170a9aa402ff
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60631882"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606927"
 ---
 # <a name="technical-specifications-and-compliance-for-the-storsimple-device"></a>Especificações técnicas e conformidade para o dispositivo StorSimple
 
@@ -173,7 +173,7 @@ O dispositivo é compatível com EN55024.
 
 ## <a name="ac-power-cord-compliance"></a>Conformidade do cabo de alimentação de CA
 
-O plugue e o conjunto completo do cabo de alimentação devem atender aos padrões adequados ao país em que o dispositivo está sendo usado, e devem ter aprovações de segurança aceitáveis nesse país. As tabelas a seguir listam os padrões para os EUA e a Europa.
+O plugue e o assembly de cabo de alimentação devem atender aos padrões apropriados para o país/região em que o dispositivo está sendo usado e eles devem ter aprovações de segurança aceitáveis nesse país/região. As tabelas a seguir listam os padrões para os EUA e a Europa.
 
 ### <a name="ac-power-cords---usa-must-be-nrtl-listed"></a>Cabos de alimentação de CA - EUA (devem estar listados no NRTL)
 

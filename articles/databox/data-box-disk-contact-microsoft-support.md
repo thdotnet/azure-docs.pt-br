@@ -8,12 +8,12 @@ ms.subservice: ''
 ms.topic: article
 ms.date: 09/27/2018
 ms.author: alkohli
-ms.openlocfilehash: d62ad37e6bbe9c89ef803cefc43f373e287a7af7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5b392fecd75f5c18793a6122b8d5d967a2e54afa
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60462282"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604449"
 ---
 # <a name="open-a-support-ticket-for-azure-data-box"></a>Abrir um tíquete de suporte para o Azure Data Box 
 
@@ -56,7 +56,7 @@ Execute as seguintes etapas para criar uma solicitação de suporte:
 4. Em **Nova solicitação de suporte**, clique **Etapa 3 Informações de contato**. Em **Informações de contato**, execute as seguintes etapas:
 
    1. Nas **Opções de contato**, forneça seu método de contato preferencial (telefone ou email) e o idioma. O tempo de resposta é selecionado automaticamente com base em seu plano de assinatura.
-   2. Nas **Informações de contato**, informe seu nome, email, contato opcional e país. Selecione **Salvar alterações de contato para futuras solicitações de suporte**.
+   2. No **informações de contato**, forneça seu nome, o email, o contato opcional, o país/região. Selecione **Salvar alterações de contato para futuras solicitações de suporte**.
    3. Clique em **Criar**.
    
        ![Informações de contato](./media/data-box-disk-contact-microsoft-support/data-box-disk-support3.png)   
@@ -81,6 +81,6 @@ Depois de criar um tíquete de suporte, você pode gerenciar o ciclo de vida do 
 3. Selecione e clique em uma solicitação de suporte. Você pode exibir o status e os detalhes para esta solicitação. Clique em **+ Nova mensagem** se desejar acompanhar esta solicitação.
 
    
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Saiba como [Solucionar problemas relacionados ao serviço de Data Box Disk](data-box-disk-troubleshoot.md).

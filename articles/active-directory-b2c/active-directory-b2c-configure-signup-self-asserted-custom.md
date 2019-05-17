@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 6eaace7589488a9466e78597e0091c84dabb5155
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a64c58d23543279a3a32d2d7b612b43dee8741eb
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64685284"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65768002"
 ---
 #  <a name="add-claims-and-customize-user-input-using-custom-policies-in-azure-active-directory-b2c"></a>Adicionar declarações e personalizar a entrada do usuário usando políticas personalizadas no Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Neste artigo, você adicionará a entrada fornecida de um novo usuário (uma declaração) ao percurso do usuário de inscrição no Azure AD (Active Directory) B2C.  Você configurará a entrada como uma lista suspensa e definirá se ela for obrigatória.
+Neste artigo, você adicionará a entrada fornecida de um novo usuário (uma declaração) ao percurso do usuário de inscrição no Azure AD (Active Directory) B2C.  Configurar a entrada como uma lista suspensa e definir se é obrigatório.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -29,12 +29,12 @@ Conclua as etapas no artigo [Introdução às políticas personalizadas](active-
 
 ## <a name="add-claims"></a>Adicionar declarações
 
-A coleta de dados iniciais dos seus usuários é obtida usando o percurso do usuário de inscrição ou de entrada. Declarações adicionais podem ser coletadas posteriormente usando um percurso do usuário de edição de perfil. Toda vez que o Azure AD B2C coleta informações diretamente do usuário de maneira interativa, o Identity Experience Framework usa seu provedor autodeclarado.
+A coleta de dados iniciais dos seus usuários é obtida usando o percurso do usuário de inscrição ou de entrada. Declarações adicionais podem ser coletadas posteriormente usando um percurso do usuário de edição de perfil. Sempre que o Azure AD B2C reúne informações diretamente do usuário interativamente, o Identity Experience Framework usa seu provedor autodeclarado.
 
 
 ### <a name="define-the-claim"></a>Definir a declaração
 
-Permite perguntar ao usuário sobre a cidade dele. Adicione o seguinte elemento ao elemento **ClaimsSchema** no arquivo de política TrustFrameworkBase:
+Vamos pedir ao usuário a cidade dele. Adicione o seguinte elemento ao elemento **ClaimsSchema** no arquivo de política TrustFrameworkBase:
 
 ```xml
 <ClaimType Id="city">

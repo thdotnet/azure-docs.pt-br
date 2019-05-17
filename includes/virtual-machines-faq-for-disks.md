@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 03/28/2018
+ms.date: 05/13/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 6cd0c72f94c020f9243a1a95faa799f1f798f36c
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 0ad006ca966cfcc2c817ae4e8bfd3dc2d477259e
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65198761"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65607036"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Perguntas frequentes sobre discos de VM IaaS do Azure e discos premium gerenciados e não gerenciados
 
@@ -201,7 +201,7 @@ Não, os discos SSDs Padrão somente estão disponíveis como discos gerenciados
 **Os discos SSD padrão têm suporte para "SLA de VM de Instância Única"?**
 Não. Os discos SSD padrão não são compatíveis com SLA de VM de Instância Única. Use discos SSD premium para SLA de VM de Instância Única.
 
-## <a name="migrate-to-managed-disks"></a>Como migrar para Managed Disks
+## <a name="migrate-to-managed-disks"></a>Migre para o Managed Disks
 
 **Há algum impacto da migração sobre o desempenho de Discos Gerenciados?**
 
@@ -365,7 +365,7 @@ Você pode parar e iniciar a máquina virtual que o disco está anexado à ou, d
 
 **Quais regiões são os tamanhos de disco gerenciado de 8 TiB, TiB de 16 e 32 TiB tem suporte no?**
 
-O TiB 8, TiB de 16 e 32 SKUs de disco TiB têm suporte em todas as regiões no Azure global. Suporte para o Microsoft Azure governamental e Azure China 21Vianet ainda não está disponível.
+O TiB 8, TiB de 16 e 32 SKUs de disco TiB têm suporte em todas as regiões em global 21Vianet do Azure, Microsoft Azure governamental e Azure China.
 
 **Oferecemos suporte a habilitação do cache de Host em todos os tamanhos de disco?**
 

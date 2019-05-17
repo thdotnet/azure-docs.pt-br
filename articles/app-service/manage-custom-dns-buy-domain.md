@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 11/24/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 0c59e892c8fd5a8bcc74d23e16eaabf1dc1a08f0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 06337fef1a9d9b41fd41ff7c67611581639adc0a
+ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61272288"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65619728"
 ---
 # <a name="buy-a-custom-domain-name-for-azure-app-service"></a>Comprar um nome de domínio personalizado para Serviço de Aplicativo do Azure
 
-Domínios do Serviço de Aplicativo (versão prévia) são domínios de nível superior gerenciados diretamente no Azure. Eles facilitam o gerenciamento de domínios personalizados para [Serviço de Aplicativo do Azure](overview.md). Este tutorial mostra como comprar um domínio de Serviço de Aplicativo e atribuir nomes DNS ao Serviço de Aplicativo do Azure.
+Domínios do serviço de aplicativo são domínios de nível superior que são gerenciados diretamente no Azure. Eles facilitam o gerenciamento de domínios personalizados para [Serviço de Aplicativo do Azure](overview.md). Este tutorial mostra como comprar um domínio de Serviço de Aplicativo e atribuir nomes DNS ao Serviço de Aplicativo do Azure.
 
 Para a VM do Azure ou Armazenamento do Azure, consulte [Atribuir o domínio do Serviço de Aplicativo para a VM Azure ou o Armazenamento do Azure](https://blogs.msdn.microsoft.com/appserviceteam/2017/07/31/assign-app-service-domain-to-azure-vm-or-azure-storage/). Para serviços de nuvem, consulte [Configurando um nome de domínio personalizado para um serviço de nuvem do Azure](../cloud-services/cloud-services-custom-domain-name-portal.md).
 
@@ -79,8 +79,8 @@ Quando você receber a notificação a seguir, a operação de escala terá sido
 
 ## <a name="buy-the-domain"></a>Comprar o domínio
 
-### <a name="pricing-information"></a>Informações sobre preços
-Para obter informações sobre preços nos Domínios do Serviço de Aplicativo do Azure, visite a [página Preço de Serviço do Aplicativo](https://azure.microsoft.com/pricing/details/app-service/windows/) e role para baixo até o Domínio do Serviço de Aplicativo.
+### <a name="pricing-information"></a>Informações Sobre Preços
+Para obter informações sobre domínios do serviço de aplicativo do Azure de preços, visite o [página de preços do serviço de aplicativo](https://azure.microsoft.com/pricing/details/app-service/windows/) e role para baixo até o domínio do serviço de aplicativo.
 
 ### <a name="sign-in-to-azure"></a>Entrar no Azure
 Abra o [portal do Azure](https://portal.azure.com/) e entre com sua conta do Azure.
@@ -116,7 +116,7 @@ Clique em **Informações de Contato** e preencha o formulário de informações
 
 Em seguida, selecione as opções desejadas para seu domínio. Consulte a tabela a seguir para obter explicações:
 
-| Configuração | Valor sugerido | DESCRIÇÃO |
+| Configuração | Valor sugerido | Descrição |
 |-|-|-|
 |Proteção de privacidade | Habilitar | Escolha "Proteção de privacidade," que está incluído no preço de compra _gratuitamente_. Alguns domínios de nível superior são gerenciados pelo registradores que não dão suporte à proteção de privacidade e eles são listados na página **Proteção de privacidade**. |
 | Atribuir nomes de host padrão | **www** e **\@** | Se você quiser, selecione as associações de nome do host desejadas. Quando a operação de compra de domínio for concluída, o aplicativo poderá ser acessado nos nomes do host selecionados. Se o aplicativo estiver atrás do [Gerenciador de Tráfego do Microsoft Azure](https://azure.microsoft.com/services/traffic-manager/), você não verá a opção para atribuir o domínio raiz (@) porque o Gerenciador de Tráfego não dá suporte a registros A. Você pode fazer alterações às atribuições de nome do host após a compra de domínio ser concluída. |
@@ -150,7 +150,7 @@ Para testar os nomes de host, navegue até os nomes de host listados no navegado
 
 ## <a name="assign-hostnames-to-app"></a>Atribuir nomes do host ao aplicativo
 
-Se você optar por não atribuir um ou mais nomes do host padrão ao aplicativo durante o processo de compra, ou se for necessário atribuir um nome do host não listado, você poderá atribuir um nome do host a qualquer momento.
+Se você optar por não atribuir um ou mais nomes de host padrão ao seu aplicativo durante o processo de compra, ou se é necessário atribuir um nome de host não listado, você pode atribuir um nome de host a qualquer momento.
 
 Além disso, é possível atribuir nomes do host no Domínio do Serviço de Aplicativo a qualquer outro aplicativo. As etapas dependem se o Domínio do Serviço de Aplicativo e o aplicativo pertencerem à mesma assinatura.
 
@@ -174,7 +174,7 @@ Certifique-se de que seu domínio adquirido esteja listado na seção **Domínio
 Selecione **Adicionar nome do host**.
 
 ### <a name="configure-hostname"></a>Configurar nome do host
-Na caixa de diálogo **Adicionar nome do host**, digite o nome de domínio totalmente qualificado do Domínio do Serviço de Aplicativo ou qualquer subdomínio. Por exemplo: 
+Na caixa de diálogo **Adicionar nome do host**, digite o nome de domínio totalmente qualificado do Domínio do Serviço de Aplicativo ou qualquer subdomínio. Por exemplo:
 
 - kontoso.net
 - www\.kontoso.net
@@ -278,7 +278,3 @@ Depois que a operação estiver concluída, o domínio será liberado da sua ass
 ## <a name="direct-default-url-to-a-custom-directory"></a>Direcionar a URL padrão para um diretório personalizado
 
 Por padrão, o Serviço de Aplicativo direciona solicitações da Web para o diretório raiz do seu código de aplicativo. Para direcioná-los para um subdiretório, como o `public`, veja [Direcionar a URL padrão para um diretório personalizado](app-service-web-tutorial-custom-domain.md#virtualdir).
-
-## <a name="more-resources"></a>Mais recursos
-
-[Perguntas frequentes: Domínio do Serviço de Aplicativo (versão prévia) e Domínios Personalizados](https://blogs.msdn.microsoft.com/appserviceteam/2017/08/08/faq-app-service-domain-preview-and-custom-domains/)

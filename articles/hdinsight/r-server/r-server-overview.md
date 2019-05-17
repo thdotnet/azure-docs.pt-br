@@ -8,14 +8,14 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 56a11a17de3c66a3d45edb71c72be20ce1a1c89e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 8ed9d84cba7cb9eeca94a1376fc03f1d256afa85
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64683747"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65779212"
 ---
-# <a name="introduction-to-ml-services-and-open-source-r-capabilities-on-hdinsight"></a>Introdução aos Serviços ML e recursos R de código aberto no HDInsight
+# <a name="what-is-ml-services-in-azure-hdinsight"></a>O que é o serviços de ML no Azure HDInsight
 
 > [!NOTE]  
 > Em setembro de 2017, o Microsoft R Server foi lançado com o novo nome de **Microsoft Machine Learning Server** ou ML Server. Consequentemente, o cluster de Servidores R no HDInsight agora é chamado de **Clusters de Serviços de Aprendizado de Máquina** ou **ML Services** no HDInsight. Para obter mais informações sobre a alteração do nome do Servidor R, consulte [Microsoft R Server agora é o Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server/rebranding-microsoft-r-server#get-support-for-r-server).
@@ -60,7 +60,7 @@ Os Serviços ML no HDInsight fornecem os seguintes benefícios:
 
 Os seguintes recursos estão incluídos nos Serviços ML no HDInsight.
 
-| Categoria da funcionalidade | DESCRIÇÃO |
+| Categoria da funcionalidade | Descrição |
 |------------------|-------------|
 | R habilitado | [pacotes R](https://docs.microsoft.com/machine-learning-server/r-reference/introducing-r-server-r-package-reference) para soluções escritas em R, com uma distribuição de código aberto de R e infraestrutura de tempo de execução para execução de scripts. |
 | Python habilitado | [Módulos Python](https://docs.microsoft.com/machine-learning-server/python-reference/introducing-python-package-reference) para soluções escritas em Python, com uma distribuição de software livre do Python e infraestrutura em tempo de execução para execução de scripts.

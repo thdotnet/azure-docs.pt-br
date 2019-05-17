@@ -8,12 +8,12 @@ ms.reviewer: jasonwhowell
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 12/16/2016
-ms.openlocfilehash: af55c161944447f2e6e2245fbb920803779984ca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 611439802c200b30586b73b82d0a4bbbc857e114
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61399858"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606700"
 ---
 # <a name="resolve-data-skew-problems-by-using-azure-data-lake-tools-for-visual-studio"></a>Resolver problemas de distorção de dados usando as Ferramentas do Azure Data Lake para Visual Studio
 
@@ -36,7 +36,7 @@ Se isso não afetar sua lógica de negócios, você poderá filtrar os valores m
 
 ### <a name="option-2-pick-a-different-partition-or-distribution-key"></a>Opção 2: Escolher uma chave de partição ou distribuição diferente
 
-No exemplo anterior, se você desejar apenas verificar a carga de trabalho de auditoria de imposto em todo o país, você poderá melhorar a distribuição de dados selecionando o número de ID como sua chave. Às vezes, separar uma chave de partição/distribuição diferente pode distribuir os dados mais uniformemente, mas você precisa certificar-se de que essa escolha não afeta sua lógica de negócios. Por exemplo, para calcular a soma de imposto para cada estado, talvez você queira designar _Estado_ como a chave de partição. Se você continuar a ter esse problema, tente usar a Opção 3.
+No exemplo anterior, se você desejar apenas verificar a carga de trabalho de auditoria de imposto em todo o país/região, você pode melhorar a distribuição de dados, selecionando o número de identificação como a chave. Às vezes, separar uma chave de partição/distribuição diferente pode distribuir os dados mais uniformemente, mas você precisa certificar-se de que essa escolha não afeta sua lógica de negócios. Por exemplo, para calcular a soma de imposto para cada estado, talvez você queira designar _Estado_ como a chave de partição. Se você continuar a ter esse problema, tente usar a Opção 3.
 
 ### <a name="option-3-add-more-partition-or-distribution-keys"></a>Opção 3: Adicionar mais chaves de partição ou distribuição
 

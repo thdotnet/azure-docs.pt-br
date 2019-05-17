@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 02/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9cdf99884845a9cb83ac26723c3ea0e7a779ebff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e06313cf83768421bedc6c7baddd30c2ef2e4846
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60771745"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789415"
 ---
 # <a name="azure-stream-analytics-custom-blob-output-partitioning"></a>Particionamento de saída de blob personalizado do Azure Stream Analytics
 
@@ -26,7 +26,7 @@ Campo personalizado ou atributos de entrada melhoram os fluxos de trabalho de pr
 
 ### <a name="partition-key-options"></a>Opções de chave de partição
 
-A chave de partição ou o nome da coluna, usado para particionar dados de entrada, pode conter caracteres alfanuméricos com espaços, sublinhados e hifens. Não é possível usar campos aninhados como uma chave de partição, a menos que usados em conjunto com aliases.
+A chave de partição ou o nome da coluna, usado para particionar dados de entrada, pode conter caracteres alfanuméricos com espaços, sublinhados e hifens. Não é possível usar campos aninhados como uma chave de partição, a menos que usados em conjunto com aliases. A chave de partição deve ser nvarchar (max).
 
 ### <a name="example"></a>Exemplo
 
@@ -58,21 +58,21 @@ Observe que cada registro no blob tem uma coluna **client_id** correspondendo ao
    * cluster1/{date}/{aFieldInMyData}  
    * cluster1/{time}/{aFieldInMyData}  
    * cluster1 / {aFieldInMyData}  
-   * cluster1 / {data} / {hora} / {aFieldInMyData}  
-
+   * cluster1 / {data} / {hora} / {aFieldInMyData} 
+   
 2. Chaves de partição diferenciam maiúsculas de minúsculas, portanto, as chaves de partição, como "John" e "john" são equivalentes. Além disso, as expressões não podem ser usadas como chaves de partição. Por exemplo, **{columnA + columnB}** não funciona.  
 
-3. Quando um fluxo de entrada consiste em registros com uma cardinalidade de chave de partição abaixo de 8000, os registros serão acrescentados a blobs existentes e apenas criarão novos quando necessário. Se a cardinalidade for superior a 8000, não haverá nenhuma garantia de que os blobs existentes serão gravados e novos blobs não serão criados para um número arbitrário de registros com a mesma chave de partição.  
+3. Quando um fluxo de entrada consiste em registros com uma cardinalidade de chave de partição abaixo de 8000, os registros serão acrescentados a blobs existentes e apenas criarão novos quando necessário. Se a cardinalidade for superior a 8000, não haverá nenhuma garantia de que os blobs existentes serão gravados e novos blobs não serão criados para um número arbitrário de registros com a mesma chave de partição.
 
 ## <a name="custom-datetime-path-patterns"></a>Padrões de caminho de DateTime personalizados
 
-Padrões de caminho de DateTime personalizados permitem que você especifique um formato de saída que se alinhe com as convenções de Streaming de Hive, possibilitando ao Azure Stream Analytics enviar dados para o Azure HDInsight e o Azure Databricks para processamento downstream. Padrões de caminho de DateTime personalizados são implementados facilmente usando a palavra-chave `datetime` no campo de Prefixo do caminho de sua saída de blob, juntamente com o especificador de formato. Por exemplo, `{datetime:yyyy}`.
+Padrões de caminho de DateTime personalizados permitem que você especifique um formato de saída que se alinhe com as convenções de Streaming de Hive, possibilitando ao Azure Stream Analytics enviar dados para o Azure HDInsight e o Azure Databricks para processamento downstream. Padrões de caminho de DateTime personalizados são implementados facilmente usando a palavra-chave `datetime` no campo de Prefixo do caminho de sua saída de blob, juntamente com o especificador de formato. Por exemplo: `{datetime:yyyy}`.
 
 ### <a name="supported-tokens"></a>Tokens com suporte
 
 Os seguintes tokens especificadores de formato podem ser usados sozinhos ou de forma combinada para chegar aos formatos de DateTime personalizados:
 
-|Especificador de formato   |DESCRIÇÃO   |Resulta na hora de exemplo 2018-01-02T10:06:08|
+|Especificador de formato   |Descrição   |Resulta na hora de exemplo 2018-01-02T10:06:08|
 |----------|-----------|------------|
 |{datetime:yyyy}|O ano como um número de quatro dígitos|2018|
 |{datetime:MM}|Mês de 01 a 12|01|
@@ -104,7 +104,7 @@ Você pode usar o mesmo especificador de formato várias vezes no Prefixo do cam
 
 Padrões de caminho personalizados para o Armazenamento de Blobs podem ser usados com a convenção de streaming de Hive, que espera que as pastas sejam rotuladas com `column=` no nome da pasta.
 
-Por exemplo, `year={datetime:yyyy}/month={datetime:MM}/day={datetime:dd}/hour={datetime:HH}`.
+Por exemplo: `year={datetime:yyyy}/month={datetime:MM}/day={datetime:dd}/hour={datetime:HH}`.
 
 A saída personalizada elimina o incômodo de alterar as tabelas e adicionar partições manualmente para mover dados entre o Azure Stream Analytics e o Hive. Em vez disso, muitas pastas podem ser adicionadas automaticamente usando:
 

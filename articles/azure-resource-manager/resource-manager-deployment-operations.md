@@ -1,221 +1,232 @@
 ---
-title: Operações de implantação com o Azure Resource Manager | Microsoft Docs
+title: Histórico de implantação com o Azure Resource Manager | Microsoft Docs
 description: Descreve como exibir as operações de implantação do Azure Resource Manager com o portal, o PowerShell, a CLI do Azure e a API REST.
-services: azure-resource-manager,virtual-machines
-documentationcenter: ''
 tags: top-support-issue
 author: tfitzmac
-ms.assetid: ''
 ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: vm-multiple
-ms.workload: infrastructure
-ms.date: 09/28/2018
+ms.date: 05/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: 9ff6388c72c631dad870a4f52f86749bfd744d85
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 58d22e3fcae5c30e5d7dcc39b317afeef4a693ee
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58085603"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65605916"
 ---
-# <a name="view-deployment-operations-with-azure-resource-manager"></a>Exibir operações de implantação com o Azure Resource Manager
+# <a name="view-deployment-history-with-azure-resource-manager"></a>Exibir histórico de implantação com o Azure Resource Manager
 
-Você pode exibir as operações para uma implantação por meio do portal do Azure. Você pode estar mais interessado em ver as operações quando recebeu um erro durante a implantação para que este artigo foque em exibir as operações que falharam. O portal fornece uma interface que permite encontrar facilmente os erros e determinar as possíveis correções.
+O Azure Resource Manager permite que você exibir seu histórico de implantação e examinar as operações específicas em implantações anteriores. Você pode ver os recursos que foram implantados e obter informações sobre os erros.
 
-É possível solucionar problemas da implantação examinando os logs de auditoria ou as operações de implantação. Este artigo mostra os dois métodos. Para obter ajuda com a resolução de erros de implantação específicos, veja [Resolver erros comuns ao implantar recursos no Azure com o Azure Resource Manager](resource-manager-common-deployment-errors.md).
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+Para obter ajuda com a resolução de erros de implantação específicos, veja [Resolver erros comuns ao implantar recursos no Azure com o Azure Resource Manager](resource-manager-common-deployment-errors.md).
 
 ## <a name="portal"></a>Portal
 
-Para ver as operações de implantação, use as etapas a seguir:
+Para obter detalhes sobre uma implantação do histórico de implantação.
 
-1. Para o grupo de recursos envolvido na implantação, observe o status da última implantação. Selecione esse status para obter mais detalhes.
-   
-    ![status da implantação](./media/resource-manager-deployment-operations/deployment-status.png)
-2. Você vê o histórico recente de implantação. Selecione a implantação que falhou.
-   
-    ![status da implantação](./media/resource-manager-deployment-operations/select-deployment.png)
-3. Selecione o link para ver uma descrição do motivo da falha na implantação. Na imagem abaixo, o registro DNS não é exclusivo.  
-   
-    ![exibir implantação com falha](./media/resource-manager-deployment-operations/view-error.png)
-   
-    Essa mensagem de erro deve ser suficiente para você começar a solucionar o problema. No entanto, se você precisar de mais detalhes sobre quais tarefas foram concluídas, poderá exibir as operações, como mostrado nas etapas a seguir.
-4. Você pode exibir todas as operações de implantação. Selecione qualquer operação para ver mais detalhes.
-   
-    ![exibir operações](./media/resource-manager-deployment-operations/view-operations.png)
-   
-    Neste caso, verá que a conta de armazenamento, a rede virtual e o conjunto de disponibilidades foram criados com êxito. O endereço IP público falhou e outros recursos não foram tentados.
-5. Você pode exibir os eventos para a implantação selecionando **Eventos**.
-   
-    ![exibir eventos](./media/resource-manager-deployment-operations/view-events.png)
-6. Você vê todos os eventos da implantação e seleciona qualquer um para obter mais detalhes. Observe as IDs de correlação. Esse valor pode ser útil ao trabalhar com o suporte técnico para solucionar um problema de implantação.
-   
-    ![consultar eventos](./media/resource-manager-deployment-operations/see-all-events.png)
+1. Selecione o grupo de recursos que você deseja examinar.
+
+1. Selecione o link sob **implantações**.
+
+   ![Selecione o histórico de implantação](./media/resource-manager-deployment-operations/select-deployment-history.png)
+
+1. Selecione uma das implantações do histórico de implantação.
+
+   ![Selecione a implantação](./media/resource-manager-deployment-operations/select-details.png)
+
+1. Um resumo da implantação é exibido, incluindo uma lista de recursos que foram implantados.
+
+    ![Resumo da implantação](./media/resource-manager-deployment-operations/view-deployment-summary.png)
+
+1. Para exibir o modelo usado para a implantação, selecione **modelo**. Você pode baixar o modelo para reutilizá-lo.
+
+    ![Mostrar modelo](./media/resource-manager-deployment-operations/show-template-from-history.png)
+
+1. Se sua implantação falhou, você verá uma mensagem de erro. Selecione a mensagem de erro para obter mais detalhes.
+
+    ![Exibir implantação com falha](./media/resource-manager-deployment-operations/show-error.png)
+
+1. A mensagem de erro detalhada é exibida.
+
+    ![Exibir detalhes do erro](./media/resource-manager-deployment-operations/show-details.png)
+
+1. A ID de correlação é usada para acompanhar eventos relacionados e pode ser útil ao trabalhar com o suporte técnico para solucionar problemas de uma implantação.
+
+    ![Obter a ID de correlação](./media/resource-manager-deployment-operations/get-correlation-id.png)
+
+1. Para saber mais sobre a etapa que falhou, selecione **detalhes da operação**.
+
+    ![Selecionar operações de implantação](./media/resource-manager-deployment-operations/select-deployment-operations.png)
+
+1. Você verá os detalhes para essa etapa da implantação.
+
+    ![Mostrar detalhes da operação](./media/resource-manager-deployment-operations/show-operation-details.png)
 
 ## <a name="powershell"></a>PowerShell
-1. Para obter o status geral de uma implantação, use o comando **Get-AzResourceGroupDeployment**. 
 
-   ```powershell
-   Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup
-   ```
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-   Ou você pode filtrar os resultados para mostrar somente as implantações que falharam.
+Para obter o status geral de uma implantação, use o comando **Get-AzResourceGroupDeployment**.
 
-   ```powershell
-   Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup | Where-Object ProvisioningState -eq Failed
-   ```
-   
-2. Para obter a ID de correlação, use:
+```azurepowershell-interactive
+Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup
+```
 
-   ```powershell
-   (Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName azuredeploy).CorrelationId
-   ```
+Ou você pode filtrar os resultados para mostrar somente as implantações que falharam.
 
-3. Cada implantação inclui várias operações. Cada operação representa uma etapa no processo de implantação. Para descobrir o que deu errado com uma implantação, geralmente você precisa ver os detalhes sobre as operações de implantação. É possível ver o status das operações com **Get-AzResourceGroupDeploymentOperation**.
+```azurepowershell-interactive
+Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup | Where-Object ProvisioningState -eq Failed
+```
 
-   ```powershell 
-   Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName vmDeployment
-   ```
+A ID de correlação é usada para acompanhar eventos relacionados e pode ser útil ao trabalhar com o suporte técnico para solucionar problemas de uma implantação. Para obter a ID de correlação, use:
 
-    Que retorna várias operações com cada uma no seguinte formato:
+```azurepowershell-interactive
+(Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName azuredeploy).CorrelationId
+```
 
-   ```powershell
-   Id             : /subscriptions/{guid}/resourceGroups/ExampleGroup/providers/Microsoft.Resources/deployments/Microsoft.Template/operations/A3EB2DA598E0A780
-   OperationId    : A3EB2DA598E0A780
-   Properties     : @{provisioningOperation=Create; provisioningState=Succeeded; timestamp=2016-06-14T21:55:15.0156208Z;
-                   duration=PT23.0227078S; trackingId=11d376e8-5d6d-4da8-847e-6f23c6443fbf;
-                   serviceRequestId=0196828d-8559-4bf6-b6b8-8b9057cb0e23; statusCode=OK; targetResource=}
-   PropertiesText : {duration:PT23.0227078S, provisioningOperation:Create, provisioningState:Succeeded,
-                   serviceRequestId:0196828d-8559-4bf6-b6b8-8b9057cb0e23...}
-   ```
+Cada implantação inclui várias operações. Cada operação representa uma etapa no processo de implantação. Para descobrir o que deu errado com uma implantação, geralmente você precisa ver os detalhes sobre as operações de implantação. É possível ver o status das operações com **Get-AzResourceGroupDeploymentOperation**.
 
-4. Para obter mais detalhes sobre as operações com falha, recupere as propriedades das operações com o estado **Falha** .
+```azurepowershell-interactive
+Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName azuredeploy
+```
 
-   ```powershell
-   (Get-AzResourceGroupDeploymentOperation -DeploymentName Microsoft.Template -ResourceGroupName ExampleGroup).Properties | Where-Object ProvisioningState -eq Failed
-   ```
-   
-    Retorna todas as operações com falha com cada uma no seguinte formato:
+Que retorna várias operações com cada uma no seguinte formato:
 
-   ```powershell
-   provisioningOperation : Create
-   provisioningState     : Failed
-   timestamp             : 2016-06-14T21:54:55.1468068Z
-   duration              : PT3.1449887S
-   trackingId            : f4ed72f8-4203-43dc-958a-15d041e8c233
-   serviceRequestId      : a426f689-5d5a-448d-a2f0-9784d14c900a
-   statusCode            : BadRequest
-   statusMessage         : @{error=}
-   targetResource        : @{id=/subscriptions/{guid}/resourceGroups/ExampleGroup/providers/
-                          Microsoft.Network/publicIPAddresses/myPublicIP;
-                          resourceType=Microsoft.Network/publicIPAddresses; resourceName=myPublicIP}
-   ```
+```powershell
+Id             : /subscriptions/{guid}/resourceGroups/ExampleGroup/providers/Microsoft.Resources/deployments/Microsoft.Template/operations/A3EB2DA598E0A780
+OperationId    : A3EB2DA598E0A780
+Properties     : @{provisioningOperation=Create; provisioningState=Succeeded; timestamp=2019-05-13T21:42:40.7151512Z;
+                duration=PT23.0227078S; trackingId=11d376e8-5d6d-4da8-847e-6f23c6443fbf;
+                serviceRequestId=0196828d-8559-4bf6-b6b8-8b9057cb0e23; statusCode=OK; targetResource=}
+PropertiesText : {duration:PT23.0227078S, provisioningOperation:Create, provisioningState:Succeeded,
+                serviceRequestId:0196828d-8559-4bf6-b6b8-8b9057cb0e23...}
+```
 
-    Observe serviceRequestId e trackingId para a operação. serviceRequestId pode ser útil ao trabalhar com o suporte técnico para solucionar um problema de implantação. Você usará trackingId na próxima etapa para focar em uma determinada operação.
-5. Para obter a mensagem de status de uma determinada operação com falha, use o seguinte comando:
+Para obter mais detalhes sobre as operações com falha, recupere as propriedades das operações com o estado **Falha** .
 
-   ```powershell
-   ((Get-AzResourceGroupDeploymentOperation -DeploymentName Microsoft.Template -ResourceGroupName ExampleGroup).Properties | Where-Object trackingId -eq f4ed72f8-4203-43dc-958a-15d041e8c233).StatusMessage.error
-   ```
+```azurepowershell-interactive
+(Get-AzResourceGroupDeploymentOperation -DeploymentName azuredeploy -ResourceGroupName ExampleGroup).Properties | Where-Object ProvisioningState -eq Failed
+```
 
-    Que retorna:
+Retorna todas as operações com falha com cada uma no seguinte formato:
 
-   ```powershell
-   code           message                                                                        details
-   ----           -------                                                                        -------
-   DnsRecordInUse DNS record dns.westus.cloudapp.azure.com is already used by another public IP. {}
-   ```
-6. Cada operação de implantação no Azure inclui conteúdo da solicitação e resposta. O conteúdo da solicitação é aquilo que é enviado para o Azure durante a implantação (por exemplo, criar uma VM, disco do sistema operacional e outros recursos). O conteúdo da resposta é aquilo que o Azure enviou de volta com base em sua solicitação de implantação. Durante a implantação, você pode usar o parâmetro **DeploymentDebugLogLevel** para especificar que a solicitação e/ou resposta seja mantida no log. 
+```powershell
+provisioningOperation : Create
+provisioningState     : Failed
+timestamp             : 2019-05-13T21:42:40.7151512Z
+duration              : PT3.1449887S
+trackingId            : f4ed72f8-4203-43dc-958a-15d041e8c233
+serviceRequestId      : a426f689-5d5a-448d-a2f0-9784d14c900a
+statusCode            : BadRequest
+statusMessage         : @{error=}
+targetResource        : @{id=/subscriptions/{guid}/resourceGroups/ExampleGroup/providers/
+                       Microsoft.Network/publicIPAddresses/myPublicIP;
+                       resourceType=Microsoft.Network/publicIPAddresses; resourceName=myPublicIP}
+```
 
-   Você obtém informações do log e salva-as localmente usando os seguintes comandos do PowerShell:
+Observe serviceRequestId e trackingId para a operação. serviceRequestId pode ser útil ao trabalhar com o suporte técnico para solucionar um problema de implantação. Você usará trackingId na próxima etapa para focar em uma determinada operação.
 
-   ```powershell
-   (Get-AzResourceGroupDeploymentOperation -DeploymentName "TestDeployment" -ResourceGroupName "Test-RG").Properties.request | ConvertTo-Json |  Out-File -FilePath <PathToFile>
+Para obter a mensagem de status de uma determinada operação com falha, use o seguinte comando:
 
-   (Get-AzResourceGroupDeploymentOperation -DeploymentName "TestDeployment" -ResourceGroupName "Test-RG").Properties.response | ConvertTo-Json |  Out-File -FilePath <PathToFile>
-   ```
+```azurepowershell-interactive
+((Get-AzResourceGroupDeploymentOperation -DeploymentName azuredeploy -ResourceGroupName ExampleGroup).Properties | Where-Object trackingId -eq f4ed72f8-4203-43dc-958a-15d041e8c233).StatusMessage.error
+```
+
+Que retorna:
+
+```powershell
+code           message                                                                        details
+----           -------                                                                        -------
+DnsRecordInUse DNS record dns.westus.cloudapp.azure.com is already used by another public IP. {}
+```
+
+Cada operação de implantação no Azure inclui conteúdo da solicitação e resposta. Durante a implantação, você pode usar **DeploymentDebugLogLevel** parâmetro para especificar que a solicitação de e/ou resposta é registrada.
+
+Você obtém informações do log e salva-as localmente usando os seguintes comandos do PowerShell:
+
+```powershell
+(Get-AzResourceGroupDeploymentOperation -DeploymentName "TestDeployment" -ResourceGroupName "Test-RG").Properties.request | ConvertTo-Json |  Out-File -FilePath <PathToFile>
+
+(Get-AzResourceGroupDeploymentOperation -DeploymentName "TestDeployment" -ResourceGroupName "Test-RG").Properties.response | ConvertTo-Json |  Out-File -FilePath <PathToFile>
+```
 
 ## <a name="azure-cli"></a>CLI do Azure
 
-1. Obtenha o status geral de uma implantação com o comando **azure group deployment show** .
+Para obter o status geral de uma implantação, use o **show de implantação de grupo do azure** comando.
 
-   ```azurecli
-   az group deployment show -g ExampleGroup -n ExampleDeployment
-   ```
+```azurecli-interactive
+az group deployment show -g ExampleGroup -n ExampleDeployment
+```
   
-2. Um dos valores retornados é **correlationId**. Esse valor é usado para acompanhar eventos relacionados e pode ser útil ao trabalhar com o suporte técnico na solução de um problema de implantação.
+A ID de correlação é usada para acompanhar eventos relacionados e pode ser útil ao trabalhar com o suporte técnico para solucionar problemas de uma implantação.
 
-   ```azurecli
-   az group deployment show -g ExampleGroup -n ExampleDeployment --query properties.correlationId
-   ```
+```azurecli-interactive
+az group deployment show -g ExampleGroup -n ExampleDeployment --query properties.correlationId
+```
 
-3. Para ver as operações de uma implantação, use:
+Para ver as operações de uma implantação, use:
 
-   ```azurecli
-   az group deployment operation list -g ExampleGroup -n ExampleDeployment
-   ```
+```azurecli-interactive
+az group deployment operation list -g ExampleGroup -n ExampleDeployment
+```
 
 ## <a name="rest"></a>REST
 
-1. Obtenha informações sobre uma implantação com a operação [Obter informações sobre uma implantação de modelo](https://docs.microsoft.com/rest/api/resources/deployments).
+Para obter informações sobre uma implantação, use o [obter informações sobre uma implantação de modelo](https://docs.microsoft.com/rest/api/resources/deployments) operação.
 
-   ```http
-   GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}?api-version={api-version}
-   ```
+```
+GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}?api-version={api-version}
+```
 
-    Na resposta, observe em particular os elementos **provisioningState**, **correlationId** e **error**. **correlationId** é usado para acompanhar eventos relacionados e pode ser útil ao trabalhar com o suporte técnico na solução de um problema de implantação.
+Na resposta, observe em particular os elementos **provisioningState**, **correlationId** e **error**. **correlationId** é usado para acompanhar eventos relacionados e pode ser útil ao trabalhar com o suporte técnico na solução de um problema de implantação.
 
-   ```json
-   { 
-    ...
-    "properties": {
-      "provisioningState":"Failed",
-      "correlationId":"d5062e45-6e9f-4fd3-a0a0-6b2c56b15757",
-      ...
-      "error":{
-        "code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.",
-        "details":[{"code":"Conflict","message":"{\r\n  \"error\": {\r\n    \"message\": \"Conflict\",\r\n    \"code\": \"Conflict\"\r\n  }\r\n}"}]
-      }  
-    }
-   }
-   ```
+```json
+{ 
+ ...
+ "properties": {
+   "provisioningState":"Failed",
+   "correlationId":"d5062e45-6e9f-4fd3-a0a0-6b2c56b15757",
+   ...
+   "error":{
+     "code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.",
+     "details":[{"code":"Conflict","message":"{\r\n  \"error\": {\r\n    \"message\": \"Conflict\",\r\n    \"code\": \"Conflict\"\r\n  }\r\n}"}]
+   }  
+ }
+}
+```
 
-2. Obtenha informações sobre implantação com [Listar todas as operações de implantação de modelo](https://docs.microsoft.com/rest/api/resources/deployments). 
+Para obter informações sobre implantações, use [listar todas as operações de implantação de modelo](https://docs.microsoft.com/rest/api/resources/deployments). 
 
-   ```http
-   GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}/operations?$skiptoken={skiptoken}&api-version={api-version}
-   ```
+```
+GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}/operations?$skiptoken={skiptoken}&api-version={api-version}
+```
    
-    A resposta inclui informações de solicitação e/ou resposta com base no que foi especificado na propriedade **debugSetting** durante a implantação.
+A resposta inclui informações de solicitação e/ou resposta com base no que foi especificado na propriedade **debugSetting** durante a implantação.
 
-   ```json
-   {
-    ...
-    "properties": 
-    {
-      ...
-      "request":{
-        "content":{
-          "location":"West US",
-          "properties":{
-            "accountType": "Standard_LRS"
-          }
-        }
-      },
-      "response":{
-        "content":{
-          "error":{
-            "message":"Conflict","code":"Conflict"
-          }
-        }
-      }
-    }
+```json
+{
+ ...
+ "properties": 
+ {
+   ...
+   "request":{
+     "content":{
+       "location":"West US",
+       "properties":{
+         "accountType": "Standard_LRS"
+       }
+     }
+   },
+   "response":{
+     "content":{
+       "error":{
+         "message":"Conflict","code":"Conflict"
+       }
+     }
    }
-   ```
-
+ }
+}
+```
 
 ## <a name="next-steps"></a>Próximas etapas
 * Para obter ajuda com a resolução de erros de implantação específicos, veja [Resolver erros comuns ao implantar recursos no Azure com o Azure Resource Manager](resource-manager-common-deployment-errors.md).
