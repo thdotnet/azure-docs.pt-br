@@ -516,9 +516,9 @@ Ao copiar dados do/para o SQL Server, os seguintes mapeamentos são usados de ti
 | binary |Byte[] |
 | bit |Boolean |
 | char |String, Char[] |
-| date |Datetime |
-| Datetime |Datetime |
-| datetime2 |Datetime |
+| date |DateTime |
+| Datetime |DateTime |
+| datetime2 |DateTime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
@@ -532,18 +532,18 @@ Ao copiar dados do/para o SQL Server, os seguintes mapeamentos são usados de ti
 | nvarchar |String, Char[] |
 | real |Single |
 | rowversion |Byte[] |
-| smalldatetime |Datetime |
+| smalldatetime |DateTime |
 | smallint |Int16 |
 | smallmoney |Decimal |
 | sql_variant |Object |
 | text |String, Char[] |
 | time |TimeSpan |
-|  timestamp |Byte[] |
+| timestamp |Byte[] |
 | tinyint |Int16 |
 | uniqueidentifier |Guid |
 | varbinary |Byte[] |
 | varchar |String, Char[] |
-| Xml |Xml |
+| xml |Xml |
 
 >[!NOTE]
 > Em mapas de tipos de dados para o tipo provisório Decimal, atualmente o ADF dá suporte a uma precisão de até 28. Se você tiver dados com precisão maior do que 28, considere a conversão da cadeia de caracteres em consulta SQL.
