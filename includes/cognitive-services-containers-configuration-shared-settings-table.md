@@ -3,13 +3,13 @@ author: diberry
 ms.author: diberry
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 01/22/2019
-ms.openlocfilehash: ed512c0f56d8da5cb8e47b20f2495054fdedf020
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.date: 05/15/2019
+ms.openlocfilehash: c4abc5fa89b48b6fc55637e9ff3b259387d0d410
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60815391"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796371"
 ---
 Esse contêiner tem as seguintes configurações:
 
@@ -20,6 +20,6 @@ Esse contêiner tem as seguintes configurações:
 |Sim|[Billing](#billing-configuration-setting)|Especifica o URI do ponto de extremidade do recurso de serviços no Azure.|
 |Sim|[Eula](#eula-setting)| Indica que você aceitou a licença para o contêiner.|
 |Não |[Fluentd](#fluentd-settings)|Gravar log e, opcionalmente, dados telemétricos em um servidor do Fluentd.|
-|Não |[Proxy HTTP](#http-proxy-credentials-settings)|Configure um proxy HTTP para fazer solicitações de saída.|
+|Não |Proxy HTTP|Configure um proxy HTTP para fazer solicitações de saída.|
 |Não |[Logging](#logging-settings)|Fornece suporte a registro de log do ASP.NET Core para seu contêiner. |
 |Não |[Mounts](#mount-settings)|Lê e grava dados do computador host para o contêiner e do contêiner de volta para o computador host.|

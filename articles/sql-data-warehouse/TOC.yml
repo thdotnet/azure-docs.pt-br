@@ -59,7 +59,7 @@
           href: quickstart-scale-compute-powershell.md
         - name: T-SQL
           href: quickstart-scale-compute-tsql.md
-    - name: Gerenciamento da Carga de Trabalho
+    - name: Gerenciamento de carga de trabalho
       items:
         - name: Criar um classificador de carga de trabalho
           items:
@@ -253,7 +253,7 @@
           href: sql-data-warehouse-query-visual-studio.md
         - name: Instalar Visual Studio
           href: sql-data-warehouse-install-visual-studio.md
-    - name: Gerenciar carga de trabalho
+    - name: Gerenciamento de carga de trabalho
       items:
         - name: Analisar sua carga de trabalho
           href: analyze-your-workload.md

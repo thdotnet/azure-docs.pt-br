@@ -11,71 +11,125 @@ ms.service: service-bus-messaging
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
-ms.topic: conceptual
-ms.date: 09/15/2018
+ms.topic: tutorial
+ms.date: 05/14/2019
 ms.author: spelluru
-ms.openlocfilehash: 4e1ea3d822c8b032617b7f202f1c176aeb966210
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: b29798bb87b7c5c677e7d80e552e45e8d1290541
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60333018"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786986"
 ---
-# <a name="azure-service-bus-to-azure-event-grid-integration-examples"></a>Exemplos do Barramento de Serviço do Azure para a integração da Grade de Eventos do Azure
-
-Neste artigo, você aprenderá a configurar uma função do Azure e um aplicativo lógico que recebe mensagens baseadas no recebimento de um evento da Grade de Eventos do Azure. Você fará o seguinte:
+# <a name="respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Responder a eventos do Barramento de Serviço do Azure recebidos por meio da Grade de Eventos do Azure usando o Azure Functions e os Aplicativos Lógicos do Azure
+Neste tutorial, você aprenderá a responder a eventos do Barramento de Serviço do Azure que são recebidos por meio da Grade de Eventos do Azure usando o Azure Functions e os Aplicativos Lógicos do Azure. Siga as seguintes etapas:
  
-* Crie um teste de função do Azure simples para depurar e ver o fluxo inicial de eventos na Grade de Eventos. Execute esta etapa, independentemente se você executar as outras.
-* Crie uma função do Azure para receber e processar mensagens do Barramento de Serviço do Azure com base em eventos da Grade de Eventos.
-* Utilize o recurso de aplicativos lógicos do serviço de aplicativo do Azure.
+- Crie um teste de função do Azure para depurar e ver o fluxo inicial de eventos na Grade de Eventos.
+- Crie uma função do Azure para receber e processar mensagens do Barramento de Serviço do Azure com base em eventos da Grade de Eventos.
+- Crie um aplicativo lógico para responder a eventos da Grade de Eventos
 
-O exemplo que você criar pressupõe que o tópico do Barramento de Serviço tem duas assinaturas. O exemplo também pressupõe que a assinatura da Grade de Eventos foi criada para enviar eventos para apenas uma assinatura do Barramento de Serviço. 
+Depois de criar os artefatos do Barramento de Serviço, da Grade de Eventos, do Azure Functions e dos Aplicativos Lógicos, você poderá executar as seguintes ações: 
 
-No exemplo, envie mensagens para o tópico do Barramento de Serviço e, em seguida, verifique se o evento foi gerado para esta assinatura do Barramento de Serviço. O aplicativo de função ou lógica recebe as mensagens da assinatura do Barramento de Serviço e, em seguida, o conclui.
+1. Enviar mensagens para um tópico do Barramento de Serviço. 
+2. Verificar se as assinaturas do tópico receberam essas mensagens
+3. Verificar se o aplicativo lógico ou a função inscritos receberam o evento. 
 
-## <a name="prerequisites"></a>Pré-requisitos
-Antes de começar, verifique se você concluiu as etapas nas próximas duas seções.
+## <a name="create-a-service-bus-namespace"></a>Criar um namespace do Barramento de Serviço
+Siga as instruções deste tutorial: [Início Rápido: Usar o portal do Azure para criar um tópico do Barramento de Serviço e assinaturas para o tópico](service-bus-quickstart-topics-subscriptions-portal.md) para executar as seguintes tarefas:
 
-### <a name="create-a-service-bus-namespace"></a>Criar um namespace do Barramento de Serviço
+- Criar um namespace **premium** do Barramento de Serviço. 
+- Obter a cadeia de conexão. 
+- Criar um tópico de Barramento de Serviço.
+- Criar duas assinaturas do tópico. 
 
-Crie um namespace do Barramento de Serviço Premium e crie um tópico do Barramento de Serviço que tem duas assinaturas.
-
-### <a name="send-a-message-to-the-service-bus-topic"></a>Enviar uma mensagem para o Tópico do Barramento de Serviço
-
+## <a name="prepare-a-sample-application-to-send-messages"></a>Preparar um aplicativo de exemplo para enviar as mensagens
 Você pode usar qualquer método para enviar uma mensagem para o tópico do Barramento de Serviço. O código de exemplo no fim deste procedimento pressupõe que você está usando o Visual Studio 2017.
 
 1. Clone [o repositório do barramento de serviço do azure GitHub](https://github.com/Azure/azure-service-bus/).
-
-1. No Visual Studio, vá para a pasta *\samples\DotNet\Microsoft.ServiceBus.Messaging\ServiceBusEventGridIntegration* e, em seguida, abra o arquivo *SBEventGridIntegration.sln*.
-
-1. Vá para o projeto **MessageSender** e, em seguida, selecione **Program.cs**.
-
-   ![8][]
-
-1. Preencha o nome do tópico e a cadeia de conexão e, em seguida, execute o código do aplicativo de console a seguir:
+2. No Visual Studio, vá para a pasta *\samples\DotNet\Microsoft.ServiceBus.Messaging\ServiceBusEventGridIntegration* e, em seguida, abra o arquivo *SBEventGridIntegration.sln*.
+3. Vá para o projeto **MessageSender** e, em seguida, selecione **Program.cs**.
+4. Insira o nome do tópico do Barramento de Serviço e a cadeia de conexão que você obteve na etapa anterior:
 
     ```CSharp
     const string ServiceBusConnectionString = "YOUR CONNECTION STRING";
     const string TopicName = "YOUR TOPIC NAME";
     ```
+5. Compile e execute o programa para enviar mensagens de teste para o tópico do Barramento de Serviço. 
 
-## <a name="set-up-a-test-function"></a>Configurar uma função de teste
+## <a name="set-up-a-test-function-on-azure"></a>Configurar uma função de teste no Azure 
+Antes de trabalhar com todo o cenário, configure pelo menos uma função de teste pequena, que pode ser usada para depurar e observar quais eventos estão fluindo. Siga as instruções do artigo [Criar sua primeira função no portal do Azure](../azure-functions/functions-create-first-azure-function.md) para executar as seguintes tarefas: 
 
-Antes de trabalhar com todo o cenário, configure pelo menos uma função de teste pequena, que pode ser usada para depurar e observar quais eventos estão fluindo.
+1. Criar um aplicativo de funções.
+2. Criar uma função disparada por HTTP. 
 
-1. No portal do Azure, crie um novo aplicativo do Azure Functions. Para aprender os conceitos básicos do Azure Functions, confira a [documentação do Azure Functions](https://docs.microsoft.com/azure/azure-functions/).
+Depois, execute as etapas a seguir: 
 
-1. Em sua função recém-criada, selecione o sinal de adição (+) para adicionar uma função de gatilho de HTTP:
 
-    ![2][]
+# <a name="azure-functions-v2tabv2"></a>[Azure Functions V2](#tab/v2)
+
+1. Expanda as **Funções** no modo de exibição de árvore e selecione sua função. Substitua o código da função pelo código a seguir: 
+
+    ```CSharp
+    #r "Newtonsoft.Json"
     
-    A janela **Comece rapidamente com uma função preexistente** é aberta.
+    using System.Net;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Primitives;
+    using Newtonsoft.Json;
+    
+    public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
+    {
+        log.LogInformation("C# HTTP trigger function processed a request.");
+        var content = req.Body;
+        string jsonContent = await new StreamReader(content).ReadToEndAsync();
+        log.LogInformation($"Received Event with payload: {jsonContent}");
+    
+        IEnumerable<string> headerValues;
+        headerValues = req.Headers.GetCommaSeparatedValues("Aeg-Event-Type");
+    
+        if (headerValues.Count() != 0)
+        {
+            var validationHeaderValue = headerValues.FirstOrDefault();
+            if(validationHeaderValue == "SubscriptionValidation")
+            {
+                var events = JsonConvert.DeserializeObject<GridEvent[]>(jsonContent);
+                var code = events[0].Data["validationCode"];
+                log.LogInformation("Validation code: {code}");
+                return (ActionResult) new OkObjectResult(new { validationResponse = code });
+            }
+        }
+    
+        return jsonContent == null
+            ? new BadRequestObjectResult("Please pass a name on the query string or in the request body")
+            : (ActionResult)new OkObjectResult($"Hello, {jsonContent}");
+    }
+    
+    public class GridEvent
+    {
+        public string Id { get; set; }
+        public string EventType { get; set; }
+        public string Subject { get; set; }
+        public DateTime EventTime { get; set; }
+        public Dictionary<string, string> Data { get; set; }
+        public string Topic { get; set; }
+    }
+    
+    ```
+2. Selecione **Salvar e executar**.
 
-    ![3][]
+    ![Saída do aplicativo de funções](./media/service-bus-to-event-grid-integration-example/function-run-output.png)
+3. Selecione **Obter a URL da função** e anote a URL. 
 
-1. Clique no botão **Webhook + API**, selecione **CSharp** e, em seguida, selecione **Criar esta função**.
- 
-1. Na função, cole o código a seguir:
+    ![Obter URL de função](./media/service-bus-to-event-grid-integration-example/get-function-url.png)
+
+# <a name="azure-functions-v1tabv1"></a>[Azure Functions V1](#tab/v1)
+
+1. Configurar a função para usar a versão **V1**: 
+    1. Selecione seu aplicativo de funções no modo de exibição de árvore e selecione **Configurações do aplicativo de funções**. 
+
+        ![Configurações do aplicativo de funções]()./media/service-bus-to-event-grid-integration-example/function-app-settings.png)
+    2. Selecione **~1** para **Versão de tempo de execução**. 
+2. Expanda as **Funções** no modo de exibição de árvore e selecione sua função. Substitua o código da função pelo código a seguir: 
 
     ```CSharp
     #r "Newtonsoft.Json"
@@ -92,18 +146,18 @@ Antes de trabalhar com todo o cenário, configure pelo menos uma função de tes
         string jsonContent = await content.ReadAsStringAsync(); 
         log.Info($"Received Event with payload: {jsonContent}");
     
-    IEnumerable<string> headerValues;
-    if (req.Headers.TryGetValues("Aeg-Event-Type", out headerValues))
-    {
-    var validationHeaderValue = headerValues.FirstOrDefault();
-    if(validationHeaderValue == "SubscriptionValidation")
-    {
-    var events = JsonConvert.DeserializeObject<GridEvent[]>(jsonContent);
-         var code = events[0].Data["validationCode"];
-         return req.CreateResponse(HttpStatusCode.OK,
-         new { validationResponse = code });
-    }
-    }
+        IEnumerable<string> headerValues;
+        if (req.Headers.TryGetValues("Aeg-Event-Type", out headerValues))
+        {
+            var validationHeaderValue = headerValues.FirstOrDefault();
+            if(validationHeaderValue == "SubscriptionValidation")
+            {
+            var events = JsonConvert.DeserializeObject<GridEvent[]>(jsonContent);
+                 var code = events[0].Data["validationCode"];
+                 return req.CreateResponse(HttpStatusCode.OK,
+                 new { validationResponse = code });
+            }
+        }
     
         return jsonContent == null
         ? req.CreateResponse(HttpStatusCode.BadRequest, "Pass a name on the query string or in the request body")
@@ -120,102 +174,144 @@ Antes de trabalhar com todo o cenário, configure pelo menos uma função de tes
         public string Topic { get; set; }
     }
     ```
+4. Selecione **Salvar e executar**.
 
-1. Selecione **Salvar e executar**.
+    ![Saída do aplicativo de funções](./media/service-bus-to-event-grid-integration-example/function-run-output.png)
+4. Selecione **Obter a URL da função** e anote a URL. 
+
+    ![Obter URL de função](./media/service-bus-to-event-grid-integration-example/get-function-url.png)
+
+---
 
 ## <a name="connect-the-function-and-namespace-via-event-grid"></a>Conecte a função e o namespace através da Grade de Eventos
+Nesta seção, você une a função e o namespace do Barramento de Serviço usando o portal do Azure. 
 
-Nesta seção, você une a função e o namespace do Barramento de Serviço. Para este exemplo, use o portal do Azure. Para entender como usar o PowerShell ou a CLI do Azure para executar este procedimento, confira [Visão Geral da integração do Barramento de Serviço do Azure para a Grade de Eventos do Azure](service-bus-to-event-grid-integration-concept.md).
+Para criar uma assinatura da Grade de Eventos do Azure, siga as etapas a seguir:
 
-Para criar uma assinatura da Grade de Eventos do Azure, faça o seguinte:
-1. No portal do Azure, vá para seu namespace e, em seguida, no painel esquerdo, selecione **Grade de Eventos**.  
-    A janela do namespace é aberta, com duas assinaturas da Grade de Eventos exibidas no painel direito.
+1. No portal do Azure, vá para seu namespace e, em seguida, no painel esquerdo, selecione **Eventos**. A janela do namespace é aberta, com duas assinaturas da Grade de Eventos exibidas no painel direito. 
+    
+    ![Barramento de Serviço – página de eventos](./media/service-bus-to-event-grid-integration-example/service-bus-events-page.png)
+2. Selecione **+ Assinatura de Evento** na barra de ferramentas. 
+3. Na página **Criar Assinatura de Eventos**, faça o seguinte:
+    1. Insira um **nome** para a assinatura. 
+    2. Selecione **Web Hook** para o **Tipo de ponto de extremidade**. 
 
-    ![20][]
+        ![Barramento de Serviço – Assinatura da Grade de Eventos](./media/service-bus-to-event-grid-integration-example/event-grid-subscription-page.png)
+    3. Escolha **Selecionar um ponto de extremidade**, cole a URL da função e, em seguida, selecione **Confirmar seleção**. 
 
-1. Selecione **Assinatura do Evento**.  
-    A janela **Assinatura do Evento** será aberta. A imagem a seguir exibe um formulário para inscrever-se em uma função do Azure ou em um webhook sem a aplicação de filtros.
+        ![Função – selecionar o ponto de extremidade](./media/service-bus-to-event-grid-integration-example/function-select-endpoint.png)
+    4. Alterne para a guia **Filtros**, insira o nome da **primeira assinatura** do tópico do Barramento de Serviço que você criou anteriormente e, em seguida, selecione o botão **Criar**. 
 
-    ![21][]
+        ![Filtro de assinatura de eventos](./media/service-bus-to-event-grid-integration-example/event-subscription-filter.png)
+4. Confirme se a assinatura de evento está na lista.
 
-1. Preencha o formulário, como mostrado e, na caixa **Filtro do Sufixo**, lembre-se de inserir o filtro relevante.
+    ![Assinatura de eventos na lista](./media/service-bus-to-event-grid-integration-example/event-subscription-in-list.png)
 
-1. Selecione **Criar**.
+## <a name="send-messages-to-the-service-bus-topic"></a>Enviar mensagens para o tópico do Barramento de Serviço
+1. Execute o aplicativo C# .NET, que envia mensagens para o tópico do Barramento de Serviço. 
 
-1. Envie uma mensagem para o tópico do Barramento de Serviço, conforme mencionado na seção “Pré-requisitos”, e verifique se os eventos estão fluindo por meio do recurso de Monitoramento do Azure Functions.
+    ![Saída do aplicativo de console](./media/service-bus-to-event-grid-integration-example/console-app-output.png)
+1. Na página de seu aplicativo de funções do Azure, expanda **Funções**, expanda sua **função** e selecione **Monitor**. 
 
-A próxima etapa é unir a função e o namespace do Barramento de Serviço. Para este exemplo, use o portal do Azure. Para entender como usar o PowerShell ou a CLI do Azure para executar esta etapa, confira [Visão Geral da integração do Barramento de Serviço do Azure para a Grade de Eventos do Azure](service-bus-to-event-grid-integration-concept.md).
+    ![Função Monitor](./media/service-bus-to-event-grid-integration-example/function-monitor.png)
 
-![9][]
-
-### <a name="receive-messages-by-using-azure-functions"></a>Receber mensagens usando o Azure Functions
-
+## <a name="receive-messages-by-using-azure-functions"></a>Receber mensagens usando o Azure Functions
 Na seção anterior, você examinou um teste simples e o cenário de depuração e verificou se os eventos estão fluindo. 
 
 Nesta seção, você aprenderá como receber e processar mensagens depois de receber um evento.
 
-Você adicionará uma função do Azure, conforme exibido no exemplo a seguir, porque as funções do Barramento de Serviço dentro do Azure Functions ainda não oferecem suporte nativo à nova integração da Grade de Eventos.
-
-1. Na mesma Solução do Visual Studio aberta nos pré-requisitos, selecione **ReceiveMessagesOnEvent.cs**. 
-
-    ![10][]
-
-1. Insira sua cadeia de conexão no código a seguir:
+### <a name="publish-a-function-from-visual-studio"></a>Publicar uma função do Visual Studio
+1. Na mesma solução do Visual Studio (**SBEventGridIntegration**) que você abriu, selecione **ReceiveMessagesOnEvent.cs** no projeto **SBEventGridIntegration**. 
+2. Insira sua cadeia de conexão do Barramento de Serviço no código a seguir:
 
     ```Csharp
     const string ServiceBusConnectionString = "YOUR CONNECTION STRING";
     ```
+3. Baixar o **perfil de publicação** para a função:
+    1. Selecione seu aplicativo de funções. 
+    2. Selecione a guia **Visão geral** se ainda não estiver selecionada. 
+    3. Selecione **Obter perfil de publicação** na barra de ferramentas. 
 
-1. No portal do Azure, baixe o perfil de publicação para a função do Azure que você criou na seção "Configurar uma função de teste".
+        ![Obter o perfil de publicação para a função](./media/service-bus-to-event-grid-integration-example/function-download-publish-profile.png)
+    4. Salve o arquivo na pasta do projeto. 
+4. No Visual Studio, clique com o botão direito do mouse em **SBEventGridIntegration** e, em seguida, selecione **Publicar**. 
+5. Selecione *Iniciar** na página **Publicar**. 
+6. Na página **Escolher um destino de publicação**, siga as etapas a seguir e selecione **Importar perfil**. 
 
-    ![11][]
+    ![Visual Studio – botão Importar perfil](./media/service-bus-to-event-grid-integration-example/visual-studio-import-profile-button.png)
+7. Selecione o **arquivo de perfil de publicação** baixado anteriormente. 
+8. Selecione **Publicar** na página **Publicar**. 
 
-1. No Visual Studio, clique com o botão direito do mouse em **SBEventGridIntegration** e, em seguida, selecione **Publicar**. 
+    ![Visual Studio – Publicar](./media/service-bus-to-event-grid-integration-example/select-publish.png)
+9. Confirme se está vendo a nova função do Azure **ReceiveMessagesOnEvent**. Se necessário, atualize a página. 
 
-1. No painel **Publicar** para o perfil de publicação que você baixou anteriormente, selecione **Importar perfil** e, em seguida, selecione **Publicar**.
+    ![Verifique se a nova função foi criada](./media/service-bus-to-event-grid-integration-example/function-receive-messages.png)
+10. Obtenha a URL da nova função e anote. 
 
-    ![12][]
+### <a name="event-grid-subscription"></a>Assinatura de Grade de Eventos
 
-1. Depois de publicar a nova função do Azure, crie uma nova assinatura da Grade de Eventos do Azure que aponta para a nova função do Azure.  
-    Na caixa **Termina com**, aplique o filtro correto que deve ser o nome da assinatura do Barramento de Serviço.
+1. Exclua a assinatura de Grade de Eventos existente:
+    1. Na página **Namespace de Barramento de Serviço**, selecione **Eventos** no menu à esquerda. 
+    2. Selecione a assinatura de eventos existente. 
+    3. Na página **Assinatura de Evento**, selecione **Excluir**.
+2. Siga as instruções da seção [Conectar a função e o namespace usando a Grade de Eventos](#connect-the-function-and-namespace-via-event-grid) para criar uma assinatura de Grade de Eventos usando a nova URL de função.
+3. Siga as instruções da seção [Enviar mensagens para o tópico do Barramento de Serviço](#send-messages-to-the-service-bus-topic) para enviar mensagens ao tópico e monitorar a função. 
 
-1. Envie uma mensagem para o tópico do Barramento de Serviço do Azure criado anteriormente e, em seguida, monitore o log do Azure Functions no portal do Azure para ver se os eventos estão fluindo e se as mensagens estão sendo recebidas.
+## <a name="receive-messages-by-using-logic-apps"></a>Receber mensagens usando os Aplicativos Lógicos
+Conecte um aplicativo lógico com o Barramento de Serviço do Azure e a Grade de Eventos do Azure seguindo as etapas abaixo:
 
-    ![12-1][]
+1. No portal do Azure, crie um aplicativo lógico.
+    1. Selecione **+ Criar um recurso**, selecione **Integração** e, em seguida, selecione **Aplicativo Lógico**. 
+    2. Na página **Aplicativo Lógico – Criar**, insira um **nome** para o aplicativo lógico.
+    3. Selecione sua **assinatura**do Azure. 
+    4. Selecione **Usar existente** para o **Grupo de recursos** e selecione o grupo de recursos que você usou para outros recursos (como a função do Azure, o namespace do Barramento de Serviço) criados anteriormente. 
+    5. Selecione o **Local** para o aplicativo lógico. 
+    6. Selecione **Criar** para criar o aplicativo lógico. 
+2. Na página **Designer de Aplicativos Lógicos**, selecione **Aplicativo Lógico em Branco** em **Modelos**. 
+3. No designer, siga as seguintes etapas:
+    1. Pesquise **Grade de Eventos**. 
+    2. Selecione **Grade de Eventos do Azure – quando ocorrer um evento de recurso (versão prévia)**. 
 
-### <a name="receive-messages-by-using-logic-apps"></a>Receber mensagens usando os Aplicativos Lógicos
+        ![Designer de Aplicativos Lógicos – selecione o gatilho da Grade de Eventos](./media/service-bus-to-event-grid-integration-example/logic-apps-event-grid-trigger.png)
+4. Selecione **Entrar**, insira suas credenciais do Azure e selecione **Permitir o acesso**. 
+5. Na página **Quando ocorrer um evento de recurso**, siga as seguintes etapas:
+    1. Selecione sua assinatura do Azure. 
+    2. Para **Tipo de recurso**, selecione **Microsoft.ServiceBus.Namespaces**. 
+    3. Para **Nome de recurso**, selecione seu namespace do Barramento de Serviço. 
+    4. Selecione **Adicionar novo parâmetro** e selecione **Filtro de sufixo**. 
+    5. Para **Filtro de sufixo**, insira o nome da sua segunda assinatura do tópico do Barramento de Serviço. 
 
-Conecte um aplicativo lógico com o Barramento de Serviço do Azure e a Grade de Eventos do Azure fazendo o seguinte:
+        ![Designer de Aplicativos Lógicos – configurar eventos](./media/service-bus-to-event-grid-integration-example/logic-app-configure-event.png)
+6. Selecione **+ Nova Etapa** no designer e siga as etapas abaixo:
+    1. Pesquise **Barramento de Serviço**.
+    2. Selecione **Barramento de Serviço** na lista. 
+    3. Selecione **Receber mensagens** na lista **Ações**. 
+    4. Selecione **Receber mensagens de uma assinatura do tópico (bloqueio de inspeção)**. 
 
-1. Primeiro, crie um novo aplicativo lógico no portal do Azure e selecione a **Grade de Eventos**.
+        ![Designer de Aplicativos Lógicos – ação de recebimento de mensagens](./media/service-bus-to-event-grid-integration-example/service-bus-get-messages-step.png)
+    5. Insira um **nome para a conexão**. Por exemplo:  **Receber mensagens da assinatura do tópico** e selecione o namespace do Barramento de Serviço. 
 
-    ![13][]
+        ![Designer de Aplicativos Lógicos – selecione o namespace do Barramento de Serviço](./media/service-bus-to-event-grid-integration-example/logic-apps-select-namespace.png) 
+    6. Selecione **RootManageSharedAccessKey**.
 
-    A janela do designer de Aplicativos Lógicos será aberta.
+        ![Designer de Aplicativos Lógicos – selecione a chave de acesso compartilhada](./media/service-bus-to-event-grid-integration-example/logic-app-shared-access-key.png) 
+    7. Selecione **Criar**. 
+    8. Selecione seu tópico e sua assinatura. 
+    
+        ![Designer de Aplicativos Lógicos – selecione a assinatura e o tópico do Barramento de Serviço](./media/service-bus-to-event-grid-integration-example/logic-app-select-topic-subscription.png)
+7. Selecione **+ Nova Etapa** e siga as etapas abaixo: 
+    1. Selecione **Barramento de Serviço**.
+    2. Selecione **Concluir a mensagem em uma assinatura de tópico** na lista de ações. 
+    3. Selecione seu **tópico** do Barramento de Serviço.
+    4. Selecione a segunda **assinatura** do tópico.
+    5. Para **Lock token da mensagem**, selecione **Lock token** em **Conteúdo dinâmico**. 
 
-    ![14][]
+        ![Designer de Aplicativos Lógicos – selecione a assinatura e o tópico do Barramento de Serviço](./media/service-bus-to-event-grid-integration-example/logic-app-complete-message.png)
+8. Selecione **Salvar** na barra de ferramentas do Designer de Aplicativos Lógicos para salvar o aplicativo lógico. 
+9. Siga as instruções da seção [Enviar mensagens para o tópico do Barramento de Serviço](#send-messages-to-the-service-bus-topic) para enviar mensagens ao tópico. 
+10. Alterne para a página **Visão geral** do seu aplicativo lógico. Você verá as execuções do aplicativo lógico no **Histórico de execuções** das mensagens enviadas.
 
-1. Adicione suas informações fazendo o seguinte:
-
-     a. Na caixa **Nome do Recurso**, digite seu próprio nome de namespace. 
-
-    b. Em **Opções avançadas**, na caixa **Filtro do Sufixo**, insira o filtro para sua assinatura.
-
-1. Adicione uma ação de recebimento do Barramento de Serviço para receber mensagens a partir de uma assinatura de tópico.  
-    A ação final é mostrada na imagem a seguir:
-
-    ![15][]
-
-1. Adicione um evento concluído, conforme mostra a imagem a seguir:
-
-    ![16][]
-
-1. Salve o aplicativo lógico e envie uma mensagem para o tópico do Barramento de Serviço, conforme mencionado na seção “Pré-requisitos”.  
-    Observe a execução do aplicativo lógico. Para exibir mais dados para a execução, selecione **Visão geral** e, em seguida, exiba os dados em **Histórico de execuções**.
-
-    ![17][]
-
-    ![18][]
+    ![Designer de Aplicativos Lógicos – execuções de aplicativo lógico](./media/service-bus-to-event-grid-integration-example/logic-app-runs.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
