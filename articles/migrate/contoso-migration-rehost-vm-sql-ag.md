@@ -704,8 +704,7 @@ A equipe de segurança da Contoso analisa as VMs do Azure WEBVM, SQLAOG1 e SQLAO
 ## <a name="bcdr"></a>BCDR
 
  Para a BCDR (continuidade dos negócios e recuperação de desastres), a Contoso executa as seguintes ações:
-- Manter dados seguros: A Contoso faz backup dos dados nas VMs do WEBVM, SQLAOG1 e SQLAOG2 usando o serviço do Backup do Azure. [Saiba mais].
-  (https://docs.microsoft.com/azure/backup/backup-introduction-to-azure-backup?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+- Manter dados seguros: A Contoso faz backup dos dados nas VMs do WEBVM, SQLAOG1 e SQLAOG2 usando o serviço do Backup do Azure. [Saiba mais](https://docs.microsoft.com/azure/backup/backup-introduction-to-azure-backup?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
   - A Contoso também aprenderá como usar o Armazenamento do Azure para fazer backup do SQL Server diretamente no armazenamento de blobs. [Saiba mais](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-use-storage-sql-server-backup-restore).
   - Manter os aplicativos e executar: A Contoso replica as VMs do aplicativo no Azure para uma região secundária usando o Site Recovery. [Saiba mais](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-quickstart).
 
