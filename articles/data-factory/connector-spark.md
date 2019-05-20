@@ -43,12 +43,12 @@ As propriedades a seguir têm suporte para o serviço vinculado do Spark:
 |:--- |:--- |:--- |
 | type | a propriedade type deve ser definida como: **Spark** | Sim |
 | host | Endereço IP ou nome do host do servidor Spark  | Sim |
-| porta | A porta TCP usada pelo servidor Spark para ouvir conexões de cliente. Se você conectar ao Microsoft Azure HDInsights, especifique a porta como 443. | Sim |
+| port | A porta TCP usada pelo servidor Spark para ouvir conexões de cliente. Se você conectar ao Microsoft Azure HDInsights, especifique a porta como 443. | Sim |
 | serverType | O tipo de servidor do Spark. <br/>Valores permitidos são: **SharkServer**, **SharkServer2**, **SparkThriftServer** | Não  |
 | thriftTransportProtocol | O protocolo de transporte a ser usado na camada de Thrift. <br/>Valores permitidos são: **Binary**, **SASL**, **HTTP** | Não  |
 | authenticationType | O método de autenticação usado para acessar o servidor do Spark. <br/>Valores permitidos são: **Anonymous**, **Username**, **UsernameAndPassword**, **WindowsAzureHDInsightService** | Sim |
-| Nome de Usuário | O nome de usuário que você usa para acessar o servidor do Spark.  | Não  |
-| Senha | A senha correspondente ao usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não  |
+| username | O nome de usuário que você usa para acessar o servidor do Spark.  | Não  |
+| password | A senha correspondente ao usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não  |
 | httpPath | A URL parcial correspondente ao servidor do Spark.  | Não  |
 | enableSsl | Especifica se as conexões com o servidor são criptografadas usando SSL. O valor padrão é falso.  | Não  |
 | trustedCertPath | O caminho completo do arquivo .pem que contém certificados de autoridade de certificação confiáveis para verificar o servidor ao se conectar via SSL. Essa propriedade só pode ser definida ao usar o SSL em IR auto-hospedado. O valor padrão é o arquivo de cacerts.pem instalado com o IR.  | Não  |
