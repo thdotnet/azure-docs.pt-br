@@ -174,7 +174,7 @@
       items:
         - name: Usar Azure PowerShell para provisionar entidades
           href: service-bus-manage-with-ps.md
-        - name: Monitorar Barramento de Serviço com Azure Monitor
+        - name: Monitorar Barramento de Serviço com o Azure Monitor
           href: service-bus-metrics-azure-monitor.md
         - name: Bibliotecas de gerenciamento do Barramento de Serviço
           href: service-bus-management-libraries.md

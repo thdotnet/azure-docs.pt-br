@@ -819,53 +819,47 @@
       items:
         - name: Alertas
           items:
-            - name: Usar alertas de métrica
-              items:
-                - name: 'Criar, exibir e gerenciar alertas de métrica no Azure Monitor'
-                  href: platform/alerts-metric.md
-                - name: 'Criar, exibir e gerenciar alertas de métrica clássicos no Azure Monitor'
-                  href: platform/alerts-classic-portal.md
-                - name: Alertas de métricas com limites dinâmicos
-                  href: platform/alerts-dynamic-thresholds.md
-                - name: Configurar alertas de métrica em logs
-                  href: platform/alerts-metric-logs.md
-                - name: Criar um alerta de métrica mais recente com um modelo do Resource Manager
-                  href: platform/alerts-metric-create-templates.md
-                - name: Criar um alerta de métrica clássico com um modelo do Gerenciador de Recursos
-                  href: platform/alerts-enable-template.md
-                - name: Fazer com que o alerta de métrica clássico chame um webhook
-                  href: platform/alerts-webhooks.md
-            - name: Usar alertas de registro
-              items:
-                - name: Configurar alertas na consulta de análise
-                  href: platform/alerts-log.md
-                - name: Consultas de alertas do log
-                  href: platform/alerts-log-query.md
-                - name: Ações de Webhook para alertas do log
-                  href: platform/alerts-log-webhook.md
-                - name: Solução de problemas de alertas do log
-                  href: platform/alert-log-troubleshoot.md
-            - name: Usar alertas do log de atividades
-              items:
-                - name: Configurar alertas em um evento de log de atividades
-                  href: platform/alerts-activity-log.md
-                - name: Migrar para alertas de log de atividades
-                  href: platform/migrate-management-alerts.md
-                - name: Configurar alertas em notificações de serviço
-                  href: platform/alerts-activity-log-service-notifications.md
-            - name: Usar alertas de aplicativo
+            - name: Regras de alerta do aplicativo
               items:
                 - name: Disponibilidade
                   href: app/monitor-web-app-availability.md
                 - name: Alertas de métricas
                   href: app/alerts.md
-            - name: Use grupos de ação com alertas
+            - name: Regras de alerta de métrica de plataforma
               items:
-                - name: Criar grupos de ação
+                - name: Gerenciar alertas de métrica
+                  href: platform/alerts-metric.md
+                - name: Usar limites dinâmicos
+                  href: platform/alerts-dynamic-thresholds.md
+                - name: Alertas de métrica em logs
+                  href: platform/alerts-metric-logs.md
+                - name: Usando o modelo do Resource Manager
+                  href: platform/alerts-metric-create-templates.md
+            - name: Regras de alerta do log
+              items:
+                - name: Configurar alertas na consulta de análise
+                  href: platform/alerts-log.md
+                - name: Consultas
+                  href: platform/alerts-log-query.md
+                - name: Ações de Webhook
+                  href: platform/alerts-log-webhook.md
+                - name: solução de problemas
+                  href: platform/alert-log-troubleshoot.md
+            - name: Regras de alerta do log de atividades
+              items:
+                - name: Alerta sobre um evento de log de atividades
+                  href: platform/alerts-activity-log.md
+                - name: Migrar eventos de gerenciamento para alertas de log de atividades
+                  href: platform/migrate-management-alerts.md
+                - name: Alerta sobre notificações de integridade do serviço
+                  href: platform/alerts-activity-log-service-notifications.md
+            - name: Usar grupos de ação
+              items:
+                - name: Criar grupo de ações
                   href: platform/action-groups.md
-                - name: Saiba mais sobre o esquema de webhook
+                - name: Esquema de webhook
                   href: platform/activity-log-alerts-webhook.md
-                - name: Definições comuns do esquema de alertas
+                - name: Definição comum do esquema de alertas
                   href: platform/alerts-common-schema-definitions.md
                 - name: Comportamento de alerta do SMS
                   href: platform/alerts-sms-behavior.md
@@ -875,9 +869,9 @@
                   href: platform/action-groups-create-resource-manager-template.md
                 - name: Implementar uma ação de aplicativo lógico
                   href: platform/action-groups-logic-app.md
-            - name: Alertas do Operations Manager
+            - name: Solução de Gerenciamento de Alertas
               href: platform/alert-management-solution.md
-            - name: Gerenciar alertas
+            - name: Interface do usuário do alerta
               items:
                 - name: Gerenciar instâncias de alerta
                   href: platform/alerts-managing-alert-instances.md
@@ -887,19 +881,31 @@
                   href: platform/alerts-managing-alert-states.md
                 - name: Gerenciar alertas de outros serviços de monitoramento
                   href: platform/alerts-managing-nagios-zabbix-scom.md
-            - name: Migrar alertas clássicos
+            - name: Migrar regras de alerta clássicas
               items:
-                - name: Usar a ferramenta de migração
-                  href: platform/alerts-using-migration-tool.md
                 - name: Preparar para a migração
                   href: platform/alerts-prepare-migration.md
                 - name: Compreenda a ferramenta de migração
                   href: platform/alerts-understand-migration.md
+                - name: Usar a ferramenta de migração
+                  href: platform/alerts-using-migration-tool.md
+                - name: Gerenciar alertas de métrica clássicos
+                  href: platform/alerts-classic-portal.md
+                - name: Alerta de métrica clássico usando um modelo do Resource Manager
+                  href: platform/alerts-enable-template.md
+                - name: Alerta de métrica clássico que chama um webhook
+                  href: platform/alerts-webhooks.md
+        - name: Notificações de integridade de serviço no log de atividades
+          items:
+            - name: Exibir notificações
+              href: platform/service-notifications.md
+            - name: Configurar alertas em eventos de notificação
+              href: platform/alerts-activity-log-service-notifications.md
         - name: Autoscale
           items:
-            - name: Instruções passo a passo de dimensionamento automático
+            - name: Passo a passo
               href: platform/autoscale-get-started.md
-            - name: Compreender configurações de Autoescala
+            - name: Configurações
               href: platform/autoscale-understanding-settings.md
             - name: Práticas recomendadas
               href: platform/autoscale-best-practices.md
@@ -907,20 +913,14 @@
               href: platform/autoscale-common-metrics.md
             - name: Padrões comuns
               href: platform/autoscale-common-scale-patterns.md
-            - name: Dimensionamento automático usando uma métrica personalizada
+            - name: Dimensionar com métricas personalizadas
               href: platform/autoscale-custom-metric.md
-            - name: Dimensionar automaticamente conjuntos de dimensionamento de máquinas virtuais usando modelos do Resource Manager
-              href: platform/autoscale-virtual-machine-scale-sets.md
-            - name: Dimensionar automaticamente máquinas em um conjunto de escala de máquina virtual
+            - name: Dimensionar conjuntos de dimensionamento de VM
               href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md?toc=/azure/azure-monitor/toc.json
-            - name: Configurar webhooks e notificações por email em dimensionamento automático
+            - name: Dimensionar conjuntos de dimensionamento de VM usando modelos do Resource Manager
+              href: platform/autoscale-virtual-machine-scale-sets.md
+            - name: Usar webhooks e notificações por email
               href: platform/autoscale-webhook-email.md
-        - name: Notificações de serviço
-          items:
-            - name: Exibir notificações de serviço
-              href: platform/service-notifications.md
-            - name: Configurar alertas em notificações de serviço
-              href: platform/alerts-activity-log-service-notifications.md
         - name: Gerenciamento de serviços de TI
           items:
             - name: Conector de Gerenciamento do Serviço de TI

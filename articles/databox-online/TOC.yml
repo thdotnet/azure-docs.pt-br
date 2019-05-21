@@ -89,6 +89,8 @@
           items:
             - name: Azure Data Box Edge
               href: data-box-edge-manage-compute.md
+            - name: Rede de computação de borda
+              href: data-box-edge-extend-compute-access-modules.md
             - name: Compartilhamentos
               href: data-box-edge-manage-shares.md
             - name: Usuários
