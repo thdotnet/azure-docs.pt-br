@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2016
 ms.author: lesun
 ROBOTS: NOINDEX
-ms.openlocfilehash: b2e956b099022751712f96ab0b15aa57c752b458
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c989f1115bc5a85bf09270c553ac1cb51bb4f170
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60405249"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65954712"
 ---
 # <a name="analyzer-names"></a>Nomes do analisador
 
@@ -43,10 +43,10 @@ Atualmente, há três tipos distintos:
 Dentro de um determinado tipo, no entanto, diferentes especialistas podem não concordar em como um fenômeno específico deve ser analisado.
 Ao contrário de linguagens de programação, não há uma definição clara e exata de como isso deve ser feito.
 
-Por exemplo, imagine que estamos tentando encontrar os tokens na frase em inglês "He didn’t go."
+Por exemplo, imagine que estivéssemos tentando encontrar os tokens na frase em inglês "Eles não vá."
 Em particular, considere a cadeia de caracteres "didn’t".
 Uma interpretação possível é que isso deve ser dividido em dois tokens: "did" e "not".
-Em seguida, a frase alternativa "He did not go" teria o mesmo conjunto de tokens.
+Em seguida, a frase alternativa "eles não vão" teria o mesmo conjunto de tokens.
 Outra possibilidade é dizer que ele deve ser dividido nos tokens "did" e "n’t".
 O último token não seria normalmente considerado uma palavra, mas essa abordagem retém mais informações sobre a cadeia de caracteres de superfície que, às vezes, pode ser útil.
 Ou talvez esse contração deve ser considerada uma única palavra.

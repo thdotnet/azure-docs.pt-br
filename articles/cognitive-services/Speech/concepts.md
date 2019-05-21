@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: c114c726bea34465972a282acac6b8acbbf9a80f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1cbf1514ac5eba4e288ecb78944878217fc5ba3e
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60514964"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65954526"
 ---
 # <a name="basic-concepts"></a>Conceitos básicos
 
@@ -32,7 +32,7 @@ Se esta for a primeira vez que você estiver criando um aplicativo habilitado pa
 
 O principal entre os conceitos básicos de fala é o *fluxo de áudio*. Ao contrário de um pressionamento de tecla, que ocorre em um único ponto no tempo e contém uma única informação, uma solicitação de falada é distribuída entre centenas de milissegundos e contém muitos quilobytes de informações. A duração de enunciados falados apresenta dificuldades para os desenvolvedores que desejam fornecer uma experiência de fala discreta e simplificada para seu aplicativo. Os computadores atuais e algoritmos executam transcrição de fala aproximadamente metade da duração da expressão, portanto, uma expressão de 2 segundos pode ser transcrita em aproximadamente 1 segundo, mas qualquer aplicativo que passa por um atraso de 1 segundo no usuário de processamento não é simplificado e nem elegante.
 
-Felizmente, há maneiras de "ocultar" a hora de transcrição executando transcrição em uma parte da expressão, enquanto o usuário está falando outra parte. Por exemplo, ao dividir uma expressão de 1 segundo em 10 partes de 100 milissegundos e executar a transcrição em cada bloco por sua vez, mais de 450 dos total 500 milissegundos necessários para a transcrição pode ser "oculto" para que o usuário não fique ciente da transcrição que está sendo executada enquanto ele está falando. Ao pensar neste exemplo, lembre-se de que o serviço está executando a transcrição nos 100 milissegundos anteriores de áudio enquanto o usuário está falando próximos 100, portanto quando o usuário para falando, o serviço só precisam transcrever aproximadamente 100 milissegundos de áudio para produzir um resultado.
+Felizmente, há maneiras de "ocultar" a hora de transcrição executando transcrição em uma parte da expressão, enquanto o usuário está falando outra parte. Por exemplo, dividindo uma declaração de 1 segundo em 10 blocos de 100 milissegundos e executando a transcrição em cada parte por sua vez, mais de 450 dos 500 milissegundos total necessários para a transcrição pode ser "oculto" para que o usuário não fica ciente transcrição é que está sendo executada enquanto eles estão falando. Ao pensar neste exemplo, lembre-se de que o serviço está executando a transcrição nos 100 milissegundos anteriores de áudio enquanto o usuário está falando próximos 100, portanto quando o usuário para falando, o serviço só precisam transcrever aproximadamente 100 milissegundos de áudio para produzir um resultado.
 
 Para alcançar essa experiência de usuário, as informações de áudio faladas são coletadas em partes e transcritas conforme o usuário fala. Essas partes de áudio coletivamente do *fluxo de áudio*, e o processo de enviar esses blocos de áudio para o serviço é chamado *streaming de áudio.* Streaming de áudio é uma parte importante de qualquer aplicativo habilitado para fala; ajustar o tamanho da parte e otimizar a implementação de fluxo são algumas das maneiras mais impacto de melhorar a experiência do usuário do seu aplicativo.
 
@@ -82,9 +82,9 @@ O serviço de reconhecimento de fala Microsoft fornece duas maneiras para que de
 | Casos de uso | [APIs REST](GetStarted/GetStartedREST.md) | [Bibliotecas de cliente](GetStarted/GetStartedClientLibraries.md) |
 |-----|-----|-----|
 | Converter um áudio curto falado, por exemplo, comandos (tamanho do áudio < 15 s) sem resultados intermediários | Sim | Sim |
-| Converter um áudio longo (> 15 s) | Não  | Sim |
-| Fluxo de áudio desejado com resultados intermediários | Não  | Sim |
-| Entender o texto convertido de áudio usando LUIS | Não  | Sim |
+| Converter um áudio longo (> 15 s) | Não | Sim |
+| Fluxo de áudio desejado com resultados intermediários | Não | Sim |
+| Entender o texto convertido de áudio usando LUIS | Não | Sim |
 
  Se a linguagem ou plataforma ainda não tiver um SDK, você pode criar sua própria implementação baseada na [documentação de protocolo](API-Reference-REST/websocketprotocol.md).
 
@@ -160,7 +160,7 @@ As respostas de transcrição retornam o texto convertido de áudio para cliente
 
 - `RecognitionStatus` especifica o status de reconhecimento. Os valores possíveis são fornecidos na tabela a seguir.
 
-| Status | DESCRIÇÃO |
+| Status | Descrição |
 | ------------- | ---------------- |
 | Sucesso | O reconhecimento foi bem-sucedido e o campo de texto para exibição está presente |
 | NoMatch | A fala foi detectada no fluxo de áudio, mas nenhuma palavra do idioma de destino foi combinada. Consulte [Status de Reconhecimento NoMatch (#nomatch-recognition-status) para obter mais detalhes  |
@@ -190,7 +190,7 @@ O Serviço de fala da Microsoft pode retornar uma variedade de formatos de conte
 
 Você pode controlar o formato do resultado de frase especificando o `format` parâmetro de consulta de URL. Por padrão, o serviço retorna `simple` resultados.
 
-| Formatar | DESCRIÇÃO |
+| Formatar | Descrição |
 |-----|-----|
 | `simple` | Um resultado de frase simplificada que contém o status de reconhecimento e o texto reconhecido no formato de exibição. |
 | `detailed` | Um status de reconhecimento e uma lista de melhor N dos resultados de frase em que o resultado de cada frase contém todas as quatro formas de reconhecimento e uma pontuação de confiança. |
@@ -307,7 +307,7 @@ O formato de conteúdo do `detailed` resultado da frase:
 
 O serviço de fala Microsoft reconhece todos os formatos de fala humana, incluindo palavras e frases que muitas pessoas deseja classificar como "obscenidades". Você pode controlar como o serviço trata obscenidades usando o parâmetro de consulta de *obscenidades*. Por padrão, o serviço mascara obscenidades nos resultados *speech.phrase* e não retorna mensagens *speech.hypothesis* que contêm obscenidades.
 
-| *Valor de Obscenidades* | DESCRIÇÃO |
+| *Valor de Obscenidades* | Descrição |
 | - | - |
 | `masked` | Máscaras obscenidades com asteriscos. Esse é o comportamento padrão. |
 | `removed` | Remove obscenidades de todos os resultados. |

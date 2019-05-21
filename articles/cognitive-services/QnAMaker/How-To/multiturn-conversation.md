@@ -8,14 +8,14 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/14/2019
 ms.author: diberry
-ms.openlocfilehash: 24158d5949c0a31e5444c609cbfced970bdeca07
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: f12b55e9b00e933e13f84832b8cc36267a1da05f
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65471951"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65954875"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Prompts de acompanhamento de uso para criar várias sequências de uma conversa
 
@@ -52,7 +52,7 @@ Ao importar o documento PDF, QnA Maker determina prompts de acompanhamento da es
 
 ![! [Ao importar o documento PDF, QnA Maker determina prompts de acompanhamento da estrutura para criar o fluxo de conversação. ](../media/conversational-context/surface-manual-pdf-follow-up-prompt.png)](../media/conversational-context/surface-manual-pdf-follow-up-prompt.png#lightbox)
 
-## <a name="filter-questions-and-answers-by-context"></a>Perguntas e respostas de filtro pelo contexto
+## <a name="show-questions-and-answers-with-context"></a>Mostrar perguntas e respostas com contexto
 
 1. Reduza os pares de perguntas e respostas exibidos apenas com conversas contextuais. Selecione **as opções de exibição**, em seguida, selecione **Mostrar contexto (visualização)**. A lista estará vazia até que você adicione o primeiro par de pergunta e resposta com um prompt de acompanhamento. 
 
@@ -64,22 +64,36 @@ Ao importar o documento PDF, QnA Maker determina prompts de acompanhamento da es
 1. Insira o novo texto de pergunta `Give feedback.` com uma resposta de `What kind of feedback do you have?`.
 
 1. No **resposta** coluna para essa pergunta, selecione **prompt de acompanhamento de adicionar**. 
-1. O **prompt de acompanhamento** caixa de diálogo pop-up permite que você procure uma pergunta existente ou insira uma nova pergunta. Neste procedimento, digite o texto `Feedback on an QnA Maker service`, para o **exibir texto**. 
-1. Verifique **somente contexto**. O **somente contexto** opção indica que esse texto de usuário será compreendido _somente_ se fornecido em resposta à pergunta anterior. Para este cenário, o texto de aviso não faz sentido como uma pergunta autônomo, ele só faz sentido no contexto do pergunta anterior.
-1. No **Link para responder** texto, digite a resposta, `How would you rate QnA Maker?`.
-1. Selecione **criar novo** , em seguida, selecione **salvar**. 
+1. O **prompt de acompanhamento (versão prévia)** janela pop-up permite que você procure uma pergunta existente ou insira uma nova pergunta. Crie um novo prompt digitando os seguintes valores: 
+
+    |Campo de texto|Value|
+    |--|--|
+    |**Texto de exibição**|`Feedback on an QnA Maker service`|
+    |**Link para responder**|`How would you rate QnA Maker??`|
+    |||
 
     ![Criar novo QnA prompt](../media/conversational-context/create-child-prompt-from-parent.png)
 
-    Isso criou um novo par de perguntas e respostas e vinculados a pergunta selecionada como um prompt de acompanhamento. O **contexto** coluna, ambas as perguntas, indicar uma relação de prompt de acompanhamento. 
+1. Verifique **somente contexto**. O **somente contexto** opção indica que esse texto de usuário será compreendido _somente_ se fornecido em resposta à pergunta anterior. Para este cenário, o texto de aviso não faz sentido como uma pergunta autônomo, ele só faz sentido no contexto do pergunta anterior.
+1. Selecione **criar novo** , em seguida, selecione **salvar**. 
+
+    Isso criou um novo par de perguntas e respostas e vinculados a pergunta selecionada como um prompt de acompanhamento. O **contexto** coluna, ambas as perguntas, indica uma relação de prompt de acompanhamento. 
 
     ![! [A coluna de contexto, ambas as perguntas, indica uma relação de prompt de acompanhamento.] (.. / media/conversational-context/child-prompt-created.png)](../media/conversational-context/child-prompt-created.png#lightbox)
 
-1. Selecione **prompt de acompanhamento de Add** para o `Give feedback` pergunta para adicionar outro prompt de acompanhamento. 
-1. Crie uma nova pergunta, inserindo `Feedback on an existing feature`, com a resposta `Which feature would you like to give feedback on?`.  
+1. Selecione **prompt de acompanhamento de Add** para o `Give feedback` pergunta para adicionar outro prompt de acompanhamento. Isso abre o **prompt de acompanhamento (versão prévia)** janela pop-up.
 
-1.  Verifique **somente contexto**. O **somente contexto** opção indica que esse texto de usuário será compreendido _somente_ se fornecido em resposta à pergunta anterior. Para este cenário, o texto de aviso não faz sentido como uma pergunta autônomo, ele só faz sentido no contexto do pergunta anterior.
-1.  Clique em **Salvar**. 
+1. Crie um novo prompt digitando os seguintes valores:
+
+    |Campo de texto|Value|
+    |--|--|
+    |**Texto de exibição**|`Feedback on an existing feature`|
+    |**Link para responder**|`Which feature would you like to give feedback on?`|
+    |||
+
+1. Verifique **somente contexto**. O **somente contexto** opção indica que esse texto de usuário será compreendido _somente_ se fornecido em resposta à pergunta anterior. Para este cenário, o texto de aviso não faz sentido como uma pergunta autônomo, ele só faz sentido no contexto do pergunta anterior.
+
+1. Clique em **Salvar**. 
 
     Isso criou uma nova pergunta e vinculadas a pergunta como uma pergunta de prompt de acompanhamento para o `Give feedback` pergunta.
     
@@ -93,26 +107,34 @@ Ao importar o documento PDF, QnA Maker determina prompts de acompanhamento da es
 
 1. Se você deseja vincular um par de QnA existente como um prompt de acompanhamento, selecione a linha para o par de pergunta e resposta.
 1. Selecione **prompt de acompanhamento de adicionar** nessa linha.
-1. Na caixa de diálogo pop-up, insira o texto da pergunta na caixa de pesquisa. Todas as correspondências são retornadas. Selecione a pergunta que você deseja como o acompanhamento e verificar **somente contexto**, em seguida, selecione **salvar**. 
+1. No **prompt de acompanhamento (versão prévia)** janela pop-up, insira o texto de resposta na caixa de pesquisa. Todas as correspondências são retornadas. Selecione a resposta desejado como o acompanhamento e marque **somente contexto**, em seguida, selecione **salvar**. 
 
-    Depois que a unidade organizacional adicionou o prompt de acompanhamento, lembre-se de selecionar **salvar e treinar**.
+    ![Link do prompt de acompanhamento para a caixa de diálogo de resposta para uma resposta já existente, usando o texto da resposta de pesquisa.](../media/conversational-context/search-follow-up-prompt-for-existing-answer.png)
+
+    Depois de ter adicionado o prompt de acompanhamento, lembre-se de selecionar **salvar e treinar**.
   
-## <a name="add-metadata-to-follow-up-prompts"></a>Adicionar metadados aos prompts de acompanhamento 
+<!--
 
-Na base de dados de Conhecimento, quando um par de perguntas e respostas que esteja vinculado à solicita de acompanhamento, os filtros de metadados são aplicados primeiro e o acompanhamento é retornado.
+## To find best prompt answer, add metadata to follow-up prompts 
 
-1. Para os dois pares de QnA acompanhamento, adicione metadados para cada um:
+If you have several follow-up prompts for a given QnA pair, but you know as the knowledge base manager, that not all prompts should be returned, use metadata to categorize the prompts in the knowledge base, then send the metadata from the client application as part of the GenerateAnswer request.
 
-    |Pergunta|Adicionar metadados|
+In the knowledge base, when a question-and-answer pair is linked to follow-up prompts, the metadata filters are applied first, then the follow-ups are returned.
+
+1. For the two follow-up QnA pairs, add metadata to each one:
+
+    |Question|Add metadata|
     |--|--|
-    |`Feedback on an QnA Maker service`|"Recurso": "all"|
+    |`Feedback on an QnA Maker service`|"Feature":"all"|
     |`Feedback on an existing feature`|"Feature":"one"|
     
-    ![Adicionar metadados ao prompt de acompanhamento para que ele pode ser filtrado na resposta de conversa do serviço](../media/conversational-context/add-metadata-feature-to-follow-up-prompt.png) 
+    ![Add metadata to follow-up prompt so it can be filtered in conversation response from service](../media/conversational-context/add-metadata-feature-to-follow-up-prompt.png) 
 
-1. Salve e treinar. 
+1. Save and train. 
 
-    Quando você envia a pergunta `Give feedback` com o filtro de metadados `Feature` com um valor de `all`, apenas o par de QnA com que os metadados será retornado. Os dois pares de QnA não são retornados porque ambos não correspondem ao filtro. 
+    When you send the question `Give feedback` with the metadata filter `Feature` with a value of `all`, only the QnA pair with that metadata will be returned. Both QnA pairs are not returned because they both do not match the filter. 
+
+-->
 
 ## <a name="test-the-qna-set-to-get-all-the-follow-up-prompts"></a>Solicita que o QnA definida para obter todos os o acompanhamento de teste
 
@@ -145,7 +167,7 @@ A seção anterior solicitou uma resposta e os prompts de acompanhamento para `A
             "questions": [
                 "Accounts and signing in"
             ],
-            "answer": "**Accounts and signing in**\n\nWhen you set up your Surface, an account is set up for you. You can create additional accounts later for family and friends, so each person using your Surface can set it up just the way he or she likes. For more info, see All about accounts on Surface.com. \n\nThere are several ways to sign in to your Surface Pro 4: ",
+            "answer": "**Accounts and signing in**\n\nWhen you set up your Surface, an account is set up for you. You can create additional accounts later for family and friends, so each person using your Surface can set it up just the way they like. For more info, see All about accounts on Surface.com. \n\nThere are several ways to sign in to your Surface Pro 4: ",
             "score": 86.96,
             "id": 37,
             "source": "surface-pro-4-user-guide-EN .pdf",
@@ -269,15 +291,11 @@ O QnA Maker _GenerateAnswer_ resposta JSON inclui os prompts de acompanhamento n
 
 ## <a name="displaying-prompts-and-sending-context-in-the-client-application"></a>Exibindo prompts e enviar o contexto no aplicativo cliente 
 
-O aplicativo cliente exibe todas as perguntas com uma opção para o usuário exibir os avisos como botões ou ações sugeridas.
-O aplicativo cliente, em seguida, armazena a consulta atual de par e o usuário do QnA como contexto a ser passado com a próxima consulta de usuário. 
+Se você tiver adicionado prompts em sua base de dados de conhecimento e testar o fluxo no painel de teste, os avisos não serão automaticamente iniciado aparecendo nos aplicativos cliente. Você pode mostrar os prompts como botões ou ações sugeridas como parte da resposta à consulta do usuário no cliente de aplicativos, incluindo isso [exemplo de estrutura do Bot](https://aka.ms/qnamakermultiturnsample) em seu código. O aplicativo cliente deverá armazenar a ID do QnA atual e a consulta de usuário e transmiti-los a [objeto de contexto da API GenerateAnswer](#json-request-to-return-non-initial-answer-and-follow-up-prompts) para a próxima consulta de usuário.
 
-Use esta [exemplo de estrutura do Bot](https://aka.ms/qnamakermultiturnsample) para ver a caixa de diálogo de ativar várias trabalho-ponta em um bot do QnA Maker.
+## <a name="display-order-supported-in-api"></a>Ordem de exibição com suporte na API
 
-
-## <a name="prompt-order-supported-in-api"></a>Ordem de prompt com suporte na API
-
-A ordem de prompt, retornado na resposta JSON, há suporte para edição por apenas a API. 
+A ordem de exibição, retornada na resposta JSON, há suporte para edição por apenas a API. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

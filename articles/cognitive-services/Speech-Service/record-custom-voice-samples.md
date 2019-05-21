@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: b4360150064d2f42cc2dc2cc3ef9f7783a5cb175
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: a4a8212906f384494a9e2e005eee8c4dbdfa14a3
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64866539"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65954647"
 ---
 # <a name="record-voice-samples-to-create-a-custom-voice"></a>Gravar amostras de voz para criar uma voz personalizada
 
@@ -53,7 +53,7 @@ Escolha o ator de voz cuja voz natural você aprecia. É possível criar vozes e
 
 O fator mais importante para a escolha de talentos de voz é a consistência. As gravações devem soar como se fossem feitas no mesmo dia e na mesma sala. É possível aproximar-se desse ideal por meio de melhores práticas de gravação e engenharia.
 
-O ator de voz é a outra metade da equação. Ele ou ela deve ser capaz de falar com nível de volume, densidade, tom e velocidade consistentes. A dicção clara é uma obrigação. O locutor também precisa ser capaz de controlar rigorosamente a variação da densidade de voz, o efeito emocional e os maneirismos de fala.
+O ator de voz é a outra metade da equação. Eles devem ser capazes de falar com taxa consistente, nível de volume, densidade e tom. A dicção clara é uma obrigação. O talento também precisa ser capaz de controlar rigidamente suas variação de tom, afetam emocional e detectar gestos de fala.
 
 Gravar amostras de voz personalizada pode ser mais exaustivo que outros tipos de trabalho com voz. A maioria dos talentos de voz pode gravar por duas ou três horas por dia. Se possível, limite as sessões a três ou quatro por semana, com um dia de folga entre as seções.
 
@@ -105,7 +105,7 @@ Sob a lei de direitos autorais, a leitura de um texto com direitos autorais pelo
 
 Felizmente, é possível evitar completamente esses problemas. Há muitas fontes de texto que podem ser utilizadas sem permissão ou licença.
 
-|Fonte de texto|DESCRIÇÃO|
+|Fonte de texto|Descrição|
 |-|-|
 |[Corpus CMU Arctic](http://festvox.org/cmu_arctic/)|Cerca de 1100 frases selecionadas de obras que não possuem direitos autorais, especificamente para uso em projetos de sintetização de fala. Um excelente ponto de partida.|
 |Obras que não estão mais<br>sob direitos autorais|Normalmente, obras publicadas antes de 1923. Para inglês, o [Project Gutenberg](https://www.gutenberg.org/) oferece dezenas de milhares de obras desse tipo. Talvez seja conveniente concentra-se em textos mais recentes, pois a linguagem estará mais próxima do inglês moderno.|
@@ -117,7 +117,7 @@ Felizmente, é possível evitar completamente esses problemas. Há muitas fontes
 
 Grave o script em um estúdio de gravação profissional especializado em trabalho de voz. Esses estúdios terão uma cabine de gravação, o equipamento certo e as pessoas capacitadas para operá-lo. Vale a pena não economizar na gravação.
 
-Discuta seu projeto com o engenheiro de gravação do estúdio e ouça os conselhos dele. A gravação deve ter pouca ou nenhuma compressão de gama dinâmica (máximo de 4: 1). É essencial que o áudio tenha um volume consistente e uma alta relação sinal-ruído, além de estar livre de sons indesejados.
+Discuta o seu projeto com o engenheiro de gravação do studio e ouça seus conselhos. A gravação deve ter pouca ou nenhuma compressão de gama dinâmica (máximo de 4: 1). É essencial que o áudio tenha um volume consistente e uma alta relação sinal-ruído, além de estar livre de sons indesejados.
 
 ### <a name="do-it-yourself"></a>Faça você mesmo
 
@@ -131,7 +131,7 @@ Você também pode usar um microfone analógico. Muitas locadoras oferecem micro
 
 Instale o microfone em um suporte ou pedestal e instale um filtro pop na frente do microfone para eliminar o ruído de consoantes "explosivas" como "p" e "b." Alguns microfones vêm com uma montagem de suspensão que isola-os das vibrações no suporte, o que é útil.
 
-O ator de voz deve ficar a uma distância consistente do microfone. Use fita no piso para marcar o local em que a pessoa deve ficar. Se o ator de voz preferir sentar, tenha cuidado especial para monitorar a distância do microfone e evitar o ruído da cadeira.
+O ator de voz deve ficar a uma distância consistente do microfone. Use fita adesiva no piso para marcar onde devem ficar posicionados. Se o ator de voz preferir sentar, tenha cuidado especial para monitorar a distância do microfone e evitar o ruído da cadeira.
 
 Use um suporte para manter o script. Evite inclinar o suporte para que o som não seja refletido em direção ao microfone.
 
@@ -158,12 +158,12 @@ O ideal é ter pessoas diferentes nas funções de diretor, engenheiro e ator de
 
 ### <a name="before-the-session"></a>Antes da sessão
 
-Para evitar desperdiçar tempo de estúdio, repasse o script com o ator de voz antes da sessão de gravação. Enquanto o talento de voz familiariza-se com o texto, poderá esclarecer a pronúncia de qualquer palavra desconhecida.
+Para evitar desperdiçar tempo de estúdio, repasse o script com o ator de voz antes da sessão de gravação. Enquanto o talento de voz fica familiarizado com o texto, eles podem esclarecer a pronúncia de palavras não familiares.
 
 > [!NOTE]
 > A maioria dos estúdios de gravação oferece exibição eletrônica de scripts na cabine de gravação. Nesse caso, digite diretamente no documento do script as observações a serem repassadas rapidamente. Ainda será necessário ter uma cópia em papel para fazer anotações durante a sessão. A maioria dos engenheiros também vai querer uma cópia impressa. Além disso, é necessário ter uma terceira cópia impressa como backup para o ator de voz, caso o computador esteja inoperante.
 
-O ator de voz pode perguntar qual palavra você quer enfatizar em um enunciado (a "palavra operativa"). Diga à pessoa que você deseja uma leitura natural sem ênfase específica. A ênfase poderá ser adicionada quando a fala for sintetizada e não deve fazer parte da gravação original.
+O ator de voz pode perguntar qual palavra você quer enfatizar em um enunciado (a "palavra operativa"). Informe que você deseja que uma leitura natural com nenhuma ênfase especial. A ênfase poderá ser adicionada quando a fala for sintetizada e não deve fazer parte da gravação original.
 
 Direcione o ator de voz para pronunciar palavras distintamente. Cada palavra do script deve ser pronunciada como escrita. Os sons não devem ser omitidos nem desarticulados, como é comum em fala casual, *a menos que tenham sido escritos dessa maneira no script*.
 
@@ -196,7 +196,7 @@ Ouça atentamente, usando fones de ouvido, a performance do ator de voz. Você e
 
 Observe o número da tomada ou código de tempo no script para cada enunciado. Peça para o engenheiro marcar cada um dos enunciados nos metadados da gravação ou na lista de deixas.
 
-Faça pausas regulares e ofereça uma bebida para ajudar o ator de voz a manter uma boa voz.
+Levar quebras regulares e fornecer uma bebida para ajudar a manter sua voz em boa forma seu talento de voz.
 
 ### <a name="after-the-session"></a>Após a sessão
 

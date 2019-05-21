@@ -10,36 +10,38 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: lewlu
-ms.openlocfilehash: 02e9b64c89eda1471d644e0116bbf8c1c061ccc3
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 702aed12860c090e83b997e6b56d56e06b416568
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64682526"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65913795"
 ---
 # <a name="migrate-your-face-data-to-a-different-face-subscription"></a>Migrar seus dados de detecção facial para uma assinatura diferente de Detecção Facial
 
-Este guia mostra como mover dados de detecção facial (como um **PersonGroup** armazenado de faces) para uma assinatura diferente de API de Detecção Facial usando o recurso Instantâneo. Isso permite que você evite ter que criar e treinar repetidamente um **PersonGroup** ou **FaceList** ao mover ou expandir suas operações. Por exemplo, você pode ter criado um **PersonGroup** usando uma assinatura de avaliação gratuita e agora deseja migrá-lo para sua assinatura paga ou talvez precise sincronizar dados de detecção facial entre regiões para uma operação de grande porte.
+Este guia mostra como mover dados de face, como um objeto PersonGroup salvo com faces, para uma assinatura diferente da API de detecção facial de serviços Cognitivos do Azure. Para mover os dados, você deve usar o recurso de instantâneo. Dessa forma você evitar repetidamente, criar e treinar um objeto PersonGroup ou FaceList quando você move ou expandir suas operações. Por exemplo, talvez você criou um objeto PersonGroup usando uma assinatura de avaliação gratuita e agora quiser migrá-la à sua assinatura paga. Ou talvez você precise sincronizar dados de face entre regiões para uma operação de grandes empresas.
 
-Essa mesma estratégia de migração também se aplica aos objetos **LargePersonGroup** e **LargeFaceList**. Se você não estiver familiarizado com os conceitos neste guia, consulte suas definições na [enfrentam os conceitos de reconhecimento](../concepts/face-recognition.md) guia. Este guia usa a biblioteca cliente .NET da API de Detecção Facial com C#.
+Essa mesma estratégia de migração também se aplica aos objetos LargePersonGroup e LargeFaceList. Se você não estiver familiarizado com os conceitos neste guia, consulte suas definições na [enfrentam os conceitos de reconhecimento](../concepts/face-recognition.md) guia. Este guia usa a biblioteca cliente .NET da API de Detecção Facial com C#.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Duas chaves de assinatura de API de Detecção Facial (uma com os dados existentes e uma para a qual migrar). Siga as instruções em [Criar uma conta dos Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) para assinar o serviço API de Detecção Facial e obter sua chave.
-- A cadeia de caracteres de ID de assinatura da API de Detecção Facial correspondente à assinatura de destino (localizada na folha **Visão geral** no portal do Azure). 
+Você precisa dos seguintes itens:
+
+- Dois API de detecção facial chaves de assinatura, um com os dados existentes e outro para migrar para o. Para assinar o serviço de API de detecção facial e obtenha sua chave, siga as instruções em [criar uma conta de serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
+- A cadeia de ID de assinatura de API de detecção facial que corresponde à assinatura de destino. Para encontrá-lo, selecione **visão geral** no portal do Azure. 
 - Qualquer edição do [Visual Studio 2015 ou 2017](https://www.visualstudio.com/downloads/).
 
 ## <a name="create-the-visual-studio-project"></a>Criar o projeto do Visual Studio
 
-Este guia usará um aplicativo de console simples para executar a migração de dados de detecção facial. Para uma implementação completa, confira [Exemplo de Instantâneo de API de Detecção Facial](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample) no GitHub.
+Este guia usa um aplicativo de console simples para executar a migração de dados de face. Para uma implementação completa, consulte o [exemplo de instantâneo de API de detecção facial](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample) no GitHub.
 
-1. No Visual Studio, crie um novo projeto de **Aplicativo de Console (.NET Framework)** e dê o nome de **FaceApiSnapshotSample**.
-1. Obtenha os pacotes necessários do NuGet. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto e selecione **Gerenciar Pacotes NuGet**. Clique na guia **Procurar** e selecione **Incluir pré-lançamento**; depois, localize e instale o pacote a seguir:
+1. No Visual Studio, crie um novo projeto de .NET Framework do aplicativo de Console. Denomine **FaceApiSnapshotSample**.
+1. Obtenha os pacotes necessários do NuGet. Clique em seu projeto no Gerenciador de soluções e selecione **gerenciar pacotes NuGet**. Selecione o **navegue** guia e, em seguida, selecione **incluir pré-lançamento**. Localizar e instalar o pacote a seguir:
     - [Microsoft.Azure.CognitiveServices.Vision.Face 2.3.0-preview](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.2.0-preview)
 
 ## <a name="create-face-clients"></a>Criar clientes de detecção facial
 
-No método **Main** em *Program.cs*, crie duas instâncias **[FaceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet)** para suas assinaturas de origem e de destino. Neste exemplo, usaremos uma assinatura de Detecção Facial na região do Pacífico Asiático como a origem e uma assinatura do Oeste dos EUA como o destino. Isso demonstrará como migrar dados de uma região do Azure para outra. Se suas assinaturas estiverem em regiões diferentes, você precisará alterar as cadeias de caracteres `Endpoint`.
+No **principal** método na *Program.cs*, crie duas [FaceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) instâncias de suas assinaturas de origem e destino. Este exemplo usa uma assinatura de Face na região da Ásia Oriental como a origem e uma assinatura do Oeste dos EUA como o destino. Este exemplo demonstra como migrar dados de uma região do Azure para outra. Se suas assinaturas estão em regiões diferentes, altere o `Endpoint` cadeias de caracteres.
 
 ```csharp
 var FaceClientEastAsia = new FaceClient(new ApiKeyServiceClientCredentials("<East Asia Subscription Key>"))
@@ -53,21 +55,21 @@ var FaceClientWestUS = new FaceClient(new ApiKeyServiceClientCredentials("<West 
     };
 ```
 
-Você precisará preencher os valores da chave de assinatura e as URLs do ponto de extremidade para suas assinaturas de origem e de destino.
+Preencha os valores de chave de assinatura e URLs de ponto de extremidade para suas assinaturas de origem e destino.
 
 
 ## <a name="prepare-a-persongroup-for-migration"></a>Preparar um PersonGroup para migração
 
-Você precisa da ID do **PersonGroup** na sua assinatura de origem para migrá-la para a assinatura de destino. Use o método **[PersonGroupOperationsExtensions.ListAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperationsextensions.listasync?view=azure-dotnet)** para recuperar uma lista de seus objetos **PersonGroup**; em seguida, obtenha a propriedade **[PersonGroup.PersonGroupId](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.persongroup.persongroupid?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Vision_Face_Models_PersonGroup_PersonGroupId)**. Esse processo será diferente dependendo de quais objetos **PersonGroup** você possui. Neste guia, a ID **PersonGroup** de origem é armazenada em `personGroupId`.
+Você precisa da ID do PersonGroup em sua assinatura de código-fonte para migrá-lo para a assinatura de destino. Use o [PersonGroupOperationsExtensions.ListAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperationsextensions.listasync?view=azure-dotnet) método para recuperar uma lista dos seus objetos PersonGroup. Em seguida, obtenha o [PersonGroup.PersonGroupId](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.persongroup.persongroupid?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Vision_Face_Models_PersonGroup_PersonGroupId) propriedade. Esse processo parece diferente com base em quais PersonGroup objetos você possui. Neste guia, a origem PersonGroup ID é armazenada em `personGroupId`.
 
 > [!NOTE]
-> O [código de exemplo](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample) cria e treina um novo **PersonGroup** para migrar, mas na maioria dos casos você já deve ter um **PersonGroup** para usar.
+> O [código de exemplo](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample) cria e treina um novo PersonGroup para migrar. Na maioria dos casos, você já deve ter um PersonGroup usar.
 
-## <a name="take-snapshot-of-persongroup"></a>Fazer um instantâneo do PersonGroup
+## <a name="take-a-snapshot-of-a-persongroup"></a>Tirar um instantâneo de um PersonGroup
 
-Um instantâneo é um armazenamento remoto temporário para determinados tipos de dados de Detecção Facial. Ele funciona como um tipo de área de transferência para copiar dados de uma assinatura para outra. Primeiro, o usuário "faz" um instantâneo dos dados da assinatura de origem e, em seguida, "aplica-o" em um novo objeto de dados na assinatura de destino.
+Um instantâneo é um armazenamento remoto temporário para determinados tipos de dados de Face. Ele funciona como um tipo de área de transferência para copiar dados de uma assinatura para outra. Primeiro, você tirar um instantâneo dos dados na assinatura do código-fonte. Em seguida, aplicá-la a um novo objeto de dados na assinatura de destino.
 
-Use a instância **FaceClient** da assinatura de origem para obter um instantâneo do **PersonGroup**, usando o **[TakeAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.snapshotoperationsextensions.takeasync?view=azure-dotnet)** com a ID **PersonGroup** e a ID da assinatura de destino. Se você tiver várias assinaturas de destino, poderá adicioná-las como entradas matriz no terceiro parâmetro.
+Use FaceClient instância assinaturas da fonte para tirar um instantâneo do PersonGroup. Use [TakeAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.snapshotoperationsextensions.takeasync?view=azure-dotnet) com a ID de PersonGroup e ID. da assinatura de destino Se você tiver várias assinaturas de destino, você deve adicioná-los como entradas de matriz no terceiro parâmetro.
 
 ```csharp
 var takeSnapshotResult = await FaceClientEastAsia.Snapshot.TakeAsync(
@@ -77,18 +79,18 @@ var takeSnapshotResult = await FaceClientEastAsia.Snapshot.TakeAsync(
 ```
 
 > [!NOTE]
-> O processo de obter e aplicar instantâneos não interromperá chamadas regulares para a origem ou o destino de **PersonGroup**s (ou **FaceList**s). No entanto, não recomendamos fazer chamadas simultâneas que alterar o objeto de origem ([chamadas de gerenciamento FaceList](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.facelistoperations?view=azure-dotnet) ou o [PersonGroup Train](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperations?view=azure-dotnet) chamar, por exemplo), porque a operação de instantâneo pode executar antes ou depois que essas operações ou poderá encontrar erros.
+> O processo de aplicação de instantâneos não interromper todas as chamadas regulares para a origem ou destino PersonGroups ou FaceLists. Não faça chamadas simultâneas que alteram o objeto de origem, como [chamadas de gerenciamento FaceList](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.facelistoperations?view=azure-dotnet) ou o [PersonGroup Train](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperations?view=azure-dotnet) chamar, por exemplo. A operação de instantâneo pode ser executado antes ou depois que essas operações, ou poderá encontrar erros.
 
 ## <a name="retrieve-the-snapshot-id"></a>Recuperar a ID do instantâneo
 
-O instantâneo usando o método é assíncrono, portanto, você precisará aguardar sua conclusão (instantâneo operações não podem ser canceladas). Nesse código, o método `WaitForOperation` monitora a chamada assíncrona, verificando o status a cada 100 ms. Quando a operação estiver concluída, você poderá recuperar uma ID de operação. Você pode obtê-la analisando o campo `OperationLocation`. 
+O método usado para tirar instantâneos é assíncrono, portanto, você deve aguardar sua conclusão. Operações de instantâneo não podem ser canceladas. Nesse código, o `WaitForOperation` método monitora a chamada assíncrona. Ele verifica o status de cada 100 ms. Após a conclusão da operação, recuperar uma ID de operação analisando o `OperationLocation` campo. 
 
 ```csharp
 var takeOperationId = Guid.Parse(takeSnapshotResult.OperationLocation.Split('/')[2]);
 var operationStatus = await WaitForOperation(FaceClientEastAsia, takeOperationId);
 ```
 
-Um valor típico de `OperationLocation` será semelhante a este:
+Um típico `OperationLocation` valor parecido com este:
 
 ```csharp
 "/operations/a63a3bdd-a1db-4d05-87b8-dbad6850062a"
@@ -123,21 +125,21 @@ private static async Task<OperationStatus> WaitForOperation(IFaceClient client, 
 }
 ```
 
-Quando o status da operação é marcado como `Succeeded`, você pode obter a ID do instantâneo analisando o campo `ResourceLocation` da instância **OperationStatus** retornada.
+Depois do status da operação mostra `Succeeded`, obtenha a ID do instantâneo analisando o `ResourceLocation` campo de instância OperationStatus retornada.
 
 ```csharp
 var snapshotId = Guid.Parse(operationStatus.ResourceLocation.Split('/')[2]);
 ```
 
-Um valor típico de `resourceLocation` será semelhante a este:
+Um típico `resourceLocation` valor parecido com este:
 
 ```csharp
 "/snapshots/e58b3f08-1e8b-4165-81df-aa9858f233dc"
 ```
 
-## <a name="apply-snapshot-to-target-subscription"></a>Aplicar instantâneo em uma assinatura de destino
+## <a name="apply-a-snapshot-to-a-target-subscription"></a>Aplicar um instantâneo para uma assinatura de destino
 
-Em seguida, crie o novo **PersonGroup** na assinatura de destino, usando uma ID gerada aleatoriamente. Em seguida, use a instância **FaceClient** da assinatura de destino para aplicar o instantâneo a esse PersonGroup, transmitindo a ID do instantâneo e a nova ID do **PersonGroup**. 
+Em seguida, crie o novo PersonGroup na assinatura de destino usando uma ID de gerado aleatoriamente. Em seguida, use a instância de FaceClient da assinatura de destino para aplicar o instantâneo para essa PersonGroup. Passe no instantâneo de ID e a nova ID PersonGroup.
 
 ```csharp
 var newPersonGroupId = Guid.NewGuid().ToString();
@@ -146,15 +148,15 @@ var applySnapshotResult = await FaceClientWestUS.Snapshot.ApplyAsync(snapshotId,
 
 
 > [!NOTE]
-> Um objeto de instantâneo só é válido por 48 horas. Você só deve fazer um instantâneo se pretende usá-lo para a migração de dados logo em seguida.
+> Um objeto de instantâneo é válido apenas por 48 horas. Somente tirar um instantâneo, se você pretende usá-lo para a migração de dados logo depois.
 
-Uma solicitação de aplicação de instantâneo retornará outra ID de operação. Você pode obter essa ID analisando o campo `OperationLocation` da instância retornada **applySnapshotResult**. 
+Solicitação de aplicar um instantâneo retorna outra ID da operação. Para obter essa ID, analisar o `OperationLocation` campo da instância applySnapshotResult retornado. 
 
 ```csharp
 var applyOperationId = Guid.Parse(applySnapshotResult.OperationLocation.Split('/')[2]);
 ```
 
-O processo do aplicativo de captura de instantâneo também é assíncrono, portanto, use novamente `WaitForOperation` para aguardar a conclusão.
+O processo de aplicação do instantâneo também é assíncrono, use novamente `WaitForOperation` aguardar sua conclusão.
 
 ```csharp
 operationStatus = await WaitForOperation(FaceClientWestUS, applyOperationId);
@@ -162,9 +164,9 @@ operationStatus = await WaitForOperation(FaceClientWestUS, applyOperationId);
 
 ## <a name="test-the-data-migration"></a>Testar a migração de dados
 
-Depois de aplicar o instantâneo, o novo **PersonGroup** no destino de assinatura deve ser preenchido com os dados de detecção facial originais. Por padrão, os resultados de treinamento também são copiados, portanto, o novo **PersonGroup** estará pronto para chamadas de identificação com detecção facial sem a necessidade de novos treinamentos.
+Depois de aplicar o instantâneo, o novo PersonGroup na assinatura de destino preenche com os dados de face original. Por padrão, os resultados de treinamento também são copiados. O novo PersonGroup está pronto para chamadas de identificação de face sem a necessidade de novos treinamentos.
 
-Para testar a migração de dados, você pode executar as seguintes operações e comparar os resultados que eles imprimem ao console.
+Para testar a migração de dados, execute as seguintes operações e comparar os resultados ao imprimir no console:
 
 ```csharp
 await DisplayPersonGroup(FaceClientEastAsia, personGroupId);
@@ -212,13 +214,13 @@ private static async Task IdentifyInPersonGroup(IFaceClient client, string perso
 }
 ```
 
-Agora você pode começar a usar o novo **PersonGroup** na assinatura de destino. 
+Agora você pode usar o novo PersonGroup na assinatura de destino. 
 
-Se você desejar atualizar o **PersonGroup** de destino novamente no futuro, será preciso criar um novo **PersonGroup** (seguindo as etapas deste guia) para receber o instantâneo. Um único objeto **PersonGroup** só pode ter um instantâneo aplicado a ele uma vez.
+Para atualizar o destino PersonGroup novamente no futuro, crie um novo PersonGroup para receber o instantâneo. Para fazer isso, siga as etapas neste guia. Um único objeto PersonGroup pode ter um instantâneo aplicado a ele apenas uma vez.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Quando terminar de migrar os dados de detecção facial, recomendamos que você exclua manualmente o objeto de instantâneo.
+Após concluir a migração enfrentam os dados, exclua manualmente o objeto de instantâneo.
 
 ```csharp
 await FaceClientEastAsia.Snapshot.DeleteAsync(snapshotId);
@@ -226,10 +228,10 @@ await FaceClientEastAsia.Snapshot.DeleteAsync(snapshotId);
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Em seguida, consulte a documentação de referência de API relevante, explorar um aplicativo de exemplo que usa o recurso de instantâneo ou seguir um guia de instruções para começar a usar as operações de API que mencionadas aqui.
+Em seguida, consulte a documentação de referência de API relevante, explorar um aplicativo de exemplo que usa o recurso de instantâneo ou seguir um guia de instruções para começar a usar as operações de API que mencionei aqui:
 
 - [Documentação de referência do instantâneo (SDK do .NET)](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.snapshotoperations?view=azure-dotnet)
-- [Exemplo de Instantâneo de API de Detecção Facial](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample)
-- [Como adicionar faces](how-to-add-faces.md)
-- [Como detectar faces em imagem](HowtoDetectFacesinImage.md)
-- [Como identificar faces em imagem](HowtoIdentifyFacesinImage.md)
+- [Exemplo de instantâneo de API de detecção facial](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample)
+- [Adicionar faces](how-to-add-faces.md)
+- [Detecte rostos em uma imagem](HowtoDetectFacesinImage.md)
+- [Identifique rostos em uma imagem](HowtoIdentifyFacesinImage.md)
