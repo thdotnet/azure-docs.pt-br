@@ -116,8 +116,9 @@
             - name: Definir a política de retenção e executar scripts de limpeza
               href: image-factory-set-retention-policy-cleanup.md
         - name: DevTest Labs na empresa
-          href: devtest-lab-guidance-prescriptive-adoption.md
           items:
+            - name: DevTest Labs em escala empresarial
+              href: devtest-lab-guidance-prescriptive-adoption.md
             - name: Arquitetura de referência
               href: devtest-lab-reference-architecture.md
             - name: Escalar verticalmente sua implantação dos Laboratórios de Desenvolvimento/Teste

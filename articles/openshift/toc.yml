@@ -1,21 +1,47 @@
-- name: Documentação do OpenShift
-  href: index.md
-- name: Guia de início rápido
-  expanded: true
+- name: Red Hat OpenShift no Azure
+  href: index.yml
+- name: Visão geral
   items:
-    - name: 'OpenShift:  Modelo da comunidade'
-      href: 'https://azure.microsoft.com/resources/templates/openshift-origin-rhel/'
+    - name: Sobre o Red Hat OpenShift no Azure
+      href: intro-openshift.md
 - name: Tutoriais
   items:
-    - name: Implantar máquinas virtuais do Azure
-      href: /azure/virtual-machines/linux/openshift-get-started
+    - name: Criar e gerenciar um cluster do Red Hat OpenShift no Azure
+      items:
+        - name: 1 – Criar um cluster do Red Hat OpenShift no Azure
+          href: tutorial-create-cluster.md
+        - name: 2 – Dimensionar um cluster do Red Hat OpenShift no Azure
+          href: tutorial-scale-cluster.md
+        - name: 3 – Excluir um cluster do Red Hat OpenShift no Azure
+          href: tutorial-delete-cluster.md
+- name: Guias de instruções
+  expanded: true
+  items:
+    - name: Configurar seu ambiente de desenvolvimento do Red Hat OpenShift no Azure
+      href: howto-setup-environment.md
+      expanded: true
+      items:
+        - name: Criar um locatário do Azure AD
+          href: howto-create-tenant.md
+        - name: Criar um usuário e objeto de aplicativo do Azure AD
+          href: howto-aad-app-configuration.md
+- name: Referência
+  items:
+    - name: CLI do Red Hat OpenShift no Azure
+      href: /cli/azure/openshift
+    - name: APIs REST do Red Hat OpenShift no Azure
+      href: /rest/api/openshift
 - name: Recursos
   items:
+    - name: Perguntas comuns
+      href: openshift-faq.md
+    - name: solução de problemas
+      href: troubleshoot.md
+    - name: Recursos compatíveis
+      href: supported-resources.md
+    - name: Disponibilidade regional
+      href: 'https://azure.microsoft.com/regions/services/'
+    - name: Documentação do Red Hat OpenShift
+      href: 'https://docs.openshift.com/aro/welcome/index.html'
     - name: Roteiro do Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Modelo de contêiner do OpenShift
-      href: 'https://github.com/Microsoft/openshift-container-platform'
-    - name: Origem do OpenShift
-      href: 'https://docs.openshift.org/latest/getting_started/index.html'
-    - name: Site do OpenShift
-      href: 'https://docs.openshift.org/latest/welcome/index.html'
