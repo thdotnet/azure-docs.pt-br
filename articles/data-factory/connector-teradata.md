@@ -55,10 +55,10 @@ As propriedades a seguir têm suporte para o serviço vinculado do Teradata:
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **Teradata** | Sim |
-| Servidor | Nome do servidor Teradata. | Sim |
+| server | Nome do servidor Teradata. | Sim |
 | authenticationType | Tipo de autenticação usado para se conectar ao banco de dados Teradata.<br/>Valores permitidos são: **Básico** e **Windows**. | Sim |
-| Nome de Usuário | Especifique o nome de usuário para se conectar ao banco de dados Teradata. | Sim |
-| Senha | Especifique a senha da conta de usuário que você especificou para o nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
+| username | Especifique o nome de usuário para se conectar ao banco de dados Teradata. | Sim |
+| password | Especifique a senha da conta de usuário que você especificou para o nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
 | connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. É necessário um Integration Runtime auto-hospedado, conforme mencionado nos [Pré-requisitos](#prerequisites). |Sim |
 
 **Exemplo:**
@@ -167,41 +167,41 @@ Ao copiar dados do Teradata, os seguintes mapeamentos são usados de tipos de da
 | Blob |Byte[] |
 | Byte |Byte[] |
 | ByteInt |Int16 |
-| Char |Cadeia de caracteres |
-| Clob |Cadeia de caracteres |
-| Data |DateTime |
+| Char |String |
+| Clob |String |
+| Date |DateTime |
 | Decimal |Decimal |
 | Double |Double |
-| Graphic |Cadeia de caracteres |
-| Número inteiro |Int32 |
-| Intervalo - dia |TimeSpan |
-| Intervalo - dia para hora |TimeSpan |
-| Intervalo - dia para minuto |TimeSpan |
+| Graphic |String |
+| Integer |Int32 |
+| Interval Day |TimeSpan |
+| Interval Day To Hour |TimeSpan |
+| Interval Day To Minute |TimeSpan |
 | Interval Day To Second |TimeSpan |
-| Intervalo - hora |TimeSpan |
-| Intervalo - hora para minuto |TimeSpan |
+| Interval Hour |TimeSpan |
+| Interval Hour To Minute |TimeSpan |
 | Interval Hour To Second |TimeSpan |
 | Interval Minute |TimeSpan |
 | Interval Minute To Second |TimeSpan |
-| Interval Month |Cadeia de caracteres |
+| Interval Month |String |
 | Interval Second |TimeSpan |
-| Interval Year |Cadeia de caracteres |
-| Interval Year To Month |Cadeia de caracteres |
-| Número |Double |
-| Period(Date) |Cadeia de caracteres |
-| Period(Time) |Cadeia de caracteres |
-| Period(Time With Time Zone) |Cadeia de caracteres |
-| Period(Timestamp) |Cadeia de caracteres |
-| Period(Timestamp With Time Zone) |Cadeia de caracteres |
+| Interval Year |String |
+| Interval Year To Month |String |
+| Number |Double |
+| Period(Date) |String |
+| Period(Time) |String |
+| Period(Time With Time Zone) |String |
+| Period(Timestamp) |String |
+| Period(Timestamp With Time Zone) |String |
 | SmallInt |Int16 |
-| Hora |TimeSpan |
-| Hora com fuso horário |Cadeia de caracteres |
+| Time |TimeSpan |
+| Time With Time Zone |String |
 | Timestamp |DateTime |
 | Timestamp With Time Zone |DateTimeOffset |
 | VarByte |Byte[] |
-| VarChar |Cadeia de caracteres |
-| VarGraphic |Cadeia de caracteres |
-| Xml |Cadeia de caracteres |
+| VarChar |String |
+| VarGraphic |String |
+| Xml |String |
 
 
 ## <a name="next-steps"></a>Próximas etapas
