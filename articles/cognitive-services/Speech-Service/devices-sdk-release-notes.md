@@ -10,15 +10,14 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/07/2018
 ms.author: gracez
-ms.openlocfilehash: 9147f02f6ef2e2f3f776e67aa1f103e95ef132aa
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: f915a03e2596e6439cbe184bfc8405910f56e2bd
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153028"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002298"
 ---
 # <a name="release-notes-of-cognitive-services-speech-devices-sdk"></a>Notas de versão do SDK dos Dispositivos de Fala dos Serviços Cognitivos
-
 As seções a seguir listam as alterações nas versões mais recentes.
 
 ## <a name="cognitive-services-speech-devices-sdk-150-2019-may-release"></a>Serviços cognitivos de fala dispositivos SDK 1.5.0: Versão de maio de 2019

@@ -54,7 +54,7 @@
 - name: Conceitos
   items:
     - name: Estrutura de arquivos de modelo
-      displayName: 'parameters,variables,resources,outputs'
+      displayName: 'parameters,variables,resources,outputs,condition'
       href: resource-group-authoring-templates.md
     - name: Práticas recomendadas de modelo
       href: template-best-practices.md
