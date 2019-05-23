@@ -215,13 +215,13 @@ Nesta etapa, você cria conjuntos de dados para representar dados de entrada e d
 
    | Propriedade | DESCRIÇÃO |
    |:--- |:--- |
-   | Tipo |A propriedade type é definida como AzureBlob porque os dados residem no armazenamento de blobs do Azure. |
+   | type |A propriedade type é definida como AzureBlob porque os dados residem no armazenamento de blobs do Azure. |
    | linkedServiceName |refere-se ao StorageLinkedService que você criou anteriormente. |
    | fileName |Essa propriedade é opcional. Se você omitir essa propriedade, todos os arquivos de folderPath serão selecionados. Nesse caso, somente o input.log será processado. |
-   | Tipo |Os arquivos de log estão em formato de texto, então utilizaremos TextFormat. |
+   | type |Os arquivos de log estão em formato de texto, então utilizaremos TextFormat. |
    | columnDelimiter |as colunas nos arquivos de log são delimitadas pelo caractere de vírgula (,). |
-   | frequência/intervalo |a frequência é definida como Mês e o intervalo como 1, o que significa que as fatias de entrada estão disponíveis mensalmente. |
-   | externo |essa propriedade será definida como true se os dados de entrada não forem gerados pelo serviço Data Factory. |
+   | frequency/interval |a frequência é definida como Mês e o intervalo como 1, o que significa que as fatias de entrada estão disponíveis mensalmente. |
+   | external |essa propriedade será definida como true se os dados de entrada não forem gerados pelo serviço Data Factory. |
 2. Execute o comando a seguir no Azure PowerShell para criar o conjunto de dados do Data Factory:
 
     ```PowerShell
