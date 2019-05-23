@@ -108,13 +108,13 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 | storageAccountId |Cadeia de caracteres | A ID de recurso da conta de armazenamento a qual você gostaria de enviar os logs de diagnóstico |
 | serviceBusRuleId |Cadeia de caracteres | A ID da regra de barramento de serviço para o namespace do barramento de serviço no qual você gostaria que os hubs de eventos fossem criados para streaming dos Logs de Diagnóstico. A ID da regra está no formato: "{ID de recurso do barramento de serviço}/authorizationrules/ {nome da chave}".|
 | workspaceId | Tipo complexo | Matriz de intervalo de agregação de métrica e suas políticas de retenção. No momento, essa propriedade está vazia. |
-|Métricas| Valores de parâmetro da execução do pipeline a serem passados para o pipeline invocado| Um parâmetro de mapeamento do objeto JSON nomeado para valores de argumento |
+|metrics| Valores de parâmetro da execução do pipeline a serem passados para o pipeline invocado| Um parâmetro de mapeamento do objeto JSON nomeado para valores de argumento |
 | logs| Tipo complexo| Nome de uma categoria de Log de Diagnóstico para um tipo de recurso. Para obter a lista de categorias de Log de Diagnóstico para um recurso, primeiramente execute uma operação de configurações de diagnóstico GET. |
-| categoria| Cadeia de caracteres| Matriz de categorias de log e suas políticas de retenção |
+| category| Cadeia de caracteres| Matriz de categorias de log e suas políticas de retenção |
 | timeGrain | Cadeia de caracteres | A granularidade das métricas que são capturadas no formato de duração ISO 8601. Deve ser PT1M (um minuto)|
-| Habilitado| BOOLEAN | Especifica se a coleção da métrica ou da categoria de log está habilitada para este recurso|
+| enabled| BOOLEAN | Especifica se a coleção da métrica ou da categoria de log está habilitada para este recurso|
 | retentionPolicy| Tipo complexo| Descreve a política de retenção para uma categoria de métrica ou de log. Usado apenas para a opção de conta de armazenamento.|
-| dias| Int| O número de dias para retenção das métricas ou logs. Um valor de 0 retém os logs indefinidamente. Usado apenas para a opção de conta de armazenamento. |
+| days| Int| O número de dias para retenção das métricas ou logs. Um valor de 0 retém os logs indefinidamente. Usado apenas para a opção de conta de armazenamento. |
 
 **Resposta**
 
