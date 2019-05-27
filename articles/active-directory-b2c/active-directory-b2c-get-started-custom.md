@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 04/03/2019
+ms.date: 05/16/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 6a66d45028b9fbf9c421b10ffb7863fcb9be5bec
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: f4ecc01f42d491f5d9d967b9983e773c1df22298
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65779854"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65986825"
 ---
 # <a name="get-started-with-custom-policies-in-azure-active-directory-b2c"></a>Introdução às políticas personalizadas no Azure Active Directory B2C
 
@@ -31,7 +31,7 @@ As [políticas personalizadas](active-directory-b2c-overview-custom.md) são arq
 ## <a name="add-signing-and-encryption-keys"></a>Adicionar chaves de criptografia e de assinatura
 
 1. Entre no [portal do Azure](https://portal.azure.com/) como administrador global do locatário Azure AD B2C.
-2. Verifique se que você estiver usando o diretório que contém o seu locatário do Azure AD B2C. Clique o **filtro de diretório e assinatura** no menu superior e escolher o diretório que contém o seu locatário. 
+2. Verifique se que você estiver usando o diretório que contém o seu locatário do Azure AD B2C. Clique o **filtro de diretório e assinatura** no menu superior e escolha o diretório que contém o seu locatário. 
 3. Escolha **Todos os serviços** no canto superior esquerdo do portal do Azure, procure e selecione **Azure AD B2C**.
 4. Na página de Visão Geral, selecione **Estrutura de Experiência de Identidade**.
 
@@ -70,17 +70,17 @@ O Azure AD B2C exige o registro de dois aplicativos que são usados para a inscr
 
 ### <a name="register-the-identityexperienceframework-application"></a>Registrar o aplicativo IdentityExperienceFramework
 
-1. Escolha **Todos os serviços** no canto superior esquerdo do portal do Azure e pesquise e selecione **Registros de aplicativo**.
-2. Selecione **Novo registro de aplicativo**.
-3. Para **Nome**, insira `IdentityExperienceFramework`.
-4. Para **Tipo de aplicativo**, escolha **Aplicativo Web/API**.
-5. Para **URL de logon**, insira `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com`, em que `your-tenant-name` é o nome de domínio de locatário do Azure AD B2C.
-6. Clique em **Criar**. 
-7. Após a criação, copie a ID do aplicativo e salve-a para uso posterior.
+1. Escolher **todos os serviços** no canto superior esquerdo do portal do Azure, pesquise e selecione **Azure Active Directory**.
+2. No menu, selecione **registros do aplicativo (herdado)**.
+3. Selecione **Novo registro de aplicativo**.
+4. Para **Nome**, insira `IdentityExperienceFramework`.
+5. Para **Tipo de aplicativo**, escolha **Aplicativo Web/API**.
+6. Para **URL de logon**, insira `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com`, em que `your-tenant-name` é o nome de domínio de locatário do Azure AD B2C. Agora todas as URLs devem estar usando [b2clogin.com](b2clogin.md).
+7. Clique em **Criar**. Após a criação, copie a ID do aplicativo e salve-a para uso posterior.
 
 ### <a name="register-the-proxyidentityexperienceframework-application"></a>Registrar o aplicativo ProxyIdentityExperienceFramework
 
-1. Selecione **Registros de aplicativo** e selecione **Novo registro de aplicativo**.
+1. Na **registros do aplicativo (herdado)**, selecione **novo registro de aplicativo**.
 2. Para **Nome**, insira `ProxyIdentityExperienceFramework`.
 3. Para **Tipo de aplicativo**, escolha **Nativo**.
 4. Para **URI de redirecionamento**, insira `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com`, em que `yourtenant` é o seu locatário do Azure AD B2C.

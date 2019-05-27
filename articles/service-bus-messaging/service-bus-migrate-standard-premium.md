@@ -11,19 +11,19 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/18/2019
+ms.date: 05/18/2019
 ms.author: aschhab
-ms.openlocfilehash: 65f89e234317c5a17e4443e767528fb9be9a8b72
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 65c207b4d03e7d156c8c871a3642601fd0489ead
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64687077"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991411"
 ---
 # <a name="migrate-existing-azure-service-bus-standard-namespaces-to-the-premium-tier"></a>Migrar namespaces padrão de barramento de serviço do Azure existentes para a camada premium
 Anteriormente, o barramento de serviço do Azure oferecidos namespaces apenas na camada standard. Namespaces são instalações de multilocatário que são otimizadas para ambientes de desenvolvedor e baixa taxa de transferência. A camada premium oferece recursos dedicados por namespace para latência previsível e maior taxa de transferência a um preço fixo. A camada premium é otimizada para ambientes de produção que exigem recursos empresarias adicionais e alta taxa de transferência.
 
-Este artigo descreve como migrar namespaces existentes da camada standard para a camada premium.
+Este artigo descreve como migrar namespaces existentes da camada standard para a camada premium.  
 
 >[!WARNING]
 > Migração destina-se de namespaces de barramento de serviço padrão para serem atualizados para a camada premium. A ferramenta de migração não oferece suporte a downgrade.
@@ -33,6 +33,7 @@ Alguns dos pontos a serem observados:
 - O **premium** namespace deve ter **nenhuma entidade** nele para a migração seja bem-sucedida. 
 - Todos os **entidades** no namespace padrão são **copiado** ao namespace premium durante o processo de migração. 
 - Suporta migração **1.000 entidades por unidade de mensagens** na camada premium. Para identificar quantas unidades de sistema de mensagens, você precisa, comece com o número de entidades que você tem em seu namespace padrão atual. 
+- Você não pode migrar diretamente de **camada básica** à **camada premier**, mas você pode fazer isso indiretamente através da migração do básico ao padrão primeiro e, em seguida, o Standard para premium na próxima etapa.
 
 ## <a name="migration-steps"></a>Etapas da migração
 Algumas condições são associadas com o processo de migração. Familiarize-se com as seguintes etapas para reduzir a possibilidade de erros. Estas etapas descrevem o processo de migração e os detalhes passo a passo estão listados nas seções a seguir.

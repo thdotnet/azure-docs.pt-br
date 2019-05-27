@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 04/25/2019
+ms.date: 05/16/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: ce23b891decd20db239e653702533ac7af21b980
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 5d964ebd40ac1bd8817bc93d5e4f78096f221be2
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65073347"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65977762"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Funções internas para recursos do Azure
 
@@ -33,43 +33,45 @@ Este artigo lista as funções internas para recursos do Azure, que estão sempr
 A tabela a seguir fornece uma breve descrição de cada função interna. Clique no nome de função para ver a lista de `Actions`, `NotActions`, `DataActions` e `NotDataActions` para cada função. Para obter informações sobre o que essas ações significam e como elas se aplicam aos planos de gerenciamento e de dados, consulte [Entender as definições de função para recursos do Azure](role-definitions.md).
 
 
-| Função interna | DESCRIÇÃO |
+| Função interna | Descrição |
 | --- | --- |
 | [Proprietário](#owner) | Permite que você gerencie tudo, incluindo acesso aos recursos. |
 | [Colaborador](#contributor) | Permite que você gerencie tudo, exceto o acesso aos recursos. |
-| [Leitor](#reader) | Permite que você veja tudo, mas não faça alterações. |
+| [Leitor](#reader) | Permite que você exiba tudo, mas não pode fazer alterações. |
 | [AcrDelete](#acrdelete) | Excluir ACR |
 | [AcrImageSigner](#acrimagesigner) | signatário de imagem ACR |
 | [AcrPull](#acrpull) | acr pull |
 | [AcrPush](#acrpush) | acr push |
 | [AcrQuarantineReader](#acrquarantinereader) | leitor de dados de quarentena acr |
-| [AcrQuarantineWriter](#acrquarantinewriter) | gravador de dados de quarentena acr |
+| [AcrQuarantineWriter](#acrquarantinewriter) | gravador de dados de quarentena ACR |
 | [Colaborador de serviço de gerenciamento de API](#api-management-service-contributor) | Pode gerenciar o serviço e as APIs |
 | [Função do operador de serviço de gerenciamento da API](#api-management-service-operator-role) | Pode gerenciar serviços, mas não as APIs |
 | [Função do leitor do serviço de gerenciamento da API](#api-management-service-reader-role) | Acesso somente leitura ao serviço e APIs |
-| [Colaborador de componente do Application Insights](#application-insights-component-contributor) | Pode gerenciar os componentes do Application Insights |
+| [Colaborador de componente do Application Insights](#application-insights-component-contributor) | Pode gerenciar componentes do Application Insights |
 | [Depurador de Instantâneos do Application Insights](#application-insights-snapshot-debugger) | Concede permissão ao usuário para exibir e baixar os instantâneos de depuração coletados com o Depurador de Instantâneos do Application Insights. Observe que essas permissões não estão incluídas nas funções [Proprietário](#owner) ou [Colaborador](#contributor). |
-| [Operador do Trabalho de Automação](#automation-job-operator) | Criar e gerenciar trabalhos usando runbooks de Automação. |
-| [Operador de automação](#automation-operator) | Os Operadores de Automação podem iniciar, interromper, suspender e retomar trabalhos |
+| [Operador do Trabalho de Automação](#automation-job-operator) | Criar e Gerenciar Trabalhos usando Runbooks de Automação. |
+| [Operador de automação](#automation-operator) | Os Operadores de Automação podem iniciar, parar, suspender e continuar tarefas |
 | [Operador de runbook de Automação](#automation-runbook-operator) | Ler propriedades do Runbook - para poder criar Trabalhos do runbook. |
 | [Colaborador de Avere](#avere-contributor) | Pode criar e gerenciar um cluster de vFXT Avere. |
 | [Operador Avere](#avere-operator) | Usado pelo cluster vFXT Avere para gerenciar o cluster |
 | [Função de Administrador do Cluster do Serviço de Kubernetes do Azure](#azure-kubernetes-service-cluster-admin-role) | Liste a ação de credencial de administrador de cluster. |
-| [Função de Usuário do Cluster do Serviço de Kubernetes do Azure](#azure-kubernetes-service-cluster-user-role) | Liste a ação de credencial de usuário de cluster. |
-| [Proprietário de registro do Microsoft Azure Stack](#azure-stack-registration-owner) | Permite que você gerencie registros do Microsoft Azure Stack. |
+| [Função de Usuário do Cluster do Serviço de Kubernetes do Azure](#azure-kubernetes-service-cluster-user-role) | Listar ação de credencial do usuário do cluster. |
+| [Leitor de dados de mapas do Azure (visualização)](#azure-maps-data-reader-preview) | Concede acesso de leitura de dados relacionados a mapas de uma conta do Azure Mapas. |
+| [Proprietário de registro do Microsoft Azure Stack](#azure-stack-registration-owner) | Permite que você gerencie registros do Azure Stack. |
 | [Colaborador de Backup](#backup-contributor) | Permite que você gerencie o serviço de backup, mas não pode criar cofres e fornecer acesso a outras pessoas |
 | [Operador de Backup](#backup-operator) | Permite que você gerencie serviços de backup, exceto a remoção de backup, a criação de cofres e o fornecimento de acesso a outras pessoas |
 | [Leitor de Backup](#backup-reader) | Pode exibir serviços de backup, mas não pode fazer alterações |
 | [Leitor de cobrança](#billing-reader) | Permite o acesso de leitura aos dados de cobrança |
-| [Colaborador do BizTalk](#biztalk-contributor) | Permite gerenciar serviços do BizTalk, mas não acessá-los. |
+| [Colaborador do BizTalk](#biztalk-contributor) | Permite que você gerencie serviços do BizTalk, mas não tem acesso a eles. |
+| [Acesso ao nó de membro de Blockchain (visualização)](#blockchain-member-node-access-preview) | Permite acesso a nós de Membro do Blockchain |
 | [Colaborador de ponto de extremidade de CDN](#cdn-endpoint-contributor) | Pode gerenciar os pontos de extremidade de CDN, mas não pode conceder acesso a outros usuários. |
 | [Leitor de ponto de extremidade de CDN](#cdn-endpoint-reader) | Pode exibir os pontos de extremidade de CDN, mas não fazer alterações. |
 | [Colaborador de perfil de CDN](#cdn-profile-contributor) | Pode gerenciar os perfis de CDN e os respectivos pontos de extremidade, mas não pode conceder acesso a outros usuários. |
-| [Leitor de perfis de CDN](#cdn-profile-reader) | Pode exibir os perfis de CDN e os respectivos pontos de extremidade, mas não fazer alterações. |
-| [Colaborador de rede clássica](#classic-network-contributor) | Permite que você gerencie redes clássicas, mas não acessá-las. |
-| [Colaborador da conta de armazenamento clássica](#classic-storage-account-contributor) | Permite que você gerencie contas de armazenamento clássico, mas não acessá-las. |
-| [Função do Serviço de Operador da Chave da Conta de Armazenamento Clássica](#classic-storage-account-key-operator-service-role) | Os Operadores da Chave da Conta de Armazenamento Clássica têm permissão para listar e regenerar chaves nas Contas de Armazenamento Clássicas |
-| [Colaborador de Máquina Virtual Clássica](#classic-virtual-machine-contributor) | Permite gerenciar máquinas virtuais clássicas, mas não o acesso a elas, nem à rede virtual ou conta de armazenamento à qual estão conectadas. |
+| [Leitor de perfis de CDN](#cdn-profile-reader) | Pode ver os perfis de CDN e os seus pontos de extremidade, mas não fazer alterações. |
+| [Colaborador de rede clássica](#classic-network-contributor) | Permite que você gerencie redes clássicas, mas não tem acesso a elas. |
+| [Colaborador da conta de armazenamento clássica](#classic-storage-account-contributor) | Permite que você gerencie contas de armazenamento clássico, mas não o acesso a elas. |
+| [Função do Serviço de Operador da Chave da Conta de Armazenamento Clássica](#classic-storage-account-key-operator-service-role) | Os Operadores de Chaves da Conta de Armazenamento Clássica têm permissão para listar e regenerar chaves nas Contas de Armazenamento Clássicas |
+| [Colaborador de Máquina Virtual Clássica](#classic-virtual-machine-contributor) | Permite que você gerencie máquinas virtuais clássicas, mas não o acesso a elas, nem às redes virtuais ou conta de armazenamento às quais elas estão conectadas. |
 | [Colaborador dos Serviços Cognitivos](#cognitive-services-contributor) | Permite criar, ler, atualizar, excluir e gerenciar chaves dos Serviços Cognitivos. |
 | [Leitor de dados de serviços cognitivos (visualização)](#cognitive-services-data-reader-preview) | Permite que você leia os dados dos Serviços Cognitivos. |
 | [Usuário dos Serviços Cognitivos](#cognitive-services-user) | Permite ler e listar as chaves dos Serviços Cognitivos. |
@@ -77,72 +79,74 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 | [Operador do cosmos DB](#cosmos-db-operator) | Permite que você gerencie contas do Azure Cosmos DB, mas não acessar dados contidos neles. Impede o acesso a chaves de conta e cadeias de caracteres de conexão. |
 | [CosmosBackupOperator](#cosmosbackupoperator) | Pode enviar solicitação de restauração de um banco de dados Cosmos DB ou de um contêiner em uma conta |
 | [Colaborador do Gerenciamento de Custos](#cost-management-contributor) | Pode exibir os custos e gerenciar a configuração de custo (por exemplo, orçamentos, exportações) |
-| [Leitor do Gerenciamento de Custos](#cost-management-reader) | Pode exibir dados e configuração de custos (por exemplo, orçamentos, exportações) |
-| [Colaborador do Data Box](#data-box-contributor) | Permite que você gerencie tudo sob o serviço Data Box exceto fornecer acesso a outras pessoas. |
-| [Leitor do Data Box](#data-box-reader) | Permite que você gerencie o serviço do Azure Data Box, exceto a ordem de criação ou edição de detalhes do pedido e fornecer acesso a outras pessoas. |
-| [Colaborador da fábrica de dados](#data-factory-contributor) | Cria e gerencia data factories, assim como os recursos filhos neles. |
-| [Desenvolvedor do Data Lake Analytics](#data-lake-analytics-developer) | Permite enviar, monitorar e gerenciar seus próprios trabalhos, mas não criar nem excluir contas do Data Lake Analytics. |
-| [Limpador de Dados](#data-purger) | Pode limpar os dados de análise |
-| [Usuário do DevTest Labs](#devtest-labs-user) | Permite conectar, iniciar, reiniciar e encerrar as máquinas virtuais no Azure DevTest Labs. |
-| [Colaborador de zona DNS](#dns-zone-contributor) | Permite gerenciar zonas DNS e conjuntos de registros no DNS do Azure, mas não permite controlar quem tem acesso a eles. |
+| [Leitor do Gerenciamento de Custos](#cost-management-reader) | Pode exibir dados de custo e configuração (por exemplo, orçamentos, exportações) |
+| [Colaborador do Data Box](#data-box-contributor) | Permite gerenciar tudo no Serviço de Data Box exceto conceder acesso aos outros usuários. |
+| [Leitor do Data Box](#data-box-reader) | Permite gerenciar o Serviço Data Box, exceto criar um pedido ou editar detalhes de um pedido e conceder acesso a outros usuários. |
+| [Colaborador da fábrica de dados](#data-factory-contributor) | Criar e gerenciar fábricas de dados, assim como recursos filho nelas. |
+| [Desenvolvedor do Data Lake Analytics](#data-lake-analytics-developer) | Permite-lhe submeter, monitorar e gerenciar suas próprias tarefas, mas não criar ou excluir contas do Data Lake Analytics. |
+| [Limpador de Dados](#data-purger) | Pode limpar dados de análise |
+| [Usuário do DevTest Labs](#devtest-labs-user) | Permite-lhe conectar, iniciar, reiniciar e encerrar as suas máquinas virtuais nos seus Azure DevTest Labs. |
+| [Colaborador de zona DNS](#dns-zone-contributor) | Permite-lhe gerenciar as zonas DNS e conjuntos de registros no DNS do Azure, mas não lhe permite controlar quem o pode acessar. |
 | [Colaborador de Conta do DocumentDB](#documentdb-account-contributor) | Pode gerenciar contas do Azure Cosmos DB. O Azure Cosmos DB era anteriormente conhecido como DocumentDB. |
+| [Proprietário de dados de Hubs de eventos](#event-hubs-data-owner) | Permite acesso completo aos recursos de Hubs de eventos do Azure | 
 | [Colaborador de EventGrid EventSubscription](#eventgrid-eventsubscription-contributor) | Permite que você gerencie operações de assinatura de evento EventGrid. |
-| [Leitor de EventGrid EventSubscription](#eventgrid-eventsubscription-reader) | Permite que você gerencie operações de assinatura de evento EventGrid. |
+| [Leitor de EventGrid EventSubscription](#eventgrid-eventsubscription-reader) | Permite que você leia assinaturas de evento EventGrid. |
 | [Operador de Cluster do HDInsight](#hdinsight-cluster-operator) | Permite que você ler e modificar configurações de cluster do HDInsight. |
-| [Colaborador dos serviços de domínio do HDInsight](#hdinsight-domain-services-contributor) | Pode ler, criar, modificar e excluir operações relacionadas aos serviços de domínio necessárias para o Enterprise Security Package do HDInsight |
-| [Colaborador de conta do sistemas inteligentes](#intelligent-systems-account-contributor) | Permite gerenciar contas do Intelligent Systems, mas não acessá-las. |
+| [Colaborador dos serviços de domínio do HDInsight](#hdinsight-domain-services-contributor) | Pode ler, criar, modificar e excluir operações relacionadas aos serviços de domínio necessários do HDInsight Enterprise Security Package |
+| [Colaborador de conta do sistemas inteligentes](#intelligent-systems-account-contributor) | Permite que você gerencie contas do Intelligent Systems, mas não tem acesso a elas. |
 | [Colaborador do Key Vault](#key-vault-contributor) | Permite gerenciar cofres de chaves, mas não acessá-los. |
 | [Criador de laboratório](#lab-creator) | Permite a você criar, gerenciar e excluir os laboratórios gerenciados nas contas de laboratório do Azure. |
 | [Colaborador do Log Analytics](#log-analytics-contributor) | O Colaborador do Log Analytics pode ler todos os dados de monitoramento e editar as configurações de monitoramento. A edição das configurações de monitoramento inclui a adição da extensão da VM às VMs, leitura das chaves da conta de armazenamento para poder configurar a coleção de logs do Armazenamento do Microsoft Azure, criação e configuração de contas de Automação, adição de soluções e configuração do diagnóstico do Azure em todos os recursos do Azure. |
 | [Leitor do Log Analytics](#log-analytics-reader) | Um Leitor do Log Analytics pode exibir e pesquisar todos os dados de monitoramento além de exibir as configurações de monitoramento, incluindo a exibição da configuração do diagnóstico do Azure em todos os recursos do Azure. |
 | [Colaborador de Aplicativo Lógico](#logic-app-contributor) | Permite gerenciar o aplicativo lógico, mas não o acesso a ele. |
 | [Operador de Aplicativo Lógico](#logic-app-operator) | Permite que você leia, habilite e desabilite o aplicativo lógico. |
-| [Função do Operador de Aplicativos Gerenciado](#managed-application-operator-role) | Permite que você leia e execute as ações nos recursos de aplicativo gerenciado |
-| [Leitor de aplicativos gerenciados](#managed-applications-reader) | Permite ler os recursos de um aplicativo gerenciado e solicitar acesso JIT. |
+| [Função do Operador de Aplicativos Gerenciado](#managed-application-operator-role) | Permite ler e executar ações em recursos de aplicativos gerenciados |
+| [Leitor de aplicativos gerenciados](#managed-applications-reader) | Permite ler os recursos em um aplicativo gerenciado e solicitar acesso ao JIT. |
 | [Colaborador de Identidade Gerenciada](#managed-identity-contributor) | Criar, ler, atualizar e excluir a identidade atribuída pelo usuário |
-| [Operador de Identidade Gerenciada](#managed-identity-operator) | Ler e atribuir identidade atribuída pelo usuário |
+| [Operador de Identidade Gerenciada](#managed-identity-operator) | Ler e Atribuir Identidade Atribuída ao Usuário |
 | [Colaborador do Grupo de Gerenciamento](#management-group-contributor) | Função de Colaborador do Grupo de Gerenciamento |
 | [Leitor do Grupo de Gerenciamento](#management-group-reader) | Função de Leitor do Grupo de Gerenciamento |
 | [Colaborador de monitoramento](#monitoring-contributor) | Pode ler todos os dados de monitoramento e editar configurações de monitoramento. Consulte também [Introdução às funções, permissões e segurança com o Azure Monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). |
 | [Publicador de Métricas de Monitoramento](#monitoring-metrics-publisher) | Habilita a publicação de métricas com base nos recursos do Azure |
 | [Leitor de monitoramento](#monitoring-reader) | Pode ler todos os dados de monitoramento (métricas, logs, etc). Consulte também [Introdução às funções, permissões e segurança com o Azure Monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). |
-| [Colaborador de rede](#network-contributor) | Permite gerenciar redes, mas não acessá-las. |
+| [Colaborador de rede](#network-contributor) | Permite que você gerencie redes, mas não tem acesso a elas. |
 | [Colaborador de Conta APM do New Relic](#new-relic-apm-account-contributor) | Permite que você gerencie contas e aplicativos do Gerenciamento de desempenho de aplicativos da New Relic, mas não tem acesso a eles. |
 | [Acesso a Dados e Leitor](#reader-and-data-access) | Permite que você exiba tudo, mas não permitirá que exclua ou crie uma conta de armazenamento ou um recurso contido. Ele também permitirá o acesso de leitura/gravação a todos os dados contidos em uma conta de armazenamento por meio de acesso às chaves de conta de armazenamento. |
-| [Colaborador do Cache Redis](#redis-cache-contributor) | Permite gerenciar caches Redis, mas não acessá-los. |
-| [Colaborador da Política de Recursos (Versão prévia)](#resource-policy-contributor-preview) | (Versão prévia) Os usuários com aterramento da EA, com direitos para criar/modificar a política de recursos, criam um tíquete de suporte e recursos/hierarquia de leitura. |
-| [Colaborador de Coleções de Trabalho do Agendador](#scheduler-job-collections-contributor) | Permite gerenciar as coleções de trabalhos do Agendador, mas não acessá-las. |
-| [Colaborador do Serviço de Pesquisa](#search-service-contributor) | Permite gerenciar serviços de pesquisa, mas não acessá-las. |
+| [Colaborador do Cache Redis](#redis-cache-contributor) | Permite que você gerencie caches Redis, mas não tem acesso a eles. |
+| [Colaborador da Política de Recursos (Versão prévia)](#resource-policy-contributor-preview) | (Visualização) Os usuários com aterramento da EA, com direitos para criar/modificar a política de recursos, criam um tíquete de suporte e recursos/hierarquia de leitura. |
+| [Colaborador de Coleções de Trabalho do Agendador](#scheduler-job-collections-contributor) | Permite que você gerencie coleções de trabalho do Agendador, mas não tem acesso a elas. |
+| [Colaborador do Serviço de Pesquisa](#search-service-contributor) | Permite que você gerencie serviços de Pesquisa, mas não tem acesso a eles. |
 | [Administrador de Segurança](#security-admin) | Somente na Central de Segurança: Pode exibir políticas de segurança, exibir estados de segurança, editar políticas de segurança, exibir alertas e recomendações, ignorar alertas e recomendações |
 | [Gerenciador de Segurança (Herdado)](#security-manager-legacy) | Esta é uma função herdada. Em vez disso, use o Administrador de Segurança |
 | [Leitor de Segurança](#security-reader) | Somente na Central de Segurança: Pode exibir recomendações e alertas, exibir políticas de segurança, exibir estados de segurança, mas não pode fazer alterações |
-| [Colaborador do Site Recovery](#site-recovery-contributor) | Permite gerenciar o serviço do Azure Site Recovery, exceto a criação de cofre e atribuição de função |
-| [Operador do Site Recovery](#site-recovery-operator) | Permite failover e failback, mas não executa outras operações de gerenciamento do Azure Site Recovery |
-| [Leitor do Site Recovery](#site-recovery-reader) | Permite visualizar o status do Azure Site Recovery, mas não executar outras operações de gerenciamento |
+| [Proprietário de dados do barramento de serviço](#service-bus-data-owner) | Permite acesso completo aos recursos do barramento de serviço do Azure |
+| [Colaborador do Site Recovery](#site-recovery-contributor) | Permite que você gerencie o serviço do Site Recovery, exceto a criação do cofre e a atribuição de função |
+| [Operador do Site Recovery](#site-recovery-operator) | Permite que você realize failover e failback, mas não pode executar operações de gerenciamento do Site Recovery |
+| [Leitor do Site Recovery](#site-recovery-reader) | Permite que você exiba o status do Site Recovery, mas não pode executar outras operações de gerenciamento |
 | [Colaborador da conta âncoras espacial](#spatial-anchors-account-contributor) | Permite que você gerencie âncoras espaciais em sua conta, mas não que as exclua |
 | [Proprietário da conta âncoras espacial](#spatial-anchors-account-owner) | Permite gerenciar âncoras espaciais em sua conta, inclusive excluí-las |
 | [Leitor de conta âncoras espacial](#spatial-anchors-account-reader) | Permite localizar e ler propriedades de âncoras espaciais em sua conta |
 | [Colaborador do banco de dados SQL](#sql-db-contributor) | Permite gerenciar Bancos de Dados SQL, mas não acessá-los. Além disso, não é possível gerenciar as políticas relacionadas à segurança ou respectivos servidores SQL pai. |
 | [Colaborador de instância gerenciada do SQL](#sql-managed-instance-contributor) | Permite gerenciar instâncias gerenciadas do SQL e necessária configuração de rede, mas não pode fornecer acesso a outras pessoas. |
 | [Gerenciador de Segurança do SQL](#sql-security-manager) | Permite você gerenciar as políticas relacionadas à segurança de servidores e bancos de dados SQL, mas não acessá-los. |
-| [Colaborador do SQL Server](#sql-server-contributor) | Permite gerenciar servidores e Bancos de Dados SQL, mas não acessá-los, nem as políticas relacionadas à segurança. |
-| [Colaborador da Conta de Armazenamento](#storage-account-contributor) | Permite gerenciar contas de armazenamento, mas não acessá-las. |
-| [Função do Serviço de Operador da Chave da Conta de Armazenamento](#storage-account-key-operator-service-role) | Os operadores da Chave da Conta de Armazenamento podem listar e regenerar chaves em contas de armazenamento |
-| [Colaborador de dados de blob de armazenamento](#storage-blob-data-contributor) | Permite o acesso de leitura, gravação e exclusão aos dados e aos contêineres do Azure Storage Blob |
-| [Proprietário de Dados do Blob de Armazenamento](#storage-blob-data-owner) | Permite acesso completo aos dados e aos contêineres de blob do Armazenamento do Microsoft Azure, incluindo a atribuição de controle de acesso POSIX. |
-| [Leitor de Dados do Blob de Armazenamento](#storage-blob-data-reader) | Permite o acesso de leitura aos dados e aos contêineres do Azure Storage Blob |
+| [Colaborador do SQL Server](#sql-server-contributor) | Permite você gerenciar servidores e bancos de dados do SQL, mas não acessá-los e suas políticas relacionadas à segurança. |
+| [Colaborador da Conta de Armazenamento](#storage-account-contributor) | Permite que você gerencie contas de armazenamento, mas não o acesso a elas. |
+| [Função do Serviço de Operador da Chave da Conta de Armazenamento](#storage-account-key-operator-service-role) | Os Operadores de Chaves da Conta de Armazenamento têm permissão para listar e regenerar chaves nas Contas de Armazenamento |
+| [Colaborador de dados de blob de armazenamento](#storage-blob-data-contributor) | Permite o acesso de leitura, gravação e exclusão aos dados e contêineres do Azure Storage Blob |
+| [Proprietário de Dados do Blob de Armazenamento](#storage-blob-data-owner) | Permite acesso completo aos dados e aos contêineres de blob do Armazenamento do Azure, incluindo a atribuição de controle de acesso POSIX. |
+| [Leitor de Dados do Blob de Armazenamento](#storage-blob-data-reader) | Permite o acesso de leitura aos dados e contêineres do Azure Storage Blob |
 | [Colaborador de dados da fila de armazenamento](#storage-queue-data-contributor) | Permite o acesso de leitura, gravação e exclusão às filas e mensagens da fila do Armazenamento do Azure |
 | [Processador de mensagens de dados de fila de armazenamento](#storage-queue-data-message-processor) | Permite inspecionar, receber e excluir acesso a mensagens da fila do Armazenamento do Azure |
 | [Remetente de mensagem de dados de fila de armazenamento](#storage-queue-data-message-sender) | Permite o envio de mensagens da fila do Armazenamento do Azure |
 | [Leitor de dados da fila de armazenamento](#storage-queue-data-reader) | Permite o acesso de leitura às filas e mensagens da fila do Armazenamento do Azure |
-| [Colaborador de solicitação de suporte](#support-request-contributor) | Permite criar e gerenciar Solicitações de Suporte |
-| [Colaborador do Gerenciador de Tráfego](#traffic-manager-contributor) | Permite gerenciar perfis do Gerenciador de Tráfego, mas não permite controlar quem tem acesso a eles. |
+| [Colaborador de solicitação de suporte](#support-request-contributor) | Permite-lhe criar e gerenciar solicitações de Suporte |
+| [Colaborador do Gerenciador de Tráfego](#traffic-manager-contributor) | Permite-lhe gerenciar os perfis do Gerenciador de Tráfego, mas não lhe permite controlar que o pode acessar. |
 | [Administrador de Acesso do Usuário](#user-access-administrator) | Permite que você gerencie o acesso do usuário aos recursos do Azure. |
-| [Logon de administrador da Máquina Virtual](#virtual-machine-administrator-login) | Máquinas Virtuais do Microsoft Azure no portal e logon como administrador |
-| [Colaborador de Máquina Virtual](#virtual-machine-contributor) | Permite gerenciar máquinas virtuais, mas não o acesso a elas, nem à rede virtual ou conta de armazenamento à qual estão conectadas. |
-| [Logon de usuário da Máquina Virtual](#virtual-machine-user-login) | Visualize as Máquinas Virtuais do Microsoft Azure no portal e faça logon como usuário. |
-| [Colaborador do Plano de Web](#web-plan-contributor) | Permite gerenciar os planos da Web para sites, mas não o acesso a eles. |
-| [Colaborador do Site](#website-contributor) | Permite gerenciar sites (não planos da Web), mas não acessá-los. |
+| [Logon de administrador da Máquina Virtual](#virtual-machine-administrator-login) | Exibir máquinas virtuais no portal e fazer logon como administrador |
+| [Colaborador de Máquina Virtual](#virtual-machine-contributor) | Permite que você gerencie máquinas virtuais, mas não tem acesso a elas, nem às redes virtuais ou conta de armazenamento às quais elas estão conectadas. |
+| [Logon de usuário da Máquina Virtual](#virtual-machine-user-login) | Exibir máquinas virtuais no portal e fazer logon como um usuário normal. |
+| [Colaborador do Plano de Web](#web-plan-contributor) | Permite que você gerencie os planos da Web para sites, mas não tem acesso a eles. |
+| [Colaborador do Site](#website-contributor) | Permite que você gerencie sites (não planos da Web), mas não tem acesso a eles. |
 
 
 ## <a name="owner"></a>Proprietário
@@ -183,7 +187,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite que você veja tudo, mas não faça alterações. |
+> | **Descrição** | Permite que você exiba tudo, mas não pode fazer alterações. |
 > | **Id** | acdd72a7-3385-48ef-bd42-f606fba81ae7 |
 > | **Ações** |  |
 > | */leitura | Ler recursos de todos os tipos, exceto segredos. |
@@ -259,7 +263,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | leitor de dados de quarentena acr |
+> | **Descrição** | leitor de dados de quarentena ACR |
 > | **Id** | cdda3590-29a3-44f6-95f2-9f980659eb04 |
 > | **Ações** |  |
 > | Microsoft.ContainerRegistry/registries/quarantineRead/read | Efetuar pull ou Obter imagens em quarentena do registro de contêiner |
@@ -274,7 +278,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | gravador de dados de quarentena acr |
+> | **Descrição** | gravador de dados de quarentena ACR |
 > | **Id** | c8d4ff99-41c3-41a8-9f60-21dfdad59608 |
 > | **Ações** |  |
 > | Microsoft.ContainerRegistry/registries/quarantineRead/read | Efetuar pull ou Obter imagens em quarentena do registro de contêiner |
@@ -286,7 +290,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="api-management-service-contributor"></a>Colaborador de serviço de gerenciamento de API
+## <a name="api-management-service-contributor"></a>Contribuidor do Serviço de Gerenciamento de API
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -307,7 +311,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="api-management-service-operator-role"></a>Função do operador de serviço de gerenciamento da API
+## <a name="api-management-service-operator-role"></a>Função de Operador do Serviço de Gerenciamento de API
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -336,7 +340,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="api-management-service-reader-role"></a>Função de leitor do Serviço de Gerenciamento de API
+## <a name="api-management-service-reader-role"></a>Função de Leitor do Serviço de Gerenciamento de API
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -358,11 +362,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="application-insights-component-contributor"></a>Colaborador de componente do Application Insights
+## <a name="application-insights-component-contributor"></a>Contribuidor de Componente do Application Insights
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Pode gerenciar os componentes do Application Insights |
+> | **Descrição** | Pode gerenciar componentes do Application Insights |
 > | **Id** | ae349356-3a1b-4a5e-921d-050484c6347e |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -404,7 +408,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Criar e gerenciar trabalhos usando runbooks de Automação. |
+> | **Descrição** | Criar e Gerenciar Trabalhos usando Runbooks de Automação. |
 > | **Id** | 4fe576fe-1146-4730-92eb-48519fa6bf9f |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -431,7 +435,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Os Operadores de Automação podem iniciar, interromper, suspender e retomar trabalhos |
+> | **Descrição** | Os Operadores de Automação podem iniciar, parar, suspender e continuar tarefas |
 > | **Id** | d3881f73-407a-4167-8283-e981cbba0404 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -544,11 +548,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="azure-kubernetes-service-cluster-admin-role"></a>Função de Administrador do Cluster do Serviço de Kubernetes do Azure
+## <a name="azure-kubernetes-service-cluster-admin-role"></a>Função de administrador do cluster do Serviço de Kubernetes do Azure
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Liste a ação de credencial de administrador de cluster. |
+> | **Descrição** | Listar ação de credencial do administrador do cluster. |
 > | **Id** | 0ab0b1a8-8aac-4efd-b8c2-3ee1fb270be8 |
 > | **Ações** |  |
 > | Microsoft.ContainerService/managedClusters/listClusterAdminCredential/action | Listar a credencial clusterAdmin de um cluster gerenciado |
@@ -559,11 +563,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="azure-kubernetes-service-cluster-user-role"></a>Função de Usuário do Cluster do Serviço de Kubernetes do Azure
+## <a name="azure-kubernetes-service-cluster-user-role"></a>Função de usuário do cluster do Serviço de Kubernetes do Azure
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Liste a ação de credencial de usuário de cluster. |
+> | **Descrição** | Listar ação de credencial do usuário do cluster. |
 > | **Id** | 4abbcc35-e782-43d8-92c5-2d3f1bd2253f |
 > | **Ações** |  |
 > | Microsoft.ContainerService/managedClusters/listClusterUserCredential/action | Listar a credencial clusterUser de um cluster gerenciado |
@@ -574,11 +578,26 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
+## <a name="azure-maps-data-reader-preview"></a>Leitor de dados do Azure Mapas (versão prévia)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Descrição** | Concede acesso de leitura de dados relacionados a mapas de uma conta do Azure Mapas. |
+> | **Id** | 423170ca-a8f6-4b0f-8487-9e4eb8f49bfa |
+> | **Ações** |  |
+> | *nenhum* |  |
+> | **NotActions** |  |
+> | *nenhum* |  |
+> | **DataActions** |  |
+> | Microsoft.Maps/accounts/data/read | Concede acesso de leitura de dados a uma conta de mapas. |
+> | **NotDataActions** |  |
+> | *nenhum* |  |
+
 ## <a name="azure-stack-registration-owner"></a>Proprietário de registro do Azure Stack
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite que você gerencie registros do Microsoft Azure Stack. |
+> | **Descrição** | Permite que você gerencie registros do Azure Stack. |
 > | **Id** | 6f12a6df-dd06-4f3e-bcb1-ce8be600526a |
 > | **Ações** |  |
 > | Microsoft.AzureStack/registrations/products/listDetails/action | Recupera detalhes estendidos de um produto do Marketplace do Azure Stack |
@@ -773,7 +792,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="billing-reader"></a>Leitor de cobrança
+## <a name="billing-reader"></a>Leitor de Cobrança
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -794,11 +813,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="biztalk-contributor"></a>Colaborador do BizTalk
+## <a name="biztalk-contributor"></a>Contribuidor do BizTalk
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar serviços do BizTalk, mas não acessá-los. |
+> | **Descrição** | Permite que você gerencie serviços do BizTalk, mas não tem acesso a eles. |
 > | **Id** | 5e3c6656-6cfa-4708-81fe-0de47ac73342 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -815,7 +834,22 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="cdn-endpoint-contributor"></a>Colaborador de ponto de extremidade de CDN
+## <a name="blockchain-member-node-access-preview"></a>Acesso de Nó de Membro do Blockchain (Versão Prévia)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Descrição** | Permite acesso a nós de Membro do Blockchain |
+> | **Id** | 31a002a1-acaf-453e-8a5b-297c9ca1ea24 |
+> | **Ações** |  |
+> | Microsoft.Blockchain/blockchainMembers/transactionNodes/read | Obtém ou lista existente Blockchain membro transação nó (s). |
+> | **NotActions** |  |
+> | *nenhum* |  |
+> | **DataActions** |  |
+> | Microsoft.Blockchain/blockchainMembers/transactionNodes/connect/action | Se conecta a um nó de transação do membro de Blockchain. |
+> | **NotDataActions** |  |
+> | *nenhum* |  |
+
+## <a name="cdn-endpoint-contributor"></a>Colaborador de Ponto de Extremidade do CDN
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -837,11 +871,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="cdn-endpoint-reader"></a>Leitor de ponto de extremidade de CDN
+## <a name="cdn-endpoint-reader"></a>Leitor de Pontos de Extremidade do CDN
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Pode exibir os pontos de extremidade de CDN, mas não fazer alterações. |
+> | **Descrição** | Pode ver os pontos de extremidade de CDN, mas não fazer alterações. |
 > | **Id** | 871e35f6-b5c1-49cc-a043-bde969a0f2cd |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -859,11 +893,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="cdn-profile-contributor"></a>Colaborador de perfil de CDN
+## <a name="cdn-profile-contributor"></a>Colaborador de Perfil de CDN
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Pode gerenciar os perfis de CDN e os respectivos pontos de extremidade, mas não pode conceder acesso a outros usuários. |
+> | **Descrição** | Pode gerenciar os perfis de CDN e os seus pontos de extremidade, mas não pode conceder acesso a outros usuários. |
 > | **Id** | ec156ff8-a8d1-4d15-830C-5b80698ca432 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -881,11 +915,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="cdn-profile-reader"></a>Leitor de perfil de CDN
+## <a name="cdn-profile-reader"></a>Leitor de Perfis do CDN
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Pode exibir os perfis de CDN e os respectivos pontos de extremidade, mas não fazer alterações. |
+> | **Descrição** | Pode ver os perfis de CDN e os seus pontos de extremidade, mas não fazer alterações. |
 > | **Id** | 8f96442b-4075-438f-813d-ad51ab4019af |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -903,11 +937,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="classic-network-contributor"></a>Colaborador de rede clássica
+## <a name="classic-network-contributor"></a>Colaborador da Rede Clássica
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite que você gerencie redes clássicas, mas não acessá-las. |
+> | **Descrição** | Permite que você gerencie redes clássicas, mas não tem acesso a elas. |
 > | **Id** | b34d265f-36f7-4a0d-a4d4-e158ca92e90f |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler autorização |
@@ -924,11 +958,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="classic-storage-account-contributor"></a>Colaborador da conta de armazenamento clássica
+## <a name="classic-storage-account-contributor"></a>Colaborador da Conta de Armazenamento Clássica
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite que você gerencie contas de armazenamento clássico, mas não acessá-las. |
+> | **Descrição** | Permite que você gerencie contas de armazenamento clássico, mas não o acesso a elas. |
 > | **Id** | 86e8f5dc-a6e9-4c67-9d15-de283e8eac25 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler autorização |
@@ -949,7 +983,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Os Operadores da Chave da Conta de Armazenamento Clássica têm permissão para listar e regenerar chaves nas Contas de Armazenamento Clássicas |
+> | **Descrição** | Os Operadores de Chaves da Conta de Armazenamento Clássica têm permissão para listar e regenerar chaves nas Contas de Armazenamento Clássicas |
 > | **Id** | 985d6b00-f706-48f5-a6fe-d0ca12fb668d |
 > | **Ações** |  |
 > | Microsoft.ClassicStorage/storageAccounts/listkeys/action | Listar as chaves de acesso das contas de armazenamento. |
@@ -961,11 +995,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="classic-virtual-machine-contributor"></a>Colaborador de Máquina Virtual Clássica
+## <a name="classic-virtual-machine-contributor"></a>Colaborador da Máquina Virtual Clássica
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar máquinas virtuais clássicas, mas não o acesso a elas, nem à rede virtual ou conta de armazenamento à qual estão conectadas. |
+> | **Descrição** | Permite que você gerencie máquinas virtuais clássicas, mas não o acesso a elas, nem às redes virtuais ou conta de armazenamento às quais elas estão conectadas. |
 > | **Id** | d73bb868-a0df-4d4d-bd69-98a00b01fccb |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler autorização |
@@ -1130,7 +1164,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Pode exibir os custos e gerenciar a configuração de custo (por exemplo, orçamentos, exportações) |
+> | **Descrição** | Pode exibir os custos e gerenciar a configuração de custos (por exemplo, orçamentos, exportações) |
 > | **Id** | 434105ed-43f6-45c7-a02f-909b2ba83430 |
 > | **Ações** |  |
 > | Microsoft.Consumption/* |  |
@@ -1139,6 +1173,8 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | Microsoft.Resources/subscriptions/read | Obter a lista de assinaturas. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Obter ou listar de grupos de recursos. |
 > | Microsoft.Support/* | Criar e gerenciar tíquetes de suporte |
+> | Microsoft.Advisor/configurations/read | Obter configurações |
+> | Microsoft.Advisor/recommendations/read | Ler recomendações |
 > | **NotActions** |  |
 > | *nenhum* |  |
 > | **DataActions** |  |
@@ -1150,7 +1186,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Pode exibir dados e configuração de custos (por exemplo, orçamentos, exportações) |
+> | **Descrição** | Pode exibir dados de custo e configuração (por exemplo, orçamentos, exportações) |
 > | **Id** | 72fafb9e-0641-4937-9268-a91bfd8191a3 |
 > | **Ações** |  |
 > | Microsoft.Consumption/*/read |  |
@@ -1159,6 +1195,8 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | Microsoft.Resources/subscriptions/read | Obter a lista de assinaturas. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Obter ou listar de grupos de recursos. |
 > | Microsoft.Support/* | Criar e gerenciar tíquetes de suporte |
+> | Microsoft.Advisor/configurations/read | Obter configurações |
+> | Microsoft.Advisor/recommendations/read | Ler recomendações |
 > | **NotActions** |  |
 > | *nenhum* |  |
 > | **DataActions** |  |
@@ -1170,7 +1208,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite que você gerencie tudo sob o serviço Data Box exceto fornecer acesso a outras pessoas. |
+> | **Descrição** | Permite gerenciar tudo no Serviço de Data Box exceto conceder acesso aos outros usuários. |
 > | **Id** | add466c9-e687-43fc-8d98-dfcf8d720be5 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1190,7 +1228,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite que você gerencie o serviço do Azure Data Box, exceto a ordem de criação ou edição de detalhes do pedido e fornecer acesso a outras pessoas. |
+> | **Descrição** | Permite gerenciar o Serviço Data Box, exceto criar um pedido ou editar detalhes de um pedido e conceder acesso a outros usuários. |
 > | **Id** | 028f4ed7-e2a9-465e-a8f4-9c0ffdfdc027 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1198,6 +1236,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | Microsoft.Databox/jobs/listsecrets/action |  |
 > | Microsoft.Databox/jobs/listcredentials/action | Lista as credenciais não criptografadas relacionadas ao pedido. |
 > | Microsoft.Databox/locations/availableSkus/action | Este método retorna a lista de SKUs disponíveis. |
+> | Microsoft.Databox/locations/validateAddress/action | Validará o endereço de entrega e fornecerá endereços alternativos, se houver algum. |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Obter os status de disponibilidade para todos os recursos no escopo especificado |
 > | Microsoft.Support/* | Criar e gerenciar tíquetes de suporte |
 > | **NotActions** |  |
@@ -1207,11 +1246,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="data-factory-contributor"></a>Colaborador da fábrica de dados
+## <a name="data-factory-contributor"></a>Contribuidor do Data Factory
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Cria e gerencia data factories, assim como os recursos filhos neles. |
+> | **Descrição** | Criar e gerenciar fábricas de dados, assim como recursos filho nelas. |
 > | **Id** | 673868aa-7521-48A0-acc6-0f60742d39f5 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1233,7 +1272,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite enviar, monitorar e gerenciar seus próprios trabalhos, mas não criar nem excluir contas do Data Lake Analytics. |
+> | **Descrição** | Permite-lhe submeter, monitorar e gerenciar suas próprias tarefas, mas não criar ou excluir contas do Data Lake Analytics. |
 > | **Id** | 47b7735b-770e-4598-a7da-8b91488b4c88 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1264,11 +1303,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="data-purger"></a>Limpador de Dados
+## <a name="data-purger"></a>Data Purger
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Pode limpar os dados de análise |
+> | **Descrição** | Pode limpar dados de análise |
 > | **Id** | 150f5e0c-0603-4f03-8c7f-cf70034c4e90 |
 > | **Ações** |  |
 > | Microsoft.Insights/components/*/read |  |
@@ -1286,7 +1325,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite conectar, iniciar, reiniciar e encerrar as máquinas virtuais no Azure DevTest Labs. |
+> | **Descrição** | Permite-lhe conectar, iniciar, reiniciar e encerrar as suas máquinas virtuais nos seus Azure DevTest Labs. |
 > | **Id** | 76283e04-6283-4c54-8f91-bcf1374a3c64 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1299,6 +1338,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | Microsoft.DevTestLab/*/read | Ler as propriedades de um laboratório |
 > | Microsoft.DevTestLab/labs/claimAnyVm/action | Declarar uma máquina virtual aleatória declarável no laboratório. |
 > | Microsoft.DevTestLab/labs/createEnvironment/action | Criar máquinas virtuais em um laboratório. |
+> | Microsoft.DevTestLab/labs/ensureCurrentUserProfile/action | Certifique-se de que o usuário atual tem um perfil válido no laboratório. |
 > | Microsoft.DevTestLab/labs/formulas/delete | Excluir fórmulas. |
 > | Microsoft.DevTestLab/labs/formulas/read | Ler fórmulas. |
 > | Microsoft.DevTestLab/labs/formulas/write | Adicionar ou modificar fórmulas. |
@@ -1327,11 +1367,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="dns-zone-contributor"></a>Colaborador de zona DNS
+## <a name="dns-zone-contributor"></a>Colaborador de Zona de DNS
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar zonas DNS e conjuntos de registros no DNS do Azure, mas não permite controlar quem tem acesso a eles. |
+> | **Descrição** | Permite-lhe gerenciar as zonas DNS e conjuntos de registros no DNS do Azure, mas não lhe permite controlar quem o pode acessar. |
 > | **Id** | befefa01-2a29-4197-83a8-272ff33ce314 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1348,7 +1388,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="documentdb-account-contributor"></a>Colaborador de Conta do DocumentDB
+## <a name="documentdb-account-contributor"></a>Colaborador da Conta do Banco de Dados de Documentos
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -1366,6 +1406,22 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | *nenhum* |  |
 > | **DataActions** |  |
 > | *nenhum* |  |
+> | **NotDataActions** |  |
+> | *nenhum* |  |
+
+## <a name="event-hubs-data-owner"></a>Proprietário de dados de Hubs de eventos
+
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Descrição** | Permite acesso completo aos recursos de Hubs de eventos do Azure. |
+> | **Id** | f526a384-b230-433a-b45c-95f59c4a2dec |
+> | **Ações** |  |
+> | Microsoft.EventHubs/* | Permite o acesso de gerenciamento completo para o namespace de Hubs de eventos |
+> | **NotActions** |  |
+> | *nenhum* |  |
+> | **DataActions** |  |
+> | Microsoft.EventHubs/* | Permite o acesso a dados completo para o namespace de Hubs de eventos |
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
@@ -1396,7 +1452,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite que você gerencie operações de assinatura de evento EventGrid. |
+> | **Descrição** | Permite que você leia assinaturas de evento EventGrid. |
 > | **Id** | 2414bbcf-6497-4faf-8c65-045460748405 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1426,6 +1482,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Obter ou listar de grupos de recursos. |
 > | Microsoft.Resources/deployments/operations/read | Obter ou lista operações de implantação. |
 > | Microsoft.Insights/alertRules/* | Criar e gerenciar regras de alerta do Insights |
+> | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
 > | Microsoft.Support/* | Criar e gerenciar tíquetes de suporte |
 > | **NotActions** |  |
 > | *nenhum* |  |
@@ -1434,11 +1491,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="hdinsight-domain-services-contributor"></a>Colaborador dos serviços de domínio do HDInsight
+## <a name="hdinsight-domain-services-contributor"></a>Colaborador do HDInsight Domain Services
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Pode ler, criar, modificar e excluir operações relacionadas aos serviços de domínio necessárias para o Enterprise Security Package do HDInsight |
+> | **Descrição** | Pode ler, criar, modificar e excluir operações relacionadas aos serviços de domínio necessários do HDInsight Enterprise Security Package |
 > | **Id** | 8d8d5a11-05d3-4bda-a417-a08778121c7c |
 > | **Ações** |  |
 > | Microsoft.AAD/*/read |  |
@@ -1451,11 +1508,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="intelligent-systems-account-contributor"></a>Colaborador de conta do sistemas inteligentes
+## <a name="intelligent-systems-account-contributor"></a>Contribuidor de Conta do Intelligent Systems
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar contas do Intelligent Systems, mas não acessá-las. |
+> | **Descrição** | Permite que você gerencie contas do Intelligent Systems, mas não tem acesso a elas. |
 > | **Id** | 03a6d094-3444-4b3d-88af-7477090a9e5e |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1476,7 +1533,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar cofres de chaves, mas não acessá-los. |
+> | **Descrição** | Permite-lhe gerenciar cofres de chave, mas não acessá-los. |
 > | **Id** | f25e0fa2-a7c8-4377-a976-54943a77a395 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1493,11 +1550,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="lab-creator"></a>Criador de laboratório
+## <a name="lab-creator"></a>Criador de Laboratório
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite a você criar, gerenciar e excluir os laboratórios gerenciados nas contas de laboratório do Azure. |
+> | **Descrição** | Permite que você crie, gerencie e exclua os laboratórios gerenciados em suas Contas de Laboratório do Azure. |
 > | **Id** | b97fb8bc-a8b2-4522-a38b-dd33c7e65ead |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1545,7 +1602,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Um Leitor do Log Analytics pode exibir e pesquisar todos os dados de monitoramento além de exibir as configurações de monitoramento, incluindo a exibição da configuração do diagnóstico do Azure em todos os recursos do Azure. |
+> | **Descrição** | O Leitor do Log Analytics pode exibir e pesquisar todos os dados de monitoramento além de exibir as configurações de monitoramento, incluindo a exibição da configuração do diagnóstico do Azure em todos os recursos do Azure. |
 > | **Id** | 73c42c96-874c-492b-b04d-ab87d138a893 |
 > | **Ações** |  |
 > | */leitura | Ler recursos de todos os tipos, exceto segredos. |
@@ -1559,11 +1616,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="logic-app-contributor"></a>Colaborador de aplicativo lógico
+## <a name="logic-app-contributor"></a>Colaborador de Aplicativo Lógico
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar o aplicativo lógico, mas não o acesso a ele. |
+> | **Descrição** | Permite que você gerencie aplicativos lógicos, mas não o acesso a eles. |
 > | **Id** | 87a39d53-fc1b-424a-814c-f7e04687dc9e |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1593,7 +1650,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="logic-app-operator"></a>Operador de aplicativo lógico
+## <a name="logic-app-operator"></a>Operador de Aplicativo Lógico
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -1623,11 +1680,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="managed-application-operator-role"></a>Função do Operador de Aplicativos Gerenciado
+## <a name="managed-application-operator-role"></a>Função de operador de aplicativos gerenciados
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite que você leia e execute as ações nos recursos de aplicativo gerenciado |
+> | **Descrição** | Permite ler e executar ações em recursos de aplicativos gerenciados |
 > | **Id** | c7393b34-138c-406f-901b-d8cf2b17e6ae |
 > | **Ações** |  |
 > | */leitura | Ler recursos de todos os tipos, exceto segredos. |
@@ -1640,11 +1697,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="managed-applications-reader"></a>Leitor de aplicativos gerenciados
+## <a name="managed-applications-reader"></a>Leitor de Aplicativos Gerenciados
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite ler os recursos de um aplicativo gerenciado e solicitar acesso JIT. |
+> | **Descrição** | Permite ler os recursos em um aplicativo gerenciado e solicitar acesso ao JIT. |
 > | **Id** | b9331d33-8a36-4f8c-b097-4f54124fdb44 |
 > | **Ações** |  |
 > | */leitura | Ler recursos de todos os tipos, exceto segredos. |
@@ -1657,11 +1714,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="managed-identity-contributor"></a>Colaborador de Identidade Gerenciada
+## <a name="managed-identity-contributor"></a>Contribuidor de Identidade Gerenciada
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Criar, ler, atualizar e excluir a identidade atribuída pelo usuário |
+> | **Descrição** | Criar, Ler, Atualizar e Excluir a Identidade Atribuída ao Usuário |
 > | **Id** | e40ec5ca-96e0-45a2-b4ff-59039f2c2b59 |
 > | **Ações** |  |
 > | Microsoft.ManagedIdentity/userAssignedIdentities/*/read |  |
@@ -1683,7 +1740,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Ler e atribuir identidade atribuída pelo usuário |
+> | **Descrição** | Ler e Atribuir Identidade Atribuída ao Usuário |
 > | **Id** | f1a07417-d97a-45cb-824c-7a7467783830 |
 > | **Ações** |  |
 > | Microsoft.ManagedIdentity/userAssignedIdentities/*/read |  |
@@ -1772,7 +1829,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="monitoring-metrics-publisher"></a>Publicador de Métricas de Monitoramento
+## <a name="monitoring-metrics-publisher"></a>Publicador de Métricas do Monitoramento
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -1810,7 +1867,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar redes, mas não acessá-las. |
+> | **Descrição** | Permite que você gerencie redes, mas não tem acesso a elas. |
 > | **Id** | 4d97b98b-1d4f-4787-a291-c67834d212e7 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1827,7 +1884,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="new-relic-apm-account-contributor"></a>Colaborador de Conta APM do New Relic
+## <a name="new-relic-apm-account-contributor"></a>Colaborador da Conta do New Relic APM
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -1865,11 +1922,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="redis-cache-contributor"></a>Colaborador do Cache Redis
+## <a name="redis-cache-contributor"></a>Contribuidor do Cache Redis
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar caches Redis, mas não acessá-los. |
+> | **Descrição** | Permite que você gerencie caches Redis, mas não tem acesso a eles. |
 > | **Id** | e0f68234-74aa-48ED-b826-c38b57376e17 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1890,7 +1947,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | (Versão prévia) Os usuários com aterramento da EA, com direitos para criar/modificar a política de recursos, criam um tíquete de suporte e recursos/hierarquia de leitura. |
+> | **Descrição** | (Visualização) Os usuários com aterramento da EA, com direitos para criar/modificar a política de recursos, criam um tíquete de suporte e recursos/hierarquia de leitura. |
 > | **Id** | 36243c78-bf99-498c-9df9-86d9f8d28608 |
 > | **Ações** |  |
 > | */leitura | Ler recursos de todos os tipos, exceto segredos. |
@@ -1906,11 +1963,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="scheduler-job-collections-contributor"></a>Colaborador de Coleções de Trabalho do Agendador
+## <a name="scheduler-job-collections-contributor"></a>Contribuidor de Coleções do Trabalho do Agendador
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar as coleções de trabalhos do Agendador, mas não acessá-las. |
+> | **Descrição** | Permite que você gerencie coleções de trabalho do Agendador, mas não tem acesso a elas. |
 > | **Id** | 188a0f2f-5c9e-469b-ae67-2aa5ce574b94 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1927,11 +1984,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="search-service-contributor"></a>Colaborador do Serviço de Pesquisa
+## <a name="search-service-contributor"></a>Contribuidor do Serviço de Pesquisa
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar serviços de pesquisa, mas não acessá-las. |
+> | **Descrição** | Permite que você gerencie serviços de Pesquisa, mas não tem acesso a eles. |
 > | **Id** | 7ca78c08-252a-4471-8644-bb5ff32d4ba0 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1948,7 +2005,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="security-admin"></a>Administrador de Segurança
+## <a name="security-admin"></a>Admin de Segurança
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -1997,7 +2054,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="security-reader"></a>Leitor de segurança
+## <a name="security-reader"></a>Leitor de Segurança
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -2019,11 +2076,27 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
+## <a name="service-bus-data-owner"></a>Proprietário de dados do barramento de serviço
+
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Descrição** | Permite acesso completo aos recursos do barramento de serviço do Azure. |
+> | **Id** | 090c5cfd-751d-490a-894a-3ce6f1109419 |
+> | **Ações** |  |
+> | Microsoft.ServiceBus/* | Permite o acesso de gerenciamento completo para o namespace do barramento de serviço |
+> | **NotActions** |  |
+> | *nenhum* |  |
+> | **DataActions** |  |
+> | Microsoft.ServiceBus/* | Permite o acesso a dados completo para o namespace do barramento de serviço |
+> | **NotDataActions** |  |
+> | *nenhum* |  |
+
 ## <a name="site-recovery-contributor"></a>Colaborador do Site Recovery
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar o serviço do Azure Site Recovery, exceto a criação de cofre e atribuição de função |
+> | **Descrição** | Permite que você gerencie o serviço do Site Recovery, exceto a criação do cofre e a atribuição de função |
 > | **Id** | 6670b86e-a3f7-4917-ac9b-5d6ab1be4567 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -2064,7 +2137,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite failover e failback, mas não executa outras operações de gerenciamento do Azure Site Recovery |
+> | **Descrição** | Permite que você realize failover e failback, mas não pode executar operações de gerenciamento do Site Recovery |
 > | **Id** | 494ae006-db33-4328-bf46-533a6560a3ca |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -2135,7 +2208,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite visualizar o status do Azure Site Recovery, mas não executar outras operações de gerenciamento |
+> | **Descrição** | Permite que você exiba o status do Site Recovery, mas não pode executar outras operações de gerenciamento |
 > | **Id** | dbaa88c4-0c30-4179-9fb3-46319faa6149 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -2235,7 +2308,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="sql-db-contributor"></a>Colaborador do banco de dados SQL
+## <a name="sql-db-contributor"></a>Contribuidor do DB SQL
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -2311,7 +2384,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="sql-security-manager"></a>Gerenciador de Segurança do SQL
+## <a name="sql-security-manager"></a>Gerenciador de Segurança de SQL
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -2366,11 +2439,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="sql-server-contributor"></a>Colaborador do SQL Server
+## <a name="sql-server-contributor"></a>Contribuidor do SQL Server
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar servidores e Bancos de Dados SQL, mas não acessá-los, nem as políticas relacionadas à segurança. |
+> | **Descrição** | Permite você gerenciar servidores e bancos de dados do SQL, mas não acessá-los e suas políticas relacionadas à segurança. |
 > | **Id** | 6d8ee4ec-f05a-4a1d-8b00-a9b17e38b437 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -2482,7 +2555,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **Descrição** | Fornece acesso completo aos dados, incluindo a atribuição de controle de acesso do POSIX e contêineres de blob de armazenamento do Azure. Para saber quais ações são necessárias para uma operação de dados específico, consulte [permissões para chamar o blob e fila de operações de dados](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
 > | **Id** | b7e6dc6d-f1e8-4753-8033-0f276bb0955b |
 > | **Ações** |  |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/* | Permissões totais em contêineres.  |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/* | Permissões totais em contêineres. |
 > | **NotActions** |  |
 > | *nenhum* |  |
 > | **DataActions** |  |
@@ -2570,11 +2643,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="support-request-contributor"></a>Colaborador de solicitação de suporte
+## <a name="support-request-contributor"></a>Colaborador de Solicitação de Suporte
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite criar e gerenciar Solicitações de Suporte |
+> | **Descrição** | Permite-lhe criar e gerenciar solicitações de Suporte |
 > | **Id** | cfd33db0-3dd1-45e3-aa9d-cdbdf3b6f24e |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler autorização |
@@ -2591,7 +2664,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar perfis do Gerenciador de Tráfego, mas não permite controlar quem tem acesso a eles. |
+> | **Descrição** | Permite-lhe gerenciar os perfis do Gerenciador de Tráfego, mas não lhe permite controlar que o pode acessar. |
 > | **Id** | a4b10055-b0c7-44c2-b00f-c7b5b3550cf7 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -2625,11 +2698,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="virtual-machine-administrator-login"></a>Logon de administrador da Máquina Virtual
+## <a name="virtual-machine-administrator-login"></a>Logon de Administrador da Máquina Virtual
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Máquinas Virtuais do Microsoft Azure no portal e logon como administrador |
+> | **Descrição** | Exibir máquinas virtuais no portal e fazer logon como administrador |
 > | **Id** | 1c0163c0-47E6-4577-8991-ea5c82e286e4 |
 > | **Ações** |  |
 > | Microsoft.Network/publicIPAddresses/read | Obter uma definição de endereço IP público. |
@@ -2649,7 +2722,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar máquinas virtuais, mas não o acesso a elas, nem à rede virtual ou conta de armazenamento à qual estão conectadas. |
+> | **Descrição** | Permite que você gerencie máquinas virtuais, mas não tem acesso a elas, nem às redes virtuais ou conta de armazenamento às quais elas estão conectadas. |
 > | **Id** | 9980e02c-c2be-4d73-94e8-173b1dc7cf3c |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler autorização |
@@ -2697,11 +2770,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="virtual-machine-user-login"></a>Logon de usuário da Máquina Virtual
+## <a name="virtual-machine-user-login"></a>Logon de Usuário da Máquina Virtual
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Visualize as Máquinas Virtuais do Microsoft Azure no portal e faça logon como usuário. |
+> | **Descrição** | Exibir máquinas virtuais no portal e fazer logon como um usuário normal. |
 > | **Id** | fb879df8-f326-4884-b1cf-06f3ad86be52 |
 > | **Ações** |  |
 > | Microsoft.Network/publicIPAddresses/read | Obter uma definição de endereço IP público. |
@@ -2716,11 +2789,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="web-plan-contributor"></a>Colaborador do Plano de Web
+## <a name="web-plan-contributor"></a>Contribuidor do Plano da Web
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar os planos da Web para sites, mas não o acesso a eles. |
+> | **Descrição** | Permite que você gerencie os planos da Web para sites, mas não tem acesso a eles. |
 > | **Id** | 2cc479cb-7b4d-49a8-b449-8c00fd0f0a4b |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler autorização |
@@ -2738,11 +2811,11 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="website-contributor"></a>Colaborador do Site
+## <a name="website-contributor"></a>Contribuidor do Site
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar sites (não planos da Web), mas não acessá-los. |
+> | **Descrição** | Permite que você gerencie sites (não planos da Web), mas não tem acesso a eles. |
 > | **Id** | de139f84-1756-47ae-9be6-808fbbe84772 |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler autorização |

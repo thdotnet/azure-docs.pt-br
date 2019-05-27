@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc2c125df2e3455b0e90919dbca92fe497a4b1b7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 50452dc5a0c2074c452878c890643f7b21591689
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60415695"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65977300"
 ---
 # <a name="eliminate-bad-passwords-in-your-organization"></a>Eliminar senhas incorretas na organização
 
@@ -26,7 +26,7 @@ Os líderes do setor orientam que você não utilize a mesma senha em vários lu
 
 A Microsoft está sempre trabalhando para se manter um passo à frente dos cibercriminosos. Portanto, a equipe do Azure AD Identity Protection procura continuamente por senhas comumente usadas e comprometidas. Em seguida, bloqueiam as senhas consideradas muito comuns na lista de senhas proibidas globalmente. Os criminosos cibernéticos também usam estratégias semelhantes em seus ataques, portanto, a Microsoft não publica o conteúdo dessa lista publicamente. Essas senhas vulneráveis são bloqueadas antes de tornarem-se uma ameaça real aos clientes da Microsoft. Para obter mais informações sobre os esforços atuais de segurança, consulte o [Relatório de inteligência de segurança da Microsoft](https://www.microsoft.com/security/operations/security-intelligence-report).
 
-## <a name="custom-banned-password-list"></a>Lista personalizada de senhas banidas
+## <a name="custom-banned-password-list"></a>Lista de senhas proibidas personalizadas
 
 Algumas organizações podem querer levar a segurança um passo adiante, adicionando suas próprias personalizações no topo da lista de senhas proibidas, em que a Microsoft chama de lista de senhas proibidas personalizada. Os clientes empresariais, como a Contoso, podem optar por bloquear variantes de nomes de marca, termos específicos da empresa ou outros itens.
 
@@ -75,7 +75,7 @@ Cada uma das senhas acima não corresponde especificamente à senha banida "abcd
 
 A correspondência de subcadeia de caracteres é usada na senha normalizada para verificar o nome e o sobrenome do usuário, bem como o nome do locatário (observe que a correspondência de nome de locatário não é feita ao validar senhas em um controlador de domínio do Active Directory).
 
-Exemplo: suponha que um usuário John Doe queira redefinir sua senha para "J0hn123fb". Após a normalização, essa senha seria "john123fb". A correspondência de subcadeia de caracteres determina que a senha contém o nome do usuário "John". Embora "J0hn123fb" não esteja especificamente em nenhuma das listas de senhas banidas, foi encontrada uma correspondência de subcadeia de caracteres "John" na senha. Portanto, essa senha deve ser rejeitada.
+Exemplo: suponha que temos um usuário, Pol, o que deseja redefinir sua senha para "P0l123fb". Após a normalização, essa senha seria "pol123fb". Correspondência de subcadeia de caracteres localiza a senha contém o nome do usuário "Pol". Mesmo que "P0l123fb" não foi especificamente em qualquer uma das listas de senhas banidas, correspondência de subcadeia de caracteres encontrada "Pol" na senha. Portanto, essa senha deve ser rejeitada.
 
 #### <a name="score-calculation"></a>Cálculo de pontuação
 
@@ -106,7 +106,7 @@ Após a normalização, essa senha se torna “contosoblankf9!”. O processo de
 
 |   | Proteção por senha do AD do Azure com a lista de senhas banidas global | Proteção por senha do AD do Azure com a lista de senhas banidas personalizado|
 | --- | --- | --- |
-| Usuários somente na nuvem | AD do Azure Gratuito | O Azure AD Premium P1 ou P2 |
+| Usuários somente na nuvem | Azure AD Gratuito | O Azure AD Premium P1 ou P2 |
 | Os usuários sincronizados no local Windows Server Active Directory | O Azure AD Premium P1 ou P2 | O Azure AD Premium P1 ou P2 |
 
 > [!NOTE]

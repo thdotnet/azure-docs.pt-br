@@ -9,11 +9,11 @@ ms.topic: sample
 ms.date: 10/26/2018
 ms.reviewer: sngun
 ms.openlocfilehash: 1be21c0d468a4fca9b8c5f5d734a755c413bf999
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54043389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66154695"
 ---
 # <a name="azure-cosmos-db-create-a-gremlin-api-account-using-azure-cli"></a>O Azure Cosmos DB: Criar uma conta da API do Gremlin usando a CLI do Azure
 

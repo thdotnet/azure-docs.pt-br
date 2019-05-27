@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/05/2019
 ms.author: juliako
-ms.openlocfilehash: 7ce57e1f8b2732ea909625c89f3e8148cb70635c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: bbf43ecb07947fad8cc1ee064d2038e4a21d4444
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64728832"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65964758"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs"></a>Monitorar logs de diagnóstico e métricas de serviços de mídia
 
-[O Azure Monitor](../../azure-monitor/overview.md) habilita você a monitorar métricas e logs de diagnóstico que ajudam você a entende como estão o desempenho de seus aplicativos. Todos os dados coletados pelo Azure Monitor se encaixa em um dos dois tipos fundamentais, log e métricas. Você pode monitorar os logs de diagnóstico dos serviços de mídia e criar alertas e notificações para os logs e métricas coletadas. Você pode visualizar e analisar os dados de métricas usando [Metrics explorer](../../azure-monitor/platform/metrics-getting-started.md). Você pode enviar logs para [armazenamento do Azure](https://azure.microsoft.com/services/storage/), transmiti-los para [Hubs de eventos](https://azure.microsoft.com/services/event-hubs/)e exportá-los para [do Log Analytics](https://azure.microsoft.com/services/log-analytics/), ou usar os serviços de terceiros 3ª.
+[O Azure Monitor](../../azure-monitor/overview.md) habilita você a monitorar métricas e logs de diagnóstico que ajudam você a entende como estão o desempenho de seus aplicativos. Todos os dados coletados pelo Azure Monitor se encaixa em um dos dois tipos fundamentais, métricas e logs. Você pode monitorar os logs de diagnóstico dos serviços de mídia e criar alertas e notificações para os logs e métricas coletadas. Você pode visualizar e analisar os dados de métricas usando [Metrics explorer](../../azure-monitor/platform/metrics-getting-started.md). Você pode enviar logs para [armazenamento do Azure](https://azure.microsoft.com/services/storage/), transmiti-los para [Hubs de eventos](https://azure.microsoft.com/services/event-hubs/)e exportá-los para [do Log Analytics](https://azure.microsoft.com/services/log-analytics/), ou usar os serviços de terceiros 3ª.
 
 Para obter uma visão detalhada, consulte [métricas do Azure Monitor](../../azure-monitor/platform/data-platform.md) e [logs de diagnóstico do Azure Monitor](../../azure-monitor/platform/diagnostic-logs-overview.md).
 
@@ -34,11 +34,11 @@ As métrica são coletadas em intervalos regulares independentemente da mudança
 
 Atualmente, os seguintes serviços de mídia [pontos de extremidade de Streaming](https://docs.microsoft.com/rest/api/media/streamingendpoints) métricas são emitidas pelo Azure:
 
-|NOME|DESCRIÇÃO|
-|---|---|
-|Requests|Fornece detalhes sobre o número total de solicitações atendidas pelo ponto de extremidade de Streaming.|
-|Saída|Número total de bytes de saída. Por exemplo, bytes transmitidos pelo ponto de extremidade de Streaming.|
-|Latência de ponta a ponta com sucesso| Fornece informações sobre a latência de ponta a ponta de solicitações bem-sucedidas.|
+|Métrica|Display name|Descrição|
+|---|---|---|
+|Requests|Requests|Fornece detalhes sobre o número total de solicitações atendidas pelo ponto de extremidade de Streaming.|
+|Saída|Saída|Número total de bytes de saída. Por exemplo, bytes transmitidos pelo ponto de extremidade de Streaming.|
+|SuccessE2ELatency|Latência de ponta a ponta com sucesso| Fornece informações sobre a latência de ponta a ponta de solicitações bem-sucedidas.|
 
 Por exemplo, para obter as métricas de "Saída" com a CLI, você executaria o seguinte `az monitor metrics` comando da CLI:
 
@@ -54,7 +54,7 @@ Para obter informações sobre como criar alertas de métrica, consulte [criar, 
 
 No momento, você pode obter os logs de diagnóstico a seguir:
 
-|NOME|DESCRIÇÃO|
+|NOME|Descrição|
 |---|---|
 |Solicitação de serviço de distribuição de chaves|Logs que mostram as informações de solicitação de serviço de distribuição de chaves. Para obter mais detalhes, consulte [esquemas](media-services-diagnostic-logs-schema.md).|
 
@@ -76,7 +76,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
     }]'
 ```
 
-Por exemplo: 
+Por exemplo:
 
 ```cli
 az monitor diagnostic-settings create --name amsv3diagnostic \

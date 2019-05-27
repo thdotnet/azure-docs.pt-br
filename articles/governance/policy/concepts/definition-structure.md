@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: b9fe723ca13cbee0e31b14e60a6bd740d2a282df
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 91dd1ebc457bfeed5c9e8d0d62ecc23740ca5d8d
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65779285"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65979542"
 ---
 # <a name="azure-policy-definition-structure"></a>Estrutura de definição da Política do Azure
 
@@ -100,7 +100,8 @@ Um parâmetro tem as seguintes propriedades que são usadas na definição de po
   - `displayName`: O nome amigável exibido no portal para o parâmetro.
   - `strongType`: (opcional) usado ao atribuir a definição de política por meio do portal. Fornece uma lista de reconhecimento de contexto. Para obter mais informações, confira [strongType](#strongtype).
   - `assignPermissions`: (Opcional) Defina como _verdadeira_ para fazer com que o portal do Azure crie atribuições de função durante a atribuição de política. Essa propriedade é útil caso você queira atribuir permissões fora do escopo de atribuição. Há uma atribuição de função por definição de função na política (ou por definição de função em todas as políticas na iniciativa). O valor do parâmetro deve ser um recurso válido ou um escopo.
-- `defaultValue`: (opcional) define o valor do parâmetro em uma atribuição se não houver valor fornecido. Necessário ao atualizar uma definição de política existente que é atribuída.
+- `defaultValue`: (opcional) define o valor do parâmetro em uma atribuição se não houver valor fornecido.
+  Necessário ao atualizar uma definição de política existente que é atribuída.
 - `allowedValues`: (Opcional) Fornece uma matriz de valores que o parâmetro aceita durante a atribuição.
 
 Por exemplo, você pode definir uma definição de política para limitar os locais em que os recursos podem ser implantados. Um parâmetro para essa definição de política pode ser **allowedLocations**. Esse parâmetro deve ser usado por cada atribuição da definição de política para limitar os valores aceitos. O uso de **strongType** fornece uma experiência aprimorada ao concluir a atribuição por meio do portal:
@@ -268,8 +269,7 @@ Há suporte para os seguintes campos:
 - aliases de propriedade - para obter uma lista, confira [Aliases](#aliases).
 
 > [!NOTE]
-> `tags.<tagName>`, `tags[tagName]`, e `tags[tag.with.dots]` ainda são maneiras aceitáveis de declarar um campo de marcas.
-> No entanto, as expressões preferenciais são aquelas listadas acima.
+> `tags.<tagName>`, `tags[tagName]`, e `tags[tag.with.dots]` ainda são maneiras aceitáveis de declarar um campo de marcas. No entanto, as expressões preferenciais são aquelas listadas acima.
 
 #### <a name="use-tags-with-parameters"></a>Usar marcas com parâmetros
 

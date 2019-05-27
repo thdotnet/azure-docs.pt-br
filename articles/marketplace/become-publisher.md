@@ -8,23 +8,23 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 5dcde10430308eaa1df0e6cca279803c3f7f5fe1
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 10d2eb45b6706299336094359f10568e6811e1fb
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64935660"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967721"
 ---
 # <a name="become-a-cloud-marketplace-publisher"></a>Torne-se um editor do Marketplace de nuvem
 
 Este artigo aborda o registro como um editor do marketplace de nuvem. Dependendo da sua opção de publicação selecionada e sua associação atual no Microsoft Partner Network, algumas das etapas a seguir podem não ser necessárias. Uma vez registrado, você poderá criar ofertas do marketplace para o Azure Marketplace ou o AppSource.
 
 
-|  | Etapa do registro | Duration | Detalhes |  
+|  | Etapa do registro | Duração | Detalhes |  
 |:--- |:--- |:--- |:--- |  
 | 1 | Registrar-se no Microsoft Partner Network | 15 min | [Registrar-se no Microsoft Partner Network](https://docs.microsoft.com/azure/marketplace/become-publisher#1-register-in-microsoft-partner-network) |  
 | 2 | Criar uma conta Microsoft <ul>(necessário para as ofertas de transação do Azure Marketplace, recomendado para outros)</ul> | 15 min | [Criar uma ID da Microsoft](https://docs.microsoft.com/azure/marketplace/become-publisher#2-create-a-microsoft-account) |  
-| 3 | Enviar o formulário de registro do marketplace | 15 min | [Enviar o formulário de nominação do Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher#3-submit-the-marketplace-registration-form) |  
+| 3 | Criar uma conta no Partner Center | 15 min | [Criar uma conta no Partner Center](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) |  
 | 4 |  Entrar no Portal do Cloud Partner | 1 a 3 dias | [Entrar no Portal do Cloud Partner](https://docs.microsoft.com/azure/marketplace/become-publisher#4-sign-into-cloud-partner-portal) |  
 | 5 | Registrar no Centro de Desenvolvedor Microsoft (Centro de Desenvolvedor) (para ofertas de transação do Azure Marketplace) | 5 a 10 dias | [Registrar no Centro de Desenvolvimento](https://docs.microsoft.com/azure/marketplace/become-publisher#5-register-in-dev-center-for-transact-publishing-option-only) |  
 
@@ -59,14 +59,19 @@ Conta Microsoft, por exemplo,  *\@outlook.com ou \@live.com*, é usado para aces
 
 ---
 
-## <a name="3-submit-the-marketplace-registration-form"></a>3. Enviar o formulário de registro do marketplace  
+## <a name="3-create-a-partner-center-account"></a>3. Criar uma conta no Partner Center  
 | 15 min |  
-Preencha este breve [formulário de registro](https://azuremarketplace.microsoft.com/sell/signup) para se tornar um editor do mercado. As informações enviadas neste formulário serão usadas para criar uma conta de editor no Portal do Cloud Partner que permitirá que você crie, publique e gerencie as ofertas do marketplace.
 
-Será solicitado que você inclua as seguintes informações:
-*   Detalhes sobre sua organização, incluindo sua ID do Microsoft Partner Network (que você pode pesquisar no [Partner Center](https://partnercenter.microsoft.com/partner/home) ou no [Partner Membership Center](https://partners.microsoft.com/partnerprogram/PartnerMembershipCenter.aspx))
-*   Uma breve descrição da sua oferta de serviços de consultoria ou aplicativo inicial que você pretende publicar, incluindo o produto ou serviço da Microsoft com sua oferta melhor se alinha
-*   O público-alvo para seu aplicativo ou serviço 
+Após [enviar a solução](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) ao Marketplace, nossa equipe de integração entrará em contato com você para auxiliá-lo na experiência de publicação. Veja como [criar uma conta no Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) para obter mais informações.
+
+<!---
+Complete this brief [registration form](https://azuremarketplace.microsoft.com/sell/signup) to become a marketplace publisher. The information submitted on this form will be used to create a publisher account in the Cloud Partner Portal which will allow you to create, publish, and manage marketplace offers.
+
+You will be asked to include the following information:
+*   Details about your organization, including your Microsoft Partner Network ID (which you can look up in either [Partner Center](https://partnercenter.microsoft.com/partner/home) or [Partner Membership Center](https://partners.microsoft.com/partnerprogram/PartnerMembershipCenter.aspx))
+*   A brief description of your initial app or consulting services offer that you intend to publish, including the Microsoft product or service to which your offer most closely aligns
+*   The target audience for your app or service 
+-->
 
 ---
 ## <a name="4-sign-into-cloud-partner-portal"></a>4. Entrar no Portal do Cloud Partner
@@ -90,10 +95,10 @@ A pessoa realizando o registro no [Centro de Desenvolvimento](https://developer.
 *   Para se registrar para uma conta do [Centro de Desenvolvimento](https://developer.microsoft.com/store/register), [inicie o processo de inscrição aqui](https://developer.microsoft.com/store/register).
 *   Para obter mais informações sobre como criar uma conta Microsoft, visite a seção *Criar uma conta Microsoft*.
  
-Depois de ter concluído o registro no [Centro de Desenvolvimento](https://developer.microsoft.com/store/register) vincule seu Perfil do Cloud Partner à sua conta do [Centro de Desenvolvimento](https://developer.microsoft.com/store/register) (consulte as etapas detalhadas aqui). Esta etapa deve ser concluída antes de publicar sua oferta de transação. 
+Depois de ter concluído a [Centro de desenvolvimento](https://developer.microsoft.com/store/register) registro, vincular seu perfil do parceiro de nuvem com sua [Centro de desenvolvimento](https://developer.microsoft.com/store/register) conta ([consulte detalhada as etapas aqui](https://docs.microsoft.com/en-us/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-manage-publisher-profile)). Esta etapa deve ser concluída antes de publicar sua oferta de transação. 
 
 >[!Note]
->Para renunciar ao valor de US$ 99,00 de registro no Centro de Desenvolvedores, preencha o [formulário de registro do marketplace](https://azuremarketplace.microsoft.com/sell/signup) e você receberá um email contendo seu código promocional. 
+>Para renunciar ao valor de US$ 99,00 de registro no Centro de Desenvolvedores, preencha o [formulário de registro do marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) e você receberá um email contendo seu código promocional. Veja como [criar uma conta no Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) para obter mais informações.
 
 >[!Important]
 >Antes de criar uma conta do Centro de Desenvolvedor Microsoft, verifique se sua organização já não tem uma conta do Centro de Desenvolvedor para evitar contas duplicadas. Para obter mais informações, visite a seção [Registrar no Dev Center](https://docs.microsoft.com/azure/marketplace/register-dev-center).

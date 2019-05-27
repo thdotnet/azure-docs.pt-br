@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: c11d6519986cf7a0e70d1fe004ef527c3df247d5
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: c98229a28f31ff715f252dc3915ca690e99245ff
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59277707"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65979522"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Entender a Configuração de Convidado do Azure Policy
 
@@ -63,13 +63,13 @@ A tabela a seguir mostra uma lista das ferramentas locais usadas em cada sistema
 
 ### <a name="validation-frequency"></a>Frequência de validação
 
-O cliente de Configuração Convidado verifica o novo conteúdo a cada 5 minutos. Depois que uma atribuição de convidado for recebida, as configurações serão verificadas em um intervalo de 15 minutos. Os resultados são enviados ao provedor de recursos de configuração do convidado assim que a auditoria é concluída. Quando ocorre um [gatilho de avaliação](../how-to/get-compliance-data.md#evaluation-triggers) de política, o estado do computador é gravado no provedor de recursos de Configuração do Convidado. Isso faz com que a Política do Azure avalie as propriedades do Azure Resource Manager. Uma avaliação de Política sob demanda recupera o valor mais recente do provedor de recursos de Configuração do Convidado. No entanto, ele não dispara uma nova auditoria da configuração dentro da máquina virtual.
+O cliente de Configuração Convidado verifica o novo conteúdo a cada 5 minutos. Depois que uma atribuição de convidado for recebida, as configurações serão verificadas em um intervalo de 15 minutos. Os resultados são enviados ao provedor de recursos de configuração do convidado assim que a auditoria é concluída. Quando ocorre um [gatilho de avaliação](../how-to/get-compliance-data.md#evaluation-triggers) de política, o estado do computador é gravado no provedor de recursos de Configuração do Convidado. Isso faz com que a Política do Azure avalie as propriedades do Azure Resource Manager. Uma avaliação de política do Azure sob demanda recupera o valor mais recente do provedor de recursos de configuração do convidado. No entanto, ele não dispara uma nova auditoria da configuração dentro da máquina virtual.
 
 ### <a name="supported-client-types"></a>Tipos de clientes com suporte
 
 A tabela a seguir mostra uma lista de sistemas operacionais com suporte em imagens do Azure:
 
-|Publicador|NOME|Versões|
+|Editor|NOME|Versões|
 |-|-|-|
 |Canônico|Ubuntu Server|14.04, 16.04, 18.04|
 |Credativ|Debian|8, 9|
@@ -80,7 +80,7 @@ A tabela a seguir mostra uma lista de sistemas operacionais com suporte em image
 |Suse|SLES|12 SP3|
 
 > [!IMPORTANT]
-> Configuração de convidado pode fazer a auditoria de nós que executam um sistema operacional com suporte.  Se você quiser auditar máquinas virtuais que usam uma imagem personalizada, você precisa duplicar a **DeployIfNotExists** definição e modificar as **se** seção para incluir as propriedades de imagem.
+> Configuração de convidado pode fazer a auditoria de nós que executam um sistema operacional com suporte. Se você quiser auditar máquinas virtuais que usam uma imagem personalizada, você precisa duplicar a **DeployIfNotExists** definição e modificar as **se** seção para incluir as propriedades de imagem.
 
 ### <a name="unsupported-client-types"></a>Tipos de clientes sem suporte
 
@@ -93,9 +93,7 @@ Para se comunicar com o provedor de recursos de configuração de convidado no A
 Para listas de endereços IP, você pode baixar [intervalos de IP de Datacenter do Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Esse arquivo é atualizado semanalmente e tem os intervalos atualmente implantados e as alterações futuras nos intervalos de IP. Você só precisará permitir o acesso de saída para os IPs nas regiões em que suas VMs são implantadas.
 
 > [!NOTE]
-> O arquivo XML do endereço IP do centro de dados do Azure lista os intervalos de endereços IP que são usados nos centros de dados do Microsoft Azure. O arquivo inclui intervalos de computação, SQL e armazenamento.
-> Um arquivo atualizado é postado semanalmente. O arquivo reflete os intervalos atualmente implantados e quaisquer alterações futuras para os intervalos de IP. Novos intervalos que aparecem no arquivo não são usados nos centros de dados por pelo menos uma semana.
-> É uma boa ideia fazer o download do novo arquivo XML toda semana. Em seguida, atualize seu site para identificar corretamente os serviços em execução no Azure. Os usuários do Azure ExpressRoute devem observar que esse arquivo é usado para atualizar o anúncio BGP (Border Gateway Protocol) do espaço do Azure na primeira semana de cada mês.
+> O arquivo XML do endereço IP do centro de dados do Azure lista os intervalos de endereços IP que são usados nos centros de dados do Microsoft Azure. O arquivo inclui intervalos de computação, SQL e armazenamento. Um arquivo atualizado é postado semanalmente. O arquivo reflete os intervalos atualmente implantados e quaisquer alterações futuras para os intervalos de IP. Novos intervalos que aparecem no arquivo não são usados nos centros de dados por pelo menos uma semana. É uma boa ideia fazer o download do novo arquivo XML toda semana. Em seguida, atualize seu site para identificar corretamente os serviços em execução no Azure. Os usuários do Azure ExpressRoute devem observar que esse arquivo é usado para atualizar o anúncio BGP (Border Gateway Protocol) do espaço do Azure na primeira semana de cada mês.
 
 ## <a name="guest-configuration-definition-requirements"></a>Requisitos de definição da Configuração de Convidado
 
@@ -140,7 +138,7 @@ Exemplos de convidado de configuração de política estão disponíveis nos seg
 ## <a name="next-steps"></a>Próximas etapas
 
 - Examine os exemplos na [exemplos do Azure Policy](../samples/index.md).
-- Revisar a [Estrutura de definição de política](definition-structure.md).
+- Revise a [estrutura de definição do Azure Policy](definition-structure.md).
 - Revisar [Compreendendo os efeitos da política](effects.md).
 - Entender como [criar políticas de forma programática](../how-to/programmatically-create.md).
 - Saiba como [obter dados de conformidade](../how-to/getting-compliance-data.md).

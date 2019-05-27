@@ -6,13 +6,13 @@ manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 08/24/2019
-ms.author: rayne
-ms.openlocfilehash: 5fac369f15edb3ef0be31d3dc7d7434104c18dfe
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.author: raynew
+ms.openlocfilehash: f3ba08bc1d557d53bca2421b5052f496c740b185
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64928161"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969330"
 ---
 # <a name="monitor-the-process-server"></a>Monitorar o servidor de processo
 
@@ -53,15 +53,15 @@ O servidor de processo gera um número de alertas de integridade resumidos na ta
 
 **Tipo de alerta** | **Detalhes**
 --- | ---
-![Healthy][green] | Servidor de processo está conectado e íntegro.
+![Adequado][green] | Servidor de processo está conectado e íntegro.
 ![Aviso][yellow] | Utilização de CPU > 80% nos últimos 15 minutos
 ![Aviso][yellow] | Uso de memória > 80% nos últimos 15 minutos
 ![Aviso][yellow] | Cache de espaço livre de pasta < 30% nos últimos 15 minutos
 ![Aviso][yellow] | Serviços de servidor de processo não estão em execução nos últimos 15 minutos
-![Crítico][red] | Utilização de CPU > 95% nos últimos 15 minutos
-![Crítico][red] | Uso de memória > 95% nos últimos 15 minutos
-![Crítico][red] | Cache de espaço livre de pasta < 25% nos últimos 15 minutos
-![Crítico][red] | Não há pulsação do servidor de processo por 15 minutos.
+![Crítica][red] | Utilização de CPU > 95% nos últimos 15 minutos
+![Crítica][red] | Uso de memória > 95% nos últimos 15 minutos
+![Crítica][red] | Cache de espaço livre de pasta < 25% nos últimos 15 minutos
+![Crítica][red] | Não há pulsação do servidor de processo por 15 minutos.
 
 ![Chave de tabela](./media/vmware-physical-azure-monitor-process-server/table-key.png)
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 04/10/2019
 ms.author: aschhab
-ms.openlocfilehash: 22996b277aba96cbbfedbb3e9cc67644d1a535ca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: abef7815effcf420c8a0065ed46ce3c16c19ebe0
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60714163"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991751"
 ---
 # <a name="get-started-with-service-bus-queues"></a>Introdução às filas do Barramento de Serviço
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
@@ -387,9 +387,12 @@ Para receber as mensagens enviadas por você, crie outro aplicativo de console .
     ```
 4. Execute o programa e verifique o portal novamente. Observe que os valores **Contagem de Mensagens Ativas** e **Atuais** agora são **0**.
    
-    ![Comprimento da fila][queue-message-receive]
+    ![Tamanho da fila][queue-message-receive]
 
 Parabéns! Agora você criou uma fila, enviou um conjunto de mensagens para ela e recebeu essas mensagens da mesma fila.
+
+> [!NOTE]
+> Você pode gerenciar recursos do barramento de serviço com [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). O Service Bus Explorer permite aos usuários para se conectar a um namespace do barramento de serviço e administrar entidades de mensagens de uma maneira fácil. A ferramenta fornece recursos avançados, como a funcionalidade de importação/exportação ou a capacidade de testar tópico, filas, assinaturas, serviços de retransmissão, os hubs de notificação e os hubs de eventos. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

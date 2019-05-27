@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: magattus
 ms.custom: ''
-ms.openlocfilehash: afadef8b29927f909af5be1e1204180724258b74
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 956df17c821b86d95b1d87c3c8d8197bab7a95be
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60323972"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955272"
 ---
 # <a name="set-up-failover-across-multiple-azure-cdn-endpoints-with-azure-traffic-manager"></a>Configurar o failover em vários pontos de extremidade de CDN do Azure com o Gerenciador de Tráfego do Azure
 
@@ -62,13 +62,13 @@ Depois de configurar seus perfis do CDN e do Gerenciador de Tráfego, siga estas
 
      a. Para a primeira entrada CNAME, mapeie seu domínio personalizado, com o subdomínio cdnverify, para o seu ponto de extremidade CDN. Essa entrada é uma etapa obrigatória para registrar o domínio personalizado no ponto de extremidade da CDN que você adicionou ao Gerenciador de Tráfego na etapa 2.
 
-      Por exemplo:  
+      Por exemplo: 
 
       `cdnverify.cdndemo101.dustydogpetcare.online  CNAME  cdnverify.cdndemo101akamai.azureedge.net`  
 
     b. Para a segunda entrada CNAME, mapeie seu domínio personalizado, sem o subdomínio cdnverify, para o seu ponto de extremidade CDN. Essa entrada mapeia o domínio personalizado ao Gerenciador de Tráfego. 
 
-      Por exemplo:  
+      Por exemplo: 
       
       `cdndemo101.dustydogpetcare.online  CNAME  cdndemo101.trafficmanager.net`   
 
@@ -80,10 +80,14 @@ Depois de configurar seus perfis do CDN e do Gerenciador de Tráfego, siga estas
 2.  Do seu perfil de CDN do Azure, selecione o primeiro ponto de extremidade do CDN (Akamai). Selecione **Adicionar domínio personalizado** e de entrada *cdndemo101.dustydogpetcare.online*. Verifique se a marca de seleção para validar o domínio personalizado está verde. 
 
     A CDN do Azure usa o subdomínio *cdnverify* para validar o mapeamento de DNS para concluir este processo de registro. Para obter mais informações, consulte [criar um registro DNS CNAME](cdn-map-content-to-custom-domain.md#create-a-cname-dns-record). Esta etapa permite que a CDN do Azure reconheça o domínio personalizado para que ele possa responder a suas solicitações.
+    
+ > [!NOTE]
+    > Para habilitar o SSL em um **Azure CDN da Akamai** perfis, você deve diretamente cname do domínio personalizado para seu ponto de extremidade. ainda não há suporte para cdnverify para habilitar o SSL. 
+    >
 
 3.  Retorne ao site do provedor de domínio do seu domínio personalizado e atualize o primeiro mapeamento de DNS criado para que o domínio personalizado seja mapeado para o segundo ponto de extremidade do CDN.
                              
-    Por exemplo:  
+    Por exemplo: 
 
     `cdnverify.cdndemo101.dustydogpetcare.online  CNAME  cdnverify.cdndemo101verizon.azureedge.net`  
 

@@ -4,16 +4,16 @@ description: 'Guia de design de Tabela do Armazenamento do Azure: Criar tabelas 
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 05/21/2019
 author: wmengmsft
 ms.author: wmeng
 ms.custom: seodec18
-ms.openlocfilehash: 84749332c5b7ab5fec2905c0fc36d89863adc3d2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: af155b5adb2e4b45412a8b84818852ed1b1c5e72
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60579176"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65966101"
 ---
 # <a name="azure-storage-table-design-guide-designing-scalable-and-performant-tables"></a>Guia de design de Tabela do Armazenamento do Azure: Criar tabelas escalonáveis e de alto desempenho
 
@@ -47,8 +47,8 @@ O exemplo a seguir mostra uma estrutura de tabela simples para armazenar entidad
 <td>
 <table>
 <tr>
-<th>Nome</th>
-<th>Sobrenome</th>
+<th>FirstName</th>
+<th>LastName</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -67,8 +67,8 @@ O exemplo a seguir mostra uma estrutura de tabela simples para armazenar entidad
 <td>
 <table>
 <tr>
-<th>Nome</th>
-<th>Sobrenome</th>
+<th>FirstName</th>
+<th>LastName</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -82,7 +82,7 @@ O exemplo a seguir mostra uma estrutura de tabela simples para armazenar entidad
 </tr>
 <tr>
 <td>Marketing</td>
-<td>department</td>
+<td>Departamento</td>
 <td>2014-08-22T00:50:30Z</td>
 <td>
 <table>
@@ -104,8 +104,8 @@ O exemplo a seguir mostra uma estrutura de tabela simples para armazenar entidad
 <td>
 <table>
 <tr>
-<th>Nome</th>
-<th>Sobrenome</th>
+<th>FirstName</th>
+<th>LastName</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -200,12 +200,12 @@ Os exemplos a seguir pressupõem que o serviço Tabela é armazenar entidades de
 
 | *Nome da coluna* | *Tipo de dados* |
 | --- | --- |
-| **PartitionKey** (nome de departamento) |Cadeia de caracteres |
-| **RowKey** (Id do funcionário) |Cadeia de caracteres |
-| **Nome** |Cadeia de caracteres |
-| **Sobrenome** |Cadeia de caracteres |
-| **Idade** |Número inteiro |
-| **EmailAddress** |Cadeia de caracteres |
+| **PartitionKey** (nome de departamento) |String |
+| **RowKey** (Id do funcionário) |String |
+| **Nome** |String |
+| **Sobrenome** |String |
+| **Idade** |Integer |
+| **EmailAddress** |String |
 
 A seção anterior, Visão geral do serviço Tabela do Azure, descreve alguns dos principais recursos do serviço Tabela do Azure, que têm uma influência direta no design para consulta. Isso resulta nas seguintes diretrizes gerais para a criação de consultas do serviço Tabela. A sintaxe de filtro usada nos exemplos a seguir é proveniente da API REST do serviço Tabela. Para obter mais informações, veja [Consultar Entidades](https://msdn.microsoft.com/library/azure/dd179421.aspx).  
 
@@ -653,7 +653,7 @@ Em um banco de dados relacional, você geralmente normaliza dados para remover a
 ![Entidade de departamento e funcionário][16]
 
 #### <a name="solution"></a>Solução
-Em vez de armazenar os dados em duas entidades separadas, desnormalize os dados e mantenha uma cópia dos detalhes do gerente na entidade de departamento. Por exemplo:   
+Em vez de armazenar os dados em duas entidades separadas, desnormalize os dados e mantenha uma cópia dos detalhes do gerente na entidade de departamento. Por exemplo:  
 
 ![Entidade Departamento desnormalizada e combinada][17]
 
@@ -1122,8 +1122,8 @@ O serviço Tabela é um armazenamento de tabela *sem esquema* , o que significa 
 <td>
 <table>
 <tr>
-<th>Nome</th>
-<th>Sobrenome</th>
+<th>FirstName</th>
+<th>LastName</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1142,8 +1142,8 @@ O serviço Tabela é um armazenamento de tabela *sem esquema* , o que significa 
 <td>
 <table>
 <tr>
-<th>Nome</th>
-<th>Sobrenome</th>
+<th>FirstName</th>
+<th>LastName</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1162,7 +1162,7 @@ O serviço Tabela é um armazenamento de tabela *sem esquema* , o que significa 
 <td>
 <table>
 <tr>
-<th>DepartmentName</th>
+<th>Nome do Departamento</th>
 <th>EmployeeCount</th>
 </tr>
 <tr>
@@ -1179,8 +1179,8 @@ O serviço Tabela é um armazenamento de tabela *sem esquema* , o que significa 
 <td>
 <table>
 <tr>
-<th>Nome</th>
-<th>Sobrenome</th>
+<th>FirstName</th>
+<th>LastName</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1215,8 +1215,8 @@ Cada entidade deve ter ainda os valores de **PartitionKey**, **RowKey** e **Time
 <table>
 <tr>
 <th>EntityType</th>
-<th>Nome</th>
-<th>Sobrenome</th>
+<th>FirstName</th>
+<th>LastName</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1237,8 +1237,8 @@ Cada entidade deve ter ainda os valores de **PartitionKey**, **RowKey** e **Time
 <table>
 <tr>
 <th>EntityType</th>
-<th>Nome</th>
-<th>Sobrenome</th>
+<th>FirstName</th>
+<th>LastName</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1259,11 +1259,11 @@ Cada entidade deve ter ainda os valores de **PartitionKey**, **RowKey** e **Time
 <table>
 <tr>
 <th>EntityType</th>
-<th>DepartmentName</th>
+<th>Nome do Departamento</th>
 <th>EmployeeCount</th>
 </tr>
 <tr>
-<td>department</td>
+<td>Departamento</td>
 <td></td>
 <td></td>
 </tr>
@@ -1278,8 +1278,8 @@ Cada entidade deve ter ainda os valores de **PartitionKey**, **RowKey** e **Time
 <table>
 <tr>
 <th>EntityType</th>
-<th>Nome</th>
-<th>Sobrenome</th>
+<th>FirstName</th>
+<th>LastName</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1515,7 +1515,7 @@ Neste exemplo assíncrono, você pode ver as seguintes alterações da versão s
 
 O aplicativo cliente pode chamar vários métodos assíncronos como esse, e cada invocação de método será executado em um thread separado.  
 
-### <a name="credits"></a>Credits
+### <a name="credits"></a>Créditos
 Gostaríamos de agradecer os seguintes membros da equipe do Azure por suas contribuições: Dominic Betts, Jason Hogg, Jean Ghanem, Jai Haridas, Jeff Irwin, Vamshidhar Kommineni, Vinay Shah e Serdar Ozler, bem como Tom Hollander da Microsoft DX. 
 
 Também gostaríamos de agradecer aos seguintes MVPs da Microsoft por seus valiosos comentários durante os ciclos de revisão: Igor Papirov e Edward Bakker.

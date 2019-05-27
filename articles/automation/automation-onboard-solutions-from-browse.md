@@ -9,20 +9,20 @@ ms.date: 04/11/2019
 ms.topic: article
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: df59342bebae3ac0f6e80e5b58f429fedf3c3336
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e6359d57a1f4cce6ec89fd76ef343b515cafae6e
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60738959"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66133133"
 ---
 # <a name="enable-update-management-change-tracking-and-inventory-solutions-on-multiple-vms"></a>Habilitar o gerenciamento de atualizações, o controle de alterações e as soluções de inventário em várias VMs
 
 A Automação do Azure fornece soluções para gerenciar atualizações de segurança do sistema operacional, controlar alterações e inventariar o que está instalado em seus computadores. Há várias maneiras para integrar máquinas, você pode integrar a solução [de uma máquina virtual](automation-onboard-solutions-from-vm.md), da sua [conta de automação](automation-onboard-solutions-from-automation-account.md), durante a navegação de máquinas virtuais ou pelo [runbook](automation-onboard-solutions.md). Este artigo aborda essas soluções de integração ao procurar máquinas virtuais no Azure.
 
-## <a name="log-in-to-azure"></a>Fazer logon no Azure
+## <a name="sign-in-to-azure"></a>Entrar no Azure
 
-Fazer logon no Azure em https://portal.azure.com
+Entre no Azure em https://portal.azure.com
 
 ## <a name="enable-solutions"></a>Habilitar soluções
 
@@ -59,27 +59,10 @@ Se o workspace selecionado não estiver vinculado a uma Conta de Automação, vo
 
 ![Nenhum workspace](media/automation-onboard-solutions-from-browse/no-workspace.png)
 
-Ao habilitar soluções, somente determinadas regiões têm suporte para vincular um espaço de trabalho do Log Analytics e uma Conta de Automação.
-
-A tabela abaixo mostra os mapeamentos com suporte:
-
-|**Região do Workspace do Log Analytics**|**Região da Automação do Azure**|
-|---|---|
-|AustraliaSoutheast|AustraliaSoutheast|
-|Canadá Central|Canadá Central|
-|CentralIndia|CentralIndia|
-|EastUS<sup>1</sup>|EastUS2|
-|JapanEast|JapanEast|
-|SoutheastAsia|SoutheastAsia|
-|WestCentralUS<sup>2</sup>|WestCentralUS<sup>2</sup>|
-|WestEurope|WestEurope|
-|UKSouth|UKSouth|
-|USGovVirginia|USGovVirginia|
-|EastUS2EUAP<sup>1</sup>|CentroEUAEUAP|
-
-<sup>1</sup> mapeamentos EastUS2EUAP e EastUS para espaços de trabalho do Log Analytics para contas de automação não são um mapeamento de região para região exato, mas é o mapeamento correto.
-
-<sup>2</sup> devido a restrições de capacidade a região não está disponível durante a criação de novos recursos. Isso inclui contas de automação e o Log Analytics para espaços de trabalho. No entanto, os recursos vinculados pré-existentes na região devem continuam a funcionar.
+> [!NOTE]
+> Ao habilitar soluções, somente determinadas regiões têm suporte para vincular um espaço de trabalho do Log Analytics e uma Conta de Automação.
+>
+> Para obter uma lista de pares de mapeamento com suporte, consulte [mapeamento da região do espaço de trabalho de conta de automação e o Log Analytics](how-to/region-mappings.md).
 
 Desmarque a caixa de seleção ao lado de qualquer máquina virtual que você não deseja habilitar. Máquinas virtuais que não podem ser habilitadas já estão desmarcadas.
 
@@ -120,9 +103,11 @@ Se você tiver usado a solução Iniciar/parar VMs durante os horários fora de 
 
 * Iniciar e parar agendas de runbook da VM
 * Iniciar e parar runbooks da VM
-* Variáveis
+* variáveis
 
-## <a name="troubleshooting"></a>Solução de problemas
+Como alternativa, você também pode desvincular seu espaço de trabalho de sua conta de automação do espaço de trabalho do Log Analytics. No espaço de trabalho, selecione **conta de automação** sob **recursos relacionados**. Na página conta de automação, selecione **desvincular conta**.
+
+## <a name="troubleshooting"></a>solução de problemas
 
 Ao integrar várias máquinas, pode haver máquinas que mostrem como **Não é possível ativar**. Há diferentes razões que algumas máquinas não podem ser ativadas. As seções a seguir mostram possíveis razões para o estado **Impossível ativar** em uma VM ao tentar integrar.
 
@@ -152,7 +137,7 @@ Ao integrar várias máquinas, pode haver máquinas que mostrem como **Não é p
 
 **Causa**: máquinas virtuais que usam o modelo de implantação clássico não são suportadas.
 
-**Solução**: migre a máquina virtual para o modelo de implantação do gerenciador de recursos. Para aprender como fazer isso, consulte [ Migrar recursos do modelo de implantação clássico ](../virtual-machines/windows/migration-classic-resource-manager-overview.md).
+**Solução**: Migre a máquina virtual para o modelo de implantação do Resource Manager. Para aprender como fazer isso, consulte [ Migrar recursos do modelo de implantação clássico ](../virtual-machines/windows/migration-classic-resource-manager-overview.md).
 
 ### <a name="vm-is-stopped-deallocated"></a>A VM está parada. (deslocada)
 

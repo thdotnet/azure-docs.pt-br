@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
 ms.author: cithomas
-ms.openlocfilehash: ca842ce46a58dafa87581b77bcbd802191f7fcd1
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: fd5a16334fff0319d7993fb2403a48d1777f6bce
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65511024"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955328"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>ApplicationInsightsLoggerProvider para logs de ILogger do .NET Core
 
@@ -437,7 +437,7 @@ public class MyController : ApiController
 ```
 
 > [!NOTE]
-> Se você usar o pacote de aspnetcore para habilitar o Application Insights, modificar este código para obter `TelemetryClient` diretamente no construtor. Por exemplo, consulte [nestas perguntas Frequentes](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core-no-visualstudio#frequently-asked-questions).
+> Se você usar o pacote de aspnetcore para habilitar o Application Insights, modificar este código para obter `TelemetryClient` diretamente no construtor. Por exemplo, consulte [nestas perguntas Frequentes](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core#frequently-asked-questions).
 
 
 ### <a name="what-application-insights-telemetry-type-is-produced-from-ilogger-logs-or-where-can-i-see-ilogger-logs-in-application-insights"></a>Que tipo de telemetria do Application Insights é produzido a partir de logs de ILogger? Ou, em que consulte que ILogger logs no Application Insights?

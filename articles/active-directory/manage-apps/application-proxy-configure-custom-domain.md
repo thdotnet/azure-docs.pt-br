@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e258670e863ff195190bae5cd50537e50d40d942
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 4cc742a6b1a7f3fc78e8639206e06c2937f00c30
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65825649"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956922"
 ---
 # <a name="working-with-custom-domains-in-azure-ad-application-proxy"></a>Trabalhando com domínios personalizados no Proxy de Aplicativo do AD do Azure
 
@@ -71,7 +71,9 @@ Quando você tiver esses três requisitos prontos, siga estas etapas para config
 ### <a name="certificate-format"></a>Formato do certificado
 Não há nenhuma restrição em relação aos métodos de assinatura do certificado. A Criptografia de Curva Elíptica (ECC), o Nome Alternativo da Entidade (SAN) e outros tipos de certificado são compatíveis. 
 
-Você pode usar um certificado curinga, desde que o curinga corresponda à URL externa desejada. 
+Você pode usar um certificado curinga, desde que o curinga corresponda à URL externa desejada.
+
+Você não pode usar um certificado emitido por sua própria infraestrutura de chave pública (PKI) devido a considerações de segurança.
 
 ### <a name="changing-the-domain"></a>Alterando o domínio
 Todos os domínios verificados aparecem na lista suspensa de URL Externa do seu aplicativo. Para alterar o domínio, apenas atualize esse campo para o aplicativo. Se o domínio desejado não estiver na lista, [adicione-o como um domínio verificado](../fundamentals/add-custom-domain.md). Se você selecionar um domínio que não tenha um certificado associado, siga as etapas 5 a 7 para adicionar o certificado. Em seguida, certifique-se de atualizar o registro DNS para redirecionar da nova URL externa. 

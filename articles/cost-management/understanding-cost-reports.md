@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 04/05/2019
+ms.date: 05/20/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: benshy
 ms.custom: seodec18
-ms.openlocfilehash: 6f856aeae74ea285cd6a0326fd225e454a1cbe43
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 91dc386641c758c42f64afff387d0463d1445f1d
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61003690"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969069"
 ---
 # <a name="understanding-cloudyn-cost-management-reports"></a>Noções básicas dos relatórios de gerenciamento de custos do Cloudyn
 
@@ -66,14 +66,14 @@ Cada área numerada na imagem anterior é descrita detalhadamente nas seguintes 
     ![Segunda lista de exemplo de marcas que você pode agrupar por](./media/understanding-cost-reports/groups-tags02.png)
 
     Nos relatórios de Alocação de Custo, os grupos em categorias de grupo baseadas em marcas podem incluir:
-      - Marcas
+      - tags
       - marcas do grupo de recursos
       - Marcas de entidade de custo do Cloudyn
       - Categorias de marca de assinatura para fins de alocação de custo
 
    Os exemplos podem incluir:
    - Centro de custo
-   - department
+   - Departamento
    - Aplicativo
    - Ambiente
    - Código de custo
@@ -144,10 +144,10 @@ Cada área numerada na imagem anterior é descrita detalhadamente nas seguintes 
 8. **Resolução**
 
     Use Resolução para selecionar a resolução de tempo dentro do intervalo de datas selecionado. Sua resolução de tempo determina como as unidades são exibidas no relatório, e pode ser:
-    - Diário
-    - Semanal
-    - Mensal
-    - Trimestral
+    - Diariamente
+    - Semanalmente
+    - Mensalmente
+    - Trimestralmente
     - Anual
 
 9. **Regras de alocação**

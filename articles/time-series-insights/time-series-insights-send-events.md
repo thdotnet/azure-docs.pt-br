@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2842a365cdf25a6b19f655f6397d62ecb9a723b0
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 48524020940149f6c67f4859f23c03eea140454b
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406813"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991488"
 ---
 # <a name="send-events-to-a-time-series-insights-environment-by-using-an-event-hub"></a>Enviar eventos para um ambiente do Time Series Insights usando um hub de eventos
 
@@ -28,31 +28,31 @@ Este artigo explica como criar e configurar um hub de eventos em Hubs de eventos
 1. Para saber como criar um hub de eventos, confira a [documentação dos Hubs de Eventos](https://docs.microsoft.com/azure/event-hubs/).
 1. Na caixa de pesquisa, pesquise **Hubs de Eventos**. Na lista retornada, selecione **Hubs de Eventos**.
 1. Selecione seu hub de eventos.
-1. Quando você cria um hub de eventos, está na verdade criando um namespace de hub de eventos. Se você ainda não criou um hub de eventos dentro do namespace, crie um hub de eventos em **Entidades** no menu.  
+1. Quando você cria um hub de eventos, você está criando um namespace de hub de eventos. Se você ainda não criou um hub de eventos dentro do namespace, no menu, em **entidades**, criar um hub de eventos.  
 
     [![Lista de hubs de eventos](media/send-events/updated.png)](media/send-events/updated.png#lightbox)
 
 1. Depois de criar um hub de eventos, selecione-o na lista de hubs de eventos.
-1. No menu, em **Entidades**, selecione **Hubs de Eventos**.
+1. No menu, sob **entidades**, selecione **Hubs de eventos**.
 1. Selecione o nome do hub de eventos para configurá-lo.
 1. Em **Entidades**, selecione **Grupos de consumidores** e selecione **Grupo de Consumidores**.
 
     [![Criar um grupo de consumidores](media/send-events/consumer-group.png)](media/send-events/consumer-group.png#lightbox)
 
-1. Certifique-se de criar um grupo de consumidores que é usado exclusivamente pela sua origem de evento de Análise de Séries Temporais.
+1. Verifique se que você criar um grupo de consumidores é usado exclusivamente pela sua fonte de evento do Time Series Insights.
 
     > [!IMPORTANT]
-    > Verifique se esse grupo de consumidores não é usado por qualquer outro serviço (como um trabalho do Azure Stream Analytics ou outro ambiente do Time Series Insights). Se o grupo de consumidores é usado por outros serviços, as operações de leitura são prejudicadas em relação a esse ambiente e a outros serviços. Se você usar **$Default** como o grupo de consumidores, outros leitores poderão vir a reutilizar seu grupo de consumidores.
+    > Verifique se que esse grupo de consumidores não é usado por qualquer outro serviço, como um trabalho do Azure Stream Analytics ou outro ambiente do Time Series Insights. Se o grupo de consumidores é usado por outros serviços, as operações de leitura são prejudicadas em relação a esse ambiente e a outros serviços. Se você usar **$Default** como o grupo de consumidores, outros leitores poderão vir a reutilizar seu grupo de consumidores.
 
-1. No menu, em **Configurações**, selecione **Políticas de acesso compartilhado** e selecione **Adicionar**.
+1. No menu, sob **as configurações**, selecione **políticas de acesso compartilhado**e, em seguida, selecione **adicionar**.
 
     [![Selecione políticas de acesso compartilhado e, em seguida, selecione o botão Adicionar](media/send-events/shared-access-policy.png)](media/send-events/shared-access-policy.png#lightbox)
 
-1. No painel **Adicionar nova política de acesso compartilhado**, crie um acesso compartilhado denominado **MySendPolicy**. Você usará essa política de acesso compartilhado para enviar eventos nos exemplos em C# mais adiante neste artigo.
+1. No painel **Adicionar nova política de acesso compartilhado**, crie um acesso compartilhado denominado **MySendPolicy**. Use essa política de acesso compartilhado para enviar eventos no C# exemplos mais adiante neste artigo.
 
     [![Na caixa de nome de política, insira MySendPolicy](media/send-events/shared-access-policy-2.png)](media/send-events/shared-access-policy-2.png#lightbox)
 
-1. Em **Declaração**, marque a caixa de seleção **Enviar**.
+1. Sob **declaração**, selecione o **enviar** caixa de seleção.
 
 ## <a name="add-a-time-series-insights-instance"></a>Adicionar uma instância do Time Series Insights
 
@@ -70,7 +70,7 @@ A atualização do Time Series Insights usa instâncias para adicionar dados con
 
 1. Selecione seu hub de eventos.
 
-1. Vá para **Políticas de Acesso Compartilhado** > **RootManageSharedAccessKey**. Copie o valor da **Cadeia de conexão-chave primária**.
+1. Vá para **Políticas de Acesso Compartilhado** > **RootManageSharedAccessKey**. Copie o valor de **chave primária da cadeia de Conexão**.
 
     [![Copie o valor de cadeia de caracteres de conexão de chave primária](media/send-events/sample-code-connection-string.png)](media/send-events/sample-code-connection-string.png#lightbox)
 
@@ -81,7 +81,7 @@ A atualização do Time Series Insights usa instâncias para adicionar dados con
 
 1. Selecione **Clique para iniciar**. O simulador gera uma instância JSON que você pode usar diretamente.
 
-1. Volte ao seu hub de eventos no portal do Azure. Sobre o **visão geral** página, você deve ver os novos eventos que está sendo recebidos pelo hub de eventos.
+1. Volte ao seu hub de eventos no portal do Azure. Sobre o **visão geral** página, você ver os novos eventos que são recebidos pelo hub de eventos.
 
     [![Uma página de visão geral do hub de evento que mostra as métricas para o hub de eventos](media/send-events/telemetry.png)](media/send-events/telemetry.png#lightbox)
 

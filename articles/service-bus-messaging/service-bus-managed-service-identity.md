@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/01/2018
 ms.author: aschhab
-ms.openlocfilehash: abba0e15314387aed09e39f05d9127f346f9c799
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 8477ff8c8ff0bc1629ff4cdc61f7c28c6eed778c
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65228401"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65978808"
 ---
 # <a name="managed-identities-for-azure-resources-with-service-bus"></a>Identidades gerenciadas para recursos do Azure com Barramento de Serviço 
 
@@ -29,7 +29,23 @@ Com identidades gerenciadas, a plataforma do Azure gerencia essa identidade de t
 
 ## <a name="service-bus-roles-and-permissions"></a>Permissões e funções do Barramento de Serviço
 
-Você só pode adicionar uma identidade gerenciada às funções "Proprietário" ou "Colaborador" de um namespace do Barramento de Serviço. Ele concede controle total à identidade em todas as entidades no namespace. No entanto, operações de gerenciamento que alteram a topologia de namespace são inicialmente compatíveis apenas com o Azure Resource Manager. Não é por meio da interface de gerenciamento REST do Barramento de Serviço nativo. Esse suporte também significa que você não pode usar o cliente do .NET Framework [NamespaceManager](/dotnet/api/microsoft.servicebus.namespacemanager) ou o cliente .NET Standard [ManagementClient](/dotnet/api/microsoft.azure.servicebus.management.managementclient) objetos dentro de uma identidade gerenciada.
+Você pode adicionar uma identidade gerenciada para a função "Proprietário de dados do barramento de serviço" de um namespace do barramento de serviço. Ele concede a identidade, controle total (para gerenciamento e operações de dados) em todas as entidades no namespace.
+
+>[!IMPORTANT]
+> Damos suporte anteriormente adicionando uma identidade gerenciada para o **"Proprietário"** ou **"Colaborador"** função.
+>
+> No entanto, privilégios de acesso a dados **"Proprietário"** e **"Colaborador"** função não será respeitada. Se você estivesse usando o **"Proprietário"** ou **"Colaborador"** função, então eles precisarão ser adaptado para utilizar o **"Proprietário dos dados do barramento de serviço"** função.
+
+Para usar a nova função interna, conclua as etapas - abaixo
+
+1. Vá para o [portal do Azure](https://portal.azure.com)
+2. Navegue até o namespace do barramento de serviço em que você configurou no momento, a função "Proprietário" ou "Colaborador".
+3. Clique em "Acesso (IAM)" no menu do painel esquerdo.
+4. Vá para adicionar uma nova atribuição de função como mostrado abaixo
+
+    ![](./media/service-bus-role-based-access-control/ServiceBus_RBAC_SBDataOwner.png)
+
+5. Clique em "Salvar" para salvar a nova atribuição de função.
 
 ## <a name="use-service-bus-with-managed-identities-for-azure-resources"></a>Usar Barramento de Serviço com identidades gerenciadas para recursos do Azure
 
@@ -51,7 +67,7 @@ Depois de habilitar o recurso, uma nova identidade do serviço será criada no A
 
 ### <a name="create-a-new-service-bus-messaging-namespace"></a>Criar um novo namespace das Mensagens do Barramento de Serviço
 
-Em seguida, [crie um namespace das Mensagens do Barramento de Serviço](service-bus-create-namespace-portal.md) em uma das regiões do Azure que tenham suporte para a versão prévia do RBAC: **Leste dos EUA**, **Leste dos EUA 2** ou **Europa Ocidental**. 
+Em seguida, [criar um namespace de mensagens do barramento de serviço](service-bus-create-namespace-portal.md). 
 
 Navegue até a página **Controle de Acesso (IAM)** do namespace no portal e, em seguida, clique em **Adicionar atribuição de função** para adicionar a identidade gerenciada à função **Proprietário**. Para fazer isso, procure o nome do aplicativo Web no campo **Selecionar** do painel **Adicionar permissões** e, em seguida, clique na entrada. Em seguida, clique em **Salvar**.
 

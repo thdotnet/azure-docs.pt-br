@@ -6,14 +6,14 @@ author: sogup
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
-ms.date: 03/22/2019
+ms.date: 05/21/2019
 ms.author: sogup
-ms.openlocfilehash: 9f233af316bd6022b93a7208bf3fae37e913e6af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9d4d1db808446cb010e6551bdcec514fc550d802
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60848173"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65966310"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Perguntas frequentes perguntas-fazer backup de VMs do Azure
 
@@ -24,25 +24,25 @@ Este artigo responde a perguntas comuns sobre como fazer backup de VMs do Azure 
 
 ### <a name="which-vm-images-can-be-enabled-for-backup-when-i-create-them"></a>Quais imagens VM podem ser habilitadas para backup, quando eu criá-los?
 Quando você cria uma VM, você pode habilitar o backup para VMs em execução [sistemas operacionais com suporte](backup-support-matrix-iaas.md#supported-backup-actions)
- 
-### <a name="is-the-backup-cost-included-in-the-vm-cost"></a>É o custo de backup incluído no custo da VM? 
+
+### <a name="is-the-backup-cost-included-in-the-vm-cost"></a>É o custo de backup incluído no custo da VM?
 
 Não. Custos de backup são separados dos custos da VM. Saiba mais sobre [preços de Backup do Azure](https://azure.microsoft.com/pricing/details/backup/).
- 
-### <a name="which-permissions-are-required-to-enable-backup-for-a-vm"></a>Quais permissões são necessárias para habilitar o backup de uma VM? 
 
-Se você for um colaborador VM, você pode habilitar o backup na VM. Se você estiver usando uma função personalizada, você precisará das seguintes permissões para habilitar o backup na VM: 
+### <a name="which-permissions-are-required-to-enable-backup-for-a-vm"></a>Quais permissões são necessárias para habilitar o backup de uma VM?
 
-- Microsoft.RecoveryServices/Vaults/write 
-- Microsoft.RecoveryServices/Vaults/read 
-- Microsoft.RecoveryServices/locations/* 
-- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/*/read 
-- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/read 
-- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/write 
-- Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/write 
-- Microsoft.RecoveryServices/Vaults/backupPolicies/read 
-- Microsoft.RecoveryServices/Vaults/backupPolicies/write 
- 
+Se você for um colaborador VM, você pode habilitar o backup na VM. Se você estiver usando uma função personalizada, você precisará das seguintes permissões para habilitar o backup na VM:
+
+- Microsoft.RecoveryServices/Vaults/write
+- Microsoft.RecoveryServices/Vaults/read
+- Microsoft.RecoveryServices/locations/*
+- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/*/read
+- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/read
+- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/write
+- Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/write
+- Microsoft.RecoveryServices/Vaults/backupPolicies/read
+- Microsoft.RecoveryServices/Vaults/backupPolicies/write
+
 Se seu Cofre de serviços de recuperação e a VM tiverem grupos de recursos diferentes, certifique-se de que ter permissões de gravação no grupo de recursos para o Cofre de serviços de recuperação.  
 
 
@@ -140,3 +140,6 @@ O backup da VM é feito usando as configurações de retenção e agendamento na
 3. Backup habilitado novamente no mesmo ou novo cofre.
 
 Você pode restaurar a VM a partir dos pontos de restauração disponíveis que foram criados antes da operação de migração.
+
+### <a name="is-there-a-limit-on-number-of-vms-that-can-beassociated-with-a-same-backup-policy"></a>Há um limite no número de VMs que podem ser associados uma política de backup mesma?
+Sim, há um limite de 100 VMs que podem ser associados à mesma política de backup no portal. É recomendável que, para mais de 100 VMs, criar várias políticas de backup com o mesmo agendamento ou agenda diferente.

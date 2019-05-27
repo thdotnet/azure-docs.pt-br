@@ -6,13 +6,13 @@ manager: carmonm
 ms.service: site-recovery
 ms.topic: troubleshooting
 ms.date: 04/29/2019
-ms.author: rayne
-ms.openlocfilehash: 0383226853ed86943b73d2b8740825967f3124c9
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.author: raynew
+ms.openlocfilehash: 6e31308800f72d60381f1e4ecd540482ba263851
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65411523"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969358"
 ---
 # <a name="troubleshoot-the-process-server"></a>Solucionar problemas do servidor de processo
 
@@ -20,7 +20,7 @@ O [recuperação de Site](site-recovery-overview.md) servidor de processo é usa
 
 [Saiba mais](vmware-physical-azure-config-process-server-overview.md) sobre o servidor de processo.
 
-## <a name="before-you-start"></a>Antes de iniciar
+## <a name="before-you-start"></a>Antes de começar
 
 Antes de iniciar a solução de problemas:
 

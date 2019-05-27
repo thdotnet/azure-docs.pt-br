@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: ade5d55833f1d63a8d70b6eedb3c3e4bdffe590b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: c4bb06bd4c75dfeb164341d8cc5084030d3a08a7
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59276483"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65979304"
 ---
 # <a name="programmatically-create-policies-and-view-compliance-data"></a>Criar políticas por meio de programação e exibir dados de conformidade
 
-Este artigo orienta você na criação e gerenciamento por meio de programação de políticas. As definições de políticas impõem diferentes regras e efeitos em seus recursos. A imposição garante que os recursos permaneçam em conformidade com seus padrões empresariais e contratos de nível de serviço.
+Este artigo orienta você na criação e gerenciamento por meio de programação de políticas. As definições de política do Azure aplicam diferentes regras e os efeitos sobre seus recursos. A imposição garante que os recursos permaneçam em conformidade com seus padrões empresariais e contratos de nível de serviço.
 
 Para obter informações sobre a conformidade, veja [como obter dados de conformidade](getting-compliance-data.md).
 
@@ -31,7 +31,7 @@ Antes de começar, verifique se os seguintes pré-requisitos são cumpridos:
 
 1. Atualize seu módulo do Azure PowerShell para a versão mais recente. Confira [Instalar o módulo Azure PowerShell](/powershell/azure/install-az-ps) para obter informações detalhadas. Para obter mais informações sobre a versão mais recente, consulte o [Azure PowerShell](https://github.com/Azure/azure-powershell/releases).
 
-1. Registre o provedor de recursos dos Insights de Política usando o Azure PowerShell para validar que sua assinatura funciona com o provedor de recursos. Para registrar um provedor de recursos, você precisa ter permissão para executar a operação de ação de registro para o provedor de recursos. Esta operação está incluída nas funções de Colaborador e de Proprietário. Execute o seguinte comando para registrar o provedor de recursos:
+1. Registre o provedor de recursos de informações de política do Azure usando o Azure PowerShell para validar que a sua assinatura funcione com o provedor de recursos. Para registrar um provedor de recursos, você precisa ter permissão para executar a operação de ação de registro para o provedor de recursos. Esta operação está incluída nas funções de Colaborador e de Proprietário. Execute o seguinte comando para registrar o provedor de recursos:
 
    ```azurepowershell-interactive
    Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
@@ -148,7 +148,7 @@ Use o procedimento a seguir para criar uma definição de política.
 
    Substitua o {subscriptionId} anterior pela ID da sua assinatura ou {managementGroupId} pela ID do seu [grupo de gerenciamento](../../management-groups/overview.md).
 
-   Para obter mais informações sobre a estrutura da consulta, confira [Definições de políticas – criar ou atualizar](/rest/api/resources/policydefinitions/createorupdate) e [Definições de políticas – criar ou atualizar em grupo de gerenciamento](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup)
+   Para obter mais informações sobre a estrutura da consulta, consulte [definições de política do Azure – criar ou atualizar](/rest/api/resources/policydefinitions/createorupdate) e [definições de política – criação ou atualização no grupo de gerenciamento](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup)
 
 Use o procedimento a seguir para criar uma atribuição de política e atribuir a definição de política no nível do grupo de recursos.
 
@@ -230,7 +230,7 @@ Para criar uma definição de política, use o procedimento a seguir:
    - Assinatura – `/subscriptions/{subID}`
    - Grupo de gerenciamento – `/providers/Microsoft.Management/managementGroups/{mgName}`
 
-Você pode obter a ID de definição da política usando o PowerShell com o seguinte comando:
+Você pode obter a ID de definição de política do Azure usando o PowerShell com o seguinte comando:
 
 ```azurecli-interactive
 az policy definition show --name 'Audit Storage Accounts with Open Public Networks'
@@ -244,12 +244,12 @@ A ID de definição de política para a definição de política que você criou
 
 Para obter mais informações sobre como gerenciar políticas de recursos com a CLI do Azure, consulte [Políticas de Recursos da CLI do Azure](/cli/azure/policy?view=azure-cli-latest).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Examine os seguintes artigos para obter mais informações sobre os comandos e consultas neste artigo.
 
 - [Recursos da API REST do Azure](/rest/api/resources/)
 - [Módulos do Azure PowerShell](/powershell/module/az.resources/#policies)
 - [Comandos de Política da CLI do Azure](/cli/azure/policy?view=azure-cli-latest)
-- [Referência da API REST do provedor de recursos de Informações de Política](/rest/api/policy-insights)
-- [Organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md)
+- [Provedor de recursos de informações de política do Azure referência da API REST](/rest/api/policy-insights)
+- [Organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).

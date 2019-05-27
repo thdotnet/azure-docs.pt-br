@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: abnarain
 ms.openlocfilehash: 635b45fe7f0108795c34f51081fa374c604036b2
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59996111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66153263"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Considerações sobre segurança para movimentação de dados no Azure Data Factory
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -135,11 +135,11 @@ A Rede Virtual do Azure é uma representação lógica de sua rede na nuvem. Voc
 
 A tabela a seguir resume as recomendações de configuração de rede e tempo de execução de integração auto-hospedado de acordo com diferentes combinações dos locais de origem e de destino para a movimentação de dados híbridos.
 
-| Fonte      | Destino                              | Configuração de rede                    | Configuração do tempo de execução de integração                |
+| `Source`      | Destino                              | Configuração da rede                    | Configuração do tempo de execução de integração                |
 | ----------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Configuração local | Máquinas virtuais e serviços de nuvem implantados em redes virtuais | VPN IPsec (ponto a site ou site a site) | O tempo de execução de integração auto-hospedado deve ser instalado em uma máquina virtual do Azure na rede virtual.  |
-| Configuração local | Máquinas virtuais e serviços de nuvem implantados em redes virtuais | ExpressRoute (emparelhamento privado)           | O tempo de execução de integração auto-hospedado deve ser instalado em uma máquina virtual do Azure na rede virtual.  |
-| Configuração local | Serviços baseados no Azure que têm um ponto de extremidade público | ExpressRoute (emparelhamento da Microsoft)            | O tempo de execução de integração auto-hospedado pode ser instalado localmente ou em uma máquina virtual do Azure. |
+| Local | Máquinas virtuais e serviços de nuvem implantados em redes virtuais | VPN IPsec (ponto a site ou site a site) | O tempo de execução de integração auto-hospedado deve ser instalado em uma máquina virtual do Azure na rede virtual.  |
+| Local | Máquinas virtuais e serviços de nuvem implantados em redes virtuais | ExpressRoute (emparelhamento privado)           | O tempo de execução de integração auto-hospedado deve ser instalado em uma máquina virtual do Azure na rede virtual.  |
+| Local | Serviços baseados no Azure que têm um ponto de extremidade público | ExpressRoute (emparelhamento da Microsoft)            | O tempo de execução de integração auto-hospedado pode ser instalado localmente ou em uma máquina virtual do Azure. |
 
 As imagens a seguir mostram o uso do tempo de execução de integração auto-hospedado para mover dados entre um banco de dados local e os serviços do Azure usando o ExpressRoute e a VPN IPsec (com a Rede Virtual do Azure):
 
@@ -158,7 +158,7 @@ Em uma empresa, um firewall corporativo é executado no roteador central da orga
 
 A tabela a seguir fornece os requisitos de porta de saída e de domínio dos firewalls corporativos:
 
-| Nomes de domínio                  | Portas de saída | DESCRIÇÃO                              |
+| Nomes de domínio                  | Portas de saída | Descrição                              |
 | ----------------------------- | -------------- | ---------------------------------------- |
 | `*.servicebus.windows.net`    | 443            | Necessárias para que o tempo de execução de integração auto-hospedado se conecte aos serviços de movimentação de dados no Data Factory. |
 | `*.frontend.clouddatahub.net` | 443            | Necessárias para que o tempo de execução de integração auto-hospedado se conecte ao serviço do Data Factory. |
@@ -172,7 +172,7 @@ A tabela a seguir fornece os requisitos de porta de saída e de domínio dos fir
 
 A tabela a seguir fornece os requisitos de porta de entrada do Firewall do Windows:
 
-| Portas de entrada | DESCRIÇÃO                              |
+| Portas de entrada | Descrição                              |
 | ------------- | ---------------------------------------- |
 | 8060 (TCP)    | Exigido pelo cmdlet de criptografia do PowerShell conforme descrito em [Criptografar credenciais para armazenamentos de dados locais no Azure Data Factory](encrypt-credentials-self-hosted-integration-runtime.md), e pelo aplicativo gerenciador de credenciais para definir credenciais com segurança para armazenamentos de dados locais no tempo de execução de integração auto-hospedado. |
 

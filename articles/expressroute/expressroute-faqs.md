@@ -5,15 +5,15 @@ services: expressroute
 author: jaredr80
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 05/12/2019
+ms.date: 05/20/2019
 ms.author: jaredro
 ms.custom: seodec18
-ms.openlocfilehash: e4d4ac45ad0ba9516d863682015b9c07096ae106
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 75c0deaa8bca94349091e3317e4ca70129bb4426
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65794767"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991600"
 ---
 # <a name="expressroute-faq"></a>Perguntas Frequentes sobre ExpressRoute
 
@@ -72,6 +72,7 @@ O ExpressRoute dá suporte a [três domínios de roteamento](expressroute-circui
 * Há suporte para a maioria dos serviços do Azure. Verifique diretamente o serviço que você deseja utilizar para confirmar o suporte.<br><br>
   **NÃO há suporte para os serviços a seguir**:
     * CDN
+    * Porta da frente do Azure
     * Autenticação Multifator
     * Gerenciador de Tráfego
 
@@ -84,6 +85,7 @@ O ExpressRoute dá suporte a [três domínios de roteamento](expressroute-circui
 * [Azure DevOps](https://blogs.msdn.microsoft.com/devops/2018/10/23/expressroute-for-azure-devops/) (comunidade de Serviços Globais do Azure)
 * Há suporte para a maioria dos serviços do Azure. Verifique diretamente o serviço que você deseja utilizar para confirmar o suporte.<br><br>**NÃO há suporte para os serviços a seguir**:
     * CDN
+    * Porta da frente do Azure
     * Autenticação Multifator
     * Gerenciador de Tráfego
 
@@ -220,7 +222,7 @@ Sim. Aceitamos até 4.000 prefixos de rota para emparelhamento privado e 200 par
 
 ### <a name="are-there-restrictions-on-ip-ranges-i-can-advertise-over-the-bgp-session"></a>Há restrições de intervalos de endereços IP que posso anunciar durante a sessão BGP?
 
-Não aceitamos prefixos privados (RFC1918) para a sessão BGP de emparelhamento Microsoft.
+Não aceitamos prefixos privados (RFC1918) para a sessão BGP de emparelhamento Microsoft. Aceitamos qualquer tamanho de prefixo (até /32) na Microsoft e o emparelhamento privado.
 
 ### <a name="what-happens-if-i-exceed-the-bgp-limits"></a>O que acontece se eu exceder os limites de BGP?
 
@@ -283,6 +285,26 @@ Consulte [detalhes de preços](https://azure.microsoft.com/pricing/details/expre
 ### <a name="do-i-pay-for-expressroute-premium-in-addition-to-standard-expressroute-charges"></a>Eu pago algo pelo ExpressRoute premium além dos encargos padrão do ExpressRoute?
 
 Sim. Os encargos do ExpressRoute premium somam-se aos encargos de circuito de ExpressRoute e aos encargos demandados pelo provedor de conectividade.
+
+## <a name="expressroute-local"></a>Local do ExpressRoute
+### <a name="what-is-expressroute-local"></a>O que é o Local do ExpressRoute?
+Local do ExpressRoute é um circuito de SKU de ExpressRoute. Um recurso chave do Local é que um circit Local em um ExpressRoute local de emparelhamento lhe dá acesso somente a uma ou duas regiões do Azure ou próximo mesmo metro. Por outro lado, um circuito padrão fornece acesso a todas as regiões do Azure em uma área geopolítica e um circuito Premium para todas as regiões do Azure globalmente. 
+
+### <a name="what-are-the-benefits-of-expressroute-local"></a>Quais são os benefícios do Local de ExpressRoute?
+Embora você precise pagar a transferência de dados de saída para o circuito Standard ou Premium do ExpressRoute, você não paga transferência de dados de saída separadamente para o circuito de ExpressRoute Local. Em outras palavras, o preço de Local de ExpressRoute inclui taxas de transferência de dados. Local do ExpressRoute é uma solução mais econômica se você tiver grande quantidade de dados a serem transferidos e você pode colocar seus dados ao longo de uma conexão privada para um local de emparelhamento do ExpressRoute perto de suas regiões do Azure desejadas. 
+
+### <a name="what-features-are-available-and-what-are-not-on-expressroute-local"></a>Quais recursos estão disponíveis e o que não estão no Local de ExpressRoute?
+Em comparação a um circuito de ExpressRoute padrão, um circuito Local tem o mesmo conjunto de recursos, exceto:
+* Escopo de acesso a regiões do Azure conforme descrito acima
+* O alcance Global do ExpressRoute não está disponível no Local
+
+Local do ExpressRoute também tem os mesmos limites nos recursos (por exemplo, o número de redes virtuais por circuito) como padrão. 
+
+### <a name="how-to-configure-expressroute-local"></a>Como configurar o Local do ExpressRoute? 
+Local do ExpressRoute só está disponível em diretos do ExpressRoute. Primeiro, você precisará configurar sua porta diretos do ExpressRoute. Depois que sua porta direta é criada, você pode criar um circuito Local seguindo as instruções [aqui](expressroute-howto-erdirect.md).
+
+### <a name="where-is-expressroute-local-available-and-which-azure-regions-is-each-peering-location-mapped-to"></a>Onde é o Local do ExpressRoute disponíveis e quais regiões do Azure é cada local de emparelhamento mapeado?
+Local do ExpressRoute está disponível nos locais de emparelhamento em que uma ou duas regiões do Azure são por fechar. Ele não está disponível em um local de emparelhamento em que não há nenhuma região do Azure em que estado ou província ou país. Consulte os mapeamentos exatos [a página locais](expressroute-locations-providers.md).  
 
 ## <a name="expressroute-for-office-365"></a>ExpressRoute para Office 365
 

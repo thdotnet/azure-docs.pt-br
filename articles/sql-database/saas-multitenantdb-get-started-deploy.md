@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: billgib, stein
 manager: craigg
 ms.date: 10/16/2018
-ms.openlocfilehash: 8f19303dba7fcf2a9edb325464fdd3748220903e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 350e67f5a1e7e1eab7abe27a6ca851ed2420af84
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61486019"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65978535"
 ---
 # <a name="deploy-and-explore-a-sharded-multi-tenant-application"></a>Implantar e explorar um aplicativo multilocatário fragmentado
 
@@ -58,7 +58,7 @@ Para concluir este tutorial, verifique se todos os pré-requisitos a seguir são
 ### <a name="plan-the-names"></a>Planejar os nomes
 
 Nas etapas desta seção, você fornece um valor *user* que é usado para garantir que os nomes de recursos fiquem globalmente exclusivos, e um nome para o *grupo de recursos* que contém todos os recursos criados por uma implantação do aplicativo. Para uma pessoa denominada *Aline Faria*, sugerimos:
-- *Usuário:*  **af1** *(Suas iniciais, mais um dígito. Use um valor diferente (por exemplo, af2) se você implantar o aplicativo novamente.)*
+- *Usuário:* **af1***(suas iniciais mais um dígito.   Use um valor diferente (por exemplo, af2) se você implantar o aplicativo novamente.)*
 - *Grupo de recursos:* **wingtip-mt-af1** *(wingtip-mt indica que esse é o aplicativo multilocatário fragmentado. A anexação do nome de usuário af1 correlaciona o nome do grupo de recursos com os nomes dos recursos que ele contém.)*
 
 Escolha seus nomes agora e os escreva. 

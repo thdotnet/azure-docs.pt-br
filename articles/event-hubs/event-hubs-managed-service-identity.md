@@ -9,14 +9,14 @@ ms.service: event-hubs
 ms.devlang: na
 ms.topic: article
 ms.custom: seodec18
-ms.date: 12/06/2018
+ms.date: 05/20/2019
 ms.author: shvija
-ms.openlocfilehash: 784d8c9280aeff7224f90ecee0b16c9c30381aeb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4e6f16a15547583baab63f452504d36eb2e43b85
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60746874"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65978439"
 ---
 # <a name="managed-identities-for-azure-resources-with-event-hubs"></a>Identidades gerenciadas para recursos do Azure com Hubs de Eventos
 
@@ -27,8 +27,28 @@ Com identidades gerenciadas, a plataforma do Azure gerencia essa identidade de t
 Quando um cliente dos Hubs de Eventos está associado a uma identidade gerenciada, ele pode realizar todas as operações autorizadas. A autorização é concedida ao associar uma identidade gerenciada com funções de Hubs de Eventos. 
 
 ## <a name="event-hubs-roles-and-permissions"></a>Permissões e funções dos Hubs de Eventos
+Você pode adicionar uma identidade gerenciada para o **proprietário dos dados dos Hubs de evento** função de um namespace de Hubs de eventos. Essa função concede a identidade, controle total (para gerenciamento e operações de dados) em todas as entidades no namespace.
 
-É possível adicionar apenas uma identidade gerenciada nas funções "Proprietário" ou "Colaborador" de um namespace dos Hubs de Eventos, que concede controle total à identidade em todas as entidades no namespace. No entanto, operações de gerenciamento que alteram a topologia de namespace são inicialmente compatíveis apenas com o Azure Resource Manager. Não é por meio da interface de gerenciamento REST de Hubs de Eventos nativa. Isso também significa que não é possível usar o objeto cliente [NamespaceManager](/dotnet/api/microsoft.servicebus.namespacemanager) do .NET Framework dentro de uma identidade gerenciada. 
+>[!IMPORTANT]
+> Damos suporte anteriormente adicionando uma identidade gerenciada para o **proprietário** ou **Colaborador** função. No entanto, privilégios de acesso a dados **proprietário** e **Colaborador** função não são respeitadas. Se você estiver usando o **proprietário** ou **Colaborador** função, de switch usando o **proprietário dos dados dos Hubs de evento** função.
+
+Para usar a nova função interna, siga estas etapas: 
+
+1. Navegue até o [portal do Azure](https://portal.azure.com)
+2. Navegue até o namespace de Hubs de eventos.
+3. Sobre o **Namespace de Hubs de eventos** página, selecione **(IAM) de acesso** no menu à esquerda.
+4. Sobre o **controle de acesso (IAM)** página, selecione **adicionar** no **adicionar uma atribuição de função** seção. 
+
+    ![Adicionar um botão de atribuição de função](./media/event-hubs-managed-service-identity/add-role-assignment-button.png)
+5. Sobre o **Adicionar atribuição de função** página, faça as seguintes etapas: 
+    1. Para **função**, selecione **proprietário dos dados dos Hubs de eventos do Azure**. 
+    2. Selecione o **identidade** a ser adicionado à função.
+    3. Clique em **Salvar**. 
+
+        ![Função de proprietário de dados de Hubs de eventos](./media/event-hubs-managed-service-identity/add-role-assignment-dialog.png)
+6. Alternar para o **atribuições de função** página e confirme que o usuário é adicionado para o **proprietário dos dados dos Hubs de eventos do Azure** função. 
+
+    ![Confirme se o usuário é adicionado à função](./media/event-hubs-managed-service-identity/role-assignments.png)
  
 ## <a name="use-event-hubs-with-managed-identities-for-azure-resources"></a>Usar Hubs de Eventos com identidades gerenciadas para Recursos do Azure
 
@@ -54,7 +74,7 @@ Depois de habilitar o recurso, uma nova identidade do serviço será criada no A
 
 ### <a name="create-a-new-event-hubs-namespace"></a>Criar um novo namespace dos Hubs de Eventos
 
-Em seguida, [crie um namespace de Hubs de Eventos](event-hubs-create.md) em uma das regiões do Azure com suporte de versão prévia para identidades gerenciadas para recursos do Azure: **Leste dos EUA**, **Leste dos EUA 2** ou **Europa Ocidental**. 
+Em seguida, [criar um namespace de Hubs de eventos](event-hubs-create.md). 
 
 Navegue até a página **Controle de Acesso (IAM)** do namespace no portal e, em seguida, clique em **Adicionar atribuição de função** para adicionar a identidade gerenciada à função **Proprietário**. Para fazer isso, procure o nome do aplicativo Web no campo **Selecionar** do painel **Adicionar permissões** e, em seguida, clique na entrada. Em seguida, clique em **Salvar**. A identidade gerenciada para o aplicativo Web agora tem acesso ao namespace de Hubs de Eventos e ao hub de eventos criado anteriormente. 
 

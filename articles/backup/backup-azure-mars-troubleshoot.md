@@ -6,18 +6,38 @@ author: saurabhsensharma
 manager: shivamg
 ms.service: backup
 ms.topic: conceptual
-ms.date: 02/18/2019
+ms.date: 05/21/2019
 ms.author: saurse
-ms.openlocfilehash: e36e0813b7a50c659a2c3ae61350381e83a1823f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 122f0884469a4901b02a1c86dd5ec98ef4fb24b0
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64686188"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66000262"
 ---
 # <a name="troubleshoot-microsoft-azure-recovery-services-mars-agent"></a>Solucionar problemas do agente do MARS (Serviços de Recuperação do Microsoft Azure)
 
 Veja como resolver possíveis erros durante a configuração, registro, backup e restauração.
+
+## <a name="basic-troubleshooting"></a>Solução básica de problemas
+
+Recomendamos que você execute o abaixo de validação, antes de começar a solução de problemas de agente do Microsoft Azure Recovery Services (MARS):
+
+- [Verifique se o que agente do Microsoft Azure Recovery Services (MARS) é atualizado](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409)
+- [Certifique-se de que há conectividade de rede entre o agente MARS e o Azure](https://aka.ms/AB-A4dp50)
+- Certifique-se de que os Serviços de Recuperação do Microsoft Azure estão em execução (no console de Serviço). Reinicie e tente novamente a operação, se necessário
+- [Certifique-se de que há de 5 a 10% de espaço de volume livre disponível no local da pasta temporária](https://aka.ms/AB-AA4dwtt)
+- [Verifique se outro processo ou software antivírus está interferindo com o Backup do Azure](https://aka.ms/AB-AA4dwtk)
+- [Falha no backup agendado, mas o backup manual funciona](https://aka.ms/ScheduledBackupFailManualWorks)
+- Certifique-se de que o SO possui as atualizações mais recentes
+- [Verifique se não há suporte para unidades e arquivos com atributos sem suporte são excluídos do backup](backup-support-matrix-mars-agent.md#supported-drives-or-volumes-for-backup)
+- Certifique-se de que o **Relógio do sistema** no sistema protegido está configurado com o fuso horário correto <br>
+- [Certifique-se de que o servidor tenha pelo menos o .Net Framework versão 4.5.2 e superior](https://www.microsoft.com/download/details.aspx?id=30653)<br>
+- Se você estiver tentando **registrar novamente seu servidor** em um cofre, então: <br>
+  - Certifique-se de que o agente foi desinstalado do servidor e de que ele foi excluído do portal <br>
+  - Use a mesma senha que foi inicialmente usada para registrar o servidor <br>
+- No caso de backup offline, verifique se que o Azure PowerShell versão 3.7.0 está instalado no computador de origem e de cópia antes de começar a operação de backup offline
+- [Consideração quando o agente de Backup está em execução em uma máquina virtual do Azure](https://aka.ms/AB-AA4dwtr)
 
 ## <a name="invalid-vault-credentials-provided"></a>Credenciais do cofre fornecidas inválidas
 
@@ -48,7 +68,7 @@ Veja como resolver possíveis erros durante a configuração, registro, backup e
 
 | Detalhes do erro | Possíveis causas | Ações recomendadas |
 |---------|---------|---------|
-|**Erro** <br /><ol>*A ativação não foi concluída com êxito. A operação atual falhou devido a um erro de serviço interno [0x1FC07]. Repita a operação após algum tempo. Se o problema persistir, contate o suporte da Microsoft*      | <li> A pasta de Rascunho está localizada em um volume que não possui espaço suficiente. <li> A pasta de Rascunho é movida incorretamente para outro local. <li> O arquivo OnlineBackup.KEK está ausente.         | <li>Atualize para a [versão mais recente](https://aka.ms/azurebackup_agent) do MARS Agent.<li>Mova a pasta temporária ou o local do cache para um volume com espaço livre igual a 5-10% do tamanho total dos dados de backup. Para mover corretamente o local do cache, consulte as etapas em [Perguntas sobre o Azure Backup Agent](https://docs.microsoft.com/azure/backup/backup-azure-file-folder-backup-faq#backup).<li> Certifique-se de que o arquivo OnlineBackup.KEK está presente. <br>*O local padrão para a pasta de rascunho ou o caminho do local do cache é C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch*.        |
+|**Erro** <br /><ol>*A ativação não foi concluída com êxito. A operação atual falhou devido a um erro de serviço interno [0x1FC07]. Aguarde um pouco e repita a operação. Se o problema persistir, contate o suporte da Microsoft*      | <li> A pasta de Rascunho está localizada em um volume que não possui espaço suficiente. <li> A pasta de Rascunho é movida incorretamente para outro local. <li> O arquivo OnlineBackup.KEK está ausente.         | <li>Atualize para a [versão mais recente](https://aka.ms/azurebackup_agent) do MARS Agent.<li>Mova a pasta temporária ou o local do cache para um volume com espaço livre igual a 5-10% do tamanho total dos dados de backup. Para mover corretamente o local do cache, consulte as etapas em [Perguntas sobre o Azure Backup Agent](https://docs.microsoft.com/azure/backup/backup-azure-file-folder-backup-faq#backup).<li> Certifique-se de que o arquivo OnlineBackup.KEK está presente. <br>*O local padrão para a pasta de rascunho ou o caminho do local do cache é C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch*.        |
 
 ## <a name="encryption-passphrase-not-correctly-configured"></a>A frase secreta de criptografia não está configurada corretamente
 
@@ -109,7 +129,7 @@ O Backup do Azure pode não montar com êxito o volume de recuperação, mesmo d
 
 Se a recuperação ainda falhar, reinicie o servidor ou o cliente. Se você não quiser reinicializar, ou a recuperação ainda falhar mesmo após a reinicialização do servidor, tente recuperar de uma máquina alternativa. Execute as etapas [deste artigo](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine).
 
-## <a name="need-help-contact-support"></a>Precisa de ajuda? Contate o suporte
+## <a name="need-help-contact-support"></a>Precisa de ajuda? Contatar o suporte
 Se ainda tiver dúvidas, [entre em contato com o suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) para resolver seu problema rapidamente.
 
 ## <a name="next-steps"></a>Próximas etapas

@@ -7,12 +7,12 @@ ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 2f856e9c42b26d4e286493e2eb5d019a8cff6c23
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 6e3e01ca9bd459aa6c6aca8dfaacb98b1267fada
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64868692"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65979341"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Determinar as causas de não conformidade
 
@@ -215,11 +215,11 @@ Como parte de uma nova **visualização pública**, dos últimos 14 dias de hist
 
 1. Escolha a guia **Histórico de Alterações (versão prévia)** na página **Conformidade do Recurso**. Se houver uma lista de alterações detectadas, ela será exibida.
 
-   ![Guia de histórico de alterações de política na página de conformidade do recurso](../media/determine-non-compliance/change-history-tab.png)
+   ![Guia de histórico de alterações de política do Azure na página de conformidade do recurso](../media/determine-non-compliance/change-history-tab.png)
 
 1. Escolha uma das alterações detectadas. O _comparação visual_ para o recurso é apresentado na **histórico de alterações** página.
 
-   ![Histórico de alteração de política Visual Diff na página de histórico de alteração](../media/determine-non-compliance/change-history-visual-diff.png)
+   ![Azure política alteração histórico Visual Diff na página de histórico de alteração](../media/determine-non-compliance/change-history-visual-diff.png)
 
 A _comparação visual_ ajuda a identificar alterações em um recurso. Não podem estar relacionadas as alterações detectadas para o estado atual de conformidade do recurso.
 
@@ -228,7 +228,7 @@ Dados de histórico de alterações são fornecidos pelo [grafo de recursos do A
 ## <a name="next-steps"></a>Próximas etapas
 
 - Examine os exemplos na [exemplos do Azure Policy](../samples/index.md).
-- Revisar a [Estrutura de definição de política](../concepts/definition-structure.md).
+- Revise a [estrutura de definição do Azure Policy](../concepts/definition-structure.md).
 - Revisar [Compreendendo os efeitos da política](../concepts/effects.md).
 - Entender como [criar políticas de forma programática](programmatically-create.md).
 - Saiba como [obter dados de conformidade](getting-compliance-data.md).

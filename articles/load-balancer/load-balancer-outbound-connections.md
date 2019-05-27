@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/02/2019
 ms.author: kumud
-ms.openlocfilehash: d5f52829f5895b30afd160cc8ded755332aca5c5
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: f9742d14fc14230f2424d005aa6aa8b1db3cece4
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190164"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967728"
 ---
 # <a name="outbound-connections-in-azure"></a>Conexões de saída no Azure
 
@@ -34,13 +34,13 @@ O Azure usa SNAT (conversão de endereço de rede de origem) para realizar essa 
 Há vários [cenários de saída](#scenarios). É possível combinar esses cenários conforme necessário. Revise-os cuidadosamente para entender os recursos, as restrições e os padrões, e como se aplicam ao seu modelo de implantação e cenário de aplicativo. Revise as diretrizes para [gerenciar esses cenários](#snatexhaust).
 
 >[!IMPORTANT] 
->O Standard Load Balancer e o IP Público Standard apresentam novas habilidades e comportamentos diferentes da conectividade de saída.  Eles não são o mesmo que SKUs Básicos.  Se quiser ter conectividade de saída ao trabalhar com SKUs Standard, você precisará defini-la explicitamente com endereços IP públicos Standard ou com o Load Balancer Standard público.  Isso inclui a criação da conectividade de saída ao usar e Standard Load Balancer interno.  É recomendável que você sempre use regras de saída em um Load Balancer Standard público.  O [Cenário 3](#defaultsnat) não está disponível com o SKU Standard.  Isso significa que, quando um Standard Load Balancer for usado, você precisará executar etapas para criar a conectividade de saída para as VMs no pool de back-end se a conectividade de saída for desejada.  No contexto da conectividade de saída, uma única VM autônoma, todas as VMs em um conjunto de disponibilidade, todas as instâncias em um VMSS se comportam como um grupo. Isso significa que, se uma única VM em um conjunto de disponibilidade estiver associada a um SKU Standard, todas as instâncias de VM neste conjunto de disponibilidade agora se comportarão de acordo com as mesmas regras que se aplicariam se elas estivessem associados ao SKU Standard, mesmo se uma instância individual não estivesse diretamente associada a ele.  Revise atentamente todo este documento para entender os conceitos gerais, revise [Standard Load Balancer](load-balancer-standard-overview.md) para ver as diferenças entre as SKUs e revise [regras de saída](load-balancer-outbound-rules-overview.md).  Usar regras de saída permite ter um controle refinado sobre todos os aspectos da conectividade de saída.
+>O Standard Load Balancer e o IP Público Standard apresentam novas habilidades e comportamentos diferentes da conectividade de saída.  Eles não são o mesmo que SKUs Básicos.  Se quiser ter conectividade de saída ao trabalhar com SKUs Standard, você precisará defini-la explicitamente com endereços IP públicos Standard ou com o Load Balancer Standard público.  Isso inclui a criação de conectividade de saída ao usar um Load Balancer Standard interno.  É recomendável que você sempre use regras de saída em um Load Balancer Standard público.  O [Cenário 3](#defaultsnat) não está disponível com o SKU Standard.  Isso significa que, quando um Standard Load Balancer for usado, você precisará executar etapas para criar a conectividade de saída para as VMs no pool de back-end se a conectividade de saída for desejada.  No contexto da conectividade de saída, uma única VM autônoma, todas as VMs em um conjunto de disponibilidade, todas as instâncias em um VMSS se comportam como um grupo. Isso significa que, se uma única VM em um conjunto de disponibilidade estiver associada a um SKU Standard, todas as instâncias de VM neste conjunto de disponibilidade agora se comportarão de acordo com as mesmas regras que se aplicariam se elas estivessem associados ao SKU Standard, mesmo se uma instância individual não estivesse diretamente associada a ele.  Revise atentamente todo este documento para entender os conceitos gerais, revise [Standard Load Balancer](load-balancer-standard-overview.md) para ver as diferenças entre as SKUs e revise [regras de saída](load-balancer-outbound-rules-overview.md).  Usar regras de saída permite ter um controle refinado sobre todos os aspectos da conectividade de saída.
 
 ## <a name="scenarios"></a>Visão geral do cenário
 
 O Azure Load Balancer e os recursos relacionados são explicitamente definidos ao utilizar o [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).  Atualmente, o Azure fornece três métodos diferentes para alcançar a conectividade de saída para recursos do Azure Resource Manager. 
 
-| SKUs | Cenário | Método | Protocolos IP | DESCRIÇÃO |
+| SKUs | Cenário | Método | Protocolos IP | Descrição |
 | --- | --- | --- | --- | --- |
 | Standard, Básico | [1. VM com um endereço IP Público em Nível de Instância (com ou sem Load Balancer)](#ilpip) | SNAT, disfarce de porta não usado | TCP, UDP, ICMP, ESP | O Azure usa o IP público atribuído à configuração de IP do NIC da instância. A instância possui todas as portas efêmeras disponíveis. Ao usar o Standard Load Balancer, você precisa usar [regras de saída](load-balancer-outbound-rules-overview.md) para definir explicitamente a conectividade de saída |
 | Standard, Básico | [2. Load Balancer público associado a uma VM (sem endereço IP Público em Nível de Instância)](#lb) | SNAT com PAT (disfarce de porta) usando front-ends do Load Balancer | TCP, UDP |O Azure compartilha o endereço IP público dos front-ends do Load Balancer público com vários endereços IP privados. O Azure usa os portas efêmeras dos front-ends para PAT. |

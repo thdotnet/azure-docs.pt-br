@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: magoedte
-ms.openlocfilehash: 58abe3a3973986ab489456be7958361ad8ab06f4
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 12eea032c37c8d737ae004d622b72536195c4444
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64922817"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65977580"
 ---
 # <a name="overview-of-the-azure-monitoring-agents"></a>Visão geral dos agentes de monitoramento do Azure 
 O Microsoft Azure fornece várias maneiras de coletar diferentes tipos de dados de máquinas virtuais que executam o Microsoft Windows e o Linux hospedados no Azure, no seu datacenter ou em outros provedores de nuvem. Os três tipos de agentes disponíveis para monitorar uma VM são:
@@ -30,7 +30,7 @@ O Microsoft Azure fornece várias maneiras de coletar diferentes tipos de dados 
 Este artigo descreve as diferenças entre eles e seus recursos para determinar qual deles oferecerá suporte ao gerenciamento de serviços de TI ou aos requisitos gerais de monitoramento.  
 
 ## <a name="azure-diagnostic-extension"></a>Extensão de diagnóstico do Azure
-A [extensão do Diagnóstico do Azure](../../azure-monitor/platform/diagnostics-extension-overview.md) (comumente chamada de extensão Diagnostic do Windows Azure (WAD) ou Linux Azure Diagnostic (LAD)), que foi fornecida para os Serviços de Nuvem do Azure desde que se tornou disponível em 2010, é uma agente que fornece uma coleta simples de dados de diagnóstico de um recurso de computação do Azure, como uma VM, e os mantém no armazenamento do Azure. Uma vez no armazenamento, você opta por exibir com uma das várias ferramentas disponíveis, como [Gerenciador de Servidores o Visual Studio](/visualstudio/azure/vs-azure-tools-storage-resources-server-explorer-browse-manage) e [Gerenciador de Armazenamento do Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md).
+A [extensão do Diagnóstico do Azure](../../azure-monitor/platform/diagnostics-extension-overview.md) (comumente chamada de extensão Diagnostic do Windows Azure (WAD) ou Linux Azure Diagnostic (LAD)), que foi fornecida para os Serviços de Nuvem do Azure desde que se tornou disponível em 2010, é uma agente que fornece uma coleta simples de dados de diagnóstico de um recurso de computação do Azure, como uma VM, e os mantém no armazenamento do Azure. Depois que o armazenamento, você optar por exibir com uma das várias ferramentas disponíveis, como [Gerenciador de servidores no Visual Studio](/visualstudio/azure/vs-azure-tools-storage-resources-server-explorer-browse-manage) e [Azure Storage Explorer](../../vs-azure-tools-storage-manage-with-storage-explorer.md).
 
 Você pode optar por coletar:
 
@@ -39,7 +39,7 @@ Você pode optar por coletar:
 * Logs de saída de rastreamento de aplicativos .NET
 * Eventos de ETW (Rastreamento de Eventos para Windows) 
 * Coletar eventos de log do syslog  
-* Despejos de falhas 
+* Despejos de memória 
 
 O agente do Azure Diagnostics deve ser usado quando você quiser:
 
@@ -59,7 +59,7 @@ Para o monitoramento avançado em que você precisa coletar mais de um subconjun
 O agente do Log Analytics deve ser usado quando você quiser:
 
 * Colete dados de várias origens no Azure, em outros provedores de nuvem e em recursos locais. 
-* Usando uma das soluções de monitoramento, como o Azure Monitor [do Azure Monitor para VMs](../insights/vminsights-overview.md), [do Azure Monitor para contêineres](../insights/container-insights-overview.md), etc.  
+* Use uma das soluções de monitoramento, como o Azure Monitor [do Azure Monitor para VMs](../insights/vminsights-overview.md), [do Azure Monitor para contêineres](../insights/container-insights-overview.md), etc.  
 * Use um dos serviços de gerenciamento do Azure, como [Central de segurança do Azure](../../security-center/security-center-intro.md), [automação do Azure](../../automation/automation-intro.md), etc.
 
 Anteriormente, os vários serviços do Azure foram agrupados como o *Operations Management Suite*, e assim o agente do Log Analytics é compartilhado entre serviços, incluindo a Central de segurança do Azure e automação do Azure.  Isso inclui o conjunto completo de recursos que eles oferecem, oferecendo gerenciamento abrangente de suas VMs do Azure por meio de seu ciclo de vida.  Alguns exemplos disso são:

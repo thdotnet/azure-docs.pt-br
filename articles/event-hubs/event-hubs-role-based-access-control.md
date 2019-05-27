@@ -9,14 +9,14 @@ ms.service: event-hubs
 ms.devlang: na
 ms.topic: article
 ms.custom: seodec18
-ms.date: 12/06/2018
+ms.date: 05/21/2019
 ms.author: shvija
-ms.openlocfilehash: 549cfb84ff247295e01c800aa41ba265bb8921c7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ae970b9612154a6463c4bf44a65da71a20c81635
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60343453"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65978304"
 ---
 # <a name="active-directory-role-based-access-control-preview"></a>Controle de acesso baseado em função do Active Directory (versão prévia)
 
@@ -27,8 +27,13 @@ Para os Hubs de Eventos do Azure, o gerenciamento de namespaces e de todos os re
 Um aplicativo que usa o RBAC do Azure AD não precisa manipular regras e chaves de SAS nem outros tokens de acesso específicos do Hubs de Eventos. O aplicativo cliente interage com o Azure AD para estabelecer um contexto de autenticação e adquire um token de acesso para os Hubs de Eventos. Com contas de usuário de domínio que exigem logon interativo, o aplicativo nunca lida diretamente com as credenciais.
 
 ## <a name="event-hubs-roles-and-permissions"></a>Permissões e funções dos Hubs de Eventos
+O Azure fornece as seguintes funções internas de RBAC para autorizar o acesso a um namespace de Hubs de eventos:
 
-Na versão prévia pública inicial, você pode adicionar contas e entidades de serviço do Azure AD somente para as funções de "Proprietário" ou "Colaborador" de um namespace dos Hubs de Eventos. Esta operação concede à identidade o controle total sobre todas as entidades no namespace. As operações de gerenciamento que alteram a topologia de namespace são inicialmente compatíveis apenas com o gerenciamento de recursos do Azure e não com a interface de gerenciamento REST nativa dos Hubs de Eventos. Esse suporte também significa que o cliente do objeto [NamespaceManager](/dotnet/api/microsoft.servicebus.namespacemanager) do .NET Framework não pode ser usado com uma conta do Azure AD.  
+O [proprietário dos dados dos Hubs de eventos (visualização)](../role-based-access-control/built-in-roles.md#service-bus-data-owner) função permite o acesso de dados para um namespace de Hubs de eventos e suas entidades (filas, tópicos, assinaturas e filtros)
+
+>[!IMPORTANT]
+> Damos suporte anteriormente adicionando uma identidade gerenciada para o **proprietário** ou **Colaborador** função. No entanto, privilégios de acesso a dados **proprietário** e **Colaborador** função não são respeitadas. Se você estiver usando o **proprietário** ou **Colaborador** função, de switch usando o **proprietário dos dados dos Hubs de evento** função.
+
 
 ## <a name="use-event-hubs-with-an-azure-ad-domain-user-account"></a>Usar Hubs de Eventos com uma conta de usuário de domínio do Azure AD
 
@@ -44,7 +49,7 @@ Se você ainda desejar criar uma conta específica para este cenário, [siga est
 
 ### <a name="create-an-event-hubs-namespace"></a>Criar um namespace de Hubs de Eventos
 
-Em seguida, [crie um namespace dos Hubs de Eventos](event-hubs-create.md) em uma das regiões do Azure compatíveis com a versão prévia dos Hubs de Eventos para RBAC: **Leste dos EUA**, **Leste dos EUA 2** ou **Europa Ocidental**. 
+Em seguida, [criar um namespace de Hubs de eventos](event-hubs-create.md). 
 
 Depois de criar o namespace, navegue para a página **Controle de Acesso (IAM)** no portal e, em seguida, clique em **Adicionar atribuição de função** para adicionar a conta de usuário do Microsoft Azure Active Directory à função Proprietário. Se você usar sua própria conta de usuário e já tiver criado o namespace, você já estará na função Proprietário. Para adicionar uma conta diferente à função, procure o nome do aplicativo Web no campo **Selecionar** do painel **Adicionar permissões** e, em seguida, clique na entrada. Em seguida, clique em **Salvar**. A conta de usuário agora tem acesso ao namespace dos Hubs de Eventos e ao Hub de Eventos criado anteriormente.
  

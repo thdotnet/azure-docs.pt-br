@@ -9,13 +9,13 @@ ms.author: klam
 ms.reviewer: estfan, LADocs
 ms.assetid: f8f528f5-51c5-4006-b571-54ef74532f32
 ms.topic: article
-ms.date: 03/25/2019
-ms.openlocfilehash: c3d06d3c0f9c86b4fe6495632b48051fd69dc663
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.date: 05/22/2019
+ms.openlocfilehash: b37a6b6995df6f784b5f1b4a7a3f54d91faafc13
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544534"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990185"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Modelo de preços para os Aplicativos Lógicos do Azure
 
@@ -92,11 +92,15 @@ Depois de desativar um aplicativo lógico, qualquer instância em execução no 
 Preço por consumo aplica-se ao [contas de integração](logic-apps-enterprise-integration-create-integration-account.md) onde você pode explorar, desenvolver e testar o [B2B e EDI](logic-apps-enterprise-integration-b2b.md) e [processamento XML](logic-apps-enterprise-integration-xml.md) recursos em aplicativos lógicos do Azure sem nenhum custo adicional.
 Você pode ter uma conta de integração em cada região do Azure. Cada conta de integração pode armazenar até [números específicos de artefatos](../logic-apps/logic-apps-limits-and-config.md), que incluem parceiros comerciais, contratos, mapas, esquemas, montagens, certificados, configurações de lote e assim por diante.
 
-Aplicativos lógicos do Azure também oferece as contas de integração básica e Standard com SLA de aplicativos lógicos com suporte. Aqui estão as maneiras que você pode optar por usar uma conta de integração básico ou padrão:
+Aplicativos lógicos do Azure oferece as contas de integração gratuita, Basic e Standard. As camadas básica e Standard têm suporte pelo contrato de nível de serviço (SLA), aplicativos lógicos enquanto a camada gratuita não é suportada por um SLA e tem limites sobre o uso e a taxa de transferência.
 
-* Quando você apenas deseja manipulação de mensagens ou atuar como um parceiro de pequenas empresas que tenha uma relação de parceiro comercial com uma entidade de negócios maior, use contas de integração básica.
+Para escolher entre uma conta de integração gratuito, básico ou padrão:
 
-* Use contas de integração padrão quando você tem relações de B2B mais complexas e deseja aumentar o número de entidades que você pode gerenciar.
+* **Grátis**: Para quando você deseja tentar exploratórios cenários, não os cenários de produção.
+
+* **Básico**: Quando é preciso apenas a manipulação de mensagens ou para atuar como um parceiro de pequenas empresas que tem uma relação de parceiro comercial com uma entidade de negócios maior.
+
+* **Standard**: Para quando você tem relações de B2B mais complexas e um número maior de entidades que você deve gerencie.
 
 Para informações específico sobre preços, consulte [preços de aplicativos lógicos do Azure](https://azure.microsoft.com/pricing/details/logic-apps).
 
