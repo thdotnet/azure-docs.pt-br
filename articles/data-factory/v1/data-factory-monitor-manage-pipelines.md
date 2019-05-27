@@ -14,11 +14,11 @@ ms.date: 04/30/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 64fae56bfc95b62bd60444d49100689845f64278
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57445136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66123143"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Monitorar e gerenciar os pipelines do Azure Data Factory usando o Portal do Azure e o PowerShell
 > [!div class="op_single_selector"]
@@ -63,7 +63,7 @@ Esta seção também descreve como uma fatia do conjunto de dados faz a transiç
 #### <a name="diagram-view-of-your-data-factory"></a>Modo de exibição de diagrama de uma data factory
 O modo de exibição de **Diagrama** de uma data factory fornece um único painel onde você pode monitorar e gerenciar o data factory e seus ativos. Para ver o modo de exibição de **Diagrama** de seu data factory, clique em **Diagrama** na home page do data factory.
 
-![Modo de Exibição de Diagrama](./media/data-factory-monitor-manage-pipelines/diagram-view.png)
+![Exibição de Diagrama](./media/data-factory-monitor-manage-pipelines/diagram-view.png)
 
 Você pode ampliar, reduzir, ajustar o nível de zoom, aplicar zoom para 100%, bloquear o layout do diagrama e posicionar pipelines e conjuntos de dados automaticamente. Você também pode ver as informações de linhagem de dados (ou seja, mostrar itens upstream e downstream dos itens selecionados).
 
@@ -89,7 +89,7 @@ As fatias do conjunto de dados no data factory podem ter um dos seguintes status
 
 <table>
 <tr>
-    <th align="left">Estado</th><th align="left">Subestado</th><th align="left">DESCRIÇÃO</th>
+    <th align="left">Estado</th><th align="left">Subestado</th><th align="left">Descrição</th>
 </tr>
 <tr>
     <td rowspan="8">Aguardando</td><td>ScheduleTime</td><td>Não chegou o momento de execução da fatia.</td>
@@ -117,24 +117,24 @@ As fatias do conjunto de dados no data factory podem ter um dos seguintes status
 </tr>
 <tr>
 <tr>
-<td rowspan="2">InProgress</td><td>Validando</td><td>Validação em andamento.</td>
+<td rowspan="2">EmAndamento</td><td>Validando</td><td>Validação em andamento.</td>
 </tr>
 <td>-</td>
 <td>A fatia está sendo processada.</td>
 </tr>
 <tr>
-<td rowspan="4">Com falha</td><td>TimedOut</td><td>A execução demorou mais do que o permitido pela atividade.</td>
+<td rowspan="4">Falhou</td><td>TimedOut</td><td>A execução demorou mais do que o permitido pela atividade.</td>
 </tr>
 <tr>
-<td>Cancelado</td><td>A fatia foi cancelada por ação do usuário.</td>
+<td>Cancelada</td><td>A fatia foi cancelada por ação do usuário.</td>
 </tr>
 <tr>
-<td>Validação</td><td>A validação falhou.</td>
+<td>Validação</td><td>Falha na validação.</td>
 </tr>
 <tr>
 <td>-</td><td>Não foi possível gerar e/ou validar a fatia.</td>
 </tr>
-<td>Ready</td><td>-</td><td>A fatia está pronta para consumo.</td>
+<td>Pronto</td><td>-</td><td>A fatia está pronta para consumo.</td>
 </tr>
 <tr>
 <td>Ignorado</td><td>Nenhum</td><td>A fatia não está sendo processada.</td>
@@ -152,7 +152,7 @@ Veja os detalhes de uma fatia clicando em uma entrada de fatia na folha **Fatias
 
 Se a fatia tiver sido executada várias vezes, você verá várias linhas na lista **Execuções de atividade** . Você pode exibir detalhes sobre uma execução de atividade clicando na entrada da execução na lista **Execuções de atividade** . A lista mostra todos os arquivos de log, junto com uma mensagem de erro, se houver. Esse recurso é útil para exibir e depurar logs sem precisar sair de sua data factory.
 
-![Detalhes da execução da atividade](./media/data-factory-monitor-manage-pipelines/activity-run-details.png)
+![Detalhes da execução de atividade](./media/data-factory-monitor-manage-pipelines/activity-run-details.png)
 
 Quando a fatia não está no estado **Pronto**, você pode ver as fatias upstream que não estão prontas e estão impedindo a execução da fatia atual na lista **Fatias upstream que não estão prontas**. Esse recurso é útil quando a fatia estiver no estado **Aguardando** e você quiser entender as dependências de upstream em que a fatia está aguardando.
 
@@ -180,7 +180,7 @@ Você pode pausar/suspender pipelines usando o **AzDataFactoryPipeline Suspend**
 ```powershell
 Suspend-AzDataFactoryPipeline [-ResourceGroupName] <String> [-DataFactoryName] <String> [-Name] <String>
 ```
-Por exemplo: 
+Por exemplo:
 
 ```powershell
 Suspend-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecgamalbox1dev -Name PartitionProductsUsagePipeline
@@ -191,7 +191,7 @@ Depois que o problema com o pipeline for corrigido, você poderá retomar o pipe
 ```powershell
 Resume-AzDataFactoryPipeline [-ResourceGroupName] <String> [-DataFactoryName] <String> [-Name] <String>
 ```
-Por exemplo: 
+Por exemplo:
 
 ```powershell
 Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecgamalbox1dev -Name PartitionProductsUsagePipeline
@@ -224,7 +224,7 @@ Se a execução da atividade falhar em um pipeline, o conjunto de dados produzid
     ```powershell   
     Get-AzDataFactorySlice [-ResourceGroupName] <String> [-DataFactoryName] <String> [-DatasetName] <String> [-StartDateTime] <DateTime> [[-EndDateTime] <DateTime> ] [-Profile <AzureProfile> ] [ <CommonParameters>]
     ```   
-   Por exemplo: 
+   Por exemplo:
 
     ```powershell   
     Get-AzDataFactorySlice -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -DatasetName EnrichedGameEventsTable -StartDateTime 2014-05-04 20:00:00
@@ -238,7 +238,7 @@ Se a execução da atividade falhar em um pipeline, o conjunto de dados produzid
     <DateTime> [-Profile <AzureProfile> ] [ <CommonParameters>]
     ```
 
-    Por exemplo: 
+    Por exemplo:
 
     ```powershell   
     Get-AzDataFactoryRun -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -DatasetName EnrichedGameEventsTable -StartDateTime "5/5/2014 12:00:00 AM"

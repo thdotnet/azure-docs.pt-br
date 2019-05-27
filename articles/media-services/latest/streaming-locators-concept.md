@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 05/08/2019
+ms.date: 05/22/2019
 ms.author: juliako
-ms.openlocfilehash: 24ee700e326ef61aa6a93aae725e85e7b4780edf
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 9a14399117971807c1d18f8eb5fab7d6e6cef2d5
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65465034"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66120343"
 ---
 # <a name="streaming-locators"></a>Localizadores de Streaming
 
@@ -24,17 +24,19 @@ Para fazer vídeos na saída do ativo disponível para clientes de reprodução,
 
 O processo de criação de um **Localizador de Streaming** é chamado de publicação. Por padrão, o **Localizador de Streaming** é válido imediatamente após você fazer as chamadas à API e dura até ser excluído, a menos que você configure os horários de início e término opcionais. 
 
-Ao criar um **Localizador de Streaming**, você precisa especificar o nome do [Ativo](https://docs.microsoft.com/rest/api/media/assets) e o nome da [Política Streaming](https://docs.microsoft.com/rest/api/media/streamingpolicies). Você pode usar uma das Políticas de Streaming predefinidas ou criar uma política personalizada. As políticas predefinidas disponíveis no momento são: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly', 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' e 'Predefined_MultiDrmStreaming'. Ao usar uma Política de Streaming personalizada, será necessário estruturar um conjunto limitado dessas políticas para sua conta de Serviço de Mídia e reutilizá-las em seus Localizadores de Streaming, sempre que as mesmas opções e protocolos forem necessários. 
+Ao criar uma **localizador de Streaming**, você deve especificar um **ativo** nome e uma **política Streaming** nome. Para mais informações, consulte os seguintes tópicos:
 
-Se você quiser especificar opções de criptografia em seu fluxo, crie a [Política de Chave de Conteúdo](https://docs.microsoft.com/rest/api/media/contentkeypolicies) que configura como a chave de conteúdo é entregue aos clientes finais por meio do componente Entrega de chave de Serviços de Mídia. Associe o Localizador de Streaming com a **Política de Chave de Conteúdo** e a chave de conteúdo. Você pode permitir que os Serviços de Mídia gerem automaticamente a chave. O exemplo de .NET a seguir mostra como configurar a criptografia AES com uma restrição de token em Serviços de Mídia v3: [EncodeHTTPAndPublishAESEncrypted](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials/tree/master/NETCore/EncodeHTTPAndPublishAESEncrypted). **Políticas de Chave de Conteúdo** serão atualizáveis, você pode desejar atualizar a política se precisar fazer uma rotação de chaves. Pode levar até 15 minutos para que os caches de entrega de Chaves atualizem e selecionem a política atualizada. É recomendável não criar uma nova Política de Chave de Conteúdo para cada localizador de Streaming. Você deve tentar reutilizar as políticas existentes sempre que as mesmas opções forem necessárias.
+* [Ativos](assets-concept.md)
+* [Políticas de Streaming](streaming-policy-concept.md)
+* [Políticas de Chave de Conteúdo](content-key-policy-concept.md)
 
 > [!IMPORTANT]
 > * As propriedades de **Localizadores de Streaming** que são do tipo Datetime estão sempre no formato UTC.
-> * Você deve criar um conjunto limitado de políticas para sua conta de serviço de mídia e reutilizá-los para os Localizadores de Streaming sempre que as mesmas opções forem necessárias. 
+> * Você deve criar um conjunto limitado de políticas para sua conta de serviço de mídia e reutilizá-los para os Localizadores de Streaming sempre que as mesmas opções forem necessárias. Para saber mais, consulte [Cotas e limitações](limits-quotas-constraints.md).
 
 ## <a name="associate-filters-with-streaming-locators"></a>Associar filtros localizadores de Streaming
 
-Você pode especificar uma lista de [filtros de ativo ou a conta](filters-concept.md), que se aplica a seu [localizador de Streaming](https://docs.microsoft.com/rest/api/media/streaminglocators/create#request-body). O [empacotador dinâmico](dynamic-packaging-overview.md) se aplica a esta lista de filtros junto com aqueles seu cliente especifica a URL. Essa combinação gera uma [manifesto dinâmico](filters-dynamic-manifest-overview.md), que se baseia nos filtros na URL + filtros que você especificar no localizador de Streaming. É recomendável que você use esse recurso se você deseja aplicar filtros, mas não quiser expor os nomes de filtro na URL.
+Ver [filtros: associar com localizadores de Streaming](filters-concept.md#associate-filters-with-streaming-locator).
 
 ## <a name="filter-order-page-streaming-locator-entities"></a>Filtrar, ordem, entidades de localizador de Streaming de página
 
@@ -42,5 +44,4 @@ Confira [Filtragem, classificação, paginação de entidades dos Serviços de M
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Tutorial: Carregar, codificar e transmitir vídeos usando .NET](stream-files-tutorial-with-api.md)
-* [Use criptografia dinâmica DRM e serviço de entrega de licenças](protect-with-drm.md)
+[Tutorial: Carregar, codificar e transmitir vídeos usando .NET](stream-files-tutorial-with-api.md)

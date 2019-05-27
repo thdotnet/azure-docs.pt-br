@@ -16,12 +16,12 @@ ms.date: 09/10/2018
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26acb32828ae4829b3da5c3a1181dbde19b23d05
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 504c1bdeb05ecb6372be0edf023c480acac8a8a7
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65825226"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956852"
 ---
 # <a name="problems-signing-in-to-a-microsoft-application"></a>Problemas ao entrar em um aplicativo Microsoft
 
@@ -87,7 +87,7 @@ A seguir, são apresentados alguns problemas comuns que as pessoas se deparam qu
 
 - Para aplicativos **Microsoft** **que não exigem uma licença**, a seguir são apresentadas algumas outras opções a verificar:
 
-  * Se o aplicativo estiver solicitando **permissões em nível de usuário** (por exemplo "Acesso à caixa de correio do usuário"), certifique-se de que o usuário entrou no aplicativo e executou uma **operação de consentimento de nível de usuário** para permitir que o aplicativo acesse seus dados.
+  * Se o aplicativo está solicitando **permissões de nível de usuário** (por exemplo "acessar caixas de correio do usuário"), certifique-se de que o usuário tiver se conectado ao aplicativo e executou um **deoperaçãodeconsentimentodeníveldeusuário** para permitir que o aplicativo acesse seus dados.
 
   * Se o aplicativo estriver solicitando **permissões de administrador** (por exemplo "Acesso a caixas de correio de todos os usuários"), certifique-se de que um Administrador Global executou uma **operação de consentimento de nível de administrador em nome de todos os usuários** na organização.
 

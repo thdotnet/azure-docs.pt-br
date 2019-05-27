@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: mjbrown
-ms.openlocfilehash: 322d5630daeedaa671f994b1374f15f655811de5
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 97b6cc6f171c89f5a253b1104155768ef9324293
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65796081"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65905210"
 ---
 # <a name="create-containers-with-large-partition-key"></a>Criar contêineres com a chave de partição grande
 
@@ -55,6 +55,8 @@ As chaves de partição grande são compatíveis com as seguintes versões míni
 |Sincronização de Java     |   2.4.0      |
 |Async Java   |  2.5.0        |
 | API REST | versão maior do que `2017-05-03` usando o `x-ms-version` cabeçalho de solicitação.|
+
+Atualmente, é possível usar contêineres com a chave de partição grande dentro no Power BI e aplicativos lógicos do Azure. Você pode usar contêineres sem uma chave de partição grande desses aplicativos. 
  
 ## <a name="next-steps"></a>Próximas etapas
 

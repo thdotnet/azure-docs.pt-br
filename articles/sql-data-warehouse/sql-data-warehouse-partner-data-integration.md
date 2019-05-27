@@ -2,26 +2,26 @@
 title: Parceiros de integração de dados do SQL Data Warehouse | Microsoft Docs
 description: Listas de parceiros terceirizados com soluções de integração de dados que oferecem suporte ao SQL Data Warehouse Azure.
 services: sql-data-warehouse
-author: jrowlandjones
+author: mabasile-MSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: consume
 ms.date: 03/27/2019
-ms.author: jrj
+ms.author: mabasile
 ms.reviewer: igorstan
-ms.openlocfilehash: 74449f7319f800e8008c5d457351fa49ae1af59a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5593d6e392915448845adcac95da869e72a11310
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61476607"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873794"
 ---
 # <a name="sql-data-warehouse-data-integration-partners"></a>Parceiros de integração de dados do SQL Data Warehouse
 Para criar sua solução de data warehouse, você pode escolher dentre uma ampla variedade de ferramentas líderes do setor. Este artigo destaca empresas parceiras da Microsoft com soluções de integração de dados oficiais de suporte do Azure SQL Data Warehouse.
 
 ## <a name="data-integration-partners"></a>Parceiros de integração de dados
-| Parceiro | DESCRIÇÃO | Link do produto do site |
+| Parceiro | Descrição | Link do produto do site |
 | ------- | ----------- | -------------------- |
 | ![Alooma][7] |**Alooma**<br> Alooma é uma solução ETL que permite às equipes de dados integrar, aprimorar e transmitir dados de vários silos de dados para o SQL Data Warehouse tudo em tempo real. |[Página do produto][alooma_website] |
 | ![Alteryx][1] |**Alteryx**<br>  O Alteryx Designer fornece um fluxo de trabalho reproduzível para análise de dados de autoatendimento que leva a análises mais aprofundadas em horas, e não as semanas típicas das abordagens tradicionais! O Alteryx Designer ajuda os analistas de dados, combinando a preparação de dados, combinação de dados e análises – preditiva, estatística e espacial – usando a mesma interface do usuário intuitiva. |[Página do produto][alteryx_designer_website]<br>[Azure Marketplace][alteryx_marketplace]<br>|

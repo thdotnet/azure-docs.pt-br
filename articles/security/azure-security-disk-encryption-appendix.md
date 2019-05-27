@@ -8,11 +8,11 @@ ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 675ce2de91dd4e53f4945ceef3b174c33be001f6
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66118478"
 ---
 # <a name="appendix-for-azure-disk-encryption"></a>Apêndice para Azure Disk Encryption 
 
@@ -109,7 +109,7 @@ Se você já estiver familiarizado com os pré-requisitos do Azure Disk Encrypti
 A tabela a seguir mostra quais parâmetros podem ser usados no script do PowerShell: 
 
 
-|Parâmetro|DESCRIÇÃO|É obrigatório|
+|Parâmetro|Descrição|É obrigatório|
 |------|------|------|
 |$resourceGroupName| Nome do grupo de recursos ao qual o KeyVault pertence.  Um grupo de recursos com esse nome será criado caso ele ainda não exista.| True|
 |$keyVaultName|Nome do KeyVault no qual as chaves de criptografia devem ser colocadas. Um cofre com esse nome será criado caso ele ainda não exista.| True|

@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32efe76ac2fce4c4541287e96c3a495f3eb9031b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 08bf7950ada5db90d2b8bfea751b39ffc21f3ee9
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60455798"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65950855"
 ---
 # <a name="determine-incident-response-requirements-for-your-hybrid-identity-solution"></a>Determinar requisitos de resposta a incidentes para sua solução de identidade híbrida
 As organizações de médio ou grande porte provavelmente terão uma [resposta a incidentes de segurança](https://technet.microsoft.com/library/cc700825.aspx) para ajudar o departamento de TI a tomar as ações devidas de acordo com o nível do incidente. O sistema de gerenciamento de identidade é um componente importante do processo de resposta a incidentes, pois ele pode ser usado para ajudar a identificar quem executou uma ação específica em relação ao destino. A solução de identidade híbrida deve ser capaz de fornecer recursos de monitoramento e emissão de relatórios que podem ser aproveitados pelo departamento de TI para realizar ações de identificação e redução de ameaças potenciais. Um plano de resposta a incidentes comum terá as seguintes fases como parte do plano:
@@ -52,7 +52,7 @@ O sistema de gerenciamento de identidade deve ajudar os administradores de TI a 
 * Sua empresa precisa auditar o acesso e a ação do usuário?
 * Sua empresa precisa saber quando um usuário redefine sua senha?
 
-## <a name="policy-enforcement"></a>Aplicação de políticas
+## <a name="policy-enforcement"></a>Imposição de política
 Durante o controle de danos e a fase de redução de riscos, é importante reduzir os efeitos reais e possíveis de um ataque rapidamente. Essa ação que você tomará agora pode fazer a diferença entre ataques de pequenas e grandes proporções. A resposta exata dependerá de sua organização e da natureza do ataque enfrentado. Se a avaliação inicial concluiu que uma conta foi comprometida, você precisará aplicar políticas para bloquear essa conta. Isso é apenas um exemplo em que o sistema de gerenciamento de identidade será utilizado. Use as perguntas a seguir para ajudá-lo a desenvolver a sua solução de identidade híbrida levando em conta como as políticas serão impostas na reação de um incidente em andamento:
 
 * Sua empresa tem políticas in-loco para impedir que os usuários acessem a rede se necessário?
@@ -64,7 +64,7 @@ Durante o controle de danos e a fase de redução de riscos, é importante reduz
 > 
 > 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 [Definir a estratégia de proteção de dados](plan-hybrid-identity-design-considerations-data-protection-strategy.md)
 
 ## <a name="see-also"></a>Veja também

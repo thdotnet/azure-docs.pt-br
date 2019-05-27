@@ -2,20 +2,20 @@
 title: Conectar-se ao SQL Data Warehouse do Azure | Microsoft Docs
 description: Conecte-se ao SQL Data Warehouse do Azure.
 services: sql-data-warehouse
-author: KavithaJonnakuti
+author: XiaoyuL-Preview
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: consume
+ms.subservice: development
 ms.date: 04/17/2018
-ms.author: kavithaj
+ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 85bce59563cf0424816661c97406060bcbb423ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2c937285b9c54072c6d1e1b0628c3d5fbfe786f3
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60402796"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873660"
 ---
 # <a name="connect-to-azure-sql-data-warehouse"></a>Conectar-se ao SQL Data Warehouse do Azure
 Conecte-se ao SQL Data Warehouse do Azure.
@@ -63,12 +63,12 @@ O SQL Data Warehouse padroniza algumas configurações durante a conexão e a cr
 
 | Configuração de banco de dados | Value |
 |:--- |:--- |
-| [ANSI_NULLS][ANSI_NULLS] |ATIVADO |
-| [QUOTED_IDENTIFIERS][QUOTED_IDENTIFIERS] |ATIVADO |
+| [ANSI_NULLS][ANSI_NULLS] |LIGAR |
+| [QUOTED_IDENTIFIERS][QUOTED_IDENTIFIERS] |LIGAR |
 | [DATEFORMAT][DATEFORMAT] |mdy |
 | [DATEFIRST][DATEFIRST] |7 |
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Para se conectar e consultar com o Visual Studio, confira [Consultar com o Visual Studio][Query with Visual Studio]. Para saber mais sobre as opções de autenticação, confira [Autenticação no SQL Data Warehouse do Azure][Authentication to Azure SQL Data Warehouse].
 
 <!--Articles-->

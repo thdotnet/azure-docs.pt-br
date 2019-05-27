@@ -2,20 +2,20 @@
 title: Notas de versão do SQL Data Warehouse do Azure maio de 2018 | Microsoft Docs
 description: Notas de versão do SQL Data Warehouse do Azure.
 services: sql-data-warehouse
-author: twounder
+author: anumjs
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: manage
+ms.subservice: ''
 ms.date: 07/23/2018
-ms.author: twounder
-ms.reviewer: twounder
-ms.openlocfilehash: c17cb13bff0ea9eb3b0bb2caf5bb527fa3958428
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: anjangsh
+ms.reviewer: jrasnick
+ms.openlocfilehash: eb933e8085ec956be713a18602b8baff9c87084b
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60402693"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65912189"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-may-2018"></a>O que há de novo no SQL Data Warehouse do Azure? Maio de 2018 
 O SQL Data Warehouse do Azure recebe melhorias continuamente. Este artigo descreve os novos recursos e alterações que foram introduzidas em maio de 2018. 
@@ -128,7 +128,7 @@ The ORDER BY clause is invalid in views, CREATE TABLE AS SELECT, INSERT SELECT, 
 ## <a name="set-parseonly-on-query-status-behavior-change"></a>Status de consulta SET PARSEONLY ON (Alteração de comportamento)
 Usar a sintaxe `SET PARSEONLY ON` permite que um usuário com o mecanismo do SQL Data Warehouse examine a sintaxe de cada instrução T-SQL e retorne mensagens de erro sem compilar ou executar a instrução. Anteriormente, na exibição do sistema [sys.dm_pdw_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql), o status para essas instruções permaneceria no estado `Running`. A exibição `sys.dm_pdw_exec_requests` agora irá retornar o status como `Complete`.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Agora que você conhece um pouco do SQL Data Warehouse, aprenda como [criar um SQL Data Warehouse][create a SQL Data Warehouse] rapidamente. Se você ainda não conhece o Azure, poderá achar o [Glossário do Azure][Azure glossary] útil à medida que encontrar nova terminologia. Ou, dê uma olhada em alguns desses outros Recursos do SQL Data Warehouse.  
 
 * [Histórias de sucesso de clientes]

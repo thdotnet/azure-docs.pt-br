@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/21/2018
+ms.date: 05/21/2019
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 290b548f31a967d514b09e4de775b12de7703b07
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 7499dbe1f3f0b89a11814ad1b65a52bb9ba9fd05
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782950"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66016071"
 ---
 # <a name="cant-access-this-corporate-application-error-when-using-an-application-proxy-application"></a>Erro "Não é possível Acessar este Aplicativo Corporativo" ao usar um aplicativo de Proxy de Aplicativo
 
@@ -77,7 +77,7 @@ Para verificar se o aplicativo está atribuído a um Grupo de Conectores de trab
 
 1. Abra o aplicativo no portal, acessando o **Azure Active Directory**, clicando em **Aplicativos Empresariais** e, em seguida, em **Todos os Aplicativos.** Abra o aplicativo e, em seguida, selecione **Proxy de aplicativo** no menu esquerdo.
 
-2. Analise o campo Grupo de Conectores. Se não houver conectores ativos no grupo, você verá um aviso. Se nenhuma aviso for exibido, vá para "verificar se todas as portas exigidas estão na lista de permissões".
+2. Analise o campo Grupo de Conectores. Se não houver conectores ativos no grupo, você verá um aviso. Se você não vir todos os avisos, mova para verificar se todas as portas necessárias são permitidas.
 
 3. Se o Grupo de Conectores incorreto for exibido, use o menu suspenso para selecionar o grupo correto e confirme se nenhum aviso é exibido. Se o Grupo de Conectores pretendido for exibido, clique na mensagem de aviso para abrir a página com o gerenciamento do Conector.
 
@@ -87,11 +87,11 @@ Para verificar se o aplicativo está atribuído a um Grupo de Conectores de trab
 
    * Baixar um novo conector para o grupo: Nesta página, você pode obter o link para [baixar um novo Conector](https://download.msappproxy.net/Subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/Connector/Download). Instale o Conector em um computador com a linha direta de visão para o aplicativo de back-end. Normalmente, o conector é instalado no mesmo servidor que o aplicativo. Use o link de download do Connector para baixar de um conector no computador de destino. Em seguida, clique no Conector e use o menu suspenso "Grupo de Conectores" para certificar-se de que ele pertence ao grupo correto.
 
-   * Investigar um conector inativo: Se um conector for exibido como inativo, ele não conseguirá alcançar o serviço. Esse erro geralmente é devido a algumas portas exigidas sendo bloqueadas. Para resolver esse problema, avance para "verificar se todas as portas exigidas estão na lista de permissões".
+   * Investigar um conector inativo: Se um conector for exibido como inativo, ele não conseguirá alcançar o serviço. Esse erro geralmente é devido a algumas portas exigidas sendo bloqueadas. Para resolver esse problema, vá para verificar se todas as portas necessárias são permitidas.
 
 Após usar essas etapas para garantir que o aplicativo está atribuído a um grupo com Conectores funcionando, teste o aplicativo novamente. Se ainda não estiver funcionando, continue na próxima seção.
 
-## <a name="check-all-required-ports-are-whitelisted"></a>Verifique se todas as portas exigidas estão na lista de permissões
+## <a name="check-all-required-ports-are-open"></a>Verifique todas as portas necessárias estejam abertas
 
 Para verificar se todas as exigidas portas estão abertas, consulte a documentação sobre a abertura de portas. Se todas as portas exigidas estiver abertas, siga para a próxima seção.
 

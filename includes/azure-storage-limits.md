@@ -9,15 +9,15 @@ ms.date: 01/11/2018
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: ee9b70827c19236287f81f66f4b9c6e1004a54fd
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59532580"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66114534"
 ---
 A tabela a seguir descreve os limites padrão para o Azure uso geral v1, v2 e contas de armazenamento de Blob. O *ingresso* limite refere-se a todos os dados de solicitações que são enviadas para uma conta de armazenamento. O *egresso* limite refere-se a todos os dados de respostas são recebidas de uma conta de armazenamento.
 
-| Recurso | Limite padrão |
+| Resource | Limite padrão |
 | --- | --- |
 | Número de contas de armazenamento por região por assinatura, incluindo contas Standard e Premium | 250 |
 | Capacidade da conta de armazenamento máximo | 2 PB para os EUA e Europa, 500 TB para todas as outras regiões, que inclui o Reino Unido |

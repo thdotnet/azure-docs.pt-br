@@ -6,14 +6,14 @@ author: rajani-janaki-ram
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 04/29/2098
+ms.date: 05/20/2019
 ms.author: rajanaki
-ms.openlocfilehash: aa135fef2850a692d45d932c15d4be74ccba5724
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 1d36145b2a38c0f1106b4468eab226996e270ae1
+ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925708"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65922137"
 ---
 # <a name="automatic-update-of-the-mobility-service-in-azure-to-azure-replication"></a>Atualização automática do serviço de mobilidade na replicação do Azure para
 
@@ -520,7 +520,7 @@ Se houver um problema com as atualizações automáticas, você verá uma notifi
 
 Se você não foi possível habilitar as atualizações automáticas, consulte os seguintes erros comuns e as ações recomendadas:
 
-- **Erro**: Você não tem permissões para criar uma conta Executar como do Azure (entidade de serviço) e conceder a função Colaborador à entidade de serviço.
+- **Erro**: Você não tem permissão para criar uma conta Executar como do Azure (entidade de serviço) nem conceder a função Colaborador à entidade de serviço.
 
    **Ação recomendada**: Certifique-se de que a conta de logon é atribuída como Colaborador e tente novamente. Consulte a seção permissões necessárias no [usar o portal para criar aplicativo e entidade de serviço que pode acessar recursos de um Azure AD](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) para obter mais informações sobre como atribuir permissões.
  
@@ -535,3 +535,14 @@ Se você não foi possível habilitar as atualizações automáticas, consulte o
 - **Erro**: A conta Executar como não foi localizada. Um deles foi excluído ou não criado - o aplicativo do Azure Active Directory, a entidade de serviço, a função, o ativo do certificado de automação, o ativo de conexão de automação - ou a impressão digital não é idêntica entre o certificado e a conexão. 
 
     **Ação recomendada**: Excluir e, em seguida [recriar a conta executar como](https://docs.microsoft.com/azure/automation/automation-create-runas-account).
+
+-  **Erro**: Executar como certificado usado pela conta de automação do Azure está prestes a expirar. 
+
+    O certificado autoassinado que é criado para a conta executar como expira um ano a partir da data de criação. Você pode renová-lo a qualquer momento antes que ele expire. Se você se inscreveram para notificações por email, você também receberá emails quando uma ação é necessária no seu lado. Esse erro será mostrado 2 meses antes da data de expiração e será alterado para um erro crítico se o certificado expirou. Depois que o certificado tiver expirado, a atualização automática não estará funcional até você renovar o mesmo.
+
+   **Ação recomendada**: Clique em 'Reparar' e, em seguida, Renovar certificado para resolver esse problema.
+    
+   ![renew-cert](media/azure-to-azure-autoupdate/automation-account-renew-runas-certificate.PNG)
+
+> [!NOTE]
+> Depois que você renovar o certificado, atualize a página para que o status atual seja atualizado.

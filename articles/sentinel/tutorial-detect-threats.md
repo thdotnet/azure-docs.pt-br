@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/20/2019
 ms.author: rkarlin
-ms.openlocfilehash: 319ec5d09a6daddb5c1fc36f680ee6d0d856e337
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 6cb40f8c9f1ee85848b5e3db311d0fb652ec1bc3
+ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205420"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65921805"
 ---
 # <a name="tutorial-detect-threats-with-azure-sentinel-preview"></a>Tutorial: Detectar ameaças com a versão prévia do Azure Sentinel
 
@@ -59,6 +59,10 @@ Regras de detecção baseiam-se nos tipos de ameaças e anomalias que poderiam s
         | where OperationName == "Create or Update Virtual Machine" or OperationName == "Create Deployment"
         | where ActivityStatus == "Succeeded"
         | make-series dcount(ResourceId)  default=0 on EventSubmissionTimestamp in range(ago(7d), now(), 1d) by Caller
+
+   > [!NOTE]
+   > O comprimento de consulta deve estar entre 1 e 10000 caracteres e não pode conter "search *" e "union *".
+
 
 5. No **mapeamento de entidade** seção, use os campos de **tipo de entidade** para mapear as colunas em sua consulta para campos de entidade reconhecidos pelo Azure Sentinel. Para cada campo, mapear a coluna relevante na consulta que você criou no Log Analytics para o campo de entidade adequado. Selecione o nome da coluna relevantes sob o **propriedade**. Cada entidade inclui vários campos, por exemplo, SID, GUID, etc. Você pode mapear a entidade de acordo com qualquer um dos campos, não apenas a entidade de nível superior.
 

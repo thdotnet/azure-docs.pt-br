@@ -2,20 +2,20 @@
 title: Do Azure SQL Data Warehouse notas de versão de agosto de 2018 | Microsoft Docs
 description: Notas de versão do SQL Data Warehouse do Azure.
 services: sql-data-warehouse
-author: twounder
+author: anumjs
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: manage
+ms.subservice: ''
 ms.date: 08/13/2018
-ms.author: twounder
-ms.reviewer: twounder
-ms.openlocfilehash: 9547380d4636c1a72add9dab7a9eed850abd0307
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: anjangsh
+ms.reviewer: jrasnick
+ms.openlocfilehash: f0840e9b91c81b8a99e8c736c3c5db082c92fe76
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61474990"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65912219"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-august-2018"></a>O que há de novo no SQL Data Warehouse do Azure? Agosto de 2018
 O SQL Data Warehouse do Azure recebe melhorias continuamente. Este artigo descreve os novos recursos e alterações que foram introduzidos em agosto de 2018.
@@ -30,7 +30,7 @@ Você pode analisar cada categoria para ver as recomendações para o alerta esp
 
 ## <a name="bug-fixes"></a>Correções de bug
 
-| Title | DESCRIÇÃO |
+| Title | Descrição |
 |:---|:---|
 | **Possíveis falhas de consulta quando a contagem de divisão exceder o limite máximo** |Quando o limite de divisão de arquivo de limite superior de 1 milhão é excedido, uma exceção não tratada causou o despejo do SQL Engine e todas as consultas falharam. Essa correção resolveu o problema manipulando a exceção corretamente e retornando um erro sem causar falhas nas consultas. |
 | **Valor padrão externo de ExternalMoveReadersPerNode aumentado para melhorar o desempenho da carga** |Esse problema foi causado pela configuração da propriedade ExternalMoveReadersPerNode estar fora de sincronia com a configuração de malha de serviço. Essa regressão causou uma degradação do desempenho de carga Gen2. A correção traz o desempenho de carregamento de Gen2 volta dentro dos parâmetros de design otimizado.|

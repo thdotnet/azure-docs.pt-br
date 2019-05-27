@@ -9,12 +9,12 @@ ms.date: 04/12/2017
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 7029f07b494630cc1ebe4a2dbfb297e73d85ec5e
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: ef01cf194ea7a0afea033d2888df946208073e41
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153181"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65874104"
 ---
 # <a name="configure-azure-storage-connection-strings"></a>Configurar cadeias de conexão do Armazenamento do Azure
 
@@ -35,7 +35,7 @@ Seu aplicativo precisara acessar a cadeia de conexão no tempo de execução par
 
 Armazenar a cadeia de conexão em um arquivo de configuração facilita a atualização da cadeia de conexão para alternar entre o emulador de armazenamento e uma conta de Armazenamento do Azure na nuvem. Você precisa apenas editar a cadeia de conexão para apontar para seu ambiente de destino.
 
-Você pode usar o [Gerenciador de Configuração do Microsoft Azure](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/) para acessar a cadeia de conexão no tempo de execução, independentemente do local em que seu aplicativo esteja sendo executado.
+Você pode usar o [Gerenciador de Configuração do Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/) para acessar a cadeia de conexão no tempo de execução, independentemente do local em que seu aplicativo esteja sendo executado.
 
 ## <a name="create-a-connection-string-for-the-storage-emulator"></a>Criar uma cadeia de conexão para o emulador de armazenamento
 [!INCLUDE [storage-emulator-connection-string-include](../../../includes/storage-emulator-connection-string-include.md)]
@@ -107,7 +107,7 @@ Se você tiver mapeado um ponto de extremidade de armazenamento para um domínio
 >
 
 ### <a name="create-a-connection-string-with-an-endpoint-suffix"></a>Criar uma cadeia de conexão com um sufixo de ponto de extremidade
-Para criar uma cadeia de conexão para um serviço de armazenamento em regiões ou instâncias com sufixos de ponto de extremidade diferente, como para o Azure China ou Azure Governamental, use o formato de cadeia de conexão a seguir. Indique se deseja se conectar à conta de armazenamento por meio de HTTP ou HTTPS (recomendado), substitua `myAccountName` pelo nome da sua conta de armazenamento, substitua `myAccountKey` pela chave de acesso da sua conta e substitua `mySuffix` pelo sufixo do URI:
+Para criar uma cadeia de caracteres de conexão para um serviço de armazenamento em regiões ou instâncias com sufixos de ponto de extremidade diferente, como para 21Vianet do Azure China ou Azure governamental, use o seguinte formato de cadeia de caracteres de conexão. Indique se deseja se conectar à conta de armazenamento por meio de HTTP ou HTTPS (recomendado), substitua `myAccountName` pelo nome da sua conta de armazenamento, substitua `myAccountKey` pela chave de acesso da sua conta e substitua `mySuffix` pelo sufixo do URI:
 
 ```
 DefaultEndpointsProtocol=[http|https];
@@ -116,7 +116,7 @@ AccountKey=myAccountKey;
 EndpointSuffix=mySuffix;
 ```
 
-Aqui está um exemplo de cadeia de conexão para serviços de armazenamento no Azure China:
+Aqui está um exemplo de cadeia de conexão para serviços de armazenamento no Azure China 21Vianet:
 
 ```
 DefaultEndpointsProtocol=https;
@@ -131,5 +131,5 @@ EndpointSuffix=core.chinacloudapi.cn;
 ## <a name="next-steps"></a>Próximas etapas
 * [Usar o emulador de Armazenamento do Azure para desenvolvimento e teste](storage-use-emulator.md)
 * [Gerenciadores do Armazenamento do Azure](storage-explorers.md)
-* [Uso de SAS (Assinaturas de Acesso Compartilhado)](storage-dotnet-shared-access-signature-part-1.md)
+* [Usando assinaturas de acesso compartilhado (SAS)](storage-dotnet-shared-access-signature-part-1.md)
 

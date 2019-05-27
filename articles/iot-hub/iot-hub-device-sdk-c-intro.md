@@ -6,14 +6,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: c
 ms.topic: conceptual
-ms.date: 08/25/2017
+ms.date: 05/17/2019
 ms.author: yizhon
-ms.openlocfilehash: a0099fa085e21c381b74dc2690ffcf0870345f21
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d758d761e560642de76e149c83fc6898aa78bafb
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60401187"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65910333"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>SDK do dispositivo IoT do Azure para C
 
@@ -126,7 +126,7 @@ A versão do Windows do **iothub_client\_amostras\_iothub_convenience_sample** a
   ![Gerenciador de Soluções do Visual Studio](./media/iot-hub-device-sdk-c-intro/iothub-client-sample-mqtt.png)
 
 > [!NOTE]
-> Se você abrir esse projeto no Visual Studio 2017, aceite os prompts a fim de redirecionar o projeto para a versão mais recente.
+> Se o Visual Studio solicita a redirecionar o projeto para a versão mais recente, aceite a solicitação.
 
 Essa solução contém um único projeto. Há quatro pacotes NuGet instalados na solução:
 
@@ -339,7 +339,7 @@ Na pasta **serializer** do [repositório azure-iot-sdk](https://github.com/Azure
   ![Solução do Visual Studio para o exemplo de mqtt](./media/iot-hub-device-sdk-c-intro/simplesample_mqtt.png)
 
 > [!NOTE]
-> Se você abrir esse projeto no Visual Studio 2017, aceite os prompts a fim de redirecionar o projeto para a versão mais recente.
+> Se o Visual Studio solicita a redirecionar o projeto para a versão mais recente, aceite a solicitação.
 
 Assim como no exemplo anterior, este inclui vários pacotes NuGet:
 

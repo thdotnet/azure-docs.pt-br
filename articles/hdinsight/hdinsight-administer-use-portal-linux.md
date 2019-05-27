@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: hrasheed
-ms.openlocfilehash: 003aeadba1f4683af40f390d40dd3bbe32e02a83
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 528d2fd5b26e06478078711405bd5b9ca51feeda
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64721926"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65859995"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Gerenciar clusters do Apache Hadoop no HDInsight usando o portal do Azure
 
@@ -40,7 +40,7 @@ Selecione o nome do cluster do [ **clusters HDInsight** ](#showClusters) página
 
 **Menu principal:**  
 
-| item| DESCRIÇÃO |
+| item| Descrição |
 |---|---|
 |Mover|Move o cluster para outro grupo de recursos ou outra assinatura.|
 |Excluir|Exclui o cluster. |
@@ -49,24 +49,24 @@ Selecione o nome do cluster do [ **clusters HDInsight** ](#showClusters) página
 **Menu à esquerda:**  
   - **Menu do canto superior esquerdo**
 
-    | item| DESCRIÇÃO |
+    | item| Descrição |
     |---|---|
     |Visão geral|Fornece informações gerais para o cluster.|
     |Log de atividades|Mostra e consulta logs de atividades.|
-    |Controle de acesso (IAM)|Utiliza as atribuições de função.  Consulte [Usar as atribuições de função para gerenciar o acesso aos recursos de assinatura do Azure](../role-based-access-control/role-assignments-portal.md).|
-    |Marcas|Permite estabelecer pares de chave/valor para definir uma taxonomia personalizada dos serviços de nuvem. Por exemplo, você pode criar uma chave chamada **projeto**e usar um valor comum para todos os serviços associados a um projeto específico.|
+    |IAM (Controle de acesso)|Utiliza as atribuições de função.  Consulte [Usar as atribuições de função para gerenciar o acesso aos recursos de assinatura do Azure](../role-based-access-control/role-assignments-portal.md).|
+    |tags|Permite estabelecer pares de chave/valor para definir uma taxonomia personalizada dos serviços de nuvem. Por exemplo, você pode criar uma chave chamada **projeto**e usar um valor comum para todos os serviços associados a um projeto específico.|
     |Diagnosticar e resolver problemas|Exibe informações sobre solução de problemas.|
     |Início rápido|Exibe informações que ajudam você a começar a usar o HDInsight.|
     |Ferramentas|Informações de ajuda para ferramentas relacionadas ao HDInsight.|
 
   - **Menu Configurações**  
 
-    | item| DESCRIÇÃO |
+    | item| Descrição |
     |---|---|
-    |Tamanho do cluster|Verifique, aumente e diminua o número de nós do trabalhador do cluster. Ver [Dimensionar clusters](hdinsight-administer-use-portal-linux.md#scale-clusters).|
+    |Tamanho do grupo|Verifique, aumente e diminua o número de nós do trabalhador do cluster. Ver [Dimensionar clusters](hdinsight-administer-use-portal-linux.md#scale-clusters).|
     |Limites de cota|Exibe os núcleos usados e disponíveis para sua assinatura.|
     |Secure Shell (SSH) + logon do Cluster|Mostra as instruções para se conectar ao cluster usando uma conexão Secure Shell (SSH). Para obter mais informações, confira [Usar SSH com HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md).|
-    |Armazenamento do Data Lake Gen1|Configura o acesso ao Data Lake Storage Gen1.  Confira [Início Rápido: Configurar clusters no HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).|
+    |Data Lake Storage Gen1|Configura o acesso ao Data Lake Storage Gen1.  Confira [Início Rápido: Configurar clusters no HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).|
     |Contas de armazenamento|Exibe as contas de armazenamento e as chaves. As contas de armazenamento são configuradas durante o processo de criação do cluster.|
     |Aplicativos|Adicionar/remove aplicativos do HDInsight.  Consulte [Instalar aplicativos personalizados do HDInsight](hdinsight-apps-install-custom-applications.md).|
     |Ações de script|Execute scripts Bash no cluster. Confira [Personalizar clusters HDInsight baseados em Linux usando a Ação de Script](hdinsight-hadoop-customize-cluster-linux.md).|
@@ -78,7 +78,7 @@ Selecione o nome do cluster do [ **clusters HDInsight** ](#showClusters) página
 
   - **Menu Monitoramento**
 
-    | item| DESCRIÇÃO |
+    | item| Descrição |
     |---|---|
     |Alertas|Gerencia os alertas e ações.|
     |Métricas|Monitore as métricas de cluster nos logs do Azure Monitor.|
@@ -87,16 +87,16 @@ Selecione o nome do cluster do [ **clusters HDInsight** ](#showClusters) página
 
   - **Menu Suporte + solução de problemas**
 
-    | item| DESCRIÇÃO |
+    | item| Descrição |
     |---|---|
-    |Integridade de recursos|Confira [Visão geral do Azure Resource Health](../service-health/resource-health-overview.md).|
+    |Integridade do recurso|Confira [Visão geral do Azure Resource Health](../service-health/resource-health-overview.md).|
     |Nova solicitação de suporte|Permite criar um tíquete de suporte com o suporte da Microsoft.|
 
 ## <a name="properties"></a> Propriedades do cluster
 
 Na [página inicial do cluster](#homePage), em **Configurações**, selecione **Propriedades**.
 
-|item | DESCRIÇÃO |
+|item | Descrição |
 |---|---|
 |Nome do host|Nome do cluster.|
 |URL do cluster|A URL para a interface da Web do Ambari.|
@@ -204,7 +204,7 @@ Há várias maneiras de programar o processo:
 
 * Use o Azure Data Factory. Consulte [Criar clusters Apache Hadoop baseados em Linux sob demanda no HDInsight usando o Azure Data Factory](hdinsight-hadoop-create-linux-clusters-adf.md) para criar serviços vinculados HDInsight sob demanda.
 * Use o Azure PowerShell.  Consulte [Analisar dados de atraso de voo](hdinsight-analyze-flight-delay-data-linux.md).
-* Use a CLI Clássica do Azure. Consulte [Gerenciar clusters HDInsight usando a CLI Clássica do Azure](hdinsight-administer-use-command-line.md).
+* Use a CLI do Azure. Ver [gerenciar o Azure HDInsight clusters usando a CLI do Azure](hdinsight-administer-use-command-line.md).
 * Use o SDK .NET do HDInsight. Ver [trabalhos de envio do Apache Hadoop](hadoop/submit-apache-hadoop-jobs-programmatically.md).
 
 Para saber mais sobre preços, consulte [Preços do HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/). Para excluir um cluster do Portal, veja [Excluir clusters](#delete-clusters)
@@ -268,7 +268,7 @@ A senha é alterada em todos os nós no cluster.
    | --- | --- |
    | Tipo de script | Selecione **- Personalizar** na lista suspensa.|
    | NOME |"Alterar senha ssh" |
-   | URI do script Bash |O URI do arquivo changepassword.sh |
+   | URI do script de bash |O URI do arquivo changepassword.sh |
    | Tipos de nó: (Principal, Trabalho, Nimbus, Supervisor, Zookeeper etc.) |✓ para todos os tipos de nó listados |
    | parâmetros |Insira o nome de usuário SSH e a nova senha. Deve haver um espaço entre o nome de usuário e a senha. |
    | Persistir esta ação de script... |Deixe este campo desmarcado. |
@@ -284,7 +284,7 @@ Os clusters HDInsight têm os seguintes serviços Web HTTP (todos esses serviço
 * Oozie
 * Templeton
 
-Por padrão, esses serviços são concedidos para acesso. Você pode revogar/conceder o acesso usando [CLI do Azure Classic](hdinsight-administer-use-command-line.md#enabledisable-http-access-for-a-cluster) e [do Azure PowerShell](hdinsight-administer-use-powershell.md#grantrevoke-access).
+Por padrão, esses serviços são concedidos para acesso. Você pode revogar/conceder o acesso usando [Azure PowerShell](hdinsight-administer-use-powershell.md#grantrevoke-access).
 
 ## <a name="find-the-subscription-id"></a>Localizar a ID da assinatura
 Cada cluster é vinculado a uma assinatura do Azure.  A ID de assinatura do Azure está visível na [página inicial do cluster](#homePage).
@@ -316,7 +316,7 @@ A seção **Uso** da folha do cluster do HDInsight exibe informações sobre o n
 Neste artigo, você aprendeu algumas funções administrativas básicas. Para saber mais, consulte os seguintes artigos:
 
 * [Administrar o HDInsight usando o PowerShell do Azure](hdinsight-administer-use-powershell.md)
-* [Administrar o HDInsight usando a CLI Clássica do Azure](hdinsight-administer-use-command-line.md)
+* [Administrar o HDInsight usando a CLI do Azure](hdinsight-administer-use-command-line.md)
 * [Criar clusters HDInsight](hdinsight-hadoop-provision-linux-clusters.md)
 * [Leia mais sobre como usar a interface da Web do Apache Ambari](hdinsight-hadoop-manage-ambari.md)
 * [Detalhes sobre como usar a API REST do Apache Ambari](hdinsight-hadoop-manage-ambari-rest-api.md)

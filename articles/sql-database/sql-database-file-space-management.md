@@ -13,11 +13,11 @@ ms.reviewer: jrasnick, carlrab
 manager: craigg
 ms.date: 03/12/2019
 ms.openlocfilehash: 043ceb6c46155ed169c080d08f37688b47e3e4b9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57881156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66123331"
 ---
 # <a name="manage-file-space-for-single-and-pooled-databases-in-azure-sql-database"></a>Gerenciar o espaço de arquivo para bancos de dados individuais e em pool no Banco de Dados SQL do Azure
 
@@ -250,9 +250,9 @@ Depois que os arquivos de dados do banco de dados são reduzidos, os índices po
 ## <a name="next-steps"></a>Próximas etapas
 
 - Para obter informações sobre tamanhos máximos do banco de dados, consulte:
-  - [Banco de dados SQL do Azure Limites do modelo de compra baseado no vCore para um único banco de dados](sql-database-vcore-resource-limits-single-databases.md)
+  - [Banco de dados SQL do Azure Limites do modelo de compra baseado em vCore para um único banco de dados](sql-database-vcore-resource-limits-single-databases.md)
   - [Limites de recursos para bancos de dados individuais usando o modelo de compra baseado em DTU](sql-database-dtu-resource-limits-single-databases.md)
-  - [Banco de dados SQL do Azure limites de modelo para pools Elásticos de compra baseado em vCore](sql-database-vcore-resource-limits-elastic-pools.md)
+  - [Banco de dados SQL do Azure limites de modelo de compra baseado em vCore para pools Elásticos](sql-database-vcore-resource-limits-elastic-pools.md)
   - [Limites de recursos para pools elásticos usando o modelo de compra baseado em DTU](sql-database-dtu-resource-limits-elastic-pools.md)
 - Para mais informações sobre o `SHRINKDATABASE`comando, consulte [SHRINKDATABASE](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql). 
 - Para obter mais informações sobre fragmentação e reconstrução de índices, consulte [Reorganizar e reconstruir índices](https://docs.microsoft.com/sql/relational-databases/indexes/reorganize-and-rebuild-indexes).

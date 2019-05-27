@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f7d24a1e14cfbb1163ab78b94dd36ec288dce50
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: e8bd9a86d5ec0d39a7f1c26adac52f41e6420283
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544041"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66121979"
 ---
 # <a name="user-gets-consent-for-several-resources-using-msalnet"></a>Usuário recebe consentimento para vários recursos usando MSAL.NET
 O ponto de extremidade de plataforma do Microsoft identity não permite que você obtenha um token para vários recursos ao mesmo tempo. Ao usar a biblioteca de autenticação da Microsoft para .NET (MSAL.NET), o parâmetro no método de token de aquisição escopos deve conter apenas escopos para um único recurso. No entanto, você pode previamente autoriza antecipadamente vários recursos especificando escopos adicionais usando o `.WithExtraScopeToConsent` método de construtor.
@@ -32,8 +32,8 @@ O ponto de extremidade de plataforma do Microsoft identity não permite que voc�
 
 Por exemplo, se você tiver dois recursos que têm 2 escopos cada:
 
-- https://mytenant.onmicrosoft.com/customerapi (com 2 escopos `customer.read` e `customer.write`)
-- https://mytenant.onmicrosoft.com/vendorapi (com 2 escopos `vendor.read` e `vendor.write`)
+- https:\//mytenant.onmicrosoft.com/customerapi (com 2 escopos `customer.read` e `customer.write`)
+- https:\//mytenant.onmicrosoft.com/vendorapi (com 2 escopos `vendor.read` e `vendor.write`)
 
 Você deve usar o `.WithExtraScopeToConsent` modificador que tem o *extraScopesToConsent* parâmetro, conforme mostrado no exemplo a seguir:
 

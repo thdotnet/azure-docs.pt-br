@@ -5,18 +5,18 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 05/20/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ae1db992984e8bb1dca71afed9fadd6b411b3dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: aa3d7d22ed032379f452eb4648c9a1cf87293df9
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60415080"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956584"
 ---
 # <a name="getting-started-with-the-azure-multi-factor-authentication-server"></a>Introdução ao Servidor de Autenticação Multifator do Azure
 
@@ -27,6 +27,9 @@ ms.locfileid: "60415080"
 Agora que determinamos que o Servidor de Autenticação Multifator do Azure local será utilizado, vamos continuar. Esta página aborda uma nova instalação do servidor e sua configuração com o Active Directory local. Se você já tiver o servidor MFA instalado e quiser atualizar, consulte [Atualizar para o Servidor de Autenticação Multifator do Azure mais recente](howto-mfaserver-deploy-upgrade.md). Se você estiver procurando informações sobre como instalar apenas o serviço Web, confira [Implantar o serviço Web de aplicativo móvel do Servidor de Autenticação Multifator](howto-mfaserver-deploy-mobileapp.md).
 
 ## <a name="plan-your-deployment"></a>Planejar sua implantação
+
+> [!WARNING]
+> A partir de março do servidor de MFA de 2019 downloads só estará disponíveis para locatários pagos. Locatários gratuita ou de avaliação não poderá baixar ou gerar e usar credenciais de ativação.
 
 Antes de baixar o Servidor de Autenticação Multifator do Azure, pense em quais são seus requisitos de alta disponibilidade e carga. Use essas informações para decidir como e onde implantar.
 
@@ -48,7 +51,7 @@ Quando um servidor MFA do Azure mestre fica offline, os servidores subordinados 
 
 Verifique se o servidor que você está usando para a Autenticação Multifator do Azure atende aos seguintes requisitos:
 
-| Requisitos do Servidor de Autenticação Multifator do Azure | DESCRIÇÃO |
+| Requisitos do Servidor de Autenticação Multifator do Azure | Descrição |
 |:--- |:--- |
 | Hardware |<li>200 MB de espaço em disco rígido</li><li>processador compatível com x32 ou x64</li><li>1 GB ou mais de RAM</li> |
 | Software |<li>Windows Server 2016</li><li>Windows Server 2012 R2</li><li>Windows Server 2012</li><li>Windows Server 2008 R2</li><li>Windows Server 2008 SP1, SP2</li><li>Windows Server 2003 R2</li><li>Windows Server 2003 SP1, SP2</li><li>Windows 10</li><li>Windows 8.1, todas as edições</li><li>Windows 8, todas as edições</li><li>Windows 7, todas as edições</li><li>Windows Vista, todas as edições, SP1, SP2</li><li>Microsoft .NET 4.0 Framework</li><li>IIS 7.0 ou superior se estiver instalando o portal do usuário ou o SDK do serviço Web</li> |
@@ -74,7 +77,7 @@ Cada servidor MFA deve ser capaz de se comunicar na porta 443 de saída para os 
 
 Se os firewalls de saída forem restritos na porta 443, abra os seguintes intervalos de endereços IP:
 
-| Subrede de IP | Máscara de rede | Intervalo IP |
+| Subrede de IP | Máscara de rede | Intervalo de IPs |
 |:---: |:---: |:---: |
 | 134.170.116.0/25 |255.255.255.128 |134.170.116.1 – 134.170.116.126 |
 | 134.170.165.0/25 |255.255.255.128 |134.170.165.1 – 134.170.165.126 |
@@ -90,6 +93,9 @@ Se você não estiver usando o recurso de Confirmação de Eventos e os usuário
 
 ## <a name="download-the-mfa-server"></a>Baixar o Servidor MFA
 
+> [!WARNING]
+> A partir de março do servidor de MFA de 2019 downloads só estará disponíveis para locatários pagos. Locatários gratuita ou de avaliação não poderá baixar ou gerar e usar credenciais de ativação.
+
 Siga estas etapas para baixar o Servidor de Autenticação Multifator do Azure do portal do Azure:
 
 1. Entre no [Portal do Azure](https://portal.azure.com) como administrador.
@@ -102,9 +108,6 @@ Siga estas etapas para baixar o Servidor de Autenticação Multifator do Azure d
 5. Mantenha essa página aberta, pois vamos referenciá-la depois de executar o instalador.
 
 ## <a name="install-and-configure-the-mfa-server"></a>Instalar e configurar o Servidor MFA
-
-> [!WARNING]
-> A partir de março do servidor de MFA de 2019 downloads só estará disponíveis para locatários pagos. Locatários gratuita ou de avaliação não poderá baixar ou gerar e usar credenciais de ativação.
 
 Agora que já baixou o servidor, você pode instalá-lo e configurá-lo. Verifique se o servidor em que você está instalando atende aos requisitos listados na seção de planejamento.
 

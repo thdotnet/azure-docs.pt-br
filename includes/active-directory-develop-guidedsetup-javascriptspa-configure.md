@@ -15,11 +15,11 @@ ms.date: 09/17/2018
 ms.author: nacanuma
 ms.custom: include file
 ms.openlocfilehash: 387adcdf8bdabf90bc1e691a7a8ec9ae0a8e90dc
-ms.sourcegitcommit: abeefca6cd5ca01c3e0b281832212aceff08bf3e
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993278"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66121826"
 ---
 ## <a name="register-your-application"></a>Registre seu aplicativo
 
@@ -69,4 +69,4 @@ ms.locfileid: "64993278"
     - `Enter_the_Tenant_Info_Here` - é definido como uma das seguintes opções:
        - Se o seu aplicativo for compatível com **Contas neste diretório organizacional**, substitua esse valor pelo **ID do locatário** ou **Nome do locatário** (por exemplo, Contoso.microsoft.com)
        - Se seu aplicativo dá suporte a **Contas em qualquer diretório organizacional**, substitua esse valor por `organizations`
-       - Se seu aplicativo for compatível com **Contas em qualquer diretório organizacional e contas pessoais da Microsoft**, substitua esse valor por `common`. Para restringir a compatibilidade *Somente a conta pessoais da Microsoft*, substitua esse valor por `consumers`.
+       - Se o seu aplicativo der suporte a **Contas em qualquer diretório organizacional e contas pessoais Microsoft**, substitua esse valor por `common`. Para restringir a compatibilidade *Somente a conta pessoais da Microsoft*, substitua esse valor por `consumers`.

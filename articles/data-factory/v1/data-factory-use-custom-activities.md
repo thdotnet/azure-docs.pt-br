@@ -13,12 +13,12 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 robots: noindex
-ms.openlocfilehash: 0ddc235064d99e9d6385ab48e78f893952eefa15
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f7e3b1496890a4b97fc435b49ab9bf282134d1a6
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61254104"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65910823"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Usar atividades personalizadas em um pipeline do Data Factory do Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -44,7 +44,7 @@ O passo a passo a seguir fornece instruções para criar uma atividade personali
 
 ## <a name="walkthrough-create-a-custom-activity"></a>Passo a passo: criar uma atividade personalizada
 ### <a name="prerequisites"></a>Pré-requisitos
-* Visual Studio 2012/2013/2015
+* Visual Studio 2012/2013/2015/2017
 * Baixar e instalar o [SDK .NET do Azure](https://azure.microsoft.com/downloads/)
 
 ### <a name="azure-batch-prerequisites"></a>Pré-requisitos de Lote do Azure
@@ -100,10 +100,10 @@ O método retorna um dicionário que pode ser usado para unir atividades persona
 ### <a name="procedure"></a>Procedimento
 1. Crie um projeto de **Biblioteca de Classes do .NET** .
    <ol type="a">
-     <li>Inicialize o <b>Visual Studio 2017</b> ou o <b>Visual Studio 2015</b> ou o <b>Visual Studio 2013</b> ou o <b>Visual Studio 2012</b>.</li>
+     <li>Inicie o Visual Studio.</li>
      <li>Clique em <b>Arquivo</b>, aponte para <b>Novo</b> e clique em <b>Projeto</b>.</li>
      <li>Expanda <b>Modelos</b> e selecione <b>Visual C#</b>. Neste passo a passo, você pode usar C#, mas você pode usar qualquer linguagem .NET para desenvolver a atividade personalizada.</li>
-     <li>Selecione <b>Biblioteca de Classes</b> na lista de tipos de projeto à direita. No VS 2017, escolha <b>Biblioteca de Classes (.NET Framework)</b> </li>
+     <li>Selecione <b>Biblioteca de Classes</b> na lista de tipos de projeto à direita. No Visual Studio, escolha <b>biblioteca de classes (.NET Framework)</b> </li>
      <li>Insira <b>MyDotNetActivity</b> for the <b>Nome</b>.</li>
      <li>Selecione <b>C:\ADFGetStarted</b> como o <b>Local</b>.</li>
      <li>Clique em <b>OK</b> para criar o projeto.</li>
@@ -628,7 +628,7 @@ Nesta etapa, você cria conjuntos de dados para representar a entrada e saída d
     ![Bloco do diagrama](./media/data-factory-use-custom-activities/DataFactoryBlade.png)
 2. Na exibição Diagrama, clique em OutputDataset.
 
-    ![Modo de Exibição de Diagrama](./media/data-factory-use-custom-activities/diagram.png)
+    ![Exibição de Diagrama](./media/data-factory-use-custom-activities/diagram.png)
 3. Você verá que as cinco fatias de saída estão no estado Pronto. Se não estiverem no estado Pronto, ainda não foram produzidas.
 
    ![Fatias de saída](./media/data-factory-use-custom-activities/OutputSlices.png)
