@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/01/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: 9d7fd41657394e006957392f37ec1a258b33c8c6
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: beee76bdc443b3a66b4500b83d228075b84eed1e
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65413875"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864765"
 ---
 # <a name="deployment-faqs-for-web-apps-in-azure"></a>Perguntas frequentes sobre implantação de Aplicativos Web no Azure
 
@@ -38,9 +38,9 @@ Estas são algumas opções para publicar seu código do aplicativo Web:
 
 Para obter mais informações, consulte [Implantar seu aplicativo no Serviço de Aplicativo](deploy-local-git.md).
 
-## <a name="i-see-an-error-message-when-i-try-to-deploy-from-visual-studio-how-do-i-resolve-this"></a>Recebi uma mensagem de erro ao tentar implantar por meio do Visual Studio. Como resolver isso?
+## <a name="i-see-an-error-message-when-i-try-to-deploy-from-visual-studio-how-do-i-resolve-this-error"></a>Recebi uma mensagem de erro ao tentar implantar por meio do Visual Studio. Como resolvo o erro?
 
-Se você vir a seguinte mensagem de erro, talvez você esteja usando uma versão mais antiga do SDK: "Erro durante a implantação do recurso 'YourResourceName' no grupo de recursos 'YourResourceGroup': MissingRegistrationForLocation: A assinatura não está registrada para o tipo de recurso 'components' na localização 'Centro dos EUA'. Registre-se novamente nesse provedor para ter acesso a essa localização”. 
+Se você vir a seguinte mensagem de erro, talvez você esteja usando uma versão mais antiga do SDK: "Erro durante a implantação do recurso 'YourResourceName' no grupo de recursos 'YourResourceGroup': MissingRegistrationForLocation: A assinatura não está registrada para o tipo de recurso 'components' na localização 'Centro dos EUA'. Registre novamente para esse provedor para ter acesso a esse local." 
 
 Para resolver esse erro, atualize para o [último SDK](https://azure.microsoft.com/downloads/). Se você receber essa mensagem e tiver o último SDK, envie uma solicitação de suporte.
 
@@ -59,7 +59,7 @@ Para obter informações sobre a estrutura de arquivos do aplicativo do Serviço
 
 ## <a name="how-do-i-resolve-ftp-error-550---there-is-not-enough-space-on-the-disk-when-i-try-to-ftp-my-files"></a>Como fazer para resolver o “Erro de FTP 550 – não há espaço suficiente em disco” quando tento usar o FTP para meus arquivos?
 
-Se você receber essa mensagem, é provável que você esteja atingindo uma cota de disco no plano de serviço do aplicativo Web. Talvez você precise escalar verticalmente para uma camada de serviço superior de acordo com suas necessidades de espaço em disco. Para obter mais informações sobre planos de preços e limites de recursos, consulte [Preços do Serviço de Aplicativo](https://azure.microsoft.com/pricing/details/app-service/).
+Se você vir essa mensagem, é provável que você está executando em uma cota de disco no plano de serviço para seu aplicativo web. Talvez você precise escalar verticalmente para uma camada de serviço superior de acordo com suas necessidades de espaço em disco. Para obter mais informações sobre planos de preços e limites de recursos, consulte [Preços do Serviço de Aplicativo](https://azure.microsoft.com/pricing/details/app-service/).
 
 ## <a name="how-do-i-set-up-continuous-deployment-for-my-app-service-web-app"></a>Como fazer para configurar a implantação contínua em meu aplicativo Web do Serviço de Aplicativo?
 
@@ -69,11 +69,11 @@ Se você receber essa mensagem, é provável que você esteja atingindo uma cota
 
 Para obter ajuda sobre como investigar problemas com a implantação contínua do GitHub ou do Bitbucket, consulte [Investigando a implantação contínua](https://github.com/projectkudu/kudu/wiki/Investigating-continuous-deployment).
 
-## <a name="i-cant-ftp-to-my-site-and-publish-my-code-how-do-i-resolve-this"></a>Não consigo usar o FTP em meu site nem publicar meu código. Como resolver isso?
+## <a name="i-cant-ftp-to-my-site-and-publish-my-code-how-do-i-resolve-this-issue"></a>Não consigo usar o FTP em meu site nem publicar meu código. Como resolver isso?
 
 Para resolver problemas de FTP:
 
-1. Verifique se você está inserindo o nome do host e as credenciais corretas. Para obter informações detalhadas sobre os diferentes tipos de credenciais e como usá-los, consulte [Credenciais de implantação](https://github.com/projectkudu/kudu/wiki/Deployment-credentials).
+1. Verifique se você estiver inserindo o nome de host correto e as credenciais. Para obter informações detalhadas sobre os diferentes tipos de credenciais e como usá-los, consulte [Credenciais de implantação](https://github.com/projectkudu/kudu/wiki/Deployment-credentials).
 2. Verifique se as portas FTP não estão bloqueadas por um firewall. As portas devem ter essas configurações:
     * Porta de conexão de controle FTP: 21
     * Porta de conexão de dados FTP: 989, 10001-10300

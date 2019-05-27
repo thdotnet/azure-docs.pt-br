@@ -1,7 +1,7 @@
 ---
 title: Implantar modelos em FPGAs
 titleSuffix: Azure Machine Learning service
-description: Saiba como implantar um serviço Web com um modelo em execução em um FPGA com o serviço do Azure Machine Learning para inferência de latência ultrabaixa.
+description: Saiba como implantar um serviço web com um modelo em execução em um FPGA com o serviço de Azure Machine Learning para inferência de latência extremamente baixa.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,16 +11,16 @@ ms.author: tedway
 author: tedway
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 249a21bf9eeb3913826971fd1aae136197d264c4
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 8d667d45e1831e0fcc939d302a16f63d4a282963
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149603"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852042"
 ---
 # <a name="deploy-a-model-as-a-web-service-on-an-fpga-with-azure-machine-learning-service"></a>Implantar um modelo como um serviço Web em uma FPGA com o serviço do Azure Machine Learning
 
-Você pode implantar um modelo como um serviço web em [campo matrizes de portões programáveis (FPGAs)](concept-accelerate-with-fpgas.md) com modelos de acelerada de Hardware do Azure Machine Learning. O uso de FPGAs fornece inferência de latência extremamente baixa, mesmo com um tamanho de lote único.
+Você pode implantar um modelo como um serviço web em [campo matrizes de portões programáveis (FPGAs)](concept-accelerate-with-fpgas.md) com modelos de acelerada de Hardware do Azure Machine Learning. Usar FPGAs fornece a inferência de latência extremamente baixa, mesmo com um tamanho de lote único. Inferência de tipos ou modelo de pontuação, é a fase em que o modelo implantado é usado para previsão, mais comumente em dados de produção.
 
 Estes modelos estão disponíveis no momento:
   - ResNet 50
@@ -160,9 +160,9 @@ print(output_tensors)
 ```
 
 > [!IMPORTANT]
-> Salvar a entrada e saída tensors, pois você precisará para solicitações de conversão e Inferência de modelo.
+> Salvar a entrada e saída tensors, pois você precisará para solicitações de conversão e Inferência de tipos de modelo.
 
-Os modelos disponíveis e a classificação padrão correspondente de saída tensors estão abaixo, que é o que você usaria durante a inferência se você tiver usado o classificador de padrão.
+Os modelos disponíveis e a classificação padrão correspondente de saída tensors estão abaixo, que é o que você usaria para inferência se você tiver usado o classificador de padrão.
 
 + Resnet50, QuantizedResnet50 ``
 output_tensors = "classifier_1/resnet_v1_50/predictions/Softmax:0"

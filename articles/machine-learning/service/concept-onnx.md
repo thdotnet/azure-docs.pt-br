@@ -11,18 +11,18 @@ ms.author: prasantp
 author: prasanthpul
 ms.date: 04/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: a8bc46011b00a0c63eddd2799ac1309b5754472e
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.openlocfilehash: f1eca5bdd81a384efe04f769ebd12be9d91fc78a
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65442412"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65849738"
 ---
 # <a name="onnx-and-azure-machine-learning-create-and-accelerate-ml-models"></a>ONNX e Azure Machine Learning: Criar e acelerar os modelos de ML
 
-Saiba como usar o [Open Neural Network Exchange](https://onnx.ai) (ONNX) pode ajudar a otimizar seu modelos de aprendizado de máquina.
+Saiba como usar o [Open Neural Network Exchange](https://onnx.ai) (ONNX) pode ajudar a otimizar a inferência de seu modelo de aprendizado de máquina. Inferência de tipos ou modelo de pontuação, é a fase em que o modelo implantado é usado para previsão, mais comumente em dados de produção. 
 
-Otimizando modelos de machine learning para inferência de tipos é difícil, pois você precisará ajustar o modelo e a biblioteca de inferência de tipos para aproveitar ao máximo os recursos de hardware. O problema se torna extremamente difícil, se você quiser obter um desempenho ideal em diferentes tipos de plataformas (nuvem/borda, CPU/GPU, etc.), já que cada um tem características e recursos diferentes. A complexidade aumenta se você tiver modelos de uma variedade de estruturas que precisam ser executados em uma variedade de plataformas. Ele consome muito tempo para otimizar a todas as combinações diferentes de estruturas e hardware. Uma solução para treinar uma vez em sua estrutura preferencial e executados em qualquer lugar na nuvem ou na borda é necessária. Isso é onde entra ONNX.
+Otimizando modelos de machine learning para inferência de tipos (ou o modelo de pontuação) é difícil, pois você precisará ajustar o modelo e a biblioteca de inferência de tipos para aproveitar ao máximo os recursos de hardware. O problema se torna extremamente difícil, se você quiser obter um desempenho ideal em diferentes tipos de plataformas (nuvem/borda, CPU/GPU, etc.), já que cada um tem características e recursos diferentes. A complexidade aumenta se você tiver modelos de uma variedade de estruturas que precisam ser executados em uma variedade de plataformas. Ele consome muito tempo para otimizar a todas as combinações diferentes de estruturas e hardware. Uma solução para treinar uma vez em sua estrutura preferencial e executados em qualquer lugar na nuvem ou na borda é necessária. Isso é onde entra ONNX.
 
 A Microsoft e uma comunidade de parceiros criado ONNX como um padrão aberto para representar modelos de aprendizado de máquina. Modelos de [muitas estruturas](https://onnx.ai/supported-tools) incluindo TensorFlow, PyTorch, SciKit-Learn, Keras, Chainer, MXNet e MATLAB pode ser exportada ou convertido no formato ONNX padrão. Depois que os modelos estão no formato ONNX, eles podem ser executados em uma variedade de plataformas e dispositivos.
 

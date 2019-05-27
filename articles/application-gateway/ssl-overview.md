@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/19/2019
 ms.author: victorh
-ms.openlocfilehash: 92799019d13de71d911767d8e400598513587667
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1259e755642563a7baad5496bc84ed736d5499f8
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60715208"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65849818"
 ---
 # <a name="overview-of-ssl-termination-and-end-to-end-ssl-with-application-gateway"></a>Visão geral de terminação SSL e SSL de ponta a ponta com o Gateway de aplicativo
 
@@ -36,7 +36,7 @@ Para configurar a terminação SSL, um certificado SSL é necessário para ser a
 Para a conexão SSL funcionar, você precisa verificar se o certificado SSL atende às seguintes condições:
 
 - Que a data e hora atuais está dentro do intervalo de datas "Válido até" no certificado e "Válido de".
-- O cabeçalho de host na solicitação corresponde a que o nome do certificado"comum" (CN). Por exemplo, se o cliente está fazendo uma solicitação para `https://www.contoso.com/`, em seguida, o CN deve ser `www.contoso.com`.
+- o "Common Name" (CN) do certificado corresponde ao cabeçalho de host na solicitação. Por exemplo, se o cliente estiver fazendo uma solicitação para `https://www.contoso.com/`, o CN deverá ser `www.contoso.com`.
 
 ### <a name="certificates-supported-for-ssl-termination"></a>Certificados com suporte para a terminação SSL
 
@@ -48,6 +48,9 @@ O gateway de aplicativo suporta os seguintes tipos de certificados:
 - Os certificados autoassinados: Navegadores de cliente não confiar nesses certificados e avisará o usuário que o certificado do serviço virtual não é parte de uma cadeia de confiança. Os certificados autoassinados são bons para testes ou ambientes em que os administradores controlam os clientes e podem ignorar com segurança os alertas de segurança do navegador. Cargas de trabalho de produção nunca devem usar certificados autoassinados.
 
 Para obter mais informações, consulte [configura a terminação SSL com o gateway de aplicativo](https://docs.microsoft.com/azure/application-gateway/create-ssl-portal).
+
+### <a name="size-of-the-certificate"></a>Tamanho do certificado
+O arquivo de troca de informações pessoais (PFX) com as informações do certificado SSL não deve ser a mais de 10 KB de tamanho.
 
 ## <a name="end-to-end-ssl-encryption"></a>Criptografia SSL de ponta a ponta
 

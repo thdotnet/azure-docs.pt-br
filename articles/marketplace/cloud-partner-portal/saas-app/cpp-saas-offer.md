@@ -5,20 +5,24 @@ services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 12/07/2018
-ms.author: pabutler
-ms.openlocfilehash: 81e33bf37750dd869c3b52be5b2bca49820f47d6
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.date: 05/16/2019
+ms.author: pbutlerm
+ms.openlocfilehash: 08baf908d47cdc6a9bc1e97f88eb5ff509d6790e
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64941891"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65835049"
 ---
 # <a name="azure-saas-application-offer"></a>Oferta de aplicativo de SaaS do Azure
 
 Esta seção explica como publicar uma oferta de aplicativo de software como serviço (SaaS) no <a href="https://azuremarketplace.microsoft.com">Azure Marketplace</a>.
 
-Use os aplicativos SaaS quando sua solução for implantada em sua própria assinatura do Azure e os clientes efetuarem logon por meio de uma interface projetada e gerenciada para testar o aplicativo. O <a href="https://azure.microsoft.com/services/active-directory">Active Directory do Azure (AAD) </a> é usado para aproveitar seu ambiente de avaliação existente.
+> [!IMPORTANT] 
+> SaaS oferecem funcionalidade está sendo migrada para o [Microsoft Partner Center](https://partner.microsoft.com/dashboard/directory).  Todos os novos editores devem usar o Partner Center para criar novas ofertas de SaaS e gerenciando ofertas existentes.  Editores atuais com ofertas de SaaS estão sendo migrados batchwise do Portal de parceiro do Cloud Partner Center.  Portal do Cloud Partner exibirá mensagens de status para indicar quando as ofertas específicas do existentes foram migradas.
+
+
+Use aplicativos SaaS quando a solução será implantada em sua própria assinatura do Azure e os clientes serão entrar por meio de uma interface de design e gerenciar para testar o aplicativo. O <a href="https://azure.microsoft.com/services/active-directory">Active Directory do Azure (AAD) </a> é usado para aproveitar seu ambiente de avaliação existente.
 
 ## <a name="benefits"></a>Benefícios
 
