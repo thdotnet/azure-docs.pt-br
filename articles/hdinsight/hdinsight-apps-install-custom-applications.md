@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: ec2e53624ad48650f922439c5f16d1cf1f25c280
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 0acac29ee49bc94c195d0e13e55fff3a735ad36b
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64706379"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65859804"
 ---
 # <a name="install-custom-apache-hadoop-applications-on-azure-hdinsight"></a>Instalar aplicativos personalizados do Apache Hadoop no HDInsight do Azure
 
@@ -116,8 +116,8 @@ No portal, você também pode excluir o cluster ou excluir o grupo de recursos q
 ### <a name="use-azure-powershell"></a>Usar PowerShell do Azure
 Usando o Azure PowerShell, você pode excluir o cluster ou excluir o grupo de recursos. Veja [Excluir clusters usando o Azure PowerShell](hdinsight-administer-use-powershell.md#delete-clusters).
 
-### <a name="use-azure-classic-cli"></a>Usar a CLI Clássica do Azure
-Usando a CLI Clássica do Azure, você pode excluir o cluster ou excluir o grupo de recursos. Veja [Excluir clusters usando a CLI Clássica do Azure](hdinsight-administer-use-command-line.md#delete-clusters).
+### <a name="use-azure-cli"></a>Usar a CLI do Azure
+Usando a CLI do Azure, você pode excluir o cluster ou excluir o grupo de recursos. Veja [Excluir clusters usando a CLI do Azure](hdinsight-administer-use-command-line.md#delete-clusters).
 
 ## <a name="next-steps"></a>Próximas etapas
 * [MSDN: Instalar um aplicativo do HDInsight](https://msdn.microsoft.com/library/mt706515.aspx): saiba como desenvolver modelos do Resource Manager para implantar aplicativos do HDInsight.

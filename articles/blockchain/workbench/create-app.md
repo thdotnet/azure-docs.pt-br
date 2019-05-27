@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 04/15/2019
+ms.date: 05/14/2019
 ms.topic: tutorial
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: d9f736b0b976ac6ec0da45a672d2e992405625cd
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: 92a37133d84833c43fff5b1a6c31e003ef53f7de
+ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59578783"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65619760"
 ---
 # <a name="tutorial-create-a-blockchain-application-in-azure-blockchain-workbench"></a>Tutorial: Criar um aplicativo blockchain no Azure Blockchain Workbench
 
@@ -271,7 +271,7 @@ Adicione as variáveis de estado ao contrato no seu `HelloBlockchain.sol` arquiv
 
 ### <a name="constructor"></a>Construtor
 
-O construtor define parâmetros de entrada para uma nova instância de contrato inteligente de um fluxo de trabalho. O construtor é declarado como uma função com o mesmo nome que o contrato. Parâmetros necessários para o construtor são definidos como parâmetros do construtor no arquivo de configuração. O número, ordem e o tipo de parâmetros devem corresponder em ambos os arquivos.
+O construtor define parâmetros de entrada para uma nova instância de contrato inteligente de um fluxo de trabalho. Parâmetros necessários para o construtor são definidos como parâmetros do construtor no arquivo de configuração. O número, ordem e o tipo de parâmetros devem corresponder em ambos os arquivos.
 
 Na função de construtor, grave qualquer lógica de negócios que deseja executar antes de criar o contrato. Por exemplo, inicialize as variáveis de estado com valores iniciais.
 

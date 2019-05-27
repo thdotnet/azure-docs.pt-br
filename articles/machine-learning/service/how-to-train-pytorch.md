@@ -11,12 +11,12 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 02463ba47a48f5e86055b9ecb4e0edbdf9608769
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 11819730e05e425066e1f060769e14d5290f877d
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024566"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65851970"
 ---
 # <a name="train-pytorch-models-with-azure-machine-learning-service"></a>Treinar modelos PyTorch com o Serviço do Azure Machine Learning
 
@@ -105,7 +105,7 @@ run = exp.submit(pt_est)
 
 ## <a name="export-to-onnx"></a>Exportar para ONNX
 
-Para obter a inferência otimizada com o [tempo de execução ONNX](concept-onnx.md), você pode converter seu modelo PyTorch no formato ONNX. Consulte a [tutorial](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb) para obter um exemplo.
+Para otimizar a inferência de tipos com o [tempo de execução ONNX](concept-onnx.md), converta seu modelo PyTorch no formato ONNX. Inferência de tipos ou modelo de pontuação, é a fase em que o modelo implantado é usado para previsão, mais comumente em dados de produção. Consulte a [tutorial](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb) para obter um exemplo.
 
 ## <a name="examples"></a>Exemplos
 

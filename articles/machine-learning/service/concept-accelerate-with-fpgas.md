@@ -11,12 +11,12 @@ author: tedway
 ms.reviewer: jmartens
 ms.date: 04/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: 648dc462477570a692eff588c558a18a3121e4e7
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 1a690ea350ea98589e9134cd6f401c6ac3c58083
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025245"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65851019"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga"></a>Quais são os portões programáveis em campo FPGA (arranjo)
 
@@ -30,7 +30,7 @@ O diagrama e a tabela a seguir mostram uma comparação das FPGAs com outros pro
 
 ![Diagrama de comparação da FPGA do Serviço do Azure Machine Learning](./media/concept-accelerate-with-fpgas/azure-machine-learning-fpga-comparison.png)
 
-|Processador||DESCRIÇÃO|
+|Processador||Descrição|
 |---|:-------:|------|
 |Circuitos integrados específicos do aplicativo|ASICs|Circuitos personalizados, como as Unidades de Processador (TPU) do TensorFlow da Google, fornecem a maior eficiência. Elas não podem ser reconfiguradas conforme suas necessidades mudam.|
 |Matrizes de portas programáveis em campo|FPGAs|As FPGAs, como aquelas disponíveis no Azure, fornecem desempenho aproximado ao dos ASICs. Eles também são flexíveis e reconfiguráveis ao longo do tempo, a fim de implementar a nova lógica.|
@@ -39,7 +39,7 @@ O diagrama e a tabela a seguir mostram uma comparação das FPGAs com outros pro
 
 FPGAs no Azure são baseados em dispositivos FPGA da Intel, que os cientistas e desenvolvedores usam para acelerar os cálculos de inteligência Artificial em tempo real. Essa arquitetura habilitada para FPGA oferece desempenho, flexibilidade e escala e está disponível no Azure.
 
-As FPGAs possibilitam alcançar baixa latência para solicitações de inferência em tempo real. As solicitações assíncronas (envio em lote) não são necessárias. O envio em lote pode causar latência, porque mais dados precisam ser processados. Implementações de unidades de processamento neural não exigem o envio em lote; Portanto, a latência pode ser muitas vezes menor, em comparação com processadores de CPU e GPU.
+FPGAs possibilitam a atingir as solicitações de baixa latência para inferência de tipos em tempo real (ou o modelo de pontuação). As solicitações assíncronas (envio em lote) não são necessárias. O envio em lote pode causar latência, porque mais dados precisam ser processados. Implementações de unidades de processamento neural não exigem o envio em lote; Portanto, a latência pode ser muitas vezes menor, em comparação com processadores de CPU e GPU.
 
 ### <a name="reconfigurable-power"></a>Potência reconfigurável
 Reconfigure as FPGAs para diferentes tipos de modelos de machine learning. Essa flexibilidade torna mais fácil acelerar os aplicativos baseados na precisão numérica mais ideal e o modelo de memória que está sendo usado. Como as FPGAs são reconfiguráveis, você pode ficar atualizado com os requisitos dos algoritmos de IA em rápida mudança.

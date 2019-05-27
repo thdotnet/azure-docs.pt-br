@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 04/24/2019
+ms.date: 05/16/2019
 ms.author: rolyon
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ad6570a3f30e40e4074502a8ce85bf739f58d3f
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 312658bd653d94f3e1a32204b3c5ae4ae290558e
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64866432"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65832731"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management-preview"></a>Criar um novo pacote de acesso no gerenciamento de direitos do AD do Azure (visualização)
 
@@ -112,7 +112,7 @@ Sobre o **diretiva** guia, você cria a primeira diretiva para especificar quem 
 
 [!INCLUDE [Entitlement management policy](../../../includes/active-directory-entitlement-management-policy.md)]
 
-## <a name="review--create"></a>Examinar + criar
+## <a name="review--create"></a>Revisar + criar
 
 Sobre o **revisar + criar** guia, você pode examinar as configurações e verificar se há erros de validação.
 
@@ -126,5 +126,5 @@ Sobre o **revisar + criar** guia, você pode examinar as configurações e verif
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Editar e gerenciar um pacote existente de acesso](entitlement-management-access-package-edit.md)
+- [Editar e gerenciar um pacote de acesso existente](entitlement-management-access-package-edit.md)
 - [Criar e gerenciar um catálogo](entitlement-management-catalog-create.md)

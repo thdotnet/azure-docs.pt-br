@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 05/08/2019
-ms.openlocfilehash: 22e55379c79678a2792f439137e8d58d03cd8377
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.date: 05/14/2019
+ms.openlocfilehash: 32d8bd528da2823907e4f992f977eef91e55b9b0
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65415085"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65605477"
 ---
 # <a name="tutorial-migrate-sql-server-to-a-single-database-or-pooled-database-in-azure-sql-database-offline-using-dms"></a>Tutorial: Migrar o SQL Server para um banco de dados individual ou em pool no Banco de Dados SQL do Azure offline usando o DMS
 
@@ -24,6 +24,7 @@ Você pode usar o Serviço de Migração de Banco de Dados do Azure para migrar 
 
 Neste tutorial, você aprenderá como:
 > [!div class="checklist"]
+>
 > - Avalie seu banco de dados local usando o Assistente de Migração de Dados.
 > - Migre o esquema de exemplo usando o Assistente de Migração de Dados.
 > - Criar uma instância do Serviço de Migração de Banco de Dados do Azure.
@@ -79,7 +80,7 @@ Antes de poder migrar dados de uma instância do SQL Server local para um banco 
    - Determinar compatibilidade do banco de dados
    - Verificação de paridade de recursos
 
-     Ambos os tipos de relatório são selecionados por padrão.
+    Ambos os tipos de relatório são selecionados por padrão.
 
 3. No Assistente de Migração de Dados, sobre o **opções** tela, selecione **próximo**.
 4. No **selecione fontes** tela, o **conectar a um servidor** caixa de diálogo, forneça os detalhes de conexão ao SQL Server e, em seguida, selecione **conectar**.
@@ -171,7 +172,7 @@ Para migrar o esquema **AdventureWorks2012** para um banco de dados individual o
 
 5. Selecione uma VNet existente ou crie uma.
 
-    A VNET fornece ao Serviço de Migração de Banco de Dados do Azure o acesso ao SQL Server de origem e à instância do Banco de Dados SQL do Azure de destino.
+    A VNet fornece ao Serviço de Migração de Banco de Dados do Azure o acesso ao SQL Server de origem e à instância do Banco de Dados SQL do Azure de destino.
 
     Para mais informações sobre como criar uma VNet no portal do Azure, consulte o artigo [Criar uma rede virtual usando o portal do Azure](https://aka.ms/DMSVnet).
 

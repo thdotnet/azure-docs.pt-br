@@ -10,12 +10,12 @@ ms.date: 02/20/2018
 ms.author: rogarana
 ms.custom: mvc
 ms.subservice: blobs
-ms.openlocfilehash: 0673d97f755d7e01d42d0be7c611720ff1e4ad01
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 63de2045498b312580640859c1911046f9785d8e
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65187769"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794356"
 ---
 # <a name="upload-large-amounts-of-random-data-in-parallel-to-azure-storage"></a>Carregar grandes quantidades de dados aleatórios em paralelo no armazenamento do Azure
 
@@ -67,14 +67,14 @@ dotnet run
 
 O aplicativo cria cinco contêineres nomeados de maneira aleatória e começa a carregar os arquivos na pasta de preparação para a conta de armazenamento. O aplicativo define o mínimo de threads como 100 e o [LimiteDeConexãoPadrão](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit(v=vs.110).aspx) como 100 para garantir que um grande número de conexões simultâneas seja permitido ao executar o aplicativo.
 
-Além de definir as configurações de limite de thread e conexão, o [BlobRequestOptions](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions?view=azure-dotnet) para o método [UploadFromStreamAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromstreamasync?view=azure-dotnet) é configurado para usar o paralelismo e desabilitar a validação do hash MD5. Os arquivos são carregados em blocos de 100 mb. Essa configuração fornece o melhor desempenho, mas pode ser custosa se usada em uma rede de baixa performance, já que se houver uma falha o bloco inteiro de 100 mb é repetido.
+Além de definir as configurações de limite de thread e conexão, o [BlobRequestOptions](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions) para o método [UploadFromStreamAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromstreamasync) é configurado para usar o paralelismo e desabilitar a validação do hash MD5. Os arquivos são carregados em blocos de 100 mb. Essa configuração fornece o melhor desempenho, mas pode ser custosa se usada em uma rede de baixa performance, já que se houver uma falha o bloco inteiro de 100 mb é repetido.
 
 |Propriedade|Valor|DESCRIÇÃO|
 |---|---|---|
-|[ParallelOperationThreadCount](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.paralleloperationthreadcount?view=azure-dotnet)| 8| A configuração divide o blob em blocos ao carregar. Para o melhor desempenho, esse valor deve ser 8 vezes o número de núcleos. |
-|[DisableContentMD5Validation](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.disablecontentmd5validation?view=azure-dotnet)| verdadeiro| Essa propriedade desabilita a verificação de hash MD5 do conteúdo carregado. Desabilitar a validação de MD5 produz uma transferência mais rápida. Mas não confirma a validade ou a integridade dos arquivos que estão sendo transferidos.   |
-|[StoreBlobContentMD5](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.storeblobcontentmd5?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_StoreBlobContentMD5)| falso| Essa propriedade determina se um hash MD5 é calculado e armazenado com o arquivo.   |
-| [RetryPolicy](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.retrypolicy?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_RetryPolicy)| Retirada de 2 segundos com máximo de 10 repetições |Determina a política de repetição de solicitações. As falhas de conexão são repetidas, neste exemplo uma política de [ExponentialRetry](/dotnet/api/microsoft.azure.batch.common.exponentialretry?view=azure-dotnet) é configurada com uma retirada de 2 segundos, e uma contagem máxima de 10 repetições. Essa configuração é importante quando seu aplicativo chegar próximo de atingir as [metas de escalabilidade de armazenamento de blob](../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#azure-blob-storage-scale-targets).  |
+|[ParallelOperationThreadCount](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.paralleloperationthreadcount)| 8| A configuração divide o blob em blocos ao carregar. Para o melhor desempenho, esse valor deve ser 8 vezes o número de núcleos. |
+|[DisableContentMD5Validation](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.disablecontentmd5validation)| verdadeiro| Essa propriedade desabilita a verificação de hash MD5 do conteúdo carregado. Desabilitar a validação de MD5 produz uma transferência mais rápida. Mas não confirma a validade ou a integridade dos arquivos que estão sendo transferidos.   |
+|[StoreBlobContentMD5](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.storeblobcontentmd5)| falso| Essa propriedade determina se um hash MD5 é calculado e armazenado com o arquivo.   |
+| [RetryPolicy](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.retrypolicy)| Retirada de 2 segundos com máximo de 10 repetições |Determina a política de repetição de solicitações. As falhas de conexão são repetidas, neste exemplo uma política de [ExponentialRetry](/dotnet/api/microsoft.azure.batch.common.exponentialretry) é configurada com uma retirada de 2 segundos, e uma contagem máxima de 10 repetições. Essa configuração é importante quando seu aplicativo chegar próximo de atingir as [metas de escalabilidade de armazenamento de blob](../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#azure-blob-storage-scale-targets).  |
 
 A tarefa `UploadFilesAsync` é mostrada no exemplo a seguir:
 

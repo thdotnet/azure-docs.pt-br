@@ -3,19 +3,19 @@ title: 'Tutorial: Criar um aplicativo de página única da Pesquisa de Vídeo do
 titlesuffix: Azure Cognitive Services
 description: Explica como usar a API de Pesquisa de Vídeo do Bing em um aplicativo Web de página única.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: tutorial
 ms.date: 01/31/2019
-ms.author: rosh
-ms.openlocfilehash: 182783576c8b47db8dd1c60ed2d5c5948fb98672
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.author: aahi
+ms.openlocfilehash: 6ba777754990560526d7981ef497ea7f0441e1b0
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57438985"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65798470"
 ---
 # <a name="tutorial-single-page-video-search-app"></a>Tutorial: Aplicativo de Pesquisa de Vídeo de página única
 A API de Pesquisa de Vídeo do Bing permite que você faça pesquisas na Web e obtenha resultados de vídeo relevantes para uma consulta de pesquisa. Neste tutorial, criaremos um aplicativo Web de página única que usa a API de Pesquisa do Bing para exibir os resultados da pesquisa na página. O aplicativo inclui componentes HTML, CSS e JavaScript.

@@ -3,20 +3,20 @@ title: 'Tutorial: criar um aplicativo Web de página única – API de Pesquisa 
 titlesuffix: Azure Cognitive Services
 description: Use este tutorial para criar um aplicativo Web de página única que pode enviar consultas de pesquisa para a API Bing Notícias e exiba os resultados na página da Web.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: tutorial
 ms.date: 01/10/2019
-ms.author: v-gedod
+ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 29539ba39e724208093910f8fb6fa2d3bc309bda
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 78a985180fb2b665aed75b39acfc4d39ccd04132
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55885031"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65798570"
 ---
 # <a name="tutorial-create-a-single-page-web-app"></a>Tutorial: criar um aplicativo Web de página única
 

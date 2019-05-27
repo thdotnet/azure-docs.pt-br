@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b46df5e4ec8352b47f744a507fad702c37aa5fba
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 6ce534c6eeecba220fd829be829caa679df52055
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65075094"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833092"
 ---
 # <a name="scenario-web-app-that-signs-in-users"></a>Cenário: Aplicativo Web que conecta os usuários
 
@@ -40,7 +40,7 @@ Se você quiser criar seus primeiros aplicativos de web (ASP.NET Core) portátil
 Se você preferir permanecer com o ASP.NET, experimente o tutorial a seguir:
 
 > [!div class="nextstepaction"]
-> [Início Rápido: Aplicativo web ASP.NET Core que os usuários entrar](quickstart-v2-aspnet-webapp.md)
+> [Início Rápido: Aplicativo web ASP.NET que os usuários entrar](quickstart-v2-aspnet-webapp.md)
 
 ## <a name="overview"></a>Visão geral
 

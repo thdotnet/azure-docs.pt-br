@@ -16,11 +16,11 @@ ms.date: 01/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6df8c5829ccd55f7da946a1cd72cb5bf89c2f6a9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57839110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65859038"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cbre-serviceinsight"></a>Tutorial: Integração do Azure Active Directory ao CBRE ServiceInsight
 
@@ -106,7 +106,7 @@ Para configurar o logon único do Azure AD com CBRE ServiceInsight, execute as s
 
     ![Informações de domínio e de URLs de logon único do CBRE ServiceInsight](common/sp-signonurl.png)
 
-    Na caixa de texto **URL de login**, digite um URL usando o seguinte padrão: `https://adfs4.mainstreamsasp.com/adfs/ls/`
+    Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://adfs4.mainstreamsasp.com/adfs/ls/`
 
     > [!NOTE]
     > O valor não é real. Atualize o valor com a URL de Logon real. Entre em contato com a [equipe de suporte do cliente ServiceInsight CBRE](mailto:SISupport@cbre.com) para obter o valor. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
@@ -138,7 +138,7 @@ Para configurar o logon único do Azure AD com CBRE ServiceInsight, execute as s
 
     f. Clique em **Ok**
 
-    g. Clique em **Salvar**.
+    g. Clique em **Save** (Salvar).
 
 7. Na página **Configurar logon único com SAML**, na seção **Certificado de Autenticação SAML**, clique no botão copiar para copiar **URL de metadados de federação de aplicativos** e salve-a no computador.
 
@@ -166,7 +166,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.

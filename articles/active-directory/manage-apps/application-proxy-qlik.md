@@ -14,12 +14,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fc03751859160f2c234810dcb01e1579cb3e2a8
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 8f54e08e6c3b7b673541f124a90f32dbc860fa44
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782665"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65859532"
 ---
 # <a name="application-proxy-and-qlik-sense"></a>Proxy de Aplicativo e Qlik Sense 
 O Proxy de Aplicativo do Azure Active Directory e a Qlik Sense fizeram uma parceria para garantir que você possa facilmente usar o Proxy de Aplicativo para fornecer acesso remoto para sua implantação do Qlik Sense.  
@@ -60,7 +60,9 @@ Siga as mesmas etapas do aplicativo nº 1, com as seguintes exceções:
 Seu aplicativo agora está pronto para teste. Acesse a URL externa usada para publicar o QlikSense no aplicativo nº 1 e faça logon como um usuário atribuído aos dois aplicativos.  
 
 ## <a name="additional-references"></a>Referências adicionais
-Para saber mais sobre a publicação de Qlik Sense com o Proxy de aplicativo, consulte o artigo da comunidade do Qlik: [Azure AD com autenticação integrada do Windows usando uma delegação restrita de Kerberos com Qlik Sense](https://community.qlik.com/docs/DOC-20183).
+Para obter mais informações sobre publicação Qlik Sense com o Proxy de aplicativo, consulte os artigos da comunidade Qlik a seguir: 
+- [Azure AD com autenticação integrada do Windows usando uma delegação restrita de Kerberos com Qlik Sense](https://community.qlik.com/docs/DOC-20183)
+- [Integração do Qlik Sense com o Proxy de aplicativo do Azure AD](https://community.qlik.com/t5/Technology-Partners-Ecosystem/Azure-AD-Application-Proxy/ta-p/1528396)
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: apimpm
-ms.openlocfilehash: 565bcfa6c2f8a3da2ac16df0016b5adc54e27380
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: b3f86147eb91e874d5317204ca05fb45628414d3
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407601"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833423"
 ---
 # <a name="api-management-transformation-policies"></a>Políticas de transformação de Gerenciamento de API
 Este tópico fornece uma referência para as políticas de Gerenciamento de API a seguir. Para obter mais informações sobre como adicionar e configurar políticas, consulte [Políticas de Gerenciamento de API](https://go.microsoft.com/fwlink/?LinkID=398186).
@@ -375,7 +375,7 @@ A política `set-body` pode ser configurada para usar a linguagem de modelagem [
 #### <a name="convert-json-to-soap-using-a-liquid-template"></a>Converter JSON em SOAP usando um modelo Líquido
 ```xml
 <set-body template="liquid">
-    <soap:Envelope xmlns="http://tempuri.org/" xmlns:soap="https://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Envelope xmlns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
         <soap:Body>
             <GetOpenOrders>
                 <cust>{{body.getOpenOrders.cust}}</cust>
@@ -405,7 +405,7 @@ A política `set-body` pode ser configurada para usar a linguagem de modelagem [
 
 |NOME|DESCRIÇÃO|Obrigatório|Padrão|
 |----------|-----------------|--------------|-------------|
-|modelo|Usado para alterar o modo de modelagem no qual a política de corpo definida será executada. Atualmente, o único valor aceito é:<br /><br />- liquid – a política de corpo definida usará o mecanismo de modelagem líquida |Não|liquid|
+|modelo|Usado para alterar o modo de modelagem no qual a política de corpo definida será executada. Atualmente, o único valor aceito é:<br /><br />- liquid – a política de corpo definida usará o mecanismo de modelagem líquida |Não||
 
 Para acessar informações sobre a solicitação e a resposta, o modelo Líquido pode ser associado a um objeto de contexto com as seguintes propriedades: <br />
 <pre>context.

@@ -1,7 +1,7 @@
 ---
 title: Interpretabilidade do modelo
 titleSuffix: Azure Machine Learning service
-description: Saiba como explicar por que o seu modelo faz previsões usando o SDK do Azure Machine Learning. Ele pode ser usado durante a inferência e treinamento para entender como seu modelo faz previsões.
+description: Saiba como explicar por que o seu modelo faz previsões usando o SDK do Azure Machine Learning. Ele pode ser usado durante o treinamento e Inferência de tipos para entender como seu modelo faz previsões.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,25 +10,25 @@ ms.author: mesameki
 author: mesameki
 ms.reviewer: larryfr
 ms.date: 04/29/2019
-ms.openlocfilehash: 62d51a0075d8b6864e4b10fa6c1eb423a440d6d0
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 4261e869fe17283886d7d8ea8101e03110d6dad4
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64926459"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65851988"
 ---
 # <a name="model-interpretability-with-azure-machine-learning-service"></a>Possibilidade de interpretação de modelo com o serviço Azure Machine Learning
 
 Neste artigo, você aprenderá a explicar por que o seu modelo de feitas as previsões com o pacote de possibilidade de interpretação do SDK de Python do Azure Machine Learning.
 
 Usando as classes e métodos deste pacote, você pode obter:
-+ Possibilidade de interpretação em conjuntos de dados do mundo real em grande escala, durante o tempo de treinamento e Inferência. 
++ Possibilidade de interpretação em conjuntos de dados do mundo real em grande escala, durante o treinamento e Inferência de tipos. 
 + Visualizações interativas para ajudar você a descoberta de padrões nos dados e explicações em tempo de treinamento
 + Os valores de importância de recursos: brutos e engenharia de recursos
 
 Durante a fase de treinamento do ciclo de desenvolvimento, os avaliadores e designers de modelo podem usar para explicar a saída de um modelo aos participantes para criar a relação de confiança.  Eles também usam as informações sobre o modelo para depuração, validar o comportamento do modelo corresponde a seus objetivos e verificar a tendência.
 
-Durante a fase de inferência, cientistas de dados podem usar a possibilidade de interpretação para explicar as previsões para as pessoas que usam seu modelo. Por exemplo, por que o modelo negar um empréstimo de hipoteca ou prever que um portfólio de investimento traz um risco mais alto?
+Inferência de tipos ou modelo de pontuação, é a fase em que o modelo implantado é usado para previsão, mais comumente em dados de produção. Durante essa fase, os cientistas de dados podem explicar as previsões resultantes para as pessoas que usam seu modelo. Por exemplo, por que o modelo negar um empréstimo de hipoteca ou prever que um portfólio de investimento traz um risco mais alto?
 
 Usando essas ofertas, você pode explicar os modelos de aprendizado de máquina **globalmente em todos os dados**, ou **localmente em um ponto de dados específicos** usando as tecnologias de última geração de uma maneira fácil de usar e escalonável.
 
@@ -229,7 +229,7 @@ Use o painel de visualização para entender e interpretar seu modelo:
 
 Os gráficos a seguir fornecem uma visão global do modelo treinado, juntamente com suas previsões e explicações.
 
-|Gráfico |DESCRIÇÃO|
+|Gráfico |Descrição|
 |----|-----------|
 |Exploração de dados| Uma visão geral do conjunto de dados, juntamente com os valores de previsão.|
 |Importância global|Mostra os principais recursos importantes do K (K configurável) globalmente. Este gráfico é útil para entender o comportamento global do modelo subjacente.|
@@ -241,7 +241,7 @@ Os gráficos a seguir fornecem uma visão global do modelo treinado, juntamente 
 ### <a name="local-visualizations"></a>Visualizações locais
 Você pode clicar em qualquer ponto de dados individuais a qualquer momento os gráficos anteriores para carregar o gráfico de importância do recurso local para o ponto de dados específico.
 
-|Gráfico |DESCRIÇÃO|
+|Gráfico |Descrição|
 |----|-----------|
 |Importância local|Mostra os principais recursos importantes do K (K configurável) globalmente. Este gráfico é útil para entender o comportamento local do modelo subjacente em um ponto de dados específico.|
 
@@ -287,7 +287,7 @@ clf = Pipeline(steps=[('preprocessor', DataFrameMapper(transformations)),
 tabular_explainer = TabularExplainer(clf.steps[-1][1], initialization_examples=x_train, features=dataset_feature_names, classes=dataset_classes, transformations=transformations)
 ```
 
-## <a name="interpretability-in-inferencing"></a>Possibilidade de interpretação de inferência
+## <a name="interpretability-in-inference"></a>Possibilidade de interpretação em inferência de tipos
 
 O explicador pode ser implantado junto com o modelo original e pode ser usado em vez de pontuação para fornecer as informações de local de explicação. O processo de implantação de uma pontuação explicador é semelhante à implantação de um modelo e inclui as seguintes etapas:
 

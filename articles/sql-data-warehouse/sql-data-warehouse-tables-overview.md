@@ -2,20 +2,20 @@
 title: Criação de tabelas - SQL Data Warehouse do Azure | Microsoft Docs
 description: Introdução à criação de tabelas no SQL Data Warehouse do Azure.
 services: sql-data-warehouse
-author: ronortloff
+author: XiaoyuL-Preview
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: implement
+ms.subservice: development
 ms.date: 03/15/2019
-ms.author: rortloff
+ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 1073e1b4ad38c4b05c9195cf4ea16ade7416fbce
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 06bdd21363aee8202ce7178f157f01a5c26e3a52
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61474956"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65851583"
 ---
 # <a name="designing-tables-in-azure-sql-data-warehouse"></a>Criação de tabelas no SQL Data Warehouse do Azure
 
@@ -43,7 +43,7 @@ Para mostrar a organização das tabelas no SQL Data Warehouse, você pode usar 
 | WideWorldImportersDW table  | Tipo de tabela | SQL Data Warehouse |
 |:-----|:-----|:------|:-----|
 | City | Dimensão | wwi.DimCity |
-| Classificar | Fato | wwi.FactOrder |
+| Ordem | Fato | wwi.FactOrder |
 
 
 ## <a name="table-persistence"></a>Persistência da tabela 
@@ -92,7 +92,7 @@ A categoria da tabela geralmente determina qual opção escolher para a distribu
 |:---------------|:--------------------|
 | Fato           | Use a distribuição de hash com índice columnstore clusterizado. O desempenho melhora quando duas tabelas de hash são unidas na mesma coluna de distribuição. |
 | Dimensão      | Use a replicada para tabelas menores. Se as tabelas forem grandes demais para serem armazenadas em cada nó de computação, use a distribuição de hash. |
-| Staging        | Use um round robin para a tabela de preparo. A carga com CTAS é rápida. Quando os dados estiverem na tabela de preparo, use INSERT... Selecione para mover os dados para tabelas de produção. |
+| Preparo        | Use um round robin para a tabela de preparo. A carga com CTAS é rápida. Quando os dados estiverem na tabela de preparo, use INSERT... Selecione para mover os dados para tabelas de produção. |
 
 ## <a name="table-partitions"></a>Partições de tabela
 Uma tabela particionada armazena e executa operações nas linhas da tabela de acordo com os intervalos de dados. Por exemplo, uma tabela pode ser particionada por dia, mês ou ano. Você pode melhorar o desempenho de consultas através da eliminação da partição, o que limita a verificação de uma consulta para dados dentro de uma partição. Você também pode manter os dados por meio de alternância de partição. Como os dados no SQL Data Warehouse já foram distribuídos, um número excessivo de partições pode diminuir o desempenho da consulta. Para saber mais informações, confira [Diretrizes de particionamento](sql-data-warehouse-tables-partition.md).  Quando particiona ativando na tabela de partição que não estão vazias, considere o uso da opção TRUNCATE_TARGET em seu [ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql) instrução se os dados existentes para ser truncado. O abaixo de comutadores de código nos dados diários transformados no SalesFact substituindo todos os dados existentes. 
@@ -112,7 +112,7 @@ O otimizador de consulta usa estatísticas de nível de coluna quando cria o pla
 ## <a name="commands-for-creating-tables"></a>Comandos para a criação de tabelas
 Você pode criar uma tabela como uma nova tabela vazia. Você também pode criar e popular uma tabela com os resultados de uma instrução de seleção. A seguir estão os comandos T-SQL para criar uma tabela.
 
-| Instruções T-SQL | DESCRIÇÃO |
+| Instruções T-SQL | Descrição |
 |:----------------|:------------|
 | [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse) | Cria uma tabela vazia com a definição de todas as opções e colunas da tabela. |
 | [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql) | Cria uma tabela externa. A definição da tabela é armazenada no SQL Data Warehouse. Os dados da tabela são armazenados no Armazenamento de Blobs do Azure ou do Azure Data Lake Store. |
