@@ -12,10 +12,10 @@ ms.date: 03/19/2019
 ms.author: erhopf
 ms.custom: seodec18
 ms.openlocfilehash: 9b8e12220f220bd8183675d13e25bdcab02707fd
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 05/27/2019
 ms.locfileid: "65020850"
 ---
 # <a name="language-and-region-support-for-the-speech-services"></a>Suporte de idioma e região para os serviços de fala
@@ -28,36 +28,36 @@ A API de reconhecimento de fala da Microsoft é compatível com os seguintes idi
 
   Código | Linguagem | [Adaptação acústica](how-to-customize-acoustic-models.md) | [Adaptação de idioma](how-to-customize-language-model.md) | [Adaptação de pronúncia](how-to-customize-pronunciation.md)
  ------|----------|---------------------|---------------------|-------------------------
- ar-EG | Árabe (Egito), padrão moderno | Não  | Sim | Não 
- ca-ES | Catalão | Não  | Não | Não 
- da-DK | Dinamarquês (Dinamarca) | Não  | Não | Não 
- de-DE | Alemão (Alemanha) | Sim | sim | Não 
- en-AU | Inglês (Austrália) | Não  | sim | Sim
- en-CA | Inglês (Canadá) | Não  | sim | Sim
- en-GB | Inglês (Reino Unido) | Não  | sim | Sim
+ ar-EG | Árabe (Egito), padrão moderno | Não | Sim | Não
+ ca-ES | Catalão | Não | Não | Não
+ da-DK | Dinamarquês (Dinamarca) | Não | Não | Não
+ de-DE | Alemão (Alemanha) | Sim | sim | Não
+ en-AU | Inglês (Austrália) | Não | sim | Sim
+ en-CA | Inglês (Canadá) | Não | sim | Sim
+ en-GB | Inglês (Reino Unido) | Não | sim | Sim
  en-IN | Inglês (Índia) | Sim | sim | Sim
- en-NZ | Inglês (Nova Zelândia) | Não  | sim | Sim  
- en-US | Inglês (Estados Unidos) | Sim | sim | Sim
- es-ES | Espanhol (Espanha) | Sim | sim | Não 
- es-MX | Espanhol (México) | Não  | Sim | Não 
- fi-FI | Finlandês (Finlândia) | Não  | Não | Não 
- fr-CA | Francês (Canadá) | Não  | Sim | Não 
- fr-FR | Francês (França) | Sim | sim | Não 
- hi-IN | Hindi (Índia) | Não  | Sim | Não 
- it-IT | Italiano (Itália) | Sim | sim | Não 
- ja-JP | Japonês (Japão) | Não  | Sim | Não 
- ko-KR | Coreano (Coreia do Sul) | Não  | Sim | Não 
- nb-NO | Norueguês (Bokmål) (Noruega) | Não  | Não | Não 
- nl-NL | Holandês (Países Baixos) | Não  | Sim | Não 
- pl-PL | Polonês (Polônia) | Não  | Não | Não 
- pt-BR | Português (Brasil) | Sim | sim | Não 
- pt-PT | Português (Portugal) | Não  | Sim | Não 
- ru-RU | Russo (Rússia) | Sim | sim | Não 
- sv-SE | Sueco (Suécia) | Não  | Não | Não 
- zh-CN | Chinês (mandarim, simplificado) | Sim | sim | Não 
- zh-HK | Chinês (Cantonês, tradicional) | Não  | Sim | Não 
- zh-TW | Chinês (Mandarim Taiwanês) | Não  | Sim | Não 
- th-TH | Tailandês (Tailândia) | Não  | Não | Não 
+ en-NZ | Inglês (Nova Zelândia) | Não | sim | Sim  
+ pt-BR | Inglês (Estados Unidos) | Sim | sim | Sim
+ es-ES | Espanhol (Espanha) | Sim | sim | Não
+ es-MX | Espanhol (México) | Não | Sim | Não
+ fi-FI | Finlandês (Finlândia) | Não | Não | Não
+ fr-CA | Francês (Canadá) | Não | Sim | Não
+ fr-FR | Francês (França) | Sim | sim | Não
+ hi-IN | Hindi (Índia) | Não | Sim | Não
+ it-IT | Italiano (Itália) | Sim | sim | Não
+ ja-JP | Japonês (Japão) | Não | Sim | Não
+ ko-KR | Coreano (Coreia do Sul) | Não | Sim | Não
+ nb-NO | Norueguês (Bokmål) (Noruega) | Não | Não | Não
+ nl-NL | Holandês (Países Baixos) | Não | Sim | Não
+ pl-PL | Polonês (Polônia) | Não | Não | Não
+ pt-BR | Português (Brasil) | Sim | sim | Não
+ pt-PT | Português (Portugal) | Não | Sim | Não
+ ru-RU | Russo (Rússia) | Sim | sim | Não
+ sv-SE | Sueco (Suécia) | Não | Não | Não
+ zh-CN | Chinês (mandarim, simplificado) | Sim | sim | Não
+ zh-HK | Chinês (Cantonês, tradicional) | Não | Sim | Não
+ zh-TW | Chinês (Mandarim Taiwanês) | Não | Sim | Não
+ th-TH | Tailandês (Tailândia) | Não | Não | Não
 
 
 ## <a name="text-to-speech"></a>Conversão de texto em fala
@@ -75,11 +75,11 @@ Vozes neurais podem ser usadas para interagir com chatbots e assistentes virtuai
 
 Para obter uma lista completa de vozes neurais e a disponibilidade regional, consulte [regiões](regions.md#standard-and-neural-voices).
 
-Local | Linguagem | Gênero | Mapeamento de nome de serviço completo | Nome curto de voz
+Localidade | Linguagem | Sexo | Mapeamento de nome de serviço completo | Nome curto de voz
 --------|----------|--------|---------|------------
 de-DE | Alemão (Alemanha) | Feminino | "Microsoft Server fala texto para fala voz (de-DE, KatjaNeural)" | "de-DE-KatjaNeural"
-en-US | Inglês (EUA) | Masculino | "Conversão de Texto em Fala do Microsoft Server (en-US, GuyNeural)" | "en-US-GuyNeural"
-en-US | Inglês (EUA) | Feminino | "Conversão de Texto em Fala do Microsoft Server (en-US, JessaNeural)" | "en-US-JessaNeural"
+pt-BR | Inglês (EUA) | Masculino | "Conversão de Texto em Fala do Microsoft Server (en-US, GuyNeural)" | "en-US-GuyNeural"
+pt-BR | Inglês (EUA) | Feminino | "Conversão de Texto em Fala do Microsoft Server (en-US, JessaNeural)" | "en-US-JessaNeural"
 it-IT | Italiano (Itália) | Feminino |"Microsoft Server fala texto para fala voz (it-IT, ElsaNeural)" | "it-IT-ElsaNeural"
 zh-CN | Chinês (continente) | Feminino | "Voz para Conversão de Texto em Fala de Fala do Microsoft Server (zh-CN, XiaoxiaoNeural)" | "zh-CN-XiaoxiaoNeural"
 
@@ -90,12 +90,12 @@ zh-CN | Chinês (continente) | Feminino | "Voz para Conversão de Texto em Fala 
 
 Mais de 75 vozes padrão estão disponíveis em mais de 45 idiomas e localidades, que permitem converter texto em fala sintetizada. Para obter mais informações sobre a disponibilidade regional, consulte [regiões](regions.md#standard-and-neural-voices).
 
-Local | Linguagem | Gênero | Mapeamento de nome de serviço completo | Nome curto de voz
+Localidade | Linguagem | Sexo | Mapeamento de nome de serviço completo | Nome curto de voz
 -------|----------|---------|----------|----------
 ar-EG\* | Árabe (Egito) | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (ar-EG, Hoda)” | "ar-EG-Hoda"
 ar-SA | Árabe (Arábia Saudita) | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (ar-SA, Naayf)” | "ar-SA-Naayf"
 bg-BG | Búlgaro | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (bg-BG, Ivan)” | "bg-BG-Ivan"
-ca-ES | Catalão (Espanha) | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (ca-ES, HerenaRUS)” | "ca-ES-HerenaRUS"
+ca-ES | Catalão | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (ca-ES, HerenaRUS)” | "ca-ES-HerenaRUS"
 cs-CZ | Tcheco | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (cs-CZ, Jakub)” | "cs-CZ-Jakub"
 da-DK | Dinamarquês | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (da-DK, HelleRUS)” | "da-DK-HelleRUS"
 de-AT | Alemão (Áustria) | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (de-AT, Michael)” | "de-AT-Michael"
@@ -115,7 +115,7 @@ en-IE | Inglês (Irlanda) | Masculino | “Voz da Conversão de Texto em Fala do
 en-IN | Inglês (Índia) | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-IN, Heera, Apollo)” | "en-IN-Heera-Apollo"
 | | | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-IN, PriyaRUS)” | "en-IN-PriyaRUS"
 | | | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-IN, Ravi, Apollo)” | "en-IN-Ravi-Apollo"
-en-US | Inglês (EUA) | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-US, ZiraRUS)” | "en-US-ZiraRUS"
+pt-BR | Inglês (EUA) | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-US, ZiraRUS)” | "en-US-ZiraRUS"
 | | | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-US, JessaRUS)” | "en-US-JessaRUS"
 | | | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-US, BenjaminRUS)” | "en-US-BenjaminRUS"
 | | | Feminino | "Conversão de Texto em Fala do Microsoft Server (en-US, Jessa24kRUS)" | "en-US-Jessa24kRUS"
@@ -160,7 +160,7 @@ sk-SK | Eslovaco | Masculino | “Voz da Conversão de Texto em Fala do Microsof
 sl-SI | Esloveno | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (sl-SI, Lado)” | "sl-SI-Lado"
 sv-SE | Sueco | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (sv-SE, HedvigRUS)” | "sv-SE-HedvigRUS"
 ta-IN | Tâmil (Índia) | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (ta-IN, Valluvar)” | "ta-IN-Valluvar"
-te-IN | Télugo (Índia) | Feminino | "Voz da Conversão de Texto em Fala do Microsoft Server Speech (te-IN, Chitra)" | "te-IN-Chitra"
+te-IN | Telugu (Índia) | Feminino | "Voz da Conversão de Texto em Fala do Microsoft Server Speech (te-IN, Chitra)" | "te-IN-Chitra"
 th-TH | Tailandês | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (th-TH, Pattara)” | "th-TH-Pattara"
 tr-TR | Turco | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (tr-TR, SedaRUS)” | "tr-TR-SedaRUS"
 vi-VN | Vietnamita | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (vi-VN, An)” | "vi-VN-An"
@@ -196,13 +196,13 @@ A API de **Tradução de Fala** é compatível com diferentes idiomas para conve
 |:----------- |:-------------:|
 | Africâner      | `af`          |
 | Árabe       | `ar`          |
-| Bangla      | `bn`          |
-| Bósnio (latim)      | `bs`          |
+| Bengali      | `bn`          |
+| Bósnio (Latino)      | `bs`          |
 | Búlgaro      | `bg`          |
 | Cantonês (tradicional)      | `yue`          |
 | Catalão      | `ca`          |
-| Chinês (simplificado)      | `zh-Hans`          |
-| Chinês (tradicional)      | `zh-Hant`          |
+| Chinês Simplificado      | `zh-Hans`          |
+| Chinês tradicional      | `zh-Hant`          |
 | Croata      | `hr`          |
 | Tcheco      | `cs`          |
 | Dinamarquês      | `da`          |
@@ -223,7 +223,7 @@ A API de **Tradução de Fala** é compatível com diferentes idiomas para conve
 | Indonésio      | `id`          |
 | Italiano      | `it`          |
 | Japonês      | `ja`          |
-| Suaíli      | `sw`          |
+| Quissuaíle      | `sw`          |
 | Klingon      | `tlh`          |
 | Klingon (plqaD)      | `tlh-Qaak`          |
 | Coreano      | `ko`          |
@@ -240,8 +240,8 @@ A API de **Tradução de Fala** é compatível com diferentes idiomas para conve
 | Romeno      | `ro`          |
 | Russo      | `ru`          |
 | Samoano      | `sm`          |
-| Sérvio (cirílico)      | `sr-Cyrl`          |
-| Sérvio (latino)      | `sr-Latn`          |
+| Sérvio (Cirílico)      | `sr-Cyrl`          |
+| Sérvio (Latino)      | `sr-Latn`          |
 | Eslovaco     | `sk`          |
 | Esloveno      | `sl`          |
 | Espanhol      | `es`          |
@@ -249,7 +249,7 @@ A API de **Tradução de Fala** é compatível com diferentes idiomas para conve
 | Taitiano      | `ty`          |
 | Tâmil      | `ta`          |
 | Tailandês      | `th`          |
-| Tongan      | `to`          |
+| Tonganês      | `to`          |
 | Turco      | `tr`          |
 | Ucraniano      | `uk`          |
 | Urdu      | `ur`          |

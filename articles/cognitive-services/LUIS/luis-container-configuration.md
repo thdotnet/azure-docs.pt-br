@@ -9,32 +9,32 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 04/16/2019
+ms.date: 05/23/2019
 ms.author: diberry
-ms.openlocfilehash: e05998f74223ead6bb4e94b86469e51791e0263f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: afd29c1689d6d467a42a7c3c60f9a1dccd1a66f0
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60599370"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242605"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Configurar contêineres do Docker do Serviço Inteligente de Reconhecimento Vocal 
 
 O ambiente de tempo de execução do contêiner do LUIS (**Serviço Inteligente de Reconhecimento Vocal**) é configurado usando argumentos de comando `docker run`. O LUIS tem várias configurações obrigatórias e outras configurações opcionais. Há vários [exemplos](#example-docker-run-commands) do comando disponíveis. As configurações específicas do contêiner são as [configurações de montagem](#mount-settings) de entrada e as configurações de cobrança. 
 
-## <a name="configuration-settings"></a>Definições de configuração
+## <a name="configuration-settings"></a>Parâmetros de configuração
 
 Esse contêiner tem as seguintes configurações:
 
 |Obrigatório|Configuração|Finalidade|
 |--|--|--|
 |Sim|[ApiKey](#apikey-setting)|Usado para rastrear informações de cobrança.|
-|Não |[ApplicationInsights](#applicationinsights-setting)|Permite que você adicione suporte a dados telemétricos do [Azure Application Insights](https://docs.microsoft.com/azure/application-insights) para seu contêiner.|
+|Não|[ApplicationInsights](#applicationinsights-setting)|Permite que você adicione suporte a dados telemétricos do [Azure Application Insights](https://docs.microsoft.com/azure/application-insights) para seu contêiner.|
 |Sim|[Billing](#billing-setting)|Especifica o URI do ponto de extremidade do recurso de serviços no Azure.|
 |Sim|[Eula](#eula-setting)| Indica que você aceitou a licença para o contêiner.|
-|Não |[Fluentd](#fluentd-settings)|Gravar log e, opcionalmente, dados telemétricos em um servidor do Fluentd.|
-|Não |[Proxy HTTP](#http-proxy-credentials-settings)|Configure um proxy HTTP para fazer solicitações de saída.|
-|Não |[Logging](#logging-settings)|Fornece suporte a registro de log do ASP.NET Core para seu contêiner. |
+|Não|[Fluentd](#fluentd-settings)|Gravar log e, opcionalmente, dados telemétricos em um servidor do Fluentd.|
+|Não|[Proxy HTTP](#http-proxy-credentials-settings)|Configure um proxy HTTP para fazer solicitações de saída.|
+|Não|[Logging](#logging-settings)|Fornece suporte a registro de log do ASP.NET Core para seu contêiner. |
 |Sim|[Mounts](#mount-settings)|Lê e grava dados do computador host para o contêiner e do contêiner de volta para o computador host.|
 
 > [!IMPORTANT]
@@ -67,7 +67,7 @@ Essa configuração pode ser localizada no seguinte local:
 Lembre-se de incluir o `luis/v2.0` roteamento na URL, conforme mostrado na tabela a seguir:
 
 
-|Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
+|Obrigatório| NOME | Tipo de dados | Descrição |
 |--|------|-----------|-------------|
 |Sim| `Billing` | Cadeia de caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus.api.cognitive.microsoft.com/luis/v2.0` |
 
@@ -99,24 +99,24 @@ A sintaxe exata do local da montagem do host varia de acordo com o sistema opera
 
 A tabela a seguir descreve as configurações com suporte.
 
-|Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
+|Obrigatório| NOME | Tipo de dados | Descrição |
 |-------|------|-----------|-------------|
-|Sim| `Input` | Cadeia de caracteres | O destino de montagem de entrada. O valor padrão é `/input`. Esse é o local dos arquivos de pacote do LUIS. <br><br>Exemplo:<br>`--mount type=bind,src=c:\input,target=/input`|
-|Não | `Output` | Cadeia de caracteres | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de consulta do LUIS e logs do contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Sim| `Input` | String | O destino de montagem de entrada. O valor padrão é `/input`. Esse é o local dos arquivos de pacote do LUIS. <br><br>Exemplo:<br>`--mount type=bind,src=c:\input,target=/input`|
+|Não| `Output` | String | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de consulta do LUIS e logs do contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Comandos docker run de exemplo
 
 Os exemplos a seguir usam as definições de configuração para ilustrar como escrever e usar comandos `docker run`.  Quando em execução, o contêiner continuará a ser executado até que você o [pare](luis-container-howto.md#stop-the-container).
 
-
-* **Caractere de continuação de linha**: os comandos do Docker nas seções a seguir usam a barra invertida, `\`, como um caractere de continuação de linha. Substitua ou remova essa barra com base nos requisitos do sistema operacional de seu computador host. 
-* **Ordem do argumento**: não altere a ordem dos argumentos, a menos que você esteja familiarizado com contêineres do Docker.
+* Esses exemplos usam o diretório de desativar o `c:` unidade para evitar conflitos de permissão no Windows. Se você precisar usar um diretório específico como o diretório de entrada, talvez seja necessário conceder ao Docker permissão de serviço. 
+* não altere a ordem dos argumentos, a menos que você esteja familiarizado com contêineres do Docker.
+* Se você estiver usando um sistema operacional diferente, use o console/terminal correto, a sintaxe de pasta para montagens e o caractere de continuação de linha para o seu sistema. Estes exemplos supõem que um console do Windows com um caractere de continuação de linha `^`. Como o contêiner é um sistema operacional Linux, a montagem de destino usa uma sintaxe de pasta de estilo do Linux.
 
 Lembre-se de incluir o `luis/v2.0` roteamento na URL, conforme mostrado na tabela a seguir.
 
 Substitua {_argument_name_} pelos seus próprios valores:
 
-| Placeholder | Value | Formato ou exemplo |
+| Espaço reservado | Value | Formato ou exemplo |
 |-------------|-------|---|
 |{ENDPOINT_KEY} | A chave do ponto de extremidade do aplicativo LUIS treinado. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{BILLING_ENDPOINT} | O valor de ponto de extremidade de cobrança está disponível no Azure `Cognitive Services` página de visão geral. |https://westus.api.cognitive.microsoft.com/luis/v2.0|
@@ -129,32 +129,28 @@ Substitua {_argument_name_} pelos seus próprios valores:
 
 O exemplo abaixo tem o menor número de argumentos possível para executar o contêiner:
 
-```bash
-docker run --rm -it -p 5000:5000 --memory 4g --cpus 2 \
---mount type=bind,src=c:\input,target=/input \
---mount type=bind,src=c:\output,target=/output \
-mcr.microsoft.com/azure-cognitive-services/luis:latest \
-Eula=accept \
-Billing={BILLING_ENDPOINT} \
+```console
+docker run --rm -it -p 5000:5000 --memory 4g --cpus 2 ^
+--mount type=bind,src=c:\input,target=/input ^
+--mount type=bind,src=c:\output,target=/output ^
+mcr.microsoft.com/azure-cognitive-services/luis:latest ^
+Eula=accept ^
+Billing={BILLING_ENDPOINT} ^
 ApiKey={ENDPOINT_KEY}
 ```
-
-> [!Note] 
-> O comando anterior usa o diretório fora da unidade `c:` para evitar conflitos de permissão no Windows. Se você precisar usar um diretório específico como o diretório de entrada, talvez seja necessário conceder ao Docker permissão de serviço. O comando Docker anterior usa a barra invertida, `\`, como um caractere de continuação de linha. Substitua ou remova a barra invertida com base nos requisitos do sistema operacional de seu [computador host](luis-container-howto.md#the-host-computer). não altere a ordem dos argumentos, a menos que você esteja familiarizado com contêineres do Docker.
-
 
 ### <a name="applicationinsights-example"></a>Exemplo de ApplicationInsights
 
 O exemplo a seguir define o argumento ApplicationInsights para enviar telemetria ao Application Insights enquanto o contêiner está em execução:
 
-```bash
-docker run --rm -it -p 5000:5000 --memory 6g --cpus 2 \
---mount type=bind,src=c:\input,target=/input \
---mount type=bind,src=c:\output,target=/output \
-mcr.microsoft.com/azure-cognitive-services/luis:latest \
-Eula=accept \
-Billing={BILLING_ENDPOINT} \
-ApiKey={ENDPOINT_KEY}
+```console
+docker run --rm -it -p 5000:5000 --memory 6g --cpus 2 ^
+--mount type=bind,src=c:\input,target=/input ^
+--mount type=bind,src=c:\output,target=/output ^
+mcr.microsoft.com/azure-cognitive-services/luis:latest ^
+Eula=accept ^
+Billing={BILLING_ENDPOINT} ^
+ApiKey={ENDPOINT_KEY} ^
 InstrumentationKey={INSTRUMENTATION_KEY}
 ```
 
@@ -162,14 +158,14 @@ InstrumentationKey={INSTRUMENTATION_KEY}
 
 O comando abaixo define o nível de registro em log, `Logging:Console:LogLevel`, para configurar o nível de registro em log como [`Information`](https://msdn.microsoft.com). 
 
-```bash
-docker run --rm -it -p 5000:5000 --memory 6g --cpus 2 \
---mount type=bind,src=c:\input,target=/input \
---mount type=bind,src=c:\output,target=/output \
-mcr.microsoft.com/azure-cognitive-services/luis:latest \
-Eula=accept \
-Billing={BILLING_ENDPOINT} \
-ApiKey={ENDPOINT_KEY} \
+```console
+docker run --rm -it -p 5000:5000 --memory 6g --cpus 2 ^
+--mount type=bind,src=c:\input,target=/input ^
+--mount type=bind,src=c:\output,target=/output ^
+mcr.microsoft.com/azure-cognitive-services/luis:latest ^
+Eula=accept ^
+Billing={BILLING_ENDPOINT} ^
+ApiKey={ENDPOINT_KEY} ^
 Logging:Console:LogLevel:Default=Information
 ```
 

@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: 5fa922cb91d34483256faf4dcf70569aa2f17b97
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 318e71b68bbabeeef34c75a412f9fdd5b6db754a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60813834"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65073019"
 ---
 # <a name="entity-roles-for-contextual-subtypes"></a>Funções de entidade para os subtipos contextuais
 
@@ -37,7 +37,7 @@ As funções dão um nome para essas diferenças:
 
 |Tipo de entidade|Nome da entidade|Função|Finalidade|
 |--|--|--|--|
-|Simples|Local padrão|origin|de onde o avião parte|
+|Simples|Local padrão|origem|de onde o avião parte|
 |Simples|Local padrão|destino|onde o avião pousa|
 
 ## <a name="non-machine-learned-entity-example-of-roles"></a>Exemplo de entidade não computador aprendeu de funções
@@ -79,12 +79,6 @@ As seguintes declarações de exemplo usarem entidades e funções:
 |--|--|
 |Tenho interesse em aprender mais sobre **Seattle**|Estou interessado em aprender mais sobre {Location}|
 |Comprar um tíquete de Seattle para Nova York|Comprar um tíquete de {local: origem} para {local: destino}|
-
-## <a name="how-are-roles-related-to-hierarchical-entities"></a>Como as funções estão relacionadas às entidades hierárquicas?
-
-Funções agora estão disponíveis para todas as entidades em declarações de exemplo, bem como o uso anterior de padrões. Como eles estão disponíveis em todos os lugares, eles substituem a necessidade de entidades hierárquicas. Novas entidades devem ser criadas com as funções, em vez de usar entidades hierárquicas. 
-
-Entidades hierárquicas eventualmente serão preteridas.
 
 ## <a name="how-are-roles-used-in-patterns"></a>Como as funções são usadas em padrões?
 Na declaração modelo do padrão, as funções são usadas dentro da declaração: 

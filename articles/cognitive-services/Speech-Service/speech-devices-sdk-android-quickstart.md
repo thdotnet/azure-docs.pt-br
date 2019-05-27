@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: d5af2bb61eeb986f02a31d45ff9236ecc0c8427e
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 073166a594088bca04d81883247a5880fcbd1cb7
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65026190"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234510"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Início Rápido: Executar o aplicativo de exemplo do SDK de dispositivos de fala no Android
 
-Neste início rápido, você aprenderá a usar o SDK de dispositivos de fala para o Android para criar um produto habilitados para fala.
+Neste início rápido, você aprenderá como usar o SDK de dispositivos de fala para Android para criar um produto habilitados para fala ou usá-la como uma [conversa transcrição](conversation-transcription-service.md) dispositivo.
 
 Este guia exige uma [serviços Cognitivos do Azure](get-started.md) conta com um recurso de serviços de fala. Se não tiver uma conta, você poderá usar a [avaliação gratuita](https://azure.microsoft.com/try/cognitive-services/) para obter uma chave de assinatura.
 
@@ -33,9 +33,11 @@ Antes de começar a usar o SDK de dispositivos de fala, você precisará:
 
 * Baixe a versão mais recente do [fala dispositivos SDK](https://aka.ms/sdsdk-download)e extraia o arquivo. zip no diretório de trabalho.
    > [!NOTE]
-   > O arquivo. zip inclui o aplicativo de exemplo do Android.
+   > O arquivo de exemplo-Android-Release.zip inclui o aplicativo de exemplo do Android e este início rápido pressupõe que o aplicativo seja extraído para C:\SDSDK\Android-Sample-Release
 
 * Para obter um [chave de assinatura do Azure para serviços de fala](get-started.md)
+
+* Se você planeja usar a transcrição de conversa que você deve usar um [dispositivo microfone circular](get-speech-devices-sdk.md) e o serviço atualmente só está disponível para "en-US" e "zh-CN" em regiões, "centralus" e "eastasia". Você deve ter uma chave de conversão de fala em uma dessas regiões para usar a transcrição de conversa.
 
 * Se você planeja usar os serviços de fala para identificar tentativas (ou ações) de declarações de usuário, será necessário um [Service (Luis reconhecimento vocal)](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription) assinatura. Para saber mais sobre o LUIS e reconhecimento de intenção, consulte [reconhecer intenções de fala com o LUIS, C# ](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp).
 
@@ -80,18 +82,25 @@ Para validar sua instalação do kit de desenvolvimento, compilar e instalar o a
 
 1. Vá para C:\SDSDK\Android-Sample-Release\example. Selecione **Ok** para abrir o projeto de exemplo.
 
-1. Adicione sua chave de assinatura de Fala ao código-fonte. Se você quiser experimentar o reconhecimento de intenção, adicione também sua chave de assinatura [Serviço Inteligente de Reconhecimento Vocal](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) e ID do aplicativo.
+1. Adicione sua chave de assinatura de fala no código-fonte. Se você quiser experimentar o reconhecimento de intenção, adicione também sua chave de assinatura [Serviço Inteligente de Reconhecimento Vocal](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) e ID do aplicativo.
 
-   Suas chaves e as informações do aplicativo vão nas linhas a seguir no arquivo de origem MainActivity.java:
+   Para conversão de fala e LUIS suas informações entra em mainactivity. Java:
 
    ```java
-   // Subscription
-   private static final String SpeechSubscriptionKey = "[your speech key]";
-   private static final String SpeechRegion = "westus";
-   private static final String LuisSubscriptionKey = "[your LUIS key]";
-   private static final String LuisRegion = "westus2.api.cognitive.microsoft.com";
-   private static final String LuisAppId = "[your LUIS app ID]"
+    // Subscription
+    private static String SpeechSubscriptionKey = "<enter your subscription info here>";
+    private static String SpeechRegion = "westus"; // You can change this if your speech region is different.
+    private static String LuisSubscriptionKey = "<enter your subscription info here>";
+    private static String LuisRegion = "westus2"; // you can change this, if you want to test the intent, and your LUIS region is different.
+    private static String LuisAppId = "<enter your LUIS AppId>";
    ```
+
+    Se você estiver usando a transcrição de conversa suas informações de chave e a região de fala também são necessários no conversation.java:
+
+   ```java
+    private static final String CTSKey = "<Conversation Transcription Service Key>";
+    private static final String CTSRegion="<Conversation Transcription Service Region>";// Region may be "centralus" or "eastasia"
+    ```
 
 1. A palavra de ativação padrão (palavra-chave) é "Computador". Você também pode tentar uma das outras palavras de ativação fornecidas, "Máquina" e "Assistente". Os arquivos de recurso para essas palavras alternativas de ativação estão no SDK de Dispositivos de Fala, na pasta de palavra-chave. Por exemplo, C:\SDSDK\Android-Sample-Release\keyword\Computer contém os arquivos usados para a palavra de ativação "Computador".
 
@@ -126,7 +135,7 @@ Para validar sua instalação do kit de desenvolvimento, compilar e instalar o a
    |||Para um kit de desenvolvimento linear que usa todos os microfones: `Linear4`|
    |||Para um kit de desenvolvimento linear que usa dois microfones: `Linear2`|
 
-1. Para compilar o aplicativo, no menu **Executar**, selecione **Executar 'aplicativo'**. A caixa de diálogo **Selecionar o Destino de Implantação** aparece.
+1. Para compilar o aplicativo, no menu **Executar**, selecione **Executar 'aplicativo'** . A caixa de diálogo **Selecionar o Destino de Implantação** aparece.
 
 1. Selecione seu dispositivo e, em seguida, selecione **OK** para implantar o aplicativo no dispositivo.
 
@@ -135,6 +144,10 @@ Para validar sua instalação do kit de desenvolvimento, compilar e instalar o a
 1. O aplicativo de exemplo do SDK de Dispositivos de Fala é iniciado e exibe as seguintes opções:
 
    ![Aplicativo de exemplo e opções do SDK de Dispositivos de Fala de Exemplo](media/speech-devices-sdk/qsg-8.png)
+
+1. Adicionados recentemente é a demonstração de transcrição de conversa. Inicie transcrevê com iniciar sessão. Por padrão, todas as pessoas são um convidado, no entanto, se você tiver assinaturas de voz do participante que eles podem ser colocados em /video/participants.properties um arquivo no dispositivo. Para gerar a voz assinatura olhada [transcrever conversas (SDK)](how-to-use-conversation-transcription-service.md).
+
+   ![Aplicativo de demonstração de transcrição de conversa](media/speech-devices-sdk/qsg-15.png)
 
 1. Experimento!
 

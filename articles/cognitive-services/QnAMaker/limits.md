@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 02/26/2019
+ms.date: 05/22/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: fe15cafceea8128735f7241fa5e4187d4d9c47a9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ce6c5f3059041d8dbb097470cf4a415e73d9156b
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60518984"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237248"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Limites e limites de base de dados de conhecimento do QnA Maker
 Lista abrangente dos limites no QnA Maker.
@@ -51,19 +51,19 @@ Limites gerais sobre o conteúdo na base de dados de conhecimento:
 * Caracteres com suporte para valor de metadados: Todos, exceto : e | 
 * Tamanho do nome do arquivo: 200
 * Formatos de arquivo com suporte: ".tsv", ".pdf", ".txt", ".docx", ".xlsx".
-* Número máximo de perguntas alternativas: 100
+* Número máximo de perguntas alternativas: 300
 * Número máximo de pares de pergunta-resposta: Depende de [camada de Azure Search](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#document-limits) escolhido. Um par de pergunta e resposta é mapeado para um documento no índice de Azure Search. 
 
 ## <a name="create-knowledge-base-call-limits"></a>Criar limites de chamada da base de dados de conhecimento:
 Eles representam os limites de cada ação de criação da base de dados de conhecimento; ou seja, clicar em *Criar KB* ou chamar a API CreateKnowledgeBase.
-* Número máximo de perguntas alternativas por resposta: 100
+* Número máximo de perguntas alternativas por resposta: 300
 * Número máximo de URLs: 10
 * Número máximo de arquivos: 10
 
 ## <a name="update-knowledge-base-call-limits"></a>Atualizar limites de chamada da base de dados de conhecimento
 Eles representam os limites de cada ação de atualização; ou seja, clique em *Salvar e treinar* ou chame a API UpdateKnowledgeBase.
 * Tamanho de cada nome de origem: 300
-* Número máximo de perguntas alternativas adicionadas ou excluídas: 100
+* Número máximo de perguntas alternativas adicionadas ou excluídas: 300
 * Número máximo de campos de metadados adicionados ou excluídos: 10
 * Número máximo de URLs que podem ser atualizadas: 5
 

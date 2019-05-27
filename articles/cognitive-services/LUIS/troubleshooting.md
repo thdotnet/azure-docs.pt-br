@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: diberry
-ms.openlocfilehash: b4c1de8edf04e15b540adeac01bcbf0cb1d1b8af
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: b114b1c3b1c421c6e6944666e3fd928d2aced966
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65766941"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66225869"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Perguntas frequentes sobre o LUIS (Serviço Inteligente de Reconhecimento Vocal)
 
@@ -49,7 +49,7 @@ Veja o tutorial [API de Verificação Ortográfica do Bing V7](luis-tutorial-bin
 Para editar seu aplicativo de LUIS programaticamente, use a [API de Criação](https://go.microsoft.com/fwlink/?linkid=2092087). Veja [Chamar a API de criação LUIS](./luis-quickstart-node-add-utterance.md) e [Compilar um aplicativo de LUIS programaticamente usando Node.js](./luis-tutorial-node-import-utterances-csv.md) para obter exemplos de como chamar a API de Criação. A API de Criação exige que você use uma [chave de criação](luis-concept-keys.md#authoring-key), em vez de uma chave de ponto de extremidade. A criação programática permite até um milhão de chamadas por mês e cinco transações por segundo. Para obter mais informações sobre as chaves que você usa com o LUIS, consulte [Gerenciar chaves](./luis-concept-keys.md).
 
 ### <a name="where-is-the-pattern-feature-that-provided-regular-expression-matching"></a>Em local está o recurso de Padrão que forneceu a correspondência da expressão regular?
-O **Recurso de Padrão** anterior atualmente foi preterido, tendo sido substituído por **[Padrões](luis-concept-patterns.md)**.
+O **Recurso de Padrão** anterior atualmente foi preterido, tendo sido substituído por **[Padrões](luis-concept-patterns.md)** .
 
 ### <a name="how-do-i-use-an-entity-to-pull-out-the-correct-data"></a>Como fazer para usar uma entidade para extrair os dados corretos?
 Veja [entidades](luis-concept-entity-types.md) e [extração de dados](luis-concept-data-extraction.md).
@@ -98,7 +98,7 @@ Examine as [práticas recomendadas](luis-concept-best-practices.md) para obter o
 O LUIS transforma em [token](luis-glossary.md#token) o enunciado com base na [cultura](luis-language-support.md#tokenization). O valor original e o valor em token estão disponíveis para [extração de dados](luis-concept-data-extraction.md#tokenized-entity-returned).
 
 ### <a name="how-do-i-create-and-assign-a-luis-endpoint-key"></a>Como fazer para criar e atribuir uma chave de ponto de extremidade de LUIS?
-[Crie a chave do ponto de extremidade](luis-how-to-azure-subscription.md) no Azure para seu nível de [serviço](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/). [Atribuir a tecla](luis-how-to-azure-subscription.md) na página **[Chaves e pontos de extremidade](luis-how-to-azure-subscription.md)**. Não há uma API correspondente para essa ação. Em seguida, você deve alterar a solicitação HTTP para o ponto de extremidade para [usar a nova chave de ponto de extremidade](luis-concept-keys.md#use-endpoint-key-in-query).
+[Crie a chave do ponto de extremidade](luis-how-to-azure-subscription.md) no Azure para seu nível de [serviço](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/). [Atribuir a tecla](luis-how-to-azure-subscription.md) na página **[Chaves e pontos de extremidade](luis-how-to-azure-subscription.md)** . Não há uma API correspondente para essa ação. Em seguida, você deve alterar a solicitação HTTP para o ponto de extremidade para [usar a nova chave de ponto de extremidade](luis-concept-keys.md#use-endpoint-key-in-query).
 
 ### <a name="how-do-i-interpret-luis-scores"></a>Como fazer para interpretar as pontuações de LUIS?
 Seu sistema deve usar a intenção de pontuação mais alta, independentemente do seu valor. Por exemplo, uma pontuação inferior a 0,5 (menor que 50%) não significa necessariamente que o LUIS tem confiança baixa. Fornecer mais dados de treinamento pode ajudar a aumentar a [pontuação](luis-concept-prediction-score.md) da intenção mais provável.
@@ -297,6 +297,10 @@ Os seguintes recursos foram lançados na conferência Build 2019:
 * [Domínios predefinidos aprimorados](luis-reference-prebuilt-domains.md) 
 * [Entidades de lista dinâmica](luis-migration-api-v3.md#dynamic-lists-passed-in-at-prediction-time)
 * [Entidades externas](luis-migration-api-v3.md#external-entities-passed-in-at-prediction-time)
+
+Vídeos:
+
+* [Como usar inteligência Artificial de conversação do Azure para dimensionar seus negócios para a próxima geração](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -1,7 +1,7 @@
 ---
 title: Painel - reconhecimento vocal
 titleSuffix: Azure Cognitive Services
-description: Corrigi as intenções com o painel de resumo de análise, uma ferramenta de relatório visualizado.
+description: Corrigi as intenções com o painel de análise, uma ferramenta de relatório visualizado.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,18 +9,18 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/22/2019
 ms.author: diberry
-ms.openlocfilehash: a518a697369ff74689a0c4ac05af96453b6a5ca4
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 055d113a2bc77f8de1b4b881718007c869470532
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65072574"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236956"
 ---
 # <a name="how-to-use-the-dashboard-to-improve-your-app"></a>Como usar o painel para melhorar seu aplicativo
 
-Localize e corrija problemas com as intenções do seu aplicativo treinado quando você estiver usando declarações de exemplo. O painel de resumo exibe informações gerais do aplicativo, com realces de tentativas que devem ser corrigidas. 
+Localize e corrija problemas com as intenções do seu aplicativo treinado quando você estiver usando declarações de exemplo. O painel exibe informações gerais do aplicativo, com realces de tentativas que devem ser corrigidas. 
 
 Examine o painel análise é um processo iterativo, repetido como alterar e melhorar seu modelo.
 
@@ -38,11 +38,11 @@ Três problemas abordados no painel de controle são:
 
 Previsões corretas são representadas com a cor azul.
 
-O painel de resumo mostra esses problemas e informa quais tentativas são afetadas e sugere que você deve fazer para melhorar o aplicativo. 
+O painel mostra esses problemas e informa quais tentativas são afetadas e sugere que você deve fazer para melhorar o aplicativo. 
 
 ## <a name="before-app-is-trained"></a>Antes que o aplicativo é treinado 
 
-Antes de treinar o aplicativo, o painel de resumo não contém alguma sugestão de correções. Treine seu aplicativo para ver essas sugestões.  
+Antes de treinar o aplicativo, o painel não contém alguma sugestão de correções. Treine seu aplicativo para ver essas sugestões.  
 
 ## <a name="check-your-publishing-status"></a>Verificar o status da publicação
 
@@ -50,7 +50,7 @@ O **status da publicação** cartão contém informações sobre o Active Direct
 
 Verifique se a versão ativa é a versão que você deseja corrigir. 
 
-![Os serviços externos do aplicativo do painel de resumo mostra, publicados regiões e agregados ocorrências de ponto de extremidade.](./media/luis-how-to-use-dashboard/analytics-card-1-shows-app-summary-and-endpoint-hits.png)
+![Os serviços externos do aplicativo do painel mostra, publicados regiões e agregados ocorrências de ponto de extremidade.](./media/luis-how-to-use-dashboard/analytics-card-1-shows-app-summary-and-endpoint-hits.png)
 
 Isso também mostra quaisquer serviços externos, regiões publicados e agregados de ocorrências de ponto de extremidade. 
 
@@ -96,7 +96,7 @@ O **desequilíbrio dados** intenção lista mostra as intenções que precisam d
 
 * Adicione mais declarações à intenção e treinar novamente. 
 
-Não adicione declarações como a intenção None, a menos que o que é sugerido no painel de resumo.
+Não adicione declarações como a intenção None, a menos que o que é sugerido no painel.
 
 > [!Tip]
 > Use a terceira seção na página de **declarações por intenção** com o **declarações (número)** definir, como um guia visual rápido do que as intenções precisam de mais declarações.  

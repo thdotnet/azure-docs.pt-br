@@ -1,5 +1,5 @@
 ---
-title: O que é a API do Detector de anomalias? | Microsoft Docs
+title: O que é a API do Detector de Anomalias? | Microsoft Docs
 titleSuffix: Azure Cognitive Services
 description: Use algoritmos avançados da API de Detector de anomalias para identificar anomalias em seus dados de série temporal.
 services: cognitive-services
@@ -10,13 +10,13 @@ ms.topic: article
 ms.date: 03/26/2019
 ms.author: aahi
 ms.openlocfilehash: 48dffb8853d3def590e434c1683ecf038e2a194e
-ms.sourcegitcommit: fbfe56f6069cba027b749076926317b254df65e5
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58473126"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "64415814"
 ---
-# <a name="what-is-the-anomaly-detector-api"></a>O que é a API do Detector de anomalias?
+# <a name="what-is-the-anomaly-detector-api"></a>O que é a API do Detector de Anomalias?
 
 A API do Detector de anomalias permite monitorar e detectar anormalidades nos seus dados de série temporal com aprendizado de máquina. A API do Detector de anomalias se adapta automaticamente identificando e aplicando os modelos de melhor ajuste para seus dados, independentemente do setor, o cenário ou o volume de dados. Usando seus dados de série temporal, a API determina os limites para detecção de anomalias, valores esperados, e quais pontos de dados são anomalias.
 
@@ -28,7 +28,7 @@ Usar o Detector de anomalias não exige qualquer experiência anterior em aprend
 
 Com o Detector de anomalias, você pode detectar automaticamente anomalias ao longo de seus dados de série temporal, ou conforme elas ocorrem em tempo real. 
 
-|Recurso  |DESCRIÇÃO  |
+|Recurso  |Descrição  |
 |---------|---------|
 |Detecte anomalias conforme elas ocorrem em tempo real. | Detecte anomalias em seus dados de streaming por meio de pontos de vista anteriormente dados para determinar se seu mais recente é uma anomalia. Essa operação gera um modelo usando os pontos de dados enviados e determina se o ponto de destino é uma anomalia. Chamando a API com cada novo ponto de dados que você gerar, você pode monitorar seus dados conforme eles são criados. |
 |Detecte anomalias em todo o conjunto de dados como um lote. | Use sua série de tempo para detectar todas as anomalias que podem existir ao longo de seus dados. Essa operação gera um modelo usando seus dados de série de tempo todo, com cada ponto analisado com o mesmo modelo.         |
@@ -48,7 +48,7 @@ Para executar a demonstração, conclua as seguintes etapas:
 5. Adicione sua chave de assinatura de API do Detector de anomalias válido para o `subscription_key` variável. Alterar o `endpoint` variável ao ponto de extremidade. Por exemplo: `https://westus2.api.cognitive.microsoft.com`
 1. Na barra de menus superior, clique em **célula**, em seguida, **executar tudo**.
 
-## <a name="workflow"></a>Fluxo de trabalho
+## <a name="workflow"></a>Fluxo de Trabalho
 
 A API do Detector de anomalias é um serviço web RESTful, tornando mais fácil chamar a partir de qualquer linguagem de programação que pode fazer solicitações HTTP e analisar o JSON.
 

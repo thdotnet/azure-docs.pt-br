@@ -161,7 +161,7 @@ A seção **typeProperties** é diferente para cada tipo de conjunto de dados. A
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | type | O **tipo** do conjunto de dados deve ser definida como **Http**. | Sim |
-| relativeUrl | Uma URL relativa para o recurso que contém os dados. Quando o caminho não é especificado, somente o URL especificado na definição de serviço vinculada é usado. <br><br> Para construir um URL dinâmico, você pode usar [funções do Data Factory e variáveis do sistema](data-factory-functions-variables.md). Exemplo: **relativeUrl**: **$$ Text.Format ('/ my / report? Month = {0: aaaa - - {0: MM} & fmt = csv', SliceStart)**. | Não  |
+| relativeUrl | Uma URL relativa para o recurso que contém os dados. Quando o caminho não é especificado, somente o URL especificado na definição de serviço vinculada é usado. <br><br> Para construir um URL dinâmico, você pode usar [funções do Data Factory e variáveis do sistema](data-factory-functions-variables.md). Exemplo: **relativeUrl**: **$$ Text.Format ('/ my / report? Month = {0: aaaa - - {0: MM} & fmt = csv', SliceStart)** . | Não  |
 | requestMethod | O método HTTP. Valores permitidos são **Obtenha** e **POST**. | Não  <br />(o padrão é **obter**) |
 | additionalHeaders | Cabeçalhos de solicitação HTTP adicionais. | Não  |
 | requestBody | O corpo da solicitação HTTP. | Não  |

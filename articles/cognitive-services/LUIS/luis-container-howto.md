@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/22/2019
+ms.date: 05/23/2019
 ms.author: diberry
-ms.openlocfilehash: 59308cdadb1eda9e73b373e72112b83d93629683
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: b379ebeeec7d9309cdf150b8b90ddd006e3bcd9a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66124331"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240221"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Instalar e executar os contêineres de docker LUIS
  
@@ -136,7 +136,7 @@ O pacote do aplicativo publicado está disponível na página da lista **Meus ap
 1. Entre no portal do [LUIS](https://www.luis.ai).
 1. Marque a caixa de seleção à esquerda do nome do aplicativo na lista. 
 1. Selecione o item **Exportar** na barra de ferramentas contextual acima da lista.
-1. Selecione **Exportar para o contêiner (GZIP)**.
+1. Selecione **Exportar para o contêiner (GZIP)** .
 1. Selecione o ambiente do **Slot de produção** ou do **Slot de preparo**.
 1. O download do pacote é feito do navegador.
 
@@ -152,7 +152,7 @@ O pacote do aplicativo treinado está disponível na página da lista **Versões
 1. Selecione **Versões** na barra de navegação à esquerda.
 1. Marque a caixa de seleção à esquerda do nome da versão na lista.
 1. Selecione o item **Exportar** na barra de ferramentas contextual acima da lista.
-1. Selecione **Exportar para o contêiner (GZIP)**.
+1. Selecione **Exportar para o contêiner (GZIP)** .
 1. O download do pacote é feito do navegador.
 
 ![Exportar o pacote treinado para o contêiner a partir do menu Exportar da página Versões](./media/luis-container-how-to/export-trained-package-for-container.png)
@@ -223,20 +223,24 @@ Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/
 |{ENDPOINT_KEY} | Essa chave é usada para iniciar o contêiner. Não use a chave de inicialização. |
 |{BILLING_ENDPOINT} | O valor de ponto de extremidade de cobrança está disponível no portal do Azure `Cognitive Services` página de visão geral. Você precisará adicionar o `luis/v2.0` roteamento para o URI do ponto de extremidade, conforme mostrado no exemplo a seguir: `https://westus.api.cognitive.microsoft.com/luis/v2.0`.|
 
-Substitua esses parâmetros por seus próprios valores no comando `docker run` de exemplo a seguir.
+Substitua esses parâmetros por seus próprios valores no comando `docker run` de exemplo a seguir. Execute o comando no console do Windows.
 
-```bash
-docker run --rm -it -p 5000:5000 --memory 4g --cpus 2 \
---mount type=bind,src=c:\input,target=/input \
---mount type=bind,src=c:\output,target=/output \
-mcr.microsoft.com/azure-cognitive-services/luis \
-Eula=accept \
-Billing={BILLING_ENDPOINT} \
+```console
+docker run --rm -it -p 5000:5000 ^
+--memory 4g ^
+--cpus 2 ^
+--mount type=bind,src=c:\input,target=/input ^
+--mount type=bind,src=c:\output\,target=/output ^
+mcr.microsoft.com/azure-cognitive-services/luis ^
+Eula=accept ^
+Billing={BILLING_ENDPOINT} ^
 ApiKey={ENDPOINT_KEY}
 ```
 
-> [!Note] 
-> O comando anterior usa o diretório fora da unidade `c:` para evitar conflitos de permissão no Windows. Se você precisar usar um diretório específico como o diretório de entrada, talvez seja necessário conceder ao Docker permissão de serviço. O comando Docker anterior usa a barra invertida, `\`, como um caractere de continuação de linha. Substitua ou remova a barra invertida com base nos requisitos do sistema operacional de seu [computador host](#the-host-computer). Não altere a ordem dos argumentos, a menos que você esteja familiarizado com contêineres do Docker.
+* Este exemplo usa o diretório de desativar o `c:` unidade para evitar conflitos de permissão no Windows. Se você precisar usar um diretório específico como o diretório de entrada, talvez seja necessário conceder ao Docker permissão de serviço. 
+* não altere a ordem dos argumentos, a menos que você esteja familiarizado com contêineres do Docker.
+* Se você estiver usando um sistema operacional diferente, use o console/terminal correto, a sintaxe de pasta para montagens e o caractere de continuação de linha para o seu sistema. Estes exemplos supõem que um console do Windows com um caractere de continuação de linha `^`. Como o contêiner é um sistema operacional Linux, a montagem de destino usa uma sintaxe de pasta de estilo do Linux.
+
 
 
 Esse comando:

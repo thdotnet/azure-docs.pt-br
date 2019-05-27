@@ -9,19 +9,22 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 02/28/2019
+ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 5ef7ccb58533161d8397ad42e70de1999908dc36
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 988609f411ad405b0f1dc244b23fb6db446136a2
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61473256"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65071995"
 ---
 # <a name="keyphrase-prebuilt-entity-for-a-luis-app"></a>Entidade predefinida keyPhrase para um aplicativo LUIS
 A KeyPhrase extrai uma variedade de frases-chave de um enunciado. Não é necessário adicionar expressões que contenham keyPhrase ao aplicativo. A entidade keyPhrase tem suporte em [muitas culturas](luis-language-support.md#languages-supported) como parte dos recursos de [análise de texto](../text-analytics/overview.md). 
 
 ## <a name="resolution-for-prebuilt-keyphrase-entity"></a>Resolução para entidade keyPhrase pré-compilada
+
+### <a name="api-version-2x"></a>Versão da API 2. x
+
 O exemplo a seguir mostra a resolução da entidade **builtin.keyPhrase**.
 
 ```json
@@ -48,6 +51,6 @@ O exemplo a seguir mostra a resolução da entidade **builtin.keyPhrase**.
 }
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Saiba mais sobre as entidades [percentual](luis-reference-prebuilt-percentage.md), [número](luis-reference-prebuilt-number.md) e [idade](luis-reference-prebuilt-age.md).

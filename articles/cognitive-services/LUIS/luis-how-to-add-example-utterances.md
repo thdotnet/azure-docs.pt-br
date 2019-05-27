@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: 0d3123b1e0238a1907b5ad3d487b92a7919ff181
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: badf351f8336e501b3ee1c035fcb389a570750c0
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60197893"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65072848"
 ---
 # <a name="add-an-entity-to-example-utterances"></a>Adicionar uma entidade a enunciados de exemplo 
 
@@ -47,7 +47,7 @@ Are there any SQL server jobs?
     > * Para uma única palavra, apenas selecione-a. 
     > * Para um conjunto de duas ou mais palavras, selecione no início e então no fim do conjunto.
 
-1. Na caixa de pop-up **Que tipo de entidade você deseja criar?**, verifique o nome da entidade e selecione o tipo de entidade **Simples**, então selecione **Concluído**.
+1. Na caixa de pop-up **Que tipo de entidade você deseja criar?** , verifique o nome da entidade e selecione o tipo de entidade **Simples**, então selecione **Concluído**.
 
     Uma [lista de frases](luis-concept-feature.md) normalmente é usada para melhorar o sinal de uma entidade simples.
 
@@ -59,7 +59,7 @@ Para obter lista de departamentos da empresa, você pode ter valores normalizado
 
 1. Em uma expressão de exemplo sobre o **intenções** , selecione a palavra ou frase que você deseja na nova lista. Quando a entidade lista suspensa for exibida, insira o nome para a nova entidade de lista na caixa de texto superior e selecione **criar nova entidade**.   
 
-1. Na caixa pop-up **Que tipo de entidade você deseja criar?**, nomeie a entidade e selecione **Lista** como o tipo. Adicione sinônimos deste item de lista e, em seguida, selecione **Concluído**. 
+1. Na caixa pop-up **Que tipo de entidade você deseja criar?** , nomeie a entidade e selecione **Lista** como o tipo. Adicione sinônimos deste item de lista e, em seguida, selecione **Concluído**. 
 
     ![Captura de tela de inserção de sinônimos de entidade de lista](./media/luis-how-to-add-example-utterances/hr-create-list-2.png)
 
@@ -88,25 +88,6 @@ Supondo que a declaração `Does John Smith work in Seattle?`, uma declaração 
 1. A entidade composta é exibida com destaques em azul para entidades individuais e um sublinhado verde para a entidade composta inteira. 
 
     ![Captura de tela da página Detalhes de intenções, com entidade composta](./media/luis-how-to-add-example-utterances/hr-create-composite-4.png)
-
-## <a name="add-hierarchical-entity"></a>Adicionar entidade hierárquica
-
-**Entidades hierárquicas eventualmente serão preteridas. Use [funções de entidade](luis-concept-roles.md) para determinar os subtipos de entidade, em vez de entidades hierárquicas.**
-
-Uma entidade hierárquica é uma categoria de entidades contextualmente aprendidas e conceitualmente relacionadas. No exemplo a seguir, a entidade contém locais de origem e de destino. 
-
-No enunciado `Move John Smith from Seattle to Cairo`, Seattle é o local de origem e Cairo é o local de destino. Cada local é contextualmente diferente e aprendido pela escolha de palavras e pela ordem de palavras no enunciado.
-
-1. Na página Intenção, no enunciado, selecione `Seattle`, insira o nome da entidade `Location` e, em seguida, pressione Enter no teclado.
-
-1. Na caixa pop-up **Que tipo de entidade você deseja criar?**, selecione _hierárquica_ como **Tipo da entidade** e, em seguida, adicione `Origin` e `Destination` como filhos e selecione **Concluído**.
-
-    ![Captura de tela da página de detalhes de Intenções, com a entidade ToLocation realçada](./media/luis-how-to-add-example-utterances/create-location-hierarchical-entity.png)
-
-1. A palavra no enunciado foi rotulada com a entidade hierárquica pai. Você precisa atribuir a palavra a uma entidade filho. Retorne para a expressão na página de detalhes de intenção. Selecionar a palavra e, em seguida, na lista suspensa, escolha o nome de entidade que você criou e siga o menu à direita para escolher a entidade filho correta.
-
-    >[!CAUTION]
-    >Nomes de entidade filho devem ser exclusivos em todas as entidades em um único aplicativo. Duas entidades hierárquicas diferentes não podem conter entidades filho com o mesmo nome. 
 
 ## <a name="add-entitys-role-to-utterance"></a>Adicionar a função da entidade a expressão
 
@@ -143,9 +124,6 @@ As soluções a seguir ajudam a resolver a discrepância de previsão da entidad
 |Texto sem rótulo|sublinhado em vermelho|Previsão incorreta|Os enunciados atuais que usam essa entidade incorreta precisam ser revisados em todas as intenções. As declarações atuais têm equivocado LUIS que este texto é a entidade prevista.
 |Texto corretamente rotulado|destaque da entidade azul, sublinhado em vermelho|Previsão incorreta|Forneça mais enunciados com a entidade corretamente rotulada em uma variedade de lugares e usos. Os enunciados atuais não são suficientes para ensinar ao LUIS que esta é a entidade ou entidades semelhantes aparecem no mesmo contexto. Entidade semelhante deve ser combinada em uma única entidade, portanto, LUIS não é confuso. Outra solução é adicionar uma lista de frases para aumentar o significado das palavras. |
 |Texto etiquetado incorretamente|destaque da entidade azul, sublinhado em vermelho|Previsão correta| Forneça mais enunciados com a entidade corretamente rotulada em uma variedade de lugares e usos. 
-
-> [!Note]
-> Quando uma caixa vermelha é em torno da intenção rotulada na linha da declaração de exemplo, um [erro de previsão intenção](luis-how-to-add-intents.md#intent-prediction-discrepancy-errors) ocorreu. Você precisará corrigi-lo. 
 
 ## <a name="other-actions"></a>Outras ações
 
