@@ -125,8 +125,8 @@ A tabela a seguir fornece descrições das propriedades de JSON usadas no snippe
 
 | Propriedade | DESCRIÇÃO |
 |:--- |:--- |
-| ClusterSize |Tamanho do cluster HDInsight. |
-| TimeToLive |Especifica que o tempo ocioso do cluster HDInsight antes de ser excluído. |
+| clusterSize |Tamanho do cluster HDInsight. |
+| timeToLive |Especifica que o tempo ocioso do cluster HDInsight antes de ser excluído. |
 | linkedServiceName |Especifica a conta de armazenamento usada para armazenar os logs gerados pelo HDInsight |
 
 Observe os seguintes pontos:
@@ -171,13 +171,13 @@ A tabela a seguir fornece descrições das propriedades de JSON usadas no snippe
 
 | Propriedade | DESCRIÇÃO |
 |:--- |:--- |
-| Tipo |A propriedade type é definida como AzureBlob porque os dados residem no armazenamento de blobs do Azure. |
+| type |A propriedade type é definida como AzureBlob porque os dados residem no armazenamento de blobs do Azure. |
 | linkedServiceName |refere-se ao StorageLinkedService que você criou anteriormente. |
 | fileName |Essa propriedade é opcional. Se você omitir essa propriedade, todos os arquivos de folderPath serão selecionados. Nesse caso, somente o input.log será processado. |
-| Tipo |Os arquivos de log estão em formato de texto, então utilizaremos TextFormat. |
+| type |Os arquivos de log estão em formato de texto, então utilizaremos TextFormat. |
 | columnDelimiter |as colunas nos arquivos de log são delimitadas por um caractere de vírgula (,) |
-| frequência/intervalo |a frequência é definida como Mês e o intervalo como 1, o que significa que as fatias de entrada estão disponíveis mensalmente. |
-| externo |essa propriedade será definida como true se os dados de entrada não forem gerados pelo serviço Data Factory. |
+| frequency/interval |a frequência é definida como Mês e o intervalo como 1, o que significa que as fatias de entrada estão disponíveis mensalmente. |
+| external |essa propriedade será definida como true se os dados de entrada não forem gerados pelo serviço Data Factory. |
 
 ### <a name="outputdatasetjson"></a>outputdataset.json
 
