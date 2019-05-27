@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 05/02/2019
 ms.author: yinhew
-ms.openlocfilehash: b5db21d40f1e270fb6771ba47af28a9e90228ea4
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: b5b768e52a40652840e9e3d3069df8a9c895f77b
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65465581"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001611"
 ---
 # <a name="quickstart-synthesize-speech-in-c-on-linux-by-using-the-speech-sdk"></a>Início Rápido: Sintetizar fala em C++ no Linux usando o SDK de Fala
 
@@ -31,7 +31,7 @@ Você precisa de uma chave de assinatura dos Serviços de Fala para concluir est
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-A versão atual do SDK de Fala dos Serviços Cognitivos é `1.5.0`.
+A versão atual do SDK de Fala dos Serviços Cognitivos é `1.5.1`.
 
 O SDK de Fala para Linux pode ser usado para criar aplicativos de 64 bits e 32 bits. As bibliotecas necessárias e os arquivos de cabeçalho podem ser baixados como um arquivo tar de https://aka.ms/csspeech/linuxbinary.
 

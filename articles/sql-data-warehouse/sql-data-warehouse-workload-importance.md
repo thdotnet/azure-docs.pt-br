@@ -10,12 +10,12 @@ ms.subservice: workload management
 ms.date: 05/01/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9c26bca66b0f82ea58d01d0eb8358f521168a799
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 92990b68969e754ee126b6cd5a22ecfa700c0494
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154146"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002896"
 ---
 # <a name="sql-data-warehouse-workload-importance"></a>Importância de carga de trabalho do SQL Data Warehouse
 
@@ -61,4 +61,8 @@ Como P5 é mediumrc, ele requer dois slots de simultaneidade.  P5 precisa espera
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para se familiarizar com a criação de um classificador, consulte o [criar o CLASSIFICADOR de carga de trabalho (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql).  Para obter mais informações sobre a classificação de carga de trabalho do SQL Data Warehouse, consulte [classificação de carga de trabalho do SQL Data Warehouse](sql-data-warehouse-workload-classification.md).  Consulte o guia de início rápido sobre como criar um classificador de carga de trabalho [criar um classificador de carga de trabalho](quickstart-create-a-workload-classifier-tsql.md). Confira [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) para exibir consultas e a importância atribuída.
+- Para obter mais informações sobre como criar um classificador, consulte o [criar o CLASSIFICADOR de carga de trabalho (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql).  
+- Para obter mais informações sobre a classificação de carga de trabalho do SQL Data Warehouse, consulte [carga de trabalho de classificação](sql-data-warehouse-workload-classification.md).  
+- Consulte o guia de início rápido [criar um classificador de carga de trabalho](quickstart-create-a-workload-classifier-tsql.md) para saber como criar um classificador de carga de trabalho.
+- Consulte os artigos de instruções [configurar a importância da carga de trabalho](sql-data-warehouse-how-to-configure-workload-importance.md) e como [gerenciar e monitorar o gerenciamento de carga de trabalho](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).
+- Confira [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) para exibir consultas e a importância atribuída.

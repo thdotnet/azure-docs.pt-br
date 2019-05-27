@@ -143,7 +143,7 @@ Usando esse conector do Cosmos DB, você pode facilmente
 * Migrar dados entre duas coleções do Cosmos DB no estado em que se encontram.
 
 Para atingir essa cópia independente de esquema,
-* Ao usar o assistente de cópia, marque a opção **"Exportar como estão para arquivos JSON ou uma coleção Cosmos DB"**.
+* Ao usar o assistente de cópia, marque a opção **"Exportar como estão para arquivos JSON ou uma coleção Cosmos DB"** .
 * Ao usar a edição de JSON, não especifique a seção "structure" nos conjuntos de dados do Cosmos DB nem a propriedade "nestingSeparator" na fonte/coletor do Cosmos DB na atividade de cópia. Para importar/exportar para arquivos JSON, no conjunto de dados do armazenamento de arquivo especifique o tipo de formato, como "JsonFormat," configure "filePattern" e ignore as configurações de formato restantes, consulte a seção [Formato JSON](data-factory-supported-file-and-compression-formats.md#json-format) para obter detalhes.
 
 ## <a name="json-examples"></a>Exemplos de JSON

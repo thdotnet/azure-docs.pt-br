@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 04/29/2019
 ms.author: absha
-ms.openlocfilehash: 89df3a981ba3710e848f834c303772e94e10b139
-ms.sourcegitcommit: ed66a704d8e2990df8aa160921b9b69d65c1d887
+ms.openlocfilehash: ebb14d97273851585e491e3bcd36f776ec9b61b4
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64947171"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66000963"
 ---
 # <a name="rewrite-http-headers-with-application-gateway"></a>Reescreva cabeçalhos HTTP com o Gateway de aplicativo
 
@@ -60,7 +60,7 @@ O Gateway de aplicativo usa variáveis de servidor para armazenar informações 
 
 O gateway de aplicativo dá suporte a essas variáveis de servidor:
 
-| Nome da variável | DESCRIÇÃO                                                  |
+| Nome da variável | Descrição                                                  |
 | -------------------------- | :----------------------------------------------------------- |
 | add_x_forwarded_for_proxy  | O campo de cabeçalho de solicitação X-Forwarded-For cliente com o `client_ip` variável (veja a explicação posteriormente nesta tabela) anexado a ele no formato IP1, IP2, lt;ip3 e assim por diante. Se o campo ' X-Forwarded-For não está no cabeçalho da solicitação do cliente, o `add_x_forwarded_for_proxy` variável é igual ao `$client_ip` variável. Essa variável é particularmente útil quando você desejar reescrever o cabeçalho X-Forwarded-For definido por Gateway de aplicativo para que o cabeçalho contém somente o endereço IP sem as informações de porta. |
 | ciphers_supported          | Uma lista das codificações com suporte no cliente.          |
@@ -157,9 +157,7 @@ Você pode avaliar um cabeçalho de resposta ou solicitação HTTP a presença d
 
 - Nomes de cabeçalho podem conter quaisquer caracteres alfanuméricos e símbolos específicos, conforme definido em [RFC 7230](https://tools.ietf.org/html/rfc7230#page-27). Não há suporte no momento, o sublinhado (\_) caractere especial nos nomes de cabeçalho.
 
-## <a name="need-help"></a>Precisa de ajuda?
-
-Entre em contato conosco em [ AGHeaderRewriteHelp@microsoft.com ](mailto:AGHeaderRewriteHelp@microsoft.com) caso você precise de ajuda com esse recurso.
+- Se uma resposta tiver vários cabeçalhos com o mesmo nome, em seguida, reescrever o valor de um desses cabeçalhos resulta em descartando outros cabeçalhos na resposta.
 
 ## <a name="next-steps"></a>Próximas etapas
 

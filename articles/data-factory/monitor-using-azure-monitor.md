@@ -281,7 +281,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 |activityRunId| Cadeia de caracteres| ID da execução de atividade | `3a171e1f-b36e-4b80-8a54-5625394f4354` |
 |pipelineRunId| Cadeia de caracteres| ID da execução de pipeline | `9f6069d6-e522-4608-9f99-21807bfc3c70` |
 |ResourceId| Cadeia de caracteres | ID de recursos associado para o recurso de data factory | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
-|categoria| Cadeia de caracteres | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "ActivityRuns" | `ActivityRuns` |
+|category| Cadeia de caracteres | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "ActivityRuns" | `ActivityRuns` |
 |level| Cadeia de caracteres | Nível dos logs de diagnóstico. Defina essa propriedade para "Informational" | `Informational` |
 |operationName| Cadeia de caracteres |Nome da atividade com status. Se o status for a pulsação de início, será `MyActivity -`. Se o status for a pulsação final, será `MyActivity - Succeeded` com status final | `MyActivity - Succeeded` |
 |pipelineName| Cadeia de caracteres | Nome do pipeline | `MyPipeline` |
@@ -326,7 +326,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 | tempo real | Cadeia de caracteres | Hora do evento no período de tempo, formato UTC `YYYY-MM-DDTHH:MM:SS.00000Z` | `2017-06-28T21:00:27.3534352Z` |
 |runId| Cadeia de caracteres| ID da execução de pipeline | `9f6069d6-e522-4608-9f99-21807bfc3c70` |
 |ResourceId| Cadeia de caracteres | ID de recursos associado para o recurso de data factory | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
-|categoria| Cadeia de caracteres | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "PipelineRuns" | `PipelineRuns` |
+|category| Cadeia de caracteres | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "PipelineRuns" | `PipelineRuns` |
 |level| Cadeia de caracteres | Nível dos logs de diagnóstico. Defina essa propriedade para "Informational" | `Informational` |
 |operationName| Cadeia de caracteres |Nome do pipeline com status. "Pipeline – bem-sucedido" com status final quando a execução do pipeline é concluída| `MyPipeline - Succeeded` |
 |pipelineName| Cadeia de caracteres | Nome do pipeline | `MyPipeline` |
@@ -370,7 +370,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 | tempo real | Cadeia de caracteres | Hora do evento no período de tempo, formato UTC `YYYY-MM-DDTHH:MM:SS.00000Z` | `2017-06-28T21:00:27.3534352Z` |
 |triggerId| Cadeia de caracteres| ID da execução do gatilho | `08587023010602533858661257311` |
 |ResourceId| Cadeia de caracteres | ID de recursos associado para o recurso de data factory | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
-|categoria| Cadeia de caracteres | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "PipelineRuns" | `PipelineRuns` |
+|category| Cadeia de caracteres | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "PipelineRuns" | `PipelineRuns` |
 |level| Cadeia de caracteres | Nível dos logs de diagnóstico. Defina essa propriedade para "Informational" | `Informational` |
 |operationName| Cadeia de caracteres |Nome do gatilho com status final se ele foi disparado com êxito. "MyTrigger – Bem-sucedido" se a pulsação foi bem-sucedida| `MyTrigger - Succeeded` |
 |triggerName| Cadeia de caracteres | Nome do gatilho | `MyTrigger` |
@@ -379,7 +379,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 |iniciar| Cadeia de caracteres | Início do acionamento do gatilho no período de tempo, formato UTC | `2017-06-26T20:55:29.5007959Z`|
 |status| Cadeia de caracteres | Status final se o gatilho foi acionado com êxito (Bem-sucedido ou Falha) | `Succeeded`|
 
-## <a name="metrics"></a>Métricas
+## <a name="metrics"></a>metrics
 
 O Azure Monitor permite consumir a telemetria para ter visibilidade do desempenho e da integridade de suas cargas de trabalho no Azure. Os tipos de dados de telemetria do Azure mais importantes são as métricas (também chamadas de contadores de desempenho) emitidas pela maioria dos recursos do Azure. O Azure Monitor fornece várias maneiras de configurar e consumir essas métricas para monitorar e solucionar problemas.
 

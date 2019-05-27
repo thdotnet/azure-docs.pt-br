@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/22/2019
+ms.date: 05/21/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0cc00b4f2075ba77490d310080b9968bedb8dc1f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: cc3307a4f32d77b9b8d259ac846c4db1c1ae4a99
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64701771"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002523"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Implantar um Windows híbrido Runbook Worker
 
@@ -60,8 +60,10 @@ Execute as etapas a seguir para automatizar a instalação e configuração da f
    * *SubscriptionID* (obrigatório): A ID de assinatura do Azure em que sua conta de automação está.
    * *WorkspaceName* (opcional): O nome do espaço de trabalho do Log Analytics. Se você não tiver um espaço de trabalho do Log Analytics, o script cria e configura um.
 
-     > [!NOTE]
-     > Atualmente, são as únicas regiões de automação com suporte para integração com os logs do Azure Monitor **Sudeste da Austrália**, **Leste dos EUA 2**, **Sudeste Asiático**e **Europa Ocidental**. Se a sua conta de automação não estiver em uma dessas regiões, o script criará um espaço de trabalho do Log Analytics, mas avisará que não é possível vinculá-los.
+   > [!NOTE]
+   > Ao habilitar soluções, somente determinadas regiões têm suporte para vincular um espaço de trabalho do Log Analytics e uma Conta de Automação.
+   >
+   > Para obter uma lista de pares de mapeamento com suporte, consulte [mapeamento da região do espaço de trabalho de conta de automação e o Log Analytics](how-to/region-mappings.md).
 
 2. No computador, abra o **Windows PowerShell** na tela **Iniciar** no modo Administrador.
 3. No shell de linha de comando do PowerShell, navegue até a pasta que contém o script que você baixou. Altere os valores para os parâmetros *-AutomationAccountName*, *-AAResourceGroupName*, *-OMSResourceGroupName*, *-HybridGroupName*, *-ScriptioncriptionId* e *-WorkspaceName*. Em seguida, execute o script.

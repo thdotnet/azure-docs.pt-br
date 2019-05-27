@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: b051f844b8c221e2e53c5fcf204878f80447cfe8
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 26935b53d8f852289513a5a7b5d31e3befe3e3b2
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65596559"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002242"
 ---
 # <a name="lucene-query-syntax-in-azure-search"></a>Sintaxe de consulta Lucene no Azure Search
 Você pode escrever consultas no Azure Search com base na sintaxe avançada do [Analisador de Consultas do Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html) para formulários de consulta especializados: curinga, pesquisa difusa, pesquisa de proximidade, expressões regulares são alguns exemplos. Grande parte da sintaxe do Analisador de Consultas do Lucene é [implementada intacta no Azure Search](search-lucene-query-architecture.md), com exceção das *pesquisas de intervalo* que são construídas na Pesquisa do Azure por meio das expressões `$filter`. 
@@ -79,7 +79,7 @@ O exemplo acima usa o til (~), mas o mesmo princípio se aplica a todos os opera
  Os caracteres especiais devem ser substituídos para ser usados como parte do texto da pesquisa. Você também poderá permitir a saída deles prefixando-os com uma barra invertida (\\). Os caracteres especiais que precisam ter a saída permitida incluem o seguinte:  
 `+ - && || ! ( ) { } [ ] ^ " ~ * ? : \ /`  
 
- Por exemplo, para permitir a saída de um caractere curinga, use \\*.
+ Por exemplo, para escapar um caractere curinga, use \\ \*.
 
 ### <a name="encoding-unsafe-and-reserved-characters-in-urls"></a>Codificação de caracteres reservados e não seguros em URLs
 

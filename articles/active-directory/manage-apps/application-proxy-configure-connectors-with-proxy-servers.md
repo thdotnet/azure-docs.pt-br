@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/12/2018
+ms.date: 05/21/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25b8669e5ca2abe2d763d9bc14f27ed9c4460886
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 6cc0b3a9a02c023678691921100443436cdf0011
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65825944"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66015471"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Trabalhar com servidores proxy locais existentes
 
@@ -112,7 +112,7 @@ Permita o acesso às seguintes URLs:
 | mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | O Azure usa essas URLs para verificar os certificados |
 | login.windows.net<br>login.microsoftonline.com | O conector usa essas URLs durante o processo de registro. |
 
-Se o firewall ou o proxy permitir uma lista de permissões de DNS, você poderá adicionar as conexões com \*.msappproxy.net e \*.servicebus.windows.net à lista de permissões. Caso contrário, você precisará permitir o acesso aos [intervalos IP do Datacenter do Azure](https://www.microsoft.com/download/details.aspx?id=41653). Os intervalos de IP são atualizados a cada semana.
+Se seu firewall ou proxy permite que você configure listas de permissões de DNS, você pode permitir conexões com \*. msappproxy.net e \*. servicebus.windows.net. Caso contrário, você precisará permitir o acesso aos [intervalos IP do Datacenter do Azure](https://www.microsoft.com/download/details.aspx?id=41653). Os intervalos de IP são atualizados a cada semana.
 
 
 Se você não puder permitir a conectividade pelo FQDN e precisar especificar intervalos IP, use estas opções:

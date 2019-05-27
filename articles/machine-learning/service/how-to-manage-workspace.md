@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: shipatel
 author: shivp950
-ms.date: 09/24/2018
+ms.date: 05/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: e65f739a9641181381205c7255d0472325e8055c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7f0806a1d68cd2cede1ae51f0a50a8125c1e7c8b
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60819600"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "66016534"
 ---
 # <a name="create-and-manage-azure-machine-learning-service-workspaces"></a>Criar e gerenciar espaços de trabalho de serviço do Azure Machine Learning
 
-Neste artigo, você vai criar, exibir e excluir [**Espaços de trabalho do Azure Machine Learning**](concept-azure-machine-learning-architecture.md#workspace) no portal do Azure para o [serviço do Azure Machine Learning](overview-what-is-azure-ml.md).  Também é possível criar e excluir workspaces [usando a CLI](reference-azure-machine-learning-cli.md) ou [com o código Python](https://aka.ms/aml-sdk).
+Neste artigo, você vai criar, exibir e excluir [**Espaços de trabalho do Azure Machine Learning**](concept-workspace.md) no portal do Azure para o [serviço do Azure Machine Learning](overview-what-is-azure-ml.md).  Você também pode criar e excluir espaços de trabalho [usando a CLI](reference-azure-machine-learning-cli.md), [com o código do Python](https://aka.ms/aml-sdk) ou [por meio da extensão do VS Code](how-to-vscode-tools.md#get-started-with-azure-machine-learning).
 
-## <a name="create-a-workspace"></a>Criar um workspace 
+## <a name="create-a-workspace"></a>Criar um workspace
 
 Para criar um workspace, você precisa de uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Serviço do Azure Machine Learning](https://aka.ms/AMLFree) hoje mesmo.
 
@@ -30,7 +30,7 @@ Para criar um workspace, você precisa de uma assinatura do Azure. Se você não
 
 ## <a name="view"></a>Exibir um espaço de trabalho
 
-1. No canto superior esquerdo do portal, selecione **Todos os serviços**. 
+1. No canto superior esquerdo do portal, selecione **Todos os serviços**.
 
 1. No **todos os serviços** campo de filtro, digite **serviço de aprendizado de máquina**.  
 
@@ -49,8 +49,7 @@ Use o botão Excluir na parte superior do workspace que você deseja excluir.
 
   ![Botão Excluir](media/how-to-manage-workspace/delete-workspace.png)
 
-
-## <a name="clean-up-resources"></a>Limpar recursos 
+## <a name="clean-up-resources"></a>Limpar recursos
 
 [!INCLUDE [aml-delete-resource-group](../../../includes/aml-delete-resource-group.md)]
 
