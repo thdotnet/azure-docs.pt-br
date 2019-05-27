@@ -284,13 +284,13 @@ Ao copiar dados do e para o Oracle, os seguintes mapeamentos são usados de tipo
 | CHAR |String |
 | CLOB |String |
 | DATE |DateTime |
-| FLOAT |Decimal, cadeia de caracteres (se precisão > 28) |
-| INTEGER |Decimal, cadeia de caracteres (se precisão > 28) |
+| FLOAT |Decimal, String (se precisão > 28) |
+| INTEGER |Decimal, String (se precisão > 28) |
 | LONG |String |
 | LONG RAW |Byte[] |
 | NCHAR |String |
 | NCLOB |String |
-| NUMBER |Decimal, cadeia de caracteres (se precisão > 28) |
+| NUMBER |Decimal, String (se precisão > 28) |
 | NVARCHAR2 |String |
 | RAW |Byte[] |
 | ROWID |String |
