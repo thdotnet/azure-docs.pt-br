@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: 7619b8831d75ce639c6f6c773c7c7d491abc93e7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0d446be664d695af946d46abc48389d4f7be92cd
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58122022"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65791032"
 ---
 # <a name="move-azure-vms-to-another-region"></a>Mover VMs do Azure para outra região
 
@@ -56,7 +56,7 @@ Neste tutorial, você irá:
     - Para VMs Windows, instale todas as atualizações do Windows mais recentes na VM para que todos os certificados raiz confiáveis estejam no computador. Em um ambiente desconectado, siga os processos padrão do Windows Update e de atualização de certificado para sua organização.
     - Para VMs do Linux, siga as diretrizes fornecidas pelo distribuidor Linux para obter os certificados raiz confiáveis mais recentes e a lista de certificados revogados na VM.
 1. Certifique-se de que você não está usando um proxy de autenticação para controlar a conectividade de rede das VMs que você quer mover.
-1. Se a VM que você está tentando mover não tiver acesso à Internet ou estiver usando um proxy de firewall para controlar o acesso de saída, [verifique os requisitos](azure-to-azure-tutorial-enable-replication.md#configure-outbound-network-connectivity).
+1. Se a VM que você está tentando mover não tiver acesso à Internet ou estiver usando um proxy de firewall para controlar o acesso de saída, [verifique os requisitos](azure-to-azure-tutorial-enable-replication.md#set-up-outbound-network-connectivity-for-vms).
 1. Identifique o layout de rede de origem e todos os recursos que você está usando atualmente. Isso inclui, mas não se limita a, balanceadores de carga, NSGs (grupos de segurança de rede) e IPs públicos.
 
 ## <a name="prepare-the-target-region"></a>Preparar a região de destino
@@ -74,7 +74,7 @@ Neste tutorial, você irá:
 
    - [Grupos de segurança de rede](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group)
    - [Balanceadores de carga](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
-   - [IP público](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
+   - [IP público](../virtual-network/virtual-network-public-ip-address.md)
     
      Para quaisquer outros componentes de rede, consulte a [documentação da rede](https://docs.microsoft.com/azure/#pivot=products&panel=network).
 

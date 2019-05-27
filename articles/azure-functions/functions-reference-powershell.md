@@ -10,12 +10,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: tyleonha, glenga
-ms.openlocfilehash: 71ac525e2af7473ca9ce0a8f60268e76eccd1a9a
-ms.sourcegitcommit: 111a7b3e19d5515ce7036287cea00a7204ca8b56
+ms.openlocfilehash: 46b1e5c99dd86fed6f87ac3b8f0ff6555187899b
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64530377"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833514"
 ---
 # <a name="azure-functions-powershell-developer-guide"></a>Guia do desenvolvedor do PowerShell de funções do Azure
 
@@ -23,9 +23,9 @@ Este artigo fornece detalhes sobre como escrever funções do Azure usando o Pow
 
 [!INCLUDE [functions-powershell-preview-note](../../includes/functions-powershell-preview-note.md)]
 
-Uma função do PowerShell é representada como um script do PowerShell que é executado quando disparado. Cada script de função tem um Function. JSON relacionados que define como a função se comporta, como como ele é acionado e parâmetros de entrada e saída. Para obter mais informações, consulte o [artigo de associação e gatilhos](functions-triggers-bindings.md). 
+Uma função do PowerShell Azure (função) é representada como um script do PowerShell que é executado quando disparado. Cada script de função tem um relacionados `function.json` arquivo que define como a função se comporta, como como ele é acionado e seus parâmetros de entrada e saídos. Para obter mais informações, consulte o [artigo de associação e gatilhos](functions-triggers-bindings.md). 
 
-Como outros tipos de funções, script do PowerShell usa os parâmetros que correspondem aos nomes de todas as associações de entrada definidos no Function. JSON. Um `TriggerMetadata` que contém informações adicionais sobre o gatilho que iniciou a função também é passado no parâmetro.
+Como outros tipos de funções, funções de script do PowerShell ter parâmetros que correspondem aos nomes de todas as associações de entrada definidos no `function.json` arquivo. Um `TriggerMetadata` que contém informações adicionais sobre o gatilho que iniciou a função também é passado no parâmetro.
 
 Este artigo pressupõe que você já tenha lido a [Referência do desenvolvedor do Azure Functions](functions-reference.md). Você também deve ter concluído a [início rápido de funções do PowerShell](functions-create-first-function-powershell.md) para criar sua primeira função do PowerShell.
 
@@ -56,9 +56,9 @@ PSFunctionApp
  | - bin
 ```
 
-Na raiz do projeto, há um arquivo [host.json](functions-host-json.md) compartilhado que pode ser usado para configurar o aplicativo de funções. Cada função tem uma pasta com seu próprio arquivo de código (. ps1) e o arquivo de configuração de associação (Function. JSON). O nome do diretório pai de `function.json` é sempre o nome da sua função.
+Na raiz do projeto, há um compartilhado [ `host.json` ](functions-host-json.md) arquivo que pode ser usado para configurar o aplicativo de funções. Cada função tem uma pasta com seu próprio arquivo de código (. ps1) e o arquivo de configuração de associação (`function.json`). O nome da pasta pai do arquivo de Function. JSON é sempre o nome da sua função.
 
-Determinadas associações exigem a presença de um `extensions.csproj`. Associando extensões, necessárias no [versão 2. x](functions-versions.md) de tempo de execução de funções, são definidos na `extensions.csproj` arquivo, com os arquivos de biblioteca real no `bin` pasta. Ao desenvolver localmente, você precisa [registrar as extensões de associação](functions-bindings-register.md#local-development-with-azure-functions-core-tools-and-extension-bundles). Ao desenvolver funções no portal do Azure, esse registro é feito para você.
+Determinadas associações exigem a presença de um `extensions.csproj` arquivo. Associando extensões, necessárias no [versão 2. x](functions-versions.md) de tempo de execução de funções, são definidos na `extensions.csproj` arquivo, com os arquivos de biblioteca real no `bin` pasta. Ao desenvolver localmente, você precisa [registrar as extensões de associação](functions-bindings-register.md#local-development-with-azure-functions-core-tools-and-extension-bundles). Ao desenvolver funções no portal do Azure, esse registro é feito para você.
 
 Em aplicativos de funções do PowerShell, você pode, opcionalmente, ter uma `profile.ps1` que é executado quando um aplicativo de função começa a ser executado (caso contrário, conhecido como um  *[inicialização a frio](#cold-start)*. Para obter mais informações, consulte [perfil do PowerShell](#powershell-profile).
 
@@ -81,7 +81,7 @@ O `TriggerMetadata` parâmetro é usado para fornecer informações adicionais s
 $TriggerMetadata.sys
 ```
 
-| Propriedade   | DESCRIÇÃO                                     | Type     |
+| Propriedade   | Description                                     | Type     |
 |------------|-------------------------------------------------|----------|
 | UtcNow     | Quando, no UTC, a função foi disparada        | DateTime |
 | MethodName | O nome da função que foi disparado     | string   |
@@ -133,9 +133,9 @@ Produce-MyOutputValue | Push-OutputBinding -Name myQueue
 
 Estes são os parâmetros válidos para a chamada `Push-OutputBinding`:
 
-| NOME | Type | Position | DESCRIÇÃO |
+| NOME | Type | Posição | Descrição |
 | ---- | ---- |  -------- | ----------- |
-| **`-Name`** | Cadeia de caracteres | 1 | O nome da associação de saída que você deseja definir. |
+| **`-Name`** | String | 1 | O nome da associação de saída que você deseja definir. |
 | **`-Value`** | Object | 2 | O valor da associação de saída você deseja definir, que é aceito na pipeline ByValue. |
 | **`-Clobber`** | SwitchParameter | nomeado | (Opcional) Quando especificado, obrigará o valor a ser definido para uma associação de saída especificado. | 
 
@@ -234,7 +234,7 @@ MyQueue                        myData
 
 Caracteres curinga (*) têm suporte no `Get-OutputBinding`.
 
-## <a name="logging"></a>Registro em log
+## <a name="logging"></a>Registro em Log
 
 Registro em log em funções do PowerShell funciona como log regular do PowerShell. Você pode usar os cmdlets de registro em log para gravar cada fluxo de saída. Cada cmdlet é mapeado para um nível de log usado pelas funções.
 
@@ -302,7 +302,7 @@ HTTP e gatilhos de webhook e associações de saída HTTP usam objetos de solici
 
 O objeto de solicitação que é passado para o script é do tipo `HttpRequestContext`, que tem as seguintes propriedades:
 
-| Propriedade  | DESCRIÇÃO                                                    | Type                      |
+| Propriedade  | Description                                                    | Type                      |
 |-----------|----------------------------------------------------------------|---------------------------|
 | **`Body`**    | Um objeto que contém o corpo da solicitação. `Body` é serializado no melhor tipo com base nos dados. Por exemplo, se os dados JSON, ele é passado como uma tabela de hash. Se os dados forem uma cadeia de caracteres, ele é passado como uma cadeia de caracteres. | objeto |
 | **`Headers`** | Um dicionário que contém os cabeçalhos de solicitação.                | Dicionário < cadeia de caracteres, cadeia de caracteres ><sup>*</sup> |
@@ -317,7 +317,7 @@ O objeto de solicitação que é passado para o script é do tipo `HttpRequestCo
 
 O objeto de resposta que você deve enviar de volta é do tipo `HttpResponseContext`, que tem as seguintes propriedades:
 
-| Propriedade      | DESCRIÇÃO                                                 | Type                      |
+| Propriedade      | Description                                                 | Type                      |
 |---------------|-------------------------------------------------------------|---------------------------|
 | **`Body`**  | Um objeto que contém o corpo da resposta.           | objeto                    |
 | **`ContentType`** | Uma mão curta para definir o tipo de conteúdo para a resposta. | string                    |

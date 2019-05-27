@@ -16,11 +16,11 @@ ms.date: 02/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c19dae4af1007d8444097db06bded51d714e74ff
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57837129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65867787"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-schoox"></a>Tutorial: Integração do Azure Active Directory ao Schoox
 
@@ -111,7 +111,7 @@ Para configurar o logon único do Azure AD com o Schoox, execute as seguintes et
 
     ![image](common/both-preintegrated-signon.png)
 
-    Na caixa de texto **URL de login**, digite um URL usando o seguinte padrão: `https://saml.schoox.com/saml/login?idpUrl=<entityID>`
+    Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://saml.schoox.com/saml/login?idpUrl=<entityID>`
 
     > [!NOTE]
     > `<entityID>` é a ID de Entidade SAML copiada da seção de Referência Rápida, descrita posteriormente no tutorial.

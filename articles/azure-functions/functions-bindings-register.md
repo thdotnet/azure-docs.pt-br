@@ -10,22 +10,22 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 02/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 802e177b6f3844abe4d24c26b7ea2d0d4fb1688c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 53eb5fc9389d913ecacec3729a06e47a1c2bf56b
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64697006"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864541"
 ---
 # <a name="register-azure-functions-binding-extensions"></a>Registrar as extensões de associação de funções do Azure
 
-A partir da versão do Azure Functions 2.x, [associações](./functions-triggers-bindings.md) estão disponíveis como pacotes separados do tempo de execução de funções. Enquanto funções .NET acessam associações por meio de pacotes do NuGet, pacotes de extensão permitem que outro acesso de funções para todas as associações por meio de uma definição de configuração.
+No Azure Functions versão 2.x, [associações](./functions-triggers-bindings.md) estão disponíveis como pacotes separados do tempo de execução de funções. Enquanto funções .NET acessam associações por meio de pacotes do NuGet, pacotes de extensão permitem que outro acesso de funções para todas as associações por meio de uma definição de configuração.
 
-Considere os seguintes itens que pertencem a extensões de associação:
+Considere os seguintes itens relacionados para extensões de associação:
 
-- As extensões de associação explicitamente não estão registradas no Functions 1.x, exceto quando [criando um C# biblioteca de classes usando o Visual Studio 2017](#local-csharp).
+- As extensões de associação explicitamente não estão registradas no Functions 1.x, exceto quando [criando um C# biblioteca de classes usando o Visual Studio de 2019](#local-csharp).
 
-- Os gatilhos HTTP e timer têm suporte por padrão e não exigem uma extensão.
+- Gatilhos HTTP e timer têm suporte por padrão e não exigem uma extensão.
 
 A tabela a seguir indica quando e como você registra associações.
 
@@ -33,7 +33,7 @@ A tabela a seguir indica quando e como você registra associações.
 |-------------------------|------------------------------------|------------------------------------|
 |Portal do Azure|Automático|Automático|
 |Linguagens não .NET ou desenvolvimento de ferramentas básicas do Azure local|Automático|[Use as ferramentas básicas do Azure Functions e os pacotes de extensão](#local-development-with-azure-functions-core-tools-and-extension-bundles)|
-|Biblioteca de classes C# usando o Visual Studio de 2017|[Usar as ferramentas do NuGet](#c-class-library-with-visual-studio-2017)|[Usar as ferramentas do NuGet](#c-class-library-with-visual-studio-2017)|
+|C#biblioteca de classes usando o Visual Studio de 2019|[Usar as ferramentas do NuGet](#c-class-library-with-visual-studio-2019)|[Usar as ferramentas do NuGet](#c-class-library-with-visual-studio-2019)|
 |Biblioteca de classes C# usando o código do Visual Studio|N/D|[Use o .NET Core CLI](#c-class-library-with-visual-studio-code)|
 
 ## <a name="local-development-with-azure-functions-core-tools-and-extension-bundles"></a>Desenvolvimento local com as ferramentas básicas do Azure Functions e os pacotes de extensão
@@ -41,9 +41,9 @@ A tabela a seguir indica quando e como você registra associações.
 [!INCLUDE [functions-core-tools-install-extension](../../includes/functions-core-tools-install-extension.md)]
 
 <a name="local-csharp"></a>
-## <a name="c-class-library-with-visual-studio-2017"></a>Biblioteca de classes C# com 2017 do Visual Studio
+## <a name="c-class-library-with-visual-studio-2019"></a>C#biblioteca de classes com Visual Studio de 2019
 
-Em **2017 do Visual Studio**, você pode instalar os pacotes do Console do Gerenciador de pacotes usando o [Install-Package](https://docs.microsoft.com/nuget/tools/ps-ref-install-package) de comando, conforme mostrado no exemplo a seguir:
+Na **Visual Studio de 2019**, você pode instalar os pacotes do Console do Gerenciador de pacotes usando o [Install-Package](https://docs.microsoft.com/nuget/tools/ps-ref-install-package) de comando, conforme mostrado no exemplo a seguir:
 
 ```powershell
 Install-Package Microsoft.Azure.WebJobs.Extensions.ServiceBus -Version <TARGET_VERSION>

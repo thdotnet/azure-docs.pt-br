@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/26/2019
 ms.author: iainfou
-ms.openlocfilehash: 026c0eefc0c4fe31e72ecad91a4a7b558f367487
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: a6ed8ec37a3b20ccdbd2b013ba308518d8e3b97c
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65192118"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65849885"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service"></a>Integrar o Azure Active Directory ao Serviço de Kubernetes do Azure
 
@@ -23,7 +23,6 @@ Este artigo mostra como implantar os pré-requisitos para o AKS e o Azure AD e, 
 As seguintes limitações se aplicam:
 
 - O Azure AD só pode ser habilitado quando você cria um cluster novo habilitado para RBAC. Não é possível habilitar o Azure AD em um cluster existente do AKS.
-- *Convidado* usuários no Azure AD, tais como se você estiver usando uma entrada federada de um diretório diferente, não têm suporte.
 
 ## <a name="authentication-details"></a>Detalhes de autenticação
 
@@ -114,6 +113,10 @@ O segundo aplicativo do Azure AD é usado ao fazer logon com a CLI Kubernetes (`
         Quando as permissões tiverem sido concedidas com êxito, a notificação a seguir será exibida no portal:
 
         ![Notificação de permissões concedidas com êxito](media/aad-integration/permissions-granted.png)
+
+1. Na barra de navegação à esquerda do aplicativo do AD do Azure, selecione **autenticação**.
+
+    * Sob **tipo de cliente padrão**, selecione **Yes** para *tratar o cliente como um cliente público*.
 
 1. Na barra de navegação à esquerda do aplicativo do AD do Azure, anote o **ID do aplicativo**. Ao implantar um cluster do AKS habilitado para Azure AD, esse valor será referido como `Client application ID`.
 
@@ -242,13 +245,14 @@ aks-nodepool1-79590246-2   Ready     agent     1h        v1.13.5
 Ao concluir, o token de autenticação é armazenado em cache. Você só é solicitado a fornecer a entrar quando o token tiver expirado ou o arquivo de configuração do Kubernetes criado novamente.
 
 Caso receba uma mensagem de erro de autorização depois de entrar, verifique se:
-1. O usuário você está tentando entrar como é não um convidado na instância do AD do Azure (esse cenário é geralmente o caso se você usar uma conta federada de um diretório diferente).
-2. O usuário não é um membro de mais de 200 grupos.
-3. Definido no registro do aplicativo para o servidor de segredo não coincide com o valor configurado usando-- aad-server-segredo de aplicativo
 
 ```console
 error: You must be logged in to the server (Unauthorized)
 ```
+
+1. Você definiu a ID de objeto apropriado ou o UPN, dependendo se a conta de usuário está no mesmo locatário do Azure AD ou não.
+2. O usuário não é um membro de mais de 200 grupos.
+3. Definido no registro do aplicativo para o servidor de segredo corresponde ao valor configurado usando `--aad-server-app-secret`
 
 ## <a name="next-steps"></a>Próximas etapas
 

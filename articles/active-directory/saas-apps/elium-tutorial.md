@@ -16,11 +16,11 @@ ms.date: 02/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ac14168f9f56a727517232e201e581f913d67c90
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57862753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65862891"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-elium"></a>Tutorial: Integração do Azure Active Directory ao Elium
 
@@ -115,7 +115,7 @@ Para configurar o logon único do Microsoft Azure AD com o Elium, execute as seg
 
     ![Informações de logon único de Domínio e URLs do Elium](common/metadata-upload-additional-signon.png)
 
-    Na caixa de texto **URL de login**, digite um URL usando o seguinte padrão: `https://<platform-domain>.elium.com/login/saml2/login`
+    Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://<platform-domain>.elium.com/login/saml2/login`
 
     > [!NOTE] 
     > Esses valores não são reais. Você obterá esses valores do **arquivo de metadados de SP** disponível para download em `https://<platform-domain>.elium.com/login/saml2/metadata`, o que é explicado mais adiante neste tutorial.
@@ -153,7 +153,7 @@ Para configurar o logon único do Microsoft Azure AD com o Elium, execute as seg
 
     f. Clique em **Ok**
 
-    g. Clique em **Salvar**.
+    g. Clique em **Save** (Salvar).
 
 8. Na página **Configurar logon único com SAML**, na seção **Certificado de autenticação SAML**, clique em **Baixar** para baixar o **XML de metadados de federação** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
 
@@ -206,7 +206,7 @@ Para configurar o logon único do Microsoft Azure AD com o Elium, execute as seg
 
     g. Abra o arquivo de metadados baixado do Portal do Azure no bloco de notas, copie o conteúdo e cole-o na caixa de texto **Metadados do IdP**.
 
-    h. Clique em **Salvar**.
+    h. Clique em **Save** (Salvar).
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 

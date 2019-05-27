@@ -13,32 +13,32 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: a9e902a13071abefff71dc4db089380979c8d459
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 6f743f7ea7fda368fc5895646145f553f3fb50fb
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65198609"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864851"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Introdução ao SDK do Azure WebJobs para o processamento em segundo plano controlado por evento
 
-Este artigo mostra como usar o Visual Studio 2017 para criar um projeto do SDK de WebJobs do Azure, executá-lo localmente e, em seguida, implantá-lo no [serviço de aplicativo do Azure](overview.md). O projeto que você cria é um aplicativo de console .NET Core, que usa a versão 3.x do SDK do WebJobs. Se você estiver interessado na versão 2.x, que usa o .NET Framework, consulte [desenvolver e implantar o WebJobs usando o Visual Studio - serviço de aplicativo do Azure](webjobs-dotnet-deploy-vs.md).
+Este artigo mostra como usar o Visual Studio de 2019 para criar um projeto do SDK de WebJobs do Azure, executá-lo localmente e, em seguida, implantá-lo no [serviço de aplicativo do Azure](overview.md). O projeto que você cria é um aplicativo de console .NET Core, que usa a versão 3.x do SDK do WebJobs. Se você estiver interessado na versão 2.x, que usa o .NET Framework, consulte [desenvolver e implantar o WebJobs usando o Visual Studio - serviço de aplicativo do Azure](webjobs-dotnet-deploy-vs.md).
 
 Para saber mais sobre como trabalhar com o SDK do WebJobs, consulte [como usar o SDK de WebJobs do Azure para processamento em segundo plano controlada por evento](webjobs-sdk-how-to.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* [Instale o Visual Studio 2017](/visualstudio/install/) com a carga de trabalho de **desenvolvimento do Azure**. Se você já tiver o Visual Studio, mas não tiver essa carga de trabalho, adicione a carga de trabalho selecionando **Ferramentas > Obter Ferramentas e Recursos**.
+* [Instalar o Visual Studio de 2019](/visualstudio/install/) com o **desenvolvimento do Azure** carga de trabalho. Se você já tiver o Visual Studio, mas não tiver essa carga de trabalho, adicione a carga de trabalho selecionando **Ferramentas > Obter Ferramentas e Recursos**.
 
 * Você deve ter [uma conta do Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) para publicar seu projeto do SDK de WebJobs do Azure.
 
 ## <a name="create-a-project"></a>Criar um projeto
 
-1. No Visual Studio, selecione **Arquivo > Novo > Projeto**.
+1. No Visual Studio, selecione **criar um novo projeto**.
 
-2. Selecione **.NET Core > aplicativo (.NET Core) do Console**.
+2. Selecione **(.NET Core) do aplicativo de Console**.
 
-3. Nomeie o projeto *WebJobsSDKSample* e, em seguida, selecione **OK**.
+3. Nomeie o projeto *WebJobsSDKSample*e, em seguida, selecione **criar**.
 
    ![Caixa de diálogo Novo Projeto](./media/webjobs-sdk-get-started/new-project.png)
 

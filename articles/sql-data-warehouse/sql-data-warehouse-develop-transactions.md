@@ -2,21 +2,20 @@
 title: Usando transações no SQL Data Warehouse do Azure | Microsoft Docs
 description: Dicas para implementar transações no Azure SQL Data Warehouse para o desenvolvimento de soluções.
 services: sql-data-warehouse
-author: WenJason
-manager: digimobile
+author: XiaoyuL-Preview
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: implement
-origin.date: 03/22/2019
-ms.date: 04/01/2019
-ms.author: v-jay
+ms.subservice: development
+ms.date: 03/22/2019
+ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 0b4ce6f4479552f42d32124149f64614b7e3cb70
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b6f95607c7cfc574d647be3046cef4a4b61906f6
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61439172"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65861742"
 ---
 # <a name="using-transactions-in-sql-data-warehouse"></a>Usando transações no SQL Data Warehouse
 Dicas para implementar transações no Azure SQL Data Warehouse para o desenvolvimento de soluções.

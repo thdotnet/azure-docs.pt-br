@@ -14,20 +14,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/14/2018
+ms.date: 05/17/2019
 ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9da23b0c0b0b0c0bfc238b1504811a9c1c55a9ef
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 2caedeb5cd4d0f920ffa49b33b0dca8bea9938cb
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65785389"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65861538"
 ---
-# <a name="what-are-conditions-in-azure-active-directory-conditional-access"></a>Quais são as condições no acesso condicional do Active Directory do Azure? 
+# <a name="what-are-conditions-in-azure-active-directory-conditional-access"></a>Quais são as condições no acesso condicional do Active Directory do Azure?
 
-Você pode controlar como usuários acessam seus aplicativos na nuvem usando [acesso condicional do Azure AD (Azure Active Directory)](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal). Em uma política de acesso condicional, você define a resposta ("Então, faça isso") para o motivo do acionamento de sua política ("Quando isso acontecer"). 
+Você pode controlar como usuários acessam seus aplicativos na nuvem usando [acesso condicional do Azure AD (Azure Active Directory)](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal). Em uma política de acesso condicional, você define a resposta ("Então, faça isso") para o motivo do acionamento de sua política ("Quando isso acontecer").
 
 ![Motivo e resposta](./media/conditions/10.png)
 
@@ -37,7 +37,7 @@ No contexto do acesso condicional, **Quando isso acontece,** é chamado de **con
 ![Política de acesso condicional](./media/conditions/61.png)
 
 
-As condições que você não configurou em uma política de acesso condicional não são aplicadas. Algumas condições foram [obrigatórias](best-practices.md) para aplicar uma política de acesso condicional para um ambiente. 
+As condições que você não configurou em uma política de acesso condicional não são aplicadas. Algumas condições foram [obrigatórias](best-practices.md) para aplicar uma política de acesso condicional para um ambiente.
 
 Este artigo é uma visão geral das condições e como elas são usadas em uma política de acesso condicional. 
 
@@ -73,7 +73,7 @@ As organizações podem escolher entre as seguintes opções:
 > [!NOTE]
 > Você pode excluir aplicativos específicos de uma política. No entanto, esses aplicativos ainda estão sujeitos às políticas aplicadas aos serviços que acessam.
 
-**Ações do usuário** são tarefas que podem ser executadas por um usuário. É a única ação com suporte no momento **registrar informações de segurança (visualização)**, que permite que a política de acesso condicional será imposta quando um usuário se registra as informações de segurança.
+**Ações do usuário** são tarefas que podem ser executadas por um usuário. É a única ação com suporte no momento **registrar informações de segurança (visualização)**, que permite que a política de acesso condicional para impor quando os usuários que estão habilitados para registro combinado tentam registrar sua segurança informações. Mais informações podem ser encontradas no artigo [combinados de habilitar o registro de informações de segurança (visualização)](../authentication/howto-registration-mfa-sspr-combined.md).
 
 ## <a name="sign-in-risk"></a>Risco de entrada
 

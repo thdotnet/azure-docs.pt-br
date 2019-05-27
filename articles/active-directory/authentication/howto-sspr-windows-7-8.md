@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57d3e955059724756eb7102c1b9fbbf55ed203ab
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 08794a7605ffbd3cd5d4b021b783f32afb190727
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60414644"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65861574"
 ---
 # <a name="how-to-enable-password-reset-from-windows-7-8-and-81"></a>Como: habilitar a redefinição de senha do Windows 7, 8 e 8.1
 
@@ -61,6 +61,8 @@ Ao contrário dos computadores com Windows 10, os com Windows 7, 8 e 8.1 não t�
 
 Usar o aplicativo do Microsoft Authenticator para notificações e códigos para redefinir senhas não funciona nesta versão inicial. Os usuários precisam ter métodos alternativos registrados que cumpram os requisitos da sua política.
 
+Se mais de dia 3 de um provedor de credenciais de terceiros estiver habilitado em seu computador, os usuários verão mais de um perfil de usuário na tela de logon.
+
 ## <a name="troubleshooting"></a>solução de problemas
 
 Os eventos serão registrados no computador e no Azure AD.
@@ -78,6 +80,6 @@ Se for necessário outro registro em log, uma chave do Registro no computador po
 
 Se os seus computadores com Windows 7, 8 e 8.1 estiverem atrás de um servidor proxy ou firewall, o tráfego HTTPS (443) para passwordreset.microsoftonline.com deverá ter permissão.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Habilitar os usuários do Windows 10 a redefinir sua senha na tela de logon](tutorial-sspr-windows.md)

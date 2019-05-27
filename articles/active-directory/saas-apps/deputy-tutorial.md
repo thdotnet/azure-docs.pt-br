@@ -16,11 +16,11 @@ ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2b0b3921640ebf6ed21860cfac75ffca195096db
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57869737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65863058"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-deputy"></a>Tutorial: Integração do Azure Active Directory com o Deputy
 
@@ -149,7 +149,7 @@ Para configurar o logon único do Azure AD com o Deputy, execute as seguintes et
 
     ![Informações de logon único de Domínio e URLs do Deputy](common/metadata-upload-additional-signon.png)
 
-    Na caixa de texto **URL de login**, digite um URL usando o seguinte padrão: `https://<your-subdomain>.<region>.deputy.com`
+    Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://<your-subdomain>.<region>.deputy.com`
 
     >[!NOTE]
     > O sufixo de região do Deputy é opcional ou ele deve usar uma destas opções: au | na | eu |as |la |af |an |ent-au |ent-na |ent-eu |ent-as | ent-la | ent-af | ent-an

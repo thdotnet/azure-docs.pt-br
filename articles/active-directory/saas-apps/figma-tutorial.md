@@ -16,11 +16,11 @@ ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
 ms.openlocfilehash: d58da4781a7c5c93d897e0efd7cf3d5aee612d78
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58225664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65861897"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-figma"></a>Tutorial: Integração do Azure Active Directory ao Figma
 
@@ -117,7 +117,7 @@ Para configurar o logon único do Azure AD com o Figma, execute as seguintes eta
 
     ![Informações de logon único de Domínio e URLs do Figma](common/metadata-upload-additional-signon.png)
 
-    Na caixa de texto **URL de login**, digite um URL usando o seguinte padrão: `https://www.figma.com/saml/<TENANT ID>/start`
+    Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://www.figma.com/saml/<TENANT ID>/start`
 
     > [!NOTE]
     > Esses valores não são reais. Atualize esses valores com o Identificador, a URL de Resposta e a URL de Logon reais. Você obterá `TENANT ID` da etapa 11 do artigo do Figma [Configurar o processo de SSO de SAML do Azure Active Directory](https://help.figma.com/article/243-configure-azure-active-directory-saml-sso).
@@ -154,7 +154,7 @@ Para configurar o logon único do Azure AD com o Figma, execute as seguintes eta
 
     f. Clique em **Ok**
 
-    g. Clique em **Salvar**.
+    g. Clique em **Save** (Salvar).
 
 8. Na página **Configurar logon único com SAML**, na seção **Certificado de Autenticação SAML**, clique no botão copiar para copiar **URL de metadados de federação de aplicativos** e salve-a no computador.
 

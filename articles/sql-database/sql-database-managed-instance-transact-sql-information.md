@@ -12,12 +12,12 @@ ms.reviewer: sstein, carlrab, bonova
 manager: craigg
 ms.date: 03/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 08920a25fc7213a773ef0d76a5daddbab3f765c2
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 17609212fcc7620dc0d6d617e7626d12c8bb0592
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64866859"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852140"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Diferenças de T-SQL da Instância Gerenciada do Banco de Dados SQL do Azure em relação ao SQL Server
 
@@ -409,7 +409,7 @@ A replicação está disponível para a visualização pública em Instâncias G
 - Não há suporte para sintaxe:
   - `RESTORE LOG ONLY`
   - `RESTORE REWINDONLY ONLY`
-- Origem: 
+- Fonte: 
   - `FROM URL` (Armazenamento de BLOBs do azure) é a única opção com suporte.
   - Não há suporte para `FROM DISK`/`TAPE`/dispositivo de backup.
   - Conjuntos de backup não são compatíveis.
@@ -471,7 +471,7 @@ As seguintes variáveis, funções e exibições retornam resultados diferentes:
 
 ### <a name="tempdb-size"></a>Tamanho de TEMPDB
 
-O tamanho máximo do arquivo de `tempdb` não pode ser maior que 24 GB por núcleo de uma camada de uso geral. O máximo `tempdb` tamanho em uma camada comercialmente crítico é limitado com o tamanho do armazenamento de instância. O `tempdb` banco de dados sempre é dividido em arquivos de dados de 12. Esse tamanho máximo por arquivo não pode ser alterado, e novos arquivos podem ser adicionados ao `tempdb`. Algumas consultas podem retornar um erro se eles precisarem de mais de 24 GB por núcleo em `tempdb`.
+O tamanho máximo do arquivo de `tempdb` não pode ser maior que 24 GB por núcleo de uma camada de uso geral. O máximo `tempdb` tamanho em uma camada comercialmente crítico é limitado com o tamanho do armazenamento de instância. O `tempdb` banco de dados sempre é dividido em arquivos de dados de 12. Esse tamanho máximo por arquivo não pode ser alterado, e não não possível adicionar novos arquivos `tempdb`. Algumas consultas podem retornar um erro se eles precisarem de mais de 24 GB por núcleo em `tempdb`. `tempdb` é sempre recriado como um banco de dados vazio quando o início de instância ou fazer o failover e qualquer alteração feita no `tempdb` não será preservado. 
 
 ### <a name="cant-restore-contained-database"></a>Não é possível restaurar o banco de dados independente
 

@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshoot
 ms.date: 04/08/2019
 ms.author: v-chjenk
-ms.openlocfilehash: 99295fd4581cd81751f7d64b694c853efe51a106
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: f88dee579e44a01dc1a7404ef6a670de34063552
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65522935"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833563"
 ---
 # <a name="remote-desktop-client-connections"></a>Conexões do cliente da Área de Trabalho Remota
 
@@ -28,9 +28,9 @@ Confirme se não há conectividade com a internet, abrindo a outro site da web; 
 
 Use **nslookup** para confirmar o DNS possa resolver o FQDN:
 
-    ```cmd
-    nslookup rdweb.wvd.microsoft.com
-    ```
+```cmd
+nslookup rdweb.wvd.microsoft.com
+```
 
 Tente se conectar com outro cliente, como o cliente de área de trabalho remota para Windows 7 ou Windows 10 e veja se você pode abrir o cliente web.
 
@@ -54,7 +54,7 @@ Tente se conectar com outro cliente, como o cliente de área de trabalho remota 
 
 1. Reinicie o navegador.
 2. Cookies do navegador não criptografado. Ver [como excluir arquivos de cookies no Internet Explorer](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer).
-3. Cache do navegador não criptografado. Ver [limpar o cache do navegador para o navegador](https://binged.it/2RKyfdU).
+3. Limpe o cache do navegador. Ver [limpar o cache do navegador para o navegador](https://binged.it/2RKyfdU).
 4. Abrir navegador em modo privado.
 
 ## <a name="web-client-stops-responding-or-disconnects"></a>Cliente Web para de responder ou desconecta
@@ -74,7 +74,7 @@ Se o cliente Web continua solicitando as credenciais, siga estas instruções.
 1. Confirme a que URL do cliente da web está correta.
 2. Confirme se as credenciais são para o ambiente de área de trabalho Virtual do Windows vinculado à URL.
 3. Cookies do navegador não criptografado. Ver [como excluir arquivos de cookies no Internet Explorer](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer).
-4. Cache do navegador não criptografado. Ver [limpar o cache do navegador para o navegador](https://binged.it/2RKyfdU).
+4. Limpe o cache do navegador. Ver [limpar o cache do navegador para o navegador](https://binged.it/2RKyfdU).
 5. Abrir navegador em modo privado.
 
 ## <a name="remote-desktop-client-for-windows-7-or-windows-10-stops-responding-or-cannot-be-opened"></a>Cliente de área de trabalho remota para Windows 7 ou Windows 10 para de responder ou não pode ser aberto
@@ -111,20 +111,20 @@ Siga estas instruções gerais de solução de problemas para códigos de erro d
 4. Usando o **Get-RdsHostPool** e **Get-RdsSessionHost** cmdlets, confirme que a solução de problemas está sendo feita no pool de host correto.
 5. Execute o comando a seguir para obter uma lista de todas as atividades com falha de conexão de tipo para a janela de tempo especificado:
 
-    ```cmd
+    ```PowerShell
      Get-RdsDiagnosticActivities -TenantName <TenantName> -username <UPN> -StartTime
      "11/21/2018 1:07:03 PM" -EndTime "11/21/2018 1:27:03 PM" -Outcome Failure -ActivityType Connection
     ```
 
 6. Usando o **ActivityId** na saída do cmdlet anterior, execute o comando a seguir:
 
-    ```
+    ```PowerShell
     (Get-RdsDiagnosticActivities -TenantName $tenant -ActivityId <ActivityId> -Detailed).Errors
     ```
 
 7. O comando produz uma saída semelhante à saída mostrada abaixo. Use **ErrorCodeSymbolic** e **ErrorMessage** para diagnosticar a causa raiz.
 
-    ```
+    ```PowerShell
     ErrorSource       : <Source>
     ErrorOperation    : <Operation>
     ErrorCode         : <Error code>
@@ -159,7 +159,7 @@ Um usuário pode começar a clientes de área de trabalho remota e é capaz de a
 
 Confirme que o usuário relatar um problema foi atribuído aos grupos de aplicativos usando esta linha de comando:
 
-```cmd
+```PowerShell
 Get-RdsAppGroupUser <tenantname> <hostpoolname> <appgroupname>
 ```
 

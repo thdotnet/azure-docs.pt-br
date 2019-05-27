@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 05/06/2019
 ms.author: helohr
-ms.openlocfilehash: 8e6783bb56f55949824e4ce94c85145f53dd9f4b
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: a58e059e800b13d01ba8e50880bd75077d4418ae
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65523965"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833963"
 ---
 # <a name="create-a-host-pool-with-powershell"></a>Criar um pool de host com o PowerShell
 
@@ -78,6 +78,9 @@ Para com êxito ingresso no domínio, faça o seguinte em cada máquina virtual:
 3. Selecione **nome do computador**, selecione **alterar as configurações**e, em seguida, selecione **alteração...**
 4. Selecione **domínio** e, em seguida, insira o domínio do Active Directory em uma rede virtual.
 5. Autenticar com uma conta de domínio que tenha privilégios para ingressar computadores em domínio.
+
+    >[!NOTE]
+    > Se você estiver unindo suas VMs em um ambiente do Azure AD Domain Services, certifique-se de que seu usuário de associação de domínio também é um membro do [grupo AAD DC Administrators](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-admingroup#task-3-configure-administrative-group).
 
 ## <a name="register-the-virtual-machines-to-the-windows-virtual-desktop-preview-host-pool"></a>Registre as máquinas virtuais ao pool de host de visualização de área de trabalho Virtual do Windows
 
