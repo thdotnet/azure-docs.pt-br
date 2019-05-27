@@ -12,11 +12,11 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 ms.openlocfilehash: 9cea3e7494ee81638923cbcaff9f1b82d08a1ad1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58085024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66165251"
 ---
 # <a name="transform-data-in-azure-virtual-network-using-hive-activity-in-azure-data-factory"></a>Transformar dados na Rede Virtual do Azure usando a Atividade Hive no Azure Data Factory
 Neste tutorial, você pode usar o portal do Azure para criar um pipeline do Data Factory que transforma dados usando a atividade Hive em um cluster HDInsight que está em uma Rede Virtual (VNet) do Azure. Neste tutorial, você realizará os seguintes procedimentos:
@@ -166,7 +166,7 @@ Você cria e implanta dois serviços vinculados nesta seção:
     2. Selecione **MySelfHostedIR** para **Conectar por meio do tempo de execução de integração**.
     3. Selecione sua conta de armazenamento do Azure como o **Nome da conta de armazenamento**. 
     4. Clique em **Testar conectividade** para testar a conexão à Conta do Armazenamento do Azure.
-    5. Clique em **Salvar**.
+    5. Clique em **Save** (Salvar).
    
         ![Especificar conta do Armazenamento de Blobs do Azure](./media/tutorial-transform-data-using-hive-in-vnet-portal/specify-azure-storage-account.png)
 

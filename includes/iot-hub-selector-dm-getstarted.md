@@ -1,10 +1,15 @@
 ---
+author: wesmc7777
+ms.author: wesmc
+ms.service: iot-hub
+ms.topic: include
+ms.date: 10/26/2018
 ms.openlocfilehash: 19331f35ea2fa773325ec61e728677e37767ab54
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60346080"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66156383"
 ---
 > [!div class="op_single_selector"]
 > * [Dispositivo: Serviço do Node. js: Node.js](../articles/iot-hub/iot-hub-node-node-device-management-get-started.md)
@@ -15,6 +20,7 @@ ms.locfileid: "60346080"
 Os aplicativos de back-end podem usar primitivos no Hub IoT do Azure, ou seja, o [dispositivo gêmeo][lnk-devtwin] e [métodos diretos][lnk-c2dmethod], para iniciar remotamente e monitorar as ações de gerenciamento de dispositivo nos dispositivos. Este tutorial mostra como um aplicativo de back-end e um dispositivo podem trabalhar juntos para permitir que você inicie e monitore uma reinicialização remota por meio do Hub IoT.
 
 [!INCLUDE [iot-hub-basic](iot-hub-basic-whole.md)]
+
 Use um método direto para iniciar as ações de gerenciamento do dispositivo (como a reinicialização, redefinição de fábrica e atualização do firmware) a partir de um aplicativo de back-end na nuvem. O dispositivo é responsável por:
 
 * Lidar com a solicitação do método enviada a partir do Hub IoT.

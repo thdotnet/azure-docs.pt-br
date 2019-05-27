@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: eb6438271547348abef78dd8b35b577f2ac0ab8c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61409891"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66171894"
 ---
 #### <a name="to-install-regular-updates-via-the-azure-classic-portal"></a>Para instalar atualizações regulares por meio do Portal clássico do Azure
 1. Na página **Dispositivos** selecione o dispositivo no qual você deseja instalar as atualizações.

@@ -17,11 +17,11 @@ ms.workload: infrastructure-services
 ms.date: 09/26/2018
 ms.author: sedusch
 ms.openlocfilehash: c93bca14d9385eaf9f79f69d76e9e704796da7a9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58850881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66154006"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Implantação de Máquinas Virtuais do Azure para SAP NetWeaver
 
@@ -1082,15 +1082,15 @@ Se o valor de **Status de integridade** não for **OK**, siga as instruções em
 
 1. Verifique a saída da Extensão de Monitoramento Avançado do Azure.
 
-    a.  Execute o `more /var/lib/AzureEnhancedMonitor/PerfCounters`
+    a.  Execute `more /var/lib/AzureEnhancedMonitor/PerfCounters`
 
    **Resultado esperado**: Retorna a lista dos contadores de desempenho. O arquivo não deve estar vazio.
 
-   b. Execute o `cat /var/lib/AzureEnhancedMonitor/PerfCounters | grep Error`
+   b. Execute `cat /var/lib/AzureEnhancedMonitor/PerfCounters | grep Error`
 
    **Resultado esperado**: Retorna a linha em que o erro é **none**, por exemplo, **3;config;Error;;0;0;none;0;1456416792;tst-servercs;**
 
-   c. Execute o `more /var/lib/AzureEnhancedMonitor/LatestErrorRecord`
+   c. Execute `more /var/lib/AzureEnhancedMonitor/LatestErrorRecord`
 
    **Resultado esperado**: Retorna como vazio ou não existe.
 
@@ -1098,29 +1098,29 @@ Se a verificação anterior não for bem-sucedida, execute estas verificações 
 
 1. Verifique se waagent está instalado e habilitado.
 
-    a.  Execute o `sudo ls -al /var/lib/waagent/`
+    a.  Execute `sudo ls -al /var/lib/waagent/`
 
      **Resultado esperado**: Lista o conteúdo do diretório waagent.
 
-   b.  Execute o `ps -ax | grep waagent`
+   b.  Execute `ps -ax | grep waagent`
 
    **Resultado esperado**: Exibe uma entrada semelhante a: `python /usr/sbin/waagent -daemon`
 
 1. Verifique se a Extensão de Monitoramento Avançado do Azure está instalada e em execução.
 
-    a.  Execute o `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`
+    a.  Execute `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`
 
    **Resultado esperado**: Lista o conteúdo do diretório da Extensão de Monitoramento Avançado do Azure.
 
-   b. Execute o `ps -ax | grep AzureEnhanced`
+   b. Execute `ps -ax | grep AzureEnhanced`
 
    **Resultado esperado**: Exibe uma entrada semelhante a: `python /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-2.0.0.2/handler.py daemon`
 
 1. Instale o Agente de Host do SAP conforme descrito na Nota SAP [1031096] e verifique a saída de `saposcol`.
 
-    a.  Execute o `/usr/sap/hostctrl/exe/saposcol -d`
+    a.  Execute `/usr/sap/hostctrl/exe/saposcol -d`
 
-   b.  Execute o `dump ccm`
+   b.  Execute `dump ccm`
 
    c.  Verifique se a métrica **Virtualization_Configuration\Enhanced monitoramento acesso** é **true**.
 

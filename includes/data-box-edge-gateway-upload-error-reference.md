@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 03/18/2019
 ms.author: alkohli
 ms.openlocfilehash: 05673885336dbfb9a70843bd0ccc4e700091ad7e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60756128"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66161123"
 ---
 |     Código do erro     |      Descrição do erro     |
 |--------------------|--------------------------|
@@ -35,8 +35,8 @@ ms.locfileid: "60756128"
 |    2007            | Não foi possível se conectar ao contêiner porque as permissões de conta estão incorretas ou desatualizadas. Verifique seu acesso.|
 |    2008            | Não foi possível adicionar novos dados, pois o contêiner está cheio. Verifique as especificações do Azure para os tamanhos de contêiner com suporte com base no tipo. Por exemplo, arquivos do Azure têm suporte apenas para um tamanho máximo do arquivo de 5 TB.|
 |    2009            | Não foi possível carregar os dados porque o contêiner associado ao compartilhamento não existe.|    
-|    2997            | Erro inesperado. Esse é um erro transitório que será resolvido por si só.|
-|    2998            | Erro inesperado. O erro poderá se resolver sozinho, porém, se ele persistir por mais de 24 horas, entre em contato com o Suporte da Microsoft.|
+|    2997            | Ocorreu um erro inesperado. Esse é um erro transitório que será resolvido por si só.|
+|    2998            | Ocorreu um erro inesperado. O erro poderá se resolver sozinho, porém, se ele persistir por mais de 24 horas, entre em contato com o Suporte da Microsoft.|
 |    16000           | Não foi possível desativar esse arquivo.|
 |    16001           | Não foi possível desativar esse arquivo, pois ela já existe em seu sistema local.|
 |    16002           |Não foi possível atualizar este arquivo, pois ele não está totalmente carregado.|

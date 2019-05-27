@@ -14,11 +14,11 @@ ms.date: 11/01/2017
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 5dcf31adc5e8bdf810d484f07ebeb6f23acbf452
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66146839"
 ---
 # <a name="tutorial-build-your-first-azure-data-factory-using-data-factory-rest-api"></a>Tutorial: Criar seu primeiro Azure data factory usando a API REST do Data Factory
 > [!div class="op_single_selector"]
@@ -125,8 +125,8 @@ A tabela a seguir fornece descrições das propriedades de JSON usadas no snippe
 
 | Propriedade | DESCRIÇÃO |
 |:--- |:--- |
-| clusterSize |Tamanho do cluster HDInsight. |
-| timeToLive |Especifica que o tempo ocioso do cluster HDInsight antes de ser excluído. |
+| ClusterSize |Tamanho do cluster HDInsight. |
+| TimeToLive |Especifica que o tempo ocioso do cluster HDInsight antes de ser excluído. |
 | linkedServiceName |Especifica a conta de armazenamento usada para armazenar os logs gerados pelo HDInsight |
 
 Observe os seguintes pontos:
@@ -171,13 +171,13 @@ A tabela a seguir fornece descrições das propriedades de JSON usadas no snippe
 
 | Propriedade | DESCRIÇÃO |
 |:--- |:--- |
-| type |A propriedade type é definida como AzureBlob porque os dados residem no armazenamento de blobs do Azure. |
+| Tipo |A propriedade type é definida como AzureBlob porque os dados residem no armazenamento de blobs do Azure. |
 | linkedServiceName |refere-se ao StorageLinkedService que você criou anteriormente. |
 | fileName |Essa propriedade é opcional. Se você omitir essa propriedade, todos os arquivos de folderPath serão selecionados. Nesse caso, somente o input.log será processado. |
-| type |Os arquivos de log estão em formato de texto, então utilizaremos TextFormat. |
+| Tipo |Os arquivos de log estão em formato de texto, então utilizaremos TextFormat. |
 | columnDelimiter |as colunas nos arquivos de log são delimitadas por um caractere de vírgula (,) |
-| frequency/interval |a frequência é definida como Mês e o intervalo como 1, o que significa que as fatias de entrada estão disponíveis mensalmente. |
-| external |essa propriedade será definida como true se os dados de entrada não forem gerados pelo serviço Data Factory. |
+| frequência/intervalo |a frequência é definida como Mês e o intervalo como 1, o que significa que as fatias de entrada estão disponíveis mensalmente. |
+| externo |essa propriedade será definida como true se os dados de entrada não forem gerados pelo serviço Data Factory. |
 
 ### <a name="outputdatasetjson"></a>outputdataset.json
 

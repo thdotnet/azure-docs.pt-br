@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 03/27/2019
 ms.author: tamram
 ms.openlocfilehash: 9a60c624b181a1efd2f6deebd349daa82214a8a4
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58541376"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66159759"
 ---
 <!--created by Robin Shahan to go in the articles for table storage w/powershell.
     There is one for Azure Table Storage and one for Azure Cosmos DB Table API -->
@@ -70,9 +70,9 @@ Get-AzTableRow -table $cloudTable | ft
 
 Este comando gera resultados semelhantes à seguinte tabela:
 
-| userid | Nome de Usuário | partition | rowkey |
+| userid | username | partição | rowkey |
 |----|---------|---------------|----|
-| 1 | Chris | partition1 | CA |
+| 1 | Chris | partition1 | AC |
 | 3 | Christine | partition1 | WA |
 | 2 | Jessie | partition2 | NM |
 | 4 | Steven | partition2 | TX |
@@ -85,9 +85,9 @@ Get-AzTableRow -table $cloudTable -partitionKey $partitionKey1 | ft
 
 Os resultados são parecidos com a seguinte tabela:
 
-| userid | Nome de Usuário | partition | rowkey |
+| userid | username | partição | rowkey |
 |----|---------|---------------|----|
-| 1 | Chris | partition1 | CA |
+| 1 | Chris | partition1 | AC |
 | 3 | Christine | partition1 | WA |
 
 #### <a name="retrieve-entities-for-a-specific-value-in-a-specific-column"></a>Recuperar entidades de um valor específico em uma coluna específica
@@ -104,9 +104,9 @@ Essa consulta recupera um registro.
 |field|value|
 |----|----|
 | userid | 1 |
-| Nome de Usuário | Chris |
+| username | Chris |
 | PartitionKey | partition1 |
-| RowKey      | CA |
+| RowKey      | AC |
 
 #### <a name="retrieve-entities-using-a-custom-filter"></a>Recuperar entidades usando um filtro personalizado 
 
@@ -121,9 +121,9 @@ Essa consulta recupera um registro.
 |field|value|
 |----|----|
 | userid | 1 |
-| Nome de Usuário | Chris |
+| username | Chris |
 | PartitionKey | partition1 |
-| RowKey      | CA |
+| RowKey      | AC |
 
 ### <a name="updating-entities"></a>Atualizando entidades 
 
@@ -156,7 +156,7 @@ Os resultados mostram o registro Jessie2.
 |field|value|
 |----|----|
 | userid | 2 |
-| Nome de Usuário | Jessie2 |
+| username | Jessie2 |
 | PartitionKey | partition2 |
 | RowKey      | NM |
 

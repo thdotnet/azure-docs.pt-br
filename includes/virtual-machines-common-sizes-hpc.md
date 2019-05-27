@@ -9,11 +9,11 @@ ms.date: 04/26/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
 ms.openlocfilehash: f3c1a946afb7f51a1c7543dabae7f2f42ff466be
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65198791"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66145844"
 ---
 Série H máquinas virtuais (VMs) são projetadas para oferecer desempenho de classe de liderança, escalabilidade MPI e economia para uma variedade de cargas de trabalho HPC reais.
 
@@ -25,17 +25,17 @@ As VMs da série HC são otimizadas para aplicativos orientados pela computaçã
 
 VMs da série H são otimizadas para aplicativos orientados pela alta frequências de CPU ou memória grande por requisitos básicos. Série H VMs recurso 8 ou 16 2667 do Intel Xeon E5 v3 processador núcleos, 7 ou 14 GB de RAM por núcleo da CPU e nenhum hyperthreading. Recursos de série H 56 Gb/s Mellanox FDR InfiniBand em uma fat sem bloqueio de configuração para um desempenho consistente RDMA árvore. Suportam a VMs da série H Intel MPI 5.x e MS-MPI.
 
-## <a name="hb-series"></a>HB-series
+## <a name="hb-series"></a>Série HB
 
 Armazenamento Premium: Suporte para o armazenamento Premium de cache: Com suporte
 
 | Tamanho | vCPU | Processador | Memória (GB) | Largura de banda de memória GB/s | Frequência de base da CPU (GHz) | Frequência de todos os núcleos (GHz, horário de pico) | Frequência de núcleo único (GHz, horário de pico) | Desempenho de RDMA (GB/s) | Suporte do MPI | Armazenamento temporário (GB) | Discos de dados máximos | Placas de rede Ethernet máx |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_HB60rs | 60 | AMD EPYC 7551 | 240 | 263 | 2,0 | 2.55 | 2.55 | 100 | Todos | 700 | 4 | 1 |
+| Standard_HB60rs | 60 | AMD EPYC 7551 | 240 | 263 | 2.0 | 2.55 | 2.55 | 100 | Todos | 700 | 4 | 1 |
 
 <br>
 
-## <a name="hc-series"></a>Série de HC
+## <a name="hc-series"></a>Série HC
 
 Armazenamento Premium: Suporte para o armazenamento Premium de cache: Com suporte
 
@@ -51,9 +51,9 @@ Armazenamento Premium: Suporte para o armazenamento Premium de cache: Com suport
 
 ACU: 290-300
 
-Armazenamento Premium:  Sem suporte
+Armazenamento Premium:  Sem Suporte
 
-Cache de Armazenamento Premium:  Sem suporte
+Cache de Armazenamento Premium:  Sem Suporte
 
 | Tamanho | vCPU | Processador | Memória (GB) | Largura de banda de memória GB/s | Frequência de base da CPU (GHz) | Frequência de todos os núcleos (GHz, horário de pico) | Frequência de núcleo único (GHz, horário de pico) | Desempenho de RDMA (GB/s) | Suporte do MPI | Armazenamento temporário (GB) | Discos de dados máximos | Placas de rede Ethernet máx |
 | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

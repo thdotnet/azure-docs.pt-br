@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s '
-ms.openlocfilehash: d5b08a22aa3896fb7158ef3535b115e3e0189142
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
-ms.translationtype: MT
+ms.openlocfilehash: 39ef23d04dc1cf1b48297ecf8f0accfef4935cd2
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65596972"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66158948"
 ---
 # <a name="troubleshooting-guide"></a>Guia de Solução de Problemas
 
@@ -374,7 +374,7 @@ Depois que o controlador for reinstalado, reimplante seus pods.
 O usuário acessar o controlador de espaços de desenvolvimento do Azure deve ter acesso de leitura do administrador *kubeconfig* no cluster do AKS. Por exemplo, essa permissão está disponível na [função de administrador de Cluster de serviço do Azure Kubernetes interno](../aks/control-kubeconfig-access.md#available-cluster-roles-permissions). O usuário acessar o controlador de espaços de desenvolvimento do Azure também deve ter o *Colaborador* ou *proprietário* função RBAC para o controlador.
 
 ### <a name="try"></a>Experimente
-Mais detalhes sobre como atualizar as permissões do usuário para um cluster do AKS [aqui](../aks/control-kubeconfig-access.md#assign-role-permissions-to-a-user).
+Mais detalhes sobre como atualizar as permissões do usuário para um cluster do AKS [aqui](../aks/control-kubeconfig-access.md#assign-role-permissions-to-a-user-or-group).
 
 Para atualizar a função RBAC do usuário para o controlador:
 

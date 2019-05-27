@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 04/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: cb716e0d9f97d3ea2e9584a9fc3d7a6f57da9179
-ms.sourcegitcommit: 1d257ad14ab837dd13145a6908bc0ed7af7f50a2
-ms.translationtype: MT
+ms.openlocfilehash: 3167f60cca9997c9713efad0fbb8a51b20def76b
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65502091"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66151171"
 ---
 # <a name="how-azure-machine-learning-service-works-architecture-and-concepts"></a>Como funciona o Serviço do Azure Machine Learning: Arquitetura e conceitos
 
@@ -34,39 +34,23 @@ O fluxo de trabalho de aprendizado de máquina geralmente segue esta sequência:
 1. Depois que uma execução satisfatória for encontrada, registre o modelo persistente no **registro de modelo**.
 1. Desenvolver um script de pontuação que usa o modelo e **implantar o modelo** como um **serviço web** no Azure, ou para um **dispositivo IoT Edge**.
 
+Você executar essas etapas com qualquer um dos seguintes:
++ [SDK do Azure Machine Learning para Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)
++ [CLI de aprendizado de máquina do Azure](https://docs.microsoft.com/azure/machine-learning/service/reference-azure-machine-learning-cli)
++  O [interface visual (visualização) para o serviço de Azure Machine Learning](ui-concept-visual-interface.md)
 
 > [!NOTE]
 > Embora este artigo defina termos e conceitos usados pelo Serviço do Azure Machine Learning, ele não define os termos e conceitos para a plataforma do Azure. Para obter mais informações sobre a terminologia da plataforma do Azure, consulte o [Glossário do Microsoft Azure](https://docs.microsoft.com/azure/azure-glossary-cloud-terminology).
 
 ## <a name="workspace"></a>Workspace
 
-O workspace é o recurso de nível superior para o Serviço do Azure Machine Learning. Ele fornece um local centralizado para trabalhar com todos os artefatos que você criar ao usar o Serviço do Azure Machine Learning.
-
-O workspace mantém uma lista de destinos de computação que podem ser usados para fazer o treinamento do seu modelo. Ele também mantém um histórico das execuções de treinamento, incluindo logs, métricas, saída e um instantâneo dos seus scripts. Essas informações são usadas para determinar quais execuções de treinamento produzem o melhor modelo.
-
-Os modelos são registrados no workspace. Use um modelo registrado e pontuação de scripts para implantar um modelo para instâncias de contêiner do Azure, serviço de Kubernetes do Azure, ou para uma matriz de portões programáveis em campo (FPGA) como um ponto de extremidade HTTP baseado em REST. Ele também pode ser implantado em um dispositivo Azure IoT Edge como um módulo. Internamente, uma imagem do docker é criada para hospedar a imagem implantada. Se necessário, você pode especificar sua própria imagem.
-
-Você pode criar vários workspaces, e cada workspace pode ser compartilhado por várias pessoas. Quando você compartilha um espaço de trabalho, você pode controlar o acesso a ele, atribuindo usuários a funções a seguir:
-
-* Proprietário
-* Colaborador
-* Leitor
-
-Para obter mais informações sobre essas funções, consulte o [gerenciar o acesso a um espaço de trabalho do Azure Machine Learning](how-to-assign-roles.md) artigo.
-
-Quando você cria um novo workspace, ele automaticamente cria vários recursos do Azure que são usados pelo workspace:
-
-* [Registro de Contêiner do Azure](https://azure.microsoft.com/services/container-registry/): Registra os contêineres do docker que a serem usados durante o treinamento e ao implantar um modelo.
-* [Conta de Armazenamento do Azure](https://azure.microsoft.com/services/storage/): Usado como o repositório de dados padrão para o workspace.
-* [Azure Application Insights](https://azure.microsoft.com/services/application-insights/): Armazena informações de monitoramento sobre seus modelos.
-* [Azure Key Vault](https://azure.microsoft.com/services/key-vault/): Armazena segredos usados por destinos de computação e outras informações confidenciais necessárias para o workspace.
-
-> [!NOTE]
-> Além de criar novas versões, você também pode usar os serviços existentes do Azure.
+[O espaço de trabalho](concept-workspace.md) é o recurso de nível superior para o serviço Azure Machine Learning. Ele fornece um local centralizado para trabalhar com todos os artefatos que você criar ao usar o Serviço do Azure Machine Learning.
 
 O diagrama a seguir é uma taxonomia do workspace:
 
 [![Taxonomia de espaço de trabalho](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.png)](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.png#lightbox)
+
+Para obter mais informações sobre espaços de trabalho, consulte [o que é um espaço de trabalho do Azure Machine Learning?](concept-workspace.md).
 
 ## <a name="experiment"></a>Experimento
 
@@ -170,6 +154,10 @@ Uma execução é produzida quando você envia um script para fazer o treinament
 
 Para obter um exemplo de execuções de visualização produzido ao fazer o treinamento de um modelo, consulte o [Início Rápido: Introdução ao Serviço do Azure Machine Learning](quickstart-run-cloud-notebook.md).
 
+## <a name="github-tracking-and-integration"></a>Integração e acompanhamento do GitHub
+
+Quando você inicia uma execução em que o diretório de origem é um repositório Git local de treinamento, informações sobre o repositório são armazenadas no histórico de execução. Por exemplo, a ID de confirmação atual para o repositório é registrada como parte do histórico. Isso funciona com execuções enviadas usando um estimador, pipeline ML ou script executado. Ele também funciona para execuções enviadas do SDK ou da CLI de aprendizado de máquina.
+
 ## <a name="snapshot"></a>Instantâneo
 
 Ao enviar uma execução, o Azure Machine Learning compacta o diretório que contém o script como um arquivo zip e o envia para o destino de computação. O arquivo zip é expandido e o script é executado lá. O Azure Machine Learning também armazena o arquivo zip como um instantâneo como parte do registro de execução. Qualquer pessoa com acesso ao workspace pode procurar um registro de execução e baixar o instantâneo.
@@ -228,7 +216,7 @@ O Azure IoT Edge garantirá que seu módulo esteja em execução e monitorará o
 
 ## <a name="pipeline"></a>Pipeline
 
-Os pipelines de aprendizado de máquina são usados para criar e gerenciar fluxos de trabalho que unem as fases de aprendizado da máquina. Por exemplo, um pipeline pode incluir preparação de dados, treinamento do modelo, implantação de modelo e fases de inferência. Cada fase pode incluir várias etapas, cada uma delas pode ser executada de modo autônomo em vários destinos de computação.
+Os pipelines de aprendizado de máquina são usados para criar e gerenciar fluxos de trabalho que unem as fases de aprendizado da máquina. Por exemplo, um pipeline pode incluir preparação de dados, treinamento do modelo, implantação de modelo e fases/pontuação de inferência de tipos. Cada fase pode incluir várias etapas, cada uma delas pode ser executada de modo autônomo em vários destinos de computação.
 
 Para obter mais informações sobre os pipelines de aprendizado de máquina com esse serviço, consulte [Pipelines e Azure Machine Learning](concept-ml-pipelines.md).
 
