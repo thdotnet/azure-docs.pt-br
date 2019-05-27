@@ -15,11 +15,11 @@ ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: bdf722ffa7a7c499ff256392886e0f229f27c7a5
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56109887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66137088"
 ---
 # <a name="create-an-ase-by-using-an-azure-resource-manager-template"></a>Criar um ASE usando um modelo do Azure Resource Manager
 
@@ -108,7 +108,7 @@ Depois que o certificado SSL for gerado com êxito e convertido em uma cadeia de
 Os parâmetros no arquivo *azuredeploy.parameters.json* estão listados abaixo:
 
 * *appServiceEnvironmentName*: o nome do ASE ILB que está sendo configurado.
-* *existingAseLocation*: cadeia de caracteres de texto que contém a região do Azure em que o ASE ILB foi implantado.  Por exemplo:  "Centro-Sul dos EUA".
+* *existingAseLocation*: cadeia de caracteres de texto que contém a região do Azure em que o ASE ILB foi implantado.  Por exemplo: "Centro-Sul dos EUA".
 * *pfxBlobString*: A representação de cadeia de caracteres codificada em base 64 do arquivo .pfx. Use o snippet de código mostrado anteriormente e copie a cadeia de caracteres contida em "exportedcert.pfx.b64". Cole-o como o valor de atributo *pfxBlobString*.
 * *password*: a senha usada para proteger o arquivo .pfx.
 * *certificateThumbprint*: A impressão digital do certificado. Se você recuperar esse valor do PowerShell (por exemplo, *$certificate.Thumbprint* do snippet de código anterior), poderá usar o valor como estiver. Se você copiar o valor da caixa de diálogo Certificado Windows, lembre-se de retirar os espaços estranhos. O *certificateThumbprint* deve ser semelhante a: AF3143EB61D43F6727842115BB7F17BBCECAECAE.

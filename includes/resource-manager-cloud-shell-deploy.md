@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 01/30/2019
 ms.author: tomfitz
 ms.openlocfilehash: 7c081b3bc5f9e6273f680b24897f9aced4999afa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60730298"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66129021"
 ---
 ## <a name="deploy-template-from-cloud-shell"></a>Implantar o modelo do Cloud Shell
 
@@ -19,11 +19,11 @@ Você pode usar o [Cloud Shell](../articles/cloud-shell/overview.md) para implan
 
 1. Selecione o grupo de recursos do Cloud Shell. O nome padrão é `cloud-shell-storage-<region>`.
 
-   ![Escolha o grupo de recursos](./media/resource-manager-cloud-shell-deploy/select-cs-resource-group.png)
+   ![Selecionar grupo de recursos](./media/resource-manager-cloud-shell-deploy/select-cs-resource-group.png)
 
 1. Selecione a conta de armazenamento do Cloud Shell.
 
-   ![Escolher conta de armazenamento](./media/resource-manager-cloud-shell-deploy/select-storage.png)
+   ![Selecione a conta de armazenamento](./media/resource-manager-cloud-shell-deploy/select-storage.png)
 
 1. Selecione **Blobs**.
 

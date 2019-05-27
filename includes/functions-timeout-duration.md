@@ -5,16 +5,15 @@ services: functions
 author: nzthiago
 ms.service: azure-functions
 ms.topic: include
-origin.date: 02/21/2018
-ms.date: 03/25/2019
-ms.author: v-junlch
+ms.date: 02/21/2018
+ms.author: nzthiago
 ms.custom: include file
 ms.openlocfilehash: ffb29fc76313e8870b52cb0a63936da7853ea6ce
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036190"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66131329"
 ---
 ## <a name="timeout"></a>Duração de tempo limite do aplicativo de função 
 
@@ -29,4 +28,3 @@ A duração de tempo limite de um aplicativo de funções é definida pela propr
 
 > [!NOTE] 
 > Independentemente da configuração de tempo limite do aplicativo de função, 230 segundos é a quantidade máxima de tempo que uma função HTTP disparada pode levar para responder a uma solicitação. Isso é devido a [padrão de tempo limite de ociosidade do balanceador de carga do Azure](../articles/app-service/faq-availability-performance-application-issues.md#why-does-my-request-time-out-after-230-seconds). Para tempos de processamento, considere o uso de [padrão assíncrono de funções duráveis](../articles/azure-functions/durable/durable-functions-concepts.md#async-http) ou [adiar o trabalho real e retornar uma resposta imediata](../articles/azure-functions/functions-best-practices.md#avoid-long-running-functions).
-

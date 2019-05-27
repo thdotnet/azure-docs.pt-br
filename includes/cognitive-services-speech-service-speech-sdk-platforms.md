@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 02/08/2019
 ms.author: wolfma
 ms.openlocfilehash: 1e466f63f1dd1ba07e977aefea9c986f06ab64b2
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56448153"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66145338"
 ---
-| Linguagem de programação | Plataforma | Referência de API |
+| Linguagem de programação | Plataforma | Referência da API |
 | -------------------- | -------- | ------------- |
 | C/C++ | Windows, Linux | [Browse](https://aka.ms/csspeech/cppref) |
 | C# | Windows, UWP, .NET Framework (Windows), .NET Core, Unity | [Browse](https://aka.ms/csspeech/csharpref) |

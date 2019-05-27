@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 03/29/2019
 ms.author: erhopf
 ms.openlocfilehash: 9cad860b8808dd2682995768c282d8376ab5d9be
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60480480"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66145397"
 ---
 ## <a name="authentication"></a>Authentication
 
@@ -17,10 +17,10 @@ Cada solicitação requer um cabeçalho de autorização. Esta tabela ilustra qu
 
 | Cabeçalhos de autorização suportados | Conversão de fala em texto | Conversão de texto em fala |
 |------------------------|----------------|----------------|
-| Ocp-Apim-Subscription-Key | Sim | Não  |
+| Ocp-Apim-Subscription-Key | Sim | Não |
 | Autorização: Portador | Sim | Sim |
 
-Ao usar o cabeçalho `Ocp-Apim-Subscription-Key`, você só precisa fornecer sua chave de assinatura. Por exemplo: 
+Ao usar o cabeçalho `Ocp-Apim-Subscription-Key`, você só precisa fornecer sua chave de assinatura. Por exemplo:
 
 ```
 'Ocp-Apim-Subscription-Key': 'YOUR_SUBSCRIPTION_KEY'

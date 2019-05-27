@@ -4,12 +4,12 @@ ms.author: crdun
 ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
-ms.openlocfilehash: 3ced8c9fdadf547ec234c6d1bd5f3ddb8af7bc05
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
-ms.translationtype: HT
+ms.openlocfilehash: baf0f07002a21a8e4e60bc17186107b471243202
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42816231"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66140311"
 ---
 1. Crie uma nova classe no projeto chamado `ToDoBroadcastReceiver`.
 2. Adicionar o seguinte usando as instruções para a classe **ToDoBroadcastReceiver** :
@@ -109,7 +109,7 @@ ms.locfileid: "42816231"
     }
     ```
 
-    Esse método usa a ID de registro retornada do GCM para registrar-se no Azure para notificações por push. Marcas só podem ser adicionadas ao registro depois que ele é criado. Para obter mais informações, veja [Como: adicionar marcas à instalação de um dispositivo para habilitar o envio por push para marcas](../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#tags).
+    Esse método usa a ID de registro retornada do GCM para registrar-se no Azure para notificações por push. Marcas só podem ser adicionadas ao registro depois que ele é criado. Para obter mais informações, confira [Como: Adicionar marcas à instalação de um dispositivo para habilitar o envio por push para marcas](../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#tags).
 
 7. Substitua o método **OnMessage** no **PushHandlerService** pelo código a seguir:
 

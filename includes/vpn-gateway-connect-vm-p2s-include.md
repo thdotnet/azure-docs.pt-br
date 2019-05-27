@@ -2,19 +2,18 @@
 title: Arquivo de inclusão
 description: Arquivo de inclusão
 services: vpn-gateway
-author: WenJason
+author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-origin.date: 02/01/2019
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.date: 02/01/2019
+ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 35814de74fa03f9969cdd48882a5f672cfe306a1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60319962"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66147039"
 ---
 Você pode se conectar a uma VM que é implantada em sua rede virtual criando uma Conexão de Área de trabalho remota para a sua VM. É a melhor maneira de verificar inicialmente se você pode se conectar à sua VM usando seu endereço IP privado, em vez do nome do computador. Dessa forma, você está testando para ver se você pode se conectar, não se a resolução de nomes está configurada corretamente.
 

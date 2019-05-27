@@ -7,14 +7,14 @@ ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: chlound
-ms.openlocfilehash: 6e1ac5dfd1972e406a1bd8dcd26e6aef2c4ea6d1
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 6ffce339fe7b1a434c8f007b417ee81a42529dfc
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64919877"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66142404"
 ---
-# <a name="refresh-with-logic-apps"></a>Atualizar com aplicativos lógicos
+# <a name="refresh-with-logic-apps"></a>Atualizar com Aplicativos Lógicos
 
 Usando aplicativos lógicos e chamadas REST, você pode executar operações de atualização de dados automatizado em seus modelos de tabela de análise do Azure, incluindo a sincronização de réplicas somente leitura para expansão de consulta.
 
@@ -66,14 +66,14 @@ Configure a atividade HTTP da seguinte maneira:
 |Propriedade  |Value  |
 |---------|---------|
 |**Método**     |POST         |
-|**URI**     | https://*sua região do servidor*/servers/*nome do servidor aas*/models/*seu nome de banco de dados*/ <br /> <br /> Por exemplo: https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/|
+|**URI**     | https://*sua região do servidor*/servers/*nome do servidor aas*/models/*seu nome de banco de dados*/ <br /> <br /> Por exemplo: https:\//westus.asazure.windows.net/servers/myserver/models/AdventureWorks/|
 |**Cabeçalhos**     |   Content-Type, application/json <br /> <br />  ![Cabeçalhos](./media/analysis-services-async-refresh-logic-app/6.png)    |
 |**Corpo**     |   Para saber mais sobre formando o corpo da solicitação, consulte [assíncrona de atualização com a API REST - POST /refreshes.](analysis-services-async-refresh.md#post-refreshes). |
 |**Autenticação**     |Active Directory OAuth         |
 |**Tenant**     |Preencha o TenantId do Azure Active Directory         |
 |**Público-alvo**     |https://*.asazure.windows.net         |
 |**ID do cliente**     |Insira o ClientID do nome da entidade de serviço         |
-|**Tipo de credencial**     |Segredo         |
+|**Tipo de credencial**     |Secret         |
 |**Segredo**     |Insira o segredo de nome de entidade de serviço         |
 
 Exemplo:

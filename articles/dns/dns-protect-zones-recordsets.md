@@ -2,17 +2,18 @@
 title: Proteger Registros e Zonas DNS do Azure
 description: Como proteger conjuntos de registros e zonas DNS no DNS do Microsoft Azure.
 services: dns
-author: vhorne
+author: WenJason
 ms.service: dns
 ms.topic: article
-ms.date: 12/4/2018
-ms.author: victorh
+origin.date: 12/4/2018
+ms.date: 03/04/2019
+ms.author: v-jay
 ms.openlocfilehash: 9340a43eb88b4be03c0f0ccc0d07a32f22a9001c
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55997372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66121435"
 ---
 # <a name="how-to-protect-dns-zones-and-records"></a>Proteger registros e zonas DNS
 
@@ -117,8 +118,7 @@ O exemplo a seguir mostra uma definição de função personalizada para gerenci
         "Microsoft.Insights/alertRules/*",
         "Microsoft.ResourceHealth/availabilityStatuses/read",
         "Microsoft.Resources/deployments/*",
-        "Microsoft.Resources/subscriptions/resourceGroups/read",
-        "Microsoft.Support/*"
+        "Microsoft.Resources/subscriptions/resourceGroups/read"
     ],
     "NotActions": [
     ],
@@ -156,7 +156,7 @@ A função pode então ser atribuída da mesma forma que as funções internas, 
 
 Para obter mais informações sobre como criar, gerenciar e atribuir funções personalizadas, veja [Funções personalizadas no RBAC do Azure](../role-based-access-control/custom-roles.md).
 
-## <a name="resource-locks"></a>Bloqueios de recurso
+## <a name="resource-locks"></a>Bloqueios de recursos
 
 Além do RBAC, Azure Resource Manager dá suporte a outro tipo de controle de segurança, ou seja, a capacidade de bloquear recursos. Onde as regras RBAC permitem controlar as ações de usuários e grupos específicos, bloqueios de recurso são aplicados ao recurso e entram em vigor para todos os usuários e funções. Para saber mais, confira [Bloquear recursos com o Gerenciador de Recursos do Azure](../azure-resource-manager/resource-group-lock-resources.md).
 

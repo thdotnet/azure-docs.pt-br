@@ -11,22 +11,20 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/01/2017
+ms.date: 05/29/2019
 ms.author: apimpm
-ms.openlocfilehash: 450ebc621758363c5ea9ab6d631cd6c7df38794b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ac9910358cf19eac3f704f1bf3e259e9a1543dcc
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60657706"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66141512"
 ---
 # <a name="how-to-secure-apis-using-client-certificate-authentication-in-api-management"></a>Como proteger APIs usando a autenticação de certificado do cliente no Gerenciamento de API
 
 O Gerenciamento de API fornece a capacidade de proteger o acesso às APIs (isto é, cliente para Gerenciamento de API) usando certificados do cliente. No momento, você pode verificar a impressão digital de um certificado do cliente em relação a um valor desejado. Também é possível verificar a impressão digital em relação a certificados existentes carregados no Gerenciamento de API.  
 
 Para saber mais sobre como proteger o acesso ao serviço de back-end de uma API usando certificados do cliente (isto é, Gerenciamento de API para back-end), confira [Como garantir serviços de back-end usando autenticação de certificado do cliente](https://docs.microsoft.com/azure/api-management/api-management-howto-mutual-certificates)
-
-[!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
 ## <a name="checking-the-expiration-date"></a>Verificando a data de validade
 

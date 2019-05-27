@@ -6,16 +6,16 @@ author: mhopkins-msft
 ms.service: storage
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 06/13/2018
+ms.date: 05/21/2019
 ms.author: mhopkins
 ms.reviewer: cbrooks
 ms.subservice: queues
-ms.openlocfilehash: 81bf178a97944d4110cf99a442163229a283bd25
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
-ms.translationtype: MT
+ms.openlocfilehash: 054369a7fd75663c75c99c6ee586843582a6b6f9
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65797748"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65965966"
 ---
 # <a name="get-started-with-azure-queue-storage-using-net"></a>Introdução ao armazenamento de Fila do Azure usando o .NET
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -30,7 +30,7 @@ Este tutorial mostra como gravar código .NET para alguns cenários comuns usand
 
 **Tempo estimado para conclusão:** 45 minutos
 
-**Pré-requisitos:**
+###<a name="prerequisites"></a>Pré-requisitos:
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 * [Biblioteca do Cliente de Armazenamento do Azure para .NET](https://www.nuget.org/packages/WindowsAzure.Storage/)
@@ -58,7 +58,7 @@ O código de exemplo precisa autorizar o acesso à sua conta de armazenamento. P
 
 1. Navegue até o [Portal do Azure](https://portal.azure.com).
 2. Localize sua cadeia de conexão.
-3. Na seção **Configurações** da visão geral da conta de armazenamento, selecione **Chaves de acesso**. Suas chaves de acesso da conta são exibidas, bem como a cadeia de conexão completa para cada chave.   
+3. Na seção **Configurações** da visão geral da conta de armazenamento, selecione **Chaves de acesso**. Suas chaves de acesso da conta são exibidas, bem como a cadeia de conexão completa para cada chave.
 4. Encontre o valor da **Cadeia de conexão** em **key1** e clique no botão **Copiar** para copiar a cadeia de conexão. Você adicionará o valor de cadeia de conexão para uma variável de ambiente na próxima etapa.
 
     ![Captura de tela mostrando como copiar uma cadeia de conexão do portal do Azure](media/storage-dotnet-how-to-use-queues/portal-connection-string.png)
@@ -67,7 +67,7 @@ O código de exemplo precisa autorizar o acesso à sua conta de armazenamento. P
 [!INCLUDE [storage-cloud-configuration-manager-include](../../../includes/storage-cloud-configuration-manager-include.md)]
 
 ### <a name="create-the-queue-service-client"></a>Criar o cliente do serviço Fila
-A classe **CloudQueueClient** permite que você recupere as filas armazenadas no Armazenamento de filas. Veja uma maneira de criar o cliente de serviço:
+A classe [CloudQueueClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueueclient?view=azure-dotnet) permite que você recupere as filas armazenadas no Armazenamento de filas. Veja uma maneira de criar o cliente de serviço:
 
 ```csharp
 CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
@@ -94,7 +94,7 @@ queue.CreateIfNotExists();
 ```
 
 ## <a name="insert-a-message-into-a-queue"></a>Inserir uma mensagem em uma fila
-Para inserir uma mensagem em uma fila existente, primeiro crie uma nova **CloudQueueMessage**. Em seguida, chame o método **AddMessage** . Um **CloudQueueMessage** pode ser criado por meio de uma cadeia de caracteres (em formato UTF-8) ou de uma matriz de **bytes**. Este é o código que cria uma fila (se ela não existir) e insere a mensagem 'Hello, World':
+Para inserir uma mensagem em uma fila existente, primeiro crie uma nova [CloudQueueMessage](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage?view=azure-dotnet). Em seguida, chame o método [AddMessage](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessage?view=azure-dotnet) . Um **CloudQueueMessage** pode ser criado por meio de uma cadeia de caracteres (em formato UTF-8) ou de uma matriz de **bytes**. Este é o código que cria uma fila (se ela não existir) e insere a mensagem 'Hello, World':
 
 ```csharp
 // Retrieve storage account from connection string.
@@ -116,7 +116,7 @@ queue.AddMessage(message);
 ```
 
 ## <a name="peek-at-the-next-message"></a>Espiar a próxima mensagem
-Você pode inspecionar a mensagem na frente de uma fila sem removê-la da fila chamando o método **PeekMessage** .
+Você pode inspecionar a mensagem na frente de uma fila sem removê-la da fila chamando o método [PeekMessage](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.peekmessage?view=azure-dotnet) .
 
 ```csharp
 // Retrieve storage account from connection string
@@ -159,7 +159,7 @@ queue.UpdateMessage(message,
 ```
 
 ## <a name="de-queue-the-next-message"></a>Remover a próxima mensagem da fila
-Seu código remove uma mensagem de um fila em duas etapas. Ao chamar **GetMessage**, você recebe a próxima mensagem em uma fila. Uma mensagem retornada de **GetMessage** torna-se invisível para todas as outras mensagens de leitura de código da fila. Por padrão, essa mensagem permanece invisível por 30 segundos. Para terminar de remover a mensagem da fila, você também deve chamar **DeleteMessage**. Este processo de duas etapas de remover uma mensagem garante que quando o código não processa uma mensagem devido à falhas de hardware ou de software, outra instância do seu código pode receber a mesma mensagem e tentar novamente. Seu código chama **DeleteMessage** logo depois que a mensagem é processada.
+Seu código remove uma mensagem de um fila em duas etapas. Ao chamar [GetMessage](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage?view=azure-dotnet), você recebe a próxima mensagem em uma fila. Uma mensagem retornada de **GetMessage** torna-se invisível para todas as outras mensagens de leitura de código da fila. Por padrão, essa mensagem permanece invisível por 30 segundos. Para terminar de remover a mensagem da fila, você também deve chamar [DeleteMessage](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage?view=azure-dotnet). Este processo de duas etapas de remover uma mensagem garante que quando o código não processa uma mensagem devido à falhas de hardware ou de software, outra instância do seu código pode receber a mesma mensagem e tentar novamente. Seu código chama **DeleteMessage** logo depois que a mensagem é processada.
 
 ```csharp
 // Retrieve storage account from connection string
@@ -210,8 +210,7 @@ Console.WriteLine("Deleted message");
 ```
     
 ## <a name="leverage-additional-options-for-de-queuing-messages"></a>Aproveitar opções adicionais para remover mensagens da fila
-Há duas maneiras de personalizar a recuperação da mensagem de uma fila.
-Primeiro, você pode obter um lote de mensagens (até 32). Segundo, você pode definir um tempo limite de invisibilidade mais longo ou mais curto, permitindo mais ou menos tempo para seu código processar totalmente cada mensagem. O exemplo de código a seguir usa o método **GetMessages** para receber 20 mensagens em uma chamada. Em seguida, ele processa cada mensagem usando um loop **foreach** . Ele também define o tempo limite de invisibilidade de cinco minutos para cada mensagem. Observe que os 5 minutos começam para todas as mensagens ao mesmo tempo; portanto, depois de 5 minutos desde a chamada para **GetMessages**, todas as mensagens que não tenham sido excluídas se tornarão visíveis novamente.
+Há duas maneiras de personalizar a recuperação da mensagem de uma fila. Primeiro, você pode obter um lote de mensagens (até 32). Segundo, você pode definir um tempo limite de invisibilidade mais longo ou mais curto, permitindo mais ou menos tempo para seu código processar totalmente cada mensagem. O exemplo de código a seguir usa o método [GetMessages](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessages?view=azure-dotnet) para receber 20 mensagens em uma chamada. Em seguida, ele processa cada mensagem usando um loop **foreach** . Ele também define o tempo limite de invisibilidade de cinco minutos para cada mensagem. Observe que os 5 minutos começam para todas as mensagens ao mesmo tempo; portanto, depois de 5 minutos desde a chamada para **GetMessages**, todas as mensagens que não tenham sido excluídas se tornarão visíveis novamente.
 
 ```csharp
 // Retrieve storage account from connection string.
@@ -232,7 +231,7 @@ foreach (CloudQueueMessage message in queue.GetMessages(20, TimeSpan.FromMinutes
 ```
 
 ## <a name="get-the-queue-length"></a>Obter o tamanho da fila
-Você pode obter uma estimativa do número de mensagens em uma fila. O método **FetchAttributes** solicita que o serviço Fila recupere os atributos da fila, incluindo a contagem de mensagens. A propriedade **ApproximateMessageCount** retorna o último valor recuperado pelo método **FetchAttributes**, sem chamar o serviço Fila.
+Você pode obter uma estimativa do número de mensagens em uma fila. O método [FetchAttributes](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.storage.queue.cloudqueue.fetchattributes?view=azure-dotnet) solicita que o serviço Fila recupere os atributos da fila, incluindo a contagem de mensagens. A propriedade [ApproximateMessageCount](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.storage.queue.cloudqueue.approximatemessagecount?view=azure-dotnet) retorna o último valor recuperado pelo método **FetchAttributes**, sem chamar o serviço Fila.
 
 ```csharp
 // Retrieve storage account from connection string.
@@ -256,7 +255,7 @@ Console.WriteLine("Number of messages in queue: " + cachedMessageCount);
 ```
 
 ## <a name="delete-a-queue"></a>Excluir uma fila
-Para excluir uma fila e todas as mensagens que ela contém, chame o método **Delete** no objeto fila.
+Para excluir uma fila e todas as mensagens que ela contém, chame o método [Delete](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.storage.queue.cloudqueue.delete?view=azure-dotnet) no objeto fila.
 
 ```csharp
 // Retrieve storage account from connection string.

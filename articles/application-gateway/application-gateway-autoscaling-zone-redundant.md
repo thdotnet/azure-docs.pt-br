@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 5/16/2019
+ms.date: 5/22/2019
 ms.author: victorh
-ms.openlocfilehash: 0da5d8a3eec0faa4001ccf229c6748c253f1b6e5
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 8e17c5e34ec3e2397c3054b1d0e0d97dbf410db2
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65827435"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65986883"
 ---
 # <a name="autoscaling-and-zone-redundant-application-gateway"></a>Dimensionamento automático e o Gateway de aplicativo com redundância de zona 
 
@@ -93,8 +93,6 @@ Preço unitário de capacidade = 744(hours) * Max (computação de unidade Max(2
 
 Preço total = $267.84 + US $85.71 = US $353.55
 
-O [página de preços](https://azure.microsoft.com/pricing/details/application-gateway/) será atualizada para refletir os preços regionais em 14 de maio de 2019. A cobrança está agendada para iniciar em 1 de junho de 2019.
-
 ## <a name="scaling-application-gateway-and-waf-v2"></a>Dimensionando o WAF e o Gateway de aplicativo v2
 
 O Gateway de aplicativo e WAF podem ser configurados para escala em dois modos:
@@ -138,7 +136,7 @@ A tabela a seguir compara os recursos disponíveis com cada SKU.
 |Rota Definida pelo Usuário (UDR) na sub-rede de Gateway de Aplicativo|Sem suporte|
 |NSG para o intervalo de porta de entrada| -65200 a 65535 para Standard_v2 SKU<br>-65503 to 65534 para Standard SKU.<br>Consulte mais informações em [Perguntas Frequentes](application-gateway-faq.md#are-network-security-groups-supported-on-the-application-gateway-subnet).|
 |Logs de desempenho no diagnóstico do Azure|Sem suporte.<br>As métricas do Azure devem ser usadas.|
-|Cobrança|Cobrança agendada para iniciar em 1 de junho de 2019.|
+|Cobrança|Cobrança agendada para iniciar em 1 de julho de 2019.|
 |Modo FIPS|Essas não atualmente têm suporte.|
 |Modo somente de ILB|Não há suporte para esse recurso no momento. Público e o modo ILB juntos tem suporte.|
 |Integração do Netwatcher|Sem suporte.|

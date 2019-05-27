@@ -6,14 +6,15 @@ author: vhorne
 manager: jpconnock
 ms.service: application-gateway
 ms.topic: article
-ms.date: 8/15/2018
-ms.author: victorh
+origin.date: 08/15/2018
+ms.date: 03/12/2019
+ms.author: v-junlch
 ms.openlocfilehash: 90200f7be6c71346441922365fc4439111dd8701
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57314510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66133679"
 ---
 # <a name="renew-application-gateway-certificates"></a>Renovar certificados de Gateway do Aplicativo
 
@@ -25,7 +26,7 @@ Você pode renovar um certificado associado a um ouvinte usando o portal do Azur
 
 Para renovar um certificado de ouvinte do portal, navegue para os ouvinte de gateway do aplicativo. Clique no ouvinte que tem um certificado que precisa ser renovado e, em seguida, clique em **Renovar ou editar o certificado selecionado**.
 
-![Renovar certificado](media/renew-certificate/ssl-cert.png)
+![Renovar certificado](./media/renew-certificate/ssl-cert.png)
 
 Carregue o novo certificado PFX, atribua um nome, digite a senha e, em seguida, clique em **Salvar**.
 
@@ -35,7 +36,7 @@ Carregue o novo certificado PFX, atribua um nome, digite a senha e, em seguida, 
 
 Para renovar seu certificado usando o Azure PowerShell, use o seguinte script:
 
-```azurepowershell-interactive
+```azurepowershell
 $appgw = Get-AzApplicationGateway `
   -ResourceGroupName <ResourceGroup> `
   -Name <AppGatewayName>
@@ -52,15 +53,17 @@ Set-AzApplicationGateway -ApplicationGateway $appgw
 ```
 ## <a name="azure-cli"></a>CLI do Azure
 
-```azurecli-interactive
-az network application-gateway ssl-cert update \
-  -n "<CertName>" \
-  --gateway-name "<AppGatewayName>" \
-  -g "ResourceGroupName>" \
-  --cert-file <PathToCerFile> \
+```azurecli
+az network application-gateway ssl-cert update `
+  -n "<CertName>" `
+  --gateway-name "<AppGatewayName>" `
+  -g "ResourceGroupName>" `
+  --cert-file <PathToCerFile> `
   --cert-password "<password>"
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
 
 Para saber como configurar o descarregamento SSL com o Gateway de Aplicativo do Azure, veja [Configurar descarregamento SSL](application-gateway-ssl-portal.md)
+
+<!-- Update_Description: code update -->

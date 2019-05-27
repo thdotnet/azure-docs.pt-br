@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/01/2019
 ms.author: apimpm
 ms.openlocfilehash: 532c1051522410c496fb3809c06c7e3a74340adb
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60006039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66141386"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Como usar o Gerenciamento de API do Azure com redes virtuais
 As redes virtuais do Azure (VNETs) permitem que você coloque qualquer um dos recursos do Azure em uma rede não roteável para a Internet com acesso controlado. Essas redes podem ser conectadas às redes locais usando várias tecnologias VPN. Para saber mais sobre Redes Virtuais do Azure comece com as informações aqui: [Visão geral da Rede Virtual do Azure](../virtual-network/virtual-networks-overview.md).
@@ -109,7 +109,7 @@ Veja a seguir uma lista de problemas comuns de erro de configuração que podem 
 
 <a name="required-ports"> </a> Quando uma instância do serviço de gerenciamento de API estiver hospedada em uma rede virtual, as portas na tabela a seguir são usadas.
 
-| Porta(s) de Origem/Destino | Direção          | Protocolo de transporte |   [Marcas de Serviço](../virtual-network/security-overview.md#service-tags) <br> Origem/Destino   | Finalidade ( * )                                                 | Tipo de Rede Virtual |
+| Porta(s) de Origem/Destino | Direction          | Protocolo de transporte |   [Marcas de Serviço](../virtual-network/security-overview.md#service-tags) <br> Origem/Destino   | Finalidade ( * )                                                 | Tipo de Rede Virtual |
 |------------------------------|--------------------|--------------------|---------------------------------------|-------------------------------------------------------------|----------------------|
 | * / 80, 443                  | Entrada            | TCP                | INTERNET / VIRTUAL_NETWORK            | Comunicação do cliente com o Gerenciamento de API                      | Externo             |
 | * / 3443                     | Entrada            | TCP                | ApiManagement/VIRTUAL_NETWORK       | Ponto de extremidade de gerenciamento para o Portal do Azure e o Powershell         | Interno e externo  |

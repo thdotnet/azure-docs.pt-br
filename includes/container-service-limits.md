@@ -9,11 +9,11 @@ ms.date: 10/11/2018
 ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: a2729af6a689daa551fc01f585324d53a8770a9b
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65072869"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66142991"
 ---
 | Resource | Limite padrão |
 | --- | :--- |

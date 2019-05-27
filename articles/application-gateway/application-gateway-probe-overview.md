@@ -6,14 +6,15 @@ author: vhorne
 manager: jpconnock
 ms.service: application-gateway
 ms.topic: article
-ms.date: 8/6/2018
-ms.author: victorh
+origin.date: 08/06/2018
+ms.date: 04/16/2019
+ms.author: v-junlch
 ms.openlocfilehash: d0c425bcb9961fde9fb319991148c18c6a9ff57b
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58120543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66135214"
 ---
 # <a name="application-gateway-health-monitoring-overview"></a>Visão geral do monitoramento de integridade do Gateway de Aplicativo
 
@@ -54,10 +55,10 @@ Depois que os critérios de correspondência forem especificados, ele poderá se
 
 ### <a name="default-health-probe-settings"></a>Configurações da investigação de integridade padrão
 
-| Propriedades da investigação | Valor | Descrição |
+| Propriedades da investigação | Value | Descrição |
 | --- | --- | --- |
 | URL de Investigação |http://127.0.0.1:\<port\>/ |Caminho da URL |
-| Intervalo |30 |A quantidade de tempo em segundos a esperar antes da próxima investigação de integridade é enviada.|
+| Interval |30 |A quantidade de tempo em segundos a esperar antes da próxima investigação de integridade é enviada.|
 | Tempo limite |30 |A quantidade de tempo em segundos o gateway de aplicativo aguarda uma resposta de investigação antes da marcação da investigação como não íntegro. Se uma investigação é retornada como íntegra, o back-end correspondente será imediatamente marcado como íntegro.|
 | Limite não íntegro |3 |Controla quantas investigações para enviar o caso ocorra uma falha da investigação de integridade regular. Essas investigações de integridade adicionais são enviadas em sucessão rápida para determinar a integridade do back-end rapidamente e não preciso esperar para que o intervalo de investigação. O servidor de back-end é marcado após a contagem de falhas de investigação consecutivas atingir o limite de não íntegro. |
 
@@ -82,11 +83,11 @@ A tabela a seguir fornece definições para as propriedades de uma investigaçã
 
 | Propriedades da investigação | Descrição |
 | --- | --- |
-| Nome |O nome da investigação. Este é o nome usado para se referir à investigação nas configurações de HTTP de back-end. |
-| Protocolo |O protocolo usado para enviar a investigação. A investigação usa o protocolo definido nas configurações de HTTP do back-end |
+| NOME |O nome da investigação. Este é o nome usado para se referir à investigação nas configurações de HTTP de back-end. |
+| Protocol |O protocolo usado para enviar a investigação. A investigação usa o protocolo definido nas configurações de HTTP do back-end |
 | Host |O nome do host para enviar a investigação. Aplicável somente quando vários sites são configurados no Gateway de Aplicativo; do contrário, use '127.0.0.1'. Este valor é diferente do nome do host de VM. |
-| Caminho |O caminho relativo da investigação. Um caminho válido começa com '/'. |
-| Intervalo |Intervalo de investigação em segundos. Este valor é o intervalo de tempo entre duas investigações consecutivas. |
+| `Path` |O caminho relativo da investigação. Um caminho válido começa com '/'. |
+| Interval |Intervalo de investigação em segundos. Este valor é o intervalo de tempo entre duas investigações consecutivas. |
 | Tempo limite |Tempo limite da investigação em segundos. Se uma resposta válida não for recebida dentro desse período de tempo limite, a investigação será marcada como com falha.  |
 | Limite não íntegro |Contagem de repetições da investigação. O servidor de back-end é marcado após a contagem de falhas de investigação consecutivas atingir o limite de não íntegro. |
 
@@ -104,3 +105,5 @@ Além disso, a conectividade de Internet de saída não pode ser bloqueada, e o 
 Depois de aprender sobre o monitoramento de integridade do Gateway de Aplicativo, você poderá configurar uma [investigação de integridade personalizada](application-gateway-create-probe-portal.md) no portal do Azure ou uma [investigação de integridade personalizada](application-gateway-create-probe-ps.md) usando o PowerShell e o modelo de implantação do Azure Resource Manager.
 
 [1]: ./media/application-gateway-probe-overview/appgatewayprobe.png
+
+<!-- Update_Description: wording update -->

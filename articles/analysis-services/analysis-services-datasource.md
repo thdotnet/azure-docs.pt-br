@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/17/2019
+ms.date: 05/22/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 2505ab5a9445256bd592dfa7f58a6dea79d25043
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 7abd0ac3d95825594dffe385bccc1672d0f71c5f
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506826"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66142554"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Fontes de dados com suporte no Azure Analysis Services
 
@@ -34,7 +34,7 @@ Fontes de dados e conectores mostrados no Get Data ou no Assistente de Importaç
 ||||
 
 <a name="tab1400a">1</a> - Tabular 1.400 e modelos superiores somente.   
-<a name="azsqlmanaged">2</a> - Há suporte para a Instância Gerenciada do Banco de Dados SQL do Azure. Como uma instância gerenciada é executada dentro da VNet do Azure com um endereço IP privado, um gateway de dados local é necessário.   
+<a name="azsqlmanaged">2</a> - Há suporte para a Instância Gerenciada do Banco de Dados SQL do Azure. Como uma instância gerenciada é executada dentro da VNet do Azure com um endereço IP privado, um gateway de dados local é necessário. Azure banco de dados de instância gerenciada do SQL com um ponto de extremidade público não é suportada atualmente.   
 <a name="databricks">3</a> - No momento, não há suporte para o Azure Databricks usando o conector do Spark.   
 <a name="gen2">4</a> - No momento, não há suporte para o ADLS Gen2.
 

@@ -6,45 +6,43 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 04/19/2019
 ms.author: tisande
-ms.openlocfilehash: 3ba547aea9034777fe76f3c911efd2648f6184fa
-ms.sourcegitcommit: e729629331ae10097a081a03029398525f4147a4
-ms.translationtype: MT
+ms.openlocfilehash: 48d0c7a022ff568582637aac36a377ca022a413c
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64514793"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65977349"
 ---
 # <a name="sql-subquery-examples-for-azure-cosmos-db"></a>Exemplos de subconsulta SQL do Azure Cosmos DB
 
-Uma subconsulta é uma consulta aninhada em outra consulta. Uma subconsulta também é chamada de uma consulta interna ou seleção interna e a instrução que contém uma subconsulta é normalmente chamada de uma consulta externa.
+Uma subconsulta é uma consulta aninhada em outra consulta. Uma subconsulta também é chamada de uma consulta interna ou seleção interna. A instrução que contém uma subconsulta normalmente é chamada de uma consulta externa.
 
-Há dois tipos de subconsultas:
-
-* Correlacionado - uma subconsulta correlacionado é uma subconsulta que faz referência a valores da consulta externa. A subconsulta é avaliada uma vez para cada linha que é processada pela consulta externa.
-
-* Não correlacionados - a subconsulta correlacionada A não é uma subconsulta que é independente da consulta externa e ele pode ser executado em seu próprio sem depender da consulta externa.
-
-> [!NOTE]
-> O Azure Cosmos DB dá suporte a subconsultas correlacionadas apenas.
+Este artigo descreve as subconsultas SQL e seus casos de uso comuns no Azure Cosmos DB.
 
 ## <a name="types-of-subqueries"></a>Tipos de subconsultas
 
-Subconsultas podem ser classificadas ainda mais com base no número de linhas e colunas que elas retornam. Há três tipos diferentes:
-1.  **Tabela**: Retorna várias linhas e várias colunas
-2.  **Com vários valores**: Retorna uma única coluna e várias linhas
-3.  **Scalar**: Retorna uma única linha e coluna única
+Há dois tipos principais de subconsultas:
+
+* **Correlacionados**: Uma subconsulta que faz referência a valores da consulta externa. A subconsulta é avaliada uma vez para cada linha que processa a consulta externa.
+* **Não correlacionados**: Uma subconsulta que é independente da consulta externa. Ele pode ser executado em seu próprio sem depender de externo consulta.
 
 > [!NOTE]
-> O Azure Cosmos DB dá suporte a subconsultas com vários valores e escalar
+> O Azure Cosmos DB dá suporte a somente as subconsultas correlacionadas.
 
-Consultas de SQL do Cosmos DB do Azure sempre retornam uma única coluna (um valor simples ou um documento complexo). Portanto, apenas com vários valores e escalar subconsultas acima são aplicáveis no Azure Cosmos DB. Uma subconsulta com vários valores só pode ser usada na cláusula FROM como uma expressão relacional, enquanto uma subconsulta escalar pode ser usada como uma expressão escalar em SELECT ou na cláusula WHERE ou como uma expressão relacional na cláusula FROM.
+Subconsultas podem ser classificadas ainda mais com base no número de linhas e colunas que elas retornam. Há três tipos:
+* **Tabela**: Retorna várias linhas e várias colunas.
+* **Com vários valores**: Retorna uma única coluna e várias linhas.
+* **Scalar**: Retorna uma única linha e uma única coluna.
+
+Consultas SQL no Azure Cosmos DB sempre retornam uma única coluna (um valor simples ou um documento complexo). Portanto, somente as subconsultas escalares e de vários valores são aplicáveis no Azure Cosmos DB. Você pode usar uma subconsulta com vários valores apenas na cláusula FROM como uma expressão relacional. Você pode usar uma subconsulta escalar, como uma expressão escalar em SELECT ou na cláusula WHERE, ou como uma expressão relacional na cláusula FROM.
 
 
 ## <a name="multi-value-subqueries"></a>Subconsultas com vários valores
 
-Subconsultas com vários valores retornam um conjunto de documentos e são sempre usadas dentro da cláusula FROM. Elas são usadas para:
+Subconsultas com vários valores retornam um conjunto de documentos e são sempre usadas dentro da cláusula FROM. Eles são usados para:
 
-* Otimizando a expressões de junção 
-* Avaliar expressões caras de uma vez e fazer referência a várias vezes
+* Otimizando a expressões de junção. 
+* Avaliar expressões caras de uma vez e fazer referência a várias vezes.
 
 ### <a name="optimize-join-expressions"></a>Otimizar expressões de junção
 
@@ -62,9 +60,11 @@ WHERE t.name = 'infant formula' AND (n.nutritionValue > 0
 AND n.nutritionValue < 10) AND s.amount > 1
 ```
 
-Para essa consulta, o índice corresponderá a qualquer documento que tem uma marca com a nome 'infant fórmula', um item nutrient com um valor entre 0 e 10 e um item de serviço com uma quantidade maior que 1. No entanto, a expressão de junção executará o produto cruzado de todos os itens de marcas, nutrients e porções matrizes para cada documento correspondente antes de qualquer filtro é aplicado. A cláusula WHERE, em seguida, aplicará a filtro predicado em cada < c, t, n, s > tupla. Por exemplo, se um documento correspondente tiver 10 itens em cada uma das três matrizes, ela será expandida para 1 x 10 x 10 x 10 (ou seja, 1.000) tuplas. Usando subconsultas aqui, pode ajudar a filtragem de itens de matriz unida antes de unir a próxima expressão.
+Para essa consulta, o índice corresponderá a qualquer documento que tem uma marca com a nome "infant fórmula." É um item nutrient com um valor entre 0 e 10 e um item de serviço com uma quantidade maior que 1. A expressão de junção executará o produto cruzado de todos os itens de marcas, nutrients e porções matrizes para cada documento correspondente antes de qualquer filtro é aplicado. 
 
-Essa consulta é equivalente à mostrado acima, mas utiliza subconsultas:
+A cláusula WHERE, em seguida, aplicará a filtro predicado em cada < c, t, n, s > tupla. Por exemplo, se um documento correspondente tiver 10 itens em cada uma das três matrizes, ela será expandida para 1 x 10 x 10 x 10 (ou seja, 1.000) tuplas. Uso de subconsultas aqui pode ajudar a filtragem de itens de matriz unida antes de unir a próxima expressão.
+
+Essa consulta é equivalente ao anterior, mas usa subconsultas:
 
 ```sql
 SELECT Count(1) AS Count
@@ -74,13 +74,13 @@ JOIN (SELECT VALUE n FROM n IN c.nutrients WHERE n.nutritionValue > 0 AND n.nutr
 JOIN (SELECT VALUE s FROM s IN c.servings WHERE s.amount > 1)
 ```
 
-Supondo que apenas um item na matriz de marcas correspondentes ao filtro e cinco itens para nutrients e matrizes porções, as expressões de junção será expandido para 1 x 1 x 5 x 5 = 25 itens em vez de 1.000 itens na primeira consulta.
+Suponha que apenas um item na matriz de marcas correspondentes ao filtro e houver cinco itens para matrizes nutrients e porções. As expressões de junção, em seguida, serão expandido para 1 x 1 x 5 x 5 = 25 itens, em vez de 1.000 itens na primeira consulta.
 
 ### <a name="evaluate-once-and-reference-many-times"></a>Avaliar uma vez e referência muitas vezes
 
-Subconsultas podem ajudar a otimizar as consultas com expressões caras, como funções definidas pelo usuário (UDF) ou a cadeia de caracteres complexa ou expressões aritméticas. Você pode usar uma subconsulta, juntamente com uma expressão de junção para avaliar a expressão de uma vez mas referenciá-lo muitas vezes.
+Subconsultas podem ajudar a otimizar as consultas com expressões caras, como funções definidas pelo usuário (UDFs), cadeias de caracteres complexas ou expressões aritméticas. Você pode usar uma subconsulta, juntamente com uma expressão de junção para avaliar a expressão de uma vez mas referenciá-lo muitas vezes.
 
-A consulta a seguir executa o UDF GetMaxNutritionValue duas vezes:
+A seguinte consulta executa o UDF `GetMaxNutritionValue` duas vezes:
 
 ```sql
 SELECT c.id, udf.GetMaxNutritionValue(c.nutrients) AS MaxNutritionValue
@@ -98,7 +98,7 @@ WHERE MaxNutritionValue > 100
 ``` 
 
 > [!NOTE] 
-> Considerando o comportamento de produto cruzado das expressões de junção, se a expressão de UDF pode ser avaliada como indefinida, você deve garantir que a expressão de junção sempre produz uma única linha, retornando um objeto da subconsulta, em vez do valor diretamente.
+> Tenha em mente o comportamento de produto cruzado das expressões de junção. Se a expressão de UDF pode ser avaliada como indefinida, você deve garantir que a expressão de junção sempre produz uma única linha, retornando um objeto da subconsulta, em vez do valor diretamente.
 >
 
 Aqui está um exemplo semelhante que retorna um objeto em vez de um valor:
@@ -110,7 +110,7 @@ JOIN (SELECT udf.GetMaxNutritionValue(c.nutrients) AS MaxNutritionValue) m
 WHERE m.MaxNutritionValue > 100
 ```
 
-A abordagem não é limitada a UDFs, mas em vez disso, a qualquer expressão potencialmente cara. Por exemplo, podemos pode levar a mesma abordagem com a média de função matemática:
+A abordagem não é limitada a UDFs. Ele se aplica a qualquer expressão potencialmente cara. Por exemplo, você pode executar a mesma abordagem com a função matemática `avg`:
 
 ```sql
 SELECT TOP 1000 c.id, AvgNutritionValue
@@ -121,8 +121,9 @@ WHERE AvgNutritionValue > 80
 
 ### <a name="mimic-join-with-external-reference-data"></a>Imitar a junção com dados de referência externa
 
-Muitas vezes, precisamos fazer referência a dados estáticos que raramente são alterados, como unidades de medidas ou códigos de país. Para esses dados, é preferível não duplicá-lo para cada documento. Evitar essa duplicação salvará no armazenamento e melhorar o desempenho de gravação, mantendo o tamanho do documento menores. Uma subconsulta pode ser usada aqui para imitar a semântica de associação interna com um conjunto de dados de referência.
-Por exemplo, considere este conjunto de dados de referência.
+Geralmente, você precisará fazer referência a dados estáticos que raramente são alterados, como unidades de medida ou códigos de país. É melhor não duplicá esses dados para cada documento. Evitar essa duplicação salvará no armazenamento e melhorar o desempenho de gravação, mantendo o tamanho do documento menores. Você pode usar uma subconsulta para simular a semântica de associação interna com um conjunto de dados de referência.
+
+Por exemplo, considere este conjunto de dados de referência:
 
 | **Unidade** | **Nome**            | **Multiplicador** | **Unidade base** |
 | -------- | ------------------- | -------------- | ------------- |
@@ -136,7 +137,7 @@ Por exemplo, considere este conjunto de dados de referência.
 | nJ       | Nanojoule           | 1.00E-09       | Joule         |
 | µJ       | Microjoule          | 1.00E-06       | Joule         |
 | mJ       | Millijoule          | 1.00E-03       | Joule         |
-| J        | Joule               | 1.00E + 00       | Joule         |
+| I        | Joule               | 1.00E + 00       | Joule         |
 | kJ       | Kilojoule           | 1.00E + 03       | Joule         |
 | MJ       | Megajoule           | 1.00E + 06       | Joule         |
 | GJ       | Gigajoule           | 1.00E + 09       | Joule         |
@@ -145,7 +146,7 @@ Por exemplo, considere este conjunto de dados de referência.
 | IU       | Unidades internacionais |                |               |
 
 
-A consulta a seguir imita unindo-se com esses dados para que podemos adicionar o nome da unidade para a saída:
+A consulta a seguir imita unindo-se com esses dados para que você adicionar o nome da unidade para a saída:
 
 ```sql
 SELECT TOP 10 n.id, n.description, n.nutritionValue, n.units, r.name
@@ -177,8 +178,9 @@ WHERE n.units = r.unit
 
 ## <a name="scalar-subqueries"></a>Subconsultas escalares
 
-Uma expressão de subconsulta escalar é uma subconsulta que é avaliada como um único valor. O valor da expressão de subconsulta escalar é o valor da projeção (cláusula SELECT) da subconsulta.  Uma expressão de subconsulta escalar pode ser usada em muitos lugares uma expressão escalar é válida. Por exemplo, uma subconsulta escalar pode ser usada em qualquer expressão em ambos os SELECT e cláusulas WHERE.
-No entanto, usar uma subconsulta escalar não sempre ajuda a otimizar. Por exemplo, passando uma subconsulta escalar como um argumento para um sistema ou funções definidas pelo usuário não oferece nenhum benefício no consumo de RU ou a latência.
+Uma expressão de subconsulta escalar é uma subconsulta que é avaliada como um único valor. O valor da expressão de subconsulta escalar é o valor da projeção (cláusula SELECT) da subconsulta.  Você pode usar uma expressão de subconsulta escalar em muitos lugares em que uma expressão escalar é válida. Por exemplo, você pode usar uma subconsulta escalar em qualquer expressão em ambos os SELECT e cláusulas WHERE.
+
+Usar uma subconsulta escalar sempre não ajuda a otimizar, no entanto. Por exemplo, passando uma subconsulta escalar como um argumento para um sistema ou funções definidas pelo usuário não oferece nenhum benefício no consumo de RU (unidade) de recursos ou a latência.
 
 Subconsultas escalares podem ser ainda mais classificadas como:
 * Subconsultas escalares de expressão simples
@@ -186,7 +188,7 @@ Subconsultas escalares podem ser ainda mais classificadas como:
 
 ### <a name="simple-expression-scalar-subqueries"></a>Subconsultas escalares de expressão simples
 
-Uma subconsulta escalar de expressão simples é uma subconsulta correlacionada que tem uma cláusula SELECT que não contém quaisquer expressões de agregação. Essas subconsultas não fornecem benefícios nenhuma otimização porque o compilador converte-os em uma expressão simple maior. Não há nenhum contexto correlacionado entre a consulta interna e externa.
+Uma subconsulta escalar de expressão simples é uma subconsulta correlacionada com uma cláusula SELECT que não contém quaisquer expressões de agregação. Essas subconsultas não fornecem benefícios nenhuma otimização porque o compilador converte-os em uma expressão simple maior. Não há nenhum contexto correlacionado entre as consultas internas e externas.
 
 Veja alguns exemplos:
 
@@ -196,7 +198,7 @@ Veja alguns exemplos:
 SELECT 1 AS a, 2 AS b
 ```
 
-Essa consulta poderia ser reescrita, usando uma subconsulta escalar de expressão simples para:
+Você pode reescrever essa consulta, usando uma subconsulta escalar de expressão simples, para:
 
 ```sql
 SELECT (SELECT VALUE 1) AS a, (SELECT VALUE 2) AS b
@@ -217,7 +219,7 @@ SELECT TOP 5 Concat('id_', f.id) AS id
 FROM food f
 ```
 
-Essa consulta poderia ser reescrita, usando uma subconsulta escalar de expressão simples para:
+Você pode reescrever essa consulta, usando uma subconsulta escalar de expressão simples, para:
 
 ```sql
 SELECT TOP 5 (SELECT VALUE Concat('id_', f.id)) AS id
@@ -243,7 +245,7 @@ SELECT TOP 5 f.id, Contains(f.description, 'fruit') = true ? f.description : und
 FROM food f
 ```
 
-Essa consulta poderia ser reescrita, usando uma subconsulta escalar de expressão simples para:
+Você pode reescrever essa consulta, usando uma subconsulta escalar de expressão simples, para:
 
 ```sql
 SELECT TOP 10 f.id, (SELECT f.description WHERE Contains(f.description, 'fruit')).description
@@ -262,7 +264,7 @@ Saída da consulta:
 ]
 ```
 
-## <a name="aggregate-scalar-subqueries"></a>Agregadas subconsultas escalares
+### <a name="aggregate-scalar-subqueries"></a>Agregadas subconsultas escalares
 
 Uma subconsulta escalar de agregação é uma subconsulta que tem uma função de agregação em sua projeção ou um filtro que é avaliada como um único valor.
 
@@ -292,7 +294,7 @@ Saída da consulta:
 
 **Exemplo 2**
 
-Uma subconsulta com várias expressões de função de agregação:
+Aqui está uma subconsulta com várias expressões de função de agregação:
 
 ```sql
 SELECT TOP 5 f.id, (
@@ -317,7 +319,7 @@ Saída da consulta:
 
 **Exemplo 3**
 
-Uma consulta com uma subconsulta agregação na projeção e o filtro:
+Aqui está uma consulta com uma subconsulta agregação na projeção e o filtro:
 
 ```sql
 SELECT TOP 5 
@@ -339,7 +341,7 @@ Saída da consulta:
 ]
 ```
 
-Uma maneira melhor de escrever essa consulta é unir a subconsulta e fazer referência a subconsulta alias em ambos os SELECT e cláusulas WHERE. Essa consulta é mais eficiente, porque será necessário executar a subconsulta somente dentro da instrução de junção e não na projeção e o filtro.
+Uma maneira melhor de escrever essa consulta é unir a subconsulta e fazer referência a subconsulta alias em ambos os SELECT e cláusulas WHERE. Essa consulta é mais eficiente, porque você precisa executar a subconsulta somente dentro da instrução de junção e não na projeção e o filtro.
 
 ```sql
 SELECT TOP 5 f.id, count_mg
@@ -348,27 +350,28 @@ JOIN (SELECT VALUE Count(1) FROM n IN f.nutrients WHERE n.units = 'mg') AS count
 WHERE count_mg > 20
 ```
 
-### <a name="exists-expression"></a>Expressão EXISTS
+#### <a name="exists-expression"></a>Expressão EXISTS
 
-O Azure Cosmos DB dá suporte a expressões EXISTS. Essa é uma subconsulta escalar de agregação incorporada a API de SQL do Azure Cosmos DB. EXISTS é uma expressão booleana que usa uma expressão de subconsulta e retorna true se a subconsulta não retorna nenhuma linha; Caso contrário, retorna false.
-Uma vez que a API de SQL do Azure Cosmos DB não diferenciar entre expressões Boolianas e quaisquer outras expressões escalares, EXISTS pode ser usado em ambos os SELECT e cláusulas WHERE. Isso é diferente de T-SQL, onde uma expressão booliana (por exemplo, EXISTS, BETWEEN e IN) é restrita ao filtro.
+O Azure Cosmos DB dá suporte a expressões EXISTS. Essa é uma subconsulta escalar de agregação incorporada a API de SQL do Azure Cosmos DB. EXISTS é uma expressão booleana que usa uma expressão de subconsulta e retorna true se a subconsulta não retorna nenhuma linha. Caso contrário, retorna false.
 
-Se a subconsulta EXISTS retornar um único valor é indefinido, EXISTS será avaliada como falsa. Por exemplo, considere a seguinte consulta que é avaliada como false:
+Como a API de SQL do Azure Cosmos DB não diferencia entre expressões Boolianas e quaisquer outras expressões escalares, você pode usar EXISTS em ambos os SELECT e cláusulas WHERE. Isso é diferente de T-SQL, onde uma expressão booliana (por exemplo, EXISTS, BETWEEN e IN) é restrita ao filtro.
+
+Se a subconsulta EXISTS retorna um valor único que possui indefinido, existe será avaliada como falsa. Por exemplo, considere a seguinte consulta que é avaliada como false:
 ```sql
 SELECT EXISTS (SELECT VALUE undefined)
 ```   
 
 
-No entanto, se a palavra-chave do valor na subconsulta acima for omitida, em seguida, a consulta será avaliada como verdadeira:
+Se a palavra-chave do valor na subconsulta anterior for omitida, a consulta será avaliada como verdadeira:
 ```sql
 SELECT EXISTS (SELECT undefined) 
 ```
 
-A subconsulta abrangerá a lista de valores na lista de seleção em um objeto. Se a lista selecionada não tem valores, a subconsulta retornará o valor único '{}' que é definido e existe, portanto, é avaliada como true.
+A subconsulta abrangerá a lista de valores na lista selecionada em um objeto. Se a lista selecionada não tem valores, a subconsulta retornará o valor único '{}'. Esse valor é definido, EXISTS é avaliada como true.
 
-### <a name="example-rewriting-arraycontains-and-join-as-exists"></a>Exemplo: Reconfiguração ARRAY_CONTAINS e junção Exists
+#### <a name="example-rewriting-arraycontains-and-join-as-exists"></a>Exemplo: Reconfiguração ARRAY_CONTAINS e junção Exists
 
-É um caso de uso comum de ARRAY_CONTAINS filtrar um documento pela existência de um item em uma matriz. Nesse caso, estamos verificando se a matriz de marcas contém uma item chamada laranja.
+É um caso de uso comum de ARRAY_CONTAINS filtrar um documento pela existência de um item em uma matriz. Nesse caso, estamos verificando se a matriz de marcas contém um item chamado "laranja".
 
 ```sql
 SELECT TOP 5 f.id, f.tags
@@ -376,7 +379,7 @@ FROM food f
 WHERE ARRAY_CONTAINS(f.tags, {name: 'orange'})
 ```
 
-A mesma consulta poderia ser reescrita para usar EXISTS:
+Você pode reescrever a mesma consulta para usar EXISTS:
 
 ```sql
 SELECT TOP 5 f.id, f.tags
@@ -384,9 +387,9 @@ FROM food f
 WHERE EXISTS(SELECT VALUE t FROM t IN f.tags WHERE t.name = 'orange')
 ```
 
-Além disso, ARRAY_CONTAINS só é capaz de verificar se um valor é igual a qualquer elemento dentro de uma matriz. Se os filtros mais complexos são necessários nas propriedades de matriz, uma junção é necessária.
+Além disso, ARRAY_CONTAINS só pode verificar se um valor é igual a qualquer elemento dentro de uma matriz. Se você precisar de filtros mais complexos nas propriedades de matriz, use a junção.
 
-Considere a seguinte consulta que filtra com base nas unidades e nutritionValue propriedades na matriz: 
+Considere a seguinte consulta que filtra com base nas unidades e `nutritionValue` propriedades na matriz: 
 
 ```sql
 SELECT VALUE c.description
@@ -397,7 +400,7 @@ WHERE n.units= "mg" AND n.nutritionValue > 0
 
 Para cada um dos documentos na coleção, um produto cruzado é executado com seus elementos de matriz. Esta operação de junção torna possível filtrar em propriedades dentro da matriz. No entanto, o consumo de RU dessa consulta será significativo. Por exemplo, se 1.000 documentos tinham 100 itens em cada matriz, ela será expandida para 1.000 x 100 (ou seja, 100.000) tuplas.
 
-Usando `EXISTS` pode ajudar a evitar esse produto cruzado caro:
+Usando EXISTS pode ajudar a evitar esse produto cruzado caro:
 
 ```sql
 SELECT VALUE c.description
@@ -409,9 +412,9 @@ WHERE EXISTS(
 )
 ```
 
-Nesse caso, vamos filtrar elementos de matriz dentro da subconsulta EXISTS. Se um elemento de matriz corresponde ao filtro, então, o projeto e `EXISTS` for avaliada como true.
+Nesse caso, você filtrar elementos de matriz em que a subconsulta EXISTS. Se um elemento de matriz corresponde ao filtro, em seguida, você a projetar e EXISTS é avaliada como true.
 
-Podemos também alias EXISTS e referenciá-lo na projeção:
+Você também pode alias EXISTS e referenciá-lo na projeção:
 
 ```sql
 SELECT TOP 1 c.description, EXISTS(
@@ -432,9 +435,9 @@ Saída da consulta:
 ]
 ```
 
-### <a name="array-expression"></a>Expressão de matriz
+#### <a name="array-expression"></a>Expressão de matriz
 
-O `ARRAY` expressão pode ser usada para projetar os resultados de uma consulta como uma matriz. Esta expressão pode ser usada somente dentro da cláusula SELECT da consulta.
+Você pode usar a expressão de matriz para projetar os resultados de uma consulta como uma matriz. Você pode usar essa expressão somente dentro da cláusula SELECT da consulta.
 
 ```sql
 SELECT TOP 1   f.id, ARRAY(SELECT VALUE t.name FROM t in f.tags) AS tagNames
@@ -457,7 +460,7 @@ Saída da consulta:
 ]
 ```
 
-Assim como acontece com outras subconsultas, filtra com o `ARRAY` expressão são possíveis.
+Assim como acontece com outras subconsultas, filtros com a expressão de matriz são possíveis.
 
 ```sql
 SELECT TOP 1 c.id, ARRAY(SELECT VALUE t FROM t in c.tags WHERE t.name != 'infant formula') AS tagNames

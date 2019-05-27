@@ -9,11 +9,11 @@ ms.date: 04/11/2019
 ms.author: lahugh
 ms.custom: include file
 ms.openlocfilehash: 7196a2ea794c1d17a2c55c05accb447d83929972
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64743885"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66145705"
 ---
 Esta seção fornece informações sobre as gerações anteriores de tamanhos de máquina virtual. Esses tamanhos ainda têm suporte, mas não receberá a capacidade adicional. Há mais recentes ou alternativos tamanhos que estão disponíveis. Consulte a [máquinas virtuais de tamanhos para Windows no Azure](../articles/virtual-machines/windows/sizes.md) ou [tamanhos para máquinas virtuais Linux no Azure](../articles/virtual-machines/linux/sizes.md) para escolher a VM tamanhos que serão melhor se ajustar a sua necessidade.  
 
@@ -25,9 +25,9 @@ Para obter mais informações sobre o redimensionamento de uma VM do Linux, cons
 
 **Recomendação de tamanho mais recente**: [Série Av2](../articles/virtual-machines/windows/sizes-general.md#av2-series)
 
-Armazenamento Premium:  Sem suporte
+Armazenamento Premium:  Sem Suporte
 
-Cache de armazenamento Premium:  Sem suporte
+Cache de armazenamento Premium:  Sem Suporte
 
 Os tamanhos da camada básicos são principalmente para as cargas de trabalho de desenvolvimento e outros aplicativos que não requerem o balanceamento de carga, dimensionamento automático ou máquinas virtuais que consomem muita memória.
 
@@ -47,9 +47,9 @@ Os tamanhos da camada básicos são principalmente para as cargas de trabalho de
 
 ACU: 50-100
 
-Armazenamento Premium:  Sem suporte
+Armazenamento Premium:  Sem Suporte
 
-Cache de armazenamento Premium:  Sem suporte
+Cache de armazenamento Premium:  Sem Suporte
 
 | Tamanho | vCPU | Memória: GiB | Armazenamento temporário (HDD): GiB | Discos de dados máximos | Taxa de transferência máxima do disco de dados: IOPS | Máximo de NICs/Largura de banda de rede esperado (Mbps)  |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -72,9 +72,9 @@ Cache de armazenamento Premium:  Sem suporte
 
 ACU: 225
 
-Armazenamento Premium:  Sem suporte
+Armazenamento Premium:  Sem Suporte
 
-Cache de armazenamento Premium:  Sem suporte
+Cache de armazenamento Premium:  Sem Suporte
 
 Os tamanhos A8-A11 e série H também são conhecidos como *instâncias de computação intensiva*. O hardware de datacenter do Azure que executa esses tamanhos é projetado e otimizado para aplicativos de uso intensivo de computação e rede, incluindo aplicativos, modelagem e simulações de cluster HPC (computação de alto desempenho). A série de A8-A11 usa Intel Xeon E5-2670 a 2,6 GHz e a série H usa Intel Xeon E5-2667 v3 a 3,2 GHz.  
 
@@ -95,9 +95,9 @@ Os tamanhos A8-A11 e série H também são conhecidos como *instâncias de compu
 
 ACU: 160-250 <sup>1</sup>
 
-Armazenamento Premium:  Sem suporte
+Armazenamento Premium:  Sem Suporte
 
-Cache de armazenamento Premium:  Sem suporte
+Cache de armazenamento Premium:  Sem Suporte
 
 | Tamanho         | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps de leitura / MBps de gravação | Discos de dados máximos / taxa de transferência: IOPS | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
 |--------------|-----------|-------------|----------------|----------------------------------------------------------|-----------------------------------|------------------------------|
@@ -116,9 +116,9 @@ Cache de armazenamento Premium:  Sem suporte
 
 ACU: 160-250 <sup>1</sup>
 
-Armazenamento Premium:  Sem suporte
+Armazenamento Premium:  Sem Suporte
 
-Cache de armazenamento Premium:  Sem suporte
+Cache de armazenamento Premium:  Sem Suporte
 
 | Tamanho         | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps de leitura / MBps de gravação | Discos de dados máximos / taxa de transferência: IOPS | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
 |--------------|-----------|-------------|----------------|----------------------------------------------------------|-----------------------------------|------------------------------|

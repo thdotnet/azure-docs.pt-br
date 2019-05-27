@@ -9,13 +9,13 @@ ms.date: 05/02/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
 ms.openlocfilehash: 47407df90a83501b8739a428789e20cddc59e83d
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65468324"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66145931"
 ---
-Efêmeros discos do sistema operacional são criados no armazenamento local da máquina Virtual (VM) e não são persistidos no armazenamento do Azure remoto. Discos de SO efêmeros funcionam bem para cargas de trabalho sem monitoração de estado, em que os aplicativos são tolerantes a falhas VM individuais, mas estiver mais preocupado com o tempo necessário para implantações em grande escala ou o tempo para refazer a imagem de instâncias de VM individuais. Também é adequado para aplicativos implantados usando o modelo de implantação clássico, para mover para o modelo de implantação do Resource Manager. Com o disco do SO efêmero, você deve observar menor latência de leitura/gravação para o disco do sistema operacional e a recriação de imagem de VM mais rápida. Além disso, o disco do SO efêmero é gratuito, você incorrerá em nenhum custo de armazenamento para o disco do sistema operacional. 
+Efêmeros discos do sistema operacional são criados no armazenamento local da máquina Virtual (VM) e não são persistidos no armazenamento do Azure remoto. Discos de SO efêmeros funcionam bem para cargas de trabalho sem monitoração de estado, em que os aplicativos são tolerantes a falhas VM individuais, mas estiver mais preocupado com o tempo necessário para implantações em grande escala ou o tempo para refazer a imagem de instâncias de VM individuais. Também é adequado para aplicativos implantados usando o modelo de implantação clássico, para mover para o modelo de implantação do Resource Manager. Com o disco de SO efêmero, é possível observar menor latência de leitura/gravação no disco do SO e refazer imagem de VMs mais rapidamente. Além disso, o disco do SO efêmero é gratuito, você incorrerá em nenhum custo de armazenamento para o disco do sistema operacional. 
  
 Os principais recursos dos discos efêmeros são: 
 - Eles podem ser usados com imagens do Marketplace e imagens personalizadas.
@@ -30,7 +30,7 @@ Principais diferenças entre os discos do sistema operacional persistentes e ef�
 |                             | Disco do sistema operacional persistente                          | Disco do SO Efêmero                              |    |
 |-----------------------------|---------------------------------------------|------------------------------------------------|
 | Limite de tamanho do disco do sistema operacional      | 2 TiB                                                                                        | Cache de tamanho para o tamanho da VM ou 2TiB, o que for menor - [DS](../articles/virtual-machines/linux/sizes-general.md), [ES](../articles/virtual-machines/linux/sizes-memory.md), [M](../articles/virtual-machines/linux/sizes-memory.md), [FS](../articles/virtual-machines/linux/sizes-compute.md), e [GS](../articles/virtual-machines/linux/sizes-memory.md)              |
-| Tamanhos VM com suporte          | Todos                                                                                          | DSv1, DSv2, DSv3, Esv3, Fs, FsV2, GS, M                                               |
+| Tamanhos de VM compatíveis          | Todos                                                                                          | DSv1, DSv2, DSv3, Esv3, Fs, FsV2, GS, M                                               |
 | Suporte ao tipo de disco           | Disco do sistema operacional gerenciado e não gerenciado                                                                | Somente disco do sistema operacional gerenciado                                                               |
 | Suporte de regiões              | Todas as regiões                                                                                  | Todas as regiões                              |
 | Persistência de dados            | Dados de disco do sistema operacional gravados em disco do sistema operacional são armazenados no armazenamento do Azure                                  | Dados gravados no disco do sistema operacional são armazenados no armazenamento de VM local e não são persistidos no armazenamento do Azure. |

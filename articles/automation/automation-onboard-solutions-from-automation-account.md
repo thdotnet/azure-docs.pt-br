@@ -9,12 +9,12 @@ ms.date: 4/11/2019
 ms.topic: conceptual
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: 41f0607908cde94ca08a4c4dfce0a47032eefbb3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a1bb5534d2f98a4e5143038ab1d5fbbcc76184fe
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60739147"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66133196"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions"></a>Integrar soluções de Gerenciamento de Atualizações, Controle de Alterações e Inventário
 
@@ -32,27 +32,10 @@ Escolha o espaço de trabalho do Log Analytics e a conta de automação e clique
 
 ![Integrar a solução de Inventário](media/automation-onboard-solutions-from-automation-account/onboardsolutions.png)
 
-Ao habilitar soluções, somente determinadas regiões têm suporte para vincular um espaço de trabalho do Log Analytics e uma Conta de Automação.
-
-A tabela abaixo mostra os mapeamentos com suporte:
-
-|**Região do Workspace do Log Analytics**|**Região da Automação do Azure**|
-|---|---|
-|AustraliaSoutheast|AustraliaSoutheast|
-|Canadá Central|Canadá Central|
-|CentralIndia|CentralIndia|
-|EastUS<sup>1</sup>|EastUS2|
-|JapanEast|JapanEast|
-|SoutheastAsia|SoutheastAsia|
-|WestCentralUS<sup>2</sup>|WestCentralUS<sup>2</sup>|
-|WestEurope|WestEurope|
-|UKSouth|UKSouth|
-|USGovVirginia|USGovVirginia|
-|EastUS2EUAP<sup>1</sup>|CentroEUAEUAP|
-
-<sup>1</sup> mapeamentos EastUS2EUAP e EastUS para espaços de trabalho do Log Analytics para contas de automação não são um mapeamento de região para região exato, mas é o mapeamento correto.
-
-<sup>2</sup> devido a restrições de capacidade a região não está disponível durante a criação de novos recursos. Isso inclui contas de automação e o Log Analytics para espaços de trabalho. No entanto, os recursos vinculados pré-existentes na região devem continuam a funcionar.
+> [!NOTE]
+> Ao habilitar soluções, somente determinadas regiões têm suporte para vincular um espaço de trabalho do Log Analytics e uma Conta de Automação.
+>
+> Para obter uma lista de pares de mapeamento com suporte, consulte [mapeamento da região do espaço de trabalho de conta de automação e o Log Analytics](how-to/region-mappings.md).
 
 A solução de Controle de Alterações e Inventário fornece a capacidade de [acompanhar alterações](automation-vm-change-tracking.md) e [inventário](automation-vm-inventory.md) em suas máquinas virtuais. Nesta etapa, você deve habilitar a solução em uma máquina virtual.
 
@@ -161,6 +144,8 @@ Se você usou as VMs Iniciar e Parar durante a solução fora do horário, opcio
 * Iniciar e parar agendas de runbook da VM
 * Iniciar e parar runbooks da VM
 * variáveis
+
+Como alternativa, você também pode desvincular seu espaço de trabalho de sua conta de automação do espaço de trabalho do Log Analytics. No espaço de trabalho, selecione **conta de automação** sob **recursos relacionados**. Na página conta de automação, selecione **desvincular conta**.
 
 ## <a name="next-steps"></a>Próximas etapas
 

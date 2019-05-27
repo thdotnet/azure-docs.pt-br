@@ -7,14 +7,14 @@ ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: chlound
-ms.openlocfilehash: 1897193f0ae781029a7303c42ca8eeaa51389892
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: abbad97e29f60e5f135017cd43f9d30eba1805ca
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920586"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66142968"
 ---
-# <a name="refresh-with-azure-automation"></a>Atualizar com a automação do Azure
+# <a name="refresh-with-azure-automation"></a>Atualizar com Automação do Azure
 
 Usando a automação do Azure e Runbooks do PowerShell, você pode executar operações de atualização de dados automatizado em seus modelos de tabela de análise do Azure.  
 
@@ -148,7 +148,7 @@ O **corpo** é um documento JSON que deve conter as seguintes propriedades:
 |Propriedade  |Value  |
 |---------|---------|
 |**AnalysisServicesDatabase**     |O nome do banco de dados do Azure Analysis Services <br/> Exemplo: AdventureWorksDB         |
-|**AnalysisServicesServer**     |O nome do servidor do Azure Analysis Services. <br/> Exemplo: https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/         |
+|**AnalysisServicesServer**     |O nome do servidor do Azure Analysis Services. <br/> Exemplo: https:\//westus.asazure.windows.net/servers/myserver/models/AdventureWorks/         |
 |**DatabaseRefreshType**     |O tipo de atualização para executar. <br/> Exemplo: Completo         |
 
 Exemplo de corpo JSON:

@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
 ms.openlocfilehash: 2e53b0d582a69e10de22e85720833800d44058e3
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58793831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66141480"
 ---
 # <a name="how-to-use-role-based-access-control-in-azure-api-management"></a>Como usar o Controle de Acesso Baseado em Função no Gerenciamento de API do Azure
 
@@ -33,7 +33,7 @@ No momento, o Gerenciamento de API oferece três funções internas e adicionar�
 
 A tabela a seguir fornece breves descrições das funções internas. Atribua essas funções usando o portal do Azure ou outras ferramentas, incluindo o Azure [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell), [CLI do Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli) e [API REST](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest). Para obter detalhes sobre como atribuir funções internas, confira [Usar atribuições de função para gerenciar o acesso aos recursos de sua assinatura do Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
 
-| Função          | Acesso de leitura<sup>[1]</sup> | Acesso de gravação<sup>[2]</sup> | Criação de serviço, exclusão, colocação em escala, VPN e configuração de domínio personalizado | Acesso ao portal do editor herdado | DESCRIÇÃO
+| Função          | Acesso de leitura<sup>[1]</sup> | Acesso de gravação<sup>[2]</sup> | Criação de serviço, exclusão, colocação em escala, VPN e configuração de domínio personalizado | Acesso ao portal do editor herdado | Descrição
 | ------------- | ---- | ---- | ---- | ---- | ---- 
 | Colaborador do serviço de Gerenciamento de API do Azure | ✓ | ✓ | ✓ | ✓ | Superusuário. Tem acesso total de CRUD aos serviços e entidades do Gerenciamento de API (por exemplo, APIs e políticas). Tem acesso ao portal do publicador herdado. |
 | Leitor do serviço de Gerenciamento de API do Azure | ✓ | | || Tem acesso somente leitura aos serviços e entidades do Gerenciamento de API. |

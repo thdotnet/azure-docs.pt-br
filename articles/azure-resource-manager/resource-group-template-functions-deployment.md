@@ -13,11 +13,11 @@ ms.workload: na
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.openlocfilehash: c5bd40741ec0fe047f98b4b4431819d90e188385
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56268080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66128674"
 ---
 # <a name="deployment-functions-for-azure-resource-manager-templates"></a>Funções de implantação para modelos do Azure Resource Manager 
 
@@ -33,7 +33,7 @@ Para obter valores de recursos, de grupos de recursos ou de assinaturas, veja [F
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="deployment"></a>implantação
+## <a name="deployment"></a>Implantação
 `deployment()`
 
 Retorna informações sobre a operação de implantação atual.
@@ -158,14 +158,14 @@ Para um modelo no nível da assinatura, que usa a função de implantação, con
 
 <a id="parameters" />
 
-## <a name="parameters"></a>parâmetros
+## <a name="parameters"></a>parameters
 `parameters(parameterName)`
 
 Retorna um valor de parâmetro. O nome do parâmetro especificado deve ser definido na seção de parâmetros do modelo.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Obrigatório | Type | Descrição |
 |:--- |:--- |:--- |:--- |
 | parameterName |Sim |string |O nome do parâmetro a retornar. |
 
@@ -252,13 +252,13 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Valor |
+| NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| stringOutput | Cadeia de caracteres | opção 1 |
+| stringOutput | String | opção 1 |
 | intOutput | Int | 1 |
-| objectOutput | Objeto | {"one": "a", "two": "b"} |
+| objectOutput | Object | {"one": "a", "two": "b"} |
 | arrayOutput | Matriz | [1, 2, 3] |
-| crossOutput | Cadeia de caracteres | opção 1 |
+| crossOutput | String | opção 1 |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -281,9 +281,9 @@ Retorna o valor da variável. O nome do parâmetro especificado deve ser definid
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Obrigatório | Type | Descrição |
 |:--- |:--- |:--- |:--- |
-| variableName |Sim |Cadeia de caracteres |O nome da variável a retornar. |
+| variableName |Sim |String |O nome da variável a retornar. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -355,12 +355,12 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Valor |
+| NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| exampleOutput1 | Cadeia de caracteres | myVariable |
+| exampleOutput1 | String | myVariable |
 | exampleOutput2 | Matriz | [1, 2, 3, 4] |
-| exampleOutput3 | Cadeia de caracteres | myVariable |
-| exampleOutput4 |  Objeto | {"property1": "value1", "property2": "value2"} |
+| exampleOutput3 | String | myVariable |
+| exampleOutput4 |  Object | {"property1": "value1", "property2": "value2"} |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 

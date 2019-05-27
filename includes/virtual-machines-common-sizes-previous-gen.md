@@ -5,15 +5,15 @@ services: virtual-machines-windows, virtual-machines-linux
 author: cynthn
 ms.service: multiple
 ms.topic: include
-ms.date: 04/11/2019
+ms.date: 05/16/2019
 ms.author: cynthn;azcspmt;jonbeck
 ms.custom: include file
-ms.openlocfilehash: da1328ba826ce940115bc45ffc8d6f417eeda798
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 40857879826963f9a82cb5864b6980305c522679
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64743884"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66145696"
 ---
 Esta seção fornece informações sobre as gerações anteriores de tamanhos de máquina virtual. Esses tamanhos ainda podem ser usados, mas as gerações mais recentes estão disponíveis. 
 
@@ -25,9 +25,9 @@ As VMs da série F são uma ótima opção para as cargas de trabalho que exigem
 
 ACU: 210 - 250
 
-Armazenamento Premium:  Sem suporte
+Armazenamento Premium:  Sem Suporte
 
-Cache de armazenamento Premium:  Sem suporte
+Cache de armazenamento Premium:  Sem Suporte
 
 | Tamanho         | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps de leitura / MBps de gravação | Discos de dados máximos / taxa de transferência: IOPS | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
 |--------------|-----------|-------------|----------------|----------------------------------------------------------|-----------------------------------|------------------------------|
@@ -69,7 +69,7 @@ ACU: 180-240
 
 Armazenamento Premium:  Com suporte
 
-Cache de armazenamento Premium:  Sem suporte
+Cache de armazenamento Premium:  Sem Suporte
  
 | Tamanho          | vCPU | Memória (GiB) | Armazenamento temporário (GiB) | Discos de dados máximos | Taxa de transferência máxima de armazenamento temporário (IOPS / MBps) | Taxa de transferência máxima do disco não armazenado em cache (IOPS / MBps) | Máximo de NICs/Largura de banda de rede esperado (Mbps) | 
 |----------------|-----------|-------------|--------------------------|----------------|-------------------------------------------------------------|-------------------------------------------|------------------------------| 
@@ -81,6 +81,20 @@ Cache de armazenamento Premium:  Sem suporte
 A taxa de transferência máxima possível do disco com VMs da série Ls pode ser limitada pelo número, tamanho e divisão dos discos anexados. Para saber mais, consulte [Projetar para alto desempenho](../articles/virtual-machines/windows/premium-storage-performance.md).
 
 <sup>1</sup> A instância é isolada em hardware dedicado a um único cliente.
+
+## <a name="nvv2-series-preview"></a>Série NVv2 (versão prévia)
+
+**Recomendação de tamanho mais recente**: [Série NVv3 (visualização)](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu#nvv2-series-preview)
+
+As máquinas virtuais da série NVv2 contam com as GPUs [Tesla M60 NVIDIA](http://images.nvidia.com/content/tesla/pdf/188417-Tesla-M60-DS-A4-fnl-Web.pdf) e a tecnologia NVIDIA GRID com CPUs Intel Broadwell. Essas máquinas virtuais são direcionadas para aplicativos com gráficos acelerados por GPU e áreas de trabalho virtuais em que os clientes querem visualizar dados, simular resultados para exibição, trabalhar no CAD ou renderizar e transmitir conteúdo por streaming. Além disso, essas máquinas virtuais podem executar cargas de trabalho de precisão simples, como codificação e renderização. As máquinas virtuais NVv2 são compatíveis com o Armazenamento Premium e oferecem duas vezes mais memória (RAM) em comparação com a Série NV anterior.  
+
+Cada GPU em instâncias da NVv2 vem com uma licença GRID. Esta licença oferece flexibilidade para usar uma instância NV como uma estação de trabalho virtual para um único usuário ou 25 usuários simultâneos podem se conectar à VM para um cenário de aplicativo virtual.
+
+| Tamanho | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | GPU | Memória da GPU: GiB | Discos de dados máximos | Máximo de NICs | Estações de trabalho virtuais | Aplicativos virtuais | 
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Standard_NV6s_v2 |6 |112 |320 | 1 | 8 | 12 | 4 | 1 | 25 |
+| Standard_NV12s_v2 |12 |224 |640 | 2 | 16 | 24 | 8 | 2 | 50 |
+| Standard_NV24s_v2 |24 |448 |1280 | 4 | 32 | 32 | 8 | 4 | 100 |
 
 ### <a name="standard-a0---a4-using-cli-and-powershell"></a>Standard A0 - A4 usando CLI e PowerShell
 
