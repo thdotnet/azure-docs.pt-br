@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6404356edca606d78656011b9dec654e9f29edd3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5a019aaec270fe1beb3914e7ab388fce9a701bcc
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60415015"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65988617"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-for-iis-web-apps"></a>Configurar o Servidor de Autenticação Multifator do Azure para aplicativos Web do IIS
 
@@ -76,4 +76,4 @@ Os IPs Confiáveis permitem que os usuários ignorem a Autenticação Multifator
 1. Na seção Autenticação IIS, clique na guia **IPs Confiáveis**.
 2. Clique em **Adicionar**.
 3. Quando a caixa de diálogo Adicionar IPs Confiáveis aparecer, selecione o botão de opção **IP Único**, **Intervalo de IP** ou **Sub-rede**.
-4. Insira o endereço IP, o intervalo dos endereços IP ou a sub-rede que devem ser colocados na lista de permissões. Se for inserir uma sub-rede, selecione a Máscara de Rede apropriada e clique em **OK**. A lista de autorizados agora foi adicionada.
+4. Insira o endereço IP, intervalo de endereços IP ou sub-rede deve ser permitido. Se for inserir uma sub-rede, selecione a Máscara de Rede apropriada e clique em **OK**.

@@ -4,15 +4,15 @@ description: Equilíbrio entre disponibilidade e desempenho para vários níveis
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 04/08/2019
+ms.date: 05/21/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: a76e277bf56861bcaefb5bf7f8b3b3bc03ad1164
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 09777a9980e4576a5d00123516e33696e845dcac
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60894021"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990217"
 ---
 # <a name="consistency-availability-and-performance-tradeoffs"></a>Compensações de consistência, disponibilidade e desempenho 
 
@@ -54,10 +54,10 @@ A tabela a seguir define a relação entre a durabilidade de dados e o modelo de
 |---------|---------|---------|---------|---------|
 |1|Único ou vários mestres|Qualquer nível de consistência|< 240 minutos|< 1 semana|
 |> 1|Único mestre|Sessão, Prefixo Consistente, Eventual|< 15 minutos|< 15 minutos|
-|> 1|Único mestre|Bounded staleness|*K* & *T*|< 15 minutos|
+|> 1|Único mestre|Desatualização Limitada|*K* & *T*|< 15 minutos|
+|> 1|Único mestre|Forte|0|< 15 minutos|
 |> 1|Vários mestres|Sessão, Prefixo Consistente, Eventual|< 15 minutos|0|
-|> 1|Vários mestres|Bounded staleness|*K* & *T*|0|
-|> 1|Único ou vários mestres|Strong|0|< 15 minutos|
+|> 1|Vários mestres|Desatualização Limitada|*K* & *T*|0|
 
 *K* = o número de *"K"* versões (ou seja, as atualizações) de um item.
 

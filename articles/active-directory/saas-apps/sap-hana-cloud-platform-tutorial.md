@@ -16,11 +16,11 @@ ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b345656b30a9bb182c097a4c9e18d71a293bf420
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65868037"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform"></a>Tutorial: Integração do Azure Active Directory ao SAP Cloud Platform
 
@@ -174,7 +174,7 @@ Para configurar o logon único do Azure AD com a SAP Cloud Platform, realize as 
 
     f. Para **Forçar Autenticação**, selecione **Desabilitado**.
 
-    g. Clique em **Salvar**.
+    g. Clique em **Save** (Salvar).
 
 4. Depois de salvar as configurações do **Provedor de serviços Llocal**, faça o seguinte para obter a URL de resposta:
    
@@ -306,7 +306,7 @@ Para permitir que os usuários do Azure AD façam logon na SAP Cloud Platform, a
 
     d. Clique em **Atribuir** para atribuir uma função ao usuário.
 
-    e. Clique em **Salvar**.
+    e. Clique em **Save** (Salvar).
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 

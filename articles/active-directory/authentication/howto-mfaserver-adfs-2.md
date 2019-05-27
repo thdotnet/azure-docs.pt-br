@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5d345645337d070be15346b245bfaecd1cabc7e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 45ff198f55ff769667cfaef2dd8665d2c34314e9
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60415378"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65987754"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-to-work-with-ad-fs-20"></a>Configurar o Servidor de Autenticação Multifator do Azure para trabalhar com o AD FS 2.0
 
@@ -85,7 +85,7 @@ Você habilitou a autenticação do IIS, mas para executar a pré-autenticação
 3. Se os usuários inserirem seu nome de usuário no formato "domínio\nomedousuário", o servidor precisará ser capaz de retirar o domínio de nome de usuário quando criar a consulta LDAP. Isso pode ser feito por meio de uma configuração do registro.
 4. Abra o editor de registro e vá para HKEY_LOCAL_MACHINE/SOFTWARE/Wow6432Node/Positive Networks/PhoneFactor em um servidor de 64 bits. Em um servidor de 32 bits, retire “Wow6432Node” do caminho. Crie uma chave de registro DWORD chamada “UsernameCxz_stripPrefixDomain” e defina o valor para 1. Agora a Autenticação Multifator do Azure está protegendo o proxy do AD FS.
 
-Verifique se os usuários foram importados do Active Directory no Servidor. Confira a [seção IPs confiáveis](#trusted-ips) se você quiser incluir na lista de permissões os endereços IP internos para que a verificação em duas etapas não seja necessária ao entrar no site por meio desses locais.
+Verifique se os usuários foram importados do Active Directory no Servidor. Consulte a [seção IPs confiáveis](#trusted-ips) se você gostaria de permitir interno endereços IP para que a verificação em duas etapas não é necessária ao entrar no site desses locais.
 
 ![Editor do registro para definir configurações da empresa](./media/howto-mfaserver-adfs-2/reg.png)
 
@@ -109,15 +109,17 @@ Você pode proteger o AD FS quando o proxy do AD FS não é usado. Instale o Ser
 
 Agora a Autenticação Multifator do Azure está protegendo o ADFS.
 
-Verifique se os usuários foram importados do Active Directory no Servidor. Confira a seção IPs confiáveis se você que incluir endereços IP internos na lista de permissões para que a verificação em duas etapas não seja necessária ao entrar no site por meio desses locais.
+Verifique se os usuários foram importados do Active Directory no Servidor. Se você gostaria de permitir que os endereços IP internos para que a verificação em duas etapas não é necessária ao entrar no site desses locais, consulte a seção IPs confiáveis.
 
 ## <a name="trusted-ips"></a>IPs confiáveis
+
 Os IPs Confiáveis permitem que os usuários ignorem a Autenticação Multifator do Azure para solicitações de site que se originam de sub-redes ou endereços IP específicos. Por exemplo, convém isentar os usuários da verificação em duas etapas quando eles entrarem por meio do Office. Para isso, você especifica a sub-rede do escritório como uma entrada de IPs Confiáveis.
 
 ### <a name="to-configure-trusted-ips"></a>Para configurar IPs confiáveis
+
 1. Na seção Autenticação IIS, clique na guia **IPs Confiáveis**.
 2. Clique em **Adicionar…** .
 3. Quando a caixa de diálogo Adicionar IPs Confiáveis aparecer, selecione o botão de opção **IP Único**, **Intervalo de IP** ou **Sub-rede**.
-4. Insira o endereço IP, o intervalo dos endereços IP ou a sub-rede que devem ser colocados na lista de permissões. Se inserir uma sub-rede, selecione a Máscara de Rede apropriada e clique no botão **OK**. O IP confiável foi adicionado.
+4. Insira o endereço IP, intervalo de endereços IP ou sub-rede deve ser permitido. Se inserir uma sub-rede, selecione a Máscara de Rede apropriada e clique no botão **OK**.
 
 ![Configurar IPs confiáveis para o servidor MFA](./media/howto-mfaserver-adfs-2/trusted.png)

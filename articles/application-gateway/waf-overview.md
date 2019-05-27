@@ -4,15 +4,15 @@ description: Este artigo fornece uma visão geral do WAF (Firewall do Aplicativo
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.date: 2/22/2019
+ms.date: 5/22/2019
 ms.author: amsriva
 ms.topic: conceptual
-ms.openlocfilehash: 830513a03bd65ca14cb0938ae599a676f1bb3bca
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 9c2759222198f5df682d9e7a5363c0d9679e0fad
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58518177"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991395"
 ---
 # <a name="web-application-firewall-for-azure-application-gateway"></a>Firewall do aplicativo Web para o Gateway de aplicativo do Azure
 
@@ -38,7 +38,7 @@ Esta seção descreve os principais benefícios que fornecem o Gateway de aplica
 
 * Protege seus aplicativos web contra vulnerabilidades da web e de ataques sem modificação no código de back-end.
 
-* Protege vários aplicativos web ao mesmo tempo. Uma instância do Gateway de aplicativo pode hospedar até 20 sites que são protegidos pelo firewall do aplicativo web.
+* Protege vários aplicativos web ao mesmo tempo. Uma instância do Gateway de aplicativo pode hospedar até 100 sites que são protegidos pelo firewall do aplicativo web.
 
 ### <a name="monitoring"></a>Monitoramento
 
@@ -82,7 +82,7 @@ O WAF protege contra vulnerabilidades da web a seguir:
 
 CRS 3.0 inclui 13 grupos de regras, conforme mostrado na tabela a seguir. Cada grupo contém várias regras, que podem ser desabilitadas.
 
-|Grupo de regras|DESCRIÇÃO|
+|Grupo de regras|Descrição|
 |---|---|
 |**[REQUEST-911-METHOD-ENFORCEMENT](application-gateway-crs-rulegroups-rules.md#crs911)**|Bloquear métodos (PUT, PATCH)|
 |**[REQUEST-913-SCANNER-DETECTION](application-gateway-crs-rulegroups-rules.md#crs913)**|Proteção contra scanners de porta e ambiente|
@@ -100,7 +100,7 @@ CRS 3.0 inclui 13 grupos de regras, conforme mostrado na tabela a seguir. Cada g
 
 O CRS 2.2.9 inclui 10 grupos de regras, conforme mostrado na tabela a seguir. Cada grupo contém várias regras, que podem ser desabilitadas.
 
-|Grupo de regras|DESCRIÇÃO|
+|Grupo de regras|Descrição|
 |---|---|
 |**[crs_20_protocol_violations](application-gateway-crs-rulegroups-rules.md#crs20)**|Proteção contra violações de protocolo (como caracteres inválidos ou um GET com um corpo de solicitação)|
 |**[crs_21_protocol_anomalies](application-gateway-crs-rulegroups-rules.md#crs21)**|Proteção contra informações de cabeçalho incorretas|
@@ -121,12 +121,19 @@ O WAF do Gateway de aplicativo pode ser configurado para ser executado em dois m
 * **Modo de prevenção**: Invasões de blocos e ataques que as regras de detecção. O invasor recebe uma exceção de "403 acesso não autorizado", e a conexão será encerrada. Modo de prevenção registra tais ataques nos logs do WAF.
 
 ### <a name="anomaly-scoring-mode"></a>Modo de pontuação de anomalias
- 
+
 OWASP tem dois modos para decidir se deseja bloquear o tráfego: Modo tradicional e modo de pontuação de anomalias.
 
 No modo tradicional, o tráfego que corresponde a qualquer regra é considerado independentemente de quaisquer outras correspondências de regra. Esse modo é fácil de entender. Mas a falta de informações sobre quantas regras correspondem a uma solicitação específica é uma limitação. Portanto, o modo de pontuação de anomalias foi introduzido. É o padrão para 3 OWASP. *x*.
 
 No modo de pontuação de anomalias, o tráfego que corresponde a qualquer regra não é bloqueado imediatamente quando o firewall está em modo de prevenção. As regras têm uma severidade específica: *Críticos*, *erro*, *aviso*, ou *aviso*. Essa severidade afeta um valor numérico para a solicitação, o que é chamado de pontuação de anomalias. Por exemplo, uma *aviso* regra de correspondência contribui 3 para a pontuação. Uma *crítico* regra de correspondência contribui 5.
+
+|Severity  |Value  |
+|---------|---------|
+|Crítica     |5|
+|Erro        |4|
+|Aviso      |3|
+|Aviso       |2|
 
 Há um limite de 5 para a pontuação de anomalias para bloquear o tráfego. Portanto, um único *crítico* correspondência de regra é suficiente para o Gateway de aplicativo WAF bloquear uma solicitação, mesmo no modo de prevenção. Mas uma *aviso* regra de correspondência só aumenta a anomalia pontuação por 3, não é suficiente por si só para bloquear o tráfego.
 
@@ -149,7 +156,7 @@ Logs de Gateway de aplicativo são integrados com [do Azure Monitor](../monitori
 
 ![Janela de visão geral da Central de segurança](./media/waf-overview/figure1.png)
 
-#### <a name="logging"></a>Registro em log
+#### <a name="logging"></a>Registro em Log
 
 O WAF do Gateway de aplicativo fornece relatórios detalhados sobre cada ameaça detectado. Registro em log é integrado aos logs de diagnóstico do Azure. Alertas são registrados no formato. JSON. Esses logs podem ser integrados aos [logs do Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md).
 

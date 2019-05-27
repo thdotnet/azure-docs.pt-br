@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/12/2019
+ms.date: 05/22/2019
 ms.author: magoedte
-ms.openlocfilehash: 45c9a8da8344aa6aaaa19b534451a7276e96911a
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 9fa76c9637a6dcdca48bf45e8ee2aa9305a4f64f
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65522183"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66130447"
 ---
 # <a name="understand-the-health-of-your-azure-virtual-machines"></a>Entender a integridade de suas máquinas virtuais do Azure
 
@@ -85,7 +85,7 @@ Entre no [Portal do Azure](https://portal.azure.com).
 
 Antes de começar a usar o recurso Funcionamento para uma única máquina virtual ou um grupo de VMs, é importante fornecer uma breve introdução para que você entenda como as informações são apresentadas e o que as visualizações representam.  
 
-## <a name="view-health-directly-from-a-virtual-machine"></a>Visualize a integridade diretamente de uma máquina virtual 
+### <a name="view-health-directly-from-a-virtual-machine"></a>Visualize a integridade diretamente de uma máquina virtual 
 
 Para exibir a integridade de uma VM do Azure, selecione **Insights (visualização)** no painel esquerdo da máquina virtual. Na página de informações da VM, **Integridade** está aberto por padrão e mostra a visualização de integridade da VM.  
 
@@ -96,11 +96,21 @@ Na guia **Integridade**, na seção **Integridade Convidada da VM**, a tabela mo
 Os estados de integridade definidos para uma VM estão descritos na seguinte tabela: 
 
 |Ícone |Estado de integridade |Significado |
-|-----|-------------|------------|
+|-----|-------------|---------------|
 | |Adequado |O estado de integridade é íntegro se está dentro das condições de integridade definidas, que indicam ausência de problemas detectados na VM e que ela funciona conforme necessário. Com um monitor de acumulação pai, o Rollup de integridade e ele reflete o estado mais favorável, ou pior do filho.|
 | |Crítica |O estado de integridade é crítico se ele não está dentro da condição de integridade definida, o que indica que um ou mais problemas críticos foram detectados e precisam ser resolvidos para restaurar a funcionalidade normal. Com um monitor de acumulação pai, o Rollup de integridade e ele reflete o estado mais favorável, ou pior do filho.|
 | |Aviso |O estado de integridade será de Aviso se estiver entre dois limites para a condição de integridade definida, em que um indica um estado de *Aviso* e o outro indica um estado *Crítico* (três limites de estado de integridade podem ser configurados), ou quando um problema não crítico é detectado, podendo vir a causar problemas críticos se não for resolvido. Com rollup pai monitor, se um ou mais filhos estão em um estado de aviso, em seguida, o pai refletirá *aviso* estado. Se houver um filho que esteja em um *Crítico* e outro filho em um estado *Aviso*, o pacote pai mostrará um estado de integridade de *Crítico*.|
-| |Desconhecido |O estado de integridade está em um estado *Desconhecido* quando o estado de integridade não pode ser calculado por vários motivos, como não conseguir coletar dados, serviço não inicializado, etc. Esse estado de integridade não é configurável.| 
+| |Desconhecido |Estado de integridade estiver *desconhecido* quando não puder ser calculado por vários motivos. Consulte a nota de rodapé seguinte <sup>1</sup> para obter detalhes adicionais e possíveis soluções para resolvê-los. |
+
+<sup>1</sup> desconhecido o estado de integridade é causado por problemas a seguir:
+
+- Agente foi reconfigurado e não há mais relatórios no espaço de trabalho especificado quando o Azure Monitor para VMs foi habilitado. Para configurar o agente para relatar para o espaço de trabalho, consulte [adição ou remoção de um espaço de trabalho](../platform/agent-manage.md#adding-or-removing-a-workspace).
+- VM foi excluída.
+- Espaço de trabalho associado com o Azure Monitor para as VMs é excluído. Para recuperar o espaço de trabalho, se você tiver suporte Premier benefícios que você pode abrir uma solicitação de suporte com [Premier](https://premier.microsoft.com/).
+- Dependências de solução tem sido excluídas. Para habilitar novamente as soluções do ServiceMap e InfrastructureInsights em seu espaço de trabalho do Log Analytics, você pode reinstalá-lo usando um [modelo do Resource Manager](vminsights-enable-at-scale-powershell.md#install-the-servicemap-and-infrastructureinsights-solutions) que foi fornecida ou usando a opção de configurar o espaço de trabalho encontradas no Obtenha o guia de Introdução.
+- VM foi desligado.
+- Serviço VM do Azure está disponível ou manutenção está sendo executada.
+- Espaço de trabalho [diária ou limite de retenção](../platform/manage-cost-storage.md) for atendida.
 
 A seleção de **Exibir diagnósticos de integridade** abre uma página mostrando todos os componentes da VM, critérios de integridade associados, alterações de estado e outros problemas significativos encontrados pelos componentes de monitoramento relacionados à VM. Para saber mais, consulte [Diagnóstico de integridade](#health-diagnostics). 
 
@@ -108,7 +118,7 @@ Na seção **Integridade do componente**, a tabela mostra um status cumulativo d
 
 Ao acessar a integridade de uma VM do Azure executando o sistema operacional Windows, o estado de integridade da parte superior cinco principais Windows são mostrados na seção **Core services integridade**.  A seleção de qualquer um dos serviços abre uma página listando os critérios de integridade que monitoram esse componente e seu estado de integridade.  Clicar no nome dos critérios de integridade abrirá o painel de propriedades e, a partir daqui, você poderá revisar os detalhes de configuração, inclusive se os critérios de integridade tiverem um alerta do Monitor do Azure correspondente definido. Para saber mais sobre isso, consulte [Diagnóstico de Integridade e trabalhando com critérios de integridade](#health-diagnostics).  
 
-## <a name="aggregate-virtual-machine-perspective"></a>Perspectiva de máquina de virtual de agregação
+### <a name="aggregate-virtual-machine-perspective"></a>Perspectiva de máquina de virtual de agregação
 
 Para exibir a coleta de integridade de todas as suas máquinas virtuais em um grupo de recursos, na lista de navegação do portal, selecione **Monitor do Azure** e, em seguida, selecione **Máquinas Virtuais (visualização)**.  
 
@@ -154,7 +164,7 @@ Você pode fazer uma busca para ver quais instâncias estão íntegras, clicando
 
 ## <a name="health-diagnostics"></a>Diagnóstico de integridade
 
-A página **Diagnóstico de integridade** permite que você visualize o modelo de integridade de uma VM, listando todos os componentes da VM em questão, os critérios de integridade associados, as alterações de estado e outros problemas significativos identificados por componentes monitorados relacionados à VM.
+O **diagnóstico de integridade** página permite que você visualize o modelo de integridade de uma VM, listando todos os componentes da VM, associado critérios de integridade, alterações de estado, e outros problemas significativos identificados pelo monitorado componentes relacionados a VM.
 
 ![Exemplo de página de diagnóstico de integridade para uma VM](./media/vminsights-health/health-diagnostics-page-01.png)
 
@@ -343,7 +353,7 @@ Para habilitar ou desabilitar um alerta para um critério de integridade especí
 O Azure Monitor de integridade de VMs dá suporte a notificações de SMS e email quando os alertas são gerados quando os critérios de integridade se torna não íntegro. Para configurar notificações, você precisa observar o nome do grupo de ação que está configurado para enviar notificações por email ou SMS. 
 
 >[!NOTE]
->Essa ação precisa ser executada em relação a cada VM monitorado que você deseja receber uma notificação para.
+>Essa ação precisa ser executada em relação a cada VM monitorado que você deseja receber uma notificação para, não se aplica a todas as VMs no grupo de recursos.  
 
 1. Em uma janela de terminal, digite **armclient.exe login**. Isso solicita que você entrar no Azure.
 

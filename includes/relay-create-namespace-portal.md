@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: clemensv
 ms.openlocfilehash: bbcf38ab54632144920b729f433c222f426d96dc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60419676"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66111537"
 ---
 1. Entre no [Portal do Azure][Azure portal].
 2. No menu esquerdo, selecione **+ Criar um recurso**. Em seguida, selecione **Integração** > **Retransmissão**. Se a opção **Retransmissão** não for exibida na lista, selecione **Ver Tudo** no canto superior direito. 
@@ -18,7 +18,7 @@ ms.locfileid: "60419676"
 5. Na caixa [Grupo de recursos](../articles/azure-resource-manager/manage-resource-groups-portal.md), selecione um grupo de recursos existente no qual colocar o namespace, ou então crie um novo.  
 6. Em **Localização**, selecione o país ou região no qual o namespace deve ser hospedado.
    
-    ![Criar um namespace][create-namespace]
+    ![Criar namespace][create-namespace]
 7. Selecione **Criar**. O sistema cria o seu namespace e o habilita. Depois de alguns minutos, o sistema provisiona recursos para sua conta.
 
 ### <a name="get-management-credentials"></a>Obter credenciais de gerenciamento

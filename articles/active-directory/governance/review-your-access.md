@@ -11,22 +11,28 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 02/20/2019
+ms.date: 05/21/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3fe2013ff84dd0451fed7d108539606520cb9403
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6b38422b22885ad96c6681abe58b897155809521
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60384457"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66113198"
 ---
 # <a name="review-access-for-yourself-to-groups-or-applications-in-azure-ad-access-reviews"></a>Examinar o acesso a grupos por conta própria ou revisões de acesso de aplicativos no Azure AD
 
 Azure Active Directory (Azure AD) simplifica como as empresas gerenciam o acesso a aplicativos ou grupos no Azure AD e revisões de outros serviços Online da Microsoft com um recurso chamado acesso do Azure AD.
 
 Este artigo descreve como revisar seu próprio acesso a um grupo ou um aplicativo.
+
+## <a name="prerequisites"></a>Pré-requisitos
+
+- Azure AD Premium P2
+
+Para obter mais informações, consulte [quais usuários devem ter licenças?](access-reviews-overview.md#which-users-must-have-licenses).
 
 ## <a name="open-the-access-review"></a>Abra a revisão de acesso
 
@@ -79,6 +85,6 @@ Depois que você abriu a revisão de acesso, você poderá ver seu acesso.
     > [!NOTE]
     > Se você indicou que você não precisa mais acesso, você não é removidos imediatamente. Você é removidos quando a análise foi concluída ou quando um administrador parar a revisão.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Concluir uma revisão de acesso de aplicativos ou grupos](complete-access-review.md)

@@ -5,15 +5,15 @@ services: active-directory
 author: rolyon
 ms.service: active-directory
 ms.topic: include
-ms.date: 04/16/2019
+ms.date: 05/16/2019
 ms.author: rolyon
 ms.custom: include file
-ms.openlocfilehash: ef8155cda6c31a63204af80ca091a13bb16a687d
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 6711506c1e489dcbd50aedd36241affc3bbed80b
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64866428"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66113399"
 ---
 ### <a name="policy-for-users-in-your-directory"></a>Política: Para usuários em seu diretório
 
@@ -34,6 +34,9 @@ Siga estas etapas se desejar que sua política para usuários e grupos no diret�
 ### <a name="policy-for-users-not-in-your-directory"></a>Política: Para que os usuários não em seu diretório
 
 Siga estas etapas se desejar que sua política para usuários não em seu diretório que podem solicitar este pacote de acesso. Diretórios devem ser configurados para ser permitido na **restrições de colaboração de relações organizacionais** configurações.
+
+> [!NOTE]
+> Uma conta de usuário convidado será criada para um usuário ainda não existem no seu diretório cuja solicitação é aprovada ou aprovada automaticamente. O convidado será convidado, mas não receberá um email de convite. Em vez disso, eles receberão um email quando sua atribuição do pacote de acesso é entregue. Por padrão, posteriormente, quando que não seja o usuário convidado tem qualquer acesso pacote atribuições, porque sua última atribuição expirou ou foi cancelada, que conta de usuário convidado será impedida de entrar e excluída. Se você quiser manter usuários convidados em seu diretório indefinidamente, mesmo não se tiverem nenhuma atribuição de pacote de acesso, você pode alterar as configurações para a sua configuração de gerenciamento de direitos.
 
 1. No **os usuários podem solicitar acesso** seção, selecione **para que os usuários não em seu diretório**.
 

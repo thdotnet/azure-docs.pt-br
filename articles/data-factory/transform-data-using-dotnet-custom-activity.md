@@ -12,11 +12,11 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 ms.openlocfilehash: ea409d6705d0146e9cb32ba11e6b785cf527739c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58904569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66165971"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Usar atividades personalizadas em um pipeline do Data Factory do Azure
 
@@ -102,16 +102,16 @@ A tabela a seguir descreve os nomes e as descrições de propriedades que são e
 
 | Propriedade              | DESCRIÇÃO                              | Obrigatório |
 | :-------------------- | :--------------------------------------- | :------- |
-| Nome                  | Nome da atividade no pipeline     | Sim      |
-| Descrição           | Texto que descreve o que a atividade faz.  | Não        |
-| Tipo                  | Para a atividade personalizada, o tipo de atividade é **Personalizado**. | Sim      |
+| nome                  | Nome da atividade no pipeline     | Sim      |
+| description           | Texto que descreve o que a atividade faz.  | Não       |
+| tipo                  | Para a atividade personalizada, o tipo de atividade é **Personalizado**. | Sim      |
 | linkedServiceName     | Serviço vinculado ao Lote do Azure. Para saber mais sobre esse serviço vinculado, consulte o artigo [Compute linked services](compute-linked-services.md) (Serviços de computação vinculados).  | Sim      |
 | command               | Comando do aplicativo personalizado a ser executado. Se o aplicativo já estiver disponível no nó do pool do Lote do Azure, resourceLinkedService e folderPath poderão ser ignorados. Por exemplo, você pode especificar o comando como `cmd /c dir`, que tem suporte nativo no nó do pool do Lote do Windows. | Sim      |
 | resourceLinkedService | Serviço de vinculado do Armazenamento do Azure para a conta de armazenamento na qual o aplicativo personalizado é armazenado | Nenhum &#42;       |
 | folderPath            | Caminho para a pasta do aplicativo personalizado e de todas as suas dependências<br/><br/>Se você tiver dependências armazenadas em subpastas - ou seja, em uma estrutura hierárquica de pastas em *folderPath* - a estrutura de pastas estará nivelada quando os arquivos forem copiados para o Lote do Azure. Ou seja, todos os arquivos são copiados em uma única pasta sem subpastas. Para contornar esse comportamento, considere compactar os arquivos, copiando o arquivo compactado e, em seguida, descompactá-lo com código personalizado no local desejado. | Nenhum &#42;       |
-| referenceObjects      | Uma matriz de serviços vinculados e conjuntos de dados existentes. Os serviços vinculados e os conjuntos de dados referenciados são passados para o aplicativo personalizado no formato JSON para que o seu código personalizado possa referenciar os recursos do Data Factory | Não        |
-| extendedProperties    | Propriedades definidas pelo usuário que podem ser passadas para o aplicativo personalizado no formato JSON para que o seu código personalizado possa referenciar propriedades adicionais | Não        |
-| retentionTimeInDays | O tempo de retenção para os arquivos enviados para a atividade personalizada. Valor padrão é 30 dias. | Não  |
+| referenceObjects      | Uma matriz de serviços vinculados e conjuntos de dados existentes. Os serviços vinculados e os conjuntos de dados referenciados são passados para o aplicativo personalizado no formato JSON para que o seu código personalizado possa referenciar os recursos do Data Factory | Não       |
+| extendedProperties    | Propriedades definidas pelo usuário que podem ser passadas para o aplicativo personalizado no formato JSON para que o seu código personalizado possa referenciar propriedades adicionais | Não       |
+| retentionTimeInDays | O tempo de retenção para os arquivos enviados para a atividade personalizada. Valor padrão é 30 dias. | Não |
 
 &#42; As propriedades `resourceLinkedService` e `folderPath` devem ser ambas especificadas ou ambas omitidas.
 
@@ -310,7 +310,7 @@ Você pode enviar valores personalizados do seu código em uma atividade persona
 
 ## <a name="retrieve-securestring-outputs"></a>Recuperar saídas do SecureString
 
-Os valores de propriedades confidenciais designados como tipo *SecureString*, conforme mostrado em alguns dos exemplos deste artigo, são mascarados na guia Monitoramento na interface do usuário do Data Factory.  Na execução real do pipeline, no entanto, uma propriedade *SecureString* é serializada como JSON no arquivo `activity.json` como texto simples. Por exemplo: 
+Os valores de propriedades confidenciais designados como tipo *SecureString*, conforme mostrado em alguns dos exemplos deste artigo, são mascarados na guia Monitoramento na interface do usuário do Data Factory.  Na execução real do pipeline, no entanto, uma propriedade *SecureString* é serializada como JSON no arquivo `activity.json` como texto simples. Por exemplo:
 
 ```json
 "extendedProperties": {
@@ -345,7 +345,7 @@ A tabela a seguir descreve as diferenças entre a Atividade Personalizada do Dat
 |Conjunto de dados necessário      |Opcional      |Necessário para atividades de cadeia e transmitir informações      |
 |Transmitir informações de atividade para lógica personalizada      |Por meio de ReferenceObjects (LinkedServices e conjuntos de dados) e ExtendedProperties (propriedades personalizadas)      |Por meio de conjuntos de dados de ExtendedProperties (propriedades personalizadas), de entrada e de saída      |
 |Recuperar informações em lógica personalizada      |Analisa o activity.json, o linkedServices.json e o datasets.json armazenados na mesma pasta do executável      |Por meio do .NET SDK (quadro para .NET 4.5.2)      |
-|Registro em log      |Grava diretamente no STDOUT      |Implementando agente na DLL do .NET      |
+|Registro em Log      |Grava diretamente no STDOUT      |Implementando agente na DLL do .NET      |
 
 Se você tiver um código .NET escrito para uma versão 1 atividade de DotNet (personalizada), você precisa modificar o código para que ele funcione com a versão atual da atividade personalizada. Atualize seu código seguindo estas diretrizes de alto nível:
 

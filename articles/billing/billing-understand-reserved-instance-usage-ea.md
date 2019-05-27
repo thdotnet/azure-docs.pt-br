@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/07/2019
 ms.author: banders
-ms.openlocfilehash: 09242eaa6058229226062801f5f71f2bf4c7a9e8
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: b2452580eaecc0ab922f8e7db48676f70831a8ca
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65789385"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66126854"
 ---
 # <a name="get-enterprise-agreement-reservation-costs-and-usage"></a>Obter o uso e custos de reserva do Enterprise Agreement
 
@@ -42,9 +42,9 @@ Comparação de dois conjuntos de dados:
 
 | Dados | Conjunto de dados de custo real | Conjunto de dados de custo amortizado |
 | --- | --- | --- |
-| Compras de reserva | Disponíveis nessa exibição.<br>  Para obter esse filtro de dados em ChargeType = &quot;compra&quot;. <br> Consulte ReservationID ou ReservationName saber quais reserva o encargo é cobrado.  | Não aplicável a este modo de exibição. <br> Os custos de compra não são fornecidos nos dados amortizados. |
+| Compras de reserva | Disponíveis nessa exibição.<br><br>  Para obter esse filtro de dados em ChargeType = &quot;compra&quot;. <br><br> Consulte ReservationID ou ReservationName saber quais reserva o encargo é cobrado.  | Não aplicável a este modo de exibição. <br><br> Os custos de compra não são fornecidos nos dados amortizados. |
 | effectivePrice | O valor é zero para uso que obtém um desconto de reserva. | O valor é o custo é Rateado por hora da reserva para uso com o desconto de reserva. |
-| Reserva não utilizada (fornece o número de horas que a reserva não foi usada em um dia e o valor monetário do desperdício) | Não é aplicável nesta exibição. | Disponíveis nessa exibição.<br> Para obter esses dados, filtrar ChargeType = &quot;UnusedReservation&quot;.<br>  Consulte ReservationID ou ReservationName saber quais reserva foi subutilizada. Essa é a quantidade de reserva foi desperdiçado em para o dia.  |
+| Reserva não utilizada (fornece o número de horas que a reserva não foi usada em um dia e o valor monetário do desperdício) | Não é aplicável nesta exibição. | Disponíveis nessa exibição.<br><br> Para obter esses dados, filtrar ChargeType = &quot;UnusedReservation&quot;.<br><br>  Consulte ReservationID ou ReservationName saber quais reserva foi subutilizada. Essa é a quantidade de reserva foi desperdiçado em para o dia.  |
 | UnitPrice (preço do recurso da sua folha de preço) | Disponível | Disponível |
 
 Outras informações disponíveis nos dados de uso do Azure mudou:
@@ -77,12 +77,12 @@ Informações na tabela a seguir sobre a métrica e o filtro podem ajudar a reso
 | **Tipo de dados de API** | Ação de chamada de API |
 | --- | --- |
 | **Todos os encargos (uso e compras)** | Substitua {metric} ActualCost |
-| **Uso que obteve o desconto de reserva** | Substitua {metric} ActualCost<br>Substitua {filter} por: properties/reservationId%20ne%20 |
-| **Uso que não obtiveram o desconto de reserva** | Substitua {metric} ActualCost<br>Substitua {filter} por: properties/reservationId%20eq%20 |
+| **Uso que obteve o desconto de reserva** | Substitua {metric} ActualCost<br><br>Substitua {filter} por: properties/reservationId%20ne%20 |
+| **Uso que não obtiveram o desconto de reserva** | Substitua {metric} ActualCost<br><br>Substitua {filter} por: properties/reservationId%20eq%20 |
 | **Encargos amortizados (uso e compras)** | Substitua {metric} AmortizedCost |
-| **Relatório de reserva não utilizados** | Substitua {metric} AmortizedCost<br>Substitua {filter} por: properties/ChargeType%20eq%20'UnusedReservation' |
-| **Compras de reserva** | Substitua {metric} com ActualCostReplace {filter}: properties/ChargeType%20eq%20'Purchase'  |
-| **Reembolsos** | Substitua {metric} ActualCost<br>Substitua {filter} por: properties/ChargeType%20eq%20'Refund' |
+| **Relatório de reserva não utilizados** | Substitua {metric} AmortizedCost<br><br>Substitua {filter} por: properties/ChargeType%20eq%20'UnusedReservation' |
+| **Compras de reserva** | Substitua {metric} ActualCost<br><br>Substitua {filter} por: properties/ChargeType%20eq%20'Purchase'  |
+| **Reembolsos** | Substitua {metric} ActualCost<br><br>Substitua {filter} por: properties/ChargeType%20eq%20'Refund' |
 
 ## <a name="download-the-usage-csv-file-with-new-data"></a>Baixe o arquivo CSV de uso com novos dados
 

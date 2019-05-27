@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: b844c93a1f3e83d682b51db6f9854f11b24d82e7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e082afb212be46c40566eb643d01bc37eababfa6
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61127104"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65992143"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Configurando o Pacemaker no Red Hat Enterprise Linux no Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "61127104"
 [2243692]:https://launchpad.support.sap.com/#/notes/2243692
 [1999351]:https://launchpad.support.sap.com/#/notes/1999351
 
-[virtual-machines-linux-maintenance]:../../linux/maintenance-and-updates.md#maintenance-not-requiring-a-reboot
+[virtual-machines-linux-maintenance]:../../linux/maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
 
 > [!NOTE]
 > Marcapasso no Red Hat Enterprise Linux usa o Azure Fence Agent para cercar um nó de cluster, se necessário. Um failover pode levar até 15 minutos se uma parada do recurso falhar ou os nós do cluster não puderem se comunicar um com o outro. Para obter mais informações, leia [A VM do Azure em execução como um membro de cluster de alta disponibilidade do RHEL leva muito tempo para ser protegida ou o fence falha / excede o tempo limite antes que a VM seja desligada](https://access.redhat.com/solutions/3408711)

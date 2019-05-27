@@ -4,12 +4,12 @@ ms.service: virtual-machines-sql
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
-ms.openlocfilehash: 4d77e9b57301bea30d8a33985071c28e972a81a6
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 297317ff33d88d6390220980ef35f2538579e310
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51264321"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66165544"
 ---
 ### <a name="open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine"></a>Abrir portas TCP no firewall do Windows para a instância padrão do Mecanismo de Banco de Dados
 1. Conecte-se à máquina virtual usando a Área de Trabalho Remota. Para obter instruções detalhadas sobre como se conectar à VM, confira [Abrir uma VM do SQL com a Área de Trabalho Remota](../articles/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision.md#remotedesktop).
@@ -23,15 +23,15 @@ ms.locfileid: "51264321"
 5. Na caixa de diálogo **Protocolo e Portas**, use o **TCP** padrão. Na caixa **Portas locais específicas**, digite o número da porta da instância do Mecanismo de Banco de Dados (**1433** para a instância padrão ou sua opção para a porta privada na etapa de ponto de extremidade).
    
     ![Porta TCP 1433](./media/virtual-machines-sql-server-connection-steps/14Port-1433.png)
-6. Clique em **Próximo**.
+6. Clique em **Avançar**.
 7. Na caixa de diálogo **Ação**, selecione **Permitir a conexão** e clique em **Avançar**.
    
-    **Observação sobre segurança:** a seleção de **Permitir a conexão se for segura** pode fornecer segurança adicional. Selecione essa opção se você desejar configurar opções de segurança adicionais em seu ambiente.
+    **Observação de segurança:** Selecionando **permitir a conexão se ela for segura** pode fornecer segurança adicional. Selecione essa opção se você desejar configurar opções de segurança adicionais em seu ambiente.
    
     ![Permitir Conexões](./media/virtual-machines-sql-server-connection-steps/15Allow-Connection.png)
 8. Na caixa de diálogo **Perfil**, selecione **Público**, **Privado** e **Domínio**. Em seguida, clique em **Próximo**.
    
-    **Observação sobre segurança:** a seleção de **Público** permite acesso pela internet. Sempre que possível, selecione um perfil mais restritivo.
+    **Observação de segurança:**  Selecionando **pública** permite o acesso pela internet. Sempre que possível, selecione um perfil mais restritivo.
    
     ![Perfil Público](./media/virtual-machines-sql-server-connection-steps/16Public-Private-Domain-Profile.png)
 9. Na caixa de diálogo **Nome**, digite um nome e uma descrição para essa regra, e clique em **Concluir**.
@@ -55,12 +55,12 @@ O Mecanismo de Banco de Dados do SQL Server não pode usar a Autenticação do W
 1. Enquanto estiver conectado à máquina virtual, na página inicial, digite **SQL Server Management Studio** e clique no ícone selecionado.
    
     Na primeira vez que você abrir o Management Studio ele deve criar o ambiente do Management Studio dos usuários. Isso pode demorar alguns instantes.
-2. O Management Studio apresenta a caixa de diálogo **Conectar ao Servidor** . Na caixa **Nome do servidor**, digite o nome da máquina virtual para conectar ao Mecanismo de Banco de Dados com o Pesquisador de Objetos (em vez do nome de máquina virtual, você também pode usar **(local)** ou um único ponto como o **Nome do servidor**). Selecione **Autenticação do Windows** e deixe ***nome_da_sua_VM*\seu_administrador_local** na caixa **Nome de usuário**. Clique em **Conectar**.
+2. O Management Studio apresenta a caixa de diálogo **Conectar ao Servidor** . Na caixa **Nome do servidor**, digite o nome da máquina virtual para conectar ao Mecanismo de Banco de Dados com o Pesquisador de Objetos (em vez do nome de máquina virtual, você também pode usar **(local)** ou um único ponto como o **Nome do servidor**). Selecione **autenticação do Windows**e deixe ***your_VM_name\your_local_administrator*** no **nome de usuário** caixa. Clique em **Conectar**.
    
-    ![Conectar-se ao servidor](./media/virtual-machines-sql-server-connection-steps/19Connect-to-Server.png)
+    ![Conectar ao Servidor](./media/virtual-machines-sql-server-connection-steps/19Connect-to-Server.png)
 3. No SQL Server Management Studio Object Explorer, clique com o botão direito do mouse no nome da instância do SQL Server (o nome da máquina virtual) e, em seguida, clique em **Propriedades**.
    
-    ![Propriedades do servidor](./media/virtual-machines-sql-server-connection-steps/20Server-Properties.png)
+    ![Propriedades do Servidor](./media/virtual-machines-sql-server-connection-steps/20Server-Properties.png)
 4. Na página **Segurança**, em **Autenticação do servidor**, selecione **Modo de Autenticação do SQL Server e do Windows** e clique em **OK**.
    
     ![Selecionar modo de autenticação](./media/virtual-machines-sql-server-connection-steps/21Mixed-Mode.png)

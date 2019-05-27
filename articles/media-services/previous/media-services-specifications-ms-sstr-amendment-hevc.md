@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: johndeu;
-ms.openlocfilehash: b26252ddda7997bebd730bb4c1007f76b3e645a4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b9756920d25891dbe6b71fa24c06ed8f0c8eabb0
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60650702"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65963246"
 ---
 # <a name="smooth-streaming-protocol-ms-sstr-amendment-for-hevc"></a>Aditamento do Protocolo Smooth Streaming para HEVC 
 
@@ -40,11 +40,11 @@ Os termos a seguir são definidos em *[MS-GLOS]*:
 
 Os termos a seguir são específicos deste documento:
 
->  **tempo de composição:** o tempo em que uma amostra é apresentada no cliente, conforme definido em [[ISO/IEC-14496-12].](https://go.microsoft.com/fwlink/?LinkId=183695)
+>  **tempo de composição:** O tempo de uma amostra é apresentada no cliente, conforme definido em [[ISO/IEC-14496-12]](https://go.microsoft.com/fwlink/?LinkId=183695).
 > 
 >   **CENC**: Criptografia Comum, conforme definido em [ISO/IEC 23001-7], Segunda Edição.
 > 
->   **tempo de decodificação:** o tempo que uma amostra deve ser decodificada no cliente, conforme definido em [[ISO/IEC https://go.microsoft.com/fwlink/?LinkId=18369514496-12].](https://go.microsoft.com/fwlink/?LinkId=183695)
+>   **tempo de decodificação:** O tempo de uma amostra é deve ser decodificada no cliente, conforme definido em [[ISO/IEC 14496-12:2008]](https://go.microsoft.com/fwlink/?LinkId=183695).
 
 **fragmento:** uma unidade de **mídia** que pode ser baixada independentemente, que compreende uma ou mais **amostras**.
 
@@ -52,11 +52,11 @@ Os termos a seguir são específicos deste documento:
 > 
 >   **manifesto:** metadados sobre a **apresentação** que permite que um cliente faça solicitações para **mídia**. **mídia:** dados de áudio, vídeo e texto compactados utilizados pelo cliente para reproduzir uma **apresentação**. **formato de mídia:** um formato bem definido para representar áudio ou vídeo como uma **amostra** compactada.
 > 
->   **apresentação:** o conjunto de todos os **fluxos** e metadados relacionados necessários para reproduzir um único filme. **solicitação:** uma mensagem HTTP enviada do cliente para o servidor, conforme definido em [[RFC2616].](https://go.microsoft.com/fwlink/?LinkId=90372) **resposta:** uma mensagem HTTP enviada do servidor para o cliente, conforme definido em [[RFC2616].](https://go.microsoft.com/fwlink/?LinkId=90372)
+>   **apresentação:** o conjunto de todos os **fluxos** e metadados relacionados necessários para reproduzir um único filme. **solicitação:** Uma mensagem HTTP enviada do cliente para o servidor, conforme definido em [[RFC2616]](https://go.microsoft.com/fwlink/?LinkId=90372) **resposta:** Uma mensagem HTTP enviada do servidor para o cliente, conforme definido em [[RFC2616]](https://go.microsoft.com/fwlink/?LinkId=90372)
 > 
 >   **amostra:** a menor unidade fundamental (como um quadro) na qual a **mídia** é armazenada e processada.
 > 
->   **PODE, DEVERIA, DEVE, NÃO DEVERIA, NÃO DEVE:** esses termos (todos em maiúsculo) são utilizados conforme descrito em [[RFC2119].](https://go.microsoft.com/fwlink/?LinkId=90317) Todas as instruções de comportamento opcional utilizam PODE, DEVERIA OU NÃO DEVERIA.
+>   **PODE, DEVERIA, DEVE, NÃO DEVERIA, NÃO DEVE:** Esses termos (tudo em maiusculas) são usados conforme descrito em [[RFC2119]](https://go.microsoft.com/fwlink/?LinkId=90317) todas as instruções de comportamento opcional utilizam pode, deveria ou não deve.
 
 ## <a name="12-references"></a>1.2 Referências
 

@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 03/13/2019
+ms.date: 05/20/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 4e7956e8873b552fcd73c51a51f51d99f21af324
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 717c0f110ebbeee53e2c9b9207350385288d57c3
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61003002"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991391"
 ---
 # <a name="understand-and-work-with-scopes"></a>Entender e trabalhar com escopos
 
@@ -60,14 +60,14 @@ Gerenciamento de custos suporta as seguintes funções internas para cada um dos
 - [**Proprietário** ](../role-based-access-control/built-in-roles.md#owner) – pode exibir os custos e gerencie tudo, incluindo a configuração de custo.
 - [**Colaborador** ](../role-based-access-control/built-in-roles.md#contributor) – pode exibir os custos e gerencie tudo, incluindo a configuração de custo, mas excluindo o controle de acesso.
 - [**Leitor** ](../role-based-access-control/built-in-roles.md#reader) – pode exibir tudo, incluindo dados de custo e a configuração, mas não é possível fazer alterações.
-- [**Colaborador de gerenciamento de custos** ](../role-based-access-control/built-in-roles.md#cost-management-contributor) – pode exibir os custos e gerenciar a configuração de custo.
-- [**Leitor do gerenciamento de custos** ](../role-based-access-control/built-in-roles.md#cost-management-reader) – podem exibir dados de custo e a configuração.
+- [**Colaborador de gerenciamento de custos** ](../role-based-access-control/built-in-roles.md#cost-management-contributor) – pode exibir custos, gerenciar a configuração de custo e exibir as recomendações.
+- [**Leitor do gerenciamento de custos** ](../role-based-access-control/built-in-roles.md#cost-management-reader) – podem exibir dados de custo, configuração de custo e exibir as recomendações.
 
 Colaborador de gerenciamento de custo é a função de privilégio mínimo recomendada. Ele permite que as pessoas acesso criar e gerenciar orçamentos e exporta mais efetivamente monitorar e informar sobre os custos. Colaboradores de gerenciamento de custo também pode exigir a funções adicionais para dar suporte a cenários de gerenciamento de custo de ponta a ponta. Considere os seguintes cenários:
 
 - **Agir quando os orçamentos são excedidos** – colaboradores do gerenciamento de custo também precisam de acesso para criar e/ou gerenciar grupos de ação para reagir automaticamente a excedentes. Considere conceder [Colaborador de monitoramento](../role-based-access-control/built-in-roles.md#monitoring-contributor) para um grupo de recursos que contém o grupo de ação para usar quando os limites do orçamento forem excedidos. Automatizar ações específicas exige funções adicionais para os serviços específicos usados, como a automação e o Azure Functions.
 - **Agendamento de exportação de dados de custo** – colaboradores do gerenciamento de custo também precisam de acesso para gerenciar contas de armazenamento para agendar uma exportação para copiar dados em uma conta de armazenamento. Considere conceder [colaborador da conta de armazenamento](../role-based-access-control/built-in-roles.md#storage-account-contributor) para um grupo de recursos que contém o armazenamento de conta em que os dados de custo é exportada.
-- **Exibindo recomendações de economia de custo** – os colaboradores e leitores de gerenciamento de custo não tem acesso às recomendações por padrão. O acesso às recomendações requer acesso de leitura a recursos individuais. Considere conceder [Reader](../role-based-access-control/built-in-roles.md#reader) ou um [específicos do serviço de função](../role-based-access-control/built-in-roles.md#built-in-role-descriptions).
+- **Exibindo recomendações de economia de custo** – os leitores de gerenciamento de custo e colaboradores de gerenciamento de custo têm acesso ao *exibição* recomendações de custo por padrão. No entanto, o acesso ao agir sobre as recomendações de custo requer acesso a recursos individuais. Considere conceder um [específicos do serviço de função](../role-based-access-control/built-in-roles.md#built-in-role-descriptions) para agir em uma recomendação baseada em custo.
 
 ## <a name="enterprise-agreement-scopes"></a>Escopos de Enterprise Agreement
 

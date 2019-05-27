@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 05/20/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to understand global transit network architecture as it relates to Virtual WAN.
-ms.openlocfilehash: 8cda617ca60a17fceaaa818480ff9bbaef46c3fd
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: 114d11f98c6181a03f5ce52527b5e2efea468c42
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65414061"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65965969"
 ---
 # <a name="global-transit-network-architecture-and-virtual-wan"></a>Arquitetura de rede de trânsito global e WAN Virtual
 
@@ -48,7 +48,7 @@ Figura 2 mostra a exibição lógica da rede global em que os usuários distribu
 
 ## <a name="crossregion"></a>Conectividade entre regiões
 
-Para uma empresa, um volume na nuvem normalmente segue o volume. A maioria das empresas acessar a nuvem de uma região mais próxima de seus usuários e o local físico. Uma das principais entidades de segurança da arquitetura de rede global é habilitar a conectividade entre regiões entre as entidades de rede e pontos de extremidade. Um volume na nuvem pode abranger várias regiões. Isso significa que o tráfego de uma ramificação que está conectado à nuvem em uma região pode acessar outra ramificação ou uma rede virtual em uma região diferente.
+Para uma empresa, um volume na nuvem normalmente segue o volume. A maioria das empresas acessar a nuvem de uma região mais próxima de seus usuários e o local físico. Uma das principais entidades de segurança da arquitetura de rede global é habilitar a conectividade entre regiões entre as entidades de rede e pontos de extremidade. Um volume na nuvem pode abranger várias regiões. Isso significa que o tráfego de uma ramificação que está conectado à nuvem em uma região pode acessar outra ramificação ou uma rede virtual em uma região diferente usando a conectividade de hub para o hub que está atualmente em visualização.
 
 ## <a name="any"></a>Para qualquer conectividade
 
@@ -89,7 +89,7 @@ O caminho do usuário para branch remoto permite que os usuários remotos que es
 
 ### <a name="vnetvnet"></a>Trânsito de rede virtual para rede virtual usando o emparelhamento VNet
 
-Para conectar redes virtuais entre si para dar suporte a aplicativos de várias camadas que são implementados em várias VNets, use o emparelhamento de rede virtual. Um cenário de trânsito de VNet para VNet por meio de WAN Virtual do Azure não tem suporte atualmente, mas está no roteiro do Azure. Conectando redes virtuais por meio do emparelhamento VNet é a solução recomendável para redes virtuais que precisam estar conectados entre si. Para obter mais informações sobre o emparelhamento de rede virtual, consulte [visão geral emparelhamento de VNet](../virtual-network/virtual-network-peering-overview.md).
+Para conectar redes virtuais entre si para dar suporte a aplicativos de várias camadas que são implementados em várias VNets, use o emparelhamento de rede virtual. Um cenário de trânsito de VNet para VNet por meio de WAN Virtual do Azure não tem suporte atualmente, mas está no roteiro do Azure. Conectando redes virtuais por meio do emparelhamento VNet é a solução recomendável para redes virtuais que precisam estar conectados entre si. [Trânsito de gateway](../virtual-network/virtual-network-peering-overview.md#gateways-and-on-premises-connectivity) (no contexto de emparelhamento de rede virtual) não é necessário para WAN Virtual porque a WAN Virtual habilita automaticamente o trânsito de gateway.
 
 ### <a name="globalreach"></a>Alcance Global de ExpressRoute
 

@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: kgremban
-ms.openlocfilehash: bb47a1b828084673961a6d2c5657793b4437f294
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: b7386cbbe18d7e05c2fbffb96f6214b468956192
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65160569"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66151698"
 ---
 # <a name="use-iot-edge-on-windows-to-run-linux-containers"></a>Usar o IoT Edge no Windows para executar contêineres do Linux
 
@@ -55,7 +55,7 @@ Um script do PowerShell baixa e instala o daemon de segurança do Azure IoT Edge
 
 Quando você instala o tempo de execução do IoT Edge pela primeira vez em um dispositivo, é necessário provisionar o dispositivo com uma identidade de um hub IoT. Um único dispositivo IoT Edge pode ser provisionado manualmente usando uma cadeia de caracteres de conexões de dispositivo fornecida pelo seu hub IoT. Ou, você também pode usar o Serviço de Provisionamento de Dispositivos para provisionar dispositivos automaticamente, o que é útil quando há muitos dispositivos para configurar. 
 
-Você pode ler mais sobre as opções de instalação diferente e os parâmetros no artigo [instalar o tempo de execução do Azure IoT Edge no Windows](how-to-install-iot-edge-windows.md). Uma vez que a área de trabalho do Docker instalado e configurado para contêineres do Linux, a diferença principal de instalação está declarando Linux com o **- ContainerOs** parâmetro. Por exemplo:  
+Você pode ler mais sobre as opções de instalação diferente e os parâmetros no artigo [instalar o tempo de execução do Azure IoT Edge no Windows](how-to-install-iot-edge-windows.md). Uma vez que a área de trabalho do Docker instalado e configurado para contêineres do Linux, a diferença principal de instalação está declarando Linux com o **- ContainerOs** parâmetro. Por exemplo: 
 
 1. Se você ainda não fez isso, registre um novo dispositivo IoT Edge e recuperar a cadeia de caracteres de conexão do dispositivo. Copie a cadeia de conexão para usar posteriormente nesta seção. Você pode concluir esta etapa usando as seguintes ferramentas:
 
@@ -64,6 +64,13 @@ Você pode ler mais sobre as opções de instalação diferente e os parâmetros
    * [Visual Studio Code](how-to-register-device-vscode.md)
 
 2. Execute o PowerShell como administrador.
+
+   >[!NOTE]
+   >Use uma sessão de AMD64 do PowerShell para instalar o IoT Edge, PowerShell (x86). Se você não tiver certeza de qual tipo de sessão que você está usando, execute o seguinte comando:
+   >
+   >```powershell
+   >(Get-Process -Id $PID).StartInfo.EnvironmentVariables["PROCESSOR_ARCHITECTURE"]
+   >```
 
 3. O **IoTEdge implantar** comando verifica seu computador Windows está em uma versão com suporte, ativa o recurso de contêineres e, em seguida, baixa o tempo de execução moby (que não é usado para contêineres do Linux) e o tempo de execução do IoT Edge. Os padrões de comando para contêineres do Windows, portanto, declare o Linux como o sistema de operacional do contêiner desejado. 
 
@@ -74,7 +81,7 @@ Você pode ler mais sobre as opções de instalação diferente e os parâmetros
 
 4. Neste ponto, dispositivos de IoT Core poderá ser reiniciado automaticamente. Outros dispositivos Windows 10 ou Windows Server podem solicitar que você reinicie. Nesse caso, reinicie seu dispositivo agora. Depois que o dispositivo está pronto, execute novamente o PowerShell como administrador.
 
-5. O **IoTEdge Initialize** comando configura o tempo de execução do IoT Edge em seu computador. O comando assumirá como padrão o provisionamento manual com uma cadeia de caracteres de conexão do dispositivo. Declare novamente o Linux como o sistema de operacional do contêiner desejado. 
+5. O comando **Initialize-IoTEdge** configura o tempo de execução do IoT Edge em seu computador. O comando assumirá como padrão o provisionamento manual com uma cadeia de caracteres de conexão do dispositivo. Declare novamente o Linux como o sistema de operacional do contêiner desejado. 
 
    ```powershell
    . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `

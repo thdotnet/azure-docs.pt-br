@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: milanga;juliako;johndeu
-ms.openlocfilehash: aac9719f8d74c4b7bc283745ee2b8e01365a81f0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ceaf4d3db71d99c3e87157f9847312fdf4000026
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61245243"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991800"
 ---
 # <a name="media-analytics-on-the-media-services-platform"></a>Análise de Mídia na plataforma de Serviços de Mídia 
 
@@ -58,7 +58,6 @@ A Análise de Mídia pode ajudar as organizações e empresas a obter novas info
 
 * **Call centers**. Mesmo com o advento da mídia social, os call centers de clientes ainda recebem um grande percentual de transações de serviço de atendimento ao cliente. Codificado nesses dados de áudio há uma grande quantidade de informações do cliente que podem ser analisadas para alcançar uma satisfação do cliente ainda maior. Usando o Indexador de Mídia, as organizações podem extrair texto e criar índices de pesquisa e painéis. Em seguida, elas podem extrair inteligência sobre reclamações comuns, fontes de reclamações e outros dados relevantes.
 * **Moderação de conteúdo gerado pelo usuário**. Desde os meios de comunicação até as delegacias de polícia, muitas organizações têm portais voltados ao público que aceitam mídia gerada pelo usuário, como vídeos e imagens. O volume de conteúdo pode ter picos devido a eventos inesperados. Nesses cenários, fica difícil conduzir uma revisão manual eficaz do conteúdo em relação à adequação. Os clientes podem contar com o serviço de moderação de conteúdo para se concentrar no conteúdo apropriado.
-* **Vigilância**. Com o crescimento do uso de câmeras IP surgiu um inventário crescente de vídeos de vigilância. Revisar manualmente o vídeo de vigilância consome muito tempo e está sujeito a erros humanos. A Análise de Mídia fornece serviços como detecção de movimento, detecção facial e Hyperlapse para facilitar o processo de revisão, gerenciamento e criação de derivados.
 
 ## <a name="media-analytics-media-processors"></a>Processadores de mídia da Análise de Mídia
 Esta seção lista todos os processadores de mídia da Análise de Mídia e mostra como usar .NET ou REST para obter um objeto de processador de mídia (MP).
@@ -66,7 +65,6 @@ Esta seção lista todos os processadores de mídia da Análise de Mídia e most
 ### <a name="mp-names"></a>Nomes dos MP
 * Preview do Indexador de Mídia do Azure 2
 * Indexador de Mídia do Azure
-* Azure Media Hyperlapse
 * Detector de Rostos em Mídias do Azure
 * Detector de Movimento em Mídias do Azure
 * Miniaturas de Vídeo de Mídia do Azure

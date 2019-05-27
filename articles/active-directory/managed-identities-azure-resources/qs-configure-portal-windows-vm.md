@@ -16,11 +16,11 @@ ms.date: 11/10/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ab0a5b021048f0f684473d3f54bbeadf870cd007
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66112804"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-vm-using-the-azure-portal"></a>Configurar identidades gerenciadas para recursos do Azure em uma VM usando o portal do Azure
 
@@ -79,7 +79,7 @@ Se você tiver uma Máquina Virtual que não precisa mais de identidade gerencia
 
    ![Captura de tela da página de configuração](./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade-disable.png)
 
-## <a name="user-assigned-managed-identity"></a>Identidade gerenciada atribuída pelo usuário
+## <a name="user-assigned-managed-identity"></a>Identidade gerenciada atribuída ao usuário
 
  Nesta seção, você aprende como adicionar e remover uma identidade gerenciada atribuída ao usuário de uma VM usando o portal do Azure.
 

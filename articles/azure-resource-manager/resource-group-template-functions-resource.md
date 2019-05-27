@@ -1,23 +1,17 @@
 ---
 title: Funções de modelo do Azure Resource Manager – recursos | Microsoft Docs
 description: Descreve as funções a serem usadas em um modelo do Azure Resource Manager para recuperar valores sobre recursos.
-services: azure-resource-manager
-documentationcenter: na
 author: tfitzmac
-ms.assetid: ''
 ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 04/09/2019
+ms.date: 05/21/2019
 ms.author: tomfitz
-ms.openlocfilehash: 4d5e6d20cb93c339d75c12ca1c0f56eaa5cc8cdd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: dcad4b988f37d46a0b843fbf905e18011bc4e313
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60783000"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990752"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Funções de recursos para modelos do Azure Resource Manager
 
@@ -43,11 +37,11 @@ A sintaxe dessa função varia de acordo com o nome das operações de lista. Ca
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Obrigatório | Type | Descrição |
 |:--- |:--- |:--- |:--- |
 | resourceName ou resourceIdentifier |Sim |string |Identificador exclusivo para o recurso. |
 | apiVersion |Sim |string |Versão de API do estado de tempo de execução do recurso. Normalmente, no formato **aaaa-mm-dd**. |
-| functionValues |Não  |objeto | Um objeto que tem valores para a função. Fornecer apenas este objeto para funções que dão suporte ao recebimento de um objeto com valores de parâmetro, como **listAccountSas** em uma conta de armazenamento. Um exemplo de passar valores de função é mostrado neste artigo. | 
+| functionValues |Não |objeto | Um objeto que tem valores para a função. Fornecer apenas este objeto para funções que dão suporte ao recebimento de um objeto com valores de parâmetro, como **listAccountSas** em uma conta de armazenamento. Um exemplo de passar valores de função é mostrado neste artigo. | 
 
 ### <a name="implementations"></a>Implementações
 
@@ -175,7 +169,7 @@ Outras funções de lista têm formatos diferentes de retorno. Para ver o format
 
 Especifique o recurso usando o nome de recurso ou o [função resourceId](#resourceid). Ao usar uma função de lista no mesmo modelo que implanta o recurso referenciado, use o nome do recurso.
 
-Se você usar um **lista** função em um recurso que condicionalmente é implantado, a função é avaliada, mesmo se o recurso não está implantado. Você obterá um erro se o **lista** função refere-se a um recurso que não existe. Use o **se** função para garantir que a função é avaliada somente quando o recurso existe. Consulte a [se função](resource-group-template-functions-logical.md#if) para um modelo de exemplo que usa se e uma lista com um recurso condicionalmente implantado.
+Se você usar um **lista** função em um recurso que condicionalmente é implantado, a função é avaliada, mesmo se o recurso não está implantado. Você obterá um erro se o **lista** função refere-se a um recurso que não existe. Use o **se** função para garantir que a função é avaliada somente quando o recurso está sendo implantado. Consulte a [se função](resource-group-template-functions-logical.md#if) para um modelo de exemplo que usa se e uma lista com um recurso condicionalmente implantado.
 
 ### <a name="example"></a>Exemplo
 
@@ -254,10 +248,10 @@ Retorna informações sobre um provedor de recursos e seus tipos de recursos com
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Obrigatório | Type | Descrição |
 |:--- |:--- |:--- |:--- |
 | providerNamespace |Sim |string |Namespace do provedor |
-| resourceType |Não  |string |O tipo de recurso no namespace especificado. |
+| resourceType |Não |string |O tipo de recurso no namespace especificado. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -329,11 +323,11 @@ Retorna um objeto que representa o estado de tempo de execução de um recurso.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Obrigatório | Type | Descrição |
 |:--- |:--- |:--- |:--- |
 | resourceName ou resourceIdentifier |Sim |string |Nome ou identificador exclusivo de um recurso. |
-| apiVersion |Não  |string |Versão da API do recurso especificado. Inclua esse parâmetro quando o recurso não estiver provisionado no mesmo modelo. Normalmente, no formato **aaaa-mm-dd**. |
-| 'Full' |Não  |string |Valor que especifica se o objeto de recurso completo deve ser retornado. Se você não especificar `'Full'`, apenas o objeto de propriedades do recurso será retornado. O objeto completo inclui valores como a ID do recurso e o local. |
+| apiVersion |Não |string |Versão da API do recurso especificado. Inclua esse parâmetro quando o recurso não estiver provisionado no mesmo modelo. Normalmente, no formato **aaaa-mm-dd**. |
+| 'Full' |Não |string |Valor que especifica se o objeto de recurso completo deve ser retornado. Se você não especificar `'Full'`, apenas o objeto de propriedades do recurso será retornado. O objeto completo inclui valores como a ID do recurso e o local. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -343,11 +337,11 @@ Cada tipo de recurso retorna propriedades diferentes para a função de referên
 
 A função de referência recupera o estado de tempo de execução de um recurso implantado anteriormente ou um recurso implantado no modelo atual. Este artigo mostra exemplos de ambos os cenários. Ao referenciar um recurso no modelo atual, forneça apenas o nome do recurso como parâmetro. Ao referenciar um recurso implantado anteriormente, forneça a ID de recurso e uma versão de API do recurso. Você pode determinar as versões de API válidas para o recurso na [referência de modelo](/azure/templates/).
 
-A função de referência pode ser usada somente nas propriedades de uma definição de recurso e na seção de saídas de um modelo ou uma implantação.
+A função de referência pode ser usada somente nas propriedades de uma definição de recurso e na seção de saídas de um modelo ou uma implantação. Quando usado com [iteração de propriedade](resource-group-create-multiple.md#property-iteration), você pode usar a função de referência para `input` porque a expressão é atribuída à propriedade do recurso. Não é possível usá-lo com `count` porque a contagem deve ser determinada antes que a função de referência é resolvida.
 
 Usando a função de referência, você implicitamente declarar que um recurso depende de outro recurso se o recurso referenciado é provisionado no mesmo modelo e consulte o recurso pelo seu nome (não a ID de recurso). Você não precisa usar a propriedade dependsOn também. A função não é avaliada até que o recurso referenciado conclua a implantação.
 
-Se você usar o **referência** função em um recurso que condicionalmente é implantado, a função é avaliada, mesmo se o recurso não está implantado.  Você obterá um erro se o **referência** função refere-se a um recurso que não existe. Use o **se** função para garantir que a função é avaliada somente quando o recurso existe. Consulte a [se função](resource-group-template-functions-logical.md#if) para um modelo de exemplo que usa se e uma referência com um recurso condicionalmente implantado.
+Se você usar o **referência** função em um recurso que condicionalmente é implantado, a função é avaliada, mesmo se o recurso não está implantado.  Você obterá um erro se o **referência** função refere-se a um recurso que não existe. Use o **se** função para garantir que a função é avaliada somente quando o recurso está sendo implantado. Consulte a [se função](resource-group-template-functions-logical.md#if) para um modelo de exemplo que usa se e uma referência com um recurso condicionalmente implantado.
 
 Para ver os valores e nomes de propriedade para um tipo de recurso, crie um modelo que retorne o objeto na seção de saídas . Se você tiver um recurso existente desse tipo, o modelo retornará o objeto sem implantar qualquer recurso. 
 
@@ -592,13 +586,13 @@ Retorna o identificador exclusivo de um recurso. Você pode usar essa função q
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Obrigatório | Type | Descrição |
 |:--- |:--- |:--- |:--- |
-| subscriptionId |Não  |string (no formato GUID) |O valor padrão é a assinatura atual. Especifique esse valor quando você precisar recuperar um recurso em outra assinatura. |
-| resourceGroupName |Não  |string |O valor padrão é o grupo de recursos atual. Especifique esse valor quando você precisar recuperar um recurso em outro grupo de recursos. |
+| subscriptionId |Não |string (no formato GUID) |O valor padrão é a assinatura atual. Especifique esse valor quando você precisar recuperar um recurso em outra assinatura. |
+| resourceGroupName |Não |string |O valor padrão é o grupo de recursos atual. Especifique esse valor quando você precisar recuperar um recurso em outro grupo de recursos. |
 | resourceType |Sim |string |Tipo de recurso, incluindo o namespace do provedor de recursos. |
 | resourceName1 |Sim |string |Nome do recurso. |
-| resourceName2 |Não  |string |Próximo segmento de nome do recurso se o recurso está aninhado. |
+| resourceName2 |Não |string |Próximo segmento de nome do recurso se o recurso está aninhado. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -720,12 +714,12 @@ A saída do exemplo anterior com os valores padrão é:
 
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| sameRGOutput | Cadeia de caracteres | /subscriptions/{current-sub-id}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentRGOutput | Cadeia de caracteres | /subscriptions/{current-sub-id}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentSubOutput | Cadeia de caracteres | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| nestedResourceOutput | Cadeia de caracteres | /subscriptions/{current-sub-id}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
+| sameRGOutput | String | /subscriptions/{current-sub-id}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentRGOutput | String | /subscriptions/{current-sub-id}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentSubOutput | String | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| nestedResourceOutput | String | /subscriptions/{current-sub-id}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
 
-## <a name="subscription"></a>subscription
+## <a name="subscription"></a>assinatura
 
 `subscription()`
 

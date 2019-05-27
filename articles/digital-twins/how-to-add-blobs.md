@@ -7,14 +7,14 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 01/11/2019
-ms.author: adgera
+ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: ffd7d71c33b569b396b9f8babf8105968ee525b9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b77960961a7c032faad7000f7a2ce297802a1497
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60926355"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967053"
 ---
 # <a name="add-blobs-to-objects-in-azure-digital-twins"></a>Adicionar blobs a objetos nos Gêmeos Digitais do Azure
 
@@ -30,7 +30,7 @@ Você pode usar solicitações multipartes para fazer o upload de blobs para pon
 
 [!INCLUDE [Digital Twins multipart requests](../../includes/digital-twins-multipart.md)]
 
-### <a name="blob-metadata"></a>Metadados de blob
+### <a name="blob-metadata"></a>Metadados do blob
 
 Além de **Content-Type** e **Content-Disposition**, as solicitações multipartes de blob dos Gêmeos Digitais do Azure devem especificar o corpo JSON correto. Qual corpo JSON a ser enviado depende do tipo de operação de solicitação HTTP que está sendo executada.
 
@@ -51,16 +51,16 @@ Metadados de blobs JSON são compatíveis com o seguinte modelo:
   }
 ```
 
-| Atributo | Type | DESCRIÇÃO |
+| Atributo | Type | Descrição |
 | --- | --- | --- |
-| **parentId** | Cadeia de caracteres | A entidade pai a ser associada ao blob (espaços, dispositivos ou usuários) |
-| **name** |Cadeia de caracteres | Um nome amigável para humanos para o blob |
-| **tipo** | Cadeia de caracteres | O tipo de blob – não é possível usar *type* e *typeId*  |
-| **typeId** | Número inteiro | A ID do tipo de blob – não é possível usar *type* e *typeId* |
-| **subtype** | Cadeia de caracteres | O subtipo do blob – não é possível usar *subtype* e *subtypeId* |
-| **subtypeId** | Número inteiro | A ID do subtipo do blob – não é possível usar *subtype* e *subtypeId* |
-| **description** | Cadeia de caracteres | Descrição personalizada do blob |
-| **sharing** | Cadeia de caracteres | Se o blob pode ser compartilhado – enum [`None`, `Tree`, `Global`] |
+| **parentId** | String | A entidade pai a ser associada ao blob (espaços, dispositivos ou usuários) |
+| **name** |String | Um nome amigável para humanos para o blob |
+| **type** | String | O tipo de blob – não é possível usar *type* e *typeId*  |
+| **typeId** | Integer | A ID do tipo de blob – não é possível usar *type* e *typeId* |
+| **subtype** | String | O subtipo do blob – não é possível usar *subtype* e *subtypeId* |
+| **subtypeId** | Integer | A ID do subtipo do blob – não é possível usar *subtype* e *subtypeId* |
+| **description** | String | Descrição personalizada do blob |
+| **sharing** | String | Se o blob pode ser compartilhado – enum [`None`, `Tree`, `Global`] |
 
 Metadados de blob sempre são fornecidos como a primeira parte, com **Content-Type** `application/json` ou como um arquivo `.json`. Dados de arquivo são fornecidos na segunda parte e podem ser de qualquer tipo MIME com suporte.
 
@@ -108,20 +108,20 @@ Blobs retornados individualmente estão em conformidade com o seguinte esquema J
 }
 ```
 
-| Atributo | Type | DESCRIÇÃO |
+| Atributo | Type | Descrição |
 | --- | --- | --- |
-| **ID** | Cadeia de caracteres | O identificador exclusivo do blob |
-| **name** |Cadeia de caracteres | Um nome amigável para humanos para o blob |
-| **parentId** | Cadeia de caracteres | A entidade pai a ser associada ao blob (espaços, dispositivos ou usuários) |
-| **tipo** | Cadeia de caracteres | O tipo de blob – não é possível usar *type* e *typeId*  |
-| **typeId** | Número inteiro | A ID do tipo de blob – não é possível usar *type* e *typeId* |
-| **subtype** | Cadeia de caracteres | O subtipo do blob – não é possível usar *subtype* e *subtypeId* |
-| **subtypeId** | Número inteiro | A ID do subtipo do blob – não é possível usar *subtype* e *subtypeId* |
-| **sharing** | Cadeia de caracteres | Se o blob pode ser compartilhado – enum [`None`, `Tree`, `Global`] |
-| **description** | Cadeia de caracteres | Descrição personalizada do blob |
+| **id** | String | O identificador exclusivo do blob |
+| **name** |String | Um nome amigável para humanos para o blob |
+| **parentId** | String | A entidade pai a ser associada ao blob (espaços, dispositivos ou usuários) |
+| **type** | String | O tipo de blob – não é possível usar *type* e *typeId*  |
+| **typeId** | Integer | A ID do tipo de blob – não é possível usar *type* e *typeId* |
+| **subtype** | String | O subtipo do blob – não é possível usar *subtype* e *subtypeId* |
+| **subtypeId** | Integer | A ID do subtipo do blob – não é possível usar *subtype* e *subtypeId* |
+| **sharing** | String | Se o blob pode ser compartilhado – enum [`None`, `Tree`, `Global`] |
+| **description** | String | Descrição personalizada do blob |
 | **contentInfos** | Matriz | Especifica as informações de metadados não estruturados, incluindo a versão |
-| **fullName** | Cadeia de caracteres | O nome completo do blob |
-| **spacePaths** | Cadeia de caracteres | O caminho de espaço |
+| **fullName** | String | O nome completo do blob |
+| **spacePaths** | String | O caminho de espaço |
 
 Metadados de blob sempre são fornecidos como a primeira parte, com **Content-Type** `application/json` ou como um arquivo `.json`. Dados de arquivo são fornecidos na segunda parte e podem ser de qualquer tipo MIME com suporte.
 

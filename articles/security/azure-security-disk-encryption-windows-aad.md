@@ -8,11 +8,11 @@ ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: fa9b970ee9319af061ceab99844b0497253881ad
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58286611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66117957"
 ---
 # <a name="enable-azure-disk-encryption-for-windows-iaas-vms-previous-release"></a>Habilitar Azure Disk Encryption para VMs da IaaS do Windows (versão anterior)
 
@@ -52,7 +52,7 @@ Tire um [instantâneo](../virtual-machines/windows/snapshot-copy-managed-disk.md
      -  Selecione a VM e, em seguida, clique em **Discos** sob o cabeçalho **Configurações** para verificar o status da criptografia no portal. No gráfico em **Criptografia**, você verá se ela está habilitada. 
            ![Portal do Azure – Disk Encryption habilitado](./media/azure-security-disk-encryption/disk-encryption-fig2.png) A tabela a seguir lista os parâmetros de modelo do Resource Manager para novas VMs do cenário do Marketplace usando a ID do cliente do Azure AD:
 
-| Parâmetro | DESCRIÇÃO | 
+| Parâmetro | Descrição | 
 | --- | --- |
 | adminUserName | Especifique um nome de usuário para a máquina virtual. |
 | adminPassword | Senha de usuário administrador para a máquina virtual. |
@@ -170,7 +170,7 @@ Use o comando [az vm encryption enable](/cli/azure/vm/encryption#az-vm-encryptio
 
 A tabela a seguir lista os parâmetros de modelo do Gerenciador de Recursos existente ou VMs em execução que usam uma ID de cliente do Azure AD:
 
-| Parâmetro | DESCRIÇÃO |
+| Parâmetro | Descrição |
 | --- | --- |
 | AADClientID | ID do cliente do aplicativo Azure AD que tem permissões para gravar segredos no cofre de chaves. |
 | AADClientSecret | Segredo do cliente do aplicativo Azure AD que tem permissões para gravar segredos no cofre de chaves. |

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: aelnably
 ms.custom: ''
-ms.openlocfilehash: 86f1c36bd5f972a6ebd573019a22b0c0d07dc480
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 27b5dc9ccee8647d4fbb617063865df18b80bc5d
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64928086"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990269"
 ---
 # <a name="continuous-delivery-using-azure-devops"></a>Entrega contínua com o DevOps do Azure
 
@@ -26,7 +26,7 @@ Para definir seu pipeline, você pode usar:
 
 ## <a name="yaml-based-pipeline"></a>Pipeline com base em YAML
 
-### <a name="build-your-app"></a>Crie seu aplicativo
+### <a name="build-your-app"></a>Compilar seu aplicativo
 
 Criando seu aplicativo em Pipelines do Azure depende da linguagem de programação de seu aplicativo.
 Cada linguagem tem etapas de compilação específica para criar um artefato de implantação, que pode ser usado para implantar seu aplicativo de funções no Azure.
@@ -55,12 +55,12 @@ steps:
 - task: ArchiveFiles@2
   displayName: "Archive files"
   inputs:
-    rootFolderOrFile: "$(System.DefaultWorkingDirectory)/publish_output/s"
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)/publish_output"
     includeRootFolder: false
     archiveFile: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
     name: 'drop'
 ```
 
@@ -85,12 +85,12 @@ steps:
 - task: ArchiveFiles@2
   displayName: "Archive files"
   inputs:
-    rootFolderOrFile: "$(System.DefaultWorkingDirectory)/publish_output/s"
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
     includeRootFolder: false
     archiveFile: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
     name: 'drop'
 ```
 
@@ -121,12 +121,12 @@ steps:
 - task: ArchiveFiles@2
   displayName: "Archive files"
   inputs:
-    rootFolderOrFile: "$(System.DefaultWorkingDirectory)/publish_output/s"
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
     includeRootFolder: false
     archiveFile: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
     name: 'drop'
 ```
 
@@ -164,7 +164,7 @@ steps:
 
 Os modelos no DevOps do Azure, são um grupo predefinido de tarefas que compilar ou implantar um aplicativo.
 
-### <a name="build-your-app"></a>Crie seu aplicativo
+### <a name="build-your-app"></a>Compilar seu aplicativo
 
 Criando seu aplicativo em Pipelines do Azure depende da linguagem de programação de seu aplicativo. Cada linguagem tem etapas de compilação específica para criar um artefato de implantação, que pode ser usado para atualizar seu aplicativo de funções no Azure.
 Para usar os modelos de build internas, ao criar um novo pipeline de compilação, escolha **usar o editor clássico** para criar um pipeline usando os modelos de designer

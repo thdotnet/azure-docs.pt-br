@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/22/2019
 ms.author: diberry
-ms.openlocfilehash: 7c3b93db18cb8e2660118927da47ffe95abb900f
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
-ms.translationtype: MT
+ms.openlocfilehash: 59308cdadb1eda9e73b373e72112b83d93629683
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65072998"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66124331"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Instalar e executar os contêineres de docker LUIS
  
@@ -53,12 +53,12 @@ Criação de APIs para aplicativos empacotados:
 
 Esse contêiner dá suporte aos valores mínimos e recomendados para as configurações:
 
-|Contêiner| Mínimo | Recomendadas | TPS<br>(No mínimo, máximo)|
+|Contêiner| Mínimo | Recomendado | TPS<br>(No mínimo, máximo)|
 |-----------|---------|-------------|--|
 |LUIS|1 núcleo, 2 GB de memória|1 núcleo, 4 GB de memória|20,40|
 
 * Cada núcleo precisa ser de pelo menos 2,6 GHz (gigahertz) ou mais rápido.
-* TPS - transações por segundo
+* TPS – transações por segundo
 
 Memória e núcleo correspondem às configurações `--cpus` e `--memory`, que são usadas como parte do comando `docker run`.
 
@@ -108,8 +108,8 @@ O diretório de montagem de entrada pode conter as versões de **Produção**, *
 
 |Tipo de pacote|API do ponto de extremidade de consulta|Disponibilidade de consulta|Formato do nome de arquivo do pacote|
 |--|--|--|--|
-|Treinado|Get, Post|Somente contêiner|`{APPLICATION_ID}_v{APPLICATION_VERSION}.gz`|
-|Staging|Get, Post|Azure e contêiner|`{APPLICATION_ID}_STAGING.gz`|
+|Treinamento concluído|Get, Post|Somente contêiner|`{APPLICATION_ID}_v{APPLICATION_VERSION}.gz`|
+|Preparo|Get, Post|Azure e contêiner|`{APPLICATION_ID}_STAGING.gz`|
 |Produção|Get, Post|Azure e contêiner|`{APPLICATION_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
@@ -168,7 +168,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Placeholder | Value |
+| Espaço reservado | Value |
 |-------------|-------|
 |{APPLICATION_ID} | A ID de aplicativo do aplicativo LUIS publicado. |
 |{APPLICATION_ENVIRONMENT} | O ambiente do aplicativo LUIS publicado. Use um dos seguintes valores:<br/>```PRODUCTION```<br/>```STAGING``` |
@@ -196,7 +196,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Placeholder | Value |
+| Espaço reservado | Value |
 |-------------|-------|
 |{APPLICATION_ID} | A ID de aplicativo do aplicativo LUIS treinado. |
 |{APPLICATION_VERSION} | A versão de aplicativo do aplicativo LUIS treinado. |
@@ -218,7 +218,7 @@ Se for bem-sucedido, a resposta será um arquivo de pacote do LUIS. Salve o arqu
 
 Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar o contêiner. O comando usa os seguintes parâmetros:
 
-| Placeholder | Value |
+| Espaço reservado | Value |
 |-------------|-------|
 |{ENDPOINT_KEY} | Essa chave é usada para iniciar o contêiner. Não use a chave de inicialização. |
 |{BILLING_ENDPOINT} | O valor de ponto de extremidade de cobrança está disponível no portal do Azure `Cognitive Services` página de visão geral. Você precisará adicionar o `luis/v2.0` roteamento para o URI do ponto de extremidade, conforme mostrado no exemplo a seguir: `https://westus.api.cognitive.microsoft.com/luis/v2.0`.|
@@ -256,6 +256,10 @@ Há outros [exemplos](luis-container-configuration.md#example-docker-run-command
 
 [!INCLUDE [Running multiple containers on the same host](../../../includes/cognitive-services-containers-run-multiple-same-host.md)]
 
+## <a name="endpoint-apis-supported-by-the-container"></a>Ponto de extremidade de APIs com suporte pelo contêiner
+
+Ambos os V2 e [V3 (versão prévia)](luis-migration-api-v3.md) versões da API estão disponíveis com o contêiner. 
+
 ## <a name="query-the-containers-prediction-endpoint"></a>Consultar o ponto de extremidade de previsão do contêiner
 
 O contêiner fornece APIs de ponto de extremidade de previsão de consulta com base em REST. Os pontos de extremidade para aplicativos publicados (preparo ou produção) têm uma rota _diferente_ da dos pontos de extremidade para aplicativos treinados. 
@@ -265,7 +269,7 @@ Use o host, `https://localhost:5000`, para APIs de contêiner.
 |Tipo de pacote|Método|Rota|Parâmetros de consulta|
 |--|--|--|--|
 |Publicado|[Get](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78), [Post](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee79)|/luis/v2.0/apps/{appId}?|q={q}<br>&staging<br>[&timezoneOffset]<br>[&verbose]<br>[&log]<br>|
-|Treinado|Get, Post|/luis/v2.0/apps/{appId}/versions/{versionId}?|q={q}<br>[&timezoneOffset]<br>[&verbose]<br>[&log]|
+|Treinamento concluído|Get, Post|/luis/v2.0/apps/{appId}/versions/{versionId}?|q={q}<br>[&timezoneOffset]<br>[&verbose]<br>[&log]|
 
 Os parâmetros de consulta configuram como e o que é retornado na resposta da consulta:
 
@@ -358,7 +362,7 @@ Configurações de aplicativo sem suporte|Detalhes|
 |Entidades sem suporte para todas as culturas|Entidade predefinida [KeyPhrase](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-keyphrase) para todas as culturas|
 |Entidades sem suporte para a cultura Inglês (en-US)|Entidades predefinidas [GeographyV2](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-geographyv2)|
 |Preparação da fala|Não há suporte para dependências externas no contêiner.|
-|Análise de sentimento|Não há suporte para dependências externas no contêiner.|
+|Análise de Sentimento|Não há suporte para dependências externas no contêiner.|
 
 ## <a name="summary"></a>Resumo
 

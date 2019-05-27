@@ -9,11 +9,11 @@ ms.date: 10/31/2018
 ms.author: genli
 ms.subservice: common
 ms.openlocfilehash: cf1cba6f6d26d66fc560c86ea42459fa276cc880
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58310839"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66114917"
 ---
 # <a name="frequently-asked-questions-about-azure-storage-migration"></a>Perguntas frequentes sobre a migração do Armazenamento do Azure
 
@@ -37,7 +37,7 @@ O script de automação destina-se à implantação do Azure Resource Manager, n
 
 **Há algum encargo para cópia de dados entre dois compartilhamentos de arquivo na mesma conta de armazenamento dentro da mesma região?**
 
- Não. Não há encargos para esse processo.
+Não. Não há encargos para esse processo.
 
 **Como fazer backup de toda minha conta de armazenamento para outra conta de armazenamento?**
 
@@ -193,7 +193,7 @@ Use o [Gerenciador de Armazenamento](https://azure.microsoft.com/features/storag
 
 **Existem pré-requisitos para alterar a replicação de uma conta de armazenamento, de armazenamento com redundância geográfica para armazenamento com redundância local?**
 
- Não. 
+Não. 
 
 **Como acessar o armazenamento com redundância dos Arquivos do Azure?**
 
@@ -276,7 +276,7 @@ Para dar a outras pessoas acesso aos meus recursos de armazenamento:
 
 -   Se você estiver usando armazenamento com redundância geográfica com acesso de leitura, poderá acessar dados da região secundária a qualquer hora. Use um dos seguintes métodos:  
       
-    - **AzCopy**: Acrescente **-secundário** ao nome da conta de armazenamento na URL para acessar o ponto de extremidade secundário. Por exemplo:   
+    - **AzCopy**: Acrescente **-secundário** ao nome da conta de armazenamento na URL para acessar o ponto de extremidade secundário. Por exemplo:  
      
       https://storageaccountname-secondary.blob.core.windows.net/vhds/BlobName.vhd
 
