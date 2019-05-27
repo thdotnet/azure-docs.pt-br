@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 10/13/2017
 ms.author: vidarmsft
 ms.openlocfilehash: 11ff7066019654ce2771bce242f3431d10da44ae
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59797527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66150614"
 ---
 # <a name="automated-disaster-recovery-solution-using-azure-site-recovery-for-file-shares-hosted-on-storsimple"></a>Solução de recuperação de desastre automatizada usando o Azure Site Recovery para compartilhamentos de arquivos hospedados no StorSimple
 
@@ -136,7 +136,7 @@ Para o servidor de arquivos da VM, defina as configurações de rede no Azure Si
 
 Você pode selecionar a VM na guia **Itens replicados** para definir as configurações de rede, conforme mostrado na ilustração a seguir.
 
-![Computação e rede](./media/storsimple-disaster-recovery-using-azure-site-recovery/image2.png)
+![Computação e Rede](./media/storsimple-disaster-recovery-using-azure-site-recovery/image2.png)
 
 ## <a name="create-a-recovery-plan"></a>Criar um plano de recuperação
 Você pode criar um plano de recuperação no ASR para automatizar o processo de failover de compartilhamentos de arquivos. Se ocorrer uma interrupção, você poderá exibir os compartilhamentos de arquivos em poucos minutos com apenas um clique simples. Para habilitar essa automação, você precisará de uma conta de Automação do Azure.
@@ -241,7 +241,7 @@ Você pode criar um plano de recuperação no ASR para automatizar o processo de
    
    - Clique no botão **+ Plano de recuperação**, abra a folha abaixo.
       
-      ![Criar Plano de Recuperação](./media/storsimple-disaster-recovery-using-azure-site-recovery/image6.png)
+      ![Criar plano de recuperação](./media/storsimple-disaster-recovery-using-azure-site-recovery/image6.png)
       
    - Insira um nome de plano de recuperação, escolha valores de modelo de Implantação, Destino e Origem.
    
@@ -323,7 +323,7 @@ Durante um failback, os contêineres de volume do StorSimple são submetidos ao 
 
 ## <a name="best-practices"></a>Práticas Recomendadas
 ### <a name="capacity-planning-and-readiness-assessment"></a>Planejamento da capacidade e avaliação de prontidão
-#### <a name="hyper-v-site"></a>Site do Hyper-V
+#### <a name="hyper-v-site"></a>Site Hyper-V
 Use a [ferramenta Planejador de Capacidade do usuário](https://www.microsoft.com/download/details.aspx?id=39057) para projetar o servidor, o armazenamento e a infraestrutura de rede para o seu ambiente de Réplica do Hyper-V.
 
 #### <a name="azure"></a>Azure

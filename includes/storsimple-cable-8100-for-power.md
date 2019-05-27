@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: db2104020e9478b1fedf68e1c9467f75e16044e2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60482624"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66155805"
 ---
 #### <a name="to-cable-for-power"></a>Para cabear o recebimento de energia
 1. Certifique-se de que os interruptores de energia em cada PCMs (Módulos de Energia e Refrigeração) estejam na posição de DESLIGADO.
@@ -25,7 +25,7 @@ ms.locfileid: "60482624"
    
     **Fiação de energia em um dispositivo 8100**
    
-   | Rótulo | DESCRIÇÃO |
+   | Rótulo | Descrição |
    |:--- |:--- |
    | 1 |PCM 0 |
    | 2 |Controlador 1 |

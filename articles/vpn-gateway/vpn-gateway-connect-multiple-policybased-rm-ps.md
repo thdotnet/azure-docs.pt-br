@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: yushwang
-ms.openlocfilehash: 3d8a3297fba43004db817e6b077f7b292fb917cb
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 9085d5ee21b1e955b7d9416a379ee730ba26ad3e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56454322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66150102"
 ---
 # <a name="connect-azure-vpn-gateways-to-multiple-on-premises-policy-based-vpn-devices-using-powershell"></a>Conectar gateways VPN do Azure a vários dispositivos VPN com base em políticas locais usando o PowerShell
 
@@ -116,7 +116,7 @@ $LNGIP6        = "131.107.72.22"
 
 #### <a name="2-create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a>2. Criar a rede virtual, o gateway de VPN e o gateway de rede local
 
-Crie um grupos de recursos.
+Crie um grupo de recursos.
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name $RG1 -Location $Location1

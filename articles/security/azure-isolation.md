@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: f5d1c66cb049ab9ec52db619d55a4bb3e485e4b2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b8142551d9c20c18d83c256b3f07a0deb291577c
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60588317"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66147649"
 ---
 # <a name="isolation-in-the-azure-public-cloud"></a>Isolamento na nuvem pública do Azure
 ##  <a name="introduction"></a>Introdução
@@ -72,7 +72,7 @@ Usuários, grupos e aplicativos do diretório podem gerenciar recursos na assina
 
 Para as necessidades de diagnóstico e manutenção, um modelo operacional que emprega um sistema de elevação de privilégio just-in-time é exigido e usado. O Azure AD Privileged Identity Management (PIM) introduz o conceito de um administrador elegível. [Administradores elegíveis](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-configure) devem ser usuários que precisam de acesso privilegiado às vezes, mas não todos os dias. A função fica inativa até que o usuário precise de acesso, então ele conclui um processo de ativação e torna-se um administrador ativo por um tempo predeterminado.
 
-![Gerenciamento de identidades com privilégios do AD do Azure](./media/azure-isolation/azure-isolation-fig2.png)
+![Azure AD Privileged Identity Management](./media/azure-isolation/azure-isolation-fig2.png)
 
 O Azure Active Directory hospeda cada locatário em seu próprio contêiner protegido, com políticas e permissões para e dentro do contêiner que é de propriedade e gerenciamento exclusivo do locatário.
 
@@ -137,6 +137,7 @@ Utilizar um tamanho isolado garante que sua máquina virtual será apenas sendo 
 * Standard_G5
 * Standard_DS15_v2
 * Standard_D15_v2
+* Standard_F72s_v2
 
 Você pode aprender mais sobre cada tamanho isolado disponível [aqui](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory).
 
@@ -309,7 +310,7 @@ Os bancos de dados mestres lógicos incluem:
 
 -   Logons do SQL usados para se conectar ao servidor
 
--   Regras de firewall
+-   Regras de Firewall
 
 Não há garantia de que as informações relacionadas à cobrança e ao uso para Bancos de Dados SQL do Azure do mesmo servidor lógico estejam na mesma instância física em cluster do SQL Azure, em vez disso, os aplicativos devem fornecer o nome do banco de dados de destino durante a conexão.
 

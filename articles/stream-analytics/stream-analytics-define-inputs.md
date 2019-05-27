@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 2a366a9030104c885adb1a4f773de04cdc439044
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 420705ef6b2e38d147b7033d2fb3ad57bbc216ac
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61480486"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66159295"
 ---
 # <a name="stream-data-as-input-into-stream-analytics"></a>Transmitir dados como entrada no Stream Analytics
 
@@ -131,6 +131,8 @@ No momento, o Stream Analytics não oferece suporte ao desserializar mensagens A
 > [!NOTE]
 > O Stream Analytics não dá suporte para a adição de conteúdo a um arquivo de blob existente. O Stream Analytics exibirá cada arquivo apenas uma vez e quaisquer alterações que ocorram no arquivo após o trabalho ter lido os dados não serão processados. A prática recomendada é carregar todos os dados para um arquivo de blob de uma vez e, em seguida, adicionar outros eventos mais recentes em um arquivo diferente, o novo arquivo de blob.
 > 
+
+Carregar um número muito grande de blobs ao mesmo tempo pode causar o Stream Analytics ignorar a leitura alguns blobs em casos raros. É recomendável para carregar blobs pelo menos 2 segundos de diferença no armazenamento de BLOBs. Se essa opção não for viável, você pode usar os Hubs de eventos para grandes volumes de fluxo de eventos. 
 
 ### <a name="configure-blob-storage-as-a-stream-input"></a>Configurar o Armazenamento de Blobs como uma entrada de dados 
 

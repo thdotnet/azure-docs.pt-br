@@ -14,11 +14,11 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: aed341c50332b424a1149c129629cd451a4e5133
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58500076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66146918"
 ---
 # <a name="move-data-to-and-from-azure-table-using-azure-data-factory"></a>Mover dados para e da Tabela do Azure | Azure Data Factory
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -484,7 +484,7 @@ Quando dados forem movidos para e da Tabela do Azure, os seguintes [mapeamentos 
 | Edm.Guid |Guid |Um identificador global exclusivo de 128 bits. |
 | Edm.Int32 |Int32 |Um inteiro de 32 bits. |
 | Edm.Int64 |Int64 |Um inteiro de 64 bits. |
-| Edm.String |String |Um valor codificado em UTF-16. Valores de cadeia de caracteres podem ter até 64 KB. |
+| Edm.String |Cadeia de caracteres |Um valor codificado em UTF-16. Valores de cadeia de caracteres podem ter até 64 KB. |
 
 ### <a name="type-conversion-sample"></a>Exemplo de conversão de tipo
 O exemplo a seguir é para copiar dados de um Blob do Azure para Tabela do Azure com conversões de tipo.
@@ -538,7 +538,7 @@ Dado o mapeamento de tipo OData da Tabela do Azure para o tipo .NET, você defin
 | Nome da coluna | Type |
 | --- | --- |
 | userid |Edm.Int64 |
-| name |Edm.String |
+| Nome |Edm.String |
 | lastlogindate |Edm.DateTime |
 
 Em seguida, defina o conjunto de dados de Tabela do Azure conforme demonstrado a seguir. Você não precisa especificar a seção "estrutura" com as informações de tipo, pois o tipo de informação já está especificado no armazenamento de dados subjacente.

@@ -1,5 +1,5 @@
 ---
-title: Explorar e preparar os dados (classe de conjunto de dados)
+title: Explorar e transformar os dados (classe de conjunto de dados)
 titleSuffix: Azure Machine Learning service
 description: Explorar dados usando as estatísticas de resumo e preparar dados por meio de limpeza de dados, transformação e engenharia de recursos
 services: machine-learning
@@ -10,17 +10,17 @@ ms.author: sihhu
 author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 05/02/19
-ms.openlocfilehash: 70712605cc97670b625d32052bb79b4a666e4281
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.date: 05/23/2019
+ms.openlocfilehash: e692b0dc1089804b1d68b79c1a6f438f30554602
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65603163"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66146289"
 ---
 # <a name="explore-and-prepare-data-with-the-dataset-class-preview"></a>Explorar e preparar dados com a classe de conjunto de dados (visualização)
 
-Aprenda a explorar e preparar dados com o [SDK do Azure Machine Learning](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py). O [conjunto de dados](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py) classe (visualização) permite que você explore e preparar seus dados, fornecendo funções, como: amostragem, as estatísticas de resumo e transformações inteligentes. Etapas de transformação são salvos no [definições de conjunto de dados](how-to-manage-dataset-definitions.md) com a capacidade de lidar com vários arquivos grandes de esquemas diferentes de uma maneira altamente escalonável.
+Aprenda a explorar e preparar dados com o pacote azureml conjuntos de dados na [SDK do Azure Machine Learning](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py). O [conjunto de dados](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py) classe (visualização) permite que você explore e preparar seus dados, fornecendo funções, como: amostragem, as estatísticas de resumo e transformações inteligentes. Etapas de transformação são salvos no [definições de conjunto de dados](how-to-manage-dataset-definitions.md) com a capacidade de lidar com vários arquivos grandes de esquemas diferentes de uma maneira altamente escalonável.
 
 > [!Important]
 > Algumas classes de conjunto de dados (visualização) têm dependências no [azureml dataprep](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) (GA) do pacote. Embora as funções de transformação podem ser feitas diretamente com o GA'ed [funções de preparação de dados](how-to-transform-data.md), recomendamos que os wrappers de pacote do conjunto de dados descritos neste artigo se você estiver criando uma nova solução. Azure Machine Learning conjuntos de dados (versão prévia) permitem que você não só transformar seus dados, mas também [dados de instantâneo](how-to-create-dataset-snapshots.md) e armazenar [definições de conjunto de dados com controle de versão](how-to-manage-dataset-definitions.md). Conjuntos de dados é a próxima versão do SDK de preparação de dados, oferecendo funcionalidade expandida para gerenciar conjuntos de dados em soluções de inteligência Artificial.
@@ -33,7 +33,7 @@ Para explorar e preparar seus dados, você precisará de:
 
 * Um workspace de serviço do Azure Machine Learning. Ver [criar um espaço de trabalho do serviço de Azure Machine Learning](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace).
 
-* O SDK de aprendizado de máquina do Azure para Python (versão 1.0.21 ou posterior). Para instalar ou atualizar para a versão mais recente do SDK, consulte [instalar ou atualizar o SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+* O SDK de aprendizado de máquina do Azure para Python (versão 1.0.21 ou posterior), que inclui o pacote azureml conjuntos de dados. Para instalar ou atualizar para a versão mais recente do SDK, consulte [instalar ou atualizar o SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 
 * A Azure Machine Learning a preparação de dados do SDK. Para instalar ou atualizar para a versão mais recente, consulte [instalar ou atualizar o SDK de preparação de dados](https://docs.microsoft.com/python/api/overview/azure/dataprep/intro?view=azure-dataprep-py#install).
 

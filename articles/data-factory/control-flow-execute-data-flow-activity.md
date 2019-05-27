@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/22/2019
 ms.author: makromer
-ms.openlocfilehash: e1d4ce355f34014d5099c4b46f4420d032363fce
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
-ms.translationtype: MT
+ms.openlocfilehash: b0a6c6feae11f8daeed54c5e763dbff3aa711652
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236681"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66153545"
 ---
 # <a name="execute-data-flow-activity-in-azure-data-factory"></a>Executar a atividade de fluxo de dados no Azure Data Factory
 Use a atividade de fluxo de dados execute para executar seu fluxo de dados ADF em execuções de depuração (área restrita) do pipeline em execuções de pipeline disparada.
@@ -64,6 +64,10 @@ Use os dados de fluxo de depuração para utilizar um cluster warmed para seus f
 Este é um campo obrigatório que define qual tempo de execução de integração a ser usado para a execução de atividade de fluxo de dados. Por padrão, o Data Factory usará o tempo de execução de integração do Azure do padrão de resolução automática. No entanto, você pode criar seus próprios tempos de execução de integração do Azure que definem a regiões específicas, TTL, contagens de núcleos e tipo de computação para a execução de atividade de fluxo de dados.
 
 A configuração padrão para execuções de fluxo de dados é de 8 núcleos de computação geral com um TTL de 60 minutos.
+
+Você tem controle sobre o ambiente de execução do Spark para suas atividades de fluxo de dados. No [tempo de execução de integração do Azure](concepts-integration-runtime.md) são configurações para definir o tipo de computação (uso geral, com otimização de memória e otimizado para computação), número de núcleos de trabalhador e time-to-live para coincidir com o mecanismo de execução com a computação de fluxo de dados requisitos. Além disso, a definir o TTL permitirá manter um cluster passiva que está imediatamente disponível para as execuções de trabalho.
+
+![Tempo de execução de integração do Azure](media/data-flow/ir-new.png "tempo de execução de integração do Azure")
 
 ### <a name="staging-area"></a>Área de preparação
 

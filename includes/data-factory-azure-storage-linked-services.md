@@ -5,18 +5,18 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: b8585b62b0728d1ba6e010e42b44840903c46833
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58500858"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66146901"
 ---
 ### <a name="azure-storage-linked-service"></a>Serviço vinculado de armazenamento do Azure
 O **serviço vinculado do Azure Storage** permite que você vincule uma conta de armazenamento do Azure ao Azure Data Factory usando a **chave de conta**, o que oferece ao data factory acesso global ao Azure Storage. A tabela a seguir fornece a descrição para elementos JSON específicas para o serviço de Armazenamento do Azure vinculado.
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| Tipo |A propriedade type deve ser definida como: **AzureStorage** |Sim |
+| type |A propriedade type deve ser definida como: **AzureStorage** |Sim |
 | connectionString |Especifique as informações necessárias para se conectar ao armazenamento do Azure para a propriedade connectionString. |Sim |
 
 Consulte a seção a seguir para obter as etapas exibir/copiar a chave de conta para um armazenamento do Azure: [Chaves de acesso](../articles/storage/common/storage-account-manage.md#access-keys).
@@ -49,7 +49,7 @@ O serviço vinculado de SAS de armazenamento do Azure permite que você vincule 
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| Tipo |A propriedade type deve ser definida como: **AzureStorageSas** |Sim |
+| type |A propriedade type deve ser definida como: **AzureStorageSas** |Sim |
 | sasUri |Especificar o URI de Assinatura de Acesso Compartilhado para os recursos de Armazenamento do Azure, como blob, contêiner ou tabela.  |Sim |
 
 **Exemplo:**

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/17/2019
 ms.author: spelluru
 ms.openlocfilehash: fc8877ed23b408ea041de67018a71cc203c5e8c0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58182397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66162050"
 ---
 # <a name="post-to-custom-topic-for-azure-event-grid"></a>Publicar para tópico personalizado para Grade de Eventos do Azure
 
@@ -94,11 +94,11 @@ Por exemplo, um esquema de dados de evento válido é:
 }]
 ```
 
-## <a name="response"></a>Resposta
+## <a name="response"></a>Response
 
 Após a postagem para o ponto de extremidade do tópico, você receberá uma resposta. A resposta é um código de resposta HTTP padrão. Algumas respostas comuns são:
 
-|Resultado  |Resposta  |
+|Result  |Response  |
 |---------|---------|
 |Sucesso  | 200 OK  |
 |Os dados de evento têm formato incorreto | 400 Solicitação Inválida |

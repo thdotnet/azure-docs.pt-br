@@ -10,11 +10,11 @@ ms.date: 07/18/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017, mvc, devcenter
 ms.openlocfilehash: d7ce702bb726fb89780d251f31023c9490112c36
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55659381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66148812"
 ---
 # <a name="deprecated-deploy-kubernetes-cluster-for-windows-containers"></a>(PRETERIDO) Implantar um cluster Kubernetes para contêineres do Windows
 
@@ -42,7 +42,7 @@ O exemplo a seguir cria um grupo de recursos chamado *myResourceGroup* no local 
 az group create --name myResourceGroup --location eastus
 ```
 
-## <a name="create-kubernetes-cluster"></a>Criar cluster Kubernetes
+## <a name="create-kubernetes-cluster"></a>Criar cluster do Kubernetes
 Crie um cluster Kubernetes no Serviço de Contêiner do Azure com o comando [az acs create](/cli/azure/acs#az-acs-create). 
 
 O exemplo a seguir cria um cluster denominado *myK8sCluster* com um nó Linux mestre dois nós de agente do Windows. Este exemplo cria chaves de SSH necessárias para conectar-se com o mestre do Linux. Este exemplo usa o *azureuser* como nome de usuário administrativo e *myPassword12* como a senha nos nós do Windows. Atualize esses valores para algo apropriado para seu ambiente. 

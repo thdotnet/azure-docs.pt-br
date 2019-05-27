@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 02/27/2019
 ms.author: cherylmc
 ms.openlocfilehash: 1096c120b4e7731fabd574c4096e70fe02b6272d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58081076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66146938"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-radius-authentication-powershell"></a>Configurar uma conexão ponto a site com uma VNet usando a autenticação RADIUS: PowerShell
 
@@ -116,7 +116,7 @@ Declare as variáveis que você quer usar. Use o exemplo a seguir, substituindo 
 
 As seguintes etapas criam um grupo de recursos e uma rede virtual no grupo de recursos com três sub-redes. Ao substituir valores, é importante que você sempre nomeie sua sub-rede de gateway especificamente como ‘GatewaySubnet’. Se você usar outro nome, a criação do gateway falhará;
 
-1. Crie um grupos de recursos.
+1. Crie um grupo de recursos.
 
    ```azurepowershell-interactive
    New-AzResourceGroup -Name "TestRG" -Location "East US"

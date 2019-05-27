@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/28/2019
 ms.openlocfilehash: d00aa35437f93c010ce48f3036b4a684910702c0
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623147"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "66160423"
 ---
 # <a name="restart-azure-database-for-mysql-server-using-the-azure-cli"></a>Reiniciar o banco de dados do Azure para servidor MySQL usando a CLI do Azure
 Este tópico descreve como você pode reiniciar um servidor do Banco de Dados do Azure para MySQL. Você talvez precise reiniciar o servidor por razões de manutenção, o que causa uma breve interrupção, conforme o servidor executa a operação.

@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 72e51deb31ad2894ccfc0fc71884c99863184f5b
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 2f6b693e11ccbb759b59c949b24690e8a2054f94
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65203654"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66132393"
 ---
 # <a name="azure-queue-storage-bindings-for-azure-functions"></a>Associações de armazenamento de filas do Azure Functions
 
@@ -250,7 +250,7 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 |Propriedade function.json | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|----------------------|
-|**tipo** | n/d| Deve ser definido como `queueTrigger`. Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure.|
+|**type** | n/d| Deve ser definido como `queueTrigger`. Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure.|
 |**direction**| n/d | Apenas no arquivo *function.json*. Deve ser definido como `in`. Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure. |
 |**name** | n/d |O nome da variável que contém o conteúdo do item de fila no código da função.  |
 |**queueName** | **QueueName**| O nome da fila a ser controlada. |
@@ -275,7 +275,7 @@ Em JavaScript, use `context.bindings.<name>` para acessar o conteúdo de item de
 
 O gatilho de fila fornece várias propriedades de [metadados](./functions-bindings-expressions-patterns.md#trigger-metadata). Essas propriedades podem ser usadas como parte de expressões de associação em outras associações ou como parâmetros em seu código. Essas são propriedades da classe [CloudQueueMessage](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage).
 
-|Propriedade|Type|DESCRIÇÃO|
+|Propriedade|Type|Descrição|
 |--------|----|-----------|
 |`QueueTrigger`|`string`|Conteúdo da fila (se for uma cadeia de caracteres válida). Se o conteúdo de mensagem de fila como uma cadeia de caracteres `QueueTrigger` tem o mesmo valor da variável nomeada pela `name` propriedade em *function.json*.|
 |`DequeueCount`|`int`|O número de vezes que essa mensagem foi removida da fila.|
@@ -363,7 +363,7 @@ Aqui está o arquivo *function.json*:
       "direction": "out",
       "name": "$return",
       "queueName": "outqueue",
-      "connection": "MyStorageConnectionAppSetting",
+      "connection": "MyStorageConnectionAppSetting"
     }
   ]
 }
@@ -424,7 +424,7 @@ Aqui está o arquivo *function.json*:
       "direction": "out",
       "name": "$return",
       "queueName": "outqueue",
-      "connection": "MyStorageConnectionAppSetting",
+      "connection": "MyStorageConnectionAppSetting"
     }
   ]
 }
@@ -504,7 +504,7 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 |Propriedade function.json | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|----------------------|
-|**tipo** | n/d | Deve ser definido como `queue`. Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure.|
+|**type** | n/d | Deve ser definido como `queue`. Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure.|
 |**direction** | n/d | Deve ser definido como `out`. Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure. |
 |**name** | n/d | O nome da variável que representa a fila no código de função. Definido como `$return` para referenciar o valor de retorno da função.|
 |**queueName** |**QueueName** | O nome da fila. |
@@ -564,9 +564,9 @@ Esta seção descreve as definições de configuração globais disponíveis par
 ```
 
 
-|Propriedade  |Padrão | DESCRIÇÃO |
+|Propriedade  |Padrão | Descrição |
 |---------|---------|---------|
-|maxPollingInterval|00:00:02|O intervalo máximo entre as sondagens de fila. O mínimo é de 00:00:00.100 (100 ms). |
+|maxPollingInterval|00:00:01|O intervalo máximo entre as sondagens de fila. O mínimo é de 00:00:00.100 (100 ms). |
 |visibilityTimeout|00:00:00|O intervalo de tempo entre as repetições quando o processamento de uma mensagem falha. |
 |batchSize|16|O número de mensagens em fila que o tempo de execução de Funções recupera simultaneamente e processa em paralelo. Quando o número que está sendo processado chega até `newBatchThreshold`, o tempo de execução obtém outro lote e começa a processar as mensagens. Portanto, o número máximo de mensagens simultâneas que estão sendo processadas por função é `batchSize` mais `newBatchThreshold`. Esse limite se aplica separadamente a cada função acionada por fila. <br><br>Se quiser evitar uma execução paralela para mensagens recebidas em uma fila, é possível definir `batchSize` como 1. No entanto, essa configuração elimina a simultaneidade desde que seu aplicativo de função seja executado em uma única máquina virtual (VM). Se o aplicativo de função se expande para várias VMs, cada VM pode executar uma instância de cada função acionada por fila.<br><br>O máximo `batchSize` é 32. |
 |maxDequeueCount|5|O número de vezes para tentar processar uma mensagem antes de movê-la para a fila de mensagens suspeitas.|

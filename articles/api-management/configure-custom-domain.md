@@ -9,14 +9,14 @@ editor: ''
 ms.service: api-management
 ms.workload: integration
 ms.topic: article
-ms.date: 12/14/2017
+ms.date: 05/29/2019
 ms.author: apimpm
-ms.openlocfilehash: a771b437258046f937b97a9e37ffedbe0a17c1c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a8bfa7c5baa316b4019480bfc146b6cc61eff979
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60693580"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66141295"
 ---
 # <a name="configure-a-custom-domain-name"></a>Configurar um nome de domínio personalizado 
 
@@ -37,8 +37,6 @@ Para executar as etapas descritas neste artigo, você precisa ter:
 + Um nome de domínio personalizado que pertence a você. O nome de domínio personalizado que você deseja usar deve ser adquirido separadamente e hospedado em um servidor DNS. Este tópico não dá instruções sobre como hospedar um nome de domínio personalizado.
 + Você deve ter um certificado válido com chaves pública e privada (.PFX). A entidade ou o SAN (nome alternativo da entidade) deve corresponder ao nome de domínio (isso permite que o APIM exponha com segurança URLs sobre SSL).
 
-[!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
-
 ## <a name="use-the-azure-portal-to-set-a-custom-domain-name"></a>Usar o portal do Azure para definir um nome de domínio personalizado
 
 1. Navegue para sua instância do APIM no [Portal do Azure](https://portal.azure.com/).
@@ -56,7 +54,7 @@ Para executar as etapas descritas neste artigo, você precisa ter:
 1. Selecione o ponto de extremidade que você deseja atualizar. 
 1. Na janela à direita, clique em **Personalizado**.
 
-   + Em **Nome de domínio personalizado**, especifique o nome que você deseja usar. Por exemplo, `api.contoso.com`. Nomes de domínio curinga (por exemplo, *.domain.com) também têm suporte.
+   + Em **Nome de domínio personalizado**, especifique o nome que você deseja usar. Por exemplo: `api.contoso.com`. Nomes de domínio curinga (por exemplo, *.domain.com) também têm suporte.
    + No **certificado**, selecione um certificado do Cofre de chaves. Você também pode carregar um válido. PFX do arquivo e forneça sua **senha**, se o certificado é protegido com uma senha.
 
      > [!TIP]

@@ -9,11 +9,11 @@ ms.date: 010/17/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 60a64758ae93320fc44a0705038e9db7e114b9bd
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62123979"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66149505"
 ---
 No portal do Azure, você pode exibir o status da conexão para um gateway de VPN de rede virtual clássica navegando até a conexão. As etapas a seguir mostram uma maneira de navegar para a conexão e verificar.
 
