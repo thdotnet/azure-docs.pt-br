@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac65a9ac81bca942f9fcbe802fdbf8a0aa3f8248
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b69dca5abddd56b29abf3e482e51b3d2a41612e7
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60287837"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864462"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Relatórios de atividades de entrada no portal do Azure Active Directory
 
@@ -100,7 +100,7 @@ Para restringir os dados relatados a um nível que funciona para você, filtre o
 - Aplicativo
 - Status de entrada
 - Acesso Condicional
-- Data
+- Date
 
 ![Atividade de entrada](./media/concept-sign-ins/04.png "Atividade de entrada")
 
@@ -112,14 +112,14 @@ O filtro **status de entrada** permite que você selecione:
 
 - Todos
 - Sucesso
-- Failure
+- Falha
 
 O filtro **Acesso Condicional** permite que você selecione o status da política de Autoridade de Certificação para a entrada:
 
 - Todos
-- Não aplicado
+- Não Aplicado
 - Sucesso
-- Failure
+- Falha
 
 O filtro **Data** permite definir um período de tempo para os dados retornados.  
 Os valores possíveis são:
@@ -131,21 +131,28 @@ Os valores possíveis são:
 
 Quando você seleciona um período de tempo personalizado, pode configurar uma hora de início e uma hora de término.
 
-Se você adicionar outros campos ao modo de exibição de entradas, esses campos serão adicionados automaticamente à lista de filtros. Por exemplo, ao adicionar o campo **Aplicativo Cliente** à sua lista, você também obtém outra opção de filtro que permite definir os seguintes filtros:
-
-- Navegador      
-- Exchange ActiveSync (com suporte)               
-- Exchange ActiveSync (sem suporte)
-- Outros clientes               
-    - IMAP
-    - MAPI
-    - Clientes mais antigos do Office
-    - POP
-    - SMTP
-
-
+Se você adicionar outros campos ao modo de exibição de entradas, esses campos serão adicionados automaticamente à lista de filtros. Por exemplo, ao adicionar o campo **Aplicativo Cliente** à sua lista, você também obtém outra opção de filtro que permite definir os seguintes filtros:  
 ![Atividade de entrada](./media/concept-sign-ins/12.png "Atividade de entrada")
 
+- **Navegador**  
+    Esse filtro mostra todos os eventos em que tentativas de logon foram realizados usando fluxos de navegador.
+- **Exchange ActiveSync (compatível)**  
+    Esse filtro mostra todas as tentativas de entrar em que o protocolo Exchange ActiveSync (EAS) foi tentado de plataformas com suporte, como iOS, Android e Windows Phone.
+- **Exchange ActiveSync (sem suporte)**  
+    Esse filtro mostra todas as tentativas de entrar em que o protocolo EAS foi tentado de plataformas sem suporte, como distribuições de Linux.
+- **Os aplicativos móveis e clientes de Desktop** esse filtro mostra todas as tentativas de entrada que não estavam usando fluxos de navegador. Isso pode ser de qualquer plataforma usando qualquer protocolo ou de aplicativos de área de trabalho cliente como o Office no Windows ou MacOS de aplicativos móveis.
+  
+- **Outros clientes**
+    - **IMAP**  
+        Um cliente de email herdados usando IMAP para recuperar o email.
+    - **MAPI**  
+        Office 2013, em que o ADAL está habilitado e está usando MAPI.
+    - **Clientes mais antigos do Office**  
+        Office 2013 em sua configuração padrão em que a ADAL não está habilitado e ele está usando MAPI ou Office 2016, em que a ADAL foi desabilitada.
+    - **POP**  
+        Um cliente de email herdados usando POP3 para recuperar o email.
+    - **SMTP**  
+        Um cliente de email herdados usando o SMTP para enviar email.
 
 ## <a name="download-sign-in-activities"></a>Baixar atividades de entrada
 
@@ -183,7 +190,7 @@ Cada linha na lista de atividades de entrada mostra:
 
 Ao clicar em um item, você verá mais detalhes sobre a operação de entrada:
 
-- Id de Usuário
+- ID de usuário
 - Usuário
 - Nome de Usuário
 - ID do aplicativo
@@ -191,8 +198,8 @@ Ao clicar em um item, você verá mais detalhes sobre a operação de entrada:
 - Cliente
 - Local padrão
 - Endereço IP
-- Data
-- MFA obrigatório
+- Date
+- MFA Necessário
 - Status de entrada
 
 > [!NOTE]

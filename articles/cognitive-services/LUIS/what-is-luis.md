@@ -9,12 +9,12 @@ ms.subservice: language-understanding
 ms.topic: overview
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: c26f3d6c3b34ed90a5455bb94ea71d7556b47751
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 2bb50f985b99a3fb62e7b8a61bb0f9ce2dd402e1
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57441960"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522000"
 ---
 # <a name="what-is-language-understanding-luis"></a>O que é Reconhecimento Vocal (LUIS)?
 
@@ -53,7 +53,7 @@ Um aplicativo LUIS contém um modelo de linguagem natural de domínio específic
 * **Entidades personalizadas** LUIS oferece várias maneiras de identificar suas próprias intenções e entidades personalizadas incluindo entidades de aprendizado de máquina, entidades específicas ou literais e uma combinação de literais e aprendizado de máquina.
 
 ## <a name="build-the-luis-model"></a>Criar o modelo LUIS
-Criar o modelo com as APIs de [criação](https://aka.ms/luis-authoring-apis) ou com o portal do LUIS.
+Criar o modelo com as APIs de [criação](https://go.microsoft.com/fwlink/?linkid=2092087) ou com o portal do LUIS.
 
 O modelo LUIS começa com categorias de intenções de usuário chamadas **[intenções](luis-concept-intent.md)**. Cada intenção precisa de exemplos de **[expressões](luis-concept-utterance.md)** do usuário. Cada expressão pode fornecer vários dados que precisam ser extraídos com **[entidades](luis-concept-entity-types.md)**. 
 
@@ -65,7 +65,7 @@ O modelo LUIS começa com categorias de intenções de usuário chamadas **[inte
 
 ## <a name="query-prediction-endpoint"></a>Ponto de extremidade de previsão da consulta
 
-Depois que o modelo é criado e publicado no ponto de extremidade, o aplicativo cliente envia expressões à API de [ponto de extremidade](https://aka.ms/luis-endpoint-apis) da previsão publicada. A API aplica o modelo ao texto para análise. A API responde com os resultados de previsão em um formato JSON.  
+Depois que o modelo é criado e publicado no ponto de extremidade, o aplicativo cliente envia expressões à API de [ponto de extremidade](https://go.microsoft.com/fwlink/?linkid=2092356) da previsão publicada. A API aplica o modelo ao texto para análise. A API responde com os resultados de previsão em um formato JSON.  
 
 A resposta mínima do ponto de extremidade JSON, contém a expressão de consulta e a intenção de maior pontuação. Ele também pode extrair dados, como a entidade do **Tipo de contato** seguinte. 
 
@@ -126,6 +126,6 @@ Crie um novo aplicativo LUIS com um domínio [predefinido](luis-get-started-crea
 
 [bot-framework]: https://docs.microsoft.com/bot-framework/
 [flow]: https://docs.microsoft.com/connectors/luis/
-[authoring-apis]: https://aka.ms/luis-authoring-api
-[endpoint-apis]: https://aka.ms/luis-endpoint-apis
+[authoring-apis]: https://go.microsoft.com/fwlink/?linkid=2092087
+[endpoint-apis]: https://go.microsoft.com/fwlink/?linkid=2092356
 [qnamaker]: https://qnamaker.ai/

@@ -8,14 +8,15 @@ ms.topic: tutorial
 ms.date: 08/14/2018
 ms.author: mimart
 author: msmimart
+manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a30281012d28489a40e3366585164628d87c220
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1f91d51bda4c41a314c7cc1c2cc895e36bde0500
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58009140"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65768219"
 ---
 # <a name="tutorial-bulk-invite-azure-ad-b2b-collaboration-users"></a>Tutorial: Convidar usuários de colaboração B2B do Azure AD em massa
 
@@ -104,7 +105,7 @@ foreach ($email in $invitations)
    {New-AzureADMSInvitation `
       -InvitedUserEmailAddress $email.InvitedUserEmailAddress `
       -InvitedUserDisplayName $email.Name `
-      -InviteRedirectUrl https://myapps.azure.com `
+      -InviteRedirectUrl https://myapps.microsoft.com `
       -InvitedUserMessageInfo $messageInfo `
       -SendInvitationMessage $true
    }
@@ -119,7 +120,7 @@ Para verificar se os usuários convidados foram adicionados ao Azure AD, execute
 ```powershell
  Get-AzureADUser -Filter "UserType eq 'Guest'"
 ```
-Os usuários convidados deverão aparecer na lista com um nome UPN no formato *endereçodeemail*#EXT#\@*domínio*. Por exemplo, *lstokes_fabrikam.com#EXT#\@contoso.onmicrosoft.com*, em que contoso.onmicrosoft.com é a organização da qual você enviou os convites.
+Você deverá ver os usuários que você convidou listados, com um nome UPN no formato *endereçodeemail*#EXT#\@*domínio*. Por exemplo, *lstokes_fabrikam.com#EXT#\@contoso.onmicrosoft.com*, em que contoso.onmicrosoft.com é a organização da qual você enviou os convites.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 

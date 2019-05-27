@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 04/12/2019
 ms.author: helohr
-ms.openlocfilehash: d3357cec426585ba8550301dfa703f583a930ad0
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 1e53f76f564c0970ac1f291d2125807441500de6
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236932"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65523308"
 ---
 # <a name="tutorial-create-service-principals-and-role-assignments-with-powershell"></a>Tutorial: Criar entidades de serviço e atribuições de função com o PowerShell
 
@@ -38,10 +38,9 @@ Antes de criar entidades de serviço e atribuições de função, você precisar
     Install-Module AzureAD
     ```
 
-2. Execute os cmdlets a seguir com os valores entre aspas substituídos pelos valores relevantes à sua sessão. Se você acabou de criar seu locatário da Área de Trabalho Virtual do Windows no tutorial [​​Criar um locatário na Área de Trabalho Virtual do Windows](./tenant-setup-azure-active-directory.md), use "Grupo de Locatários Padrão" como nome do grupo de locatários.
+2. Execute os cmdlets a seguir com os valores entre aspas substituídos pelos valores relevantes à sua sessão.
 
     ```powershell
-    $myTenantGroupName = "<my-tenant-group-name>"
     $myTenantName = "<my-tenant-name>"
     ```
 
@@ -68,8 +67,7 @@ Execute os cmdlets do PowerShell a seguir para se conectar à Área de Trabalho 
 
 ```powershell
 Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
-Set-RdsContext -TenantGroupName $myTenantGroupName
-New-RdsRoleAssignment -RoleDefinitionName "RDS Owner" -ApplicationId $svcPrincipal.AppId -TenantGroupName $myTenantGroupName -TenantName $myTenantName
+New-RdsRoleAssignment -RoleDefinitionName "RDS Owner" -ApplicationId $svcPrincipal.AppId -TenantName $myTenantName
 ```
 
 ## <a name="sign-in-with-the-service-principal"></a>Entrar com a entidade de serviço

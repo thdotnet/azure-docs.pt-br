@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 77e58ea830de1e8ab7e3643ee5694a5e3f609c53
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: dda1447a049071a0871079f2cabd046ed7c479d6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59564910"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65770144"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fmsystems"></a>Tutorial: Integração do Azure Active Directory ao FM:Systems
 
@@ -107,7 +107,7 @@ Para configurar o logon único do Azure AD com o FM:Systems, execute as seguinte
     Na caixa de texto **URL de Resposta**, digite uma URL usando o seguinte padrão: `https://<companyname>.fmshosted.com/fminteract/ConsumerService2.aspx`
     
     > [!NOTE]
-    > Esse valor não é real. Atualize esse valor com a URL de Resposta real. Contate a [equipe de suporte ao cliente do FM:Systems](https://fmsystems.com/ask-us/) para obter o valor. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
+    > Esse valor não é real. Atualize esse valor com a URL de Resposta real. Contate a [equipe de suporte ao cliente do FM:Systems](https://fmsystems.com/support-services/) para obter o valor. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
 5. Na página **Configurar Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Baixar** para baixar o **XML de Metadados de Federação** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
 
@@ -125,7 +125,7 @@ Para configurar o logon único do Azure AD com o FM:Systems, execute as seguinte
 
 ### <a name="configure-fmsystems-single-sign-on"></a>Configurar o logon único do FM:Systems
 
-Para configurar o logon único no lado do **FM:Systems**, é necessário enviar o **XML de Metadados de Federação** baixado e as URLs apropriadas copiadas do portal do Azure para a [equipe de suporte do FM:Systems](https://fmsystems.com/ask-us/). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+Para configurar o logon único no lado do **FM:Systems**, é necessário enviar o **XML de Metadados de Federação** baixado e as URLs apropriadas copiadas do portal do Azure para a [equipe de suporte do FM:Systems](https://fmsystems.com/support-services/). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 

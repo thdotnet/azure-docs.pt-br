@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/18/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 17acd4eebe53704699d3ec9a3f4f121eed79794d
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: b2ff67e207f8a3a2b79635b080c78021162f0ac6
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58310380"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65519226"
 ---
 # <a name="migrate-amazon-web-services-aws-vms-to-azure"></a>Migrar das VMs do AWS (Amazon Web Services) para o Azure
 
@@ -115,7 +115,11 @@ Na página **Meta de Proteção**, selecione os valores a seguir:
 
 Quando terminar, selecione **OK** para ir à próxima seção.
 
-### <a name="2-prepare-source"></a>2: Preparar fonte
+### <a name="2-select-deployment-planning"></a>2: Selecionar o planejamento de implantação
+
+Em **Você concluiu o planejamento de implantação?**, selecione **Farei isso mais tarde** e, em seguida, selecione**OK**.
+
+### <a name="3-prepare-source"></a>3: Preparar fonte
 
 Na página **Preparar fonte**, selecione **+ Servidor de Configuração**.
 
@@ -140,7 +144,7 @@ Na página **Preparar fonte**, selecione **+ Servidor de Configuração**.
 
 Quando terminar de configurar o servidor de configuração, volte para o portal e selecione o servidor que você criou para **Servidor de Configuração**. Selecione **OK** para ir para 3: Preparar destino.
 
-### <a name="3-prepare-target"></a>3: Preparar o destino
+### <a name="4-prepare-target"></a>4: Preparar o destino
 
 Nesta seção, você vai inserir informações sobre os recursos que criou em [Preparar recursos do Azure](#prepare-azure-resources) anteriormente neste tutorial.
 
@@ -149,8 +153,7 @@ Nesta seção, você vai inserir informações sobre os recursos que criou em [P
 3. O Site Recovery verifica se você tem uma ou mais contas de armazenamento e rede compatíveis do Azure. Esses devem ser os recursos que você criou em [Preparar recursos do Azure](#prepare-azure-resources) anteriormente neste tutorial.
 4. Quando terminar, selecione **OK**.
 
-
-### <a name="4-prepare-replication-settings"></a>4: Preparar configurações de replicação
+### <a name="5-prepare-replication-settings"></a>5: Preparar configurações de replicação
 
 Antes de poder habilitar a replicação, será necessário criar uma política de replicação.
 
@@ -158,12 +161,7 @@ Antes de poder habilitar a replicação, será necessário criar uma política d
 2. Em **Nome**, insira **myReplicationPolicy**.
 3. Deixe o restante das configurações padrão e, em seguida, selecione **OK** para criar a política. A nova política é associada automaticamente ao servidor de configuração.
 
-### <a name="5-select-deployment-planning"></a>5: Selecionar o planejamento de implantação
-
-Em **Você concluiu o planejamento de implantação?**, selecione **Farei isso mais tarde** e, em seguida, selecione**OK**.
-
 Quando terminar todas as cinco seções em **Preparar a Infraestrutura**, selecione **OK**.
-
 
 ## <a name="enable-replication"></a>Habilitar a replicação
 

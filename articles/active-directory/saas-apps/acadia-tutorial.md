@@ -16,11 +16,11 @@ ms.date: 1/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 30c6958fef66e492ae1875538503e4094d8eeccb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57842576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65859494"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-acadia"></a>Tutorial: Integração do Azure Active Directory ao Acadia
 
@@ -114,7 +114,7 @@ Para configurar o logon único do Azure AD com o Acadia, execute as seguintes et
 
     ![Informações de logon único de Domínio e URLs do Acadia](common/metadata-upload-additional-signon.png)
 
-    Na caixa de texto **URL de login**, digite um URL usando o seguinte padrão: `https://<CUSTOMER>.acadia.sysalli.com/Shibboleth.sso/Login`
+    Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://<CUSTOMER>.acadia.sysalli.com/Shibboleth.sso/Login`
 
     > [!NOTE]
     > Os valores das etapas 4 e 5 serão fornecidos em um arquivo de metadados pela equipe do Acadia, que pode ser importado clicando em **Carregar arquivo de metadados** na seção **Configuração Básica de SAML**. Atualize esses valores com o Identificador, a URL de Resposta e a URL de Logon reais. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure para confirmar se os valores dos metadados estão corretos. Entre em contato com a [equipe de suporte ao cliente do Acadia](mailto:support@systemsalliance.com) se os valores fornecidos estiverem incorretos.
@@ -155,7 +155,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.

@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 11/13/2018
 ms.author: jafreebe
 ms.custom: seodec18
-ms.openlocfilehash: 472ff85adaf72f91948c4072b12cca3ff8e59f37
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 6b9c9500423392ec07482f049697d9b49dc060bf
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59545343"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603193"
 ---
 # <a name="tutorial-build-a-java-ee-and-postgres-web-app-in-azure"></a>Tutorial: Compilar um aplicativo Web Java EE e um aplicativo Web Postgres no Azure
 
@@ -158,7 +158,7 @@ Em seguida, precisamos editar nossa configuração da JPA (API de Transação Ja
 
 ## <a name="configure-the-wildfly-application-server"></a>Configurar o servidor de aplicativo do WildFly
 
-Antes de implantar nosso aplicativo reconfigurado, precisamos atualizar o servidor de aplicativo do WildFly com o módulo do Postgres e suas dependências. Encontre mais informações sobre configuração em [Configurar o servidor WildFly](configure-language-java.md#configure-wildfly-server).
+Antes de implantar nosso aplicativo reconfigurado, precisamos atualizar o servidor de aplicativo do WildFly com o módulo do Postgres e suas dependências. Encontre mais informações sobre configuração em [Configurar o servidor WildFly](configure-language-java.md#configure-java-ee-wildfly).
 
 Para configurar o servidor, precisaremos dos quatro arquivos no diretório `wildfly_config/`:
 

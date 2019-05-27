@@ -195,7 +195,7 @@ Ao copiar dados do Teradata, os seguintes mapeamentos são usados de tipos de da
 | Period(Timestamp With Time Zone) |String |
 | SmallInt |Int16 |
 | Time |TimeSpan |
-| Time With Time Zone |String |
+| Hora com fuso horário |String |
 | Timestamp |DateTime |
 | Timestamp With Time Zone |DateTimeOffset |
 | VarByte |Byte[] |

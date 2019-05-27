@@ -5,18 +5,21 @@ services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 12/04/2018
-ms.author: pabutler
-ms.openlocfilehash: 8817c8aa7d5d589be5e03cdd04e3a505d7e2be21
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.date: 05/16/2019
+ms.author: pbutlerm
+ms.openlocfilehash: 2195c9a5e1f0d3683ea8cf6564d97cbabd072f81
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64941654"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65834209"
 ---
 # <a name="update-an-existing-saas-application-offer"></a>Atualizar uma oferta existente de aplicativo SaaS
 
 Há vários tipos de atualizações que você talvez queira fazer na oferta depois que ela for publicada e estiver ativa. Qualquer alteração que você fizer na nova versão da sua oferta deve ser salva e republicada para ser refletida no Marketplace. Este artigo percorre os diferentes aspectos da atualização de sua oferta de SaaS no [Portal do Cloud Partner](https://cloudpartner.azure.com/).
+
+> [!IMPORTANT] 
+> SaaS oferecem funcionalidade está sendo migrada para o [Microsoft Partner Center](https://partner.microsoft.com/dashboard/directory).  Todos os novos editores devem usar o Partner Center para criar novas ofertas de SaaS e gerenciando ofertas existentes.  Editores atuais com ofertas de SaaS estão sendo migrados batchwise do Portal de parceiro do Cloud Partner Center.  Portal do Cloud Partner exibirá mensagens de status para indicar quando as ofertas específicas do existentes foram migradas.
 
 Há várias razões por que você talvez queira atualizar sua oferta, tais como:
 
@@ -75,7 +78,7 @@ Para ver a atividade de histórico de publicação, selecione a guia **Históric
 
 ![Consulte o histórico de ofertas no Portal do Cloud Partner](./media/saas-offer-history.png)
 
-Você pode usar a página de histórico de auditoria para pesquisar uma oferta específica e aplicar filtros, como Editor, Oferta e Tipo de evento (por exemplo, OfferGoLiveRequested). Você também pode baixar o histórico de auditoria como um arquivo csv.
+Você pode usar a página de histórico de auditoria para pesquisar uma oferta específica e aplicar filtros, como o Editor, oferta e o tipo de evento (por exemplo, OfferGoLiveRequested.) Você também pode baixar o histórico de auditoria como um arquivo csv.
 
 
 ## <a name="next-steps"></a>Próximas etapas
