@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.reviewer: sgilley
 ms.date: 04/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7b479556543c6a9dff88643fdc587dec3f832f39
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 98f7dc2e295c0c994db9a0189814b0ef2a19b758
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60818487"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66153609"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Treinar modelos com o Azure Machine Learning usando o estimador
 
@@ -26,7 +26,7 @@ Para facilitar o treinamento do modelo de aprendizado profundo, o SDK do Python 
 
 ## <a name="train-with-an-estimator"></a>Treinar com um estimador
 
-Depois de criar seu [Workspace](concept-azure-machine-learning-architecture.md#workspace) e configurar seu [ambiente de desenvolvimento](how-to-configure-environment.md), o treinamento de um modelo no Machine Learning do Azure envolve as seguintes etapas:  
+Depois de criar seu [Workspace](concept-workspace.md) e configurar seu [ambiente de desenvolvimento](how-to-configure-environment.md), o treinamento de um modelo no Machine Learning do Azure envolve as seguintes etapas:  
 1. Criar um [destino de computação remoto](how-to-set-up-training-targets.md) (observe que também é possível usar o computador local como destino de computação)
 2. Carregar seus [dados de treinamento](how-to-access-data.md) para o repositório de dados (opcional)
 3. Criar seu [script de treinamento](tutorial-train-models-with-aml.md#create-a-training-script)
@@ -119,6 +119,10 @@ Por fim, envie o trabalho de treinamento:
 run = experiment.submit(estimator)
 print(run.get_portal_url())
 ```
+
+## <a name="github-tracking-and-integration"></a>Integração e acompanhamento do GitHub
+
+Quando você inicia uma execução em que o diretório de origem é um repositório Git local de treinamento, informações sobre o repositório são armazenadas no histórico de execução. Por exemplo, a ID de confirmação atual para o repositório é registrada como parte do histórico.
 
 ## <a name="examples"></a>Exemplos
 Para um notebook que mostra os conceitos básicos do padrão do estimador, confira:

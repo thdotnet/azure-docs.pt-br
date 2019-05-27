@@ -2,21 +2,19 @@
 title: Arquivo de inclusão
 description: Arquivo de inclusão
 services: cosmos-db
-author: rockboyfor
+author: SnehaGunda
 ms.service: cosmos-db
 ms.topic: include
-origin.date: 04/13/2018
-ms.date: 03/18/2019
-ms.author: v-yeche
+ms.date: 04/13/2018
+ms.author: sngun
 ms.custom: include file
 ms.openlocfilehash: 9800848b24523a0eb5992e64ce1580cc53b0e3a0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60891411"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66151489"
 ---
-<!--Verify sucessfully-->
 Agora, você pode usar a ferramenta Data Explorer no portal do Azure para criar um banco de dados de grafo. 
 
 1. Clique em **Data Explorer** > **Novo Grafo**.
@@ -35,7 +33,3 @@ Agora, você pode usar a ferramenta Data Explorer no portal do Azure para criar 
     Produtividade|400 RUs|Altere a taxa de transferência para 400 unidades de solicitação por segundo (RU/s). Se quiser reduzir a latência, você poderá escalar verticalmente a taxa de transferência mais tarde.
 
 3. Quando o formulário estiver preenchido, clique em **OK**.
-
-<!--Verify sucessfully-->
-<!--Update_Description: new articles on  -->
-<!--ms.date: 03/18/2019-->

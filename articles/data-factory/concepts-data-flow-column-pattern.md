@@ -1,24 +1,23 @@
 ---
 title: Padrões de Coluna do Fluxo de Dados do Mapeamento do Azure Data Factory
-description: Os Padrões de Coluna do Fluxo de Dados do Mapeamento do Azure Data Factory são usados para criar padrões de modelo generalizados para transformar os campos em um fluxo de dados sem levar em consideração os metadados de esquema subjacente
+description: Saiba como usar padrões de coluna do Azure Data Factory no mapeamento de fluxo de dados para criar padrões de modelo generalizado para transformar os campos em um fluxo de dados sem levar em consideração os metadados de esquema subjacente
 author: kromerm
 ms.author: makromer
-ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.openlocfilehash: 53d3300ea11a86c34909ba6ce0fd6c8c0c38b4b5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5131329f6675bc86374f5a5c081e0aaa7d36c0fe
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61269534"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66155230"
 ---
-# <a name="azure-data-factory-mapping-data-flow-concepts"></a>Conceitos do Fluxo de Dados do Mapeamento do Azure Data Factory
+# <a name="azure-data-factory-mapping-data-flows-column-patterns"></a>Padrões de coluna de fluxos de dados de mapeamento do Azure data factory
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
-Várias transformações de Fluxo de Dados do Azure Data Factory dão suporte à ideia de "Padrões de colunas" para que você possa criar colunas de modelo com base nos padrões em vez de nomes de coluna embutidos em código. Você pode usar esse recurso no Construtor de Expressões para definir padrões para correspondência das colunas para transformação em vez de exigir nomes de campo exatos específicos. Padrões são úteis quando campos de origem de entrada são alterados com frequência, especialmente no caso de alteração das colunas nos arquivos de texto ou bancos de dados NoSQL. Isso é, às vezes, chamado de "Descompasso do esquema".
+Várias transformações de Fluxo de Dados do Azure Data Factory dão suporte à ideia de "Padrões de colunas" para que você possa criar colunas de modelo com base nos padrões em vez de nomes de coluna embutidos em código. Você pode usar esse recurso no Construtor de Expressões para definir padrões para correspondência das colunas para transformação em vez de exigir nomes de campo exatos específicos. Padrões são úteis se a entrada campos de origem são alterados com frequência, especialmente no caso de alterar as colunas nos arquivos de texto ou bancos de dados NoSQL. Essa condição é, às vezes, conhecida como "Descompasso do esquema".
 
 ![padrões de coluna](media/data-flow/columnpattern2.png "Padrões de coluna")
 

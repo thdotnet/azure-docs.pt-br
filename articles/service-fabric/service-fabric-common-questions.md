@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 08/18/2017
 ms.author: chackdan
 ms.openlocfilehash: 0bd8a7d403ad1fe0f7abb15356cc9c90ed6b3f02
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59359429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66153827"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Perguntas frequentes sobre o Service Fabric
 
@@ -107,7 +107,7 @@ Embora estejamos trabalhando em uma experiência aprimorada, no momento você é
 Sim.  Para obter mais informações, consulte [Criar um cluster com discos de dados anexados](../virtual-machine-scale-sets/virtual-machine-scale-sets-attached-disks.md#create-a-service-fabric-cluster-with-attached-data-disks), [Criptografar discos (PowerShell)](../virtual-machine-scale-sets/virtual-machine-scale-sets-encrypt-disks-ps.md), e [Criptografar discos (CLI) ](../virtual-machine-scale-sets/virtual-machine-scale-sets-encrypt-disks-cli.md).
 
 ### <a name="can-i-use-low-priority-vms-in-a-cluster-node-type-virtual-machine-scale-set"></a>Posso usar VMs de baixa prioridade em um tipo de nó de cluster (conjunto de escala de máquina virtual)?
- Não. Não há suporte para VMs de baixa prioridade. 
+Não. Não há suporte para VMs de baixa prioridade. 
 
 ### <a name="what-are-the-directories-and-processes-that-i-need-to-exclude-when-running-an-anti-virus-program-in-my-cluster"></a>Quais são os diretórios e os processos que preciso excluir ao executar um programa antivírus no meu cluster?
 

@@ -9,11 +9,11 @@ ms.date: 02/07/2019
 ms.topic: conceptual
 manager: philmea
 ms.openlocfilehash: 9e5d842cece316bc9c53e1e8583f40a0f222b91d
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56809078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66151950"
 ---
 # <a name="manage-iot-central-from-azure-cli"></a>Gerenciar Central IoT da CLI do Azure
 
@@ -31,7 +31,7 @@ Se você preferir executar a CLI do Azure em seu computador local, consulte [ins
 
 ## <a name="create-an-application"></a>Criar um aplicativo
 
-Use o [az iotcentral aplicativo criar](/cli/azure/iotcentral/app#az-iotcentral-app-create) comando para criar um aplicativo Central da IoT em sua assinatura do Azure. Por exemplo: 
+Use o [az iotcentral aplicativo criar](/cli/azure/iotcentral/app#az-iotcentral-app-create) comando para criar um aplicativo Central da IoT em sua assinatura do Azure. Por exemplo:
 
 ```azurecli-interactive
 # Create a resource group for the IoT Central application
@@ -50,19 +50,19 @@ az iotcentral app create \
 
 Primeiro, esses comandos criam um grupo de recursos em que a região Leste dos EUA para o aplicativo. A tabela a seguir descreve os parâmetros usados com o **az iotcentral aplicativo criar** comando:
 
-| Parâmetro         | DESCRIÇÃO |
+| Parâmetro         | Descrição |
 | ----------------- | ----------- |
 | resource-group    | O grupo de recursos que contém o aplicativo. Esse grupo de recursos já precisa existir na sua assinatura. |
 | location          | Por padrão, esse comando usa o local do grupo de recursos. No momento, você pode criar um aplicativo do IoT Central nas regiões **Leste dos EUA**, **Oeste dos EUA**, **Europa Setentrional** ou **Europa Ocidental**. |
-| Nome              | Digite o nome do aplicativo no portal do Azure. |
+| nome              | Digite o nome do aplicativo no portal do Azure. |
 | Subdomínio         | O subdomínio na URL do aplicativo. No exemplo, a URL do aplicativo é https://mysubdomain.azureiotcentral.com. |
 | sku               | Atualmente, o único valor é **S1** (camada standard). Confira [Preço do Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
-| template          | O modelo de aplicativo a usar. Para obter mais informações, confira a tabela a seguir: |
-| display-name      | O nome do aplicativo, conforme exibido na interface do usuário. |
+| modelo          | O modelo de aplicativo a usar. Para obter mais informações, confira a tabela a seguir: |
+| nome de exibição      | O nome do aplicativo, conforme exibido na interface do usuário. |
 
 **Modelos de aplicativo**
 
-| Nome do modelo            | DESCRIÇÃO |
+| Nome do modelo            | Descrição |
 | ------------------------ | ----------- |
 | iotc-default@1.0.0       | Cria um aplicativo vazio para você preencher com seus próprios dispositivos e modelos de dispositivos. |
 | iotc-demo@1.0.0          | Cria um aplicativo que inclui um modelo de dispositivo já criado para uma Máquina de Vendas Refrigerada. Use esse modelo para começar a explorar o Azure IoT Central. |
@@ -84,7 +84,7 @@ az iotcentral app update --name myiotcentralapp \
 
 ## <a name="remove-an-application"></a>Remover um aplicativo
 
-Use o [exclusão de aplicativo do az iotcentral](/cli/azure/iotcentral/app#az-iotcentral-app-delete) comando para excluir um aplicativo de IoT Central. Por exemplo: 
+Use o [exclusão de aplicativo do az iotcentral](/cli/azure/iotcentral/app#az-iotcentral-app-delete) comando para excluir um aplicativo de IoT Central. Por exemplo:
 
 ```azurecli-interactive
 az iotcentral app delete --name myiotcentralapp \
