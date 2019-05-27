@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/06/2019
+ms.date: 05/18/2019
 ms.author: magoedte
-ms.openlocfilehash: ed387f7038c5dee1a1685c918abcae49942cd55d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 531e51fbddb99ebba11284d5291b4cca26559bc1
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148839"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65906778"
 ---
 # <a name="understand-aks-cluster-performance-with-azure-monitor-for-containers"></a>Compreender o desempenho de cluster do AKS com o Azure Monitor para contêineres 
 Com o Azure Monitor para contêineres, você pode usar os gráficos de desempenho e o status de integridade para monitorar a carga de trabalho dos clusters do AKS (Serviço de Kubernetes do Azure) por meio de duas perspectivas: diretamente em um cluster do AKS ou todos os clusters do AKS em uma assinatura no Azure Monitor. Também é possível exibir ACI (Instâncias de Contêiner do Azure) ao monitorar um cluster específico do AKS.
@@ -26,10 +26,6 @@ Com o Azure Monitor para contêineres, você pode usar os gráficos de desempenh
 Este artigo ajudará você a entender a experiência com as duas perspectivas e como elas ajudam a avaliar, investigar e resolver rapidamente os problemas detectados.
 
 Para obter informações sobre como habilitar o Azure Monitor para contêineres, consulte [Integrar o Azure Monitor para contêineres](container-insights-onboard.md).
-
-> [!IMPORTANT]
-> O Azure Monitor para suporte a contêineres para monitorar um cluster do AKS executando o Windows Server 2019 está atualmente em visualização pública.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 O Azure Monitor fornece uma exibição de cluster com vários mostrando o status de integridade de todos os clusters AKS monitorados que executam o Linux e Windows Server 2019 implantadas em grupos de recursos em suas assinaturas.  Ele mostra clusters do AKS descobertos que não são monitorados pela solução. Imediatamente você saberá a integridade do cluster e, então, poderá fazer drill down até a página de desempenho do nó e do controlador ou navegar para ver gráficos de desempenho do cluster.  Para clusters do AKS descobertos e identificados como não monitorados, é possível habilitar o monitoramento para esse cluster a qualquer momento.  
 
@@ -75,19 +71,19 @@ A tabela a seguir fornece um detalhamento do cálculo que controla os estados de
 | |Status |Disponibilidade |  
 |-------|-------|-----------------|  
 |**Pod de usuários**| | |  
-| |Healthy |100% |  
+| |Adequado |100% |  
 | |Aviso |90 – 99% |  
-| |Crítico |<90% |  
+| |Crítica |<90% |  
 | |Desconhecido |Se não tiver sido relatado nos últimos 30 minutos |  
 |**Pod de sistemas**| | |  
-| |Healthy |100% |
+| |Adequado |100% |
 | |Aviso |N/D |
-| |Crítico |<100% |
+| |Crítica |<100% |
 | |Desconhecido |Se não tiver sido relatado nos últimos 30 minutos |
 |**Node** | | |
-| |Healthy |>85% |
+| |Adequado |>85% |
 | |Aviso |60 – 84% |
-| |Crítico |<60% |
+| |Crítica |<60% |
 | |Desconhecido |Se não tiver sido relatado nos últimos 30 minutos |
 
 Na lista de clusters, você pode fazer drill down até a página **Cluster** clicando no nome do cluster, até a página de desempenho dos **Nós** clicando no rollup de nós na coluna **Nós** do cluster específico ou pode fazer drill down até a página de desempenho de **Controladores** clicando no rollup da coluna **Pods de usuários** ou **Pods de sistema**.   
@@ -133,7 +129,7 @@ No metrics explorer, você pode exibir o nó agregado e métricas de utilizaçã
 
 Você pode aplicar [divisão](../platform/metrics-charts.md#apply-splitting-to-a-chart) de uma métrica para exibi-lo por dimensão e visualizar diferentes segmentos dele comparar entre si. Para um nó, você pode segmentar o gráfico pela *host* dimensão, e de um pod, você pode segmentá-lo pelas dimensões seguintes:
 
-* Controller
+* Controlador
 * Namespace do Kubernetes
 * Nó
 * Fase
@@ -224,7 +220,7 @@ As informações que são exibidas quando você exibe controladores são descrit
 | Méd., Mín., Máx., 50º, 90º  | Acumulação da média de millicore da CPU ou desempenho da memória do contêiner para o percentual selecionado. O valor médio é medido usando o limite de CPU/memória definido para um pod. |
 | Contêineres | Número total de contêineres para o controlador ou pod. |
 | Reinícios | Acumulação da contagem de reinicialização dos contêineres. |
-| Tempo de atividade | Representa o tempo desde o início de um contêiner. |
+| Tempo de Atividade | Representa o tempo desde o início de um contêiner. |
 | Nó | Somente para os contêineres e pods. Mostra quais são os controladores residentes. | 
 | Tendência Méd.&nbsp;%, Mín.&nbsp;%, Máx.&nbsp;%, 50º&nbsp;%, 90º&nbsp;%| A tendência de gráfico de barras representa a métrica percentil do controlador. |
 

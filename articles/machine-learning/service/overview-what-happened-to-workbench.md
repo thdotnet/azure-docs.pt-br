@@ -9,14 +9,14 @@ ms.topic: overview
 ms.reviewer: jmartens
 author: j-martens
 ms.author: jmartens
-ms.date: 01/09/2019
+ms.date: 05/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8081be7f411b38d2418d893654a5691bd1ad7cc1
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: 18b5f3877538d26e55bf0550a995ca0c50699de5
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65470622"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65914138"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>O que aconteceu com o Workbench de aprendizado de máquina do Azure?
 
@@ -40,7 +40,7 @@ A versão mais recente do Serviço do Azure Machine Learning inclui os seguintes
 + Um novo, mais abrangente <a href="https://aka.ms/aml-sdk" target="_blank">SDK</a> do Python.
 + A nova [extensão de CLI do Azure](reference-azure-machine-learning-cli.md) expandida para aprendizado de máquina.
 
-A [arquitetura](concept-azure-machine-learning-architecture.md) foi reprojetada visando facilidade de uso. Em vez de várias contas e recursos do Azure, você só precisa de um [workspace do serviço do Azure Machine Learning](concept-azure-machine-learning-architecture.md#workspace). É possível criar workspaces rapidamente no [portal do Azure]((setup-create-workspace.md#portal). Usando um workspace, múltiplos usuários podem armazenar destinos de computação de treinamento e de implantação, experimentos de modelo, imagens do Docker, modelos implementados e assim por diante.
+A [arquitetura](concept-azure-machine-learning-architecture.md) foi reprojetada visando facilidade de uso. Em vez de várias contas e recursos do Azure, você só precisa de um [workspace do serviço do Azure Machine Learning](concept-workspace.md). É possível criar workspaces rapidamente no [portal do Azure]((setup-create-workspace.md#portal). Usando um workspace, múltiplos usuários podem armazenar destinos de computação de treinamento e de implantação, experimentos de modelo, imagens do Docker, modelos implementados e assim por diante.
 
 Embora existam novos clientes da CLI e do SDK aprimorados na versão atual, o próprio aplicativo de workbench da área de trabalho foi desativado. Os testes podem ser gerenciados no [painel de workspace no portal do Azure](how-to-track-experiments.md#view-the-experiment-in-the-azure-portal). Use o painel para obter o histórico de experimentos, gerenciar as metas de computação anexadas ao seu workspace, gerenciar seus modelos e imagens do Docker e até mesmo implementar serviços da web.
 

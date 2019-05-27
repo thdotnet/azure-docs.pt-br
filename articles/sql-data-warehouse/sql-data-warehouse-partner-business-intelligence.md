@@ -2,26 +2,26 @@
 title: Parceiros de Business Intelligence do SQL Data Warehouse | Microsoft Docs
 description: Listas de parceiros terceirizados de business intelligence com soluções que dão suporte ao SQL Data Warehouse.
 services: sql-data-warehouse
-author: jrowlandjones
+author: mabasile-MSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: consume
 ms.date: 03/27/2019
-ms.author: jrj
+ms.author: mabasile
 ms.reviewer: igorstan
-ms.openlocfilehash: 6860746a1b20fe06de2dafa6035ae560bde24a29
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 87379631cc7f7b9e31def157ba38336e41b693d8
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61476879"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873808"
 ---
 # <a name="sql-data-warehouse-business-intelligence-partners"></a>Parceiros de business intelligence do SQL Data Warehouse
 Para criar uma solução completa de data warehouse, você pode escolher dentre uma ampla variedade de ferramentas líderes do setor.  Este artigo destaca empresas parceiras da Microsoft com suporte ao Azure SQL Data Warehouse de soluções do oficial de business intelligence (BI).
 
 ## <a name="our-business-intelligence-partners"></a>Nossos parceiros de business intelligence
-| Parceiro | DESCRIÇÃO | Link do produto do site |
+| Parceiro | Descrição | Link do produto do site |
 | ------- | ----------- | -------------------- |
 | ![Birst][1] |**Birst**<br>Birst se conecta a toda a organização por meio de uma rede de interligado virtualizado BI instâncias-visível de uma malha de analítica comuns compartilhada|[Página do produto][birst_website]<br>[Azure Marketplace][birst_marketplace]<br> |
 | ![ClearStory Data][2] |**A clearStory Data (informações de negócios contínuos)**<br>A ClearStory Data permite análise de ciclo rápido entre dados distintos armazenados no SQL Data Warehouse. A plataforma integrada baseada em Spark e o aplicativo de análise da ClearStory aceleram o acesso a dados e a harmonização de conjuntos de dados díspares. Eles permitem exploração colaborativa rápida, que proporciona autoconfiança aos usuários corporativos no ganho de percepções. |[Página do produto][clearstory_website]<br> |

@@ -3,19 +3,19 @@ title: 'Início Rápido: Obtenha insights de imagem usando o SDK de Pesquisa Vis
 titleSuffix: Azure Cognitive Services
 description: Aprenda a carregar uma imagem usando o SDK da Pesquisa Visual do Bing e obtenha insights sobre ela.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 05/16/2018
+ms.date: 05/15/2019
 ms.author: v-gedod
-ms.openlocfilehash: a7fc4686ec31b4c3a23d3e0ff72e5e2a270015b0
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 9fd693207b429ddc0a2bfdd772f4822f188ac3f7
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57532092"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65884936"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-sdk-for-c"></a>Início Rápido: Obtenha insights de imagem usando o SDK de Pesquisa Visual do Bing para C#
 
@@ -23,7 +23,7 @@ Use este início rápido para começar obtendo insights de imagem do serviço de
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Qualquer edição do [Visual Studio 2017](https://www.visualstudio.com/downloads/).
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
 * Se você estiver usando Linux/MacOS, este aplicativo poderá ser executado usando [Mono](https://www.mono-project.com/).
 * O pacote de Pesquisa Visual do NuGet. 
     - No Gerenciador de Soluções no Visual Studio, clique com o botão direito do mouse no seu projeto e selecione `Manage NuGet Packages` no menu. Instale o pacote `Microsoft.Azure.CognitiveServices.Search.VisualSearch`. Instalar os pacotes do NuGet também instala o seguinte:

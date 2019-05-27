@@ -16,11 +16,11 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 19d9624c5bb60f47ef4bfa1b0629327780c2a9c7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59266283"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65901908"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-small-improvements"></a>Tutorial: Integração do Active Directory do Azure Active Directory com o Small Improvements
 

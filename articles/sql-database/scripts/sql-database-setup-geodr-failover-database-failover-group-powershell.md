@@ -12,12 +12,12 @@ ms.author: mathoma
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 421972303ae6d63adf8f4a26af626a13e20a411d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: f049b61df4ad86fedea81c2e36c1690b8b7eb884
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59359123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66115958"
 ---
 # <a name="use-powershell-to-configure-an-active-geo-replication-failover-group-for-a-single-database-in-azure-sql-database"></a>Use o PowerShell para configurar um grupo de failover de replicação geográfica ativa para um banco de dados individual do Banco de Dados SQL do Azure
 
@@ -49,7 +49,7 @@ Este script usa os seguintes comandos. Cada comando da tabela é vinculado à do
 | Comando | Observações |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Cria um grupo de recursos no qual todos os recursos são armazenados. |
-| [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Cria um servidor de Banco de Dados SQL que hospeda bancos de dados individuais e pools elásticos. |
+| [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Cria um servidor do Banco de Dados SQL que hospeda bancos de dados individuais e pools elásticos. |
 | [New-AzSqlElasticPool](/powershell/module/az.sql/new-azsqlelasticpool) | Cria um pool elástico. |
 | [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) | Atualiza as propriedades do banco de dados ou move um banco de dados para dentro, para fora ou entre os pools elásticos. |
 | [New-AzSqlDatabaseSecondary](/powershell/module/az.sql/new-azsqldatabasesecondary)| Cria um banco de dados secundário para um banco de dados existente e inicia a replicação de dados. |

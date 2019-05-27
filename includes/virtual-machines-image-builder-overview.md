@@ -6,11 +6,11 @@ ms.topic: include
 ms.service: virtual-machines-linux
 manager: jeconnoc
 ms.openlocfilehash: e1b3b5fe603072069cb3a19c7597fcc1872fefd7
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65416249"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66111448"
 ---
 Imagens padronizadas VM (máquina virtual) permitem que as organizações a migrar para a nuvem e garantir a consistência nas implantações. Imagens normalmente incluem configurações de segurança e configuração predefinidas e o software necessário. Configurar seu próprio pipeline da geração de imagens exige tempo, infraestrutura e configuração, mas com o construtor de imagem de VM do Azure, basta fornecer uma configuração simples que descreve sua imagem, enviá-lo para o serviço e a imagem é criada e distribuída.
  

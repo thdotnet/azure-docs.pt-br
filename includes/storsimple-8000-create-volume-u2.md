@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 2abfa29671bd804ee75194ef621fe07f06c015e9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61488548"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66118321"
 ---
 #### <a name="to-create-a-volume"></a>Para criar um volume
 1. Na lista tabular de dispositivos na folha **Dispositivos**, selecione seu dispositivo. Clique em **+ Adicionar volume**.

@@ -16,11 +16,11 @@ ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 617a01fdce71e76cf4783ee6a274ee428b0b3b57
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57903548"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65889434"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-snowflake"></a>Tutorial: Integração do Azure Active Directory ao Snowflake
 
@@ -113,7 +113,7 @@ Para configurar o logon único do Azure AD com o Snowflake, execute as seguintes
 
     ![Informações de logon de único de URLs e domínio do floco de neve](common/metadata-upload-additional-signon.png)
 
-    Na caixa de texto **URL de login**, digite um URL usando o seguinte padrão: `https://<SNOWFLAKE-URL>.snowflakecomputing.com`
+    Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://<SNOWFLAKE-URL>.snowflakecomputing.com`
 
     > [!NOTE]
     > Esses valores não são reais. Atualize esses valores com o Identificador, a URL de Resposta e a URL de Logon reais. Entre em contato com [Equipe de suporte ao cliente de floco de neve](https://support.snowflake.net/s/) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
@@ -176,7 +176,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensao**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.

@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 58835b66824d55b64b77e34df64d34c8da1c269a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 29a842f7dfcf720f29fcff80d2e736893c824f5a
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57864806"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65949561"
 ---
 # <a name="deploy-to-azure-app-service-by-using-the-jenkins-plugin"></a>Implantar no Serviço de Aplicativo do Azure usando o plugin Jenkins 
 
@@ -72,7 +72,7 @@ Antes de configurar o trabalho em Jenkins, você precisa de um plano do Serviço
 
 
 1. Crie um plano do Serviço de Aplicativo do Azure com o tipo de preço **GRÁTIS** usando o [ `az appservice plan create`comando de CLI do Azure](/cli/azure/appservice/plan#az-appservice-plan-create). O plano do Serviço de Aplicativo define os recursos físicos usados para hospedar seus aplicativos. Todos os aplicativos atribuídos a um Plano do Serviço de Aplicativo compartilham esses recursos. Recursos compartilhados o ajudam a economizar nos custos ao hospedar vários aplicativos.
-2. Crie um aplicativo Web. Você pode usar o [portal do Azure](/azure/app-service-web/web-sites-configure) ou o seguinte comando da CLI do Azure `az`:
+2. Crie um aplicativo Web. Você pode usar o [portal do Azure](/azure/app-service/configure-common) ou o seguinte comando da CLI do Azure `az`:
     ```azurecli-interactive 
     az webapp create --name <myAppName> --resource-group <myResourceGroup> --plan <myAppServicePlan>
     ```

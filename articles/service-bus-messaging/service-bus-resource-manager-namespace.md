@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 01/23/2019
 ms.author: spelluru
 ms.openlocfilehash: 4471c9d5b6c09bcf4d9100cccfa725f36cf9a3f8
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59045075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66111232"
 ---
 # <a name="create-a-service-bus-namespace-using-an-azure-resource-manager-template"></a>Criar um namespace do Barramento de Serviço usando um modelo do Azure Resource Manager
 Neste início rápido, você cria um modelo do Azure Resource Manager que cria um namespace do Barramento de Serviço do tipo **Messaging** com um SKU **Standard**. O artigo também define os parâmetros que são especificados para execução da implantação. Você pode usar este modelo para suas próprias implantações ou personalizá-lo para atender às suas necessidades. Para obter mais informações sobre a criação de modelos, consulte [Criação de Modelos do Azure Resource Manager][Authoring Azure Resource Manager templates]. Para ver o modelo completo, confira o [Modelo de namespace do Barramento de Serviço][Service Bus namespace template] no GitHub.
@@ -199,7 +199,7 @@ Para implantar os recursos usando a CLI do Azure, alterne para a pasta com os ar
     az group deployment create --name <Specify a name for the deployment> --resource-group <YourResourceGroupName> --template-file MyServiceBusNamespace.json --parameters @MyServiceBusNamespace-Parameters.json
     ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Neste artigo, você criou um namespace do Barramento de Serviço. Consulte outros guias de início rápido para saber como criar filas, tópicos/assinaturas e como usá-los: 
 
 - [Introdução às filas do Barramento de Serviço](service-bus-dotnet-get-started-with-queues.md)

@@ -2,20 +2,20 @@
 title: Conectar-se ao sqlcmd do SQL Data Warehouse do Azure | Microsoft Docs
 description: Use o utilitário de linha de comando sqlcmd para conectar-se ao SQL Data Warehouse do Azure e fazer uma consulta.
 services: sql-data-warehouse
-author: KavithaJonnakuti
+author: XiaoyuL-Preview
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: consume
+ms.subservice: development
 ms.date: 04/17/2018
-ms.author: kavithaj
+ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: e0e423ef0503bc4d23fddf4e1b9ff985636d2ec2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 72760c5123703a664695c1be4d286a38e96ecc3f
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61474344"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873313"
 ---
 # <a name="connect-to-sql-data-warehouse-with-sqlcmd"></a>Conecte-se ao SQL Data Warehouse com sqlcmd
 > [!div class="op_single_selector"]
@@ -29,7 +29,7 @@ ms.locfileid: "61474344"
 
 Use o utilitário de linha de comando [sqlcmd][sqlcmd] para conectar-se ao SQL Data Warehouse do Azure e fazer uma consulta.  
 
-## <a name="1-connect"></a>1. Connect
+## <a name="1-connect"></a>1. Conectar
 Para começar com o [sqlcmd][sqlcmd], abra o prompt de comando e digite **sqlcmd** seguido da cadeia de conexão do banco de dados SQL Data Warehouse. A cadeia de conexão precisará dos seguintes parâmetros:
 
 * **Servidor (-S):** servidor no formato `<`Nome do Servidor`>`.database.windows.net
@@ -62,7 +62,7 @@ C:\>sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -G -I
 > 
 > 
 
-## <a name="2-query"></a>2. Consultar
+## <a name="2-query"></a>2. Consulta
 Após a conexão, você pode executar quaisquer instruções Transact-SQL compatíveis com a instância.  Neste exemplo, as consultas são enviadas no modo interativo.
 
 ```sql

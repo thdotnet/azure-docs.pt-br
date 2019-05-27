@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: hrasheed
-ms.openlocfilehash: 37fed781629351475b384ac843a588bdaf7b5b66
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 100482496df2db1bff07a070bb82c6811208cfd4
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64718152"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65891348"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Conecte o Excel ao Apache Hadoop no HDInsight do Azure com o driver ODBC do Microsoft Hive
 
@@ -48,20 +48,20 @@ As etapas a seguir mostram como criar uma fonte de dados ODBC do Hive.
 
 4. Digite ou selecione os valores a seguir:
    
-   | Propriedade | DESCRIÇÃO |
+   | Propriedade | Descrição |
    | --- | --- |
    |  Nome da fonte de dados |Forneça um nome para a sua fonte de dados |
    |  Hosts |Insira &lt;HDInsightClusterName&gt;.azurehdinsight.net. Por exemplo, meu_Cluster_HDI.azurehdinsight.net |
    |  Port |Use <strong>443</strong>. (Essa porta foi alterada de 563 para 443.) |
    |  Banco de dados |Use <strong>padrão</strong>. |
    |  Mecanismo |Selecione <strong>Serviço do Azure HDInsight</strong> |
-   |  Nome do Usuário |Insira o nome de usuário HTTP do cluster HDInsight. O nome de usuário padrão é <strong>admin</strong>. |
+   |  Nome de Usuário |Insira o nome de usuário HTTP do cluster HDInsight. O nome de usuário padrão é <strong>admin</strong>. |
    |  Senha |Insira a senha do usuário do cluster HDInsight. |
 
    
 5. Opcional: Selecione **Opções Avançadas...**  
    
-   | Parâmetro | DESCRIÇÃO |
+   | Parâmetro | Descrição |
    | --- | --- |
    |  Use Consulta Nativa |Quando selecionado, o driver ODBC NÃO tenta converter TSQL em HiveQL. Você deverá usar essa opção somente se estiver 100% certo de que está enviando instruções HiveQL puras. Ao conectar-se ao SQL Server ou ao Banco de Dados SQL do Azure, deixe-a desmarcada. |
    |  Linhas buscadas por bloco |Ao buscar uma grande quantidade de registros, o ajuste desse parâmetro poderá ser necessário para garantir o desempenho ideal. |
@@ -99,7 +99,7 @@ Neste artigo você aprendeu a usar o driver ODBC do Microsoft Hive para recupera
 
 * [Visualizar dados do Apache Hive com o Microsoft Power BI no Azure HDInsight](apache-hadoop-connect-hive-power-bi.md).
 * [Visualizar dados da consulta interativa do Hive com o Power BI no Azure HDInsight](../interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md).
-* [Use o Apache Zeppelin para executar consultas do Apache Hive no HDInsight do Azure](./../hdinsight-connect-hive-zeppelin.md).
+* [Use o Apache Zeppelin para executar consultas do Apache Hive no HDInsight do Azure](../interactive-query/hdinsight-connect-hive-zeppelin.md).
 * [Conecte o Excel ao Apache Hadoop usando o Power Query](apache-hadoop-connect-excel-power-query.md).
 * [Conecte-se ao Azure HDInsight e execute consultas do Apache Hive usando o Data Lake Tools para Visual Studio](apache-hadoop-visual-studio-tools-get-started.md).
 * [Use a Ferramenta do Azure HDInsight para Visual Studio Code](../hdinsight-for-vscode.md).

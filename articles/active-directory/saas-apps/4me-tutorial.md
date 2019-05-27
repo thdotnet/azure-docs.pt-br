@@ -16,11 +16,11 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 11cc42f9ed7e427620b22ce65365183bc62cc0be
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57891715"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65884552"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-4me"></a>Tutorial: Integração do Azure Active Directory com o 4me
 
@@ -153,7 +153,7 @@ Para configurar o logon único do Azure AD com o 4me, execute as seguintes etapa
 
     f. Clique em **Ok**
 
-    g. Clique em **Salvar**.
+    g. Clique em **Save** (Salvar).
 
 7. Na seção **Certificado de Autenticação SAML**, clique no botão **Editar** para abrir a caixa de diálogo **Certificado de Autenticação SAML**.
 
@@ -193,7 +193,7 @@ Para configurar o logon único do Azure AD com o 4me, execute as seguintes etapa
 
     d. Na caixa de texto **Impressão digital do certificado** caixa de texto, cole o valor **IMPRESSÃO DIGITAL** separado por dois-pontos na ordem de duplets (AA:BB:CC:DD:EE:FF:GG:HH:II), que você copiou do portal do Azure.
 
-    e. Clique em **Salvar**.
+    e. Clique em **Save** (Salvar).
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
@@ -213,7 +213,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.

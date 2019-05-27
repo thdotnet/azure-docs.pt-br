@@ -8,13 +8,13 @@ manager: kfile
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 04/12/2018
-ms.openlocfilehash: 5f85f0a6b1869571a8db29586e5fe113e0f47433
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/17/2019
+ms.openlocfilehash: 60cddf15ee8a93aa01a72fdc124fa27e68184e04
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60761636"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65916032"
 ---
 # <a name="understand-and-adjust-streaming-units"></a>Compreender e ajustar as Unidades de Streaming
 
@@ -51,7 +51,7 @@ Em geral, a prática recomendada é iniciar com 6 SUs para consultas que não us
 Para saber mais sobre como escolher o número correto de SUs, confira esta página: [Dimensionar trabalhos do Azure Stream Analytics para aumentar a produtividade](stream-analytics-scale-jobs.md)
 
 > [!Note]
-> A escolha de quantas SUs são necessárias para um trabalho específico depende da configuração de partição das entradas e da consulta definida para o trabalho. Você pode selecionar até sua cota de SUs para um trabalho. Por padrão, cada assinatura do Azure tem uma cota de até 200 SUs para todos os trabalhos analíticos em uma região específica. Para aumentar as SUs para suas assinaturas, entre em contato com o [Suporte da Microsoft](https://support.microsoft.com). Os valores válidos para o SUs por trabalho são 1, 3, 6 e em incrementos de 6.
+> A escolha de quantas SUs são necessárias para um trabalho específico depende da configuração de partição das entradas e da consulta definida para o trabalho. Você pode selecionar até sua cota de SUs para um trabalho. Por padrão, cada assinatura do Azure tem uma cota de até 500 SUs para todos os trabalhos de análise em uma região específica. Para aumentar as SUs para suas assinaturas, entre em contato com o [Suporte da Microsoft](https://support.microsoft.com). Os valores válidos para o SUs por trabalho são 1, 3, 6 e em incrementos de 6.
 
 ## <a name="factors-that-increase-su-utilization"></a>Fatores que aumentam a utilização de % SU 
 

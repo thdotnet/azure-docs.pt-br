@@ -16,11 +16,11 @@ ms.date: 12/21/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d4bdeecc5682eb09ac0a65d3834ad1770258c4e0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57874720"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65898475"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-freshdesk"></a>Tutorial: Integração do Azure Active Directory ao FreshDesk
 
@@ -138,7 +138,7 @@ Para configurar o logon único do Azure AD com o FreshDesk, execute as seguintes
 
     f. Clique em **Ok**
 
-    g. Clique em **Salvar**.
+    g. Clique em **Save** (Salvar).
 
 7. Na página **Configurar logon único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Fazer o download** para fazer o download do **Certificado (Base64)** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
 
@@ -181,7 +181,7 @@ Para configurar o logon único do Azure AD com o FreshDesk, execute as seguintes
 
     e. Na caixa de texto **Impressão digital de certificado de segurança**, cole o valor **Cert Hash (sha256)** que você obteve anteriormente.
   
-    f. Clique em **Salvar**.
+    f. Clique em **Save** (Salvar).
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 
@@ -201,7 +201,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
@@ -265,7 +265,7 @@ No caso do FreshDesk, o provisionamento é uma tarefa manual.
 
     c. Na caixa de texto **Título** , digite a conta do Azure AD que você deseja provisionar.
 
-    d. Clique em **Salvar**.
+    d. Clique em **Save** (Salvar).
 
     >[!NOTE]
     >O titular da conta do Azure AD receberá um email que inclui um link para confirmar a conta antes que ela se torne ativa.

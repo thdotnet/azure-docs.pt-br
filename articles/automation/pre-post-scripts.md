@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/15/2019
+ms.date: 05/17/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 84df04a6d3fbd634524d3819657860c6a3448d65
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7317b634ee4c8886ce5c99bb2b3395d7d1f646d5
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60499748"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65913868"
 ---
 # <a name="manage-pre-and-post-scripts"></a>Gerenciar scripts pré e pós
 
@@ -30,9 +30,7 @@ Para usar um pré-script ou um pós-script em uma Implantação de Atualização
 
 ![Selecionar scripts](./media/pre-post-scripts/select-scripts.png)
 
-Selecione o script que deseja usar; neste exemplo, você usou o runbook **UpdateManagement-TurnOnVms**. Quando você seleciona o runbook, a página **Configurar script** é aberta; forneça valores para os parâmetros e escolha **Pré-Script**. Toque em **OK** quando terminar.
-
-![Configurar script](./media/pre-post-scripts/configure-script.png)
+Selecione o script que deseja usar; neste exemplo, você usou o runbook **UpdateManagement-TurnOnVms**. Quando você seleciona o runbook a **configurar o Script** página aberta, escolha **pré-script**. Toque em **OK** quando terminar.
 
 Repita esse processo para o script **UpdateManagement-TurnOffVms**. Porém, ao escolher o **Tipo de script**, escolha **Pós-Script**.
 
@@ -44,7 +42,7 @@ Termine de configurar sua Implantação de Atualização.
 
 Quando sua Implantação de Atualização for concluída, você poderá acessar **Implantações de atualização** para exibir os resultados. Como pode ver, são informados os status do pré-script e do pós-script.
 
-![Atualizar resultados](./media/pre-post-scripts/update-results.png)
+![Atualizar Resultados](./media/pre-post-scripts/update-results.png)
 
 Ao clicar na execução da implantação de atualização, você recebe detalhes adicionais dos pré-scripts e pós-scripts. Um link para a fonte do script no momento da execução é fornecido.
 
@@ -87,7 +85,7 @@ foreach($summary in $finalStatus)
 
 ### <a name="softwareupdateconfigurationruncontext-properties"></a>Propriedades de SoftwareUpdateConfigurationRunContext
 
-|Propriedade  |DESCRIÇÃO  |
+|Propriedade  |Descrição  |
 |---------|---------|
 |SoftwareUpdateConfigurationName     | O nome da configuração da atualização de software        |
 |SoftwareUpdateConfigurationRunId     | A ID exclusiva para a execução.        |
@@ -136,7 +134,7 @@ Um exemplo completo com todas as propriedades pode ser encontrado em: [Configura
 > [!NOTE]
 > O `SoftwareUpdateConfigurationRunContext` objeto pode conter entradas duplicadas para as máquinas. Isso pode causar scripts pré e pós seja executada várias vezes na mesma máquina. Solução alternativa para esse comportamento, use `Sort-Object -Unique` para selecionar apenas nomes exclusivos de VM em seu script.
 
-## <a name="samples"></a>Exemplos
+## <a name="samples"></a>Amostras
 
 Os exemplos para pré-scripts e pós-scripts podem ser encontrados na [Galeria da central de scripts](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=WindowsAzure&f%5B0%5D.Text=Windows%20Azure&f%5B1%5D.Type=SubCategory&f%5B1%5D.Value=WindowsAzure_automation&f%5B1%5D.Text=Automation&f%5B2%5D.Type=SearchText&f%5B2%5D.Value=update%20management&f%5B3%5D.Type=Tag&f%5B3%5D.Value=Patching&f%5B3%5D.Text=Patching&f%5B4%5D.Type=ProgrammingLanguage&f%5B4%5D.Value=PowerShell&f%5B4%5D.Text=PowerShell) ou importados por meio do portal do Azure. Para importá-los por meio do portal, na sua Conta de Automação, em **Automação de processo**, selecione **Galeria de runbooks**. Use **Gerenciamento de Atualizações** para o filtro.
 

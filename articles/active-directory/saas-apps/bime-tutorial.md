@@ -16,11 +16,11 @@ ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6c0d595bcd96bb38021a2128138f7ee49f9b8354
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57884805"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65900862"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bime"></a>Tutorial: Integração do Azure Active Directory com o Bime
 
@@ -148,7 +148,7 @@ Para configurar o logon único do Azure AD com o Bime, execute as seguintes etap
 
     c. Na caixa de texto **Impressão Digital de Certificado**, cole o valor de **IMPRESSÃO DIGITAL** copiado do portal do Azure.
 
-    d. Clique em **Salvar**.
+    d. Clique em **Save** (Salvar).
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
@@ -168,7 +168,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
@@ -227,7 +227,7 @@ Para que possam fazer logon no Bime, os usuários do Azure AD deverão ser provi
 
     c. Na caixa de texto **Email**, insira o email do usuário como **brendafernandes\@contoso.com**.
 
-    d. Clique em **Salvar**.
+    d. Clique em **Save** (Salvar).
 
 > [!NOTE]
 > É possível usar qualquer outra ferramenta de criação da conta de usuário do Bime ou as APIs fornecidas pelo Bime para provisionar as contas de usuário do AAD.

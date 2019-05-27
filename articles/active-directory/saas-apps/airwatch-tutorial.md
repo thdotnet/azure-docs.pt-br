@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ec8b575157dcf2fe8430f554798af62b966c78d
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: e20a298c34a7b2723963396f8ccaafaa9472e19a
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406692"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65899269"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-airwatch"></a>Tutorial: Integração do Azure Active Directory com AirWatch
 
@@ -207,15 +207,15 @@ Para configurar o logon único do Azure AD com o AirWatch, execute as seguintes 
 
      a. Na caixa de texto **Identificador de Objeto**, digite `http://schemas.microsoft.com/identity/claims/objectidentifier`.
 
-    b. Na caixa de texto **Nome de usuário**, digite `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    b. Na caixa de texto **Nome de usuário**, digite `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    c. Na caixa de texto **Nome de Exibição**, digite `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    c. Na caixa de texto **Nome de Exibição**, digite `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
-    d. Na caixa de texto **Nome**, digite `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    d. Na caixa de texto **Nome**, digite `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
-    e. Na caixa de texto **Sobrenome**, digite `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
+    e. Na caixa de texto **Sobrenome**, digite `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
 
-    f. Na caixa de texto **Email**, digite `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    f. Na caixa de texto **Email**, digite `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
     g. Clique em **Save** (Salvar).
 

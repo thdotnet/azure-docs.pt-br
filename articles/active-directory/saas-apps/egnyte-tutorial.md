@@ -16,11 +16,11 @@ ms.date: 2/4/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5ff1718211fa298e4daee694795a0b2438033fe2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57838117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65861972"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-egnyte"></a>Tutorial: Integração do Azure Active Directory ao Egnyte
 
@@ -105,7 +105,7 @@ Para configurar o logon único do Azure AD com o Egnyte, execute as seguintes et
 
     ![Informações de domínio único do Egnyte Domain e URLs](common/sp-signonurl.png)
 
-    Na caixa de texto **URL de login**, digite um URL usando o seguinte padrão: `https://<companyname>.egnyte.com`
+    Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://<companyname>.egnyte.com`
 
     > [!NOTE]
     > O valor não é real. Atualize o valor com a URL de Logon real. Contate a [equipe de suporte ao cliente do Egnyte](https://www.egnyte.com/corp/contact_egnyte.html) para obter o valor. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
@@ -158,7 +158,7 @@ Para configurar o logon único do Azure AD com o Egnyte, execute as seguintes et
    
     g. Para **Usar valor do emissor específico do domínio**, selecione **desabilitado**.
    
-    h. Clique em **Salvar**.
+    h. Clique em **Save** (Salvar).
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 
@@ -229,13 +229,13 @@ Para permitir que os usuários do Azure AD façam logon no Egnyte, eles deverão
     
     ![Novo Usuário Padrão](./media/egnyte-tutorial/ic787825.png "Novo Usuário Padrão")   
 
-     a. Na caixa de texto **Email**, insira o email do usuário como **brendafernandes\@contoso.com**.
+     a. Na caixa de texto **Email**, insira o email do usuário como **Brendafernandes\@contoso.com**.
 
     b. Na caixa de texto **Username**, insira o nome de usuário como **Brittasimon**.
 
     c. Selecione **logon único** como **tipo de autenticação**.
    
-    d. Clique em **Salvar**.
+    d. Clique em **Save** (Salvar).
     
     >[!NOTE]
     >O titular da conta do Active Directory do Azure receberá um email de notificação.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 67a195932ad1afc3c93a94dfcbda8ab8a47760b2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6ad6f9414df17f9edff7565752ef3845e0d3c88e
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60498807"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66116198"
 ---
 # <a name="understand-azure-policy-effects"></a>Compreender os efeitos do Azure Policy
 
@@ -30,7 +30,7 @@ Atualmente, há seis efeitos com suporte em uma definição de política:
 
 ## <a name="order-of-evaluation"></a>Ordem de avaliação
 
-As solicitações para criar ou atualizar um recurso por meio do Azure Resource Manager são avaliadas pelo Policy primeiro. O Policy cria uma lista de todas as atribuições que se aplicam ao recurso e o avalia em relação a cada definição. O Policy processa vários efeitos antes de enviar a solicitação ao provedor de recursos apropriado. Isso impede o processamento desnecessário por um provedor de recursos quando um recurso não atende aos controles de governança criados pelo Policy.
+As solicitações para criar ou atualizar um recurso por meio do Azure Resource Manager são avaliadas primeiro pela política do Azure. A política do Azure cria uma lista de todas as atribuições que se aplicam ao recurso e, em seguida, avalia o recurso em relação a cada definição. A política do Azure processa vários dos efeitos antes de enviar a solicitação ao provedor de recursos apropriado. Isso impede que o processamento desnecessário por um provedor de recursos, quando um recurso não atende os controles de governança projetado da política do Azure.
 
 - **Desabilitado** é marcado primeiro para determinar se a regra de política deve ser avaliada.
 - **Append** é, então, avaliado. Como o efeito acrescentar pode alterar a solicitação, a alteração feita ao acrescentar pode impedir uma auditoria ou negar o efeito do gatilho.
@@ -88,8 +88,7 @@ Exemplo 2: dois pares **campo/valor** para acrescentar um conjunto de marcas.
 }
 ```
 
-Exemplo 3: Par **campo/valor** exclusivo usando um [alias](definition-structure.md#aliases) não **[\*]**
- com uma matriz **value** para definir as regras de IP em uma conta de armazenamento. Quando o alias não **[\*]** é uma matriz, o efeito acrescenta o **valor** como a matriz inteira. Se já existir a matriz, ocorre um evento de negação como resultado do conflito.
+Exemplo 3: Única **valor do campo** emparelhar usando um não -**[\*]** [alias](definition-structure.md#aliases) com uma matriz **valor** para definir regras de IP em uma conta de armazenamento. Quando o alias não **[\*]** é uma matriz, o efeito acrescenta o **valor** como a matriz inteira. Se já existir a matriz, ocorre um evento de negação como resultado do conflito.
 
 ```json
 "then": {
@@ -149,7 +148,7 @@ Audit é usado para criar um evento de aviso no log de atividades ao avaliar um 
 
 ### <a name="audit-evaluation"></a>Avaliação de auditoria
 
-Audit é o último efeito verificado pelo Policy durante a criação ou a atualização de um recurso. O Policy, em seguida, envia o recurso para o provedor de recursos. Audit funciona da mesma forma para uma solicitação de recurso e um ciclo de avaliação. O Policy adiciona uma operação `Microsoft.Authorization/policies/audit/action` ao log de atividades e a marca como fora de conformidade.
+Auditoria é o último efeito verificado pela política do Azure durante a criação ou atualização de um recurso. A política do Azure, em seguida, envia o recurso para o provedor de recursos. Audit funciona da mesma forma para uma solicitação de recurso e um ciclo de avaliação. A política do Azure adiciona uma `Microsoft.Authorization/policies/audit/action` operação para o log de atividades e o marca como não compatível.
 
 ### <a name="audit-properties"></a>Propriedades de auditoria
 
@@ -171,7 +170,7 @@ O efeito AuditIfNotExists habilita a auditoria em recursos que correspondem à c
 
 ### <a name="auditifnotexists-evaluation"></a>Avaliação de AuditIfNotExists
 
-O efeito AuditIfNotExists é executado depois de um provedor de recursos ter tratado uma solicitação de criação ou atualização de recurso e ter retornado um código de status de êxito. A auditoria ocorre quando não existem recursos relacionados ou se os recursos definidos por **ExistenceCondition** não são avaliados como verdadeiros. O Policy adiciona uma operação `Microsoft.Authorization/policies/audit/action` ao log de atividades da mesma maneira que o efeito audit. Quando disparado, o recurso que atendeu à condição **se** é o recurso marcado como não compatível.
+O efeito AuditIfNotExists é executado depois de um provedor de recursos ter tratado uma solicitação de criação ou atualização de recurso e ter retornado um código de status de êxito. A auditoria ocorre quando não existem recursos relacionados ou se os recursos definidos por **ExistenceCondition** não são avaliados como verdadeiros. A política do Azure adiciona uma `Microsoft.Authorization/policies/audit/action` operação para a atividade de log da mesma maneira como o efeito de auditoria. Quando disparado, o recurso que atendeu à condição **se** é o recurso marcado como não compatível.
 
 ### <a name="auditifnotexists-properties"></a>Propriedades de AuditIfNotExists
 
@@ -300,7 +299,7 @@ Exemplo: Avalia os bancos de dados do SQL Server para determinar se transparentD
         "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
         "name": "current",
         "roleDefinitionIds": [
-            "/subscription/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/{roleGUID}",
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/{roleGUID}",
             "/providers/Microsoft.Authorization/roleDefinitions/{builtinroleGUID}"
         ],
         "existenceCondition": {
@@ -340,7 +339,7 @@ Exemplo: Avalia os bancos de dados do SQL Server para determinar se transparentD
 
 ## <a name="layering-policies"></a>Políticas de camadas
 
-Um recurso pode ser afetado por várias atribuições. Essas atribuições podem estar no mesmo escopo ou em escopos diferentes. Também é provável que cada uma dessas atribuições tenha um efeito diferente definido. A condição e o efeito de cada política são avaliados independentemente. Por exemplo: 
+Um recurso pode ser afetado por várias atribuições. Essas atribuições podem estar no mesmo escopo ou em escopos diferentes. Também é provável que cada uma dessas atribuições tenha um efeito diferente definido. A condição e o efeito de cada política são avaliados independentemente. Por exemplo:
 
 - Política 1
   - Restringe o local do recurso para 'westus'
@@ -367,11 +366,11 @@ Se ambas as políticas 1 e 2 tiveram o efeito negar, a situação será alterada
 
 Cada atribuição é avaliada individualmente. Assim, não existe chance de um recurso passar por uma brecha nas diferenças de escopo. O resultado de políticas em camadas ou sobreposição de políticas é considerado **cumulativo mais restritivo**. Por exemplo, se as políticas 1 e 2 tivessem efeito deny, um recurso seria bloqueado pelas políticas conflitantes e sobrepostas. Caso ainda precise que o recurso seja criado no escopo de destino, revise as exclusões em cada atribuição para validar que as políticas corretas estão afetando os escopos corretos.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
-- Revise os exemplos em [amostras da Política do Azure](../samples/index.md)
-- Revise a [estrutura de definição de política](definition-structure.md)
-- Entender como [criar políticas de forma programática](../how-to/programmatically-create.md)
-- Saiba como [obter dados de conformidade](../how-to/getting-compliance-data.md)
-- Saiba como [corrigir recursos fora de conformidade](../how-to/remediate-resources.md)
-- Examine o que é um grupo de gerenciamento com [Organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md)
+- Examine os exemplos na [exemplos do Azure Policy](../samples/index.md).
+- Revise a [estrutura de definição do Azure Policy](definition-structure.md).
+- Entender como [criar políticas de forma programática](../how-to/programmatically-create.md).
+- Saiba como [obter dados de conformidade](../how-to/getting-compliance-data.md).
+- Saiba como [corrigir recursos sem conformidade](../how-to/remediate-resources.md).
+- Examine o que um grupo de gerenciamento com [organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).

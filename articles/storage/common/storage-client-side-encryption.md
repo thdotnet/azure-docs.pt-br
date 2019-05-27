@@ -9,18 +9,18 @@ ms.date: 10/20/2017
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: d8ef24bfec541ec65c74f77a90aa9476a8b298b2
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 93386bd1fa3be88cbcdfab3d59ae07d3eb2b046d
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153277"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65911928"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-for-microsoft-azure-storage"></a>Criptografia do lado do cliente e o Cofre da Chave do Azure para o Armazenamento do Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
 
 ## <a name="overview"></a>Visão geral
-O [pacote Nuget da Biblioteca de Clientes do Armazenamento do Azure para .NET](https://www.nuget.org/packages/WindowsAzure.Storage) dá suporte à criptografia de dados em aplicativos clientes antes de carregar no Armazenamento do Azure e à descriptografia de dados durante o download para o cliente. A biblioteca também dá suporte à integração com o [Cofre da Chave do Azure](https://azure.microsoft.com/services/key-vault/) para o gerenciamento de chaves de contas de armazenamento.
+O [biblioteca de cliente de armazenamento do Azure para .NET](/dotnet/api/overview/azure/storage/client) dá suporte à criptografia de dados em aplicativos cliente antes do upload no armazenamento do Azure e à descriptografia de dados durante o download para o cliente. A biblioteca também dá suporte à integração com o [Cofre da Chave do Azure](https://azure.microsoft.com/services/key-vault/) para o gerenciamento de chaves de contas de armazenamento.
 
 Para obter um tutorial passo a passo que orienta você pelo processo de criptografia de blobs usando criptografia do lado do cliente e o Cofre da Chave do Azure, confira [Criptografar e descriptografar blobs no Armazenamento do Microsoft Azure usando a Chave do Cofre do Azure](../blobs/storage-encrypt-decrypt-blobs-key-vault.md).
 

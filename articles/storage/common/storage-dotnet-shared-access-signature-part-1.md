@@ -9,12 +9,12 @@ ms.date: 04/18/2017
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 25c562e144b635cb66c5df9b5b7bd6237ce3122c
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 8bee0426f171b0fdb7793d18c352649928fdb2e8
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154424"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65907207"
 ---
 # <a name="using-shared-access-signatures-sas"></a>Usando SAS (Assinaturas de Acesso Compartilhado)
 
@@ -109,7 +109,7 @@ Este é um exemplo de um URI SAS de serviço que fornece permissões de leitura 
 https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt?sv=2015-04-05&st=2015-04-29T22%3A18%3A26Z&se=2015-04-30T02%3A23%3A26Z&sr=b&sp=rw&sip=168.1.5.60-168.1.5.70&spr=https&sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D
 ```
 
-| NOME | Parte SAS | DESCRIÇÃO |
+| NOME | Parte SAS | Descrição |
 | --- | --- | --- |
 | URI do blob |`https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt` |O endereço do blob. Observe que o uso de HTTPS é altamente recomendável. |
 | Versão dos serviços de armazenamento |`sv=2015-04-05` |Para os serviços de armazenamento de versão 12-02-2012 e posterior, este parâmetro indica a versão a ser usada. |
@@ -119,7 +119,7 @@ https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt?sv=2015-04-05&s
 | Permissões |`sp=rw` |As permissões concedidas pelas SAS incluem Ler (r) e Gravar (w). |
 | Intervalo IP |`sip=168.1.5.60-168.1.5.70` |O intervalo de endereços IP do qual uma solicitação será aceita. |
 | Protocol |`spr=https` |São permitidas somente solicitações usando HTTPS. |
-| Signature |`sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D` |Usada para autorizar o acesso ao blob. A assinatura é um HMAC computado em uma cadeia-para-assinar e uma chave que usa o algoritmo SHA256 e depois codificado usando a codificação Base64. |
+| Assinatura |`sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D` |Usada para autorizar o acesso ao blob. A assinatura é um HMAC computado em uma cadeia-para-assinar e uma chave que usa o algoritmo SHA256 e depois codificado usando a codificação Base64. |
 
 ### <a name="account-sas-uri-example"></a>Exemplo de URI de SAS de conta
 
@@ -129,7 +129,7 @@ Veja aqui um exemplo de uma SAS de conta que usa os mesmos parâmetros comuns no
 https://myaccount.blob.core.windows.net/?restype=service&comp=properties&sv=2015-04-05&ss=bf&srt=s&st=2015-04-29T22%3A18%3A26Z&se=2015-04-30T02%3A23%3A26Z&sr=b&sp=rw&sip=168.1.5.60-168.1.5.70&spr=https&sig=F%6GRVAZ5Cdj2Pw4tgU7IlSTkWgn7bUkkAg8P6HESXwmf%4B
 ```
 
-| NOME | Parte SAS | DESCRIÇÃO |
+| NOME | Parte SAS | Descrição |
 | --- | --- | --- |
 | URI de recurso |`https://myaccount.blob.core.windows.net/?restype=service&comp=properties` |O ponto de extremidade de serviço Blob, com parâmetros para obter as propriedades do serviço (quando chamado com GET) ou definir as propriedades do serviço (quando chamado com SET). |
 | Serviços |`ss=bf` |A SAS se aplica a serviços de arquivo e Blob |
@@ -232,7 +232,7 @@ Abaixo estão alguns exemplos de ambos os tipos de assinatura de acesso comparti
 Para executar esses exemplos em C#, você precisa fazer referência aos seguintes pacotes NuGet em seu projeto:
 
 * [Biblioteca de cliente de armazenamento do Azure para .NET](https://www.nuget.org/packages/WindowsAzure.Storage), versão 6.x ou posterior (para usar a conta SAS).
-* [Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager)
+* [Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager)
 
 Para outros exemplos que mostram como criar e testar uma SAS, confira [Exemplos de Código do Azure para Armazenamento](https://azure.microsoft.com/documentation/samples/?service=storage).
 
@@ -422,7 +422,6 @@ private static string GetBlobSasUri(CloudBlobContainer container, string blobNam
 As assinaturas de acesso compartilhado são úteis para fornecer permissões limitadas para a sua conta de armazenamento aos clientes que não devem ter a chave de conta. Desse modo, elas são uma parte vital do modelo de segurança para qualquer aplicativo que utilize o Armazenamento do Azure. Se você seguir as práticas recomendadas listadas aqui, poderá usar a SAS para oferecer mais flexibilidade de acesso aos recursos da sua conta de armazenamento, sem comprometer a segurança do seu aplicativo.
 
 ## <a name="next-steps"></a>Próximas etapas
-* [Assinatura de Acesso Compartilhado, Parte 2: Criar e usar um SAS com o Armazenamento de Blobs](../blobs/storage-dotnet-shared-access-signature-part-2.md)
 * [Gerenciar o acesso de leitura anônimo aos contêineres e blobs](../blobs/storage-manage-access-to-resources.md)
 * [Delegando acesso com uma assinatura de acesso compartilhado](https://msdn.microsoft.com/library/azure/ee395415.aspx)
 * [Introdução à Tabela e à Fila SAS](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)

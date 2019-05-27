@@ -16,11 +16,11 @@ ms.date: 03/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 641fe5439e320208d41969b9563293257648d488
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57842083"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65895925"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zoom"></a>Tutorial: Integração do Azure Active Directory ao Zoom
 
@@ -144,7 +144,7 @@ Para configurar o logon único do Azure AD com o Zoom, execute as seguintes etap
 
     e. Clique em **Ok**
 
-    f. Clique em **Salvar**.
+    f. Clique em **Save** (Salvar).
 
     > [!NOTE]
     > O Zoom pode esperar uma declaração de grupo no conteúdo SAML, portanto, se você tiver criado algum grupo, contate a [equipe de suporte ao cliente do Zoom](https://support.zoom.us/hc/en-us) com as informações de grupo para que eles também possam configurar essas informações de grupo. Você também precisará fornecer a ID do Objeto para a [equipe de suporte ao cliente do Zoom](https://support.zoom.us/hc/en-us) para que eles possam configurar. Siga o [documento](https://support.zoom.us/hc/en-us/articles/115005887566) para obter a ID de Objeto.
@@ -195,7 +195,7 @@ Para configurar o logon único do Azure AD com o Zoom, execute as seguintes etap
 
     f. Na caixa de texto **Emissor**, cole o valor de **Identificador do Azure AD**, copiado do portal do Azure. 
 
-    g. Clique em **Salvar**.
+    g. Clique em **Save** (Salvar).
 
     > [!NOTE]
     > Para obter mais informações, visite a documentação de zoom [https://zoomus.zendesk.com/hc/articles/115005887566](https://zoomus.zendesk.com/hc/articles/115005887566)
@@ -218,7 +218,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.

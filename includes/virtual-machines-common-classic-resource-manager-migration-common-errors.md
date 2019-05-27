@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 16ccd89fe6eaad3fd6c2704b2f324f486eee45e1
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59532499"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66111663"
 ---
 # <a name="common-errors-during-classic-to-azure-resource-manager-migration"></a>Erros comuns durante a migração do Clássico para o Azure Resource Manager
 Este artigo cataloga os erros e mitigações mais comuns durante a migração de recursos de IaaS do modelo de implantação clássico do Azure para a pilha do Azure Resource Manager.
@@ -18,7 +18,7 @@ Este artigo cataloga os erros e mitigações mais comuns durante a migração de
 
 ## <a name="list-of-errors"></a>Lista de erros
 
-| Cadeia de caracteres de erro | Redução |
+| Cadeia de caracteres de erro | Atenuação |
 | --- | --- |
 | Erro interno do servidor |Em alguns casos, isso é um erro transitório desaparece com uma nova tentativa. Se ele persistir, [entre em contato com o suporte do Azure](../articles/azure-supportability/how-to-create-azure-support-request.md) pois ele precisará de investigação dos logs da plataforma. <br><br> **OBSERVAÇÃO:** não tente realizar nenhuma automitigação depois que o incidente for controlado pela equipe de suporte, pois isso poderá ter consequências indesejadas em seu ambiente. |
 | Não há suporte para migração para implantação {nome_da_implantação} em {nome_do_serviço_hospedado} HostedService porque é uma implantação de PaaS (Web/Trabalho). |Isso ocorre quando uma implantação contém uma função de trabalho/Web. Uma vez que a migração tem suporte apenas para máquinas virtuais, remova a função Web/de trabalho da implantação e tente novamente a migração. |

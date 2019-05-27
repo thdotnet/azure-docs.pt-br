@@ -9,11 +9,11 @@ ms.date: 02/20/2019
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: a95f5ee5105c45ba9e5b1705e83d60bf24b1dc12
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60333172"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66111102"
 ---
 ## <a name="create-a-namespace-in-the-azure-portal"></a>Criar um namespace no Portal do Azure
 Para começar a usar as entidades de mensagens do Barramento de Serviço no Azure, primeiro é necessário criar um namespace com um nome exclusivo no Azure. Um namespace fornece um contêiner de escopo para endereçar recursos do barramento de serviço dentro de seu aplicativo.

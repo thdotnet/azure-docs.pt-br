@@ -8,15 +8,14 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-origin.date: 10/23/2018
-ms.date: 03/25/2019
-ms.author: v-junlch
-ms.openlocfilehash: 1c60bd4dae6c279ccff637ff0aa798c48ebec6f1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 10/23/2018
+ms.author: azfuncdf, glenga
+ms.openlocfilehash: 705a43f1ef35f953d1b87c7c44bbc45fcb4334be
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60710788"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872853"
 ---
 # <a name="create-durable-functions-using-the-azure-portal"></a>Criar Durable Functions usando o portal do Azure
 
@@ -24,7 +23,7 @@ A extensão [Funções Duráveis](durable-functions-overview.md) do Azure Functi
 
 > [!NOTE]
 > 
-> * Se você estiver desenvolvendo funções duráveis em C#, deverá considerar o [Desenvolvimento do Visual Studio 2017](durable-functions-create-first-csharp.md).
+> * Se você estiver desenvolvendo funções duráveis em C#, em vez disso, você deve considerar [desenvolvimento do Visual Studio de 2019](durable-functions-create-first-csharp.md).
 > * Se você estiver desenvolvendo funções duráveis em JavaScript, você deve considerar o [Desenvolvimento de código do Visual Studio Code](./quickstart-js-vscode.md).
 
 ## <a name="create-a-function-app"></a>Criar um aplicativo de funções
@@ -92,7 +91,7 @@ Se você estiver criando Durable Functions do JavaScript, precisará instalar o 
 1. Use uma ferramenta HTTP, como Postman ou cURL, para enviar uma solicitação POST ao URL que você copiou. O exemplo a seguir é um comando cURL que envia uma solicitação POST para a função durável:
 
     ```bash
-    curl -X POST https://{your-function-app-name}.chinacloudsites.cn/api/orchestrators/HelloSequence
+    curl -X POST https://{your-function-app-name}.azurewebsites.net/api/orchestrators/HelloSequence
     ```
 
     Neste exemplo, `{your-function-app-name}` é o domínio que é o nome do seu aplicativo de função. A mensagem de resposta contém um conjunto de nós de extremidade do URI que você pode usar para monitorar e gerenciar a execução, que se parece com o exemplo a seguir:
@@ -141,5 +140,3 @@ A primeira função durável está agora em execução no Azure.
 
 > [!div class="nextstepaction"]
 > [Saiba mais sobre os padrões comuns de função durável](durable-functions-concepts.md)
-
-<!-- Update_Description: wording update -->

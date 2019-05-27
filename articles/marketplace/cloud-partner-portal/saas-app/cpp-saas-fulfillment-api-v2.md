@@ -7,16 +7,16 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: pabutler
-ms.openlocfilehash: 551f3be2ca23bc18224d28faeea6a6df80eba1db
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 4efd9556e255709204654cf0acbf1b08fa2c1fc0
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823533"
+ms.locfileid: "65872149"
 ---
 # <a name="saas-fulfillment-apis-version-2"></a>Versão de APIs de preenchimento SaaS 2 
 
-Este artigo detalha a API que permite que fornecedores de software independentes (ISVs) para vender seus aplicativos SaaS no Azure Marketplace e AppSource. Essa API é um requisito para a listagem de SaaS oferece no Azure Marketplace e AppSource.
+Este artigo detalha a API que permite que fornecedores de software independentes (ISVs) para vender seus aplicativos SaaS no Azure Marketplace e AppSource. Essa API é que um requisito para SaaS transacionáveis oferece no Azure Marketplace e AppSource.
 
 ## <a name="managing-the-saas-subscription-lifecycle"></a>Gerenciar o ciclo de vida de assinatura de SaaS
 

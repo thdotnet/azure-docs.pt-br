@@ -10,11 +10,11 @@ ms.date: 11/08/2018
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: a812155474b244682613b38b9b9379fa6cdcdcd8
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58166745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66117756"
 ---
 # <a name="tutorial-detect-anomalies-at-the-edge-with-the-remote-monitoring-solution-accelerator"></a>Tutorial: Detectar anomalias na borda com o acelerador de solução de Monitoramento Remoto
 
@@ -104,7 +104,7 @@ Para facilitar o gerenciamento de dispositivos do IoT Edge na solução, crie um
 
     [![Criar um grupo de dispositivos](./media/iot-accelerators-remote-monitoring-edge/createdevicegroup-inline.png)](./media/iot-accelerators-remote-monitoring-edge/createdevicegroup-expanded.png#lightbox)
 
-1. Clique em **Salvar**.
+1. Clique em **Save** (Salvar).
 
 O dispositivo do IoT Edge já está no grupo **OilPumps**.
 
@@ -209,11 +209,11 @@ Em seguida, crie um manifesto de implantação do IoT Edge que define os módulo
 
 1. Na página **Criar Implantação > Adicionar Módulos**, clique em **+ Adicionar**. Escolha **Módulo do IoT Edge**.
 
-1. No painel **Módulos personalizados do IoT Edge**, digite **temperatureSensor** para nome e **asaedgedockerhubtest/asa-edge-test-module:sensor-ad-linux-amd64** para URI da imagem. Clique em **Salvar**.
+1. No painel **Módulos personalizados do IoT Edge**, digite **temperatureSensor** para nome e **asaedgedockerhubtest/asa-edge-test-module:sensor-ad-linux-amd64** para URI da imagem. Clique em **Save** (Salvar).
 
 1. Na página **Criar Implantação > Adicionar Módulos**, clique em **+ Adicionar** para adicionar um segundo módulo. Escolha **Módulo do Azure Stream Analytics**.
 
-1. No painel **Implantação do Edge**, escolha sua assinatura e o **EdgeDeviceJob** criado na seção anterior. Clique em **Salvar**.
+1. No painel **Implantação do Edge**, escolha sua assinatura e o **EdgeDeviceJob** criado na seção anterior. Clique em **Save** (Salvar).
 
 1. Na página **Criar Implantação > Adicionar Módulos**, clique em **+ Avançar**.
 

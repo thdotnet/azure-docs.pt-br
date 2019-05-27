@@ -16,14 +16,14 @@ ms.date: 04/27/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3abe2f7deef2a1dbe82f4702fd3477303891ab2e
-ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
+ms.openlocfilehash: 0b9baa48c13e317ba3fb54d998ee8f125d2093c7
+ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873600"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65921062"
 ---
-# <a name="what-is-azure-ad-entitlement-management-preview"></a>O que é gerenciamento de direitos do AD do Azure? (Visualização)
+# <a name="what-is-azure-ad-entitlement-management-preview"></a>O que é gerenciamento de direitos do AD do Azure? (Versão Prévia)
 
 > [!IMPORTANT]
 > Gerenciamento de direitos do Active Directory (Azure AD) do Azure está atualmente em visualização pública.
@@ -42,7 +42,7 @@ Organizações empresariais frequentemente enfrentam desafios ao gerenciar o ace
 - Os usuários podem ter dificuldade para localizar os indivíduos certos ou os recursos certos
 - Depois que os usuários localizarem e receber acesso a um recurso, eles podem manter para acessar mais do que é necessário para fins comerciais
 
-Esses problemas são agravados para usuários que precisam de acesso de outro diretório, como usuários externos que sejam de organizações de cadeia de suprimentos ou outros parceiros de negócios. Por exemplo: 
+Esses problemas são agravados para usuários que precisam de acesso de outro diretório, como usuários externos que sejam de organizações de cadeia de suprimentos ou outros parceiros de negócios. Por exemplo:
 
 - As organizações podem não conhecer todas as pessoas específicas em outros diretórios para poder para convidá-los
 - Mesmo que as organizações capazes de convidar esses usuários, as organizações podem não lembrar gerencie todo o acesso do usuário consistente
@@ -114,7 +114,7 @@ O diagrama a seguir mostra um exemplo dos diferentes elementos no gerenciamento 
 
 Ao usar o [do Azure AD business-to-business (B2B)](../b2b/what-is-b2b.md) convidar experiência, você já deve saber os endereços de email dos usuários convidados externo que deseja trazer para o seu diretório de recursos e trabalhar com. Isso funciona muito bem quando você estiver trabalhando em um projeto de curto prazo ou menor e você já conhece todos os participantes, mas isso é mais difícil de gerenciar se você tiver muitos usuários que você deseja trabalhar ou se os participantes alterar ao longo do tempo.  Por exemplo, você pode trabalhar com outra organização e ter um ponto de contato com essa organização, mas ao longo do tempo adicionais que os usuários da organização também precisará acessar.
 
-Com o gerenciamento de direitos, você pode definir uma política que permite que os usuários de organizações que você especificar, e que também estão usando o Azure AD, para poder solicitar um pacote de acesso. Você pode especificar se a aprovação é necessária e uma data de expiração para o acesso. Se a aprovação for necessária, você também pode designar como aprovador um ou mais usuários da organização externa que você anteriormente convidado - uma vez que eles provavelmente sabe quais usuários externos de sua organização precisam de acesso. Depois de configurar o pacote de acesso, você pode enviar um link para o pacote de acesso para sua pessoa de contato na organização externa. Esse contato pode compartilhar com outros usuários na organização externa, e eles podem usar este link para solicitar o acesso de pacote.  Usuários do organizacionais ou que já foram convidados para seu diretório também podem usar esse link.
+Com o gerenciamento de direitos, você pode definir uma política que permite que os usuários de organizações que você especificar, e que também estão usando o Azure AD, para poder solicitar um pacote de acesso. Você pode especificar se a aprovação é necessária e uma data de expiração para o acesso. Se a aprovação for necessária, você também pode designar como aprovador um ou mais usuários da organização externa que você anteriormente convidado - uma vez que eles provavelmente sabe quais usuários externos de sua organização precisam de acesso. Depois de configurar o pacote de acesso, você pode enviar um link para o pacote de acesso para sua pessoa de contato na organização externa. Esse contato pode compartilhar com outros usuários na organização externa, e eles podem usar este link para solicitar o acesso de pacote.  Os usuários da organização que já foram convidados para seu diretório também podem usar esse link.
 
 Quando uma solicitação for aprovada, o gerenciamento de direitos de provisionará o usuário com o acesso necessário, o que pode incluir convidar o usuário se eles não ainda estiver em seu diretório. Azure AD criará automaticamente uma conta de B2B para eles.  Observe que um administrador pode ter limitado anteriormente que as organizações são permitidas para a colaboração, definindo uma [B2B permitir ou negar lista](../b2b/allow-deny-list.md) para permitir ou bloquear convites para outras organizações.  Se o usuário não é permitido pela lista de permissões ou bloqueios, em seguida, eles não serão convidados.
 
@@ -124,26 +124,26 @@ Como você não deseja que o acesso do usuário externo durar para sempre, você
 
 Para entender melhor o gerenciamento de direitos e sua documentação, você deve revisar os termos a seguir.
 
-| Termo ou conceito | DESCRIÇÃO |
+| Termo ou conceito | Descrição |
 | --- | --- |
 | gerenciamento de direitos | Um serviço que atribui, revoga e administra pacotes de acesso. |
 | pacote de acesso | Uma coleção de permissões e políticas para recursos que os usuários podem solicitar. Um pacote de acesso sempre está contido em um catálogo. |
 | solicitação de acesso | Uma solicitação para acessar um pacote de acesso. Normalmente, uma solicitação passa por um fluxo de trabalho. |
 | policy | Um conjunto de regras que define o ciclo de vida de acesso, como como os usuários podem obter acesso, quem pode aprovar e por quanto tempo os usuários têm acesso. Exemplos de políticas incluem o acesso dos funcionários e o acesso externo. |
-| catálogo | Um contêiner de pacotes de acesso e recursos relacionados. |
+| catalog | Um contêiner de pacotes de acesso e recursos relacionados. |
 | Catálogo geral | Um catálogo interno que está sempre disponível. Para adicionar recursos ao catálogo geral, exige determinadas permissões. |
-| recurso | Um ativo ou serviço (por exemplo, um grupo, aplicativo ou site) que um usuário pode ser concedido permissões para. |
+| Recurso | Um ativo ou serviço (por exemplo, um grupo, aplicativo ou site) que um usuário pode ser concedido permissões para. |
 | Tipo de Recurso | O tipo de recurso, que inclui grupos, aplicativos e sites do SharePoint Online. |
 | função de recurso | Uma coleção de permissões associadas a um recurso. |
 | diretório de recursos | Um diretório que tem um ou mais recursos para compartilhar. |
 | usuários atribuídos | Uma atribuição de um pacote de acesso para um usuário ou grupo. |
-| enable | O processo de disponibilizar um pacote de acesso para que os usuários solicitem. |
+| habilitar | O processo de disponibilizar um pacote de acesso para que os usuários solicitem. |
 
 ## <a name="roles-and-permissions"></a>Funções e permissões
 
 Gerenciamento de direitos tem funções diferentes com base em função de trabalho.
 
-| Função | DESCRIÇÃO |
+| Função | Descrição |
 | --- | --- |
 | [Usuário administrador](../users-groups-roles/directory-assign-admin-roles.md#user-administrator) | Gerencie todos os aspectos do gerenciamento de direitos.<br/>Crie usuários e grupos. |
 | Criador de catálogo | Criar e gerenciar catálogos. Normalmente, um administrador de TI ou o proprietário do recurso. A pessoa que cria um catálogo automaticamente se torna o proprietário do catálogo primeiro do catálogo. |

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: gsilva
 ms.custom: ''
-ms.openlocfilehash: 8ea17e5615c0256c084b0745a392fb49f8873f99
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1e5513b28c1ae64fc8c87bb7a949596feab4623e
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60713718"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873429"
 ---
 # <a name="create-a-linux-virtual-machine-with-accelerated-networking"></a>Criar uma máquina virtual Linux com Rede Acelerada
 
@@ -224,6 +224,10 @@ vf_tx_bytes: 1099443970
 vf_tx_dropped: 0
 ```
 A Rede Acelerada agora está habilitada para sua VM.
+
+## <a name="handle-dynamic-binding-and-revocation-of-virtual-function"></a>Lidar com a associação dinâmica e a revogação de função virtual 
+Aplicativos devem ser executados ao longo da NIC sintética que é exposta na VM. Se o aplicativo é executado diretamente sobre a NIC de FV, ele não recebe **todos os** pacotes que são destinados à VM, já que alguns pacotes aparecem na interface sintético.
+Se você executar um aplicativo sobre a placa de rede sintética, ela garante que o aplicativo recebe **todos os** pacotes que são destinados a ele. Ele também torna-se de que o aplicativo continua em execução, mesmo se o FV é revogado quando o host está em manutenção. Aplicativos de associação para a NIC sintética são uma **obrigatórios** requisito para todos os aplicativos, aproveitando **rede acelerada**.
 
 ## <a name="enable-accelerated-networking-on-existing-vms"></a>Habilitar Rede Acelerada em VMs existentes
 Se você tiver criado uma VM sem Rede Acelerada, será possível habilitar esse recurso em uma VM existente.  A VM deve dar suporte à Rede Acelerada atendendo aos pré-requisitos a seguir que também estão descritos acima:

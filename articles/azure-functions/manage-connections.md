@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 02/25/2018
 ms.author: glenga
-ms.openlocfilehash: e15d6ad445c3fdde0632c3ad468eee7da836a394
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 69425129d5f049254a60032283ddc6ca2ab84d5c
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65785952"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872686"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Gerenciar conexões no Azure Functions
 
@@ -21,9 +21,9 @@ Funções em um aplicativo de funções compartilham recursos. Entre esses recur
 
 ## <a name="connection-limit"></a>Limite de Conexão
 
-O número de conexões disponíveis é limitado em parte porque um aplicativo de funções é executado em um [ambiente de área restrita](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox). Uma das restrições do que a área restrita impõe no seu código é um limite no número de conexões (no momento em 600 conexões ativas e o total de conexões de 1.200) por instância. Ao alcançar esse limite, o tempo de execução das funções criará um log com a seguinte mensagem: `Host thresholds exceeded: Connections`.
+O número de conexões disponíveis é limitado em parte porque um aplicativo de funções é executado em um [ambiente de área restrita](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox). Uma das restrições que a área restrita impõe no seu código é um limite no número de conexões de saída, que atualmente é 600 (total de 1.200) as conexões ativas por instância. Quando você atingir esse limite, o tempo de execução do functions grava a seguinte mensagem nos logs: `Host thresholds exceeded: Connections`. Para obter mais informações, consulte o [limites de serviço de funções](functions-scale.md#service-limits).
 
-Esse limite é por instância.  Quando o [controlador de escala adiciona as instâncias do aplicativo de função](functions-scale.md#how-the-consumption-and-premium-plans-work) para tratar mais solicitações, cada instância possui um limite de conexão independente. Isso significa que não há nenhum limite de conexão global, e você pode ter muito mais de 600 conexões ativas em todas as instâncias ativas.
+Esse limite é por instância. Quando o [controlador de escala adiciona as instâncias do aplicativo de função](functions-scale.md#how-the-consumption-and-premium-plans-work) para tratar mais solicitações, cada instância possui um limite de conexão independente. Isso significa que não há nenhum limite de conexão global, e você pode ter muito mais de 600 conexões ativas em todas as instâncias ativas.
 
 Ao solucionar o problema, certifique-se de que você tiver habilitado o Application Insights para seu aplicativo de funções. O Application Insights permite exibir as métricas para seus aplicativos de funções, como execuções. Para obter mais informações, consulte [exibir a telemetria no Application Insights](functions-monitoring.md#view-telemetry-in-application-insights).  
 

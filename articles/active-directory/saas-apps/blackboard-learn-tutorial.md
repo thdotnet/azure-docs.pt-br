@@ -16,11 +16,11 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 60aacc3d4d5743187ec826fb9f544488171b1285
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57838537"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65900722"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-blackboard-learn"></a>Tutorial: Integração do Azure Active Directory ao Blackboard Learn
 
@@ -139,7 +139,7 @@ Para configurar o logon único do Azure AD com o Blackboard Learn, execute as se
 
     f. Clique em **Ok**
 
-    g. Clique em **Salvar**.
+    g. Clique em **Save** (Salvar).
 
 7. Na página **Configurar Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Baixar** para baixar o **XML de Metadados de Federação** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
 
