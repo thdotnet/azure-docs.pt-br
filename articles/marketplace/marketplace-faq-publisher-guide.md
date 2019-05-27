@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 03/02/2019
 ms.author: ellacroi
-ms.openlocfilehash: 3e1bad5902bb35ce0c037835359c267582cc8bc7
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 152be044b5696a0d9017729d731e080ed9163828
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64938649"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65964056"
 ---
 # <a name="marketplace-faqs"></a>Perguntas frequentes sobre o Marketplace
 
@@ -35,7 +35,7 @@ O Azure Marketplace foi projetado para profissionais de TI e desenvolvedores de 
 O Azure Marketplace oferece serviços e soluções técnicas da Microsoft e de parceiros, criados para estender os serviços e os produtos do Azure. O catálogo de soluções abrange várias categorias, incluindo, entre outras:
 
 * sistemas operacionais de base
-* databases
+* bancos de dados
 * segurança
 * identidade
 * Rede
@@ -216,7 +216,7 @@ Sim. Os créditos de assinatura do Azure ou fundos de compromisso monetário da 
 
 Uma informações de uso estimado pode ser encontrada no [Portal de Gerenciamento do Microsoft Azure](https://portal.azure.com/). As informações de uso estimado podem não incluir atividades recentes e podem basear-se em projeções derivadas de consumo passado. Durante a versão prévia pública, essa funcionalidade pode não estar disponível para todas as compras e variar de acordo com o tipo de produto.
 
-### <a name="customer-support"></a>Suporte ao cliente
+### <a name="customer-support"></a>Atendimento ao cliente
 
 **Quem devo contatar para falar sobre questões gerais de suporte com o Azure Marketplace?**
 
@@ -310,7 +310,7 @@ Examine o [Guia do editor](https://docs.microsoft.com/azure/marketplace/marketpl
 
 **Como começo a publicar no Azure Marketplace?**
 
-Comece sua listagem do Azure Marketplace lendo o [Guia do editor do Azure Marketplace](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide) e [Como se tornar um editor](https://docs.microsoft.com/azure/marketplace/become-publisher). Em seguida, envie seu aplicativo ao preencher o [Formulário de nominação do Azure Marketplace](https://azuremarketplace.microsoft.com/sell/signup).
+Comece sua listagem do Azure Marketplace lendo o [Guia do editor do Azure Marketplace](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide) e [Como se tornar um editor](https://docs.microsoft.com/azure/marketplace/become-publisher). Em seguida, envie seu aplicativo pelo [enviar sua oferta](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv). Veja como [criar uma conta no Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) para obter mais informações.
 
 **Preciso ser membro da MPN (Microsoft Partner Network) para listar meus aplicativos e serviços no Azure Marketplace?**
 
@@ -400,7 +400,7 @@ Aplicativos do O365
 1.  Entre no [https://sellerdashboard.microsoft.com](https://sellerdashboard.microsoft.com) com a Conta de Desenvolvimento.
 1.  Retire o suplemento.
 
-OBSERVAÇÃO:  O aplicativo desaparecerá da listagem existente após 90 dias.
+OBSERVAÇÃO: O aplicativo desaparecerá da listagem existente após 90 dias.
 
 Aplicativos do Power BI
 * Contate: [Anjana Sompur (Slalom Consulting LLC)](mailto:v-ansomp@microsoft.com).

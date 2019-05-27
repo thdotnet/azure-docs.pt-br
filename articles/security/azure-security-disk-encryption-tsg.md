@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4715ec92c4ee45733cc0eb2839c533f9ee8968fe
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 35d494702673d59290a0073c55135138f533b8bf
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64694123"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956702"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Guia de solução de problemas do Azure Disk Encryption
 
@@ -64,7 +64,7 @@ Em alguns casos, a criptografia de disco do Linux parece estar paralisada na "cr
 
 A sequência de criptografia de disco do SO Linux desmonta a unidade do SO temporariamente. Em seguida, ela realiza a criptografia bloco a bloco de todo o disco do SO, antes de remontá-lo em seu estado criptografado. Diferentemente da Criptografia de Disco do Azure no Windows, a Criptografia de Disco do Linux não permite o uso simultâneo da VM enquanto a criptografia está em andamento. As características de desempenho da VM podem fazer uma diferença significativa no tempo necessário para concluir a criptografia. Essas características incluem o tamanho do disco e se a conta de armazenamento é padrão ou premium (SSD).
 
-Para verificar o status de criptografia, sondar o **ProgressMessage** campo retornado da [Get-AzVmDiskEncryptionStatus](/powershell/module/az.compute/get-azvmdiskencryptionstatus) comando. Enquanto a unidade do SO está sendo criptografada, a VM entra em um estado de manutenção e desabilita o SSH para evitar qualquer interrupção no processo em andamento. A mensagem **EncryptionInProgress** será reportada a maior parte do tempo enquanto a criptografia estiver em andamento. Horas depois, uma mensagem **VMRestartPending** solicitará a reinicialização da VM. Por exemplo: 
+Para verificar o status de criptografia, sondar o **ProgressMessage** campo retornado da [Get-AzVmDiskEncryptionStatus](/powershell/module/az.compute/get-azvmdiskencryptionstatus) comando. Enquanto a unidade do SO está sendo criptografada, a VM entra em um estado de manutenção e desabilita o SSH para evitar qualquer interrupção no processo em andamento. A mensagem **EncryptionInProgress** será reportada a maior parte do tempo enquanto a criptografia estiver em andamento. Horas depois, uma mensagem **VMRestartPending** solicitará a reinicialização da VM. Por exemplo:
 
 
 ```azurepowershell
@@ -130,7 +130,7 @@ Para contornar esse problema, copie os quatro arquivos a seguir de uma VM do Dat
 
 1. Use DiskPart para verificar os volumes e continue.  
 
-Por exemplo: 
+Por exemplo:
 
 ```
 DISKPART> list vol
@@ -150,7 +150,9 @@ If the expected encryption state does not match what is being reported in the po
 
 O portal poderá exibir um disco criptografado mesmo depois que ele tiver sido descriptografado dentro da VM.  Isso pode ocorrer quando comandos de baixo nível são usados para descriptografar diretamente o disco da VM, em vez de usar os comandos de gerenciamento do Azure Disk Encryption nível mais alto.  O nível mais alto de comandos não apenas retirar o disco de dentro da VM, mas fora da VM que eles também atualizar as configurações de criptografia no nível de plataforma importantes e as configurações de extensão associadas à VM.  Se eles não são mantidos em alinhamento, a plataforma não poderá relatar o status de criptografia ou provisionar a VM adequadamente.   
 
-Para desativar corretamente o Azure Disk Encryption, iniciar a partir de um bom estado conhecido com a criptografia habilitada e, em seguida, usar o [Disable-AzVMDiskEncryption](/powershell/module/az.compute/disable-azvmdiskencryption) e [AzVMDiskEncryptionExtension remover](/powershell/module/az.compute/remove-azvmdiskencryptionextension) Powershell comandos, ou o [desabilitar a criptografia de vm az](/cli/azure/vm/encryption) comando da CLI. 
+Para desabilitar o Azure Disk Encryption com o PowerShell, use [Disable-AzVMDiskEncryption](/powershell/module/az.compute/disable-azvmdiskencryption) seguido [AzVMDiskEncryptionExtension remover](/powershell/module/az.compute/remove-azvmdiskencryptionextension). A execução de Remove-AzVMDiskEncryptionExtension antes que a criptografia está desabilitada falhará.
+
+Para desabilitar o Azure Disk Encryption com a CLI, use [desabilitar a criptografia de vm az](/cli/azure/vm/encryption). 
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/01/2019
 ms.author: brkhande
-ms.openlocfilehash: aca34ee40bfe10c55c478d9aaeb01a65d139e1e2
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: ccc0399b6ac886ec8d9ef7d207c3539f1d078070
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65522372"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951941"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Patch do sistema operacional Windows em seu cluster do Service Fabric
 
@@ -141,9 +141,7 @@ As Atualizações Automáticas do Windows podem causar a perda de disponibilidad
 
 ## <a name="download-the-app-package"></a>Baixar o pacote do aplicativo
 
-O aplicativo juntamente com scripts de instalação podem ser baixados do [link de arquivo](https://go.microsoft.com/fwlink/?linkid=869566).
-
-O aplicativo no formato sfpkg pode ser baixado do [link sfpkg](https://aka.ms/POA/POA.sfpkg). Isso é útil para a [Implantação de aplicativo baseado no Azure Resource Manager](service-fabric-application-arm-resource.md).
+Para baixar o pacote de aplicativo, visite o lançamento do GitHub [página](https://github.com/microsoft/Service-Fabric-POA/releases/latest/) do aplicativo de orquestração de Patch.
 
 ## <a name="configure-the-app"></a>Configurar o aplicativo
 
@@ -205,13 +203,15 @@ O aplicativo de orquestração de patch expõe as APIs REST para exibir os resul
       {
         "OperationResult": 0,
         "NodeName": "_stg1vm_1",
-        "OperationTime": "2017-05-21T11:46:52.1953713Z",
+        "OperationTime": "2019-05-13T08:44:56.4836889Z",
+        "OperationStartTime": "2019-05-13T08:44:33.5285601Z",
         "UpdateDetails": [
           {
             "UpdateId": "7392acaf-6a85-427c-8a8d-058c25beb0d6",
             "Title": "Cumulative Security Update for Internet Explorer 11 for Windows Server 2012 R2 (KB3185319)",
             "Description": "A security issue has been identified in a Microsoft software product that could affect your system. You can help protect your system by installing this update from Microsoft. For a complete listing of the issues that are included in this update, see the associated Microsoft Knowledge Base article. After you install this update, you may have to restart your system.",
-            "ResultCode": 0
+            "ResultCode": 0,
+            "HResult": 0
           }
         ],
         "OperationType": 1,
@@ -234,6 +234,9 @@ ResultCode | O mesmo que OperationResult | Este campo indica o resultado da oper
 OperationType | 1 - Instalação<br> 0 - Pesquisar e baixar.| A instalação é o único OperationType que seria mostrado nos resultados por padrão.
 WindowsUpdateQuery | O padrão é "IsInstalled=0" |Consulta atualização do Windows que foi usada para procurar atualizações. Para obter mais informações, consulte [WuQuery.](https://msdn.microsoft.com/library/windows/desktop/aa386526(v=vs.85).aspx)
 RebootRequired | true - a reinicialização foi necessária<br> false - a reinicialização não foi necessária | Indica se a reinicialização foi necessária para concluir a instalação de atualizações.
+OperationStartTime | DateTime | Indica a hora em que operation(Download/Installation) iniciado.
+OperationTime | DateTime | Indica a hora em que operation(Download/Installation) concluída.
+HResult | 0 - êxito<br> outro - falha| Indica o motivo da falha da atualização do windows com updateID "7392acaf-6a85-427c-8a8d-058c25beb0d6".
 
 Se nenhuma atualização estiver agendada ainda, o resultado JSON estará vazio.
 
@@ -255,6 +258,58 @@ Para habilitar o proxy reverso no cluster, siga as etapas em [Proxy reverso no A
 
 ## <a name="diagnosticshealth-events"></a>Eventos de diagnóstico/integridade
 
+A seção a seguir fala sobre como depurar/diagnosticar problemas com as atualizações de patch por meio do aplicativo de orquestração de Patch em clusters do Service Fabric.
+
+> [!NOTE]
+> Você deve ter a versão de v1.4.0 de POA instalado para aproveitar muitos o destacados abaixo self melhorias de diagnóstico.
+
+Cria o NodeAgentNTService [reparar tarefas](https://docs.microsoft.com/dotnet/api/system.fabric.repair.repairtask?view=azure-dotnet) para instalar atualizações em nós. Cada tarefa, em seguida, é preparada pelo CoordinatorService acordo com a política de aprovação de tarefa. As tarefas preparadas são finalmente aprovadas pelo Gerenciador de reparo que não irá aprovar qualquer tarefa se o cluster está em estado não íntegro. Permite ir passo a passo para entender como as atualizações prosseguir em um nó.
+
+1. NodeAgentNTService, em execução em cada nó, procura a atualização do Windows disponível no horário agendado. Se houver atualizações disponíveis, ele segue em frente e baixa-los no nó.
+2. Depois que as atualizações são baixadas, o NodeAgentNTService, cria a tarefa de reparo correspondente para o nó com o nome POS___ < unique_id >. Um pode exibi-las reparar tarefas usando o cmdlet [Get-ServiceFabricRepairTask](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricrepairtask?view=azureservicefabricps) ou no SFX na seção de detalhes do nó. Depois de criar a tarefa de reparo, move rapidamente para [solicitadas estado](https://docs.microsoft.com/dotnet/api/system.fabric.repair.repairtaskstate?view=azure-dotnet).
+3. O serviço de coordenador, periodicamente procura por tarefas de reparo em estado solicitada e segue em frente e atualiza a preparação de estado com base na TaskApprovalPolicy. Se o TaskApprovalPolicy estiver configurada para ser NodeWise, uma tarefa de reparo correspondente a um nó é preparada somente não se houver nenhuma outra tarefa de reparo atualmente no estado de preparação/aprovado/execução/restauração. Da mesma forma, no caso de UpgradeWise a TaskApprovalPolicy, fica garantido em qualquer ponto há tarefas nos Estados acima somente para nós que pertencem ao mesmo domínio de atualização. Depois que uma tarefa de reparo é movida para o estado de preparação, o nó do Service Fabric correspondente está [desabilitada](https://docs.microsoft.com/powershell/module/servicefabric/disable-servicefabricnode?view=azureservicefabricps) com intenção como "Reiniciar".
+
+   POA(v1.4.0 and above) lança eventos com a propriedade "ClusterPatchingStatus" no CoordinaterService para exibir os nós que estão sendo corrigidos. Imagem abaixo mostra que as atualizações é instalada _poanode_0:
+
+    [![Imagem do status de aplicação de patch de Cluster](media/service-fabric-patch-orchestration-application/clusterpatchingstatus.png)](media/service-fabric-patch-orchestration-application/clusterpatchingstatus.png#lightbox)
+
+4. Depois que o nó está desabilitado, a tarefa de reparo é movida para o estado em execução. Observe que, uma tarefa de reparo presa na preparação de estado, depois porque um nó estiver presa no estado de desabilitação pode resultar em nova tarefa de reparo de bloqueio e, portanto, interromper a aplicação de patch de cluster.
+5. Depois que a tarefa de reparo está em estado de execução, a instalação de patch no nó começa. Aqui, depois que o patch for instalado, o nó pode ou não pode ser reiniciado, dependendo do patch. POST que a tarefa de reparo é movida para restauração de estado, que habilita novamente o nó novamente e, em seguida, ele é marcado como concluído.
+
+   V1.4.0 e acima de versões do aplicativo, o status da atualização pode ser encontrado, observando os eventos de integridade em NodeAgentService com a propriedade "WUOperationStatus-[NodeName]". As seções realçadas as imagens abaixo mostram o status da atualização do windows no nó 'poanode_0' e 'poanode_2':
+
+   [![Imagem do status de operação de atualização do Windows](media/service-fabric-patch-orchestration-application/wuoperationstatusa.png)](media/service-fabric-patch-orchestration-application/wuoperationstatusa.png#lightbox)
+
+   [![Imagem do status de operação de atualização do Windows](media/service-fabric-patch-orchestration-application/wuoperationstatusb.png)](media/service-fabric-patch-orchestration-application/wuoperationstatusb.png#lightbox)
+
+   Um também pode obter os detalhes usando o powershell, conectando-se ao cluster e buscando o estado da tarefa de reparo usando [Get-ServiceFabricRepairTask](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricrepairtask?view=azureservicefabricps). Como o abaixo mostra o exemplo que "POS__poanode_2_125f2969 933c-4774 85 d 1-ebdf85e79f15" tarefa é ser usada no estado DownloadComplete. Isso significa que atualizações foram baixadas no nó "poanode_2" e a instalação será tentada depois que a tarefa será movida para o estado de execução.
+
+   ``` powershell
+    D:\service-fabric-poa-bin\service-fabric-poa-bin\Release> $k = Get-ServiceFabricRepairTask -TaskId "POS__poanode_2_125f2969-933c-4774-85d1-ebdf85e79f15"
+
+    D:\service-fabric-poa-bin\service-fabric-poa-bin\Release> $k.ExecutorData
+    {"ExecutorSubState":2,"ExecutorTimeoutInMinutes":90,"RestartRequestedTime":"0001-01-01T00:00:00"}
+    ```
+
+   Se não houver ainda mais a ser localizada em seguida, entre no VM/VMs específicas para encontrar mais informações sobre o problema usando logs de eventos do Windows. As opções acima mencionadas a tarefa de reparo pode ter apenas esses estados subpropriedades do executor:
+
+      ExecutorSubState | Detalhe
+    -- | -- 
+      None=1 |  Implica que não havia uma operação em andamento no nó. Transições de estado possíveis.
+      DownloadCompleted=2 | Implica uma operação de download foi concluída com êxito, parcial falha ou falha.
+      InstallationApproved=3 | Implica uma operação de download foi concluída anteriormente e o Gerenciador de reparo aprovou a instalação.
+      InstallationInProgress=4 | Corresponde ao estado da execução da tarefa de reparo.
+      InstallationCompleted=5 | Implica a instalação foi concluída com êxito, êxito parcial ou falha.
+      RestartRequested=6 | Implica o patch de instalação foi concluída e houver uma ação de reinicialização pendente no nó.
+      RestartNotNeeded=7 |  Implica que a reinicialização não foi necessária após a conclusão da instalação de patch.
+      RestartCompleted=8 | Implica que a reinicialização foi concluída com êxito.
+      OperationCompleted=9 | Operação concluída com êxito de atualização do Windows.
+      OperationAborted=10 | Implica que a operação de atualização do windows é anulada.
+
+6. No v1.4.0 e acima do aplicativo, quando a tentativa de atualização em um nó for concluída, um evento com a propriedade "WUOperationStatus-[NodeName]" é lançado na NodeAgentService para notificar quando ocorrerá a próxima tentativa de, para baixar e instalar a atualização, iniciar. Veja a imagem abaixo:
+
+     [![Imagem do status de operação de atualização do Windows](media/service-fabric-patch-orchestration-application/wuoperationstatusc.png)](media/service-fabric-patch-orchestration-application/wuoperationstatusc.png#lightbox)
+
 ### <a name="diagnostic-logs"></a>Logs de diagnóstico
 
 Os logs do aplicativo de orquestração de patch são coletados como parte dos logs do tempo de execução do Service Fabric.
@@ -269,12 +324,6 @@ Caso você queira capturar logs por meio da ferramenta de diagnóstico/pipeline 
 ### <a name="health-reports"></a>Relatórios de integridade
 
 O aplicativo de orquestração de patch também publica relatórios de integridade em relação ao Serviço do Coordinator ou ao Serviço de Agente do Nó nos seguintes casos:
-
-#### <a name="a-windows-update-operation-failed"></a>Uma falha na operação do Windows Update
-
-Se uma operação do Windows Update falhar em um nó, um relatório de integridade em relação ao Serviço de Agente do Nó será gerado. Detalhes do relatório de integridade contêm o nome do nó problemático.
-
-Após a aplicação de pach ser concluída com sucesso no nó problemático, o relatório é apagado automaticamente.
 
 #### <a name="the-node-agent-ntservice-is-down"></a>O NTService do Agente do Nó está inativo
 
@@ -347,6 +396,14 @@ P. **Como aplicar patches de nós de cluster no Linux?**
 
 a. Ver [atualizações automáticas de imagem do sistema operacional do conjunto de dimensionamento de máquina virtual do Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) para orquestrar as atualizações no linux.
 
+P.**por que é o ciclo de atualização demorando tanto?**
+
+a. Consultar o resultado json, em seguida, vá através da entrada do ciclo de atualização para todos os nós e em seguida, você pode tentar descobrir o tempo gasto pela instalação da atualização em cada nó usando OperationStartTime e OperationTime(OperationCompletionTime). Se houve a janela de tempo grande no qual nenhuma atualização estava acontecendo, pode ser porque o cluster estava no estado de erro e por causa desse reparo Gerenciador não aprovou quaisquer outras tarefas de reparo POA. Se a instalação da atualização demorou longa em qualquer nó, em seguida, pode ser possível que o nó não foi atualizado de muito tempo e muitas atualizações foram pendentes de instalação, o que levou tempo. Também poderia haver um caso em que a aplicação de patch em um nó está bloqueada devido a permanecer no estado que geralmente ocorre porque a desativação do nó de desabilitação de nó pode levar a situações de perda de quorum/dados.
+
+P. **Por que é necessário para desabilitar o nó quando POA é aplicação de patch-lo?**
+
+a. Aplicativo de orquestração de patch desabilita o nó com a intenção de 'Reiniciar' que é interrompido/realoca todos os serviços de malha de serviço em execução no nó. Isso é feito para garantir que os aplicativos não acabar usando uma combinação de dlls novos e antigos, portanto não é recomendada para aplicar o patch de um nó sem desabilitá-lo.
+
 ## <a name="disclaimers"></a>Avisos de Isenção de Responsabilidade
 
 - O aplicativo de orquestração de patch aceita o Contrato de licença do usuário final do Windows Update em nome do usuário. A definição opcionalmente pode ser desativada na configuração do aplicativo.
@@ -386,6 +443,9 @@ Uma atualização do Windows com falha pode reduzir a integridade de um aplicati
 Um administrador deve intervir e determinar por que o aplicativo ou cluster se tornou não íntegro devido ao Windows Update.
 
 ## <a name="release-notes"></a>Notas de versão
+
+>[!NOTE]
+> A partir da versão 1.4.0, notas de versão e versões podem ser encontrados na versão do GitHub [página](https://github.com/microsoft/Service-Fabric-POA/releases/).
 
 ### <a name="version-110"></a>Version 1.1.0
 - Versão pública

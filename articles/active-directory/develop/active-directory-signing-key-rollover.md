@@ -17,15 +17,15 @@ ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b47430b4bd2f7fa6811785247ae6cd4f6df6f8f5
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: f809fa856d39096a85dcc205d8211ba3551eeb48
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65546141"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65962860"
 ---
 # <a name="signing-key-rollover-in-azure-active-directory"></a>Substituição de chave de assinatura no Azure Active Directory
-Este artigo aborda o que você precisa saber sobre as chaves públicas que são usadas no Azure Active Directory (Azure AD) para assinar tokens de segurança. É importante observar que essas chaves são substituídas em intervalos periódicos e, em caso de emergência, podem ser substituídas imediatamente. Todos os aplicativos que usam o Azure AD devem ser capazes de manipular programaticamente o processo de substituição de chave ou estabelecer um processo de substituição manual periódica. Continue lendo para entender como funcionam as chaves, como avaliar o impacto de substituição no seu aplicativo e como atualizar seu aplicativo ou estabelecer um processo de substituição manual periódica para tratar a substituição de chave, se necessário.
+Este artigo aborda o que você precisa saber sobre as chaves públicas que são usadas no Azure Active Directory (Azure AD) para assinar tokens de segurança. É importante observar que essas chaves sobreponha periodicamente e, em caso de emergência, podem ser substituídas imediatamente. Todos os aplicativos que usam o Azure AD devem ser capazes de manipular programaticamente o processo de substituição de chave ou estabelecer um processo de substituição manual periódica. Continue lendo para entender como funcionam as chaves, como avaliar o impacto de substituição no seu aplicativo e como atualizar seu aplicativo ou estabelecer um processo de substituição manual periódica para tratar a substituição de chave, se necessário.
 
 ## <a name="overview-of-signing-keys-in-azure-ad"></a>Visão geral das chaves de assinatura no Azure AD
 O Azure AD usa criptografia de chave pública criada nos padrões da indústria para estabelecer a confiança entre ela e os aplicativos que a utilizam. Em termos práticos, isso funciona da seguinte maneira: O Microsoft Azure AD usa uma chave de assinatura que consiste em um par de chaves pública e privada. Quando um usuário entra em um aplicativo que usa o Azure AD para autenticação, este cria um token de segurança que contém informações sobre o usuário. Esse token é assinado pelo Azure AD usando sua chave privada antes de ser enviado para o aplicativo. Para verificar se o token é válido e é originado a partir do Azure AD, o aplicativo deverá validar a assinatura do token usando a chave pública exposta pelo Azure AD que está contida no [documento de descoberta do OpenID Connect](https://openid.net/specs/openid-connect-discovery-1_0.html) do locatário ou o [documento de metadados federados do locatário SAML/WS-Fed](azure-ad-federation-metadata.md).
@@ -43,7 +43,7 @@ Como o seu aplicativo lida com a substituição de chave depende de variáveis c
 * [Aplicativos/APIs Web que protegem recursos usando .NET OWIN OpenID Connect, WS-Fed ou o middleware WindowsAzureActiveDirectoryBearerAuthentication](#owin)
 * [Aplicativos/APIs Web protegendo recursos usando .NET Core OpenID Connect ou o middleware JwtBearerAuthentication](#owincore)
 * [Aplicativos/APIs Web que protegem recursos usando o módulo passport-azure-ad do Node.js](#passport)
-* [Aplicativos/APIs Web que protegem recursos e que foram criados com o Visual Studio 2015 ou o Visual Studio 2017](#vs2015)
+* [Aplicativos da Web / de APIs que protegem recursos e criadas com o Visual Studio 2015 ou posterior](#vs2015)
 * [Aplicativos/APIs Web que protegem recursos e que foram criados com o Visual Studio 2013](#vs2013)
 * APIs Web que protegem recursos e que foram criados com o Visual Studio 2013
 * [Aplicativos Web que protegem recursos e que foram criados com o Visual Studio 2012](#vs2012)
@@ -56,12 +56,12 @@ Esta diretriz **não** é aplicável:
 * Os aplicativos locais publicados por meio do proxy de aplicativo não precisam se preocupar com as chaves de assinatura.
 
 ### <a name="nativeclient"></a>Aplicativos cliente nativos que acessam recursos
-Aplicativos que só acessam recursos (ou seja, Microsoft Graph, KeyVault, API do Outlook e outras APIs Microsoft), geralmente só obtêm um token e o passam para o proprietário do recurso. Já que eles não estão protegendo recursos, não inspecionam o token e, portanto, não é necessário garantir que ele esteja adequadamente assinado.
+Aplicativos que só acessam recursos (ou seja, Microsoft Graph, KeyVault, API do Outlook e outras APIs Microsoft) geralmente apenas obter um token e passá-lo para o proprietário do recurso. Já que eles não estão protegendo recursos, não inspecionam o token e, portanto, não é necessário garantir que ele esteja adequadamente assinado.
 
 Os aplicativos cliente nativos, tanto da área de trabalho como móveis, entram nessa categoria e, portanto, não são afetados pela substituição.
 
 ### <a name="webclient"></a>Aplicativos/APIs Web que acessam recursos
-Aplicativos que só acessam recursos (ou seja, Microsoft Graph, KeyVault, API do Outlook e outras APIs Microsoft), geralmente só obtêm um token e o passam para o proprietário do recurso. Já que eles não estão protegendo recursos, não inspecionam o token e, portanto, não é necessário garantir que ele esteja adequadamente assinado.
+Aplicativos que só acessam recursos (ou seja, Microsoft Graph, KeyVault, API do Outlook e outras APIs Microsoft) geralmente apenas obter um token e passá-lo para o proprietário do recurso. Já que eles não estão protegendo recursos, não inspecionam o token e, portanto, não é necessário garantir que ele esteja adequadamente assinado.
 
 Os aplicativos Web e as APIs Web que estão usando o fluxo somente para aplicativo (credenciais de cliente/certificado de cliente), entram nessa categoria e, portanto, não são afetados pela substituição.
 
@@ -128,8 +128,8 @@ passport.use(new OIDCStrategy({
 ));
 ```
 
-### <a name="vs2015"></a>Aplicativos/APIs Web que protegem recursos e que foram criados com o Visual Studio 2015 ou o Visual Studio 2017
-Se o aplicativo tiver sido criado usando um modelo de aplicativo Web no Visual Studio 2015 ou no Visual Studio 2017 e você tiver selecionado **Contas Corporativas e de Estudante** no menu **Alterar Autenticação**, ele já terá a lógica necessária para manipular a substituição de chave automaticamente. Essa lógica, incorporada ao middleware OWIN OpenID Connect, recupera e armazena em cache as chaves de documento de descoberta OpenID Connect e as atualiza periodicamente.
+### <a name="vs2015"></a>Aplicativos da Web / de APIs que protegem recursos e criadas com o Visual Studio 2015 ou posterior
+Se seu aplicativo tiver sido criado usando um modelo de aplicativo web no Visual Studio 2015 ou posterior e você selecionou **contas de trabalho ou escola** da **alterar autenticação** menu, ele já tem o necessário lógica para tratar a substituição de chave automaticamente. Essa lógica, incorporada ao middleware OWIN OpenID Connect, recupera e armazena em cache as chaves de documento de descoberta OpenID Connect e as atualiza periodicamente.
 
 Se você tiver adicionado a autenticação à sua solução manualmente, talvez seu aplicativo não tenha a lógica de substituição de chave necessária. Você precisará escrevê-la por conta própria ou seguir as etapas em [Aplicativos/APIs Web que usam quaisquer outras bibliotecas ou que implementam manualmente qualquer um dos protocolos com suporte](#other).
 

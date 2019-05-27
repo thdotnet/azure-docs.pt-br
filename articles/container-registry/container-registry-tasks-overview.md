@@ -5,14 +5,14 @@ services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: article
-ms.date: 03/28/2019
+ms.date: 05/20/2019
 ms.author: danlep
-ms.openlocfilehash: b97db09c477a940ca36129316613f5ceb4eb13b1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cc182743c3879ab2748f92022437bc23c26c371c
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60582407"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65977211"
 ---
 # <a name="automate-os-and-framework-patching-with-acr-tasks"></a>Automatizar a aplicação de patches no sistema operacional e na estrutura com as Tarefas de ACR
 
@@ -41,7 +41,7 @@ Para obter uma introdução, consulte o guia de início rápido para [compilar e
 
 A tabela a seguir mostra alguns exemplos de locais de contexto com suporte para as Tarefas do ACR:
 
-| Local do contexto | DESCRIÇÃO | Exemplo |
+| Local do contexto | Descrição | Exemplo |
 | ---------------- | ----------- | ------- |
 | Sistema de arquivos local | Arquivos dentro de um diretório no sistema de arquivos local. | `/home/user/projects/myapp` |
 | Branch mestre do GitHub | Arquivos dentro da ramificação principal (ou outro padrão) de um repositório GitHub.  | `https://github.com/gituser/myapp-repo.git` |
@@ -94,6 +94,16 @@ Por exemplo, você pode criar uma tarefa de várias etapa que automatiza o segui
 As tarefas de várias etapas permitem que você divida o build, a execução e o teste de uma imagem em etapas mais combináveis, com suporte para dependência entre etapas. Com as tarefas de várias etapas nas Tarefas do ACR, há um controle mais granular sobre os fluxos de trabalho de build de imagem, de teste e de aplicação de patch no sistema operacional e na estrutura.
 
 Saiba mais sobre as tarefas de várias etapas em [Run multi-step build, test, and patch tasks in ACR Tasks](container-registry-tasks-multi-step.md) (Executar tarefas de várias etapas de build, teste e patch nas Tarefas do ACR).
+
+## <a name="view-task-logs"></a>Exibir logs de tarefa
+
+Cada execução de tarefa gera a saída de log que você pode inspecionar para determinar se as etapas de tarefas foi executado com êxito. Se você usar o [build de acr az](/cli/azure/acr#az-acr-build), [acr az execute](/cli/azure/acr#az-acr-run), ou [tarefa de acr az](/cli/azure/acr/task#az-acr-task-run) para disparar a tarefa de comando, saída de log para a execução da tarefa é transmitida à console e também é armazenada para uso posterior recuperação. Exibir os logs para uma tarefa em execução no portal do Azure ou usarem o [logs de tarefa de acr az](/cli/azure/acr/task#az-acr-task-logs) comando.
+
+A partir de julho de 2019, dados e logs para a tarefa é executada em um registro serão mantidos por padrão por 30 dias e limpos automaticamente. Se você quiser arquivar os dados para uma tarefa executada, habilitar o arquivamento usando o [az acr update tarefa execução](/cli/azure/acr/task#az-acr-task-update-run) comando. O exemplo a seguir permite o arquivamento para a execução da tarefa *cf11* no registro *myregistry*.
+
+```azurecli
+az acr task update-run --registry myregistry --run-id cf11 --no-archive false
+```
 
 ## <a name="next-steps"></a>Próximas etapas
 

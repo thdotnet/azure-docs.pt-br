@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 04/05/2019
-ms.openlocfilehash: 62eb51e48ab688abcf39ba3c8d57aaccf6f47cb6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3943332179a6d283a8ed3ca66ea559d5cea53a10
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61002389"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65953201"
 ---
 # <a name="approach-and-process-for-adopting-azure-data-catalog"></a>Abordagem e processo de adoção do Catálogo de Dados do Azure
 
@@ -54,7 +54,7 @@ Aqui estão algumas dicas para ajudá-lo a definir sua visão:
 
 Aqui está uma declaração de visão de exemplo para um plano de adoção do Catálogo de Dados para a empresa fictícia chamada Adventure Works:
 
-**O catálogo de dados do Azure** capacita a equipe de finanças do Adventure Works para colaborar em fontes de dados de chave, para que cada membro da equipe possa facilmente localizar e usar os dados que eles precisam e compartilham seus conhecimentos com a equipe como um todo.
+**O catálogo de dados do Azure** capacita a equipe de finanças do Adventure Works para colaborar em fontes de dados de chave, para que cada membro da equipe possa facilmente localizar e usar os dados que eles precisam e podem compartilhar seus conhecimentos com a equipe como um todo.
 
 Depois que tiver uma declaração de visão clara, você deverá identificar um projeto-piloto adequado para o Catálogo de Dados. Geralmente, há vários cenários para o Catálogo de Dados. A próxima seção fornece algumas dicas para identificar casos de uso relevantes.
 

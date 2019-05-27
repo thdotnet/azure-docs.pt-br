@@ -8,18 +8,18 @@ ms.topic: article
 ms.date: 12/08/2016
 ms.author: rogarana
 ms.subservice: common
-ms.openlocfilehash: b8451a1195ab64d3cd7afda074d786a3209ce785
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 904b9b8ba98be5e14b1d769a0e1d8c2d6084e24d
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61477275"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951163"
 ---
 # <a name="microsoft-azure-storage-performance-and-scalability-checklist"></a>Lista de verificação de desempenho e escalabilidade do armazenamento do Microsoft Azure
 ## <a name="overview"></a>Visão geral
 Desde os serviços de armazenamento do Microsoft Azure, a Microsoft desenvolveu diversas práticas comprovadas para usar esses serviços de modo a obter muito rendimento. Este artigo consolida as práticas mais importantes na forma de uma lista estilo lista de verificação. A finalidade deste artigo é ajudar os desenvolvedores de aplicativos a verificar se eles estão usando as práticas comprovadas com o armazenamento do Azure, bem como ajudá-lo a identificar outras práticas comprovadas que eles podem adotar. Este artigo não tem como objetivo cobrir todas as possibilidades de otimização de desempenho e escalabilidade. Aqui, não abordamos as práticas que apresentam pouco impacto ou que não se aplicam em larga escala. Na medida em que é possível prever o comportamento do aplicativo durante a criação, é útil seguir essas práticas desde o início para evitar problemas de desempenho.  
 
-Todos os desenvolvedores de aplicativos que usam o armazenamento do Azure devem ler este artigo e verificar se seu aplicativo segue as práticas comprovadas listadas abaixo.  
+Todo desenvolvedor de aplicativo usando o armazenamento do Azure deve demorar para ler este artigo e verificar que seu aplicativo segue as práticas comprovadas listadas abaixo.  
 
 ## <a name="checklist"></a>Lista de verificação
 Este artigo organiza as práticas comprovadas nos grupos a seguir. As práticas comprovadas aplicam-se a:  
@@ -38,14 +38,14 @@ Este artigo organiza as práticas comprovadas nos grupos a seguir. As práticas 
 | &nbsp; | Todos os serviços |Rede |[O aplicativo cliente está "próximo" à conta de armazenamento?](#subheading4) |
 | &nbsp; | Todos os serviços |Distribuição de conteúdo |[Você usa um CDN para distribuir conteúdo?](#subheading5) |
 | &nbsp; | Todos os serviços |Acesso direto do cliente |[Você usa SAS e CORS para permitir o acesso direto ao armazenamento, em vez de usar um proxy?](#subheading6) |
-| &nbsp; | Todos os serviços |Cache |[Seu aplicativo armazena em cache os dados que são usados com frequência e que raramente mudam?](#subheading7) |
-| &nbsp; | Todos os serviços |Cache |[Seu aplicativo compila atualizações, armazenando-as em cache no cliente e carregando-as em grandes conjuntos?](#subheading8) |
+| &nbsp; | Todos os serviços |Caching |[Seu aplicativo armazena em cache os dados que são usados com frequência e que raramente mudam?](#subheading7) |
+| &nbsp; | Todos os serviços |Caching |[Seu aplicativo compila atualizações, armazenando-as em cache no cliente e carregando-as em grandes conjuntos?](#subheading8) |
 | &nbsp; | Todos os serviços |Configuração .NET |[Você configurou seu cliente para usar uma quantidade suficiente de conexões simultâneas?](#subheading9) |
 | &nbsp; | Todos os serviços |Configuração .NET |[Você configurou o .NET para usar uma quantidade suficiente de threads?](#subheading10) |
 | &nbsp; | Todos os serviços |Configuração .NET |[Você usa o .NET 4.5 ou posterior, versões com recurso aprimorado de coleta de lixo?](#subheading11) |
 | &nbsp; | Todos os serviços |Paralelismo |[Você garantiu a associação adequada do paralelismo para não carregar as funcionalidades do cliente nem as metas de escalabilidade?](#subheading12) |
 | &nbsp; | Todos os serviços |Ferramentas |[Você está usando a última versão das bibliotecas e ferramentas fornecidas pela Microsoft?](#subheading13) |
-| &nbsp; | Todos os serviços |Novas tentativas |[Você usa uma política de nova tentativa de retirada exponencial para diminuir os erros e a ocorrência de tempos limite?](#subheading14) |
+| &nbsp; | Todos os serviços |Tentativas |[Você usa uma política de nova tentativa de retirada exponencial para diminuir os erros e a ocorrência de tempos limite?](#subheading14) |
 | &nbsp; | Todos os serviços |Novas tentativas |[Seu aplicativo evita novas tentativas para erros que não admitem novas tentativas?](#subheading15) |
 | &nbsp; | Blobs |Metas de escalabilidade |[Você tem um grande número de clientes que acessam um único objeto simultaneamente?](#subheading46) |
 | &nbsp; | Blobs |Metas de escalabilidade |[Seu aplicativo segue a meta de largura de banda ou escalabilidade operacional para um único blob?](#subheading16) |
@@ -159,7 +159,7 @@ Para saber mais sobre SAS, confira [Shared Access Signatures, Part 1: Understand
 
 Para saber mais sobre o CORS, consulte [Suporte a CORS (Compartilhamento de Recursos entre Origens) para os serviços de Armazenamento do Azure](https://msdn.microsoft.com/library/azure/dn535601.aspx).  
 
-### <a name="caching"></a>Cache
+### <a name="caching"></a>Caching
 #### <a name="subheading7"></a>Obtenção de dados
 Em geral, obter os dados de um serviço uma única vez é melhor do que obtê-los duas vezes. Tome como exemplo um aplicativo Web MVC em execução em uma função Web que já recuperou um blob de 50 MB do serviço de armazenamento para apresentar ao usuário como conteúdo. O aplicativo pode recuperar esse mesmo blob sempre que o usuário o solicitar, ou pode armazená-lo em cache localmente e reutilizar esse conteúdo em outras solicitações dos usuários. Além disso, sempre que um usuário solicitar os dados, o aplicativo pode emitir um GET com um cabeçalho condicional para tempo de modificação, o que evita obter todo o blob se ele não foi modificado. Você pode aplicar esse mesmo padrão ao trabalho com entidades em tabela.  
 
@@ -208,7 +208,7 @@ Embora o paralelismo possa ser ótimo para o desempenho, tenha cuidado ao usar o
 ### <a name="subheading13"></a>Ferramentas e bibliotecas cliente para armazenamento
 Sempre use a última versão das bibliotecas e ferramentas fornecidas pela Microsoft. No momento da gravação, há bibliotecas cliente disponíveis para .NET, Windows Phone, Tempo de Execução do Windows, Java e C++, além de bibliotecas de visualização em outras linguagens. Além disso, a Microsoft liberou cmdlets do PowerShell e os comandos da CLI do Azure para trabalhar com o Armazenamento do Azure. A Microsoft desenvolve ativamente essas ferramentas pesando no desempenho, além de mantê-las atualizadas com as últimas versões do serviço e garantir que elas gerenciem muitas das práticas de desempenho comprovadas internamente.  
 
-### <a name="retries"></a>Novas tentativas
+### <a name="retries"></a>Tentativas
 #### <a name="subheading14"></a>Limitação/Servidor ocupado
 Em alguns casos, o serviço de armazenamento pode restringir seu aplicativo ou simplesmente não conseguir atender uma solicitação devido a alguma condição transitória, retornando uma mensagem "503 Server busy" ou "500 Timeout".  Isso pode acontecer se o aplicativo estiver alcançando alguma das metas de escalabilidade ou se o sistema estiver balanceando os dados particionados a fim de aumentar a taxa de transferência.  O aplicativo cliente normalmente deve tentar novamente a operação que gera um erro: a tentativa da mesma solicitação pode ser bem-sucedida mais tarde. No entanto, se o serviço de armazenamento estiver restringindo o aplicativo porque ele ultrapassou as metas de escalabilidade ou porque o serviço não pôde atender a solicitação por algum motivo, novas tentativas geralmente piorarão o problema. Por esse motivo, você deve usar uma retirada exponencial (as bibliotecas cliente são o padrão para esse comportamento). Por exemplo, o aplicativo pode fazer uma nova tentativa em 2 segundos, 4 segundos, 10 segundos e 30 segundos para então abandonar o processo. Esse comportamento faz com que o aplicativo diminua consideravelmente a sua carga no serviço, em vez de agravar qualquer problema.  
 

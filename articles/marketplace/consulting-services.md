@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 10/29/2018
 ms.author: yijenj
-ms.openlocfilehash: e13111eb241c7734e25a28fcaeea55b1c70bc267
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 225a4936bbbb8d068caa0ee2a3280c395dbd490e
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64938302"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65964118"
 ---
 # <a name="consulting-services-for-azure-marketplace-and-appsource"></a>Consulte de Serviços para o Azure Marketplace e AppSource
 Os Serviços de Consultoria no Azure Marketplace e AppSource fornecem a parceiros da Microsoft a meta de conectar clientes com os serviços de suporte e estender seu uso e objetivos de negócios. 
@@ -30,7 +30,7 @@ As vitrines do Marketplace estão alinhadas com o público e os produtos de nuve
 |Relevância da solução     |Aplicativos técnicos criados para ou criados no Azure|Aplicativos de negócios que aproveitam/estendem D365, Power BI, O365, Azure. (Suplemento ou complemento de aplicativos terminados)|
 |Opções de publicação     |Contate-me, Avaliação, Transact ou os Serviços de Consultoria|Contate-me, Avaliação ou os Serviços de Consultoria|
 |Experiência de produto      |Portal de Gerenciamento do Azure|Dynamics 365, Office 365, aplicativos de cliente do Office| 
-|Outros      |Publicar local por meio do Azure Stack|Serviços de Consultoria para Dynamics e Power BI|
+|Outro      |Publicar local por meio do Azure Stack|Serviços de Consultoria para Dynamics e Power BI|
 
 As ofertas de serviço baseadas no Microsoft Dynamics 365, Office 365 e Power BI são qualificadas para serem listadas no AppSource. Para obter mais informações, consulte [diretrizes da lista de serviços de consultoria do Microsoft AppSource](https://smp-cdn-prod.azureedge.net/documents/Microsoft%20AppSource%20Partner%20Listing%20Guidelines.pdf). 
 
@@ -80,7 +80,7 @@ As ofertas de serviço baseadas no Microsoft Dynamics 365, Office 365 e Power BI
 O lançamento dos serviços de consultoria do entrarão em funcionamento em uma região geográfica específica. O primeiro lançamento será em: Estados Unidos, Canadá, Reino Unido e Austrália. Os catálogos para outros países/regiões entrarão em vigor após um número significativo e uma seleção de ofertas de serviço atraente foram enviadas por parceiros e aprovados pela Microsoft.
 
 ## <a name="how-to-register-for-consulting-services-in-azure-marketplace-and-appsource"></a>Como se registrar para Serviços de consultoria no Azure Marketplace e AppSource
-Comece [registrando](https://azuremarketplace.microsoft.com/sell/signup) as informações da sua empresa no marketplace. Os editores podem consultar [Tornar-se um editor no Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher), para obter uma lista de verificação completa dos requisitos de registro. 
+Comece [registrando](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) as informações da sua empresa no marketplace. Os editores podem consultar [Tornar-se um editor no Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher), para obter uma lista de verificação completa dos requisitos de registro. 
 
 **O que esperar após registro** A equipe de integração entrará em contato em 1 a 3 dias úteis com um email de boas-vindas que incluirá suas informações de logon do CPP (Portal do Cloud Partner). [Portal do Cloud Partner](https://cloudpartner.azure.com) é o portal de listagem de ofertas onde os editores enviam informações de listagem e envios. 
 
@@ -149,7 +149,7 @@ Exemplos:
 
 Ao revisar Descrições da Oferta e Resumos da Oferta, a equipe aplicará os seguintes critérios:
 
-|Tipo de Oferta  |Obrigatório |Recomendadas  |
+|Tipo de Oferta  |Obrigatório |Recomendado  |
 |---------|---------|---------|
 |**Avaliação**    |   Incluir uma agenda detalhada para avaliações de vários dias ou várias semanas e articular o que o cliente pode esperar      |    Otimize seu resumo de ofertas com suas principais palavras-chave de Otimização do Mecanismo de Pesquisa     |
 |**Resumo**    |   Articular qual entrega o cliente pode esperar. Lembre-se de que o Resumo deve ser ofertado pessoalmente. Se você estiver fornecendo um serviço virtual, escolha um tipo de oferta diferente    |  Otimize seu resumo de ofertas com suas principais palavras-chave de Otimização do Mecanismo de Pesquisa       |

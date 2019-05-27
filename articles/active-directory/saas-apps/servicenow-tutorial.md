@@ -16,11 +16,11 @@ ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0efc69aa7fb081303df6fc6327253fd5b8336999
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57898594"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65902789"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-servicenow"></a>Tutorial: Integração do Azure Active Directory com o ServiceNow
 
@@ -176,7 +176,7 @@ Para configurar o logon único do Azure AD com o ServiceNow, execute as seguinte
 
     * Na caixa de texto **O campo na tabela de usuário que...**, digite **nome_de_usuário**.
   
-    * Clique em **Salvar**.
+    * Clique em **Save** (Salvar).
 
 5. Há dois modos como **ServiceNow** pode ser configurado - Automático e Manual.
 
@@ -229,7 +229,7 @@ Para configurar o logon único do Azure AD com o ServiceNow, execute as seguinte
 
         ![Configurar logon único](./media/servicenow-tutorial/tutorial_servicenow_11.png "Configurar logon único")
 
-    * Clique em **Salvar**.
+    * Clique em **Save** (Salvar).
 
     * Clique em **Testar conectividade** no canto superior direito da página.
 
@@ -416,7 +416,7 @@ Para configurar o logon único do Azure AD com o ServiceNow, execute as seguinte
     > [!NOTE]
     > Você pode configurar o Azure AD para emitir a ID de usuário (nome UPN) do Azure AD ou o endereço de email como o identificador exclusivo no token SAML acessando a seção **ServiceNow > Atributos > Logon Único** do portal do Azure e mapeando o campo desejado para o atributo **nameidentifier**. O valor armazenado para o atributo selecionado no Azure AD (por exemplo, nome UPN) deve corresponder ao valor armazenado no ServiceNow para o campo inserido (por exemplo, user_name)
 
-    f. Clique em **Salvar**.
+    f. Clique em **Save** (Salvar).
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
@@ -436,7 +436,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.

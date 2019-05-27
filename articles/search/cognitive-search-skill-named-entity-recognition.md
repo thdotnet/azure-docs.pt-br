@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: e6a7d4bb7452ff8f6b3c2536a5aa100a15a6ec78
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: b7af4d0a48f002f7523def971a306d1fa2077c70
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65539286"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65952043"
 ---
 #    <a name="named-entity-recognition-cognitive-skill"></a>Habilidade cognitiva de Reconhecimento de Entidade Nomeada
 
@@ -52,7 +52,7 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
 | Nome de entrada      | Descrição                   |
 |---------------|-------------------------------|
 | languageCode  | Opcional. O padrão é `"en"`.  |
-| texto          | O texto para analisar.          |
+| text          | O texto para analisar.          |
 
 ## <a name="skill-outputs"></a>Saídas de habilidades
 
@@ -93,7 +93,7 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
         "recordId": "1",
         "data":
            {
-             "text": "This is the loan application for Joe Romero, he is a Microsoft employee who was born in Chile and then moved to Australia… Ana Smith is provided as a reference.",
+             "text": "This is the loan application for Joe Romero, a Microsoft employee who was born in Chile and who then moved to Australia… Ana Smith is provided as a reference.",
              "languageCode": "en"
            }
       }

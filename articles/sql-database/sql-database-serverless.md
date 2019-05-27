@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 manager: craigg
-ms.date: 05/11/2019
-ms.openlocfilehash: 72552f6335f3ad6742679708a639634362c49c0b
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.date: 05/20/2019
+ms.openlocfilehash: 57f2c38ce0479f43d7f24de8d1feb554517bcc69
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823308"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951487"
 ---
 # <a name="sql-database-serverless-preview"></a>Banco de Dados SQL sem servidor (versão prévia)
 
@@ -81,7 +81,22 @@ Em geral, os bancos de dados são executados em um computador com capacidade suf
 
 ### <a name="memory-management"></a>Gerenciamento de memória
 
-A memória em bancos de dados sem servidor é recuperada mais frequentemente que em bancos de dados provisionados. Esse comportamento é importante para controlar os custos na camada sem servidor. Ao contrário da computação provisionada, a memória de cache SQL é recuperada de um banco de dados sem servidor quando a utilização de CPU ou de cache for baixa.
+Memória para bancos de dados sem servidor é recuperada mais frequentemente que em bancos de dados de computação provisionada. Esse comportamento é importante para controlar os custos em sem servidor e pode afetar o desempenho.
+
+#### <a name="cache-reclaiming"></a>Recuperando de cache
+
+Ao contrário de bancos de dados provisionado de computação, memória do cache do SQL é recuperada de um banco de dados sem servidor quando a utilização de CPU ou de cache é baixa.
+
+- A utilização do cache é considerada baixo quando o tamanho total dos mais usados recentemente cache entradas cai abaixo do limite por um período de tempo.
+- Quando a recuperação de cache é disparada, o tamanho do cache de destino é reduzido de forma incremental para uma fração do tamanho anterior e recuperando continua apenas se o uso permanece baixo.
+- Quando ocorre a reclamação do cache, a política para a seleção de entradas de cache para remover é a mesma política de seleção para bancos de dados de computação provisionada quando a pressão de memória é alta.
+- O tamanho do cache nunca é reduzido abaixo o mínimo de memória, conforme definido pelo vCores mínimo, o que pode ser configurado.
+
+Sem servidor e provisionado computação bancos de dados, cache entradas podem ser removidas se toda a memória disponível é usada.
+
+#### <a name="cache-hydration"></a>Hidratação de cache
+
+O cache do SQL aumenta à medida que dados são buscados de disco, da mesma maneira e com a mesma velocidade de bancos de dados provisionados. Quando o banco de dados estiver ocupado, o cache tem permissão para crescer irrestrito até o limite máximo de memória.
 
 ## <a name="autopause-and-autoresume"></a>Pausa e retomada automáticas
 
@@ -115,7 +130,7 @@ A retomada automática será ativada se qualquer uma das seguintes condições f
 
 ### <a name="connectivity"></a>Conectividade
 
-Se um banco de dados sem servidor estiver em pausa, o primeiro logon retomará o banco de dados e gerará um erro informando que o banco de dados está indisponível com o código de erro 40613. Depois que o banco de dados for retomado, o logon deve ser repetido para estabelecer a conectividade. Os clientes do banco de dados com lógica de repetição de conexão não devem ser modificados.
+Se um banco de dados sem servidor está em pausa, o primeiro logon retomar o banco de dados e retornar um erro informando que o banco de dados está disponível com o código de erro 40613. Depois que o banco de dados for retomado, o logon deve ser repetido para estabelecer a conectividade. Os clientes do banco de dados com lógica de repetição de conexão não devem ser modificados.
 
 ### <a name="latency"></a>Latency
 
@@ -277,9 +292,9 @@ A quantidade de computação cobrada é exposta pela métrica a seguir:
 
 Essa quantidade é calculada a cada segundo e agregada a cada 1 minuto.
 
-Considere um banco de dados sem servidor configurado com 1 min vcore e 4 vcores max.  Isso corresponde a cerca de 3 GB de memória de mínimo e máximo de 12 GB de memória.  Suponha que o atraso de pausa automática é definido como 6 horas e a carga de trabalho de banco de dados estiver ativo durante as primeiras horas 2 de um período de 24 horas por dia e caso contrário, inativa.    
+Considere um banco de dados sem servidor configurado com 1 min vCore e 4 vCores max.  Isso corresponde a cerca de 3 GB de memória de mínimo e máximo de 12 GB de memória.  Suponha que o atraso de pausa automática é definido como 6 horas e a carga de trabalho de banco de dados estiver ativo durante as primeiras horas 2 de um período de 24 horas e caso contrário, inativa.    
 
-Nesse caso, o banco de dados é cobrado para computação e armazenamento durante as primeiras 8 horas.  Mesmo que o banco de dados está iniciando inativo após a ser contado 2 horas, ela ainda será cobrada para a computação nas 6 horas subsequentes com base na computação mínima provisionada enquanto o banco de dados está online.  Apenas o armazenamento é cobrado durante o restante do período de 24 horas por dia, enquanto o banco de dados está em pausa.
+Nesse caso, o banco de dados é cobrado para computação e armazenamento durante as primeiras 8 horas.  Mesmo que o banco de dados está iniciando inativo após a segunda hora, ela ainda será cobrada para a computação nas 6 horas subsequentes com base na computação mínima provisionada enquanto o banco de dados está online.  Apenas o armazenamento é cobrado durante o restante do período de 24 horas, enquanto o banco de dados está em pausa.
 
 Mais precisamente, a fatura de computação neste exemplo é calculada da seguinte maneira:
 
@@ -291,7 +306,7 @@ Mais precisamente, a fatura de computação neste exemplo é calculada da seguin
 |8:00-24:00|0|0|Nenhuma computação cobrada enquanto está em pausa|vCore 0 segundos|
 |Segundos de vCore total cobrados mais de 24 horas||||vCore 50400 segundos|
 
-Suponha que o preço de unidade de computação seja US$ 0,000073/vCore/segundo.  Em seguida, cobrada por esse período de 24 horas para a computação é o produto dos computação unit price e vcore segundos cobrado: $0.000073/vCore/second * 50400 segundos de vCore = US $3,68
+Suponha que o preço de unidade de computação seja US$ 0,000073/vCore/segundo.  Em seguida, cobrada por esse período de 24 horas para a computação é o produto dos computação unit price e vCore segundos cobrado: $0.000073/vCore/second * 50400 segundos de vCore = US $3,68
 
 ## <a name="available-regions"></a>Regiões disponíveis
 

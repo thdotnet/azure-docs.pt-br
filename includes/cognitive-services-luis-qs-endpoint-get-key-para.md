@@ -11,11 +11,11 @@ ms.custom: include file
 ms.date: 08/16/2018
 ms.author: diberry
 ms.openlocfilehash: ef8dae8219eaf1a85a5c112705517b992e25a50f
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56741589"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66124035"
 ---
 O acesso ao ponto de extremidade de previsão é fornecido com uma chave de ponto de extremidade. Para os fins deste início rápido, use a chave de início gratuita associada à sua conta do LUIS. 
  

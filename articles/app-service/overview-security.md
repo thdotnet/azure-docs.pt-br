@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/24/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 1e4feaed9f4e8f6dd3275da25e33e57197731572
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 374fd700f3ac99c00b922f4fca330fee9acfd704
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60838953"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955751"
 ---
 # <a name="security-in-azure-app-service"></a>Segurança no Serviço de Aplicativo do Azure
 
@@ -105,7 +105,7 @@ Para isolar completamente a conectividade de recursos das redes compartilhadas n
 
 ## <a name="application-secrets"></a>Segredos do aplicativo
 
-Não armazene segredos do aplicativo, como credenciais de banco de dados, tokens de API e chaves privadas nos arquivos de configuração ou código. A abordagem comumente aceita é acessá-los como [variáveis de ambiente](https://wikipedia.org/wiki/Environment_variable) usando o padrão standard na linguagem de sua escolha. No Serviço de Aplicativo, a maneira de definir variáveis de ambiente é através de [configurações de aplicativo](web-sites-configure.md#app-settings) (e, especialmente para aplicativo .NETs, [cadeias de conexão](web-sites-configure.md#connection-strings)). As configurações de aplicativo e as cadeias de conexão são armazenadas criptografadas no Azure e serão descriptografadas somente antes de serem injetadas na memória de processo do aplicativo quando o aplicativo for iniciado. As chaves de criptografia são giradas regularmente.
+Não armazene segredos do aplicativo, como credenciais de banco de dados, tokens de API e chaves privadas nos arquivos de configuração ou código. A abordagem comumente aceita é acessá-los como [variáveis de ambiente](https://wikipedia.org/wiki/Environment_variable) usando o padrão standard na linguagem de sua escolha. No Serviço de Aplicativo, a maneira de definir variáveis de ambiente é através de [configurações de aplicativo](configure-common.md#configure-app-settings) (e, especialmente para aplicativo .NETs, [cadeias de conexão](configure-common.md#configure-connection-strings)). As configurações de aplicativo e as cadeias de conexão são armazenadas criptografadas no Azure e serão descriptografadas somente antes de serem injetadas na memória de processo do aplicativo quando o aplicativo for iniciado. As chaves de criptografia são giradas regularmente.
 
 Como alternativa, é possível integrar o aplicativo do Serviço de Aplicativo ao [Azure Key Vault](/azure/key-vault/) para gerenciamento de segredos avançado. Ao [acessar o Key Vault com uma identidade gerenciada](../key-vault/tutorial-web-application-keyvault.md), o aplicativo do Serviço de Aplicativo poderá acessar com segurança os segredos que você precisa.
 

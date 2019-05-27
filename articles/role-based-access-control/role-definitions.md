@@ -15,12 +15,12 @@ ms.date: 02/09/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 7855c2bd45ba35ecb0ede5c60268e6446f37ed5a
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 5a08c2ae0b82841fd15aac4af06a8874cf64ba53
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62121808"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65949999"
 ---
 # <a name="understand-role-definitions-for-azure-resources"></a>Compreender as definições de função nos recursos do Azure
 
@@ -48,7 +48,7 @@ Operações são especificadas com cadeias de caracteres que têm o seguinte for
 
 A parte `{action}` de uma cadeia de caracteres de operação especifica o tipo de operações que você pode executar em um tipo de recurso. Por exemplo, você verá as seguintes subcadeias de caracteres em `{action}`:
 
-| Subcadeia de caracteres de ação    | DESCRIÇÃO         |
+| Subcadeia de caracteres de ação    | Descrição         |
 | ------------------- | ------------------- |
 | `*` | O caractere curinga concede acesso a todas as operações que correspondem à cadeia de caracteres. |
 | `read` | Habilita operações de leitura (GET). |
@@ -147,9 +147,9 @@ Colaborador de Dados do Storage Blob
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write`
 
-Como Alice tem uma ação curinga (`*`) em um escopo de assinatura, suas permissões são herdadas para permitir que ela execute todas as ações de gerenciamento. Alice pode ler, gravar e excluir os contêineres. No entanto, Alice não pode executar operações de dados sem realizar etapas adicionais. Por exemplo, por padrão, Alice não pode ler os blobs dentro de um contêiner. Para ler os blobs, Alice teria que recuperar as chaves de acesso de armazenamento e usá-las para acessar os blobs.
+Uma vez que Alice tem um caractere curinga (`*`) ação em um escopo de assinatura, suas permissões herdam para que eles possam executar todas as ações de gerenciamento. Alice pode ler, gravar e excluir os contêineres. No entanto, Alice não pode executar operações de dados sem realizar etapas adicionais. Por exemplo, por padrão, Alice não pode ler os blobs dentro de um contêiner. Para ler os blobs, Alice teria que recuperar as chaves de acesso de armazenamento e usá-las para acessar os blobs.
 
-Permissões de Bob são restritas a apenas o `Actions` e `DataActions` especificado na [Colaborador de dados de Blob de armazenamento](built-in-roles.md#storage-blob-data-contributor) função. Com base na função, Bob pode executar operações de dados e de gerenciamento. Por exemplo, Bob pode ler, gravar e excluir contêineres na conta de armazenamento especificado e ele também pode ler, gravar e excluir os blobs.
+Permissões de Bob são restritas a apenas o `Actions` e `DataActions` especificado na [Colaborador de dados de Blob de armazenamento](built-in-roles.md#storage-blob-data-contributor) função. Com base na função, Bob pode executar operações de dados e de gerenciamento. Por exemplo, Bob pode ler, gravar, excluir contêineres na conta de armazenamento especificada e podem também ler, gravar e excluir os blobs.
 
 Para saber mais sobre a segurança de plano de dados e gerenciamento, confira o [Guia de segurança de Armazenamento do Azure](../storage/common/storage-security-guide.md).
 
@@ -157,7 +157,7 @@ Para saber mais sobre a segurança de plano de dados e gerenciamento, confira o 
 
 Para visualizar e trabalhar com operações de dados, você deve ter as versões corretas das ferramentas ou SDKs:
 
-| Ferramenta  | Version  |
+| Tool  | Version  |
 |---------|---------|
 | [PowerShell do Azure](/powershell/azure/install-az-ps) | 1.1.0 ou posterior |
 | [CLI do Azure](/cli/azure/install-azure-cli) | 2.0.30 ou posterior |
@@ -179,7 +179,7 @@ O portal do Azure também permite aos usuários procurar e gerenciar o conteúdo
 
 Uma permissão `Actions`especifica as operações de gerenciamento permitidas pela função a ser realizada. É uma coleção de cadeias de operação que identificam as operações protegíveis dos provedores de recursos do Azure. Aqui estão alguns exemplos de operações de gerenciamento que podem ser usadas no `Actions`.
 
-| Cadeia de caracteres da operação    | DESCRIÇÃO         |
+| Cadeia de caracteres da operação    | Descrição         |
 | ------------------- | ------------------- |
 | `*/read` | Concede acesso a operações de leitura a todos os tipos de recursos de todos os provedores de recursos do Azure.|
 | `Microsoft.Compute/*` | Concede acesso a todas as operações a todos os tipos de recursos no provedor de recursos Microsoft.Compute.|
@@ -199,7 +199,7 @@ A permissão `NotActions` especifica as operações de gerenciamento que são ex
 
 Uma permissão `DataActions` que especifica as operações de dados permitidas pela função em seus dados dentro desse objeto. Por exemplo, se um usuário tem acesso de leitura blob dados para uma conta de armazenamento, eles podem ler blobs dentro dessa conta de armazenamento. Aqui estão alguns exemplos de operações de dados que podem ser usados em `DataActions`.
 
-| Cadeia de caracteres da operação    | DESCRIÇÃO         |
+| Cadeia de caracteres da operação    | Descrição         |
 | ------------------- | ------------------- |
 | `Microsoft.Storage/storageAccounts/ blobServices/containers/blobs/read` | Retorna um blob ou uma lista de blobs. |
 | `Microsoft.Storage/storageAccounts/ blobServices/containers/blobs/write` | Retorna o resultado de escrever um blob. |

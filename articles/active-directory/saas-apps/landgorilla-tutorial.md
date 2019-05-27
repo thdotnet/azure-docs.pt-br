@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/13/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2e1288885476aeeba01f966b615c23c5fe51081
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d12519a2bd0a5e3951d0ca9ae51a54bd728a782b
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60260781"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65987889"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-land-gorilla-client"></a>Tutorial: Integração do Azure Active Directory com o Land Gorilla Client
 
@@ -87,7 +87,7 @@ Para configurar a integração do Land Gorilla Client com o Azure AD, é necess�
 
 
 ##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>configurar e testar o logon único do AD do Azure
-Nesta seção, você configurará e testará o logon único do Azure AD com o Land Gorilla Client, com base em um usuário de teste chamado "Brenda Fernandes".
+Nesta seção, você configurará e testará o logon único do Azure AD com o Land Gorilla Client com base em um usuário de teste chamado "B. Simon".
 
 Para que o logon único funcione, o Azure AD precisa saber qual usuário do Land Gorilla Client é equivalente a um usuário do Azure AD. Em outras palavras, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado no Land Gorilla Client.
 
@@ -97,8 +97,8 @@ Para configurar e testar o logon único do Azure AD com o Land Gorilla Client, �
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** - para habilitar seus usuários a usar esse recurso.
 1. **[Criando um usuário de teste do Azure AD](#creating-an-azure-ad-test-user)** – para testar o logon único do Azure AD com o grupo limitado.
-1. **[Criando um usuário de teste do Land Gorilla](#creating-a-land-gorilla-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
-1. **[Atribuição do usuário de teste do AD do Azure](#assigning-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do AD do Azure.
+1. **[Criando um usuário de teste do Land Gorilla](#creating-a-land-gorilla-test-user)**  – para testar o AD do Azure logon único com B. Fernandes.
+1. **[Atribuição do usuário de teste do Azure AD](#assigning-the-azure-ad-test-user)**  - para habilitar o B. Simon usar logon único do Azure AD.
 1. **[Teste do logon único](#testing-single-sign-on)** : para verificar se a configuração funciona.
 
 ### <a name="configuring-azure-ad-single-sign-on"></a>Configuração do logon único do Azure AD
@@ -150,7 +150,7 @@ Nesta seção, você habilitará o logon único do Azure AD no Portal de Gerenci
 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Criação de um usuário de teste do AD do Azure
-O objetivo desta seção é criar um usuário de teste no Portal de Gerenciamento do Azure chamado Britta Simon.
+O objetivo desta seção é criar um usuário de teste no portal de gerenciamento do Azure chamado B. Fernandes.
 
 ![Criar um usuário do AD do Azure][100]
 
@@ -172,9 +172,9 @@ O objetivo desta seção é criar um usuário de teste no Portal de Gerenciament
  
     ![Criação de um usuário de teste do AD do Azure](./media/landgorilla-tutorial/create_aaduser_04.png) 
 
-    a. Na caixa de texto **Nome**, digite **Brenda Fernandes**.
+     a. No **nome** caixa de texto, digite **B. Simon**.
 
-    b. Na caixa de texto **Nome de usuário**, digite o **endereço de email** da conta de Brenda Fernandes.
+    b. No **nome de usuário** caixa de texto, digite o **endereço de email** de B. Fernandes.
 
     c. Selecione **Mostrar senha** e anote o valor de **senha**.
 
@@ -186,11 +186,11 @@ Trabalhe com a [equipe de suporte Land Gorilla](https://www.landgorilla.com/supp
     
 ### <a name="assigning-the-azure-ad-test-user"></a>Atribuição do usuário de teste do AD do Azure
 
-Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure, concedendo-lhe acesso ao Land Gorilla Client.
+Nesta seção, você deve habilitar Simon B. usar o logon único do Azure, concedendo acesso ao Land Gorilla Client.
 
 ![Atribuir usuário][200] 
 
-**Para atribuir Brenda Fernandes ao Land Gorilla Client, siga as etapas abaixo:**
+**Para atribuir o B. Fernandes ao Land Gorilla Client, execute as seguintes etapas:**
 
 1. No Portal de Gerenciamento do Azure, abra a exibição de aplicativos e, em seguida, navegue até o modo de exibição de diretório e vá para **Aplicativos empresariais**, depois clique em **Todos os aplicativos**.
 
@@ -208,7 +208,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
     ![Atribuir usuário][203]
 
-1. Em **usuários e grupos** caixa de diálogo, selecione **Britta Simon** na lista de usuários.
+1. Na **usuários e grupos** caixa de diálogo, selecione **B. Simon** na lista de usuários.
 
 1. Clique em **selecione** botão **usuários e grupos** caixa de diálogo.
 

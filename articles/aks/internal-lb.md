@@ -2,18 +2,17 @@
 title: Criar um balanceador de carga interno no Azure Kubernetes Service (AKS)
 description: Saiba como criar e usar um balanceador de carga interno para expor seus serviços com o AKS (Serviço de Kubernetes do Azure).
 services: container-service
-author: rockboyfor
+author: iainfoulds
 ms.service: container-service
 ms.topic: article
-origin.date: 03/04/2019
-ms.date: 04/08/2019
-ms.author: v-yeche
-ms.openlocfilehash: a26eab83f567a46f613e3bfda95fd99aba2b79c0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 03/04/2019
+ms.author: iainfou
+ms.openlocfilehash: 1b5d18a3dfd1181fd06b58fd58f496457e24b58e
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60465539"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956379"
 ---
 # <a name="use-an-internal-load-balancer-with-azure-kubernetes-service-aks"></a>Usar um balanceador de carga interno com o AKS (Serviço de Kubernetes do Azure)
 
@@ -27,6 +26,8 @@ Para restringir o acesso a seus aplicativos no Serviço de Kubernetes do Azure (
 Este artigo considera que já existe um cluster do AKS. Se você precisar de um cluster do AKS, confira o guia de início rápido do AKS [Usando a CLI do Azure][aks-quickstart-cli] ou [Usando o portal do Azure][aks-quickstart-portal].
 
 Você também precisa da CLI do Azure versão 2.0.59 ou posterior instalado e configurado. Execute  `az --version` para encontrar a versão. Se você precisa instalar ou atualizar, confira  [Instalar a CLI do Azure][install-azure-cli].
+
+O serviço de cluster do AKS principal precisa de permissão para gerenciar recursos de rede, se você usar uma sub-rede existente ou um grupo de recursos. Em geral, atribua o *Colaborador de rede* função à entidade de serviço nos recursos de delegado. Para obter mais informações sobre permissões, consulte [AKS Delegar acesso a outros recursos do Azure][aks-sp].
 
 ## <a name="create-an-internal-load-balancer"></a>Criar um balanceador de carga interno
 
@@ -64,7 +65,7 @@ NAME           TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
 internal-app   LoadBalancer   10.0.248.59   10.240.0.7    80:30555/TCP   2m
 ```
 
-## <a name="specify-an-ip-address"></a>Especificar um endereço IP
+## <a name="specify-an-ip-address"></a>Especifique um endereço IP
 
 Se você quiser usar um endereço IP específico com o balanceador de carga interno, adicione a propriedade *loadBalancerIP* ao manifesto YAML do balanceador de carga. O endereço IP especificado deve residir na mesma sub-rede que o cluster do AKS e não deve ser atribuído a um recurso.
 
@@ -135,7 +136,7 @@ Quando todos os serviços que usam o balanceador de carga interno são excluído
 
 Você também pode excluir diretamente um serviço como qualquer recurso do Kubernetes, como `kubectl delete service internal-app`, que também exclui o balanceador de carga do Azure subjacente.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Saiba mais sobre os serviços do Kubernetes na [documentação dos serviços do Kubernetes][kubernetes-services].
 
@@ -145,10 +146,11 @@ Saiba mais sobre os serviços do Kubernetes na [documentação dos serviços do 
 
 <!-- LINKS - Internal -->
 [advanced-networking]: configure-azure-cni.md
-[az-aks-show]: https://docs.azure.cn/zh-cn/cli/aks?view=azure-cli-latest#az-aks-show
-[az-role-assignment-create]: https://docs.azure.cn/zh-cn/cli/role/assignment?view=azure-cli-latest#az-role-assignment-create
+[az-aks-show]: /cli/azure/aks#az-aks-show
+[az-role-assignment-create]: /cli/azure/role/assignment#az-role-assignment-create
 [azure-lb-comparison]: ../load-balancer/load-balancer-overview.md#skus
 [use-kubenet]: configure-kubenet.md
 [aks-quickstart-cli]: kubernetes-walkthrough.md
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
-[install-azure-cli]: https://docs.azure.cn/zh-cn/cli/install-azure-cli?view=azure-cli-latest
+[install-azure-cli]: /cli/azure/install-azure-cli
+[aks-sp]: kubernetes-service-principal.md#delegate-access-to-other-azure-resources

@@ -8,12 +8,12 @@ ms.assetid: 623f5ed4-8da7-48f5-943a-448d0b7cba69
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 01/18/2018
-ms.openlocfilehash: 0b155a5cdfa1c540e1cfb92147f6ebc7f88dd929
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 407e25b7bb1a2220448c9701bbef208195c50b63
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61003681"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65953101"
 ---
 # <a name="manage-data-assets-in-azure-data-catalog"></a>Gerenciar ativos de dados no Catálogo de Dados do Azure
 ## <a name="introduction"></a>Introdução
@@ -52,7 +52,7 @@ Se um ativo de dados já tiver um proprietário, outros usuários não poderão 
 ### <a name="remove-owners"></a>Remover proprietários
 Assim como qualquer proprietário ativo pode adicionar coproprietários, qualquer proprietário ativo pode remover qualquer coproprietário.
 
-Um proprietário do ativo que remova a si mesmo como um proprietário não poderá mais gerenciar o ativo. Se o proprietário do ativo remover a si próprio como proprietário e não houver outros coproprietários, o ativo será revertido para um estado sem proprietário.
+Proprietário de um ativo que remova a mesmos como um proprietário não pode mais gerenciar o ativo. Se o proprietário do ativo remove a mesmos como proprietário e não há nenhum outros coproprietários, o ativo será revertido para um estado sem proprietário.
 
 ## <a name="control-visibility"></a>Controlar a visibilidade
 Os proprietários de ativos de dados podem controlar a visibilidade dos ativos de dados de propriedade eles. Para restringir a visibilidade como o padrão, em que todos os usuários do Catálogo de Dados podem descobrir e exibir o ativo de dados, o proprietário do ativo pode alternar a configuração de visibilidade de **Todos** para **Proprietários e Estes Usuários** nas propriedades do ativo. Em seguida, os proprietários podem adicionar usuários e grupos de segurança específicos.

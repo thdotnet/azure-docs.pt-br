@@ -8,12 +8,12 @@ ms.workload: web
 ms.topic: article
 ms.date: 2/04/2019
 ms.author: msangapu-msft
-ms.openlocfilehash: 01e86d9769b07a57d44ae21b2c76d894ac29e8bc
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 6b4e145a693aabbf1a00d732e2fd602e7c887a03
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920035"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956020"
 ---
 # <a name="serve-content-from-azure-storage-in-app-service-on-linux"></a>Servir conteúdo do Armazenamento do Microsoft Azure no Serviço de Aplicativo no Linux
 
@@ -62,7 +62,7 @@ az webapp config storage-account add --resource-group <group_name> --name <app_n
 
 Você deve fazer isso para qualquer outro diretório que deseja vincular a uma conta de armazenamento.
 
-## <a name="verify"></a>Verificar
+## <a name="verify"></a>Verifique
 
 Depois que um contêiner de armazenamento estiver vinculado a um aplicativo da Web, você poderá verificar isso executando o seguinte comando:
 
@@ -74,7 +74,7 @@ az webapp config storage-account list --resource-group <resource_group> --name <
 
 O armazenamento do Azure pode ser montado com aplicativos de vários contêineres usando a id personalizada. Para exibir o nome do id personalizada, execute [ `az webapp config storage-account list --name <app_name> --resource-group <resource_group>` ](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
 
-No seu *docker-Compose. yml* do arquivo, mapeie o `volumes` opção `custom-id`. Por exemplo: 
+No seu *docker-Compose. yml* do arquivo, mapeie o `volumes` opção `custom-id`. Por exemplo:
 
 ```yaml
 wordpress:
@@ -85,4 +85,4 @@ wordpress:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Configurar aplicativos web no Serviço de Aplicativo do Azure](https://docs.microsoft.com/azure/app-service/web-sites-configure).
+- [Configurar aplicativos web no Serviço de Aplicativo do Azure](../configure-common.md).

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 9c0c8adca9d99c00e32127e02a3d68ff668a235e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 6a917b5e4586e9b2f54fee5816a9a0bcfcca2eee
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58793298"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956253"
 ---
 # <a name="azure-api-management-faqs"></a>Perguntas frequentes sobre Gerenciamento de API do Azure
 Obtenha as respostas a perguntas comuns, padrões e práticas recomendadas do Gerenciamento de API do Azure.
@@ -39,7 +39,7 @@ Obtenha as respostas a perguntas comuns, padrões e práticas recomendadas do Ge
 * [Como configurar vários ambientes em uma única API?](#how-do-i-set-up-multiple-environments-in-a-single-api)
 * [Pode usar o SOAP com Gerenciamento de API?](#can-i-use-soap-with-api-management)
 * [O endereço IP do gateway do Gerenciamento de API é constante? Posso usá-lo nas regras de firewall?](#is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules)
-* Posso configurar um servidor de autorização OAUth 2.0 com segurança ADFS?
+* [Posso configurar um servidor de autorização OAUth 2.0 com segurança ADFS?](#can-i-configure-an-oauth-20-authorization-server-with-ad-fs-security)
 * [Que método de roteamento o Gerenciamento de API usa em implantações em vários locais geográficos?](#what-routing-method-does-api-management-use-in-deployments-to-multiple-geographic-locations)
 * [Pode usar um modelo do Azure Resource Manager para criar uma instância do serviço de Gerenciamento de API?](#can-i-use-an-azure-resource-manager-template-to-create-an-api-management-service-instance)
 * [Posso usar um certificado SSL autoassinado para um back-end?](#can-i-use-a-self-signed-ssl-certificate-for-a-back-end)

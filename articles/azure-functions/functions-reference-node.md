@@ -12,12 +12,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 02/24/2019
 ms.author: glenga
-ms.openlocfilehash: 2eea1a1d30558765a2f8320b0b23efdbe3368807
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 635e72a8e8a70b8885afea282511fbfaf24d2f94
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65140951"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65957345"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Guia do desenvolvedor de JavaScript do Azure Functions
 
@@ -136,7 +136,7 @@ As entradas são divididas em duas categorias no Azure Functions: uma é a entra
    };
    ```
 
-### <a name="outputs"></a>outputs
+### <a name="outputs"></a>Saídas
 As saídas (ligações de `direction === "out"`) podem ser gravadas por uma função de várias maneiras. Em todos os casos, a propriedade `name` da ligação, conforme definido em *function.json*, corresponde ao nome do membro do objeto gravado na sua função. 
 
 Você pode atribuir os dados para as associações de saída em uma das seguintes maneiras (não o combine esses métodos):
@@ -273,7 +273,7 @@ context.log(message)
 Permite que você grave em logs de função de streaming no nível de rastreamento padrão. No `context.log`, há métodos de registro adicionais disponíveis para permitir que você grave logs de função em outros níveis de rastreamento:
 
 
-| Método                 | DESCRIÇÃO                                |
+| Método                 | Descrição                                |
 | ---------------------- | ------------------------------------------ |
 | **error(_message_)**   | Grava no registro em log no nível do erro, ou em um nível inferior.   |
 | **warn(_message_)**    | Grava no registro em log no nível do aviso, ou em um nível inferior. |
@@ -350,7 +350,7 @@ HTTP e gatilhos de webhook e associações de saída HTTP usam objetos de solici
 
 O objeto `context.req` (solicitação) tem as seguintes propriedades:
 
-| Propriedade      | DESCRIÇÃO                                                    |
+| Propriedade      | Descrição                                                    |
 | ------------- | -------------------------------------------------------------- |
 | _body_        | Um objeto que contém o corpo da solicitação.               |
 | _headers_     | Um objeto que contém os cabeçalhos da solicitação.                   |
@@ -365,7 +365,7 @@ O objeto `context.req` (solicitação) tem as seguintes propriedades:
 
 O objeto `context.res` (resposta) tem as seguintes propriedades:
 
-| Propriedade  | DESCRIÇÃO                                               |
+| Propriedade  | Descrição                                               |
 | --------- | --------------------------------------------------------- |
 | _body_    | Um objeto que contém o corpo da resposta.         |
 | _headers_ | Um objeto que contém os cabeçalhos da resposta.             |
@@ -504,7 +504,7 @@ FunctionApp
  | - myNodeFunction
  | | - function.json
  | - lib
- | | - nodeFunction.js
+ | | - sayHello.js
  | - node_modules
  | | - ... packages ...
  | - package.json
@@ -514,7 +514,7 @@ O `function.json` da `myNodeFunction` deve incluir uma propriedade `scriptFile` 
 
 ```json
 {
-  "scriptFile": "../lib/nodeFunction.js",
+  "scriptFile": "../lib/sayHello.js",
   "bindings": [
     ...
   ]
@@ -544,7 +544,7 @@ class MyObj {
         this.foo = 1;
     };
 
-    function logFoo(context) { 
+    logFoo(context) { 
         context.log("Foo is " + this.foo); 
         context.done(); 
     }

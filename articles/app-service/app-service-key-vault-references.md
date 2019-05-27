@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 11/20/2018
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 662260c3cf37f8f8a675c522f3d3dea41153e485
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f086850ecc2f15c41ab89db34b16d6d2e4a229cb
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60853132"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956214"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions-preview"></a>Use as referências do Key Vault para o serviço de aplicativo e as funções do Azure (visualização)
 
@@ -44,7 +44,7 @@ Para ler os segredos do Key Vault, você precisa criar um vault e conceder permi
 Uma referência do Key Vault é da forma `@Microsoft.KeyVault({referenceString})`, em que `{referenceString}` é substituído por uma das seguintes opções:
 
 > [!div class="mx-tdBreakAll"]
-> | Cadeia de caracteres de referência                                                            | DESCRIÇÃO                                                                                                                                                                                 |
+> | Cadeia de caracteres de referência                                                            | Descrição                                                                                                                                                                                 |
 > |-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | SecretUri = _secretUri_                                                       | O **SegredoUri** deve ser o URI do plano de dados completo de um segredo no Key Vault, incluindo uma versão, por exemplo, https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931  |
 > | VaultName = _vaultName_; SecretName = _secretName_; SecretVersion = _secretVersion_ | O **VaultName** deve ser o nome do seu recurso Key Vault. O **SecretName** deve ser o nome do segredo de destino. O **SecretVersion** deve ser a versão do segredo a ser usado. |
@@ -67,7 +67,7 @@ Como alternativa:
 
 ## <a name="source-application-settings-from-key-vault"></a>Configurações de aplicativos de origem do cofre de chaves
 
-As referências do Key Vault podem ser usadas como valores para [Configurações do aplicativo](web-sites-configure.md#app-settings), permitindo que você mantenha segredos no Key Vault em vez da configuração do site. As configurações do aplicativo são criptografadas com segurança em repouso, mas se você precisar de recursos de gerenciamento secreto, elas devem entrar no Key Vault.
+As referências do Key Vault podem ser usadas como valores para [Configurações do aplicativo](configure-common.md#configure-app-settings), permitindo que você mantenha segredos no Key Vault em vez da configuração do site. As configurações do aplicativo são criptografadas com segurança em repouso, mas se você precisar de recursos de gerenciamento secreto, elas devem entrar no Key Vault.
 
 Para usar uma referência do Key Vault para uma configuração de aplicativo, defina a referência como o valor da configuração. Seu aplicativo pode fazer referência ao segredo por meio de sua chave normalmente. Nenhuma alteração de código é necessária.
 

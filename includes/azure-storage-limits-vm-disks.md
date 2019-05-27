@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 03/18/2019
 ms.author: rogarana
 ms.openlocfilehash: 2936fd318f08c74675f7e8b382c861f4a28319fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60386274"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66148215"
 ---
 Você pode anexar um número de discos de dados para uma máquina virtual do Azure. Com base nas metas de escalabilidade e desempenho para discos de dados da VM, você pode determinar o número e tipo de disco que você precisa para atender aos seus requisitos de capacidade e desempenho.
 

@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/28/2019
 ms.author: kumud
-ms.openlocfilehash: ee0dc1b9879c8a26c7f3e48cc8daf6ae3511b27a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 266630cb7c9601af69073a6c9beb7d7ada9b8034
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60734501"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65957475"
 ---
 # <a name="azure-standard-load-balancer-overview"></a>Visão geral do Azure Standard Load Balancer
 
-O Azure Load Balancer permite dimensionar seus aplicativos e criar alta disponibilidade para seus serviços. O Azure Load Balancer pode ser usado tanto como cenários de entrada como de saída e fornece latência baixa, taxa de transferência alta e escala verticalmente a milhões de fluxos para todos os aplicativos TCP e UDP. 
+O Azure Load Balancer permite que você dimensione seus aplicativos e crie alta disponibilidade para seus serviços. O Azure Load Balancer pode ser usado tanto como cenários de entrada como de saída e fornece latência baixa, taxa de transferência alta e escala verticalmente a milhões de fluxos para todos os aplicativos TCP e UDP. 
 
 Este artigo discute o Load Balancer Standard.  Para obter uma visão mais geral do Azure Load Balancer, veja também a [Visão Geral do Azure Load Balancer](load-balancer-overview.md).
 
@@ -91,7 +91,7 @@ Revise a [discussão detalhada das habilidades relacionadas às Zonas de Disponi
 
 O Load Balancer Standard fornece métricas multidimensionais por meio do Azure Monitor.  Essas métricas podem ser filtradas, agrupadas e divididas para uma determinada dimensão.  Elas fornecem informações atuais e históricas de desempenho e integridade do seu serviço.  Também há suporte para a Integridade de Recursos.  A seguir está uma visão geral de diagnóstico com suporte:
 
-| Métrica | DESCRIÇÃO |
+| Métrica | Descrição |
 | --- | --- |
 | Disponibilidade do VIP | O Standard Load Balancer usa continuamente o caminho de dados de dentro de uma região para o front-end do Load Balancer e até a pilha do SDN compatível com a sua VM. Contanto que instâncias íntegras permaneçam, a medição seguirá o mesmo caminho que o tráfego com balanceamento de carga do seu aplicativo. O caminho de dados usado por seus clientes também é validado. A medição é invisível para seu aplicativo e não interfere com outras operações.|
 | Disponibilidade do DIP | O Load Balancer Standard usa um serviço de investigação de integridade distribuído que monitora a integridade do ponto de extremidade do aplicativo de acordo com as definições de configuração. Essa métrica fornece uma exibição agregada ou por ponto de extremidade filtrado de cada ponto de extremidade de instância individual no pool do Load Balancer.  Você pode verificar como o Load Balancer vê a integridade de seu aplicativo conforme indicado pela configuração de sua investigação de integridade.
@@ -208,7 +208,7 @@ Os SKUs não são mutáveis. Siga as etapas nesta seção para mover de um SKU d
 
 O Standard Load Balancer está disponível atualmente em todas as regiões de nuvem pública.
 
-## <a name="sla"></a>Contrato de Nível de Serviço
+## <a name="sla"></a>SLA
 
 Os Load Balancers Standard estão disponíveis com SLA de 99,99%.  Revise o [SLA do Load Balancer Standard](https://aka.ms/lbsla) para obter detalhes.
 
@@ -226,7 +226,6 @@ Para obter informações sobre os preços do Load Balancer Standard, visite a p�
 - Os SKUs não são mutáveis. Você não pode alterar a SKU de um recurso existente.
 - Um recurso de máquina virtual padrão, recurso de conjunto de disponibilidade ou recurso de conjunto de dimensionamento da máquina virtal podem referenciar um SKU, nunca ambos.
 - Uma regra de Balanceador de Carga não pode abranger duas redes virtuais.  Front-ends e suas instâncias de back-end relacionadas devem estar localizados na mesma rede virtual.  
-- Os front-ends do balanceador de carga não estão acessíveis no emparelhamento de rede virtual global.
 - [Mover as operações de assinatura](../azure-resource-manager/resource-group-move-resources.md) não têm suporte para recursos de PIP e LB SKU Standard.
 - Funções de trabalho sem uma rede virtual e outros serviços da plataforma Microsoft podem ser acessados quando apenas um Standard Load Balancer interno é usado devido a um efeito colateral de como os serviços pré-VNet e outros serviços da plataforma funcionam. Não confie nisso como o respectivo serviço em si ou a plataforma subjacente a pode ser alterada sem aviso prévio. Você sempre deve supor que precisa criar [conectividade de saída](load-balancer-outbound-connections.md) explicitamente se desejado ao usar um Standard Load Balancer interno apenas.
 - O Load Balancer é um produto de TCP ou UDP para balanceamento de carga e encaminhamento de porta para esses protocolos IP específicos.  As regras de balanceamento de carga e as regras de NAT de entrada são compatíveis com TCP e UDP, mas não com outros protocolos IP, incluindo ICMP. O Load Balancer não encerra, responde ou, de outra forma, interage com a carga de um fluxo UDP ou TCP. Ele não é um proxy. A validação bem-sucedida da conectividade com um front-end deve ocorrer na banda, com o mesmo protocolo usado em uma regra de NAT de entrada ou de balanceamento de carga (TCP ou UDP) _e_ pelo menos uma de suas máquinas virtuais deve gerar uma resposta para um cliente para ver uma resposta de um front-end.  Não receber uma resposta na banda do front-end do balanceador de carga indica que nenhuma máquina virtual foi capaz de responder.  Não é possível interagir com um front-end do Load Balancer sem que uma máquina virtual possa responder.  Isso também se aplica a conexões de saída em que o [SNAT de representação de porta](load-balancer-outbound-connections.md#snat) é compatível apenas com TCP e UDP; outros protocolos IP, incluindo ICMP, também falharão.  Atribua um endereço IP público em nível da instância para mitigar esse problema.

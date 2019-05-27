@@ -5,18 +5,17 @@ author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-origin.date: 10/19/2018
-ms.date: 04/09/2019
+ms.date: 10/19/2018
 ms.subservice: hybrid
-ms.author: v-junlch
+ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40b4be9aca5243b80151afac0ae221f0d44509c5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1084a3e546a234739fbede46612dce96537c7d4a
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60454635"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65950643"
 ---
 # <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect:  Referência do PowerShell ADConnectivityTools
 
@@ -34,10 +33,10 @@ Detecta problemas de DNS local.
 Confirm-DnsConnectivity [-Forest] <String> [-DCs] <Array> [-ReturnResultAsPSObject] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Descrição
+### <a name="description"></a>DESCRIÇÃO
 
 Executa testes de conectividade de DNS local.
-Para configurar o conector do Active Directory, o usuário deve ter a resolução de nomes da floresta em que estiver tentando se conectar, bem como em controladores de domínio associados a esta floresta.
+Para configurar o conector do Active Directory, o usuário deve ter os dois resolução de nomes para a floresta eles estão tentando se conectar ao, bem como em controladores de domínio associados a esta floresta.
 
 ### <a name="examples"></a>EXEMPLOS
 
@@ -121,7 +120,7 @@ Determina se uma floresta especificada existe.
 Confirm-ForestExists [-Forest] <String> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Descrição
+### <a name="description"></a>DESCRIÇÃO
 
 Consulta os endereços IP associados a uma floresta em um servidor DNS.
 
@@ -176,7 +175,7 @@ Confirm-FunctionalLevel -Forest <String> [-RunWithCurrentlyLoggedInUserCredentia
 Confirm-FunctionalLevel -ForestFQDN <Forest> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Descrição
+### <a name="description"></a>DESCRIÇÃO
 
 Verifica se o nível funcional de floresta do AD é igual ou maior que um determinado MinAdForestVersion (WindowsServer2003).
 A conta (Domínio\Nome de usuário) e a senha podem ser solicitadas.
@@ -269,7 +268,7 @@ Detecta problemas de conectividade de rede local.
 Confirm-NetworkConnectivity [-DCs] <Array> [-SkipDnsPort] [-ReturnResultAsPSObject] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Descrição
+### <a name="description"></a>DESCRIÇÃO
 
 Executa testes de conectividade de rede local.
 
@@ -310,7 +309,7 @@ Accept wildcard characters: False
 
 #### <a name="-skipdnsport"></a>-SkipDnsPort
 
-Se o usuário não está usando os serviços DNS fornecidos pelo Site do AD/DC de Logon, talvez queira ignorar a verificação da porta 53.
+Se o usuário não está usando os serviços DNS fornecidos pelo Site do AD / controlador de domínio de Logon, em seguida, eles talvez queira ignorar a verificação de porta 53.
 O usuário ainda deverá ser capaz de resolver _.ldap._tcp.\<forestfqdn\> para que a configuração Conector do Active Directory seja bem-sucedida.
 
 ```yml
@@ -359,7 +358,7 @@ Determina se uma floresta especificada e seus Controladores de Domínio associad
 Confirm-TargetsAreReachable [-Forest] <String> [-DCs] <Array> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Descrição
+### <a name="description"></a>DESCRIÇÃO
 
 Executa testes de "ping" (se o computador pode acessar um computador de destino por meio da rede e/ou da Internet)
 
@@ -436,7 +435,7 @@ Confirm-ValidDomains [-Forest <String>] [-RunWithCurrentlyLoggedInUserCredential
 Confirm-ValidDomains -ForestFQDN <Forest> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Descrição
+### <a name="description"></a>DESCRIÇÃO
 
 Valida se todos os domínios no FQDN de floresta obtido estão acessíveis por meio da tentativa de recuperar DomainGuid e DomainDN.
 A conta (Domínio\Nome de usuário) e a senha podem ser solicitadas.
@@ -528,7 +527,7 @@ Verifica se um usuário tem credenciais de Admin Corporativo.
 Confirm-ValidEnterpriseAdminCredentials [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Descrição
+### <a name="description"></a>DESCRIÇÃO
 
 Pesquisa se o usuário fornecido tem credenciais de Admin Corporativo.
 A conta (Domínio\Nome de usuário) e a senha podem ser solicitadas.
@@ -583,7 +582,7 @@ Get-DomainFQDNData [[-DomainFQDNDataType] <String>] [-RunWithCurrentlyLoggedInUs
  [-ReturnExceptionOnError] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Descrição
+### <a name="description"></a>DESCRIÇÃO
 
 Tenta obter um objeto domainFQDN de credenciais fornecidas.
 Se o domainFQDN for válido, um DomainFQDNName ou RootDomainName será retornado, dependendo da escolha do usuário.
@@ -671,7 +670,7 @@ Recupera um ForestFQDN de uma combinação de conta e senha.
 Get-ForestFQDN [-Forest] <String> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Descrição
+### <a name="description"></a>DESCRIÇÃO
 
 Tenta obter um ForestFQDN das credenciais fornecidas.
 A conta (Domínio\Nome de usuário) e a senha podem ser solicitadas.
@@ -742,7 +741,7 @@ Start-ConnectivityValidation [-Forest] <String> [-AutoCreateConnectorAccount] <B
  [<CommonParameters>]
 ```
 
-### <a name="description"></a>Descrição
+### <a name="description"></a>DESCRIÇÃO
 
 Executa todos os mecanismos disponíveis que verificam se as credenciais do AD são válidas.
 
@@ -825,7 +824,7 @@ Start-NetworkConnectivityDiagnosisTools [[-Forest] <String>] [-Credentials] <PSC
  [-ValidCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Descrição
+### <a name="description"></a>DESCRIÇÃO
 
 Executa testes de conectividade de rede local.
 
@@ -964,5 +963,3 @@ Accept wildcard characters: False
 
 Este cmdlet oferece suporte aos parâmetros comuns: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.
 Para obter mais informações, confira about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
-
-<!-- Update_Description: wording update -->

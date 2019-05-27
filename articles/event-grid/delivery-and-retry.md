@@ -5,14 +5,14 @@ services: event-grid
 author: spelluru
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 01/01/2019
+ms.date: 05/15/2019
 ms.author: spelluru
-ms.openlocfilehash: 6dfa84eff8dcc104ae6f9c16262f3b1c697df6c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b4bfdd3e9cdf99314dc55907ba163adc6cd39423
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60561991"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65952890"
 ---
 # <a name="event-grid-message-delivery-and-retry"></a>Entrega e repetição de mensagens da Grade de Eventos
 
@@ -24,16 +24,18 @@ Atualmente, a Grade de Eventos envia cada evento individualmente aos assinantes.
 
 ## <a name="retry-schedule-and-duration"></a>Agendamento de nova tentativa e duração
 
-A Grade de Eventos usa uma política de repetição de retirada exponencial para a entrega de eventos. Se um ponto de extremidade não responde ou retorna um código de falha, a grade de eventos repete a entrega na seguinte agenda em uma base de melhor esforço:
+Grade de eventos espera 30 segundos para uma resposta após fornecer uma mensagem. Após 30 segundos, se o ponto de extremidade não tiver respondido, a mensagem está na fila de repetição. A Grade de Eventos usa uma política de repetição de retirada exponencial para a entrega de eventos. Grade de eventos repete a entrega na seguinte agenda em uma base de melhor esforço:
 
-1. 10 segundos
-1. 30 segundos
-1. 1 minuto
-1. 5 minutos
-1. 10 minutos
-1. 30 minutos
-1. 1 hora
-1. Por hora por até 24 horas
+- 10 segundos
+- 30 segundos
+- 1 minuto
+- 5 minutos
+- 10 minutos
+- 30 minutos
+- 1 hora
+- Por hora por até 24 horas
+
+Se o ponto de extremidade responde nos 3 minutos, a grade de eventos tentará remover o evento da fila de repetição em uma base de melhor esforço, mas ainda é possível receber duplicatas.
 
 Grade de eventos adiciona uma pequena aleatoriedade para todas as etapas de repetição e oportunamente pode ignorar determinadas tentativas se um ponto de extremidade não está íntegro consistentemente, inativo por um longo período ou parece estar sobrecarregado.
 

@@ -17,12 +17,12 @@ ms.date: 10/03/2018
 ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d533e6aac9ae1a486d018414a86a9dc3fe742c2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 37c63e32f1ee9c404e8b84a6eb17bc6eec30a761
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60294270"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956940"
 ---
 # <a name="what-is-azure-active-directory-identity-protection-refreshed"></a>O que é Azure Active Directory Identity Protection (atualizado)?
 
@@ -67,7 +67,7 @@ O Azure AD Identity Protection detecta os seguintes eventos de risco:
 
  
 
-| Tipo de evento de risco | DESCRIÇÃO | Tipo de detecção |
+| Tipo de evento de risco | Descrição | Tipo de detecção |
 | ---             | ---         | ---            |
 | Viagem atípica | Entrada de uma localização atípica com base nas entradas recentes do usuário. | Off-line |
 | Endereço IP anônimo | Entrada de um endereço IP anônimo (por exemplo: navegador Tor, VPNs para anonimato). | Tempo real |
@@ -85,7 +85,7 @@ A Proteção de identidade se baseia em dois tipos de risco:
 
 - Risco de entrada
 
-- Risco do usuário
+- Risco de usuário
 
 ### <a name="sign-in-risk"></a>Risco de entrada
 
@@ -104,7 +104,7 @@ Há duas avaliações do risco de entrada:
     - Todos os outros recursos de entrada
 
 
-### <a name="user-risk"></a>Risco do usuário
+### <a name="user-risk"></a>Risco de usuário
 
 Um risco do usuário representa a probabilidade de uma determinada identidade estar comprometida. 
 
@@ -147,44 +147,44 @@ O fluxo de linha de base para a detecção de risco e resposta do Identity Prote
 
 ## <a name="common-scenarios"></a>Cenários comuns 
 
-Vamos ver um exemplo de Sara, uma funcionária da Contoso. 
+Vamos ver um exemplo de um funcionário da Contoso. 
 
-1. Sara tenta fazer entrar no Exchange Online do navegador Tor. No momento da entrada, o Azure AD detecta eventos de risco em tempo real. 
+1. Um funcionário tenta fazer logon Exchange Online do navegador Tor. No momento da entrada, o Azure AD detecta eventos de risco em tempo real. 
 
-2. O Azure AD detecta que Sara está entrando de um endereço IP anônimo, disparando um nível de risco de entrada médio. 
+2. Azure AD detecta que o funcionário está se conectando de um endereço IP anônimo, Disparando um nível de risco de entrada médio. 
 
-3. Sara é desafiada por um prompt de MFA, porque o administrador de TI da Contoso configurou a política de acesso condicional de risco de entrada do Identity Protection. A política exige o MFA para um risco de entrada médio ou mais alto. 
+3. O funcionário é desafiado por um prompt de MFA, porque o administrador de TI da Contoso configurou a política de acesso condicional de risco de entrada de proteção de identidade. A política exige o MFA para um risco de entrada médio ou mais alto. 
 
-4. Sara passa o prompt do MFA e acessa o Exchange Online e o nível de risco de usuário de Sara não é alterado. 
+4. O funcionário passa o prompt de MFA e acessa o Exchange Online, e seu nível de risco do usuário não é alterado. 
 
-O que aconteceu nos bastidores? A tentativa de logon do navegador Tor disparou um risco de entrada em tempo real no Azure AD para o endereço IP anônimo. Como o Azure AD processou a solicitação, ele aplicou a política de risco de entrada configurada no Identity Protection porque o nível de risco de entrada de Sara atendeu ao limite (Médio). Como Sara se registrou anteriormente no MFA, ela pôde responder e passar no desafio do MFA. A capacidade dela de passar com sucesso no desafio do MFA sinalizou para o Azure AD que provavelmente ela é a proprietária da identidade legítima e o nível de risco do usuário dela não aumenta. 
+O que aconteceu nos bastidores? A tentativa de logon do navegador Tor disparou um risco de entrada em tempo real no Azure AD para o endereço IP anônimo. Como o AD do Azure processou a solicitação, ela aplicada a política de risco de entrada configurada no Identity Protection, porque o nível de risco de entrada do funcionário atingido o limite (médio). Uma vez que o funcionário tinha sido registrado anteriormente para MFA, eles foram capazes de responder e passar o desafio MFA. A capacidade de passar com êxito o desafio MFA sinalizado com o Azure AD que eles eram bem provável que o proprietário legítimo de identidade, e não aumente seu nível de risco do usuário. 
 
 
-Mas e se não era Sara tentando entrar? 
+Mas e se o funcionário não era a um tentando entrar? 
 
-1. Um ator mal-intencionado com as credenciais de Sara tenta entrar na conta do Exchange Online de Sara do navegador Tor, uma vez que ele está tentando ocultar o endereço IP. 
+1. Um ator mal-intencionado com credenciais do funcionário tenta fazer logon sua conta do Exchange Online do navegador Tor, já que eles estão tentando ocultar seus endereços IP. 
 
 2. O Azure AD detecta que a tentativa de entrada é de um endereço IP anônima, disparando um risco de entrada em tempo real. 
 
 3. O ator mal-intencionado é desafiado por um prompt de MFA, porque o administrador de TI da Contoso configurou a política de acesso condicional de risco de entrada do Identity Protection para exigir o MFA quando o risco de entrada for médio ou mais alto. 
 
-4. O ator mal-intencionado falhará no desafio de MFA e não conseguirá acessar a conta do Exchange Online de Sara. 
+4. O ator mal-intencionado falhará o desafio MFA e não é possível acessar a conta do Exchange Online do funcionário. 
 
-5. O prompt de MFA com falha disparou um evento de risco a ser registrado, aumentando o risco do usuário de Sara para entradas futuras. 
+5. A MFA com falha prompt disparou um evento de risco seja registrada, acionar seu risco do usuário para entradas futuras. 
 
-Agora que um ator mal-intencionado tentou acessar a conta de Sara, vamos ver o que acontece na próxima vez que Sarah tenta entrar. 
+Agora que um ator mal-intencionado tentou acessar a conta de Sara, vamos ver o que acontece na próxima vez em que o funcionário tenta se conectar. 
 
-1. Sara tenta fazer entrar no Exchange Online do Outlook. No momento da entrada, o Azure AD detecta eventos de risco em tempo real, bem como risco de usuário anterior. 
+1. O funcionário tenta fazer logon Exchange Online do Outlook. No momento da entrada, o Azure AD detecta eventos de risco em tempo real, bem como risco de usuário anterior. 
 
 2. O Azure AD não detecta nenhum risco de entrada em tempo real, mas detecta o risco do usuário alto devido à atividade arriscada anterior nos cenários anteriores.  
 
-3. Sara é desafiada por uma solicitação de redefinição de senha, pois o administrador de TI da Contoso configurou a política de risco de usuário do Identity Protection para exigir a alteração de senha quando um usuário com risco alto entra. 
+3. O funcionário é desafiado por uma solicitação de redefinição de senha, pois Contoso do administrador de TI configurou a política de risco do usuário de proteção de identidade para exigir a alteração de senha quando um usuário com um alto risco faz logon. 
 
-4. Como Sara está registrada para SSPR e MFA, ela redefine sua senha com êxito. 
+4. Uma vez que o funcionário está registrado para SSPR e MFA, eles redefine com êxito sua senha. 
 
-5. Ao redefinir a senha, as credenciais de Sara não estão mais comprometidas e sua identidade retorna para um estado seguro. 
+5. Redefinindo a senha, credenciais do funcionário não sejam comprometidas e sua identidade retorna para um estado seguro. 
 
-6. Os eventos de risco anteriores de Sara são resolvidos e o nível de risco dela é automaticamente redefinido como uma resposta para atenuar o comprometimento das credenciais. 
+6. Eventos de risco anteriores do funcionário são resolvidos e seu nível de risco do usuário é redefinido automaticamente como uma resposta para atenuar o comprometimento de credenciais. 
 
 ## <a name="how-do-i-configure-identity-protection"></a>Como configurar o Identity Protection? 
 
@@ -212,11 +212,11 @@ Para saber mais detalhes, consulte [Atribuindo funções de administrador no Azu
 
 | Recurso | Azure AD Premium P2 | Azure AD Premium P1 | Azure AD Básico/Gratuito |
 | --- | --- | --- | --- |
-| Política de risco do usuário | Sim | Não | Não  |
-| Política de risco de entrada | Sim | Não | Não  |
+| Política de risco do usuário | Sim | Não | Não |
+| Política de risco de entrada | Sim | Não | Não |
 | Relatório de usuários arriscados | Acesso completo | Informações limitadas | Informações limitadas |
 | Relatório de entradas arriscadas | Acesso completo | Informações limitadas | Informações limitadas |
-| Política de registro de MFA | Sim | Não | Não  |
+| Política de registro de MFA | Sim | Não | Não |
 
 
 

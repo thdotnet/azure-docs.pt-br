@@ -10,16 +10,16 @@ ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 4415759530985710c8376709db9955ba98066160
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 00b1b58a39724951f2d5e4e688df8eb178654bbb
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61045932"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65952830"
 ---
 # <a name="tasks-for-the-project-lead-in-the-team-data-science-process"></a>Tarefas para o líder de projetos no Processo de Ciência de Dados da Equipe
 
-Este tutorial descreve as tarefas que um líder de projetos deve concluir para sua equipe de projeto. O objetivo é estabelecer um ambiente de equipe de colaboração padronizado no [TDSP (Processo de Ciência de Dados da Equipe)](overview.md). O TDSP é uma estrutura desenvolvida pela Microsoft que fornece uma sequência estruturada de atividades para executar soluções de análise de previsão baseadas em nuvem de forma eficaz. Para obter uma descrição das funções pessoais e das tarefas associadas que são tratadas por uma equipe de ciência de dados com padronização nesse processo, consulte [Tarefas e funções do Processo de Ciência de Dados da Equipe](roles-tasks.md).
+Este tutorial descreve as tarefas que um líder de projeto deve ser concluídas para sua equipe de projeto. O objetivo é estabelecer um ambiente de equipe de colaboração padronizado no [TDSP (Processo de Ciência de Dados da Equipe)](overview.md). O TDSP é uma estrutura desenvolvida pela Microsoft que fornece uma sequência estruturada de atividades para executar soluções de análise de previsão baseadas em nuvem de forma eficaz. Para obter uma descrição das funções pessoais e das tarefas associadas que são tratadas por uma equipe de ciência de dados com padronização nesse processo, consulte [Tarefas e funções do Processo de Ciência de Dados da Equipe](roles-tasks.md).
 
 Um **líder de projetos** gerencia as atividades diárias de cientistas de dados em um projeto de ciência de dados específico. Os fluxos de trabalho para as tarefas que serão concluídas por líderes de projeto para configurar esse ambiente estão representados na figura a seguir:
 

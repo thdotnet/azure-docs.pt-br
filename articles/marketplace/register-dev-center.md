@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 10/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 559b5a519a48d4aa8022961a59f6f29cef28f948
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 1caa523b2bc43b7b3690e01f589aecf18fd3da9e
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64937593"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65965097"
 ---
 # <a name="register-in-dev-center"></a>Registrar no Centro de Desenvolvimento  
 Abra uma nova sessão de navegação InPrivate do Internet Explorer ou Anônima do Chrome para garantir que você não tenha se conectado em uma conta pessoal.  
@@ -156,7 +156,7 @@ As informações bancárias e fiscais são necessárias para todas as ofertas co
   > Verifique se que o código postal também foi inserido corretamente. Há uma validação de cidade e código postal.
 
 * **Como obter um código promocional?**
-  > Complete o formulário de [Registro do Marketplace](https://azuremarketplace.microsoft.com/en-us/sell/signup) para receber um código promocional do Centro de Desenvolvimento.
+  > Complete o formulário de [Registro do Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) para receber um código promocional do Centro de Desenvolvimento. Veja como [criar uma conta no Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) para obter mais informações.
  
 * **O que devo esperar após concluir o registro?**
   > Procure por um email de verify@microsoft.com com linha do assunto "Ação necessária: Verifique sua conta de email com a Microsoft" Clique no link de verificação sensível a tempo para concluir o registro. *Se você não tiver recebido um email dentro de 24 horas, verifique a pasta de spam.*

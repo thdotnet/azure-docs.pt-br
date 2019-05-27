@@ -12,12 +12,12 @@ ms.date: 11/15/2018
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f337ea9d55a119c3aec6e94649cdbf049f99e9d6
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 51ad6ea2abcc18b985e9c45fbfb1ffba98fb2c1f
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65783674"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66113094"
 ---
 # <a name="understand-azure-ad-application-proxy-connectors"></a>Noções básicas sobre conectores de Proxy de Aplicativo Azure AD
 
@@ -87,7 +87,9 @@ Para saber mais sobre os grupos de conectores, confira [Publicar aplicativos em 
 
 ## <a name="capacity-planning"></a>Planejamento de Capacidade 
 
-É importante você confirmar se planejou capacidade suficiente entre os conectores para lidar com o volume de tráfego esperado. Em geral, quanto mais usuários você tiver, maior será o computador necessário. Abaixo está uma tabela que apresenta o volume que diferentes computadores podem processar. Observe que isso é baseado em Transações por Segundo (TPS) esperadas e não em usuário, já que os padrões de uso variam e não podem ser usados para prever a carga. Haverá também algumas diferenças com base no tamanho das respostas e no tempo de resposta do aplicativo de back-end. Tamanhos de resposta maiores e tempos de resposta mais lentos resultarão em uma menor TPS máxima. É recomendável ter máquinas adicionais para que a carga distribuída entre as máquinas seja de cerca de 50%. A capacidade extra garantirá que você tenha alta disponibilidade e resiliência.
+É importante você confirmar se planejou capacidade suficiente entre os conectores para lidar com o volume de tráfego esperado. É recomendável que cada grupo de conectores tem pelo menos dois conectores para fornecer alta disponibilidade e escala. É ideal ter três conectores no caso de você precisará de uma máquina em qualquer ponto de serviço. 
+
+Em geral, quanto mais usuários você tiver, maior será o computador necessário. Abaixo está uma tabela fornecendo uma estrutura de tópicos do volume e latência prevista máquinas diferentes podem manipular. Observe que isso é baseado em Transações por Segundo (TPS) esperadas e não em usuário, já que os padrões de uso variam e não podem ser usados para prever a carga. Haverá também algumas diferenças com base no tamanho das respostas e no tempo de resposta do aplicativo de back-end. Tamanhos de resposta maiores e tempos de resposta mais lentos resultarão em uma menor TPS máxima. Também recomendamos ter máquinas adicionais para que a carga distribuída entre as máquinas sempre fornece buffer suficiente. A capacidade extra garantirá que você tenha alta disponibilidade e resiliência.
 
 |Núcleos|RAM|Latência esperada (MS)-P99|TPS máximo|
 | ----- | ----- | ----- | ----- |

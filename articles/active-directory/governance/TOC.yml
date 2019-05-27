@@ -27,8 +27,6 @@
           href: manage-guest-access-with-access-reviews.md
         - name: Gerenciar o acesso do usuário com revisões
           href: manage-user-access-with-access-reviews.md
-        - name: Gerenciar programas e seus controles
-          href: manage-programs-controls.md
         - name: Gerenciar usuários excluídos do acesso condicional
           href: conditional-access-exclusion.md
 - name: Guias de instruções
@@ -64,8 +62,6 @@
               href: review-your-access.md
             - name: Concluir uma revisão de acesso
               href: complete-access-review.md
-            - name: Recuperar resultados de revisão do acesso
-              href: retrieve-access-review.md
         - name: Funções do Azure AD
           items:
             - name: Criar uma análise de acesso

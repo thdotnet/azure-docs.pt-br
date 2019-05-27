@@ -4,16 +4,16 @@ description: Informações espaciais âncoras do Azure sobre como abrir uma soli
 author: ramonarguelles
 manager: vicenterivera
 services: azure-spatial-anchors
-ms.author: ramonarguelles
+ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: troubleshooting
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: c372b86861452c48b2114073419d4ed709ff115c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1930d5fc9dafe7d480302ded9b4e5a86f55a7669
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60303312"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65964521"
 ---
 # <a name="azure-spatial-anchors-support-options"></a>Opções de suporte do Azure âncoras espacial
 
@@ -31,7 +31,7 @@ Para abrir um tíquete de suporte técnico dentro do Portal do Azure para âncor
 
 1. Ao preencher os campos de tíquete de suporte: 
 
-- Tipo de problema: Técnicos
+- Tipo de problema: Técnico
 - Serviço: Âncoras Espaciais
 
 ![Campos de tíquete de suporte do portal do Azure](./media/spatial-anchor-support3.png)

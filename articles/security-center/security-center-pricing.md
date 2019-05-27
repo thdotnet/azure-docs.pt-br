@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/17/2019
-ms.author: monhaber
-ms.openlocfilehash: 27acda2496adea39321e498868aebcc2f824df3c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: v-mohabe
+ms.openlocfilehash: 8f6f94fa8602dcc2b8eed19262f595cb18c40b57
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60905715"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65968314"
 ---
 # <a name="upgrade-to-security-centers-standard-tier-for-enhanced-security"></a>Atualizar para a camada Standard da Central de Segurança para segurança aprimorada
 A Central de Segurança do Azure fornece gerenciamento de segurança unificado e proteção avançada contra ameaças para cargas de trabalho em execução no Azure, localmente e em outras nuvens. Ela proporciona visibilidade e controle sobre cargas de trabalho de nuvem híbrida, defesas ativas que reduzem a exposição a ameaças e detecção inteligente para ajudá-lo a acompanhar o ritmo veloz da evolução dos ataques cibernéticos.
@@ -49,7 +49,7 @@ Para obter a camada Standard:
 (Os preços na imagem por exemplo são apenas para fins de). ![Preços da Central de segurança](./media/security-center-pricing/get-standard.png)
 
 > [!NOTE]
-> Para habilitar todos os recursos da Central de segurança, você deve aplicar o padrão de tipo de preço para a assinatura que contém as máquinas virtuais aplicáveis. A configuração de preços para um workspace não habilita o acesso Just-In-Time à VM, os controles de aplicativo adaptáveis e as detecções de rede para os recursos do Azure.
+> Para habilitar todos os recursos da Central de Segurança, você deve aplicar o tipo de preço Standard à assinatura que contém as máquinas virtuais aplicáveis. A configuração de preços para um workspace não habilita o acesso Just-In-Time à VM, os controles de aplicativo adaptáveis e as detecções de rede para os recursos do Azure.
 >
 >
 

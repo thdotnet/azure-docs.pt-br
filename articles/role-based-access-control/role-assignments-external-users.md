@@ -16,12 +16,12 @@ ms.date: 03/20/2018
 ms.author: rolyon
 ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: 91548a4df4a77623978ea4bcb214b76427c026a6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d919453816436366c00dde506210a2ed38cc69b7
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60345164"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65952213"
 ---
 # <a name="manage-access-to-azure-resources-for-external-users-using-rbac"></a>Gerenciar o acesso de usuários externos a recursos do Azure usando RBAC
 
@@ -57,7 +57,7 @@ Depois de selecionar a assinatura, o usuário administrador deve clicar em **Con
 
 A próxima etapa é selecionar a função a ser atribuída e o usuário ao qual a função de RBAC será atribuída. No menu suspenso **Função**, o usuário administrador vê apenas as funções RBAC internas que estão disponíveis no Azure. Para obter explicações mais detalhadas sobre cada função e seus escopos atribuíveis, consulte [Funções internas para recursos do Azure](built-in-roles.md).
 
-Em seguida, o usuário administrador precisa adicionar o endereço de email do usuário externo. O comportamento esperado para o usuário externo é não aparecer no locatário existente. Depois de ser convidado, o usuário externo fica visível em **Assinaturas > Controle de Acesso (IAM)** com todos os usuários atuais que são atribuídos a uma função RBAC no escopo de Assinatura no momento.
+Em seguida, o usuário administrador precisa adicionar o endereço de email do usuário externo. O comportamento esperado para o usuário externo é não aparecer no locatário existente. Depois que o usuário externo foi convidado, eles estarão visíveis sob **assinaturas > controle de acesso (IAM)** com todos os usuários atuais que estão atualmente atribuídos a uma função RBAC no escopo da assinatura.
 
 ![adicionar permissões à nova função RBAC](./media/role-assignments-external-users/3.png)
 
@@ -66,7 +66,7 @@ Em seguida, o usuário administrador precisa adicionar o endereço de email do u
 O usuário "chessercarlton@gmail.com" foi convidado a ser um **Proprietário** para a assinatura de "Avaliação Gratuita". Depois de enviar o convite, o usuário externo receberá um email de confirmação com um link de ativação.
 ![convite por email para a função RBAC](./media/role-assignments-external-users/5.png)
 
-Sendo externo à organização, o novo usuário não tem nenhum atributo existente no diretório "Locatário padrão do Azure". Ele será criado depois que o usuário externo tiver autorizado a ser gravado no diretório associado à assinatura para a qual ele recebeu uma função.
+Sendo externo à organização, o novo usuário não tem nenhum atributo existente no diretório "Locatário padrão do Azure". Serão criados depois que o usuário externo tiver autorizado a ser gravado no diretório que está associado à assinatura eles tiverem recebido uma função.
 
 ![mensagem de convite de email para a função de RBAC](./media/role-assignments-external-users/6.png)
 

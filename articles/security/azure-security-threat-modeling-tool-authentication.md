@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 56620dc1d3e315caa3e259715ed84a539b91356d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3b170a214c7c3c464f7ea645fa1dc42cce0a0580
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60610871"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951720"
 ---
 # <a name="security-frame-authentication--mitigations"></a>Quadro de segurança: Autenticação | Mitigações 
 
@@ -48,7 +48,7 @@ ms.locfileid: "60610871"
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
 | **Referências**              | N/D  |
-| Detalhes | <p>A autenticação é o processo em que uma entidade comprova sua identidade, normalmente por meio de credenciais, como um nome de usuário e uma senha. Há vários protocolos de autenticação disponíveis que podem ser considerados. Alguns deles são listados abaixo:</p><ul><li>Certificados do cliente</li><li>Baseado no Windows</li><li>Baseado em formulários</li><li>Federação - ADFS</li><li>Federação – Azure AD</li><li>Federação - Servidor de Identidade</li></ul><p>Considere usar um mecanismo de autenticação padrão para identificar o processo de origem</p>|
+| Detalhes | <p>A autenticação é o processo em que uma entidade comprova sua identidade, normalmente por meio de credenciais, como um nome de usuário e uma senha. Há vários protocolos de autenticação disponíveis que podem ser considerados. Alguns deles são listados abaixo:</p><ul><li>Certificados de cliente</li><li>Baseado no Windows</li><li>Baseado em formulários</li><li>Federação - ADFS</li><li>Federação – Azure AD</li><li>Federação - Servidor de Identidade</li></ul><p>Considere usar um mecanismo de autenticação padrão para identificar o processo de origem</p>|
 
 ## <a id="handle-failed-authn"></a>Os aplicativos devem lidar com segurança com os cenários de autenticação com falha
 
@@ -103,7 +103,7 @@ ms.locfileid: "60610871"
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
 | **Referências**              | N/D  |
-| Detalhes | <p>A política de conta e senha em conformidade com a política organizacional e as práticas recomendadas deve ser implementadas.</p><p>Para defender-se contra ataque de detecção baseada em dicionário e força bruta: É necessário implementar uma diretiva de senha forte para garantir que os usuários criem uma senha complexa (por exemplo, tamanho mínimo de 12 caracteres, caracteres alfanuméricos e especiais).</p><p>Políticas de bloqueio de conta podem ser implementadas da seguinte maneira:</p><ul><li>**Bloqueio flexível:** Essa pode ser uma boa opção para proteger os usuários contra ataques de força bruta. Por exemplo, sempre que o usuário insere uma senha incorreta três vezes, o aplicativo pode bloquear a conta por um minuto para tornar mais lento o processo de obtenção da senha por força bruta, tornando-o menos rentável para o invasor. Se implementar contramedidas de bloqueio rígidas neste exemplo, você obterá um "Dos" bloqueando permanentemente as contas. Como alternativa, o aplicativo pode gerar uma OTP (senha única) e enviá-la fora de banda (por email, sms etc.) ao usuário. Outra abordagem seria implementar CAPTCHA depois que um número limite de tentativas for atingido.</li><li>**Bloqueio rígido:** Esse tipo de bloqueio deve ser aplicado sempre que você detectar um usuário atacando seu aplicativo e contra-atacá-lo, bloqueando permanentemente sua conta até que uma equipe de resposta tenha tempo de fazer as análises. Após esse processo, que você pode optar por dar a conta de volta ao usuário ou tomar outras medidas legais contra ele. Esse tipo de abordagem impede que o invasor penetre ainda mais em seu aplicativo e infraestrutura.</li></ul><p>Para se proteger contra ataques em contas previsíveis e padrão, verifique se todas as chaves e senhas são substituíveis e são geradas ou substituídas após a instalação.</p><p>Se o aplicativo precisar gerar senhas automaticamente, verifique se as senhas geradas são aleatórias e têm alta entropia.</p>|
+| Detalhes | <p>A política de conta e senha em conformidade com a política organizacional e as práticas recomendadas deve ser implementadas.</p><p>Para defender-se contra ataque de detecção baseada em dicionário e força bruta: É necessário implementar uma diretiva de senha forte para garantir que os usuários criem uma senha complexa (por exemplo, tamanho mínimo de 12 caracteres, caracteres alfanuméricos e especiais).</p><p>Políticas de bloqueio de conta podem ser implementadas da seguinte maneira:</p><ul><li>**Bloqueio flexível:** Essa pode ser uma boa opção para proteger os usuários contra ataques de força bruta. Por exemplo, sempre que o usuário insere uma senha incorreta três vezes, o aplicativo pode bloquear a conta de um minuto para diminuir o processo de aplicar a sua senha, tornando-o menos rentável para o invasor de força bruta. Se você implementar contramedidas de limite de bloqueio rígidas neste exemplo, você obteria um "DoS" bloqueando permanentemente as contas. Como alternativa, o aplicativo pode gerar uma OTP (senha única) e enviá-la fora de banda (por email, sms etc.) ao usuário. Outra abordagem seria implementar CAPTCHA depois que um número limite de tentativas for atingido.</li><li>**Bloqueio rígido:** Esse tipo de bloqueio deve ser aplicado sempre que você detecta um usuário de atacar o seu aplicativo e um contador-los por meio do bloqueio permanente de sua conta até que uma equipe de resposta tinham tempo para fazer a análise forense. Após esse processo, que você pode decidir dar ao usuário fazer sua conta ou tomar outras medidas legais contra elas. Esse tipo de abordagem impede que o invasor penetre ainda mais em seu aplicativo e infraestrutura.</li></ul><p>Para se proteger contra ataques em contas previsíveis e padrão, verifique se todas as chaves e senhas são substituíveis e são geradas ou substituídas após a instalação.</p><p>Se o aplicativo precisar gerar senhas automaticamente, verifique se as senhas geradas são aleatórias e têm alta entropia.</p>|
 
 ## <a id="controls-username-enum"></a>Implemente controles para impedir a enumeração de nome de usuário
 
@@ -340,13 +340,13 @@ O elemento `<netMsmqBinding/>` do arquivo de configuração WCF abaixo instrui o
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
 | **Referências**              | [Autenticação e Autorização na ASP.NET Web API](https://www.asp.net/web-api/overview/security/authentication-and-authorization-in-aspnet-web-api), [Serviços de Autenticação Externa com a API Web do ASP.NET (C#)](https://www.asp.net/web-api/overview/security/external-authentication-services) |
-| **Etapas** | <p>A autenticação é o processo em que uma entidade comprova sua identidade, normalmente por meio de credenciais, como um nome de usuário e uma senha. Há vários protocolos de autenticação disponíveis que podem ser considerados. Alguns deles são listados abaixo:</p><ul><li>Certificados do cliente</li><li>Baseado no Windows</li><li>Baseado em formulários</li><li>Federação - ADFS</li><li>Federação – Azure AD</li><li>Federação - Servidor de Identidade</li></ul><p>Os links na seção de referências fornecem detalhes de baixo nível sobre como cada um dos esquemas de autenticação pode ser implementado para proteger uma API Web.</p>|
+| **Etapas** | <p>A autenticação é o processo em que uma entidade comprova sua identidade, normalmente por meio de credenciais, como um nome de usuário e uma senha. Há vários protocolos de autenticação disponíveis que podem ser considerados. Alguns deles são listados abaixo:</p><ul><li>Certificados de cliente</li><li>Baseado no Windows</li><li>Baseado em formulários</li><li>Federação - ADFS</li><li>Federação – Azure AD</li><li>Federação - Servidor de Identidade</li></ul><p>Os links na seção de referências fornecem detalhes de baixo nível sobre como cada um dos esquemas de autenticação pode ser implementado para proteger uma API Web.</p>|
 
 ## <a id="authn-aad"></a>Use cenários de autenticação padrão com suporte no Azure Active Directory
 
 | Title                   | Detalhes      |
 | ----------------------- | ------------ |
-| **Componente**               | AD do Azure | 
+| **Componente**               | Azure AD | 
 | **Fase do SDL**               | Compilação |  
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
@@ -357,7 +357,7 @@ O elemento `<netMsmqBinding/>` do arquivo de configuração WCF abaixo instrui o
 
 | Title                   | Detalhes      |
 | ----------------------- | ------------ |
-| **Componente**               | AD do Azure | 
+| **Componente**               | Azure AD | 
 | **Fase do SDL**               | Compilação |  
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
@@ -368,7 +368,7 @@ O elemento `<netMsmqBinding/>` do arquivo de configuração WCF abaixo instrui o
 
 | Title                   | Detalhes      |
 | ----------------------- | ------------ |
-| **Componente**               | AD do Azure | 
+| **Componente**               | Azure AD | 
 | **Fase do SDL**               | Compilação |  
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
@@ -429,7 +429,7 @@ Observe que, para testar a eficácia dessa configuração, faça logon no aplica
 
 | Title                   | Detalhes      |
 | ----------------------- | ------------ |
-| **Componente**               | AD do Azure | 
+| **Componente**               | Azure AD | 
 | **Fase do SDL**               | Compilação |  
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |

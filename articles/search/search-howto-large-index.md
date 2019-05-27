@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 12/19/2018
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 2f3d08a32384cea815f096f51b24eea596d0d118
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8923c94409dcf079179ed0464046e39ef7654c4c
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60871158"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65949835"
 ---
 # <a name="how-to-index-large-data-sets-in-azure-search"></a>Como indexar grandes conjuntos de dados no Azure Search
 
@@ -67,7 +67,7 @@ Para requisitos de indexação computacionalmente intensivos e não rotineiros -
 O processamento paralelo tem estes elementos:
 
 + Subdividir a fonte de dados entre vários contêineres ou várias pastas virtuais dentro do mesmo contêiner. 
-+ Mapear cada miniconjunto de dados para sua própria [fonte de data](https://docs.microsoft.com/rest/api/searchservice/create-data-source), emparelhados com seu próprio [indexador](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
++ Mapear cada conjunto de dados minidespejos para seu próprio [fonte de dados](https://docs.microsoft.com/rest/api/searchservice/create-data-source), emparelhado para seu próprio [indexador](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
 + Para pesquisa cognitiva, referencie o mesmo [conjunto de habilidades](https://docs.microsoft.com/rest/api/searchservice/create-skillset) em cada definição de indexador.
 + Grave no mesmo índice de pesquisa de destino. 
 + Agende todos os indexadores para serem executados ao mesmo tempo.

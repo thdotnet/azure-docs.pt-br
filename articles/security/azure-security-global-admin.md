@@ -8,12 +8,12 @@ editor: TomSh
 ms.topic: article
 ms.date: 03/20/2018
 ms.author: barclayn
-ms.openlocfilehash: d0479b834f814616e44a1888ab8b958990610820
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fbc3bba3d95526277da3487cb8670c1f1a88a925
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60611712"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951764"
 ---
 # <a name="enforce-multi-factor-authentication-mfa-for-subscription-administrators"></a>Impor a MFA (autenticação multifator) para administradores de assinaturas
 
@@ -22,7 +22,7 @@ Quando você cria seus administradores, incluindo sua conta de administrador glo
 Você pode executar a administração cotidiana atribuindo funções específicas de administrador – como administrador do Exchange ou administrador de senhas – para contas de usuário da equipe de TI conforme necessário.
 Além disso, habilitar a [Autenticação Multifator (MFA) do Azure](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication) para seus administradores adiciona uma segunda camada de segurança para logons de usuário e transações. A MFA do Azure também ajuda o departamento de TI a reduzir a probabilidade de que uma credencial comprometida tenha acesso aos dados da organização.
 
-Por exemplo: você impõe a MFA do Azure a seus usuários e a configura para usar uma chamada telefônica ou uma mensagem de texto como verificação. Se as credenciais do usuário estiverem comprometidas, o invasor não poderá acessar recurso algum, pois não terá acesso ao telefone do usuário. As organizações que não adicionam camadas adicionais de proteção de identidade são mais suscetíveis a ataques de roubo de credenciais, que podem levar ao comprometimento dos dados.
+Por exemplo: Impor o MFA do Azure para seus usuários e configurá-lo para usar uma chamada telefônica ou mensagem de texto como verificação. Se as credenciais do usuário estiverem comprometidas, o invasor não será capaz de acessar qualquer recurso, pois ele não terá acesso ao telefone do usuário. As organizações que não adicionam camadas adicionais de proteção de identidade são mais suscetíveis a ataques de roubo de credenciais, que podem levar ao comprometimento dos dados.
 
 Uma alternativa para as organizações que desejam manter todo o controle da autenticação localmente é usar o [Servidor de Autenticação Multifator do Azure](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-server), também chamado de "MFA local". Usando esse método você ainda poderá impor a autenticação multifator, mantendo o servidor MFA local.
 

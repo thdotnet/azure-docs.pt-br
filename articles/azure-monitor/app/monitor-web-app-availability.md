@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.reviewer: sdash
 ms.author: lagayhar
-ms.openlocfilehash: 6cd5413d64be2117cc5f64202ecdaaf40f35db4b
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 76bbcd6fa400111514ec3496005a28ec28ae6ab7
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205372"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65977892"
 ---
 # <a name="monitor-availability-and-responsiveness-of-any-web-site"></a>Monitorar a disponibilidade e a capacidade de resposta de qualquer site
 Após implantar o aplicativo Web ou site em qualquer servidor, você pode configurar testes para monitorar sua disponibilidade e capacidade de resposta. [Application Insights do Azure](../../azure-monitor/app/app-insights-overview.md) envia solicitações da Web ao aplicativo em intervalos regulares de pontos no mundo todo. Ele o alertará se o aplicativo não responder ou responder lentamente.
@@ -71,7 +71,7 @@ Abra a folha Disponibilidade e adicione um teste.
 
 * **Limite de alerta de localização**: é recomendável um mínimo de 3/5 locais. É a relação ideal entre o limite de alerta local e o número de locais de teste **limite de alerta local** = **número de locais teste** - 2, com um mínimo de cinco de teste locais.
 
-## <a name="multi-step-web-tests"></a>Testes na Web com diversas etapas
+## <a name="multi-step-web-tests"></a>Testes da Web de várias etapas
 Você pode monitorar um cenário que envolve uma sequência de URLs. Por exemplo, se estiver monitorando um site de vendas, você poderá testar se adicionar itens ao carrinho de compras funciona corretamente.
 
 > [!NOTE]
@@ -175,7 +175,7 @@ Selecione **Exibir detalhes do teste** de um teste específico para ver seu grá
 
 Você talvez queira desabilitar testes de disponibilidade ou as regras de alerta associadas a eles, enquanto você estiver fazendo a manutenção de seu serviço.
 
-![Desabilitar um teste da web](./media/monitor-web-app-availability/6disable.png)
+![Desabilitar um teste da web](./media/monitor-web-app-availability/6disable.png)  
 ![Editar teste](./media/monitor-web-app-availability/8edittest.png)
 
 ## <a name="failures"></a>Se você encontrar falhas

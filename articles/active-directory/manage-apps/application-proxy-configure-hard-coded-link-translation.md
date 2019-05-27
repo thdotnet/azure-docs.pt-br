@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fdfd8fd642120f4e829de8fbb013f85aea2a9484
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: b0899a127566c4d06de7d42443a956c2660a7a6d
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65825554"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956893"
 ---
 # <a name="redirect-hardcoded-links-for-apps-published-with-azure-ad-application-proxy"></a>Redirecione os links inseridos no código para aplicativos publicados com o Proxy de Aplicativo do Azure AD
 
@@ -59,7 +59,7 @@ Com a extensão de navegador My Apps, todas as URLs internas publicadas com o Pr
 
 Para usar esse recurso, o usuário deve fazer o download da extensão e estar conectado. Não há nenhuma outra configuração necessária para os administradores ou usuários. 
 
-Para obter mais informações, incluindo como configurar essa opção, consulte a [extensão de navegador MyApps](https://docs.microsoft.com/en-us/azure/active-directory/user-help/my-apps-portal-end-user-access#download-and-install-the-my-apps-secure-sign-in-extension) documentação.
+Para obter mais informações, incluindo como configurar essa opção, consulte a [extensão de navegador MyApps](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access#download-and-install-the-my-apps-secure-sign-in-extension) documentação.
 
 ### <a name="option-3-link-translation-setting"></a>Opção 3: Configuração de conversão de link 
 

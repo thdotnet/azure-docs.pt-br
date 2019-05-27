@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
-ms.openlocfilehash: 3074048dd4426a10e706e37e6d375ea4995fcbbb
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 9422d543ad83f29d60fd7e1de51a79c3416e5b14
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64919775"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956167"
 ---
 # <a name="configure-a-linux-nodejs-app-for-azure-app-service"></a>Configurar um aplicativo do Node. js do Linux para o serviço de aplicativo do Azure
 
@@ -71,7 +71,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ### <a name="run-npm-start"></a>Executar início do npm
 
-Para iniciar seu aplicativo usando `npm start`, apenas certifique-se de uma `start` script está no *Package. JSON* arquivo. Por exemplo: 
+Para iniciar seu aplicativo usando `npm start`, apenas certifique-se de uma `start` script está no *Package. JSON* arquivo. Por exemplo:
 
 ```json
 {
@@ -119,7 +119,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 Você pode depurar seu aplicativo Node. js remotamente no [Visual Studio Code](https://code.visualstudio.com/) se você configurá-lo para [executar com PM2](#run-with-pm2), exceto quando você executá-lo usando um *. js, *.yml, ou *YAML*.
 
-Na maioria dos casos, nenhuma configuração adicional é necessária para seu aplicativo. Se seu aplicativo for executado com um *Process* arquivo (padrão ou personalizado), ele deve ter um `script` propriedade na raiz do JSON. Por exemplo: 
+Na maioria dos casos, nenhuma configuração adicional é necessária para seu aplicativo. Se seu aplicativo for executado com um *Process* arquivo (padrão ou personalizado), ele deve ter um `script` propriedade na raiz do JSON. Por exemplo:
 
 ```json
 {
@@ -137,7 +137,7 @@ Quando terminar com a depuração, pare o depurador selecionando **desconectar**
 
 ## <a name="access-environment-variables"></a>Acessar variáveis de ambiente
 
-No Serviço de Aplicativo, você pode [definir configurações de aplicativo](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) fora do código do aplicativo. Em seguida, você pode acessá-los usando o padrão do Node. js. Por exemplo, para acessar uma configuração de aplicativo chamada `NODE_ENV`, use o seguinte código:
+No Serviço de Aplicativo, você pode [definir configurações de aplicativo](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) fora do código do aplicativo. Em seguida, você pode acessá-los usando o padrão do Node. js. Por exemplo, para acessar uma configuração de aplicativo chamada `NODE_ENV`, use o seguinte código:
 
 ```javascript
 process.env.NODE_ENV
@@ -147,7 +147,7 @@ process.env.NODE_ENV
 
 Por padrão, o Kudu executa `npm install --production` quando ele reconhece que um aplicativo Node. js é implantado. Se seu aplicativo requer que as ferramentas de automação populares, como Grunt, Bower ou Gulp, você precisará fornecer um [script de implantação personalizado](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script) para executá-lo.
 
-Para habilitar seu repositório para executar essas ferramentas, você precisará adicioná-los às dependências em *Package. JSON.* Por exemplo: 
+Para habilitar seu repositório para executar essas ferramentas, você precisará adicioná-los às dependências em *Package. JSON.* Por exemplo:
 
 ```json
 "dependencies": {
@@ -178,7 +178,7 @@ Abra *deploy.sh* e localize o `Deployment` seção, que se parece com isso:
 Esta seção termina com execução `npm install --production`. Adicione a seção de código que você precisa para executar a ferramenta necessária *no final* da `Deployment` seção:
 
 - [Bower](#bower)
-- [Gulp](#gulp)
+- [gulp](#gulp)
 - [Grunt](#grunt)
 
 Veja uma [exemplo de exemplo Mean. js](https://github.com/Azure-Samples/meanjs/blob/master/deploy.sh#L112-L135), em que o script de implantação também executa um personalizado `npm install` comando.
@@ -226,7 +226,7 @@ fi
 
 No Serviço de Aplicativo, a [Terminação SSL](https://wikipedia.org/wiki/TLS_termination_proxy) ocorre nos balanceadores de carga de rede de modo que todas as solicitações HTTPS cheguem ao seu aplicativo como solicitações HTTP não criptografadas. Se a lógica de aplicativo precisar verificar se as solicitações do usuário estão criptografadas ou não, inspecione o cabeçalho `X-Forwarded-Proto`.
 
-Estrutura Web populares permitem que você acesse informações do `X-Forwarded-*` no seu padrão de aplicativo básico. Na [Express](https://expressjs.com/), você pode usar [confiar proxies](https://expressjs.com/guide/behind-proxies.html). Por exemplo: 
+Estrutura Web populares permitem que você acesse informações do `X-Forwarded-*` no seu padrão de aplicativo básico. Na [Express](https://expressjs.com/), você pode usar [confiar proxies](https://expressjs.com/guide/behind-proxies.html). Por exemplo:
 
 ```javascript
 app.set('trust proxy', 1)
@@ -249,11 +249,11 @@ if (req.secure) {
 Quando um aplicativo Node. js em funcionamento se comporta de forma diferente no serviço de aplicativo ou tem erros, tente o seguinte:
 
 - [Acessar o fluxo de log](#access-diagnostic-logs).
-- Teste o aplicativo localmente no modo de produção. Serviço de aplicativo executa seus aplicativos Node. js no modo de produção, portanto, você precisará certificar-se de que seu projeto funcione conforme o esperado no modo de produção localmente. Por exemplo: 
+- Teste o aplicativo localmente no modo de produção. Serviço de aplicativo executa seus aplicativos Node. js no modo de produção, portanto, você precisará certificar-se de que seu projeto funcione conforme o esperado no modo de produção localmente. Por exemplo:
     - Dependendo da sua *Package. JSON*, pacotes diferentes podem ser instalados para o modo de produção (`dependencies` versus `devDependencies`).
     - Determinadas estruturas da web podem implantar arquivos estáticos diferentemente em modo de produção.
     - Determinadas estruturas da web podem usar scripts de inicialização personalizada ao ser executado no modo de produção.
-- Execute seu aplicativo no serviço de aplicativo no modo de desenvolvimento. Por exemplo, na [Mean. js](https://meanjs.org/), você pode configurar seu aplicativo para o modo de desenvolvimento no tempo de execução pelo [configuração de `NODE_ENV` configuração do aplicativo](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
+- Execute seu aplicativo no serviço de aplicativo no modo de desenvolvimento. Por exemplo, na [Mean. js](https://meanjs.org/), você pode configurar seu aplicativo para o modo de desenvolvimento no tempo de execução pelo [configuração de `NODE_ENV` configuração do aplicativo](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings).
 
 ## <a name="next-steps"></a>Próximas etapas
 

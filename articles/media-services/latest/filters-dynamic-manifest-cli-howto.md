@@ -14,23 +14,25 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 8e1c031643fc3ce75d99ad619ce46b38c9cba82c
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: c7415bfeadc978fe7b3b6a03265c0643b129afbf
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65472706"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66000162"
 ---
 # <a name="creating-filters-with-cli"></a>Criando filtros com a CLI 
 
-Ao fornecer conteúdo aos clientes (eventos de transmissão ao vivo ou vídeo sob demanda), seu cliente pode precisar de mais flexibilidade que o que é descrito no arquivo de manifesto do ativo padrão. Os Serviços de Mídia do Azure permitem definir filtros de conta e filtros de recursos para o seu conteúdo. Para obter mais informações, consulte [Filtros e manifestos dinâmicos](filters-dynamic-manifest-overview.md).
+Ao fornecer conteúdo aos clientes (eventos de transmissão ao vivo ou vídeo sob demanda), seu cliente pode precisar de mais flexibilidade que o que é descrito no arquivo de manifesto do ativo padrão. Os Serviços de Mídia do Azure permitem definir filtros de conta e filtros de recursos para o seu conteúdo. Para obter mais informações, consulte [filtros](filters-concept.md) e [manifestos dinâmico](filters-dynamic-manifest-overview.md).
 
 Este tópico mostra como configurar um filtro para um ativo de vídeo sob demanda e usar a CLI para os Serviços de Mídia do Microsoft Azure v3 criem [filtros de conta](https://docs.microsoft.com/cli/azure/ams/account-filter?view=azure-cli-latest) e [filtros de ativo](https://docs.microsoft.com/cli/azure/ams/asset-filter?view=azure-cli-latest). 
+
+> [!NOTE]
+> Certifique-se de examinar [presentationTimeRange](filters-concept.md#presentationtimerange).
 
 ## <a name="prerequisites"></a>Pré-requisitos 
 
 - [Crie uma conta de Serviços de Mídia](create-account-cli-how-to.md). Lembre-se de lembrar o nome do grupo de recursos e o nome da conta do Media Services. 
-- Analise [Filtros e manifestos dinâmicos](filters-dynamic-manifest-overview.md).
 
 [!INCLUDE [media-services-cli-instructions](../../../includes/media-services-cli-instructions.md)]
 
@@ -99,7 +101,7 @@ Além disso, veja [exemplos de JSON para filtros](https://docs.microsoft.com/res
 
 ## <a name="associate-filters-with-streaming-locator"></a>Associar filtros de localizador de Streaming
 
-Você pode especificar uma lista de filtros de ativo ou conta, que se aplica a localizador de Streaming. O [empacotador dinâmico (ponto de extremidade de Streaming)](dynamic-packaging-overview.md) se aplica a esta lista de filtros junto com aqueles seu cliente especifica a URL. Essa combinação gera uma [manifesto dinâmico](filters-dynamic-manifest-overview.md), que se baseia nos filtros na URL + filtros que você especificar no localizador de Streaming. É recomendável que você use esse recurso se você deseja aplicar filtros, mas não quiser expor os nomes de filtro na URL.
+Você pode especificar uma lista de filtros de ativo ou conta, que se aplica a localizador de Streaming. O [Dynamic Packager (ponto de extremidade de Streaming)](dynamic-packaging-overview.md) se aplica a esta lista de filtros junto com aqueles seu cliente especifica a URL. Essa combinação gera uma [manifesto dinâmico](filters-dynamic-manifest-overview.md), que se baseia nos filtros na URL + filtros que você especificar no localizador de Streaming. É recomendável que você use esse recurso se você deseja aplicar filtros, mas não quiser expor os nomes de filtro na URL.
 
 O código CLI a seguir mostra como criar um localizador de Streaming e especificar `filters`. Isso é uma propriedade opcional que utiliza uma lista separada por espaço de nomes de recursos de filtro e/ou nomes de conta de filtro.
 

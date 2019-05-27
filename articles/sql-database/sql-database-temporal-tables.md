@@ -12,12 +12,12 @@ ms.author: bonova
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 09/25/2018
-ms.openlocfilehash: 49491c5283ba16c5379c1115fae597bd7fd6ea19
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fbb2458e73330a09124c00cebe3eb7bcaba5408d
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60614164"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951503"
 ---
 # <a name="getting-started-with-temporal-tables-in-azure-sql-database"></a>Introdução às Tabelas Temporais no Banco de Dados SQL do Azure
 
@@ -109,7 +109,7 @@ WITH (DROP_EXISTING = ON);
 ## <a name="step-2-run-your-workload-regularly"></a>Etapa 2: Executar a carga de trabalho regularmente
 A principal vantagem das Tabelas Temporais é que você não precisa alterar ou ajustar seu site de alguma maneira para executar o controle de alterações. Depois de criadas, as Tabelas Temporais fazem as versões de linha persistirem de forma transparente sempre que você executa modificações em seus dados. 
 
-Para aproveitar o controle de alterações automático deste cenário em particular, iremos atualizar apenas a coluna **PagesVisited** sempre que um usuário finalizar sua sessão no site:
+Para aproveitar o controle para esse cenário específico de alterações automático, iremos atualizar apenas a coluna **PagesVisited** toda vez que um usuário encerra sua sessão no site:
 
 ```
 UPDATE WebsiteUserInfo  SET [PagesVisited] = 5 

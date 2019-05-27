@@ -14,12 +14,12 @@ ms.devlang: ruby
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: c2862c3521c05ba81f7a567f7951d22a9ab95c44
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fa3e50374c47f863923252a47b4b54fc1e18f87d
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61472296"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991857"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-ruby"></a>Como usar tópicos e assinaturas do Barramento de Serviço com Ruby
  
@@ -167,6 +167,9 @@ A exclusão de um tópico também exclui todas as assinaturas registradas com o 
 ```ruby
 azure_service_bus_service.delete_subscription("test-topic", "high-messages")
 ```
+
+> [!NOTE]
+> Você pode gerenciar recursos do barramento de serviço com [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). O Service Bus Explorer permite aos usuários para se conectar a um namespace do barramento de serviço e administrar entidades de mensagens de uma maneira fácil. A ferramenta fornece recursos avançados, como a funcionalidade de importação/exportação ou a capacidade de testar tópico, filas, assinaturas, serviços de retransmissão, os hubs de notificação e os hubs de eventos. 
 
 ## <a name="next-steps"></a>Próximas etapas
 Agora que você já sabe os princípios dos tópicos do Barramento de Serviço, acesse estes links para saber mais.

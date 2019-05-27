@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3593324523340300279232e0e63392c9c127991d
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 1107a6df92bf577cd60b9ad31627219da8e1a388
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823575"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956549"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Permissões da função de administrador no Azure Active Directory
 
@@ -335,28 +335,28 @@ Permitido para exibir, definir e redefinir as informações de método de autent
 | microsoft.office365.serviceHealth/allEntities/allTasks | Ler e configurar a Integridade de Serviço do Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Criar e gerenciar tíquetes de suporte do Office 365. |
 
-### <a name="b2c-user-flow-administrator"></a>Administrador de fluxo de usuário do B2C
+### <a name="b2c-user-flow-administrator"></a>Administrador de Fluxo de Usuário B2C
 Criar e gerenciar todos os aspectos de fluxos de usuário.
 
 | **Ações** | **Descrição** |
 | --- | --- |
 | microsoft.aad.b2c/userFlows/allTasks | Ler e configurar fluxos de usuário no Azure Active Directory B2C. |
 
-### <a name="b2c-user-flow-attribute-administrator"></a>Administrador do B2C usuário fluxo de atributo
+### <a name="b2c-user-flow-attribute-administrator"></a>Administrador de Atributo de Fluxo do Usuário B2C
 Criar e gerenciar o esquema de atributo disponível para todos os fluxos de usuário.
 
 | **Ações** | **Descrição** |
 | --- | --- |
 | microsoft.aad.b2c/userAttributes/allTasks | Ler e configurar atributos de usuário no Azure Active Directory B2C. |
 
-### <a name="b2c-ief-keyset-administrator"></a>Administrador de conjunto de chaves do B2C IEF
+### <a name="b2c-ief-keyset-administrator"></a>Administrador de Conjunto de Chaves IEF B2C
 Gerencie segredos de criptografia na estrutura de experiência de identidade e federação.
 
 | **Ações** | **Descrição** |
 | --- | --- |
 | microsoft.aad.b2c/trustFramework/keySets/allTasks | Ler e configurar conjuntos de chaves no Azure Active Directory B2C. |
 
-### <a name="b2c-ief-policy-administrator"></a>Administrador de diretiva IEF B2C
+### <a name="b2c-ief-policy-administrator"></a>Administrador de Política IEF B2C
 Criar e gerenciar políticas de estrutura de relação de confiança na estrutura de experiência de identidade.
 
 | **Ações** | **Descrição** |
@@ -367,7 +367,7 @@ Criar e gerenciar políticas de estrutura de relação de confiança na estrutur
 Pode executar tarefas comuns de relacionadas à cobrança, como atualizar informações de pagamento.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -385,7 +385,7 @@ Pode executar tarefas comuns de relacionadas à cobrança, como atualizar inform
 Pode acessar e gerenciar ferramentas de gerenciamento da Área de Trabalho e serviços, incluindo o Intune.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -458,7 +458,7 @@ Acesso completo para gerenciar os dispositivos no Azure AD.
 Pode gerenciar todos os aspectos do Azure AD e dos serviços da Microsoft que usam identidades do Azure AD.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -524,7 +524,7 @@ Pode gerenciar todos os aspectos do Azure AD e dos serviços da Microsoft que us
 Pode ler e gerenciar a configuração de conformidade e relatórios no Azure AD e no Office 365.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -558,7 +558,7 @@ Pode gerenciar os recursos de acesso condicional.
 Pode gerenciar todos os aspectos do produto Dynamics 365.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -575,7 +575,7 @@ Pode gerenciar todos os aspectos do produto Dynamics 365.
 Pode aprovar solicitações de suporte da Microsoft para acessar dados organizacionais do cliente.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -705,7 +705,7 @@ Pode ler e gravar informações básicas do diretório. Para conceder acesso a a
 Pode gerenciar todos os aspectos do produto Exchange.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -765,7 +765,7 @@ Pode redefinir senhas para não administradores e Administradores de Assistênci
 Pode gerenciar todos os aspectos do produto de Proteção de Informações do Azure.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -781,7 +781,7 @@ Pode gerenciar todos os aspectos do produto de Proteção de Informações do Az
 Pode gerenciar todos os aspectos do produto Intune.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -829,7 +829,7 @@ Pode gerenciar licenças de produto em usuários e grupos.
 Pode gerenciar todos os aspectos do produto Skype for Business.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -846,7 +846,7 @@ Pode gerenciar todos os aspectos do produto Skype for Business.
 Pode ler as mensagens e as atualizações para sua organização somente no Centro de Mensagens do Office 365. 
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -859,7 +859,7 @@ Pode ler as mensagens e as atualizações para sua organização somente no Cent
 Não use – não se destina para uso geral.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -891,7 +891,7 @@ Não use – não se destina para uso geral.
 Não use – não se destina para uso geral.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -925,7 +925,7 @@ Não use – não se destina para uso geral.
 Pode gerenciar todos os aspectos do produto Power BI.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -955,7 +955,7 @@ Tem permissão para exibir, definir e redefinir as informações de método de a
 Pode gerenciar atribuições de função do AD do Azure e todos os aspectos do Privileged Identity Management.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -968,7 +968,7 @@ Pode gerenciar atribuições de função do AD do Azure e todos os aspectos do P
 Pode ler relatórios de entrada e de auditoria.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -984,7 +984,7 @@ Pode ler relatórios de entrada e de auditoria.
 Pode ler relatórios e informações de segurança e gerenciar a configuração no Azure AD e o Office 365.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -1013,7 +1013,7 @@ Pode ler relatórios e informações de segurança e gerenciar a configuração 
 Pode ler relatórios e informações de segurança no Azure AD e no Office 365.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -1033,7 +1033,7 @@ Pode ler relatórios e informações de segurança no Azure AD e no Office 365.
 Pode ler informações de integridade do serviço e gerenciar os tíquetes de suporte.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -1049,7 +1049,7 @@ Pode ler informações de integridade do serviço e gerenciar os tíquetes de su
 Pode gerenciar todos os aspectos do serviço SharePoint.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -1072,7 +1072,7 @@ Pode gerenciar todos os aspectos do serviço SharePoint.
 Pode gerenciar os recursos de chamadas e reuniões dentro do serviço Microsoft Teams.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -1089,7 +1089,7 @@ Pode gerenciar os recursos de chamadas e reuniões dentro do serviço Microsoft 
 Pode solucionar problemas de comunicação em Equipes usando ferramentas avançadas.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -1103,7 +1103,7 @@ Pode solucionar problemas de comunicação em Equipes usando ferramentas avança
 Pode solucionar problemas de comunicação em Equipes usando ferramentas básicas.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 
@@ -1117,7 +1117,7 @@ Pode solucionar problemas de comunicação em Equipes usando ferramentas básica
 Pode gerenciar o serviço Microsoft Teams.
 
   > [!NOTE]
-  > Esta função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
+  > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
   >
   >
 

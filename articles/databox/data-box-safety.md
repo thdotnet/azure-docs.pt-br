@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: alkohli
-ms.openlocfilehash: d0ef3e407fd256b4db351f86b51964cbcb16e819
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d1bad50f2d97434865bb02ad54b1643c54e01790
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60747645"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65953017"
 ---
 # <a name="safely-install-and-operate-your-azure-data-box"></a>Instalar e operar o Azure Data Box com segurança
 ![Ícone de aviso](./media/data-box-safety/warning_icon.png)
@@ -24,7 +24,7 @@ Leia todas as informações de segurança neste artigo antes de usar o Azure Dat
 ## <a name="safety-icon-conventions"></a>Convenções de ícones de segurança
 Estes são os ícones que você encontrará ao ler as precauções de segurança observadas ao configurar e executar seu Data Box.
 
-| ícone | DESCRIÇÃO |
+| Ícone | Descrição |
 |:--- |:--- |
 | ![Ícone de perigo](./media/data-box-safety/warning_icon.png) **PERIGO!** |Indica uma situação perigosa que, se não for evitada, resultará em morte ou lesões graves. Essa palavra limitas-e às situações mais graves. |
 | ![Ícone de aviso](./media/data-box-safety/warning_icon.png) **AVISO!** |Indica uma situação perigosa que, se não for evitada, pode causar lesões graves ou de morte. |
@@ -116,7 +116,7 @@ As alterações ou as modificações feitas no dispositivo não expressamente ap
 
 ![Ícone de observação](./media/data-box-safety/notice_icon.png) **OBSERVAÇÃO:** 
 
-Este equipamento foi testado e considerado em conformidade com os limites de um dispositivo digital Classe A, de acordo com a parte 15 das Regras da FCC. Esses limites são projetados para fornecer uma proteção razoável contra interferência prejudicial quando o equipamento é operado em um ambiente comercial. O equipamento gera, usa e pode irradiar energia de radiofrequência. Se não for instalado e usado de acordo com o manual de instruções, poderá causar interferências prejudiciais às comunicações de rádio. A operação do equipamento em uma área residencial pode causar interferências prejudiciais. Nesse caso, o usuário precisará corrigir a interferência por conta própria.
+Este equipamento foi testado e considerado em conformidade com os limites de um dispositivo digital Classe A, de acordo com a parte 15 das Regras da FCC. Esses limites são projetados para fornecer uma proteção razoável contra interferência prejudicial quando o equipamento é operado em um ambiente comercial. O equipamento gera, usa e pode irradiar energia de radiofrequência. Se não for instalado e usado de acordo com o manual de instruções, poderá causar interferências prejudiciais às comunicações de rádio. Operação deste equipamento em uma área residencial é podem causar interferências prejudiciais em que o caso, o usuário será necessária para corrigir a interferência com seus próprios fundos.
 
 O dispositivo está em conformidade com a parte 15 das Regras da FCC e normas RSS isentas de licença do Canadá. A operação está sujeito a estas duas condições: (1) este dispositivo não pode causar interferência prejudicial e (2) o dispositivo deve aceitar qualquer interferência recebida, inclusive interferência que pode causar operação indesejada do dispositivo.
 

@@ -11,12 +11,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 09/12/2018
 ms.author: glenga
-ms.openlocfilehash: 71ba1266c3a6a1f063f1af4ab37a5f29752c62f0
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 2a6d670ba9f2f496cc94d2790eb6f66d46305746
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62107084"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872795"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Referência do desenvolvedor de C# do Azure Functions
 
@@ -29,16 +29,16 @@ O Azure Functions oferece suporte às linguagens de programação C# e script C#
 Este artigo pressupõe que você tenha completado as seguintes etapas:
 
 * [Guia do desenvolvedor do Azure Functions](functions-reference.md)
-* [Ferramentas do Visual Studio 2017 para Azure Functions](functions-develop-vs.md)
+* [Ferramentas do Visual Studio 2019 do Azure Functions](functions-develop-vs.md)
 
 ## <a name="functions-class-library-project"></a>Projeto de biblioteca de classes de funções
 
 No Visual Studio, o modelo de projeto do **Azure Functions** cria um projeto de biblioteca de classes do C# que contém os seguintes arquivos:
 
 * [host.json](functions-host-json.md) – armazena conjuntos de configurações que afetam todas as funções no projeto quando estão em execução localmente ou no Azure.
-* [local.settings.json](functions-run-local.md#local-settings-file) – armazena as configurações de aplicativo e as cadeias de conexão que são usadas quando estão em execução localmente. Este arquivo contém segredos e não é publicado no aplicativo de funções no Azure. Em vez disso, é necessário [adicionar configurações de aplicativos ao aplicativo de funções](functions-develop-vs.md#function-app-settings).
+* [local.settings.json](functions-run-local.md#local-settings-file) – armazena as configurações de aplicativo e as cadeias de conexão que são usadas quando estão em execução localmente. Este arquivo contém segredos e não é publicado no aplicativo de funções no Azure. Em vez disso, [adicionar configurações de aplicativo para seu aplicativo de funções](functions-develop-vs.md#function-app-settings).
 
-Quando você compila o projeto, uma estrutura de pastas semelhante à seguinte é gerada no diretório de saída de build:
+Quando você compila o projeto, uma estrutura de pastas que se parece com o exemplo a seguir é gerado no diretório de saída de compilação:
 
 ```
 <framework.version>
@@ -50,7 +50,7 @@ Quando você compila o projeto, uma estrutura de pastas semelhante à seguinte �
  | - host.json
 ```
 
-Esse é o diretório implantado no aplicativo de funções no Azure. As extensões de associação necessárias na [versão 2.x](functions-versions.md) do tempo de execução das Funções são [adicionadas ao projeto como pacotes do NuGet](./functions-bindings-register.md#c-class-library-with-visual-studio-2017).
+Esse é o diretório implantado no aplicativo de funções no Azure. As extensões de associação necessárias na [versão 2.x](functions-versions.md) do tempo de execução das Funções são [adicionadas ao projeto como pacotes do NuGet](./functions-bindings-register.md#c-class-library-with-visual-studio-2019).
 
 > [!IMPORTANT]
 > O processo de compilação cria um arquivo *function.json* para cada função. Esse arquivo *function.json* não deve ser editado diretamente. Você não pode alterar a configuração de associação ou desabilitar a função por meio da edição desse arquivo. Para aprender como desabilitar uma função, consulte [Como desabilitar funções](disable-function.md#functions-2x---c-class-libraries).
@@ -72,7 +72,7 @@ public static class SimpleExample
 } 
 ```
 
-O atributo `FunctionName` marca o método como um ponto de entrada da função. O nome deve ser exclusivo dentro de um projeto, começar com uma letra e conter apenas letras, números, `_` e `-`, até 127 caracteres. Modelos de projeto geralmente criam um método chamado `Run`, mas o nome do método pode ser qualquer nome de método C# válido.
+O atributo `FunctionName` marca o método como um ponto de entrada da função. O nome deve ser exclusivo dentro de um projeto, começar com uma letra e conter apenas letras, números `_`, e `-`, até 127 caracteres de comprimento. Modelos de projeto geralmente criam um método chamado `Run`, mas o nome do método pode ser qualquer nome de método C# válido.
 
 O atributo de gatilho especifica o tipo de gatilho e associa dados de entrada a um parâmetro de método. A função de exemplo é disparada por uma mensagem de fila, a qual é transmitida para o método no parâmetro `myQueueItem`.
 
@@ -181,7 +181,7 @@ O mesmo pacote é usado para a versão 1.x e 2.x do tempo de execução do Funct
 </ItemGroup>
 ```
 
-Entre as dependências do pacote `Sdk` estão os gatilhos e associações. Um projeto do 1.x se refere a gatilhos e associações do 1.x, pois são direcionados ao .NET Framework, enquanto os gatilhos e associações do 2.x são direcionados ao .NET Core.
+Entre as dependências do pacote `Sdk` estão os gatilhos e associações. Um projeto do 1.x se refere a associações e gatilhos de 1. x porque esses gatilhos e associações destinam ao .NET Framework, enquanto direcionados ao .NET Core 2.x gatilhos e associações.
 
 O pacote `Sdk` também depende do [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) e, indiretamente, do [WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage). Essas dependências garantem que seu projeto use as versões desses pacotes que funcionam com a versão de tempo de execução do Functions para a qual o projeto é direcionado. Por exemplo, o `Newtonsoft.Json` tem a versão 11 para o .NET Framework 4.6.1, mas o tempo de execução do Functions direcionado para o .NET Framework 4.6.1 só é compatível com o `Newtonsoft.Json` 9.0.1. Portanto, o código de sua função nesse projeto também tem que usar `Newtonsoft.Json` 9.0.1.
 
@@ -231,7 +231,7 @@ public static class ICollectorExample
 }
 ```
 
-## <a name="logging"></a>Registro em log
+## <a name="logging"></a>Registro em Log
 
 A saída de log para logs de streaming em C#, inclue um argumento do tipo [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). É recomendável que você nomeie `log`, conforme mostrado no exemplo a seguir:  
 
@@ -373,7 +373,7 @@ public static class IBinderExample
 
 ### <a name="multiple-attribute-example"></a>Exemplo de atributo múltiplo
 
-O exemplo anterior obtém a configuração do aplicativo para a cadeia de conexão da conta de armazenamento principal do aplicativo de funções (que é `AzureWebJobsStorage`). É possível especificar uma configuração de aplicativo personalizada a ser usada para a conta de armazenamento adicionando [StorageAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) e passando a matriz de atributos para `BindAsync<T>()`. Use um parâmetro `Binder`, não `IBinder`.  Por exemplo: 
+O exemplo anterior obtém a configuração do aplicativo para a cadeia de conexão da conta de armazenamento principal do aplicativo de funções (que é `AzureWebJobsStorage`). É possível especificar uma configuração de aplicativo personalizada a ser usada para a conta de armazenamento adicionando [StorageAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) e passando a matriz de atributos para `BindAsync<T>()`. Use um parâmetro `Binder`, não `IBinder`.  Por exemplo:
 
 ```cs
 public static class IBinderExampleMultipleAttributes

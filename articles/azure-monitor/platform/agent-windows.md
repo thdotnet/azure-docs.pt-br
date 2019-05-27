@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/29/2019
 ms.author: magoedte
-ms.openlocfilehash: 34f02b1d72f08ef5da6b8a5740243b6e557bfb4a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 2d57e619ec17e183bc8c9bb155f3e111f43b85f1
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138137"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65952477"
 ---
 # <a name="connect-windows-computers-to-azure-monitor"></a>Conectar computadores Windows para o Azure Monitor
 
@@ -54,9 +54,9 @@ Antes de instalar o agente do Log Analytics para Windows, você precisa da ID do
 Para configurar o uso do protocolo9 [TLS 1.2](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings#tls-12) para comunicação entre o agente do Windows e o serviço Log Analytics, você pode seguir as etapas abaixo para habilitar antes que o agente seja instalado na máquina virtual ou posteriormente.   
 
 1. Localize a seguinte subchave do Registro: **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols**
-2. Crie uma subchave em **Protocolos** para o TLS 1.2 **HKLM\System\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2**
-3. Criar uma subchave **Cliente** na subchave do protocolo TLS 1.2 que você criou anteriormente. Por exemplo, **HKLM\System\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client**.
-4. Crie os seguintes valores DWORD em **HKLM\System\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client**:
+2. Crie uma subchave sob **protocolos** para o TLS 1.2 **HKLM\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2**
+3. Criar uma subchave **Cliente** na subchave do protocolo TLS 1.2 que você criou anteriormente. Por exemplo, **HKLM\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client**.
+4. Crie os seguintes valores DWORD sob **HKLM\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client**:
 
     * **Habilitado** [Valor = 1]
     * **DisabledByDefault** [Valor = 0]  

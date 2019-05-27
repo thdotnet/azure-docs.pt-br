@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
-ms.openlocfilehash: ed6a50ee68d39e6e0d01b405eb02edd6d4c93613
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 637feb855c7816dfb26229c5a65a069260a58cd3
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407582"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66003091"
 ---
 # <a name="configure-a-linux-php-app-for-azure-app-service"></a>Configurar um aplicativo PHP de Linux para o serviço de aplicativo do Azure
 
@@ -105,7 +105,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ## <a name="access-environment-variables"></a>Acessar variáveis de ambiente
 
-No Serviço de Aplicativo, você pode [definir configurações de aplicativo](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) fora do código do aplicativo. Em seguida, você pode acessá-los usando o padrão [GETENV ()](https://secure.php.net/manual/function.getenv.php) padrão. Por exemplo, para acessar uma configuração de aplicativo chamada `DB_HOST`, use o seguinte código:
+No Serviço de Aplicativo, você pode [definir configurações de aplicativo](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) fora do código do aplicativo. Em seguida, você pode acessá-los usando o padrão [GETENV ()](https://secure.php.net/manual/function.getenv.php) padrão. Por exemplo, para acessar uma configuração de aplicativo chamada `DB_HOST`, use o seguinte código:
 
 ```php
 getenv("DB_HOST")
@@ -147,7 +147,7 @@ Se você precisar fazer alterações em sua instalação do PHP, você pode alte
 > A melhor maneira de ver a versão do PHP e o atual *PHP. ini* configuração é chamar [phpinfo ()](https://php.net/manual/function.phpinfo.php) em seu aplicativo.
 >
 
-### <a name="customize-non-phpinisystem-directives"></a>Personalizar as diretivas de não-PHP_INI_SYSTEM
+### <a name="Customize-non-PHP_INI_SYSTEM directives"></a>Personalizar não PHP_INI_SYSTEM diretivas
 
 Para personalizar as diretivas PHP_INI_USER, PHP_INI_PERDIR e PHP_INI_ALL (consulte [ini](https://www.php.net/manual/ini.list.php)), adicione um *. htaccess* arquivo para o diretório raiz do seu aplicativo.
 
@@ -237,7 +237,7 @@ Quando um aplicativo PHP em funcionamento se comporta de forma diferente no serv
     - Dependendo da sua *Composer. JSON*, pacotes diferentes podem ser instalados para o modo de produção (`require` versus `require-dev`).
     - Determinadas estruturas da web podem implantar arquivos estáticos diferentemente em modo de produção.
     - Determinadas estruturas da web podem usar scripts de inicialização personalizada ao ser executado no modo de produção.
-- Execute seu aplicativo no serviço de aplicativo no modo de depuração. Por exemplo, na [Laravel](https://meanjs.org/), você pode configurar seu aplicativo para gerar mensagens de depuração em produção por [configuração de `APP_DEBUG` configuração do aplicativo para `true` ](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
+- Execute seu aplicativo no serviço de aplicativo no modo de depuração. Por exemplo, na [Laravel](https://meanjs.org/), você pode configurar seu aplicativo para gerar mensagens de depuração em produção por [configuração de `APP_DEBUG` configuração do aplicativo para `true` ](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings).
 
 ### <a name="robots933456"></a>robots933456
 

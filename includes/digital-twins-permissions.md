@@ -9,11 +9,11 @@ ms.date: 12/17/2018
 ms.author: alinast
 ms.custom: include file
 ms.openlocfilehash: e8027e16cc1f58fbadbb35ae241ab29010005586
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53584713"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66153720"
 ---
 1. No [portal do Azure](https://portal.azure.com), abra **Azure Active Directory** no painel esquerdo e, em seguida, abra o painel **Propriedades**. Cópia da **ID de diretório** em um arquivo temporário. Você usará esse valor para configurar o aplicativo de exemplo na próxima seção.
 

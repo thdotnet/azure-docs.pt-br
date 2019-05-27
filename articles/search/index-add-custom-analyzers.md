@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 5983c2036ff206825a82072b57ca2b9bb44ca678
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: e9daebf46093e38858feff87ca5c4ba89638aa74
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65021671"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951894"
 ---
 # <a name="add-custom-analyzers-to-an-azure-search-index"></a>Adicionar analisadores personalizados a um índice do Azure Search
 
@@ -223,7 +223,7 @@ Para os analisadores, os atributos de índice variam dependendo se você estiver
 |-|-|  
 |NOME|Deve conter apenas letras, números, espaços, traços ou sublinhados, pode começar e terminar apenas com caracteres alfanuméricos e está limitado a 128 caracteres.|  
 |Type|Deve ser "#Microsoft.Azure.Search.CustomAnalyzer".|  
-|CharFilters|Defina como um dos filtros de caracteres predefinidos listados na tabela [Filtros de caracteres](#CharFilter) ou um filtro de caracteres personalizado especificado na definição do índice.|  
+|CharFilters|Defina como um dos filtros de caracteres predefinidos listados na tabela [Filtros de caracteres](#char-filters-reference) ou um filtro de caracteres personalizado especificado na definição do índice.|  
 |Gerador de token|Obrigatório. Defina como um dos criadores de token predefinidos listados na tabela [Criadores de token](#Tokenizers) abaixo ou um criador de token personalizado especificado na definição do índice.|  
 |Filtros de token|Defina como um dos filtros de token predefinidos listados na tabela [Filtros de token](#TokenFilters) ou um filtro de token personalizado especificado na definição do índice.|  
 
@@ -236,8 +236,8 @@ Para os analisadores, os atributos de índice variam dependendo se você estiver
 |||  
 |-|-|  
 |NOME|Deve conter apenas letras, números, espaços, traços ou sublinhados, pode começar e terminar apenas com caracteres alfanuméricos e está limitado a 128 caracteres.|  
-|Type|Tipo de filtro de caracteres da lista de filtros de caracteres com suporte. Confira a coluna **char_filter_type** na tabela [Filtros de caracteres](#CharFilter) abaixo.|  
-|Opções|Deve ser uma opção válida de um determinado tipo de [Filtros de caracteres](#CharFilter).|  
+|Type|Tipo de filtro de caracteres da lista de filtros de caracteres com suporte. Confira a coluna **char_filter_type** na tabela [Filtros de caracteres](#char-filters-reference) abaixo.|  
+|Opções|Deve ser uma opção válida de um determinado tipo de [Filtros de caracteres](#char-filters-reference).|  
 
 ### <a name="tokenizers"></a>Criadores de token
 
@@ -351,7 +351,7 @@ Na tabela abaixo, os filtros de token que são implementados usando o Apache Luc
 |[keyword_marker](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/miscellaneous/KeywordMarkerFilter.html)|KeywordMarkerTokenFilter|Marca termos como palavras-chave.<br /><br /> **Opções**<br /><br /> keywords (tipo: cadeia de caracteres) — uma lista de palavras para marcar como palavras-chave. O padrão é uma lista vazia. Obrigatório.<br /><br /> ignoreCase (tipo: bool) — se true, muda para minúsculas todas as palavras primeiro. O padrão é false.|  
 |[keyword_repeat](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/miscellaneous/KeywordRepeatFilter.html)|(o tipo aplica-se somente quando há opções disponíveis)  |Emite cada token de entrada duas vezes: uma vez como palavra-chave e uma vez como não palavra-chave. |  
 |[kstem](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/en/KStemFilter.html)|(o tipo aplica-se somente quando há opções disponíveis)  |Um filtro kstem de alto desempenho para o inglês. |  
-|[length](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/miscellaneous/LengthFilter.html)|LengthTokenFilter|Remove palavras muito longas ou muito curtas.<br /><br /> **Opções**<br /><br /> min (tipo: int) — o número mínimo. Padrão: 0, máximo: 300.<br /><br /> max (tipo: int) — o número máximo. Padrão: 300, máximo: 300.|  
+|[Comprimento](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/miscellaneous/LengthFilter.html)|LengthTokenFilter|Remove palavras muito longas ou muito curtas.<br /><br /> **Opções**<br /><br /> min (tipo: int) — o número mínimo. Padrão: 0, máximo: 300.<br /><br /> max (tipo: int) — o número máximo. Padrão: 300, máximo: 300.|  
 |[limit](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/miscellaneous/LimitTokenCountFilter.html)|Microsoft.Azure.Search.LimitTokenFilter|Limita o número de tokens durante a indexação.<br /><br /> **Opções**<br /><br /> maxTokenCount (tipo: int) — número máximo de tokens a produzir. O padrão é 1.<br /><br /> consumeAllTokens (tipo: bool) — se todos os tokens da entrada devem ser consumidos, mesmo se maxTokenCount for atingido. O padrão é false.|  
 |[lowercase](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/core/LowerCaseFilter.html)|(o tipo aplica-se somente quando há opções disponíveis)  |Normaliza o texto do token para letras minúsculas. |  
 |[nGram_v2](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/ngram/NGramTokenFilter.html)|NGramTokenFilterV2|Gera n-gramas de determinados tamanhos.<br /><br /> **Opções**<br /><br /> minGram (tipo: int) — padrão: 1, máximo: 300.<br /><br /> maxGram (tipo: int) — padrão: 2, máximo de 300. Deve ser maior que minGram.|  

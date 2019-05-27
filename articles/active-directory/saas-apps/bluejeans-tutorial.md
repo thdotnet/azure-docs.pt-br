@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39e9f52948d035c72a6a019558915d8c92ceebeb
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 2830e95f042d5c83d91d6c026d2fa2e70eb3e3b2
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65463503"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65901122"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bluejeans"></a>Tutorial: Integração do Azure Active Directory ao BlueJeans
 
@@ -108,7 +108,7 @@ Para configurar o logon único do Azure AD com o BlueJeans, execute as seguintes
 
     ![Informações de logon único de Domínio e URLs do BlueJeans](media/bluejeans-tutorial/tutorial_bluejeans-basic-configuration.png)
 
-   - Na caixa de texto **Identificador**, digite as seguintes informações: `https://samlsp.bluejeans.com`
+   - Na caixa de texto **Identificador**, digite as seguintes informações: `http://samlsp.bluejeans.com`
     
    - Na caixa de texto **URL de logon**, digite a URL da página de destino fornecido a você pelo BlueJeans (para obter esse valor, entre em contato com a [equipe de suporte do BlueJeans Client](https://support.bluejeans.com/contact)): `https://<companyname>.bluejeans.com`
     
@@ -160,9 +160,9 @@ Para configurar o logon único do Azure AD com o BlueJeans, execute as seguintes
 
     ![Salvar Alterações](./media/bluejeans-tutorial/ic785874.png "Salvar Alterações")
 
-     a. Na caixa de texto **ID de usuário**, digite `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+     a. Na caixa de texto **ID de usuário**, digite `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
-    b. Na caixa de texto **Email**, digite `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    b. Na caixa de texto **Email**, digite `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
     c. Clique em **SALVAR ALTERAÇÕES**.
 

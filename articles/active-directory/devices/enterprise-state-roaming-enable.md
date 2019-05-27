@@ -17,12 +17,12 @@ ms.topic: article
 ms.date: 10/25/2018
 ms.author: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7e665f3124296392c8138f4f2bd3632b56e53de
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 88e825ebc08b4bfbd65f81b7b2480ead9be314b5
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230939"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65954938"
 ---
 # <a name="enable-enterprise-state-roaming-in-azure-active-directory"></a>Habilitar o Enterprise State Roaming no Active Directory do Azure
 Enterprise State Roaming está disponível para qualquer organização com uma licença Azure AD Premium ou Enterprise Mobility + Security (EMS). Para saber mais sobre como obter uma assinatura do Azure AD, confira a [página de produto do Azure AD](https://azure.microsoft.com/services/active-directory).
@@ -84,7 +84,7 @@ Exclusão explícita é quando o administrador do Azure exclui um usuário ou di
 Os dados que não forem acessados por um ano ("o período de retenção") serão tratados como obsoletos e poderão ser excluídos da nuvem da Microsoft. O período de retenção está sujeito a alterações, mas não será menos de 90 dias. Os dados obsoletos podem ser um conjunto específico de configurações do Windows/aplicativo ou todas as configurações para um usuário específico. Por exemplo:
 
 * Se nenhum dispositivo acessar uma coleção de configurações em particular (por exemplo, um aplicativo é removido do dispositivo ou um grupo de configurações, como "Tema" é desabilitado para todos os dispositivos do usuário), essa coleção se tornará obsoleta após o período de retenção e poderá ser excluída. 
-* Se um usuário tiver desativado a sincronização de configurações em todos os dispositivos, nenhum dos dados de configuração será acessado e todos os dados de configuração do usuário se tornarão obsoletos e poderão ser excluídos após o período de retenção. 
+* Se um usuário tiver desativado a sincronização de configurações em todos os seus dispositivos, em seguida, nenhum dos dados de configuração será acessado e todos os dados de configurações para esse usuário tornarão obsoletos e poderão ser excluídos após o período de retenção. 
 * Se o administrador de diretório do AD do Azure desativar o Enterprise State Roaming para o diretório inteiro, todos os usuários desse diretório terão a sincronização de configurações interrompida, e todos os dados de configuração de todos os usuários se tornarão obsoletos e poderão ser excluídos após o período de retenção. 
 
 ### <a name="deleted-data-recovery"></a>Recuperação de dados excluídos

@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 05/02/2019
 ms.author: travisw
 ms.custom: ''
-ms.openlocfilehash: e2b25875a0dff12bba32b033bca0c35394d407aa
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: e03cc45c5868f90dd1c2da0d7b4890fbf72c9899
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65465636"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65954784"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-uwp"></a>Início Rápido: Criar um assistente virtual que tem como prioridade o uso de voz com o SDK de Fala, UWP
 
@@ -353,7 +353,6 @@ Este Início Rápido descreverá, passo a passo, como criar um aplicativo client
     ![Captura de tela da solicitação de permissão](media/sdk/qs-csharp-uwp-10-access-prompt.png "Iniciar o aplicativo na depuração")
 
 1. Selecione **Falar com o bot** e fale uma frase ou uma sentença em inglês no microfone do dispositivo. Sua fala será transmitida para o canal de Fala do Direct Line e transcrita em texto, que será exibida na janela.
-quickstart-cs-uwp-bot-successful-turn
 
     ![Captura de tela de um turno bem-sucedido do bot](media/voice-first-virtual-assistants/quickstart-cs-uwp-bot-successful-turn.png "Um turno bem-sucedido do bot")
 

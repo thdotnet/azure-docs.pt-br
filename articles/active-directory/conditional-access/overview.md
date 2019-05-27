@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eeb1289ba615fea6e6c43b256da6978534d9edc7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 32ad8c12834ee538e231b38f9098c741fdc17954
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799365"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65997230"
 ---
 # <a name="what-is-conditional-access-in-azure-active-directory"></a>O que é o acesso condicional no Azure Active Directory?
 
@@ -64,7 +64,7 @@ Política de acesso condicional é a definição de um cenário de acesso que us
 
 - **[Usuários](conditions.md#users-and-groups)**: Os usuários que realizam uma tentativa de acesso (**Quem**).
 
-- **[Aplicativos de nuvem](conditions.md#cloud-apps)**: Os destinos de uma tentativa de acesso (**O quê**).
+- **[Aplicativos de nuvem](conditions.md#cloud-apps-and-actions)**: Os destinos de uma tentativa de acesso (**O quê**).
 
 Essas duas condições são obrigatórias em uma política de acesso condicional. Além das duas condições obrigatórias, você também pode incluir condições adicionais que descrevam como a tentativa de acesso é realizada. Os exemplos comuns estão usando dispositivos móveis ou locais que estejam fora da rede corporativa. Para saber mais, confira [Condições no acesso condicional do Azure Active Directory](conditions.md).
 
@@ -86,9 +86,9 @@ Quando a política de acesso condicional configurada exige a autenticação mult
 
 Depois que o usuário tiver se conectado ao serviço de autenticação federada, o Azure AD lidará com outros requisitos de política, como a conformidade do dispositivo ou um aplicativo aprovado.
 
-## <a name="license-requirements-for-using-conditional-access"></a>Requisitos de licença para usar o acesso condicional
+## <a name="license-requirements"></a>Requisitos de licença
 
-O uso do acesso condicional requer uma licença do Microsoft Azure AD Premium. Para localizar a licença correta para os requisitos, consulte [Comparar recursos geralmente disponíveis nas edições Gratuita, Básica e Premium](https://azure.microsoft.com/pricing/details/active-directory/).
+[!INCLUDE [Active Directory P1 license](../../../includes/active-directory-p1-license.md)]
 
 ## <a name="next-steps"></a>Próximas etapas
 

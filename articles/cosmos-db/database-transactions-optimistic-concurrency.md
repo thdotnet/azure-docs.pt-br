@@ -4,21 +4,21 @@ description: Este artigo descreve o controle de transações e simultaneidade ot
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 04/08/2019
+ms.date: 05/21/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 568f47aacf39793d4c2da46798682abc002ca33b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1da5dabad04d72c903072a33dfb7b0229f99c62d
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60889348"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65978982"
 ---
 # <a name="transactions-and-optimistic-concurrency-control"></a>Controle de transações e simultaneidade otimista
 
 As transações do banco de dados oferecem um modelo de programação seguro e previsível para lidar com alterações simultâneas aos dados. Tradicionais bancos de dados relacionais como o SQL Server, permitem que você escreva a lógica de negócios usando procedimentos armazenados e/ou gatilhos, enviá-lo para o servidor para execução diretamente no mecanismo de banco de dados. Com bancos de dados relacionais tradicionais, será necessário lidar com duas linguagens de programação diferentes o linguagem como JavaScript, Python, de programação de aplicativo (não transacional) C#, Java, etc. e (linguagem de programação transacional como o T-SQL) que é executada nativamente pelo banco de dados.
 
-O mecanismo de banco de dados no Azure Cosmos DB dá suporte completo a transações em conformidade ACID (atomicidade, consistência, isolamento, durabilidade) com isolamento de instantâneo. Todas as operações de banco de dados dentro do escopo de um contêiner [partição lógica](partition-data.md) executada de forma transacional dentro do mecanismo de banco de dados que é hospedado pela réplica da partição. Essas operações incluem operações de gravação (atualização de um ou mais itens dentro da partição lógica) e de leitura. A tabela a seguir ilustra diferentes operações e tipos de transação:
+O mecanismo de banco de dados no Azure Cosmos DB dá suporte completo a transações em conformidade ACID (atomicidade, consistência, isolamento, durabilidade) com isolamento de instantâneo. Todas as operações de banco de dados dentro do escopo de um contêiner [partição lógica](partition-data.md) executada de forma transacional dentro do mecanismo de banco de dados que é hospedado pela réplica da partição. Essas operações incluem operações de gravação (atualização de um ou mais itens dentro da partição lógica) e de leitura. A tabela a seguir ilustra as diferentes operações e os tipos de transação:
 
 | **Operação**  | **Tipo de operação** | **Transação de item único ou de vários itens** |
 |---------|---------|---------|

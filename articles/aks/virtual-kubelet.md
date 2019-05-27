@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/14/2018
 ms.author: iainfou
-ms.openlocfilehash: a6a2fb246e407d6ea240ff40f4d2fa2b1b780931
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f7a0269ff22987648d134cb7f4fba8e28e29fd8b
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023706"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956283"
 ---
 # <a name="use-virtual-kubelet-with-azure-kubernetes-service-aks"></a>Usar o Virtual Kubelet com o serviço de Kubernetes do Azure (AKS)
 
@@ -26,13 +26,35 @@ Ao usar o provedor Kubelet Virtual para Instâncias de Contêiner do Azure, os c
 >
 > Kubelet Virtual é um projeto experimental de software livre e deve ser usado como tal. Para contribuir, registrar problemas e ler mais sobre kubelet virtual, confira o [projeto Kubelet Virtual do GitHub][vk-github].
 
-## <a name="prerequisite"></a>Pré-requisito
+## <a name="before-you-begin"></a>Antes de começar
 
 Este documento presume que você tenha um cluster AKS. Se você precisar de um cluster AKS, consulte o [início rápido do AKS (Serviço de Kubernetes do Azure)][aks-quick-start].
 
 Você também precisa da CLI do Azure versão **2.0.33** ou posterior. Execute `az --version` para encontrar a versão. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure](/cli/azure/install-azure-cli).
 
 Para instalar o Virtual Kubelet, [Helm](https://docs.helm.sh/using_helm/#installing-helm) também é necessário.
+
+### <a name="register-container-instances-feature-provider"></a>Registrar o provedor de recursos de instâncias de contêiner
+
+Se você não tiver usado o serviço de instância de contêiner do Azure (ACI), registre o provedor de serviço com sua assinatura. Você pode verificar o status do registro do provedor ACI usando o comando [az-provedor-list] a [lista de provedor az], conforme mostrado no exemplo a seguir:
+
+```azurecli-interactive
+az provider list --query "[?contains(namespace,'Microsoft.ContainerInstance')]" -o table
+```
+
+O provedor *Microsoft.ContainerInstance* deve relatar como *registrado*, conforme mostrado na saída de exemplo a seguir:
+
+```
+Namespace                    RegistrationState
+---------------------------  -------------------
+Microsoft.ContainerInstance  Registered
+```
+
+Se o provedor é exibido como *NotRegistered*, registrar o provedor usando o [az registrar provedor] [az-provider-register] conforme mostrado no exemplo a seguir:
+
+```azurecli-interactive
+az provider register --namespace Microsoft.ContainerInstance
+```
 
 ### <a name="for-rbac-enabled-clusters"></a>Para clusters habilitados para RBAC
 
@@ -85,18 +107,18 @@ az aks install-connector --resource-group myAKSCluster --name myAKSCluster --con
 
 Esses argumentos estão disponíveis para o comando `aks install-connector`.
 
-| Argumento: | DESCRIÇÃO | Obrigatório |
+| Argumento: | Descrição | Obrigatório |
 |---|---|:---:|
 | `--connector-name` | Nome do conector ACI.| Sim |
 | `--name` `-n` | Nome do cluster gerenciado. | Sim |
 | `--resource-group` `-g` | Nome do grupo de recursos. | Sim |
-| `--os-type` | Tipo de sistema operacional de instâncias de contêiner. Valores permitidos: Ambos, Linux, Windows. Padrão: Linux. | Não  |
-| `--aci-resource-group` | O grupo de recursos no qual criar os grupos de contêiner do ACI. | Não  |
-| `--location` `-l` | O local para criar os grupos de contêiner do ACI. | Não  |
-| `--service-principal` | A entidade de serviço usada para autenticação em APIs do Azure. | Não  |
-| `--client-secret` | Segredo associado à entidade de serviço. | Não  |
-| `--chart-url` | URL de um gráfico Helm que instala o conector ACI. | Não  |
-| `--image-tag` | A marca de imagem da imagem de contêiner do kubelet virtual. | Não  |
+| `--os-type` | Tipo de sistema operacional de instâncias de contêiner. Valores permitidos: Ambos, Linux, Windows. Padrão: Linux. | Não |
+| `--aci-resource-group` | O grupo de recursos no qual criar os grupos de contêiner do ACI. | Não |
+| `--location` `-l` | O local para criar os grupos de contêiner do ACI. | Não |
+| `--service-principal` | A entidade de serviço usada para autenticação em APIs do Azure. | Não |
+| `--client-secret` | Segredo associado à entidade de serviço. | Não |
+| `--chart-url` | URL de um gráfico Helm que instala o conector ACI. | Não |
+| `--image-tag` | A marca de imagem da imagem de contêiner do kubelet virtual. | Não |
 
 ## <a name="validate-virtual-kubelet"></a>Validar Kubelet Virtual
 

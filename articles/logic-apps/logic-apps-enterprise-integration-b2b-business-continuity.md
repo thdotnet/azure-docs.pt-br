@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: cf44af18-1fe5-41d5-9e06-cc57a968207c
 ms.date: 04/10/2017
-ms.openlocfilehash: 8d024e0bc90724892bc53f8895b270716ad0cefc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ac29ef7f0599cc41924ba1a5a00e46b0292e7e9b
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61000866"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967751"
 ---
 # <a name="cross-region-disaster-recovery-for-b2b-integration-accounts-in-azure-logic-apps"></a>Recuperação de desastre entre regiões para contas de integração B2B nos Aplicativos Lógicos do Azure
 
@@ -62,7 +62,7 @@ A continuidade dos negócios em uma conta de integração dos Aplicativos Lógic
 
 Durante um evento de desastre, quando a região primária não está disponível, direcione o tráfego para a região secundária para continuidade de negócios. Uma região secundária ajuda uma empresa a recuperar as funções rapidamente para atender ao RPO/RTO definido por seus parceiros. Ela também minimiza os esforços de failover de uma região para outra. 
 
-Há uma latência esperada durante a cópia de números de controle de uma região primária para uma região secundária. Para evitar o envio de números de controle gerados duplicados para parceiros durante um evento de desastre, a recomendação é aumentar os números de controle nos contratos da região secundária usando [cmdlets do PowerShell](https://blogs.msdn.microsoft.com/david_burgs_blog/2017/03/09/fresh-of-the-press-new-azure-powershell-cmdlets-for-upcoming-x12-connector-disaster-recovery).
+Há uma latência esperada durante a cópia de números de controle de uma região primária para uma região secundária. Para evitar o envio de números de controle gerados duplicados para parceiros durante um evento de desastre, a recomendação é aumentar os números de controle nos contratos da região secundária usando [cmdlets do PowerShell](https://docs.microsoft.com/powershell/module/azurerm.logicapp/set-azurermintegrationaccountgeneratedicn?view=azurermps-6.13.0).
 
 ## <a name="fall-back-to-a-primary-region-post-disaster-event"></a>Fazer failback para o evento pós-desastre em uma região primária
 
@@ -70,7 +70,7 @@ Para fazer failback em uma região primária quando ela estiver disponível, sig
 
 1. Pare de aceitar mensagens de parceiros na região secundária.  
 
-2. Aumente os números de controle gerados para todos os contratos da região primária usando [cmdlets do PowerShell](https://blogs.msdn.microsoft.com/david_burgs_blog/2017/03/09/fresh-of-the-press-new-azure-powershell-cmdlets-for-upcoming-x12-connector-disaster-recovery).  
+2. Aumente os números de controle gerados para todos os contratos da região primária usando [cmdlets do PowerShell](https://docs.microsoft.com/powershell/module/azurerm.logicapp/set-azurermintegrationaccountgeneratedicn?view=azurermps-6.13.0).  
 
 3. Direcione o tráfego da região secundária para a região primária.
 

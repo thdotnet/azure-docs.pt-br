@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 09/22/2018
 ms.custom: mvc
 ms.author: aschhab
-ms.openlocfilehash: dd73fd8105de2a5fd24ffa8ad5db85da5e52228c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 0ab658b26a44e98b073c477c1aaeeb683372ee46
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58918834"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65988483"
 ---
 # <a name="what-is-azure-service-bus"></a>O que é o Barramento de Serviço do Azure?
 
@@ -129,3 +129,4 @@ Para começar a usar o sistema de mensagens do Barramento de Serviço, consulte 
 * Saiba mais sobre as camadas [Standard e Premium](https://azure.microsoft.com/pricing/details/service-bus/) do Barramento de Serviço do Azure e o respectivo preço
 * [Desempenho e latência da camada Premium do Barramento de Serviço do Azure](https://techcommunity.microsoft.com/t5/Service-Bus-blog/Premium-Messaging-How-fast-is-it/ba-p/370722)
 * Experimente os inícios rápidos em [.NET](service-bus-dotnet-get-started-with-queues.md), [Java](service-bus-java-how-to-use-queues.md) ou [JMS](service-bus-java-how-to-use-jms-api-amqp.md)
+* [Gerenciar recursos do Barramento de Serviço com o Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/releases)

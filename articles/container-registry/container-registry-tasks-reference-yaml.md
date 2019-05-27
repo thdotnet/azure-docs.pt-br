@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: danlep
-ms.openlocfilehash: d50d5bc91fbb86e5c0c3d2acc3b55c7d02c71723
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: bdf88657c11bdb5ab5bcde97c155780328065c7e
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65192259"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65954462"
 ---
 # <a name="acr-tasks-reference-yaml"></a>Referência das Tarefas do ACR: YAML
 
@@ -79,32 +79,32 @@ az configure --defaults acr=myregistry
 
 Propriedades da tarefa normalmente são exibidos na parte superior de um `acr-task.yaml` de arquivo e são as propriedades globais que se aplicam durante a execução completa de etapas do. Algumas dessas propriedades globais podem ser substituídas em uma etapa individual.
 
-| Propriedade | Type | Opcional | DESCRIÇÃO | Substituição com suporte | Valor padrão |
+| Propriedade | Type | Opcional | Descrição | Substituição com suporte | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------------------ | ------------- |
-| `version` | string | Sim | A versão do arquivo `acr-task.yaml` conforme analisado pelo serviço de Tarefas do ACR. Enquanto as Tarefas do ACR se esforçam para manter a compatibilidade com versões anteriores, esse valor permite que as Tarefas do ACR mantenham a compatibilidade dentro de uma versão definida. Se não for especificado, assume como padrão para a versão mais recente. | Não  | Nenhum |
+| `version` | string | Sim | A versão do arquivo `acr-task.yaml` conforme analisado pelo serviço de Tarefas do ACR. Enquanto as Tarefas do ACR se esforçam para manter a compatibilidade com versões anteriores, esse valor permite que as Tarefas do ACR mantenham a compatibilidade dentro de uma versão definida. Se não for especificado, assume como padrão para a versão mais recente. | Não | Nenhum |
 | `stepTimeout` | int (segundos) | Sim | O número máximo de segundos em que uma etapa pode ser executada. Se a propriedade é especificada em uma tarefa, ele define o padrão `timeout` propriedade de todas as etapas. Se o `timeout` propriedade é especificada em uma etapa, ela substitui a propriedade fornecida pela tarefa. | Sim | 600 (10 minutos) |
 | `workingDirectory` | string | Sim | O diretório de trabalho do contêiner durante o tempo de execução. Se a propriedade é especificada em uma tarefa, ele define o padrão `workingDirectory` propriedade de todas as etapas. Se especificado em uma etapa, ele substitui a propriedade fornecida pela tarefa. | Sim | `$HOME` |
 | `env` | [string, string, ...] | Sim |  Matriz de cadeias de caracteres em `key=value` formato que define as variáveis de ambiente para a tarefa. Se a propriedade é especificada em uma tarefa, ele define o padrão `env` propriedade de todas as etapas. Se especificado em uma etapa, ele substitui quaisquer variáveis de ambiente herdadas da tarefa. | Nenhum |
 | `secrets` | [segredo, segredo,...] | Sim | Matriz de [segredo](#secret) objetos. | Nenhum |
 | `networks` | [network, rede,...] | Sim | Matriz de [rede](#network) objetos. | Nenhum |
 
-### <a name="secret"></a>segredo
+### <a name="secret"></a>secreta
 
 O objeto de segredo tem as seguintes propriedades.
 
-| Propriedade | Type | Opcional | DESCRIÇÃO | Valor padrão |
+| Propriedade | Type | Opcional | Descrição | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------- |
-| `id` | string | Não  | O identificador do segredo. | Nenhum |
-| `akv` | string | Sim | A URL de segredo do Cofre de chaves do Azure (AKV). | Nenhum |
+| `id` | string | Não | O identificador do segredo. | Nenhum |
+| `keyvault` | string | Sim | A URL de segredo do Cofre de chaves do Azure. | Nenhum |
 | `clientID` | string | Sim | ID do cliente do que o usuário atribuído gerenciado de identidade para recursos do Azure. | Nenhum |
 
 ### <a name="network"></a>rede
 
 O objeto de rede tem as seguintes propriedades.
 
-| Propriedade | Type | Opcional | DESCRIÇÃO | Valor padrão |
+| Propriedade | Type | Opcional | Descrição | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------- | 
-| `name` | string | Não  | O nome da rede. | Nenhum |
+| `name` | string | Não | O nome da rede. | Nenhum |
 | `driver` | string | Sim | O driver para gerenciar a rede. | Nenhum |
 | `ipv6` | bool | Sim | Se a rede IPv6 está habilitada. | `false` |
 | `skipCreation` | bool | Sim | Se deseja ignorar a criação de rede. | `false` |
@@ -114,7 +114,7 @@ O objeto de rede tem as seguintes propriedades.
 
 As Tarefas do ACR dão suporte a três tipos de etapas. Cada tipo de etapa dá suporte a várias propriedades, detalhadas na seção para cada tipo de etapa.
 
-| Tipo de etapa | DESCRIÇÃO |
+| Tipo de etapa | Descrição |
 | --------- | ----------- |
 | [`build`](#build) | Compila uma imagem de contêiner usando a sintaxe `docker build` familiar. |
 | [`push`](#push) | Executa um `docker push` de imagens recentemente compiladas ou remarcadas em um registro de contêiner. Há suporte para o Registro de Contêiner do Azure, outros Registros privados e o Hub do Docker público. |
@@ -135,11 +135,11 @@ steps:
 
 O tipo de etapa `build` suporta os parâmetros na tabela a seguir. O tipo de etapa `build` também suporta todas as opções de construção do comando [docker build](https://docs.docker.com/engine/reference/commandline/build/), como `--build-arg` para definir variáveis de tempo de criação.
 
-| Parâmetro | DESCRIÇÃO | Opcional |
+| Parâmetro | Descrição | Opcional |
 | --------- | ----------- | :-------: |
 | `-t` &#124; `--image` | Define o `image:tag` totalmente qualificado da imagem compilada.<br /><br />Como as imagens podem ser utilizadas para validações de tarefas internas, como testes funcionais, nem todas as imagens exigem `push` para um Registro. No entanto, para criar uma instância de uma imagem dentro de uma execução de Tarefa, a imagem precisa de um nome para fazer referência.<br /><br />Ao contrário de `az acr build`, executando tarefas de ACR não fornece o comportamento de envio por push padrão. Com as Tarefas do ACR, o cenário padrão pressupõe a capacidade de compilar, validar e efetuar push de uma imagem. Confira [push](#push) para saber como efetuar push de imagens compiladas opcionalmente. | Sim |
 | `-f` &#124; `--file` | Especifica o Dockerfile passado para `docker build`. Se não for especificado, o Dockerfile padrão na raiz do contexto será considerado. Para especificar um Dockerfile, passe o nome do arquivo relativo à raiz do contexto. | Sim |
-| `context` | O diretório raiz passado para `docker build`. O diretório raiz de cada tarefa é definido como um [workingDirectory](#task-step-properties) compartilhado e inclui a raiz do diretório clonado Git associado. | Não  |
+| `context` | O diretório raiz passado para `docker build`. O diretório raiz de cada tarefa é definido como um [workingDirectory](#task-step-properties) compartilhado e inclui a raiz do diretório clonado Git associado. | Não |
 
 ### <a name="properties-build"></a>Propriedades: compilar
 
@@ -362,7 +362,7 @@ Usando o padrão `docker run` convenção de referência de imagem `cmd` pode ex
 
 Cada tipo de etapa dá suporte a várias propriedades apropriadas para seu tipo. A tabela a seguir define todas as propriedades das etapas disponíveis. Nem todos os tipos de etapas dão suporte a todas as propriedades. Para ver quais dessas propriedades estão disponíveis para cada tipo de etapa, confira as seções de referência de tipo de etapa [cmd](#cmd), [compilar](#build) e [efetuar push](#push).
 
-| Propriedade | Type | Opcional | DESCRIÇÃO | Valor padrão |
+| Propriedade | Type | Opcional | Descrição | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------- |
 | `detach` | bool | Sim | Se o contêiner deve ser desanexado quando está em execução. | `false` |
 | `disableWorkingDirectoryOverride` | bool | Sim | Se deseja desabilitar `workingDirectory` substituir a funcionalidade. Use isso em combinação com `workingDirectory` ter controle total sobre o diretório de trabalho do contêiner. | `false` |

@@ -8,12 +8,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 4/16/2019
 ms.author: yoafr
-ms.openlocfilehash: 5ac6603be087e887e3304f6a7e14aa063863e1dd
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 069345f9c2d0fff0b580365153d8be13bb4ba204
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65796460"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65952144"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Desativação de recursos da Central de segurança (julho de 2019)
 
@@ -162,7 +162,7 @@ Se você tiver as soluções existentes de conectada, incentivamos você a mover
 
 Central de segurança do Azure monitora as configurações de segurança aplicando um conjunto de [mais de 150 regras recomendadas](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335). para proteger o sistema operacional. Essas regras pertencem aos firewalls, auditoria, políticas de senha e muito mais. Se uma configuração vulnerável é encontrada em um computador, a Central de Segurança gera uma recomendação de segurança. O [tela de configuração de segurança de edição](https://docs.microsoft.com/azure/security-center/security-center-customize-os-security-config) permite que os clientes personalizar a configuração de segurança padrão do sistema operacional na Central de segurança.
 
-Podemos está se aposentando esse recurso de visualização.
+Podemos está se aposentando esse recurso de visualização. Se, após a data de desativação, você deseja ter redefinir suas configurações de segurança para seus valores padrão, você pode fazer isso por meio do Powershell ou a API usando o [seguindo instruções](https://aka.ms/ascresetsecurityconfigurations)
 
 ![Editar configurações de segurança][17]
 

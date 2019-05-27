@@ -5,21 +5,21 @@ services: cdn
 documentationcenter: ''
 author: mdgattuso
 manager: danielgi
-editor: ''
+editor: sohamnchatterjee
 ms.assetid: 0b50230b-fe82-4740-90aa-95d4dde8bd4f
 ms.service: cdn
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/23/2017
+ms.date: 05/17/2019
 ms.author: magattus
-ms.openlocfilehash: 76e7817be81a97c8d1a0b9ca2fea8378c3c733e1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 94d9fb0878458f3de0a64fac57af4a70e1875112
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60324841"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65909689"
 ---
 # <a name="purge-an-azure-cdn-endpoint"></a>Limpar um ponto de extremidade da CDN do Azure
 ## <a name="overview"></a>Visão geral
@@ -69,7 +69,7 @@ Este tutorial o orienta durante a limpeza de ativos de todos os nós de borda de
     ![Botão Limpar](./media/cdn-purge-endpoint/cdn-purge-button.png)
 
 > [!IMPORTANT]
-> Solicitações de limpeza demoram aproximadamente de 2 a 3 minutos para serem processadas com a **CDN do Azure da Verizon** (standard e premium) e cerca de 7 minutos com a **CDN do Azure do Akamai**.  A CDN do Azure tem um limite de 50 solicitações de limpeza simultâneas por vez no nível do perfil. 
+> Solicitações de limpeza demoram aproximadamente 2 minutos para serem processados com **CDN do Azure da Microsoft** e **Azure CDN da Verizon** (standard e premium) e cerca de 10 segundos com **da CDN do Azure da Akamai**.  A CDN do Azure tem um limite de 50 solicitações de limpeza simultâneas por vez no nível do perfil. 
 > 
 > 
 

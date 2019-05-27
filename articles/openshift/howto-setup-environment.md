@@ -9,14 +9,14 @@ ms.date: 05/10/2019
 ms.topic: conceptual
 ms.service: openshift
 manager: jeconnoc
-ms.openlocfilehash: 6e859f57f9b5f24ea2f0172f5aa35a60d9769f19
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: 6ba7e67620ebfd7ff98c1ba81c7cecb133288be7
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65551720"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65962128"
 ---
-# <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Configurar seu ambiente de desenvolvimento do Azure Red Hat OpenShift
+# <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Configurar seu ambiente de desenvolvimento do Red Hat OpenShift no Azure
 
 Para compilar e executar aplicativos do Microsoft Azure Red Hat OpenShift, você precisará:
 
@@ -29,13 +29,15 @@ Para compilar e executar aplicativos do Microsoft Azure Red Hat OpenShift, você
 
 As instruções a seguir orientará você por meio de todos esses pré-requisitos.
 
-## <a name="purchase-azure-virtual-machine-reserved-instances"></a>Comprar instâncias reservada de máquina de virtual do Azure
+## <a name="purchase-azure-red-hat-openshift-application-nodes-reserved-instances"></a>Comprar instâncias reservadas de nós de aplicativo do Azure Red Hat OpenShift
 
-Antes de usar Azure Red Hat OpenShift, você precisará comprar instâncias reservada de máquina de virtual do Azure.
+Antes de usar Azure Red Hat OpenShift, você precisará comprar um mínimo de 4 nós de aplicativo do Azure Red Hat OpenShift reservados, após o qual você poderá provisionar clusters.
 
-Se você for um cliente do Azure, aqui como [instâncias reservadas de máquina virtual do Azure de compra](https://aka.ms/openshift/buy). Uma reserva reduz seus gastos por pagar previamente para serviços totalmente gerenciados do Azure. Consulte a [ *o que são Azure reservas* ](https://docs.microsoft.com/azure/billing/billing-save-compute-costs-reservations) para saber mais sobre reservas e como eles economizar seu dinheiro.
+Se você for um cliente do Azure, [comprar instâncias reservadas do Azure Red Hat OpenShift](https://aka.ms/openshift/buy) por meio do portal do Azure. Após a compra, sua assinatura será ativada dentro de 24 horas.
 
 Se você não for um cliente do Azure, [entre em contato com vendas](https://aka.ms/openshift/contact-sales) e preencha o formulário na parte inferior da página para iniciar o processo de venda.
+
+Consulte a [página de preços do Azure Red Hat OpenShift](https://aka.ms/openshift/pricing) para obter mais informações.
 
 ## <a name="install-the-azure-cli"></a>Instalar a CLI do Azure
 

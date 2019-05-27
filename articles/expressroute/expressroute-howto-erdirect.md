@@ -5,15 +5,15 @@ services: expressroute
 author: jaredr80
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 02/25/2019
+ms.date: 05/20/2019
 ms.author: jaredro
 ms.custom: seodec18
-ms.openlocfilehash: 1d7bb72dab622cd0b18d1da1aa34a651e1443997
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0fec7234d18659051c61fda593b1ba0fb846c220
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60365070"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65964251"
 ---
 # <a name="how-to-configure-expressroute-direct"></a>Como configurar diretos do ExpressRoute
 
@@ -224,9 +224,11 @@ O ExpressRoute Direct fornece a capacidade de conectar-se diretamente à rede gl
 
 Por padrão, você pode criar 10 circuitos na assinatura que contém o recurso ExpressRoute Direct. Esse número pode ser aumentado pelo suporte. Você é responsável por acompanhar a largura de banda provisionada e utilizada. A largura de banda provisionada é a soma da largura de banda de todos os circuitos no recurso ExpressRoute Direct, e a largura de banda utilizada é o uso físico das interfaces físicas subjacentes.
 
-Há larguras de banda de circuito adicionais que podem ser utilizadas no ExpressRoute Direct apenas para dar suporte aos cenários descritos acima. Estes são: 40 Gbps e 100 Gbps.
+Há larguras de banda de circuito adicionais que podem ser utilizadas no ExpressRoute Direct apenas para dar suporte aos cenários descritos acima. Elas são: 40 Gbps e 100 Gbps.
 
-É possível criar circuitos Standard ou Premium. Os circuitos Standard são incluídos no custo, já os circuitos Premium têm um custo baseado na largura de banda selecionada. Os circuitos só podem ser criados como limitados, pois não há suporte para circuitos ilimitados no ExpressRoute.
+**SkuTier** pode ser Local, Standard ou Premium.
+
+**SkuFamily** deve ser MeteredData como ilimitado diretos do ExpressRoute não tem suporte.
 
 Crie um circuito no recurso ExpressRoute Direct.
 

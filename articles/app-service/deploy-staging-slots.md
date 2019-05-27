@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: cephalin
-ms.openlocfilehash: d62632d6c28ac137095307e95dbbdab7e8573bbc
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 1e09eec89c683d36df49110227488a6413ed371c
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65137873"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955801"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Configurar ambientes de preparo no Serviço de Aplicativo do Azure
 <a name="Overview"></a>
@@ -54,7 +54,7 @@ O aplicativo precisa estar em execução na camada **Standard**, **Premium** ou 
 
 3. Na caixa de diálogo **Adicionar um slot**, dê um nome ao slot e escolha se deseja clonar a configuração de aplicativo de outro slot de implantação existente. Clique em **Adicionar** para continuar.
    
-    ![Fonte de configuração](./media/web-sites-staged-publishing/ConfigurationSource1.png)
+    ![Origem de Configuração](./media/web-sites-staged-publishing/ConfigurationSource1.png)
    
     É possível clonar a configuração de qualquer slot existente. As configurações que podem ser clonadas incluem configurações de aplicativo, cadeias de conexão, versões da estrutura de linguagem, soquetes da Web, versão HTTP e número de bits da plataforma.
 
@@ -94,12 +94,12 @@ Recursos marcados com um * estão planejadas para ficar adesivo no slot.
 **Configurações que não são alternadas**:
 
 * Pontos de extremidade de publicação
-* Nomes de domínio personalizados
+* Nomes de Domínio Personalizados
 * Associações SSL e certificados privados
-* Configurações de escala
+* Configurações de dimensionamento
 * Agendadores de Trabalhos Web
 * Restrições de IP
-* Always On
+* Sempre ativado
 * Configurações do protocolo (HTTP**S**, versão do TLS, certificados de cliente)
 * Configurações de log de diagnóstico
 * CORS
@@ -132,7 +132,7 @@ Para alternar os slots de implantação, siga estas etapas:
 
 2. Selecione os slots de **Origem** e de **Destino** desejados. Geralmente, o destino é o slot de produção. Além disso, clique nas guias **Alterações na Origem** e **Alterações no Destino** e verifique se as alterações de configuração são esperadas. Quando terminar, você poderá alternar os slots imediatamente clicando em **Alternância**.
 
-    ![Troca completa](./media/web-sites-staged-publishing/SwapImmediately.png)
+    ![Completar troca](./media/web-sites-staged-publishing/SwapImmediately.png)
 
     Para ver como o slot de destino será executado com as novas configurações antes que a alternância realmente ocorra, não clique em **Alternância**, mas siga as instruções descritas em [Alternância com visualização](#Multi-Phase).
 
@@ -217,9 +217,9 @@ Ao usar a [Alternância Automática](#Auto-Swap), alguns aplicativos podem exigi
 
 Para obter mais informações sobre como personalizar o `applicationInitialization` elemento, consulte [falhas de permuta do slot de implantação mais comuns e como corrigi-los](https://ruslany.net/2017/11/most-common-deployment-slot-swap-failures-and-how-to-fix-them/).
 
-Você também pode personalizar o comportamento de aquecimento com uma ou mais das seguintes [configurações do aplicativo](web-sites-configure.md):
+Você também pode personalizar o comportamento de aquecimento com uma ou mais das seguintes [configurações do aplicativo](configure-common.md):
 
-- `WEBSITE_SWAP_WARMUP_PING_PATH`: O caminho para executar o ping para aquecer seu site. Adicione essa configuração de aplicativo especificando um caminho personalizado que começa com uma barra (“/”) como o valor. Por exemplo, `/statuscheck`. O valor padrão é `/`. 
+- `WEBSITE_SWAP_WARMUP_PING_PATH`: O caminho para executar o ping para aquecer seu site. Adicione essa configuração de aplicativo especificando um caminho personalizado que começa com uma barra (“/”) como o valor. Por exemplo: `/statuscheck`. O valor padrão é `/`. 
 - `WEBSITE_SWAP_WARMUP_PING_STATUSES`: Códigos de resposta HTTP válidos para a operação de aquecimento. Adicione essa configuração de aplicativo com uma lista separada por vírgulas dos códigos HTTP. Por exemplo: `200,202`. Se o código de status retornado não estiver na lista, as operações de aquecimento e de troca são interrompidas. Por padrão, todos os códigos de resposta são válidos.
 
 ## <a name="monitor-swap"></a>Monitorar a alternância
@@ -289,7 +289,7 @@ O Azure PowerShell é um módulo que fornece cmdlets para gerenciar o Azure por 
 Para obter mais informações sobre como instalar e configurar o PowerShell do Azure, e como autenticar o PowerShell do Azure com sua assinatura do Azure, consulte [Como instalar e configurar o PowerShell do Microsoft Azure](/powershell/azure/overview).  
 
 - - -
-### <a name="create-web-app"></a>Criar um aplicativo Web
+### <a name="create-web-app"></a>Criar aplicativo Web
 ```powershell
 New-AzWebApp -ResourceGroupName [resource group name] -Name [app name] -Location [location] -AppServicePlan [app service plan name]
 ```

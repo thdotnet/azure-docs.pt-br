@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: mmercuri
 manager: femila
-ms.openlocfilehash: 6be1d2b1e68c52d45a42027be5f6d69cc2c25adc
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: bd53ae3346882cf20ae7464548fa9ef2c0329f05
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65509937"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65957016"
 ---
 # <a name="smart-contract-integration-patterns"></a>Padrões de integração e contratos inteligentes
 
@@ -180,7 +180,7 @@ Neste modelo, quando uma mensagem em um formato padrão não pode ser enviada di
 
 Um cenário de integração comum é a inclusão de dados de telemetria recuperados de sensores em um contrato inteligente. Com base nos dados fornecidos por sensores, contratos inteligentes podem executar ações informadas e alterar o estado do contrato.
 
-Por exemplo, se a temperatura de um caminhão de entrega de medicamentos dispara a 110 graus, pode afetar a eficiência do medicamento e pode causar um problema de segurança pública se não for detectado e removida da cadeia de fornecimento. Se um motorista alcança 160 km/h, as informações de sensor resultante podem disparar um cancelamento de seguro por sua companhia de seguro. Se um carro for um carro alugado, dados de GPS poderão indicar quando o motorista saiu da área coberta pelo seu contrato de aluguel e cobrar uma multa.
+Por exemplo, se a temperatura de um caminhão de entrega de medicamentos dispara a 110 graus, pode afetar a eficiência do medicamento e pode causar um problema de segurança pública se não for detectado e removida da cadeia de fornecimento. Se um driver acelerada carro até 100 milhas por hora, as informações de sensor resultante podem disparar um cancelamento de seguro por seu provedor de seguro. Se um carro for um carro alugado, dados de GPS poderão indicar quando o motorista saiu da área coberta pelo seu contrato de aluguel e cobrar uma multa.
 
 O desafio é que esses sensores podem fornecer dados de forma constante e não é apropriado enviar todos esses dados para um contrato inteligente. É uma abordagem comum limitar o número de mensagens enviadas para o blockchain enquanto fornece todas as mensagens para um armazenamento secundário. Por exemplo, entregar mensagens recebidas em apenas intervalo fixo, por exemplo, uma vez por hora, e quando um valor contido fica fora de um intervalo estabelecido para um contrato inteligente. Verificar valores que estão fora de tolerância garante que os dados relevantes para a lógica de negócios contratos sejam recebidos e executados. Verificar o valor no intervalo de confirma que o sensor ainda está se comunicando. Todos os dados são enviados para um armazenamento secundário de relatórios para habilitar o relatório, análise e aprendizado de máquina mais amplo. Por exemplo, embora obter as leituras do sensor de GPS pode não seja necessária a cada minuto para um contrato inteligente, eles podem fornecer dados interessantes a serem usados em relatórios ou no mapeamento de rotas.
 

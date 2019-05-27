@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 2/25/2019
+ms.date: 05/20/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: c4998712d77771a5600c06183a76254548289372
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ebfe3db43de87e67ad05ed8cb9f5812b5ded04e0
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60365087"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65965913"
 ---
 # <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Configurar diretos do ExpressRoute usando a CLI do Azure
 
@@ -280,8 +280,9 @@ Por padrão, você pode criar 10 circuitos na assinatura que contém o recurso E
 
 Você pode usar as larguras de bandas de circuito adicionais no ExpressRoute Direct apenas para dar suporte aos cenários estabelecidos aqui. As larguras de banda são 40 Gbps e 100 Gbps.
 
-Você pode criar circuitos Standard ou Premium. Os circuitos Standard são incluídos no custo do serviço. O custo de circuitos Premium baseia-se na largura de banda que você selecionar. Você pode criar circuitos apenas como limitados. Circuitos ilimitados não têm suporte no ExpressRoute Direct.
+**SkuTier** pode ser Local, Standard ou Premium.
 
+**SkuFamily** deve ser MeteredData como ilimitado diretos do ExpressRoute não tem suporte.
 Crie um circuito no recurso ExpressRoute Direct:
 
   ```azurecli

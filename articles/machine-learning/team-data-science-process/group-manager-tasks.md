@@ -10,16 +10,16 @@ ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: fb0482be1670a96befdd69a5356c9e21476d9f9f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 85a4aca0c4b80eaab1f43bcbec33dc9cf37aa655
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60305023"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65950106"
 ---
 # <a name="tasks-for-a-group-manager-on-a-data-science-team-project"></a>Tarefas para um gerente do grupo em um projeto de equipe de ciência de dados
 
-Este tópico descreve as tarefas que um Gerente de Grupo deve concluir para sua organização de ciência de dados. O objetivo é estabelecer um ambiente de grupo colaborativo que padronize o TDSP ([Processo de Ciência de Dados da Equipe](overview.md)). Para obter uma descrição das funções pessoais e das tarefas associadas que são tratadas por uma equipe de ciência de dados com padronização nesse processo, consulte [Tarefas e funções do Processo de Ciência de Dados da Equipe](roles-tasks.md).
+Este tópico descreve as tarefas que um gerente de grupo deve concluir para sua organização de ciência de dados. O objetivo é estabelecer um ambiente de grupo colaborativo que padronize o TDSP ([Processo de Ciência de Dados da Equipe](overview.md)). Para obter uma descrição das funções pessoais e das tarefas associadas que são tratadas por uma equipe de ciência de dados com padronização nesse processo, consulte [Tarefas e funções do Processo de Ciência de Dados da Equipe](roles-tasks.md).
 
 O **Gerente de Grupo** é o gerente de toda a unidade de ciência de dados em uma empresa. Uma unidade de ciência de dados pode ter várias equipes, cada uma delas trabalhando em vários projetos de ciência de dados em áreas comerciais distintas. Um Gerente de Grupo pode delegar suas tarefas a um substituto, mas as tarefas associadas à função são as mesmas. Há seis tarefas principais, conforme mostrado no diagrama a seguir:
 

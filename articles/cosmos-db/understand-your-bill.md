@@ -4,15 +4,15 @@ description: Este artigo ajuda você a entender sua fatura do Azure Cosmos DB co
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 05/21/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: d3bfe1b54409fd57f7535bac2362dc7040975061
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: a097539e51aa2a2130dead236d553d60f2ebb89d
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62115530"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65965672"
 ---
 # <a name="understand-your-azure-cosmos-db-bill"></a>Entendendo sua fatura do Azure Cosmos DB
 
@@ -212,7 +212,7 @@ Vamos considerar outro exemplo, em que você deseja proativamente estimar sua fa
 
 |**Custo de taxa de transferência** | | | |
 |----|----|----|----|
-|Tipo de operação| Solicitações/s| Média RU/solicitação| RUs necessárias|
+|Tipo de Operação| Solicitações/s| Média RU/solicitação| RUs necessárias|
 |Gravar| 100 | 5 | 500|
 |Ler| 400| 1| 400|
 

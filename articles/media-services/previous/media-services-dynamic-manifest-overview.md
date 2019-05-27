@@ -14,12 +14,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: cenkd;juliako
-ms.openlocfilehash: 229f89a8803f089c24981f56e00e36efe96de3aa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 68eeb40e905d089601208d9fc181042c7b434843
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61465067"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956806"
 ---
 # <a name="filters-and-dynamic-manifests"></a>Filtros e manifestos dinâmicos
 
@@ -73,14 +73,14 @@ Aqui está um exemplo desse arquivo de manifesto:
     </SmoothStreamingMedia>
 
 ### <a name="dynamic-manifests"></a>Manifestos dinâmicos
-Há [cenários](media-services-dynamic-manifest-overview.md#scenarios) em que o cliente precisa de mais flexibilidade do que o que é descrito no arquivo de manifesto do ativo padrão. Por exemplo: 
+Há [cenários](media-services-dynamic-manifest-overview.md#scenarios) em que o cliente precisa de mais flexibilidade do que o que é descrito no arquivo de manifesto do ativo padrão. Por exemplo:
 
 * Dispositivo específico: entregar apenas as representações especificadas e/ou faixas de idioma especificadas com suporte pelo dispositivo que é usado para reproduzir o conteúdo ("filtragem da representação"). 
 * Redução do manifesto para mostrar um subclipe de um evento ao vivo ("filtragem de subclipe").
 * Corte do início de um vídeo ("corte de um vídeo").
 * Ajuste a Janela de Apresentação (DVR) para fornecer uma duração limitada da janela do DVR no leitor ("ajustar a janela de apresentação").
 
-Para atingir esta flexibilidade, os serviços de mídia oferecem os **manifestos dinâmico** com base em [filtros](media-services-dynamic-manifest-overview.md#filters)predefinidos.  Depois de definir os filtros, os clientes podem usá-los para transmitir uma representação específica ou subclipes do vídeo. Eles podem especificar filtros na URL de transmissão. Os filtros podem ser aplicados nos protocolos de streaming de taxa de bits adaptável com suporte do [Empacotamento Dinâmico](media-services-dynamic-packaging-overview.md): HLS, MPEG-DASH e Smooth Streaming. Por exemplo: 
+Para atingir esta flexibilidade, os serviços de mídia oferecem os **manifestos dinâmico** com base em [filtros](media-services-dynamic-manifest-overview.md#filters)predefinidos.  Depois de definir os filtros, os clientes podem usá-los para transmitir uma representação específica ou subclipes do vídeo. Eles podem especificar filtros na URL de transmissão. Os filtros podem ser aplicados nos protocolos de streaming de taxa de bits adaptável com suporte do [Empacotamento Dinâmico](media-services-dynamic-packaging-overview.md): HLS, MPEG-DASH e Smooth Streaming. Por exemplo:
 
 URL de MPEG DASH com filtro
 
@@ -146,7 +146,7 @@ Ativos filtrados:
 ![Esqui][skiing]
 
 ## <a name="adjusting-presentation-window-dvr"></a>Ajuste da janela de apresentação (DVR)
-Atualmente, o Serviços de Mídia do Azure oferece arquivamento circular onde a duração pode ser configurada entre 5 minutos e 25 horas. A filtragem de manifesto pode ser usada para criar uma janela DVR com rolagem que ultrapassa o arquivo, sem excluir a mídia. Há muitos cenários em que os difusores podem desejar fornecer uma janela DVR limitada que se move com a borda ao vivo e, ao mesmo tempo manter uma janela de arquivamento maior. Talvez o difusor queira usar os dados que estão fora da janela DVR para realçar clipes ou talvez ele queira fornecer janelas DVR diferentes para dispositivos diferentes. Por exemplo, a maioria dos dispositivos móveis não lida com janelas DVR grandes (você pode ter uma janela DVR de 2 minutos para dispositivos móveis e de uma hora para os clientes de desktop).
+Atualmente, o Serviços de Mídia do Azure oferece arquivamento circular onde a duração pode ser configurada entre 5 minutos e 25 horas. A filtragem de manifesto pode ser usada para criar uma janela DVR com rolagem que ultrapassa o arquivo, sem excluir a mídia. Há muitos cenários em que os difusores podem desejar fornecer uma janela DVR limitada que se move com a borda ao vivo e, ao mesmo tempo manter uma janela de arquivamento maior. Um transmissor pode querer usar os dados que estão fora da janela do DVR para destacar os clipes, ou eles podem querer fornecer diferentes janelas do DVR para diferentes dispositivos. Por exemplo, a maioria dos dispositivos móveis não lida com janelas DVR grandes (você pode ter uma janela DVR de 2 minutos para dispositivos móveis e de uma hora para os clientes de desktop).
 
 ![Janela DVR][dvr_filter]
 

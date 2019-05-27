@@ -4,14 +4,14 @@ description: Saiba mais sobre as opções de configuração do cliente para melh
 author: SnehaGunda
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 01/24/2018
+ms.date: 05/20/2019
 ms.author: sngun
-ms.openlocfilehash: e03fa427227bed745b53d43aaebc4dc58ad5bb9d
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.openlocfilehash: feab3ee1a21a52e8b18d59e67e8410fcbeb4ff5e
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62097888"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65953794"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Dicas de desempenho para o Azure Cosmos DB e .NET
 
@@ -48,8 +48,8 @@ Assim, se você estiver se perguntando "Como posso melhorar o desempenho do meu 
      |Modo da conexão  |Protocolo com Suporte  |SDKs com suporte  |Porta/serviço de API  |
      |---------|---------|---------|---------|
      |Gateway  |   HTTPS    |  Todos os SDKS    |   SQL(443), Mongo(10250, 10255, 10256), Table(443), Cassandra(10350), Graph(443)    |
-     |Direta    |    HTTPS     |  SDK do .NET e Java    |   Portas dentro do intervalo de 10.000-20.000    |
-     |Direta    |     TCP    |  SDK .NET    | Portas dentro do intervalo de 10.000-20.000 |
+     |Direto    |    HTTPS     |  SDK do .NET e Java    |   Portas dentro do intervalo de 10.000-20.000    |
+     |Direto    |     TCP    |  SDK .NET    | Portas dentro do intervalo de 10.000-20.000 |
 
      O Cosmos DB oferece um modelo de programação RESTful simples e aberto via HTTPS. Além disso, ele oferece um protocolo TCP eficiente que também é RESTful em seu modelo de comunicação e está disponível por meio do SDK do cliente .NET. Tanto TCP direto quanto HTTPS usam SSL para criptografar tráfego e autenticação inicial. Para ter um melhor desempenho, use o protocolo TCP quando possível.
 
@@ -141,7 +141,7 @@ Assim, se você estiver se perguntando "Como posso melhorar o desempenho do meu 
 
     Para reduzir o número de idas e vindas na rede necessárias para recuperar todos os resultados aplicáveis, você pode aumentar o tamanho da página para até 1000 usando o cabeçalho de solicitação [x-ms-max-item-count](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-request-headers). Nos casos em que você precisa exibir apenas alguns resultados, por exemplo, se a interface do usuário ou a API do aplicativo retornar apenas 10 resultados de uma vez, também será possível diminuir o tamanho da página para 10 para reduzir a taxa de transferência consumida pelas leituras e consultas.
 
-    Você também pode definir o tamanho da página usando os SDKs do Azure Cosmos DB disponíveis.  Por exemplo: 
+    Você também pode definir o tamanho da página usando os SDKs do Azure Cosmos DB disponíveis.  Por exemplo:
 
         IQueryable<dynamic> authorResults = client.CreateDocumentQuery(documentCollection.SelfLink, "SELECT p.Author FROM Pages p WHERE p.Title = 'About Seattle'", new FeedOptions { MaxItemCount = 1000 });
 10. **Aumentar o número de threads/tarefas**
@@ -160,11 +160,11 @@ Assim, se você estiver se perguntando "Como posso melhorar o desempenho do meu 
 
     - Para aplicativos Web ASP.NET implantados no Azure, isso pode ser feito escolhendo o **plataforma de 64 bits** no **configurações do aplicativo** no portal do Azure.
 
-## <a name="indexing-policy"></a>Política de indexação
+## <a name="indexing-policy"></a>Política de Indexação
  
 1. **Excluir caminhos não utilizados da indexação para ter gravações mais rápidas**
 
-    A política de indexação do Cosmos DB também permite que você especifique quais caminhos de documento serão incluídos ou excluídos da indexação, aproveitando os Caminhos de Indexação (IndexingPolicy.IncludedPaths e IndexingPolicy.ExcludedPaths). O uso dos caminhos de indexação pode oferecer um melhor desempenho de gravação e menor armazenamento de índices para os cenários nos quais os padrões da consulta são conhecidos com antecedência, pois os custos da indexação estão correlacionados diretamente com o número de caminhos exclusivos indexados.  Por exemplo, o código a seguir mostra como excluir uma seção inteira de documentos (também conhecida como uma subárvore) de indexação usando o curinga "*".
+    A política de indexação do Cosmos DB também permite que você especifique quais caminhos de documento serão incluídos ou excluídos da indexação, aproveitando os Caminhos de Indexação (IndexingPolicy.IncludedPaths e IndexingPolicy.ExcludedPaths). O uso dos caminhos de indexação pode oferecer um melhor desempenho de gravação e menor armazenamento de índices para os cenários nos quais os padrões da consulta são conhecidos com antecedência, pois os custos da indexação estão correlacionados diretamente com o número de caminhos exclusivos indexados.  Por exemplo, o código a seguir mostra como excluir uma seção inteira dos documentos (uma subárvore) de indexação usando o "*" curinga.
 
     ```csharp
     var collection = new DocumentCollection { Id = "excludedPathCollection" };

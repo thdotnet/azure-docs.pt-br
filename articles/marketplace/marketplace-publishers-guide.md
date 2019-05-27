@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: a3d75f09ac21fcdb4862cf8eefff0b5c05fd3369
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 58591302280c67dbd0f69ebe0bc47cf95c8bfc18
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64937620"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956753"
 ---
 # <a name="azure-marketplace-and-appsource-publishing-guide"></a>Guia de publicação do Microsoft Azure Marketplace e AppSource
 
@@ -62,7 +62,7 @@ As novas listagens no Marketplace são qualificadas para um conjunto diversifica
 
 *   Venda conjunta: Comece ou impulsione sua jornada para vender com a Microsoft no Marketplace. Acesse programas e suporte para gerar vendas conjuntas com as equipes da Microsoft.
 
-Após [enviar a solução](https://azuremarketplace.microsoft.com/sell/signup) ao Marketplace, nossa equipe de integração entrará em contato com você para auxiliá-lo na experiência de publicação.
+Após [enviar a solução](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) ao Marketplace, nossa equipe de integração entrará em contato com você para auxiliá-lo na experiência de publicação.  Ver [como criar uma conta no Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) para obter mais informações.
 
 Para obter mais informações sobre os benefícios de entrada no mercado da Microsoft e formas de expandir seus negócios no Marketplace, consulte [Serviços de entrada no mercado da Microsoft](https://partner.microsoft.com/reach-customers/gtm).
 

@@ -4,16 +4,16 @@ description: Âncoras Espaciais do Azure é um serviço de nuvem gerenciado e um
 author: ramonarguelles
 manager: vicenterivera
 services: azure-spatial-anchors
-ms.author: ramonarguelles
+ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: overview
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: d38f7a22d90c62b245e49e6bdb0a3041c4f1023f
-ms.sourcegitcommit: 68ba7916a6ff8dd40f5037e57059733d74374954
+ms.openlocfilehash: fdde10c9ef7c035ed36b5f823a0b77e7c8b53803
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56753586"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65964561"
 ---
 # <a name="frequently-asked-questions-about-azure-spatial-anchors"></a>Perguntas frequentes sobre as Âncoras Espaciais do Azure
 

@@ -4,15 +4,15 @@ description: Saiba como você pode usar o Azure Cosmos DB para armazenar e consu
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: overview
-ms.date: 12/26/2018
+ms.date: 05/20/2019
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: d0f61afaba094a1e499a91f9937a31554438759e
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 22438837a7cee1755d115993683101c260b99f2c
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54042165"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65953838"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb"></a>API do Azure Cosmos DB para MongoDB
 
