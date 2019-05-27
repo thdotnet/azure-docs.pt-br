@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/01/2016
 ms.author: mlearned
-ms.openlocfilehash: a2a730e2c3ca466a2705f053d7db0db12d7941da
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 692c075b55efd138f6d731ffae43608f141abfdc
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60458636"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66019764"
 ---
 # <a name="continuous-integration-in-azure-devops-services-using-azure-resource-group-deployment-projects"></a>Integração contínua no Azure DevOps Services usando projetos de implantação do Grupo de Recursos do Azure
 Para implantar um modelo do Azure, você pode executar tarefas em vários estágios: Compilar, testar, copiar para o Azure (também chamado de "Preparo") e implantar o modelo. Há duas maneiras diferentes de implantar modelos no Azure DevOps Services. Os dois métodos oferecem os mesmos resultados, então escolha aquele que melhor se adapta ao seu fluxo de trabalho.
@@ -78,8 +78,8 @@ Os procedimentos a seguir percorrer as etapas necessárias para configurar impla
       ![Opção da entidade de serviço][5]
    5. Adicione as informações de assinatura do Azure à caixa de diálogo **Adicionar Assinatura do Azure** . Você precisa fornecer os seguintes itens:
       
-      * ID da assinatura
-      * Nome da assinatura
+      * ID da Assinatura
+      * Nome da Assinatura
       * Id da Entidade de serviço
       * Chave da Entidade de serviço
       * ID do locatário
@@ -93,7 +93,7 @@ Os procedimentos a seguir percorrer as etapas necessárias para configurar impla
       
       Para a CLI do Azure, use:
       
-      `azure account show`
+      `az account show`
    8. Para obter uma ID da Entidade de Serviço, Chave da Entidade de Serviço e ID do Locatário, siga o procedimento em [Criar aplicativo do Active Directory e entidade de serviço usando o portal](active-directory/develop/howto-create-service-principal-portal.md) ou [Autenticar uma entidade de serviço com o Azure Resource Manager](active-directory/develop/howto-authenticate-service-principal-powershell.md).
    9. Adicione os valores de ID de Entidade de Serviço, Chave de Entidade de Serviço e ID de Locatário à caixa de diálogo **Adicionar Assinatura do Azure** e, em seguida, escolha o botão **OK**.
       
@@ -109,7 +109,7 @@ Os procedimentos a seguir percorrer as etapas necessárias para configurar impla
     ![Editar caminho para script][10]
 8. Na caixa **Argumentos do Script** , digite os parâmetros a seguir (em uma única linha). Ao executar o script no Visual Studio, você pode ver como o VS usa os parâmetros na janela **Saída** . Você pode usar isso como um ponto de partida para definir os valores do parâmetro na etapa de compilação.
    
-   | Parâmetro | DESCRIÇÃO |
+   | Parâmetro | Descrição |
    | --- | --- |
    | -ResourceGroupLocation |O valor da localização geográfica na qual o grupo de recursos está localizado, por exemplo, **eastus** ou **'Leste dos EUA'**. (Adicione aspas se houver um espaço no nome). Veja [Regiões do Azure](https://azure.microsoft.com/regions/) para saber mais. |
    | -ResourceGroupName |O nome do grupo de recursos usado para essa implantação. |

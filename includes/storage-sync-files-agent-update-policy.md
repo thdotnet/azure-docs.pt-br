@@ -5,16 +5,16 @@ ms.topic: include
 ms.date: 12/11/2018
 ms.author: tamram
 ms.openlocfilehash: 4f59f68c1598f737ea7cb3a0e8046fc0779ed9d3
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60118347"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66113797"
 ---
 O agente de Sincronização de arquivos do Azure é atualizado regularmente para adicionar novos recursos e resolver problemas. Recomendamos que você configure o Microsoft Update para obter atualizações para o agente de Sincronização de arquivos do Azure à medida que elas ficarem disponíveis.
 
 #### <a name="major-vs-minor-agent-versions"></a>Versões do agente principal versus secundário
-* As versões do agente principal geralmente contêm novos recursos e têm um número crescente como a primeira parte do número da versão. Por exemplo:  \*2.\*.\*\*
+* As versões do agente principal geralmente contêm novos recursos e têm um número crescente como a primeira parte do número da versão. Por exemplo: \*2.\*.\*\*
 * As versões do agente secundário também são chamadas de "patches" e são lançadas com mais frequência do que as versões do principal. Geralmente contêm correções de bug e pequenas melhorias, mas sem novos recursos. Por exemplo: \*\*.3.\*\*
 
 #### <a name="upgrade-paths"></a>Caminhos de atualização

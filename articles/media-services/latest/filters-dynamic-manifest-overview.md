@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 21fb2b84fd58fb7cca7551ee1cef0c79179cfa40
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: ac440be4444ca0d62f7ffde2b8b65e41dcba6683
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65467139"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002420"
 ---
 # <a name="dynamic-manifests"></a>Manifestos dinâmicos
 
@@ -31,7 +31,7 @@ A tabela a seguir mostra alguns exemplos de URLs com filtros:
 |HLS|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(format=m3u8-aapl,filter=myAccountFilter)`|
 |MPEG DASH|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(format=mpd-time-csf,filter=myAssetFilter)`|
 |Smooth Streaming|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(filter=myAssetFilter)`|
-
+ 
 > [!NOTE]
 > Manifestos dinâmicos não alteram o ativo e o manifesto padrão para esse ativo. O cliente pode optar por solicitar um fluxo com ou sem filtros. 
 > 
@@ -124,7 +124,7 @@ Para saber mais, confira [este](https://azure.microsoft.com/blog/azure-media-ser
 
 ## <a name="associate-filters-with-streaming-locator"></a>Associar filtros de localizador de Streaming
 
-Você pode especificar uma lista de filtros de ativo ou conta, que se aplica a localizador de Streaming. O [empacotador dinâmico](dynamic-packaging-overview.md) se aplica a esta lista de filtros junto com aqueles seu cliente especifica a URL. Essa combinação gera uma [manifesto dinâmico](filters-dynamic-manifest-overview.md), que se baseia nos filtros na URL + filtros que você especificar no localizador de Streaming. É recomendável que você use esse recurso se você deseja aplicar filtros, mas não quiser expor os nomes de filtro na URL.
+Ver [filtros: associar com localizadores de Streaming](filters-concept.md#associate-filters-with-streaming-locator).
 
 ## <a name="considerations-and-limitations"></a>Considerações e limitações
 
@@ -136,7 +136,6 @@ Você pode especificar uma lista de filtros de ativo ou conta, que se aplica a l
     
     - Para determinar as propriedades das faixas em um Ativo, [obtenha e examine o arquivo de manifesto](#get-and-examine-manifest-files).
     - A fórmula para definir as propriedades do registro de data e hora do filtro de ativos: <br/>startTimestamp = &lt;hora de início no manifesto&gt; +  &lt;tempo de início esperado do filtro em segundos&gt;* escala de tempo
-
 
 ## <a name="next-steps"></a>Próximas etapas
 

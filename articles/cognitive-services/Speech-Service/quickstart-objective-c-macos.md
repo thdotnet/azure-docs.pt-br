@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 04/03/2019
 ms.author: chlandsi
-ms.openlocfilehash: f25c3801553b0ac0c725170cda95f5c1eacc3637
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 67f2531b24796de1e00505fdc757f3c2244c5054
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020753"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002346"
 ---
 # <a name="quickstart-recognize-speech-in-objective-c-on-macos-using-the-speech-sdk"></a>Início Rápido: Reconhecer fala em Objective-C no macOS usando o SDK de Fala
 
@@ -34,7 +34,7 @@ Antes de começar, aqui está uma lista de pré-requisitos:
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-A versão atual do SDK de Fala dos Serviços Cognitivos é `1.5.0`.
+A versão atual do SDK de Fala dos Serviços Cognitivos é `1.5.1`.
 
 O SDK de Fala dos Serviços Cognitivos para Mac é distribuído como um quadro de estrutura.
 Ele pode ser usado em projetos do Xcode como um [CocoaPod](https://cocoapods.org/) ou baixados de https://aka.ms/csspeech/macosbinary e vinculados manualmente. Este guia usa um CocoaPod.
@@ -71,7 +71,7 @@ Nas caixas de diálogo que seguem, faça as seguintes seleções:
     ```
     target 'helloworld' do
         platform :osx, '10.13'
-        pod 'MicrosoftCognitiveServicesSpeech-macOS', '~> 1.5.0'
+        pod 'MicrosoftCognitiveServicesSpeech-macOS', '~> 1.5.1'
     end
     ```
 1. Navegue até o diretório `helloworld` em um terminal e execute o comando `pod install`. Isso gerará um espaço de trabalho do Xcode `helloworld.xcworkspace` que contém o aplicativo de exemplo e o SDK de fala como uma dependência. Este espaço de trabalho será usado nas seções a seguir.
@@ -79,7 +79,8 @@ Nas caixas de diálogo que seguem, faça as seguintes seleções:
 ## <a name="add-the-sample-code"></a>Adicione o código de amostra
 
 1. Abra o espaço de trabalho `helloworld.xcworkspace` no Xcode.
-1. Substitua o conteúdo do arquivo `AppDelegate.m` gerado automaticamente por: [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-macos/helloworld/helloworld/AppDelegate.m#code)]
+1. Substitua o conteúdo do arquivo `AppDelegate.m` gerado automaticamente por:  
+   [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-macos/helloworld/helloworld/AppDelegate.m#code)]
 1. Substitua a cadeia de caracteres `YourSubscriptionKey` pela chave de assinatura.
 1. Substitua a cadeia de caracteres `YourServiceRegion` pela [região](regions.md) associada à assinatura (por exemplo, `westus` para a assinatura de avaliação gratuita).
 

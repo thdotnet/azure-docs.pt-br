@@ -11,22 +11,28 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 04/01/2019
+ms.date: 05/21/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d42fe972b79ecd9bcee65d0664c5d13da02d2238
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6cd5bbba681acaa0c32e681f7cb4809142fe11f9
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60384561"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66113233"
 ---
 # <a name="review-access-to-groups-or-applications-in-azure-ad-access-reviews"></a>Examinar o acesso a grupos ou revisões de acesso de aplicativos no Azure AD
 
 Azure Active Directory (Azure AD) simplifica como as empresas gerenciam o acesso a aplicativos e grupos no Azure AD e revisões de outros serviços Online da Microsoft com um recurso chamado acesso do Azure AD.
 
 Este artigo descreve como um revisor designado executa uma revisão de acesso para membros de um grupo ou usuários com acesso a um aplicativo.
+
+## <a name="prerequisites"></a>Pré-requisitos
+
+- Azure AD Premium P2
+
+Para obter mais informações, consulte [quais usuários devem ter licenças?](access-reviews-overview.md#which-users-must-have-licenses).
 
 ## <a name="open-the-access-review"></a>Abra a revisão de acesso
 
@@ -64,16 +70,16 @@ Se a solicitação for examinar seu próprio acesso, a página terá uma aparên
 
 Há duas maneiras que você pode aprovar ou negar o acesso:
 
-- Você pode aprovar ou negar cada solicitação individualmente, ou
+- Você pode aprovar ou negar o acesso de um ou mais usuários, ou
 - Você pode aceitar as recomendações de sistema, que é a maneira mais fácil e rápida.
 
-### <a name="approve-or-deny-access-for-each-request"></a>Aprovar ou negar acesso para cada solicitação
+### <a name="approve-or-deny-access-for-one-or-more-users"></a>Aprovar ou negar o acesso de um ou mais usuários
 
 1. Examine a lista de usuários para decidir se deseja aprovar ou negar o acesso contínuo.
 
-1. Para aprovar ou negar cada solicitação, clique na linha para abrir uma janela para especificar a ação a ser tomada.
+1. Para aprovar ou negar o acesso de um único usuário, clique na linha para abrir uma janela para especificar a ação a ser tomada. Para aprovar ou negar o acesso de vários usuários, adicionar marcas de seleção ao lado de usuários e, em seguida, clique no **usuário (s) de análise X** botão para abrir uma janela para especificar a ação a ser tomada.
 
-1. Clique em **aprovar** ou **negar**. Se você não tiver certeza, você poderá clicar **desconhece**. Isso resultará no usuário mantém o seu acesso, mas a seleção será refletida nos logs de auditoria.
+1. Clique em **aprovar** ou **negar**. Se você não tiver certeza, você poderá clicar **desconhece**. Isso resultará no usuário mantém o acesso, mas a seleção será refletida nos logs de auditoria.
 
     ![Executar análise de acesso](./media/perform-access-review/approve-deny.png)
 

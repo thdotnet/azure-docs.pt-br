@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.reviewer: sgilley
 ms.author: sgilley
 author: sdgilley
-ms.date: 04/19/2019
-ms.openlocfilehash: ca43a6cff6a32a30d93e42f6a6624439b2fe83a7
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/21/2019
+ms.openlocfilehash: c6c32265e6fc2fc2bb0d6b00d89862e200731a2a
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64696538"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "66016454"
 ---
 # <a name="create-an-azure-machine-learning-service-workspace"></a>Criar um espaço de trabalho do serviço de Azure Machine Learning
 
-Para usar o serviço Azure Machine Learning, você precisa de um [ **espaço de trabalho de serviço de Azure Machine Learning**](concept-azure-machine-learning-architecture.md#workspace).  Este espaço de trabalho é o recurso de nível superior para o serviço e fornece um local centralizado para trabalhar com todos os artefatos que você cria. 
+Para usar o serviço Azure Machine Learning, você precisa de um [ **espaço de trabalho de serviço de Azure Machine Learning**](concept-workspace.md).  Este espaço de trabalho é o recurso de nível superior para o serviço e fornece um local centralizado para trabalhar com todos os artefatos que você cria. 
 
 Neste artigo, você aprenderá a criar um espaço de trabalho usando qualquer um destes métodos: 
 * O [portal do Azure](#portal) interface
@@ -33,7 +33,7 @@ Se você gostaria de usar um script para aprendizado de máquina automatizados e
 
 Quando você cria um espaço de trabalho os seguintes recursos do Azure são adicionados automaticamente (se eles forem regionalmente disponíveis):
  
-- [Registro de Contêiner do Azure](https://azure.microsoft.com/services/container-registry/)
+- [Registro de Contêiner do Azure](https://azure.microsoft.com/services/container-registry/): Para minimizar os custos, é ACR **carregamento lento** até que as imagens de implantação são criadas.
 - [Armazenamento do Azure](https://azure.microsoft.com/services/storage/)
 - [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) 
 - [Cofre da Chave do Azure](https://azure.microsoft.com/services/key-vault/)

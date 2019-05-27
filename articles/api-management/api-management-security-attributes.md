@@ -1,24 +1,23 @@
 ---
-title: Atributos comuns de segurança para gerenciamento de API do Azure
+title: Atributos de segurança para gerenciamento de API do Azure
 description: Uma lista de verificação de atributos de segurança comuns para avaliar o gerenciamento de API
 services: api-management
-documentationcenter: ''
 author: msmbaldwin
 manager: barbkess
 ms.service: api-management
 ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 040d628f9fe89f68a1c5ab91a1522c6a3cb724d9
-ms.sourcegitcommit: e729629331ae10097a081a03029398525f4147a4
+ms.openlocfilehash: 3b5826d472b80179c5eb76e0e3a6b1c7ee282487
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64508150"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001084"
 ---
-# <a name="common-security-attributes-for-api-management"></a>Atributos comuns de segurança para gerenciamento de API
+# <a name="security-attributes-for-api-management"></a>Atributos de segurança para gerenciamento de API
 
-A segurança é integrada a todos os aspectos de um serviço do Azure. Este artigo documenta os atributos de segurança comum embutidos no gerenciamento de API.
+Este artigo documenta os atributos de segurança integrados de gerenciamento de API.
 
 [!INCLUDE [Security Attributes Header](../../includes/security-attributes-header.md)]
 
@@ -28,7 +27,7 @@ A segurança é integrada a todos os aspectos de um serviço do Azure. Este arti
 |---|---|--|
 | Criptografia em repouso:<ul><li>Criptografia no servidor</li><li>Criptografia do lado do servidor com chaves gerenciadas pelo cliente</li><li>Outros recursos de criptografia (como do lado do cliente, Always Encrypted, etc.)</ul>| Sim (somente para a criptografia no lado do serviço) | Dados confidenciais, como certificados, chaves e valores chamado de segredo são criptografados com serviços gerenciados, por chaves de instância de serviço. |
 | Criptografia em trânsito:<ul><li>Criptografia do ExpressRoute</li><li>Na criptografia de rede virtual</li><li>Criptografia de rede virtual a rede virtual</ul>| Sim | [Rota expressa](../expressroute/index.yml) e criptografia de rede virtual é fornecida pela [a rede do Azure](../virtual-network/index.yml). |
-| Tratamento de chaves de criptografia (CMK, BYOK, etc.)| Não  | Todas as chaves de criptografia são por instância de serviço e serviço gerenciado. |
+| Tratamento de chaves de criptografia (CMK, BYOK, etc.)| Não | Todas as chaves de criptografia são por instância de serviço e serviço gerenciado. |
 | Criptografia de nível de coluna (serviços de dados do Azure)| N/D | |
 | Chamadas à API criptografadas| Sim | Chamadas de plano de gerenciamento são feitas por meio [do Azure Resource Manager](../azure-resource-manager/index.yml) via TLS. Um JWT (token Web JSON) válido é necessário.  Chamadas de plano de dados podem ser protegidas com TLS e um dos mecanismos de autenticação com suporte (por exemplo, o certificado do cliente ou o JWT).
  |
@@ -37,7 +36,7 @@ A segurança é integrada a todos os aspectos de um serviço do Azure. Este arti
 
 | Atributo de segurança | Sim/Não | Observações |
 |---|---|--|
-| Suporte de ponto de extremidade de serviço| Não  | |
+| Suporte de ponto de extremidade de serviço| Não | |
 | Suporte à injeção de rede virtual| Sim | |
 | Isolamento de rede e suporte de firewall| Sim | Usando grupos de segurança de rede (NSG) e o Gateway de aplicativo do Azure (ou outro dispositivo de software), respectivamente. |
 | Forçado suporte por túnel| Sim | A rede do Azure fornece túnel forçado. |
@@ -73,6 +72,6 @@ A segurança é integrada a todos os aspectos de um serviço do Azure. Este arti
 
 Esta seção documenta as vulnerabilidades mais comuns, que não afetam o gerenciamento de API do Azure.
 
-| Vulnerabilidade               | DESCRIÇÃO                                                                                                                                                                                                                                                                                                               |
+| Vulnerabilidade               | Descrição                                                                                                                                                                                                                                                                                                               |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Ticketbleed (CVE-2016-9244) | Ticketbleed é uma vulnerabilidade na implementação da extensão TLS SessionTicket encontrado em alguns produtos de F5. Ele permite que o vazamento ("mais avançadas") de até 31 bytes de dados de memória não inicializada. Isso é causado pela pilha de TLS, preenchimento de uma ID de sessão passada do cliente, com os dados para torná-lo a 32 bits longa. |
+| Ticketbleed (CVE-2016-9244) | Ticketbleed é uma vulnerabilidade na implementação da extensão TLS SessionTicket encontrado em alguns produtos de F5. Ele permite que o vazamento ("mais avançadas") de até 31 bytes de dados de memória não inicializada. Isso é causado pela pilha de TLS, preenchimento de uma ID de sessão passada do cliente, com os dados para torná-lo 32 bits de comprimento. |

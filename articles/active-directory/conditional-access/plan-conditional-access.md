@@ -13,12 +13,12 @@ ms.date: 01/25/2019
 ms.author: joflore
 ms.reviewer: martincoetzer
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4832055bffa72732991cb766ce88cc48c07530e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2e277f31dcf2627959b88d58f325fb4dad024a00
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60301325"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001188"
 ---
 # <a name="how-to-plan-your-conditional-access-deployment-in-azure-active-directory"></a>Como: planejar a sua implantação de acesso condicional no Azure Active Directory
 
@@ -81,7 +81,7 @@ Agora é um bom momento para decidir sobre um padrão de nomenclatura para as su
  
 ![Padrão de nomenclatura](./media/plan-conditional-access/11.png)
 
-Enquanto um nome descritivo ajuda você a manter uma visão geral da sua implementação de acesso condicional, o número de sequência será útil se você precisar fazer referência a uma política em uma conversa. Por exemplo, ao falar com um colega administrador ao telefone, você pode pedir a ele que abra a política EM063 para resolver um problema.
+Enquanto um nome descritivo ajuda você a manter uma visão geral da sua implementação de acesso condicional, o número de sequência será útil se você precisar fazer referência a uma política em uma conversa. Por exemplo, se você falar com um colega administrador no telefone, você pode pedir para abrir a diretiva EM063 para resolver um problema.
 
 
 
@@ -114,7 +114,7 @@ Por exemplo, o seguinte nome indica que essa política é a primeira política d
 Ao planejar a solução de política de acesso condicional, avalie se é preciso criar políticas que atinjam os resultados a seguir. 
 
 
-### <a name="block-access"></a>Acesso bloqueado
+### <a name="block-access"></a>Bloquear acesso
 
 A opção de bloquear o acesso é eficiente porque:
 
@@ -131,7 +131,7 @@ Para simplificar a experiência de entrada dos usuários, talvez você deva perm
 
 Os casos de uso comuns para exigir MFA são os acessos:
 
-- [Por administradores](baseline-protection.md#require-mfa-for-admins)
+- [Por administradores](howto-baseline-protect-administrators.md)
 - [Para aplicativos específicos](app-based-mfa.md) 
 - [Em locais de rede nos quais você não confia](untrusted-networks.md).
 

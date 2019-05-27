@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 04/06/2019
-ms.openlocfilehash: 352f695f186b656ad0f6471d8ede905d53ad5274
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 52b5291e4b56b5065b9dddd5b8908ade0c1a8387
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65234115"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "66019843"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-visual-interface"></a>Tutorial: Prever o preço de automóveis com a interface visual
 
@@ -35,8 +35,8 @@ Na [segunda parte](ui-tutorial-automobile-price-deploy.md) da série de tutoriai
 > Uma versão concluída deste tutorial está disponível como um teste de exemplo.
 > Na página Testes, acesse **Adicionar Novo** > **Amostra 1 – Regressão: Previsão de Preços de Automóveis (Básica)**
 
-> [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Build-zero-code-machine-learning-models-with-Azure-Machine-Learning-service/player]
 
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2X1GY]
 
 ## <a name="create-a-workspace"></a>Criar um workspace
 

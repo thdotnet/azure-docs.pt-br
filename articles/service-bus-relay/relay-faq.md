@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 05/21/2018
 ms.author: spelluru
 ms.openlocfilehash: 2433f4b3563cc8b301d1815cccf5ab24406e8662
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59045570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66111480"
 ---
 # <a name="azure-relay-faqs"></a>Perguntas frequentes sobre Retransmissão do Azure
 
@@ -80,7 +80,7 @@ Enviar uma mensagem para uma retransmissão do Barramento de Serviço é tratado
 As retransmissões abertas usando a associação do WCF **netTCPRelay** tratam as mensagens não como mensagens individuais, mas como um fluxo de dados que flui pelo sistema. Ao usar essa associação, somente o remetente e o ouvinte têm visibilidade do enquadramento das mensagens individuais enviadas e recebidas. Para retransmissões que usam a associação **netTCPRelay**, todos os dados são tratados como um fluxo para o cálculo das mensagens cobráveis. Nesse caso, o Barramento de Serviço calcula a quantidade total de dados enviados ou recebidos por meio de cada retransmissão individual por 5 minutos. Em seguida, ele divide essa quantidade total de dados por 64 KB para determinar o número de mensagens faturáveis para a retransmissão durante o período.
 
 ## <a name="quotas"></a>Cotas
-| Nome da cota | Escopo |  Observações | Valor |
+| Nome da cota | Scope |  Observações | Value |
 | --- | --- | --- | --- |
 | Ouvintes simultâneos em uma retransmissão |Entidade |Solicitações subsequentes de conexões adicionais são rejeitadas e uma exceção é recebida pelo código de chamada. |25 |
 | Conexões de retransmissão simultâneas por todos os pontos de extremidade de retransmissão em um namespace de serviço |Namespace |- |5.000 |

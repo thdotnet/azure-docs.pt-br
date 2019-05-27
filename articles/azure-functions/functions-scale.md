@@ -13,12 +13,12 @@ ms.topic: reference
 ms.date: 03/27/2019
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 459758142c94ddfd244df1427dd5632186efc0de
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 05fb277564f72e62a4cdacc12a16cce229b2befc
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61045811"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872738"
 ---
 # <a name="azure-functions-scale-and-hosting"></a>Escala e hospedagem no Azure Functions
 
@@ -75,7 +75,7 @@ Considere o plano premium do Azure Functions nos seguintes casos:
 
 Ao executar as funções de JavaScript em um plano Premium, você deve escolher uma instância com menos vCPUs. Para obter mais informações, consulte o [escolha planos Premium de núcleo único](functions-reference-node.md#considerations-for-javascript-functions).  
 
-## <a name="app-service-plan"></a>Plano do Serviço de Aplicativo
+## <a name="app-service-plan"></a>plano de Serviço de Aplicativo
 
 Seus aplicativos de função também podem executar em VMs dedicadas mesmas como outros aplicativos de serviço de aplicativo (Basic, Standard, Premium e os SKUs isolados). Os Planos do Serviço de Aplicativo oferecem suporte a Linux.
 
@@ -165,3 +165,9 @@ A cobrança do plano de Consumo é descrita detalhadamente na [página de preço
 Consultas úteis e informações sobre como entender sua fatura de consumo podem ser encontradas [sobre as perguntas frequentes sobre cobrança](https://github.com/Azure/Azure-Functions/wiki/Consumption-Plan-Cost-Billing-FAQ).
 
 [Página de preços do Azure Functions]: https://azure.microsoft.com/pricing/details/functions
+
+## <a name="service-limits"></a>Limites de serviço
+
+A tabela a seguir indica os limites que se aplicam a aplicativos de funções durante a execução em vários planos de hospedagem:
+
+[!INCLUDE [functions-limits](../../includes/functions-limits.md)]

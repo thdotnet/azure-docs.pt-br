@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/23/2019
+ms.date: 05/21/2019
 ms.author: aschhab
-ms.openlocfilehash: 0364304a203e03faf69868174a45cb41850ce112
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: af67b27dacf3bb86c2dd5c878a2751e027a53acb
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60713955"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66003129"
 ---
 # <a name="overview-of-service-bus-dead-letter-queues"></a>Visão geral das filas de mensagens mortas do Barramento de Serviço 
 
@@ -49,7 +49,7 @@ Os aplicativos podem definir seus próprios códigos para a propriedade `DeadLet
 | !TopicDescription.<br />EnableFilteringMessagesBeforePublishing e SubscriptionDescription.<br />EnableDeadLetteringOnFilterEvaluationExceptions |exception.GetType().Name |exception.Message |
 | EnableDeadLetteringOnMessageExpiration |TTLExpiredException |A mensagem expirou e foi colocada no estado de mensagem morta. |
 | SubscriptionDescription.RequiresSession |A ID da sessão é nula. |A entidade habilitada para sessão não permite uma mensagem cuja identificação de sessão seja nula. |
-| !fila de mensagens mortas |MaxTransferHopCountExceeded |Nulo |
+| !fila de mensagens mortas |MaxTransferHopCountExceeded |Null |
 | Mensagem morta explícita do aplicativo |Especificado pelo aplicativo |Especificado pelo aplicativo |
 
 ## <a name="exceeding-maxdeliverycount"></a>Excedendo MaxDeliveryCount
@@ -102,6 +102,17 @@ while(true)
     }
 }
 ```
+
+## <a name="path-to-the-dead-letter-queue"></a>Caminho para a fila de inatividade
+Você pode acessar a fila de inatividade, usando a seguinte sintaxe:
+
+```
+<queue path>/$deadletterqueue
+<topic path>/Subscription/<subscription path>/$deadletterqueue
+```
+
+Se você estiver usando o SDK do .NET, você pode obter o caminho para a fila de inatividade por meio do método SubscriptionClient.FormatDeadLetterPath(). Esse método usa o nome do tópico/assinatura de nome e sufixos com **/$DeadLetterQueue**.
+
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -9,16 +9,16 @@ manager: barbkess
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 11977a5aa36b023e468ce6a54862b5138995c417
-ms.sourcegitcommit: e729629331ae10097a081a03029398525f4147a4
+ms.openlocfilehash: d68ffe6561da6a23c288dfabd1d3eb6b34099bb3
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64513527"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66003104"
 ---
-# <a name="common-security-attributes-for-azure-service-bus-messaging"></a>Atributos de segurança comuns para mensagens do barramento de serviço do Azure
+# <a name="security-attributes-for-azure-service-bus-messaging"></a>Atributos de segurança para mensagens do barramento de serviço do Azure
 
-A segurança é integrada a todos os aspectos de um serviço do Azure. Este artigo documenta os atributos de segurança comuns integrados de mensagens do barramento de serviço do Azure.
+Este artigo documenta os atributos de segurança integrados de mensagens do barramento de serviço do Azure.
 
 [!INCLUDE [Security Attributes Header](../../includes/security-attributes-header.md)]
 
@@ -28,7 +28,7 @@ A segurança é integrada a todos os aspectos de um serviço do Azure. Este arti
 |---|---|--|
 | Criptografia em repouso:<ul><li>Criptografia no servidor</li><li>Criptografia do lado do servidor com chaves gerenciadas pelo cliente</li><li>Outros recursos de criptografia (como do lado do cliente, Always Encrypted, etc.)</ul>|  Sim para criptografia em repouso do lado do servidor por padrão. | Chaves gerenciadas pelo cliente e o BYOK ainda não têm suporte. Criptografia do cliente é responsabilidade do cliente |
 | Criptografia em trânsito:<ul><li>Criptografia do ExpressRoute</li><li>Na criptografia de rede virtual</li><li>Criptografia de rede virtual a rede virtual</ul>| Sim | Dá suporte ao mecanismo HTTPS/TLS padrão. |
-| Tratamento de chaves de criptografia (CMK, BYOK, etc.)| Não  |   |
+| Tratamento de chaves de criptografia (CMK, BYOK, etc.)| Não |   |
 | Criptografia de nível de coluna (serviços de dados do Azure)| N/D | |
 | Chamadas à API criptografadas| Sim | Chamadas à API são feitas por meio [do Azure Resource Manager](../azure-resource-manager/index.yml) e HTTPS. |
 
@@ -37,9 +37,9 @@ A segurança é integrada a todos os aspectos de um serviço do Azure. Este arti
 | Atributo de segurança | Sim/Não | Observações |
 |---|---|--|
 | Suporte de ponto de extremidade de serviço| Sim (somente para a camada Premium) | Há suporte para pontos de extremidade de serviço de rede virtual para [camada Premium do barramento de serviço](service-bus-premium-messaging.md) apenas. |
-| Suporte à injeção de rede virtual| Não  | |
+| Suporte à injeção de rede virtual| Não | |
 | Isolamento de rede e suporte de firewall| Sim (somente para a camada Premium) |  |
-| Forçado suporte por túnel| Não  |  |
+| Forçado suporte por túnel| Não |  |
 
 ## <a name="detection"></a>Detecção
 
@@ -61,7 +61,7 @@ A segurança é integrada a todos os aspectos de um serviço do Azure. Este arti
 | Atributo de segurança | Sim/Não | Observações|
 |---|---|--|
 | Auditoria e log de plano de controle e gerenciamento| Sim | Logs de operações estão disponíveis; ver [logs de diagnóstico do barramento de serviço](service-bus-diagnostic-logs.md).  |
-| Auditoria e log de plano de dados| Não  |  |
+| Auditoria e log de plano de dados| Não |  |
 
 ## <a name="configuration-management"></a>Gerenciamento de configuração
 

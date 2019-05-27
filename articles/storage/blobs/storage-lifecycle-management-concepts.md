@@ -5,16 +5,16 @@ services: storage
 author: mhopkins-msft
 ms.service: storage
 ms.topic: conceptual
-ms.date: 05/09/2019
+ms.date: 05/21/2019
 ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: common
-ms.openlocfilehash: 26ff592ea0d0a57049ae11a981fe8d8e77ca876f
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: ce2559f62d29c7b062cfd1ad1dcb61146adfd91c
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65606952"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001749"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Gerenciar o ciclo de vida de armazenamento de BLOBs do Azure
 
@@ -393,8 +393,12 @@ Para dados que são modificados e acessados regularmente durante seu ciclo de vi
 
 ## <a name="faq"></a>Perguntas frequentes
 
-**Eu criei uma nova política, por que as ações não são executadas imediatamente?**  
+**Eu criei uma nova política, por que as ações de não executar imediatamente?**  
 A plataforma executa a política de ciclo de vida uma vez por dia. Depois de configurar uma política, ele pode levar até 24 horas para algumas ações ser executado pela primeira vez.  
+
+**Eu reidratado manualmente um blob arquivado, como impedir que ele está sendo movida de volta para a camada de arquivo morto temporariamente?**  
+Quando um blob é movido de camada de acesso de uma a outra camada de acesso, não altera sua hora da última modificação. Se você manualmente reidratar um blob arquivado para camada frequente, ela seria movida de volta para arquivar camada pelo mecanismo de gerenciamento do ciclo de vida. Você pode impedi-lo, desabilitando a regra que afeta esse blob temporariamente. Você pode copiar o blob para outro local, se ele precisa ficar permanentemente da camada quente. Você pode reabilitar a regra quando o blob pode ser com segurança movido de volta para arquivar camada. 
+
 
 ## <a name="next-steps"></a>Próximas etapas
 

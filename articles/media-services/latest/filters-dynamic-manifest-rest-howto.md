@@ -11,20 +11,23 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 12/17/2018
+ms.date: 05/22/2019
 ms.author: juliako
-ms.openlocfilehash: 32b9664d12d6fe3a44329665c730dbc8709430f2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 69399513291a47f7109003e825052314f447125a
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60322712"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002336"
 ---
 # <a name="creating-filters-with-media-services-rest-api"></a>Criando filtros com a API REST de Serviços de Mídia do Microsoft Azure
 
-Ao entregar seu conteúdo aos clientes (streaming de eventos ao vivo ou vídeo por demanda), seu cliente pode precisar de mais flexibilidade do que o descrito no arquivo de manifesto do ativo padrão. Os Serviços de Mídia do Azure permitem definir filtros de conta e filtros de recursos para o seu conteúdo. Para obter mais informações, consulte [Filtros e manifestos dinâmicos](filters-dynamic-manifest-overview.md).
+Ao entregar seu conteúdo aos clientes (streaming de eventos ao vivo ou vídeo por demanda), seu cliente pode precisar de mais flexibilidade do que o descrito no arquivo de manifesto do ativo padrão. Os Serviços de Mídia do Azure permitem definir filtros de conta e filtros de recursos para o seu conteúdo. Para obter mais informações, consulte [filtros](filters-concept.md) e [manifestos dinâmico](filters-dynamic-manifest-overview.md).
 
 Este tópico mostra como definir um filtro para um ativo vídeo por demanda e usar APIs REST para criar [Filtros de Conta](https://docs.microsoft.com/rest/api/media/accountfilters) e [Filtros de Ativos](https://docs.microsoft.com/rest/api/media/assetfilters). 
+
+> [!NOTE]
+> Certifique-se de examinar [presentationTimeRange](filters-concept.md#presentationtimerange).
 
 ## <a name="prerequisites"></a>Pré-requisitos 
 

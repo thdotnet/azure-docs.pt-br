@@ -9,16 +9,16 @@ ms.service: service-fabric
 ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: mbaldwin
-ms.openlocfilehash: f12d11cecbf682ae82f9c432804b1d611ee3e39f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7c1718298c3f7c3fea28fa0b18569085f071696f
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64719407"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66003067"
 ---
-# <a name="common-security-attributes-for-azure-service-fabric"></a>Atributos comuns de segurança para o Azure Service Fabric
+# <a name="security-attributes-for-azure-service-fabric"></a>Atributos de segurança para o Azure Service Fabric
 
-A segurança é integrada a todos os aspectos de um serviço do Azure. Este artigo documenta os atributos comuns de segurança integrados do Azure Service Fabric. 
+Este artigo documenta os atributos de segurança integrados do Azure Service Fabric. 
 
 [!INCLUDE [Security Attributes Header](../../includes/security-attributes-header.md)]
 

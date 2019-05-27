@@ -3,21 +3,21 @@ title: Transformar dados com o Python do Databricks - Azure | Microsoft Docs
 description: Saiba como processar ou transformar dados executando um Python do Databricks.
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
-ms.assetid: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/15/2018
-ms.author: douglasl
-ms.openlocfilehash: 60aafd983d1c21777276683a8685376a247d11f5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+author: gauravmalhot
+ms.author: gamal
+ms.reviewer: maghan
+manager: craigg
+ms.openlocfilehash: 3ab3ec5380fbc90dffd4f258073ad8b477e2318a
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60589220"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002840"
 ---
 # <a name="transform-data-by-running-a-python-activity-in-azure-databricks"></a>Transformar dados executando uma atividade de Python no Azure Databricks
 
@@ -64,13 +64,13 @@ A tabela a seguir descreve as propriedades JSON usadas na definição de JSON:
 
 |Propriedade|DESCRIÇÃO|Obrigatório|
 |---|---|---|
-|Nome|Nome da atividade no pipeline.|Sim|
-|description|Texto que descreve o que a atividade faz.|Não |
+|nome|Nome da atividade no pipeline.|Sim|
+|description|Texto que descreve o que a atividade faz.|Não|
 |tipo|Para a Atividade do Databricks Python, o tipo de atividade é DatabricksSparkPython.|Sim|
 |linkedServiceName|Nome do serviço vinculado ao Databricks no qual a atividade de Python é executado. Saiba mais sobre esse serviço vinculado no artigo  [Serviços de computação vinculados](compute-linked-services.md) .|Sim|
 |pythonFile|O URI do arquivo Python a ser executado. Há suporte para apenas os caminhos DBFS.|Sim|
-|parameters|Parâmetros de linha de comando que serão passados para o arquivo Python. Isto é uma matriz de cadeias de caracteres.|Não |
-|bibliotecas|Uma lista de bibliotecas a serem instaladas no cluster, que executará o trabalho. Ele pode ser uma matriz de <string, object>|Não |
+|parameters|Parâmetros de linha de comando que serão passados para o arquivo Python. Isto é uma matriz de cadeias de caracteres.|Não|
+|bibliotecas|Uma lista de bibliotecas a serem instaladas no cluster, que executará o trabalho. Ele pode ser uma matriz de <string, object>|Não|
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Bibliotecas com suporte para atividades do databricks
 

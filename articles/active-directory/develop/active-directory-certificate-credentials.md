@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/24/2018
+ms.date: 05/21/2019
 ms.author: ryanwi
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34a499ac12bcf6f4aee671eb209b709390ca6139
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: ed4e7559ff6c3b76bbdf49b538ffebf3ad09cc58
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545133"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001227"
 ---
 # <a name="certificate-credentials-for-application-authentication"></a>Credenciais de certificado para autenticação do aplicativo
 
@@ -98,11 +98,10 @@ Você pode associar a credencial de certificado com o aplicativo cliente no Micr
 ### <a name="uploading-the-certificate-file"></a>Fazendo upload do arquivo de certificado
 
 No registro do aplicativo do Azure para o aplicativo cliente:
-1. Selecione **Configurações > chaves** e, em seguida, selecione **carregar a chave pública**. 
-2. Selecione o arquivo de certificado que você deseja carregar.
-3. Clique em **Salvar**. 
-   
-   Depois de salvar, carregar o certificado e a impressão digital, data de início e valores de expiração são exibidos. 
+1. Selecione **certificados e segredos**. 
+2. Clique em **carregar um certificado** e selecione o arquivo de certificado para carregar.
+3. Clique em **Adicionar**.
+  Depois que o certificado é carregado, a impressão digital, data de início e valores de expiração são exibidos. 
 
 ### <a name="updating-the-application-manifest"></a>Atualizando o manifesto do aplicativo
 
@@ -114,7 +113,7 @@ Com a suspensão de um certificado, você precisa calcular:
 Você também deve fornecer um GUID para identificar a chave no manifesto do aplicativo (`$keyId`).
 
 No registro do aplicativo do Azure para o aplicativo cliente:
-1. Abra o manifesto do aplicativo.
+1. Selecione **manifesto** para abrir o manifesto do aplicativo.
 2. Substitua a propriedade *keyCredentials* pelas novas informações de certificado usando o esquema a seguir.
 
    ```

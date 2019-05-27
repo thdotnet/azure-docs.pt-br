@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
-ms.openlocfilehash: df12639aaafaf3df7ae2b755d635d4fba83d846e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 39a757900b4307d702a0ce0ce1c20694418aa8dd
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60648645"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872830"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Como executar as funções duráveis como WebJobs
 
@@ -37,7 +37,7 @@ Este artigo pressupõe que você está familiarizado com os conceitos básicos d
 
 Para completar as etapas neste artigo:
 
-* [Instale o Visual Studio 2017 versão 15.6 ou posterior](https://docs.microsoft.com/visualstudio/install/) com a carga de trabalho de **desenvolvimento do Azure**.
+* [Instalar o Visual Studio de 2019](https://docs.microsoft.com/visualstudio/install/) com o **desenvolvimento do Azure** carga de trabalho.
 
   Se você já tiver o Visual Studio, mas não tiver essa carga de trabalho, adicione a carga de trabalho, selecionando **ferramentas** > **obter ferramentas e recursos**.
 

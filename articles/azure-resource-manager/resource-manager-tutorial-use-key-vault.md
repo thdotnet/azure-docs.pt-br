@@ -14,12 +14,12 @@ ms.date: 03/04/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 127b411f4de0bceff98f1c81f6a4ca8c1fc4fb3b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c147023635f337e203f02779ef6df3d0a0f0088c
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60390934"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66015564"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-resource-manager-template-deployment"></a>Tutorial: Integrar o Azure Key Vault na implantação de modelo do Resource Manager
 
@@ -203,7 +203,7 @@ New-AzResourceGroupDeployment `
 
 Quando você implantar o modelo, use o mesmo grupo de recursos que o cofre de chaves. Torna mais fácil quando você limpa os recursos. Você só precisa excluir um grupo de recursos, em vez de dois.
 
-## <a name="valid-the-deployment"></a>Validar a implantação
+## <a name="validate-the-deployment"></a>Validar a implantação
 
 Depois de ter implantado com êxito a máquina virtual, teste o logon usando a senha armazenada no cofre de chaves.
 

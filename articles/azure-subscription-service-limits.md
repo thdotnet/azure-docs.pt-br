@@ -8,14 +8,14 @@ tags: billing
 ms.assetid: 60d848f9-ff26-496e-a5ec-ccf92ad7d125
 ms.service: billing
 ms.topic: article
-ms.date: 04/19/2019
+ms.date: 05/17/2019
 ms.author: byvinyal
-ms.openlocfilehash: c8f1eaba726efe72e2b6845beaf1465d047c90d2
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 3f01e15e4ac39127263c8c68590b6c50be04847d
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65787630"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "66023224"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Assinatura do Azure e limite de serviços, cotas e restrições
 Este documento lista alguns dos limites mais comuns do Microsoft Azure, que também são chamados de cotas. Esse documento não cobre atualmente todos os serviços do Azure. Ao longo do tempo, a lista será expandida e atualizada para abordar mais serviços.
@@ -54,6 +54,7 @@ Na lista de limites a seguir, uma nova tabela reflete quaisquer diferenças nos 
 * [Banco de Dados do Azure para PostgreSQL](#azure-database-for-postgresql)
 * [DNS do Azure](#azure-dns-limits)
 * [Firewall do Azure](#azure-firewall-limits)
+* [Funções do Azure](#functions-limits)
 * [Serviço de Kubernetes do Azure](#azure-kubernetes-service-limits)
 * [Serviço do Azure Machine Learning](#azure-machine-learning-service-limits)
 * [Mapas do Azure](#azure-maps-limits)
@@ -234,6 +235,9 @@ Os seguintes limites do Serviço de Aplicativo incluem limites para Aplicativos 
 
 [!INCLUDE [azure-websites-limits](../includes/azure-websites-limits.md)]
 
+### <a name="functions-limits"></a>Limites de funções
+[!INCLUDE [functions-limits](../includes/functions-limits.md)]
+
 ### <a name="scheduler-limits"></a>Limites do Agendador
 [!INCLUDE [scheduler-limits-table](../includes/scheduler-limits-table.md)]
 
@@ -246,7 +250,7 @@ A tabela a seguir mostra os limites de Serviços BizTalk do Azure.
 [!INCLUDE [biztalk-services-service-limits](../includes/biztalk-services-service-limits.md)]
 
 ### <a name="azure-cosmos-db-limits"></a>Limites do Azure Cosmos DB
-O Azure Cosmos DB é um banco de dados de escala global no qual o armazenamento e a produtividade podem ser dimensionados para atender às necessidades de seu aplicativo. Se você tiver alguma dúvida sobre a escala do Azure Cosmos DB fornece, envie um email para askcosmosdb@microsoft.com.
+Para obter os limites do Azure Cosmos DB, consulte [limites no Azure Cosmos DB](cosmos-db/concepts-limits.md).
 
 ### <a name="azure-database-for-mysql"></a>Banco de Dados do Azure para MySQL
 Para limites do Banco de Dados do Azure para MySQL, consulte [Limitações no Banco de Dados do Azure para MySQL](mysql/concepts-limits.md).

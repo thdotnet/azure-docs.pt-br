@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 01/19/2018
 ms.author: aljo
 ms.openlocfilehash: d5aa09f3ff899766e6eb6d1784e4417f7b48eac0
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59049890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66110242"
 ---
 # <a name="service-fabric-networking-patterns"></a>Padrões de rede do Service Fabric
 Você pode integrar seu cluster do Azure Service Fabric a outros recursos de rede do Azure. Neste artigo, mostramos como criar clusters que usam os seguintes recursos:
@@ -611,5 +611,5 @@ Após a implantação, você poderá ver dois balanceadores de carga no grupo de
 
 Após a implantação, você poderá ver dois balanceadores de carga no grupo de recursos. Se você procurar os balanceadores de carga, você poderá ver os endereços IP públicos e pontos de extremidade de gerenciamento (portas 19000 e 19080) atribuídos ao endereço IP público. Você também poderá ver o endereço IP interno estático e o ponto de extremidade do aplicativo (porta 80) atribuído ao balanceador de carga interno. Ambos os balanceadores de carga usam o mesmo pool de back-end de conjunto de dimensionamento de máquinas virtuais.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 [Criar um cluster](service-fabric-cluster-creation-via-arm.md)

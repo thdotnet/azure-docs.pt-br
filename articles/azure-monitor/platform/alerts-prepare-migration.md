@@ -7,16 +7,19 @@ ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: snmuvva
 ms.subservice: alerts
-ms.openlocfilehash: 347c89991cbb4d28b46eafff0a783148793ad2f7
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: bdbd45c2b10dec8f1c0a85110747a470e818dbf9
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64727492"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66015602"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Preparar seus aplicativos lógicos e runbooks para a migração clássicas de regras de alerta
 
-Como [anunciado anteriormente](monitoring-classic-retirement.md), alertas clássicos no Azure Monitor estão sendo desativadas em julho de 2019. Uma ferramenta de migração está disponível no portal do Azure para clientes que usam regras de alerta clássicas e que queiram disparar a migração em si.
+Como [anunciado anteriormente](monitoring-classic-retirement.md), alertas clássicos no Azure Monitor estão sendo desativadas em setembro de 2019 (foi originalmente de 2019 de julho). Uma ferramenta de migração está disponível no portal do Azure para clientes que usam regras de alerta clássicas e que queiram disparar a migração em si.
+
+> [!NOTE]
+> Devido a atraso na disponibilização da ferramenta de migração, a data de desativação para a migração de alertas clássicos foi estendida para 31 de agosto de 2019 da data do dia 30 de junho de 2019 originalmente anunciada.
 
 Se você optar por migrar voluntariamente suas regras de alerta clássicas a novas regras de alerta, lembre-se de que há algumas diferenças entre os dois sistemas. Este artigo explica essas diferenças e como você pode se preparar para a alteração.
 
@@ -30,7 +33,7 @@ A tabela a seguir é uma referência para as interfaces programáticas para aler
 |---------|---------|---------|
 |API REST     | [microsoft.insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules)         | [microsoft.insights/metricalerts](https://docs.microsoft.com/rest/api/monitor/metricalerts)       |
 |CLI do Azure     | [az monitor alert](https://docs.microsoft.com/cli/azure/monitor/alert?view=azure-cli-latest)        | [az monitor metrics alert](https://docs.microsoft.com/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
-|PowerShell      | [Referência](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrule)       |      |
+|PowerShell      | [Referência](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrule)       |  [Referência](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrulev2)    |
 | Modelo do Azure Resource Manager | [Para alertas clássicos](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-enable-template)|[Novos alertas de métrica](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-create-templates)|
 
 ## <a name="notification-payload-changes"></a>Alterações de carga de notificação
@@ -42,7 +45,7 @@ Use a tabela a seguir para mapear os campos de carga de webhook do formato do cl
 |  |Alertas clássicos  |Novos alertas de métrica |
 |---------|---------|---------|
 |O alerta foi ativado ou está resolvido?    | **status**       | **data.status** |
-|Informações contextuais sobre o alerta     | **contextoo**        | **data.context**        |
+|Informações contextuais sobre o alerta     | **context**        | **data.context**        |
 |Carimbo de data / hora em que o alerta foi ativado ou resolvido     | **context.timestamp**       | **data.context.timestamp**        |
 | ID da regra de alerta | **context.id** | **data.context.id** |
 | Nome da regra de alerta | **context.name** | **data.context.name** |

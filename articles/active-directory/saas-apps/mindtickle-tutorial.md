@@ -16,11 +16,11 @@ ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c38ccf8e1c2bee9695e629a2fc5e8e7b60c64a2a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57879949"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65891528"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mindtickle"></a>Tutorial: Integração do Azure Active Directory com o MindTickle
 
@@ -117,7 +117,7 @@ Para configurar o logon único do Azure AD com o MindTickle, execute as seguinte
 
     ![Informações de logon único de Domínio e URLs do MindTickle](common/sp-identifier.png)
 
-    Na caixa de texto **URL de login**, digite um URL usando o seguinte padrão: `https://<subdomain>.mindtickle.com`
+    Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://<subdomain>.mindtickle.com`
 
     > [!Note]
     > Se o valor de **Identificador** não for preenchido de modo automático, preencha o valor manualmente de acordo com suas necessidades. O valor da URL de logon não é real. Atualize o valor com a URL de Logon real. Entre em contato com a [equipe de suporte do MindTickle](mailto:support@mindtickle.com) para obter esse valor.
@@ -158,7 +158,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.

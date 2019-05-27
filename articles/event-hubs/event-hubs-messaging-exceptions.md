@@ -13,12 +13,12 @@ ms.workload: na
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: a6ebfc86a2489910d23faa96550f34cc979c0435
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7b6323e02225be3d954e4ee91ea06952bb3ce396
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60203424"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001775"
 ---
 # <a name="event-hubs-messaging-exceptions"></a>Exceções de mensagens dos Hubs de Eventos
 
@@ -36,7 +36,7 @@ As APIs dos Hubs de Eventos geram exceções que podem se enquadrar nas categori
 ## <a name="exception-types"></a>Tipos de exceção
 A tabela a seguir relaciona os tipos de mensagens de exceção e suas causas e aponta a ação sugerida que você pode tomar.
 
-| Tipo de exceção | Descrição/Causa/Exemplos | Ação sugerida | Observação sobre repetição automática/imediata |
+| Tipo de Exceção | Descrição/Causa/Exemplos | Ação sugerida | Observação sobre repetição automática/imediata |
 | -------------- | -------------------------- | ---------------- | --------------------------------- |
 | [TimeoutException](https://msdn.microsoft.com/library/system.timeoutexception.aspx) |O servidor não respondeu à operação solicitada dentro do tempo especificado que é controlado por [OperationTimeout](/dotnet/api/microsoft.servicebus.messaging.messagingfactorysettings). O servidor pode ter concluído a operação solicitada. Essa exceção pode acontecer devido a atrasos de rede ou outros atrasos de infraestrutura. |Verifique o estado do sistema para manter a consistência e tente novamente, se necessário.<br /> Veja [TimeoutException](#timeoutexception). | Uma nova tentativa pode ajudar em alguns casos; Adicione lógica de repetição ao código. |
 | [InvalidOperationException](https://msdn.microsoft.com/library/system.invalidoperationexception.aspx) |A operação solicitada pelo usuário não é permitida no servidor ou serviço. Consulte a mensagem de exceção para obter detalhes. Por exemplo, [Concluir](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) gerará essa exceção se a mensagem tiver sido recebida no modo [ReceiveAndDelete](/dotnet/api/microsoft.servicebus.messaging.receivemode) . | Verifique o código e a documentação. Verifique se a operação solicitada é válida. | Tentar novamente não ajudará. |
@@ -91,8 +91,14 @@ Esse erro pode ocorrer por um dos seguintes motivos:
 
 Esse erro deve ocorrer raramente. Isso acontece quando o contêiner executando o código para seu namespace é insuficiente na CPU – não mais do que alguns segundos, antes de o balanceador de carga dos Hubs de Eventos ser iniciado.
 
+### <a name="limit-on-calls-to-the-getruntimeinformation-method"></a>Limite em chamadas para o método GetRuntimeInformation
+Os Hubs de eventos do Azure dá suporte a até 50 chamadas por segundo para o GetRuntimeInfo por segundo. Depois que o limite for atingido, você poderá receber uma exceção similar à mostrada a seguir:
 
-## <a name="next-steps"></a>Próximos passos
+```
+ExceptionId: 00000000000-00000-0000-a48a-9c908fbe84f6-ServerBusyException: The request was terminated because the namespace 75248:aaa-default-eventhub-ns-prodb2b is being throttled. Error code : 50001. Please wait 10 seconds and try again.
+```
+
+## <a name="next-steps"></a>Próximas etapas
 
 Você pode saber mais sobre Hubs de Eventos visitando os links abaixo:
 

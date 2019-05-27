@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 09/11/2018
 ms.author: spelluru
 ms.openlocfilehash: 196b00f1268eada20d0e35473dc6eb43c9e48df6
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59045262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66111129"
 ---
 # <a name="create-service-bus-resources-using-azure-resource-manager-templates"></a>Criar recursos do Barramento de Serviço usando modelos do Azure Resource Manager
 
@@ -181,7 +181,7 @@ Set-AzContext -SubscriptionID <YourSubscriptionId>
 
 ### <a name="set-the-resource-group"></a>Definir o grupo de recursos
 
-Se você não tiver um recurso existente do grupo, crie um novo grupo de recursos com o **New-AzResourceGroup** comando. Forneça o nome do grupo de recursos e local que você deseja usar. Por exemplo: 
+Se você não tiver um recurso existente do grupo, crie um novo grupo de recursos com o **New-AzResourceGroup** comando. Forneça o nome do grupo de recursos e local que você deseja usar. Por exemplo:
 
 ```powershell
 New-AzResourceGroup -Name MyDemoRG -Location "West US"
@@ -252,7 +252,7 @@ Parameters        :
 
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Agora você já viu o fluxo de trabalho básico e os comandos para implantar um modelo do Azure Resource Manager. Para obter informações mais detalhadas, visite os seguintes links:
 
 * [Visão geral do Azure Resource Manager][Azure Resource Manager overview]

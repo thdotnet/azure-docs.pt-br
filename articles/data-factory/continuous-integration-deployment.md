@@ -3,20 +3,21 @@ title: Integração e entrega contínuas no Azure Data Factory | Microsoft Docs
 description: Aprenda a usar integração e entrega contínuas para mover os pipelines do Data Factory de um ambiente (desenvolvimento, teste, produção) para outro.
 services: data-factory
 documentationcenter: ''
-author: gauravmalhot
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/17/2019
+author: gauravmalhot
 ms.author: gamal
+ms.reviewer: maghan
 manager: craigg
-ms.openlocfilehash: 2edd4e28a0dd67be3c06159bce2e968d681b7f70
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 76962975705ff53a292f41a0a54e42c5f2991a2c
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58905249"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002669"
 ---
 # <a name="continuous-integration-and-delivery-cicd-in-azure-data-factory"></a>Integração e entrega contínua (CI / CD) no Azure Data Factory
 
@@ -949,7 +950,7 @@ Aqui estão algumas diretrizes para usar ao criar o arquivo de parâmetros perso
 #### <a name="triggers"></a>Gatilhos
 
 * Em `typeProperties`, duas propriedades são parametrizadas. É o primeiro deles `maxConcurrency`, que é especificado para ter um valor padrão e o tipo seria `string`. Ele tem o nome do parâmetro padrão de `<entityName>_properties_typeProperties_maxConcurrency`.
-* O `recurrence` propriedade também é parametrizada. Aqui, todas as propriedades nesse nível são especificadas sejam parametrizados como cadeias de caracteres, com valores padrão e nomes de parâmetro. Uma exceção é o `interval` propriedade, que é parametrizada como tipo numérico e com o nome do parâmetro com o sufixo `<entityName>_properties_typeProperties_recurrence_triggerSuffix`. Da mesma forma, o `freq` propriedade é uma cadeia de caracteres e é parametrizada como uma cadeia de caracteres. No entanto, o `freq` propriedade é parametrizada sem um valor padrão. O nome é reduzido e o sufixo. Por exemplo, `<entityName>_freq`.
+* O `recurrence` propriedade também é parametrizada. Aqui, todas as propriedades nesse nível são especificadas sejam parametrizados como cadeias de caracteres, com valores padrão e nomes de parâmetro. Uma exceção é o `interval` propriedade, que é parametrizada como tipo numérico e com o nome do parâmetro com o sufixo `<entityName>_properties_typeProperties_recurrence_triggerSuffix`. Da mesma forma, o `freq` propriedade é uma cadeia de caracteres e é parametrizada como uma cadeia de caracteres. No entanto, o `freq` propriedade é parametrizada sem um valor padrão. O nome é reduzido e o sufixo. Por exemplo: `<entityName>_freq`.
 
 #### <a name="linkedservices"></a>LinkedServices
 

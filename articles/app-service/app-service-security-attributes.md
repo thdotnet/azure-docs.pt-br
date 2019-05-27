@@ -9,12 +9,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: mbaldwin
-ms.openlocfilehash: d22fca27943be7ac7db8b8edd5882b9fa4ab3ab9
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 1d7ab8008e8fbdb5f851f158d14f62bdea803f11
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65607252"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001695"
 ---
 # <a name="security-attributes-for-azure-app-service"></a>Atributos de segurança para o serviço de aplicativo do Azure
 
@@ -28,18 +28,18 @@ Este artigo documenta os atributos comuns de segurança integrados ao serviço d
 |---|---|--|
 | Criptografia em repouso (por exemplo, criptografia do lado do servidor, a criptografia do lado do servidor com chaves gerenciadas pelo cliente e outros recursos de criptografia) | Sim | Conteúdo do arquivo de site é armazenado no armazenamento do Azure, que criptografa automaticamente o conteúdo em repouso. Ver [criptografia do armazenamento do Azure para dados em repouso](../storage/common/storage-service-encryption.md).<br><br>Os segredos do cliente fornecido são criptografados em repouso. Os segredos sejam criptografados em repouso enquanto armazenados em bancos de dados de configuração de serviço de aplicativo.<br><br>Discos conectados localmente, opcionalmente, podem ser usados como armazenamento temporário por sites (D:\local e % TMP %). Discos conectados localmente não são criptografados em repouso. |
 | Criptografia em trânsito (como criptografia de ExpressRoute, em criptografia de rede virtual e a criptografia de rede virtual-VNet)| Sim | Os clientes podem configurar os sites da web para exigir e usar HTTPS para tráfego de entrada. Confira a postagem [como fazer um HTTPS de serviço de aplicativo do Azure apenas](https://blogs.msdn.microsoft.com/benjaminperkins/2017/11/30/how-to-make-an-azure-app-service-https-only/). |
-| Manipulação de chaves de criptografia (CMK, BYOK, etc.)| Sim | Os clientes podem optar por armazenar segredos do aplicativo no cofre de chaves e recuperá-los em tempo de execução. Ver [faz referência a usar o Key Vault para o serviço de aplicativo e o Azure Functions (visualização)](app-service-key-vault-references.md).|
-| Criptografia de nível de coluna (Serviços de Dados do Azure)| N/D | |
+| Tratamento de chaves de criptografia (CMK, BYOK, etc.)| Sim | Os clientes podem optar por armazenar segredos do aplicativo no cofre de chaves e recuperá-los em tempo de execução. Ver [faz referência a usar o Key Vault para o serviço de aplicativo e o Azure Functions (visualização)](app-service-key-vault-references.md).|
+| Criptografia de nível de coluna (serviços de dados do Azure)| N/D | |
 | Chamadas à API criptografadas| Sim | As chamadas de gerenciamento para configurar o serviço de aplicativo ocorrem por meio [do Azure Resource Manager](../azure-resource-manager/index.yml) chamadas via HTTPS. |
 
 ## <a name="network-segmentation"></a>Segmentação de rede
 
 | Atributo de segurança | Sim/Não | Observações |
 |---|---|--|
-| Suporte para ponto de extremidade de serviço| Sim | Disponível atualmente em versão prévia para o serviço de aplicativo. Ver [restrições de acesso do serviço de aplicativo do Azure](app-service-ip-restrictions.md). |
-| Suporte à injeção de VNET| Sim | Ambientes do serviço de aplicativo são implementações particulares do serviço de aplicativo dedicado a um único cliente injetado em uma rede virtual do cliente. Ver [Introdução aos ambientes de serviço de aplicativo](environment/intro.md). |
+| Suporte de ponto de extremidade de serviço| Sim | Disponível atualmente em versão prévia para o serviço de aplicativo. Ver [restrições de acesso do serviço de aplicativo do Azure](app-service-ip-restrictions.md). |
+| Suporte à injeção de rede virtual| Sim | Ambientes do serviço de aplicativo são implementações particulares do serviço de aplicativo dedicado a um único cliente injetado em uma rede virtual do cliente. Ver [Introdução aos ambientes de serviço de aplicativo](environment/intro.md). |
 | Suporte ao isolamento de rede e Firewalling| Sim | A variação de multilocatário público do serviço de aplicativo, os clientes podem configurar ACLs (restrições de IP) para bloquear o tráfego de entrada permitida de rede.  Ver [restrições de acesso do serviço de aplicativo do Azure](app-service-ip-restrictions.md).  Ambientes de serviço de aplicativo é implantado diretamente em redes virtuais e, portanto, podem ser protegido com NSGs. |
-| Suporte para túnel forçado | Sim | Ambientes de serviço de aplicativo podem ser implantado em uma rede virtual do cliente em que o túnel forçado é configurado. Os clientes precisam seguir as instruções em [configurar seu ambiente de serviço de aplicativo com o túnel forçado](environment/forced-tunnel-support.md). |
+| Forçado suporte por túnel| Sim | Ambientes de serviço de aplicativo podem ser implantado em uma rede virtual do cliente em que o túnel forçado é configurado. Os clientes precisam seguir as instruções em [configurar seu ambiente de serviço de aplicativo com o túnel forçado](environment/forced-tunnel-support.md). |
 
 ## <a name="detection"></a>Detecção
 
@@ -59,8 +59,8 @@ Este artigo documenta os atributos comuns de segurança integrados ao serviço d
 
 | Atributo de segurança | Sim/Não | Observações|
 |---|---|--|
-| Registro em log e auditoria de plano de controle/gerenciamento| Sim | Todas as operações de gerenciamento executadas em objetos de serviço de aplicativo ocorrem por meio [do Azure Resource Manager](../azure-resource-manager/index.yml). Os logs históricos dessas operações estão disponíveis no portal e por meio da CLI; ver [operações de provedor de recursos do Azure Resource Manager](../role-based-access-control/resource-provider-operations.md#microsoftweb) e [log de atividades do monitor az](/cli/azure/monitor/activity-log). |
-| Registro em log e auditoria de plano de dados | Não | O plano de dados para o serviço de aplicativo é um compartilhamento de arquivo remoto que contém o conteúdo do site implantado de um cliente.  Não há nenhuma auditoria do compartilhamento de arquivo remoto. |
+| Auditoria e log de plano de controle e gerenciamento| Sim | Todas as operações de gerenciamento executadas em objetos de serviço de aplicativo ocorrem por meio [do Azure Resource Manager](../azure-resource-manager/index.yml). Os logs históricos dessas operações estão disponíveis no portal e por meio da CLI; ver [operações de provedor de recursos do Azure Resource Manager](../role-based-access-control/resource-provider-operations.md#microsoftweb) e [log de atividades do monitor az](/cli/azure/monitor/activity-log). |
+| Auditoria e log de plano de dados | Não | O plano de dados para o serviço de aplicativo é um compartilhamento de arquivo remoto que contém o conteúdo do site implantado de um cliente.  Não há nenhuma auditoria do compartilhamento de arquivo remoto. |
 
 ## <a name="configuration-management"></a>Gerenciamento de configuração
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/22/2019
 ms.author: kumud
-ms.openlocfilehash: f26391e36e3208996160fffad01e39ec2f182318
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: a9f8066896134072665c3f5b325e033b638bf094
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62130823"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001004"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-in-azure---powershell-preview"></a>Implantar um aplicativo de pilha dupla do IPv6 no Azure - PowerShell (versão prévia)
 
@@ -149,9 +149,9 @@ $lbrule_v6 = New-AzLoadBalancerRuleConfig `
   -BackendPort 80
 ```
 
-### <a name="create-load-balancer"></a>Criar um balanceador de carga
+### <a name="create-load-balancer"></a>Criar balanceador de carga
 
-Crie o Balanceador de Carga Básico com [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer). O exemplo a seguir cria um Load Balancer básico público denominado *myLoadBalancer* usar as configurações de IP de front-end IPv4 e IPv6, pools de back-end, investigações de integridade, balanceamento de carga de regras e NAT regras que criou o etapas anteriores:
+Crie o Balanceador de Carga Básico com [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer). O exemplo a seguir cria um Load Balancer básico público denominado *myLoadBalancer* usando o IP de front-end IPv4 e IPv6 configurações, pools de back-end e regras de balanceamento de carga que você criou nas etapas anteriores:
 
 ```azurepowershell-interactive
 $lb = New-AzLoadBalancer `
@@ -182,7 +182,7 @@ $avset = New-AzAvailabilitySet `
   -Sku aligned
 ```
 
-### <a name="create-network-security-group"></a>Criar um grupo de segurança de rede
+### <a name="create-network-security-group"></a>Criar grupo de segurança de rede
 
 Crie um grupo de segurança de rede para as regras que controlará a comunicação de entrada e saída em sua rede virtual.
 
