@@ -7,14 +7,14 @@ ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 04/29/2019
+ms.date: 05/22/2019
 ms.author: jingwang
-ms.openlocfilehash: 6af5c8cdad00802052f08be844f77d36420da3c9
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 9f6edc45316eaeceb75da643ed64b39382712852
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65142363"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66165950"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Formatos de arquivo e codecs de compactação com suporte no Azure Data Factory
 
@@ -29,7 +29,7 @@ Se você quiser **copiar arquivos no estado em que se encontram** entre reposit�
 * [Formato Avro](#avro-format)
 
 > [!TIP]
-> Saiba como a atividade de cópia mapeia seus dados de origem até o coletor da seção [Mapeamento de esquema na atividade de cópia](copy-activity-schema-and-type-mapping.md), incluindo como os metadados são determinados com base nas suas configurações de formato de arquivo e dicas sobre quando especificar o [conjunto de dados `structure`](concepts-datasets-linked-services.md#dataset-structure-or-schema).
+> Saiba como a atividade de cópia mapeia seus dados de origem para o coletor de [mapeamento de esquema na atividade de cópia](copy-activity-schema-and-type-mapping.md).
 
 ## <a name="text-format"></a>Formato de texto
 

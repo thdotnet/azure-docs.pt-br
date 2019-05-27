@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
-ms.openlocfilehash: 7b5df31c3e1d07cc9ac93f73362e853fab728fa9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 0c1efa0e5cfa4bf31e58be64b3fe78075b79b515
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58793791"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66141743"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Como implementar a recuperação de desastre usando o backup de serviço e restaurar no Gerenciamento de API no Azure
 
@@ -117,7 +117,7 @@ Substitua `{tenant id}`, `{application id}` e `{redirect uri}` usando as seguint
 
     Depois que os valores são especificados, o exemplo de código deve retornar um token semelhante ao seguinte exemplo:
 
-    ![A criptografia do token][api-management-arm-token]
+    ![Token][api-management-arm-token]
 
     > [!NOTE]
     > O token pode expirar após um período determinado. Execute o código de exemplo novamente para gerar um novo token.
@@ -211,7 +211,7 @@ Restaure uma operação longa de execução que pode levar até 30 minutos ou ma
 > [!NOTE]
 > Operações de backup e restauração também podem ser executadas com o PowerShell *Backup-AzApiManagement* e *AzApiManagement restauração* comandos, respectivamente.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Confira os seguintes recursos para diferentes orientações do processo de backup/restauração.
 
@@ -223,7 +223,7 @@ Confira os seguintes recursos para diferentes orientações do processo de backu
 [Backup an API Management service]: #step1
 [Restore an API Management service]: #step2
 
-[Azure API Management REST API]: https://msdn.microsoft.com/library/azure/dn781421.aspx
+[Azure API Management REST API]: https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/api-management-rest
 
 [api-management-add-aad-application]: ./media/api-management-howto-disaster-recovery-backup-restore/api-management-add-aad-application.png
 

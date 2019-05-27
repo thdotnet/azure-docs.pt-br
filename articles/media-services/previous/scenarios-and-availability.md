@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 0cae2befad1b0cd2d6a093387c41aac8ccdfff7d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 930420240d7b0f116f72056404e809ca94820f11
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64719223"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991443"
 ---
 # <a name="scenarios-and-availability-of-media-services-features-across-datacenters"></a>Cenários e disponibilidade de recursos dos Serviços de Mídia em datacenters
 
@@ -196,8 +196,8 @@ A AMS oferece dois codificadores de sob demanda **Media Encoder Standard** e **F
 
 |Nome do processador de mídia|Status|Datacenters
 |---|---|---|
-|Media Encoder Standard|GA|Todos|
-|Fluxo de trabalho do Media Encoder Premium|GA|Todos, exceto China|
+|Codificador de Mídia Padrão|GA|Todos|
+|Media Encoder Premium Workflow|GA|Todos, exceto China|
 
 ### <a name="analytics-media-processors"></a>Processadores de mídia da Análise
 
@@ -208,7 +208,6 @@ A Análise de Mídia é uma coleção de componentes de fala e pesquisa visual q
 |Nome do processador de mídia|Status|Datacenters
 |---|---|---|
 |Detector de Rostos em Mídias do Azure|Visualização|Todos|
-|Azure Media Hyperlapse|Visualização|Todos|
 |Indexador de Mídia do Azure|GA|Todos|
 |Detector de Movimento em Mídias do Azure|Visualização|Todos|
 |OCR de Mídia do Azure|Visualização|Todos|

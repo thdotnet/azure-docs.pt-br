@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 09/05/2017
 ms.author: tomfitz
 ms.openlocfilehash: 6591a75577670f5bb50c1275af7e51e9b8328d50
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56268696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66128678"
 ---
 # <a name="comparison-functions-for-azure-resource-manager-templates"></a>Funções de comparação para modelos do Azure Resource Manager
 
@@ -40,7 +40,7 @@ Verifica se dois valores são iguais entre si.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Obrigatório | Type | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |int, string, array ou object |O primeiro valor para verificar a igualdade. |
 | arg2 |Sim |int, string, array ou object |O segundo valor para verificar a igualdade. |
@@ -135,7 +135,7 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Valor |
+| NOME | Tipo | Value |
 | ---- | ---- | ----- |
 | checkInts | Bool | True |
 | checkStrings | Bool | True |
@@ -173,7 +173,7 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 O resultado do exemplo anterior é:
 
-| NOME | Tipo | Valor |
+| NOME | Tipo | Value |
 | ---- | ---- | ----- |
 | checkNotEquals | Bool | True |
 
@@ -196,7 +196,7 @@ Verifica se o primeiro valor é maior que o segundo valor.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Obrigatório | Type | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |int ou string |O primeiro valor da comparação de maior que. |
 | arg2 |Sim |int ou string |O segundo valor da comparação de maior que. |
@@ -248,7 +248,7 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Valor |
+| NOME | Tipo | Value |
 | ---- | ---- | ----- |
 | checkInts | Bool | Falso |
 | checkStrings | Bool | True |
@@ -272,7 +272,7 @@ Verifica se o primeiro valor é maior que ou igual ao segundo valor.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Obrigatório | Type | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |int ou string |O primeiro valor da comparação de maior que ou igual a. |
 | arg2 |Sim |int ou string |O segundo valor da comparação de maior que ou igual a. |
@@ -324,7 +324,7 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Valor |
+| NOME | Tipo | Value |
 | ---- | ---- | ----- |
 | checkInts | Bool | Falso |
 | checkStrings | Bool | True |
@@ -341,14 +341,14 @@ Para implantar este modelo de exemplo com o PowerShell, use:
 New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/greaterorequals.json 
 ```
 
-## <a name="less"></a>less
+## <a name="less"></a>menos
 `less(arg1, arg2)`
 
 Verifica se o primeiro valor é menor que o segundo valor.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Obrigatório | Type | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |int ou string |O primeiro valor da comparação de menor que. |
 | arg2 |Sim |int ou string |O segundo valor da comparação de menor que. |
@@ -400,7 +400,7 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Valor |
+| NOME | Tipo | Value |
 | ---- | ---- | ----- |
 | checkInts | Bool | True |
 | checkStrings | Bool | Falso |
@@ -424,7 +424,7 @@ Verifica se o primeiro valor é menor que ou igual ao segundo valor.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Obrigatório | Type | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |int ou string |O primeiro valor da comparação de menor que ou igual a. |
 | arg2 |Sim |int ou string |O segundo valor da comparação de menor que ou igual a. |
@@ -476,7 +476,7 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Valor |
+| NOME | Tipo | Value |
 | ---- | ---- | ----- |
 | checkInts | Bool | True |
 | checkStrings | Bool | Falso |

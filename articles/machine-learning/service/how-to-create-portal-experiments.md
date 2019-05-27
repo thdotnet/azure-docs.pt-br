@@ -11,12 +11,12 @@ author: tsikiksr
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/02/2019
-ms.openlocfilehash: 96abef29c5290770d296fb5053007e36d1eaf537
-ms.sourcegitcommit: eea74d11a6d6ea6d187e90e368e70e46b76cd2aa
+ms.openlocfilehash: a2a281fda9272fb794692becb0ca08f3cf791458
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65035439"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990146"
 ---
 # <a name="create-and-explore-automated-machine-learning-experiments-in-the-azure-portal-preview"></a>Criar e explorar automatizado experimentos de machine learning no portal do Azure (visualização)
 
@@ -40,7 +40,7 @@ Navegue até o painel esquerdo do seu espaço de trabalho. Selecione automatizad
 
 ![Página de aterrissagem do experimento de portal do Azure](media/how-to-create-portal-experiments/landing-page.png)
 
-Caso contrário, você verá seu painel automatizado machine learning com uma visão geral de todos os experimentos, incluindo aqueles que são executados com o SDK de aprendizado de máquina automatizada. Aqui você pode filtrar e explorar suas execuções por data, experimente o nome e status de execução.
+Caso contrário, você verá seu painel de aprendizado de máquina automatizado com uma visão geral de todos os seus automatizado experimentos de machine learning, incluindo aqueles criados com o SDK. Aqui você pode filtrar e explorar suas execuções por data, experimente o nome e status de execução.
 
 ![Painel de teste de portal do Azure](media/how-to-create-portal-experiments/dashboard.png)
 
@@ -58,7 +58,7 @@ Selecione o botão Criar experimento para preencher o formulário a seguir.
 
     ![Criar nova computação para teste](media/how-to-create-portal-experiments/create-new-compute.png)
 
-    Campo|DESCRIÇÃO
+    Campo|Descrição
     ---|---
     Nome de computação| Insira um nome exclusivo que identifica seu contexto de computação.
     Tamanho da máquina virtual| Selecione o tamanho de máquina virtual para sua computação.
@@ -100,7 +100,7 @@ Selecione o botão Criar experimento para preencher o formulário a seguir.
 
 1. (Opcional) Configurações avançadas: configurações adicionais que você pode usar para controlar melhor o trabalho de treinamento.
 
-    Configurações avançadas|DESCRIÇÃO
+    Configurações avançadas|Descrição
     ------|------
     Métrica principal| Métrica principal usada para pontuar o modelo. [Saiba mais sobre as métricas do modelo](https://docs.microsoft.com/azure/machine-learning/service/how-to-configure-auto-train#explore-model-metrics).
     Critérios de saída| Quando qualquer um desses critérios são atendidos, o trabalho de treinamento termina antes da conclusão completo. <br> *O tempo (minutos) do trabalho de treinamento*: Quanto tempo para permitir a execução do trabalho de treinamento.  <br> *Número máximo de iterações*: Número máximo de pipelines (iterações) para o trabalho de treinamento de teste. O trabalho não será executado mais do que o número especificado de iterações. <br> *Métrica de limite de pontuação*:  Pontuação mínima de métrica para todos os pipelines. Isso garante que se você tiver uma métrica de destino definida que você deseja acessar, não gastar mais tempo no trabalho de treinamento que o necessário.
@@ -154,7 +154,7 @@ Você pode obter uma ampla variedade de estatísticas de resumo em seu conjunto 
 
 Ao configurar seus testes, você pode habilitar a configuração avançada `Preprocess`. Portanto, a fazer significa que as seguintes etapas de pré-processamento e a personalização de dados são executadas automaticamente.
 
-|Pré-processamento&nbsp;etapas| DESCRIÇÃO |
+|Pré-processamento&nbsp;etapas| Descrição |
 | ------------- | ------------- |
 |Remover alta cardinalidade ou nenhum recurso de variação|Cancele-os de conjuntos de treinamento e validação, incluindo recursos com todos os valores ausentes, o mesmo valor em todas as linhas ou com cardinalidade muito alta (por exemplo, hashes, IDs ou GUIDs).|
 |Acrescentar valores ausentes|Para recursos numéricos, imputar com média de valores na coluna.<br/><br/>Para recursos categóricos, imputar com o valor mais frequente.|
@@ -184,6 +184,63 @@ Fazer drill down em qualquer um dos modelos de saída para ver os detalhes de ex
 
 ![Detalhes de iteração](media/how-to-create-portal-experiments/iteration-details.png)
 
+## <a name="deploy-model"></a>Implantar modelo
+
+Depois de ter o melhor modelo em mãos, é hora de implantá-lo como um serviço web para prever novos dados.
+
+ML automatizado ajuda você com a implantação de modelo sem escrever código:
+
+1. Você tem algumas opções para a implantação. 
+    1. Se você quiser implantar o melhor modelo com base em critérios de métrica que você definir para o experimento, selecione **implantar o modelo de melhor** da **executar detalhes** página.
+
+        ![Modelo de botão implantar](media/how-to-create-portal-experiments/deploy-model-button.png)
+
+    1. Se você desejar implantar uma iteração do modelo específico, fazer uma busca detalhada no modelo para abrir sua página de detalhes de execução específico e selecione **implantar modelo**.
+
+        ![Modelo de botão implantar](media/how-to-create-portal-experiments/deploy-model-button2.png)
+
+1. Primeira etapa é registrar o modelo no serviço. Selecione "Registrar o modelo" e aguarde o conclusão do processo de registro.
+
+    ![Folha de modelo de implantação](media/how-to-create-portal-experiments/deploy-model-blade.png)
+
+1. Quando o modelo estiver registrado, você poderá baixar o script de pontuação (scoring.py) e o script de ambiente (condaEnv.yml) a ser usado durante a implantação.
+
+1. Quando o script de pontuação e o script de ambiente são baixados, vá para o **ativos** folha do painel de navegação esquerdo e selecione **modelos**.
+
+    ![Modelos de painel de navegação](media/how-to-create-portal-experiments/nav-pane-models.png)
+
+1. Selecione o modelo que você registrou e selecione "Criar a imagem".
+
+    Você pode identificar o modelo, sua descrição, o que inclui a ID de execução, o número de iteração, no seguinte formato: *modelo _ < Iteration_number > de < Run_ID >*
+
+    ![Modelos: Criar imagem](media/how-to-create-portal-experiments/model-create-image.png)
+
+1. Insira um nome para a imagem. 
+1. Selecione o **procurar** botão ao lado da caixa "Arquivo de pontuação" para carregar o arquivo de pontuação (scoring.py) baixados anteriormente.
+
+1. Selecione o **procurar** botão ao lado da caixa "Arquivo Conda" para carregar o arquivo de ambiente (condaEnv.yml) que você baixou anteriormente.
+
+    Você pode usar seu próprio script de pontuação e o arquivo conda, bem como carregar arquivos adicionais. [Saiba mais sobre o script de pontuação](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where#script).
+
+      >[!Important]
+      > Nomes de arquivo devem ser em 32 caracteres e deve começar e terminar com caracteres alfanuméricos. Pode incluir caracteres alfanuméricos entre, sublinhados, pontos e traços. Não são permitidos espaços.
+
+    ![Criar imagem](media/how-to-create-portal-experiments/create-image.png)
+
+1. Selecione o botão "Criar" para iniciar a criação de imagem. Isso levará alguns minutos para ser concluída, uma vez concluído, você verá uma mensagem na barra superior.
+1. Vá para a guia "Imagens", marque a caixa de seleção ao lado da imagem que você deseja implantar e selecione "Criar a implantação". [Saiba mais sobre implantações](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where).
+
+    Há 2 opções para a implantação.
+     + A instância de contêiner do Azure (ACI) – isso é usado mais para teste finalidade em vez de implantação operacional em grande escala. Certifique-se de preencher os valores pelo menos um núcleo para _capacidade reserva de CPU_e pelo menos um gigabyte (GB) para _capacidade reserva de memória_
+     + Serviço do Azure Kubernetes (AKS)) – essa opção é para implantação em grande escala. Você precisará ter uma computação AKS com base em pronto.
+
+     ![Imagens: Criar implantação](media/how-to-create-portal-experiments/images-create-deployment.png)
+
+1. Ao terminar, selecione **Criar**. Implantando o modelo pode levar vários minutos para cada pipeline concluir a execução.
+
+1. É isso! Você tem um serviço web operacional para gerar previsões.
+
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Saiba mais sobre o aprendizado de máquina automatizado](concept-automated-ml.md) e Azure Machine Learning.
+* [Saiba como consumir um serviço web](https://docs.microsoft.com/azure/machine-learning/service/how-to-consume-web-service).

@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 02/08/2019
 ms.author: diberry
 ms.openlocfilehash: 31d8f54cb05bdbba7fe05249527db3dd50385087
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59523402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66123542"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Usar o Gerenciador de Tráfego do Microsoft Azure para gerenciar a cota do ponto de extremidade entre chaves
 O LUIS (Reconhecimento vocal) oferece a capacidade de aumentar a cota de solicitação do ponto de extremidade além da cota de uma única chave. Isso é feito criando mais chaves para o LUIS e adicionando-as ao aplicativo LUIS na página **Publicar** na seção **Recursos e Chaves**. 
@@ -104,7 +104,7 @@ Para criar o perfil do Gerenciador de Tráfego do Leste dos EUA, há várias eta
     |-Type|ExternalEndpoints|Para obter mais informações, confira [Traffic Manager endpoint][traffic-manager-endpoints] (Ponto de extremidade do Gerenciador de Tráfego) |
     |-Target|eastus.api.cognitive.microsoft.com|Este é o domínio do ponto de extremidade LUIS.|
     |-EndpointLocation|"eastus"|Região do ponto de extremidade|
-    |-EndpointStatus|habilitado|Habilitar ponto de extremidade quando ele for criado|
+    |-EndpointStatus|Enabled|Habilitar ponto de extremidade quando ele for criado|
 
     A resposta bem-sucedida tem a seguinte aparência:
 
@@ -173,7 +173,7 @@ Para criar o perfil do Gerenciador de Tráfego do Oeste dos EUA, siga as mesmas 
     |-Type|ExternalEndpoints|Para obter mais informações, confira [Traffic Manager endpoint][traffic-manager-endpoints] (Ponto de extremidade do Gerenciador de Tráfego) |
     |-Target|westus.api.cognitive.microsoft.com|Este é o domínio do ponto de extremidade LUIS.|
     |-EndpointLocation|"westus"|Região do ponto de extremidade|
-    |-EndpointStatus|habilitado|Habilitar ponto de extremidade quando ele for criado|
+    |-EndpointStatus|Enabled|Habilitar ponto de extremidade quando ele for criado|
 
     A resposta bem-sucedida tem a seguinte aparência:
 
@@ -239,7 +239,7 @@ Crie o perfil pai do Gerenciador de Tráfego e vincule dois perfis filho do Gere
     |-TrafficManagerProfile|$parentprofile|Perfil ao qual atribuir este ponto de extremidade|
     |-Type|NestedEndpoints|Para obter mais informações, consulte [AzTrafficManagerEndpointConfig adicionar](https://docs.microsoft.com/powershell/module/az.trafficmanager/Add-azTrafficManagerEndpointConfig). |
     |-TargetResourceId|$eastprofile.Id|ID do perfil filho|
-    |-EndpointStatus|habilitado|Status do ponto de extremidade após ser adicionado ao pai|
+    |-EndpointStatus|Enabled|Status do ponto de extremidade após ser adicionado ao pai|
     |-EndpointLocation|"eastus"|[Nome da região do Azure](https://azure.microsoft.com/global-infrastructure/regions/) do recurso|
     |-MinChildEndpoints|1|Número mínimo de pontos de extremidade filho|
 
@@ -276,7 +276,7 @@ Crie o perfil pai do Gerenciador de Tráfego e vincule dois perfis filho do Gere
     |-TrafficManagerProfile|$parentprofile|Perfil ao qual atribuir este ponto de extremidade|
     |-Type|NestedEndpoints|Para obter mais informações, consulte [AzTrafficManagerEndpointConfig adicionar](https://docs.microsoft.com/powershell/module/az.trafficmanager/Add-azTrafficManagerEndpointConfig). |
     |-TargetResourceId|$westprofile.Id|ID do perfil filho|
-    |-EndpointStatus|habilitado|Status do ponto de extremidade após ser adicionado ao pai|
+    |-EndpointStatus|Enabled|Status do ponto de extremidade após ser adicionado ao pai|
     |-EndpointLocation|"westus"|[Nome da região do Azure](https://azure.microsoft.com/global-infrastructure/regions/) do recurso|
     |-MinChildEndpoints|1|Número mínimo de pontos de extremidade filho|
 

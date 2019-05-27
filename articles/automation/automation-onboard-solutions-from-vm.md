@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: automation
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: bf81b862f978d4baab0907dc9002564062ec5228
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 38b5b233d21c0c5d79d7bcb6a145e6232b238b0e
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60738872"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66133114"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions-from-an-azure-virtual-machine"></a>Integrar soluções de Gerenciamento de Atualizações, Controle de Alterações e Inventário a partir de uma máquina virtual do Azure
 
@@ -104,6 +104,8 @@ Se você tiver usado a solução Iniciar/parar VMs durante os horários fora de 
 * Iniciar e parar agendas de runbook da VM
 * Iniciar e parar runbooks da VM
 * variáveis
+
+Como alternativa, você também pode desvincular seu espaço de trabalho de sua conta de automação do espaço de trabalho do Log Analytics. No espaço de trabalho, selecione **conta de automação** sob **recursos relacionados**. Na página conta de automação, selecione **desvincular conta**.
 
 ## <a name="next-steps"></a>Próximas etapas
 

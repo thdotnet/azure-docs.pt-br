@@ -11,11 +11,11 @@ ms.date: 04/05/2019
 ms.author: rithorn
 ms.topic: conceptual
 ms.openlocfilehash: 2dd2a6e071533deef47a6482bfb9ed92953864ba
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59259789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66165927"
 ---
 # <a name="create-management-groups-for-resource-organization-and-management"></a>Criar grupos de gerenciamento para o gerenciamento e a organização de recursos
 
@@ -93,7 +93,7 @@ Nos exemplos anteriores, o novo grupo de gerenciamento é criado sob o grupo de 
 az account management-group create --name ContosoSubGroup --parent Contoso
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Para saber mais sobre grupos de gerenciamento, consulte:
 

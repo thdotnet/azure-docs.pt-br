@@ -11,12 +11,12 @@ ms.date: 01/15/2019
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 6e88d8f1c16e7c73f5c62325e41701e6f0ea97fb
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 90e43ab0448646650067dbf151702132f434c01e
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64728095"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967951"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Criar e configurar um tempo de execução da integração auto-hospedada
 O IR (Integration Runtime) é a infraestrutura de computação usada pelo Azure Data Factory para fornecer funcionalidades de integração de dados entre diferentes ambientes de rede. Para obter detalhes sobre o IR, confira [Visão geral do Integration Runtime](concepts-integration-runtime.md).
@@ -57,7 +57,7 @@ Aqui está o fluxo de dados de alto nível para e o resumo das etapas para a có
 1. O desenvolvedor de dados cria um tempo de execução da integração auto-hospedada dentro de um Azure Data Factory usando o cmdlet do PowerShell. Atualmente, o Portal do Azure não dá suporte a esse recurso.
 2. O desenvolvedor de dados cria um serviço vinculado para um armazenamento de dados local especificando a instância do tempo de execução da integração auto-hospedada que ele deve usar para se conectar a armazenamentos de dados.
 3. O nó do tempo de execução da integração auto-hospedada criptografa a credencial usando a DPAPI (Interface de Programação do Aplicativo de Proteção de Dados) do Windows e salva as credenciais localmente. Se vários nós forem definidos para alta disponibilidade, as credenciais serão mais sincronizadas em outros nós. Cada nó criptografa as credenciais usando a DPAPI e as armazena localmente. A sincronização de credenciais é transparente para o desenvolvedor de dados e é tratada pelo IR auto-hospedado.    
-4. O serviço Data Factory se comunica com o tempo de execução da integração auto-hospedada para o agendamento e o gerenciamento de trabalhos por meio de um *canal de controle* que usa uma fila do Barramento de Serviço do Azure compartilhado. Quando um trabalho de atividade precisa ser executado, o Data Factory enfileira a solicitação juntamente com quaisquer informações de credenciais (no caso de as credenciais ainda não estarem armazenadas no Integration Runtime auto-hospedado). O tempo de execução da integração auto-hospedada inicia o trabalho depois da sondagem da fila.
+4. O serviço Data Factory se comunica com o tempo de execução de integração auto-hospedado para agendamento e gerenciamento de trabalhos por meio de um *canal de controle* que usa um compartilhado [retransmissão do barramento de serviço do Azure](https://docs.microsoft.com/azure/service-bus-relay/relay-what-is-it#wcf-relay). Quando um trabalho de atividade precisa ser executado, o Data Factory enfileira a solicitação juntamente com quaisquer informações de credenciais (no caso de as credenciais ainda não estarem armazenadas no Integration Runtime auto-hospedado). O tempo de execução da integração auto-hospedada inicia o trabalho depois da sondagem da fila.
 5. O tempo de execução da integração auto-hospedada copia dados de um repositório local para um armazenamento na nuvem, ou vice-versa, dependendo de como a atividade de cópia estiver configurada no pipeline de dados. Para esta etapa, o tempo de execução da integração auto-hospedada se comunica diretamente com os serviços de armazenamento baseado em nuvem, como Armazenamento de Blobs do Azure por um canal seguro (HTTPS).
 
 ## <a name="considerations-for-using-a-self-hosted-ir"></a>Considerações para o uso de um IR auto-hospedado
@@ -126,7 +126,7 @@ Para associar vários nós, instale o software do tempo de execução da integra
 
 ### <a name="scale-considerations"></a>Considerações de escala
 
-#### <a name="scale-out"></a>Expansão
+#### <a name="scale-out"></a>Escalar horizontalmente
 
 Quando a memória disponível no IR auto-hospedado for baixa e o uso da CPI for alto, adicionar um novo nó ajuda a expandir a carga entre os computadores. Se as atividades falharem por causa de tempo limite ou porque o nó do IR auto-hospedado ficou offline, ajudará se você adicionar um nó ao gateway.
 
@@ -224,7 +224,7 @@ Há dois firewalls a considerar: o *firewall corporativo* em execução no rotea
 
 No nível do *firewall corporativo*, é necessário configurar os seguintes domínios e portas de saída:
 
-Nomes de domínio | Portas | DESCRIÇÃO
+Nomes de domínio | Portas | Descrição
 ------------ | ----- | ------------
 * .servicebus.windows.net | 443 | Usado para comunicação com o serviço de movimentação de dados de back-end
 *.core.windows.net | 443 | Usado para cópia em etapas por meio do Armazenamento de Blobs do Azure (se estiver configurado)

@@ -16,11 +16,11 @@ ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 540acd1735eb539ecaac468e74511ba5f751278f
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57780007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66165719"
 ---
 # <a name="automated-backup-v2-for-azure-virtual-machines-resource-manager"></a>Backup Automatizado v2 para Máquinas Virtuais do Azure (Resource Manager)
 
@@ -108,7 +108,7 @@ Você tem uma VM do SQL Server que contém vários bancos de dados grandes.
 Na segunda-feira, você habilita o Backup Automatizado v2 com as seguintes configurações:
 
 - Agendamento de backup: Manual
-- Frequência do backup completo: Diário
+- Frequência do backup completo: Diariamente
 - Hora de início do backup completo: 22:00
 - Janela de tempo do backup completo: 6 horas
 
@@ -119,7 +119,7 @@ Em seguida, na terça-feira às 22h, por seis horas, os backups completos de tod
 > [!IMPORTANT]
 > Ao agendar backups diários, é recomendável que você agende uma janela de tempo ampla para garantir que todos os bancos de dados possam ter o backup realizado dentro desse período. Isso é especialmente importante no caso em que você tem uma grande quantidade de dados para backup.
 
-## <a name="configure-in-the-portal"></a>Configure no portal
+## <a name="configure-in-the-portal"></a>Configurar no portal
 
 É possível usar o portal do Azure para configurar o Backup Automatizado v2 durante o provisionamento ou para VMs do SQL Server 2016/2017 existentes.
 

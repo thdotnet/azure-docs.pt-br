@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 29a639142395c43fea06c1d6d18909b3c9f33b86
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6660aa4e21aa36dc94c4ed9201fecb5637dddb3a
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60769253"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955970"
 ---
 # <a name="autoscaling-and-app-service-environment-v1"></a>Dimensionamento automático e Ambiente de Serviço de Aplicativo v1
 
@@ -63,7 +63,7 @@ O dimensionamento automático de um ambiente de Serviço de Aplicativo pode ser 
 Este artigo explica todas as considerações necessárias ao configurar o dimensionamento automático. Este artigo aborda as interações que entram em jogo quando você fatora em ambientes de Serviço de Aplicativo de dimensionamento automático hospedados no Ambiente de Serviço de Aplicativo.
 
 ### <a name="scenario-introduction"></a>Introdução ao cenário
-Matheus é um SysAdmin de uma empresa que migrou uma parte das cargas de trabalho que ele gerencia para um ambiente de Serviço de Aplicativo.
+Frank é um sysadmin de uma empresa que migrou uma parte das cargas de trabalho que eles gerenciam a um ambiente de serviço de aplicativo.
 
 O ambiente do Serviço de Aplicativo está configurado para a escala manual da seguinte maneira:
 
@@ -76,7 +76,7 @@ O pool de trabalho 1 é usado para cargas de trabalho de produção, embora o po
 
 Os Planos do Serviço de Aplicativo para controle de qualidade e desenvolvimento são configurados para escala manual. O Plano do Serviço de Aplicativo de produção é definido para dimensionamento automático para lidar com variações de carga e tráfego.
 
-Matheus está familiarizado com o aplicativo. Ele sabe que as horas de pico de carga ocorrem entre 9:00 e 18:00, porque este é um aplicativo de linha de negócios (LOB) que os funcionários usam enquanto estão no escritório. O uso é reduzido depois disso, quando os usuários param de trabalhar naquele dia. Fora do horário de pico, ainda há alguma carga porque os usuários podem acessar o aplicativo remotamente, usando seus dispositivos móveis ou computadores domésticos. O plano do Serviço de Aplicativo de produção já está configurado para dimensionamento automático com base no uso de CPU com as seguintes regras:
+Matheus está familiarizado com o aplicativo. Eles sabem que são as horas de pico de carga entre 9:00 e 18:00, porque este é um aplicativo (LOB) de linha de negócios que os funcionários usam enquanto eles estiverem no escritório. O uso é reduzido depois disso, quando os usuários param de trabalhar naquele dia. Fora do horário de pico, ainda há alguma carga porque os usuários podem acessar o aplicativo remotamente, usando seus dispositivos móveis ou computadores domésticos. O plano do Serviço de Aplicativo de produção já está configurado para dimensionamento automático com base no uso de CPU com as seguintes regras:
 
 ![Configurações específicas para o aplicativo LOB.][asp-scale]
 

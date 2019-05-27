@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: nitinme
 ms.openlocfilehash: fccc036a5e0422508f7ebc3370a4b5faa5176dc2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60527901"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66124765"
 ---
 O Bing suporta o realce de ocorrências que marca os termos de consulta (ou outros termos que o Bing achar relevantes) nas cadeias de exibição de algumas das respostas. Por exemplo, os campos `name`, `displayUrl` e `snippet` de uma página da Web podem marcar os termos da consulta.
 
@@ -23,7 +23,7 @@ O Bing oferece a opção de usar caracteres Unicode ou marcas HTML como marcador
   
 Se `textDecorations` for **true**, o Bing pode incluir os marcadores a seguir em cadeias de exibição de respostas. Se não houver nenhum equivalente HTML, a célula de tabela HTML está vazia.
 
-|Unicode|HTML|DESCRIÇÃO
+|Unicode|HTML|Descrição
 |-|-|-
 |U+E000|\<b>|Marca o início do termo de consulta (realce de ocorrências)
 |U+E001|\</b>|Marca o final do termo de consulta

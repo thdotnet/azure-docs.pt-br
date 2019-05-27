@@ -1,16 +1,15 @@
 ---
-author: rockboyfor
+author: cynthn
 ms.service: virtual-machines
 ms.topic: include
-origin.date: 10/26/2018
-ms.date: 11/26/2018
-ms.author: v-yeche
+ms.date: 10/26/2018
+ms.author: cynthn
 ms.openlocfilehash: d579e7a4fd83c1a0ce335e0b2357dcbafb217398
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62097635"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66165478"
 ---
 Nesta etapa, você deve testar o ouvinte do grupo de disponibilidade usando um aplicativo cliente em execução na mesma rede.
 
@@ -30,4 +29,3 @@ Um exemplo é conectar-se ao ouvinte de uma das VMs na mesma rede virtual do Azu
 
 Ao testar o ouvinte, certifique-se de realizar failover ao grupo de disponibilidade para garantir que os clientes possam se conectar ao ouvinte através de failovers.
 
-<!-- Update_Description: update meta properties -->

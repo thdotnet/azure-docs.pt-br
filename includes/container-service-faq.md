@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: danlep
 ms.openlocfilehash: f903828285b0d4fdc8fbd932fa7c85056e937481
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60510524"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66148830"
 ---
 # <a name="deprecated-container-service-frequently-asked-questions"></a>(PRETERIDO) Perguntas frequentes sobre o Serviço de Contêiner
 
@@ -80,8 +80,8 @@ Você pode encontrar as URLs comumente usadas para o cluster no portal do Azure,
 ### <a name="how-do-i-tell-which-orchestrator-version-is-running-in-my-cluster"></a>Como saber a qual versão de orquestrador está em execução no meu cluster?
 
 * DC/SO: veja a [documentação do Mesosphere](https://docs.mesosphere.com/1.7/usage/cli/command-reference/)
-* Docker Swarm: Execute o `docker version`
-* Kubernetes: Execute o `kubectl version`
+* Docker Swarm: Execute `docker version`
+* Kubernetes: Execute `kubectl version`
 
 ### <a name="how-do-i-upgrade-the-orchestrator-after-deployment"></a>Como atualizar o orquestrador após a implantação?
 
@@ -99,7 +99,7 @@ Você pode encontrar a cadeia de conexão no portal do Azure ou usando as ferram
 
 4. Na página **Resumo**, em **Saídas**, são fornecidos vários links de cluster. **SSHMaster0** fornece uma cadeia de conexão SSH para o primeiro mestre no cluster do serviço de contêiner. 
 
-Como mencionado anteriormente, você também pode usar ferramentas do Azure para localizar o FQDN do mestre. Fazer uma conexão SSH com o mestre usando o FQDN do mestre e o nome de usuário que você especificou ao criar o cluster. Por exemplo: 
+Como mencionado anteriormente, você também pode usar ferramentas do Azure para localizar o FQDN do mestre. Fazer uma conexão SSH com o mestre usando o FQDN do mestre e o nome de usuário que você especificou ao criar o cluster. Por exemplo:
 
 ```bash
 ssh userName@masterFQDN –A –p 22 

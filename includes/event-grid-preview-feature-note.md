@@ -9,11 +9,11 @@ ms.date: 11/06/2018
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: 85a1579e32b4c216f234f77c76316bedeaea77b0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60565489"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66119555"
 ---
 Esse recurso está em visualização. Para usá-lo, você deve instalar uma extensão ou módulo de visualização.
 
@@ -49,8 +49,8 @@ Para uma instalação local:
 
 Se o parâmetro `-AllowPrerelease` não estiver disponível, use as seguintes etapas:
 
-1. Execute o `Install-Module PowerShellGet -Force`
-1. Execute o `Update-Module PowerShellGet`
+1. Execute `Install-Module PowerShellGet -Force`
+1. Execute `Update-Module PowerShellGet`
 1. Feche o console do PowerShell
 1. Reinicie o PowerShell como administrador
 1. Instale o módulo `Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery`

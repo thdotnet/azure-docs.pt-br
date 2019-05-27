@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/24/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 88123cc24359daaf1c6fc7e3ceeed8f77f717c9a
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: f4f2b93316c87a5e8ba572ca2b584dbd13f6536c
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65228029"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956959"
 ---
 # <a name="manage-user-access-in-azure-active-directory-b2c"></a>Gerenciar o acesso do usuário no Azure Active Directory B2C
 
@@ -38,7 +38,7 @@ Se um usuário for identificado como menor, você pode configurar o fluxo de usu
 
 - **Enviar um token JSON não assinado para o aplicativo**: o Azure AD B2C notifica o aplicativo de que o usuário é menor e fornece o status de consentimento parental do usuário. Em seguida, o aplicativo continua aplicando regras de negócio. Um token JSON não conclui uma autenticação bem-sucedida com o aplicativo. O aplicativo precisa processar o usuário não autenticado de acordo com as declarações incluídas no token JSON, que podem incluir **nome**, **email**, **ageGroup** e **consentProvidedForMinor**.
 
-- **Bloquear o usuário**: se um usuário for menor de idade e o consentimento dos pais não tiver sido fornecido, o Azure AD B2C poderá notificar o usuário de que ele está bloqueado. Nenhum token será emitido, o acesso será bloqueado e a conta de usuário não será criada durante um percurso de registro. Para implementar esta notificação, você fornece uma página de conteúdo HTML/CSS adequada para informar o usuário e apresentar as opções apropriadas. Nenhuma ação adicional do aplicativo é necessária para novos registros.
+- **Bloquear o usuário**: Se um usuário é menor, e o consentimento dos pais não foi fornecido, o Azure AD B2C pode notificar o usuário que estão bloqueadas. Nenhum token será emitido, o acesso será bloqueado e a conta de usuário não será criada durante um percurso de registro. Para implementar esta notificação, você fornece uma página de conteúdo HTML/CSS adequada para informar o usuário e apresentar as opções apropriadas. Nenhuma ação adicional do aplicativo é necessária para novos registros.
 
 ## <a name="get-parental-consent"></a>Obter o consentimento dos pais
 
@@ -48,7 +48,7 @@ Este é um exemplo de um fluxo de usuário para a coleta de consentimento dos pa
 
 1. Uma operação da [API do Graph do Azure Active Directory](/previous-versions/azure/ad/graph/api/api-catalog) identifica o usuário como menor e retorna os dados do usuário ao aplicativo na forma de um token JSON não assinado.
 
-2. O aplicativo processa o token JSON e mostra uma tela para o menor, notificando-o que o consentimento dos pais é necessário e solicitando o consentimento de um pai online. 
+2. O aplicativo processa o token JSON e mostra uma tela para a menor, notificando-os de que o consentimento dos pais é necessário e solicitar o consentimento de um pai on-line. 
 
 3. O Azure AD B2C mostra uma jornada de logon na qual o usuário pode entrar normalmente e emite um token para o aplicativo que está definido para incluir **legalAgeGroupClassification = “minorWithParentalConsent”**. O aplicativo coleta o endereço de email do pai e verifica se o pai é um adulto. Para fazer isso, ele usa uma fonte confiável, como um escritório de identificação nacional, verificação de licença ou comprovante de cartão de crédito. Se a verificação for bem sucedida, o aplicativo solicita que o menor entre usando o fluxo de usuário do Azure AD B2C. Se a autorização for negada (por exemplo, **legalAgeGroupClassification = “minorWithoutParentalConsent”**), o Azure AD B2C retornará um token JSON (não um logon) ao aplicativo para reiniciar o processo de consentimento. Opcionalmente, é possível personalizar o fluxo de usuário em que um menor ou um adulto pode recuperar o acesso à conta do menor enviando um código de registro para o endereço de email do menor ou para o endereço de email do adulto no registro.
 

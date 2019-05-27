@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: victorh
-ms.openlocfilehash: 113e30ab65f2cd0ff420df1c79807147a62f79f1
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.openlocfilehash: 29b607f10c15ba35a515b55b059b7b55ff594fe6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59608445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66135732"
 ---
 # <a name="create-an-application-gateway-by-using-the-azure-resource-manager-template"></a>Criar um gateway de aplicativo usando o modelo do Gerenciador de Recursos do Azure
 
@@ -47,7 +47,7 @@ Você pode baixar o modelo existente do Gerenciador de Recursos do Azure para cr
 1. Abra o arquivo que você salvou e examine o conteúdo em **parâmetros** na linha
 1. Os parâmetros do modelo do Gerenciador de Recursos do Azure fornecem um espaço reservado para valores que podem ser preenchidos durante a implantação.
 
-   | Parâmetro | DESCRIÇÃO |
+   | Parâmetro | Descrição |
    | --- | --- |
    | **subnetPrefix** |Bloco CIDR para a sub-rede do Gateway de Aplicativo. |
    | **applicationGatewaySize** | O tamanho do Gateway de Aplicativo.  O WAF permite apenas médio e grande. |
