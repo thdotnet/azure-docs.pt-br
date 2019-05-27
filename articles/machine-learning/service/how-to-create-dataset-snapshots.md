@@ -1,5 +1,5 @@
 ---
-title: Comparar & reproduzir os dados ao longo do tempo com instantâneos
+title: Comparar & reproduzir dados com instantâneos de conjunto de dados
 titleSuffix: Azure Machine Learning service
 description: Saiba como comparar dados ao longo do tempo e garantir reprodutibilidade com instantâneos de conjunto de dados
 services: machine-learning
@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: sihhu
 author: MayMSFT
-ms.date: 05/02/2019
-ms.openlocfilehash: 51d0dcfc543834e9a8725d11fa82b566a5132a6b
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.date: 05/23/2019
+ms.openlocfilehash: 525660be0f38c9458590e52cfcd575acb4cf5444
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205009"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66162065"
 ---
 # <a name="compare-data-and-ensure-reproducibility-with-snapshots-preview"></a>Comparar dados e garantir reprodutibilidade com instantâneos (versão prévia)
 
@@ -41,7 +41,7 @@ Para criar instantâneos de conjunto de dados, você precisa de um conjunto de d
 
 ## <a name="create-dataset-snapshots"></a>Criar instantâneos de conjunto de dados
 
-Para criar um instantâneo de um conjunto de dados, use [ `dataset.create_snapshot()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset(class)?#create-snapshot-snapshot-name--compute-target-none--create-data-snapshot-false--target-datastore-none-) do SDK do Azure Machine Learning.
+Para criar um instantâneo de um conjunto de dados, use [ `dataset.create_snapshot()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset(class)?#create-snapshot-snapshot-name--compute-target-none--create-data-snapshot-false--target-datastore-none-) do pacote azureml conjuntos de dados do SDK do Azure Machine Learning.
 
 Por padrão, o instantâneo armazena o perfil (estatísticas de resumo) dos dados com a versão mais recente [definição de conjunto de dados](how-to-manage-dataset-definitions.md) aplicado. Uma definição de conjunto de dados contém um registro de todas as etapas de transformação definidos para os dados. É uma ótima maneira de fazer com que a preparação de dados funcione reproduzível.
 
@@ -124,15 +124,15 @@ Use [ `get_profile()` ](https://docs.microsoft.com/python/api/azureml-core/azure
 snapshot.get_profile()
 ```
 
-||Type|Min|max|Count|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio padrão|Variação|Distorção|Curtose
+||Type|Min.|Máx|Count|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
 -|----|---|---|-----|-------------|-----------------|---------------|-----------|-----------|-------------|-----------|-----------|------------|------------|------------|------------|------------|--------------|----|------------------|--------|--------|--------
 ID|FieldType.INTEGER|1.04986e + 07|1.05351e + 07|10.0|0,0|10.0|0,0|0,0|0,0|1.04986e + 07|1.04992e + 07|1.04986e + 07|1.05166e + 07|1.05209e + 07|1.05259e + 07|1.05351e + 07|1.05351e + 07|1.05351e + 07|1.05195e + 07|12302.7|1.51358e + 08|-0.495701|-1.02814
 Número do Caso|FieldType.STRING|HZ239907|HZ278872|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Data|FieldType.DATE|2016-04-04 23:56:00+00:00|2016-04-15 17:00:00+00:00|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Bloco|FieldType.STRING|004XX S KILBOURN AVE|113XX S PRAIRIE AVE|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+Date|FieldType.DATE|2016-04-04 23:56:00+00:00|2016-04-15 17:00:00+00:00|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+Bloquear|FieldType.STRING|004XX S KILBOURN AVE|113XX S PRAIRIE AVE|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
 IUCR|FieldType.INTEGER|810|1154|10.0|0,0|10.0|0,0|0,0|0,0|810|850|810|890|1136|1153|1154|1154|1154|1058.5|137.285|18847.2|-0.785501|-1.3543
 Texto Primário|FieldType.STRING|PRÁTICA ENGANOSA|ROUBO|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-DESCRIÇÃO|FieldType.STRING|VERIFICAÇÃO DE FALSA|AO LONGO DE US $500|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+Descrição|FieldType.STRING|VERIFICAÇÃO DE FALSA|AO LONGO DE US $500|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
 Descrição do Local|FieldType.STRING||ESCOLA, PÚBLICA, CRIANDO|10.0|0,0|10.0|0,0|0,0|1.0||||||||||||||
 Detenção|FieldType.BOOLEAN|Falso|Falso|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
 Nacional|FieldType.BOOLEAN|Falso|Falso|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
@@ -151,7 +151,7 @@ Esse método falhará se uma cópia dos dados não foi solicitada durante a cria
 snapshot.to_pandas_dataframe().head(3)
 ```
 
-||ID|Número do Caso|Data|Bloco|IUCR|Texto Primário|DESCRIÇÃO|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Local padrão
+||ID|Número do Caso|Date|Bloquear|IUCR|Texto Primário|Descrição|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Local padrão
 -|--|-----------|----|-----|----|------------|-----------|--------------------|------|--------|---|----|--------------|--------|------------|------------|----|----------|--------|---------|--------
 0|10498554|HZ239907|2016-04-04 23:56:00|007XX E 111TH ST|1153|PRÁTICA ENGANOSA|ROUBO DE IDENTIDADES FINANCEIRAS AO LONGO DE US $ 300|OUTROS|Falso|Falso|...|9|50|11|1183356.0|1831503.0|2016|2016-05-11 15:48:00|41.692834|-87.604319|(41.692833841, -87.60431945)
 1|10516598|HZ258664|2016-04-15 17:00:00|082XX S MARSHFIELD AVE|890|ROUBO|DA CRIAÇÃO|RESIDÊNCIA|Falso|Falso|...|21|71|6|1166776.0|1850053.0|2016|2016-05-12 15:48:00|41.744107|-87.664494|(41.744106973, -87.664494285)

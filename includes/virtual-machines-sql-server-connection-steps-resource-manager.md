@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
 ms.openlocfilehash: 4e79fef08af8ff73ce63ab4732c9efd77e3a5d3f
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62130800"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66165646"
 ---
 ### <a name="configure-a-dns-label-for-the-public-ip-address"></a>Configurar um rótulo de DNS para o endereço IP público
 
@@ -36,7 +36,7 @@ Para criar um rótulo de DNS, primeiro selecione **Máquinas Virtuais** no porta
 
 1. Em um computador conectado à Internet, abra o SSMS (SQL Server Management Studio). Se você não tiver o SQL Server Management Studio, poderá baixá-lo [aqui](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
 
-1. Na caixa de diálogo **Conectar ao Servidor** ou **Conectar ao Mecanismo de Banco de Dados**, edite o valor **Nome do servidor**. Insira o endereço IP ou o nome DNS completo da máquina virtual (determinado na tarefa anterior). Você também pode adicionar uma vírgula e fornecer a porta TCP do SQL Server. Por exemplo, `mysqlvmlabel.eastus.cloudapp.azure.com,1433`.
+1. Na caixa de diálogo **Conectar ao Servidor** ou **Conectar ao Mecanismo de Banco de Dados**, edite o valor **Nome do servidor**. Insira o endereço IP ou o nome DNS completo da máquina virtual (determinado na tarefa anterior). Você também pode adicionar uma vírgula e fornecer a porta TCP do SQL Server. Por exemplo: `mysqlvmlabel.eastus.cloudapp.azure.com,1433`.
 
 1. Na caixa **Autenticação**, selecione **Autenticação do SQL Server**.
 

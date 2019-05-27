@@ -1,7 +1,7 @@
 ---
 title: Criar, executar e controlar pipelines do ML
 titleSuffix: Azure Machine Learning service
-description: Crie e execute um pipeline de aprendizado de máquina com o SDK do Azure Machine Learning para Python. Você pode usar pipelines para criar e gerenciar os fluxos de trabalho que reúnem fases de aprendizado de máquina (ML). Essas fases incluem preparação de dados, treinamento do modelo, implantação de modelo e fases de inferência.
+description: Crie e execute um pipeline de aprendizado de máquina com o SDK do Azure Machine Learning para Python. Você pode usar pipelines para criar e gerenciar os fluxos de trabalho que reúnem fases de aprendizado de máquina (ML). Estas fases incluem a preparação de dados, treinamento do modelo, implantação de modelo e Inferência de tipos/pontuação.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3ec3e915c26abf38653d1bddfe0a5ba44d5e6de1
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 15fa9095b8169dc1545c796421be91e89652e1c1
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64914884"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66165872"
 ---
 # <a name="create-and-run-a-machine-learning-pipeline-by-using-azure-machine-learning-sdk"></a>Criar e executar um pipeline de aprendizado de máquina usando o SDK do Azure Machine Learning
 
@@ -251,6 +251,8 @@ trainStep = PythonScriptStep(
 )
 ```
 
+Reutilização de resultados anteriores (`allow_reuse`) é a chave ao usar pipelines em um ambiente colaborativo, pois eliminar desnecessária executa novamente oferece a agilidade. Isso é o comportamento padrão quando o script_name, as entradas e os parâmetros de uma etapa de permanecem os mesmos. Quando a saída da etapa for reutilizada, o trabalho não é enviado para a computação, em vez disso, os resultados da execução anterior estarão imediatamente disponíveis para execução da próxima etapa. Se definido como false, uma nova execução sempre será gerado para esta etapa durante a execução do pipeline. 
+
 Depois de definir suas etapas, você pode criar o pipeline usando algumas ou todas essas etapas.
 
 > [!NOTE]
@@ -315,6 +317,10 @@ Quando você executar um pipeline pela primeira vez, o Azure Machine Learning:
 
 Para obter mais informações, consulte o [experimentar classe](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py) referência.
 
+## <a name="github-tracking-and-integration"></a>Integração e acompanhamento do GitHub
+
+Quando você inicia uma execução em que o diretório de origem é um repositório Git local de treinamento, informações sobre o repositório são armazenadas no histórico de execução. Por exemplo, a ID de confirmação atual para o repositório é registrada como parte do histórico.
+
 ## <a name="publish-a-pipeline"></a>Publicar um pipeline
 
 Você pode publicar um pipeline para executá-lo com entradas diferentes mais tarde. Para o ponto de extremidade REST de um pipeline já publicado aceitar parâmetros, você deve parametrizar o pipeline antes da publicação. 
@@ -373,11 +379,11 @@ Confira a lista de todos os seus pipelines e seus detalhes de execução:
 ## <a name="caching--reuse"></a>Armazenamento em cache e reutilização  
 
 Para otimizar e personalizar o comportamento de seus pipelines, você pode fazer algumas coisas em torno de cache e reutilizar. Por exemplo, você pode optar por:
-+ **Desativar a reutilização de padrão da etapa de saída de execução** , definindo `allow_reuse=False` durante [etapa definição](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py)
++ **Desativar a reutilização de padrão da etapa de saída de execução** , definindo `allow_reuse=False` durante [etapa definição](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py). A reutilização é a chave ao usar pipelines em um ambiente colaborativo, pois elimina execuções desnecessárias oferece a agilidade. No entanto, você pode recusar essa.
 + **Estender o hash além do script**, para incluir também um caminho absoluto ou caminhos relativos para o pasta_de_origem para outros arquivos e diretórios usando o `hash_paths=['<file or directory']` 
 + **Force uma nova geração de saída para todas as etapas em uma execução** com `pipeline_run = exp.submit(pipeline, regenerate_outputs=False)`
 
-Por padrão, reutilização de etapa está habilitado e apenas o arquivo de script principal é transformada em hash. Portanto, se o script para uma determinada etapa permanece o mesmo (`script_name`, entradas e os parâmetros), a saída de uma etapa anterior executar é reutilizada, o trabalho não é enviado para a computação e os resultados da execução anterior em vez disso, estão imediatamente disponíveis para a próxima etapa .  
+Por padrão, `allow-reuse` etapas for habilitado e apenas o arquivo de script principal é transformada em hash. Portanto, se o script para uma determinada etapa permanece o mesmo (`script_name`, entradas e os parâmetros), a saída de uma etapa anterior executar é reutilizada, o trabalho não é enviado para a computação e os resultados da execução anterior em vez disso, estão imediatamente disponíveis para a próxima etapa .  
 
 ```python
 step = PythonScriptStep(name="Hello World", 

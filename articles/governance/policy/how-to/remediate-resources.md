@@ -8,23 +8,23 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: fe06e7081e4e3691aeb054985f9f2f3f6dc7d19e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.openlocfilehash: d6753b319bc5bc4cbda18fe486695e5b0266acae
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59794975"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66169649"
 ---
 # <a name="remediate-non-compliant-resources-with-azure-policy"></a>Corrigir recursos que não estão em conformidade com o Azure Policy
 
-Recursos que não estão em conformidade com uma política de **deployIfNotExists** podem ser colocados em um estado de conformidade por meio de **Correção**. A correção é realizada instruindo a política a executar o efeito **deployIfNotExists** da política atribuída em seus recursos existentes. Este artigo mostra as etapas necessárias para entender e realizar a correção com a Política.
+Recursos que não estão em conformidade com uma política de **deployIfNotExists** podem ser colocados em um estado de conformidade por meio de **Correção**. Correção é realizada pela instruindo a política do Azure para executar o **deployIfNotExists** efeito da diretiva atribuída em seus recursos existentes. Este artigo mostra as etapas necessárias para entender e realizar a correção com o Azure Policy.
 
 [!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
 
 ## <a name="how-remediation-security-works"></a>Como funciona a correção de segurança
 
-Quando a política executa o modelo na definição de política **deployIfNotExists**, ela faz isso usando uma [identidade gerenciada](../../../active-directory/managed-identities-azure-resources/overview.md).
-A Política cria uma identidade gerenciada para cada atribuição, mas precisa ter detalhes sobre quais funções devem receber a identidade gerenciada. Se a identidade gerenciada não tiver funções, esse erro será exibido durante a atribuição da política ou uma iniciativa. Ao usar o portal, a Política concederá automaticamente a identidade gerenciada às funções listadas após o início da atribuição.
+Quando a política do Azure é executado o modelo na **deployIfNotExists** definição de política, ele faz isso usando uma [identidade gerenciada](../../../active-directory/managed-identities-azure-resources/overview.md).
+A política do Azure cria uma identidade gerenciada para cada atribuição, mas deve ter detalhes sobre quais são as funções para conceder a identidade gerenciada. Se a identidade gerenciada não tiver funções, esse erro será exibido durante a atribuição da política ou uma iniciativa. Ao usar o portal, política do Azure automaticamente concederá a identidade gerenciada funções listadas depois que a atribuição é iniciada.
 
 ![Identidade gerenciada – função ausente](../media/remediate-resources/missing-role.png)
 
@@ -39,7 +39,7 @@ A primeira etapa é definir as funções de que **deployIfNotExists** precisa na
 "details": {
     ...
     "roleDefinitionIds": [
-        "/subscription/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/{roleGUID}",
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/{roleGUID}",
         "/providers/Microsoft.Authorization/roleDefinitions/{builtinroleGUID}"
     ]
 }
@@ -57,7 +57,7 @@ Get-AzRoleDefinition -Name 'Contributor'
 
 ## <a name="manually-configure-the-managed-identity"></a>Configurar manualmente a identidade gerenciada
 
-Ao criar uma atribuição usando o portal, a Política gera a identidade gerenciada e a concede às funções definidas em **roleDefinitionIds**. Nas seguintes condições, as etapas usadas para criar a identidade gerenciada e atribuir permissões a ela precisam ser feitas manualmente:
+Ao criar uma atribuição usando o portal, política do Azure gera a identidade gerenciada e concede a ele as funções definidas no **roleDefinitionIds**. Nas seguintes condições, as etapas usadas para criar a identidade gerenciada e atribuir permissões a ela precisam ser feitas manualmente:
 
 - Ao usar o SDK (como o Azure PowerShell)
 - Quando um recurso fora do escopo de atribuição é modificado pelo modelo
@@ -126,7 +126,8 @@ Para adicionar uma função à identidade gerenciada da atribuição, siga estas
 
 1. Clique no link **Controle de acesso (IAM)** na página de recursos e clique em **+ Adicionar atribuição de função** na parte superior da página do controle de acesso.
 
-1. Selecione a função apropriada que corresponde a **roleDefinitionIds** da definição de política. Deixe **Atribuir acesso** definido como o padrão de 'Usuário, grupo ou aplicativo do Azure AD'. Na caixa **Selecionar**, cole ou digite a parte da ID do recurso de atribuição localizada anteriormente. Depois que a pesquisa for concluída, clique no objeto com o mesmo nome para selecionar a ID e clique em **Salvar**.
+1. Selecione a função apropriada que corresponde a **roleDefinitionIds** da definição de política.
+   Deixe **Atribuir acesso** definido como o padrão de 'Usuário, grupo ou aplicativo do Azure AD'. Na caixa **Selecionar**, cole ou digite a parte da ID do recurso de atribuição localizada anteriormente. Depois que a pesquisa for concluída, clique no objeto com o mesmo nome para selecionar a ID e clique em **Salvar**.
 
 ## <a name="create-a-remediation-task"></a>Criar uma tarefa de correção
 
@@ -191,11 +192,11 @@ Start-AzPolicyRemediation -Name 'myRemedation' -PolicyAssignmentId '/subscriptio
 
 Para outros cmdlets de correção e exemplos, consulte o [Az.PolicyInsights](/powershell/module/az.policyinsights/#policy_insights) módulo.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
-- Revise os exemplos em [amostras da Política do Azure](../samples/index.md)
-- Revise a [estrutura de definição de política](../concepts/definition-structure.md)
-- Revisão [Noções básicas sobre os efeitos de política](../concepts/effects.md)
-- Entender como [criar políticas de forma programática](programmatically-create.md)
-- Saiba como [obter dados de conformidade](getting-compliance-data.md)
-- Examine o que é um grupo de gerenciamento com [Organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md)
+- Examine os exemplos na [exemplos do Azure Policy](../samples/index.md).
+- Revise a [estrutura de definição do Azure Policy](../concepts/definition-structure.md).
+- Revisar [Compreendendo os efeitos da política](../concepts/effects.md).
+- Entender como [criar políticas de forma programática](programmatically-create.md).
+- Saiba como [obter dados de conformidade](getting-compliance-data.md).
+- Examine o que um grupo de gerenciamento com [organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).

@@ -2,21 +2,20 @@
 title: Classes de recursos para gerenciamento de carga de trabalho – SQL Data Warehouse do Azure | Microsoft Docs
 description: Diretrizes para usar classes de recursos para gerenciar a simultaneidade e computar recursos para consultas no SQL Data Warehouse do Azure.
 services: sql-data-warehouse
-author: WenJason
-manager: digimobile
+author: ronortloff
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: workload management
-origin.date: 03/15/2019
-ms.date: 04/22/2019
-ms.author: v-jay
+ms.date: 05/22/2019
+ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5ad8dad35013a28696e7c9cb5cc68464f3c4bf64
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 75bd6e8071717ba755b71f51afcd884539049489
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61475075"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66165975"
 ---
 # <a name="workload-management-with-resource-classes-in-azure-sql-data-warehouse"></a>Gerenciamento de carga de trabalho com classes de recursos no SQL Data Warehouse do Azure
 
@@ -80,13 +79,14 @@ As classes de recursos dinâmicos são implementadas com essas funções de banc
 
 Ao aprofundar os detalhes das classes de recursos dinâmicos em Gen1, há alguns detalhes que adicionam complexidade adicional para entender seu comportamento:
 
-- A classe de recursos smallrc opera com um modelo de memória fixo como uma classe de recurso estático.  Consultas smallrc não têm mais memória dinamicamente, pois o nível de serviço é aumentado.
+**On Gen1**
+- A classe de recursos smallrc opera com um modelo de memória fixo como uma classe de recurso estático.  Consultas smallrc não têm mais memória dinamicamente, pois o nível de serviço é aumentado. 
 - Como alterar os níveis de serviço, a simultaneidade de consultas disponíveis pode ir para cima ou para baixo.
-- Dimensionamento de níveis de serviço não oferece uma alteração proporcional a memória alocada para as mesmas classes de recursos.
+- Dimensionar os níveis de serviço não oferece uma alteração proporcional para a memória alocada para as mesmas classes de recursos.
 
-Em **Gen2 somente**, classes de recursos dinâmicos são verdadeiramente dinâmicos abordando os pontos mencionados acima.  A nova regra é 3-10-22-70 para alocações de porcentagem de memória para classes de recursos pequeno médio-grande-extragrande, **independentemente do nível de serviço**.  A tabela abaixo mostra os detalhes consolidados de porcentagens de alocação de memória e o número mínimo de consultas simultâneas que são executadas, independentemente do nível de serviço.
+**Em Gen2**, classes de recursos dinâmicos são realmente dinâmicas endereçamento pontos mencionados acima.  A nova regra é 3-10-22-70 para alocações de porcentagem de memória para classes de recursos pequeno médio-grande-extragrande, **independentemente do nível de serviço**.  A tabela abaixo mostra os detalhes consolidados de porcentagens de alocação de memória e o número mínimo de consultas simultâneas que são executadas, independentemente do nível de serviço.
 
-| Classe de recursos | Porcentagem de Memória | Mínimo de consultas simultâneas |
+| Classe de Recursos | Porcentagem de Memória | Mínimo de consultas simultâneas |
 |:--------------:|:-----------------:|:----------------------:|
 | smallrc        | 3%                | 32                     |
 | mediumrc       | 10%               | 10                     |
@@ -942,7 +942,6 @@ Para obter mais informações sobre como gerenciar usuários de banco de dados e
 [Secure a database in SQL Data Warehouse]: ./sql-data-warehouse-overview-manage-security.md
 
 <!--MSDN references-->
-[Managing Databases and Logins in Azure SQL Database]:../sql-database/sql-database-manage-logins.md
+[Managing Databases and Logins in Azure SQL Database]:https://msdn.microsoft.com/library/azure/ee336235.aspx
 
 <!--Other Web references-->
-<!-- Update_Description: update link, wording update-->

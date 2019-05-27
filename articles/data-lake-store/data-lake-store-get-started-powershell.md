@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: 6635b572d11339307083b8aa2aaaba69dc731101
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 5bec627f114a20033ca4364c39c048763df36b67
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58885852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66161450"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-azure-powershell"></a>Introdução ao Azure Data Lake Store Gen1 usando Azure PowerShell
 > [!div class="op_single_selector"]
@@ -36,7 +36,7 @@ Saiba como usar o Azure PowerShell para criar uma conta do Azure Data Lake Stora
 * **Uma assinatura do Azure**. Consulte [Obter a avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Azure PowerShell 1.0 ou superior**. Consulte [Como instalar e configurar o PowerShell do Azure](/powershell/azure/overview).
 
-## <a name="authentication"></a>Autenticação
+## <a name="authentication"></a>Authentication
 Este artigo usa uma abordagem de autenticação mais simples com o Data Lake Storage Gen1, em que você é solicitado a inserir as credenciais da conta do Azure. O nível de acesso à conta do Data Lake Storage Gen1 e ao sistema de arquivos é controlado pelo nível de acesso do usuário conectado. No entanto, há outras abordagens para autenticar com o Data Lake Storage Gen1, que são a **autenticação de usuário final** ou a **autenticação serviço a serviço**. Para obter instruções e saber mais sobre como se autenticar, veja [Autenticação do usuário final](data-lake-store-end-user-authenticate-using-active-directory.md) ou [Autenticação de serviço a serviço](data-lake-store-authenticate-using-active-directory.md).
 
 ## <a name="create-a-data-lake-storage-gen1-account"></a>Criar uma conta do Data Lake Storage Gen1
@@ -120,7 +120,7 @@ Use o comando a seguir para excluir sua conta do Data Lake Storage Gen1.
 
 Quando solicitado, insira **Y** para excluir a conta.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 * [Diretrizes de ajuste do desempenho para uso do PowerShell com o Azure Data Lake Storage Gen1](data-lake-store-performance-tuning-powershell.md)
 * [Use o Armazenamento de Data Lake do Azure Gen1 para requisitos de big data](data-lake-store-data-scenarios.md) 
 * [Proteger dados no Armazenamento do Data Lake Gen1](data-lake-store-secure-data.md)

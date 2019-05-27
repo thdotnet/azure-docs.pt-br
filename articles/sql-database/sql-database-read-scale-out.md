@@ -13,11 +13,11 @@ ms.reviewer: sstein, carlrab
 manager: craigg
 ms.date: 04/19/2019
 ms.openlocfilehash: cbcdcfd151951334246a4e85d9f521a15bb6269d
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60006141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66146130"
 ---
 # <a name="use-read-only-replicas-to-load-balance-read-only-query-workloads"></a>Usar réplicas somente leitura para cargas de trabalho de consulta somente leitura de balanceamento de carga
 
@@ -147,6 +147,6 @@ Se você estiver usando a expansão de leitura para o balanceamento de carga som
 > [!NOTE]
 > Não há suporte para o round-robin roteamento ou quaisquer outros com balanceamento de carga entre réplicas de banco de dados secundário locais.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Para obter informações sobre a oferta em hiperescala do banco de dados SQL, consulte [camada de serviço em hiperescala](./sql-database-service-tier-hyperscale.md).

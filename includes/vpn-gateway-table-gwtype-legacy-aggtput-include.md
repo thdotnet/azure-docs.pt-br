@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 6efec75884857d93f2e128104136bf59a1114594
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
-ms.translationtype: HT
+ms.openlocfilehash: 9734859c0bf22201c146e5d8a220f3146f6051c4
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30197164"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66159213"
 ---
 A tabela a seguir mostra os tipos de gateway e a produtividade agregada estimada pela SKU do gateway. Esta tabela aplica-se a ambos os modelos de implantação do Gerenciador de Recursos e clássico. 
 
@@ -23,9 +23,9 @@ Observe que a SKU do gateway UltraPerformance não é representada nesta tabela.
 
 |  | **Taxa de transferência de Gateway de VPN (1)** | **Túneis IPsec máximo de Gateway de VPN (2)** | **Taxa de transferência de Gateway de ExpressRoute** | **Coexistência de Gateway de VPN e o ExpressRoute** |
 | --- | --- | --- | --- | --- |
-| **SKU Básica (3)(5)(6)** |100 Mbps |10 |500 Mbps (6) |Não  |
-| **SKU padrão (4)(5)** |100 Mbps |10 |1000 Mbps |sim |
-| **SKU de Alto Desempenho (4)** |200 Mbps |30 |2000 Mbps |sim |
+| **SKU Básica (3)(5)(6)** |100 Mbps |10 |500 Mbps (6) |Não |
+| **SKU padrão (4)(5)** |100 Mbps |10 |1000 Mbps |Sim |
+| **SKU de Alto Desempenho (4)** |200 Mbps |30 |2000 Mbps |Sim |
 
 
 (1) A taxa de transferência da VPN é uma estimativa aproximada baseada nas medidas entre redes virtuais na mesma região do Azure. Não é uma taxa de transferência garantida para conexões entre locais na Internet. É a medida de taxa de transferência máxima possível.

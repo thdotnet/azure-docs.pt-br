@@ -2,19 +2,18 @@
 title: Arquivo de inclusão
 description: Arquivo de inclusão
 services: virtual-machines
-author: rockboyfor
+author: cynthn
 ms.service: virtual-machines
 ms.topic: include
-origin.date: 03/09/2018
-ms.date: 04/16/2018
-ms.author: v-yeche
+ms.date: 03/09/2018
+ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: be71b269e618d13a126e4005754b307e9c6517d7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60543696"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66160060"
 ---
 ## <a name="azure-backup"></a>Serviço de Backup do Azure
 
@@ -23,6 +22,7 @@ Para fazer backup de máquinas virtuais do Azure executando cargas de trabalho d
 Para obter uma introdução simples e prática para Backup do Azure para máquinas virtuais do Azure, consulte a "Fazer backup do tutorial de máquinas virtuais do Azure" para [Linux](../articles/virtual-machines/linux/tutorial-backup-vms.md) ou [Windows](../articles/virtual-machines/windows/tutorial-backup-vms.md).
 
 Para saber mais sobre como o Backup do Azure funciona, veja [Planejar sua infraestrutura de backup de VM no Azure](../articles/backup/backup-azure-vms-introduction.md)
+
 
 ## <a name="azure-site-recovery"></a>Azure Site Recovery
 
@@ -40,6 +40,8 @@ Para saber mais sobre a criação de instantâneos, veja:
 
 * [Criar cópia de VHD armazenado como um Disco Gerenciado usando instantâneos no Windows](../articles/virtual-machines/windows/snapshot-copy-managed-disk.md)
 * [Criar cópia de VHD armazenado como um Disco Gerenciado usando instantâneos no Linux](../articles/virtual-machines/linux/snapshot-copy-managed-disk.md)
+
+
 
 ## <a name="next-steps"></a>Próximas etapas
 Você pode experimentar o Backup do Azure ao seguir o "tutorial Fazer backup de máquinas virtuais do Windows" para [Linux](../articles/virtual-machines/linux/tutorial-backup-vms.md) ou [Windows](../articles/virtual-machines/windows/tutorial-backup-vms.md).

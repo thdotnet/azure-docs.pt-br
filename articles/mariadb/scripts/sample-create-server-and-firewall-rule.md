@@ -9,11 +9,11 @@ ms.topic: sample
 ms.custom: mvc
 ms.date: 11/28/2018
 ms.openlocfilehash: a7e8a4c8f8572cfdd236b1752e89b3a1b4e7b758
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53546803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66171378"
 ---
 # <a name="create-a-mariadb-server-and-configure-a-firewall-rule-using-the-azure-cli"></a>Criar um servidor MariaDB e configurar uma regra de firewall usando a CLI do Azure
 Este exemplo de script da CLI cria um servidor do Banco de Dados do Azure para MariaDB e configura uma regra de firewall no nível do servidor. Após o script ser executado com êxito, o servidor MariaDB será acessível por todos os serviços do Azure e pelo endereço IP configurado.

@@ -9,18 +9,18 @@ ms.date: 12/20/2018
 ms.author: adgera
 ms.custom: include file
 ms.openlocfilehash: 7e4760990229433b2ea40fadd0d17de0b52fcb36
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60534033"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66162137"
 ---
 A tabela a seguir descreve as funções que estão disponíveis no Gêmeos Digitais do Azure:
 
 | **Função** | **Descrição** | **Identificador** |
 | --- | --- | --- |
 | Administrador de Espaço | Permissão *CREATE*, *READ*, *UPDATE* e *DELETE* para o espaço especificado e todos os nós abaixo. Permissão global. | 98e44ad7-28d4-4007-853b-b9968ad132d1 |
-| Administrador de usuários| Permissão *CREATE*, *READ*, *UPDATE* e *DELETE* para usuários e objetos relacionados ao usuário. Permissão *READ* para espaços. | dfaac54c-f583-4dd2-b45d-8d4bbc0aa1ac |
+| Administrador de Usuários| Permissão *CREATE*, *READ*, *UPDATE* e *DELETE* para usuários e objetos relacionados ao usuário. Permissão *READ* para espaços. | dfaac54c-f583-4dd2-b45d-8d4bbc0aa1ac |
 | Administrador de Dispositivo | Permissão *CREATE*, *READ*, *UPDATE* e *DELETE* para dispositivos e objetos relacionados aos dispositivos. Permissão *READ* para espaços. | 3cdfde07-bc16-40d9-bed3-66d49a8f52ae |
 | Administrador de Chave | Permissão *CREATE*, *READ*, *UPDATE* e *DELETE* para chaves de acesso. Permissão *READ* para espaços. | 5a0b1afc-e118-4068-969f-b50efb8e5da6 |
 | Administrador de Token |  Permissão *READ* e *UPDATE* para chaves de acesso. Permissão *READ* para espaços. | 38a3bb21-5424-43b4-b0bf-78ee228840c3 |

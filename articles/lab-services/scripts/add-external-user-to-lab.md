@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/11/2018
 ms.author: spelluru
 ms.openlocfilehash: 042fa1e24ebadfb00a2d55cc97d742f198cb5662
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56738344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66160614"
 ---
 # <a name="use-powershell-to-add-an-external-user-to-a-lab-in-azure-devtest-labs"></a>Use o PowerShell para adicionar um usuário externo a um laboratório no Azure DevTest Labs
 
@@ -38,7 +38,7 @@ Este script de exemplo do PowerShell adiciona um usuário externo a um laborató
 
 Este script usa os seguintes comandos: 
 
-| Comando | Anotações |
+| Comando | Observações |
 |---|---|
 | [Get-AzADUser](/powershell/module/az.resources/get-azaduser) | Repete o objeto de usuário do Azure Active Directory. |
 | [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment) | Atribui a função especificada à entidade se segurança especificada no escopo especificado. |

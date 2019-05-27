@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/11/2018
 ms.author: spelluru
 ms.openlocfilehash: 0c82e304d3e3d8df1206c7c05883399b74229af7
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57192183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66160540"
 ---
 # <a name="use-powershell-to-set-allowed-vm-sizes-in-azure-lab-services"></a>Usar o PowerShell para definir os tamanhos de VM permitidos no Azure Lab Services
 
@@ -38,7 +38,7 @@ Este exemplo de script do PowerShell define os tamanhos de VM (máquinas virtuai
 
 Este script usa os seguintes comandos: 
 
-| Comando | Anotações |
+| Comando | Observações |
 |---|---|
 | Find-AzResource | Pesquisas recursos com base nos parâmetros especificados. |
 | [Get-AzResource](/powershell/module/az.resources/get-azresource) | Obter recursos. |

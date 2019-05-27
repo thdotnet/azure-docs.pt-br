@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 19d2dedc2ccf7015696504a94f5ef7c43a90d3be
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58114273"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66171184"
 ---
 #### <a name="to-download-hotfixes"></a>Para baixar os hotfixes
 
@@ -93,7 +93,7 @@ Siga as etapas abaixo para instalar e verificar os hotfixes do modo normal. Caso
     > [!NOTE]
     > Ocasionalmente, o cmdlet relatará `False` quando a atualização ainda estiver em andamento. Para garantir que o hotfix seja concluído, aguarde alguns minutos, execute esse comando novamente e verifique se `RunInProgress` é `False`. Em caso positivo, o hotfix foi concluído.
 
-7. Depois que a atualização do software estiver concluída, verifique as versões de software do sistema. Digite:
+7. Depois que a atualização do software estiver concluída, verifique as versões de software do sistema. Tipo:
    
     `Get-HcsSystem`
    
@@ -175,7 +175,7 @@ Para instalar as atualizações de firmware de disco, siga as instruções abaix
         [Y] Yes [N] No (Default is "Y"): Y
         WARNING: Installation is currently in progress. This operation can take several minutes to complete.
 3. Monitore o progresso da instalação usando o comando `Get-HcsUpdateStatus` . A atualização é concluída quando o `RunInProgress` muda para `False`.
-4. Depois que a instalação for concluída, o controlador no qual o hotfix do modo de manutenção foi instalado será reiniciado. Faça logon como opção 1, **Faça logon com acesso completo**, e verifique a versão de firmware de disco. Digite:
+4. Depois que a instalação for concluída, o controlador no qual o hotfix do modo de manutenção foi instalado será reiniciado. Faça logon como opção 1, **Faça logon com acesso completo**, e verifique a versão de firmware de disco. Tipo:
    
    `Get-HcsFirmwareVersion`
    

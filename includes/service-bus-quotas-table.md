@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 12/13/2018
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 7add8c10fd3224b9c287ea4cc672191157f56a09
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f48ad6ca74e6ce10148d66549fea16bc74015b2a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60861881"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66171210"
 ---
 A tabela a seguir lista informações sobre cotas específicas para mensagens do barramento de serviço do Azure. Para obter informações sobre preços e outras cotas do barramento de serviço, consulte [preços do barramento de serviço](https://azure.microsoft.com/pricing/details/service-bus/).
 
-| Nome da cota | Escopo | Observações | Value |
+| Nome de cota | Scope | Observações | Value |
 | --- | --- | --- | --- |
 | Número máximo de namespaces básico ou Standard por assinatura do Azure |Namespace |As solicitações subsequentes por namespaces básico ou Standard adicionais são rejeitadas pelo portal do Azure. |100|
 | Número máximo de namespaces Premium por assinatura do Azure |Namespace |As solicitações subsequentes para os namespaces adicionais Premium são rejeitadas pelo portal. |25 |
@@ -32,7 +32,7 @@ A tabela a seguir lista informações sobre cotas específicas para mensagens do
 | Tamanho máximo de uma mensagem [ID de sessão](/dotnet/api/microsoft.azure.servicebus.message.sessionid) | Entidade |- | 128 |
 | Tamanho de mensagem para uma entidade de fila, tópico ou assinatura |Entidade |Mensagens de entrada que excederem essas cotas serão rejeitadas e uma exceção é recebida pelo código de chamada. |Tamanho máximo da mensagem: 256 KB para [camada Standard](../articles/service-bus-messaging/service-bus-premium-messaging.md), 1 MB para [camada Premium](../articles/service-bus-messaging/service-bus-premium-messaging.md). <br /><br />Devido à sobrecarga do sistema, esse limite é menor do que esses valores.<br /><br />Tamanho máximo do cabeçalho: 64 KB.<br /><br />Número máximo de propriedades de cabeçalho no recipiente de propriedades: **byte/int. MaxValue**.<br /><br />Tamanho máximo da propriedade no recipiente de propriedades: Nenhum limite explícito. Limitado pelo tamanho máximo do cabeçalho. |
 | Tamanho de propriedade de mensagem para uma entidade de fila, tópico ou assinatura |Entidade | A exceção **SerializationException** é gerado. |Tamanho máximo da mensagem da propriedade para cada propriedade é 32.000. Tamanho cumulativo de todas as propriedades não pode exceder 64.000. Esse limite se aplica ao cabeçalho inteiro do [BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage), que tem as propriedades de usuário e propriedades do sistema, tais como [SequenceNumber](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.sequencenumber), [rótulo](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.label)e [ MessageId](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.messageid). |
-| Número de assinaturas por tópico |Entidade |As solicitações subsequentes para a criação de assinaturas adicionais para o tópico são rejeitadas. Como resultado, se configuradas por meio do portal, uma mensagem de erro é mostrada. Se chamado da API de gerenciamento, uma exceção é recebida pelo código de chamada. |Camada Standard: Cada assinatura conta com a cota de 1.000 entidades, ou seja, filas, tópicos e assinaturas, por namespace. <br/> <br/> Camada Premium: 2,000. |
+| Número de assinaturas por tópico |Entidade |As solicitações subsequentes para a criação de assinaturas adicionais para o tópico são rejeitadas. Como resultado, se configuradas por meio do portal, uma mensagem de erro é mostrada. Se chamado da API de gerenciamento, uma exceção é recebida pelo código de chamada. |Standard e camada Premium: Cada assinatura conta com a cota de 1.000 entidades, ou seja, filas, tópicos e assinaturas, por namespace. |
 | Número de filtros SQL por tópico |Entidade |Solicitações subsequentes de criação de filtros adicionais para o tópico serão rejeitadas e uma exceção é recebida pelo código de chamada. |2.000 |
 | Número de filtros de correlação por tópico |Entidade |Solicitações subsequentes de criação de filtros adicionais para o tópico serão rejeitadas e uma exceção é recebida pelo código de chamada. |100.000 |
 | Tamanho de filtros SQL ou ações |Namespace |Solicitações subsequentes de criação de filtros adicionais são rejeitadas e uma exceção é recebida pelo código de chamada. |Comprimento máximo da cadeia de caracteres de condição de filtro: 1.024 (1 K).<br /><br />Comprimento máximo da cadeia de caracteres de condição de função: 1.024 (1 K).<br /><br />Número máximo de expressões por ação de regra: 32. |

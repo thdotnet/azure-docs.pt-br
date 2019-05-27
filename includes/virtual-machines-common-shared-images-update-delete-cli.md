@@ -8,24 +8,24 @@ ms.topic: include
 ms.date: 04/25/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: b34d37fa79ccb8344fdacd99877403d61ba5f5c2
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 8d0f9866864ca4b02ca6238be2ac44537a586c2d
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138889"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66157943"
 ---
 ## <a name="update-resources"></a>Atualizar recursos
 
 Existem algumas limitações sobre o que pode ser atualizado. Os itens a seguir podem ser atualizados: 
 
 Galeria de imagens compartilhadas:
-- DESCRIÇÃO
+- Descrição
 
 definição da imagem:
 - vCPUs recomendadas
 - Memória recomendada
-- DESCRIÇÃO
+- Descrição
 - Data de fim da vida útil
 
 Versão da imagem:
@@ -33,6 +33,8 @@ Versão da imagem:
 - Regiões de destino
 - Exclusão da mais recente
 - Data de fim da vida útil
+
+Se você planeja adicionar regiões de réplica, não exclua a imagem gerenciada de origem. A imagem gerenciada de origem é necessária para replicar a versão da imagem para regiões adicionais. 
 
 Atualizar a descrição de uma galeria usando ([atualização do az sig](https://docs.microsoft.com/cli/azure/sig?view=azure-cli-latest#az-sig-update). 
 

@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: genli
 ms.openlocfilehash: 147eb5321853706b59fac7d3d49a761a251987fa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60743236"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66170893"
 ---
 ## <a name="prerequisite-install-the-azure-cli"></a>Pré-requisito: Instalar a CLI do Azure
 Para executar as etapas deste artigo, será necessário [instalar a Interface de Linha de Comando do Azure para Mac, Linux e Windows (CLI do Azure)](../articles/cli-install-nodejs.md) e você precisará [entrar no Microsoft Azure](/cli/azure/authenticate-azure-cli). 
