@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: 910c593c9277efeaf72dadc52740b1c918381e19
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b8c1513838fb848388946e18698a0410aa7a0332
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61466029"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65949617"
 ---
 # <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Como compilar um aplicativo Smooth Streaming da Windows Store  
 
@@ -507,7 +507,7 @@ Os mesmos eventos também estão disponíveis no nível do gerenciador de origen
    ```
 
    > [!NOTE]
-   > O CoreDispatcher é usado para fazer alterações no thread da interface do usuário no thread que não é da interface do usuário. No caso de gargalo no dispatcher de threads, o desenvolvedor pode optar por usar o dispatcher fornecido pelo elemento da interface do usuário que pretende atualizar.  Por exemplo: 
+   > O CoreDispatcher é usado para fazer alterações no thread da interface do usuário no thread que não é da interface do usuário. No caso de gargalo no dispatcher de threads, o desenvolvedor pode optar por usar o dispatcher fornecido pelo elemento de interface do usuário que pretendem atualizar.  Por exemplo:
 
    ```csharp
          await sliderProgress.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { TimeSpan 
@@ -847,7 +847,7 @@ Um apresentação de Smooth Streaming pode conter vários arquivos de vídeo cod
          </ListBox>
          </StackPanel>
    ```
-3. Pressione **CTRL+S** para salvar as alterações
+3. Pressione **CTRL + S** para salvar as alterações
 
 ### <a name="to-modify-the-code-behind-file"></a>Para modificar o arquivo code-behind
 
