@@ -4,8 +4,10 @@
   items:
     - name: Sobre a Central de Segurança
       href: security-center-intro.md
-    - name: Plataformas e recursos com suporte da Central de Segurança
+    - name: Plataformas e recursos compatíveis da Central de Segurança
       href: security-center-os-coverage.md
+    - name: Recomendações e avaliação de Endpoint Protection
+      href: security-center-endpoint-protection.md
 - name: Guia de início rápido
   expanded: true
   items:

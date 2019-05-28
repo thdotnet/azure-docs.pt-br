@@ -6,14 +6,14 @@ author: vhorne
 ms.service: application-gateway
 ms.topic: overview
 ms.custom: mvc
-ms.date: 4/18/2019
+ms.date: 4/30/2019
 ms.author: victorh
-ms.openlocfilehash: 91e94c70444430725ffec836d1663aef99eb5496
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 78dd4b31991a15d3d946c47c5394f64bb3afea95
+ms.sourcegitcommit: ed66a704d8e2990df8aa160921b9b69d65c1d887
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60003353"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64947262"
 ---
 # <a name="what-is-azure-application-gateway"></a>O que é o Gateway de Aplicativo do Azure?
 
@@ -21,48 +21,29 @@ O Gateway de Aplicativo do Azure é um balanceador de carga do tráfego da Web q
 
 ![Gateway de Aplicativo conceitual](media/overview/figure1-720.png)
 
-Porém, com o Gateway de Aplicativo, você pode ser ainda mais específico. Por exemplo, você pode encaminhar o tráfego com base na URL de entrada. Portanto, se `/images` estiver na URL de entrada, você poderá encaminhar o tráfego para um conjunto específico de servidores (conhecido como um pool) configurado para as imagens. Se `/video` estiver na URL, esse tráfego será encaminhado para outro pool otimizado para vídeos.
+Com o Gateway de Aplicativo, é possível tomar decisões de roteamento com base em outros atributos de uma solicitação HTTP, como o caminho de URI ou os cabeçalhos de host. Por exemplo, você pode encaminhar o tráfego com base na URL de entrada. Portanto, se `/images` estiver na URL de entrada, você poderá encaminhar o tráfego para um conjunto específico de servidores (conhecido como um pool) configurado para as imagens. Se `/video` estiver na URL, esse tráfego será encaminhado para outro pool otimizado para vídeos.
 
 ![imageURLroute](./media/application-gateway-url-route-overview/figure1-720.png)
 
-Esse tipo de roteamento é conhecido como balanceamento de carga da camada de aplicativo (camada OSI 7). O Gateway de Aplicativo do Azure pode fazer o roteamento baseado em URL e muito mais. 
+Esse tipo de roteamento é conhecido como balanceamento de carga da camada de aplicativo (camada OSI 7). O Gateway de Aplicativo do Azure pode fazer o roteamento baseado em URL e muito mais.
 
 Os seguintes recursos estão incluídos no Gateway de Aplicativo do Azure:
 
-## <a name="autoscaling-public-preview"></a>Versão prévia pública do dimensionamento automático
-
-Além dos recursos descritos neste artigo, o Gateway de Aplicativo também oferece uma versão prévia pública de um novo SKU [Standard_V2], que oferece dimensionamento automático e outros aprimoramentos de desempenho críticos.
-
-- **Dimensionamento automático** – implantações do Gateway de Aplicativo ou do WAF com o SKU de dimensionamento automático podem ser escaladas ou reduzidas verticalmente com base na mudança dos padrões de carga de tráfego. O escalonamento automático também remove o requisito de escolher um tamanho de implantação ou contagem de instâncias durante o provisionamento. 
-
-- **Redundância de zona** – uma implantação do Gateway de Aplicativo ou do WAF pode abranger várias Zonas de Disponibilidade, eliminando a necessidade de provisionar e girar instâncias separadas do Gateway de Aplicativo em cada zona com um Gerenciador de Tráfego.
-
-- **VIP estático** – o VIP do Gateway de Aplicativo agora permite o tipo de VIP estático exclusivamente. Isso garante que o VIP associado ao gateway de aplicativo não seja alterado mesmo após uma reinicialização.
-
-- **Implantação e atualização mais rápidas** em comparação com o SKU com disponibilidade geral. 
-
-- **Desempenho de descarregamento SSL cinco vezes melhor** em comparação com o SKU com disponibilidade geral.
-
-Para obter mais informações sobre os recursos do Gateway de Aplicativo em versão prévia pública, confira [Dimensionamento Automático e Gateway de Aplicativo com redundância de zona (versão prévia pública)](application-gateway-autoscaling-zone-redundant.md).
-
 ## <a name="secure-sockets-layer-ssl-termination"></a>Encerramento do protocolo SSL
 
-O gateway de aplicativo dá suporte a terminação SSL no gateway, pelo qual o tráfego flui geralmente descriptografado até os servidores de back-end. Esse recurso permite que os servidores Web fiquem livres da sobrecarga da criptografia e descriptografia dispendiosa. Mas, às vezes, a comunicação não criptografada com os servidores não é uma opção aceitável. Isso pode ocorrer devido a requisitos de segurança, requisitos de conformidade ou o aplicativo pode aceitar apenas uma conexão segura. Para tais aplicativos, o Gateway de Aplicativo dá suporte à criptografia SSL de ponta a ponta.
+O gateway de aplicativo dá suporte a terminação SSL no gateway, pelo qual o tráfego flui geralmente descriptografado até os servidores de back-end. Esse recurso permite que os servidores Web fiquem livres da sobrecarga da criptografia e descriptografia dispendiosa. Mas, às vezes, a comunicação não criptografada com os servidores não é uma opção aceitável. Isso pode ocorrer devido a requisitos de segurança, de conformidade ou o aplicativo pode aceitar apenas uma conexão segura. Para tais aplicativos, o Gateway de Aplicativo dá suporte à criptografia SSL de ponta a ponta.
 
-## <a name="azure-kubernetes-service-aks-ingress-controller-preview"></a>Versão prévia do controlador de entrada do AKS (Serviço de Kubernetes do Azure) 
+## <a name="autoscaling"></a>Dimensionamento automático
 
-O controlador de entrada do Gateway de Aplicativo é executado como um pod no cluster do AKS e permite que o Gateway de Aplicativo atue como entrada para um cluster do AKS. Isso é compatível somente com o Gateway de Aplicativo v2.
+Implantações do Gateway de Aplicativo ou do WAF sob o SKU Standard_v2 ou WAF_v2 dão suporte ao dimensionamento automático e podem ser aumentadas ou reduzidas com base na mudança dos padrões de carga de tráfego. O escalonamento automático também remove o requisito de escolher um tamanho de implantação ou contagem de instâncias durante o provisionamento. Para saber mais sobre os recursos standard_v2 e WAF_v2 do Gateway de Aplicativo, confira [Dimensionamento automático do SKU v2](application-gateway-autoscaling-zone-redundant.md).
 
-Para obter mais informações, confira [Controlador de ingresso do Gateway de Aplicativo do Azure](https://azure.github.io/application-gateway-kubernetes-ingress/).
+## <a name="zone-redundancy"></a>Redundância de zona
 
-## <a name="connection-draining"></a>Descarregamento de conexão
+Um Gateway de Aplicativo ou implantações WAF no SKU Standard_v2 ou WAF_v2 pode abranger várias Zonas de Disponibilidade, que oferecem uma melhor resiliência a falhas e que acabam com a necessidade de provisionar Gateways de Aplicativo separados em cada zona.
 
-O descarregamento de conexão ajuda você a efetuar a remoção normal de membros do pool de back-end durante atualizações de serviço planejadas. Essa configuração é habilitada por meio da configuração do http de back-end e pode ser aplicada a todos os membros de um pool de back-end durante a criação da regra. Com a configuração habilitada, o Gateway de Aplicativo garante que todas as instâncias de um pool de back-end cujos registros forem cancelados não receberão nenhuma nova solicitação, permitindo que solicitações existentes sejam concluídas dentro de um limite de tempo configurado. Isso se aplica a instâncias de back-end removidas explicitamente do pool de back-end por uma chamada à API e a instâncias de back-end relatadas como não íntegras, conforme determinado por investigações de integridade.
+## <a name="static-vip"></a>VIP estático
 
-## <a name="custom-error-pages"></a>Páginas de erro personalizadas
-O Gateway de Aplicativo permite que você crie páginas de erro personalizadas em vez de exibir páginas de erro padrão. Você pode usar sua própria identidade visual e layout em uma página de erro personalizada.
-
-Para obter mais informações, confira [Criar páginas de erro personalizadas do Gateway de Aplicativo](custom-error.md).
+O gateway de aplicativo VIP no SKU Standard_v2 ou WAF_v2 é compatível exclusivamente com o tipo VIP estático. Isso garante que o VIP associado ao gateway de aplicativo não seja alterado mesmo durante o tempo de vida do Gateway de Aplicativo.
 
 ## <a name="web-application-firewall"></a>Firewall do aplicativo Web
 
@@ -92,7 +73,7 @@ Para obter mais informações, consulte [hospedagem de vários sites com o Gatew
 
 ## <a name="redirection"></a>Redirecionamento
 
-Um cenário comum para muitos aplicativos Web é dar suporte ao redirecionamento automático de HTTP para HTTPS para garantir que toda a comunicação entre o aplicativo e seus usuários ocorra em um caminho criptografado. 
+Um cenário comum para muitos aplicativos Web é dar suporte ao redirecionamento automático de HTTP para HTTPS para garantir que toda a comunicação entre o aplicativo e seus usuários ocorra em um caminho criptografado.
 
 No passado, talvez você tenha usado técnicas como a criação de um pool dedicado cujo único propósito é redirecionar as solicitações recebidas em HTTP para HTTPS. O gateway de aplicativo dá suporte à capacidade de redirecionar o tráfego no Gateway de Aplicativo. Isso simplifica a configuração do aplicativo, otimiza o uso de recursos e dá suporte a novos cenários de redirecionamento, incluindo redirecionamento global e baseado no caminho. O suporte ao redirecionamento do Gateway de Aplicativo não está limitado apenas ao redirecionamento de HTTP para HTTPS. Esse é um mecanismo de redirecionamento genérico; portanto, você pode redirecionar bidirecionalmente em qualquer porta definida usando regras. Ele também dá suporte a redirecionamento para um site externo.
 
@@ -114,22 +95,41 @@ O Gateway de Aplicativo fornece suporte nativo para os protocolos WebSocket e HT
 
 Os protocolos WebSocket e HTTP/2 permitem uma comunicação full duplex entre um servidor e um cliente em uma conexão TCP de execução longa. Isso permite uma comunicação mais interativa entre o servidor Web e o cliente, que pode ser bidirecional, sem a necessidade de sondagem, necessária nas implementações baseadas em HTTP. Esses protocolos têm baixa sobrecarga, ao contrário do HTTP, e podem reutilizar a mesma conexão TCP para várias solicitações/respostas, resultando em uma utilização mais eficiente de recursos. Esses protocolos foram projetados para funcionar em portas HTTP tradicionais de 80 e 443.
 
-Para obter mais informações, consulte [suporte ao WebSocket](https://docs.microsoft.com/azure/application-gateway/application-gateway-websocket) e [suporte ao HTTP/2](https://docs.microsoft.com/azure/application-gateway/configuration-overview#http2-support). 
+Para obter mais informações, consulte [suporte ao WebSocket](https://docs.microsoft.com/azure/application-gateway/application-gateway-websocket) e [suporte ao HTTP/2](https://docs.microsoft.com/azure/application-gateway/configuration-overview#http2-support).
 
-## <a name="rewrite-http-headers-public-preview"></a>Reescrever cabeçalhos HTTP (versão prévia pública)
+## <a name="azure-kubernetes-service-aks-ingress-controller-preview"></a>Versão prévia do controlador de entrada do AKS (Serviço de Kubernetes do Azure) 
+
+O controlador de entrada do Gateway de Aplicativo é executado como um pod no cluster do AKS e permite que o Gateway de Aplicativo atue como entrada para um cluster do AKS. Isso é compatível somente com o Gateway de Aplicativo v2.
+
+Para obter mais informações, confira [Controlador de ingresso do Gateway de Aplicativo do Azure](https://azure.github.io/application-gateway-kubernetes-ingress/).
+
+## <a name="connection-draining"></a>Descarregamento de conexão
+
+O descarregamento de conexão ajuda você a efetuar a remoção normal de membros do pool de back-end durante atualizações de serviço planejadas. Essa configuração é habilitada por meio da configuração do http de back-end e pode ser aplicada a todos os membros de um pool de back-end durante a criação da regra. Com a configuração habilitada, o Gateway de Aplicativo garante que todas as instâncias de um pool de back-end cujos registros forem cancelados não receberão nenhuma nova solicitação, permitindo que solicitações existentes sejam concluídas dentro de um limite de tempo configurado. Isso se aplica a instâncias de back-end removidas explicitamente do pool de back-end por uma chamada à API e a instâncias de back-end relatadas como não íntegras, conforme determinado por investigações de integridade.
+
+## <a name="custom-error-pages"></a>Páginas de erro personalizadas
+
+O Gateway de Aplicativo permite que você crie páginas de erro personalizadas em vez de exibir páginas de erro padrão. Você pode usar sua própria identidade visual e layout em uma página de erro personalizada.
+
+Para saber mais, confira [Reescrever cabeçalhos HTTP](rewrite-http-headers.md).
+
+## <a name="rewrite-http-headers"></a>Reescrever cabeçalhos HTTP
 
 Os cabeçalhos HTTP permitem que o cliente e o servidor passem informações adicionais com a solicitação ou a resposta. A reescrita desses cabeçalhos HTTP ajuda você a realizar vários cenários importantes, como:
+
 - Adição de campos de cabeçalho relacionados à segurança, como HSTS/X-XSS-Protection.
 - Remoção de campos de cabeçalho de resposta que podem revelar informações confidenciais.
 - Remoção de informações de porta de cabeçalhos X-Forwarded-For.
 
 O Gateway de Aplicativo dá suporte à capacidade de adicionar, remover ou atualizar solicitações HTTP e cabeçalhos de resposta, enquanto os pacotes de solicitação e resposta são transferidos entre os pools de cliente e de back-end. Ele também fornece a capacidade de adicionar condições para garantir que os cabeçalhos especificados sejam reescritos somente quando determinadas condições forem atendidas.
 
-Para obter mais informações sobre essa versão prévia pública do recurso, confira [Reescrever cabeçalhos HTTP](rewrite-http-headers.md).
+Para saber mais, confira [Reescrever cabeçalhos HTTP](rewrite-http-headers.md).
 
 ## <a name="sizing"></a>Dimensionamento
 
-O Gateway de Aplicativo atualmente é oferecido em 3 tamanhos: **Pequeno**, **Médio** e **Grande**. Os tamanhos de instância pequenos são destinados a cenários de desenvolvimento e teste.
+O SKU Standard_v2 e WAF_v2 do Gateway de Aplicativo pode ser configurado para dimensionamento automático ou para implantações de tamanho fixas. Esses SKUs não oferecem diferentes tamanhos de instância.
+
+No momento, o SKU Standard e WAF do Gateway de Aplicativo é oferecido em três tamanhos: **Pequeno**, **Médio** e **Grande**. Os tamanhos de instância pequenos são destinados a cenários de desenvolvimento e teste.
 
 Para obter uma lista completa de limites do gateway de aplicativo, consulte [Limites de serviço do Gateway de Aplicativo](../azure-subscription-service-limits.md?toc=%2fazure%2fapplication-gateway%2ftoc.json#application-gateway-limits).
 
@@ -147,6 +147,6 @@ A tabela a seguir mostra uma produtividade de desempenho médio para cada instâ
 
 Dependendo de seus requisitos e do ambiente, você pode criar um Gateway de Aplicativo de teste usando o portal do Azure, o Azure PowerShell ou a CLI do Azure:
 
-- [Início Rápido: Direcionar o tráfego da Web com o Gateway de Aplicativo do Azure – portal do Azure](quick-create-portal.md).
+- [Início Rápido: Direcionar o tráfego da Web com o Gateway de Aplicativo do Azure – portal do Azure](quick-create-portal.md)
 - [Início Rápido: Direcionar o tráfego da Web com o Gateway de Aplicativo do Azure – Azure PowerShell](quick-create-powershell.md)
 - [Início Rápido: Direcionar o tráfego da Web com o Gateway de Aplicativo do Azure – CLI do Azure](quick-create-cli.md)

@@ -6,24 +6,24 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: tutorial
-ms.date: 03/19/2019
+ms.date: 04/23/2019
 ms.author: raynew
-ms.openlocfilehash: d99a3d23959cfdd9bd068fbde3a882eb1bc9b4ae
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: f69c2ea334109a42d63b85cb71de0deb7174beab
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58847292"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64701665"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Sobre o Backup do SQL Server nas VMs do Azure
 
-Os bancos de dados SQL Server são cargas de trabalho críticas que exigem um baixo RPO (objetivo de ponto de recuperação) e retenção de longo prazo. Faça backup de bancos de dados do SQL Server em execução em VMs do Azure usando o [Backup do Azure](backup-overview.md).
+Os bancos de dados SQL Server são cargas de trabalho críticas que exigem um baixo RPO (objetivo de ponto de recuperação) e retenção de longo prazo. É possível fazer backup de bancos de dados do SQL Server em execução em VMs do Azure usando o [Backup do Azure](backup-overview.md).
 
 ## <a name="backup-process"></a>Processo de backup
 
 Essa solução aproveita as APIs nativas do SQL para fazer backups dos bancos de dados SQL.
 
-* Depois que você especificar a VM do SQL Server que você deseja proteger e consultar para bancos de dados no o departamento de TI, serviço de Backup do Microsoft Azure instalará uma extensão de backup de carga de trabalho na VM pelo nome da extensão `AzureBackupWindowsWorkload` .
+* Depois que você especificar a VM do SQL Server que você deseja proteger e na qual consultar os bancos de dados, o serviço de Backup do Azure instalará uma extensão de backup de carga de trabalho na VM pelo nome da extensão `AzureBackupWindowsWorkload` .
 * Essa extensão consiste em um coordenador e um plugin do SQL. Ao passo que o coordenador é responsável por disparar fluxos de trabalho para várias operações, como configurar o backup, backup e restauração, o plugin é responsável por fluxo de dados real.
 * Para poder descobrir bancos de dados nesta VM, o Backup do Microsoft Azure cria a conta `NT SERVICE\AzureWLBackupPluginSvc`. Essa conta é usada para backup e restauração e exige permissões de sysadmin do SQL. O Backup do Microsoft Azure aproveita a conta  `NT AUTHORITY\SYSTEM`  para descoberta/consulta de banco de dados e, portanto, essa conta precisa ser um logon público no SQL. Se você não criou a VM do SQL Server no Azure Marketplace, talvez você receba um erro  **UserErrorSQLNoSysadminMembership**. Se isso ocorrer,  [siga essas instruções](backup-azure-sql-database.md).
 * Depois que o gatilho configurar a proteção nos bancos de dados selecionados, o serviço de backup configura o coordenador com as agendas de backup e outros detalhes da política, que aumenta os caches localmente na VM 
@@ -35,7 +35,7 @@ Essa solução aproveita as APIs nativas do SQL para fazer backups dos bancos de
 
 ## <a name="before-you-start"></a>Antes de começar
 
-Antes de começar, verifique o seguinte:
+Antes de começar, verifique o que está descrito abaixo:
 
 1. Garanta que você tenha uma Instância do SQL Server em execução no Azure. Você pode [criar uma Instância do SQL Server rapidamente](../virtual-machines/windows/sql/quickstart-sql-vm-create-portal.md) no marketplace.
 2. Examine os [recurso consideração](#feature-consideration-and-limitations) e [suporte a cenários](#scenario-support).
@@ -54,20 +54,27 @@ Antes de começar, verifique o seguinte:
 ## <a name="feature-consideration-and-limitations"></a>Considerações e limitações de recurso
 
 - O Backup do SQL Server pode ser configurado no portal do Azure ou **PowerShell**. Não oferecemos CLI de suporte.
+- A solução é compatível em ambos os tipos de [implantações](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-model) – VMs do Azure Resource Manager e VMs clássicas.
 - VM que executa o SQL Server exige conectividade com a Internet para acessar os endereços IP públicos do Azure.
 - Não há suporte para o SQL Server **FCI (Instância de Cluster de Failover)** e o SQL Server Always On na Instância de Cluster de Failover.
-- Não há suporte para operações de backup e restauração para bancos de dados de espelho e instantâneos do banco de dados.
-- Usar mais de uma solução de backup para fazer backup de sua instância do SQL Server ou SQL Always no grupo de disponibilidade pode levar à falha de backup. Evite fazer isso.
-- Fazer backup de dois nós de um grupo de disponibilidade individualmente com soluções iguais ou diferentes, também poderá levar à falha de backup. O Backup do Azure pode detectar e proteger todos os nós que estão na mesma região que o cofre. Se o SQL Server Always no grupo de disponibilidade abranger várias regiões do Azure, configure o backup da região que tem o nó primário. O Backup do Microsoft Azure poderá detectar e proteger todos os bancos de dados no grupo de disponibilidade, de acordo com a sua preferência de backup.  
+- Não há suporte para as operações de backup e de restauração para bancos de dados de espelho e instantâneos do banco de dados.
+- Usar mais de uma solução de backup para fazer backup de sua instância do SQL Server autônoma ou do grupo de disponibilidade SQL Always On pode levar à falha de backup. Evite fazer isso.
+- Fazer backup de dois nós de um grupo de disponibilidade individualmente com soluções iguais ou diferentes, também poderá levar à falha de backup.
 - Backup do Azure dá suporte a apenas tipos de backup Completo e Somente Cópia para banco de dados **Somente leitura**
 - Bancos de dados com um grande número de arquivos não podem ser protegidos. O número máximo de arquivos com suporte não é **~1000**.  
 - É possível fazer backup de até **~2000** bancos de dados do SQL Server em um cofre. Caso você tenha um número maior de bancos de dados, poderá criar vários cofres.
 - Você pode configurar o backup de até **50** bancos de dados de uma vez; essa restrição ajuda a otimizar cargas de backup.
 - Damos suporte a bancos de dados de até **2TB** em tamanho; para tamanhos maiores do que isso, poderá haver problemas de desempenho.
-- Para ter uma ideia de sobre quantos bancos de dados podem ser protegidos por servidor, precisamos considerar fatores como a largura de banda, tamanho da VM, frequência de backup, tamanho do banco de dados, etc. Estamos trabalhando em um planejador que ajudará a calcular esses número que você possui. Publicaremos em breve.
+- Para ter uma ideia de sobre quantos bancos de dados podem ser protegidos por servidor, precisamos considerar fatores como a largura de banda, tamanho da VM, frequência de backup, tamanho do banco de dados, etc. Estamos trabalhando em um planejador que ajudará você a calcular esses números sozinho. Publicaremos em breve.
 - No caso de grupos de disponibilidade, os backups são feitos de nós diferentes com base em alguns fatores. O comportamento de backup para um grupo de disponibilidade está resumido abaixo.
 
-### <a name="backup-behavior-in-case-of-always-on-availability-groups"></a>O comportamento do backup no caso de Always em grupos de disponibilidade
+### <a name="back-up-behavior-in-case-of-always-on-availability-groups"></a>Faça backup do comportamento no caso de grupos de disponibilidade Always On
+
+É recomendável que o backup seja configurado em apenas um nó de um grupo de disponibilidade. O backup sempre deve ser configurado na mesma região que o nó primário. Em outras palavras, você sempre precisa que o nó primário esteja presente na região na qual você está configurando o backup. Se todos os nós do grupo de disponibilidade estiverem na mesma região na qual o backup é configurado, não haverá preocupação.
+
+**Para grupos de disponibilidade entre regiões**
+- Independentemente da preferência de backup, os backups não acontecerão em nós que não estão na mesma região em que o backup é configurado. Isso ocorre porque os backups entre regiões não são compatíveis. Se você tiver apenas dois nós e o nó secundário estiver em outra região; nesse caso, os backups continuarão ocorrendo no nó primário (a menos que sua preferência de backup seja “somente secundária”).
+- Se ocorresse um failover em uma região diferente da região em que o backup está configurado, eles falhariam nos nós na região de failover.
 
 Dependendo da preferência de backup e os tipos de backups (completo/diferencial/log/somente cópia completos), os backups serão feitos em um nó específico (primário/secundário).
 
@@ -109,7 +116,7 @@ Completo somente de cópia |  Secundário
 
 ## <a name="fix-sql-sysadmin-permissions"></a>Corrigir permissões de sysadmin do SQL
 
-  Caso precise corrigir as permissões devido a um erro **UserErrorSQLNoSysadminMembership**, faça o seguinte:
+  Caso precise corrigir permissões por causa do erro **UserErrorSQLNoSysadminMembership**, siga as etapas abaixo:
 
   1. Use uma conta com permissões de sysadmin do SQL Server para entrar no SSMS (SQL Server Management Studio). A menos que você precise de permissões de acesso especiais, a autenticação do Windows deverá funcionar.
   2. No SQL Server, abra a pasta **Segurança/Logons**.
