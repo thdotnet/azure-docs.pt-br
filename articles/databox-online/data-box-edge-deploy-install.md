@@ -1,5 +1,5 @@
 ---
-title: Tutorial sobre como instalar um dispositivo físico do Azure Data Box Edge | Microsoft Docs
+title: 'Tutorial de instalação: desempacotar, cabear e montar em rack um dispositivo físico do Azure Data Box Edge | Microsoft Docs'
 description: O segundo tutorial sobre como instalar o Azure Data Box Edge envolve desempacotamento, montagem em rack e cabeamento do dispositivo físico.
 services: databox
 author: alkohli
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/20/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to install Data Box Edge in datacenter so I can use it to transfer data to Azure.
-ms.openlocfilehash: 46192d32e70e371325abeafd4da26fa29e491b13
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 7062e9d829242a62dfa4f661c21ce6c56b0db69c
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59278472"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924532"
 ---
 # <a name="tutorial-install-azure-data-box-edge"></a>Tutorial: Instalar o Azure Data Box Edge
 
@@ -145,7 +145,8 @@ Localize os componentes para instalação do conjunto do kit de trilho:
 
 ### <a name="engage-and-release-the-slam-latch"></a>Encaixar e liberar a trava do tipo slam
 
-OBSERVAÇÃO:  Para sistemas não equipados com travas do tipo slam, fixe o sistema usando parafusos, conforme descrito na etapa 3 deste procedimento.
+> [!NOTE]
+> Para sistemas não equipados com travas do tipo slam, fixe o sistema usando parafusos, conforme descrito na etapa 3 deste procedimento.
 
 1. Na parte dianteira, localize a trava do tipo slam em uma das laterais do sistema.
 2. As travas fecham automaticamente conforme o sistema é empurrado para o rack e são liberadas quando puxadas para cima.

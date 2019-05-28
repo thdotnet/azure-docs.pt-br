@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/10/2019
+ms.date: 04/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44f0c99a66088aeb54ba061308fefb111610d4dc
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 45c9268495ed42ca67f815615b441986cf03332f
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59501222"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64683645"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-confluence-saml-sso-by-microsoft"></a>Tutorial: Integração do Azure Active Directory ao SSO do SAML para o Confluence da Microsoft
 
@@ -37,7 +37,7 @@ Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://a
 
 ## <a name="description"></a>Descrição:
 
-Use sua conta do Microsoft Azure Active Directory com o servidor do Atlassian Confluence para habilitar o logon único. Dessa forma, todos os usuários de sua organização podem usar as credenciais do Azure AD para fazer entrar no aplicativo Confluence. Este plug-in usa o SAML 2.0 para federação.
+Use sua conta do Microsoft Azure Active Directory com o servidor do Atlassian Confluence para habilitar o logon único. Dessa forma, todos os usuários de sua organização podem usar as credenciais do Azure AD para entrar no aplicativo Confluence. Este plug-in usa o SAML 2.0 para federação.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -80,7 +80,7 @@ A partir de agora, há suporte para as seguintes versões do Confluence:
 - Confluence: 6.12.0
 
 > [!NOTE]
-> Observe que o Confluence também dá suporte ao Linux Ubuntu versão 16.04
+> Observe que o nosso plug-in do Confluence também funciona no Ubuntu versão 16.04
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
@@ -94,7 +94,7 @@ Para configurar a integração do SSO do SAML para o Confluence da Microsoft ao 
 
 **Para adicionar o SSO do SAML para o Confluence da Microsoft por meio da galeria, realize as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 

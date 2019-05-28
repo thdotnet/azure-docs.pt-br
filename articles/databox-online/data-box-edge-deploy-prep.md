@@ -1,20 +1,20 @@
 ---
-title: Tutorial sobre como preparar o portal do Azure para implantar o Data Box Edge | Microsoft Docs
+title: Tutorial para preparar o portal do Azure e o ambiente de datacenter para implantar o Azure Data Box Edge| Microsoft Docs
 description: O primeiro tutorial sobre como implantar o Azure Data Box Edge envolve a preparação do portal do Azure.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 03/07/2019
+ms.date: 04/23/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Data Box Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: 19c4fc96653f966ea5642149d944886e4b7f4483
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: d7e66970db3397531c798bc37bf7c1f346e999bf
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58401672"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924764"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-edge"></a>Tutorial: Preparar para implantar o Azure Data Box Edge  
 
@@ -55,6 +55,8 @@ A seguir estão os pré-requisitos de configuração para o recurso do Data Box 
 Antes de começar, verifique se:
 
 - Sua assinatura do Microsoft Azure está habilitada para o recurso do Data Box Edge. Não há suporte para as assinaturas pagas conforme o uso.
+- Você tem acesso de colaborador ou proprietário à sua assinatura.
+- Você tem acesso de usuário ou administrador à API do Azure Active Directory Graph. Para obter mais informações, confira [API do Azure Active Directory Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
 - Você tem sua conta de armazenamento do Microsoft Azure com credenciais de acesso.
 
 ### <a name="for-the-data-box-edge-device"></a>Para o dispositivo do Data Box Edge
@@ -87,11 +89,15 @@ Para criar um recurso do Data Box Edge, execute as seguintes etapas no portal do
 
 1. Use suas credenciais do Microsoft Azure para entrar 
     
-    - No portal do Azure nesta URL: [https://portal.azure.com](http://portal.azure.com).
-    - Ou no portal do Azure Governamental nesta URL: [https://portal.azure.us](https://portal.azure.us)
+    - No portal do Azure nesta URL: [https://portal.azure.com](https://portal.azure.com).
+    - Ou no portal do Azure Governamental nesta URL: [https://portal.azure.us](https://portal.azure.us). Para obter mais detalhes, acesse [Conectar-se ao Azure Governamental usando o portal](https://docs.microsoft.com/azure/azure-government/documentation-government-get-started-connect-with-portal).
 
 2. No painel esquerdo, selecione **+ Criar um recurso**. Pesquise **Data Box Edge / Data Box Gateway**. Selecione **Data Box Edge / Data Box Gateway**. Selecione **Criar**.
-3. Escolha a assinatura que deseja usar para o dispositivo do Data Box Edge. Selecione a região em que você deseja implantar o recurso do Data Box Edge. Para esta versão, o Leste dos EUA, o Sudeste Asiático e o Oeste da Europa estão disponíveis. Escolha um local mais próximo da região geográfica em que você deseja implantar seu dispositivo. Na opção **Data Box Edge**, selecione **Criar**.
+3. Escolha a assinatura que deseja usar para o dispositivo do Data Box Edge. Selecione a região em que você deseja implantar o recurso do Data Box Edge. Para esta versão, o Leste dos EUA, o Sudeste Asiático e o Oeste da Europa estão disponíveis. 
+
+    Escolha um local mais próximo da região geográfica em que você deseja implantar seu dispositivo. A região armazena apenas os metadados para o gerenciamento de dispositivos. Os dados reais podem ser armazenados em qualquer conta de armazenamento. 
+    
+    Na opção **Data Box Edge**, selecione **Criar**.
 
     ![Pesquisar o serviço do Data Box Edge](media/data-box-edge-deploy-prep/data-box-edge-sku.png)
 

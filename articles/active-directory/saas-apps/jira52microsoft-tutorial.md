@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/10/2019
+ms.date: 04/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df8cb048964830f62fe483da63d24356f46538b7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 003666d5bb3c309e501bcf76a15beb47340f9150
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59501347"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64708742"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft-v52"></a>Tutorial: Integração do Azure Active Directory com o SSO de SAML para o JIRA da Microsoft (V5.2)
 
@@ -66,7 +66,7 @@ Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 * O JIRA também fornece suporte a 6.0 para 7.12. Para obter mais detalhes, clique em [SSO do SAML para o JIRA da Microsoft](jiramicrosoft-tutorial.md)
 
 > [!NOTE]
-> Observe que o JIRA também dá suporte ao Linux Ubuntu versão 16.04
+> Observe que o nosso plug-in do JIRA também funciona no Ubuntu versão 16.04
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
@@ -80,7 +80,7 @@ Para configurar a integração do JIRA SAML SSO pela Microsoft (V5.2) ao Azure A
 
 **Para adicionar o SSO do SAML para o JIRA da Microsoft (V5.2) por meio da galeria, realize as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -92,7 +92,7 @@ Para configurar a integração do JIRA SAML SSO pela Microsoft (V5.2) ao Azure A
 
     ![O botão Novo aplicativo](common/add-new-app.png)
 
-4. Na caixa de pesquisa, digite **SSO do SAML para o JIRA da Microsoft (V5.2)**, selecione **SSO do SAML para o JIRA da Microsoft (V5.2)** no painel de resultados e clique no botão **Adicionar** para adicionar o aplicativo.
+4. Na caixa de pesquisa, digite **SSO do SAML para o JIRA da Microsoft (V5.2)** , selecione **SSO do SAML para o JIRA da Microsoft (V5.2)** no painel de resultados e clique no botão **Adicionar** para adicionar o aplicativo.
 
     ![SSO do SAML para o JIRA da Microsoft (V5.2) na lista de resultados](common/search-new-app.png)
 
@@ -116,7 +116,7 @@ Nesta seção, você habilitará o logon único do Azure AD no portal do Azure.
 
 Para configurar o logon único do Azure AD com o SSO de SAML para o JIRA da Microsoft (V5.2), realize as seguintes etapas:
 
-1. No [portal do Azure](https://portal.azure.com/), na página de integração do aplicativo **SSO de SAML para o JIRA da Microsoft (V5.2)**, clique em **Logon único**.
+1. No [portal do Azure](https://portal.azure.com/), na página de integração do aplicativo **SSO de SAML para o JIRA da Microsoft (V5.2)** , clique em **Logon único**.
 
     ![Link Configurar logon único](common/select-sso.png)
 
@@ -224,11 +224,11 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
 Nesta seção, você permite que Brenda Fernandes use o logon único do Azure concedendo acesso ao JIRA SAML SSO pela Microsoft (V5.2).
 
-1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **SSO de SAML para o JIRA da Microsoft (V5.2)**.
+1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **SSO de SAML para o JIRA da Microsoft (V5.2)** .
 
     ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
-2. Na lista de aplicativos, selecione **SSO do SAML para o JIRA da Microsoft (V5.2)**.
+2. Na lista de aplicativos, selecione **SSO do SAML para o JIRA da Microsoft (V5.2)** .
 
     ![Link do SSO do SAML para o JIRA da Microsoft (V5.2) na lista Aplicativos](common/all-applications.png)
 
@@ -266,7 +266,7 @@ Para permitir que os usuários do Azure AD entrem no servidor local do JIRA, ele
 
     ![Adicionar Funcionário](./media/jira52microsoft-tutorial/user3.png) 
 
-5. Na página da caixa de diálogo **"Criar novo usuário"**, execute as seguintes etapas:
+5. Na página da caixa de diálogo **"Criar novo usuário"** , execute as seguintes etapas:
 
     ![Adicionar Funcionário](./media/jira52microsoft-tutorial/user4.png)
 

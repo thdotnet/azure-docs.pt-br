@@ -1,20 +1,19 @@
 ---
 title: O que é o Backup do Azure?
 description: Fornece uma visão geral do serviço de Backup do Azure e como implantá-lo como parte de sua estratégia de BCDR (continuidade dos negócios e recuperação de desastres).
-services: backup
 author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: overview
-ms.date: 04/05/2019
+ms.date: 04/24/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 5408f920a16860972dca6450d5e51152048bbf82
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: bd90d315fd5590a8bd862a1a3397cf8c254fccc8
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59361796"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64714290"
 ---
 # <a name="what-is-azure-backup"></a>O que é o Backup do Azure?
 
@@ -31,11 +30,7 @@ O Backup do Azure oferece estes principais benefícios:
 - **Obter transferência de dados ilimitados**: o Backup do Azure não limita a quantidade de dados de entrada ou saída transferidos nem cobra pelos dados transferidos.
     - Os dados de saída são aqueles transferidos de um cofre dos Serviços de Recuperação durante uma operação de restauração.
     - Se você fizer um backup inicial offline usando o serviço de Importação/Exportação do Azure para importar grandes quantidades de dados, haverá um custo associado aos dados de entrada.  [Saiba mais](backup-azure-backup-import-export.md).
-- **Mantenha os dados seguros**:
-    - Localmente, os dados em trânsito são criptografados no computador local usando AES256. Os dados transmitidos são protegidos por HTTPS entre o armazenamento e o backup. O protocolo iSCSI protege os dados transmitidos entre o backup e o computador do usuário. O túnel seguro é usado para proteger o canal iSCSI.
-    - Para o backup de dados locais no Azure, os dados no Azure são criptografados em repouso usando a frase secreta que você fornece ao configurar o backup. A senha ou chave nunca é transmitida nem armazenada no Azure. Se for necessário restaurar os dados, somente você tem a senha de criptografia ou chave.
-    - Para VMs do Azure, os dados são criptografados na reinicialização usando a Criptografia do Serviço de Armazenamento (SSE). O backup criptografa automaticamente os dados antes de armazená-los. O Armazenamento do Azure descriptografa os dados antes de recuperá-los.
-    - O backup também dá suporte a VMs do Azure criptografadas usando ADE (Azure Disk Encryption). [Saiba mais](backup-azure-vms-introduction.md#encryption-of-azure-vm-backups).
+- **Mantenha os dados seguros**: O Backup do Azure fornece soluções para proteger dados em trânsito e em repouso.
 - **Obtenha backups consistentes com aplicativo**: Um backup consistente com aplicativo significa que um ponto de recuperação tem todos os dados necessários para restaurar a cópia de backup. O Backup do Azure fornece backups consistentes com aplicativos, garantindo que correções adicionais não sejam necessárias para restaurar os dados. Restaurar dados consistentes com aplicativos reduz o tempo de restauração, permitindo que você rapidamente retorne ao estado de execução.
 - **Manter os dados de curto e longo prazo**: Use os cofres dos Serviços de Recuperação para retenção de dados de curto e longo prazo. O Azure não limita o período de tempo que os dados podem ser mantidos em um cofre de Serviços de Recuperação. Você poderá mantê-los por quanto tempo desejar. O Backup do Azure tem um limite de pontos de recuperação 9999 por instância protegidos. [Saiba mais](backup-introduction-to-azure-backup.md#backup-and-retention)sobre como esse limite afeta suas necessidades de backup.
 - **Gerenciamento automático de armazenamento** - ambientes híbridos geralmente exigem armazenamento heterogêneo, alguns locais e alguns na nuvem. Com o Backup do Azure, não há nenhum custo para o uso de dispositivos de armazenamento local. O Backup do Azure aloca e gerencia o armazenamento de backup automaticamente e usa um modelo de pagamento conforme o uso, de modo que você pague apenas pelo armazenamento que consumir. [ Saiba mais ](https://azure.microsoft.com/pricing/details/backup) sobre preços.
@@ -110,10 +105,16 @@ Saiba mais sobre [como funciona o backup](backup-architecture.md#architecture-ba
 **Desejo fazer backup de toda uma VM do Azure** | Habilite o backup para a VM. A extensão de backup será automaticamente configurada na VM do Azure no Windows ou no Linux. | Toda a VM é copiada em backup <br/><br/> Para VMs Windows, o backup é consistente com aplicativo. para o Linux, o backup é consistente com arquivo. Caso precise de reconhecimento de aplicativo para VMs do Linux, você precisará configurar isso com scripts personalizados.
 **Desejo fazer backup de pastas/arquivos específicos em uma VM do Azure** | Implante o agente do MARS na VM.
 **Desejo fazer backup diretamente de computadores Windows locais** | Instale o agente do MARS no computador. | Você pode fazer backup de arquivos, de pastas e do estado do sistema no Azure. Os backups não têm reconhecimento de aplicativo.
-**Desejo fazer backup diretamente de computadores Linux locais** | Você precisará implantar o DPM ou o MABS para fazer backup no Azure. | Não há suporte para o backup do host do Linux, você pode apenas fazer backup do computador convidado do Linux hospedado em Hyper-V ou VMWare.
+**Desejo fazer backup diretamente de computadores Linux locais** | Você precisará implantar o DPM ou o MABS para fazer backup no Azure. | Não há suporte para o host de Backup do Linux, você pode apenas fazer backup do computador convidado do Linux hospedado em Hyper-V ou VMWare.
 **Desejo fazer backup de aplicativos executados localmente** | Para backups com reconhecimento de aplicativo, os computadores precisam estar protegidos pelo DPM ou pelo MABS.
 **Desejo obter configurações granulares e flexíveis de backup e recuperação para VMs do Azure** | Proteja as VMs do Azure com o MABS/DPM em execução no Azure para flexibilidade adicional no agendamento de backup e flexibilidade total para proteger e restaurar arquivos, pastas, volumes, aplicativos e o estado do sistema.
 
+## <a name="how-does-azure-backup-work-with-encryption"></a>Como o Backup do Azure funciona com criptografia?
+
+**Criptografia** | **Backup no local** | **Fazer backup de VMs do Azure** | **Fazer backup do SQL em VMs do Azure**
+--- | --- | --- | ---
+Criptografia em repouso<br/> (Criptografia de dados que são persistidos/armazenados) | A frase secreta especificada pelo cliente é usada para criptografar os dados | A [Criptografia do Serviço de Armazenamento (SSE)](https://docs.microsoft.com/azure/storage/common/storage-service-encryption) do Azure é usada para criptografar os dados armazenados no cofre.<br/><br/> O backup criptografa automaticamente os dados antes de armazená-los. O Armazenamento do Azure descriptografa os dados antes de recuperá-los. Atualmente, não há suporte para uso de chaves gerenciadas pelo cliente para SSE.<br/><br/> Você pode fazer backup de VMs que usam o [Azure Disk Encryption (ADE)](https://docs.microsoft.com/azure/security/azure-security-disk-encryption-overview) para criptografar o sistema operacional e discos de dados. O Backup do Azure dá suporte a VMs criptografadas somente com BEK e com BEK e [KEK](https://blogs.msdn.microsoft.com/cclayton/2017/01/03/creating-a-key-encrypting-key-kek/). Examine as [limitações](backup-azure-vms-encryption.md#encryption-support). | O Backup do Azure dá suporte a backup de bancos de dados do SQL Server ou de servidor com [TDE](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-2017) habilitado. O Backup dá suporte a TDE com chaves gerenciadas pelo Azure ou com chaves gerenciadas pelo cliente (BYOK).<br/><br/> O Backup não realiza qualquer criptografia do SQL como parte do processo de backup.
+Criptografia em trânsito<br/> (Criptografia de dados em movimento de um local para outro) | Dados são criptografados usando AES256 e enviados para o cofre no Azure por HTTPS | Dentro do Azure, os dados entre o armazenamento do Azure e o cofre são protegidos por HTTPS. Esses dados permanecem na rede de backbone do Azure.<br/><br/> Para a recuperação de arquivos, o iSCSI protege os dados transmitidos entre o cofre e a VM do Azure. O túnel seguro protege o canal iSCSI. | Dentro do Azure, os dados entre o armazenamento do Azure e o cofre são protegidos por HTTPS.<br/><br/> A recuperação de arquivos não é relevante para SQL.
 
 ## <a name="next-steps"></a>Próximas etapas
 

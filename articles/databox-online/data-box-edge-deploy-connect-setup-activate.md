@@ -1,6 +1,6 @@
 ---
-title: Conecte-se, configure e ative um dispositivo do Azure Data Box Edge no portal do Azure | Microsoft Docs
-description: O terceiro tutorial para implantar o Data Box Edge instrui você a conectar, configurar e ativar seu dispositivo físico.
+title: Tutorial para se conectar, configurar e ativar um dispositivo do Azure Data Box Edge no portal do Azure | Microsoft Docs
+description: O tutorial para implantar o Data Box Edge instrui como se conectar, configurar e ativar seu dispositivo físico.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Data Box Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: b97334ae60715f021cce387f9d73b5ea69eea7fc
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 3e951e44aeaa4ca8d3d06bae80a80bcb2eb1dd52
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59998100"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924550"
 ---
 # <a name="tutorial-connect-set-up-and-activate-azure-data-box-edge"></a>Tutorial: Conectar, configurar e ativar o Azure Data Box Edge 
 
@@ -119,7 +119,7 @@ O painel exibe as várias configurações necessárias para configurar e registr
 
         ![Página "Configurações de tempo" da IU da Web local](./media/data-box-edge-deploy-connect-setup-activate/set-up-activate-5.png)
 
-5. (Opcional) No painel esquerdo, selecione **Configurações de armazenamento** para configurar a resiliência do armazenamento em seu dispositivo. Esse recurso está atualmente na visualização. Por padrão, o armazenamento no dispositivo não é resiliente e há perda de dados se um disco de dados falha no dispositivo. Quando você habilita a opção resiliente, o armazenamento do dispositivo é reconfigurado e o dispositivo pode suportar a falha de um disco de dados sem perda de dados. Configurar o armazenamento como resiliente reduzirá a capacidade utilizável do seu dispositivo.
+5. (Opcional) No painel esquerdo, selecione **Configurações de armazenamento** para configurar a resiliência do armazenamento em seu dispositivo. Esse recurso está atualmente em versão prévia. Por padrão, o armazenamento no dispositivo não é resiliente e há perda de dados se um disco de dados falha no dispositivo. Quando você habilita a opção resiliente, o armazenamento do dispositivo é reconfigurado e o dispositivo pode suportar a falha de um disco de dados sem perda de dados. Configurar o armazenamento como resiliente reduzirá a capacidade utilizável do seu dispositivo.
 
     > [!IMPORTANT] 
     > A resiliência só pode ser configurada antes de ativar o dispositivo. 

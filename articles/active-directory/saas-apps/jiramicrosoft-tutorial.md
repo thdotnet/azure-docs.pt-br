@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/10/2019
+ms.date: 04/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a0911588141552e616e8555380b14c910225840
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 5dd8af0ed016dca5ab9c14b117a2673ca214e08c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59501341"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64688102"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft"></a>Tutorial: Integração do Azure Active Directory com o SSO de SAML para o JIRA da Microsoft
 
@@ -67,7 +67,7 @@ Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 * O JIRA também fornece suporte para 5.2. Para obter mais detalhes, clique em [Logon único do Microsoft Azure Active Directory para JIRA 5.2](jira52microsoft-tutorial.md)
 
 > [!NOTE]
-> Observe que o JIRA também dá suporte ao Linux Ubuntu versão 16.04
+> Observe que o nosso plug-in do JIRA também funciona no Ubuntu versão 16.04
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
@@ -81,7 +81,7 @@ Para configurar a integração do SSO do SAML para o JIRA da Microsoft ao Azure 
 
 **Para adicionar o SSO do SAML para o JIRA da Microsoft por meio da galeria, realize as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -278,7 +278,7 @@ Para permitir que os usuários do Azure AD entrem no servidor local do JIRA, ele
 
     ![Adicionar Funcionário](./media/jiramicrosoft-tutorial/user3.png) 
 
-5. Na página da caixa de diálogo **"Criar novo usuário"**, execute as seguintes etapas:
+5. Na página da caixa de diálogo **"Criar novo usuário"** , execute as seguintes etapas:
 
     ![Adicionar Funcionário](./media/jiramicrosoft-tutorial/user4.png) 
 

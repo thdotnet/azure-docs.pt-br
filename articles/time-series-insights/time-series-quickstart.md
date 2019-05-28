@@ -10,68 +10,78 @@ ms.reviewer: v-mamcge, jasonh, kfile, anshan
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 11/15/2017
-ms.openlocfilehash: 32ed0ec178f7a0064fae88357011197e71604885
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.date: 04/22/2019
+ms.openlocfilehash: be663520c9c1afd11ace57cd9dcb8ffb8219b86b
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53555533"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64696951"
 ---
 # <a name="quickstart-explore-azure-time-series-insights"></a>Início Rápido: Explorar o Azure Time Series Insights
-Este guia de início rápido mostra como começar a usar o Azure Time Series Insights Explorer em um ambiente de demonstração gratuita. Você aprenderá a usar o navegador da Web para visualizar grandes volumes de dados de IoT e conhecerá os principais recursos do explorador do Time Series Insights. 
 
-O Azure Time Series Insights é um serviço totalmente gerenciado de análise, armazenamento e visualização que facilita a exploração e análise de bilhões de eventos de IoT simultaneamente. Ele oferece uma visão global dos dados, permitindo que você valide rapidamente sua solução IoT e evite o tempo de inatividade dispendioso para dispositivos críticos, ajudando você a descobrir tendências ocultas, detectar anomalias e realizar análises de causa raiz quase em tempo real.  Caso esteja criando um aplicativo que precisa armazenar ou consultar dados de série temporal, desenvolva-o usando as APIs REST do Time Series Insights.
+Este gerenciador de início rápido é fornecido para mostrar como começar a usar o Azure Time Series Insights em um ambiente de demonstração gratuita. Com ele, você aprenderá a usar o navegador da Web para visualizar grandes volumes de dados de IoT e conhecerá os principais recursos atualmente em disponibilidade geral.
 
-Caso você não tenha uma assinatura do Azure, crie uma [conta gratuita do Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) antes de começar.
+O Azure Time Series Insights é um serviço totalmente gerenciado de análise, armazenamento e visualização que facilita a exploração e análise de bilhões de eventos de IoT simultaneamente. Ele fornece uma exibição global dos dados, o que permite validar rapidamente sua solução de IoT e evitar um tempo de inatividade dispendioso de dispositivos críticos. Com o Azure Time Series Insights, descubra tendências ocultas, detecte anomalias e realize análises de causa raiz quase em tempo real.
 
-## <a name="explore-time-series-insights-explorer-in-a-demo-environment"></a>Descubra o Time Series Insights Explorer em um ambiente de demonstração
+Para obter flexibilidade adicional, o Azure Time Series Insights podem ser adicionado a um aplicativo já existente por meio de suas poderosas [APIs REST](./time-series-insights-update-tsq.md) e [SDK do cliente](./tutorial-create-tsi-sample-spa.md). As APIs permitem armazenar, consultar e consumir dados de série temporal em um aplicativo cliente de sua escolha. Você também pode optar por usar o SDK do cliente para adicionar componentes de interface do usuário ao seu aplicativo.
 
-1. No navegador, navegue até [https://insights.timeseries.azure.com/demo](https://insights.timeseries.azure.com/demo). 
+O gerenciador do Time Series Insights é um tour guiado que apresenta a disponibilidade geral atual.
 
-2. Se solicitado, faça logon no Time Series Insights Explorer usando suas credenciais da conta do Azure. 
- 
-3. A página de tour rápido do Time Series Insights será exibida. Clique em **Avançar** para iniciar o tour rápido.
+## <a name="prepare-the-demo-environment"></a>Preparar o ambiente de demonstração
 
-   ![Clique em Avançar](media/quickstart/quickstart1.png)
+1. Crie uma [conta gratuita do Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), caso uma ainda não tenha sido criada.
 
-4. O **Painel de seleção de tempo** será exibido. Use esse painel para selecionar um período a ser visualizado.
+1. No seu navegador, vá até a [demonstração de disponibilidade geral](https://insights.timeseries.azure.com/demo).
 
-   ![Painel de seleção de tempo](media/quickstart/quickstart2.png)
+1. Se solicitado, entre no gerenciador do Time Series Insights usando suas credenciais da conta do Azure.
 
-5. Clique e arraste na região e, em seguida, clique no botão **Pesquisar**.
- 
-   ![Selecionar um período](media/quickstart/quickstart3.png) 
+1. A página de tour rápido do Time Series Insights será exibida. Clique em **Avançar** para iniciar o tour rápido.
 
-   O Time Series Insights exibe uma visualização de gráfico para o período especificado. Realize várias ações internas com o gráfico de linhas, como filtragem, anexação, classificação e empilhamento. 
+   [![Clique em Avançar](media/quickstart/quickstart1.png)](media/quickstart/quickstart1.png#lightbox)
+
+## <a name="explore-the-demo-environment"></a>Explorar o ambiente de demonstração
+
+1. O **Painel de seleção de tempo** será exibido. Use esse painel para selecionar um período a ser visualizado.
+
+   [![Painel de seleção de tempo](media/quickstart/quickstart2.png)](media/quickstart/quickstart2.png#lightbox)
+
+1. Clique e arraste na região e, em seguida, clique no botão **Pesquisar**.
+
+   [![Selecionar um período](media/quickstart/quickstart3.png)](media/quickstart/quickstart3.png#lightbox)
+
+   O Time Series Insights exibe uma visualização de gráfico para o período especificado. Realize várias ações internas com o gráfico de linhas, como filtragem, anexação, classificação e empilhamento.
 
    Para retornar ao **Painel de seleção de tempo**, clique na seta para baixo, conforme mostrado:
 
-   ![Gráfico](media/quickstart/quickstart4.png)
+   [![Gráfico](media/quickstart/quickstart4.png)](media/quickstart/quickstart4.png#lightbox)
 
-6. Clique em **Adicionar** no **Painel de termos** para adicionar um novo termo de pesquisa.
+1. Clique em **Adicionar** no **Painel de termos** para adicionar um novo termo de pesquisa.
 
-   ![Adicionar item](media/quickstart/quickstart5.png)
+   [![Adicionar item](media/quickstart/quickstart5.png)](media/quickstart/quickstart5.png#lightbox)
 
-7. No gráfico, você pode selecionar uma região, clicar com o botão direito do mouse na região e selecionar **Explorar Eventos**.
- 
-   ![Explorar Eventos](media/quickstart/quickstart6.png)
+1. No gráfico, você pode selecionar uma região, clicar com o botão direito do mouse na região e selecionar **Explorar Eventos**.
+
+   [![Explorar Eventos](media/quickstart/quickstart6.png)](media/quickstart/quickstart6.png#lightbox)
 
    Uma grade dos dados brutos é exibida na região que está sendo explorada:
 
-   ![Exibição de grade](media/quickstart/quickstart7.png)
+   [![Exibição de grade](media/quickstart/quickstart7.png)](media/quickstart/quickstart7.png#lightbox)
 
-8. Edite os termos para alterar os valores no gráfico e adicione outro termo para fazer uma correlação cruzada entre diferentes tipos de valores:
+## <a name="select-and-filter-data"></a>Seleciona e filtra conjuntos de dados
 
-   ![Adicionar um termo](media/quickstart/quickstart8.png)
+1. Edite os termos para alterar os valores no gráfico e adicione outro termo para fazer uma correlação cruzada entre diferentes tipos de valores:
 
-9. Insira um termo de filtro na caixa **Filtrar série...**  para a filtragem de série ad hoc. Para o guia de início rápido, insira **Station5** para fazer uma correlação cruzada entre a temperatura e a pressão dessa estação.
- 
-   ![Filtrar série](media/quickstart/quickstart9.png)
+   [![Adicionar um termo](media/quickstart/quickstart8.png)](media/quickstart/quickstart8.png#lightbox)
 
-Depois de concluir o guia de início rápido, faça experiências com o conjunto de dados de exemplo para criar visualizações diferentes. 
+1. Insira um termo de filtro na caixa **Filtrar série...** para a filtragem improvisada da série. Para o guia de início rápido, insira **Station5** para fazer uma correlação cruzada entre a temperatura e a pressão dessa estação.
 
-### <a name="next-steps"></a>Próximas etapas
+   [![Filtrar série](media/quickstart/quickstart9.png)](media/quickstart/quickstart9.png#lightbox)
+
+Depois de concluir o guia de início rápido, faça experiências com o conjunto de dados de exemplo para criar visualizações diferentes.
+
+## <a name="next-steps"></a>Próximas etapas
+
 Você está pronto para criar seu próprio ambiente do Time Series Insights:
 > [!div class="nextstepaction"]
 > [Planejar o ambiente do Time Series Insights](time-series-insights-environment-planning.md)

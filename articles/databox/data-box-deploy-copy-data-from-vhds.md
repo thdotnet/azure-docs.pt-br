@@ -1,5 +1,5 @@
 ---
-title: Importar dados de VHDs e copiar em discos gerenciados com o Microsoft Azure Data Box | Microsoft Docs
+title: Tutorial para copiar dados de VHDs para discos gerenciados com o Azure Data Box | Microsoft Docs
 description: Saiba como copiar dados de VHDs de cargas de trabalho de VM local para o Azure Data Box
 services: databox
 author: alkohli
@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 02/27/2019
 ms.author: alkohli
-ms.openlocfilehash: ec2013a793f766221a66912d6de9d8da8b8106dd
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 3284821e0ec65a76b29d5195315136639304e411
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59282552"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925468"
 ---
 # <a name="tutorial-use-data-box-to-import-data-as-managed-disks-in-azure"></a>Tutorial: Usar o Data Box para importar dados como discos gerenciados no Azure
 

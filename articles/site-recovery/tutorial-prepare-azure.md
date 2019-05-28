@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 3d2b22fc507b209a96870daa8bf12ea9ab60a466
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.openlocfilehash: d2de871176917dcc24d910b3742bdb2700c4f25d
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617406"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64691765"
 ---
 # <a name="prepare-azure-resources-for-disaster-recovery-of-on-premises-machines"></a>Preparar recursos do Azure para recuperação de desastre de computadores locais
 
@@ -35,7 +35,7 @@ Neste tutorial, você aprenderá como:
 ## <a name="before-you-start"></a>Antes de começar
 
 - Examinar a arquitetura para recuperação de desastre de [VMware](vmware-azure-architecture.md), [Hyper-V](hyper-v-azure-architecture.md) e [servidor físico](physical-azure-architecture.md).
-- Leia as perguntas comuns para [VMware](vmware-azure-common-questions.md) e Hyper-V (hyper-v-azure-common-questions.md)
+- Leia as perguntas comuns sobre [VMware](vmware-azure-common-questions.md) e [Hyper-V](hyper-v-azure-common-questions.md)
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/pricing/free-trial/) antes de começar. Em seguida, entre no [portal do Azure](https://portal.azure.com).
 

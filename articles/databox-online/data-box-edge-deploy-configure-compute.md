@@ -1,5 +1,5 @@
 ---
-title: Transformar dados com o Azure Data Box Edge | Microsoft Docs
+title: Tutorial para filtrar e analisar dados com a computação no Azure Data Box Edge| Microsoft Docs
 description: Saiba como configurar a função de computação no Data Box Edge e usá-la para transformar dados antes de enviar para o Azure.
 services: databox
 author: alkohli
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Data Box Edge so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 31911c124aeafecb8ee37d14e58d3a0bdc0d4955
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 7b3d725eb05c811d3fdd44516c1bde9a8dfbaaac
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400735"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924321"
 ---
 # <a name="tutorial-transform-data-with-azure-data-box-edge"></a>Tutorial: Transformar dados com o Azure Data Box Edge
 

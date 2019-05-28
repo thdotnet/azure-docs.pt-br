@@ -120,7 +120,7 @@ Observe os seguintes pontos:
     ```
 * Para criar instâncias do Data Factory, você precisa ser um colaborador ou administrador da assinatura do Azure.
 * O nome do data factory pode ser registrado como um nome DNS no futuro e ficar visível publicamente.
-* Você poderá receber o seguinte erro: "**Esta assinatura não está registrada para usar o namespace Microsoft.DataFactory.**" Faça o seguinte e tente publicar novamente:
+* Você poderá receber o seguinte erro: "**Esta assinatura não está registrada para usar o namespace Microsoft.DataFactory.** " Faça o seguinte e tente publicar novamente:
 
   * No Azure PowerShell, execute o comando a seguir para registrar o provedor do Data Factory:
 
@@ -282,8 +282,8 @@ Nesta etapa, você criará um conjunto de dados denominado InputDataset que apon
     | linkedServiceName | Refere-se ao **AzureStorageLinkedService** que você criou anteriormente. |
     | folderPath | Especifica o **contêiner** e a **pasta** de blob que contém blobs de entrada. Neste tutorial, adftutorial é o contêiner de blob e pasta é a pasta raiz. | 
     | fileName | Essa propriedade é opcional. Se você omitir essa propriedade, todos os arquivos de folderPath serão selecionados. Neste tutorial, **emp.txt** é especificado como fileName e, portanto, apenas esse arquivo é selecionado para processamento. |
-    | formato -> tipo |O arquivo de entrada está no formato de texto e, portanto, usamos **TextFormat**. |
-    | columnDelimiter | As colunas no arquivo de entrada são delimitadas por **caractere de vírgula (`,`)**. |
+    | format -> type |O arquivo de entrada está no formato de texto e, portanto, usamos **TextFormat**. |
+    | columnDelimiter | As colunas no arquivo de entrada são delimitadas por **caractere de vírgula (`,`)** . |
     | frequency/interval | A frequência é definida como **Hora** e o intervalo é definido como **1**, o que significa que as fatias de entrada ficam disponíveis **a cada hora**. Melhor dizendo, o serviço Data Factory procurará dados de entrada a cada hora na pasta raiz do contêiner de blob (**adftutorial**) especificado. Ele procura os dados nas horas de início e término do pipeline, não antes ou depois delas.  |
     | external | Essa propriedade é definida como **true** se os dados não são gerados pelo pipeline. Os dados de entrada neste tutorial estão no arquivo emp.txt, que não é gerado pelo pipeline e, portanto, definimos essa propriedade como true. |
 

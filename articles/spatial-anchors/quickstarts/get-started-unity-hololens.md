@@ -1,5 +1,5 @@
 ---
-title: Início rápido - Criar um aplicativo Unity do HoloLens com Âncoras Espaciais do Azure | Microsoft Docs
+title: 'Início Rápido: criar um aplicativo Unity para HoloLens com as Âncoras Espaciais do Azure | Microsoft Docs'
 description: Neste Início Rápido, você aprenderá a criar um aplicativo HoloLens com Unity usando as Âncoras Espaciais.
 author: craigktreasure
 manager: aliemami
@@ -8,16 +8,16 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: ce9bca3f11911677a6009b4cfe0c3f6413b9f837
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 31c7af3edf6364ebca021f87240e73c74e64ebc4
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60009235"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64704132"
 ---
-# <a name="quickstart-create-a-hololens-unity-app-that-uses-azure-spatial-anchors"></a>Início Rápido: Criar um aplicativo Unity do HoloLens que usa Âncoras Espaciais do Azure
+# <a name="quickstart-create-a-unity-hololens-app-that-uses-azure-spatial-anchors"></a>Início Rápido: criar um aplicativo Unity para HoloLens que usa as Âncoras Espaciais do Azure
 
-Neste início rápido, você criará um aplicativo Unity do HoloLens que usa [Âncoras Espaciais do Azure](../overview.md). Âncoras Espaciais são um serviço de desenvolvedor de plataforma cruzada que permite criar experiências de realidade misturada com objetos que persistem sua localização em todos os dispositivos ao longo do tempo. Quando terminar, você terá um aplicativo HoloLens criado com o Unity que pode salvar e fazer recall de uma âncora espacial.
+Neste início rápido, você criará um aplicativo Unity para HoloLens que usa as [Âncoras Espaciais do Azure](../overview.md). Âncoras Espaciais são um serviço de desenvolvedor de plataforma cruzada que permite criar experiências de realidade misturada com objetos que persistem sua localização em todos os dispositivos ao longo do tempo. Quando terminar, você terá um aplicativo HoloLens criado com o Unity que pode salvar e fazer recall de uma âncora espacial.
 
 Você aprenderá a:
 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 9a243dd236a8c499602a9070a7dd61e69541d58d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 7684ae6b4ddb6320efc62ef6f9963bef1b9a66fa
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59256814"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64691973"
 ---
 # <a name="advanced-resource-graph-queries"></a>Consultas do Microsoft Azure Active Directory Graph
 
@@ -22,7 +22,7 @@ A primeira etapa para consultas de reconhecimento com o Microsoft Azure Resource
 Vamos percorrer as seguintes consultas avançadas:
 
 > [!div class="checklist"]
-> - [Obter o tamanho e a capacidade VMSS](#vmss-capacity)
+> - [Obter capacidade e tamanho do conjunto de dimensionamento de máquina virtual](#vmss-capacity)
 > - [Listar todos os nomes de marca](#list-all-tags)
 > - [Máquinas virtuais correspondidas por regex](#vm-regex)
 
@@ -38,7 +38,7 @@ A CLI do Azure (por meio de uma extensão) e o Azure PowerShell (por meio de um 
 
 Essa consulta procura por recursos VMSS e obtém os diversos detalhes, incluindo o tamanho da máquina virtual e a capacidade do conjunto de dimensionamento. A consulta usa a função `toint()` para converter a capacidade em um número para que ela possa ser classificada. Por fim, as colunas são renomeadas para as propriedades nomeadas personalizadas.
 
-```Query
+```kusto
 where type=~ 'microsoft.compute/virtualmachinescalesets'
 | where name contains 'contoso'
 | project subscriptionId, name, location, resourceGroup, Capacity = toint(sku.capacity), Tier = sku.name
@@ -57,7 +57,7 @@ Search-AzGraph -Query "where type=~ 'microsoft.compute/virtualmachinescalesets' 
 
 Essa consulta começa com a marca e cria um objeto JSON listando todos os nomes de marca exclusivos e seus tipos correspondentes.
 
-```Query
+```kusto
 project tags
 | summarize buildschema(tags)
 ```
@@ -86,7 +86,7 @@ O **corresponde ao regex \@** nos permite definir o regex para correspondência,
 
 Após a correspondência por nome, a consulta projeta o nome e ordena por nome em ordem crescente.
 
-```Query
+```kusto
 where type =~ 'microsoft.compute/virtualmachines' and name matches regex @'^Contoso(.*)[0-9]+$'
 | project name
 | order by name asc

@@ -4,235 +4,208 @@ description: Saiba como configurar o logon único entre o Azure Active Directory
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 5ff49168-ef81-4169-8e5e-dc86e24dd5e5
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 07/25/2017
+ms.topic: tutorial
+ms.date: 04/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7c4ac61caae371ebce7c273a4b48244a45c3519
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 57764c2c588fd440bf39cfaaa71e9b5ccc738d99
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60273054"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64704316"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-infor-retail--information-management"></a>Tutorial: Integração do Azure Active Directory com informações de varejo – gerenciamento de informações
 
 Neste tutorial, você aprenderá a integrar o Infor Retail – Information Management ao Azure AD (Azure Active Directory).
-
 Integrar informações varejo – gerenciamento de informações com o Azure AD oferece os seguintes benefícios:
 
-- No Azure AD, é possível controlar quem tem acesso ao Infor Retail – Information Management.
-- Você pode permitir que os usuários façam logon automaticamente no Infor Retail – Information Management (Logon Único) com as respectivas contas do Azure AD.
-- Você pode gerenciar suas contas em um único local central – o portal do Azure.
+* No Azure AD, é possível controlar quem tem acesso ao Infor Retail – Information Management.
+* Você pode permitir que os usuários façam logon automaticamente no Infor Retail – Information Management (Logon Único) com as respectivas contas do Azure AD.
+* Você pode gerenciar suas contas em um único local central – o portal do Azure.
 
-Para conhecer mais detalhadamente a integração de aplicativos de SaaS ao Azure AD, consulte [o que é o acesso a aplicativos e logon único com o Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Para conhecer mais detalhadamente a integração de aplicativos de SaaS ao AD do Azure, consulte [O que é o acesso a aplicativos e logon único com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Para configurar a integração do AD do Azure com informações de varejo – gerenciamento de informações, você precisa dos seguintes itens:
 
-- Uma assinatura do Azure AD
-- Um varejo informações – gerenciamento de informações de logon único assinatura habilitada
-
-> [!NOTE]
-> Para testar as etapas deste tutorial, nós não recomendamos o uso de um ambiente de produção.
-
-Para testar as etapas deste tutorial, você deve seguir estas recomendações:
-
-- Não use o ambiente de produção, a menos que seja necessário.
-- Se não tiver um ambiente de avaliação do Azure AD, você pode [obter uma versão de avaliação de um mês](https://azure.microsoft.com/pricing/free-trial/).
+* Uma assinatura do Azure AD. Se não tiver um ambiente do Azure AD, poderá obter uma [conta gratuita](https://azure.microsoft.com/free/)
+* Assinatura habilitada com logon único no Infor Retail – Information Management
 
 ## <a name="scenario-description"></a>Descrição do cenário
-Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste.  O cenário descrito neste tutorial consiste em dois blocos de construção principais:
 
-1. Adição do Infor Retail – Information Management da galeria
-1. configurar e testar o logon único do AD do Azure
+Neste tutorial, você configurará e testará o logon único do Azure AD em um ambiente de teste.
+
+* O Infor Retail – Information Management dá suporte a SSO iniciado por **SP e IDP**
 
 ## <a name="adding-infor-retail--information-management-from-the-gallery"></a>Adição do Infor Retail – Information Management da galeria
+
 Para configurar a integração de varejo de informações – gerenciamento de informações no AD do Azure, você precisa adicionar informações de varejo – gerenciamento de informações da galeria à sua lista de aplicativos SaaS gerenciados.
 
 **Para adicionar informações de varejo – gerenciamento de informações da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
-    ![O botão Azure Active Directory][1]
+    ![O botão Azure Active Directory](common/select-azuread.png)
 
-1. Navegue até **aplicativos empresariais**. Em seguida, vá para **todos os aplicativos**.
+2. Navegue até **Aplicativos Empresariais** e, em seguida, selecione a opção **Todos os Aplicativos**.
 
-    ![A folha Aplicativos empresariais][2]
-    
-1. Clique no botão **Novo aplicativo** na parte superior da caixa de diálogo para adicionar o novo aplicativo.
+    ![A folha Aplicativos empresariais](common/enterprise-applications.png)
 
-    ![O botão Novo aplicativo][3]
+3. Clique no botão **Novo aplicativo** na parte superior da caixa de diálogo para adicionar o novo aplicativo.
 
-1. Na caixa de pesquisa, digite **Infor Retail – Information Management**, selecione **Infor Retail – Information Management** no painel de resultados e, em seguida, cique no botão **Adicionar** para adicionar o aplicativo.
+    ![O botão Novo aplicativo](common/add-new-app.png)
 
-    ![Infor Retail – Information Management na lista de resultados](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_addfromgallery.png)
+4. Na caixa de pesquisa, digite **Infor Retail – Information Management**, selecione **Infor Retail – Information Management** no painel de resultados e, em seguida, cique no botão **Adicionar** para adicionar o aplicativo.
+
+    ![Infor Retail – Information Management na lista de resultados](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-Nesta seção, você configurará e testará o logon único do Azure AD com o Infor Retail – Information Management, com base em um usuário de teste chamado “Brenda Fernandes”.
-
-Para que o logon único funcione, o Azure AD precisa saber qual usuário do Infor Retail – Information Management é equivalente a um usuário do Azure AD. Em outras palavras, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Infor Retail – Information Management.
-
-No Infor Retail – Information Management, atribua o valor do **nome de usuário** no Azure AD como o valor do **Nome de usuário** para estabelecer a relação de vínculo.
+Nesta seção, você configurará e testará o logon único do Azure AD com o Infor Retail – Information Management, com base em um usuário de teste chamado **Brenda Fernandes**.
+Para o logon único funcionar, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Infor Retail – Information Management.
 
 Para configurar e testar o logon único do Azure AD com o Infor Retail – Information Management, você precisa concluir os seguintes blocos de construção:
 
 1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** – para habilitar seus usuários a usar esse recurso.
-1. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
-1. **[Criar um usuário de teste do Infor Retail – Information Management](#create-an-infor-retail--information-management-test-user)** – para ter um equivalente de Brenda Fernandes no Infor Retail – Information Management vinculado à representação do usuário no Azure AD.
-1. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
-1. **[Teste o logon único](#test-single-sign-on)** – para verificar se a configuração funciona.
+2. **[Configurar logon único do Infor Retail – Information Management](#configure-infor-retail--information-management-single-sign-on)** – para definir as configurações de logon único no lado do aplicativo.
+3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
+4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
+5. **[Criar usuário de teste do Infor Retail – Information Management](#create-infor-retail--information-management-test-user)** – para ter um equivalente de Brenda Fernandes no Infor Retail – Information Management vinculado à representação do usuário no Azure AD.
+6. **[Teste o logon único](#test-single-sign-on)** – para verificar se a configuração funciona.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
 
-Nesta seção, você habilitará o logon único do Azure AD no Portal do Azure e configurará o logon único no aplicativo Infor Retail – Information Management.
+Nesta seção, você habilitará o logon único do Azure AD no portal do Azure.
 
-**Para configurar o logon único do Azure AD com informações de varejo – gerenciamento de informações, execute as seguintes etapas:**
+Para configurar o logon único do Azure AD com o Infor Retail – Information Management, execute as seguintes etapas:
 
-1. No Portal do Azure, na página de integração de aplicativos do **Infor Retail – Information Management**, clique em **Logon único**.
+1. No [portal do Azure](https://portal.azure.com/), na página de integração do aplicativo **Infor Retail – Information Management**, clique em **Logon único**.
 
-    ![Link Configurar logon único][4]
+    ![Link Configurar logon único](common/select-sso.png)
 
-1. Na caixa de diálogo **Logon único**, selecione **Modo** como **Logon baseado em SAML** para habilitar o logon único.
- 
-    ![Caixa de diálogo Logon único](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_samlbase.png)
+2. Na caixa de diálogo **Selecionar um método de logon único**, selecione o modo **SAML/WS-Fed** para habilitar o logon único.
 
-1. Na seção **Domínio e URLs do Infor Retail – Information Management**, realize as seguintes etapas se desejar configurar o aplicativo no modo iniciado pelo IdP:
+    ![Modo de seleção de logon único](common/select-saml-option.png)
 
-    ![Informações de logon único de Domínio e URLs do Infor Retail – Information Management para IdP](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_url.png)
+3. Na página **Definir logon único com SAML**, clique no ícone **Editar** para abrir a caixa de diálogo **Configuração básica do SAML**.
 
-     a. Na caixa de texto **Identificador**, digite uma URL usando os seguintes padrões: 
+    ![Editar a Configuração Básica de SAML](common/edit-urls.png)
+
+4. Na seção **Configuração Básica do SAML**, caso deseje configurar o aplicativo no modo iniciado por **IDP** execute as seguintes etapas:
+
+    ![Informações de logon único de Domínio e URLs do Infor Retail – Information Management](common/idp-intiated.png)
+
+     a. Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão:
     
-    |   |
-    | -- |
+    | |
+    |--|
     | `https://<company name>.mingle.infor.com` |
     | `http://<company name>.mingledev.infor.com` |
 
-    b. Na caixa de texto **URL de resposta**, digite uma URL no seguinte padrão: `https://<company name>.mingle.infor.com/sp/ACS.saml2`
+    b. No **URL de resposta** caixa de texto, digite uma URL usando o seguinte padrão: `https://<company name>.mingle.infor.com/sp/ACS.saml2`
 
-1. Marque **Mostrar configurações avançadas de URL** e realize a seguinte etapa se quiser configurar o aplicativo no modo iniciado pelo **SP**:
+5. Clique em **Definir URLs adicionais** e execute o passo seguinte se quiser configurar a aplicação no modo **SP** iniciado:
 
-    ![Informações de logon único de Domínio e URLs do Infor Retail – Information Management para SP](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_url1.png)
+    ![Informações de logon único de Domínio e URLs do Infor Retail – Information Management](common/metadata-upload-additional-signon.png)
 
-    Na caixa de texto **URL de Logon**, digite uma URL usando o seguinte padrão: `https://<company name>.mingle.infor.com/<company code>`
-     
-    > [!NOTE] 
-    > Esses valores não são reais. Atualize esses valores com o Identificador real, a URL de Resposta e a URL de Entrada. Contate a [equipe de suporte ao cliente do Infor Retail – Information Management](mailto:innovate@infor.com) para obter esses valores. 
+    Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://<company name>.mingle.infor.com/<company code>`
 
-1. Na seção **Certificado de Autenticação SAML**, clique em **Metadados XML** e, em seguida, salve o arquivo de metadados em seu computador.
+    > [!NOTE]
+    > Esses valores não são reais. Atualize esses valores com o Identificador, a URL de Resposta e a URL de Logon reais. Contate a [equipe de suporte ao cliente do Infor Retail – Information Management](mailto:innovate@infor.com) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
-    ![O link de download do Certificado](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_certificate.png) 
+6. Na página **Configurar Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Baixar** para baixar o **XML de Metadados de Federação** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
 
-1. Clique no botão **Salvar** .
+    ![O link de download do Certificado](common/metadataxml.png)
 
-    ![Botão Salvar em Configurar Logon Único](./media/inforretailinformationmanagement-tutorial/tutorial_general_400.png)
-    
-1. Para configurar o logon único no lado do **Infor Retail – Information Management**, você precisa enviar o **XML de Metadados** baixado para [a equipe de suporte do Infor Retail – Information Management](mailto:innovate@infor.com). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+7. Na seção **Configurar Infor Retail – Information Management**, copie as URLs apropriadas de acordo com suas necessidades.
 
-> [!TIP]
-> É possível ler uma versão concisa dessas instruções no [Portal do Azure](https://portal.azure.com), enquanto você estiver configurando o aplicativo!  Depois de adicionar esse aplicativo da seção **Active Directory > Aplicativos Empresariais**, basta clicar na guia **Logon Único** e acessar a documentação inserida por meio da seção **Configuração** na parte inferior. Saiba mais sobre o recurso de documentação inserida aqui: [Documentação inserida do Microsoft Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985)
+    ![Copiar URLs de configuração](common/copy-configuration-urls.png)
+
+    a. URL de logon
+
+    b. Identificador do Azure AD
+
+    c. URL de logoff
+
+### <a name="configure-infor-retail--information-management-single-sign-on"></a>Configurar o logon único do Infor Retail – Information Management
+
+Para configurar o logon único no lado do **Infor Retail – Information Management**, você precisa enviar o **XML de Metadados** baixado e as URLs apropriadas copiadas para a [equipe de suporte do Infor Retail – Information Management](mailto:innovate@infor.com). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
 O objetivo desta seção é criar um usuário de teste no Portal do Azure chamado Brenda Fernandes.
 
-   ![Criar um usuário de teste do Azure AD][100]
+1. No Portal do Azure, no painel esquerdo, selecione **Azure Active Directory**, selecione **Usuários** e, em seguida, **Todos os usuários**.
 
-**Para criar um usuário de teste no AD do Azure, execute as seguintes etapas:**
+    ![Os links “Usuários e grupos” e “Todos os usuários”](common/users.png)
 
-1. No portal do Azure, no painel esquerdo, clique no botão **Azure Active Directory**.
+2. Selecione **Novo usuário** na parte superior da tela.
 
-    ![O botão Azure Active Directory](./media/inforretailinformationmanagement-tutorial/create_aaduser_01.png)
+    ![Botão Novo usuário](common/new-user.png)
 
-1. Para exibir a lista de usuários, acesse **Usuários e grupos** e, depois, clique em **Todos os usuários**.
+3. Nas Propriedades do usuário, execute as etapas a seguir.
 
-    ![Os links “Usuários e grupos” e “Todos os usuários”](./media/inforretailinformationmanagement-tutorial/create_aaduser_02.png)
+    ![A caixa de diálogo Usuário](common/user-properties.png)
 
-1. Para abrir a caixa de diálogo **Usuário**, clique em **Adicionar** na parte superior da caixa de diálogo **Todos os Usuários**.
+    a. No campo **Nome**, insira **BrendaFernandes**.
+  
+    b. No campo **Nome de usuário**, digite `brittasimon@yourcompanydomain.extension`. Por exemplo, BrittaSimon@contoso.com
 
-    ![O botão Adicionar](./media/inforretailinformationmanagement-tutorial/create_aaduser_03.png)
-
-1. Na caixa de diálogo **Usuário**, execute as seguintes etapas:
-
-    ![A caixa de diálogo Usuário](./media/inforretailinformationmanagement-tutorial/create_aaduser_04.png)
-
-    a. Na caixa **Nome**, digite **BrendaFernandes**.
-
-    b. Na caixa **Nome de usuário**, digite o endereço de email do usuário Brenda Fernandes.
-
-    c. Marque a caixa de seleção **Mostrar Senha** e, em seguida, anote o valor exibido na caixa **Senha**.
+    c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
 
     d. Clique em **Criar**.
- 
-### <a name="create-an-infor-retail--information-management-test-user"></a>Criar um usuário de teste do Infor Retail – Information Management
-
-Nesta seção, você deve criar um usuário chamado Britta Simon no varejo de informações – gerenciamento de informações. Trabalhe com [informações varejo – a equipe de suporte de gerenciamento de informações](mailto:innovate@infor.com) para adicionar os usuários no varejo de informações – plataforma de gerenciamento de informações.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
 Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo-lhe acesso ao Infor Retail – Information Management.
 
-![Atribuir a função de usuário][200] 
+1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **Infor Retail – Information Management**.
 
-**Para atribuir Britta Simon comercial de informações – gerenciamento de informações, execute as seguintes etapas:**
+    ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
-1. No Portal do Azure, abra a exibição de aplicativos e, em seguida, navegue até a exibição de diretório e vá para **Aplicativos Empresariais** e clique em **Todos os aplicativos**.
+2. Na lista de aplicativos, selecione **informações varejo – gerenciamento de informação**.
 
-    ![Atribuir usuário][201] 
+    ![O link do Infor Retail – Information Management na lista de Aplicativos](common/all-applications.png)
 
-1. Na lista de aplicativos, selecione **informações varejo – gerenciamento de informação**.
+3. No menu à esquerda, selecione **Usuários e grupos**.
 
-    ![O link do Infor Retail – Information Management na lista de Aplicativos](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_app.png)  
+    ![O link “Usuários e grupos”](common/users-groups-blade.png)
 
-1. No menu à esquerda, clique em **usuários e grupos**.
+4. Escolha o botão **Adicionar usuário** e, em seguida, escolha **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
 
-    ![O link “Usuários e grupos”][202]
+    ![O painel Adicionar Atribuição](common/add-assign-user.png)
 
-1. Clique no botão **Adicionar**. Em seguida, selecione **usuários e grupos** na **Adicionar atribuição** caixa de diálogo.
+5. Na caixa de diálogo **Usuários e grupos**, escolha **Brenda Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
 
-    ![O painel Adicionar Atribuição][203]
+6. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar função**, escolha a função de usuário apropriada na lista e clique no botão **Selecionar** na parte inferior da tela.
 
-1. Em **usuários e grupos** caixa de diálogo, selecione **Britta Simon** na lista de usuários.
+7. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
 
-1. Clique em **selecione** botão **usuários e grupos** caixa de diálogo.
+### <a name="create-infor-retail--information-management-test-user"></a>Criar usuário de teste do Infor Retail – Information Management
 
-1. Clique em **atribuir** botão **Adicionar atribuição** caixa de diálogo.
-    
+Nesta seção, você deve criar um usuário chamado Britta Simon no varejo de informações – gerenciamento de informações. Trabalhe com a  [equipe de suporte do Infor Retail – Information Management](mailto:innovate@infor.com) para adicionar os usuários à plataforma do Infor Retail – Information Management. Os usuários devem ser criados e ativados antes de usar o logon único.
+
 ### <a name="test-single-sign-on"></a>Testar logon único
 
 Nesta seção, você testará sua configuração de logon único do Azure AD usando o Painel de Acesso.
 
-Quando você clica em varejo informações – bloco de gerenciamento de informações no painel de acesso, você deve obter logon automaticamente no seu comercial de informações – aplicativo de gerenciamento de informações.
-Para saber mais sobre o Painel de Acesso, confira [Introdução ao Painel de Acesso](../user-help/active-directory-saas-access-panel-introduction.md). 
+Ao clicar no bloco do Infor Retail – Information Management no painel de acesso, você deve entrar automaticamente no Infor Retail – Information Management para o qual configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure](tutorial-list.md)
-* [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/inforretailinformationmanagement-tutorial/tutorial_general_01.png
-[2]: ./media/inforretailinformationmanagement-tutorial/tutorial_general_02.png
-[3]: ./media/inforretailinformationmanagement-tutorial/tutorial_general_03.png
-[4]: ./media/inforretailinformationmanagement-tutorial/tutorial_general_04.png
-
-[100]: ./media/inforretailinformationmanagement-tutorial/tutorial_general_100.png
-
-[200]: ./media/inforretailinformationmanagement-tutorial/tutorial_general_200.png
-[201]: ./media/inforretailinformationmanagement-tutorial/tutorial_general_201.png
-[202]: ./media/inforretailinformationmanagement-tutorial/tutorial_general_202.png
-[203]: ./media/inforretailinformationmanagement-tutorial/tutorial_general_203.png
-
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: f53e21b8121006a6a6a1d2099b26e7cb28ca0ed9
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 1d3099da3d449e29d378e2f350fdc87ce5166f2e
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59545290"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64574407"
 ---
 # <a name="create-a-store-locator-by-using-azure-maps"></a>Criar um localizador de lojas usando o Azure Mapas
 
@@ -71,7 +71,7 @@ O localizador delineado mostra um aplicativo bastante simples. O aplicativo tem 
 
 ## <a name="create-the-store-location-dataset"></a>Criar o conjunto de dados do lugar da loja
 
-Antes de podermos desenvolver um aplicativo localizador de lojas, precisaremos criar um conjunto de dados das lojas que queremos exibir no mapa. Neste tutorial, usamos um conjunto de dados de uma cafeteria fictícia chamada Contoso Coffee. O conjunto de dados para esse localizador de lojas simples é gerenciado em uma pasta de trabalho do Excel. O conjunto de dados contém 10.213 lojas da Contoso Coffee espalhadas em nove países: Estados Unidos, Canadá, Reino Unido, França, Alemanha, Itália, Países Baixos, Dinamarca e Espanha. Aqui está uma captura de tela mostrando como devem ser os dados:
+Antes de podermos desenvolver um aplicativo localizador de lojas, precisaremos criar um conjunto de dados das lojas que queremos exibir no mapa. Neste tutorial, usamos um conjunto de dados de uma cafeteria fictícia chamada Contoso Coffee. O conjunto de dados para esse localizador de lojas simples é gerenciado em uma pasta de trabalho do Excel. O conjunto de dados contém 10.213 lojas da Contoso Coffee espalhadas em nove países: Alemanha, Canadá, Dinamarca, Espanha, Estados Unidos, França, Itália, Países Baixos e Reino Unido. Aqui está uma captura de tela mostrando como devem ser os dados:
 
 <br/>
 <center>
@@ -93,7 +93,7 @@ Há muitas maneiras de expor o conjunto de dados ao aplicativo. Uma das abordage
 
 Outra abordagem é converter esse conjunto de dados em um arquivo de texto simples que o navegador possa analisar com facilidade. O arquivo em si pode ser hospedado com o resto do aplicativo. Essa opção mantém as coisas simples, mas só é uma boa opção para conjuntos de dados menores, pois o usuário baixa todos os dados. Usamos o arquivo de texto simples para este conjunto de dados porque o arquivo de dados tem menos de 1 MB.  
 
-Para converter a pasta de trabalho em um arquivo de texto simples, salve a pasta de trabalho como um arquivo delimitado por tabulação. Cada coluna é delimitada por um caractere de tabulação, o que facilita a análise das colunas em nosso código. Você pode usar o formato CSV (valores delimitados por vírgula), mas essa opção requer mais lógica de análise. Qualquer campo abrangido por vírgula seria encapsulado com aspas. Para exportar esses dados como um arquivo delimitado por tabulação no Excel, selecione **Salvar como**. Na lista suspensa **Salvar como tipo**, selecione **Texto (delimitado por tabulação)(*.txt)**. Nomeie o arquivo *ContosoCoffee.txt*. 
+Para converter a pasta de trabalho em um arquivo de texto simples, salve a pasta de trabalho como um arquivo delimitado por tabulação. Cada coluna é delimitada por um caractere de tabulação, o que facilita a análise das colunas em nosso código. Você pode usar o formato CSV (valores delimitados por vírgula), mas essa opção requer mais lógica de análise. Qualquer campo abrangido por vírgula seria encapsulado com aspas. Para exportar esses dados como um arquivo delimitado por tabulação no Excel, selecione **Salvar como**. Na lista suspensa **Salvar como tipo**, selecione **Texto (delimitado por tabulação)(*.txt)** . Nomeie o arquivo *ContosoCoffee.txt*. 
 
 <br/>
 <center>
@@ -403,7 +403,7 @@ Até aqui, tudo está configurado na interface do usuário. Agora, precisamos ad
 
 1. Adicione código ao *index.js*. O código a seguir inicializa o mapa, adiciona um [ouvinte de evento](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) que aguarda até que a página termine de carregar, conecta eventos para monitorar o carregamento do mapa e habilita o botão de pesquisa e o botão Minha Localização.
 
-   Quando o usuário seleciona o botão de pesquisa, ou quando ele pressiona Enter depois de inserir um lugar na caixa de pesquisa, uma pesquisa difusa é iniciada em relação à consulta do usuário. Transmita uma matriz de valores de país ISO 2 para a opção `countrySet` a fim de limitar os resultados da pesquisa a esses países. Limitar os países a serem pesquisados ajuda a aumentar a precisão dos resultados retornados. 
+   Quando o usuário seleciona o botão de pesquisa, ou quando ele pressiona Enter depois de inserir um lugar na caixa de pesquisa, uma pesquisa difusa é iniciada em relação à consulta do usuário. Transmita uma matriz de valores de país ISO 2 para a opção `countrySet` a fim de limitar os resultados da pesquisa a esses países/regiões. Limitar os países/regiões a serem pesquisados ajuda a aumentar a precisão dos resultados retornados. 
   
    Quando a pesquisa for concluída, use o primeiro resultado e defina a câmera do mapa sobre essa área. Quando o usuário seleciona o botão Minha Localização, use a API de Localização Geográfica HTML5 que está incorporada no navegador para recuperar a localização do usuário e centralizar o mapa sobre ela.  
 

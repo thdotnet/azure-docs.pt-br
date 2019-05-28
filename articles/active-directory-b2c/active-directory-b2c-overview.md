@@ -3,23 +3,23 @@ title: O que é o Azure Active Directory B2C? | Microsoft Docs
 description: Saiba mais sobre como criar e gerenciar experiências de identidade, como inscrição, entrada e gerenciamento de perfil em seu aplicativo usando o Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
 ms.date: 02/20/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 9e01ba8ae53dbcca686a9844600a5df416a685ae
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
+ms.openlocfilehash: 33c6f9e06439ebeb17608aa374532ac4f7a020cf
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56455493"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64701368"
 ---
 # <a name="what-is-azure-active-directory-b2c"></a>O que é o Azure Active Directory B2C?
 
-O Azure AD (Azure Active Directory) B2C é um serviço de gerenciamento de identidades. Esse serviço permite que você personalize e controle como os usuários interagem de maneira segura com aplicativos Web, da área de trabalho, móveis ou de página única. Usando o Azure AD B2C, os usuários podem se inscrever, entrar, redefinir senhas e editar perfis. O Azure AD B2C implementa um formulário dos protocolos OpenID Connect e OAuth 2.0. O aspecto importante na implementação desses protocolos são os tokens de segurança e suas declarações, que permitem fornecer acesso seguro aos recursos.
+O Azure AD (Azure Active Directory) B2C é um serviço de gerenciamento de identidades entre empresa e consumidor. Esse serviço permite que você personalize e controle como os usuários interagem de maneira segura com aplicativos Web, da área de trabalho, móveis ou de página única. Usando o Azure AD B2C, os usuários podem se inscrever, entrar, redefinir senhas e editar perfis. O Azure AD B2C implementa um formulário dos protocolos OpenID Connect e OAuth 2.0. O aspecto importante na implementação desses protocolos são os tokens de segurança e suas declarações, que permitem fornecer acesso seguro aos recursos.
 
 Um *percurso do usuário* é uma solicitação que especifica uma política, que controla o comportamento de como o usuário e o aplicativo interagem com o Azure AD B2C. Dois caminhos estão disponíveis para você definir os percursos do usuário no Azure AD B2C. 
 

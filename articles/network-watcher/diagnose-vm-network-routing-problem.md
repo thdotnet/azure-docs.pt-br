@@ -3,8 +3,8 @@ title: Diagnosticar um problema de roteamento de rede de máquina virtual – tu
 description: Neste tutorial, você aprenderá a diagnosticar um problema de roteamento da rede de máquina virtual com a funcionalidade de próximo salto do Observador de Rede do Azure.
 services: network-watcher
 documentationcenter: network-watcher
-author: jimdial
-manager: jeconnoc
+author: KumudD
+manager: twooley
 editor: ''
 tags: azure-resource-manager
 Customer intent: I need to diagnose virtual machine (VM) network routing problem that prevents communication to different destinations.
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: network-watcher
 ms.workload: infrastructure
 ms.date: 04/20/2018
-ms.author: jdial
+ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: ea64c93726c3bc5c5d60f35790bb337333d4d47a
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.openlocfilehash: 3ad9cd8b620b55aaa17e84343a82ac361081de44
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2018
-ms.locfileid: "32312188"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64684510"
 ---
 # <a name="tutorial-diagnose-a-virtual-machine-network-routing-problem-using-the-azure-portal"></a>Tutorial: Diagnosticar um problema de roteamento de rede de máquina virtual usando o portal do Azure
 
@@ -89,7 +89,7 @@ O Azure cria automaticamente as rotas para destinos padrão. Você pode criar ro
     | Máquina virtual         | Selecionar myVm                                            |
     | interface de rede       | myvm – o nome do adaptador de rede pode ser diferente.   |
     | Endereço IP de origem       | 10.0.0.4                                               |
-    | Endereço IP de destino  | 13.107.21.200 – Um dos endereços de www.bing.com. |
+    | Endereço IP de destino  | 13.107.21.200 – Um dos endereços para <www.bing.com>. |
 
     ![Próximo salto](./media/diagnose-vm-network-routing-problem/next-hop.png)
 

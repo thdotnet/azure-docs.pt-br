@@ -1,20 +1,19 @@
 ---
 title: Configurar políticas do Apache HBase no HDInsight com o Enterprise Security Package – Azure
 description: Aprenda a configurar as políticas do Apache Ranger para HBase no Azure HDInsight com o Enterprise Security Package.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: tutorial
 ms.date: 02/01/2019
-ms.openlocfilehash: 1421b142fbca83d2de46f52f8390d0c25f22780c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d1f2a2b24e6f1856d021911e6f2e9c107bd38b72
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58117278"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64926090"
 ---
-# <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Tutorial: Configurar políticas do Apache HBase no HDInsight com o Enterprise Security Package (versão prévia)
+# <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package"></a>Tutorial: Configurar políticas do Apache HBase no HDInsight com o Enterprise Security Package
 
 Saiba como configurar políticas do Apache Ranger para clusters Apache HBase do ESP (Enterprise Security Package). Os clusters ESP estão conectados a um domínio, permitindo que os usuários se autentiquem com credenciais de domínio. Neste tutorial, você cria duas políticas do Ranger para restringir o acesso a famílias de colunas diferentes em uma tabela do HBase.
 

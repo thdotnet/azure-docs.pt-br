@@ -3,18 +3,18 @@ title: O que é Azure IoT Central | Microsoft Docs
 description: O Azure IoT Central é uma solução de SaaS de ponta a ponta que pode ser usada para compilar e gerenciar sua solução de IoT personalizada. Este artigo fornece uma visão geral dos recursos do Azure IoT Central.
 author: dominicbetts
 ms.author: dobett
-ms.date: 11/30/2017
+ms.date: 04/24/2019
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: timlt
-ms.openlocfilehash: 9fc565996797c90a6d2ac9b3851ac3408f1842c7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 84fa7aa006a6bc5365527dbf8043797617543590
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58183264"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64704532"
 ---
 <!---
 Purpose of an Overview article: 
@@ -25,16 +25,16 @@ Purpose of an Overview article:
 
 # <a name="what-is-azure-iot-central"></a>O que é Azure IoT Central?
 
-O Azure IoT Central é uma solução de Software como um serviço de IoT totalmente gerenciado que torna mais fácil criar produtos que conectam os mundos físicos e digitais. É possível dar vida à sua visão de produto conectado:
+O Azure IoT Central é uma solução de software como um serviço de IoT totalmente gerenciado que facilita a criação de produtos que conectam os mundos físicos e digitais. É possível dar vida à sua visão de produto conectado:
 
 - Derivando novos insights de dispositivos conectados para possibilitar produtos e experiências melhores para seus clientes.
 - Criando novas oportunidades de negócios para sua organização.
 
-O Azure IoT Central, em comparação com um projeto típico de IoT, elimina a complicação de gerenciar uma solução de IoT:
+Azure IoT Central, em comparação com um projeto de IoT típico:
 
-- Reduzindo a sobrecarga de gerenciamento.
-- Reduzindo as sobrecargas e os custos operacionais.
-- Tornando mais fácil personalizar o seu aplicativo, aproveitando:
+- Reduz a sobrecarga de gerenciamento.
+- Reduz as sobrecargas e os custos operacionais.
+- Facilita a personalização do seu aplicativo e trabalha com:
   - Tecnologias líderes do setor, como [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub/) e [Azure Time Series Insights](https://azure.microsoft.com/services/time-series-insights/).
   - Recursos de segurança de nível empresarial, como a criptografia de ponta a ponta.
 
@@ -42,7 +42,7 @@ O vídeo a seguir apresenta uma visão geral do Azure IoT Central:
 
 >[!VIDEO https://channel9.msdn.com/Shows/Internet-of-Things-Show/Microsoft-IoT-Central-intro-walkthrough/Player]
 
-O restante deste artigo descreve o Azure IoT Central:
+Este artigo descreve os seguintes tópicos do Azure IoT Central:
 
 - As personas típicas associadas a um projeto.
 - Como criar seu aplicativo.
@@ -51,7 +51,7 @@ O restante deste artigo descreve o Azure IoT Central:
 
 ## <a name="personas"></a>Personas
 
-A documentação do Azure IoT Central refere-se a quatro personas típicas que interagem com um aplicativo do Azure IoT Central:
+A documentação do Azure IoT Central refere-se a quatro personas que interagem com um aplicativo do Azure IoT Central:
 
 - Um _construtor_ é responsável pela definição dos tipos de dispositivos que se conectam ao aplicativo e pela personalização do aplicativo para o operador.
 - Um _operador_ gerencia os dispositivos conectados ao aplicativo.
@@ -65,7 +65,7 @@ Como um construtor, você usa o Azure IoT Central para criar uma solução de Io
 - Um aplicativo baseado em nuvem que recebe telemetria de seus dispositivos e permite o gerenciamento dos dispositivos.
 - Vários dispositivos executando o código personalizado conectado ao seu aplicativo baseado em nuvem.
 
-É possível implantar rapidamente um novo aplicativo do Azure IoT Central e personalizá-lo conforme seus requisitos específicos diretamente no navegador. Como um construtor do Azure IoT Central, você pode usar as ferramentas baseadas na web para criar um _modelo de dispositivo_ para os dispositivos que se conectam ao seu aplicativo. Um modelo de dispositivo é o blueprint de um modelo do dispositivo. Todos os dispositivos criados desde o mesmo modelo de dispositivo compartilham o modelo. Um modelo de dispositivo define as características e o comportamento de um tipo de dispositivo, como:
+É possível implantar rapidamente um novo aplicativo do Azure IoT Central e personalizá-lo no navegador de acordo com seus requisitos específicos. Como um construtor, você usa as ferramentas baseadas na web para criar um _modelo de dispositivo_ para os dispositivos que se conectam ao seu aplicativo. Um modelo de dispositivo é um blueprint que define as características e o comportamento de um tipo de dispositivo, como:
 
 - A telemetria que ele envia.
 - As propriedades de negócios que um operador pode modificar.
@@ -83,7 +83,7 @@ Como um construtor, você também pode personalizar o aplicativo do Azure IoT Ce
 
 ## <a name="connect-your-devices"></a>Conecte seus dispositivos
 
-Depois que o construtor define os tipos de dispositivos que podem se conectar ao aplicativo, um desenvolvedor de dispositivo cria o código para executar os dispositivos. Como um desenvolvedor de dispositivo, você usa os [SDKs do Azure IoT](https://github.com/Azure/azure-iot-sdks) de código aberto da Microsoft para criar seu código de dispositivo. Esses SDKs têm amplo suporte a linguagem, plataforma e protocolo para atender às suas necessidades de conexão de dispositivos ao seu aplicativo do Azure IoT Central. Os SDKs ajudam você a executar as seguintes tarefas no dispositivo conectado ao Azure IoT Central:
+Depois que o construtor define os tipos de dispositivos que podem se conectar ao aplicativo, um desenvolvedor de dispositivo cria o código para executar os dispositivos. Como um desenvolvedor de dispositivo, você usa os [SDKs do Azure IoT](https://github.com/Azure/azure-iot-sdks) de código aberto da Microsoft para criar seu código de dispositivo. Esses SDKs têm amplo suporte a linguagem, plataforma e protocolo para atender às suas necessidades de conexão de dispositivos ao seu aplicativo do Azure IoT Central. Os SDKs ajudam a implementar os seguintes recursos do dispositivo:
 
 - Criar uma conexão segura.
 - Enviar telemetria.
@@ -96,15 +96,15 @@ Para obter mais informações, consulte a postagem de blog [Os benefícios de us
 
 Aplicativos do Azure IoT Central são totalmente hospedados pela Microsoft, o que reduz a sobrecarga de administração do gerenciamento de seus aplicativos.
 
-Como um operador, você pode usar o aplicativo do Azure IoT Central para gerenciar os dispositivos em sua solução do Azure IoT Central. Os operadores podem executar tarefas como:
+Como um operador, você pode usar o aplicativo do Azure IoT Central para gerenciar os dispositivos em sua solução do Azure IoT Central. Operadores realizam tarefas como:
 
 - Monitorar os dispositivos conectados ao aplicativo.
 - Solucionar e corrigir problemas com dispositivos.
 - Provisionar novos dispositivos.
 
-Um desenvolvedor pode definir regras personalizadas e ações que operem em um fluxo de dados no nível do modelo do dispositivo. Um operador pode habilitar ou desabilitar essas regras no nível do dispositivo para controlar e automatizar tarefas dentro do aplicativo.
+Como desenvolvedor, você pode definir regras e ações personalizadas que operem em um fluxo de dados dos dispositivos conectados. Um operador pode habilitar ou desabilitar essas regras no nível do dispositivo para controlar e automatizar tarefas dentro do aplicativo.
 
-Os administradores podem gerenciar o acesso ao seu aplicativo [com funções de usuário e permissões](howto-administer.md).
+Os administradores gerenciam o acesso ao seu aplicativo [com funções de usuário e permissões](howto-administer.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

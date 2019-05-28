@@ -1,19 +1,20 @@
 ---
 title: Criar uma conta de armazenamento do Azure Data Lake Storage Gen2 | Microsoft Docs
-description: Aprenda rapidamente criar uma nova conta de armazenamento com acesso ao Data Lake Storage Gen2 usando o portal do Azure, o Azure PowerShell ou a CLI do Azure
+description: Aprenda rapidamente criar uma nova conta de armazenamento com acesso ao Data Lake Storage Gen2 usando o portal do Azure, o Azure PowerShell ou a CLI do Azure.
 services: storage
-author: jamesbak
+author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: quickstart
 ms.date: 12/06/2018
-ms.author: jamesbak
-ms.openlocfilehash: 50cd039395b477a93d050458c2a014e768fc5f0a
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.author: normesta
+ms.reviewer: jamesbak
+ms.openlocfilehash: 18132ac4c218c766efdc9a9afae2cc3508c4f732
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995669"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64939418"
 ---
 # <a name="quickstart-create-an-azure-data-lake-storage-gen2-storage-account"></a>Início Rápido: Criar uma conta de armazenamento do Azure Data Lake Storage Gen2
 
@@ -105,7 +106,7 @@ Sua conta de armazenamento é criada por meio do portal.
 Para remover um grupo de recursos usando o portal do Azure:
 
 1. No portal do Azure, expanda o menu à esquerda para abrir o menu de serviços e escolha **Grupo de Recursos** para exibir a lista dos seus grupos de recursos.
-2. Localize o grupo de recursos a ser excluído e clique com o botão direito do mouse no botão **Mais** (**...**) do lado direito da lista.
+2. Localize o grupo de recursos a ser excluído e clique com o botão direito do mouse no botão **Mais** ( **...** ) do lado direito da lista.
 3. Selecione **Excluir grupo de recursos** e confirme.
 
 ## <a name="create-an-account-using-powershell"></a>Criar uma conta usando o PowerShell
