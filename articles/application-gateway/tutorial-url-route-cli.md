@@ -1,27 +1,27 @@
 ---
-title: Tutorial- Rotear o tráfego da web baseado na URL - CLI do Azure
-description: Neste tutorial, aprenda a rotear o tráfego da Web baseado na URL para especificar pools dimensionáveis de servidores usando a CLI do Azure.
+title: Rotear o tráfego da Web baseado na URL – CLI do Azure
+description: Neste artigo, aprenda a rotear o tráfego da Web baseado na URL para especificar pools dimensionáveis de servidores usando a CLI do Azure.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 10/25/2018
+ms.date: 5/20/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 4f0c93c41a468b62baf1ec50d030f235d36a8dd2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c0954d1010a6cf5ef6f8edab1470588df9fba559
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58006483"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955580"
 ---
-# <a name="tutorial-route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Tutorial: Rotear o tráfego da Web baseado na URL usando a CLI do Azure
+# <a name="route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Rotear o tráfego da Web baseado na URL usando a CLI do Azure
 
-Como um administrador de TI que gerencia tráfego da Web, você deseja ajudar seus clientes ou usuários a obter as informações necessárias o mais rápido possível. Uma maneira de otimizar essa experiência é roteando diferentes tipos de tráfego da Web para recursos de servidor diferentes. Este tutorial mostra como usar a CLI do Azure para instalar e configurar o roteamento do Gateway de Aplicativo para vários tipos de tráfego do seu aplicativo. O roteamento, em seguida, direciona o tráfego para pools de servidor diferentes com base na URL.
+Como um administrador de TI que gerencia tráfego da Web, você deseja ajudar seus clientes ou usuários a obter as informações necessárias o mais rápido possível. Uma maneira de otimizar essa experiência é roteando diferentes tipos de tráfego da Web para recursos de servidor diferentes. Este artigo mostra como usar a CLI do Azure para instalar e configurar o roteamento do Gateway de Aplicativo para vários tipos de tráfego do seu aplicativo. O roteamento, em seguida, direciona o tráfego para pools de servidor diferentes com base na URL.
 
 ![Exemplo de roteamento de URL](./media/tutorial-url-route-cli/scenario.png)
 
-Neste tutorial, você aprenderá como:
+Neste artigo, você aprenderá a:
 
 > [!div class="checklist"]
 > * Criar um grupo de recursos para os recursos de rede necessários
@@ -31,13 +31,13 @@ Neste tutorial, você aprenderá como:
 > * Criar um conjunto de dimensionamento para cada pool para que o pool possa fazer o dimensionamento automaticamente
 > * Executar um teste para que você possa verificar se os diferentes tipos de tráfego estão indo para os pools corretos
 
-Se preferir, você pode concluir este tutorial usando o [Azure PowerShell](tutorial-url-route-powershell.md) ou o [portal do Azure](create-url-route-portal.md).
+Se preferir, você pode concluir este procedimento usando o [Azure PowerShell](tutorial-url-route-powershell.md) ou o [portal do Azure](create-url-route-portal.md).
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Caso opte por instalar e usar a CLI localmente, este tutorial exigirá que você execute a CLI do Azure versão 2.0.4 ou posterior. Para saber qual é a versão, execute `az --version`. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure](/cli/azure/install-azure-cli).
+Caso opte por instalar e usar a CLI localmente, este artigo exigirá que você execute a CLI do Azure versão 2.0.4 ou posterior. Para saber qual é a versão, execute `az --version`. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
@@ -182,7 +182,7 @@ az network application-gateway rule create \
 
 ## <a name="create-vm-scale-sets"></a>Criar conjuntos de dimensionamento de VMs
 
-Neste tutorial, você cria três conjuntos de dimensionamento de máquinas virtuais que oferecem suporte a três pools de back-end que você criou. Os conjuntos de dimensionamento que você cria são denominados *myvmss1*, *myvmss2*, e *myvmss3*. Cada conjunto de dimensionamento contém duas instâncias de máquina virtual nas quais você instala o NGINX.
+Neste artigo, você cria três conjuntos de dimensionamento de máquinas virtuais que oferecem suporte a três pools de back-end que você criou. Os conjuntos de dimensionamento que você cria são denominados *myvmss1*, *myvmss2*, e *myvmss3*. Cada conjunto de dimensionamento contém duas instâncias de máquina virtual nas quais você instala o NGINX.
 
 ```azurecli-interactive
 for i in `seq 1 3`; do
@@ -264,5 +264,4 @@ az group delete --name myResourceGroupAG --location eastus
 
 ## <a name="next-steps"></a>Próximas etapas
 
-> [!div class="nextstepaction"]
-> [Criar um gateway de aplicativo com o redirecionamento baseado em caminhos de URL](./tutorial-url-redirect-cli.md)
+* [Criar um gateway de aplicativo com o redirecionamento baseado em caminhos de URL](./tutorial-url-redirect-cli.md)

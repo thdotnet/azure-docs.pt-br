@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: f69b3f2c8de4cf137583ad7a33e8edfe31373096
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f9746dae4cdf10a10922be41602f4ecd7f032f5b
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57904500"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65949798"
 ---
 # <a name="tutorial-1-predict-credit-risk---azure-machine-learning-studio"></a>Tutorial 1: Prever risco de crédito – Azure Machine Learning Studio
 
@@ -128,7 +128,7 @@ Depois que os dados tiverem sido convertidos no formato CSV, você deverá fazer
 
 7. Insira um nome para o conjunto de dados. Para este tutorial, vamos chamá-lo de "Dados do cartão de crédito alemão UCI".
 
-8. Para tipo de dados, selecione **Arquivo CSV genérico sem cabeçalho (.nh.csv)**.
+8. Para tipo de dados, selecione **Arquivo CSV genérico sem cabeçalho (.nh.csv)** .
 
 9. Inclua uma descrição se desejar.
 
@@ -174,7 +174,7 @@ A próxima etapa do tutorial é criar um experimento no Machine Learning Studio 
 
 Você pode exibir as primeiras 100 linhas de dados e algumas informações estatísticas de todo o conjunto de dados: Clique na porta de saída do conjunto de dados (o círculo pequeno na parte inferior) e selecione **Visualizar**.  
 
-Como o arquivo de dados não foi fornecido com títulos de coluna, o Estúdio forneceu títulos genéricos (Col1, Col2 *etc.*). Bons títulos de coluna não são essenciais para criar um modelo, mas facilitam o trabalho com os dados no teste. Além disso, quando você eventualmente publicar esse modelo em um serviço Web, os títulos ajudarão a identificar as colunas para o usuário do serviço.  
+Como o arquivo de dados não foi fornecido com títulos de coluna, o Estúdio forneceu títulos genéricos (Col1, Col2 *etc.* ). Bons títulos de coluna não são essenciais para criar um modelo, mas facilitam o trabalho com os dados no teste. Além disso, quando você eventualmente publicar esse modelo em um serviço Web, os títulos ajudarão a identificar as colunas para o usuário do serviço.  
 
 Você pode adicionar títulos de coluna usando o módulo [Editar Metadados][edit-metadata].
 

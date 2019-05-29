@@ -1,5 +1,5 @@
 ---
-title: Devolver o Microsoft Azure Data Box | Microsoft Docs
+title: Tutorial sobre como devolver o Azure Data Box | Microsoft Docs
 description: Saiba como enviar o Azure Data Box para a Microsoft
 services: databox
 author: alkohli
@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: alkohli
-ms.openlocfilehash: 72d6ce58a986ddd0d0976d99de5ca3426d78f0b9
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 5b43241be4e161cd6051dce02a3574fbdb580f28
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58287155"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606241"
 ---
 # <a name="tutorial-return-azure-data-box-and-verify-data-upload-to-azure"></a>Tutorial: Devolver o Azure Data Box e verificar o upload de dados para o Azure
 
@@ -45,7 +45,7 @@ Antes de começar, verifique se:
 2. Certifique-se de que a etiqueta de remessa esteja aparecendo no papel eletrônico e agende uma retirada com a operadora. Se a etiqueta for danificada ou perdida ou não for exibida na tela do E-ink, contate o Suporte da Microsoft. Se o Suporte sugerir, acesse **Visão Geral > Baixar etiqueta de remessa** no portal do Azure. Baixe a etiqueta de remessa e afixe-a ao dispositivo. 
 3. Agende uma retirada com a UPS se estiver devolvendo o dispositivo. Para agendar uma retirada:
 
-    - Ligue para o serviço de no-break local (linha gratuita específica do país).
+    - Ligue para a UPS local (linha gratuita específica do país/região).
     - Em sua chamada, mencione a remessa inversa, conforme mostrado na exibição E-ink ou sua etiqueta impressa de número de controle.
     - Se o número de controle não está entre aspas, o serviço de no-break exigirá que você pague um encargo adicional durante a retirada.
 

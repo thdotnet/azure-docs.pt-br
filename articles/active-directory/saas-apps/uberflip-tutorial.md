@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 69e86e486a9cdb058b972bda5176c14e15f4630a
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 55fa42eb1c35025b1008b3b5d26f61c243ff2b97
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59682720"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956655"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-uberflip"></a>Tutorial: Integração do Azure Active Directory com o Uberflip
 
@@ -72,15 +72,15 @@ Para configurar a integração do Uberflip ao Azure AD, você precisa adicionar 
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-Nesta seção, você configurará e testará o logon único do Azure AD com o Uberflip, com base em um usuário de teste chamado **Brenda Fernandes**. Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e um usuário relacionado do Uberflip.
+Nesta seção, você vai configurar e testar o logon único do Azure AD com o Uberflip com base em uma usuária de teste chamada **B Fernandes**. Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e um usuário relacionado do Uberflip.
 
 Para configurar e testar o logon único do Azure AD com o Uberflip, você precisa concluir os seguintes blocos de construção:
 
 1. **[Configure o logon único do Azure AD](#configure-azure-ad-single-sign-on)** para permitir que seus usuários usem esse recurso.
 1. **[Configurar o logon único do Uberflip](#configure-uberflip-single-sign-on)** – para definir as configurações de logon único no lado do aplicativo.
 1. **[Crie um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com Brenda Fernandes.
-1. **[Atribua o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** para permitir que Brenda Fernandes use o logon único do Azure AD.
-1. **[Crie um usuário de teste do Uberflip](#create-an-uberflip-test-user)** para que haja, no Uberflip, um usuário chamado Brenda Fernandes que esteja vinculado ao usuário do Azure AD chamado Brenda Fernandes.
+1. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** para permitir que Brenda Fernandes use o logon único do Azure AD.
+1. **[Crie um usuário de teste do Uberflip](#create-an-uberflip-test-user)** para que haja, no Uberflip, um usuário chamado B. Fernandes que esteja vinculado ao usuário do Azure AD chamado B. Fernandes.
 1. **[Teste o logon único](#test-single-sign-on)** para verificar se a configuração funciona.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
@@ -103,7 +103,7 @@ Para configurar o logon único do Azure AD com o Uberflip, realize as seguintes 
 
 1. No painel **Configuração básica do SAML**, siga uma das etapas a seguir, dependendo de qual modo de SSO você deseja configurar:
 
-   * Para configurar o aplicativo no modo SSO iniciado por IDP, na caixa **URL de Resposta (URL do Serviço do Consumidor de Declaração)**, digite uma URL usando o seguinte padrão:
+   * Para configurar o aplicativo no modo SSO iniciado por IDP, na caixa **URL de Resposta (URL do Serviço do Consumidor de Declaração)** , digite uma URL usando o seguinte padrão:
 
      `https://app.uberflip.com/sso/saml2/<IDPID>/<ACCOUNTID>`
 
@@ -136,7 +136,7 @@ Para configurar o logon único no lado do Uberflip, é necessário enviar o XML 
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
-Nesta seção, você criará uma usuária de teste no portal do Azure chamada Brenda Fernandes.
+Nesta seção, você criará uma usuária de teste no portal do Azure chamada B. Fernandes.
 
 1. No portal do Azure, no painel esquerdo, selecione **Azure Active Directory** > **Usuários** > **Todos os usuários**.
 
@@ -150,9 +150,9 @@ Nesta seção, você criará uma usuária de teste no portal do Azure chamada Br
 
     ![O painel Usuário](common/user-properties.png)
 
-    1. Na caixa **Nome**, insira **BrendaFernandes**.
+    1. Na caixa **Nome**, insira **BFernandes**.
   
-    1. Na caixa **Nome de usuário**, insira **BrendaFernandes\@\<domíniodaempresa>.\<extensão>**. Por exemplo, **BrendaFernandes\@contoso.com**.
+    1. Na caixa **Nome de usuário**, insira **BFernandes\@\<domíniodaempresa>.\<extensão>** . Por exemplo, **BFernandes\@contoso.com**.
 
     1. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa **Senha**.
 
@@ -160,7 +160,7 @@ Nesta seção, você criará uma usuária de teste no portal do Azure chamada Br
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo a ela o acesso ao Uberflip.
+Nesta seção, você permitirá que B. Fernandes use o logon único do Azure concedendo-lhe acesso ao Uberflip.
 
 1. No portal do Azure, selecione **Aplicativos Empresariais** > **Todos os aplicativos** > **Uberflip**.
 
@@ -178,7 +178,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
     ![O painel Adicionar Atribuição](common/add-assign-user.png)
 
-1. No painel **Usuários e grupos**, selecione **Brenda Fernandes** na lista **Usuários** e, em seguida, escolha **Selecionar** na parte inferior do painel.
+1. No painel **Usuários e grupos**, selecione **B. Fernandes** na lista **Usuários** e, em seguida, escolha **Selecionar** na parte inferior do painel.
 
 1. Se você está esperando um valor de função na declaração SAML, no painel **Selecionar Função**, selecione na lista a função apropriada para o usuário. Escolha **Selecionar** na parte inferior do painel.
 
@@ -186,7 +186,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-an-uberflip-test-user"></a>Criar um usuário de teste do Uberflip
 
-Um usuário chamado Brenda Fernandes agora é criado no Uberflip. Você não precisa fazer nada para criar esse usuário. O Uberflip dá suporte ao provisionamento de usuário Just-In-Time, que está habilitado por padrão. Se um usuário chamado Brenda Fernandes ainda não existir no Uberflip, um será criado após a autenticação.
+Um usuário chamado B. Fernandes agora é criado no Uberflip. Você não precisa fazer nada para criar esse usuário. O Uberflip dá suporte ao provisionamento de usuário Just-In-Time, que está habilitado por padrão. Se um usuário chamado B. Fernandes ainda não existir no Uberflip, um será criado após a autenticação.
 
 > [!NOTE]
 > Se você precisar criar um usuário manualmente, contate a [equipe de suporte do Uberflip](mailto:support@uberflip.com).

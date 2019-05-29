@@ -9,17 +9,17 @@ ms.date: 03/20/2018
 ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: da63a5418ab94623f6ce3c9f35a085dd8b198d1a
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48858087"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66148991"
 ---
 Você deve atender aos seguintes requisitos para concluir este tutorial:
 
 **CLI do Azure**: você deve ter a CLI do Azure versão 2.0.29 ou posterior instalada no computador local. Execute `az --version` para encontrar a versão. Caso precise instalar ou atualizar, confira [Instalar a CLI do Azure][azure-cli-install].
 
-**Docker**: este tutorial pressupõe uma compreensão básica dos conceitos fundamentais do Docker como contêineres, imagens de contêiner e comandos básicos do `docker`. Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker][docker-get-started].
+**Docker**: este tutorial pressupõe uma compreensão básica dos conceitos fundamentais do Docker, como contêineres, imagens de contêineres e comandos básicos do `docker`. Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker][docker-get-started].
 
 **Mecanismo do Docker**: para concluir este tutorial, você precisa do Mecanismo do Docker instalado localmente. O Docker fornece pacotes que configuram o ambiente do Docker no [macOS][docker-mac], [Windows][docker-windows] e [Linux][docker-linux].
 

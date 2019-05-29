@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: d955654eee1d02994f303b6270b156eb9a61c29b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 19c2298c9bda03acba28496a97c89c2a53e3c44e
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58915247"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65964904"
 ---
 # <a name="tutorial-share-azure-spatial-anchors-across-sessions-and-devices-with-an-azure-cosmos-db-back-end"></a>Tutorial: Compartilhar Âncoras Espaciais do Azure entre sessões e dispositivos com um back-end do Azure Cosmos DB
 
@@ -70,7 +70,7 @@ Localize a propriedade `StorageConnectionString` e defina o valor para que seja 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste tutorial, você usou o Azure Cosmos DB para compartilhar identificadores de âncora entre dispositivos. Para saber mais sobre como usar Âncoras Espaciais do Azure em um novo aplicativo Android, passe para o próximo tutorial.
+Neste tutorial, você usou o Azure Cosmos DB para compartilhar identificadores de âncora entre dispositivos. Para saber mais sobre como usar Âncoras Espaciais do Azure em um novo aplicativo Unity HoloLens, passe para o próximo tutorial.
 
 > [!div class="nextstepaction"]
-> [Como iniciar um novo aplicativo Android](./tutorial-new-android-app.md)
+> [Como iniciar um novo aplicativo Android](./tutorial-new-unity-hololens-app.md)

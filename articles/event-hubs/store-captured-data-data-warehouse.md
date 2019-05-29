@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.topic: tutorial
 ms.service: event-hubs
-ms.openlocfilehash: 234febe92727e5a47d4cfc5b836cd5593e99b5b5
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 90a17839afdddb4d6ad8abfa57963b4c76b100ed
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56238361"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604299"
 ---
 # <a name="migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Migrar dados dos Hubs de Eventos capturados para um SQL Data Warehouse usando a Grade de Eventos e o Azure Functions
 
@@ -39,7 +39,7 @@ Neste tutorial, você executa as seguintes ações:
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-- [Visual studio 2017 versão 15.3.2 ou superior](https://www.visualstudio.com/vs/). Durante a instalação, instale as cargas de trabalho a seguir: desenvolvimento para desktop com .NET, desenvolvimento do Azure, ASP.NET e desenvolvimento Web, desenvolvimento em Node.js e desenvolvimento em Python
+- [Visual Studio 2019](https://www.visualstudio.com/vs/). Durante a instalação, instale as cargas de trabalho a seguir: desenvolvimento para desktop com .NET, desenvolvimento do Azure, ASP.NET e desenvolvimento Web, desenvolvimento em Node.js e desenvolvimento em Python
 - Baixe o [exemplo do Git](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo). A solução de exemplo contém os seguintes componentes:
     - *WindTurbineDataGenerator*: um editor simples que envia dados de exemplo de turbina eólica para um hub de eventos habilitado para captura
     - *FunctionDWDumper*: uma função do Azure que recebe uma notificação da Grade de Eventos quando um arquivo Avro é capturado no blob do Armazenamento do Azure. Ela recebe o caminho do URI do blob, lê seu conteúdo e envia esses dados para um SQL Data Warehouse.
@@ -106,7 +106,7 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 
 ## <a name="publish-code-to-the-functions-app"></a>Publicar código para o aplicativo do Functions
 
-1. Abra a solução *EventHubsCaptureEventGridDemo.sln* no Visual Studio 2017 (15.3.2 ou superior). 
+1. Abra a solução *EventHubsCaptureEventGridDemo.sln* no Visual Studio 2019.
 
 1. No Gerenciador de Soluções, clique com o botão direito do mouse em *FunctionEGDWDumper* e selecione **Publicar**.
 

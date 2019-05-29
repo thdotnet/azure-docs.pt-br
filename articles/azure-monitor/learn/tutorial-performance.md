@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: 7eae71411a1a3772dbdbaa289a32cbc69fca0e5a
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: f906ab5db35ce8b239eceac9cdc8244f230f5a77
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54108745"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65596033"
 ---
 # <a name="find-and-diagnose-performance-issues-with-azure-application-insights"></a>Localizar e diagnosticar problemas de desempenho com o Azure Application Insights
 
@@ -32,7 +32,7 @@ O Azure Application Insights coleta a telemetria do seu aplicativo para ajudar a
 
 Para concluir este tutorial:
 
-- Instale o [Visual Studio 2017](https://www.visualstudio.com/downloads/) com as cargas de trabalho a seguir:
+- Instale o [Visual Studio 2019](https://www.visualstudio.com/downloads/) com as seguintes cargas de trabalho:
     - Desenvolvimento Web e ASP.NET
     - Desenvolvimento do Azure
 - Implante um aplicativo .NET para Azure e [habilite o SDK do Application Insights](../../azure-monitor/app/asp-net.md).
@@ -97,7 +97,7 @@ Além de identificar os processos do servidor a otimizar, o Application Insights
 
     ![Resumo do navegador](media/tutorial-performance/browser-summary.png)
 
-2.  Role para baixo até **Quais são minhas páginas mais lentas?**.  Isso mostra uma lista das páginas em seu aplicativo que levaram mais tempo para serem carregadas nos clientes.  Você pode usar essas informações para priorizar as páginas que têm o impacto mais significativo sobre o usuário.
+2.  Role para baixo até **Quais são minhas páginas mais lentas?** .  Isso mostra uma lista das páginas em seu aplicativo que levaram mais tempo para serem carregadas nos clientes.  Você pode usar essas informações para priorizar as páginas que têm o impacto mais significativo sobre o usuário.
 3.  Clique em uma das páginas para abrir o painel **Exibição de página**.  No exemplo, a página **/FabrikamProd** está mostrando uma duração média excessiva.  O painel **Exibição de página** apresenta detalhes sobre essa página, incluindo uma análise de diferentes intervalos de duração.
 
     ![Exibição de página](media/tutorial-performance/page-view.png)

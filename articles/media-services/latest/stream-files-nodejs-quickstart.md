@@ -1,6 +1,6 @@
 ---
 title: Transmitir arquivos de vídeo com os Serviços de Mídia do Azure – Node.js | Microsoft Docs
-description: Execute as etapas neste início rápido para criar uma nova conta dos Serviços de Mídia do Azure, codificar um arquivo e transferi-lo para o Player de Mídia do Azure.
+description: Execute as etapas deste tutorial para criar uma nova conta dos Serviços de Mídia do Azure, codificar um arquivo e transmiti-lo para o Player de Mídia do Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -9,23 +9,24 @@ editor: ''
 keywords: serviços de mídia do azure, stream
 ms.service: media-services
 ms.workload: media
-ms.topic: quickstart
+ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/26/2019
 ms.author: juliako
-ms.openlocfilehash: 22b7f2380b509daa4cb9931d6fc57c1297628e3d
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 3e4172cd149726e28e0c7dff435ec1f7a59ee169
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58522737"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65550163"
 ---
-# <a name="quickstart-stream-video-files---nodejs"></a>Início Rápido: Transmitir arquivos de vídeo – Node.js
+# <a name="tutorial-stream-video-files---nodejs"></a>Tutorial: Transmitir arquivos de vídeo – Node.js
 
-Este início rápido mostra como é fácil codificar e iniciar a transmissão de vídeos por streaming em vários navegadores e dispositivos usando os Serviços de Mídia do Azure. Um conteúdo de entrada pode ser especificado usando URLs HTTPS, URLs SAS ou caminhos para arquivos localizados no Armazenamento de Blobs do Azure.
-O exemplo neste tópico codifica o conteúdo disponibilizado por meio de uma URL HTTPS. Observe que, no momento, o AMS v3 não dá suporte à codificação de transferência em partes sobre URLs HTTPS.
+Este tutorial mostra como é fácil codificar e iniciar a transmissão de vídeos por streaming em vários navegadores e dispositivos usando os Serviços de Mídia do Azure. Um conteúdo de entrada pode ser especificado usando URLs HTTPS, URLs SAS ou caminhos para arquivos localizados no Armazenamento de Blobs do Azure.
 
-Ao final do início rápido, você poderá transmitir um vídeo por streaming.  
+O exemplo neste artigo codifica o conteúdo que você disponibiliza por meio de uma URL HTTPS. Observe que, no momento, o AMS v3 não dá suporte à codificação de transferência em partes sobre URLs HTTPS.
+
+Ao final do tutorial, você poderá transmitir um vídeo por streaming.  
 
 ![Reproduzir o vídeo](./media/stream-files-nodejs-quickstart/final-video.png)
 
@@ -81,7 +82,7 @@ Para testar o streaming, este artigo usa o Player de Mídia do Azure.
 > Se um player estiver hospedado em um site https, atualize a URL para "https".
 
 1. Abra um navegador da Web e navegue até [https://aka.ms/azuremediaplayer/](https://aka.ms/azuremediaplayer/).
-2. Na caixa **URL:**, cole um dos valores de URL de streaming que você obteve ao executar o aplicativo. 
+2. Na caixa **URL:** , cole um dos valores de URL de streaming que você obteve ao executar o aplicativo. 
  
      Você poderá colar a URL no formato HLS, Dash ou Smooth e o Player de Mídia do Azure alternará para um protocolo de streaming apropriado para reprodução em seu dispositivo automaticamente.
 3. Pressione **Atualizar Player**.
@@ -90,7 +91,7 @@ O Player de Mídia do Azure pode ser usado para testes, mas não deve ser usado 
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Se você não precisar mais de qualquer um dos recursos em seu grupo de recursos, incluindo as contas dos Serviços de Mídia e de armazenamento que você criou neste Início Rápido, exclua o grupo de recursos.
+Se você não precisar mais de qualquer um dos recursos em seu grupo de recursos, incluindo as contas dos Serviços de Mídia e de armazenamento que você criou neste tutorial, exclua o grupo de recursos.
 
 Execute este comando da CLI:
 

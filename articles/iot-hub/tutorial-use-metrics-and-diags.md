@@ -6,15 +6,15 @@ manager: philmea
 ms.service: iot-hub
 services: iot-hub
 ms.topic: tutorial
-ms.date: 12/15/2018
+ms.date: 3/13/2019
 ms.author: robinsh
 ms.custom: mvc
-ms.openlocfilehash: 8bcc72cf151b085c7f65b6c600a49642cd330bac
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 40e54daa60efedd84b32c72f29d1e2a8858c27da
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54248482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66162396"
 ---
 # <a name="tutorial-set-up-and-use-metrics-and-diagnostic-logs-with-an-iot-hub"></a>Tutorial: Configurar e usar métricas e logs de diagnóstico com um hub IoT
 
@@ -163,7 +163,7 @@ Agora configure algumas métricas para inspeção quando forem enviadas mensagen
 
 1. No painel de configurações do hub IoT, clique na opção **Métricas** na seção **Monitoramento**.
 
-2. Na parte superior da tela, clique em **Últimas 24 horas (Automático)**. Na lista suspensa exibida, selecione **Últimas 4 horas** para **Intervalo de Tempo** e defina **Granularidade de Tempo** para **1 minuto**, na hora local. Clique em **Aplicar** para salvar essas configurações. 
+2. Na parte superior da tela, clique em **Últimas 24 horas (Automático)** . Na lista suspensa exibida, selecione **Últimas 4 horas** para **Intervalo de Tempo** e defina **Granularidade de Tempo** para **1 minuto**, na hora local. Clique em **Aplicar** para salvar essas configurações. 
 
    ![Captura de tela mostrando as configurações de hora das métricas.](./media/tutorial-use-metrics-and-diags/06-metrics-set-time-range.png)
 
@@ -274,7 +274,7 @@ O Hub IoT ainda não foi migrado para as [métricas no Azure Monitor](/azure/azu
 
 Anteriormente na seção de configuração do script, você configurou um dispositivo para simular usando um dispositivo de IoT. Nesta seção, você baixa um aplicativo do console do .NET que simula um dispositivo que envia mensagens do dispositivo para a nuvem para um hub IoT.  
 
-Baixe a solução para a [Simulação de dispositivo IoT](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip). Esse link baixa um repositório contendo vários aplicativos; a solução que você está procurando está em iot-hub/Tutorials/Routing/SimulatedDevice/.
+Baixe a solução para a [Simulação de dispositivo IoT](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip). Esse link baixa um repositório contendo vários aplicativos. A solução que você está procurando está em iot-hub/Tutorials/Routing/.
 
 Clique duas vezes no arquivo de solução (SimulatedDevice.sln) para abrir o código no Visual Studio, em seguida, abra o Program.cs. Substitua `{iot hub hostname}` pelo nome de host do Hub IoT. O formato de nome de host do hub IoT é **{iot-hub-name}.azure-devices.net**. Para este tutorial, o nome de host do hub é **ContosoTestHub.azure-devices.net**. Em seguida, substitua `{device key}` com a chave do dispositivo salvo anteriormente durante a configuração do dispositivo simulado. 
 
@@ -298,7 +298,7 @@ Execute o aplicativo de console. Aguarde alguns minutos (10 a 15). Você poderá
 
 ### <a name="see-the-metrics-in-the-portal"></a>Ver as métricas no portal
 
-Abra as métricas no Painel. Altere os valores temporais para *Últimos 30 minutos* com uma granularidade de tempo de *1 minuto*. Isso mostrará as mensagens de telemetria enviadas e o número total de mensagens usadas no gráfico, com os números mais recentes na parte inferior do gráfico. 
+Abra as métricas no Painel. Altere os valores temporais para *Últimos 30 minutos* com uma granularidade de tempo de *1 minuto*. Isso mostrará as mensagens de telemetria enviadas e o número total de mensagens usadas no gráfico, com os números mais recentes na parte inferior do gráfico.
 
    ![Captura de tela mostrando as métricas.](./media/tutorial-use-metrics-and-diags/13-metrics-populated.png)
 
@@ -385,4 +385,4 @@ Neste tutorial, você aprendeu a usar métricas e logs de diagnóstico executand
 Avance para o próximo tutorial para aprender a gerenciar o estado de um dispositivo IoT. 
 
 > [!div class="nextstepaction"]
-[Configurar seus dispositivos de um serviço de back-end](tutorial-device-twins.md)
+> [Configurar seus dispositivos de um serviço de back-end](tutorial-device-twins.md)

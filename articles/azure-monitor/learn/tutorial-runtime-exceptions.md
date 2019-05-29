@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: 267e790cec3c915330f8f72053458527ee7bfead
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 19455998ca13b9abf48bb1cb3856e38b5c47ef52
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58095561"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595595"
 ---
 # <a name="find-and-diagnose-run-time-exceptions-with-azure-application-insights"></a>Localizar e diagnosticar exceções de tempo de execução com o Azure Application Insights
 
@@ -34,7 +34,7 @@ O Azure Application Insights coleta a telemetria do seu aplicativo para ajudar a
 
 Para concluir este tutorial:
 
-- Instale o [Visual Studio 2017](https://www.visualstudio.com/downloads/) com as cargas de trabalho a seguir:
+- Instale o [Visual Studio 2019](https://www.visualstudio.com/downloads/) com as seguintes cargas de trabalho:
     - Desenvolvimento Web e ASP.NET
     - Desenvolvimento do Azure
 - Baixe e instale o [Depurador de Instantâneo do Visual Studio](https://aka.ms/snapshotdebugger).
@@ -75,7 +75,7 @@ O Application Insights coleta quaisquer falhas em seu aplicativo e permite que v
     ![Detalhes da exceção](media/tutorial-runtime-exceptions/failed-requests-exception.png)
 
 ## <a name="identify-failing-code"></a>Como identificar falhas de código
-O depurador de instantâneo coleta instantâneos das exceções mais frequentes em seu aplicativo para ajudá-lo a diagnosticar a causa raiz em produção.  Você pode exibir instantâneos de depuração no portal para ver a pilha de chamadas e inspecionar variáveis em cada quadro da pilha de chamadas. Depois disso, você tem a opção de depurar o código-fonte baixando o instantâneo e abrindo-o no Visual Studio 2017 Enterprise.
+O depurador de instantâneo coleta instantâneos das exceções mais frequentes em seu aplicativo para ajudá-lo a diagnosticar a causa raiz em produção.  Você pode exibir instantâneos de depuração no portal para ver a pilha de chamadas e inspecionar variáveis em cada quadro da pilha de chamadas. Depois disso, você tem a opção de depurar o código-fonte baixando o instantâneo e abrindo-o no Visual Studio 2019 Enterprise.
 
 1. Nas propriedades da exceção, clique em **Abrir instantâneo de depuração**.
 2. O painel **Instantâneo de depuração** é aberto com a pilha de chamadas para a solicitação.  Clique em qualquer método para exibir os valores de todas as variáveis locais no momento da solicitação.  Começando com o método superior neste exemplo, podemos ver variáveis locais que não têm nenhum valor.

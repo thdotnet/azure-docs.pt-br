@@ -12,16 +12,16 @@ ms.topic: sample
 ms.date: 07/04/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 8874039d148cc89d3f47979370e64dd78777f268
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 790d095cfb1b59aed1b9014fc474f9ad6e1b3328
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60325741"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66131303"
 ---
 # <a name="map-a-custom-domain-to-a-function-app"></a>Mapear um domínio personalizado para um aplicativo de funções
 
-Esse script de exemplo cria um aplicativo de funções em um plano do Serviço de Aplicativo e, em seguida, mapeia-os para um domínio personalizado que você fornecer. Quando o aplicativo de funções estiver hospedado em um [plano do Serviço de Aplicativo](../functions-scale.md#app-service-plan), você poderá mapear para um domínio personalizado usando um registro CNAME ou A. Para aplicativos de função em um [plano de consumo](../functions-scale.md#consumption-plan), há suporte apenas para a opção CNAME. Este exemplo cria um plano do serviço de aplicativo e requer um registro a para mapear o domínio. 
+Esse script de exemplo cria um aplicativo de funções em um plano do Serviço de Aplicativo e, em seguida, mapeia-os para um domínio personalizado que você fornecer. Quando o aplicativo de funções estiver hospedado em um [Plano Premium](../functions-scale.md#premium-plan-public-preview) ou [Plano do Serviço de Aplicativo](../functions-scale.md#app-service-plan), você poderá mapear para um domínio personalizado usando um registro CNAME ou A. Para aplicativos de função em um [plano de consumo](../functions-scale.md#consumption-plan), há suporte apenas para a opção CNAME. Este exemplo cria um plano do serviço de aplicativo e requer um registro a para mapear o domínio. 
 
 Para executar este script de exemplo, você já deve ter configurado um registro em seu domínio personalizado que aponta para o nome de domínio do seu aplicativo Web padrão. Para saber mais, veja [Mapear instruções de domínio personalizadas para o Serviço de Aplicativo do Azure](https://aka.ms/appservicecustomdns). 
 

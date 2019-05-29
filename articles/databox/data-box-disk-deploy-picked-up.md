@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/06/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 023542dbc22234fc57e4ce8b662a9760be4efe04
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 8df9c2a5e45cf222debc733b3e051c3f707715c5
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65150757"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603093"
 ---
 # <a name="tutorial-return-azure-data-box-disk-and-verify-data-upload-to-azure"></a>Tutorial: Devolver o Azure Data Box Disk e verificar o upload de dados para o Azure
 
@@ -56,7 +56,7 @@ Execute as seguintes etapas se estiver devolvendo o dispositivo nos EUA ou Canad
 2. Lacre a caixa de envio e verifique se a etiqueta de remessa de devolução está visível.
 3. Agende uma retirada com a UPS. Para agendar uma retirada:
 
-    - Ligue para o serviço de no-break local (linha gratuita específica do país).
+    - Ligue para a UPS local (linha gratuita específica do país/região).
     - Em sua chamada, mencione a remessa inversa, conforme mostrado na etiqueta impressa de número de controle.
     - Se o número de controle não está entre aspas, o serviço de no-break exigirá que você pague um encargo adicional durante a retirada.
     - Em vez de agendar a retirada, você também pode descartar o Data Box Disk no local mais próximo de redistribuição.
@@ -78,7 +78,7 @@ Execute as seguintes etapas se estiver devolvendo o dispositivo na Europa.
 
 2. Lacre a caixa de envio e verifique se a etiqueta de remessa de devolução está visível.
 3. Se você estiver devolvendo o dispositivo na Europa com a DHL, solicite a retirada da DHL visitando o site e especificando o número da carta de porte aéreo.
-4. Vá para o site da DHL Express do país e escolha **Agendar a recolha pelo serviço de correio > Remessa de eReturn**.
+4. Acesse o site da DHL Express do país/região e escolha **Agendar a recolha pelo serviço de correio > Remessa de eReturn**.
 
     ![Devolução de remessa da DHL](media/data-box-disk-deploy-picked-up/dhl-ship-1.png)
     

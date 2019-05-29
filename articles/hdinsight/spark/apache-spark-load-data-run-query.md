@@ -7,18 +7,18 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.author: hrasheed
-ms.date: 04/03/2019
-ms.openlocfilehash: f480aeb7e126cb6ab8286bbfbfb8441fefeb07ef
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/16/2019
+ms.openlocfilehash: 09509b32320fb10b8ab3d563442b6d0fb44ad34e
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64716091"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65909214"
 ---
 # <a name="tutorial-load-data-and-run-queries-on-an-apache-spark-cluster-in-azure-hdinsight"></a>Tutorial: Carregar dados e executar consultas em um cluster Apache Spark no Azure HDInsight
 
 Neste tutorial, você aprenderá a criar um dataframe de um arquivo csv e a executar consultas de SQL Spark interativas em um cluster do [Apache Spark](https://spark.apache.org/) no Azure HDInsight. No Spark, um dataframe é uma coleção distribuída de dados organizados em colunas nomeadas. O dataframe é conceitualmente equivalente a uma tabela em um banco de dados relacional ou uma estrutura de dados em R/Python.
- 
+
 Neste tutorial, você aprenderá como:
 > [!div class="checklist"]
 > * Criar um dataframe usando um arquivo CSV
@@ -26,7 +26,22 @@ Neste tutorial, você aprenderá como:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Concluir [Criar um cluster do Apache Spark no Azure HDInsight](apache-spark-jupyter-spark-sql.md).
+Um cluster do Apache Spark no HDInsight. Veja [Criar um cluster do Apache Spark](./apache-spark-jupyter-spark-sql-use-portal.md).
+
+## <a name="create-a-jupyter-notebook"></a>Criar um notebook Jupyter
+
+O Jupyter Notebook é um ambiente de notebook interativo que oferece suporte a várias linguagens de programação. O notebook permite que você interaja com seus dados, combine código com texto markdown e execute visualizações simples. 
+
+1. Edite a URL `https://SPARKCLUSTER.azurehdinsight.net/jupyter` substituindo `SPARKCLUSTER` com pelo nome do seu cluster do Spark. Em seguida, insira a URL editada em um navegador da Web. Em caso de solicitação, insira as credenciais de logon do cluster.
+
+2. Na página da Web do Jupyter, selecione **Novo** > **PySpark** para criar um notebook. 
+
+   ![Criar um Jupyter Notebook para executar consulta interativa SQL do Spark](./media/apache-spark-load-data-run-query/hdinsight-spark-create-jupyter-interactive-spark-sql-query.png "Criar um Jupyter Notebook para executar uma consulta interativa SQL do Spark")
+
+   Um notebook é criado e aberto com o nome Untitled(`Untitled.ipynb`).
+
+    > [!NOTE]  
+    > Usando o kernel PySpark para criar um notebook, a sessão `spark` é criada automaticamente quando você executar a primeira célula de código. Você não precisa criar a sessão explicitamente.
 
 ## <a name="create-a-dataframe-from-a-csv-file"></a>Criar um dataframe usando um arquivo CSV
 
@@ -34,13 +49,7 @@ Os aplicativos podem criar dataframes diretamente de arquivos ou pastas no armaz
     
 ![Instantâneo de dados para consulta SQL interativa do Spark](./media/apache-spark-load-data-run-query/hdinsight-spark-sample-data-interactive-spark-sql-query.png "Instantâneo de dados para consulta SQL interativa do Spark")
 
-
-1. Abra o Jupyter notebook que você criou na seção de pré-requisitos e crie um notebook com PySpark.
-
-    > [!NOTE]  
-    > Usando o kernel PySpark para criar um notebook, a sessão `spark` é criada automaticamente quando você executar a primeira célula de código. Você não precisa criar a sessão explicitamente.
-
-2. Cole o código a seguir em uma célula vazia do notebook e, em seguida, pressione **SHIFT + ENTER** para executar o código. O código importa os tipos obrigatórios necessários para este cenário:
+1. Cole o código a seguir em uma célula vazia do Jupyter Notebook e, em seguida, pressione **SHIFT + ENTER** para executar o código. O código importa os tipos obrigatórios necessários para este cenário:
 
     ```python
     from pyspark.sql import *
@@ -51,7 +60,7 @@ Os aplicativos podem criar dataframes diretamente de arquivos ou pastas no armaz
 
     ![Status de consulta interativa SQL Spark](./media/apache-spark-load-data-run-query/hdinsight-spark-interactive-spark-query-status.png "Status de consulta interativa SQL Spark")
 
-3. Execute o seguinte código para criar um dataframe e uma tabela temporária (**hvac**) executando o código a seguir. 
+2. Execute o seguinte código para criar um dataframe e uma tabela temporária (**hvac**) executando o código a seguir. 
 
     ```python
     # Create a dataframe and table from sample data
@@ -94,11 +103,7 @@ Também é possível selecionar o nome do grupo de recursos para abrir a página
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste tutorial, você aprendeu como:
-> [!div class="checklist"]
-> * Crie um dataframe do Apache Spark.
-> * Execute Spark SQL no dataframe.
+Neste tutorial, você aprendeu a criar um dataframe de um arquivo csv e a executar consultas de SQL Spark interativas em um cluster do Apache Spark no Azure HDInsight. Avance para o próximo artigo para ver como os dados que você registrou no Apache Spark podem ser removidos em uma ferramenta de análise de BI, assim como Power BI.
 
-Avance para o próximo artigo para ver como os dados que você registrou no Apache Spark podem ser removidos em uma ferramenta de análise de BI, assim como Power BI. 
 > [!div class="nextstepaction"]
 > [Analisar dados usando ferramentas de BI](apache-spark-use-bi-tools.md)

@@ -1,6 +1,6 @@
 ---
 title: Transmitir arquivos de vídeo com os Serviços de Mídia do Azure - .NET | Microsoft Docs
-description: Execute as etapas neste início rápido para criar uma nova conta dos Serviços de Mídia do Azure, codificar um arquivo e transferi-lo para o Player de Mídia do Azure.
+description: Execute as etapas deste tutorial para criar uma nova conta dos Serviços de Mídia do Azure, codificar um arquivo e transmiti-lo para o Player de Mídia do Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -9,23 +9,23 @@ editor: ''
 keywords: serviços de mídia do azure, stream
 ms.service: media-services
 ms.workload: media
-ms.topic: quickstart
+ms.topic: tutorial
 ms.custom: mvc
 ms.date: 02/20/2019
 ms.author: juliako
-ms.openlocfilehash: 3a50d78645630e499b11f012da122b12b026ae6b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 3834b4f07f6450f498831accfa6640f55bc5855a
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57857854"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65550187"
 ---
-# <a name="quickstart-stream-video-files---net"></a>Início Rápido: Transmitir arquivos de vídeo – .NET
+# <a name="tutorial-stream-video-files---net"></a>Tutorial: Transmitir arquivos de vídeo – .NET
 
-Este início rápido mostra como é fácil codificar e iniciar a transmissão de vídeos por streaming em vários navegadores e dispositivos usando os Serviços de Mídia do Azure. Um conteúdo de entrada pode ser especificado usando URLs HTTPS, URLs SAS ou caminhos para arquivos localizados no Armazenamento de Blobs do Azure.
+Este tutorial mostra como é fácil codificar e iniciar a transmissão de vídeos por streaming em vários navegadores e dispositivos usando os Serviços de Mídia do Azure. Um conteúdo de entrada pode ser especificado usando URLs HTTPS, URLs SAS ou caminhos para arquivos localizados no Armazenamento de Blobs do Azure.
 O exemplo neste tópico codifica o conteúdo disponibilizado por meio de uma URL HTTPS. Observe que, no momento, o AMS v3 não dá suporte à codificação de transferência em partes sobre URLs HTTPS.
 
-Ao final do início rápido, você poderá transmitir um vídeo por streaming.  
+Ao final do tutorial, você poderá transmitir um vídeo por streaming.  
 
 ![Reproduzir o vídeo](./media/stream-files-dotnet-quickstart/final-video.png)
 
@@ -66,7 +66,7 @@ Para obter explicações sobre cada função no exemplo, examine o código e os 
 Quando você executa o aplicativo, as URLs que podem ser usadas para reproduzir o vídeo usando protocolos diferentes são exibidas. 
 
 1. Pressione Ctrl + F5 para executar o aplicativo *EncodeAndStreamFiles*.
-2. Escolha o protocolo **HLS** da Apple (termina com *manifest(format=m3u8-aapl)*) e copie a URL de streaming do console.
+2. Escolha o protocolo **HLS** da Apple (termina com *manifest(format=m3u8-aapl)* ) e copie a URL de streaming do console.
 
 ![Saída](./media/stream-files-tutorial-with-api/output.png)
 
@@ -80,7 +80,7 @@ Para testar o streaming, este artigo usa o Player de Mídia do Azure.
 > Se um player estiver hospedado em um site https, atualize a URL para "https".
 
 1. Abra um navegador da Web e navegue até [https://aka.ms/azuremediaplayer/](https://aka.ms/azuremediaplayer/).
-2. Na caixa **URL:**, cole um dos valores de URL de streaming que você obteve ao executar o aplicativo. 
+2. Na caixa **URL:** , cole um dos valores de URL de streaming que você obteve ao executar o aplicativo. 
  
      Você poderá colar a URL no formato HLS, Dash ou Smooth e o Player de Mídia do Azure alternará para um protocolo de streaming apropriado para reprodução em seu dispositivo automaticamente.
 3. Pressione **Atualizar Player**.
@@ -89,7 +89,7 @@ O Player de Mídia do Azure pode ser usado para testes, mas não deve ser usado 
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Se você não precisar mais de qualquer um dos recursos em seu grupo de recursos, incluindo as contas dos Serviços de Mídia e de armazenamento que você criou neste Início Rápido, exclua o grupo de recursos.
+Se você não precisar mais de qualquer um dos recursos em seu grupo de recursos, incluindo as contas dos Serviços de Mídia e de armazenamento que você criou neste tutorial, exclua o grupo de recursos.
 
 Execute este comando da CLI:
 

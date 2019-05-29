@@ -7,12 +7,12 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 9d9a3a5af304c1080d1d43b9bbfbafe2554a9844
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 5b084bd5a1b34dc2ce8ac8abb2a4af03a22262d2
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59275004"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787338"
 ---
 # <a name="sample---billing-tags-policy-initiative"></a>Exemplo – Iniciativa de política de marcas de cobrança
 
@@ -24,11 +24,7 @@ Essa política exige valores de marca especificados para o nome do produto e o c
 
 [!code-json[main](../../../../policy-templates/samples/PolicyInitiatives/multiple-billing-tags/azurepolicyset.json "Billing Tags Policy Initiative")]
 
-É possível implantar este modelo usando o [Portal do Azure](#deploy-with-the-portal) ou com o [PowerShell](#deploy-with-powershell).
-
-## <a name="deploy-with-the-portal"></a>Implantar com o portal
-
-[![Implantar o exemplo de Política no Azure](https://azuredeploy.net/deploybutton.png)](https://aka.ms/getpolicy)
+Você pode implantar esse modelo com o [PowerShell](#deploy-with-powershell).
 
 ## <a name="deploy-with-powershell"></a>Implantação com o PowerShell
 

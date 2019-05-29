@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 4/08/2019
+ms.date: 05/10/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 9e8f450825b7b4ad0402b8976d68bc23c18ce855
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: e3c645ea748834340a2e6cfb8d3e7e1b1e876dcf
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59357867"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540844"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-vmware-vms"></a>Configurar a recuperação de desastre de VMs VMware locais para o Azure
 
@@ -53,7 +53,7 @@ Conclua os tutoriais anteriores:
 2. Em **Introdução**, selecione Site Recovery. Depois selecione **Preparar Infraestrutura**.
 3. Em **Objetivo de proteção** > **Onde os seus computadores estão localizados**, selecione **local**.
 4. Em **Para qual deseja replicar os seus computadores**, selecione **Para o Azure**.
-5. Em **Os seus computadores estão virtualizados?**, selecione **Sim, com o Hipervisor do VMware vSphere**. Depois, selecione **OK**.
+5. Em **Os seus computadores estão virtualizados?** , selecione **Sim, com o Hipervisor do VMware vSphere**. Depois, selecione **OK**.
 
 
 
@@ -161,7 +161,7 @@ Selecione e verifique os recursos de destino.
 
 1. Abra o [Portal do Azure](https://portal.azure.com) e selecione **Todos os recursos**.
 2. Selecione o cofre dos Serviços de Recuperação (**ContosoVMVault** neste tutorial).
-3. Para criar uma política de replicação, selecione **Infraestrutura do Site Recovery** > **Políticas de Replicação** > **+Política de Replicação**.
+3. Para criar uma política de replicação, selecione **Infraestrutura do Site Recovery** > **Políticas de Replicação** >  **+Política de Replicação**.
 4. Em **Criar política de replicação**, insira o nome de política. Estamos usando o **VMwareRepPolicy**.
 5. Em **Limite de RPO**, use o padrão de 60 minutos. Esse valor define a frequência em que são criados os pontos de recuperação. Um alerta será gerado se a replicação contínua exceder esse limite.
 6. Em **Retenção do ponto de recuperação**, especifique quanto tempo cada ponto de recuperação será retido. Para este tutorial, estamos utilizando 72 horas. VMs replicadas podem ser recuperadas em qualquer ponto em uma janela de retenção.
@@ -180,7 +180,7 @@ Habilite a replicação para VMs conforme demonstrado a seguir:
 1. Em **Origem**, selecione **Local**, e selecione o servidor de configuração no **Local de origem**.
 1. Em **Tipo de máquina**, selecione **Máquinas Virtuais**.
 1. Em **Hipervisor do vCenter/vSphere**, selecione o host vSphere ou o servidor vCenter que gerencia o host.
-1. Selecione o servidor de processos (instalado por padrão na VM do servidor de configuração). Depois, selecione **OK**.
+1. Selecione o servidor de processos (instalado por padrão na VM do servidor de configuração). Depois, selecione **OK**. O status de integridade de cada servidor de processo é indicado de acordo com os limites recomendados e outros parâmetros. Escolha um servidor de processo íntegro. Um servidor de processo [crítico](vmware-physical-azure-monitor-process-server.md#process-server-alerts) não pode ser escolhido. Você pode [solucionar problemas e resolver](vmware-physical-azure-troubleshoot-process-server.md) os erros **ou** configurar um [servidor de processo de expansão](vmware-azure-set-up-process-server-scale.md).
 1. Em **Destino**, selecione a assinatura e o grupo de recursos em que deseja criar as VMs com failover. Estamos utilizando o Modelo de implantação do Azure Resource Manager. 
 1. Selecione a rede e a sub-rede do Azure às quais conectar as VMs do Azure quando elas forem criadas após o failover.
 1. Selecione **Configurar agora para computadores selecionados** para aplicar a configuração de rede a todas as VMs nas quais você habilitar a replicação. Selecione **Configurar mais tarde** para selecionar a rede do Azure por computador.

@@ -1,25 +1,25 @@
 ---
 title: Como configurar vários mestres no Azure Cosmos DB
-description: Saiba como configurar vários mestres nos aplicativos do Azure Cosmos DB
+description: Saiba como configurar vários mestres nos aplicativos no Azure Cosmos DB.
 author: rimman
 ms.service: cosmos-db
 ms.topic: sample
 ms.date: 04/15/2019
 ms.author: rimman
-ms.openlocfilehash: b862c59002369662d37b6d6a9de28370b0000497
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 86f5d64391dd5312d8c51a5b639b790e62b6710d
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59682263"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65560252"
 ---
-# <a name="how-to-configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Como configurar vários mestres nos aplicativos que usam o Azure Cosmos DB
+# <a name="configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Configurar vários mestres nos aplicativos que usam o Azure Cosmos DB
 
-Para usar recursos de vários mestres em seu aplicativo, você precisará habilitar gravações em várias regiões e configurar a capacidade de hospedagem múltipla (multihoming) no Azure Cosmos DB. A hospedagem múltipla é configurada com a definição da região na qual o aplicativo é implantado.
+Para usar o recurso de vários mestres em seu aplicativo, você precisará habilitar gravações em várias regiões e configurar a capacidade de hospedagem múltipla no Azure Cosmos DB. Para configurar a hospedagem múltipla, defina a região em que o aplicativo está implantado.
 
 ## <a id="netv2"></a>SDK do .NET v2
 
-Para habilitar vários mestres nos aplicativos, defina `UseMultipleWriteLocations` como verdadeiro e configure `SetCurrentLocation` para a região na qual o aplicativo está sendo implantado e o Azure Cosmos DB é replicado.
+Para habilitar vários mestres em seu aplicativo, defina `UseMultipleWriteLocations` como `true`. Além disso, defina `SetCurrentLocation` como a região na qual o aplicativo está sendo implantado e em que o Azure Cosmos DB está replicado:
 
 ```csharp
 ConnectionPolicy policy = new ConnectionPolicy
@@ -33,7 +33,7 @@ policy.SetCurrentLocation("West US 2");
 
 ## <a id="netv3"></a>SDK do .NET v3 (versão prévia)
 
-Para habilitar vários mestres nos aplicativos, configure `UseCurrentRegion` para a região na qual o aplicativo está sendo implantado e o Cosmos DB é replicado.
+Para habilitar vários mestres no seu aplicativo, defina `UseCurrentRegion` como a região na qual o aplicativo está sendo implantado e o Cosmos DB está replicado:
 
 ```csharp
 CosmosConfiguration config = new CosmosConfiguration("endpoint", "key");
@@ -43,7 +43,7 @@ CosmosClient client = new CosmosClient(config);
 
 ## <a id="java"></a>SDK de Java Assíncrono
 
-Para habilitar vários mestres nos aplicativos, defina `policy.setUsingMultipleWriteLocations(true)` e configure `policy.setPreferredLocations` para a região na qual o aplicativo está sendo implantado e o Cosmos DB é replicado.
+Para habilitar vários mestres no seu aplicativo, defina `policy.setUsingMultipleWriteLocations(true)` e defina `policy.setPreferredLocations` como a região na qual o aplicativo está sendo implantado e o Cosmos DB está replicado:
 
 ```java
 ConnectionPolicy policy = new ConnectionPolicy();
@@ -58,9 +58,9 @@ AsyncDocumentClient client =
         .withConnectionPolicy(policy).build();
 ```
 
-## <a id="javascript"></a>SDK do Node.js, SDK do JavaScript e TypeScript SDK
+## <a id="javascript"></a>SDK do Node.js, do JavaScript e do TypeScript
 
-Para habilitar vários mestres nos aplicativos, defina `connectionPolicy.UseMultipleWriteLocations` como verdadeiro e configure `connectionPolicy.PreferredLocations` para a região na qual o aplicativo está sendo implantado e o Cosmos DB é replicado.
+Para habilitar vários mestres em seu aplicativo, defina `connectionPolicy.UseMultipleWriteLocations` como `true`. Além disso, defina `connectionPolicy.PreferredLocations` como a região na qual o aplicativo está sendo implantado e em que o Cosmos DB está replicado:
 
 ```javascript
 const connectionPolicy: ConnectionPolicy = new ConnectionPolicy();
@@ -77,7 +77,7 @@ const client = new CosmosClient({
 
 ## <a id="python"></a>SDK do Python
 
-Para habilitar vários mestres nos aplicativos, defina `connection_policy.UseMultipleWriteLocations` como verdadeiro e configure `connection_policy.PreferredLocations` para a região na qual o aplicativo está sendo implantado e o Cosmos DB é replicado.
+Para habilitar vários mestres em seu aplicativo, defina `connection_policy.UseMultipleWriteLocations` como `true`. Além disso, defina `connection_policy.PreferredLocations` como a região na qual o aplicativo está sendo implantado e em que o Cosmos DB está replicado.
 
 ```python
 connection_policy = documents.ConnectionPolicy()
@@ -89,14 +89,14 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {'masterKey': self.ac
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Em seguida, você poderá ler os artigos a seguir:
+Leia os seguintes artigos:
 
-* [Utilizar tokens de sessão para gerenciar a consistência no Azure Cosmos DB](how-to-manage-consistency.md#utilize-session-tokens)
+* [Usar tokens de sessão para gerenciar a consistência no Azure Cosmos DB](how-to-manage-consistency.md#utilize-session-tokens)
 * [Tipos de conflitos e políticas de resolução no Azure Cosmos DB](conflict-resolution-policies.md)
 * [Alta disponibilidade no Azure Cosmos DB](high-availability.md)
 * [Níveis de coerência no Azure Cosmos DB](consistency-levels.md)
-* [Escolhendo o nível de consistência correto no Azure Cosmos DB](consistency-levels-choosing.md)
+* [Escolher o nível de consistência correto no Azure Cosmos DB](consistency-levels-choosing.md)
 * [Compensações de consistência, disponibilidade e desempenho no Azure Cosmos DB](consistency-levels-tradeoffs.md)
 * [Equilíbrio entre disponibilidade e desempenho para vários níveis de coerência](consistency-levels-tradeoffs.md)
 * [Taxa de transferência provisionada para dimensionamento global](scaling-throughput.md)
-* [Distribuição global – nos bastidores](global-dist-under-the-hood.md)
+* [Distribuição global: Nos bastidores](global-dist-under-the-hood.md)

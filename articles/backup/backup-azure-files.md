@@ -8,12 +8,12 @@ ms.date: 01/31/2019
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: ac9a748742bda6b1e7a321a427090662542f1032
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: f20cc1107476f8d65323d277a53086b8bd035a1b
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55486904"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65518917"
 ---
 # <a name="back-up-azure-file-shares"></a>Backup de compartilhamentos de arquivos do Azure
 Este artigo explica como usar o Portal do Azure para fazer backup e restaurar [compartilhamentos de arquivos do Azure](../storage/files/storage-files-introduction.md) no Azure.
@@ -52,11 +52,11 @@ Este tutorial presume que você já estabeleceu um compartilhamento de arquivos 
 
     ![Escolha o compartilhamento de arquivos do Azure como meta de Backup](./media/backup-file-shares/overview-backup-page.png)
 
-2. No menu **Meta de Backup**, em **Do que deseja fazer backup?**, escolha o Compartilhamento de Arquivos do Azure.
+2. No menu **Meta de Backup**, em **Do que deseja fazer backup?** , escolha o Compartilhamento de Arquivos do Azure.
 
     ![Escolha o compartilhamento de arquivos do Azure como meta de Backup](./media/backup-file-shares/choose-azure-fileshare-from-backup-goal.png)
 
-3. Clique em **Backup** para configurar o compartilhamento de arquivos do Azure para seu cofre de Serviços de Recuperação. 
+3. Clique em **Backup** para configurar o compartilhamento de arquivos do Azure para seu cofre de Serviços de Recuperação.
 
    ![Clique em Backup para associar o compartilhamento de arquivos do Azure ao cofre](./media/backup-file-shares/set-backup-goal.png)
 
@@ -85,7 +85,7 @@ Ocasionalmente, talvez você queira gerar um instantâneo de backup ou um ponto 
 
    ![Clique em Backup para associar o compartilhamento de arquivos do Azure ao cofre](./media/backup-file-shares/list-of-backup-items.png)
 
-2. Na lista, selecione **Armazenamento do Azure (Arquivos do Azure)**. A lista de compartilhamentos de arquivos do Azure é exibida.
+2. Na lista, selecione **Armazenamento do Azure (Arquivos do Azure)** . A lista de compartilhamentos de arquivos do Azure é exibida.
 
    ![Clique em Backup para associar o compartilhamento de arquivos do Azure ao cofre](./media/backup-file-shares/list-of-azure-files-backup-items.png)
 
@@ -123,10 +123,12 @@ Você pode monitorar o progresso de todos os trabalhos na página **Trabalhos de
 Para abrir a página **Trabalhos de Backup**:
 
 - Abra o cofre de Serviços de Recuperação que deseja monitorar e, no menu Cofre de Serviços de Recuperação, clique em **Trabalhos** e depois em **Trabalhos de Backup**.
+
    ![Selecionar o trabalho que deseja monitorar](./media/backup-file-shares/open-backup-jobs.png)
 
     A lista de trabalhos de backup e o status desses trabalhos são exibidos.
-   ![Selecionar o trabalho que deseja monitorar](./media/backup-file-shares/backup-jobs-progress-list.png)
+
+    ![Selecionar o trabalho que deseja monitorar](./media/backup-file-shares/backup-jobs-progress-list.png)
 
 ### <a name="create-a-new-policy"></a>Criar uma nova política
 
@@ -164,7 +166,7 @@ Para parar a proteção de um compartilhamento de arquivos do Azure:
 
    ![Clique em Backup para associar o compartilhamento de arquivos do Azure ao cofre](./media/backup-file-shares/list-of-backup-items.png)
 
-2. Na lista **Tipo de Gerenciamento de Backup**, selecione **Armazenamento do Azure (Arquivos do Azure)**. A lista de itens de backup para (Armazenamento do Azure (Arquivos do Azure)) é exibida.
+2. Na lista **Tipo de Gerenciamento de Backup**, selecione **Armazenamento do Azure (Arquivos do Azure)** . A lista de itens de backup para (Armazenamento do Azure (Arquivos do Azure)) é exibida.
 
    ![clicar no item para abrir o menu adicional](./media/backup-file-shares/azure-file-share-backup-items.png)
 

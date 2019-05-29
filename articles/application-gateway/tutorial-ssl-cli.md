@@ -7,21 +7,21 @@ manager: jpconnock
 ms.service: application-gateway
 ms.topic: tutorial
 ms.workload: infrastructure-services
-ms.date: 7/14/2018
+ms.date: 5/20/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 8689918bf33b0efdd9bbfabc6d3751672959c6bb
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: d9007b3f1d4eee436452a3fa75b2880b9e5be461
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753071"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955690"
 ---
-# <a name="tutorial-create-an-application-gateway-with-ssl-termination-using-the-azure-cli"></a>Tutorial: Criar um gateway de aplicativo com terminação SSL usando a CLI do Azure
+# <a name="create-an-application-gateway-with-ssl-termination-using-the-azure-cli"></a>Criar um gateway de aplicativo com terminação SSL usando a CLI do Azure
 
 Você pode usar a CLI do Azure para criar um [gateway de aplicativo](overview.md) com um certificado de [terminação de SSL](ssl-overview.md) que usa [conjunto de dimensionamentos de máquinas virtuais](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) para servidores back-end. Neste exemplo, o conjunto de dimensionamento contém duas instâncias de máquina virtual que são adicionadas ao pool de back-end padrão do gateway de aplicativo.
 
-Neste tutorial, você aprenderá como:
+Neste artigo, você aprenderá a:
 
 > [!div class="checklist"]
 > * Crie um certificado autoassinado
@@ -29,17 +29,17 @@ Neste tutorial, você aprenderá como:
 > * Criar um gateway de aplicativo com o certificado
 > * Criar um conjunto de dimensionamento de máquinas virtuais com o pool de back-end padrão
 
-Se preferir, você pode concluir este tutorial usando o [Azure PowerShell](tutorial-ssl-powershell.md).
+Se preferir, você poderá concluir este procedimento usando o [Azure PowerShell](tutorial-ssl-powershell.md).
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Caso opte por instalar e usar a CLI localmente, este tutorial exigirá que você execute a CLI do Azure versão 2.0.4 ou posterior. Para saber qual é a versão, execute `az --version`. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure](/cli/azure/install-azure-cli).
+Caso opte por instalar e usar a CLI localmente, este artigo exigirá que você execute a CLI do Azure versão 2.0.4 ou posterior. Para saber qual é a versão, execute `az --version`. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-self-signed-certificate"></a>Crie um certificado autoassinado
 
-Para uso em produção, você deve importar um certificado válido assinado por um fornecedor confiável. Para este tutorial, você pode criar um certificado autoassinado e o arquivo pfx usando o comando openssl.
+Para uso em produção, você deve importar um certificado válido assinado por um fornecedor confiável. Para este artigo, você pode criar um certificado autoassinado e o arquivo pfx usando o comando openssl.
 
 ```azurecli-interactive
 openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out appgwcert.crt
@@ -165,7 +165,7 @@ az network public-ip show \
   --output tsv
 ```
 
-Copie o endereço IP público e cole-o na barra de endereços do seu navegador. Para este exemplo, a URL é: **https://52.170.203.149**.
+Copie o endereço IP público e cole-o na barra de endereços do seu navegador. Para este exemplo, a URL é: **https://52.170.203.149** .
 
 ![Aviso de segurança](./media/tutorial-ssl-cli/application-gateway-secure.png)
 
@@ -183,5 +183,4 @@ az group delete --name myResourceGroupAG --location eastus
 
 ## <a name="next-steps"></a>Próximas etapas
 
-> [!div class="nextstepaction"]
-> [Crie um gateway de aplicativo que hospede múltiplos websites](./tutorial-multiple-sites-cli.md)
+* [Crie um gateway de aplicativo que hospede múltiplos websites](./tutorial-multiple-sites-cli.md)

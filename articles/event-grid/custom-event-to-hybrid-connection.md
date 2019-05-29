@@ -9,12 +9,12 @@ ms.date: 02/02/2019
 ms.topic: tutorial
 ms.service: event-grid
 ms.custom: seodec18
-ms.openlocfilehash: 2a050f8bc5d2437c7cdbadcf3296c2ef6d4659dc
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 270059537fc8d06648c86088b22aef5b78ff00ec
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55728632"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606306"
 ---
 # <a name="tutorial-route-custom-events-to-azure-relay-hybrid-connections-with-azure-cli-and-event-grid"></a>Tutorial: Encaminhe eventos personalizados para as Conexões Híbridas de Retransmissão do Azure com a CLI do Azure e a Grade de Eventos
 
@@ -80,7 +80,7 @@ Observe que uma [data de expiração](concepts.md#event-subscription-expiration)
 
 Você precisa de um aplicativo que possa recuperar eventos da conexão híbrida. O [exemplo de Consumidor de Conexão Híbrida da Grade de Eventos do Azure da Microsoft para C#](https://github.com/Azure-Samples/event-grid-dotnet-hybridconnection-destination) executa a operação. Você já atendeu às etapas de pré-requisito.
 
-1. Certifique-se de que tenha o Visual Studio 2017 Versão 15.5 ou posterior.
+1. Certifique-se de que você tem o Visual Studio 2019 ou posterior.
 
 1. Clone o repositório em seu computador local.
 

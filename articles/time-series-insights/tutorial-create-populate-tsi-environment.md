@@ -9,22 +9,22 @@ ms.date: 04/26/2019
 ms.author: anshan
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: 42a7ba0c66bd603b19d60c7b3407ae5ca80db28e
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 3c097ec74f45248a41c6dd4df80cbbd927a9b5ed
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65210177"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827452"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Tutorial: Criar um ambiente do Azure Time Series Insights
 
-Este tutorial guiará você pelo processo de criação de um ambiente Time Series Insight (TSI), preenchido com dados de dispositivos simulados. Neste tutorial, você aprenderá como:
+Este tutorial guiará você pelo processo de criação de um ambiente Time Series Insight, preenchido com os dados de dispositivos simulados. Neste tutorial, você aprenderá como:
 
 > [!div class="checklist"]
-> * Criar um ambiente TSI 
+> * Criar um ambiente do Time Series Insights 
 > * Criar uma solução de simulação de dispositivo que contém um Hub IoT
-> * Conectar o ambiente TSI ao Hub IoT
-> * Executar uma simulação de dispositivo para transmitir dados ao ambiente TSI
+> * Conectar o ambiente do Time Series Insights ao hub IoT
+> * Executar uma simulação de dispositivo para transmitir dados para o ambiente do Time Series Insights
 > * Verificar os dados telemétricos simulados
 
 ## <a name="video"></a>Vídeo
@@ -41,14 +41,14 @@ Este tutorial guiará você pelo processo de criação de um ambiente Time Serie
 
 ## <a name="overview"></a>Visão geral
 
-O ambiente TSI é onde os dados do dispositivo são coletados e armazenados. Depois que os dados forem armazenados no ambiente do TSI, o [Gerenciador do TSI](time-series-quickstart.md) e a [API de Consulta do TSI](/rest/api/time-series-insights/ga-query-api) podem ser usados para consultar e analisar os dados. O Hub IoT é o ponto de conexão usado por todos os dispositivos (simulados ou físicos) para se conectar com segurança e transmitir dados à nuvem do Azure. A [Visão geral do TSI](time-series-insights-overview.md) indica que o Hub IoT do Azure também serve como uma origem do evento para transmitir dados para o ambiente do TSI. Este tutorial usa um [acelerador de solução de IoT](/azure/iot-accelerators/) para gerar e transmitir dados telemétricos de exemplo para o Hub IoT.
+O ambiente do Time Series Insights é o local em que os dados do dispositivo são coletados e armazenados. Uma vez armazenado no ambiente do Time Series Insights, o [Gerenciador do Time Series Insights](time-series-quickstart.md) e a [API de Consulta do Time Series Insights](/rest/api/time-series-insights/ga-query-api) podem ser usados para consultar e analisar os dados. O Hub IoT é o ponto de conexão usado por todos os dispositivos (simulados ou físicos) para se conectar com segurança e transmitir dados à nuvem do Azure. A [Visão Geral do Time Series Insights](time-series-insights-overview.md) observa que o Hub IoT do Azure também serve como uma origem de evento para o fluxo de dados em um ambiente do Time Series Insights. Este tutorial usa um [acelerador de solução de IoT](/azure/iot-accelerators/) para gerar e transmitir dados telemétricos de exemplo para o Hub IoT.
 
 >[!TIP]
 > Os aceleradores de solução de IoT fornecem soluções de nível empresarial pré-configuradas que permitem acelerar o desenvolvimento de soluções personalizadas de IoT.
 
-## <a name="create-a-tsi-environment"></a>Criar um ambiente TSI
+## <a name="create-an-environment"></a>Criar um ambiente
 
-Primeiro, crie um ambiente TSI na sua assinatura do Azure:
+Primeiro, crie um ambiente do Time Series Insights em sua assinatura do Azure:
 
 1. Entre no [Portal do Azure](https://portal.azure.com) usando sua conta da assinatura do Azure.  
 1. Selecione **+ Criar um recurso** no canto superior esquerdo.  
@@ -60,10 +60,10 @@ Primeiro, crie um ambiente TSI na sua assinatura do Azure:
 
    Parâmetro|DESCRIÇÃO
    ---|---
-   **Nome do ambiente** | Escolha um nome exclusivo para ambiente TSI. O nome é usado pelo Gerenciador do TSI e pelas APIs de Consulta.
-   **Assinatura** | As assinaturas são contêineres para recursos do Azure. Escolha uma assinatura na qual o ambiente do TSI será criado.
-   **Grupo de recursos** | Um grupo de recursos é um contêiner para os recursos do Azure. Escolha um grupo de recursos existente ou crie um para o recurso do ambiente do TSI.
-   **Localidade** | Escolha uma região do data center para seu ambiente TSI. Para evitar custos e latência adicionais de largura de banda, é melhor manter o ambiente TSI na mesma região que outros recursos da IoT.
+   **Nome do ambiente** | Escolha um nome exclusivo para o ambiente do Time Series Insights. O nome usado pelo Gerenciador do Time Series Insights e as APIs de Consulta.
+   **Assinatura** | As assinaturas são contêineres para recursos do Azure. Escolha uma assinatura para a qual criar o ambiente do Time Series Insights.
+   **Grupo de recursos** | Um grupo de recursos é um contêiner para os recursos do Azure. Escolha um grupo de recursos existente ou crie um novo para o recurso de ambiente do Time Series Insights.
+   **Localidade** | Escolha uma região do data center para o seu ambiente do Time Series Insights. Para evitar custos de largura de banda adicional e latência, é melhor manter o ambiente do Time Series Insights na mesma região que outros recursos de IoT.
    **SKU de preço** | Escolha a taxa de transferência necessária. Para obter o custo mais baixo e a capacidade inicial, selecione `S1`.
    **Capacidade** | A capacidade é o multiplicador aplicado à taxa de ingresso, à capacidade de armazenamento e ao custo associado com a SKU selecionada.  Você pode alterar a capacidade após a criação. Para obter o custo mais baixo, selecione uma capacidade igual a 1.
 
@@ -77,7 +77,7 @@ Primeiro, crie um ambiente TSI na sua assinatura do Azure:
 
 ## <a name="create-a-device-simulation"></a>Criar uma simulação de dispositivo
 
-Em seguida, crie a solução de simulação do dispositivo, que gerará dados de teste para preencher o seu ambiente TSI:
+Em seguida, crie a solução de simulação do dispositivo, que gerará dados de teste para preencher o seu ambiente do Time Series Insights:
 
 1. Em uma guia/janela separada, acesse [azureiotsolutions.com](https://www.azureiotsolutions.com). Entre usando a mesma conta de assinatura do Azure e selecione o acelerador de **Simulação de Dispositivo**.
 
@@ -88,8 +88,8 @@ Em seguida, crie a solução de simulação do dispositivo, que gerará dados de
    Parâmetro|DESCRIÇÃO
    ---|---
    **Nome da solução** | Um valor exclusivo usado para a criação de um novo grupo de recursos. Os recursos do Azure listados são criados e atribuídos ao grupo de recursos.
-   **Assinatura** | Especifique a mesma assinatura usada para a criação de seu ambiente TSI, na seção anterior.
-   **Região** | Especifique a mesma região usada para a criação de seu ambiente TSI, na seção anterior.
+   **Assinatura** | Especifique a mesma assinatura usada para a criação do ambiente do Time Series Insights na seção anterior.
+   **Região** | Especifique a mesma região usada para a criação do ambiente do Time Series Insights na seção anterior.
    **Implantar recursos opcionais do Azure** | Deixe a opção **Hub IoT** marcada, pois os dispositivos simulados usarão para se conectar/transmitir dados.
 
    Quando terminar, clique em **Criar solução** para provisionar os recursos do Azure da solução. Esse processo pode levar de 6 a 7 minutos para ser concluído.
@@ -107,14 +107,14 @@ Em seguida, crie a solução de simulação do dispositivo, que gerará dados de
 
    [![Recursos da solução de simulação de dispositivo](media/tutorial-create-populate-tsi-environment/ap-device-sim-solution-resources.png)](media/tutorial-create-populate-tsi-environment/ap-device-sim-solution-resources.png#lightbox)
 
-## <a name="connect-the-tsi-environment-to-the-iot-hub"></a>Conectar o ambiente TSI ao Hub IoT
+## <a name="connect-the-environment-to-the-iot-hub"></a>Conectar o ambiente ao Hub IoT
 
 Neste ponto, você aprendeu como criar dois conjuntos de recursos, cada um em seu próprio grupo de recursos:
 
-- Um ambiente do TSI vazio.
+- Um ambiente vazio do Time Series Insights.
 - Recursos da solução de simulação de dispositivo, incluindo um hub IoT, gerado por um acelerador de solução.
 
-Lembre-se de que os dispositivos simulados precisam se conectar a um Hub IoT para transmitir dados de dispositivo. Para transmitir dados para o ambiente TSI, você precisa fazer alterações de configuração para o Hub IoT e o ambiente TSI.
+Lembre-se de que os dispositivos simulados precisam se conectar a um Hub IoT para transmitir dados de dispositivo. Para criar um fluxo de dados para o ambiente do Time Series Insights, você precisará fazer alterações de configuração ao hub IoT e ao ambiente do Time Series Insights.
 
 ### <a name="iot-hub-configuration-define-a-consumer-group"></a>Configuração do Hub IoT: definir um grupo de consumidores
 
@@ -132,17 +132,17 @@ Em seguida, você definirá uma nova propriedade de **grupo de consumidores** no
 
    [![Pontos de extremidade do Hub IoT da solução de simulação de dispositivo](media/tutorial-create-populate-tsi-environment/ap-add-iot-hub-consumer-group-create.png)](media/tutorial-create-populate-tsi-environment/ap-add-iot-hub-consumer-group-create.png#lightbox)
 
-### <a name="tsi-configuration-define-an-event-source"></a>Configuração do TSI: definir uma origem do evento
+### <a name="environment-configuration-define-an-event-source"></a>Configuração do ambiente: definir uma origem do evento
 
-Agora, conecte o novo ponto de extremidade de evento do **grupo de consumidores** do Hub IoT ao ambiente do TSI como uma **origem do evento**.
+Agora, conecte o novo ponto de extremidade de evento do **grupo de consumidores** do Hub IoT ao ambiente do Time Series Insights como uma **origem do evento**.
 
-1. Vá até a página **Visão geral** do grupo de recursos que você criou para o ambiente TSI e selecione o ambiente TSI:
+1. Vá para a página **Visão geral** do grupo de recursos criado para o ambiente do Time Series Insights e selecione o ambiente do Time Series Insights:
 
-   [![Ambiente e grupo de recursos do ambiente TSI](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-view-rg.png)](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-view-rg.png#lightbox)
+   [![Ambiente e grupo de recursos do ambiente do Time Series Insights](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-view-rg.png)](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-view-rg.png#lightbox)
 
-1. Na página do ambiente do TSI, selecione **Origens do Evento** e, em seguida, clique em **+ Adicionar**.
+1. Na página do ambiente do Time Series Insights, selecione **Origens do Evento** e, em seguida, clique em **+ Adicionar**.
 
-   [![Visão geral do ambiente do TSI](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-add.png)](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-add.png#lightbox)
+   [![Visão geral do ambiente do Time Series Insights](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-add.png)](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-add.png#lightbox)
 
 1. Insira os parâmetros necessários na página **Nova origem do evento**.
 
@@ -151,20 +151,20 @@ Agora, conecte o novo ponto de extremidade de evento do **grupo de consumidores*
    **Nome da origem do evento** | Requer um valor exclusivo, que é usado para nomear a origem do evento.
    **Fonte** | Selecione **Hub IoT**.
    **Importar opção** | Selecione o `Use IoT hub from available subscriptions` padrão. Essa opção fará com que a próxima lista suspensa seja preenchida com as assinaturas disponíveis.
-   **Assinatura** | Selecione a mesma assinatura em que você criou o ambiente TSI e os recursos de Simulação de dispositivo.
+   **Assinatura** | Selecione a mesma assinatura em que você criou o ambiente do Time Series Insights e os recursos de Simulação de dispositivo.
    **Nome do Hub IoT** | Deve ser usado como padrão para o nome do Hub IoT que você anotou anteriormente. Caso contrário, selecione o Hub IoT correto.
    **Nome da política do Hub IoT** | Selecione **iothubowner**.
    **Grupo de consumidores do Hub IoT** | Deve ser usado como padrão para o nome do grupo de consumidores do Hub IoT que você criou anteriormente. Caso contrário, selecione o nome do grupo de consumidores correto.
    **Formato de serialização do evento** | Mantenha-o como o valor padrão de `JSON`.
    **Nome da propriedade carimbo de data/hora** | Especifique-o como `timestamp`.
 
-   Ao concluir, clique em **Criar** para adicionar a origem do evento. Ao retornar para a página **Visão geral** do grupo de recursos, junto com seu recurso de ambiente TSI você vê um novo recurso de “Origem do evento de Time Series Insights”.
+   Ao concluir, clique em **Criar** para adicionar a origem do evento. Ao retornar para a página **Visão geral** do grupo de recursos, junto com seu recurso de ambiente do Time Series Insights você vê um novo recurso de "Origem do evento de Time Series Insights".
 
-   [![Nova origem do evento do ambiente do TSI](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-add-event-source.png)](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-add-event-source.png#lightbox)
+   [![Tempo Origem de evento do novo ambiente do Time Series Insights](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-add-event-source.png)](media/tutorial-create-populate-tsi-environment/ap-add-env-event-source-add-event-source.png#lightbox)
 
-## <a name="run-device-simulation-to-stream-data-into-tsi"></a>Executar uma simulação de dispositivo para transmitir dados para o TSI
+## <a name="run-device-simulation-to-stream-data"></a>Executar simulação de dispositivo para transmitir dados
 
-Agora que todo o trabalho de configuração está concluído, é hora de preencher o ambiente TSI com dados de exemplo dos dispositivos simulados.
+Agora que todo o trabalho de configuração está concluído, é hora de preencher o ambiente do Time Series Insights com os dados de exemplo dos dispositivos simulados.
 
 Você pode se lembrar de [Criar uma seção de simulação de dispositivo](#create-a-device-simulation), vários recursos do Azure foram criados pelo acelerador para oferecer suporte à solução. Junto com o Hub IoT discutido anteriormente, um aplicativo Web do Serviço de Aplicativo do Azure foi gerado para criar e transmitir a telemetria do dispositivo simulado.
 
@@ -196,35 +196,35 @@ Você pode se lembrar de [Criar uma seção de simulação de dispositivo](#crea
 
 ## <a name="verify-the-telemetry-data"></a>Verificar os dados telemétricos
 
-Nesta seção final, verifique se os dados telemétricos foram gerados e armazenados no ambiente TSI. Para verificar os dados, use o explorer do Time Series Insights, que é usado para consultar e analisar dados telemétricos.
+Nesta seção final, verifique se os dados telemétricos foram gerados e armazenados no ambiente do Time Series Insights. Para verificar os dados, use o explorer do Time Series Insights, que é usado para consultar e analisar dados telemétricos.
 
-1. Retorne à página **Visão Geral** do grupo de recursos do ambiente do TSI. Selecione o ambiente do TSI.
+1. Retorne à página **Visão geral** do grupo de recursos do ambiente do Time Series Insights. Selecione o ambiente do Time Series Insights.
 
-   [![Ambiente e grupo de recursos do ambiente TSI](media/tutorial-create-populate-tsi-environment/ap-view-tsi-env-rg.png)](media/tutorial-create-populate-tsi-environment/ap-view-tsi-env-rg.png#lightbox)
+   [![Ambiente e grupo de recursos do ambiente do Time Series Insights](media/tutorial-create-populate-tsi-environment/ap-view-tsi-env-rg.png)](media/tutorial-create-populate-tsi-environment/ap-view-tsi-env-rg.png#lightbox)
 
-1. Na página **Visão Geral** do ambiente do TSI, clique em **URL do Gerenciador do Time Series Insights** para abrir o Gerenciador do TSI.
+1. Na página **Visão geral** do ambiente do Time Series Insights, clique em **URL do Gerenciador do Time Series Insights** para abrir o Gerenciador do Time Series Insights.
 
-   [![Explorer do TSI](media/tutorial-create-populate-tsi-environment/ap-view-tsi-env-explorer-url.png)](media/tutorial-create-populate-tsi-environment/ap-view-tsi-env-explorer-url.png#lightbox)
+   [![Gerenciador do Time Series Insights](media/tutorial-create-populate-tsi-environment/ap-view-tsi-env-explorer-url.png)](media/tutorial-create-populate-tsi-environment/ap-view-tsi-env-explorer-url.png#lightbox)
 
-1. O explorer do TSI carregará e autenticará usando sua conta do portal do Azure. Após a exibição inicial, você pode ver na área do gráfico que o ambiente TSI realmente foi preenchido com dados telemétricos simulados. Para filtrar um intervalo mais estreito de tempo, selecione na lista suspensa no canto superior esquerdo. Depois insira um intervalo de tempo grande o suficiente para abranger a duração da simulação de dispositivo. Em seguida, clique na lupa de pesquisa.
+1. O Gerenciador do Time Series Insights será carregado e autenticado usando sua conta do portal do Azure. Após a exibição inicial, você pode ver na área do gráfico que o ambiente Time Series Insights realmente foi preenchido com os dados telemétricos simulados. Para filtrar um intervalo mais estreito de tempo, selecione na lista suspensa no canto superior esquerdo. Depois insira um intervalo de tempo grande o suficiente para abranger a duração da simulação de dispositivo. Em seguida, clique na lupa de pesquisa.
 
-   [![Filtro de intervalo de tempo do explorer do TSI ](media/tutorial-create-populate-tsi-environment/tsie-filter-time-range.png)](media/tutorial-create-populate-tsi-environment/tsie-filter-time-range.png#lightbox)
+   [![Filtro de intervalo de tempo do Gerenciador do Time Series Insights](media/tutorial-create-populate-tsi-environment/tsie-filter-time-range.png)](media/tutorial-create-populate-tsi-environment/tsie-filter-time-range.png#lightbox)
 
-1. Restringir o intervalo de tempo permite que o gráfico amplie as intermitências distintas da transferência de dados para o Hub IoT e o ambiente TSI. Observe também o texto **Transmissão completa** no canto superior direito, que mostra o número total de eventos encontrados. Arraste também o controle deslizante **Tamanho do intervalo** para controlar a granularidade do gráfico.
+1. Restringir o intervalo de tempo permite que o gráfico amplie as intermitências distintas da transferência de dados para o Hub IoT e o ambiente do Time Series Insights. Observe também o texto **Transmissão completa** no canto superior direito, que mostra o número total de eventos encontrados. Arraste também o controle deslizante **Tamanho do intervalo** para controlar a granularidade do gráfico.
 
-   [![Exibição filtrada do intervalo de tempo do explorer do TSI](media/tutorial-create-populate-tsi-environment/tsie-view-time-range.png)](media/tutorial-create-populate-tsi-environment/tsie-view-time-range.png#lightbox)
+   [![Exibição filtrada do intervalo de tempo do Gerenciador do Time Series Insights](media/tutorial-create-populate-tsi-environment/tsie-view-time-range.png)](media/tutorial-create-populate-tsi-environment/tsie-view-time-range.png#lightbox)
 
 1. Por fim, clique também em uma região para filtrar um intervalo e, em seguida, clique com o botão direito do mouse e use **Explorar eventos** para mostrar os detalhes do evento na exibição de tabela **Eventos**.
 
-   [![Exibição filtrada e eventos do intervalo de tempo do explorer do TSI](media/tutorial-create-populate-tsi-environment/tsie-view-time-range-events.png)](media/tutorial-create-populate-tsi-environment/tsie-view-time-range-events.png#lightbox)
+   [![Eventos e exibição filtrada do intervalo de tempo do Gerenciador do Time Series Insights](media/tutorial-create-populate-tsi-environment/tsie-view-time-range-events.png)](media/tutorial-create-populate-tsi-environment/tsie-view-time-range-events.png#lightbox)
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Este tutorial cria vários serviços que executam o Azure, para oferecer suporte à solução de ambiente TSI e simulação de dispositivo. Caso queira abandonar e/ou atrasar a conclusão desta série de tutoriais, é recomendável excluir todos os recursos para evitar incorrer em custos desnecessários.
+Este tutorial cria vários serviços que executam o Azure, para oferecer suporte à solução de ambiente do Time Series Insights e simulação de dispositivo. Caso queira abandonar e/ou atrasar a conclusão desta série de tutoriais, é recomendável excluir todos os recursos para evitar incorrer em custos desnecessários.
 
 No menu à esquerda no portal do Azure:
 
-1. Clique no ícone de **Grupos de recursos**, depois selecione o grupo de recursos que você criou para o ambiente TSI. Na parte superior da página, clique em **Excluir grupo de recursos**, insira o nome do grupo de recursos e depois clique em **Excluir**.
+1. Clique no ícone **Grupos de recursos**, depois selecione o grupo de recursos que você criou para o Ambiente do Time Series Insights. Na parte superior da página, clique em **Excluir grupo de recursos**, insira o nome do grupo de recursos e depois clique em **Excluir**.
 
 1. Clique no ícone de **Grupos de recursos**, depois selecione o grupo de recursos que foi criado com o acelerador de solução de simulação do dispositivo. Na parte superior da página, clique em **Excluir grupo de recursos**, insira o nome do grupo de recursos e, em seguida, clique em **Excluir**
 
@@ -233,13 +233,13 @@ No menu à esquerda no portal do Azure:
 Neste tutorial, você aprendeu como:
 
 > [!div class="checklist"]
-> * Criar um ambiente TSI 
+> * Criar um ambiente do Time Series Insights 
 > * Criar uma solução de simulação de dispositivo que contém um Hub IoT
-> * Conectar o ambiente TSI ao Hub IoT
-> * Executar uma simulação de dispositivo para transmitir dados ao ambiente TSI
+> * Conectar o ambiente do Time Series Insights ao hub IoT
+> * Executar uma simulação de dispositivo para transmitir dados para o ambiente do Time Series Insights
 > * Verificar os dados telemétricos simulados
 
-Agora que você sabe como criar seu próprio ambiente TSI, saiba como criar um aplicativo Web que recebe dados de um ambiente TSI:
+Agora que você sabe como criar seu próprio ambiente do Time Series Insights, saiba como criar um aplicativo Web que recebe dados de um ambiente do Time Series Insights:
 
 > [!div class="nextstepaction"]
 > [Criar um aplicativo Web de página única do Azure Time Series Insights](tutorial-create-tsi-sample-spa.md)

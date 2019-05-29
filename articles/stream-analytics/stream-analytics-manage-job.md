@@ -9,12 +9,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seodec18
 ms.date: 12/07/2018
-ms.openlocfilehash: 261b55f722fdc3c1e8f4b45debc664f49db3f898
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 056e5a0f56e1a8998288e6a78f448f0f91777e1d
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59523538"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969290"
 ---
 # <a name="analyze-phone-call-data-with-stream-analytics-and-visualize-results-in-power-bi-dashboard"></a>Analisar os dados de uma chamada telefônica com o Stream Analytics e visualizar os resultados em um dashboard do Power BI
 
@@ -99,7 +99,7 @@ Antes de iniciar o aplicativo TelcoGenerator, configure-o para enviar dados para
 3. Atualize o elemento `<appSettings>` no arquivo de configuração com os seguintes detalhes:
 
    * Defina o valor da chave *EventHubName* como o valor de EntityPath na cadeia de conexão.
-   * Defina o valor da chave *Microsoft.ServiceBus.ConnectionString* para a cadeia de conexão sem o valor de EntityPath.
+   * Defina o valor da chave *Microsoft.ServiceBus.ConnectionString* para a cadeia de conexão sem o valor de EntityPath (não se esqueça de remover o ponto e vírgula que o precede).
 
 4. Salve o arquivo.
 5. Em seguida, abra uma janela de comando e altere para a pasta onde o aplicativo TelcoGenerator foi descompactado. Em seguida, digite o seguinte comando:
@@ -118,7 +118,7 @@ Antes de iniciar o aplicativo TelcoGenerator, configure-o para enviar dados para
    |**Registro**  |**Definição**  |
    |---------|---------|
    |CallrecTime    |  Carimbo de data/hora para a hora de início da chamada.       |
-   |SwitchNum     |  Chave do telefone usada para se conectar à chamada. Neste exemplo, as opções são cadeias de caracteres que representam o país de origem (Estados Unidos, China, Reino Unido, Alemanha ou Austrália).       |
+   |SwitchNum     |  Chave do telefone usada para se conectar à chamada. Neste exemplo, as opções são cadeias de caracteres que representam o país/região de origem (Estados Unidos, China, Reino Unido, Alemanha ou Austrália).       |
    |CallingNum     |  Número de telefone do autor da chamada.       |
    |CallingIMSI     |  A Identidade do Assinante Móvel Internacional (IMSI). É um identificador exclusivo do autor da chamada.       |
    |CalledNum     |   O número de telefone do destinatário da chamada.      |
@@ -212,7 +212,7 @@ Neste exemplo, as chamadas fraudulentas são feitas pelo mesmo usuário em cinco
    GROUP BY TumblingWindow(Duration(second, 1))
    ```
 
-   Para verificar chamadas fraudulentas, você pode fazer a autojunção dos dados de streaming com base no valor `CallRecTime`. Em seguida, você pode procurar registros de chamada em que o valor `CallingIMSI` (o número de origem) é o mesmo, mas o valor `SwitchNum` (país de origem) é diferente. Quando você usa uma operação JOIN com os dados de streaming, a junção deve fornecer alguns limites sobre a distância de tempo que as linhas correspondentes podem ter umas das outras. Como o fluxo de dados é infinito, os limites de tempo para a relação são especificados dentro da cláusula **ON** da junção, usando a função [DATEDIFF](https://msdn.microsoft.com/azure/stream-analytics/reference/datediff-azure-stream-analytics).
+   Para verificar chamadas fraudulentas, você pode fazer a autojunção dos dados de streaming com base no valor `CallRecTime`. Em seguida, você pode procurar registros de chamada em que o valor `CallingIMSI` (o número de origem) é o mesmo, mas o valor `SwitchNum` (país/região de origem) é diferente. Quando você usa uma operação JOIN com os dados de streaming, a junção deve fornecer alguns limites sobre a distância de tempo que as linhas correspondentes podem ter umas das outras. Como o fluxo de dados é infinito, os limites de tempo para a relação são especificados dentro da cláusula **ON** da junção, usando a função [DATEDIFF](https://msdn.microsoft.com/azure/stream-analytics/reference/datediff-azure-stream-analytics).
 
    Essa consulta é como uma junção SQL normal, exceto pela função **DATEDIFF**. A função **DATEDIFF** usada nessa consulta é específica do Stream Analytics e ela deverá ser exibida dentro na cláusula `ON...BETWEEN`.
 

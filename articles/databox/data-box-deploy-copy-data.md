@@ -1,19 +1,19 @@
 ---
-title: Copiar dados para o Microsoft Azure Data Box por SMB | Microsoft Docs
+title: Tutorial para copiar dados por meio de SMB no Azure Data Box | Microsoft Docs
 description: Saiba como copiar dados para o Azure Data Box por SMB
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 01/28/2019
+ms.date: 05/14/2019
 ms.author: alkohli
-ms.openlocfilehash: 3474d4ee8751bcd472aa109e9e541d639344276d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 83eabca3b2ec1903e25b02083b1a2d5b49745396
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58118077"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65800464"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-via-smb"></a>Tutorial: Copiar dados para o Azure Data Box por SMB
 
@@ -41,8 +41,8 @@ Antes de começar, verifique se:
 
 Com base na conta de armazenamento selecionada, o Data Box cria até:
 - Três compartilhamentos para cada conta de armazenamento associada para GPv1 e GPv2.
-- Um compartilhamento para armazenamento premium. 
-- Um compartilhamento para conta de armazenamento de blobs. 
+- Um compartilhamento para armazenamento premium.
+- Um compartilhamento para conta do Armazenamento de Blobs.
 
 Em compartilhamentos de blob de blocos e blob de páginas, as entidades de primeiro nível são contêineres e as entidades de segundo nível são blobs. Em compartilhamentos de Arquivos do Azure, as entidades de primeiro nível são compartilhamentos e entidades de segundo nível são arquivos.
 
@@ -91,7 +91,7 @@ Se estiver usando um computador host do Windows Server, siga estas etapas para c
 
     **Sempre crie uma pasta para os arquivos que você pretende copiar no compartilhamento e, em seguida, copie os arquivos para a pasta**. A pasta criada nos compartilhamentos de blob de blocos e de blob de páginas representa um contêiner no qual os dados são carregados como blobs. Não é possível copiar arquivos diretamente para a pasta *raiz* na conta de armazenamento.
     
-Se estiver usando um cliente Linux, use o seguinte comando para montar o compartilhamento SMB. O parâmetro "vers" abaixo é a versão do SMB compatível com seu host do Linux. Conecte a versão adequada no comando a seguir. Para versões do SMB compatíveis com o Data Box, consulte [Sistemas de arquivo compatíveis para clientes Linux](https://docs.microsoft.com/en-us/azure/databox/data-box-system-requirements#supported-file-systems-for-linux-clients) 
+Se estiver usando um cliente Linux, use o seguinte comando para montar o compartilhamento SMB. O parâmetro "vers" abaixo é a versão do SMB compatível com seu host do Linux. Conecte a versão adequada no comando a seguir. Para versões do SMB compatíveis com o Data Box, consulte [Sistemas de arquivo compatíveis para clientes Linux](https://docs.microsoft.com/azure/databox/data-box-system-requirements#supported-file-systems-for-linux-clients) 
 
     `sudo mount -t nfs -o vers=2.1 10.126.76.172:/devicemanagertest1_BlockBlob /home/databoxubuntuhost/databox`
     
@@ -132,7 +132,7 @@ Depois de conectar-se ao compartilhamento SMB, comece a cópia de dados. Você p
 |/z    | Copia os arquivos no modo de reinicialização, use essa opção se o ambiente estiver instável. Esta opção reduz o rendimento devido ao log adicional.      |
 | /zb     | Usa o modo de reinicialização. Se o acesso for negado, esta opção usa o modo Backup. Esta opção reduz o rendimento devido ao ponto de verificação.         |
 |/efsraw     | Copia todos os arquivos criptografados em modo raw do EFS. Use somente com arquivos criptografados.         |
-|log+:<LogFile>| Acrescenta a saída ao arquivo de log existente.|    
+|log+:\<LogFile>| Acrescenta a saída ao arquivo de log existente.|    
  
 A amostra a seguir mostra a saída do comando robocopy para copiar arquivos para a Caixa de Dados.
     
@@ -202,7 +202,7 @@ Para otimizar o desempenho, use os seguintes parâmetros de robocopy ao copiar o
 
 Para mais informações sobre o comando Robocopy, vá para [Robocopy e alguns exemplos](https://social.technet.microsoft.com/wiki/contents/articles/1073.robocopy-and-a-few-examples.aspx).
 
-Abra a pasta de destino para exibir e verificar os arquivos copiados. Se você tiver algum erro durante o processo de cópia, baixe os arquivos de erro para solução de problemas.
+Abra a pasta de destino para exibir e verificar os arquivos copiados. Se você tiver algum erro durante o processo de cópia, baixe os arquivos de erro para solução de problemas. Para obter mais informações, veja [Exibir logs de erros durante a cópia de dados para o Data Box](data-box-logs.md#view-error-log-during-data-copy-to-data-box). Para obter uma lista detalhada de erros durante a cópia de dados, veja [Solucionar problemas do Data Box](data-box-troubleshoot.md).
 
 Para garantir a integridade dos dados, a soma de verificação é computada em linha à medida que os dados são copiados. Quando a cópia estiver concluída, verifique o espaço usado e o espaço livre no seu dispositivo.
     

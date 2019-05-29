@@ -8,14 +8,14 @@ manager: ''
 ms.service: automation
 ms.topic: tutorial
 ms.workload: infrastructure-services
-ms.date: 01/14/2019
+ms.date: 05/10/2019
 ms.author: eamono
-ms.openlocfilehash: d0764131f0e7e321a87ed383636606b2124ef7d9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9f99ce5862850c2453e9e72241fff77fe091616f
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58173763"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65521423"
 ---
 # <a name="tutorial-integrate-azure-automation-with-event-grid-and-microsoft-teams"></a>Tutorial: Integrar a Automação do Azure à Grade de Eventos e ao Microsoft Teams
 
@@ -52,10 +52,13 @@ Para concluir este tutorial, uma [conta de Automação do Azure](../automation/a
 
 4. Selecione **Importar** e nomeie-a como **Watch-VMWrite**.
 
-5. Depois que a galeria foi importada, selecione **Editar** para exibir a fonte do runbook. Clique no botão **Publicar**.
+5. Depois que a galeria foi importada, selecione **Editar** para exibir a fonte do runbook. 
+6. Atualize a linha 74 no script para usar `Tag` em vez de `Tags`.
 
-> [!NOTE]
-> A linha 74 no script deve ter a linha alterada para `Update-AzureRmVM -ResourceGroupName $VMResourceGroup -VM $VM -Tag $Tag | Write-Verbose`. Agora, o parâmetro `-Tags` é `-Tag`.
+    ```powershell
+    Update-AzureRmVM -ResourceGroupName $VMResourceGroup -VM $VM -Tag $Tag | Write-Verbose
+    ```
+7. Clique no botão **Publicar**.
 
 ## <a name="create-an-optional-microsoft-teams-webhook"></a>Criar um hebwook opcional no Microsoft Teams
 
@@ -67,7 +70,7 @@ Para concluir este tutorial, uma [conta de Automação do Azure](../automation/a
 
 3. Digite **AzureAutomationIntegration** para nomeá-lo e clique em **Criar**.
 
-4. Copie o webhook na área de transferência e salve-o. A URL do webhook é usada para enviar informações para o Microsoft Teams.
+4. Copie a URL do webhook na área de transferência e salve-a. A URL do webhook é usada para enviar informações para o Microsoft Teams.
 
 5. Selecione **Concluído** para salvar o webhook.
 
@@ -96,14 +99,16 @@ Para concluir este tutorial, uma [conta de Automação do Azure](../automation/a
 2. Clique em **+ Assinatura de Evento**.
 
 3. Configure a assinatura com as seguintes informações:
+    1. Para **Tipo de Tópico**, selecione **Assinaturas do Azure**.
+    2. Desmarque a caixa de seleção **Assinar todos os tipos de evento**.
+    3. Digite **AzureAutomation** para nomeá-la.
+    4. Na lista suspensa **Tipos de Evento Definidos**, desmarque todas as opções, exceto **Gravação de Recurso Bem-Sucedida**.
 
-   * Para **Tipo de Tópico**, selecione **Assinaturas do Azure**.
-   * Desmarque a caixa de seleção **Assinar todos os tipos de evento**.
-   * Digite **AzureAutomation** para nomeá-la.
-   * Na lista suspensa **Tipos de Evento Definidos**, desmarque todas as opções, exceto **Gravação de Recurso Bem-Sucedida**.
-   * Para **Tipo de Ponto de Extremidade**, selecione **Webhook**.
-   * Clique em **Selecionar um ponto de extremidade**. Na página **Selecionar Web hook** aberta, cole a URL do web hook que você criou para o runbook Watch-VMWrite.
-   * Em **FILTROS**, insira a assinatura e o grupo de recursos onde você deseja procurar as novas VMs criadas. O resultado deve ser assim: `/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.Compute/virtualMachines`
+        > [!NOTE] 
+        > Atualmente o Azure Resource Manager não diferencia Criar e Atualizar, portanto a implementação deste tutorial para todos os eventos Microsoft.Resources.ResourceWriteSuccess em sua assinatura do Azure poderá resultar em um alto volume de chamadas.
+    1. Para **Tipo de Ponto de Extremidade**, selecione **Webhook**.
+    2. Clique em **Selecionar um ponto de extremidade**. Na página **Selecionar Web hook** aberta, cole a URL do web hook que você criou para o runbook Watch-VMWrite.
+    3. Em **FILTROS**, insira a assinatura e o grupo de recursos onde você deseja procurar as novas VMs criadas. O resultado deve ser assim: `/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.Compute/virtualMachines`
 
 4. Selecione **Criar** para salvar a assinatura na Grade de Eventos.
 

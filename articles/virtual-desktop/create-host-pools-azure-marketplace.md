@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 04/05/2019
 ms.author: helohr
-ms.openlocfilehash: 21979f1dee50fa846fb7888cfc95908b9d833392
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: e19523834c0ddb517fa9d15853411c1b58024b43
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236800"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65834002"
 ---
 # <a name="tutorial-create-a-host-pool-with-azure-marketplace"></a>Tutorial: Criar um pool de host com o Azure Marketplace
 
@@ -59,6 +59,9 @@ Para a folha Configurar máquinas virtuais:
 
 Para a folha de configuração da máquina virtual:
 
+>[!NOTE]
+> Se você estiver unindo suas VMs em um ambiente do Azure AD Domain Services, verifique se o usuário de ingresso no domínio também é um membro do [grupo de Administradores do AAD DC](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-admingroup#task-3-configure-administrative-group).
+
 1. Selecione a **Origem da imagem** e insira as informações apropriadas para saber como encontrá-las e como armazená-las. Se você optar por não usar discos gerenciados, selecione a conta de armazenamento que contém o arquivo .vhd.
 2. Insira o nome UPN e a senha para a conta de domínio que ingressará as VMs ao domínio do Azure Directory. Esse mesmo nome de usuário e senha será criado nas máquinas virtuais como uma conta local. É possível redefinir essas contas locais mais tarde.
 3. Selecione a rede virtual que tem conectividade com o servidor do Azure Directory e, em seguida, escolha uma sub-rede para hospedar as máquinas virtuais.
@@ -68,7 +71,7 @@ Para a folha de configuração da máquina virtual:
 
 Para a folha de informações de locatário da Área de Trabalho Virtual do Windows:
 
-1. Insira o **nome do grupo de locatário da Área de Trabalho Virtual do Windows** para o grupo de locatário que contém seu locatário. Se você não tiver um nome de grupo de locatário específico planejado, deixe-o como o padrão.
+1. Insira o **nome do grupo de locatário da Área de Trabalho Virtual do Windows** para o grupo de locatário que contém seu locatário. Deixe-o como o padrão, a menos que você tenha recebido um nome de grupo de locatário específico.
 2. Insira o **Nome de locatário da Área de Trabalho Virtual do Windows** para o locatário no qual você criará esse pool de hosts.
 3. Especifique o tipo de credenciais que você deseja usar para autenticar como o proprietário RDS do locatário da Área de Trabalho Virtual do Windows. Se você concluiu o [Criar entidades de serviço e atribuições de função com o PowerShell](./create-service-principal-role-powershell.md), selecione **Entidade de Serviço**. Agora você precisará inserir a **ID do locatário do Azure AD** do Azure Active Directory que contém a entidade de serviço.
 4. Insira as credenciais para a conta do administrador do locatário. Há suporte apenas para entidades de serviço com uma credencial de senha.
@@ -94,12 +97,6 @@ Execute o seguinte cmdlet para entrar no ambiente da Área de Trabalho Virtual d
 
 ```powershell
 Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
-```
-
-Defina o contexto como o grupo de locatário da Área de Trabalho Virtual do Windows que você especificou na oferta do Azure Marketplace com o seguinte cmdlet. Se você deixou o valor do grupo de locatário da Área de Trabalho Virtual do Windows como o valor padrão na oferta do Azure Marketplace, é possível ignorar esta etapa.
-
-```powershell
-Set-RdsContext -TenantGroupName <tenantgroupname>
 ```
 
 Depois de concluir essas duas coisas, será possível adicionar usuários ao grupo de aplicativo de área de trabalho com este cmdlet:

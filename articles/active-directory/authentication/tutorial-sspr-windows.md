@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f8e0b79d5aebd1e92dd71bba72efa7430aa475b
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: acd100ccc3aafc2de1f2c7970ff9437c92156b17
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58224644"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65861525"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Tutorial: Redefinição de senha do Azure AD a partir da tela de logon
 
-Neste tutorial, você permitirá que os usuários redefinam suas senhas na tela de logon do Windows 10. Com o novo Windows 10 Atualização de abril de 2018, os usuários com dispositivos **Ingressados no Azure AD** ou **Ingressados no Azure AD híbrido** podem usar um link "Redefinir senha" na tela de logon. Quando os usuários clicam nesse link, eles têm a mesma experiência de redefinição de senha de autoatendimento (SSPR) com a qual já estão familiarizados.
+Neste tutorial, você permitirá que os usuários redefinam suas senhas na tela de logon do Windows 10. Com o novo Windows 10 Atualização de abril de 2018, os usuários com dispositivos **Ingressados no Azure AD** ou **Ingressados no Azure AD híbrido** podem usar um link "Redefinir senha" na tela de logon. Quando os usuários clicam nesse link, eles têm a mesma experiência de redefinição de senha de autoatendimento (SSPR) com a qual já estão familiarizados. Se um usuário estiver bloqueado, esse processo não desbloqueará contas no Active Directory local.
 
 > [!div class="checklist"]
 > * Configurar o link Redefinir senha usando o Intune

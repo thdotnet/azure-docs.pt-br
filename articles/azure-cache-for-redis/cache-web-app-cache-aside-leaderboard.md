@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/30/2018
 ms.author: yegu
-ms.openlocfilehash: 9cfb320f0623f5a93527a4dc0e8d82096980cc2c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: bf4eb817bb1705c6af6d4e7e9e28e5789f49a906
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58893734"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873025"
 ---
 # <a name="tutorial-create-a-cache-aside-leaderboard-on-aspnet"></a>Tutorial: Criar um placar de líderes cache-aside no ASP.NET
 
@@ -41,7 +41,7 @@ Neste tutorial, você aprenderá como:
 Para concluir o tutorial, você deve ter os pré-requisitos a seguir:
 
 * Este tutorial continua na etapa em que você parou no [Início rápido do ASP.NET para o Cache do Azure para Redis](cache-web-app-howto.md). Se você ainda não fez isso, siga primeiro o início rápido.
-* Instale o [Visual Studio 2017](https://www.visualstudio.com/downloads/) com as cargas de trabalho a seguir:
+* Instale o [Visual Studio 2019](https://www.visualstudio.com/downloads/) com as seguintes cargas de trabalho:
     * Desenvolvimento Web e ASP.NET
     * Desenvolvimento do Azure
     * Desenvolvimento de área de trabalho do .NET com o SQL Server Express LocalDB ou [SQL Server 2017 Express Edition](https://www.microsoft.com/sql-server/sql-server-editions-express).
@@ -156,7 +156,7 @@ Para saber mais sobre este pacote, consulte a página do NuGet [EntityFramework]
 
 1. Adicione a seção `connectionStrings` a seguir dentro da seção `configuration`. O nome da cadeia de conexão deve corresponder ao nome da classe de contexto de banco de dados do Entity Framework, que é `TeamContext`.
 
-    Essa cadeia de conexão pressupõe que você atendeu ao [Pré-requisitos](#prerequisites) e instalou o SQL Server Express LocalDB, que faz parte da carga de trabalho *Desenvolvimento de área de trabalho do .NET* instalada com o Visual Studio 2017.
+    Essa cadeia de conexão pressupõe que você atendeu aos [Pré-requisitos](#prerequisites) e instalou o SQL Server Express LocalDB, que faz parte da carga de trabalho *Desenvolvimento para área de trabalho com .NET* instalada com o Visual Studio 2019.
 
     ```xml
     <connectionStrings>

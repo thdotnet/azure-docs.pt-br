@@ -1,5 +1,5 @@
 ---
-title: Tutorial para solicitar o disco do Microsoft Azure Data Box Disk | Microsoft Docs
+title: Tutorial para solicitar o Azure Data Box Disk | Microsoft Docs
 description: Use este tutorial para aprender a se inscrever e solicitar um Azure Data Box Disk para importar dados no Azure.
 services: databox
 author: alkohli
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 02/27/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 67f4eb5383452a81ba288f5fe611242259217951
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.openlocfilehash: 1d25ea2ce6e365e0d04fab325f9c13bb37382758
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57404885"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603173"
 ---
 # <a name="tutorial-order-an-azure-data-box-disk"></a>Tutorial: Solicitar um Azure Data Box Disk
 
@@ -65,7 +65,7 @@ Execute as etapas a seguir no [portal do Azure](https://aka.ms/azuredataboxfromd
     |---|---|
     |Assinatura|Selecione a assinatura para a qual o serviço Data Box está habilitado.<br> A assinatura está vinculada à sua conta de cobrança. |
     |Tipo de transferência| Importar para o Azure|
-    |País de origem | Selecione o país onde os dados residem no momento.|
+    |País de origem | Selecione o país/região em que os dados residem no momento.|
     |Região do Azure de destino|Selecione a região do Azure para onde você deseja transferir dados.|
 
   

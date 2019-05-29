@@ -15,73 +15,71 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 3/8/2019
 ms.author: jeedes
-ms.openlocfilehash: d73bc9cc845f214eab490a542892aa67bf9d0216
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 1e67f3c7f9413382d169837eaba50d6af18552e6
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59282246"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956684"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-turborater"></a>Tutorial: Integração do Azure Active Directory com o TurboRater
 
 Neste tutorial, você aprenderá a integrar o TurboRater ao Azure AD (Azure Active Directory).
+
 A integração do TurboRater ao Azure AD oferece os seguintes benefícios:
 
 * No Azure AD, é possível controlar quem tem acesso ao TurboRater.
-* Você pode permitir que seus usuários entrem automaticamente no TurboRater (logon único) com suas contas do Azure AD.
-* Você pode gerenciar suas contas em um único local central – o portal do Azure.
+* Você pode permitir que seus usuários entrem automaticamente no TurboRater (logon único) com as respectivas contas do Azure AD.
+* Gerencie suas contas em um único local: o portal do Azure.
 
-Para conhecer mais detalhadamente a integração de aplicativos de SaaS ao AD do Azure, consulte [O que é o acesso a aplicativos e logon único com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
+Para obter detalhes sobre a integração de aplicativos de SaaS (software como serviço) ao Azure AD, consulte [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Para configurar a integração do Azure AD ao TurboRater, você precisa dos seguintes itens:
 
-* Uma assinatura do Azure AD. Se não tiver um ambiente do Azure AD, você pode obter uma versão de avaliação de um mês [aqui](https://azure.microsoft.com/pricing/free-trial/)
-* Assinatura habilitada para logon único do TurboRater
+* Uma assinatura do Azure AD. Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
+* Uma assinatura do TurboRater com logon único habilitado.
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
 Neste tutorial, você configurará e testará o logon único do Azure AD em um ambiente de teste.
 
-* O TurboRater dá suporte ao SSO iniciado por **IDP**
+O TurboRater é compatível com o SSO (logon único) iniciado por IDP.
 
-## <a name="adding-turborater-from-the-gallery"></a>Adicionando o TurboRater da galeria
+## <a name="add-turborater-from-the-azure-marketplace"></a>Adicionar o TurboRater do Azure Marketplace
 
-Para configurar a integração do TurboRater ao Azure AD, você precisará adicionar o TurboRater da galeria à sua lista de aplicativos SaaS gerenciados.
+Para configurar a integração do TurboRater ao Azure AD, você precisará adicionar o TurboRater do Azure Marketplace à sua lista de aplicativos SaaS gerenciados:
 
-**Para adicionar o TurboRater da galeria, execute as seguintes etapas:**
+1. Entre no [Portal do Azure](https://portal.azure.com?azure-portal=true).
+1. No painel esquerdo, selecione **Azure Active Directory**.
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+    ![A opção Azure Active Directory](common/select-azuread.png)
 
-    ![O botão Azure Active Directory](common/select-azuread.png)
+1. Vá para **Aplicativos da empresa**, em seguida, selecione **Todos os Aplicativos**.
 
-2. Navegue até **Aplicativos Empresariais** e, em seguida, selecione a opção **Todos os Aplicativos**.
+    ![A opção Aplicativos empresariais](common/enterprise-applications.png)
 
-    ![A folha Aplicativos empresariais](common/enterprise-applications.png)
+1. Para adicionar um novo aplicativo, selecione **+ Novo aplicativo** na parte superior do painel.
 
-3. Clique no botão **Novo aplicativo** na parte superior da caixa de diálogo para adicionar o novo aplicativo.
+    ![A opção Novo aplicativo](common/add-new-app.png)
 
-    ![O botão Novo aplicativo](common/add-new-app.png)
+1. Na caixa de pesquisa, insira **TurboRater**. Nos resultados da pesquisa, selecione **TurboRater** e, em seguida, selecione **Adicionar** para adicionar o aplicativo.
 
-4. Na caixa de pesquisa, digite **TurboRater**, selecione **TurboRater** no painel de resultados e, em seguida, clique no botão **Adicionar** para adicionar o aplicativo.
-
-     ![TurboRater na lista de resultados](common/search-new-app.png)
+    ![TurboRater na lista de resultados](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-Nesta seção, você configurará e testará o logon único do Azure AD com o TurboRater com base em uma usuária de teste chamada **Brenda Fernandes**.
-Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do TurboRater.
+Nesta seção, você vai configurar e testar o logon único do Azure AD com o TurboRater com base em uma usuária de teste chamada **B Fernandes**. Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do TurboRater.
 
 Para configurar e testar o logon único do Azure AD com o TurboRater, você precisa concluir os seguintes blocos de construção:
 
-1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** – para habilitar seus usuários a usar esse recurso.
-2. **[Configurar o logon único do TurboRater](#configure-turborater-single-sign-on)** – para definir as configurações de logon único no lado do aplicativo.
-3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
-4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
-5. **[Criar usuário de teste do TurboRater](#create-turborater-test-user)** – para ter um equivalente de Brenda Fernandes no TurboRater que esteja vinculado à representação de usuário do Azure AD.
-6. **[Teste o logon único](#test-single-sign-on)** – para verificar se a configuração funciona.
+1. **[Configure o logon único do Azure AD](#configure-azure-ad-single-sign-on)** para permitir que seus usuários usem esse recurso.
+1. **[Configurar o logon único do TurboRater](#configure-turborater-single-sign-on)** – para definir as configurações de logon único no lado do aplicativo.
+1. **[Crie um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com Brenda Fernandes.
+1. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** para permitir que Brenda Fernandes use o logon único do Azure AD.
+1. **[Criar um usuário de teste do TurboRater](#create-a-turborater-test-user)** , para que haja um usuário chamado B. Fernandes no TurboRater que esteja vinculado ao usuário do Azure AD chamado B. Fernandes.
+1. **[Teste o logon único](#test-single-sign-on)** para verificar se a configuração funciona.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
 
@@ -91,115 +89,114 @@ Para configurar o logon único do Azure AD com o TurboRater, execute as seguinte
 
 1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **TurboRater**, selecione **Logon único**.
 
-    ![Link Configurar logon único](common/select-sso.png)
+    ![Opção Configurar logon único](common/select-sso.png)
 
-2. Na caixa de diálogo **Selecionar um método de logon único**, selecione o modo **SAML/WS-Fed** para habilitar o logon único.
+1. No painel **Selecionar um método de logon único**, selecione o modo **SAML/WS-Fed** para habilitar o logon único.
 
     ![Modo de seleção de logon único](common/select-saml-option.png)
 
-3. Na página **Definir logon único com SAML**, clique no ícone **Editar** para abrir a caixa de diálogo **Configuração básica do SAML**.
+1. Na página **Configurar Logon Único com o SAML**, selecione **Editar** (o ícone de lápis) para abrir o painel **Configuração Básica do SAML**.
 
     ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
-4. Na página **Configurar Logon Único com SAML**, execute as seguintes etapas:
+1. No painel **Configuração Básica do SAML**, conclua as seguintes etapas:
 
-    ![Informações de logon único em Domínio e URLs do TurboRater](common/idp-intiated.png)
+    ![Informações de logon único em domínio e URLs do TurboRater](common/idp-intiated.png)
 
-     a. Na caixa de texto **Identificador**, digite uma URL: `https://www.itcdataservices.com`
+    1. Na caixa **Identificador (ID da Entidade)** , insira uma URL:
 
-    b. Na caixa de texto **URL de Resposta**, digite uma URL usando o seguinte padrão:
+       `https://www.itcdataservices.com`
 
-    | Ambiente | URL |
-    | ---------------| --------------- |    
-    | Teste  | `https://ratingqa.itcdataservices.com/webservices/imp/saml/login` |
-    | Live  | `https://www.itcratingservices.com/webservices/imp/saml/login` |
+    1. Na caixa **URL de Resposta (URL do Serviço do Consumidor de Declaração)** insira uma URL usando o seguinte padrão:
+
+       | Ambiente | URL |
+       | ---------------| --------------- |
+       | Teste  | `https://ratingqa.itcdataservices.com/webservices/imp/saml/login` |
+       | Live  | `https://www.itcratingservices.com/webservices/imp/saml/login` |
 
     > [!NOTE]
-    > Esses valores não são reais. Atualize esses valores com o Identificador e a URL de Resposta reais. Entre em contato com a [equipe de suporte ao cliente do TurboRater](https://www.getitc.com/support) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
+    > Esses valores não são reais. Atualize esses valores com o Identificador e a URL de Resposta reais. Para obter esses valores, entre em contato com a equipe de suporte do [TurboRater](https://www.getitc.com/support). Você também pode consultar os padrões exibidos no painel **Configuração Básica de SAML** no portal do Azure.
 
-5. Na página **Configurar Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Baixar** para baixar o **XML de Metadados de Federação** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
+1. No painel **Configurar Logon Único com o SAML**, na seção **Certificado de Autenticação SAML**, selecione **Baixar** para baixar o **XML de Metadados de Federação** das opções fornecidas e salve-o em seu computador.
 
-    ![O link de download do Certificado](common/metadataxml.png)
+    ![A opção de download do XML de Metadados de Federação](common/metadataxml.png)
 
-6. Na seção **Configurar o TurboRater**, copie a URL apropriada de acordo com seus requisitos.
+1. Na seção **Configurar o TurboRater**, copie as URLs necessárias:
+
+   * **URL de logon**
+   * **Identificador do Azure AD**
+   * **URL de logoff**
 
     ![Copiar URLs de configuração](common/copy-configuration-urls.png)
 
-    a. URL de logon
-
-    b. Identificador do Azure AD
-
-    c. URL de logoff
-
 ### <a name="configure-turborater-single-sign-on"></a>Configurar o logon único do TurboRater
 
-Para configurar o logon único no lado do **TurboRater**, é necessário enviar o **XML de Metadados de Federação** baixado e as URLs apropriadas copiadas do portal do Azure para a [equipe de suporte do TurboRater](https://www.getitc.com/support). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+Para configurar o logon único no lado do TurboRater, é necessário enviar o XML de Metadados de Federação baixado e as URLs apropriadas copiadas do portal do Azure para a [equipe de suporte do TurboRater](https://www.getitc.com/support). A equipe do TurboRater garantirá que a conexão de SSO do SAML seja definida corretamente em ambos os lados.
 
-### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
+### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
-O objetivo desta seção é criar um usuário de teste no Portal do Azure chamado Brenda Fernandes.
+Nesta seção, você criará uma usuária de teste no portal do Azure chamada Brenda Fernandes.
 
-1. No Portal do Azure, no painel esquerdo, selecione **Azure Active Directory**, selecione **Usuários** e, em seguida, **Todos os usuários**.
+1. No portal do Azure, no painel esquerdo, selecione **Azure Active Directory**   > **Usuários** > **Todos os usuários**.
 
-    ![Os links “Usuários e grupos” e “Todos os usuários”](common/users.png)
+    ![As opções "Usuários" e "Todos os usuários"](common/users.png)
 
-2. Selecione **Novo usuário** na parte superior da tela.
+1. Na parte superior da tela, selecione **+ Novo usuário**.
 
-    ![Botão Novo usuário](common/new-user.png)
+    ![Opção Novo usuário](common/new-user.png)
 
-3. Nas Propriedades do usuário, execute as etapas a seguir.
+1. No painel **Usuário**, siga as etapas a seguir:
 
-    ![A caixa de diálogo Usuário](common/user-properties.png)
+    ![O painel Usuário](common/user-properties.png)
 
-    a. No campo **Nome**, insira **BrendaFernandes**.
+    1. Na caixa **Nome**, insira **BFernandes**.
   
-    b. No campo **Nome de usuário**, digite brittasimon@yourcompanydomain.extension. Por exemplo, BrittaSimon@contoso.com
+    1. Na caixa **Nome de usuário**, insira **BFernandes\@\<domíniodaempresa>.\<extensão>** . Por exemplo, **BFernandes\@contoso.com**.
 
-    c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
+    1. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa **Senha**.
 
-    d. Clique em **Criar**.
+    1. Selecione **Criar**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo-lhe acesso ao TurboRater.
+Nesta seção, você permitirá que B. Fernandes use o logon único do Azure concedendo-lhe acesso ao TurboRater.
 
-1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **TurboRater**.
+1. No portal do Azure, selecione **Aplicativos Empresariais** > **Todos os aplicativos** > **TurboRater**.
 
-    ![Folha de aplicativos empresariais](common/enterprise-applications.png)
+    ![Painel Aplicativos empresariais](common/enterprise-applications.png)
 
-2. Na lista de aplicativos, selecione **TurboRater**.
+1. Na lista de aplicativos, selecione **TurboRater**.
 
-    ![O link do TurboRater na lista de Aplicativos](common/all-applications.png)
+    ![TurboRater na lista de aplicativos](common/all-applications.png)
 
-3. No menu à esquerda, selecione **Usuários e grupos**.
+1. No painel esquerdo, em **GERENCIAR**, selecione **Usuários e grupos**.
 
-    ![O link “Usuários e grupos”](common/users-groups-blade.png)
+    ![A opção "Usuários e grupos"](common/users-groups-blade.png)
 
-4. Escolha o botão **Adicionar usuário** e, em seguida, escolha **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
+1. Selecione **+ Adicionar usuário** e, em seguida, selecione **Usuários e grupos** no painel **Adicionar Atribuição**.
 
     ![O painel Adicionar Atribuição](common/add-assign-user.png)
 
-5. Na caixa de diálogo **Usuários e grupos**, escolha **Brenda Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
+1. No painel **Usuários e grupos**, selecione **B. Fernandes** na lista **Usuários** e, em seguida, escolha **Selecionar** na parte inferior do painel.
 
-6. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar função**, escolha a função de usuário apropriada na lista e clique no botão **Selecionar** na parte inferior da tela.
+1. Se você está esperando um valor de função na declaração SAML, no painel **Selecionar Função**, selecione na lista a função apropriada para o usuário. Escolha **Selecionar** na parte inferior do painel.
 
-7. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
+1. No painel **Adicionar atribuição**, selecione **Atribuir**.
 
-### <a name="create-turborater-test-user"></a>Criar usuário de teste do TurboRater
+### <a name="create-a-turborater-test-user"></a>Criar um usuário de teste do TurboRater
 
-Nesta seção, você criará uma usuária chamado Brenda Fernandes no TurboRater. Trabalhe com a  [equipe de suporte do TurboRater](https://www.getitc.com/support) para adicionar os usuários à plataforma do TurboRater. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará uma usuária chamado B. Fernandes no TurboRater. Trabalhe com o [equipe de suporte do TurboRater](https://www.getitc.com/support) para adicionar B. Fernandes como um usuário no TurboRater. Os usuários devem ser criados e ativados antes de usar o logon único.
 
-### <a name="test-single-sign-on"></a>Testar logon único 
+### <a name="test-single-sign-on"></a>Testar logon único
 
-Nesta seção, você testará sua configuração de logon único do Azure AD usando o Painel de Acesso.
+Nesta seção, você testará a configuração de logon único do Azure AD usando o portal Meus Aplicativos.
 
-Ao clicar no bloco do TurboRater no Painel de Acesso, você deverá ser conectado automaticamente ao TurboRater no qual você configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Quando você seleciona **TurboRater** no portal Meus Aplicativos, você deverá ser conectado automaticamente à assinatura do TurboRater para a qual você configura o logon único. Para obter mais informações sobre o portal Meus Aplicativos, veja [Acessar e usar aplicativos no portal Meus Aplicativos](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+* [Lista de tutoriais para a integração de aplicativos SaaS ao Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+* [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
+* [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

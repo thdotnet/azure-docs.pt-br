@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 344cc3b8ba3f7698f5124d464f3c277b6cb5cdde
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: d5a4f6c7d7d19ced4f2cd9ff21b00e58703f795e
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59500967"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65911689"
 ---
 # <a name="set-up-a-device-to-provision-using-the-azure-iot-hub-device-provisioning-service"></a>Configurar um dispositivo para provisionar usando o Serviço de Provisionamento de Dispositivos no Hub IoT do Azure
 
@@ -27,7 +27,7 @@ No tutorial anterior, você aprendeu como configurar o Serviço de Provisionamen
 
 Este tutorial espera que você já tenha criado sua instância do Serviço de Provisionamento de Dispositivos e um Hub IoT usando as instruções mencionadas no tutorial anterior [Configurar recursos de nuvem](tutorial-set-up-cloud.md).
 
-Este tutorial usa [SDKs do IoT do Azure e bibliotecas para repositório de C](https://github.com/Azure/azure-iot-sdk-c), que contêm o SDK do cliente do Serviço de Provisionamento de Dispositivo para C. O SDK atualmente oferece suporte a TPM e X.509 em dispositivos com implementações Windows ou Ubuntu. Este tutorial baseia-se no uso de um cliente de desenvolvimento do Windows, o que também assume o domínio básico do Visual Studio 2017. 
+Este tutorial usa [SDKs do IoT do Azure e bibliotecas para repositório de C](https://github.com/Azure/azure-iot-sdk-c), que contêm o SDK do cliente do Serviço de Provisionamento de Dispositivo para C. O SDK atualmente oferece suporte a TPM e X.509 em dispositivos com implementações Windows ou Ubuntu. Este tutorial baseia-se no uso de um cliente de desenvolvimento do Windows, o que também assume o domínio básico do Visual Studio. 
 
 Se você não estiver familiarizado com o processo de provisionamento automático, analise os [Conceitos de provisionamento automático](concepts-auto-provisioning.md) antes de continuar. 
 
@@ -36,14 +36,14 @@ Se você não estiver familiarizado com o processo de provisionamento automátic
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Visual Studio 2015 ou [Visual Studio 2017](https://www.visualstudio.com/vs/) com a carga de trabalho ["Desenvolvimento para Desktop com C++"](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/) habilitada.
+* [Visual Studio](https://visualstudio.microsoft.com/vs/) 2015 ou posterior com a carga de trabalho ['Desenvolvimento de área de trabalho com C++'](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/) habilitada.
 * Versão mais recente do [Git](https://git-scm.com/download/) instalada.
 
 
 
 ## <a name="build-a-platform-specific-version-of-the-sdk"></a>Criar uma versão do SDK específica da plataforma
 
-O SDK de cliente do Serviço de Provisionamento de Dispositivos ajuda a implementar o software de registro do dispositivo. Mas antes de poder usá-lo, você criará uma versão do SDK específica para o mecanismo de atestado e a plataforma de desenvolvimento do cliente. Neste tutorial, você criará um SDK que usa o Visual Studio 2017 em uma plataforma de desenvolvimento Windows para um tipo de atestado com suporte:
+O SDK de cliente do Serviço de Provisionamento de Dispositivos ajuda a implementar o software de registro do dispositivo. Mas antes de poder usá-lo, você criará uma versão do SDK específica para o mecanismo de atestado e a plataforma de desenvolvimento do cliente. Neste tutorial, você criará um SDK que usa o Visual Studio em uma plataforma de desenvolvimento Windows para um tipo de atestado com suporte:
 
 1. Baixe o [sistema de build CMake](https://cmake.org/download/).
 
@@ -128,9 +128,9 @@ Dependendo se você criou o SDK para usar o atestado para um dispositivo simulad
 
   1. No painel *Gerenciador de Soluções* no Visual Studio, navegue até a pasta **Provisionar\_Ferramentas**. Clique com o botão direito do mouse no projeto **dice\_device\_enrollment** e selecione **Definir como Projeto de Inicialização**. 
   
-  1. Execute a solução usando um dos comandos "Iniciar" no menu "Depurar". Na janela de saída, insira **i** para registro individual quando solicitado. A janela de saída exibe um certificado X.509 gerado localmente para seu dispositivo simulado. Copie para a área de transferência a saída que começa em *-----BEGIN CERTIFICATE-----* e termina no primeiro *-----END CERTIFICATE-----*, não deixando de incluir ambas essas linhas também. Você precisa apenas do primeiro certificado da janela de saída.
+  1. Execute a solução usando um dos comandos "Iniciar" no menu "Depurar". Na janela de saída, insira **i** para registro individual quando solicitado. A janela de saída exibe um certificado X.509 gerado localmente para seu dispositivo simulado. Copie para a área de transferência a saída que começa em *-----BEGIN CERTIFICATE-----* e termina no primeiro *-----END CERTIFICATE-----* , não deixando de incluir ambas essas linhas também. Você precisa apenas do primeiro certificado da janela de saída.
  
-  1. Crie um arquivo chamado **_X509testcert.pem_**, abra-o em um editor de texto de sua escolha e copie o conteúdo da área de transferência para o arquivo. Salve o arquivo, pois você o usará mais tarde para registrar o dispositivo. Quando o software de registro é executado, ele usa o mesmo certificado durante o provisionamento automático.    
+  1. Crie um arquivo chamado **_X509testcert.pem_** , abra-o em um editor de texto de sua escolha e copie o conteúdo da área de transferência para o arquivo. Salve o arquivo, pois você o usará mais tarde para registrar o dispositivo. Quando o software de registro é executado, ele usa o mesmo certificado durante o provisionamento automático.    
 
 Esses artefatos de segurança são necessários durante a inscrição para registrar seu dispositivo no Serviço de Provisionamento de Dispositivos. O serviço de provisionamento fica aguardando que um desses dispositivos inicialize e se conecte com ele mais tarde. Quando o dispositivo é inicializado pela primeira vez, a lógica do SDK de cliente interage com o chip (ou simulador) para extrair os artefatos de segurança do dispositivo e verifica o registro com o Serviço de Provisionamento de Dispositivos. 
 
@@ -141,7 +141,7 @@ A última etapa é codificar um aplicativo de registro que usa o SDK de cliente 
 > [!NOTE]
 > Nesta etapa, vamos pressupor o uso de um dispositivo simulado feito com a execução de um aplicativo de registro de exemplo do SDK na sua estação de trabalho. No entanto, os mesmos conceitos se aplicam se você estiver criando um aplicativo de registro para implantação em um dispositivo físico. 
 
-1. No portal do Azure, selecione a folha **Visão Geral** do Serviço de Provisionamento de Dispositivos e anote o valor de **_Escopo da ID_**. O *escopo da ID* é gerado pelo serviço e assegura a exclusividade. É imutável e é usado para identificar exclusivamente as IDs de registro.
+1. No portal do Azure, selecione a folha **Visão Geral** do Serviço de Provisionamento de Dispositivos e anote o valor de **_Escopo da ID_** . O *escopo da ID* é gerado pelo serviço e assegura a exclusividade. É imutável e é usado para identificar exclusivamente as IDs de registro.
 
     ![Extrair informações do ponto de extremidade do Serviço de Provisionamento de Dispositivo na folha do portal](./media/tutorial-set-up-device/extract-dps-endpoints.png) 
 

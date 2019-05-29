@@ -1,6 +1,6 @@
 ---
 title: Transmitir arquivos de vídeo com os Serviços de Mídia do Azure e o CLI do Azure | Microsoft Docs
-description: Execute as etapas neste início rápido para criar uma nova conta dos Serviços de Mídia do Azure, codificar um arquivo e transferi-lo para o Player de Mídia do Azure.
+description: Execute as etapas deste tutorial para criar uma nova conta dos Serviços de Mídia do Azure, codificar um arquivo e transmiti-lo para o Player de Mídia do Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -9,24 +9,24 @@ editor: ''
 keywords: serviços de mídia do azure, stream
 ms.service: media-services
 ms.workload: media
-ms.topic: quickstart
+ms.topic: tutorial
 ms.custom: ''
 ms.date: 02/19/2019
 ms.author: juliako
-ms.openlocfilehash: bd818135f289c430416909d16c8568208936a9f8
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: cce424b11cc4cd587c6e7c50bc8bdf988004a43a
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205412"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65550194"
 ---
-# <a name="quickstart-stream-video-files---cli"></a>Início Rápido: Transmitir arquivos de vídeo – CLI
+# <a name="tutorial-stream-video-files---cli"></a>Tutorial: Transmitir arquivos de vídeo – CLI
 
-Este início rápido mostra como é fácil codificar e iniciar a transmissão de vídeos por streaming em vários navegadores e dispositivos usando os Serviços de Mídia do Azure e o CLI do Azure. Um conteúdo de entrada pode ser especificado usando HTTPS, URLs SAS ou caminhos para arquivos localizados no armazenamento de Blobs do Azure.
+Este tutorial mostra como é fácil codificar e iniciar a transmissão de vídeos por streaming em vários navegadores e dispositivos usando os Serviços de Mídia do Azure e a CLI do Azure. Um conteúdo de entrada pode ser especificado usando HTTPS, URLs SAS ou caminhos para arquivos localizados no armazenamento de Blobs do Azure.
 
 O exemplo neste tópico codifica o conteúdo disponibilizado por meio de uma URL HTTPS. No momento, os Serviços de Mídia v3 não dão suporte à codificação de transferência em partes sobre URLs HTTPS.
 
-Ao final do início rápido, você poderá transmitir um vídeo por streaming.  
+Ao final deste tutorial, você poderá transmitir um vídeo por streaming.  
 
 ![Reproduzir o vídeo](./media/stream-files-dotnet-quickstart/final-video.png)
 
@@ -334,7 +334,7 @@ Aqui está um exemplo:
 > Se um player estiver hospedado em um site HTTPS, atualize a URL para "https".
 
 1. Agora, abra um navegador da Web e vá para [https://aka.ms/azuremediaplayer/](https://aka.ms/azuremediaplayer/).
-2. Na caixa da **URL:**, cole a URL criada na seção anterior. Você pode colar a URL no formato Smooth, Dash ou HLS. O Player de mídia do Azure usará automaticamente um protocolo de streaming apropriado para reprodução em seu dispositivo.
+2. Na caixa da **URL:** , cole a URL criada na seção anterior. Você pode colar a URL no formato Smooth, Dash ou HLS. O Player de mídia do Azure usará automaticamente um protocolo de streaming apropriado para reprodução em seu dispositivo.
 3. Selecione **Atualizar Player**.
 
 >[!NOTE]
@@ -342,7 +342,7 @@ Aqui está um exemplo:
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Se você não precisar mais de qualquer um dos recursos em seu grupo de recursos, incluindo as contas dos Serviços de Mídia e de armazenamento que você criou neste Início Rápido, exclua o grupo de recursos.
+Se você não precisar mais de qualquer um dos recursos em seu grupo de recursos, incluindo as contas dos Serviços de Mídia e de armazenamento que criou neste tutorial, exclua o grupo de recursos.
 
 Execute este comando CLI:
 
@@ -350,10 +350,7 @@ Execute este comando CLI:
 az group delete --name amsResourceGroup
 ```
 
-## <a name="see-also"></a>Consulte também
-
-Confira [Códigos de erro do trabalho](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
-
 ## <a name="next-steps"></a>Próximas etapas
 
 [Visão geral dos Serviços de Mídia](media-services-overview.md)
+
