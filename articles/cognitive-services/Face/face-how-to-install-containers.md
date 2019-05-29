@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: article
-ms.date: 04/16/2019
+ms.date: 05/28/2019
 ms.author: diberry
-ms.openlocfilehash: 9bc18157a6f60555ea18901796199a3fe9dc4c22
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 26ebeb463f42dce06c29a5bd3f69585430a2ee90
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65891225"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306648"
 ---
 # <a name="install-and-run-face-containers"></a>Instalar e executar os contêineres de detecção facial
 
@@ -32,7 +32,7 @@ Você deve atender aos seguintes pré-requisitos antes de usar os contêineres d
 |--|--|
 |Mecanismo Docker| O mecanismo do Docker deve ser instalado em um [computador host](#the-host-computer). O Docker fornece pacotes que configuram o ambiente do Docker no [macOS](https://docs.docker.com/docker-for-mac/), no [Windows](https://docs.docker.com/docker-for-windows/) e no [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker](https://docs.docker.com/engine/docker-overview/).<br><br> O Docker deve ser configurado para permitir que os contêineres conectem-se e enviem dados de cobrança para o Azure. <br><br> No Windows, Docker também deve ser configurado para dar suporte a contêineres do Linux.<br><br>|
 |Familiaridade com o Docker | Você precisa de uma compreensão básica dos conceitos do Docker, como registros, repositórios, contêineres e imagens de contêiner. Você também precisa de conhecimento do basic `docker` comandos.| 
-|Azure `Cognitive Services` recursos |Para usar o contêiner, você deve ter:<br><br>Um recurso dos serviços Cognitivos do Azure e a chave de cobrança associada e o URI de ponto de extremidade cobrança. Ambos os valores estão disponíveis na **visão geral** e **chaves** páginas para o recurso. Eles são necessários para iniciar o contêiner. Adicionar o `face/v1.0` roteamento para o ponto de extremidade do URI, conforme mostrado no exemplo a seguir de BILLING_ENDPOINT_URI: <br><br>**{BILLING_KEY}**: chave do recurso<br><br>**{BILLING_ENDPOINT_URI}** : exemplo URI do ponto de extremidade é `https://westus.api.cognitive.microsoft.com/face/v1.0`|
+|Azure `Cognitive Services` recursos |Para usar o contêiner, você deve ter:<br><br>Um recurso dos serviços Cognitivos do Azure e a chave de cobrança associada e o URI de ponto de extremidade cobrança. Ambos os valores estão disponíveis na **visão geral** e **chaves** páginas para o recurso. Eles são necessários para iniciar o contêiner. Adicionar o `face/v1.0` roteamento para o ponto de extremidade do URI, conforme mostrado no exemplo a seguir de BILLING_ENDPOINT_URI: <br><br>**{BILLING_KEY}** : chave do recurso<br><br>**{BILLING_ENDPOINT_URI}** : exemplo URI do ponto de extremidade é `https://westus.api.cognitive.microsoft.com/face/v1.0`|
 
 ## <a name="request-access-to-the-private-container-registry"></a>Solicitar acesso ao registro de contêiner privado
 
@@ -143,6 +143,10 @@ Os contêineres de API de detecção facial enviam informações de cobrança pa
 
 Para obter mais informações sobre essas opções, consulte [Configurar contêineres](./face-resource-container-config.md).
 
+<!--blogs/samples/video coures -->
+
+[!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
+
 ## <a name="summary"></a>Resumo
 
 Neste artigo, você aprendeu conceitos e fluxo de trabalho para saber como baixar, instalar e executar os contêineres de API de detecção facial. Em resumo:
@@ -154,7 +158,7 @@ Neste artigo, você aprendeu conceitos e fluxo de trabalho para saber como baixa
 * Quando você criar uma instância de um contêiner, você deve especificar informações de cobrança.
 
 > [!IMPORTANT]
-> Contêineres de serviços cognitivos não são licenciados para execução sem estar conectado ao Azure para a medição. Os clientes devem habilitar os contêineres comunicar informações de cobrança com o serviço de medição em todos os momentos. Contêineres de serviços cognitivos não enviam dados de cliente, como a imagem ou texto que está sendo analisado para a Microsoft.
+> Contêineres de serviços cognitivos não são licenciados para execução sem estar conectado ao Azure para a medição. Os clientes devem habilitar os contêineres comunicar informações de cobrança com o serviço de medição em todos os momentos. Os contêineres dos Serviços Cognitivos não enviam dados do cliente, como imagem ou texto que está sendo analisado, para a Microsoft.
 
 ## <a name="next-steps"></a>Próximas etapas
 

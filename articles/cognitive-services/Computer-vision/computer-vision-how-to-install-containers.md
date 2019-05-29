@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: article
-ms.date: 04/16/2019
+ms.date: 05/28/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: aba8f9b2b4e62420ed5d318be40bbc4ada544866
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 10e5060c06e1ebc591c7245ae588b5352a3328ca
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60203084"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66302838"
 ---
 # <a name="install-and-run-recognize-text-containers"></a>Instalar e executar os contêineres de Reconhecimento de Texto
 
@@ -30,11 +30,11 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Você deve cumprir os seguintes pré-requisitos antes de usar contêineres de Reconhecimento de Texto:
 
-|Necessário|Finalidade|
+|Obrigatório|Finalidade|
 |--|--|
 |Mecanismo Docker| É necessário ter o Mecanismo Docker instalado em um [computador host](#the-host-computer). O Docker fornece pacotes que configuram o ambiente do Docker no [macOS](https://docs.docker.com/docker-for-mac/), no [Windows](https://docs.docker.com/docker-for-windows/) e no [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker](https://docs.docker.com/engine/docker-overview/).<br><br> O Docker deve ser configurado para permitir que os contêineres conectem-se e enviem dados de cobrança para o Azure. <br><br> **No Windows**, o Docker também deve ser configurado para dar suporte a contêineres do Linux.<br><br>|
 |Familiaridade com o Docker | É necessário ter uma compreensão básica de conceitos do Docker, como registros, repositórios, contêineres e imagens de contêiner, bem como conhecimento dos comandos básicos do `docker`.| 
-|Azure `Cognitive Services` recursos |Para usar o contêiner, você precisará ter:<br><br>Um _dos serviços Cognitivos_ o ponto de extremidade cobrança URI de chave de recurso do Azure e a cobrança associada. Ambos os valores estão disponíveis nas páginas de visão geral e as chaves de recurso e são necessários para iniciar o contêiner. Você precisará adicionar o `vision/v2.0` roteamento para o URI do ponto de extremidade, conforme mostrado no exemplo a seguir de BILLING_ENDPOINT_URI. <br><br>**{BILLING_KEY}**: chave do recurso<br><br>**{BILLING_ENDPOINT_URI}**: exemplo de URI de terminal é: `https://westus.api.cognitive.microsoft.com/vision/v2.0`|
+|Azure `Cognitive Services` recursos |Para usar o contêiner, você precisará ter:<br><br>Um _dos serviços Cognitivos_ o ponto de extremidade cobrança URI de chave de recurso do Azure e a cobrança associada. Ambos os valores estão disponíveis nas páginas de visão geral e as chaves de recurso e são necessários para iniciar o contêiner. Você precisará adicionar o `vision/v2.0` roteamento para o URI do ponto de extremidade, conforme mostrado no exemplo a seguir de BILLING_ENDPOINT_URI. <br><br>**{BILLING_KEY}** : chave do recurso<br><br>**{BILLING_ENDPOINT_URI}** : exemplo de URI de terminal é: `https://westus.api.cognitive.microsoft.com/vision/v2.0`|
 
 
 ## <a name="request-access-to-the-private-container-registry"></a>Solicitar acesso ao registro de contêiner privado
@@ -50,12 +50,12 @@ Você deve cumprir os seguintes pré-requisitos antes de usar contêineres de Re
 
 A tabela a seguir descreve os núcleos de CPU e a memória mínimos e recomendados a serem alocados para cada contêiner do Reconhecimento de Texto.
 
-| Contêiner | Mínimo | Recomendadas |TPS<br>(No mínimo, máximo)|
+| Contêiner | Mínimo | Recomendado |TPS<br>(No mínimo, máximo)|
 |-----------|---------|-------------|--|
 |Reconhecimento de Texto|1 núcleo, 8 GB de memória, 0,5 TPS|2 núcleos, 8 GB de memória, 1 TPS|0.5, 1|
 
 * Cada núcleo precisa ser de pelo menos 2,6 GHz (gigahertz) ou mais rápido.
-* TPS - transações por segundo
+* TPS – transações por segundo
 
 Memória e núcleo correspondem às configurações `--cpus` e `--memory`, que são usadas como parte do comando `docker run`.
 
@@ -89,7 +89,7 @@ Depois que o contêiner estiver no [computador host](#the-host-computer), use o 
 
 Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar o contêiner. O comando usa os seguintes parâmetros:
 
-| Placeholder | Value |
+| Espaço reservado | Value |
 |-------------|-------|
 |{BILLING_KEY} | Essa chave é usada para iniciar o contêiner e está disponível no Azure `Cognitive Services` página chaves.  |
 |{BILLING_ENDPOINT_URI} | Valor de URI do ponto de extremidade de cobrança. É um exemplo: `https://westus.api.cognitive.microsoft.com/vision/v2.0`|
@@ -156,6 +156,10 @@ Os contêineres de Reconhecimento de Texto enviam informações de cobrança par
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
 Para obter mais informações sobre essas opções, consulte [Configurar contêineres](./computer-vision-resource-container-config.md).
+
+<!--blogs/samples/video coures -->
+
+[!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
 ## <a name="summary"></a>Resumo
 

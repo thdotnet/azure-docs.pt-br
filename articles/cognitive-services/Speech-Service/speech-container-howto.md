@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 05/28/2019
 ms.author: diberry
-ms.openlocfilehash: 2adcbad55236917685ddcdbabe4809f36ab5a730
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: b620cbb8e51fbe41defb6bdbdc66ba4a7e539aa0
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153060"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306550"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Instalar e executar contêineres do serviço de fala
 
@@ -38,9 +38,9 @@ Você deve cumprir os seguintes pré-requisitos antes de usar os contêineres de
 |--|--|
 |Mecanismo Docker| É necessário ter o Mecanismo Docker instalado em um [computador host](#the-host-computer). O Docker fornece pacotes que configuram o ambiente do Docker no [macOS](https://docs.docker.com/docker-for-mac/), no [Windows](https://docs.docker.com/docker-for-windows/) e no [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker](https://docs.docker.com/engine/docker-overview/).<br><br> O Docker deve ser configurado para permitir que os contêineres conectem-se e enviem dados de cobrança para o Azure. <br><br> **No Windows**, o Docker também deve ser configurado para dar suporte a contêineres do Linux.<br><br>|
 |Familiaridade com o Docker | É necessário ter uma compreensão básica de conceitos do Docker, como registros, repositórios, contêineres e imagens de contêiner, bem como conhecimento dos comandos básicos do `docker`.| 
-|Recursos de fala |Para usar esses contêineres, você deve ter:<br><br>Um _fala_ recursos do Azure para obter a chave de cobrança associada e o URI de ponto de extremidade cobrança. Ambos os valores estão disponíveis no portal Azure **fala** páginas de visão geral e as chaves e são necessárias para iniciar o contêiner.<br><br>**{BILLING_KEY}**: chave do recurso<br><br>**{BILLING_ENDPOINT_URI}**: exemplo de URI de terminal é: `https://westus.api.cognitive.microsoft.com/sts/v1.0`|
+|Recursos de fala |Para usar esses contêineres, será necessário ter:<br><br>Um _fala_ recursos do Azure para obter a chave de cobrança associada e o URI de ponto de extremidade cobrança. Ambos os valores estão disponíveis no portal Azure **fala** páginas de visão geral e as chaves e são necessárias para iniciar o contêiner.<br><br>**{BILLING_KEY}** : chave do recurso<br><br>**{BILLING_ENDPOINT_URI}** : exemplo de URI de terminal é: `https://westus.api.cognitive.microsoft.com/sts/v1.0`|
 
-## <a name="request-access-to-the-container-registry"></a>Solicitação de acesso para o registro de contêiner
+## <a name="request-access-to-the-container-registry"></a>Solicitar acesso ao Registro de contêiner
 
 Você deve primeiro concluir e enviar o [formulário de solicitação de contêineres de fala de serviços Cognitivos](https://aka.ms/speechcontainerspreview/) para solicitar acesso ao contêiner. 
 
@@ -64,7 +64,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 A tabela a seguir descreve os núcleos de CPU e memória para alocar para cada contêiner fala mínimos e recomendados.
 
-| Contêiner | Mínimo | Recomendadas |
+| Contêiner | Mínimo | Recomendado |
 |-----------|---------|-------------|
 |cognitive-services-speech-to-text | Dois núcleos<br>2 GB de memória  | Quatro núcleos<br>4 GB de memória  |
 |cognitive-services-text-to-speech | 1 núcleo, 0,5 GB de memória| 2 núcleos, 1 GB de memória |
@@ -171,7 +171,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 
 Depois que o contêiner estiver no [computador host](#the-host-computer), use o processo a seguir para trabalhar com o contêiner.
 
-1. [Execute o contêiner](#run-the-container-with-docker-run), com as configurações de cobrança necessárias, mas não foi usadas. Há outros [exemplos](speech-container-configuration.md#example-docker-run-commands) do comando `docker run` disponíveis. 
+1. [Execute o contêiner](#run-the-container-with-docker-run) com as configurações de cobrança necessárias, mas não utilizadas. Há outros [exemplos](speech-container-configuration.md#example-docker-run-commands) do comando `docker run` disponíveis. 
 1. [Consulte o ponto de extremidade de previsão do contêiner](#query-the-containers-prediction-endpoint). 
 
 ## <a name="run-the-container-with-docker-run"></a>Executar o contêiner com `docker run`
@@ -180,7 +180,7 @@ Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/
 
 **Durante a visualização**, as configurações de cobrança devem ser válidas para iniciar o contêiner, mas você não cobrado pelo uso.
 
-| Placeholder | Value |
+| Espaço reservado | Value |
 |-------------|-------|
 |{BILLING_KEY} | Essa chave é usada para iniciar o contêiner e está disponível na página de chaves de fala do portal do Azure.  |
 |{BILLING_ENDPOINT_URI} | O valor do URI de ponto de extremidade cobrança está disponível na página de visão geral de fala do portal do Azure.|
@@ -228,31 +228,31 @@ Esse comando:
 
 O contêiner fornece o ponto de extremidade de consulta com base em websocket APIs, que são acessados por meio de [Speech SDK](index.yml).
 
-Por padrão, o SDK de fala usa serviços de fala on-line. Para usar o contêiner, você precisará alterar o método de inicialização. Consulte os exemplos a seguir.
+Por padrão, o SDK de fala usa serviços de fala on-line. Para usar o contêiner, você precisa alterar o método de inicialização. Confira os exemplos abaixo.
 
-#### <a name="for-c"></a>ParaC#
+#### <a name="for-c"></a>Para o C#
 
-Alterar o uso dessa chamada de inicialização de nuvem do Azure:
+Em vez de usar esta chamada de inicialização de nuvem do Azure:
 
 ```C#
 var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
 ```
 
-para essa chamada usando o ponto de extremidade do contêiner:
+use esta chamada usando o ponto de extremidade do contêiner:
 
 ```C#
 var config = SpeechConfig.FromEndpoint("ws://localhost:5000/speech/recognition/dictation/cognitiveservices/v1", "YourSubscriptionKey");
 ```
 
-#### <a name="for-python"></a>Para Python
+#### <a name="for-python"></a>Para o Python
 
-Alterar o uso dessa chamada de inicialização de nuvem do Azure
+Em vez de usar esta chamada de inicialização de nuvem do Azure
 
 ```python
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
 ```
 
-para essa chamada usando o ponto de extremidade do contêiner:
+use esta chamada usando o ponto de extremidade do contêiner:
 
 ```python
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, endpoint="ws://localhost:5000/speech/recognition/dictation/cognitiveservices/v1")
@@ -272,7 +272,7 @@ O contêiner fornece o ponto de extremidade REST APIs que podem ser encontradas 
 
 ## <a name="troubleshooting"></a>solução de problemas
 
-Quando você executa o contêiner, o contêiner usa **stdout** e **stderr** às informações de saída que é útil para solucionar problemas que ocorrem durante a inicialização ou execução do contêiner. 
+Quando você executa o contêiner, ele usa **StdOut** e **stderr** para gerar informações úteis para solucionar problemas que ocorrem durante a inicialização ou a execução do contêiner. 
 
 ## <a name="billing"></a>Cobrança
 
@@ -282,12 +282,16 @@ O envio de contêineres de fala cobrança informações do Azure, usando um _fal
 
 Para obter mais informações sobre essas opções, consulte [Configurar contêineres](speech-container-configuration.md).
 
+<!--blogs/samples/video coures -->
+
+[!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
+
 ## <a name="summary"></a>Resumo
 
 Neste artigo, você aprendeu conceitos e fluxo de trabalho para baixar, instalar e executar os contêineres de fala. Em resumo:
 
 * Fala fornece dois contêineres de Linux para o Docker, encapsulando a conversão de fala em texto e texto em fala.
-* Imagens de contêiner são baixadas do registro de contêiner privado no Azure.
+* As imagens de contêiner são baixadas do Registro de contêiner particular no Azure.
 * Imagens de contêiner são executadas no Docker.
 * Você pode usar a API REST ou o SDK para chamar as operações em contêineres de fala, especificando o URI do contêiner de host.
 * Você deve especificar informações de faturamento ao instanciar um contêiner.
