@@ -211,14 +211,14 @@ Nesta etapa, você cria conjuntos de dados para representar dados de entrada e d
 
    | Propriedade | Aninhado em | DESCRIÇÃO |
    |:--- |:--- |:--- |
-   | Tipo | properties |A propriedade type é definida como **AzureBlob** porque os dados residem no armazenamento de blobs. |
+   | type | properties |A propriedade type é definida como **AzureBlob** porque os dados residem no armazenamento de blobs. |
    | linkedServiceName | formato |Refere-se ao AzureStorageLinkedService que você criou anteriormente. |
    | folderPath | typeProperties | Especifica o contêiner de blobs e a pasta que contém blobs de entrada. | 
    | fileName | typeProperties |Essa propriedade é opcional. Se você omitir essa propriedade, todos os arquivos de folderPath serão selecionados. Neste tutorial, somente o arquivo input.log é processado. |
-   | Tipo | formato |Os arquivos de log estão em formato de texto. Utilize **TextFormat**. |
+   | type | formato |Os arquivos de log estão em formato de texto. Utilize **TextFormat**. |
    | columnDelimiter | formato |As colunas nos arquivos de log são delimitadas pelo caractere de vírgula (`,`). |
-   | frequência/intervalo | disponibilidade |A frequência é definida como **Mês** e o intervalo como **1**, o que significa que as fatias de entrada estão disponíveis mensalmente. |
-   | externo | properties | Essa propriedade será definida como **true** se os dados de entrada não forem gerados por esse pipeline. Neste tutorial, o arquivo input.log não é gerado por esse pipeline, portanto, definimos a propriedade como **true**. |
+   | frequency/interval | disponibilidade |A frequência é definida como **Mês** e o intervalo como **1**, o que significa que as fatias de entrada estão disponíveis mensalmente. |
+   | external | properties | Essa propriedade será definida como **true** se os dados de entrada não forem gerados por esse pipeline. Neste tutorial, o arquivo input.log não é gerado por esse pipeline, portanto, definimos a propriedade como **true**. |
 
     Para saber mais informações sobre essas propriedades JSON, confira [Conector do Blob do Azure](data-factory-azure-blob-connector.md#dataset-properties).
 
