@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 08/10/2018
 ms.author: apimpm
-ms.openlocfilehash: 0f2b45685d2976c567c16666e2ca89d334914b63
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: eff827937adbae7cfdfdd86392593df8d698053c
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50417286"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241804"
 ---
 # <a name="create-and-publish-a-product"></a>Criar e publicar um produto  
 
@@ -36,7 +36,7 @@ Neste tutorial, você aprenderá como:
 ## <a name="prerequisites"></a>Pré-requisitos
 
 + Conheça a [terminologia do Gerenciamento de API do Azure](api-management-terminology.md).
-+ Conclua o seguinte guia de início rápido: [Criar uma instância do Gerenciamento de API do Azure](get-started-create-service-instance.md).
++ Conclua o início rápido a seguir: [Criar uma instância do Gerenciamento de API do Azure](get-started-create-service-instance.md).
 + Além disso, conclua o seguinte tutorial: [Importar e publicar sua primeira API](import-and-publish.md).
 
 ## <a name="create-and-publish-a-product"></a>Criar e publicar um produto
@@ -86,7 +86,7 @@ Os Desenvolvedores devem primeiro se inscrever em um produto para obter acesso �
 4. Escolha uma API e clique em **Selecionar**.
 
 > [!TIP]
-> Você pode criar ou atualizar a assinatura do usuário para um *Produto* com chaves de assinatura personalizadas [por meio da API REST](https://docs.microsoft.com/rest/api/apimanagement/subscription/createorupdate) ou comando do PowerShell.
+> Você pode criar ou atualizar a assinatura do usuário para um *Produto* com chaves de assinatura personalizadas [por meio da API REST](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/subscription/createorupdate) ou comando do PowerShell.
 
 ## <a name="next-steps"></a>Próximas etapas
 

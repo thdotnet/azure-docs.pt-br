@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/03/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 943131bc746b5d2a1fd95a26a6a6c9f3bb6b9e57
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 020e0395c7678f6856a293c8386a44d7a959bc06
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65509948"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786526"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Tutorial: Integração do Azure Active Directory com o SSO do SAML para Jira da Resolution GmbH
 
@@ -53,7 +53,7 @@ Para configurar o logon único no Azure AD, é necessário adicionar um novo apl
 
 **Para adicionar SSO do SAML para Jira da Resolution GmbH da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -270,7 +270,7 @@ Para permitir que usuários do Azure AD entrem no SSO do SAML para Jira da resol
 
     ![Adicionar Funcionário](./media/samlssojira-tutorial/user3-new.png) 
 
-5. Na página da caixa de diálogo **"Criar usuário"**, execute as etapas a seguir. É necessário criar o usuário exatamente como no Azure AD:
+5. Na página da caixa de diálogo **"Criar usuário"** , execute as etapas a seguir. É necessário criar o usuário exatamente como no Azure AD:
 
     ![Adicionar Funcionário](./media/samlssojira-tutorial/user4-new.png) 
 

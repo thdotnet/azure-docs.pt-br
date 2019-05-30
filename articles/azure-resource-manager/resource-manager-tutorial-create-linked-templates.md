@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 03/18/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: e811d1f7fb84e2539ba9daea3eea13f5e028f997
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: de2e848bd587f3b9bf2efe3fa8df3710e24243e4
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60389520"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241394"
 ---
 # <a name="tutorial-create-linked-azure-resource-manager-templates"></a>Tutorial: Criar modelos do Azure Resource Manager vinculados
 
@@ -89,7 +89,7 @@ O modelo vinculado cria uma conta de armazenamento. O modelo vinculado pode ser 
 2. Faça as seguintes alterações:
 
     * Remova todos os parâmetros que não sejam **localização**.
-    * Adicione um parâmetro chamado **storageAccountName**. 
+    * Adicione um parâmetro chamado **storageAccountName**.
         ```json
         "storageAccountName":{
           "type": "string",
@@ -99,7 +99,7 @@ O modelo vinculado cria uma conta de armazenamento. O modelo vinculado pode ser 
         },
         ```
         O nome e a localização da conta de armazenamento são transmitidos do modelo principal para o modelo vinculado como parâmetros.
-        
+
     * Remova o elemento **variáveis** e todas as definições de variável.
     * Remova todos os recursos que não sejam a conta de armazenamento. Você removerá, no total, quatro recursos.
     * Atualize o valor do elemento **nome** do recurso de conta de armazenamento para:
@@ -109,7 +109,7 @@ O modelo vinculado cria uma conta de armazenamento. O modelo vinculado pode ser 
         ```
 
     * Atualize o elemento **outputs** para que ele se pareça com:
-    
+
         ```json
         "outputs": {
           "storageUri": {
@@ -272,7 +272,7 @@ O modelo principal se chama azuredeploy.json.
     Preste atenção a estes detalhes:
 
     * Um recurso `Microsoft.Resources/deployments` no modelo principal é usado para vincular a outro modelo.
-    * O recurso `deployments` se chama `linkedTemplate`. Esse nome é usado para [configurar a dependência](#configure-dependency).  
+    * O recurso `deployments` se chama `linkedTemplate`. Esse nome é usado para [configurar a dependência](#configure-dependency).
     * Você só pode usar o modo de implantação [Incremental](./deployment-modes.md) quando chama modelos vinculados.
     * `templateLink/uri` contém o URI do modelo vinculado. Atualize o valor para o URI que você obtém ao carregar o modelo vinculado (aquele com um token SAS).
     * Use `parameters` para passar valores do modelo principal para o modelo vinculado.
@@ -305,7 +305,7 @@ Como a conta de armazenamento agora está definida no modelo vinculado, você de
 
     ![Os modelos vinculados do Azure Resource Manager configuram a dependência](./media/resource-manager-tutorial-create-linked-templates/resource-manager-template-linked-templates-configure-dependency.png)
 
-    *linkedTemplate* é o nome do recurso de implantações.  
+    *linkedTemplate* é o nome do recurso de implantações.
 3. Atualize **properties/diagnosticsProfile/bootDiagnostics/storageUri/** conforme mostrado na captura de tela anterior.
 4. Salve o modelo revisado.
 
@@ -334,4 +334,4 @@ Para melhorar o projeto, faça as seguintes alterações adicionais ao projeto c
 Neste tutorial, você modularizou um modelo em um modelo principal e um modelo vinculado. Para saber como usar extensões de máquina virtual para executar tarefas de pós-implantação, confira:
 
 > [!div class="nextstepaction"]
-> [Implantar extensões de máquina virtual](./deployment-manager-tutorial.md)
+> [Implantar extensões de máquina virtual](./resource-manager-tutorial-deploy-vm-extensions.md)

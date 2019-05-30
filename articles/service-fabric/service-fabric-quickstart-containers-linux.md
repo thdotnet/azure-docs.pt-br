@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/30/2019
 ms.author: aljo,suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 183f27d752b99c04a711d8141db512c77b9848f9
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 1487c9e3e57a2fe4dcdcab04aa81cd81315decfd
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58664872"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66302387"
 ---
 # <a name="quickstart-deploy-linux-containers-to-service-fabric"></a>Início Rápido: Implantar contêineres do Linux no Service Fabric
 
@@ -179,7 +179,7 @@ Use o script de desinstalação (uninstall.sh) fornecido com o modelo para exclu
 
 A maneira mais simples de excluir o cluster e todos os recursos que ele consume é excluir o grupo de recursos.
 
-Faça logon no Azure e selecione a ID de assinatura com a qual você deseja remover o cluster. Você pode encontrar sua ID de assinatura fazendo logon no portal do Azure. Exclua o grupo de recursos e todos os recursos do cluster usando o comando [az group delete](/cli/azure/group?view=azure-cli-latest).
+Entre no Azure e selecione a ID de assinatura com a qual você deseja remover o cluster. Você pode encontrar sua ID de assinatura fazendo logon no portal do Azure. Exclua o grupo de recursos e todos os recursos do cluster usando o comando [az group delete](/cli/azure/group?view=azure-cli-latest).
 
 ```azurecli
 az login

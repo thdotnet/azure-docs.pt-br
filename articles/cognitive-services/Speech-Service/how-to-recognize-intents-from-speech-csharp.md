@@ -10,16 +10,14 @@ ms.subservice: speech-service
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: wolfma
-ms.openlocfilehash: 9a00dfd1186d19ce9432db8e636bffa40eb977af
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 0e24f66369cf990f6b271b894a31dc8395068e17
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59280529"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257341"
 ---
 # <a name="tutorial-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Tutorial: Reconhecer as intenções da fala usando o SDK de Fala para C#
-
-[!INCLUDE [Article selector](../../../includes/cognitive-services-speech-service-how-to-recognize-intents-from-speech-selector.md)]
 
 O [SDK de Fala](~/articles/cognitive-services/speech-service/speech-sdk.md) dos Serviços Cognitivos integra-se ao [LUIS (Serviço Inteligente de Reconhecimento Vocal)](https://www.luis.ai/home) para fornecer **reconhecimento de intenção.** Uma intenção é algo que o usuário deseja fazer: agendar um voo, conferir o clima ou fazer uma chamada. O usuário pode usar os termos que mais lhe parecerem naturais. Usando aprendizado de máquina, o LUIS mapeia as solicitações do usuário para as intenções que você definiu.
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 563668780c42ca23a1904757f886581f3ad0c5e8
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.openlocfilehash: 352ad9473a1c1a9360ddceb720ff968f4e97e012
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617296"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65889281"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-online"></a>Tutorial: Integração do Azure Active Directory ao Tableau Online
 
@@ -53,7 +53,7 @@ Para configurar a integração do Tableau Online ao Azure AD, você precisa adic
 
 **Para adicionar o Tableau Online por meio da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -107,7 +107,7 @@ Para configurar o logon único do Azure AD com o Tableau Online, execute as segu
 
      a. Na caixa de texto **URL de Logon**, digite a URL: `https://sso.online.tableau.com/public/sp/login?alias=<entityid>`
 
-    b. Na caixa de texto **Identificador (ID da Entidade)**, digite a URL: `https://sso.online.tableau.com/public/sp/metadata?alias=<entityid>`
+    b. Na caixa de texto **Identificador (ID da Entidade)** , digite a URL: `https://sso.online.tableau.com/public/sp/metadata?alias=<entityid>`
 
     > [!NOTE]
     > Você obterá o valor `<entityid>` na seção **Configurar o Tableau Online** neste tutorial. O valor de ID de entidade será o valor **Identificador do Azure AD** na seção **Configurar o Tableau Online**.
@@ -188,7 +188,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brittasimon@yourcompanydomain.extension**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrendaFernandes\@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
@@ -229,7 +229,7 @@ Nesta seção, você criará uma usuária chamada Brenda Fernandes no Tableau On
   
     ![Criação de um usuário de teste do AD do Azure](./media/tableauonline-tutorial/tutorial_tableauonline_15.png)
 
-2. Selecione **Adicionar usuários para autenticação (de SAML)**. Na caixa de texto **Inserir endereços de email**, adicione britta.simon@contoso.com
+2. Selecione **Adicionar usuários para autenticação (de SAML)** . Na caixa de texto **Inserir endereços de email**, adicione brenda.fernandes\@contoso.com
   
     ![Criação de um usuário de teste do AD do Azure](./media/tableauonline-tutorial/tutorial_tableauonline_11.png)
 

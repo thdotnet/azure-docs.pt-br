@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 03/04/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 87c5d24f0e9077acf66bacd97097cfc32bd49ead
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 3a307c32d15aa8c7809d728d98220b0819e91c7c
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57432100"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357386"
 ---
 # <a name="what-is-computer-vision"></a>O que é a Pesquisa Visual Computacional?
 
@@ -46,7 +46,7 @@ Você pode analisar imagens para detectar e fornecer informações sobre seus re
 
 Use a Pesquisa Visual Computacional para extrair texto de uma imagem em um fluxo de caracteres legíveis por computador usando o [OCR (reconhecimento óptico de caracteres)](concept-recognizing-text.md#ocr-optical-character-recognition-api). Se necessário, o OCR corrige a rotação do texto reconhecido e fornece as coordenadas de quadro de cada palavra. O OCR dá suporte a 25 idiomas e detecta automaticamente o idioma do texto reconhecido.
 
-Você também pode usar a [API de Leitura](concept-recognizing-text.md#read-api) para extrair texto impresso e manuscrito de imagens e documentos com uso intenso de texto. A API de Leitura usa modelos atualizados e funciona em uma variedade de objetos em diferentes superfícies e telas de fundo, como recibos, cartazes, cartões de visita, cartas e quadros de comunicações. Atualmente, a API de Leitura está em versão prévia e o inglês é o único idioma com suporte.
+Você também pode usar a [API de Leitura](concept-recognizing-text.md#read-api) para extrair texto impresso e manuscrito de imagens e documentos com uso intenso de texto. A API de Leitura usa modelos atualizados e funciona em uma variedade de objetos em diferentes superfícies e telas de fundo, como recibos, cartazes, cartões de visita, cartas e quadros de comunicações. Atualmente, inglês é o único idioma com suporte.
 
 ## <a name="moderate-content-in-images"></a>Moderar conteúdo em imagens
 

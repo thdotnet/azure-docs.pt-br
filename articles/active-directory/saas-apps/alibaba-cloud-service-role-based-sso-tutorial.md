@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8de2f7cb90e004673c59282a8023d55df364220a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 9d4b154b8ce55c381f1398c696bc439067dccfab
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65140770"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65899753"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-alibaba-cloud-service-role-based-sso"></a>Tutorial: Integração do Azure Active Directory com o Alibaba Cloud Service (SSO baseado em função)
 
@@ -54,7 +54,7 @@ Para configurar a integração do Alibaba Cloud Service (SSO baseado em função
 
 **Para adicionar o Alibaba Cloud Service (SSO baseado em função) por meio da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -66,11 +66,11 @@ Para configurar a integração do Alibaba Cloud Service (SSO baseado em função
 
     ![O botão Novo aplicativo](common/add-new-app.png)
 
-4. Na caixa de pesquisa, digite **Alibaba Cloud Service (SSO baseado em função)**, selecione **Alibaba Cloud Service (SSO baseado em função)** no painel de resultados e clique no botão **Adicionar** para adicionar o aplicativo.
+4. Na caixa de pesquisa, digite **Alibaba Cloud Service (SSO baseado em função)** , selecione **Alibaba Cloud Service (SSO baseado em função)** no painel de resultados e clique no botão **Adicionar** para adicionar o aplicativo.
 
     ![Alibaba Cloud Service (SSO baseado em função) na lista de resultados](common/search-new-app.png)
 
-5. Na página **Alibaba Cloud Service (SSO baseado em função)**, clique em **Propriedades** no painel de navegação à esquerda, copie a **ID de objeto** e salve-a no computador para uso posterior.
+5. Na página **Alibaba Cloud Service (SSO baseado em função)** , clique em **Propriedades** no painel de navegação à esquerda, copie a **ID de objeto** e salve-a no computador para uso posterior.
 
     ![Configuração de propriedades](./media/alibaba-cloud-service-role-based-sso-tutorial/Properties.png)
     
@@ -95,7 +95,7 @@ Nesta seção, você habilitará o logon único do Azure AD no portal do Azure.
 
 Para configurar o logon único do Azure AD com o Alibaba Cloud Service (SSO baseado em função), execute as seguintes etapas:
 
-1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativo do **Alibaba Cloud Service (SSO baseado em função)**, selecione **Logon único**.
+1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativo do **Alibaba Cloud Service (SSO baseado em função)** , selecione **Logon único**.
 
     ![Link Configurar logon único](common/select-sso.png)
 
@@ -135,8 +135,8 @@ Para configurar o logon único do Azure AD com o Alibaba Cloud Service (SSO base
 
     | NOME | Namespace | Atributo de Origem|
     | ---------------| ------------| --------------- |
-    | Função | https://www.aliyun.com/SAML-Role/Attribute | user.assignedroles |
-    | RoleSessionName | https://www.aliyun.com/SAML-Role/Attribute | user.userprincipalname |
+    | Função | https:\//www.aliyun.com/SAML-Role/Attribute | user.assignedroles |
+    | RoleSessionName | https:\//www.aliyun.com/SAML-Role/Attribute | user.userprincipalname |
 
     > [!NOTE]
     > Clique [aqui](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management) para saber como configurar a **Função** no Azure AD
@@ -161,7 +161,7 @@ Para configurar o logon único do Azure AD com o Alibaba Cloud Service (SSO base
 
     ![O link de download do Certificado](common/metadataxml.png)
 
-8. Na seção **Alibaba Cloud Service (SSO baseado em função)**, copie as URLs apropriadas de acordo com suas necessidades.
+8. Na seção **Alibaba Cloud Service (SSO baseado em função)** , copie as URLs apropriadas de acordo com suas necessidades.
 
     ![Copiar URLs de configuração](common/copy-configuration-urls.png)
 
@@ -252,7 +252,7 @@ Para configurar o logon único do Azure AD com o Alibaba Cloud Service (SSO base
 
 ### <a name="configure-alibaba-cloud-service-role-based-sso-single-sign-on"></a>Configurar o logon único do Alibaba Cloud Service (SSO baseado em função)
 
-Para configurar o logon único no **Alibaba Cloud Service (SSO baseado em função)**, é necessário enviar o **XML de Metadados de Federação** baixado e as URLs copiadas adequadas do portal do Azure para a [equipe de suporte do Alibaba Cloud Service (SSO baseado em função)](https://www.aliyun.com/service/). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+Para configurar o logon único no **Alibaba Cloud Service (SSO baseado em função)** , é necessário enviar o **XML de Metadados de Federação** baixado e as URLs copiadas adequadas do portal do Azure para a [equipe de suporte do Alibaba Cloud Service (SSO baseado em função)](https://www.aliyun.com/service/). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 
@@ -282,11 +282,11 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
 Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo acesso ao Alibaba Cloud Service (SSO baseado em função).
 
-1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **Alibaba Cloud Service (SSO baseado em função)**.
+1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **Alibaba Cloud Service (SSO baseado em função)** .
 
     ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
-2. Na lista de aplicativos, selecione **Alibaba Cloud Service (SSO baseado em função)**.
+2. Na lista de aplicativos, selecione **Alibaba Cloud Service (SSO baseado em função)** .
 
     ![O link do Alibaba Cloud Service (SSO baseado em função) na lista de Aplicativos](common/all-applications.png)
 
@@ -317,7 +317,7 @@ Nesta seção, você criará um usuário chamado Brenda Fernandes no Alibaba Clo
 
 Depois que as configurações anteriores forem concluídas, teste o Alibaba Cloud Service (SSO baseado em função) seguindo estas etapas:
 
-1. No portal do Azure, acesse a página **Alibaba Cloud Service (SSO baseado em função)**, selecione **Logon único** e clique em **Testar**.
+1. No portal do Azure, acesse a página **Alibaba Cloud Service (SSO baseado em função)** , selecione **Logon único** e clique em **Testar**.
 
     ![Configuração de teste](./media/alibaba-cloud-service-role-based-sso-tutorial/test03.png)
 

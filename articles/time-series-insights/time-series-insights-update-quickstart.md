@@ -4,19 +4,19 @@ description: Compreender o ambiente de demonstração do Azure Time Series Insig
 ms.service: time-series-insights
 services: time-series-insights
 author: ashannon7
-ms.author: anshan
+ms.author: dpalled
 manager: cshankar
 ms.reviewer: anshan
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
 ms.date: 04/22/2019
-ms.openlocfilehash: dbdbfc797d37ed38936d6cfd354383d412c6b52d
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: e35d46607e0a186c8a3a38669c68a6ea52711b51
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205813"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242081"
 ---
 # <a name="quickstart-explore-the-azure-time-series-insights-preview-demo-environment"></a>Início Rápido: Explorar o ambiente de demonstração do Azure Time Series Insights Preview
 
@@ -40,14 +40,14 @@ O Gerenciador da Versão Prévia do Time Series Insights demonstra a análise de
 
 1. Observe a turbina eólica **W7** na **Usina 1 da Contoso**.  
 
-    * Atualize o intervalo de exibição para **1/1/17 20:00 a 10/3/17 20:00 (UTC)**.
+    * Atualize o intervalo de exibição para **1/1/17 20:00 a 10/3/17 20:00 (UTC)** .
     * Selecione o sensor da **Usina 1 da Contoso** > **W7** > **Sistema de Gerador** > **GeneratorSpeed**. Em seguida, examine os valores resultantes.
 
       [![W7 na Usina 1 da Contoso](media/v2-update-quickstart/quickstart-one.png)](media/v2-update-quickstart/quickstart-one.png#lightbox)
 
 1. Recentemente, a Contoso descobriu um incêndio em turbina eólica **W7**. As opiniões variam sobre a causa imediata do incêndio. Com uma inspeção detalhada, vemos que o sensor de alerta de incêndio foi ativado durante o incêndio.
 
-    * Atualize o intervalo de exibição para **9/3/17 20:00 a 10/3/17 20:00 (UTC)**.
+    * Atualize o intervalo de exibição para **9/3/17 20:00 a 10/3/17 20:00 (UTC)** .
     * Selecione o sensor do **Sistema de Segurança** > **FireAlert**.
 
       [![A Contoso detectou um incêndio na turbina eólica W7](media/v2-update-quickstart/quickstart-two.png)](media/v2-update-quickstart/quickstart-two.png#lightbox)
@@ -61,7 +61,7 @@ O Gerenciador da Versão Prévia do Time Series Insights demonstra a análise de
 
 1. Os sensores de pressão do óleo e de avisos ativos aumentaram repentinamente logo antes do incêndio. Expanda a série temporal exibida para ver outros sinais presentes que levaram ao incêndio. Ambos os sensores flutuaram consistentemente ao longo do tempo, indicando um padrão persistente e preocupante.
 
-    * Atualizar o intervalo de exibição para **24/2/17 20:00 a 10/3/17 20:00 (UTC)**.
+    * Atualizar o intervalo de exibição para **24/2/17 20:00 a 10/3/17 20:00 (UTC)** .
 
       [![Os sensores de pressão do óleo e de avisos ativos também aumentaram repentinamente](media/v2-update-quickstart/quickstart-four.png)](media/v2-update-quickstart/quickstart-four.png#lightbox)
 
@@ -82,7 +82,7 @@ Usando o Azure Time Series Insights e a telemetria de sensor, descobrimos uma te
 
 1. Alguns cenários exigem uma análise sofisticada para revelar indicações sutis nos dados. Selecione o moinho de vento **W6** na data **25/6**
 
-    * Atualize o intervalo de exibição para **1/6/17 20:00 a 1/7/17 20:00 (UTC)**.
+    * Atualize o intervalo de exibição para **1/6/17 20:00 a 1/7/17 20:00 (UTC)** .
     * Em seguida, selecione o sensor da **Usina 1 da Contoso** > **W6** > **Sistema de Segurança** > **VoltageActuatorSwitchWarning**.
 
       [![Atualizar o intervalo de exibição e selecionar W6](media/v2-update-quickstart/quickstart-six.png)](media/v2-update-quickstart/quickstart-six.png#lightbox)

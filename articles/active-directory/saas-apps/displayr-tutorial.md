@@ -5,7 +5,7 @@ services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
-ms.reviewer: barbkess
+ms.reviewer: celested
 ms.assetid: b739b4e3-1a37-4e3c-be89-c3945487f4c1
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
@@ -13,110 +13,89 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/03/2019
+ms.date: 05/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9694790ea02bc778bf3b9db212e61fabb90a28a8
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.openlocfilehash: b7a2d793a1fbd68d6a71f48b556a77ddcaaaf111
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65441435"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66112183"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-displayr"></a>Tutorial: Integração do Azure Active Directory ao Displayr
+# <a name="tutorial-integrate-displayr-with-azure-active-directory"></a>Tutorial: Integrar o Displayr com o Azure Active Directory
 
-Neste tutorial, você aprenderá a integrar o Displayr ao Azure AD (Azure Active Directory).
-A integração do Displayr ao Azure AD oferece os seguintes benefícios:
+Neste tutorial, você aprenderá a integrar o Displayr ao Azure AD (Azure Active Directory). Ao integrar o Displayr no Azure AD, você pode:
 
-* Você pode controlar no Azure AD quem tem acesso ao Displayr.
-* Você pode permitir que os usuários sejam conectados automaticamente ao Displayr (logon único) com suas contas do Azure AD.
-* Você pode gerenciar suas contas em um único local central – o portal do Azure.
+* Controlar no Azure AD quem tem acesso ao Displayr.
+* Permitir que os usuários sejam conectados automaticamente ao Displayr com suas contas do Azure AD.
+* Gerencie suas contas em uma localização central – o portal do Azure.
 
-Para conhecer mais detalhadamente a integração de aplicativos de SaaS ao AD do Azure, consulte [O que é o acesso a aplicativos e logon único com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
+Para saber mais sobre a integração de aplicativos SaaS ao Azure AD, confira [O que é o acesso de aplicativos e o logon único com o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para configurar a integração do Azure AD ao Displayr, você precisará dos seguintes itens:
+Para começar, você precisará dos seguintes itens:
 
-* Uma assinatura do Azure AD. Se não tiver um ambiente do Azure AD, poderá obter uma [conta gratuita](https://azure.microsoft.com/free/)
-* Assinatura habilitada para logon único do Displayr
+* Uma assinatura do Azure AD. Caso você não tenha uma assinatura, obtenha uma [conta gratuita](https://azure.microsoft.com/free/).
+* Assinatura habilitada para SSO (logon único) do Displayr.
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
-Neste tutorial, você configurará e testará o logon único do Azure AD em um ambiente de teste.
-
-* O Displayr dá suporte ao SSO iniciado por **SP**
+Neste tutorial, você configurará e testará o SSO do Azure AD em um ambiente de teste. O Displayr é compatível com SSO iniciado por **SP**.
 
 ## <a name="adding-displayr-from-the-gallery"></a>Como adicionar o Displayr por meio da galeria
 
 Para configurar a integração do Displayr ao Azure AD, você precisará adicionar o Displayr por meio da galeria à lista de aplicativos SaaS gerenciados.
 
-**Para adicionar o Displayr por meio da galeria, execute as seguintes etapas:**
-
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
-
-    ![O botão Azure Active Directory](common/select-azuread.png)
-
-2. Navegue até **Aplicativos Empresariais** e, em seguida, selecione a opção **Todos os Aplicativos**.
-
-    ![A folha Aplicativos empresariais](common/enterprise-applications.png)
-
-3. Clique no botão **Novo aplicativo** na parte superior da caixa de diálogo para adicionar o novo aplicativo.
-
-    ![O botão Novo aplicativo](common/add-new-app.png)
-
-4. Na caixa de pesquisa, digite **Displayr**, selecione **Displayr** no painel de resultados e, em seguida, clique no botão **Adicionar** para adicionar o aplicativo.
-
-    ![Displayr na lista de resultados](common/search-new-app.png)
+1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta corporativa ou de estudante ou uma conta pessoal da Microsoft.
+1. No painel de navegação esquerdo, selecione o serviço **Azure Active Directory**.
+1. Navegue até **Aplicativos Empresariais** e, em seguida, selecione **Todos os Aplicativos**.
+1. Para adicionar um novo aplicativo, selecione **Novo aplicativo**.
+1. Na seção **Adicionar por meio da galeria**, digite **Displayr** na caixa de pesquisa.
+1. Selecione **Displayr** no painel de resultados e, em seguida, adicione o aplicativo. Aguarde alguns segundos enquanto o aplicativo é adicionado ao seu locatário.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-Nesta seção, você configurará e testará o logon único do Azure AD com o Displayr, com base em um usuário de teste chamado **Brenda Fernandes**.
-Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Displayr.
+Configure e teste o SSO do Azure AD com o Displayr usando um usuário de teste chamado **Brenda Fernandes**. Para que o SSO funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Displayr.
 
-Para configurar e testar o logon único do Azure AD com o Displayr, você precisará concluir os seguintes blocos de construção:
+Para configurar e testar o SSO do Azure AD com o Displayr, conclua os seguintes blocos de construção:
 
-1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** – para habilitar seus usuários a usar esse recurso.
-2. **[Configurar o logon único do Displayr](#configure-displayr-single-sign-on)** – para definir as configurações de logon único no lado do aplicativo.
-3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
-4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
-5. **[Criar um usuário de teste do Displayr](#create-displayr-test-user)** – para ter um equivalente de Brenda Fernandes no Displayr que esteja vinculado à representação de usuário do Azure AD.
-6. **[Teste o logon único](#test-single-sign-on)** – para verificar se a configuração funciona.
+1. **[Configurar o SSO do Azure AD](#configure-azure-ad-sso)** para permitir que os usuários usem esse recurso.
+2. **[Configurar o Displayr](#configure-displayr)** para definir as configurações de SSO no lado do aplicativo.
+3. **[Crie um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com Brenda Fernandes.
+4. **[Atribua o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** para permitir que Brenda Fernandes use o logon único do Azure AD.
+5. **[Criar um usuário de teste do Displayr](#create-displayr-test-user)** para ter um equivalente de Brenda Fernandes no Displayr que esteja vinculado à representação de usuário do Azure AD.
+6. **[Testar o SSO](#test-sso)** para verificar se a configuração funciona.
 
-### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
+### <a name="configure-azure-ad-sso"></a>Configurar o SSO do Azure AD
 
-Nesta seção, você habilitará o logon único do Azure AD no portal do Azure.
+Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
-Para configurar o logon único do Azure AD com o Displayr, execute as seguintes etapas:
+1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **Displayr**, localize a seção **Gerenciar** e selecione **Logon único**.
+1. Na página **Selecionar um método de logon único**, selecione **SAML**.
+1. Na página **Configurar o Logon Único com o SAML**, clique no ícone Editar/de caneta de **Configuração Básica do SAML** para editar as configurações.
 
-1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **Displayr**, selecione **Logon único**.
+   ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
-    ![Link Configurar logon único](common/select-sso.png)
+1. Na seção **Configuração Básica do SAML**, execute a seguinte etapa:
 
-2. Na caixa de diálogo **Selecionar um método de logon único**, selecione o modo **SAML/WS-Fed** para habilitar o logon único.
+     a. Na caixa de texto **URL de Entrada** digite uma URL usando o seguinte padrão: `https://<YOURDOMAIN>.displayr.com`
 
-    ![Modo de seleção de logon único](common/select-saml-option.png)
+    b. Na caixa de texto **Identificador (ID da Entidade)** , digite uma URL usando o seguinte padrão: `<YOURDOMAIN>.displayr.com`
 
-3. Na página **Configurar Logon Único com SAML**, clique no ícone **Editar** para abrir a caixa de diálogo **Configuração Básica do SAML**.
+    >[!NOTE]
+    >Esses valores não são reais. Atualize esses valores com a URL de Entrada e o Identificador reais. Entre em contato com a [equipe de suporte ao cliente do Displayr](mailto:support@displayr.com) para obter esses valores. Veja também os padrões mostrados na seção "Configuração Básica de SAML" no portal do Azure.
 
-    ![Editar a Configuração Básica de SAML](common/edit-urls.png)
+1. Na página **Configurar o Logon Único com o SAML**, na seção **Certificado de Autenticação SAML**, localize **Certificado (Base64)** e selecione **Baixar** para baixar o certificado e salvá-lo no computador.
 
-4. Na seção **Configuração Básica do SAML**, execute a seguinte etapa:
+   ![O link de download do Certificado](common/certificatebase64.png)
 
-    ![Informações de logon único de Domínio e URLs do Displayr](common/sp-intiated.png)
-
-    Na caixa de texto **URL de Logon**, digite uma URL: `https://app.displayr.com/Login`
-
-5. Na seção **Certificado de Autenticação SAML**, clique em **Baixar** para baixar o **Certificado (Bruto)** usando as opções fornecidas de acordo com suas necessidades e salve-o no computador.
-
-    ![O link de download do Certificado](common/certificateraw.png)
-
-6. O aplicativo Displayr espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone  **Editar** para abrir a caixa de diálogo Atributos do usuário.
+1. O aplicativo Displayr espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone  **Editar** para abrir a caixa de diálogo Atributos do usuário.
 
     ![image](common/edit-attribute.png)
 
-7. Além do indicado acima, o aplicativo Displayr espera que mais alguns atributos sejam passados novamente na resposta SAML. Na seção **Atributos e Declarações de Usuário** da caixa de diálogo **Declarações de Grupo (Versão Prévia)** , execute as seguintes etapas:
+1. Além do indicado acima, o aplicativo Displayr espera que mais alguns atributos sejam passados novamente na resposta SAML. Na seção **Atributos e Declarações de Usuário** da caixa de diálogo **Declarações de Grupo (Versão Prévia)**  , execute as seguintes etapas:
 
      a. Clique na **caneta** ao lado de **Grupos retornados na declaração**.
 
@@ -134,95 +113,77 @@ Para configurar o logon único do Azure AD com o Displayr, execute as seguintes 
 
     f. Clique em **Save** (Salvar).
 
-8. Na seção **Configurar o Displayr**, copie as URLs apropriadas de acordo com suas necessidades.
+1. Na seção **Configurar o Displayr**, copie as URLs apropriadas de acordo com seus requisitos.
 
-    ![Copiar URLs de configuração](common/copy-configuration-urls.png)
+   ![Copiar URLs de configuração](common/copy-configuration-urls.png)
 
-    a. URL de logon
+### <a name="configure-displayr"></a>Configurar o Displayr
 
-    b. Identificador do Azure AD
+1. Para automatizar a configuração no Displayr, é necessário instalar a **Extensão do navegador de Entrada Segura dos Meus Aplicativos**, clicando em **Instalar a extensão**.
 
-    c. URL de logoff
+    ![Extensão dos meus aplicativos](common/install-myappssecure-extension.png)
 
-### <a name="configure-displayr-single-sign-on"></a>Configurar o logon único do Displayr
+2. Depois de adicionar a extensão ao navegador, clique em **Instalação do Displayr**. Você será direcionado para o aplicativo Displayr. Em seguida, forneça as credenciais de administrador para entrar no Displayr. A extensão do navegador configurará automaticamente o aplicativo e automatizará as etapas de 3 a 6.
 
-1. Em outra janela do navegador da Web, entre no Displayr como administrador.
+    ![Configuração da instalação](common/setup-sso.png)
 
-2. Clique em **Configurações** e, em seguida, navegue para **Conta**.
+3. Se quiser configurar o Displayr manualmente, abra uma nova janela do navegador da Web, entre no site corporativo do Displayr como administrador e execute as seguintes etapas:
+
+4. Clique em **Configurações** e, em seguida, navegue para **Conta**.
 
     ![Configuração](./media/displayr-tutorial/config01.png)
 
-3. Alterne para **Configurações** no menu superior e role a página para baixo para clicar em **Configurar Logon Único (SAML)**.
+5. Alterne para **Configurações** no menu superior e role a página para baixo para clicar em **Configurar Logon Único (SAML)** .
 
     ![Configuração](./media/displayr-tutorial/config02.png)
 
-4. Na página **Logon Único (SAML)**, execute as seguintes etapas:
+6. Na página **Logon Único (SAML)** , execute as seguintes etapas:
 
     ![Configuração](./media/displayr-tutorial/config03.png)
 
-     a. Marque a caixa **Habilitar Logon Único (SAML)**.
+     a. Marque a caixa **Habilitar Logon Único (SAML)** .
 
-    b. Na caixa de texto **Emissor**, cole o valor do **Identificador do Azure AD** copiado do portal do Azure.
+    b. Copie o valor real do **Identificador** da seção **Configuração Básica de SAML** do Azure AD e cole-o na caixa de texto **Emissor**.
 
     c. Na caixa de texto **URL de Logon**, cole o valor da **URL de Logon** copiado do portal do Azure.
 
     d. Na caixa de texto **URL de Logoff**, cole o valor da **URL de Logoff** copiado do portal do Azure.
 
-    e. Abra o Certificado (Bruto) no Bloco de notas, copie o conteúdo e cole-o na caixa de texto **Certificado**.
+    e. Abra o Certificado (Base64) no Bloco de Notas, copie o conteúdo e cole-o na caixa de texto **Certificado**.
 
     f. Os **mapeamentos de grupo** são opcionais.
 
     g. Clique em **Save** (Salvar).  
 
-### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
+### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
-O objetivo desta seção é criar um usuário de teste no Portal do Azure chamado Brenda Fernandes.
+Nesta seção, você criará um usuário de teste no portal do Azure chamado Brenda Fernandes.
 
-1. No Portal do Azure, no painel esquerdo, selecione **Azure Active Directory**, selecione **Usuários** e, em seguida, **Todos os usuários**.
-
-    ![Os links “Usuários e grupos” e “Todos os usuários”](common/users.png)
-
-2. Selecione **Novo usuário** na parte superior da tela.
-
-    ![Botão Novo usuário](common/new-user.png)
-
-3. Nas Propriedades do usuário, execute as etapas a seguir.
-
-    ![A caixa de diálogo Usuário](common/user-properties.png)
-
-     a. No campo **Nome**, insira **BrendaFernandes**.
-  
-    b. No campo **Nome de usuário**, digite `brittasimon@yourcompanydomain.extension`. Por exemplo, BrittaSimon@contoso.com
-
-    c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
-
-    d. Clique em **Criar**.
+1. No painel esquerdo do portal do Azure, selecione **Azure Active Directory**, **Usuários** e, em seguida, **Todos os usuários**.
+1. Selecione **Novo usuário** na parte superior da tela.
+1. Nas propriedades de **Usuário**, siga estas etapas:
+   1. No campo **Nome**, insira `Britta Simon`.  
+   1. No campo **Nome de usuário**, insira username@companydomain.extension. Por exemplo, `BrittaSimon@contoso.com`.
+   1. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa **Senha**.
+   1. Clique em **Criar**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo a ela o acesso ao Displayr.
+Nesta seção, você habilitará Brenda Fernandes para usar o logon único do Azure permitindo a ela acesso ao Displayr.
 
-1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **Displayr**.
+1. No portal do Azure, selecione **Aplicativos empresariais** e, em seguida, selecione **Todos os aplicativos**.
+1. Na lista de aplicativos, selecione **Displayr**.
+1. Na página de visão geral do aplicativo, localize a seção **Gerenciar** e selecione **Usuários e grupos**.
 
-    ![Folha de aplicativos empresariais](common/enterprise-applications.png)
+   ![O link “Usuários e grupos”](common/users-groups-blade.png)
 
-2. Na lista de aplicativos, selecione **Displayr**.
+1. Selecione **Adicionar usuário** e, em seguida, **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
 
-    ![O link do Displayr na lista Aplicativos](common/all-applications.png)
+    ![O link Adicionar Usuário](common/add-assign-user.png)
 
-3. No menu à esquerda, selecione **Usuários e grupos**.
-
-    ![O link “Usuários e grupos”](common/users-groups-blade.png)
-
-4. Escolha o botão **Adicionar usuário** e, em seguida, escolha **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
-
-    ![O painel Adicionar Atribuição](common/add-assign-user.png)
-
-5. Na caixa de diálogo **Usuários e grupos**, escolha **Brenda Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
-
-6. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar função**, escolha a função de usuário apropriada na lista e clique no botão **Selecionar** na parte inferior da tela.
-
-7. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
+1. Na caixa de diálogo **Usuários e grupos**, selecione **Brenda Fernandes** na lista de Usuários e, em seguida, clique no botão **Selecionar** na parte inferior da tela.
+1. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar Função**, selecione a função apropriada para o usuário na lista e, em seguida, clique no botão **Selecionar** na parte inferior da tela.
+1. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
 
 ### <a name="create-displayr-test-user"></a>Criar um usuário de teste do Displayr
 
@@ -252,9 +213,7 @@ Para permitir que os usuários do Azure AD entrem no Displayr, eles precisam ser
 
     d. Clique em **Save** (Salvar).
 
-### <a name="test-single-sign-on"></a>Testar logon único 
-
-Nesta seção, você testará sua configuração de logon único do Azure AD usando o Painel de Acesso.
+### <a name="test-sso"></a>Testar o SSO
 
 Ao clicar no bloco do Displayr no Painel de Acesso, você deverá ser conectado automaticamente ao Displayr, para o qual você configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
@@ -265,4 +224,3 @@ Ao clicar no bloco do Displayr no Painel de Acesso, você deverá ser conectado 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-

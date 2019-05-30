@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: aa7f77299750a969bf936a3ed9b6ae76653a90c4
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: c836fd122d9dba0cd7eb20fe405e63c3ca3f59eb
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59526683"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306789"
 ---
 # <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Tutorial: Implantar um aplicativo Java em um cluster do Service Fabric no Azure
 
@@ -60,7 +60,7 @@ As etapas a seguir criam os recursos necessários para implantar seu aplicativo 
     git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
     ```
 
-2. Fazer logon na sua conta do Azure
+2. Entre na sua conta do Azure
 
     ```bash
     az login

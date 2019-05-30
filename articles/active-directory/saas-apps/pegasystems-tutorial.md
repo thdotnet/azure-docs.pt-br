@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Integração do Azure Active Directory ao Pega Systems | Microsoft Docs'
-description: Saiba como configurar o logon único entre o Azure Active Directory e o Pega Systems.
+description: Neste tutorial você aprenderá a configurar o logon único entre o Azure Active Directory e o Pega Systems.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -15,267 +15,270 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 34fe5d85829d909989513214406ba96ea5be0aa8
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 195e7bf21fe1f6017705883f2ec692c182f15375
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59271094"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65560603"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pega-systems"></a>Tutorial: Integração do Azure Active Directory ao Pega Systems
 
-Neste tutorial, você aprenderá a integrar o Pega Systems ao Azure Active Directory (Azure AD).
-A integração do Pega Systems ao Azure AD oferece os seguintes benefícios:
+Neste tutorial, você aprenderá a integrar o Pega Systems ao Azure AD (Azure Active Directory).
 
-* No Azure AD, é possível controlar quem tem acesso ao Pega Systems.
-* Você pode permitir que os usuários sejam conectados automaticamente ao Pega Systems (Logon Único) com suas contas do Azure AD.
-* Você pode gerenciar suas contas em um único local central – o portal do Azure.
+Essa integração oferece estes benefícios:
 
-Para conhecer mais detalhadamente a integração de aplicativos de SaaS ao AD do Azure, consulte [O que é o acesso a aplicativos e logon único com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
+* Você pode usar o Azure AD para controlar quem tem acesso ao Pega Systems.
+* Você pode permitir que os usuários sejam conectados automaticamente ao Pega Systems (logon único) com suas contas do Azure AD.
+* Gerencie suas contas em um único local: o portal do Azure.
+
+Para saber mais sobre a integração de aplicativos SaaS ao Azure AD, confira [Logon único em aplicativos no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+
+Caso você não tenha uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para configurar a integração do Azure AD ao Pega Systems, você precisa dos seguintes itens:
+Para configurar a integração do Azure AD ao Pega Systems, você precisa ter:
 
-* Uma assinatura do Azure AD. Se não tiver um ambiente do Azure AD, você pode obter uma versão de avaliação de um mês [aqui](https://azure.microsoft.com/pricing/free-trial/)
-* Assinatura habilitada para logon único do Pega Systems
+* Uma assinatura do Azure AD. Se você não tiver um ambiente do Azure AD, inscreva-se em uma [avaliação de um mês](https://azure.microsoft.com/pricing/free-trial/).
+* Uma assinatura do Pega Systems que tenha o logon único habilitado.
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
 Neste tutorial, você configurará e testará o logon único do Azure AD em um ambiente de teste.
 
-* O Pega Systems é compatível com SSO iniciado por **SP** e **IDP**
+* O Pega Systems é compatível com SSO iniciado por SP e IdP.
 
-## <a name="adding-pega-systems-from-the-gallery"></a>Adição do Pega Systems da galeria
+## <a name="add-pega-systems-from-the-gallery"></a>Adicionar o Pega Systems por meio da galeria
 
-Para configurar a integração do Pega Systems ao Azure AD, você precisa adicionar o Pega Systems da galeria à sua lista de aplicativos SaaS gerenciados.
+Para configurar a integração do Pega Systems ao Azure AD, você precisa adicionar o Pega Systems por meio da galeria à sua lista de aplicativos SaaS gerenciados.
 
-**Para adicionar o Pega Systems da galeria, execute as seguintes etapas:**
+1. No [portal do Azure](https://portal.azure.com), no painel esquerdo, selecione **Azure Active Directory**:
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+    ![Selecione Azure Active Directory](common/select-azuread.png)
 
-    ![O botão Azure Active Directory](common/select-azuread.png)
+2. Acesse **Aplicativos empresariais** > **Todos os aplicativos**.
 
-2. Navegue até **Aplicativos Empresariais** e, em seguida, selecione a opção **Todos os Aplicativos**.
+    ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
-    ![A folha Aplicativos empresariais](common/enterprise-applications.png)
+3. Para adicionar um aplicativo, selecione **Novo aplicativo** na parte superior da janela:
 
-3. Clique no botão **Novo aplicativo** na parte superior da caixa de diálogo para adicionar o novo aplicativo.
+    ![Selecionar Novo aplicativo](common/add-new-app.png)
 
-    ![O botão Novo aplicativo](common/add-new-app.png)
+4. Na caixa de pesquisa, digite **Pega Systems**. Selecione **Pega Systems** nos resultados da pesquisa e selecione **Adicionar**.
 
-4. Na caixa de pesquisa, digite **Pega Systems**, selecione **Pega Systems** no painel de resultados e, em seguida, clique no botão **Adicionar** para adicionar o aplicativo.
-
-     ![Pega Systems na lista de resultados](common/search-new-app.png)
+     ![Resultados da Pesquisa](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-Nesta seção, você vai configurar e testar o logon único do Azure AD com o Pega Systems com base em um usuário de teste chamado **Brenda Fernandes**.
-Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Pega Systems.
+Nesta seção, você configurará e testará o logon único do Azure AD com o Pega Systems usando um usuário de teste chamado Brenda Fernandes.
+Para habilitar o logon único, você precisará estabelecer uma relação entre um usuário do Azure AD e o usuário correspondente no Pega Systems.
 
-Para configurar e testar o logon único do Azure AD com o Pega Systems, você precisa concluir os seguintes blocos de construção:
+Para configurar e testar o logon único do Azure AD com o Pega Systems, você precisará concluir estas etapas:
 
-1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** – para habilitar seus usuários a usar esse recurso.
-2. **[Configurar o Logon Único do Pega Systems](#configure-pega-systems-single-sign-on)** – para definir as configurações de Logon Único no lado do aplicativo.
-3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
-4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
-5. **[Criar usuário de teste do Pega Systems](#create-pega-systems-test-user)** – para ter um equivalente de Brenda Fernandes no Pega Systems que esteja vinculado à representação do usuário no Azure AD.
-6. **[Teste o logon único](#test-single-sign-on)** – para verificar se a configuração funciona.
+1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** para habilitar o recurso para os usuários.
+2. **[Configurar o logon único do Pega Systems](#configure-pega-systems-single-sign-on)** no lado do aplicativo.
+3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD.
+4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** para habilitar o logon único do Azure AD para o usuário.
+5. **[Criar um usuário de teste do Pega Systems](#create-a-pega-systems-test-user)** que esteja vinculado à representação do Azure AD do usuário.
+6. **[Testar o logon único](#test-single-sign-on)** para verificar se a configuração funciona.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
 
 Nesta seção, você habilitará o logon único do Azure AD no portal do Azure.
 
-Para configurar o logon único do Azure AD com o Pega Systems, execute as seguintes etapas:
+Para configurar o logon único do Azure AD com o Pega Systems, siga estas etapas:
 
-1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **Pega Systems**, selecione **Logon único**.
+1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **Pega Systems**, selecione **Logon único**:
 
-    ![Link Configurar logon único](common/select-sso.png)
+    ![Selecione Logon único](common/select-sso.png)
 
-2. Na caixa de diálogo **Selecionar um método de logon único**, selecione o modo **SAML/WS-Fed** para habilitar o logon único.
+2. Na caixa de diálogo **Selecionar um método de logon único**, selecione o modo **SAML/WS-Fed** para habilitar o logon único:
 
-    ![Modo de seleção de logon único](common/select-saml-option.png)
+    ![Selecionar um método de logon único](common/select-saml-option.png)
 
-3. Na página **Definir logon único com SAML**, clique no ícone **Editar** para abrir a caixa de diálogo **Configuração básica do SAML**.
+3. Na página **Configurar logon único com SAML**, selecione o ícone **Editar** para abrir a caixa de diálogo **Configuração Básica de SAML**:
 
-    ![Editar a Configuração Básica de SAML](common/edit-urls.png)
+    ![Ícone Editar](common/edit-urls.png)
 
-4. Na seção **Configuração Básica do SAML**, caso deseje configurar o aplicativo no modo iniciado por **IDP** execute as seguintes etapas:
+4. Na caixa de diálogo **Configuração Básica de SAML**, caso deseje configurar o aplicativo no modo iniciado por IdP, realize as seguintes etapas.
 
-    ![Informações de logon único de Domínio e URLs do Pega Systems](common/idp-intiated.png)
+    ![Caixa de diálogo Configuração Básica de SAML](common/idp-intiated.png)
 
-     a. No **identificador** caixa de texto, digite uma URL usando o seguinte padrão: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/sp/<INSTANCEID>`
+    1. Na caixa **Identificador**, digite uma URL neste padrão:
 
-    b. No **URL de resposta** caixa de texto, digite uma URL usando o seguinte padrão: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/PRRestService/WebSSO/SAML/AssertionConsumerService`
+       `https://<customername>.pegacloud.io:443/prweb/sp/<instanceID>`
 
-5. Clique em **Definir URLs adicionais** e execute o passo seguinte se quiser configurar a aplicação no modo **SP** iniciado:
+    1. Na caixa **URL de Resposta**, digite uma URL neste padrão:
+
+       `https://<customername>.pegacloud.io:443/prweb/PRRestService/WebSSO/SAML/AssertionConsumerService`
+
+5. Caso deseje configurar o aplicativo no modo iniciado por SP, selecione **Definir URLs adicionais** e realize as seguintes etapas.
 
     ![Informações de logon único de Domínio e URLs do Pega Systems](common/both-advanced-urls.png)
 
-     a. Na caixa de texto **URL de entrada**, digite o logon no valor de URL.
+    1. Na caixa **URL de logon**, digite o valor da URL de logon.
 
-    b. Na caixa de texto **Estado de Retransmissão**, digite uma URL usando o seguinte padrão: `https://<CUSTOMERNAME>.pegacloud.io/prweb/sso`
-
-    > [!NOTE]
-    > Esses valores não são reais. Atualize esses valores com o Identificador, a URL de Resposta, a URL de Entrada e a URL de Estado de Retransmissão reais. Você pode encontrar os valores do Identificador e a URL de Resposta do aplicativo Pega que é explicado mais adiante neste tutorial. Para o Estado de Retransmissão, contate a [equipe de suporte ao Cliente do Pega Systems](https://www.pega.com/contact-us) para obter o valor. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
-
-6. O aplicativo Pega Systems espera as declarações do SAML em um formato específico, o que exige adicionar mapeamentos de atributo personalizados à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo **Atributos de Usuário** .
-
-    ![image](common/edit-attribute.png)
-
-7. Além do indicado acima, o aplicativo Pega Systems espera que mais alguns atributos sejam passados novamente na resposta SAML. Na seção **Declarações de Usuário** da caixa de diálogo **Atributos de Usuário**, execute as seguintes etapas para adicionar o atributo de token SAML, conforme mostrado na tabela abaixo:
-
-    | NOME | Atributo de Origem|
-    | ------------------- | -------------------- |
-    | uid | *********** |
-    | cn  | *********** |
-    | mail | *********** |
-    | accessgroup | *********** |
-    | organization | *********** |
-    | orgdivision | *********** |
-    | orgunit | *********** |
-    | workgroup | *********** |
-    | Telefone | *********** |
+    1. Na caixa **Estado de Retransmissão**, digite uma URL neste padrão: `https://<customername>.pegacloud.io/prweb/sso`
 
     > [!NOTE]
-    > Esses são valores específicos do cliente. Forneça os valores apropriados.
+    > Os valores fornecidos aqui são espaços reservados. Você precisa usar o identificador, a URL de resposta, a URL de logon único e a URL de estado de retransmissão reais. Você pode obter os valores do identificador e da URL de resposta de um aplicativo Pega, conforme explicado mais adiante neste tutorial. Para obter o valor do estado de retransmissão, entre em contato com a [equipe de suporte do Pega Systems](https://www.pega.com/contact-us). Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
-     a. Clique em **Adicionar nova reivindicação** para abrir a caixa de diálogo **Gerenciar declarações de usuários**.
+6. O aplicativo Pega Systems precisa que as declarações do SAML estejam em um formato específico. Para obtê-las no formato correto, você precisa adicionar mapeamentos de atributo personalizados à sua configuração de atributos do token SAML. A captura de tela a seguir mostra os atributos padrão. Selecione o ícone **Editar** para abrir a caixa de diálogo **Atributos de usuário** :
 
-    ![image](common/new-save-attribute.png)
+    ![Atributos de usuário](common/edit-attribute.png)
 
-    ![image](common/new-attribute-details.png)
+7. Além dos atributos mostrados na captura de tela anterior, o aplicativo Pega Systems requer que mais alguns atributos sejam passados de volta na resposta SAML. Na seção **Declarações do usuário** da caixa de diálogo **Atributos de usuário**, realize as seguintes etapas para adicionar esses atributos do token SAML:
 
-    b. Na caixa de texto **Nome** , digite o nome do atributo mostrado para essa linha.
+    
+   - `uid`
+   - `cn`
+   - `mail`
+   - `accessgroup`  
+   - `organization`  
+   - `orgdivision`
+   - `orgunit`
+   - `workgroup`  
+   - `Phone`
 
-    c. Deixe o **Namespace** em branco.
+    > [!NOTE]
+    > Esses valores são específicos para sua organização. Forneça os valores adequados.
 
-    d. Escolha Origem como **Atributo**.
+    1. Selecione **Adicionar nova declaração** para abrir a caixa de diálogo **Gerenciar declarações do usuário**:
 
-    e. Na lista **Atributo de origem**, digite o valor do atributo mostrado para essa linha.
+    ![Selecionar Adicionar nova declaração](common/new-save-attribute.png)
 
-    f. Clique em **Ok**
+    ![Gerenciar a caixa de diálogo de declarações do usuário](common/new-attribute-details.png)
 
-    g. Clique em **Save** (Salvar).
+    1. Na caixa **Nome**, insira o nome do atributo mostrado para aquela linha.
 
-8. Na página **Configurar Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Baixar** para baixar o **XML de Metadados de Federação** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
+    1. Deixe a caixa **Namespace** em branco.
 
-    ![O link de download do Certificado](common/metadataxml.png)
+    1. Em **Origem**, selecione **Atributo**.
 
-9. Na seção **Configurar o Pega Systems**, copie a URL apropriada, de acordo com suas necessidades.
+    1. Na lista **Atributo de origem**, selecione o valor do atributo mostrado para essa linha.
 
-    ![Copiar URLs de configuração](common/copy-configuration-urls.png)
+    1. Selecione **Ok**.
 
-    a. URL de logon
+    1. Clique em **Salvar**.
 
-    b. Identificador do Azure AD
+8. Na página **Configurar logon único com SAML**, na seção **Certificado de Autenticação SAML**, selecione o link **Baixar** ao lado do **XML de Metadados de Federação**, de acordo com suas necessidades e salve o certificado no computador:
 
-    c. URL de logoff
+    ![Link de download do certificado](common/metadataxml.png)
+
+9. Na seção **Configurar Pega Systems**, copie as URLs adequadas, de acordo com suas necessidades.
+
+    ![Copiar as URLs de configuração](common/copy-configuration-urls.png)
+
+    1. **URL de Logon**.
+
+    1. **Identificador do Azure AD**.
+
+    1. **URL de Logoff**.
 
 ### <a name="configure-pega-systems-single-sign-on"></a>Configurar logon único do Pega Systems
 
-1. Para configurar o logon único no **Pega Systems**, abra o **Portal do Pega** com a conta do administrador em outra janela do navegador.
+1. Para configurar o logon único no lado do **Pega Systems**, entre no Portal do Pega com uma conta do administrador em outra janela do navegador.
 
-2. Selecione **Criar** -> **SysAdmin** -> **Serviço de Autenticação**.
+2. Selecione **Criar** > **SysAdmin** > **Serviço de Autenticação**:
 
-    ![Botão Salvar em Configurar Logon Único](./media/pegasystems-tutorial/tutorial_pegasystems_admin.png)
+    ![Selecionar Serviço de Autenticação](./media/pegasystems-tutorial/tutorial_pegasystems_admin.png)
     
-3. Execute as seguintes ações na tela **Criar Serviço de Autenticação**:
+3. Conclua as etapas a seguir na tela **Criar Serviço de Autenticação**.
 
-    ![Botão Salvar em Configurar Logon Único](./media/pegasystems-tutorial/tutorial_pegasystems_admin1.png)
+    ![Tela Criar Serviço de Autenticação](./media/pegasystems-tutorial/tutorial_pegasystems_admin1.png)
 
-     a. Selecione **SAML 2.0** em Tipo
+    1. Na lista **Tipo**, selecione **SAML 2.0**.
 
-    b. Na caixa de texto **Nome**, insira qualquer nome, por exemplo, SSO do Azure AD
+    1. Na caixa **Nome**, digite qualquer nome (por exemplo, **SSO do Azure AD**).
 
-    c. Na caixa de texto **Descrição curta**, insira qualquer descrição  
+    1. Na caixa **Descrição resumida**, insira uma descrição.  
 
-    d. Clique em **Criar e abrir** 
+    1. Selecione **Criar e abrir**.
     
-4. Na seção **Informações do IdP (Provedor de Identidade)**, clique em **Importar metadados do IdP** e procure o arquivo de metadados do qual foi feito o download no portal do Azure. Clique em **Enviar** para carregar os metadados.
+4. Na seção **Informações do IdP (Provedor de Identidade)** , selecione **Importar metadados do IdP** e procure o arquivo de metadados que você baixou do portal do Azure. Clique em **Enviar** para carregar os metadados:
 
-    ![Botão Salvar em Configurar Logon Único](./media/pegasystems-tutorial/tutorial_pegasystems_admin2.png)
+    ![Seção de informações do IdP (Provedor de Identidade)](./media/pegasystems-tutorial/tutorial_pegasystems_admin2.png)
     
-5. Isso populará os dados do IdP, conforme mostrado abaixo.
+    Essa importação preencherá os dados do IdP, conforme mostrado aqui:
 
-    ![Botão Salvar em Configurar Logon Único](./media/pegasystems-tutorial/tutorial_pegasystems_admin3.png)
+    ![Dados do IdP importados](./media/pegasystems-tutorial/tutorial_pegasystems_admin3.png)
     
-6. Execute as seguintes ações na seção **Configurações do SP (Provedor de Serviços)**:
+6. Execute as seguintes etapas na seção **Configurações do SP (Provedor de Serviço)** .
 
-    ![Botão Salvar em Configurar Logon Único](./media/pegasystems-tutorial/tutorial_pegasystems_admin4.png)
+    ![Configurações do provedor de serviço](./media/pegasystems-tutorial/tutorial_pegasystems_admin4.png)
 
-     a. Copie o valor **Identificação da Entidade** e cole-o na caixa de texto **Identificador** na **Configuração Básica de SAML** no portal do Azure.
+    1. Copie o valor de **Identificação da Entidade** e cole-o na caixa **Identificador** na seção **Configuração Básica de SAML** do portal do Azure.
 
-    b. Copie o valor **Local do ACS (Serviço do Consumidor de Declaração)** e cole-o na caixa de texto **URL de Resposta** na **Configuração Básica de SAML** no portal do Azure.
+    1. Copie o valor **Localização do ACS (Serviço do Consumidor de Declaração)** e cole-o na caixa **URL de Resposta** da seção **Configuração Básica de SAML** do portal do Azure.
 
-    c. Selecione **Desabilitar assinatura de solicitação**.
+    1. Selecione **Desabilitar assinatura de solicitação**.
 
-7. Clique em **Salvar**
+7. Clique em **Salvar**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
-O objetivo desta seção é criar um usuário de teste no Portal do Azure chamado Brenda Fernandes.
+Nesta seção, você criará um usuário de teste chamado Brenda Fernandes no portal do Azure.
 
-1. No Portal do Azure, no painel esquerdo, selecione **Azure Active Directory**, selecione **Usuários** e, em seguida, **Todos os usuários**.
+1. No portal do Azure, selecione **Azure Active Directory** no painel esquerdo, **Usuários** e, em seguida, **Todos os usuários**:
 
-    ![Os links “Usuários e grupos” e “Todos os usuários”](common/users.png)
+    ![Selecionar Todos os usuários](common/users.png)
 
-2. Selecione **Novo usuário** na parte superior da tela.
+2. Selecione **Novo usuário** na parte superior da tela:
 
-    ![Botão Novo usuário](common/new-user.png)
+    ![Selecionar Novo usuário](common/new-user.png)
 
-3. Nas Propriedades do usuário, execute as etapas a seguir.
+3. Na caixa de diálogo **Usuário**, conclua as seguintes etapas.
 
-    ![A caixa de diálogo Usuário](common/user-properties.png)
+    ![Caixa de diálogo Usuário](common/user-properties.png)
 
-    a. No campo **Nome**, insira **BrendaFernandes**.
+     a. Na caixa **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite brittasimon@yourcompanydomain.extension. Por exemplo, BrittaSimon@contoso.com
+    b. Na caixa **Nome de usuário**, insira **brendafernandes@\<domíniodaempresa>.\<extensão>** . (Por exemplo, BrittaSimon@contoso.com.)
 
-    c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
+    c. Selecione **Mostrar senha** e, em seguida, anote o valor mostrado na caixa **Senha**.
 
-    d. Clique em **Criar**.
+    d. Selecione **Criar**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo acesso ao Pega Systems.
+Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo a ela o acesso ao Pega Systems.
 
-1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **Pega Systems**.
+1. No portal do Azure, selecione **Aplicativos empresariais**, **Todos os aplicativos** e, em seguida, selecione **Pega Systems**.
 
     ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
 2. Na lista de aplicativos, selecione **Pega Systems**.
 
-    ![O link do Pega Systems na lista de Aplicativos](common/all-applications.png)
+    ![Lista de aplicativos](common/all-applications.png)
 
-3. No menu à esquerda, selecione **Usuários e grupos**.
+3. No painel esquerdo, selecione **Usuários e grupos**:
 
-    ![O link “Usuários e grupos”](common/users-groups-blade.png)
+    ![Selecionar Usuários e grupos](common/users-groups-blade.png)
 
-4. Escolha o botão **Adicionar usuário** e, em seguida, escolha **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
+4. Selecione **Adicionar usuário** e, em seguida, selecione **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
 
-    ![O painel Adicionar Atribuição](common/add-assign-user.png)
+    ![Selecione Adicionar usuário](common/add-assign-user.png)
 
-5. Na caixa de diálogo **Usuários e grupos**, escolha **Brenda Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
+5. Na caixa de diálogo **Usuários e grupos**, selecione **Brenda Fernandes** na lista de usuários e, em seguida, clique no botão **Selecionar** na parte inferior da tela.
 
-6. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar função**, escolha a função de usuário apropriada na lista e clique no botão **Selecionar** na parte inferior da tela.
+6. Se você esperar um valor de função na declaração SAML, na caixa de diálogo **Selecionar Função**, selecione a função apropriada para o usuário na lista. Clique no botão **Selecionar** na parte inferior da tela.
 
-7. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
+7. Na caixa de diálogo **Adicionar Atribuição**, selecione **Atribuir**.
 
-### <a name="create-pega-systems-test-user"></a>Criar usuário de teste do Pega Systems
+### <a name="create-a-pega-systems-test-user"></a>Criar um usuário de teste do Pega Systems
 
-O objetivo desta seção é criar uma usuária chamado Brenda Fernandes no Pega Systems. Trabalhe com a [equipe de suporte ao Cliente do Pega Systems](https://www.pega.com/contact-us) para criar usuários no Pega Systems.
+Em seguida, você precisará criar um usuário chamado Brenda Fernandes no Pega Systems. Trabalhar com a [equipe de suporte do Pega Systems](https://www.pega.com/contact-us) para criar usuários.
 
 ### <a name="test-single-sign-on"></a>Testar logon único
 
-Nesta seção, você testará sua configuração de logon único do Azure AD usando o Painel de Acesso.
+Agora você precisará testar a configuração de logon único do Azure AD usando o Painel de Acesso.
 
-Ao clicar no bloco do Pega Systems no Painel de Acesso, você deverá ser conectado automaticamente ao Pega Systems para o qual você configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Ao selecionar o bloco do Pega Systems no Painel de Acesso, você deverá ser conectado automaticamente à instância do Pega Systems para a qual você configurou o SSO. Para obter mais informações, confira [Acessar e usar aplicativos no portal Meus Aplicativos](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Tutoriais para a integração de aplicativos SaaS ao Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 

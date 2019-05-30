@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: f69ef2c7c260d8df918fb2495bded6910d6b17b1
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e994150f68c0f274c97c27fccc89f226bc8236cd
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64707634"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66000489"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hrworks-single-sign-on"></a>Tutorial: Integração do Azure Active Directory ao HRworks Single Sign-On
 
@@ -53,7 +53,7 @@ Para configurar a integração do HRworks Single Sign-On ao Azure AD, você prec
 
 **Para adicionar o HRworks Single Sign-On da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -130,7 +130,7 @@ Para configurar o logon único do Azure AD com o HRworks Single Sign-On, execute
 
 2. Clique em **Administrator** > **Básico** > **Segurança** > **Single Sign-on** do lado esquerdo da barra de menus e execute as seguintes etapas:
 
-       ![Configurar o logon único](./media/hrworks-single-sign-on-tutorial/configure01.png)
+       ![Configure Single Sign-On](./media/hrworks-single-sign-on-tutorial/configure01.png)
 
      a. Marque a caixa **Usar o Single Sign-on**.
 
@@ -138,7 +138,7 @@ Para configurar o logon único do Azure AD com o HRworks Single Sign-On, execute
 
     c. Selecione **Identificador Individual NameID** como **Valor de NameID**.
 
-    d. No Bloco de notas, abra o arquivo XML de Metadados que você baixou do portal do Azure, copie seu conteúdo e, em seguida, cole-o na caixa de texto **Metadados** .
+    d. No Bloco de Notas, abra o arquivo XML de Metadados baixado do portal do Azure, copie seu conteúdo e, em seguida, cole-o na caixa de texto **Metadados**.
 
     e. Clique em **Save** (Salvar).
 
@@ -202,7 +202,7 @@ Para permitir que os usuários do Azure AD entrem no HRworks Single Sign-On, ele
 
 2. Clique em **Administrador** > **Pessoas** > **Pessoas** > **Nova pessoa** do lado esquerdo da barra de menus.
 
-     ![Configurar o logon único](./media/hrworks-single-sign-on-tutorial/configure02.png)
+     ![Configurar o logon único](./media/hrworks-single-sign-on-tutorial/configure02.png)
 
 3. No pop-up, clique em **Próxima**.
 

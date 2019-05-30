@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 818b91d7-01df-4b36-9706-f167c710a73c
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95d6ff44a8d760150df491b67ee56d62c4daff31
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 52c49bdd51bda7876d19a681bde79c9dbeeb4ea7
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882783"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65901288"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-answerhub"></a>Tutorial: Integração do Azure Active Directory ao AnswerHub
 
@@ -80,7 +80,7 @@ Para configurar e testar o logon único do Azure AD com o AnswerHub, você preci
 2. [Configurar o logon único do AnswerHub](#configure-answerhub-single-sign-on) – para definir as configurações de logon único no lado do aplicativo.
 3. [Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user) chamado Brenda Fernandes.
 4. [Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user) para permitir que Brenda Fernandes use o logon único do Azure AD.
-5. [Criar um usuário de teste do AnswerHub](#create-answerhub-test-user) que corresponda ao usuário de teste do Azure AD e que esteja vinculado a ele.
+5. Criar um usuário de teste do AnswerHub que corresponda ao usuário de teste do Azure AD e que esteja vinculado a ele.
 6. [Teste o logon único](#test-single-sign-on) para verificar se a configuração funciona.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
@@ -107,12 +107,12 @@ Nesta seção, você configura o logon único do Azure AD no portal do Azure.
 
      a. Na caixa **URL de Logon**, insira uma URL que tenha este padrão: `https://<company>.answerhub.com`
 
-    b. Na caixa **Identificador (ID da Entidade)**, insira uma URL que tenha este padrão: `https://<company>.answerhub.com`
+    b. Na caixa **Identificador (ID da Entidade)** , insira uma URL que tenha este padrão: `https://<company>.answerhub.com`
 
     > [!NOTE]
     > Esses valores não são reais. Atualize esses valores com a URL de Entrada e o Identificador reais. Contate a [equipe de suporte do AnswerHub](mailto:success@answerhub.com) para obter os valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
-5. Na página **Configurar o Logon Único com o SAML**, na seção **Certificado de Autenticação SAML**, selecione o link **Baixar** ao lado do **Certificado (Base64)**, de acordo com suas necessidades e salve o certificado no computador.
+5. Na página **Configurar o Logon Único com o SAML**, na seção **Certificado de Autenticação SAML**, selecione o link **Baixar** ao lado do **Certificado (Base64)** , de acordo com suas necessidades e salve o certificado no computador.
 
     ![Link de download do certificado](common/certificatebase64.png)
 
@@ -158,7 +158,7 @@ Nesta seção, você configurará o logon único do AnswerHub.
 
     ![Seção Chaves e Certificados](./media/answerhub-tutorial/ic785173.png "Chaves e Certificados")  
 
-     a. Abra o certificado codificado em Base64 baixado no portal do Azure no Bloco de notas, copie o conteúdo e, em seguida, cole o conteúdo na caixa **Chave Pública do IdP (Formato x509)**.
+     a. Abra o certificado codificado em Base64 baixado no portal do Azure no Bloco de notas, copie o conteúdo e, em seguida, cole o conteúdo na caixa **Chave Pública do IdP (Formato x509)** .
   
     b. Clique em **Salvar**.
 
@@ -184,7 +184,7 @@ Nesta seção, você criará uma usuária de teste no portal do Azure chamada Br
 
      a. Na caixa **Nome**, insira **BrendaFernandes**.
   
-    b. Na caixa **Nome de usuário**, insira **brendafernandes@<domíniodaempresa.extensão>**.  
+    b. Na caixa **Nome de usuário**, insira **brendafernandes\@<domíniodaempresa.extensão>** .  
     Por exemplo, BrittaSimon@contoso.com.
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa **Senha**.

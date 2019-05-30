@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: bf8c7e76aa6dd69cc505be237e47d8e10e7e8db5
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 8f8dc8219d65505952f35ad018ef19aeb68d64e9
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59264855"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65989757"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ipass-smartconnect"></a>Tutorial: Integração do Azure Active Directory com o iPass SmartConnect
 
@@ -54,7 +54,7 @@ Para configurar a integração do iPass SmartConnect com o Azure AD, você preci
 
 **Para adicionar o iPass SmartConnect da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -215,7 +215,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-ipass-smartconnect-test-user"></a>Criar usuário de teste do iPass SmartConnect
 
-Nesta seção, você deve criar um usuário chamado Brenda Fernandes no iPass SmartConnect. Trabalhe com a  [equipe de suporte do iPass SmartConnect](mailto:help@ipass.com)  para adicionar os usuários ou o domínio que precisa estar na lista de permissões na plataforma do iPass SmartConnect. Se o domínio for adicionado pela equipe, os usuários serão automaticamente provisionados à plataforma iPass SmartConnect. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você deve criar um usuário chamado Brenda Fernandes no iPass SmartConnect. Trabalhe com a [equipe de suporte do iPass SmartConnect](mailto:help@ipass.com) para adicionar os usuários ou o domínio que precisa estar na lista de permissões na plataforma do iPass SmartConnect. Se o domínio for adicionado pela equipe, os usuários serão automaticamente provisionados à plataforma iPass SmartConnect. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único
 

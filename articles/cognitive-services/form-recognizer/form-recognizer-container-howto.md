@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: form-recognizer
 ms.topic: overview
-ms.date: 05/07/2019
+ms.date: 05/28/2019
 ms.author: pafarley
-ms.openlocfilehash: a7159fccc9c4ef232cfca08b173e712e268343ea
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: f65375bfd826660f8583068875a1fddc545a86d7
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65507800"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306540"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Instalar e executar contêineres do Reconhecimento de Formulários
 O Reconhecimento de Formulários aplica a tecnologia de aprendizado de máquina para identificar e extrair pares chave-valor e tabelas de formulários. Ele associa valores e entradas de tabelas a eles e, em seguida, gera dados estruturados que incluem as relações no arquivo original. Chame seu modelo personalizado do Reconhecimento de Formulários usando uma API REST simples para reduzir a complexidade e integrá-lo com facilidade ao seu processo de automação de fluxo de trabalho ou a outro aplicativo. Apenas cinco documentos (ou um formulário vazio) são necessários, de modo que você possa obter resultados com rapidez e precisão, adaptados ao seu conteúdo específico, sem intervenção manual intensa nem ampla experiência em ciência de dados. Não exige rotulagem nem anotação de dados.
@@ -34,8 +34,8 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 |Mecanismo Docker| É necessário ter o Mecanismo Docker instalado em um [computador host](#the-host-computer). O Docker fornece pacotes que configuram o ambiente do Docker no [macOS](https://docs.docker.com/docker-for-mac/), no [Windows](https://docs.docker.com/docker-for-windows/) e no [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker](https://docs.docker.com/engine/docker-overview/).<br><br> O Docker deve ser configurado para permitir que os contêineres conectem-se e enviem dados de cobrança para o Azure. <br><br> **No Windows**, o Docker também deve ser configurado para dar suporte a contêineres do Linux.<br><br>|
 |Familiaridade com o Docker | É necessário ter uma compreensão básica de conceitos do Docker, como registros, repositórios, contêineres e imagens de contêiner, bem como conhecimento dos comandos básicos do `docker`.|
 |CLI do Azure| É necessário instalar a [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) no host.|
-|Recurso da API de Pesquisa Visual Computacional| Para processar imagens e documentos digitalizados, é necessário ter um **recurso da Pesquisa Visual Computacional**. Acesse o recurso **Reconhecimento de Texto** como um recurso do Azure (API REST ou SDK) ou como um [contêiner](../Computer-vision/computer-vision-how-to-install-containers.md##get-the-container-image-with-docker-pull) do `cognitive-services-recognize-text`. Os valores de cobrança normais se aplicam. <br><br>É necessário passar a chave e o ponto de extremidade de cobrança para o recurso específico da Pesquisa Visual Computacional (nuvem do Azure ou contêiner dos Serviços Cognitivos). Use essa chave e o ponto de extremidade de cobrança como {COMPUTER_VISION_API_KEY} e {COMPUTER_VISION_BILLING_ENDPOINT_URI}.<br><br> Se você usar o **contêiner do `cognitive-services-recognize-text`**, verifique se:<br><br>*A chave da Pesquisa Visual Computacional para o contêiner do Reconhecimento de Formulários é a chave especificada no comando `docker run` da Pesquisa Visual Computacional para o contêiner do `cognitive-services-recognize-text`.<br>*O ponto de extremidade de cobrança é o ponto de extremidade do contêiner, como `https://localhost:5000`. Se você usar os contêineres da Pesquisa Visual Computacional e do Reconhecimento de Formulários juntos no mesmo host, eles não poderão ser iniciados com a porta padrão `5000`.  |  
-|Recurso do Reconhecimento de Formulários |Para usar esses contêineres, será necessário ter:<br><br>Um recurso do Azure do _Reconhecimento de Formulários_ para obter a chave de cobrança e o URI do ponto de extremidade de cobrança associados. Ambos os valores estão disponíveis nas páginas Visão Geral e Chaves do **Reconhecimento de Formulários** do portal do Azure e são necessários para iniciar o contêiner.<br><br>**{BILLING_KEY}**: chave do recurso<br><br>**{BILLING_ENDPOINT_URI}**: exemplo de URI de terminal é: `https://westus.api.cognitive.microsoft.com/forms/v1.0`| 
+|Recurso da API de Pesquisa Visual Computacional| Para processar imagens e documentos digitalizados, é necessário ter um **recurso da Pesquisa Visual Computacional**. Acesse o recurso **Reconhecimento de Texto** como um recurso do Azure (API REST ou SDK) ou como um [contêiner](../Computer-vision/computer-vision-how-to-install-containers.md##get-the-container-image-with-docker-pull) do `cognitive-services-recognize-text`. Os valores de cobrança normais se aplicam. <br><br>É necessário passar a chave e o ponto de extremidade de cobrança para o recurso específico da Pesquisa Visual Computacional (nuvem do Azure ou contêiner dos Serviços Cognitivos). Use essa chave e o ponto de extremidade de cobrança como {COMPUTER_VISION_API_KEY} e {COMPUTER_VISION_BILLING_ENDPOINT_URI}.<br><br> Se você usar o **contêiner do `cognitive-services-recognize-text`** , verifique se:<br><br>*A chave da Pesquisa Visual Computacional para o contêiner do Reconhecimento de Formulários é a chave especificada no comando `docker run` da Pesquisa Visual Computacional para o contêiner do `cognitive-services-recognize-text`.<br>*O ponto de extremidade de cobrança é o ponto de extremidade do contêiner, como `https://localhost:5000`. Se você usar os contêineres da Pesquisa Visual Computacional e do Reconhecimento de Formulários juntos no mesmo host, eles não poderão ser iniciados com a porta padrão `5000`.  |  
+|Recurso do Reconhecimento de Formulários |Para usar esses contêineres, será necessário ter:<br><br>Um recurso do Azure do _Reconhecimento de Formulários_ para obter a chave de cobrança e o URI do ponto de extremidade de cobrança associados. Ambos os valores estão disponíveis nas páginas Visão Geral e Chaves do **Reconhecimento de Formulários** do portal do Azure e são necessários para iniciar o contêiner.<br><br>**{BILLING_KEY}** : chave do recurso<br><br>**{BILLING_ENDPOINT_URI}** : exemplo de URI de terminal é: `https://westus.api.cognitive.microsoft.com/forms/v1.0`| 
 
 ## <a name="request-access-to-the-container-registry"></a>Solicitar acesso ao Registro de contêiner
 
@@ -282,6 +282,10 @@ Os contêineres do Reconhecimento de Formulários enviam informações de cobran
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
 Para obter mais informações sobre essas opções, consulte [Configurar contêineres](form-recognizer-container-configuration.md).
+
+<!--blogs/samples/video coures -->
+
+[!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
 ## <a name="summary"></a>Resumo
 

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d48977c60fb4a13e1fc0dbd294fa4e7708f1cd5d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: a7462536443b2be23eef0f8b4c6f6b6412fb7032
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58878956"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65898752"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-g-suite"></a>Tutorial: Integração do Azure Active Directory com o G Suite
 
@@ -95,7 +95,7 @@ Para configurar a integração do G Suite ao Microsoft Azure AD, é necessário 
 
 **Para adicionar o G Suite da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -239,11 +239,11 @@ Para configurar o logon único do Microsoft Azure AD com o G Suite, execute as s
 
      a. Selecione **Configurar SSO com um provedor de identidade de terceiros**.
 
-    b. No campo **URL da página de login** no G Suite, cole o valor de  **URL de login** que você copiou do portal do Azure.
+    b. No campo **URL da página de entrada** no G Suite, cole o valor da **URL de logon** que você copiou do portal do Azure.
 
-    c. No campo **URL da página de saída** no G Suite, cole o valor de  **URL de logoff**  que você copiou do portal do Azure.
+    c. No campo **URL da página de logoff** no G Suite, cole o valor da **URL de logoff** que você copiou do portal do Azure.
 
-    d. No campo **Alterar URL de senha** no G Suite, cole o valor de  **Alterar URL da senha**  que você copiou do portal do Azure.
+    d. No campo **URL de alteração de senha** do G Suite, cole o valor da **URL de alteração de senha** copiado do Portal do Azure.
 
     e. No G Suite, para o **Certificado de verificação**, carregue o certificado baixado do Portal do Azure.
 
