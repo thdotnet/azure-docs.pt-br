@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
 ms.openlocfilehash: 5e58429b6a3e2f7c7c39c13dc65af48b064f9771
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57553227"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66238769"
 ---
 | Camada | Grátis | Basic | Standard |
 | --- | --- | --- | --- |
-| Chamadas à API |500.000 |1,5 milhão por unidade |15 milhões por unidade |
+| Chamadas à API |500,000 |1,5 milhão por unidade |15 milhões por unidade |
 | Dispositivos ativos |500 |Ilimitado |Ilimitado |
 | Escala |N/D |Até 6 unidades |Unidades ilimitadas |
 | Notificações por push |Camada gratuita de Hubs de notificação do Azure incluído, até 1 milhão de envios por push |Camada básica de Hubs de notificação incluída, até 10 milhões de envios por push |Camada Standard dos Hubs de notificação incluída, até 10 milhões de envios por push |

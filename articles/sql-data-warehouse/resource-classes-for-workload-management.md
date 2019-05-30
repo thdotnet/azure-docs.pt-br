@@ -1,5 +1,5 @@
 ---
-title: Classes de recursos para gerenciamento de carga de trabalho – SQL Data Warehouse do Azure | Microsoft Docs
+title: Classes de recursos para gerenciamento de carga de trabalho no Azure SQL Data Warehouse | Microsoft Docs
 description: Diretrizes para usar classes de recursos para gerenciar a simultaneidade e computar recursos para consultas no SQL Data Warehouse do Azure.
 services: sql-data-warehouse
 author: ronortloff
@@ -10,12 +10,12 @@ ms.subservice: workload management
 ms.date: 05/22/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 75bd6e8071717ba755b71f51afcd884539049489
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 1c15778eb2ce38efb65e777578008b61e7066d67
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66165975"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244515"
 ---
 # <a name="workload-management-with-resource-classes-in-azure-sql-data-warehouse"></a>Gerenciamento de carga de trabalho com classes de recursos no SQL Data Warehouse do Azure
 
@@ -86,7 +86,7 @@ Ao aprofundar os detalhes das classes de recursos dinâmicos em Gen1, há alguns
 
 **Em Gen2**, classes de recursos dinâmicos são realmente dinâmicas endereçamento pontos mencionados acima.  A nova regra é 3-10-22-70 para alocações de porcentagem de memória para classes de recursos pequeno médio-grande-extragrande, **independentemente do nível de serviço**.  A tabela abaixo mostra os detalhes consolidados de porcentagens de alocação de memória e o número mínimo de consultas simultâneas que são executadas, independentemente do nível de serviço.
 
-| Classe de Recursos | Porcentagem de Memória | Mínimo de consultas simultâneas |
+| Classe de recursos | Porcentagem de Memória | Mínimo de consultas simultâneas |
 |:--------------:|:-----------------:|:----------------------:|
 | smallrc        | 3%                | 32                     |
 | mediumrc       | 10%               | 10                     |

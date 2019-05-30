@@ -5,16 +5,16 @@ services: azure-portal
 keywords: ''
 author: kfollis
 ms.author: kfollis
-ms.date: 03/22/2019
+ms.date: 05/24/2019
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: bff6fe697912bca0bc55501a74a01a92b1330521
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: de04b461d8e2d2dce9a88052a86fbe5d163fafec
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60551357"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244192"
 ---
 # <a name="azure-portal-overview"></a>Visão geral do portal do Azure
 
@@ -23,6 +23,8 @@ Este artigo apresenta o portal do Azure, identifica os elementos de página do p
 ## <a name="what-is-the-azure-portal"></a>O que é o portal do Azure?
 
 O portal do Azure é um console baseado na web e unificado que fornece uma alternativa para ferramentas de linha de comando. Com o portal do Azure, você pode gerenciar sua assinatura do Azure usando uma interface gráfica do usuário. Você pode criar, gerenciar, monitorar tudo, desde aplicativos da web simples para implantações de nuvem complexos, criar painéis personalizados para uma exibição organizada dos recursos e configurar opções de acessibilidade para a melhor experiência.
+
+O portal do Azure destina-se a resiliência e a disponibilidade contínua. Ele tem uma presença em cada datacenter do Azure, tornando-o assim resiliente a falhas individuais do datacenter e também evita problemas de lentidão da rede, sendo próximos aos usuários. O portal do Azure atualiza continuamente e não requer nenhum tempo de inatividade para as atividades de manutenção.
 
 ## <a name="azure-home"></a>Página inicial do Azure
 
@@ -66,7 +68,6 @@ Podemos pré-preenchidos seus favoritos na barra lateral com links para serviço
 
 > [!TIP]
 > A maneira mais rápida para localizar um recurso, serviço ou documentação é usar *pesquisa* no cabeçalho do global. Use os links de navegação de trilha para voltar a páginas anteriores.
->
 >
 
 ## <a name="next-steps"></a>Próximas etapas

@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: pabutler
-ms.openlocfilehash: da594ca5793bbf61f393fb1380309403fd808cef
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 8c32043d9bf3ca68563ae01d415bdc0e1f6993f7
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942228"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258138"
 ---
 # <a name="prerequisites-for-managing-accounts-on-the-cloud-partner-portal"></a>Pré-requisitos para o gerenciamento de contas no Portal do Cloud Partner 
 
@@ -23,12 +23,13 @@ Antes de poder usar o [Portal do Cloud Partner](https://cloudpartner.azure.com/)
 
 Revise cuidadosamente os direitos e as responsabilidades sob o [contrato de serviços Microsoft](https://www.microsoft.com/servicesagreement) e o [Terms de uso do Microsoft](https://www.microsoft.com/legal/intellectualproperty/copyright) antes de criar uma conta.  
 
-Escolha o nome da sua conta com cuidado.  Ele representa a sua organização, para que ele não deve conter todas as palavras protegido por direitos autorais ou contenciosos.  Por exemplo, a Microsoft proíbe o uso dos seus termos protegido por direitos autorais, como "Azure" e "Microsoft", em nomes de conta.  Para obter mais informações, consulte [diretrizes para o Azure Marketplace](../../guidelines.md)
+Escolha o nome da sua conta com cuidado.  Ele representa a sua organização, para que ele não deve conter todas as palavras protegido por direitos autorais ou contenciosos.  Por exemplo, a Microsoft proíbe o uso dos seus termos protegido por direitos autorais, como "Azure" e "Microsoft", em nomes de conta.  Para obter mais informações, consulte [diretrizes para o Azure Marketplace](https://docs.microsoft.com/azure/marketplace/guidelines)
 
 
 ## <a name="registration-steps"></a>Etapas de registro
 
-A tabela a seguir lista as etapas necessárias para registrar totalmente como um publicador de nuvem da Microsoft.  Para obter instruções completas, consulte [se tornar um editor do Marketplace de nuvem](../../become-publisher.md). 
+A tabela a seguir lista as etapas necessárias para registrar totalmente como um publicador de nuvem da Microsoft.  Para obter instruções completas, consulte [se tornar um editor do Marketplace de nuvem](https://docs.microsoft.com/azure/marketplace/become-publisher
+). 
 
 
 |                   Etapa                   |  Registro resultante ou recurso                     |

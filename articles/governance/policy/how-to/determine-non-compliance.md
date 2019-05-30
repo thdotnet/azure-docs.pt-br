@@ -7,12 +7,12 @@ ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 6e3e01ca9bd459aa6c6aca8dfaacb98b1267fada
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: fb7f238bb5c04bb03ee500b1b953895cc88c0596
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65979341"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66298935"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Determinar as causas de não conformidade
 
@@ -87,23 +87,27 @@ A matriz a seguir mapeia cada possível _motivo_ para o responsável [condição
 
 |Motivo | Condição |
 |-|-|
-|O valor atual deve conter o valor de destino como uma chave. |containsKey ou **não** notContainsKey |
-|O valor atual deve conter o valor de destino. |contém ou **não** notContains |
-|O valor atual deve ser igual ao valor de destino. |é igual a ou **não** notEquals |
-|O valor atual deve existir. |exists |
-|O valor atual deve estar no valor de destino. |em ou **não** notIn |
-|O valor atual deve ser como o valor de destino. |como ou **não** notLike |
-|O valor atual precisa corresponder ao valor de destino diferenciando maiúsculas de minúsculas. |corresponder ou **não** notMatch |
-|O valor atual precisa corresponder ao valor de destino sem diferenciar maiúsculas de minúsculas. |matchInsensitively ou **não** notMatchInsensitively |
-|O valor atual não deve conter o valor de destino como uma chave. |notContainsKey ou **não** containsKey|
-|O valor atual não deve conter o valor de destino. |notContains ou **não** contém |
-|O valor atual não deve ser igual ao valor de destino. |notEquals ou **não** é igual a |
-|O valor atual não deve existir. |**não** existe  |
-|O valor atual não deve estar no valor de destino. |notIn ou **não** em |
-|O valor atual não deve ser como o valor de destino. |notLike ou **não** como |
-|O valor atual não pode corresponder ao valor de destino diferenciando maiúsculas de minúsculas. |notMatch ou **não** corresponder |
-|O valor atual não pode corresponder ao valor de destino sem diferenciar maiúsculas de minúsculas. |notMatchInsensitively ou **não** matchInsensitively |
-|Não há recursos relacionados que correspondam aos detalhes de efeito na definição de política. |Um recurso do tipo definido em **then.details.type** e relacionados ao recurso definido na **se** parte da regra de política não existe. |
+|Valor atual deve conter o valor de destino como uma chave. |containsKey ou **não** notContainsKey |
+|Valor atual deve conter o valor de destino. |contém ou **não** notContains |
+|Valor atual deve ser igual ao valor de destino. |é igual a ou **não** notEquals |
+|Valor atual deve ser menor que o valor de destino. |menor ou **não** greaterOrEquals |
+|Valor atual deve ser maior que ou igual ao valor de destino. |greaterOrEquals ou **não** menos |
+|Valor atual deve ser maior que o valor de destino. |maior ou **não** lessOrEquals |
+|Valor atual deve ser menor ou igual ao valor de destino. |lessOrEquals ou **não** maior |
+|Valor atual deve existir. |exists |
+|Valor atual deve ser o valor de destino. |em ou **não** notIn |
+|Valor atual deve ser como o valor de destino. |como ou **não** notLike |
+|Valor atual deve ser a correspondência diferencia maiusculas de minúsculas do valor de destino. |corresponder ou **não** notMatch |
+|Valor atual deve ser a correspondência diferencia maiusculas de minúsculas do valor de destino. |matchInsensitively ou **não** notMatchInsensitively |
+|Valor atual não deve conter o valor de destino como uma chave. |notContainsKey ou **não** containsKey|
+|Valor atual não deve conter o valor de destino. |notContains ou **não** contém |
+|Valor atual não deve ser igual ao valor de destino. |notEquals ou **não** é igual a |
+|Valor atual não deve existir. |**não** existe  |
+|Valor atual não deve ser o valor de destino. |notIn ou **não** em |
+|Valor atual não deve ser como o valor de destino. |notLike ou **não** como |
+|Valor atual deve o valor de destino de correspondência não diferencia maiusculas de minúsculas. |notMatch ou **não** corresponder |
+|Valor atual deve o valor de destino de correspondência não diferencia maiusculas de minúsculas. |notMatchInsensitively ou **não** matchInsensitively |
+|Não há recursos relacionados correspondem os detalhes de efeito na definição de política. |Um recurso do tipo definido em **then.details.type** e relacionados ao recurso definido na **se** parte da regra de política não existe. |
 
 ## <a name="compliance-details-for-guest-configuration"></a>Detalhes de conformidade para a configuração do convidado
 
@@ -128,7 +132,7 @@ Você também não pode ter acesso ao entrar na VM diretamente, mas você precis
    - **Tipo de recurso** - o _guestConfigurationAssignments_ nome completo.
    - **Avaliado pela última vez** – a última vez em que o serviço de configuração de convidado notificado sobre a política do Azure sobre o estado da máquina virtual de destino.
 
-   ![Exibir detalhes de conformidade.](../media/determine-non-compliance/guestconfig-assignment-view.png)
+   ![Exibir detalhes de conformidade](../media/determine-non-compliance/guestconfig-assignment-view.png)
 
 1. Selecione o nome da atribuição de configuração de convidado na **nome** coluna para abrir o **conformidade do recurso** página.
 
@@ -136,7 +140,7 @@ Você também não pode ter acesso ao entrar na VM diretamente, mas você precis
 
 O **atribuição de convidados** página exibe todos os detalhes de conformidade disponíveis. Cada linha no modo de exibição representa uma avaliação que foi executada dentro da máquina virtual. No **motivo** coluna, uma frase que descreve por que é a atribuição de convidado _incompatível_ é mostrado. Por exemplo, se você estiver fazendo uma auditoria que VMs devem ser associadas a um domínio, o **motivo** coluna exibiria o texto, incluindo a associação de domínio atual.
 
-![Exibir detalhes de conformidade.](../media/determine-non-compliance/guestconfig-compliance-details.png)
+![Exibir detalhes de conformidade](../media/determine-non-compliance/guestconfig-compliance-details.png)
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -233,4 +237,4 @@ Dados de histórico de alterações são fornecidos pelo [grafo de recursos do A
 - Entender como [criar políticas de forma programática](programmatically-create.md).
 - Saiba como [obter dados de conformidade](getting-compliance-data.md).
 - Saiba como [corrigir recursos sem conformidade](remediate-resources.md).
-- Examine o que um grupo de gerenciamento com [organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).
+- Veja o que é um grupo de gerenciamento com [Organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).

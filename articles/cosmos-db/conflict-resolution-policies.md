@@ -4,15 +4,15 @@ description: Este artigo descreve as categorias de conflito e políticas de reso
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 03/24/2019
+ms.date: 05/23/2019
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: ebea55f769ca16bfa344d0a100fe16cec6d784d0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 98e9f5fff1b74d417ee07ed0056c8046b49baa17
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60892584"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236539"
 ---
 # <a name="conflict-types-and-resolution-policies"></a>Tipos e políticas de resolução de conflitos
 
@@ -30,7 +30,7 @@ Para contas do Azure Cosmos configuradas com várias regiões de gravação, pod
 
 O Azure Cosmos DB oferece um mecanismo flexível orientada por diretivas para resolver conflitos de gravação. Você pode selecionar entre duas políticas de resolução de conflito em um contêiner do Azure Cosmos:
 
-- **LWW (Última Gravação Vence)**: Essa política de resolução, por padrão, usa uma propriedade de carimbo de hora definida pelo sistema. Ele se baseia no protocolo de sincronização de hora de relógio. Se você usar a API do SQL, você pode especificar qualquer outra numérica propriedade personalizada (por exemplo, sua própria noção de um carimbo de hora) para ser usado para resolução de conflitos. Uma propriedade numérica personalizada também é conhecida como o *caminho de resolução de conflito*. 
+- **LWW (Última Gravação Vence)** : Essa política de resolução, por padrão, usa uma propriedade de carimbo de hora definida pelo sistema. Ele se baseia no protocolo de sincronização de hora de relógio. Se você usar a API do SQL, você pode especificar qualquer outra numérica propriedade personalizada (por exemplo, sua própria noção de um carimbo de hora) para ser usado para resolução de conflitos. Uma propriedade numérica personalizada também é conhecida como o *caminho de resolução de conflito*. 
 
   Se dois ou mais itens entram em conflito ou substituem operações, o item com o valor mais alto para o "caminho de resolução de conflitos" torna-se o "vencedor". O sistema determina o ganhador se vários itens tiverem o mesmo valor numérico para o caminho de resolução de conflito. Todas as regiões têm a garantia de convergir para um único vencedor e terminarão com a versão igual do item confirmado. Ao excluir conflitos que estão envolvidos, a versão excluída sempre supera o inserir ou substituir os conflitos. Esse resultado ocorre não importa o que é o valor do caminho de resolução de conflito.
 

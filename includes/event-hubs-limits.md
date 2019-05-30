@@ -5,15 +5,15 @@ services: event-hubs
 author: sethmanheim
 ms.service: event-hubs
 ms.topic: include
-ms.date: 02/26/2018
-ms.author: sethm
+ms.date: 05/22/2019
+ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 38f7dd6eb1c4965eca003e5ba337ec5912a53420
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 3f3b60c3744ce9dea61054b3fa0aaccfea27d784
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66148228"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66238707"
 ---
 A tabela a seguir relaciona as cotas e limites específicos para os [Hubs de Eventos do Azure](https://azure.microsoft.com/services/event-hubs/). Para saber mais sobre os preços dos Hubs de Eventos, veja os [preços dos Hubs de Eventos](https://azure.microsoft.com/pricing/details/event-hubs/).
 
@@ -31,3 +31,19 @@ A tabela a seguir relaciona as cotas e limites específicos para os [Hubs de Eve
 | Unidades de produtividade máxima |Namespace |Exceder o limite de unidade de produtividade faz com que seus dados para ser limitadas e gera uma [exceção de servidor ocupado](/dotnet/api/microsoft.servicebus.messaging.serverbusyexception). Para solicitar um número maior de unidades de taxa de transferência para uma camada Standard, arquivo de um [solicitação de suporte](/azure/azure-supportability/how-to-create-azure-support-request). As [unidades de produtividade adicionais](../articles/event-hubs/event-hubs-auto-inflate.md) estão disponíveis em blocos de 20, em uma base de compra garantida. |20 |
 | Número de regras de autorização por namespace |Namespace|Solicitações subsequentes de criação de regra de autorização são rejeitadas.|12 |
 | Número de chamadas para o método GetRuntimeInformation | Entidade | - | 50 por segundo | 
+
+### <a name="event-hubs-dedicated---quotas-and-limits"></a>Dedicada dos Hubs de eventos - cotas e limites
+A oferta de Hubs de eventos dedicados é cobrada por um preço mensal fixo, com um mínimo de 4 horas de uso. A camada dedicada oferece todos os recursos do plano Standard, mas com limites e capacidade em escala empresarial para clientes com cargas de trabalho exigentes. 
+
+| Recurso | limites |
+| --- | ---|
+| Largura de banda |  20 CUs |
+| Namespaces | 50 por CU |
+| Hubs de Eventos |  Nenhum limite para os hubs de eventos/tópicos |
+| Eventos de entrada | Incluso |
+| Tamanho da mensagem | 1 milhão de Bytes |
+| Partições | 2000 por CU |
+| Grupos de consumidores | Nenhum limite por CU, 1000 por hub de eventos |
+| Conexões orientadas | 100.000 incluídos |
+| Retenção de mensagem | 90 dias, 10 TB incluído por CU |
+| Captura | Incluso |

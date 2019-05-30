@@ -7,14 +7,14 @@ keywords: casos de uso do apache storm, cluster storm, o que é o apache storm
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 02/27/2018
+ms.date: 05/24/2019
 ms.author: hrasheed
-ms.openlocfilehash: 5688056bc0d371c780bce02254769792e9a95696
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 42aaa91906319133fd2864cd836447fcf3ca3a07
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64696103"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257776"
 ---
 # <a name="what-is-apache-storm-on-azure-hdinsight"></a>O que é o Apache Storm no Azure HDInsight?
 
@@ -47,7 +47,7 @@ O Storm no HDInsight oferece os seguintes recursos:
 
 Para obter uma lista de empresas que estão usando o Apache Storm em suas soluções de análise em tempo real, consulte [Empresas que estão usando o Apache Storm](https://storm.apache.org/documentation/Powered-By.html).
 
-Para começar a usar o Storm, consulte [Introdução ao Apache Storm no HDInsight][gettingstarted].
+Para começar a usar o Storm, consulte [Introdução ao Apache Storm no HDInsight](apache-storm-tutorial-get-started-linux.md).
 
 ## <a name="how-does-apache-storm-work"></a>Como funciona o Apache Storm
 
@@ -75,7 +75,7 @@ Você pode provisionar um novo cluster Storm no HDInsight em minutos. Para saber
 
 ## <a name="ease-of-use"></a>Fácil de uso
 
-* __Conectividade Secure Shell (SSH)__: Você pode acessar os nós principais do cluster Storm pela Internet usando o SSH. Você pode executar comandos diretamente no cluster usando SSH.
+* __Conectividade Secure Shell (SSH)__ : Você pode acessar os nós principais do cluster Storm pela Internet usando o SSH. Você pode executar comandos diretamente no cluster usando SSH.
 
   Para obter mais informações, confira [Usar SSH com HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
@@ -167,7 +167,7 @@ Quando sua topologia depende do cálculo de um valor de N principal, calcule o v
 
 Para obter um exemplo do cálculo de um valor de N principal, confira o exemplo [RollingTopWords](https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/org/apache/storm/starter/RollingTopWords.java).
 
-## <a name="logging"></a>Registro em log
+## <a name="logging"></a>Registrando em log
 
 O Storm usa o [Apache Log4j 2](https://logging.apache.org/log4j/2.x/) para registrar informações em log. Por padrão, uma grande quantidade de dados é registrada e pode ser difícil classificar as informações. Você pode incluir um arquivo de configuração de log como parte de sua topologia do Storm para controlar o comportamento de log.
 
@@ -177,10 +177,5 @@ Para uma topologia de exemplo que demonstra como configurar o log, veja o exempl
 
 Saiba mais sobre as soluções de análise em tempo real com o Apache Storm no HDInsight:
 
-* [Introdução ao Apache Storm no HDInsight][gettingstarted]
+* [Introdução ao Apache Storm no HDInsight](apache-storm-tutorial-get-started-linux.md)
 * [Topologias de exemplo para Apache Storm no HDInsight](apache-storm-example-topology.md)
-
-[stormtrident]: https://storm.apache.org/documentation/Trident-API-Overview.html
-[samoa]: https://yahooeng.tumblr.com/post/65453012905/introducing-samoa-an-open-source-platform-for-mining
-[apachetutorial]: https://storm.apache.org/documentation/Tutorial.html
-[gettingstarted]: apache-storm-tutorial-get-started-linux.md

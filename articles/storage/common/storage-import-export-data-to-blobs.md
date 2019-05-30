@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: article
-ms.date: 04/08/2019
+ms.date: 05/29/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 82672136d6f9af50a3d91da2044f6e0ced4b44a6
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: ddaead7a0e616b3138dca0b18a58d64e38a46f9e
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65409377"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66356423"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Usar o serviço de importação/exportação do Microsoft Azure para importar dados do Armazenamento de Blobs
 
@@ -30,7 +30,7 @@ Antes de criar um trabalho de importação para transferir dados ao Armazenament
 - Ter o número adequado de discos de [tipos com suporte](storage-import-export-requirements.md#supported-disks). 
 - Ter um sistema Windows executando uma [versão do sistema operacional com suporte](storage-import-export-requirements.md#supported-operating-systems). 
 - Habilite o BitLocker no sistema Windows. Consulte [Como habilitar o BitLocker](https://thesolving.com/storage/how-to-enable-bitlocker-on-windows-server-2012-r2/).
-- [Baixe o WAImportExport versão 1](https://aka.ms/waiev1) no sistema Windows. Descompacte para a pasta padrão `waimportexportv1`. Por exemplo, `C:\WaImportExportV1`.
+- [Baixe o WAImportExport versão 1](https://aka.ms/waiev1) no sistema Windows. Descompacte para a pasta padrão `waimportexportv1`. Por exemplo: `C:\WaImportExportV1`.
 - Ter uma conta FedEx/DHL. Se você quiser usar uma operadora que não seja FedEx/DHL, contate a equipe de operações de caixa de dados do Azure em `adbops@microsoft.com`.  
     - A conta deve ser válida, deve ter saldo e ter recursos de devolução.
     - Gerar um número de controle para o trabalho de exportação.
@@ -58,22 +58,22 @@ Execute as etapas a seguir para preparar as unidades.
 6.  Para preparar o disco, execute o comando a seguir. **Dependendo do tamanho dos dados, isso pode levar de várias horas a dias.** 
 
     ```
-    ./WAImportExport.exe PrepImport /j:<journal file name> /id:session#<session number> /sk:<Storage account key> /t:<Drive letter> /bk:<BitLocker key> /srcdir:<Drive letter>:\ /dstdir:<Container name>/ /skipwrite 
+    ./WAImportExport.exe PrepImport /j:<journal file name> /id:session#<session number> /t:<Drive letter> /bk:<BitLocker key> /srcdir:<Drive letter>:\ /dstdir:<Container name>/ /skipwrite /enablecontentmd5 
     ```
     Um arquivo de diário é criado na mesma pasta em que você executou a ferramenta. Dois outros arquivos também são criados - um arquivo *.xml* (pasta onde você executa a ferramenta) e um arquivo *drive-manifest.xml* (pasta onde os dados residem).
     
     Os parâmetros utilizados são descritos na tabela a seguir:
 
-    |Opção  |Descrição  |
+    |Opção  |DESCRIÇÃO  |
     |---------|---------|
     |/j:     |O nome do arquivo de diário, com a extensão .jrn. Um arquivo de diário é gerado por unidade. É recomendável utilizar o número de série do disco como o nome do arquivo de diário.         |
     |/id:     |A ID da sessão. Use um número de sessão exclusivo para cada instância do comando.      |
-    |/sk:     |A chave de conta de Armazenamento do Microsoft Azure.         |
     |/t:     |A letra da unidade do disco a ser enviado. Por exemplo, unidade `D`.         |
     |/bk:     |A chave do BitLocker para a unidade. O código de acesso da saída de `manage-bde -protectors -get D:`      |
-    |/srcdir:     |A letra da unidade do disco a ser enviado seguida por `:\`. Por exemplo, `D:\`.         |
+    |/srcdir:     |A letra da unidade do disco a ser enviado seguida por `:\`. Por exemplo: `D:\`.         |
     |/dstdir:     |O nome do contêiner de destino no Armazenamento do Microsoft Azure.         |
     |/skipwrite:     |A opção que especifica que não há novos dados necessários para serem copiados e que os dados existentes no disco devem ser preparados.          |
+    |/enablecontentmd5:     |Quando habilitada, a opção garante que o MD5 é calculado durante o carregamento de blobs de blocos para o Azure.          |
 7. Repita a etapa anterior para cada disco que precisa ser enviado. Um arquivo de diário com o nome fornecido é criado para cada execução da linha de comando.
     
     > [!IMPORTANT]
@@ -98,7 +98,7 @@ Execute as etapas a seguir para criar um trabalho de importação no portal do A
    - Digite um nome descritivo para o trabalho de importação. Use o nome para acompanhar o andamento dos trabalhos.
        - O nome pode conter apenas letras minúsculas, números e hifens.
        - O nome deve começar com uma letra e não pode conter espaços.
-   - Selecionar uma assinatura.
+   - Selecione uma assinatura.
    - Insira ou selecione um grupo de recursos.  
 
      ![Criar trabalho de importação - Etapa 1](./media/storage-import-export-data-to-blobs/import-to-blob3.png)

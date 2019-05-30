@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: spelluru
-ms.openlocfilehash: 33604a16f5895e20d4475d1dd8b27c34184feb72
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 915d1284d66438219fc9aba893512e5f6a5b02b3
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60345474"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66305038"
 ---
 # <a name="event-handlers-in-azure-event-grid"></a>Manipuladores de eventos na Grade de Eventos do Azure
 
@@ -71,6 +71,28 @@ Use aplicativos lógicos para automatizar processos de negócios para responder 
 | [Tutorial: como monitorar alterações de máquina virtual com a Grade de Eventos do Azure e os aplicativos lógicos](monitor-virtual-machine-changes-event-grid-logic-app.md) | Um aplicativo lógico monitora as alterações feitas em uma máquina virtual e envia emails sobre essas alterações. |
 | [Tutorial: enviar notificações por email sobre os eventos do Hub IoT usando Aplicativos Lógicos](publish-iot-hub-events-to-logic-apps.md) | Um aplicativo lógico envia um email de notificação sempre que um dispositivo é adicionado ao seu hub de IoT. |
 | [Tutorial: Exemplos de integração do Barramento de Serviço do Azure para a Grade de Eventos do Azure](../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json) | A Grade de Eventos envia mensagens do tópico do Barramento de Serviço para o aplicativo de função e o aplicativo lógico. |
+
+## <a name="service-bus-queue-preview"></a>Fila do barramento de serviço (versão prévia)
+
+Use o barramento de serviço como um manipulador de eventos para encaminhar os eventos na grade de eventos diretamente para as filas do barramento de serviço para uso em cenários de armazenamento em buffer ou comando e controle em aplicativos empresariais. A visualização não funciona com tópicos do barramento de serviço e sessões, mas ele funciona com todas as camadas de filas do barramento de serviço.
+
+Observe que, ao barramento de serviço como um manipulador está em visualização pública, você deve instalar a extensão CLI ou o PowerShell quando usando essas credenciais para criar assinaturas de eventos.
+
+### <a name="using-cli"></a>Usando a CLI
+
+CLI do Azure, o exemplo a seguir assina um se conecta e o tópico de grade de eventos para uma fila do barramento de serviço:
+
+```azurecli-interactive
+# If you haven't already installed the extension, do it now.
+# This extension is required for preview features.
+az extension add --name eventgrid
+
+az eventgrid event-subscription create \
+    --name <my-event-subscription> \
+    --source-resource-id /subscriptions/{SubID}/resourceGroups/{RG}/providers/Microsoft.EventGrid/topics/topic1 \
+    --endpoint-type servicebusqueue \
+    --endpoint /subscriptions/{SubID}/resourceGroups/TestRG/providers/Microsoft.ServiceBus/namespaces/ns1/queues/queue1
+```
 
 ## <a name="queue-storage"></a>Armazenamento de Filas
 

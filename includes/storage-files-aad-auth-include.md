@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 10/22/2018
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 64751e0fcbf9a2255964d0de673e2cc2020ceb9a
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 0cfa0fdb51969c92e767adfa86a0065d11da56e2
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66114262"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237767"
 ---
-Os [Arquivos do Azure](../articles/storage/files/storage-files-introduction.md) dão suporte à autenticação baseada em identidade via protocolo SMB (versão prévia) por meio do [Azure AD (Azure Active Directory) Domain Services](../articles/active-directory-domain-services/active-directory-ds-overview.md). As VMs (máquinas virtuais) do Windows ingressadas no domínio podem acessar os compartilhamentos de arquivos do Azure usando as credenciais do [Azure AD](../articles/active-directory/fundamentals/active-directory-whatis.md). 
+Os [Arquivos do Azure](../articles/storage/files/storage-files-introduction.md) dão suporte à autenticação baseada em identidade via protocolo SMB (versão prévia) por meio do [Azure AD (Azure Active Directory) Domain Services](../articles/active-directory-domain-services/overview.md). As VMs (máquinas virtuais) do Windows ingressadas no domínio podem acessar os compartilhamentos de arquivos do Azure usando as credenciais do [Azure AD](../articles/active-directory/fundamentals/active-directory-whatis.md). 
 
 O Azure AD autentica uma identidade, como um usuário, grupo ou entidade de serviço com [RBAC (controle de acesso baseado em função)](../articles/role-based-access-control/overview.md). É possível definir funções personalizadas do RBAC que abrangem conjuntos comuns de permissões usadas para acessar os arquivos do Azure. Ao atribuir a função RBAC personalizada a uma identidade do Azure AD, essa identidade recebe acesso a um compartilhamento de arquivos do Azure de acordo com essas permissões.
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 050f301b55c718e80c1b4157639bd9dce506f6ba
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: 428a1614889409300064420e1d3d4fbc0423a0ec
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65979435"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237521"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Obter dados de conformidade dos recursos do Azure
 
@@ -93,10 +93,10 @@ A tabela a seguir mostra como os diferentes efeitos da política funcionam com a
 
 | Estado do recurso | Efeito | Avaliação da política | Estado de conformidade |
 | --- | --- | --- | --- |
-| Exists | Negar, Auditoria, Acrescentar\*, DeployIfNotExist\*, AuditIfNotExist\* | True | Em não conformidade |
-| Exists | Negar, Auditoria, Acrescentar\*, DeployIfNotExist\*, AuditIfNotExist\* | Falso | Compatível |
-| Novo | Auditoria, AuditIfNotExist\* | True | Em não conformidade |
-| Novo | Auditoria, AuditIfNotExist\* | Falso | Compatível |
+| Exists | Negar, Auditoria, Acrescentar\*, DeployIfNotExist\*, AuditIfNotExist\* | True | Sem conformidade |
+| Exists | Negar, Auditoria, Acrescentar\*, DeployIfNotExist\*, AuditIfNotExist\* | Falso | Em conformidade |
+| Novo | Auditoria, AuditIfNotExist\* | True | Sem conformidade |
+| Novo | Auditoria, AuditIfNotExist\* | Falso | Em conformidade |
 
 \* Os efeitos de Acrescentar, DeployIfNotExist e AuditIfNotExist exigem que a instrução IF seja TRUE.
 Os efeitos também exigem que a condição de existência seja FALSE para não estar em conformidade. Quando TRUE, a condição IF dispara a avaliação da condição de existência para os recursos relacionados.
@@ -416,7 +416,8 @@ Trent Baker
 
 ## <a name="azure-monitor-logs"></a>Logs do Azure Monitor
 
-Se você tiver um [espaço de trabalho do Log Analytics](../../../log-analytics/log-analytics-overview.md) com `AzureActivity` da [solução de análise de Log de atividade](../../../azure-monitor/platform/collect-activity-logs.md) ligado à sua assinatura, você também pode exibir os resultados de não conformidade do ciclo de avaliação usando consultas simples do Kusto e o `AzureActivity` tabela. Com os detalhes nos logs do Azure Monitor, os alertas poderão ser configurados para inspecionar a não conformidade.
+Se você tiver um [espaço de trabalho do Log Analytics](../../../log-analytics/log-analytics-overview.md) com `AzureActivity` da [solução de análise de Log de atividade](../../../azure-monitor/platform/activity-log-collect.md) ligado à sua assinatura, você também pode exibir os resultados de não conformidade do ciclo de avaliação usando consultas simples do Kusto e o `AzureActivity` tabela. Com os detalhes nos logs do Azure Monitor, os alertas poderão ser configurados para inspecionar a não conformidade.
+
 
 ![Conformidade de política do Azure usando os logs do Azure Monitor](../media/getting-compliance-data/compliance-loganalytics.png)
 
@@ -427,4 +428,4 @@ Se você tiver um [espaço de trabalho do Log Analytics](../../../log-analytics/
 - Revisar [Compreendendo os efeitos da política](../concepts/effects.md).
 - Entender como [criar políticas de forma programática](programmatically-create.md).
 - Saiba como [corrigir recursos sem conformidade](remediate-resources.md).
-- Examine o que um grupo de gerenciamento com [organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).
+- Veja o que é um grupo de gerenciamento com [Organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).

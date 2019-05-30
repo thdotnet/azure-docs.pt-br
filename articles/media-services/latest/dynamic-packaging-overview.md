@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/27/2019
+ms.date: 05/22/2019
 ms.author: juliako
-ms.openlocfilehash: 78e3897ec653326bcd88a538a6ea7d33938659b9
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 25c0fe7a179db484f18c1aca16471e39a739052c
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65761958"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299177"
 ---
 # <a name="dynamic-packaging"></a>Empacotamento dinâmico
 
@@ -31,6 +31,9 @@ Para aproveitar **empacotamento dinâmico**, você precisa ter uma **ativo** com
 Como resultado você só precisa armazenar e pagar pelos arquivos em um único formato de armazenamento, e os Serviços de Mídia vão criar e fornecer a resposta apropriada com base nas solicitações de um cliente. 
 
 Serviços de mídia, o empacotamento dinâmico é usado se você estiver transmitindo ao vivo ou sob demanda. 
+
+> [!NOTE]
+> Atualmente, você não pode usar o portal do Azure para gerenciar recursos da v3. Use a [API REST](https://aka.ms/ams-v3-rest-ref), a [CLI](https://aka.ms/ams-v3-cli-ref) ou um dos [SDKs](media-services-apis-overview.md#sdks) com suporte.
 
 ## <a name="common-on-demand-workflow"></a>Fluxo de trabalho comum e sob demanda
 
@@ -92,10 +95,32 @@ Empacotamento dinâmico oferece suporte a arquivos MP4 que contêm vídeo codifi
 
 ## <a name="audio-codecs-supported-by-dynamic-packaging"></a>Codecs de áudio suportados por embalagem dinâmica
 
-Empacotamento dinâmico oferece suporte a arquivos MP4, que contém áudio codificado com [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) (AAC-LC, HE-AAC v1, HE-AAC v2), [Dolby Digital Plus](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)(AC-3 melhorado ou E-AC3), Dolby Atmos, ou [DTS](https://en.wikipedia.org/wiki/DTS_%28sound_system%29) (DTS Express, LBR DTS, DTS HD, HD de DTS sem perdas). Streaming de conteúdo Dolby Atmos tem suporte para padrões como MP4 fragmentado de protocolo de MPEG-DASH com o formato comum de Streaming (CSF) ou o formato de aplicativo comum de mídia (CMAF) e por meio de Live Streaming HLS (HTTP) com CMAF.
+### <a name="mp4-files-support"></a>Suporte a arquivos MP4
 
-> [!NOTE]
-> O Dynamic Packaging não suporta arquivos que contenham áudio [Dolby Digital](https://en.wikipedia.org/wiki/Dolby_Digital) (AC3) (é um codec herdado).
+Empacotamento dinâmico oferece suporte a arquivos MP4, que contém áudio codificado com 
+
+* [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) (AAC-LC, HE-AAC v1, HE-AAC v2)
+* [Dolby Digital Plus](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)(aprimorado AC-3 ou E-AC3)
+* Dolby Atmos
+   
+   Streaming de conteúdo Dolby Atmos tem suporte para padrões como MP4 fragmentado de protocolo de MPEG-DASH com o formato comum de Streaming (CSF) ou o formato de aplicativo comum de mídia (CMAF) e por meio de Live Streaming HLS (HTTP) com CMAF.
+
+* [DTS](https://en.wikipedia.org/wiki/DTS_%28sound_system%29)
+
+    Codecs DTS com suporte pelos formatos de empacotamento de DASH CSF, CMAF DASH, HLS M2TS e HLS CMAF são:  
+
+    * DTS Digital Surround (dtsc)
+    * DTS-HD alta resolução e áudio HD DTS mestre (dtsh)
+    * DTS Express (dtse)
+    * DTS-HD sem perdas (nenhum núcleo) (dtsl)
+
+### <a name="hls-support"></a>Suporte HLS
+
+Empacotamento dinâmico oferece suporte a HLS (versão 4 ou superior) para ativos que têm várias faixas de áudio com vários codecs e linguagens.
+
+### <a name="not-supported"></a>Sem suporte
+
+O Dynamic Packaging não suporta arquivos que contenham áudio [Dolby Digital](https://en.wikipedia.org/wiki/Dolby_Digital) (AC3) (é um codec herdado).
 
 ## <a name="dynamic-encryption"></a>Criptografia dinâmica
 
@@ -193,10 +218,7 @@ Aqui está um exemplo de um manifesto de Smooth Streaming:
 
 ## <a name="dynamic-manifest"></a>Manifesto dinâmico
 
-Filtragem dinâmica é usado para controlar o número de faixas, formatos, taxas de bits e janelas de tempo de apresentação que são enviadas para os jogadores. Para obter mais informações, consulte [filtros e manifestos dinâmicos](filters-dynamic-manifest-overview.md).
-
-> [!NOTE]
-> Atualmente, você não pode usar o portal do Azure para gerenciar recursos da v3. Use a [API REST](https://aka.ms/ams-v3-rest-ref), a [CLI](https://aka.ms/ams-v3-cli-ref) ou um dos [SDKs](media-services-apis-overview.md#sdks) com suporte.
+Filtragem dinâmica é usado para controlar o número de faixas, formatos, taxas de bits e janelas de tempo de apresentação que são enviadas para os jogadores. Para obter mais informações, consulte [pré-filtragem manifestos com o Dynamic Packager](filters-dynamic-manifest-overview.md).
 
 ## <a name="ask-questions-give-feedback-get-updates"></a>Fazer perguntas, comentar, obter atualizações
 

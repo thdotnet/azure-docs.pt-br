@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pabutler
-ms.openlocfilehash: 296f843f9d09b57e12e867700f456126eca128b3
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 64039234a3863332ca19b915fb59a5271625d695
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942878"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258195"
 ---
 # <a name="azure-application-prerequisites"></a>Pré-requisitos do Aplicativo Azure
 
@@ -38,7 +38,8 @@ Para obter mais informações, confira [Criar uma interface do usuário do porta
 
 Os requisitos comerciais incluem as seguintes obrigações contratuais, legais e de procedimentos:
 
-* Você deve ser um Editor de Marketplace de Nuvem registrado. Se você não estiver registrado, siga as etapas no artigo [se tornar um editor do Marketplace de nuvem](../../become-publisher.md).
+* Você deve ser um Editor de Marketplace de Nuvem registrado. Se você não estiver registrado, siga as etapas no artigo [se tornar um editor do Marketplace de nuvem](https://docs.microsoft.com/azure/marketplace/become-publisher
+).
 
 >[!NOTE]
 >Você deve usar a mesma conta de registro do Microsoft Developer Center para entrar no Portal do Cloud Partner. Você deve ter apenas uma conta da Microsoft para suas ofertas do Azure Marketplace. Esta conta não deve ser específica para serviços ou ofertas individuais.

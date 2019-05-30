@@ -7,12 +7,12 @@ ms.date: 9/18/2018
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: alerts
-ms.openlocfilehash: 59973d9530bf1c3ab3e77290b25e50860f9de0ca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6138a9ff6bb6d34b09c49fa7b5dbb67cbf5eb1b6
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60712858"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244901"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Entender como funcionam os alertas de métrica no Azure Monitor
 
@@ -28,8 +28,8 @@ Digamos que você tenha criado uma regra de alerta de métrica simples com limit
 
 - Recurso de destino (o recurso do Azure que você deseja monitorar): myVM
 - Métrica: Porcentagem de CPU
-- Tipo de condição: estático
-- Agregação de tempo (estatística que é executada sobre os valores brutos de métrica. As agregações de tempo com suporte são Mín., Máx., Média, Total): Média
+- Tipo de condição: Estático
+- Agregação de tempo (estatística que é executada sobre os valores brutos de métrica. As agregações de hora com suporte são Min, Max, Avg, Total, contagem): Média
 - Período (a janela de retrocesso na qual os valores de métrica são verificados): Nos últimos 5 minutos
 - Frequência (a frequência com que o alerta de métrica verifica se as condições foram atendidas): 1 minuto
 - Operador: Maior que
@@ -44,7 +44,7 @@ Digamos que você tenha criado uma regra de alerta de métrica simples com limit
 - Recurso de destino (o recurso do Azure que você deseja monitorar): myVM
 - Métrica: Porcentagem de CPU
 - Tipo de condição: Dinâmico
-- Agregação de tempo (estatística que é executada sobre os valores brutos de métrica. As agregações de tempo com suporte são Mín., Máx., Média, Total): Média
+- Agregação de tempo (estatística que é executada sobre os valores brutos de métrica. As agregações de hora com suporte são Min, Max, Avg, Total, contagem): Média
 - Período (a janela de retrocesso na qual os valores de métrica são verificados): Nos últimos 5 minutos
 - Frequência (a frequência com que o alerta de métrica verifica se as condições foram atendidas): 1 minuto
 - Operador: Maior que
@@ -74,7 +74,7 @@ Digamos que você tem um Plano do Serviço de Aplicativo para seu site. Você de
 
 - Recurso de destino: myAppServicePlan
 - Métrica: Porcentagem de CPU
-- Tipo de condição: estático
+- Tipo de condição: Estático
 - Dimensões
   - Instance = InstanceName1, InstanceName2
 - Agregação de tempo: Média
@@ -89,7 +89,7 @@ Digamos que você tenha um aplicativo Web que esteja sob grande demanda e é nec
 
 - Recurso de destino: myAppServicePlan
 - Métrica: Porcentagem de CPU
-- Tipo de condição: estático
+- Tipo de condição: Estático
 - Dimensões
   - Instância = *
 - Agregação de tempo: Média
@@ -173,8 +173,8 @@ Se você estiver usando alertas de métricas clássicas e procurando saber se os
 |Microsoft.TimeSeriesInsights/environments | Sim|
 |Microsoft. Web/serverfarms | Sim |
 |Microsoft. Web/sites (excluindo funções) | Sim|
-|Microsoft. Web/hostingEnvironments/multiRolePools | Não |
-|Microsoft. Web/hostingEnvironments/workerPools| Não  |
+|Microsoft. Web/hostingEnvironments/multiRolePools | Não|
+|Microsoft. Web/hostingEnvironments/workerPools| Não |
 |Microsoft.SQL/Servers | Não  |
 
 ## <a name="next-steps"></a>Próximas etapas

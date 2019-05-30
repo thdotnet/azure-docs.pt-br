@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: c72392e46805049703300dd6f60fc7bf08b9053b
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 9bddb6552b11dd506ee3e2c1c416c15da11048b7
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65235767"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258748"
 ---
 # <a name="capacity-planning-and-scaling"></a>Planejamento de capacidade e dimensionamento
 
@@ -42,7 +42,7 @@ Operações de dimensionamento devem ser executada por meio de implantação de 
 
 ## <a name="vertical-scaling-considerations"></a>Considerações de dimensionamento vertical
 
-[O dimensionamento vertical](https://docs.microsoft.com/azure/service-fabric/virtual-machine-scale-set-scale-node-type-scale-out) um tipo de nó no Azure Service Fabric requer um número de etapas e considerações. Por exemplo:
+[O dimensionamento vertical](https://docs.microsoft.com/azure/service-fabric/virtual-machine-scale-set-scale-node-type-scale-out) um tipo de nó no Azure Service Fabric requer um número de etapas e considerações. Por exemplo: 
 
 * O cluster deve estar íntegro antes do dimensionamento. Caso contrário, você só será desestabilizar ainda mais o cluster.
 * **Maior ou nível de durabilidade prata** é necessária para todos os tipos de nó de Cluster do Service Fabric que hospedam serviços com monitoração de estado.
@@ -70,6 +70,9 @@ Com as propriedades de nó e as restrições de posicionamento declaradas, siga 
 2. Execute `Get-ServiceFabricNode` para garantir que o nó tenha feito a transição para desabilitado. Caso contrário, aguarde até que o nó seja desabilitado. Isso pode levar algumas horas para cada nó. Não continue até que o nó tenha feito a transição para desabilitado.
 3. Diminua o número de VMs em um naquele tipo de Nó. A instância da VM mais alta agora será removida.
 4. Repita as etapas 1 a 3 conforme necessário, mas nunca reduza verticalmente o número de instâncias no tipo de nó primário para uma quantidade menor do que a camada de confiabilidade garante. Confira [Planejamento de capacidade do cluster do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity) para obter uma lista de instâncias recomendadas.
+
+> [!NOTE]
+> Um cenário com suporte para quando executar um operações de dimensionamento vertical é: Eu pode migrar meu Cluster do Service Fabric e o aplicativo de disco não gerenciado para o Managed Disks sem tempo de inatividade do aplicativo. Provisionando uma nova máquina virtual conjuntos de dimensionamento com discos gerenciados e executar uma atualização do aplicativo com restrições de posicionamento que direcionam provisionado capacidade; cluster do Service Fabric pode agendar sua carga de trabalho na capacidade de nó de cluster provisionado está distribuída por domínio de atualização sem tempo de inatividade do aplicativo. [Azure SKU básico balanceadores de carga](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview#skus) pontos de extremidade de pool de back-end podem ser uma máquina Virtual em um único conjunto de disponibilidade ou conjunto de dimensionamento de máquina virtual. Isso significa que você não pode usar um balanceador de carga de SKU básico, se você mover seu aplicativo do Service Fabric sistemas entre conjuntos de dimensionamento, sem causar a inacessibilidade temporária de sua malha de serviço de cluster no ponto de extremidade de gerenciamento, mesmo que o cluster e seu aplicativo ainda estão sendo executados. normalmente usuário provisionar um balanceador de carga de SKU Standard, ao executar uma permuta de endereço IP (VIP) virtuais entre recursos de balanceamento de carga de SKU básico e LB SKU Standard, para atenuar qualquer futuro aproximadamente 30 segundos de incapacidade de acesso necessária para a troca de VIP.
 
 ## <a name="horizontal-scaling"></a>Dimensionamento em escala horizontal
 
@@ -99,7 +102,7 @@ Para escalar horizontalmente manualmente, atualize a capacidade na propriedade S
 
 ### <a name="scaling-in"></a>Redução horizontal
 
-Reduzir exige mais consideração do que expandir. Por exemplo:
+Reduzir exige mais consideração do que expandir. Por exemplo: 
 
 * Os serviços do sistema do Service Fabric são executados no tipo de nó Primário em seu cluster. Nunca desligue nem reduza verticalmente o número de instâncias desse tipo de nó para que você tenha menos instâncias do que o que a camada de confiabilidade requer. 
 * Para um serviço com estado, você precisa de um determinado número de nós estar sempre ativos para manter a disponibilidade e preservar o estado do serviço. No mínimo, você precisa de um número de nós seja igual à contagem de conjunto de réplicas de destino do serviço/partição.
@@ -123,7 +126,7 @@ Para Dimensionar manualmente, atualize a capacidade na propriedade SKU do deseja
 
 1. Repita as etapas 1 a 3 até provisionar a capacidade desejada. Não reduza o número de instâncias nos tipos de nó primários para menos do que aquilo que a camada de confiabilidade requer. Para obter detalhes sobre níveis de confiabilidade e o número de instâncias exigidas por eles, veja [Planejando a capacidade do cluster do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity).
 
-Você deve preparar o nó para desligamento para reduzir de modo programático. Isso envolve localizar o nó a ser removido, que é o nó mais alto da instância, e desativá-lo. Por exemplo:
+Você deve preparar o nó para desligamento para reduzir de modo programático. Isso envolve localizar o nó a ser removido, que é o nó mais alto da instância, e desativá-lo. Por exemplo: 
 
 ```c#
 using (var client = new FabricClient())

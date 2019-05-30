@@ -8,12 +8,12 @@ ms.date: 01/24/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: f93f6c8891ba9f7407310a8f09387e97f5c1f578
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 65de80004dd05e3eb29f3313bc17405c40450d7a
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60401775"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66397134"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Solucionar problemas de erros com runbooks
 
@@ -305,6 +305,8 @@ Esse erro ocorre devido a um dos seguintes problemas:
 
 4. Seu runbook tentou chamar um executável ou subprocesso em um runbook que é executado em uma área restrita do Azure. Não há suporte para esse cenário em áreas restritas do Azure.
 
+5. Seu runbook tentou gravar muitos dados de exceção no fluxo de saída.
+
 #### <a name="resolution"></a>Resolução
 
 Qualquer uma das soluções a seguir corrige o problema:
@@ -316,6 +318,8 @@ Qualquer uma das soluções a seguir corrige o problema:
 * Outra solução é executar o runbook em um [Hybrid Runbook Worker](../automation-hrw-run-runbooks.md). Hybrid Workers não são limitados pelos limites de memória e rede que são áreas de segurança do Azure.
 
 * Se precisar chamar um processo (como .exe ou subprocess.call) em um runbook, é preciso executar o runbook em um [Hybrid Runbook Worker](../automation-hrw-run-runbooks.md).
+
+* Há um limite de 1MB no fluxo de saída do trabalho. Certifique-se de que você coloque chamadas para um executável ou um subprocesso em um bloco try/catch. Se elas geram uma exceção, grave a mensagem de exceção em uma variável de automação. Isso impedirá que ele está sendo gravado no fluxo de saída de trabalho.
 
 ### <a name="fails-deserialized-object"></a>Cenário: O Runbook falha devido a objeto desserializado
 

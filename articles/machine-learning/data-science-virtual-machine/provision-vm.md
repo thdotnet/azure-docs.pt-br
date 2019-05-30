@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/22/2019
 ms.author: gokuma
-ms.openlocfilehash: 03bf0833bdc1bda24b9d435dafe329e9a3c8e4b2
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 64642da88850e9a0a17173bc50ae9e750cab55a2
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65596509"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235095"
 ---
 # <a name="provision-a-windows-data-science-virtual-machine-on-azure"></a>Provisionar uma Máquina Virtual de Ciência de Dados do Windows no Azure
 
@@ -106,7 +106,7 @@ Para criar uma instância de DSVM:
 
 Depois que a VM for criada e provisionada, será possível entrar na área de trabalho remotamente usando as credenciais da conta de administrador que você configurou anteriormente na seção **Noções básicas**. Você está pronto para começar a usar as ferramentas que estão instaladas e pré-configuradas na VM. Muitas das ferramentas podem ser acessadas por meio de blocos do menu Iniciar e ícones da área de trabalho.
 
-Você também pode anexar uma VM de ciência de dados para o Azure Notebooks para executar os notebooks Jupyter na VM e ignorar as limitações da camada de serviço gratuito. Para obter mais informações, consulte [gerenciar e configurar projetos de blocos de anotações - camada de computação](/azure/notebooks/configure-manage-azure-notebooks-projects.md#compute-tier).
+Você também pode anexar uma VM de ciência de dados para o Azure Notebooks para executar os notebooks Jupyter na VM e ignorar as limitações da camada de serviço gratuito. Para obter mais informações, consulte [gerenciar e configurar projetos de blocos de anotações - camada de computação](/azure/notebooks/configure-manage-azure-notebooks-projects#compute-tier).
 
 ## <a name="tools-installed-on-the-microsoft-data-science-virtual-machine"></a>Ferramentas Instaladas na Máquina Virtual de Ciência de Dados da Microsoft
 

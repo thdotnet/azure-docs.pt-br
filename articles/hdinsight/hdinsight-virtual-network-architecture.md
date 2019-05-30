@@ -5,15 +5,14 @@ author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-origin.date: 03/26/2019
-ms.date: 04/29/2019
-ms.author: v-yiso
-ms.openlocfilehash: 6d92273298c0448d7377acab6f3b8ea1cc1ed908
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 03/26/2019
+ms.author: hrasheed
+ms.openlocfilehash: 41420497bffd0abdc598e4c86b2dbda1466b2ce1
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60484864"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252858"
 ---
 # <a name="azure-hdinsight-virtual-network-architecture"></a>Arquitetura de rede virtual do Azure HDInsight
 
@@ -26,7 +25,7 @@ Clusters de HDInsight do Azure têm diferentes tipos de máquinas virtuais ou n�
 | Type | DESCRIÇÃO |
 | --- | --- |
 | Nó de cabeçalho |  Para todos os tipos de cluster, exceto o Apache Storm, nós de cabeçalho do hospedam os processos que gerenciar a execução do aplicativo distribuído. O nó principal também é o que você pode SSH no nó e executar aplicativos que são coordenados, em seguida, para executar entre os recursos de cluster. O número de nós de cabeçalho é fixo em dois para todos os tipos de cluster. |
-| Nó do zooKeeper | Zookeeper coordena tarefas entre os nós que estão fazendo o processamento de dados. Ele também faz eleição de líder do nó principal e mantém o controle de qual nó principal está em execução em um serviço mestre específico. O número de nós do ZooKeeper é fixo em dois. |
+| Nó do zooKeeper | Zookeeper coordena tarefas entre os nós que estão fazendo o processamento de dados. Ele também faz eleição de líder do nó principal e mantém o controle de qual nó principal está em execução em um serviço mestre específico. O número de nós do ZooKeeper é fixo em três. |
 | Nó de trabalho | Representa os nós que dão suporte à funcionalidade de processamento de dados. Nós de trabalho podem ser adicionados ou removidos do cluster para dimensionar a capacidade de computação e gerenciar os custos. |
 | Nó de borda do R Server | O nó de borda do R Server representa o nó que você pode realizar o SSH em e executar aplicativos que são coordenados, em seguida, para executar entre os recursos de cluster. Um nó de borda não participa de análise de dados dentro do cluster. Esse nó também hospeda o R Studio Server, permitindo que você execute o aplicativo de R usando um navegador. |
 | Nó de região | Para o tipo de cluster HBase, o nó de região (também conhecido como um nó de dados) executa o servidor de região. Servidores de região servem e gerenciar uma parte dos dados gerenciados pelo HBase. Nós de região podem ser adicionados ou removidos do cluster para dimensionar a capacidade de computação e gerenciar os custos.|
@@ -46,7 +45,7 @@ A tabela a seguir resume os nós de cluster de nove que são criados quando HDIn
 | Tipo de recurso | Número presente | Detalhes |
 | --- | --- | --- |
 |Nó de cabeçalho | dois |    |
-|Nó do Zookeeper | três | |
+|Nó do ZooKeeper | três | |
 |Nó de trabalho | dois | Esse número pode variar com base na configuração de cluster e dimensionamento. É necessário um mínimo de três nós de trabalho do Apache Kafka.  |
 |Nó de gateway | dois | Nós de gateway são máquinas virtuais do Azure que são criadas no Azure, mas não são visíveis em sua assinatura. Contate o suporte se você precisar reinicializar esses nós. |
 

@@ -5,14 +5,14 @@ author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 04/30/2019
+ms.date: 05/28/2019
 ms.author: dacurwin
-ms.openlocfilehash: 5dbd4fefd5c5e1acd7e12ace547ddb8866b7f081
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 1ac3cdecc79cafb9ea2697cca3c87b2ebe083d40
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148583"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254858"
 ---
 # <a name="common-questions-about-backing-up-files-and-folders"></a>Perguntas comuns sobre como fazer backup de arquivos e pastas 
 
@@ -101,7 +101,7 @@ Esse aviso pode aparecer mesmo que você configurou uma política de backup, qua
 O tamanho da pasta de cache determina a quantidade de dados submetida a backup.
 - Os volumes de pasta de cache devem ter espaço livre igual a pelo menos de 5 a 10% do tamanho total dos dados de backup.
 - Se o volume tiver menos de 5% de espaço livre, aumente o tamanho do volume ou mova a pasta de cache para um volume com espaço suficiente.
-- 
+- Se você fizer backup do estado do sistema Windows, você precisaria mais 30 a 35 GB de espaço livre no volume que contém a pasta de cache
 ### <a name="how-do-i-change-the-cache-location-for-the-mars-agent"></a>Como altero o local do cache para o agente de MARS?
 
 

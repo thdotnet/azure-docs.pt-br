@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/06/2017
 ms.author: dekapur
-ms.openlocfilehash: e2e1b2ae354d26c3d9729e3a3fdf39bee43647ca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: db515454c68fe3a7eb1a4616c3278d9fc93ddb2c
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60621455"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258658"
 ---
 # <a name="manage-applications-and-services-as-azure-resource-manager-resources"></a>Gerenciar aplicativos e serviços como recursos do Azure Resource Manager
 
@@ -258,6 +258,17 @@ O snippet a seguir mostra os diferentes tipos de recursos que podem ser gerencia
    > A *apiVersion* deve ser definida como `"2017-07-01-preview"`. Esse modelo também pode ser implantado independentemente do cluster, desde que o cluster já tenha sido implantado.
 
 5. Implante! 
+
+## <a name="remove-service-fabric-resource-provider-application-resource"></a>Remover o recurso de aplicativo de provedor de recursos do Service Fabric
+A seguir irá disparar o pacote do aplicativo para ser não-provisionado do cluster, e isso limpará o espaço em disco usado:
+```powershell
+Get-AzureRmResource -ResourceId /subscriptions/{sid}/resourceGroups/{rg}/providers/Microsoft.ServiceFabric/clusters/{cluster}/applicationTypes/{apptType}/versions/{version} -ApiVersion "2017-07-01-preview" | Remove-AzureRmResource -Force -ApiVersion "2017-07-01-preview"
+```
+Simplesmente removendo Microsoft.ServiceFabric/clusters/application do seu modelo ARM não desprovisiona o aplicativo
+
+>[!NOTE]
+> Uma vez concluída a remoção não deverá ver a versão do pacote no SFX ou ARM mais. Você não pode excluir o recurso de versão do tipo de aplicativo que o aplicativo é executado com; ARM/SFRP impedirá que isso. Se você tentar remover o provisionamento de pacote em execução, o tempo de execução do SF irá impedi-lo.
+
 
 ## <a name="manage-an-existing-application-via-resource-manager"></a>Gerenciar um aplicativo existente por meio do Resource Manager
 

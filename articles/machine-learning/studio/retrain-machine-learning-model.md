@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/14/2019
-ms.openlocfilehash: 395a231fcf43378a51e22427254abb196a46081e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a3f441a0dd7f7b9f402390e853bd1c28f282f653
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64709011"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66245089"
 ---
 # <a name="retrain-and-deploy-a-machine-learning-model"></a>Treinar novamente e implantar um modelo de machine learning
 
@@ -49,7 +49,7 @@ Use as etapas a seguir para implantar um serviço Web de novo treinamento:
     Agora, implante o teste de treinamento como um serviço Web de novo treinamento que gera um modelo treinado e os resultados de avaliação do modelo.
 
 1. Na parte inferior da tela do experimento, clique em **Configurar serviço Web**
-1. Selecione **Implantar Serviço Web [Novo]**. O portal dos Serviços Web do Azure Machine Learning abre a página **Implantar Serviço Web**.
+1. Selecione **Implantar Serviço Web [Novo]** . O portal dos Serviços Web do Azure Machine Learning abre a página **Implantar Serviço Web**.
 1. Digite um nome para seu serviço Web e escolha um plano de pagamento.
 1. Selecione **Implantar**.
 
@@ -59,7 +59,7 @@ Para este exemplo, estamos usando C# para criar o aplicativo de readaptação. V
 
 Use as etapas a seguir para chamar as APIs de novo treinamento:
 
-1. No Visual Studio, crie um aplicativo de console C#: **Novo** > **Projeto** > **Visual C#** > **Área de Trabalho Clássica do Windows** > **Aplicativo do Console (.NET Framework)**.
+1. No Visual Studio, crie um aplicativo de console C#: **Novo** > **Projeto** > **Visual C#**  > **Área de Trabalho Clássica do Windows** > **Aplicativo do Console (.NET Framework)** .
 1. Entre no portal de Serviços Web do Machine Learning.
 1. Clique no serviço Web com o qual você está trabalhando.
 1. Clique em **Consumo**.
@@ -89,7 +89,7 @@ O código de exemplo de BES carrega um arquivo de uma unidade local (por exemplo
 1. Na lista de contas de armazenamento, selecione uma para armazenar o modelo recuperado.
 1. Na coluna de navegação à esquerda, clique em **Chaves de acesso**.
 1. Copie e salve a **Chave de Acesso Primária**.
-1. Na coluna de navegação à esquerda, clique em **Contêineres**.
+1. Na coluna de navegação à esquerda, clique em **Blobs**.
 1. Selecione um contêiner existente ou crie um novo e salve o nome.
 
 Localize as declarações *StorageAccountName*, *StorageAccountKey* e *StorageContainerName* e atualize os valores salvos no portal.

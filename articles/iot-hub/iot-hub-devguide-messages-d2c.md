@@ -6,14 +6,14 @@ manager: briz
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 08/13/2018
+ms.date: 05/15/2019
 ms.author: asrastog
-ms.openlocfilehash: fddea12d4c6b7d09d87174d29c645ef6da54af6f
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 094641baaa1472b481140072cd5d3d35d27d5ed7
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64917415"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390516"
 ---
 # <a name="use-iot-hub-message-routing-to-send-device-to-cloud-messages-to-different-endpoints"></a>Usar o roteamento de mensagens do IoT Hub para enviar mensagens do dispositivo para nuvem para pontos de extremidade diferentes
 
@@ -39,7 +39,7 @@ Você pode usar [SDKs e integração padrão dos Hubs de Eventos](iot-hub-devgui
 
 ### <a name="azure-blob-storage"></a>Armazenamento do Blobs do Azure
 
-O IoT Hub dá suporte à gravação de dados no armazenamento de BLOBs do Azure na [Apache Avro](https://avro.apache.org/) , bem como o formato JSON. A capacidade de codificar o formato JSON está na versão prévia em todas as regiões em que o Hub IoT está disponível, exceto Leste dos EUA, oeste dos EUA e Oeste da Europa. O padrão é AVRO. O formato de codificação pode ser definido somente quando o ponto de extremidade de armazenamento de blob é configurado. O formato não pode ser editado para um ponto de extremidade existente. Ao usar a codificação JSON, você deve definir o contentType como JSON e contentEncoding como UTF-8 na mensagem [propriedades do sistema](iot-hub-devguide-routing-query-syntax.md#system-properties). Você pode selecionar o formato de codificação usando o IoT Hub Create ou a API de REST de atualização, especificamente a [RoutingStorageContainerProperties](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), o Portal do Azure, [CLI do Azure](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest) ou o [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint?view=azps-1.3.0). O diagrama a seguir mostra como selecionar o formato de codificação no Portal do Azure.
+O IoT Hub dá suporte à gravação de dados no armazenamento de BLOBs do Azure na [Apache Avro](https://avro.apache.org/) formato, bem como no formato JSON. A capacidade de codificar o formato JSON está disponível em todas as regiões em que o IoT Hub está disponível. O padrão é AVRO. O formato de codificação pode ser definido somente quando o ponto de extremidade de armazenamento de blob é configurado. O formato não pode ser editado para um ponto de extremidade existente. Ao usar a codificação JSON, você deve definir o contentType como JSON e contentEncoding como UTF-8 na mensagem [propriedades do sistema](iot-hub-devguide-routing-query-syntax.md#system-properties). Se isso não for definido, o IoT Hub gravará as mensagens no formato de codificado em base 64. Você pode selecionar o formato de codificação usando o IoT Hub Create ou a API de REST de atualização, especificamente a [RoutingStorageContainerProperties](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), o portal do Azure, [CLI do Azure](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest), ou o [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint?view=azps-1.3.0). O diagrama a seguir mostra como selecionar o formato de codificação no portal do Azure.
 
 ![Codificação de ponto de extremidade de armazenamento de blob](./media/iot-hub-devguide-messages-d2c/blobencoding.png)
 
@@ -95,19 +95,19 @@ Use os tutoriais a seguir para saber como ler a mensagem de um ponto de extremid
 
 ## <a name="fallback-route"></a>Rota de fallback
 
-A rota de fallback envia todas as mensagens que não atendem às condições de consulta em nenhuma das rotas existentes para os Hubs de Eventos internos em (**mensagens/eventos**), compatíveis com [Hubs de Eventos](/azure/event-hubs/). Se o roteamento de mensagens estiver habilitado, você poderá habilitar a funcionalidade de rota de fallback. Depois de criar uma rota, dados pararem de fluir para o interno-em-ponto de extremidade, a menos que uma rota é criada para esse ponto de extremidade. Se não houver nenhuma rota para o ponto de extremidade interno e houver uma rota de fallback habilitada, somente as mensagens que não corresponderem a nenhuma condição de consulta nas rotas serão enviadas ao ponto de extremidade interno. Além disso, se todas as rotas existentes forem excluídas, a rota de fallback precisará ser habilitada para receber todos os dados no ponto de extremidade interno. 
+A rota de fallback envia todas as mensagens que não atendem às condições de consulta em nenhuma das rotas existentes para os Hubs de Eventos internos em (**mensagens/eventos**), compatíveis com [Hubs de Eventos](/azure/event-hubs/). Se o roteamento de mensagens estiver habilitado, você poderá habilitar a funcionalidade de rota de fallback. Depois de criar uma rota, dados pararem de fluir para o interno-em-ponto de extremidade, a menos que uma rota é criada para esse ponto de extremidade. Se não houver nenhuma rota para o ponto de extremidade interno e houver uma rota de fallback habilitada, somente as mensagens que não corresponderem a nenhuma condição de consulta nas rotas serão enviadas ao ponto de extremidade interno. Além disso, se todas as rotas existentes forem excluídas, a rota de fallback precisará ser habilitada para receber todos os dados no ponto de extremidade interno.
 
-Você pode habilitar/desabilitar a rota de fallback na folha Portal do Azure -> Roteamento de Mensagens. Você também pode usar o Azure Resource Manager para [FallbackRouteProperties](/rest/api/iothub/iothubresource/createorupdate#fallbackrouteproperties) para usar um ponto de extremidade personalizado para a rota de fallback.
+Você pode habilitar/desabilitar a rota de fallback no portal do Azure -> folha de roteamento de mensagens. Você também pode usar o Azure Resource Manager para [FallbackRouteProperties](/rest/api/iothub/iothubresource/createorupdate#fallbackrouteproperties) para usar um ponto de extremidade personalizado para a rota de fallback.
 
 ## <a name="non-telemetry-events"></a>Eventos que não são de telemetria
 
 Além da telemetria do dispositivo, o roteamento de mensagens também permite enviar eventos de alteração de dispositivo gêmeo e eventos de ciclo de vida do dispositivo. Por exemplo, se uma rota é criada com a fonte de dados definida como **eventos de alteração de dispositivo gêmeo**, o Hub IoT envia mensagens para o ponto de extremidade que contém a alteração no dispositivo gêmeo. Da mesma forma, se uma rota for criada com a fonte de dados definida como **eventos de ciclo de vida do dispositivo**, o Hub IoT enviará uma mensagem indicando se o dispositivo foi excluído ou criado. 
 
-[O Hub IoT também se integra à Grade de Eventos do Azure](iot-hub-event-grid.md) para publicar eventos de dispositivo para dar suporte a integrações em tempo real e à automação de fluxos de trabalho com base nesses eventos. Confira as principais [diferenças entre o roteamento de mensagens e Grade de Eventos](iot-hub-event-grid-routing-comparison.md) para saber o que funciona melhor para seu cenário.
+[O IoT Hub também se integra com a grade de eventos do Azure](iot-hub-event-grid.md) para publicar eventos de dispositivo para dar suporte a integrações em tempo real e a automação de fluxos de trabalho com base nesses eventos. Confira as principais [diferenças entre o roteamento de mensagens e Grade de Eventos](iot-hub-event-grid-routing-comparison.md) para saber o que funciona melhor para seu cenário.
 
 ## <a name="testing-routes"></a>Testando rotas
 
-Ao criar uma rota ou editar uma rota existente, você deve testar a consulta de rota com uma mensagem de exemplo. Você pode testar rotas individuais ou todas as rotas de uma vez. Não será roteada nenhuma mensagem aos pontos de extremidade durante o teste. O portal do Azure, o Azure Resource Manager, o Azure PowerShell e a CLI do Azure podem ser usados para o teste. Resultados de ajudam a identificar se a mensagem de exemplo correspondido à consulta, mensagem de não correspondeu a consulta ou teste não foi executado porque a sintaxe de mensagem ou consulta de exemplo estão incorretas. Para saber mais, confira [Testar Rota](/rest/api/iothub/iothubresource/testroute) e [Testar todas as rotas](/rest/api/iothub/iothubresource/testallroutes).
+Ao criar uma rota ou editar uma rota existente, você deve testar a consulta de rota com uma mensagem de exemplo. Você pode testar rotas individuais ou todas as rotas de uma vez. Não será roteada nenhuma mensagem aos pontos de extremidade durante o teste. Portal do Azure, o Azure Resource Manager, Azure PowerShell e CLI do Azure podem ser usado para teste. Resultados de ajudam a identificar se a mensagem de exemplo correspondido à consulta, mensagem de não correspondeu a consulta ou teste não foi executado porque a sintaxe de mensagem ou consulta de exemplo estão incorretas. Para saber mais, confira [Testar Rota](/rest/api/iothub/iothubresource/testroute) e [Testar todas as rotas](/rest/api/iothub/iothubresource/testallroutes).
 
 ## <a name="latency"></a>Latency
 
@@ -117,11 +117,11 @@ Na maioria dos casos, o aumento médio na latência é menor que 500 ms. Você p
 
 ## <a name="monitoring-and-troubleshooting"></a>Monitoramento e solução de problemas
 
-O Hub IoT fornece várias métricas relacionadas a roteamento e a ponto de extremidade que fornecem uma visão geral da integridade do hub e o número de mensagens enviadas. Você pode combinar informações de várias métricas para identificar a causa raiz de problemas. Por exemplo, use a métrica **roteamento: mensagens de telemetria ignoradas** ou **d2c.telemetry.egress.dropped** para identificar o número de mensagens que foram descartados quando eles não correspondiam consultas em nenhuma das rotas e a rota de fallback foi desabilitada. [Métricas do Hub IoT](iot-hub-metrics.md) lista todas as métricas que são habilitadas por padrão para o Hub IoT.
+O IoT Hub fornece várias métricas relacionadas ao roteamento e pontos de extremidade para uma visão geral da integridade de seu hub e as mensagens enviadas. Você pode combinar informações de várias métricas para identificar a causa raiz de problemas. Por exemplo, use a métrica **roteamento: mensagens de telemetria ignoradas** ou **d2c.telemetry.egress.dropped** para identificar o número de mensagens que foram descartados quando eles não correspondiam consultas em nenhuma das rotas e a rota de fallback foi desabilitada. [Métricas do Hub IoT](iot-hub-metrics.md) lista todas as métricas que são habilitadas por padrão para o Hub IoT.
 
 Você pode usar a API REST [obter integridade do ponto de extremidade](https://docs.microsoft.com/rest/api/iothub/iothubresource/getendpointhealth#iothubresource_getendpointhealth) para obter [status de integridade](iot-hub-devguide-endpoints.md#custom-endpoints) dos pontos de extremidade. É recomendável usar o [métricas do IoT Hub](iot-hub-metrics.md) relacionados ao roteamento de latência de mensagem para identificar e depurar erros quando a integridade do ponto de extremidade está inativo ou não está íntegro. Por exemplo, para o tipo de ponto de extremidade dos Hubs de eventos, você pode monitorar **d2c.endpoints.latency.eventHubs**. O status de um ponto de extremidade não íntegro será ser atualizado para íntegro quando o IoT Hub estabeleceu um estado consistente de integridade.
 
-Usando os logs de diagnóstico de **rotas** nas [configurações de diagnóstico](../iot-hub/iot-hub-monitor-resource-health.md) do Azure Monitor, você pode rastrear erros que ocorrem durante a avaliação de uma consulta de roteamento e integridade e de ponto de extremidade, como visto pelo Hub IoT, por exemplo, quando um ponto de extremidade está inativo. Esse logs de diagnóstico podem ser enviado para o armazenamento do Azure, Hubs de eventos ou logs do Azure Monitor para processamento personalizado.
+Usando o **rotas** logs de diagnóstico no Azure Monitor [configurações de diagnóstico](../iot-hub/iot-hub-monitor-resource-health.md), você pode rastrear erros que ocorrem durante a avaliação de uma integridade de consulta e o ponto de extremidade de roteamento, como visto pelo IoT Hub, por exemplo quando um ponto de extremidade está inativo. Esse logs de diagnóstico podem ser enviado para o armazenamento do Azure, Hubs de eventos ou logs do Azure Monitor para processamento personalizado.
 
 ## <a name="next-steps"></a>Próximas etapas
 

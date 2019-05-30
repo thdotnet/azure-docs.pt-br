@@ -6,12 +6,12 @@ ms.author: janeng
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 04/15/2019
-ms.openlocfilehash: 5eb2ba509983918a55370ae0deafd019e03f53d8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7a52d05c77d0aeb8ebeba196df60e59f0647fea9
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60740277"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66233928"
 ---
 # <a name="azure-database-for-mariadb-pricing-tiers"></a>Banco de dados do Azure para níveis de preços do MariaDB
 
@@ -51,19 +51,25 @@ O armazenamento que você provisiona é a quantidade de capacidade de armazename
 | Tamanho do incremento de armazenamento | 1 GB | 1 GB | 1 GB |
 | IOPS | Variável |3 IOPS/GB<br/>Mín 100 IOPS<br/>Máx 6000 IOPS | 3 IOPS/GB<br/>Mín 100 IOPS<br/>Máx 6000 IOPS |
 
-Você pode adicionar mais capacidade de armazenamento durante e após a criação do servidor. A camada Básico não oferece garantia de IOPS. Nos tipos de preço Uso Geral e Otimizado para Memória, o IOPS é dimensionado com o tamanho de armazenamento provisionado a uma taxa de 3:1.
+Você pode adicionar mais capacidade de armazenamento durante e após a criação do servidor e permitir que o sistema crescer automaticamente com base no consumo de armazenamento de sua carga de trabalho de armazenamento. A camada Básico não oferece garantia de IOPS. Nos tipos de preço Uso Geral e Otimizado para Memória, o IOPS é dimensionado com o tamanho de armazenamento provisionado a uma taxa de 3:1.
 
 Você pode monitorar o consumo de E/S no Portal do Azure ou usando os comandos da CLI do Azure. As métricas relevantes para monitorar são o [limite de armazenamento, porcentagem de armazenamento, armazenamento usado e porcentagem de E/S](concepts-monitoring.md).
 
 ### <a name="reaching-the-storage-limit"></a>Alcançando o limite de armazenamento
 
-O servidor é marcado como somente leitura quando a quantidade de armazenamento livre atinge menos do que 5 GB ou 5% do armazenamento provisionado, o que for menor. Por exemplo, se você provisionou 100 GB de armazenamento e a utilização real for de 95 GB, o servidor é marcado como somente leitura. Como alternativa, se você tiver provisionado 5 GB de armazenamento, o servidor é somente leitura quando o repositório livre atingir menos de 250 MB.  
+Servidores com menos de 100 GB provisionado de armazenamento são somente leitura se o armazenamento livre é menor que 512MB ou 5% do tamanho do armazenamento provisionado. Servidores com mais de 100 GB provisionado de armazenamento são marcados leitura somente quando o armazenamento livre é menor que 5 GB.
+
+Por exemplo, se você provisionou 110 GB de armazenamento e a utilização real ultrapassar 105 GB, o servidor é marcado como somente leitura. Como alternativa, se você tiver provisionado 5 GB de armazenamento, o servidor é marcado como somente leitura quando o armazenamento livre atinge menos de 512 MB.
 
 Enquanto o serviço tenta tornar o servidor somente leitura, todas as novas solicitações de transação de gravação são bloqueadas e as transações ativas existentes continuarão a ser executadas. Quando o servidor é definido como somente leitura, todas as operações de gravação subsequente e a transação comentem falha. Consultas de leitura continuam a funcionar sem interrupções. Após aumentar o armazenamento provisionado, o servidor estará pronto para aceitar transações de gravação novamente.
 
-Recomendamos que você configure um alerta para notificá-lo quando o armazenamento do servidor estiver se aproximando do limite, para evitar entrar no estado somente leitura. 
+É recomendável que você ative a armazenamento aumentá-lo ou para configurar um alerta para notificá-lo ao seu armazenamento de servidor está se aproximando do limite então, você pode evitar introdução para o estado somente leitura. Para mais informações, consulte a documentação em [como configurar um alerta](howto-alert-metric.md).
 
-Para mais informações, consulte a documentação em [como configurar um alerta](howto-alert-metric.md).
+### <a name="storage-auto-grow"></a>Crescimento automático de armazenamento
+
+Se o crescimento automático de armazenamento é habilitada, o armazenamento cresce automaticamente sem afetar a carga de trabalho. Para servidores com menos de 100 GB provisionado de armazenamento, o tamanho de armazenamento provisionado é aumentado em 5 GB, assim o armazenamento livre estiver abaixo de 1 GB ou 10% do armazenamento provisionado maior. Para servidores com mais de 100 GB de armazenamento provisionado, o tamanho de armazenamento provisionado é aumentado em 5% quando o espaço de armazenamento livre estiver abaixo de 5% do tamanho do armazenamento provisionado. Limites de armazenamento máximo especificados acima se aplicam.
+
+Por exemplo, se você provisionou 1000 GB de armazenamento e a utilização real ultrapassar 950 GB, o tamanho de armazenamento do servidor é aumentado para 1050 GB. Como alternativa, se você tiver provisionado 10 GB de armazenamento, o tamanho de armazenamento é aumento para 15 GB quando menos de 1 GB de armazenamento estiver livre.
 
 ## <a name="backup"></a>Backup
 

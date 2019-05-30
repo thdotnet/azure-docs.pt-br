@@ -6,14 +6,14 @@ manager: carmonm
 services: site-recovery
 ms.service: site-recovery
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 05/30/2019
 ms.author: raynew
-ms.openlocfilehash: 520f30b5fabebf299b5407a502b76d7d30850bfd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 32cad7005b2b4da830ac3febf6da847933967a3d
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60947315"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400021"
 ---
 # <a name="about-recovery-plans"></a>Sobre planos de recuperação
 
@@ -65,7 +65,7 @@ Recuperar aplicativos grandes pode ser uma tarefa complexa. Etapas manuais torna
     * Crie um endereço IP público na VM do Azure.
     * Atribua um grupo de segurança de rede ao adaptador de rede da VM do Azure.
     * Adicione um balanceador de carga a um conjunto de disponibilidade.
-* **Tarefas dentro da Vm após failover**: Essas tarefas normalmente reconfiguram o aplicativo em execução no computador para que continue funcionando corretamente no novo ambiente. Por exemplo: 
+* **Tarefas dentro da Vm após failover**: Essas tarefas normalmente reconfiguram o aplicativo em execução no computador para que continue funcionando corretamente no novo ambiente. Por exemplo:
     * Modifique a cadeia de conexão do banco de dados no computador.
     * Altere as regras ou a configuração do servidor Web.
 

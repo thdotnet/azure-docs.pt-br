@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 05/23/2019
 ms.author: jureid
 ms.openlocfilehash: 81f3edcfcffad1b9b6d0ab4b49769601196049ad
-ms.sourcegitcommit: f4469b7bb1f380bf9dddaf14763b24b1b508d57c
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66179853"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66238048"
 ---
 # <a name="grant-access-to-create-azure-enterprise-subscriptions-preview"></a>Conceder acesso para criar assinaturas do Azure Enterprise (versão prévia)
 
@@ -26,7 +26,7 @@ Como cliente do Azure no [EA (Enterprise Agreement)](https://azure.microsoft.com
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="grant-access"></a>Permitir acesso
+## <a name="grant-access"></a>Conceder acesso
 
 Para [criar assinaturas de uma conta de registro](programmatically-create-subscription.md), os usuários devem ter o [função de proprietário de RBAC](../role-based-access-control/built-in-roles.md#owner) nessa conta. Você pode conceder um usuário ou um grupo de usuários a função de proprietário de RBAC em uma conta de registro seguindo estas etapas:
 

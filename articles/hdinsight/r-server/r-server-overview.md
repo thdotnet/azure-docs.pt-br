@@ -7,18 +7,15 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 06/27/2018
-ms.openlocfilehash: 8ed9d84cba7cb9eeca94a1376fc03f1d256afa85
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.date: 05/29/2019
+ms.openlocfilehash: 6fecd2278ddad4de3a2cff9035d60083101e873e
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65779212"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393845"
 ---
 # <a name="what-is-ml-services-in-azure-hdinsight"></a>O que é o serviços de ML no Azure HDInsight
-
-> [!NOTE]  
-> Em setembro de 2017, o Microsoft R Server foi lançado com o novo nome de **Microsoft Machine Learning Server** ou ML Server. Consequentemente, o cluster de Servidores R no HDInsight agora é chamado de **Clusters de Serviços de Aprendizado de Máquina** ou **ML Services** no HDInsight. Para obter mais informações sobre a alteração do nome do Servidor R, consulte [Microsoft R Server agora é o Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server/rebranding-microsoft-r-server#get-support-for-r-server).
 
 O Microsoft Machine Learning Server está disponível como uma opção de implantação quando você cria clusters HDInsight no Azure. O tipo de cluster que fornece essa opção é chamado **Serviços ML**. Essa funcionalidade fornece aos cientistas de dados, estatísticos e programadores de R o acesso sob demanda a métodos escalonáveis e distribuídos de análise no HDInsight.
 
@@ -60,7 +57,7 @@ Os Serviços ML no HDInsight fornecem os seguintes benefícios:
 
 Os seguintes recursos estão incluídos nos Serviços ML no HDInsight.
 
-| Categoria da funcionalidade | Descrição |
+| Categoria da funcionalidade | DESCRIÇÃO |
 |------------------|-------------|
 | R habilitado | [pacotes R](https://docs.microsoft.com/machine-learning-server/r-reference/introducing-r-server-r-package-reference) para soluções escritas em R, com uma distribuição de código aberto de R e infraestrutura de tempo de execução para execução de scripts. |
 | Python habilitado | [Módulos Python](https://docs.microsoft.com/machine-learning-server/python-reference/introducing-python-package-reference) para soluções escritas em Python, com uma distribuição de software livre do Python e infraestrutura em tempo de execução para execução de scripts.

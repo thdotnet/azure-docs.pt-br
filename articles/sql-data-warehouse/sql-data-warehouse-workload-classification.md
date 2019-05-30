@@ -1,5 +1,5 @@
 ---
-title: Classificação do SQL Data Warehouse | Microsoft Docs
+title: Classificação do SQL Data Warehouse do Azure | Microsoft Docs
 description: Diretrizes para usar a classificação para gerenciar a simultaneidade, importância e os recursos para consultas no Azure SQL Data Warehouse de computação.
 services: sql-data-warehouse
 author: ronortloff
@@ -10,14 +10,14 @@ ms.subservice: workload management
 ms.date: 05/01/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: c4630e11ef4001c546aecfe74dbced346b6d30e4
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 3edae23183896651efcbf7f867204a618a10c85d
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66000114"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236896"
 ---
-# <a name="sql-data-warehouse-workload-classification"></a>Classificação de carga de trabalho do SQL Data Warehouse
+# <a name="azure-sql-data-warehouse-workload-classification"></a>Classificação de carga de trabalho do Azure SQL Data Warehouse
 
 Este artigo explica o processo de classificação de carga de trabalho do SQL Data Warehouse da atribuição de uma classe de recurso e a importância às solicitações de entrada.
 

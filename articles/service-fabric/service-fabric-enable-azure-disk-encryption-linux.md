@@ -1,6 +1,6 @@
 ---
 title: Habilitar a criptografia de disco para clusters do Linux do Azure Service Fabric | Microsoft Docs
-description: Este artigo descreve como habilitar a criptografia de disco para a escala de cluster do Service Fabric definida no Azure usando o Azure Resource Manager, o Azure Key Vault.
+description: Este artigo descreve como habilitar a criptografia de disco para nós de cluster do Azure Service Fabric no Linux usando o Azure Resource Manager e o Azure Key Vault.
 services: service-fabric
 documentationcenter: .net
 author: aljo-microsoft
@@ -13,27 +13,27 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/22/2019
 ms.author: aljo
-ms.openlocfilehash: f580bf02b222f01a3d5aad1254f208791ea22b38
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 47b07188d1757708fb494c6a66e93379657e806a
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66161779"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258773"
 ---
-# <a name="enable-disk-encryption-for-service-fabric-linux-cluster-nodes"></a>Habilitar a criptografia de disco para nós de cluster do Linux do Service Fabric 
+# <a name="enable-disk-encryption-for-azure-service-fabric-cluster-nodes-in-linux"></a>Habilitar a criptografia de disco para nós de cluster do Azure Service Fabric no Linux 
 > [!div class="op_single_selector"]
 > * [Criptografia de Disco para Linux](service-fabric-enable-azure-disk-encryption-linux.md)
 > * [Criptografia de Disco para Windows](service-fabric-enable-azure-disk-encryption-windows.md)
 >
 >
 
-Siga as etapas abaixo para habilitar a criptografia de disco em Nós de Cluster Linux do Service Fabric. Você precisará fazer o seguinte para cada um dos tipos de nó/conjuntos de dimensionamento de máquinas virtuais. Para criptografar os nós, estenderemos o recurso Azure Disk Encryption em conjuntos de dimensionamento de máquinas virtuais.
+Neste tutorial, você aprenderá a habilitar a criptografia de disco em nós de cluster do Azure Service Fabric no Linux. Você precisará seguir estas etapas para cada um dos tipos de nó e conjuntos de dimensionamento de máquina virtual. Para criptografar os nós, vamos usar a funcionalidade de criptografia de disco do Azure em conjuntos de dimensionamento de máquina virtual.
 
-O guia aborda os seguintes procedimentos:
+O guia abrange os seguintes tópicos:
 
-* Conceitos principais de que você precisa estar ciente para habilitar a criptografia de disco no conjunto de dimensionamento de máquinas virtuais do Cluster do Linux do Service Fabric.
-* Etapas de pré-requisitos a serem seguidas antes de habilitar a criptografia de disco no conjunto de dimensionamento de máquinas virtuais do Cluster do Linux do Service Fabric.
-* Etapas a serem seguidas antes para habilitar a criptografia de disco no conjunto de dimensionamento de máquinas virtuais do Cluster do Linux do Service Fabric.
+* Principais conceitos a serem consideradas quando os conjuntos de habilitação de criptografia de disco em escala de máquina virtual de cluster do Service Fabric no Linux.
+* As etapas a serem seguidas antes de habilitar a criptografia de disco no Service Fabric cluster nós do Linux.
+* Etapas a serem seguidas para habilitar a criptografia de disco em nós de cluster do Service Fabric no Linux.
 
 
 
@@ -41,44 +41,53 @@ O guia aborda os seguintes procedimentos:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* **Autorregistro** - Para ser usado, a visualização de criptografia de disco do conjunto de dimensionamento de máquinas virtuais exige o registro automático
-* Você pode autorregistrar sua assinatura executando as seguintes etapas: 
-```powershell
-Register-AzProviderFeature -ProviderNamespace Microsoft.Compute -FeatureName "UnifiedDiskEncryption"
-```
-* Aguarde cerca de 10 minutos até que o estado seja “Registrado”. Você pode verificar o estado executando o seguinte comando: 
-```powershell
-Get-AzProviderFeature -ProviderNamespace "Microsoft.Compute" -FeatureName "UnifiedDiskEncryption"
-Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
-```
-* **Azure Key Vault** - Crie um KeyVault na mesma assinatura e região como o conjunto de dimensionamento de máquinas virtuais e defina a política de acesso “EnabledForDiskEncryption” no KeyVault usando o cmdlet do PS. Você também pode definir a política usando a interface do usuário do KeyVault no portal do Azure: 
-```powershell
-Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -EnabledForDiskEncryption
-```
-* Instalar a versão mais recente [CLI do Azure](/cli/azure/install-azure-cli) , que tem os novos comandos de criptografia.
-* Instale a versão mais recente do [SDK do Azure a partir da versão do PowerShell](https://github.com/Azure/azure-powershell/releases). Estes são os cmdlets ADE para habilitar de conjunto de dimensionamento de máquinas virtuais ([definir](/powershell/module/az.compute/set-azvmssdiskencryptionextension)) a criptografia, recuperar ([obter](/powershell/module/az.compute/get-azvmssvmdiskencryption)) status de criptografia e remover ([desabilitar](/powershell/module/az.compute/disable-azvmssdiskencryption)) criptografia em escala instância do conjunto. 
+ **Self-registration**
+
+A visualização da criptografia de disco para o conjunto de dimensionamento de máquina virtual exige o registro de autoatendimento. Use as seguintes etapas:
+
+1. Execute o comando a seguir: 
+    ```powershell
+    Register-AzProviderFeature -ProviderNamespace Microsoft.Compute -FeatureName "UnifiedDiskEncryption"
+    ```
+2. Aguarde 10 minutos até que lê o status *registrado*. Você pode verificar o status executando o seguinte comando:
+    ```powershell
+    Get-AzProviderFeature -ProviderNamespace "Microsoft.Compute" -FeatureName "UnifiedDiskEncryption"
+    Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
+    ```
+**Cofre da Chave do Azure**
+
+1. Crie um cofre de chaves na mesma assinatura e região como conjunto de dimensionamento. Em seguida, selecione a **EnabledForDiskEncryption** política no cofre de chaves de acesso usando o cmdlet do PowerShell. Você também pode definir a política usando a interface do usuário do Key Vault no portal do Azure com o seguinte comando:
+    ```powershell
+    Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -EnabledForDiskEncryption
+    ```
+2. Instale a versão mais recente do [CLI do Azure](/cli/azure/install-azure-cli), que tem os novos comandos de criptografia.
+
+3. Instale a versão mais recente do [SDK do Azure com o Azure PowerShell](https://github.com/Azure/azure-powershell/releases) de versão. A seguir está os cmdlets de Azure Disk Encryption para habilitar de conjunto de dimensionamento de máquinas virtuais ([definir](/powershell/module/az.compute/set-azvmssdiskencryptionextension)) a criptografia, recuperar ([obter](/powershell/module/az.compute/get-azvmssvmdiskencryption)) o status de criptografia e remover ([desabilitar](/powershell/module/az.compute/disable-azvmssdiskencryption)) instância do conjunto de criptografia na escala.
+
 
 | Comando | Version |  `Source`  |
 | ------------- |-------------| ------------|
-| Get-AzVmssDiskEncryptionStatus   | 1.0.0 ou superior | Az.Compute |
-| Get-AzVmssVMDiskEncryptionStatus   | 1.0.0 ou superior | Az.Compute |
-| Disable-AzVmssDiskEncryption   | 1.0.0 ou superior | Az.Compute |
-| Get-AzVmssDiskEncryption   | 1.0.0 ou superior | Az.Compute |
-| Get-AzVmssVMDiskEncryption   | 1.0.0 ou superior | Az.Compute |
-| Set-AzVmssDiskEncryptionExtension   | 1.0.0 ou superior | Az.Compute |
+| Get-AzVmssDiskEncryptionStatus   | 1.0.0 ou posterior | Az.Compute |
+| Get-AzVmssVMDiskEncryptionStatus   | 1.0.0 ou posterior | Az.Compute |
+| Disable-AzVmssDiskEncryption   | 1.0.0 ou posterior | Az.Compute |
+| Get-AzVmssDiskEncryption   | 1.0.0 ou posterior | Az.Compute |
+| Get-AzVmssVMDiskEncryption   | 1.0.0 ou posterior | Az.Compute |
+| Set-AzVmssDiskEncryptionExtension   | 1.0.0 ou posterior | Az.Compute |
 
 
 ## <a name="supported-scenarios-for-disk-encryption"></a>Cenários com suporte para criptografia de disco
-* A criptografia do conjunto de dimensionamento de máquinas virtuais é suportada apenas para conjuntos de dimensionamento com discos gerenciados, mas não há suporte para conjuntos de dimensionamento com disco nativo (ou não gerenciado).
-* A criptografia do conjunto de dimensionamento de máquinas virtuais tem suporte para o volume de dados do conjunto de dimensionamento de máquinas virtuais do Linux. NÃO há suporte para criptografia de disco do sistema operacional na versão prévia atual para Linux.
-* Refazer a imagem VM de conjunto de dimensionamento de máquina virtual e não há suporte para operações de atualização no modo de visualização atual.
+* Criptografia para conjuntos de dimensionamento de máquina virtual tem suporte apenas para conjuntos de dimensionamento criados com discos gerenciados. Não é suportado para conjuntos de escala de discos nativos (ou não gerenciados).
+* Criptografia e a desabilitação da criptografia com suporte para volumes de sistema operacional e dados em conjuntos de dimensionamento de máquina virtual no Linux. 
+* Operações de recriação de imagem e atualização de máquina virtual (VM) para conjuntos de dimensionamento de máquinas virtuais não têm suporte na visualização atual.
 
 
-### <a name="create-new-linux-cluster-and-enable-disk-encryption"></a>Criar novo cluster do Linux e habilitar a criptografia de disco
+## <a name="create-a-new-cluster-and-enable-disk-encryption"></a>Criar um novo cluster e habilitar a criptografia de disco
 
-Use os seguintes comandos para criar o cluster e habilitar a criptografia de disco usando o modelo do Resource Manager e o certificado autoassinado.
+Use os comandos a seguir para criar um cluster e habilitar a criptografia de disco usando um modelo do Azure Resource Manager e um certificado autoassinado.
 
 ### <a name="sign-in-to-azure"></a>Entrar no Azure  
+
+Entrar com os seguintes comandos:
 
 ```powershell
 
@@ -94,11 +103,11 @@ az account set --subscription $subscriptionId
 
 ```
 
-#### <a name="use-the-custom-template-that-you-already-have"></a>Usar um modelo personalizado que você já tem 
+### <a name="use-the-custom-template-that-you-already-have"></a>Usar um modelo personalizado que você já tem 
 
-Caso precise criar um modelo personalizado para atender às suas necessidades, é altamente recomendável que você inicie com um dos modelos que estão disponíveis no [Exemplos de modelo do Azure Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master) para Cluster do Linux. 
+Se você precisar criar um modelo personalizado, é altamente recomendável que você use um dos modelos na [exemplos de modelo de criação de cluster do Azure Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master) página. 
 
-Se você já tiver um modelo personalizado, certifique-se de verificar novamente se todos os três parâmetros relacionados ao certificado no modelo e no arquivo de parâmetro são nomeados da seguinte maneira e se os valores são nulos da maneira a seguir.
+Se você já tiver um modelo personalizado, verifique novamente se todos os parâmetros relacionados ao certificado três no modelo e o arquivo de parâmetro são nomeados da seguinte maneira. Certifique-se também de que os valores são nulos da seguinte maneira:
 
 ```Json
    "certificateThumbprint": {
@@ -112,7 +121,7 @@ Se você já tiver um modelo personalizado, certifique-se de verificar novamente
     },
 ```
 
-Para o conjunto de dimensionamento de máquinas virtuais do Linux, apenas a criptografia de disco de dados é suportada, portanto, precisamos adicionar o disco de dados usando o modelo do Azure Resource Manager. Atualize o modelo para provisionamento de disco de dados como a seguir:
+Como criptografia de disco de dados apenas é suportada para conjuntos de dimensionamento de máquina virtual no Linux, você deve adicionar um disco de dados usando um modelo do Resource Manager. Atualize seu modelo para provisão de disco de dados da seguinte maneira:
 
 ```Json
    
@@ -154,7 +163,7 @@ New-AzServiceFabricCluster -ResourceGroupName $resourceGroupName -CertificateOut
 
 ```
 
-Este é o comando de CLI equivalente para fazer o mesmo. Altere os valores nas instruções declaradas para os valores apropriados. A CLI é compatível com todos os outros parâmetros compatíveis com o comando do Powershell acima.
+Aqui está o comando CLI equivalente. Altere os valores nas instruções declaradas para os valores apropriados. A CLI dá suporte a todos os outros parâmetros compatíveis com o comando anterior do PowerShell.
 
 ```azurecli
 declare certPassword=""
@@ -173,15 +182,16 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 
 ```
 
-#### <a name="linux-data-disk-mounting"></a>Montagem de disco de dados do Linux
-Antes de continuarmos com a criptografia no conjunto de dimensionamento de máquinas virtuais do Linux, é preciso se certificar de que o disco de dados esteja montado corretamente ou não. Entrar para a VM de Cluster do Linux e execute o comando LSBLK. A saída deve mostrar esse disco de dados adicionado na coluna de ponto de montagem.
+### <a name="mount-a-data-disk-to-a-linux-instance"></a>Montar um disco de dados para uma instância do Linux
+Antes de continuar com a criptografia em um conjunto de dimensionamento de máquina virtual, verifique se que o disco de dados adicionados está montado corretamente. Entre VM de cluster do Linux e execute o **LSBLK** comando. A saída deve mostrar esse disco de dados adicionados na **ponto de montagem** coluna.
 
 
-#### <a name="deploy-application-to-linux-service-fabric-cluster"></a>Implantar aplicativo no cluster do Service Fabric
-Siga as etapas e diretrizes para [implantar o aplicativo no cluster](service-fabric-quickstart-containers-linux.md)
+### <a name="deploy-application-to-a-service-fabric-cluster-in-linux"></a>Implantar o aplicativo em um cluster do Service Fabric no Linux
+Para implantar um aplicativo em seu cluster, siga as etapas e as diretrizes em [guia de início rápido: Implantar contêineres do Linux no Service Fabric](service-fabric-quickstart-containers-linux.md).
 
 
-#### <a name="enable-disk-encryption-for-service-fabric-linux-cluster-virtual-machine-scale-set-created-above"></a>Habilitar a criptografia de disco no conjunto de dimensionamento de máquinas virtuais do Cluster do Linux do Service Fabric criado acima
+### <a name="enable-disk-encryption-for-the-virtual-machine-scale-sets-created-previously"></a>Habilitar a criptografia de disco para os conjuntos de dimensionamento de máquina virtual criada anteriormente
+Para habilitar a criptografia de disco para a escala de máquina virtual define você criou as etapas anteriores, execute os seguintes comandos:
  
 ```powershell
 $VmssName = "nt1vm"
@@ -201,9 +211,9 @@ az vmss encryption enable -g <resourceGroupName> -n <VMSS name> --disk-encryptio
 
 ```
 
-#### <a name="validate-if-disk-encryption-enabled-for-linux-virtual-machine-scale-set"></a>Valide se a criptografia de disco está habilitada para o conjunto de dimensionamento de máquinas virtuais do Linux.
-Obtenha o status de todo um conjunto de dimensionamento de máquinas virtuais ou qualquer VM de instância no conjunto de dimensionamento. Consulte os comandos abaixo.
-Além do usuário pode entrar VM de Cluster do Linux e execute o comando LSBLK. A saída deve mostrar esse disco de dados adicionado na coluna de ponto de montagem e na coluna Tipo como Criptografia de disco de dados adicionado.
+### <a name="validate-if-disk-encryption-is-enabled-for-a-virtual-machine-scale-set-in-linux"></a>Validar se a criptografia de disco está habilitada para uma escala de máquina virtual definido no Linux
+Para obter o status de um conjunto de dimensionamento de máquina virtual inteira ou em qualquer instância em um conjunto de dimensionamento, execute os comandos a seguir.
+Além disso, você pode entrar para a VM de cluster do Linux e executar o **LSBLK** comando. A saída deve mostrar o disco de dados adicionados na **ponto de montagem** coluna e o **tipo** coluna deve ler *Crypt*.
 
 ```powershell
 
@@ -220,8 +230,8 @@ az vmss encryption show -g <resourceGroupName> -n <VMSS name>
 
 ```
 
-#### <a name="disable-disk-encryption-for-service-fabric-cluster-virtual-machine-scale-set"></a>Desabilitar a criptografia de disco no conjunto de dimensionamento de máquinas virtuais do Cluster do Service Fabric 
-A desabilitação da criptografia de disco se aplica a todo o conjunto de dimensionamento de máquinas virtuais e não por instância 
+### <a name="disable-disk-encryption-for-a-virtual-machine-scale-set-in-a-service-fabric-cluster"></a>Desabilitar a criptografia de disco para um conjunto em um cluster do Service Fabric de dimensionamento de máquina virtual
+Desabilite a criptografia de disco para um conjunto, executando os seguintes comandos de dimensionamento de máquina virtual. Observe que desabilitar a criptografia de disco se aplica para o conjunto de dimensionamento de máquina virtual inteira e não uma instância individual.
 
 ```powershell
 $VmssName = "nt1vm"
@@ -237,4 +247,4 @@ az vmss encryption disable -g <resourceGroupName> -n <VMSS name>
 
 
 ## <a name="next-steps"></a>Próximas etapas
-Neste ponto, você tem um cluster seguro com o modo como habilitar/desabilitar a criptografia de disco para o conjunto de dimensionamento de máquinas virtuais do Cluster do Service Fabric do Linux. Em seguida, [Criptografia de Disco para Windows](service-fabric-enable-azure-disk-encryption-windows.md) 
+Neste ponto, você deve ter um cluster seguro e saber como habilitar e desabilitar a criptografia de disco para nós de cluster do Service Fabric e conjuntos de dimensionamento de máquina virtual. Para obter diretrizes semelhantes em nós de cluster do Service Fabric no Linux, confira [criptografia de disco para o Windows](service-fabric-enable-azure-disk-encryption-windows.md). 

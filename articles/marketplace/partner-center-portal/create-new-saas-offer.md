@@ -7,12 +7,12 @@ ms.author: mattwoj
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: 30e547759cbafabf5f762f671b09b0cbeea3a44c
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.openlocfilehash: 9750aa924ba4b6e4e5f3a51e5b34531d3fab0a6e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65851185"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243344"
 ---
 # <a name="create-a-new-saas-offer"></a>Criar uma nova oferta de SaaS
 
@@ -89,7 +89,7 @@ Taxas de licenciamento são apresentadas como uma taxa de taxa fixa de assinatur
 - Parceiros que qualificaram para o **reduzido tarifa de serviço do Marketplace** verá uma taxa de transação reduzido o SaaS oferece desde maio de 2019 até de 2020 de junho. Nesse cenário, a Microsoft cobra $100,00 pelos sua licença de software e paga out US $90,00 ao publicador.
 
 > [!NOTE]
-> **Reduzido a tarifa de serviço do Marketplace**: Para determinados SaaS oferece o que você publicou em nosso Marketplace comerciais, Microsoft reduzirá sua taxa de serviço do Marketplace de 20% (conforme descrito no contrato de Editor do Microsoft) a 10%. Para sua oferta qualificar que, pelo menos uma das suas ofertas deverão ter sido designada pela Microsoft como estando pronto para venda conjunta de IP ou priorizada de venda conjunta do IP.  Qualificação deve ser atendida pelo menos cinco (5) dias úteis antes do final de cada mês do calendário para receber essa taxa de serviço do Marketplace reduzida para o mês.  A taxa de serviço do Marketplace reduzido não se aplica a VMs, aplicativos gerenciados ou quaisquer outros produtos disponibilizados por meio de nosso Marketplace comercial.  A taxa de serviço do Marketplace reduzido só estará disponível para ofertas qualificadas para encargos de licença, coletados pela Microsoft entre 31 de maio de 2019 e 30 de junho de 2020.  Após esse período, a taxa de serviço do Marketplace retornará ao seu valor normal. 
+> **Reduzido a tarifa de serviço do Marketplace**: Para determinados SaaS oferece o que você publicou em nosso Marketplace comerciais, Microsoft reduzirá sua taxa de serviço do Marketplace de 20% (conforme descrito no contrato de Editor do Microsoft) a 10%. Para sua oferta qualificar que, pelo menos uma das suas ofertas deverão ter sido designada pela Microsoft como estando pronto para venda conjunta de IP ou priorizada de venda conjunta do IP.  Qualificação deve ser atendida pelo menos cinco (5) dias úteis antes do final de cada mês do calendário para receber essa taxa de serviço do Marketplace reduzida para o mês.  A taxa de serviço do Marketplace reduzido não se aplica a VMs, aplicativos gerenciados ou quaisquer outros produtos disponibilizados por meio de nosso Marketplace comercial.  A taxa de serviço do Marketplace reduzido só estará disponível para ofertas qualificadas para encargos de licença, coletados pela Microsoft entre 1 de maio de 2019 e 30 de junho de 2020.  Após esse período, a taxa de serviço do Marketplace retornará ao seu valor normal. 
 
 |**Faturas da Microsoft**|**US $100 por mês**|
 |:---|:---|
@@ -115,8 +115,12 @@ Liste sua oferta para clientes gratuitamente, fornecendo uma URL válida (começ
 ##### <a name="free-trial"></a>Avaliação gratuita
 Liste sua oferta aos clientes em uma base de avaliação gratuita, fornecendo uma URL válida (começando com http ou https) em que eles podem acessar seu aplicativo.  Por exemplo: `https://contoso.com/trial/saas-app`
 
-##### <a name="contact-me"></a>Entre em contato
+##### <a name="contact-me"></a>Entrar em contato comigo
 Colete informações de contato do cliente conectando-se seu sistema de gerenciamento de relacionamento do cliente (CRM). O cliente será solicitado permissão para compartilhar suas informações. Esses detalhes do cliente, junto com o nome da oferta, a ID e a origem do marketplace onde eles encontrados sua oferta, serão enviados para o sistema CRM que você configurou. Para obter mais informações sobre como configurar o CRM, consulte [gerenciamento de clientes potenciais do Connect](#connect-lead-management). 
+
+## <a name="example-marketplace-offer-listing"></a>Listagem de oferta de marketplace de exemplo
+
+![Listagem com anotações de oferta de marketplace de exemplo](./media/marketplace-offer.svg)
 
 ## <a name="enable-a-test-drive"></a>Habilitar um test drive
 
@@ -128,12 +132,12 @@ Habilitando o teste de unidade, você precisará configurar um ambiente de demon
 
 ### <a name="type-of-test-drive"></a>Tipo de teste de unidade
 
-- **[Azure Resource Manager](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/azure-resource-manager-test-drive)**: Um modelo de implantação que contém todos os recursos do Azure que compõem sua solução. Os produtos que se encaixam nesse cenário usar somente os recursos do Azure.
-- **[Dynamics 365 para o Central de negócios](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-business-central-offer)**: A Microsoft hospeda e mantém o serviço de unidade de teste (incluindo o provisionamento e implantação) para um sistema de planejamento de recursos de enterprise Central de negócios (Finanças, operações, forneça a cadeia, CRM, etc.).  
-- **[Dynamics 365 for Customer Engagement](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/dyn365ce/cpp-customer-engagement-offer)**: A Microsoft hospeda e mantém o serviço de unidade de teste (incluindo o provisionamento e implantação) para um sistema de engajamento do cliente (vendas, serviço, serviço de projeto, o serviço de campo, etc.).  
-- **[Dynamics 365 para operações](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-dynamics-365-operations-offer)**: A Microsoft hospeda e mantém o serviço de unidade de teste (incluindo o provisionamento e implantação) para um recurso da empresa finanças e operações do sistema (Finanças, operações, fabricação, cadeia de suprimentos, etc.) de planejamento. 
-- **[Aplicativo lógico](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/logic-app-test-drive)**: Um modelo de implantação que abrange todas as arquiteturas de solução complexa. Todos os produtos personalizados devem usar esse tipo de teste de unidade.
-- **[Power BI](https://docs.microsoft.com/power-bi/service-template-apps-overview)**: Um link incorporado a um painel personalizado. Produtos que desejam demonstrar que um interactive visual do Power BI deve usar esse tipo de teste de unidade. Aqui, basta fazer upload da URL do Power BI Embedded.
+- **[Azure Resource Manager](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/azure-resource-manager-test-drive)** : Um modelo de implantação que contém todos os recursos do Azure que compõem sua solução. Os produtos que se encaixam nesse cenário usar somente os recursos do Azure.
+- **[Dynamics 365 para o Central de negócios](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-business-central-offer)** : A Microsoft hospeda e mantém o serviço de unidade de teste (incluindo o provisionamento e implantação) para um sistema de planejamento de recursos de enterprise Central de negócios (Finanças, operações, forneça a cadeia, CRM, etc.).  
+- **[Dynamics 365 for Customer Engagement](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/dyn365ce/cpp-customer-engagement-offer)** : A Microsoft hospeda e mantém o serviço de unidade de teste (incluindo o provisionamento e implantação) para um sistema de engajamento do cliente (vendas, serviço, serviço de projeto, o serviço de campo, etc.).  
+- **[Dynamics 365 para operações](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-dynamics-365-operations-offer)** : A Microsoft hospeda e mantém o serviço de unidade de teste (incluindo o provisionamento e implantação) para um recurso da empresa finanças e operações do sistema (Finanças, operações, fabricação, cadeia de suprimentos, etc.) de planejamento. 
+- **[Aplicativo lógico](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/logic-app-test-drive)** : Um modelo de implantação que abrange todas as arquiteturas de solução complexa. Todos os produtos personalizados devem usar esse tipo de teste de unidade.
+- **[Power BI](https://docs.microsoft.com/power-bi/service-template-apps-overview)** : Um link incorporado a um painel personalizado. Produtos que desejam demonstrar que um interactive visual do Power BI deve usar esse tipo de teste de unidade. Aqui, basta fazer upload da URL do Power BI Embedded.
 
 #### <a name="additional-test-drive-resources"></a>Recursos de unidade de teste adicionais
 - [Práticas recomendadas da técnica de unidade para teste](https://github.com/Azure/AzureTestDrive/wiki/Test-Drive-Best-Practices)
@@ -167,7 +171,7 @@ O **propriedades** guia pede para você definir as categorias e setores usados p
 
 Selecione **salvar** após concluir esses campos. 
 
-### <a name="category"></a>Category
+### <a name="category"></a>Categoria
 Selecione um mínimo de um (1) e um máximo de três (3) categorias usadas para agrupar sua oferta em áreas de pesquisa marketplace apropriado. Entre em contato-out como sua oferta oferece suporte a essas categorias na descrição da oferta. 
 
 ### <a name="industry"></a>Setor
@@ -177,7 +181,8 @@ Selecione até dois (2) usados para agrupar sua oferta em áreas de pesquisa mar
 Este é um campo opcional usado no AppSource marketplace para identificar o número de versão de sua oferta. 
 
 ### <a name="standard-contract"></a>Contrato Standard
-- **Contrato padrão de uso?** 
+
+- **Contrato padrão de uso?**
 
 Para simplificar o processo de aquisição para clientes e reduzir a complexidade legal para fornecedores de software, a Microsoft oferece um modelo de contrato padrão para ajudar a facilitar a uma transação no marketplace. 
 
@@ -185,7 +190,8 @@ Em vez de criar termos e condições personalizados, do Azure Marketplace pode o
 
 O contrato padrão podem ser encontrado aqui: https://go.microsoft.com/fwlink/?linkid=2041178.
 
-##### <a name="terms-of-use"></a>Termos de uso
+#### <a name="terms-of-use"></a>Termos de uso
+
 Se os termos da licença forem diferentes do contrato padrão, você pode optar por inserir seus próprios termos legais de uso aqui. Você também pode inserir até 10.000 caracteres de texto neste campo. Se os termos de uso exigem uma descrição mais detalhada, insira um único link de URL neste campo onde os termos de licença adicionais podem ser encontrados. Ele será exibido para os clientes como um link ativo.
 
 Os clientes precisam aceitar esses termos antes de poderem testar o aplicativo. 
@@ -193,9 +199,11 @@ Os clientes precisam aceitar esses termos antes de poderem testar o aplicativo.
 Lembre-se **salvar** antes de passar para a próxima seção!
 
 ## <a name="offer-listing"></a>Listagem de oferta
+
 A oferta de listagem guia exibe os idiomas (e mercados) onde sua oferta está disponível, no momento, o inglês (Estados Unidos) é o único local disponível. Além disso, esta página exibe o status da listagem de idioma específico e a data/hora em que ele foi adicionado. Você precisará definir os detalhes do marketplace (oferecer nome, descrição, termos de pesquisa, etc.) para cada idioma / mercado.
 
 ### <a name="offer-listings"></a>Listagens de oferta
+
 Forneça os detalhes a serem exibidos no marketplace, incluindo descrições de sua oferta e ativos de marketing.
 
 - **Nome** (obrigatório): O nome definido aqui será exibido como o título de sua listagem de oferta no marketplace(s) escolhida. O nome é preenchida previamente com base em seu anterior **nova oferta** entrada.  Isso pode ser com a marca registrado.  Isso não deve conter espaço em branco, emojis (a menos que sejam os símbolos de marca comercial e os direitos autorais) e deve ser limitado a 50 caracteres.
@@ -235,7 +243,6 @@ Lembre-se **salvar** antes de passar para a próxima seção!
 - [Práticas recomendadas para o marketplace listagens da oferta](https://docs.microsoft.com/azure/marketplace/gtm-offer-listing-best-practices)
 
 
-
 ## <a name="preview"></a>Visualização
 
 O **versão prévia** guia permite que você defina limitada **Preview público** para liberar sua oferta antes de publicar sua oferta ao vivo para o público mais amplo do marketplace.
@@ -256,7 +263,7 @@ O **configurações técnicas** guia define os detalhes técnicos (caminho da UR
 
 - **URL da página de aterrissagem** (obrigatório): Defina o site URL que os clientes serão direcionados para parar em depois de adquirir sua oferta do marketplace. Essa URL também será o ponto de extremidade que receberá as APIs de conexão para facilitar o comércio com a Microsoft.
 
-- **Webhook de Conexão** (obrigatório): Para todos os eventos assíncronos que a Microsoft precisa para enviar para você em nome do cliente (exemplo: Assinatura do Azure passou inválida), exigimos que você forneça um webhook de conexão. Se você ainda não tiver um sistema de webhook em vigor, a configuração mais simples é ter um aplicativo de lógica de ponto de extremidade HTTP que atenderá quaisquer eventos que está sendo postados nele e, em seguida, tratá-las adequadamente (por exemplo, https://prod-1westus.logic.azure.com:443/work). Para saber mais, confira [Chamar, disparar ou aninhar fluxos de trabalho com pontos de extremidade HTTP em aplicativos lógicos](https://docs.microsoft.com/azure/logic-apps/logic-apps-http-endpoint).
+- **Webhook de Conexão** (obrigatório): Para todos os eventos assíncronos que a Microsoft precisa para enviar para você em nome do cliente (exemplo: Assinatura do Azure passou inválida), exigimos que você forneça um webhook de conexão. Se você ainda não tiver um sistema de webhook em vigor, a configuração mais simples é ter um aplicativo de lógica de ponto de extremidade HTTP que atenderá quaisquer eventos que está sendo postados nele e, em seguida, tratá-las adequadamente (por exemplo, https:\//prod-1westus.logic.azure.com:443/work). Para saber mais, confira [Chamar, disparar ou aninhar fluxos de trabalho com pontos de extremidade HTTP em aplicativos lógicos](https://docs.microsoft.com/azure/logic-apps/logic-apps-http-endpoint).
 
 - **A ID de locatário do Azure AD** (obrigatório): Por dentro do portal do Azure, exigimos que você [criar um aplicativo do Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) para que possamos validar a conexão entre nossos dois serviços estiver atrás de uma comunicação autenticada. Para localizar o [ID do locatário](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-tenant-id), vá para o Azure Active Directory e selecione **propriedades**, em seguida, procure o **ID de diretório** número listado (por exemplo, 50c464d3-4930-494c-963c-1e951d15360e).
 
@@ -270,9 +277,10 @@ O **visão geral do plano** guia permite que você forneça uma variedade de op�
 
 Depois de criado, você verá seus nomes de plano, IDs, modelos, disponibilidade (pública ou privada) de preços atual publicando o status e as ações disponíveis.
 
--   **Ações** disponíveis na **visão geral do plano** variam, dependendo do status atual do seu plano e pode incluir:
-  - Se o status do plano estiver **rascunho** – exclua o rascunho
-  - Se o status do plano estiver **Live** – Stop vender o plano ou do público-alvo privada de sincronização
+**Ações** disponíveis na **visão geral do plano** variam, dependendo do status atual do seu plano e pode incluir:
+
+- Se o status do plano estiver **rascunho** – exclua o rascunho
+- Se o status do plano estiver **Live** – Stop vender o plano ou do público-alvo privada de sincronização
 
 **Criar novo plano** (mínimo de um plano para aqueles que selecionar para venda por meio da Microsoft)
 
@@ -351,6 +359,9 @@ Embora as ofertas de SaaS usam IDs de locatário para definir um público partic
 > [!NOTE]
 > O público-alvo privado (ou público restrito) difere de um público de visualização. No **[visualização](#preview)** guia, você pode definir um público de visualização. Um público de visualização é permitido o acesso à sua oferta *anteriores* à oferta que está sendo transmitida ao vivo no marketplace. Enquanto a designação de particular de público-alvo se aplica somente a um plano específico, o público-alvo de visualização pode exibir todos os planos (privada ou não), mas somente durante o período de visualização limitada, enquanto o plano é testado e validado.
 
+## <a name="example-list-of-plans-within-a-marketplace-offer"></a>Lista de exemplos de planos dentro de uma oferta do marketplace
+
+![Planejamento de exemplo do marketplace listando com anotações](./media/marketplace-plan.svg)
 
 ## <a name="test-drive"></a>Test drive
 
@@ -443,7 +454,7 @@ O **listagens de Test Drive** opção encontrado sob o **Test drive** guia exibe
 - **Vídeos: Adicionar vídeos** (opcional): Vídeos podem ser carregados para o YouTube ou Vimeo e referenciados aqui com uma imagem do link e miniatura (533, 324 pixels), para que um cliente pode exibir um passo a passo de informações para ajudá-los a entender melhor o test drive, incluindo como usar com êxito os recursos do seu oferecem e compreender os cenários que destacam suas vantagens.
   - **Nome** (obrigatório)
   - **URL (YouTube ou Vimeo somente)** (obrigatório)
-  - **Miniatura (533 x 324px)**: Arquivo de imagem deve estar no formato PNG.
+  - **Miniatura (533 x 324px)** : Arquivo de imagem deve estar no formato PNG.
 
 Selecione **salvar** após concluir esses campos.
 

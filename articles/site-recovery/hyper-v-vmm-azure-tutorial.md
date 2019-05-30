@@ -5,15 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 04/08/2019
+ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 8c3c9347a027cccfaef6def84bfdc4c83555e98a
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 653db1497fcce5981bba7416f073b0330ca2861f
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65966481"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66398146"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-in-vmm-clouds-to-azure"></a>Configurar a recuperação de desastre de VMs locais do Hyper-V em nuvens do VMM para o Azure
 
@@ -25,29 +25,29 @@ Neste tutorial, você aprenderá como:
 
 > [!div class="checklist"]
 > * Selecionar a origem e o destino de replicação.
-> * Configure o ambiente de replicação de origem, incluindo os componentes do Site Recovery no local e o ambiente de replicação de destino.
+> * Configurar o ambiente de replicação de origem, incluindo componentes de Site Recovery locais e o ambiente de replicação de destino.
 > * Configure mapeamento de rede para mapear entre redes de VM do VMM e redes virtuais do Azure.
 > * Criar uma política de replicação.
 > * Habilitar a replicação para uma VM.
 
 > [!NOTE]
-> Os tutoriais mostram o caminho de implantação mais simples para um cenário. Eles usam opções padrão quando possível e não mostram todas as possíveis configurações e caminhos. Para obter instruções detalhadas, analise os artigos a **guias de instruções** seção o [documentação do Site Recovery](https://docs.microsoft.com/en-us/azure/site-recovery).
+> Os tutoriais mostram o caminho de implantação mais simples para um cenário. Eles usam opções padrão quando possível e não mostram todas as possíveis configurações e caminhos. Para obter instruções detalhadas, leia o artigo na seção **Guias de Instruções** da [documentação do Site Recovery](https://docs.microsoft.com/azure/site-recovery).
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-Este é o terceiro tutorial de uma série. Ele pressupõe que você já tenha concluído as tarefas nos tutoriais anteriores:
+Este é o terceiro tutorial de uma série. Presume-se que você já tenha concluído as tarefas nos tutoriais anteriores:
 
 1. [Preparar o Azure](tutorial-prepare-azure.md)
 2. [Preparar Hyper-V local](tutorial-prepare-on-premises-hyper-v.md)
 
 ## <a name="select-a-replication-goal"></a>Selecione uma meta de replicação
 
-1. No portal do Azure, acesse **cofres dos serviços de recuperação** e selecione o cofre. Preparamos o cofre **ContosoVMVault** no tutorial anterior.
-2. Na **guia de Introdução**, selecione **Site Recovery**e, em seguida, selecione **preparar a infraestrutura**.
-3. Na **meta de proteção** > **onde estão suas máquinas localizadas?**, selecione **locais**.
-4. Em **Para qual deseja replicar os seus computadores?**, selecione **Para o Azure**.
-5. Na **os computadores são virtualizados?**, selecione **Sim, com o Hyper-V**.
-6. Na **você estiver usando System Center VMM para gerenciar seus hosts Hyper-V?**, selecione **Sim**.
+1. No portal do Azure, vá até a folha de cofres dos **Serviços de Recuperação** e selecione o cofre. Preparamos o cofre **ContosoVMVault** no tutorial anterior.
+2. No **Guia de Introdução**, selecione **Site Recovery** e, em seguida, selecione **Preparar a Infraestrutura**.
+3. Em **Meta de proteção** > **Em que local os seus computadores estão?** , selecione **Local**.
+4. Em **Para qual deseja replicar os seus computadores?** , selecione **Para o Azure**.
+5. Em **Os seus computadores estão virtualizados?** , selecione **Sim, com o Hyper-V**.
+6. Na **você estiver usando System Center VMM para gerenciar seus hosts Hyper-V?** , selecione **Sim**.
 7.  Selecione **OK**.
 
     ![Meta de replicação](./media/hyper-v-vmm-azure-tutorial/replication-goal.png)
@@ -55,7 +55,7 @@ Este é o terceiro tutorial de uma série. Ele pressupõe que você já tenha co
 ## <a name="confirm-deployment-planning"></a>Confirmar planejamento de implantação
 
 1. Em **Planejamento de implantação**, se você estiver planejando uma implantação grande, baixe o Planejador de Implantações do Hyper-V usando o link na página. [Saiba mais](hyper-v-deployment-planner-overview.md) sobre o planejamento de implantação do Hyper-V.
-2. Para este tutorial, não precisamos o Planejador de implantação. Na **você concluiu o planejamento de implantação?**, selecione **farei isso mais tarde**e, em seguida, selecione **Okey**.
+2. Para este tutorial, não precisamos do Planejador de Implantações. Em **Você concluiu o planejamento de implantação?** , selecione **Farei isso mais tarde** e, em seguida, selecione **OK**.
 
 ## <a name="set-up-the-source-environment"></a>Configurar o ambiente de origem
 
@@ -112,25 +112,25 @@ A Recuperação de Site verifica se você tem uma ou mais contas de armazenament
 
 ## <a name="set-up-a-replication-policy"></a>Configurar uma política de replicação
 
-1. Selecione **preparar infraestrutura** > **configurações de replicação** > **+ criar e associar**.
+1. Selecione **Preparar a Infraestrutura** > **Configurações de Replicação** >  **+Criar e associar**.
 2. Em **Criar e associar política**, especifique um nome de política. Estamos usando **ContosoReplicationPolicy**.
 3. Deixe as configurações padrão e selecione **Okey**.
     - **Frequência de cópia** indica que, após a replicação inicial, os dados delta serão replicadas a cada cinco minutos.
     - **Retenção do ponto de recuperação** indica que cada ponto de recuperação será mantido por duas horas.
     - **Frequência do instantâneo consistente com o aplicativo** indica que os pontos de recuperação contendo instantâneos consistentes com aplicativos serão criados a cada hora.
-    - **Hora de início da replicação inicial** indica que a replicação inicial será iniciado imediatamente.
+    - **Hora de início para replicação inicial** indica que a replicação inicial deve começar imediatamente.
     - **Criptografar dados armazenados no Azure** é definido como o padrão (**desativar**) e indica que os dados em repouso no Azure não estão criptografados.
-4. Depois que a política for criada, selecione **Okey**. Quando você cria uma nova política, ela é associada automaticamente a nuvem do VMM.
+4. Depois que a política for criada, selecione **OK**. Quando você cria uma nova política, ela é associada automaticamente a nuvem do VMM.
 
 ## <a name="enable-replication"></a>Habilitar a replicação
 
-1. Na **replicar aplicativo**, selecione **origem**.
+1. Em **Replicar aplicativo**, selecione **Origem**.
 2. Em **Origem**, selecione a nuvem do VMM. Depois, selecione **OK**.
 3. Na **alvo**, verifique se o destino (Azure), a assinatura do cofre e selecione o **Gerenciador de recursos** modelo.
 4. Selecione o **contosovmsacct1910171607** conta de armazenamento e o **ContosoASRnet** rede do Azure.
-5. Na **máquinas virtuais** > **selecione**, selecione a VM que você deseja replicar. Depois, selecione **OK**.
+5. Em **Máquinas Virtuais** > **Selecionar**, selecione a VM que deseja replicar. Depois, selecione **OK**.
 
-   É possível acompanhar o progresso da ação **Habilitar Proteção** em **Trabalhos** > **Trabalhos do Site Recovery**. Após o **finalizar proteção** trabalho for concluído, a replicação inicial for concluída e a VM está pronta para failover.
+   É possível acompanhar o progresso da ação **Habilitar Proteção** em **Trabalhos** > **Trabalhos do Site Recovery**. Depois que o trabalho **Finalizar Proteção** for concluído, a replicação inicial será concluída e a VM estará pronta para failover.
 
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]

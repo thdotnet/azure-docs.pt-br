@@ -4,7 +4,7 @@ description: Este artigo descreve como seguir as práticas recomendadas ao plane
 services: time-series-insights
 ms.service: time-series-insights
 author: ashannon7
-ms.author: anshan
+ms.author: dpalled
 manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile, anshan
 ms.devlang: csharp
@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 04/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: bf1f570319370fab99e2f52086bc81df259e3d35
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 1c6e8ef9effdb5cf31aee1603de28bed0d894cbb
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236516"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66239085"
 ---
 # <a name="plan-your-azure-time-series-insights-ga-environment"></a>Planejar seu ambiente de GA de Insights de série de tempo do Azure
 
@@ -59,7 +59,7 @@ Você pode configurar no máximo 400 dias de retenção de dados no ambiente do 
 
 1. Na **página do ambiente do Time Series Insights**, sob o título **Configurações**, selecione **Configurar**.
 
-1. Na caixa **Tempo de retenção de dados (em dias)**, digite um valor de 1 a 400.
+1. Na caixa **Tempo de retenção de dados (em dias)** , digite um valor de 1 a 400.
 
    [![Configurar retenção](media/environment-mitigate-latency/configure-retention.png)](media/environment-mitigate-latency/configure-retention.png#lightbox)
 

@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 04/30/2019
-ms.openlocfilehash: be592cb6bb7c041fab0a2f96a338f4f4bb0ff00a
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 2d70e1b5434b2fb263d1f4587888d4758fac2828
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510917"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66225370"
 ---
 # <a name="read-replicas-in-azure-database-for-mysql"></a>Leia réplicas no Banco de Dados do Azure para MySQL
 
@@ -42,8 +42,7 @@ Se um servidor mestre não tiver nenhum servidor de réplica existente, o mestre
 
 Quando você inicia o fluxo de trabalho Criar réplica, um banco de dados em branco do Azure para servidor MySQL é criado. O novo servidor é preenchido com os dados que estavam no servidor mestre. A hora de criação depende da quantidade de dados no mestre e do tempo decorrido desde o último backup completo semanal. O tempo pode variar de alguns minutos a várias horas.
 
-> [!NOTE]
-> Se você não tem alerta de armazenamento configurado em seus servidores, recomendamos que você faça isso. O alerta informa quando um servidor está se aproximando de seu limite de armazenamento, o que afetará a replicação.
+Cada réplica está habilitada para armazenamento [aumentá-lo](concepts-pricing-tiers.md#storage-auto-grow). O recurso de auto-grow permite que a réplica para manter atualizado com os dados replicados a ele e evitar uma quebra na replicação causada por erros de armazenamento insuficiente.
 
 Saiba como [criar uma réplica de leitura no portal do Azure](howto-read-replicas-portal.md).
 
@@ -69,7 +68,7 @@ Essa métrica é calculada usando o `seconds_behind_master` métrica disponível
 
 Defina um alerta para informá-lo quando o retardo de replicação alcança um valor que não é aceitável para sua carga de trabalho.
 
-## <a name="stop-replication"></a>Parar a replicação
+## <a name="stop-replication"></a>Parar replicação
 
 Você pode interromper a replicação entre um mestre e uma réplica. Após a replicação ser interrompida entre um servidor mestre e uma réplica de leitura, a réplica se torna um servidor autônomo. Os dados no servidor autônomo são os dados que estavam disponíveis na réplica no momento em que o comando de parar a replicação foi iniciado. O servidor autônomo não alcança o servidor mestre.
 
@@ -114,7 +113,7 @@ Quando um servidor mestre é excluído, a replicação é interrompida para toda
 
 Os usuários no servidor mestre são replicados para as réplicas de leitura. Você só pode se conectar a uma réplica de leitura usando as contas de usuário disponíveis no servidor mestre.
 
-### <a name="server-parameters"></a>Parâmetros do servidor
+### <a name="server-parameters"></a>Parâmetros do Servidor
 
 Para impedir que os dados fiquem fora de sincronia e evitar a potencial perda de dados ou corrupção, alguns parâmetros de servidor são bloqueados sejam atualizados quando usar réplicas de leitura.
 
@@ -124,7 +123,7 @@ Os seguintes parâmetros de servidor são bloqueados em servidores mestre e de r
 
 O [ `event_scheduler` ](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_event_scheduler) parâmetro está bloqueado nos servidores de réplica. 
 
-### <a name="other"></a>Outro
+### <a name="other"></a>Outros
 
 - O GTID (identificadores de transação globais) não são compatíveis.
 - A criação de uma réplica de uma réplica não é suportada.

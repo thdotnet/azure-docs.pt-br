@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.date: 05/16/2019
-ms.openlocfilehash: 7fca586083f70e0b0f7e593d5203392260cd2136
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 90c7e4653b879c2432f08506cea08646e84bb69a
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66172334"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66297697"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Desempenho de fluxos de dados de mapeamento e guia de ajuste
 
@@ -29,7 +29,7 @@ Azure Data Factory mapeando os dados fluem fornecem uma interface de navegador s
 
 ![Botão de depuração](media/data-flow/debugb1.png "depurar")
 
-## <a name="optimizing-for-azure-sql-database"></a>Otimizando o banco de dados SQL do Azure
+## <a name="optimizing-for-azure-sql-database-and-azure-sql-data-warehouse"></a>Otimização para o banco de dados SQL do Azure e Azure SQL Data Warehouse
 
 ![Parte de origem](media/data-flow/sourcepart2.png "parte de origem")
 
@@ -65,6 +65,13 @@ Azure Data Factory mapeando os dados fluem fornecem uma interface de navegador s
 * Aumente o número de núcleos, o que aumenta o número de nós e fornecer mais poder de processamento de consulta e gravar em seu banco de dados do SQL Azure.
 * Tente as opções "Otimizada de computação" e "Otimizado para memória" para aplicar mais recursos a seus nós de computação.
 
+### <a name="unit-test-and-performance-test-with-debug"></a>Teste de unidade e teste de desempenho com a depuração
+
+* Quando os fluxos de dados de teste de unidade, definida no botão "Dados de fluxo Debug" como ON.
+* Dentro do designer de fluxo de dados, use a guia de visualização de dados em transformações para exibir os resultados de sua lógica de transformação.
+* Teste de unidade que os dados fluem do designer de pipeline, colocando uma atividade de fluxo de dados sobre o design do pipeline de tela e use o botão de "Debug" para testar.
+* Teste no modo de depuração funcionará em um ambiente de cluster de prontas em tempo real sem a necessidade de aguardar uma rotação de cluster just-in-time-up.
+
 ### <a name="disable-indexes-on-write"></a>Desabilitar índices na gravação
 * Use uma atividade de procedimento armazenado de pipeline ADF antes de sua atividade de fluxo de dados que desabilita os índices em suas tabelas de destino que estão sendo gravados a partir de coletor.
 * Depois de sua atividade de fluxo de dados, adicione outra atividade de procedimento armazenado que habilitado esses índices.
@@ -72,6 +79,34 @@ Azure Data Factory mapeando os dados fluem fornecem uma interface de navegador s
 ### <a name="increase-the-size-of-your-azure-sql-db"></a>Aumentar o tamanho do seu banco de dados do SQL Azure
 * Agende um redimensionamento de sua fonte e coletor SQL do Azure antes de sua execução limita seu pipeline para aumentar a taxa de transferência e minimizar a limitação do Azure depois de chegar a DTU.
 * Após a conclusão da execução de seu pipeline, você pode redimensionar seus bancos de dados de volta para sua taxa de execução normal.
+
+## <a name="optimizing-for-azure-sql-data-warehouse"></a>Otimização para o Azure SQL Data Warehouse
+
+### <a name="use-staging-to-load-data-in-bulk-via-polybase"></a>Usar a preparação para carregar dados em massa por meio do Polybase
+
+* Para evitar o processamento de linha por linha de floes seus dados, defina a opção de "Preparo" nas configurações do coletor para que o ADF pode aproveitar o Polybase para evitar inserções de linha por linha no DW. Isso instruirá o ADF para usar o Polybase para que os dados podem ser carregados em massa.
+* Quando você executa sua atividade de fluxo de dados de um pipeline, com preparação ativado, você precisará selecionar o local do repositório de Blob de seus dados de preparo para carregamento em massa.
+
+### <a name="increase-the-size-of-your-azure-sql-dw"></a>Aumentar o tamanho do seu Azure SQL DW
+
+* Agende um redimensionamento de sua fonte e coletor SQL DW do Azure antes de você executar o pipeline para aumentar a taxa de transferência e minimizar a limitação do Azure quando você atingir os limites DWU.
+
+* Após a conclusão da execução de seu pipeline, você pode redimensionar seus bancos de dados de volta para sua taxa de execução normal.
+
+## <a name="optimize-for-files"></a>Otimizar para arquivos
+
+* Você pode controlar quantas partições que usará o ADF. Em cada transformação de código-fonte e coletor, bem como cada transformação individual, você pode definir um esquema de particionamento. Para arquivos menores, você pode achar selecionar "Partição única", às vezes, pode funcionar melhor e mais rápido do que solicitando que o Spark para particionar seus arquivos pequenos.
+* Se você não tiver informações suficientes sobre sua fonte de dados, você pode escolher "Round-Robin" particionamento e definir o número de partições.
+* Se você explorar seus dados e descobre que tem colunas que podem ser chaves de hash boa, use o opção de particionamento de Hash.
+
+### <a name="file-naming-options"></a>Opções de nomenclatura de arquivo
+
+* É a natureza de padrão de gravação de dados transformados no ADF mapeando os dados fluem gravar em um conjunto de dados que tem um serviço vinculado do ADLS ou Blob. Você deve definir esse conjunto de dados para apontar para uma pasta ou contêiner, não é um arquivo nomeado.
+* O uso de fluxos de dados do Azure Databricks Spark para execução, o que significa que a saída será dividida em vários arquivos com base no padrão ou o particionamento do Spark ou o particionamento de esquema que você escolheu explicitamente.
+* Uma operação bastante comum em fluxos de dados do ADF é escolher "Saída para um arquivo único", de modo que todos os arquivos da parte de saída são mesclados em um arquivo de saída única.
+* No entanto, esta operação requer que a saída reduz a uma única partição em um único nó de cluster.
+* Tenha isso em mente ao escolher essa opção popular. Você pode ficar sem recursos de nó de cluster se você estiver combinando vários arquivos de origem grandes em uma partição de arquivo de saída única.
+* Para evitar o esgotamento de recursos do nó de computação, você pode manter o padrão ou o esquema de particionamento explícita no ADF, que otimiza o desempenho de, e, em seguida, adicione uma atividade de cópia subsequentes no pipeline que mescla todos da parte de arquivos da pasta de saída para um único novo arquivo. Essencialmente, essa técnica separa a ação de transformação de mesclagem de arquivos e alcança o mesmo resultado que a configuração "saída para um arquivo único".
 
 ## <a name="next-steps"></a>Próximas etapas
 Consulte os outros artigos de fluxo de dados:

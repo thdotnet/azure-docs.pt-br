@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: shared-capabilities
 author: georgewallace
 ms.author: gwallace
-ms.date: 05/21/2019
+ms.date: 05/24/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 3afe27bf71d112b53c31ab696f71d4e1a0cf6b79
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 140b1263047849e13a44441c368e6357078574d8
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66002500"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240804"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Gerenciar contas Executar como da Automação do Azure
 
@@ -54,7 +54,7 @@ Para criar ou atualizar uma conta Executar como, é necessário ter privilégios
 |Criar ou remover um certificado de Automação|[New-AzureRmAutomationCertificate](/powershell/module/AzureRM.Automation/New-AzureRmAutomationCertificate)</br>[Remove-AzureRmAutomationCertificate](/powershell/module/AzureRM.Automation/Remove-AzureRmAutomationCertificate)     | Colaborador no Grupo de Recursos         |Grupo de Recursos da Conta de Automação|
 |Criar ou remover uma conexão de Automação|[New-AzureRmAutomationConnection](/powershell/module/AzureRM.Automation/New-AzureRmAutomationConnection)</br>[Remove-AzureRmAutomationConnection](/powershell/module/AzureRM.Automation/Remove-AzureRmAutomationConnection)|Colaborador no Grupo de Recursos |Grupo de Recursos da Conta de Automação|
 
-<sup>1</sup> Os usuários não administradores em seu locatário do Azure Active Directory poderão [registrar aplicativos do AD](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions) se a opção **Os usuários podem registrar aplicativos** do locatário do Azure Active Directory na página **Configurações do usuário** estiver definida como **Sim**. Se a configuração de registros de aplicativo for definido como **nenhuma**, o usuário executar esta ação deve ser um **Administrador Global** no Azure AD.
+<sup>1</sup> Os usuários não administradores em seu locatário do Azure Active Directory poderão [registrar aplicativos do AD](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions) se a opção **Os usuários podem registrar aplicativos** do locatário do Azure Active Directory na página **Configurações do usuário** estiver definida como **Sim**. Se a configuração de registros de aplicativo for definido como **não**, o usuário executar esta ação deve ser o que é definido na tabela anterior.
 
 Se você não for um membro da instância do Active Directory da assinatura antes de você for adicionado à **Administrador Global** função da assinatura, você está adicionado como um convidado. Nessa situação, você receberá um `You do not have permissions to create…` aviso na página **Adicionar Conta de Automação**. Os usuários que foram adicionados para o **Administrador Global** função primeiro pode ser removida da instância do Active Directory da assinatura e adicionada novamente para torná-los usuários completos no Active Directory. Para verificar essa situação, no painel **Azure Active Directory** no portal do Azure, selecione **Usuários e grupos**, selecione **Todos os usuários** e, depois de selecionar o usuário específico, selecione **Perfil**. O valor do atributo **Tipo de usuário** sob o perfil de usuários não deve ser igual a **Convidado**.
 
@@ -376,7 +376,7 @@ No Portal do Azure, selecione **Assinaturas** e escolha a assinatura de sua Cont
 
 ![Colaboradores de assinatura](media/manage-runas-account/automation-account-remove-subscription.png)
 
-Para adicionar a entidade de serviço a um grupo de recursos, selecione o grupo de recursos no Portal do Azure e selecione **IAM (Controle de acesso)**. Selecione **Adicionar atribuição de função**, **isso abre a página Adicionar atribuição de função**. Para **Função**, selecione **Colaborador**. Na caixa de texto **Selecionar** digite o nome da entidade de serviço da conta Executar como e selecione-a na lista. Clique em **Salvar** para salvar as alterações. Conclua essas etapas para os grupos de recursos aos quais você quer conceder acesso de entidade de serviço Executar Como da Automação do Azure.
+Para adicionar a entidade de serviço a um grupo de recursos, selecione o grupo de recursos no Portal do Azure e selecione **IAM (Controle de acesso)** . Selecione **Adicionar atribuição de função**, **isso abre a página Adicionar atribuição de função**. Para **Função**, selecione **Colaborador**. Na caixa de texto **Selecionar** digite o nome da entidade de serviço da conta Executar como e selecione-a na lista. Clique em **Salvar** para salvar as alterações. Conclua essas etapas para os grupos de recursos aos quais você quer conceder acesso de entidade de serviço Executar Como da Automação do Azure.
 
 ## <a name="misconfiguration"></a>Configuração incorreta
 

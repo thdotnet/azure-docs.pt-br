@@ -3,7 +3,7 @@ title: Proteção Avançada contra Ameaças do Windows Defender com a Central de
 description: Este documento apresenta a integração entre a Central de Segurança do Azure e a Proteção Avançada contra Ameaças do Windows Defender.
 services: security-center
 documentationcenter: na
-author: barclayn
+author: monhaber
 manager: barbkess
 editor: ''
 ms.service: security-center
@@ -11,21 +11,23 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/13/2018
-ms.author: barclayn
-ms.openlocfilehash: 75ca1401f72e00454dc3355d31c8b8ea64669a72
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.date: 05/27/2018
+ms.author: monhaber
+ms.openlocfilehash: 8511f8987368d5746373f71e9f553013e385e0ee
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62129120"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258450"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Proteção Avançada contra Ameaças do Windows Defender com a Central de Segurança do Azure
 
 A Central de Segurança do Azure está estendendo sua oferta de plataformas de proteção de cargas de trabalho de nuvem, integrando-se com a ATP ([Proteção Avançada contra Ameaças do Windows Defender](https://www.microsoft.com/en-us/WindowsForBusiness/windows-atp)).
 Essa alteração traz recursos abrangentes de EDR (detecção e resposta de ponto de extremidade). Com a integração ao Windows Defender ATP, você pode detectar anormalidades. Você também pode detectar e responder a ataques avançados em pontos de extremidade de servidor monitorados pela Central de Segurança do Azure.
 
-Os clientes da Central de Segurança do Azure agora podem usar recursos do Windows Defender ATP:
+## <a name="windows-defender-atp-features-in-security-center"></a>Recursos do Windows Defender ATP na Central de segurança
+
+Quando você usa o Windows Defender ATP, você obtém:
 
 - **Sensores de detecção de violação de postagem de última geração**: os sensores do Windows Defender ATP para servidores Windows coletam uma grande variedade de sinais comportamentais.
 
@@ -53,9 +55,10 @@ Você pode investigar o alerta repassando-o ao Windows Defender ATP. Lá você e
 
 ## <a name="platform-support"></a>Suporte à plataforma
 
-Esse recurso dá suporte à detecção no Windows Server 2012 R2 e no Windows Server 2016.
+O Windows Defender ATP na Central de segurança dá suporte à detecção em sistemas operacionais Windows Server 2012 R2 e Windows Server 2016, que pertence a uma assinatura de serviço padrão.
 
-Apenas os servidores em assinaturas para a camada de serviço Standard são compatíveis.
+> [!NOTE]
+> Quando você usar a Central de segurança do Azure para monitorar os servidores, um locatário do Windows Defender ATP é criado automaticamente e os dados do Windows Defender ATP são armazenados na Europa, por padrão. Se você precisar mover os dados para outro local, você precisa entrar em contato com o Microsoft Support para redefinir o locatário.
 
 ## <a name="onboarding-servers-to-security-center"></a>Integração de servidores à Central de Segurança 
 
@@ -69,7 +72,6 @@ Para a integração de servidores à Central de segurança, clique em **Ir para 
 4. Após a integração, monitore as máquinas **Computação e aplicativos**.
 
    ![Integrar computadores](media/security-center-wdatp/onboard-computers.png)
-
 
 ## <a name="enable-windows-defender-atp-integration"></a>Integração habilitada com o Windows Defender ATP
 
