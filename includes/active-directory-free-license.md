@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 04/30/2019
 ms.author: daveba
 ms.openlocfilehash: 69170bbf8d1c6c4da3d8237820bd231a8da3ddd2
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
-ms.translationtype: MT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65159864"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66113141"
 ---
-Usando esse recurso é gratuito e incluído em sua assinatura do Azure.
+O uso desse recurso é gratuito e está incluído em sua assinatura do Azure.

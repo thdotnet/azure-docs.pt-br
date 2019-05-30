@@ -1,5 +1,5 @@
 ---
-title: Introdução ao Repositório de Dados de Conhecimento (versão prévia) – Azure Search
+title: Introdução ao repositório de dados de conhecimento (versão prévia) – Azure Search
 description: Conheça as etapas para enviar documentos enriquecidos criados por pipelines de indexação por IA no Azure Search para um repositório de dados de conhecimento em sua conta de armazenamento do Azure. A partir daí, você pode exibir, reformatar e consumir documentos enriquecidos no Azure Search e em outros aplicativos.
 manager: cgronlun
 author: HeidiSteen
@@ -8,16 +8,20 @@ ms.service: search
 ms.topic: quickstart
 ms.date: 05/08/2019
 ms.author: heidist
-ms.openlocfilehash: d9006e3fcfc9691b9f3eec4b86c545fd3fea9f8a
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: e7be2dfc811caa087726339846a1de2516f1e2b2
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65471752"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540721"
 ---
-# <a name="how-to-get-started-with-knowledge-store"></a>Introdução ao Repositório de Dados de Conhecimento
+# <a name="how-to-get-started-with-knowledge-store-in-azure-search"></a>Introdução ao repositório de dados de conhecimento no Azure Search
 
-O [Repositório de Dados de Conhecimento](knowledge-store-concept-intro.md) é uma nova versão prévia do recurso no Azure Search que salva os enriquecimentos de IA criados em um pipeline de indexação para mineração de conhecimento em outros aplicativos. Você também pode usar enriquecimentos salvos para entender e refinar um pipeline de indexação do Azure Search.
+> [!Note]
+> O armazenamento de dados de conhecimento está em versão prévia e não é destinado para uso em produção. A [API REST versão 2019-05-06-versão prévia](search-api-preview.md) fornece esse recurso. Não há suporte para SDK do .NET no momento.
+>
+
+O [repositório de dados de conhecimento](knowledge-store-concept-intro.md) salva aprimoramentos de inteligência artificia criados durante a indexação em sua conta de armazenamento do Azure para mineração de dados de conhecimento downstream em outros aplicativos. Você também pode usar enriquecimentos salvos para entender e refinar um pipeline de indexação do Azure Search.
 
 Um repositório de dados de conhecimento é definido por um conjunto de qualificações. Para cenários comuns de pesquisa de texto completo do Azure Search, o objetivo de um conjunto de qualificações é fornecer enriquecimentos de inteligência artificial para tornar o conteúdo mais pesquisável. Para cenários de mineração de conhecimento, a função de um conjunto de qualificações é criar, popular e armazenar várias estruturas de dados para análise ou modelagem em outros aplicativos e processos.
 

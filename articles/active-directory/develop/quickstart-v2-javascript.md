@@ -16,16 +16,14 @@ ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 605206682cb70d430773cdbf9ff746eabf594103
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 9deaf610696f676610f589168426ac24be692c99
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190854"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65823513"
 ---
 # <a name="quickstart-sign-in-users-and-acquire-an-access-token-from-a-javascript-single-page-application-spa"></a>Início Rápido: Conectar usuários e adquirir um token de acesso de um SPA (aplicativo de página única) do JavaScript
-
-[!INCLUDE [active-directory-develop-applies-v2-msal](../../../includes/active-directory-develop-applies-v2-msal.md)]
 
 Neste início rápido, você aprenderá a usar um exemplo de código que demonstra como um SPA (aplicativo de página única) do JavaScript pode conectar contas empresariais, pessoais e de estudante e obter um token de acesso para chamar a API do Microsoft Graph ou qualquer API Web.
 
@@ -64,7 +62,7 @@ A seguinte configuração será necessária para este início rápido:
 > 1. Quando a página **Registrar um aplicativo** aparecer, insira um nome para o seu aplicativo.
 > 1. Em **Tipos de conta com suporte**, selecione **Contas em qualquer diretório organizacional e contas pessoais da Microsoft**.
 > 1. Selecione a plataforma **Web** na seção **URI de Redirecionamento** e defina o valor como `http://localhost:30662/`.
-> 1. Ao terminar, selecione **Registrar**.  Na página **Visão geral** do aplicativo, anote o valor de **ID do aplicativo (cliente)**.
+> 1. Ao terminar, selecione **Registrar**.  Na página **Visão geral** do aplicativo, anote o valor de **ID do aplicativo (cliente)** .
 > 1. Este início rápido requer que o [fluxo de concessão implícita](v2-oauth2-implicit-grant-flow.md) seja ativado. No painel de navegação à esquerda do aplicativo registrado, selecione **Autenticação**.
 > 1. Em **Configurações avançadas**, sob **Concessão implícita**, marque as caixas de seleção **Tokens de ID** e **Tokens de Acesso**. Os tokens de ID e tokens de acesso são necessários, pois esse aplicativo precisa fazer logon dos usuários e chamar uma API.
 > 1. Clique em **Salvar**.
@@ -118,7 +116,7 @@ var msalConfig = {
 >   - Se o seu aplicativo der suporte a **Contas em qualquer diretório organizacional e contas pessoais Microsoft**, substitua esse valor por `common`. Para restringir o suporte a *contas pessoais da Microsoft*, substitua esse valor por `consumers`.
 >
 > > [!TIP]
-> > Para encontrar os valores de **ID do aplicativo (cliente)**, **ID de diretório (locatário)** e **Tipos de conta com suporte**, vá para a página **Visão Geral** do aplicativo no portal do Azure.
+> > Para encontrar os valores de **ID do aplicativo (cliente)** , **ID de diretório (locatário)** e **Tipos de conta com suporte**, vá para a página **Visão Geral** do aplicativo no portal do Azure.
 >
 
 #### <a name="step-4-run-the-project"></a>Etapa 4: Executar o projeto
@@ -185,7 +183,7 @@ var myMSALObj = new Msal.UserAgentApplication(msalConfig);
 > |`cacheLocation`  | (Opcional) Isso define o armazenamento do navegador para o estado de autenticação. O padrão é sessionStorage.   |
 > |`storeAuthStateInCookie`  | (Opcional) A biblioteca armazenará o estado de solicitação de autenticação necessário para a validação dos fluxos de autenticação nos cookies do navegador. Isso é definido para os navegadores IE e Edge mitigarem certos [problemas conhecidos](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser#issues). |
 
- Confira a [wiki](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/MSAL-basics#configuration-options) para obter mais detalhes sobre as opções configuráveis disponíveis.
+ Para obter mais detalhes sobre as opções configuráveis disponíveis, leia [Inicializar aplicativos cliente](msal-js-initializing-client-applications.md).
 
 ### <a name="sign-in-users"></a>Conectar usuários
 
@@ -258,6 +256,7 @@ myMSALObj.acquireTokenPopup(requestObj).then(function (tokenResponse) {
     console.log(error);
 });
 ```
+
 > [!NOTE]
 > Este início rápido usa os métodos `loginRedirect` e `acquireTokenRedirect` quando o navegador usado é o Internet Explorer devido a um [problema conhecido](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser#issues) relacionado À manipulação de janelas pop-up pelo navegador Internet Explorer.
 

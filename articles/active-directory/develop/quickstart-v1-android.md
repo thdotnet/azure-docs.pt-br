@@ -3,9 +3,8 @@ title: Entrada de usuários e chamada à API do Microsoft Graph em um aplicativo
 description: Saiba como conectar usuários e chamar a API do Microsoft Graph de um aplicativo Android.
 services: active-directory
 documentationcenter: android
-author: CelesteDG
-manager: mtillman
-editor: ''
+author: rwike77
+manager: CelesteDG
 ms.assetid: da1ee39f-89d3-4d36-96f1-4eabbc662343
 ms.service: active-directory
 ms.subservice: develop
@@ -13,17 +12,17 @@ ms.workload: identity
 ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: quickstart
-ms.date: 09/24/2018
-ms.author: celested
-ms.reviewer: dadobali
+ms.date: 05/21/2019
+ms.author: ryanwi
+ms.reviewer: brandwe, jmprieur, saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9537748f8dd3ee027236c73e9587ff6b78ded7f3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 6a05d8b9182451fc52dd1860dac1dcce57ba2c55
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207578"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66122003"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Início Rápido: Entrada de usuários e chamada à API do Microsoft Graph em um aplicativo Android
 
@@ -86,18 +85,17 @@ Você precisará ter um aplicativo cliente nativo registrado na Microsoft usando
     - Selecione ***Azure Active Directory*** > ***Registros de Aplicativo***.
 
 2. Crie o aplicativo
-    - Selecione **Novo registro de aplicativo**.
+    - Selecione **Novo registro**.
     - Insira um nome de aplicativo no campo **Nome**.
-    - Em **Tipo de aplicativo**, selecione **Nativo**.
-    - NO **URI de redirecionamento**, insira `http://localhost`.
+    - Em **Tipos de conta com suporte**, selecione **Contas em qualquer diretório organizacional e contas pessoais da Microsoft**.
+    - Em **URI de Redirecionamento**, escolha **Cliente público (dispositivo móvel e desktop)** no menu suspenso e insira `http://localhost`.
+    - Clique em **Registrar**.
 
 3. Configurar o Microsoft Graph
-    - Selecione **Configurações > Permissões necessárias**.
-    - Selecione **Adicionar**, e dentro de **Selecionar uma API**, selecione ***Microsoft Graph***.
-    - Selecione a permissão **Entrar e ler o perfil de usuário**, depois selecione **Selecionar** para salvar.
-        - Essa permissão mapeia para o escopo `User.Read`.
-    - Opcional: Em **Permissões necessárias > Microsoft Azure Active Directory**, remova a permissão selecionada **Entrar e ler o perfil do usuário**. Isso evitará que a página de consentimento do usuário liste a permissão duas vezes.
-
+    - Selecione **Permissões de API**.
+    - Escolha **Adicionar uma permissão** e, em **Selecionar uma API**, escolha ***Microsoft Graph***.
+    - Em **Permissões delegadas**, escolha a permissão **User.Read** e pressione **Adicionar** para salvar.        
+    
 4. Parabéns! Seu aplicativo foi configurado com êxito. Na próxima seção, você precisará:
     - `Application ID`
     - `Redirect URI`

@@ -1,6 +1,6 @@
 ---
-title: Conectar o Active Directory com o Azure Active Directory. | Microsoft Docs
-description: O Azure AD Connect integrará seus diretórios locais com o Azure Active Directory.  Isso permite que você forneça uma identidade comum para os aplicativos do Office 365, Azure e SaaS integrados ao AD do Azure.
+title: O que é a identidade híbrida com o Azure Active Directory?
+description: Identidade híbrida é ter uma identidade de usuário comum para autenticação e autorização no local e na nuvem.
 keywords: introdução ao Azure AD Connect, visão geral do Azure AD Connect, o que é o Azure AD Connect, instalar o active directory
 services: active-directory
 author: billmath
@@ -9,24 +9,26 @@ ms.assetid: 59bd209e-30d7-4a89-ae7a-e415969825ea
 ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
-ms.date: 11/28/2018
+ms.date: 05/17/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 536edcf74bff6f89dade4a713c40c9bef12e18af
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 9c43238d44b2309d105ef14e696a5a16848d0b58
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56881797"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65896821"
 ---
-# <a name="what-is-hybrid-identity"></a>O que é identidade híbrida?
+# <a name="what-is-hybrid-identity-with-azure-active-directory"></a>O que é a identidade híbrida com o Azure Active Directory?
 
-Hoje, as empresas e corporações estão se tornando cada vez mais uma mistura de aplicativos locais e na nuvem.  Os usuários precisam ter acesso local e na nuvem a esses aplicativos. Esse requisito se tornou um cenário desafiador. 
+Hoje, as empresas e corporações estão se tornando cada vez mais uma mistura de aplicativos locais e na nuvem.  Os usuários precisam ter acesso local e na nuvem a esses aplicativos. Gerenciar usuários locais e na nuvem apresenta cenários desafiadores. 
 
 As soluções de identidade da Microsoft abrangem funcionalidades locais e baseadas em nuvem.  Essas soluções criam uma identidade de usuário comum para autenticação e autorização para todos os recursos, independentemente da localização. Chamamos isso de **identidade híbrida**.
 
-Para obter identidade híbrida, pode ser usado um dos três métodos de autenticação, dependendo dos seus cenários.   Os três métodos são: 
+Com a identidade híbrida para o Azure AD e o gerenciamento de identidade híbrida, esses cenários se tornam possíveis.
+
+Para obter a identidade híbrida com o Azure AD, pode ser usado um dos três métodos de autenticação, dependendo dos cenários.   Os três métodos são: 
 
 - **[PHS (sincronização de hash de senha)](whatis-phs.md)**  
 - **[PTA (autenticação de passagem)](how-to-connect-pta.md)**  
@@ -60,6 +62,10 @@ Aqui estão alguns dos cenários comuns de gerenciamento de acesso e identidade 
 >  
 > <sup>4</sup> O AD FS pode ser integrado com a Enterprise PKI para permitir a entrada usando certificados. Esses certificados podem ser certificados suaves implantados por meio dos canais de provisionamento confiáveis como certificados de cartão inteligente (incluindo cartões PIV/CAC), MDM, GPO ou Hello for Business (certificado confiável). Para obter mais informações sobre o suporte à autenticação de cartão inteligente, consulte [este blog](https://blogs.msdn.microsoft.com/samueld/2016/07/19/adfs-certauth-aad-o365/). 
 > 
+
+## <a name="license-requirements-for-using-azure-ad-connect"></a>Requisitos de licença para usar o Azure AD Connect
+
+[!INCLUDE [active-directory-free-license.md](../../../includes/active-directory-free-license.md)]
 
 ## <a name="next-steps"></a>Próximas etapas 
 

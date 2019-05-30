@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: overview
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 58fb1d73509ab52551bead4526dfb47588cf1ec6
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 820c89ce352db772f629a99a438ed86448af02fe
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60004577"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65965727"
 ---
 # <a name="what-is-windows-virtual-desktop-preview"></a>O que é a Versão Prévia da Área de Trabalho Virtual do Windows? 
 
@@ -54,16 +54,13 @@ Você também pode atribuir e conectar os usuários às áreas de trabalho virtu
 
 Há alguns itens necessários para configurar a Área de Trabalho Virtual do Windows e conectar com êxito os usuários aos aplicativos e às áreas de trabalho do Windows.
 
-Área de Trabalho Virtual do Windows atualmente dá suporte apenas aos dois sistemas operacionais a seguir:
-- Windows 10 Enterprise de várias sessões
-- Windows Server 2016
-
 Planejamos adicionar suporte aos sistemas operacionais a seguir, então verifique se você tem as [licenças apropriadas](https://azure.microsoft.com/pricing/details/virtual-desktop/) para os usuários com base na área de trabalho e nos aplicativos que você pretende implantar:
 
 |SO|Licença necessária|
 |---|---|
-
-|Windows 10 Enterprise de várias sessões ou Windows 10 Enterprise | Microsoft E3, E5, A3, A5, Business<br>Windows E3, E5, A3, A5| |Windows 7 Enterprise |Microsoft E3, E5, A3, A5, Business<br>Windows E3, E5, A3, A5| |Windows Server 2012 R2, 2016, 2019|CAL (licença de acesso para cliente) do RDS com o Software Assurance|
+|Windows 10 Enterprise de várias sessões ou Windows 10 Enterprise|Microsoft 365 E3, E5, A3, A5, F1, Business<br>Windows E3, E5, A3, A5|
+|Windows 7 Enterprise |Microsoft 365 E3, E5, A3, A5, F1, Business<br>Windows E3, E5, A3, A5|
+|Windows Server 2012 R2, 2016, 2019|CAL (licença de acesso para cliente) do RDS com o Software Assurance|
 
 A infraestrutura precisa dos seguintes itens para dar suporte à Área de Trabalho Virtual do Windows:
 
@@ -76,9 +73,7 @@ A infraestrutura precisa dos seguintes itens para dar suporte à Área de Trabal
 As máquinas virtuais do Azure criadas para a Área de Trabalho Virtual do Windows precisam ser:
 
 * [Ingressadas no domínio padrão](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-comparison) ou [Ingressadas no AD híbridas](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan). As máquinas virtuais não podem ser ingressadas no Azure AD.
-* A execução de uma das seguintes imagens do sistema operacional compatíveis:
-  * Windows 10 Enterprise de várias sessões
-  * Windows Server 2016
+* A execução de uma das seguintes [imagens do sistema operacional compatíveis](#supported-virtual-machine-os-image).
 
 >[!NOTE]
 >Caso precise de uma assinatura do Azure, [inscreva-se em uma avaliação gratuita de um mês](https://azure.microsoft.com/free/). Se estiver usando a versão de avaliação gratuita do Azure, use o Azure AD Domain Services para manter o Windows Server Active Directory em sincronia com o Azure Active Directory.
@@ -88,8 +83,23 @@ A Área de Trabalho Virtual do Windows é composta por áreas de trabalho e apli
 Para otimizar o desempenho, verifique se a rede atende aos seguintes requisitos:
 
 * A latência RTT (viagem de ida e volta) da rede do cliente para a região do Azure em que os pools de host foram implantados deve ser inferior a 150 ms.
-* O tráfego de rede poderá fluir para fora das fronteiras do país quando as VMs que hospedam os aplicativos e as áreas de trabalho se conectarem ao serviço de gerenciamento.
+* O tráfego de rede poderá fluir para fora das fronteiras do país/região quando as VMs que hospedam os aplicativos e as áreas de trabalho se conectarem ao serviço de gerenciamento.
 * Para otimizar o desempenho da rede, recomendamos que as VMs do host da sessão sejam colocadas na mesma região do Azure do serviço de gerenciamento.
+
+## <a name="supported-remote-desktop-clients"></a>Clientes compatíveis da Área de Trabalho Remota
+
+Os seguintes clientes da Área de Trabalho Remota são compatíveis com a Área de Trabalho Virtual do Windows:
+
+* [Windows](https://docs.microsoft.com/azure/virtual-desktop/connect-windows-7-and-10)
+* [HTML5](https://docs.microsoft.com/azure/virtual-desktop/connect-web)
+
+
+## <a name="supported-virtual-machine-os-image"></a>Imagem compatível de sistema operacional da máquina virtual
+
+A Área de Trabalho Virtual do Windows dá suporte às seguintes imagens de sistema operacional:
+
+* Windows 10 Enterprise de várias sessões
+* Windows Server 2016
 
 ## <a name="provide-feedback"></a>Fornecer comentários
 

@@ -8,14 +8,14 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 03/26/2018
 ms.author: lbosq
-ms.openlocfilehash: db931a3a114be101eeb5e14fa7ba100a789e7cf5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 23b8f7db40eb2df063e055c489f11ff1b19dd8d5
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58094984"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65519105"
 ---
-# <a name="quickstart-create-a-graph-database-in-azure-cosmos-db-using-the-java-sdk"></a>Início rápido: Criar um banco de dados de grafo no Azure Cosmos DB usando o SDK do Java 
+# <a name="quickstart-create-a-graph-database-in-azure-cosmos-db-using-the-java-sdk"></a>Início Rápido: Criar um banco de dados de grafo no Azure Cosmos DB usando o SDK do Java 
 
 > [!div class="op_single_selector"]
 > * [Console do Gremlin](create-graph-gremlin-console.md)
@@ -35,8 +35,7 @@ Este guia de início rápido cria um banco de dados de grafos simples usando as 
 
 Além disso:
 
-* [Java Development Kit (JDK) 1.7 +](https://aka.ms/azure-jdks)
-    * No Ubuntu, execute `apt-get install default-jdk` para instalar o JDK.
+* [Java Development Kit (JDK) versão 8](https://aka.ms/azure-jdks)
     * Defina a variável de ambiente JAVA_HOME para apontar para a pasta onde o JDK está instalado.
 * [Baixar](https://maven.apache.org/download.cgi) e [instalar](https://maven.apache.org/install.html) um armazenamento binário [Maven](https://maven.apache.org/)
     * No Ubuntu, você pode executar `apt-get install maven` para instalar o Maven.

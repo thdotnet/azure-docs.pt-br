@@ -10,16 +10,16 @@ ms.topic: overview
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 8201b4089759fb55fae12820f7495664c502837e
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 24c6df6a06d08249f236fc36d64b4204b0103b3c
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65023640"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540892"
 ---
 # <a name="what-is-cognitive-search-in-azure-search"></a>O que é a “pesquisa cognitiva” no Azure Search?
 
-A Pesquisa cognitiva é um recurso de IA no Azure Search usado para extrair texto de imagens, blobs e outras fontes de dados não estruturados, enriquecendo o conteúdo para torná-lo mais pesquisável em um índice do Azure Search. A extração e o enriquecimento são implementados por meio de *habilidades cognitivas* anexadas a um pipeline de indexação. Os enriquecimentos por IA têm suporte das seguintes maneiras: 
+A Pesquisa cognitiva é um recurso de IA no Azure Search usado para extrair texto de imagens, blobs e outras fontes de dados não estruturados, enriquecendo o conteúdo para torná-lo mais pesquisável em um índice do Azure Search. A extração e o enriquecimento são implementados por meio de *habilidades cognitivas* anexadas a um pipeline de indexação. Os aprimoramentos de IA têm suporte das seguintes maneiras: 
 
 + As habilidades de **Processamento de linguagem natural** incluem [reconhecimento de entidade](cognitive-search-skill-entity-recognition.md), [detecção de idioma](cognitive-search-skill-language-detection.md), [extração de frases-chave](cognitive-search-skill-keyphrases.md), manipulação de texto e [detecção de sentimento](cognitive-search-skill-sentiment.md). Com essas habilidades, o texto não estruturado pode assumir novas formas e ser mapeado como campos pesquisáveis e filtráveis em um índice.
 
@@ -61,7 +61,7 @@ Internamente, o pipeline gera uma coleção de documentos enriquecidos. Você po
 
 O [Serviço de Pesquisa REST api-version=2019-05-06](search-api-preview.md) estende o conjunto de qualificações com uma definição de knowledgeStore que fornece uma conexão de armazenamento do Azure e projeções que descrevem como os enriquecimentos são armazenados. 
 
-Adicionar um repositório de dados de conhecimento a uma habilidade fornece a capacidade de projetar uma representação de seus enriquecimentos para cenários diferentes da pesquisa de texto completo. Para saber mais, confira [O que é o Repositório de Dados de Conhecimento](knowledge-store-concept-intro.md).
+Adicionar um repositório de dados de conhecimento a uma habilidade fornece a capacidade de projetar uma representação de seus enriquecimentos para cenários diferentes da pesquisa de texto completo. Para saber mais, confira [O que é o repositório de dados de conhecimento](knowledge-store-concept-intro.md).
 
 ### <a name="step-3-search-index-and-query-based-access"></a>Etapa 3: Índice de pesquisa e acesso baseado em consulta
 
@@ -145,5 +145,5 @@ Para obter mais informações sobre problemas ou dúvidas específicas, confira 
 + [Documentação da pesquisa cognitiva](cognitive-search-resources-documentation.md)
 + [Guia de Início Rápido: Experimente a pesquisa cognitiva em um passo a passo no portal](cognitive-search-quickstart-blob.md)
 + [Tutorial: Conheça as APIs de pesquisa cognitiva](cognitive-search-tutorial-blob.md)
-+ [Visão geral do Repositório de Dados de Conhecimento](knowledge-store-concept-intro.md)
-+ [Passo a passo do Repositório de Dados de Conhecimento](knowledge-store-howto.md)
++ [Visão geral do repositório de dados de conhecimento](knowledge-store-concept-intro.md)
++ [Passo a passo do repositório de dados de conhecimento](knowledge-store-howto.md)

@@ -11,12 +11,12 @@ ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 85f8643a0936209c8f280498df92555a7b40c533
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: a80a815d4a1a892b5258aef1c1fc7ef4ab881fe7
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149919"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65594155"
 ---
 # <a name="tutorial-from-qna-maker-portal-create-a-knowledge-base"></a>Tutorial: No portal do QnA Maker, crie uma base de dados de conhecimento
 
@@ -68,7 +68,7 @@ Este tutorial requer um [serviço QnA Maker](../How-To/set-up-qnamaker-service-a
     |--|--|--|
     |URL|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/faqs` |O conteúdo das Perguntas frequentes nessa URL é formatado com um ponto de interrogação seguido de uma resposta. O QnA Maker pode interpretar esse formato para extrair perguntas e as respostas associadas.|
     |Arquivo |_não usado neste tutorial_|Isso carrega arquivos para perguntas e respostas. |
-    |Personalidade do bate-papo|Amigável|Isso oferece uma personalidade casual e amigável para perguntas e respostas comuns. Você pode editar essas perguntas e respostas mais tarde. |
+    |Personalidade do bate-papo|Amigável|Isso oferece uma [personalidade](../Concepts/best-practices.md#chit-chat) casual e amigável para perguntas e respostas comuns. Você pode editar essas perguntas e respostas mais tarde. |
 
     ![Etapa 4 do processo de criação da base de dados de conhecimento](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-4.png)
 

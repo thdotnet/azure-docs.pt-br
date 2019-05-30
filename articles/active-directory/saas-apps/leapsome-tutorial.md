@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 602e3145a003a0413287b08151abf472ecf4ade0
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: dbdf6847658e6a5a3999007f51b409e47a65e4cd
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406717"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65988090"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-leapsome"></a>Tutorial: Integração do Azure Active Directory com o Leapsome
 
@@ -53,7 +53,7 @@ Para configurar a integração do Leapsome ao Azure AD, você precisa adicionar 
 
 **Para adicionar o Leapsome da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -126,10 +126,10 @@ Para configurar o logon único do Azure AD com o Leapsome, execute as seguintes 
 
     | NOME | Atributo de Origem | Namespace |
     | ---------------| --------------- | --------- |  
-    | nome | user.givenname | https://schemas.xmlsoap.org/ws/2005/05/identity/claims |
-    | sobrenome | user.surname | https://schemas.xmlsoap.org/ws/2005/05/identity/claims |
-    | título | user.jobtitle | https://schemas.xmlsoap.org/ws/2005/05/identity/claims |
-    | picture | URL para a imagem do funcionário | https://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | nome | user.givenname | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | sobrenome | user.surname | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | título | user.jobtitle | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | picture | URL para a imagem do funcionário | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
     | | |
 
     > [!Note]
@@ -185,9 +185,9 @@ Para configurar o logon único do Azure AD com o Leapsome, execute as seguintes 
 
     c. Copie o valor **URL de resposta (recebe a resposta do seu provedor de identidade)** e cole-o na caixa de texto **URL de resposta** na seção **Configuração SAML Básica** no portal do Azure.
 
-    d. Na caixa de texto **URL de Logon SSO (fornecida pelo provedor de identidade)**, cole o valor da **URL de Logon** copiado do portal do Azure.
+    d. Na caixa de texto **URL de Logon SSO (fornecida pelo provedor de identidade)** , cole o valor da **URL de Logon** copiado do portal do Azure.
 
-    e. Copie o certificado que você baixou do portal do Azure sem comentários `--BEGIN CERTIFICATE and END CERTIFICATE--` e cole-o na caixa de texto **Certificado (fornecido pelo provedor de identidade)**.
+    e. Copie o certificado que você baixou do portal do Azure sem comentários `--BEGIN CERTIFICATE and END CERTIFICATE--` e cole-o na caixa de texto **Certificado (fornecido pelo provedor de identidade)** .
 
     f. Clique em **ATUALIZAR CONFIGURAÇÕES SSO**.
 
@@ -244,7 +244,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-leapsome-test-user"></a>Criar usuário de teste Leapsome
 
-Nesta seção, você criará uma usuária chamada Brenda Fernandes no Leapsome. Trabalhe com a [equipe de suporte do Leapsome](mailto:support@leapsome.com) para adicionar os usuários ou o domínio necessários para estar na lista de permissões na plataforma Leapsome. Se o domínio for adicionado pela equipe, os usuários serão automaticamente provisionados à plataforma Leapsome. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará uma usuária chamada Brenda Fernandes no Leapsome. Trabalhe com a [equipe de suporte do Leapsome](mailto:support@leapsome.com) para adicionar os usuários ou o domínio que precisam estar na lista de permissões à plataforma Leapsome. Se o domínio for adicionado pela equipe, os usuários serão automaticamente provisionados à plataforma Leapsome. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único
 

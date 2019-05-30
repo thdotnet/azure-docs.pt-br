@@ -10,12 +10,12 @@ ms.devlang: node
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 02/22/2019
-ms.openlocfilehash: a4f0761af7da1add6a295b7627783daae6fac07c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: b99ed85495e00282c6a27f42b5817e46f4736720
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59007095"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65597510"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-nodejs"></a>Início Rápido: Enviar a telemetria de um dispositivo para um hub IoT e lê-la com um back-end (Node.js)
 
@@ -31,7 +31,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Os dois aplicativos de exemplo executados neste início rápido são escritos em Node.js. Você precisa do Node.js v4.x.x ou posterior em seu computador de desenvolvimento.
+Os dois aplicativos de exemplo executados neste início rápido são escritos em Node.js. Você precisa do Node.js v10.x.x ou posterior em seu computador de desenvolvimento.
 
 Você pode fazer o download do Node.js para várias plataformas a partir do [nodejs.org](https://nodejs.org).
 

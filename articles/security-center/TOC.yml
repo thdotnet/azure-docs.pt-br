@@ -57,6 +57,8 @@
       href: security-center-powershell-onboarding.md
     - name: Configurações da Central de Segurança
       href: security-center-policies-overview.md
+    - name: Comparar linhas de base usando o Monitoramento de Integridade de Arquivo
+      href: security-center-file-integrity-monitoring-baselines.md
       items:
         - name: Coleta de dados
           href: security-center-enable-data-collection.md

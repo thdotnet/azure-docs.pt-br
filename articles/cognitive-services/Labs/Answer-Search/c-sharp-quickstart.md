@@ -10,20 +10,20 @@ ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: 2fc2a4267c3a10a7837012dc65f0ce1a0f826a11
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: dce13636cce299098c988ccea3a059f0f0e12acd
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55871261"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65823270"
 ---
-# <a name="quickstart-project-answer-search-query-in-c"></a>Início rápido: Consulta de Pesquisa de Resposta de Projeto em C#
+# <a name="quickstart-project-answer-search-query-in-c"></a>Início Rápido: Consulta de Pesquisa de Resposta de Projeto em C#
 
 O exemplo em C# a seguir cria e envia uma consulta para obter informações sobre a terceira lei de cálculo.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Você precisará ter o [Visual Studio 2017](https://www.visualstudio.com/downloads/) para executar esse código no Windows. (A Edição Comunitária gratuita funcionará.)
+Você precisará ter o [Visual Studio 2017 ou posterior](https://www.visualstudio.com/downloads/) para executar esse código no Windows. (O Community Edition gratuito funcionará.)
 
 Obtenha uma chave de acesso para a avaliação gratuita de [Laboratórios dos Serviços Cognitivos](https://aka.ms/answersearchsubscription)
 

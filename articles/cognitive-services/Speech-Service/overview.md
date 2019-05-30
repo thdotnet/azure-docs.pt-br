@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: e29e36807aff6c32f295c79c90d80c7d2b5b4bcc
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: dc0871c0b16246fa178072e9d9f266d4c02ba1c4
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510741"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002997"
 ---
 # <a name="what-are-the-speech-services"></a>O que é o Serviço de Fala?
 
@@ -42,7 +42,9 @@ Esses recursos compõem o Serviço de Fala do Azure. Use os links nesta tabela p
 Saiba o que há de novo no Serviço de Fala do Azure.
 
 * Maio de 2019 – A documentação já está disponível para [Transcrição de Conversas](conversation-transcription-service.md), [Transcrição de Call Center](call-center-transcription.md) e [Assistentes Virtuais que têm como prioridade o uso de voz](voice-first-virtual-assistants.md).
-* Maio de 2019 – lançamento do SDK de Fala 1.5.0. Para obter uma lista completa de atualizações, melhorias e problemas conhecidos, confira [Notas sobre a versão](releasenotes.md).
+* Maio de 2019
+    * Lançamento do SDK de Fala 1.5.1. Para obter uma lista completa de atualizações, melhorias e problemas conhecidos, confira [Notas sobre a versão](releasenotes.md).
+    * Lançamento do SDK de Fala 1.5.0. Para obter uma lista completa de atualizações, melhorias e problemas conhecidos, confira [Notas sobre a versão](releasenotes.md).
 * Abril de 2019 – lançamento do SDK de Fala 1.4.0 com suporte para conversão de texto em fala (beta) para C++, C# e Java no Windows e no Linux. Além disso, o SDK agora dá suporte aos formatos de áudio MP3 e Opus/Ogg para C++ e C# no Linux. Para obter uma lista completa de atualizações, melhorias e problemas conhecidos, confira [Notas sobre a versão](releasenotes.md).
 * Março de 2019 – um novo ponto de extremidade de TTS (conversão de texto em fala) que retorna uma lista completa das vozes disponíveis em uma região específica está disponível. Além disso, agora há suporte para as novas regiões para TTS. Para obter mais informações, veja [Referência da API de conversão de texto em fala (REST)](rest-text-to-speech.md).
 

@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: e705ce17f0f09d341f2c650dfaccbbad60da14c7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: ca6914967d855123c70bf746a9d68d2e045e76d9
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59500185"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65908683"
 ---
 # <a name="quickstart-provision-a-simulated-tpm-device-using-the-azure-iot-c-sdk"></a>Início Rápido: Provisionar um dispositivo TPM simulado usando o SDK de C do IoT do Azure
 
@@ -34,7 +34,7 @@ Este artigo irá demonstrar registros individuais.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Visual Studio 2015 ou [Visual Studio 2017](https://www.visualstudio.com/vs/) com a carga de trabalho ["Desenvolvimento para Desktop com C++"](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/) habilitada.
+* [Visual Studio](https://visualstudio.microsoft.com/vs/) 2015 ou posterior com a carga de trabalho ["Desenvolvimento para desktop com C++"](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/) habilitada.
 * Versão mais recente do [Git](https://git-scm.com/download/) instalada.
 
 
@@ -115,7 +115,7 @@ Nesta seção, você compilará e executará um exemplo que lerá a ID do regist
 
 3. Na janela *Gerenciador de Soluções* do Visual Studio, navegue até a pasta **Provisionar\_Ferramentas**. Clique com botão direito do mouse no projeto **tpm_device_provision** e selecione **Definir como Projeto de Inicialização**. 
 
-4. No menu do Visual Studio, selecione **Depurar** > **Iniciar sem depuração** para executar a solução. O aplicativo lê e exibe uma **_ID de Registro_** e uma **_Chave de Endosso_**. Copie esses valores. Eles serão usados na próxima seção para inscrição do dispositivo. 
+4. No menu do Visual Studio, selecione **Depurar** > **Iniciar sem depuração** para executar a solução. O aplicativo lê e exibe uma **_ID de Registro_** e uma **_Chave de Endosso_** . Copie esses valores. Eles serão usados na próxima seção para inscrição do dispositivo. 
 
 
 <a id="portalenrollment"></a>
@@ -145,7 +145,7 @@ Nesta seção, você compilará e executará um exemplo que lerá a ID do regist
 
 Nesta seção, você configurará o exemplo de código para usar o [AMQP (Advanced Message Queuing Protocol)](https://wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) e enviar a sequência de inicialização do dispositivo para a instância do Serviço de Provisionamento de Dispositivo. Essa sequência de inicialização fará com que o dispositivo seja reconhecido e atribuído a um hub IoT vinculado à instância do Serviço de Provisionamento de Dispositivo.
 
-1. No Portal do Azure, selecione a guia **Visão Geral** do Serviço de Provisionamento de Dispositivos e anote o valor de **_Escopo da ID_**.
+1. No Portal do Azure, selecione a guia **Visão Geral** do Serviço de Provisionamento de Dispositivos e anote o valor de **_Escopo da ID_** .
 
     ![Extrair informações do ponto de extremidade do Serviço de Provisionamento de Dispositivo do portal](./media/quick-create-simulated-device/extract-dps-endpoints.png) 
 

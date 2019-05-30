@@ -9,19 +9,19 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: quickstart
-ms.date: 03/18/2019
+ms.date: 05/06/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0573448c753c763e818d641216033dbeacb9e9a
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 01cedadc115496fcf00df986b4ad4b9c5aab5139
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58199300"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606189"
 ---
-# <a name="quickstart-set-office-365-groups-to-expire-in-azure-active-directory"></a>Início rápido: Configurar os grupos do Office 365 para expirar no Azure Active Directory
+# <a name="quickstart-set-office-365-groups-to-expire-in-azure-active-directory"></a>Início Rápido: Configurar os grupos do Office 365 para expirar no Azure Active Directory
 
 Neste início rápido, você pode definir a política de expiração para os grupos do Office 365. Quando os usuários podem configurar seus próprios grupos, os grupos não utilizados podem multiplicar-se. Uma maneira de gerenciar os grupos não utilizados é definir esses grupos para expirar, para reduzir o trabalho de ter que exclui-los manualmente.
 
@@ -35,11 +35,11 @@ Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://a
 
 ## <a name="prerequisite"></a>Pré-requisito
 
-Você deve ser um Administrador global ou Administrador de usuários na organização para configurar a expiração de grupo.
+ A função com privilégios mínimos necessária para configurar a expiração do grupo é Administrador de usuários na organização.
 
 ## <a name="turn-on-user-creation-for-groups"></a>Ativar a criação de usuário para grupos
 
-1. Entre no [portal do Azure](https://portal.azure.com) com uma conta de Administrador global ou Administrador de usuários da organização.
+1. Entre no [portal do Azure](https://portal.azure.com) com uma conta Administrador de usuários.
 
 2. Selecione **Grupos**e, em seguida, selecione **Geral**.
   
@@ -80,7 +80,7 @@ Você deve ser um Administrador global ou Administrador de usuários na organiza
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para obter mais informações sobre a expiração, incluindo restrições técnicas, adicionando uma lista de palavras bloqueadas personalizadas e experiências de usuário final entre aplicativos do Office 365, consulte o artigo a seguir que contém os detalhes da política de expiração:
+Para saber mais sobre a expiração, incluindo instruções e restrições técnicas do PowerShell, confira o artigo a seguir:
 
 > [!div class="nextstepaction"]
-> [Política de expiração e todos os seus detalhes](groups-lifecycle.md)
+> [Política de expiração do PowerShell](groups-lifecycle.md)

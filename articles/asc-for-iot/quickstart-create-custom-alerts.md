@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2019
 ms.author: mlottner
-ms.openlocfilehash: 7f585c496328fef3e3d7dbb300fc4f07167fd55d
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 3b4c5e4700b0ef718a6b079ecc6ab3ad80f4eab6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65192475"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786177"
 ---
 # <a name="quickstart-create-custom-alerts"></a>Início Rápido: Criar alertas personalizados
 
@@ -50,13 +50,12 @@ Use grupos de segurança para agrupar seus dispositivos em categorias lógicas. 
 ## <a name="customize-an-alert"></a>Personalizar um alerta
 
 1. Abra seu Hub IoT. 
-2. Selecione **Segurança**, em seguida, selecione **Alertas personalizados**. 
-3. Escolha os grupos de segurança que você deseja aplicar a personalização. 
-4. Clique em **Adicionar um alerta personalizado**
-5. Insira um nome de alerta (Observe que os nomes de alerta não podem ser alterados após a criação). 
-6. Selecione um comportamento de alerta personalizado na lista suspensa. 
-7. Edite as propriedades necessárias, clique em **OK**.
-8. Certifique-se de clicar em **Salvar**. Sem salvar o novo alerta, o alerta é excluído na próxima vez que você fechar o Hub IoT.
+2. Clique em **Alertas personalizados** na seção **Segurança**. 
+3. Escolha um grupo de segurança que você deseja aplicar a personalização. 
+4. Clique em **Adicionar um alerta personalizado** 
+5. Selecione um comportamento de alerta personalizado na lista suspensa. 
+6. Edite as propriedades necessárias, clique em **OK**.
+7. Certifique-se de clicar em **Salvar**. Sem salvar o novo alerta, o alerta é excluído na próxima vez que você fechar o Hub IoT.
 
  
 ## <a name="alerts-available-for-customization"></a>Alertas disponíveis para personalização

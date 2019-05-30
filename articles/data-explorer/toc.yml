@@ -41,14 +41,6 @@
           href: web-query-data.md
         - name: Python
           href: python-query-data.md
-    - name: Visualizar dados
-      items:
-        - name: Power BI – conector
-          href: power-bi-connector.md
-        - name: Power BI - consulta importada
-          href: power-bi-imported-query.md
-        - name: Power BI - consulta SQL
-          href: power-bi-sql-query.md
 - name: Tutoriais
   items:
     - name: Ingestão de dados sem usar código
@@ -80,6 +72,20 @@
           href: anomaly-detection.md
         - name: Aprendizado de máquina
           href: machine-learning-clustering.md
+    - name: Visualizar dados
+      items:
+        - name: Power BI
+          items:
+            - name: conector
+              href: power-bi-connector.md
+            - name: consulta importada
+              href: power-bi-imported-query.md
+            - name: Consulta SQL
+              href: power-bi-sql-query.md
+        - name: Sisense
+          href: sisense.md
+        - name: Grafana
+          href: grafana.md
     - name: Gerenciar
       items:
         - name: Gerenciar permissões de banco de dados
@@ -108,8 +114,6 @@
           href: kqlmagic.md
         - name: Copiar dados usando o Azure Data Factory
           href: data-factory-load-data.md
-        - name: Visualizar dados no Grafana
-          href: grafana.md
         - name: Conecte-se ODBC
           href: connect-odbc.md
     - name: Solucionar problemas

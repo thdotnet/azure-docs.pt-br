@@ -1,5 +1,5 @@
 ---
-title: Introdução e visão geral do Repositório de Dados de Conhecimento – Azure Search
+title: Introdução e visão geral do Repositório de Dados de Conhecimento (versão prévia) – Azure Search
 description: Envie documentos enriquecidos ao armazenamento do Azure onde você pode exibir, reformatar e consumir documentos enriquecidos no Azure Search e em outros aplicativos.
 manager: cgronlun
 author: HeidiSteen
@@ -9,16 +9,20 @@ ms.devlang: NA
 ms.topic: overview
 ms.date: 05/02/2019
 ms.author: heidist
-ms.openlocfilehash: 3000016de934aaa3faab96821f9747ea4b571ef7
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 4a27e4d8f2fbaafe6d27a3e3cabd31aa715b9d80
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65030084"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540743"
 ---
-# <a name="what-is-knowledge-store-in-azure-search"></a>O que é o Repositório de Dados de Conhecimento no Azure Search?
+# <a name="what-is-knowledge-store-in-azure-search"></a>O que é o repositório de dados de conhecimento no Azure Search?
 
-O Repositório de Dados de Conhecimento é um recurso opcional do Azure Search, atualmente em versão prévia pública, que salva documentos enriquecidos e metadados criados por um pipeline de indexação baseada em IA [(pesquisa cognitiva)](cognitive-search-concept-intro.md). O Repositório de Dados de Conhecimento tem suporte da conta de armazenamento do Azure que você configura como parte do pipeline. Quando habilitado, o serviço de pesquisa usa essa conta de armazenamento para armazenar em cache uma representação de cada documento enriquecido. 
+> [!Note]
+> O armazenamento de dados de conhecimento está em versão prévia e não é destinado para uso em produção. A [API REST versão 2019-05-06-versão prévia](search-api-preview.md) fornece esse recurso. Não há suporte para SDK do .NET no momento.
+>
+
+O repositório de dados de conhecimento é um recurso opcional do Azure Search que salva documentos enriquecidos e metadados criados por um pipeline de indexação baseada em IA [(pesquisa cognitiva)](cognitive-search-concept-intro.md). O repositório de dados de conhecimento tem suporte da conta de armazenamento do Azure que você configura como parte do pipeline. Quando habilitado, o serviço de pesquisa usa essa conta de armazenamento para armazenar em cache uma representação de cada documento enriquecido. 
 
 Se você já usou a pesquisa cognitiva, sabe que as habilidades poderão ser usadas para mover um documento por uma sequência de enriquecimentos. O resultado pode ser um índice do Azure Search ou projeções (uma novidade nesta versão prévia) em um repositório de dados de conhecimento.
 
@@ -26,15 +30,15 @@ As projeções são o mecanismo para estruturar dados para consumo em um aplicat
 
 ![Repositório de dados de conhecimento no diagrama do pipeline](./media/knowledge-store-concept-intro/annotationstore_sans_internalcache.png "Repositório de dados de conhecimento no diagrama do pipeline")
 
-Para usar o Repositório de Dados de Conhecimento, adicione um elemento `knowledgeStore` a um conjunto de qualificações que defina operações por etapas em um pipeline de indexação. Durante a execução, o Azure Search cria um espaço em sua conta de armazenamento do Azure e preenche-o com definições e conteúdo criados pelo pipeline.
+Para usar o repositório de dados de conhecimento, adicione um elemento `knowledgeStore` a um conjunto de qualificações que defina operações por etapas em um pipeline de indexação. Durante a execução, o Azure Search cria um espaço em sua conta de armazenamento do Azure e preenche-o com definições e conteúdo criados pelo pipeline.
 
-## <a name="benefits-of-knowledge-store"></a>Vantagens do Repositório de Dados de Conhecimento
+## <a name="benefits-of-knowledge-store"></a>Vantagens do repositório de dados de conhecimento
 
 Um repositório de dados de conhecimento fornece estrutura, contexto e conteúdo real, compilados de arquivos de dados não estruturados e semiestruturados como blobs, arquivos de imagem que passaram por análise ou mesmo dados estruturados que são reformatados. Em um [passo a passo](knowledge-store-howto.md) escrito para esta versão prévia, você pode ver em primeira mão como um documento JSON denso é particionado em subestruturas, reconstituído em novas estruturas e disponibilizado para processos downstream como aprendizado de máquina e cargas de trabalho de ciência de dados.
 
-Embora seja útil ver o que um pipeline de indexação baseada em IA pode produzir, o poder real do Repositório de Dados de Conhecimento é a capacidade de reformatar dados. Você pode começar com um conjunto de qualificações básicas e depois iterar sobre ele para adicionar níveis crescentes de estrutura, que podem ser combinados em novas estruturas e consumidos em outros aplicativos além do Azure Search.
+Embora seja útil ver o que um pipeline de indexação baseada em IA pode produzir, o poder real do repositório de dados de conhecimento é a capacidade de reformatar dados. Você pode começar com um conjunto de qualificações básicas e depois iterar sobre ele para adicionar níveis crescentes de estrutura, que podem ser combinados em novas estruturas e consumidos em outros aplicativos além do Azure Search.
 
-Se enumeradas, as vantagens do Repositório de Dados de Conhecimento incluem o seguinte:
+Se enumeradas, as vantagens do repositório de dados de conhecimento incluem o seguinte:
 
 + Consumir documentos enriquecidos em [ferramentas de relatórios e análise](#tools-and-apps) que não sejam de pesquisa. O Power BI com Power Query é uma opção interessante, mas qualquer ferramenta ou aplicativo que consiga se conectar ao armazenamento do Azure poderá efetuar pull de um repositório de dados de conhecimento criado.
 
@@ -235,11 +239,11 @@ Quando usar vários serviços, crie todos os serviços na mesma região para obt
 
 **Etapa 4: [Começar com o portal](cognitive-search-quickstart-blob.md) ou [Introdução aos dados de exemplo usando o REST e o Postman](knowledge-store-howto.md)** 
 
-Você pode usar o `api-version=2019-05-06-Preview` REST para criar um pipeline com base em IA que inclui o Repositório de Dados de Conhecimento. Na API de versão prévia mais recente, o objeto Skillset fornece a definição `knowledgeStore`.
+Você pode usar o `api-version=2019-05-06-Preview` REST para criar um pipeline com base em IA que inclui o repositório de dados de conhecimento. Na API de versão prévia mais recente, o objeto Skillset fornece a definição `knowledgeStore`.
 
 ## <a name="takeaways"></a>Observações
 
-O Repositório de Dados de Conhecimento oferece uma variedade de benefícios, incluindo, mas não se limitando a, permitir o uso de documentos enriquecidos em diversos cenários de pesquisa, controles de custos e gerenciamento de desvios no processo de enriquecimento. Esses recursos estão disponíveis. Para usá-los, basta adicionar uma conta de armazenamento ao conjunto de qualificações e usar o idioma da expressão atualizado, conforme descrito em [Introdução ao Repositório de Dados de Conhecimento](knowledge-store-howto.md). 
+O repositório de dados de conhecimento oferece uma variedade de benefícios, incluindo, mas não se limitando a, permitir o uso de documentos enriquecidos em diversos cenários de pesquisa, controles de custos e gerenciamento de desvios no processo de enriquecimento. Esses recursos estão disponíveis. Para usá-los, basta adicionar uma conta de armazenamento ao conjunto de qualificações e usar o idioma da expressão atualizado, conforme descrito em [Introdução ao repositório de dados de conhecimento](knowledge-store-howto.md). 
 
 ## <a name="next-steps"></a>Próximas etapas
 

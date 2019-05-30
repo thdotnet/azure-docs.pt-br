@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 2/20/2019
 ms.author: erhopf
-ms.openlocfilehash: b5c61ecb74c0fcdacc6024a74565f05b036e2ac6
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: fe2978e176b986164ebb01fddbd29481f8a117bd
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65081310"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66145419"
 ---
 1. Inicie o Visual Studio 2017.
 
@@ -19,7 +19,7 @@ ms.locfileid: "65081310"
 
     Caso contrário, marque a caixa ao lado de **Desenvolvimento multiplataforma do .NET** e selecione **Modificar** no canto inferior direito da caixa de diálogo. A instalação do novo recurso leva alguns instantes.
 
-1. Crie um aplicativo universal do Windows em branco do Visual C#. Primeiro, escolha **Arquivo** > **Novo** > **Projeto** no menu. Na caixa de diálogo **Novo Projeto**, expanda **Instalado** > **Visual C#** > **Universal do Windows** no painel esquerdo. Em seguida, selecione **Aplicativo em Branco (Universal do Windows)**. Para o nome do projeto, insira *helloworld*.
+1. Crie um aplicativo universal do Windows em branco do Visual C#. Primeiro, escolha **Arquivo** > **Novo** > **Projeto** no menu. Na caixa de diálogo **Novo Projeto**, expanda **Instalado** > **Visual C#**  > **Universal do Windows** no painel esquerdo. Em seguida, selecione **Aplicativo em Branco (Universal do Windows)** . Para o nome do projeto, insira *helloworld*.
 
     ![A captura de tela da caixa de diálogo Novo Projeto](../articles/cognitive-services/Speech-Service/media/sdk/qs-csharp-uwp-01-new-blank-app.png)
 

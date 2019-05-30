@@ -10,12 +10,12 @@ ms.topic: overview
 ms.tgt_pltfrm: na
 ms.date: 10/04/2018
 ms.author: tomfitz
-ms.openlocfilehash: da6c9bb6cbd94ab5078641f25e42ad2203ff7a53
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 48bb241a7871d2a209636f66837fb2afd95fd22c
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402347"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001807"
 ---
 # <a name="azure-managed-applications-overview"></a>Visão geral de aplicativos gerenciados do Azure
 
@@ -33,7 +33,7 @@ Embora os clientes implantem esses aplicativos gerenciados em suas assinaturas, 
 
 Para equipes de TI, os aplicativos gerenciados permitem a oferta de soluções pré-aprovadas aos usuários na organização. Você sabe que essas soluções estão em conformidade com os padrões organizacionais.
 
-Atualmente, os Aplicativos Gerenciados não dão suporte a [identidades gerenciadas em recursos do Azure](../active-directory/managed-identities-azure-resources/overview.md).
+Os Aplicativos Gerenciados dão suporte a [identidades gerenciadas em recursos do Azure](./publish-managed-identity.md).
 
 ## <a name="types-of-managed-applications"></a>Tipos de aplicativos gerenciados
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 0879f9026276eb7149ae44906377a7b369e05116
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: a3e457ca29ebe086c6097528af5a9253446b757c
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59267065"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990554"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vodeclic"></a>Tutorial: Integração do Azure Active Directory com o Vodeclic
 
@@ -53,7 +53,7 @@ Para configurar a integração do Vodeclic no Microsoft Azure AD, é necessário
 
 **Para adicionar o Vodeclic por meio da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -191,7 +191,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 Nesta seção, você criará uma usuária chamada Brenda Fernandes no Vodeclic. Trabalhe com a  [equipe de suporte do Vodeclic](mailto:hotline@vodeclic.com) para adicionar os usuários à plataforma Vodeclic. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 > [!NOTE]
-> De acordo com os requisitos do aplicativo, talvez seja necessário que sua máquina seja incluída na lista de permissões. Para que isso seja possível, será necessário compartilhar seu endereço IP público com a [Equipe de suporte do Vodeclic](mailto:hotline@vodeclic.com).
+> De acordo com os requisitos do aplicativo, talvez seja necessário que seu computador seja adicionado a uma lista de permissões. Para que isso seja possível, será necessário compartilhar seu endereço IP público com a [Equipe de suporte do Vodeclic](mailto:hotline@vodeclic.com).
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 

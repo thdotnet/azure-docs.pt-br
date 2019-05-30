@@ -3,8 +3,8 @@ title: Crie um aplicativo para iOS que se integre ao Azure AD para conexão e qu
 description: Saiba como conectar usuários e chamar a API do Microsoft Graph de um aplicativo iOS.
 services: active-directory
 documentationcenter: ios
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 42303177-9566-48ed-8abb-279fcf1e6ddb
 ms.service: active-directory
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: mobile-ios
 ms.devlang: objective-c
 ms.topic: quickstart
-ms.date: 09/24/2018
-ms.author: celested
+ms.date: 05/21/2019
+ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: brandwe
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d986ccbf92192c1fb7375e9db1fb398ed86a829
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 8538a96e1919fbff9f800a785788ccaa41a68392
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58879957"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66121926"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-app"></a>Início Rápido: Conectar usuários e chamar a API do Microsoft Graph de um aplicativo iOS
 
@@ -76,12 +76,13 @@ Para configurar o aplicativo para obter tokens, primeiro será necessário regis
 1. Entre no [Portal do Azure](https://portal.azure.com).
 2. Na barra superior, selecione sua conta. Sob o **diretório** , escolha onde você deseja registrar seu aplicativo de locatário do Active Directory.
 3. Selecione **Todos os serviços** no painel de navegação à esquerda e, em seguida, selecione **Azure Active Directory**.
-4. Selecione **Registros do aplicativo**e, em seguida, selecione **Adicionar**.
-5. Siga os prompts para criar um aplicativo cliente **Nativo**.
+4. Escolha **Registros de aplicativo** e **Novo registro**.
+5. Siga os prompts para criar um novo aplicativo cliente.
     * **Nome** é o nome do aplicativo e descreve o seu aplicativo aos usuários finais.
-    * O **URI de redirecionamento** é uma combinação de esquema e de cadeia de caracteres que o Azure AD usará para retornar respostas de tokens. Insira um valor específico para seu aplicativo e baseado nas informações de URI de redirecionamento anteriores.
+    * O **URI de redirecionamento** é uma combinação de esquema e de cadeia de caracteres que o Azure AD usará para retornar respostas de tokens. Insira um valor específico para seu aplicativo e baseado nas informações de URI de redirecionamento anteriores. Além disso, escolha **Cliente público (dispositivo móvel e desktop)** no menu suspenso.
 6. Depois de você concluir o registro, o Azure AD atribui uma ID do aplicativo exclusiva ao aplicativo. Você precisará desse valor nas próximas seções, portanto, copie-o da guia do aplicativo.
-7. Na página **Configurações**, selecione **Permissões necessárias > Adicionar > Microsoft Graph** e, em **Permissões delegadas**, adicione a permissão **Ler dados do diretório**. Essa permissão configurará o aplicativo para consultar a API do Graph do Azure AD para os usuários.
+7. Na página **Permissões de API**, escolha **Adicionar uma permissão**. Em **Selecionar uma API**, escolha ***Microsoft Graph***.
+8. Em **Permissões delegadas**, escolha a permissão **User.Read** e pressione **Adicionar** para salvar. Essa permissão configurará o aplicativo para consultar a API do Graph do Azure AD para os usuários.
 
 ## <a name="step-3-install-and-configure-adal"></a>Etapa 3: Instalar e configurar a ADAL
 

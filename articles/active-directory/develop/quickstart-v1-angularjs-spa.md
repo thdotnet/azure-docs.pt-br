@@ -3,8 +3,8 @@ title: Criar o aplicativo de página única AngularJS para conexão e saída com
 description: Saiba como criar um aplicativo de página única AngularJS que se integre ao Azure AD para conexão e que chame as APIs protegidas do Azure AD usando OAuth.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: f2991054-8146-4718-a5f7-59b892230ad7
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: javascript
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6596d1d8251bafd1ff013961555b20475e3a06d3
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 1a1fdbcd04504181a20f5245b6f2378be5b9d405
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59544933"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001203"
 ---
 # <a name="quickstart-build-an-angularjs-single-page-app-for-sign-in-and-sign-out-with-azure-active-directory"></a>Início Rápido: Criar o aplicativo de página única AngularJS para conexão e saída com o Azure Active Directory
 
@@ -47,7 +47,7 @@ Para criar o aplicativo em funcionamento completo, você precisará:
 3. Use o ADAL para páginas seguras no aplicativo de página única.
 
 > [!NOTE]
-> Caso precise habilitar credenciais para contas pessoais, além das contas corporativa e de estudante, use o *[ponto de extremidade da plataforma de identidade da Microsoft](azure-ad-endpoint-comparison.md)*. Para obter mais informações, confira [este tutorial do JavaScript SPA](tutorial-v2-javascript-spa.md), bem como [este artigo](active-directory-v2-limitations.md) que explica o *ponto de extremidade da plataforma de identidade da Microsoft*. 
+> Caso precise habilitar credenciais para contas pessoais, além das contas corporativa e de estudante, use o *[ponto de extremidade da plataforma de identidade da Microsoft](azure-ad-endpoint-comparison.md)* . Para obter mais informações, confira [este tutorial do JavaScript SPA](tutorial-v2-javascript-spa.md), bem como [este artigo](active-directory-v2-limitations.md) que explica o *ponto de extremidade da plataforma de identidade da Microsoft*. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -63,20 +63,15 @@ Para permitir que seu aplicativo autentique usuários e obtenha tokens, primeiro
 1. Entre no [Portal do Azure](https://portal.azure.com).
 1. Se você entrar em vários diretórios, precisará garantir que está exibindo o diretório correto. Para fazer isso, na barra superior, clique em sua conta. Sob o **diretório** lista, escolha o locatário do AD do Azure onde você deseja registrar seu aplicativo.
 1. Clique em **Todos os serviços** no painel esquerdo e, em seguida, selecione **Azure Active Directory**.
-1. Clique em **Registros do aplicativo** e, em seguida, selecione **Adicionar**.
-1. Siga os prompts e crie um novo aplicativo Web e/ou API Web:
-
-    * **Nome** descreve seu aplicativo para os usuários.
-    * A **URL de Entrada** é o local no qual o Azure Active Directory retornará tokens. O local padrão deste exemplo é `https://localhost:44326/`.
-
-1. Depois de concluir o registro, o Azure AD atribui uma identificação exclusiva do aplicativo ao seu aplicativo. Você precisará desse valor nas próximas seções, portanto, copie-o da guia do aplicativo.
-1. A adal.js usa o fluxo de OAuth implícito para se comunicar com o AD do Azure. Você deve habilitar o fluxo implícito para seu aplicativo:
-
-    1. Clique no aplicativo e escolha **Manifesto** para abrir o editor de manifesto embutido.
-    1. Localize a propriedade `oauth2AllowImplicitFlow`. Defina seu valor como `true`.
-    1. Clique em **Salvar** para salvar o manifesto.
-
-1. Conceda permissões em seu locatário para seu aplicativo. Vá para **Configurações > Permissões necessárias** e clique no botão **Conceder permissões** na barra superior.
+1. Clique em **Registros de aplicativo** e **Novo registro**.
+1. Quando a página **Registrar um aplicativo** aparecer, insira um nome para o seu aplicativo.
+1. Em **Tipos de conta com suporte**, selecione **Contas em qualquer diretório organizacional e contas pessoais da Microsoft**.
+1. Selecione a plataforma **Web** na seção **URI de Redirecionamento** e defina o valor como `https://localhost:44326/` (o local para o qual o Microsoft Azure AD retornará os tokens).
+1. Ao terminar, selecione **Registrar**. Na página **Visão geral** do aplicativo, anote o valor de **ID do aplicativo (cliente)** .
+1. A adal.js usa o fluxo de OAuth implícito para se comunicar com o AD do Azure. Você deve habilitar o fluxo implícito para seu aplicativo. No painel de navegação à esquerda do aplicativo registrado, selecione **Autenticação**.
+1. Em **Configurações avançadas**, sob **Concessão implícita**, marque as caixas de seleção **Tokens de ID** e **Tokens de Acesso**. Os tokens de ID e tokens de acesso são necessários, pois esse aplicativo precisa fazer logon dos usuários e chamar uma API.
+1. Clique em **Salvar**.
+1. Conceda permissões em seu locatário para seu aplicativo. Vá para as **Permissões de API** e selecione o botão **Conceder consentimento do administrador**, em **Conceder consentimento**.
 1. Clique em **Sim** para confirmar.
 
 ## <a name="step-2-install-adal-and-configure-the-single-page-app"></a>Etapa 2: Instalar a ADAL e configurar o aplicativo de página única

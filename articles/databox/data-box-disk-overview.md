@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: overview
-ms.date: 01/09/2019
+ms.date: 05/15/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand what Data Box Disk is and how it works so I can use it to import on-premises data into Azure.
-ms.openlocfilehash: 20b8d7a6a7d6da639481045d9462c484b820a4df
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 194f2b80e9cbf3a69fef6ce382e6755934f1d5bd
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64575836"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787450"
 ---
 # <a name="what-is-azure-data-box-disk"></a>O que é o Azure Data Box Disk?
 
@@ -89,22 +89,7 @@ Para saber mais, acesse [Segurança e proteção de dados do Azure Data Box Disk
 
 ## <a name="region-availability"></a>Disponibilidade de região
 
-Atualmente, o Data Box Disk pode transferir dados para as seguintes regiões do Azure:
-
-
-|Região do Azure  |Região do Azure  |
-|---------|---------|
-|Centro-Oeste dos EUA     |Canadá Central       |        
-|Oeste dos EUA 2     |Leste do Canadá         |     
-|Oeste dos EUA     | Europa Ocidental        |      
-|Centro-Sul dos Estados Unidos   |Norte da Europa     |         
-|Centro dos EUA     |Leste da Austrália|
-|Centro-Norte dos EUA  |Sudeste da Austrália   |
-|Leste dos EUA      |Austrália Central |
-|Leste dos EUA 2     |Austrália Central 2|
-|Leste do Japão     |Coreia Central |
-|Oeste do Japão     |Sul da Coreia |
-|Sudeste Asiático |
+Para saber mais sobre a disponibilidade de região, acesse [Produtos do Azure disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all).
 
 
 ## <a name="pricing"></a>Preços

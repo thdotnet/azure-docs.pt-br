@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: 60f677c994eb3a30f9dcfb4c341a242b46960c94
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: bb4c6f431be8194cc82cba67d6fa5d454f506c30
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64916600"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65602837"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-detect-text-language-using-go"></a>Início Rápido: Usar a API de Tradução de Texto para detectar o idioma de texto com Go
 
@@ -164,7 +164,7 @@ Se você quiser comparar seu código com o nosso, o exemplo completo está dispo
 
 ## <a name="sample-response"></a>Resposta de exemplo
 
-Localize a abreviação do país nesta [lista de idiomas](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
+Localize a abreviação do país/região nesta [lista de idiomas](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
 
 ```json
 [

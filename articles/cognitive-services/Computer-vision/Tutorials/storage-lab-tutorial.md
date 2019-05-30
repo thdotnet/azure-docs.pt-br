@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: tutorial
 ms.date: 04/17/2019
 ms.author: pafarley
-ms.openlocfilehash: a755a0bada0dbf6797465ea40ddbb30a84e3f289
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 75e52398386e7ef1b338d13a8cfe8f20c06abcc6
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60005971"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65541522"
 ---
 # <a name="tutorial-use-computer-vision-to-generate-image-metadata-in-azure-storage"></a>Tutorial: Use a Pesquisa Visual Computacional para gerar metadados de imagem no Armazenamento do Azure
 
@@ -40,17 +40,11 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 ## <a name="create-a-computer-vision-resource"></a>Criar um recurso da Pesquisa Visual Computacional
 
-Você precisará criar um recurso da Pesquisa Visual Computacional para sua conta do Azure; esse recurso gerencia seu acesso ao serviço de Pesquisa Visual Computacional do Azure.
+Você precisará criar um recurso da Pesquisa Visual Computacional para sua conta do Azure; esse recurso gerencia seu acesso ao serviço de Pesquisa Visual Computacional do Azure. 
 
-1. Entre no [portal do Azure](https://ms.portal.azure.com) e clique em **Criar um recurso**, seguido por **IA + Machine Learning** e **Pesquisa Visual Computacional**.
+1. Siga as instruções em [Criar um recurso de Serviços Cognitivos do Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#single-service-subscription) para criar um recurso de Pesquisa Visual Computacional.
 
-    ![Criando uma assinatura da API da Pesquisa Visual Computacional](../Images/new-vision-api.png)
-
-1. Na janela da caixa de diálogo, insira "vision-api-key" no campo **Nome** e selecione **F0** como o **Tipo de preço**. Selecione a mesma **Localização** selecionada ao configurar sua conta do Armazenamento do Azure. Em **Grupo de recursos**, selecione **Usar existente** e selecione o mesmo grupo de recursos também. Marque a caixa **Confirmo** e, em seguida, clique em **Criar**.
-
-    ![Assinando a API da Pesquisa Visual Computacional](../Images/create-vision-api.png)
-
-1. Retorne ao menu do grupo de recursos e clique na assinatura da API da Pesquisa Visual Computacional recém-criada. Copie a URL em **Ponto de extremidade** para algum lugar em que poderá recuperá-la com facilidade em pouco tempo. Em seguida, clique em **Mostrar chaves de acesso**.
+1. Depois vá ao menu do grupo de recursos e clique na assinatura da API da Pesquisa Visual Computacional recém-criada. Copie a URL em **Ponto de extremidade** para algum lugar em que poderá recuperá-la com facilidade em pouco tempo. Em seguida, clique em **Mostrar chaves de acesso**.
 
     ![Página do portal do Azure a URL de ponto de extremidade e o link de chaves de acesso delineados](../Images/copy-vision-endpoint.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Introdução ao Azure NetApp Files | Microsoft Docs
+title: O que é o Azure NetApp Files | Microsoft Docs
 description: Fornece uma visão geral dos Azure NetApp Files e as tarefas principais.
 services: azure-netapp-files
 documentationcenter: ''
@@ -14,22 +14,25 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 03/28/2018
 ms.author: b-juche
-ms.openlocfilehash: d7eb73c8fb4573084ba0a213282fdb71e14ff5fa
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 33a90f876f5ce35b52bb2d5625fa9d91a0a33dee
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59546733"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522984"
 ---
-# <a name="introduction-to-azure-netapp-files"></a>Introdução ao Azure NetApp Files
-O serviço Azure NetApp Files é um serviço de armazenamento medido de arquivos de alto desempenho de classe empresarial. O Azure NetApp Files dá suporte a qualquer tipo de carga de trabalho e é altamente disponível por padrão. Você pode selecionar os níveis de serviço e desempenho garantidos e configurar instantâneos por meio do serviço. 
+# <a name="what-is-azure-netapp-files"></a>O que é o Azure NetApp Files
+
+O serviço Azure NetApp Files é um serviço de armazenamento medido de arquivos de alto desempenho de classe empresarial. O Azure NetApp Files dá suporte a qualquer tipo de carga de trabalho e é altamente disponível por padrão. Você pode selecionar os níveis de serviço e o desempenho e configurar instantâneos por meio do serviço. 
+
+## <a name="learn-how-to-use-azure-netapp-files"></a>Saiba como usar o Azure NetApp Files
 
 A documentação de Azure NetApp Files fornece instruções sobre como criar e gerenciar volumes por meio de Azure NetApp Files. 
 
 > [!IMPORTANT] 
-> Todas as tarefas descritas nesta documentação exigem que você faça parte do programa de Visualização Pública e esteja na lista de permissões para acessar o Provedor de recursos do Azure Microsoft.NetApp. Para solicitar participar do programa de visualização pública, confira [Registro no Azure NetApp Files](azure-netapp-files-register.md). 
+> Todas as tarefas descritas nesta documentação exigem que você tenha acesso ao serviço Azure NetApp Files. Para solicitar acesso ao serviço, confira [Enviar uma solicitação de lista de espera para acessar o serviço](azure-netapp-files-register.md#waitlist).
 
-**Introdução** 
+## <a name="next-steps"></a>Próximas etapas
 
 * [Compreender a hierarquia de armazenamento do Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md) 
-* [Início Rápido: Configurar o Azure NetApp Files e criar um volume](azure-netapp-files-quickstart-set-up-account-create-volumes.md)
+* [Início Rápido: Configurar o Azure NetApp Files e criar um volume do NFS](azure-netapp-files-quickstart-set-up-account-create-volumes.md)

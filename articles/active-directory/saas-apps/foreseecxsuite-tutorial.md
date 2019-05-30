@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: af849fa6790dfdb57d8073b17f6d31a3f59a532d
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 19c2ccab6685f53ba714298f66bc8e8821b4aa02
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59999750"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65988037"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-foresee-cx-suite"></a>Tutorial: Integração do Azure Active Directory com o ForeSee CX Suite
 
@@ -55,7 +55,7 @@ Para configurar a integração do ForeSee CX Suite ao Microsoft Azure AD, é nec
 
 **Para adicionar o ForeSee CX Suite por meio da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -194,7 +194,7 @@ Nesta seção, você habilita Brenda Fernandes a usar o logon único do Azure co
 
 ### <a name="create-foresee-cx-suite-test-user"></a>Criar um usuário de teste do ForeSee CX Suite
 
-Nesta seção, você criará uma usuária chamada Brenda Fernandes no ForeSee CX Suite. Trabalhe com a [equipe de suporte do ForeSee CX Suite](mailto:support@foresee.com) para adicionar os usuários ou o domínio que precisa estar na lista de permissões da plataforma ForeSee CX Suite. Se o domínio for adicionado pela equipe, os usuários serão automaticamente provisionados à plataforma ForeSee CX Suite. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará uma usuária chamada Brenda Fernandes no ForeSee CX Suite. Trabalhe com a [equipe de suporte do ForeSee CX Suite](mailto:support@foresee.com)para adicionar os usuários ou o domínio que precisa estar na lista de permissões da plataforma ForeSee CX Suite. Se o domínio for adicionado pela equipe, os usuários serão automaticamente provisionados à plataforma ForeSee CX Suite. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 

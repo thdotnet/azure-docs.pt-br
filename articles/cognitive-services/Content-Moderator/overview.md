@@ -10,16 +10,16 @@ ms.subservice: content-moderator
 ms.topic: overview
 ms.date: 02/20/2019
 ms.author: pafarley
-ms.openlocfilehash: 440471acb6e122bf25ba21b0ab3b5a2f7d9b021d
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 7e9c12c7da701fb627c51373e57f870d3fc77ac5
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758140"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65551296"
 ---
 # <a name="what-is-azure-content-moderator"></a>O que é o Azure Content Moderator?
 
-A API do Azure Content Moderator é um serviço cognitivo que verifica conteúdo de textos, imagens e vídeos para verificar material que possa ser ofensivo, de risco ou, de alguma maneira, indesejável. Quando tal material é encontrado, o serviço aplica rótulos (sinalizadores) apropriados ao conteúdo. Seu aplicativo pode tratar de conteúdo sinalizado para cumprir as normas ou manter o ambiente desejado para os usuários. Confira a seção [APIs do Content Moderator](#content-moderator-apis) para saber mais sobre o que os vários sinalizadores de conteúdo indicam.
+A API do Azure Content Moderator é um serviço cognitivo que verifica conteúdo de textos, imagens e vídeos para verificar material que possa ser ofensivo, de risco ou, de alguma maneira, indesejável. Quando tal material é encontrado, o serviço aplica rótulos (sinalizadores) apropriados ao conteúdo. Seu aplicativo pode tratar de conteúdo sinalizado para cumprir as normas ou manter o ambiente desejado para os usuários. Confira a seção [APIs de Moderação](#moderation-apis) para saber mais sobre o que os vários sinalizadores de conteúdo indicam.
 
 ## <a name="where-it-is-used"></a>Em que local é usado
 
@@ -35,11 +35,13 @@ Estes são alguns cenários nos quais um desenvolvedor ou equipe de software usa
 
 O serviço Content Moderator consiste em várias APIs de serviço Web disponíveis por meio de chamadas REST e um SDK do .NET. Ele também inclui a ferramenta de análise humana, o que permite que revisores humanos ajudem o serviço e aprimorem ou ajustem sua função de moderação.
 
-![diagrama de bloco para o Content Moderator mostrando as APIs de Moderação, as APIs de Análise e a ferramenta de análise humana](images/content-moderator-block-diagram.png)
+## <a name="moderation-apis"></a>APIs de Moderação
 
-### <a name="content-moderator-apis"></a>APIs do Content Moderator
+O serviço Content Moderator inclui APIs de Moderação que verificam se o conteúdo do material que é potencialmente indesejável ou inapropriado.
 
-O serviço Content Moderator inclui APIs para os cenários a seguir.
+![diagrama de bloco para APIs de moderação do Content Moderator](images/content-moderator-mod-api.png)
+
+A tabela a seguir descreve os diferentes tipos de APIs de moderação.
 
 | Grupo de APIs | DESCRIÇÃO |
 | ------ | ----------- |
@@ -48,9 +50,17 @@ O serviço Content Moderator inclui APIs para os cenários a seguir.
 |[**Moderação de imagem**](image-moderation-api.md)| Verifica conteúdo adulto ou erótico em imagens, detecta textos em imagens com o recurso de OCR (reconhecimento óptico de caracteres) e detecta rostos.|
 |[**Listas de imagens personalizadas**](try-image-list-api.md)| Verifica imagens em relação a uma lista personalizada de imagens. Use listas de imagem personalizadas para filtrar instâncias de conteúdo recorrentes que você não deseja classificar novamente.|
 |[**Moderação de vídeo**](video-moderation-api.md)| Verifica conteúdo adulto ou erótico em vídeos e retorna os marcadores de tempo para esse conteúdo.|
-|[**Examinar APIs**](try-review-api-job.md)| Use as operações [Trabalhos](try-review-api-job.md), [Análises](try-review-api-review.md) e [Fluxo de Trabalho](try-review-api-workflow.md) para criar e automatizar fluxos de trabalho com envolvimento humano (human-in-the-loop) dentro da ferramenta de análise humana. A API de Fluxo de Trabalho ainda não está disponível no SDK do .NET.|
 
-### <a name="review-tool"></a>Ferramenta de análise
+## <a name="review-apis"></a>Analisar APIs
+
+As APIs de Revisão permitem integrar seu pipeline de moderação com os revisores humanos. Use as operações [Trabalhos](review-api.md#jobs), [Revisões](review-api.md#reviews) e [Fluxo de Trabalho](review-api.md#workflows) para criar e automatizar fluxos de trabalho com envolvimento humano (human-in-the-loop) dentro da [Ferramenta de Revisão](#the-review-tool) (abaixo).
+
+> [!NOTE]
+> A API de Fluxo de Trabalho ainda não está disponível no SDK do .NET, mas pode ser usada com o ponto de extremidade REST.
+
+![diagrama de bloco para APIs de revisão do Content Moderator](images/content-moderator-rev-api.png)
+
+## <a name="the-review-tool"></a>A ferramenta de análise
 
 O serviço do Content Moderator também inclui a [ferramenta Examinar](Review-Tool-User-Guide/human-in-the-loop.md) baseada na Web, que hospeda o conteúdo de revisões para moderadores humanos processarem. A entrada humana não treina o serviço, mas o trabalho combinado do serviço e das equipes de análise humana permite que os desenvolvedores alcancem o equilíbrio entre a precisão e a eficiência. A ferramenta Examinar também fornece um front-end amigável para uma variedade de recursos do Content Moderator.
 

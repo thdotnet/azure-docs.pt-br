@@ -7,12 +7,12 @@ ms.date: 05/06/2019
 ms.topic: overview
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: 45d5cf7c4235d10e136cc96364d52aa4319bbf79
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 9d3385b688208065e5854b6358819b5afad8fe65
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65137772"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66162072"
 ---
 # <a name="overview-of-the-azure-resource-graph-service"></a>Visão geral do serviço Azure Resource Graph
 
@@ -63,9 +63,15 @@ Para usar o Resource Graph, você deve ter os direitos apropriados no RBAC ([con
 
 ## <a name="throttling"></a>Limitação
 
-Como um serviço gratuito, as consultas ao Resource Graph são limitadas para fornecer a melhor experiência e tempo de resposta para todos os clientes. Caso sua organização deseje usar a API do Resource Graph para consultas frequentes e em grande escala, use o portal "Comentários" da página do Resource Graph. Forneça seu caso comercial e marque a caixa de seleção 'A Microsoft pode enviar um email para você sobre seus comentários' para que equipe entre em contato com você.
+Como um serviço gratuito, as consultas ao Resource Graph são limitadas para fornecer a melhor experiência e tempo de resposta para todos os clientes. Caso sua organização queira usar a API do Resource Graph para consultas frequentes e em grande escala, use o portal "Comentários" da [página do portal do Resource Graph](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/ResourceGraph).
+Forneça seu caso comercial e marque a caixa de seleção “A Microsoft pode enviar um email para você sobre seus comentários” para que a equipe entre em contato com você.
 
-O Resource Graph é limitado a nível de locatário. O serviço substitui e define o cabeçalho de resposta `x-ms-ratelimit-remaining-tenant-reads` para indicar as consultas restantes disponíveis por usuário no locatário. O Resource Graph redefine a cota a cada 5 segundos, em vez de a cada hora. Para saber mais, confira [Limitar solicitação do Resource Manager](../../azure-resource-manager/resource-manager-request-limits.md).
+O Resource Graph limita as consultas a nível do locatário. A resposta do serviço contém os cabeçalhos HTTP a seguir:
+
+- `x-ms-user-quota-remaining` (int): A cota de recursos que resta para o usuário. Esse valor é mapeado para a contagem de consultas.
+- `x-ms-user-quota-resets-after` (hh:mm:ss): A duração de tempo até que o consumo da cota do usuário seja redefinido
+
+Para saber mais, confira [Limitar solicitação do Resource Manager](../../azure-resource-manager/resource-manager-request-limits.md).
 
 ## <a name="running-your-first-query"></a>Realizando sua primeira consulta
 

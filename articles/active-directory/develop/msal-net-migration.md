@@ -4,7 +4,7 @@ description: Saiba mais sobre as diferenças entre a Biblioteca de Autenticaçã
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2576121bfc945b90ce8ec0260ea30ec110e14dd8
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: f9be13ac22e6eda32668d635032ebcccf417b6c7
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138838"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785213"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Migrando aplicativos para a MSAL.NET
 
@@ -192,7 +192,7 @@ Isso ocorre porque a API do Gerenciador de Recursos espera uma barra em sua decl
 A lógica usada pelo Azure AD é a seguinte:
 - Ponto de extremidade da ADAL (v1.0) com um token de acesso v 1.0 (o único possível), aud = recurso
 - Para a MSAL (ponto de extremidade v2.0) solicitando um token de acesso para um recurso que aceita tokens v2.0, aud=resource.AppId
-- Para a MSAL (ponto de extremidade v2.0) solicitando um token de acesso para um recurso que aceita um token de acesso v 1.0 (que é o caso acima), o Azure Active Directory analisa o público-alvo desejado do escopo solicitado considerando tudo antes da última barra e usa como o identificador de recurso. Portanto, se https://database.windows.net espera um público de "https://database.windows.net/", você precisará solicitar um escopo de https://database.windows.net//.default. Consulte também problema número[747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): Uma barra à direita do recurso da url foi omitida, o que causou a falha de autenticação do sql número 747
+- Para a MSAL (ponto de extremidade v2.0) solicitando um token de acesso para um recurso que aceita um token de acesso v 1.0 (que é o caso acima), o Azure Active Directory analisa o público-alvo desejado do escopo solicitado considerando tudo antes da última barra e usa como o identificador de recurso. Portanto, se https:\//database.windows.net espera um público de "https://database.windows.net/", você precisará solicitar um escopo de https:\//database.windows.net//.default. Consulte também problema número[747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): Uma barra à direita do recurso da url foi omitida, o que causou a falha de autenticação do sql número 747
 
 
 ### <a name="scopes-to-request-access-to-all-the-permissions-of-a-v10-application"></a>Os escopos solicitam acesso a permissões específicas de v1.0

@@ -8,14 +8,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 03/04/2019
+ms.date: 05/22/2019
 ms.author: jgao
-ms.openlocfilehash: b1b50858286e3a174de254ae16c64b04abc00936
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 802c0409fe3ac88f73c383958d2337be09ef7992
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64715995"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66016471"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-resource-manager-template"></a>Início Rápido: Definir e recuperar um segredo do Azure Key Vault usando o modelo do Resource Manager
 
@@ -61,10 +61,10 @@ O modelo usado neste início rápido é proveniente dos [modelos de Início Ráp
     * **Assinatura**: selecione uma assinatura do Azure.
     * **Grupo de recursos**: selecione **Criar novo**, insira um nome exclusivo para o grupo de recursos e, em seguida, clique em **OK**. 
     * **Local**: selecione um local.  Por exemplo, **Centro dos EUA**.
-    * **Nome do cofre de chaves**: insira um nome exclusivo para o cofre de chaves.  
-    * **Id do locatário**: a função de modelo recupera automaticamente sua ID de locatário.  Não altere o valor padrão
+    * **Nome do Key Vault**: insira um nome para o cofre de chaves que deve ser exclusivo globalmente dentro do namespace.vault.azure.net.  
+    * **Id do locatário**: a função de modelo recupera automaticamente sua ID de locatário.  Não altere o valor padrão.
     * **ID de Usuário do AD**: insira sua ID de objeto de usuário do Azure AD que recuperou de [Pré-requisitos](#prerequisites).
-    * **Nome do segredo**: insira um nome para o segredo armazenado no cofre de chaves.  Por exemplo, **adminpassword**
+    * **Nome do segredo**: insira um nome para o segredo armazenado no cofre de chaves.  Por exemplo, **adminpassword**.
     * **Valor do segredo**: insira o valor do segredo.  Para armazenar uma senha, é recomendável usar a senha gerada que você criou em Pré-requisitos.
     * **Concordo com os termos e condições declarados acima**: selecione.
 3. Selecione **Comprar**.

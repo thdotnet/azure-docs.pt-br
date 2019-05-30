@@ -3,19 +3,19 @@ title: 'Início Rápido: Verificar a ortografia com o SDK de Verificação Ortog
 titlesuffix: Azure Cognitive Services
 description: Comece a usar a API REST de Verificação Ortográfica do Bing para verificar a ortografia e a gramática.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
 ms.date: 02/20/2019
-ms.author: v-gedod
-ms.openlocfilehash: 3487656f72f315aa15ce003a8dfd279c45d1f992
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.author: aahi
+ms.openlocfilehash: adbb60c7ddbc72b8b7e5cb31c6909117ce3a10cb
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58105736"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65798370"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-sdk-for-c"></a>Início Rápido: Verificar a ortografia com o SDK de Verificação Ortográfica do Bing para C#
 
@@ -23,10 +23,10 @@ Use este Início Rápido para iniciar a verificação ortográfica com o SDK de 
 
 ## <a name="application-dependencies"></a>Dependências de aplicativo
 
-* Qualquer edição do [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/).
+* Qualquer edição do [Visual Studio 2017 ou posterior](https://visualstudio.microsoft.com/downloads/).
 * O [Pacote NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.SpellCheck) da Verificação Ortográfica do Bing
 
-Para adicionar o SDK da Verificação Ortográfica do Bing ao projeto, clique em `Manage NuGet Packages` no Gerenciador de Soluções no Visual Studio. Adicione o pacote `Microsoft.Azure.CognitiveServices.Language.SpellCheck`. O pacote também instala as seguintes dependências:
+Para adicionar o SDK de Verificação Ortográfica do Bing ao seu projeto, selecione **Gerenciar Pacotes do NuGet** no **Gerenciador de Soluções** do Visual Studio. Adicione o pacote `Microsoft.Azure.CognitiveServices.Language.SpellCheck`. O pacote também instala as seguintes dependências:
 
 * Microsoft.Rest.ClientRuntime
 * Microsoft.Rest.ClientRuntime.Azure

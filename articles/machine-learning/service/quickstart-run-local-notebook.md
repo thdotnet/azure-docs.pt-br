@@ -10,18 +10,18 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 03/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3afea20fe02eafbf14b5162eef3a198d27140b9e
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 53e495a3c2d82738e1008ead84a4124e44435c9a
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549128"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864372"
 ---
 # <a name="quickstart-use-your-own-notebook-server-to-get-started-with-azure-machine-learning"></a>Início Rápido: Usar seu próprio servidor do notebook para começar a usar o Azure Machine Learning
 
-Use seu próprio servidor de notebook para executar o código que registra os valores no [workspace do Serviço do Azure Machine Learning](concept-azure-machine-learning-architecture.md). O workspace é o bloco fundamental na nuvem usado para experimentar, treinar e implantar modelos de machine learning com o Machine Learning.
+Use seu próprio ambiente Python e o Servidor do Jupyter Notebook para introdução ao serviço do Azure Machine Learning.  Para ver um início rápido sem nenhuma instalação de SDK, confira [Início Rápido: Usar um servidor do notebook baseado em nuvem para começar a usar o Azure Machine Learning](quickstart-run-cloud-notebook.md).
 
-Este início rápido usa seu próprio ambiente do Python e o Servidor do Jupyter Notebook. Para ver um início rápido sem nenhuma instalação de SDK, confira [Início Rápido: Usar um servidor do notebook baseado em nuvem para começar a usar o Azure Machine Learning](quickstart-run-cloud-notebook.md) 
+Este início rápido mostra como você pode usar o [espaço de trabalho de serviço do Azure Machine Learning](concept-azure-machine-learning-architecture.md) para acompanhar seus experimentos de aprendizado de máquina. Você executará o código Python que registra os valores no espaço de trabalho.
 
 Exiba uma versão em vídeo deste início rápido:
 
@@ -33,7 +33,7 @@ Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de co
 
 * Um servidor de notebook do Python 3.6 com o SDK do Azure Machine Learning instalado
 * Um workspace de serviço do Azure Machine Learning
-* Um arquivo de configuração do workspace (**.azureml/config.json**).
+* Um arquivo de configuração do workspace ( **.azureml/config.json**).
 
 Obtenha todos esses pré-requisitos em [Criar um workspace de serviço do Azure Machine Learning](setup-create-workspace.md#portal).
 

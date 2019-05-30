@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: f395ae51d51e56668482ad6c8d446bdd31050fea
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 98e4d1870c57c9718e2d4293157b21ead8ea44e1
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59280156"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65987481"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-opsgenie"></a>Tutorial: Integração do Azure Active Directory ao OpsGenie
 
@@ -53,7 +53,7 @@ Para configurar a integração do OpsGenie ao Azure AD, você precisa adicionar 
 
 **Para adicionar o OpsGenie a partir da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -71,16 +71,16 @@ Para configurar a integração do OpsGenie ao Azure AD, você precisa adicionar 
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-Nesta seção, você configurará e testará o logon único do Azure AD com o OpsGenie, com base em um usuário de teste chamado **Brenda Fernandes**.
+Nesta seção, você configurará e testará o logon único do Azure AD com o OpsGenie com base em um usuário de teste chamado **B. Fernandes**.
 Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do OpsGenie.
 
 Para configurar e testar o logon único do Azure AD com o OpsGenie, você precisa concluir os seguintes blocos de construção:
 
 1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** – para habilitar seus usuários a usar esse recurso.
 2. **[Configurar o logon único do OpsGenie](#configure-opsgenie-single-sign-on)** – para definir as configurações de logon único no lado do aplicativo.
-3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
-4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
-5. **[Criar um usuário de teste do OpsGenie](#create-opsgenie-test-user)** – para ter um equivalente de Brenda Fernandes no OpsGenie que esteja vinculado à representação desse usuário no Azure AD.
+3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com B. Fernandes.
+4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que B. Fernandes use o logon único do Azure AD.
+5. **[Criar usuário de teste do OpsGenie](#create-opsgenie-test-user)** – para ter um equivalente de B. Fernandes no OpsGenie que esteja vinculado à representação desse usuário no Azure AD.
 6. **[Teste o logon único](#test-single-sign-on)** – para verificar se a configuração funciona.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
@@ -143,13 +143,13 @@ Para configurar o logon único do Azure AD com o OpsGenie, execute as seguintes 
     
      a. Na caixa de texto **Ponto de Extremidade do SAML 2.0**, cole o valor da **URL de Logon**copiado do portal do Azure.
     
-    b. Na caixa de texto **URL de Metadados:**, cole o valor da **URL de metadados de federação do aplicativo** que você copiou do Portal do Azure.
+    b. Na caixa de texto **URL de Metadados:** , cole o valor da **URL de metadados de federação do aplicativo** que você copiou do Portal do Azure.
     
     c. Clique em **Salvar Alterações**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 
-O objetivo desta seção é criar um usuário de teste no Portal do Azure chamado Brenda Fernandes.
+O objetivo desta seção é criar um usuário de teste no portal do Azure chamado B. Fernandes.
 
 1. No Portal do Azure, no painel esquerdo, selecione **Azure Active Directory**, selecione **Usuários** e, em seguida, **Todos os usuários**.
 
@@ -163,10 +163,10 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     ![A caixa de diálogo Usuário](common/user-properties.png)
 
-    a. No campo **Nome**, insira **BrendaFernandes**.
+     a. No campo **Nome**, insira **B. Fernandes**.
   
-    b. No campo **Nome de usuário**, digite **brittasimon@yourcompanydomain.extension**  
-    Por exemplo, BrittaSimon@contoso.com
+    b. No campo **Nome de usuário**, digite **bsimon@yourcompanydomain.extension**  
+    Por exemplo, BSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
 
@@ -174,7 +174,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-Nesta seção, você concederá a Brenda Fernandes acesso ao OpsGenie para que ela fique habilitada a usar o logon único do Azure.
+Nesta seção, você permitirá que B. Fernandes use o logon único do Azure concedendo-lhe acesso ao OpsGenie.
 
 1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **OpsGenie**.
 
@@ -192,7 +192,7 @@ Nesta seção, você concederá a Brenda Fernandes acesso ao OpsGenie para que e
 
     ![O painel Adicionar Atribuição](common/add-assign-user.png)
 
-5. Na caixa de diálogo **Usuários e grupos**, escolha **Brenda Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
+5. Na caixa de diálogo **Usuários e grupos**, escolha **B. Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
 
 6. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar função**, escolha a função de usuário apropriada na lista e clique no botão **Selecionar** na parte inferior da tela.
 
@@ -200,7 +200,7 @@ Nesta seção, você concederá a Brenda Fernandes acesso ao OpsGenie para que e
 
 ### <a name="create-opsgenie-test-user"></a>Criar um usuário de teste do OpsGenie
 
-O objetivo desta seção é criar um usuário chamado Brenda Fernandes no OpsGenie. 
+O objetivo desta seção é criar um usuário chamado B. Fernandes no OpsGenie. 
 
 1. Em uma janela de navegador da Web, faça logon em seu locatário do OpsGenie como administrador.
 
@@ -214,14 +214,14 @@ O objetivo desta seção é criar um usuário chamado Brenda Fernandes no OpsGen
    
     ![Configurações do OpsGenie](./media/opsgenie-tutorial/tutorial_opsgenie_11.png)
    
-     a. Na caixa de texto **Email**, digite o endereço de email de Brenda Fernandes endereçado no Azure Active Directory.
+     a. Na caixa de texto **Email**, digite o endereço de email de B. Fernandes endereçado no Azure Active Directory.
    
-    b. Na caixa de texto **Nome Completo**, digite **Brenda Fernandes**.
+    b. Na caixa de texto **Nome Completo**, digite **B. Fernandes**.
    
     c. Clique em **Save** (Salvar). 
 
 >[!NOTE]
->Brenda receberá um email com instruções para configurar o perfil dela.
+>B. Brenda receberá um email com instruções para configurar o perfil dela.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 

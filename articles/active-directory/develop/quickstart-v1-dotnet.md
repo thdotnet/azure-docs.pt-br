@@ -3,8 +3,8 @@ title: Conectar usuários e chamar a API do Microsoft Graph em um aplicativo da 
 description: Saiba como criar um aplicativo da área de trabalho .NET do Windows que se integre ao Azure AD para entrada e que chame as APIs protegidas do Azure AD usando o OAuth 2.0.
 services: active-directory
 documentationcenter: .net
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: ed33574f-6fa3-402c-b030-fae76fba84e1
 ms.service: active-directory
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 09/24/2018
-ms.author: celested
+ms.date: 05/21/2019
+ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b55f7e615f2c2edb604d5b9433db6cc48d9f36f
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: a2d9639c21e201db1df5145caf1345d4f0879af6
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58223386"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66121953"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-a-net-desktop-wpf-app"></a>Início Rápido: Conectar usuários e chamar a API do Microsoft Graph de um aplicativo da área de trabalho .NET (WPF)
 
@@ -57,13 +57,15 @@ Para permitir que seu aplicativo obtenha tokens, registre-o no locatário do Azu
 1. Entre no [Portal do Azure](https://portal.azure.com).
 2. Na barra superior, selecione sua conta e, na lista **Diretório**, escolha o locatário do Active Directory em que você deseja registrar seu aplicativo.
 3. Selecione **Todos os serviços** no navegador esquerdo e escolha **Azure Active Directory**.
-4. Em **Registros de aplicativo** escolha **Adicionar**.
-5. Siga os prompts e crie um aplicativo cliente **nativo**.
-    * O **Nome** do aplicativo descreverá seu aplicativo para os usuários finais
-    * O **URI de redirecionamento** é uma combinação de esquema e de cadeia de caracteres que o AD do Azure usará para retornar respostas de tokens. Insira um valor específico para seu aplicativo, por exemplo, `http://DirectorySearcher`.
+4. Em **Registros de aplicativo**, escolha **Novo registro**.
+5. Siga os prompts para criar um novo aplicativo cliente.
+    * **Nome** é o nome do aplicativo e descreve o seu aplicativo aos usuários finais.
+    * Em **Tipos de conta com suporte**, selecione **Contas em qualquer diretório organizacional e contas pessoais da Microsoft**.
+    * O **URI de redirecionamento** é uma combinação de esquema e de cadeia de caracteres que o Azure AD usará para retornar respostas de tokens. Insira um valor específico para seu aplicativo (por exemplo, `http://DirectorySearcher`) e baseado nas informações de URI de redirecionamento anteriores. Além disso, escolha **Cliente público (dispositivo móvel e desktop)** no menu suspenso. 
 
 6. Depois de concluir o registro, o AAD atribuirá a seu aplicativo uma ID do Aplicativo única. Você precisará desse valor nas próximas seções, então copie-o da página do aplicativo.
-7. Na página **Configurações**, escolha **Permissões necessárias** e, em seguida, **Adicionar**. Escolha o **Microsoft Graph** como a API e adicione a permissão **Ler Dados do Diretório** em **Permissões Delegadas**. A definição dessa permissão permite que seu aplicativo consulte usuários na API do Graph.
+7. Na página **Permissões de API**, escolha **Adicionar uma permissão**. Em **Selecionar uma API**, escolha ***Microsoft Graph***.
+8. Em **Permissões delegadas**, escolha a permissão **User.Read** e pressione **Adicionar** para salvar. Essa permissão configurará o aplicativo para consultar a API do Graph do Azure AD para os usuários.
 
 ## <a name="step-2-install-and-configure-adal"></a>Etapa 2: Instalar e configurar a ADAL
 

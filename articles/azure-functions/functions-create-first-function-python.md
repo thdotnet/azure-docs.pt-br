@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: jeconnoc
-ms.openlocfilehash: 7e2b3424c3d8edc931054dea062280ea7789dc44
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 88e8d543e8bc3c3ae07133ec333b33c4486c2684
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65143067"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864506"
 ---
 # <a name="create-an-http-triggered-function-in-azure"></a>Criar uma função disparada por HTTP no Azure
 
@@ -108,7 +108,7 @@ Uma subpasta chamada _HttpTrigger_ será criada, que contém os seguintes arquiv
 
   Cada associação exige uma direção, um tipo e um nome exclusivo. O gatilho HTTP tem uma associação de entrada do tipo [`httpTrigger`](functions-bindings-http-webhook.md#trigger) e uma associação de saída do tipo [`http`](functions-bindings-http-webhook.md#output).
 
-* **__init__.py**: arquivo de script que é a função disparada por HTTP. Examine esse script e veja que ele contém um `main()` padrão. Os dados HTTP do gatilho são passados para essa função usando o parâmetro de associação nomeada `req`. Definido em function.json, `req` é uma instância da [classe azure.functions.HttpRequest](/python/api/azure-functions/azure.functions.httprequest). 
+* **\_\_init\_\_.py**: arquivo de script que é a função disparada por HTTP. Examine esse script e veja que ele contém um `main()` padrão. Os dados HTTP do gatilho são passados para essa função usando o parâmetro de associação nomeada `req`. Definido em function.json, `req` é uma instância da [classe azure.functions.HttpRequest](/python/api/azure-functions/azure.functions.httprequest). 
 
     O objeto de retorno, definido como `$return` em function.json, é uma instância da [classe azure.functions.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse). Para saber mais, confira [Gatilhos e associações HTTP do Azure Functions](functions-bindings-http-webhook.md).
 

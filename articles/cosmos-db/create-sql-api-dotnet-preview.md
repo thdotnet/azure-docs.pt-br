@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 12/01/2018
 ms.author: dech
-ms.openlocfilehash: 1589c938e635ccff02f94a176b7fc886dbccb779
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 51494acaa393493e567e0fcbb359756bdab21503
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57455761"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65860902"
 ---
 # <a name="quickstart-build-an-aspnet-web-app-using-azure-cosmos-db-sql-api-account"></a>Início Rápido: Criar um aplicativo Web do ASP.NET usando a conta de API de SQL do Azure Cosmos DB
 
@@ -37,7 +37,7 @@ Este guia de início rápido usa a versão 3.0 ou superior do SDK do .NET do Azu
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Se você ainda não tem o Visual 2017 Studio instalado, poderá baixar e usar o **Visual Studio 2017 Community Edition** [gratuito](https://www.visualstudio.com/downloads/). Verifique se você habilitou a carga de trabalho de **desenvolvimento do Azure** durante a instalação do Visual Studio.
+Se ainda não tiver o Visual Studio 2019 instalado, baixe e use o **Visual Studio 2019 Community Edition** [gratuito](https://www.visualstudio.com/downloads/). Verifique se você habilitou a carga de trabalho de **desenvolvimento do Azure** durante a instalação do Visual Studio.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] 
 [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]  
@@ -120,7 +120,7 @@ Agora, volte ao portal do Azure para obter informações sobre a cadeia de conex
 
     ![Exibir e copiar uma chave de acesso no Portal do Azure, folha Chaves](./media/create-sql-api-dotnet/keys.png)
 
-2. No Visual Studio 2017, abra o arquivo **web.config**. 
+2. No Visual Studio, abra o arquivo **web.config**. 
 
 3. Copie o valor do URI do portal (usando o botão de cópia) e transforme-o no valor da chave do ``endpoint`` em web.config. 
 

@@ -223,6 +223,14 @@
               href: virtual-machine-scale-sets-manage-cli.md
             - name: Usar PowerShell do Azure
               href: virtual-machine-scale-sets-manage-powershell.md
+        - name: Modificar um conjunto de dimensionamento
+          href: virtual-machine-scale-sets-upgrade-scale-set.md
+        - name: Rede para conjuntos de dimensionamento
+          href: virtual-machine-scale-sets-networking.md
+        - name: Atualizações automáticas do SO
+          href: virtual-machine-scale-sets-automatic-upgrade.md
+        - name: Proteção da instância (versão prévia)
+          href: virtual-machine-scale-sets-instance-protection.md
         - name: Galerias de imagens compartilhadas
           items:
             - name: Visão geral
@@ -237,14 +245,8 @@
               href: troubleshooting-shared-images.md
         - name: Colocação em escala vertical em um conjunto de dimensionamento
           href: virtual-machine-scale-sets-vertical-scale-reprovision.md
-        - name: Atualizações automáticas do SO
-          href: virtual-machine-scale-sets-automatic-upgrade.md
-        - name: Modificar um conjunto de dimensionamento
-          href: virtual-machine-scale-sets-upgrade-scale-set.md
         - name: Usar DSC e conjuntos de dimensionamento
           href: virtual-machine-scale-sets-dsc.md
-        - name: Rede para conjuntos de dimensionamento
-          href: virtual-machine-scale-sets-networking.md
         - name: Converter um modelo em discos gerenciados
           href: virtual-machine-scale-sets-convert-template-to-md.md
         - name: Manutenção planejada

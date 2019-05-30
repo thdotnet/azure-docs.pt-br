@@ -65,7 +65,7 @@
           href: batch-aad-auth.md
         - name: Azure AD com o Gerenciamento de Lote
           href: batch-aad-auth-management.md
-    - name: Criar pacotes de aplicativos
+    - name: Como usar pacotes de aplicativos
       href: batch-application-packages.md
     - name: Criar e gerenciar pools
       items:

@@ -3,20 +3,20 @@ title: 'Início Rápido: executar uma pesquisa de notícias – SDK de Pesquisa 
 titleSuffix: Azure Cognitive Services
 description: Use este Início Rápido para pesquisar notícias usando o SDK de Pesquisa de Notícias do Bing para C# e processar a resposta.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
 ms.date: 01/10/2019
-ms.author: v-gedod
+ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: fe9010215e5b6c4c9ece2372e3ce87bcf99b150c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 9e0a4da2662b9d4b4b775631705e7b4fcc1eecea
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59262883"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65798666"
 ---
 # <a name="quickstart-perform-a-news-search-with-the-bing-news-search-sdk-for-c"></a>Início Rápido: executar uma pesquisa de notícias com o SDK de Pesquisa de Notícias do Bing para C#
 
@@ -24,7 +24,7 @@ Use este início rápido para começar a pesquisar notícias com o SDK de Pesqui
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Qualquer edição do [Visual Studio 2017](https://www.visualstudio.com/downloads/).
+* Qualquer edição do [Visual Studio 2017 ou posterior](https://www.visualstudio.com/downloads/).
 * A estrutura [Json.NET](https://www.newtonsoft.com/json), disponível como um pacote do NuGet.
 * Se você estiver usando Linux/MacOS, este aplicativo poderá ser executado usando [Mono](https://www.mono-project.com/).
 
@@ -41,7 +41,7 @@ Veja também [Cognitive Services Pricing - API de Pesquisa do Bing](https://azur
 
 ## <a name="create-and-initialize-a-project"></a>Criar e inicializar um projeto
 
-1. crie uma solução de console C# no Visual Studio. Em seguida, adicione os itens a seguir ao arquivo de código principal.
+1. Crie uma solução de console C# no Visual Studio. Em seguida, adicione os itens a seguir ao arquivo de código principal.
     
     ```csharp
     using System;

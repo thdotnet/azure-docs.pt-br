@@ -9,12 +9,12 @@ ms.topic: quickstart
 author: sdgilley
 ms.author: sgilley
 ms.date: 05/02/2019
-ms.openlocfilehash: d14ef4a59e65ba432b5d04d9f531e4ba639deb8a
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.openlocfilehash: 0c492424e67853f7cb4a017fb4215d38a555a8a4
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65440941"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545079"
 ---
 # <a name="quickstart-prepare-and-visualize-data-without-writing-code-in-azure-machine-learning"></a>Início Rápido: Preparar e visualizar dados sem escrever código no Azure Machine Learning
 
@@ -66,7 +66,7 @@ A ferramenta de interface visual fornece um lugar visual e interativo para criar
 
 ## <a name="add-data"></a>Adicionar dados
 
-A primeira coisa de que você precisa para o aprendizado de máquina são os dados. Há vários conjuntos de dados de exemplo incluídos nessa interface que você pode usar, ou é possível importar dados de muitas fontes. Neste exemplo, você usará o conjunto de dados de exemplo **Dados de preço de automóvel (brutos)**. 
+A primeira coisa de que você precisa para o aprendizado de máquina são os dados. Há vários conjuntos de dados de exemplo incluídos nessa interface que você pode usar, ou é possível importar dados de muitas fontes. Neste exemplo, você usará o conjunto de dados de exemplo **Dados de preço de automóvel (brutos)** . 
 
 1. À esquerda da tela do experimento está uma paleta de conjuntos de dados e módulos. Selecione **Conjuntos de Dados Salvos**; em seguida, selecione **Exemplos** para exibir os conjuntos de dados de exemplo disponíveis.
 
@@ -99,13 +99,13 @@ Selecione com quais colunas de dados você deseja trabalhar.  Para começar, con
    
 1. Selecione o módulo **Selecionar colunas no conjunto de dados**.
 
-1. No painel **Propriedades** à direita da tela, selecione **Iniciar seletor de coluna**.
+1. No painel **Propriedades** à direita da tela, selecione **Editar colunas**.
 
     Na caixa de diálogo **Selecionar colunas**, selecione **TODAS AS COLUNAS** e inclua **todos os recursos**. A caixa de diálogo deve ter esta aparência:
 
      ![column-selector](./media/ui-quickstart-run-experiment/select-all.png)
 
-1. No canto inferior direito, selecione o botão de marca de verificação (OK) para fechar o seletor de coluna.
+1. No canto inferior direito, selecione **Ok** para fechar o seletor de coluna.
 
 ## <a name="run-the-experiment"></a>Execute o experimento
 
@@ -146,13 +146,13 @@ Primeiro, remova a coluna **normalized-losses** completamente.
 
 1. Selecione o módulo **Selecionar colunas no conjunto de dados**.
 
-1. No painel **Propriedades** à direita da tela, selecione **Iniciar seletor de coluna**.
+1. No painel **Propriedades** à direita da tela, selecione **Editar colunas**.
 
     * Deixe **Com regras** e **TODAS AS COLUNAS** selecionado.
 
     * Nos menus suspensos, selecione **Excluir** e **nomes da coluna** e clique dentro da caixa de texto. Digite **normalized-losses**.
 
-    * No canto inferior direito, selecione o botão de marca de verificação (OK) para fechar o seletor de coluna.
+    * No canto inferior direito, selecione **Ok** para fechar o seletor de coluna.
 
     ![Excluir uma coluna](./media/ui-quickstart-run-experiment/exclude-column.png)
         

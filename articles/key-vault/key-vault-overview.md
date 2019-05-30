@@ -10,12 +10,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 01/07/2019
 ms.author: barclayn
-ms.openlocfilehash: 4169a288ba85a7a7d83f77a8de8f6a4ef9bf0eac
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 456f828f09a710009d30e1c0a669cde658318ae0
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64700416"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789361"
 ---
 # <a name="what-is-azure-key-vault"></a>O que é o Cofre da Chave do Azure?
 
@@ -42,7 +42,7 @@ O acesso a um cofre de chaves requer a devida autenticação e autorização ant
 
 A autenticação é feita pelo Azure Active Directory. A autorização pode ser feita por meio de RBAC (controle de acesso baseado em função) ou de política de acesso do Key Vault. O RBAC é usado quando é necessário lidar com o gerenciamento dos cofres e a política de acesso do cofre de chaves é usada na tentativa de acessar dados armazenados em um cofre.
 
-Os Azure Key Vaults podem ser qualquer software ou hardware protegido por HSM. Para situações que exijam garantia extra, você pode importar ou gerar chaves em HSMs (módulos de segurança de hardware) que nunca deixam os limites do HSM. A Microsoft usa módulos de segurança de hardware Thales. Você pode usar as ferramentas Thales para mover uma chave de seu HSM para o Azure Key Vault.
+Os Azure Key Vaults podem ser qualquer software ou hardware protegido por HSM. Para situações que exijam garantia extra, você pode importar ou gerar chaves em HSMs (módulos de segurança de hardware) que nunca deixam os limites do HSM. A Microsoft usa módulos de segurança de hardware nCipher. Você pode usar as ferramentas nCipher para mover uma chave de seu HSM para o Azure Key Vault.
 
 Por fim, o Azure Key Vault foi projetado para que a Microsoft não veja nem extraia seus dados.
 

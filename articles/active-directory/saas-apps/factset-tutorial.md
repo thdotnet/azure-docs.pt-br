@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ad0c1ac2ce39fd919cb82ce2bdb0841edf9c777
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e9fa951e50a38b8bc63cc4e26ef54c013531bd7d
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57855615"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65898891"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-factset"></a>Tutorial: Integração do Azure Active Directory com o FactSet
 
@@ -53,7 +53,7 @@ Para configurar a integração do FactSet com o AD do Azure, você precisa adici
 
 **Para adicionar o FactSet pela galeria, realize as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -105,12 +105,12 @@ Para configurar o logon único do Azure AD com o FactSet, execute as seguintes e
 
     ![Informações de logon único de domínio e URLs do FactSet](common/sp-identifier.png)
 
-     a. Na caixa de texto **URL de Logon**, digite uma URL usando o seguinte padrão: `https://login.factset.com/services/auth-test?idpid=<GUID>`
+     a. Na caixa de texto **URL de Logon**, digite uma URL usando o seguinte padrão: `https://<intendedDestinationURL>.factset.com?idpid=<GUID>`
 
-    b. Na caixa de texto **Identificador (ID da Entidade)**, digite uma URL usando o seguinte padrão: `https://login.factset.com`
+    b. Na caixa de texto **Identificador (ID da Entidade)** , digite uma URL usando o seguinte padrão: `https://login.factset.com`
 
     > [!NOTE]
-    > Esses valores não são reais. Atualize esses valores com a URL de Entrada e o Identificador reais. Contate a [equipe de suporte ao cliente do FactSet](mailto:support@factset.com) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
+    > Esses valores não são reais. Atualize esses valores com a URL de Entrada e o Identificador reais. Entre em contato com seu representante de conta do FactSet para obter esses valores. Se você não souber quem é seu representante do FactSet, obtenha ajuda na [página de números de suporte do FactSet](https://www.factset.com/support-numbers). Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
 5. Na página **Configurar Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Baixar** para baixar o **XML de Metadados de Federação** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
 
@@ -128,7 +128,7 @@ Para configurar o logon único do Azure AD com o FactSet, execute as seguintes e
 
 ### <a name="configure-factset-single-sign-on"></a>Configurar o logon único do FactSet
 
-Para configurar o logon único no lado do **FactSet**, é necessário enviar o **XML de Metadados de Federação** baixado e as URLs apropriadas copiadas do portal do Azure para a [equipe de suporte do FactSet](mailto:support@factset.com). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+Para configurar o logon único no lado do **FactSet**, é necessário enviar o **XML de Metadados de Federação** baixado e as URLs apropriadas copiadas do portal do Azure para o pessoal de suporte do FactSet com o qual você está em contato. Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 
@@ -148,7 +148,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
@@ -183,7 +183,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-factset-test-user"></a>Criar um usuário de teste do FactSet
 
-Nesta seção, você criará uma usuária chamado Brenda Fernandes no FactSet. Trabalhe com a [equipe de suporte do FactSet](mailto:support@factset.com) para adicionar os usuários à plataforma FactSet. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará uma usuária chamado Brenda Fernandes no FactSet. Trabalhe com os representantes do suporte da conta do FactSet para adicionar os usuários na plataforma FactSet. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 

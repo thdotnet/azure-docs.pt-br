@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8dc04a307779b47b50cd16a81c0566b72bafab95
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c4beac0ab739d62eb7acb00e6b2db717b5f43e15
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57860543"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65987966"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-boxcryptor"></a>Tutorial: Integração do Azure Active Directory ao Boxcryptor
 
@@ -54,7 +54,7 @@ Para configurar a integração do Boxcryptor ao Azure AD, você precisará adici
 
 **Para adicionar o Boxcryptor da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -108,7 +108,7 @@ Para configurar o logon único do Azure AD com o Boxcryptor, execute as seguinte
 
      a. Na caixa de texto **URL de logon**, digite uma URL: `https://www.boxcryptor.com/app`
 
-    b. Na caixa de texto **Identificador (ID da Entidade)**, digite o valor: `boxcryptor`
+    b. Na caixa de texto **Identificador (ID da Entidade)** , digite o valor: `boxcryptor`
 
 5. Na página **Configurar logon único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Fazer o download** para fazer o download do **Certificado (Base64)** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
 
@@ -146,7 +146,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
@@ -181,7 +181,7 @@ Nesta seção, você permite que Brenda Fernandes use o logon único do Azure co
 
 ### <a name="create-boxcryptor-test-user"></a>Criar um usuário de teste do Boxcryptor
 
-Nesta seção, você criará um usuário chamado Brenda Fernandes no Boxcryptor. Trabalhe com a [equipe de suporte do Boxcryptor](mailto:support@boxcryptor.com) para adicionar os usuários ou o domínio que precisa estar na lista de permissões à plataforma Boxcryptor. Se o domínio é adicionado pela equipe, os usuários serão automaticamente provisionados à plataforma Boxcryptor. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará um usuário chamado Brenda Fernandes no Boxcryptor. Trabalhe com a  [equipe de suporte do Boxcryptor](mailto:support@boxcryptor.com)  para adicionar os usuários ou o domínio que precisa estar na lista de permissões da plataforma Boxcryptor. Se o domínio é adicionado pela equipe, os usuários serão automaticamente provisionados à plataforma Boxcryptor. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 

@@ -8,24 +8,25 @@ ms.subservice: core
 ms.topic: quickstart
 author: sdgilley
 ms.author: sgilley
-ms.date: 05/02/2019
+ms.date: 05/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1a48f8620fb99f1cf8787dabc738d328a796d093
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 3e360b019a0c275c5ce0f9986fabd5dfc847f130
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510627"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "66015285"
 ---
 # <a name="quickstart-use-a-cloud-based-notebook-server-to-get-started-with-azure-machine-learning"></a>Início Rápido: Usar um servidor do notebook baseado em nuvem para começar a usar o Azure Machine Learning
 
-Crie um servidor de notebook baseado em nuvem e use-o.  Neste início rápido, você executará o código Python que registra valores no [workspace do Serviço do Azure Machine Learning](concept-azure-machine-learning-architecture.md). O workspace é o bloco fundamental na nuvem usado para experimentar, treinar e implantar modelos de machine learning com o Machine Learning. 
+Sem instalação necessária.  Introdução ao serviço do Azure Machine Learning usando um servidor do notebook gerenciado na nuvem. Se, em vez disso, você quiser instalar o SDK em seu próprio ambiente Python, confira [Início Rápido: Usar seu próprio servidor do notebook para começar a usar o Azure Machine Learning](quickstart-run-local-notebook.md).
 
-Este início rápido mostra como criar um recurso de nuvem no workspace do Azure Machine Learning, configurado com o ambiente do Python necessário para executar o Azure Machine Learning. Em vez disso, para usar seu próprio ambiente, consulte [Início Rápido: Usar seu próprio servidor do notebook para começar a usar o Azure Machine Learning](quickstart-run-local-notebook.md).  
+Este início rápido mostra como você pode usar o [espaço de trabalho de serviço do Azure Machine Learning](concept-azure-machine-learning-architecture.md) para acompanhar seus experimentos de aprendizado de máquina.  Você criará uma [VM do notebook (versão prévia)](how-to-configure-environment.md#notebookvm), uma estação de trabalho segura do Azure baseada na nuvem que fornece um servidor do Jupyter notebook, o JupyterLab e um ambiente totalmente preparado de ML. Assim, você pode executar um notebook do Python nessa VM que registra os valores no espaço de trabalho.
 
 Neste início rápido, você realiza as seguintes ações:
 
-* Criar um novo servidor de notebook baseado em nuvem em seu workspace.
+* Criar um workspace
+* Crie uma VM do notebook no seu espaço de trabalho.
 * Iniciar a interface da Web do Jupyter.
 * Abra um notebook que contém código para estimar o pi e registrar erros em cada iteração.
 * Execute o notebook.
@@ -35,11 +36,11 @@ Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de co
 
 ## <a name="create-a-workspace"></a>Criar um workspace
 
-Se você tiver um workspace do Serviço do Azure Machine Learning, passe para a [próxima seção](#create-a-cloud-based-notebook-server). Caso contrário, crie um agora.
+Se você tiver um workspace do Serviço do Azure Machine Learning, passe para a [próxima seção](#create-notebook). Caso contrário, crie um agora.
 
 [!INCLUDE [aml-create-portal](../../../includes/aml-create-in-portal.md)]
 
-## <a name="create-a-cloud-based-notebook-server"></a>Criar um servidor de notebook baseado em nuvem
+## <a name="create-notebook"></a>Criar uma VM do notebook
 
  Em seu workspace, você cria um recurso de nuvem para começar a usar notebooks Jupyter. Esse recurso oferece uma plataforma baseada em nuvem pré-configurada com tudo de que você precisa para executar o serviço do Azure Machine Learning.
 
@@ -59,6 +60,7 @@ Se você tiver um workspace do Serviço do Azure Machine Learning, passe para a 
     ![Criar uma nova VM](media/quickstart-run-cloud-notebook/create-new-workstation.png)
 
 1. Aguarde aproximadamente de 4 a 5 minutos, até que o status mude para **Executando**.
+
 
 ## <a name="launch-jupyter-web-interface"></a>Iniciar interface da Web do Jupyter
 
@@ -85,7 +87,7 @@ Execute um notebook que estima o pi e registra o erro em seu workspace.
 1. Clique na primeira célula de código e selecione **Executar**.
 
     > [!NOTE]
-    > As células de código têm colchetes antes delas. Se os colchetes estiverem vazios (__[]__), o código não terá sido executado. Embora o código esteja em execução, você verá um asterisco (__[*]__). Após a conclusão do código, um número **[1]** será exibido.  O número indica a ordem na qual as células foram executadas.
+    > As células de código têm colchetes antes delas. Se os colchetes estiverem vazios ( __[]__ ), o código não terá sido executado. Embora o código esteja em execução, você verá um asterisco ( __[*]__ ). Após a conclusão do código, um número **[1]** será exibido.  O número indica a ordem na qual as células foram executadas.
     >
     > Use **Shift-Enter** como um atalho para executar uma célula.
 
@@ -143,6 +145,7 @@ Você também pode manter o grupo de recursos, mas excluir um único workspace. 
 
 Neste início rápido, você concluiu estas tarefas:
 
+* Criar um workspace
 * Criar uma VM de notebook.
 * Iniciar a interface da Web do Jupyter.
 * Abra um notebook que contém código para estimar o pi e registrar erros em cada iteração.

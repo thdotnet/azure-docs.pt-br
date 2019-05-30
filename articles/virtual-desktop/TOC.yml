@@ -48,6 +48,8 @@
       href: delegated-access-virtual-desktop.md
     - name: Métodos de balanceamento de carga de pool de host
       href: host-pool-load-balancing.md
+    - name: Contêineres de perfil FSLogix e arquivos do Azure
+      href: fslogix-containers-azure-files.md
 - name: Solucionar problemas
   items:
     - name: 'Visão geral da solução de problemas, comentários e suporte'

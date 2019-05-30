@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 03/12/2019
 ms.author: aahi
-ms.openlocfilehash: d31be245d906ba0405a44d4482272051982c943c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 211f33d5b217714b26dc39ad63f9d1427950589a
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59488330"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595768"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-c"></a>Início Rápido: Enviar uma solicitação de pesquisa para a API REST da Pesquisa de Entidade do Bing usando o C#
 
@@ -26,14 +26,15 @@ Embora esse aplicativo seja escrito em C#, a API é um serviço Web RESTful comp
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Qualquer edição do [Visual Studio 2017](https://www.visualstudio.com/downloads/).
-* A estrutura [Json.NET](https://www.newtonsoft.com/json), disponível como um pacote do NuGet.
-    * Para instalar o pacote NuGet no Visual Studio:
-        1. Clique com o botão direito do mouse no Gerenciador de Soluções
-        2. Clique em **Gerenciar Pacotes NuGet...**
-        3. Pesquise por **newtonsoft.json** e instale o pacote
+- Qualquer edição do [Visual Studio 2017 ou posterior](https://www.visualstudio.com/downloads/).
 
-* Se você estiver usando Linux/MacOS, este aplicativo poderá ser executado usando [Mono](https://www.mono-project.com/).
+- A estrutura [Json.NET](https://www.newtonsoft.com/json), disponível como um pacote do NuGet. Para instalar o pacote NuGet no Visual Studio:
+
+   1. Clique com botão direito no seu projeto no **Gerenciador de Soluções**.
+   2. Selecione **Gerenciar Pacotes NuGet**.
+   3. Pesquise por *Newtonsoft.Json* e instale o pacote.
+
+- Se você estiver usando Linux/MacOS, este aplicativo poderá ser executado usando [Mono](https://www.mono-project.com/).
 
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../../includes/cognitive-services-bing-entity-search-signup-requirements.md)]

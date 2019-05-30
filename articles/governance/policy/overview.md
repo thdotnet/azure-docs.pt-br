@@ -7,12 +7,12 @@ ms.date: 12/06/2018
 ms.topic: overview
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 0e66327a04d1390061580d82716b44b25139bf67
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 2dd31ab29479fade21d27b8e2c23952f905f530a
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59259449"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65979152"
 ---
 # <a name="overview-of-the-azure-policy-service"></a>Visão geral do serviço do Azure Policy
 
@@ -28,7 +28,7 @@ O Azure Policy é um serviço no Azure que você pode usar para criar, atribuir 
 
 ## <a name="how-is-it-different-from-rbac"></a>Qual é a diferença dela em relação ao RBAC?
 
-Há algumas diferenças importantes entre o Policy e o RBAC (controle de acesso baseado em função). O RBAC concentra-se nas ações do usuário em escopos diferentes. Você pode ser adicionado à função de colaborador de um grupo de recursos, permitindo que você faça alterações a esse grupo de recursos. Política concentra-se nas propriedades de recurso durante a implantação e para recursos já existentes. O Policy controla propriedades como os tipos ou locais de recursos. Ao contrário do RBAC, o Policy é um sistema de permissão padrão e negação explícita.
+Há algumas diferenças importantes entre o Azure Policy e o RBAC (controle de acesso baseado em função). O RBAC concentra-se nas ações do usuário em escopos diferentes. Você pode ser adicionado à função de colaborador de um grupo de recursos, permitindo que você faça alterações a esse grupo de recursos. O Azure Policy concentra-se nas propriedades de recurso durante a implantação e para recursos já existentes. O Azure Policy controla propriedades como os tipos ou locais de recursos. Ao contrário do RBAC, o Azure Policy é um sistema de permissão padrão e negação explícita.
 
 ### <a name="rbac-permissions-in-azure-policy"></a>Permissões de RBAC no Azure Policy
 
@@ -37,7 +37,7 @@ O Azure Policy tem diversas permissões, conhecidas como operações, em dois pr
 - [Microsoft.Authorization](../../role-based-access-control/resource-provider-operations.md#microsoftauthorization)
 - [Microsoft.PolicyInsights](../../role-based-access-control/resource-provider-operations.md#microsoftpolicyinsights)
 
-Muitas funções internas concedem permissão aos recursos do Azure Policy. A função de **Colaborador da Política de Recursos (versão prévia)** inclui a maioria das operações do Policy. O **proprietário** tem direitos totais. Ambas as funções de **Colaborador** e de **Leitor** podem usar todas as operações de leitura do Policy, mas o **Colaborador** também pode disparar a correção.
+Muitas funções internas concedem permissão aos recursos do Azure Policy. A função **Colaborador da Política de Recursos (versão prévia)** inclui a maioria das operações do Azure Policy. O **proprietário** tem direitos totais. Ambas as funções de **Colaborador** e de **Leitor** podem usar todas as operações de leitura do Azure Policy, mas o **Colaborador** também pode disparar a correção.
 
 Se nenhuma das funções internas possui as permissões necessárias, crie uma [função personalizada](../../role-based-access-control/custom-roles.md).
 
@@ -115,7 +115,7 @@ Nesse cenário, ao definir os parâmetros de iniciativa para **initiativeC**, vo
 
 Ao criar opções de valor em uma definição de iniciativa, você não consegue inserir um valor diferente durante a atribuição da iniciativa, porque ele não é parte da lista.
 
-## <a name="maximum-count-of-policy-objects"></a>Contagem máxima de objetos do Policy
+## <a name="maximum-count-of-azure-policy-objects"></a>Contagem máxima de objetos do Azure Policy
 
 [!INCLUDE [policy-limits](../../../includes/azure-policy-limits.md)]
 
@@ -144,8 +144,8 @@ A visão geral do Azure Policy a seguir é da versão 2018. Para download de ví
 
 Agora que você tem uma visão geral da Política do Azure e de alguns dos principais conceitos, aqui estão as próximas etapas sugeridas:
 
-- [Atribuir uma definição de política usando o portal](assign-policy-portal.md)
-- [Atribuir uma definição de política usando a CLI do Azure](assign-policy-azurecli.md)
-- [Atribuir uma definição de política usando o PowerShell](assign-policy-powershell.md)
-- Examine o que é um grupo de gerenciamento com [Organizar seus recursos com grupos de gerenciamento do Azure](..//management-groups/overview.md)
-- Assista a [Reger seu ambiente do Azure com o Azure Policy](https://channel9.msdn.com/events/Build/2018/THR2030) no Channel 9
+- [Atribuir uma definição de política usando o portal](assign-policy-portal.md).
+- [Atribuir uma definição de política usando a CLI do Azure](assign-policy-azurecli.md).
+- [Atribuir uma definição de política usando o PowerShell](assign-policy-powershell.md).
+- Veja o que é um grupo de gerenciamento com [Organizar seus recursos com grupos de gerenciamento do Azure](..//management-groups/overview.md).
+- Assista a [Reger seu ambiente do Azure com o Azure Policy](https://channel9.msdn.com/events/Build/2018/THR2030) no Channel 9.

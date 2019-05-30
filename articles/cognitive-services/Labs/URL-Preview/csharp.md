@@ -1,5 +1,5 @@
 ---
-title: 'Início rápido: Visualização de URL do Projeto, C#'
+title: 'Início Rápido: Visualização de URL do Projeto, C#'
 titlesuffix: Azure Cognitive Services
 description: Introdução ao uso de Visualização de URL do Projeto com C#.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: url-preview
 ms.topic: quickstart
 ms.date: 03/16/2018
 ms.author: rosh
-ms.openlocfilehash: 0e2d4b783068cfd14385eb1712ea246c94dc9500
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 2cb3f1de803b8549a88866da1042f4f32609a601
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55877262"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827157"
 ---
 # <a name="quickstart-url-preview-query-in-c"></a>Início Rápido: Consulta de Visualização de URL em C#
 
@@ -23,7 +23,7 @@ O exemplo de C# a seguir cria uma Visualização de Url para o site SwiftKey: ht
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Você precisará ter o [Visual Studio 2017](https://www.visualstudio.com/downloads/) para executar esse código no Windows. (A Edição Comunitária gratuita funcionará.)
+Você precisará ter o [Visual Studio 2017 ou posterior](https://www.visualstudio.com/downloads/) para executar esse código no Windows. (O Community Edition gratuito funcionará.)
 
 Obtenha uma chave de acesso para a avaliação gratuita de [Laboratórios dos Serviços Cognitivos](https://aka.ms/answersearchsubscription)
 

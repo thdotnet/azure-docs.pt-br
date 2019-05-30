@@ -4,89 +4,81 @@ description: Descreve o Azure Data Box, uma solução híbrida que permite a tra
 services: databox
 documentationcenter: NA
 author: alkohli
-manager: twooley
-editor: ''
-ms.assetid: ''
 ms.service: databox
-ms.devlang: NA
+ms.subservice: pod
 ms.topic: overview
-ms.custom: ''
-ms.tgt_pltfrm: NA
-ms.workload: TBD
-ms.date: 09/24/2018
+ms.date: 05/20/2019
 ms.author: alkohli
-ms.openlocfilehash: 0a5b7f93f9ac6cc5b1076881727a42fd5b95ff4b
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 0f71d9b4400041db50cb3e24940e922acde55edc
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51235149"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991682"
 ---
-# <a name="what-is-azure-data-box-heavy-preview"></a>O que é o Azure Data Box Heavy? (Visualização)
+# <a name="what-is-azure-data-box-heavy-preview"></a>O que é o Azure Data Box Heavy? (versão prévia)
 
-A solução híbrida do Microsoft Azure Data Box permite que você envie centenas de terabytes de dados para o Azure de forma rápida, barata e confiável. A transferência de dados segura é acelerada pela entrega de um dispositivo de armazenamento proprietário com capacidade de armazenamento de 1 PB por meio de frete. O dispositivo tem uma caixa reforçada para proteger os dados durante o transporte.
+O Azure Data Box Heavy permite enviar centenas de terabytes de dados para o Microsoft Azure de forma rápida, econômica e confiável. Os dados são transferidos para o Microsoft Azure enviando um dispositivo Data Box Heavy com capacidade de armazenamento de 1 PB, com o qual você preenche seus dados e envia à Microsoft. O dispositivo tem uma caixa reforçada para proteger os dados durante o transporte.
 
-Atualmente, o Data Box Heavy está em versão prévia e você pode se inscrever para solicitar um dispositivo por meio do portal do Azure. Depois que o dispositivo é recebido em seu datacenter, você pode configurá-lo usando a interface do usuário da Web local. Copie os dados de seus servidores para o dispositivo e envie o dispositivo novamente para o Azure. No datacenter do Azure, seus dados são carregados automaticamente do dispositivo para o Azure. Todo o processo é acompanhado de ponta a ponta pelo serviço Data Box no portal do Azure.
+O Data Box Heavy está em versão prévia. Inscreva-se no portal do Azure para solicitar um dispositivo. Quando receber o dispositivo em seu datacenter, use a IU da Web local para configurá-lo. Copie os dados de seus servidores para o dispositivo e envie o dispositivo novamente para o Azure. No datacenter do Azure, os dados são carregados em suas contas de Armazenamento do Microsoft Azure. É possível controlar o processo de ponta a ponta no portal do Azure.
 
 
 > [!IMPORTANT]
-> - O Data Box Heavy está em versão prévia. Examine os [termos de serviço do Azure para a versão prévia](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) antes de implantar essa solução. 
-> - Para solicitar um dispositivo, inscreva-se na [Versão Prévia do portal](https://aka.ms/).
+> - O Data Box Heavy está em versão prévia. Examine os [termos de serviço do Azure para a versão prévia](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) antes de implantar essa solução.
+> - Para solicitar um dispositivo, inscreva-se na [Versão Prévia do portal](https://aka.ms/azuredatabox).
 > - Durante a versão prévia, o Data Box Heavy pode ser entregue aos clientes nos EUA e na União Europeia. Para saber mais, acesse [Disponibilidade por região](#region-availability).
 
 ## <a name="use-cases"></a>Casos de uso
 
-O Data Box Heavy é ideal para a transferência de tamanhos de dados superiores a 500 TB em cenários com conectividade de rede limitada ou inexistente. A movimentação de dados pode ser única, periódica ou uma transferência de dados em massa inicial seguida por transferências periódicas. Veja a seguir os vários cenários em que o Data Box Heavy pode ser usado para a transferência de dados.
+O Data Box Heavy é ideal para tamanhos de dados com centenas de terabytes, em que a conectividade de rede é insuficiente para carregar os dados no Microsoft Azure. A movimentação de dados pode ser única, periódica ou uma transferência de dados em massa inicial seguida por transferências periódicas. Veja a seguir os vários cenários em que o Data Box Heavy pode ser usado para a transferência de dados.
 
- - **Migração única** - quando uma grande quantidade de dados local é transferida para o Azure. 
-     - Movimentação de uma biblioteca de mídia de fitas offline para o Azure para a criação de uma biblioteca de mídia online.
-     - Migração do farm de VMs, do SQL Server e de aplicativos para o Azure
-     - Movimentação de dados históricos para o Azure para análise aprofundada e geração de relatórios usando o HDInsight
+ - **Migração única** - quando uma grande quantidade de dados local é transferida para o Azure.
+     - Mova uma biblioteca de mídia de fitas offline para o Microsoft Azure para criar uma biblioteca de mídia online.
+     - Migre o farm da VM, o SQL Server e os aplicativos para o Microsoft Azure.
+     - Mova os dados históricos para o Microsoft Azure para fazer uma análise detalhada e gerar relatórios usando o HDInsight.
 
- - **Transferência em massa inicial** – quando uma transferência em massa inicial é feita usando o Data Box Heavy (semente) seguida por transferências incrementais pela rede. 
-     - Por exemplo, os parceiros de soluções de backup, como o Commvault e o Data Box Heavy, são usados para mover o backup histórico grande inicial para o Azure. Após a conclusão, os dados incrementais são transferidos pela rede para o armazenamento do Azure.
+ - **Transferência em massa inicial** – quando uma transferência em massa inicial é feita usando o Data Box Heavy (semente) seguida por transferências incrementais pela rede.
+     - Por exemplo, os parceiros de soluções de backup e o Data Box Heavy são usados para mover o backup histórico grande inicial para o Microsoft Azure. Após a conclusão, os dados incrementais são transferidos pela rede para o armazenamento do Azure.
 
- - **Carregamentos periódicos** - quando grandes quantidades de dados são geradas periodicamente e precisam ser movidas para o Azure. Por exemplo, na exploração de energia, em que o conteúdo de vídeo é gerado em plataformas de petróleo e em produções de energia eólica.      
+ - **Carregamentos periódicos** - quando grandes quantidades de dados são geradas periodicamente e precisam ser movidas para o Azure. Por exemplo, na exploração de energia, em que o conteúdo de vídeo é gerado em plataformas de petróleo e em produções de energia eólica.
 
 ## <a name="benefits"></a>Benefícios
 
-O Data Box Heavy foi projetado para mover grandes quantidades de dados para o Azure com pouco ou nenhum impacto sobre a rede. A solução oferece as seguintes vantagens:
+O Data Box Heavy foi projetado para mover grandes quantidades de dados para o Microsoft Azure com pouco ou nenhum impacto sobre a rede. A solução oferece as seguintes vantagens:
 
 - **Velocidade** – o Data Box Heavy usa adaptadores de rede de 40 Gbps de alto desempenho.
 
-- **Seguro** – o Data Box Heavy tem proteções de segurança internas para o dispositivo, os dados e o serviço.
-    - O dispositivo tem uma caixa reforçada protegida por parafusos resistentes a adulteração e adesivos com evidência de adulteração. 
+- **Segurança** – o Data Box Heavy tem proteções de segurança internas para o dispositivo, os dados e o serviço.
+    - O dispositivo tem uma caixa reforçada protegida por parafusos resistentes a adulteração e adesivos com evidência de adulteração.
     - Os dados do dispositivo são sempre protegidos por uma criptografia AES de 256 bits.
     - O dispositivo só pode ser desbloqueado com uma senha fornecida no portal do Azure.
     - O serviço é protegido pelos recursos de segurança do Azure.
-    - Após o upload dos dados no Azure, os discos do dispositivo são apagados, de acordo com os padrões NIST 800-88r1.
+    - Após carregar os dados no Microsoft Azure, os discos do dispositivo são apagados, de acordo com as normas 800-88r1 do NIST (National Institute of Standards and Technology).
 
 
-<!--## Features and specifications
+## <a name="features-and-specifications"></a>Recursos e especificações
 
-The Data Box Heavy device has the following features in this release.
+O dispositivo Data Box Heavy tem os seguintes recursos nesta versão.
 
-| Specifications                                          | Description              |
+| Especificações                                          | DESCRIÇÃO              |
 |---------------------------------------------------------|--------------------------|
-| Weight                                                  | < 50 lbs.                |
-| Dimensions                                              | Device - Width: 309.0 mm Height: 430.4 mm Depth: 502.0 mm |            
-| Rack space                                              | 7 U when placed in the rack on its side (cannot be rack-mounted)|
-| Cables required                                         | 1 X power cable (included) <br> 2 RJ45 cables <br> 2 X SFP+ Twinax copper cables|
-| Storage capacity                                        | 100 TB <br> 80 TB usable capacity after RAID 5 protection|
-| Network interfaces                                      | 2 X 1 GbE interface - MGMT, DATA 3. <br> MGMT - for management, not user configurable, used for initial setup <br> DATA3 - for data, user configurable, and is dynamic by default <br> MGMT and DATA 3 can also work as 10 GbE <br> 2 X 10 GbE interface - DATA 1, DATA 2 <br> Both are for data, can be configured as dynamic (default) or static |
-| Data transfer media                                     | RJ45, SFP+ copper 10 GbE Ethernet  |
-| Security                                                | Rugged device casing with tamper-proof custom screws <br> Tamper-evident stickers placed at the bottom of the device|
-| Data transfer rate                                      | Up to 80 TB in a day over 10 GbE network interface        |
-| Management                                              | Local web UI - one-time initial setup and configuration <br> Azure portal - day-to-day device management        |-->
+| Peso                                                  | Aproximadamente 500 lbs.                |
+| Dimensões                                              | Largura: 66,04 cm de altura: 71,12 cm de comprimento: 121,92 cm |
+| Espaço em rack                                              | Não montável em rack|
+| Cabos necessários                                         | Inclui 4 cabos de alimentação 120 V/10 A de aterramento (NEMA 5-15) <br> O dispositivo tem suporte para até 240 V de potência e conectores C-13 <br> Usar cabos de rede compatíveis com [Mellanox MCX314A-BCCT](https://store.mellanox.com/products/mellanox-mcx314a-bcct-connectx-3-pro-en-network-interface-card-40-56gbe-dual-port-qsfp-pcie3-0-x8-8gt-s-rohs-r6.html)  |
+|Potência                                                    | 4 unidades de fonte de energia internas compartilhadas nos dois nós do dispositivo|
+| Capacidade de armazenamento                                        | Aproximadamente 70 discos de 1 PB brutos com 14 TB cada <br> 770 TB de capacidade utilizável|
+|Número de nós                                          | 2 nós independentes por dispositivo (500 TB cada) |
+| Adaptadores de rede por nó                             | 4 adaptadores de rede por nó <br> MGMT, DATA3 <ul><li> 2 interfaces 1 GbE </li><li> MGMT serve para gerenciamento, não é configurável pelo usuário, e é usada na configuração inicial </li><li> DATA3 é uma interface de dados configurável pelo usuário, com protocolo DHCP por padrão</li><li>Os adaptadores de rede 1 GbE também podem ser configurados como as interfaces 10 GbE</li></ul>Interfaces de dados DATA1, DATA2 <ul><li>2 interfaces 40 GbE </li><li> Protocolo DHCP por padrão ou interfaces de dados estáticos configuráveis pelo usuário</li>|
+
 
 ## <a name="components"></a>Componentes
 
 O Data Box Heavy inclui os seguintes componentes:
 
-* **Dispositivo Data Box Heavy** – um dispositivo físico com uma parte externa reforçada que armazena os dados com segurança. Este dispositivo tem uma capacidade de armazenamento utilizável de 800 TB. 
-
+* **Dispositivo Data Box Heavy** – um dispositivo físico com uma parte externa reforçada que armazena os dados com segurança. Este dispositivo tem uma capacidade de armazenamento utilizável de 770 TB.
     
-* **Serviço Data Box** – uma extensão do portal do Azure que permite gerenciar um dispositivo Data Box Heavy por meio uma interface da Web que você pode acessar em diferentes locais geográficos. Use o serviço Data Box para realizar a administração diária do dispositivo Data Box Heavy. As tarefas do serviço incluem como criar e gerenciar pedidos, exibir e gerenciar alertas e gerenciar compartilhamentos.  
+* **Serviço Data Box** – uma extensão do portal do Azure que permite gerenciar um dispositivo Data Box Heavy por meio uma interface da Web que você pode acessar em diferentes locais geográficos. Use o serviço do Data Box para administrar o dispositivo Data Box Heavy. As tarefas do serviço incluem como criar e gerenciar pedidos, exibir e gerenciar alertas e gerenciar compartilhamentos.  
 
 * **Interface do usuário da Web local** – uma interface do usuário baseada na Web usada para configurar o dispositivo, de modo que ele se conecte à rede local e, em seguida, registrá-lo no serviço Data Box. Use também a interface do usuário da Web local para desligar e reiniciar o dispositivo, exibir logs de cópia e contatar o Suporte da Microsoft para arquivar uma solicitação de serviço.
 
@@ -105,11 +97,11 @@ Um fluxo de trabalho típico inclui as seguintes etapas:
 
 5. **Upload** – os dados são copiados automaticamente do dispositivo para o Azure. Os discos do dispositivo são apagados com segurança, de acordo com as diretrizes do NIST (National Institute of Standards and Technology).
 
-Ao longo desse processo, você receberá uma notificação por email sobre todas as alterações de status. 
+Ao longo deste processo, você receberá uma notificação por email sobre todas as alterações de status.
 
 ## <a name="region-availability"></a>Disponibilidade de região
 
-O Data Box Heavy pode transferir dados de acordo com a região na qual o serviço foi implantado, o país ao qual o dispositivo é enviado e a conta de armazenamento do Azure de destino usada para a transferência dos dados. 
+O Data Box Heavy pode transferir dados de acordo com a região na qual o serviço foi implantado, o país ou a região aos quais o dispositivo é enviado e a conta de Armazenamento do Microsoft Azure de destino usada para a transferência dos dados.
 
 - **Disponibilidade do serviço** – para esta versão, o Data Box Heavy está disponível nas seguintes regiões:
     - Todas as regiões da nuvem pública nos Estados Unidos – Centro-oeste dos EUA, Oeste dos EUA 2, Oeste dos EUA, Centro-Sul dos EUA, Centro dos EUA, Centro-Norte dos EUA, Leste dos EUA e Leste dos EUA 2.
@@ -117,14 +109,16 @@ O Data Box Heavy pode transferir dados de acordo com a região na qual o serviç
     - Reino Unido – Sul do Reino Unido e Oeste do Reino Unido.
     - França – França Central e Sul da França.
 
-- **Contas de Armazenamento de Destino** – as contas de armazenamento que armazenam os dados estão disponíveis em todas as regiões do Azure nas quais o serviço está disponível. 
+- **Contas de Armazenamento de Destino** – as contas de armazenamento que armazenam os dados estão disponíveis em todas as regiões do Azure nas quais o serviço está disponível.
+
+Para obter informações mais atualizadas sobre a disponibilidade de região do Data Box Heavy, vá até a página de [Produtos do Microsoft Azure por região](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all).
 
 ## <a name="sign-up"></a>Inscrição
 
-O Data Box Heavy está em versão prévia e uma inscrição é necessária. Execute as seguintes etapas para se inscrever no Data Box Heavy:
+O Data Box Heavy está em versão prévia e uma inscrição é necessária. Para se inscrever no Data Box Heavy, faça o seguinte:
 
 1. Entre no portal do Azure em: https://aka.ms/azuredatabox.
-2. Clique em **+** para criar um recurso. Pesquise **Azure Data Box**. Selecione o serviço **Azure Data Box**.
+2. Clique em **+ Criar um recurso** para criar um novo recurso. Pesquise **Azure Data Box**. Selecione o serviço **Azure Data Box**.
 
     <!--![The Data Box Heavy sign up 1]()-->
 
@@ -136,12 +130,10 @@ O Data Box Heavy está em versão prévia e uma inscrição é necessária. Exec
 
    <!--![The Data Box Heavy sign up 3]()-->
 
-5. Responda às perguntas sobre país de residência dos dados, período, serviço de destino do Azure para transferência de dados, largura de banda de rede e frequência da transferência de dados. Examine a Privacidade e os termos e marque a caixa de seleção A Microsoft pode usar seu endereço de email para contatá-lo.
+5. Responda às perguntas sobre país/região de residência dos dados, período, serviço de destino do Microsoft Azure para transferência de dados, largura de banda de rede e frequência da transferência de dados. Examine a Privacidade e os termos e marque a caixa de seleção A Microsoft pode usar seu endereço de email para contatá-lo.
 
     <!--![The Data Box Heavy sign up 4]()-->
 
-Depois de se inscrever e estar habilitado para a versão prévia, você poderá solicitar um Data Box Heavy.
+Depois de se inscrever e se habilitar para a versão prévia, você poderá solicitar um Data Box Heavy.
 
-
-
-
+    

@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 03/01/2017
 ms.author: rogardle
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: 25b6f2b1e79cb6efdcb9d7ee0e956648673e48c0
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 957725d40c66ffe9d8d7ce1362279c2bb4d4fded
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57528858"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65788736"
 ---
 # <a name="deprecated-introduction-to-docker-container-hosting-solutions-with-azure-container-service"></a>(PRETERIDO) Introdução às soluções de hospedagem de contêineres do Docker com o Serviço de Contêiner do Azure 
 
@@ -45,7 +45,7 @@ Controlador de domínio/OS é um sistema operacional distribuído baseado no ker
 Controlador de domínio/sistema operacional e Apache Mesos incluem um conjunto de recursos impressionantes:
 
 * Escalabilidade comprovada
-* Mestre e subordinados replicados com tolerância a falhas que usam o ZooKeeper
+* Primário e secundários replicados com tolerância a falhas que usam o Apache ZooKeeper
 * Suporte para contêineres formatados pelo Docker
 * Isolamento nativo entre tarefas com contêineres do Linux
 * Agendamento de vários recursos (memória, CPU, disco e portas)

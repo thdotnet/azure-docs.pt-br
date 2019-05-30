@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: hrasheed
 ms.topic: overview
 ms.date: 04/15/2019
-ms.openlocfilehash: 553f50897afaaf9c677e84f9cfffbff7d2c1e607
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: aa0d01bfbebd5279b5268bae9d161492f30b81de
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59679663"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546296"
 ---
 # <a name="hdinsight-40-overview"></a>Visão geral do HDInsight 4.0
 
@@ -90,7 +90,7 @@ Não há um caminho de atualização compatível das versões anteriores do HDIn
 
 ## <a name="limitations"></a>Limitações
 
-* O HDInsight 4.0 não é compatível com o MapReduce. Use o Apache Tez em vez disso. Saiba mais sobre o [Apache Tez](https://tez.apache.org/).
+* O HDInsight 4.0 não é compatível com o MapReduce para Apache Hive. Use o Apache Tez em vez disso. Saiba mais sobre o [Apache Tez](https://tez.apache.org/).
 * O HDInsight 4.0 não é compatível com o Apache Storm. 
 * A exibição do Hive não está mais disponível no HDInsight 4.0. 
 * O interpretador de shell no Apache Zeppelin não é compatível com clusters do Spark e de Consulta Interativa.

@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: bce260d2a6b897d3e45b231df4eecd7ecb31ba31
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 80e5feeccc4acc3e1f3dab6b815c8605332c7c71
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65143253"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65834281"
 ---
 # <a name="personalizer-settings"></a>Configurações do Personalizador
 
@@ -35,7 +35,7 @@ Crie um recurso do Personalizador para cada loop de comentários.
 1. Encontre o recurso do Personalizador. 
 1. Na seção **Gerenciamento de recursos**, selecione **Configurações**.
 
-    Antes de sair do portal do Azure, copie uma de suas chaves de recurso da página de **Chaves**. Você precisará disso para usar o [SDK do Personalizador](https://aka.ms/personalizer-dotnet-sdk-docs).
+    Antes de sair do portal do Azure, copie uma de suas chaves de recurso da página de **Chaves**. Você precisará disso para usar o [SDK do Personalizador](https://go.microsoft.com/fwlink/?linkid=2092353).
 
 ### <a name="configure-reward-settings-for-the-feedback-loop-based-on-use-case"></a>Defina as configurações de recompensa para o loop de comentários com base no caso de uso
 
@@ -87,4 +87,7 @@ Na seção do Gerenciamento de recursos de **Modelo e Política**, importe uma n
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Como usar o contêiner do Personalizador](https://go.microsoft.com/fwlink/?linkid=2083923&clcid=0x409)
+<!--
+[How to use the Personalizer container](https://go.microsoft.com/fwlink/?linkid=2083923&clcid=0x409)
+-->
+[Saiba mais sobre a disponibilidade de região](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)

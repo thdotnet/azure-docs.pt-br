@@ -3,8 +3,8 @@ title: Visão geral da plataforma de identidade da Microsoft (v2.0) – Azure
 description: Saiba mais sobre a plataforma e o ponto de extremidade da plataforma de identidade da Microsoft (v2.0).
 services: active-directory
 documentationcenter: dev-center-name
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -13,20 +13,20 @@ ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73d97b45217da4bbf4b8c0e857b817911484f29c
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 3d139efaa8e6de4861dc8e885bd22a426fde6c94
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65231087"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833040"
 ---
 # <a name="microsoft-identity-platform-v20-overview"></a>Visão geral da plataforma de identidade da Microsoft (v2.0)
 
-A plataforma de identidade da Microsoft é uma evolução da plataforma de desenvolvedor e serviço de identidade do Azure AD (Azure Active Directory). Ela permite que os desenvolvedores criem aplicativos que conectem todas as identidades da Microsoft e obtenham tokens para chamar APIs da Microsoft, como o Microsoft Graph ou APIs que os desenvolvedores criaram. A plataforma de identidade da Microsoft consiste em:
+A plataforma de identidade da Microsoft é uma evolução da plataforma de desenvolvedor do Azure AD (Azure Active Directory). Ela permite que os desenvolvedores criem aplicativos que conectem todas as identidades da Microsoft e obtenham tokens para chamar APIs da Microsoft, como o Microsoft Graph ou APIs que os desenvolvedores criaram. A plataforma de identidade da Microsoft consiste em:
 
 - **Serviço de autenticação em conformidade com o padrão do OAuth 2.0 e do OpenID Connect** que permite aos desenvolvedores autenticar qualquer identidade da Microsoft, incluindo:
   - Contas corporativa ou de estudante (provisionadas pelo Azure AD)

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f250a5ac5f6fefa099303b033a9687f1a219efd8
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: a8ff026743ccda0a47ce176db51dbc7913376f46
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59262305"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65988003"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bersin"></a>Tutorial: Integração do Azure Active Directory ao Bersin
 
@@ -51,9 +51,9 @@ Neste tutorial, você configurará e testará o logon único do Azure AD em um a
 
 Para configurar a integração do Bersin ao Microsoft Azure AD, você precisará adicionar o Bersin da galeria à sua lista de aplicativos SaaS gerenciados.
 
-**Para adicionar o Bersin por meio da galeria, execute as seguintes etapas:**
+**Para adicionar o Bersin da galeria**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -100,7 +100,7 @@ Para configurar o logon único do Azure AD com o Bersin, execute as seguintes et
 
     ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
-4. Na seção **Configuração Básica do SAML**, execute as etapas a seguir caso deseje configurar o aplicativo no modo iniciado por **IDP**:
+4. Na seção **Configuração Básica do SAML**, caso deseje configurar o aplicativo no modo iniciado por **IDP**, execute a seguinte etapa:
 
     ![Informações de logon único de Domínio e URLs do Bersin](common/idp-identifier-relay.png)
 
@@ -132,7 +132,7 @@ Para configurar o logon único do Azure AD com o Bersin, execute as seguintes et
 
 ### <a name="configure-bersin-single-sign-on"></a>Configurar o logon único do Bersin
 
-Para configurar o logon único no lado do **Bersin**, é necessário enviar o **XML de Metadados de Federação** baixado e as URLs apropriadas copiadas do portal do Azure para a [equipe de suporte do Bersin](mailto:ramansabde@gmail.com). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+Para configurar o logon único no lado do **Bersin**, envie o **XML de Metadados de Federação** baixado e as URLs apropriadas copiadas do portal do Azure para a [equipe de suporte do Bersin](mailto:ramansabde@gmail.com). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 
@@ -150,9 +150,9 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
 
     ![A caixa de diálogo Usuário](common/user-properties.png)
 
-    a. No campo **Nome**, insira **BrendaFernandes**.
+     a. No campo **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite **brendafernandes\@dominiodaempresa.extensao**  
+    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
     Por exemplo, BrittaSimon@contoso.com
 
     c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
@@ -181,13 +181,13 @@ Nesta seção, você permite que Brenda Fernandes use o logon único do Azure, c
 
 5. Na caixa de diálogo **Usuários e grupos**, escolha **Brenda Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
 
-6. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar função**, escolha a função de usuário apropriada na lista e clique no botão **Selecionar** na parte inferior da tela.
+6. Se você estiver esperando qualquer valor de função na declaração SAML, na caixa de diálogo **Selecionar Função**, escolha a função apropriada para o usuário na lista. Clique no botão **Selecionar** na parte inferior da tela.
 
 7. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
 
 ### <a name="create-bersin-test-user"></a>Criar um usuário de teste do Bersin
 
-Nesta seção, você criará um usuário chamado Brenda Fernandes no Bersin. Trabalhe com a  [equipe de suporte do Bersin](mailto:USBersinServiceClient@deloitte.com) para adicionar os usuários à plataforma Bersin ou o domínio que precisa estar na lista de permissões à plataforma Bersin. Se o domínio for adicionado pela equipe, os usuários serão automaticamente provisionados à plataforma Bersin. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará um usuário chamado Brenda Fernandes no Bersin. Trabalhe com a  [equipe de suporte do Bersin](mailto:USBersinServiceClient@deloitte.com) para adicionar os usuários à plataforma Bersin ou o domínio que precisa estar na lista de permissões para a plataforma Bersin. Se o domínio for adicionado pela equipe, os usuários serão automaticamente provisionados à plataforma Bersin. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único
 
