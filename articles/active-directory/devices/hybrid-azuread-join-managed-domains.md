@@ -17,12 +17,12 @@ ms.date: 03/20/2019
 ms.author: joflore
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94fbcc1c29c1860642dda0afab6a1f10e719a05a
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: e45b3b19821644142176c5c0cc7646c4643fe17c
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65962196"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235217"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Tutorial: Configurar o ingresso no Azure Active Directory híbrido para os domínios gerenciados
 
@@ -178,7 +178,7 @@ Além disso, é necessário habilitar **Permitir atualizações na barra de stat
 
 ### <a name="configure-seamless-sso"></a>Configurar SSO contínuo
 
-Para concluir a junção híbrida do Azure AD de seus dispositivos de nível inferior do Windows em um domínio gerenciado usando Autenticação de Passagem (PTA) ou Sincronização de Hash de Senha (PHS) como o método de autenticação de nuvem do Azure AD, você deve também [configurar o SSO contínuo](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso-quick-start#step-2-enable-the-feature). Se você estiver tendo problemas ao configurar o SSO contínuo, confira o artigo [Solucionar problemas do logon único contínuo do Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/tshoot-connect-sso).
+Para concluir a junção híbrida do Azure AD de seus dispositivos de nível inferior do Windows em um domínio gerenciado usando Autenticação de Passagem (PTA) ou Sincronização de Hash de Senha (PHS) como o método de autenticação de nuvem do Azure AD, você deve também [configurar o SSO contínuo](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso-quick-start#step-2-enable-the-feature). Se você estiver tendo problemas ao configurar o SSO contínuo, confira o artigo [Solucionar problemas do logon único contínuo do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/tshoot-connect-sso).
 
 
 ### <a name="control-windows-down-level-devices"></a>Controlar os dispositivos de nível inferior do Windows 

@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 04/02/2019
+ms.date: 05/23/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a4f14a1e68042704ca8e8c49f1bd76b722c90d4d
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: aa58d0405176a63ff9d1cc25b572f3f3754dbbdc
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65466295"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66238846"
 ---
 # <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-public-preview"></a>Tutorial: Usar o Gerenciador de Implantação do Azure com modelos do Resource Manager (versão prévia pública)
 
@@ -55,7 +55,6 @@ Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://a
 Para concluir este artigo, você precisa do seguinte:
 
 * Alguma experiência com o desenvolvimento de [modelos do Azure Resource Manager](./resource-group-overview.md).
-* O Gerenciador de Implantação do Azure está em versão prévia privada. Para se inscrever usando o Gerenciador de Implantação do Azure, preencha a [ficha de inscrição](https://aka.ms/admsignup). 
 * PowerShell do Azure. Para obter mais informações, consulte [Introdução ao Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 * Cmdlets do Gerenciador de Implantação. Para instalar esses cmdlets de pré-lançamento, você precisa ter a versão mais recente do PowerShellGet. Para obter a versão mais recente, veja [Instalação do PowerShellGet](/powershell/gallery/installing-psget). Depois de instalar o PowerShellGet, feche a janela do PowerShell. Abra uma nova janela elevada do PowerShell e use o seguinte comando:
 
@@ -106,18 +105,18 @@ A pasta ArtifactStore do download contém duas pastas:
 
 As duas versões (1.0.0.0 e 1.0.0.1) são para [implantação de revisão](#deploy-the-revision). Mesmo que os artefatos de modelo e os artefatos binários tenham duas versões, somente os artefatos binários serão diferentes entre as duas versões. Na prática, os artefatos binários são atualizados comparando com mais frequência com artefatos de modelo.
 
-1. Abra **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateStorageAccount.json** em um editor de texto. É um modelo básico para criar uma conta de armazenamento.  
-2. Abra **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateWebApplication.json**. 
+1. Abra **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateStorageAccount.json** em um editor de texto. É um modelo básico para criar uma conta de armazenamento.
+2. Abra **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateWebApplication.json**.
 
     ![Gerenciador de Implantação do Azure, tutorial para criar modelo de aplicativo Web](./media/deployment-manager-tutorial/azure-deployment-manager-tutorial-create-web-application-packageuri.png)
 
     O modelo chama um pacote de implantação, que contém os arquivos do aplicativo Web. Neste tutorial, o pacote compactado contém apenas um arquivo index.html.
-3. Abra **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateWebApplicationParameters.json**. 
+3. Abra **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateWebApplicationParameters.json**.
 
     ![Gerenciador de Implantação do Azure, tutorial para criar containerRoot de parâmetros de modelo de aplicativo Web](./media/deployment-manager-tutorial/azure-deployment-manager-tutorial-create-web-application-parameters-deploypackageuri.png)
 
     O valor de deployPackageUri é o caminho para o pacote de implantação. O parâmetro contém uma variável **$containerRoot**. O valor $containerRoot é fornecido no [modelo de distribuição](#create-the-rollout-template) concatenando o local de SAS de origem do artefato, a raiz de artefato e o deployPackageUri.
-4. Abra **\ArtifactStore\binaries\1.0.0.0\helloWorldWebAppWUS.zip\index.html**.  
+4. Abra **\ArtifactStore\binaries\1.0.0.0\helloWorldWebAppWUS.zip\index.html**.
 
     ```html
     <html>
@@ -257,7 +256,7 @@ A captura de tela a seguir mostra a definição de etapa de espera:
 
 ![Gerenciador de Implantação do Azure, tutorial de etapa de espera dos recursos do modelo de distribuição](./media/deployment-manager-tutorial/azure-deployment-manager-tutorial-rollout-template-resources-wait-step.png)
 
-A duração é usando o [padrão ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations). **PT1M** (letras maiúsculas são necessárias) é um exemplo de uma espera de 1 minuto. 
+A duração é usando o [padrão ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations). **PT1M** (letras maiúsculas são necessárias) é um exemplo de uma espera de 1 minuto.
 
 Captura de tela a seguir mostra apenas algumas partes da definição de distribuição:
 
@@ -292,13 +291,13 @@ Você cria um arquivo de parâmetros usado com o modelo de distribuição.
 
 ## <a name="deploy-the-templates"></a>Implantar os modelos
 
-O Azure PowerShell pode ser usado para implantar os modelos. 
+O Azure PowerShell pode ser usado para implantar os modelos.
 
 1. Execute o script para implantar a topologia de serviço.
 
     ```azurepowershell
     $resourceGroupName = "<Enter a Resource Group Name>"
-    $location = "Central US"  
+    $location = "Central US"
     $filePath = "<Enter the File Path to the Downloaded Tutorial Files>"
 
     # Create a resource group
@@ -429,7 +428,7 @@ Quando os recursos do Azure já não forem necessários, limpe os recursos impla
     * **&lt;namePrefix>ServiceWUSrg**: contém os recursos definidos pelo ServiceWUS.
     * **&lt;namePrefix>ServiceEUSrg**: contém os recursos definidos pelo ServiceEUS.
     * O grupo de recursos para a identidade gerenciada definida pelo usuário.
-3. Selecione o nome do grupo de recursos.  
+3. Selecione o nome do grupo de recursos.
 4. Escolha **Excluir grupo de recursos** no menu superior.
 5. Repita as duas últimas etapas para excluir outros grupos de recursos criados neste tutorial.
 
