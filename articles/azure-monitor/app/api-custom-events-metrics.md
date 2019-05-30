@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: mbullwin
-ms.openlocfilehash: d0a4180a3ea28427b8d82c6f5cf86ef9fa51d580
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 6e20aef77625fe426526884c3fcee83019afd0c0
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65785891"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299247"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API do Application Insights para métricas e eventos personalizados
 
@@ -30,7 +30,7 @@ Insira algumas linhas de código em seu aplicativo para descobrir o que os usuá
 
 A API principal é uniforme em todas as plataformas, além de algumas variações como `GetMetric` (somente .NET).
 
-| Método | Utilizado para |
+| Método | Usado para |
 | --- | --- |
 | [`TrackPageView`](#page-views) |Páginas, telas, folhas ou formulários. |
 | [`TrackEvent`](#trackevent) |Ações de usuário e outros eventos. Usado para acompanhar o comportamento do usuário ou para monitorar o desempenho. |
@@ -53,7 +53,7 @@ Se você ainda não tem uma referência no SDK do Application Insights:
   * [Projeto Java](../../azure-monitor/app/java-get-started.md)
   * [Projeto do Node.js](../../azure-monitor/app/nodejs.md)
   * [JavaScript em cada página da Web](../../azure-monitor/app/javascript.md) 
-* No seu dispositivo ou código de servidor web, inclua:
+* Em seu código de servidor Web ou dispositivo, inclua:
 
     *C#:* `using Microsoft.ApplicationInsights;`
 
@@ -299,7 +299,7 @@ A telemetria está disponível na tabela `customMetrics` na [Análise do Applica
 * `valueSum` – essa é a soma das medidas. Para obter o valor médio, divida por `valueCount`.
 * `valueCount` – o número de medidas que foram agregadas nessa chamada para `trackMetric(..)`.
 
-## <a name="page-views"></a>Exibições de página
+## <a name="page-views"></a>Visualizações de página
 
 Em um aplicativo de página da Web ou dispositivo, a telemetria de exibição de páginas é enviada por padrão quando cada tela ou página é carregada. Porém, você pode alterar isso para acompanhar as exibições de páginas em momentos diferentes ou adicionais. Por exemplo, em um aplicativo que exibe guias ou folhas, talvez você queira acompanhar uma página sempre que o usuário abrir uma nova folha.
 
@@ -529,7 +529,7 @@ exceptions
 | summarize sum(itemCount) by type
 ```
 
-A maioria das informações de pilha importante já foi extraída em variáveis separadas, mas você pode extrair e separar a estrutura `details` para obter mais. Como essa estrutura é dinâmica, você deverá converter o resultado para o tipo esperado. Por exemplo:
+A maioria das informações de pilha importante já foi extraída em variáveis separadas, mas você pode extrair e separar a estrutura `details` para obter mais. Como essa estrutura é dinâmica, você deverá converter o resultado para o tipo esperado. Por exemplo: 
 
 ```kusto
 exceptions
@@ -581,7 +581,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: AI.S
 
 Registrar um evento de diagnóstico, como entrar ou sair de um método.
 
- Parâmetro | Descrição
+ Parâmetro | DESCRIÇÃO
 ---|---
 `message` | Dados de diagnóstico. Pode ser muito mais longo do que um nome.
 `properties` | Mapa de cadeia de caracteres para cadeia de caracteres: Dados adicionais usados para [filtrar exceções](https://azure.microsoft.com/documentation/articles/app-insights-api-custom-events-metrics/#properties) no portal. O padrão é vazio.
@@ -712,7 +712,7 @@ dependencies
 
 ## <a name="flushing-data"></a>Liberando dados
 
-Normalmente, o SDK envia dados em momentos escolhidos para minimizar o impacto sobre o usuário. No entanto, em alguns casos, você talvez queira liberar o buffer - por exemplo, se estiver usando o SDK em um aplicativo que é desligado.
+Normalmente, o SDK envia dados a intervalos fixos (normalmente de 30 segundos) ou sempre que o buffer está completa (normalmente de 500 itens). No entanto, em alguns casos, você talvez queira liberar o buffer - por exemplo, se estiver usando o SDK em um aplicativo que é desligado.
 
 *C#*
 
@@ -740,7 +740,7 @@ A função é assíncrona para o [canal de telemetria do servidor](https://www.n
 
 Idealmente, o método flush () deve ser usado na atividade de desligamento do Aplicativo.
 
-## <a name="authenticated-users"></a>Usuários autenticados
+## <a name="authenticated-users"></a>usuários autenticados
 
 Em um aplicativo Web, os usuários são (por padrão) identificados por cookies. Um usuário pode ser contado mais de uma vez se ele acessar seu aplicativo de um computador ou navegador diferente, ou se ele excluir cookies.
 
@@ -1155,7 +1155,7 @@ var appInsights = window.appInsights || function(config){ ...
 
 ## <a name="telemetrycontext"></a>TelemetryContext
 
-TelemetryClient tem uma propriedade de Contexto, que contém valores que serão enviadas com todos os dados de telemetria. Normalmente, eles são definidos pelos módulos padrão de telemetria, mas você pode também defini-las por conta própria. Por exemplo:
+TelemetryClient tem uma propriedade de Contexto, que contém valores que serão enviadas com todos os dados de telemetria. Normalmente, eles são definidos pelos módulos padrão de telemetria, mas você pode também defini-las por conta própria. Por exemplo: 
 
 ```csharp
 telemetry.Context.Operation.Name = "MyOperationName";
@@ -1175,7 +1175,7 @@ Se você definir qualquer um desses valores por conta própria, considere remove
 * **Session**: Sessão do usuário. A ID é definida para um valor gerado, que é alterado quando o usuário ficar inativo por um tempo.
 * **Usuário**: Informação do usuário.
 
-## <a name="limits"></a>Limites
+## <a name="limits"></a>limites
 
 [!INCLUDE [application-insights-limits](../../../includes/application-insights-limits.md)]
 

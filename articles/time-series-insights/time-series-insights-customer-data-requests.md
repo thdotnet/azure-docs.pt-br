@@ -2,19 +2,19 @@
 title: Recursos de solicitação de dados do cliente no Azure Time Series Insights | Microsoft Docs
 description: Resumo de recursos de solicitação de dados do cliente do Azure Time Series Insights.
 author: ashannon7
-ms.author: anshan
+ms.author: dpalled
 manager: cshankar
 ms.date: 05/08/2019
 ms.topic: conceptual
 ms.service: time-series-insights
 services: time-series-insights
 ms.custom: seodec18
-ms.openlocfilehash: 67aea6b3d535eeb0838da4ac6990c50e607617bf
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: f99a54f5623100e057e0c02249f5886f46656a21
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65546382"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66355924"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Resumo dos recursos de solicitação de dados do cliente
 
@@ -36,7 +36,7 @@ Um administrador de locatários pode excluir os dados do cliente usando o portal
 
 No entanto, antes de excluir os dados do cliente por meio do portal, você deve remover as políticas de acesso do usuário do ambiente do Time Series Insights no portal do Azure. Para obter mais informações, confira [Conceder o acesso a dados a um ambiente do Time Series Insights usando o portal do Azure](time-series-insights-data-access.md).
 
-Você também pode executar operações de exclusão em políticas de acesso usando a API REST. Para obter mais informações, confira [Políticas de Acesso – Excluir](https://docs.microsoft.com/rest/api/time-series-insights-management/accesspolicies/delete).
+Você também pode executar operações de exclusão em políticas de acesso usando a API REST. Para obter mais informações, confira [Políticas de Acesso – Excluir](/rest/api/time-series-insights/management/accesspolicies/delete).
 
 O Time Series Insights é integrado à folha Política no portal do Azure. O Time Series Insights e a folha Política permitem que você exiba, exporte e exclua os dados do usuário armazenados no serviço. Qualquer ação de exclusão realizada na folha Política do portal do Azure resulta na exclusão dos dados do usuário no Time Series Insights. Por exemplo, se um usuário tem uma consulta pessoal salva, essa consulta é excluída permanentemente do explorador do Time Series Insights. Se o usuário tem uma consulta compartilhada salva, a consulta é persistida, mas as informações do usuário são excluídas permanentemente. A observação a seguir contém instruções sobre como realizar essas tarefas.
 
@@ -48,7 +48,7 @@ De forma semelhante à exclusão de dados, um administrador de locatários pode 
 
 Caso você seja um administrador de locatários, exiba as políticas de acesso a dados no ambiente do Time Series Insights no portal do Azure. Para obter mais informações, confira [Conceder o acesso a dados a um ambiente do Time Series Insights usando o portal do Azure](time-series-insights-data-access.md).
 
-Também é possível executar operações de exportação nas políticas de acesso usando a operação "listar por ambiente" na API REST fornecida. Para obter mais informações, confira [Políticas de Acesso – Listar por Ambiente](https://docs.microsoft.com/rest/api/time-series-insights-management/accesspolicies/listbyenvironment).
+Também é possível executar operações de exportação nas políticas de acesso usando a operação "listar por ambiente" na API REST fornecida. Para obter mais informações, confira [Políticas de Acesso – Listar por Ambiente](/rest/api/time-series-insights/management/accesspolicies/listbyenvironment).
 
 ## <a name="to-delete-data-stored-within-time-series-insights"></a>Para excluir os dados armazenados no Time Series Insights
 

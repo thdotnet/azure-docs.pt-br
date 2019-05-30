@@ -2,7 +2,7 @@
 title: Consulta de dados da Versão prévia do Azure Time Series Insights | Microsoft Docs
 description: Consulta de dados da Versão Prévia do Azure Time Series Insights.
 author: ashannon7
-ms.author: anshan
+ms.author: dpalled
 ms.workload: big-data
 manager: cshankar
 ms.service: time-series-insights
@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: d28cb35b1e8e4eaa86418da632c6fcabb636e643
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: bbf682df2df7a8cdc9fedb36aa4244fc5c0e9488
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205027"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244010"
 ---
 # <a name="data-querying"></a>Consultas de dados
 
@@ -25,9 +25,9 @@ Três categorias principais de API estão disponíveis no Time Series Insights:
 
 * **APIs de ambiente**: permitem consultas no próprio ambiente do Time Series Insights. Exemplos de consultas incluem a lista de ambientes a que o chamador tem acesso e metadados do ambiente.
 
-* **APIs TSM-Q (Consulta do modelo do Time Series)**: permitem operações de criação, leitura, atualização e exclusão em metadados armazenados na parte do ambiente do modelo do Time Series. Exemplos incluem hierarquias, tipos e instâncias.
+* **APIs TSM-Q (Consulta do modelo do Time Series)** : permitem operações de criação, leitura, atualização e exclusão em metadados armazenados na parte do ambiente do modelo do Time Series. Exemplos incluem hierarquias, tipos e instâncias.
 
-* **APIs TSQ (consulta de série temporal)**: permitem a recuperação de dados de eventos conforme eles são registrados do provedor de origem. Essas APIs podem executar operações para transformar, combinar e executar cálculos em dados de série temporal.
+* **APIs TSQ (consulta de série temporal)** : permitem a recuperação de dados de eventos conforme eles são registrados do provedor de origem. Essas APIs podem executar operações para transformar, combinar e executar cálculos em dados de série temporal.
 
 A [linguagem TSX (expressão de série de tempo)](https://docs.microsoft.com/rest/api/time-series-insights/preview-tsx) é uma quarta categoria poderosa. Ela usa modelos do Time Series para permitir cálculos avançados.
 

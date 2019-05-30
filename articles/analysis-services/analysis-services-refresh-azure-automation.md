@@ -7,12 +7,12 @@ ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: chlound
-ms.openlocfilehash: abbad97e29f60e5f135017cd43f9d30eba1805ca
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 4cae93cff594ad561973f8029ea7335dc4c60263
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66142968"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66356994"
 ---
 # <a name="refresh-with-azure-automation"></a>Atualizar com Automação do Azure
 
@@ -26,7 +26,7 @@ Um Runbook do PowerShell, que demonstra a atualização de um modelo de exemplo 
 
 Todas as chamadas devem ser autenticadas com um token válido do Azure Active Directory (OAuth 2).  O exemplo neste artigo usará um serviço Principal (SPN) para se autenticar no Azure Analysis Services.
 
-Para saber mais sobre como criar uma entidade de serviço, consulte]
+Para saber mais sobre como criar uma entidade de serviço, consulte [criar uma entidade de serviço usando o portal do Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -39,11 +39,11 @@ Para saber mais sobre como criar uma entidade de serviço, consulte]
 
 2. Na barra de pesquisa, pesquise **SqlServer**.
 
-    ![Pesquisar Módulos](./media/analysis-services-refresh-azure-automation/1.png)
+    ![Módulos de pesquisa](./media/analysis-services-refresh-azure-automation/1.png)
 
 3. Selecione o SQL Server, clique **importação**.
  
-    ![Importar Módulo](./media/analysis-services-refresh-azure-automation/2.png)
+    ![Importar módulo](./media/analysis-services-refresh-azure-automation/2.png)
 
 4. Clique em **OK**.
  

@@ -8,16 +8,20 @@ ms.topic: reference
 ms.date: 03/28/2019
 ms.author: pabutler
 ROBOTS: NOINDEX
-ms.openlocfilehash: 816bdc61f85fdf171870a5b552661b816ec65e2f
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 9b80f0fd36545de94e7128080dba5e516344c107
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64943136"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257509"
 ---
 # <a name="saas-fulfillment-apis-version-1--deprecated"></a>Versão de APIs de preenchimento SaaS 1 (preterido)
 
 Este artigo explica como criar uma oferta de SaaS com APIs. As APIs, compostas de métodos REST e pontos de extremidade, são necessárias para permitir que as assinaturas para sua oferta de SaaS se tiver vendidos por meio do Azure selecionados.  
+
+> [!IMPORTANT] 
+> SaaS oferecem funcionalidade tiver sido migrada para o [Microsoft Partner Center](https://partner.microsoft.com/dashboard/directory).  Todos os novos editores devem usar o Partner Center para criar novas ofertas de SaaS e gerenciando ofertas existentes.  Editores atuais com ofertas de SaaS estão sendo migrados batchwise do Portal de parceiro do Cloud Partner Center.  Portal do Cloud Partner exibirá mensagens de status para indicar quando as ofertas específicas do existentes foram migradas.
+> Para obter mais informações, consulte [criar uma nova oferta de SaaS](../../partner-center-portal/create-new-saas-offer.md).
 
 > [!WARNING]
 > Esta versão inicial da API de preenchimento SaaS foi preterida; em vez disso, use [SaaS cumprimento API V2](./cpp-saas-fulfillment-api-v2.md).  Essa API atualmente está sendo mantida apenas para servir editores existentes. 
@@ -121,7 +125,7 @@ O ponto de extremidade do assinante permite aos usuários iniciar uma assinatura
 
 **PUT**
 
-**https://marketplaceapi.microsoft.com/api/saas/subscriptions/*{subscriptionId}*?api-version=2017-04-15**
+**https://marketplaceapi.microsoft.com/api/saas/subscriptions/ *{subscriptionId}* ?api-version=2017-04-15**
 
 | **Nome do Parâmetro**  | **Descrição**                                       |
 |---------------------|-------------------------------------------------------|
@@ -134,11 +138,11 @@ O ponto de extremidade do assinante permite aos usuários iniciar uma assinatura
 |  **Chave de cabeçalho**        | **Obrigatório** |  **Descrição**                                                  |
 | ------------------     | ------------ | --------------------------------------------------------------------------------------- |
 | x-ms-requestid         |   Não          | Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
-| x-ms-correlationid     |   Não          | Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse valor é para correlacionar todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
-| If-Match/If-None-Match |   Não          |   Valor de ETag de validador forte.                                                          |
+| x-ms-correlationid     |   Não         | Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse valor é para correlacionar todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
+| If-Match/If-None-Match |   Não         |   Valor de ETag de validador forte.                                                          |
 | content-type           |   Sim        |    `application/json`                                                                   |
 |  authorization         |   Sim        |    O token de portador JWT (Token Web JSON).                                               |
-| x-ms-marketplace-session-mode| Não  | Sinalizador para habilitar o modo de simulação ao assinar uma oferta de SaaS. Se definido, a assinatura não será cobrada. Isso é útil para cenários de teste de ISV. Defina-o como **'dryrun'**|
+| x-ms-marketplace-session-mode| Não | Sinalizador para habilitar o modo de simulação ao assinar uma oferta de SaaS. Se definido, a assinatura não será cobrada. Isso é útil para cenários de teste de ISV. Defina-o como **'dryrun'**|
 |  |  |  |
 
 *Corpo*
@@ -186,7 +190,7 @@ O ponto de extremidade de alteração permite que o usuário converta seu plano 
 
 **PATCH**
 
-**https://marketplaceapi.microsoft.com/api/saas/subscriptions/*{subscriptionId}*?api-version=2017-04-15**
+**https://marketplaceapi.microsoft.com/api/saas/subscriptions/ *{subscriptionId}* ?api-version=2017-04-15**
 
 | **Nome do Parâmetro**  | **Descrição**                                       |
 |---------------------|-------------------------------------------------------|
@@ -198,7 +202,7 @@ O ponto de extremidade de alteração permite que o usuário converta seu plano 
 
 | **Chave de cabeçalho**          | **Obrigatório** | **Descrição**                                                                                                                                                                                                                  |
 |-------------------------|--------------|---------------------------------------------------------------------------------------------------------------------|
-| x-ms-requestid          | Não            | Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente. Recomende um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.   |
+| x-ms-requestid          | Não           | Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente. Recomende um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.   |
 | x-ms-correlationid      | Não            | Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse valor é para correlacionar todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 | If-Match/If-None-Match | Não            | Valor de ETag de validador forte.                              |
 | content-type            | Sim          | `application/json`                                        |
@@ -250,7 +254,7 @@ A ação de exclusão no ponto de extremidade de assinatura permite que um usuá
 
 **DELETE**
 
-**https://marketplaceapi.microsoft.com/api/saas/subscriptions/*{subscriptionId}*?api-version=2017-04-15**
+**https://marketplaceapi.microsoft.com/api/saas/subscriptions/ *{subscriptionId}* ?api-version=2017-04-15**
 
 | **Nome do Parâmetro**  | **Descrição**                                       |
 |---------------------|-------------------------------------------------------|
@@ -300,7 +304,7 @@ Esse ponto de extremidade permite que o usuário acompanhe o status de uma opera
 
 **GET**
 
-**https://marketplaceapi.microsoft.com/api/saas/operations/*{operationId}*?api-version=2017-04-15**
+**https://marketplaceapi.microsoft.com/api/saas/operations/ *{operationId}* ?api-version=2017-04-15**
 
 | **Nome do Parâmetro**  | **Descrição**                                       |
 |---------------------|-------------------------------------------------------|
@@ -368,7 +372,7 @@ A ação Get no ponto de extremidade da assinatura permite que um usuário recup
 
 **GET**
 
-**https://marketplaceapi.microsoft.com/api/saas/subscriptions/*{subscriptionId}*?api-version=2017-04-15**
+**https://marketplaceapi.microsoft.com/api/saas/subscriptions/ *{subscriptionId}* ?api-version=2017-04-15**
 
 | **Nome do Parâmetro**  | **Descrição**                                       |
 |---------------------|-------------------------------------------------------|
@@ -501,7 +505,7 @@ A ação Get no ponto de extremidade de assinaturas permite que um usuário recu
 | x-ms-requestid     | Sim          | O valor da ID de solicitação recebido do cliente.                                                                   |
 | x-ms-correlationid | Sim          | A ID de correlação se passada pelo cliente. Caso contrário, é a ID de correlação do servidor.                   |
 | x-ms-activityid    | Sim          | Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do serviço. Isso é usado para quaisquer eventuais reconciliações. |
-| Retry-After        | Não            | Intervalo com o qual o cliente pode verificar o status.                                                       |
+| Retry-After        | Não           | Intervalo com o qual o cliente pode verificar o status.                                                       |
 |  |  |  |
 
 ### <a name="saas-webhook"></a>Webhook de SaaS

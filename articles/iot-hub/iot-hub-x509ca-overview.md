@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 09/18/2017
 ms.author: eustacea
-ms.openlocfilehash: b7464e5cc052ecade4a10102de947d37a63c962a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3d02d3573902964a8549fa0eeb1f4f1471de1752
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60615027"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257571"
 ---
 # <a name="device-authentication-using-x509-ca-certificates"></a>Autenticação de dispositivo usando certificados de AC X.509
 
@@ -40,7 +40,7 @@ Para o ambiente de produção, recomendamos que você adquira um certificado de 
 
 Você também pode criar uma AC X.509 autoassinada para experimentação ou para uso em redes de IoT fechadas.
 
-Independentemente de como você obtém o certificado de autoridade de certificação X.509, certifique-se de manter sua chave privada correspondente secreta e protegida o tempo todo.  Isso é necessário para a criação de relação de confiança na autenticação da AC X.509.
+Independentemente de como obter seu certificado de autoridade de certificação X.509, certifique-se de manter sua chave privada correspondente secreta e protegida em todos os momentos.  Isso é necessário para a criação de relação de confiança na autenticação da AC X.509.
 
 Saiba como [criar um certificado de autoridade de certificação autoassinado](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md), que você pode usar para experimentação em toda esta descrição do recurso.
 

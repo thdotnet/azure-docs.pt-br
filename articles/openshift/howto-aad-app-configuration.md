@@ -1,20 +1,20 @@
 ---
 title: Integração do Active Directory do Azure para Azure Red Hat OpenShift | Microsoft Docs
 description: Saiba como criar um grupo de segurança do Azure AD e o usuário para testar aplicativos em seu cluster do Microsoft Azure Red Hat OpenShift.
-author: tylermsft
-ms.author: twhitney
+author: jimzim
+ms.author: jzim
 ms.service: openshift
 manager: jeconnoc
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/13/2019
-ms.openlocfilehash: f6b87748c33c1afd047ae25dfb7df3670a73e7c8
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: adc5a601a04936a376d7c69b26c2429940ebdf6e
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65779690"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306469"
 ---
 # <a name="azure-active-directory-integration-for-azure-red-hat-openshift"></a>Integração do Active Directory do Azure para Azure Red Hat OpenShift
 
@@ -69,7 +69,7 @@ Se sua organização ainda não tiver um registro de aplicativo do Azure Active 
 2. No **registrar um aplicativo** painel, insira um nome para seu registro de aplicativo.
 3. Certifique-se de que, em **suporte para tipos de conta** que **contas neste diretório organizacional apenas** está selecionado. Essa é a opção mais segura.
 4. Adicionaremos um URI de redirecionamento mais tarde quando soubermos o URI do cluster. Clique o **registrar** botão para criar o registro de aplicativo do Azure AD.
-5. Na página que aparece, anote o **ID do aplicativo (cliente)**. Vamos nos referir a esse valor como `APPID` no [criar um cluster do Azure Red Hat OpenShift](tutorial-create-cluster.md) tutorial.
+5. Na página que aparece, anote o **ID do aplicativo (cliente)** . Vamos nos referir a esse valor como `APPID` no [criar um cluster do Azure Red Hat OpenShift](tutorial-create-cluster.md) tutorial.
 
 ![Captura de tela da página de objeto de aplicativo](./media/howto-create-tenant/get-app-id.png)
 

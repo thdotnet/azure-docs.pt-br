@@ -2,18 +2,18 @@
 title: Recursos com suporte para Azure Red Hat OpenShift | Microsoft Docs
 description: Entenda quais regiões do Azure e os tamanhos de máquina virtual são suportados pelo Microsoft Azure Red Hat OpenShift.
 services: container-service
-author: tylermsft
-ms.author: twhitney
+author: jimzim
+ms.author: jzim
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 05/15/2019
-ms.openlocfilehash: 5182a5e325bd7883af1a7d102d3e02b277a5089e
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: c226227797802ab58d1bcbaadb7e97e780b30560
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65788709"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306210"
 ---
 # <a name="azure-red-hat-openshift-resources"></a>Recursos do Azure do Red Hat OpenShift
 
@@ -23,7 +23,7 @@ Este tópico lista as regiões do Azure e os tamanhos de máquina virtual com su
 
 Ver [produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/?products=openshift&regions=all) para obter uma lista atual de regiões em que você pode implantar o Azure Red Hat OpenShift clusters.
 
-## <a name="virtual-machine-sizes"></a>Tamanhos das máquinas virtuais
+## <a name="virtual-machine-sizes"></a>Tamanhos de máquina virtual
 
 Estes são os tamanhos de máquina virtual com suporte que você pode especificar os nós de computação no cluster do Azure Red Hat OpenShift.
 
@@ -48,9 +48,9 @@ Os seguintes tamanhos de nó de computação são suportados pela API de REST do
 |Standard E16s v3|16|128 GB|
 |Standard E32s v3|32|256 GB|
 |-|-|-|
-|F8s v2 Standard|8|16 GB|
-|F16s v2 Standard|16|32 GB|
-|F32s v2 Standard|32|64 GB|
+|Standard F8s v2|8|16 GB|
+|Standard F16s v2|16|32 GB|
+|Standard F32s v2|32|64 GB|
 
 ## <a name="master-node-sizes"></a>Tamanhos de nó mestre
 

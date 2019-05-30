@@ -8,12 +8,12 @@ ms.service: advisor
 ms.topic: article
 ms.date: 01/29/2019
 ms.author: kasparks
-ms.openlocfilehash: 188a79df99a174436808acd3d964abf9357cf4c0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fef7b82e6969de16d1815250d2373c99021b0e86
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60467929"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254718"
 ---
 # <a name="reduce-service-costs-using-azure-advisor"></a>Reduza os custos de serviço usando o Assistente do Azure
 
@@ -45,13 +45,20 @@ O Supervisor também notificará de instâncias reservadas que você tem que ir�
 
 O Advisor identifica os endereços IP públicos que não estão atualmente associados aos recursos do Azure, como VMs ou balanceadores de carga. Esses endereços de IP público endereços vêm com um custo nominal. Se você não planeja usá-los, excluí-los pode resultar em economias de custo.
 
+## <a name="delete-azure-data-factory-pipelines-that-are-failing"></a>Excluir os pipelines do Azure Data Factory que estão falhando
+
+O Azure Advisor detectará os pipelines do Azure Data Factory que falhar repetidamente e recomendam que você resolva os problemas ou excluir os pipelines com falha se eles não são mais necessários. Esses pipelines será cobrado mesmo que, embora eles não estão atendendo a você enquanto eles estão falhando. 
+
+## <a name="use-standard-snapshots-for-managed-disks"></a>Usar instantâneos de Standard para discos gerenciados
+Para salvar a 60% do custo, é recomendável armazenar seus instantâneos no armazenamento padrão, independentemente do tipo de armazenamento do disco pai. Isso é a opção padrão para instantâneos de discos gerenciados. O Azure Advisor identificará os instantâneos são armazenados o armazenamento Premium e é recomendável migrar seu instantâneo de Premium para o armazenamento Standard. [Saiba mais sobre preços do Managed Disk](https://aka.ms/aa_manageddisksnapshot_learnmore)
+
 ## <a name="how-to-access-cost-recommendations-in-azure-advisor"></a>Como acessar as recomendações de custo no Assistente do Azure
 
 1. Entre no [Portal do Azure](https://portal.azure.com) e, em seguida, abra o [Assistente](https://aka.ms/azureadvisordashboard).
 
 2.  No painel do Assistente, clique na guia **Custo**.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Para saber mais sobre as recomendações do Assistente, consulte:
 * [Introdução ao Advisor](advisor-overview.md)

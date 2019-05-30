@@ -12,12 +12,12 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 manager: craigg
 ms.date: 11/09/2018
-ms.openlocfilehash: 52a9cfa52cd63715addadcbfb367510ded56fd76
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 6cbfdc9e595ebdf682356990ec975dbd0514035d
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65142717"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66297086"
 ---
 # <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Conectar seu aplicativo à Instância Gerenciada do Banco de Dados SQL do Azure
 
@@ -56,7 +56,7 @@ Há duas opções de conexão do local à VNET do Azure:
 - Conexão VPN Site a Site ([portal do Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md), [PowerShell](../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md), [CLI do Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli.md))
 - Conexão do [ExpressRoute](../expressroute/expressroute-introduction.md)  
 
-Se você estabeleceu com êxito a conexão do local ao Azure e não pode estabelecer a conexão à Instância Gerenciada, verifique se o firewall tem a conexão de saída aberta na porta 1433 do SQL, bem como no intervalo 11000-12000 de portas para o redirecionamento.
+Se você estabeleceu local para a conexão do Azure com êxito e você não pode estabelecer conexão à instância gerenciada, verifique se o firewall tem conexão de saída aberto na porta 1433 do SQL, bem como intervalo de 11000 a 11999 de portas para o redirecionamento.
 
 ## <a name="connect-an-application-on-the-developers-box"></a>Conectar um aplicativo na caixa de desenvolvedores
 
@@ -96,7 +96,7 @@ Este cenário é ilustrado no seguinte diagrama:
 
 Para solucionar problemas de conectividade, examine o seguinte:
 
-- Se não for possível conectar-se à Instância Gerenciada de uma máquina virtual do Azure na mesma VNet, mas em uma sub-rede diferente, verifique se há um Grupo de Segurança de Rede definido na sub-rede da VM que poderia estar bloqueando o acesso. Além disso, observe que é necessário abrir a conexão de saída na porta SQL 1433, bem como as portas no intervalo de 11000 a 12000, pois elas são necessárias para conectar-se por meio de redirecionamento de dentro dos limites do Azure.
+- Se você não conseguir se conectar à instância gerenciada de uma máquina virtual do Azure no mesmo VNet mas sub-rede diferente, verifique se você tiver um grupo de segurança de rede definido na sub-rede VM que pode estar bloqueando o acesso. Além disso Observe que você precisa abrir a conexão de saída na porta 1433 do SQL, bem como as portas no intervalo de 11000-11999, pois esses são necessárias para conectar-se via redirecionamento dentro do limite do Azure.
 - Verifique se a Propagação de BGP está definida como **Habilitada** para a tabela de rotas associada à VNet.
 - Se estiver usando VPN P2S, verifique a configuração no portal do Azure para verificar se os números de **Entrada/Saída** são mostrados. Números diferentes de zero indicam que o Azure está roteando o tráfego de/para o local.
 

@@ -12,12 +12,12 @@ ms.author: josack
 ms.reviewer: sstein
 manager: craigg
 ms.date: 02/13/2019
-ms.openlocfilehash: e13907e96bba338648bddcc102e3b4f51887d0ea
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 73bc2d9889727a1633986e12642bd06cf2714632
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65949910"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357323"
 ---
 # <a name="new-dba-in-the-cloud--managing-your-single-and-pooled-databases-in-azure-sql-database"></a>DBA novo na nuvem – gerenciamento de bancos de dados individuais e em pool no Banco de Dados SQL do Azure
 
@@ -29,6 +29,7 @@ Mover do ambiente autogerenciado autocontrolado tradicional para um ambiente Paa
 
 Este artigo discute algumas das principais características do Banco de Dados SQL do Azure como uma plataforma da qual você pode se beneficiar prontamente ao trabalhar com bancos de dados individuais e em pools elásticos. Eles são os seguintes:
 
+- Monitorar o banco de dados usando o portal do Azure
 - BCDR (continuidade de negócios e recuperação de desastres)
 - Segurança e conformidade
 - Monitoramento e manutenção de banco de dados inteligente
@@ -36,6 +37,25 @@ Este artigo discute algumas das principais características do Banco de Dados SQ
 
 > [!NOTE]
 > Este artigo se aplica às seguintes opções de implantação do Banco de Dados SQL do Azure: bancos de dados individuais e pools elásticos. Ele não se aplica à opção de implantação de instância gerenciada do Banco de Dados SQL.
+
+## <a name="monitor-databases-using-the-azure-portal"></a>Monitorar bancos de dados usando o Portal do Azure
+
+No [portal do Azure](https://portal.azure.com/), você pode monitorar a utilização de um banco de dados individual s selecionando seu banco de dados e clicando na **monitoramento** gráfico. Isso abre uma janela **Métrica** que pode ser alterada clicando no botão **Editar gráfico**. Adicione as seguintes métricas:
+
+- Percentual de CPU
+- Porcentagem de DTU
+- Porcentagem de E/S de dados
+- Percentual de tamanho do banco de dados
+
+Depois de adicionar essas métricas, você pode continuar a visualizá-las no gráfico **Monitoramento** com mais informações na janela **Métrica**. Todas as quatro métricas mostram o percentual médio de utilização relativo à **DTU** do seu banco de dados. Consulte os artigos [Modelo de compra baseado em DTU](sql-database-service-tiers-dtu.md) e [Modelo de compra baseado em vCore](sql-database-service-tiers-vcore.md) para obter mais informações sobre as camadas de serviço.  
+
+![Monitoramento da camada de serviço do desempenho do banco de dados.](./media/sql-database-single-database-monitoring/sqldb_service_tier_monitoring.png)
+
+Você também pode configurar alertas nas métricas de desempenho. Clique no botão **Adicionar alerta** na janela **Métrica**. Siga o Assistente para configurar o alerta. Você tem a opção de alerta se a métrica exceder um limite determinado ou se ficar abaixo de um limite determinado.
+
+Por exemplo, se você espera que a carga de trabalho em seu banco de dados cresça, você poderá configurar um alerta por email sempre que seu banco de dados atinge 80% em qualquer uma das métricas de desempenho. Você pode usar isso como um aviso antecipado para decidir quando precisará alternar para o próximo tamanho da computação mais elevado.
+
+As métricas de desempenho podem ajudá-lo a determinar se você pode fazer downgrade para um tamanho da computação inferior. Suponha que você está usando um banco de dados Standard S2 e todas as métricas de desempenho mostram que o banco de dados em média não usa mais de 10% a qualquer momento. É provável que o banco de dados funcione bem em Standard S1. No entanto, tome cuidado com cargas de trabalho que apresentam picos ou oscilam antes de tomar a decisão de migrar para um tamanho da computação inferior.
 
 ## <a name="business-continuity-and-disaster-recovery-bcdr"></a>BCDR (continuidade de negócios e recuperação de desastres)
 
