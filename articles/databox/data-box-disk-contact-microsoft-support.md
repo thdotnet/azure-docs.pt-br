@@ -6,18 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: ''
 ms.topic: article
-ms.date: 09/27/2018
+ms.date: 05/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 5b392fecd75f5c18793a6122b8d5d967a2e54afa
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: acba9d2c87d2fb23e48ac24cec22388044702bac
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65604449"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240142"
 ---
 # <a name="open-a-support-ticket-for-azure-data-box"></a>Abrir um tíquete de suporte para o Azure Data Box 
 
-Este artigo se aplica ao Azure Data Box e ao Azure Data Box Disk, que são gerenciados pelo serviço Azure Data Box. Caso enfrente algum problema com o serviço Azure Data Box, você poderá criar uma solicitação de serviço para suporte técnico. Este artigo orienta você sobre:
+Este artigo se aplica ao Azure Data Box, o pesada de caixa de dados do Azure e o disco do Azure Data Box, que são gerenciados pelo serviço do Azure Data Box. Caso enfrente algum problema com o serviço Azure Data Box, você poderá criar uma solicitação de serviço para suporte técnico. Este artigo orienta você sobre:
 
 * Como criar uma solicitação de suporte.
 * Como gerenciar o ciclo de vida de uma solicitação de suporte de dentro do portal.
@@ -34,7 +34,7 @@ Execute as seguintes etapas para criar uma solicitação de suporte:
     
     1. Na lista suspensa **Tipo de problema**, selecione **Técnico**.
     2. Escolha sua **Assinatura**.
-    3. Em **Serviço**, marque **Todos os serviços**. Na lista suspensa, selecione **Data Box – versão prévia**. 
+    3. Em **Serviço**, marque **Todos os serviços**. Na lista suspensa, selecione **Data Box**. 
     4. Especifique seu **Plano de suporte**.
     5. Clique em **Avançar**.
 
@@ -84,3 +84,5 @@ Depois de criar um tíquete de suporte, você pode gerenciar o ciclo de vida do 
 ## <a name="next-steps"></a>Próximas etapas
 
 Saiba como [Solucionar problemas relacionados ao serviço de Data Box Disk](data-box-disk-troubleshoot.md).
+Saiba como [solucionar problemas relacionados à Data Box](data-box-troubleshoot.md).
+Saiba como [solucionar problemas relacionados ao armazenamento de blobs de caixa de dados](data-box-troubleshoot-rest.md).

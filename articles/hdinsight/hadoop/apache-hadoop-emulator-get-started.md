@@ -7,14 +7,14 @@ author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 12/11/2017
+ms.date: 05/29/2019
 ms.author: hrasheed
-ms.openlocfilehash: 15152196e45265985c8abb409523982bd4c5d427
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 2cb99cfe765e1d3444f362e591812f5088c78c0e
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64697414"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393143"
 ---
 # <a name="get-started-with-an-apache-hadoop-sandbox-an-emulator-on-a-virtual-machine"></a>Comece com uma área restrita Apache Hadoop, um emulador em uma máquina virtual
 
@@ -24,19 +24,16 @@ Aprenda a instalar o sandbox Apache Hadoop do Hortonworks em uma máquina virtua
 * [Oracle VirtualBox](https://www.virtualbox.org/). Baixe-o e instale-o [aqui](https://www.virtualbox.org/wiki/Downloads).
 
 
-
 ## <a name="download-and-install-the-virtual-machine"></a>Baixar e instalar a máquina virtual
-1. Navegue até os [downloads da Hortonworks](https://hortonworks.com/downloads/#sandbox).
+1. Navegue até a [downloads do Cloudera](https://www.cloudera.com/downloads/hortonworks-sandbox/hdp.html).
 
-2. Clique em **BAIXAR PARA VIRTUALBOX** para baixar a Área Restrita da Hortonworks mais recente em uma VM. Será solicitado que você se registre na Hortonworks antes de iniciar o download. O download leva de uma a duas horas, dependendo da velocidade da sua rede.
+2. Clique em **VIRTUALBOX** sob **Escolher tipo de instalação** para baixar a última área restrita do Hortonworks em uma máquina virtual. Entre ou preencha o formulário de interesse do produto.
 
-    ![Imagem de link para download da Hortonworks Sandbox para VirtualBox](./media/apache-hadoop-emulator-get-started/download-sandbox.png)
-3. Na mesma página da Web, clique no link **Import on Virtual Box** para baixar um PDF contendo instruções de instalação para a máquina virtual.
+1. Clique no botão **área restrita do HDP (mais recente)** para iniciar o download.
 
-Para baixar uma área restrita da versão mais antiga do HDP, expanda o arquivamento:
+Para obter instruções sobre como configurar a área restrita, consulte [área restrita do guia de implantação e instalar](https://hortonworks.com/tutorial/sandbox-deployment-and-install-guide/section/1/).
 
-![Arquivamento da Área Restrita da Hortonworks](./media/apache-hadoop-emulator-get-started/hortonworks-sandbox-archive.png)
-
+Para baixar uma área de versão mais antiga do HDP, consulte os links em **versões mais antigas**.
 
 ## <a name="start-the-virtual-machine"></a>Iniciar a máquina virtual
 
@@ -52,7 +49,7 @@ Para baixar uma área restrita da versão mais antiga do HDP, expanda o arquivam
 1. Na etapa de **introdução** da página da Hortonworks Sandbox, selecione **Exibir Opções Avançadas**. Use as informações desta página para fazer logon na área restrita usando SSH. Use o nome e a senha fornecidos.
 
    > [!NOTE]
-   > Se você não tiver um cliente SSH instalado, use o SSH baseado na Web fornecido pela máquina virtual em **http://localhost:4200/**.
+   > Se você não tiver um cliente SSH instalado, use o SSH baseado na Web fornecido pela máquina virtual em **http://localhost:4200/** .
 
     Na primeira vez que você se conectar usando SSH, você receberá uma solicitação para alterar a senha da conta raiz. Insira uma nova senha, que você usa quando faz logon usando SSH.
 

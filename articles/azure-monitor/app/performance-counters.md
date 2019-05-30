@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: mbullwin
-ms.openlocfilehash: cff4aaaab97fdcecab9cdf1d0dff2786f86b604b
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 0ec64a5ae412fb4a1900021fefcb7d9112b1b019
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65966704"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255336"
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Contadores de desempenho do sistema no Application Insights
 
@@ -41,8 +41,6 @@ Os contadores padrão atual que estão configurados para serem coletados para ap
          - Process\\IO Data Bytes/sec
          - ASP.NET Applications\\Requests In Application Queue
          - Processor(_Total)\\% Processor Time
-
-Para ver todos os gráficos mais úteis em um único lugar, crie um [painel](../../azure-monitor/app/app-insights-dashboards.md) e fixe-os a ele.
 
 ## <a name="add-counters"></a>Adicionar contadores
 

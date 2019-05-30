@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.author: babanisa
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: 131a55d130e7ebf619ee283e943c0b0a7b45edfd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 61821caa2450096bdbdde3461316ad21a82f6f18
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60562009"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66304290"
 ---
 # <a name="understand-event-domains-for-managing-event-grid-topics"></a>Entenda os domínios de eventos para gerenciar tópicos do Event Grid
 
@@ -22,8 +22,6 @@ Este artigo descreve como usar domínios de eventos para gerenciar o fluxo de ev
 * Gerenciar a autorização e a autenticação.
 * Particionar tópicos sem gerenciar cada um individualmente.
 * Evitar publicar individualmente em cada um dos pontos de extremidade do tópico.
-
-Esse recurso está em visualização. Para usá-lo, você deve instalar uma extensão ou módulo de visualização. Para obter instruções, consulte [Gerenciar tópicos e publicar eventos usando os Domínios de Eventos](how-to-event-domains.md).
 
 ## <a name="event-domain-overview"></a>Visão geral do domínio de eventos
 
@@ -49,7 +47,7 @@ O RBAC em domínios de eventos funciona da mesma maneira que o [controle de aces
 
 ### <a name="built-in-roles"></a>Funções internas
 
-O Event Grid tem duas definições de função integradas para tornar o RBAC mais fácil para trabalhar com domínios de eventos. Essas funções são **EventGrid EventSubscription Contributor (Visualizar)** e **EventGrid EventSubscription Reader (Visualizar)**. Você atribui essas funções a usuários que precisam se inscrever em tópicos em seu domínio de evento. Você define a atribuição de função apenas para o tópico que os usuários precisam se inscrever.
+O Event Grid tem duas definições de função integradas para tornar o RBAC mais fácil para trabalhar com domínios de eventos. Essas funções são **EventGrid EventSubscription Contributor (Visualizar)** e **EventGrid EventSubscription Reader (Visualizar)** . Você atribui essas funções a usuários que precisam se inscrever em tópicos em seu domínio de evento. Definir o escopo de atribuição de função para apenas o que os usuários precisam para assinar o tópico.
 
 Para obter informações sobre essas funções, consulte [Funções internas da grade de eventos](security-authentication.md#built-in-roles).
 
@@ -99,18 +97,18 @@ Por exemplo, publicar a matriz de eventos a seguir enviaria o evento com `"id": 
 Os domínios de eventos tratam da publicação de tópicos para você. Em vez de publicar eventos para cada tópico gerenciado individualmente, você pode publicar todos os seus eventos no endpoint do domínio. A Grade de Eventos garante que cada evento seja enviado para o tópico correto.
 
 ## <a name="limits-and-quotas"></a>Limites e cotas
+Aqui estão os limites e cotas relacionadas aos domínios de evento:
 
-### <a name="control-plane"></a>Painel de controle
+- tópicos de 100.000 por domínio de evento 
+- domínios de evento 100 por assinatura do Azure 
+- assinaturas de evento 500 por tópico em um domínio de evento
+- 50 assinaturas de escopo de domínio 
+- 5.000 eventos por segundo taxa de ingestão (em um domínio)
 
-Durante a versão prévia, os Domínios de Eventos serão limitados a 1.000 tópicos por domínio e 50 assinaturas de evento por tópico de um Domínio. As assinaturas de escopo de domínio de eventos também são limitadas a 50.
-
-### <a name="data-plane"></a>Plano de dados
-
-Durante a visualização, o rendimento do evento para um domínio de evento será limitado à mesma taxa de ingestão de 5.000 eventos por segundo à qual os tópicos personalizados estão limitados.
+Se esses limites não adequados a você, entre em contato a equipe de produto, abrindo um tíquete de suporte ou enviando um email para [ askgrid@microsoft.com ](mailto:askgrid.microsoft.com). 
 
 ## <a name="pricing"></a>Preços
-
-Durante a visualização, os domínios de eventos usam o mesmo [preço de operações](https://azure.microsoft.com/pricing/details/event-grid/) que todos os outros recursos do Event Grid usam.
+Domínios de eventos usam o mesmo [operações de preços](https://azure.microsoft.com/pricing/details/event-grid/) que usam todos os outros recursos na grade de eventos.
 
 As operações funcionam da mesma forma em domínios de eventos, como em tópicos personalizados. Cada entrada de um evento para um domínio de evento é uma operação e cada tentativa de entrega de um evento é uma operação.
 

@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 05/05/2019
-ms.openlocfilehash: a70a887ccb19d9c1cbdb5f8ebf6aa8d4b25a0dfd
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 0628d5c07d7258cc4d68727c364e65bd81c78e8e
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65161064"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388989"
 ---
 # <a name="azure-devops-task-for-azure-data-explorer"></a>Tarefa de DevOps do Azure para o Gerenciador de dados do Azure
 
@@ -67,7 +67,7 @@ Crie as seguintes pastas de exemplo (*funções*, *diretivas*, *tabelas*) em seu
 
     ![Criar variável](media/devops/create-variable.png)
 
-    Para localizar seu Endpoint_URL, a página de visão geral de seu **Cluster do Azure Data Explorer** no Azure portal contém o URI de cluster do Data Explorer do Azure. Construir o URI no seguinte formato `https://<Azure Data Explorer cluster URI>?DatabaseName=<DBName>`.  Por exemplo, https://kustodocs.westus.kusto.windows.net?DatabaseName=SampleDB
+    Para localizar seu Endpoint_URL, a página de visão geral de seu **Cluster do Azure Data Explorer** no Azure portal contém o URI de cluster do Data Explorer do Azure. Construir o URI no seguinte formato `https://<Azure Data Explorer cluster URI>?DatabaseName=<DBName>`.  Por exemplo, https:\//kustodocs.westus.kusto.windows.net?DatabaseName=SampleDB
 
     ![URI do cluster Data Explorer do Azure](media/devops/adx-cluster-uri.png)
 

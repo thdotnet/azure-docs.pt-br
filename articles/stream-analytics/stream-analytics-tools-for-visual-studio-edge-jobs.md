@@ -1,6 +1,6 @@
 ---
-title: Trabalhos do Edge nas ferramentas do Azure Stream Analytics para Visual Studio
-description: Este artigo descreve como criar, depurar e criar trabalhos de Borda do Stream Analytics usando as ferramentas do Stream Analytics para Visual Studio.
+title: Trabalhos do Stream Analytics borda da caixa de dados no Azure Stream Analytics tools para Visual Studio
+description: Este artigo descreve como criar, depurar e criar trabalhos do Stream Analytics de borda da caixa de dados usando as ferramentas do Stream Analytics para Visual Studio.
 services: stream-analytics
 author: su-jie
 ms.author: sujie
@@ -9,34 +9,34 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 684690baa63f5ccd65c69e3a1b7e310c2f809e59
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 242fb2daebfe9eb6e5a0c73c2c4c0e91a3131032
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60762552"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66304153"
 ---
-# <a name="develop-stream-analytics-edge-jobs-using-visual-studio-tools"></a>Desenvolver trabalhos de Borda do Stream Analytics utilizando ferramentas do Visual Studio
+# <a name="develop-stream-analytics-data-box-edge-jobs-using-visual-studio-tools"></a>Desenvolver trabalhos de borda da caixa de dados do Stream Analytics usando as ferramentas do Visual Studio
 
-Neste tutorial, você aprenderá a utilizar as ferramentas do Stream Analytics para o Visual Studio criar, depurar e criar trabalhos de Borda do Stream Analytics. Após criar e testar o trabalho, você poderá acessar o Portal do Azure para implantá-lo nos dispositivos. 
+Neste tutorial, você aprenderá como usar o Stream Analytics tools para Visual Studio. Você aprenderá a criar, depurar e criar trabalhos do Stream Analytics de borda da caixa de dados. Após criar e testar o trabalho, você poderá acessar o Portal do Azure para implantá-lo nos dispositivos. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Você precisará dos seguintes pré-requisitos para concluir este tutorial:
 
-* Instale o [Visual Studio 2017](https://www.visualstudio.com/downloads/), [Visual Studio 2015](https://www.visualstudio.com/vs/older-downloads/) ou [Visual Studio 2013 Update 4](https://www.microsoft.com/download/details.aspx?id=45326). As edições Enterprise (Ultimate/Premium), Professional, Community têm suporte. Não há suporte para a edição Express.  
+* Instale [Visual Studio de 2019](https://visualstudio.microsoft.com/downloads/), [Visual Studio 2015](https://www.visualstudio.com/vs/older-downloads/), ou [Visual Studio 2013 atualização 4](https://www.microsoft.com/download/details.aspx?id=45326). As edições Enterprise (Ultimate/Premium), Professional, Community têm suporte. Não há suporte para a edição Express.  
 
 * Siga as [instruções de instalação](stream-analytics-tools-for-visual-studio-edge-jobs.md) para instalar as ferramentas do Stream Analytics para o Visual Studio.
  
-## <a name="create-a-stream-analytics-edge-project"></a>Criar um projeto de Borda do Azure Stream Analytics 
+## <a name="create-a-stream-analytics-data-box-edge-project"></a>Criar um projeto de borda da caixa de dados do Stream Analytics 
 
 No Visual Studio, selecione **Aquivo** > **Novo** > **Projeto**. Navegue até a lista de **Modelos** à esquerda > expanda **Azure Stream Analytics** > **Borda do Stream Analytics** > **Aplicativo de Borda do Azure Stream Analytics**. Forneça um Nome, Local e nome da Solução para o projeto e selecione **OK**.
 
-![Novo projeto Edge no Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/new-stream-analytics-edge-project.png)
+![Novo projeto de borda da caixa de dados do Stream Analytics no Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/new-stream-analytics-edge-project.png)
 
 Depois que o projeto for criado, navegue para o **Gerenciador de Soluções** para exibir a hierarquia de pastas.
 
-![Modo de exibição de Gerenciador de soluções do trabalho do Edge do Stream Analytics](./media/stream-analytics-tools-for-visual-studio-edge-jobs/edge-project-in-solution-explorer.png)
+![Modo de exibição de Gerenciador de soluções do trabalho de borda da caixa de dados do Stream Analytics](./media/stream-analytics-tools-for-visual-studio-edge-jobs/edge-project-in-solution-explorer.png)
 
  
 ## <a name="choose-the-correct-subscription"></a>Escolha a assinatura correta
@@ -58,12 +58,12 @@ Depois que o projeto for criado, navegue para o **Gerenciador de Soluções** pa
 
 1. No **Gerenciador de Soluções**, expanda o nó de **Saídas** e você deverá ver uma saída nomeada **EdgeOutput.json**. Clique duas vezes para exibir as configurações.  
 
-2. Certifique-se de que o Coletor esteja definido para selecionar **Hub de Borda** > Formato de Serialização de Evento definido como **Json** > Codificação definida como **UTF8** > e Formato definido como **Matriz**. Opcionalmente, é possível renomear o **Alias de Saída**, mas para este exemplo manteremos como está. Se for renomear o alias de saída, utilize o nome especificado durante a definição da consulta. Clique em **Salvar** para salvar as configurações. 
+2. Certifique-se de definir um coletor para selecionar **Hub do Edge**, defina o formato de serialização de evento **Json**, defina a codificação para **UTF8**e defina o formato **matriz**. Opcionalmente, é possível renomear o **Alias de Saída**, mas para este exemplo manteremos como está. Se for renomear o alias de saída, utilize o nome especificado durante a definição da consulta. Clique em **Salvar** para salvar as configurações. 
    ![Configuração de saída de trabalho do Stream Analytics](./media/stream-analytics-tools-for-visual-studio-edge-jobs/stream-analytics-output-configuration.png)
  
 ## <a name="define-the-transformation-query"></a>Definir a consulta de transformação
 
-Os trabalhos do Stream Analytics implantados nos ambientes de Borda têm suporte para a maior parte da [Referência da Linguagem de Consulta do Stream Analytics](https://msdn.microsoft.com/azure/stream-analytics/reference/stream-analytics-query-language-reference?f=255&MSPPError=-2147217396), no entanto, as operações a seguir ainda não têm suporte para trabalhos de Borda: 
+Trabalhos do Stream Analytics implantados nos ambientes de borda da caixa de dados do Stream Analytics dão suporte à maioria dos [referência de linguagem de consulta do Stream Analytics](https://msdn.microsoft.com/azure/stream-analytics/reference/stream-analytics-query-language-reference?f=255&MSPPError=-2147217396). No entanto, as operações a seguir ainda não há suporte para trabalhos de borda da caixa de dados do Stream Analytics: 
 
 
 |**Categoria**  | **Comando**  |
@@ -71,7 +71,7 @@ Os trabalhos do Stream Analytics implantados nos ambientes de Borda têm suporte
 |Operadores geoespaciais |<ul><li>CreatePoint</li><li>CreatePolygon</li><li>CreateLineString</li><li>ST_DISTANCE</li><li>ST_WITHIN</li><li>ST_OVERLAPS</li><li>ST_INTERSECTS</li></ul> |
 |Outros operadores | <ul><li>PARTIÇÃO POR</li><li>CARIMBO DE DATA/HORA POR MAIS DE</li><li>DISTINTO</li><li>Parâmetro de expressão no operador COUNT</li><li>Microssegundo nas funções de DATA e HORA</li><li>JavaScript UDA (esse recurso ainda está em versão prévia para trabalhos implantados na nuvem)</li></ul>   |
 
-Ao criar um trabalho de Borda no portal, o compilador avisará automaticamente se você não estiver utilizando um operador com suporte.
+Quando você cria um trabalho de borda da caixa de dados do Stream Analytics no portal, o compilador avisará automaticamente se você não estiver usando um operador com suporte.
 
 No Visual Studio, defina a consulta de transformação a seguir no editor de consultas (**script.asaql file**)
 
@@ -90,7 +90,7 @@ Para testar a consulta localmente, será necessário carregar os dados de exempl
    ![Configuração de entrada local no Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/stream-analytics-local-input-configuration.png)
  
 3. Um arquivo nomeado **local_EdgeInput.json** é adicionado automaticamente à pasta de entradas.  
-4. é possível executá-lo localmente ou enviar para o Azure. Para testar a consulta > Selecione **Executar localmente**.  
+4. Você pode executá-lo localmente ou enviar para o Azure. Para testar a consulta, selecione **executar localmente**.  
    ![Opções de execução no Visual Studio de trabalho do Azure Stream Analytics](./media/stream-analytics-tools-for-visual-studio-edge-jobs/stream-analytics-visual-stuidio-run-options.png)
  
 5. A janela do prompt de comando mostra o status do trabalho. Quando o trabalho executa com êxito, ele cria uma pasta semelhante a "2018-02-23-11-31-42" no caminho da pasta do projeto "Visual Studio 2015\Projects\MyASAEdgejob\MyASAEdgejob\ASALocalRun\2018-02-23-11-31-42". Navegue até o caminho da pasta para exibir os resultados na pasta local:
@@ -105,15 +105,15 @@ Para testar a consulta localmente, será necessário carregar os dados de exempl
 
 2. Para enviar o trabalho para o Azure, navegue até o editor de consultas > selecione **Enviar para o Azure**.  
 
-3. Uma janela pop-up é aberta, onde é possível escolher atualizar um trabalho de Borda existente ou criar um novo. Ao atualizar um trabalho existente, ele substituirá toda a configuração do trabalho; nesse cenário, será publicado um novo trabalho. Selecione **Criar um novo trabalho do Azure Stream Analytics** > insira um nome para o trabalho, semelhante a **MyASAEdgeJob** > escolha a **Assinatura** exigida, **Grupo de Recursos** e o **Local** > Selecione **Enviar**.
+3. Uma janela pop-up é aberta. Escolha esta opção atualizar um trabalho de borda da caixa de dados do Stream Analytics existente ou crie um novo. Quando você atualiza um trabalho existente, ele substituirá toda a configuração de trabalho, nesse cenário, você irá publicar um novo trabalho. Selecione **Criar um novo trabalho do Azure Stream Analytics** > insira um nome para o trabalho, semelhante a **MyASAEdgeJob** > escolha a **Assinatura** exigida, **Grupo de Recursos** e o **Local** > Selecione **Enviar**.
 
    ![Enviar trabalho do Stream Analytics para o Azure do Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/submit-stream-analytics-job-to-azure.png)
  
-   Agora que o trabalho de Borda do Azure Stream Analytics foi criado, é possível consultar o [tutorial Executar trabalhos no IoT Edge](stream-analytics-edge.md) para saber como implantá-lo nos dispositivos. 
+   Agora seu trabalho de borda da caixa de dados do Stream Analytics foi criado. Você pode consultar a [executar trabalhos no tutorial de IoT Edge](stream-analytics-edge.md) para saber como implantá-lo em seus dispositivos. 
 
 ## <a name="manage-the-job"></a>Gerenciar o trabalho 
 
-É possível exibir o status do trabalho e o diagrama do trabalho no Gerenciador de Servidores. A partir do **Azure Stream Analytics** no **Gerenciador de Servidores**, expanda a assinatura e o grupo de recursos onde você implantou o trabalho do Edge. Você pode visualizar o MyASAEdgejob com o status **Criado**. Expanda o nó de trabalho e clique duas vezes nele para abrir a exibição de trabalho.
+É possível exibir o status do trabalho e o diagrama do trabalho no Gerenciador de Servidores. Partir **Stream Analytics** na **Gerenciador de servidores**, expanda a assinatura e o grupo de recursos onde você implantou o trabalho de borda da caixa de dados do Stream Analytics. Você pode visualizar o MyASAEdgejob com o status **Criado**. Expanda o nó de trabalho e clique duas vezes nele para abrir a exibição de trabalho.
 
 ![Opções de gerenciamento de trabalho do gerenciador de servidores](./media/stream-analytics-tools-for-visual-studio-edge-jobs/server-explorer-options.png)
  

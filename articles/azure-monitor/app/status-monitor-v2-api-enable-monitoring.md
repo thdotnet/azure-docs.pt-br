@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 17798c78b167821f5f30a11996ac90cf67fb0179
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 0a443df0c55dc916ef6d12d53811e9d9932370e7
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65144953"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255911"
 ---
 # <a name="status-monitor-v2-api-enable-applicationinsightsmonitoring-v021-alpha"></a>API de v2 do Monitor de status: Enable-ApplicationInsightsMonitoring (v0.2.1-alpha)
 
@@ -156,7 +156,7 @@ Successfully enabled Application Insights Status Monitor
  - [Explore as métricas](../../azure-monitor/app/metrics-explorer.md) para monitorar o desempenho e o uso
 - [Pesquise eventos e logs](../../azure-monitor/app/diagnostic-search.md) para diagnosticar problemas
 - [Analise](../../azure-monitor/app/analytics.md) para obter mais consultas avançadas
-- [Crie painéis](../../azure-monitor/app/app-insights-dashboards.md)
+- [Crie painéis](../../azure-monitor/app/overview-dashboard.md)
  
  Adicione mais telemetria:
  - [Criar testes da web](monitor-web-app-availability.md) para garantir que seu site permanece ativo.

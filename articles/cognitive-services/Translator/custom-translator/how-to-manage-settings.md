@@ -7,14 +7,14 @@ manager: christw
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
-ms.author: v-rada
+ms.author: v-pawal
 ms.topic: conceptual
-ms.openlocfilehash: 6e8406cdd265063622bc5dcebbb9f22549b3633a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fb766a8cc6ae0de2407f44982a58fcc448e4b00c
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60513919"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66382663"
 ---
 # <a name="how-to-manage-settings"></a>Como gerenciar configurações
 
@@ -101,6 +101,6 @@ Quando uma área de trabalho é compartilhada, a seção “Configurações de c
 
     ![Configurações de permissão de compartilhamento](media/how-to/sharing-permission-settings.png)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Aprenda [como migrar sua área de trabalho e projeto](how-to-migrate.md) de [Microsoft Translator Hub](https://hub.microsofttranslator.com)

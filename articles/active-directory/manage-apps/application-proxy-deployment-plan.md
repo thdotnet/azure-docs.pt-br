@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04-04-2019
-ms.author: barbaraselden
+ms.date: 04/04/2019
+ms.author: baselden
 ms.reviewer: ''
-ms.openlocfilehash: d8686b9296c8b1d7c5232e2e46a0e66a9896656b
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 04a2e9968e8716818637a34adea86de88e1f848c
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66113021"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388318"
 ---
 # <a name="plan-an-azure-ad-application-proxy-deployment"></a>Planejar uma implantação do Proxy de aplicativo do Azure AD
 
@@ -92,8 +92,8 @@ Compile um inventário de todos os aplicativos dentro do escopo que estão sendo
 
 | Tipo de informação| Informações a serem coletadas |
 |---|---|
-| Tipo de Serviço| Por exemplo: SharePoint, SAP, CRM, API, aplicativo Web personalizado |
-| Plataforma de aplicativos | Por exemplo: Windows IIS, Apache no Linux, o Tomcat, o NGINX |
+| Tipo de serviço| Por exemplo:  SharePoint, SAP, CRM, API, aplicativo Web personalizado |
+| Plataforma de aplicativos | Por exemplo:  Windows IIS, Apache no Linux, o Tomcat, o NGINX |
 | Associação de domínio| Nome de domínio totalmente qualificado do servidor Web (FQDN) |
 | Local do aplicativo | Onde o servidor web ou farm está localizado em sua infraestrutura |
 | Acesso interno | A URL exata usada ao acessar o aplicativo internamente. <br> Se um farm, o tipo de balanceamento de carga está em uso? <br> Se o aplicativo desenha o conteúdo de fontes diferentes em si.<br> Determine se o aplicativo opera por meio de WebSockets. |
@@ -148,7 +148,7 @@ Os seguintes elementos de design devem aumentar o sucesso da sua implementação
 
 **Gerenciamento de aplicativos**:
 
-* Sua força de trabalho é mais provável se lembrar de que uma URL externa é familiares e relevantes. Evite publicar seu aplicativo usando nosso sufixos msappproxy.net ou onmicrosoft.com predefinidos. Em vez disso, fornecer um familiar verificado domínio de nível superior, prefixado com um nome de host lógico, como *.com da intranet. < customers_domain >*.
+* Sua força de trabalho é mais provável se lembrar de que uma URL externa é familiares e relevantes. Evite publicar seu aplicativo usando nosso sufixos msappproxy.net ou onmicrosoft.com predefinidos. Em vez disso, fornecer um familiar verificado domínio de nível superior, prefixado com um nome de host lógico, como *.com da intranet. < customers_domain >* .
 
 * Restringir a visibilidade do ícone do aplicativo piloto em um grupo piloto, ocultando seu formato de ícone iniciar o portal do MyApps do Azure. Quando estiver pronto para produção você pode definir o escopo do aplicativo para seu respectivo público-alvo, no mesmo locatário pré-produção ou também publicar o aplicativo em seu locatário de produção.
 
@@ -280,7 +280,7 @@ Microsoft defende o princípio de conceder o privilégio mínimo possível para 
 
 | Função de negócios| Tarefas de negócios| Funções do Azure AD |
 |---|---|---|
-| Ajudar o administrador de suporte técnico | Normalmente é limitado a qualificação de usuário final relatados problemas e executar tarefas limitadas, como alterar as senhas dos usuários, invalidando os tokens de atualização e monitoramento de integridade do serviço. | Administrador de Assistência Técnica |
+| Ajudar o administrador de suporte técnico | Normalmente é limitado a qualificação de usuário final relatados problemas e executar tarefas limitadas, como alterar as senhas dos usuários, invalidando os tokens de atualização e monitoramento de integridade do serviço. | Administrador de assistência técnica |
 | Administrador de identidade| Problemas relacionados ao entrada do AD do Azure de leitura em relatórios e logs de auditoria para depurar o Proxy de aplicativo.| Leitor de segurança |
 | Proprietário do aplicativo| Criar e gerenciar todos os aspectos de aplicativos corporativos, registros de aplicativo e as configurações de proxy de aplicativo.| Administrador de aplicativo |
 | Administrador de infraestrutura | Proprietário de substituição do certificado | Administrador de aplicativo |

@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/07/2019
+ms.date: 05/27/2019
 ms.author: rkarlin
-ms.openlocfilehash: 0061fb7946e4c35f855d1a409cb9bc210c73641a
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 891f9fbd26b53b392ac84ed9d420b58558cd20c2
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65228315"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258426"
 ---
 # <a name="on-board-azure-sentinel-preview"></a>Visualização de sentinela do Azure integrado
 
@@ -41,7 +41,7 @@ Depois de se conectar suas fontes de dados, escolha de uma galeria de painéis c
 - Espaço de trabalho de análise de logs. Saiba como [criar um espaço de trabalho do Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md)
 
 -  Para habilitar o Azure Sentinel, você precisa de permissões de Colaborador à assinatura na qual reside o espaço de trabalho do Azure Sentinel. 
-- Para usar o Azure Sentinel, você precisa de permissões de Colaborador ou visualizador no grupo de recursos que o espaço de trabalho pertence
+- Para usar o Azure Sentinel, você precisa de permissões de Colaborador ou leitor no grupo de recursos que o espaço de trabalho pertence
 - Permissões adicionais podem ser necessárias para se conectar a fontes de dados específicas
  
 ## Habilitar Sentinela do Azure <a name="enable"></a>

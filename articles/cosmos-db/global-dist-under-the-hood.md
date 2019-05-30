@@ -4,15 +4,15 @@ description: Este artigo apresenta detalhes técnicos relacionados à distribui�
 author: dharmas-cosmos
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 03/31/2019
+ms.date: 05/23/2019
 ms.author: dharmas
 ms.reviewer: sngun
-ms.openlocfilehash: 8c916a2fcff606a99e5c567318c1818ff7d5d273
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: c490657eb67a34e79c8dbaea31cb59b49cc6448e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65071958"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241103"
 ---
 # <a name="global-data-distribution-with-azure-cosmos-db---under-the-hood"></a>Distribuição de dados global com o Azure Cosmos DB – nos bastidores
 
@@ -68,7 +68,7 @@ Podemos empregar os relógios de vetor codificados (contendo a ID da região e r
 
 Para os bancos de dados do Cosmos configurados com várias regiões de gravação, o sistema oferece diversas políticas de resolução automática de conflitos para os desenvolvedores escolherem, incluindo: 
 
-- **Última de gravação de Wins (LWW)**, que, por padrão, usa uma propriedade de carimbo de hora definida pelo sistema (que é baseada no protocolo de sincronização de hora de relógio). O Cosmos DB também permite que você especifique qualquer outra propriedade numérica personalizada a ser usada para resolução de conflitos.  
+- **Última de gravação de Wins (LWW)** , que, por padrão, usa uma propriedade de carimbo de hora definida pelo sistema (que é baseada no protocolo de sincronização de hora de relógio). O Cosmos DB também permite que você especifique qualquer outra propriedade numérica personalizada a ser usada para resolução de conflitos.  
 - **Política de resolução em conflito definido pelo aplicativo (personalizada)** (expresso por meio de procedimentos de mesclagem), que é projetado para a reconciliação de semântica definido pelo aplicativo de conflitos. Esses procedimentos são invocados após a detecção de conflitos de entre gravações sob responsabilidade de uma transação de banco de dados no lado do servidor. O sistema fornece exatamente garante uma vez para a execução de um procedimento de mesclagem como parte do protocolo de compromisso. Há [vários exemplos de resolução de conflito](how-to-manage-conflicts.md) disponíveis para você experimentar.  
 
 ## <a name="consistency-models"></a>Modelos de coerência

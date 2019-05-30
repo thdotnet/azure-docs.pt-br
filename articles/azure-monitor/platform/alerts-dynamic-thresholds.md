@@ -5,17 +5,17 @@ author: yanivlavi
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 11/29/2018
+ms.date: 04/26/2019
 ms.author: yalavi
 ms.reviewer: mbullwin
-ms.openlocfilehash: 3773a3e121c3b0162b83ea075601b7386228e4d5
-ms.sourcegitcommit: 2c09af866f6cc3b2169e84100daea0aac9fc7fd0
+ms.openlocfilehash: 0d6c578186dab9622ce650f535e11d505efcecb3
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64876205"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65067612"
 ---
-# <a name="metric-alerts-with-dynamic-thresholds-in-azure-monitor-public-preview"></a>Alertas de Métrica com Limites Dinâmicos no Azure Monitor (Versão Prévia Pública)
+# <a name="metric-alerts-with-dynamic-thresholds-in-azure-monitor"></a>Alertas de métrica com limites dinâmicos no Azure Monitor
 
 O Alerta de Métrica com detecção de Limites Dinâmicos aproveita ML (aprendizado de máquina) avançado para aprender o comportamento histórico das métricas e identificar padrões e anomalias que indicam problemas de serviço possíveis. Ele fornece suporte tanto de uma interface do usuário simples quanto de operações em escala permitindo aos usuários configurar regras de alerta por meio da API do Azure Resource Manager de maneira totalmente automatizada.
 
@@ -64,7 +64,7 @@ Você pode escolher o alerta a ser disparado em uma das três condições a segu
 
 ## <a name="what-do-the-advanced-settings-in-dynamic-thresholds-mean"></a>O que as configurações avançadas em Limites Dinâmicos significam?
 
-**Períodos de Falha** – Limites Dinâmicos também permitem que você configure o "Número de violações para disparar o alerta", um número mínimo de desvios necessários em uma determinada janela de tempo para o sistema gerar um alerta (a janela de tempo padrão é de quatro desvios em 20 minutos). O usuário pode configurar períodos de falha e escolher sobre o que ser alertado alterando os períodos de falha e a janela de tempo. Esse recurso reduz o ruído de alerta gerado por picos transitórios. Por exemplo: 
+**Períodos de Falha** – Limites Dinâmicos também permitem que você configure o "Número de violações para disparar o alerta", um número mínimo de desvios necessários em uma determinada janela de tempo para o sistema gerar um alerta (a janela de tempo padrão é de quatro desvios em 20 minutos). O usuário pode configurar períodos de falha e escolher sobre o que ser alertado alterando os períodos de falha e a janela de tempo. Esse recurso reduz o ruído de alerta gerado por picos transitórios. Por exemplo:
 
 Para disparar um alerta quando o problema for contínuo por 20 minutos, 4 vezes consecutivas em um determinado período de agrupamento de 5 minutos, use as seguintes configurações:
 
@@ -116,7 +116,7 @@ Os itens a seguir são melhores práticas sobre como configurar alertas em algum
 
 4. Após selecionar um recurso de destino, clique em **Adicionar condição**.
 
-5. Selecione a **'Percentual de CPU'**.
+5. Selecione a **'Percentual de CPU'** .
 
 6. Também é possível refinar a métrica ajustando o **Período** e a **Agregação**. Não é recomendável usar o tipo de agregação 'Máximo' para esse tipo de métrica, já que é menos representativo do comportamento. Para limite de agregação 'Máximo' do tipo estático, talvez seja mais apropriado.
 
@@ -153,7 +153,7 @@ Os itens a seguir são melhores práticas sobre como configurar alertas em algum
 
 4. Após selecionar um recurso de destino, clique em **Adicionar condição**.
 
-5. Selecione o **'Tempo de execução da solicitação de HTTP'**.
+5. Selecione o **'Tempo de execução da solicitação de HTTP'** .
 
 6. Também é possível refinar a métrica ajustando o **Período** e a **Agregação**. Não é recomendável usar o tipo de agregação 'Máximo' para esse tipo de métrica, já que é menos representativo do comportamento. Para limite de agregação 'Máximo' do tipo estático, talvez seja mais apropriado.
 

@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: raynew
-ms.openlocfilehash: c5c3f498f62d6399534333f8166a514a10f044c5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 350e13a4b1c01329bef1ec270af5ba007cd788aa
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60464241"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399742"
 ---
 # <a name="monitor-alerts-for-azure-virtual-machine-backups"></a>Monitorar alertas para os backups das máquinas virtuais do Azure
 
@@ -70,7 +70,7 @@ Para configurar as notificações por email para alertas
    | Nível de alerta | Alertas enviados |
    | --- | --- |
    | Crítico | para falha de Backup, falha de recuperação |
-   | Aviso | para trabalhos de Backup bem-sucedidos com avisos (por exemplo: alguns gravadores falharam ao criar um instantâneo) |
+   | Aviso | Atualmente, nenhum alerta de aviso está disponível para backups de VM do Azure (por exemplo: alguns gravadores falharam ao criar um instantâneo) |
    | Informativo | Atualmente, alertas informativos não estão disponíveis para o backup de VM do Azure |
 
 ### <a name="situations-where-email-isnt-sent-even-if-notifications-are-configured"></a>Situações em que o email não é enviado, mesmo se as notificações estiverem configuradas

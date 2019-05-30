@@ -6,12 +6,12 @@ ms.author: janeng
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.openlocfilehash: e5d7ff8513a0659ca1107b9baf07cdf4bac4b807
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 8e3d12db8d2500a2675e451580bee7072d22d41c
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64688622"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66225440"
 ---
 # <a name="azure-database-for-mysql-pricing-tiers"></a>Tipos de preço no Banco de Dados do Azure para MySQL
 
@@ -38,48 +38,7 @@ Depois de criar um servidor, o número de vCores a geração de hardware e o tip
 
 ## <a name="compute-generations-and-vcores"></a>Gerações de computação e vCores
 
-Os recursos de computação são fornecidos como vCores, que representam a CPU lógica do hardware subjacente. No momento, você pode escolher entre duas gerações de computação, Gen 4 e 5. As CPUs lógicas de 4ª geração são baseadas em processadores Intel E5-2673 v3 (Haswell) 2,4 GHz. As CPUs lógicas de 5ª geração são baseadas em processadores E5-2673 v4 (Broadwell) 2,3 GHz. As Gerações 4 e 5 estão disponíveis nas seguintes regiões (o "X" indica disponível).
-
-| **Região do Azure** | **Geração 4** | **Geração 5** |
-|:---|:----------:|:--------------------:|
-| Centro dos EUA |  | X |
-| Leste dos EUA |  | X |
-| Leste dos EUA 2 |  | X |
-| Centro-Norte dos EUA |  | X |
-| Centro-Sul dos Estados Unidos |  | X |
-| Oeste dos EUA |  | X |
-| Oeste dos EUA 2 |  | X |
-| Sul do Brasil |  | X |
-| Canadá Central |  | X |
-| Leste do Canadá |  | X |
-| Norte da Europa |  | X |
-| Europa Ocidental |  | X |
-| França Central |  | X |
-| Sul do Reino Unido |  | X |
-| Oeste do Reino Unido |  | X |
-| Ásia Oriental |  | X |
-| Sudeste Asiático |  | X |
-| Leste da Austrália |  | X |
-| Austrália Central |  | X |
-| Austrália Central 2 |  | X |
-| Sudeste da Austrália |  | X |
-| Índia Central |  | X |
-| Sul da Índia |  | X |
-| Índia Ocidental |  | X |
-| Leste do Japão |  | X |
-| Oeste do Japão |  | X |
-| Coreia Central |  | X |
-| Sul da Coreia |  | X |
-| Leste da China 1 | X |  |
-| Leste da China 2 |  | X |
-| Norte da China 1 | X |  |
-| Norte da China 2 |  | X |
-| Alemanha Central |  | X |
-| DoD Central dos EUA  | X |  |
-| DoD do Leste dos EUA  | X |  |
-| Governo dos EUA do Arizona |  | X |
-| Governo dos EUA do Texas |  | X |
-| Gov. dos EUA – Virgínia |  | X |
+Os recursos de computação são fornecidos como vCores, que representam a CPU lógica do hardware subjacente. China Oriental 1, 1 de Norte da China, US DoD Central e US DoD Leste utilizam Gen 4 CPUs lógicas que são baseados em Intel E5-2673 v3 (Haswell) 2,4 GHz. Todas as outras regiões utilizam CPUs lógicas de 5ª baseados em Intel E5-2673 v4 (Broadwell) 2,3 GHz.
 
 ## <a name="storage"></a>Armazenamento
 
@@ -92,17 +51,25 @@ O armazenamento provisionado é a quantidade de capacidade de armazenamento disp
 | Tamanho do incremento de armazenamento | 1 GB | 1 GB | 1 GB |
 | IOPS | Variável |3 IOPS/GB<br/>Mín 100 IOPS<br/>Máx 6000 IOPS | 3 IOPS/GB<br/>Mín 100 IOPS<br/>Máx 6000 IOPS |
 
-Você pode adicionar mais capacidade de armazenamento durante e após a criação do servidor. A camada Básico não oferece garantia de IOPS. Nos tipos de preço Uso Geral e Otimizado para Memória, o IOPS é dimensionado com o tamanho de armazenamento provisionado a uma taxa de 3:1.
+Você pode adicionar mais capacidade de armazenamento durante e após a criação do servidor e permitir que o sistema crescer automaticamente com base no consumo de armazenamento de sua carga de trabalho de armazenamento. A camada Básico não oferece garantia de IOPS. Nos tipos de preço Uso Geral e Otimizado para Memória, o IOPS é dimensionado com o tamanho de armazenamento provisionado a uma taxa de 3:1.
 
 Você pode monitorar o consumo de E/S no Portal do Azure ou usando os comandos da CLI do Azure. As métricas relevantes para monitorar são o [limite de armazenamento, porcentagem de armazenamento, armazenamento usado e porcentagem de E/S](concepts-monitoring.md).
 
 ### <a name="reaching-the-storage-limit"></a>Alcançando o limite de armazenamento
 
-O servidor é marcado como somente leitura quando a quantidade de armazenamento livre atinge menos do que 5 GB ou 5% do armazenamento provisionado, o que for menor. Por exemplo, se você provisionou 100 GB de armazenamento e a utilização real for de 95 GB, o servidor é marcado como somente leitura. Como alternativa, se você tiver provisionado 5 GB de armazenamento, o servidor é somente leitura quando o repositório livre atingir menos de 250 MB.  
+Servidores com menos de 100 GB provisionado de armazenamento são somente leitura se o armazenamento livre é menor que 512MB ou 5% do tamanho do armazenamento provisionado. Servidores com mais de 100 GB provisionado de armazenamento são marcados leitura somente quando o armazenamento livre é menor que 5 GB.
+
+Por exemplo, se você provisionou 110 GB de armazenamento e a utilização real ultrapassar 105 GB, o servidor é marcado como somente leitura. Como alternativa, se você tiver provisionado 5 GB de armazenamento, o servidor é marcado como somente leitura quando o armazenamento livre atinge menos de 512 MB.
 
 Enquanto o serviço tenta tornar o servidor somente leitura, todas as novas solicitações de transação de gravação são bloqueadas e as transações ativas existentes continuarão a ser executadas. Quando o servidor é definido como somente leitura, todas as operações de gravação subsequente e a transação comentem falha. Consultas de leitura continuam a funcionar sem interrupções. Após aumentar o armazenamento provisionado, o servidor estará pronto para aceitar transações de gravação novamente.
 
-Recomendamos que você configure um alerta para notificá-lo quando o armazenamento do servidor estiver se aproximando do limite, para evitar entrar no estado somente leitura. Para mais informações, consulte a documentação em [como configurar um alerta](howto-alert-on-metric.md).
+É recomendável que você ative a armazenamento aumentá-lo ou para configurar um alerta para notificá-lo ao seu armazenamento de servidor está se aproximando do limite então, você pode evitar introdução para o estado somente leitura. Para mais informações, consulte a documentação em [como configurar um alerta](howto-alert-on-metric.md).
+
+### <a name="storage-auto-grow"></a>Crescimento automático de armazenamento
+
+Se o crescimento automático de armazenamento é habilitada, o armazenamento cresce automaticamente sem afetar a carga de trabalho. Para servidores com menos de 100 GB provisionado de armazenamento, o tamanho de armazenamento provisionado é aumentado em 5 GB, assim o armazenamento livre estiver abaixo de 1 GB ou 10% do armazenamento provisionado maior. Para servidores com mais de 100 GB de armazenamento provisionado, o tamanho de armazenamento provisionado é aumentado em 5% quando o espaço de armazenamento livre estiver abaixo de 5% do tamanho do armazenamento provisionado. Limites de armazenamento máximo especificados acima se aplicam.
+
+Por exemplo, se você provisionou 1000 GB de armazenamento e a utilização real ultrapassar 950 GB, o tamanho de armazenamento do servidor é aumentado para 1050 GB. Como alternativa, se você tiver provisionado 10 GB de armazenamento, o tamanho de armazenamento é aumento para 15 GB quando menos de 1 GB de armazenamento estiver livre.
 
 ## <a name="backup"></a>Backup
 

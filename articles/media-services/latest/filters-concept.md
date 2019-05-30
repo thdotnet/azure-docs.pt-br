@@ -11,18 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/23/2019
 ms.author: juliako
-ms.openlocfilehash: bfe4bbae7953479f9b5b5ce9653fb3b8d4b2d092
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: fdf29924da31db0347938df89e698cb258c2336b
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66002374"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66225421"
 ---
 # <a name="filters"></a>Filtros
 
-Ao fornecer conteúdo aos clientes (eventos de transmissão ao vivo ou vídeo sob demanda) seu cliente pode precisar de mais flexibilidade que o que é descrito no arquivo de manifesto do ativo padrão. Os Serviços de Mídia do Azure permitem definir filtros de conta e filtros de recursos para o seu conteúdo. 
+Ao fornecer conteúdo aos clientes (eventos de transmissão ao vivo ou vídeo sob demanda) seu cliente pode precisar de mais flexibilidade que o que é descrito no arquivo de manifesto do ativo padrão. Serviços de mídia do Azure oferecem [manifestos dinâmico](filters-dynamic-manifest-overview.md) com base em filtros predefinidos. 
 
 Os filtros são regras do lado do servidor que permitem que seus clientes façam coisas como: 
 
@@ -32,30 +32,22 @@ Os filtros são regras do lado do servidor que permitem que seus clientes façam
 - Entregue apenas as execuções especificadas e / ou faixas de idioma especificadas que são suportadas pelo dispositivo usado para reproduzir o conteúdo ("filtragem de renderização"). 
 - Ajuste a Janela de Apresentação (DVR) para fornecer uma duração limitada da janela do DVR no leitor ("ajustar a janela de apresentação").
 
-Os Serviços de Mídia oferecem [Manifestos dinâmicos](filters-dynamic-manifest-overview.md) com base em filtros predefinidos. Depois que você definir filtros, seus clientes poderão usá-los na URL de streaming. Os filtros podem ser aplicados a protocolos de streaming de taxa de bits adaptável: Apple HTTP Live Streaming (HLS), MPEG-DASH e Smooth Streaming.
+Os serviços de mídia permite que você crie **filtros de conta** e **filtros de ativo** para seu conteúdo. Além disso, você pode associar seus filtros pré-criado com um **localizador de Streaming**.
 
-A tabela a seguir mostra alguns exemplos de URLs com filtros:
+## <a name="defining-filters"></a>Definir filtros
 
-|Protocol|Exemplo|
-|---|---|
-|HLS|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(format=m3u8-aapl,filter=myAccountFilter)`<br/>Para HLS v3, use: `format=m3u8-aapl-v3`.|
-|MPEG DASH|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(format=mpd-time-csf,filter=myAssetFilter)`|
-|Smooth Streaming|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(filter=myAssetFilter)`|
-
-## <a name="define-filters"></a>Definir filtros
-
-Há dois tipos de filtros de ativo: 
+Há dois tipos de filtros: 
 
 * [Filtros de conta](https://docs.microsoft.com/rest/api/media/accountfilters) (global) - podem ser aplicados a qualquer recurso na conta dos Serviços de Mídia do Azure, têm vida útil da conta.
 * [Filtros de ativos](https://docs.microsoft.com/rest/api/media/assetfilters) (local) - só podem ser aplicados a um ativo ao qual o filtro foi associado na criação, têm uma vida útil do recurso. 
 
-Os filtros [Account Filter](https://docs.microsoft.com/rest/api/media/accountfilters) e [Asset Filter](https://docs.microsoft.com/rest/api/media/assetfilters) têm exatamente as mesmas propriedades para definir / descrever o filtro. Exceto ao criar o **Filtro de ativos**, você precisa especificar o nome do ativo ao qual deseja associar o filtro.
+**Filtros de conta** e **filtros de ativo** tipos têm exatamente as mesmas propriedades para definir/descrevendo o filtro. Exceto ao criar o **Filtro de ativos**, você precisa especificar o nome do ativo ao qual deseja associar o filtro.
 
 Dependendo do seu cenário, você decide qual tipo de filtro é mais adequado (Filtro de ativos ou Filtro de conta). Os filtros de conta são adequados para perfis de dispositivos (filtragem de renderização) em que os filtros de recursos podem ser usados para cortar um recurso específico.
 
 Você usa as seguintes propriedades para descrever os filtros. 
 
-|NOME|Descrição|
+|NOME|DESCRIÇÃO|
 |---|---|
 |firstQuality|A primeira taxa de bits de qualidade do filtro.|
 |presentationTimeRange|O intervalo de tempo de apresentação. Esta propriedade é usada para filtrar os pontos de início / fim do manifesto, a duração da janela de apresentação e a posição de início ao vivo. <br/>Para mais informações, consulte [PresentationTimeRange](#presentationtimerange).|
@@ -65,7 +57,7 @@ Você usa as seguintes propriedades para descrever os filtros.
 
 Use essa propriedade com **filtros de ativo**. Não é recomendável definir a propriedade com **filtros de conta**.
 
-|NOME|Descrição|
+|NOME|DESCRIÇÃO|
 |---|---|
 |**endTimestamp**|Aplica-se ao Video on Demand (VoD).<br/>Para a apresentação de transmissão ao vivo, ela será silenciosamente ignorada e aplicada quando as extremidades de apresentação e o fluxo se torna VoD.<br/>Isso é um valor longo que representa um ponto de extremidade absoluto da apresentação, arredondado para o próximo início de GOP mais próximo. A unidade é a escala de tempo, portanto, seria um endTimestamp de 1800000000 para 3 minutos.<br/>Use startTimestamp e endTimestamp para cortar os fragmentos que estarão na lista de reprodução (manifesto).<br/>Por exemplo, startTimestamp = 40000000 e endTimestamp = 100000000 usando a escala de tempo padrão irá gerar uma lista de reprodução que contém os fragmentos de intervalo entre 4 segundos e 10 segundos da apresentação VoD. Se um fragmento ultrapassar o limite, o fragmento inteiro será incluído no manifesto.|
 |**forceEndTimestamp**|Aplica-se à transmissão ao vivo.<br/>Indica se a propriedade endTimestamp deve estar presente. Se for true, endTimestamp deve ser especificado ou um código de solicitação incorreta é retornado.<br/>Valores permitidos: false, true.|
@@ -80,7 +72,7 @@ Você especifica uma lista de condições de propriedade de controle de filtro (
 
 As condições de propriedade da faixa de filtro descrevem tipos de trilha, valores (descritos na tabela a seguir) e operações (Equal, NotEqual). 
 
-|NOME|Descrição|
+|NOME|DESCRIÇÃO|
 |---|---|
 |**Bitrate**|Use a taxa de bits da faixa para filtragem.<br/><br/>O valor recomendado é um intervalo de bitrates, em bits por segundo. Por exemplo, "0-2427000".<br/><br/>Nota: embora você possa usar um valor de taxa de bits específico, como 250000 (bits por segundo), essa abordagem não é recomendada, pois as taxas de bits exatas podem variar de um ativo para outro.|
 |**FourCC**|Use o valor de FourCC da faixa para filtragem.<br/><br/>O valor é o primeiro elemento do formato de codecs, conforme especificado na [6381 RFC](https://tools.ietf.org/html/rfc6381). Atualmente, há suporte para os seguintes codecs: <br/>Vídeo: "Avc1", "hev1", "hvc1"<br/>Para áudio: "Mp4a", "ec-3"<br/><br/>Para determinar os valores de FourCC para faixas em um ativo, obter e examine o arquivo de manifesto.|
@@ -145,14 +137,22 @@ O exemplo a seguir define um filtro de transmissão ao vivo:
 }
 ```
 
-## <a name="associate-filters-with-streaming-locator"></a>Associar filtros de localizador de Streaming
+## <a name="associating-filters-with-streaming-locator"></a>Associando a filtros de localizador de Streaming
 
-Você pode especificar uma lista de [filtros de ativo ou a conta](filters-concept.md), que se aplica a seu [localizador de Streaming](https://docs.microsoft.com/rest/api/media/streaminglocators/create#request-body). O [Dynamic Packager](dynamic-packaging-overview.md) se aplica a esta lista de filtros junto com aqueles seu cliente especifica a URL. Essa combinação gera uma [manifesto dinâmico](filters-dynamic-manifest-overview.md), que se baseia nos filtros na URL + filtros que você especificar no localizador de Streaming. É recomendável que você use esse recurso se você deseja aplicar filtros, mas não quiser expor os nomes de filtro na URL.
+Você pode especificar uma lista de [filtros de ativo ou a conta](filters-concept.md) no seu [localizador de Streaming](https://docs.microsoft.com/rest/api/media/streaminglocators/create#request-body). O [Dynamic Packager](dynamic-packaging-overview.md) se aplica a esta lista de filtros junto com aqueles seu cliente especifica a URL. Essa combinação gera uma [manifesto dinâmico](filters-dynamic-manifest-overview.md), que se baseia nos filtros na URL + filtros que você especificar no localizador de Streaming. 
 
 Veja os exemplos a seguir:
 
 * [Associar filtros de localizador de Streaming - .NET](filters-dynamic-manifest-dotnet-howto.md#associate-filters-with-streaming-locator)
 * [Associar filtros de localizador de Streaming - CLI](filters-dynamic-manifest-cli-howto.md#associate-filters-with-streaming-locator)
+
+## <a name="updating-filters"></a>Atualizar filtros
+ 
+**Os localizadores de streaming** não são atualizáveis enquanto os filtros podem ser atualizados. 
+
+Não é recomendável atualizar a definição de filtros associados ativamente publicados **localizador de Streaming**, especialmente quando CDN está habilitado. As CDNs e servidores de Streaming pode ter caches internos que podem resultar em dados armazenados em cache obsoletos a ser retornado. 
+
+Se a definição do filtro precisa ser alterado considere criar um novo filtro e adicioná-lo para o **localizador de Streaming** URL ou publicar uma nova **localizador de Streaming** que referencia o filtro diretamente.
 
 ## <a name="next-steps"></a>Próximas etapas
 

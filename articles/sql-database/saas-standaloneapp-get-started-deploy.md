@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: sstein
 manager: craigg
 ms.date: 11/07/2018
-ms.openlocfilehash: 4dbf53df4d3f34e80757f9575981b4b053587d97
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b1b281c7beac6b6cb48834e636edff818f89bf12
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61485112"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66304148"
 ---
 # <a name="deploy-and-explore-a-standalone-single-tenant-application-that-uses-azure-sql-database"></a>Implantar e explorar um aplicativo autônomo de locatário único que usa o Banco de Dados SQL do Azure
 
@@ -25,9 +25,9 @@ Neste tutorial, você implanta e explora o aplicativo de exemplo Wingtip Tickets
 
 O aplicativo autônomo ou um padrão de aplicativo por locatário implanta uma instância de aplicativo para cada locatário.  Cada aplicativo é configurado para um locatário específico e implantado em um grupo de recursos do Azure à parte. Várias instâncias do aplicativo são provisionadas para fornecer uma solução de multilocatário. Esse padrão é mais indicado para números menores, de locatários em que o isolamento é uma prioridade máxima. O Azure tem programas de parceria que permitem que esses recursos sejam implantados na assinatura de um locatário e gerenciados por um provedor de serviços em nome do locatário. 
 
-Neste tutorial, você implantará três aplicativos autônomos para três locatários na assinatura do Azure.  Você tem acesso completo para explorar e trabalhar com os componentes individuais do aplicativo.
+Neste tutorial, você implantará três aplicativos autônomos para três locatários em sua assinatura do Azure.  Você tem acesso completo para explorar e trabalhar com os componentes individuais do aplicativo.
 
-O código-fonte do aplicativo e os scripts de gerenciamento estão disponíveis no repositório GitHub [WingtipTicketsSaaS-StandaloneApp](https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp). O aplicativo foi criado usando o Visual Studio 2015 e não é possível abri-lo e compilá-lo no Visual Studio 2017 sem atualizar.
+O código-fonte do aplicativo e os scripts de gerenciamento estão disponíveis no repositório GitHub [WingtipTicketsSaaS-StandaloneApp](https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp). O aplicativo foi criado usando o Visual Studio 2015 e não com êxito abrir e compilar no Visual Studio de 2019 sem atualizar.
 
 
 Neste tutorial, você aprende:
@@ -37,7 +37,7 @@ Neste tutorial, você aprende:
 > * Onde obter o código-fonte do aplicativo e scripts de gerenciamento.
 > * Sobre os servidores e bancos de dados que constituem o aplicativo.
 
-Outros tutoriais serão liberados. Esses tutoriais permitirão explorar uma variedade de cenários de gerenciamento com base nesse padrão de aplicativo.   
+Outros tutoriais serão liberados. Eles que você explore uma variedade de cenários de gerenciamento com base nesse padrão de aplicativo.   
 
 ## <a name="deploy-the-wingtip-tickets-saas-standalone-application"></a>Implantar o Aplicativo Autônomo SaaS Wingtip Tickets
 
@@ -56,7 +56,7 @@ Implante o aplicativo para os três locatários fornecidos:
     > Algumas autenticações e firewalls de servidor estão intencionalmente desprotegidos para fins de demonstração. **Crie um novo grupo de recursos** para cada implantação de aplicativo.  Não use um grupo de recursos existente. Não use este aplicativo ou todos os recursos que cria, para a produção. Exclua todos os grupos de recursos quando terminar com os aplicativos para interromper a cobrança relacionada.
 
     É melhor usar apenas letras minúsculas, números e hifens nos nomes de recursos.
-    * Para **Grupo de recursos**, selecione Criar novo e, em seguida, forneça um Nom para o grupo de recursos (em minúsculas). **wingtip-sa-\<venueName\>-\<user\>** é o padrão recomendado.  Para \<venueName\>, substitua o nome do local sem espaços. Para \<user\>, substitua o valor de usuário abaixo.  Com esse padrão, os nomes do grupo de recursos podem ser *wingtip-sa-contosoconcerthall-af1*, *wingtip-sa-dogwooddojo-af1*, *wingtip-sa-fabrikamjazzclub-af1*.
+    * Para **Grupo de recursos**, selecione Criar novo e, em seguida, forneça um Nom para o grupo de recursos (em minúsculas). **wingtip-sa-\<venueName\>-\<user\>** é o padrão recomendado.  Para \<venueName\>, substitua o nome do local sem espaços. Para \<usuário\>, substitua o valor de usuário abaixo.  Com esse padrão, os nomes do grupo de recursos podem ser *wingtip-sa-contosoconcerthall-af1*, *wingtip-sa-dogwooddojo-af1*, *wingtip-sa-fabrikamjazzclub-af1*.
     * Selecione uma **Localização** na lista suspensa.
 
     * Para **Usuário** – Recomendamos um valor de usuário curto, como as iniciais mais um dígito: por exemplo, *af1*.
@@ -98,7 +98,7 @@ Vamos examinar alguns dos recursos que foram implantados:
 
 1. No [portal do Azure](https://portal.azure.com), procure a lista de grupos de recursos.
 2. Você deverá ver os três grupos de recursos de locatários.
-3. Abra o grupo de recursos **wingtip-sa-fabrikam-&lt;user&gt;**, que contém os recursos para a implantação do Fabrikam Jazz Club.  O servidor **fabrikamjazzclub-&lt;user&gt;** contém o banco de dados **fabrikamjazzclub**.
+3. Abra o grupo de recursos **wingtip-sa-fabrikam-&lt;user&gt;** , que contém os recursos para a implantação do Fabrikam Jazz Club.  O servidor **fabrikamjazzclub-&lt;user&gt;** contém o banco de dados **fabrikamjazzclub**.
 
 Cada banco de dados de locatários é um banco de dados *autônomo* de 50 DTUs.
 
@@ -107,7 +107,7 @@ Cada banco de dados de locatários é um banco de dados *autônomo* de 50 DTUs.
 <!--
 * Additional [tutorials that build on the Wingtip SaaS application](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
 * To learn about elastic pools, see [*What is an Azure SQL elastic pool*](sql-database-elastic-pool.md)
-* To learn about elastic jobs, see [*Managing scaled-out cloud databases*](sql-database-elastic-jobs-overview.md)
+* To learn about elastic jobs, see [*Managing scaled-out cloud databases*](elastic-jobs-overview.md)
 -->
 
 - Para saber mais sobre aplicativos SaaS multilocatários, consulte [Padrões de design para aplicativos SaaS multilocatários](saas-tenancy-app-design-patterns.md).
@@ -126,6 +126,6 @@ Neste tutorial, você aprendeu:
 > * Sobre os servidores e bancos de dados que constituem o aplicativo.
 > * Como excluir recursos de exemplo para interromper a cobrança relacionada.
 
-Em seguida, experimente o tutorial [Provisionar e catalogar](saas-standaloneapp-provision-and-catalog.md), no qual você explorará o uso de um catálogo de locatários que permite uma variedade de cenários entre locatários, como gerenciamento de esquema e análise de locatário.
+Em seguida, tente o [provisionar e catalogar](saas-standaloneapp-provision-and-catalog.md) tutorial no qual você explorará o uso de um catálogo de locatários que permite uma variedade de cenários entre locatários, como a análise de locatário e o gerenciamento de esquema.
  
 

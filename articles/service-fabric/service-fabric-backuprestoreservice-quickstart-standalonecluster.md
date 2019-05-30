@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/29/2018
+ms.date: 5/24/2019
 ms.author: hrushib
-ms.openlocfilehash: 28378b4b769e0d0e70a82a45baac0872d1476036
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: 154efffcb1f86907fefecc060419c1d9450470f8
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65413633"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237334"
 ---
 # <a name="periodic-backup-and-restore-in-azure-service-fabric"></a>Backup e restauração periódicos no Azure Service Fabric
 > [!div class="op_single_selector"]
@@ -170,9 +170,6 @@ $url = "http://localhost:19080/BackupRestore/BackupPolicies/$/Create?api-version
 Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/json'
 ```
 
-> [!IMPORTANT]
-> Devido a um problema no tempo de execução, certifique-se de que a duração da retenção na política de retenção está configurada para menos de 24 dias ou, caso contrário, resultará em um serviço de restauração de Backup para entrar em failover de réplica pós perda de quorum.
-
 ### <a name="enable-periodic-backup"></a>Habilitar backup periódico
 Depois de definir a política para atender aos requisitos de proteção de dados do aplicativo, a política de backup deve ser associada ao aplicativo. Dependendo do requisito, a política de backup pode ser associada um aplicativo, serviço ou partição.
 
@@ -265,11 +262,6 @@ LsnOfLastBackupRecord   : 2437
 CreationTimeUtc         : 2018-04-01T20:09:44Z
 FailureError            : 
 ```
-
-## <a name="known-issues"></a>Problemas conhecidos
-- Certifique-se de que a duração de retenção está configurada para ser menor que 24 dias. 
-- O serviço de Restauração de Backup não será exibido em locais onde o separador decimal for diferente de '.'
-- O serviço de Restauração de Backup não é exibido no cluster protegido com segurança baseada em gMSA.
 
 ## <a name="limitation-caveats"></a>Limite/Limitações
 - Cmdlets do PowerShell do Service Fabric estão no modo de visualização.

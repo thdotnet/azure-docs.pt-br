@@ -12,18 +12,18 @@ ms.author: sstein
 ms.reviewer: billgib
 manager: craigg
 ms.date: 09/19/2018
-ms.openlocfilehash: b2aa3eb6a117bbbdcf9c4aa44161dc25ddea2f1a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: eb461367d58f7cadeccd434c0e4ab452b7fc640e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61484363"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241908"
 ---
 # <a name="manage-schema-in-a-saas-application-using-the-database-per-tenant-pattern-with-azure-sql-database"></a>Gerenciar o esquema em um aplicativo SaaS usando o padrão de banco de dados por locatário com o Banco de Dados SQL do Azure
  
 Conforme um aplicativo de banco de dados evolui, alterações inevitavelmente precisam ser feitas no esquema do banco de dados ou nos dados de referência.  As tarefas de manutenção de banco de dados também são exigidas periodicamente. O gerenciamento de um aplicativo que usa o padrão de banco de dados por locatário requer que você aplique essas alterações ou tarefas de manutenção em um grupo de bancos de dados de locatário.
 
-Este tutorial explora dois cenários: implantação de atualizações de dados de referência para todos os locatários e recriação de um índice na tabela que contém os dados de referência. O recurso [Trabalhos elásticos](sql-database-elastic-jobs-overview.md) é usado para executar essas ações em todos os bancos de dados de locatário e no banco de dados de modelo usado para criar novos bancos de dados de locatário.
+Este tutorial explora dois cenários: implantação de atualizações de dados de referência para todos os locatários e recriação de um índice na tabela que contém os dados de referência. O recurso [Trabalhos elásticos](elastic-jobs-overview.md) é usado para executar essas ações em todos os bancos de dados de locatário e no banco de dados de modelo usado para criar novos bancos de dados de locatário.
 
 Neste tutorial, você aprenderá a:
 
@@ -46,7 +46,7 @@ Para concluir este tutorial, certifique-se de atender a todos os seguintes pré-
 
 ## <a name="introduction-to-saas-schema-management-patterns"></a>Introdução aos padrões de gerenciamento de esquema de SaaS
 
-O padrão de banco de dados por locatário isola dados do locatário com eficiência, mas aumenta o número de bancos de dados para gerenciar e manter. Os [Trabalhos Elásticos](sql-database-elastic-jobs-overview.md) facilitam a administração e o gerenciamento dos bancos de dados SQL. Os trabalhos permitem uma execução segura e confiável de tarefas (scripts Transact-SQL) em um grupo de bancos de dados. Trabalhos podem implantar esquemas e alterações de dados de referência comum em todos os locatários em um aplicativo. Os Trabalhos Elásticos também podem ser usados para manter um banco de dados de *modelos* usado para criar novos locatários, fazendo com que ele sempre tenha os dados de esquema e de referência mais recentes.
+O padrão de banco de dados por locatário isola dados do locatário com eficiência, mas aumenta o número de bancos de dados para gerenciar e manter. Os [Trabalhos Elásticos](elastic-jobs-overview.md) facilitam a administração e o gerenciamento dos bancos de dados SQL. Os trabalhos permitem uma execução segura e confiável de tarefas (scripts Transact-SQL) em um grupo de bancos de dados. Trabalhos podem implantar esquemas e alterações de dados de referência comum em todos os locatários em um aplicativo. Os Trabalhos Elásticos também podem ser usados para manter um banco de dados de *modelos* usado para criar novos locatários, fazendo com que ele sempre tenha os dados de esquema e de referência mais recentes.
 
 ![tela](media/saas-tenancy-schema-management/schema-management-dpt.png)
 
@@ -133,5 +133,4 @@ Em seguida, tente o [tutorial de relatórios Ad hoc](saas-tenancy-cross-tenant-r
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Tutoriais adicionais que aproveitam a implantação do aplicativo Banco de Dados por Locatário SaaS Wingtip Tickets](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
-* [Gerenciando bancos de dados de nuvem com escalonamento horizontal](sql-database-elastic-jobs-overview.md)
-* [Criar e gerenciar bancos de dados de nuvem com escalonamento horizontal](sql-database-elastic-jobs-create-and-manage.md)
+* [Gerenciando bancos de dados de nuvem com escalonamento horizontal](elastic-jobs-overview.md)

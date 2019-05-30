@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 09/19/2018
 ms.author: rogarana
-ms.openlocfilehash: af903ce3ce7cfa165c278e415827dda36630e7b4
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: ad8ddf7e9e324bbcc48f15c95870a24fe7476828
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65209725"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237753"
 ---
 # <a name="overview-of-azure-active-directory-authentication-over-smb-for-azure-files-preview"></a>Visão geral da autenticação do Azure Active Directory por SMB para arquivos do Azure (versão prévia)
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -26,7 +26,7 @@ Para saber como habilitar a autenticação do Azure AD por SMB para Arquivos do 
     O Azure AD (Azure Active Directory) é o serviço de gerenciamento de diretório e identidade multilocatário baseado em nuvem da Microsoft. O Azure AD combina serviços de diretório principais, gerenciamento de acesso a aplicativos e proteção de identidade em uma única solução. Para obter mais informações, confira [O que é Azure Active Directory?](../../active-directory/fundamentals/active-directory-whatis.md)
 
 -   **Azure AD Domain Services**  
-    Os Serviços de Domínio do Azure AD fornecem serviços de domínio gerenciado, como ingresso no domínio, políticas de grupo, LDAP e autenticação Kerberos/NTLM. Esses serviços são totalmente compatíveis com o Windows Server Active Directory. Para obter mais informações, consulte [Serviços de Domínio do Azure Active Directory (AD)](../../active-directory-domain-services/active-directory-ds-overview.md).
+    Os Serviços de Domínio do Azure AD fornecem serviços de domínio gerenciado, como ingresso no domínio, políticas de grupo, LDAP e autenticação Kerberos/NTLM. Esses serviços são totalmente compatíveis com o Windows Server Active Directory. Para obter mais informações, consulte [Serviços de Domínio do Azure Active Directory (AD)](../../active-directory-domain-services/overview.md).
 
 -   **RBAC (Controle de Acesso Baseado em Função) do Azure**  
     O RBAC (controle de acesso baseado em função) do Azure permite o gerenciamento de acesso refinado para o Azure. Usando o RBAC, você pode gerenciar o acesso aos recursos concedendo aos usuários o mínimo de permissões necessárias para que eles realizem seus trabalhos. Para obter mais informações sobre o RBAC, consulte [O que é o Controle de acesso baseado em função (RBAC) no Azure?](../../role-based-access-control/overview.md)
@@ -50,7 +50,7 @@ O Azure AD por SMB para Arquivos do Azure oferece diversos benefícios em relaç
 -   **Fazer backup das ACLs junto com seus dados**  
     Você pode usar Arquivos do Azure para fazer backup de seus compartilhamentos de arquivos locais existentes. Os Arquivos do Azure preservam suas ACLs junto com seus dados ao fazer backup de um compartilhamento de arquivos para os Arquivos do Azure por SMB.
 
-## <a name="how-it-works"></a>Como funciona
+## <a name="how-it-works"></a>Como ele funciona
 Os Arquivos do Azure usam o Azure AD Domain Services para oferecer suporte a autenticação do Kerberos com credenciais do Azure AD das VMs ingressadas por domínio. Antes de poder usar o Azure AD com o Arquivos do Azure, você deve primeiro habilitar o Azure AD Domain Services e ingressar no domínio a partir das VMs das quais você planeja acessar dados de arquivos. Sua VM ingressado no domínio deve residir na mesma rede virtual (VNET) como o Azure AD Domain Services. 
 
 Quando uma identidade associada a um aplicativo em execução em uma VM tenta acessar dados em Arquivos do Azure, a solicitação é enviada ao Azure AD Domain Services para autenticar a identidade. Se a autenticação for bem-sucedida, o Azure AD Domain Services retorna um token do Kerberos. O aplicativo envia uma solicitação que inclui o token do Kerberos e os Arquivos do Azure usam esse token para autorizar a solicitação. Os Arquivos do Azure apenas recebem o token e não persistem em credenciais do Azure AD.
@@ -60,7 +60,7 @@ Quando uma identidade associada a um aplicativo em execução em uma VM tenta ac
 ### <a name="enable-azure-ad-authentication-over-smb"></a>Habilitar autenticação do Azure AD com SMB
 Você pode habilitar a autenticação do AD do Azure em SMB para arquivos do Azure em suas contas de armazenamento novas e existentes criadas após 24 de setembro de 2018. 
 
-Antes de habilitar a autenticação do Azure AD por SMB, verifique se o Azure AD Domain Services foi implantado para o locatário primário do Azure AD ao qual sua conta de armazenamento está associada. Se você ainda não configurou o Azure AD Domain Services, siga as orientações passo a passo fornecidas em [Habilitar o Azure Active Directory Domain Services usando o portal do Azure](../../active-directory-domain-services/active-directory-ds-getting-started.md).
+Antes de habilitar a autenticação do Azure AD por SMB, verifique se o Azure AD Domain Services foi implantado para o locatário primário do Azure AD ao qual sua conta de armazenamento está associada. Se você ainda não configurou o Azure AD Domain Services, siga as orientações passo a passo fornecidas em [Habilitar o Azure Active Directory Domain Services usando o portal do Azure](../../active-directory-domain-services/create-instance.md).
 
 A implantação do Azure AD Domain Services geralmente leva de 10 a 15 minutos. Após a implantação do Azure AD Domain Services, você pode habilitar a autenticação do Azure AD por SMB para os Arquivos do Azure. Para obter mais informações, consulte [Habilitar a autenticação do Azure Active Directory por SMB para Arquivos do Azure (Versão prévia)](storage-files-active-directory-enable.md). 
 

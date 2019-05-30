@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/13/2018
 ms.author: aljo
-ms.openlocfilehash: 0038de621a02a2edf3198686e1f2fc88fb917d9c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: f1998ec2fe82b9fd52547fbccb208542b22bc949
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66161925"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306907"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Adicionar ou remover certificados para um cluster do Service Fabric no Azure
 É recomendável que você se familiarize com o modo como o Service Fabric usa certificados X.509 e com os [Cenários de segurança do cluster do cluster](service-fabric-cluster-security.md). Você deve entender o que é um certificado de cluster e qual sua finalidade, antes de continuar.
@@ -48,7 +48,7 @@ Se a sua intenção for remover o certificado que está marcado como primário,v
 
 ## <a name="add-a-secondary-certificate-using-resource-manager-powershell"></a>Adicionar um certificado secundário usando o Powershell do Resource Manager
 > [!TIP]
-> Agora é melhor e mais fácil adicionar um certificado secundário usando o [AzServiceFabricClusterCertificate adicionar](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) cmdlet. Não é necessário seguir o restante das etapas nesta seção.  Além disso, você não precisa que o modelo usado originalmente para criar e implantar o cluster ao usar o [AzServiceFabricClusterCertificate adicionar](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) cmdlet.
+> Há agora uma maneira melhor e mais fácil para adicionar um certificado secundário usando o [AzServiceFabricClusterCertificate adicionar](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) cmdlet. Não é necessário seguir o restante das etapas nesta seção.  Além disso, você não precisa que o modelo usado originalmente para criar e implantar o cluster ao usar o [AzServiceFabricClusterCertificate adicionar](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) cmdlet.
 
 Essas etapas pressupõem que você esteja familiarizado com o funcionamento do Gerenciador de Recursos e tenha implantado pelo menos um cluster do Service Fabric usando um modelo do Resource Manager e tenha o modelo que você usou para configurar o cluster à mão. Presume-se também que você esteja familiarizado com o uso do JSON.
 
@@ -195,7 +195,7 @@ Editar seu parâmetro de modelo do Resource Manager de arquivo, adicione dois no
 ### <a name="deploy-the-template-to-azure"></a>Implantar o modelo no Azure
 
 - Agora você está pronto para implantar o modelo no Azure. Abra um prompt de comando do Azure PS versão 1+.
-- Faça logon em sua Conta do Azure e selecione a assinatura do Azure específica. Essa é uma etapa importante para pessoas que têm acesso a mais de uma assinatura do Azure.
+- Entre sua conta do Azure e selecione a assinatura do azure específica. Essa é uma etapa importante para pessoas que têm acesso a mais de uma assinatura do Azure.
 
 ```powershell
 Connect-AzAccount

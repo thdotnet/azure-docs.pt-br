@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: spelluru
-ms.openlocfilehash: b6abb0048dcc722241a2cd87354224b0fd7fa2f9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f6c00f4ada0590df91fce0c36281d0c0cac67b77
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60561538"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257942"
 ---
 # <a name="event-sources-in-azure-event-grid"></a>Fontes de eventos na Grade de Eventos do Azure
 
@@ -74,7 +74,7 @@ Para obter exemplos de Hubs de Eventos como um manipulador, consulte [manipulado
 
 ## <a name="iot-hub"></a>Hub IoT
 
-Assine os eventos de Hub IoT para responder a eventos de criação, exclusão, conexão e desconexão de dispositivo.
+Assine eventos de telemetria e eventos do IoT Hub para responder a dispositivo criado, excluído, conectados e desconectados.
 
 |Title  |DESCRIÇÃO  |
 |---------|---------|

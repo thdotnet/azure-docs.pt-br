@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/25/2018
 ms.author: apimpm
-ms.openlocfilehash: 478b80b021b4df36e2eccc37ac9c74f75e43a5bb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 9e1b1953520c5502668fbbae70a37a140253b035
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60657965"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241685"
 ---
 # <a name="how-to-use-named-values-in-azure-api-management-policies"></a>Como usar Valores Nomeados nas políticas de Gerenciamento de API do Azure
 As políticas de gerenciamento de API são um recurso poderoso do sistema que permitem que o portal do Azure altere o comportamento da API por meio da configuração. As políticas são um conjunto de instruções executadas em sequência, na solicitação ou na resposta de uma API. É possível construir declarações de política usando valores de texto literais, expressões de política e valores nomeados. 
@@ -27,10 +27,10 @@ Cada instância de serviço do Gerenciamento de API tem uma coleção de proprie
 
 | Atributo | Type | DESCRIÇÃO |
 | --- | --- | --- |
-| Display name |string |Cadeia de caracteres alfanuméricos usada para referenciar a propriedade nas políticas. |
-| Value |string |O valor da propriedade. Ele não pode ficar vazio ou conter apenas espaços em branco. |
-|Secret|boolean|Determina se o valor é um segredo e se deve ser criptografado ou não.|
-| tags |matriz de cadeias de caracteres |Marcas opcionais que, quando fornecidas, podem ser usadas para filtrar a lista de propriedades. |
+| `Display name` |string |Cadeia de caracteres alfanuméricos usada para referenciar a propriedade nas políticas. |
+| `Value`        |string |O valor da propriedade. Ele não pode ficar vazio ou conter apenas espaços em branco. |
+| `Secret`       |boolean|Determina se o valor é um segredo e se deve ser criptografado ou não.|
+| `Tags`         |matriz de cadeias de caracteres |Marcas opcionais que, quando fornecidas, podem ser usadas para filtrar a lista de propriedades. |
 
 ![Valores nomeados](./media/api-management-howto-properties/named-values.png)
 
@@ -55,7 +55,7 @@ Os valores de propriedade podem conter cadeias de caracteres literais e [express
 
 Quando a propriedade é criada, você pode editá-la clicando na propriedade. Se você alterar o nome da propriedade, todas as políticas que fizerem referência a essa propriedade serão automaticamente atualizadas para usar o novo nome.
 
-Para saber mais sobre como editar uma propriedade usando a API REST, confira [Editar uma propriedade usando a API REST](/rest/api/apimanagement/property?Patch).
+Para saber mais sobre como editar uma propriedade usando a API REST, confira [Editar uma propriedade usando a API REST](/rest/api/apimanagement/2019-01-01/property?patch).
 
 ## <a name="to-delete-a-property"></a>Para excluir uma propriedade
 
@@ -66,7 +66,7 @@ Para excluir uma propriedade, clique em **Excluir** ao lado da propriedade que v
 > 
 > 
 
-Para saber mais sobre como excluir uma propriedade usando a API REST, confira [Excluir uma propriedade usando a API REST](/rest/api/apimanagement/property?Delete).
+Para saber mais sobre como excluir uma propriedade usando a API REST, confira [Excluir uma propriedade usando a API REST](/rest/api/apimanagement/2019-01-01/property/delete).
 
 ## <a name="to-search-and-filter-named-values"></a>Para pesquisar e filtrar Valores Nomeados
 

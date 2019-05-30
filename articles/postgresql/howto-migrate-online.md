@@ -1,19 +1,19 @@
 ---
-title: Migração com tempo de inatividade mínimo para o Banco de Dados do Azure para PostgreSQL
-description: Este artigo descreve como realizar uma migração de tempo de inatividade mínimo de um banco de dados PostgreSQL para o Banco de Dados do Azure para PostgreSQL usando o Serviço de Migração de Banco de Dados do Azure.
+title: Migração com tempo de inatividade mínimo para banco de dados do Azure para PostgreSQL – servidor único
+description: Este artigo descreve como executar uma migração de tempo de inatividade mínimo de um banco de dados PostgreSQL para o banco de dados do Azure para PostgreSQL – servidor único usando o serviço de migração de banco de dados do Azure.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 12/07/2018
-ms.openlocfilehash: ceb64781dc7e5243f785ad239c24e5f21b0481ce
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 93cd390889c023adf1c30a8470e1c2298598439e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60421178"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65067521"
 ---
-# <a name="minimal-downtime-migration-to-azure-database-for-postgresql"></a>Migração com tempo de inatividade mínimo para o Banco de Dados do Azure para PostgreSQL
+# <a name="minimal-downtime-migration-to-azure-database-for-postgresql---single-server"></a>Migração com tempo de inatividade mínimo para banco de dados do Azure para PostgreSQL – servidor único
 É possível realizar migrações do PostgreSQL para o Banco de Dados do Azure para PostgreSQL com tempo de inatividade mínimo usando o **recurso de sincronização contínua** introduzido recentemente para [DMS](https://aka.ms/get-dms) (Serviço de Migração de Banco de Dados do Azure). Essa funcionalidade limita o tempo de inatividade incorrido pelo aplicativo.
 
 ## <a name="overview"></a>Visão geral

@@ -4,19 +4,19 @@ description: Este artigo descreve como gerenciar seu ambiente do Azure Time Seri
 ms.service: time-series-insights
 services: time-series-insights
 author: ashannon7
-ms.author: anshan
+ms.author: dpalled
 manager: cshankar
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: f5e350e8a9093936f1e747afda7c3192b4d8368d
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: ba7d412e9bfc29a53cd0aa47a926f60580b45490
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65471720"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237646"
 ---
 # <a name="create-time-series-insights-resources-using-azure-resource-manager-templates"></a>Criar recursos do Time Series Insights usando modelos do Azure Resource Manager
 
@@ -24,10 +24,10 @@ Este artigo descreve como criar e implantar recursos do Time Series Insights usa
 
 O Time Series Insights oferece suporte aos seguintes recursos:
 
-   | Resource | Descrição |
+   | Resource | DESCRIÇÃO |
    | --- | --- |
    | Ambiente | Um ambiente do Time Series Insights é um agrupamento lógico de eventos que são lidos de agentes de evento, armazenados e disponibilizados para consulta. Para obter mais informações, consulte [planejar seu ambiente Azure Time Series Insights](time-series-insights-environment-planning.md) |
-   | Fonte do Evento | Uma fonte de evento é uma conexão com um agente de eventos de onde o Time Series Insights lê e ingere eventos no ambiente. As fontes de evento com suporte no momento são o Hub IoT e o Hub de Eventos. |
+   | Origem do Evento | Uma fonte de evento é uma conexão com um agente de eventos de onde o Time Series Insights lê e ingere eventos no ambiente. As fontes de evento com suporte no momento são o Hub IoT e o Hub de Eventos. |
    | Conjuntos de dados de referência | Os conjuntos de dados de referência fornecem metadados sobre os eventos no ambiente. Os metadados nos conjuntos de dados de referência serão adicionados aos eventos durante a entrada. Os conjuntos de dados de referência são definidos como recursos por suas propriedades de chave de evento. Os metadados que compõem o conjunto de dados de referência são carregados ou modificados por meio de APIs de plano de dados. |
    | Política de acesso | As políticas de acesso concedem permissões para emitir consultas de dados, manipular dados de referência no ambiente e compartilhar consultas salvas e perspectivas associadas ao ambiente. Para obter mais informações, leia [conceder acesso a dados em um ambiente do Time Series Insights usando o portal do Azure](time-series-insights-data-access.md) |
 
@@ -59,7 +59,7 @@ O procedimento a seguir descreve como usar o PowerShell para implantar um modelo
 
    * Parâmetros obrigatórios
 
-     | Parâmetro | Descrição |
+     | Parâmetro | DESCRIÇÃO |
      | --- | --- |
      | eventHubNamespaceName | O namespace do hub de eventos de origem. |
      | eventHubName | O nome do hub de eventos de origem. |
@@ -71,7 +71,7 @@ O procedimento a seguir descreve como usar o PowerShell para implantar um modelo
 
    * Parâmetros opcionais
 
-     | Parâmetro | Descrição |
+     | Parâmetro | DESCRIÇÃO |
      | --- | --- |
      | existingEventHubResourceId | Uma ID de recurso opcional de um Hub de Eventos existente que será conectada ao ambiente do Time Series Insights através da fonte do evento. **OBSERVAÇÃO:** o usuário que vai implantar o modelo deve ter privilégios para executar a operação listkeys no Hub de Eventos. Se nenhum valor for transmitido, um novo hub de eventos será criado pelo modelo. |
      | environmentDisplayName | Um nome amigável opcional para exibição nas ferramentas ou interfaces de usuário em vez do nome do ambiente. |
@@ -148,7 +148,7 @@ O procedimento a seguir descreve como usar o PowerShell para implantar um modelo
 
 1. Crie um novo grupo de recursos se já não tiver um.
 
-   * Se você não tiver um recurso existente do grupo, crie um novo grupo de recursos com o **New-AzResourceGroup** comando. Forneça o nome do grupo de recursos e local que você deseja usar. Por exemplo:
+   * Se você não tiver um recurso existente do grupo, crie um novo grupo de recursos com o **New-AzResourceGroup** comando. Forneça o nome do grupo de recursos e local que você deseja usar. Por exemplo: 
 
      ```powershell
      New-AzResourceGroup -Name MyDemoRG -Location "West US"

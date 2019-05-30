@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ec10359c6f684b1d7fb008946b7ceca2ed626ba
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: cd7055794860398ecc6296d0174a691e7fac4450
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545370"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235243"
 ---
 # <a name="application-types-for-microsoft-identity-platform"></a>Tipos de aplicativos para a plataforma de identidade da Microsoft
 
@@ -51,7 +51,7 @@ https://login.microsoftonline.com/common/oauth2/v2.0/token
 
 ## <a name="single-page-apps-javascript"></a>Aplicativos de página única (JavaScript)
 
-Muitos aplicativos modernos têm um aplicativo de página única front-end que é escrito principalmente em JavaScript. Geralmente, ele é escrito usando uma estrutura como AngularJS, Ember.js ou Durandal.js. O ponto de extremidade de plataforma de identidade do Microsoft oferece suporte a esses aplicativos usando o [fluxo implícito do OAuth 2.0](v2-oauth2-implicit-grant-flow.md).
+Muitos aplicativos modernos têm um aplicativo de página única front-end que é escrito principalmente em JavaScript. Muitas vezes, ele é escrito usando uma estrutura como o Angular, React ou Vue. O ponto de extremidade de plataforma de identidade do Microsoft oferece suporte a esses aplicativos usando o [fluxo implícito do OAuth 2.0](v2-oauth2-implicit-grant-flow.md).
 
 Nesse fluxo, o aplicativo recebe tokens diretamente da plataforma de identidade da Microsoft autorizar o ponto de extremidade, sem qualquer troca de servidor para servidor. Todo o manuseio de lógica de autenticação e de sessão ocorra inteiramente no cliente JavaScript, sem redirecionamentos adicionais de página.
 

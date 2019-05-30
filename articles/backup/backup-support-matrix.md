@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 02/17/2019
 ms.author: raynew
-ms.openlocfilehash: 51bd4b935b32bea20d3f5de0b8cda62dfdbf07b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 99dd3c0b07307f2d0bf97dbff697e32e648705ae
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60236638"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400170"
 ---
 # <a name="azure-backup-support-matrix"></a>Matriz de suporte do Backup do Azure
 
@@ -27,7 +27,7 @@ Outras matrizes de suporte estão disponíveis:
 
 ## <a name="vault-support"></a>Suporte de cofre
 
-O Backup do Azure usa cofres de serviços de recuperação para orquestrar e gerenciar backups. Ele também usa cofres para armazenar dados de backup. 
+O Backup do Azure usa cofres de serviços de recuperação para orquestrar e gerenciar backups. Ele também usa cofres para armazenar dados de backup.
 
 A tabela a seguir descreve os recursos dos cofres dos serviços de recuperação:
 
@@ -36,8 +36,8 @@ A tabela a seguir descreve os recursos dos cofres dos serviços de recuperação
 **Cofres na assinatura** | Até 500 cofres dos Serviços de Recuperação em uma assinatura única.
 **Computadores em um cofre** | Até 1.000 VMs do Azure em um único cofre.<br/><br/> Até 50 servidores MABS podem ser registrados em um único cofre.
 **Fontes de dados no armazenamento do cofre** | Máximo 54,400 GB. Não há nenhum limite para backups de VM do Azure.
-**Backups no cofre** | **VMs do Azure:** Uma vez por dia.<br/><br/>**Máquinas protegidas pelo MABS/DPM:** Duas vezes ao dia.<br/><br/> **Backup de máquinas diretamente, usando o agente do MARS:** Três vezes ao dia. 
-**Backups entre cofres** | O backup é dentro de uma região.<br/><br/> Você precisa de um cofre em cada região do Azure que contenha VMs que você deseja fazer backup. Você não pode fazer backup em uma região diferente. 
+**Backups no cofre** | **VMs do Azure:** Uma vez por dia.<br/><br/>**Máquinas protegidas pelo MABS/DPM:** Duas vezes ao dia.<br/><br/> **Backup de máquinas diretamente, usando o agente do MARS:** Três vezes ao dia.
+**Backups entre cofres** | O backup é dentro de uma região.<br/><br/> Você precisa de um cofre em cada região do Azure que contenha VMs que você deseja fazer backup. Você não pode fazer backup em uma região diferente.
 **Mover cofres** | Você pode [mover cofres](https://review.docs.microsoft.com/azure/backup/backup-azure-move-recovery-services-vault) entre assinaturas ou entre grupos de recursos na mesma assinatura.
 **Mover dados entre cofres** | Movimentação de dados de backup entre cofres não é suportado.
 **Modificar o tipo de armazenamento do cofre** | Você pode modificar o tipo de replicação de armazenamento (armazenamento com redundância geográfica ou armazenamento com redundância local) para um cofre, antes que os backups são armazenados. Após o início dos backups no cofre, o tipo de replicação não poderá ser modificado.
@@ -69,7 +69,7 @@ Aqui está o que tem suporte se você quiser fazer backup de VMs do Azure:
 **Computador** | **O que é feito backup** | **Localidade** | **Recursos**
 --- | --- | --- | ---
 **Backup VM do Azure usando a extensão de VM** | Toda a VM | Fazer backup no cofre. | Extensão instalada quando você habilita o backup de uma VM.<br/><br/> Fazer backup de uma vez por dia.<br/><br/> Reconhecimento de aplicativo de backup para VMs do Windows; consistente com o arquivo de backup para VMs Linux. Você pode configurar a consistência do aplicativo para computadores Linux usando scripts personalizados.<br/><br/> Restaure a VM ou disco.<br/><br/> Não é possível fazer backup de uma VM do Azure para um caminho local.
-**Backup VM do Azure usando o agente MARS** | Arquivos, pastas | Fazer backup no cofre. | Fazer backup de três vezes ao dia.<br/><br/> Se você quiser fazer backup de arquivos específicos ou pastas em vez de toda a VM, o agente do MARS pode executar junto com a extensão de VM.
+**Backup VM do Azure usando o agente MARS** | Arquivos, pastas, estado do sistema | Fazer backup no cofre. | Fazer backup de três vezes ao dia.<br/><br/> Se você quiser fazer backup de arquivos específicos ou pastas em vez de toda a VM, o agente do MARS pode executar junto com a extensão de VM.
 **VM do Azure com o DPM** | Arquivos, pastas, volumes, estado do sistema, dados de aplicativo | Fazer backup no armazenamento local da VM do Azure que está executando o DPM. Em seguida, o DPM faz backup no cofre. | Instantâneos de reconhecimento de aplicativo.<br/><br/> Granularidade completa de backup e recuperação.<br/><br/> Com suporte do Linux para VMs (Hyper-V/VMware).<br/><br/> Sem suporte para o Oracle.
 **VM do Azure com o MABS** | Arquivos, pastas, volumes, estado do sistema, dados de aplicativo | Fazer backup no armazenamento local da VM do Azure que está executando o MABS. Em seguida, o MABS faz backup no cofre. | Instantâneos de reconhecimento de aplicativo.<br/><br/> Granularidade completa de backup e recuperação.<br/><br/> Com suporte do Linux para VMs (Hyper-V/VMware).<br/><br/> Sem suporte para o Oracle.
 

@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: kgremban
-ms.openlocfilehash: a2c49a6ba269321d1903565ace3ebaae3f3b917e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: eb521ed0951999fadbfae5e0eac1f0ea275e0d48
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60779400"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66391700"
 ---
 # <a name="react-to-iot-hub-events-by-using-event-grid-to-trigger-actions"></a>Reagir aos eventos do Hub IoT usando a Grade de Eventos para disparar ações
 
@@ -25,7 +25,7 @@ O Hub IoT do Azure integra-se com a Grade de Eventos do Azure para que você pos
 
 ## <a name="regional-availability"></a>Disponibilidade regional
 
-A integração da Grade de Eventos está disponível para os hubs IoT localizados nas regiões onde há suporte para a Grade de Eventos. Para obter a lista mais recente de regiões, consulte [Uma introdução à Grade de Eventos do Azure](../event-grid/overview.md). 
+A integração da Grade de Eventos está disponível para os hubs IoT localizados nas regiões onde há suporte para a Grade de Eventos. Todos os eventos de dispositivo, exceto os eventos de telemetria do dispositivo estão geralmente disponíveis. Evento de telemetria do dispositivo está em visualização pública e está disponível em todas as regiões, exceto o Leste dos EUA, oeste dos EUA, Europa Ocidental, [do Azure governamental](/azure-government/documentation-government-welcome.md), [do Azure na China 21Vianet](/azure/china/china-welcome.md), e [Azure Alemanha](https://azure.microsoft.com/global-infrastructure/germany/). Para obter a lista mais recente de regiões, consulte [Uma introdução à Grade de Eventos do Azure](../event-grid/overview.md). 
 
 ## <a name="event-types"></a>Tipos de evento
 
@@ -37,6 +37,7 @@ Hub IoT publica os seguintes tipos de evento:
 | Microsoft.Devices.DeviceDeleted | Publicado quando um dispositivo é excluído de um Hub IoT. |
 | Microsoft.Devices.DeviceConnected | Publicado quando um dispositivo é conectado a um Hub IoT. |
 | Microsoft.Devices.DeviceDisconnected | Publicado quando um dispositivo é desconectado de um Hub IoT. |
+| Microsoft.Devices.DeviceTelemetry | Publicado quando uma mensagem de telemetria do dispositivo é enviada para um hub IoT |
 
 Use o portal do Azure ou a CLI do Azure para configurar os eventos para publicar a partir de cada Hub IoT. Para um exemplo, experimente o tutorial [Enviar notificações por email sobre os eventos do Hub IoT usando Aplicativos Lógicos](../event-grid/publish-iot-hub-events-to-logic-apps.md).
 
@@ -66,6 +67,42 @@ O exemplo a seguir mostra o esquema de um evento de dispositivo conectado:
   }, 
   "dataVersion": "1", 
   "metadataVersion": "1" 
+}]
+```
+
+### <a name="device-telemetry-schema"></a>Esquema de telemetria do dispositivo
+
+Mensagem de telemetria do dispositivo deve estar em um formato válido de JSON com o contentType, definido como JSON e o contentEncoding definida como UTF-8 na mensagem [propriedades do sistema](iot-hub-devguide-routing-query-syntax.md#system-properties). Se isso não for definido, o IoT Hub gravará as mensagens no formato de codificado em base 64. O exemplo a seguir mostra o esquema de um evento de telemetria do dispositivo: 
+
+```json
+[{  
+  "id": "9af86784-8d40-fe2g-8b2a-bab65e106785",
+  "topic": "/SUBSCRIPTIONS/<subscription ID>/RESOURCEGROUPS/<resource group name>/PROVIDERS/MICROSOFT.DEVICES/IOTHUBS/<hub name>",
+  "subject": "devices/LogicAppTestDevice", 
+  "eventType": "Microsoft.Devices.DeviceTelemetry",
+  "eventTime": "2019-01-07T20:58:30.48Z",
+  "data": {        
+      "body": {            
+          "Weather": {                
+              "Temperature": 900            
+            },
+            "Location": "USA"        
+        },
+        "properties": {            
+            "Status": "Active"        
+        },
+        "systemProperties": {            
+          "iothub-content-type": "application/json",
+          "iothub-content-encoding": "utf-8",
+          "iothub-connection-device-id": "d1",
+          "iothub-connection-auth-method": "{\"scope\":\"device\",\"type\":\"sas\",\"issuer\":\"iothub\",\"acceptingIpFilterRule\":null}",
+          "iothub-connection-auth-generation-id": "123455432199234570",
+          "iothub-enqueuedtime": "2019-01-07T20:58:30.48Z",
+          "iothub-message-source": "Telemetry"        
+        }    
+  },
+  "dataVersion": "",
+  "metadataVersion": "1"
 }]
 ```
 
@@ -123,13 +160,21 @@ Para obter uma descrição detalhada de cada propriedade, consulte [esquema de e
 
 ## <a name="filter-events"></a>Filtrar eventos
 
-Assinaturas de evento de Hub IoT podem filtrar eventos com base no nome de dispositivo e tipo de evento. Filtros de assunto no trabalho da Grade de Eventos com base em correspondências de **Começa com** (prefixo) e **Termina com** (sufixo). O filtro usa um operador `AND`, para que eventos com o assunto que correspondam ao prefixo e ao sufixo sejam entregues ao assinante. 
+Assinaturas de evento do IoT Hub podem filtrar eventos com base no tipo de evento, o conteúdo dos dados e o assunto, que é o nome do dispositivo.
+
+Grade de eventos permite [filtragem](../event-grid/event-filtering.md) no conteúdo de dados, entidades e tipos de evento. Ao criar a assinatura de grade de eventos, você pode escolher assinar eventos de IoT selecionados. Filtros de assunto no trabalho da Grade de Eventos com base em correspondências de **Começa com** (prefixo) e **Termina com** (sufixo). O filtro usa um operador `AND`, para que eventos com o assunto que correspondam ao prefixo e ao sufixo sejam entregues ao assinante. 
 
 O assunto de Eventos IoT usa o formato:
 
 ```json
 devices/{deviceId}
 ```
+
+Grade de eventos também permite a filtragem em atributos de cada evento, incluindo o conteúdo de dados. Isso permite que você escolha quais eventos são entregues com base conteúdo da mensagem de telemetria. Consulte [filtragem avançada](../event-grid/event-filtering.md#advanced-filtering) exibir exemplos. 
+
+Para os eventos não são de telemetria, como DeviceConnected, DeviceDisconnected, DeviceCreated e DeviceDeleted, a filtragem de grade de eventos pode ser usada ao criar a assinatura. Para eventos de telemetria, além de filtragem na grade de eventos, os usuários também podem filtrar em dispositivos gêmeos, as propriedades da mensagem e corpo por meio da consulta de roteamento de mensagem. Podemos criar um padrão [rota](iot-hub-devguide-messages-d2c.md) no IoT Hub, com base em sua assinatura da grade de eventos para a telemetria do dispositivo. Essa rota única pode lidar com todas as suas assinaturas de grade de eventos. Para filtrar mensagens antes dos dados de telemetria são enviados, você pode atualizar seu [consulta de roteamento](iot-hub-devguide-routing-query-syntax.md). Observe que essa consulta de roteamento pode ser aplicada ao corpo da mensagem somente se o corpo é JSON.
+
+
 ## <a name="limitations-for-device-connected-and-device-disconnected-events"></a>Limitações para eventos de conexão e desconexão de dispositivo
 
 Para receber eventos de conexão e desconexão de dispositivo, você precisa abrir o link D2C ou o link C2D para o dispositivo. Se o dispositivo estiver usando o protocolo MQTT, o Hub IoT manterá o link C2D aberto. Para AMQP, você pode abrir o link C2D chamando o [recebimento assíncrono API](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.receiveasync?view=azure-dotnet). 
@@ -144,7 +189,7 @@ Aplicativos que tratam os eventos de Hub IoT devem seguir essas práticas sugeri
 
 * Não presuma que todos os eventos que você recebe são os tipos que você espera. Sempre verifique o eventType antes de processar a mensagem.
 
-* As mensagens podem chegar fora de ordem ou após um atraso. Use o campo de etag para entender se as informações sobre objetos estão atualizadas.
+* As mensagens podem chegar fora de ordem ou após um atraso. Use o campo de etag para entender se suas informações sobre objetos estão atualizadas para o dispositivo criado ou eventos de dispositivo excluído.
 
 ## <a name="next-steps"></a>Próximas etapas
 

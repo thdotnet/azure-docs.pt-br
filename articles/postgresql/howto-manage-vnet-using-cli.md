@@ -1,20 +1,20 @@
 ---
-title: Criar e gerenciar regras e pontos de extremidade de serviços VNET do Banco de Dados do Azure para PostgreSQL usando a CLI do Azure
-description: Este artigo descreve como criar e gerenciar regras e pontos de extremidade de serviços VNet do Banco de Dados do Azure para PostgreSQL usando a linha de comando CLI do Azure.
+title: Criar e gerenciar pontos de extremidade de serviço de rede virtual e regras para o banco de dados do Azure para PostgreSQL – único servidor usando a CLI do Azure
+description: Este artigo descreve como criar e gerenciar pontos de extremidade de serviço de rede virtual e regras para o banco de dados do Azure para PostgreSQL usando a linha de comando da CLI do Azure.
 author: bolzmj
 ms.author: mbolz
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: conceptual
-ms.date: 10/23/2018
-ms.openlocfilehash: 7dc5a49e8b27d1a4e4126bef1cce638373e056fb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: df2af0240852b23203e504d8233de4af48475438
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60420923"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65067559"
 ---
-# <a name="create-and-manage-azure-database-for-postgresql-vnet-service-endpoints-using-azure-cli"></a>Criar e gerenciar pontos de extremidade de serviços VNet do Banco de Dados do Azure para PostgreSQL usando a CLI do Azure
+# <a name="create-and-manage-vnet-service-endpoints-for-azure-database-for-postgresql---single-server-using-azure-cli"></a>Criar e gerenciar pontos de extremidade de serviço de rede virtual para o banco de dados do Azure para PostgreSQL – único servidor usando a CLI do Azure
 As regras e pontos de extremidade de serviços de VNet (rede virtual) estendem o espaço de endereço privado de uma rede virtual para seu servidor do Banco de Dados do Azure para PostgreSQL. Usando comandos convenientes da CLI (interface de linha de comando) do Azure, você pode criar, atualizar, excluir, listar e mostrar as regras e os pontos de extremidade de serviço de VNet para gerenciar o servidor. Para obter uma visão geral dos pontos de extremidade de serviço de VNet do Banco de Dados do Azure para PostgreSQL, confira [Pontos de extremidade de serviço de VNet do servidor do Banco de Dados do Azure para PostgreSQL](concepts-data-access-and-security-vnet.md). Os terminais de serviços da VNet estão disponíveis em todas as regiões suportadas para o Banco de Dados do Azure para PostgreSQL.
 
 ## <a name="prerequisites"></a>Pré-requisitos

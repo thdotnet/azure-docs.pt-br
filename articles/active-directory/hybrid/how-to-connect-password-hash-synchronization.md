@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 146fdc3ca2af708a96e6b9a604493eb63c2e6530
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 66ff1cb57bb3317adc7ab6208ebf5029361b7c54
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60348292"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235147"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Implemente a sincronização de hash de senha com a sincronização do Azure AD Connect
 Este artigo fornece as informações necessárias para sincronizar suas senhas de usuário de uma instância do AD (Active Directory) local para uma instância do Azure AD (Azure Active Directory) baseada na nuvem.
@@ -64,9 +64,9 @@ A seção a seguir descreve detalhadamente como a sincronização de hash de sen
 >O hash MD4 original não é transmitido para o Azure AD. Em vez disso, o hash SHA256 do hash MD4 original é transmitido. Como resultado, se o hash armazenado no Azure AD for obtido, ele não poderá ser usada em um ataque de passagem de hash no local.
 
 ### <a name="how-password-hash-synchronization-works-with-azure-active-directory-domain-services"></a>Como funciona a sincronização de hash de senhas com o Azure Active Directory Domain Services
-Você também pode usar o recurso de sincronização de hash de senha para sincronizar suas senhas locais para o [Azure Active Directory Domain Services](../../active-directory-domain-services/active-directory-ds-overview.md). Nesse cenário, a instância do Azure Active Directory Domain Services autentica os usuários na nuvem com todos os métodos disponíveis na instância do Active Directory local. A experiência desse cenário é semelhante a usar a ADMT (Ferramenta de Migração do Active Directory) em um ambiente local.
+Você também pode usar o recurso de sincronização de hash de senha para sincronizar suas senhas locais para o [Azure Active Directory Domain Services](../../active-directory-domain-services/overview.md). Nesse cenário, a instância do Azure Active Directory Domain Services autentica os usuários na nuvem com todos os métodos disponíveis na instância do Active Directory local. A experiência desse cenário é semelhante a usar a ADMT (Ferramenta de Migração do Active Directory) em um ambiente local.
 
-### <a name="security-considerations"></a>Considerações de segurança
+### <a name="security-considerations"></a>Considerações sobre segurança
 Ao sincronizar senhas, a versão da sua senha em texto sem formatação não é exposta ao recurso de sincronização de hash de senha, nem ao Azure AD ou qualquer um dos serviços associados.
 
 A autenticação do usuário ocorre no Azure AD e não na própria instância do Active Directory da organização. Os dados de senha SHA256 armazenados no Azure AD - um hash do hash MD4 original - são mais seguros que os armazenados no Active Directory. Além disso, como não é possível descriptografar esse hash SHA256, ele não pode ser levado de volta ao ambiente do Active Directory da organização e apresentado como uma senha de usuário válida em um ataque de passagem de hash.

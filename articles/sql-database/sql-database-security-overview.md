@@ -12,12 +12,12 @@ ms.author: aliceku
 ms.reviewer: vanto, carlrab, emlisa
 manager: craigg
 ms.date: 05/14/2019
-ms.openlocfilehash: 7916e9493a5d572f844bca23a1dd7806e5fbe572
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: af14d5eb521d531f86433712a0d6c325ae7a1cd6
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65790154"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258636"
 ---
 # <a name="an-overview-of-azure-sql-database-security-capabilities"></a>Uma visão geral dos recursos de segurança do Banco de Dados SQL do Azure
 
@@ -150,6 +150,10 @@ Para obter mais informações, confira [Introdução à descoberta e classifica�
 ### <a name="compliance"></a>Conformidade
 
 Além dos recursos e funcionalidades acima, que podem ajudar seu aplicativo a atender a vários requisitos de segurança, o Banco de Dados SQL do Azure também participa de auditorias regulares e foi certificado em relação a vários padrões de conformidade. Para obter mais informações, consulte o [Microsoft Azure Trust Center](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) onde você pode encontrar a lista mais atual das certificações de conformidade do banco de dados SQL.
+
+### <a name="feature-restrictions"></a>Restrições de recurso
+
+Recurso restrições ajudam a evitar algumas formas de injeção de SQL contra vazamento de informações sobre o banco de dados, mesmo quando a injeção de SQL é bem-sucedida. Para obter mais informações, consulte [restrições de recurso de banco de dados do SQL Azure](sql-database-feature-restrictions.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

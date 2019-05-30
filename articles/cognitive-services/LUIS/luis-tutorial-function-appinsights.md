@@ -9,19 +9,19 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 05/30/2019
 ms.author: diberry
-ms.openlocfilehash: 1c44d2e41d37a9236ee6d6936c349acf5ca5e44c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bde1983f89cb2fcd0a6fddadc2c3379dee4310be
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60495308"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399624"
 ---
 # <a name="add-luis-results-to-application-insights-and-azure-functions"></a>Adicionar resultados do LUIS às funções do Application Insights e do Azure
-Este tutorial adiciona informações de solicitação e resposta do LUIS ao armazenamento de dados telemétricos do [Application Insights](https://azure.microsoft.com/services/application-insights/). Quando você tiver esses dados, poderá consultá-los com a linguagem de Kusto ou com o Power BI para analisar, agregar e relatar intenções e entidades do enunciado em tempo real. Esta análise ajuda a determinar se você deve adicionar ou editar as intenções e as entidades do seu aplicativo LUIS.
+Este tutorial adiciona informações de solicitação e resposta do LUIS ao armazenamento de dados telemétricos do [Application Insights](https://azure.microsoft.com/services/application-insights/). Depois que os dados, você pode consultá-lo com a linguagem Kusto ou o Power BI para analisar, agregar e gerar relatórios sobre as intenções e entidades de declaração em tempo real. Esta análise ajuda a determinar se você deve adicionar ou editar as intenções e as entidades do seu aplicativo LUIS.
 
-O bot é criado com o Bot Framework 3.x e o bot de aplicativo Web do Azure.
+O bot é criado com o Bot Framework 3.x e o bot de aplicativo Web do Azure. Um [Bot Framework 4. x com o tutorial do LUIS](luis-nodejs-tutorial-bf-v4.md) também está disponível.
 
 Neste tutorial, você aprenderá como:
 
@@ -112,7 +112,7 @@ Abra o Application Insights para ver as entradas do LUIS.
 
 1. No portal, selecione **Todos os recursos** e, em seguida, filtre pelo nome do bot do aplicativo Web. Clique no recurso com o tipo **Application Insights**. O ícone para o Application Insights é uma lâmpada. 
 
-    ! [[Pesquisa para o app insights no Portal do Azure](./media/luis-tutorial-appinsights/search-for-app-insights.png)
+    ! [[Pesquisa para o app insights no portal do Azure](./media/luis-tutorial-appinsights/search-for-app-insights.png)
 
 2. Quando o recurso se abrir, clique no ícone **Pesquisar** da lupa no painel bem à direita. Um novo painel à direita é exibido. Dependendo de quantos dados telemétricos são encontrados, o painel poderá levar um segundo para ser exibido. Pesquise `LUIS-results` e pressione Enter no teclado. A lista é limitada a apenas os resultados da consulta do LUIS adicionados com este tutorial.
 
@@ -129,7 +129,7 @@ Abra o Application Insights para ver as entradas do LUIS.
 > Se você quiser salvar a lista de dependências e retornar a ela mais tarde, clique em **…Mais** e em **Salvar favorito**.
 
 ## <a name="query-application-insights-for-intent-score-and-utterance"></a>Consulte o Application Insights para intenções, pontuações e enunciados
-O Application Insights oferece a capacidade de consultar os dados com a linguagem [Kusto](https://docs.microsoft.com/azure/application-insights/app-insights-analytics#query-data-in-analytics), além de exportar para [PowerBI](https://powerbi.microsoft.com). 
+O Application Insights fornece a capacidade de consultar os dados com o [Kusto](https://docs.microsoft.com/azure/application-insights/app-insights-analytics#query-data-in-analytics) idioma, bem como a exportação que ele [Power BI](https://powerbi.microsoft.com). 
 
 1. Clique em **Análise** na parte superior da lista de dependência acima da caixa de filtro. 
 
@@ -152,7 +152,7 @@ O Application Insights oferece a capacidade de consultar os dados com a linguage
     ![Principal intenção de análise](./media/luis-tutorial-appinsights/app-insights-top-intent.png)
 
 
-Saiba mais sobre a [Linguagem de consulta Kusto](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries) ou [exporte os dados para o PowerBi](https://docs.microsoft.com/azure/application-insights/app-insights-export-power-bi). 
+Saiba mais sobre o [linguagem de consulta Kusto](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries) ou [exportar os dados para o Power BI](https://docs.microsoft.com/azure/application-insights/app-insights-export-power-bi). 
 
 ## <a name="next-steps"></a>Próximas etapas
 

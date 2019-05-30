@@ -13,16 +13,16 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 11/03/2017
 ms.author: ghogen
-ms.openlocfilehash: 5298721b7f60cec677c22faf1b35011aab02defb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4b8e3ddf1cf5d61f730ce01a35ee0813b47ad2d2
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60204257"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66305926"
 ---
 # <a name="publish-an-aspnet-web-app-to-an-azure-vm-from-visual-studio"></a>Publicar um aplicativo Web ASP.NET para uma VM do Azure a partir do Visual Studio
 
-Este documento descreve como publicar um aplicativo Web ASP.NET para uma máquina virtual (VM) do Azure usando o recurso de publicação das **Máquinas Virtuais do Microsoft Azure** no Visual Studio 2017.  
+Este documento descreve como publicar um aplicativo de web do ASP.NET para uma máquina virtual do Azure (VM) usando o **máquinas virtuais do Microsoft Azure** recurso de publicação no Visual Studio de 2019.  
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Para usar o Visual Studio para publicar um projeto ASP.NET em uma VM do Azure, a VM deve estar configurada corretamente.
@@ -34,7 +34,7 @@ Para usar o Visual Studio para publicar um projeto ASP.NET em uma VM do Azure, a
 ## <a name="publish-your-aspnet-web-app-to-the-azure-vm-using-visual-studio"></a>Publicar seu aplicativo Web ASP.NET na VM do Azure usando o Visual Studio
 A seção a seguir descreve como publicar um aplicativo Web ASP.NET existente em uma máquina virtual do Azure.
 
-1. Abra sua solução de aplicativo Web no Visual Studio 2017.
+1. Abra sua solução de aplicativo web no Visual Studio de 2019.
 2. Clique com o botão direito do mouse no projeto no Gerenciador de Soluções e escolha **Publicar...**
 3. Use a seta à direita da página para rolar pelas opções de publicação até encontrar **Máquinas Virtuais do Microsoft Azure**.  
 
@@ -58,7 +58,7 @@ A seção a seguir descreve como publicar um aplicativo Web ASP.NET existente em
 
 7. Clique em OK para começar a publicar.
 
-8. Quando for solicitado a fornecer credenciais, forneça o nome de usuário e a senha de uma conta de usuário da VM de destino que esteja configurada com direitos de publicação (geralmente, o nome de usuário e a senha de administrador usados durante a criação da VM).  
+8. Quando solicitado a fornecer credenciais, forneça o nome de usuário e a senha de uma conta de usuário na VM que está configurado com direitos de publicação de destino. Essas credenciais são normalmente o nome de usuário administrador e a senha usada ao criar a VM.  
 
    ![Logon no WebDeploy]
 
@@ -90,7 +90,7 @@ Para publicar atualizações em seu aplicativo Web, selecione o botão **Publica
 
 ### <a name="modify-publish-profile-settings"></a>Modificar as configurações de perfil da publicação
 
-Para exibir e modificar as configurações de perfil da publicação, selecione **Configurações...**.  
+Para exibir e modificar as configurações de perfil da publicação, selecione **Configurações...** .  
 
 ![Página Publicar – botão Configurações]
 
@@ -99,18 +99,18 @@ Suas configurações devem se parecer com isto:
 ![Configurações da publicação – página Conexão]
 
 #### <a name="save-user-name-and-password"></a>Salvar nome de usuário e senha
-- Para evitar ter de fornecer as informações de autenticação toda vez que publicar, é possível preencher os campos **Nome de usuário** e **Senha** e marcar a caixa **Salvar senha**.
+- Evite fornecer informações de autenticação toda vez que você publica. Para fazer isso, preencher a **nome de usuário** e **senha** campos e selecione o **salvar senha** caixa.
 - Use o botão **Validar Conexão** para confirmar que foram inseridas as informações corretas.
 
 #### <a name="deploy-to-clean-web-server"></a>Implantar para limpar o servidor Web
 
-- Caso queira garantir que o servidor Web tenha uma cópia limpa do aplicativo Web após cada carregamento (e que nenhum arquivo tenha ficado suspenso de uma implantação anterior), é possível marcar a caixa de seleção **Remover arquivos adicionais no destino** na guia **Configurações**.
+- Se você quiser garantir que o servidor web tenha uma cópia limpa do aplicativo web após cada carregamento e que nenhum outro arquivo é deixado de uma implantação anterior, você pode verificar a **remover arquivos adicionais no destino** caixa de seleção de  **Configurações** guia.
 
 - Aviso: Publicar com essa configuração exclui todos os arquivos que existem no servidor web (diretório wwwroot). Verifique se você sabe o estado do computador antes de publicar com essa opção habilitada. 
 
 ![Configurações de publicação – página Configurações]
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 ### <a name="set-up-cicd-for-automated-deployment-to-azure-vm"></a>Configurar CI/CD para implantação automática à VM do Azure
 

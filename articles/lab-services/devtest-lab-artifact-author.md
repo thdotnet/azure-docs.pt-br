@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/11/2018
+ms.date: 05/30/2019
 ms.author: spelluru
-ms.openlocfilehash: 0d1e269a1818f013bc14842bc541216d7f31bc84
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 69b83590fb9b25c68d231b732b985ba633bb6884
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60311108"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399212"
 ---
 # <a name="create-custom-artifacts-for-your-devtest-labs-virtual-machine"></a>Criar artefatos personalizados para sua máquina virtual do DevTest Labs
 
@@ -58,9 +58,9 @@ O exemplo a seguir mostra as seções que compõem a estrutura básica de um arq
 | $schema |Não  |Local do arquivo de esquema JSON. O arquivo de esquema JSON pode lhe ajudar a testar a validade do arquivo de definição. |
 | título |Sim |Nome do artefato exibido no laboratório. |
 | description |Sim |Descrição do artefato exibido no laboratório. |
-| iconUri |Não  |URI do ícone exibido no laboratório. |
+| iconUri |Não |URI do ícone exibido no laboratório. |
 | targetOsType |Sim |Sistema operacional da VM em que o artefato está instalado. As opções com suporte são Windows e Linux. |
-| parameters |Não  |Valores fornecidos quando o comando de instalação do artefato é executado em um computador. Isso ajuda você a personalizar seu artefato. |
+| parâmetros |Não |Valores fornecidos quando o comando de instalação do artefato é executado em um computador. Isso ajuda você a personalizar seu artefato. |
 | runCommand |Sim |Comando de instalação do artefato executado em uma VM. |
 
 ### <a name="artifact-parameters"></a>Parâmetros do artefato
@@ -78,7 +78,7 @@ Para definir parâmetros, use a seguinte estrutura:
 
 | Nome do elemento | Obrigatório? | DESCRIÇÃO |
 | --- | --- | --- |
-| Tipo |Sim |Tipo do valor do parâmetro. Veja a lista a seguir para os tipos permitidos. |
+| type |Sim |Tipo do valor do parâmetro. Veja a lista a seguir para os tipos permitidos. |
 | displayName |Sim |Nome do parâmetro exibido para um usuário no laboratório. |
 | description |Sim |Descrição do parâmetro exibido no laboratório. |
 
@@ -89,15 +89,40 @@ Os tipos permitidos são:
 * bool (qualquer booliano JSON válido)
 * array (qualquer matriz JSON válida)
 
+## <a name="secrets-as-secure-strings"></a>Segredos, como cadeias de caracteres seguras
+Declare segredos como cadeias de caracteres seguras. Aqui está a sintaxe para declarar um parâmetro de cadeia de caracteres segura na `parameters` seção o **artifactfile** arquivo:
+
+```json
+
+    "securestringParam": {
+      "type": "securestring",
+      "displayName": "Secure String Parameter",
+      "description": "Any text string is allowed, including spaces, and will be presented in UI as masked characters.",
+      "allowEmpty": false
+    },
+```
+
+Comando de instalação para o artefato, execute o script do PowerShell que usa a cadeia de caracteres segura criada usando o comando ConvertTo-SecureString. 
+
+```json
+  "runCommand": {
+    "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./artifact.ps1 -StringParam ''', parameters('stringParam'), ''' -SecureStringParam (ConvertTo-SecureString ''', parameters('securestringParam'), ''' -AsPlainText -Force) -IntParam ', parameters('intParam'), ' -BoolParam:$', parameters('boolParam'), ' -FileContentsParam ''', parameters('fileContentsParam'), ''' -ExtraLogLines ', parameters('extraLogLines'), ' -ForceFail:$', parameters('forceFail'), '\"')]"
+  }
+```
+
+Para o exemplo completo artifactfile e o artifact.ps1 (script do PowerShell), consulte [essa amostra no GitHub](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts/windows-test-paramtypes).
+
+Outro ponto importante a observar é não faça segredos no console, como a saída é capturada para depuração de usuário. 
+
 ## <a name="artifact-expressions-and-functions"></a>Expressões e funções de artefatos
 Você pode usar expressões e funções para construir o comando de instalação do artefato.
 As expressões são colocadas entre colchetes ([ e ]) e avaliadas quando o artefato é instalado. Expressões podem aparecer em qualquer lugar em um valor de cadeia de caracteres JSON. Expressões sempre retornam outro valor JSON. Se precisar usar uma cadeia de caracteres literal que começa com um colchete ([), você deverá usar dois colchetes ([[).
-Normalmente, você usa expressões com funções para construir um valor. Assim como no JavaScript, as chamadas de função são formatadas como **functionName(arg1,arg2,arg3)**.
+Normalmente, você usa expressões com funções para construir um valor. Assim como no JavaScript, as chamadas de função são formatadas como **functionName(arg1,arg2,arg3)** .
 
 A lista a seguir mostra funções comuns:
 
-* **parameters(parameterName)**: Retorna um valor de parâmetro fornecido quando o comando do artefato é executado.
-* **concat(arg1, arg2, arg3…)**: Combina vários valores de cadeia de caracteres. Essa função pode conter uma variedade de argumentos.
+* **parameters(parameterName)** : Retorna um valor de parâmetro fornecido quando o comando do artefato é executado.
+* **concat(arg1, arg2, arg3…)** : Combina vários valores de cadeia de caracteres. Essa função pode conter uma variedade de argumentos.
 
 O exemplo a seguir mostra como usar expressões e funções para construir um valor:
 
@@ -128,5 +153,5 @@ O exemplo a seguir mostra como usar expressões e funções para construir um va
 * [Como diagnosticar falhas de artefato em DevTest Labs](devtest-lab-troubleshoot-artifact-failure.md)
 * [Ingresse uma VM em um domínio do Active Directory existente usando um modelo do Resource Manager no DevTest Labs](https://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 * Saiba como [adicionar um repositório de artefatos Git a um laboratório](devtest-lab-add-artifact-repo.md).

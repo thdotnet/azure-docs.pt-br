@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 7d607b4370d51ea2605fae6543bd3336853b0806
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 574dd9fd6189b6d0f1e5d455146d6d083ad7ff77
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65954214"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389462"
 ---
 # <a name="work-with-databases-containers-and-items-in-azure-cosmos-db"></a>Trabalhar com bancos de dados, contêineres e itens no Azure Cosmos DB
 
@@ -55,6 +55,9 @@ Quando você cria um contêiner do Azure Cosmos, você configurar a taxa de tran
 
 * **Modo de taxa de transferência provisionada compartilhado**: Esses contêineres compartilham a taxa de transferência provisionada com outros contêineres no mesmo banco de dados (exceto os contêineres que foram configurados com taxa de transferência provisionada dedicada). Em outras palavras, a taxa de transferência provisionada no banco de dados é compartilhada entre todos os contêineres de "taxa de transferência compartilhada". Para obter mais informações, consulte [como provisionar a taxa de transferência em um banco de dados do Azure Cosmos](how-to-provision-database-throughput.md).
 
+> [!NOTE]
+> Você pode configurar a taxa de transferência dedicada e compartilhada somente ao criar o banco de dados e o contêiner. Para alternar do modo de taxa de transferência dedicada para o modo de taxa de transferência compartilhada (e vice-versa) depois que o contêiner é criado, você precisa criar um novo contêiner e migrar os dados para o novo contêiner. Você pode migrar os dados usando a recurso de feed de alterações do Azure Cosmos DB.
+
 Um contêiner do Azure Cosmos pode dimensionar elasticamente, quer você crie contêineres usando os modos de taxa de transferência provisionada compartilhados ou dedicados.
 
 Um contêiner do Azure Cosmos é um contêiner de itens independente de esquema. Itens em um contêiner podem ter esquemas arbitrários. Por exemplo, um item que representa uma pessoa e um item que representa um automóvel podem ser colocados na *mesmo contêiner*. Por padrão, todos os itens que você adiciona a um contêiner são indexados automaticamente sem a necessidade de índice explícito ou gerenciamento de esquema. Você pode personalizar o comportamento de indexação Configurando a [política de indexação](index-overview.md) em um contêiner. 
@@ -79,10 +82,10 @@ Um contêiner do Azure Cosmos tem um conjunto de propriedades definidas pelo sis
 
 | Propriedade definida pelo sistema | Configurável pelo usuário ou gerados pelo sistema | Finalidade | API do SQL | API Cassandra | API do Azure Cosmos DB para MongoDB | API do Gremlin | API de Tabela |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-|\_ID | Gerados pelo sistema | Identificador exclusivo do contêiner | Sim | Não | Não | Não | Não |
-|\_etag | Gerados pelo sistema | Marca da entidade usada para controle de simultaneidade otimista | Sim | Não | Não | Não | Não |
+|\_ID | Gerados pelo sistema | Identificador exclusivo do contêiner | Sim | Não | Não | Não | Não  |
+|\_etag | Gerados pelo sistema | Marca da entidade usada para controle de simultaneidade otimista | Sim | Não | Não | Não | Não  |
 |\_ts | Gerados pelo sistema | Último carimbo de data/hora atualizado do contêiner | Sim | Não | Não | Não | Não |
-|\_Self | Gerados pelo sistema | URI endereçável do contêiner | Sim | Não | Não | Não | Não |
+|\_Self | Gerados pelo sistema | URI endereçável do contêiner | Sim | Não | Não | Não | Não  |
 |ID | Configurável pelo usuário | Nome exclusivo do contêiner definido pelo usuário | Sim | sim | sim | sim | Sim |
 |indexingPolicy | Configurável pelo usuário | Fornece a capacidade de alterar o caminho de índice, o tipo de índice e o modo de índice | Sim | Não | Não | Não  | Sim |
 |TimeToLive | Configurável pelo usuário | Fornece a capacidade de excluir itens automaticamente de um contêiner após um período de tempo definido. Para obter detalhes, consulte [tempo de vida](time-to-live.md). | Sim | Não | Não | Não  | Sim |
@@ -115,9 +118,9 @@ Cada item Cosmos do Azure tem as seguintes propriedades definidas pelo sistema. 
 
 | Propriedade definida pelo sistema | Configurável pelo usuário ou gerados pelo sistema| Finalidade | API do SQL | API Cassandra | API do Azure Cosmos DB para MongoDB | API do Gremlin | API de Tabela |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-|\_ID | Gerados pelo sistema | Identificador exclusivo do item | Sim | Não | Não | Não | Não |
-|\_etag | Gerados pelo sistema | Marca da entidade usada para controle de simultaneidade otimista | Sim | Não | Não | Não | Não |
-|\_ts | Gerados pelo sistema | Carimbo de hora da última atualização do item | Sim | Não | Não | Não | Não |
+|\_ID | Gerados pelo sistema | Identificador exclusivo do item | Sim | Não | Não | Não | Não  |
+|\_etag | Gerados pelo sistema | Marca da entidade usada para controle de simultaneidade otimista | Sim | Não | Não | Não | Não  |
+|\_ts | Gerados pelo sistema | Carimbo de hora da última atualização do item | Sim | Não | Não | Não | Não  |
 |\_Self | Gerados pelo sistema | URI endereçável do item | Sim | Não | Não | Não | Não |
 |ID | Você pode usar o | Nome exclusivo definido pelo usuário em uma partição lógica. Se o usuário não especifica a ID, o sistema gera automaticamente um. | Sim | sim | sim | sim | Sim |
 |Propriedades arbitrárias definidas pelo usuário | Definido pelo usuário | Propriedades definidas pelo usuário, representadas na representação de API nativo (incluindo JSON, BSON e CQL) | Sim | sim | sim | sim | Sim |

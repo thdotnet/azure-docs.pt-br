@@ -2,16 +2,16 @@
 title: Como alterar, excluir ou gerenciar seus grupos de gerenciamento - governança do Azure
 description: Saiba como visualizar, manter, atualizar e excluir sua hierarquia de grupos de gerenciamento.
 author: rthorn17
-ms.service: azure-resource-manager
-ms.date: 04/04/2019
+ms.service: governance
+ms.date: 05/22/2019
 ms.author: rithorn
 ms.topic: conceptual
-ms.openlocfilehash: b3798ec7578530e04ec9e00086fffaec9a58a7cd
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 028b4cbf62bf9ed0b3b38f54d3b787a8c1368da0
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65950309"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242944"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Gerenciar seus recursos com grupos de gerenciamento
 
@@ -206,10 +206,12 @@ Um motivo para criar um grupo de gerenciamento é agrupar assinaturas. Somente g
 Para mover a assinatura, todas as permissões de RBAC a seguir precisam ser verdadeiras:
 
 - Função de "Proprietário" na assinatura filho.
-- Função "Proprietário", "Colaborador" ou "Colaborador do grupo de gerenciamento" no group.* de gerenciamento do pai de destino
-- Função "Proprietário", "Colaborador" ou "Colaborador do grupo de gerenciamento" no group.* de gerenciamento pai existente
+- Função "Proprietário", "Colaborador" ou "Colaborador do grupo de gerenciamento" no grupo de gerenciamento de destino pai.
+- Função "Proprietário", "Colaborador" ou "Colaborador do grupo de gerenciamento" do grupo de gerenciamento pai existente.
 
-*: A menos que o destino ou o grupo de gerenciamento existente do pai é o grupo de gerenciamento raiz. Uma vez que o grupo de gerenciamento raiz é o padrão de aterrissagem especial para todos os novos grupos de gerenciamento e assinaturas, os usuários não precisam de permissões para mover um item.
+Se o grupo de gerenciamento existente do pai ou o destino for o grupo de gerenciamento raiz, os requisitos de permissões não se aplicam. Desde que o grupo de gerenciamento raiz é o padrão de aterrissagem especial para todos os novos grupos de gerenciamento e assinaturas, você não precisa de permissões nele para mover um item.
+
+Se a função de proprietário na assinatura é herdada do grupo de gerenciamento atual, os destinos de movimentação são limitados. Você só pode mover a assinatura para outro grupo de gerenciamento em que você tem a função de proprietário. Você não pode movê-lo para um grupo de gerenciamento em que você for um colaborador, porque você perderia propriedade da assinatura. Se você tiver sido atribuído diretamente à função de proprietário da assinatura (não herdado do grupo de gerenciamento), você pode movê-lo a qualquer grupo de gerenciamento em que você for um colaborador.
 
 Para ver quais permissões você tem no portal do Azure, selecione o gerenciamento de grupo e, em seguida, selecione **IAM**. Para saber mais sobre as funções de RBAC, consulte [Gerenciar acesso e permissões com RBAC](../../role-based-access-control/overview.md).
 
@@ -325,7 +327,7 @@ Os grupos de gerenciamento são compatíveis com o [Log de atividades do Azure](
 
 ![Logs de atividade com grupos de gerenciamento](media/al-mg.png)
 
-Ao analisar a consulta em grupos de gerenciamento fora do portal do Azure, o escopo de destino dos grupos de gerenciamento é semelhante a **"/providers/Microsoft.Management/managementGroups/{yourMgID}"**.
+Ao analisar a consulta em grupos de gerenciamento fora do portal do Azure, o escopo de destino dos grupos de gerenciamento é semelhante a **"/providers/Microsoft.Management/managementGroups/{yourMgID}"** .
 
 ## <a name="referencing-management-groups-from-other-resource-providers"></a>Fazendo referência a grupos de gerenciamento de outros provedores de recursos
 

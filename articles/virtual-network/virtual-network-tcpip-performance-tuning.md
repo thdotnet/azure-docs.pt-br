@@ -28,12 +28,12 @@ ms.author:
 - minale
 - btalb
 - prachank
-ms.openlocfilehash: d0124d6656167af3942e0d054b4e1fa7a2b48e8b
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: ad1a5b69e4ec7b44c0e61a5ddd2c06633464d31a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65410057"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234993"
 ---
 # <a name="tcpip-performance-tuning-for-azure-vms"></a>TCP/IP ajuste de desempenho para VMs do Azure
 
@@ -79,7 +79,7 @@ Tenha em mente que a aumentar a MTU necessariamente não criará uma rede mais e
 
 #### <a name="azure-and-vm-mtu"></a>O Azure e MTU de VM
 
-A MTU para VMs do Azure padrão é 1.500 bytes. A pilha de rede Virtual do Azure tentará um pacote em bytes 1.400 do fragmento. Mas a pilha de rede Virtual permitirá pacotes até 2,006 bytes quando o bit de fragmento não é definido no cabeçalho IP.
+A MTU para VMs do Azure padrão é 1.500 bytes. A pilha de rede Virtual do Azure tentará um pacote em bytes 1.400 do fragmento.
 
 Observe que a pilha de rede Virtual não é inerentemente ineficiente porque ele pacotes em 1.400 bytes de fragmentos, embora as VMs têm uma MTU de 1.500. Uma grande porcentagem de pacotes de rede são muito menores do que 1.400 ou 1.500 bytes.
 
@@ -256,7 +256,7 @@ Como uma MTU maior significa uma MSS maiores, você talvez esteja se perguntando
 
 ### <a name="accelerated-networking-and-receive-side-scaling"></a>Rede acelerada e RSS
 
-#### <a name="accelerated-networking"></a>Rede acelerada
+#### <a name="accelerated-networking"></a>Redes aceleradas
 
 Funções de rede da máquina virtual foram historicamente intensivo na VM convidada e host do hipervisor/de CPU. Todos os pacotes que transite por meio do host é processado no software pelo host de CPU, incluindo todos os encapsulamento de rede virtual e desencapsulamento. Portanto, mais o tráfego que passa por host, maior será a CPU carregar. E se a CPU do host está ocupada com outras operações, que também afetará taxa de transferência de rede e latência. Azure resolve esse problema com a rede acelerada.
 
@@ -264,7 +264,7 @@ A rede acelerada fornece a latência de rede ultralow consistente por meio de ha
 
 A rede acelerada melhora o desempenho, permitindo que a VM para ignorar o host e estabelecer um caminho de dados diretamente com um host SmartNIC convidada. Aqui estão alguns benefícios da rede acelerada:
 
-- **Latência menor / maior pacotes por segundo (pps)**: Remover o comutador virtual do caminho de dados elimina o tempo pacotes gastam no host para processamento da política e aumenta o número de pacotes que podem ser processadas na VM.
+- **Latência menor / maior pacotes por segundo (pps)** : Remover o comutador virtual do caminho de dados elimina o tempo pacotes gastam no host para processamento da política e aumenta o número de pacotes que podem ser processadas na VM.
 
 - **Tremulação reduzida**: Processamento de comutador virtual depende da quantidade de política que precisa ser aplicada e a carga de trabalho da CPU que está fazendo o processamento. Descarregamento da imposição de política para o hardware remove essa variabilidade ao entregar pacotes diretamente à VM, eliminando a comunicação de VM de host e todas as interrupções de software e de alternâncias de contexto.
 

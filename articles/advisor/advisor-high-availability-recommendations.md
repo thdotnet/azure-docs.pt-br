@@ -8,12 +8,12 @@ ms.author: kasparks
 ms.service: advisor
 ms.topic: article
 ms.date: 01/29/2019
-ms.openlocfilehash: 793c881d08e8feb038cc6e7ac82b7e95384e1b55
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bdba3f135f852312af1692f77643095d865f1d06
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60467720"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254679"
 ---
 # <a name="improve-availability-of-your-application-with-azure-advisor"></a>Melhorar a disponibilidade do aplicativo com o Assistente do Azure
 
@@ -69,6 +69,30 @@ Na configuração ativo-ativo, ambas as instâncias de um gateway de VPN estabel
 ## <a name="use-production-vpn-gateways-to-run-your-production-workloads"></a>Usar gateways de VPN de produção para executar suas cargas de trabalho de produção
 
 O Assistente do Azure verificará para quaisquer gateways VPN que são um SKU básico e recomendamos que você use um SKU de produção. O SKU básico foi projetado para fins de teste e desenvolvimento. SKUs de produção oferecem um número maior de túneis, suporte a BGP, opções de configuração ativo-ativo, personalizado política Ipsec/IKE e maior estabilidade e disponibilidade.
+
+## <a name="repair-invalid-log-alert-rules"></a>Regras de alerta de log inválido de reparo
+
+O Azure Advisor detectará as regras de alerta que têm consultas inválidas especificadas em sua seção de condição. Regras de alerta de log são criadas no Azure Monitor e são usadas para executar consultas de análise em intervalos especificados. Os resultados da consulta determinam se precisa de um alerta seja disparado. Consultas de análise podem se tornar inválido ao longo do tempo devido a alterações em recursos referenciados, tabelas ou comandos. O Supervisor recomendará que você corrija a consulta na regra de alerta para impedir a introdução desabilitado automaticamente e certifique-se de cobertura de monitoramento de seus recursos no Azure. [Saiba mais sobre como solucionar problemas de regras de alerta](https://aka.ms/aa_logalerts_queryrepair)
+
+## <a name="configure-consistent-indexing-mode-on-your-cosmos-db-collection"></a>Configurar modo de indexação consistente em sua coleção do Cosmos DB
+
+Contêineres do Azure Cosmos DB configurados com o modo de indexação lento podem afetar a atualização dos resultados da consulta. Advisor detectará contêineres configurado dessa forma e recomendável alternar para modo consistente. [Saiba mais sobre as políticas no Cosmos DB de indexação](https://aka.ms/cosmosdb/how-to-manage-indexing-policy)
+
+## <a name="configure-your-azure-cosmos-db-containers-with-a-partition-key"></a>Configurar seus contêineres do Azure Cosmos DB com uma chave de partição
+
+O Azure Advisor identificará coleções do Azure Cosmos DB não particionadas que estão se aproximando da sua cota de armazenamento provisionado. Ele recomendará migrando essas coleções para novas coleções com uma definição de chave de partição, de modo que eles automaticamente podem ser escalados horizontalmente pelo serviço. [Saiba mais sobre como escolher uma chave de partição](https://aka.ms/cosmosdb/choose-partitionkey)
+
+## <a name="upgrade-your-azure-cosmos-db-net-sdk-to-the-latest-version-from-nuget"></a>Atualizar seu SDK do .NET do Azure Cosmos DB para a versão mais recente do Nuget
+
+O Azure Advisor identificará as contas do Azure Cosmos DB que estão usando versões antigas do SDK do .NET e recomendam a atualização para a versão mais recente do Nuget para as correções mais recentes, melhorias de desempenho e novos recursos. [Saiba mais sobre o SDK do .NET do Cosmos DB](https://aka.ms/cosmosdb/sql-api-sdk-dotnet)
+
+## <a name="upgrade-your-azure-cosmos-db-java-sdk-to-the-latest-version-from-maven"></a>Atualizar seu SDK de Java do Azure Cosmos DB para a versão mais recente do Maven
+
+O Azure Advisor identificará as contas do Azure Cosmos DB que estão usando versões antigas do SDK do Java e recomendam a atualização para a versão mais recente do Maven para as correções mais recentes, melhorias de desempenho e novos recursos. [Saiba mais sobre o SDK do Java do Cosmos DB](https://aka.ms/cosmosdb/sql-api-sdk-dotnet)
+
+## <a name="upgrade-your-azure-cosmos-db-spark-connector-to-the-latest-version-from-maven"></a>Atualizar seu conector Spark do Azure Cosmos DB para a versão mais recente do Maven
+
+O Azure Advisor identificará as contas do Azure Cosmos DB que estão usando versões antigas do conector Spark do BD Cosmos e recomendam a atualização para a versão mais recente do Maven para as correções mais recentes, melhorias de desempenho e novos recursos. [Saiba mais sobre o conector Spark do Cosmos DB](https://aka.ms/cosmosdb/spark-connector)
 
 ## <a name="how-to-access-high-availability-recommendations-in-advisor"></a>Como acessar as recomendações de alta disponibilidade no Advisor
 

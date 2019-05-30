@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
-ms.openlocfilehash: 0c1efa0e5cfa4bf31e58be64b3fe78075b79b515
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: e0c02829a2fef6e281794fdba6c9fb5d9b8a736b
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66141743"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241715"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Como implementar a recuperação de desastre usando o backup de serviço e restaurar no Gerenciamento de API no Azure
 
@@ -74,7 +74,7 @@ Todas as tarefas realizadas em recursos com o Azure Resource Manager precisam se
 
     ![Adicionar permissões](./media/api-management-howto-disaster-recovery-backup-restore/add-app.png)
 
-7. Clique em **Permissões Delegadas** ao lado do aplicativo recém-adicionado e marque a caixa de **Acessar o Gerenciamento de Serviços do Azure (versão prévia)**.
+7. Clique em **Permissões Delegadas** ao lado do aplicativo recém-adicionado e marque a caixa de **Acessar o Gerenciamento de Serviços do Azure (versão prévia)** .
 8. Pressione **Selecionar**.
 9. Clique em **Conceder Permissões**.
 
@@ -117,14 +117,14 @@ Substitua `{tenant id}`, `{application id}` e `{redirect uri}` usando as seguint
 
     Depois que os valores são especificados, o exemplo de código deve retornar um token semelhante ao seguinte exemplo:
 
-    ![Token][api-management-arm-token]
+    ![A criptografia do token][api-management-arm-token]
 
     > [!NOTE]
     > O token pode expirar após um período determinado. Execute o código de exemplo novamente para gerar um novo token.
 
 ## <a name="calling-the-backup-and-restore-operations"></a>Chamando as operações de backup e restauração
 
-As APIs REST são [Serviço de Gerenciamento de Api - Backup](/rest/api/apimanagement/apimanagementservice/backup) e [Serviço de Gerenciamento de Api - Restauração](/rest/api/apimanagement/apimanagementservice/restore).
+As APIs REST são [Serviço de Gerenciamento de Api - Backup](/rest/api/apimanagement/2019-01-01/apimanagementservice/backup) e [Serviço de Gerenciamento de Api - Restauração](/rest/api/apimanagement/2019-01-01/apimanagementservice/restore).
 
 Antes de chamar as operações de “backup e restauração” descritas nas seções a seguir, defina o cabeçalho de solicitação de autorização para a chamada REST.
 

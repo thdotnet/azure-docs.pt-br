@@ -1,19 +1,19 @@
 ---
-title: Proteção Avançada contra Ameaças - Banco de Dados do Azure para PostgreSQL
+title: Servidor único do Advanced Threat Protection - Database do Azure para PostgreSQL-
 description: A Proteção contra Ameaças detecta as atividades anormais do banco de dados que indicam possíveis ameaças de segurança ao banco de dados.
 author: bolzmj
 ms.author: mbolz
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 01/24/2019
-ms.openlocfilehash: bbb48708d0e5a7cd07a3971a6966f40696107562
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: a69a8b651188b9566fdbec4bc6de09a8fec164c7
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60421239"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65067459"
 ---
-# <a name="advanced-threat-protection-for-azure-database-for-postgresql"></a>Proteção Avançada contra Ameaças para o Banco de Dados do Azure para PostgreSQL
+# <a name="advanced-threat-protection-for-azure-database-for-postgresql---single-server"></a>Proteção avançada contra ameaças, do banco de dados do Azure para PostgreSQL – servidor único
 
 A Proteção Avançada contra Ameaças para o Banco de Dados do Azure para PostgreSQL detecta atividades anômalas, indicando tentativas incomuns e potencialmente prejudiciais de acessar ou explorar bancos de dados.
 
@@ -28,8 +28,8 @@ A Proteção Avançada contra Ameaças faz parte da oferta de Segurança Avança
 
 ## <a name="set-up-threat-detection"></a>Configurar detecção de ameaças
 1. Inicie o portal do Azure em [https://portal.azure.com](https://portal.azure.com).
-2. Navegue até a página de configuração do servidor do Banco de Dados do Azure para PostgreSQL que deseja proteger. Nas configurações de segurança, selecione **Proteção Avançada contra Ameaças (versão prévia)**.
-3. Na página de configuração de **Proteção Avançada contra Ameaças (versão prévia)**:
+2. Navegue até a página de configuração do servidor do Banco de Dados do Azure para PostgreSQL que deseja proteger. Nas configurações de segurança, selecione **Proteção Avançada contra Ameaças (versão prévia)** .
+3. Na página de configuração de **Proteção Avançada contra Ameaças (versão prévia)** :
 
    - Habilite a Proteção Avançada contra Ameaças no servidor.
    - Em **Configurações de Proteção Avançada contra Ameaças**, na caixa de texto **Enviar alertas para**, forneça a lista de endereços de email para receber alertas de segurança em caso de detecção de atividades anômalas em banco de dados.

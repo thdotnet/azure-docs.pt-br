@@ -8,16 +8,16 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: raynew
-ms.openlocfilehash: 98934216c0860c79575874df26603b1187e35978
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bac61342f39821b6181a6a0e61bf0b11fb311007
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60647472"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66239329"
 ---
 # <a name="back-up-azure-vms-in-a-recovery-services-vault"></a>Fazer backup de máquinas virtuais do Azure em um cofre dos Serviços de Recuperação
 
-Este artigo descreve como fazer backup de VMs do Azure em um cofre de serviços de recuperação, usando o [Backup do Azure](backup-overview.md) service. 
+Este artigo descreve como fazer backup de VMs do Azure em um cofre de serviços de recuperação, usando o [Backup do Azure](backup-overview.md) service.
 
 Neste artigo, você aprenderá a:
 
@@ -47,29 +47,29 @@ Além disso, há algumas coisas que você talvez precise fazer em algumas circun
 
 ## <a name="create-a-vault"></a>Criar um cofre
 
- Um cofre armazena backups e pontos de recuperação criados ao longo do tempo e armazena as políticas de backup associadas às máquinas submetidas a backup. Crie um cofre da seguinte maneira:    
+ Um cofre armazena backups e pontos de recuperação criados ao longo do tempo e armazena as políticas de backup associadas às máquinas submetidas a backup. Crie um cofre da seguinte maneira:
 
-1. Entre no [Portal do Azure](https://portal.azure.com/).    
-2. Na pesquisa, digite **serviços de recuperação**. Sob **Services**, clique em **cofres dos serviços de recuperação**.   
+1. Entre no [Portal do Azure](https://portal.azure.com/).
+2. Na pesquisa, digite **serviços de recuperação**. Sob **Services**, clique em **cofres dos serviços de recuperação**.
 
-     ![Pesquise os cofres dos serviços de recuperação](./media/backup-azure-arm-vms-prepare/browse-to-rs-vaults-updated.png) <br/> 
+     ![Pesquise os cofres dos serviços de recuperação](./media/backup-azure-arm-vms-prepare/browse-to-rs-vaults-updated.png) <br/>
 
-3. Na **cofres dos serviços de recuperação** menu, clique em **+ adicionar**.    
+3. Na **cofres dos serviços de recuperação** menu, clique em **+ adicionar**.
 
-     ![Criar Cofre de Serviços de Recuperação - etapa 2](./media/backup-azure-arm-vms-prepare/rs-vault-menu.png)   
+     ![Criar Cofre de Serviços de Recuperação - etapa 2](./media/backup-azure-arm-vms-prepare/rs-vault-menu.png)
 
-4. Na **cofre dos Recovery Services**, digite um nome amigável para identificar o cofre.   
-    - O nome deve ser exclusivo para a assinatura do Azure.   
-    - Ele pode conter caracteres de 2 a 50.    
-    - Ele deve começar com uma letra e pode conter apenas letras, números e hifens.   
-5. Selecione a assinatura do Azure, grupo de recursos e região geográfica em que o cofre deve ser criado. Em seguida, clique em **Criar**.    
-    - Pode levar algum tempo para que o cofre seja criado.  
-    - Monitore as notificações de status na área superior direita do portal.   
+4. Na **cofre dos Recovery Services**, digite um nome amigável para identificar o cofre.
+    - O nome deve ser exclusivo para a assinatura do Azure.
+    - Ele pode conter caracteres de 2 a 50.
+    - Ele deve começar com uma letra e pode conter apenas letras, números e hifens.
+5. Selecione a assinatura do Azure, grupo de recursos e região geográfica em que o cofre deve ser criado. Em seguida, clique em **Criar**.
+    - Pode levar algum tempo para que o cofre seja criado.
+    - Monitore as notificações de status na área superior direita do portal.
 
 
  Depois que o cofre é criado, ele aparece na lista de cofres dos serviços de recuperação. Se você não encontrar seu cofre, selecione **Atualizar**.
- 
-![Lista de cofres de backup](./media/backup-azure-arm-vms-prepare/rs-list-of-vaults.png)    
+
+![Lista de cofres de backup](./media/backup-azure-arm-vms-prepare/rs-list-of-vaults.png)
 
 ### <a name="modify-storage-replication"></a>Modificar a replicação de armazenamento
 
@@ -86,7 +86,7 @@ Modificar o tipo de replicação de armazenamento da seguinte maneira:
 
       ![Definir a configuração de armazenamento para o novo cofre](./media/backup-try-azure-backup-in-10-mins/full-blade.png)
 > [!NOTE]
-   > Você não pode modificar o tipo de replicação de armazenamento depois que o cofre está configurado e contém os itens de backup. Se você quiser fazer isso, você precisará recriar o cofre. 
+   > Você não pode modificar o tipo de replicação de armazenamento depois que o cofre está configurado e contém os itens de backup. Se você quiser fazer isso, você precisará recriar o cofre.
 
 ## <a name="apply-a-backup-policy"></a>Aplicar uma política de backup
 
@@ -101,7 +101,7 @@ Configure uma política de backup para o cofre.
 
    ![Painéis Backup e Meta de Backup](./media/backup-azure-arm-vms-prepare/select-backup-goal-1.png)
 
-3. Na **Política de Backup**, escolha a política que você deseja associar ao cofre. 
+3. Na **Política de Backup**, escolha a política que você deseja associar ao cofre.
     - A política padrão faz backup da VM, uma vez por dia. Os backups diários são mantidos por 30 dias. Instantâneos de recuperação instantânea são mantidos por dois dias.
     - Se você não quiser usar a política padrão, selecione **criar novo**e criar uma política personalizada, conforme descrito no próximo procedimento.
 
@@ -116,7 +116,7 @@ Configure uma política de backup para o cofre.
      ![Painel "Selecionar máquinas virtuais"](./media/backup-azure-arm-vms-prepare/select-vms-to-backup.png)
 
 5. Na **Backup**, clique em **habilitar backup**. Isso implantará a política no cofre e nas VMs e instalará a extensão de backup no agente da VM em execução na VM do Azure.
-     
+
      ![Botão "Habilitar backup"](./media/backup-azure-arm-vms-prepare/vm-validated-click-enable.png)
 
 Depois de habilitar o backup:
@@ -126,7 +126,7 @@ Depois de habilitar o backup:
 - Ao executar backups, observe o seguinte:
     - Uma VM que está sendo executado tem maior chance para capturar um ponto de recuperação consistente com o aplicativo.
     - No entanto, mesmo se a VM é desativada é feito backup. Essa VM é conhecida como uma VM offline. Nesse caso, o ponto de recuperação será consistente com falha.
-    
+
 
 ### <a name="create-a-custom-policy"></a>Criar uma política personalizada
 
@@ -138,7 +138,7 @@ Se você optou por criar uma nova política de backup, preencha as configuraçõ
     - Quando você restaura, feito backup de VM discos são copiados do armazenamento, através da rede para o local de armazenamento de recuperação. Com a restauração instantânea, você pode aproveitar executados durante um trabalho de backup, sem esperar que dados sejam transferidos para o Cofre de backup de instantâneos armazenados localmente.
     - Você pode manter os instantâneos para a restauração instantânea para entre uma a cinco dias. Dois dias é a configuração padrão.
 3. Na **período de retenção**, especifique quanto tempo deseja manter seus pontos de backup diários ou semanais.
-4. Na **retenção mensal do ponto de backup**, especifique se deseja manter um mensal backup de seus backups diários ou semanais. 
+4. Na **retenção mensal do ponto de backup**, especifique se deseja manter um mensal backup de seus backups diários ou semanais.
 5. Clique em **OK** para salvar a política.
 
     ![Nova política de backup](./media/backup-azure-arm-vms-prepare/new-policy.png)
@@ -156,6 +156,34 @@ O backup inicial será executado de acordo com o agendamento, mas você pode exe
 4. Clique em **Fazer backup agora**.
 5. Na **fazer Backup agora**, use o controle de calendário para selecionar o último dia em que o ponto de recuperação deve ser mantido. Em seguida, clique em **OK**.
 6. Monitorar as notificações do portal. Você pode monitorar o andamento do trabalho no painel do cofre > **Trabalhos de Backup** > **Em Andamento**. Dependendo do tamanho da VM, a criação do backup inicial pode demorar um pouco.
+
+## <a name="verify-backup-job-status"></a>Verificar o status do trabalho de Backup
+
+O trabalho de Backup de detalhes para cada backup VM consiste em 2 fases, o **instantâneo** seguido de fase a **transferir dados para o cofre** fase.<br/>
+A fase de instantâneo garante a disponibilidade de um ponto de recuperação armazenado junto com os discos para **restaura instantânea** e estão disponíveis para um máximo de 5 dias, dependendo da retenção de instantâneo configurado pelo usuário. Transferência de dados para o cofre criam um ponto de recuperação no cofre para a retenção de longo prazo. Transferir dados para o cofre só começa depois que a fase de instantâneo é concluída.
+
+  ![Status do trabalho de backup](./media/backup-azure-arm-vms-prepare/backup-job-status.png)
+
+Há dois **subtarefas** em execução no back-end, uma para o trabalho de backup de front-end que pode ser verificado com o **trabalho de Backup** folha de detalhes conforme indicado abaixo:
+
+  ![Status do trabalho de backup](./media/backup-azure-arm-vms-prepare/backup-job-phase.png)
+
+O **transferir dados para o cofre** fase pode levar vários dias para ser concluída dependendo do tamanho dos discos, de variação por disco e vários outros fatores.
+
+Status do trabalho pode variar, dependendo dos cenários a seguir:
+
+**Instantâneo** | **Transferir dados para o cofre** | **Status do trabalho**
+--- | --- | ---
+Concluído | Em andamento | Em andamento
+Concluído | Ignorado | Concluído
+Concluído | Concluído | Concluído
+Concluído | Com falha | Concluído com aviso
+Com falha | Com falha | Com falha
+
+
+Agora com esse recurso, para a mesma VM, dois backups podem executar em paralelo, mas em qualquer fase (instantâneo, transferência de dados para o cofre) pode ser executado apenas uma subtarefa. Em cenários foram que um trabalho de backup em andamento resultou em falha no backup do dia seguinte serão evitados com essa desassociação de funcionalidade. Os backups subsequentes do dia podem ter de instantâneo concluída enquanto **transferir dados para o cofre** ignorado se o trabalho de backup do dia anterior da lista está no estado de progresso.
+O ponto de recuperação incrementais criado no cofre irá capturar todos a rotatividade do último ponto de recuperação criado no cofre. Não há nenhum impacto de custo no usuário.
+
 
 ## <a name="optional-steps-install-agentallow-outbound"></a>Etapas opcionais (instalar o agente/permitir saída)
 ### <a name="install-the-vm-agent"></a>Instalar o agente de VM
@@ -175,8 +203,8 @@ A extensão de backup em execução na máquina virtual precisa de acesso de sa�
 - Se tiver dificuldades com VMs se conectar ou se você vir o erro **ExtensionSnapshotFailedNoNetwork** ao tentar se conectar, você deve permitir o acesso explicitamente para a extensão de backup possa se comunicar ao IP público do Azure endereços para o tráfego de backup. Métodos de acesso são resumidos na tabela a seguir.
 
 
-**Opção** | **Ação** | **Detalhes** 
---- | --- | --- 
+**Opção** | **Ação** | **Detalhes**
+--- | --- | ---
 **Configurar regras de NSG** | Permitir os [intervalos de IP do datacenter do Azure](https://www.microsoft.com/download/details.aspx?id=41653).<br/><br/> Em vez de permitir e gerenciar todos os intervalos de endereço, você pode adicionar uma regra que permita o acesso ao serviço de Backup do Azure usando um [marca de serviço](backup-azure-arm-vms-prepare.md#set-up-an-nsg-rule-to-allow-outbound-access-to-azure). | [Saiba mais](../virtual-network/security-overview.md#service-tags) sobre marcas de serviço.<br/><br/> Marcas de serviços simplificam o gerenciamento de acesso e não incorrem em custos adicionais.
 **Implantar um proxy** | Implante um servidor de proxy HTTP para rotear o tráfego. | Fornece acesso ao Azure por completo, não somente ao armazenamento.<br/><br/> É permitido o controle granular em relação às URLs de armazenamento.<br/><br/> Único ponto de acesso à Internet para VMs.<br/><br/> Custos adicionais para o proxy.
 **Configurar o Firewall do Azure** | Permite o tráfego por meio do Firewall do Azure na VM, usando uma tag de FQDN para o serviço de Backup do Azure | Simples de usar se você tiver o Firewall do Azure configurado em uma sub-rede de rede virtual.<br/><br/> É possível criar suas próprias marcações de FQDN, ou modificar os FQDNs em uma marca.<br/><br/> Se suas VMs do Azure possuem discos gerenciados, você talvez precise abrir adicional (8443) de porta nos firewalls.
@@ -200,7 +228,7 @@ Se um NSG gerencia o acesso VM, permitir o acesso de saída para o armazenamento
     - VM gerenciada: 8443.
 7. Em **Protocolo**, escolha **TCP**.
 8. Em **Prioridade**, especifique um valor de prioridade menor que qualquer regra de negação maior.
-   
+
    Se você tiver uma regra que nega o acesso, o novo permitir a regra deve ser maior. Por exemplo, se você tiver uma regra **Deny_All** definida com prioridade 1000, a nova regra deverá ser definida com um valor inferior a 1000.
 9. Forneça um nome e descrição para a regra e, em seguida, selecione **Okey**.
 
@@ -254,7 +282,7 @@ Permite conexões de entrada nas configurações do proxy.
    - Defina o tipo como **TCP**.
    - Definir **portas locais** à **portas específicas**.
    - Definir **porta remota** à **todas as portas**.
-  
+
 6. Conclua o assistente e especifique um nome para a regra.
 
 ###### <a name="add-an-exception-rule-to-the-nsg-for-the-proxy"></a>Adicionar uma regra de exceção ao NSG para o proxy
@@ -282,4 +310,3 @@ Você pode configurar o Firewall do Azure para permitir o acesso de saída para 
 
 - Solucione problemas com o [agentes de VM do Azure](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md) ou [backup de VM do Azure](backup-azure-vms-troubleshoot.md).
 - [Restaurar](backup-azure-arm-restore-vms.md) as VMs do Azure.
-

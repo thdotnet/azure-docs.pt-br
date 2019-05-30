@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eebb68218fd6f9cbda229aae3d9e544e87441562
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 5a0e0508babdd9ae703e38d58b079ab5fa16f68c
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65192442"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66397875"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Associação dinâmica do Azure Active Directory para grupos
 
@@ -60,8 +60,8 @@ Parênteses são opcionais para uma única expressão. O comprimento total do co
 
 Há três tipos de propriedades que podem ser usadas para construir uma regra de associação.
 
-* Boolean
-* String
+* BOOLEAN
+* Cadeia de caracteres
 * Coleção de Cadeias de Caracteres
 
 Estas são todas as propriedades do usuário que você pode usar para criar uma expressão única.
@@ -89,7 +89,7 @@ Estas são todas as propriedades do usuário que você pode usar para criar uma 
 | mail |Qualquer valor de cadeia de caracteres ou *null* (endereço SMTP do usuário) |(user.mail - eq "valor") |
 | mailNickName |Qualquer valor de cadeia de caracteres (alias de email do usuário) |(user.mailNickName - eq "valor") |
 | Serviço Móvel |Qualquer valor de cadeia de caracteres ou *null* |(user.mobile -eq "valor") |
-| ID do objeto |GUID do objeto de usuário |(user.objectId -eq "11111111-1111-1111-1111-111111111111") |
+| objectId |GUID do objeto de usuário |(user.objectId -eq "11111111-1111-1111-1111-111111111111") |
 | onPremisesSecurityIdentifier | SID (ID de segurança) local para usuários que foram sincronizados do local para a nuvem. |(user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111") |
 | passwordPolicies |None DisableStrongPassword DisablePasswordExpiration DisablePasswordExpiration, DisableStrongPassword |(user.passwordPolicies -eq "DisableStrongPassword") |
 | physicalDeliveryOfficeName |Qualquer valor de cadeia de caracteres ou *null* |(user.physicalDeliveryOfficeName -eq "valor") |
@@ -127,7 +127,7 @@ A tabela a seguir lista os operadores com suporte e sua sintaxe para uma única 
 | Contém: |-contains |
 | Não corresponde |-notMatch |
 | Corresponde |-match |
-| No | -in |
+| Em | -in |
 | Não está em | -notIn |
 
 ### <a name="using-the--in-and--notin-operators"></a>Usando os operadores -in e -notIn
@@ -353,12 +353,11 @@ Os seguintes atributos de dispositivo podem ser usados.
  deviceManufacturer | Um valor de cadeia de caracteres. | (device.deviceManufacturer -eq "Samsung")
  deviceModel | Um valor de cadeia de caracteres. | (device.deviceModel -eq "iPad Air")
  deviceOwnership | Pessoal, Empresa, Desconhecido | (device.deviceOwnership -eq "Company")
- domainName | Um valor de cadeia de caracteres. | (device.domainName -eq "contoso.com")
  enrollmentProfileName | Nome do perfil de perfil de registro de dispositivo Apple ou Autopilot do Windows | (device.enrollmentProfileName -eq "DEP iPhones")
  isRooted | verdadeiro, falso | (device.isRooted -eq true)
  managementType | MDM (para dispositivos móveis)<br>PC (para computadores gerenciados pelo agente de PC do Intune) | (device.managementType -eq "MDM")
  deviceId | uma ID de dispositivo do Azure AD válida | (device.deviceId -eq "d4fe7726-5966-431c-b3b8-cddc8fdb717d")
- ID do objeto | uma ID de objeto do Azure AD válida |  (device.objectId -eq 76ad43c9-32c5-45e8-a272-7b58b58f596d")
+ objectId | uma ID de objeto do Azure AD válida |  (device.objectId -eq 76ad43c9-32c5-45e8-a272-7b58b58f596d")
  systemLabels | qualquer cadeia de caracteres correspondente à propriedade de dispositivo do Intune para marcação de dispositivos de Local de Trabalho Moderno | (device.systemLabels -contains "M365Managed")
 
 > [!Note]  
@@ -372,4 +371,4 @@ Esses artigos fornecem mais informações sobre grupos no Azure Active Directory
 * [Criar um novo grupo e adicionando membros](../fundamentals/active-directory-groups-create-azure-portal.md)
 * [Gerenciar configurações de um grupo](../fundamentals/active-directory-groups-settings-azure-portal.md)
 * [Gerenciar associações de um grupo](../fundamentals/active-directory-groups-membership-azure-portal.md)
-* [Gerenciar regras dinâmicas para usuários em um grupo](groups-dynamic-membership.md)
+* [Gerenciar regras dinâmicas para usuários em um grupo](groups-create-rule.md)

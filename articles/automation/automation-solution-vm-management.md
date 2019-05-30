@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 05/21/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 2269eac0790e61dbf0ce893bbb737cb22d58d497
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: d4e1ad106b928c41bd6940d7c3713b5fb34afe3a
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66002487"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389105"
 ---
 # <a name="startstop-vms-during-off-hours-solution-in-azure-automation"></a>Solução Iniciar/Parar VMs fora do horário comercial na Automação do Azure
 
@@ -71,7 +71,8 @@ Para implantar a iniciar/parar VMs durante a solução de horas em uma conta de 
 | Microsoft.OperationsManagement/solutions/write | Grupo de recursos |
 | Microsoft.OperationalInsights/workspaces/* | Grupo de recursos |
 | Microsoft.Insights/diagnosticSettings/write | Grupo de recursos |
-| Microsoft.Insights/ActionGroups/WriteMicrosoft.Insights/ActionGroups/read | Grupo de recursos |
+| Microsoft.Insights/ActionGroups/Write | Grupo de recursos |
+| Microsoft.Insights/ActionGroups/read | Grupo de recursos |
 | Microsoft.Resources/subscriptions/resourceGroups/read | Grupo de recursos |
 | Microsoft.Resources/deployments/* | Grupo de recursos |
 
@@ -119,7 +120,7 @@ Execute as seguintes etapas para adicionar a solução Iniciar/Parar VMs fora do
    - Selecione uma **Assinatura** à qual se vincular, escolhendo na lista suspensa, caso a assinatura selecionada por padrão não seja adequada.
    - Em **Grupo de Recursos**, você pode criar um novo grupo de recursos ou selecionar um existente.
    - Selecione um **Local**. No momento, os únicos locais disponíveis são: **Sudeste da Austrália**, **Canadá Central**, **Índia Central**, **Leste dos EUA**, **Leste do Japão**, **Sudeste da Ásia**, **Sul do Reino Unido**, **Europa Ocidental** e **Oeste dos EUA 2**.
-   - Selecione um **tipo de preço**. Escolha a opção **Por GB (autônomo)**. Os logs do Azure Monitor atualizou [preços](https://azure.microsoft.com/pricing/details/log-analytics/) e a camada por GB é a única opção.
+   - Selecione um **tipo de preço**. Escolha a opção **Por GB (autônomo)** . Os logs do Azure Monitor atualizou [preços](https://azure.microsoft.com/pricing/details/log-analytics/) e a camada por GB é a única opção.
 
    > [!NOTE]
    > Ao habilitar soluções, somente determinadas regiões têm suporte para vincular um espaço de trabalho do Log Analytics e uma Conta de Automação.
@@ -138,7 +139,7 @@ Execute as seguintes etapas para adicionar a solução Iniciar/Parar VMs fora do
 
    Aqui, você será solicitado a:
    - Especificar os **Nomes do ResourceGroup de destino**. Esses valores são nomes de grupos de recursos que contêm VMs a serem gerenciadas por essa solução. Você pode inserir mais de um nome e separá-los por vírgula (os valores não diferenciam maiúsculas de minúsculas). O uso de um caractere curinga tem suporte para selecionar VMs em todos os grupos de recursos na assinatura. Esse valor é armazenado nas variáveis **External_Start_ResourceGroupNames** e **External_Stop_ResourceGroupNames**.
-   - Especifique a **Lista de exclusão de VM (cadeia de caracteres)**. Este valor é o nome de uma ou mais máquinas virtuais do grupo de recursos de destino. Você pode inserir mais de um nome e separá-los por vírgula (os valores não diferenciam maiúsculas de minúsculas). O uso de caracteres curingas é aceito. Esse valor é armazenado na variável **External_ExcludeVMNames**.
+   - Especifique a **Lista de exclusão de VM (cadeia de caracteres)** . Este valor é o nome de uma ou mais máquinas virtuais do grupo de recursos de destino. Você pode inserir mais de um nome e separá-los por vírgula (os valores não diferenciam maiúsculas de minúsculas). O uso de caracteres curingas é aceito. Esse valor é armazenado na variável **External_ExcludeVMNames**.
    - Selecione um **Agendamento**. Este valor é uma data e hora recorrentes para iniciar e parar as VMs no grupo de recursos de destino. Por padrão, o agendamento é configurado para 30 minutos a partir de agora. A seleção de uma região diferente não está disponível. Para configurar o agendamento de acordo com seu fuso horário específico após a configuração da solução, confira [Modificando o agendamento de inicialização e desligamento](#modify-the-startup-and-shutdown-schedules).
    - Para receber **Notificações por email** de um grupo de ações, aceite o valor padrão **Sim** e forneça um endereço de email válido. Se você selecionar **Não**, mas decidir mais tarde que deseja receber notificações por email, atualize o [grupo de ações](../azure-monitor/platform/action-groups.md) que foi criado, com endereços de email válidos separados por vírgula. Você também precisará habilitar as regras de alerta a seguir:
 
@@ -147,7 +148,7 @@ Execute as seguintes etapas para adicionar a solução Iniciar/Parar VMs fora do
      - Sequenced_StartStop_Parent
 
      > [!IMPORTANT]
-     > O valor padrão para **Nomes do ResourceGroup de destino** é um **&ast;**. Isso direciona todas as VMs em uma assinatura. Se você não quiser que a solução direcione todas as VMs em sua assinatura, esse valor precisará ser atualizado para uma lista de nomes de grupos de recursos antes de habilitar os agendamentos.
+     > O valor padrão para **Nomes do ResourceGroup de destino** é um **&ast;** . Isso direciona todas as VMs em uma assinatura. Se você não quiser que a solução direcione todas as VMs em sua assinatura, esse valor precisará ser atualizado para uma lista de nomes de grupos de recursos antes de habilitar os agendamentos.
 
 8. Depois de configurar as definições iniciais necessárias para a solução, clique em **OK** para fechar a página **Parâmetros** e selecione **Criar**. Depois que todas as configurações forem validadas, a solução será implantada em sua assinatura. Esse processo pode levar vários segundos para ser finalizado e você pode acompanhar o progresso em **Notificações** no menu.
 
@@ -353,7 +354,7 @@ A tabela a seguir fornece pesquisas de log de exemplo para os registros de alert
 
 Para acessar a solução, navegue até sua conta de automação, selecione **Workspace** em **RECURSOS RELACIONADOS**. Na página do log analytics, selecione **soluções** sob **geral**. Na página **Soluções**, selecione a solução **Start-Stop-VM[workspace]** na lista.
 
-A seleção da solução exibe a página de soluções **Start-Stop-VM [workspace]**. Aqui você pode analisar detalhes importantes, como o bloco **StartStopVM**. Como no seu espaço de trabalho do Log Analytics, esse bloco exibe uma contagem e uma representação gráfica dos trabalhos de runbook da solução que foi iniciada e encerrada com êxito.
+A seleção da solução exibe a página de soluções **Start-Stop-VM [workspace]** . Aqui você pode analisar detalhes importantes, como o bloco **StartStopVM**. Como no seu espaço de trabalho do Log Analytics, esse bloco exibe uma contagem e uma representação gráfica dos trabalhos de runbook da solução que foi iniciada e encerrada com êxito.
 
 ![Página da solução Gerenciamento de Atualizações de Automação](media/automation-solution-vm-management/azure-portal-vmupdate-solution-01.png)
 
@@ -421,7 +422,7 @@ Para excluir a solução, execute as etapas a seguir:
 1. Em sua conta de automação, sob **recursos relacionados**, selecione **espaço de trabalho vinculado**.
 1. Selecione **ir para o espaço de trabalho**.
 1. Sob **gerais**, selecione **soluções**. 
-1. Na página **Soluções**, selecione a solução **Start-Stop-VM[Workspace]**. Na página **VMManagementSolution[Workspace]**, no menu, selecione **Excluir**.<br><br> ![Excluir a Solução de Gerenciamento de VM](media/automation-solution-vm-management/vm-management-solution-delete.png)
+1. Na página **Soluções**, selecione a solução **Start-Stop-VM[Workspace]** . Na página **VMManagementSolution[Workspace]** , no menu, selecione **Excluir**.<br><br> ![Excluir a Solução de Gerenciamento de VM](media/automation-solution-vm-management/vm-management-solution-delete.png)
 1. Na janela **Excluir Solução**, confirme que deseja excluir a solução.
 1. Enquanto as informações são verificadas e a solução é excluída, você pode acompanhar seu progresso no menu **Notificações**. Você é levado de volta à página **Soluções** após o início do processo de remoção da solução.
 

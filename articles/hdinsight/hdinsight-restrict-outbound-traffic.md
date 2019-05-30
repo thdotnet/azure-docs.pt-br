@@ -7,13 +7,13 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: howto
-ms.date: 05/13/2019
-ms.openlocfilehash: 44b6f099b5b17329976b9fec3c0ac38b5e394221
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
-ms.translationtype: HT
+ms.date: 05/24/2019
+ms.openlocfilehash: c40bae6ac1af2489e4e77d2c280b95cccf8b5603
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65978009"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257824"
 ---
 # <a name="configure-outbound-network-traffic-restriction-for-azure-hdinsight-clusters-preview"></a>Configurar a restrição do tráfego de rede de saída para clusters de HDInsight do Azure (visualização)
 
@@ -32,38 +32,23 @@ A solução para proteger os endereços de saída é usar um dispositivo de fire
 ## <a name="configuring-azure-firewall-with-hdinsight"></a>Configurando o Firewall do Azure com HDInsight
 
 Um resumo das etapas para bloquear a saída de seu HDInsight existente com o Firewall do Azure são:
-1. Habilite pontos de extremidade de serviço.
 1. Crie um firewall.
 1. Adicionar regras de aplicativo do firewall
 1. Adicione regras de rede do firewall.
 1. Crie uma tabela de roteamento.
 
-### <a name="enable-service-endpoints"></a>Habilitar pontos de extremidade de serviço
-
-Se você quiser ignorar o firewall (por exemplo, para economizar o custo na transferência de dados) e em seguida, você pode habilitar pontos de extremidade de serviço para SQL e armazenamento em sua sub-rede do HDInsight. Quando você tiver pontos de extremidade de serviço habilitados para o SQL Azure, todas as dependências de SQL do Azure que tem o cluster devem ser configuradas com pontos de extremidade de serviço.
-
-Para habilitar os pontos de extremidade de serviço correto, conclua as seguintes etapas:
-
-1. Entrar no portal do Azure e selecione a rede virtual implantada no seu cluster HDInsight.
-1. Selecione **subredes** sob **configurações**.
-1. Selecione a sub-rede em que o cluster é implantado.
-1. Na tela para editar as configurações de sub-rede, clique em **Microsoft. SQL** e/ou **Microsoft. Storage** do **pontos de extremidade de serviço**  >   **Serviços** caixa suspensa.
-1. Se você estiver usando um cluster do ESP, você também deve selecionar o **Microsoft. azureactivedirectory** ponto de extremidade de serviço.
-1. Clique em **Salvar**.
-
 ### <a name="create-a-new-firewall-for-your-cluster"></a>Criar um novo firewall para seu cluster
 
 1. Crie uma sub-rede denominada **AzureFirewallSubnet** na rede virtual em que o cluster existe. 
 1. Criar um novo firewall **teste FW01** usando as etapas no [Tutorial: Implantar e configurar o Firewall do Azure usando o portal do Azure](../firewall/tutorial-firewall-deploy-portal.md#deploy-the-firewall).
-1. Selecione o novo firewall do portal do Azure. Clique em **regras** sob **configurações** > **coleção de regras de aplicativo** > **adicionar coleção de regras de aplicativo**.
-
-    ![Título: Adicionar coleção de regras de aplicativos](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection.png)
 
 ### <a name="configure-the-firewall-with-application-rules"></a>Configurar o firewall com as regras de aplicativo
 
 Crie uma coleção de regras de aplicativo que permite que o cluster enviar e receber comunicações importantes.
 
 Selecione o novo firewall **FW01 teste** do portal do Azure. Clique em **regras** sob **configurações** > **coleção de regras de aplicativo** > **adicionar coleção de regras de aplicativo**.
+
+![Título: Adicionar a coleção de regras de aplicativo](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection.png)
 
 Sobre o **adicionar a coleção de regras de aplicativo** tela, conclua as seguintes etapas:
 
@@ -75,12 +60,9 @@ Sobre o **adicionar a coleção de regras de aplicativo** tela, conclua as segui
     1. Uma regra para permitir que a atividade de logon do Windows:
         1. No **destino FQDNs** seção, forneça uma **nome**e defina **endereços de origem** para `*`.
         1. Insira `https:443` sob **protocolo: Port** e `login.windows.net` sob **FQDNS de destino**.
-    1. Uma regra para permitir que a telemetria SQM:
-        1. No **destino FQDNs** seção, forneça uma **nome**e defina **endereços de origem** para `*`.
-        1. Insira `https:443` sob **protocolo: Port** e `sqm.telemetry.microsoft.com` sob **FQDNS de destino**.
     1. Se o cluster é apoiado por WASB e você não estiver usando os pontos de extremidade de serviço acima, em seguida, adicione uma regra para o WASB:
         1. No **destino FQDNs** seção, forneça uma **nome**e defina **endereços de origem** para `*`.
-        1. Insira `http` ou [https], dependendo se você estiver usando o wasb: / / ou wasbs: / / sob **protocolo: porta** e a url da conta de armazenamento sob **FQDNS de destino**.
+        1. Insira `http` ou `https` , dependendo se você estiver usando o wasb: / / ou wasbs: / / sob **protocolo: porta** e a url da conta de armazenamento sob **FQDNS de destino**.
 1. Clique em **Adicionar**.
 
 ![Título: Insira os detalhes de coleção de regra de aplicativo](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection-details.png)
@@ -88,9 +70,6 @@ Sobre o **adicionar a coleção de regras de aplicativo** tela, conclua as segui
 ### <a name="configure-the-firewall-with-network-rules"></a>Configurar o firewall com as regras de rede
 
 Crie as regras de rede para configurar corretamente o seu cluster HDInsight.
-
-> [!Important]
-> Você pode escolher entre o uso de marcas de serviço do SQL no firewall usando regras de rede, conforme descrito nesta seção, ou um SQL atender o ponto de extremidade de um descrito em [a seção sobre pontos de extremidade de serviço](#enable-service-endpoints). Se você optar por usar marcas SQL nas regras de rede, você pode fazer logon e auditar o tráfego SQL. Usando um ponto de extremidade de serviço terá tráfego SQL ignore o firewall.
 
 1. Selecione o novo firewall **FW01 teste** do portal do Azure.
 1. Clique em **regras** sob **configurações** > **coleção de regras de rede** > **adicionar coleção de regras de rede**.
@@ -112,12 +91,7 @@ Crie as regras de rede para configurar corretamente o seu cluster HDInsight.
         1. Definir **endereços de origem** `*`.
         1. Insira o endereço IP para sua conta de armazenamento **endereços de destino**.
         1. Definir **portas de destino** para `*`.
-    1. Uma regra de rede para permitir a comunicação com a chave de gerenciamento para Windows ativação do serviço.
-        1. Na próxima linha a **regras** seção, forneça uma **nome** e selecione **qualquer** do **protocolo** lista suspensa.
-        1. Definir **endereços de origem** `*`.
-        1. Definir **endereços de destino** para `*`.
-        1. Definir **portas de destino** para `1688`.
-    1. Se você estiver usando o Log Analytics, em seguida, crie uma regra de rede para permitir a comunicação com seu espaço de trabalho do Log Analytics.
+    1. (Opcional) Se você estiver usando o Log Analytics, em seguida, crie uma regra de rede para permitir a comunicação com seu espaço de trabalho do Log Analytics.
         1. Na próxima linha a **regras** seção, forneça uma **nome** e selecione **qualquer** do **protocolo** lista suspensa.
         1. Definir **endereços de origem** `*`.
         1. Definir **endereços de destino** para `*`.
@@ -159,7 +133,7 @@ Por exemplo, para configurar a tabela de rotas para um cluster criado na região
 | 13.67.223.215 | 13.67.223.215/32 | Internet | ND |
 | 40.86.83.253 | 40.86.83.253/32 | Internet | ND |
 | 168.63.129.16 | 168.63.129.16/32 | Internet | ND |
-| 0.0.0.0 | 0.0.0.0/0 | Dispositivo virtual | 10.1.1.4 |
+| 0.0.0.0 | 0.0.0.0/0 | Solução de virtualização | 10.1.1.4 |
 
 ![Título: Criando uma tabela de rotas](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-route-table.png)
 
@@ -181,7 +155,7 @@ As rotas devem ser criadas para o tráfego de aplicativo evitar problemas de rot
 
 Se seus aplicativos tenham outras dependências, eles precisarão ser adicionados ao Firewall do Azure. Crie regras de aplicativo para permitir o tráfego HTTP/HTTPS e regras de Rede para todo o resto.
 
-## <a name="logging"></a>Registro em Log
+## <a name="logging"></a>Registrando em log
 
 Firewall do Azure pode enviar logs para alguns sistemas de armazenamento diferente. Para obter instruções sobre como configurar o registro em log para o seu firewall, siga as etapas em [Tutorial: Monitorar logs de Firewall do Azure e métricas](../firewall/tutorial-diagnostics.md).
 

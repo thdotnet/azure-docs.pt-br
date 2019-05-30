@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/16/2019
 ms.author: kumud;tyao
-ms.openlocfilehash: 3701a69ab72abf20a4f1608a1cee56c9cea38aca
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 99b0cab3fd277f90a675f0e6087d572853053a08
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65523630"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66387345"
 ---
 # <a name="configure-a-web-application-firewall-rate-limit-rule-using-azure-powershell"></a>Configurar uma regra na web application firewall taxa limite usando o Azure PowerShell
 Regra de limite de taxa de WAF (firewall) do aplicativo web do Azure para frente do Azure controla o número de solicitações permitidas de um único cliente IP durante uma duração de um minuto.
@@ -65,10 +65,10 @@ O exemplo a seguir corresponde */promo* como o valor da *RequestUri* variável:
      -MatchValue "/promo"
 ```
 ## <a name="create-a-custom-rate-limit-rule"></a>Criar uma regra de limite de taxa personalizada
-Definir um limite de taxa usando [New-AzFrontDoorCustomRuleObject](/powershell/module/az.frontdoor/new-azfrontdoorwafcustomruleobject). No exemplo a seguir, o limite é definido como 1000. Solicitações de qualquer cliente para a página de promoção exceder 1000 durante um minuto são bloqueadas até que o próximo minuto é iniciado.
+Definir um limite de taxa usando [New-AzFrontDoorWafCustomRuleObject](/powershell/module/az.frontdoor/new-azfrontdoorwafcustomruleobject). No exemplo a seguir, o limite é definido como 1000. Solicitações de qualquer cliente para a página de promoção exceder 1000 durante um minuto são bloqueadas até que o próximo minuto é iniciado.
 
 ```powershell-interactive
-   $promoRateLimitRule = New-AzFrontDoorCustomRuleObject `
+   $promoRateLimitRule = New-AzFrontDoorWafCustomRuleObject `
      -Name "rateLimitRule" `
      -RuleType RateLimitRule `
      -MatchCondition $promoMatchCondition `

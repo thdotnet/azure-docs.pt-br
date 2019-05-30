@@ -10,12 +10,12 @@ ms.subservice: integration
 ms.date: 04/17/2018
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 94ec38bc2cad3566fad88dc2ac56648f79aa16b2
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 4650e171c180653e94d78451d66bba1bcc71b136
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65873366"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241278"
 ---
 # <a name="visualize-data-with-power-bi"></a>Visualizar os dados com o Power BI
 Este tutorial mostra como usar o Power BI para se conectar ao SQL Data Warehouse e criar algumas visualizações básicas.
@@ -29,7 +29,7 @@ Para acompanhar este tutorial, você precisará:
 
 * Um SQL Data Warehouse pré-carregado com o banco de dados AdventureWorksDW. Para provisionar um data warehouse, consulte [Criar um SQL Data Warehouse](create-data-warehouse-portal.md) e opte por carregar os dados de exemplo. Se você já tiver um data warehouse, mas não tiver dados de exemplo, poderá [carregar WideWorldImportersDW](load-data-wideworldimportersdw.md).
 
-## <a name="1-connect-to-your-database"></a>1. Conectar ao banco de dados
+## <a name="1-connect-to-your-database"></a>1. Conectar-se ao seu banco de dados
 Para abrir o Power BI e conectar-se ao banco de dados AdventureWorksDW:
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
@@ -93,4 +93,4 @@ Ao usar a Conexão Direta:
 Essas restrições e observações podem mudar à medida que aprimoramos as experiências.
 
 ## <a name="next-steps"></a>Próximas etapas
-Agora que proporcionamos a você uma introdução aos dados de exemplo, veja como [desenvolver](sql-data-warehouse-overview-develop.md), [carregar](design-elt-data-loading.md) ou [migrar](sql-data-warehouse-overview-migrate.md). Ou então, confira o [Site do Power BI](https://www.powerbi.com/).
+Agora que demos algum tempo para aquecimento com os dados de exemplo, consulte como [desenvolva](sql-data-warehouse-overview-develop.md) ou [carregar](design-elt-data-loading.md). Ou então, confira o [Site do Power BI](https://www.powerbi.com/).

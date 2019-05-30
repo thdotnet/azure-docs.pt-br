@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: 3361013d8421cd859c834c07018356318d5e2989
-ms.sourcegitcommit: f4469b7bb1f380bf9dddaf14763b24b1b508d57c
+ms.openlocfilehash: cf9356c2792781558c4403608ff5de0e3aaddb6a
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66179821"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254459"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Configurar um aplicativo Linux Java para o serviço de aplicativo do Azure
 
@@ -164,7 +164,7 @@ for (Object key : map.keySet()) {
     }
 ```
 
-Para desconectar os usuários e executar outras ações, consulte a documentação sobre [uso do aplicativo de serviço de autenticação e autorização](https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-how-to). Também há documentação oficial no Tomcat [HttpServletRequest interface](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) e seus métodos. O servlet seguir métodos também são hidratados com base em sua configuração de serviço de aplicativo:
+Para desconectar os usuários e executar outras ações, consulte a documentação sobre [uso do aplicativo de serviço de autenticação e autorização](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to). Também há documentação oficial no Tomcat [HttpServletRequest interface](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) e seus métodos. O servlet seguir métodos também são hidratados com base em sua configuração de serviço de aplicativo:
 
 ```java
 public boolean isSecure()

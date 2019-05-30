@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/01/2018
+ms.date: 2/01/2019
 ms.author: hrushib
-ms.openlocfilehash: 31c5feac577dc5e9e0eed9ced9ccfe25c12d3086
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b1b36ed5197aeb056c70200a49e09cc777d66d0b
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60310445"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237351"
 ---
 # <a name="understanding-periodic-backup-configuration-in-azure-service-fabric"></a>Noções básicas sobre a configuração de backup periódico no Azure Service Fabric
 
@@ -138,9 +138,6 @@ Uma política de backup é composta pelas seguintes configurações:
         }
         ```
 
-> [!IMPORTANT]
-> Devido a um problema no tempo de execução, certifique-se de que a duração da retenção na política de retenção está configurada para menos de 24 dias ou, caso contrário, resultará em um serviço de restauração de Backup para entrar em failover de réplica pós perda de quorum.
-
 ## <a name="enable-periodic-backup"></a>Habilitar backup periódico
 Após definir a política de backup para atender aos requisitos de backup de dados, a política de backup deverá ser devidamente associada a um _aplicativo_ ou a um _serviço_ ou a uma _partição_.
 
@@ -251,7 +248,7 @@ A seguir, há informações breves sobre as variantes com suporte.
  
 - [Obter lista de Backup da partição](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getpartitionbackuplist): Retorna uma lista de backups disponíveis para a partição especificada.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 - [Referência da API REST de backup e restauração](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore)
 
 [0]: ./media/service-fabric-backuprestoreservice/BackupPolicyAssociationExample.png

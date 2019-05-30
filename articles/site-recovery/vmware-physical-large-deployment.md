@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: raynew
-ms.openlocfilehash: 593a82221ec94e43d50b7382ba89053d5f68864a
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: e96aafe61c0d8547ffca9e97bfd9e90c9529155f
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65805915"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237273"
 ---
 # <a name="set-up-disaster-recovery-at-scale-for-vmware-vmsphysical-servers"></a>Configurar a recuperação de desastre em grande escala para VMs VMware/servidores físicos
 
@@ -101,7 +101,7 @@ O que está em conformidade média? Para iniciar uma VM do Azure, o Azure requer
 **Computador está em conformidade com o Azure?** | **Limites VM do Azure (failover de disco gerenciado)**
 --- | --- 
 Sim | 2000
-Não | 1000
+Não  | 1000
 
 - Limites de supõem que mínimo que outros trabalhos estão em andamento na região de destino para a assinatura.
 - Algumas regiões do Azure são menores e podem ter limites de um pouco menores.
@@ -188,7 +188,7 @@ Depois de você iniciar a replicação para o primeiro lote de VMs, inicie o mon
 1. Atribui um administrador de recuperação de desastres para monitorar o status de integridade de computadores replicados.
 2. [Monitorar eventos](site-recovery-monitor-and-troubleshoot.md) para itens replicados e a infraestrutura.
 3. [Monitorar a integridade](vmware-physical-azure-monitor-process-server.md) dos seus servidores de processo de escalonamento horizontal.
-4. Inscreva-se para obter [notificações por email](https://docs.microsoft.com/azure/site-recovery/site-recovery-monitor-and-troubleshoot.md#subscribe-to-email-notifications) para eventos, para facilitar o monitoramento.
+4. Inscreva-se para obter [notificações por email](https://docs.microsoft.com/azure/site-recovery/site-recovery-monitor-and-troubleshoot#subscribe-to-email-notifications) para eventos, para facilitar o monitoramento.
 5. Conduzir regular [recuperação de desastre](site-recovery-test-failover-to-azure.md), para garantir que tudo está funcionando conforme o esperado.
 
 

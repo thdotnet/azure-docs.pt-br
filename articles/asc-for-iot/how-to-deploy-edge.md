@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/1/2019
 ms.author: mlottner
-ms.openlocfilehash: 5d56c878eab92a7152bc0b248cab5c2ebf7e6dde
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 85e342f08e5402e50e5b0dfd1fe2df90337f29ca
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65198411"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254305"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Implantar um módulo de segurança em seu dispositivo IoT Edge
 
@@ -70,7 +70,7 @@ Use as etapas a seguir para implantar um ASC para o módulo de segurança de IoT
 
 Há três etapas para criar uma implantação do IoT Edge para a Central de segurança do Azure para IoT. As seções a seguir explicam cada uma delas. 
 
-#### <a name="step-1-add-modules"></a>Etapa 1: Adicionar Módulos
+#### <a name="step-1-add-modules"></a>Etapa 1: Adicionar módulos
 
 1. Dos **Adicionar módulos** guia **módulos de implantação** área, clique em **AzureSecurityCenterforIoT**. 
    
@@ -134,7 +134,7 @@ Há três etapas para criar uma implantação do IoT Edge para a Central de segu
    
 1. Clique em **Avançar**.
 
-#### <a name="step-2-specify-routes"></a>Etapa 2: Especificar Rotas 
+#### <a name="step-2-specify-routes"></a>Etapa 2: Especificar rotas 
 
 1. No **especificar rotas** guia, defina as **ASCForIoTToIoTHub** rotear para **"de mensagens/módulos/azureiotsecurity/\* em $upstream"** e clique em  **Próxima**.
 
@@ -158,7 +158,7 @@ Se você encontrar um problema, os logs do contêiner são a melhor maneira de s
    
    | NOME | IMAGEM |
    | --- | --- |
-   | azureIoTSecurity | mcr.microsoft.com/ascforiot/azureiotsecurity:0.0.3 |
+   | azureiotsecurity | mcr.microsoft.com/ascforiot/azureiotsecurity:0.0.3 |
    | edgeHub | mcr.microsoft.com/ascforiot/edgehub:1.0.9-preview |
    | edgeAgent | mcr.microsoft.com/azureiotedge-agent:1.0 |
    

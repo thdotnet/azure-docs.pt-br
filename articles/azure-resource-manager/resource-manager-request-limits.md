@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: fc731b1abec9c101356a0fa57eef498b58612ab9
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: b382b9ae35d492b4c779b8f7ee360fb378d54e08
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65791353"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399708"
 ---
 # <a name="throttling-resource-manager-requests"></a>Restrição de solicitações do Resource Manager
 
 Para cada assinatura e inquilino do Azure, o Gerenciador de Recursos permite até 12.000 solicitações de leitura por hora e 1.200 solicitações de gravação por hora. Esses limites são definidos para o ID principal que faz as solicitações e o ID da assinatura ou o ID do inquilino. Se suas solicitações vierem de mais de uma ID principal, seu limite na assinatura ou no inquilino será maior que 12.000 e 1.200 por hora.
 
-As solicitações são aplicadas à sua assinatura ou ao seu inquilino. As solicitações de assinatura envolvem a transmissão do seu ID de assinatura, como a recuperação dos grupos de recursos na sua assinatura. As solicitações de inquilino não incluem seu ID de inscrição, como a recuperação de locais válidos do Azure.
+As solicitações são aplicadas à sua assinatura ou ao seu inquilino. Solicitações de assinatura são aquelas que envolvem passando a ID de assinatura, como recuperar os grupos de recursos em sua assinatura. As solicitações de inquilino não incluem seu ID de inscrição, como a recuperação de locais válidos do Azure.
 
 Esses limites se aplicam a cada instância do Azure Resource Manager. Há várias instâncias em todas as regiões do Azure e o Azure Resource Manager é implantado em todas as regiões do Azure.  Portanto, na prática, os limites são efetivamente muito maiores do que esses, pois as solicitações do usuário são geralmente atendidas por muitas instâncias diferentes.
 
@@ -31,7 +31,7 @@ Gráfico de recursos do Azure limita o número de solicitações para suas opera
 ## <a name="remaining-requests"></a>Solicitações restantes
 Você pode determinar o número de solicitações restantes ao examinar cabeçalhos de resposta. As solicitações de leitura retornam um valor no cabeçalho para o número de solicitações de leitura restantes. Grave solicitações incluem um valor para o número de solicitações de gravação restantes. A tabela a seguir descreve os cabeçalhos de resposta que você pode examinar em busca desses valores:
 
-| Cabeçalho de resposta | Descrição |
+| Cabeçalho de resposta | DESCRIÇÃO |
 | --- | --- |
 | x-ms-ratelimit-remaining-subscription-reads |Leituras no escopo da assinatura restantes. Esse valor é retornado em operações de leitura. |
 | x-ms-ratelimit-remaining-subscription-writes |Gravações no escopo da assinatura restantes. Esse valor é retornado em operações de gravação. |
@@ -45,7 +45,7 @@ Você pode determinar o número de solicitações restantes ao examinar cabeçal
 ## <a name="retrieving-the-header-values"></a>Recuperar os valores de cabeçalho
 Recuperar esses valores de cabeçalho no seu código ou script não é diferente de recuperar um outro valor de cabeçalho qualquer. 
 
-Por exemplo, em **C#**, recupere o valor de cabeçalho de um objeto **HttpWebResponse** chamado **response** com o código a seguir:
+Por exemplo, em **C#** , recupere o valor de cabeçalho de um objeto **HttpWebResponse** chamado **response** com o código a seguir:
 
 ```cs
 response.Headers.GetValues("x-ms-ratelimit-remaining-subscription-reads").GetValue(0)

@@ -1,19 +1,19 @@
 ---
 title: Monitorar o desempenho do cluster – Azure HDInsight
 description: Como monitorar um cluster HDInsight quanto a capacidade e desempenho.
-author: maxluk
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/06/2018
-ms.author: arindamc
-ms.openlocfilehash: 9a6a63748ef36bbbceb00bc815616f2cb12692a7
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.date: 05/29/2019
+ms.author: hrasheed
+ms.openlocfilehash: 3fcd1e54a8993b2693b169a2c8b4c6e9bca57119
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65799785"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393408"
 ---
 # <a name="monitor-cluster-performance"></a>Monitorar o desempenho do cluster
 
@@ -27,7 +27,7 @@ Os clusters do Hadoop podem oferecer o desempenho mais ideal quando a carga no c
 
 Para obter uma visão de alto nível de nós do cluster e os respectivos carregamentos, entrar para o [IU da Web do Ambari](hdinsight-hadoop-manage-ambari.md), em seguida, selecione a guia **Hosts**. Os hosts são listados por seus nomes de domínio totalmente qualificados. O status operacional de cada host é mostrado por um indicador de integridade colorido:
 
-| Cor | Descrição |
+| Cor | DESCRIÇÃO |
 | --- | --- |
 | Vermelho | Pelo menos um componente mestre no host está inoperante. Passe o mouse para ver uma dica de ferramenta que lista os componentes afetados. |
 | Laranja | Pelo menos um componente secundário no host está inoperante. Passe o mouse para ver uma dica de ferramenta que lista os componentes afetados. |

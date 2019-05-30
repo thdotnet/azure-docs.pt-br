@@ -11,12 +11,12 @@ manager: carmonm
 ms.topic: article
 ms.assetid: 90f5cfc4-46b2-4ef7-8ac4-486bb0e3f289
 ms.date: 02/06/2019
-ms.openlocfilehash: f6d778ddbce16c223945d4683bd7a950bd2a0cb0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d0d40ca0ae6ccd4f709d7d94d52764d4affcc215
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61467790"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244708"
 ---
 # <a name="transform-xml-with-maps-in-azure-logic-apps-with-enterprise-integration-pack"></a>Transformar XML com mapas nos Aplicativos Lógicos do Azure com o Enterprise Integration Pack
 
@@ -28,11 +28,11 @@ Para obter os limites relacionados aos artefatos e às contas de integração co
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma assinatura do Azure. Se você não tem uma assinatura, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>.
+* Uma assinatura do Azure. Se você não tem uma assinatura, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/).
 
 * Uma [conta de integração](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) na qual você armazena seus mapas e outros artefatos para soluções de business-to-business (B2B) e integração empresarial.
 
-* Se seu mapa faz referência a um assembly externo, você precisa carregar *o assembly e o mapa* na conta de integração. Certifique-se de *carregar o assembly primeiro* e, em seguida, carregue o mapa que faz referência ao assembly.
+* Se seu mapa faz referência a um assembly externo, você precisa carregar *o assembly e o mapa* na conta de integração. Verifique se você [ *carregar seu assembly primeiro*](#add-assembly)e, em seguida, carregue o mapa que faz referência ao assembly.
 
   Se o assembly tiver 2 MB ou menos, é possível adicioná-lo na sua conta de integração *diretamente* do portal do Azure. No entanto, se o assembly ou o mapa for maior do que 2 MB, mas não maior que o [limite de tamanho para assemblies ou mapas](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits), você tem estas opções:
 
@@ -50,9 +50,11 @@ Para obter os limites relacionados aos artefatos e às contas de integração co
 
 Não é necessário um aplicativo lógico durante a criação e adição de mapas. No entanto, para usar um mapa, o aplicativo lógico precisa estar vinculado à conta de integração na qual esse mapa está armazenado. Saiba mais [como vincular aplicativos lógicos a contas de integração](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md#link-account). Se você ainda não tiver um aplicativo lógico, saiba [como criar aplicativos lógicos](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
+<a name="add-assembly"></a>
+
 ## <a name="add-referenced-assemblies"></a>Adicionar assemblies referenciados
 
-1. Entre no <a href="https://portal.azure.com" target="_blank">portal do Azure</a> com suas credenciais da conta do Azure.
+1. Entre no [portal do Azure](https://portal.azure.com) com suas credenciais da conta do Azure.
 
 1. Para localizar e abrir sua conta de integração, no menu principal do Azure, selecione **Todos os serviços**. 
    Na caixa de pesquisa, digite “conta de integração”. 
@@ -74,6 +76,9 @@ Não é necessário um aplicativo lógico durante a criação e adição de mapa
 
 Com base no tamanho do arquivo de assembly, siga as etapas para carregar um assembly que tenha [até 2 MB](#smaller-assembly) ou [mais de 2 MB, mas até 8 MB](#larger-assembly).
 Para obter os limites das quantidades de assembly nas contas de integração, confira [Limites e configuração para Aplicativos Lógicos do Azure](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits).
+
+> [!NOTE]
+> Se você alterar seu assembly, você também deve atualizar seu mapa se o mapa tem alterações ou não.
 
 <a name="smaller-assembly"></a>
 
@@ -99,7 +104,7 @@ Para obter os limites das quantidades de assembly nas contas de integração, co
 
 ### <a name="add-assemblies-more-than-2-mb"></a>Adicionar assemblies com mais de 2 MB
 
-Para adicionar assemblies maiores, você pode carregar seu assembly em um contêiner de blob do Azure na conta de armazenamento do Azure. As etapas para adicionar assemblies diferem dependendo do seu contêiner de blob ter acesso de leitura público. Primeiro, verifique se seu contêiner de blob tem ou não acesso de leitura público seguindo estas etapas: [Definir o nível de acesso público para contêiner de blob](../vs-azure-tools-storage-explorer-blobs.md#set-the-public-access-level-for-a-blob-container)
+Para adicionar assemblies maiores, você pode carregar seu assembly em um contêiner de blob do Azure na conta de armazenamento do Azure. As etapas para adicionar assemblies diferem com base se o seu contêiner de blob tem acesso de leitura público. Primeiro, verifique se seu contêiner de blob tem ou não acesso de leitura público seguindo estas etapas: [Definir o nível de acesso público para contêiner de blob](../vs-azure-tools-storage-explorer-blobs.md#set-the-public-access-level-for-a-blob-container)
 
 #### <a name="check-container-access-level"></a>Verificar o nível de acesso do contêiner
 
@@ -128,7 +133,7 @@ Para adicionar assemblies maiores, você pode carregar seu assembly em um contê
 
 1. Retorne ao portal do Azure onde o painel **Adicionar assembly** está aberto. 
    Digite um nome para o seu assembly. 
-   Escolha **Arquivo grande (com mais de 2 MB)**.
+   Escolha **Arquivo grande (com mais de 2 MB)** .
 
    A caixa do **URI de conteúdo** agora é exibida, em vez da caixa **Assembly**.
 
@@ -153,7 +158,7 @@ Na página **Visão geral** da sua conta de integração, em **Componentes**, o 
 
 1. Retorne ao portal do Azure onde o painel **Adicionar assembly** está aberto. 
    Digite um nome para o seu assembly. 
-   Escolha **Arquivo grande (com mais de 2 MB)**.
+   Escolha **Arquivo grande (com mais de 2 MB)** .
 
    A caixa do **URI de conteúdo** agora é exibida, em vez da caixa **Assembly**.
 
@@ -170,7 +175,7 @@ Para obter os limites das quantidades de mapas nas contas de integração, confi
 
 Depois de carregar todos os assemblies referenciados no mapa, você poderá carregar seu mapa.
 
-1. Se você ainda não fez login, faça login no <a href="https://portal.azure.com" target="_blank">portal do Azure</a> com suas credenciais de conta do Azure. 
+1. Se você ainda não fez login, faça login no [portal do Azure](https://portal.azure.com) com suas credenciais de conta do Azure. 
 
 1. Se a sua conta de integração ainda não estiver aberta, no menu principal do Azure, selecione **Todos os serviços**. 
    Na caixa de pesquisa, digite “conta de integração”. 
@@ -310,7 +315,7 @@ the map appears in the **Maps** list.
 
 Para atualizar um mapa existente, você precisa carregar um novo arquivo de mapa com as alterações desejadas. No entanto, você pode baixar primeiro o mapa existente para edição.
 
-1. No <a href="https://portal.azure.com" target="_blank">portal do Azure</a>, localize e abra a conta de integração, caso ainda não esteja aberta.
+1. No [portal do Azure](https://portal.azure.com), localize e abra a conta de integração, caso ainda não esteja aberta.
 
 1. No menu principal do Azure, selecione **Todos os serviços**. Na caixa de pesquisa, digite “conta de integração”. Selecione **Contas de Integração**.
 
@@ -328,7 +333,7 @@ Para atualizar um mapa existente, você precisa carregar um novo arquivo de mapa
 
 ## <a name="delete-maps"></a>Excluir mapas
 
-1. No <a href="https://portal.azure.com" target="_blank">portal do Azure</a>, localize e abra a conta de integração, caso ainda não esteja aberta.
+1. No [portal do Azure](https://portal.azure.com), localize e abra a conta de integração, caso ainda não esteja aberta.
 
 1. No menu principal do Azure, selecione **Todos os serviços**. 
    Na caixa de pesquisa, digite “conta de integração”. 

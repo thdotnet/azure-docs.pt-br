@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 06/20/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 0e0c83d411242be38992dd763dea72eda70ffbf4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e9c307b2b2e720881acb983a2a1b00ac8e03dac4
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60531836"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357068"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-the-rest-api"></a>Gerenciar o acesso aos recursos do Azure usando o RBAC e a API REST
 
@@ -38,12 +38,16 @@ No RBAC, para listar o acesso, você lista as atribuições de função. Para li
 
 1. Dentro do URI, substitua *{scope}* pelo escopo para o qual você deseja listar as funções de atribuição.
 
-    | Escopo | Type |
+    | Scope | Type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Assinatura |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Grupo de recursos |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Recurso |
-
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
+    
+       
+     > [!NOTE]
+     > No exemplo acima, que Microsoft. Web é usado o provedor de recursos que se refere à instância do serviço de aplicativo. Da mesma forma, você pode usar qualquer outro provedor de recursos e compile o URI de escopo. Para entender mais consultem [provedores de recursos do Azure e tipos](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services) e com suporte [operações do provedor de recursos do Azure RM](https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations).  
+     
 1. Substitua *{filter}* pela condição que você deseja aplicar a fim de filtrar a lista de atribuições de função.
 
     | Filter | DESCRIÇÃO |
@@ -77,11 +81,11 @@ No RBAC, para conceder acesso, você cria uma atribuição de função. Para cri
     
 1. Dentro do URI, substitua *{scope}* pelo escopo da atribuição de função.
 
-    | Escopo | Type |
+    | Scope | Type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Assinatura |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Grupo de recursos |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Recurso |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
 
 1. Substitua *{roleAssignmentName}* pelo identificador GUID da atribuição de função.
 
@@ -105,11 +109,11 @@ No RBAC, para remover o acesso, você deve remover uma atribuição de função.
 
 1. Dentro do URI, substitua *{scope}* pelo escopo para remoção da atribuição de função.
 
-    | Escopo | Type |
+    | Scope | Type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Assinatura |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Grupo de recursos |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Recurso |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
 
 1. Substitua *{roleAssignmentName}* pelo identificador GUID da atribuição de função.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 08ea0081c84ea31b2b71d03679b1b527cf94c075
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1e5b5876fa6277d1bad0989c543de667f75a066c
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60556773"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258726"
 ---
 # <a name="sfctl-node"></a>Nó sfctl
 Gerenciar os nós que formam um cluster.
@@ -180,6 +180,8 @@ Recupera as informações de carga de um nó do Service Fabric para todas as mé
 Notifica o Service Fabric que o estado persistente em um nó foi permanentemente removido ou perdido.
 
 Isso significa que não é possível recuperar o estado persistente desse nó. Isso geralmente acontece se um disco rígido tiver sido limpo ou se um disco rígido falhar. O nó deve ser para baixo para que essa operação seja bem-sucedida. Esta operação permite que o Service Fabric saiba que as réplicas no nó deixarão de existir e esse Service Fabric deve parar de esperar que essas réplicas retornem. Não execute esse cmdlet se o estado no nó foi removido e se o nó pode retornar com seu estado intacto.
+
+A partir 6.5 da malha de serviço, para usar esse cmdlet para nós de semente, altere os nós de semente para regular de nós (sem propagação) e, em seguida, invocar esse cmdlet para remover o estado do nó. Se o cluster estiver em execução no Azure, depois que o nó de propagação falha, o Service Fabric tentará alterá-lo para um nó de semeação não automaticamente. Para fazer isso acontecer, verifique se o número de nós sem propagação no tipo de nó primário é não menor que o número de nós de semente inativos. Se necessário, adicione mais nós para o tipo de nó primário para fazer isso. Para o cluster autônomo, se o nó de propagação de busca não é esperado para voltar com seu estado intacto, por favor, remova o nó do cluster, consulte [remover nós de cluster autônomo do Service Fabric](/azure/service-fabric/service-fabric-cluster-windows-server-add-remove-nodes) 
 
 ### <a name="arguments"></a>Argumentos
 

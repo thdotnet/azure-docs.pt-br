@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: 6ada4a25f24a6dcbb1ebd54daad15b37127f7a21
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 980dc850537b7419e4ee48391acd5ba971fb3fed
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154186"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306725"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Guia de solução de problemas de Gerenciador de armazenamento do Azure
 
@@ -30,11 +30,11 @@ Se você estiver tendo problemas para acessar os recursos de armazenamento usand
 
 Se você não tiver certeza de que ter as permissões ou funções apropriadas, entre em contato com seu administrador de conta do Azure.
 
-#### <a name="read-listget-storage-accounts"></a>Ler: Listar/Obter Conta(s) de Armazenamento
+#### <a name="read-listget-storage-accounts"></a>Ler: Listar/obter contas de armazenamento
 
 Você deve ter permissão para listar contas de armazenamento. Você pode obter essa permissão que está sendo atribuído a função "Leitor".
 
-#### <a name="list-storage-account-keys"></a>Listar Chaves de Conta de Armazenamento
+#### <a name="list-storage-account-keys"></a>Listar chaves de conta de armazenamento
 
 O Gerenciador de armazenamento também pode usar as chaves de conta para autenticar solicitações. Você pode obter acesso às chaves com as funções mais avançadas, como a função "Colaborador".
 
@@ -75,7 +75,7 @@ Quando o Gerenciador de Armazenamento vê um assinatura de autoatendimento ou o 
 
 Esse problema também pode ser o resultado de vários certificados (intermediário e raiz). Ambos os certificados devem ser adicionados para superar o erro.
 
-Se você não tiver certeza de que o certificado é proveniente, você pode tentar estas etapas para encontrá-lo:
+Se você não tiver certeza de onde o certificado é proveniente, você pode tentar estas etapas para encontrá-lo:
 
 1. Instalar o Open SSL
     * [Windows](https://slproweb.com/products/Win32OpenSSL.html) (qualquer uma das versões leves deve ser suficiente)
@@ -88,13 +88,13 @@ Se você não tiver certeza de que o certificado é proveniente, você pode tent
 5. Depois de encontrar os certificados autoassinados, para cada um deles, copie e cole tudo a partir, e incluindo, **---BEGIN CERTIFICATE---** até **---END CERTIFICATE---** em um novo arquivo .cer.
 6. Abra o Gerenciador de Armazenamento, clique em **Editar** > **Certificados SSL** > **Importar Certificados** e, depois, use o seletor de arquivo para localizar, selecionar e abrir os arquivos .cer que você criou.
 
-Se você não conseguir encontrar certificados autoassinados usando as etapas anteriores, entre em contato conosco por meio da ferramenta de comentários para obter mais ajuda. Como alternativa, você pode optar por iniciar o Gerenciador de Armazenamento na linha de comando com o `--ignore-certificate-errors` sinalizador. Quando iniciado com esse sinalizador, o Gerenciador de Armazenamento irá ignorar erros de certificado.
+Se você não encontrar todos os certificados autoassinados usando as etapas anteriores, entre em contato conosco por meio da ferramenta de comentários para obter mais ajuda. Você também pode optar por iniciar o Gerenciador de armazenamento na linha de comando com o `--ignore-certificate-errors` sinalizador. Quando iniciado com esse sinalizador, o Gerenciador de Armazenamento irá ignorar erros de certificado.
 
 ## <a name="sign-in-issues"></a>Problemas de credenciais
 
 ### <a name="blank-sign-in-dialog"></a>Diálogo de entrada em branco
 
-Diálogos de entrada em branco são causados frequentemente pelo ADFS solicitando que o Gerenciador de armazenamento para executar um redirecionamento, que não é suportado pelo Electron. Para contornar esse problema, você pode tentar usar o fluxo de código de dispositivo para entrar. Para isso, execute as etapas a seguir:
+Diálogos de entrada em branco são causados frequentemente pelo ADFS solicitando que o Gerenciador de armazenamento para executar um redirecionamento, que não é suportado pelo Electron. Para contornar esse problema, você pode tentar usar o fluxo de código de dispositivo para entrar. Para concluir as etapas abaixo, você precisa:
 
 1. Menu: Visualização -> "Usem Sign-In de código de dispositivo".
 2. Abra a caixa de diálogo Conectar (seja por meio do ícone de tomada na barra vertical à esquerda, ou “Adicionar conta” no painel da conta).
@@ -109,15 +109,15 @@ Se você estiver tendo problemas de inscrição para a conta que você deseja us
 
 ### <a name="reauthentication-loop-or-upn-change"></a>Loop de reautenticação ou alteração de UPN
 
-Se você estiver em um loop de reautenticação ou tiver alterado o UPN de uma das suas contas, tente o seguinte:
+Se você estiver em um loop de nova tentativa de autenticação, ou alterou o UPN de uma de suas contas, tente as seguintes etapas:
 
 1. Remova todas as contas e, em seguida, feche o Gerenciador de Armazenamento
 2. Exclua a pasta .IdentityService do seu computador. No Windows, a pasta está localizada em `C:\users\<username>\AppData\Local`. Para Mac e Linux, você pode encontrar a pasta na raiz do seu diretório de usuário.
-3. Se você estiver usando Mac ou Linux, também precisará excluir a entrada Microsoft.Developer.IdentityService do repositório de chaves do sistema operacional. No Mac, o repositório de chaves é o aplicativo de "Conjunto de Chaves Gnome". Para o Linux, o aplicativo geralmente é chamado de "Token de autenticação", mas o nome pode ser diferente dependendo da sua distribuição.
+3. Se você estiver no Mac ou Linux, também será necessário excluir a entrada de Microsoft.Developer.IdentityService no repositório de chaves do seu sistema operacional. No Mac, o repositório de chaves é o aplicativo de "Conjunto de Chaves Gnome". Para o Linux, o aplicativo geralmente é chamado de "Token de autenticação", mas o nome pode ser diferente dependendo da sua distribuição.
 
 ### <a name="conditional-access"></a>Acesso Condicional
 
-Não haverá suporte para o acesso condicional quando o Gerenciador de Armazenamento estiver sendo usado no Windows 10, Linux ou macOS. Isso é devido a uma limitação na Biblioteca do AAD usada pelo Gerenciador de Armazenamento.
+Acesso condicional não tem suporte quando o Gerenciador de armazenamento está sendo usado no Windows 10, Linux ou macOS. Isso é devido a uma limitação na biblioteca do AAD usada pelo Gerenciador de armazenamento.
 
 ## <a name="mac-keychain-errors"></a>Erros de conjunto de chaves do Mac
 
@@ -131,7 +131,7 @@ O conjunto de chaves do macOS, às vezes, pode entrar em um estado que causa pro
     ![image](./media/storage-explorer-troubleshooting/unlockingkeychain.png)
 
 5. Inicie o Gerenciador de Armazenamento.
-6. Um pop-up deve aparecer dizendo algo como "O hub de serviços quer acessar o conjunto de chaves". Quando aparecer, insira sua senha de conta de administrador do Mac e clique em **Sempre Permitir** (ou **Permitir** se **Sempre Permitir** não estiver disponível).
+6. Um pop-up deve aparecer dizendo algo como "O hub de serviços quer acessar o conjunto de chaves". Quando ele, insira sua senha de conta de administrador do Mac e clique em **sempre permitir** (ou **permitir** se **sempre permitir** não estiver disponível).
 7. Tente entrar.
 
 ### <a name="general-sign-in-troubleshooting-steps"></a>Etapas gerais de solução de problemas de entrada
@@ -140,26 +140,26 @@ O conjunto de chaves do macOS, às vezes, pode entrar em um estado que causa pro
 * Reiniciar o Gerenciador de Armazenamento
 * Se a janela de autenticação estiver em branco, aguarde pelo menos um minuto antes de fechar a caixa de diálogo de autenticação.
 * Verifique se as suas configurações de proxy e de certificado estejam definidas para o seu computador e o Gerenciador de Armazenamento.
-* Se você estiver no Windows e tem acesso ao Visual Studio 2017 no mesmo computador e entrar, tente entrar no Visual Studio 2017. Após um entrar com êxito no Visual Studio 2017, você deve ser capaz de abrir o Gerenciador de Armazenamento e ver sua conta no painel da conta.
+* Se você estiver no Windows e ter acesso ao Visual Studio de 2019 na mesma máquina e de entrada, tente entrar no Visual Studio de 2019. Após um entrar com êxito para o Visual Studio de 2019, você pode abrir o Gerenciador de armazenamento e ver a sua conta no painel de conta.
 
 Se nenhum desses métodos funcionar [abra um problema no GitHub](https://github.com/Microsoft/AzureStorageExplorer/issues).
 
 ### <a name="missing-subscriptions-and-broken-tenants"></a>Assinaturas ausentes e locatários desfeitos
 
-Se não for possível recuperar as assinaturas após a entrada bem-sucedida, tente os métodos de solução de problemas a seguir:
+Se você não conseguir recuperar suas assinaturas depois de entrar com êxito, tente os seguintes métodos:
 
 * Verifique se sua conta tem acesso às assinaturas que você espera. Você pode verificar o seu acesso entrando no portal para o ambiente do Azure que você está tentando usar.
-* Verifique se você entrou usando o ambiente certo (Azure, Azure China 21Vianet, Azure Alemanha, Azure US Government ou Ambiente Personalizado).
-* Se você estiver atrás de um proxy, verifique se você configurou o proxy do Gerenciador de Armazenamento apropriadamente.
+* Certifique-se de que você autenticou usando o Azure correto ambiente (do Azure, Azure China 21Vianet, Azure Alemanha, Azure US Government nos ou ambiente personalizado).
+* Se você estiver atrás de um proxy, certifique-se de que você configurou o proxy de Gerenciador de armazenamento adequadamente.
 * Tente remover e readicionar a conta.
-* Se houver um link "Obter mais informações", procure e veja quais mensagens de erro estão sendo relatadas para os locatários que estão falhando. Se você não tiver certeza do que fazer com as mensagens de erro que vê, sinta-se à vontade para [abrir um problema no GitHub](https://github.com/Microsoft/AzureStorageExplorer/issues).
+* Se houver um link "Obter mais informações", procurar e ver quais mensagens de erro estão sendo geradas para os locatários que estão falhando. Se you'ren T' claro o que fazer com o erro mensagens você consulte e, em seguida, à vontade [abra um problema no GitHub](https://github.com/Microsoft/AzureStorageExplorer/issues).
 
-## <a name="cannot-remove-attached-account-or-storage-resource"></a>Não é possível remover o recurso de conta ou armazenamento anexado
+## <a name="cant-remove-attached-account-or-storage-resource"></a>Não é possível remover o recurso de conta ou armazenamento anexado
 
-Se não for possível remover uma conta anexada ou um recurso de armazenamento por meio da interface do usuário, exclua manualmente todos os recursos anexados, excluindo as seguintes pastas:
+Se você não conseguir remover uma conta anexada ou o recurso de armazenamento por meio da interface do usuário, você poderá excluir manualmente todos os recursos anexados, excluindo as seguintes pastas:
 
 * Windows: `%AppData%/StorageExplorer`
-* macOS - `/Users/<your_name>/Library/Application Support/StorageExplorer`
+* macOS: `/Users/<your_name>/Library/Application Support/StorageExplorer`
 * Linux: `~/.config/StorageExplorer`
 
 > [!NOTE]
@@ -176,25 +176,25 @@ Primeiro, certifique-se de que as seguintes informações inseridas estejam corr
 * Nome de usuário e senha, caso seja solicitado pelo proxy
 
 > [!NOTE]
-> O Gerenciador de armazenamento não oferece suporte a arquivos de configuração automática de proxy para definir as configurações de proxy.
+> O Gerenciador de armazenamento não dá suporte a arquivos de configuração automática de proxy para definir as configurações de proxy.
 
 ### <a name="common-solutions"></a>Soluções comuns
 
-Se você ainda tiver problemas, tente os seguintes métodos:
+Se você ainda estiver enfrentando problemas, tente os seguintes métodos:
 
 * Se você puder se conectar à Internet sem usar o proxy, verifique se o Gerenciador de Armazenamento funciona sem as configurações de proxy habilitadas. Se esse for o caso, talvez haja um problema com as configurações de proxy. Trabalhe com seu administrador de proxy para identificar os problemas.
 * Verifique se outros aplicativos estão usando o servidor proxy conforme o esperado.
-* Verifique se você pode conectar ao portal para o ambiente do Azure que você está tentando usar
+* Verifique se que você pode se conectar ao portal para o ambiente do Azure que você está tentando usar
 * Verifique se que você pode receber respostas de seus pontos de extremidade de serviço. Insira uma das suas URLs de ponto de extremidade em seu navegador. Se você puder se conectar, deverá receber um InvalidQueryParameterValue ou resposta XML semelhante.
 * Se outra pessoa também estiver usando o Gerenciador de Armazenamento com o servidor proxy, verifique se eles podem se conectar. Se eles puderem se conectar, talvez seja necessário entrar em contato com o administrador de seu servidor proxy.
 
 ### <a name="tools-for-diagnosing-issues"></a>Ferramentas para diagnosticar problemas
 
-Se você tiver ferramentas de rede, como o Fiddler para Windows, poderá diagnosticar os problemas da seguinte maneira:
+Se você tiver ferramentas de rede, como o Fiddler para Windows, você pode diagnosticar os problemas da seguinte maneira:
 
 * Se você tiver que trabalhar por meio do proxy, será necessário configurar a ferramenta de rede para se conectar por meio do proxy.
 * Verifique o número da porta usado por sua ferramenta de rede.
-* Insira a URL do host local e o número de porta da ferramenta de rede como configurações de proxy no Gerenciador de Armazenamento. Quando feito corretamente, a ferramenta de rede passará a registrar solicitações de rede feitas pelo Gerenciador de Armazenamento para pontos de extremidade de serviço e de gerenciamento. Por exemplo, insira https://cawablobgrs.blob.core.windows.net/do ponto de extremidade de blob em um navegador e você receberá uma resposta semelhante à seguinte, que sugere que o recurso existe, embora não seja possível acessá-lo.
+* Insira a URL do host local e o número de porta da ferramenta de rede como configurações de proxy no Gerenciador de Armazenamento. Quando feito corretamente, a ferramenta de rede passará a registrar solicitações de rede feitas pelo Gerenciador de Armazenamento para pontos de extremidade de serviço e de gerenciamento. Por exemplo, digite https://cawablobgrs.blob.core.windows.net/ para seu ponto de extremidade de blob em um navegador e você receberá uma resposta semelhante à seguinte, o que sugere que o recurso existe, embora você não pode acessá-lo.
 
 ![exemplo de código](./media/storage-explorer-troubleshooting/4022502_en_2.png)
 
@@ -202,16 +202,16 @@ Se você tiver ferramentas de rede, como o Fiddler para Windows, poderá diagnos
 
 Se as configurações de proxy estiverem corretas, talvez seja necessário entrar em contato com seu administrador de servidor proxy e
 
-* Verifique se o seu proxy não bloqueia o tráfego nos pontos de extremidade de gerenciamento ou recurso do Azure.
-* Verifique o protocolo de autenticação usado por seu servidor proxy. No momento, o Gerenciador de Armazenamento não dá suporte a proxies NTLM.
+* Certifique-se de que seu proxy não bloqueia o tráfego para pontos de extremidade do Azure de gerenciamento ou recurso.
+* Verifique o protocolo de autenticação usado por seu servidor proxy. O Gerenciador de armazenamento atualmente não dá suporte a proxies NTLM.
 
 ## <a name="unable-to-retrieve-children-error-message"></a>Mensagem de erro "Não é Possível Recuperar Filhos"
 
-Se você estiver conectado ao Azure por meio de um proxy, verifique se as configurações do proxy estão corretas. Se você tiver recebido acesso a um recurso ao proprietário da assinatura ou conta, verifique se você leu ou lista de permissões para esse recurso.
+Se você estiver conectado ao Azure por meio de um proxy, verifique se as configurações de proxy estão corretas. Se você estiver concedido acesso a um recurso ao proprietário da assinatura ou conta, verifique se você leu ou lista de permissões para esse recurso.
 
-## <a name="connection-string-does-not-have-complete-configuration-settings"></a>A cadeia de conexão não tem definições de configuração concluídas
+## <a name="connection-string-doesnt-have-complete-configuration-settings"></a>Cadeia de caracteres de Conexão não ter parâmetros de configuração concluída
 
-Se receber essa mensagem de erro, é possível que você não tenha as permissões necessárias para obter as chaves para sua conta de armazenamento. Para confirmar se esse for o caso, acesse o portal e localize sua conta do Armazenamento. Você pode fazer isso rapidamente clicando duas vezes no nó para sua conta de armazenamento e clicando em "Abrir no Portal". Depois que você fizer isso, vá até a folha "Chaves de Acesso". Se você não tem permissões para exibir as chaves, você verá uma página com a mensagem "Você não tem acesso". Para contornar esse problema, você pode obter a chave de conta de outra pessoa e anexar com o nome e a chave, ou você pode pedir que alguém de uma SAS para a conta de armazenamento e usá-lo para anexar a conta de armazenamento.
+Se você receber essa mensagem de erro, é possível que você não tenha as permissões necessárias para obter as chaves para sua conta de armazenamento. Para confirmar se esse for o caso, acesse o portal e localize sua conta do Armazenamento. Você pode fazer isso rapidamente clicando duas vezes no nó para sua conta de armazenamento e clicando em "Abrir no Portal". Depois que você fizer isso, vá até a folha "Chaves de Acesso". Se você não tem permissões para exibir as chaves, você verá uma página com a mensagem "Você não tem acesso". Para contornar esse problema, você pode obter a chave de conta de outra pessoa e anexar com o nome e a chave, ou você pode pedir que alguém de uma SAS para a conta de armazenamento e usá-lo para anexar a conta de armazenamento.
 
 Se você vir as chaves da conta, registre um problema no GitHub, portanto, podemos ajudá-lo a resolver o problema.
 
@@ -247,20 +247,20 @@ O Gerenciador de armazenamento é oficialmente suportado no Ubuntu 18.04, 16.04 
 
 1. Baixar o Gerenciador de armazenamento
 2. Instalar o tempo de execução do .NET Core, versão mais recente de verificado é: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/runtime-2.0.8) (se você já tiver instalado uma versão mais recente, você talvez precise corrigir o Gerenciador de armazenamento, consulte abaixo)
-3. Execute o `sudo apt-get install libgconf-2-4`
-4. Execute o `sudo apt install libgnome-keyring-common libgnome-keyring-dev`
+3. Execute `sudo apt-get install libgconf-2-4`
+4. Execute `sudo apt install libgnome-keyring-common libgnome-keyring-dev`
 
 # <a name="ubuntu-1604tab1604"></a>[Ubuntu 16.04](#tab/1604)
 
 1. Baixar o Gerenciador de armazenamento
 2. Instalar o tempo de execução do .NET Core, versão mais recente de verificado é: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/runtime-2.0.8) (se você já tiver instalado uma versão mais recente, você talvez precise corrigir o Gerenciador de armazenamento, consulte abaixo)
-3. Execute o `sudo apt install libgnome-keyring-dev`
+3. Execute `sudo apt install libgnome-keyring-dev`
 
 # <a name="ubuntu-1404tab1404"></a>[Ubuntu 14.04](#tab/1404)
 
 1. Baixar o Gerenciador de armazenamento
 2. Instalar o tempo de execução do .NET Core, versão mais recente de verificado é: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu14-04/runtime-2.0.8) (se você já tiver instalado uma versão mais recente, você talvez precise corrigir o Gerenciador de armazenamento, consulte abaixo)
-3. Execute o `sudo apt install libgnome-keyring-dev`
+3. Execute `sudo apt install libgnome-keyring-dev`
 
 ---
 

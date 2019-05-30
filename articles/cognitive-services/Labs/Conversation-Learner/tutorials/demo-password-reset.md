@@ -3,19 +3,19 @@ title: Demonstração do Modelo do Aprendiz de Conversa, redefinição de senha 
 titleSuffix: Azure
 description: Saiba como criar um modelo de Aprendiz de Conversa de demonstração.
 services: cognitive-services
-author: v-jaswel
+author: nitinme
 manager: nolachar
 ms.service: cognitive-services
 ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
-ms.author: v-jaswel
-ms.openlocfilehash: 6436193dadb5933074fdce861a31672a0f4849de
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: nitinme
+ms.openlocfilehash: 15aa3a8346087908cf77f1f68db916cc2c184448
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60313115"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389869"
 ---
 # <a name="demo-password-reset"></a>Demonstração: Redefinição de senha
 Este tutorial apresenta um bot simples de suporte técnico que pode ajudar com a redefinição de senha da plataforma Conversation Learner. O modelo do bot pode aprender fluxos de diálogo não triviais e sequências de vários turnos, incluindo uma classe fora do domínio. A tarefa pode ser feita sem código ou entidades.
@@ -78,7 +78,7 @@ O modelo também contém várias Caixas de Diálogo de Treinamento incluindo alg
 16. Clique no botão “Criar”.
 17. Clique no botão "Salvar como Diálogo de Treinamento".
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
 > [Demonstração - pedido de pizza](./demo-pizza-order.md)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: mbullwin
-ms.openlocfilehash: c69e925913d4dcb3a8bec34cbf25dac184ea65c5
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 5b719566ce42639c0c435a8d631e12541d0a0e9d
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595574"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66256620"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Configurar o Application Insights para seu site ASP.NET
 
@@ -63,7 +63,7 @@ Se você deseja definir o grupo de recursos ou o local onde os dados estão arma
 > [!NOTE]
 > Se você não quiser enviar telemetria para o portal durante a depuração, adicione o SDK do Application Insights ao seu aplicativo, mas não configure um recurso no portal. Você pode ver a telemetria no Visual Studio enquanto você está depurando. Posteriormente, você pode retornar a esta página de configuração, ou você poderia esperar até depois de implantar seu aplicativo e [ative telemetria em tempo de execução](../../azure-monitor/app/monitor-performance-live-website-now.md).
 
-## <a name="run"></a> Etapa 2: Executar o aplicativo
+## <a name="run"></a> Etapa 2: Executar seu aplicativo
 Execute o aplicativo com F5. Abra páginas diferentes para gerar alguma telemetria.
 
 No Visual Studio, você verá uma contagem dos eventos que foram registrados.
@@ -99,12 +99,10 @@ O portal é aberto em uma exibição da telemetria do aplicativo.
 
 No portal, clique em qualquer bloco ou gráfico para ver mais detalhes.
 
-[Saiba mais sobre como usar o Application Insights no portal do Azure](../../azure-monitor/app/app-insights-dashboards.md).
-
 ## <a name="step-4-publish-your-app"></a>Etapa 4: Publicar seu aplicativo
 Publica seu aplicativo no servidor IIS ou no Azure. Observe o [Fluxo de Métricas Ativo](../../azure-monitor/app/metrics-explorer.md#live-metrics-stream) para verificar se tudo está funcionando corretamente.
 
-A telemetria se acumula no portal do Application Insights, em que você pode monitorar as métricas, pesquisar a telemetria e configurar [painéis](../../azure-monitor/app/app-insights-dashboards.md). Você também pode usar a poderosa [Linguagem de consulta do Kusto](/azure/kusto/query/) para analisar o uso e o desempenho ou para encontrar eventos específicos.
+As compilações de telemetria-se no portal do Application Insights, onde você pode monitorar as métricas, pesquisar a telemetria. Você também pode usar a poderosa [Linguagem de consulta do Kusto](/azure/kusto/query/) para analisar o uso e o desempenho ou para encontrar eventos específicos.
 
 Você também pode continuar a analisar a telemetria no [Visual Studio](../../azure-monitor/app/visual-studio.md) com ferramentas como pesquisa de diagnóstico e de [tendências](../../azure-monitor/app/visual-studio-trends.md).
 
@@ -146,7 +144,6 @@ Há tópicos alternativos para conferir se você está interessado em:
 ### <a name="analysis"></a>Análise
 
 * **[Trabalhar com o Application Insights no Visual Studio](../../azure-monitor/app/visual-studio.md)**<br/>Inclui informações sobre a depuração de telemetria, pesquisa de diagnóstico e análise por meio de código.
-* **[Trabalhando com o portal do Application Insights](../../azure-monitor/app/app-insights-dashboards.md)**<br/> Inclui informações sobre painéis, poderosas ferramentas de diagnóstico e análise, alertas, um mapa de dependências em tempo real de seu aplicativo e a exportação de telemetria.
 * **[Analytics](../../azure-monitor/log-query/get-started-portal.md)** - a linguagem de consulta poderosa.
 
 ### <a name="alerts"></a>Alertas

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
-ms.openlocfilehash: 6f577530c42952c6340a15110bcd37383a5fca57
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: afd43bbf6f52f498ad8f56d5a48b960d45d84137
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60693529"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243255"
 ---
 # <a name="subscriptions-in-azure-api-management"></a>Assinaturas no Gerenciamento de API do Azure
 
@@ -42,7 +42,7 @@ As assinaturas podem ser associadas a vários escopos: produto, todas as APIs ou
 
 ### <a name="subscriptions-for-a-product"></a>Assinaturas para um produto
 
-Tradicionalmente, as assinaturas no Gerenciamento de API sempre foram associadas a um único escopo do [produto da API](api-management-terminology.md). Os desenvolvedores podem encontrar a lista de produtos no Portal do Desenvolvedor. Dessa forma, eles podem enviar solicitações de assinatura para os produtos que desejam usar. Após a solicitação de assinatura ser aprovada, automaticamente ou pelos editores de API, o desenvolvedor poderá usar as chaves contidas na assinatura para acessar todas as APIs no produto.
+Tradicionalmente, as assinaturas no Gerenciamento de API sempre foram associadas a um único escopo do [produto da API](api-management-terminology.md). Os desenvolvedores podem encontrar a lista de produtos no Portal do Desenvolvedor. Dessa forma, eles podem enviar solicitações de assinatura para os produtos que desejam usar. Depois que uma solicitação de assinatura é aprovada automaticamente ou pelos editores de API, o desenvolvedor pode usar as chaves nele para acessar todas as APIs no produto. No momento, o portal do desenvolvedor mostra apenas as assinaturas de escopo do produto na seção de perfil do usuário. 
 
 ![Assinaturas de produto](./media/api-management-subscriptions/product-subscription.png)
 

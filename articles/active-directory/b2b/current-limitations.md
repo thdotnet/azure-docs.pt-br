@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 05/23/2017
+ms.date: 05/29/2019
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d4aae8eb29b9e90bd1cb84949e97e21ed68c04c
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: d1466614dfeb8fa4d3d095bae070d01c6503c5bb
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65812778"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357235"
 ---
 # <a name="limitations-of-azure-ad-b2b-collaboration"></a>Limitações da colaboração B2B do Azure AD
 A colaboração B2B do Azure Active Directory (Azure AD) está sujeita, atualmente, às limitações descritas neste artigo.
@@ -29,6 +29,9 @@ Nos fluxos de colaboração B2B, adicionamos usuários ao diretório e os atuali
 
 ## <a name="azure-ad-directories"></a>Diretórios do AD do Azure
 O Azure AD B2B está sujeito aos limites de diretório de serviço do Azure AD. Para obter detalhes sobre o número de diretórios que um usuário pode criar e o número de diretórios aos quais um usuário ou usuário convidado pode pertencer, consulte [Limites e restrições do serviço do Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-service-limits-restrictions).
+
+## <a name="national-clouds"></a>Nuvens nacionais
+[Nuvens nacionais](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud) são instâncias isoladas fisicamente do Azure. Não há suporte para colaboração B2B entre limites de nuvem nacional. Por exemplo, se seu locatário do Azure está na nuvem pública, global, você não pode convidar um usuário cuja conta esteja em uma nuvem nacional. Para colaborar com o usuário, peça para outro endereço de email ou criar uma conta de usuário do membro para eles no seu diretório.
 
 ## <a name="next-steps"></a>Próximas etapas
 

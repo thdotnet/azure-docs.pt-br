@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 05/15/2019
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: 8cee74696d9636a8ac1d6fcbab493f18184355e1
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: cb586be1a139b331c259a1197cc62e7ca4f25666
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65787644"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66238383"
 ---
 <a name="virtual-networking-limits-classic"></a>Os limites a seguir aplicam-se apenas recursos gerenciados por meio de rede a **clássico** modelo de implantação por assinatura. Saiba como [exibir seu uso de recursos atual em relação a seus limites de assinatura](../articles/networking/check-usage-against-limits.md).
 
 | Resource | Limite padrão | Limite máximo |
 | --- | --- | --- |
-| Redes Virtuais |50 |100 |
+| Redes virtuais |50 |100 |
 | Sites de redes locais |20 |Entre em contato com o suporte. |
 | Servidores DNS por rede virtual |20 |20 |
 | Endereços IP privados por rede virtual |4.096 |4.096 |
@@ -28,9 +28,9 @@ ms.locfileid: "65787644"
 | Regras de NSG por NSG |1.000 |1.000 |
 | Tabelas de rotas definidas pelo usuário |200 |200 |
 | Rotas definidas pelo usuário por tabela de rotas |400 |400 |
-| Endereços IP públicos (dinâmicos) |5 |Contatar o suporte |
-| Endereços IP públicos reservados |20 |Contatar o suporte |
-| VIP público por implantação |5 |Contatar o suporte |
+| Endereços IP públicos (dinâmicos) |5 |Contate o suporte |
+| Endereços IP públicos reservados |20 |Contate o suporte |
+| VIP público por implantação |5 |Contate o suporte |
 | VIP privado (balanceamento de carga interno) por implantação |1 |1 |
 | Listas de controle de acesso do ponto de extremidade (ACLs) |50 |50 |
 
@@ -42,7 +42,7 @@ Os limites a seguir aplicam-se apenas recursos gerenciados por meio de rede **do
 
 | Resource | Limite máximo/padrão | 
 | --- | --- |
-| Redes Virtuais |1.000 |
+| Redes virtuais |1.000 |
 | Sub-redes por rede virtual |3.000 |
 | Emparelhamentos de rede virtual por rede virtual |500 |
 | Servidores DNS por rede virtual |20 |
@@ -70,7 +70,7 @@ Os limites a seguir aplicam-se apenas recursos gerenciados por meio de rede **do
 | Endereços IP públicos - dinâmicos | 1.000 para Basic. |Entre em contato com o suporte. |
 | Endereços IP públicos - estáticos | 1.000 para Basic. |Entre em contato com o suporte. |
 | Endereços IP públicos - estáticos | 200 para Standard.|Entre em contato com o suporte. |
-| Tamanho de prefixo IP público (visualização) | / 28 | Entre em contato com o suporte. |
+| Tamanho de prefixo IP público | / 28 | Entre em contato com o suporte. |
 
 #### <a name="load-balancer"></a>Limites do balanceador de carga
 Os limites a seguir aplicam-se apenas a recursos de rede gerenciados pelo Azure Resource Manager por região e assinatura. Saiba como [exibir seu uso de recursos atual em relação a seus limites de assinatura](../articles/networking/check-usage-against-limits.md).

@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: mobile-ios
 ms.devlang: objective-c
 ms.topic: conceptual
-ms.date: 08/17/2018
+ms.date: 05/09/2019
 ms.author: crdun
-ms.openlocfilehash: d0d6a3d9da2768c2d7b04bd9c4a7c24fba9eb65e
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 60190e0f8441d52b3d753e1dc79c67f480434dbb
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62129001"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240280"
 ---
 # <a name="create-an-ios-app"></a>Criar um aplicativo do iOS
 
@@ -31,15 +31,14 @@ Este tutorial mostra como adicionar os [Aplicativos Móveis do Serviço de Aplic
 
 Para concluir este tutorial, você precisa de um Mac e [uma conta do Azure](https://azure.microsoft.com/pricing/free-trial/)
 
-## <a name="step-i-create-a-new-azure-mobile-app-backend"></a>Etapa i: Criar um novo back-end de aplicativo móvel do Azure
+## <a name="create-a-new-azure-mobile-app-backend"></a>Criar um novo back-end de aplicativo móvel do Azure
 
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-## <a name="step-ii-configure-the-backend-project"></a>Etapa II: Configurar o projeto de back-end
-
+## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Criar uma conexão de banco de dados e configurar o projeto de cliente e servidor
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## <a name="step-iii-download-and-run-the-ios-app"></a>Etapa III: Baixe e execute o aplicativo iOS
+## <a name="run-the-ios-app"></a>Executar o aplicativo iOS
 
 [!INCLUDE [app-service-mobile-ios-run-app](../../includes/app-service-mobile-ios-run-app.md)]
 

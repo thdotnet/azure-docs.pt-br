@@ -12,14 +12,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 05/23/2019
 ms.author: lahugh
-ms.openlocfilehash: e6bb947503371e379e4d4972ddfc3614e129174b
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 183e2144317bf3f1c9a60443d393bdcb3fd7c04a
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65835204"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390556"
 ---
 # <a name="generation-2-vms-preview-on-azure"></a>VMs da geração 2 (versão prévia) no Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "65835204"
 
 Suporte para máquinas virtuais de geração 2 (VMs) agora está disponível em visualização pública no Azure. Você não pode alterar a geração de uma máquina virtual depois que você criou. Portanto, é recomendável que você examine as considerações [aqui](https://docs.microsoft.com/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v) , bem como as informações nesta página antes de escolher uma geração.
 
-Recursos principais de suporte de VMs geração 2, como: maior memória, Intel® Software Guard extensões (SGX) e a memória virtual persistente (vPMEM), que não têm suporte em VMs de geração 1. VMs de geração 2 têm alguns recursos que ainda não têm suporte no Azure. Para obter mais informações, consulte o [recursos e funcionalidades](#features-and-capabilities) seção. 
+Geração 2 VMs suporte principais recursos que não têm suporte em VMs de geração 1, tais como: maior memória, a Intel® Software Guard extensões (SGX) e a memória virtual persistente (vPMEM). VMs de geração 2 também têm alguns recursos que ainda não têm suporte no Azure. Para obter mais informações, consulte o [recursos e funcionalidades](#features-and-capabilities) seção.
 
 VMs da geração 2 usam os novo vs de arquitetura de inicialização com base em UEFI a arquitetura com base em BIOS usada pelas VMs de geração 1. Em comparação com VMs de geração 1, máquinas virtuais de 2ª geração podem ter um melhor tempos de inicialização e instalação. Para obter uma visão geral das VMs da geração 2 e algumas das principais diferenças entre a geração 1 e geração 2, consulte [devo criar uma máquina virtual de geração 1 ou 2 no Hyper-V?](https://docs.microsoft.com/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
 
@@ -84,7 +84,7 @@ Alguns dos recursos que on-premises Hyper-V dá suporte para VMs da geração 2 
 | Sistema operacional de troca/de imagem de disco personalizada         | :heavy_check_mark:         | :heavy_check_mark: |
 | Suporte do conjunto de dimensionamento de máquina virtual | :heavy_check_mark:         | :heavy_check_mark: |
 | ASR/Backup                        | :heavy_check_mark:         | :x:                |
-| Galeria de Imagens Compartilhadas              | :heavy_check_mark:         | :x:                |
+| Galeria de imagens compartilhadas              | :heavy_check_mark:         | :x:                |
 | Azure Disk Encryption             | :heavy_check_mark:         | :x:                |
 
 ## <a name="creating-a-generation-2-vm"></a>Criação de uma geração 2 VM
@@ -113,6 +113,29 @@ Geração 2 VMs podem ser criadas de imagem gerenciada ou o disco gerenciado da 
 Geração que 2 VMs também podem ser criadas usando conjuntos de dimensionamento de máquina virtual. Você pode criar a geração 2 VMs usando conjuntos de dimensionamento de máquina virtual do Azure por meio da CLI do Azure.
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
+
+* **São a geração 2 VMs disponíveis em todas as regiões do Azure?**  
+    Sim; No entanto, nem todos os [tamanhos de VM de geração 2](#generation-2-vm-sizes) estão disponíveis em todas as regiões. A disponibilidade de geração 2 VMs depende a disponibilidade de tamanho da VM.
+
+* **Há uma diferença de preço entre a geração 1 e geração 2 VMs?**  
+    Não há nenhuma diferença de preços entre as VMs de geração 1 e geração 2.
+
+* **Como posso aumentar o tamanho do disco do sistema operacional?**  
+  Discos do sistema operacional maiores que 2 TB são novos para a geração 2 VMs. Por padrão, a maioria dos discos do sistema operacional são menos de 2 TB para VMs da geração 2, mas o tamanho do disco pode ser aumentado para um máximo recomendado de 4 TB. Você pode aumentar o tamanho do disco do sistema operacional por meio da CLI do Azure ou o portal do Azure. Para obter mais informações sobre como expandir discos de forma programática, consulte [redimensionar o disco](expand-disks.md).
+
+  Para aumentar o tamanho do disco do sistema operacional por meio do portal do Azure:
+
+  * Navegue até a página de propriedades VM no portal do Azure.
+
+  * Desligar e desalocar a VM usando o **parar** botão.
+
+  * No **discos** , selecione o disco do sistema operacional que você deseja aumentar.
+
+  * Selecione **configuração** na **discos** seção e atualize o **tamanho** para o valor desejado.
+  
+  * Navegue de volta para a página de propriedades da VM e **iniciar** a VM.
+
+  Você pode ver um aviso para discos do sistema operacional maiores que 2 TB. O aviso não se aplica às VMs de geração 2; No entanto, os tamanhos de disco do sistema operacional maiores que 4 TB são **não recomendável.**
 
 * **VMs de geração 2 têm suporte para a rede acelerada?**  
     Sim, o suporte a VMs geração 2 [rede acelerada](../../virtual-network/create-vm-accelerated-networking-cli.md).

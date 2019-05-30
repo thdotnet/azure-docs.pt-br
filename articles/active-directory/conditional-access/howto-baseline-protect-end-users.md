@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35cd52fb82e5e4cce759be5dfdd8872f64802459
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 104665774eee885cc2f562e9813cffcf23aa943e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66003155"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235498"
 ---
 # <a name="baseline-policy-end-user-protection-preview"></a>Política de linha de base: Proteção do usuário final (visualização)
 
@@ -75,11 +75,11 @@ Essa política de linha de base fornece a opção de excluir usuários. Antes de
 
 A política **política de linha de base: Proteção do usuário final (versão prévia)** vem pré-configurada e aparecerá na parte superior quando você navega até a folha de acesso condicional no portal do Azure.
 
-Para habilitar essa política e proteger seus administradores:
+Para habilitar essa política e proteger os usuários:
 
 1. Entrar para o **portal do Azure** como administrador global, administrador de segurança ou administrador de acesso condicional.
 1. Navegue até **do Azure Active Directory** > **acesso condicional**.
-1. Na lista de políticas, selecione **política de linha de base: Proteção do usuário final (versão prévia)**.
+1. Na lista de políticas, selecione **política de linha de base: Proteção do usuário final (versão prévia)** .
 1. Definir **habilitar política** à **usar a política imediatamente**.
 1. Adicionar exclusões usuário clicando em **os usuários** > **selecionar usuários excluídos** e escolhendo os usuários que precisam ser excluídas. Clique em **selecionar** , em seguida, **feito**.
 1. Clique em **salvar**.

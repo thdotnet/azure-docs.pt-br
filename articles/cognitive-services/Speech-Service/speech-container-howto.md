@@ -10,23 +10,23 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: diberry
-ms.openlocfilehash: b620cbb8e51fbe41defb6bdbdc66ba4a7e539aa0
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 7a4153dd382a901db21752dd3d55a01803431791
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306550"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388680"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Instalar e executar contêineres do serviço de fala
 
-Contêineres de fala permitem que os clientes criar uma arquitetura de aplicativos de fala que é otimizada para tirar proveito dos recursos de nuvem robusto e localidade de borda. Os contêineres de dois fala damos suporte agora estão **fala em texto** e **texto em fala**. 
+Contêineres de fala permitem que os clientes criar uma arquitetura de aplicativos de fala que é otimizada para tirar proveito dos recursos de nuvem robusto e localidade de borda. 
 
 São os contêineres de duas fala **fala em texto** e **texto em fala**. 
 
 |Função|Recursos|Mais recente|
 |-|-|--|
-|Conversão de fala em texto| <li>Transcreve fala em tempo real contínua em texto.<li>Pode transcrever em lotes fala de gravações de áudio. <li>Dá suporte a resultados intermediários, detecção de final de fala, formatação automática de texto e mascaramento de conteúdo ofensivo. <li>Pode chamar [LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/) (Reconhecimento vocal) para avaliar a intenção do usuário a partir da fala transcrita.\*|1.1.1|
-|Conversão de texto em fala| <li>Converte o texto em fala que soa natural. <li>Oferece vários gêneros e/ou dialetos para muitos idiomas com suporte. <li>Dá suporte à entrada de texto sem formatação ou a SSML (Speech Synthesis Markup Language). |1.1.0|
+|Conversão de fala em texto| <li>Transcreve contínua em tempo real de fala ou lote gravações de áudio em texto com os resultados intermediários.|1.1.1|
+|Conversão de texto em fala| <li>Converte o texto em fala que soa natural. com a entrada de texto sem formatação ou Speech Synthesis Markup Language (SSML). |1.1.0|
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
@@ -64,7 +64,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 A tabela a seguir descreve os núcleos de CPU e memória para alocar para cada contêiner fala mínimos e recomendados.
 
-| Contêiner | Mínimo | Recomendado |
+| Contêiner | Mínimo | Recomendadas |
 |-----------|---------|-------------|
 |cognitive-services-speech-to-text | Dois núcleos<br>2 GB de memória  | Quatro núcleos<br>4 GB de memória  |
 |cognitive-services-text-to-speech | 1 núcleo, 0,5 GB de memória| 2 núcleos, 1 GB de memória |
@@ -180,7 +180,7 @@ Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/
 
 **Durante a visualização**, as configurações de cobrança devem ser válidas para iniciar o contêiner, mas você não cobrado pelo uso.
 
-| Espaço reservado | Value |
+| Placeholder | Value |
 |-------------|-------|
 |{BILLING_KEY} | Essa chave é usada para iniciar o contêiner e está disponível na página de chaves de fala do portal do Azure.  |
 |{BILLING_ENDPOINT_URI} | O valor do URI de ponto de extremidade cobrança está disponível na página de visão geral de fala do portal do Azure.|

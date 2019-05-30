@@ -4,14 +4,14 @@ description: Saiba como definir a taxa de transferência provisionada para os co
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 05/28/2019
 ms.author: rimman
-ms.openlocfilehash: 598a1562127a67c78f67cdd02b00d83d4a606739
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: f30155c0fbdbdd93ab4ffc3ae85ef2ad62b188c9
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65953550"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389243"
 ---
 # <a name="provision-throughput-on-containers-and-databases"></a>Aprovisionar a taxa de transferência para contêineres e bancos de dados
 
@@ -71,8 +71,7 @@ A imagem a seguir mostra como uma partição física pode hospedar uma ou mais p
 É possível combinar os dois modelos. É permitido provisionar a taxa de transferência tanto no banco de dados como no contêiner. O exemplo a seguir mostra como provisionar a taxa de transferência em um banco de dados do Azure Cosmos e em um contêiner:
 
 * Você pode criar um banco de dados Cosmos do Azure denominado *Z* com produtividade provisionada da *"K"* RUs. 
-* Em seguida, cria cinco contêineres nomeados *um*, *B*, *C*, *1!d*, e *E* no banco de dados.
-* Você pode configurar explicitamente *"P"* RUs da produtividade provisionada no contêiner chamado *B*.
+* Em seguida, cria cinco contêineres nomeados *um*, *B*, *C*, *1!d*, e *E* no banco de dados. Ao criar o contêiner B, verifique se você habilitou **taxa de transferência dedicada para esse contêiner provisionar** opção e configurar explicitamente *"P"* RUs da produtividade provisionada neste contêiner. Observe que você pode configurar a taxa de transferência compartilhada e dedicada somente ao criar o banco de dados e o contêiner. 
 * O *"K"* RUs taxa de transferência é compartilhada entre os contêineres de quatro *um*, *C*, *1!d*, e *E*. A quantidade exata produtividade disponível para *um*, *C*, *1!d*, ou *E* varia de acordo. Não há SLAs para taxa de transferência de cada contêiner individual.
 * O contêiner nomeado *B* é garantia de obter o *"P"* taxa de transferência de RUs o tempo todo. É respaldado por SLAs.
 

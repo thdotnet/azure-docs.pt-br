@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/03/2018
 ms.author: cephalin;dariagrigoriu
 ms.custom: seodec18
-ms.openlocfilehash: fcb2c270b36d5efbe7b799787cf2a123b51bea5c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 384f709bb32f973efec39518eaa895e25136fe23
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60765543"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390646"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Implantação contínua no Serviço de Aplicativo do Azure
 Este artigo mostra como configurar a implantação contínua para o [Serviço de Aplicativo do Azure](overview.md). O Serviço de Aplicativo habilita a implantação contínua do BitBucket, do GitHub e do [Azure DevOps Services](https://www.visualstudio.com/team-services/) extraindo as atualizações mais recentes do seu repositório existente em um desses serviços.
@@ -130,7 +130,7 @@ Na página **Configurar**, na seção **Build**, especifique a estrutura de ling
 
 Na página **Teste**, escolha se deseja habilitar testes de carga. Em seguida, clique em **Continuar**.
 
-Dependendo do [tipo de preço](https://azure.microsoft.com/pricing/details/app-service/plans/) do seu plano do Serviço de Aplicativo, talvez você possa ver uma página **Implantar no preparo**. Escolha se deseja [habilitar slots de implantação](deploy-staging-slots.md) e clique em **Continuar**. 
+Dependendo do [tipo de preço](https://azure.microsoft.com/pricing/details/app-service/plans/) do seu plano do Serviço de Aplicativo, talvez você possa ver uma página **Implantar no preparo**. Escolha se deseja [habilitar slots de implantação](deploy-staging-slots.md) e clique em **Continuar**. DevOps não permite a entrega contínua para o slot de produção. Isso ocorre por design para evitar que implantações acidentais para produção. Você deve configurar entrega contínua para um slot de preparo, verifique se as alterações lá e trocar os slots quando estiver pronto.
 
 ### <a name="finish-configuration"></a>Concluir configuração
 

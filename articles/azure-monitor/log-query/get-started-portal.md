@@ -8,12 +8,12 @@ ms.service: log-analytics
 ms.topic: conceptual
 ms.date: 08/20/2018
 ms.author: bwren
-ms.openlocfilehash: ec6f3884504c94b7669df21882aeb2a1eb9d7220
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: af01ebdc72df096b45c4ca4e755b2ed3880bab65
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60520849"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255273"
 ---
 # <a name="get-started-with-azure-monitor-log-analytics"></a>Introdução ao Log Analytics do Azure Monitor
 
@@ -46,7 +46,7 @@ Event | search "error"
 
 Essa consulta pesquisa a tabela _Evento_ em busca de registros que contenham o termo "erro" em qualquer propriedade.
 
-Consultas podem começar com um nome de tabela ou um **pesquisa** comando. O exemplo acima começa com o nome da tabela _Evento_, que define o escopo da consulta. O caractere de barra vertical (|) separa os comandos, portanto, a saída da primeira na entrada do comando a seguir. Você pode adicionar qualquer número de comandos para uma única consulta.
+Consultas podem começar com um nome de tabela ou um **pesquisa** comando. O exemplo acima começa com o nome da tabela _Evento_, que define o escopo da consulta. O caractere de barra vertical (|) separa os comandos, portanto, a saída da primeira serve como a entrada do comando a seguir. Você pode adicionar qualquer número de comandos para uma única consulta.
 
 Outra maneira de escrever essa mesma consulta seria:
 

@@ -3,19 +3,19 @@ title: API de texto do tradutor V2.0
 titleSuffix: Azure Cognitive Services
 description: Documentação de referência para a API de texto do tradutor V2.0.
 services: cognitive-services
-author: v-pawal
+author: rajdeep-in
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 05/15/2018
-ms.author: v-jansko
-ms.openlocfilehash: 961dd277034db7e5406e671233f26b4fd8fe5f26
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: v-pawal
+ms.openlocfilehash: d2ff61908d7901fc464b58ee1ef9b5605b3026a3
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61467149"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389840"
 ---
 # <a name="translator-text-api-v20"></a>API de Tradução de Texto v2.0
 
@@ -28,11 +28,18 @@ A Translator Text API V2 pode ser perfeitamente integrada em seus aplicativos, s
 Para acessar a API de texto do tradutor, você precisará [se inscrever no Microsoft Azure](../translator-text-how-to-signup.md).
 
 ## <a name="authorization"></a>Autorização
-Todas as chamadas para a API de texto do tradutor exigem uma chave de assinatura para autenticar. A API é compatível com dois modos de autenticação:
+Todas as chamadas para a API de texto do tradutor exigem uma chave de assinatura para autenticar. A API dá suporte a três modos de autenticação:
 
-* Usando um token de acesso. Use a chave de assinatura mencionada na **etapa** 9 para gerar um token de acesso fazendo uma solicitação POST para o serviço de autorização. Veja a documentação do serviço de token para obter detalhes. Passe o token de acesso para o serviço do Tradutor usando o cabeçalho de Autorização ou o parâmetro de consulta access_token. O token de acesso é válido por 10 minutos. Obtenha um novo token de acesso a cada 10 minutos e continue usando o mesmo token de acesso para solicitações repetidas dentro desses 10 minutos.
+- Um token de acesso. Use a chave de assinatura mencionada na **etapa** 9 para gerar um token de acesso fazendo uma solicitação POST para o serviço de autorização. Veja a documentação do serviço de token para obter detalhes. Passar o token de acesso para o serviço de tradução usando o cabeçalho de autorização ou o `access_token` parâmetro de consulta. O token de acesso é válido por 10 minutos. Obter um novo token de acesso a cada 10 minutos e manter o usando o mesmo acesso token para solicitações repetidas durante essas 10 minutos.
+- Uma chave de assinatura diretamente. Passe sua chave de assinatura como um valor no `Ocp-Apim-Subscription-Key` cabeçalho incluído com sua solicitação para a API de tradução. Nesse modo, você não precisa chamar o serviço de token de autenticação para gerar um token de acesso.
+- Um [assinatura de vários serviço de serviços Cognitivos](https://azure.microsoft.com/pricing/details/cognitive-services/). Esse modo permite que você use uma única chave secreta para autenticar solicitações para vários serviços. <br/>
+Quando você usa uma chave secreta vários serviço, você deve incluir dois cabeçalhos de autenticação com sua solicitação. O cabeçalho da primeira passa a chave secreta. O segundo cabeçalho Especifica a região associada à sua assinatura:
+   - `Ocp-Apim-Subscription-Key`
+   - `Ocp-Apim-Subscription-Region`
 
-* Usando uma chave de assinatura diretamente. Passe sua chave de assinatura como um valor no cabeçalho `Ocp-Apim-Subscription-Key` incluído com a sua solicitação à API do Tradutor. Nesse modo, você não precisa chamar o serviço de token de autenticação para gerar um token de acesso.
+A região é necessária para a assinatura de API de texto dos vários serviço. A região selecionada é a região que você pode usar para a tradução de texto ao usar a chave de assinatura de vários serviços, e deve ser a mesma região que você selecionou quando você se inscreveu para sua assinatura de vários serviço por meio do portal do Azure.
+
+As regiões disponíveis são `australiaeast`, `brazilsouth`, `canadacentral`, `centralindia`, `centraluseuap`, `eastasia`, `eastus`, `eastus2`, `japaneast`, `northeurope`, `southcentralus`, `southeastasia`, `uksouth`, `westcentralus`, `westeurope`, `westus`, e `westus2`.
 
 Considere a sua chave de assinatura e o token de acesso como segredos que devem ficar ocultos da exibição.
 
@@ -80,7 +87,7 @@ Tipo de Conteúdo da Resposta: aplicativo/xml
 |:--|:--|:--|:--|:--|
 |appid  |(vazio)    |Obrigatório. Se o cabeçalho Autorização ou Ocp-Apim-Subscription-Key for usado, deixe o campo appid vazio ou inclua uma cadeia de caracteres contendo "Bearer" + " " + "access_token".|query|string|
 |text|(vazio)   |Obrigatório. Uma cadeia de caracteres que representa o texto a ser traduzido. O tamanho do texto não deve exceder dez mil caracteres.|query|string|
-|de|(vazio)   |Opcional. Uma cadeia de caracteres representando o código de idioma do texto da tradução. Por exemplo, en para inglês.|query|string|
+|from|(vazio)   |Opcional. Uma cadeia de caracteres representando o código de idioma do texto da tradução. Por exemplo, en para inglês.|query|string|
 |para|(vazio) |Obrigatório. Uma cadeia de caracteres representando o código de idioma para o qual traduzir o texto.|query|string|
 |contentType|(vazio)    |Opcional. O formato do texto que está sendo traduzido. Os formatos compatíveis são text/plain (padrão) e text/html. Qualquer HTML precisa ser um elemento bem formado e completo.|query|string|
 |category|(vazio)   |Opcional. Uma cadeia de caracteres contendo a categoria (domínio) da tradução. Usa geral como padrão.|query|string|
@@ -132,7 +139,7 @@ Elementos dentro de `TranslateArrayRequest` são:
 * `appid`: Obrigatório. Se o cabeçalho `Authorization` ou `Ocp-Apim-Subscription-Key` for usado, deixe o campo appid vazio ou inclua uma cadeia de caracteres contendo `"Bearer" + " " + "access_token"`.
 * `from`: Opcional. Uma cadeia de caracteres representando o código de idioma do qual traduzir o texto. Se deixados em branco, a resposta incluirá o resultado da detecção automática de idioma.
 * `options`: Opcional. Um objeto `Options` que contém os valores listados abaixo. Eles são todos opcionais e usam como padrão as configurações mais comuns. Os elementos especificado devem estar listados em ordem alfabética.
-    - `Category`: Uma cadeia de caracteres contendo a categoria (domínio) da tradução. Usa `general` como padrão.
+    - `Category`: Uma cadeia de caracteres contendo a categoria (domínio) da tradução. Assume o padrão de `general`.
     - `ContentType`: O formato do texto que está sendo traduzido. Os formatos compatíveis são `text/plain` (padrão), `text/xml` e `text/html`. Qualquer HTML precisa ser um elemento bem formado e completo.
     - `ProfanityAction`: Especifica como vulgaridades serão tratadas, conforme explicado acima. Valores aceitos de `ProfanityAction` são `NoAction` (padrão), `Marked` e `Deleted`.
     - `State`: O estado do usuário para ajudar a correlacionar solicitação e resposta. Os mesmos conteúdos serão retornados na resposta.
@@ -325,7 +332,7 @@ Tipo de Conteúdo da Resposta: aplicativo/xml
 |:--|:--|:--|:--|:--|
 |appid|(vazio)|Obrigatório. Se o cabeçalho `Authorization` ou `Ocp-Apim-Subscription-Key` for usado, deixe o campo appid vazio ou inclua uma cadeia de caracteres contendo `"Bearer" + " " + "access_token"`.|query|string|
 |text|(vazio)   |Obrigatório. Uma cadeia de caracteres contendo uma ou mais frases do idioma especificado a ser falada para o fluxo de wave. O tamanho do texto para falar não deve exceder dois mil caracteres.|query|string|
-|Linguagem|(vazio)   |Obrigatório. Uma cadeia de caracteres representando o código de idioma compatível no qual falar o texto. O código deve estar presente na lista de códigos retornados do método `GetLanguagesForSpeak`.|query|string|
+|language|(vazio)   |Obrigatório. Uma cadeia de caracteres representando o código de idioma compatível no qual falar o texto. O código deve estar presente na lista de códigos retornados do método `GetLanguagesForSpeak`.|query|string|
 |formato|(vazio)|Opcional. Uma cadeia de caracteres especificando a ID do tipo de conteúdo. Atualmente, `audio/wav` e `audio/mp3` estão disponíveis. O valor padrão é `audio/wav`.|query|string|
 |options|(vazio)    |<ul><li>Opcional. Uma cadeia de caracteres especificando propriedades da fala sintetizada:<li>`MaxQuality` e `MinSize` estão disponíveis para especificar a qualidade dos sinais de áudio. Com `MaxQuality`, você pode obter as vozes com a qualidade mais alta e, com `MinSize`, você pode obter as vozes com o menor tamanho. O padrão é `MinSize`.</li><li>`female` e `male` estão disponíveis para especificar o gênero desejado da voz. O padrão é `female`. Use a barra vertical <code>\|</code> para incluir várias opções. Por exemplo `MaxQuality|Male`.</li></li></ul> |query|string|
 |Autorização|(vazio)|Obrigatório se o campo `appid` ou o cabeçalho `Ocp-Apim-Subscription-Key` não for especificado. Token de autorização: `"Bearer" + " " + "access_token"`.|cabeçalho|string|
@@ -451,7 +458,7 @@ Tipo de Conteúdo da Resposta: aplicativo: xml
 |appid|(vazio)|Obrigatório. Se o cabeçalho `Authorization` ou `Ocp-Apim-Subscription-Key` for usado, deixe o campo appid vazio ou inclua uma cadeia de caracteres contendo `"Bearer" + " " + "access_token"`.|query|string|
 |originalText|(vazio)|Obrigatório. Uma cadeia de caracteres contendo o texto a traduzir. A cadeia de caracteres tem um tamanho máximo de mil caracteres.|query|string|
 |translatedText|(vazio) |Obrigatório. Uma cadeia de caracteres contendo o texto traduzido no idioma de destino. A cadeia de caracteres tem um tamanho máximo de dois mil caracteres.|query|string|
-|de|(vazio)   |Obrigatório. Uma cadeia de caracteres representando o código de idioma do texto da tradução. en = inglês, de = alemão, etc...|query|string|
+|from|(vazio)   |Obrigatório. Uma cadeia de caracteres representando o código de idioma do texto da tradução. en = inglês, de = alemão, etc...|query|string|
 |para|(vazio)|Obrigatório. Uma cadeia de caracteres representando o código de idioma para o qual traduzir o texto.|query|string|
 |classificação|(vazio) |Opcional. Um inteiro representando a classificação de qualidade para essa cadeia de caracteres. Valor entre -10 e 10. O valor padrão é 1.|query|inteiro|
 |contentType|(vazio)    |Opcional. O formato do texto que está sendo traduzido. Os formatos compatíveis são "text/plain" e "text/html". Qualquer HTML precisa ser um elemento bem formado e completo.   |query|string|
@@ -560,7 +567,7 @@ Tipo de Conteúdo da Resposta: aplicativo/xml
 |:--|:--|:--|:--|:--|
 |appid|(vazio)  |Obrigatório. Se o cabeçalho Autorização ou Ocp-Apim-Subscription-Key for usado, deixe o campo appid vazio ou inclua uma cadeia de caracteres contendo "Bearer" + " " + "access_token".|query| string|
 |text|(vazio)   |Obrigatório. Uma cadeia de caracteres representando o texto a ser dividido em frases. O tamanho do texto não deve exceder dez mil caracteres.|query|string|
-|Linguagem   |(vazio)    |Obrigatório. Uma cadeia de caracteres representando o código de idioma do texto de entrada.|query|string|
+|language   |(vazio)    |Obrigatório. Uma cadeia de caracteres representando o código de idioma do texto de entrada.|query|string|
 |Autorização|(vazio)|Necessário se o campo de appid ou cabeçalho Ocp-Apim-Subscription-Key não for especificado. Token de autorização:  "Bearer" + " " + "access_token".    |cabeçalho|string|
 |Ocp-Apim-Subscription-Key|(vazio)|Obrigatório se o campo de appid ou cabeçalho de Autorização não for especificado.|cabeçalho|string|
 
@@ -654,7 +661,7 @@ Tipo de Conteúdo da Resposta: aplicativo/xml
 |:--|:--|:--|:--|:--|
 |appid|(vazio)|Obrigatório. Se o cabeçalho `Authorization` ou `Ocp-Apim-Subscription-Key` for usado, deixe o campo appid vazio ou inclua uma cadeia de caracteres contendo `"Bearer" + " " + "access_token"`.|query|string|
 |text|(vazio)|Obrigatório. Uma cadeia de caracteres que representa o texto a ser traduzido. O tamanho do texto não deve exceder dez mil caracteres.|query|string|
-|de|(vazio)|Obrigatório. Uma cadeia de caracteres representando o código de idioma do texto da tradução.|query|string|
+|from|(vazio)|Obrigatório. Uma cadeia de caracteres representando o código de idioma do texto da tradução.|query|string|
 |para |(vazio)    |Obrigatório. Uma cadeia de caracteres representando o código de idioma para o qual traduzir o texto.|query|string|
 |maxTranslations|(vazio)|Obrigatório. Um inteiro que representa o número máximo de traduções a retornar.|query|inteiro|
 |Autorização| (vazio)|Obrigatório se o campo `appid` ou o cabeçalho `Ocp-Apim-Subscription-Key` não for especificado. Token de autorização: `"Bearer" + " " + "access_token"`.|string| cabeçalho|

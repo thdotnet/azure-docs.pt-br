@@ -16,12 +16,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1d8c8fcf84cd008957fcdb7cd14c4a07d9f3643
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 59af4e20c7fe838f7c725b47e45968941fa85cb7
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65074899"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254065"
 ---
 # <a name="protected-web-api---app-registration"></a>API - registro do aplicativo web protegida
 
@@ -33,8 +33,8 @@ Confira [Início Rápido: Registrar um aplicativo com a plataforma de identidade
 
 O ponto de extremidade de plataforma de identidade do Microsoft pode emitir a dois tipos de tokens: tokens da v1.0 e v2.0 tokens. Você pode aprender mais sobre esses tokens em [tokens de acesso](access-tokens.md). A versão de token aceita depende de **suporte para tipos de conta** você escolheu ao criar seu aplicativo:
 
-- Se o valor de **suporte para tipos de conta** é **contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, o Skype, Xbox, Outlook.com)**, a versão do token aceito será v 2.0.
-- Caso contrário, a versão de token aceita será v 2.0.
+- Se o valor de **suporte para tipos de conta** é **contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, o Skype, Xbox, Outlook.com)** , a versão do token aceito será v 2.0.
+- Caso contrário, a versão de token aceita será v1.0.
 
 Depois de criar o aplicativo, você pode alterar a versão de token aceita seguindo estas etapas:
 

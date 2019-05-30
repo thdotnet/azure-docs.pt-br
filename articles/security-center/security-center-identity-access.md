@@ -14,15 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: 7cb8d494d32f2a9c192418bfab2d5ca9b679c5fe
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 5517bb59d168ffa8d9339d9e765c385cef6db4ce
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60704859"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389485"
 ---
 # <a name="monitor-identity-and-access-in-azure-security-center-preview"></a>Monitore a identidade e o acesso na Central de Segurança do Azure (Visualizar)
 Este artigo ajuda você a usar a Central de Segurança do Azure para monitorar a identidade e a atividade de acesso do usuário.
+
+> [!NOTE]
+> O "modo de exibição *clássico* identidade e acesso" link será desativado em 31 de julho de 2019. Clique em [aqui](security-center-features-retirement-july2019.md#menu_classicidentity) para saber mais sobre serviços alternativos.
 
 > [!NOTE]
 > O monitoramento de identidade e acesso está em pré-visualização e disponível apenas na camada Padrão da Central de Segurança. Confira os [Preços](security-center-pricing.md) para saber mais sobre os tipos de preço da Central de Segurança.
@@ -115,8 +118,8 @@ Use a tabela abaixo como referência para ajudá-lo a entender as recomendaçõe
 |Assinatura|30|Remova contas externas com permissões de proprietário da sua assinatura|Remova contas externas com permissões de proprietário da sua assinatura para impedir o acesso não monitorado. |
 |Assinatura|30|Habilitar a MFA para contas de Aplicativos de Gerenciamento do Microsoft Azure com permissões de leitura em sua assinatura|Habilite a MFA (Autenticação Multifator) para todas as contas de assinatura com privilégios de leitura para evitar uma violação de conta ou recursos.|
 |Assinatura|25|Remova contas externas com permissões de gravação da sua assinatura|Remova contas externas com permissões de gravação da sua assinatura para impedir o acesso não monitorado. |
-|Assinatura|20|Remover contas preteridas com permissões de proprietário da sua assinatura|Remova contas preteridas com permissões de proprietário das suas assinaturas.|
-|Assinatura|5|Remover contas preteridas da sua assinatura|Remova contas preteridas de suas assinaturas para habilitar o acesso a apenas usuários atuais. |
+|Assinatura|20|Remover contas preteridas com permissões de proprietário da sua assinatura|Remova contas preteridas com permissões de proprietário das suas assinaturas. Contas preteridas são as contas para o qual entrar foi bloqueado no Azure AD.|
+|Assinatura|5|Remover contas preteridas da sua assinatura|Remova contas preteridas de suas assinaturas para habilitar o acesso a apenas usuários atuais. Contas preteridas são as contas para o qual entrar foi bloqueado no Azure AD.|
 |Assinatura|5|Designe mais de um proprietário na sua assinatura|Designe mais de um proprietário da assinatura para poder ter redundância de acesso de administrador.|
 |Assinatura|5|Designe até três proprietários em sua assinatura|Designe menos de três proprietários de assinaturas para reduzir o potencial de violação por um proprietário comprometido.|
 |Cofre de chaves|5|Habilitar logs de diagnóstico no Key Vault|Habilite os logs e retenha-os por até um ano. Isso permite recriar trilhas de atividades para fins de investigação quando ocorre um incidente de segurança ou quando sua rede é comprometida. |

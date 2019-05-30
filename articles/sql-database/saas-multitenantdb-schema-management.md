@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: billgib, sstein
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: c7c10608d90f7659b108d2d8c80038f59396de2d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 07e8fce5fd8db5d2070b8e382a0eba2ae7187b0d
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61485166"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242782"
 ---
 # <a name="manage-schema-in-a-saas-application-that-uses-sharded-multi-tenant-sql-databases"></a>Gerenciar o esquema em um aplicativo SaaS que usa bancos de dados SQL multilocatários fragmentados
 
@@ -31,7 +31,7 @@ Este tutorial aborda os dois cenários a seguir:
 - Implantar as atualizações de dados de referência para todos os locatários.
 - A recriação de um índice em uma tabela que contém os dados de referência.
 
-O recurso de [Trabalhos Elástico](sql-database-elastic-jobs-overview.md) do Banco de Dados SQL do Azure é usado para executar essas operações em bancos de dados de locatário. Os trabalhos também operam no banco de dados de locatário do “modelo”. No aplicativo de exemplo Wingtip Tickets, esse banco de dados de modelo é copiado para provisionar um novo banco de dados de locatário.
+O recurso de [Trabalhos Elástico](elastic-jobs-overview.md) do Banco de Dados SQL do Azure é usado para executar essas operações em bancos de dados de locatário. Os trabalhos também operam no banco de dados de locatário do “modelo”. No aplicativo de exemplo Wingtip Tickets, esse banco de dados de modelo é copiado para provisionar um novo banco de dados de locatário.
 
 Neste tutorial, você aprenderá a:
 
@@ -57,7 +57,7 @@ Neste tutorial, você aprenderá a:
 
 ## <a name="introduction-to-saas-schema-management-patterns"></a>Introdução aos padrões de gerenciamento de esquema de SaaS
 
-O modelo de banco de dados multilocatário fragmentado usado nesta amostra permite que um banco de dados de locatários contenha um ou mais locatários. Esta amostra explora o potencial do uso de uma combinação de bancos de dados multilocatário e de locatário único, possibilitando um modelo *híbrido* de gerenciamento de locatários. O gerenciamento de alterações para esses bancos de dados pode ser complicado. Os [Trabalhos Elásticos](sql-database-elastic-jobs-overview.md) facilitam a administração e o gerenciamento de grandes quantidades de banco de dados. Os trabalhos permitem uma execução segura e confiável dos scripts de Transact-SQL como tarefas em um grupo de bancos de dados de locatário. As tarefas são independentes da interação ou entrada do usuário. Esse método pode ser usado para implantar alterações no esquema ou nos dados de referência comuns, em todos os locatários em um aplicativo. Trabalhos Elásticos também podem ser usados para manter uma cópia do modelo final do banco de dados. O modelo é usado para criar novos locatários, garantindo sempre que esquema e os dados de referência mais recentes estão sendo usados.
+O modelo de banco de dados multilocatário fragmentado usado nesta amostra permite que um banco de dados de locatários contenha um ou mais locatários. Esta amostra explora o potencial do uso de uma combinação de bancos de dados multilocatário e de locatário único, possibilitando um modelo *híbrido* de gerenciamento de locatários. O gerenciamento de alterações para esses bancos de dados pode ser complicado. Os [Trabalhos Elásticos](elastic-jobs-overview.md) facilitam a administração e o gerenciamento de grandes quantidades de banco de dados. Os trabalhos permitem uma execução segura e confiável dos scripts de Transact-SQL como tarefas em um grupo de bancos de dados de locatário. As tarefas são independentes da interação ou entrada do usuário. Esse método pode ser usado para implantar alterações no esquema ou nos dados de referência comuns, em todos os locatários em um aplicativo. Trabalhos Elásticos também podem ser usados para manter uma cópia do modelo final do banco de dados. O modelo é usado para criar novos locatários, garantindo sempre que esquema e os dados de referência mais recentes estão sendo usados.
 
 ![tela](media/saas-multitenantdb-schema-management/schema-management.png)
 
@@ -125,7 +125,7 @@ Observe os seguintes itens no script *DeployReferenceData.sql*:
     - Um tipo de membro de destino *server*.
         - Este é o servidor *tenants1-mt-&lt;user&gt;* que contém os bancos de dados de locatários.
         - A inclusão do servidor inclui os bancos de dados de locatário que existem no momento em que o trabalho é executado.
-    - Um tipo de membro de destino *database* para o banco de dados final (*basetenantdb*) que reside no servidor *catalog-mt-&lt;user&gt;*,
+    - Um tipo de membro de destino *database* para o banco de dados final (*basetenantdb*) que reside no servidor *catalog-mt-&lt;user&gt;* ,
     - Um tipo de membro de destino *database* para incluir o banco de dados *adhocreporting* que é usado em um tutorial posterior.
 
 - **sp\_add\_job** cria um trabalho chamado *Reference Data Deployment*.
@@ -134,7 +134,7 @@ Observe os seguintes itens no script *DeployReferenceData.sql*:
 
 - As exibições restantes no script exibem a existência dos objetos e monitoram a execução do trabalho. Use essas consultas para examinar o valor do status na coluna **lifecycle** para determinar quando o trabalho foi concluído. O trabalho atualiza o banco de dados de locatários e atualiza os dois outros bancos de dados que contêm a tabela de referência.
 
-No SSMS, navegue até o banco de dados de locatário no servidor *tenants1-mt-&lt;user&gt;*. Consulta a tabela *VenueTypes* para confirmar que *Motorcycle Racing* e *Swimming Club* ainda não foram adicionados à tabela. A contagem total de tipos de local deve ter aumentado em duas unidades.
+No SSMS, navegue até o banco de dados de locatário no servidor *tenants1-mt-&lt;user&gt;* . Consulta a tabela *VenueTypes* para confirmar que *Motorcycle Racing* e *Swimming Club* ainda não foram adicionados à tabela. A contagem total de tipos de local deve ter aumentado em duas unidades.
 
 ## <a name="create-a-job-to-manage-the-reference-table-index"></a>Criar um trabalho para gerenciar o índice da tabela de referência
 
@@ -161,8 +161,7 @@ Observe os seguintes itens no script *OnlineReindex.sql*:
 <!-- TODO: Additional tutorials that build upon the Wingtip Tickets SaaS Multi-tenant Database application deployment (*Tutorial link to come*)
 (saas-multitenantdb-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
 -->
-* [Gerenciando bancos de dados de nuvem com escalonamento horizontal](sql-database-elastic-jobs-overview.md)
-* [Criar e gerenciar bancos de dados de nuvem com escalonamento horizontal](sql-database-elastic-jobs-create-and-manage.md)
+* [Gerenciando bancos de dados de nuvem com escalonamento horizontal](elastic-jobs-overview.md)
 
 ## <a name="next-steps"></a>Próximas etapas
 

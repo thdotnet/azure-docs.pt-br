@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/22/2019
 ms.author: makromer
-ms.openlocfilehash: b0a6c6feae11f8daeed54c5e763dbff3aa711652
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: c33219eacb1d3bada5630a7792f98ba33dba824e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66153545"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235853"
 ---
 # <a name="execute-data-flow-activity-in-azure-data-factory"></a>Executar a atividade de fluxo de dados no Azure Data Factory
 Use a atividade de fluxo de dados execute para executar seu fluxo de dados ADF em execuções de depuração (área restrita) do pipeline em execuções de pipeline disparada.
@@ -49,10 +49,6 @@ Use a atividade de fluxo de dados execute para executar seu fluxo de dados ADF e
 
 ![Executar o fluxo de dados](media/data-flow/activity-data-flow.png "executar o fluxo de dados")
 
-### <a name="run-on"></a>Executar em
-
-Escolha o ambiente de computação para essa execução do fluxo de dados. O padrão é o tempo de execução de integração do Azure de resolução automática padrão. Essa opção executará o fluxo de dados no ambiente do Spark na mesma região do seu data factory. O tipo de computação será um cluster de trabalho, o que significa que o ambiente de computação pode levar vários minutos para inicialização.
-
 ### <a name="debugging-pipelines-with-data-flows"></a>Depurar pipelines com fluxos de dados
 
 ![Botão de depuração](media/data-flow/debugbutton.png "no botão depurar")
@@ -65,9 +61,14 @@ Este é um campo obrigatório que define qual tempo de execução de integraçã
 
 A configuração padrão para execuções de fluxo de dados é de 8 núcleos de computação geral com um TTL de 60 minutos.
 
+Escolha o ambiente de computação para essa execução do fluxo de dados. O padrão é o tempo de execução de integração do Azure de resolução automática padrão. Essa opção executará o fluxo de dados no ambiente do Spark na mesma região do seu data factory. O tipo de computação será um cluster de trabalho, o que significa que o ambiente de computação pode levar vários minutos para inicialização.
+
 Você tem controle sobre o ambiente de execução do Spark para suas atividades de fluxo de dados. No [tempo de execução de integração do Azure](concepts-integration-runtime.md) são configurações para definir o tipo de computação (uso geral, com otimização de memória e otimizado para computação), número de núcleos de trabalhador e time-to-live para coincidir com o mecanismo de execução com a computação de fluxo de dados requisitos. Além disso, a definir o TTL permitirá manter um cluster passiva que está imediatamente disponível para as execuções de trabalho.
 
 ![Tempo de execução de integração do Azure](media/data-flow/ir-new.png "tempo de execução de integração do Azure")
+
+> [!NOTE]
+> A seleção de tempo de execução de integração na atividade de fluxo de dados se aplica somente aos *disparado execuções* do seu pipeline. Depurando seu pipeline com os dados fluem com depuração serão executadas em cluster do Spark padrão de 8 núcleos.
 
 ### <a name="staging-area"></a>Área de preparação
 

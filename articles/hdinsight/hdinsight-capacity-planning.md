@@ -6,14 +6,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 12/04/2018
+ms.date: 05/23/2019
 ms.author: hrasheed
-ms.openlocfilehash: 81be4d5809fe8a3f36f7364b15e19d0046a8b5cd
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c910ed9f1160d30e1d4bda2e85b029eb2ad85b02
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64713987"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237146"
 ---
 # <a name="capacity-planning-for-hdinsight-clusters"></a>Planejamento de capacidade para clusters HDInsight
 
@@ -104,9 +104,9 @@ Para identificar o problema em um cluster local de nó único, você pode execut
 
 Depois de determinar o tamanho, a escala e o tipo da VM do cluster de destino, verifique os limites de capacidade de cota atuais da sua assinatura. Ao atingir um limite de cota, você não poderá implantar novos clusters ou aumentar os clusters existentes, adicionando mais nós de trabalho. O único limite de cota é a cota de Núcleos de CPU que existe no nível da região para cada assinatura. Por exemplo, sua assinatura pode ter o limite de 30 núcleos na região Leste dos EUA. Se precisar solicitar um aumento de cota, siga estes passos:
 
-1. Vá para o Portal do Azure
-1. Clique em **Ajuda e Suporte** no lado inferior esquerdo da página.
-1. Clique em **Nova Solicitação de Suporte**.
+1. Entre no [Portal do Azure](https://portal.azure.com/).
+1. Selecione **ajuda + suporte** no lado inferior esquerdo da página.
+1. Selecione na **nova solicitação de suporte**.
 1. Na página **Nova solicitação de suporte**, na guia **Noções básicas**, selecione as opções a seguir:
    - **Tipo de problema**: **Limites de serviço e assinatura (cotas)**
    - **Assinatura**: a assinatura que você quer modificar
@@ -114,10 +114,10 @@ Depois de determinar o tamanho, a escala e o tipo da VM do cluster de destino, v
     
      ![Crie uma solicitação de suporte para aumentar a cota de núcleos do HDInsight](./media/hdinsight-capacity-planning/hdinsight-quota-support-request.png)
 
-1. Clique em **Avançar**.
-1. Na página **Detalhes**, insira uma descrição do problema, selecione a gravidade do problema e selecione o método de contato preferencial.
-1. Clique em **Avançar: Revisar + criar**.
-1. Na página **Revisar + criar**, clique em **Criar**.
+1. Selecione **Avançar: Soluções >>** .
+1. Sobre o **detalhes** página, insira uma descrição do problema, selecione a severidade do problema, o método de contato preferencial e outros campos obrigatórios.
+1. Selecione **Avançar: Revisar + criar >>** .
+1. Sobre o **revisar + criar** guia, selecione **criar**.
 
 > [!NOTE]  
 > Se precisar aumentar a cota de núcleos do HDInsight em uma região privada, [envie uma solicitação de lista de permissões](https://aka.ms/canaryintwhitelist).

@@ -13,23 +13,23 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/13/2019
+ms.date: 05/21/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jmprieur, saeeda, jesakowi, nacanuma
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c989b690e9537dcaaf3710996474a1b8b99826b
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 314d7a8e8cf6837e2b22446ba23fee03d539bf35
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65962744"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235346"
 ---
 # <a name="microsoft-identity-platform-developer-glossary"></a>Glossário de desenvolvedor do Microsoft identity platform
 
 Este artigo contém as definições para alguns dos conceitos de desenvolvedor e terminologia, que são úteis ao aprender sobre desenvolvimento de aplicativos usando a plataforma de identidade da Microsoft.
 
-## <a name="access-token"></a>token de acesso
+## <a name="access-token"></a>o token de acesso
 
 Um tipo de [token de segurança](#security-token) emitido por um [servidor de autorização](#authorization-server) e usado por um [aplicativo cliente](#client-application) para acessar um [servidor de recursos protegido](#resource-server). Normalmente na forma de um [JWT (Token Web JSON)][JWT], o token consiste na autorização concedida ao cliente pelo [proprietário do recurso](#resource-owner) para um nível de acesso solicitado. O token contém todas as [declarações](#claim) aplicáveis sobre a entidade, habilitando o aplicativo cliente a usá-lo como uma forma de credenciais ao acessar um recurso específico. Isso também elimina a necessidade do proprietário do recurso de expor as credenciais para o cliente.
 
@@ -64,7 +64,7 @@ Para permitir que um aplicativo se integre e delegue funções de Gerenciamento 
 
 Veja [Integrando aplicativos com o Azure Active Directory][AAD-Integrating-Apps] para saber mais.
 
-## <a name="authentication"></a>autenticação
+## <a name="authentication"></a>Autenticação
 
 O ato de desafiar uma parte para o fornecimento de credenciais legítimas, fornecendo a base para a criação de uma entidade de segurança a ser usada para controle de identidade e acesso. Durante uma [concessão de autorização OAuth2](#authorization-grant), por exemplo, a parte que está realizando a autenticação está desempenhando a função de [proprietário do recurso](#resource-owner) ou [aplicativo cliente](#client-application), dependendo da concessão usada.
 
@@ -142,7 +142,7 @@ Um [aplicativo cliente](#client-application) obtém acesso a um [servidor de rec
 
 Também surgem durante o processo de [consentimento](#consent) , oferecendo ao administrador ou ao proprietário do recurso a oportunidade de conceder/negar ao cliente o acesso aos recursos em seu locatário.
 
-As solicitações de permissão são configuradas na guia "Aplicativos"/"Configurações" do [Portal do Azure][AZURE-portal], em "Permissões Necessárias", selecionando as "Permissões Delegadas" e as "Permissões de Aplicativo" desejadas (a segunda opção requer associação na função de Administrador Global). Como um [cliente público](#client-application) não pode manter credenciais com segurança, ele só pode solicitar permissões delegadas, enquanto um [cliente confidencial](#client-application) tem a capacidade de solicitar permissões delegadas e de aplicativo. O [objeto de aplicativo](#application-object) do cliente armazena as permissões declaradas em sua [propriedade requiredResourceAccess][AAD-Graph-App-Entity].
+Solicitações de permissão são configuradas na **permissões de API** página de um aplicativo na [portal do Azure][AZURE-portal], selecionando o desejado "permissões delegadas" e " Permissões de aplicativo"(a segunda opção requer associação na função de Administrador Global). Como um [cliente público](#client-application) não pode manter credenciais com segurança, ele só pode solicitar permissões delegadas, enquanto um [cliente confidencial](#client-application) tem a capacidade de solicitar permissões delegadas e de aplicativo. O [objeto de aplicativo](#application-object) do cliente armazena as permissões declaradas em sua [propriedade requiredResourceAccess][AAD-Graph-App-Entity].
 
 ## <a name="resource-owner"></a>proprietário do recurso
 
@@ -156,7 +156,7 @@ Um servidor de recursos expõe APIs e impõe o acesso a seus recursos protegidos
 
 Assim como um aplicativo cliente, a configuração de identidade do aplicativo de recurso é estabelecida via [registro](#application-registration) em um locatário do Azure AD, fornecendo o objeto de entidade de serviço e de aplicativo. Algumas APIs fornecidas pela Microsoft, como a API do Graph do Azure AD, têm entidades de serviço previamente registradas disponíveis em todos os locatários durante o provisionamento.
 
-## <a name="roles"></a>funções
+## <a name="roles"></a>roles
 
 Assim como os [escopos](#scopes), as funções fornecem uma maneira para que um [servidor de recursos](#resource-server) governe o acesso a seus recursos protegidos. Há dois tipos: uma função de "usuário" implementa o controle de acesso baseado em função para usuários/grupos que exigem acesso ao recurso, enquanto uma função de "aplicativo" implementa o mesmo para [aplicativos cliente](#client-application) que requerem acesso.
 
@@ -182,7 +182,7 @@ Quando você registra/atualiza um aplicativo no [Portal do Azure][AZURE-portal],
 
 Para obter mais informações, consulte [Objetos de entidade de serviço e aplicativo][AAD-App-SP-Objects].
 
-## <a name="sign-in"></a>entrar
+## <a name="sign-in"></a>entrada
 
 O processo para que um [aplicativo cliente](#client-application) inicie a autenticação do usuário final e capture o estado relacionado, para adquirir um [token de segurança](#security-token) e obter o escopo da sessão do aplicativo para esse estado. O estado pode incluir artefatos, como informações de perfil de usuário, e informações derivadas de declarações de token.
 
@@ -192,7 +192,7 @@ A função de entrada de um aplicativo normalmente é usada para implementar o S
 
 O processo de cancelamento de autenticação de um usuário final, desanexando o estado do usuário associado à sessão do [aplicativo cliente](#client-application) durante a [entrada](#sign-in)
 
-## <a name="tenant"></a>tenant
+## <a name="tenant"></a>locatário
 
 Uma instância de um diretório do Azure AD é chamada de locatário do Azure AD. Ele fornece vários recursos, incluindo:
 

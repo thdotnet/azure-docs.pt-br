@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/16/2019
+ms.date: 05/24/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b3f070cafa026679eb9322ac7ba2eafe4c7e233d
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 33d0e5f92d5de104530882b204b1f196360511b2
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65826756"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236453"
 ---
 # <a name="transfer-ownership-of-an-azure-subscription-to-another-account"></a>Transferir a propriedade de uma assinatura do Azure para outra conta
 
@@ -59,7 +59,7 @@ Transfira sua assinatura para outro usuário no Centro de Contas para alterar o 
    ![Primeira página da Web de transferência de assinatura](./media/billing-subscription-transfer/image4.png)
 
    ![Segunda página da Web de transferência de assinatura](./media/billing-subscription-transfer/image5.png)
-1. Êxito! Agora a assinatura será transferida.
+1. Sucesso! Agora a assinatura será transferida.
 
 <a id="EA"></a>
 
@@ -82,7 +82,7 @@ O Administrador Corporativo pode transferir a propriedade das assinaturas em um 
 
 A transferência de assinatura de autoatendimento está disponível para as ofertas ou tipos de assinatura listados na tabela a seguir. Atualmente, não é possível transferir assinaturas de Avaliação Gratuita ou [AIO (Azure via Open)](https://azure.microsoft.com/offers/ms-azr-0111p/). Para uma solução alternativa, consulte [Mover recursos para um novo grupo de recursos ou uma nova assinatura](../azure-resource-manager/resource-group-move-resources.md). Para transferir outras assinaturas, como [Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/) ou planos de suporte, [contate o Suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
-| Nome da Oferta                                                                             | Número da oferta |
+| Nome da oferta                                                                             | Número da oferta |
 |----------------------------------------------------------------------------------------|--------------|
 | [EA (Contrato Enterprise)](https://azure.microsoft.com/pricing/enterprise-agreement/)\*|MS-AZR-0017P        |
 | [Microsoft Partner Network](https://azure.microsoft.com/offers/ms-azr-0025p/)          | MS-AZR-0025P        |
@@ -102,7 +102,9 @@ A transferência de assinatura de autoatendimento está disponível para as ofer
 
 ### <a name="whoisaa"></a> Quem é o Administrador da Conta da assinatura?
 
-O Administrador da Conta é a pessoa que se inscreveu ou comprou a assinatura do Azure. Ele está autorizado a acessar o [Centro de Contas](https://account.azure.com/Subscriptions) e a realizar várias tarefas de gerenciamento, como criar assinaturas, cancelar assinaturas, alterar a cobrança de uma assinatura ou alterar o administrador de serviços. Se você não tiver certeza de quem é o administrador da conta de uma assinatura, use as etapas a seguir para descobrir.
+O Administrador da Conta é a pessoa que se inscreveu ou comprou a assinatura do Azure. Ele está autorizado a acessar o [Centro de Contas](https://account.azure.com/Subscriptions) e a realizar várias tarefas de gerenciamento, como criar assinaturas, cancelar assinaturas, alterar a cobrança de uma assinatura ou alterar o administrador de serviços. Para obter mais informações sobre noções básicas sobre funções de administrador e permissões, consulte [permissões da função de administrador no Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md)
+
+Se você não tiver certeza de quem é o administrador da conta de uma assinatura, use as etapas a seguir para descobrir.
 
 1. Acesse a [página Assinaturas no Portal do Azure](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
 1. Selecione a assinatura que você deseja verificar e olhe as **Configurações**.

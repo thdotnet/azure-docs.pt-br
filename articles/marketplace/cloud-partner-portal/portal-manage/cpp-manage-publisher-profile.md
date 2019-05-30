@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: pabutler
-ms.openlocfilehash: 6ca0eb23dad218262eff5d80543628df273022c9
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: c97bf10daa8f062cc833c7d7c5f7b0ca4835ca6f
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942232"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257550"
 ---
 # <a name="manage-your-azure-marketplace-and-appsource-publisher-profile"></a>Gerenciar seu perfil de Editor do Azure Marketplace e AppSource
 
@@ -49,7 +49,7 @@ Também é possível vincular sua conta do Centro de Desenvolvimento existente a
 > [!NOTE]
 > Registro de conta do Centro de desenvolvimento é obrigatório para publicar SKUs no mercado pago.
 
-Se você não tiver uma conta do Centro de desenvolvedor, você pode criar uma conta, conforme descrito em [Registre-se no Centro de desenvolvimento](../../register-dev-center.md).  Em seguida, adicione o endereço de e-mail registrado como proprietário no Portal do Microsoft Cloud Partner para sua oferta. Um proprietário só pode adicionar o endereço de email registrado ao seu perfil de publicação na seção **Usuário**. Em seguida, entre no portal usando o mesmo endereço de email e vincular sua conta do Centro de desenvolvimento.
+Se você não tiver uma conta do Centro de desenvolvedor, você pode criar uma conta, conforme descrito em [Registre-se no Centro de desenvolvimento](https://docs.microsoft.com/azure/marketplace/register-dev-center).  Em seguida, adicione o endereço de e-mail registrado como proprietário no Portal do Microsoft Cloud Partner para sua oferta. Um proprietário só pode adicionar o endereço de email registrado ao seu perfil de publicação na seção **Usuário**. Em seguida, entre no portal usando o mesmo endereço de email e vincular sua conta do Centro de desenvolvimento.
 
 ![Detalhes do perfil do Editor - descrição do perfil de publicador](./media/publisherprofiledescription.png)
 

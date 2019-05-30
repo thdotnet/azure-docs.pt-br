@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: 1c7712fc2ce55a3d22995bb119a9ee485a064903
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 8b1a9b3dee999a35950559a049230f7fdbbc47b6
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64683402"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399180"
 ---
 # <a name="troubleshoot-log-alerts-in-azure-monitor"></a>Solucionar problemas de alertas de log no Azure Monitor  
 
@@ -38,7 +38,7 @@ Para reduzir os atrasos, o sistema aguarda e repete a consulta do alerta várias
 
 Conforme descrito no artigo sobre [terminologia para alertas do log](../platform/alerts-unified-log.md#log-search-alert-rule---definition-and-types), o período de tempo indicado na configuração especifica o intervalo de tempo para a consulta. A consulta retorna somente os registros que foram criados dentro desse intervalo. 
 
-O período de tempo restringe os dados buscados para uma consulta de log evitar o abuso e contorna a qualquer comando de tempo (como **atrás**) usado em uma consulta de log. Por exemplo, se o período de tempo estiver definido como 60 minutos e a consulta for executada às 13h15, somente registros criados entre 12h15 e 13h15 serão usados para a consulta de log. Se a consulta de log usa um comando de tempo como **atrás (1-d)**, a consulta usa dados entre 12H15 e 1:15 PM ainda apenas porque o período de tempo está definido para esse intervalo.
+O período de tempo restringe os dados buscados para uma consulta de log evitar o abuso e contorna a qualquer comando de tempo (como **atrás**) usado em uma consulta de log. Por exemplo, se o período de tempo estiver definido como 60 minutos e a consulta for executada às 13h15, somente registros criados entre 12h15 e 13h15 serão usados para a consulta de log. Se a consulta de log usa um comando de tempo como **atrás (1-d)** , a consulta usa dados entre 12H15 e 1:15 PM ainda apenas porque o período de tempo está definido para esse intervalo.
 
 Verifique se o período de tempo na configuração corresponde à sua consulta. No exemplo mostrado anteriormente, se a consulta de log usa **atrás (1-d)** com o marcador de verde, o período de tempo deve ser definido para 1.440 minutos (indicados em vermelho) ou de 24 horas. Essa configuração garante que a consulta é executada conforme o esperado.
 
@@ -181,6 +181,7 @@ O seguinte exemplo de evento no Log de atividades do Azure é para uma regra de 
 Cada regra de alerta do log criada no Azure Monitor como parte de sua configuração deve especificar uma consulta de análise que o serviço de alerta será executado periodicamente. A consulta do analytics pode ter a sintaxe correta no momento da criação da regra ou atualização. Mas, às vezes, durante um período de tempo, a consulta fornecida na regra de alerta de log pode desenvolver problemas de sintaxe e fazer com que a execução da regra falhe. Algumas razões comuns por que uma consulta do analytics fornecida em uma regra de alerta de log pode desenvolver os erros são:
 
 - A consulta é gravada [executado em vários recursos](../log-query/cross-workspace-query.md). E um ou mais dos recursos especificados não existem mais.
+- [alerta de log do tipo de medição métrica](../../azure-monitor/platform/alerts-unified-log.md#metric-measurement-alert-rules) configurado tem um alerta de consulta não está em conformidade com as normas e de sintaxe
 - Não houve nenhum fluxo de dados para a plataforma de análise. O [execução de consulta apresentará um erro](https://dev.loganalytics.io/documentation/Using-the-API/Errors) porque não há nenhum dado para a consulta fornecida.
 - As alterações no [linguagem de consulta](https://docs.microsoft.com/azure/kusto/query/) incluem um formato revisado para comandos e funções. Portanto, a consulta fornecida anteriormente em uma regra de alerta não é válida.
 

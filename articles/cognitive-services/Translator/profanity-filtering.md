@@ -3,20 +3,19 @@ title: Filtragem de conteúdo ofensivo - API de tradução de texto
 titlesuffix: Azure Cognitive Services
 description: Use a API de tradução de texto de filtragem de conteúdo ofensivo.
 services: cognitive-services
-author: Jann-Skotdal
+author: rajdeep-in
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-origin.date: 02/21/2019
-ms.date: 03/12/2019
-ms.author: v-junlch
-ms.openlocfilehash: bd7a05f2f597d1882293387e5aac8e4d7367d051
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 02/21/2019
+ms.author: v-pawal
+ms.openlocfilehash: 3ffe14450f0191b88a8d8a71b5f28ae4c59b68c1
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60880023"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66387575"
 ---
 # <a name="add-profanity-filtering-with-the-translator-text-api"></a>Adicionar conteúdo ofensivo filtragem com a API de tradução de texto
 
@@ -36,4 +35,3 @@ O método Translate () usa o parâmetro “options”, que contém o novo elemen
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]
 > [Aplicar filtragem de linguagem obscena com a chamada à API de Tradução](reference/v3-0-translate.md)
-

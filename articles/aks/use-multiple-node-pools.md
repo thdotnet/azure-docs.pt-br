@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/17/2019
 ms.author: iainfou
-ms.openlocfilehash: 4086b73313d563afaecad9b6a9289905d7085004
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 4af2e97e8ace432c37a770f1930514dd19e30944
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66142635"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235763"
 ---
 # <a name="preview---create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Visualização – criar e gerenciar vários pools de nós para um cluster no serviço de Kubernetes do Azure (AKS)
 
@@ -21,9 +21,10 @@ No serviço de Kubernetes do Azure (AKS), nós a mesma configuração são agrup
 Este artigo mostra como criar e gerenciar vários pools de nós em um cluster AKS. Esse recurso está atualmente na visualização.
 
 > [!IMPORTANT]
-> Recursos de visualização do AKS são Self-service e aceitação. As visualizações são fornecidas para reunir opiniões e bugs de nossa comunidade. No entanto, eles não são suportados pelo suporte técnico do Azure. Se você cria um cluster ou adicionar esses recursos para clusters existentes, há suporte para esse cluster até que o recurso não está mais em visualização e muda para GA (disponibilidade geral).
+> Recursos de visualização do AKS são Self-service, inscreva-se no. Eles são fornecidos para reunir opiniões e bugs de nossa comunidade. Na visualização, esses recursos não são destinados ao uso em produção. Recursos em visualização pública se encaixam em suporte "melhor esforço". Assistência de AKS equipes de suporte técnico está disponível durante o horário comercial do Pacífico (PST) apenas timezone. Para obter mais informações, consulte as seguintes artigos de suporte:
 >
-> Se você encontrar problemas com recursos de visualização [abra um problema no repositório GitHub do AKS] [ aks-github] com o nome do recurso de visualização no título do bug.
+> * [Políticas de suporte do AKS][aks-support-policies]
+> * [Perguntas frequentes sobre o suporte do Azure][aks-faq]
 
 ## <a name="before-you-begin"></a>Antes de começar
 
@@ -72,6 +73,7 @@ As seguintes limitações se aplicam quando você cria e gerenciar clusters AKS 
 * Vários pools de nós só estão disponíveis para clusters criados depois que você registrou com êxito a *MultiAgentpoolPreview* e *VMSSPreview* recursos para sua assinatura. Você não pode adicionar ou gerenciar pools de nós com um cluster do AKS existente criado antes que esses recursos foram registrados com êxito.
 * É possível excluir o pool de nós primeiro.
 * O complemento de roteamento de aplicativo HTTP não pode ser usado.
+* Não é possível usando um modelo do Resource Manager existente, assim como acontece com a maioria das operações de pools de nós de adicionar/atualizar/excluir. Em vez disso, [usar um modelo do Gerenciador de recursos separado](#manage-node-pools-using-a-resource-manager-template) para fazer alterações em pools de nós em um cluster AKS.
 
 Embora esse recurso está em visualização, as seguintes limitações adicionais se aplicam:
 
@@ -328,6 +330,95 @@ Events:
 
 Somente os pods que têm essa prejudicar aplicado podem ser agendados em nós *gpunodepool*. Qualquer outro pod deve ser agendada na *nodepool1* pool de nós. Se você criar pools de nós adicionais, você pode usar taints adicionais e tolerations para limitar quais pods podem ser agendadas sobre os recursos do nó.
 
+## <a name="manage-node-pools-using-a-resource-manager-template"></a>Gerenciar pools de nó usando um modelo do Resource Manager
+
+Quando você usa um modelo do Azure Resource Manager para criar e os recursos gerenciados, você normalmente pode atualizar as configurações no seu modelo e reimplantar para atualizar o recurso. Com nodepools no AKS, o perfil de nodepool inicial não pode ser atualizado quando o cluster do AKS tiver sido criado. Esse comportamento significa que você não pode atualizar um modelo do Resource Manager existente, faça uma alteração para os pools de nós e reimplantar. Em vez disso, você deve criar um modelo do Gerenciador de recursos separado que atualiza apenas os pools de agentes para um cluster AKS existente.
+
+Criar um modelo, como `aks-agentpools.json` e cole o manifesto de exemplo a seguir. Este modelo de exemplo define as seguintes configurações:
+
+* Atualizações a *Linux* pool de agente chamado *myagentpool* executar três nós.
+* Define os nós no pool de nós para executar a versão do Kubernetes *1.12.8*.
+* Define o tamanho do nó como *Standard_DS2_v2*.
+
+Edite esses valores conforme necessário para atualizar, adicionar ou excluir pools de nós conforme necessário:
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "clusterName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of your existing AKS cluster."
+      }
+    },
+    "location": {
+      "type": "string",
+      "metadata": {
+        "description": "The location of your existing AKS cluster."
+      }
+    },
+    "agentPoolName": {
+      "type": "string",
+      "defaultValue": "myagentpool",
+      "metadata": {
+        "description": "The name of the agent pool to create or update."
+      }
+    },
+    "vnetSubnetId": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "The Vnet subnet resource ID for your existing AKS cluster."
+      }
+    }
+  },
+  "variables": {
+    "apiVersion": {
+      "aks": "2019-04-01"
+    },
+    "agentPoolProfiles": {
+      "maxPods": 30,
+      "osDiskSizeGB": 0,
+      "agentCount": 3,
+      "agentVmSize": "Standard_DS2_v2",
+      "osType": "Linux",
+      "vnetSubnetId": "[parameters('vnetSubnetId')]"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2019-04-01",
+      "type": "Microsoft.ContainerService/managedClusters/agentPools",
+      "name": "[concat(parameters('clusterName'),'/', parameters('agentPoolName'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+            "maxPods": "[variables('agentPoolProfiles').maxPods]",
+            "osDiskSizeGB": "[variables('agentPoolProfiles').osDiskSizeGB]",
+            "count": "[variables('agentPoolProfiles').agentCount]",
+            "vmSize": "[variables('agentPoolProfiles').agentVmSize]",
+            "osType": "[variables('agentPoolProfiles').osType]",
+            "storageProfile": "ManagedDisks",
+      "type": "VirtualMachineScaleSets",
+            "vnetSubnetID": "[variables('agentPoolProfiles').vnetSubnetId]",
+            "orchestratorVersion": "1.12.8"
+      }
+    }
+  ]
+}
+```
+
+Implantar este modelo usando o [criar implantação de grupo az] [ az-group-deployment-create] de comando, conforme mostrado no exemplo a seguir. Você deverá fornecer o nome do cluster AKS e o local existente:
+
+```azurecli-interactive
+az group deployment create \
+    --resource-group myResourceGroup \
+    --template-file aks-agentpools.json
+```
+
+Ele pode levar alguns minutos para atualizar seu cluster do AKS, dependendo das configurações de pool de nó e operações definidos no modelo do Resource Manager.
+
 ## <a name="clean-up-resources"></a>Limpar recursos
 
 Neste artigo, você criou um cluster do AKS que inclui nós baseadas em GPU. Para reduzir custos desnecessários, você talvez queira excluir o *gpunodepool*, ou todo o cluster AKS.
@@ -351,7 +442,6 @@ Neste artigo você aprendeu a criar e gerenciar vários pools de nós em um clus
 Para criar e usar pools de nós de contêiner do Windows Server, consulte [criar um contêiner do Windows Server no AKS][aks-windows].
 
 <!-- EXTERNAL LINKS -->
-[aks-github]: https://github.com/azure/aks/issues
 [kubernetes-drain]: https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubectl-taint]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#taint
@@ -379,3 +469,6 @@ Para criar e usar pools de nós de contêiner do Windows Server, consulte [criar
 [supported-versions]: supported-kubernetes-versions.md
 [operator-best-practices-advanced-scheduler]: operator-best-practices-advanced-scheduler.md
 [aks-windows]: windows-container-cli.md
+[az-group-deployment-create]: /cli/azure/group/deployment#az-group-deployment-create
+[aks-support-policies]: support-policies.md
+[aks-faq]: faq.md

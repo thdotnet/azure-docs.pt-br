@@ -12,12 +12,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27309c08fe4419197faa17dcceb3645b00387e93
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 98588e0c25439fd4988fe39e06e7042cfa9113cb
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65227911"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66305674"
 ---
 # <a name="what-is-the-location-condition-in-azure-active-directory-conditional-access"></a>Quais são as condições de localização no acesso condicional do Active Directory do Azure? 
 
@@ -34,7 +34,7 @@ Azure AD permite logon único para dispositivos, aplicativos e serviços de qual
 
 Um local é um rótulo para um local de rede que representa um local nomeado ou a autenticação multifator confiáveis IPs.
 
-## <a name="named-locations"></a>Locais nomeados
+## <a name="named-locations"></a>Localizações nomeadas
 
 Com localizações nomeadas, você pode criar agrupamentos lógicos de intervalos de endereços IP ou países e regiões.
 
@@ -56,7 +56,7 @@ A localização nomeada tem os seguintes componentes:
 - **Países/regiões** - esta opção permite que você selecione um ou mais países ou regiões para definir uma localização nomeada.
 - **Incluir áreas desconhecidas** -alguns endereços IP não são mapeados para um país ou região específica. Esta opção permite que você escolha se esses endereços IP devem ser incluídos na localização nomeada. Use essa configuração quando a política usando a localização nomeada deve aplicar-se a localizações desconhecidas.
 
-O número de localizações que você pode configurar é restrito pelo tamanho do objeto relacionado no Azure AD. As organizações podem configurar até 90 localizações nomeadas, cada uma configurada com intervalos de IP até 12000.
+O número de localizações que você pode configurar é restrito pelo tamanho do objeto relacionado no Azure AD. As organizações podem configurar até 90 localizações nomeadas, cada um configurado com até 1200 intervalos de IP.
 
 Política de acesso condicional se aplica ao tráfego IPv4 e IPv6. Localizações nomeadas no momento não permita os intervalos de IPv6 a ser configurado. Essa limitação faz com que as seguintes situações:
 
@@ -98,7 +98,7 @@ Quando você configurar a condição de localização, você tem a opção de fa
 
 Por padrão, selecionar **Qualquer local** faz com que uma política seja aplicada a todos os endereços IP, o que significa qualquer endereço na Internet. Essa configuração não está limitada aos endereços IP que você configurou como localização nomeada. Quando seleciona **Qualquer local**, você ainda pode excluir locais específicos de uma política. Por exemplo, você pode aplicar uma política para todos os locais confiáveis de exceções de locais para definir o escopo para todos os locais, exceto a rede corporativa.
 
-### <a name="all-trusted-locations"></a>Todas as localizações confiáveis
+### <a name="all-trusted-locations"></a>Todos os locais confiáveis
 
 Esta opção se aplica a:
 

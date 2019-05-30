@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 05/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3acaf86123f2cab871bc2f99cc873a73015875e2
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 2dd397e879dd76cabd119a3cbedff34041be2d13
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65989856"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66298480"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Notas de versão do serviço de aprendizado de máquina do Azure
 
@@ -24,6 +24,21 @@ Neste artigo, conheça os lançamentos de serviços do Aprendizado de Máquina d
 + O [**SDK de Preparação de Dados do Azure Machine Learning**](https://aka.ms/data-prep-sdk)
 
 Veja [a lista de problemas conhecidos](resource-known-issues.md) para aprender sobre erros e soluções conhecidas.
+
+## <a name="2019-05-28"></a>2019-05-28
+
+### <a name="azure-machine-learning-data-prep-sdk-v114"></a>SDK v1.1.4 de preparação de dados do Azure Machine Learning
+
++ **Novos recursos**
+  + Agora você pode usar as seguintes funções de linguagem de expressão para extrair e analisar os valores de data e hora em novas colunas.
+    + `RegEx.extract_record()` extrai elementos de data e hora em uma nova coluna.
+    + `create_datetime()` cria objetos de data e hora de elementos de data e hora separadas.
+  + Ao chamar `get_profile()`, agora você pode ver que o quantil colunas são rotuladas como (EST.) para indicar claramente os valores são aproximações.
+  + Agora você pode usar * * glob durante a leitura do armazenamento de BLOBs do Azure.
+    + Por exemplo: `dprep.read_csv(path='https://yourblob.blob.core.windows.net/yourcontainer/**/data/*.csv')`
+
++ **Correções de bug**
+  + Corrigido um bug relacionado à leitura de um arquivo Parquet de uma fonte remota (Blob do Azure).
 
 ## <a name="2019-05-14"></a>2019-05-14
 

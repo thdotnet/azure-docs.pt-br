@@ -8,13 +8,13 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
-ms.date: 05/10/2019
-ms.openlocfilehash: 53f9f67397e1484559ee8243a52ad8339df930bc
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.date: 05/23/2019
+ms.openlocfilehash: e824ac81f1336644fa70cc24539284feacee3199
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65990211"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244528"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Informações de limites e configuração para os Aplicativos Lógicos do Azure
 
@@ -120,7 +120,7 @@ Para ultrapassar esses limites no processamento normal ou executar um teste de c
 
 Estes são os limites para uma única solicitação HTTP ou chamada de conector síncrona:
 
-#### <a name="timeout"></a>Tempo Limite
+#### <a name="timeout"></a>Tempo limite
 
 Algumas operações de conector fazem chamadas assíncronas ou escutam solicitações de webhook, portanto o tempo limite para essas operações pode ter mais do que esses limites. Para obter mais informações, consulte os detalhes técnicos para o conector específico e também [Gatilhos e ações de fluxo de trabalho](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action).
 
@@ -139,7 +139,7 @@ Algumas operações de conector fazem chamadas assíncronas ou escutam solicita�
 | Limite de avaliação da expressão | 131.072 caracteres | 131.072 caracteres | As expressões `@concat()`, `@base64()`, `@string()` não podem ser maiores do que esse limite. |
 |||||
 
-#### <a name="retry-policy"></a>Política de novas tentativas
+#### <a name="retry-policy"></a>Política de repetição
 
 | NOME | Limite | Observações |
 | ---- | ----- | ----- |
@@ -184,11 +184,11 @@ Estes são os limites no número de artefatos para cada conta de integração. P
 
 | Artefato | Grátis | Basic | Standard |
 |----------|------|-------|----------|
-| Contratos comerciais de EDI | 10 | 1 | 500 |
-| Parceiros comerciais de EDI | 25 | 2 | 500 |
+| Contratos comerciais de EDI | 10 | 1 | 1.000 |
+| Parceiros comerciais de EDI | 25 | 2 | 1.000 |
 | Mapas | 25 | 500 | 1.000 |
 | Esquemas | 25 | 500 | 1.000 |
-| Assemblies | 10 | 25 | 50 |
+| Assemblies | 10 | 25 | 1.000 |
 | Certificados | 25 | 2 | 500 |
 | Configurações de lote | 5 | 1 | 50 |
 ||||

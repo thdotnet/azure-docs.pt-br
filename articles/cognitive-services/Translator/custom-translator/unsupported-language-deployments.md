@@ -3,21 +3,21 @@ title: Implantações de idioma sem suporte - conversor personalizado
 titleSuffix: Azure Cognitive Services
 description: Como implantar os pares de idioma sem suporte no conversor personalizado.
 services: cognitive-services
-author: v-pawal
+author: rajdeep-in
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 04/24/2019
 ms.author: v-pawal
-ms.openlocfilehash: 09fbd771d945646fe385508779d38e4abb2ee293
-ms.sourcegitcommit: daf6538427ea6effef898f2ee3d857e5fa2dccbc
+ms.openlocfilehash: 0938ba2e839be603c557cc2a87dd0c5aa1dfe1e3
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64476501"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390567"
 ---
-# <a name="unsupported-language-deployments"></a>Implantações de idioma sem suporte
+# <a name="unsupported-language-deployments"></a>Implantações de linguagem sem suporte
 
 <!--Custom Translator provides the highest-quality translations possible using the latest techniques in neural machine learning. While Microsoft intends to make neural training available in all languages, there are some limitations that prevent us from being able to offer neural machine translation in all language pairs.-->  
 
@@ -32,7 +32,7 @@ Para modelos de modo a ser candidatos para a implantação, eles devem atender a
 * O modelo deve estar no estado implantado quando ocorre a migração.  
 * O par de linguagem do modelo deve ser um par de idioma sem suporte no conversor personalizado.  Pares de idiomas em que uma linguagem com suporte para ou do inglês, mas o par em si não inclui o inglês, são candidatos para implantações de idioma sem suporte.  Por exemplo, um modelo de Hub para francês para o par de idioma alemão é considerado um par de idioma com suporte embora francês para inglês e inglês do alemão são até mesmo idioma sem suporte par.
 
-## <a name="process"></a>Processo
+## <a name="process"></a>Process
 Depois de migrar modelos do Hub que são candidatos para a implantação, você pode encontrá-los, vá para o **as configurações** página do seu espaço de trabalho e a rolagem até o final da página onde você verá um **sem suporte Treinamentos do tradutor Hub** seção.  Nesta seção só aparecerá se você tiver projetos que atendem aos pré-requisitos mencionados acima.
 
 ![Como migrar do Hub](media/unsupported-language-deployments/unsupported-translator-hub-trainings.jpg)

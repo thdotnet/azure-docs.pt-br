@@ -1,5 +1,5 @@
 ---
-title: Definição de conjunto de dados e controle de versão com conjuntos de dados de azureml
+title: Versão e gerenciar definições de conjunto de dados com conjuntos de dados de azureml
 titleSuffix: Azure Machine Learning service
 description: Saiba como atualizar as definições de conjunto de dados e gerenciar o ciclo de vida de definições
 services: machine-learning
@@ -10,14 +10,14 @@ ms.author: sihhu
 author: MayMSFT
 ms.reviewer: larryfr
 ms.date: 05/02/2019
-ms.openlocfilehash: e58ce156deaaad259ea7b74521bcf9b79afbd183
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 4476bdd902f054683fa544dc44b548689f3a1881
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66146214"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241876"
 ---
-# <a name="update-and-manage-the-lifecycle-of-dataset-definitions"></a>Atualizar e gerenciar o ciclo de vida das definições de conjunto de dados
+# <a name="version-and-manage-your-dataset-definitions"></a>Versão e gerenciar suas definições de conjunto de dados
 
 Saiba como atualizar e gerenciar definições de conjunto de dados com conjuntos de dados do Azure Machine Learning (versão prévia).
 
@@ -37,7 +37,7 @@ Você precisa ter uma assinatura do Azure e registrar o seu conjunto de dados pa
 
 O arquivo de exemplo usado nos exemplos neste documento está disponível em [ https://dprepdata.blob.core.windows.net/dataset-sample-files/crime.csv ](https://dprepdata.blob.core.windows.net/dataset-sample-files/crime.csv).
 
-## <a name="update-dataset-definitions"></a>Atualizar definições de conjunto de dados
+## <a name="create-and-update-definitions"></a>Criar e atualizar as definições
 
 Criaremos pela primeira vez e registrar um conjunto de dados com o seu espaço de trabalho.
 
@@ -173,10 +173,10 @@ ds_def_old.head(5)
       <th>ID</th>
       <th>Número do Caso</th>
       <th>Date</th>
-      <th>Bloquear</th>
+      <th>Bloco</th>
       <th>IUCR</th>
       <th>Texto Primário</th>
-      <th>Descrição</th>
+      <th>DESCRIÇÃO</th>
       <th>Descrição do Local</th>
       <th>Detenção</th>
       <th>Nacional</th>
@@ -344,7 +344,7 @@ Depois de recuperar uma definição, você pode usá-lo com seu modelos de apren
 
 Você pode gerenciar o ciclo de vida de cada definição de conjunto de dados de forma independente. Há três estágios do ciclo de vida: ativo, substituído ou arquivado.
 
-### <a name="active"></a>Ativos
+### <a name="active"></a>Ativo
 
 Quando uma nova definição de conjunto de dados é criada, ele está ativo por padrão. 
 
@@ -362,7 +362,7 @@ ds_def = dataset.get_definition(version_id = 1)
 ds_def.deprecate(deprecate_by_dataset_id=dataset.id, deprecated_by_definition_version=2)
 ```
 
-### <a name="archive"></a>Arquivar
+### <a name="archive"></a>Arquivo
 
 Definições de conjunto de dados podem ser arquivadas quando as definições não deve ser usado por qualquer motivo (como os dados subjacentes não está mais disponíveis). Quando uma definição de conjunto de dados arquivada é usada em pipelines de machine learning, a execução será bloqueada com erro.
 

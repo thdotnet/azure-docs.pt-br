@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: jehollan
-ms.openlocfilehash: 75987e7cba9f373af5a434de9f273948c3c9ae75
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: de1915c7efb4bd8634228f341df2c57c443dd28e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544752"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242298"
 ---
 # <a name="azure-functions-premium-plan-preview"></a>Plano Premium de funções do Azure (visualização)
 
@@ -91,7 +91,7 @@ az resource update -g <resource_group> -n <premium_plan_name> --set properties.m
 
 ### <a name="available-instance-skus"></a>SKUs de instância disponíveis
 
-Ao criar nosso dimensionando seu plano, você pode escolher entre três tamanhos de instância.  Você será cobrado para o número total de núcleos e memória consumida por segundo.  Seu aplicativo pode dimensionar automaticamente para várias instâncias conforme necessário.  
+Ao criar ou dimensionar seu plano, você pode escolher entre três tamanhos de instância.  Você será cobrado para o número total de núcleos e memória consumida por segundo.  Seu aplicativo pode dimensionar automaticamente para várias instâncias conforme necessário.  
 
 |SKU|Núcleos|Memória|Armazenamento|
 |--|--|--|--|

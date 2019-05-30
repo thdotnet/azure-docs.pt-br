@@ -10,12 +10,12 @@ ms.subservice: bing-news-search
 ms.topic: conceptual
 ms.date: 1/10/2019
 ms.author: aahi
-ms.openlocfilehash: e8a7f6d20ed36c4b3e900602fb52e31dceefae88
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: d15058126f43fff328acfc563ffd081164a69a90
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65799341"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66384980"
 ---
 # <a name="language-and-region-support-for-the-bing-news-search-api"></a>Idiomas e regiões compatíveis com a API de Pesquisa de Notícias do Bing
 
@@ -31,7 +31,7 @@ Para o ponto de extremidade `/news/search`, a tabela a seguir lista os valores d
 
 Para obter uma lista de códigos de país/região que podem ser especificados no parâmetro de consulta `cc`, consulte [Códigos do País](#countrycodes).  
 
-|País/região|Linguagem|Código de mercado|  
+|País/Região|Linguagem|Código de mercado|  
 |---------------------|--------------|-----------------|
 |Dinamarca|Dinamarquês|da-DK|
 |Áustria|Alemão|de-AT|
@@ -46,8 +46,8 @@ Para obter uma lista de códigos de país/região que podem ser especificados no
 |Malásia|Inglês|en-MY|
 |Nova Zelândia|Inglês|en-NZ|
 |República das Filipinas|Inglês|en-PH|
-|Cingapura|Inglês|en-SG|
-|Estados Unidos|Inglês|pt-BR|
+|Singapura|Inglês|en-SG|
+|Estados Unidos|Inglês|en-US|
 |Inglês|geral|en-WW|
 |Inglês|geral|en-XA|
 |África do Sul|Inglês|en-ZA|
@@ -64,8 +64,8 @@ Para obter uma lista de códigos de país/região que podem ser especificados no
 |Suíça|Francês|fr-CH|
 |França|Francês|fr-FR|  
 |Itália|Italiano|it-IT|
-|Região Administrativa Especial de Hong Kong|Chinês Tradicional|zh-HK|  
-|Taiwan|Chinês Tradicional|zh-TW|
+|RAE de Hong Kong|Chinês tradicional|zh-HK|  
+|Taiwan|Chinês tradicional|zh-TW|
 |Japão|Japonês|ja-JP|  
 |Coreia do Sul|Coreano|ko-KR|  
 |Países Baixos|Holandês|nl-NL|  
@@ -80,13 +80,13 @@ Para o ponto de extremidade `/news`, a tabela a seguir lista os valores de códi
 
 Para obter uma lista de códigos de país/região que podem ser especificados no parâmetro de consulta `cc`, consulte [Códigos do País](#countrycodes).  
 
-|País/região|Linguagem|Código de mercado|  
+|País/Região|Linguagem|Código de mercado|  
 |---------------------|--------------|-----------------|
 |Dinamarca|Dinamarquês|da-DK|
 |Alemanha|Alemão|de-DE|
 |Austrália|Inglês|en-AU|
 |Reino Unido|Inglês|en-GB|
-|Estados Unidos|Inglês|pt-BR|
+|Estados Unidos|Inglês|en-US|
 |Inglês|geral|en-WW|
 |Chile|Espanhol|es-CL|
 |México|Espanhol|es-MX|
@@ -103,12 +103,12 @@ Para o ponto de extremidade `/news/trendingtopics`, a tabela a seguir lista os v
 
 Para obter uma lista de códigos de país/região que podem ser especificados no parâmetro de consulta `cc`, consulte [Códigos do País](#countrycodes).  
 
-|País/região|Linguagem|Código de mercado|  
+|País/Região|Linguagem|Código de mercado|  
 |---------------------|--------------|-----------------|
 |Alemanha|Alemão|de-DE|
 |Austrália|Inglês|en-AU|
 |Reino Unido|Inglês|en-GB|
-|Estados Unidos|Inglês|pt-BR|
+|Estados Unidos|Inglês|en-US|
 |Canadá|Inglês|en-CA|
 |Índia|Inglês|en-IN|
 |França|Francês|fr-FR|
@@ -129,16 +129,16 @@ A seguir, são apresentados os códigos de país/região que podem ser especific
 |Áustria|AT|  
 |Bélgica|BE|  
 |Brasil|BR|  
-|Canadá|AC|  
+|Canadá|CA|  
 |Chile|CL|  
 |Dinamarca|DK|  
 |Finlândia|FI|  
 |França|FR|  
 |Alemanha|DE|  
-|Região Administrativa Especial de Hong Kong|HK|  
+|RAE de Hong Kong|HK|  
 |Índia|IN|  
 |Indonésia|ID|  
-|Itália|it|  
+|Itália|IT|  
 |Japão|JP|  
 |Coreia do Sul|KR|  
 |Malásia|MY|  
@@ -162,4 +162,4 @@ A seguir, são apresentados os códigos de país/região que podem ser especific
 |Estados Unidos|EUA|
 
 ## <a name="next-steps"></a>Próximas etapas
-Para obter mais informações sobre os pontos de extremidade da Pesquisa de Notícias do Bing, confira [Referência da API de Pesquisa de Notícias v7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference).
+Para obter mais informações sobre os pontos de extremidade da Pesquisa de Notícias do Bing, confira [Referência da API de Pesquisa de Notícias v7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference).

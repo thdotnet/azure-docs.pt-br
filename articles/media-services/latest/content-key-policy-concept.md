@@ -9,25 +9,27 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 05/22/2019
+ms.date: 05/28/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 68778cea51144ec33efd4d5843a51b489ea17ca4
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: a1d2cc50b405df2c71d94e74973b3291a4e908cb
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66155733"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393481"
 ---
 # <a name="content-key-policies"></a>Políticas da Chave de Conteúdo
 
-Com os Serviços de Mídia, é possível entregar o conteúdo ao vivo e sob demanda criptografado dinamicamente com a criptografia AES (AES-128) ou qualquer um dos três principais sistemas DRM (gerenciamento de direitos digitais): Microsoft PlayReady, Google Widevine e Apple FairPlay. Os serviços de mídia também fornecem um serviço de distribuição de chaves AES e licenças DRM (PlayReady, Widevine e FairPlay) para os clientes autorizados.
+Com os Serviços de Mídia, é possível entregar o conteúdo ao vivo e sob demanda criptografado dinamicamente com a criptografia AES (AES-128) ou qualquer um dos três principais sistemas DRM (gerenciamento de direitos digitais): Microsoft PlayReady, Google Widevine e Apple FairPlay. Os serviços de mídia também fornecem um serviço de distribuição de chaves AES e licenças DRM (PlayReady, Widevine e FairPlay) para os clientes autorizados. 
 
-Para especificar opções de criptografia em seu fluxo, você precisará criar uma [política de Streaming](streaming-policy-concept.md) e associá-la com seus [localizador de Streaming](streaming-locators-concept.md). Você precisa criar uma [política de chave de conteúdo](https://docs.microsoft.com/rest/api/media/contentkeypolicies) para configurar como a chave de conteúdo (que fornece acesso seguro aos seus [ativos](assets-concept.md)) é entregue para os clientes finais. O **política de chave de conteúdo** também está associado ao seu **localizador de Streaming**. Você precisa definir os requisitos (restrições) na política de chave de conteúdo que devem ser atendidos para que as chaves com a configuração especificada a ser entregue aos clientes. 
+Para especificar opções de criptografia em seu fluxo, você precisará criar uma [política de Streaming](streaming-policy-concept.md) e associá-la com seus [localizador de Streaming](streaming-locators-concept.md). Você cria o [política de chave de conteúdo](https://docs.microsoft.com/rest/api/media/contentkeypolicies) para configurar como a chave de conteúdo (que fornece acesso seguro aos seus [ativos](assets-concept.md)) é entregue para os clientes finais. Você precisa definir os requisitos (restrições) na política de chave de conteúdo que devem ser atendidos para que as chaves com a configuração especificada a ser entregue aos clientes. Essa política de chave de conteúdo não é necessária para limpar streaming ou baixar. 
+
+Normalmente, você associar seu **política de chave de conteúdo** com seu **localizador de Streaming**. Como alternativa, você pode especificar a política de chave de conteúdo dentro de uma política de Streaming (durante a criação de uma política personalizada de Streaming para cenários avançados). 
 
 É recomendável para permitir que os serviços de mídia para gerar chaves de conteúdo. Normalmente, você usaria uma chave de vida útil longa e verificar a existência de políticas com **obter**. Para ter acesso à chave, você precisa chamar um método de ação separado para obter segredos ou as credenciais. Confira o exemplo a seguir.
 
-As **Políticas de Chave de Conteúdo** podem ser atualizadas. Por exemplo, você poderá querer atualizar a política se precisar fazer uma rotação de chaves. Você pode atualizar a chave de verificação principal e a lista de chaves de verificação alternativas na política existente. Pode levar até 15 minutos para que os caches de entrega de Chaves atualizem e selecionem a política atualizada. 
+As **Políticas de Chave de Conteúdo** podem ser atualizadas. Pode levar até 15 minutos para que os caches de entrega de Chaves atualizem e selecionem a política atualizada. 
 
 > [!IMPORTANT]
 > * As propriedades de **Políticas de Conteúdo de Chave** que são do tipo Datetime estão sempre no formato UTC.
@@ -35,9 +37,7 @@ As **Políticas de Chave de Conteúdo** podem ser atualizadas. Por exemplo, voc�
 
 ## <a name="example"></a>Exemplo
 
-Para obter a chave, use **GetPolicyPropertiesWithSecretsAsync**, conforme mostrado no exemplo a seguir.
-
-[!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/EncryptWithDRM/Program.cs#GetOrCreateContentKeyPolicy)]
+Para obter a chave, use **GetPolicyPropertiesWithSecretsAsync**, conforme mostrado na [obter uma chave de assinatura da política existente](get-content-key-policy-dotnet-howto.md#get-contentkeypolicy-with-secrets) exemplo.
 
 ## <a name="filtering-ordering-paging"></a>Filtragem, classificação, paginação
 

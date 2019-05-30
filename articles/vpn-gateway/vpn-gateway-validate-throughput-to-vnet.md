@@ -2,31 +2,24 @@
 title: Validar a taxa de transferência VPN para uma Rede Virtual do Microsoft Azure | Microsoft Docs
 description: A finalidade deste documento é ajudar um usuário a validar a taxa de transferência de rede de seus recursos locais para uma máquina virtual do Azure.
 services: vpn-gateway
-documentationcenter: na
-author: chadmath
+author: cherylmc
 manager: jasmc
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.assetid: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 06/15/2018
+ms.date: 05/29/2019
 ms.author: radwiv;chadmat;genli
-ms.openlocfilehash: 819415712d8e605825957aa602fc99dcf6902d82
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c1117afcf6254c32ebe0a4e72ad5619606098253
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60457490"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388625"
 ---
 # <a name="how-to-validate-vpn-throughput-to-a-virtual-network"></a>Como validar a taxa de transferência VPN para uma rede virtual
 
 Uma conexão de gateway de VPN permite que você estabeleça conectividade entre instalações segura entre a sua Rede Virtual do Azure e sua infraestrutura de TI local.
 
-Este artigo mostra como validar a taxa de transferência de rede dos recursos locais para uma máquina virtual (VM) do Azure. Ele também fornece diretrizes de solução de problemas.
+Este artigo mostra como validar a taxa de transferência de rede dos recursos locais para uma máquina virtual (VM) do Azure. Ele também fornece diretrizes de solução de problemas. 
 
 >[!NOTE]
 >Este artigo destina-se a ajudar a diagnosticar e corrigir problemas comuns. Se você não conseguir solucionar o problema usando as informações a seguir, [contate o suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
@@ -127,7 +120,7 @@ Baixar [iPerf](https://iperf.fr/download/iperf_3.1/iperf-3.1.2-win64.zip). Para 
 - Velocidade de leitura/gravação de disco de VM insuficiente. Para obter mais informações, consulte [Solução de Problemas de Armazenamento do Azure](../storage/common/storage-e2e-troubleshooting.md).
 
 ## <a name="on-premises-device-external-facing-interface"></a>Interface externa do dispositivo local
-Se o endereço IP para a Internet do dispositivo VPN local estiver incluído na definição [rede local](vpn-gateway-howto-site-to-site-resource-manager-portal.md#LocalNetworkGateway) no Azure, você poderá enfrentar a impossibilidade de conectar o VPN, problemas de desempenho ou desconexões esporádicas.
+Se o dispositivo VPN de local endereço IP voltado para a Internet está incluído na [rede local](vpn-gateway-howto-site-to-site-resource-manager-portal.md#LocalNetworkGateway) definição de espaço de endereço no Azure, você pode enfrentar problemas de desempenho ou impossibilidade de conectar up desconexão da VPN, esporádica.
 
 ## <a name="checking-latency"></a>Verificação de latência
 Use o tracert para rastrear o dispositivo Microsoft Azure Edge e determinar se há atrasos superiores a 100 ms entre saltos.

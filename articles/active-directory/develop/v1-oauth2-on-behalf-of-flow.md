@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/06/2017
+ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2983980786fc706d103c0147a0776f2ff8c2d4f
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 0f4ab484b76bb536dd4e9d3c4fff2c85d93e4a41
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545464"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235201"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Chamadas de serviço a serviço que usam a identidade do usuário delegado no fluxo On-Behalf-Of
 
@@ -58,31 +58,32 @@ Registre o aplicativo de camada intermediária e o aplicativo cliente no Azure A
 1. Entre no [Portal do Azure](https://portal.azure.com).
 1. Na barra superior, selecione sua conta e examine a lista **Diretório** para selecionar um locatário do Active Directory para seu aplicativo.
 1. Selecione **Mais Serviços** no painel esquerdo e escolha **Azure Active Directory**.
-1. Selecione **Registros de aplicativo** e, em seguida, selecione **Novo registro de aplicativo**.
+1. Selecione **registros de aplicativo** e, em seguida **novo registro**.
 1. Insira um nome amigável para o aplicativo e selecione o tipo de aplicativo.
-    1. Dependendo do tipo de aplicativo, defina a URL de entrada ou a URL de redirecionamento para a URL base.
-    1. Selecione **Criar** para criar o aplicativo.
+1. Em **Tipos de conta com suporte**, selecione **Contas em qualquer diretório organizacional e contas pessoais da Microsoft**.
+1. Defina o URI de redirecionamento para a URL base.
+1. Selecione **Registrar** para criar o aplicativo.
 1. Gere um segredo do cliente antes de sair do portal do Azure.
-   1. No portal do Azure, escolha seu aplicativo e selecione **Configurações**.
-   1. Selecione **Chaves** no menu Configurações e adicione uma chave com duração de um ou dois anos.
-   1. Quando você salvar a página, o portal do Azure exibirá o valor da chave. Copie e salve o valor da chave em uma localização segura.
+1. No portal do Azure, escolha o seu aplicativo e selecione **certificados e segredos**.
+1. Selecione **novo segredo do cliente** e adicionar um segredo com uma duração de um ano ou dois anos.
+1. Quando você salva esta página, o portal do Azure exibe o valor do segredo. Copie e salve o valor do segredo em um local seguro.
 
-      > [!IMPORTANT]
-      > Você precisa da chave para definir as configurações do aplicativo em sua implementação. O valor da chave não será exibido novamente e não é possível recuperá-lo por outros meios. Registre-o assim que ele ficar visível no portal do Azure.
+> [!IMPORTANT]
+> É necessário o segredo para definir as configurações de aplicativo em sua implementação. Esse valor secreto não seja exibido novamente, e não é possível recuperá-la por outros meios. Registre-o assim que ele ficar visível no portal do Azure.
 
 ### <a name="register-the-client-application"></a>Registrar o aplicativo cliente
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 1. Na barra superior, selecione sua conta e examine a lista **Diretório** para selecionar um locatário do Active Directory para seu aplicativo.
 1. Selecione **Mais Serviços** no painel esquerdo e escolha **Azure Active Directory**.
-1. Selecione **Registros de aplicativo** e, em seguida, selecione **Novo registro de aplicativo**.
+1. Selecione **registros de aplicativo** e, em seguida **novo registro**.
 1. Insira um nome amigável para o aplicativo e selecione o tipo de aplicativo.
-   1. Dependendo do tipo de aplicativo, defina a URL de entrada ou a URL de redirecionamento para a URL base.
-   1. Selecione **Criar** para criar o aplicativo.
-1. Configurar permissões para seu aplicativo.
-   1. No menu de Configurações, escolha a seção **Permissões necessárias**, selecione **Adicionar** e, em seguida, **Selecionar uma API**.
-   1. Digite o nome do serviço de camada intermediária no campo de texto.
-   1. Escolha **Selecionar Permissões** e, em seguida, selecione **Acessar nome do serviço**.
+1. Em **Tipos de conta com suporte**, selecione **Contas em qualquer diretório organizacional e contas pessoais da Microsoft**.
+1. Defina o URI de redirecionamento para a URL base.
+1. Selecione **Registrar** para criar o aplicativo.
+1. Configurar permissões para seu aplicativo. Na **permissões de API**, selecione **adicionar uma permissão** e, em seguida, **Minhas APIs**.
+1. Digite o nome do serviço de camada intermediária no campo de texto.
+1. Escolher **selecionar permissões** e, em seguida, selecione **Access <service name>** .
 
 ### <a name="configure-known-client-applications"></a>Configurar aplicativos cliente conhecidos
 
@@ -108,7 +109,7 @@ O aplicativo cliente é protegido por um segredo compartilhado ou por um certifi
 
 Ao usar um segredo compartilhado, uma solicitação de token de acesso de serviço para serviço contém estes parâmetros:
 
-| Parâmetro |  | Descrição |
+| Parâmetro |  | DESCRIÇÃO |
 | --- | --- | --- |
 | grant_type |obrigatório | O tipo da solicitação de token. Uma solicitação OBO usa um JWT (Token Web JSON), de modo que o valor deve ser **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
 | asserção |obrigatório | O valor do token de acesso usado na solicitação. |
@@ -116,7 +117,7 @@ Ao usar um segredo compartilhado, uma solicitação de token de acesso de servi�
 | client_secret |obrigatório | A chave registrada para o serviço de chamada no Azure AD. Esse valor deve ter sido observado no momento do registro. |
 | Recurso |obrigatório | O URI da ID do aplicativo do serviço de recebimento (recurso protegido). Para localizar o URI da ID do aplicativo no portal do Azure, selecione **Active Directory** e escolha o diretório. Selecione o nome do aplicativo, escolha **Todas as configurações** e, em seguida, selecione **Propriedades**. |
 | requested_token_use |obrigatório | Especifica como a solicitação deve ser processada. No fluxo em nome de, o valor deve ser **on_behalf_of**. |
-| escopo |obrigatório | Lista de escopos separados por espaço para a solicitação de token. Para OpenID Connect, a **openid** do escopo deve ser especificada.|
+| scope |obrigatório | Lista de escopos separados por espaço para a solicitação de token. Para OpenID Connect, a **openid** do escopo deve ser especificada.|
 
 #### <a name="example"></a>Exemplo
 
@@ -142,7 +143,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 Uma solicitação de token de acesso de serviço para serviço com certificado contém estes parâmetros:
 
-| Parâmetro |  | Descrição |
+| Parâmetro |  | DESCRIÇÃO |
 | --- | --- | --- |
 | grant_type |obrigatório | O tipo da solicitação de token. Uma solicitação OBO usa um token de acesso JWT, de modo que o valor deve ser **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
 | asserção |obrigatório | O valor do token usado na solicitação. |
@@ -151,7 +152,7 @@ Uma solicitação de token de acesso de serviço para serviço com certificado c
 | client_assertion |obrigatório | Um Token Web JSON que você cria e assina com o certificado registrado como credenciais de seu aplicativo. Confira [credenciais de certificado](active-directory-certificate-credentials.md) para saber mais sobre o formato da declaração e sobre como registrar seu certificado.|
 | Recurso |obrigatório | O URI da ID do aplicativo do serviço de recebimento (recurso protegido). Para localizar o URI da ID do aplicativo no portal do Azure, selecione **Active Directory** e escolha o diretório. Selecione o nome do aplicativo, escolha **Todas as configurações** e, em seguida, selecione **Propriedades**. |
 | requested_token_use |obrigatório | Especifica como a solicitação deve ser processada. No fluxo em nome de, o valor deve ser **on_behalf_of**. |
-| escopo |obrigatório | Lista de escopos separados por espaço para a solicitação de token. Para OpenID Connect, a **openid** do escopo deve ser especificada.|
+| scope |obrigatório | Lista de escopos separados por espaço para a solicitação de token. Para OpenID Connect, a **openid** do escopo deve ser especificada.|
 
 Esses parâmetros são quase iguais aos da solicitação do segredo compartilhado, exceto pelo fato de que `client_secret parameter` é substituído por dois parâmetros: `client_assertion_type` e `client_assertion`.
 
@@ -180,10 +181,10 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 Uma resposta bem-sucedida é uma resposta JSON do OAuth 2.0 com os parâmetros a seguir:
 
-| Parâmetro | Descrição |
+| Parâmetro | DESCRIÇÃO |
 | --- | --- |
 | token_type |Indica o valor do tipo de token. O único tipo com suporte do Azure AD é **Portador**. Para saber mais sobre os tokens de portador, confira [Estrutura de Autorização do OAuth 2.0: Uso do Token de Portador (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
-| escopo |O escopo do acesso concedido no token. |
+| scope |O escopo do acesso concedido no token. |
 | expires_in |O período de tempo pelo qual o token de acesso é válido (em segundos). |
 | expires_on |A hora de expiração do token de acesso. A data é representada como o número de segundos de 1970-01-01T0:0:0Z UTC até a hora de expiração. Esse valor é usado para determinar o tempo de vida de tokens em cache. |
 | Recurso |O URI da ID do aplicativo do serviço de recebimento (recurso protegido). |
@@ -252,7 +253,7 @@ Alguns serviços Web baseados em OAuth precisam acessar outras APIs de serviços
 
 Uma solicitação de serviço a serviço para obter uma declaração SAML contém os seguintes parâmetros:
 
-| Parâmetro |  | Descrição |
+| Parâmetro |  | DESCRIÇÃO |
 | --- | --- | --- |
 | grant_type |obrigatório | O tipo da solicitação de token. Para uma solicitação que usa um JWT, o valor deve ser **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
 | asserção |obrigatório | O valor do token de acesso usado na solicitação.|
@@ -271,10 +272,10 @@ A resposta contém um token SAML codificado em Base64url e UTF8.
 
 ### <a name="response-with-saml-assertion"></a>Resposta com declaração SAML
 
-| Parâmetro | Descrição |
+| Parâmetro | DESCRIÇÃO |
 | --- | --- |
 | token_type |Indica o valor do tipo de token. O único tipo com suporte do Azure AD é **Portador**. Para saber mais sobre os tokens de portador, confira [Estrutura de Autorização do OAuth 2.0: Uso do Token de Portador (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
-| escopo |O escopo do acesso concedido no token. |
+| scope |O escopo do acesso concedido no token. |
 | expires_in |O período de tempo pelo qual o token de acesso é válido (em segundos). |
 | expires_on |A hora de expiração do token de acesso. A data é representada como o número de segundos de 1970-01-01T0:0:0Z UTC até a hora de expiração. Esse valor é usado para determinar o tempo de vida de tokens em cache. |
 | Recurso |O URI da ID do aplicativo do serviço de recebimento (recurso protegido). |

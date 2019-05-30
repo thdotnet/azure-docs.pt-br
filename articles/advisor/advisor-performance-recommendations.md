@@ -8,12 +8,12 @@ ms.service: advisor
 ms.topic: article
 ms.date: 01/29/2019
 ms.author: kasparks
-ms.openlocfilehash: 5850b683189136eac70451075933b0c57ecc37cd
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 8fdae1e12e56dcbcb56941726b0c089ad59b8fc8
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920440"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254661"
 ---
 # <a name="improve-performance-of-azure-applications-with-azure-advisor"></a>Melhorar o desempenho de aplicativos do Azure com o Assistente do Azure
 
@@ -93,6 +93,22 @@ O Assistente do Azure aproveita a heurística com base em carga de trabalho, com
 
 ### <a name="scale-your-azure-mysql-azure-postgresql-or-azure-mariadb-server-to-a-higher-sku-to-prevent-connection-constraints"></a>Escalar seu servidor do Azure MySQL, PostgreSQL do Azure ou Azure MariaDB para um SKU superior para impedir que as restrições de conexão
 Cada nova conexão ao seu servidor de banco de dados ocupa alguma memória. Se as conexões ao seu servidor estão falhando por causa da degrada o desempenho do servidor de banco de dados uma [limite superior](https://docs.microsoft.com/azure/postgresql/concepts-limits) na memória. O Assistente do Azure será identificar servidores que executam com muitas falhas de conexão e recomendável fazer a atualização de limites de conexões do seu servidor para fornecer mais memória para seu servidor ao escalar verticalmente a computação ou usar os SKUs de otimizado da memória, que tem mais computação por núcleo.
+
+## <a name="scale-your-cache-to-a-different-size-or-sku-to-improve-cache-and-application-performance"></a>Dimensionar seu Cache para um tamanho diferente ou SKU para melhorar o Cache e o desempenho do aplicativo
+
+Instâncias de cache têm melhor desempenho quando não está executando sob alta pressão de memória, carga do servidor de alta ou alta largura de banda que pode fazer com que eles não responder, sofrer perda de dados ou se tornar indisponível. Advisor identificará as instâncias de Cache nessas condições e recomendável aplicar práticas recomendadas para reduzir a pressão de memória, a carga do servidor ou a largura de banda de rede ou escalar para um tamanho diferente ou uma SKU com mais capacidade.
+
+## <a name="add-regions-with-traffic-to-your-azure-cosmos-db-account"></a>Adicionar regiões com o tráfego para sua conta do Azure Cosmos DB
+
+Advisor detectará contas do Azure Cosmos DB que têm o tráfego de uma região que não está atualmente configurada e recomendável adicionar nessa região. Isso irá melhorar a latência para as solicitações provenientes de região e garantirá que a disponibilidade em caso de interrupções de região. [Saiba mais sobre a distribuição de dados global com o Azure Cosmos DB](https://aka.ms/cosmos/globaldistribution)
+
+## <a name="configure-your-azure-cosmos-db-indexing-policy-with-customer-included-or-excluded-paths"></a>Configurar o Azure Cosmos DB política de indexação com cliente incluídos ou excluídos caminhos
+
+O Azure Advisor identificará os contêineres do Cosmos DB que estão usando a política de indexação padrão, mas poderia se beneficiar de uma política de indexação personalizada com base no padrão de carga de trabalho. A política de indexação padrão indexa todas as propriedades, mas usando uma política de indexação personalizada com caminhos explícitos de incluídos ou excluídos, usados em filtros de consulta pode reduzir o RUs e armazenamento consumido para indexação. [Saiba mais sobre como modificar políticas de índice](https://aka.ms/cosmosdb/modify-index-policy)
+
+## <a name="configure-your-azure-cosmos-db-query-page-size-maxitemcount-to--1"></a>Configurar seu tamanho de página de consulta (MaxItemCount) do Azure Cosmos DB como -1 
+
+O Azure Advisor identificará os contêineres do Azure Cosmos DB que estão usando o tamanho da página consulta de 100 e recomendam usar um tamanho de página de -1 para verificações mais rápidas. [Saiba mais sobre a contagem máxima de Item](https://aka.ms/cosmosdb/sql-api-query-metrics-max-item-count)
 
 ## <a name="how-to-access-performance-recommendations-in-advisor"></a>Como acessar as recomendações de desempenho no Advisor
 

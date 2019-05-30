@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 04/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3167f60cca9997c9713efad0fbb8a51b20def76b
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: e57133a750e282484271261d8e4ddb9a12de2a0e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66151171"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242417"
 ---
 # <a name="how-azure-machine-learning-service-works-architecture-and-concepts"></a>Como funciona o Serviço do Azure Machine Learning: Arquitetura e conceitos
 
@@ -23,7 +23,7 @@ Saiba mais sobre a arquitetura, conceitos e fluxo de trabalho para o serviço Az
 
 [![Arquitetura e fluxo de trabalho do serviço do Azure Machine Learning](./media/concept-azure-machine-learning-architecture/workflow.png)](./media/concept-azure-machine-learning-architecture/workflow.png#lightbox)
 
-## <a name="workflow"></a>Fluxo de Trabalho
+## <a name="workflow"></a>Fluxo de trabalho
 
 O fluxo de trabalho de aprendizado de máquina geralmente segue esta sequência:
 
@@ -37,6 +37,7 @@ O fluxo de trabalho de aprendizado de máquina geralmente segue esta sequência:
 Você executar essas etapas com qualquer um dos seguintes:
 + [SDK do Azure Machine Learning para Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)
 + [CLI de aprendizado de máquina do Azure](https://docs.microsoft.com/azure/machine-learning/service/reference-azure-machine-learning-cli)
++ [Extensão do VS Code do Machine Learning do Azure](how-to-vscode-tools.md)
 +  O [interface visual (visualização) para o serviço de Azure Machine Learning](ui-concept-visual-interface.md)
 
 > [!NOTE]
@@ -220,7 +221,7 @@ Os pipelines de aprendizado de máquina são usados para criar e gerenciar fluxo
 
 Para obter mais informações sobre os pipelines de aprendizado de máquina com esse serviço, consulte [Pipelines e Azure Machine Learning](concept-ml-pipelines.md).
 
-## <a name="logging"></a>Registro em Log
+## <a name="logging"></a>Registrando em log
 
 Ao desenvolver sua solução, use o SDK do Python do Azure Machine Learning em seu script de Python para registrar métricas arbitrárias. Após a execução, consulte as métricas para determinar se a execução produziu o modelo que você deseja implantar.
 

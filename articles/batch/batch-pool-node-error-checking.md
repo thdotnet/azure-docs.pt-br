@@ -5,14 +5,14 @@ services: batch
 ms.service: batch
 author: mscurrell
 ms.author: markscu
-ms.date: 9/25/2018
+ms.date: 05/28/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8d8df9935e935ac8d5a1194cfab103a006cf5546
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.openlocfilehash: b0a9d04fccce7ccbacb700f7af5126c6ae05140a
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57791334"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357770"
 ---
 # <a name="check-for-pool-and-node-errors"></a>Verificar erros no pool e nos nós
 
@@ -84,18 +84,27 @@ Você pode especificar um ou mais pacotes de aplicativos de um pool. O lote faz 
 
 Uma falha ao fazer o download e a descompactação de um pacote de aplicativos será relatada pela propriedade [errors](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) do nó. O lote define o estado do nó como **inutilizável**.
 
+### <a name="container-download-failure"></a>Falha no download do contêiner
+
+Você pode especificar uma ou mais referências de contêiner em um pool. Lote baixa os contêineres especificados para cada nó. O nó [erros](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) propriedade relata uma falha ao baixar um contêiner e define o estado do nó como **inutilizável**.
+
 ### <a name="node-in-unusable-state"></a>Nó em estado inutilizável
 
 O Lote do Microsoft Azure pode definir o [estado do nó](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodestate) pode ser definido como **inutilizável** por muitos motivos. Com o estado do nó definido como **inutilizável**, as tarefas não podem ser agendadas para o nó, mas ainda incorrerá em encargos.
 
-O lote sempre tentará recuperar nós inutilizáveis, mas a recuperação pode ou não ser possível, dependendo da causa.
+Nós em um **inútil**, mas sem [erros](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) estado significa que o lote é capaz de se comunicar com a VM. Nesse caso, lote sempre tenta recuperar a VM. Em lotes não tentará automaticamente recuperar as VMs que falhou ao instalar pacotes de aplicativos ou contêineres, embora seu estado seja **inutilizável**.
 
 Se o lote poder determinar a causa, a propriedade do nó [erros](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) irá reportá-lo.
 
 Alguns outros exemplos de causas para nós **inutilizáveis** incluem:
 
 - A imagem de VM personalizada é inválida. Por exemplo, uma imagem que não é preparada corretamente.
+
 - Uma VM é movida devido a uma falha de infraestrutura ou de uma atualização de nível baixo. O lote recupera o nó.
+
+- Uma imagem de VM foi implantada no hardware que não dá suporte a ele. Por exemplo uma "HPC" imagem de VM em execução em hardware não são HPC. Por exemplo, tentando executar uma imagem do HPC do CentOS em uma [Standard_D1_v2](../virtual-machines/linux/sizes-general.md#dv2-series) VM.
+
+- As VMs estão em um [rede virtual do Azure](batch-virtual-network.md), e o tráfego foi bloqueado para portas de chave.
 
 ### <a name="node-agent-log-files"></a>Arquivos de log do agente de nó
 

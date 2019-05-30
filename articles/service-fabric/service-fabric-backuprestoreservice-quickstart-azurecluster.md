@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/29/2018
+ms.date: 5/24/2019
 ms.author: hrushib
-ms.openlocfilehash: 9bce408215cef540604a72109bc5b29ebc3359e7
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: e81cc1b3d80afd39a74c3046b1f8020e0a524ae4
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65413786"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237373"
 ---
 # <a name="periodic-backup-and-restore-in-azure-service-fabric"></a>Backup e restauração periódicos no Azure Service Fabric 
 > [!div class="op_single_selector"]
@@ -185,9 +185,6 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 ```
 
-> [!IMPORTANT]
-> Devido a um problema no tempo de execução, certifique-se de que a duração da retenção na política de retenção está configurada para menos de 24 dias ou, caso contrário, resultará em um serviço de restauração de Backup para entrar em failover de réplica pós perda de quorum.
-
 ### <a name="enable-periodic-backup"></a>Habilitar backup periódico
 Depois de definir a política de backup para atender aos requisitos de proteção de dados do aplicativo, a política de backup deve ser associada a ele. Dependendo do requisito, a política de backup pode ser associada um aplicativo, serviço ou partição.
 
@@ -286,10 +283,6 @@ FailureError            :
 ## <a name="limitation-caveats"></a>Limite/Limitações
 - Cmdlets do PowerShell do Service Fabric estão no modo de visualização.
 - Não há suporte para clusters do Service Fabric no Linux.
-
-## <a name="known-issues"></a>Problemas conhecidos
-- Certifique-se de que a duração de retenção está configurada para ser menor que 24 dias. 
-
 
 ## <a name="next-steps"></a>Próximas etapas
 - [Noções básicas sobre a configuração de backup periódico](./service-fabric-backuprestoreservice-configure-periodic-backup.md)

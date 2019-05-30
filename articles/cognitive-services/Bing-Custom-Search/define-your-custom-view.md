@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: aahi
-ms.openlocfilehash: 83ae5f923130ecb46b7b94cd8112ee45ae13e3f4
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: e4799ca099d608c3b8ecd16612b790f5654df7dd
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236249"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390413"
 ---
 # <a name="configure-your-bing-custom-search-experience"></a>Configure sua experiência de Pesquisa Personalizada do Bing
 
@@ -25,9 +25,9 @@ O portal permite criar uma instância de pesquisa que especifica as fatias da We
 
 Ao definir fatias da web, use o seguinte:
 
-| Nome da fatia | Descrição                                                                                                                                                                                                                                                                                                |
+| Nome da fatia | DESCRIÇÃO                                                                                                                                                                                                                                                                                                |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Domínio     | Uma fatia de domínio inclui todo o conteúdo localizado em um domínio da Internet. Por exemplo, `www.microsoft.com`. Omitir `www.` faz com que o Bing também pesquise os subdomínios do domínio. Por exemplo, se você especificar `microsoft.com`, o Bing também retorna os resultados de `support.microsoft.com` ou `technet.microsoft.com`. |
+| Domínio     | Uma fatia de domínio inclui todo o conteúdo localizado em um domínio da Internet. Por exemplo: `www.microsoft.com`. Omitir `www.` faz com que o Bing também pesquise os subdomínios do domínio. Por exemplo, se você especificar `microsoft.com`, o Bing também retorna os resultados de `support.microsoft.com` ou `technet.microsoft.com`. |
 | Subpágina    | Uma fatia de subpágina inclui todo o conteúdo localizado na subpágina e nos caminhos abaixo. É possível especificar no máximo duas subpáginas no caminho. Por exemplo, `www.microsoft.com/en-us/windows/`                                                                                                                       |
 | Página da web    | Uma fatia da página da Web pode incluir apenas essa página da Web em uma pesquisa personalizada. Opcionalmente, é possível especificar se quer incluir subpáginas.                                                                                                                                                                                  |
 
@@ -74,7 +74,7 @@ Depois de adicionar as fatias da web para a lista **Ativo**, o portal de Pesquis
 
 ## <a name="search-for-images-and-videos"></a>Pesquisar imagens e vídeos
 
-Você pode pesquisar imagens e vídeos da mesma forma que o conteúdo da web usando a [API de Pesquisa de Imagem Personalizada do Bing](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-images-api-v7-reference) ou a [API de Pesquisa de Vídeo Personalizada do Bing](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-videos-api-v7-reference). Você pode exibir esses resultados com a [interface do usuário hospedada](hosted-ui.md) ou as APIs. 
+Você pode pesquisar imagens e vídeos da mesma forma que o conteúdo da web usando a [API de Pesquisa de Imagem Personalizada do Bing](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-images-api-v7-reference) ou a [API de Pesquisa de Vídeo Personalizada do Bing](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-videos-api-v7-reference). Você pode exibir esses resultados com a [interface do usuário hospedada](hosted-ui.md) ou as APIs. 
 
 Essas APIs são semelhantes às APIs de [Pesquisa de Imagem do Bing](../Bing-Image-Search/overview.md) e [Pesquisa de Vídeo do Bing](../Bing-Video-Search/search-the-web.md) não personalizadas, mas pesquisam toda a web e não exigem o parâmetro de consulta `customConfig`. Consulte esses conjuntos de documentação para obter mais informações sobre como trabalhar com imagens e vídeos. 
 
@@ -83,7 +83,7 @@ Essas APIs são semelhantes às APIs de [Pesquisa de Imagem do Bing](../Bing-Ima
 É possível testar a instância de pesquisa usando o painel de visualização no lado direito do portal para enviar consultas de pesquisa e exibir os resultados. 
 
 1. Abaixo da caixa de pesquisa, selecione **Minha instância**. Você pode comparar os resultados de sua experiência de pesquisa com o Bing, selecionando **Bing**. 
-2. Selecione um filtro de pesquisa seguro e qual mercado pesquisar (consulte [Parâmetros de Consulta](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference#query-parameters)).
+2. Selecione um filtro de pesquisa seguro e qual mercado pesquisar (consulte [Parâmetros de Consulta](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#query-parameters)).
 3. Insira uma consulta e pressione Enter ou clique no ícone de pesquisa para exibir os resultados da configuração atual. Você pode alterar seu tipo de pesquisa que você executa clicando em **Web**, **Imagem**, ou **Vídeo** para obter resultados correspondentes. 
 
 <a name="adjustrank"></a>
@@ -94,7 +94,7 @@ O portal permite que você ajuste a classificação da pesquisa de conteúdo de 
 
 |            |                                                                                                                                                                      |
 |------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Bloquear      | Mova o domínio, a subpágina ou a página da Web para a lista Bloqueado. O Bing excluirá o conteúdo do site selecionado para não aparecer nos resultados da pesquisa.                    |
+| Bloco      | Mova o domínio, a subpágina ou a página da Web para a lista Bloqueado. O Bing excluirá o conteúdo do site selecionado para não aparecer nos resultados da pesquisa.                    |
 | Aumentar      | Aumenta o conteúdo do domínio ou da subpágina nos resultados da pesquisa.                                                                                        |
 | Rebaixar     | Rebaixa o conteúdo do domínio ou subpágina ao nível abaixo nos resultados da pesquisa. Você seleciona se quer rebaixar o conteúdo do domínio ou da subpágina à qual a página da Web pertence. |
 | Fixar no início | Move o domínio, a subpágina ou a página da Web para a lista **Fixado**. Isso força que a página da Web sejam exibida como o primeiro resultado de pesquisa para uma determinada consulta de pesquisa.                   |
@@ -129,11 +129,11 @@ Por padrão, as páginas da Web só estão fixadas na parte superior dos resulta
 > [!NOTE]
 > Todas as comparações entre a consulta de pesquisa do usuário e a consulta de pesquisa da fixação diferenciam maiúsculas de minúsculas.
 
-| Value | Descrição                                                                          |
+| Value | DESCRIÇÃO                                                                          |
 |---------------|----------------------------------------------------------------------------------|
 | Começa com | A fixação é uma correspondência se a cadeia de caracteres de consulta do usuário começa com a cadeia de caracteres de consulta da fixação |
 | Termina com   | A fixação é uma correspondência se a cadeia de caracteres de consulta do usuário termina com a cadeia de caracteres de consulta da fixação.  |
-| Contém    | A fixação é uma correspondência se a cadeia de caracteres de consulta do usuário contém a cadeia de caracteres de consulta da fixação.   |
+| Contém:    | A fixação é uma correspondência se a cadeia de caracteres de consulta do usuário contém a cadeia de caracteres de consulta da fixação.   |
 
 
 Para alterar a condição de correspondência da fixação, clique no ícone de edição da fixação. Na coluna **Condição de correspondência de consulta**, clique na lista suspensa e selecione a nova condição a ser usada. Em seguida, clique no ícone de salvar para salvar as alterações.

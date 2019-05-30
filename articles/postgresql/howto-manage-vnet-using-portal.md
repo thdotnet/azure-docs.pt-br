@@ -1,19 +1,19 @@
 ---
-title: Criar e gerenciar regras e pontos de extremidade de serviço de VNet do Banco de Dados do Azure para PostgreSQL usando o portal do Azure
-description: Criar e gerenciar regras e pontos de extremidade de serviço de VNet do Banco de Dados do Azure para PostgreSQL usando o portal do Azure
+title: Criar e gerenciar pontos de extremidade de serviço de rede virtual e regras no banco de dados do Azure para PostgreSQL – servidor único usando o portal do Azure
+description: Criar e gerenciar pontos de extremidade de serviço de rede virtual e regras de banco de dados do Azure para PostgreSQL – servidor único usando o portal do Azure
 author: bolzmj
 ms.author: mbolz
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 10/23/2018
-ms.openlocfilehash: 0f11894e939f589134720f22deb99390e14db9fb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 9da46ae905457f6f6b1786a2161e224d397d0507
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60421620"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65073166"
 ---
-# <a name="create-and-manage-azure-database-for-postgresql-vnet-service-endpoints-and-vnet-rules-by-using-the-azure-portal"></a>Criar e gerenciar regras de VNet e pontos de extremidade de serviço de VNet do Banco de Dados do Azure para PostgreSQL usando o portal do Azure
+# <a name="create-and-manage-vnet-service-endpoints-and-vnet-rules-in-azure-database-for-postgresql---single-server-by-using-the-azure-portal"></a>Criar e gerenciar pontos de extremidade de serviço de rede virtual e regras de rede virtual no banco de dados do Azure para PostgreSQL – único servidor por meio do portal do Azure
 As regras e pontos de extremidade de serviços de VNet (rede virtual) estendem o espaço de endereço privado de uma rede virtual para seu servidor do Banco de Dados do Azure para PostgreSQL. Para obter uma visão geral dos pontos de extremidade de serviço de VNet do Banco de Dados do Azure para PostgreSQL, confira [Pontos de extremidade de serviço de VNet do servidor do Banco de Dados do Azure para PostgreSQL](concepts-data-access-and-security-vnet.md). Os terminais de serviços da VNet estão disponíveis em todas as regiões suportadas para o Banco de Dados do Azure para PostgreSQL.
 
 > [!NOTE]

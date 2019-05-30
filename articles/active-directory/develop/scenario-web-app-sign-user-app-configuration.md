@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2204fe3e08b3c4b909ddc8b7ade4cec219d34fb
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 82e6cbcd01c87ddffb7eac8d0ea0faef85f41a13
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406625"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254002"
 ---
 # <a name="web-app-that-signs-in-users---code-configuration"></a>Que se conecta os usuários - configuração de código do aplicativo Web
 
@@ -31,7 +31,7 @@ Saiba como configurar o código do aplicativo Web que os usuários entrar.
 <!-- This section can be in an include for Web App and Web APIs -->
 As bibliotecas usadas para proteger um aplicativo Web (e uma API da Web) são:
 
-| Plataforma | Biblioteca | Descrição |
+| Plataforma | Biblioteca | DESCRIÇÃO |
 |----------|---------|-------------|
 | ![.NET](media/sample-v2-code/logo_net.png) | [Extensões de modelo de identidade para .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | Microsoft Identity Extensions para .NET usado diretamente pelo ASP.NET e ASP.NET Core, propõe a um conjunto de DLLs em execução no .NET Framework e .NET Core. De um aplicativo Web do Core ASP.NET/ASP.NET, você pode controlar a validação de token usando o **TokenValidationParameters** classe (em especial em alguns cenários de ISV) |
 
@@ -110,6 +110,9 @@ Da mesma forma, o URI de saída seria definida como `https://localhost:44321/sig
 
 Em aplicativos Web do ASP.NET Core (e APIs da Web), o código que fazer a inicialização do aplicativo está localizado no `Startup.cs` arquivo, e, para adicionar a autenticação com o Microsoft Identity platform (anteriormente conhecido como Azure AD) v2.0, você precisará adicionar o código a seguir. Os comentários no código devem ser autoexplicativos.
 
+  > [!NOTE]
+  > Se você iniciar seu projeto com o projeto de web padrão ASP.NET core no Visual studio ou usando `dotnet new mvc` o método `AddAzureAD` está disponível por padrão, porque os pacotes relacionados são carregados automaticamente. No entanto se você criar um projeto do zero e tentar usar o código abaixo, sugerimos que você para adicionar o pacote do NuGet **"Microsoft.AspNetCore.Authentication.AzureAD.UI"** ao seu projeto para fazer o `AddAzureAD` método disponível.
+  
 ```CSharp
  services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
          .AddAzureAD(options => configuration.Bind("AzureAd", options));

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 3349abfb1b7cf85247b1bb5de8eb53fa09299b74
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 449dbb04d58fe7980c845b8c5bc8d837b643c1be
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65136478"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66386724"
 ---
 # <a name="azure-service-fabric-security"></a>Segurança do Azure Service Fabric 
 
@@ -201,6 +201,14 @@ O exemplo a seguir mostra como fazer isso no recurso Cosmos DB:
 ```bash
 cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBSCRIPTION>/resourceGroups/<YOUR RG>/providers/Microsoft.DocumentDB/databaseAccounts/<YOUR ACCOUNT>/listKeys?api-version=2016-03-31' -X POST -d "" -H "Authorization: Bearer $access_token" | python -c "import sys, json; print(json.load(sys.stdin)['primaryMasterKey'])")
 ```
+## <a name="windows-security-baselines"></a>Linhas de base de segurança de Windows
+[É recomendável que você implemente uma configuração padrão do setor que é amplamente conhecida e bem testada, como o Microsoft security linhas de base, em vez de criar uma linha de base por conta própria](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines); uma opção para provisionar esses em sua máquina Virtual Conjuntos de dimensionamento é usar o manipulador de extensão do Azure Desired State Configuration (DSC), configurar as máquinas virtuais como ficar online, para que eles estão executando o software de produção.
+
+## <a name="azure-firewall"></a>Firewall do Azure
+[Firewall do Azure é um serviço de segurança de rede gerenciado e baseado em nuvem que protege seus recursos de rede Virtual do Azure. É um firewall com monitoração de estado totalmente como um serviço com alta disponibilidade interna e a escalabilidade de nuvem sem restrições. ](https://docs.microsoft.com/azure/firewall/overview); Isso permite que a capacidade de limitar o tráfego HTTP/S de saída para uma lista especificada de nomes de domínio totalmente qualificado (FQDN) incluindo caracteres curinga. Esse recurso não exige a terminação SSL. Seu recomendável aproveitar [marcas Azure Firewall FQDN](https://docs.microsoft.com/azure/firewall/fqdn-tags) para atualizações do Windows e para habilitar o tráfego de rede para o Microsoft Windows Update pontos de extremidade podem fluir através do firewall. [Implantar o Firewall do Azure usando um modelo](https://docs.microsoft.com/azure/firewall/deploy-template) fornece um exemplo de definição de modelo de recurso Microsoft.Network/azureFirewalls.
+
+## <a name="tls-12"></a>TLS 1.2
+[TSG](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md)
 
 ## <a name="windows-defender"></a>Windows Defender 
 

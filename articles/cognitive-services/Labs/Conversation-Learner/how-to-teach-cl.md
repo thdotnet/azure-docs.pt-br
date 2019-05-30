@@ -3,19 +3,19 @@ title: Como ensinar com um Aprendiz de conversa - Serviços Cognitivos da Micros
 titleSuffix: Azure
 description: Como ensinar com um Aprendiz de conversa.
 services: cognitive-services
-author: v-jaswel
+author: nitinme
 manager: nolachar
 ms.service: cognitive-services
 ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
-ms.author: v-jaswel
-ms.openlocfilehash: 8c55bb27ce5a413c5ceae22371ad61a5acf47281
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: nitinme
+ms.openlocfilehash: 9e5e6594a74219a22d67af18827bfe2b7cbd0fb8
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60322882"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66385266"
 ---
 # <a name="how-to-teach-with-conversation-learner"></a>Como ensinar com um Aprendiz de conversa 
 
@@ -72,7 +72,7 @@ Sempre que você adiciona ou edita uma entidade, ação ou caixa de diálogo de 
 
 Como o treinamento é feito de forma assíncrona, é possível que as edições feitas por você não sejam imediatamente refletidas.  Se a extração de entidade ou seleção da ação não estiverem se comportando conforme o esperado com base nas alterações feitas nos últimos 5 a 10 segundos, essa pode ser a causa.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
 > [Limites e valores padrão](./cl-values-and-boundaries.md)

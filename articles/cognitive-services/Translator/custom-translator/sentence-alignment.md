@@ -7,14 +7,14 @@ manager: christw
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
-ms.author: v-rada
+ms.author: v-pawal
 ms.topic: conceptual
-ms.openlocfilehash: 8d2933f6a3bbab792acb708f2a59cad4eb2cabf7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 99538fd18067377efcc9e744e9ec611e0f685273
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60510421"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389611"
 ---
 # <a name="sentence-pairing-and-alignment-in-parallel-documents"></a>Emparelhamento de frases e alinhamento em documentos paralelos
 
@@ -38,9 +38,9 @@ Para que um treinamento seja bem-sucedido, a tabela abaixo mostra o número mín
 |------------|--------------------------------------------|------------------------------------------|--------------------------------|
 | Treinamento   | 10.000                                     | 2.000                                    | Nenhum limite superior                 |
 | Ajuste     | 2.000                                      | 500                                      | 2.500                          |
-| Testando    | 2.000                                      | 500                                      | 2.500                          |
+| Testes    | 2.000                                      | 500                                      | 2.500                          |
 | Dicionário | 0                                          | 0                                        | Nenhum limite superior                 |
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Saiba como usar um [dicionário](what-is-dictionary.md) no tradutor personalizado.

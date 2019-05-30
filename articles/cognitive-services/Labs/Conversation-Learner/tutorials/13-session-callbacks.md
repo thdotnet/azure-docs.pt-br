@@ -3,19 +3,19 @@ title: Como usar retornos de chamada da sessão com um modelo de Aprendiz de Con
 titleSuffix: Azure
 description: Saiba como usar retornos de chamada da sessão com um modelo de Aprendiz de Conversa.
 services: cognitive-services
-author: v-jaswel
+author: nitinme
 manager: nolachar
 ms.service: cognitive-services
 ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
-ms.author: v-jaswel
-ms.openlocfilehash: 246b87e46029c2bf4d7361540939181b3b209acc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: nitinme
+ms.openlocfilehash: eeed0718a1feb170dbbaa783ec0a840c7829c02e
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60635647"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390012"
 ---
 # <a name="how-to-use-session-callbacks-with-a-conversation-learner-model"></a>Como usar retornos de chamada da sessão com um modelo de Aprendiz de Conversa
 
@@ -103,7 +103,7 @@ Quatro ações são definidas no Modelo. As Ações existentes são exibidas na 
 9. Clique no botão "OK".
 10. Clique no botão "Teste Concluído".
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
 > [Chamadas de API](./14-api-calls.md)

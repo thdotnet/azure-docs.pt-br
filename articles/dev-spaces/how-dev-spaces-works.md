@@ -10,12 +10,12 @@ ms.date: 03/04/2019
 ms.topic: conceptual
 description: Descreve os processos que espaços de desenvolvimento do Azure power e como eles são configurados no arquivo de configuração azds.yaml
 keywords: azds.yaml, Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: f7cf5ae875fa0fb87322052df036d35e8e5e89a4
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: e437a53d640bbdad3cdeeba8fd73e1f9ffef4023
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65605416"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399825"
 ---
 # <a name="how-azure-dev-spaces-works-and-is-configured"></a>Como os espaços de desenvolvimento do Azure funciona e é configurado
 
@@ -80,7 +80,7 @@ Abordaremos mais detalhes sobre como os espaços de desenvolvimento do Azure fun
 ## <a name="prepare-your-aks-cluster"></a>Preparar o cluster do AKS
 
 Envolve a preparação de cluster do AKS:
-* Verificando o AKS cluster estiver em uma região [com suporte pelo Azure Dev espaços](https://docs.microsoft.com/azure/dev-spaces/#a-rapid,-iterative-kubernetes-development-experience-for-teams).
+* Verificando o AKS cluster estiver em uma região [com suporte pelo Azure Dev espaços][supported-regions].
 * Verificando o estiver executando Kubernetes 1.10.3 ou posterior.
 * Habilitar espaços de desenvolvimento do Azure em seu cluster usando `az aks use-dev-spaces`
 
@@ -278,7 +278,7 @@ Quando uma solicitação HTTP é feita a um serviço de fora do cluster, a solic
 
 Quando uma solicitação HTTP é feita a um serviço de outro serviço dentro do cluster, a solicitação primeiro vai através do contêiner de devspaces proxy do serviço de chamada. O contêiner de proxy devspaces examina a solicitação HTTP e verificações de `azds-route-as` cabeçalho. Com base no cabeçalho, o contêiner devspaces proxy irá pesquisar o endereço IP do serviço associado com o valor do cabeçalho. Se um endereço IP for encontrado, o contêiner devspaces proxy redireciona a solicitação para esse endereço IP. Se um endereço IP não for encontrado, o contêiner de proxy devspaces encaminha a solicitação para o contêiner de aplicativo pai.
 
-Por exemplo, os aplicativos *serviceA* e *serviceB* são implantados em um espaço de desenvolvimento pai chamado *padrão*. *serviceA* depende *serviceB* e faz chamadas HTTP a ele. Usuário do Azure cria um espaço de desenvolvimento filho com base nas *padrão* espaço chamado *azureuser*. Usuário do Azure também implanta sua própria versão da *serviceA* para seu espaço de filho. Quando uma solicitação é feita para *http://azureuser.s.default.serviceA.fedcba09...azds.io*:
+Por exemplo, os aplicativos *serviceA* e *serviceB* são implantados em um espaço de desenvolvimento pai chamado *padrão*. *serviceA* depende *serviceB* e faz chamadas HTTP a ele. Usuário do Azure cria um espaço de desenvolvimento filho com base nas *padrão* espaço chamado *azureuser*. Usuário do Azure também implanta sua própria versão da *serviceA* para seu espaço de filho. Quando uma solicitação é feita para *http://azureuser.s.default.serviceA.fedcba09...azds.io* :
 
 ![Espaços de desenvolvimento do Azure roteamento](media/how-dev-spaces-works/routing.svg)
 
@@ -337,13 +337,13 @@ O *install.set* propriedade permite que você configure um ou mais valores que v
 
 No exemplo acima, o *install.set.replicaCount* propriedade informa o controlador de quantas instâncias do seu aplicativo seja executado em seu espaço de desenvolvimento. Dependendo do cenário, você pode aumentar esse valor, mas ele terá um impacto sobre como anexar um depurador para o pod do seu aplicativo. Para obter mais informações, consulte o [artigo de solução de problemas](troubleshooting.md).
 
-O gráfico do Helm gerado, a imagem de contêiner é definida como *{{. Values.Image.Repository}} :{{. Values.Image.tag}}*. O `azds.yaml` arquivo define *install.set.image.tag* a propriedade como *$(tag)* por padrão, que é usado como o valor para *{{. Values.Image.tag}}*. Definindo o *install.set.image.tag* propriedade dessa forma, ele permite que a imagem de contêiner para seu aplicativo a ser marcado de forma distinta, durante a execução de espaços de desenvolvimento do Azure. Nesse caso específico, a imagem é marcada como  *\<o valor de image.repository >: $(tag)*. Você deve usar o *$(tag)* variável como o valor de *install.set.image.tag* para espaços de desenvolvimento que reconhecer e localizar o contêiner no cluster AKS.
+O gráfico do Helm gerado, a imagem de contêiner é definida como *{{. Values.Image.Repository}} :{{. Values.Image.tag}}* . O `azds.yaml` arquivo define *install.set.image.tag* a propriedade como *$(tag)* por padrão, que é usado como o valor para *{{. Values.Image.tag}}* . Definindo o *install.set.image.tag* propriedade dessa forma, ele permite que a imagem de contêiner para seu aplicativo a ser marcado de forma distinta, durante a execução de espaços de desenvolvimento do Azure. Nesse caso específico, a imagem é marcada como  *\<o valor de image.repository >: $(tag)* . Você deve usar o *$(tag)* variável como o valor de *install.set.image.tag* para espaços de desenvolvimento que reconhecer e localizar o contêiner no cluster AKS.
 
-No exemplo acima, `azds.yaml` define *install.set.ingress.hosts*. O *install.set.ingress.hosts* propriedade define um formato de nome de host para pontos de extremidade públicos. Essa propriedade também utiliza *$(spacePrefix)*, *$(rootSpacePrefix)*, e *$(hostSuffix)*, que são fornecidos pelo controlador de valores. 
+No exemplo acima, `azds.yaml` define *install.set.ingress.hosts*. O *install.set.ingress.hosts* propriedade define um formato de nome de host para pontos de extremidade públicos. Essa propriedade também utiliza *$(spacePrefix)* , *$(rootSpacePrefix)* , e *$(hostSuffix)* , que são fornecidos pelo controlador de valores. 
 
 O *$(spacePrefix)* é o nome do espaço de desenvolvimento filho, que assume a forma de *SPACENAME.s*. O *$(rootSpacePrefix)* é o nome do espaço de pai. Por exemplo, se *azureuser* é um espaço de filho de *padrão*, o valor para *$(rootSpacePrefix)* é *padrão* e o valor de *$(spacePrefix)* é *azureuser.s*. Se o espaço não for um espaço, o filho *$(spacePrefix)* está em branco. Por exemplo, se o *padrão* espaço não tem espaço nenhum pai, o valor para *$(rootSpacePrefix)* está *padrão* e o valor de *$(spacePrefix)* está em branco. O *$(hostSuffix)* é um sufixo DNS que aponta para o controlador de entrada de espaços de desenvolvimento do Azure que é executado no cluster do AKS. Esse sufixo DNS corresponde a uma entrada DNS curinga, por exemplo  *\*. RANDOM_VALUE.eus.azds.IO*, que foi criado quando o controlador de espaços de desenvolvimento do Azure foi adicionado ao cluster do AKS.
 
-No acima `azds.yaml` arquivo, você poderia atualizar também *install.set.ingress.hosts* para alterar o nome do host do seu aplicativo. Por exemplo, se você quisesse simplificar o nome do host do seu aplicativo a partir *$(spacePrefix)$(rootSpacePrefix)webfrontend$(hostSuffix)* para *$(spacePrefix)$(rootSpacePrefix)web$(hostSuffix)*.
+No acima `azds.yaml` arquivo, você poderia atualizar também *install.set.ingress.hosts* para alterar o nome do host do seu aplicativo. Por exemplo, se você quisesse simplificar o nome do host do seu aplicativo a partir *$(spacePrefix)$(rootSpacePrefix)webfrontend$(hostSuffix)* para *$(spacePrefix)$(rootSpacePrefix)web$(hostSuffix)* .
 
 Para criar o contêiner para seu aplicativo, o controlador usa a seções de abaixo o `azds.yaml` arquivo de configuração:
 
@@ -408,7 +408,7 @@ Para aplicativos Java, .NET e Node. js, você pode depurar seu aplicativo em exe
 
 ![Depurando seu código](media/get-started-node/debug-configuration-nodejs2.png)
 
-Quando você inicia seu aplicativo usando o Visual Studio Code ou Visual Studio para depuração, tratam de iniciar e conectar-se ao seu espaço de desenvolvimento da mesma forma como em execução `azds up`. As ferramentas do lado do cliente no Visual Studio Code e Visual Studio também fornecem um parâmetro adicional com informações específicas para a depuração. O parâmetro contém o nome da imagem do depurador, o local do depurador dentro na imagem do depurador e o local de destino dentro do contêiner do aplicativo para montar a pasta do depurador. 
+Quando você inicia seu aplicativo usando o Visual Studio Code ou Visual Studio para depuração, tratam de iniciar e conectar-se ao seu espaço de desenvolvimento da mesma forma como em execução `azds up`. As ferramentas do lado do cliente no Visual Studio Code e Visual Studio também fornecem um parâmetro adicional com informações específicas para a depuração. O parâmetro contém o nome da imagem do depurador, o local do depurador dentro na imagem do depurador e o local de destino dentro do contêiner do aplicativo para montar a pasta do depurador.
 
 A imagem de depurador é determinada automaticamente pelas ferramentas de cliente. Ele usa um método semelhante àquele usado durante o Dockerfile e o gráfico do Helm gerar durante a execução `azds prep`. Depois que o depurador é montado na imagem do aplicativo, ele é executado usando `azds exec`.
 
@@ -442,3 +442,7 @@ Para começar com o desenvolvimento em equipe, consulte os artigos de instruçõ
 * [Desenvolvimento em equipe - .NET Core com o Visual Studio Code e CLI](team-development-netcore.md)
 * [Desenvolvimento em equipe - .NET Core com o Visual Studio](team-development-netcore-visualstudio.md)
 * [Desenvolvimento em equipe - Node. js com o Visual Studio Code e CLI](team-development-nodejs.md)
+
+
+
+[supported-regions]: about.md#supported-regions-and-configurations

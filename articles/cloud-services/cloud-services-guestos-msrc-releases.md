@@ -11,17 +11,66 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 5/8/2019
+ms.date: 5/23/2019
 ms.author: raiye
-ms.openlocfilehash: f63b707f72b6966615d09ef0b86ce3d056a39249
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 4c0f364e596fbe2bf9083cbcf521902523c92a70
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65465545"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241318"
 ---
 # <a name="azure-guest-os"></a>Sistema operacional convidado do Azure
 As tabelas a seguir mostram as atualizações do Microsoft Security Response Center (MSRC) aplicadas ao SO convidado do Azure. Pesquise este artigo para determinar se uma atualização específica se aplica ao SO convidado que você está usando. Atualizações sempre são realizadas para a [família][family-explain] em particular na qual foram introduzidas.
+
+## <a name="may-2019-guest-os"></a>Sistema operacional convidado de maio de 2019
+
+>[!NOTE]
+>O SO de convidado pode atualmente está sendo distribuído para VMs do serviço de nuvem que estão configurados para atualizações automáticas. Quando a distribuição estiver concluída, essa versão será disponibilizada para atualizações manuais por meio do portal do Azure e dos arquivos de configuração. Os seguintes patches estão incluídos no SO convidado pode. Esta lista está sujeita a alterações.
+
+| Categoria do Produto | Artigo da KB pai | Descrição da vulnerabilidade | SO convidado | Data da primeira introdução |
+| --- | --- | --- | --- | --- |
+|  Rel 19-05   |  [4498206 ]  |  Talvez o pacote cumulativo de atualizações do IE   |  2,86, 3.73, 4.66  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4505050 ]  |  Talvez o pacote cumulativo de atualizações do IE   |  2,86, 3.73, 4.66  |  18 de maio de 2019  |
+|  Rel 19-05   |  [4497932 ]  |  Talvez a atualização de Flash   |  3.73, 4.66, 5.31  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4499175 ]  |  Talvez o pacote cumulativo de atualizações de segurança   |  2.86  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495612 ]  |  Talvez o pacote cumulativo de segurança .NET 3.5   |  2.86  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495593 ]  |  Talvez o pacote cumulativo de segurança .NET 4.5.2   |  2.86  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4499158 ]  |  Talvez o pacote cumulativo de atualizações de segurança   |  3.73  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495607 ]  |  Talvez o pacote cumulativo de segurança .NET 3.5   |  3.73  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495591 ]  |  Talvez o pacote cumulativo de segurança .NET 4.5.2   |  3.73  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4492872 ]  |  Pacote cumulativo de atualizações do IE   |  3.73  |  16 de abril de 2019  |
+|  Rel 19-05   |  [4499165 ]  |  Rollup de segurança de março   |  4.66  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495615 ]  |  Talvez o pacote cumulativo de segurança .NET 3.5   |  4.66  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495589 ]  |  Talvez o pacote cumulativo de segurança .NET 4.5.2   |  4.66  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4498947 ]  |  SSU de maio   |  5.31  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4494175 ]  |  Atualização de microcódigo de maio   |  5.31  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4505052 ]  |  Talvez o pacote cumulativo de atualizações de segurança   |  5.31  |  19 de maio de 2019  |
+|  Rel 19-05   |  [4499728 ]  |  SSU de maio   |  6.7  |  19 de maio de 2019  |
+|  Rel 19-05   |  [4505056 ]  |  Talvez o pacote cumulativo de atualizações de segurança   |  6.7  |  19 de maio de 2019  |
+|  Rel 19-05   |  [4494174 ]  |  Atualização de microcódigo de maio   |  6.7  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495590 ]  |  Talvez o Rollup de segurança do .NET   |  6.7  |  14 de maio de 2019  |
+
+[KB4493510]: https://support.microsoft.com/kb/KB4493510
+[KB4493472]: https://support.microsoft.com/kb/KB4493472
+[KB4493451]: https://support.microsoft.com/kb/KB4493451
+[KB4493446]: https://support.microsoft.com/kb/KB4493446
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## <a name="april-2019-guest-os"></a>Sistema operacional convidado de abril de 2019
 
@@ -207,10 +256,10 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 | Rel 18-12 | [4471328] | Segurança do Windows   | 2.81 | 11 de dezembro de 2018 |
 | Rel 18-12 | [4471326] | Segurança do Windows   | 3.68 | 11 de dezembro de 2018 |
 | Rel 18-12 | [4471322] | Segurança do Windows   | 4.61 | 11 de dezembro de 2018 |
-| Rel 18-12 | [4470600] | Segurança do .NET 3.x  | 2,81 | 11 de dezembro de 2018 |
+| Rel 18-12 | [4470600] | Segurança do .NET 3.x  | 2.81 | 11 de dezembro de 2018 |
 | Rel 18-12 | [4470601] | Segurança do .NET 3.x  | 3.68 | 11 de dezembro de 2018|
 | Rel 18-12 | [4470602] | Segurança do .NET 3.x  | 4.61 | 11 de dezembro de 2018 |
-| Rel 18-12 | [4470493] | Segurança do .NET 4. x  | 2,81 | 11 de dezembro de 2018 |
+| Rel 18-12 | [4470493] | Segurança do .NET 4. x  | 2.81 | 11 de dezembro de 2018 |
 | Rel 18-12 | [4470492] | Segurança do .NET 4. x  | 3.68 | 11 de dezembro de 2018 |
 | Rel 18-12 | [4470491] | Segurança do .NET 4. x  | 4.61| 11 de dezembro de 2018 |
 | Rel 18-12 | [4471331] | Piscando  | 3.68, 4.61, 5.26 | 5 de dezembro de 2018  |
@@ -567,11 +616,11 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 | N/D | [4014508] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |2.63 |9 de maio de 2017 |
 | N/D | [4014511] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |2.63 |9 de maio de 2017 |
 | N/D | [4014514] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |2.63 |9 de maio de 2017 |
-| N/D | [4019216] |Pacote cumulativo de atualizações não relacionado à segurança de maio |3,50 |9 de maio de 2017 |
-| N/D | [4014503] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3,50 |9 de maio de 2017 |
-| N/D | [4014506] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3,50 |9 de maio de 2017 |
-| N/D | [4014509] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3,50 |9 de maio de 2017 |
-| N/D | [4014513] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3,50 |9 de maio de 2017 |
+| N/D | [4019216] |Pacote cumulativo de atualizações não relacionado à segurança de maio |3.50 |9 de maio de 2017 |
+| N/D | [4014503] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3.50 |9 de maio de 2017 |
+| N/D | [4014506] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3.50 |9 de maio de 2017 |
+| N/D | [4014509] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3.50 |9 de maio de 2017 |
+| N/D | [4014513] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3.50 |9 de maio de 2017 |
 | N/D | [4019215] |Pacote cumulativo de atualizações não relacionado à segurança de maio |4.43 |9 de maio de 2017 |
 | N/D | [4014505] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |4.43 |9 de maio de 2017 |
 | N/D | [4014507] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |4.43 |9 de maio de 2017 |

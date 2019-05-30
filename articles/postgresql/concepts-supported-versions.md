@@ -1,20 +1,20 @@
 ---
-title: Versões com suporte no Banco de Dados do Azure para PostgreSQL
-description: Descreve as versões com suporte no Banco de Dados do Azure para PostgreSQL.
+title: Versões com suporte no banco de dados do Azure para PostgreSQL – servidor único
+description: Descreve as versões com suporte no banco de dados do Azure para PostgreSQL – servidor único.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 04/24/2019
-ms.openlocfilehash: 16064d662c5b101e30f8d2fbb64b39db0848f49f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 5/6/2019
+ms.openlocfilehash: 4dcbaf159fce6b5f5495a6a25a2a3420cad9e5e8
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64702320"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65067253"
 ---
 # <a name="supported-postgresql-database-versions"></a>Versões suportadas do banco de dados do PostgreSQL
-A Microsoft pretende suportar versões n-2 do mecanismo PostgreSQL no serviço Banco de Dados do Azure para PostgreSQL. As versões seriam a versão principal atual no Azure (n) e as duas versões principais anteriores (-2).
+A Microsoft pretende dar suporte a versões n-2 do mecanismo PostgreSQL no banco de dados do Azure para PostgreSQL – servidor único. As versões seriam a versão principal atual no Azure (n) e as duas versões principais anteriores (-2).
 
 No momento, o Banco de Dados do Azure para PostgreSQL oferece suporte às seguintes versões:
 

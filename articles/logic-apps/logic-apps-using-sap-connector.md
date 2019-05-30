@@ -10,12 +10,12 @@ ms.reviewer: divswa, LADocs
 ms.topic: article
 ms.date: 05/09/2019
 tags: connectors
-ms.openlocfilehash: 3fb39103fc9cb0f38bca56dcaeea4837ff4dfabe
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: bccefec80ef3afd6d312bb1048d3be5d8e708728
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65541103"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258161"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Conectar aos sistemas SAP a partir do Aplicativos Lógicos do Azure
 
@@ -27,7 +27,7 @@ O conector SAP usa o [biblioteca do SAP .NET Connector (NCo)](https://support.sa
 * **Receber do SAP**: Receber IDoc via tRFC, chamar funções BAPI por tRFC ou chamar RFC/tRFC em sistemas SAP.
 * **Gerar esquemas**: Gera esquemas para os artefatos do SAP para IDoc, BAPI ou RFC.
 
-Para todas as operações acima, o conector SAP é compatível com autenticação básica por meio de nome de usuário e senha. O conector também suporta [comunicações de rede segura (SNC)](https://help.sap.com/doc/saphelp_nw70/7.0.31/e6/56f466e99a11d1a5b00000e835363f/content.htm?no_cache=true), que pode ser usado para SAP NetWeaver Single Sign-On ou para recursos de segurança adicionais fornecidos por um produto de segurança externas.
+Para todas as operações acima, o conector SAP dá suporte para autenticação Básica por meio de nome de usuário e senha. O conector também suporta [comunicações de rede segura (SNC)](https://help.sap.com/doc/saphelp_nw70/7.0.31/e6/56f466e99a11d1a5b00000e835363f/content.htm?no_cache=true), que pode ser usado para SAP NetWeaver Single Sign-On ou para recursos de segurança adicionais fornecidos por um produto de segurança externas.
 
 O conector SAP integra-se a sistemas SAP locais por meio do [gateway de dados local](../logic-apps/logic-apps-gateway-connection.md). Em cenários de envio, por exemplo, ao enviar uma mensagem de aplicativos lógicos a um sistema SAP, o gateway de dados atua como um cliente do RFC e encaminha as solicitações recebidas de aplicativos lógicos para SAP.
 Da mesma forma, em cenários de recebimento, o gateway de dados atua como um servidor RFC que recebe solicitações de SAP e a encaminha para o aplicativo lógico.
@@ -119,6 +119,8 @@ Em Aplicativos Lógicos do Azure, uma [ação](../logic-apps/logic-apps-overview
       Se a propriedade **Tipo de Logon** estiver definida como **Grupo**, estas propriedades, que geralmente aparecem como opcionais, serão obrigatórias:
 
       ![Criar conexão do servidor de mensagens SAP](media/logic-apps-using-sap-connector/create-SAP-message-server-connection.png)
+
+      Por padrão, a tipagem forte é usado para verificar se há valores inválidos, executando a validação de XML em relação ao esquema. Esse comportamento pode ajudá-lo a detectar problemas anteriormente. O **segura digitando** opção está disponível para compatibilidade com versões anteriores e só verifica o comprimento da cadeia de caracteres. Saiba mais sobre o [ **segura digitando** opção](#safe-typing).
 
    1. Quando terminar, escolha **Criar**.
 
@@ -225,6 +227,8 @@ Este exemplo usa um aplicativo lógico que dispara ao receber uma mensagem de um
 
       ![Criar conexão do servidor de mensagens SAP](media/logic-apps-using-sap-connector/create-SAP-message-server-connection.png)  
 
+      Por padrão, a tipagem forte é usado para verificar se há valores inválidos, executando a validação de XML em relação ao esquema. Esse comportamento pode ajudá-lo a detectar problemas anteriormente. O **segura digitando** opção está disponível para compatibilidade com versões anteriores e só verifica o comprimento da cadeia de caracteres. Saiba mais sobre o [ **segura digitando** opção](#safe-typing).
+
 1. Forneça os parâmetros necessários com base na configuração do sistema SAP.
 
    Também é possível oferecer uma ou mais ações do SAP. Esta lista de ações especifica as mensagens que o gatilho recebe do servidor SAP por meio do gateway de dados. Uma lista vazia especifica que o gatilho recebe todas as mensagens. Se a lista tiver mais de uma mensagem, o gatilho receberá apenas as mensagens especificadas na lista. Quaisquer outras mensagens enviadas do seu servidor SAP são rejeitadas pelo gateway.
@@ -306,7 +310,11 @@ Clique em **Salvar** na barra de ferramentas do designer.
 
       ![Criar conexão do servidor de mensagens SAP](media/logic-apps-using-sap-connector/create-SAP-message-server-connection.png)
 
-   1. Quando terminar, escolha **Criar**. Os Aplicativos Lógicos configuram e testam a conexão, garantindo seu funcionamento correto.
+      Por padrão, a tipagem forte é usado para verificar se há valores inválidos, executando a validação de XML em relação ao esquema. Esse comportamento pode ajudá-lo a detectar problemas anteriormente. O **segura digitando** opção está disponível para compatibilidade com versões anteriores e só verifica o comprimento da cadeia de caracteres. Saiba mais sobre o [ **segura digitando** opção](#safe-typing).
+
+   1. Quando terminar, escolha **Criar**. 
+   
+      Os Aplicativos Lógicos configuram e testam a conexão, garantindo seu funcionamento correto.
 
 1. Forneça o caminho para o artefato para o qual você deseja gerar o esquema.
 
@@ -391,17 +399,64 @@ Para habilitar o SNC para suas solicitações de ou para o sistema SAP, selecion
 
    ![Configurar o SAP SNC na conexão](media/logic-apps-using-sap-connector/configure-sapsnc.png)
 
-   | Propriedade | Descrição |
+   | Propriedade | DESCRIÇÃO |
    |----------| ------------|
    | **Biblioteca SNC** | O nome da biblioteca SNC ou caminho absoluto ou caminho relativo ao local de instalação NCo. Por exemplo, `sapsnc.dll` ou `.\security\sapsnc.dll` ou `c:\security\sapsnc.dll` |
    | **O SNC SSO** | Ao se conectar por meio de SNC, a identidade SNC normalmente é usada para autenticar o chamador. Outra opção é substituir de modo que as informações de usuário e senha podem ser usadas para autenticar o chamador, mas a linha ainda está criptografada. |
    | **SNC meu nome** | Na maioria dos casos, essa propriedade pode ser omitida. Geralmente, a solução SNC instalada sabe seu próprio nome SNC. Apenas para as soluções que dão suporte a "identidades múltiplas", você talvez precise especificar a identidade a ser usado para este destino específico ou servidor. |
    | **Nome do parceiro SNC** | O nome para o back-end SNC |
-   | **O SNC qualidade de proteção** | Qualidade de serviço a ser usada para comunicação SNC desse determinado destino/servidor. Valor padrão é definido pelo sistema back-end. O valor máximo é definido pelo produto de segurança usado para SNC. |
+   | **O SNC qualidade de proteção** | Qualidade de serviço a ser usado para comunicação de SNC deste destino/servidor específico. Valor padrão é definido pelo sistema back-end. O valor máximo é definido pelo produto de segurança usado para SNC. |
    |||
 
    > [!NOTE]
    > Variáveis de ambiente SNC_LIB e SNC_LIB_64 não devem ser definidas no computador em que você tem o gateway de dados e a biblioteca SNC. Se definido, eles seriam têm precedência sobre o valor de biblioteca SNC passado por meio do conector.
+
+<a name="safe-typing"></a>
+
+## <a name="safe-typing"></a>Digitar seguro
+
+Por padrão, quando você cria sua conexão de SAP, tipagem forte é usado para verificar se há valores inválidos, executando a validação de XML em relação ao esquema. Esse comportamento pode ajudá-lo a detectar problemas anteriormente. O **segura digitando** opção está disponível para compatibilidade com versões anteriores e só verifica o comprimento da cadeia de caracteres. Se você escolher **segura digitando**, o tipo DATS e o tipo de TIMS no SAP são tratados como cadeias de caracteres em vez de como seus equivalentes XML, `xs:date` e `xs:time` onde `xmlns:xs="http://www.w3.org/2001/XMLSchema"`. Digitar seguro afeta o comportamento para todos os geração de esquema, a mensagem de envio para a carga "foi enviado" e "recebido" resposta, tanto o gatilho. 
+
+Quando a tipagem forte é usado (**segura digitando** não habilitada), o esquema mapeia os tipos DATS e TIMS para tipos mais simples de XML:
+
+```xml
+<xs:element minOccurs="0" maxOccurs="1" name="UPDDAT" nillable="true" type="xs:date"/>
+<xs:element minOccurs="0" maxOccurs="1" name="UPDTIM" nillable="true" type="xs:time"/>
+```
+
+Ao enviar mensagens usando a tipagem forte, a resposta DATS e TIMS está em conformidade com o formato do tipo XML correspondente:
+
+```xml
+<DATE>9999-12-31</DATE>
+<TIME>23:59:59</TIME>
+```
+
+Quando **segura digitando** é habilitado, o esquema mapeia os DATS e tipos TIMS em XML da cadeia de caracteres campos com restrições de comprimento, por exemplo:
+
+```xml
+<xs:element minOccurs="0" maxOccurs="1" name="UPDDAT" nillable="true">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="8" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element minOccurs="0" maxOccurs="1" name="UPDTIM" nillable="true">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="6" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+```
+
+Ao enviar mensagens com **segura digitando** habilitado, a resposta DATS e TIMS se parece com esta:
+
+```xml
+<DATE>99991231</DATE>
+<TIME>235959</TIME>
+```
+
 
 ## <a name="known-issues-and-limitations"></a>Problemas e limitações conhecidos
 

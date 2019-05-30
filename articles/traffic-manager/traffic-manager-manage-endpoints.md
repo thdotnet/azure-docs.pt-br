@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/08/2017
 ms.author: kumud
-ms.openlocfilehash: 0832010707fc9b5d5f435aac29940db6905d18d7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 057810fa8030321f9a94085f66bc1ea93dbc3830
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60329999"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66238935"
 ---
 # <a name="add-disable-enable-or-delete-endpoints"></a>Adicionar, desabilitar, habilitar ou excluir pontos de extremidade
 
@@ -52,7 +52,7 @@ Você também pode desabilitar pontos de extremidade individuais que fazem parte
 1. Usando um navegador, entre no [portal do Azure](https://portal.azure.com).
 2. Na barra de pesquisa do portal, pesquise o nome do **perfil do Gerenciador de Tráfego** que você deseja modificar e clique no perfil do Gerenciador de Tráfego nos resultados exibidos.
 3. Na folha **Perfil do Gerenciador de Tráfego**, na seção **Configurações**, clique em **Pontos de Extremidade**. 
-4. Clique no ponto de extremidade que você deseja desabilitar, e, em seguida, na folha **Ponto de extremidade** que é exibida, clique em **Editar**.
+4. Clique o ponto de extremidade que você deseja desabilitar.
 5. Na folha **Ponto de extremidade**, altere o status de ponto de extremidade para **Desabilitado**e, em seguida, clique em **Salvar**.
 6. Os clientes continuam a enviar o tráfego para o ponto de extremidade durante o tempo de vida (TTL). Você pode alterar a TTL na página Configuração do perfil do Gerenciador de Tráfego.
 
@@ -61,7 +61,7 @@ Você também pode desabilitar pontos de extremidade individuais que fazem parte
 1. Usando um navegador, entre no [portal do Azure](https://portal.azure.com).
 2. Na barra de pesquisa do portal, pesquise o nome do **perfil do Gerenciador de Tráfego** que você deseja modificar e clique no perfil do Gerenciador de Tráfego nos resultados exibidos.
 3. Na folha **Perfil do Gerenciador de Tráfego**, na seção **Configurações**, clique em **Pontos de Extremidade**. 
-4. Clique no ponto de extremidade que você deseja desabilitar, e, em seguida, na folha **Ponto de extremidade** que é exibida, clique em **Editar**.
+4. Clique o ponto de extremidade que você deseja habilitar.
 5. Na folha **Ponto de extremidade**, altere o status de ponto de extremidade para **Habilitado**e, em seguida, clique em **Salvar**.
 6. Os clientes continuam a enviar o tráfego para o ponto de extremidade durante o tempo de vida (TTL). Você pode alterar a TTL na página Configuração do perfil do Gerenciador de Tráfego.
 
@@ -70,11 +70,11 @@ Você também pode desabilitar pontos de extremidade individuais que fazem parte
 1. Usando um navegador, entre no [portal do Azure](https://portal.azure.com).
 2. Na barra de pesquisa do portal, pesquise o nome do **perfil do Gerenciador de Tráfego** que você deseja modificar e clique no perfil do Gerenciador de Tráfego nos resultados exibidos.
 3. Na folha **Perfil do Gerenciador de Tráfego**, na seção **Configurações**, clique em **Pontos de Extremidade**. 
-4. Clique no ponto de extremidade que você deseja desabilitar, e, em seguida, na folha **Ponto de extremidade** que é exibida, clique em **Editar**.
-5. Na folha **Ponto de extremidade**, altere o status de ponto de extremidade para **Habilitado**e, em seguida, clique em **Salvar**.
+4. Clique o ponto de extremidade que você deseja excluir.
+5. No **ponto de extremidade** folha, clique em **excluir**
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Gerenciar perfis do Gerenciador de Tráfego](traffic-manager-manage-profiles.md)
 * [Configurar métodos de roteamento](traffic-manager-configure-routing-method.md)

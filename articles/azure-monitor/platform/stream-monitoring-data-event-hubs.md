@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: johnkem
 ms.subservice: ''
-ms.openlocfilehash: ab439eb77113c53ab046256dd8d448a18b63f887
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 72d744808d6b52ccd151645c97005bfdfe1a5541
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60452663"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243461"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub-for-consumption-by-an-external-tool"></a>Transmitir os dados de monitoramento do Azure para um hub de eventos para consumo por uma ferramenta externa
 
@@ -43,7 +43,7 @@ Antes de começar, você precisa [criar um namespace dos Hubs de Eventos e um hu
 * O número de unidades de taxa de transferência permite aumentar a escala de taxa de transferência para os hubs de eventos. O número de partições permite paralelizar o consumo em muitos consumidores. Uma única partição pode fazer até 20 MBps, ou aproximadamente 20.000 mensagens por segundo. Dependendo da ferramenta que consome os dados, poderá ou não dar suporte ao consumo de várias partições. Se você não tiver certeza sobre o número de partições a definir, é recomendável iniciar com quatro partições.
 * É recomendável definir a retenção de mensagens no seu hub de eventos para 7 dias. Se a ferramenta de consumo ficar inativa por mais de um dia, isso garante que a ferramenta poderá retirar de onde parou (para eventos de até 7 dias).
 * É recomendável utilizar o grupo de consumidores padrão para o hub de eventos. Não é necessário criar outros grupos de consumidores ou utilizar um grupo de consumidores separado, exceto se você planejar ter duas ferramentas diferentes que consumam os mesmos dados do mesmo hub de eventos.
-* Para o Log de Atividades do Azure, você escolhe um namespace dos Hubs de Eventos e o Azure Monitor cria um hub de eventos dentro desse namespace chamado 'insights-logs-operationallogs.' Para outros tipos de log, é possível escolher um hub de eventos existente (permitindo que você reutilize o mesmo hub de eventos insights-logs-operationallogs) ou que o Azure Monitor crie um hub de eventos por categoria de log.
+* Para o log de atividades do Azure, você escolhe um namespace de Hubs de eventos e do Azure Monitor cria um hub de eventos dentro desse namespace chamado 'insights-logs-operationallogs.' Para outros tipos de log, é possível escolher um hub de eventos existente (permitindo que você reutilize o mesmo hub de eventos insights-logs-operationallogs) ou que o Azure Monitor crie um hub de eventos por categoria de log.
 * Normalmente, as portas 5671 e 5672 devem ser abertas no computador que consome dados do hub de eventos.
 
 Consulte também as [Perguntas frequentes sobre Hubs de Eventos do Azure](../../event-hubs/event-hubs-faq.md).
@@ -117,8 +117,8 @@ Rotear dados de monitoramento para um hub de eventos com o Azure Monitor permite
 * **Servidor syslog** – se você deseja transmitir os dados do Azure Monitor diretamente para um servidor syslog, você pode fazer check-out [este repositório GitHub](https://github.com/miguelangelopereira/azuremonitor2syslog/).
 
 ## <a name="next-steps"></a>Próximas etapas
-* [Arquivar o Log de Atividades em uma conta de armazenamento](../../azure-monitor/platform/archive-activity-log.md)
-* [Leia a visão geral do Log de Atividades do Azure](../../azure-monitor/platform/activity-logs-overview.md)
-* [Configurar um alerta com base em um evento do Log de Atividades](../../azure-monitor/platform/alerts-log-webhook.md)
+* [Arquivar o log de atividades para uma conta de armazenamento](../../azure-monitor/platform/archive-activity-log.md)
+* [Leia a visão geral do log de atividades do Azure](../../azure-monitor/platform/activity-logs-overview.md)
+* [Configurar um alerta com base em um evento de log de atividades](../../azure-monitor/platform/alerts-log-webhook.md)
 
 

@@ -18,12 +18,12 @@ ms.date: 03/23/2019
 ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5c6f1064d2d73ab3d99ca341cffd9b296723e97
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: acc30bc18921b79be3b5e5b2ae340eab29dd5bcf
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64571096"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66305766"
 ---
 # <a name="what-are-access-controls-in-azure-active-directory-conditional-access"></a>O que são controles de acesso no acesso condicional do Azure Active Directory?
 
@@ -107,7 +107,7 @@ Seu dispositivo deve ser registrado para o Azure AD antes de um aplicativo pode 
 Para obter uma lista de política com suporte a aplicativos de cliente protegido, consulte [requisito de política de proteção de aplicativo](technical-reference.md#app-protection-policy-requirement).
 
 
-### <a name="terms-of-use"></a>Termos de Uso
+### <a name="terms-of-use"></a>Termos de uso
 
 Você pode exigir que um usuário em seu locatário concorde com os termos de uso antes de obter acesso a um recurso. Como administrador, você pode configurar e personalizar termos de uso, carregando um documento PDF. Se um usuário estiver escopo desse controle, ele receberá acesso a um aplicativo somente se concordar com os termos de uso.
 

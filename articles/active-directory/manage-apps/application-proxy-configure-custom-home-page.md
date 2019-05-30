@@ -11,30 +11,30 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/17/2019
+ms.date: 05/23/2019
 ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3fa5c5638da390f4416afc9f4bd9c5d58c34cea8
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 0f4e71bd7fd7e0ed9a220619995ba108fdccabe4
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65825568"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66233761"
 ---
 # <a name="set-a-custom-home-page-for-published-apps-by-using-azure-ad-application-proxy"></a>Definir uma home page personalizada para aplicativos publicados usando o Proxy de Aplicativo Azure AD
 
-Este artigo discute como configurar um aplicativo para direcionar um usuário para uma página inicial personalizada, que pode ser diferente dependendo se eles são internos ou externos. Quando você publica um aplicativo com o Proxy de aplicativo, você define uma URL interna, mas, às vezes, isso não é a página de que um usuário deverá ver pela primeira vez. Defina uma home page personalizada para que um usuário obtém a página correta quando acessam o aplicativo. O usuário verá a home page personalizada que você defina, independentemente se eles acessam o aplicativo do painel de acesso do Azure Active Directory ou o lançador de aplicativo do Office 365.
+Este artigo discute como configurar um aplicativo para direcionar um usuário para uma página inicial personalizada. Quando você publica um aplicativo com o Proxy de aplicativo, você define uma URL interna, mas, às vezes, isso não é a página de que um usuário deverá ver pela primeira vez. Defina uma home page personalizada para que um usuário obtém a página correta quando acessam o aplicativo. O usuário verá a home page personalizada que você defina, independentemente se eles acessam o aplicativo do painel de acesso do Azure Active Directory ou o lançador de aplicativo do Office 365.
 
 Quando um usuário inicia o aplicativo, eles são direcionados por padrão para a URL do domínio raiz para o aplicativo publicado. A página de aterrissagem é normalmente definida como a URL da home page. Use o módulo do PowerShell do Azure AD para definir uma URL da home page personalizada quando desejar que um usuário do aplicativo cheguem em uma página específica dentro do aplicativo.
 
-Um cenário de aqui que explica por que sua empresa definiria uma página inicial personalizada, e por que deve ser diferente dependendo do tipo de usuário:
+Aqui está um cenário que explica por que sua empresa definiria uma página inicial personalizada:
 
+- Dentro da rede corporativa, um usuário vai para `https://ExpenseApp/login/login.aspx` para entrar e acessar seu aplicativo.
 - Como você tem outros ativos (como imagens) que o Proxy de aplicativo precisa acessar no nível superior da estrutura de pasta, você publica o aplicativo com `https://ExpenseApp` como a URL interna.
-- No entanto, um usuário na sua rede corporativa, vai para `https://ExpenseApp/login/login.aspx` para entrar e acessar seu aplicativo.
 - A URL externa padrão é `https://ExpenseApp-contoso.msappproxy.net`, que não leva a um usuário externo para a página de entrada.
-- Você deseja definir `https://ExpenseApp-contoso.msappproxy.net/login/login.aspx` como a URL da home page externo em vez disso, portanto, um usuário externo vê a página de entrada primeiro.
+- Você deseja definir `https://ExpenseApp-contoso.msappproxy.net/login/login.aspx` como a URL da home page em vez disso, portanto, um usuário externo vê a página de entrada primeiro.
 
 >[!NOTE]
 >Quando você conceder aos usuários acesso a aplicativos publicados, os aplicativos são exibidos no [painel de acesso do Azure AD](../user-help/my-apps-portal-end-user-access.md) e [lançador de aplicativo do Office 365](https://www.microsoft.com/microsoft-365/blog/2016/09/27/introducing-the-new-office-365-app-launcher/).
@@ -49,21 +49,21 @@ Antes de definir a URL da página inicial, tenha em mente os seguintes requisito
 
 - Se você fizer uma alteração no aplicativo publicado, essa alteração poderá redefinir o valor da URL da home page. Quando você decidir atualizar o aplicativo no futuro, você deverá verificar novamente e, se necessário, atualizar a URL da home page.
 
-Você pode alterar a página de home interna ou externa por meio do portal do Azure ou usando o PowerShell.
+Você pode definir a URL da home page no portal do Azure ou usando o PowerShell.
 
 ## <a name="change-the-home-page-in-the-azure-portal"></a>Altere a home page no portal do Azure
 
-Para alterar as home pages internas e externas de seu aplicativo por meio do portal do Azure AD, siga estas etapas:
+Para alterar a URL da home page do seu aplicativo por meio do portal do Azure AD, siga estas etapas:
 
-1. Entrar para o [portal do Azure Active Directory](https://aad.portal.azure.com/). O painel do Centro de administração do Active Directory do Azure é exibida.
-2. Na barra lateral, selecione **Azure Active Directory**. É exibida a página de visão geral do AD do Azure.
-3. Na barra lateral de visão geral, selecione **registros de aplicativo**. É exibida a lista de aplicativos registrados.
-4. Escolha seu aplicativo na lista. Aparece uma página mostrando os detalhes do aplicativo registrado.
-5. Selecione o link sob **URIs de redirecionamento**, que exibe o número de URIs de redirecionamento para a web e os tipos de cliente público. A página de autenticação para o aplicativo registrado é exibido.
-6. Na última linha do **URIs de redirecionamento** da tabela, defina o **tipo** coluna para **cliente público (móvel e desktop)** e, no **URI de REDIRECIONAMENTO**coluna, digite a URL interna que você deseja usar. Uma nova linha em branco é exibida abaixo da linha que você acabou de modificar.
-7. Na nova linha, defina a **tipo** coluna a ser **Web**e, nas **URI de REDIRECIONAMENTO** coluna, digite a URL externa que você deseja usar.
-8. Se você quiser excluir quaisquer linhas URI de redirecionamento existentes, selecione a **excluir** ícone (uma lata de lixo) ao lado de cada linha indesejada.
-9. Clique em **Salvar**.
+1. Entre no [Portal do Azure](https://portal.azure.com/) como administrador.
+2. Selecione **Azure Active Directory**e então **registros de aplicativo**. É exibida a lista de aplicativos registrados.
+3. Escolha seu aplicativo na lista. Aparece uma página mostrando os detalhes do aplicativo registrado.
+4. Sob **Manage**, selecione **identidade visual**.
+5. Atualizar o **URL da Home page** com o novo caminho.
+
+   ![Página da identidade visual para um aplicativo registrado indicando que o campo de URL da Home Page](media/application-proxy-configure-custom-home-page/app-proxy-app-branding.png)
+ 
+6. Clique em **Salvar**.
 
 ## <a name="change-the-home-page-with-powershell"></a>Alterar a home page com o PowerShell
 

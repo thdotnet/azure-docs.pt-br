@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c2c5006eb050b70b783ab8199724e0e98766381
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1ca69fc23d580b61e74fe56b3d0c3524fdfad747
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60359292"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235545"
 ---
-# <a name="planning-a-cloud-based-azure-multi-factor-authentication"></a>Planejamento de uma autenticação de multifator baseado em nuvem do Azure
+# <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Planejando uma implantação de autenticação multifator do Azure baseado em nuvem
 
 As pessoas estão se conectando aos recursos organizacionais em cenários cada vez mais complicados. As pessoas se conectar de dispositivos pertence à organização, particulares e públicos em e fora da rede corporativa usando Smartphones, tablets, PCs e laptops, geralmente em várias plataformas. Neste mundo sempre conectado, vários dispositivos e várias plataformas, a segurança das contas de usuário é mais importante do que nunca. As senhas, não importa sua complexidade, usado em dispositivos, redes e plataformas não são mais suficientes para garantir a segurança da conta de usuário, especialmente quando os usuários tendem a reutilização de senhas entre contas. Sofisticado de phishing e outra ataques podem resultar em nomes de usuário e senhas que está sendo lançada e vendidos em dark web a engenharia social.
 
@@ -60,14 +60,12 @@ Autenticação multifator do Azure é implantada pela imposição de políticas 
 * Dispositivo em conformidade
 * Dispositivo adicionado ao Azure AD híbrido
 * Aplicativo cliente aprovado
- 
 
-Use os modelos de email e cartazes personalizáveis [materiais de distribuição de autenticação multifator] para implementar a autenticação multifator para sua organização. (https://www.microsoft.com/en-us/download/details.aspx?id=57600&WT.mc_id=rss_alldownloads_all)
+Use os cartazes personalizáveis e modelos de email no [materiais de distribuição de autenticação multifator](https://www.microsoft.com/download/details.aspx?id=57600&WT.mc_id=rss_alldownloads_all) para implementar a autenticação multifator para sua organização.
 
 ## <a name="enable-multi-factor-authentication-with-conditional-access"></a>Habilitar Autenticação Multifator com acesso condicional
 
 Políticas de acesso condicional impõem o registro, exigindo que os usuários não registrados concluir o registro na primeira entrada, uma consideração de segurança importante.
-
 
 [O Azure AD Identity Protection](../identity-protection/howto-configure-risk-policies.md) contribui para uma política de registro e as políticas de detecção e correção de risco automatizada na história da autenticação multifator do Azure. As políticas podem ser criadas para forçar alterações de senha quando há uma ameaça de identidade comprometida ou exigir MFA quando uma entrada é considerado arriscado pelos seguintes [eventos](../reports-monitoring/concept-risk-events.md):
 
@@ -97,7 +95,7 @@ Alguns dos eventos de risco detectados pelo Azure Active Directory Identity Prot
       2. Especifique os intervalos de IP
    2. Se o uso de países/regiões
       1. Expanda o menu suspenso e selecione os países ou regiões que você deseja definir para essa localização nomeada.
-      2. Decida se deseja incluir áreas desconhecidas. As áreas desconhecidas são endereços IP que não podem ser mapeados para um país ou uma região.
+      2. Decida se deseja incluir áreas desconhecidas. Áreas desconhecidas são endereços IP que não podem ser mapeados para um país/região.
 7. Clique em **Criar**
 
 ## <a name="plan-authentication-methods"></a>Métodos de autenticação de plano
@@ -145,13 +143,13 @@ Os administradores devem determinar como os usuários serão registrar seus mét
 
 Se sua organização estiver usando o Azure Active Directory Identity Protection [configurar a política de registro MFA](../identity-protection/howto-mfa-policy.md) para solicitar que os usuários se registrem na próxima vez que entrar no modo interativo.
 
-### <a name="registration-without-identity-protection"></a>Registro sem proteção de identidade
+### <a name="registration-without-identity-protection"></a>Registro sem a proteção de identidade
 
 Se sua organização não tiver licenças que habilitam a proteção de identidade, os usuários são solicitados a registrar na próxima vez que a MFA é necessária ao entrar. Os usuários não podem ser registrados para MFA, se eles não usarem aplicativos protegidos com MFA. É importante obter todos os usuários registrados para que os atores ruins não é possível adivinhar a senha de um usuário e se registrar para MFA em seu nome, efetivamente assumindo o controle da conta.
 
 #### <a name="enforcing-registration"></a>Aplicar o registro
 
-Usando as etapas a seguir uma política de acesso condicional pode forçar os usuários se registrem para a autenticação multifator
+Usando as etapas a seguir um acesso condicional a política pode forçar os usuários se registrem para a autenticação multifator
 
 1. Crie um grupo, adicionar todos os usuários que não estão registrados.
 2. Usando o acesso condicional, impor a autenticação multifator para este grupo para acesso a todos os recursos.
@@ -169,6 +167,72 @@ Get-MsolUser -All | where {$_.StrongAuthenticationMethods -ne $null} | Select-Ob
 
 ```PowerShell
 Get-MsolUser -All | where {$_.StrongAuthenticationMethods.Count -eq 0} | Select-Object -Property UserPrincipalName | Sort-Object userprincipalname 
+```
+
+### <a name="convert-users-from-per-user-mfa-to-conditional-access-based-mfa"></a>Usuários de Convert do MFA por usuário para acesso condicional com base em MFA
+
+Se os usuários foram habilitados para uso por usuário habilitado e imposta a autenticação multifator Azure o PowerShell a seguir podem ajudá-lo a conversão para o acesso condicional com base em autenticação multifator do Azure.
+
+```PowerShell
+# Disable MFA for all users, keeping their MFA methods intact
+Get-MsolUser -All | Disable-MFA -KeepMethods
+
+# Enforce MFA for all users
+Get-MsolUser -All | Set-MfaState -State Enforced
+
+# Wrapper to disable MFA with the option to keep the MFA
+# methods (to avoid having to proof-up again later)
+function Disable-Mfa {
+
+    [CmdletBinding()]
+    param(
+        [Parameter(ValueFromPipeline=$True)]
+        $User,
+        [switch] $KeepMethods
+    )
+
+    Process {
+
+        Write-Verbose ("Disabling MFA for user '{0}'" -f $User.UserPrincipalName)
+        $User | Set-MfaState -State Disabled
+
+        if ($KeepMethods) {
+            # Restore the MFA methods which got cleared when disabling MFA
+            Set-MsolUser -ObjectId $User.ObjectId `
+                         -StrongAuthenticationMethods $User.StrongAuthenticationMethods
+        }
+    }
+}
+
+# Sets the MFA requirement state
+function Set-MfaState {
+
+    [CmdletBinding()]
+    param(
+        [Parameter(ValueFromPipelineByPropertyName=$True)]
+        $ObjectId,
+        [Parameter(ValueFromPipelineByPropertyName=$True)]
+        $UserPrincipalName,
+        [ValidateSet("Disabled","Enabled","Enforced")]
+        $State
+    )
+
+    Process {
+        Write-Verbose ("Setting MFA state for user '{0}' to '{1}'." -f $ObjectId, $State)
+        $Requirements = @()
+        if ($State -ne "Disabled") {
+            $Requirement =
+                [Microsoft.Online.Administration.StrongAuthenticationRequirement]::new()
+            $Requirement.RelyingParty = "*"
+            $Requirement.State = $State
+            $Requirements += $Requirement
+        }
+
+        Set-MsolUser -ObjectId $ObjectId -UserPrincipalName $UserPrincipalName `
+                     -StrongAuthenticationRequirements $Requirements
+    }
+}
+
 ```
 
 ## <a name="plan-conditional-access-policies"></a>Planejar políticas de acesso condicional
@@ -210,7 +274,7 @@ Alguns aplicativos herdados e local que autentica diretamente no AD do Azure exi
 * Aplicativos de RADIUS no local, que serão necessário usar o adaptador do MFA com o servidor NPS.
 * Aplicativos no local do AD FS, que será necessário usar o adaptador do MFA com AD FS 2016.
 
-Aplicativos que autenticar diretamente com o Azure AD e têm autenticação moderna (WS-Fed, SAML, OAuth, OpenID Connect) podem fazer uso de políticas de acesso condicional diretamente.
+Aplicativos que autenticam diretamente com o AD do Azure e têm autenticação moderna (WS-Fed, SAML, OAuth, OpenID Connect) podem fazer uso do acesso condicional políticas diretamente.
 
 ### <a name="use-azure-mfa-with-azure-ad-application-proxy"></a>Usar a MFA do Azure com o Proxy de aplicativo do Azure AD
 
@@ -227,7 +291,7 @@ A extensão do Servidor de Políticas de Rede (NPS) para o Azure MFA adiciona re
 * Com o protocolo CHAPv2, há suporte apenas a notificações de push de aplicativo do autenticador e a chamada de voz.
 * Políticas de acesso condicional não podem ser aplicadas.
 
-A extensão NPS atua como um adaptador entre RADIUS e o Azure MFA baseado em nuvem para fornecer um segundo fator de autenticação para proteger [VPN](howto-mfa-nps-extension-vpn.md), [conexões de Gateway de área de trabalho remota](howto-mfa-nps-extension-rdg.md), ou outro capaz de RADIUS aplicativos. Os usuários se registrar para MFA do Azure nesse ambiente é desafiado a todas as tentativas de autenticação, a falta de média de políticas de acesso condicional MFA sempre é necessária.
+A extensão NPS atua como um adaptador entre RADIUS e o Azure MFA baseado em nuvem para fornecer um segundo fator de autenticação para proteger [VPN](howto-mfa-nps-extension-vpn.md), [conexões de Gateway de área de trabalho remota](howto-mfa-nps-extension-rdg.md), ou outro capaz de RADIUS aplicativos. Os usuários se registrar para MFA do Azure nesse ambiente é desafiado a todas as tentativas de autenticação, a falta de políticas de acesso condicional significam a que MFA sempre será necessária.
 
 #### <a name="implementing-your-nps-server"></a>Implementando o servidor NPS
 

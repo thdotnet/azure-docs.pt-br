@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 04/08/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 398b7a78c9bc13631e15c8725efb8cc0fba3f127
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 62261e46dc4744597acd10c32f0a835f4a597d4d
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65806470"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243967"
 ---
 # <a name="extend-support-for-sql-server-2008-and-sql-server-2008-r2-with-azure"></a>Estender o suporte para SQL Server 2008 e SQL Server 2008 R2 com o Azure
 
@@ -58,9 +58,9 @@ O SQL Server exige instantâneos consistentes de aplicativos do Azure Site Recov
 
 ### <a name="database-migration-service"></a>Serviço de Migração de Banco de Dados
 
-O [serviço de migração de banco de dados](/dms/dms-overview) é uma opção para os clientes se migrar do local para a VM do Azure com a atualização do SQL Server para SQL Server 2012 e superior.
+O [serviço de migração de banco de dados](/azure/dms/dms-overview) é uma opção para os clientes se migrar do local para a VM do Azure com a atualização do SQL Server para SQL Server 2012 e superior.
 
-## <a name="disaster-recovery"></a>Recuperação de desastres
+## <a name="disaster-recovery"></a>Recuperação de desastre
 
 Soluções de recuperação de desastres para o EOS SQL Server em VM do Azure são da seguinte maneira:
 

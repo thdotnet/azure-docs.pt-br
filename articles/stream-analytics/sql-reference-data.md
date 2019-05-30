@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: 3368be291770133cdfa10158f6e30540e17b8223
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f0e62c27885e2f6d5097194e1b9d869e167c4a4c
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363215"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66304983"
 ---
 # <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job-preview"></a>Usar dados de referência de um Banco de Dados SQL para um trabalho do Azure Stream Analytics (versão prévia)
 
@@ -59,16 +59,14 @@ Siga as etapas abaixo para adicionar o Banco de Dados SQL do Azure como uma font
 
 ### <a name="visual-studio-prerequisites"></a>Pré-requisitos do Visual Studio
 
-1. Se estiver usando o Visual Studio 2017, atualize para a versão 15.8.2 ou superior. As versões 16.0 e superior não têm suporte neste momento.
-
-2. [Instale as ferramentas do Stream Analytics para o Visual Studio](stream-analytics-tools-for-visual-studio-install.md). Há suporte para as seguintes versões do Visual Studio:
+1. [Instale as ferramentas do Stream Analytics para o Visual Studio](stream-analytics-tools-for-visual-studio-install.md). Há suporte para as seguintes versões do Visual Studio:
 
    * Visual Studio 2015
-   * Visual Studio 2017
+   * Visual Studio 2019
 
-3. Familiarize-se com o início rápido das [Ferramentas do Stream Analytics para Visual Studio](stream-analytics-quick-create-vs.md).
+2. Familiarize-se com o início rápido das [Ferramentas do Stream Analytics para Visual Studio](stream-analytics-quick-create-vs.md).
 
-4. Criar uma conta de armazenamento.
+3. Criar uma conta de armazenamento.
 
 ### <a name="create-a-sql-database-table"></a>Criar uma tabela do Banco de Dados SQL
 
@@ -118,7 +116,7 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 4. Abra o arquivo SQL no editor e grave a consulta SQL.
 
-5. Se estiver usando o Visual Studio 2017 e tiver instalado as ferramentas do SQL Server Data, você poderá testar a consulta clicando em **Executar**. Uma janela de assistente será exibida para ajudá-lo a se conectar ao Banco de Dados SQL, e o resultado da consulta será exibido na parte inferior da janela.
+5. Se você estiver usando o Visual Studio de 2019, e você tiver instalado o SQL Server Data tools, você pode testar a consulta clicando **Execute**. Uma janela de assistente será exibida para ajudá-lo a se conectar ao Banco de Dados SQL, e o resultado da consulta será exibido na parte inferior da janela.
 
 ### <a name="specify-storage-account"></a>Especificar a conta de armazenamento
 
@@ -159,7 +157,7 @@ Ao usar a consulta delta, são recomendadas [tabelas temporais no Banco de Dados
  
 2. Crie a consulta delta. 
    
-   Essa consulta recupera todas as linhas no banco de dados SQL que foram inseridas ou excluídas dentro de uma hora de início  **\@deltaStartTime**e uma hora de término  **\@deltaEndTime**. A consulta delta terá de retornar as mesmas colunas como a consulta de instantâneo, bem como a coluna **_operação_**. Essa coluna define se a linha é inserida ou excluída entre  **\@deltaStartTime** e  **\@deltaEndTime**. As linhas resultantes são sinalizadas como **1**, se os registros foram inseridos, ou **2** se excluídos. 
+   Essa consulta recupera todas as linhas no banco de dados SQL que foram inseridas ou excluídas dentro de uma hora de início  **\@deltaStartTime**e uma hora de término  **\@deltaEndTime**. A consulta delta terá de retornar as mesmas colunas como a consulta de instantâneo, bem como a coluna **_operação_** . Essa coluna define se a linha é inserida ou excluída entre  **\@deltaStartTime** e  **\@deltaEndTime**. As linhas resultantes são sinalizadas como **1**, se os registros foram inseridos, ou **2** se excluídos. 
 
    Quanto aos registros que foram atualizados, a tabela temporal faz a contabilidade, capturando uma operação de inserção e exclusão. O tempo de execução do Stream Analytics aplicará os resultados da consulta delta para o instantâneo anterior a fim de manter os dados de referência atualizados. Veja a seguir um exemplo de consulta delta:
 
@@ -174,6 +172,9 @@ Ao usar a consulta delta, são recomendadas [tabelas temporais no Banco de Dados
    ```
  
    O tempo de execução do Stream Analytics pode executar periodicamente a consulta de instantâneo além da consulta delta para armazenar pontos de verificação.
+
+## <a name="test-your-query"></a>Testar a consulta
+   É importante verificar que sua consulta está retornando o conjunto de dados esperado que o trabalho do Stream Analytics usará como dados de referência. Para testar sua consulta, vá para a entrada na seção de topologia do trabalho no portal. Em seguida, você pode selecionar dados de exemplo na referência de banco de dados SQL de entrada. Depois que o exemplo se torna disponível, você pode baixar o arquivo e verifique ver se os dados retornados serão como esperado. Se você quiser um otimizar suas iterações de desenvolvimento e teste, é recomendável usar o [ferramentas do Stream Analytics para Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio-install). Você pode também qualquer outra ferramenta de sua preferência, primeiro verifique se que a consulta está retornando os resultados certos no banco de dados SQL e, em seguida, usá-lo no trabalho do Stream Analytics. 
 
 ## <a name="faqs"></a>Perguntas frequentes
 
@@ -193,10 +194,6 @@ A combinação de ambas as métricas pode ser usada para inferir se o trabalho �
 **É necessário um tipo especial de Banco de Dados SQL do Azure?**
 
 O Azure Stream Analytics funciona com qualquer tipo de Banco de Dados SQL do Azure. No entanto, é importante entender que a taxa de atualização definida para sua entrada de dados de referência pode afetar sua carga de consulta. Para usar a opção de consulta delta, é recomendável usar tabelas temporais no Banco de Dados SQL do Azure.
-
-**É possível obter uma entrada de exemplo da entrada de dados de referência do Banco de Dados SQL?**
-
-Este recurso não está disponível.
 
 **Por que o Azure Stream Analytics armazena instantâneos na conta de armazenamento do Azure?**
 

@@ -6,14 +6,14 @@ manager: carmonm
 services: site-recovery
 ms.service: site-recovery
 ms.topic: article
-ms.date: 12/27/2018
+ms.date: 05/30/2019
 ms.author: raynew
-ms.openlocfilehash: d52aa3b39a17c42c0f0e0cb669c69d336b41ba48
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 866374df7d3a6973cfc5995afd5cc3c4b0145c48
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035805"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399996"
 ---
 # <a name="create-and-customize-recovery-plans"></a>Criar e personalizar planos de recuperação
 
@@ -21,7 +21,7 @@ Este artigo descreve como criar e personalizar um plano de recuperação no [Azu
 
 ## <a name="create-a-recovery-plan"></a>Criar um plano de recuperação
 
-1. No cofre de Serviços de Recuperação, selecione **Planos de Recuperação (Recuperação de Site)** > **+Plano de Recuperação**.
+1. No cofre de Serviços de Recuperação, selecione **Planos de Recuperação (Recuperação de Site)**  >  **+Plano de Recuperação**.
 2. Em **Criar plano de recuperação**, especifique um nome para o plano.
 3. Escolha uma fonte e destino com base nos computadores do plano e selecione **Gerenciador de Recursos** para o modelo de implantação. O local de origem deve ter computadores habilitados para failover e recuperação. 
 
@@ -70,13 +70,16 @@ Você pode personalizar um plano de recuperação com a adição de um script ou
     Site do Hyper-V para Azure | Runbook | ND
     VMM para VMM secundário | Script | Script
 
-1. No plano de recuperação, clique na etapa à qual a ação deve ser adicionada e especifique quando ela deve ocorrer: a. Se quiser que a ação ocorra antes de os computadores no grupo serem iniciados após o failover, selecione **Adicionar pré-ação**.
-    b. Se quiser que a ação ocorra depois de os computadores no grupo serem iniciados após o failover, selecione **Adicionar pós-ação**. Para mover a posição da ação, selecione os botões **Mover para cima** ou **Mover para baixo**.
+1. No plano de recuperação, clique na etapa para o qual a ação deve ser adicionado e especifique quando a ação deve ocorrer:
+    1. Se quiser que a ação ocorra antes de os computadores no grupo serem iniciados após o failover, selecione **Adicionar pré-ação**.
+    1. Se quiser que a ação ocorra depois de os computadores no grupo serem iniciados após o failover, selecione **Adicionar pós-ação**. Para mover a posição da ação, selecione os botões **Mover para cima** ou **Mover para baixo**.
 2. Em **Inserir ação**, selecione **Script** ou **Ação manual**.
-3. Se deseja adicionar uma ação manual, faça o seguinte: a. Digite um nome para a ação e as instruções da ação. A pessoa que está executando o failover verá essas instruções.
-    b. Especifique se deseja adicionar a ação manual para todos os tipos de failover (Teste, Failover, Failover planejado (se relevante)). Em seguida, clique em **OK**.
-4. Se deseja adicionar um script, faça o seguinte: a. Se estiver adicionando um script do VMM, selecione **Failover para script do VMM** e, em **Caminho do Script**, digite o caminho relativo para o compartilhamento. Por exemplo, se o compartilhamento está localizado em \\<VMMServerName>\MSSCVMMLibrary\RPScripts, especifique o caminho: \RPScripts\RPScript.PS1.
-    b. Se estiver adicionando um runboook da automação do Azure, especifique a **Conta de Automação do Azure** na qual o runbook está localizado e selecione o **Script de Runbook do Azure** apropriado.
+3. Se você quiser adicionar uma ação manual, faça o seguinte:
+    1. Digite um nome para a ação e as instruções da ação. A pessoa que está executando o failover verá essas instruções.
+    1. Especifique se deseja adicionar a ação manual para todos os tipos de failover (Teste, Failover, Failover planejado (se relevante)). Em seguida, clique em **OK**.
+4. Se você quiser adicionar um script, faça o seguinte:
+    1. Se estiver adicionando um script do VMM, selecione **Failover para script do VMM** e, em **Caminho do Script**, digite o caminho relativo para o compartilhamento. Por exemplo, se o compartilhamento está localizado em \\ \<VMMServerName > \msscvmmlibrary\rpscripts., especifique o caminho: \RPScripts\RPScript.PS1.
+    1. Se estiver adicionando um runboook da automação do Azure, especifique a **Conta de Automação do Azure** na qual o runbook está localizado e selecione o **Script de Runbook do Azure** apropriado.
 5. Execute um failover de teste do plano de recuperação para garantir que o script funciona conforme esperado.
 
 ## <a name="watch-a-video"></a>Assistir a um vídeo

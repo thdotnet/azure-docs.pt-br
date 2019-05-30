@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: tomfitz
-ms.openlocfilehash: 1ae1afe103d4c52a2a7d921ef4f34dc030f3c6f7
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 4b836faef4630f6bee914478aecaed1bb4db7d71
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65872634"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66225897"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Mover recursos para um novo grupo de recursos ou uma nova assinatura
 
@@ -58,7 +58,7 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que podem ser mo
 * Banco de Dados do Azure para MySQL
 * Banco de Dados do Azure para PostgreSQL
 * DevOps do Azure – siga as etapas para [alterar a assinatura do Azure usada para cobrança](/azure/devops/organizations/billing/change-azure-subscription?view=azure-devops).
-* Azure Mapas
+* Mapas do Azure
 * Logs do Azure Monitor
 * Retransmissão do Azure
 * Azure Stack - registros
@@ -89,9 +89,9 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que podem ser mo
 * Aprendizado de Máquina - os serviços Web do Machine Learning Studio podem ser movidos para um grupo de recursos na mesma assinatura, mas não uma assinatura diferente. Outros recursos de Microsoft Machine Learning podem ser movidos entre assinaturas.
 * Managed Disks - Managed Disks em zonas de disponibilidade não podem ser movidos para uma assinatura diferente
 * Identidade gerenciada - atribuída pelo usuário
-* Serviços de Mídia
+* Serviços de mídia
 * Monitor - verifique se mover para nova assinatura não excede as [cotas de assinatura](../azure-subscription-service-limits.md#monitor-limits)
-* Hubs de notificações
+* Hubs de Notificação
 * Insights Operacionais
 * Gerenciamento de Operações
 * Painéis do portal do Azure
@@ -133,14 +133,14 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que não podem s
 * Azure NetApp Files
 * Certificados - Os certificados do Serviço de Aplicativo podem ser movidos, mas os certificados carregados têm [limitações](#app-service-limitations).
 * Aplicativos clássicos
-* Instâncias de contêiner
+* Instâncias de Contêiner
 * Serviço de Contêiner
 * Data Box
 * Espaços de Desenvolvimento
 * Dynamics LCS
 * ExpressRoute
 * Serviços de laboratório - laboratórios de sala de aula não podem ser movidos para um novo grupo de recursos ou assinatura. DevTest Labs podem ser movidos para um novo grupo de recursos na mesma assinatura, mas não entre assinaturas.
-* Aplicativos Gerenciados
+* Aplicativos gerenciados
 * Microsoft Genomics
 * Segurança
 * Site Recovery
@@ -323,7 +323,7 @@ A operação pode executar por vários minutos.
 
 ### <a name="recovery-services-limitations"></a>Limitações dos Serviços de Recuperação
 
- Para mover um cofre dos Serviços de Recuperação, você deve se registrar em uma [versão prévia pública limitada](../backup/backup-azure-move-recovery-services-vault.md).
+ Para mover um cofre dos serviços de recuperação, siga estas etapas: [Mover recursos para um novo grupo de recursos ou assinatura](../backup/backup-azure-move-recovery-services-vault.md).
 
 No momento, você pode mover um cofre dos Serviços de Recuperação por região por vez. Não é possível mover cofres que fazem backup de Azure Files, Sincronização de Arquivos do Azure ou SQL em máquinas virtuais IaaS.
 

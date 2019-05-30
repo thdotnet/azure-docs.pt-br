@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/24/2018
+ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviwer: lenalepa, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2242c6fc46f5556de0b0dd63659670e9c3f998d
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 399f72c7819378ddc1566c2bdde94801b2c71687
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65540198"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235312"
 ---
 # <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Como: Configurar os termos de serviço e a declaração de privacidade para um aplicativo
 
@@ -44,7 +44,7 @@ Os exemplos a seguir mostram o usuário experiência de consentimento quando as 
 
 Antes de adicionar links aos termos de serviço e aos documentos da declaração de privacidade do seu aplicativo, verifique se os URLs seguem essas diretrizes.
 
-| Diretriz     | Descrição                           |
+| Diretriz     | DESCRIÇÃO                           |
 |---------------|---------------------------------------|
 | Formatar        | URL Válida                             |
 | Esquemas válidos | HTTP e HTTPS<br/>Recomendamos HTTPS |
@@ -56,33 +56,20 @@ Exemplos: `https://myapp.com/terms-of-service` e `https://myapp.com/privacy-stat
 
 Quando os termos de serviço e a declaração de privacidade estiverem prontos, você poderá adicionar links para esses documentos no seu aplicativo usando um destes métodos:
 
-* [ através do portal do Azure ](#registered-in-azure-portal)
-* [ No Portal de Registro de Aplicativos ou no Centro de Desenvolvimento ](#registered-in-app-reg-portal)
+* [ através do portal do Azure ](#azure-portal)
 * [ Usando o objeto de aplicativo JSON ](#app-object-json)
 * [ Usando a API REST do MSGraph beta ](#msgraph-beta-rest-api)
 
-### <a name="registered-in-azure-portal"></a>Se você registrou seu aplicativo no portal do Azure
-
-Se você registrou seu aplicativo no portal do Azure, siga estas etapas.
+### <a name="azure-portal"></a>Usando o portal do Azure
+Siga estas etapas no portal do Azure.
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
 2. Navegue até a seção **Registros de aplicativo** e selecione seu aplicativo.
-3. Abra a seção **Propriedades** do aplicativo.
+3. Abra o **Branding** painel.
 4. Preencha os campos da **URL de termos de serviço** e **Política de privacidade**.
 5. Salve suas alterações.
 
     ![Seção de propriedades do aplicativo com os termos de serviço e a privacidade URLs de instrução](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
-
-### <a name="registered-in-app-reg-portal"></a>Se você registrou seu aplicativo no Portal de registro do aplicativo
-
-Siga estas etapas se você registrou seu aplicativo no Portal de registro de aplicativos ou no Centro de desenvolvimento.
-
-1. Entrar no [Portal de Registro de Aplicativos](https://apps.dev.microsoft.com/).
-2. Selecione seu aplicativo e role até a seção **Perfil**.
-3. Preencha os campos da **URL de termos de serviço** e **Política de privacidade**.
-4. Salve suas alterações.
-
-    ![Seção de perfil do aplicativo com termos de serviço e URLs de declaração de privacidade](./media/howto-add-terms-of-service-privacy-statement/app-registration-portal-profile-terms-service-privacy-statement-urls.png)
 
 ### <a name="app-object-json"> </a> Usando o objeto de aplicativo JSON
 

@@ -1,7 +1,7 @@
 ---
 title: O que é um espaço de trabalho
 titleSuffix: Azure Machine Learning service
-description: Saiba quais um espaço de trabalho é e por que você precisa de um serviço de Azure Machine Learning.
+description: O workspace é o recurso de nível superior para o Serviço do Azure Machine Learning. Ele mantém um histórico de todas as execuções de treinamento, incluindo logs, métricas, saída e um instantâneo dos seus scripts. Use essas informações para determinar quais executar treinamento produz o melhor modelo
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,20 +9,18 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 05/21/2019
-ms.openlocfilehash: 5785bf8f6538f1d91e7a23178e29487ebee14f29
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 3ecdf62cfed7d70873f3dc752bfacd134e367a90
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65989826"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388964"
 ---
-# <a name="what-is-an-azure-machine-learning-workspace"></a>O que é um espaço de trabalho do Azure Machine Learning?
+# <a name="what-is-an-azure-machine-learning-service-workspace"></a>O que é um espaço de trabalho do serviço de Azure Machine Learning?
 
-O workspace é o recurso de nível superior para o Serviço do Azure Machine Learning. Ele fornece um local centralizado para trabalhar com todos os artefatos que você criar ao usar o Serviço do Azure Machine Learning.
+O espaço de trabalho é o recurso de nível superior para o serviço de Azure Machine Learning, fornecendo um local centralizado para trabalhar com todos os artefatos que você cria quando você usa o serviço Azure Machine Learning.  O espaço de trabalho mantém um histórico de todas as execuções de treinamento, incluindo logs, métricas, saída e um instantâneo dos seus scripts. Essas informações são usadas para determinar quais execuções de treinamento produzem o melhor modelo.  
 
-O espaço de trabalho mantém um histórico das execuções de treinamento, incluindo logs, métricas, saída e um instantâneo dos seus scripts. Essas informações são usadas para determinar quais execuções de treinamento produzem o melhor modelo.  
-
-Quando você tiver um modelo que você deseja, você pode registrá-lo com o espaço de trabalho. Use o modelo registrado e a pontuação de scripts para implantar instâncias de contêiner do Azure, serviço de Kubernetes do Azure, ou uma matriz de portões programáveis em campo (FPGA) como um ponto de extremidade HTTP baseado em REST. Você também pode implantar o modelo em um dispositivo Azure IoT Edge como um módulo.
+Quando você tiver um modelo que você deseja, você pode registrá-lo com o espaço de trabalho. Em seguida, em que você usar o modelo registrado e os scripts de pontuação para implantar instâncias de contêiner do Azure, serviço de Kubernetes do Azure, ou uma matriz de portões programáveis em campo (FPGA) como um ponto de extremidade HTTP baseado em REST. Você também pode implantar o modelo em um dispositivo Azure IoT Edge como um módulo.
 
 ## <a name="taxonomy"></a>Taxonomia 
 
@@ -50,7 +48,7 @@ O diagrama mostra os seguintes componentes de um espaço de trabalho:
 Você pode interagir com seu espaço de trabalho das seguintes maneiras:
 
 + Na web:
-    + O [Portal do Azure](https://azure.portal.com)
+    + O [Portal do Azure](https://portal.azure.com)
     + O [interface visual (visualização)](ui-concept-visual-interface.md)
 + No Python usando o Azure Machine Learning [SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)
 + Na linha de comando usando o Azure Machine Learning [extensão da CLI](https://docs.microsoft.com/azure/machine-learning/service/reference-azure-machine-learning-cli)
@@ -71,7 +69,7 @@ Tarefas de aprendizado de máquina de leitura e/ou gravar os artefatos em seu es
 
 Você também pode executar as seguintes tarefas de gerenciamento do espaço de trabalho:
 
-| Tarefa de gerenciamento do espaço de trabalho   | Portal              | SDK        | CLI        |
+| Tarefa de gerenciamento do espaço de trabalho   | Portal              | .        | CLI        |
 |---------------------------|------------------|------------|------------|
 | Criar um workspace        | **&check;**     | **&check;** | **&check;** |
 | Criar e gerenciar recursos de computação    | **&check;**   | **&check;** |  **&check;**   |

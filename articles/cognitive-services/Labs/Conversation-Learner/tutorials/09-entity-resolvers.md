@@ -3,19 +3,19 @@ title: Resolvedores de entidade em um modelo de aprendiz de conversa - serviços
 titleSuffix: Azure
 description: Saiba como usar os Solucionadores de Entidade no Conversation Learner.
 services: cognitive-services
-author: v-jaswel
+author: nitinme
 manager: nolachar
 ms.service: cognitive-services
 ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
-ms.author: v-jaswel
-ms.openlocfilehash: cca78e2536a922165f40bbcbabcae005021aa70b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: nitinme
+ms.openlocfilehash: 7b5f5645a8b5d1d993f87d18503fe270f42c5de5
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60707814"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390020"
 ---
 # <a name="entity-resolvers"></a>Solucionadores de entidade
 
@@ -91,7 +91,7 @@ Inicie na home page na interface de usuário da Web.
 
 ![](../media/T09_training.png)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
 > [Entradas alternativas](./10-alternative-inputs.md)

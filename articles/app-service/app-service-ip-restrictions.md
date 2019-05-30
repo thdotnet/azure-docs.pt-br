@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
-ms.date: 04/22/2018
+ms.date: 05/23/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: de898a7ebb9611f469f42bb23774b3b0a0c2410d
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: be0de7e809565fce4171401760d11ef9de45724e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65541680"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236112"
 ---
 # <a name="azure-app-service-access-restrictions"></a>Restrições de acesso do serviço de aplicativo do Azure #
 
@@ -54,7 +54,7 @@ Você pode clicar em **[+] adicionar** para adicionar uma nova regra de restriç
 
 Ao criar uma regra, você deve selecionar Permitir/Negar e também o tipo de regra. Você também deve fornecer o valor de prioridade e o que você está restringindo o acesso aos.  Opcionalmente, você pode adicionar um nome e descrição para a regra.  
 
-Para definir um endereço IP com base em regra, selecione um tipo de IPv4 ou IPv6. Notação de endereço IP deve ser especificada na notação de CIDR de endereços IPv4 e IPv6. Para especificar um endereço exato, você pode usar algo como 1.2.3.4/32 onde os quatro primeiros octetos representam o endereço IP e /32 é a máscara. A notação de CIDR de IPv4 para todos os endereços é 0.0.0.0/0. Para saber mais sobre a notação CIDR, leia [Roteamento entre domínios sem classe](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). 
+Para definir um endereço IP com base em regra, selecione um tipo de IPv4 ou IPv6. Notação de endereço IP deve ser especificada na notação de CIDR de endereços IPv4 e IPv6. Para especificar um endereço exato, você pode usar algo como 1.2.3.4/32 onde os quatro primeiros octetos representam o endereço IP e /32 é a máscara. A notação de CIDR de IPv4 para todos os endereços é 0.0.0.0/0. Para saber mais sobre a notação CIDR, leia [Roteamento entre domínios sem classe](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
 
 ![Adicionar uma regra de restrição de acesso de rede virtual](media/app-service-ip-restrictions/access-restrictions-vnet-add.png)
 
@@ -79,6 +79,14 @@ Para excluir uma regra, clique em **...**  em sua regra e clique em **remover**.
 Além de ser capaz de controlar o acesso ao seu aplicativo, você também pode restringir o acesso para o site do scm usado pelo seu aplicativo. O site do scm é web implantar o ponto de extremidade e também o console do Kudu. Separadamente, você pode atribuir as restrições de acesso para o site do scm do aplicativo ou usar o mesmo conjunto para o aplicativo e o site do scm. Quando você marca a caixa para que as mesmas restrições que seu aplicativo, tudo o que é blanked-out. Se você desmarcar a caixa, são aplicadas a todas as configurações que você tinha anteriormente no site do scm. 
 
 ![restrições de acesso de lista](media/app-service-ip-restrictions/access-restrictions-scm-browse.png)
+
+## <a name="blocking-a-single-ip-address"></a>Bloqueio de um único endereço IP ##
+
+Ao adicionar sua primeira regra de restrição de IP, o serviço adicionará um explícito **negar tudo** regra com uma prioridade de 2147483647. Na prática, explícita **negar tudo** regra será a última regra executada e bloqueará o acesso a nenhum endereço IP que não é explicitamente permitido usando uma **permitir** regra.
+
+Para o cenário em que os usuários desejam bloquear explicitamente um único endereço IP ou o bloco de endereço IP, mas permitir que todo o acesso mais, é necessário adicionar uma explícita **permitir que todos os** regra.
+
+![endereço ip único de bloco](media/app-service-ip-restrictions/block-single-address.png)
 
 ## <a name="programmatic-manipulation-of-access-restriction-rules"></a>Manipulação programática das regras de restrição de acesso ##
 

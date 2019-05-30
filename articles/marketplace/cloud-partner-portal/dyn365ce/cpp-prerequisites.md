@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pabutler
-ms.openlocfilehash: 0b14180c894977d822aa30ea5f46a2e21e247dc1
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: dd2e68c820a8c9e503a3539fd50bf3fba68e3949
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942324"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257517"
 ---
 # <a name="dynamics-365-for-customer-engagement-prerequisites"></a>Pré-requisitos do Dynamics 365 for Customer Engagement
 
@@ -40,7 +40,7 @@ O aplicativo do Dynamics 365 for Customer Engagement precisa estar em conformida
 
 Os requisitos comerciais incluem as seguintes obrigações contratuais, legais e de procedimentos:
 
-* Você precisa estar registrado no [MPN (Microsoft Partner Network)](https://partners.microsoft.com/PartnerProgram/simplifiedenrollment.aspx) ou ser um Editor do Marketplace de Nuvem registrado. Caso não esteja registrado, siga as etapas descritas em [Torne-se um Editor do Marketplace de Nuvem](../../become-publisher.md).  (Para a terceira etapa, use o [formulário de nomeação de parceiro do AppSource](https://appsource.microsoft.com/partners/signup)). 
+* Você precisa estar registrado no [MPN (Microsoft Partner Network)](https://partners.microsoft.com/PartnerProgram/simplifiedenrollment.aspx) ou ser um Editor do Marketplace de Nuvem registrado. Caso não esteja registrado, siga as etapas descritas em [Torne-se um Editor do Marketplace de Nuvem](https://docs.microsoft.com/azure/marketplace/become-publisher).  (Para a terceira etapa, use o [formulário de nomeação de parceiro do AppSource](https://appsource.microsoft.com/partners/signup)). 
 
     >[!NOTE]
     >Você deve usar a mesma conta de registro do Microsoft Developer Center para entrar no Portal do Cloud Partner. Você deve ter apenas uma conta da Microsoft para suas ofertas do Azure Marketplace. Esta conta não deve ser específica para serviços ou ofertas individuais.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 2/14/2018
 ms.author: robb
 ms.subservice: ''
-ms.openlocfilehash: 59cb14c86963d956b0bd63f65b10776dff4aa97f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ada62fbfa51604a6b3188c27d5c14da40c8ac116
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60452714"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400199"
 ---
 # <a name="azure-monitor-powershell-quick-start-samples"></a>Exemplos de início rápido do PowerShell do Azure Monitor
 Este artigo mostra exemplos de comandos do PowerShell que ajudarão você a acessar os recursos do Azure Monitor.
@@ -42,6 +42,11 @@ Você verá uma tela de entrada. Quando entrar, sua Conta, sua TenantID e a ID d
 Get-AzSubscription
 ```
 
+Para ver o contexto de trabalho (qual assinatura sua comandos são executados em), use o seguinte comando:
+
+```powershell
+Get-AzContext
+```
 Para alterar o contexto de trabalho para uma assinatura diferente, use o comando a seguir:
 
 ```powershell
@@ -50,18 +55,23 @@ Set-AzContext -SubscriptionId <subscriptionid>
 
 
 ## <a name="retrieve-activity-log-for-a-subscription"></a>Recuperar o log de atividade para uma assinatura
-Use o cmdlet `Get-AzLog` .  A seguir, temos alguns exemplos comuns.
+Use o [Get-AzLog](https://docs.microsoft.com/powershell/module/az.monitor/get-azlog) cmdlet.  A seguir, temos alguns exemplos comuns. O Log de atividades contém os últimos 90 dias de operações. Usando datas antes neste momento resulta em uma mensagem de erro.  
+
+Veja quais são os de data/hora atual para verificar o que o tempo para usar os comandos a seguir:
+```powershell
+Get-Date
+```
 
 Obter entradas de log dessa data/hora até o momento presente:
 
 ```powershell
-Get-AzLog -StartTime 2016-03-01T10:30
+Get-AzLog -StartTime 2019-03-01T10:30
 ```
 
 Obter entradas de log em um intervalo de data/hora:
 
 ```powershell
-Get-AzLog -StartTime 2015-01-01T10:30 -EndTime 2015-01-01T11:30
+Get-AzLog -StartTime 2019-01-01T10:30 -EndTime 2015-01-01T11:30
 ```
 
 Obter entradas de log de um grupo de recursos específico:
@@ -85,13 +95,13 @@ Get-AzLog -Caller 'myname@company.com'
 O comando a seguir recupera os últimos 1000 eventos do log de atividade:
 
 ```powershell
-Get-AzLog -MaxEvents 1000
+Get-AzLog -MaxRecord 10
 ```
 
 `Get-AzLog` dá suporte a muitos outros parâmetros. Para saber mais, consulte a referência `Get-AzLog` .
 
 > [!NOTE]
-> `Get-AzLog` fornece apenas 15 dias de histórico. Usar o parâmetro **-MaxEvents** permite consultar os últimos N eventos, além de 15 dias. Para eventos de acesso que ocorreram há mais 15 dias, use a API REST ou o SDK (exemplo em C# usando o SDK). Se você não incluir **StartTime**, o valor padrão será **EndTime** menos uma hora. Se você não incluir **EndTime**, o valor padrão será a hora atual. Todas as horas estão no padrão UTC.
+> `Get-AzLog` fornece apenas 15 dias de histórico. Usando o **- MaxRecords** parâmetro permite que você consulte os últimos N eventos, além de 15 dias. Para eventos de acesso que ocorreram há mais 15 dias, use a API REST ou o SDK (exemplo em C# usando o SDK). Se você não incluir **StartTime**, o valor padrão será **EndTime** menos uma hora. Se você não incluir **EndTime**, o valor padrão será a hora atual. Todas as horas estão no padrão UTC.
 > 
 > 
 

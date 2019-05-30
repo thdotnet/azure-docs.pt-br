@@ -1,18 +1,18 @@
 ---
-title: Criar, exibir e gerenciar alertas de log de atividades no Azure Monitor
-description: Como criar alertas do log de atividades por meio do portal do Azure, do modelo de recurso e do PowerShell.
+title: Criar, exibir e gerenciar atividades de alertas de log no Azure Monitor
+description: Como criar alertas do log de atividade usando o portal do Azure, um modelo do Azure Resource Manager e do PowerShell do Azure.
 author: msvijayn
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
-ms.openlocfilehash: 2b069e55d98da824363dc480c211cde0fcc2518c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: f25321fa5a13ed5a39a62a4115bb0bc10306d36f
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66130171"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244953"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-using-azure-monitor"></a>Criar, exibir e gerenciar alertas do log de atividades usando o Azure Monitor  
 
@@ -59,9 +59,9 @@ Use este procedimento:
      **Exibição de destino de exemplo de alerta**
      ![Selecionar destino](media/alerts-activity-log/select-target.png)
 
-   - Em **Critérios de Destino**, clique em **adicionar critérios** e todos os sinais disponíveis para o destino serão exibidos, incluindo aqueles das várias categorias do **Log de Atividades**, com o nome da categoria anexado no nome do **Serviço do Monitor**.
+   - Sob **critérios de destino**, clique em **adicionar critérios** e todos os sinais disponíveis para o destino são exibidos, incluindo aqueles de várias categorias de **log de atividades**; com nome da categoria anexados em **serviço do Monitor** nome.
 
-   - Selecione o sinal na lista exibida com as várias operações possíveis para o tipo **Log de Atividades**.
+   - Selecione o sinal da lista exibida de várias operações possíveis para o tipo **log de atividades**.
 
      É possível selecionar a linha do tempo do histórico de log e a lógica de alerta correspondente para esse sinal de destino:
 
@@ -97,7 +97,7 @@ Use este procedimento:
     É possível habilitar, desabilitar, editar ou excluir uma regra. Saiba mais sobre o gerenciamento de regras do log de atividades.
 
 
-Como alternativa, uma analogia simples para entender as condições nas quais as regras de alerta podem ser criadas no log de atividades é explorar ou filtrar eventos por meio do [Log de atividades no portal do Azure](../../azure-monitor/platform/activity-logs-overview.md#query-the-activity-log-in-the-azure-portal). No Azure Monitor – Log de atividades, é possível filtrar ou localizar os eventos necessários e, em seguida, criar um alerta usando o botão **Adicionar alerta do log de atividades** e, em seguida, seguir as etapas 4 em diante, conforme mencionado no tutorial acima.
+Como alternativa, uma analogia simple para condições de Noções básicas sobre regras de alerta no qual podem ser criadas no log de atividades, é explorar ou filtrar eventos por meio [log de atividades no portal do Azure](activity-log-view.md#azure-portal). No Azure Monitor - log de atividades, é possível filtrar ou localizar os eventos necessários e, em seguida, criar um alerta usando o **adicionar alerta do log de atividades** botão; em seguida, siga as etapas 4 em diante, conforme mencionado no tutorial anterior.
     
  ![ adicionar alerta do log de atividades](media/alerts-activity-log/add-activity-log.png)
     
@@ -201,7 +201,7 @@ O json de exemplo acima pode ser salvo como, por exemplo, sampleActivityLogAlert
 > Pode levar até cinco minutos para que uma nova regra de alerta do log de atividades fique ativa
 
 ## <a name="rest-api"></a>API REST 
-[Azure Monitor – API de alertas do Log de atividades](https://docs.microsoft.com/rest/api/monitor/activitylogalerts) é uma API REST totalmente compatível com a API REST do Azure Resource Manager. Portanto, pode ser usado por meio do Powershell usando o cmdlet do Gerenciador de Recursos, bem como a CLI do Azure.
+[O Azure Monitor - alertas de API do log de atividades](https://docs.microsoft.com/rest/api/monitor/activitylogalerts) é uma API REST e totalmente compatível com a REST API do Azure Resource Manager. Portanto, pode ser usado por meio do Powershell usando o cmdlet do Gerenciador de Recursos, bem como a CLI do Azure.
 
 ## <a name="powershell"></a>PowerShell
 
@@ -216,7 +216,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile sampleActi
 
 onde o sampleActivityLogAlert.parameters.json contém os valores fornecidos para os parâmetros necessários para a criação de regra de alerta.
 
-### <a name="use-activity-log-powershell-cmdlets"></a>Usar cmdlets do PowerShell do Log de atividade
+### <a name="use-activity-log-powershell-cmdlets"></a>Usar cmdlets do PowerShell do log de atividades
 
 Os alertas do log de atividades têm cmdlets do PowerShell dedicados disponíveis:
 

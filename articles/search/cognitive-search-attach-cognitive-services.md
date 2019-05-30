@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: f9a1e82cb60bf0ec32165294e7f4af3e93d042b0
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 44f16b3334b991e071fa85ca4cffbc0837f0a6ec
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66158537"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244424"
 ---
 # <a name="attach-a-cognitive-services-resource-with-a-skillset-in-azure-search"></a>Anexar um recurso dos Serviços Cognitivos a um conjunto de habilidades no Azure Search 
 
 Unidade de algoritmos de inteligência Artificial a [pipelines de indexação cognitivas](cognitive-search-concept-intro.md) usado para aprimoramento de documento no Azure Search. Esses algoritmos são com base nos recursos de serviços Cognitivos do Azure, incluindo [computacional](https://azure.microsoft.com/services/cognitive-services/computer-vision/) para análise de imagem e reconhecimento óptico de caracteres (OCR) e [análise de texto](https://azure.microsoft.com/services/cognitive-services/text-analytics/) para o reconhecimento de entidade extração de frases-chave e outros aprimoramentos. Conforme usado pelo Azure Search para fins de aprimoramento de documento, os algoritmos são encapsulados dentro de um *habilidade*, colocado em um *conjunto de qualificações*e referenciado por uma *indexador* durante a indexação.
 
-Você pode aprimorar gratuitamente um número limitado de documentos, ou pode anexar um recurso de Serviços Cognitivos faturável para cargas de trabalho maiores e mais frequentes. Neste artigo, você aprenderá como anexar um recurso dos serviços Cognitivos faturável com seu conjunto de habilidades cognitivo para enriquecer documentos durante [indexação de Azure Search](search-what-is-an-index.md).
+Você pode aprimorar gratuitamente um número limitado de documentos. Ou, você pode anexar a um recurso de serviços Cognitivos faturável para uma *conjunto de qualificações* para cargas de trabalho maiores e mais frequentes. Neste artigo, você aprenderá como anexar um recurso dos serviços Cognitivos faturável para enriquecer documentos durante o Azure Search [indexação](search-what-is-an-index.md).
 
 > [!NOTE]
 > Eventos passíveis de cobrança incluem chamadas para APIs de serviços Cognitivos e imagem extração como parte do estágio de decodificação de documentos no Azure Search. Não há nenhum custo para extração de texto de documentos ou para as habilidades que não chamam serviços Cognitivos.
@@ -30,7 +30,9 @@ Você pode aprimorar gratuitamente um número limitado de documentos, ou pode an
 
 ## <a name="same-region-requirement"></a>Requisito de mesma região
 
-É necessário que o Azure Search e serviços Cognitivos do Azure existem na mesma região. Caso contrário, você receberá esta mensagem em tempo de execução: `"Provided key is not a valid CognitiveServices type key for the region of your search service."` Não há nenhuma maneira de mover um serviço entre regiões. Se você receber esse erro, você deve criar um novo serviço na mesma região e republicar seus índices de forma adequada.
+É necessário que o Azure Search e serviços Cognitivos do Azure existem na mesma região. Caso contrário, você receberá esta mensagem em tempo de execução: `"Provided key is not a valid CognitiveServices type key for the region of your search service."` 
+
+Não há nenhuma maneira de mover um serviço entre regiões. Se você receber esse erro, você deve criar um novo recurso de serviços Cognitivos na mesma região do Azure Search.
 
 ## <a name="use-free-resources"></a>Usar recursos gratuitos
 
@@ -42,9 +44,9 @@ Recursos gratuitos (aprimoramentos limitado) são restritos a 20 documentos por 
 
    ![Abra o Assistente de importação de dados](media/search-get-started-portal/import-data-cmd2.png "abrir o Assistente de importação de dados")
 
-1. Escolha uma fonte de dados e continuar **adicionar de pesquisa cognitiva (opcional)**. Para obter uma explicação passo a passo deste assistente, consulte [importação, índice e consulta usando as ferramentas de portal](search-get-started-portal.md).
+1. Escolha uma fonte de dados e continuar **adicionar de pesquisa cognitiva (opcional)** . Para obter uma explicação passo a passo deste assistente, consulte [importação, índice e consulta usando as ferramentas de portal](search-get-started-portal.md).
 
-1. Expandir **anexar serviços Cognitivos** e, em seguida, selecione **gratuito (aprimoramentos de limitado)**:
+1. Expandir **anexar serviços Cognitivos** e, em seguida, selecione **gratuito (aprimoramentos de limitado)** :
 
    ![Expandido da seção de anexar os serviços Cognitivos](./media/cognitive-search-attach-cognitive-services/attach1.png "seção expandida anexar serviços Cognitivos")
 
@@ -56,7 +58,7 @@ Para cargas de trabalho que cria os aprimoramentos de mais de 20 por dia, certif
 
 Você será cobrado somente pelos habilidades que chamam as APIs de serviços Cognitivos. Você não será cobrado por [habilidades personalizadas](cognitive-search-create-custom-skill-example.md), ou, como as habilidades [fusão de texto](cognitive-search-skill-textmerger.md), [divisor de texto](cognitive-search-skill-textsplit.md), e [shaper](cognitive-search-skill-shaper.md), que não são baseadas em API.
 
-1. Abra o Assistente de importação de dados, escolha uma fonte de dados e continuar **adicionar de pesquisa cognitiva (opcional)**.
+1. Abra o Assistente de importação de dados, escolha uma fonte de dados e continuar **adicionar de pesquisa cognitiva (opcional)** .
 
 1. Expandir **anexar serviços Cognitivos** e, em seguida, selecione **criar novo recurso de serviços Cognitivos**. Uma nova guia é aberta para que você possa criar o recurso:
 

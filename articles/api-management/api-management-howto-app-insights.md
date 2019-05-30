@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: 69f36773b702d9f0059e0cd27dbb864ccd7f7b2b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3bbab82831fba389cd4bf172e7ea762d5971579b
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60527548"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241840"
 ---
 # <a name="how-to-integrate-azure-api-management-with-azure-application-insights"></a>Como integrar o Gerenciamento de API do Azure ao Azure Application Insights
 
@@ -51,7 +51,7 @@ Para que você possa usar as informações do Azure Application Insights, primei
     ![Agente do Application Insights](media/api-management-howto-app-insights/apim-app-insights-logger-2.png)  
 
 > [!NOTE]
-> Nos bastidores, uma entidade [Agente](https://docs.microsoft.com/rest/api/apimanagement/logger/createorupdate) é criada sem sua instância do Gerenciamento de API, contendo a Chave de instrumentação da instância do Application Insights.
+> Nos bastidores, uma entidade [Agente](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/logger/createorupdate) é criada sem sua instância do Gerenciamento de API, contendo a Chave de instrumentação da instância do Application Insights.
 
 ## <a name="enable-application-insights-logging-for-your-api"></a>Habilitar o log do Application Insights para sua API
 
@@ -70,7 +70,7 @@ Para que você possa usar as informações do Azure Application Insights, primei
 > Substituir o valor padrão **0** no campo **Primeiros bytes do corpo** pode diminuir significativamente o desempenho de suas APIs.
 
 > [!NOTE]
-> Nos bastidores, uma entidade [Diagnóstico](https://docs.microsoft.com/rest/api/apimanagement/diagnostic/createorupdate) chamada 'applicationinsights' é criada no nível da API.
+> Nos bastidores, uma entidade [Diagnóstico](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/diagnostic/createorupdate) chamada 'applicationinsights' é criada no nível da API.
 
 | Nome da configuração                        | Tipo de valor                        | DESCRIÇÃO                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -123,7 +123,7 @@ Ignorar o registro do cabeçalho e do corpo das solicitações e respostas tamb�
 >
 >
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 + Saiba mais sobre o [Azure Application Insights](https://docs.microsoft.com/azure/application-insights/).
 + Considere o [registro com Hubs de Eventos do Azure](api-management-howto-log-event-hubs.md).

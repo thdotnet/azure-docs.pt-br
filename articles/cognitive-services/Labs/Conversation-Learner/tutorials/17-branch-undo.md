@@ -3,19 +3,19 @@ title: Como usar operações desfazer e ramificação com um modelo de Aprendiz 
 titleSuffix: Azure
 description: Saiba como usar operações desfazer e ramificação com um modelo de Aprendiz de Conversa.
 services: cognitive-services
-author: v-jaswel
+author: nitinme
 manager: nolachar
 ms.service: cognitive-services
 ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
-ms.author: v-jaswel
-ms.openlocfilehash: cca7b42c83be3ca428509ea48c387a1c35ddb35a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: nitinme
+ms.openlocfilehash: 6ffa0881df07e453c8beb175b8580deebbfc1ec9
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60640168"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389887"
 ---
 # <a name="how-to-use-branching-and-undo-operations"></a>Como usar operações desfazer e ramificação
 Neste tutorial, apresentaremos as operações desfazer e ramificação.

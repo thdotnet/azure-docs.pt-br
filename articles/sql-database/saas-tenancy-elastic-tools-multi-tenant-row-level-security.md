@@ -12,12 +12,12 @@ ms.author: vanto
 ms.reviewer: sstein
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 71d2d542d71977f9d8dfe07370dffd7fe508bc92
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4834688496330210b273f40f1d6f11230a6ae1c8
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61485309"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234119"
 ---
 # <a name="multi-tenant-applications-with-elastic-database-tools-and-row-level-security"></a>Aplicativos multilocatários com ferramentas de banco de dados elástico e segurança em nível de linha
 
@@ -228,7 +228,7 @@ O RLS é implementado em Transact-SQL. A função definida pelo usuário define 
     - Um predicado BLOCK impede que as linhas que não passam no filtro sejam inseridas ou atualizadas.
     - Se SESSION\_CONTEXT não tiver sido definido, a função retornará NULL e nenhuma linha estará visível ou poderá ser inserida.
 
-Para habilitar a RLS em todos os fragmentos, execute o T-SQL a seguir usando o Visual Studio (SSDT), SSMS ou o script do PowerShell incluído no projeto. Ou, se você estiver usando [Trabalhos do banco de dados elástico](sql-database-elastic-jobs-overview.md), você poderá automatizar a execução desse T-SQL em todos os fragmentos.
+Para habilitar a RLS em todos os fragmentos, execute o T-SQL a seguir usando o Visual Studio (SSDT), SSMS ou o script do PowerShell incluído no projeto. Ou, se você estiver usando [Trabalhos do banco de dados elástico](elastic-jobs-overview.md), você poderá automatizar a execução desse T-SQL em todos os fragmentos.
 
 ```sql
 CREATE SCHEMA rls; -- Separate schema to organize RLS objects.

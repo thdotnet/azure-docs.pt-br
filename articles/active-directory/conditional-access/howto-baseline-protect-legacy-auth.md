@@ -11,19 +11,19 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b562214d4bf8fd83f740e114a6d77200b4611649
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: e7eebc68ae8a55d636f3bc85e179bd7d6813be8d
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66003215"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235550"
 ---
 # <a name="baseline-policy-block-legacy-authentication-preview"></a>Política de linha de base: Autenticação herdada do bloco (visualização)
 
 Para fornecer aos usuários acesso fácil aos aplicativos na nuvem, o Azure AD (Azure Active Directory) dá suporte a uma ampla variedade de protocolos de autenticação, incluindo a autenticação herdada. Autenticação é um termo que se refere a uma solicitação de autenticação feita por:
 
 * Clientes do Office mais antigos que não usam autenticação moderna (por exemplo, o cliente do Office 2010)
-* Qualquer cliente que usa protocolos de email herdados, como IMAP/SMPT/POP3
+* Qualquer cliente que usa protocolos de email herdados, como IMAP/SMTP/POP3
 
 Hoje, a maioria de todos os comprometer tentativas de entrada provenientes de autenticação herdados. Autenticação herdados não oferece suporte a autenticação multifator (MFA). Mesmo se você tiver uma política de MFA habilitada no seu diretório, um ator mal-intencionado pode autenticar usando um protocolo herdado e ignorar o MFA.
 
@@ -74,13 +74,13 @@ Se você estiver usando o MacOS, é recomendável atualizar para o Office para M
 
 Para os clientes do Outlook com base em Windows usam autenticação moderna, o Exchange Online deve ser autenticação moderna habilitada também. Se a autenticação moderna está desabilitada para Exchange Online, os clientes do Outlook com base em Windows que dão suporte à autenticação moderna (Outlook 2013 ou posterior) usará autenticação básica para se conectar a caixas de correio do Exchange Online.
 
-SharePoint Online está habilitado para o padrão de autenticação moderna. Para diretórios criados após 1º de agosto de 2017, a autenticação moderna está habilitada por padrão no Exchange Online. No entanto, se você tiver desabilitado anteriormente autenticação moderna, ou você está usando um diretório criado antes dessa data, siga as etapas no artigo a seguir para [habilitar a autenticação moderna no Exchange Online](https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
+SharePoint Online está habilitado para o padrão de autenticação moderna. Para diretórios criados após 1º de agosto de 2017, a autenticação moderna está habilitada por padrão no Exchange Online. No entanto, se você tiver desabilitado anteriormente autenticação moderna, ou você está usando um diretório criado antes dessa data, siga as etapas no artigo a seguir para [habilitar a autenticação moderna no Exchange Online](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
 
 ### <a name="step-4-skype-for-business"></a>Etapa 4: Skype for Business
 
 Para impedir que solicitações de autenticação herdados feitas pelo Skype for Business, é necessário habilitar a autenticação moderna para o Skype for Business Online. Para diretórios criados após 1º de agosto de 2017, a autenticação moderna para o Skype for Business é habilitada por padrão.
 
-Para habilitar a autenticação moderna no Skype for Business, sugerimos a transição para o Microsoft Teams, que dá suporte à autenticação moderna por padrão. No entanto, se você conseguir tr neste momento, você precisará habilitar a autenticação moderna para o Skype for Business Online para que o Skype para clientes de negócios é iniciado usando autenticação moderna. Siga estas etapas no artigo [Skype para topologias de negócios com autenticação moderna](https://docs.microsoft.com/en-us/skypeforbusiness/plan-your-deployment/modern-authentication/topologies-supported), para obter as etapas habilitar a autenticação moderna para o Skype for Business.
+Para habilitar a autenticação moderna no Skype for Business, sugerimos a transição para o Microsoft Teams, que dá suporte à autenticação moderna por padrão. No entanto, se você conseguir tr neste momento, você precisará habilitar a autenticação moderna para o Skype for Business Online para que o Skype para clientes de negócios é iniciado usando autenticação moderna. Siga estas etapas no artigo [Skype para topologias de negócios com autenticação moderna](https://docs.microsoft.com/skypeforbusiness/plan-your-deployment/modern-authentication/topologies-supported), para obter as etapas habilitar a autenticação moderna para o Skype for Business.
 
 Além de habilitar a autenticação moderna para o Skype for Business Online, é recomendável moderna autenticação ser habilitada para o Exchange Online ao habilitar a autenticação moderna para o Skype for Business. Esse processo ajudará a sincronizar o estado da autenticação moderna no Exchange Online e Skype for Business online e evitar vários prompts de entrada para o Skype para clientes de negócios.
 
@@ -105,11 +105,11 @@ Etapas para habilitar a autenticação moderna ser encontradas nos seguintes art
 
 A política **política de linha de base: Autenticação herdada do bloco (visualização)** vem pré-configurada e aparecerá na parte superior quando você navega até a folha de acesso condicional no portal do Azure.
 
-Para habilitar essa política e proteger seus administradores:
+Para habilitar essa política e proteger sua organização:
 
 1. Entrar para o **portal do Azure** como administrador global, administrador de segurança ou administrador de acesso condicional.
 1. Navegue até **do Azure Active Directory** > **acesso condicional**.
-1. Na lista de políticas, selecione **política de linha de base: Autenticação herdada do bloco (visualização)**.
+1. Na lista de políticas, selecione **política de linha de base: Autenticação herdada do bloco (visualização)** .
 1. Definir **habilitar política** à **usar a política imediatamente**.
 1. Adicionar exclusões usuário clicando em **os usuários** > **selecionar usuários excluídos** e escolhendo os usuários que precisam ser excluídas. Clique em **selecionar** , em seguida, **feito**.
 1. Clique em **salvar**.

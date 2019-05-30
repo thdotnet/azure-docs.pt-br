@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: sdgilley
 ms.author: sgilley
 ms.date: 03/22/2019
-ms.openlocfilehash: 815aeb9ae6036f08fc87e41980a623e2be8414e5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7343692e8484e50a02963b4528889a35cc1fcaa6
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60751224"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66239069"
 ---
 # <a name="ask-a-question-you-can-answer-with-data"></a>Fazer uma pergunta que você possa responder com dados
 ## <a name="video-3-data-science-for-beginners-series"></a>Vídeo 3: série de ciência de dados para iniciantes
@@ -48,7 +48,7 @@ Falamos sobre como a ciência de dados é o processo de usar nomes (também cham
 
 Uma pergunta vaga não precisa ser respondida com um nome ou um número. Uma pergunta inteligente sim.
 
-Imagine que você encontrou uma lâmpada mágica com um gênio que responderá de verdade qualquer pergunta feita. Mas é um gênio mau e ele tentará tornar sua resposta o mais vaga e confusa que puder para se dar bem. Você deseja forçá-lo com uma pergunta incontestável para que ele não possa fazer nada, exceto dizer o que você deseja saber.
+Imagine que você encontrou uma lâmpada mágica com um gênio que responderá de verdade qualquer pergunta feita. Mas é um gênio mau, o que tentará fazer sua resposta mais vaga e confusa, pois eles podem se contentar com. Você deseja fixá-los para baixo com uma pergunta então impenetrável que eles não podem ajudar, mas lhe dizer o que você deseja saber.
 
 Se você fizesse uma pergunta vaga, como: "O que acontecerá com minhas ações?", o gênio poderia responder: "O preço mudará". É uma resposta sincera, mas não é muito útil.
 

@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/19/2019
-ms.openlocfilehash: 8142caf867ffe811726677fb1dcbadc7d1458251
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 0582fa8b26bee05e4d2948037cc39a71ed656fce
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65793559"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243947"
 ---
 # <a name="what-is-enterprise-security-package-in-azure-hdinsight"></a>O que é o pacote de segurança empresarial no Azure HDInsight
 
@@ -36,7 +36,7 @@ A segurança de perímetro no HDInsight é obtida por meio de redes virtuais e d
 Outra camada de segurança de perímetro é obtida através do serviço de Gateway de VPN. O gateway atua como primeira linha de defesa para qualquer solicitação recebida no cluster HDInsight. Ele aceita a solicitação, valida-a e somente então permitirá que a solicitação passe para os outros nós no cluster. Dessa maneira, o gateway fornece segurança de perímetro para outros nós de nome e dados no cluster.
 
 ## <a name="authentication"></a>Authentication
-Um admin corporativo pode criar um cluster do HDInsight com ESP em uma [rede virtual](https://azure.microsoft.com/services/virtual-network/). Todos os nós do cluster HDInsight são ingressados no domínio que a empresa gerencia. Isso é obtido por meio do uso do [Azure Active Directory Domain Services](../../active-directory-domain-services/active-directory-ds-overview.md). 
+Um admin corporativo pode criar um cluster do HDInsight com ESP em uma [rede virtual](https://azure.microsoft.com/services/virtual-network/). Todos os nós do cluster HDInsight são ingressados no domínio que a empresa gerencia. Isso é obtido por meio do uso do [Azure Active Directory Domain Services](../../active-directory-domain-services/overview.md). 
 
 Com essa configuração, funcionários da empresa podem entrar para os nós de cluster usando suas credenciais de domínio. Além disso, podem usar suas credenciais de domínio para autenticação com outros pontos de extremidade aprovados como Apache Ambari Views, ODBC, JDBC, PowerShell e API REST para interagir com o cluster. O administrador tem controle total sobre a limitação do número de usuários que interagem com o cluster por meio desses pontos de extremidade.
 

@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 03/29/2019
-ms.openlocfilehash: e586ab1bdcca9d6109cf42b6341c333fabb02993
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.date: 05/28/2019
+ms.openlocfilehash: 9316ca0dfaa2d550ea9a2b89d2c93e0e37230f62
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65601675"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388350"
 ---
 # <a name="extend-azure-hdinsight-using-an-azure-virtual-network"></a>Estender o Azure HDInsight usando uma Rede Virtual do Azure
 
@@ -211,41 +211,39 @@ Para se conectar ao Apache Ambari e outras páginas da Web por meio da rede virt
 
 ## <a id="networktraffic"></a> Controlando o tráfego de rede
 
+### <a name="controlling-inbound-traffic-to-hdinsight-clusters"></a>Controlando o tráfego de entrada para clusters do HDInsight
+
 O tráfego de rede em Redes Virtuais do Azure pode ser controlado com os seguintes métodos:
 
 * Os **NSGs** (grupos de segurança de rede) permitem filtrar o tráfego de entrada e de saída para a rede. Para obter mais informações, consulte o documento [Filtrar o tráfego de rede com grupos de segurança de rede](../virtual-network/security-overview.md).
 
-    > [!WARNING]  
-    > O HDInsight não dá suporte à restrição do tráfego de saída. Todo o tráfego de saída deve ser permitido.
-
-* As **UDRs** (rotas definidas pelo usuário) definem como o tráfego flui entre os recursos na rede. Para obter mais informações, consulte o documento [Rotas definidas pelo usuário e encaminhamento IP](../virtual-network/virtual-networks-udr-overview.md).
-
 * As **soluções de virtualização de rede** replicam a funcionalidade de dispositivos, como firewalls e roteadores. Para obter mais informações, consulte o documento [Dispositivos de rede](https://azure.microsoft.com/solutions/network-appliances).
 
-Como um serviço gerenciado, o HDInsight exige acesso irrestrito para a integridade do HDInsight e gerenciamento de serviços para tráfego de entrada e saída da rede virtual. Ao usar NSGs e UDRs, você deve garantir que esses serviços ainda possam se comunicar com o cluster HDInsight.
+Como um serviço gerenciado, o HDInsight exige acesso irrestrito para a integridade do HDInsight e gerenciamento de serviços para tráfego de entrada e saída da rede virtual. Ao usar NSGs, você deve garantir que esses serviços podem se comunicar com o cluster HDInsight.
 
-### <a id="hdinsight-ip"></a> HDInsight com grupos de segurança de rede e rotas definidas pelo usuário
+![Diagrama de entidades do HDInsight criado na VNET personalizado do Azure](./media/hdinsight-virtual-network-architecture/vnet-diagram.png)
 
-Se você pretende usar **grupos de segurança de rede** ou **rotas definidas pelo usuário** para controlar o tráfego de rede, execute as seguintes ações antes de instalar o HDInsight:
+### <a id="hdinsight-ip"></a> HDInsight com grupos de segurança de rede
+
+Se você planeja usar **grupos de segurança de rede** para controlar o tráfego de rede, execute as seguintes ações antes de instalar o HDInsight:
 
 1. Identifique a região do Azure que você pretende usar para o HDInsight.
 
 2. Identifique os endereços IP necessários para o HDInsight. Para obter mais informações, consulte a seção [Endereços IP necessários para o HDInsight](#hdinsight-ip).
 
-3. Crie ou modifique os grupos de segurança de rede ou as rotas definidas pelo usuário da sub-rede na qual você pretende instalar o HDInsight.
+3. Criar ou modificar os grupos de segurança de rede para a sub-rede que você planeja instalar o HDInsight em.
 
-    * __Grupos de segurança de rede__: permita o tráfego de __entrada__ na porta __443__ dos endereços IP. Isso garantirá que os serviços de gerenciamento de HDI podem acessar o cluster de rede virtual externa.
-    * __Rotas definidas pelo usuário__: se você planeja usar UDRs, crie uma rota para cada endereço IP e defina o __tipo de salto seguinte__ para __Internet__. Você também deve permitir qualquer outro tráfego de saída da VNET sem restrição. Por exemplo, você pode rotear todo o tráfego para sua rede ou firewall dispositivo virtual do Azure (hospedado no Azure) para fins de monitoramento, mas o tráfego de saída não deve ser bloqueado.
+    * __Grupos de segurança de rede__: permita o tráfego de __entrada__ na porta __443__ dos endereços IP. Isso garantirá que os serviços de gerenciamento de HDInsight podem acessar o cluster de fora da rede virtual.
 
-Para obter mais informações sobre grupos de segurança de rede ou rotas definidas pelo usuário, consulte a seguinte documentação:
+Para obter mais informações sobre os grupos de segurança de rede, consulte o [visão geral dos grupos de segurança de rede](../virtual-network/security-overview.md).
 
-* [Grupo de segurança de rede](../virtual-network/security-overview.md)
+### <a name="controlling-outbound-traffic-from-hdinsight-clusters"></a>Controlando o tráfego de saída de clusters do HDInsight
 
-* [Rotas definidas pelo usuário](../virtual-network/virtual-networks-udr-overview.md)
+Para obter mais informações sobre como controlar o tráfego de saída de clusters de HDInsight, consulte [configurar a restrição do tráfego de rede de saída para o Azure HDInsight clusters](hdinsight-restrict-outbound-traffic.md).
 
 #### <a name="forced-tunneling-to-on-premise"></a>Túnel forçado para on-premise
 
-O túnel forçado é uma configuração de roteamento definido pelo usuário em que todo o tráfego de uma sub-rede é forçado para uma rede ou localização específica, como a rede local. HDInsight faz __não__ suporte ao túnel à força para as redes locais. Se você estiver usando o Firewall do Azure ou um dispositivo de rede virtual hospedado no Azure, você pode usar UDRs para rotear o tráfego para ele para fins de monitoramento e permitir que todo o tráfego de saída.
+O túnel forçado é uma configuração de roteamento definido pelo usuário em que todo o tráfego de uma sub-rede é forçado para uma rede ou localização específica, como a rede local. HDInsight faz __não__ suporte forçado o túnel de tráfego para redes locais. 
 
 ## <a id="hdinsight-ip"></a> Endereços IP obrigatórios
 

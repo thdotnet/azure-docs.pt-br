@@ -7,12 +7,12 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/12/2019
-ms.openlocfilehash: dc0a6e008c7a1f4fb414f6d8adad3a94abc7a6b2
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 51c1ea7b554178f7fb3f264bf731ffd5872ceea2
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65792362"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234557"
 ---
 # <a name="source-transformation-for-mapping-data-flow"></a>Transformação de origem para o mapeamento de fluxo de dados 
 
@@ -92,7 +92,7 @@ Escolha as configurações para gerenciar arquivos em seu código-fonte.
 
 Se for sua origem no banco de dados SQL ou SQL Data Warehouse, você tem opções adicionais para o gerenciamento de arquivos de origem.
 
-* **Consulta**: Insira uma consulta SQL para sua fonte. Essa configuração substitui qualquer tabela que você escolheu no conjunto de dados. Observe que **Order By** cláusulas não têm suporte aqui. Mas você pode definir uma instrução SELECT FROM completa aqui.
+* **Consulta**: Insira uma consulta SQL para sua fonte. Essa configuração substitui qualquer tabela que você escolheu no conjunto de dados. Observe que **Order By** cláusulas não são suportadas aqui, mas você pode definir uma instrução SELECT FROM completa. Você também pode usar funções de tabela definido pelo usuário. **Selecione * de udfGetData()** é um UDF em SQL que retorna uma tabela. Essa consulta produzirá uma tabela de origem que você pode usar em seu fluxo de dados.
 * **Tamanho do lote**: Insira um tamanho de lote para dividir dados grandes em leituras.
 
 > [!NOTE]

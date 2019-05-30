@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/13/2018
 ms.author: gwallace
 ms.custom: include file
-ms.openlocfilehash: 04929de241ff36e4d67f24907747d89a16a73898
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 2823a33b25812a69ad463433bacd9710655c9176
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64733750"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66238222"
 ---
 #### <a name="process-automation"></a>Automação de processos
 
@@ -41,7 +41,7 @@ ms.locfileid: "64733750"
 
 <sup>1</sup>uma área restrita é um ambiente compartilhado que pode ser usado por vários trabalhos. Trabalhos que usam a mesma área de segurança são associados por limitações de recursos de área restrita.
 
-#### <a name="change-tracking-and-inventory"></a>Controle de alterações e inventário
+#### <a name="change-tracking-and-inventory"></a>Controle de Alterações e Inventário
 
 A tabela a seguir mostra os limites de item controladas por máquina para o controle de alterações.
 
@@ -53,3 +53,11 @@ A tabela a seguir mostra os limites de item controladas por máquina para o cont
 |Pacotes do Linux|1,250||
 |Serviços|250||
 |Daemon|250||
+
+#### <a name="update-management"></a>Gerenciamento de atualizações
+
+A tabela a seguir mostra os limites para o gerenciamento de atualizações.
+
+| **Recurso** | **Limite**| **Observações** |
+|---|---|---|
+|Número de máquinas por implantação de atualização|1000||

@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 05/01/2019
+ms.date: 05/29/2019
 ms.author: juliako
-ms.openlocfilehash: 8f50188480b963d13460c79175ea6972d3e68f6a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: a5ce6467a547b9fded03b3b5a6f40f84d29d3618
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153073"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66385155"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Notas de versão dos Serviços de Mídia do Azure v3
 
@@ -36,7 +36,21 @@ Para obter mais informações, consulte [Guia de migração para migrar do Servi
 
 ## <a name="may-2019"></a>Maio de 2019
 
+### <a name="hls-v4-and-above-support-in-dynamic-packaging"></a>HLS v4 e acima suportam no empacotamento dinâmico 
+
+Adicionado HLS (versão 4 ou posterior) dão suporte no empacotamento dinâmico para ativos que têm várias faixas de áudio com vários codecs e linguagens.
+
+Para obter mais informações, consulte [empacotamento dinâmico](dynamic-packaging-overview.md).
+
+### <a name="korea-regional-pair-is-open-for-media-services"></a>Par regional de Coreia está aberta para os serviços de mídia 
+
+Os serviços de mídia agora está disponível nas regiões Coreia Central e Coreia do Sul. 
+
+Para obter mais informações, consulte [nuvens e regiões no qual os serviços de mídia v3 existe](azure-clouds-regions.md).
+
 ### <a name="performance-improvements"></a>Aprimoramentos de desempenho
+
+Atualizações adicionadas que incluem melhorias de desempenho de serviços de mídia.
 
 * O tamanho máximo do arquivo com suporte para o processamento foi atualizado. Consulte, [cotas e limitações](limits-quotas-constraints.md).
 * [Aprimoramentos de velocidades de codificação](media-reserved-units-cli-how-to.md#choosing-between-different-reserved-unit-types).
@@ -52,7 +66,7 @@ Para obter mais informações, consulte [Guia de migração para migrar do Servi
 
 O empacotamento dinâmico agora dá suporte a Atmos Dolby. Para obter mais informações, consulte [codecs de áudio com suporte pelo empacotamento dinâmico](dynamic-packaging-overview.md#audio-codecs-supported-by-dynamic-packaging).
 
-Agora você pode especificar uma lista de filtros de ativo ou conta, que se aplica a localizador de Streaming. Para obter mais informações, consulte [associar filtros de localizador de Streaming](filters-concept.md#associate-filters-with-streaming-locator).
+Agora você pode especificar uma lista de filtros de ativo ou conta, que se aplica a localizador de Streaming. Para obter mais informações, consulte [associar filtros de localizador de Streaming](filters-concept.md#associating-filters-with-streaming-locator).
 
 ## <a name="february-2019"></a>fevereiro de 2019
 
@@ -215,7 +229,7 @@ Os recursos a seguir estão presentes no SDK do .NET:
 
 * Ao enviar um trabalho, você pode especificar para ingerir o vídeo de origem usando URLs HTTPS, URLs SAS ou caminhos para arquivos localizados no Armazenamento de Blobs do Azure. Atualmente, o AMS v3 não oferece suporte à codificação de transferência em partes sobre URLs HTTPS.
 
-## <a name="ask-questions-give-feedback-get-updates"></a>Faça perguntas, comentários, obtenha atualizações
+## <a name="ask-questions-give-feedback-get-updates"></a>Fazer perguntas, comentar, obter atualizações
 
 Confira o artigo [comunidade dos Serviços de Mídia do Azure](media-services-community.md) para ver diferentes maneiras de fazer perguntas, comentários e obter atualizações sobre os serviços de mídia.
 

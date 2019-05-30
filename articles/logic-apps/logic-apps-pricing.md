@@ -10,12 +10,12 @@ ms.reviewer: estfan, LADocs
 ms.assetid: f8f528f5-51c5-4006-b571-54ef74532f32
 ms.topic: article
 ms.date: 05/22/2019
-ms.openlocfilehash: b37a6b6995df6f784b5f1b4a7a3f54d91faafc13
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 20e84482b31c4da991f3fdc9c7bbf6ee0e7f902a
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65990185"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299095"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Modelo de preços para os Aplicativos Lógicos do Azure
 
@@ -38,14 +38,14 @@ Aplicativos lógicos do Azure medidores todas as ações que são executados em 
 
 ## <a name="fixed-pricing-model"></a>Modelo de preços fixo
 
-Uma [ *ambiente do serviço de integração* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) fornece uma maneira particular, isolada e dedicada para que você possa criar e executar aplicativos lógicos que podem acessar recursos em uma rede virtual do Azure. Para novos aplicativos lógicos que são executados dentro de um ISE, você paga um preço mensal fixo para gatilhos e ações internas e também para conectores padrão.
+Uma [ *ambiente do serviço de integração* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) fornece uma maneira particular, isolada e dedicada para que você possa criar e executar aplicativos lógicos que podem acessar recursos em uma rede virtual do Azure. Para novos aplicativos lógicos que são executados dentro de um ISE, você paga um [preço mensal fixo](https://azure.microsoft.com/pricing/details/logic-apps) para gatilhos e ações internas e também para conectores padrão.
 
-O ISE também inclui um conector gratuito do Enterprise, que inclui todas as conexões que você deseja. Uso de conectores adicionais do Enterprise é cobrado com base no preço de consumo do Enterprise.
+O ISE também inclui um conector gratuito do Enterprise, que inclui como muitas *conexões* conforme desejado. O uso de conectores adicionais do Enterprise é cobrado com base nas [preço de consumo de Enterprise](https://azure.microsoft.com/pricing/details/logic-apps). Em geral conectores do Enterprise disponíveis são cobrados pelo preço de consumo do Enterprise. Conectores empresariais de visualização pública são cobrados a [taxa de conector padrão](https://azure.microsoft.com/pricing/details/logic-apps).
 
 > [!NOTE]
 > Dentro de um ISE, interna de gatilhos e ações de exibir o **Core** rotular e executar no ISE do mesmo como seus aplicativos lógicos. Conectores Standard e Enterprise que exibem a **ISE** rótulo executado no ISE do mesmo como seus aplicativos lógicos. Os conectores que não exibem o rótulo ISE executados no serviço global de aplicativos lógicos.
 
-A unidade base do ISE corrigiu capacidade, portanto, se você precisar de mais taxa de transferência, você pode [adicionar mais unidades de escala](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#add-capacity), durante a criação ou posteriormente. 
+A unidade base do ISE corrigiu capacidade, portanto, se você precisar de mais taxa de transferência, você pode [adicionar mais unidades de escala](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#add-capacity), durante a criação ou posteriormente. Aplicativos lógicos que são executados em um ISE não incorrem em custos de retenção de dados.
 
 Para informações específico sobre preços, consulte [preços de aplicativos lógicos do Azure](https://azure.microsoft.com/pricing/details/logic-apps).
 
@@ -108,7 +108,7 @@ Para informações específico sobre preços, consulte [preços de aplicativos l
 
 ## <a name="data-retention"></a>Retenção de dados
 
-Todas as entradas e saídas que são armazenadas no histórico de execuções do aplicativo lógico cobradas com base em um aplicativo lógico [execute o período de retenção](logic-apps-limits-and-config.md#run-duration-retention-limits). Para informações específico sobre preços, consulte [preços de aplicativos lógicos do Azure](https://azure.microsoft.com/pricing/details/logic-apps).
+Exceto para aplicativos lógicos que executar em um ambiente de serviço de integração (ISE), todas as entradas e saídas que são armazenadas no histórico de execuções do aplicativo lógico serão cobradas com base em um aplicativo lógico [execute o período de retenção](logic-apps-limits-and-config.md#run-duration-retention-limits). Aplicativos lógicos que são executados em um ISE não incorrem em custos de retenção de dados. Para informações específico sobre preços, consulte [preços de aplicativos lógicos do Azure](https://azure.microsoft.com/pricing/details/logic-apps).
 
 Para ajudá-lo a monitorar o consumo de armazenamento do seu aplicativo lógico, você pode:
 

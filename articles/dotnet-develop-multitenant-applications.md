@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/05/2015
 ms.author: wpickett
-ms.openlocfilehash: 342c7903e58a5c3bc41278152630187fa0c63b7b
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 92a0caedca34756228dbf57ec9099fd2ece3d84e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62119139"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66225984"
 ---
 # <a name="multitenant-applications-in-azure"></a>Aplicativos multilocatários no Azure
 Um aplicativo multilocatário é um recurso compartilhado que permite que usuários distintos ou "locatários" exibam o aplicativo como se ele fosse de sua propriedade. Um cenário típico que pode ser usado como um aplicativo multilocatário é aquele em que todos os usuários do aplicativo talvez queiram personalizar a experiência do usuário, mas que, de outra forma, têm os mesmos requisitos de negócios básico. Exemplos de grandes aplicativos multilocatários são o Office 365, o Outlook.com e o visualstudio.com.
@@ -40,7 +40,7 @@ Um aplicativo multilocatário implementado adequadamente oferece os seguintes be
 * **Custos**: Os custos são menores do que a execução de um aplicativo dedicado de único locatário porque a multilocação permite o compartilhamento de recursos.
 * **Capacidade de personalização**. A capacidade de personalizar o aplicativo para um locatário individual de várias maneiras, como adicionar ou remover recursos, alterar cores e logotipos ou até mesmo adicionar seu próprio código ou script.
 
-Em resumo, existem muitas considerações que você deve levar em conta para fornecer um serviço altamente escalonável, também há vários objetivos e requisitos que são comuns a muitos aplicativos multilocatários. Alguns podem não ser relevantes em cenários específicos, e a importância de requisitos e metas individuais será diferente em cada cenário. Como um provedor do aplicativo multilocatário, você também terá metas e requisitos, como atender as metas e requisitos dos locatários, lucratividade, cobrança, vários níveis de serviço, provisionamento, capacidade de manutenção, monitoramento e automação.
+Em suma, embora haja muitas considerações que você deve levar em conta para fornecer um serviço altamente escalonável, também há uma série de metas e requisitos que são comuns a muitos aplicativos multilocatários. Alguns podem não ser relevantes em cenários específicos, e a importância de requisitos e metas individuais será diferente em cada cenário. Como um provedor do aplicativo multilocatário, você também terá metas e requisitos, como o locatário metas e requisitos, lucratividade, cobrança, vários níveis de serviço, provisionamento, monitoramento de facilidade de manutenção e automação de reunião.
 
 Para obter mais informações sobre considerações de design adicionais de um aplicativo multilocatário, consulte [Hosting a Multi-Tenant Application on Azure][Hosting a Multi-Tenant Application on Azure] (Hospedando um aplicativo multilocatário no Azure). Para obter informações sobre os padrões comuns da arquitetura de dados dos aplicativos do banco de dados SaaS (software como serviço) multilocatário, consulte [Padrões de Design para Aplicativos SaaS multilocatário com o Banco de Dados SQL do Azure](sql-database/sql-database-design-patterns-multi-tenancy-saas-applications.md). 
 
@@ -51,15 +51,15 @@ O Azure oferece muitos recursos que permitem resolver os principais problemas en
 * Segmentar locatários de sites por Cabeçalhos de Host com ou sem comunicação SSL
 * Segmentar locatários de site por parâmetros de consulta
 * Serviços web em funções de trabalho
-  * Funções de trabalho. que normalmente processam dados no back-end de um aplicativo.
+  * Funções de trabalho que normalmente processam dados no back-end de um aplicativo.
   * Funções Web que geralmente agem como o front-end de aplicativos.
 
 **Armazenamento**
 
-O gerenciamento de dados, como os serviços de Banco de Dados SQL do Azure ou o Armazenamento do Azure, como o serviço Tabela que fornece serviços para o armazenamento de grandes quantidades de dados não estruturados, e o serviço Blob que fornece serviços para armazenar grandes quantidades de texto não estruturado ou de dados binários, como vídeo, áudio e imagens.
+Gerenciamento de dados, como serviços de banco de dados SQL ou armazenamento do Azure, como o serviço tabela, que fornece serviços para o armazenamento de grandes quantidades de dados não estruturados e o serviço de Blob, que fornece serviços para armazenar grandes quantidades de texto não estruturado ou dados binários, como vídeo, áudio e imagens.
 
-* Proteção de logons no SQL Server por locatário apropriados para dados de multilocatários em Bancos de Dados SQL.
-* O uso de Tabelas do Azure para recursos do aplicativo. Especificando uma diretiva de acesso em nível de contêiner, você pode ter a capacidade de ajustar as permissões sem necessidade de emitir novas URLs para os recursos protegidos com assinaturas de acesso compartilhado.
+* Protegendo dados de Multilocatários no banco de dados SQL logons do SQL Server por locatário.
+* Usando tabelas do Azure para recursos do aplicativo, especificando uma política de acesso no nível do contêiner, você pode ter a capacidade de ajustar as permissões sem precisar emitir novas URLs para os recursos protegidos com assinaturas de acesso compartilhado.
 * Filas do Azure para recursos do aplicativo. As filas do Azure geralmente são usadas para processamento de unidades em nome de locatários, mas também podem ser usadas para distribuir o trabalho necessário para provisionamento ou gerenciamento.
 * Filas do Service Bus para recursos do aplicativo que enviam trabalho por push para um serviço compartilhado, você pode usar uma única fila onde cada remetente locatário tem apenas permissões (conforme derivado das declarações emitidas no ACS) para envio por push àquela fila, enquanto somente os receptores do serviço têm permissão para efetuar pull na fila dos dados provenientes de vários locatários.
 
@@ -73,8 +73,8 @@ O Azure fornece vários serviços de rede que oferecem suporte à autenticação
 
 * A Rede Virtual do Azure permite que você provisione e gerencie VPNs (redes virtuais privadas) no Azure e vincule-as com segurança à infraestrutura de TI local.
 * O Gerenciador de Tráfego de Rede Virtual permite que você equilibre o tráfego de entrada entre os vários serviços hospedados do Azure, quer eles estejam em execução no mesmo datacenter ou em diferentes datacenters ao redor do mundo.
-* O Active Directory do Azure (AD do Azure) é um serviço moderno e baseado em REST que fornece recursos de gerenciamento de identidade e de controle de acesso para seus aplicativos na nuvem. O uso do AD do Azure para recursos do aplicativo. O AD do Azure fornece uma maneira fácil de autenticar e autorizar os usuários para obterem acesso a seus aplicativos e serviços web permitindo, ao mesmo tempo, que os recursos de autenticação e autorização sejam fatorados de seu código.
-* O Service Bus do Azure fornece um serviço de mensagens seguro e o recurso de fluxo de dados para aplicativos distribuídos e híbridos, como a comunicação entre aplicativos hospedados do Azure e aplicativos e serviços locais, sem a necessidade de firewall complexo e de infraestruturas de segurança. O uso da Retransmissão do Barramento de Serviço para recursos do aplicativo nos serviços que são expostos como pontos de extremidade podem pertencer ao locatário (por exemplo, hospedados fora do sistema, como localmente) ou podem ser serviços provisionados especificamente para o locatário (porque dados confidenciais específicos ao locatário trafegam entre eles).
+* O Active Directory do Azure (AD do Azure) é um serviço moderno e baseado em REST que fornece recursos de gerenciamento de identidade e de controle de acesso para seus aplicativos na nuvem. Usando o Azure AD para recursos do aplicativo fornece uma maneira fácil de autenticar e autorizar usuários para obter acesso a seus aplicativos web e serviços, permitindo que os recursos de autenticação e autorização sejam fatorados fora do seu código.
+* O Service Bus do Azure fornece um serviço de mensagens seguro e o recurso de fluxo de dados para aplicativos distribuídos e híbridos, como a comunicação entre aplicativos hospedados do Azure e aplicativos e serviços locais, sem a necessidade de firewall complexo e de infraestruturas de segurança. Usando a retransmissão do barramento de serviço para recursos do aplicativo para acessar os serviços que são expostos como pontos de extremidade pode pertencer ao locatário (por exemplo, hospedado fora do sistema, como no local) ou podem ser serviços provisionados especificamente para o locatário porque ( dados confidenciais específicos ao locatário trafegam entre eles).
 
 **Provisionando recursos**
 
@@ -84,9 +84,9 @@ O Azure fornece várias maneiras de provisionar novos locatários para o aplicat
 * Os Blobs do Azure podem ser usados para provisionar computação ou recursos de armazenamento pré-inicializados para novos locatários fornecendo, ao mesmo tempo, políticas de acesso em nível de contêiner para proteger os pacotes, imagens VHD e outros recursos do serviço de computação.
 * As opções para provisionamento de recursos de Banco de Dados SQL para um locatário incluem:
   
-  * DDL em scripts ou incorporada como recursos em assemblies
+  * DDL em scripts ou incorporada como recursos em assemblies.
   * Pacotes de DAC do SQL Server 2008 R2 implantados programaticamente.
-  * Cópia de um banco de dados mestre de referência
+  * Copiando de um banco de dados mestre de referência.
   * Uso de importação e exportação de banco de dados para provisionar novos bancos de dados de um arquivo.
 
 <!--links-->

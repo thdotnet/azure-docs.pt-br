@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93ac5ef5f03f800a8f90259db3e382b3bc5c5e2c
-ms.sourcegitcommit: 2c09af866f6cc3b2169e84100daea0aac9fc7fd0
+ms.openlocfilehash: e82a78953c4385f7688705d4ab3f697be9c3ddbd
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64875634"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235156"
 ---
 # <a name="identity-data-storage-for-european-customers-in-azure-active-directory"></a>Armazenamento de dados de identidade para os clientes europeus no Azure Active Directory
 Os dados de identidade são armazenados pelo AD do Azure em um local geográfico com base no endereço fornecido pela sua organização ao inscrever-se para um serviço Online da Microsoft, como Office 365 e Azure. Para obter informações sobre onde seus dados de identidade são armazenados, você pode usar o [é onde seus dados estão localizados?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) seção do Microsoft Trust Center.
@@ -28,7 +28,9 @@ Para clientes que recebe um endereço na Europa, o Azure AD mantém a maioria do
     
 - Autenticação de dois fatores tudo usando chamadas telefônicas ou SMS se originam de datacenters nos EUA e também é roteado por provedores globais.
 - Usando o aplicativo se originam nos data centers do Microsoft Authenticator de notificações por push. Além disso, os serviços específicos do fornecedor de dispositivo também podem entram em play e esses serviços talvez fora da Europa.
-- Códigos OATH sempre são validados nos EUA. 
+- Códigos OATH sempre são validados nos EUA.
+
+Para obter mais informações sobre quais informações do usuário são coletadas por servidor de autenticação multifator do Azure (servidor de MFA) e o Azure MFA baseado em nuvem, consulte [coleta de dados de usuário de autenticação multifator do Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting-datacollection).
 
 ## <a name="microsoft-azure-active-directory-b2c-azure-ad-b2c"></a>Microsoft Azure Active Directory B2C (Azure AD B2C)
 

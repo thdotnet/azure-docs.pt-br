@@ -7,12 +7,12 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/04/2018
-ms.openlocfilehash: 1a332dd46cac196c8185ddb12c0d900f5c36e1b3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a50778db5fd57202c17f05407045259371912586
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270727"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66239187"
 ---
 # <a name="mapping-data-flow-debug-mode"></a>Modo de Depuração do Fluxo de Dados de Mapeamento
 
@@ -27,6 +27,9 @@ Quando o modo de depuração está ativado, você irá criar interativamente o f
 
 Na maioria dos casos, recomenda-se criar seus Fluxos de Dados no modo de depuração para que você possa validar a lógica de negócios e exibir as transformações de dados antes de publicar seu trabalho no Azure Data Factory. Você também deve usar o botão de "Debug" no painel de pipeline para testar seu fluxo de dados dentro de um pipeline.
 
+> [!NOTE]
+> Embora a luz do modo de depuração é verde na barra de ferramentas do Data Factory, você será cobrado na taxa de fluxo de dados de depuração de 8 núcleos/horas de computação geral com um minuto 60 time-to-live 
+
 ## <a name="debug-mode-on"></a>Modo de depuração
 Ao ativar o modo de depuração, você recebe um formulário de painel lateral que solicita que você aponte para o seu cluster interativo do Azure Databricks e selecione opções para a amostragem de fonte. Você deve usar um cluster interativo do Azure Databricks e selecionar um tamanho de amostragem de cada uma das suas transformações de Fonte, ou escolher um arquivo de texto a ser usado para os dados de teste.
 
@@ -36,12 +39,12 @@ Ao ativar o modo de depuração, você recebe um formulário de painel lateral q
 >Ao executar no Modo de Depuração no Fluxo de Dados, seus dados não são gravados na transformação de Coletor. Uma sessão de depuração destina-se a servir como um agente de teste para suas transformações. Os coletores não são necessários durante a depuração e são ignorados no fluxo de dados. Se você deseja testar a gravação dos dados em seu Coletor, execute o Fluxo de Dados de um Pipeline do Azure Data Factory e use a execução da Depuração de um pipeline.
 
 ## <a name="debug-settings"></a>Configurações de depuração
-Configurações de depuração pode ser aparecerá no painel lateral de cada fonte de fluxo de dados e também podem ser editada selecionando "configurações da fonte" na barra de designer de fluxo de dados. Você pode selecionar os limites e/ou a fonte do arquivo a usar para cada transformação de Fonte aqui. Os limites de linha nesta configuração são apenas para a sessão de depuração atual. Você também pode usar a configuração de amostragem na fonte para limitar as linhas em transforamtion o código-fonte.
+Configurações de depuração pode ser aparecerá no painel lateral de cada fonte de fluxo de dados e também podem ser editada selecionando "configurações da fonte" na barra de designer de fluxo de dados. Você pode selecionar os limites e/ou a fonte do arquivo a usar para cada transformação de Fonte aqui. Os limites de linha nesta configuração são apenas para a sessão de depuração atual. Você também pode usar a configuração de amostragem na fonte para limitar as linhas em que a transformação de origem.
 
 ## <a name="cluster-status"></a>Status do cluster
 Há um indicador de status de cluster na parte superior da superfície de design que fica verde quando o cluster está pronto para depuração. Se o seu cluster já está em estado passivo, o indicador verde aparece quase que instantaneamente. Se o cluster ainda não estava em execução quando você entrou no modo de depuração, é preciso aguardar de 5 a 7 minutos para que o cluster fique ativo. A luz indicadora fica amarela quando ele está pronto. Quando o cluster está pronto para a depuração do fluxo de dados, a luz indicadora fica verde.
 
-Após a conclusão da depuração, desative a Depuração para que o cluster do Azure Databricks possa ser encerrado.
+Quando tiver terminado com a sua depuração, desative a opção de depuração para que seu cluster do Databricks do Azure possa ser encerrado e você não será cobrado para a atividade de depuração.
 
 <img src="media/data-flow/datapreview.png" width="400">
 

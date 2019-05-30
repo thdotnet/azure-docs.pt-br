@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/14/2017
 ms.author: cynthn
-ms.openlocfilehash: 50d0d78e9dc0c7f51fcd82dd16eab5a180eae073
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 80c2a1f4b9b724058b8b573f265a3cb2a99302a0
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61402176"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66305954"
 ---
 # <a name="deploy-an-azure-virtual-machine-using-c-and-a-resource-manager-template"></a>Implantar uma Máquina Virtual do Azure usando C# e um modelo do Resource Manager
 
@@ -36,7 +36,7 @@ Nesta etapa, você verifica se o Visual Studio está instalado e cria um aplicat
 
 1. Se você ainda não fez isso, instale o [Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio). Selecione **Desenvolvimento para desktop com o .NET** na página Cargas de trabalho e, em seguida, clique em **Instalar**. No resumo, é possível verificar que as **ferramentas de desenvolvimento do .NET Framework 4 - 4.6** são automaticamente selecionadas. Se o Visual Studio já estiver instalado, você poderá adicionar a carga de trabalho .NET utilizando o Iniciador do Visual Studio.
 2. No Visual Studio, clique em **Arquivo** > **Novo** > **Projeto**.
-3. Em **Modelos** > **Visual C#**, selecione **Aplicativo de Console (.NET Framework)**, digite *myDotnetProject* para o nome do projeto, selecione o local do projeto e, em seguida, clique em **OK**.
+3. Em **Modelos** > **Visual C#** , selecione **Aplicativo de Console (.NET Framework)** , digite *myDotnetProject* para o nome do projeto, selecione o local do projeto e, em seguida, clique em **OK**.
 
 ## <a name="install-the-packages"></a>Instalar os pacotes
 
@@ -56,7 +56,7 @@ Nesta etapa, você cria um arquivo de modelo que implanta os recursos e um arqui
 
 ### <a name="create-the-template-file"></a>Criar o arquivo de modelo
 
-1. No Gerenciador de Soluções, clique com o botão direito do mouse em *myDotnetProject* > **Adicionar** > **Novo Item** e, em seguida, selecione **Arquivo de Texto** em *Itens do Visual C#*. Nomeie o arquivo *CreateVMTemplate.json* e, em seguida, clique em **Adicionar**.
+1. No Gerenciador de Soluções, clique com o botão direito do mouse em *myDotnetProject* > **Adicionar** > **Novo Item** e, em seguida, selecione **Arquivo de Texto** em *Itens do Visual C#* . Nomeie o arquivo *CreateVMTemplate.json* e, em seguida, clique em **Adicionar**.
 2. Adicione este código JSON ao arquivo que você criou:
 
     ```json
@@ -166,9 +166,9 @@ Nesta etapa, você cria um arquivo de modelo que implanta os recursos e um arqui
 
 ### <a name="create-the-parameters-file"></a>Criar o arquivo de parâmetros
 
-Para especificar valores para os parâmetros de recursos definidos no modelo, você cria um arquivo de parâmetros que contém os valores.
+Para especificar valores para os parâmetros de recursos no modelo, você deve criar um arquivo de parâmetros que contém os valores.
 
-1. No Gerenciador de Soluções, clique com o botão direito do mouse em *myDotnetProject* > **Adicionar** > **Novo Item** e, em seguida, selecione **Arquivo de Texto** em *Itens do Visual C#*. Nomeie o arquivo *Parameters.json* e, em seguida, clique em **Adicionar**.
+1. No Gerenciador de Soluções, clique com o botão direito do mouse em *myDotnetProject* > **Adicionar** > **Novo Item** e, em seguida, selecione **Arquivo de Texto** em *Itens do Visual C#* . Nomeie o arquivo *Parameters.json* e, em seguida, clique em **Adicionar**.
 2. Adicione este código JSON ao arquivo que você criou:
 
     ```json
@@ -188,7 +188,7 @@ Para especificar valores para os parâmetros de recursos definidos no modelo, vo
 
 Antes de poder implantar um modelo, verifique se você tem acesso a uma [entidade de serviço do Active Directory](../../active-directory/develop/howto-authenticate-service-principal-powershell.md). Na entidade de serviço, você adquire um token para autenticar as solicitações para o Azure Resource Manager. Além disso, registre a ID do aplicativo, a chave de autenticação e a ID do locatário de que você precisa no arquivo de autorização.
 
-1. No Gerenciador de Soluções, clique com o botão direito do mouse em *myDotnetProject* > **Adicionar** > **Novo Item** e, em seguida, selecione **Arquivo de Texto** em *Itens do Visual C#*. Nomeie o arquivo *azureauth.properties* e, em seguida, clique em **Adicionar**.
+1. No Gerenciador de Soluções, clique com o botão direito do mouse em *myDotnetProject* > **Adicionar** > **Novo Item** e, em seguida, selecione **Arquivo de Texto** em *Itens do Visual C#* . Nomeie o arquivo *azureauth.properties* e, em seguida, clique em **Adicionar**.
 2. Adicione estas propriedades de autorização:
 
     ```
@@ -205,17 +205,17 @@ Antes de poder implantar um modelo, verifique se você tem acesso a uma [entidad
     Substitua **&lt;subscription-id&gt;** pelo identificador da assinatura, **&lt;application-id&gt;** pelo identificador de aplicativo do Active Directory, **&lt;authentication-key&gt;** pela chave do aplicativo e **&lt;tenant-id&gt;** pelo identificador do locatário.
 
 3. Salve o arquivo azureauth.properties.
-4. Defina uma variável de ambiente no Windows chamada AZURE_AUTH_LOCATION com o caminho completo para o arquivo de autorização que você criou, por exemplo, o comando do PowerShell a seguir pode ser usado:
+4. Conjunto de que uma variável de ambiente no Windows chamada AZURE_AUTH_LOCATION com o caminho completo para o arquivo de autorização que você criou, por exemplo você pode usar o seguinte comando do PowerShell:
 
     ```powershell
-    [Environment]::SetEnvironmentVariable("AZURE_AUTH_LOCATION", "C:\Visual Studio 2017\Projects\myDotnetProject\myDotnetProject\azureauth.properties", "User")
+    [Environment]::SetEnvironmentVariable("AZURE_AUTH_LOCATION", "C:\Visual Studio 2019\Projects\myDotnetProject\myDotnetProject\azureauth.properties", "User")
     ```
 
     
 
 ## <a name="create-the-management-client"></a>Criar o cliente de gerenciamento
 
-1. Abra o arquivo Program.cs para o projeto que você criou e, em seguida, adicione o seguinte usando instruções para as instruções existentes na parte superior do arquivo:
+1. Abra o arquivo Program.cs para o projeto que você criou. Em seguida, adicione o seguinte usando instruções para as instruções existentes na parte superior do arquivo:
 
     ```csharp
     using Microsoft.Azure.Management.Compute.Fluent;

@@ -3,19 +3,19 @@ title: Estrutura de tradução colaborativa (CTF) relatórios - API de Traduçã
 titlesuffix: Azure Cognitive Services
 description: Como usar o relatório do CTF (Collaborative Translation Framework).
 services: cognitive-services
-author: v-pawal
+author: rajdeep-in
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 12/14/2017
-ms.author: v-jansko
-ms.openlocfilehash: 178747ffddbadb06751ce0db7d16701c3cea7416
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.author: v-pawal
+ms.openlocfilehash: 166c152828a91889d7d1d7eb6f8c03dac48172f5
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64712822"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389385"
 ---
 # <a name="how-to-use-collaborative-translation-framework-ctf-reporting"></a>Como usar o relatório do CTF (Collaborative Translation Framework)
 
@@ -76,7 +76,7 @@ Esse método obtém a contagem de traduções criadas pelo usuário. Ele fornece
 |:---|:---|
 | appId | **Obrigatório** Se o cabeçalho de Autorização for usado, deixe o campo appid vazio, caso contrário, especifique uma cadeia de caracteres contendo "token de portador" + " " + token de acesso.|
 | uriPrefix | **Opcional** Uma cadeia de caracteres contendo o prefixo de URI da tradução.|
-| de | **Opcional** Uma cadeia de caracteres representando o código de idioma do texto da tradução. |
+| from | **Opcional** Uma cadeia de caracteres representando o código de idioma do texto da tradução. |
 | para | **Opcional** Uma cadeia de caracteres representando o código de idioma para traduzir o texto.|
 | minRating| **Opcional** Um valor inteiro representando a classificação de qualidade mínima para o texto traduzido. O valor válido é entre -10 e 10. O valor padrão é 1.|
 | maxRating| **Opcional** Um valor inteiro representando a classificação máxima de qualidade para o texto traduzido. O valor válido é entre -10 e 10. O valor padrão é 1.|
@@ -96,16 +96,16 @@ O conjunto de resultados contém uma matriz do **UserTranslationCount**. Cada Us
 
 | Campo | DESCRIÇÃO |
 |:---|:---|
-| Contagem| O número de resultados recuperados|
+| Count| O número de resultados recuperados|
 | Da | O idioma de origem|
 | Classificação| A classificação que é aplicada pelo remetente na chamada do método AddTranslation()|
 | Para| O idioma de destino|
 | Uri| O URI aplicado na chamada de método AddTranslation()|
-| Usuário| O nome de usuário|
+| User| O nome de usuário|
 
 **Exceções**
 
-| Exceção | Mensagem | Condições |
+| Exceção | Message | Condições |
 |:---|:---|:---|
 | ArgumentOutOfRangeException | O parâmetro '**maxDateUtc**' deve ser maior ou igual a '**minDateUtc**'.| O valor do parâmetro **maxDateUtc** é menor que o valor do parâmetro **minDateUtc**.|
 | TranslateApiException | IP excede a cota.| <ul><li>O limite para o número de solicitações por minuto é alcançado.</li><li>O tamanho da solicitação permanece limitado a 10000 caracteres.</li><li>Uma cota horária e uma cota diária limitam o número de caracteres que a API do Microsoft Translator aceitará.</li></ul>|
@@ -147,7 +147,7 @@ Esse método recupera as traduções criadas pelo usuário. Ele fornece as tradu
 |:---|:---|
 | appId | **Obrigatório** Se o cabeçalho de Autorização for usado, deixe o campo appid vazio, caso contrário, especifique uma cadeia de caracteres contendo "token de portador" + " " + token de acesso.|
 | uriPrefix| **Opcional** Uma cadeia de caracteres contendo o prefixo de URI da tradução.|
-| de| **Opcional** Uma cadeia de caracteres representando o código de idioma do texto da tradução.|
+| from| **Opcional** Uma cadeia de caracteres representando o código de idioma do texto da tradução.|
 | para| **Opcional** Uma cadeia de caracteres representando o código de idioma para traduzir o texto.|
 | minRating| **Opcional** Um valor inteiro representando a classificação de qualidade mínima para o texto traduzido. O valor válido é entre -10 e 10. O valor padrão é 1.|
 | maxRating| **Opcional** Um valor inteiro representando a classificação máxima de qualidade para o texto traduzido. O valor válido é entre -10 e 10. O valor padrão é 1.|
@@ -174,11 +174,11 @@ O conjunto de resultados contém a matriz do **UserTranslation**. Cada UserTrans
 |Para|    O idioma de destino|
 |TranslatedText|    A tradução como enviada na chamada de método AddTranslation()|
 |Uri|   O URI aplicado na chamada de método AddTranslation()|
-|Usuário   |O nome de usuário|
+|User   |O nome de usuário|
 
 **Exceções**
 
-| Exceção | Mensagem | Condições |
+| Exceção | Message | Condições |
 |:---|:---|:---|
 | ArgumentOutOfRangeException | O parâmetro '**maxDateUtc**' deve ser maior ou igual a '**minDateUtc**'.| O valor do parâmetro **maxDateUtc** é menor que o valor do parâmetro **minDateUtc**.|
 | TranslateApiException | IP excede a cota.| <ul><li>O limite para o número de solicitações por minuto é alcançado.</li><li>O tamanho da solicitação permanece limitado a 10000 caracteres.</li><li>Uma cota horária e uma cota diária limitam o número de caracteres que a API do Microsoft Translator aceitará.</li></ul>|

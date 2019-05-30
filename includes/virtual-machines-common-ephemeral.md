@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/02/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
-ms.openlocfilehash: 47407df90a83501b8739a428789e20cddc59e83d
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 3e9885466d422a0428311ed3013e2ab34341cd25
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66145931"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66391312"
 ---
 Efêmeros discos do sistema operacional são criados no armazenamento local da máquina Virtual (VM) e não são persistidos no armazenamento do Azure remoto. Discos de SO efêmeros funcionam bem para cargas de trabalho sem monitoração de estado, em que os aplicativos são tolerantes a falhas VM individuais, mas estiver mais preocupado com o tempo necessário para implantações em grande escala ou o tempo para refazer a imagem de instâncias de VM individuais. Também é adequado para aplicativos implantados usando o modelo de implantação clássico, para mover para o modelo de implantação do Resource Manager. Com o disco de SO efêmero, é possível observar menor latência de leitura/gravação no disco do SO e refazer imagem de VMs mais rapidamente. Além disso, o disco do SO efêmero é gratuito, você incorrerá em nenhum custo de armazenamento para o disco do sistema operacional. 
  
@@ -38,38 +38,6 @@ Principais diferenças entre os discos do sistema operacional persistentes e ef�
 | Suporte de disco do sistema operacional especializado | Sim                                                                                          | Não                                                                                 |
 | Redimensionamento do disco do sistema operacional              | Durante a criação da VM e depois a VM é interrompida e desalocada com suporte                                | Suporte durante a criação da VM apenas                                                  |
 | Redimensionar para um novo tamanho VM   | Os dados de disco do sistema operacional são preservados                                                                    | Dados no disco do SO são excluídos, o sistema operacional for novamente provisionado                                      |
-
-## <a name="register-for-the-preview"></a>Registre-se para a versão prévia
-
-
-Se registre para a visualização de discos efêmeros do sistema operacional usando a versão mais recente do CLI do Azure ou Azure PowerShell.
-
-### <a name="powershell"></a>PowerShell
-
-```azurepowershell-interactive
-Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
-Register-AzProviderFeature –FeatureName LocalDiffDiskPreview -ProviderNamespace Microsoft.Compute
-```
-
-Para verificar se você está registrado para a versão prévia:
-
-```azurepowershell-interactive
-Get-AzProviderFeature –FeatureName LocalDiffDiskPreview -ProviderNamespace Microsoft.Compute
-```
-
-### <a name="cli"></a>CLI
-
-```azurecli-interactive
-az provider register --namespace Microsoft.Compute
-az feature register --namespace Microsoft.Compute --name LocalDiffDiskPreview
-```
-
-Para verificar se você está registrado para a versão prévia:
- 
-```azurecli-interactive
-az provider show --namespace Microsoft.Compute
-```
-
 
 ## <a name="scale-set-deployment"></a>Implantação do conjunto de dimensionamento  
 O processo para criar um conjunto de dimensionamento que usa um disco do SO efêmero é adicionar o `diffDiskSettings` propriedade para o `Microsoft.Compute/virtualMachineScaleSets/virtualMachineProfile` tipo de recurso no modelo. Além disso, a política de cache deve ser definida como `ReadOnly` para o disco do SO efêmero. 

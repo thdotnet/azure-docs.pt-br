@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: spelluru
-ms.openlocfilehash: 1c77d0ea9e67c8d69f3f632cace164d8a0c4d921
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0821c749a6cb718e1b8abb74a2925bc041850eaf
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60562348"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66305265"
 ---
 # <a name="concepts-in-azure-event-grid"></a>Conceitos da Grade de Eventos do Azure
 
@@ -22,7 +22,8 @@ Este artigo descreve os principais conceitos da Grade de Eventos do Azure.
 
 Um evento é a menor quantidade de informações que descreve por completo algo que aconteceu no sistema. Todos os eventos apresentam informações comuns: origem do evento, hora em que o evento ocorreu e identificador exclusivo. Cada evento também apresenta informações específicas que são relevantes somente para o tipo de evento em questão. Por exemplo, um evento sobre um novo arquivo que está sendo criado no Armazenamento do Azure tem detalhes sobre o arquivo, como o valor `lastTimeModified`. Ou, um evento de Hubs de Eventos tem a URL do arquivo de Captura. 
 
-Cada evento é limitado a 64 KB de dados.
+Um evento de tamanho de até 64 KB é coberto pelo contrato de nível de serviço (SLA) disponibilidade geral (GA). O suporte para um evento de tamanho de até 1 MB está atualmente em visualização. Mais de 64 KB de eventos são cobrados em incrementos de 64 KB. 
+
 
 Para encontrar as propriedades que são enviadas em um evento, confira [Esquema de evento da Grade de Eventos do Azure](event-schema.md).
 
@@ -59,9 +60,6 @@ Para obter exemplos de criação de assinaturas, confira:
 Para obter informações sobre como obter as assinaturas de grade de eventos atuais, confira [Consultar assinaturas de Grade de Eventos](query-event-subscriptions.md).
 
 ## <a name="event-subscription-expiration"></a>Validade da assinatura de evento
-
-A [extensão da Grade de Eventos](/cli/azure/azure-cli-extensions-list) para a CLI do Azure permite que você defina uma data de expiração ao criar uma assinatura de evento. Se você estiver usando a API REST, use `api-version=2018-09-15-preview`
-
 A assinatura do evento é expirada automaticamente após essa data. Defina uma expiração para assinaturas de eventos que são necessárias apenas por um tempo limitado e você não quer se preocupar com a limpeza dessas assinaturas. Por exemplo, ao criar uma assinatura de evento para testar um cenário, você pode querer definir uma expiração. 
 
 Para um exemplo de configuração de expiração, consulte [Inscrever-se com filtros avançados](how-to-filter-events.md#subscribe-with-advanced-filters).
@@ -82,7 +80,10 @@ Se a Grade de Eventos não puder confirmar que um evento foi recebido pelo ponto
 
 ## <a name="batching"></a>Envio em lote
 
-Ao usar um tópico personalizado, os eventos sempre devem ser publicados em uma matriz. Isso pode ser um lote de um para cenários de baixo rendimento, no entanto, para casos de uso de alto volume, é recomendável agrupar vários eventos juntos por publicação para obter maior eficiência. Lotes podem ter até 1 MB. Cada evento ainda deve ser maior que 64 KB não.
+Ao usar um tópico personalizado, os eventos sempre devem ser publicados em uma matriz. Isso pode ser um lote de um para cenários de baixo rendimento, no entanto, para casos de uso de alto volume, é recomendável agrupar vários eventos juntos por publicação para obter maior eficiência. Lotes podem ter até 1 MB. Cada evento ainda deve ser maior que 64 KB (disponibilidade geral) ou 1 MB (versão prévia) não.
+
+> [!NOTE]
+> Um evento de tamanho de até 64 KB é coberto pelo contrato de nível de serviço (SLA) disponibilidade geral (GA). O suporte para um evento de tamanho de até 1 MB está atualmente em visualização. Mais de 64 KB de eventos são cobrados em incrementos de 64 KB. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

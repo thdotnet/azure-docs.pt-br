@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/18/2019
+ms.date: 05/23/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cf8d5cb13b39d58920555ff9d99a4949e1bfc20
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 572f8694d31728a3ca570f6ddb60475e13d71e80
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60415731"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235582"
 ---
 # <a name="combined-security-information-registration-preview"></a>Registro de informações de segurança combinada (visualização)
 
@@ -24,7 +24,7 @@ Antes do registro combinado, os usuários registraram separadamente os métodos 
 
 ![Mostrando meu perfil registrado informações de segurança para um usuário](media/concept-registration-mfa-sspr-combined/combined-security-info-defualts-registered.png)
 
-Antes de habilitar a nova experiência, examine esta documentação voltada para administrador e a documentação e focada no usuário para que entender a funcionalidade e o efeito desse recurso. Base seu treinamento na documentação do usuário para preparar seus usuários para a nova experiência e ajudar a garantir uma distribuição bem-sucedida.
+Antes de habilitar a nova experiência, examine esta documentação voltada para administrador e a documentação e focada no usuário para que entender a funcionalidade e o efeito desse recurso. Basear seu treinamento a [documentação do usuário](../user-help/user-help-security-info-overview.md) para preparar seus usuários para a nova experiência e ajuda a garantir uma distribuição bem-sucedida.
 
 Azure AD combinados registro não está disponível atualmente para nuvens nacionais, como Azure US Government, Azure Alemanha ou Azure China 21Vianet de informações de segurança.
 
@@ -48,10 +48,10 @@ Combinados registro suporta os seguintes métodos de autenticação e ações:
 | --- | --- | --- | --- |
 | Microsoft Authenticator | Sim (máximo de 5) | Não  | Sim |
 | Outro aplicativo autenticador | Sim (máximo de 5) | Não  | Sim |
-| Token de hardware | Não  | Não  | Sim |
+| token de hardware | Não  | Não  | Sim |
 | Telefone | Sim | sim | Sim |
 | Telefone alternativo | Sim | sim | Sim |
-| Telefone comercial | Não  | Não | Não  |
+| Telefone comercial | Não | Não | Não  |
 | Email | Sim | sim | Sim |
 | Perguntas de segurança | Sim | Não  | Sim |
 | Senhas de aplicativo | Sim | Não  | Sim |
@@ -84,20 +84,20 @@ Registro combinado respeita as políticas de autenticação multifator e SSPR, s
 
 Aqui estão vários cenários em que os usuários podem ser solicitados para registrar ou atualizar suas informações de segurança:
 
-* Registro da autenticação multifator imposto por meio da proteção de identidade: Os usuários são solicitados a registrar durante o logon. Ele pode registrar os métodos de autenticação multifator e SSPR (se o usuário está habilitado para SSPR).
-* Registro da autenticação multifator imposto por meio da autenticação de multifator por usuário: Os usuários são solicitados a registrar durante o logon. Ele pode registrar os métodos de autenticação multifator e SSPR (se o usuário está habilitado para SSPR).
-* Registro da autenticação multifator imposto por meio do acesso condicional ou outras políticas: Os usuários são solicitados a registrar quando eles usam um recurso que exige autenticação multifator. Ele pode registrar os métodos de autenticação multifator e SSPR (se o usuário está habilitado para SSPR).
-* Registro SSPR imposto: Os usuários são solicitados a registrar durante o logon. Ele registrar apenas os métodos SSPR.
-* Atualização SSPR imposta: Os usuários devem revisar suas informações de segurança em um intervalo definido pelo administrador. Os usuários são mostrados suas informações e podem confirmar as informações atuais ou fazer alterações, se necessário.
+- Registro da autenticação multifator imposto por meio da proteção de identidade: Os usuários são solicitados a registrar durante o logon. Ele pode registrar os métodos de autenticação multifator e SSPR (se o usuário está habilitado para SSPR).
+- Registro da autenticação multifator imposto por meio da autenticação de multifator por usuário: Os usuários são solicitados a registrar durante o logon. Ele pode registrar os métodos de autenticação multifator e SSPR (se o usuário está habilitado para SSPR).
+- Registro da autenticação multifator imposto por meio do acesso condicional ou outras políticas: Os usuários são solicitados a registrar quando eles usam um recurso que exige autenticação multifator. Ele pode registrar os métodos de autenticação multifator e SSPR (se o usuário está habilitado para SSPR).
+- Registro SSPR imposto: Os usuários são solicitados a registrar durante o logon. Ele registrar apenas os métodos SSPR.
+- Atualização SSPR imposta: Os usuários devem revisar suas informações de segurança em um intervalo definido pelo administrador. Os usuários são mostrados suas informações e podem confirmar as informações atuais ou fazer alterações, se necessário.
 
 Quando o registro é imposto, os usuários recebem o número mínimo de métodos necessários para estar em conformidade com as políticas de autenticação multifator e SSPR, do mais específico para o menos seguro.
 
-Por exemplo: 
+Por exemplo:
 
-* Um usuário está habilitado para SSPR. A política SSPR necessários dois métodos para redefinir e tiver habilitado o telefone, email e código de aplicativo móvel.
-   * Esse usuário é necessária para registrar os dois métodos.
-      * O usuário é mostrado o Authenticator e telefone por padrão.
-      * O usuário pode optar por registrar o email em vez do aplicativo authenticator ou no telefone.
+- Um usuário está habilitado para SSPR. A política SSPR necessários dois métodos para redefinir e tiver habilitado o telefone, email e código de aplicativo móvel.
+   - Esse usuário é necessária para registrar os dois métodos.
+      - O usuário é mostrado o Authenticator e telefone por padrão.
+      - O usuário pode optar por registrar o email em vez do aplicativo authenticator ou no telefone.
 
 Este fluxograma descreve quais métodos são mostrados a um usuário quando interrompida para registrar durante o logon:
 
@@ -133,7 +133,7 @@ Um usuário que tenha configurado anteriormente pelo menos um método navegar pa
 
 Um usuário que tenha configurado anteriormente pelo menos um método que pode ser usado para a autenticação multifator navegar para [ https://aka.ms/mysecurityinfo ](https://aka.ms/mysecurityinfo). O usuário altera o método padrão atual para um método diferente do padrão. Quando terminar, o usuário verá o novo método padrão na página de informações de segurança.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 [Habilite o registro combinado no seu locatário](howto-registration-mfa-sspr-combined.md)
 

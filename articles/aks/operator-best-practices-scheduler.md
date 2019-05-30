@@ -2,18 +2,17 @@
 title: Práticas recomendadas do operador – recursos do agendador básico no Serviço de Kubernetes do Azure (AKS)
 description: Conheça as práticas recomendadas de operador do cluster para usar os recursos básicos do Agendador, como cotas de recursos e orçamentos de interrupção de pod no Serviço de Kubernetes do Azure (AKS)
 services: container-service
-author: rockboyfor
+author: iainfoulds
 ms.service: container-service
 ms.topic: conceptual
-origin.date: 11/26/2018
-ms.date: 04/08/2019
-ms.author: v-yeche
-ms.openlocfilehash: 8233330973946e552e36a85a11bdbbfb06c739f0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 11/26/2018
+ms.author: iainfou
+ms.openlocfilehash: f6e370442c9c359a38025762fb90269119ec0ea6
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60463873"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65074118"
 ---
 # <a name="best-practices-for-basic-scheduler-features-in-azure-kubernetes-service-aks"></a>Práticas recomendadas para recursos do Agendador básico no serviço de Kubernetes do Azure (AKS)
 
@@ -95,7 +94,7 @@ spec:
       app: nginx-frontend
 ```
 
-Você também pode definir uma porcentagem, tal como *60%*, que permite que você compense a réplica automaticamente definido com o aumento do número de pods.
+Você também pode definir uma porcentagem, tal como *60%* , que permite que você compense a réplica automaticamente definido com o aumento do número de pods.
 
 Você pode definir um número máximo de instâncias que não está disponível em um conjunto de réplicas. Novamente, uma porcentagem para os máximo pods indisponíveis também pode ser definida. O manifesto YAML do orçamento de interrupção pod a seguir define não mais do que dois pods na réplica de conjunto não disponível:
 
@@ -127,9 +126,11 @@ Para obter mais informações sobre como usar os orçamentos de interrupção de
 
 O [kube advisor] [ kube-advisor] ferramenta é um projeto de código-fonte aberto AKS associado que examina um cluster Kubernetes e relata sobre problemas que encontrar. Uma verificação útil é identificar os pods que não têm limites e solicitações de recurso em vigor.
 
+A ferramenta Supervisor de kube pode relatar sobre a solicitação de recurso e limites não encontrados em aplicativos de PodSpecs para Windows, bem como aplicativos do Linux, mas a ferramenta Supervisor kube em si deve ser agendada em um pod do Linux. Você pode agendar um pod para execução em um pool de nós com um sistema operacional específico usando um [seletor de nó] [ k8s-node-selector] na configuração do pod.
+
 Em um cluster AKS que hospeda várias equipes de desenvolvimento e aplicativos, pode ser difícil de controlar os pods sem solicitações desses recursos e limita o conjunto. Como prática recomendada, executar regularmente `kube-advisor` em seus clusters AKS, especialmente se você não atribuir as cotas de recursos para namespaces.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Este artigo se concentra nos recursos básicos de agendador Kubernetes. Para obter mais informações sobre as operações de cluster do AKS, consulte as seguintes práticas recomendadas:
 
@@ -148,3 +149,4 @@ Este artigo se concentra nos recursos básicos de agendador Kubernetes. Para obt
 [aks-best-practices-cluster-isolation]: operator-best-practices-cluster-isolation.md
 [aks-best-practices-advanced-scheduler]: operator-best-practices-advanced-scheduler.md
 [aks-best-practices-identity]: operator-best-practices-identity.md
+[k8s-node-selector]: concepts-clusters-workloads.md#node-selectors

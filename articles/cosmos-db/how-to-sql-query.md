@@ -4,14 +4,14 @@ description: Saiba mais sobre a sintaxe SQL, os conceitos sobre banco de dados e
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 05/28/2019
 ms.author: mjbrown
-ms.openlocfilehash: bbca0239053b8f3164055a07b376abc597b0348f
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 943ed63aed0f64ae6cbd62c52731c6ec73ddd0bd
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65954123"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388474"
 ---
 # <a name="sql-query-examples-for-azure-cosmos-db"></a>Exemplos de consulta SQL para o Azure Cosmos DB
 
@@ -512,7 +512,7 @@ Você pode usar os seguintes operadores binários com suporte:
 |Bit a bit    | \|, &, ^, <<, >>, >>> (deslocamento à direita com preenchimento com zero) |
 |Lógico    | AND, OR, NOT      |
 |Comparação | =, !=, &lt;, &gt;, &lt;=, &gt;=, <> |
-|String     |  \|\| (concatenar) |
+|Cadeia de caracteres     |  \|\| (concatenar) |
 
 As seguintes consultas usam operadores binários:
 
@@ -756,7 +756,7 @@ Essa consulta recupera a família `id` em ordem crescente do nome da cidade. Se 
 
 ## <a id="OffsetLimitClause"></a>Cláusula de deslocamento de limite
 
-LIMITE de deslocamento é uma cláusula opcional para ignorar e levar a um número de valores da consulta. A contagem de deslocamento e a contagem de limite são necessários na cláusula de deslocamento de limite.
+LIMITE de deslocamento é uma cláusula opcional para ignorar e levar a um número de valores da consulta. A contagem de deslocamento e a contagem de limite são necessários na cláusula de deslocamento de limite. No momento, esta cláusula é tem suporte para consultas em uma única partição, ele ainda não suportam a consultas entre partições. 
 
 Quando o limite de deslocamento é usado em conjunto com uma cláusula ORDER BY, o conjunto de resultados é produzido, fazendo ignorar e levar nos valores ordenados. Se nenhuma cláusula ORDER BY for usada, isso resultará em uma ordem determinista de valores.
 
@@ -1292,12 +1292,12 @@ Os resultados são:
 
 A API de SQL suporta as seguintes funções de agregação. SUM e AVG operam em valores numéricos e COUNT, MIN e MAX trabalham em números, cadeias de caracteres, boolianos e nulos.
 
-| Função | Descrição |
+| Função | DESCRIÇÃO |
 |-------|-------------|
-| CONTAGEM | Retorna o número de itens na expressão. |
+| COUNT | Retorna o número de itens na expressão. |
 | SUM   | Retorna a soma de todos os valores na expressão. |
 | MÍN.   | Retorna o valor mínimo na expressão. |
-| MÁX   | Retorna o valor máximo na expressão. |
+| MÁX.   | Retorna o valor máximo na expressão. |
 | AVG   | Retorna a média dos valores na expressão. |
 
 Você também pode agregar os resultados de uma iteração de matriz. Para obter mais informações, consulte o [iteração](#Iteration) seção.
@@ -1326,7 +1326,7 @@ A principal diferença entre as funções de Cosmos DB e ANSI SQL é que funçõ
 
 As funções matemáticas executam um cálculo, com base em valores de entrada fornecidos como argumentos e retornam um valor numérico. Aqui está uma tabela de funções matemáticas internas com suporte.
 
-| Uso | Descrição |
+| Uso | DESCRIÇÃO |
 |----------|--------|
 | ABS (num_expr) | Retorna o valor absoluto (positivo) da expressão numérica especificada. |
 | CEILING (num_expr) | Retorna o menor valor de número inteiro maior ou igual à expressão numérica especificada. |
@@ -1395,7 +1395,7 @@ O resultado é:
 
 As funções escalares a seguir executam uma operação em um valor de cadeia de caracteres de entrada e retornam um valor de cadeia de caracteres, numéricos ou booleanos. Aqui temos uma tabela de funções de cadeia de caracteres internas:
 
-| Uso | Descrição |
+| Uso | DESCRIÇÃO |
 | --- | --- |
 | [LENGTH (str_expr)](sql-api-query-reference.md#bk_length) | Retorna o número de caracteres da expressão de cadeia de caracteres especificada. |
 | [CONCAT (str_expr, str_expr [, str_expr])](sql-api-query-reference.md#bk_concat) | Retorna uma cadeia de caracteres que é o resultado da concatenação de dois ou mais valores de cadeia de caracteres. |
@@ -1471,7 +1471,7 @@ Os resultados são:
 
 As funções escalares a seguir executam uma operação em um valor de matriz de entrada e retornam um numérico, booliano ou valor de matriz. Aqui temos uma tabela de funções de matriz internas:
 
-| Uso | Descrição |
+| Uso | DESCRIÇÃO |
 | --- | --- |
 | [ARRAY_LENGTH (arr_expr)](sql-api-query-reference.md#bk_array_length) |Retorna o número de elementos da expressão de matriz especificada. |
 | [ARRAY_CONCAT (arr_expr, arr_expr [, arr_expr])](sql-api-query-reference.md#bk_array_concat) |Retorna uma matriz que é o resultado da concatenação de dois ou mais valores de matriz. |
@@ -1534,7 +1534,7 @@ Os resultados são:
 
 O cosmos DB suporta as seguintes funções internas do Open Geospatial Consortium (OGC) para consultas geoespaciais: 
 
-| Uso | Descrição |
+| Uso | DESCRIÇÃO |
 | --- | --- |
 | ST_DISTANCE (point_expr, point_expr) | Retorna a distância entre os dois GeoJSON `Point`, `Polygon`, ou `LineString` expressões. |
 | T_WITHIN (point_expr, polygon_expr) | Retorna uma expressão booleana que indica se o primeiro objeto GeoJSON (`Point`, `Polygon`, ou `LineString`) está dentro do segundo objeto GeoJSON (`Point`, `Polygon`, ou `LineString`). |
@@ -1986,7 +1986,7 @@ O provedor de consulta dá suporte a expressões escalares a seguir:
 
 - Valores de constantes, incluindo valores de constantes de tipos de dados primitivos no momento da avaliação de consulta.
   
-- Expressões de índice de matriz/propriedade se refere à propriedade de um objeto ou um elemento de matriz. Por exemplo:
+- Expressões de índice de matriz/propriedade se refere à propriedade de um objeto ou um elemento de matriz. Por exemplo: 
   
   ```
     family.Id;

@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 12/05/2018
-ms.openlocfilehash: 188cb310cfc13fe2fc41ba3e01deb01068c0184d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 135f8f1c9c352f9d2307a8bf9ad1bec892aac179
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60446769"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399926"
 ---
 # <a name="visualize-data-from-azure-data-explorer-in-grafana"></a>Visualizar dados do Azure Data Explorer no Grafana
 
@@ -121,7 +121,7 @@ Agora que você tem uma entidade de serviço, adicione-a à função *visualizad
 
 1. No portal do Azure, acesse o cluster do Azure Data Explorer e selecione **Consultar**.
 
-    ![Consultar](media/grafana/query.png)
+    ![Consulta](media/grafana/query.png)
 
 1. Execute o seguinte comando na janela de consulta. Use a ID de aplicativo e o ID de locatário do portal do Azure ou CLI.
 
@@ -154,9 +154,9 @@ Com a entidade de serviço atribuída à função *visualizadores*, agora você 
     | UI do Grafana | Portal do Azure | CLI do Azure |
     | --- | --- | --- |
     | ID da assinatura | ID DA ASSINATURA | SubscriptionId |
-    | ID do locatário | ID do Diretório | tenant |
+    | ID do locatário | ID do Diretório | locatário |
     | Id do Cliente | ID do aplicativo | appId |
-    | Segredo do cliente | Senha | Senha |
+    | Segredo do cliente | Senha | password |
     | | | |
 
 1. Selecione **Salvar e Testar**.
@@ -208,6 +208,6 @@ Agora que você terminou de configurar o Azure Data Explorer como uma fonte de d
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Gravar consultas para Azure Data Explorer](write-queries.md)
+* [Gravar consultas para Azure Data Explorer](write-queries.md)
 
-[Tutorial: Visualizar dados do Azure Data Explorer no Power BI](visualize-power-bi.md)
+* [Tutorial: Visualizar dados do Azure Data Explorer no Power BI](visualize-power-bi.md)

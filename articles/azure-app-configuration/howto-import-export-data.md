@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 6557f3a4129076c1e8708208e5d4e0d4f53dcec3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 377c5088d39821e87412c517540b3190b0a14a00
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60741727"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393280"
 ---
 # <a name="import-or-export-configuration-data"></a>Importar ou exportar dados de configuração
 
@@ -29,7 +29,7 @@ Este artigo fornece um guia para importar e exportar dados com a configuração 
 
 Importação traz a configuração de armazenamento de dados em uma configuração de aplicativo de uma fonte existente, em vez de inserir manualmente-lo. Use a função de importação para migrar dados para um repositório de configurações do aplicativo ou agregar dados de várias fontes. Configuração de aplicativo dá suporte à importação de um arquivo JSON, YAML ou propriedades.
 
-Importar dados usando o [portal do Azure](https://aka.ms/azconfig/portal) ou o [CLI do Azure](./scripts/cli-import.md). No portal do Azure, siga estas etapas:
+Importar dados usando o [portal do Azure](https://portal.azure.com) ou o [CLI do Azure](./scripts/cli-import.md). No portal do Azure, siga estas etapas:
 
 1. Navegue até seu repositório de configurações do aplicativo e selecione **importação/exportação**.
 
@@ -53,7 +53,7 @@ Importar dados usando o [portal do Azure](https://aka.ms/azconfig/portal) ou o [
 
 Exportação grava os dados de configuração armazenados na configuração de aplicativo para outro destino. Use a função de exportação, por exemplo, para salvar dados em um repositório de configuração de aplicativo para um arquivo que é inserido com o código do aplicativo durante a implantação.
 
-Exportar dados usando o [portal do Azure](https://aka.ms/azconfig/portal) ou o [CLI do Azure](./scripts/cli-export.md). No portal do Azure, siga estas etapas:
+Exportar dados usando o [portal do Azure](https://portal.azure.com) ou o [CLI do Azure](./scripts/cli-export.md). No portal do Azure, siga estas etapas:
 
 1. Navegue até seu repositório de configurações do aplicativo e selecione **importação/exportação**.
 

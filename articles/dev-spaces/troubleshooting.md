@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s '
-ms.openlocfilehash: 39ef23d04dc1cf1b48297ecf8f0accfef4935cd2
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 693abccd7e54a1dfef92cd57a715ac96bfd56a8c
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66158948"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234014"
 ---
 # <a name="troubleshooting-guide"></a>Guia de Solução de Problemas
 
@@ -242,7 +242,7 @@ O contexto de build está no nível de projeto/serviço por padrão, portanto, u
 ### <a name="try"></a>Experimente:
 O que precisa ser feito:
 1. Modifique o arquivo _azds.yaml_ para configurar o contexto de compilação para o nível da solução.
-2. Modifique os arquivos _Dockerfile_ e _Dockerfile.develop_ para fazer referência aos arquivos (_.csproj_) do projeto corretamente, relativos ao novo contexto de compilação.
+2. Modifique os arquivos _Dockerfile_ e _Dockerfile.develop_ para fazer referência aos arquivos ( _.csproj_) do projeto corretamente, relativos ao novo contexto de compilação.
 3. Implante um arquivo _.dockerignore_ ao lado do arquivo .sln e modifique conforme necessário.
 
 Você pode encontrar um exemplo em https://github.com/sgreenmsft/buildcontextsample
@@ -404,3 +404,8 @@ Crie um controlador com um nome alternativo:
 ```cmd
 azds controller create --name my-controller --target-name MyAKS --resource-group MyResourceGroup
 ```
+
+## <a name="enabling-dev-spaces-failing-when-windows-node-pools-are-added-to-an-aks-cluster"></a>Habilitar espaços de desenvolvimento falhando quando pools de nós do Windows são adicionados a um cluster do AKS
+
+### <a name="reason"></a>Motivo
+Atualmente, espaços de desenvolvimento do Azure destina-se para ser executado no Linux pods e apenas nós. Neste momento, você não pode habilitar espaços de desenvolvimento do Azure em um cluster do AKS com um pool de nós do Windows.

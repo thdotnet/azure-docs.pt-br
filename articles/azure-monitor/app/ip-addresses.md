@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 01/22/2019
+ms.date: 05/21/2019
 ms.author: mbullwin
-ms.openlocfilehash: af4d350c715a0792934f9d080f0bf571c3b2d2b5
-ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
+ms.openlocfilehash: c4e924d1e3012bc5e49c89f51026cd651398f4c5
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66023244"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242878"
 ---
 # <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>Endereços IP usados pelo Application Insights e pelo Log Analytics
 O serviço [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) usa vários endereços IP. Talvez seja necessário conhecer esses endereços se o aplicativo que você está monitorando estiver hospedado atrás de um firewall.
@@ -397,9 +397,9 @@ East US
 
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
-| Portal da análise | analytics.applicationinsights.io | dinâmica | 80.443 |
-| CDN | applicationanalytics.azureedge.net | dinâmica | 80.443 |
-| Mídia CDN | applicationanalyticsmedia.azureedge.net | dinâmica | 80.443 |
+| Portal da análise | analytics.applicationinsights.io | dinâmico | 80.443 |
+| CDN | applicationanalytics.azureedge.net | dinâmico | 80.443 |
+| Mídia CDN | applicationanalyticsmedia.azureedge.net | dinâmico | 80.443 |
 
 Observação: o domínio *.applicationinsights.io pertence à equipe do Application Insights.
 
@@ -407,8 +407,8 @@ Observação: o domínio *.applicationinsights.io pertence à equipe do Applicat
 
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
-| Portal | portal.loganalytics.io | dinâmica | 80.443 |
-| CDN | applicationanalytics.azureedge.net | dinâmica | 80.443 |
+| Portal | portal.loganalytics.io | dinâmico | 80.443 |
+| CDN | applicationanalytics.azureedge.net | dinâmico | 80.443 |
 
 Observação: o domínio *.loganalytics.io pertence à equipe do Log Analytics.
 
@@ -416,15 +416,15 @@ Observação: o domínio *.loganalytics.io pertence à equipe do Log Analytics.
 
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
-| Extensão do Application Insights | stamp2.app.insightsportal.visualstudio.com | dinâmica | 80.443 |
-| Extensão do Application Insights CDN | insightsportal-prod2-cdn.aisvc.visualstudio.com<br/>insightsportal-prod2-asiae-cdn.aisvc.visualstudio.com<br/>insightsportal-cdn-aimon.applicationinsights.io | dinâmica | 80.443 |
+| Extensão do Application Insights | stamp2.app.insightsportal.visualstudio.com | dinâmico | 80.443 |
+| Extensão do Application Insights CDN | insightsportal-prod2-cdn.aisvc.visualstudio.com<br/>insightsportal-prod2-asiae-cdn.aisvc.visualstudio.com<br/>insightsportal-cdn-aimon.applicationinsights.io | dinâmico | 80.443 |
 
 ## <a name="application-insights-sdks"></a>SDKs do Application Insights
 
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
-| SDK do Application Insights JS CDN | az416426.vo.msecnd.net | dinâmica | 80.443 |
-| Application Insights Java SDK | aijavasdk.blob.Core.Windows.net | dinâmica | 80.443 |
+| SDK do Application Insights JS CDN | az416426.vo.msecnd.net | dinâmico | 80.443 |
+| Application Insights Java SDK | aijavasdk.blob.Core.Windows.net | dinâmico | 80.443 |
 
 ## <a name="alert-webhooks"></a>Webhooks de alerta
 
@@ -432,13 +432,13 @@ Observação: o domínio *.loganalytics.io pertence à equipe do Log Analytics.
 | --- | --- | --- |
 | Alertas | 23.96.11.4 | 443 |
 
-## <a name="profiler"></a>Profiler
+## <a name="profiler"></a>Criador de perfil
 
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
 | Agente | agent.azureserviceprofiler.net<br/>*.agent.azureserviceprofiler.net | 40.68.32.221<br/>40.85.246.0<br/>40.85.246.57<br/>40.117.252.0<br/>40.117.253.100<br/>51.140.140.162<br/>51.140.140.184<br/>51.143.96.206<br/>51.143.98.157<br/>52.161.8.88<br/>52.161.29.225<br/>52.178.147.66<br/>52.178.149.106<br/>52.230.122.9<br/>52.230.124.46<br/>104.40.217.71<br/>104.211.89.26<br/>104.211.90.232 | 443
-| Portal | gateway.azureserviceprofiler.net | dinâmica | 443
-| Armazenamento | *.core.windows.net | dinâmica | 443
+| Portal | gateway.azureserviceprofiler.net | dinâmico | 443
+| Armazenamento | *.core.windows.net | dinâmico | 443
 
 ## <a name="snapshot-debugger"></a>Depurador de instantâneo
 
@@ -448,5 +448,5 @@ Observação: o domínio *.loganalytics.io pertence à equipe do Log Analytics.
 | Finalidade | URI | IP | Portas |
 | --- | --- | --- | --- |
 | Agente | ppe.azureserviceprofiler.net<br/>*.ppe.azureserviceprofiler.net | 40.68.32.221<br/>40.85.246.0<br/>40.85.246.57<br/>40.117.252.0<br/>40.117.253.100<br/>51.140.140.162<br/>51.140.140.184<br/>51.143.96.206<br/>51.143.98.157<br/>52.161.8.88<br/>52.161.29.225<br/>52.178.147.66<br/>52.178.149.106<br/>52.230.122.9<br/>52.230.124.46<br/>104.40.217.71<br/>104.211.89.26<br/>104.211.90.232 | 443
-| Portal | ppe.gateway.azureserviceprofiler.net | dinâmica | 443
-| Armazenamento | *.core.windows.net | dinâmica | 443
+| Portal | ppe.gateway.azureserviceprofiler.net | dinâmico | 443
+| Armazenamento | *.core.windows.net | dinâmico | 443

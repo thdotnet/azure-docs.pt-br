@@ -12,14 +12,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: multiple
 ms.topic: article
-ms.date: 01/04/2019
+ms.date: 05/23/2019
 ms.author: jowargo
-ms.openlocfilehash: 22494984ca45cde7255fb5e1a30548c859bfad68
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 2ba3be0d51758cf7afd9f85258403bf79ca8401f
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65826504"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66239409"
 ---
 # <a name="security-model-of-azure-notification-hubs"></a>Modelo de segurança dos Hubs de Notificação do Azure
 
@@ -43,13 +43,13 @@ Não é recomendável que você insira o valor da chave em aplicativos cliente d
 
 Semelhantes a outras entidades, as operações de Hub de notificação são permitidas para três declarações de segurança: Ouvir, Enviar e Gerenciar.
 
-| Declaração   | Descrição                                          | Operações permitidas |
+| Declaração   | DESCRIÇÃO                                          | Operações permitidas |
 | ------- | ---------------------------------------------------- | ------------------ |
 | Escutar  | Criar/atualizar, ler e excluir registros simples | Criar/Atualizar o registro<br><br>Ler registro<br><br>Ler todos os registros para um identificador<br><br>Excluir registro |
 | Enviar    | Enviar mensagens ao hub de notificação                | Enviar mensagem |
 | Gerenciar  | CRUDs nos Hubs de notificação (incluindo atualização de credenciais PNS e chaves de segurança) e ler registros baseados em marcas |Criar/Atualizar/Ler/Excluir hubs de notificação<br><br>Ler registros por marca |
 
-Os hubs de notificação aceitam declarações concedidas pelos tokens de controle de acesso do Microsoft Azure e por tokens de assinatura gerados com chaves compartilhadas configuradas diretamente no hub de notificação.
+Hubs aceita tokens gerados com assinatura de notificação compartilhadas configuradas diretamente no Hub de notificação de chaves.
 
 Não é possível enviar uma notificação para mais de um namespace. Namespaces são um contêiner lógico para os hubs de notificação e não estão envolvidos com o envio de notificações.
 As políticas de acesso de nível de namespace (credenciais) podem ser usadas para operações de nível de namespace, por exemplo: listando os hubs de notificação, criação ou exclusão de hubs de notificação, etc. Somente as políticas de acesso de nível de hub seriam permitem que você envie notificações.

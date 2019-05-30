@@ -14,15 +14,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 05/15/2019
+ms.date: 05/24/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f14110cec0650927f74dfe3a38f06187c6df39de
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 8b8eebd7a7a8933d082741a3086ffcf03a58066f
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65792655"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357719"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Usar o Azure para hospedar e executar cenários de carga de trabalho do SAP
 
@@ -36,15 +36,12 @@ Hospedagem de cenários de carga de trabalho do SAP no Azure também pode criar 
 
 ## <a name="latest-changes"></a>Alterações mais recentes
 
+- Introdução do caminho rápido de ExpressRoute e o alcance Global para instâncias grandes HANA [arquitetura de rede do SAP HANA (instâncias grandes)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-network-architecture) e documentos relacionados
 - Versão do [controlar de instâncias grandes do HANA do Azure por meio do portal do Azure](hana-li-portal.md)
-
 - Versão do [alta disponibilidade do SAP NetWeaver em VMs do Azure no SUSE Linux Enterprise Server com arquivos do Azure NetApp para aplicativos SAP](high-availability-guide-suse-netapp-files.md)
-
 - Esclarecimentos sobre **net.ipv4.tcp_timestamps de parâmetro do sistema operacional Linux** balanceador de carga de configurações em conjunto com o Azure
 
-- Versão do [configurações de carga de trabalho do SAP com zonas de disponibilidade do Azure](sap-ha-availability-zones.md)
 
-- Versão da [Lista de verificação de planejamento e implantação de carga de trabalho do SAP](sap-deployment-checklist.md)
 
 
 

@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
 ms.openlocfilehash: 65c89730e7d3d492b91daa8aba50e5606ca700a1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803230"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66238517"
 ---
 A tabela a seguir lista os limites que se aplicam aos recursos do serviço de provisionamento de dispositivo Hub IoT do Azure.
 
-| Recurso | Limite |
+| Resource | Limite |
 | --- | --- |
 | Provisionamento de serviços por assinatura do Azure máxima do dispositivo | 10 |
 | Número máximo de cadastros | 1.000.000 |
