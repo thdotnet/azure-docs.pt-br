@@ -5,22 +5,18 @@ services: Azure, Marketplace, Cloud Partner Portal, Azure portal
 author: v-miclar
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 03/28/2019
-ms.author: pabutler
-ms.openlocfilehash: e31efb9a52ff004e6e35ddfc251732c014eedae9
+ms.date: 05/23/2019
+ms.author: evansma
+ms.openlocfilehash: abe499c081c73d42e712d5872e121262a1a50197
 ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/28/2019
-ms.locfileid: "66257473"
+ms.locfileid: "66259158"
 ---
 # <a name="register-a-saas-application"></a>Registrar um aplicativo SaaS
 
 Este artigo explica como registrar um aplicativo SaaS usando o Microsoft [portal do Azure](https://portal.azure.com/).  Depois de um registro bem-sucedido, você receberá um token de segurança do Azure Active Directory (Azure AD) que você pode usar para acessar as APIs de cumprimento de SaaS.  Para obter mais informações sobre o Azure AD, consulte [o que é autenticação?](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios)
-
-> [!IMPORTANT] 
-> SaaS oferecem funcionalidade tiver sido migrada para o [Microsoft Partner Center](https://partner.microsoft.com/dashboard/directory).  Todos os novos editores devem usar o Partner Center para criar novas ofertas de SaaS e gerenciando ofertas existentes.  Editores atuais com ofertas de SaaS estão sendo migrados batchwise do Portal de parceiro do Cloud Partner Center.  Portal do Cloud Partner exibirá mensagens de status para indicar quando as ofertas específicas do existentes foram migradas.
-> Para obter mais informações, consulte [criar uma nova oferta de SaaS](../../partner-center-portal/create-new-saas-offer.md).
 
 
 ## <a name="service-to-service-authentication-flow"></a>Fluxo de autenticação de serviço a serviço
@@ -37,7 +33,7 @@ Azure não impõe nenhuma restrição quanto à autenticação que o serviço Sa
 Para que você possa usar os recursos do AD do Azure em qualquer aplicativo desejado, primeiramente é preciso registrá-lo em um locatário do AD do Azure. Esse processo de registro envolve fornecer ao Azure AD detalhes sobre seu aplicativo, como a URL em que ele está localizado, a URL à qual enviar respostas depois que um usuário é autenticado, o URI que identifica o aplicativo, etc.  Para registrar um novo aplicativo usando o portal do Azure, realize as seguintes etapas:
 
 1.  Entre no [Portal do Azure](https://portal.azure.com/).
-2.  Se a sua conta der acesso a mais de um, clique em sua conta no canto superior direito e defina a sessão do portal para o desejado de locatário do Azure AD.
+2.  Se sua conta der acesso a mais de um, clique em sua conta no canto superior direito e defina a sessão do portal com o Azure AD desejado de locatário.
 3.  No painel de navegação esquerdo, clique no serviço **Azure Active Directory**, clique em **Registros do aplicativo** e clique em **Novo registro de aplicativo**.
 
     ![Registros de Aplicativo do AD SaaS](./media/saas-offer-app-registration-v1.png)
@@ -131,4 +127,4 @@ Token de resposta de exemplo:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-O aplicativo protegido pelo AD do Azure agora pode usar o [SaaS cumprimento API versão 2](./cpp-saas-fulfillment-api-v2.md).
+O aplicativo protegido pelo AD do Azure agora pode usar o [SaaS cumprimento API versão 2](./pc-saas-fulfillment-api-v2.md).
