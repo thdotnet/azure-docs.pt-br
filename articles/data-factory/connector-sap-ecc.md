@@ -3,22 +3,21 @@ title: Copiar dados do SAP ECC usando o Azure Data Factory | Microsoft Docs
 description: Saiba como copiar dados do SAP ECC para armazenamentos de dados de coletor com suporte usando uma atividade de cópia em um pipeline do Azure Data Factory.
 services: data-factory
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: linda33wj
+manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-origin.date: 04/26/2018
-ms.date: 04/22/2019
-ms.author: v-jay
-ms.openlocfilehash: d86264b632daa09a899fae28e73e117b16322617
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.date: 04/26/2018
+ms.author: jingwang
+ms.openlocfilehash: 7c75793a696137a1d4cc24fa94877a7fb4e4247a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62128110"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243914"
 ---
 # <a name="copy-data-from-sap-ecc-using-azure-data-factory"></a>Copiar dados do SAP ECC usando o Azure Data Factory
 
@@ -33,6 +32,9 @@ Especificamente, este conector do SAP ECC dá suporte à:
 - Copiar dados do SAP ECC no SAP NetWeaver versão 7.0 e posterior. 
 - Copiar dados de quaisquer objetos expostos pelos serviços SAP ECC OData (por exemplo, Tabela SAP/Exibições, BAPI, Extratores de Dados e etc.) ou dados/IDOC enviados para SAP PI que podem ser recebidos como OData por meio de Adaptadores relativos.
 - À cópia de dados usando a autenticação Básica.
+
+>[!TIP]
+>Para copiar dados do SAP ECC por meio da tabela/exibição do SAP, você pode usar [tabela SAP](connector-sap-table.md) conector que é mais eficaz e escalonável.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -57,7 +59,7 @@ As propriedades a seguir têm suporte para o serviço vinculado do SAP ECC:
 | type | A propriedade type deve ser definida como: **SapEcc** | Sim |
 | url | A URL do serviço OData do SAP ECC. | Sim |
 | username | O nome de usuário usado para conectar ao SAP ECC. | Não  |
-| password | A senha de texto não criptografado usada para conectar ao SAP ECC. | Não  |
+| Senha | A senha de texto não criptografado usada para conectar ao SAP ECC. | Não  |
 | connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode usar o Integration Runtime auto-hospedado ou o Integration Runtime do Azure (se seu armazenamento de dados estiver publicamente acessível). Se não for especificado, ele usa o Integration Runtime padrão do Azure. |Não  |
 
 **Exemplo:**
@@ -91,7 +93,7 @@ Para copiar dados do SAP ECC, defina a propriedade do tipo do conjunto de dados 
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| path | Caminho da entidade OData do SAP ECC. | Sim |
+| caminho | Caminho da entidade OData do SAP ECC. | Sim |
 
 **Exemplo**
 
@@ -162,14 +164,14 @@ Ao copiar dados do SAP ECC, os seguintes mapeamentos são usados dos tipos de da
 
 | Tipo de dados OData | Tipo de dados provisório do Data Factory |
 |:--- |:--- |
-| Edm.Binary | String |
+| Edm.Binary | Cadeia de caracteres |
 | Edm.Boolean | Bool |
-| Edm.Byte | String |
+| Edm.Byte | Cadeia de caracteres |
 | Edm.DateTime | DateTime |
 | Edm.Decimal | Decimal |
 | Edm.Double | Double |
 | Edm.Single | Single |
-| Edm.Guid | String |
+| Edm.Guid | Cadeia de caracteres |
 | Edm.Int16 | Int16 |
 | Edm.Int32 | Int32 |
 | Edm.Int64 | Int64 |

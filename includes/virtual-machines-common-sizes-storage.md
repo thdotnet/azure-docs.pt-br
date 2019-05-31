@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/17/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
-ms.openlocfilehash: fb829cc5f1eef9c151a70a6479e419076e1c3b24
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 5123ee3f65744f3d0c255712efe990b01be58e26
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66170331"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66420721"
 ---
 Os tamanhos de VM otimizados para armazenamento oferecem taxa de transferência de disco alta e de E/S e são ideais para bancos de dados Big Data, SQL, NoSQL, armazenamento de dados e grandes dados transacionais.  Exemplos incluem Cassandra, MongoDB, Cloudera e Redis. Este artigo fornece informações sobre o número de vCPUs, discos de dados e NICs, bem como a taxa de transferência de armazenamento local e largura de banda de rede para cada tamanho otimizado.
 
@@ -33,15 +33,15 @@ ACU: 150-175
 
 Armazenamento Premium: Com suporte
 
-Cache de armazenamento Premium: Sem Suporte
+Cache de armazenamento Premium: Sem suporte
 
 | Tamanho          | vCPU | Memória (GiB) | Disco temporário<sup>1</sup> (GiB) | Discos NVMe<sup>2</sup> | Taxa de transferência de disco NVMe<sup>3</sup> (IOPS de leitura / MBps) | Máximo de taxa de transferência de disco de dados (IOPs/MBps) sem cache<sup>4</sup> | Discos de dados máximos | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
 |---------------|-----------|-------------|--------------------------|----------------|---------------------------------------------------|-------------------------------------------|------------------------------|------------------------------| 
-| Standard_L8s_v2   |  8 |  64 |  80 |  1x1.92 TB  | 400,000 / 2,000 | 8,000/160 | 16 | 2 / 3.200  | 
-| Standard_L16s_v2  | 16 | 128 | 160 |  2x1.92 TB  | 800,000 / 4,000 | 16,000/320 | 32 | 4 / 6.400  | 
-| Standard_L32s_v2  | 32 | 256 | 320 |  4x1.92 TB  | 1,5 M / 8.000    | 32,000/640 | 32 | 8 / 12.800 | 
-| Standard_L64s_v2  | 64 | 512 | 640 |  8x1.92 TB  | 2.9 M / 16.000   | 64,000/1,280 | 32 | 8 / 16,600+ |
-| Standard_L80s_v2  | 80 | 640 | 800 | 10x1.92TB   | 3.8 M / 20.000   | 80,000/1,400 | 32 | 8 / 16,000+ |
+| Standard_L8s_v2   |  8 |  64 |  80 |  1x1.92 TB  | 400000 / 2000 | 8000/160 | 16 | 2 / 3200  |
+| Standard_L16s_v2  | 16 | 128 | 160 |  2x1.92 TB  | 800000 / 4000 | 16000/320 | 32 | 4 / 6400  |
+| Standard_L32s_v2  | 32 | 256 | 320 |  4x1.92 TB  | 1,5 M / 8000    | 32000/640 | 32 | 8 / 12800 |
+| Standard_L64s_v2  | 64 | 512 | 640 |  8x1.92 TB  | 2.9 M / 16000   | 64000/1280 | 32 | 8 / 16000+ |
+| Standard_L80s_v2<sup>5</sup> | 80 | 640 | 800 | 10x1.92TB   | 3.8 M / 20000   | 80000/1400 | 32 | 8 / 16000+ |
 
 <sup>1</sup> As VMs da série Lsv2 têm um disco de recurso temporário baseado em SCSI padrão para uso de arquivo de paginação/troca de sistema operacional (D: no Windows, /dev/sdb no Linux). Esse disco fornece 80 GiB de armazenamento, 4.000 IOPS e taxa de transferência de 80 MBps a cada 8 VCPUs (por exemplo, Standard_L80s_v2 fornece 800 GiB a 40.000 IOPS e 800 MBPS). Isso garante que as unidades de NVMe podem ser totalmente dedicadas para uso do aplicativo. Esse disco é efêmero e todos os dados serão perdidos quando ele for parado/desalocado.
 
@@ -50,6 +50,18 @@ Cache de armazenamento Premium: Sem Suporte
 <sup>3</sup> A tecnologia Hyper-V NVMe Direct fornece acesso limitado a unidades de NVMe locais mapeadas com segurança no espaço VM de convidado.  Alcançar o desempenho máximo requer ousar a compilação mais recente do WS2019 ou Ubuntu 18.04 ou 16.04 do Azure Marketplace.  O desempenho de gravação varia com base no tamanho de E/S, carga de unidade e a utilização da capacidade.
 
 <sup>4</sup> VMs da série Lsv2 não fornecem o cache de host para o disco de dados uma vez que não beneficiam as cargas de trabalho Lsv2.  No entanto, VMs Lsv2 podem acomodar a opção de disco do SO efêmero da VM do Azure (até 30 GiB).
+
+<sup>5</sup> as VMs com mais de 64 vCPUs exigem um destes sistemas operacionais convidados com suporte:
+- Windows Server 2016 ou posterior
+- Ubuntu 16.04 LTS ou posterior, com o Azure ajustado kernel (kernel 4,15 ou posterior)
+- SLES 12 SP2 ou posterior
+- RHEL ou CentOS versão 6.7 thru 6.10, com o pacote fornecido pelo Microsoft LIS 4.3.1 (ou posterior) instalado
+- CentOS ou RHEL versão 7.3, com o pacote fornecido pelo Microsoft LIS 4.2.1 (ou posterior) instalado
+- Versão do CentOS ou RHEL 7.4 ou posterior
+- Oracle Linux com UEK4 ou posterior
+- Debian 9 com o kernel de backports, Debian, 10 ou posterior
+- CoreOS com um kernel 4.14 ou posterior
+
 
 ## <a name="size-table-definitions"></a>Definições da tabela de tamanhos
 
