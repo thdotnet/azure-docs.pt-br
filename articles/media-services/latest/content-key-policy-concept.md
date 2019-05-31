@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 05/28/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: a1d2cc50b405df2c71d94e74973b3291a4e908cb
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: 04808dda193a3a472813cda852a1a2f24d00e112
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393481"
+ms.locfileid: "66417989"
 ---
 # <a name="content-key-policies"></a>Políticas da Chave de Conteúdo
 
@@ -25,7 +25,7 @@ Com os Serviços de Mídia, é possível entregar o conteúdo ao vivo e sob dema
 
 Para especificar opções de criptografia em seu fluxo, você precisará criar uma [política de Streaming](streaming-policy-concept.md) e associá-la com seus [localizador de Streaming](streaming-locators-concept.md). Você cria o [política de chave de conteúdo](https://docs.microsoft.com/rest/api/media/contentkeypolicies) para configurar como a chave de conteúdo (que fornece acesso seguro aos seus [ativos](assets-concept.md)) é entregue para os clientes finais. Você precisa definir os requisitos (restrições) na política de chave de conteúdo que devem ser atendidos para que as chaves com a configuração especificada a ser entregue aos clientes. Essa política de chave de conteúdo não é necessária para limpar streaming ou baixar. 
 
-Normalmente, você associar seu **política de chave de conteúdo** com seu **localizador de Streaming**. Como alternativa, você pode especificar a política de chave de conteúdo dentro de uma política de Streaming (durante a criação de uma política personalizada de Streaming para cenários avançados). 
+Normalmente, você associar seu **política de chave de conteúdo** com seu [localizador de Streaming](streaming-locators-concept.md). Como alternativa, você pode especificar a política de chave de conteúdo dentro de um [política de Streaming](streaming-policy-concept.md) (quando criar uma política personalizada de Streaming para cenários avançados). 
 
 É recomendável para permitir que os serviços de mídia para gerar chaves de conteúdo. Normalmente, você usaria uma chave de vida útil longa e verificar a existência de políticas com **obter**. Para ter acesso à chave, você precisa chamar um método de ação separado para obter segredos ou as credenciais. Confira o exemplo a seguir.
 

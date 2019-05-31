@@ -1,11 +1,8 @@
 ---
 title: Cancelar sua assinatura do Azure | Microsoft Docs
 description: Descreve como cancelar sua assinatura do Azure, como a assinatura de Avaliação Gratuita
-services: ''
-documentationcenter: ''
-author: genlin
-manager: adpick
-editor: ''
+author: bandersmsft
+manager: amberb
 tags: billing
 ms.assetid: 3051d6b0-179f-4e3a-bda4-3fee7135eac5
 ms.service: billing
@@ -13,24 +10,25 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 1/23/2019
+ms.date: 5/30/2019
 ms.author: banders
-ms.openlocfilehash: 374224663323e75a1d1413c47490bd3aacd00267
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 235d93de56289bb2daaa661ee9806732da3b6d6a
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60918347"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417598"
 ---
 # <a name="cancel-your-subscription-for-azure"></a>Cancelar sua assinatura do Azure
 
-É possível cancelar sua assinatura do Azure como o [Administrador da Conta](billing-subscription-transfer.md#whoisaa). Depois de cancelar a assinatura, seu acesso aos recursos e serviços do Azure será encerrado.
+Apenas uma assinatura do Azure [administrador da conta](billing-subscription-transfer.md#whoisaa) pode cancelar uma assinatura do Azure. Um administrador de assinatura do Azure também pode [atribuir outro usuário como um administrador da assinatura](billing-add-change-azure-subscription-administrator.md#assign-a-user-as-an-administrator-of-a-subscription) , de modo que eles podem cancelar uma assinatura. Depois de cancelar a assinatura, seu acesso aos recursos e serviços do Azure será encerrado.
 
 Antes de cancelar sua assinatura:
 
 * Faça backup dos dados. Por exemplo, se você estiver colocando dados no armazenamento do Azure ou SQL, baixe uma cópia. Se você tiver uma máquina virtual, salve uma imagem dela localmente.
 * Finalize seus serviços. Vá para a [página de recursos no portal de gerenciamento](https://ms.portal.azure.com/?flight=1#blade/HubsExtension/Resources/resourceType/Microsoft.Resources%2Fresources), e **Pare** quaisquer máquinas virtuais, aplicativos ou outros serviços em execução.
 * Considere migrar seus dados. Consulte [Mover recursos para um novo grupo de recursos ou uma nova assinatura](../azure-resource-manager/resource-group-move-resources.md).
+* Você deve excluir todos os recursos e todos os grupos de recursos. É necessário excluí-los, antes de cancelar uma assinatura. Cada grupo de recursos deve ser excluído individualmente. Durante a exclusão do grupo de recursos, você deve confirmar a exclusão digitando o nome do grupo de recursos.
 
 Se você cancelar um plano de Suporte do Azure pago, ainda será cobrado pelo restante do período de assinatura. Para obter mais informações, consulte [Planos de suporte do Azure](https://azure.microsoft.com/support/plans/).
 
@@ -49,7 +47,7 @@ Após o cancelamento, a cobrança será interrompida imediatamente. No entanto, 
 
 Depois disso, os serviços são desabilitados. Isso significa que as máquinas virtuais são desalocadas, os endereços IP temporários são liberados e o armazenamento é somente leitura.
 
-Se você cancelar no meio de um período de cobrança, enviaremos a cobrança final na data da fatura normal após o término do período. 
+Se você cancelar no meio de um período de cobrança, enviaremos a cobrança final na data da fatura normal após o término do período.
 
 Aguardaremos 90 dias antes de excluir permanentemente seus dados caso você precise acessá-los ou mude de ideia. Você não é cobrado pela retenção dos dados. Para saber mais, consulte a [Central de Confiabilidade da Microsoft – Como gerenciamos seus dados](https://go.microsoft.com/fwLink/p/?LinkID=822930&clcid=0x409).
 

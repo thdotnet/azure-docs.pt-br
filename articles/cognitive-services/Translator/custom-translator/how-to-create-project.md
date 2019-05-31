@@ -7,14 +7,14 @@ manager: christw
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
-ms.author: v-rada
+ms.author: v-pawal
 ms.topic: conceptual
-ms.openlocfilehash: 2e49a8c40396b03c231fa7fd484331b0e28d4cf6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 456860c74810a692b4839e4204ec0b78d5620864
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60513446"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66383004"
 ---
 # <a name="create-a-project"></a>Criar um projeto
 
@@ -62,7 +62,7 @@ Depois de selecionar um projeto, você verá o seguinte na página do projeto:
 
     ![Exibir detalhes do projeto](media/how-to/how-to-view-project.png)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Saiba mais [como pesquisar, editar, excluir projeto](how-to-search-edit-delete-projects.md).
 - Saiba mais [como carregar documento](how-to-upload-document.md) para criar modelos de tradução.

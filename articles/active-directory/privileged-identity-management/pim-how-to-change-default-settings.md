@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 04/09/2019
+ms.date: 05/31/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3cb8944578caf00fac5ca430e411f044a875f6af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2bc7d3ffcb56251825bf5f6d760de647938f1ead
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60288659"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417882"
 ---
 # <a name="configure-azure-ad-role-settings-in-pim"></a>Definir configurações de função do AD do Azure no PIM
 
@@ -72,6 +72,7 @@ Use a opção **Autenticação Multifator** para especificar se os usuários dev
 * Os usuários que têm contas da Microsoft para seus endereços de email (normalmente @outlook.com, mas nem sempre) não podem se registrar para MFA do Azure. Se quiser atribuir funções aos usuários com contas da Microsoft, você deverá torná-los administradores permanentes ou desabilitar o MFA para essa função.
 * Você não pode desabilitar o MFA para funções com altos privilégios do Azure AD e do Office365. Esse é um recurso de segurança, porque estas funções devem ser protegidas com cuidado:  
   
+  * Administrador da proteção de informações do Azure
   * Administrador de cobrança
   * Administrador de Aplicativos de Nuvem
   * Administrador de conformidade
@@ -81,7 +82,6 @@ Use a opção **Autenticação Multifator** para especificar se os usuários dev
   * Gravadores de diretório
   * Administrador do Exchange
   * Administrador global
-  * Administrador da Proteção de Informações
   * Administrador de serviços do Intune
   * Administrador de serviços do Power BI
   * Administrador de função com privilégios
@@ -115,7 +115,7 @@ Se você quiser exigir aprovação para ativar uma função, siga estas etapas.
 
 <!--PLACEHOLDER: Need an explanation of what the temporary Global Administrator setting is for.-->
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Atribuir funções do Azure AD no PIM](pim-how-to-add-role-to-user.md)
 - [Configurar alertas de segurança para funções do Azure AD no PIM](pim-how-to-configure-security-alerts.md)

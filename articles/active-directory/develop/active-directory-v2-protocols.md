@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/11/2019
+ms.date: 05/30/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 536210922d13f66aaa5a09bd87bd2d92da8d416c
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: cfc9c027806cb1a3f65e67eda771894a7250ee67
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65546110"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417655"
 ---
 # <a name="microsoft-identity-platform-protocols"></a>Protocolos de plataforma de identidade do Microsoft
 
@@ -48,7 +48,7 @@ Em quase todos os fluxos do OAuth 2.0 e do OpenID Connect, há quatro partes env
 Todos os aplicativos que quer aceitar tanto pessoais e contas corporativas ou de estudante devem ser registrados por meio de **registros de aplicativo** experiência na [portal do Azure](https://aka.ms/appregistrations) antes que ele possa entrar esses usuários usando o OAuth 2.0 ou o OpenID Connect. O processo de registro de aplicativo coleta e atribui alguns valores a seu aplicativo:
 
 * Uma **ID de Aplicativo** que identifica exclusivamente o aplicativo
-* Um **URI de Redirecionamento** ou **Identificador de Pacote** que pode ser usado para direcionar as respostas de volta ao aplicativo
+* Um **URI de redirecionamento** (opcional) que pode ser usado para direcionar as respostas de volta ao seu aplicativo
 * Alguns outros valores específicos de cenário.
 
 Para obter mais detalhes, saiba como [registrar um aplicativo](quickstart-register-app.md).
@@ -64,7 +64,7 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
 
 Em que o `{tenant}` pode ter um de quatro valores diferente:
 
-| Value | Descrição |
+| Value | DESCRIÇÃO |
 | --- | --- |
 | `common` | Permite que os usuários com contas pessoais da Microsoft e contas corporativas/de estudante do Azure AD entrem no aplicativo. |
 | `organizations` | Permite que somente usuários com contas corporativas/de estudante do Azure AD entrem no aplicativo. |

@@ -10,18 +10,20 @@ ms.author: minxia
 author: mx-iao
 ms.date: 05/28/2019
 ms.custom: seodec18
-ms.openlocfilehash: f3d675d0eac1255974995fd7717192ec6a21bac1
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 314917ce91407206d786b191df118893696ac82c
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400225"
+ms.locfileid: "66417134"
 ---
-# <a name="use-azure-machine-learning-service-to-train-and-register-tensorflow-models"></a>Usar o serviço Azure Machine Learning para treinamento e registrar os modelos de TensorFlow
+# <a name="train-and-register-tensorflow-models-at-scale-with-azure-machine-learning-service"></a>Treinar e registrar os modelos de TensorFlow em escala com serviço de Azure Machine Learning
 
 Este artigo mostra como treinar e registrar um modelo do TensorFlow usando o serviço de Azure Machine Learning. Estaremos usando o popular [conjunto de dados MNIST](http://yann.lecun.com/exdb/mnist/) para classificar os dígitos manuscritos usando uma rede neural profunda baseada TensorFlow.
 
-Com o serviço de Azure Machine Learning, você poderá expandir rapidamente seus trabalhos de treinamento do código-fonte aberto usando recursos de computação de nuvem elásticos. Você também poderá acompanhar suas execuções de treinamento, modelos de versão, implante modelos e muito mais. Se você estiver desenvolvendo um modelo do TensorFlow desde o início ou está trazendo um modelo existente para a nuvem, o serviço Azure Machine Learning está aqui para ajudá-lo a criar modelos prontos para produção.
+Com o serviço de Azure Machine Learning, você poderá expandir rapidamente seus trabalhos de treinamento do código-fonte aberto usando recursos de computação de nuvem elásticos. Você também poderá acompanhar suas execuções de treinamento, modelos de versão, implante modelos e muito mais. 
+
+Se você estiver desenvolvendo um modelo do TensorFlow desde o início ou está trazendo um modelo existente para a nuvem, você pode criar modelos prontos para produção com o serviço Azure Machine Learning.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

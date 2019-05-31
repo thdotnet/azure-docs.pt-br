@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 04/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6fd9ce1947b8207aced44204fc2989622a1998f2
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 5c49a639c0426b4535c4c2e88d36d447c10826f1
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65761912"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66416696"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Perguntas frequentes do Azure Disk Encryption para VMs de IaaS
 
@@ -48,13 +48,13 @@ Distribuições do Linux e de servidor que não são endossadas pelo Azure não 
 | Ubuntu | 18.04| SO e disco de dados |
 | Ubuntu | 16.04| SO e disco de dados |
 | Ubuntu | 14.04.5</br>[com kernel ajustado para Azure atualizado para 4.15 ou posterior](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | SO e disco de dados |
-| RHEL | 7.6 | SO e disco de dados* |
-| RHEL | 7.5 | SO e disco de dados* |
-| RHEL | 7.4 | SO e disco de dados* |
-| RHEL | 7.3 | SO e disco de dados* |
-| RHEL | 7,2 | SO e disco de dados* |
-| RHEL | 6,8 | Disco de dados* |
-| RHEL | 6.7 | Disco de dados* |
+| RHEL | 7.6 | Disco do sistema operacional e dados (consulte a observação abaixo) |
+| RHEL | 7.5 | Disco do sistema operacional e dados (consulte a observação abaixo) |
+| RHEL | 7.4 | Disco do sistema operacional e dados (consulte a observação abaixo) |
+| RHEL | 7.3 | Disco do sistema operacional e dados (consulte a observação abaixo) |
+| RHEL | 7,2 | Disco do sistema operacional e dados (consulte a observação abaixo) |
+| RHEL | 6,8 | Disco de dados (consulte a observação abaixo) |
+| RHEL | 6.7 | Disco de dados (consulte a observação abaixo) |
 | CentOS | 7.5 | SO e disco de dados |
 | CentOS | 7.4 | SO e disco de dados |
 | CentOS | 7.3 | SO e disco de dados |
@@ -65,7 +65,7 @@ Distribuições do Linux e de servidor que não são endossadas pelo Azure não 
 | SLES | 12-SP3 | Disco de dados |
 
 > [!NOTE]
-> Nova implementação ADE tem suporte para RHEL SO e disco de dados para imagens RHEL7 pay-as. Atualmente, o ADE não dá suporte para imagens RHEL BYOS (Traga sua própria assinatura). Consulte também o [Azure Disk Encryption para Linux](azure-security-disk-encryption-linux.md) artigo para obter mais informações. _
+> A nova implementação ADE tem suporte para RHEL SO e disco de dados para imagens RHEL7 pay-as. Atualmente, o ADE não dá suporte para imagens RHEL BYOS (Traga sua própria assinatura). Ver [Azure Disk Encryption para Linux](azure-security-disk-encryption-linux.md) para obter mais informações.
 
 ## <a name="how-can-i-start-using-azure-disk-encryption"></a>Como posso começar a usar o Azure Disk Encryption?
 

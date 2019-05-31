@@ -12,12 +12,12 @@ ms.reviewer: sstein, carlrab, bonova
 manager: craigg
 ms.date: 03/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 17609212fcc7620dc0d6d617e7626d12c8bb0592
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.openlocfilehash: 5c8a15aa5198983a56a0238c1bb56f9345d07acc
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852140"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258589"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Diferenças de T-SQL da Instância Gerenciada do Banco de Dados SQL do Azure em relação ao SQL Server
 
@@ -27,6 +27,7 @@ Este artigo resume e explica as diferenças de sintaxe e o comportamento entre o
 - [Segurança](#security) inclui as diferenças nos [auditoria](#auditing), [certificados](#certificates), [credenciais](#credential), [provedores criptográficos](#cryptographic-providers), [logons e usuários](#logins-and-users)e o [chave de serviço e a chave mestra de serviço](#service-key-and-service-master-key).
 - [Configuração](#configuration) inclui as diferenças nos [extensão do pool de buffers](#buffer-pool-extension), [agrupamento](#collation), [níveis de compatibilidade](#compatibility-levels), [espelhamento de banco de dados ](#database-mirroring), [opções de banco de dados](#database-options), [SQL Server Agent](#sql-server-agent), e [opções de tabela](#tables).
 - [As funcionalidades](#functionalities) inclui [BULK INSERT/OPENROWSET](#bulk-insert--openrowset), [CLR](#clr), [DBCC](#dbcc), [transações distribuídas](#distributed-transactions), [eventos estendidos](#extended-events), [bibliotecas externas](#external-libraries), [filestream e FileTable](#filestream-and-filetable), [pesquisa de semântica de texto completo](#full-text-semantic-search), [servidores vinculados](#linked-servers), [PolyBase](#polybase), [replicação](#replication), [RESTAURAR](#restore-statement), [Service Broker](#service-broker), [procedimentos armazenados, funções e disparadores](#stored-procedures-functions-and-triggers).
+- [As configurações de ambiente](#Environment) , como configurações de redes virtuais e a sub-rede.
 - [Instâncias gerenciadas de recursos que têm um comportamento diferente em](#Changes).
 - [Problemas conhecidos e limitações temporárias](#Issues).
 
@@ -409,7 +410,7 @@ A replicação está disponível para a visualização pública em Instâncias G
 - Não há suporte para sintaxe:
   - `RESTORE LOG ONLY`
   - `RESTORE REWINDONLY ONLY`
-- Fonte: 
+- Origem: 
   - `FROM URL` (Armazenamento de BLOBs do azure) é a única opção com suporte.
   - Não há suporte para `FROM DISK`/`TAPE`/dispositivo de backup.
   - Conjuntos de backup não são compatíveis.
@@ -454,6 +455,19 @@ Não há suporte para agente de serviços entre instâncias:
 - Não há suporte para `xp_cmdshell`. Consulte [xp_cmdshell](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql).
 - `Extended stored procedures` não são compatíveis, que inclui `sp_addextendedproc`  e `sp_dropextendedproc`. Ver [procedimentos armazenados estendidos](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/general-extended-stored-procedures-transact-sql).
 - Não há suporte para `sp_attach_db`, `sp_attach_single_file_db` e `sp_detach_db`. Consulte [sp_attach_db](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-db-transact-sql), [sp_attach_single_file_db](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-single-file-db-transact-sql) e [sp_detach_db](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-detach-db-transact-sql).
+
+## <a name="Environment"></a>Restrições de Environmet
+
+### <a name="subnet"></a>Sub-rede
+- Na sub-rede reservada para sua instância gerenciada, você não pode colocar outros recursos (por exemplo máquinas virtuais). Coloque esses recursos em outras sub-redes.
+- Subrede deve ter um número suficiente de disponíveis [endereços IP](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Mínimo é 16, enquanto a recomendação é ter pelo menos 32 endereços IP na sub-rede.
+- [Pontos de extremidade de serviço não podem ser associados a sub-rede da instância gerenciada](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Certifique-se de que a opção de pontos de extremidade de serviço é desabilitada quando você cria a rede virtual.
+- O número e tipos de instâncias que você possa colocar na sub-rede tem alguns [limites e restrições](sql-database-managed-instance-resource-limits.md#strategies-for-deploying-mixed-general-purpose-and-business-critical-instances)
+- Há algumas [regras de segurança que devem ser aplicadas na sub-rede](sql-database-managed-instance-connectivity-architecture.md#network-requirements).
+
+### <a name="vnet"></a>VNET
+- Rede virtual pode ser implantado usando o modelo de recurso - não há suporte para o modelo clássico para a rede virtual.
+- Alguns serviços, como ambientes de serviço de aplicativo, aplicativos lógicos e instâncias gerenciadas (usado para a replicação geográfica, replicação transacional, ou por meio de servidores vinculados) não é possível acessar instâncias gerenciadas em regiões diferentes se suas VNets estiverem conectados usando [emparelhamento global](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers). Você pode se conectar a esses recursos por meio do ExpressRoute ou VNet-to-VNet por meio de Gateways de rede virtual.
 
 ## <a name="Changes"></a> Alterações de comportamento
 

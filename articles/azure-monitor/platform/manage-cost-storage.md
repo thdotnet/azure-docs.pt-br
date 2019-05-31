@@ -11,15 +11,15 @@ ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/26/2019
+ms.date: 05/30/2019
 ms.author: magoedte
 ms.subservice: ''
-ms.openlocfilehash: e0b9faeb796653abb4c061884ab2fbb78e867e71
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: ead3122d2040a544c6f09e434f27b7970f0d5840
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64918992"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417856"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Gerenciar o uso e os custos com Logs do Azure Monitor
 
@@ -151,13 +151,13 @@ O uso aumenta devido a uma ou mais das seguintes causas:
 
 ## <a name="understanding-nodes-sending-data"></a>Noções básicas sobre nós enviando dados
 
-Para reconhecer o número de computadores (nós) que relatam dados a cada dia no último mês, use
+Para entender o número de computadores que relatam as pulsações a cada dia no último mês, use
 
 `Heartbeat | where TimeGenerated > startofday(ago(31d))
 | summarize dcount(Computer) by bin(TimeGenerated, 1d)    
 | render timechart`
 
-Para obter uma lista de computadores que estão enviando **cobrado tipos de dados** (alguns tipos de dados são gratuitos), aproveite o `_IsBillable` [propriedade](log-standard-properties.md#_isbillable):
+Para obter uma lista de computadores que será cobrada como nós se o espaço de trabalho estiver no herdado por nó de tipo de preço, procure por nós que estão transmitindo **cobrado tipos de dados** (alguns tipos de dados são gratuitos). Para fazer isso, use o `_IsBillable` [propriedade](log-standard-properties.md#_isbillable) e use o campo mais à esquerda do nome de domínio totalmente qualificado. Isso retorna a lista de computadores com dados cobrados:
 
 `union withsource = tt * 
 | where _IsBillable == true 
@@ -165,15 +165,24 @@ Para obter uma lista de computadores que estão enviando **cobrado tipos de dado
 | where computerName != ""
 | summarize TotalVolumeBytes=sum(_BilledSize) by computerName`
 
-Use estas consultas `union withsource = tt *` com moderação como verificações em tipos de dados que são caros para executar. Esta consulta substitui o método antigo de consulta de informações por computador com o tipo de dados de uso.  
-
-Isso pode ser estendido para retornar a contagem de computadores por hora que estão enviando cobrado tipos de dados (que é como o Log Analytics calcula nós faturáveis herdado por nó de tipo de preço):
+A contagem de nós faturáveis visto pode ser prevista como: 
 
 `union withsource = tt * 
 | where _IsBillable == true 
 | extend computerName = tolower(tostring(split(Computer, '.')[0]))
 | where computerName != ""
-| summarize dcount(computerName) by bin(TimeGenerated, 1h) | sort by TimeGenerated asc`
+| billableNodes=dcount(computerName)`
+
+> [!NOTE]
+> Use estas consultas `union withsource = tt *` com moderação como verificações em tipos de dados que são caros para executar. Esta consulta substitui o método antigo de consulta de informações por computador com o tipo de dados de uso.  
+
+É um cálculo mais preciso do que realmente será cobrado para obter a contagem de computadores que estão enviando os tipos de dados cobrados por hora. (Para espaços de trabalho no tipo de preço por nó herdado, o Log Analytics calcula o número de nós que precisam ser cobrado por hora.) 
+
+`union withsource = tt * 
+| where _IsBillable == true 
+| extend computerName = tolower(tostring(split(Computer, '.')[0]))
+| where computerName != ""
+| summarize billableNodes=dcount(computerName) by bin(TimeGenerated, 1h) | sort by TimeGenerated asc`
 
 ## <a name="understanding-ingested-data-volume"></a>Noções básicas sobre ingerido volume de dados
 
@@ -197,24 +206,19 @@ Para ver os **tamanho** de eventos cobráveis ingeridos por computador, use o `_
 ```kusto
 union withsource = tt * 
 | where _IsBillable == true 
-| summarize Bytes=sum(_BilledSize) by  Computer | sort by Bytes nulls last
+| extend computerName = tolower(tostring(split(Computer, '.')[0]))
+| summarize Bytes=sum(_BilledSize) by  computerName | sort by Bytes nulls last
 ```
 
 O `_IsBillable` [propriedade](log-standard-properties.md#_isbillable) Especifica se os dados ingeridos incorrerão em encargos.
 
-Para ver a **contagem** de eventos ingeridos por computador, use
-
-```kusto
-union withsource = tt *
-| summarize count() by Computer | sort by count_ nulls last
-```
-
-Para ver a contagem de eventos faturáveis ingeridos por computador, use 
+Para ver a contagem de **faturável** eventos ingeridos por computador, use 
 
 ```kusto
 union withsource = tt * 
 | where _IsBillable == true 
-| summarize count() by Computer  | sort by count_ nulls last
+| extend computerName = tolower(tostring(split(Computer, '.')[0]))
+| summarize eventCount=count() by computerName  | sort by count_ nulls last
 ```
 
 Se você quiser ver as contagens dos tipos de dados faturáveis que estão enviando dados para um computador específico, use:

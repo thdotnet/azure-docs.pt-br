@@ -10,17 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 01/31/2019
+ms.date: 05/31/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59c06ae83327683942885190e4b401617dc020f9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9e65f7ca0a01e0ceee6448ea49e1d6d6da696cf6
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60468310"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417086"
 ---
 # <a name="administrator-roles-by-admin-task-in-azure-active-directory"></a>Funções de administrador por tarefa de administrador no Azure Active Directory
 
@@ -338,7 +338,7 @@ Atualizar configurações do usuário | Administrador global |
 
 Tarefa | Função com privilégios mínimos | Funções adicionais
 ---- | --------------------- | ----------------
-Enviar tíquete de suporte | Administrador de serviços | Administrador de aplicativos, Administrador de cobrança, Administrador de aplicativo na nuvem, Administrador de conformidade, Administrador do Dynamics 365, Administrador do Desktop Analytics, Administrador do Exchange, Administrador de senhas, Administrador de proteção de informações, Administrador do Intune, Administrador do Skype for Business, Administrador do Power BI, Administrador de autenticação com privilégios, Administrador do SharePoint, Administrador de comunicações de equipes, Administrador de equipes, Administrador de usuários, Administrador do Workplace Analytics
+Enviar tíquete de suporte | Administrador de serviços | Administrador de aplicativos, administrador de proteção de informações do Azure, senha de administrador, administrador do Exchange, do administrador, administrador de aplicativos de nuvem, conformidade administrador, administrador do Dynamics 365, da área de trabalho de análise de cobrança Administrador, administrador do Intune, o Skype para o administrador de negócios, administrador do Power BI, administrador com privilégios de autenticação, administrador do SharePoint, as equipes de comunicações de administrador, as equipes de administrador, administrador de usuário, Administrador do Workplace Analytics
 
 ## <a name="next-steps"></a>Próximas etapas
 

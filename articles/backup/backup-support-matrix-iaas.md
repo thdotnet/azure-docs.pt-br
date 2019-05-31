@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: raynew
-ms.openlocfilehash: 2267a4e836fe1aff214f40e34afa830de50fa2d5
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: 2f48e0d8b46684d067fe2e32f241e28d94c2edbd
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65471641"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399685"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Matriz de suporte para backup de VM do Azure
 Você pode usar o [serviço de Backup do Azure](backup-overview.md) para fazer backup de máquinas locais e cargas de trabalho e máquinas virtuais (VMs). Este artigo resume as configurações de suporte e limitações quando você faz backup de VMs do Azure com o Backup do Azure.
@@ -40,7 +40,7 @@ Saiba mais sobre o backup [usando um servidor de backup](backup-architecture.md#
 
 **Ação** | **Suporte**
 --- | ---
-Habilitar o backup ao criar uma VM do Windows Azure | Com suporte para:  Windows Server de 2019 (Datacenter/Datacenter Core), Windows Server 2016 (Core Datacenter/Datacenter); Windows Server 2012 R2 Datacenter; Windows Server 2008 R2 (RTM e SP1)
+Habilitar o backup ao criar uma VM do Windows Azure | Com suporte para: <br/><br/> – Windows Server de 2019 (Datacenter/Datacenter Core/Standard) <br/><br/> -Windows Server 2016 (Core Datacenter/Datacenter/Standard) <br/><br/> -Windows Server 2012 R2 (Datacenter/Standard) <br/><br/> -Windows Server 2008 R2 (RTM e SP1 Standard)
 Habilitar backup ao criar uma VM do Linux | Com suporte para:<br/><br/> - Servidor Ubuntu: 18.04, 17.10, 17.04, 16.04 (LTS), 14.04 (LTS)<br/><br/> - Red Hat: RHEL 6.7, 6.8, 6.9, 7.2, 7.3, 7.4<br/><br/> - SUSE Linux Enterprise Server: 11 SP4, 12 SP2, 12 SP3, 15 <br/><br/> - Debian: 8, 9<br/><br/> - CentOS: 6.9, 7.3<br/><br/> – Oracle Linux: 6.7, 6.8, 6.9, 7.2, 7.3
 Fazer backup de uma VM que é um desligamento/offline VM |  Com suporte.<br/><br/> O instantâneo só é consistente com a falha e não com o aplicativo.
 Fazer backup de discos após a migração para discos gerenciados |  Com suporte.<br/><br/> O backup continuará a funcionar. Nenhuma ação é necessária.
@@ -61,7 +61,7 @@ A tabela a seguir resume os sistemas operacionais com suporte ao fazer backup de
 
 **Cenário** | **Suporte SO**
 --- | ---
-Fazer backup com a extensão do agente de VM do Azure | Windows Client: Sem suporte<br/><br/> Windows Server de 2019 (Datacenter/Datacenter Core), Windows Server 2016 (Core Datacenter/Datacenter); Windows Server 2012 R2 Datacenter; Windows Server 2008 R2 (RTM e SP1)
+Fazer backup com a extensão do agente de VM do Azure | Windows Client: Sem suporte<br/><br/>– Windows Server de 2019 (Datacenter/Datacenter Core/Standard) <br/><br/> -Windows Server 2016 (Core Datacenter/Datacenter/Standard) <br/><br/> -Windows Server 2012 R2 (Datacenter/Standard) <br/><br/> -Windows Server 2008 R2 (RTM e SP1 Standard)
 Backup com o agente MARS | Sistemas operacionais com [suporte](backup-support-matrix-mars-agent.md#support-for-direct-backups).
 Fazer backup com o MABS/DPM | Sistemas operacionais compatíveis para backup com [MABS](backup-mabs-protection-matrix.md) e [DPM](https://docs.microsoft.com/system-center/dpm/dpm-protection-matrix?view=sc-dpm-1807).
 

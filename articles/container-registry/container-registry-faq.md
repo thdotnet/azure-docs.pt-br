@@ -8,12 +8,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 5/13/2019
 ms.author: sajaya
-ms.openlocfilehash: 86efb6b655405500f994a5a5ec7acbd18c645004
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 1400c023e43179a9c8490334e262711486c75a2d
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65957844"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417931"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Perguntas frequentes sobre o registro de contêiner do Azure
 
@@ -253,10 +253,11 @@ Quarentena de imagem é um recurso de visualização do ACR. Você pode habilita
 - [Novas permissões de usuário podem não ser eficaz imediatamente após a atualização](#new-user-permissions-may-not-be-effective-immediately-after-updating)
 - [Informações de autenticação não são fornecidas no formato correto em chamadas de API REST diretas](#authentication-information-is-not-given-in-the-correct-format-on-direct-rest-api-calls)
 - [Por que não o portal do Azure lista todos os Meus repositórios ou marcas?](#why-does-the-azure-portal-not-list-all-my-repositories-or-tags)
+- [Como coletar rastreamentos de http no Windows?](#how-do-i-collect-http-traces-on-windows)
 
 ### <a name="docker-pull-fails-with-error-nethttp-request-canceled-while-waiting-for-connection-clienttimeout-exceeded-while-awaiting-headers"></a>pull do docker falha com erro: net/http: solicitação cancelada enquanto aguarda a conexão (Client.Timeout excedido enquanto aguarda os cabeçalhos)
 
- - Se esse erro é um problema temporário, a tentativa será bem-sucedida. 
+ - Se esse erro é um problema temporário, a tentativa será bem-sucedida.
  - Se `docker pull` falha contínua, em seguida, pode haver um problema com o daemon do docker. O problema geralmente pode ser atenuado reiniciando o daemon do docker. 
  - Se você continuar vendo esse problema depois de reiniciar o daemon do docker, o problema poderia ser alguns problemas de conectividade de rede com a máquina. Para verificar se gerais de rede na máquina está íntegro, testar, como um comando `ping www.bing.com`.
  - Você deve sempre ter um mecanismo de repetição em todas as operações de cliente do docker.
@@ -386,7 +387,29 @@ curl $redirect_url
 
 ### <a name="why-does-the-azure-portal-not-list-all-my-repositories-or-tags"></a>Por que não o portal do Azure lista todos os Meus repositórios ou marcas? 
 
-Se você estiver usando o navegador Edge, você pode ver no máximo 100 repositórios ou as marcas listadas. Se o registro tiver mais de 100 repositórios ou marcas, é recomendável que você use o navegador Firefox ou Chrome listá-los.
+Se você estiver usando o navegador Microsoft Edge, você pode ver no máximo 100 repositórios ou as marcas listadas. Se o registro tiver mais de 100 repositórios ou marcas, é recomendável que você use o navegador Firefox ou Chrome listá-los.
+
+### <a name="how-do-i-collect-http-traces-on-windows"></a>Como coletar rastreamentos de http no Windows?
+
+#### <a name="prerequisites"></a>Pré-requisitos
+
+- Habilite a descriptografia https no fiddler:  <https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/DecryptHTTPS>
+- Habilite o Docker para usar um proxy por meio da interface do usuário do Docker: <https://docs.docker.com/docker-for-windows/#proxies>
+- Certifique-se de reverter ao concluir.  Docker não funcionará com esse recurso habilitado e o fiddler não está em execução.
+
+#### <a name="windows-containers"></a>Contêineres do Windows
+
+Configurar o proxy do Docker para 127.0.0.1: 8888
+
+#### <a name="linux-containers"></a>Contêineres do Linux
+
+Localize o ip do Docker de comutador virtual da vm:
+
+```powershell
+(Get-NetIPAddress -InterfaceAlias "*Docker*" -AddressFamily IPv4).IPAddress
+```
+
+Configurar o proxy de Docker para a saída do comando anterior e a porta 8888 (por exemplo, 10.0.75.1:8888)
 
 ## <a name="tasks"></a>Tarefas
 

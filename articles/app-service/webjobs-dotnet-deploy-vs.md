@@ -14,12 +14,12 @@ ms.custom: vs-azure
 ms.workload: azure-vs
 ms.date: 02/18/2019
 ms.author: glenga;david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: 4d375b559019529bdc170ce6bab535481e0569e0
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: b8cc628ef7db198c5068bb3917cf41113ba1687a
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65873016"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417094"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Desenvolver e implantar o WebJobs usando o Visual Studio – Serviço de Aplicativo do Azure
 
@@ -27,7 +27,7 @@ Este artigo explica como usar o Visual Studio para implantar um projeto de aplic
 
 Você pode publicar diversos trabalhos Web em um único aplicativo web. Certifique-se de que cada trabalho Web em um aplicativo web tem um nome exclusivo.
 
-Versão 3.x do [SDK do Azure WebJobs](webjobs-sdk-how-to.md) permite que você desenvolver WebJobs que são executados como aplicativos .NET Core, enquanto a versão 2.x oferece suporte para o .NET Framework. A maneira que você implantar um projeto de trabalhos Web é diferentes projetos do .NET Core em comparação com aqueles do .NET Framework.
+Versão 3.x do [SDK do Azure WebJobs](webjobs-sdk-how-to.md) permite que você desenvolva trabalhos Web que são executados como aplicativos .NET Core ou .NET Framework a aplicativos, enquanto a versão 2.x oferece suporte a .NET Framework. A maneira que você implantar um projeto de trabalhos Web é diferente para projetos do .NET Core em comparação com aqueles do .NET Framework.
 
 ## <a name="webjobs-as-net-core-console-apps"></a>Trabalhos Web como aplicativos de console .NET Core
 
@@ -119,7 +119,7 @@ Você tem duas opções:
 3. Complete a caixa de diálogo [Adicionar Trabalho Web do Azure](#configure) e clique em **OK**. 
 
 #### <a id="convertnolink"></a> Habilitar a implantação de Trabalhos Web sem um projeto Web
-1. Clique com o botão direito do mouse no projeto do Aplicativo de Console no **Gerenciador de Soluções** e, depois, clique em **Publicar como Azure WebJob...**. 
+1. Clique com o botão direito do mouse no projeto do Aplicativo de Console no **Gerenciador de Soluções** e, depois, clique em **Publicar como Azure WebJob...** . 
    
     ![Publicar como Trabalho Web do Azure](./media/webjobs-dotnet-deploy-vs/paw.png)
    
@@ -144,7 +144,7 @@ Para criar um projeto habilitado para Trabalhos Web, é possível usar o modelo 
 > 
 
 #### <a id="createnolink"></a> Usar o novo modelo de projeto de Trabalhos Web para um Trabalho Web independente
-1. Clique em **Arquivo** > **Novo Projeto** e, depois, na caixa de diálogo **Novo Projeto**, clique em **Nuvem** > **Azure WebJob (.NET Framework)**.
+1. Clique em **Arquivo** > **Novo Projeto** e, depois, na caixa de diálogo **Novo Projeto**, clique em **Nuvem** > **Azure WebJob (.NET Framework)** .
    
     ![Caixa de diálogo Novo Projeto mostrando o modelo de Trabalho Web](./media/webjobs-dotnet-deploy-vs/np.png)
 2. Siga as direções mostradas anteriormente para [tornar o projeto do Aplicativo de Console um projeto de Trabalhos Web independente](#convertnolink).
@@ -206,7 +206,7 @@ Quando você vincula um projeto habilitado para Trabalhos Web a um projeto Web, 
 ### <a id="deploy"></a>Implantar um projeto de Trabalhos Web
 Um projeto de Trabalhos Web vinculado a um projeto Web é implantado automaticamente com o projeto Web. Para obter informações sobre a implantação de projetos Web, consulte os **guias de instruções** > **Implantar aplicativo** na navegação à esquerda.
 
-Para implantar um projeto do WebJobs sozinho, clique com o botão direito do mouse no projeto no **Gerenciador de Soluções** e clique em **Publicar como Azure WebJob...**. 
+Para implantar um projeto do WebJobs sozinho, clique com o botão direito do mouse no projeto no **Gerenciador de Soluções** e clique em **Publicar como Azure WebJob...** . 
 
 ![Publicar como Trabalho Web do Azure](./media/webjobs-dotnet-deploy-vs/paw.png)
 

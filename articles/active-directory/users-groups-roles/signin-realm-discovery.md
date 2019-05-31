@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: kexia
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9f21b592f31790daa9cc4eeb217ea6e2987fc38
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: db627359b75aa0ea19e30a8d22bcacaa3409cb4a
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920508"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66418177"
 ---
 # <a name="home-realm-discovery-for-azure-active-directory-sign-in-pages"></a>Descoberta de realm inicial para páginas de entrada do Azure Active Directory
 
@@ -32,19 +32,19 @@ Para dar suporte a uma variedade de credenciais e aumentar a usabilidade, compor
 
 Um benefício adicional desse trabalho é aprimorado de erro no sistema de mensagens. Aqui estão alguns exemplos de aprimorado de erro no sistema de mensagens ao entrar em um aplicativo que suporta somente a usuários do Active Directory do Azure.
 
-1. O nome de usuário for digitado incorretamente ou o nome de usuário ainda não foram sincronizada com o Azure AD:
+- O nome de usuário for digitado incorretamente ou o nome de usuário ainda não foram sincronizada com o Azure AD:
   
     ![o nome de usuário é digitado incorretamente ou não encontrado](./media/signin-realm-discovery/typo-username.png)
   
-2. O nome de domínio for digitado incorretamente:
+- O nome de domínio for digitado incorretamente:
   
     ![o nome de domínio é digitado incorretamente ou não encontrado](./media/signin-realm-discovery/typo-domain.png)
   
-3. Usuário tenta entrar com um domínio de consumidor conhecidos:
+- Usuário tenta entrar com um domínio de consumidor conhecidos:
   
     ![entrar com um domínio de consumidor conhecidos](./media/signin-realm-discovery/consumer-domain.png)
   
-4. A senha for digitado incorretamente, mas o nome de usuário é preciso:  
+- A senha for digitado incorretamente, mas o nome de usuário é preciso:  
   
     ![senha for digitado incorretamente com um bom nome de usuário](./media/signin-realm-discovery/incorrect-password.png)
   

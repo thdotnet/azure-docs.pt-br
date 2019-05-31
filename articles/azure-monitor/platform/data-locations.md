@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/21/2019
 ms.author: bwren
-ms.openlocfilehash: 61f34277a03deb312e93920e3bd76ce5297f020f
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.openlocfilehash: 1d92973e32e9c694b1d0488753b9a701e7d71a5d
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66357539"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66416903"
 ---
 # <a name="monitoring-data-locations-in-azure-monitor"></a>Monitoramento de locais de dados no Azure Monitor
 
@@ -32,7 +32,7 @@ A tabela a seguir identifica os diferentes locais em que dados de monitoramento 
 | Métricas do Azure Monitor | Banco de dados de série temporal que é otimizado para análise de dados de carimbo de data / hora. | [Metrics Explorer](metrics-getting-started.md)<br>[API de métricas do Azure Monitor](/rest/api/monitor/metrics) |
 | Logs do Azure Monitor    | Espaço de trabalho de análise que se baseia no Data Explorer do Azure que fornece uma linguagem de consulta poderosa análise avançada e de mecanismo de log. | [Log Analytics](../log-query/portals.md)<br>[API de análise de log](https://dev.loganalytics.io/)<br>[API do Application Insights](https://dev.applicationinsights.io/reference/get-query) |
 | Log de atividades | Dados do log de atividades são mais útil quando enviado para Logs do Azure Monitor para analisá-los com outros dados, mas também são coletado por conta própria para que ela pode ser exibida diretamente no portal do Azure. | [Portal do Azure](activity-log-view.md#azure-portal)<br>[API de Eventos do Azure Monitor](/rest/api/monitor/eventcategories) |
-| Armazenamento do Azure | Algumas fontes de dados gravará diretamente no armazenamento do Azure e requer configuração para mover dados para Logs. Você também pode enviar dados para o armazenamento do Azure para arquivar e para a integração com sistemas externos.  | [Análise de Armazenamento](/rest/api/storageservices/storage-analytics)<br>[Gerenciador de Servidores](/visualstudio/azure/vs-azure-tools-storage-resources-server-explorer-browse-manage)<br>[Gerenciador de Armazenamento](/visualstudio/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows) |
+| Armazenamento do Azure | Algumas fontes de dados gravará diretamente no armazenamento do Azure e requer configuração para mover dados para Logs. Você também pode enviar dados para o armazenamento do Azure para arquivar e para a integração com sistemas externos.  | [Análise de Armazenamento](/rest/api/storageservices/storage-analytics)<br>[Gerenciador de Servidores](/visualstudio/azure/vs-azure-tools-storage-resources-server-explorer-browse-manage)<br>[Gerenciador de Armazenamento](/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows) |
 | Hubs de Eventos | Envie dados para Hubs de eventos do Azure para transmiti-lo para outros locais. | [Captura para o armazenamento](../../event-hubs/event-hubs-capture-overview.md)  |
 | Azure Monitor para VMs | O Azure Monitor para VMs armazena dados de integridade da carga de trabalho em um local personalizado que é usado pela sua experiência de monitoramento no portal do Azure. | [Portal do Azure](../insights/vminsights-overview.md)<br>[API REST do monitor de carga de trabalho](https://docs.microsoft.com/rest/api/monitor/microsoft.workloadmonitor/components)<br>[O Azure Resource health API REST](https://docs.microsoft.com/rest/api/resourcehealth/)  |
 | Alertas | Alertas criados pelo Azure Monitor. | [Portal do Azure](alerts-managing-alert-instances.md)<br>[API REST de gerenciamento de alertas](https://docs.microsoft.com/rest/api/monitor/alertsmanagement/alerts) |
