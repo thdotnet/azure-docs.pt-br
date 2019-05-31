@@ -69,12 +69,12 @@ A tabela a seguir fornece a descrição para elementos JSON específicos para o 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | type |A propriedade type deve ser definida como: **OnPremisesMySql** |Sim |
-| Servidor |Nome do servidor MySQL. |Sim |
-| Banco de Dados |Nome do banco de dados MySQL. |Sim |
+| server |Nome do servidor MySQL. |Sim |
+| database |Nome do banco de dados MySQL. |Sim |
 | schema |Nome do esquema no banco de dados. |Não  |
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados MySQL. Os valores possíveis são: `Basic`. |Sim |
-| Nome de Usuário |Especifique o nome de usuário para se conectar ao banco de dados MySQL. |Sim |
-| Senha |Especifique a senha da conta de usuário que você especificou. |Sim |
+| userName |Especifique o nome de usuário para se conectar ao banco de dados MySQL. |Sim |
+| password |Especifique a senha da conta de usuário que você especificou. |Sim |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados MySQL local. |Sim |
 
 ## <a name="dataset-properties"></a>Propriedades do conjunto de dados
