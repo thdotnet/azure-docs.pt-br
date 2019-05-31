@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: 4682e47e664384a6869e1a74e3de6d9083db082b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8b486e617389e1611dfebf3d347d2d64df088593
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60387487"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258645"
 ---
 # <a name="learn-about-the-differences-between-cloud-services-and-service-fabric-before-migrating-applications"></a>Saiba mais sobre as diferenças entre os Serviços de Nuvem e o Service Fabric antes de migrar os aplicativos.
 O Service Fabric do Microsoft Azure é a plataforma de aplicativos de nuvem de última geração para aplicativos distribuídos altamente escalonáveis e altamente confiáveis. Ele apresenta muitos recursos novos para empacotamento, implantação, atualização e gerenciamento de aplicativos em nuvem distribuídos. 
@@ -88,6 +88,24 @@ Um mecanismo de comunicação comum entre camadas em ambientes sem estado, como 
 O mesmo modelo de comunicação pode ser usado no Service Fabric. Isso pode ser útil ao migrar um aplicativo dos Serviços de Nuvem existente para o Service Fabric. 
 
 ![Comunicação direta do Service Fabric][8]
+
+## <a name="parity"></a>Paridade
+[Serviços de nuvem é semelhante ao Service Fabric no nível de controle VS. facilidade de uso, mas agora é um serviço herdado e o Service Fabric é recomendado para novo desenvolvimento](https://docs.microsoft.com/azure/app-service/overview-compare); a seguir está uma comparação de API:
+
+
+| **API do serviço de nuvem** | **API do Service Fabric** | **Observações** |
+| --- | --- | --- |
+| RoleInstance.GetID | FabricRuntime.GetNodeContext.NodeId or .NodeName | ID é uma propriedade NodeName |
+| RoleInstance.GetFaultDomain | FabricClient.QueryManager.GetNodeList | Nome do nó de filtro e usar propriedade FD |
+| RoleInstance.GetUpgradeDomain | FabricClient.QueryManager.GetNodeList | Nome do nó de filtro e, em seguida, use a propriedade atualização |
+| RoleInstance.GetInstanceEndpoints | FabricRuntime.GetActivationContext ou nomenclatura (ResolveService) | CodePackageActivationContext que é fornecido pelo FabricRuntime.GetActivationContext e dentro de réplicas por meio de ServiceInitializationParameters.CodePackageActivationContext fornecido durante o. Inicializar |
+| RoleEnvironment.GetRoles | FabricClient.QueryManager.GetNodeList | Se você quiser fazer o mesmo tipo de filtragem por tipo, de que você pode obter a lista tipos de nó do cluster por meio de FabricClient.ClusterManager.GetClusterManifest de manifesto e pegue os tipos de função/nó a partir daí. |
+| RoleEnvironment.GetIsAvailable | Conectar-se-WindowsFabricCluster ou criar um FabricRuntime apontado para um nó específico | * |
+| RoleEnvironment.GetLocalResource | CodePackageActivationContext.Log/Temp/Work | * |
+| RoleEnvironment.GetCurrentRoleInstance | CodePackageActivationContext.Log/Temp/Work | * |
+| LocalResource.GetRootPath | CodePackageActivationContext.Log/Temp/Work | * |
+| Role.GetInstances | FabricClient.QueryManager.GetNodeList ou ResolveService | * |
+| RoleInstanceEndpoint.GetIPEndpoint | FabricRuntime.GetActivationContext ou nomenclatura (ResolveService) | * |
 
 ## <a name="next-steps"></a>Próximas etapas
 O caminho de migração mais simples dos Serviços de Nuvem para o Service Fabric é substituir apenas a implantação dos Serviços de Nuvem por um aplicativo Service Fabric, mantendo a arquitetura geral dele. O artigo a seguir fornece um guia para ajudar a converter uma função de trabalho ou Web em um serviço sem estado do Service Fabric.

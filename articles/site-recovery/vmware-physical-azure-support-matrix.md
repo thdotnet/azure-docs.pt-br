@@ -8,12 +8,12 @@ services: site-recovery
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: raynew
-ms.openlocfilehash: 2d1999077f6315658dbfd69473ddf5561bd76e0b
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 514aaaf7a274e60a17bbae62b3c62e7cf3668e7a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65540599"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237311"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Matriz de suporte para recuperação de desastre de VMs VMware e servidores físicos para o Azure
 
@@ -46,14 +46,14 @@ RAM | 16 GB
 Número de discos | 3 discos<br/><br/> Os discos incluem o disco do sistema operacional, disco de cache do servidor de processo e a unidade de retenção para failback.
 Espaço livre em disco | 600 GB de espaço necessário para cache do servidor de processo.
 Espaço livre em disco | 600 GB de espaço necessário para a unidade de retenção.
-Sistema operacional  | Windows Server 2012 R2 ou Windows Server 2016 |
+Sistema operacional  | Windows Server 2012 R2 ou Windows Server 2016 com experiência Desktop |
 Localidade do sistema operacional | Inglês (en-us)
 PowerCLI | [PowerCLI 6.0](https://my.vmware.com/web/vmware/details?productId=491&downloadGroup=PCLI600R1 "PowerCLI 6.0") não é necessário para o servidor de configuração com as versões do [9,14](https://support.microsoft.com/help/4091311/update-rollup-23-for-azure-site-recovery).
 Funções do Windows Server | Não habilite: <br/> - Active Directory Domain Services <br/>- Serviços de Informações da Internet <br/> - Hyper-V |
 Políticas de grupo| Não habilite: <br/> - Impedir o acesso ao prompt de comando. <br/> - Impedir o acesso às ferramentas de edição do registro. <br/> - Lógica de confiança para anexos de arquivo. <br/> - Ativar a execução do script. <br/> [Saiba mais](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)|
 IIS | Verifique se você:<br/><br/> - Não tem um site padrão preexistente <br/> - Habilitar [autenticação anônima](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx) <br/> - Habilitar configuração [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx)  <br/> - Não tem site/aplicativo preexistente ouvindo na porta 443<br/>
 Tipo de NIC | VMXNET3 (quando implantado como uma VM VMware)
-Tipo de endereço IP | Static
+Tipo de endereço IP | Estático
 Portas | 443 usada para orquestração de canal de controle)<br/>9443 usada para transporte de dados
 
 ## <a name="replicated-machines"></a>Computadores replicados
@@ -135,10 +135,10 @@ Adicionar disco na VM replicada | Desabilitar a replicação para a VM, adiciona
 Agrupamento NIC da rede do host | Compatível com VMs da VMware. <br/><br/>Sem suporte para a replicação de computador físico.
 VLAN da rede do host | Sim.
 IPv4 da rede do host | Sim.
-IPv6 da rede do host | Não.
-Agrupamento NIC da rede do convidado/servidor | Não.
+IPv6 da rede do host |  Não.
+Agrupamento NIC da rede do convidado/servidor |  Não.
 IPv4 da rede do convidado/servidor | Sim.
-IPv6 da rede do convidado/servidor | Não.
+IPv6 da rede do convidado/servidor |  Não.
 IP estático da rede do convidado/servidor (Windows) | Sim.
 IP estático da rede do convidado/servidor (Linux) | Sim. <br/><br/>As VMs são configuradas para usar o DHCP no failback.
 Várias NICs da rede do convidado/servidor | Sim.
@@ -157,40 +157,40 @@ Endereço IP Reservado | Sim
 IPv4 | Sim
 Manter endereço IP de origem | Sim
 Pontos de extremidade de serviço de Rede Virtual do Azure<br/> | Sim
-Rede Acelerada | Não
+Rede Acelerada | Não 
 
 ## <a name="storage"></a>Armazenamento
 **Componente** | **Com suporte**
 --- | ---
 Dados dinâmicos | O disco do Sistema Operacional precisa ser um disco básico. <br/><br/>Os discos de Dados podem ser discos dinâmicos
-Configuração de disco do Docker | Não
+Configuração de disco do Docker | Não 
 NFS do host | Sim para VMware<br/><br/> Não para servidores físicos
 Host SAN iSCSI/FC) | Sim
 Host vSAN | Sim para VMware<br/><br/> N/D para servidores físicos
 MPIO (Múltiplos caminhos) do host | Sim, testado com Microsoft DSM, EMC PowerPath 5.7 SP4, EMC PowerPath DSM for CLARiiON
 Volumes de host Virtual (VVols) | Sim para VMware<br/><br/> N/D para servidores físicos
 VMDK do convidado/servidor | Sim
-Disco de cluster compartilhado do convidado/servidor | Não
+Disco de cluster compartilhado do convidado/servidor | Não 
 Disco criptografado do convidado/servidor | Não
-NFS do convidado/servidor | Não
-Convidado/servidor iSCSI | Não
-SMB 3.0 do convidado/servidor | Não
+NFS do convidado/servidor | Não 
+Convidado/servidor iSCSI | Não 
+SMB 3.0 do convidado/servidor | Não 
 RDM do convidado/servidor | Sim<br/><br/> N/D para servidores físicos
 Disco do convidado/servidor > 1 TB | Sim<br/><br/>Até 4.095 GB<br/><br/> O disco deve ser maior que 1024 MB.
 Disco do convidado/servidor com tamanho de setor lógico e físico de 4.000 cada | Sim
 Disco do convidado/servidor com tamanho de setor lógico de 4.000 e físico de 512 bytes | Sim
 Volume do convidado/servidor com discos distribuídos >4 TB <br/><br/>Gerenciamento de volumes lógicos (LVM)| Sim
-Convidado/servidor - espaços de armazenamento | Não
+Convidado/servidor - espaços de armazenamento | Não 
 Adicionar/remover disco a quente por convidado/servidor | Não
 Convidado/servidor - excluir disco | Sim
-MPIO (Múltiplos caminhos) de convidado/servidor | Não
+MPIO (Múltiplos caminhos) de convidado/servidor | Não 
 Inicialização EFI/UEFI do convidado/servidor | Suporte ao migrar VMs VMware ou servidores físicos que executam o Windows Server 2012 ou posterior para o Azure.<br/><br/> Você só pode replicar VMs para a migração. Não há suporte para failback no local.<br/><br/> O servidor não deve ter mais de quatro partições no disco do sistema operacional.<br/><br/> Exige o Serviço de Mobilidade versão 9.13 ou posterior.<br/><br/> Apenas NTFS tem suporte.
 
 ## <a name="replication-channels"></a>Canais de replicação
 
 |**Tipo de replicação**   |**Com suporte**  |
 |---------|---------|
-|Transferências de dados descarregados (ODX)    |       Não  |
+|Transferências de dados descarregados (ODX)    |       Não   |
 |Propagação Offline        |   Não      |
 | Azure Data Box | Não
 
@@ -202,12 +202,12 @@ Inicialização EFI/UEFI do convidado/servidor | Suporte ao migrar VMs VMware ou
 Armazenamento com redundância local | Sim
 Armazenamento com redundância geográfica | Sim
 Armazenamento com redundância geográfica com acesso de leitura | Sim
-Armazenamento frio | Não
+Armazenamento frio | Não 
 Armazenamento quente| Não
-Blobs de bloco | Não
+Blobs de bloco | Não 
 Criptografia em repouso (Criptografia do Serviço de Armazenamento)| Sim
 Armazenamento Premium | Sim
-Serviço de importação/exportação | Não
+Serviço de importação/exportação | Não 
 Firewalls de armazenamento do Azure para redes virtuais configurados na conta de armazenamento de cache/armazenamento de destino (usada para armazenar dados de replicação) | Sim
 Contas de armazenamento v2 de uso geral (camadas hot e cool) | Não
 
@@ -216,7 +216,7 @@ Contas de armazenamento v2 de uso geral (camadas hot e cool) | Não
 **Recurso** | **Com suporte**
 --- | ---
 Conjuntos de disponibilidade | Sim
-Zonas de disponibilidade | Não
+Zonas de disponibilidade | Não 
 HUB | Sim
 Discos gerenciados | Sim
 
@@ -263,8 +263,8 @@ Esses são números médios, pressupondo uma sobreposição de E/S de 30%. O Sit
 
 **Ação** | **Com suporte**
 --- | ---
-Mover cofre entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não
-Mover armazenamento, rede, VMs do Azure entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não
+Mover cofre entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não 
+Mover armazenamento, rede, VMs do Azure entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não 
 
 
 ## <a name="download-latest-azure-site-recovery-components"></a>Baixe os últimos componentes do Azure Site Recovery

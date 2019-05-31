@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/14/2019
 ms.author: iainfou
-ms.openlocfilehash: 4c2dad687d31597954b023dde9d1b9d69788fe04
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 13fbb20cde454a0aaab156a74a9fbcbac2d90d07
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66241400"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66418138"
 ---
 # <a name="preview---limit-egress-traffic-for-cluster-nodes-and-control-access-to-required-ports-and-services-in-azure-kubernetes-service-aks"></a>Visualização – tráfego de saída de limite para nós de cluster e controlar o acesso a portas e os serviços no serviço de Kubernetes do Azure (AKS)
 
@@ -69,7 +69,7 @@ No AKS, há dois conjuntos de portas e endereços:
 As seguintes portas de saída / regras de rede são necessárias para um cluster do AKS:
 
 * A porta TCP *443*
-* A porta TCP *9000* para o pod frontal de túnel para se comunicar com o fim do túnel no servidor de API.
+* A porta TCP *9000* e a porta TCP *22* para o pod frontal de túnel para se comunicar com o fim do túnel no servidor de API.
 
 O seguinte FQDN / regras de aplicativo são necessárias:
 

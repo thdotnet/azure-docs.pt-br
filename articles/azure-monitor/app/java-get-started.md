@@ -12,17 +12,16 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: lagayhar
-ms.openlocfilehash: bbf9c162cd52dc94ee820c8597f36f7cbfeace5a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4cc1456aa9928cbd4a24c203eab62e3e75b4d7c1
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60691233"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66256177"
 ---
 # <a name="get-started-with-application-insights-in-a-java-web-project"></a>Introdução ao Application Insights em um projeto Web Java
 
-
-[Application Insights](https://azure.microsoft.com/services/application-insights/) é um serviço de análise extensível para desenvolvedores da Web que ajuda você a entender o desempenho e o uso de seu aplicativo em tempo real. Use-o para [automaticamente solicitar o instrumento, acompanhar as dependências e coletar contadores de desempenho](auto-collect-dependencies.md#java), [diagnosticar problemas de desempenho e exceções](../../azure-monitor/app/detect-triage-diagnose.md) e [escrever código][api] para rastrear o que os usuários fazem com seu aplicativo. 
+[Application Insights](https://azure.microsoft.com/services/application-insights/) é um serviço de análise extensível para desenvolvedores da Web que ajuda você a entender o desempenho e o uso de seu aplicativo em tempo real. Use-o para [automaticamente a solicitação de instrumento, acompanhar as dependências e contadores de desempenho coletar](auto-collect-dependencies.md#java), diagnosticar problemas de desempenho e exceções, e [escrever código] [ api] para acompanhar o que os usuários fazem com seu aplicativo. 
 
 ![Captura de tela de visão geral de dados de exemplo](./media/java-get-started/overview-graphs.png)
 
@@ -487,7 +486,6 @@ O Application Insights pode testar seu site em intervalos regulares para verific
 * [Monitorar os contadores de desempenho do Unix](java-collectd.md)
 * Adicionar [monitoramento a suas páginas da Web](javascript.md) para monitorar tempos de carregamento de página, chamadas AJAX e exceções do navegador.
 * Gravar [telemetria personalizada](../../azure-monitor/app/api-custom-events-metrics.md) para controlar o uso no navegador ou no servidor.
-* Criar [painéis](../../azure-monitor/app/app-insights-dashboards.md) para reunir os gráficos de chave para seu sistema de monitoramento.
 * Usar [Análise](../../azure-monitor/app/analytics.md) para consultas avançadas por telemetria a o aplicativo
 * Para saber mais, visite [Azure para desenvolvedores Java](/java/azure).
 

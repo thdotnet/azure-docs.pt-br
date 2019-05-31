@@ -5,17 +5,17 @@ ms.service: iot-hub
 ms.topic: include
 ms.date: 10/26/2018
 ms.openlocfilehash: 104849557a8580e16fa1860b7919d1c0252debe9
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
-ms.translationtype: HT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65150310"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66238510"
 ---
 A tabela a seguir lista os limites associados as diferentes camadas de serviço S1, S2, S3 e F1. Para obter informações sobre o custo de cada *unidade* em cada camada, consulte [preços do IoT Hub](https://azure.microsoft.com/pricing/details/iot-hub/).
 
 | Resource | S1 Standard | S2 Standard | Padrão S3 | F1 Gratuito |
 | --- | --- | --- | --- | --- |
-| Mensagens/dia |400.000 |6.000.000 |300.000.000 |8.000 |
+| Mensagens/dia |400,000 |6.000.000 |300.000.000 |8.000 |
 | Máximo de unidades |200 |200 |10 |1 |
 
 > [!NOTE]

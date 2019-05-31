@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 14f76a716447e09299cfa18d6758245706c7b481
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bbb67845922dd9a3b2a78f76bf25d73bace98a82
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60556423"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240128"
 ---
 # <a name="deploy-and-explore-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-sql-database"></a>Implantar e explorar um aplicativo SaaS multilocatário que usa o padrão de banco de dados por locatário com o Banco de Dados SQL
 
@@ -129,8 +129,8 @@ O aplicativo Wingtip usa o [*Gerenciador de Tráfego do Azure*](../traffic-mana
 
     | Parte da URL        | DESCRIÇÃO       |
     | :-------------- | :---------------- |
-    | http://events.wingtip-dpt | As partes de eventos do aplicativo Wingtip.<br /><br /> *-dpt* distingue a implementação do *banco de dados por locatário* dos tíquetes Wingtip de outras implementações. São exemplos o aplicativo por locatário *único* (*-sa*) ou as implementações do *banco de dados multilocatário* (*-mt*). |
-    | .*&lt;usuário&gt;* | *af1* no exemplo. |
+    | http://events.wingtip-dpt | As partes de eventos do aplicativo Wingtip.<br /><br /> *-dpt* distingue a implementação do *banco de dados por locatário* dos tíquetes Wingtip de outras implementações. São exemplos o aplicativo por locatário *único* ( *-sa*) ou as implementações do *banco de dados multilocatário* ( *-mt*). |
+    | . *&lt;usuário&gt;* | *af1* no exemplo. |
     | .trafficmanager.net/ | Gerenciador de Tráfego, URL base. |
     | fabrikamjazzclub | Identifica o locatário nomeado Fabrikam Jazz Club. |
     | &nbsp; | &nbsp; |
@@ -182,7 +182,7 @@ O *Demo-LoadGenerator.ps1* imita uma carga de trabalho ativa de transações de 
     - Por padrão, as tarefas em segundo plano executam por 120 minutos.
     - Cada trabalho causa uma carga baseada em CPU em um banco de dados de locatário, executando *sp_CpuLoadGenerator*. A intensidade e a duração da carga variam de acordo com `$DemoScenario`.
     - O *sp_CpuLoadGenerator* é executado repetidamente em torno de uma instrução SQL SELECT que causa uma alta carga de CPU. O intervalo de tempo entre os problemas do SELECT varia de acordo com os valores dos parâmetros para criar uma carga de CPU controlável. Os níveis de carga e os intervalos são randomizados para simular cargas mais realistas.
-    - Esse arquivo .sql é armazenado em *WingtipTenantDB\\dbo\\StoredProcedures\\*.
+    - Esse arquivo .sql é armazenado em *WingtipTenantDB\\dbo\\StoredProcedures\\* .
 
 4. Se `$OneTime = $false`, o gerador de carga inicia os trabalhos em segundo plano e, em seguida, continua a ser executado. A cada 10 segundos, ele monitora quaisquer novos locatários provisionados. Se definir `$OneTime = $true`, o LoadGenerator irá iniciar as tarefas em segundo plano e, em seguida, parar a execução em primeiro plano. Para este tutorial, deixe `$OneTime = $false`.
 
@@ -221,14 +221,14 @@ Atualize o Hub de Eventos para fazer com que o novo locatário apareça na lista
 
 Agora que você começou a executar uma carga na coleção de locatários, vamos analisar alguns dos recursos que foram implantados.
 
-1. No [portal do Azure](https://portal.azure.com), navegue para sua lista de servidores SQL. Abra o servidor **catalog-dpt-&lt;USUÁRIO&gt;** .
+1. No [portal do Azure](https://portal.azure.com), navegue para sua lista de servidores SQL. Abra o servidor **catalog-dpt-&lt;USUÁRIO&gt;**  .
     - O servidor de catálogo contém dois bancos de dados, **tenantcatalog** e **basetenantdb** (um banco de dados modelo que é copiado para criar novos locatários).
 
    ![Bancos de dados](./media/saas-dbpertenant-get-started-deploy/databases.png)
 
 2. Volte à lista de servidores SQL.
 
-3. Abra o servidor **tenants1-dpt-&lt;USUÁRIO&gt;** que contém os bancos de dados de locatário.
+3. Abra o servidor **tenants1-dpt-&lt;USUÁRIO&gt;**  que contém os bancos de dados de locatário.
 
 4. Confira os itens a seguir:
 
@@ -254,7 +254,7 @@ Os dois gráficos ilustram que os pools elásticos e o Banco de Dados SQL são b
 
 - Para obter mais informações, consulte outros [Tutoriais adicionais que aproveitam a implantação inicial do aplicativo de banco de dados por locatário Wingtip Tickets SaaS](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials).
 - Para saber mais sobre pools elásticos, confira [O que é um pool elástico do SQL do Azure?](sql-database-elastic-pool.md).
-- Para saber mais sobre os trabalhos elásticos, confira [Gerenciar bancos de dados de nuvem com escalonamento horizontal](sql-database-elastic-jobs-overview.md).
+- Para saber mais sobre os trabalhos elásticos, confira [Gerenciar bancos de dados de nuvem com escalonamento horizontal](elastic-jobs-overview.md).
 - Para saber mais sobre aplicativos SaaS multilocatários, confira [Padrões de design para aplicativos SaaS multilocatários](saas-tenancy-app-design-patterns.md).
 
 ## <a name="next-steps"></a>Próximas etapas

@@ -5,14 +5,14 @@ author: SnehaGunda
 ms.service: cosmos-db
 ms.devlang: java
 ms.topic: conceptual
-ms.date: 08/12/2018
+ms.date: 05/28/2019
 ms.author: sngun
-ms.openlocfilehash: 379c7913f803c599865df080524da5c3fb1d0e52
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a53a62a7bc7a5c7f8d9bdabdf411588fdf7bd5e7
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60893473"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257061"
 ---
 # <a name="use-azure-cosmos-db-change-feed-to-visualize-real-time-data-analytics"></a>Usar feed de alterações do Azure Cosmos DB para visualizar análise de dados em tempo real
 
@@ -208,7 +208,7 @@ O Azure Stream Analytics é um serviço de nuvem totalmente gerenciado para proc
 
 5. Navegue de volta para a página de trabalho do Stream Analytics e selecione **Saídas**.  
 
-6. Selecione **+ Adicionar**. Em seguida, selecione**Power BI** no menu suspenso.  
+6. Selecione **+ adicionar**. Em seguida, selecione**Power BI** no menu suspenso.  
 
 7. Para criar uma nova saída do Power BI para visualizar o preço médio, execute as seguintes ações:
 

@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/29/2019
+ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b92083b78971ab00f87e073ba7f4944a6f828daf
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 885c5266e80114b54007d05d2220fbf5ea5ab84e
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65991632"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66397632"
 ---
 # <a name="update-management-solution-in-azure"></a>Solução Gerenciamento de Atualizações no Azure
 
@@ -262,7 +262,7 @@ Selecione **Atualizações ausentes** para exibir a lista de atualizações que 
 
 ## <a name="view-update-deployments"></a>Exibir implantações de atualização
 
-Selecione a guia **Atualizar Implantações** para exibir a lista das implantações com atualizações existentes. Selecione qualquer uma das implementações de atualização na tabela para abrir o painel **Atualizar Execução de Implantação** para essa implementação de atualização.
+Selecione a guia **Atualizar Implantações** para exibir a lista das implantações com atualizações existentes. Selecione qualquer uma das implementações de atualização na tabela para abrir o painel **Atualizar Execução de Implantação** para essa implementação de atualização. Os logs de trabalho são armazenados por 30 dias, no máximo.
 
 ![Visão geral dos resultados da implantação de atualizações](./media/automation-update-management/update-deployment-run.png)
 

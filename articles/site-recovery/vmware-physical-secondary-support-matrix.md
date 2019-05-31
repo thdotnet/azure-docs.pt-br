@@ -6,14 +6,14 @@ manager: carmonm
 ms.service: site-recovery
 services: site-recovery
 ms.topic: article
-ms.date: 04/08/2019
+ms.date: 05/30/2019
 ms.author: raynew
-ms.openlocfilehash: b316d6a8293d9f23eb89e8b6fffedac316759df4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 742f1359d928aa05a8b8d36bde2ccf022db93b79
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60564843"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66418243"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-vmware-vms-and-physical-servers-to-a-secondary-site"></a>Matriz de suporte para recuperação de desastre de VMs VMware e servidores físicos para um site secundário
 
@@ -60,10 +60,10 @@ Somente computadores Linux com o armazenamento a seguir podem ser replicados:
 Host - Agrupamento NIC | Sim 
 Host - VLAN | Sim 
 Host - IPv4 | Sim 
-Host - IPv6 | Não  
-VM Convidada - Agrupamento NIC | Não 
+Host - IPv6 | Não 
+VM Convidada - Agrupamento NIC | Não
 VM Convidada - IPv4 | Sim
-VM Convidada - IPv6 | Não 
+VM Convidada - IPv6 | Não
 VM convidada – Windows/Linux – Endereço IP estático | Sim
 VM Convidada - Multi-NIC | Sim
 
@@ -87,14 +87,14 @@ VMDK | Sim
 VHD/VHDX | N/D 
 VM ger 2 | N/D 
 Disco de cluster compartilhado | Sim 
-Disco criptografado | Não  
+Disco criptografado | Não 
 UEFI| Sim 
-NFS | Não  
-SMB 3.0 | Não  
+NFS | Não 
+SMB 3.0 | Não 
 RDM | Sim 
 Disco > 1 TB | Sim 
 Volume com discos distribuídos > 1 TB<br/><br/> LVM | Sim 
-Espaços de Armazenamento | Não  
+Espaços de Armazenamento | Não 
 Adição/remoção de disco a quente | Sim 
 Exclusão de disco | Sim 
 Múltiplos caminhos (MPIO) | N/D 
@@ -103,8 +103,8 @@ Múltiplos caminhos (MPIO) | N/D
 
 **Ação** | **Com suporte** 
 --- | --- 
-Mover cofres entre grupos de recursos (dentro de uma assinatura ou entre assinaturas) | Não  
-Mover armazenamento, rede, VMs do Azure entre grupos de recursos (dentro de uma assinatura ou entre assinaturas) | Não  
+Mover cofres entre grupos de recursos (dentro de uma assinatura ou entre assinaturas) | Não 
+Mover armazenamento, rede, VMs do Azure entre grupos de recursos (dentro de uma assinatura ou entre assinaturas) | Não 
 
 ## <a name="mobility-service-and-updates"></a>Serviço de mobilidade e atualizações
 

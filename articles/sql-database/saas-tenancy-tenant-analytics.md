@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: anjangsh,billgib,genemi
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 0be39aaf5526ea288764fc72d6c498cca2d659b7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6115d7f70c2c75898b18a27af298a44ca87ca1bd
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61486222"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240877"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---single-tenant-app"></a>Análise entre locatários usando dados extraídos – Aplicativo de locatário único
  
@@ -99,9 +99,9 @@ Agora que você implantou o aplicativo e preenchido com dados de locatário inte
 
 No Pesquisador de Objetos, execute as seguintes etapas:
 
-1. Expanda o servidor *tenants1-dpt-&lt;User&gt;*.
+1. Expanda o servidor *tenants1-dpt-&lt;User&gt;* .
 2. Expanda o nó Bancos de dados e veja a lista de bancos de dados de locatário.
-3. Expanda o servidor *catalog-dpt-&lt;User&gt;*.
+3. Expanda o servidor *catalog-dpt-&lt;User&gt;* .
 4. Verifique se você vê o repositório de análise e o banco de dados jobaccount.
 
 Veja os seguintes itens de banco de dados no Pesquisador de Objetos do SSMS expandindo o nó de armazenamento de análise:
@@ -241,5 +241,5 @@ Parabéns!
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Tutoriais adicionais que aproveitam o aplicativo de SaaS do Wingtip](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials).
-- [Trabalhos elásticos](sql-database-elastic-jobs-overview.md).
+- [Trabalhos elásticos](elastic-jobs-overview.md).
 - [Análise entre locatários usando dados extraídos – Aplicativo multilocatário](saas-multitenantdb-tenant-analytics.md)

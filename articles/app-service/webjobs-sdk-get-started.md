@@ -13,18 +13,18 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 6f743f7ea7fda368fc5895646145f553f3fb50fb
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 20bb8d5380f5a905a827dfb12dcc032e327267e0
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65864851"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66418234"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Introdução ao SDK do Azure WebJobs para o processamento em segundo plano controlado por evento
 
-Este artigo mostra como usar o Visual Studio de 2019 para criar um projeto do SDK de WebJobs do Azure, executá-lo localmente e, em seguida, implantá-lo no [serviço de aplicativo do Azure](overview.md). O projeto que você cria é um aplicativo de console .NET Core, que usa a versão 3.x do SDK do WebJobs. Se você estiver interessado na versão 2.x, que usa o .NET Framework, consulte [desenvolver e implantar o WebJobs usando o Visual Studio - serviço de aplicativo do Azure](webjobs-dotnet-deploy-vs.md).
+Este artigo mostra como usar o Visual Studio de 2019 para criar um projeto do SDK de WebJobs do Azure, executá-lo localmente e, em seguida, implantá-lo no [serviço de aplicativo do Azure](overview.md). Versão 3.x do SDK do WebJobs dá suporte a aplicativos de console .NET Core e .NET Framework. Para saber mais sobre como trabalhar com o SDK do WebJobs, consulte [como usar o SDK de WebJobs do Azure para processamento em segundo plano controlada por evento](webjobs-sdk-how-to.md).
 
-Para saber mais sobre como trabalhar com o SDK do WebJobs, consulte [como usar o SDK de WebJobs do Azure para processamento em segundo plano controlada por evento](webjobs-sdk-how-to.md).
+Este artigo mostra como implantar trabalhos Web como um aplicativo de console .NET Core. Para implantar trabalhos Web como um aplicativo de console do .NET Framework, consulte [aplicativos de console de trabalhos Web como o .NET Framework](webjobs-dotnet-deploy-vs.md#webjobs-as-net-framework-console-apps). Se você estiver interessado em WebJobs SDK versão 2.x, que só dá suporte ao .NET Framework, consulte [desenvolver e implantar o WebJobs usando o Visual Studio - serviço de aplicativo do Azure](webjobs-dotnet-deploy-vs.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -217,7 +217,7 @@ O emulador do Armazenamento do Microsoft Azure executado localmente não tem tod
 
    ![Criar Conta de Armazenamento](./media/webjobs-sdk-get-started/create-storage-account.png)
 
-1. No nó **Armazenamento** no **Gerenciador de Servidores**, selecione a nova conta de armazenamento. Na janela **Propriedades**, selecione as reticências (**...** ) à direita do campo de valor **Cadeia de Conexão**.
+1. No nó **Armazenamento** no **Gerenciador de Servidores**, selecione a nova conta de armazenamento. Na janela **Propriedades**, selecione as reticências ( **...** ) à direita do campo de valor **Cadeia de Conexão**.
 
    ![Reticências de Cadeia de Conexão](./media/webjobs-sdk-get-started/conn-string-ellipsis.png)
 
@@ -431,7 +431,7 @@ Nesta seção, você executa localmente de novo para verificar se os dados de re
 
    ![Selecionar Pesquisar](./media/webjobs-sdk-get-started/select-search.png)
 
-1. Se você não vir a mensagem *Olá, App Insights!*, selecione **Atualizar** periodicamente por vários minutos. (Os logs não aparecem imediatamente porque leva algum tempo para o cliente do Application Insights liberar os logs que processa.)
+1. Se você não vir a mensagem *Olá, App Insights!* , selecione **Atualizar** periodicamente por vários minutos. (Os logs não aparecem imediatamente porque leva algum tempo para o cliente do Application Insights liberar os logs que processa.)
 
    ![Logs no Application Insights](./media/webjobs-sdk-get-started/logs-in-ai.png)
 
@@ -460,7 +460,7 @@ Durante a implantação, você deve criar uma instância do serviço de aplicati
 
 1. Selecione **Pesquisar**.
 
-1. Se você não vir a mensagem *Olá, Azure!*, selecione **Atualizar** periodicamente por vários minutos.
+1. Se você não vir a mensagem *Olá, Azure!* , selecione **Atualizar** periodicamente por vários minutos.
 
    Você vê os logs da função em execução em um WebJob, incluindo o texto *Hello Azure!* que digitou na seção anterior.
 
@@ -490,13 +490,13 @@ As associações de entrada simplificam o código que lê dados. Neste exemplo, 
 
 1. Crie um contêiner de blob em sua conta de armazenamento.
 
-    a. No **Gerenciador de Servidores** no Visual Studio, expanda o nó para sua conta de armazenamento, clique com botão direito **Blobs**e, em seguida, selecione **criar contêiner de Blob**.
+   a. No **Gerenciador de Servidores** no Visual Studio, expanda o nó para sua conta de armazenamento, clique com botão direito **Blobs**e, em seguida, selecione **criar contêiner de Blob**.
 
    b. Na caixa de diálogo **Criar Contêiner de Blob**, digite *container* como o nome do contêiner e clique em **OK**.
 
 1. Carregue o arquivo *Program.cs* para o contêiner de blob. (Esse arquivo é usado aqui como um exemplo; você pode carregar qualquer arquivo de texto e criar uma mensagem da fila com o nome do arquivo.)
 
-    a. No **Gerenciador de Servidores**, clique duas vezes no nó para o contêiner que você acabou de criar.
+   a. No **Gerenciador de Servidores**, clique duas vezes no nó para o contêiner que você acabou de criar.
 
    b. Na janela **Contêiner**, selecione o botão **Carregar**.
 

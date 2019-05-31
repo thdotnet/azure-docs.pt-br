@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 5ad7ef714147616fe55a9b978d501b974323e251
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 5adba958ed3bcb9efbf66c079b541e11ceed570c
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65949579"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243603"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen2"></a>Controle de acesso no Azure Data Lake Storage Gen2
 
@@ -26,9 +26,9 @@ Azure Data Lake armazenamento Gen2 implementa um modelo de controle de acesso qu
 
 RBAC usa atribuições de função para efetivamente aplicar conjuntos de permissões para *as entidades de segurança*. Um *entidade de segurança* é um objeto que representa um usuário, grupo, entidade de serviço ou uma identidade gerenciada que é definida no Azure Active Directory (AD) que está solicitando acesso aos recursos do Azure.
 
-Normalmente, esses recursos do Azure são restritos a recursos de nível superior (por exemplo: Contas de armazenamento do Azure). No caso do Armazenamento do Microsoft Azure e, consequentemente, do Azure Data Lake Storage Gen2, esse mecanismo foi estendido para o recurso do sistema de arquivos.
+Normalmente, esses recursos do Azure são restritos a recursos de nível superior (por exemplo: Contas de armazenamento do Azure). No caso do armazenamento do Azure e, consequentemente, o armazenamento do Azure Data Lake Gen2, esse mecanismo foi estendido para o recurso de contêiner (sistema de arquivos).
 
-Para saber como atribuir funções a entidades de segurança no escopo de sua conta de armazenamento, consulte [autenticar o acesso ao Azure blobs e filas usando o Azure Active Directory](https://docs.microsoft.com/azure/storage/common/storage-auth-aad?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+Para saber como atribuir funções a entidades de segurança no escopo de sua conta de armazenamento, consulte [conceder acesso a dados do Azure blob e fila com o RBAC no portal do Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 ### <a name="the-impact-of-role-assignments-on-file-and-directory-level-access-control-lists"></a>O impacto de atribuições de função em listas de controle de acesso no nível de arquivo e diretório
 
@@ -49,7 +49,7 @@ Os tokens SAS incluem permissões permitidas como parte do token. As permissões
 
 ## <a name="access-control-lists-on-files-and-directories"></a>Listas de controle de acesso em arquivos e diretórios
 
-Você pode associar uma entidade de segurança com um nível de acesso para arquivos e diretórios. Essas associações são capturadas em um *lista de controle de acesso (ACL)*. Cada arquivo e diretório em sua conta de armazenamento tem uma lista de controle de acesso.
+Você pode associar uma entidade de segurança com um nível de acesso para arquivos e diretórios. Essas associações são capturadas em um *lista de controle de acesso (ACL)* . Cada arquivo e diretório em sua conta de armazenamento tem uma lista de controle de acesso.
 
 Se você atribuiu uma função para uma entidade de segurança no nível de conta de armazenamento, você pode usar listas de controle de acesso para conceder a que essa entidade de segurança o acesso elevado para diretórios e arquivos específicos.
 
@@ -77,8 +77,6 @@ ACLs padrão são modelos de ACLs associadas com um diretório que determinam o 
 
 As ACLs de Acesso e as ACLs Padrão têm a mesma estrutura.
 
-As ACLs de Acesso e as ACLs Padrão têm a mesma estrutura.
-
 > [!NOTE]
 > Alterar a ACL Padrão em um pai não afeta o a ACL de Acesso ou a ACL Padrão de itens filhos já existentes.
 
@@ -92,6 +90,9 @@ As permissões em um objeto do sistema de arquivos são **Ler**, **Gravar** e **
 | **Gravar (W)** | Pode gravar ou anexar a um arquivo | Requer **Gravar** e **Executar** para criar itens filhos em um diretório |
 | **Executar (X)** | Não significa nada no contexto do Azure Data Lake Storage Gen2 | Necessário para percorrer os itens filhos de um diretório |
 
+> [!NOTE]
+> Se você estiver concedendo permissões usando apenas ACLs (nenhum RBAC), para conceder a um serviço principal acesso de leitura ou gravação em um arquivo, você precisa dar à entidade de serviço **Execute** permissões para o sistema de arquivos e cada pasta no hierarquia de pastas que levam ao arquivo.
+
 #### <a name="short-forms-for-permissions"></a>Formatos abreviados para permissões
 
 **RWX**é usado para indicar **Ler + Gravar + Executar**. Existe um formato numérico mais condensado na qual **Ler = 4**, **Gravar = 2** e **Executar = 1** e sua soma representa as permissões. Estes são alguns exemplos:
@@ -101,7 +102,7 @@ As permissões em um objeto do sistema de arquivos são **Ler**, **Gravar** e **
 | 7            | `RWX`        | Ler + Gravar + Executar |
 | 5            | `R-X`        | Ler + Executar         |
 | 4            | `R--`        | Ler                   |
-| 0            | `---`        | Sem permissões         |
+| 0            | `---`        | Nenhuma permissão         |
 
 #### <a name="permissions-inheritance"></a>Herança de permissões
 
@@ -269,7 +270,7 @@ def set_default_acls_for_new_child(parent, child):
 
 ### <a name="do-i-have-to-enable-support-for-acls"></a>É necessário habilitar o suporte para ACLs?
 
-Não. Controle de acesso via ACLs está habilitado para uma conta de armazenamento, desde que o Namespace hierárquico (HNS) é recurso ativadas.
+ Não. Controle de acesso via ACLs está habilitado para uma conta de armazenamento, desde que o Namespace hierárquico (HNS) é recurso ativadas.
 
 Se HNS estiver desativado, as regras de autorização do RBAC do Azure ainda se aplicam.
 

@@ -10,12 +10,12 @@ ms.subservice: load data
 ms.date: 05/10/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 076a9c2cee5a976d1424a6c101822e374c20e83b
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.openlocfilehash: de5649498dddcec8c65f2cfca6dcb39fa20a9267
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65850539"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242256"
 ---
 # <a name="designing-a-polybase-data-loading-strategy-for-azure-sql-data-warehouse"></a>Criando um estratégia de carregamento de dados PolyBase para o SQL Data Warehouse do Azure
 
@@ -72,7 +72,7 @@ O PolyBase carrega dados de arquivos de texto delimitados e codificados de UTF-8
 |        timestamp       |                        smalldatetime                         |
 |        timestamp       |                          datetime2                           |
 |        timestamp       |                           datetime                           |
-|        timestamp       |                             time                             |
+|        timestamp       |                             tempo real                             |
 |       date        | 1) carga como int e convertido em data </br> 2) [usar o conector do SQL DW do Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse#load-data-into-azure-sql-data-warehouse) com </br> spark.conf.set( "spark.sql.parquet.writeLegacyFormat", "true" ) </br> (**atualizar em breve**) |
 |        decimal        | [Usar o conector do SQL DW do Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse#load-data-into-azure-sql-data-warehouse) com </br> spark.conf.set( "spark.sql.parquet.writeLegacyFormat", "true" ) </br> (**atualizar em breve**) |
 
