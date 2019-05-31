@@ -67,11 +67,11 @@ A tabela a seguir fornece a descrição para elementos JSON específicos do serv
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | type |A propriedade type deve ser definida como: **OnPremisesMongoDb** |Sim |
-| Servidor |Endereço IP ou nome do host do servidor MongoDB. |Sim |
-| porta |A porta TCP usada pelo servidor MongoDB para ouvir conexões de cliente. |Opcional, valor padrão: 27017 |
+| server |Endereço IP ou nome do host do servidor MongoDB. |Sim |
+| port |A porta TCP usada pelo servidor MongoDB para ouvir conexões de cliente. |Opcional, valor padrão: 27017 |
 | authenticationType |Básica ou Anônima. |Sim |
-| Nome de Usuário |Conta de usuário para acessar o MongoDB. |Sim (se a autenticação básica for usada). |
-| Senha |Senha do usuário. |Sim (se a autenticação básica for usada). |
+| username |Conta de usuário para acessar o MongoDB. |Sim (se a autenticação básica for usada). |
+| password |Senha do usuário. |Sim (se a autenticação básica for usada). |
 | authSource |Nome do banco de dados MongoDB que você deseja usar para verificar suas credenciais para autenticação. |Opcional (se a autenticação básica for usada). Padrão: usa a conta de administrador e o banco de dados especificado usando a propriedade databaseName. |
 | databaseName |Nome do banco de dados MongoDB que você deseja acessar. |Sim |
 | gatewayName |Nome do gateway que acessa o armazenamento de dados. |Sim |
@@ -295,14 +295,14 @@ Ao mover dados para o MongoDB, os seguintes mapeamentos serão usados dos tipos 
 
 | Tipo do MongoDB | Tipo .NET Framework |
 | --- | --- |
-| Binário |Byte[] |
+| Binary |Byte[] |
 | Boolean |Boolean |
-| Data |DateTime |
+| Date |DateTime |
 | NumberDouble |Double |
 | NumberInt |Int32 |
 | NumberLong |Int64 |
-| ObjectID |Cadeia de caracteres |
-| Cadeia de caracteres |Cadeia de caracteres |
+| ObjectID |String |
+| String |String |
 | UUID |Guid |
 | Object |Renormalizado para colunas simples com “_” como separador aninhado |
 
