@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/23/2019
 ms.author: sachdevaswati
-ms.openlocfilehash: 2fba8b0056c80a62837682a6820b68f71fba9ea8
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
-ms.translationtype: HT
+ms.openlocfilehash: 0307dc5c83782119f6c10279563b8b9f0a999d28
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65952943"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236876"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Fazer backup de bancos de dados do SQL Server nas VMs do Azure
 
@@ -21,7 +21,7 @@ Bancos de dados do SQL Server são cargas de trabalho críticas que exigem um ob
 
 Este artigo mostra como fazer backup de um banco de dados do SQL Server que está executando em uma VM do Azure para um cofre dos serviços de recuperação de Backup do Azure.
 
-Neste artigo, você aprenderá como:
+Neste artigo, você aprenderá a:
 
 > [!div class="checklist"]
 > * Criar e configurar um cofre.
@@ -49,7 +49,7 @@ Todas as operações, uma VM do SQL Server exige conectividade com endereços IP
 
 Estabelece conectividade, usando uma das seguintes opções:
 
-- **Permitir que os intervalos de IP do datacenter do Azure**. Essa opção permite [intervalos de IP](https://www.microsoft.com/download/details.aspx?id=41653) no download. Para acessar um grupo de segurança de rede (NSG), use o cmdlet Set-AzureNetworkSecurityRule. Se você estiver específica de região única lista de permissões IPs, você será também necessário à lista de permissões do Azure Active Directory (Azure AD) marca de serviço para habilitar a autenticação.
+- **Permitir que os intervalos de IP do datacenter do Azure**. Essa opção permite [intervalos de IP](https://www.microsoft.com/download/details.aspx?id=41653) no download. Para acessar um grupo de segurança de rede (NSG), use o cmdlet Set-AzureNetworkSecurityRule. Se você está protegido apenas específica da região IPs da lista de destinatários, você também precisará atualizar a lista de destinatários seguros a marca de serviço do Azure Active Directory (Azure AD) para habilitar a autenticação.
 
 - **Permitir o acesso usando marcas NSG**. Se você usar NSGs para restringir a conectividade, essa opção adiciona uma regra para o NSG que permita o acesso de saída para o Backup do Azure usando a marca AzureBackup. Além dessa marca, você também precisará correspondente [regras](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) para o Azure AD e o armazenamento do Azure para permitir a conectividade para autenticação e transferência de dados. A marca AzureBackup só está disponível atualmente no PowerShell. Para criar uma regra usando a marca AzureBackup:
 
@@ -68,7 +68,7 @@ Estabelece conectividade, usando uma das seguintes opções:
   - Salve o NSG<br/>
     `Set-AzureRmNetworkSecurityGroup -NetworkSecurityGroup $nsg`
 - **Permitir o acesso usando marcas de Firewall do Azure**. Se você estiver usando o Firewall do Azure, crie uma regra de aplicativo usando o AzureBackup [marca FQDN](https://docs.microsoft.com/azure/firewall/fqdn-tags). Isso permite que o acesso de saída para o Backup do Azure.
-- **Implantar um servidor proxy HTTP para rotear o tráfego**. Quando você faz backup de um banco de dados do SQL Server em uma VM do Azure, a extensão de backup na VM usa as APIs de HTTPS para enviar comandos de gerenciamento para o Backup do Azure e os dados no armazenamento do Azure. A extensão de backup também usa o Azure AD para autenticação. Roteie o tráfego de extensão de backup para esses três serviços por meio do proxy HTTP. As extensões são o único componente que está configurado para acesso à internet pública.
+- **Implantar um servidor proxy HTTP para rotear o tráfego**. Quando você faz backup de um banco de dados do SQL Server em uma VM do Azure, a extensão de backup na VM usa as APIs de HTTPS para enviar comandos de gerenciamento para o Backup do Azure e os dados no armazenamento do Azure. A extensão de backup também usa o Azure AD para autenticação. Roteie o tráfego de extensão de backup para esses três serviços por meio do proxy HTTP. As extensões são o único componente que está configurado para acesso à Internet pública.
 
 Opções de conectividade incluem as seguintes vantagens e desvantagens:
 
@@ -96,7 +96,8 @@ Evite usando os seguintes elementos em nomes de banco de dados:
   * À direita e espaços à esquerda
   * À direita de pontos de exclamação (!)
   * Colchetes fechamento (])
-  * Começando com F:\
+  * Ponto e vírgula ';'
+  * Barra '/'
 
 Alias está disponível para caracteres sem suporte, mas é recomendável evitá-los. Para obter informações, consulte [Noções básicas sobre o modelo de dados do serviço Tabela](https://docs.microsoft.com/rest/api/storageservices/Understanding-the-Table-Service-Data-Model?redirectedfrom=MSDN).
 
@@ -162,7 +163,7 @@ Como descobrir bancos de dados em execução em uma VM:
 
      * Para proteger mais de 50 bancos de dados, configure vários backups.
      * Para habilitar [ ](#enable-auto-protection) toda a instância ou o grupo de disponibilidade Always On. No **AUTOPROTECT** lista suspensa, selecione **ON**e, em seguida, selecione **Okey**.
-     
+
     > [!NOTE]
     > O [proteção automática](#enable-auto-protection) recurso não só permite a proteção em todos os bancos de dados existentes ao mesmo tempo, mas protege automaticamente quaisquer novos bancos de dados adicionados a essa instância ou o grupo de disponibilidade.  
 
@@ -174,7 +175,7 @@ Como descobrir bancos de dados em execução em uma VM:
 
    - Selecione a política padrão como HourlyLogBackup.
    - Escolher uma política de backup existente criada anteriormente para SQL.
-   - Defina uma nova política baseada no período de retenção e o RPO.
+   - Definir uma nova política baseada no seu período de retenção e o RPO.
 
      ![Selecionar a Política de backup](./media/backup-azure-sql-database/select-backup-policy.png)
 
@@ -182,7 +183,7 @@ Como descobrir bancos de dados em execução em uma VM:
 
     ![Habilitar a política de backup escolhida](./media/backup-azure-sql-database/enable-backup-button.png)
 
-7. Acompanhar o progresso da configuração na **notificações** área do portal.
+7. Acompanhe o progresso da configuração na área  **Notificações**  do portal.
 
     ![Área de notificação](./media/backup-azure-sql-database/notifications-area.png)
 

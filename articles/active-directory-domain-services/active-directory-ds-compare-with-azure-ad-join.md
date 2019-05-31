@@ -3,7 +3,7 @@ title: Comparar o Ingresso no Azure AD e o Azure Active Directory Domain Service
 description: Decidir entre o Ingresso no Azure AD e o Azure AD Domain Services
 services: active-directory-ds
 documentationcenter: ''
-author: eringreenlee
+author: MikeStephens-MS
 manager: daveba
 editor: curtand
 ms.assetid: 31a71d36-58c1-4839-b958-80da0c6a77eb
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/26/2017
-ms.author: ergreenl
-ms.openlocfilehash: d4f50ea89f2623d387fb77acb09e609def547468
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/20/2019
+ms.author: mstephen
+ms.openlocfilehash: eaa8cb54a46b1ff3c2c0f7c40c824f6ddcca16b9
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60359425"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234954"
 ---
 # <a name="choose-between-azure-active-directory-join-and-azure-active-directory-domain-services"></a>Escolha entre o ingresso no Azure Active Directory e o Azure Active Directory Domain Services
 Este artigo descreve as diferenças entre o ingresso no Azure Active Directory (AD) e o Azure AD Domain Services, além de ajudar você a escolher com base em seus casos de uso.
@@ -66,14 +66,14 @@ Em um computador ingressado no domínio, a autenticação de usuário ocorre por
 
 ## <a name="next-steps"></a>Próximas etapas
 ### <a name="learn-more-about-azure-ad-domain-services"></a>Saiba mais sobre o Azure AD Domain Services
-* [Visão geral do Azure AD Domain Services](active-directory-ds-overview.md)
+* [Visão geral do Azure AD Domain Services](overview.md)
 * [Recursos](active-directory-ds-features.md)
-* [Cenários de implantação](active-directory-ds-scenarios.md)
-* [Descubra se o Azure AD Domain Services é adequado aos seus casos de uso](active-directory-ds-comparison.md)
-* [Entenda como o Azure AD Domain Services sincroniza-se ao diretório do Azure AD](active-directory-ds-synchronization.md)
+* [Cenários de implantação](scenarios.md)
+* [Descubra se o Azure AD Domain Services é adequado aos seus casos de uso](comparison.md)
+* [Entenda como o Azure AD Domain Services sincroniza-se ao diretório do Azure AD](synchronization.md)
 
 ### <a name="learn-more-about-azure-ad-join"></a>Saiba mais sobre o ingresso no Azure AD
 * [Introdução ao gerenciamento de dispositivos no Azure Active Directory](../active-directory/device-management-introduction.md)
 
 ### <a name="get-started-with-azure-ad-domain-services"></a>Introdução aos Azure AD Domain Services
-* [Habilitar o Azure AD Domain Services usando o portal do Azure](active-directory-ds-getting-started.md)
+* [Habilitar o Azure AD Domain Services usando o portal do Azure](create-instance.md)
