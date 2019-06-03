@@ -65,10 +65,10 @@ A tabela a seguir fornece a descrição para elementos JSON específicos para o 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | type |A propriedade type deve ser definida como: **OnPremisesTeradata** |Sim |
-| Servidor |Nome do servidor Teradata. |Sim |
+| server |Nome do servidor Teradata. |Sim |
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados Teradata. Os valores possíveis são: Anônima, Básica e Windows. |Sim |
-| Nome de Usuário |Especifique o nome de usuário se você estiver usando a autenticação Basic ou Windows. |Não  |
-| Senha |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não  |
+| username |Especifique o nome de usuário se você estiver usando a autenticação Basic ou Windows. |Não  |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não  |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados Teradata local. |Sim |
 
 ## <a name="dataset-properties"></a>Propriedades do conjunto de dados
