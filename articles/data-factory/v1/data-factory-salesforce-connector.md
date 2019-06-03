@@ -71,8 +71,8 @@ A tabela a seguir fornece descrições dos elementos JSON específicos para o se
 | --- | --- | --- |
 | type |A propriedade type deve ser definida como: **Salesforce**. |Sim |
 | environmentUrl | Especifica a URL da instância do Salesforce. <br><br> – O padrão é "https:\//login.salesforce.com". <br> – Para copiar dados da área restrita, especifique “https://test.salesforce.com”. <br> – Para copiar dados do domínio personalizado, especifique, por exemplo, "https://[domínio].my.salesforce.com". |Não  |
-| Nome de Usuário |Especifique um nome de usuário para a conta de usuário. |Sim |
-| Senha |Especifique um senha para a conta de usuário. |Sim |
+| username |Especifique um nome de usuário para a conta de usuário. |Sim |
+| password |Especifique um senha para a conta de usuário. |Sim |
 | securityToken |Especifique um token de segurança para a conta de usuário. Veja [Obter token de segurança](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm) para ver instruções sobre como redefinir/obter o token de segurança. Para saber mais sobre os tokens de segurança em geral, veja [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Segurança e a API). |Sim |
 
 ## <a name="dataset-properties"></a>Propriedades do conjunto de dados
