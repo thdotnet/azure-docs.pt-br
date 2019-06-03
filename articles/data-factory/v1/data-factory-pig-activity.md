@@ -85,15 +85,15 @@ A atividade de Pig do HDInsight em um [pipeline](data-factory-create-pipelines.m
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
-| nome |Nome da atividade |Sim |
-| descrição |Texto que descreve qual a utilidade da atividade |Não |
-| Tipo |HDinsightPig |Sim |
+| name |Nome da atividade |Sim |
+| description |Texto que descreve qual a utilidade da atividade |Não |
+| type |HDinsightPig |Sim |
 | inputs |Uma ou mais entradas consumidas pela atividade Pig |Não  |
 | outputs |Uma ou mais saídas produzidas pela atividade Pig |Sim |
 | linkedServiceName |Referência ao cluster HDInsight registrado como um serviço vinculado na Data Factory |Sim |
 | script |Especificar o script de Pig embutido |Não  |
-| caminho do script |Armazenar o script de Pig em um armazenamento de blob do Azure e fornecer o caminho para o arquivo. Use a propriedade 'script' ou 'scriptPath'. As duas não podem ser usadas juntas. O nome do arquivo diferencia maiúsculas de minúsculas. |Não  |
-| define |Especificar parâmetros como pares chave/valor para referenciar dentro do script de Pig |Não  |
+| scriptPath |Armazenar o script de Pig em um armazenamento de blob do Azure e fornecer o caminho para o arquivo. Use a propriedade 'script' ou 'scriptPath'. As duas não podem ser usadas juntas. O nome do arquivo diferencia maiúsculas de minúsculas. |Não  |
+| defines |Especificar parâmetros como pares chave/valor para referenciar dentro do script de Pig |Não  |
 
 ## <a name="example"></a>Exemplo
 Vamos considerar um exemplo de análises de logs de jogos nos quais você deseja identificar o tempo gasto pelos jogadores em jogos lançados por sua empresa.
