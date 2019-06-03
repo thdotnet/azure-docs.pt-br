@@ -75,12 +75,12 @@ A tabela a seguir fornece a descrição para elementos JSON específicas para o 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | type |A propriedade type deve ser definida como: **OnPremisesPostgreSql** |Sim |
-| Servidor |Nome do servidor PostgreSQL. |Sim |
-| Banco de Dados |Nome do banco de dados PostgreSQL. |Sim |
+| server |Nome do servidor PostgreSQL. |Sim |
+| database |Nome do banco de dados PostgreSQL. |Sim |
 | schema |Nome do esquema no banco de dados. O nome do esquema diferencia maiúsculas de minúsculas. |Não  |
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados PostgreSQL. Os valores possíveis são: Anônima, Básica e Windows. |Sim |
-| Nome de Usuário |Especifique o nome de usuário se você estiver usando a autenticação Basic ou Windows. |Não  |
-| Senha |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não  |
+| username |Especifique o nome de usuário se você estiver usando a autenticação Basic ou Windows. |Não  |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não  |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados PostgreSQL local. |Sim |
 
 ## <a name="dataset-properties"></a>Propriedades do conjunto de dados
