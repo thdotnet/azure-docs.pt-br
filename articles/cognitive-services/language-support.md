@@ -1,5 +1,5 @@
 ---
-title: Suporte de idioma
+title: Suporte ao idioma
 titleSuffix: Cognitive Services - Azure
 description: Os Serviços Cognitivos do Azure permitem que você crie aplicativos que veem, ouvem, e compreendam seus usuários, além de falar com eles. Nesses serviços, mais de três dezenas de idiomas têm suporte, permitindo que os usuários se comuniquem com seu aplicativo de formas naturais.
 services: cognitive-services
@@ -11,10 +11,10 @@ ms.date: 05/13/2019
 ms.author: erhopf
 ms.custom: seodec18
 ms.openlocfilehash: 0883b8e5ae2eab39fca6434141d6591432ad341e
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 05/31/2019
 ms.locfileid: "65595719"
 ---
 # <a name="natural-language-support-for-azure-cognitive-services"></a>Suporte a linguagem natural nos Serviços Cognitivos do Azure

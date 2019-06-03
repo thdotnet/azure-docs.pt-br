@@ -71,7 +71,7 @@ A tabela a seguir fornece a descrição para elementos JSON específicos para o 
 | type |A propriedade type deve ser definida como: **OnPremisesMySql** |Sim |
 | server |Nome do servidor MySQL. |Sim |
 | database |Nome do banco de dados MySQL. |Sim |
-| schema |Nome do esquema no banco de dados. |Não  |
+| schema |Nome do esquema no banco de dados. |Não |
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados MySQL. Os valores possíveis são: `Basic`. |Sim |
 | userName |Especifique o nome de usuário para se conectar ao banco de dados MySQL. |Sim |
 | password |Especifique a senha da conta de usuário que você especificou. |Sim |
@@ -333,7 +333,7 @@ Ao mover dados para o MySQL os seguintes mapeamentos serão usados dos tipos do 
 | smallint |Int16 |
 | text |Cadeia de caracteres |
 | time |TimeSpan |
-|  timestamp |DateTime |
+| timestamp |DateTime |
 | tinyblob |Byte[] |
 | tinyint unsigned |Int16 |
 | tinyint |Int16 |

@@ -11,16 +11,20 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: diberry
-ms.openlocfilehash: b114b1c3b1c421c6e6944666e3fd928d2aced966
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: f922f9c64f182377365192543305b48659c518da
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66225869"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417985"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Perguntas frequentes sobre o LUIS (Serviço Inteligente de Reconhecimento Vocal)
 
 Este artigo contém as respostas para perguntas frequentes sobre o LUIS (Serviço Inteligente de Reconhecimento Vocal).
+
+## <a name="whats-new"></a>Novidades
+
+[Saiba mais](whats-new.md) sobre o que há de novo no reconhecimento vocal.
 
 <a name="luis-authoring"></a>
 
