@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acd100ccc3aafc2de1f2c7970ff9437c92156b17
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: ea65120a2a735477d048b9012e160e0cdafe8835
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65861525"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66253078"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Tutorial: Redefinição de senha do Azure AD a partir da tela de logon
 
@@ -29,7 +29,7 @@ Neste tutorial, você permitirá que os usuários redefinam suas senhas na tela 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Você precisa executar pelo menos o Windows 10, versão de abril do 2018 Update, e os dispositivos precisam ser:
+* É necessário executar, pelo menos, o Windows 10, versão Atualização de abril de 2018 (v1803), e os dispositivos precisam estar:
    * [Ingressados no Azure AD](../device-management-azure-portal.md) ou
    * [Ingressados no Azure AD Híbrido](../device-management-hybrid-azuread-joined-devices-setup.md), com conectividade de rede para um controlador de domínio.
 * É necessário habilitar a redefinição de senha self-service do Azure AD.
@@ -122,7 +122,7 @@ Ao testar essa funcionalidade usando a Área de Trabalho Remota ou uma seção d
 
 * Atualmente não há suporte para a redefinição de senha a partir de uma Área de Trabalho Remota.
 
-Se Ctrl+Alt+Del for exigido pela política nas versões do Windows 10 antes de 1809, a **Redefinição de senha** não funcionará.
+Se as teclas de atalho Ctrl+Alt+Del forem exigidas pela política nas versões do Windows 10 anteriores a v1809, a **Redefinição de senha** não funcionará.
 
 Se as notificações de tela de bloqueio estiverem desativadas, a **Redefinição de senha** não funcionará.
 

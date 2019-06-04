@@ -9,16 +9,16 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 631338c0217eb61f4f98cd06ffa16cb2500f246b
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 891b64b8e31266360d718255dcd8e8a1f9fb597c
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66146744"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306566"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-windows-devices"></a>Tutorial: Desenvolver módulos do IoT Edge para dispositivos Windows
 
-Use o Visual Studio 2017 para desenvolver e implantar código em dispositivos Windows que executam o IoT Edge.
+Use o Visual Studio para desenvolver e implantar código em dispositivos Windows que executam o IoT Edge.
 
 No início rápido, você criou um dispositivo IoT Edge usando uma máquina virtual do Windows e implantou um módulo predefinido com base no Azure Marketplace. Este tutorial explica o que é necessário para desenvolver e implantar seu próprio código em um dispositivo IoT Edge. Este tutorial é um pré-requisito útil para todos os outros tutoriais, que se aprofundarão nas linguagens de programação específicas ou nos serviços do Azure. 
 
@@ -28,7 +28,7 @@ Neste tutorial, você aprenderá como:
 
 > [!div class="checklist"]
 > * Configurar seu computador de desenvolvimento.
-> * Usar as ferramentas do IoT Edge para o Visual Studio 2017 para criar um projeto.
+> * Usar as ferramentas do IoT Edge para o Visual Studio para criar um projeto.
 > * Criar seu projeto como um contêiner e armazená-lo em um Registro de Contêiner do Azure.
 > * Implantar seu código em um dispositivo IoT Edge. 
 
@@ -41,17 +41,17 @@ Este tutorial explica o desenvolvimento de um módulo do IoT Edge. Um *módulo d
 
 Ao desenvolver módulos do IoT Edge, é importante entender as diferenças entre o computador de desenvolvimento e o dispositivo IoT Edge de destino em que o módulo será implantado eventualmente. O contêiner que você criar para armazenar seu código de módulo deverá corresponder ao SO (sistema operacional) do *dispositivo de destino*. Para o desenvolvimento de contêiner do Windows, esse conceito é mais simples porque os contêineres do Windows são executados somente em sistemas de operacionais do Windows. Entretanto, você poderia, por exemplo, usar seu computador de desenvolvimento do Windows para criar módulos para dispositivos Linux IoT Edge. Nesse cenário, você precisa garantir que seu computador de desenvolvimento estava executando contêineres do Linux. Ao percorrer este tutorial, lembre-se da diferença entre o *sistema operacional do computador de desenvolvimento* e o *sistema operacional do contêiner*.
 
-Este tutorial direciona dispositivos Windows que executam o IoT Edge. Os dispositivos Windows IoT Edge usam contêineres do Windows. É recomendável usar o Visual Studio 2017 para desenvolvimento para dispositivos Windows, portanto, é isso que este tutorial usará. É possível usar o Visual Studio Code também, embora haja diferenças no suporte entre as duas ferramentas.
+Este tutorial direciona dispositivos Windows que executam o IoT Edge. Os dispositivos Windows IoT Edge usam contêineres do Windows. É recomendável usar o Visual Studio para desenvolvimento para dispositivos Windows, portanto, é isso que este tutorial usará. É possível usar o Visual Studio Code também, embora haja diferenças no suporte entre as duas ferramentas.
 
-A tabela a seguir lista os cenários de desenvolvimento compatíveis com os **contêineres do Windows** no Visual Studio Code e no Visual Studio 2017.
+A tabela a seguir lista os cenários de desenvolvimento compatíveis com os **contêineres do Windows** no Visual Studio Code e no Visual Studio.
 
-|   | Visual Studio Code | Visual Studio 2017 |
+|   | Visual Studio Code | Visual Studio 2017/2019 |
 | - | ------------------ | ------------------ |
 | **Serviços do Azure** | Funções do Azure <br> Stream Analytics do Azure |   |
 | **Idiomas** | C# (depuração não compatível) | C <br> C# |
-| **Mais informações** | [Azure IoT Edge para Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) | [Ferramentas do Azure IoT Edge para Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) |
+| **Mais informações** | [Azure IoT Edge para Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) | [Ferramentas do Azure IoT Edge para Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools), [Ferramentas do Azure IoT Edge para Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools) |
 
-Este tutorial ensina as etapas de desenvolvimento para o Visual Studio 2017. Se preferir usar o Visual Studio Code, veja as instruções em [Usar o Visual Studio Code para desenvolver e depurar módulos para o Azure IoT Edge](how-to-vs-code-develop-module.md).
+Este tutorial ensina as etapas de desenvolvimento para o Visual Studio 2019. Se preferir usar o Visual Studio Code, veja as instruções em [Usar o Visual Studio Code para desenvolver e depurar módulos para o Azure IoT Edge](how-to-vs-code-develop-module.md). Se estiver usando o Visual Studio 2017 (versão 15.7 ou superior), baixe e instale as [Ferramentas do Azure IoT Edge para Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -94,19 +94,19 @@ Use a documentação do Docker para instalar em seu computador de desenvolviment
 
 ## <a name="set-up-visual-studio-and-tools"></a>Configurar o Visual Studio e as ferramentas
 
-Use as extensões de IoT para o Visual Studio 2017 para desenvolver módulos do IoT Edge. Essas extensões oferecem modelos de projeto, automatizam a criação do manifesto de implantação e permitem que você monitore e gerencie dispositivos IoT Edge. Nesta seção, você instalará o Visual Studio e a extensão IoT Edge. Em seguida, configurará sua conta do Azure para gerenciar recursos do Hub IoT no Visual Studio. 
+Use as extensões de IoT para o Visual Studio 2019 para desenvolver módulos do IoT Edge. Essas extensões oferecem modelos de projeto, automatizam a criação do manifesto de implantação e permitem que você monitore e gerencie dispositivos IoT Edge. Nesta seção, você instalará o Visual Studio e a extensão IoT Edge. Em seguida, configurará sua conta do Azure para gerenciar recursos do Hub IoT no Visual Studio. 
 
-1. Se você ainda não tiver o Visual Studio em seu computador de desenvolvimento, [instale o Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2017) com as cargas de trabalho a seguir: 
+1. Se você ainda não tiver o Visual Studio em seu computador de desenvolvimento, [instale o Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio) com as cargas de trabalho a seguir: 
 
    * Desenvolvimento do Azure
    * Desenvolvimento para desktop com C++
    * Desenvolvimento multiplataforma com o .NET Core
 
-1. Se você já tiver o Visual Studio 2017 em seu computador de desenvolvimento, verifique se a versão é a 15.7 ou uma mais recente. Siga as etapas em [Modificar o Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio?view=vs-2017) para adicionar as cargas de trabalho necessárias se você ainda não as tiver.
+1. Se você já tiver o Visual Studio 2019 em seu computador de desenvolvimento. Siga as etapas em [Modificar o Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) para adicionar as cargas de trabalho necessárias se você ainda não as tiver.
 
-2. Baixe e instale a extensão [Ferramentas do Azure IoT Edge](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) para Visual Studio 2017. 
+2. Baixe e instale a extensão [Ferramentas do Azure IoT Edge](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools) para Visual Studio 2019. 
 
-3. Quando suas instalações estiverem concluídas, abra o Visual Studio.
+3. Quando suas instalações estiverem concluídas, abra o Visual Studio 2019 e selecione **Continuar sem código**.
 
 4. Selecione **Exibição** > **Cloud Explorer**. 
 
@@ -122,24 +122,25 @@ Use as extensões de IoT para o Visual Studio 2017 para desenvolver módulos do 
 
 ## <a name="create-a-new-module-project"></a>Criar um projeto de módulo
 
-A extensão Ferramentas do Azure IoT Edge oferece modelos de projeto para todas as linguagens de módulo do IoT Edge compatíveis com o Visual Studio 2017. Todos esses modelos têm os arquivos e o código nos quais você precisa implantar um módulo de trabalho para testar o IoT Edge ou oferecem a você um ponto de partida para personalizar o modelo com sua própria lógica de negócios. 
+A extensão Ferramentas do Azure IoT Edge oferece modelos de projeto para todas as linguagens de módulo do IoT Edge compatíveis com o Visual Studio. Todos esses modelos têm os arquivos e o código nos quais você precisa implantar um módulo de trabalho para testar o IoT Edge ou oferecem a você um ponto de partida para personalizar o modelo com sua própria lógica de negócios. 
 
-1. Execute o Visual Studio como administrador.
+1. Selecione **Arquivo** > **Novo** > **Projeto...**
 
-2. Selecione **Arquivo** > **Novo** > **Projeto**. 
-
-3. Na janela do novo projeto, selecione o tipo de projeto **Azure IoT** e escolha o projeto **Azure IoT Edge**. Renomeie a solução e o projeto ou aceite o **AzureIoTEdgeApp1** padrão. Selecione **OK** para criar o projeto. 
+2. Na janela novo projeto, 2. Na janela de novo projeto, pesquise o projeto **IoT Edge** e escolha o projeto **Azure IoT Edge (Windows amd64)** . Clique em **Próximo**. 
 
    ![Criar um projeto do Azure IoT Edge](./media/tutorial-develop-for-windows/new-project.png)
+
+3. Na janela Configurar o novo projeto, renomeie o projeto e a solução para algo descritivo como **CTutorialApp**. Clique em **Criar** para criar o projeto.
+
+   ![Configurar um novo projeto do Azure IoT Edge](./media/tutorial-develop-for-windows/configure-project.png)
+ 
 
 4. No aplicativo IoT Edge e na janela do módulo, configure seu projeto com os seguintes valores: 
 
    | Campo | Valor |
    | ----- | ----- |
-   | Plataforma de aplicativos | Desmarque **Linux Amd64** e marque **WindowsAmd64**. |
-   | Selecione um modelo | Selecione **Módulo em C**. | 
-   | Nome do projeto de módulo | Aceite o **IoTEdgeModule1** padrão. | 
-   | Repositório de imagens do Docker | Um repositório de imagem inclui o nome do registro de contêiner e o nome da imagem de contêiner. Sua imagem de contêiner é populada previamente com base no valor de nome do projeto de módulo. Substitua **localhost:5000** pelo valor do servidor de logon do seu registro de contêiner do Azure. Você pode recuperar o servidor de logon da página Visão Geral do seu registro de contêiner no portal do Azure. <br><br> O repositório de imagem final se parece com \<nome do registro\>.azurecr.io/iotedgemodule1. |
+
+   | Selecione um modelo | Selecione **Módulo C**. | | Nome do projeto de módulo | Aceite o padrão **IoTEdgeModule1**. | | Repositório de imagens do docker | Um repositório de imagens inclui o nome do registro de contêiner e o nome da imagem de contêiner. Sua imagem de contêiner é populada previamente com base no valor de nome do projeto de módulo. Substitua **localhost:5000** pelo valor do servidor de logon do seu registro de contêiner do Azure. Você pode recuperar o servidor de logon da página Visão Geral do seu registro de contêiner no portal do Azure. <br><br> O repositório de imagem final se parece com \<nome do registro\>.azurecr.io/iotedgemodule1. |
 
    ![Configure seu projeto para o dispositivo de destino, tipo de módulo e registro de contêiner](./media/tutorial-develop-for-windows/add-application-and-module.png)
 
@@ -224,7 +225,7 @@ Provide your container registry credentials to Docker on your development machin
    docker login -u <ACR username> -p <ACR password> <ACR login server>
    ```
 
-   Talvez você receba um aviso de segurança que recomende o uso de `--password-stdin`. Embora essa melhor prática seja recomendada para cenários de produção, ela está fora do escopo deste tutorial. Para saber mais, confira a referência do [logon do docker](https://docs.docker.com/engine/reference/commandline/login/#provide-a-password-using-stdin).
+   Talvez você receba um aviso de segurança que recomende o uso de `--password-stdin`. Embora essa prática seja recomendada para cenários de produção, ela não serve para este tutorial. Para saber mais, confira a referência do [logon do docker](https://docs.docker.com/engine/reference/commandline/login/#provide-a-password-using-stdin).
 
 ### <a name="build-and-push"></a>Compilar e efetuar push
 
@@ -234,7 +235,7 @@ Agora, o computador de desenvolvimento tem acesso ao registro de contêiner e se
 
    ![Criar e efetuar push de módulos do IoT Edge](./media/tutorial-develop-for-windows/build-and-push-modules.png)
 
-   O comando de criação e de envio por push inicia três operações. Primeiro, ele cria uma pasta na solução denominada **config** que contém manifesto de implantação completo, criado com base nas informações no modelo de implantação e em outros arquivos da solução. Segundo, executa `docker build` para criar a imagem de contêiner com base no Dockerfile apropriado para sua arquitetura de destino. Em seguida, ele executa `docker push` para enviar o repositório de imagens por push para seu registro de contêiner. 
+   O comando de criação e de envio por push inicia três operações. Primeiro, é criada uma pasta na solução denominada **config** que contém o manifesto de implantação completo, criado com base nas informações do modelo de implantação e em outros arquivos da solução. Depois, ele executa `docker build` para montar a imagem de contêiner com base no dockerfile apropriado para sua arquitetura de destino. Em seguida, ele executa `docker push` para enviar o repositório de imagens por push para seu registro de contêiner. 
 
    Esse processo pode levar vários minutos na primeira vez, mas será mais rápido na próxima vez em que você executar os comandos. 
 
@@ -298,7 +299,7 @@ O código IotEdgeModule1 recebe mensagens por meio de sua fila de entrada e as p
 
 1. No Cloud Explorer do Visual Studio, selecione o nome do dispositivo IoT Edge que você implantou. 
 
-2. No menu **Ações**, selecione **Iniciar o Monitoramento de Mensagem D2C**.
+2. No menu **Ações**, selecione **Iniciar o Monitoramento do Ponto de Extremidade de Evento Interno**.
 
 3. Observe a janela de **Saída** no Visual Studio para ver as mensagens chegando ao seu hub IoT. 
 
@@ -332,7 +333,7 @@ Os comandos nesta seção são para seu dispositivo IoT Edge, não para seu comp
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste tutorial, você configurou o Visual Studio 2017 em seu computador de desenvolvimento e implantou seu primeiro módulo do IoT Edge dele. Agora que você conhece os conceitos básicos, experimente adicionar uma funcionalidade a um módulo para que ele possa analisar os dados que são passados por ele. Escolha a linguagem de sua preferência: 
+Neste tutorial, você configurou o Visual Studio 2019 em seu computador de desenvolvimento e implantou seu primeiro módulo do IoT Edge dele. Agora que você conhece os conceitos básicos, experimente adicionar uma funcionalidade a um módulo para que ele possa analisar os dados que são passados por ele. Escolha a linguagem de sua preferência: 
 
 > [!div class="nextstepaction"] 
 > [C](tutorial-c-module-windows.md)

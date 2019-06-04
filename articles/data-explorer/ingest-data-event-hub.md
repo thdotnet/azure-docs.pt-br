@@ -6,13 +6,13 @@ ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
-ms.date: 05/17/2019
-ms.openlocfilehash: d5bd291758d6bb445b757b93fd91a4c2321b97db
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.date: 05/29/2019
+ms.openlocfilehash: 18ce5e9d7cff0d32021e97cd85f1e18c0309f00b
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65898942"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357676"
 ---
 # <a name="quickstart-ingest-data-from-event-hub-into-azure-data-explorer"></a>Início Rápido: Ingerir dados do Hub de Eventos no Azure Data Explorer
 
@@ -118,15 +118,18 @@ Agora você se conecta ao hub de eventos no Azure Data Explorer. Quando essa con
 
     Tabela de destino:
 
-    Há duas opções de roteamento: *estático* e *dinâmico*. Para este início rápido, você usará o roteamento estático (o padrão), no qual especificará o nome da tabela, o formato do arquivo e o mapeamento. Portanto, não selecione **Meus dados incluem informações de roteamento**.
-    Você também pode usar o roteamento dinâmico, no qual os dados incluem as informações de roteamentos necessárias.
+    Há duas opções para rotear os dados ingeridos: *estático* e *dinâmico*. 
+    Para este artigo, você usará o roteamento estático, no qual especificará o nome da tabela, o formato de dados e o mapeamento. Portanto, não selecione **Meus dados incluem informações de roteamento**.
 
      **Configuração** | **Valor sugerido** | **Descrição do campo**
     |---|---|---|
     | Tabela | *TestTable* | A tabela criada na **TestDatabase**. |
     | Formato de dados | *JSON* | Os formatos com suporte são Avro, CSV, JSON, MULTILINE JSON, PSV, SOH, SCSV, TSV e TXT. |
-    | Mapeamento de coluna | *TestMapping* | O mapeamento que você criou em **TestDatabase**, que mapeia os dados de entrada JSON para tipos de dados e nomes de coluna da **TestTable**.|
+    | Mapeamento de coluna | *TestMapping* | O mapeamento que você criou em **TestDatabase**, que mapeia os dados de entrada JSON para tipos de dados e nomes de coluna da **TestTable**. Obrigatório para JSON, MULTILINE JSON ou AVRO e opcional para outros formatos.|
     | | |
+
+    > [!NOTE]
+    > Escolha **Meus dados incluem informações de roteamento** para usar o roteamento dinâmico no qual os dados incluem as informações de roteamento necessárias, como visto nos comentários do [exemplo de aplicativo](https://github.com/Azure-Samples/event-hubs-dotnet-ingest). Se as propriedades estáticas e dinâmicas estiverem definidas, as propriedades dinâmicas substituirão as estáticas. 
 
 ## <a name="copy-the-connection-string"></a>Copiar a cadeia de conexão
 

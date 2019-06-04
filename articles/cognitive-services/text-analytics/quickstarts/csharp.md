@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 04/29/2019
+ms.date: 05/28/2019
 ms.author: assafi
-ms.openlocfilehash: 44d4a9427fcf6b582d44707127b87c262781520f
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: a8b41f6853e9c91e64de903960b880e44f22ed55
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65602355"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66297811"
 ---
 # <a name="quickstart-use-the-net-sdk-and-c-to-call-the-text-analytics-service"></a>Início Rápido: Usar o SDK do .NET e C# para chamar o serviço de Análise de Texto
 <a name="HOLTop"></a>
@@ -29,16 +29,11 @@ Para obter detalhes técnicos, confira a [referência da Análise de Texto](http
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
+* Qualquer edição do [visual studio 2017 ou posterior]
+* O [SDK de Análise de Texto para .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.TextAnalytics)
 [!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
 
 Também há a necessidade do [ponto de extremidade e da chave de acesso](../How-tos/text-analytics-how-to-access-key.md) que foram gerados para você durante a inscrição.
-
-> [!Tip]
->  Embora você possa chamar os [pontos de extremidade HTTP](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9) diretamente do C#, o SDK Microsoft.Azure.CognitiveServices.Language torna mais fácil chamar o serviço sem ter que serializar e desserializar o JSON.
->
-> Alguns links úteis:
-> - [Página NuGet do SDK](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.TextAnalytics)
-> - [Código do SD ](https://github.com/Azure/azure-sdk-for-net/tree/master/src/SDKs/CognitiveServices/dataPlane/Language/TextAnalytics)
 
 ## <a name="create-the-visual-studio-solution-and-install-the-sdk"></a>Criar a solução do Visual Studio e instalar o SDK
 
@@ -120,8 +115,7 @@ Na função `Main` de seu projeto, chame o método de exemplo que você deseja i
         var credentials = new ApiKeyServiceClientCredentials(SubscriptionKey);
         var client = new TextAnalyticsClient(credentials)
         {
-            //Replace 'westus' with the correct region for your Text Analytics subscription.
-            Endpoint = "https://westus.api.cognitive.microsoft.com"
+            Endpoint = Endpoint
         };
 
         // Change the console encoding to display non-ASCII characters.
@@ -223,7 +217,7 @@ Document ID: 3 , Language: Chinese_Simplified
 ## <a name="perform-entity-recognition"></a>Executar reconhecimento de entidade
 
 1. Crie a nova função `RecognizeEntitiesExample()` que usa o cliente criado anteriormente.
-2. Gere uma lista de objetos `MultiLanguageBatchInput` contendo os documentos.
+2. Gere uma lista de objetos `MultiLanguageBatchInput` contendo seus documentos.
 
     ```csharp
     public static async Task RecognizeEntitiesExample(TextAnalyticsClient client)
@@ -296,7 +290,7 @@ Document ID: 2
 ## <a name="perform-key-phrase-extraction"></a>Executar uma extração de frases-chave
 
 1. Crie uma nova função `KeyPhraseExtractionExample()` que usa o cliente criado anteriormente.
-2. Gere uma lista de objetos `MultiLanguageBatchInput` contendo os documentos.
+2. Gere uma lista de objetos `MultiLanguageBatchInput` contendo seus documentos.
 
     ```csharp
     public static async Task KeyPhraseExtractionExample(TextAnalyticsClient client)

@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 03/05/2019
 ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: 400f12237ae8b8cbaf6d66bda1663ecb680136f3
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: d0accd01926743d64fa4911dfe56806537170c2d
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66162609"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66271597"
 ---
 O [roteamento de mensagens](../articles/iot-hub/iot-hub-devguide-messages-d2c.md) permite enviar dados de telemetria de seus dispositivos IoT para pontos de extremidade internos compatíveis com o Hub de Eventos ou para pontos de extremidade personalizados, como Armazenamento de Blobs, Filas do Barramento de Serviço, Tópicos do Barramento de Serviço e Hubs de Eventos. Para configurar o roteamento de mensagens personalizado, crie [consultas de roteamento](../articles/iot-hub/iot-hub-devguide-routing-query-syntax.md) para personalizar a rota que corresponde a uma determinada condição. Uma vez configurado, os dados de entrada são roteados automaticamente para os pontos de extremidade pelo Hub IoT. Se uma mensagem não corresponder a nenhuma das consultas de roteamentos definidas, ela será roteada para o ponto de extremidade padrão.
 
 Neste tutorial de duas partes, você aprenderá a configurar e usar essas consultas personalizadas de roteamentos com o Hub IoT. Você vai rotear mensagens de um dispositivo IoT para um dos vários serviços, incluindo o armazenamento de blobs e uma fila do Barramento de Serviço. As mensagens na fila do Barramento de Serviço são escolhidas por um aplicativo lógico e enviadas por email. As mensagens que não têm roteamento de mensagens personalizada definido são enviadas para o ponto de extremidade padrão e, em seguida, captadas pelo Azure Stream Analytics e exibidas em uma visualização do Power BI.
 
- Para concluir as partes 1 e 2 deste tutorial, você deve executar as seguintes tarefas:
+Para concluir as partes 1 e 2 deste tutorial, você executou as seguintes tarefas:
 
 **Parte I: Criar recursos, configurar o roteamento de mensagens**
 > [!div class="checklist"]

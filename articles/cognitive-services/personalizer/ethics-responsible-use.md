@@ -9,12 +9,12 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: 7b1e972b5516aa79d1754e32e487e17c9e68ac1d
-ms.sourcegitcommit: eea74d11a6d6ea6d187e90e368e70e46b76cd2aa
+ms.openlocfilehash: 437dc1fba2502602109483aa9d6f25b4265af26f
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65035430"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66239883"
 ---
 # <a name="guidelines-for-responsible-implementation-of-personalizer"></a>Diretrizes para a implementação responsável do Personalizador
 
@@ -49,7 +49,7 @@ A implementação do Personalizador pode ser de grande valor para seus usuários
 
 Usar um serviço que aprende a personalizar conteúdo e interfaces do usuário é útil. Isso também poderá ser aplicado de maneira indevida se a personalização criar efeitos colaterais negativos no mundo real, incluindo se os usuários não estiverem cientes da personalização do conteúdo. 
 
-Exemplos de usos do Personalizador com maior potencial para efeitos colaterais negativos ou uma falta de transparência incluem cenários em que a “recompensa” depende de muitos fatores complexos de longo prazo que, quando muito simplificados em uma recompensa imediata, podem ter resultados desfavoráveis para indivíduos. Eles tendem a ser considerados opções “consequentes” ou opções que envolvem um risco de danos. Por exemplo:  
+Exemplos de usos do Personalizador com maior potencial para efeitos colaterais negativos ou uma falta de transparência incluem cenários em que a “recompensa” depende de muitos fatores complexos de longo prazo que, quando muito simplificados em uma recompensa imediata, podem ter resultados desfavoráveis para indivíduos. Eles tendem a ser considerados opções “consequentes” ou opções que envolvem um risco de danos. Por exemplo: 
 
 
 * **Finanças**: personalizar ofertas sobre produtos de empréstimo, de seguro e financeiros, em que fatores de risco baseiam-se nos dados que os indivíduos não conhecem, não podem obter nem podem disputar. 
@@ -128,17 +128,13 @@ Veja abaixo as áreas de criação para implementações responsáveis de IA. Sa
 * Arquive informações e ativos (como modelos, políticas de aprendizado e outros dados) que o Personalizador usa para funcionar, para poder reproduzir os resultados.
 
 ### <a name="transparency"></a>Transparência
-*Os sistemas de IA devem ser compreensíveis*. Com o Personalizador
+*Os sistemas de IA devem ser compreensíveis*. Com o Personalizador:
 
-• Forneça aos usuários informações sobre como o conteúdo foi personalizado. Por exemplo, é possível mostrar aos seus usuários um botão rotulado “Por que essas sugestões?” mostrando quais os principais recursos do usuário e ações desempenharam um papel nos resultados do Personalizador.
-• Verifique se os termos de uso mencionam que você usará informações sobre usuários e seu comportamento para personalizar a experiência.
-
-
-* *Forneça aos usuários informações sobre como o conteúdo foi personalizado.* Por exemplo, é possível mostrar aos usuários um botão rotulado `Why These Suggestions?` mostrando quais recursos principais do usuário e ações desempenharam um papel na personalização.
-* Verifique se os termos de uso mencionam que você usará informações sobre usuários para personalizar a experiência.
+* *Forneça aos usuários informações sobre como o conteúdo foi personalizado.* Por exemplo, é possível mostrar aos usuários um botão rotulado `Why These Suggestions?` mostrando quais recursos principais do usuário e ações desempenharam um papel nos resultados do Personalizador.
+* Verifique se os termos de uso mencionam que você usará informações sobre usuários e seu comportamento para personalizar a experiência.
 
 ### <a name="fairness"></a>Imparcialidade
-*Os Sistemas de IA devem tratar todas as pessoas com imparcialidade.
+*Os Sistemas de IA devem tratar todas as pessoas com imparcialidade*.
 
 * Não use o Personalizador para casos de uso em que os resultados são de longo prazo, consequenciais ou que envolvam dano real.
 * Não use informações inadequadas com as quais você pode personalizar o conteúdo ou que possam propagar propensões indesejadas. Por exemplo, pessoas com circunstâncias financeiras semelhantes devem ver as mesmas recomendações personalizadas para produtos financeiros.

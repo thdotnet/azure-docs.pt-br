@@ -5,20 +5,22 @@ services: event-grid
 author: banisadr
 ms.service: event-grid
 ms.topic: tutorial
-ms.date: 01/16/2018
+ms.date: 05/16/2019
 ms.author: babanisa
-ms.openlocfilehash: fa0ffa9ad913f0dc3afe8dc31aeaa0254fa2d241
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 4a069db7984a7b0b0bb4bb867dc510f73d8b1f75
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57863161"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66305069"
 ---
-# <a name="build-your-own-disaster-recovery-for-custom-topics-in-event-grid"></a>Criar sua própria recuperação de desastre para Tópicos Personalizados na Grade de Eventos
-
+# <a name="build-your-own-disaster-recovery-for-custom-topics-in-event-grid"></a>Criar sua própria recuperação de desastre para tópicos personalizados na Grade de Eventos
 A recuperação de desastre tem como foco a recuperação após uma perda grave de funcionalidade do aplicativo. Este tutorial o orientará pelo processo de configurar sua arquitetura de eventos a ser recuperada se o serviço de Grade de Eventos se tornar não íntegro em uma região específica.
 
 Neste tutorial, você aprenderá como criar uma arquitetura de failover ativo-passivo para tópicos personalizados na Grade de Eventos. Você realizará o failover por meio do espelhamento dos seus tópicos e assinaturas em duas regiões e, em seguida, por meio do gerenciamento de um failover quando um tópico se tornar não íntegro. A arquitetura neste tutorial faz failover de todo o tráfego novo. É importante ter cuidado com esta instalação; eventos que já estão em versão de pré-lançamento não serão recuperados até que a região comprometida esteja íntegra novamente.
+
+> [!NOTE]
+> Agora, a Grade de Eventos dá suporte à recuperação automática de desastre geográfico (GeoDR) no lado do servidor. Você ainda poderá implementar a lógica de recuperação de desastre do lado do cliente se quiser um controle maior sobre o processo de failover. Para obter detalhes sobre GeoDR automático, veja [Recuperação de desastre geográfico do lado do servidor na Grade de Eventos do Azure](geo-disaster-recovery.md).
 
 ## <a name="create-a-message-endpoint"></a>Criar um ponto de extremidade de mensagem
 

@@ -1,7 +1,7 @@
 ---
 title: Filtrar o tráfego de rede – tutorial – portal do Azure
 titlesuffix: Azure Virtual Network
-description: Neste tutorial, você aprenderá como filtrar o tráfego para uma sub-rede com um grupo de segurança de rede e usando o portal do Azure.
+description: Neste tutorial, você aprenderá como filtrar o tráfego de rede para uma sub-rede, com um Grupo de Segurança de Rede, usando o portal do Azure.
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 12/13/2018
 ms.author: kumud
-ms.openlocfilehash: ad34c6a876ca21bc7ef32cce638240e0d23b3177
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 4097d4fc46aac88cd44d21a4cdcf0d7d5093feea
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64723913"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242731"
 ---
-# <a name="tutorial-filter-network-traffic-with-a-network-security-group-using-the-azure-portal"></a>Tutorial: Filtrar tráfego de rede com um grupo de segurança de rede usando o portal do Azure
+# <a name="tutorial-filter-network-traffic-with-a-network-security-group-using-the-azure-portal"></a>Tutorial: Filtrar o tráfego de rede com um Grupo de Segurança de Rede usando o portal do Azure
 
 É possível filtrar o tráfego para entrada e saída de uma sub-rede de rede virtual com um grupo de segurança de rede. Grupos de segurança de rede contêm regras de segurança que filtram o tráfego por endereço IP, porta e protocolo. As regras de segurança são aplicadas aos recursos implantados em uma sub-rede. Neste tutorial, você aprenderá como:
 

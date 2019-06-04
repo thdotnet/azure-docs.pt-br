@@ -14,16 +14,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/12/2018
 ms.author: kumud
-ms.openlocfilehash: 44094a38fff17908fd5ea851209130f89a49c988
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 23093cd8bcb5793b9e5b9abc835f64233e666ce1
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64707015"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241737"
 ---
 # <a name="what-is-azure-virtual-network"></a>O que é a Rede Virtual do Azure?
 
-A Rede Virtual do Azure permite vários tipos de recursos, como Máquinas Virtuais (VM) do Azure, a fim de se comunicar de forma segura com a Internet, com as redes locais e com outras VMs. Uma rede virtual tem como escopo uma única região; no entanto, é possível conectar várias redes virtuais de regiões diferentes usando o Emparelhamento de Rede Virtual.
+A Rede Virtual do Azure permite vários tipos de recursos, como Máquinas Virtuais (VM) do Azure, a fim de se comunicar de forma segura com a Internet, com as redes locais e com outras VMs. Uma rede virtual tem como escopo uma única região do Azure. Uma [região](https://azure.microsoft.com/global-infrastructure/regions/) do Azure é um conjunto de datacenters implantados dentro de um perímetro de latência definida e conectados por meio de uma rede regional dedicada de baixa latência. 
+
+As redes virtuais são compostas por sub-redes. Uma sub-rede é um intervalo de endereços IP em sua rede virtual. Sub-redes, como redes virtuais, têm como escopo uma única região do Azure. 
+
+É possível conectar várias redes virtuais de regiões diferentes usando o Emparelhamento de Rede Virtual.
 
 A Rede Virtual do Azure fornece os seguintes recursos importantes:
 

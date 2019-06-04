@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 05/08/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e471f447b0c50c9c65923d7135b2b48789728df
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: a8a200df2f474cead197a0e74ae7e27927f814d2
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65470688"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242268"
 ---
 # <a name="security-info-preview-overview"></a>Visão geral das informações de segurança (versão prévia)
 
@@ -28,7 +28,7 @@ A página **Informações de segurança** ajuda você a configurar os métodos d
 >[!Important]
 >Este conteúdo destina-se aos usuários. Se você for um administrador, é possível encontrar mais informações sobre como configurar e gerenciar seu ambiente do Azure Active Directory (Azure AD) na [Documentação do Azure Active Directory](https://docs.microsoft.com/azure/active-directory).
 
-## <a name="security-info-articles"></a>Artigos sobre informações de segurança
+## <a name="security-info-related-articles"></a>Artigos relacionados a informações de segurança
 
 Para obter informações detalhadas e instruções sobre como adicionar, atualizar e excluir suas informações de segurança, confira os seguintes artigos (com base no método que deseja usar):
 

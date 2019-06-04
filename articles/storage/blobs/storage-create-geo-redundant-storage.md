@@ -10,12 +10,12 @@ ms.author: tamram
 ms.reviewer: artek
 ms.custom: mvc
 ms.subservice: blobs
-ms.openlocfilehash: 24869981595cd68eb833f7b176e17a2683127945
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: cbf6409efa2fbb56500c6919edc6c741c4a2c45a
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65787923"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306767"
 ---
 # <a name="tutorial-build-a-highly-available-application-with-blob-storage"></a>Tutorial: Criar um aplicativo altamente disponível com o armazenamento de Blobs
 
@@ -40,7 +40,7 @@ Para concluir este tutorial:
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
-* Instale o [Visual Studio 2017](https://www.visualstudio.com/downloads/) com as cargas de trabalho a seguir:
+* Instale o [Visual Studio 2019](https://www.visualstudio.com/downloads/) com as seguintes cargas de trabalho:
   - **Desenvolvimento do Azure**
 
   ![Desenvolvimento do Azure (em Web e Nuvem)](media/storage-create-geo-redundant-storage/workloads.png)
@@ -82,6 +82,8 @@ Siga estas etapas para criar uma conta de armazenamento com redundância geográ
    | **Modelo de implantação** | Gerenciador de Recursos  | O Resource Manager contém os recursos mais recentes.|
    | **Tipo de conta** | StorageV2 | Para obter detalhes sobre os tipos de contas, consulte [tipos de contas de armazenamento](../common/storage-introduction.md#types-of-storage-accounts) |
    | **Desempenho** | Standard | O padrão é suficiente para o cenário de exemplo. |
+   | **Replicação**| Armazenamento com redundância geográfica com acesso de leitura (RA-GRS) | Essa configuração é necessária para que o exemplo funcione. |
+   |**Assinatura** | sua assinatura |Para obter detalhes sobre suas assinaturas, consulte [Assinaturas](https://account.windowsazure.com/Subscriptions). |
    | **Replicação**| Armazenamento com redundância geográfica com acesso de leitura (RA-GRS) | Isso é necessário para que o exemplo funcione. |
    |**Assinatura** | sua assinatura |Para obter detalhes sobre suas assinaturas, consulte [Assinaturas](https://account.azure.com/Subscriptions). |
    |**ResourceGroup** | myResourceGroup |Para ver os nomes do grupo de recursos válidos, consulte [Regras e restrições de nomenclatura](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
@@ -139,7 +141,7 @@ No portal do Azure, navegue até sua conta de armazenamento. Selecione **Chaves 
 export storageconnectionstring=<yourconnectionstring>
 ```
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 ```powershell
 setx storageconnectionstring "<yourconnectionstring>"
@@ -158,7 +160,7 @@ export accountname=<youraccountname>
 export accountkey=<youraccountkey>
 ```
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 ```powershell
 setx accountname "<youraccountname>"
@@ -167,7 +169,7 @@ setx accountkey "<youraccountkey>"
 
 # <a name="java-v10-sdktabjava-v10"></a>[SDK V10 Java](#tab/java-v10)
 
-Esta amostra exige que você armazene o nome e a chave da conta de armazenamento com segurança. Armazene-as em variáveis de ambiente locais no computador que executará a amostra. Use o exemplo do Linux ou do Windows, dependendo do sistema operacional, para criar as variáveis de ambiente. No Windows, a variável de ambiente não fica disponível enquanto você não recarrega o **Prompt de Comando** ou o shell que está sendo usado.
+Esta amostra exige que você armazene o nome e a chave da conta de armazenamento com segurança. Armazene-as em variáveis de ambiente locais no computador que executará a amostra. Use o exemplo do Linux ou do Windows, dependendo do sistema operacional, para criar as variáveis de ambiente. No Windows, a variável de ambiente não fica disponível até você recarregar o **Prompt de Comando** ou o shell que está sendo usado.
 
 ### <a name="linux-example"></a>Exemplo do Linux
 
@@ -194,7 +196,7 @@ AZURE_STORAGE_ACCOUNT_ACCESS_KEY=<replace with your storage account access key>
 
 Você pode encontrar essas informações no portal do Azure navegando em sua conta de armazenamento e selecionando as **Chaves de Acesso** na seção **Configurações**.
 
-Instale também as dependências necessárias. Para fazer isso, abra um prompt de comando, navegue para a mesma pasta e execute o comando `npm install`.
+Instale as dependências necessárias. Para fazer isso, abra um prompt de comando, navegue para a mesma pasta e execute o comando `npm install`.
 
 ---
 
@@ -220,7 +222,7 @@ No código de exemplo, o método `run_circuit_breaker` no arquivo `circuitbreake
 
 A função de repetição do Objeto de armazenamento é definida como uma política de repetição linear. A função de repetição determina se uma solicitação será repetida, além de especificar o número de segundos a aguardar antes de repeti-la. Defina o valor **retry\_to\_secondary** como true se a solicitação deve ser repetida para o secundário no caso de a solicitação inicial para o primário falhar. No aplicativo de exemplo, uma política de repetição personalizada é definida na função `retry_callback` do objeto de armazenamento.
 
-Antes de baixar, o Objeto de serviço [retry_callback](https://docs.microsoft.com/python/api/azure.storage.common.storageclient.storageclient?view=azure-python) e a função [response_callback](https://docs.microsoft.com/python/api/azure.storage.common.storageclient.storageclient?view=azure-python) é definida. Essas funções definem manipuladores de eventos disparados quando um download é concluído com êxito ou caso um download falhe e seja tentado novamente.
+Antes de fazer o download, o Objeto de serviço [retry_callback](https://docs.microsoft.com/python/api/azure.storage.common.storageclient.storageclient?view=azure-python) e a função [response_callback](https://docs.microsoft.com/python/api/azure.storage.common.storageclient.storageclient?view=azure-python) são definidos. Essas funções definem manipuladores de eventos disparados quando um download é concluído com êxito ou caso um download falhe e seja tentado novamente.
 
 # <a name="java-v10-sdktabjava-v10"></a>[SDK V10 Java](#tab/java-v10)
 
@@ -231,11 +233,11 @@ Para executar a amostra, use o Maven na linha de comando.
 
 Este exemplo cria um arquivo de teste em seu diretório padrão. Para usuários do Windows, esse diretório é **AppData\Local\Temp**. Em seguida, a amostra apresenta as seguintes opções de comandos que podem ser inseridos:
 
-- Insira **P** para executar uma operação put de blob; isso carrega um arquivo temporário em sua conta de armazenamento.
-- Insira **L** para executar uma operação list de blob; isso lista os blobs atualmente no contêiner.
-- Insira **G** para executar uma operação get de blob; isso baixa um arquivo de sua conta de armazenamento para o computador local.
-- Insira **D** para executar uma operação delete de blob; isso exclui o blob de sua conta de armazenamento.
-- Insira **E** para fechar a amostra; isso também exclui todos os recursos criados pela amostra.
+- Insira **P** para executar uma operação put de blob. Esse comando carrega um arquivo temporário em sua conta de armazenamento.
+- Insira **L** para executar uma operação list de blob. Esse comando lista os blobs atualmente no contêiner.
+- Insira **G** para executar uma operação get de blob. Esse comando faz o download de um arquivo de sua conta de armazenamento para o computador local.
+- Insira **D** para executar uma operação delete de blob. Esse comando exclui o blob de sua conta de armazenamento.
+- Insira **E** para fechar o exemplo. Esse comando também exclui todos os recursos criados pelo exemplo.
 
 Este exemplo mostra a saída se você executa o aplicativo no Windows.
 

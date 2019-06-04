@@ -10,12 +10,12 @@ ms.author: genemi
 ms.reviewer: carlrab
 manager: craigg-msft
 ms.date: 02/08/2019
-ms.openlocfilehash: ce46a6b8d4e2bc57625f9202349718dfbaedc660
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 31246f44be5645715c5c7041d0cf9bcff9c0fa52
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55995672"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66303294"
 ---
 # <a name="tutorial-design-a-relational-database-in-a-single-database-within-azure-sql-database-cx23-and-adonet"></a>Tutorial: Criar um banco de dados relacionam em um banco de dados individual dentro de C&#x23; e ADO.NET do Banco de Dados SQL do Azure
 
@@ -33,7 +33,7 @@ O Banco de Dados SQL do Azure é um DBaaS (banco de dados como serviço) no Micr
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Uma instalação do [Visual Studio 2017](https://www.visualstudio.com/downloads/)
+Uma instalação do [Visual Studio 2019](https://www.visualstudio.com/downloads/) ou posterior.
 
 ## <a name="create-a-blank-single-database"></a>Criar um banco de dados em branco
 
@@ -81,7 +81,7 @@ Siga estas etapas para criar um banco de dados individual em branco.
 
 ## <a name="create-a-server-level-ip-firewall-rule"></a>Criar uma regra de firewall de IP no nível do servidor
 
-O serviço do Banco de Dados SQL cria um firewall de IP no nível do servidor. Esse firewall impede que os aplicativos e ferramentas externos se conectem ao servidor e aos bancos de dados no servidor, a menos que uma regra de firewall permita seu IP por meio do firewall. Para habilitar a conectividade externa com seu banco de dados individual, primeiro adicione uma regra de firewall de IP ao seu endereço IP (ou intervalo de endereços IP). Siga estas etapas para criar uma [Regra de firewall de IP no nível do servidor do Banco de Dados SQL](sql-database-firewall-configure.md).
+O serviço do Banco de Dados SQL cria um firewall de IP no nível do servidor. Esse firewall impede que os aplicativos e ferramentas externos se conectem ao servidor e aos bancos de dados no servidor, a menos que uma regra de firewall permita seu IP por meio do firewall. Para habilitar a conectividade externa com seu banco de dados individual, primeiro adicione uma regra de firewall de IP ao seu endereço IP (ou intervalo de endereços IP). Siga estas etapas para criar uma [Regra de firewall de IP no nível do servidor de Banco de Dados SQL](sql-database-firewall-configure.md).
 
 > [!IMPORTANT]
 > O serviço de Banco de Dados SQL se comunica pela porta 1433. Se você estiver tentando se conectar a esse serviço de dentro de uma rede corporativa, o tráfego de saída pela porta 1433 poderá não ser permitido pelo firewall da sua rede. Se isso acontecer, você não poderá conectar-se ao banco de dados individual, a menos que o administrador abra a porta 1433.
@@ -98,7 +98,7 @@ O serviço do Banco de Dados SQL cria um firewall de IP no nível do servidor. E
 
 4. Clique em **Adicionar IP do cliente** na barra de ferramentas para adicionar seu endereço IP atual a uma nova regra de firewall de IP. Uma regra de firewall de IP pode abrir a porta 1433 para um único endereço IP ou um intervalo de endereços IP.
 
-5. Clique em **Salvar**. Uma regra de firewall de IP no nível do servidor é criada para o endereço IP atual que abre a porta 1433 no servidor do Banco de Dados SQL.
+5. Clique em **Save** (Salvar). Uma regra de firewall de IP no nível do servidor é criada para o endereço IP atual que abre a porta 1433 no servidor do Banco de Dados SQL.
 
 6. Clique em **OK**, em seguida, feche a página **Configurações do Firewall**.
 

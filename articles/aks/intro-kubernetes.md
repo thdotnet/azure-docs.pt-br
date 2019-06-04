@@ -5,21 +5,21 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: overview
-ms.date: 03/05/2019
+ms.date: 05/06/2019
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: a147d95701af166c650411a91fb24e3448cfec09
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: b14e4b452c1dcd92cc3e5447428c28f1d2c5b18e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995023"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65073824"
 ---
 # <a name="azure-kubernetes-service-aks"></a>AKS (Serviço do Kubernetes do Azure)
 
 O AKS (Serviço de Kubernetes do Azure) simplifica a implantação de um cluster do Kubernetes gerenciado no Azure. O AKS reduz a complexidade e a sobrecarga operacional de gerenciar o Kubernetes passando grande parte dessa responsabilidade para o Azure. Como um serviço Kubernetes hospedado, o Azure lida com as tarefas críticas para você, como o monitoramento da integridade e a manutenção. Os mestres de Kubernetes são gerenciados pelo Azure. Você gerencia e mantém apenas os nós de agente. Como um serviço do Kubernetes gerenciado, o AKS é gratuito: você paga apenas pelos nós de agentes dentro dos clusters, não pelos mestres.
 
-Você pode criar um cluster do AKS no portal do Azure, com a CLI do Azure, ou opções de implantação controladas pelo modelo, como modelos do Resource Manager e o Terraform. Ao implantar um cluster do AKS, o mestre do Kubernetes e todos os nós serão implantados e configurados para você. Recursos adicionais, como rede avançada, integração do Azure Active Directory e monitoramento, também podem ser configurados durante o processo de implantação.
+Você pode criar um cluster do AKS no portal do Azure, com a CLI do Azure, ou opções de implantação controladas pelo modelo, como modelos do Resource Manager e o Terraform. Ao implantar um cluster do AKS, o mestre do Kubernetes e todos os nós serão implantados e configurados para você. Recursos adicionais, como rede avançada, integração do Azure Active Directory e monitoramento, também podem ser configurados durante o processo de implantação. O suporte para contêineres do Windows Server no AKS está em versão prévia.
 
 Para obter mais informações sobre os conceitos básicos do Kubernetes, consulte [Conceitos básicos do Kubernetes para AKS][concepts-clusters-workloads].
 
@@ -43,9 +43,9 @@ Para entender como o cluster do AKS e os aplicativos implantados estão se saind
 
 Para obter mais informações, confira [Monitorar a integridade de contêiner do Serviço de Kubernetes do Azure][container-health].
 
-## <a name="cluster-and-node"></a>Cluster e nó
+## <a name="clusters-and-nodes"></a>Clusters e nós
 
-Os nós do AKS são executados em máquinas virtuais do Azure. Você pode conectar o armazenamento a nós e pods, atualizar componentes do cluster e usar GPUs.
+Os nós do AKS são executados em máquinas virtuais do Azure. Você pode conectar o armazenamento a nós e pods, atualizar componentes do cluster e usar GPUs. O AKS dá suporte a clusters de Kubernetes que executam vários pools de nós para dar suporte a sistemas operacionais mistos e contêineres do Windows Server (atualmente em versão prévia). Nós Linux executam uma imagem personalizada do sistema operacional do Ubuntu e nós do Windows Server executam uma imagem personalizada do sistema operacional Windows Server 2019.
 
 ### <a name="cluster-node-and-pod-scaling"></a>Nó de cluster e dimensionamento de pod
 

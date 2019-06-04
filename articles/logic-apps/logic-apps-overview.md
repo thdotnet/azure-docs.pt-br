@@ -1,26 +1,26 @@
 ---
-title: Integração empresarial com os Aplicativos Lógicos do Azure | Microsoft Docs
-description: Esta visão geral descreve como você pode criar soluções de integração empresarial por tarefas de automação, fluxos de trabalho e processos de negócios que se integram a aplicativos, dados, serviços e sistemas em empresas e organizações. Crie soluções para cenários de integração de dados, de sistemas, EAI (integração de aplicativos empresariais) e de orquestração.
+title: Integração Empresarial com Aplicativos Lógicos do Azure
+description: Visão geral sobre a criação de soluções de integração empresarial por tarefas de automação e orquestração, fluxos de trabalho e processos de negócios que se integram a aplicativos, dados, serviços e sistemas em empresas e organizações. Crie soluções para cenários de integração de dados, de sistemas, EAI (integração de aplicativos empresariais) e de orquestração.
 services: logic-apps
 ms.service: logic-apps
+ms.suite: integration
 author: ecfan
 ms.author: estfan
-manager: jeconnoc
+manager: carmonm
+ms.reviewer: klam, LADocs
 ms.topic: overview
 ms.custom: mvc
 ms.date: 6/29/2018
-ms.reviewer: klam, LADocs
-ms.suite: integration
-ms.openlocfilehash: d9f3bb33ab0638fddfcf64e61642c236a03d6293
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: 2892dc3b8f25624e7925c9b4aa86110c167ad616
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54065251"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299121"
 ---
 # <a name="what-is-azure-logic-apps"></a>O que são Aplicativos Lógicos do Azure?
 
-Os [Aplicativos Lógicos do Azure](https://azure.microsoft.com/services/logic-apps) são um serviço de nuvem que ajuda você a automatizar e orquestrar tarefas, processos de negócios, e [fluxos de trabalho](#logic-app-concepts) quando você precisar integrar aplicativos, dados, sistemas e serviços entre empresas ou organizações. Os Aplicativos Lógicos simplificam a forma como você projeta e cria soluções escalonáveis para [integração](https://azure.microsoft.com/product-categories/integration/) de aplicativos, integração de dados, integração de sistemas, EAI (Integração de Aplicativos Empresariais) e comunicação B2B (entre empresas), seja na nuvem, localmente ou em ambos.
+Os [Aplicativos Lógicos do Azure](https://azure.microsoft.com/services/logic-apps) são um serviço de nuvem que ajuda você a agendar, automatizar e orquestrar tarefas, processos de negócios e [fluxos de trabalho](#logic-app-concepts) quando você precisar integrar aplicativos, dados, sistemas e serviços entre empresas ou organizações. Os Aplicativos Lógicos simplificam a forma como você projeta e cria soluções escalonáveis para [integração](https://azure.microsoft.com/product-categories/integration/) de aplicativos, integração de dados, integração de sistemas, EAI (Integração de Aplicativos Empresariais) e comunicação B2B (entre empresas), seja na nuvem, localmente ou em ambos.
 
 Por exemplo, eis algumas cargas de trabalho que você pode automatizar com aplicativos lógicos:
 
@@ -35,7 +35,7 @@ Para criar soluções de integração empresarial com os Aplicativos Lógicos do
 
 ## <a name="how-does-logic-apps-work"></a>Como funcionam os Aplicativos Lógicos? 
 
-Cada fluxo de trabalho do aplicativo lógico começa com um gatilho, que é acionado quando um evento específico ocorre, ou quando novos dados disponíveis atendem a critérios específicos. Vários gatilhos incluem recursos básicos de agendamento para que você possa especificar a regularidade das execuções das suas cargas de trabalho. Para mais cenários de agendamento personalizados, inicie os fluxos de trabalho com o gatilho de Agendamento. Saiba mais sobre [como criar fluxos de trabalho baseados em agendamento](../logic-apps/tutorial-build-schedule-recurring-logic-app-workflow.md).
+Cada fluxo de trabalho do aplicativo lógico começa com um gatilho, que é acionado quando um evento específico ocorre, ou quando novos dados disponíveis atendem a critérios específicos. Vários gatilhos fornecidos pelos conectores nos Aplicativos Lógicos incluem recursos básicos de agendamento para que você possa configurar a regularidade das execuções das suas cargas de trabalho. Para um agendamento mais complexo ou recorrências avançadas, você pode usar um gatilho de recorrência como a primeira etapa em qualquer fluxo de trabalho. Saiba mais sobre [fluxos de trabalho baseados em agendamento](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md).
 
 Cada vez que o disparador é acionado, o mecanismo de Aplicativo Lógico cria uma instância de aplicativo lógico que executa as ações no fluxo de trabalho. Essas ações também podem incluir conversões de dados e controles de fluxo, como instruções condicionais, instruções de comutação, loops e ramificações. Por exemplo, esse aplicativo lógico começa com um gatilho Dynamics 365 com os critérios internos "Quando um registro é atualizado". Se o gatilho detectar um evento que corresponde a esses critérios, o gatilho será acionado e executará ações do fluxo de trabalho. Aqui, essas ações incluem transformação XML, atualizações de dados, ramificação de decisões e notificações por email.
 
@@ -132,14 +132,9 @@ Todos esses serviços ajudam a "colar" e a interligar sistemas distintos. Cada s
 
 ## <a name="get-started"></a>Introdução 
 
-Aplicativos Lógicos é um dos muitos serviços hospedados no Microsoft Azure. Portanto, antes de começar, você precisa de uma assinatura do Azure. Se você não tem uma assinatura, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. 
+Aplicativos Lógicos é um dos muitos serviços hospedados no Microsoft Azure. Portanto, antes de começar, você precisa de uma assinatura do Azure. Se você não tem uma assinatura, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/). 
 
 Se você tiver uma assinatura do Azure, experimente esse [início rápido para criar seu primeiro aplicativo lógica](../logic-apps/quickstart-create-first-logic-app-workflow.md), que monitora o novo conteúdo em um site por meio de um RSS feed e envia email quando um novo conteúdo é exibido.
-
-## <a name="support-and-feedback"></a>Suporte e comentários
-
-* Em caso de dúvidas, visite o [Fórum dos Aplicativos Lógicos do Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Para enviar ou votar em ideias de recurso, visite o [site de comentários do usuário de Aplicativos Lógicos](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -15,16 +15,16 @@ ms.workload: NA
 ms.date: 11/28/2017
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 7e48684024d370d64f44b55cb4df0efb8f16cd3b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8bb8a635c3699828376390c489697b6315030937
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66157956"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306667"
 ---
 # <a name="tutorial-upgrade-the-runtime-of-a-service-fabric-cluster-in-azure"></a>Tutorial: Atualizar o tempo de execução de um cluster do Service Fabric no Azure
 
-Este tutorial é a parte quatro de uma série e mostra como fazer upgrade do tempo de execução do Service Fabric ou de um cluster do Azure Service Fabric. Esta parte do tutorial foi criada para clusters do Service Fabric em execução no Azure e não se aplica a clusters do Service Fabric autônomo.
+Este tutorial é a parte quatro de uma série e mostra como fazer upgrade do tempo de execução do Service Fabric ou de um cluster do Azure Service Fabric. Esta parte do tutorial foi escrita para clusters do Service Fabric em execução no Azure e não se aplica a clusters autônomos do Service Fabric.
 
 > [!WARNING]
 > Esta parte do tutorial requer o PowerShell. As ferramentas da CLI do Azure ainda não dão suporte ao upgrade do tempo de execução do cluster. Como alternativa, pode ser feito o upgrade de um cluster no portal. Para saber mais, veja [Upgrade de um cluster do Azure Service Fabric](service-fabric-cluster-upgrade.md).
@@ -55,7 +55,7 @@ Antes de começar este tutorial:
 * Se você não tem uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 * Instale o [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps) ou a [CLI do Azure](/cli/azure/install-azure-cli).
 * Criar um [cluster do Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) seguro no Azure
-* Configurar um ambiente de desenvolvimento do Windows. Instale as cargas de trabalho do [Visual Studio 2017](https://www.visualstudio.com) e o **Desenvolvimento do Azure**, de **desenvolvimento ASP.NET e Web** e de **desenvolvimento multiplataforma do .NET Core**.  Em seguida, configure um [ambiente de desenvolvimento .NET](service-fabric-get-started.md).
+* Configurar um ambiente de desenvolvimento do Windows. Instale o [Visual Studio 2019](https://www.visualstudio.com) e as cargas de trabalho **Desenvolvimento do Azure**, **Desenvolvimento para a Web e ASP.NET** e **Desenvolvimento multiplataforma do .NET Core**.  Em seguida, configure um [ambiente de desenvolvimento .NET](service-fabric-get-started.md).
 
 ### <a name="sign-in-to-azure"></a>Entrar no Azure
 
@@ -69,14 +69,14 @@ Set-AzContext -SubscriptionId <guid>
 
 ## <a name="get-the-runtime-version"></a>Obter a versão de tempo de execução
 
-Depois que você tiver se conectado ao Azure e selecionado a assinatura que contém o cluster do Service Fabric, poderá obter a versão de tempo de execução do cluster.
+Depois de se conectar ao Azure e selecionar a assinatura que contém o cluster do Service Fabric, você poderá obter a versão de tempo de execução do cluster.
 
 ```powershell
 Get-AzServiceFabricCluster -ResourceGroupName SFCLUSTERTUTORIALGROUP -Name aztestcluster `
     | Select-Object ClusterCodeVersion
 ```
 
-Ou simplesmente obtenha uma lista de todos os clusters na sua assinatura com o seguinte:
+Ou apenas obtenha uma lista de todos os clusters em sua assinatura com o seguinte exemplo:
 
 ```powershell
 Get-AzServiceFabricCluster | Select-Object Name, ClusterCodeVersion
@@ -207,8 +207,7 @@ Neste tutorial, você aprendeu como:
 > * Fazer upgrade do tempo de execução do cluster
 > * Monitorar o upgrade
 
-[!div class="checklist"]
-> * Obter a versão do tempo de execução do cluster
-> * Fazer upgrade do tempo de execução do cluster
-> * Monitorar o upgrade
+Prosseguir para o próximo tutorial:
 
+> [!div class="nextstepaction"]
+> [Excluir um cluster](service-fabric-tutorial-delete-cluster.md)

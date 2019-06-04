@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/14/2019
 ms.author: aljo,mikhegn
 ms.custom: mvc
-ms.openlocfilehash: 451cfde133955b987b97bc2447724d2e00010892
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 4b3922ea97391a83d729bcf8b25c489a45119046
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58667371"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66302446"
 ---
 # <a name="tutorial-deploy-a-service-fabric-application-to-a-cluster-in-azure"></a>Tutorial: Implantar um aplicativo do Service Fabric em um cluster no Azure
 
@@ -44,7 +44,7 @@ Nesta série de tutoriais, você aprenderá a:
 Antes de começar este tutorial:
 
 * Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Instale o Visual Studio 2017](https://www.visualstudio.com/) e instale as cargas de trabalho de **desenvolvimento do Azure** e de **desenvolvimento para a Web e ASP.NET**.
+* [Instale o Visual Studio 2019](https://www.visualstudio.com/) e as cargas de trabalho **Desenvolvimento do Azure** e **Desenvolvimento para a Web e ASP.NET**.
 * [Instalar o SDK do Service Fabric](service-fabric-get-started.md).
 
 ## <a name="download-the-voting-sample-application"></a>Baixar o aplicativo de exemplo Votação
@@ -86,7 +86,7 @@ Na guia **Cluster**, insira o **Nome do cluster** (por exemplo, "mytestcluster")
 
 ![Criar um cluster](./media/service-fabric-tutorial-deploy-app-to-party-cluster/create-cluster.png)
 
-Na guia **Certificado**, insira a senha e o caminho de saída para o certificado de cluster. Um certificado autoassinado é criado como um arquivo PFX e salvo no caminho de saída especificado.  O certificado é usado para segurança de nó para nó e de cliente para nó.  Um certificado autoassinado não deve ser usado para clusters de produção.  Esse certificado é usado pelo Visual Studio para se autenticar no cluster e implantar aplicativos. Selecione **Importar certificado** para instalar o PFX no repositório de certificados CurrentUser\My do computador.  Clique em **Próximo**.
+Na guia **Certificado**, insira a senha e o caminho de saída para o certificado de cluster. Um certificado autoassinado é criado como um arquivo PFX e salvo no caminho de saída especificado.  O certificado é usado para segurança de nó para nó e de cliente para nó.  Não use um certificado autoassinado para clusters de produção.  Esse certificado é usado pelo Visual Studio para se autenticar no cluster e implantar aplicativos. Selecione **Importar certificado** para instalar o PFX no repositório de certificados CurrentUser\My do computador.  Clique em **Próximo**.
 
 ![Criar um cluster](./media/service-fabric-tutorial-deploy-app-to-party-cluster/certificate.png)
 

@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/05/2019
+ms.date: 05/24/2019
 ms.author: tomfitz
-ms.openlocfilehash: 0ad1d12a4a2ca3a293546f2bac85210bb9152269
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: b6d84a07de408cedb0e21181c70e5c1481ac62bc
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59269276"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66225911"
 ---
 # <a name="azure-resource-manager-overview"></a>Visão geral do Azure Resource Manager
 
@@ -91,7 +91,7 @@ Se a região do grupo de recursos está temporariamente indisponível, você nã
 
 Cada provedor de recursos oferece um conjunto de recursos e operações para trabalhar com esses recursos. Por exemplo, se você quer armazenar chaves e segredos, trabalhe com o provedor de recursos **Microsoft.KeyVault** . Este provedor de recursos oferece um tipo de recurso denominado **cofres** para criar o cofre da chave.
 
-O nome de um tipo de recurso está no formato: **{provedor-de-recursos}/{tipo-de-recurso}**. O tipo de recurso de um cofre de chaves é **Microsoft.KeyVault/vaults**.
+O nome de um tipo de recurso está no formato: **{provedor-de-recursos}/{tipo-de-recurso}** . O tipo de recurso de um cofre de chaves é **Microsoft.KeyVault/vaults**.
 
 Antes de começar a implantação de recursos, você deve ter uma compreensão dos provedores de recursos disponíveis. Conhecer os nomes dos provedores de recursos e dos recursos ajuda a definir os recursos que você deseja implantar no Azure. Além disso, você precisa conhecer os locais e as versões de API válidos para cada tipo de recurso. Para saber mais, veja [Provedores e tipos de recursos](resource-manager-supported-services.md).
 
@@ -174,7 +174,21 @@ Depois de definir o modelo, você está pronto para implantar os recursos para o
 
 Ao implantar um serviço complexo no Azure, você talvez precise implantar seu serviço em várias regiões e verificar sua integridade antes de prosseguir para a próxima etapa. Use o [Gerenciador de Implantação do Azure](deployment-manager-overview.md) para coordenar uma distribuição pré-configurada do serviço. Ao preparar a distribuição do seu serviço, você poderá encontrar problemas em potencial antes de ele ter sido implantado para todas as regiões. Se você não precisa dessas precauções, as operações de implantação na seção anterior são a melhor opção.
 
-O Deployment Manager está em versão prévia privada.
+O Deployment Manager está em versão prévia pública.
+
+## <a name="resiliency-of-azure-resource-manager"></a>Resiliência do Azure Resource Manager
+
+O serviço do Azure Resource Manager foi projetado para resiliência e disponibilidade contínua. As operações do Resource Manager e do painel de controle (solicitações enviadas para management.azure.com) na API REST são:
+
+* Distribuídas entre regiões. Alguns serviços são regionais.
+
+* Distribuídas entre Zonas de Disponibilidade (e também regiões) em locais que têm várias Zonas de Disponibilidade.
+
+* Não dependem de um datacenter lógico único.
+
+* Nunca são desativadas para atividades de manutenção.
+
+Essa resiliência se aplica aos serviços que recebem solicitações por meio do Resource Manager. Por exemplo, o Key Vault se beneficia dessa resiliência.
 
 [!INCLUDE [arm-tutorials-quickstarts](../../includes/resource-manager-tutorials-quickstarts.md)]
 

@@ -5,16 +5,16 @@ services: storage
 author: normesta
 ms.service: storage
 ms.topic: tutorial
-ms.date: 12/07/2018
+ms.date: 05/22/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.custom: seodec18
-ms.openlocfilehash: 7320f5cd8d012973139adb099785cddae123f775
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 2b0bb94be2ba8ea983cda8fd015d05fcd532f2bc
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65949608"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66226157"
 ---
 # <a name="tutorial-use-azure-cdn-to-enable-a-custom-domain-with-ssl-for-a-static-website"></a>Tutorial: Usar a CDN do Azure para habilitar um domínio personalizado com SSL para um site estático
 
@@ -38,15 +38,27 @@ Entre no [portal do Azure](https://portal.azure.com/) para começar.
 
 ## <a name="create-a-cdn-endpoint-on-the-static-website-endpoint"></a>Criar um ponto de extremidade da CDN no ponto de extremidade de site estático
 
-1. Abra o [portal do Azure](https://portal.azure.com/) no navegador da Web. 
-1. Localize sua conta de armazenamento e exiba a visão geral dela.
+1. Localize sua conta de armazenamento no portal do Azure e exiba a visão geral da conta.
 1. Selecione **CDN do Azure** no menu **Serviço Blob** para configurar a CDN do Azure.
-1. Na seção **Novo ponto de extremidade**, preencha os campos para criar um novo ponto de extremidade da CDN.
-1. Insira um nome de ponto de extremidade, como *mystaticwebsiteCDN*.
-1. Insira seu domínio de site como o nome do host para seu ponto de extremidade de CDN.
-1. Para o nome do host de origem, insira o ponto de extremidade do site estático. Para localizar o ponto de extremidade do site estático, navegue até a seção **Site estático** da sua conta de armazenamento e copie o ponto de extremidade (remova o https:// à esquerda)
-1. Teste o ponto de extremidade da CDN navegando até *mywebsitecdn.azureedge.net* no navegador.
-1. Faça uma verificação adicional navegando até o **Novo Ponto de Extremidade** em configurações, origem para ver se o tipo Origem é definido como *Origem Personalizada* e se o *nome do host da origem* exibe nome do ponto de extremidade do site da Web estático.
+1. Na seção **Perfil CDN**, especifique um perfil CDN novo ou existente. Para saber mais, confira [Início Rápido: Criar um ponto de extremidade e um perfil de CDN do Azure](../../cdn/cdn-create-new-endpoint.md).
+1. Especifique um tipo de preço para o ponto de extremidade CDN. Este tutorial usa o tipo de preço **Akamai Standard**, pois ele é propagado rapidamente, normalmente em poucos minutos. Outros tipos de preços podem levar mais tempo para serem propagados, mas também podem oferecer outras vantagens. Para obter mais informações, confira [Comparar os recursos do produto CDN do Azure](../../cdn/cdn-features.md).
+1. No campo **Nome do ponto de extremidade CDN**, especifique um nome para o ponto de extremidade CDN. O ponto de extremidade CDN precisa ser exclusivo no Azure.
+1. Especifique o ponto de extremidade do site estático no campo **Nome do host de origem**. Para encontrar o ponto de extremidade do site estático, navegue até as configurações de **Site estático** de sua conta de armazenamento. Copie o ponto de extremidade primário e cole-o na configuração da CDN, removendo o identificador de protocolo (*por exemplo*, HTTPS).
+
+    A seguinte imagem mostra uma configuração de ponto de extremidade de exemplo:
+
+    ![Captura de tela mostrando uma configuração de ponto de extremidade CDN de exemplo](media/storage-blob-static-website-custom-domain/add-cdn-endpoint.png)
+
+1. Crie o ponto de extremidade CDN e aguarde para que ele seja propagado.
+1. Para verificar se o ponto de extremidade CDN está configurado corretamente, clique no ponto de extremidade para navegar até as configurações. Na visão geral da CDN de sua conta de armazenamento, localize o nome do host do ponto de extremidade e navegue até o ponto de extremidade, conforme mostrado na imagem a seguir. O formato do ponto de extremidade CDN será semelhante a `https://staticwebsitesamples.azureedge.net`.
+
+    ![Captura de tela mostrando uma visão geral do ponto de extremidade CDN](media/storage-blob-static-website-custom-domain/verify-cdn-endpoint.png)
+
+    Após a conclusão da propagação do ponto de extremidade CDN, navegar até o ponto de extremidade CDN exibirá o conteúdo do arquivo index.html que você carregou anteriormente no site estático.
+
+1. Para examinar as configurações de origem do ponto de extremidade CDN, navegue até **Origem** na seção **Configurações** do ponto de extremidade CDN. Você verá que o campo **Tipo de origem** é definido como *Origem Personalizada* e que o campo **Nome do host de origem** exibe o ponto de extremidade do site estático.
+
+    ![Captura de tela mostrando as Configurações de origem para o ponto de extremidade CDN](media/storage-blob-static-website-custom-domain/verify-cdn-origin.png)
 
 ## <a name="enable-custom-domain-and-ssl"></a>Habilitar domínio personalizado e SSL
 
@@ -54,17 +66,19 @@ Entre no [portal do Azure](https://portal.azure.com/) para começar.
 
     ![Especificar registro CNAME para subdomínio www](media/storage-blob-static-website-custom-domain/subdomain-cname-record.png)
 
-1. No portal do Azure, clique no ponto de extremidade recém-criado para configurar o domínio personalizado e o certificado SSL.
+1. No portal do Azure, exiba as configurações de seu ponto de extremidade CDN. Navegue até **Domínios personalizados** em **Configurações** para configurar o domínio personalizado e o certificado SSL.
 1. Selecione **Adicionar domínio personalizado**, insira o nome de domínio e clique em **Adicionar**.
-1. Selecione o mapeamento de domínio personalizado recém-criado para provisionar um certificado SSL.
-1. Defina **HTTPS de domínio personalizado** como **ATIVADO**. Selecione **CDN gerenciada** para fazer a CDN do Azure gerenciar seu certificado SSL. Clique em **Save** (Salvar).
-1. Teste seu site acessando a URL dele.
+1. Selecione o novo mapeamento de domínio personalizado para provisionar um certificado SSL.
+1. Defina **HTTPS de Domínio Personalizado** como **ATIVADO** e, em seguida, clique em **Salvar**. Podem ser necessárias várias horas para configurar o domínio personalizado. O portal exibe o andamento, conforme mostrado na imagem a seguir.
+
+    ![Captura de tela mostrando o progresso da configuração de domínio personalizado](media/storage-blob-static-website-custom-domain/configure-custom-domain-https.png)
+
+1. Teste o mapeamento do site estático para o domínio personalizado acessando a URL do domínio personalizado.
+
+Para obter mais informações sobre como habilitar o HTTPS em domínios personalizados, confira [Tutorial: Configurar o HTTPS em um domínio personalizado da CDN do Azure](../../cdn/cdn-custom-ssl.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 
 Na segunda parte deste tutorial, você aprendeu como configurar um domínio personalizado com SSL na CDN do Azure para o site estático.
 
-Siga este link para saber mais sobre a hospedagem de site estático no Armazenamento do Azure.
-
-> [!div class="nextstepaction"]
-> [Saiba mais sobre sites estáticos](storage-blob-static-website.md)
+Para obter mais informações sobre como configurar e usar a CDN do Azure, confira [O que é a CDN do Azure?](../../cdn/cdn-overview.md).

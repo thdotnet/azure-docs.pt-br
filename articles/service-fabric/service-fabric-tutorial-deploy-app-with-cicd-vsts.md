@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 12/02/2018
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: c805d2bc03ad07635b01a5e978822ecab2425457
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: ba0975486039546d5be0f704fb617beb1a9e0908
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58668833"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306903"
 ---
 # <a name="tutorial-deploy-an-application-with-cicd-to-a-service-fabric-cluster"></a>Tutorial: Implantar um aplicativo com CI/CD em um cluster do Service Fabric
 
@@ -47,7 +47,7 @@ Nesta série de tutoriais, você aprenderá a:
 Antes de começar este tutorial:
 
 * Se você não tem uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-* [Instale o Visual Studio 2017](https://www.visualstudio.com/) e instale as cargas de trabalho de **desenvolvimento do Azure** e de **desenvolvimento para a Web e ASP.NET**.
+* [Instale o Visual Studio 2019](https://www.visualstudio.com/) e as cargas de trabalho **Desenvolvimento do Azure** e **Desenvolvimento para a Web e ASP.NET**.
 * [Instalar o SDK do Service Fabric](service-fabric-get-started.md)
 * Crie um cluster do Service Fabric do Windows no Azure; você pode [seguir este tutorial](service-fabric-tutorial-create-vnet-and-windows-cluster.md) como exemplo
 * Criar uma [organização do Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization-msa-or-work-student). Isso permite que você crie um projeto no Azure DevOps e use Azure Pipelines.
@@ -62,7 +62,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ## <a name="prepare-a-publish-profile"></a>Preparar um perfil de publicação
 
-Agora que você [criou um aplicativo](service-fabric-tutorial-create-dotnet-app.md) e [implantou o aplicativo no Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md), você está pronto para configurar a integração contínua.  Primeiro, prepare um perfil de publicação em seu aplicativo para ser usado pelo processo de implantação que é executado no Azure Pipelines.  O perfil de publicação deve ser configurado para direcionar-se ao cluster que você criou anteriormente.  Inicie o Visual Studio e abra um projeto de aplicativo do Service Fabric existente.  No **Gerenciador de Soluções**, clique com o botão direito do mouse no aplicativo e selecione **Publicar...**.
+Agora que você [criou um aplicativo](service-fabric-tutorial-create-dotnet-app.md) e [implantou o aplicativo no Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md), você está pronto para configurar a integração contínua.  Primeiro, prepare um perfil de publicação em seu aplicativo para ser usado pelo processo de implantação que é executado no Azure Pipelines.  O perfil de publicação deve ser configurado para direcionar-se ao cluster que você criou anteriormente.  Inicie o Visual Studio e abra um projeto de aplicativo do Service Fabric existente.  No **Gerenciador de Soluções**, clique com o botão direito do mouse no aplicativo e selecione **Publicar...** .
 
 Escolha um perfil de destino em seu projeto de aplicativo a fim de usar para o fluxo de trabalho de integração contínua, por exemplo, Nuvem.  Especifique o ponto de extremidade de conexão do cluster.  Marque a caixa de seleção **Atualizar o Aplicativo** para que seu aplicativo seja atualizado a cada implantação no Azure DevOps.  Clique no hiperlink **Salvar** para salvar as configurações em seu perfil de publicação e, em seguida, clique em **Cancelar** para fechar a caixa de diálogo.
 
@@ -86,7 +86,7 @@ A publicação do repositório cria um novo projeto na conta com o mesmo nome do
 
 ## <a name="configure-continuous-delivery-with-azure-pipelines"></a>Configurar a entrega contínua com o Azure Pipelines
 
-Um pipeline de build do Azure Pipelines descreve um fluxo de trabalho composto por um conjunto de etapas de compilação que são executadas sequencialmente. Crie um pipeline de build que produz um pacote de aplicativos do Service Fabric e outros artefatos para implantar em um cluster do Service Fabric. Saiba mais sobre os [pipelines de build do Azure Pipelines](https://www.visualstudio.com/docs/build/define/create). 
+Um pipeline de build do Azure Pipelines descreve um fluxo de trabalho composto por um conjunto de etapas de build que são executadas sequencialmente. Crie um pipeline de build que produz um pacote de aplicativos do Service Fabric e outros artefatos para implantar em um cluster do Service Fabric. Saiba mais sobre os [pipelines de build do Azure Pipelines](https://www.visualstudio.com/docs/build/define/create). 
 
 Um pipeline de lançamento do Azure Pipelines descreve um fluxo de trabalho que implanta um pacote de aplicativos em um cluster. Quando usados juntos, o pipeline de lançamento e o pipeline de build executam todo o fluxo de trabalho, começando com os arquivos de origem e terminando com um aplicativo em execução em seu cluster. Saiba mais sobre os [pipelines de lançamento do Azure Pipelines](https://www.visualstudio.com/docs/release/author-release-definition/more-release-definition).
 
@@ -128,13 +128,13 @@ Selecione **Tarefas**->**Ambiente 1** e **+ Novo** para adicionar uma nova conex
 
 No modo de exibição **Adicionar nova Conexão do Service Fabric**, selecione a autenticação **Baseada em Certificado** ou **Azure Active Directory**.  Especifique o nome de conexão de "mysftestcluster" e um ponto de extremidade do cluster "tcp://mysftestcluster.southcentralus.cloudapp.azure.com:19000" (ou o ponto de extremidade do cluster em que você está implantando).
 
-Para autenticação baseada em certificado, adicione a **Impressão digital do certificado de servidor** do certificado do servidor usado para criar o cluster.  Em **Certificado do cliente**, adicione a codificação de base 64 do arquivo de certificado do cliente. Veja no pop-up de ajuda do campo informações sobre como obter essa representação de codificação de base 64 do certificado. Essa também é a **Senha** para o arquivo do certificado.  Se você não tiver um certificado do cliente ou do servidor separado, poderá usar o certificado de cluster ou do servidor.
+Para a autenticação baseada em certificado, adicione a **Impressão digital do certificado do servidor** do certificado do servidor usado para criar o cluster.  Em **Certificado do cliente**, adicione a codificação de base 64 do arquivo de certificado do cliente. Veja no pop-up de ajuda do campo informações sobre como obter essa representação de codificação de base 64 do certificado. Essa também é a **Senha** para o arquivo do certificado.  Se você não tiver um certificado do cliente ou do servidor separado, poderá usar o certificado de cluster ou do servidor.
 
 Para as credenciais do Azure Active Directory, adicione a **Impressão digital do certificado de servidor** do certificado do servidor usado para criar o cluster e as credenciais que deseja usar para se conectar ao cluster nos campos **Nome de Usuário** e **Senha**.
 
 Clique em **Adicionar** para salvar a conexão do cluster.
 
-Em seguida, adicione um artefato de compilação ao pipeline para que o pipeline de lançamento possa encontrar a saída da compilação. Selecione **Pipeline** e **Artefatos**->**+Adicionar**.  Em **Fonte (Definição de compilação)**, selecione o pipeline de build criado anteriormente.  Clique em **Adicionar** para salvar o artefato de compilação.
+Em seguida, adicione um artefato de compilação ao pipeline para que o pipeline de lançamento possa encontrar a saída da compilação. Selecione **Pipeline** e **Artefatos**-> **+Adicionar**.  Em **Fonte (Definição de compilação)** , selecione o pipeline de build criado anteriormente.  Clique em **Adicionar** para salvar o artefato de compilação.
 
 ![Adicionar artefato][add-artifact]
 
@@ -191,6 +191,7 @@ Neste tutorial, você aprendeu como:
 > * Implantar e atualizar automaticamente um aplicativo
 
 Prosseguir para o próximo tutorial:
+> [!div class="nextstepaction"]
 > [Configurar monitoramento e diagnóstico para o aplicativo](service-fabric-tutorial-monitoring-aspnet.md)
 
 <!-- Image References -->

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: aa62c06d0c12a42d34ef9b13b8b4533d197d8d19
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 5cac4a46fb35ef955903018028abbe7588c94dc7
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64715807"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66233882"
 ---
 # <a name="tutorial-monitor-network-communication-between-two-virtual-machines-using-the-azure-portal"></a>Tutorial: Monitorar a comunicação de rede entre duas máquinas virtuais usando o portal do Azure
 
@@ -77,7 +77,7 @@ Conclua as etapas em [Criar a primeira VM](#create-the-first-vm) novamente, com 
 | 3 | NOME                                  | myVm2                                                                   |
 | 3 | Tipo de autenticação                   | Cole sua chave pública SSH ou selecione **Senha**e digite uma senha. |
 | 3 | Grupo de recursos                        | Selecione **Usar existente** e, em seguida, **myResourceGroup**.                 |
-| 6 | Extensões                            | **Agente de Rede para Linux**                                             |
+| 6 | Extensões                            | **Agente do Observador de Rede para Linux**                                             |
 
 A VM demora alguns minutos para implantar. Aguarde até que a VM conclua a implantação antes de continuar com as etapas restantes.
 
@@ -109,7 +109,7 @@ Criar uma comunicação de monitor para monitor de conexão usando a porta TCP 2
 
     ![Monitores de conexão](./media/connection-monitor/connection-monitors.png)
 
-2. Selecione o monitor com o nome **myVm1-myVm2(22)**, conforme mostrado na figura anterior, para ver os detalhes para o monitor, conforme mostrado na figura a seguir:
+2. Selecione o monitor com o nome **myVm1-myVm2(22)** , conforme mostrado na figura anterior, para ver os detalhes para o monitor, conforme mostrado na figura a seguir:
 
     ![Detalhes do monitor](./media/connection-monitor/vm-monitor.png)
 

@@ -12,12 +12,12 @@ ms.date: 05/21/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ae8b9709e7294e8cb7819afe3ec9f6eb5a06427
-ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
+ms.openlocfilehash: 7110d7004ae9be58bb150674d516692049507608
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66015418"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299074"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Tutorial: Adicionar um aplicativo local para acesso remoto por meio do Proxy de Aplicativo no Azure Active Directory
 
@@ -51,9 +51,9 @@ Para alta disponibilidade no seu ambiente de produção, é recomendável ter ma
 
 2. O servidor do conector e os servidores de aplicativos Web devem pertencer ao mesmo domínio do Active Directory ou abranger domínios confiáveis. Ter os servidores no mesmo domínio ou em domínios confiáveis é um requisito para usar o SSO (logon único) com IWA (Autenticação Integrada do Windows) e KCD (Delegação Restrita do Kerberos). Se o servidor do conector e os servidores de aplicativos Web estiverem em domínios do Active Directory diferentes, você precisará usar a delegação baseada em recursos para o logon único. Para obter mais informações, consulte [KCD para logon único com Proxy de aplicativo](application-proxy-configure-single-sign-on-with-kcd.md).
 
-#### <a name="software-requirements"></a>Requisitos de software
+#### <a name="tls-requirements"></a>Requisitos de TLS
 
-O servidor do conector Windows precisa ter o TLS 1.2 habilitado antes de instalar o conector do Proxy de Aplicativo. Os conectores existentes com versões abaixo de 1.5.612.0 continuarão funcionando nas versões anteriores do TLS até novo aviso. 
+O servidor do conector Windows precisa ter o TLS 1.2 habilitado antes de instalar o conector do Proxy de Aplicativo.
 
 Para habilitar o TLS 1.2:
 
@@ -67,6 +67,9 @@ Para habilitar o TLS 1.2:
     ```
 
 2. Reinicie o servidor.
+
+>[!Important] 
+> Para fornecer a melhor criptografia da categoria para nossos clientes, estamos atualizando o serviço do Proxy de Aplicativo para limitar o acesso somente aos protocolos TLS 1.2. Com base nas mudanças de prontidão do cliente, as alterações serão gradualmente implementadas para os clientes que estiverem usando somente os protocolos TLS 1.2 e não sofrerão os efeitos dessa alteração. A suspensão do TLS 1.0 e 1.1 será concluída em 31 de agosto de 2019 e os clientes receberão uma notificação com antecedência para se prepararem para essa alteração. Para se preparar para essa alteração, certifique-se de que todas as combinações cliente-servidor e navegador-servidor estejam atualizadas para usar o TLS 1.2 para manter a conexão com o serviço do Proxy de Aplicativo. Elas incluem clientes que seus usuários estão usando para acessar aplicativos publicados pelo Proxy de Aplicativo. Confira Preparação para [TLS 1.2 no Office 365](https://support.microsoft.com/help/4057306/preparing-for-tls-1-2-in-office-365) para obter referências e recursos.
 
 ## <a name="prepare-your-on-premises-environment"></a>Preparar o ambiente local
 

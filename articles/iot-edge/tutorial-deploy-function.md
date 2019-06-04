@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 2694d0f22acfb34c07220ad0145b933457961931
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 5b7d903c8be74e4c0561bb4a857619c9c62f95a9
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64575928"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66239653"
 ---
 # <a name="tutorial-deploy-azure-functions-as-iot-edge-modules"></a>Tutorial: Implantar funções do Azure como módulos do IoT Edge
 
@@ -87,7 +87,7 @@ O arquivo do ambiente armazena as credenciais para o registro de contêiner e as
 
 ### <a name="select-your-target-architecture"></a>Selecione sua arquitetura de destino
 
-No momento, o Visual Studio Code pode desenvolver módulos do C para dispositivos Linux AMD64 e Linux ARM32v7. É necessário selecionar qual arquitetura você deseja usar para cada solução, porque o contêiner é criado e executado de maneira diferente para cada tipo de arquitetura. O padrão é o Linux AMD64. 
+No momento, o Visual Studio Code pode desenvolver módulos em C para os dispositivos Linux AMD64 e Linux ARM32v7. É necessário selecionar qual arquitetura você deseja usar para cada solução, porque o contêiner é criado e executado de maneira diferente para cada tipo de arquitetura. O padrão é o Linux AMD64. 
 
 1. Abra a paleta de comandos e pesquise **Azure IoT Edge: definir a plataforma de destino padrão para a solução Edge** ou selecione o ícone de atalho na barra lateral na parte inferior da janela. 
 
@@ -222,12 +222,11 @@ Você pode usar o portal do Azure para implantar o módulo da função em um dis
 
 ## <a name="view-generated-data"></a>Exibir os dados gerados
 
-Você pode ver todas as mensagens que chegam em seu hub IoT executando **Hub IoT do Azure: iniciar monitoramento de mensagens D2C** na paleta de comandos.
+Você pode ver todas as mensagens que chegam em seu hub IoT executando **Hub IoT do Azure: Iniciar o Monitoramento do Ponto de Extremidade de Evento Interno** na paleta de comandos.
 
-Você também pode filtrar o modo de exibição para ver todas as mensagens que chegam ao seu Hub IoT vindas de um dispositivo específico. Clique com o botão direito do mouse na seção **Dispositivos do Hub IoT do Azure** e selecione **Iniciar monitoramento de mensagens D2C**.
+Você também pode filtrar o modo de exibição para ver todas as mensagens que chegam ao seu Hub IoT vindas de um dispositivo específico. Clique com o botão direito do mouse na seção **Dispositivos do Hub IoT do Azure** e selecione **Iniciar Monitoramento de Ponto de Extremidade Interno**.
 
-Para interromper o monitoramento de mensagens, execute o comando **Hub IoT do Azure: interromper monitoramento de mensagens D2C** na paleta de comandos. 
-
+Para interromper o monitoramento de mensagens, execute o comando **Hub IoT do Azure: Parar o Monitoramento do Ponto de Extremidade de Evento Interno** na paleta de comandos. 
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
@@ -245,4 +244,3 @@ Siga para os próximos tutoriais para conhecer outras formas pelas quais o Azure
 
 > [!div class="nextstepaction"]
 > [Localizar médias usando uma janela flutuante no Azure Stream Analytics](tutorial-deploy-stream-analytics.md)
-

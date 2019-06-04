@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 04/19/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 28ba4397ca5a5fd3c281555238fc7eec8a82943d
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: b0e48a0db63eded9e9c4921d33b03af39656ce0d
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65413662"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299275"
 ---
 # <a name="tutorial-use-feature-flags-in-a-net-core-app"></a>Tutorial: Usar sinalizadores de recursos em um aplicativo .NET Core
 
@@ -27,7 +27,7 @@ As bibliotecas de Gerenciamento de Recursos do .NET Core fornecem suporte idiom�
 
 O Início Rápido [Adicionar sinalizadores de recurso a um aplicativo ASP.NET Core](./quickstart-feature-flag-aspnet-core.md) mostra várias maneiras de adicionar sinalizadores de recurso a um aplicativo ASP.NET Core. Este tutorial explica-os mais detalhadamente. Confira a [documentação do gerenciamento de recursos do ASP.NET Core](https://go.microsoft.com/fwlink/?linkid=2091410) para obter uma referência completa.
 
-Neste tutorial, você aprenderá como:
+Neste tutorial, você aprenderá a:
 
 > [!div class="checklist"]
 > * Adicionar sinalizadores de recursos aos componentes principais de seu aplicativo para controlar a disponibilidade de recursos.
@@ -66,7 +66,7 @@ public class Startup
 }
 ```
 
-Se você usar um filtro nos sinalizadores de recursos, precisará incluir uma biblioteca adicional e registrá-la. O exemplo a seguir mostra como usar um filtro de recurso interno chamado **PercentageFilter"**.
+Se você usar filtros nos sinalizadores de recursos, precisará incluir uma biblioteca adicional e registrá-la. O exemplo a seguir mostra como usar um filtro de recurso interno chamado **PercentageFilter"** .
 
 ```csharp
 using Microsoft.FeatureManagement;
@@ -262,6 +262,6 @@ app.UseForFeature(featureName, appBuilder => {
 
 Neste tutorial, você aprendeu a implementar sinalizadores de recurso em seu aplicativo ASP.NET Core utilizando as bibliotecas `Microsoft.FeatureManagement`. Confira os recursos a seguir para obter mais informações sobre o suporte de gerenciamento de recursos no ASP.NET Core e na Configuração de Aplicativos.
 
-* [Código de exemplo do sinalizador de recurso do ASP.NET Core]()
-* [Documentação de Microsoft.FeatureManagement]()
+* [Código de exemplo do sinalizador de recurso do ASP.NET Core](/azure/azure-app-configuration/quickstart-feature-flag-aspnet-core)
+* [Documentação de Microsoft.FeatureManagement](https://docs.microsoft.com/dotnet/api/microsoft.featuremanagement)
 * [Gerenciar sinalizadores de recursos](./manage-feature-flags.md)

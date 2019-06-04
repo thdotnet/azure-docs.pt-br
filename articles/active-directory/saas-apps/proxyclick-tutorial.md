@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Integração do Azure Active Directory ao Proxyclick | Microsoft Docs'
-description: Saiba como configurar o logon único entre o Azure Active Directory e o Proxyclick.
+description: Neste tutorial, você aprenderá a configurar o logon único entre o Azure Active Directory e o Proxyclick.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -15,240 +15,245 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: b797c7d49495aac90abb31a9214bf2928784a866
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fa146ad5a36cc74a65ec6d3dee98b2ef35bc65ad
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65868747"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240398"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-proxyclick"></a>Tutorial: Integração do Azure Active Directory ao Proxyclick
 
 Neste tutorial, você aprenderá a integrar o Proxyclick ao Azure AD (Azure Active Directory).
-A integração do Proxyclick ao Azure AD oferece os seguintes benefícios:
+Essa integração oferece estes benefícios:
 
-* Você pode controlar no Azure AD quem terá acesso ao Proxyclick.
-* Você pode permitir que os usuários sejam conectados automaticamente ao Proxyclick (Logon Único) com suas contas do Azure AD.
-* Você pode gerenciar suas contas em um único local central – o portal do Azure.
+* Você pode usar o Azure AD para controlar quem tem acesso ao Proxyclick.
+* Você pode permitir que os usuários sejam conectados automaticamente ao Proxyclick (logon único) com suas contas do Azure AD.
+* Gerencie suas contas em um único local: o portal do Azure.
 
-Para conhecer mais detalhadamente a integração de aplicativos de SaaS ao AD do Azure, consulte [O que é o acesso a aplicativos e logon único com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Para saber mais sobre a integração de aplicativos SaaS ao Azure AD, confira [Logon único em aplicativos no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+
 Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para configurar a integração do Azure AD ao Proxyclick, os seguintes itens são necessários:
+Para configurar a integração do Azure AD ao Proxyclick, você precisará ter:
 
-* Uma assinatura do Azure AD. Se não tiver um ambiente do Azure AD, você pode obter uma versão de avaliação de um mês [aqui](https://azure.microsoft.com/pricing/free-trial/)
-* Assinatura habilitada para logon único do Proxyclick
+* Uma assinatura do Azure AD. Se você não tiver um ambiente do Azure AD, inscreva-se em uma [avaliação de um mês](https://azure.microsoft.com/pricing/free-trial/).
+* Uma assinatura do Proxyclick que tenha o logon único habilitado.
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
 Neste tutorial, você configurará e testará o logon único do Azure AD em um ambiente de teste.
 
-* O Proxyclick é compatível com SSO iniciado por **SP** e **IDP**
+* O Proxyclick é compatível com o SSO iniciado por SP e IdP.
 
-## <a name="adding-proxyclick-from-the-gallery"></a>Adição do Proxyclick por meio da galeria
+## <a name="add-proxyclick-from-the-gallery"></a>Adicionar o Proxyclick por meio da galeria
 
-Para configurar a integração do Proxyclick ao Azure AD, é preciso adicioná-lo por meio da galeria à sua lista de aplicativos SaaS gerenciados.
+Para configurar a integração do Proxyclick ao Azure AD, é necessário adicionar o Proxyclick por meio da galeria à lista de aplicativos SaaS gerenciados.
 
-**Para adicionar o Proxyclick por meio da galeria, execute as seguintes etapas:**
+1. No [portal do Azure](https://portal.azure.com), no painel esquerdo, selecione **Azure Active Directory**:
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+    ![Selecione Azure Active Directory](common/select-azuread.png)
 
-    ![O botão Azure Active Directory](common/select-azuread.png)
+2. Acesse **Aplicativos empresariais** > **Todos os aplicativos**:
 
-2. Navegue até **Aplicativos Empresariais** e, em seguida, selecione a opção **Todos os Aplicativos**.
+    ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
-    ![A folha Aplicativos empresariais](common/enterprise-applications.png)
+3. Para adicionar um aplicativo, selecione **Novo aplicativo** na parte superior da janela:
 
-3. Clique no botão **Novo aplicativo** na parte superior da caixa de diálogo para adicionar o novo aplicativo.
+    ![Selecionar Novo aplicativo](common/add-new-app.png)
 
-    ![O botão Novo aplicativo](common/add-new-app.png)
+4. Na caixa de pesquisa, insira **Proxyclick**. Selecione **Proxyclick** nos resultados da pesquisa e, em seguida, selecione **Adicionar**.
 
-4. Na caixa de pesquisa, digite **Proxyclick**, selecione **Proxyclick** no painel de resultados e clique no botão **Adicionar** para adicionar o aplicativo.
-
-     ![Proxyclick na lista de resultados](common/search-new-app.png)
+     ![Resultados da Pesquisa](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-Nesta seção, você fará a configuração e o teste do logon único do Azure AD com o Proxyclick, com base em um usuário de teste chamado **Brenda Fernandes**.
-Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Proxyclick.
+Nesta seção, você configurará e testará o logon único do Azure AD com o Proxyclick usando um usuário de teste chamado Brenda Fernandes.
+Para habilitar o logon único, você precisará estabelecer uma relação entre um usuário do Azure AD e o usuário correspondente no Proxyclick.
 
-Para fazer a configuração e o teste do logon único do Azure AD com o Proxyclick, conclua os seguintes blocos de construção:
+Para configurar e testar o logon único do Azure AD com o Proxyclick, você precisará concluir estas etapas:
 
-1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** – para habilitar seus usuários a usar esse recurso.
-2. **[Configurar o Logon Único do Proxyclick](#configure-proxyclick-single-sign-on)** – para definir as configurações de Logon Único no lado do aplicativo.
-3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
-4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
-5. **[Criar usuário de testes do Proxyclick](#create-proxyclick-test-user)**: para ter um equivalente de Brenda Fernandes no Proxyclick que esteja vinculado à representação do usuário no Azure AD.
-6. **[Teste o logon único](#test-single-sign-on)** – para verificar se a configuração funciona.
+1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** para habilitar o recurso para os usuários.
+2. **[Configurar o logon único do Proxyclick](#configure-proxyclick-single-sign-on)** no lado do aplicativo.
+3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD.
+4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** para habilitar o logon único do Azure AD para o usuário.
+5. **[Criar um usuário de teste do Proxyclick](#create-a-proxyclick-test-user)** que esteja vinculado à representação do usuário do Azure AD.
+6. **[Testar o logon único](#test-single-sign-on)** para verificar se a configuração funciona.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
 
 Nesta seção, você habilitará o logon único do Azure AD no portal do Azure.
 
-Para configurar o logon único do Azure AD com o Proxyclick, execute as seguintes etapas:
+Para configurar o logon único do Azure AD com o Proxyclick, siga estas etapas:
 
-1. No [portal do Azure](https://portal.azure.com/), na página de integração do aplicativo **Proxyclick**, clique em **Logon único**.
+1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do Proxyclick, selecione **Logon único**:
 
-    ![Link Configurar logon único](common/select-sso.png)
+    ![Selecionar logon único](common/select-sso.png)
 
-2. Na caixa de diálogo **Selecionar um método de logon único**, selecione o modo **SAML/WS-Fed** para habilitar o logon único.
+2. Na caixa de diálogo **Selecionar um método de logon único**, selecione o modo **SAML/WS-Fed** para habilitar o logon único:
 
-    ![Modo de seleção de logon único](common/select-saml-option.png)
+    ![Selecionar um método de logon único](common/select-saml-option.png)
 
-3. Na página **Definir logon único com SAML**, clique no ícone **Editar** para abrir a caixa de diálogo **Configuração básica do SAML**.
+3. Na página **Configurar logon único com SAML**, selecione o ícone **Editar** para abrir a caixa de diálogo **Configuração Básica de SAML**:
 
-    ![Editar a Configuração Básica de SAML](common/edit-urls.png)
+    ![Ícone Editar](common/edit-urls.png)
 
-4. Na seção **Configuração Básica do SAML**, caso deseje configurar o aplicativo no modo iniciado por **IDP** execute as seguintes etapas:
+4. Na caixa de diálogo **Configuração Básica do SAML**, caso deseje configurar o aplicativo no modo iniciado por IdP, execute as etapas a seguir.
 
-    ![Informações de logon único em Domínio e URLs do Proxyclick](common/idp-intiated.png)
+    ![Caixa de diálogo Configuração Básica de SAML](common/idp-intiated.png)
 
-     a. No **identificador** caixa de texto, digite uma URL usando o seguinte padrão: `https://saml.proxyclick.com/init/<companyId>`
+    1. Na caixa **Identificador**, digite uma URL neste padrão:
+   
+       `https://saml.proxyclick.com/init/<companyId>`
 
-    b. No **URL de resposta** caixa de texto, digite uma URL usando o seguinte padrão: `https://saml.proxyclick.com/consume/<companyId>`
+    1. Na caixa **URL de Resposta**, digite uma URL neste padrão:
 
-5. Clique em **Definir URLs adicionais** e execute o passo seguinte se quiser configurar a aplicação no modo **SP** iniciado:
+       `https://saml.proxyclick.com/consume/<companyId>`
+
+5. Caso queira configurar o aplicativo no modo iniciado por SP, selecione **Definir URLs adicionais**. Na caixa **URL de Logon**, insira uma URL neste padrão:
+   
+   `https://saml.proxyclick.com/init/<companyId>`
 
     ![Informações de logon único em Domínio e URLs do Proxyclick](common/metadata-upload-additional-signon.png)
 
-    Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://saml.proxyclick.com/init/<companyId>`
+    
 
     > [!NOTE]
-    > Esses valores não são reais. Você atualizará esses valores com o identificador, URL de resposta e URL de logon reais, explicado mais adiante no tutorial.
+    > Esses valores são espaços reservados. Você precisará usar o identificador, a URL de resposta, a URL de logon reais. As etapas para obter esses valores são descritas mais adiante neste tutorial.
 
-6. Na página **Configurar logon único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Fazer o download** para fazer o download do **Certificado (Base64)** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
+6. Na página **Configurar o Logon Único com o SAML**, na seção **Certificado de Autenticação SAML**, selecione o link **Baixar** ao lado do **Certificado (Base64)** , de acordo com suas necessidades e salve o certificado no computador:
 
-    ![O link de download do Certificado](common/certificatebase64.png)
+    ![Link de download do certificado](common/certificatebase64.png)
 
-7. Na seção **Configurar o Proxyclick**, copie as URLs apropriadas de acordo com suas necessidades.
+7. Na seção **Configurar o Proxyclick**, copie as URLs apropriadas de acordo com suas necessidades:
 
-    ![Copiar URLs de configuração](common/copy-configuration-urls.png)
+    ![Copiar as URLs de configuração](common/copy-configuration-urls.png)
 
-    a. URL de logon
+    1. **URL de Logon**.
 
-    b. Identificador do Azure AD
+    1. **Identificador do Azure AD**.
 
-    c. URL de logoff
+    1. **URL de Logoff**.
 
 ### <a name="configure-proxyclick-single-sign-on"></a>Configurar o logon único do Proxyclick
 
-1. Em outra janela do navegador da Web, entre no site de empresa do Proxyclick como administrador.
+1. Em uma nova janela do navegador da Web, entre em seu site de empresa do Proxyclick como administrador.
 
-2. Selecione **Conta e configurações**.
+2. Selecione **Conta e Configurações**:
 
-    ![Configuração do Proxyclick](./media/proxyclick-tutorial/configure1.png)
+    ![Selecionar Conta e Configurações](./media/proxyclick-tutorial/configure1.png)
 
-3. Role para baixo até **INTEGRAÇÕES** e selecione **SAML**.
+3. Role a página para baixo até a seção **Integrações** e selecione **SAML**:
 
-    ![Configuração do Proxyclick](./media/proxyclick-tutorial/configure2.png)
+    ![Selecionar SAML](./media/proxyclick-tutorial/configure2.png)
 
-4. Na seção **SAML**, execute as seguintes etapas:
+4. Na seção **SAML**, execute as etapas a seguir.
 
-    ![Configuração do Proxyclick](./media/proxyclick-tutorial/configure3.png)
+    ![Seção SAML](./media/proxyclick-tutorial/configure3.png)
 
-     a. Copie o valor **URL de Consumidor SAML** e cole-o na caixa de texto **URL de resposta** na seção **Configuração Básica de SAML** no portal do Azure.
+    1. Copie o valor da **URL do Consumidor do SAML** e cole-o na caixa **URL de Resposta** na caixa de diálogo **Configuração Básica do SAML** no portal do Azure.
 
-    b. Copie o valor da **URL de redirecionamento SSO SAML** e cole nas caixas de texto **URL de logon** e **Identificador** na seção **Configuração Básica de SAML** do portal do Azure.
+    1. Copie o valor da **URL de Redirecionamento de SSO do SAML** e cole-o nas caixas **URL de Entrada** e **Identificador** na caixa de diálogo **Configuração Básica do SAML** no portal do Azure.
 
-    c. Selecione o **Método de solicitação SAML** como **Redirecionamento de HTTP**.
+    1. Na lista **Método de Solicitação do SAML**, selecione **Redirecionamento HTTP**.
 
-    d. Na caixa de texto **Emissor**, cole o valor de **Identificador do Azure AD** copiado do portal do Azure.
+    1. Na caixa **Emissor**, cole o valor do **Identificador do Azure AD** copiado do portal do Azure.
 
-    e. Na caixa de texto **URL do Ponto de extremidade SAML 2.0**, cole o valor da **URL de Logon** copiado do portal do Azure.
+    1. Na caixa **URL de Ponto de Extremidade do SAML 2.0**, cole o valor da **URL de Logon** copiado do portal do Azure.
 
-    f. Abra o arquivo de certificado baixado do Portal do Azure no Bloco de Notas e cole-o na caixa de texto **Certificado**.
+    1. No Bloco de notas, abra o arquivo de certificado baixado no portal do Azure. Cole o conteúdo desse arquivo na caixa **Certificado**.
 
-    g. Clique em **Salvar Alterações**.
+    1. Selecione **Salvar alterações**.
 
-### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
+### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
-O objetivo desta seção é criar um usuário de teste no Portal do Azure chamado Brenda Fernandes.
+Nesta seção, você criará um usuário de teste chamado Brenda Fernandes no portal do Azure.
 
-1. No Portal do Azure, no painel esquerdo, selecione **Azure Active Directory**, selecione **Usuários** e, em seguida, **Todos os usuários**.
+1. No portal do Azure, selecione **Azure Active Directory** no painel esquerdo, **Usuários** e, em seguida, **Todos os usuários**:
 
-    ![Os links “Usuários e grupos” e “Todos os usuários”](common/users.png)
+    ![Selecionar Todos os usuários](common/users.png)
 
-2. Selecione **Novo usuário** na parte superior da tela.
+2. Selecione **Novo usuário** na parte superior da tela:
 
-    ![Botão Novo usuário](common/new-user.png)
+    ![Selecionar Novo usuário](common/new-user.png)
 
-3. Nas Propriedades do usuário, execute as etapas a seguir.
+3. Na caixa de diálogo **Usuário**, execute as etapas a seguir.
 
-    ![A caixa de diálogo Usuário](common/user-properties.png)
+    ![Caixa de diálogo Usuário](common/user-properties.png)
 
-    a. No campo **Nome**, insira **BrendaFernandes**.
+    1. Na caixa **Nome**, insira **BrendaFernandes**.
   
-    b. No campo **Nome de usuário**, digite brittasimon@yourcompanydomain.extension. Por exemplo, BrittaSimon@contoso.com
+    1. Na caixa **Nome de usuário**, insira **BrendaFernandes@\<domíniodaempresa>.\<extensão>** . (Por exemplo, BrittaSimon@contoso.com.)
 
-    c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
+    1. Selecione **Mostrar Senha** e, em seguida, anote o valor mostrado na caixa **Senha**.
 
-    d. Clique em **Criar**.
+    1. Selecione **Criar**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-Nesta seção, você habilita Brenda Fernandes para usar o logon único do Azure concedendo acesso ao Proxyclick.
+Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo a ela acesso ao Proxyclick.
 
-1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **Proxyclick**.
+1. No portal do Azure, selecione **Aplicativos empresariais**, **Todos os aplicativos** e, em seguida, **Proxyclick**.
 
     ![Folha de aplicativos empresariais](common/enterprise-applications.png)
 
-2. Na lista de aplicativos, escolha **Proxyclick**.
+2. Na lista de aplicativos, selecione **Proxyclick**.
 
-    ![O link Proxyclick na lista de aplicativos](common/all-applications.png)
+    ![Lista de aplicativos](common/all-applications.png)
 
-3. No menu à esquerda, selecione **Usuários e grupos**.
+3. No painel esquerdo, selecione **Usuários e grupos**:
 
-    ![O link “Usuários e grupos”](common/users-groups-blade.png)
+    ![Selecionar Usuários e grupos](common/users-groups-blade.png)
 
-4. Escolha o botão **Adicionar usuário** e, em seguida, escolha **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
+4. Selecione **Adicionar usuário** e, em seguida, selecione **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
 
-    ![O painel Adicionar Atribuição](common/add-assign-user.png)
+    ![Selecione Adicionar usuário](common/add-assign-user.png)
 
-5. Na caixa de diálogo **Usuários e grupos**, escolha **Brenda Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
+5. Na caixa de diálogo **Usuários e grupos**, selecione **Brenda Fernandes** na lista de usuários e, em seguida, clique no botão **Selecionar** na parte inferior da janela.
 
-6. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar função**, escolha a função de usuário apropriada na lista e clique no botão **Selecionar** na parte inferior da tela.
+6. Se você esperar um valor de função na declaração SAML, na caixa de diálogo **Selecionar Função**, selecione a função apropriada para o usuário na lista. Clique no botão **Selecionar** na parte inferior da janela.
 
-7. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
+7. Na caixa de diálogo **Adicionar Atribuição**, selecione **Atribuir**.
 
-### <a name="create-proxyclick-test-user"></a>Criar usuário de testes do Proxyclick
+### <a name="create-a-proxyclick-test-user"></a>Criar um usuário de testes do Proxyclick
 
-Para permitir que os usuários do Azure AD entrem no Proxyclick, eles devem ser provisionados no Proxyclick. No caso do Proxyclick, o provisionamento é uma tarefa manual.
+Para permitir que os usuários do Azure AD entrem no Proxyclick, você precisará adicioná-los ao Proxyclick. Você precisará adicioná-los manualmente.
 
-**Para provisionar uma conta de usuário, execute as seguintes etapas:**
+Para criar uma conta de usuário, siga estas etapas:
 
-1. Entre no site de empresa do Proxyclick como administrador.
+1. Entre em seu site de empresa do Proxyclick como administrador.
 
-1. Clique em **Colegas** na barra de navegação superior.
+1. Selecione **Colegas** na parte superior da janela:
 
-    ![Adicionar Funcionário](./media/proxyclick-tutorial/user1.png)
+    ![Selecionar Colegas](./media/proxyclick-tutorial/user1.png)
 
-1. Clique em **Adicionar Colega**
+1. Selecione **Adicionar Colega**:
 
-    ![Adicionar Funcionário](./media/proxyclick-tutorial/user2.png)
+    ![Selecionar Adicionar Colega](./media/proxyclick-tutorial/user2.png)
 
-1. Na seção **Adicionar um colega**, execute as seguintes etapas:
+1. Na seção **Adicionar um colega**, execute as etapas a seguir.
 
-    ![Adicionar Funcionário](./media/proxyclick-tutorial/user3.png)
+    ![Adicionar uma seção de colega](./media/proxyclick-tutorial/user3.png)
 
-     a. Na caixa de texto **Email**, digite o endereço de email do usuário, como brittasimon@contoso.com.
+    1. Na caixa **Email**, insira o endereço de email do usuário. Nesse caso, **brendafernandes\@contoso.com**.
 
-    b. Na caixa de texto **Nome**, digite o nome do usuário, como Brenda.
+    1. Na caixa **Nome**, insira o nome do usuário. Nesse caso, **Brenda**.
 
-    c. Na caixa de texto **Sobrenome**, digite o sobrenome do usuário, como Fernandes.
+    1. Na caixa **Sobrenome**, insira o sobrenome do usuário. Nesse caso, use **Fernandes**.
 
-    d. Clique em **Adicionar Usuário**.
+    1. Selecione **Adicionar usuário**.
 
-### <a name="test-single-sign-on"></a>Testar logon único 
+### <a name="test-single-sign-on"></a>Testar logon único
 
-Nesta seção, você testará sua configuração de logon único do Azure AD usando o Painel de Acesso.
+Agora você precisará testar a configuração de logon único do Azure AD usando o Painel de Acesso.
 
-Ao clicar no bloco do Proxyclick no Painel de Acesso, você deverá ser conectado automaticamente ao Proxyclick no qual você configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Ao selecionar o bloco do Proxyclick no Painel de Acesso, você deverá ser conectado automaticamente à instância do Proxyclick, para a qual você configurou o SSO. Para obter mais informações sobre o Painel de Acesso, confira [Acessar e usar aplicativos no portal Meus Aplicativos](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Tutoriais para a integração de aplicativos SaaS ao Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 

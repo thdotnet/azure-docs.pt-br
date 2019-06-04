@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 09/15/2017
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: c081a6296e1fae89f24a2c3ddb1ae66f7a3f94aa
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: fe01d55b17c0f6f6dd6a621fbac0cf4d3a268ee3
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58662535"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306776"
 ---
 # <a name="tutorial-create-container-images-on-a-linux-service-fabric-cluster"></a>Tutorial: Criar imagens de contêiner em um cluster do Service Fabric do Linux
 
@@ -63,7 +63,7 @@ A solução contém duas pastas e um arquivo ' docker-compose.yml'. A pasta 'azu
 
 ## <a name="create-container-images"></a>Criar imagens de contêiner
 
-Dentro do diretório **azure-vote'**, execute o seguinte comando para criar a imagem para o componente Web de front-end. Esse comando usa o Dockerfile nesse diretório para montar a imagem.
+Dentro do diretório **azure-vote'** , execute o seguinte comando para criar a imagem para o componente Web de front-end. Esse comando usa o Dockerfile nesse diretório para montar a imagem.
 
 ```bash
 docker build -t azure-vote-front .
@@ -88,7 +88,7 @@ tiangolo/uwsgi-nginx-flask   python3.6           590e17342131        5 days ago 
 
 ## <a name="deploy-azure-container-registry"></a>Implantar o Registro de Contêiner do Azure
 
-Primeiro, execute o comando **logon az** para fazer logon em sua conta do Azure.
+Primeiro, execute o comando **az login** para entrar em sua conta do Azure.
 
 ```bash
 az login
@@ -116,9 +116,9 @@ az acr create --resource-group <myResourceGroup> --name <acrName> --sku Basic --
 
 Durante o restante deste tutorial, utilizamos "acrName" como um espaço reservado para o nome do registro de contêiner escolhido. Anote este valor.
 
-## <a name="log-in-to-your-container-registry"></a>Fazer logon no Registro de contêiner
+## <a name="sign-in-to-your-container-registry"></a>Entre em seu registro de contêiner
 
-Faça logon na instância do ACR antes de enviar imagens por push a ele. Use o comando **az acr login** para concluir a operação. Forneça o nome exclusivo fornecido para o Registro de contêiner quando ele foi criado.
+Entre na instância do ACR antes de enviar imagens por push a ela. Use o comando **az acr login** para concluir a operação. Forneça o nome exclusivo fornecido para o Registro de contêiner quando ele foi criado.
 
 ```bash
 az acr login --name <acrName>

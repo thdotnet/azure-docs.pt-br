@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 03/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 53e495a3c2d82738e1008ead84a4124e44435c9a
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: c814f4bb0cc24350e45400d141c97d1b2eb4998d
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65864372"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237807"
 ---
 # <a name="quickstart-use-your-own-notebook-server-to-get-started-with-azure-machine-learning"></a>Início Rápido: Usar seu próprio servidor do notebook para começar a usar o Azure Machine Learning
 
@@ -33,14 +33,29 @@ Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de co
 
 * Um servidor de notebook do Python 3.6 com o SDK do Azure Machine Learning instalado
 * Um workspace de serviço do Azure Machine Learning
-* Um arquivo de configuração do workspace ( **.azureml/config.json**).
+* Um arquivo de configuração do espaço de trabalho ( **.azureml/config.json**).
 
-Obtenha todos esses pré-requisitos em [Criar um workspace de serviço do Azure Machine Learning](setup-create-workspace.md#portal).
+Obtenha todos esses pré-requisitos em [Criar um workspace de serviço do Azure Machine Learning](setup-create-workspace.md#sdk).
+
 
 
 ## <a name="use-the-workspace"></a>Usar o workspace
 
-Crie um script ou inicie um notebook no mesmo diretório que o do seu arquivo de configuração do workspace. Execute este código que usa as APIs básicas do SDK para acompanhar execuções do experimento.
+Crie um script ou inicie um notebook no mesmo diretório do arquivo de configuração do espaço de trabalho ( **.azureml/config.json**).
+
+### <a name="attach-to-workspace"></a>Anexar ao espaço de trabalho
+
+Esse código lê as informações do arquivo de configuração para anexar ao espaço de trabalho.
+
+```
+from azureml.core import Workspace
+
+ws = Workspace.from_config()
+```
+
+### <a name="log-values"></a>Valores de log
+
+Execute este código que usa as APIs básicas do SDK para acompanhar execuções do experimento.
 
 1. Crie um experimento no workspace.
 1. Registre em log um único valor para o experimento.

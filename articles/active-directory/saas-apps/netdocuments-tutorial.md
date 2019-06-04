@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: d42e266de9c958c8a71cc5fa680a78c2278cec6e
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 1a1acde81baa596e71b7e39763b0464c8de2fb86
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956781"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244169"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-netdocuments"></a>Tutorial: Integração do Active Directory do Azure ao NetDocuments
 
@@ -104,12 +104,12 @@ Para configurar o logon único do Azure AD com o NetDocuments, execute as seguin
 
     ![Informações de logon único de domínio e URLs do NetDocuments](common/sp-reply.png)
 
-     a. Na caixa de texto **URL de Logon**, digite uma URL usando o seguinte padrão: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`
+    a. Na caixa de texto **URL de Logon**, digite uma URL usando o seguinte padrão: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`
 
     b. No **URL de resposta** caixa de texto, digite uma URL usando o seguinte padrão: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`
 
     > [!NOTE]
-    > Esses valores não são reais. Atualize esses valores com a URL de resposta e a URL de logon propriamente ditas. A ID do repositório é um valor começando com CA- seguido por um código de oito caracteres associado com seu repositório do NetDocuments. Você pode conferir o [documento de suporte de identidade federada do NetDocuments](https://support.netdocuments.com/hc/en-us/articles/205220410-Federated-Identity-Login) para obter mais informações. Como alternativa, você pode contatar a [equipe de suporte ao cliente do NetDocuments](https://support.netdocuments.com/hc/) para obter esses valores se tiver dificuldades para configurar usando as informações acima. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
+    > Esses valores não são reais. Atualize esses valores com a URL de resposta e a URL de logon propriamente ditas. A ID do repositório é um valor que começa com **CA-** seguido por um código de oito caracteres associado a seu repositório do NetDocuments. Você pode conferir o [documento de suporte de identidade federada do NetDocuments](https://support.netdocuments.com/hc/en-us/articles/205220410-Federated-Identity-Login) para obter mais informações. Como alternativa, você pode contatar a [equipe de suporte ao cliente do NetDocuments](https://support.netdocuments.com/hc/) para obter esses valores se tiver dificuldades para configurar usando as informações acima. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
 5. Na página **Configurar Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Baixar** para baixar o **XML de Metadados de Federação** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
 
@@ -143,7 +143,7 @@ Para configurar o logon único do Azure AD com o NetDocuments, execute as seguin
    
     ![Identidade Federada](./media/netdocuments-tutorial/ic795049.png "Identidade Federada")
    
-     a. Para **Tipo de servidor de identidade federada**, selecione **Serviços de Federação do Active Directory**.
+    a. Para **Tipo de servidor de identidade federada**, selecione **Serviços de Federação do Active Directory**.
    
     b. Clique em **Escolher arquivo**para carregar o arquivo de metadados que você baixou do Portal do Azure.
    

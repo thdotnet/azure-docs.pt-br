@@ -9,12 +9,12 @@ ms.date: 11/01/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 194ebcc1f1779c927503e09e9c42a96afddb12c9
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a0530739428e18d01209f94345ae53dfb743d80b
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64575814"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66239678"
 ---
 # <a name="tutorial-perform-image-classification-at-the-edge-with-custom-vision-service"></a>Tutorial: Realizar a classificação de imagem na borda com o Serviço de Visão Personalizada
 
@@ -437,7 +437,7 @@ Em seu dispositivo, exiba os logs do módulo cameraCapture para ver as mensagens
    iotedge logs cameraCapture
    ```
 
-No Visual Studio Code, clique com o botão direito do mouse no nome do dispositivo do IoT Edge e selecione **Iniciar o monitoramento de mensagens D2C**. 
+No Visual Studio Code, clique com o botão direito no nome do dispositivo do IoT Edge e selecione **Iniciar o Monitoramento de Ponto de Extremidade Interno**. 
 
 Os resultados do módulo da Visão Personalizada, que são enviados como mensagens do módulo cameraCapture, incluem a probabilidade de a imagem ser uma cicuta (hemlock) ou cerejeira (cherry tree). Como a imagem é uma cicuta, você deve ver a probabilidade como 1.0. 
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7a2d793a1fbd68d6a71f48b556a77ddcaaaf111
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 93a1ad1f9fbc01cd06b3aaffc8a718634e8454d6
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66112183"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357040"
 ---
 # <a name="tutorial-integrate-displayr-with-azure-active-directory"></a>Tutorial: Integrar o Displayr com o Azure Active Directory
 
@@ -80,7 +80,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
 1. Na seção **Configuração Básica do SAML**, execute a seguinte etapa:
 
-     a. Na caixa de texto **URL de Entrada** digite uma URL usando o seguinte padrão: `https://<YOURDOMAIN>.displayr.com`
+    a. Na caixa de texto **URL de Entrada** digite uma URL usando o seguinte padrão: `https://<YOURDOMAIN>.displayr.com`
 
     b. Na caixa de texto **Identificador (ID da Entidade)** , digite uma URL usando o seguinte padrão: `<YOURDOMAIN>.displayr.com`
 
@@ -91,13 +91,13 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
    ![O link de download do Certificado](common/certificatebase64.png)
 
-1. O aplicativo Displayr espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone  **Editar** para abrir a caixa de diálogo Atributos do usuário.
+1. O aplicativo Displayr espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo Atributos de usuário.
 
     ![image](common/edit-attribute.png)
 
-1. Além do indicado acima, o aplicativo Displayr espera que mais alguns atributos sejam passados novamente na resposta SAML. Na seção **Atributos e Declarações de Usuário** da caixa de diálogo **Declarações de Grupo (Versão Prévia)**  , execute as seguintes etapas:
+1. Além do indicado acima, o aplicativo Displayr espera que mais alguns atributos sejam passados novamente na resposta SAML. Na seção**Atributos e Declarações de Usuário** na caixa de diálogo **Declarações de Grupo (Versão Prévia)** , execute as seguintes etapas:
 
-     a. Clique na **caneta** ao lado de **Grupos retornados na declaração**.
+    a. Clique na **caneta** ao lado de **Grupos retornados na declaração**.
 
     ![image](./media/displayr-tutorial/config04.png)
 
@@ -121,7 +121,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
 1. Para automatizar a configuração no Displayr, é necessário instalar a **Extensão do navegador de Entrada Segura dos Meus Aplicativos**, clicando em **Instalar a extensão**.
 
-    ![Extensão dos meus aplicativos](common/install-myappssecure-extension.png)
+    ![Extensão Meus Aplicativos](common/install-myappssecure-extension.png)
 
 2. Depois de adicionar a extensão ao navegador, clique em **Instalação do Displayr**. Você será direcionado para o aplicativo Displayr. Em seguida, forneça as credenciais de administrador para entrar no Displayr. A extensão do navegador configurará automaticamente o aplicativo e automatizará as etapas de 3 a 6.
 
@@ -141,7 +141,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
     ![Configuração](./media/displayr-tutorial/config03.png)
 
-     a. Marque a caixa **Habilitar Logon Único (SAML)** .
+    a. Marque a caixa **Habilitar Logon Único (SAML)** .
 
     b. Copie o valor real do **Identificador** da seção **Configuração Básica de SAML** do Azure AD e cole-o na caixa de texto **Emissor**.
 
@@ -205,7 +205,7 @@ Para permitir que os usuários do Azure AD entrem no Displayr, eles precisam ser
 
     ![Configuração do Displayr](./media/displayr-tutorial/config06.png)
 
-     a. Na caixa de texto **Nome**, insira o nome do usuário como **Brendafernandes**.
+    a. Na caixa de texto **Nome**, insira o nome do usuário como **Brendafernandes**.
 
     b. Na caixa de texto **Email**, insira o email do usuário como `Brittasimon@contoso.com`.
 

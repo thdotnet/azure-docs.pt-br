@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: overview
-ms.date: 05/22/2019
+ms.date: 05/23/2019
 ms.author: alkohli
-ms.openlocfilehash: 2b021975983858386cd7c847ba11a26f4feb9562
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 18c6175ede1e8459d3a9ca60f7890cc43d75e5ba
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66150451"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236291"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box: Perguntas frequentes
 
@@ -184,7 +184,7 @@ a. Se o dispositivo chegou danificado ou se há evidência de adulteração, nã
 a. Para o serviço Data Box, a Microsoft cuida do envio entre o datacenter do Azure. Caso deseje usar sua própria transportadora, use o serviço de Importação/Exportação do Azure. Para obter mais informações, acesse [O que é o serviço de Importação/Exportação do Azure?](../storage/common/storage-import-export-service.md)
 
 ### <a name="q-will-my-data-box-devices-cross-country-borders-during-shipping"></a>P. Meus dispositivos Data Box atravessarão fronteiras de países durante o envio?
-a. Todos os dispositivos Data Box são enviados do mesmo país de destino e não cruzarão fronteiras internacionais. A única exceção é para pedidos na União Europeia (UE), onde os dispositivos podem ser enviados de e para qualquer país da UE.
+a. Todos os dispositivos Data Box são enviados do mesmo país de destino e não cruzarão fronteiras internacionais. A única exceção é para pedidos na União Europeia (UE), onde os dispositivos podem ser enviados de e para qualquer país da UE. Isso se aplica aos dispositivos Data Box e Data Box Heavy.
 
 ### <a name="q-e-ink-display-is-not-showing-the-return-shipment-label-what-should-i-do"></a>P. A tela de papel eletrônico não está mostrando a etiqueta de remessa de devolução. O que devo fazer?
 a. Se a tela de papel eletrônico não mostrar a etiqueta de remessa de devolução, execute as seguintes etapas:
@@ -247,7 +247,7 @@ a.  Os seguintes relatórios estão disponíveis para dar suporte à cadeia de c
 a.  Os logs de acompanhamento da transportadora são capturados no histórico de pedidos do Data Box. Esse relatório estará disponível para você depois que o dispositivo retornar ao datacenter do Azure e os dados nos discos do dispositivo forem limpos. Para uma necessidade imediata, acesse também o site da transportadora diretamente com o número de acompanhamento do pedido e obtenha as informações de rastreamento.
 
 ### <a name="can-i-transport-the-data-box-to-azure-datacenter"></a>Posso transportar o Data Box para o datacenter do Azure? 
-a.   Não. No momento, o datacenter do Azure não aceita a entrega do Data Box de clientes ou de transportadoras além da UPS.
+a.  Não. No momento, o datacenter do Azure não aceita a entrega do Data Box de clientes ou de transportadoras além da UPS.
 
 
 ## <a name="next-steps"></a>Próximas etapas

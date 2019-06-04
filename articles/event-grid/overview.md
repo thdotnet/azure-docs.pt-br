@@ -6,15 +6,15 @@ author: banisadr
 manager: timlt
 ms.service: event-grid
 ms.topic: overview
-ms.date: 04/04/2019
+ms.date: 05/25/2019
 ms.author: babanisa
 ms.custom: seodec18
-ms.openlocfilehash: 8ceb3d2d97c63bd19333336314beb6c7444288e9
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: bfc8b62c61e2b9d01ffa0c582468b6236c92cccc
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59578400"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257936"
 ---
 # <a name="what-is-azure-event-grid"></a>O que é a Grade de Eventos do Azure?
 
@@ -22,7 +22,7 @@ A Grade de Eventos do Azure permite compilar facilmente aplicativos com as arqui
 
 Você pode usar filtros para encaminhar eventos específicos a pontos de extremidade diferentes, multicast para vários pontos de extremidade e verificar se os eventos são distribuídos de forma confiável.
 
-Atualmente, a Grade de Eventos do Azure está disponível em todas as regiões públicas. Ainda não disponível nas nuvens do Azure Alemanha, Azure na China 21Vianet nem Azure Governamental.
+A Grade de Eventos do Azure é implantada para maximizar a disponibilidade distribuindo-se nativamente entre vários domínios de falha em todas as regiões e nas zonas de disponibilidade (em regiões onde há suporte). Atualmente, a Grade de Eventos do Azure está disponível em todas as regiões públicas. Ainda não disponível nas nuvens do Azure Alemanha, Azure na China 21Vianet nem Azure Governamental.
 
 Este artigo fornece uma visão geral da Grade de Eventos do Azure. Se você quiser começar a usar a Grade de Eventos, confira [Criar e rotear eventos personalizados com a Grade de Eventos do Azure](custom-event-quickstart.md). 
 

@@ -1,19 +1,19 @@
 ---
-title: Tutorial sobre o Monitoramento e Ajuste no Banco de Dados do Azure para PostgreSQL
-description: Este tutorial sobre o Monitoramento e Ajuste no Banco de Dados do Azure para PostgreSQL.
+title: Tutorial sobre Monitoramento e Ajuste no Banco de Dados do Azure para PostgreSQL – Servidor único
+description: Este tutorial descreve o monitoramento e o ajuste no Banco de Dados do Azure para PostgreSQL – Servidor único.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: tutorial
-ms.date: 09/24/2018
-ms.openlocfilehash: f05e0eef7680b08ce116cc0243d944f6a1db597c
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.date: 5/6/2019
+ms.openlocfilehash: dcd8363db33809e2a33885f43e570c53807505fd
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53536434"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65073077"
 ---
-# <a name="tutorial-monitor-and-tune-azure-database-for-postgresql"></a>Tutorial: Monitorar e ajustar o Banco de Dados do Azure para PostgreSQL
+# <a name="tutorial-monitor-and-tune-azure-database-for-postgresql---single-server"></a>Tutorial: Monitorar e ajustar o Banco de Dados do Azure para PostgreSQL – Servidor único
 
 Banco de Dados do Azure para PostgreSQL tem recursos que ajudam você a compreender e melhorar o desempenho do servidor. Neste tutorial, você aprenderá a:
 > [!div class="checklist"]
