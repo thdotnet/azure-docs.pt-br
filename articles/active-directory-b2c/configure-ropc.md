@@ -70,8 +70,8 @@ Use seu aplicativo favorito de desenvolvimento de API para gerar uma chamada de 
 
 | Chave | Value |
 | --- | ----- |
-| Nome de Usuário | leadiocl@outlook.com |
-| Senha | Passxword1 |
+| username | leadiocl@outlook.com |
+| password | Passxword1 |
 | grant_type | Senha |
 | scope | openid \<bef2222d56-552f-4a5b-b90a-1988a7d634c3 offline_access |
 | client_id | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
@@ -113,7 +113,7 @@ Construa uma chamada POST como a monstrada aqui com as informações na tabela a
 | grant_type | refresh_token |
 | response_type | id_token |
 | client_id | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
-| recurso | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
+| resource | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
 | refresh_token | eyJraWQiOiJacW9pQlp2TW5pYVc2MUY0TnlfR3... |
 
 *Client_id* e *resource* são os valores que você anotou anteriormente como a ID do aplicativo. *Refresh_token* é o token recebido na chamada de autenticação mencionada anteriormente.
