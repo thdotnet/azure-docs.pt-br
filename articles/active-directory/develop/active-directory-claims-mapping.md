@@ -71,7 +71,7 @@ Há determinados conjuntos de declarações que definem como e quando elas são 
 | appctxsender |
 | appid |
 | appidacr |
-| asserção |
+| assertion |
 | at_hash |
 | aud |
 | auth_data |
@@ -87,7 +87,7 @@ Há determinados conjuntos de declarações que definem como e quando elas são 
 | cloud_graph_host_name |
 | cloud_instance_name |
 | cnf |
-| código |
+| code |
 | controls |
 | credential_keys |
 | csr |
@@ -103,9 +103,9 @@ Há determinados conjuntos de declarações que definem como e quando elas são 
 | exp |
 | expires_on |
 | grant_type |
-| grafo |
+| graph |
 | group_sids |
-| Grupos |
+| groups |
 | hasgroups |
 | hash_alg |
 | home_oid |
@@ -156,10 +156,10 @@ Há determinados conjuntos de declarações que definem como e quando elas são 
 | refresh_token |
 | refreshtoken |
 | request_nonce |
-| Recurso |
-| função |
-| funções |
-| escopo |
+| resource |
+| role |
+| roles |
+| scope |
 | scp |
 | sid |
 | signature |
