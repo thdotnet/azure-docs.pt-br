@@ -43,8 +43,6 @@
       items:
         - name: Como funciona o MFA
           href: concept-mfa-howitworks.md
-        - name: Qual versão é adequada?
-          href: concept-mfa-whichversion.md
         - name: Autorize seus usuários
           href: concept-mfa-licensing.md
         - name: Gerenciar um Provedor de Autenticação

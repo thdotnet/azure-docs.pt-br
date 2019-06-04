@@ -5,107 +5,82 @@ services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
-ms.reviewer: barbkess
+ms.reviewer: celested
 ms.assetid: db063306-4d0d-43ca-aae0-09f0426e7429
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/17/2019
+ms.date: 05/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1beb825eda7e4d6a59810aada7063863b48d8ec
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 3ee7e58aa6298977b279d0d538fefb24da657388
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59260894"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357018"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-appraisd"></a>Tutorial: Integração do Azure Active Directory ao Appraisd
+# <a name="tutorial-integrate-appraisd-with-azure-active-directory"></a>Tutorial: Integrar o Appraisd ao Azure Active Directory
 
-Neste tutorial, você aprende a integrar o Appraisd ao Azure Active Directory (Azure AD).
-A integração do Appraisd ao Microsoft Azure Active Directory oferece os seguintes benefícios:
+Neste tutorial, você aprenderá a integrar o Appraisd ao Azure AD (Azure Active Directory). Ao integrar o Appraisd ao Azure AD, você poderá:
 
-* Você pode controlar no Azure Active Directory quem terá acesso ao Appraisd.
-* Você pode permitir que os usuários sejam conectados automaticamente ao Appraisd (logon único) com suas contas do Azure AD.
-* Você pode gerenciar suas contas em um único local central – o portal do Azure.
+* Controlar no Azure AD quem tem acesso ao Appraisd.
+* Permitir que os usuários sejam conectados automaticamente ao Appraisd com suas contas do Azure AD.
+* Gerencie suas contas em uma localização central – o portal do Azure.
 
-Para conhecer mais detalhadamente a integração de aplicativos de SaaS ao AD do Azure, consulte [O que é o acesso a aplicativos e logon único com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
+Para saber mais sobre a integração de aplicativos SaaS ao Azure AD, confira [O que é o acesso de aplicativos e o logon único com o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para configurar a integração do Microsoft Azure Active Directory ao Appraisd, você precisará dos seguintes itens:
+Para começar, você precisará dos seguintes itens:
 
-* Uma assinatura do Azure AD. Se não tiver um ambiente do Azure AD, você pode obter uma versão de avaliação de um mês [aqui](https://azure.microsoft.com/pricing/free-trial/)
-* Assinatura habilitada para logon único do Appraisd
+* Uma assinatura do Azure AD. Caso você não tenha uma assinatura, obtenha uma [conta gratuita](https://azure.microsoft.com/free/).
+* Assinatura habilitada para SSO (logon único) do Appraisd.
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
-Neste tutorial, você configurará e testará o logon único do Azure AD em um ambiente de teste.
-
-* O Appraisd dá suporte ao SSO iniciado por **SP e IDP**
+Neste tutorial, você configurará e testará o SSO do Azure AD em um ambiente de teste. O Appraisd é compatível com o SSO iniciado por **SP e IdP**.
 
 ## <a name="adding-appraisd-from-the-gallery"></a>Adicionando o Appraisd por meio da galeria
 
 Para configurar a integração do Appraisd ao Azure Active Directory você precisará adicionar o Appraisd da galeria à sua lista de aplicativos SaaS gerenciados.
 
-**Para adicionar o Appraisd da galeria, execute as seguintes etapas:**
-
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
-
-    ![O botão Azure Active Directory](common/select-azuread.png)
-
-2. Navegue até **Aplicativos Empresariais** e, em seguida, selecione a opção **Todos os Aplicativos**.
-
-    ![A folha Aplicativos empresariais](common/enterprise-applications.png)
-
-3. Clique no botão **Novo aplicativo** na parte superior da caixa de diálogo para adicionar o novo aplicativo.
-
-    ![O botão Novo aplicativo](common/add-new-app.png)
-
-4. Na caixa de pesquisa, digite **Appraisd**, selecione **Appraisd** no painel de resultados e, depois, clique no botão **Adicionar** para adicionar o aplicativo.
-
-     ![Appraisd na lista de resultados](common/search-new-app.png)
+1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta corporativa ou de estudante ou uma conta pessoal da Microsoft.
+1. No painel de navegação esquerdo, selecione o serviço **Azure Active Directory**.
+1. Navegue até **Aplicativos Empresariais** e, em seguida, selecione **Todos os Aplicativos**.
+1. Para adicionar um novo aplicativo, selecione **Novo aplicativo**.
+1. Na seção **Adicionar por meio da galeria**, digite **Appraisd** na caixa de pesquisa.
+1. Selecione **Appraisd** no painel de resultados e, em seguida, adicione o aplicativo. Aguarde alguns segundos enquanto o aplicativo é adicionado ao seu locatário.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-Nesta seção, você configurará e testará o logon único do Azure AD com o Appraisd, com base em um usuário de teste chamado **Brenda Fernandes**.
-Para que o logon único funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado no Appraisd.
+Configure e teste o SSO do Azure AD com o Appraisd usando um usuário de teste chamado **B. Fernandes**. Para que o SSO funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Appraisd.
 
-Para configurar e testar o logon único do Azure Active Directory com o Appraisd, você precisará concluir os seguintes blocos de construção:
+Para configurar e testar o SSO do Azure AD com o Appraisd, conclua os seguintes blocos de construção:
 
-1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** – para habilitar seus usuários a usar esse recurso.
-2. **[Configurar o logon único do Appraisd](#configure-appraisd-single-sign-on)** – para definir as configurações de logon único no lado do aplicativo.
-3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
-4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
-5. **[Criar um usuário de teste do Appraisd](#create-appraisd-test-user)** – para ter um equivalente de Brenda Fernandes no Appraisd que esteja vinculado à representação de usuário do Azure AD.
-6. **[Teste o logon único](#test-single-sign-on)** – para verificar se a configuração funciona.
+1. **[Configurar o SSO do Azure AD](#configure-azure-ad-sso)** para permitir que os usuários usem esse recurso.
+2. **[Configurar o Appraisd](#configure-appraisd)** para definir as configurações de SSO no lado do aplicativo.
+3. **[Crie um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com Brenda Fernandes.
+4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** para permitir que Brenda Fernandes use o logon único do Azure AD.
+5. **[Criar um usuário de teste do Appraisd](#create-appraisd-test-user)** para ter um equivalente de B. Fernandes no Appraisd que esteja vinculado à representação de usuário do Azure AD.
+6. **[Testar o SSO](#test-sso)** para verificar se a configuração funciona.
 
-### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
+### <a name="configure-azure-ad-sso"></a>Configurar o SSO do Azure AD
 
-Nesta seção, você habilitará o logon único do Azure AD no portal do Azure.
+Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
-Para configurar o logon único do Azure AD com Appraisd, execute as seguintes etapas:
+1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **Appraisd**, localize a seção **Gerenciar** e selecione **Logon único**.
+1. Na página **Selecionar um método de logon único**, selecione **SAML**.
+1. Na página **Configurar o Logon Único com o SAML**, clique no ícone Editar/de caneta de **Configuração Básica do SAML** para editar as configurações.
 
-1. No [portal do Azure](https://portal.azure.com/), na página de integração do aplicativo **Appraisd**, selecione **Logon único**.
+   ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
-    ![Link Configurar logon único](common/select-sso.png)
+4. Na seção **Configuração Básica de SAML**, o aplicativo é pré-configurado e as URLs necessárias já são preenchidas previamente com o Azure. O usuário precisa salvar a configuração clicando no botão Salvar e executar as seguintes etapas:
 
-2. Na caixa de diálogo **Selecionar um método de logon único**, selecione o modo **SAML/WS-Fed** para habilitar o logon único.
-
-    ![Modo de seleção de logon único](common/select-saml-option.png)
-
-3. Na página **Configurar Logon Único com SAML**, clique no ícone **Editar** para abrir a caixa de diálogo **Configuração Básica do SAML**.
-
-    ![Editar a Configuração Básica de SAML](common/edit-urls.png)
-
-4. Na seção **Configuração básica do SAML**, execute as etapas a seguir caso deseje configurar o aplicativo no modo **IDP** iniciado:
-
-    ![Informações de logon único de Domínio e URLs do Appraisd](common/both-preintegrated-advanced-urls.png)
-
-     a. Clique em **Definir URLs adicionais**.
+    a. Clique em **Definir URLs adicionais**.
 
     b. Na caixa de texto **Estado de Retransmissão**, digite uma URL: `<TENANTCODE>`
 
@@ -114,129 +89,85 @@ Para configurar o logon único do Azure AD com Appraisd, execute as seguintes et
     > [!NOTE]
     > Você pode obter o valor real de URL de logon e o estado de retransmissão na página de configuração de SSO Appraisd que é explicada posteriormente no tutorial.
 
-5. O aplicativo Appraisd espera as asserções SAML em um formato específico. Configure as declarações a seguir para este aplicativo. Você pode gerenciar os valores desses atributos da seção **Atributos de Usuário** na página de integração de aplicativos. Na página **Definir Logon Único com SAML**, clique no botão **Editar** para abrir a caixa de diálogo **Atributos do Usuário**.
+1. O aplicativo Appraisd espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos de token SAML. A captura de tela a seguir mostra a lista de atributos padrão, em que **nameidentifier** é mapeado com **user.userprincipalname**. O aplicativo Appraisd espera que **nameidentifier** seja mapeado com **user.mail**. Portanto, é necessário editar o mapeamento de atributo clicando no ícone **Editar** e alterar o mapeamento de atributo.
 
     ![image](common/edit-attribute.png)
 
-6. Na seção **Declarações de Usuário** da caixa de diálogo **Atributos de Usuário**, edite as declarações usando o **ícone Editar** ou adicione as declarações usando **Adicionar nova declaração** para configurar o atributo de token SAML conforme mostrado na imagem acima e executar as seguintes etapas:
+1. Na página **Configurar o Logon Único com o SAML**, na seção **Certificado de Autenticação SAML**, localize **Certificado (Base64)** e selecione **Baixar** para baixar o certificado e salvá-lo no computador.
 
-    | NOME |  Atributo de Origem|
-    | ---------------| --------------- |
-    | nameidentifier | user.mail |
-    | | |
+   ![O link de download do Certificado](common/certificatebase64.png)
 
-     a. Clique em **Adicionar nova reivindicação** para abrir a caixa de diálogo **Gerenciar declarações de usuários**.
+1. Na seção **Configurar o Appraisd**, copie as URLs apropriadas de acordo com suas necessidades.
 
-    ![image](common/new-save-attribute.png)
+   ![Copiar URLs de configuração](common/copy-configuration-urls.png)
 
-    ![image](common/new-attribute-details.png)
+### <a name="configure-appraisd"></a>Configurar o Appraisd
 
-    b. Na caixa de texto **Nome** , digite o nome do atributo mostrado para essa linha.
+1. Para automatizar a configuração no Appraisd, é necessário instalar a **Extensão do navegador de Entrada Segura dos Meus Aplicativos** clicando em **Instalar a extensão**.
 
-    c. Deixe o **Namespace** em branco.
+    ![Extensão Meus Aplicativos](common/install-myappssecure-extension.png)
 
-    d. Escolha Origem como **Atributo**.
+2. Depois de adicionar a extensão ao navegador, ao clicar em **Instalar o Appraisd**, você será direcionado ao aplicativo Appraisd. Nele, forneça as credenciais de administrador para entrar no Appraisd. A extensão do navegador configurará automaticamente o aplicativo e automatizará as etapas de 3 a 7.
 
-    e. Na lista **Atributo de origem**, digite o valor do atributo mostrado para essa linha.
+    ![Configuração da instalação](common/setup-sso.png)
 
-    f. Clique em **Ok**
+3. Caso deseje configurar o Appraisd manualmente, abra uma nova janela do navegador da Web, entre em seu site de empresa do Appraisd como administrador e execute as seguintes etapas:
 
-    g. Clique em **Save** (Salvar).
-
-7. Na página **Configurar logon único com SAML**, na seção **Certificado de Autenticação SAML**, clique em **Fazer o download** para fazer o download do **Certificado (Base64)** usando as opções fornecidas de acordo com seus requisitos e salve-o no computador.
-
-    ![O link de download do Certificado](common/certificatebase64.png)
-
-8. Na seção **Configurar o Appraisd**, copie as URLs apropriadas de acordo com suas necessidades.
-
-    ![Copiar URLs de configuração](common/copy-configuration-urls.png)
-
-    a. URL de logon
-
-    b. Identificador do Azure Ad
-
-    c. URL de logoff
-
-### <a name="configure-appraisd-single-sign-on"></a>Configurar o logon único do Appraisd
-
-1. Em uma janela de navegador da web diferente, entre no Appraisd como administrador de segurança.
-
-2. No canto superior direito da página, clique no ícone **Configurações**, em seguida, navegue até **Configuração**.
+4. No canto superior direito da página, clique no ícone **Configurações**, em seguida, navegue até **Configuração**.
 
     ![image](./media/appraisd-tutorial/tutorial_appraisd_sett.png)
 
-3. Do lado esquerdo do menu, clique em **Logon único SAML**.
+5. Do lado esquerdo do menu, clique em **Logon único SAML**.
 
     ![image](./media/appraisd-tutorial/tutorial_appraisd_single.png)
 
-4. Na página **Configuração de Logon Único SAML 2.0**, realize as seguintes etapas:
+6. Na página **Configuração de Logon Único SAML 2.0**, realize as seguintes etapas:
 
     ![image](./media/appraisd-tutorial/tutorial_appraisd_saml.png)
 
-     a. Copiar o **Estado de retransmissão padrão** de valor e cole-o na caixa de texto **Estado de retransmissão** **Configuração SAML Básica** no portal do Azure.
+    a. Copiar o **Estado de retransmissão padrão** de valor e cole-o na caixa de texto **Estado de retransmissão** **Configuração SAML Básica** no portal do Azure.
 
     b. Cópia de **URL de logon iniciado pelo serviço** de valor e cole-o na caixa de texto **URL de logon** **Configuração Básica SAML** no portal do Azure.
 
-5. Role para baixo em sintonia **identificando usuários**, execute as seguintes etapas:
+7. Role para baixo em sintonia **identificando usuários**, execute as seguintes etapas:
 
     ![image](./media/appraisd-tutorial/tutorial_appraisd_identifying.png)
 
-     a. Na caixa de texto **URL do Provedor de identidade de Logon único**, cole o valor da **URL de logon**, que você copiou do portal do Azure e clique em **Salvar**.
+    a. Na caixa de texto **URL do Provedor de identidade de Logon único**, cole o valor da **URL de logon**, que você copiou do portal do Azure e clique em **Salvar**.
 
-    b. Na caixa de texto **URL do Provedor de identidade de Logon único**, cole o valor da **URL de logon**, que você copiou do portal do Azure e clique em **Salvar**.
+    b. Na caixa de texto **URL de Emissor do Provedor de Identidade**, cole o valor do **Identificador do Azure AD** copiado do portal do Azure e clique em **Salvar**.
 
     c. No bloco de notas, abra o certificado codificado em base 64 que você baixou do portal do Azure, copie seu conteúdo e, em seguida, cole-o na caixa **certificado x. 509**e clique em **Salvar**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
-O objetivo desta seção é criar um usuário de teste no Portal do Azure chamado Brenda Fernandes.
+Nesta seção, você criará um usuário de teste no portal do Azure chamado B. Fernandes.
 
-1. No Portal do Azure, no painel esquerdo, selecione **Azure Active Directory**, selecione **Usuários** e, em seguida, **Todos os usuários**.
-
-    ![Os links “Usuários e grupos” e “Todos os usuários”](common/users.png)
-
-2. Selecione **Novo usuário** na parte superior da tela.
-
-    ![Botão Novo usuário](common/new-user.png)
-
-3. Nas Propriedades do usuário, execute as etapas a seguir.
-
-    ![A caixa de diálogo Usuário](common/user-properties.png)
-
-     a. No campo **Nome**, insira **BrendaFernandes**.
-  
-    b. No campo **Nome de usuário**, digite **brendafernandes\@domíniodaempresa.extensão**  
-    Por exemplo, BrittaSimon@contoso.com
-
-    c. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa Senha.
-
-    d. Clique em **Criar**.
+1. No painel esquerdo do portal do Azure, selecione **Azure Active Directory**, **Usuários** e, em seguida, **Todos os usuários**.
+1. Selecione **Novo usuário** na parte superior da tela.
+1. Nas propriedades de **Usuário**, siga estas etapas:
+   1. No campo **Nome**, insira `B. Simon`.  
+   1. No campo **Nome de usuário**, insira username@companydomain.extension. Por exemplo, `B. Simon@contoso.com`.
+   1. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa **Senha**.
+   1. Clique em **Criar**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo-lhe acesso ao Appraisd.
+Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo a ela acesso ao Appraisd.
 
-1. No portal do Azure, selecione **Aplicativos Empresariais**, **Todos os aplicativos** e, em seguida, **Appraisd**.
+1. No portal do Azure, selecione **Aplicativos empresariais** e, em seguida, selecione **Todos os aplicativos**.
+1. Na lista de aplicativos, escolha **Appraisd**.
+1. Na página de visão geral do aplicativo, localize a seção **Gerenciar** e selecione **Usuários e grupos**.
 
-    ![Folha de aplicativos empresariais](common/enterprise-applications.png)
+   ![O link “Usuários e grupos”](common/users-groups-blade.png)
 
-2. Na lista de aplicativos, escolha **Appraisd**.
+1. Selecione **Adicionar usuário** e, em seguida, **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
 
-    ![O link do Appraisd na lista Aplicativos](common/all-applications.png)
+    ![O link Adicionar Usuário](common/add-assign-user.png)
 
-3. No menu à esquerda, selecione **Usuários e grupos**.
-
-    ![O link “Usuários e grupos”](common/users-groups-blade.png)
-
-4. Escolha o botão **Adicionar usuário** e, em seguida, escolha **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
-
-    ![O painel Adicionar Atribuição](common/add-assign-user.png)
-
-5. Na caixa de diálogo **Usuários e grupos**, escolha **Brenda Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
-
-6. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar função**, escolha a função de usuário apropriada na lista e clique no botão **Selecionar** na parte inferior da tela.
-
-7. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
+1. Na caixa de diálogo **Usuários e grupos**, selecione **B. Fernandes** na lista Usuários e, em seguida, clique no botão **Selecionar** na parte inferior da tela.
+1. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar Função**, selecione a função apropriada para o usuário na lista e, em seguida, clique no botão **Selecionar** na parte inferior da tela.
+1. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
 
 ### <a name="create-appraisd-test-user"></a>Criar um usuário de teste do Appraisd
 
@@ -258,19 +189,17 @@ Para habilitar o Azure Active Directory, os usuários entram no Appraisd, eles d
 
     ![image](./media/appraisd-tutorial/tutorial_appraisd_newuser.png)
 
-     a. Na caixa de texto **Nome**, insira o nome do usuário como **Brenda**.
+    a. Na caixa de texto **Nome**, insira o nome do usuário como **Brenda**.
 
     b. Na caixa de texto **Sobrenome**, digite o sobrenome do usuário, como **simon**.
 
-    c. Na caixa de texto **Email**, insira o email do usuário como **Brendafernandes\@contoso.com**.
+    c. Na caixa de texto **Email**, insira o email do usuário como `B. Simon@contoso.com`.
 
     d. Clique em **Adicionar usuário**.
 
-### <a name="test-single-sign-on"></a>Testar logon único
+### <a name="test-sso"></a>Testar o SSO
 
-Nesta seção, você testará sua configuração de logon único do Azure AD usando o Painel de Acesso.
-
-Ao clicar no bloco do Appraisd no Painel de Acesso, você deverá ser conectado automaticamente ao Appraisd, para o qual você configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Ao selecionar o bloco do Appraisd no Painel de Acesso, você deverá ser conectado automaticamente ao Appraisd, para o qual você configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

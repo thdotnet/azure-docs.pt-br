@@ -48,6 +48,8 @@
           href: data-lake-analytics-diagnostic-logs.md
         - name: Ajustar limites de cota
           href: data-lake-analytics-quota-limits.md
+        - name: Planejar recuperação de desastre
+          href: data-lake-analytics-disaster-recovery.md
     - name: Desenvolver programas U-SQL
       items:
         - name: Linguagem U-SQL

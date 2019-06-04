@@ -20,14 +20,6 @@
       href: concepts-dependency-visualization.md
 - name: Guias de instruções
   items:
-    - name: Práticas recomendadas de migração
-      items:
-        - name: Práticas recomendadas de segurança e gerenciamento após a migração
-          href: migrate-best-practices-security-management.md
-        - name: Práticas recomendadas de rede após a migração
-          href: migrate-best-practices-networking.md
-        - name: Práticas recomendadas de custo e dimensionamento após a migração
-          href: migrate-best-practices-costs.md
     - name: Série de exemplos de migração da Contoso
       href: contoso-migration-overview.md
     - name: Descobrir e avaliar um grande ambiente
