@@ -1,5 +1,5 @@
 ---
-title: Como usar a Marcação de Versão com um Modelo do Conversation Learner - Microsoft Cognitive Services | Microsoft Docs
+title: Como usar a versão de marcação com um modelo de aprendiz de conversa – serviços Cognitivos do Azure | Microsoft Docs
 titleSuffix: Azure
 description: Saiba como usar o controle de versão e a marcação com um modelo de aprendiz de conversa.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 7a1d94700cf84068f918ecff4f4dd433358341e0
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 4067c7fb43cc200b8f49dbc14151c69a188e4e8e
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66388391"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475717"
 ---
 # <a name="how-to-use-version-tagging"></a>Como usar a Marcação de Versão
 
@@ -109,4 +109,4 @@ Agora você viu como funciona o controle de versão e como é possível interagi
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Demonstração – redefinição de senha](./demo-password-reset.md)
+> [Entidades de enum e defina as ações de entidade](./tutorial-enum-set-entity.md)

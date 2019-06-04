@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/18/2019
 ms.author: diberry
-ms.openlocfilehash: 1f5aab607c5046df0dee4db5caf36b0b7de53c4d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: feb4622be14b51cfa72c33cda6c2477f799758c6
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60813896"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473582"
 ---
 # <a name="authoring-and-query-prediction-endpoint-keys-in-luis"></a>Chaves de ponto de extremidade de previsão de consulta e criação no LUIS
 O LUIS usa duas chaves: [criação](#programmatic-key) e [ponto de extremidade](#endpoint-key). A chave de criação é criada para você automaticamente quando você cria sua conta LUIS. Quando estiver pronto para publicar seu aplicativo LUIS, será necessário [criar a chave do ponto de extremidade](luis-how-to-azure-subscription.md), [atribuí-la](luis-how-to-azure-subscription.md) ao seu aplicativo LUIS e [usá-la com a consulta de ponto de extremidade](#use-endpoint-key-in-query). 
@@ -49,11 +49,11 @@ Quando você precisar de **consultas de ponto de extremidade de produção**, cr
 
 Quando o processo de criação de recursos do Azure tiver sido concluído, [atribua a chave](luis-how-to-azure-subscription.md) ao aplicativo. 
 
-    * A chave do ponto de extremidade permite uma cota de ocorrências de ponto de extremidade com base no plano de uso especificado ao criar a chave. Confira [Preços de Serviços Cognitivos](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/?v=17.23h) para obter informações sobre preços.
+* A chave do ponto de extremidade permite uma cota de ocorrências de ponto de extremidade com base no plano de uso especificado ao criar a chave. Confira [Preços de Serviços Cognitivos](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/?v=17.23h) para obter informações sobre preços.
 
-    * A chave do ponto de extremidade pode ser usada para todos os seus aplicativos LUIS ou para aplicativos LUIS específicos. 
+* A chave do ponto de extremidade pode ser usada para todos os seus aplicativos LUIS ou para aplicativos LUIS específicos. 
 
-    * Não use a chave do ponto de extremidade para criar aplicativos LUIS. 
+* Não use a chave do ponto de extremidade para criar aplicativos LUIS. 
 
 ## <a name="use-endpoint-key-in-query"></a>Usar a chave do ponto de extremidade na consulta
 O ponto de extremidade LUIS aceita dois estilos de consulta, ambos usam a chave do ponto de extremidade, mas em diferentes locais:

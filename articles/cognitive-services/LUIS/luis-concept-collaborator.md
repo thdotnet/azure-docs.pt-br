@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 04/01/2019
+ms.date: 06/03/2019
 ms.author: diberry
-ms.openlocfilehash: 8c2ed8932e67a2e0c83fe4e3fdf6783c24e56a6e
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 294905ccfd0ce8db6da8737277b0ce978ba837ea
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956990"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473523"
 ---
 # <a name="collaborating-with-other-authors"></a>Colaborar com outros autores
 
@@ -31,7 +31,7 @@ Consulte [Usuário do locatário do Azure Active Directory](luis-how-to-collabor
 
 ## <a name="luis-app-owner"></a>Proprietário do aplicativo LUIS
 
-A conta que cria um aplicativo é o proprietário e cada aplicativo tem um único proprietário. O proprietário é listado no aplicativo **[configurações](luis-how-to-collaborate.md)** página. O proprietário pode excluir o aplicativo receber email quando a cota de ponto de extremidade atinge de 75% do limite mensal. 
+A conta que cria um aplicativo é o proprietário e cada aplicativo tem um único proprietário. O proprietário é listado no aplicativo **[configurações](luis-how-to-collaborate.md)** página. O proprietário recebe email quando a cota de ponto de extremidade atinge de 75% do limite mensal. 
 
 ## <a name="authorization-roles"></a>Funções de autorização
 O LUIS não dá suporte a funções diferentes para os proprietários e colaboradores com uma exceção. O proprietário é a única conta que pode excluir o aplicativo.

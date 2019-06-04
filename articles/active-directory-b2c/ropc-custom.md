@@ -271,7 +271,7 @@ Use seu aplicativo favorito de desenvolvimento de API para gerar uma chamada de 
 | --- | ----- |
 | username | `user-account` |
 | password | `password1` |
-| grant_type | Senha |
+| grant_type | password |
 | scope | OpenID `application-id` offline_access |
 | client_id | `application-id` |
 | response_type | token id_token |
