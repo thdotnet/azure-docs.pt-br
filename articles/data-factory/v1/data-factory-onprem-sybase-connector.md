@@ -69,10 +69,10 @@ A tabela a seguir fornece a descrição para elementos JSON específicos para o 
 | type |A propriedade type deve ser definida como: **OnPremisesSybase** |Sim |
 | server |Nome do servidor do Sybase. |Sim |
 | database |Nome do banco de dados do Sybase. |Sim |
-| schema |Nome do esquema no banco de dados. |Não  |
+| schema |Nome do esquema no banco de dados. |Não |
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados Sybase. Os valores possíveis são: Anônima, Básica e Windows. |Sim |
-| username |Especifique o nome de usuário se você estiver usando a autenticação Basic ou Windows. |Não  |
-| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não  |
+| username |Especifique o nome de usuário se você estiver usando a autenticação Basic ou Windows. |Não |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados local do Sybase. |Sim |
 
 ## <a name="dataset-properties"></a>Propriedades do conjunto de dados

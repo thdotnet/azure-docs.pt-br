@@ -61,7 +61,7 @@
               href: storage-blob-scalable-app-create-vm.md
             - name: 2 - Carregar dados grandes em uma conta de armazenamento do Azure
               href: storage-blob-scalable-app-upload-files.md
-            - name: 3 - Baixar dados grandes de uma conta de armazenamento do Azure
+            - name: 3 – Baixar dados grandes de uma conta de armazenamento do Azure
               href: storage-blob-scalable-app-download-files.md
             - name: 4 - Verificar taxa de transferência e métricas da latência
               href: storage-blob-scalable-app-verify-metrics.md
@@ -275,6 +275,8 @@
           href: storage-blob-event-overview.md
         - name: Recursos do blob de páginas
           href: storage-blob-pageblob-overview.md
+        - name: Sites estáticos
+          href: storage-blob-static-website.md
     - name: Como
       items:
         - name: Criar e gerenciar contas de armazenamento
@@ -353,7 +355,7 @@
         - name: Definir e recuperar as propriedades e os metadados
           href: storage-properties-metadata.md
         - name: Alojar um site estático
-          href: storage-blob-static-website.md
+          href: storage-blob-static-website-how-to.md
         - name: Mapear a CDN do Azure para um domínio personalizado para acesso por meio de HTTPS
           href: storage-https-custom-domain-cdn.md
         - name: Configurar um domínio personalizado
