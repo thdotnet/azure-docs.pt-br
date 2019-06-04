@@ -269,8 +269,8 @@ Use seu aplicativo favorito de desenvolvimento de API para gerar uma chamada de 
 
 | Chave | Value |
 | --- | ----- |
-| Nome de Usuário | `user-account` |
-| Senha | `password1` |
+| username | `user-account` |
+| password | `password1` |
 | grant_type | Senha |
 | scope | OpenID `application-id` offline_access |
 | client_id | `application-id` |
@@ -317,7 +317,7 @@ Construa uma chamada POST como esta. Use as informações na tabela a seguir com
 | grant_type | refresh_token |
 | response_type | id_token |
 | client_id | `application-id` |
-| recurso | `application-id` |
+| resource | `application-id` |
 | refresh_token | `refresh-token` |
 
 - Substitua `application-id` como a ID do aplicativo no registro de aplicativo *ROPC_Auth_app*.
