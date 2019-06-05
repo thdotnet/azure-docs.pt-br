@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 02/21/2019
+ms.date: 06/04/2019
 ms.author: erhopf
-ms.openlocfilehash: 91cc002f373318e5124fc21f76edbfd000d17238
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: c19e39918aa64730a35a27fcdadd70800f47f4fa
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65796902"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514650"
 ---
 # <a name="request-limits-for-translator-text"></a>Limites de solicitação para a Tradução de Texto
 
@@ -29,18 +29,18 @@ As seguinte tabela listas matriz elemento e o caractere de limites para cada ope
 
 | Operação | Tamanho máximo do elemento de matriz |   Número máximo de elementos de matriz |  Tamanho do máximo de solicitação (caracteres) |
 |:----|:----|:----|:----|
-| Traduzir | 5.000 | 100   | 5.000 |
+| Translate | 5.000 | 100   | 5.000 |
 | Transliterate | 5.000 | 10    | 5.000 |
-| Detectar | 10.000 | 100 |   50.000 |
+| Detect | 10.000 | 100 |   50.000 |
 | BreakSentence | 10.000    | 100 | 5,0000 |
 | Pesquisa no dicionário| 100 |  10  | 1.000 |
 | Exemplos de dicionário | 100 para texto e 100 para tradução (total de 200)| 10|   2.000 |
 
 ## <a name="character-limits-per-hour"></a>Limites de caractere por hora
 
-Seu limite de caractere por hora baseia-se em sua camada de assinatura de Tradução de Texto. A cota por hora deve ser consumida uniformemente ao longo da hora. Se você atinge ou ultrapassar esses limites ou envia muito grande de uma parte da cota em um curto período de tempo, você provavelmente receberá uma falta de resposta de cota. 
+Seu limite de caractere por hora baseia-se em sua camada de assinatura de Tradução de Texto. A cota por hora deve ser consumida uniformemente ao longo da hora. Se você atinge ou ultrapassar esses limites ou envia muito grande de uma parte da cota em um curto período de tempo, você provavelmente receberá uma falta de resposta de cota.
 
-| Tipo | Limite de caracteres |
+| Camada | Limite de caracteres |
 |------|-----------------|
 | F0 | 2 milhões de caracteres por hora |
 | S1 | 40 milhões de caracteres por hora |
@@ -69,7 +69,7 @@ Ao usar a função [BreakSentence](https://docs.microsoft.com/azure/cognitive-se
 | Português | pt | 290 |
 | Espanhol | es | 280 |
 | Italiano | it | 280 |
-| Tailandês | º | 258 |
+| Tailandês | th | 258 |
 
 > [!NOTE]
 > Esse limite não se aplica a traduções.
