@@ -7,34 +7,10 @@
 - name: Guia de início rápido
   expanded: true
   items:
-    - name: Criar o cluster e o banco de dados
-      items:
-        - name: Portal do Azure
-          href: create-cluster-database-portal.md
-        - name: CLI do Azure
-          href: create-cluster-database-cli.md
-        - name: PowerShell
-          href: create-cluster-database-powershell.md
-        - name: 'C#'
-          href: create-cluster-database-csharp.md
-        - name: Python
-          href: create-cluster-database-python.md
-    - name: Ingestão de dados
-      items:
-        - name: Fluxo de dados - Hub de Eventos
-          href: ingest-data-event-hub.md
-        - name: Streaming de dados – Grade de Eventos
-          href: ingest-data-event-grid.md
-        - name: Transmissão de dados - Kafka
-          href: ingest-data-kafka.md
-        - name: Envio em lote de dados - Python
-          href: python-ingest-data.md
-        - name: Enviar dados em lote - SDK do Node
-          href: node-ingest-data.md
-        - name: Envio de dados em lote - SDK do .NET Standard
-          href: net-standard-ingest-data.md
-        - name: Envio de dados em lote – Logstash
-          href: ingest-data-logstash.md
+    - name: Criar o cluster e o banco de dados – Portal do Azure
+      href: create-cluster-database-portal.md
+    - name: Ingerir dados de exemplo
+      href: ingest-sample-data.md
     - name: Consultar dados
       items:
         - name: Interface do usuário da Web
@@ -52,12 +28,38 @@
     - name: Visão geral de ingestão de dados
       displayName: 'pipelines, connectors, plugins, Python, .NET, Java, Node, REST'
       href: ingest-data-overview.md
+    - name: Visão geral da visualização de dados
+      href: viz-overview.md
 - name: Guias de instruções
   items:
-    - name: Introdução
+    - name: Criar o cluster e o banco de dados
       items:
-        - name: Ingerir dados de exemplo
-          href: ingest-sample-data.md
+        - name: CLI do Azure
+          href: create-cluster-database-cli.md
+        - name: PowerShell
+          href: create-cluster-database-powershell.md
+        - name: 'C#'
+          href: create-cluster-database-csharp.md
+        - name: Python
+          href: create-cluster-database-python.md
+    - name: Ingestão de dados
+      items:
+        - name: Hub de evento
+          href: ingest-data-event-hub.md
+        - name: Grade de Eventos
+          href: ingest-data-event-grid.md
+        - name: Kafka
+          href: ingest-data-kafka.md
+        - name: Python
+          href: python-ingest-data.md
+        - name: SDK do Node
+          href: node-ingest-data.md
+        - name: SDK Padrão do .NET
+          href: net-standard-ingest-data.md
+        - name: Logstash
+          href: ingest-data-logstash.md
+        - name: Copiar dados usando o Azure Data Factory
+          href: data-factory-load-data.md
     - name: Implantar
       items:
         - name: Tarefa do DevOps
@@ -82,10 +84,14 @@
               href: power-bi-imported-query.md
             - name: Consulta SQL
               href: power-bi-sql-query.md
+        - name: Conector do ODBC
+          href: connect-odbc.md
         - name: Sisense
           href: sisense.md
         - name: Grafana
           href: grafana.md
+        - name: Tableau
+          href: tableau.md
     - name: Gerenciar
       items:
         - name: Gerenciar permissões de banco de dados
@@ -104,7 +110,7 @@
       items:
         - name: Usando métricas para monitorar a integridade do cluster
           href: using-metrics.md
-    - name: Trabalhar com outras ferramentas
+    - name: Integrar com outras ferramentas
       items:
         - name: Conector do Apache Spark
           href: spark-connector.md
@@ -112,10 +118,6 @@
           href: connect-from-databricks.md
         - name: Analisar dados em Jupyter Notebooks e no Kqlmagic
           href: kqlmagic.md
-        - name: Copiar dados usando o Azure Data Factory
-          href: data-factory-load-data.md
-        - name: Conecte-se ODBC
-          href: connect-odbc.md
     - name: Solucionar problemas
       items:
         - name: Criar um cluster

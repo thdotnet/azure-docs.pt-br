@@ -36,7 +36,7 @@
           items:
             - name: Ler as diretrizes de segurança
               href: data-box-safety.md
-            - name: Acompanhamento e registro em log
+            - name: Revisar acompanhamento e registro em log
               href: data-box-logs.md
             - name: Examinar os requisitos
               items:
@@ -111,6 +111,8 @@
           items:
             - name: Gerenciar via portal do Azure
               href: data-box-portal-ui-admin.md
+            - name: Mover dados para uma camada de blob
+              href: data-box-how-to-set-data-tier.md
             - name: Solucionar problemas do Data Box Heavy
               href: data-box-disk-troubleshoot.md
             - name: Contatar o suporte
@@ -135,6 +137,8 @@
               href: data-box-heavy-deploy-picked-up.md
         - name: Conceitos
           items:
+            - name: Revisar acompanhamento e registro em log
+              href: data-box-logs.md
             - name: Examinar os requisitos
               href: data-box-heavy-system-requirements.md
             - name: Entender os limites
@@ -143,10 +147,16 @@
           items:
             - name: Gerenciar via portal do Azure
               href: data-box-portal-admin.md
+            - name: Gerenciar via interface do usuário da Web local
+              href: data-box-local-web-ui-admin.md
             - name: Solucionar problemas de dispositivos
               href: data-box-troubleshoot.md
             - name: Contatar o suporte
               href: data-box-disk-contact-microsoft-support.md
+            - name: Migrar
+              items:
+                - name: Para a Sincronização de Arquivos do Azure
+                  href: ../storage/files/storage-sync-offline-data-transfer.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
     - name: Recursos
       items:
         - name: Produto do Data Box

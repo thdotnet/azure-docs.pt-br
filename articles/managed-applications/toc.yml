@@ -39,6 +39,8 @@
           href: create-uidefinition-overview.md
         - name: Testar interface do portal
           href: test-createuidefinition.md
+        - name: Solicitar acesso just-in-time
+          href: request-just-in-time-access.md
         - name: Atualizar recursos gerenciados
           href: update-managed-resources.md
         - name: Usar portal para publicar definição do aplicativo
@@ -51,6 +53,8 @@
       items:
         - name: Monitorar aplicativo gerenciado
           href: monitor-managed-application-portal.md
+        - name: Aprovar acesso just-in-time
+          href: approve-just-in-time-access.md
 - name: Referência
   items:
     - name: CLI do Azure

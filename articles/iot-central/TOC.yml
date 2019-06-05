@@ -105,6 +105,8 @@
           href: howto-configure-homepage.md
         - name: Personalizar a interface do usuário do aplicativo
           href: howto-customize-ui.md
+        - name: Usar modelos de aplicativo
+          href: howto-use-app-templates.md
         - name: Gerenciar usando o portal do Azure
           href: howto-manage-iot-central-from-portal.md
         - name: Gerenciar usando a CLI do Azure
@@ -141,9 +143,9 @@
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
         - name: Time Series Insights
           href: /azure/time-series-insights
-    - name: Microsoft Edge
+    - name: IoT Edge
       items:
-        - name: IoT Edge
+        - name: Azure IoT Edge
           href: /azure/iot-edge
         - name: SDKs do dispositivo IoT
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'

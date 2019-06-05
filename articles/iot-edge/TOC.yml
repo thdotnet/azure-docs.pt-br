@@ -43,7 +43,7 @@
       items:
         - name: Filtrar dados com o Azure Functions
           href: tutorial-deploy-function.md
-        - name: Encontrar médias com ASA
+        - name: Encontrar médias com o Azure Stream Analytics
           href: tutorial-deploy-stream-analytics.md
         - name: Dados de pontuação com o Serviço do Azure Machine Learning
           href: tutorial-deploy-machine-learning.md
