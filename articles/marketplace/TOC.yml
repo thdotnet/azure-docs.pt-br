@@ -58,8 +58,6 @@
         - name: Seus benefícios do Marketplace
           href: ./gtm-your-marketplace-benefits.md
           items:
-            - name: Promover seu negócio com a Microsoft
-              href: ./gtm-promote-your-business.md
             - name: Soluções preferenciais
               href: ./preferred-solutions.md
             - name: Soluções integradas
