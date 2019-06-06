@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: tutorial
 ms.date: 03/11/2019
 ms.author: pafarley
-ms.openlocfilehash: fc49081c765834a0ed0e5199923606ced7daa081
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 4a28e9f1f911e274f9a53275afa577024405b336
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58522070"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66474691"
 ---
 # <a name="tutorial-video-and-transcript-moderation"></a>Tutorial: moderação de vídeos e transcrições
 
@@ -44,15 +44,15 @@ Este tutorial mostra como:
 
 Edite o arquivo `App.config` e adicione o nome do locatário do Active Directory, os pontos de extremidade de serviço e as chaves de assinatura indicados por `#####`. As seguintes informações são necessárias:
 
-    |Chave|DESCRIÇÃO|
-    |-|-|
-    |`AzureMediaServiceRestApiEndpoint`|Ponto de extremidade de API do AMS (Serviços de Mídia do Azure)|
-    |`ClientSecret`|Chave de assinatura para Serviços de Mídia do Azure|
-    |`ClientId`|ID do cliente para Serviços de Mídia do Azure|
-    |`AzureAdTenantName`|Nome do locatário do Active Directory que representa a organização|
-    |`ContentModeratorReviewApiSubscriptionKey`|Chave de assinatura para a API de análise do Content Moderator|
-    |`ContentModeratorApiEndpoint`|Ponto de extremidade para a API do Content Moderator|
-    |`ContentModeratorTeamId`|ID da equipe do Content Moderator|
+|Chave|DESCRIÇÃO|
+|-|-|
+|`AzureMediaServiceRestApiEndpoint`|Ponto de extremidade de API do AMS (Serviços de Mídia do Azure)|
+|`ClientSecret`|Chave de assinatura para Serviços de Mídia do Azure|
+|`ClientId`|ID do cliente para Serviços de Mídia do Azure|
+|`AzureAdTenantName`|Nome do locatário do Active Directory que representa a organização|
+|`ContentModeratorReviewApiSubscriptionKey`|Chave de assinatura para a API de análise do Content Moderator|
+|`ContentModeratorApiEndpoint`|Ponto de extremidade para a API do Content Moderator|
+|`ContentModeratorTeamId`|ID da equipe do Content Moderator|
 
 ## <a name="examine-the-main-code"></a>Examinar o código principal
 

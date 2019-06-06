@@ -8,17 +8,17 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: overview
-ms.date: 02/21/2019
+ms.date: 06/04/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 79f0474950cf1f48f3552b1ae843a29b5d8dbb24
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 89b836109818f7a4c1aafdbc9a1b3a72fe806269
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57883365"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515038"
 ---
-# <a name="what-is-translator-text-api"></a>O que é a API de Tradução de Texto?
+# <a name="what-is-the-translator-text-api"></a>O que é a API de Tradução de Texto?
 
 A API de Tradução de Texto é fácil de integrar a seus aplicativos, sites, ferramentas e soluções. Ela permite que você adicione experiências de usuário com vários idiomas em [mais de 60 idiomas](languages.md) e pode ser usada em qualquer plataforma de hardware com qualquer sistema operacional para traduzir idioma de texto para texto.
 

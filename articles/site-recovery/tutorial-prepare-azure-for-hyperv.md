@@ -5,15 +5,15 @@ author: rayne-wiselman
 ms.service: site-recovery
 services: site-recovery
 ms.topic: tutorial
-ms.date: 04/08/2019
+ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 29189a5919a01fcb897758fb64ca9e84b9381fb6
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 07a5ee6ccdaecc78c9a8e61ae9e64a5264e3a875
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65410895"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66418346"
 ---
 # <a name="prepare-azure-resources-for-disaster-recovery-of-on-premises-machines"></a>Preparar recursos do Azure para recuperação de desastre de computadores locais
 
@@ -55,7 +55,7 @@ As imagens de máquinas replicadas são mantidas no armazenamento do Azure. As V
 1. No menu do [portal do Azure](https://portal.azure.com), selecione **Criar um recurso** > **Armazenamento** > **Conta de armazenamento – blob, arquivo, tabela, fila**.
 2. Em **Criar conta de armazenamento**, insira um nome para a conta.  O nome escolhido precisa ser exclusivo no Azure, ter de 3 a 24 caracteres e apenas usar letras minúsculas e números. Neste tutorial, use **contosovmsacct1910171607**.
 3. Em **Modelo de implantação**, selecione **Gerenciador de Recursos**.
-4. Em **Tipo de conta**, selecione **Armazenamento (uso geral v1)**. Não selecione armazenamento de blobs.
+4. Em **Tipo de conta**, selecione **Armazenamento (uso geral v1)** . Não selecione armazenamento de blobs.
 5. Em **Replicação**, selecione o padrão **Armazenamento com redundância geográfica com acesso de leitura** para redundância de armazenamento. Mantenha a configuração Transferência segura obrigatória como Desabilitada.
 6. Em **Desempenho**, selecione **Padrão**. Em seguida, em **Camada de acesso**, selecione a opção padrão **Frequente**.
 7. Em **Assinatura**, escolha a assinatura na qual deseja criar a conta de armazenamento.
@@ -68,7 +68,7 @@ As imagens de máquinas replicadas são mantidas no armazenamento do Azure. As V
 ## <a name="create-a-recovery-services-vault"></a>Criar um cofre dos Serviços de Recuperação
 
 1. No portal do Azure, selecione **+Criar um recurso** e, em seguida, pesquise Serviços de Recuperação no Azure Marketplace.
-2. Selecione **Backup e Site Recovery (OMS)**. Em seguida, na página **Backup e Site Recovery**, selecione **Criar**.
+2. Selecione **Backup e Site Recovery (OMS)** . Em seguida, na página **Backup e Site Recovery**, selecione **Criar**.
 1. Em **Cofre dos Serviços de Recuperação > Nome**, insira um nome amigável para identificar o cofre. Para este tutorial, use **ContosoVMVault**.
 2. No **Grupo de recursos**, selecione um grupo de recursos existente ou crie um. Neste tutorial, use **contosoRG**.
 3. Em **Localização**, selecione a região na qual o cofre deve estar localizado. Neste tutorial, use **Oeste da Europa**.

@@ -4,15 +4,15 @@ description: Saiba como configurar a distribuição global do Azure Cosmos DB us
 author: rimman
 ms.service: cosmos-db
 ms.topic: tutorial
-ms.date: 05/10/2017
+ms.date: 05/10/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 19e0dd8a60155272f2e338c760db409d20a9f755
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 4f97d1f052cd8684674eecf479133051f2cfb76e
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54157234"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480558"
 ---
 # <a name="set-up-azure-cosmos-db-global-distribution-using-the-sql-api"></a>Configurar a distribuição global do Azure Cosmos DB usando a API do SQL
 

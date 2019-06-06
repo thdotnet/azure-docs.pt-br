@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 04/16/2019
+ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 588fe452473ddc2434d92f90afbf8a0e1bc8c275
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 5602298ffe60ad15d3daf52587c50357c310200c
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795758"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480089"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms"></a>Configurar a recuperação de desastre para VMs do Azure
 
@@ -35,7 +35,7 @@ Este tutorial mostra como configurar a recuperação de desastre para o VMs do A
 
 Para concluir este tutorial:
 
-- Verifique se você entende os [componentes e a arquitetura do cenário](concepts-azure-to-azure-architecture.md).
+- Examine os [componentes e a arquitetura do cenário](concepts-azure-to-azure-architecture.md).
 - Analise os [requisitos de suporte](site-recovery-support-matrix-azure-to-azure.md) antes de começar.
 
 ## <a name="create-a-recovery-services-vault"></a>Criar um cofre dos Serviços de Recuperação
@@ -74,7 +74,7 @@ Caso esteja usando um proxy de firewall baseado em URL para controlar a conectiv
 | *.blob.core.windows.net | Permite que os dados sejam gravados da VM para a conta de armazenamento de cache da região de origem. |
 | login.microsoftonline.com | Fornece autorização e autenticação para as URLs do serviço Site Recovery. |
 | *.hypervrecoverymanager.windowsazure.com | Permite que a VM se comunique com o serviço Site Recovery. |
-| * .servicebus.windows.net | Permite que a VM grave o monitoramento do Site Recovery e os dados de diagnóstico. |
+| *.servicebus.windows.net | Permite que a VM grave o monitoramento do Site Recovery e os dados de diagnóstico. |
 
 ### <a name="outbound-connectivity-for-ip-address-ranges"></a>Conectividade de saída para intervalos de endereços IP
 

@@ -14,12 +14,12 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be8b9fe027a023cec6c816fa641beb41e5849741
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: a0678dc42d8c22c8dcc20137cf70f81a1eb4f61c
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59496071"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473688"
 ---
 # <a name="what-is-azure-ad-privileged-identity-management"></a>O que é o Azure AD Privileged Identity Management?
 
@@ -41,15 +41,6 @@ O PIM, essencialmente, ajuda você a gerenciar quem, o que, quando, onde e por q
 - Obter **notificações** quando as funções privilegiadas forem ativadas
 - Realizar **revisões de acesso** para garantir que os usuários ainda precisem de funções
 - Baixar o **histórico de auditoria** para auditoria interna ou externa
-
-## <a name="prerequisites"></a>Pré-requisitos
-
-Para usar o PIM, é necessário ter uma das licenças pagas ou de versão de avaliação a seguir. Para obter mais informações, confira [O que é Azure Active Directory?](../fundamentals/active-directory-whatis.md).
-
-- Azure AD Premium P2
-- Enterprise Mobility + Security (EMS) E5
-
-Para saber mais sobre licenças para usuários, confira [License requirements to use PIM](subscription-requirements.md) (Requisitos de licença para usar o PIM).
 
 ## <a name="terminology"></a>Terminologia
 
@@ -104,6 +95,12 @@ O PIM é compatível com os seguintes cenários:
 - Solicitar a ativação de uma função que exige aprovação
 - Exibir o status de sua solicitação a ser ativada
 - Concluir a tarefa no Azure AD caso a ativação tenha sido aprovada
+
+## <a name="license-requirements"></a>Requisitos de licença
+
+[!INCLUDE [Azure AD Premium P2 license](../../../includes/active-directory-p2-license.md)]
+
+Para saber mais sobre licenças para usuários, confira [License requirements to use PIM](subscription-requirements.md) (Requisitos de licença para usar o PIM).
 
 ## <a name="next-steps"></a>Próximas etapas
 

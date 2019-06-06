@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 03/13/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 6510099f9fb145951cbce1ea168b36dba5f76e07
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: db9424ff4ddd2663ae1342294181dc885c6ed937
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65540912"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479547"
 ---
 # <a name="what-is-role-based-access-control-rbac-for-azure-resources"></a>O que é o RBAC (controle de acesso baseado em função) para recursos do Azure?
 
@@ -84,7 +84,7 @@ No Azure, você pode especificar um escopo em vários níveis: [grupo de gerenci
 
 ![Escopo para uma atribuição de função](./media/overview/rbac-scope.png)
 
-Quando você concede acesso a um escopo pai, essas permissões são herdadas pelos escopos filho. Por exemplo: 
+Quando você concede acesso a um escopo pai, essas permissões são herdadas pelos escopos filho. Por exemplo:
 
 - Se você atribuir a função [Proprietário](built-in-roles.md#owner) a um usuário no escopo do grupo de gerenciamento, esse usuário poderá gerenciar tudo em todas as assinaturas no grupo de gerenciamento.
 - Se você atribuir a função [Leitor](built-in-roles.md#reader) função a um grupo no escopo da assinatura, os membros desse grupo pode exibir todos os grupo de recursos e recursos na assinatura.
@@ -132,6 +132,10 @@ A seguir estão as etapas gerais que o RBAC usa para determinar se você tem ace
 1. Se o usuário não tem uma função com a ação no escopo solicitado, o acesso não é concedido. Caso contrário, o Azure Resource Manager verifica se uma atribuição de negação se aplica.
 
 1. Se houver uma atribuição de negação aplicável, o acesso será bloqueado. Caso contrário, o acesso será permitido.
+
+## <a name="license-requirements"></a>Requisitos de licença
+
+[!INCLUDE [Azure AD free license](../../includes/active-directory-free-license.md)]
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: tutorial
-ms.date: 08/22/2017
+ms.date: 12/22/2018
 ms.author: ramkris
-ms.openlocfilehash: e276980235494f7f808510889bda91761cb76544
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: dfb4e40aeed797a55a7b2cabad32d33920547c06
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65794603"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479497"
 ---
 # <a name="build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Compilar um aplicativo Web Java usando o Azure Cosmos DB e a API de SQL
 
@@ -62,7 +62,7 @@ Vamos começar criando uma conta do Azure Cosmos DB. Se você já tiver uma cont
 ## <a id="CreateJSP"></a>Etapa 2: Criar o aplicativo JSP Java
 Para criar o aplicativo JSP:
 
-1. Primeiro, começaremos criando um projeto Java. Inicie o Eclipse, clique em **Arquivo**, **Novo** e clique em **Projeto Web dinâmico**. Se você não vir o **Projeto Web Dinâmico** listado como um projeto disponível, faça o seguinte: clique em **Arquivo**, **Novo**, **Projeto...**, expanda **Web**, clique em **Projeto Web Dinâmico** e clique em **Avançar**.
+1. Primeiro, começaremos criando um projeto Java. Inicie o Eclipse, clique em **Arquivo**, **Novo** e clique em **Projeto Web dinâmico**. Se você não vir o **Projeto Web Dinâmico** listado como um projeto disponível, faça o seguinte: clique em **Arquivo**, **Novo**, **Projeto...** , expanda **Web**, clique em **Projeto Web Dinâmico** e clique em **Avançar**.
    
     ![Desenvolvimento de aplicativo Java JSP](./media/sql-api-java-application/image10.png)
 2. Digite um nome de projeto na caixa **Nome do projeto** e no menu suspenso **Tempo de Execução de Destino**, selecione, opcionalmente, um valor (por exemplo, Apache Tomcat v 7.0) e clique em **Concluir**. Selecione um tempo de execução de destino que permite que você execute seu projeto localmente por meio do Eclipse.

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 02/21/2019
+ms.date: 06/04/2019
 ms.author: erhopf
-ms.openlocfilehash: 356c414d6e3823f927cbb201aeb0a0186e421b5e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 56e67389c59cda70ebcc7705e279b84fcf11cf9d
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58175526"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514135"
 ---
 # <a name="quickstart-look-up-words-with-bilingual-dictionary-using-go"></a>Início Rápido: Procure palavras com o dicionário bilíngue Go
 
@@ -230,7 +230,7 @@ Se você quiser comparar seu código com o nosso, o exemplo completo está dispo
 Explore exemplos de Go para APIs de Serviços Cognitivos do [SDK do Azure para linguagem Go](https://github.com/Azure/azure-sdk-for-go) no GitHub.
 
 > [!div class="nextstepaction"]
-> [Explore exemplos de Go no GitHub](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices)
+> [Explorar exemplos de Go no GitHub](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices)
 
 ## <a name="see-also"></a>Consulte também
 

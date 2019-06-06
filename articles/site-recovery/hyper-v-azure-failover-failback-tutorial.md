@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 03/18/2019
+ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 53b2c2945062ef348104e24a352895a14eed1a04
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: a4889d82ac1c837581771860f2aba86faf7650ee
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58314834"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399448"
 ---
 # <a name="fail-over-and-fail-back-hyper-v-vms-replicated-to-azure"></a>Executar failover e failback em VMs do Hyper-V replicadas no Azure
 
@@ -73,7 +73,7 @@ A operação de failback é basicamente um failover do Azure para o site local e
 
 1. Em **Configurações** > **Itens Replicados**, clique na VM > **Failover Planejado**.
 2. Em **Confirmar Failover Planejado**, verifique a direção do failover (do Azure) e selecione os locais de origem e de destino.
-3. Selecione **Sincronizar os dados antes do failover (sincronizar apenas alterações delta)**. Essa opção minimiza o tempo de inatividade da VM porque sincroniza sem desligar a VM.
+3. Selecione **Sincronizar os dados antes do failover (sincronizar apenas alterações delta)** . Essa opção minimiza o tempo de inatividade da VM porque sincroniza sem desligar a VM.
 4. Inicie o failover. Você pode acompanhar o progresso do failover na guia **Trabalhos** .
 5. Depois que a sincronização de dados inicial for concluída e você estiver pronto para desligar as VMs no Azure, clique em **Trabalhos** > nome do trabalho de failover planejado > **Concluir Failover**. Ele desliga a VM do Azure, transfere as alterações mais recentes para o local e inicia a VM local.
 6. Faça logon na VM local para verificar se ela está disponível conforme o esperado.

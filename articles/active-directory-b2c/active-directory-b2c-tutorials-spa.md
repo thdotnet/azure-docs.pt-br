@@ -2,20 +2,20 @@
 title: Tutorial – Habilitar autenticação um aplicativo de página única – Azure Active Directory B2C | Microsoft Docs
 description: Tutorial sobre como usar o Azure Active Directory B2C para fornecer o logon do usuário para um aplicativo de página única (JavaScript).
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
-ms.author: davidmu
+ms.author: marsma
 ms.date: 02/04/2019
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 3773efdbe47c045dccf74ace3e1b53936c9400fe
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 6e4be3a14a6cfba6b32bea8a77975e3e34ea012d
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190297"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66507808"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-using-azure-active-directory-b2c"></a>Tutorial: Habilitar autenticação em um aplicativo de página única usando o Azure Active Directory B2C
 

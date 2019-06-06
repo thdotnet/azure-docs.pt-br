@@ -121,7 +121,7 @@ Nesta etapa, você cria um serviço vinculado do HDInsight para vincular o clust
 
 1. Copie e cole o snippet a seguir na janela de Rascunho-1. No editor de JSON, execute as seguintes etapas:
 
-     a. Especifique o URI do cluster HDInsight Spark. Por exemplo: `https://<sparkclustername>.azurehdinsight.net/`.
+    a. Especifique o URI do cluster HDInsight Spark. Por exemplo: `https://<sparkclustername>.azurehdinsight.net/`.
 
     b. Especifique o nome do usuário que tem acesso ao cluster Spark.
 
@@ -218,7 +218,7 @@ Nesta etapa, você cria um pipeline com a atividade HDInsightSpark. Atualmente, 
     ```
     Observe os seguintes pontos:
 
-     a. A propriedade **type** é definida como **HDInsightSpark**.
+    a. A propriedade **type** é definida como **HDInsightSpark**.
 
     b. A propriedade **rootPath** é definida como **adfspark\\pyFiles**, em que adfspark é o contêiner de blobs e pyFiles é a pasta de arquivos nesse contêiner. Neste exemplo, o armazenamento de blobs é aquele que está associado ao cluster Spark. Carregue o arquivo em outra conta de armazenamento. Se você fizer isso, crie um serviço vinculado do Armazenamento para vincular essa conta de armazenamento ao data factory. Em seguida, especifique o nome do serviço vinculado como um valor para a propriedade **sparkJobLinkedService**. Para obter mais informações sobre essa propriedade e outras propriedades compatíveis com a atividade do Spark, consulte [Propriedades da atividade do Spark](#spark-activity-properties).
 
@@ -330,17 +330,17 @@ A tabela a seguir descreve as propriedades JSON usadas na definição de JSON.
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | -------- | ----------- | -------- |
 | name | Nome da atividade no pipeline. | Sim |
-| description | Texto que descreve o que a atividade faz. | Não  |
+| description | Texto que descreve o que a atividade faz. | Não |
 | type | Essa propriedade deve ser definida como HDInsightSpark. | Sim |
 | linkedServiceName | Nome do serviço vinculado do HDInsight no qual o programa Spark é executado. | Sim |
 | rootPath | O contêiner de blobs e a pasta que contém o arquivo do Spark. O nome do arquivo diferencia maiúsculas de minúsculas. | Sim |
 | entryFilePath | Caminho relativo à pasta raiz do código/pacote Spark. | Sim |
-| className | Classe principal de Java/Spark do aplicativo. | Não  |
-| arguments | Uma lista de argumentos de linha de comando para o programa Spark. | Não  |
-| proxyUser | A conta de usuário a ser representada para execução do programa do Spark. | Não  |
-| sparkConfig | Especifique valores para as propriedades de configuração do Spark listadas em [Configuração do Spark: propriedades do aplicativo](https://spark.apache.org/docs/latest/configuration.html#available-properties). | Não  |
-| getDebugInfo | Especifica quando os arquivos de log do Spark são copiados para o armazenamento usado pelo cluster HDInsight (ou) especificado por sparkJobLinkedService. Os valores permitidos são Nenhum, Sempre ou Falha. O valor padrão é Nenhum. | Não  |
-| sparkJobLinkedService | O serviço vinculado do Armazenamento que contém o arquivo de trabalho, as dependências e os logs do Spark. Se você não especificar um valor para essa propriedade, o armazenamento associado ao cluster HDInsight será usado. | Não  |
+| className | Classe principal de Java/Spark do aplicativo. | Não |
+| arguments | Uma lista de argumentos de linha de comando para o programa Spark. | Não |
+| proxyUser | A conta de usuário a ser representada para execução do programa do Spark. | Não |
+| sparkConfig | Especifique valores para as propriedades de configuração do Spark listadas em [Configuração do Spark: propriedades do aplicativo](https://spark.apache.org/docs/latest/configuration.html#available-properties). | Não |
+| getDebugInfo | Especifica quando os arquivos de log do Spark são copiados para o armazenamento usado pelo cluster HDInsight (ou) especificado por sparkJobLinkedService. Os valores permitidos são Nenhum, Sempre ou Falha. O valor padrão é Nenhum. | Não |
+| sparkJobLinkedService | O serviço vinculado do Armazenamento que contém o arquivo de trabalho, as dependências e os logs do Spark. Se você não especificar um valor para essa propriedade, o armazenamento associado ao cluster HDInsight será usado. | Não |
 
 ## <a name="folder-structure"></a>Estrutura de pastas
 A atividade do Spark não é compatível com um script embutido, como as atividades do Pig e do Hive. Os trabalhos do Spark também são mais extensíveis do que trabalhos do Pig/Hive. Para trabalhos do Spark, você pode fornecer várias dependências, como pacotes jar (colocados em CLASSPATH do Java), arquivos do Python (colocados em PYTHONPATH) e outros arquivos.
@@ -351,11 +351,11 @@ Crie a estrutura de pastas a seguir no armazenamento de blobs referenciado pelo 
 | ---- | ----------- | -------- | ---- |
 | . | O caminho raiz do trabalho do Spark no serviço vinculado do armazenamento. | Sim | Pasta |
 | &lt;definido pelo usuário&gt; | O caminho que aponta para o arquivo de entrada do trabalho do Spark. | Sim | Arquivo |
-| ./jars | Todos os arquivos nessa pasta são carregados e colocados no caminho de classe do Java do cluster. | Não  | Pasta |
-| ./pyFiles | Todos os arquivos nessa pasta são carregados e colocados no PYTHONPATH do cluster. | Não  | Pasta |
-| ./files | Todos os arquivos nessa pasta são carregados e colocados no diretório de trabalho executor. | Não  | Pasta |
-| ./archives | Todos os arquivos nessa pasta são descompactados. | Não  | Pasta |
-| ./logs | A pasta onde os logs do cluster Spark são armazenados.| Não  | Pasta |
+| ./jars | Todos os arquivos nessa pasta são carregados e colocados no caminho de classe do Java do cluster. | Não | Pasta |
+| ./pyFiles | Todos os arquivos nessa pasta são carregados e colocados no PYTHONPATH do cluster. | Não | Pasta |
+| ./files | Todos os arquivos nessa pasta são carregados e colocados no diretório de trabalho executor. | Não | Pasta |
+| ./archives | Todos os arquivos nessa pasta são descompactados. | Não | Pasta |
+| ./logs | A pasta onde os logs do cluster Spark são armazenados.| Não | Pasta |
 
 Este é um exemplo de um armazenamento que contém dois arquivos de trabalho do Spark no armazenamento de blobs referenciado pelo serviço vinculado do HDInsight:
 

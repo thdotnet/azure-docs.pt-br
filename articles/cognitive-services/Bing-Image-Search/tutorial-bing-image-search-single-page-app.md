@@ -10,12 +10,12 @@ ms.subservice: bing-image-search
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: 353641c514c9171e211221b84b13c5f09a413a48
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.openlocfilehash: 10bcbb4c1957735b0ddad6c97325c32be19ddcdb
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57341215"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66383394"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-image-search-api"></a>Tutorial: criar um aplicativo de página única usando a API de Pesquisa de Imagem do Bing
 
@@ -116,7 +116,7 @@ Por padrão, o manipulador `onsubmit` retorna `false`, o que impede o envio do f
 
 ![[Formulário da Pesquisa de Imagem do Bing]](media/cognitive-services-bing-images-api/image-search-spa-form.png)
 
-A API de Pesquisa de Imagem do Bing oferece vários [parâmetros de consulta de filtro](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#filter-query-parameters) para restringir e filtrar os resultados da pesquisa. O formulário HTML neste aplicativo usa e exibe as seguintes opções de parâmetro:
+A API de Pesquisa de Imagem do Bing oferece vários [parâmetros de consulta de filtro](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#filter-query-parameters) para restringir e filtrar os resultados da pesquisa. O formulário HTML neste aplicativo usa e exibe as seguintes opções de parâmetro:
 
 |              |                                                                                                                                                                                    |
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

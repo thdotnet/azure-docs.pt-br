@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: tutorial
-ms.date: 02/13/2019
+ms.date: 06/04/2019
 ms.author: erhopf
-ms.openlocfilehash: f7f8e86f17b0fdb715afc96dba80db0746440cef
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2deaa0ed8b21d5e091fe5d3b3e6986eaf2340281
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58078118"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514723"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Tutorial: Criar um aplicativo de tradução com o WPF
 
@@ -76,12 +76,12 @@ Nosso projeto requer alguns assemblies do .NET Framework e o NewtonSoft.Json, qu
 
 Vamos adicionar assemblies ao nosso projeto para serializar e desserializar objetos e para gerenciar solicitações e respostas HTTP.
 
-1. Localize seu projeto no Gerenciador de Soluções do Visual Studio (painel direito). Clique com o botão direito do mouse no projeto e selecione **Adicionar > Referência...**, abrindo o **Gerenciador de Referências**.
+1. Localize seu projeto no Gerenciador de Soluções do Visual Studio (painel direito). Clique com o botão direito do mouse no projeto e selecione **Adicionar > Referência...** , abrindo o **Gerenciador de Referências**.
    ![Adicionar referências de assembly](media/add-assemblies-sample.png)
 2. A guia de assemblies lista todos os assemblies do .NET Framework disponíveis para fazer referência. Use a barra de pesquisa no canto superior direito da tela para pesquisar essas referências e adicioná-las ao seu projeto:
-   * [System.Runtime.Serialization](https://docs.microsoft.com/dotnet/api/system.runtime.serialization?view=netframework-4.7.2)
-   * [System.Web](https://docs.microsoft.com/dotnet/api/system.web?view=netframework-4.7.2)
-   * [System.Web.Extensions](https://docs.microsoft.com/dotnet/api/system.web?view=netframework-4.7.2)
+   * [System.Runtime.Serialization](https://docs.microsoft.com/dotnet/api/system.runtime.serialization)
+   * [System.Web](https://docs.microsoft.com/dotnet/api/system.web)
+   * [System.Web.Extensions](https://docs.microsoft.com/dotnet/api/system.web)
 3. Depois de adicionar essas referências ao projeto, clique em **OK** para fechar o **Gerenciador de Referências**.
 
 > [!NOTE]
@@ -91,7 +91,7 @@ Vamos adicionar assemblies ao nosso projeto para serializar e desserializar obje
 
 Nosso aplicativo usará o NewtonSoft.Json para desserializar objetos JSON. Siga estas instruções para instalar o pacote.
 
-1. Localize seu projeto no Gerenciador de Soluções do Visual Studio e clique com o botão direito do mouse no projeto. Selecione **Gerenciar Pacotes NuGet...**.
+1. Localize seu projeto no Gerenciador de Soluções do Visual Studio e clique com o botão direito do mouse no projeto. Selecione **Gerenciar Pacotes NuGet...** .
 2. Localize e selecione a guia **Procurar**.
 3. Digite [NewtonSoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) na barra de pesquisa.
    ![Localizar e instalar o NewtonSoft.Json](media/add-nuget-packages.png)
