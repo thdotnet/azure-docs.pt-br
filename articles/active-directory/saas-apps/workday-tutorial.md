@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb9c8d1fb234efd5df297082cfc1001f28ca1656
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 2b9e4f5208eb1f6abb0d6fd786630c183a04ce50
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65990319"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388880"
 ---
 # <a name="tutorial-integrate-workday-with-azure-active-directory"></a>Tutorial: Integrar o Workday ao Azure Active Directory
 
@@ -80,7 +80,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
 1. Na página **Configuração Básica de SAML**, insira os valores nos seguintes campos:
 
-     a. Na caixa de texto **URL de Entrada** digite uma URL usando o seguinte padrão: `https://impl.workday.com/<tenant>/login-saml2.flex`
+    a. Na caixa de texto **URL de Entrada** digite uma URL usando o seguinte padrão: `https://impl.workday.com/<tenant>/login-saml2.flex`
 
     b. No **identificador** caixa de texto, digite uma URL usando o seguinte padrão: `https://www.workday.com`
 
@@ -88,7 +88,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
     > [!NOTE]
     > Esses não são os valores reais. Atualize esses valores com a URL de Resposta e a URL de Logon reais. Sua URL de resposta deve ter um subdomínio, por exemplo: www, wd2, wd3, wd3-impl, wd5, wd5-impl.
-    > Usar algo como `http://www.myworkday.com` funciona, mas `http://myworkday.com` não. Contate a [equipe de suporte ao cliente do Workday](https://www.workday.com/partners-services/services/support.html) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
+    > Usar algo como `http://www.myworkday.com` funciona, mas `http://myworkday.com` não. Contate a [equipe de suporte ao cliente do Workday](https://www.workday.com/en-us/partners-services/services/support.html) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
 6. Seu aplicativo Workday espera as instruções SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados à sua configuração de atributos de token SAML. A captura de tela a seguir mostra a lista de atributos padrão, em que **nameidentifier** é mapeado com **user.userprincipalname**. O aplicativo Workday espera que **nameidentifier** seja mapeado com **user.mail**, **UPN**, etc. Portanto, você precisa editar o mapeamento de atributos clicando no ícone **Editar** e alterar o mapeamento de atributos.
 
@@ -107,7 +107,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
     ![image](./media/workday-tutorial/signing-option.png)
 
-     a. Escolha **Assinar resposta SAML e declaração** na **Opção de Assinatura**.
+    a. Escolha **Assinar resposta SAML e declaração** na **Opção de Assinatura**.
 
     b. Clique em **Salvar**
 
@@ -127,7 +127,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
     ![URLs de redirecionamento](./media/workday-tutorial/IC7829581.png "URLs de redirecionamento")
 
-     a. Clique em **Adicionar Linha**.
+    a. Clique em **Adicionar Linha**.
 
     b. Na caixa de texto **URL de redirecionamento de logon**, **URL de redirecionamento de tempo limite** e **URL de redirecionamento móvel**, cole a **URL de logon** que você copiou da seção **Configurar o Workday** do portal do Azure.
 
@@ -138,13 +138,13 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
    > [!NOTE]
    > O valor do atributo Ambiente é vinculado ao valor da URL do locatário:  
    > –Se o nome de domínio da URL do locatário do Workday começar com impl, por exemplo, *https:\//impl.workday.com/\<tenant\>/login-saml2.flex*, o atributo **Ambiente** deverá ser definido como Implementação.  
-   > –Se o nome de domínio começar de outra forma, será necessário contatar a [equipe de suporte ao cliente do Workday](https://www.workday.com/partners-services/services/support.html) para obter o valor de **Ambiente** correspondente.
+   > –Se o nome de domínio começar de outra forma, será necessário contatar a [equipe de suporte ao cliente do Workday](https://www.workday.com/en-us/partners-services/services/support.html) para obter o valor de **Ambiente** correspondente.
 
 4. Na seção **Configuração do SAML** , execute as seguintes etapas:
 
     ![Instalação do SAML](./media/workday-tutorial/IC782926.png "Instalação do SAML")
 
-     a.  Selecione **Habilitar Autenticação SAML**.
+    a.  Selecione **Habilitar Autenticação SAML**.
 
     b.  Clique em **Adicionar Linha**.
 
@@ -152,7 +152,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
     ![Provedores de Identidade SAML](./media/workday-tutorial/IC7829271.png "Provedores de Identidade SAML")
 
-     a. Na caixa de texto **Nome do Provedor de Identidade**, digite um nome de provedor (por exemplo: *SPInitiatedSSO*).
+    a. Na caixa de texto **Nome do Provedor de Identidade**, digite um nome de provedor (por exemplo: *SPInitiatedSSO*).
 
     b. No Portal do Azure, na janela **Configurar Workday**, o valor do **Identificador do Azure AD** e, em seguida, cole-o na caixa de texto **Emissor**.
 
@@ -176,7 +176,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
     ![Exibir chave pública x509](./media/workday-tutorial/IC782930.png "Exibir chave pública x509")
 
-     a. Na caixa de texto **Nome**, digite um nome para o seu certificado (por exemplo: *PPE\_SP*).
+    a. Na caixa de texto **Nome**, digite um nome para o seu certificado (por exemplo: *PPE\_SP*).
 
     b. Na caixa de texto **Válido de** , digite o valor do atributo “válido de” do seu certificado.
 
@@ -197,7 +197,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
     ![Configuração de SSO](./media/workday-tutorial/WorkdaySSOConfiguratio.png "Configuração de SSO")
 
-     a.  Na caixa de texto **ID do Provedor de Serviço**, digite **https://www.workday.com** .
+    a.  Na caixa de texto **ID do Provedor de Serviço**, digite **https://www.workday.com** .
 
     b. Selecione **Não Esvazie a Solicitação de Autenticação iniciada por SP**.
 
@@ -218,7 +218,7 @@ Nesta seção, você criará a usuária de teste Brenda Fernandes no portal do A
 
 1. No painel esquerdo do portal do Azure, escolha **Azure Active Directory**, **Usuários** e, em seguida, **Todos os usuários**.
 1. Selecione **Novo usuário** na parte superior da tela.
-1. Nas propriedades **Usuário**, siga estas etapas:
+1. Nas propriedades do **Usuário**, siga estas etapas:
    1. No campo **Nome**, insira `Britta Simon`.  
    1. No campo **Nome de usuário**, insira username@companydomain.extension. Por exemplo, `BrittaSimon@contoso.com`.
    1. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa **Senha**.
