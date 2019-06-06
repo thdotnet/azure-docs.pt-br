@@ -161,7 +161,7 @@ Um evento tem os seguintes dados de nível superior:
 | subject | cadeia de caracteres | Caminho definido pelo fornecedor para o assunto do evento. |
 | eventType | cadeia de caracteres | Um dos tipos de evento registrados para a origem do evento. |
 | eventTime | cadeia de caracteres | A hora em que o evento é gerado com base na hora UTC do provedor. |
-| ID | cadeia de caracteres | Identificador exclusivo do evento. |
+| id | cadeia de caracteres | Identificador exclusivo do evento. |
 | data | objeto | Dados de eventos do armazenamento de blob. |
 | dataVersion | cadeia de caracteres | A versão do esquema do objeto de dados. O fornecedor define a versão do esquema. |
 | metadataVersion | cadeia de caracteres | A versão do esquema do metadados de evento. Grade de Eventos define o esquema de propriedades de nível superior. Grade de Eventos fornece esse valor. |
@@ -170,33 +170,33 @@ O objeto de dados tem as seguintes propriedades:
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
-| ID | cadeia de caracteres | A ID do evento. |
-|  timestamp | cadeia de caracteres | A hora em que o evento ocorreu. |
-| ação | cadeia de caracteres | A ação que abrange o evento fornecido. |
-| destino | objeto | O destino do evento. |
-| solicitação | objeto | A solicitação que gerou o evento. |
+| id | cadeia de caracteres | A ID do evento. |
+| timestamp | cadeia de caracteres | A hora em que o evento ocorreu. |
+| action | cadeia de caracteres | A ação que abrange o evento fornecido. |
+| target | objeto | O destino do evento. |
+| request | objeto | A solicitação que gerou o evento. |
 
 O objeto de destino tem as seguintes propriedades:
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
 | mediaType | cadeia de caracteres | O tipo MIME do objeto referenciado. |
-| tamanho | inteiro | O número de bytes do conteúdo. Mesmo que o campo de Comprimento. |
+| size | inteiro | O número de bytes do conteúdo. Mesmo que o campo de Comprimento. |
 | digest | cadeia de caracteres | O resumo da mensagem, conforme definido pela Especificação API HTTP do Registry V2. |
 | length | inteiro | O número de bytes do conteúdo. O mesmo que o campo Tamanho. |
 | repository | cadeia de caracteres | Nome do repositório. |
-| marca | cadeia de caracteres | O nome da marca. |
-| Nome | cadeia de caracteres | O nome do gráfico. |
+| tag | cadeia de caracteres | O nome da marca. |
+| name | cadeia de caracteres | O nome do gráfico. |
 | version | cadeia de caracteres | A versão do gráfico. |
 
 O objeto solicitado tem as seguintes propriedades:
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
-| ID | cadeia de caracteres | A ID da solicitação que iniciou o evento. |
+| id | cadeia de caracteres | A ID da solicitação que iniciou o evento. |
 | addr | cadeia de caracteres | O IP ou nome de host e, possivelmente, a porta da conexão do cliente que iniciou o evento. Esse valor é o RemoteAddr da solicitação http padrão. |
 | host | cadeia de caracteres | O nome de host acessível externamente da instância de registro, conforme especificado pelo cabeçalho do host http em solicitações de entrada. |
-| estático | cadeia de caracteres | O método de solicitação que gerou o evento. |
+| method | cadeia de caracteres | O método de solicitação que gerou o evento. |
 | useragent | cadeia de caracteres | O cabeçalho do agente de usuário da solicitação. |
 
 ## <a name="next-steps"></a>Próximas etapas
