@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 5/13/2019
 ms.author: victorh
-ms.openlocfilehash: 847ad271dac4afc8c8baa2faa8702b3a3ab6cefa
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: b34baa6f1ba91935fc6307dbb1617393786043b9
+ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65596707"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66692842"
 ---
 # <a name="azure-dns-alias-records-overview"></a>Visão geral dos registros de alias do DNS do Azure
 
@@ -20,19 +20,19 @@ Os registros de alias do DNS do Azure são qualificações em um conjunto de reg
 
 Um conjunto de registros de alias é suportado para os seguintes tipos de registro em uma zona DNS do Azure: 
 
-- O 
+- O
 - AAAA
 - CNAME
 
 > [!NOTE]
 > Se você pretende usar um registro de alias para os tipos de registros A ou AAAA para apontar para um [perfil do Gerenciador de Tráfego do Azure](../traffic-manager/quickstart-create-traffic-manager-profile.md), verifique se o perfil do Gerenciador de Tráfego tem apenas [pontos de extremidade externos](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints). Você deve fornecer o endereço IPv4 ou IPv6 para pontos de extremidade externos no Gerenciador de Tráfego. É possível usar nomes de domínio totalmente qualificados (FQDNs) em pontos de extremidade. O ideal é usar endereços IP estáticos.
 
-## <a name="capabilities"></a>Recursos
+## <a name="capabilities"></a>Funcionalidades
 
 - **Aponte para um recurso IP público de um conjunto de registros DNS A / AAAA.** Você pode criar um conjunto de registros A / AAAA e torná-lo um conjunto de registros de alias para apontar para um recurso IP público. O conjunto de registros de DNS é automático se o endereço IP público é alterado ou é excluído. Registros DNS pendentes que apontem para endereços IP incorretos são evitados.
 
 - **Aponte para um perfil do Gerenciador de Tráfego de um conjunto de registros DNS A / AAAA / CNAME.** Você pode criar um conjunto de registros CNAME ou A/AAAA e usar registros de alias para apontar para um perfil do Gerenciador de Tráfego. É especialmente útil quando você precisa rotear o tráfego no ápice da zona, uma vez que registros CNAME tradicionais não têm suporte para um ápice da zona. Por exemplo, digamos que seu perfil do Gerenciador de Tráfego seja myprofile.trafficmanager.net e sua zona DNS empresarial seja contoso.com. Você poderá criar um conjunto de registros de alias do tipo um/AAAA para contoso.com (apex da zona) e apontar para myprofile.trafficmanager.net.
-- **Aponte para um ponto de extremidade do Azure Content Delivery Network (CDN)**. Isso é útil quando você cria sites estático usando o armazenamento do Azure e CDN do Azure.
+- **Aponte para um ponto de extremidade do Azure Content Delivery Network (CDN)** . Isso é útil quando você cria sites estático usando o armazenamento do Azure e CDN do Azure.
 - **Apontar para outro conjunto de registros DNS dentro da mesma zona.** Registros de alias podem referenciar outros conjuntos de registros do mesmo tipo. Por exemplo, um conjunto de registros DNS CNAME pode ser um alias para outro conjunto de registros CNAME. Essa organização é útil se você quiser que alguns conjuntos de registros sejam aliases e alguns não-aliases.
 
 ## <a name="scenarios"></a>Cenários
@@ -67,6 +67,9 @@ Assim como um perfil do Gerenciador de tráfego, você também pode usar os regi
 Por exemplo, se seu site estático chamado www.contoso.com, seus usuários podem acessar seu site usando contoso.com sem a necessidade de prefixar www ao nome DNS.
 
 Conforme descrito anteriormente, os registros CNAME não têm suporte no ápice da zona. Portanto, é possível usar um registro CNAME para apontar o contoso.com para o ponto de extremidade CDN. Em vez disso, você pode usar um registro de alias para apontar o ápice da zona para um ponto de extremidade CDN diretamente.
+
+> [!NOTE]
+> Apontando um apex de zona para pontos de extremidade CDN da CDN do Azure da Akamai não é suportado atualmente.
 
 ## <a name="next-steps"></a>Próximas etapas
 

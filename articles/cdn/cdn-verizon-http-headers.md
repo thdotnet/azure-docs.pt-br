@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: magattus
-ms.openlocfilehash: 7ce845fb272cea1d621e8ccc18203e3a071e8c29
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b9f7a5332c8529753f2e22efd6af3d04cb3f44b6
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60323257"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479758"
 ---
 # <a name="verizon-specific-http-headers-for-azure-cdn-rules-engine"></a>Cabeçalhos HTTP Verizon específicos para o mecanismo de regras de CDN do Microsoft Azure
 
 Para os produtos **Premium CD do Azure da Verizon**, quando uma solicitação HTTP é enviada ao servidor de origem, o servidor do ponto de presença (POP) pode adicionar um ou mais cabeçalhos reservados (ou cabeçalhos especiais de proxy) na solicitação do cliente ao POP. Esses cabeçalhos estão além dos cabeçalhos de encaminhamento padrão recebidos. Para obter informações sobre cabeçalhos de solicitação padrão, consulte [Campos de solicitação](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields).
 
-Se você quiser impedir que um desses cabeçalhos reservado seja adicionado na solicitação POP de CDN do Microsoft Azure (Rede de Fornecimento de Conteúdo) para o servidor de origem, você deve criar uma regra com o [recurso Cabeçalhos Especiais de Proxy](cdn-rules-engine-reference-features.md#proxy-special-headers) no mecanismo de regras. Nessa regra, exclua o cabeçalho que você deseja remover da lista padrão de cabeçalhos no campo cabeçalhos. Se você tiver habilitado o [recurso Cabeçalhos de Resposta do Cache de depuração](cdn-rules-engine-reference-features.md#debug-cache-response-headers), certifique-se de adicionar os cabeçalhos `X-EC-Debug` necessários. 
+Se você quiser impedir que um desses cabeçalhos reservado seja adicionado na solicitação POP de CDN do Microsoft Azure (Rede de Fornecimento de Conteúdo) para o servidor de origem, você deve criar uma regra com o [recurso Cabeçalhos Especiais de Proxy](cdn-verizon-premium-rules-engine-reference-features.md#proxy-special-headers) no mecanismo de regras. Nessa regra, exclua o cabeçalho que você deseja remover da lista padrão de cabeçalhos no campo cabeçalhos. Se você tiver habilitado o [recurso Cabeçalhos de Resposta do Cache de depuração](cdn-verizon-premium-rules-engine-reference-features.md#debug-cache-response-headers), certifique-se de adicionar os cabeçalhos `X-EC-Debug` necessários. 
 
 Por exemplo, para remover o `Via` cabeçalho, o campo de cabeçalhos da regra deve incluir a seguinte lista de cabeçalhos: *X-Forwarded-For, X-Forwarded-Proto, X-Host, X-Midgress, X-Gateway-List, X-EC-Name, Host*. 
 
@@ -42,7 +42,7 @@ X-Host | Indica o nome do host da solicitação. | cdn.mydomain.com
 X-Midgress | Indica se a solicitação foi proxy por meio de um servidor adicional de CDN. Por exemplo, um servidor de proteção do servidor de origem POP ou um servidor POP de gateway de servidor para ADN. <br />Esse cabeçalho é adicionado à solicitação somente quando o tráfego de midgress ocorrer. Nesse caso, o cabeçalho é definido como 1 para indicar que a solicitação foi proxy por meio de um servidor adicional de CDN.| 1
 [Host](#host-request-header) | Identifica o host e a porta em que o conteúdo solicitado pode ser encontrado. | marketing.mydomain.com:80
 [X-Gateway-List](#x-gateway-list-request-header) | ADN: Identifica a lista de failover de servidores de Gateway ADN atribuído a uma origem de cliente. <br />Blindagem da origem: Indica o conjunto de servidores de escudo de origem atribuído a uma origem de cliente. | `icn1,hhp1,hnd1`
-X-EC-_&lt;name&gt;_ | Cabeçalhos de solicitação que começam com *X EC* (por exemplo, X-EC-Tag, [EC-X-Debug](cdn-http-debug-headers.md)) são reservados para uso pela CDN.| waf-production
+X-EC- _&lt;name&gt;_ | Cabeçalhos de solicitação que começam com *X EC* (por exemplo, X-EC-Tag, [EC-X-Debug](cdn-http-debug-headers.md)) são reservados para uso pela CDN.| waf-production
 
 ## <a name="via-request-header"></a>Através do cabeçalho da solicitação
 O formato por meio do qual o cabeçalho de solicitação `Via` identifica um servidor POP é especificado pela seguinte sintaxe:

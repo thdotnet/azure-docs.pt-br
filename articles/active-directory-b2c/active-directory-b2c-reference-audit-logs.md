@@ -2,20 +2,20 @@
 title: Exemplos e as definições de logs de auditoria no Azure Active Directory B2C | Microsoft Docs
 description: Guia e exemplos de como acessar os logs de auditoria do Azure AD B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 08/04/2017
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: fdc3578fe78e60086a148e4204019a8293030b83
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 27c91185bacea839ec73a3f4bd06f5df43bd4edf
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64688760"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66509650"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Acessando os logs de auditoria do Microsoft Azure Active Directory B2C
 
@@ -75,7 +75,7 @@ Para realizar o download dos logs de auditoria do Microsoft Azure Active Directo
 `https://graph.windows.net/your-b2c-tentant.onmicrosoft.com/activities/audit?api-version=beta&$filter=category eq 'B2C'`
 
 ### <a name="powershell-script"></a>Script do PowerShell
-O script a seguir fornece um exemplo de uso do PowerShell para consultar a API de relatórios do Microsoft Azure Active Directory e armazenar os resultados como um arquivo JSON: 
+O script a seguir fornece um exemplo de uso do PowerShell para consultar a API de relatórios do Microsoft Azure Active Directory e armazenar os resultados como um arquivo JSON:
 
 ```powershell
 # This script will require registration of a Web Application in Azure Active Directory (see https://azure.microsoft.com/documentation/articles/active-directory-reporting-api-getting-started/)

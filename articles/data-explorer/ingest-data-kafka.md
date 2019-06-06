@@ -1,20 +1,20 @@
 ---
-title: 'Início Rápido: ingerir dados do Kafka no Azure Data Explorer'
-description: Neste início rápido, você aprenderá a ingerir (carregar) dados no Azure Data Explorer do Kafka.
+title: ingerir dados do Kafka no Azure Data Explorer
+description: Neste artigo, você aprenderá a ingestão de dados (carga) no Data Explorer do Azure, do Kafka.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
-ms.topic: quickstart
-ms.date: 05/17/2019
-ms.openlocfilehash: f36acb7237438848a53fdf91c291c4f67233af5d
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 06/03/2019
+ms.openlocfilehash: 03b46ff50683149a22c71ccb155480a0f08455bd
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65901033"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66497277"
 ---
-# <a name="quickstart-ingest-data-from-kafka-into-azure-data-explorer"></a>Início Rápido: ingerir dados do Kafka no Azure Data Explorer
+# <a name="ingest-data-from-kafka-into-azure-data-explorer"></a>ingerir dados do Kafka no Azure Data Explorer
  
 O Azure Data Explorer é um serviço de exploração de dados rápido e altamente escalonável para dados de log e telemetria. O Azure Data Explorer oferece ingestão (carregamento de dados) do Kafka. Kafka é uma plataforma de streaming distribuída que permite a criação de pipelines de dados de fluxo em tempo real, os quais movem os dados entre sistemas ou aplicativos de modo confiável.
  
@@ -162,5 +162,4 @@ cd ./azure-kusto-samples-dotnet/kafka/
  
 ## <a name="next-steps"></a>Próximas etapas
  
-> [!div class="nextstepaction"]
-> [Início Rápido: consultar dados no Azure Data Explorer](web-query-data.md)
+* [Consultar dados no Data Explorer do Azure](web-query-data.md)

@@ -5,14 +5,14 @@ services: container-service
 author: tylermsft
 ms.service: container-service
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 06/04/2019
 ms.author: twhitney
-ms.openlocfilehash: 6b5ebbab717a3db7c9b50549d2762df61c274131
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 11f6869d4d5a2ee0ef2e986ee8268c7a001ea015
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66307341"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688641"
 ---
 # <a name="connect-with-rdp-to-azure-kubernetes-service-aks-cluster-windows-server-nodes-for-maintenance-or-troubleshooting"></a>Conectar-se com o RDP para o serviço de Kubernetes do Azure (AKS) nós do cluster do Windows Server para manutenção ou solução de problemas
 
@@ -32,7 +32,18 @@ Você também precisa da CLI do Azure versão 2.0.61 ou posterior instalado e co
 
 Os nós do Windows Server do cluster do AKS não tem endereços IP acessíveis externamente. Para fazer uma conexão de RDP, você pode implantar uma máquina virtual com um endereço IP acessível publicamente à mesma sub-rede que os nós do Windows Server.
 
-O exemplo a seguir cria uma máquina virtual denominada *myVM* na *myResourceGroup* grupo de recursos. Substitua *SUBNET_ID $* com a ID da sub-rede usada pelo seu pool de nós do Windows Server.
+O exemplo a seguir cria uma máquina virtual denominada *myVM* na *myResourceGroup* grupo de recursos.
+
+Primeiro, obtenha a sub-rede usada pelo seu pool de nós do Windows Server. Para obter a id de sub-rede, você precisa do nome da sub-rede. Para obter o nome da sub-rede, você precisa do nome da rede virtual. Obtenha o nome de rede virtual, consultando o cluster para sua lista de redes. Para consultar o cluster, você precisa de seu nome. Você pode obter todos esses executando o seguinte no Azure Cloud Shell:
+
+```azurecli-interactive
+CLUSTER_RG=$(az aks show -g myResourceGroup -n myAKSCluster --query nodeResourceGroup -o tsv)
+VNET_NAME=$(az network vnet list -g $CLUSTER_RG --query [0].name -o tsv)
+SUBNET_NAME=$(az network vnet subnet list -g $CLUSTER_RG --vnet-name $VNET_NAME --query [0].name -o tsv)
+SUBNET_ID=$(az network vnet subnet show -g $CLUSTER_RG --vnet-name $VNET_NAME --name $SUBNET_NAME --query id -o tsv)
+```
+
+Agora que você tem a SUBNET_ID, execute o seguinte comando na mesma janela do Azure Cloud Shell para criar a VM:
 
 ```azurecli-interactive
 az vm create \

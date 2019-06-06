@@ -9,12 +9,12 @@ ms.date: 11/13/2018
 ms.topic: conceptual
 ms.author: raynew
 manager: carmonm
-ms.openlocfilehash: 050e3032d47b8215ae1aef8492c247031275ab86
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 83cfd2b7ccdf8ec14e828baec1031e11b28c988c
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60237613"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427371"
 ---
 # <a name="azure-backup-server-protection-matrix"></a>Matriz de proteção do Servidor de Backup do Azure
 
@@ -82,6 +82,15 @@ Este artigo lista os vários servidores e as cargas de trabalho que você pode p
 |VMs VMware|VMware vCenter/vSphere ESX/ESXi versão licenciada 5.5/6.0/6.5 |Servidor físico, <br/>VM do Hyper-V local, <br/> VM do Windows no VMWare|S|S|VMs do VMware em CSVs (volumes compartilhados de cluster), NFS e armazenamento SAN<br /> A recuperação no nível de item de arquivos e pastas está disponível somente para VMs do Windows; não há suporte para vApps do VMware.|
 |VMs VMware|[VMware vSphere 6.7](backup-azure-backup-server-vmware.md#vmware-vsphere-67) |Servidor físico, <br/>VM do Hyper-V local, <br/> VM do Windows no VMWare|S|N|VMs do VMware em CSVs (volumes compartilhados de cluster), NFS e armazenamento SAN<br /> A recuperação no nível de item de arquivos e pastas está disponível somente para VMs do Windows; não há suporte para vApps do VMware.|
 |Linux|Linux em execução como convidado de Hyper-V ou VMware|Servidor físico, <br/>VM do Hyper-V local, <br/> VM do Windows no VMWare|S|S|O Hyper-V deve ser executado no Windows Server 2012 R2 ou Windows Server 2016. Proteger: Máquina virtual inteira<br /><br />Recuperar: Máquina virtual inteira <br/><br/> Para obter uma lista completa de versões e distribuições do Linux com suporte, consulte o artigo [Linux em distribuições aprovadas pelo Azure](../virtual-machines/linux/endorsed-distros.md).|
+
+## <a name="azure-expressroute-support"></a>Suporte do Azure ExpressRoute
+
+Se o ExpressRoute do Azure está configurado com o emparelhamento privado ou a Microsoft, ele não pode ser usado para fazer backup dos dados no Azure.
+
+Se o ExpressRoute do Azure é configurado com o emparelhamento público, ele pode ser usado para fazer backup dos dados no Azure.
+
+>[!NOTE]
+>Emparelhamento público é preterido para novos circuitos.
 
 ## <a name="cluster-support"></a>Suporte a cluster
 O Servidor de Backup do Azure pode proteger dados nos seguintes aplicativos em cluster:

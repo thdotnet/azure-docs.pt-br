@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 8/21/2018
 ms.author: raynew
-ms.openlocfilehash: 6a29aeda52fe599ec7e2ee3b3ea1846e05b73d7d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f7d97866bb3ae895f83fff248ceec2e83dd60bf9
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61231664"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688905"
 ---
 # <a name="monitor-and-manage-recovery-services-vaults"></a>Monitorar e gerenciar cofres dos Serviços de Recuperação
 
@@ -156,7 +156,7 @@ Escolha a severidade do alerta (Crítico ou Aviso) usada para gerar o email. Atu
 
 ## <a name="manage-backup-items"></a>Gerenciar itens de Backup
 
-Um cofre dos Serviços de Recuperação contém muitos tipos de dados de backup. Para obter uma lista completa de tipos de backup, consulte [Quais backups de aplicativos e cargas de trabalho podem ser feitos](backup-introduction-to-azure-backup.md#which-azure-backup-components-should-i-use). Para gerenciar os diversos servidores, computadores, bancos de dados e cargas de trabalho, clique no bloco **Itens de Backup** para exibir o conteúdo do cofre.
+Um cofre dos Serviços de Recuperação contém muitos tipos de dados de backup. [Saiba mais](backup-overview.md#what-can-i-back-up) sobre o que você pode fazer backup. Para gerenciar os diversos servidores, computadores, bancos de dados e cargas de trabalho, clique no bloco **Itens de Backup** para exibir o conteúdo do cofre.
 
 ![Bloco Itens de backup](./media/backup-azure-manage-windows-server/backup-items.png)
 
@@ -221,7 +221,7 @@ O Tipo de Item é o tipo de gerenciamento de backup da instância protegida. Há
 É possível exibir uma única operação ou todas as operações. Não é possível selecionar duas ou três operações. As Operações disponíveis são:
 
 * Todas as operações
-* Registrar 
+* Registrar
 * Configurar o backup
 * Backup
 * Restaurar

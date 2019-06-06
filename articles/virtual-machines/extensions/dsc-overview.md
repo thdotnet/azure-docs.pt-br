@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
-ms.openlocfilehash: 6ec85e840f8e61c46e86b0fa8fb947fb763a4265
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.openlocfilehash: 410990ecdca8a94be9c7c3d0b48a5092fcaa6060
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65518855"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515901"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Introdução ao manipulador de extensão de Desired State Configuration do Azure
 
@@ -81,7 +81,7 @@ Essas informações podem ser vistas na [portal do Azure](../../automation/autom
 (Get-AzAutomationRegistrationInfo -ResourceGroupName <resourcegroupname> -AutomationAccountName <accountname>).PrimaryKey
 ```
 
-Para o nome da configuração de nó, verifique se você estiver usando o nome da *configuração de nó* e não a configuração.
+Para o nome da configuração de nó, verifique se que a configuração de nó existe na configuração de estado do Azure.  Se não existir, a implantação da extensão retornará uma falha.  Também, verifique se você está usando o nome da *configuração de nó* e não a configuração.
 Uma configuração é definida em um script que é usado [para compilar a configuração de nó (arquivo MOF)](https://docs.microsoft.com/azure/automation/automation-dsc-compile).
 O nome sempre será a configuração seguida por um período `.` e `localhost` ou um nome de computador específico.
 

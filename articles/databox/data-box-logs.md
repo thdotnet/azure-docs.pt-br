@@ -1,43 +1,43 @@
 ---
-title: Rastrear e registrar eventos do Azure Data Box | Microsoft Docs
-description: Descreve como controlar e registrar eventos em vários estágios do seu pedido do Azure Data Box.
+title: Rastrear e registrar o Azure Data Box, eventos pesada de caixa de dados do Azure | Microsoft Docs
+description: Descreve como controlar e registrar eventos em vários estágios do seu pedido do Azure Data Box e pesada de caixa de dados do Azure.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 05/14/2019
+ms.date: 06/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 7a6adc72c1dfbe67311ae2ca98d5b07dfab41719
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 108d17d3e0ca5f32648f9d4f6cf4b5f9a2984d0c
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65806500"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66495816"
 ---
-# <a name="tracking-and-event-logging-for-your-azure-data-box"></a>Acompanhamento e log de eventos para o Azure Data Box
+# <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy"></a>Acompanhamento e log de eventos para o Azure Data Box e pesada de caixa de dados do Azure
 
-Um pedido do Data Box percorre as etapas a seguir: pedidos, configurar, dados copiam, retornam, carregar no Azure e verifique se e eliminação de dados. Correspondendo a cada etapa na ordem, você pode executar várias ações para controlar o acesso à ordem, os eventos de auditoria, controlar a ordem e interpretar os vários logs que são gerados.
+Uma ordem de caixa de dados ou dados caixa pesada percorre as etapas a seguir: pedidos, configurar, dados copiam, retornam, carregar no Azure e verifique se e eliminação de dados. Correspondendo a cada etapa na ordem, você pode executar várias ações para controlar o acesso à ordem, os eventos de auditoria, controlar a ordem e interpretar os vários logs que são gerados.
 
-A tabela a seguir mostra um resumo de como as etapas de ordem de caixa de dados e as ferramentas disponíveis para controlar e auditar a ordem durante cada etapa.
+A tabela a seguir mostra um resumo de como as etapas de ordem de caixa de dados ou dados caixa pesada e as ferramentas disponíveis para controlar e auditar a ordem durante cada etapa.
 
 | Estágio de ordem de caixa de dados       | Ferramenta para controlar e auditar                                                                        |
 |----------------------------|------------------------------------------------------------------------------------------------|
 | Criar pedido               | [Configurar o controle de acesso na ordem por meio do RBAC](#set-up-access-control-on-the-order)                                                    |
 | Ordem de processamento            | [Controlar a ordem](#track-the-order) por meio de <ul><li> Portal do Azure </li><li> Site da transportadora de envio </li><li>Notificações por email</ul> |
 | Configurar o dispositivo              | Credenciais de dispositivo acesso conectado [os logs de atividade](#query-activity-logs-during-setup)                                              |
-| Cópia de dados para o dispositivo        | [Modo de exibição *error.xml* arquivos](#view-error-log-during-data-copy-to-data-box) para cópia de dados                                                             |
+| Cópia de dados para o dispositivo        | [Modo de exibição *error.xml* arquivos](#view-error-log-during-data-copy) para cópia de dados                                                             |
 | Preparar para o envio            | [Inspecione os arquivos de BOM](#inspect-bom-during-prepare-to-ship) ou os arquivos de manifesto no dispositivo                                      |
 | Carregamento de dados do Azure       | [Revisão *copylogs* ](#review-copy-log-during-upload-to-azure) para erros durante a dados de carregamento no data center do Azure                         |
 | Eliminação de dados do dispositivo   | [Exibir a cadeia de custódia logs](#get-chain-of-custody-logs-after-data-erasure) incluindo logs de auditoria e histórico de pedidos                                                   |
 
-Este artigo descreve em detalhes os vários mecanismos ou ferramentas disponíveis para controlar e auditar o pedido do Data Box.
+Este artigo descreve em detalhes os vários mecanismos ou ferramentas disponíveis para controlar e auditar o Data Box caixa de dados pesados, a ordem. As informações neste artigo se aplica, caixa de dados tanto dados caixa pesada. Nas seções subsequentes, todas as referências a caixa de dados também se aplicam a caixa de dados pesados.
 
 ## <a name="set-up-access-control-on-the-order"></a>Configurar o controle de acesso na ordem de
 
 Você pode controlar quem pode acessar seu pedido quando a ordem é criada. Configure funções de controle de acesso baseado em função (RBAC) em vários escopos para controlar o acesso para o pedido do Data Box. Uma função RBAC determina o tipo de acesso – leitura / gravação, somente leitura, leitura / gravação a um subconjunto de operações.
 
-As duas funções de caixa de dados que podem ser definidas são:
+As duas funções que podem ser definidas para o serviço do Azure Data Box são:
 
 - **Leitor de dados do caixa** -têm acesso somente leitura a um pedido, conforme definido pelo escopo. Eles só podem exibir detalhes de um pedido. Eles não podem acessar todos os outros detalhes relacionados às contas de armazenamento ou editar os detalhes do pedido, como endereço e assim por diante.
 - **Colaborador da caixa de dados** -só pode criar um pedido para transferir dados para uma determinada conta de armazenamento *se eles já têm acesso de gravação a uma conta de armazenamento*. Se não tiverem acesso a uma conta de armazenamento, eles ainda não é possível criar um pedido do Data Box para copiar dados para a conta. Essa função não define qualquer conta de armazenamento relacionados a permissões, nem concede acesso a contas de armazenamento.  
@@ -70,9 +70,9 @@ Você pode acompanhar o seu pedido por meio do portal do Azure e o site da trans
 
 - Cada entrada na caixa de dados é registrada em tempo real. No entanto, essas informações só estão disponíveis na [logs de auditoria](#audit-logs) depois que o pedido for concluído com êxito.
 
-## <a name="view-error-log-during-data-copy-to-data-box"></a>Exibir o log de erros durante a cópia de dados para o Data Box
+## <a name="view-error-log-during-data-copy"></a>Exibir o log de erros durante a cópia de dados
 
-Durante a cópia de dados para Data Box, um arquivo de erro é gerado se houver algum problema com os dados que estão sendo copiados.
+Durante a cópia de dados a caixa de dados ou dados caixa pesada, um arquivo de erro é gerado se houver algum problema com os dados que estão sendo copiados.
 
 ### <a name="errorxml-file"></a>Error.xml file
 
@@ -147,7 +147,7 @@ Aqui está um exemplo do *error.xml* para erros diferentes ao copiar arquivos do
 <file error="ERROR_CONTAINER_OR_SHARE_NAME_ALPHA_NUMERIC_DASH">\Starting with Capital</file>
 ```
 
-Em cada um dos casos acima, resolva os erros antes de prosseguir para a próxima etapa. Para obter mais informações sobre os erros recebidos durante a cópia de dados para Data Box por meio de protocolos SMB ou NFS, acesse [solucionar problemas do Data Box emite](data-box-troubleshoot.md). Para obter informações sobre erros recebidos durante a cópia de dados para a caixa de dados por meio de REST, acesse [problemas de armazenamento de Blob de caixa de dados solucionar](data-box-troubleshoot-rest.md).
+Em cada um dos casos acima, resolva os erros antes de prosseguir para a próxima etapa. Para obter mais informações sobre os erros recebidos durante a cópia de dados para Data Box por meio de protocolos SMB ou NFS, acesse [problemas de caixa de solucionar problemas de dados e dados caixa pesada](data-box-troubleshoot.md). Para obter informações sobre erros recebidos durante a cópia de dados para a caixa de dados por meio de REST, acesse [problemas de armazenamento de Blob de caixa de dados solucionar](data-box-troubleshoot-rest.md).
 
 ## <a name="inspect-bom-during-prepare-to-ship"></a>Inspecionar BOM durante a preparação para o envio
 
@@ -157,7 +157,7 @@ Durante a preparação para o envio, uma lista de arquivos conhecida como lista 
 - Use esse arquivo para verificar em relação os tamanhos reais dos arquivos.
 - Verifique se que o *crc64* corresponde a uma cadeia de caracteres diferente de zero. <!--A null value for crc64 indicates that there was a reparse point error)-->
 
-Para obter mais informações sobre os erros recebidos durante a preparação enviar, vá para [solucionar problemas do Data Box emite](data-box-troubleshoot.md).
+Para obter mais informações sobre os erros recebidos durante a preparação enviar, vá para [problemas de caixa de solucionar problemas de dados e dados caixa pesada](data-box-troubleshoot.md).
 
 ### <a name="bom-or-manifest-file"></a>Arquivo de manifesto ou BOM
 
@@ -253,7 +253,7 @@ Depois que os dados são apagados dos discos do Data Box, de acordo com as diret
 
 ### <a name="audit-logs"></a>Logs de auditoria
 
-Os logs de auditoria contêm informações sobre como ligar e compartilhar o acesso no Data Box quando ele estiver fora do datacenter do Azure. Esses logs estão localizados em: `storage-account/azuredatabox-chainofcustodylogs`
+Os logs de auditoria contêm informações sobre como ligar e compartilhar o acesso na caixa de dados ou dados caixa pesada quando ele estiver fora do datacenter do Azure. Esses logs estão localizados em: `storage-account/azuredatabox-chainofcustodylogs`
 
 Aqui está um exemplo de log de auditoria de uma caixa de dados:
 
@@ -308,9 +308,9 @@ The authentication information fields provide detailed information about this sp
 ```
 
 
-## <a name="download-order-history"></a>Baixar o histórico de pedidos
+## <a name="download-order-history"></a>Baixar histórico de pedidos
 
-Histórico de pedidos está disponível no portal do Azure. Se o pedido for concluído e a limpeza de dispositivo (eliminação dos discos de dados) for concluída, vá para **pedido do Data Box > detalhes da ordem**. ** Baixe o histórico de pedidos** opção está disponível. Para obter mais informações, consulte [baixar o histórico de pedidos](data-box-portal-admin.md#download-order-history).
+Histórico de pedidos está disponível no portal do Azure. Se o pedido for concluído e a limpeza de dispositivo (eliminação dos discos de dados) for concluída, vá para o seu pedido de dispositivo e navegue até **detalhes da ordem**. ** Baixe o histórico de pedidos** opção está disponível. Para obter mais informações, consulte [baixar o histórico de pedidos](data-box-portal-admin.md#download-order-history).
 
 Se você rolar o histórico de pedidos, você verá:
 
@@ -324,7 +324,7 @@ Aqui está um exemplo do log de histórico do pedido do portal do Azure:
 -------------------------------
 Microsoft Data Box Order Report
 -------------------------------
-Name                                               : gus-pinto                              
+Name                                               : gus-poland                              
 StartTime(UTC)                              : 9/19/2018 8:49:23 AM +00:00                       
 DeviceType                                     : DataBox                                           
 -------------------
@@ -362,11 +362,11 @@ Time(UTC)                 | Activity                       | Status          | D
 Data Box Log Links
 ------------------
 Account Name         : gusacct
-Copy Logs Path       : databoxcopylog/gus-pinto_<Device-serial-no>_CopyLog_<GUID>.xml
+Copy Logs Path       : databoxcopylog/gus-poland_<Device-serial-no>_CopyLog_<GUID>.xml
 Audit Logs Path      : azuredatabox-chainofcustodylogs\<GUID>\<Device-serial-no>
 BOM Files Path       : azuredatabox-chainofcustodylogs\<GUID>\<Device-serial-no>
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba como [solucionar problemas em sua caixa de dados](data-box-troubleshoot.md).
+- Saiba como [solucionar problemas em sua caixa de dados e dados caixa pesada](data-box-troubleshoot.md).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/12/2019
 ms.author: kumud
-ms.openlocfilehash: b072314bdbec1d5a6184e6f20e98c35a9135a5b7
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: f4facdf8fc530c35ba02620f451a00a8da36d982
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65508416"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66497103"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Perguntas frequentes sobre a rede virtual do Azure (FAQ)
 
@@ -180,17 +180,18 @@ Sim. Todas as instâncias de função de VMs e Serviços de Nuvem implantados em
 ## <a name="azure-services-that-connect-to-vnets"></a>Serviços do Azure que se conectam a redes virtuais
 
 ### <a name="can-i-use-azure-app-service-web-apps-with-a-vnet"></a>Posso usar os Aplicativos Web do Serviço de Aplicativo do Azure em uma rede virtual?
-Sim. Você pode implantar Aplicativos Web em uma rede virtual usando o ASE (Ambiente do Serviço de Aplicativo). Se você tiver uma conexão ponto a site configurada para sua VNet, todos os aplicativos Web poderão conectar-se de forma segura e acessar recursos na VNet. Para obter mais informações, consulte os seguintes artigos:
+Sim. Você pode implantar aplicativos Web em uma rede virtual usando um ASE (ambiente de serviço de aplicativo), conecte-se o back-end de seus aplicativos para suas redes virtuais com a integração de rede virtual e bloquear o tráfego de entrada para seu aplicativo com pontos de extremidade de serviço. Para obter mais informações, consulte os seguintes artigos:
 
+* [Recursos de rede do serviço de aplicativo](../app-service/networking-features.md)
 * [Criando Aplicativos Web em um Ambiente do Serviço de Aplicativo](../app-service/environment/app-service-web-how-to-create-a-web-app-in-an-ase.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 * [Integrar seu aplicativo a uma Rede Virtual do Azure](../app-service/web-sites-integrate-with-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-* [Usando conexões híbridas e integração de rede virtual com Aplicativos Web](../app-service/web-sites-integrate-with-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json#hybrid-connections-and-app-service-environments)
+* [Restrições de acesso do serviço de aplicativo](../app-service/app-service-ip-restrictions.md)
 
 ### <a name="can-i-deploy-cloud-services-with-web-and-worker-roles-paas-in-a-vnet"></a>Posso implantar Serviços de Nuvem com funções web e de trabalho (PaaS) em uma rede virtual?
 Sim. Você pode implantar instâncias de função de Serviços de Nuvem em redes virtuais. Para fazer isso, especifique o nome e os mapeamentos de função/sub-rede na seção de configuração de rede da sua configuração de serviço. Não é preciso atualizar nenhum dos binários.
 
-### <a name="can-i-connect-a-virtual-machine-scale-set-vmss-to-a-vnet"></a>Posso conectar um Conjunto de Dimensionamento de Máquinas Virtuais (VMSS) a uma rede virtual?
-Sim. Você precisa conectar um VMSS a uma rede virtual.
+### <a name="can-i-connect-a-virtual-machine-scale-set-to-a-vnet"></a>Posso conectar uma escala de máquina virtual definida como uma rede virtual?
+Sim. Você deve se conectar a um conjunto em uma rede virtual de dimensionamento de máquina virtual.
 
 ### <a name="is-there-a-complete-list-of-azure-services-that-can-i-deploy-resources-from-into-a-vnet"></a>Há uma lista completa dos serviços do Azure, dos quais eu posso implantar recursos em uma VNet?
 Sim. Para obter detalhes, consulte [Integração de rede virtual para os serviços do Azure](virtual-network-for-azure-services.md).
@@ -219,7 +220,7 @@ Sim. Para obter detalhes, consulte [Visão geral da segurança de rede do Azure]
 ## <a name="apis-schemas-and-tools"></a>APIs, esquemas e ferramentas
 
 ### <a name="can-i-manage-vnets-from-code"></a>Posso gerenciar redes virtuais usando código?
-Sim. Você pode usar APIs REST para VNets nos modelos de implantação do [Azure Resource Manager](/rest/api/virtual-network) e [clássico (Gerenciamento de Serviços)](https://go.microsoft.com/fwlink/?LinkId=296833).
+Sim. Você pode usar APIs REST para redes virtuais na [do Azure Resource Manager](/rest/api/virtual-network) e [clássico](https://go.microsoft.com/fwlink/?LinkId=296833) modelos de implantação.
 
 ### <a name="is-there-tooling-support-for-vnets"></a>Há suporte a ferramentas para redes virtuais?
 Sim. Saiba mais sobre como usar:
@@ -239,7 +240,7 @@ Sim. O emparelhamento VNet global permite emparelhar VNets em diferentes regiõe
 Se as duas redes virtuais estiverem em outra região (o emparelhamento VNet Global), você não pode se conectar aos recursos que usam o Load Balancer Basic. Você pode se conectar aos recursos que usam o balanceador de carga padrão.
 Os recursos a seguir usam balanceadores de carga básico, que significa que você não pode se comunicar a eles em emparelhamento VNet Global:
 - VMs por trás de balanceadores de carga básico
-- Conjuntos de dimensionamento de VM com os balanceadores de carga básico 
+- Conjuntos de dimensionamento de máquinas virtuais com os balanceadores de carga básico 
 - Cache Redis 
 - O Gateway de aplicativo (v1) SKU
 - Service Fabric
@@ -247,7 +248,7 @@ Os recursos a seguir usam balanceadores de carga básico, que significa que voc�
 - Gerenciamento de API
 - Serviço de domínio do Active Directory (ADDS)
 - Aplicativos Lógicos
-- HD Insight
+- HDInsight
 -   Lote do Azure
 - AKS
 - Ambiente do Serviço de Aplicativo
@@ -285,7 +286,7 @@ Não. Não há suporte para emparelhamento transitivo. É necessário emparelhar
 Não. O emparelhamento VNet, seja local ou global, não impõe restrições de largura de banda. A largura de banda é limitada apenas pela VM ou pelo recurso de computação.
 
 ### <a name="how-can-i-troubleshoot-vnet-peering-issues"></a>Como solucionar problemas de emparelhamento de rede virtual?
-Aqui está um [guia de solução de problemas] (https://support.microsoft.com/en-us/help/4486956/troubleshooter-for-virtual-network-peering-issues) você pode experimentar.
+Aqui está uma [guia de solução de problemas](https://support.microsoft.com/en-us/help/4486956/troubleshooter-for-virtual-network-peering-issues) você pode experimentar.
 
 ## <a name="virtual-network-tap"></a>TAP de rede virtual
 

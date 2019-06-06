@@ -12,15 +12,15 @@ ms.workload: multiple
 ms.tgt_pltfrm: rest-api
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/20/2018
+ms.date: 05/28/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: e9c307b2b2e720881acb983a2a1b00ac8e03dac4
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.openlocfilehash: 3602e4ca83e828270ebef56c688670b896ca58a4
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66357068"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472740"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-the-rest-api"></a>Gerenciar o acesso aos recursos do Azure usando o RBAC e a API REST
 
@@ -52,9 +52,9 @@ No RBAC, para listar o acesso, você lista as atribuições de função. Para li
 
     | Filter | DESCRIÇÃO |
     | --- | --- |
-    | `$filter=atScope()` | Liste atribuições de função para apenas o escopo especificado, não incluindo as atribuições de função em subescopos. |
-    | `$filter=principalId%20eq%20'{objectId}'` | Liste atribuições de função para um usuário, grupo ou entidade de serviço específica. |
-    | `$filter=assignedTo('{objectId}')` | Liste atribuições de função para um usuário específico, incluindo aqueles herdados de grupos. |
+    | `$filter=atScope()` | Lista as atribuições de função para apenas o escopo especificado, não incluindo as atribuições de função em sub-escopos. |
+    | `$filter=principalId%20eq%20'{objectId}'` | Lista as atribuições de função para um usuário especificado, grupo ou entidade de serviço. |
+    | `$filter=assignedTo('{objectId}')` | Lista as atribuições de função para um usuário especificado ou a entidade de serviço. Se o usuário for um membro de um grupo que tem uma atribuição de função, essa atribuição de função também é listada. Esse filtro é transitivo para grupos, que significa que, se o usuário é um membro de um grupo e esse grupo é um membro de outro grupo que tem uma atribuição de função, essa atribuição de função também é listada. Este filtro aceita apenas uma id de objeto para um usuário ou uma entidade de serviço. Você não pode passar uma id de objeto para um grupo. |
 
 ## <a name="grant-access"></a>Conceder acesso
 

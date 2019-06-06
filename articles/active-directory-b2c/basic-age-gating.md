@@ -2,20 +2,20 @@
 title: Habilitar a restrição etária no Azure Active Directory B2C | Microsoft Docs
 description: Saiba mais sobre como identificar menores de idade usando seu aplicativo.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/13/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: b594dc6eadce5093c58d693492f8e86eb92ae4e3
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 33b379a03c92b81885f7adfc70f7025a85ce9057
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65228011"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66511678"
 ---
 # <a name="enable-age-gating-in-azure-active-directory-b2c"></a>Habilitar a restrição etária no Azure Active Directory B2C
 
@@ -53,7 +53,7 @@ A restrição etária envolve dois valores de idade: a idade que alguém não é
 | HR | Croácia | 16 | 18 |
 | HU | Hungria | 16 | 18 |
 | IE | Irlanda | 13 | 18 |
-| it | Itália | 16 | 18 |
+| IT | Itália | 16 | 18 |
 | KR | Coreia, República da | 14 | 18 |
 | LT | Lituânia | 16 | 18 |
 | LU | Luxemburgo | 16 | 18 |
@@ -65,10 +65,10 @@ A restrição etária envolve dois valores de idade: a idade que alguém não é
 | PT | Portugal | 16 | 18 |
 | RO | Romênia | 16 | 18 |
 | SE | Suécia | 13 | 18 |
-| SG | Cingapura | Nenhum | 21 |
+| SG | Singapura | Nenhum | 21 |
 | SI | Eslovênia | 16 | 18 |
 | SK | Eslováquia | 16 | 18 |
-| TD | Chade | Nenhum | 21 |
+| TD | Chad | Nenhum | 21 |
 | TH | Tailândia | Nenhum | 20 |
 | TW | Taiwan | Nenhum | 20 | 
 | EUA | Estados Unidos | 13 | 18 |

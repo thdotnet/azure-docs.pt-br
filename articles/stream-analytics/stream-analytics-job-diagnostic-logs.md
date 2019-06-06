@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: e784cfd2956479327cff9c97a09dd0ada6a154c2
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: ff2930fbe0e53c4b3c1223f87919c0913296d07c
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65826570"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515929"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-diagnostics-logs"></a>Solucionar problemas do Stream Analytics do Azure usando logs de diagnóstico
 
@@ -46,7 +46,7 @@ Os logs de atividades são ativados por padrão e fornecem insights de alto nív
 
    ![Resumo de operações do log de atividades do Stream Analytics](./media/stream-analytics-job-diagnostic-logs/operation-summary.png)
 
-4. Role para baixo até a seção **Propriedades** do JSON, que fornece os detalhes do erro que causou a operação com falha. Neste exemplo, a falha ocorreu devido a um erro de tempo de execução de valores de latitude fora do limite.
+4. Role para baixo até a seção **Propriedades** do JSON, que fornece os detalhes do erro que causou a operação com falha. Neste exemplo, a falha ocorreu devido a um erro de tempo de execução de valores de latitude fora do limite. Discrepância nos dados que são processadas por um trabalho do Stream Analytics faz com que um erro de dados. Você pode aprender sobre diferentes [erros de dados de entrada e saída e por que eles ocorrem](https://docs.microsoft.com/azure/stream-analytics/data-errors).
 
    ![Detalhes do erro JSON](./media/stream-analytics-job-diagnostic-logs/error-details.png)
 

@@ -1,18 +1,18 @@
 ---
-title: 'Início Rápido: Criar um cluster e um banco de dados do Azure Data Explorer usando a CLI do Azure'
+title: Criar um cluster e um banco de dados do Azure Data Explorer usando a CLI do Azure
 description: Saiba como criar um cluster e o banco de dados do Azure Data Explorer usando a CLI do Azure
 author: radennis
 ms.author: radennis
 ms.reviewer: orspodek
 ms.service: data-explorer
-ms.topic: quickstart
-ms.date: 04/10/2019
-ms.openlocfilehash: 1fb9027ab3301bb860d260aed737ab7674039d9b
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 06/03/2019
+ms.openlocfilehash: e771def95db00b5de8c27011641a628560952970
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59524711"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66494796"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-azure-cli"></a>Criar um cluster e um banco de dados do Azure Data Explorer usando a CLI do Azure
 
@@ -24,15 +24,15 @@ ms.locfileid: "59524711"
 > * [Python](create-cluster-database-python.md)
 >
 
-O Azure Data Explorer é um serviço de análise de dados rápido e totalmente gerenciado para análise em tempo real de grandes volumes de streaming de dados de aplicativos, sites, dispositivos IoT e muito mais. Para usar o Azure Data Explorer, primeiro crie um cluster e um ou mais bancos de dados nesse cluster. Em seguida, ingira (carregue) dados em um banco de dados para poder executar consultas nele. Neste início rápido, você criará um cluster e um banco de dados usando a CLI do Azure.
+O Azure Data Explorer é um serviço de análise de dados rápido e totalmente gerenciado para análise em tempo real de grandes volumes de streaming de dados de aplicativos, sites, dispositivos IoT e muito mais. Para usar o Azure Data Explorer, primeiro crie um cluster e um ou mais bancos de dados nesse cluster. Em seguida, ingira (carregue) dados em um banco de dados para poder executar consultas nele. Neste artigo, você cria um cluster e um banco de dados usando a CLI do Azure.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para concluir este início rápido, você precisa de uma assinatura do Azure. Se você não tiver [uma conta gratuita](https://azure.microsoft.com/free/), crie uma antes de começar.
+Para concluir este artigo, você precisa de uma assinatura do Azure. Se você não tiver [uma conta gratuita](https://azure.microsoft.com/free/), crie uma antes de começar.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Se você optar por instalar e usar a CLI do Azure localmente, este Início Rápido exigirá a CLI do Azure versão 2.0.4 ou posterior. Execute `az --version` para verificar sua versão. Se você precisar instalar ou atualizar, confira [Instalar a CLI do Azure](/cli/azure/install-azure-cli?view=azure-cli-latest).
+Se você optar por instalar e usar a CLI do Azure localmente, este artigo exigirá a CLI do Azure versão 2.0.4 ou posterior. Execute `az --version` para verificar sua versão. Se você precisar instalar ou atualizar, confira [Instalar a CLI do Azure](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="configure-the-cli-parameters"></a>Configurar os parâmetros da CLI
 
@@ -60,7 +60,7 @@ As etapas a seguir não serão necessárias se você estiver executando comandos
 
    |**Configuração** | **Valor sugerido** | **Descrição do campo**|
    |---|---|---|
-   | Nome | *azureclitest* | O nome desejado do cluster.|
+   | name | *azureclitest* | O nome desejado do cluster.|
    | sku | *D13_v2* | O SKU que será usado para o cluster. |
    | resource-group | *testrg* | O nome do grupo de recursos em que o cluster será criado. |
 
@@ -85,7 +85,7 @@ Se o resultado contém `provisioningState` com o valor `Succeeded`, o cluster fo
    |**Configuração** | **Valor sugerido** | **Descrição do campo**|
    |---|---|---|
    | nome do cluster | *azureclitest* | O nome do cluster em que o banco de dados será criado.|
-   | Nome | *clidatabase* | O nome do banco de dados.|
+   | name | *clidatabase* | O nome do banco de dados.|
    | resource-group | *testrg* | O nome do grupo de recursos em que o cluster será criado. |
    | soft-delete-period | *P365D* | Indica o tempo durante o qual os dados serão mantidos disponíveis para consulta. Consulte [política de retenção](/azure/kusto/concepts/retentionpolicy) para obter mais informações. |
    | hot-cache-period | *P31D* | Indica o tempo durante o qual os dados serão mantidos no cache. Consulte [política de cache](/azure/kusto/concepts/cachepolicy) para obter mais informações. |
@@ -100,7 +100,7 @@ Agora você tem um cluster e um banco de dados.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-* Caso você planeje seguir nossos outros guias de início rápido e tutoriais, mantenha os recursos que você criou.
+* Se você planeja siga nossos outros artigos, manter os recursos que você criou.
 * Para limpar recursos, exclua o cluster. Quando você exclui um cluster, também exclui todos os bancos de dados nele. Use o seguinte comando para excluir o cluster:
 
     ```azurecli-interactive
@@ -109,5 +109,4 @@ Agora você tem um cluster e um banco de dados.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-> [!div class="nextstepaction"]
-> [Início Rápido: Ingerir dados usando a biblioteca Python do Azure Data Explorer](python-ingest-data.md)
+* [Ingerir dados usando a biblioteca Python do Azure Data Explorer](python-ingest-data.md)

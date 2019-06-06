@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: raynew
-ms.openlocfilehash: 8a3c9a4fb1b43c1d00d66fee3548ccd10a1e075e
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 5a659da4bcc86544c31d7a789779253a0f571f34
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65969381"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66497556"
 ---
 # <a name="monitor-site-recovery"></a>Recuperação de Site do monitor
 
@@ -37,9 +37,9 @@ A seção de itens replicados mostra a integridade de todos os computadores que 
 
 **Estado** | **Detalhes**
 --- | ---
-Adequado | A replicação está progredindo normalmente. Nenhum erro ou sintomas de aviso são detectados.
+Healthy | A replicação está progredindo normalmente. Nenhum erro ou sintomas de aviso são detectados.
 Aviso | Um ou mais sintomas de aviso que podem afetar a replicação são detectados.
-Crítica | Um ou mais sintomas de erro de replicação críticos foram detectados.<br/><br/> Esses sintomas de erro geralmente são indicadores de que a replicação está paralisada ou não progrediu tão rapidamente quanto a taxa de alteração de dados.
+Crítico | Um ou mais sintomas de erro de replicação críticos foram detectados.<br/><br/> Esses sintomas de erro geralmente são indicadores de que a replicação está paralisada ou não progrediu tão rapidamente quanto a taxa de alteração de dados.
 Não aplicável | Servidores que atualmente não parecem estar replicando. Isso pode incluir computadores que tenham feito failover.
 
 ## <a name="monitor-test-failovers"></a>Monitorar failovers de teste
@@ -190,7 +190,7 @@ Além disso, você pode monitorar computadores na página de máquinas virtuais.
 
 Assine conforme a seguir:
 
-No cofre > seção **Monitoramento e Relatórios**, clique em **Eventos do Azure Site Recovery**.
+No cofre > **Monitoring** seção, clique em **eventos de recuperação de Site**.
 1. Clique em **Notificações por email**.
 1. Na **Notificação por email**, ative as notificações e especifique para quem enviar. É possível enviar para todos os administradores da assinatura receberem notificações e, opcionalmente, endereços de email específicos.
 

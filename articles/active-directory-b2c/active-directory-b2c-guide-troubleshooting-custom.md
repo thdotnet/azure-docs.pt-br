@@ -2,20 +2,20 @@
 title: Solucionar problemas de políticas personalizadas no Azure Active Directory B2C | Microsoft Docs
 description: Saiba mais sobre as abordagens para a solução de erros ao trabalhar com políticas personalizadas no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/07/2017
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5345069005f9161ff04fffb063fda99b7594ec08
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 552f056a6637b3ebacfbd15eb878c28adbec6b88
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64703049"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66509968"
 ---
 # <a name="troubleshoot-azure-ad-b2c-custom-policies-and-identity-experience-framework"></a>Solucionar problemas de políticas personalizadas do Azure AD B2C e da Estrutura de Experiência de Identidade
 
@@ -57,8 +57,8 @@ Snippet de código de erro: `Reason: User is currently logged as a user of 'your
 
 * Use `Run Now` e `https://jwt.io` para testar suas políticas independentemente de seu aplicativo Web ou móvel. Este site funciona como um aplicativo de terceira parte confiável. Ele exibe o conteúdo do JWT (Token Web JSON) que é gerado pela sua política do Azure AD B2C. Para criar um aplicativo de teste na Estrutura de Experiência de Identidade, use os seguintes valores:
     * Nome: TestApp
-    * Aplicativo Web/API Web: Não 
-    * Cliente nativo: Não 
+    * Aplicativo Web/API Web: Não
+    * Cliente nativo: Não
 
 * Para rastrear a troca de mensagens entre o navegador do cliente e o Azure AD B2C, use [Fiddler](https://www.telerik.com/fiddler). Ele pode ajudá-lo a obter uma indicação de onde sua jornada de usuário está falhando nas etapas de orquestração.
 
