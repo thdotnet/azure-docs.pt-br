@@ -94,7 +94,7 @@ Um evento tem os seguintes dados de nível superior:
 | subject | string | Caminho definido pelo fornecedor para o assunto do evento. |
 | eventType | string | Um dos tipos de evento registrados para a origem do evento. |
 | eventTime | string | A hora em que o evento é gerado com base na hora UTC do provedor. |
-| ID | string | Identificador exclusivo do evento. |
+| id | string | Identificador exclusivo do evento. |
 | data | objeto | Dados de eventos do armazenamento de blob. |
 | dataVersion | string | A versão do esquema do objeto de dados. O fornecedor define a versão do esquema. |
 | metadataVersion | string | A versão do esquema do metadados de evento. Grade de Eventos define o esquema de propriedades de nível superior. Grade de Eventos fornece esse valor. |
@@ -109,9 +109,9 @@ O objeto de dados tem as seguintes propriedades:
 | eTag | string | O valor que você pode usar para executar operações condicionalmente. |
 | contentType | string | O tipo de conteúdo especificado para o blob. |
 | contentLength | inteiro | O tamanho do blob em bytes. |
-| BlobType | string | O tipo de blob. Os valores válidos são "BlockBlob" ou "PageBlob". |
+| blobType | string | O tipo de blob. Os valores válidos são "BlockBlob" ou "PageBlob". |
 | url | string | O caminho para o blob. |
-| sequenciador | string | Um valor controlado pelo usuário que você pode usar para controlar as solicitações. |
+| sequencer | string | Um valor controlado pelo usuário que você pode usar para controlar as solicitações. |
 | storageDiagnostics | objeto | Informações sobre o Diagnóstico de armazenamento. |
  
 ## <a name="next-steps"></a>Próximas etapas
