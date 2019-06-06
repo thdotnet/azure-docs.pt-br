@@ -8,17 +8,17 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
-ms.date: 04/30/2019
-ms.openlocfilehash: edf4a3e9d9e9b51ac44f839cababa9d14bc0d17a
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.date: 05/29/2019
+ms.openlocfilehash: 21209548d1cfe7b6eebb1757e817a12c797e78a9
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65228055"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688844"
 ---
 # <a name="moderate-text-from-the-api-console"></a>Moderar texto no console da API
 
-Use a [API de Moderação de Texto](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f) no Content Moderator do Azure para examinar o conteúdo do texto. A operação verifica seu conteúdo para conteúdo ofensivo e compara o conteúdo contra blacklists personalizadas e compartilhadas.
+Use o [API de moderação de texto](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f) no Azure Content Moderator para verificar seu conteúdo de texto conteúdo ofensivo e compará-lo em relação a listas personalizadas e compartilhadas.
 
 ## <a name="get-your-api-key"></a>Obter sua chave de API
 
@@ -49,7 +49,7 @@ Selecione os parâmetros de consulta que você deseja usar em sua tela de texto.
 >
 > Para a detecção de **termos obscenos**, use o [código ISO 639-3](http://www-01.sil.org/iso639-3/codes.asp) dos idiomas com suporte listados neste artigo ou deixe vazio.
 
-Para a **correção automática**, **PII** e **classificar (visualização)**, selecione **true**. Deixe o campo **ListId** vazio.
+Para a **correção automática**, **PII** e **classificar (visualização)** , selecione **true**. Deixe o campo **ListId** vazio.
 
   ![Parâmetros de consulta do console Texto - Tela](images/text-api-console-inputs.PNG)
 
@@ -72,7 +72,7 @@ Also, 999-99-9999 looks like a social security number (SSN).
 
 ## <a name="analyze-the-response"></a>Analisar a resposta
 
-A resposta a seguir mostra as várias informações da API. Contém obscenidades em potencial, PII, classificação (visualização) e a versão corrigida automaticamente.
+A resposta a seguir mostra as várias informações da API. Ele contém possíveis palavrões, os dados pessoais, classificação (visualização) e a versão corrigidas automaticamente.
 
 > [!NOTE]
 > O recurso “Classificação” assistido por computador está na visualização e suporta apenas o inglês.

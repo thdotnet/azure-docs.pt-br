@@ -163,7 +163,7 @@ catch(ServiceException $e){
 }
 ```
 
-As mensagens enviadas para (e recebidas de) barramento de serviço de filas são instâncias dos [BrokeredMessage] [ BrokeredMessage] classe. Os objetos [BrokeredMessage][BrokeredMessage] têm um conjunto de propriedades e métodos padrão que são usados para manter as propriedades personalizadas específicas do aplicativo e um corpo de dados de aplicativo arbitrários.
+As mensagens enviadas para (e recebidas de) barramento de serviço de filas são instâncias dos [BrokeredMessage][BrokeredMessage] classe. Os objetos [BrokeredMessage][BrokeredMessage] têm um conjunto de propriedades e métodos padrão que são usados para manter as propriedades personalizadas específicas do aplicativo e um corpo de dados de aplicativo arbitrários.
 
 As filas do Barramento de Serviço dão suporte ao tamanho máximo de mensagem de 256 KB na [camada Standard](service-bus-premium-messaging.md) e 1 MB na [camada Premium](service-bus-premium-messaging.md). O cabeçalho, que inclui as propriedades de aplicativo padrão e personalizadas, pode ter um tamanho máximo de 64 KB. Não há nenhum limite no número de mensagens mantidas em uma fila mas há uma capacidade do tamanho total das mensagens mantidas por uma fila. Este limite superior do tamanho da fila é 5 GB.
 

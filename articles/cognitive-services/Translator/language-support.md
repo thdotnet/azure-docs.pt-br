@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 02/21/2019
+ms.date: 06/04/2019
 ms.author: v-pawal
-ms.openlocfilehash: 1cfe4038ff422ecba68f110707e9535226ccd4a5
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 924324b11f49a50bfb5f00e117b33c0cc572e3bb
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/04/2019
-ms.locfileid: "66472111"
+ms.locfileid: "66514995"
 ---
 # <a name="language-and-region-support-for-the-translator-text-api"></a>Idiomas e regiões compatíveis com a API de Tradução de Texto
 
@@ -35,7 +35,7 @@ A API de Tradução de Texto dá suporte aos seguintes idiomas para tradução d
 * Neural padrão: neural é o sistema de tradução padrão. Use o parâmetro `category=smt` para acessar o sistema estatístico para uso com o Hub do Microsoft Translator.
 * Neural apenas: apenas a tradução neural está disponível.
 
-**API do Tradutor V3** a API do Tradutor V3 é neural por padrão e sistemas estatísticos estão disponíveis somente quando não houver nenhum sistema neural. 
+**API do Tradutor V3** a API do Tradutor V3 é neural por padrão e sistemas estatísticos estão disponíveis somente quando não houver nenhum sistema neural.
 
 > [!NOTE]
 > Atualmente, um subconjunto de idiomas neurais estão disponíveis no conversor personalizado e gradualmente adicionaremos outros adicionais. [Exibir idiomas disponíveis atualmente no conversor personalizado](#customization).

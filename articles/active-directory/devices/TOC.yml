@@ -1,8 +1,8 @@
-- name: Documentação do Gerenciamento de Dispositivo
+- name: Documentação de identidades de dispositivo
   href: index.yml
 - name: Visão geral
   items:
-    - name: O que é o gerenciamento de dispositivo no Azure AD?
+    - name: O que é uma identidade do dispositivo?
       href: overview.md
     - name: O que é Enterprise State Roaming?
       href: enterprise-state-roaming-overview.md
@@ -29,7 +29,7 @@
 - name: Guias de instruções
   expanded: true
   items:
-    - name: Gerenciar os dispositivos usando o portal do Azure
+    - name: Gerenciar identidade do dispositivo
       href: device-management-azure-portal.md
     - name: Gerenciar dispositivos obsoletos
       href: manage-stale-devices.md

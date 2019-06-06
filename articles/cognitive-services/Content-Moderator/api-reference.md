@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: reference
-ms.date: 04/30/2019
+ms.date: 05/29/2019
 ms.author: sajagtap
-ms.openlocfilehash: 19144ae40e67127b656cedd61199b732b1c05e86
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: f802c64e141e8757f633d82ad577fa50f7d076fc
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236617"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688892"
 ---
 # <a name="content-moderator-api-reference"></a>Referência da API do Content Moderator
 
-Comece a usar o Azure Content Moderator das seguintes maneiras:
+Você pode começar a usar com APIs de moderador de conteúdo do Azure das seguintes maneiras:
 
 - No portal do Azure [inscrever-se para a API do Content Moderator](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator).
 - Ver [tente Content Moderator na web](quick-start.md) para inscrever-se com o [ferramenta de revisão do Content Moderator](https://contentmoderator.cognitive.microsoft.com/).
@@ -28,7 +28,7 @@ Comece a usar o Azure Content Moderator das seguintes maneiras:
 
 Você pode usar as seguintes APIs do Content Moderator para configurar seus fluxos de trabalho de pós-moderação.
 
-| Descrição | Referência |
+| DESCRIÇÃO | Referência |
 | -------------------- |-------------|
 | **API de moderação de imagem**<br /><br />Examine imagens e detecte possíveis conteúdos adultos e obscenos usando marcas, pontuações de confiança e outras informações extraídas. <br /><br />Use essas informações para publicar, rejeitar ou revisar o conteúdo do fluxo de trabalho pós-moderação. <br /><br />| [Referência da API de moderação de imagem](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c "Referência da API de moderação de imagem")   |
 | **API de moderação de texto**<br /><br />Examine o conteúdo do texto. Termos de conteúdo ofensivo e dados pessoais são retornados. <br /><br />Use essas informações para publicar, rejeitar ou revisar o conteúdo do fluxo de trabalho pós-moderação.<br /><br /> | [Referência da API de moderação de texto](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f "Referência da API de moderação de texto")   |
@@ -37,9 +37,9 @@ Você pode usar as seguintes APIs do Content Moderator para configurar seus flux
 
 ## <a name="review-apis"></a>Analisar APIs
 
-A API de Análise tem os seguintes componentes:
+As APIs de análise têm os seguintes componentes:
 
-| Descrição | Referência |
+| DESCRIÇÃO | Referência |
 | -------------------- |-------------|
 | **Trabalhos**<br /><br /> Inicie fluxos de trabalho de moderação de revisão e verificação de conteúdo de imagem e texto. Um trabalho de moderação verifica seu conteúdo usando a API de Moderação de Imagem e a API de Moderação de Texto. Trabalhos de moderação usam fluxos de trabalho definidos e padrão para gerar as análises. <br /><br />Depois que um moderador humano revisou as marcas atribuídas automaticamente e os dados de previsão e enviou uma decisão de moderação de conteúdo, a API de Análise envia todas as informações para o ponto de extremidade de API.<br /><br /> | [Referência de trabalho](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c5 "Referência de trabalho")   |
 | **Análises**<br /><br />Use a ferramenta de análise para criar análises de texto ou imagem diretamente para moderadores humanos.<br /><br /> Depois que um moderador humano revisou as marcas atribuídas automaticamente e os dados de previsão e enviou uma decisão de moderação de conteúdo, a API de Análise envia todas as informações para o ponto de extremidade de API.<br /><br /> | [Referência de análise](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4 "Referência de análise")   |
