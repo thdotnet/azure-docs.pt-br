@@ -108,7 +108,7 @@ Um evento tem os seguintes dados de nível superior:
 | subject | string | Caminho definido pelo fornecedor para o assunto do evento. |
 | eventType | string | Um dos tipos de evento registrados para a origem do evento. |
 | eventTime | string | A hora em que o evento é gerado com base na hora UTC do provedor. |
-| ID | string | Identificador exclusivo do evento. |
+| id | string | Identificador exclusivo do evento. |
 | data | objeto | Dados de evento de delimitação geográfica. |
 | dataVersion | string | A versão do esquema do objeto de dados. O fornecedor define a versão do esquema. |
 | metadataVersion | string | A versão do esquema do metadados de evento. Grade de Eventos define o esquema de propriedades de nível superior. Grade de Eventos fornece esse valor. |
@@ -133,7 +133,7 @@ O objeto ErrorDetails é retornado quando ocorre um erro na API de Mapas. O Erro
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
-| código | string | O código de status do HTTP. |
+| code | string | O código de status do HTTP. |
 | message | string | Se disponível, uma descrição do erro em formato legível por humanos. |
 | innererror | InnerError | Se disponível, um objeto contendo informações específicas do serviço sobre o erro. |
 
@@ -141,14 +141,14 @@ O InnerError é um objeto que contém informações específicas do serviço sob
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
-| código | string | A mensagem de erro. |
+| code | string | A mensagem de erro. |
 
 O objeto de geometrias lista as IDs de geometria das cercas geográficas que expiraram em relação ao tempo do usuário na solicitação. O objeto de geometrias contém itens de geometria com as seguintes propriedades: 
 
 | Propriedade | Type | DESCRIÇÃO |
 |:-------- |:---- |:----------- |
 | deviceid | string | ID do dispositivo. |
-| distância | string | <p>Distância da coordenada até a borda mais próxima da cerca geográfica. Positivo significa que a coordenada está fora da cerca geográfica. Se a coordenada estiver fora da cerca geográfica, mas for maior que o valor de searchBuffer distante da borda da cerca geográfica mais próxima, o valor será 999. Negativo significa que a coordenada está dentro da cerca geográfica. Se a coordenada estiver dentro do polígono, mas for maior que o valor de searchBuffer distante da borda de delimitação geográfica mais próxima, o valor será -999. Um valor de 999 significa que há grande confiança de que a coordenada esteja bem fora da cerca geográfica. Um valor de -999 significa que há uma grande confiança de que a coordenada esteja bem dentro da cerca geográfica.<p> |
+| distance | string | <p>Distância da coordenada até a borda mais próxima da cerca geográfica. Positivo significa que a coordenada está fora da cerca geográfica. Se a coordenada estiver fora da cerca geográfica, mas for maior que o valor de searchBuffer distante da borda da cerca geográfica mais próxima, o valor será 999. Negativo significa que a coordenada está dentro da cerca geográfica. Se a coordenada estiver dentro do polígono, mas for maior que o valor de searchBuffer distante da borda de delimitação geográfica mais próxima, o valor será -999. Um valor de 999 significa que há grande confiança de que a coordenada esteja bem fora da cerca geográfica. Um valor de -999 significa que há uma grande confiança de que a coordenada esteja bem dentro da cerca geográfica.<p> |
 | geometryid |string | A ID exclusiva identifica a geometria da cerca geográfica. |
 | nearestlat | número | Latitude do ponto mais próximo da geometria. |
 | nearestlon | número | Longitude do ponto mais próximo da geometria. |
