@@ -95,10 +95,6 @@
           href: platform/alerts-overview.md
         - name: Alertas clássicos
           href: platform/alerts-classic.overview.md
-        - name: Grupos inteligentes
-          href: platform/alerts-smartgroups-overview.md
-        - name: Autoscale
-          href: platform/autoscale-overview.md
         - name: Alertas de métricas
           href: platform/alerts-metric-overview.md
         - name: Alertas de registro
@@ -109,6 +105,10 @@
           href: platform/alerts-common-schema.md
         - name: Regras de ação
           href: platform/alerts-action-rules.md
+        - name: Grupos inteligentes
+          href: platform/alerts-smartgroups-overview.md
+        - name: Autoscale
+          href: platform/autoscale-overview.md
         - name: Análise de alterações
           href: app/change-analysis.md
     - name: Visualizar dados
