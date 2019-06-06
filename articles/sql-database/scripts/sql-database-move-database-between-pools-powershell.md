@@ -12,12 +12,12 @@ ms.reviewer: ''
 ms.author: sstein
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: cd31d11dad0b244cf5be53c00e6426d7f2bbab26
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 71863801db0c9e6928805aec47d7b9012a850a1d
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65834488"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729302"
 ---
 # <a name="use-powershell-to-create-elastic-pools-and-move-databases-between-elastic-pools"></a>Usar o PowerShell para criar pools elásticos e mover bancos de dados entre pools elásticos
 
@@ -25,7 +25,7 @@ Este exemplo de script do PowerShell cria dois pools elásticos e move um banco 
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Se você optar por instalar e usar o PowerShell localmente, este tutorial exigirá o AZ PowerShell 1.4.0 ou posterior. Se você precisa atualizar, consulte [Instalar o módulo do Azure PowerShell](/powershell/azure/install-az-ps). Se você estiver executando o PowerShell localmente, também precisará executar o `Connect-AzAccount` para criar uma conexão com o Azure.
 

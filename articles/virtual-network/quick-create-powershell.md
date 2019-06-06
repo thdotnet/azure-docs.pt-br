@@ -14,12 +14,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: kumud
-ms.openlocfilehash: a040f3895f710f4ebbdcd3f73568775a909aa64c
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 3a21bff9e4c696063458d5734a579fc7c37258a7
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66258265"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730074"
 ---
 # <a name="quickstart-create-a-virtual-network-using-powershell"></a>Início Rápido: Criar uma rede virtual usando o PowerShell
 
@@ -27,7 +27,7 @@ Uma rede virtual permite que recursos do Azure, como VMs (máquinas virtuais), c
 
 Caso não tenha uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) agora.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Se você decidir instalar e usar o PowerShell localmente, este início rápido exigirá que você use o módulo do Azure PowerShell versão 1.0.0 ou posterior. Para localizar a versão instalada, execute `Get-Module -ListAvailable Az`. Consulte [Instalar o módulo do Azure PowerShell](/powershell/azure/install-az-ps) para instalação e atualização de informações.
 

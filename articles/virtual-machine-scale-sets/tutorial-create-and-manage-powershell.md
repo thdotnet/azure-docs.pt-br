@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/18/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 0eb5a33b91925260c89e0b1c23800614ed637bdb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 694fc0ba6d59497cfc53efb6f2607bc6a7d4ad2d
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57990630"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66728689"
 ---
 # <a name="tutorial-create-and-manage-a-virtual-machine-scale-set-with-azure-powershell"></a>Tutorial: Criar e gerenciar um conjunto de dimensionamento de máquinas virtuais usando o Azure PowerShell
 
@@ -36,9 +36,9 @@ Um conjunto de dimensionamento de máquinas virtuais permite implantar e gerenci
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-[!INCLUDE [updated-for-az-vm.md](../../includes/updated-for-az-vm.md)]
+[!INCLUDE [updated-for-az.md](../../includes/updated-for-az.md)]
 
-[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 
 
@@ -140,7 +140,7 @@ IpAddress
 52.168.121.216
 ```
 
-Crie uma conexão remota para sua primeira instância de VM. Especifique o endereço IP público e o número da porta da instância de VM necessária, conforme mostrado com os comandos anteriores. Quando solicitado, insira as credenciais usadas quando você criou o conjunto de dimensionamento (por padrão, nos comandos de exemplo: *azureuser* e *P\@ssw0rd!*). Caso use o Azure Cloud Shell, execute esta etapa de um prompt do PowerShell local ou do Cliente da Área de Trabalho Remota. O exemplo abaixo se conecta a uma instância de VM em *1*:
+Crie uma conexão remota para sua primeira instância de VM. Especifique o endereço IP público e o número da porta da instância de VM necessária, conforme mostrado com os comandos anteriores. Quando solicitado, insira as credenciais usadas quando você criou o conjunto de dimensionamento (por padrão, nos comandos de exemplo: *azureuser* e *P\@ssw0rd!* ). Caso use o Azure Cloud Shell, execute esta etapa de um prompt do PowerShell local ou do Cliente da Área de Trabalho Remota. O exemplo abaixo se conecta a uma instância de VM em *1*:
 
 ```powershell
 mstsc /v 52.168.121.216:50001

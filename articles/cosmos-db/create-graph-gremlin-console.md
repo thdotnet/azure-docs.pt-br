@@ -5,16 +5,16 @@ author: luisbosquez
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: quickstart
-ms.date: 01/08/2018
+ms.date: 01/08/2019
 ms.author: lbosq
-ms.openlocfilehash: 06601fbad43b3daf00e06efbe95a092e76559e36
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 277755641047bf311e06d17de5fe9d39bcc3b74b
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57849815"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480586"
 ---
-# <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Início rápido: Criar, consultar e percorrer um banco de dados de grafo do Azure Cosmos DB usando o console do Gremlin
+# <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Início Rápido: Criar, consultar e percorrer um banco de dados de grafo do Azure Cosmos DB usando o console do Gremlin
 
 > [!div class="op_single_selector"]
 > * [Console do Gremlin](create-graph-gremlin-console.md)
@@ -55,7 +55,7 @@ Também é necessário instalar o [Console do Gremlin](https://tinkerpop.apache.
 
     Configuração|Valor sugerido|DESCRIÇÃO
     ---|---|---
-    hosts|[*account-name*.gremlin.cosmosdb.azure.com] ou [*account-name*.graphs.azure.com] para contas criadas antes de 20 de dezembro de 2017|Consulte a seguinte captura de tela. Esse é o valor de URI Gremlin na página Visão geral do portal do Azure, entre colchetes, com :443 / à direita removido.
+    hosts|[*account-name*.gremlin.cosmos.azure.com]|Consulte a seguinte captura de tela. Esse é o valor de URI Gremlin na página Visão geral do portal do Azure, entre colchetes, com :443 / à direita removido.
     porta|443|Definir para 443.
     Nome de Usuário|*Seu nome de usuário*|O recurso do formulário `/dbs/<db>/colls/<coll>` onde `<db>` é o nome do banco de dados e `<coll>` é o nome da coleção.
     Senha|*Sua chave primária*| Confira a segunda captura de tela abaixo. Esta é sua chave primária, que você pode recuperar da página de chaves do portal do Azure, na caixa de chave Primária. Use o botão de cópia no lado esquerdo da caixa para copiar o valor.
@@ -69,7 +69,7 @@ Também é necessário instalar o [Console do Gremlin](https://tinkerpop.apache.
 O arquivo remote-secure.yaml deve ter esta aparência:
 
 ```
-hosts: [your_database_server.gremlin.cosmosdb.azure.com]
+hosts: [your_database_server.gremlin.cosmos.azure.com] 
 port: 443
 username: /dbs/your_database_account/colls/your_collection
 password: your_primary_key

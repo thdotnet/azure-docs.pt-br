@@ -16,12 +16,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/08/2018
 ms.author: cynthn
-ms.openlocfilehash: ac350ac890b747d332f60909e03995a14d813b33
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 2e9f850183c0e5ee5ab883848e7b02afbfde2bae
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56668763"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66728985"
 ---
 # <a name="quickstart-create-a-virtual-machine-scale-set-with-azure-powershell"></a>Início Rápido: Criar um conjunto de dimensionamento de máquinas virtuais usando o Azure PowerShell
 
@@ -31,7 +31,7 @@ Um conjunto de dimensionamento de máquinas virtuais permite implantar e gerenci
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 
 ## <a name="create-a-scale-set"></a>Criar um conjunto de escala
