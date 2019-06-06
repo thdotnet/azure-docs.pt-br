@@ -1,22 +1,22 @@
 ---
-title: 'Início Rápido: Ingerir dados usando o SDK do .NET Standard do Azure Data Explorer (Versão prévia)'
-description: Neste início rápido, você aprenderá a ingerir (carregar) dados no Azure Data Explorer usando o SDK do .NET Standard.
+title: Ingerir dados usando o SDK do .NET Standard do Azure Data Explorer (Versão prévia)
+description: Neste artigo, você aprenderá a ingestão de dados (carga) no Data Explorer do Azure usando o SDK do .NET Standard.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
-ms.topic: quickstart
-ms.date: 11/18/2018
-ms.openlocfilehash: 6a068c45a13bd45a09ed51fd154b5842938e0c5e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 06/03/2019
+ms.openlocfilehash: 53cf055a0900a25923fe67b961755c1f4367e1fb
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59044657"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66496886"
 ---
-# <a name="quickstart-ingest-data-using-the-azure-data-explorer-net-standard-sdk-preview"></a>Início Rápido: Ingerir dados usando o SDK do .NET Standard do Azure Data Explorer (Versão prévia)
+# <a name="ingest-data-using-the-azure-data-explorer-net-standard-sdk-preview"></a>Ingerir dados usando o SDK do .NET Standard do Azure Data Explorer (Versão prévia)
 
-O Azure Data Explorer (ADX) é um serviço de exploração de dados rápido e altamente escalonável para dados de log e telemetria. O ADX fornece duas bibliotecas de cliente para .NET Standard: uma [biblioteca de ingestão](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Ingest.NETStandard) e [uma biblioteca de dados](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Data.NETStandard). Essas bibliotecas permitem a inclusão de dados (carga) em um cluster e dados de consulta do seu código. Neste início rápido, você primeiro cria uma tabela e o mapeamento de dados em um cluster de teste. Depois, você enfileira uma ingestão no cluster e valida os resultados.
+O Azure Data Explorer (ADX) é um serviço de exploração de dados rápido e altamente escalonável para dados de log e telemetria. O ADX fornece duas bibliotecas de cliente para .NET Standard: uma [biblioteca de ingestão](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Ingest.NETStandard) e [uma biblioteca de dados](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Data.NETStandard). Essas bibliotecas permitem a inclusão de dados (carga) em um cluster e dados de consulta do seu código. Neste artigo, você primeiro crie uma tabela e o mapeamento de dados em um cluster de teste. Depois, você enfileira uma ingestão no cluster e valida os resultados.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -226,7 +226,7 @@ Execute o seguinte comando para exibir o status de todas as operações de inges
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Caso você planeje seguir nossos outros guias de início rápido e tutoriais, mantenha os recursos que você criou. Caso contrário, execute o comando a seguir no seu banco de dados para limpar a tabela `StormEvents`.
+Se você planeja siga nossos outros artigos, manter os recursos que você criou. Caso contrário, execute o comando a seguir no seu banco de dados para limpar a tabela `StormEvents`.
 
 ```Kusto
 .drop table StormEvents
@@ -234,5 +234,4 @@ Caso você planeje seguir nossos outros guias de início rápido e tutoriais, ma
 
 ## <a name="next-steps"></a>Próximas etapas
 
-> [!div class="nextstepaction"]
-> [Gravar consultas](write-queries.md)
+* [Gravar consultas](write-queries.md)

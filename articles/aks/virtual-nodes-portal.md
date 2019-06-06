@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: container-service
 ms.date: 05/06/2019
 ms.author: iainfou
-ms.openlocfilehash: 4376db8cdfa90b8d29ecd9b210e683848b4c94b4
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: a82d9e6e1d5ffa9b97bb0c1a4272375d4a71863c
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65072596"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66742806"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Criar e configurar um cluster do AKS (Serviços de Kubernetes do Azure) para usar nós virtuais no portal do Azure
 
@@ -69,6 +69,7 @@ Funcionalidade de nós virtual é muito dependente de conjunto de recursos do AC
 * [Aliases de host](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)
 * [Argumentos](../container-instances/container-instances-exec.md#restrictions) para exec na ACI
 * [Daemonsets](concepts-clusters-workloads.md#statefulsets-and-daemonsets) não implantará os pods para o nó virtual
+* [Nós do Windows Server (atualmente em visualização no AKS)](windows-container-cli.md) juntamente com os nós virtuais não têm suporte. Você pode usar os nós virtuais agendar contêineres do Windows Server sem a necessidade de nós do Windows Server em um cluster AKS.
 
 ## <a name="sign-in-to-azure"></a>Entrar no Azure
 
@@ -196,7 +197,7 @@ Instale `curl` no pod usando `apt-get`:
 apt-get update && apt-get install -y curl
 ```
 
-Agora, acesse o endereço de seu pod usando `curl`; por exemplo *http://10.241.0.4*. Forneça seu próprio endereço IP interno exibido no comando `kubectl get pods` anterior:
+Agora, acesse o endereço de seu pod usando `curl`; por exemplo *http://10.241.0.4* . Forneça seu próprio endereço IP interno exibido no comando `kubectl get pods` anterior:
 
 ```azurecli-interactive
 curl -L http://10.241.0.4

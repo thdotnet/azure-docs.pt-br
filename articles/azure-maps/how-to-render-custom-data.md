@@ -3,18 +3,18 @@ title: Como renderizar dados personalizados em um mapa de varredura em mapas do 
 description: Processar dados personalizados em um mapa de varredura em mapas do Azure.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 02/12/2019
+ms.date: 04/03/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 46f08aaa33563f620e7a011620730249e903f7b7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a9fed8464bd19c4b8a32e37c8c97698f0a2d9503
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60794646"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734287"
 ---
 # <a name="render-custom-data-on-a-raster-map"></a>Processar dados personalizados em um mapa de varredura
 
@@ -42,7 +42,7 @@ Para renderizar os pinos com rótulos e uma imagem personalizada, conclua estas 
 
 2. Para criar a solicitação, selecione **New** novamente. No **criar novo** janela, selecione **solicitar**. Insira um **nome da solicitação** para os pinos, selecione a coleção que você criou na etapa anterior como o local no qual salvar a solicitação e, em seguida, selecione **salvar**.
     
-    ![Criar uma solicitação no Postman](./media/tutorial-geofence/postman-new.png)
+    ![Criar uma solicitação no Postman](./media/how-to-render-custom-data/postman-new.png)
 
 3. Selecione o método HTTP GET na guia criador e insira a URL a seguir para criar uma solicitação GET.
 
@@ -145,7 +145,7 @@ Você também pode obter as informações de local do caminho e o pin, usando o 
     https://atlas.microsoft.com/map/static/png?subscription-key={subscription-key}&api-version=1.0&layer=basic&style=main&zoom=12&center=-73.96682739257812%2C40.78119135317995&pins=default|la-35+50|ls12|lc003C62|co9B2F15||'Times Square'-73.98516297340393 40.758781646381024|'Central Park'-73.96682739257812 40.78119135317995&path=lc0000FF|fc0000FF|lw3|la0.80|fa0.30||udid-{udId}
     ```
 
-6. Aqui está a imagem resultante:
+    Aqui está a imagem de resposta:
 
     ![Obter dados do armazenamento de dados do Azure Mapas](./media/how-to-render-custom-data/uploaded-path.png)
 
@@ -164,9 +164,9 @@ Você também pode obter as informações de local do caminho e o pin, usando o 
     &subscription-key={subscription--key}
     ```
 
-Aqui está a imagem resultante:
+    Aqui está a imagem de resposta:
 
-![Renderizar um polígono opaco](./media/how-to-render-custom-data/opaque-polygon.png)
+    ![Renderizar um polígono opaco](./media/how-to-render-custom-data/opaque-polygon.png)
 
 
 ## <a name="render-a-circle-and-pushpins-with-custom-labels"></a>Renderizar um círculo e anotações com rótulos personalizados
@@ -186,9 +186,9 @@ Siga estas etapas para renderizar um círculo e anotações com rótulos persona
     https://atlas.microsoft.com/map/static/png?api-version=1.0&style=main&layer=basic&zoom=14&height=700&Width=700&center=-122.13230609893799,47.64599069048016&path=lcFF0000|lw2|la0.60|ra1000||-122.13230609893799 47.64599069048016&pins=default|la15+50|al0.66|lc003C62|co002D62||'Microsoft Corporate Headquarters'-122.14131832122801  47.64690503939462|'Microsoft Visitor Center'-122.136828 47.642224|'Microsoft Conference Center'-122.12552547454833 47.642940335653996|'Microsoft The Commons'-122.13687658309935  47.64452336193245&subscription-key={subscription-key}
     ```
 
-Aqui está a imagem resultante:
+    Aqui está a imagem de resposta:
 
-![Renderizar um círculo com anotações personalizados](./media/how-to-render-custom-data/circle-custom-pins.png)
+    ![Renderizar um círculo com anotações personalizados](./media/how-to-render-custom-data/circle-custom-pins.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -1,6 +1,6 @@
 ---
-title: Desenvolva aplicativos seguros no Azure|Microsoft Docs
-description: Um guia para ajudá-lo a desenvolver aplicativos mais seguros para a nuvem.
+title: Desenvolver aplicativos de nuvem segura no Azure – Microsoft Azure
+description: Um guia para as perguntas de segurança e controles a serem considerados em cada fase do ciclo de vida de desenvolvimento de software durante o desenvolvimento de aplicativos para a nuvem.
 services: azure-security
 documentationcenter: na
 author: TerryLanfear
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/16/2018
+ms.date: 05/30/2019
 ms.author: terrylan
-ms.openlocfilehash: 4c4c2cc3356a10eacbb5460fae27a0a8a66ddd35
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 710d7a12db3b38a6cecffb33ade6b60eb50d03c7
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60587675"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428277"
 ---
-# <a name="develop-secure-applications-on-azure"></a>Desenvolver aplicativos seguros no Azure
+# <a name="develop-secure-cloud-applications-on-azure"></a>Desenvolver aplicativos de nuvem segura no Azure
 ## <a name="abstract"></a>Resumo
 Este documento é um guia geral para as questões e controles de segurança que você deve considerar em cada fase do ciclo de vida de desenvolvimento de software ao desenvolver aplicativos para a nuvem. Implementar esses conceitos antes de liberar seu produto pode ajudá-lo a criar um software mais seguro. As recomendações apresentadas neste documento vêm de nossa experiência com a segurança do Azure e as experiências de nossos clientes.
 

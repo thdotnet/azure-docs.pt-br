@@ -2,20 +2,20 @@
 title: Configurar o fluxo de credenciais de senha de proprietário do recurso no Azure Active Directory B2C | Microsoft Docs
 description: Aprenda a configurar o fluxo de credenciais de senha de proprietário do recurso no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: d86caf5e5c6df29e00f17462f6a06602ff1245d8
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7a802354f20998c87ac8c2ef1f2c1dbdf47f6930
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64688855"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66733654"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Configurar o fluxo de credenciais de senha de proprietário do recurso no Azure Active Directory B2C usando uma política personalizada
 
@@ -140,7 +140,7 @@ Conclua as etapas em [Introdução às políticas personalizadas no Azure Active
     </TechnicalProfile>
     ```
 
-    Substitua o **DefaultValue** do **client_id** e **resource_id** pelo ID do aplicativo ProxyIdentityExperienceFramework criado no tutorial de pré-requisito.
+    Substitua os **DefaultValue** dos **client_id** com a ID do aplicativo do aplicativo ProxyIdentityExperienceFramework que você criou no tutorial de pré-requisito. Em seguida, substitua **DefaultValue** dos **resource_id** com a ID do aplicativo do aplicativo IdentityExperienceFramework que você também criou no tutorial de pré-requisito.  
 
 5. Adicionar os seguintes elementos **ClaimsProvider** com seus perfis técnicos para o elemento **ClaimsProviders**:
 

@@ -14,21 +14,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2018
 ms.author: magattus
-ms.openlocfilehash: 8d4fc5fbdc3185c46f00d94537b197ec03f66755
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d572da27cee33cf546933e55a59c27dac4c1efd9
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60709913"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475195"
 ---
 # <a name="http-variables-for-azure-cdn-rules-engine"></a>Variáveis HTTP para o mecanismo de regras de CDN do Azure
 As variáveis HTTP fornecem os meios através dos quais você pode recuperar metadados de solicitação e resposta HTTP. Esses metadados, em seguida, podem ser usados para alterar dinamicamente uma solicitação ou resposta. O uso de variáveis HTTP é restrito aos recursos de mecanismo de regras a seguir:
 
-- [Regravação da Chave de Cache](cdn-rules-engine-reference-features.md#cache-key-rewrite)
-- [Modificar Cabeçalho de Solicitação do Cliente](cdn-rules-engine-reference-features.md#modify-client-request-header)
-- [Modificar Cabeçalho de Resposta do Cliente](cdn-rules-engine-reference-features.md#modify-client-response-header)
-- [Redirecionamento de URL](cdn-rules-engine-reference-features.md#url-redirect)
-- [Regravação de URL](cdn-rules-engine-reference-features.md#url-rewrite)
+- [Regravação da Chave de Cache](cdn-verizon-premium-rules-engine-reference-features.md#cache-key-rewrite)
+- [Modificar Cabeçalho de Solicitação do Cliente](cdn-verizon-premium-rules-engine-reference-features.md#modify-client-request-header)
+- [Modificar Cabeçalho de Resposta do Cliente](cdn-verizon-premium-rules-engine-reference-features.md#modify-client-response-header)
+- [Redirecionamento de URL](cdn-verizon-premium-rules-engine-reference-features.md#url-redirect)
+- [Regravação de URL](cdn-verizon-premium-rules-engine-reference-features.md#url-rewrite)
 
 ## <a name="definitions"></a>Definições
 A tabela a seguir descreve as variáveis HTTP compatíveis. Um valor em branco é retornado quando os metadados geográficos (por exemplo, código postal) não estão disponíveis para uma determinada solicitação.
@@ -113,7 +113,7 @@ A tabela a seguir descreve as circunstâncias em que o texto especificado não �
 | Condição | DESCRIÇÃO | Exemplo |
 | --------- | ----------- | --------|
 | Símbolo de escape % | O símbolo de porcentagem pode ser ignorado com o uso de uma barra invertida. <br />O valor de exemplo à direita será tratado como um valor literal e não como uma variável HTTP.| \%{host} |
-| Variáveis desconhecidas | Uma cadeia de caracteres vazia é sempre retornada para variáveis desconhecidas. | %{unknownvariable} |
+| Variáveis desconhecidas | Uma cadeia de caracteres vazia é sempre retornada para variáveis desconhecidas. | %{unknown_variable} |
 | Caracteres ou sintaxe inválidos | Variáveis que contêm caracteres ou sintaxe inválidos são tratadas como valores literais. <br /><br />Exemplo 1 #: O valor especificado contém um caractere inválido (por exemplo,-). <br /><br />Exemplo 2 de #: O valor especificado contém um conjunto duplo de chaves. <br /><br />Exemplo 3 #: O valor especificado não tem uma chave de fechamento.<br /> | Exemplo 1: %{resp_user-agent} <br /><br />Exemplo #2: %{{host}} <br /><br />Exemplo #3: %{host |
 | Nome da variável ausente | Um valor NULL sempre é retornado quando uma variável não for especificada. | %{} |
 | Caracteres à direita | Caracteres à direita de uma variável são tratados como valores literais. <br />O valor de exemplo à direita contém uma chave à direita que será tratada como um valor literal. | %{host}} |
@@ -127,9 +127,9 @@ A tabela a seguir descreve como definir um valor padrão.
 
 | Condição | Sintaxe | Exemplo | DESCRIÇÃO |
 | --------- | ------ | --------| ----------- |
-| Defina um cabeçalho para um valor padrão quando ele atender a qualquer uma das seguintes condições: <br /><br />- Faltando cabeçalho <br /><br />- O valor do cabeçalho é definido como NULL.| %{Variable:=Value} | %{http_referer:=unspecified} | O cabeçalho Referenciador só será definido como *não especificado* quando ele estiver ausente ou definido como NULL. Nenhuma ação ocorrerá se ele tiver sido definido. |
-| Defina um cabeçalho para um valor padrão quando ele estiver ausente. | %{Variable=Value} | %{http_referer=unspecified} | O cabeçalho Referenciador só será definido como *não especificado* quando ele estiver ausente. Nenhuma ação ocorrerá se ele tiver sido definido. |
-| Defina o cabeçalho para um valor padrão quando ele não atender a qualquer uma das seguintes condições: <br /><br />- Ausente<br /><br /> - Definido como NULL. | %{Variable:+Value} | %{http_referer:+unspecified} | O cabeçalho Referenciador só será definido como *não especificado* quando um valor tiver sido atribuído a ele. Nenhuma ação ocorrerá se ele estiver ausente ou definido como NULL. |
+| Defina um cabeçalho para um valor padrão quando ele atender a qualquer uma das seguintes condições: <br /><br />- Faltando cabeçalho <br /><br />- O valor do cabeçalho é definido como NULL.| %{Variable:=Value} | %{http_referrer:=unspecified} | O cabeçalho de referenciador só será definido como *não especificado* quando ele está ausente ou definido como NULL. Nenhuma ação ocorrerá se ele tiver sido definido. |
+| Defina um cabeçalho para um valor padrão quando ele estiver ausente. | %{Variable=Value} | %{http_referrer=unspecified} | O cabeçalho de referenciador só será definido como *não especificado* quando estiver ausente. Nenhuma ação ocorrerá se ele tiver sido definido. |
+| Defina o cabeçalho para um valor padrão quando ele não atender a qualquer uma das seguintes condições: <br /><br />- Ausente<br /><br /> - Definido como NULL. | %{Variable:+Value} | %{http_referrer:+unspecified} | O cabeçalho de referenciador só será definido como *não especificado* quando um valor foi atribuído a ele. Nenhuma ação ocorrerá se ele estiver ausente ou definido como NULL. |
 
 ## <a name="manipulating-variables"></a>Manipulação de variáveis
 Variáveis podem ser manipuladas das seguintes maneiras:

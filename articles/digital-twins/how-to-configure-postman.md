@@ -6,14 +6,14 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 01/10/2019
+ms.date: 06/05/2019
 ms.author: v-adgera
-ms.openlocfilehash: 797dfc44b9897920f9fd74346ee01e4b157a4ce8
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 31944c08bad503c20832ea7e4e682c0063ab0f9f
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65967792"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735046"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Como configurar o Postman para os Gêmeos Digitais do Azure
 
@@ -27,7 +27,7 @@ Este artigo descreve como configurar o cliente Postman REST para interagir e tes
 
 Começar em nos Gêmeos Digitais do Azure usando uma ferramenta de cliente REST como [Postman](https://www.getpostman.com/) para preparar seu ambiente de teste local. O cliente Postman ajuda a criar rapidamente as solicitações HTTP complexas. Faça o download da versão da área de trabalho do cliente Postman acessando [www.getpostman.com/apps](https://www.getpostman.com/apps).
 
-[Postman](https://www.getpostman.com/) é uma ferramenta de teste REST que localiza as funcionalidades de solicitação HTTP principal na área de trabalho útil e GUI baseado em plugin. 
+[Postman](https://www.getpostman.com/) é uma ferramenta de teste REST que localiza as funcionalidades de solicitação HTTP principal na área de trabalho útil e GUI baseado em plugin.
 
 Por meio do cliente Postman, os desenvolvedores de soluções podem especificar o tipo de solicitação HTTP (*POST*, *GET*, *UPDATE*, *PATCH* e *DELETE*), ponto de extremidade de API para a chamada e o uso de SSL. O Postman também dá suporte para adicionar cabeçalhos de solicitação HTTP, parâmetros, dados de formulário e corpos.
 
@@ -39,15 +39,15 @@ Configurar seu aplicativo Azure Active Directory para usar o fluxo de concessão
 
 1. Sob **permissões necessárias**, selecione **Add** e insira **Gêmeos Digitais do Azure** sob **adicionar acesso à API**. Se sua pesquisa não localizar a API, pesquise por **Espaços Inteligentes do Azure** em vez disso. Em seguida, selecione **conceder permissões > permissões delegadas** e **feito**.
 
-    ![Adicionar API de registros de aplicativo do Azure Active Directory](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)
+    [![Api de adicionar registros de aplicativo do Active Directory do Azure](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
 
 1. Clique em **Manifesto** para abrir o manifesto do aplicativo para seu aplicativo. Definir *oauth2AllowImplicitFlow* para `true`.
 
-      ![Fluxo implícito do Azure Active Directory][1]
+    [![Fluxo implícito do Azure Active Directory](media/how-to-configure-postman/implicit-flow.png)](media/how-to-configure-postman/implicit-flow.png#lightbox)
 
 1. Configurar uma **URL de Resposta** para `https://www.getpostman.com/oauth2/callback`.
 
-      ![URL de Resposta do Azure Active Directory][2]
+    [![URL de resposta do Azure Active Directory](media/how-to-configure-postman/reply-url.png)](media/how-to-configure-postman/reply-url.png#lightbox)
 
 1. Copie e mantenha a **ID do Aplicativo** do seu aplicativo do Azure Active Directory. Ele é usado nas etapas a seguir.
 
@@ -70,17 +70,17 @@ Em seguida, configure e instale o Postman para obter um token do Azure Active Di
 
     | Campo  | Value |
     |---------|---------|
-    | Tipo de Concessão | `Implicit` |
+    | Tipo de concessão | `Implicit` |
     | URL de retorno de chamada | `https://www.getpostman.com/oauth2/callback` |
     | URL de autenticação | Use a **URL de Autorização** da etapa 2 |
-    | ID do Cliente | Use a **ID do Aplicativo** para o aplicativo do Azure Active Directory criado ou redefinido da seção anterior |
+    | ID do cliente | Use a **ID do Aplicativo** para o aplicativo do Azure Active Directory criado ou redefinido da seção anterior |
     | Scope | Deixar em branco |
     | Estado | Deixar em branco |
-    | Autenticação de Cliente | `Send as Basic Auth header` |
+    | Autenticação de cliente | `Send as Basic Auth header` |
 
 1. Agora, o cliente deve se parecer com:
 
-   ![Exemplo de cliente Postman][3]
+    [![Exemplo de cliente postman](media/how-to-configure-postman/postman-oauth-token.png)](media/how-to-configure-postman/postman-oauth-token.png#lightbox)
 
 1. Selecione **Solicitação de Token**.
 
@@ -98,13 +98,13 @@ Depois de concluir as etapas anteriores, configure o Postman para fazer uma soli
 
 1. Na guia **Cabeçalho**, adicione uma chave do cabeçalho da solicitação HTTP **Content-Type** com valor `multipart/mixed`.
 
-   ![Tipo de conteúdo com várias partes/misto][4]
+   [![Tipo de conteúdo com diversas partes/misto](media/how-to-configure-postman/content-type.png)](media/how-to-configure-postman/content-type.png#lightbox)
 
 1. Serialize dados não textuais em arquivos. Os dados JSON seriam salvos como um arquivo JSON.
 1. Na guia **Corpo**, adicione cada arquivo atribuindo um nome de **chave**, selecionando `file` ou `text`.
 1. Em seguida, selecione cada arquivo por meio do botão **Escolher arquivo**.
 
-   ![Exemplo de cliente Postman][5]
+   [![Exemplo de cliente postman](media/how-to-configure-postman/form-body.png)](media/how-to-configure-postman/form-body.png#lightbox)
 
    >[!NOTE]
    > * O cliente Postman não requer que as partes com várias partes tenham um **Content-Type** ou **Content-Disposition** atribuído manualmente.
@@ -120,10 +120,3 @@ Depois de concluir as etapas anteriores, configure o Postman para fazer uma soli
 - Usar solicitações com várias partes para [adicionar blobs às entidades dos Gêmeos Digitais do Azure](./how-to-add-blobs.md).
 
 - Para saber mais sobre autenticar as APIs de Gerenciamento, leia [Autenticar com APIs](./security-authenticating-apis.md).
-
-<!-- Images -->
-[1]: media/how-to-configure-postman/implicit-flow.png
-[2]: media/how-to-configure-postman/reply-url.png
-[3]: media/how-to-configure-postman/postman-oauth-token.png
-[4]: media/how-to-configure-postman/content-type.png
-[5]: media/how-to-configure-postman/form-body.png

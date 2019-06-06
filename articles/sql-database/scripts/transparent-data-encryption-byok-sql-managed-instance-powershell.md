@@ -12,12 +12,12 @@ ms.author: mlandzic
 ms.reviewer: vanto, carlrab
 manager: craigg
 ms.date: 04/19/2019
-ms.openlocfilehash: 8eb924b3dc6ff912db402596c763dd69b85147a3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c2c4bd7bffd923430d0817cb6ea975f4c1596623
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60390708"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729159"
 ---
 # <a name="manage-transparent-data-encryption-in-a-managed-instance-using-your-own-key-from-azure-key-vault-preview"></a>Gerenciar a criptografia transparente de dados em uma instância gerenciada usando sua própria chave do Cofre de chaves do Azure (visualização)
 
@@ -29,7 +29,7 @@ Este exemplo de script do PowerShell configura a criptografia de dados transpare
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Usando os dois PowerShell localmente ou usando o Azure Cloud Shell requer 1.1.1-visualização do PowerShell AZ ou uma versão de visualização mais recente. Se você precisar atualizar, consulte [instalar o Azure PowerShell módulo](/powershell/azure/install-az-ps), ou execute o abaixo um exemplo de script para instalar o módulo.
 

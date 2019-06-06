@@ -1,20 +1,18 @@
 ---
-title: Ferramentas do Azure HDInsight – Use o Visual Studio Code para o Hive, o LLAP ou PySpark | Microsoft Docs
+title: Ferramentas de HDInsight do Azure - usar o Visual Studio Code para o Hive, LLAP ou PySpark
 description: Saiba como usar as Ferramentas do Azure HDInsight para Visual Studio Code para criar e enviar consultas e scripts.
-Keywords: Código do Visual Studio, ferramentas do Azure HDInsight, Hive, Python, PySpark, Spark, HDInsight, Hadoop, LLAP, Hive interativo, consulta interativa
-documentationcenter: ''
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 02/04/2019
-ms.openlocfilehash: 04e607517bc806b60d7e76e5076f9d3518e530eb
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/30/2019
+ms.openlocfilehash: d114a1e62ae0d28e7d4a3ad453d5d7bd3e1d5b7a
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64681759"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427697"
 ---
 # <a name="use-azure-hdinsight-tools-for-visual-studio-code"></a>Usar a Ferramenta do Azure HDInsight para Visual Studio Code
 
@@ -55,7 +53,7 @@ Depois de concluir os pré-requisitos, você pode instalar as Ferramentas do Azu
 
 Conclua as etapas a seguir para abrir uma pasta de trabalho e criar um arquivo no Visual Studio Code:
 
-1. Na barra de menus, navegue para **Arquivo** > **Abrir Pasta...** > **C:\HD\HDexample** e, em seguida, selecione o botão **Selecionar Pasta**. A pasta aparece na exibição do **Explorador** à esquerda.
+1. Na barra de menus, navegue para **Arquivo** > **Abrir Pasta...**  > **C:\HD\HDexample** e, em seguida, selecione o botão **Selecionar Pasta**. A pasta aparece na exibição do **Explorador** à esquerda.
 
 2. Na exibição do **Explorador**, selecione a pasta, **HDexample** e, em seguida, o ícone **Novo Arquivo** ao lado da pasta de trabalho.
 
@@ -67,11 +65,11 @@ Conclua as etapas a seguir para abrir uma pasta de trabalho e criar um arquivo n
 
 Antes de enviar scripts para clusters do HDInsight a partir do Visual Studio Code, você precisa se conectar à sua conta do Azure ou vincular um cluster (usando nome de usuário/senha ou a conta de domínio associado do Ambari).  Conclua as seguintes etapas para se conectar ao Azure:
 
-1. Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...**, e insira **HDInsight: Logon**.
+1. Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...** , e insira **HDInsight: Logon**.
 
     ![Logon das Ferramentas do HDInsight para Visual Studio Code](./media/hdinsight-for-vscode/hdinsight-for-vscode-extension-login.png)
 
-2. Siga as instruções de conexão no painel **SAÍDA**.
+2. Siga as instruções em entrar a **saída** painel.
     + Para o ambiente global do Azure, o comando **HDInsight: Login** disparará a ação **Entrar no Azure** no Gerenciador do HDInsight e vice-versa.
 
         ![Instruções de entrada no Azure](./media/hdinsight-for-vscode/hdi-azure-hdinsight-azure-signin.png)
@@ -87,7 +85,7 @@ Antes de enviar scripts para clusters do HDInsight a partir do Visual Studio Cod
 
 É possível vincular um cluster normal usando um nome de usuário gerenciado do [Apache Ambari](https://ambari.apache.org/) ou vincular um cluster Hadoop seguro do pacote Enterprise Security usando um nome de usuário de domínio (como: user1@contoso.com).
 
-1. Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...**, e insira **HDInsight: Vincular um Cluster**.
+1. Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...** , e insira **HDInsight: Vincular um Cluster**.
 
    ![comando para vincular cluster](./media/hdinsight-for-vscode/link-cluster-command.png)
 
@@ -109,7 +107,7 @@ Antes de enviar scripts para clusters do HDInsight a partir do Visual Studio Cod
 
 ## <a name="create-link-generic-livy-endpoint"></a>Criar link: Ponto de Extremidade Genérico do Livy
 
-1. Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...**, e insira **HDInsight: Vincular um Cluster**.
+1. Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...** , e insira **HDInsight: Vincular um Cluster**.
 
 2. Selecione o tipo de cluster vinculado **Ponto de Extremidade Genérico do Livy**.
 
@@ -123,7 +121,7 @@ Antes de enviar scripts para clusters do HDInsight a partir do Visual Studio Cod
 
 ## <a name="list-hdinsight-clusters"></a>Listar clusters HDInsight
 
-1. Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...**, e insira **HDInsight: Listar clusters**.
+1. Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...** , e insira **HDInsight: Listar clusters**.
 
 2. Selecione a assinatura desejada.
 
@@ -149,7 +147,7 @@ Antes de enviar scripts para clusters do HDInsight a partir do Visual Studio Cod
 
 1. [Conecte-se](#connect-to-hdinsight-cluster) à sua conta do Azure se ainda não tiver feito isso.
 
-2. Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...**, e insira **HDInsight: Definir Ambiente do Azure**.
+2. Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...** , e insira **HDInsight: Definir Ambiente do Azure**.
 
 3. Selecione um ambiente como sua entrada de log padrão.
 
@@ -219,7 +217,7 @@ Com as Ferramentas do HDInsight para Visual Studio Code, você pode enviar consu
 
 8. A ferramenta também é compatível com a consulta **Cláusula SQL**.
 
-   ![Enviar resultado do trabalho do Python](./media/hdinsight-for-vscode/pyspark-ineteractive-select-result.png) O status de envio aparece à esquerda da barra de status inferior ao executar consultas. Não envie outras consultas quando o status for **PySpark Kernel (ocupado)**.  
+   ![Enviar resultado do trabalho do Python](./media/hdinsight-for-vscode/pyspark-ineteractive-select-result.png) O status de envio aparece à esquerda da barra de status inferior ao executar consultas. Não envie outras consultas quando o status for **PySpark Kernel (ocupado)** .  
 
 >[!NOTE]  
 >Os clusters podem manter as informações da sessão. A variável definida, a função e os valores correspondentes são mantidos na sessão para que possam ser consultados em várias chamadas de serviço para o mesmo cluster. 
@@ -306,11 +304,11 @@ Envie um arquivo, observe que a pasta .vscode é adicionada automaticamente à p
     **POST /batches**   
     Corpo da solicitação
 
-    | Nome | description | Tipo | 
+    | name | description | type | 
     | :- | :- | :- | 
     | file | Arquivo que contém o aplicativo a ser executado | caminho (obrigatório) | 
-    | proxyUser | Usuário a ser representado ao executar o trabalho | string | 
-    | className | Classe principal Java/Spark do aplicativo | string |
+    | proxyUser | Usuário a ser representado ao executar o trabalho | cadeia de caracteres | 
+    | className | Classe principal Java/Spark do aplicativo | cadeia de caracteres |
     | args | Argumentos de linha de comando do aplicativo | lista de cadeias de caracteres | 
     | jars | jars a serem usados nesta sessão | Lista de cadeias de caracteres | 
     | pyFiles | Arquivos Python a serem usados nesta sessão | Lista de cadeias de caracteres |
@@ -321,20 +319,20 @@ Envie um arquivo, observe que a pasta .vscode é adicionada automaticamente à p
     | executorCores | Número de núcleos a serem usados para cada executor | int |
     | numExecutors | Número de executores a serem iniciados para esta sessão | int |
     | archives | Arquivos a serem usados nesta sessão | Lista de cadeias de caracteres |
-    | fila | O nome da fila YARN ao qual foi enviado | string |
-    | Nome | O nome desta sessão | string |
+    | fila | O nome da fila YARN ao qual foi enviado | cadeia de caracteres |
+    | name | O nome desta sessão | string |
     | conf | Propriedades de configuração do Spark | Mapa de key=val |
 
     Corpo da resposta   
     O objeto de lote criado.
 
-    | Nome | description | Tipo | 
+    | name | description | type | 
     | :- | :- | :- | 
-    | ID | A id da sessão | int | 
+    | id | A id da sessão | int | 
     | appId | A ID de aplicativo desta sessão |  Cadeia de caracteres |
     | appInfo | As informações detalhadas do aplicativo | Mapa de key=val |
     | log | As linhas do log | lista de cadeias de caracteres |
-    | state |   O estado do lote | string |
+    | estado |   O estado do lote | string |
 
 >[!NOTE]
 >A configuração de Livy atribuída será exibida no painel de saída ao enviar o script.
@@ -380,7 +378,7 @@ O HDInsight para Visual Studio Code é compatível com os seguintes recursos:
 
 ## <a name="logout"></a>Logoff  
 
-Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...** e, em seguida, insira **HDInsight: Logoff**.  Haverá um pop-up no canto inferior direito informando **Logoff bem sucedido!**.
+Na barra de menus, navegue para **Exibir** > **Paleta de Comandos...** e, em seguida, insira **HDInsight: Logoff**.  Haverá um pop-up no canto inferior direito informando **Logoff bem sucedido!** .
 
 
 ## <a name="next-steps"></a>Próximas etapas

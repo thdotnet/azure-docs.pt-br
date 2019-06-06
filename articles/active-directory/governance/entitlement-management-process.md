@@ -12,21 +12,21 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 04/26/2019
+ms.date: 05/30/2019
 ms.author: rolyon
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ab18c8f165fc30636cd05091be1181743f9972d
-ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
+ms.openlocfilehash: aede5e315141251026867f7028ebf989d44da4d5
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873626"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473038"
 ---
 # <a name="request-process-and-email-notifications-in-azure-ad-entitlement-management-preview"></a>Solicitação de processo e notificações por email no gerenciamento de direitos do AD do Azure (visualização)
 
 > [!IMPORTANT]
-> Gerenciamento de direitos do Active Directory (Azure AD) do Azure está atualmente em visualização pública.
+> No momento, o gerenciamento de direitos do Azure AD (Azure Active Directory) está em versão prévia pública.
 > Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
 > Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -44,7 +44,7 @@ Um usuário que precise de acesso a um pacote de acesso pode enviar uma solicita
 | --- | --- |
 | Enviado | O usuário envia uma solicitação. |
 | Aprovação pendente | Se a política para um pacote de acesso exige aprovação, uma solicitação se move com aprovação pendente. |
-| Expirado | Se nenhum aprovador revisar uma solicitação dentro do tempo limite de solicitação de aprovação, a solicitação expira. Para tentar novamente, o usuário precisará reenviar a solicitação. |
+| Expirado | Se nenhum aprovador aprovar uma solicitação dentro do tempo limite de solicitação de aprovação, a solicitação expira. Para tentar novamente, o usuário precisará reenviar a solicitação. |
 | Negado | Aprovador nega uma solicitação. |
 | Aprovado | Aprovador aprovar uma solicitação. |
 | Fornecimento | Usuário tem **não** foi atribuído acesso para todos os recursos no pacote de acesso. Se esse for um usuário externo, o usuário ainda não acessou o diretório de recursos e aceita o prompt de permissões. |
@@ -71,7 +71,7 @@ A tabela a seguir fornece mais detalhes sobre cada uma dessas notificações de 
 | 7 | Seu acesso aos *[pacote de acesso]* expirará em X dias | X dias antes do acesso do solicitante para o pacote de acesso expira | Solicitante |
 | 8 | Seu acesso aos *[pacote de acesso]* expirou | Quando o acesso do solicitante a um pacote de acesso expira | Solicitante |
 
-### <a name="review-access-request-emails"></a>Emails de revisão de solicitação de acesso
+### <a name="access-request-emails"></a>Emails de solicitação de acesso
 
 Quando um solicitante envia uma solicitação de acesso para um pacote de acesso está configurado para exigir a aprovação, todos os aprovadores configurados na política de recebem uma notificação por email com detalhes da solicitação. Detalhes incluem o nome do solicitante, organização, acesso a data de início e término se fornecido, justificativa de negócios, quando a solicitação foi enviada e quando a solicitação irá expirar. O email inclui um link em que os aprovadores podem aprovar ou negar a solicitação de acesso. Aqui está uma notificação de email de exemplo que é enviada a um aprovador quando um solicitante envia uma solicitação de acesso.
 
@@ -79,7 +79,7 @@ Quando um solicitante envia uma solicitação de acesso para um pacote de acesso
 
 ### <a name="approved-or-denied-emails"></a>Emails de aprovada ou negadas
 
-Solicitantes são notificados quando sua solicitação de acesso é aprovado e está disponível para acesso, ou quando a solicitação de acesso é negada. Quando um aprovador revisões de uma solicitação de acesso enviada por um solicitante, eles podem aprovar ou negar a solicitação de acesso. O aprovador precisa adicionar uma justificativa comercial para sua decisão.
+Solicitantes são notificados quando sua solicitação de acesso é aprovado e está disponível para acesso, ou quando a solicitação de acesso é negada. Quando um aprovador recebe uma solicitação de acesso enviada por um solicitante, eles podem aprovar ou negar a solicitação de acesso. O aprovador precisa adicionar uma justificativa comercial para sua decisão.
 
 Quando uma solicitação de acesso for aprovada, o gerenciamento de direitos de inicia o processo de conceder acesso ao solicitante para cada um dos recursos no pacote de acesso. Depois que o solicitante recebeu acesso a todos os recursos no pacote de acesso, uma notificação por email é enviada ao solicitante que sua solicitação de acesso foi aprovada e que agora eles têm acesso ao pacote de acesso. Aqui está uma notificação de email de exemplo que é enviada para um solicitante, quando eles recebem acesso a um pacote de acesso.
 

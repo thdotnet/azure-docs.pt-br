@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/08/2019
 ms.author: tomfitz
-ms.openlocfilehash: bf9faa34c1f0923761ce583c22ba4084d7bd42a8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 82b9403a3d5a5b6938f5b95bbfce888d1e70e451
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60782915"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66431219"
 ---
 # <a name="string-functions-for-azure-resource-manager-templates"></a>Funções de cadeia de caracteres para modelos do Azure Resource Manager
 
@@ -38,7 +38,7 @@ O Gerenciador de Recursos fornece as seguintes funções para trabalhar com cade
 * [indexOf](#indexof)
 * [last](#last)
 * [lastIndexOf](#lastindexof)
-* [length](#length)
+* [Comprimento](#length)
 * [newGuid](#newguid)
 * [padLeft](#padleft)
 * [substitui](#replace)
@@ -67,7 +67,7 @@ Retorna a representação base64 da cadeia de caracteres de entrada.
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| inputString |Sim |string |O valor a retornar como uma representação base64. |
+| inputString |Sim |cadeia de caracteres |O valor a retornar como uma representação base64. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -132,7 +132,7 @@ Converte uma representação base64 em um objeto JSON.
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| base64Value |Sim |string |A representação base64 a ser convertida em um objeto JSON. |
+| base64Value |Sim |cadeia de caracteres |A representação base64 a ser convertida em um objeto JSON. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -197,7 +197,7 @@ Converte uma representação base64 em uma cadeia de caracteres.
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| base64Value |Sim |string |A representação base64 a ser convertida em uma cadeia de caracteres. |
+| base64Value |Sim |cadeia de caracteres |A representação base64 a ser convertida em uma cadeia de caracteres. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -263,7 +263,7 @@ Combina vários valores de cadeia de caracteres e retorna a cadeia de caracteres
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |cadeia de caracteres ou matriz |O primeiro valor de concatenação. |
-| argumentos adicionais |Não  |string |Valores adicionais em ordem sequencial para concatenação. |
+| argumentos adicionais |Não |cadeia de caracteres |Valores adicionais em ordem sequencial para concatenação. |
 
 ### <a name="return-value"></a>Valor de retorno
 Uma cadeia de caracteres ou matriz de valores concatenados.
@@ -605,8 +605,8 @@ Determina se uma cadeia de caracteres termina com um valor. A comparação não 
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| stringToSearch |Sim |string |O valor que contém o item a ser encontrado. |
-| stringToFind |Sim |string |O valor a ser encontrado. |
+| stringToSearch |Sim |cadeia de caracteres |O valor que contém o item a ser encontrado. |
+| stringToFind |Sim |cadeia de caracteres |O valor a ser encontrado. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -655,7 +655,7 @@ A saída do exemplo anterior com os valores padrão é:
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
 | startsTrue | Bool | True |
-| startsCapTrue | Bool | True  |
+| startsCapTrue | Bool | True |
 | startsFalse | Bool | Falso |
 | endsTrue | Bool | True |
 | endsCapTrue | Bool | True |
@@ -713,7 +713,7 @@ A saída do exemplo anterior com os valores padrão é:
 | arrayOutput | Cadeia de caracteres | one |
 | stringOutput | Cadeia de caracteres | O |
 
-## <a name="format"></a>formato
+## <a name="format"></a>format
 
 `format(formatString, arg1, arg2, ...)`
 
@@ -723,9 +723,9 @@ Cria uma cadeia de caracteres formatada de valores de entrada.
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| formatString | Sim | string | A cadeia de caracteres de formato composto. |
+| formatString | Sim | cadeia de caracteres | A cadeia de caracteres de formato composto. |
 | arg1 | Sim | cadeia de caracteres, inteiros ou booliano | O valor a ser incluído na cadeia de caracteres formatada. |
-| argumentos adicionais | Não  | cadeia de caracteres, inteiros ou booliano | Valores adicionais a serem incluídos na cadeia de caracteres formatada. |
+| argumentos adicionais | Não | cadeia de caracteres, inteiros ou booliano | Valores adicionais a serem incluídos na cadeia de caracteres formatada. |
 
 ### <a name="remarks"></a>Comentários
 
@@ -781,7 +781,7 @@ Cria um valor no formato de um identificador global exclusivo com base nos valor
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | baseString |Sim |string |O valor usado na função de hash para criar o GUID. |
-| parâmetros extras conforme necessário |Não  |string |Você pode adicionar quantas cadeias de caracteres forem necessárias para criar o valor que especifica o nível de exclusividade. |
+| parâmetros extras conforme necessário |Não |cadeia de caracteres |Você pode adicionar quantas cadeias de caracteres forem necessárias para criar o valor que especifica o nível de exclusividade. |
 
 ### <a name="remarks"></a>Comentários
 
@@ -851,8 +851,8 @@ Retorna a primeira posição de um valor em uma cadeia de caracteres. A compara�
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| stringToSearch |Sim |string |O valor que contém o item a ser encontrado. |
-| stringToFind |Sim |string |O valor a ser encontrado. |
+| stringToSearch |Sim |cadeia de caracteres |O valor que contém o item a ser encontrado. |
+| stringToFind |Sim |cadeia de caracteres |O valor a ser encontrado. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -964,8 +964,8 @@ Retorna a última posição de um valor em uma cadeia de caracteres. A comparaç
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| stringToSearch |Sim |string |O valor que contém o item a ser encontrado. |
-| stringToFind |Sim |string |O valor a ser encontrado. |
+| stringToSearch |Sim |cadeia de caracteres |O valor que contém o item a ser encontrado. |
+| stringToFind |Sim |cadeia de caracteres |O valor a ser encontrado. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -1125,7 +1125,7 @@ A saída do exemplo anterior varia para cada implantação, mas será semelhante
 
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| guidOutput | string | b76a51fc-bd72-4a77-b9a2-3c29e7d2e551 |
+| guidOutput | cadeia de caracteres | b76a51fc-bd72-4a77-b9a2-3c29e7d2e551 |
 
 O exemplo a seguir usa a função Novo_guid para criar um nome exclusivo para uma conta de armazenamento. Esse modelo pode funcionar para o ambiente de teste em que a conta de armazenamento existe por um curto período e não é reimplantada.
 
@@ -1168,7 +1168,7 @@ A saída do exemplo anterior varia para cada implantação, mas será semelhante
 
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| nameOutput | string | storagenziwvyru7uxie |
+| nameOutput | cadeia de caracteres | storagenziwvyru7uxie |
 
 
 ## <a name="padleft"></a>padLeft
@@ -1183,7 +1183,7 @@ Retorna uma cadeia de caracteres alinhada à direita adicionando caracteres à e
 |:--- |:--- |:--- |:--- |
 | valueToPad |Sim |cadeia de caracteres ou inteiro |O valor para alinhar à direita. |
 | totalLength |Sim |int |O número total de caracteres na cadeia de caracteres retornada. |
-| paddingCharacter |Não  |caractere único |O caractere a ser usado para o preenchimento à esquerda até que o tamanho total seja atingido. O valor padrão é um espaço. |
+| paddingCharacter |Não |caractere único |O caractere a ser usado para o preenchimento à esquerda até que o tamanho total seja atingido. O valor padrão é um espaço. |
 
 Se a cadeia de caracteres original for mais longa que o número de caracteres a ser preenchido, nenhum caractere será adicionado.
 
@@ -1233,7 +1233,7 @@ Retorna uma nova cadeia de caracteres com todas as instâncias de uma cadeia de 
 |:--- |:--- |:--- |:--- |
 | originalString |Sim |string |O valor que tem todas as instâncias de uma cadeia de caracteres substituídas por outra cadeia de caracteres. |
 | oldString |Sim |string |A cadeia de caractere a ser removida da cadeia de caracteres original. |
-| newString |Sim |string |A cadeia de caracteres a ser adicionada no lugar da cadeia removida. |
+| newString |Sim |cadeia de caracteres |A cadeia de caracteres a ser adicionada no lugar da cadeia removida. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -1259,7 +1259,7 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
             "type": "string",
             "value": "[replace(parameters('testString'),'-', '')]"
         },
-        "secodeOutput": {
+        "secondOutput": {
             "type": "string",
             "value": "[replace(parameters('testString'),'1234', 'xxxx')]"
         }
@@ -1272,7 +1272,7 @@ A saída do exemplo anterior com os valores padrão é:
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
 | firstOutput | Cadeia de caracteres | 1231231234 |
-| secodeOutput | Cadeia de caracteres | 123-123-xxxx |
+| secondOutput | Cadeia de caracteres | 123-123-xxxx |
 
 ## <a name="skip"></a>skip
 
@@ -1352,7 +1352,7 @@ Retorna uma matriz de cadeias de caracteres que contém as subcadeias de caracte
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| inputString |Sim |string |A cadeia de caracteres a dividir. |
+| inputString |Sim |cadeia de caracteres |A cadeia de caracteres a dividir. |
 | delimiter |Sim |cadeia de caracteres ou matriz de cadeias de caracteres |O delimitador a ser usado para dividir a cadeia de caracteres. |
 
 ### <a name="return-value"></a>Valor de retorno
@@ -1461,13 +1461,13 @@ A saída do exemplo anterior com os valores padrão é:
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
 | startsTrue | Bool | True |
-| startsCapTrue | Bool | True  |
+| startsCapTrue | Bool | True |
 | startsFalse | Bool | Falso |
 | endsTrue | Bool | True |
 | endsCapTrue | Bool | True |
 | endsFalse | Bool | Falso |
 
-## <a name="string"></a>string
+## <a name="string"></a>cadeia de caracteres
 
 `string(valueToConvert)`
 
@@ -1548,9 +1548,9 @@ Retorna uma subcadeia de caraceteres que começa na posição do caractere espec
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| stringToParse |Sim |string |A cadeia original da qual a subcadeia de caracteres é extraída. |
-| startIndex |Não  |int |A posição inicial do caractere baseada em zero para a subcadeia de caracteres. |
-| length |Não  |int |O número de caracteres para a subcadeia de caracteres. Deve se referir a uma localização dentro da cadeia de caracteres. Deve ser zero ou maior. |
+| stringToParse |Sim |cadeia de caracteres |A cadeia original da qual a subcadeia de caracteres é extraída. |
+| startIndex |Não |int |A posição inicial do caractere baseada em zero para a subcadeia de caracteres. |
+| length |Não |int |O número de caracteres para a subcadeia de caracteres. Deve se referir a uma localização dentro da cadeia de caracteres. Deve ser zero ou maior. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -1677,7 +1677,7 @@ Converte a cadeia de caracteres especificada em letras minúsculas.
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| stringToChange |Sim |string |O valor a ser convertido em letras minúsculas. |
+| stringToChange |Sim |cadeia de caracteres |O valor a ser convertido em letras minúsculas. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -1728,7 +1728,7 @@ Converte a cadeia de caracteres especificada em maiúsculas.
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| stringToChange |Sim |string |O valor a ser convertido em letras maiúsculas. |
+| stringToChange |Sim |cadeia de caracteres |O valor a ser convertido em letras maiúsculas. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -1779,7 +1779,7 @@ Remove todos os caracteres de espaço em branco à esquerda e à direita da cade
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| stringToTrim |Sim |string |O valor de corte. |
+| stringToTrim |Sim |cadeia de caracteres |O valor de corte. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -1826,7 +1826,7 @@ Cria uma cadeia de caracteres de hash determinístico com base nos valores forne
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | baseString |Sim |string |O valor usado na função de hash para criar uma cadeia de caracteres exclusiva. |
-| parâmetros extras conforme necessário |Não  |string |Você pode adicionar quantas cadeias de caracteres forem necessárias para criar o valor que especifica o nível de exclusividade. |
+| parâmetros extras conforme necessário |Não |string |Você pode adicionar quantas cadeias de caracteres forem necessárias para criar o valor que especifica o nível de exclusividade. |
 
 ### <a name="remarks"></a>Comentários
 
@@ -1967,7 +1967,7 @@ Codifica um URI.
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| stringToEncode |Sim |string |O valor a ser codificado. |
+| stringToEncode |Sim |cadeia de caracteres |O valor a ser codificado. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -2022,7 +2022,7 @@ Retorna uma cadeia de caracteres de um valor codificado em URI.
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| uriEncodedString |Sim |string |O valor codificado em URI a ser convertido em uma cadeia de caracteres. |
+| uriEncodedString |Sim |cadeia de caracteres |O valor codificado em URI a ser convertido em uma cadeia de caracteres. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -2077,7 +2077,7 @@ Retorna o valor de data e hora (UTC) atual no formato especificado. Se nenhum fo
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| formato |Não  |string |O valor codificado em URI a ser convertido em uma cadeia de caracteres. Use um [cadeias de caracteres de formato padrão](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) ou [cadeias de caracteres de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). |
+| format |Não |string |O valor codificado em URI a ser convertido em uma cadeia de caracteres. Use um [cadeias de caracteres de formato padrão](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) ou [cadeias de caracteres de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). |
 
 ### <a name="remarks"></a>Comentários
 
@@ -2136,9 +2136,9 @@ A saída do exemplo anterior varia para cada implantação, mas será semelhante
 
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| utcOutput | string | 20190305T175318Z |
-| utcShortOutput | string | 03/05/2019 |
-| utcCustomOutput | string | 3 5 |
+| utcOutput | cadeia de caracteres | 20190305T175318Z |
+| utcShortOutput | cadeia de caracteres | 03/05/2019 |
+| utcCustomOutput | cadeia de caracteres | 3 5 |
 
 O exemplo a seguir mostra como usar um valor da função ao definir um valor de marca.
 

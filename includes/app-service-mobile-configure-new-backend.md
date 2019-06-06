@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/06/2019
 ms.author: crdun
 ms.custom: include file
-ms.openlocfilehash: 99ca7e82a11687d25355589e7ea539a14cdb493b
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: a7c994f85d90e94d514bb4e4f91a6644ed45432c
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66420802"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66455176"
 ---
 1. Baixe o guias de início rápido do SDK para as seguintes plataformas de cliente:
     
@@ -94,7 +94,7 @@ ms.locfileid: "66420802"
 
         2. Compile o projeto de servidor .NET localmente no Visual Studio.
 
-        3. No Visual Studio, abra o Gerenciador de soluções, clique duas vezes em `ZUMOAPPNAMEService` do projeto, clique em **Publish**, você verá um `Publish to App Service` janela. Se você estiver trabalhando no Mac, check-out de outras maneiras de implantar o aplicativo [aqui](https://docs.microsoft.com/en-us/azure/app-service/deploy-local-git).
+        3. No Visual Studio, abra o Gerenciador de soluções, clique duas vezes em `ZUMOAPPNAMEService` do projeto, clique em **Publish**, você verá um `Publish to App Service` janela. Se você estiver trabalhando no Mac, check-out de outras maneiras de implantar o aplicativo [aqui](https://docs.microsoft.com/azure/app-service/deploy-local-git).
         
            ![Publicação do Visual studio](./media/app-service-mobile-configure-new-backend/visual-studio-publish.png)
 

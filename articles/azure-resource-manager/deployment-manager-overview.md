@@ -1,23 +1,18 @@
 ---
 title: Práticas recomendadas de implantação segura entre regiões - Gerenciador de Implantação do Azure
 description: Descreve como implantar um serviço em muitas regiões com o Azure Deployment Manager. Ele mostra as práticas de implantação segura para verificar a estabilidade da sua implantação antes de distribuir a todas as regiões.
-services: azure-resource-manager
-documentationcenter: na
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 05/13/2019
+ms.date: 05/31/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: d93d9999c407e64658b88025feda48d33e1a5ad1
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 52b132b45bd90d7d21bb072e9a94d8588d5cf301
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595792"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66431158"
 ---
 # <a name="enable-safe-deployment-practices-with-azure-deployment-manager-public-preview"></a>Habilitar práticas de implantação segura com o Azure Deployment Manager (visualização pública)
 
@@ -25,7 +20,7 @@ Para implantar seu serviço em várias regiões e garantir que ele esteja sendo 
 
 Gerenciador de implantação é um recurso do Gerenciador de recursos. Ele expande seus recursos durante a implantação. Use o Gerenciador de implantação quando você tiver um serviço complexo que precisa ser implantado em várias regiões. Ao preparar a distribuição do seu serviço, você poderá encontrar problemas em potencial antes de ele ter sido implantado para todas as regiões. Se você não precisar das precauções extras de um lançamento gradual, use as [opções de implantação](resource-group-template-deploy-portal.md) padrão para o Gerenciador de recursos. O Deployment Manager integra-se perfeitamente a todas as ferramentas de terceiros existentes que oferecem suporte a implantações do Resource Manager, como ofertas de integração contínua e entrega contínua (CI/CD). 
 
-O Gerenciador de implantação do Azure está em visualização particular. Para usar o Azure Deployment Manager, preencha o [formulário de inscrição](https://aka.ms/admsignup). Ajuda a melhorar o recurso, fornecendo [comentários](https://aka.ms/admfeedback).
+O Gerenciador de implantação do Azure está em visualização. Ajude-na melhorar o recurso, fornecendo [comentários](https://aka.ms/admfeedback).
 
 Para usar o Deployment Manager, você precisa criar quatro arquivos:
 

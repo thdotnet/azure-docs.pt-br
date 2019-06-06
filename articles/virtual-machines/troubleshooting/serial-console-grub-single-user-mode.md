@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/08/2019
 ms.author: alsin
-ms.openlocfilehash: 89cbf220c9ae32c7f63da4941ced1bdbfa1e5293
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 440d917c2ee4a51f2c8ba4b134b50508bdaf4bcb
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65835031"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735257"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Usar o Console Serial para acessar GRUB e Modo de Usuário Único
 GRUB é o GRand Unified Bootloader, que provavelmente será a primeira informação que você verá ao inicializar uma VM. Como é exibido antes do sistema operacional ser iniciado, ele não é acessível via SSH. Com o GRUB, você consegue modificar sua configuração de inicialização para inicializar no modo de usuário único, entre outras coisas.
@@ -104,7 +104,7 @@ Se não percorrer as etapas acima para habilitar que o usuário raiz, você pode
     - Isso interromperá o processo de inicialização antes de o controle ser passado de `initramfs` a `systemd`, conforme descrito na documentação do Red Hat [aqui](https://aka.ms/rhel7rootpassword).
 1. Pressione Ctrl + X para sair e reinicializar com as configurações aplicadas
 1. Depois que você inicializar, ocorrerá a alternância para o modo de emergência com um sistema de arquivos somente leitura. Insira `mount -o remount,rw /sysroot` no shell para montar novamente o sistema de arquivos raiz com permissões de leitura/gravação
-1. Depois que você inicializar no modo de usuário único, digite `chroot /sysroot` para alternar para o `sysroot` jail 
+1. Depois que você inicializar no modo de usuário único, digite `chroot /sysroot` para alternar para o `sysroot` jail
 1. Você agora é a raiz. Você pode redefinir sua senha raiz com `passwd` e, em seguida, usar as instruções acima para entrar no modo de usuário único. Digite `reboot -f` para reinicializar quando terminar.
 
 ![](../media/virtual-machines-serial-console/virtual-machine-linux-serial-console-rhel-emergency-mount-no-root.gif)
@@ -184,7 +184,7 @@ O acesso ao GRUB no SLES requer a configuração do carregador de inicializaçã
 Você será automaticamente direcionado para o shell de emergência se o SLES não puder ser inicializado normalmente. Para entrar manualmente no shell de emergência, siga estas instruções:
 
 1. No GRUB, pressione 'e' para editar sua entrada de inicialização (a entrada do SLES)
-1. Procure a linha de kernel que começa com `linux`
+1. Procure a linha de kernel – ele começará com `linux`
 1. Acrescente `systemd.unit=emergency.target` ao fim da linha
 1. Pressione Ctrl + X para reinicializar com essas configurações e entrar no shell de emergência
    > Observe que ocorrerá a alternância para o shell de emergência com um sistema de arquivos _somente leitura_. Se quiser fazer todas as edições em todos os arquivos, você precisará montar novamente o sistema de arquivos com permissões de leitura-gravação. Para fazer isso, insira `mount -o remount,rw /` no shell

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/24/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 374fd700f3ac99c00b922f4fca330fee9acfd704
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 0e592c03da222e5265ed53aab8ef73f3b477f33a
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65955751"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475871"
 ---
 # <a name="security-in-azure-app-service"></a>Segurança no Serviço de Aplicativo do Azure
 
@@ -113,7 +113,6 @@ Como alternativa, é possível integrar o aplicativo do Serviço de Aplicativo a
 
 Exceto para tipo de preço **Isolado** todas as camadas executam os aplicativos na infraestrutura de rede compartilhada no Serviço de Aplicativo. Por exemplo, os endereços IP públicos e os balanceadores de carga front-end são compartilhados com outros locatários. A camada **Isolado** oferece isolamento de rede completo, executando os aplicativos em um [Ambiente do Serviço de Aplicativo](environment/intro.md) dedicado. Um ambiente do Serviço de Aplicativo é executado na própria instância da [Rede Virtual do Microsoft Azure](/azure/virtual-network/). Isso permite que você: 
 
-- Restringir o acesso à rede com [grupos de segurança de rede](../virtual-network/virtual-networks-dmz-nsg.md). 
 - Atenda os aplicativos por meio de um pondo de extremidade público dedicado, com front-ends dedicados.
 - Atenda o aplicativo interno usando um ILB (balanceador de carga interno), que permite o acesso somente de dentro da Rede Virtual do Microsoft Azure. O ILB tem um endereço IP da sub-rede privada, que fornece isolamento total dos aplicativos da Internet.
 - [Use um ILB atrás de um WAF (firewall do aplicativo Web)](environment/integrate-with-application-gateway.md). O WAF oferece proteção de nível empresarial para aplicativos voltados ao público, como proteção contra DDoS, filtragem de URI e prevenção de injeção de SQL.

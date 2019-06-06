@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 05/15/2019
 ms.author: shvija
-ms.openlocfilehash: acc756ac04e5127d07760746bd0178f0f6cb1d6f
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: c5e58f7bc89fbe2d93f6610465abf4a92fd31406
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65789257"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476122"
 ---
 # <a name="event-hubs-frequently-asked-questions"></a>Perguntas frequentes sobre os Hubs de Eventos
 
@@ -73,7 +73,7 @@ Consulte a tabela a seguir para as portas de saída que você precisa abrir para
 | -------- | ----- | ------- | 
 | AMQP | 5671 e 5672 | Consulte [guia do protocolo AMQP](../service-bus-messaging/service-bus-amqp-protocol-guide.md) | 
 | HTTP, HTTPS | 80, 443 |  |
-| Kafka | 9092 | Consulte [usar Hubs de eventos de aplicativos do Kafka](event-hubs-for-kafka-ecosystem-overview.md)
+| Kafka | 9093 | Consulte [usar Hubs de eventos de aplicativos do Kafka](event-hubs-for-kafka-ecosystem-overview.md)
 
 ### <a name="what-ip-addresses-do-i-need-to-whitelist"></a>Quais endereços IP é necessário à lista de permissões?
 Para localizar os endereços IP corretos para a lista branca para suas conexões, siga estas etapas:
@@ -120,7 +120,7 @@ Observação: Se sasl.jaas.config não for uma configuração compatível com su
 ### <a name="what-is-the-messageevent-size-for-kafka-enabled-event-hubs"></a>Qual é o tamanho de mensagem/evento para Hubs de Eventos habilitados para Kafka?
 O tamanho máximo de mensagem permitido para os Hubs de Eventos habilitados para Kafka é de 1MB.
 
-## <a name="throughput-units"></a>Unidades de produtividade
+## <a name="throughput-units"></a>Unidades de transferência
 
 ### <a name="what-are-event-hubs-throughput-units"></a>O que são unidades de produtividade dos Hubs de Eventos?
 A taxa de transferência nos Hubs de Eventos define a quantidade de dados em megabytes ou o número (em milhares) de eventos de 1 KB que entram e saem por meio dos Hubs de Eventos. Essa taxa de transferência é medida em unidades de produtividade (TUs). Compre TUs antes de começar a usar o serviço Hubs de Eventos. Seleciona explicitamente as TUs dos Hubs de Eventos usando o portal do Azure ou de modelos do Resource Manager dos Hubs de Eventos. 

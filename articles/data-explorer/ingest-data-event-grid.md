@@ -1,24 +1,24 @@
 ---
-title: 'Início Rápido: Ingerir Blobs do Azure no Azure Data Explorer'
-description: Neste guia de início rápido, você aprende a enviar dados de conta de armazenamento para o Azure Data Explorer usando uma assinatura da Grade de Eventos.
+title: Ingerir Blobs do Azure no Azure Data Explorer
+description: Neste artigo, você aprenderá como enviar dados de conta de armazenamento para o Data Explorer do Azure usando uma assinatura de grade de eventos.
 author: radennis
 ms.author: radennis
 ms.reviewer: orspodek
 ms.service: data-explorer
-ms.topic: quickstart
-ms.date: 01/30/2019
-ms.openlocfilehash: 19db47610449ced45fa61610bbe964042e815c7a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 06/03/2019
+ms.openlocfilehash: 7d9c21b46f760055846194f52f1594f25b1ee989
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59051845"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66494739"
 ---
-# <a name="quickstart-ingest-blobs-into-azure-data-explorer-by-subscribing-to-event-grid-notifications"></a>Início Rápido: Ingerir blobs no Azure Data Explorer assinando notificações da Grade de Eventos
+# <a name="ingest-blobs-into-azure-data-explorer-by-subscribing-to-event-grid-notifications"></a>Ingerir blobs no Azure Data Explorer assinando notificações da Grade de Eventos
 
 O Azure Data Explorer é um serviço de exploração de dados rápido e escalonável para dados de log e telemetria. Ele oferece ingestão contínua (carregamento de dados) de blobs gravados em contêineres de blob. 
 
-Neste início rápido, você aprende a configurar uma assinatura da [Grade de Eventos do Azure](/azure/event-grid/overview) e rotear eventos para o Azure Data Explorer por meio de um hub de eventos. Para começar, você precisa ter uma conta de armazenamento com uma assinatura da grade de eventos que envie notificações para os Hubs de Eventos do Azure. Então, você criará uma conexão de dados da Grade de Eventos e verá o fluxo de dados pelo sistema.
+Neste artigo, você aprenderá a definir um [grade de eventos do Azure](/azure/event-grid/overview) assinatura e eventos de rota para o Data Explorer do Azure por meio de um hub de eventos. Para começar, você precisa ter uma conta de armazenamento com uma assinatura da grade de eventos que envie notificações para os Hubs de Eventos do Azure. Então, você criará uma conexão de dados da Grade de Eventos e verá o fluxo de dados pelo sistema.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -50,7 +50,7 @@ Neste início rápido, você aprende a configurar uma assinatura da [Grade de Ev
 
 1. Selecione a guia **Recursos Adicionais** se você quiser rastrear arquivos de um contêiner específico. Defina os filtros das notificações da seguinte maneira:
     * Campo **Assunto começa com** é o prefixo *literal* do contêiner de blobs. Como é o padrão aplicado é *startswith*, ele pode abranger vários contêineres. Não são permitidos curingas.
-     Ele *precisa* ser definido da seguinte maneira: *`/blobServices/default/containers/`*[prefixo do contêiner]
+     Ele *precisa* ser definido da seguinte maneira: *`/blobServices/default/containers/`* [prefixo do contêiner]
     * O campo **Assunto termina com** é o sufixo *literal* do blob. Não são permitidos curingas.
 
 ## <a name="create-a-target-table-in-azure-data-explorer"></a>Criar uma tabela de destino no Gerenciador de dados do Azure
@@ -157,7 +157,7 @@ Salve os dados em um arquivo e carregue-o com este script:
 > [!NOTE]
 > O Azure Data Explorer tem uma política de agregação (envio em lote) para a ingestão de dados, criada para otimizar o processo de ingestão.
 Por padrão, a política é configurada como 5 minutos.
-Você poderá alterar a política em um momento posterior se necessário. Neste início rápido, você pode esperar uma latência de alguns minutos.
+Você poderá alterar a política em um momento posterior se necessário. Neste artigo, você pode esperar uma latência de alguns minutos.
 
 1. No portal do Azure, em sua grade de eventos, você vê o pico de atividade enquanto o aplicativo está em execução.
 
@@ -196,5 +196,4 @@ Se você não planeja usar sua grade de eventos novamente, limpe **test-hub-rg**
 
 ## <a name="next-steps"></a>Próximas etapas
 
-> [!div class="nextstepaction"]
-> [Início Rápido: consultar dados no Azure Data Explorer](web-query-data.md)
+* [Consultar dados no Data Explorer do Azure](web-query-data.md)

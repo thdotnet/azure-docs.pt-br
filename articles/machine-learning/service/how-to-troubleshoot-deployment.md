@@ -11,12 +11,12 @@ ms.author: clauren
 ms.reviewer: jmartens
 ms.date: 05/02/2018
 ms.custom: seodec18
-ms.openlocfilehash: 3730e4a0bfa05e6606e50b9bbd9d9152e2488954
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.openlocfilehash: 9d173409fc9f270f13d688999a88f9480c3eb40f
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65851712"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66742916"
 ---
 # <a name="troubleshooting-azure-machine-learning-service-aks-and-aci-deployments"></a>Solucionando problemas de implantações de serviço AKS e ACI do Azure Machine Learning
 
@@ -165,12 +165,12 @@ Se você encontrar problemas ao implantar um modelo no ACI ou AKS, tente implant
 Para implantar localmente, modificar seu código para usar `LocalWebservice.deploy_configuration()` para criar uma configuração de implantação. Em seguida, use `Model.deploy()` para implantar o serviço. O exemplo a seguir implanta um modelo (contido no `model` variável) como um serviço da web local:
 
 ```python
-from azureml.core.model import InferenceConfig
+from azureml.core.model import InferenceConfig,Model
 from azureml.core.webservice import LocalWebservice
 
 # Create inference configuration. This creates a docker image that contains the model.
 inference_config = InferenceConfig(runtime= "python", 
-                                   execution_script="score.py",
+                                   entry_script="score.py",
                                    conda_file="myenv.yml")
 
 # Create a local deployment, using port 8890 for the web service endpoint

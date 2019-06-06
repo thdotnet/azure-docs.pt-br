@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9ecf6d04056a91f1f9dd62a5238f60177d2bf59
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 16e4a5f63ba80b02a967888ad76fedf165a576c8
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66420582"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473406"
 ---
 # <a name="what-is-a-primary-refresh-token"></a>O que é um primário Token de atualização?
 
@@ -111,8 +111,11 @@ Quando um usuário inicia uma interação com o navegador, o navegador (ou exten
 Um PRT pode obter uma declaração de autenticação multifator (MFA) em cenários específicos. Quando um PRT com base no MFA é usado para solicitar tokens para aplicativos, a declaração de MFA é transferida para os tokens de aplicativo. Essa funcionalidade fornece uma experiência perfeita aos usuários, impedindo que o desafio de MFA para todos os aplicativos que precisa dele. Um PRT pode obter uma declaração MFA das seguintes maneiras:
 
 * **Entrar com o Windows Hello para empresas**: Windows Hello para empresas substitui as senhas e usa chaves de criptografia para fornecer autenticação de dois fatores forte. Windows Hello para empresas é específico a um usuário em um dispositivo e, em si requer a MFA para provisionar. Quando o usuário se conecta com o Windows Hello para empresas, PRT do usuário obtém uma declaração de MFA. Este cenário também se aplica aos usuários fazer logon com cartões inteligentes, se a autenticação de cartão inteligente produz uma declaração MFA do ADFS.
+   * Como o Windows Hello para empresas é considerado a autenticação multifator, a declaração de MFA é atualizada quando o PRT em si é atualizada, portanto, a duração MFA serão estendidos continuamente quando os usuários entram com o WIndows Hello para empresas
 * **MFA durante a entrada interativa WAM**: Durante uma solicitação de token por meio de WAM, se um usuário é necessário fazer o MFA para acessar o aplicativo, o que é renovado durante essa interação PRT é imprinted com uma declaração de MFA.
+   * Nesse caso, a declaração de MFA não é atualizada continuamente, portanto, a duração do MFA se baseia no tempo de vida definido no diretório.
 * **MFA durante o registro de dispositivo**: Se um administrador tiver configurado as configurações do dispositivo no Azure AD [exigir MFA registrar dispositivos](device-management-azure-portal.md#configure-device-settings), o usuário precisará fazer o MFA para concluir o registro. Durante esse processo, o que é emitido para o usuário PRT tem a declaração de MFA obtida durante o registro. Esse recurso se aplica somente ao usuário que fez a operação de junção, não a outros usuários que entram nesse dispositivo.
+   * Assim como o WAM interativo de entrada, a declaração de MFA não é atualizada continuamente, portanto, a duração do MFA se baseia no tempo de vida definido no diretório.
 
 Windows 10 mantém uma lista particionada de PRTs para cada credencial. Portanto, há um PRT para cada do Windows Hello para empresas, senha ou cartão inteligente. Esse particionamento assegurará que as declarações MFA são isoladas com base na credencial usada e não misturados durante solicitações de token.
 

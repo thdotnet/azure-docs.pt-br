@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/8/2019
+ms.date: 05/31/2019
 ms.author: kumud;tyao
-ms.openlocfilehash: 26db3a67c3efbd0ba2a5c58facd0c07175f7ed12
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 15a80dac0e0601480e22ad960f2827f3d8f290c0
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61460197"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479077"
 ---
 # <a name="create-a-waf-policy-for-azure-front-door-by-using-the-azure-portal"></a>Criar uma política de WAF para frente do Azure usando o portal do Azure
 
@@ -63,17 +63,19 @@ Para ver o WAF em ação, você pode alterar as configurações do modo de **det
 
  ![Modo de WAF de alteração de diretiva](./media/waf-front-door-create-portal/policy.png)
 
+### <a name="custom-rules"></a>Regras personalizadas
+
+Você pode criar uma regra personalizada, selecionando **Adicionar regra personalizada** sob o **regras personalizadas** seção. Isso inicia a página de configuração de regra personalizada. Abaixo está um exemplo de como configurar uma regra personalizada para bloquear uma solicitação se a cadeia de caracteres de consulta contiver **blockme**.
+
+![Modo de WAF de alteração de diretiva](./media/waf-front-door-create-portal/customquerystring2.png)
+
 ### <a name="default-rule-set-drs"></a>Conjunto de regras padrão (DRS)
 
 Conjunto de regras de padrão gerenciados do Azure é habilitado por padrão. Para desabilitar uma regra individual dentro de um grupo de regras, expandir as regras dentro desse grupo de regra, selecione a **caixa de seleção** na frente de número da regra e selecione **desabilitar** na guia acima. Para alterar os tipos de ações para regras individuais dentro a regra definida, marque a caixa de seleção na frente do número de regra e, em seguida, selecione a **alterar a ação** guia acima.
 
- ![Alterar o conjunto de regras de WAF](./media/waf-front-door-create-portal/managed.png)
+ ![Alterar o conjunto de regras de WAF](./media/waf-front-door-create-portal/managed2.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
 - Saiba mais sobre [firewall do aplicativo web do Azure](waf-overview.md).
 - Saiba mais sobre [do Azure da frente](front-door-overview.md).
-
-
-
-

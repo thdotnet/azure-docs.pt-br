@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: raynew
-ms.openlocfilehash: 32cad7005b2b4da830ac3febf6da847933967a3d
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: ea2399572177cc10006a5d9ee715190fff4a347b
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400021"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66471452"
 ---
 # <a name="about-recovery-plans"></a>Sobre planos de recuperação
 
@@ -37,10 +37,10 @@ Um plano de recuperação ajuda-o a definir um processo de recuperação sistem�
 
 É possível planejar e criar um grupo de recuperação para capturar propriedades específicas de aplicativo. Como exemplo, vamos considerar um aplicativo de três camadas típico com um back-end do SQL Server, middleware e front-end da Web. Normalmente, você personaliza o plano de recuperação para que os computadores em cada camada iniciem na ordem correta após o failover.
 
-    - O back-end do SQL deve iniciar primeiro, o middleware em seguida e, finalmente, o front-end da Web.
-    - Essa ordem de início garante que o aplicativo esteja funcionando no momento em que o último computador for iniciado.
-    - Essa ordem garante que, quando o middleware iniciar e tentar conectar-se à camada do SQL Server, a camada do SQL Server já esteja em execução. 
-    - Essa ordem também ajuda a garantir que o servidor front-end inicie por último, de modo que os usuários finais não conectem-se à URL do aplicativo antes que todos os componentes estejam ativos e em execução, e o aplicativo pronto para aceitar as solicitações.
+- O back-end do SQL deve iniciar primeiro, o middleware em seguida e, finalmente, o front-end da Web.
+- Essa ordem de início garante que o aplicativo esteja funcionando no momento em que o último computador for iniciado.
+- Essa ordem garante que, quando o middleware iniciar e tentar conectar-se à camada do SQL Server, a camada do SQL Server já esteja em execução. 
+- Essa ordem também ajuda a garantir que o servidor front-end inicie por último, de modo que os usuários finais não conectem-se à URL do aplicativo antes que todos os componentes estejam ativos e em execução, e o aplicativo pronto para aceitar as solicitações.
 
 Para criar essa ordem, adicione grupos ao grupo de recuperação e adicione computadores nos grupos.
 - Onde a ordem é especificada, o sequenciamento é usado. As ações executam em paralelo, quando apropriado, para melhorar o RTO de recuperação do aplicativo.
@@ -61,7 +61,7 @@ Com essa personalização estabelecida, veja o que acontece ao executar um failo
 
 Recuperar aplicativos grandes pode ser uma tarefa complexa. Etapas manuais tornam o processo propenso a erros e a pessoa que estiver executando o failover pode não estar ciente de todas as complexidades do aplicativo. É possível usar um plano de recuperação para impor uma ordem e automatizar as ações necessárias em cada etapa, usando runbooks de Automação do Azure para failover no Azure, ou scripts. Para tarefas que não podem ser automatizadas, é possível inserir pausas para ações manuais nos planos de recuperação. Há alguns tipos de tarefas que você pode configurar:
 
-* **Tarefas na VM do Azure após failover**: Ao fazer failover para o Azure, normalmente é necessário executar ações para poder conectar-se à VM após o failover. Por exemplo:  
+* **Tarefas na VM do Azure após failover**: Ao fazer failover para o Azure, normalmente é necessário executar ações para poder conectar-se à VM após o failover. Por exemplo: 
     * Crie um endereço IP público na VM do Azure.
     * Atribua um grupo de segurança de rede ao adaptador de rede da VM do Azure.
     * Adicione um balanceador de carga a um conjunto de disponibilidade.

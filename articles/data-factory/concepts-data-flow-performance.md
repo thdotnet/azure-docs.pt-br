@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.date: 05/16/2019
-ms.openlocfilehash: 90c7e4653b879c2432f08506cea08646e84bb69a
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: 46be01c57be0e4f5fa74f8e8b0d91db3d78f441c
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66297697"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480422"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Desempenho de fluxos de dados de mapeamento e guia de ajuste
 
@@ -29,15 +29,28 @@ Azure Data Factory mapeando os dados fluem fornecem uma interface de navegador s
 
 ![Botão de depuração](media/data-flow/debugb1.png "depurar")
 
+## <a name="monitor-data-flow-performance"></a>Monitorar desempenho de fluxo de dados
+
+Enquanto a criação de seus dados de mapeamento flui no navegador, você pode teste de unidade cada transformação individual, clicando na guia de visualização de dados no painel inferior configurações para cada transformação. A próxima etapa, que você deve tomar é testar sua dados fluxo ponta a ponta no designer de pipeline. Adicionar uma atividade de execução de fluxo de dados e use o botão de depuração para testar o desempenho do fluxo de dados. No painel inferior da janela do pipeline, você verá um ícone dos óculos em "ações":
+
+![Monitor de fluxo de dados](media/data-flow/mon002.png "2 do Monitor de fluxo de dados")
+
+Clicar nesse ícone exibirá o plano de execução e o perfil de desempenho subsequentes do fluxo de dados. Você pode usar essas informações para estimar o desempenho do fluxo de dados em relação a fontes de dados de tamanhos diferentes. Observe que você pode assumir o intervalo de tempo de configuração de execução de trabalho de cluster 1 minuto em seus cálculos de desempenho geral e se você estiver usando o Azure Integration Runtime padrão, você talvez precise adicionar 5 minutos de tempo de giro de cluster também.
+
+![Monitoramento do fluxo de dados](media/data-flow/mon003.png "3 do Monitor de fluxo de dados")
+
 ## <a name="optimizing-for-azure-sql-database-and-azure-sql-data-warehouse"></a>Otimização para o banco de dados SQL do Azure e Azure SQL Data Warehouse
 
 ![Parte de origem](media/data-flow/sourcepart2.png "parte de origem")
 
-### <a name="you-can-match-spark-data-partitioning-to-your-source-database-partitioning-based-on-a-database-table-column-key-in-the-source-transformation"></a>Você pode combinar o particionamento de dados para o particionamento de banco de dados de origem com base em uma chave de coluna de tabela de banco de dados na transformação de código-fonte do Spark
+### <a name="partition-your-source-data"></a>Particionar seus dados de origem
 
 * Vá para "Otimizar" e selecione "Origem". Defina uma coluna de tabela específica ou um tipo em uma consulta.
 * Se você escolher "coluna", em seguida, escolha a coluna de partição.
 * Além disso, defina o número máximo de conexões para seu banco de dados do SQL Azure. Você pode tentar uma configuração mais alta para obter conexões paralelas com seu banco de dados. No entanto, alguns casos podem resultar em desempenho mais rápido com um número limitado de conexões.
+* Suas tabelas de banco de dados de origem não precisam ser particionados.
+* A definição de uma consulta em sua transformação de código-fonte que corresponde ao esquema de particionamento da tabela do banco de dados permitirá que o mecanismo de banco de dados de origem aproveitar a eliminação de partição.
+* Se seu código-fonte já não estiver particionada, o ADF ainda usará particionamento no ambiente de transformação do Spark com base na chave que você selecionar na transformação de fonte de dados.
 
 ### <a name="set-batch-size-and-query-on-source"></a>Defina o tamanho do lote e a consulta na fonte
 
@@ -51,7 +64,7 @@ Azure Data Factory mapeando os dados fluem fornecem uma interface de navegador s
 
 ![Coletor](media/data-flow/sink4.png "do coletor")
 
-* Para evitar o processamento de linha por linha de floes seus dados, defina o "tamanho do lote" nas configurações do coletor para BD SQL do Azure. Isso instruirá o que ADF para processar banco de dados grava em lotes com base no tamanho fornecido.
+* Para evitar o processamento de linha por linha de seus fluxos de dados, defina o "tamanho do lote" nas configurações do coletor para BD SQL do Azure. Isso instruirá o que ADF para processar banco de dados grava em lotes com base no tamanho fornecido.
 
 ### <a name="set-partitioning-options-on-your-sink"></a>Conjunto de opções no coletor de particionamento
 
@@ -84,7 +97,7 @@ Azure Data Factory mapeando os dados fluem fornecem uma interface de navegador s
 
 ### <a name="use-staging-to-load-data-in-bulk-via-polybase"></a>Usar a preparação para carregar dados em massa por meio do Polybase
 
-* Para evitar o processamento de linha por linha de floes seus dados, defina a opção de "Preparo" nas configurações do coletor para que o ADF pode aproveitar o Polybase para evitar inserções de linha por linha no DW. Isso instruirá o ADF para usar o Polybase para que os dados podem ser carregados em massa.
+* Para evitar o processamento de linha por linha de seus fluxos de dados, defina a opção de "Preparo" nas configurações do coletor para que o ADF pode aproveitar o Polybase para evitar inserções de linha por linha no DW. Isso instruirá o ADF para usar o Polybase para que os dados podem ser carregados em massa.
 * Quando você executa sua atividade de fluxo de dados de um pipeline, com preparação ativado, você precisará selecionar o local do repositório de Blob de seus dados de preparo para carregamento em massa.
 
 ### <a name="increase-the-size-of-your-azure-sql-dw"></a>Aumentar o tamanho do seu Azure SQL DW
@@ -113,4 +126,4 @@ Consulte os outros artigos de fluxo de dados:
 
 - [Visão geral do fluxo de dados](concepts-data-flow-overview.md)
 - [Atividade de fluxo de dados](control-flow-execute-data-flow-activity.md)
-
+- [Monitorar o desempenho de fluxo de dados](concepts-data-flow-monitoring.md)

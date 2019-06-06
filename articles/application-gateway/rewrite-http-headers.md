@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 04/29/2019
 ms.author: absha
-ms.openlocfilehash: ebb14d97273851585e491e3bcd36f776ec9b61b4
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 9160d300270bf1ab5043bee632d27bcc4b7bf332
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66000963"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476040"
 ---
 # <a name="rewrite-http-headers-with-application-gateway"></a>Reescreva cabeçalhos HTTP com o Gateway de aplicativo
 
@@ -60,7 +60,7 @@ O Gateway de aplicativo usa variáveis de servidor para armazenar informações 
 
 O gateway de aplicativo dá suporte a essas variáveis de servidor:
 
-| Nome da variável | Descrição                                                  |
+| Nome da variável | DESCRIÇÃO                                                  |
 | -------------------------- | :----------------------------------------------------------- |
 | add_x_forwarded_for_proxy  | O campo de cabeçalho de solicitação X-Forwarded-For cliente com o `client_ip` variável (veja a explicação posteriormente nesta tabela) anexado a ele no formato IP1, IP2, lt;ip3 e assim por diante. Se o campo ' X-Forwarded-For não está no cabeçalho da solicitação do cliente, o `add_x_forwarded_for_proxy` variável é igual ao `$client_ip` variável. Essa variável é particularmente útil quando você desejar reescrever o cabeçalho X-Forwarded-For definido por Gateway de aplicativo para que o cabeçalho contém somente o endereço IP sem as informações de porta. |
 | ciphers_supported          | Uma lista das codificações com suporte no cliente.          |
@@ -153,11 +153,11 @@ Você pode avaliar um cabeçalho de resposta ou solicitação HTTP a presença d
 
 ## <a name="limitations"></a>Limitações
 
+- Se uma resposta tem mais de um cabeçalhos com o mesmo nome, em seguida, reescrever o valor de um desses cabeçalhos resulta em descartando outros cabeçalhos na resposta. Geralmente, isso pode acontecer com cabeçalho Set-Cookie como você pode ter mais de um cabeçalho Set-Cookie em uma resposta. Um cenário é quando você estiver usando um serviço de aplicativo com um gateway de aplicativo e tiver configurado a afinidade de sessão baseada em cookies no gateway de aplicativo. Nesse caso, a resposta irá conter 2 cabeçalhos Set-Cookie: usada pelo serviço de aplicativo, ou seja, `Set-Cookie: ARRAffinity=ba127f1caf6ac822b2347cc18bba0364d699ca1ad44d20e0ec01ea80cda2a735;Path=/;HttpOnly;Domain=sitename.azurewebsites.net` e outro para afinidade de gateway de aplicativo, ou seja, `Set-Cookie: ApplicationGatewayAffinity=c1a2bd51lfd396387f96bl9cc3d2c516; Path=/`. Reconfiguração de um dos cabeçalhos Set-Cookie nesse cenário pode resultar em removendo o outro cabeçalho Set-Cookie da resposta.
+
 - Atualmente não há suporte a regravação de cabeçalhos de Host, atualização e Conexão.
 
 - Nomes de cabeçalho podem conter quaisquer caracteres alfanuméricos e símbolos específicos, conforme definido em [RFC 7230](https://tools.ietf.org/html/rfc7230#page-27). Não há suporte no momento, o sublinhado (\_) caractere especial nos nomes de cabeçalho.
-
-- Se uma resposta tiver vários cabeçalhos com o mesmo nome, em seguida, reescrever o valor de um desses cabeçalhos resulta em descartando outros cabeçalhos na resposta.
 
 ## <a name="next-steps"></a>Próximas etapas
 

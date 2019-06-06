@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 05/29/2019
+ms.date: 06/04/2019
 ms.author: juliako
-ms.openlocfilehash: a5ce6467a547b9fded03b3b5a6f40f84d29d3618
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: e34e0f9fee1d09e66dcdd5069e800dc1f3f750cb
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66385155"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688655"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Notas de versão dos Serviços de Mídia do Azure v3
 
@@ -36,11 +36,18 @@ Para obter mais informações, consulte [Guia de migração para migrar do Servi
 
 ## <a name="may-2019"></a>Maio de 2019
 
-### <a name="hls-v4-and-above-support-in-dynamic-packaging"></a>HLS v4 e acima suportam no empacotamento dinâmico 
+### <a name="azure-monitor-support-for-media-services-diagnostic-logs-and-metrics"></a>Suporte do Azure Monitor para métricas e logs de diagnóstico dos serviços de mídia
 
-Adicionado HLS (versão 4 ou posterior) dão suporte no empacotamento dinâmico para ativos que têm várias faixas de áudio com vários codecs e linguagens.
+Agora você pode usar o Azure Monitor para exibir emmited de dados de telemetria dos serviços de mídia.
 
-Para obter mais informações, consulte [empacotamento dinâmico](dynamic-packaging-overview.md).
+* Use os logs de diagnóstico do Azure Monitor para monitorar as solicitações enviadas pelo ponto de extremidade de entrega de chave de serviços de mídia. 
+* Monitorar as métricas emitidas pelos serviços de mídia [pontos de extremidade de Streaming](streaming-endpoint-concept.md).   
+
+Para obter detalhes, consulte [logs de diagnóstico e métricas de serviços de mídia do Monitor](media-services-metrics-diagnostic-logs.md).
+
+### <a name="multi-audio-tracks-support-in-dynamic-packaging"></a>Suportam a várias faixas de áudio no empacotamento dinâmico 
+
+Ao transmitir ativos que têm várias faixas de áudio com vários idiomas, e codecs [empacotamento dinâmico](dynamic-packaging-overview.md) agora dá suporte a várias faixas de áudio para a saída HLS (versão 4 ou superior).
 
 ### <a name="korea-regional-pair-is-open-for-media-services"></a>Par regional de Coreia está aberta para os serviços de mídia 
 

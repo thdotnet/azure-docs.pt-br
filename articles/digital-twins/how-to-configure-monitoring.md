@@ -6,15 +6,15 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/26/2018
+ms.date: 06/03/2018
 ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: 3c35633c9b25eafdb738ed591c7c7022fbd8149a
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 9765af13a22a0ae9db8a45c396e7d5a32b71b79c
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65967811"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730314"
 ---
 # <a name="how-to-configure-monitoring-in-azure-digital-twins"></a>Como configurar o monitoramento nos Gêmeos Digitais do Azure
 
@@ -40,17 +40,17 @@ O log de atividades dos Gêmeos Digitais do Azure é habilitado por padrão e po
 1. Selecionar sua instância de Gêmeos Digitais do Azure.
 1. Escolher o **log de atividades** para exibir o painel de exibição:
 
-    ![Log de atividades][1]
+    [![Log de atividades](media/how-to-configure-monitoring/activity-log.png)](media/how-to-configure-monitoring/activity-log.png#lightbox)
 
 Para o registro de log de atividades avançadas:
 
 1. Selecione a opção **Logs** para exibir a **Visão geral da Análise do Log de Atividades**:
 
-    ![Seleção][2]
+    [![Seleção](media/how-to-configure-monitoring/activity-log-select.png)](media/how-to-configure-monitoring/activity-log-select.png#lightbox)
 
 1. A **Visão geral da Análise do Log de Atividades** resume dados de log de atividade essenciais:
 
-    ![Visão geral do Log Analytics de Atividade][3]
+    [![Visão geral da análise de log de atividade]( media/how-to-configure-monitoring/log-analytics-overview.png)]( media/how-to-configure-monitoring/log-analytics-overview.png#lightbox)
 
 >[!TIP]
 >Use **logs de atividade** para insights rápidos de eventos no nível da assinatura.
@@ -70,12 +70,12 @@ Para habilitar logs de diagnóstico, siga estas etapas:
 1. Abra os recursos no portal do Azure.
 1. Clique em **Configurações de Diagnóstico**:
 
-    ![Configurações de Diagnóstico um][4]
+    [![Configurações de diagnóstico um](media/how-to-configure-monitoring/diagnostic-settings-one.png)](media/how-to-configure-monitoring/diagnostic-settings-one.png#lightbox)
 
 1. Clique em **Ativar diagnósticos** para coletar dados (se habilitado anteriormente).
 1. Preencha os campos solicitados e selecione como e onde os dados serão salvos:
 
-    ![Configurações de Diagnóstico dois][5]
+    [![Duas configurações de diagnóstico](media/how-to-configure-monitoring/diagnostic-settings-two.png)](media/how-to-configure-monitoring/diagnostic-settings-two.png#lightbox)
 
     Os logs de diagnóstico geralmente são salvos usando [Azure File Storage](../storage/files/storage-files-deployment-guide.md) e é compartilhada com [registra em log do Azure Monitor](../azure-monitor/log-query/get-started-portal.md). Ambas as opções podem ser selecionadas.
 
@@ -99,24 +99,24 @@ Consultar log completo é fornecido por meio [registra em log do Azure Monitor](
 1. No portal do Microsoft Azure, pesquise **Log Analytics**.
 1. Você verá seu disponíveis **espaço de trabalho do Log Analytics** instâncias. Para consultar, escolha um e selecione **Logs**:
 
-    ![Log Analytics][6]
+    [![O log analytics](media/how-to-configure-monitoring/log-analytics.png)](media/how-to-configure-monitoring/log-analytics.png#lightbox)
 
 1. Se você ainda não tiver um **espaço de trabalho do Log Analytics** instância, você pode criar um espaço de trabalho clicando o **Add** botão:
 
-    ![Criar OMS][7]
+    [![Criar o OMS](media/how-to-configure-monitoring/log-analytics-oms.png)](media/how-to-configure-monitoring/log-analytics-oms.png#lightbox)
 
 Uma vez sua **espaço de trabalho do Log Analytics** instância é provisionada, você pode usar consultas avançadas para localizar entradas nos logs de múltiplos ou pesquisar usando critérios específicos usando **gerenciamento de Log**:
 
-   ![Gerenciamento de Log][8]
+   [![Gerenciamento de log](media/how-to-configure-monitoring/log-analytics-management.png)](media/how-to-configure-monitoring/log-analytics-management.png#lightbox)
 
 Para obter mais informações sobre as operações de consulta avançada, confira [Introdução às consultas](../azure-monitor/log-query/get-started-queries.md).
 
 > [!NOTE]
 > Você pode ter um atraso de 5 minutos, ao enviar eventos a serem **espaço de trabalho do Log Analytics** pela primeira vez.
 
-Os logs do Azure Monitor também fornece o erro poderoso e serviços de notificação de alerta, que podem ser exibidos clicando **diagnosticar e resolver problemas**:
+Os logs do Azure Monitor também fornecem o erro poderoso e serviços de notificação de alerta, que podem ser exibidos clicando **diagnosticar e resolver problemas**:
 
-   ![Notificações de alerta e erro][9]
+   [![Notificações de alerta e erro](media/how-to-configure-monitoring/log-analytics-notifications.png)](media/how-to-configure-monitoring/log-analytics-notifications.png#lightbox)
 
 >[!TIP]
 >Use **espaço de trabalho do Log Analytics** para históricos de log de consulta para vários serviços, assinaturas ou as funcionalidades do aplicativo.
@@ -132,14 +132,3 @@ Os Gêmeos Digitais do Azure também dão suporte a registro em log específico 
 - Aprofunde-se nas configurações de diagnóstico do Azure lendo uma [Visão geral dos logs de diagnóstico](../azure-monitor/platform/diagnostic-logs-overview.md).
 
 - Leia mais sobre [registra em log do Azure Monitor](../azure-monitor/log-query/get-started-portal.md).
-
-<!-- Images -->
-[1]: media/how-to-configure-monitoring/activity-log.png
-[2]: media/how-to-configure-monitoring/activity-log-select.png
-[3]: media/how-to-configure-monitoring/log-analytics-overview.png
-[4]: media/how-to-configure-monitoring/diagnostic-settings-one.png
-[5]: media/how-to-configure-monitoring/diagnostic-settings-two.png
-[6]: media/how-to-configure-monitoring/log-analytics.png
-[7]: media/how-to-configure-monitoring/log-analytics-oms.png
-[8]: media/how-to-configure-monitoring/log-analytics-management.png
-[9]: media/how-to-configure-monitoring/log-analytics-notifications.png

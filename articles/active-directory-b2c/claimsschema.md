@@ -2,20 +2,20 @@
 title: ClaimsSchema – Azure Active Directory B2C | Microsoft Docs
 description: Especifica o elemento ClaimsSchema de uma política personalizada no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 81df3532ee466f32ee42f0010de9aa74dbeb6d85
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e09c4530fc6dce00e6d807908c7de598422a440b
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64721753"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66511862"
 ---
 # <a name="claimsschema"></a>ClaimsSchema
 
@@ -107,7 +107,7 @@ O elemento **Mask** contém os seguintes atributos:
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | `Type` | Sim | O tipo da máscara de declaração. Valores possíveis: `Simple` ou `Regex`. O valor `Simple` indica que uma máscara de texto simples é aplicada à parte à esquerda de uma declaração de cadeia de caracteres. O valor `Regex` indica que uma expressão regular é aplicada à declaração de cadeia de caracteres como um todo.  Se o valor `Regex` for especificado, um atributo opcional também deverá ser definido com a expressão regular a ser usada. |
-| `Regex` | Não  | Se **`Type`** é definido como `Regex`, especifique a expressão regular a usar.
+| `Regex` | Não | Se **`Type`** é definido como `Regex`, especifique a expressão regular a usar.
 
 O exemplo a seguir configura uma declaração **PhoneNumber** com a máscara `Simple`:
 
@@ -146,7 +146,7 @@ O elemento **Restriction** pode conter o seguinte atributo:
 
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
-| MergeBehavior | Não  | O método usado para mesclar valores de enumeração com um ClaimType em uma política pai com o mesmo identificador. Use esse atributo quando substituir uma declaração especificada na política de base. Valores possíveis: `Append`, `Prepend` ou `ReplaceAll`. O valor `Append` é uma coleção de dados que deve ser acrescentada ao final da coleção especificada na política pai. O valor `Prepend` é uma coleção de dados que deve ser adicionada antes da coleção especificada na política pai. O valor `ReplaceAll` é uma coleção de dados especificados na política pai que deve ser ignorada. |
+| MergeBehavior | Não | O método usado para mesclar valores de enumeração com um ClaimType em uma política pai com o mesmo identificador. Use esse atributo quando substituir uma declaração especificada na política de base. Valores possíveis: `Append`, `Prepend` ou `ReplaceAll`. O valor `Append` é uma coleção de dados que deve ser acrescentada ao final da coleção especificada na política pai. O valor `Prepend` é uma coleção de dados que deve ser adicionada antes da coleção especificada na política pai. O valor `ReplaceAll` é uma coleção de dados especificados na política pai que deve ser ignorada. |
 
 O elemento **Restriction** contém os seguintes elementos:
 
@@ -163,7 +163,7 @@ O elemento **Enumeration** contém os seguintes atributos:
 | --------- | -------- | ----------- |
 | Text | Sim | A cadeia de caracteres de exibição que é mostrada ao usuário na interface do usuário para essa opção. |
 |Value | Sim | O valor da declaração associada à seleção dessa opção. |
-| SelectByDefault | Não  | Indica se esta opção deve ser selecionada ou não por padrão na interface do usuário. Valores possíveis: Verdadeiro ou falso. |
+| SelectByDefault | Não | Indica se esta opção deve ser selecionada ou não por padrão na interface do usuário. Valores possíveis: Verdadeiro ou falso. |
 
 O exemplo a seguir configura uma declaração de lista suspensa **city** com um valor padrão definido como `New York`:
 
@@ -191,7 +191,7 @@ O elemento **Pattern** pode conter os seguintes atributos:
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | RegularExpression | Sim | A expressão regular a que declarações desse tipo devem corresponder para que sejam válidas. |
-| HelpText | Não  | O padrão ou expressão regular para esta declaração. |
+| HelpText | Não | O padrão ou expressão regular para esta declaração. |
 
 O exemplo a seguir configura uma declaração **email** com o texto de ajuda e a validação de entrada de expressão regular:
 

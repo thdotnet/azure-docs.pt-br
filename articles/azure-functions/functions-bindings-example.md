@@ -8,15 +8,14 @@ manager: jeconnoc
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: reference
-origin.date: 02/18/2019
-ms.date: 03/04/2019
-ms.author: v-junlch
-ms.openlocfilehash: 6d5f9b171a4efc5e52d281655de143ac9d40d437
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 02/18/2019
+ms.author: cshoe
+ms.openlocfilehash: 8372becd614e35bead9e98e405e2694f3f16db4a
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61437881"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472323"
 ---
 # <a name="azure-functions-trigger-and-binding-example"></a>Exemplo de gatilho e associação de funções do Azure
 
@@ -136,10 +135,9 @@ public class Person
 }
 ```
 
-Agora você tem uma função de trabalho que é disparada pelo armazenamento de tabelas do Azure que envia dados para uma fila.
+Agora você tem uma função de trabalho que é disparada por uma fila do Azure e envia dados para o armazenamento de tabelas do Azure.
 
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
 > [Padrões de expressões de associação de funções do Azure](./functions-bindings-expressions-patterns.md)
-

@@ -2,20 +2,20 @@
 title: TechnicalProfiles | Microsoft Docs
 description: Especifique o elemento TechnicalProfiles de uma política personalizada no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: da769093794a559e4b856f7ae4f211c3900632c6
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: f712634c83fa290ab24d5e8437a82d5f93af0b7f
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64711056"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66512290"
 ---
 # <a name="technicalprofiles"></a>TechnicalProfiles
 
@@ -109,7 +109,7 @@ O elemento **Protocol** contém os seguintes atributos:
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | Name | Sim | O nome de um protocolo válido com suporte no Azure AD B2C que é usado como parte do perfil técnico. Valores possíveis: `OAuth1`, `OAuth2`, `SAML2`, `OpenIdConnect`, `WsFed`, `WsTrust`, `Proprietary`, `session management`, `self-asserted` ou `None`. |
-| Manipulador | Não  | Quando o nome do protocolo for definido como `Proprietary`, especifique o nome totalmente qualificado do assembly usado pelo Azure AD B2C para determinar o manipulador de protocolo. |
+| Manipulador | Não | Quando o nome do protocolo for definido como `Proprietary`, especifique o nome totalmente qualificado do assembly usado pelo Azure AD B2C para determinar o manipulador de protocolo. |
 
 ### <a name="metadata"></a>Metadados
 
@@ -141,7 +141,7 @@ O elemento **Key** contém o seguinte atributo:
 
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
-| ID | Não  | Um identificador exclusivo de um par de chaves específico referenciado por outros elementos no arquivo de política. |
+| ID | Não | Um identificador exclusivo de um par de chaves específico referenciado por outros elementos no arquivo de política. |
 | StorageReferenceId | Sim | Um identificador de um contêiner de chave de armazenamento referenciado por outros elementos no arquivo de política. |
 
 ### <a name="inputclaimstransformations"></a>InputClaimsTransformations
@@ -175,8 +175,8 @@ O elemento **InputClaim** contém os seguintes atributos:
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | ClaimTypeReferenceId | Sim | O identificador de um tipo de declaração já definido na seção ClaimsSchema no arquivo de política ou no arquivo de política pai. |
-| DefaultValue | Não  | Um valor padrão a ser usado para criar uma declaração se a declaração indicada por ClaimTypeReferenceId não existir. Assim, a declaração resultante poderá ser usada como um InputClaim pelo perfil técnico. |
-| PartnerClaimType | Não  | O identificador do tipo de declaração do parceiro externo para o qual o tipo de declaração da política especificado é mapeado. Se o atributo PartnerClaimType não for especificado, o tipo de declaração de política especificado será mapeado para o tipo de declaração de parceiro com o mesmo nome. Use essa propriedade quando seu nome do tipo de declaração for diferente do da outra parte. Por exemplo, o primeira nome da declaração é 'givenName', enquanto o parceiro usa uma declaração chamada 'first_name'. |
+| DefaultValue | Não | Um valor padrão a ser usado para criar uma declaração se a declaração indicada por ClaimTypeReferenceId não existir. Assim, a declaração resultante poderá ser usada como um InputClaim pelo perfil técnico. |
+| PartnerClaimType | Não | O identificador do tipo de declaração do parceiro externo para o qual o tipo de declaração da política especificado é mapeado. Se o atributo PartnerClaimType não for especificado, o tipo de declaração de política especificado será mapeado para o tipo de declaração de parceiro com o mesmo nome. Use essa propriedade quando seu nome do tipo de declaração for diferente do da outra parte. Por exemplo, o primeira nome da declaração é 'givenName', enquanto o parceiro usa uma declaração chamada 'first_name'. |
 
 ### <a name="persistedclaims"></a>PersistedClaims
 
@@ -193,8 +193,8 @@ O elemento **PersistedClaim** contém os seguintes atributos:
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | ClaimTypeReferenceId | Sim | O identificador de um tipo de declaração já definido na seção ClaimsSchema no arquivo de política ou no arquivo de política pai. |
-| DefaultValue | Não  | Um valor padrão a ser usado para criar uma declaração se a declaração indicada por ClaimTypeReferenceId não existir. Assim, a declaração resultante poderá ser usada como um InputClaim pelo perfil técnico. |
-| PartnerClaimType | Não  | O identificador do tipo de declaração do parceiro externo para o qual o tipo de declaração da política especificado é mapeado. Se o atributo PartnerClaimType não for especificado, o tipo de declaração de política especificado será mapeado para o tipo de declaração de parceiro com o mesmo nome. Use essa propriedade quando seu nome do tipo de declaração for diferente do da outra parte. Por exemplo, o primeira nome da declaração é 'givenName', enquanto o parceiro usa uma declaração chamada 'first_name'. |
+| DefaultValue | Não | Um valor padrão a ser usado para criar uma declaração se a declaração indicada por ClaimTypeReferenceId não existir. Assim, a declaração resultante poderá ser usada como um InputClaim pelo perfil técnico. |
+| PartnerClaimType | Não | O identificador do tipo de declaração do parceiro externo para o qual o tipo de declaração da política especificado é mapeado. Se o atributo PartnerClaimType não for especificado, o tipo de declaração de política especificado será mapeado para o tipo de declaração de parceiro com o mesmo nome. Use essa propriedade quando seu nome do tipo de declaração for diferente do da outra parte. Por exemplo, o primeira nome da declaração é 'givenName', enquanto o parceiro usa uma declaração chamada 'first_name'. |
 
 ### <a name="outputclaims"></a>OutputClaims
 
@@ -211,9 +211,9 @@ O elemento **OutputClaim** contém os seguintes atributos:
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | ClaimTypeReferenceId | Sim | O identificador de um tipo de declaração já definido na seção ClaimsSchema no arquivo de política ou no arquivo de política pai. |
-| DefaultValue | Não  | Um valor padrão a ser usado para criar uma declaração se a declaração indicada por ClaimTypeReferenceId não existir. Assim, a declaração resultante poderá ser usada como um InputClaim pelo perfil técnico. |
-|AlwaysUseDefaultValue |Não  |Força o uso do valor padrão.  |
-| PartnerClaimType | Não  | O identificador do tipo de declaração do parceiro externo para o qual o tipo de declaração da política especificado é mapeado. Se o atributo PartnerClaimType não for especificado, o tipo de declaração de política especificado será mapeado para o tipo de declaração de parceiro com o mesmo nome. Use essa propriedade quando seu nome do tipo de declaração for diferente do da outra parte. Por exemplo, o primeira nome da declaração é 'givenName', enquanto o parceiro usa uma declaração chamada 'first_name'. |
+| DefaultValue | Não | Um valor padrão a ser usado para criar uma declaração se a declaração indicada por ClaimTypeReferenceId não existir. Assim, a declaração resultante poderá ser usada como um InputClaim pelo perfil técnico. |
+|AlwaysUseDefaultValue |Não |Força o uso do valor padrão.  |
+| PartnerClaimType | Não | O identificador do tipo de declaração do parceiro externo para o qual o tipo de declaração da política especificado é mapeado. Se o atributo PartnerClaimType não for especificado, o tipo de declaração de política especificado será mapeado para o tipo de declaração de parceiro com o mesmo nome. Use essa propriedade quando seu nome do tipo de declaração for diferente do da outra parte. Por exemplo, o primeira nome da declaração é 'givenName', enquanto o parceiro usa uma declaração chamada 'first_name'. |
 
 ### <a name="outputclaimstransformations"></a>OutputClaimsTransformations
 

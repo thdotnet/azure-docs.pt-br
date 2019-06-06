@@ -6,18 +6,18 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.openlocfilehash: 5131329f6675bc86374f5a5c081e0aaa7d36c0fe
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 08cdaafe00b7dc586ea75f6ff03fdb89107edee9
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66155230"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66430762"
 ---
 # <a name="azure-data-factory-mapping-data-flows-column-patterns"></a>Padrões de coluna de fluxos de dados de mapeamento do Azure data factory
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
-Várias transformações de Fluxo de Dados do Azure Data Factory dão suporte à ideia de "Padrões de colunas" para que você possa criar colunas de modelo com base nos padrões em vez de nomes de coluna embutidos em código. Você pode usar esse recurso no Construtor de Expressões para definir padrões para correspondência das colunas para transformação em vez de exigir nomes de campo exatos específicos. Padrões são úteis se a entrada campos de origem são alterados com frequência, especialmente no caso de alterar as colunas nos arquivos de texto ou bancos de dados NoSQL. Essa condição é, às vezes, conhecida como "Descompasso do esquema".
+Várias transformações de Fluxo de Dados do Azure Data Factory dão suporte à ideia de "Padrões de colunas" para que você possa criar colunas de modelo com base nos padrões em vez de nomes de coluna embutidos em código. Você pode usar esse recurso no construtor de expressões para definir padrões para correspondência das colunas para a transformação em vez de exigir nomes de campo exato e específico. Padrões são úteis se a entrada campos de origem são alterados com frequência, especialmente no caso de alterar as colunas nos arquivos de texto ou bancos de dados NoSQL. Essa condição é, às vezes, conhecida como "Descompasso do esquema".
 
 ![padrões de coluna](media/data-flow/columnpattern2.png "Padrões de coluna")
 
@@ -27,6 +27,6 @@ Ao adicionar uma expressão a uma transformação que aceita padrões, escolha "
 
 Ao criar padrões de coluna de modelo, use `$$` na expressão para declarar uma referência para cada campo correspondente do fluxo de dados de entrada.
 
-Se optar por usar uma das funções regex do Construtor de Expressões, você poderá, posteriormente, usar $1, $2, $3 ... para fazer referência a subpadrões com correspondência de sua expressão regex.
+Se você optar por usar uma das funções de construtor de expressões de regex, você pode, posteriormente, usar $1, 2 de US $, $3... Para fazer referência as subpadrões combinados a partir de sua expressão regex.
 
-Um exemplo de cenário de Padrão de Coluna está usando SUM com uma série de campos de entrada. Os cálculos SUM agregados ficam na transformação de agregação. Você pode usar SUM em cada correspondência de tipos de campo que corresponda a "integer" e, em seguida, usar $$ para fazer referência a cada correspondência na sua expressão.
+Um exemplo de cenário de Padrão de Coluna está usando SUM com uma série de campos de entrada. Os cálculos SUM agregados ficam na transformação de agregação. Você pode usar soma em cada correspondência dos tipos de campo que correspondem à "integer" e, em seguida, use $$ para cada correspondência na sua expressão de referência.

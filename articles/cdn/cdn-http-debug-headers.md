@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/12/2018
 ms.author: magattus
-ms.openlocfilehash: 4ba42850ee28e2e212d9bc2b7b64be103218757c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e5693e0e191b36aa8d4552824c649a38d2f17b5b
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60736965"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475294"
 ---
 # <a name="x-ec-debug-http-headers-for-azure-cdn-rules-engine"></a>Cabeçalhos HTTP Verizon X-EC-Debug para o Mecanismo de regras de CDN do Azure
 O cabeçalho da solicitação de depuração de cache `X-EC-Debug` fornece informações adicionais sobre a política de cache que é aplicada para o ativo solicitado. Esses cabeçalhos são específicos para **Premium do Azure CDN dos produtos Verizon**.
@@ -27,7 +27,7 @@ O cabeçalho da solicitação de depuração de cache `X-EC-Debug` fornece infor
 ## <a name="usage"></a>Uso
 A resposta enviada de servidores POP para um usuário inclui o `X-EC-Debug` cabeçalho somente quando as seguintes condições forem atendidas:
 
-- O [Recurso de Cabeçalhos de Resposta de Cache de Depuração](cdn-rules-engine-reference-features.md#debug-cache-response-headers) foi habilitado no mecanismo de regras para a solicitação especificada.
+- O [Recurso de Cabeçalhos de Resposta de Cache de Depuração](cdn-verizon-premium-rules-engine-reference-features.md#debug-cache-response-headers) foi habilitado no mecanismo de regras para a solicitação especificada.
 - A solicitação especificada define o conjunto de cabeçalhos de resposta do cache de depuração que serão incluídos na resposta.
 
 ## <a name="requesting-debug-cache-information"></a>Solicitação de informações do cache de depuração
@@ -118,7 +118,7 @@ O exemplo de cabeçalho de resposta a seguir indica se o conteúdo solicitado po
 ## <a name="cache-key-response-header"></a>Cabeçalho de reposta Cache-Key
 O `X-EC-Debug: x-ec-cache-key` cabeçalho de resposta indica o Cache-Key físico associado ao conteúdo solicitado. Um cache-key é o caminho relativo que identifica um ativo para fins de cache. Em outras palavras, os servidores verificarão se há uma versão em cache de um ativo de acordo com seu caminho, conforme definido pelo cache-key.
 
-Este cache-key começa com uma barra invertida dupla (/ /) seguido pelo protocolo usado para solicitar o conteúdo (HTTP ou HTTPS). Esse protocolo é seguido pelo caminho relativo para o ativo solicitado, o que inicia com o ponto de acesso ao conteúdo (por exemplo, _/000001/_).
+Este cache-key começa com uma barra invertida dupla (/ /) seguido pelo protocolo usado para solicitar o conteúdo (HTTP ou HTTPS). Esse protocolo é seguido pelo caminho relativo para o ativo solicitado, o que inicia com o ponto de acesso ao conteúdo (por exemplo, _/000001/_ ).
 
 Por padrão, as plataformas HTTP são configuradas para usar *cache padrão*, o que significa que as cadeias de caracteres de consulta são ignoradas pelo mecanismo de armazenamento em cache. Esse tipo de configuração impede que o cache-key inclua dados de cadeia de caracteres de consulta.
 

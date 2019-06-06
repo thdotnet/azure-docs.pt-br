@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: iainfou
-ms.openlocfilehash: eeb9f5fa91252bbc3c3038ab88bd2d7e802f263f
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: d8a8a2f005a92988158b3f9c36ce24936fb020b4
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65786388"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475618"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Entidades de serviço com o AKS (Serviço de Kubernetes do Azure)
 
@@ -126,7 +126,7 @@ Ao usar o AKS e as entidades de serviço do Azure AD, tenha em mente as consider
 
 - A entidade de serviço para o Kubernetes é parte da configuração do cluster. No entanto, não use a identidade para implantar o cluster.
 - Por padrão, as credenciais da entidade de serviço são válidas por um ano. Você pode [atualizar ou girar as credenciais da entidade de serviço] [ update-credentials] a qualquer momento.
-- Cada entidade de serviço é associada a um aplicativo Azure AD. A entidade de serviço de um cluster Kubernetes pode ser associada a qualquer nome de aplicativo válido do Azure AD (por exemplo: *https://www.contoso.org/example*). A URL para o aplicativo não precisa ser um ponto de extremidade real.
+- Cada entidade de serviço é associada a um aplicativo Azure AD. A entidade de serviço de um cluster Kubernetes pode ser associada a qualquer nome de aplicativo válido do Azure AD (por exemplo: *https://www.contoso.org/example* ). A URL para o aplicativo não precisa ser um ponto de extremidade real.
 - Ao especificar a **ID do cliente** da entidade de serviço, use o valor de `appId`.
 - No nó de agente VMs no cluster Kubernetes, as credenciais da entidade de serviço são armazenadas no arquivo. `/etc/kubernetes/azure.json`
 - Se você usar o comando [az aks create][az-aks-create] para gerar a entidade de serviço automaticamente, as credenciais da entidade de serviço serão gravadas no arquivo `~/.azure/aksServicePrincipal.json` no computador usado para executar o comando.
@@ -136,6 +136,24 @@ Ao usar o AKS e as entidades de serviço do Azure AD, tenha em mente as consider
         ```azurecli
         az ad sp delete --id $(az aks show -g myResourceGroup -n myAKSCluster --query servicePrincipalProfile.clientId -o tsv)
         ```
+
+## <a name="troubleshoot"></a>Solução de problemas
+
+A CLI do Azure armazenados em cache as credenciais de entidade de serviço para um cluster do AKS. Se essas credenciais expiraram, você encontrar erros de implantação de clusters AKS. A seguinte mensagem de erro ao executar [criar az aks] [ az-aks-create] pode indicar um problema com as credenciais da entidade de serviço em cache:
+
+```console
+Operation failed with status: 'Bad Request'.
+Details: The credentials in ServicePrincipalProfile were invalid. Please see https://aka.ms/aks-sp-help for more details.
+(Details: adal: Refresh request failed. Status Code = '401'.
+```
+
+Verificar a idade do arquivo de credenciais usando o seguinte comando:
+
+```console
+ls -la $HOME/.azure/aksServicePrincipal.json
+```
+
+O tempo de expiração padrão para as credenciais da entidade de serviço é um ano. Se sua *aksServicePrincipal.json* arquivo é mais antigo que um ano, exclua o arquivo e tente implantar um cluster do AKS novamente.
 
 ## <a name="next-steps"></a>Próximas etapas
 

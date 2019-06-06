@@ -5,17 +5,17 @@ author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.date: 10/19/2018
+ms.date: 05/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 318f21beffb401053c56576ccd9e641dc89cf559
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: d6b90ff82601acca1249c7d8c353944e39e89f95
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66298813"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473794"
 ---
 # <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect:  Referência do PowerShell ADConnectivityTools
 
@@ -35,7 +35,8 @@ Confirm-DnsConnectivity [-Forest] <String> [-DCs] <Array> [-ReturnResultAsPSObje
 
 ### <a name="description"></a>Descrição
 
-Executa testes de conectividade de DNS local. Para configurar o conector do Active Directory, o usuário deve ter os dois resolução de nomes para a floresta eles estão tentando se conectar ao, bem como em controladores de domínio associados a esta floresta.
+Executa testes de conectividade de DNS local.
+Para configurar o conector do Active Directory, o usuário deve ter os dois RESOLUÇÃOO nome para a floresta eles está tentando se conectar ao, bem como em controladores de domínio associados a esta floresta.
 
 ### <a name="examples"></a>EXEMPLOS
 
@@ -308,8 +309,8 @@ Accept wildcard characters: False
 
 #### <a name="-skipdnsport"></a>-SkipDnsPort
 
-Se o usuário não está usando os serviços DNS fornecidos pelo Site do AD / controlador de domínio de Logon, em seguida, eles talvez queira ignorar a verificação de porta 53.
-O usuário ainda deverá ser capaz de resolver _.ldap._tcp.\<forestfqdn\> para que a configuração Conector do Active Directory seja bem-sucedida.
+Se o usuário não estiver usando os serviços DNS fornecidos pelo Site do AD / controlador de domínio de Logon, em seguida, eles talvez queira ignorar a verificação de porta 53.
+O usuário ainda deve ser capaz de resolver _.ldap._tcp. \<forestfqdn\> em ordem para a configuração de conector do Active Directory seja bem-sucedida.
 
 ```yml
 Type: SwitchParameter

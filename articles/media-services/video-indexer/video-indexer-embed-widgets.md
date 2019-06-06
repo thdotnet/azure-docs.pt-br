@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 06/05/2019
 ms.author: juliako
-ms.openlocfilehash: 5acd9b68368f56000a0a32d1ade310cf30143950
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 6b5422e2eb67eb309c086c023df9f733940e5e44
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65799393"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735082"
 ---
 # <a name="embed-video-indexer-widgets-into-your-applications"></a>Inserir widgets do Video Indexer em seus aplicativos
 
@@ -29,7 +29,7 @@ A partir da versão 2, a URL base do widget inclui a região da conta. Por exemp
 
 Um widget **Insights cognitivos** inclui todos os insights visuais que foram extraídos do processo de indexação do seu vídeo. O widget de insights é compatível com os seguintes parâmetros de URL opcionais:
 
-|NOME|Definição|Descrição|
+|NOME|Definição|DESCRIÇÃO|
 |---|---|---|
 |widgets|Cadeias de caracteres separadas por vírgula|Permite controlar os insight que você deseja renderizar. <br/>Exemplo: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,search` renderizará apenas insights de interface do usuário de pessoas e marcas<br/>Opções disponíveis: people, keywords, annotations, brands, sentiments, transcript e search.<br/>não tem suporte por meio de URL na versão = 2<br/><br/>**Observação:** Não há suporte para o parâmetro de URL de widgets na versão 2. |
 
@@ -37,14 +37,14 @@ Um widget **Insights cognitivos** inclui todos os insights visuais que foram ext
 
 Um widget **Player** permite transmitir o vídeo usando a taxa de bits adaptável. O widget de player é compatível com os seguintes parâmetros de URL opcionais:
 
-|NOME|Definição|Descrição|
+|NOME|Definição|DESCRIÇÃO|
 |---|---|---|
 |t|Segundos a partir do início|Faz o player começar a reproduzir do ponto de tempo determinado.<br/>Exemplo: t=60|
 |captions|Código de idioma|Busca a legenda no idioma determinado durante o carregamento do widget a estar disponível no menu de legendas.<br/>Exemplo: captions=en-US|
 |showCaptions|Um valor booliano|Faz o player ser carregado com as legendas já habilitadas.<br/>Exemplo: showCaptions=true|
-|tipo||Ativa uma capa de player de áudio (parte do vídeo é removida).<br/>Exemplo: type=audio|
+|type||Ativa uma capa de player de áudio (parte do vídeo é removida).<br/>Exemplo: type=audio|
 |autoplay|Um valor booliano|Indica se o player deve começar a reproduzir o vídeo quando carregado (o padrão é true).<br/>Exemplo: autoplay=false|
-|Linguagem|Código de idioma|Controla o idioma do player (o padrão é en-US)<br/>Exemplo: language=de-DE|
+|language|Código de idioma|Controla o idioma do player (o padrão é en-US)<br/>Exemplo: language=de-DE|
 
 ## <a name="embedding-public-content"></a>Inserindo conteúdo público
 
@@ -61,6 +61,9 @@ Um widget **Player** permite transmitir o vídeo usando a taxa de bits adaptáve
 5. Copie o código de inserção e adicione ao seu aplicativo. 
 
     ![Widget](./media/video-indexer-embed-widgets/video-indexer-widget02.png)
+
+> [!NOTE]
+> Se você tiver problemas com o compartilhamento de suas URLs de vídeos, tente adicionar o parâmetro de 'local' para o link. O parâmetro deve ser definido como o [regiões do Azure no qual existe um indexador de vídeo](regions.md). Por exemplo: `https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/b2b2c74b8e/?location=trial`.
 
 ## <a name="embedding-private-content"></a>Inserindo conteúdo privado
 

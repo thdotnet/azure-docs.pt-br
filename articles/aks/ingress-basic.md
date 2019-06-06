@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/24/2019
 ms.author: iainfou
-ms.openlocfilehash: 52b929d8caa7b855e45ce9ca57d39d1dfcbcb8a1
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: b0dfe69a77d236e7a811ca5c7407428327c62ff3
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66392697"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66430990"
 ---
 # <a name="create-an-ingress-controller-in-azure-kubernetes-service-aks"></a>Criar um controlador de entrada no AKS (Serviço de Kubernetes do Azure)
 
@@ -41,6 +41,9 @@ O controlador de entrada também precisa ser agendada em um nó do Linux. Nós d
 
 > [!TIP]
 > O exemplo a seguir cria um namespace de Kubernetes para os recursos de entrada denominado *ingresso basic*. Especifique um namespace para o seu próprio ambiente conforme necessário. Se seu cluster do AKS não for habilitado o RBAC, adicione `--set rbac.create=false` para os comandos do Helm.
+
+> [!TIP]
+> Se você deseja habilitar [preservação de IP de origem do cliente] [ client-source-ip] para solicitações para contêineres no cluster, adicione `--set controller.service.externalTrafficPolicy=Local` comando de instalação para o Helm. A origem do cliente IP é armazenado no cabeçalho da solicitação sob *X-Forwarded-For*. Ao usar um controlador de entrada com preservação de IP de origem de cliente habilitada, a passagem SSL não funcionará.
 
 ```console
 # Create a namespace for your ingress resources
@@ -226,3 +229,4 @@ Você também pode:
 [aks-ingress-static-tls]: ingress-static-ip.md
 [aks-http-app-routing]: http-application-routing.md
 [aks-ingress-own-tls]: ingress-own-tls.md
+[client-source-ip]: concepts-network.md#ingress-controllers

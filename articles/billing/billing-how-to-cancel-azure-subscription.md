@@ -10,14 +10,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 5/30/2019
+ms.date: 06/03/2019
 ms.author: banders
-ms.openlocfilehash: 235d93de56289bb2daaa661ee9806732da3b6d6a
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 8f4279d9ac085cdd1ded0dfdda4fad9d3fe12fb8
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417598"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480228"
 ---
 # <a name="cancel-your-subscription-for-azure"></a>Cancelar sua assinatura do Azure
 
@@ -29,6 +29,7 @@ Antes de cancelar sua assinatura:
 * Finalize seus serviços. Vá para a [página de recursos no portal de gerenciamento](https://ms.portal.azure.com/?flight=1#blade/HubsExtension/Resources/resourceType/Microsoft.Resources%2Fresources), e **Pare** quaisquer máquinas virtuais, aplicativos ou outros serviços em execução.
 * Considere migrar seus dados. Consulte [Mover recursos para um novo grupo de recursos ou uma nova assinatura](../azure-resource-manager/resource-group-move-resources.md).
 * Você deve excluir todos os recursos e todos os grupos de recursos. É necessário excluí-los, antes de cancelar uma assinatura. Cada grupo de recursos deve ser excluído individualmente. Durante a exclusão do grupo de recursos, você deve confirmar a exclusão digitando o nome do grupo de recursos.
+* Se você tiver as funções personalizadas que fazem referência a essa assinatura `AssignableScopes`, você deve atualizar essas funções personalizadas para remover a assinatura. Se você tentar atualizar uma função personalizada, depois de cancelar uma assinatura, você poderá receber um erro. Para obter mais informações, consulte [solucionar problemas com funções personalizadas](../role-based-access-control/troubleshooting.md#problems-with-custom-roles) e [funções personalizadas para recursos do Azure](../role-based-access-control/custom-roles.md).
 
 Se você cancelar um plano de Suporte do Azure pago, ainda será cobrado pelo restante do período de assinatura. Para obter mais informações, consulte [Planos de suporte do Azure](https://azure.microsoft.com/support/plans/).
 
@@ -43,11 +44,9 @@ Se você cancelar um plano de Suporte do Azure pago, ainda será cobrado pelo re
 
 ## <a name="what-happens-after-i-cancel-my-subscription"></a>O que acontecerá depois que eu cancelar minha assinatura?
 
-Após o cancelamento, a cobrança será interrompida imediatamente. No entanto, pode levar até 10 minutos para que o cancelamento seja mostrado no portal.
+Depois de cancelar, a cobrança será interrompida imediatamente. No entanto, pode levar até 10 minutos para que o cancelamento seja mostrado no portal. Se você cancelar no meio de um período de cobrança, enviaremos a cobrança final na data da fatura normal após o término do período.
 
-Depois disso, os serviços são desabilitados. Isso significa que as máquinas virtuais são desalocadas, os endereços IP temporários são liberados e o armazenamento é somente leitura.
-
-Se você cancelar no meio de um período de cobrança, enviaremos a cobrança final na data da fatura normal após o término do período.
+Depois de cancelar, os serviços são desabilitados. Isso significa que as máquinas virtuais são desalocadas, os endereços IP temporários são liberados e o armazenamento é somente leitura.
 
 Aguardaremos 90 dias antes de excluir permanentemente seus dados caso você precise acessá-los ou mude de ideia. Você não é cobrado pela retenção dos dados. Para saber mais, consulte a [Central de Confiabilidade da Microsoft – Como gerenciamos seus dados](https://go.microsoft.com/fwLink/p/?LinkID=822930&clcid=0x409).
 

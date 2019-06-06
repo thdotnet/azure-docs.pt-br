@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: anantr
 ms.component: alerts
-ms.openlocfilehash: f8d7b00de24c566cab204c66371dac9b569c42c9
-ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
+ms.openlocfilehash: 6e97826499842a257f6402bd5268edc4cd6a486e
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65620007"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734903"
 ---
 # <a name="action-rules-preview"></a>Regras de ação (visualização)
 
@@ -33,7 +33,7 @@ Embora as regras de alerta permitem que você defina o grupo de ação que dispa
 
 ## <a name="configuring-an-action-rule"></a>Configurar uma regra de ação
 
-Você pode acessar o recurso selecionando **Gerenciar ações** dos alertas de página de aterrissagem no Azure Monitor. Em seguida, selecione **regras de ação (visualização)**. Você pode acessá-los, selecionando **regras de ação (visualização)** do painel da página de aterrissagem para alertas.
+Você pode acessar o recurso selecionando **Gerenciar ações** dos alertas de página de aterrissagem no Azure Monitor. Em seguida, selecione **regras de ação (visualização)** . Você pode acessá-los, selecionando **regras de ação (visualização)** do painel da página de aterrissagem para alertas.
 
 ![Regras de ação da página de aterrissagem do Azure Monitor](media/alerts-action-rules/action-rules-landing-page.png)
 
@@ -67,7 +67,7 @@ Os filtros disponíveis são:
 * **ID da regra de alerta**: Permite que você filtre para regras de alerta específicas usando a ID da regra de alerta do Gerenciador de recursos.
 * **Monitorar a condição**: Filtro de instâncias de alerta com "Disparado" ou "Resolvido" como a condição do monitor.
 * **Descrição**: Regex de correspondência dentro a descrição definida como parte da regra de alerta.
-* **O contexto de alerta (carga)**: Correspondência de RegEx dentro de [contexto de alerta](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-definitions#alert-context-fields) campos de uma instância de alerta.
+* **O contexto de alerta (carga)** : Correspondência de RegEx dentro de [contexto de alerta](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-definitions#alert-context-fields) campos de uma instância de alerta.
 
 Esses filtros são aplicados em conjunto um ao outro. Por exemplo, se eu definir 'Tipo de recurso' = 'Máquinas virtuais' e 'Gravidade' = 'Sev0', em seguida, posso ter filtrado para todos os alertas de 'Sev0' somente as minhas VMs. 
 
@@ -80,7 +80,7 @@ Em seguida, configure a regra de ação para a supressão de alerta ou suporte d
 #### <a name="suppression"></a>Supressão
 
 Se você selecionar **supressão**, configurar a duração para a supressão de ações e notificações. Escolha uma das seguintes opções:
-* **A partir de agora (sempre)**: Suprime todas as notificações por tempo indeterminado.
+* **A partir de agora (sempre)** : Suprime todas as notificações por tempo indeterminado.
 * **Em um horário agendado**: Suprima notificações dentro de uma duração limitada.
 * **Com uma recorrência**: Suprima em uma agenda de recorrência, que pode ser diária, semanal ou mensal.
 
@@ -100,7 +100,7 @@ Se você selecionar **grupo de ação** no botão de alternância, adicione um g
 Por fim, configure os seguintes detalhes para a regra de ação
 * NOME
 * Grupo de recursos no qual ele será salvo
-* Descrição 
+* DESCRIÇÃO 
 
 ## <a name="example-scenarios"></a>Cenários de exemplo
 
@@ -128,12 +128,15 @@ A Contoso deseja suprimir notificações para todos os log de alertas gerados po
 
 ### <a name="scenario-3-action-group-defined-at-a-resource-group"></a>Cenário 3: Grupo de ações definido em um grupo de recursos
 
-A Contoso definiu [um alerta de métrica no nível da assinatura](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-overview#monitoring-at-scale-using-metric-alerts-in-azure-monitor), mas quer definem as ações que disparam alertas separadamente de seu grupo de recursos 'ContosoRG'.
+A Contoso definiu [um alerta de métrica no nível da assinatura](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-overview#monitoring-at-scale-using-metric-alerts-in-azure-monitor), mas quer definem as ações que disparam especificamente para alertas gerados a partir de seu grupo de recursos 'ContosoRG'.
 
 **Solução:** Crie uma regra de ação com
 * Scope = 'ContosoRG'
 * Nenhum filtro
 * Grupo de ação definido como 'ContosoActionGroup'
+
+> [!NOTE]
+> **Grupos de ações definidas dentro de regras de ação e as regras de alerta operam de forma independente, com a eliminação de duplicação**. No cenário descrito acima, se houver um grupo de ações definidas para a regra de alerta, ele disparará em conjunto com o grupo de ações definido na regra de ação. 
 
 ## <a name="managing-your-action-rules"></a>Gerenciar suas regras de ação
 

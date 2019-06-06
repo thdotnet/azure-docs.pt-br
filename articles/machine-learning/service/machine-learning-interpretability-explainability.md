@@ -10,12 +10,12 @@ ms.author: mesameki
 author: mesameki
 ms.reviewer: larryfr
 ms.date: 05/30/2019
-ms.openlocfilehash: 94309a019800b560cf6731d84cea324932e3f357
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 4f1dd0bfc0637c6681b513860a63df2b8c35fe5e
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66398543"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66430862"
 ---
 # <a name="model-interpretability-with-azure-machine-learning-service"></a>Possibilidade de interpretação de modelo com o serviço Azure Machine Learning
 
@@ -462,7 +462,7 @@ O explicador pode ser implantado junto com o modelo original e pode ser usado em
 
 Automatizado de machine learning contém pacotes para interpretar a importância do recurso em modelos treinados para automático. Além disso, cenários de classificação permitem que você recupere importância do recurso de nível de classe. Há dois métodos para habilitar esse comportamento em aprendizado de máquina automatizado:
 
-* Para habilitar a importância do recurso para um modelo treinado ensemble, use o [ `explain_model()` ](https://docs.microsoft.com/en-us/python/api/azureml-train-automl/azureml.train.automl.automlexplainer?view=azure-ml-py) função.
+* Para habilitar a importância do recurso para um modelo treinado ensemble, use o [ `explain_model()` ](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlexplainer?view=azure-ml-py) função.
 
     ```python
     from azureml.train.automl.automlexplainer import explain_model
@@ -471,7 +471,7 @@ Automatizado de machine learning contém pacotes para interpretar a importância
         per_class_summary, per_class_imp = explain_model(fitted_model, X_train, X_test)
     ```
 
-* Para habilitar a importância do recurso para cada execução individual antes do treinamento, defina as `model_explainability` parâmetro para `True` no `AutoMLConfig` objeto, juntamente com o fornecimento de dados de validação. Em seguida, use o [ `retrieve_model_explanation()` ](https://docs.microsoft.com/en-us/python/api/azureml-train-automl/azureml.train.automl.automlexplainer?view=azure-ml-py) função.
+* Para habilitar a importância do recurso para cada execução individual antes do treinamento, defina as `model_explainability` parâmetro para `True` no `AutoMLConfig` objeto, juntamente com o fornecimento de dados de validação. Em seguida, use o [ `retrieve_model_explanation()` ](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlexplainer?view=azure-ml-py) função.
 
     ```python
     from azureml.train.automl.automlexplainer import retrieve_model_explanation

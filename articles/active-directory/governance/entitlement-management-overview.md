@@ -12,21 +12,21 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 04/27/2019
+ms.date: 05/30/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b9baa48c13e317ba3fb54d998ee8f125d2093c7
-ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
+ms.openlocfilehash: efd3ff8a6e7ddf2aa6242cc322d8a6536a6bd26b
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65921062"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66474056"
 ---
-# <a name="what-is-azure-ad-entitlement-management-preview"></a>O que é gerenciamento de direitos do AD do Azure? (Versão Prévia)
+# <a name="what-is-azure-ad-entitlement-management-preview"></a>O que é gerenciamento de direitos do AD do Azure? (Visualização)
 
 > [!IMPORTANT]
-> Gerenciamento de direitos do Active Directory (Azure AD) do Azure está atualmente em visualização pública.
+> No momento, o gerenciamento de direitos do Azure AD (Azure Active Directory) está em versão prévia pública.
 > Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
 > Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -70,22 +70,13 @@ Aqui estão os tipos de recursos que você pode gerenciar o acesso com o gerenci
 
 - Grupos de segurança do Azure AD
 - Grupos do Office 365
-- Aplicativos de empresa do Azure AD
-- Aplicativos SaaS
-- Aplicativos integrados ao personalizado
-- Conjuntos de sites do SharePoint Online
-- Sites do SharePoint Online
+- Enterprise aplicativos do Azure AD, incluindo o aplicativo SaaS e aplicativos integrados ao personalizados dão suporte à Federação ou provisionamento
+- Sites e conjuntos de sites do SharePoint Online
 
-## <a name="prerequisites"></a>Pré-requisitos
+Você também pode controlar o acesso a outros recursos que se baseiam em grupos de segurança do Azure AD ou grupos do Office 365.  Por exemplo:
 
-Para usar o gerenciamento de direitos do AD do Azure (visualização), você deve ter uma das seguintes licenças:
-
-- Azure AD Premium P2
-- Licença do Enterprise Mobility + Security (EMS) E5
-
-Para obter mais informações, consulte [inscrever-se para as edições do Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md) ou [Enterprise Mobility + Security E5 avaliação](https://aka.ms/emse5trial).
-
-Nuvens especializados, como o Azure governamental, Azure Alemanha e Azure China 21Vianet, não estão atualmente disponíveis para uso nesta visualização.
+- Você pode atribuir licenças de usuários para o Microsoft Office 365, usando um grupo de segurança do Azure AD em um pacote de acesso e configurando [licenciamento baseado em grupo](../users-groups-roles/licensing-groups-assign.md) para esse grupo
+- Você pode dar aos usuários acesso para gerenciar recursos do Azure usando um grupo de segurança do Azure AD em um pacote de acesso e criando uma [atribuição de função do Azure](../../role-based-access-control/role-assignments-portal.md) para esse grupo
 
 ## <a name="what-are-access-packages-and-policies"></a>Quais são os pacotes de acesso e políticas?
 
@@ -124,7 +115,7 @@ Como você não deseja que o acesso do usuário externo durar para sempre, você
 
 Para entender melhor o gerenciamento de direitos e sua documentação, você deve revisar os termos a seguir.
 
-| Termo ou conceito | Descrição |
+| Termo ou conceito | DESCRIÇÃO |
 | --- | --- |
 | gerenciamento de direitos | Um serviço que atribui, revoga e administra pacotes de acesso. |
 | pacote de acesso | Uma coleção de permissões e políticas para recursos que os usuários podem solicitar. Um pacote de acesso sempre está contido em um catálogo. |
@@ -132,18 +123,18 @@ Para entender melhor o gerenciamento de direitos e sua documentação, você dev
 | policy | Um conjunto de regras que define o ciclo de vida de acesso, como como os usuários podem obter acesso, quem pode aprovar e por quanto tempo os usuários têm acesso. Exemplos de políticas incluem o acesso dos funcionários e o acesso externo. |
 | catalog | Um contêiner de pacotes de acesso e recursos relacionados. |
 | Catálogo geral | Um catálogo interno que está sempre disponível. Para adicionar recursos ao catálogo geral, exige determinadas permissões. |
-| Recurso | Um ativo ou serviço (por exemplo, um grupo, aplicativo ou site) que um usuário pode ser concedido permissões para. |
-| Tipo de Recurso | O tipo de recurso, que inclui grupos, aplicativos e sites do SharePoint Online. |
+| resource | Um ativo ou serviço (por exemplo, um grupo, aplicativo ou site) que um usuário pode ser concedido permissões para. |
+| Tipo de recurso | O tipo de recurso, que inclui grupos, aplicativos e sites do SharePoint Online. |
 | função de recurso | Uma coleção de permissões associadas a um recurso. |
 | diretório de recursos | Um diretório que tem um ou mais recursos para compartilhar. |
 | usuários atribuídos | Uma atribuição de um pacote de acesso para um usuário ou grupo. |
-| habilitar | O processo de disponibilizar um pacote de acesso para que os usuários solicitem. |
+| enable | O processo de disponibilizar um pacote de acesso para que os usuários solicitem. |
 
 ## <a name="roles-and-permissions"></a>Funções e permissões
 
 Gerenciamento de direitos tem funções diferentes com base em função de trabalho.
 
-| Função | Descrição |
+| Função | DESCRIÇÃO |
 | --- | --- |
 | [Usuário administrador](../users-groups-roles/directory-assign-admin-roles.md#user-administrator) | Gerencie todos os aspectos do gerenciamento de direitos.<br/>Crie usuários e grupos. |
 | Criador de catálogo | Criar e gerenciar catálogos. Normalmente, um administrador de TI ou o proprietário do recurso. A pessoa que cria um catálogo automaticamente se torna o proprietário do catálogo primeiro do catálogo. |
@@ -173,6 +164,12 @@ A tabela a seguir lista as permissões para cada uma dessas funções.
 | [Adicionar ou remover recursos de/para um catálogo](entitlement-management-catalog-create.md#add-resources-to-a-catalog) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
 | [Adicionar proprietários de catálogo ou acessar gerenciadores de pacotes](entitlement-management-catalog-create.md#add-catalog-owners-or-access-package-managers) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
 | [Editar/Excluir um catálogo](entitlement-management-catalog-create.md#edit-a-catalog) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
+
+## <a name="license-requirements"></a>Requisitos de licença
+
+[!INCLUDE [Azure AD Premium P2 license](../../../includes/active-directory-p2-license.md)]
+
+Nuvens especializados, como o Azure governamental, Azure Alemanha e Azure China 21Vianet, não estão atualmente disponíveis para uso nesta visualização.
 
 ## <a name="next-steps"></a>Próximas etapas
 

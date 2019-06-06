@@ -16,12 +16,12 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 234fc94a0a2ad3d3bee49853cf1dfc6a805a0166
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: adfc96d2d7abf38c00f32a5d53615bb7c99c320e
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65825398"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66742379"
 ---
 # <a name="error-on-an-applications-page-after-signing-in"></a>Erro em uma página de aplicativo após a entrada
 
@@ -67,9 +67,11 @@ Para adicionar um atributo na configuração do Azure Active Directory para ser 
 
 Na próxima vez em que o usuário entrar no aplicativo, o Azure AD enviará o novo atributo na resposta SAML.
 
-## <a name="the-application-expects-a-different-user-identifier-value-or-format"></a>O aplicativo espera um formato ou valor de Identificador de Usuário diferente
+## <a name="the-application-doesnt-identify-the-user"></a>O aplicativo não identifica o usuário
 
-A entrada para o aplicativo está falhando porque na resposta SAML está faltando atributos como funções ou porque o aplicativo está esperando um formato diferente para o atributo EntityID.
+Na entrada para o aplicativo está falhando porque a resposta SAML está faltando atributos como funções ou porque o aplicativo está esperando um formato diferente ou um valor para o atributo EntityID.
+
+Se você estiver usando [do Azure AD provisionamento automatizado de usuários](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning) para criar, manter e remover usuários no aplicativo. Em seguida, verifique se que o usuário foi provisionado com êxito para o aplicativo SaaS. Para obter mais informações, consulte [nenhum usuário está sendo provisionado para um aplicativo de galeria do Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-config-problem-no-users-provisioned)
 
 ## <a name="add-an-attribute-in-the-azure-ad-application-configuration"></a>Adicione um atributo na configuração do aplicativo do Azure AD:
 

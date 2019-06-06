@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 4/30/2019
+ms.date: 6/1/2019
 ms.author: absha
-ms.openlocfilehash: 5bfd1f930c190e717e435856f424f0cdf80deb2c
-ms.sourcegitcommit: ed66a704d8e2990df8aa160921b9b69d65c1d887
+ms.openlocfilehash: 55c7670821ee6c6f5b924bf18b5f7ad01d4b6d51
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64946820"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66431310"
 ---
 # <a name="application-gateway-configuration-overview"></a>Visão geral da configuração de Gateway de aplicativo
 
@@ -57,7 +57,7 @@ Grupos de segurança de rede (NSGs) têm suporte no Gateway de aplicativo. Mas h
 
 - O tráfego dos **AzureLoadBalancer** marca deve ser permitida.
 
-##### <a name="whitelist-application-gateway-access-to-a-few-source-ips"></a>Acesso do Gateway de aplicativo de lista de permissões para alguns IPs de origem
+##### <a name="allow-application-gateway-access-to-a-few-source-ips"></a>Permitir o acesso do Gateway de aplicativo para alguns IPs de origem
 
 Para este cenário, use os NSGs na sub-rede do Gateway de aplicativo. Coloque as seguintes restrições na sub-rede nesta ordem de prioridade:
 
@@ -209,13 +209,13 @@ Para uma regra com base em caminho, adicione várias configurações de HTTP de 
 
 ### <a name="redirection-setting"></a>Configuração de redirecionamento
 
-Se o redirecionamento é configurado para uma regra básica, todas as solicitações no ouvinte associado são redirecionadas para o destino. Isso é *global* redirecionamento. Se o redirecionamento estiver configurado para uma regra com base em caminho, somente as solicitações em uma área específica do site são redirecionadas. Um exemplo é uma área de carrinho de compras é denotada por */cart/\**. Isso é *com base em caminho* redirecionamento.
+Se o redirecionamento é configurado para uma regra básica, todas as solicitações no ouvinte associado são redirecionadas para o destino. Isso é *global* redirecionamento. Se o redirecionamento estiver configurado para uma regra com base em caminho, somente as solicitações em uma área específica do site são redirecionadas. Um exemplo é uma área de carrinho de compras é denotada por */cart/\** . Isso é *com base em caminho* redirecionamento.
 
 Para obter mais informações sobre como redirecionamentos, consulte [visão geral de redirecionamento do Gateway de aplicativo](https://docs.microsoft.com/azure/application-gateway/redirect-overview).
 
 #### <a name="redirection-type"></a>Tipo de redirecionamento
 
-Escolha o tipo de redirecionamento necessário: *Permanent(301)*, *Temporary(307)*, *Found(302)*, ou *consulte other(303)*.
+Escolha o tipo de redirecionamento necessário: *Permanent(301)* , *Temporary(307)* , *Found(302)* , ou *consulte other(303)* .
 
 #### <a name="redirection-target"></a>Destino de redirecionamento
 
@@ -265,7 +265,7 @@ O Gateway de aplicativo dá suporte a HTTP e HTTPS para rotear solicitações pa
 
 Essa configuração é combinado com HTTPS no oferece suporte ao ouvinte [SSL de ponta a ponta](https://docs.microsoft.com/azure/application-gateway/ssl-overview). Isso permite transmitir com segurança dados confidenciais criptografados para o back-end. Cada servidor de back-end no pool de back-end com SSL de ponta a ponta habilitado deve ser configurado com um certificado para permitir a comunicação segura.
 
-### <a name="port"></a>Porta
+### <a name="port"></a>Port
 
 Essa configuração especifica a porta em que os servidores de back-end escutam tráfego do gateway de aplicativo. Você pode configurar as portas que variam de 1 a 65535.
 
@@ -299,7 +299,7 @@ Essa configuração permite configurar um caminho de encaminhamento personalizad
 
 Esse é um atalho de interface do usuário que seleciona as duas configurações necessárias para o back-end do serviço de aplicativo do Azure. Ele permite **Escolher nome de host do endereço de back-end**, e cria uma nova investigação personalizada. (Para obter mais informações, consulte o [nome do host de escolha de endereços de back-end](#pick) definindo seção deste artigo.) Uma nova investigação é criada, e o cabeçalho de investigação é obtido do endereço de back-end do membro.
 
-### <a name="use-custom-probe"></a>Usar sonda personalizada
+### <a name="use-custom-probe"></a>Usar investigação personalizada
 
 Essa configuração associa um [investigação personalizada](https://docs.microsoft.com/azure/application-gateway/application-gateway-probe-overview#custom-health-probe) com uma configuração de HTTP. Você pode associar apenas uma investigação personalizada uma configuração de HTTP. Se você não associar explicitamente uma investigação personalizada, o [investigação padrão](https://docs.microsoft.com/azure/application-gateway/application-gateway-probe-overview#default-health-probe-settings) é usado para monitorar a integridade do back-end. É recomendável que você crie uma investigação personalizada para um controle maior sobre o monitoramento de integridade do seu back-ends.
 

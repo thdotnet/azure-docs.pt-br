@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: saurse
-ms.openlocfilehash: f36442c5e26391f410eeb5e39a7485da7199bdad
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: d8a1d261808eb8f97d1e0dab78b767b37ae6802f
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66243444"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66743150"
 ---
 # <a name="troubleshoot-microsoft-azure-recovery-services-mars-agent"></a>Solucionar problemas do agente do MARS (Serviços de Recuperação do Microsoft Azure)
 
@@ -69,7 +69,7 @@ Recomendamos que você execute o abaixo de validação, antes de começar a solu
 
 | Detalhes do erro | Possíveis causas | Ações recomendadas |
 |---------|---------|---------|
-|**Erro** <br />*A ativação não foi concluída com êxito. A operação atual falhou devido a um erro de serviço interno [0x1FC07]. Aguarde um pouco e repita a operação. Se o problema persistir, contate o suporte da Microsoft*      | <li> A pasta de Rascunho está localizada em um volume que não possui espaço suficiente. <li> A pasta de Rascunho é movida incorretamente para outro local. <li> O arquivo OnlineBackup.KEK está ausente.         | <li>Atualize para a [versão mais recente](https://aka.ms/azurebackup_agent) do MARS Agent.<li>Mova a pasta temporária ou o local do cache para um volume com espaço livre igual a 5-10% do tamanho total dos dados de backup. Para mover corretamente o local do cache, consulte as etapas em [Perguntas sobre o Azure Backup Agent](https://docs.microsoft.com/azure/backup/backup-azure-file-folder-backup-faq#backup).<li> Certifique-se de que o arquivo OnlineBackup.KEK está presente. <br>*O local padrão para a pasta de rascunho ou o caminho do local do cache é C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch*.        |
+|**Erro** <br />*A ativação não foi concluída com êxito. A operação atual falhou devido a um erro de serviço interno [0x1FC07]. Aguarde um pouco e repita a operação. Se o problema persistir, contate o suporte da Microsoft*     | <li> A pasta de Rascunho está localizada em um volume que não possui espaço suficiente. <li> A pasta de Rascunho é movida incorretamente para outro local. <li> O arquivo OnlineBackup.KEK está ausente.         | <li>Atualize para a [versão mais recente](https://aka.ms/azurebackup_agent) do MARS Agent.<li>Mova a pasta temporária ou o local do cache para um volume com espaço livre igual a 5-10% do tamanho total dos dados de backup. Para mover corretamente o local do cache, consulte as etapas em [Perguntas sobre o Azure Backup Agent](https://docs.microsoft.com/azure/backup/backup-azure-file-folder-backup-faq#backup).<li> Certifique-se de que o arquivo OnlineBackup.KEK está presente. <br>*O local padrão para a pasta de rascunho ou o caminho do local do cache é C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch*.        |
 
 ## <a name="encryption-passphrase-not-correctly-configured"></a>A frase secreta de criptografia não está configurada corretamente
 
@@ -82,7 +82,15 @@ Recomendamos que você execute o abaixo de validação, antes de começar a solu
 Se os backups agendados não forem acionados automaticamente, mas os backups manuais funcionarem sem problemas, tente estas ações:
 
 - Certifique-se de agendamento de backup do Windows Server não está em conflito com o Azure agenda de backup de arquivos e pastas.
-- Acesse o **Painel de Controle** > **Ferramentas Administrativas** > **Agendador de Tarefas**. Expanda **Microsoft** e selecione **Backup Online**. Clique duas vezes em **Microsoft-OnlineBackup** e acesse a guia **Gatilhos**. Certifique-se de que o status esteja definido como **Habilitado**. Se não estiver, selecione **Editar**, selecione a caixa de seleção **Habilitado** e clique em **OK**. Na guia **Geral**, vá até **Opções de segurança** e certifique-se de que a conta de usuário selecionada para execução da tarefa seja **SYSTEM** ou o **grupo de Administradores Locais** no servidor.
+
+- Verifique se o status de Backup Online é definido como **habilitar**. Para verificar o status de executar a abaixo:
+
+  - Acesse o **Painel de Controle** > **Ferramentas Administrativas** > **Agendador de Tarefas**.
+    - Expanda **Microsoft** e selecione **Backup Online**.
+  - Clique duas vezes em **Microsoft-OnlineBackup** e acesse a guia **Gatilhos**.
+  - Verificar se o status está definido como **Enabled**. Se não estiver, selecione **Editar**, selecione a caixa de seleção **Habilitado** e clique em **OK**.
+
+- Certifique-se a conta de usuário selecionada para executar a tarefa seja **SYSTEM** ou **grupo de administradores locais** no servidor. Para verificar a conta de usuário, vá para o **gerais** guia e verifique o **opções de segurança**.
 
 - Verifique se o PowerShell 3.0 ou posterior está instalado no servidor. Para verificar a versão do PowerShell, execute o seguinte comando e verifique se o número da versão *Principal* é igual ou maior do que 3.
 
@@ -97,6 +105,15 @@ Se os backups agendados não forem acionados automaticamente, mas os backups man
   `PS C:\WINDOWS\system32> Get-ExecutionPolicy -List`
 
   `PS C:\WINDOWS\system32> Set-ExecutionPolicy Unrestricted`
+
+- Verifique se o servidor foi reiniciado após a instalação do agente de backup
+
+- Verifique se há ausentes ou corrompidos **PowerShell** módulo **MSonlineBackup**. Caso haja qualquer arquivo ausente ou corrompido, para resolver o problema, execute a abaixo:
+
+  - De outro computador (Windows 2008 R2) que o agente de MARS funcionando corretamente, copie a pasta de MSOnlineBackup partir *(C:\Program Files\Microsoft Azure Recovery Services Agent\bin\Modules)* caminho.
+  - Colar isto no computador problemático no mesmo caminho *(C:\Program Files\Microsoft Azure Recovery Services Agent\bin\Modules)* .
+  - Se **MSOnlineBackup** pasta já está existe na máquina, colar/substituir os arquivos de conteúdo dentro dele.
+
 
 > [!TIP]
 > Para garantir a aplicação consistente das alterações, reinicie o servidor após executar as etapas acima.

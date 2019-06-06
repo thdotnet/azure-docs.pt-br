@@ -2,20 +2,20 @@
 title: Definir um perfil técnico de validação em uma política personalizada no Azure Active Directory B2C | Microsoft Docs
 description: Defina um perfil técnico do Azure Active Directory em uma política personalizada no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 11efd1fa3431d8200545cf1327e98cec6ed1f59e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 3f20c3c6d6821b5a8bbdb74101095431f6f7f18f
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64683150"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66511904"
 ---
 # <a name="define-a-validation-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Defina um perfil técnico de validação em uma política personalizada do Azure Active Directory B2C
 
@@ -52,8 +52,8 @@ O elemento **ValidationTechnicalProfile** contém o seguinte atributo:
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | ReferenceId | Sim | Um identificador de um perfil técnico já definido na política ou política pai. |
-|ContinueOnError|Não | Que indica se a validação de perfis de técnicos qualquer validação subsequente deve continuar se esse perfil técnico de validação gerará um erro. Valores possíveis: `true` ou `false` (padrão, o processamento de perfis de validação adicional será interrompido e retornará um erro). |
-|ContinueOnSuccess | Não  | Indica se a validação de qualquer perfil de validação subsequente deve continuar se esse perfil técnico de validação for bem-sucedio. Valores possíveis: `true` ou `false`. O padrão é `true`, significando que continuará o processamento dos perfis de validação adicional. |
+|ContinueOnError|Não| Que indica se a validação de perfis de técnicos qualquer validação subsequente deve continuar se esse perfil técnico de validação gerará um erro. Valores possíveis: `true` ou `false` (padrão, o processamento de perfis de validação adicional será interrompido e retornará um erro). |
+|ContinueOnSuccess | Não | Indica se a validação de qualquer perfil de validação subsequente deve continuar se esse perfil técnico de validação for bem-sucedio. Valores possíveis: `true` ou `false`. O padrão é `true`, significando que continuará o processamento dos perfis de validação adicional. |
 
 O elemento **ValidationTechnicalProfile** contém o seguinte elemento:
 

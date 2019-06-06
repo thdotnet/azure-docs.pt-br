@@ -15,12 +15,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: jowargo
-ms.openlocfilehash: 8af545f5700e90303562174a3c27cc5438b28e24
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 579d50a95ad0e478f401b7db012e7c743ce58491
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925876"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730455"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Enviar notificações por push com Hubs de Notificação do Azure: Perguntas frequentes
 
@@ -56,7 +56,7 @@ Para camadas Basic e Standard dos Hubs de Notificação, os aplicativos configur
 
 ### <a name="how-do-i-upgrade-or-downgrade-my-hub-or-namespace-to-a-different-tier"></a>Como atualizar ou fazer downgrade do meu hub ou namespace para uma camada diferente?
 
-Vá para o  **[portal do Azure]** > **Namespaces de Hubs de Notificação** ou **Hubs de Notificação**. Selecione o recurso que você deseja atualizar e vá para **Tipo de Preço**. Observe os seguintes requisitos:
+Vá para o  **[portal do Azure]**  > **Namespaces de Hubs de Notificação** ou **Hubs de Notificação**. Selecione o recurso que você deseja atualizar e vá para **Tipo de Preço**. Observe os seguintes requisitos:
 
 * O tipo de preço atualizado se aplica a *todos* os hubs no namespace com o qual você está trabalhando.
 * Se a contagem de dispositivos exceder o limite da camada que você estiver fazendo downgrade para, você precisa excluir dispositivos antes de você fazer o downgrade.
@@ -69,13 +69,13 @@ Os SDKs do servidor estão disponíveis para .NET, Java, Node. js, PHP e Python.
 
 ### <a name="which-client-platforms-do-you-support"></a>A quais plataformas de cliente você oferece suporte?
 
-As notificações por push têm suporte para plataformas [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-fcm-get-started.md), [Windows Universal](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Kindle](notification-hubs-kindle-amazon-adm-push-notification.md), [Android China (via Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) e Android, [Chrome Apps](notification-hubs-chrome-push-notifications-get-started.md) e [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari). Para saber mais, vá para a página [tutoriais de Introdução aos Hubs de Notificação].
+Notificações por push têm suporte para [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-fcm-get-started.md), [Universal do Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Kindle](notification-hubs-kindle-amazon-adm-push-notification.md), [Android China (via Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) e Android, e [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari). Para saber mais, vá para a página [tutoriais de Introdução aos Hubs de Notificação].
 
 ### <a name="do-you-support-text-message-email-or-web-notifications"></a>Há suporte para notificações de Web, email ou mensagem de texto?
 
 Os Hubs de Notificação são projetados principalmente para enviar notificações aos aplicativos móveis. Ele não fornece email ou texto recursos de mensagem. No entanto, plataformas de terceiros que fornecem esses recursos podem ser integradas com Hubs de Notificação para enviar notificações de push nativo usando os [Aplicativos Móveis].
 
-Os Hubs de Notificação também não oferecem um serviço de entrega de notificações por push no navegador pronto para uso. Os clientes podem implementar esse recurso usando o SignalR sobre as plataformas com suporte do lado do servidor. Se você quiser enviar notificações aos aplicativos de navegador na área restrita do Chrome, confira o [tutorial de Aplicativos do Chrome].
+Os Hubs de Notificação também não oferecem um serviço de entrega de notificações por push no navegador pronto para uso. Os clientes podem implementar esse recurso usando o SignalR sobre as plataformas com suporte do lado do servidor. 
 
 ### <a name="how-are-mobile-apps-and-azure-notification-hubs-related-and-when-do-i-use-them"></a>Como os Aplicativos Móveis e os Hubs de Notificação do Azure estão relacionados e quando usá-los?
 
@@ -210,7 +210,6 @@ Você pode também acessar programaticamente as métricas. Para obter mais infor
 [Notification Hubs SLA]: https://azure.microsoft.com/support/legal/sla/
 [APIs REST dos Hubs de Notificação]: https://msdn.microsoft.com/library/azure/dn530746.aspx
 [Tutoriais de Introdução aos Hubs de Notificação]: https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
-[tutorial de Aplicativos do Chrome]: https://azure.microsoft.com/documentation/articles/notification-hubs-chrome-get-started/
 [Mobile Services Pricing]: https://azure.microsoft.com/pricing/details/mobile-services/
 [Diretrizes de registro de back-end]: https://msdn.microsoft.com/library/azure/dn743807.aspx
 [Diretrizes de registro de back-end 2]: https://msdn.microsoft.com/library/azure/dn530747.aspx

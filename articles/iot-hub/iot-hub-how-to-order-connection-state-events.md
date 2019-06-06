@@ -7,12 +7,12 @@ author: ash2017
 ms.topic: conceptual
 ms.date: 04/11/2019
 ms.author: asrastog
-ms.openlocfilehash: ff8f8c6656c4cd095749b3e048c72572d113f1ad
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: f4baab6e0909144efc613572207e7f24c4b4fe1f
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "66015271"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66743317"
 ---
 # <a name="order-device-connection-events-from-azure-iot-hub-using-azure-cosmos-db"></a>Ordenar eventos de conexão de dispositivo do Hub IoT usando o Azure Cosmos DB
 
@@ -266,13 +266,13 @@ Nesta seção, você configura o Hub IoT para publicar eventos à medida que oco
 
 4. Preencha **detalhes da assinatura de evento**: Forneça um nome descritivo e selecione **Esquema da Grade de Eventos**.
 
-5. Preencha a **tipos de evento** campos. Desmarque a opção **assinar todos os tipos de evento** e selecione **dispositivo conectado** e **dispositivo desconectado** no menu.
+5. Preencha a **tipos de evento** campos. Na lista suspensa, selecione apenas **dispositivo conectado** e **dispositivo desconectado** no menu. Clique em qualquer lugar na tela para fechar a lista e salvar suas seleções.
 
    ![Definir tipos de evento a ser procurado](./media/iot-hub-how-to-order-connection-state-events/set-event-types.png)
 
 6. Para **detalhes de ponto de extremidade**, selecione o tipo de ponto de extremidade como **gancho da Web** e clique em Selecionar ponto de extremidade e cole a URL que você copiou do seu aplicativo lógico e confirme a seleção.
 
-   ![Selecione a url do ponto de extremidade](./media/iot-hub-how-to-order-connection-state-events/endpoint-url.png)
+   ![Selecione a url do ponto de extremidade](./media/iot-hub-how-to-order-connection-state-events/endpoint-select.png)
 
 7. O formulário agora deve ser semelhante ao exemplo a seguir:
 
@@ -302,11 +302,9 @@ Como a assinatura de evento já foi configurada, vamos testar conectando um disp
 
    ![ConnectionString para o dispositivo](./media/iot-hub-how-to-order-connection-state-events/DeviceConnString.png)
 
-HostName=test-eventgrid-hub.azure-devices.net;DeviceId=Demo-Device-1;SharedAccessKey=cv8uPNixe7E2R9EHtimoY/PlJfBV/lOYCMajVOp/Cuw=
-
 ### <a name="start-raspberry-pi-simulator"></a>Iniciar o simulador do Raspberry Pi
 
-1. Vamos usar o simulador Web do Raspberry Pi para simular a conexão do dispositivo.
+Vamos usar o simulador Web do Raspberry Pi para simular a conexão do dispositivo.
 
 [Iniciar o simulador do Raspberry Pi](https://azure-samples.github.io/raspberry-pi-web-simulator/#Getstarted)
 
@@ -340,7 +338,7 @@ Em vez de usar o [portal do Azure](https://portal.azure.com), é possível reali
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Este tutorial usou recursos que incorrem em encargos na sua assinatura do Azure. Quando terminar de experimentar o tutorial e testar seus resultados, desabilite ou exclua recursos que você não deseja manter.
+Este tutorial usou recursos que incorrem em encargos na sua assinatura do Azure. Quando terminar de experimentar o tutorial e testar seus resultados, desabilitar ou excluir os recursos que você não deseja manter.
 
 Se você não quiser perder o trabalho no seu aplicativo lógico, desabilite-o em vez de excluí-lo.
 

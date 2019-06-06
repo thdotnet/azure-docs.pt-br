@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 4/8/2019
 ms.author: victorh
-ms.openlocfilehash: 8c715cb84dff6e2e739de59aba33041ec1b8db52
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: d9851f6b3e32d0c7ab0d7774458ba5bc4d9ba823
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65786278"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729668"
 ---
 # <a name="configure-end-to-end-ssl-by-using-application-gateway-with-powershell"></a>Configurar o SSL de ponta a ponta usando o Gateway de Aplicativo com o PowerShell
 
@@ -44,7 +44,7 @@ Este cenário:
 
 Para configurar o SSL de ponta a ponta com um gateway de aplicativo, um certificado é necessário para o gateway e são necessários certificados para os servidores de back-end. O certificado de gateway é usado para derivar uma chave simétrica conforme a especificação do protocolo SSL. A chave simétrica então é usada para criptografar e descriptografar o tráfego enviado para o gateway. O certificado do gateway precisa estar no formato PFX (Troca de Informações Pessoais). Esse formato de arquivo permite exportar a chave privada que é exigida pelo gateway de aplicativo para realizar a criptografia e descriptografia do tráfego.
 
-Para criptografia SSL de ponta a ponta, o back-end deve estar na lista de permissões do gateway de aplicativo. Carregue o certificado público dos servidores de back-end para o gateway de aplicativo. Adicionar o certificado garante que o gateway de aplicativo se comunique somente com instâncias de back-end conhecidas. Isso protege ainda mais a comunicação de ponta a ponta.
+Para criptografia SSL de ponta a ponta, o back-end deve ser explicitamente permitido pelo gateway de aplicativo. Carregue o certificado público dos servidores de back-end para o gateway de aplicativo. Adicionar o certificado garante que o gateway de aplicativo se comunique somente com instâncias de back-end conhecidas. Isso protege ainda mais a comunicação de ponta a ponta.
 
 O processo de configuração é descrito nas seções a seguir.
 
@@ -170,7 +170,7 @@ Todos os itens de configuração são definidos antes da criação do gateway de
    > Se você estiver usando cabeçalhos de host e a SNI (Indicação de Nome de Servidor) no back-end, a chave pública recuperada poderá não ser o site pretendido para que o tráfego flua. Em caso de dúvida, acesse https://127.0.0.1/ nos servidores de back-end para confirmar qual certificado será usado para a associação SSL *padrão*. Use a chave pública dessa solicitação nesta seção. Se você estiver usando cabeçalhos de host e SNI em associações HTTPS e não receber uma resposta e um certificado de uma solicitação de navegador manual para https://127.0.0.1/ em servidores de back-end, você deverá configurar uma associação SSL padrão neles. Se você não fizer isso, as investigações falharão e o back-end não estará na lista de permissões.
 
    ```powershell
-   $authcert = New-AzApplicationGatewayAuthenticationCertificate -Name 'whitelistcert1' -CertificateFile C:\cert.cer
+   $authcert = New-AzApplicationGatewayAuthenticationCertificate -Name 'allowlistcert1' -CertificateFile C:\cert.cer
    ```
 
    > [!NOTE]

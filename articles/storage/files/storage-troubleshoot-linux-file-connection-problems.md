@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 06b3a5110bfdea2a2067979c806701011dc16f3d
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 0a6b48dbba232c06945b00d5107581d8d0c017b0
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65987674"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472420"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Solucionar problemas de Arquivos do Azure no Linux
 
@@ -110,14 +110,13 @@ O recurso de criptografia para SMB 3.0 para Linux foi introduzido no kernel 4.11
 
 Se o seu cliente SMB do Linux não oferecer suporte à criptografia, monte os arquivos do Azure usando o SMB 2.1 de uma VM do Azure Linux que esteja no mesmo datacenter do compartilhamento de arquivos. Verifique se a configuração [Transferência segura necessária]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) está desativada na conta de armazenamento. 
 
-<a id="accessdeniedportal"></a>
-## <a name="error-access-denied-when-browsing-to-an-azure-file-share-in-the-portal"></a>Erro "Acesso negado" ao procurar um compartilhamento de arquivos do Azure no portal
+<a id="authorizationfailureportal"></a>
+## <a name="error-authorization-failure-when-browsing-to-an-azure-file-share-in-the-portal"></a>Erro "Falha de autorização" durante a navegação em um compartilhamento de arquivos do Azure no portal
 
 A navegar até um compartilhamento de arquivos do Azure no portal, você pode receber o erro a seguir:
 
-Acesso negado  
-Você não tem acesso  
-Parece que você não tem acesso a este conteúdo. Para obter acesso, contate o proprietário.  
+Falha de autorização  
+Você não tem acesso
 
 ### <a name="cause-1-your-user-account-does-not-have-access-to-the-storage-account"></a>Causa 1: Sua conta de usuário não tem acesso à conta de armazenamento
 
@@ -140,7 +139,7 @@ Uma possível causa da lentidão no desempenho é o cache desabilitado.
 
 ### <a name="solution"></a>Solução
 
-Para verificar se o cache está desabilitado, procure a entrada **cache=**. 
+Para verificar se o cache está desabilitado, procure a entrada **cache=** . 
 
 **Cache=none** indica que o cache está desabilitado. Remonte o compartilhamento usando o comando de montagem padrão ou adicionando explicitamente a opção **cache=strict** ao comando de montagem para garantir que o modo de cache padrão ou de cache “strict” seja habilitado.
 

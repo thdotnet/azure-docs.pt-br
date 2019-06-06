@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5773924e98b7ea13c180979dba1325eb8919ff3a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9c9b07e7524488d0336a55af6e1d5f36af59a870
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60469888"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729833"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Cmdlets do Azure Active Directory para definir configurações de grupo
 Este artigo contém instruções sobre como usar cmdlets do PowerShell do Azure Active Directory (Azure AD) para criar e atualizar grupos. Este conteúdo aplica-se somente aos Grupos do Office 365 (às vezes chamados de grupos unificados). 
@@ -34,12 +34,7 @@ As configurações de Grupos do Office 365 são definidas usando um objeto Setti
 
 Os cmdlets fazem parte do Módulo do Azure Active Directory PowerShell V2. Para obter instruções de como baixar e instalar o módulo no seu computador, confira o artigo [Azure Active Directory PowerShell Version 2](https://docs.microsoft.com/powershell/azuread/) (PowerShell Versão 2 do Azure Active Directory). Você pode instalar a versão 2 do módulo da [galeria do PowerShell](https://www.powershellgallery.com/packages/AzureAD/).
 
-## <a name="retrieve-a-specific-settings-value"></a>Recuperar um valor de configurações específico
-Se você souber o nome da configuração que deseja recuperar, será possível usar o cmdlet abaixo para recuperar o valor atual das configurações. Neste exemplo, recuperaremos o valor de uma configuração chamada "UsageGuidelinesUrl". Você pode ler que mais sobre configurações de diretório e seus nomes mais abaixo neste artigo.
 
-```powershell
-(Get-AzureADDirectorySetting).Values | Where-Object -Property Name -Value UsageGuidelinesUrl -EQ
-```
 
 ## <a name="create-settings-at-the-directory-level"></a>Criar configurações no nível do diretório
 Essas etapas criam configurações no nível de diretório, que são aplicáveis a todos os Grupos do Office 365 no diretório. O cmdlet Get-AzureADDirectorySettingTemplate está disponível apenas no [módulo de versão prévia do Azure AD PowerShell para Graph](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.137).
@@ -74,21 +69,27 @@ Essas etapas criam configurações no nível de diretório, que são aplicáveis
 4. Então, atualize o valor de diretriz de uso:
   
    ```powershell
-   $setting["UsageGuidelinesUrl"] = "https://guideline.example.com"
+   $Setting["UsageGuidelinesUrl"] = "https://guideline.example.com"
    ```  
-5. Por fim, aplique as configurações:
+5. Em seguida, aplica a configuração:
   
    ```powershell
-   New-AzureADDirectorySetting -DirectorySetting $setting
+   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
    ```
-
-Após a conclusão bem-sucedida, o cmdlet retornará a ID do novo objeto de configuração:
+6. Você pode ler os valores usando:
 
   ```powershell
-  Id                                   DisplayName TemplateId                           Values
-  --                                   ----------- ----------                           ------
-  c391b57d-5783-4c53-9236-cefb5c6ef323             62375ab9-6b52-47ed-826b-58e47e0e304b {class SettingValue {...
-  ```
+   $Setting.Values
+   ```  
+## <a name="update-settings-at-the-directory-level"></a>Atualizar configurações no nível do diretório
+Para atualizar o valor do UsageGuideLinesUrl no modelo de configuração, simplesmente edite a URL com a etapa 4 acima e executar a etapa 5 para definir o novo valor.
+
+Para remover o valor de UsageGuideLinesUrl, edite a URL para ser uma cadeia de caracteres vazia usando a etapa 4 acima:
+
+ ```powershell
+   $Setting["UsageGuidelinesUrl"] = ""
+   ```  
+Em seguida, execute a etapa 5 para definir o novo valor.
 
 ## <a name="template-settings"></a>Configurações de modelo
 Aqui estão as configurações definidas no Group.Unified SettingsTemplate. A menos que indicado o contrário, esses recursos exigem uma licença do Azure Active Directory Premium P1. 
@@ -109,7 +110,42 @@ Aqui estão as configurações definidas no Group.Unified SettingsTemplate. A me
 |  <ul><li>AllowToAddGuests<li>Digite: Boolean<li>Padrão: True | Um booliano que indica se há permissão para adicionar convidados a este diretório.|
 |  <ul><li>ClassificationList<li>Digite: Cadeia de caracteres<li>Padrão: “” |Uma lista delimitada por vírgulas de valores de classificação válidos que podem ser aplicados aos Grupos do Office 365. |
 
+## <a name="example-configure-guest-policy-for-groups-at-the-directory-level"></a>Exemplo: Configurar a política de convidado para grupos no nível do diretório
+1. Obter todos os modelos de configuração:
+  ```powershell
+   Get-AzureADDirectorySettingTemplate
+   ```
+2. Para definir a política de convidado para grupos no nível do diretório, você precisa Unified modelo
+   ```powershell
+   $Template = Get-AzureADDirectorySettingTemplate -Id 62375ab9-6b52-47ed-826b-58e47e0e304b
+   ```
+3. Em seguida, crie um novo objeto de configurações com base no modelo:
+  
+   ```powershell
+   $Setting = $template.CreateDirectorySetting()
+   ```  
+4. Em seguida, atualize a configuração de AllowToAddGuests
+   ```powershell
+   $Setting["AllowToAddGuests"] = $False
+   ```  
+5. Em seguida, aplica a configuração:
+  
+   ```powershell
+   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
+   ```
+6. Você pode ler os valores usando:
+
+  ```powershell
+   $Setting.Values
+   ```   
+
 ## <a name="read-settings-at-the-directory-level"></a>Ler configurações no nível do diretório
+
+Se você souber o nome da configuração que deseja recuperar, será possível usar o cmdlet abaixo para recuperar o valor atual das configurações. Neste exemplo, recuperaremos o valor de uma configuração chamada "UsageGuidelinesUrl". 
+
+  ```powershell
+  (Get-AzureADDirectorySetting).Values | Where-Object -Property Name -Value UsageGuidelinesUrl -EQ
+  ```
 Estas etapas leem configurações no nível do diretório, que se aplicam a todos os grupos do Office no diretório.
 
 1. Leia todas as configurações existentes do diretório:
@@ -128,7 +164,7 @@ Estas etapas leem configurações no nível do diretório, que se aplicam a todo
    Get-AzureADObjectSetting -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -TargetType Groups
    ```
 
-3. Leia todos os valores de configurações de diretório de um objeto de configurações de diretório específico, usando o GUID da ID de Configurações:
+3. Ler todos os valores de configurações do diretório de um objeto de configurações de diretório específico, usando o GUID da ID de configurações:
    ```powershell
    (Get-AzureADDirectorySetting -Id c391b57d-5783-4c53-9236-cefb5c6ef323).values
    ```
@@ -150,6 +186,12 @@ Estas etapas leem configurações no nível do diretório, que se aplicam a todo
    EnableGroupCreation           True
    ```
 
+## <a name="remove-settings-at-the-directory-level"></a>Remover configurações no nível do diretório
+Esta etapa remove configurações no nível do diretório, que se aplicam a todos os grupos do Office no diretório.
+  ```powershell
+  Remove-AzureADDirectorySetting –Id c391b57d-5783-4c53-9236-cefb5c6ef323c
+  ```
+
 ## <a name="update-settings-for-a-specific-group"></a>Atualizar as configurações para um grupo específico
 
 1. Procurar o modelo de configurações denominado "Groups.Unified.Guest"
@@ -166,50 +208,25 @@ Estas etapas leem configurações no nível do diretório, que se aplicam a todo
    ```
 2. Recupere o objeto de modelo para o modelo Groups.Unified.Guest:
    ```powershell
-   $Template = Get-AzureADDirectorySettingTemplate -Id 08d542b9-071f-4e16-94b0-74abb372e3d9
+   $Template1 = Get-AzureADDirectorySettingTemplate -Id 08d542b9-071f-4e16-94b0-74abb372e3d9
    ```
 3. Crie um novo objeto de configurações do modelo:
    ```powershell
-   $Setting = $Template.CreateDirectorySetting()
+   $SettingCopy = $Template1.CreateDirectorySetting()
    ```
 
 4. Defina a configuração com o valor necessário:
    ```powershell
-   $Setting["AllowToAddGuests"]=$False
+   $SettingCopy["AllowToAddGuests"]=$False
    ```
 5. Crie a nova configuração para o grupo exigido no diretório:
    ```powershell
-   New-AzureADObjectSetting -TargetType Groups -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -DirectorySetting $Setting
-  
-   Id                                   DisplayName TemplateId                           Values
-   --                                   ----------- ----------                           ------
-   25651479-a26e-4181-afce-ce24111b2cb5             08d542b9-071f-4e16-94b0-74abb372e3d9 {class SettingValue {...
+   New-AzureADObjectSetting -TargetType Groups -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -DirectorySetting $SettingCopy
    ```
-
-## <a name="update-settings-at-the-directory-level"></a>Atualizar configurações no nível do diretório
-
-Estas etapas atualizam as configurações no nível do diretório, que se aplicam a todos os Grupos do Office 365 no diretório. Estes exemplos pressupõem que já exista um objeto Configurações em seu diretório.
-
-1. Encontre o objeto Configurações existente:
+6. Para verificar as configurações, execute este comando:
    ```powershell
-   $setting = Get-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
+   Get-AzureADObjectSetting -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -TargetType Groups | fl Values
    ```
-2. Atualize o valor:
-  
-   ```powershell
-   $Setting["AllowToAddGuests"] = "false"
-   ```
-3. Atualize a configuração:
-  
-   ```powershell
-   Set-AzureADDirectorySetting -Id c391b57d-5783-4c53-9236-cefb5c6ef323 -DirectorySetting $Setting
-   ```
-
-## <a name="remove-settings-at-the-directory-level"></a>Remover configurações no nível do diretório
-Esta etapa remove configurações no nível do diretório, que se aplicam a todos os grupos do Office no diretório.
-  ```powershell
-  Remove-AzureADDirectorySetting –Id c391b57d-5783-4c53-9236-cefb5c6ef323c
-  ```
 
 ## <a name="cmdlet-syntax-reference"></a>Referência de sintaxe de cmdlet
 Você pode encontrar mais documentação do PowerShell do Azure Active Directory em [Cmdlets do Azure Active Directory](/powershell/azure/install-adv2?view=azureadps-2.0).

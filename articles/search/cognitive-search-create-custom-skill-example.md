@@ -10,36 +10,36 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 82d49a6a82251f440c06db03edc92851fce87741
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: efa85491f4b183a044ec5d9e5e6e3d11eebedbe3
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65023620"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428442"
 ---
 # <a name="example-create-a-custom-skill-using-the-text-translate-api"></a>Exemplo: Criar uma habilidade personalizada usando a API de Tradução de Texto
 
-Neste exemplo, saiba como criar uma habilidade personalizada da API da Web que aceita texto em qualquer idioma e as converte-o para inglês. O exemplo usa uma [Função do Azure](https://azure.microsoft.com/services/functions/) para encapsular a [API de Tradução de Texto](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) para que ela implemente a interface de habilidade personalizada.
+Neste exemplo, saiba como criar uma habilidade personalizada de API da web. Essa habilidade aceitará o texto em qualquer idioma e o converte para o inglês. O exemplo usa uma [Função do Azure](https://azure.microsoft.com/services/functions/) para encapsular a [API de Tradução de Texto](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) para que ela implemente a interface de habilidade personalizada.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-+ Leia o artigo sobre [interface de habilidade personalizada](cognitive-search-custom-skill-interface.md) se você não estiver familiarizado com a interface de entrada/saída que uma habilidade personalizada deve implementar.
++ Leia sobre [interface de habilidades personalizadas](cognitive-search-custom-skill-interface.md) artigo se você não estiver familiarizado com a interface de entrada/saída uma habilidade personalizada deve implementar.
 
 + [Inscreva-se na API de Tradução de Texto](../cognitive-services/translator/translator-text-how-to-signup.md)e obtenha uma chave de API para utilizá-la.
 
-+ Instale o [Visual Studio 2017 versão 15.5](https://www.visualstudio.com/vs/) ou posterior, incluindo a carga de trabalho de desenvolvimento do Azure.
++ Instale [Visual Studio de 2019](https://www.visualstudio.com/vs/) ou posterior, incluindo a carga de trabalho de desenvolvimento do Azure.
 
 ## <a name="create-an-azure-function"></a>Criar uma Função do Azure
 
-Embora este exemplo use uma Função do Azure para hospedar uma API da Web, ela não é necessária.  Desde que você atenda aos [requisitos da interface para uma habilidade cognitiva](cognitive-search-custom-skill-interface.md), a abordagem que você adota é irrelevante. No entanto, o Azure Functions facilita a criação de uma habilidade personalizada.
+Embora este exemplo usa uma função do Azure para hospedar uma API da web, não é necessária.  Desde que você atenda aos [requisitos da interface para uma habilidade cognitiva](cognitive-search-custom-skill-interface.md), a abordagem que você adota é irrelevante. No entanto, o Azure Functions facilita a criação de uma habilidade personalizada.
 
 ### <a name="create-a-function-app"></a>Criar um aplicativo de funções
 
 1. No Visual Studio, selecione **Novo** > **Projeto** no menu Arquivo.
 
-1. Na caixa de diálogo Novo Projeto, selecione **Instalado**, expanda **Visual C#** > **Nuvem**, selecione **Azure Functions**, digite um Nome para seu projeto e selecione **OK**. O nome do aplicativo de funções deve ser válido como um namespace do C# e, portanto, não use outros caracteres não alfanuméricos, hífens ou sublinhados.
+1. Na caixa de diálogo Novo Projeto, selecione **Instalado**, expanda **Visual C#**  > **Nuvem**, selecione **Azure Functions**, digite um Nome para seu projeto e selecione **OK**. O nome do aplicativo de funções deve ser válido como um namespace do C# e, portanto, não use outros caracteres não alfanuméricos, hífens ou sublinhados.
 
-1. Selecione **do Azure Functions v2 (.NET Core)**. Você também pode fazer isso com a versão 1, mas o código escrito abaixo é baseado no modelo v2.
+1. Selecione **do Azure Functions v2 (.NET Core)** . Você também pode fazer isso com a versão 1, mas o código escrito abaixo é baseado no modelo v2.
 
 1. Selecione o tipo de **Gatilho HTTP**
 
@@ -235,7 +235,7 @@ Você deverá ver uma resposta semelhante ao exemplo a seguir:
 
 ## <a name="publish-the-function-to-azure"></a>Publicar a função no Azure
 
-Quando estiver satisfeito com o comportamento da função, você pode publicá-la.
+Quando estiver satisfeito com o comportamento da função, você pode publicá-lo.
 
 1. No **Gerenciador de Soluções**, clique com o botão direito do mouse no nome do projeto e selecione **Publicar**. Escolha **Criar Novo** > **Publicar**.
 
@@ -270,7 +270,7 @@ POST https://translatecogsrch.azurewebsites.net/api/Translate?code=[enter defaul
 }
 ```
 
-Isso deve gerar um resultado semelhante àquele que você viu anteriormente ao executar a função no ambiente local.
+Este exemplo deve produzir um resultado semelhante ao que você viu anteriormente ao executar a função no ambiente local.
 
 ## <a name="connect-to-your-pipeline"></a>Conectar-se ao seu pipeline
 Agora que você tem uma nova habilidade personalizada, você pode adicioná-la ao seu conjunto de qualificações. O exemplo a seguir mostra como chamar a habilidade. Como a habilidade não lida com lotes, adicione uma instrução para o tamanho máximo do lote ser apenas ```1``` para enviar documentos um de cada vez.
@@ -307,7 +307,7 @@ Agora que você tem uma nova habilidade personalizada, você pode adicioná-la a
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
-Parabéns! Você criou seu primeiro enriquecedor personalizado. Agora você pode seguir o mesmo padrão para adicionar sua própria funcionalidade personalizada. 
+Parabéns! Você criou seu primeiro aprimorador personalizado. Agora você pode seguir o mesmo padrão para adicionar sua própria funcionalidade personalizada. 
 
 + [Adicionar uma habilidade personalizada a um pipeline de pesquisa cognitiva](cognitive-search-custom-skill-interface.md)
 + [Como definir um conjunto de qualificações](cognitive-search-defining-skillset.md)

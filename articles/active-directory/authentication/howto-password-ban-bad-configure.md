@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7f6dbc869db4a0a444d09a2dc234e171758c706
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 28201e09a4025c0c8820abc6836a5923e48eb885
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60414845"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66742302"
 ---
 # <a name="configuring-the-custom-banned-password-list"></a>Configurar a lista de senhas proibidas personalizada
 
@@ -24,7 +24,7 @@ Muitas organizações descobrem que seus usuários criam senhas usando palavras 
 
 ## <a name="add-to-the-custom-list"></a>Adicionar à lista personalizada
 
-A configuração da lista de senhas proibidas personalizada exige uma licença do Azure Active Directory Premium P1 ou P2. Para obter informações mais detalhadas sobre o licenciamento do Azure Active Directory, consulte a [página de preços do Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).|
+A configuração da lista de senhas proibidas personalizada exige uma licença do Azure Active Directory Premium P1 ou P2. Para obter mais informações sobre o licenciamento do Active Directory do Azure, consulte a [do Azure Active Directory, página de preços](https://azure.microsoft.com/pricing/details/active-directory/).
 
 1. Entrar para o [portal do Azure](https://portal.azure.com) e navegue até **Azure Active Directory**, **métodos de autenticação**, em seguida, **proteção por senha**.
 1. Defina a opção **Impor lista personalizada** para **Sim**.

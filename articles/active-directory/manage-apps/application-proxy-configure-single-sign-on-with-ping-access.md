@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 365f017fe7d71500c17d0a9ccd9c5a0a26a78b75
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: ab08c93662988655154cf300ac4ee3758fbc7872
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65989536"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472809"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Autenticação baseada em cabeçalho para logon único com Proxy de Aplicativo e PingAccess
 
@@ -128,7 +128,7 @@ Finalmente, configure seu aplicativo local para que os usuários têm acesso de 
 2. Selecione **permissões delegadas** > **usuário** > **Read**.
 3. Selecione **permissões de aplicativo** > **aplicativo** > **Application.ReadWrite.All**.
 4. Selecione **adicionar permissões**.
-5. No **permissões de API** página, selecione **conceder consentimento do administrador para \<seu nome do diretório >**.
+5. No **permissões de API** página, selecione **conceder consentimento do administrador para \<seu nome do diretório >** .
 
 #### <a name="collect-information-for-the-pingaccess-steps"></a>Coletar informações sobre as etapas do PingAccess
 
@@ -150,7 +150,7 @@ Para coletar essas informações:
 4. Próximo a **ID de diretório (Locatário)** de valor, selecione também **copiar para área de transferência**, em seguida, copie e salve-o. Especifique esse valor posteriormente como o emissor do PingAccess.
 5. Na barra lateral do **registros de aplicativo** para seu aplicativo, selecione **certificados e segredos** > **novo segredo do cliente**. O **adicionar um segredo do cliente** página será exibida.
 
-   ![Adicionar um segredo de cliente](./media/application-proxy-configure-single-sign-on-with-ping-access/add-a-client-secret.png)
+   ![Adicionar um segredo do cliente](./media/application-proxy-configure-single-sign-on-with-ping-access/add-a-client-secret.png)
 6. Na **descrição**, tipo `PingAccess key`.
 7. Sob **Expires**, escolha como definir a chave do PingAccess: **Em 1 ano**, **em 2 anos**, ou **nunca**.
 8. Selecione **Adicionar**. Os PingAccess chave aparece na tabela de segredos do cliente, com um aleatório de cadeia de caracteres que é automaticamente preenchida na **valor** campo.
@@ -158,9 +158,9 @@ Para coletar essas informações:
 
 ### <a name="update-graphapi-to-send-custom-fields-optional"></a>Atualizar a API do Graph para enviar campos personalizados (opcional)
 
-Para obter uma lista de tokens de segurança que o Azure AD envia para autenticação, consulte [tokens de ID de plataforma de identidade do Microsoft](../develop/id-tokens.md). Se você precisar de uma declaração personalizada que envia outros tokens, defina as `acceptMappedClaims` campo de aplicativo para `True`. Você pode usar o Explorador do Graph ou o manifesto do aplicativo do portal do Azure AD para fazer essa alteração.
+Se você precisar de uma declaração personalizada que envia outros tokens dentro access_token consumida por PingAccess, defina as `acceptMappedClaims` campo de aplicativo para `True`. Você pode usar o Explorador do Graph ou o manifesto do aplicativo do portal do Azure AD para fazer essa alteração.
 
-Este exemplo usa o Explorador do Graph:
+**Este exemplo usa o Explorador do Graph:**
 
 ```
 PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_your_application>
@@ -170,7 +170,7 @@ PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_y
 }
 ```
 
-Este exemplo usa o [portal do Azure Active Directory](https://aad.portal.azure.com/) para atualizar o `acceptMappedClaims` campo:
+**Este exemplo usa o [portal do Azure Active Directory](https://aad.portal.azure.com/) para atualizar o `acceptMappedClaims` campo:**
 
 1. Entrar para o [portal do Azure Active Directory](https://aad.portal.azure.com/) como um administrador do aplicativo.
 2. Selecione **Azure Active Directory** > **Registros de aplicativo**. É exibida uma lista de aplicativos.
@@ -179,7 +179,28 @@ Este exemplo usa o [portal do Azure Active Directory](https://aad.portal.azure.c
 5. Pesquise o `acceptMappedClaims` do campo e altere o valor para `True`.
 6. Clique em **Salvar**.
 
-### <a name="use-a-custom-claim-optional"></a>Usar uma declaração personalizada (opcional)
+
+### <a name="use-of-optional-claims-optional"></a>Uso de declarações opcionais (opcionais)
+Declarações opcionais permite que você adicione declarações standard-but-not-included-by-default que cada usuário e locatário tem. Você pode configurar declarações opcionais para o seu aplicativo modificando o manifesto do aplicativo. Para obter mais informações, consulte o [Noções básicas sobre o artigo de manifesto de aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest/)
+
+Exemplo para incluir o endereço de email para o access_token que consumirá o PingAccess:
+```
+    "optionalClaims": {
+        "idToken": [],
+        "accessToken": [
+            {
+                "name": "email",
+                "source": null,
+                "essential": false,
+                "additionalProperties": []
+            }
+        ],
+        "saml2Token": []
+    },
+```
+
+### <a name="use-of-claims-mapping-policy-optional"></a>Uso da política (opcional) de mapeamento de declarações
+[Declarações de política de mapeamento (visualização)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-claims-mapping#claims-mapping-policy-properties/) para atributos que não existem no Azure AD. Mapeamento de declarações lhe permite migrar aplicativos de locais antigos para a nuvem, adicionando declarações personalizadas extras que são apoiadas por seus objetos de usuário ou o ADFS
 
 Para tornar seu aplicativo usar uma declaração personalizada e incluir campos adicionais, não se esqueça de que você também [criou uma política de mapeamento de declarações personalizadas e atribuída ao aplicativo](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
 
@@ -187,6 +208,16 @@ Para tornar seu aplicativo usar uma declaração personalizada e incluir campos 
 > Para usar uma declaração personalizada, você também deve ter uma política personalizada definida e atribuída ao aplicativo. Essa política deve incluir todos os atributos personalizados necessários.
 >
 > Você pode fazer a definição de política e atribuição por meio do PowerShell, o Azure AD Graph Explorer ou o Microsoft Graph. Se você estiver fazendo-os no PowerShell, você talvez precise usar pela primeira vez `New-AzureADPolicy` e, em seguida, atribuí-lo para o aplicativo com `Add-AzureADServicePrincipalPolicy`. Para obter mais informações, consulte [atribuição de política de mapeamento de declarações](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
+
+Exemplo:
+```powershell
+$pol = New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema": [{"Source":"user","ID":"employeeid","JwtClaimType":"employeeid"}]}}') -DisplayName "AdditionalClaims" -Type "ClaimsMappingPolicy"
+
+Add-AzureADServicePrincipalPolicy -Id "<<The object Id of the Enterprise Application you published in the previous step, which requires this claim>>" -RefObjectId $pol.Id 
+```
+
+### <a name="enable-pingaccess-to-use-custom-claims-optional-but-required-if-you-expect-the-application-to-consume-additional-claims"></a>Habilitar o PingAccess usar declarações personalizadas (opcional, mas necessário se você espera que o aplicativo consuma declarações adicionais)
+Quando você configura o PingAccess na etapa a seguir, a sessão da Web que você irá criar (Configurações -> acesso -> sessões da Web) deve ter **solicitação de perfil** desmarcada e **atualizar atributos de usuário** definido como **não**
 
 ## <a name="download-pingaccess-and-configure-your-application"></a>Baixar o PingAccess e configurar seu aplicativo
 

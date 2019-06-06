@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/06/2019
 ms.author: iainfou
-ms.openlocfilehash: 5c27d47a918939d012abee3c2317eba39587d734
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 185c16e76094fe55a54fb17bef24fcd03d7b54f0
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66243575"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475147"
 ---
 # <a name="preview---secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Visualização – acesso seguro para o servidor de API usando autorizado intervalos de endereços IP no serviço de Kubernetes do Azure (AKS)
 
@@ -74,8 +74,6 @@ As seguintes limitações se aplicam ao configurar intervalos de IP do servidor 
 O servidor de API do Kubernetes é como as APIs do Kubernetes subjacente são expostos. Esse componente fornece a interação para ferramentas de gerenciamento, tais como `kubectl` ou o painel do Kubernetes. O AKS fornece um mestre do cluster de locatário único, com um servidor dedicado de API. Por padrão, o servidor de API é atribuído um endereço IP público e você deve controlar o acesso usando controles de acesso baseado em função (RBAC).
 
 Para proteger o acesso ao plano de controle caso contrário, publicamente acessível do AKS / servidor de API, você pode habilitar e usar autorizados de intervalos de IP. Esses intervalos IP autorizados permitem somente os intervalos de endereços IP definidos para se comunicar com o servidor de API. Uma solicitação feita ao servidor de API de um endereço IP que não faz parte desses autorizados de intervalos de IP é bloqueada. Você deve continuar a usar o RBAC para, em seguida, autorizar usuários e as ações que solicitam.
-
-Para usar a funcionalidade de intervalo IP autorizada, um endereço IP público é exposto no pool de nó ao implantar um serviço básico do NGINX. O servidor de API se comunica com o pool de nós por meio do endereço IP público autorizado. Você então definir intervalos de endereços IP adicionais que podem acessar o servidor de API.
 
 Para obter mais informações sobre o servidor de API e outros componentes de cluster, consulte [Kubernetes os conceitos principais para AKS][concepts-clusters-workloads].
 

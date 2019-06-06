@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/14/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: cc65d6d3f7e7dcc08ea29ecc8a299b556563135b
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: bfa3e5a943ee59b1ed335f45e113a60f62572675
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66236298"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735026"
 ---
 # <a name="get-started-with-azcopy"></a>Introdução ao AzCopy
 
@@ -28,7 +28,7 @@ O AzCopy é um utilitário de linha de comando que você pode usar para copiar b
 
 ## <a name="download-azcopy"></a>Baixar o AzCopy
 
-Primeiro, baixe o arquivo executável do AzCopy V10 para qualquer pasta no seu computador. Para sua conveniência, considere adicionar o local da pasta AzCopy ao caminho do sistema para facilidade de uso.
+Primeiro, baixe o arquivo executável do AzCopy V10 para qualquer diretório em seu computador. 
 
 - [Windows](https://aka.ms/downloadazcopy-v10-windows) (zip)
 - [Linux](https://aka.ms/downloadazcopy-v10-linux) (tar)
@@ -39,13 +39,15 @@ Primeiro, baixe o arquivo executável do AzCopy V10 para qualquer pasta no seu c
 
 ## <a name="run-azcopy"></a>Executar o AzCopy
 
-Em um prompt de comando, navegue até o diretório onde você baixou o arquivo.
+Para sua conveniência, considere adicionar o local do diretório do executável AzCopy ao caminho do sistema para facilidade de uso. Dessa forma, você pode digitar `azcopy` de qualquer diretório em seu sistema.
 
-Para exibir uma lista de comandos do AzCopy, digite `azCopy`, em seguida, pressione a tecla ENTER.
+Se você optar por não adicionar o diretório do AzCopy ao caminho, você terá que altere os diretórios para o local do seu arquivo executável do AzCopy e digite `azcopy` ou `.\azcopy` nos prompts de comando do Windows PowerShell.
 
-Para saber mais sobre um comando específico, digite `azCopy` seguido do nome do comando.
+Para ver uma lista de comandos, digite `azcopy -h` e, em seguida, pressione a tecla ENTER.
 
-Por exemplo, para saber mais sobre o `copy` comando, digite `azcopy copy`, em seguida, pressione a tecla ENTER.
+Para saber mais sobre um comando específico, basta incluir o nome do comando (por exemplo: `azcopy list -h`).
+
+![Ajuda embutida](media/storage-use-azcopy-v10/azcopy-inline-help.png)
 
 Antes de poder fazer qualquer coisa significativa com o AzCopy, você precisa decidir como você vai fornecer as credenciais de autorização para o serviço de armazenamento.
 
@@ -81,7 +83,7 @@ Essas funções podem ser atribuídas à sua identidade em qualquer um desses es
 
 Para saber como verificar e atribuir funções, consulte [conceder acesso a dados do Azure blob e fila com o RBAC no portal do Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
-Você não precisa ter uma dessas funções atribuídas à sua identidade, se sua identidade é adicionada à lista de controle de acesso (ACL) do contêiner de destino ou da pasta. A ACL, sua identidade precisa gravar permissão na pasta de destino e permissão de execução no contêiner e a cada pasta pai.
+Você não precisa ter uma dessas funções atribuídas à sua identidade, se sua identidade é adicionada à lista de controle de acesso (ACL) do contêiner de destino ou diretório. Na ACL, sua identidade precisa de permissão de gravação no diretório de destino e permissão de execução no contêiner e cada diretório pai.
 
 Para obter mais informações, consulte [controle de acesso no armazenamento do Azure Data Lake Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
 
@@ -102,7 +104,7 @@ Essas funções podem ser atribuídas à sua identidade em qualquer um desses es
 
 Para saber como verificar e atribuir funções, consulte [conceder acesso a dados do Azure blob e fila com o RBAC no portal do Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
-Você não precisa ter uma dessas funções atribuídas à sua identidade, se sua identidade é adicionada à lista de controle de acesso (ACL) do contêiner de destino ou da pasta. Na ACL, sua identidade precisa de permissão de leitura na pasta de destino e permissão de execução no contêiner e a cada pasta pai.
+Você não precisa ter uma dessas funções atribuídas à sua identidade, se sua identidade é adicionada à lista de controle de acesso (ACL) do contêiner de destino ou diretório. Na ACL, sua identidade precisa de permissão de leitura no diretório de destino e permissão de execução no contêiner e cada diretório pai.
 
 Para obter mais informações, consulte [controle de acesso no armazenamento do Azure Data Lake Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
 
@@ -114,11 +116,11 @@ Depois de verificar que sua identidade recebeu o nível de autorização necess�
 azcopy login
 ```
 
-Esse comando retorna um código de autenticação e a URL de um site. Abra o site, forneça o código e, em seguida, escolha o **próxima** botão.
+Esse comando retorna um código de autenticação e a URL de um site. Abra o site, forneça o código e, em seguida, escolha o botão **Avançar**.
 
 ![Criar um contêiner](media/storage-use-azcopy-v10/azcopy-login.png)
 
-Será exibida uma janela de entrada. Nessa janela, entre em sua conta do Azure, usando suas credenciais de conta do Azure. Depois que você entrar com êxito, você pode fechar a janela do navegador e começar a usar o AzCopy.
+Uma janela de entrada será exibida. Nessa janela, entre em sua conta do Azure usando suas credenciais de conta do Azure. Depois de entrar com êxito, feche a janela do navegador e comece a usar o AzCopy.
 
 ### <a name="option-2-use-a-sas-token"></a>Opção 2: Usar um token SAS
 
@@ -138,11 +140,11 @@ Depois de autenticado sua identidade ou obtido um token SAS, você pode começar
 
 Para localizar os comandos de exemplo, consulte qualquer um destes artigos.
 
-- [Transferir dados com o armazenamento de BLOBs e AzCopy](storage-use-azcopy-blobs.md)
+- [Transferir dados com o AzCopy e o Armazenamento de Blobs](storage-use-azcopy-blobs.md)
 
-- [Transferir dados com o armazenamento de arquivos e AzCopy](storage-use-azcopy-files.md)
+- [Transferir dados com o AzCopy e o Armazenamento de Arquivos](storage-use-azcopy-files.md)
 
-- [Transferir dados com o AzCopy e o Amazon S3 buckets](storage-use-azcopy-s3.md)
+- [Transferir dados com o AzCopy e os buckets do Amazon S3](storage-use-azcopy-s3.md)
 
 ## <a name="configure-optimize-and-troubleshoot-azcopy"></a>Configurar, otimizar e solucionar problemas de AzCopy
 

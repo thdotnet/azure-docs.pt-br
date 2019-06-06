@@ -12,12 +12,12 @@ ms.author: xiwu
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: f83eb87d2eecb91aa18b1caceb42f9d8bd6c2a0e
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: cfa94fc1c75bcd1eaa9a076cfe63369f60ce5f1c
+ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64939580"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66693092"
 ---
 # <a name="sync-data-across-multiple-cloud-and-on-premises-databases-with-sql-data-sync"></a>Sincronizar dados entre vários bancos de dados locais e de nuvem com a Sincronização de Dados SQL
 
@@ -129,6 +129,7 @@ Provisionamento e desprovisionamento durante a criação do grupo de sincroniza�
 - Os nomes de objetos (bancos de dados, tabelas e colunas) não podem conter os caracteres imprimíveis ponto (.), colchete esquerdo ([) ou colchete direito (]).
 - A autenticação do Azure Active Directory não tem suporte.
 - Tabelas com o mesmo nome, mas esquema diferente (por exemplo, dbo.customers e sales.customers) não são suportadas.
+- Não há suporte para colunas com tipos de dados definidos pelo usuário
 
 #### <a name="unsupported-data-types"></a>Tipos de dados sem suporte
 
@@ -139,7 +140,7 @@ Provisionamento e desprovisionamento durante a criação do grupo de sincroniza�
 
 #### <a name="unsupported-column-types"></a>Não há suporte para os tipos de coluna
 
-A Sincronização de Dados não pode sincronizar colunas somente leitura ou geradas pelo sistema. Por exemplo: 
+A Sincronização de Dados não pode sincronizar colunas somente leitura ou geradas pelo sistema. Por exemplo:
 
 - Colunas computadas.
 - Colunas geradas pelo sistema para tabelas temporais.

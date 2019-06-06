@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/05/2019
 ms.author: v-mohabe
-ms.openlocfilehash: e038c500d93e4d631c585eed743a373b5e6cec85
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 6b3cef32cf79c2448d2e254e27c332e01ea83c62
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65968350"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428372"
 ---
 # <a name="protect-your-network-resources-in-azure-security-center"></a>Proteja seus recursos de rede na Central de Segurança do Azure
 A Central de Segurança do Azure analisa continuamente o estado de segurança de seus recursos do Azure para as práticas recomendadas de segurança de rede. Quando o Security Center identifica possíveis vulnerabilidades de segurança, ele cria recomendações que guiam você pelo processo de configuração dos controles necessários para proteger e proteger seus recursos.
@@ -33,7 +33,7 @@ Este artigo aborda recomendações que se aplicam a seus recursos do Azure de um
 A página **Rede** fornece uma visão geral das seções nas quais você pode aprofundar, para obter mais informações sobre a integridade dos recursos de sua rede:
 
 - Mapa de rede (apenas na camada Standard do Azure Security Center)
-- Proteção de Rede Adaptável
+- Proteção de rede adaptável
 - Recomendações de segurança de rede.
 - Herdado **rede** blade (rede folha anterior) 
  
@@ -75,7 +75,7 @@ Como o mapa é interativo e dinâmico, todos os nós são clicáveis e a exibiç
 1. Você pode modificar o que vê no mapa de rede usando os filtros na parte superior. Você pode se concentrar o mapa com base em:
    -  **Integridade da segurança**: Você pode filtrar o mapa com base na gravidade (alta, média, baixa) dos recursos do Azure.
    - **Recomendações:** Você pode selecionar quais recursos são exibidos com base nas recomendações ativas nesses recursos. Por exemplo, você pode exibir apenas os recursos para os quais a Central de Segurança recomenda que você ative os Grupos de Segurança de Rede.
-   - **Zonas de rede:**: Por padrão, o mapa exibe apenas recursos voltados para a Internet, você também pode selecionar VMs internas.
+   - **Zonas de rede:** : Por padrão, o mapa exibe apenas recursos voltados para a Internet, você também pode selecionar VMs internas.
  
 2. Você pode clicar em **Redefinir** no canto superior esquerdo a qualquer momento para retornar o mapa ao seu estado padrão.
 
@@ -129,18 +129,16 @@ O terceiro nível exibe máquinas virtuais, que é semelhante ao descrito anteri
 
 ## <a name="network-recommendations"></a>Recomendações de rede
 
-|Tipo de recurso|Classificação de segurança|Recomendações|Descrição|
+|Tipo de recurso|Classificação de segurança|Recomendações|DESCRIÇÃO|
 |----|----|----|----|
-|Machine|40|Habilitar Grupos de Segurança de Rede em máquinas virtuais|Habilite os grupos de segurança de rede para controlar o acesso à rede de suas máquinas virtuais.|
-|Sub-rede|35|Habilitar grupos de segurança de rede em sub-redes |Ative os grupos de segurança de rede para controlar o acesso à rede de recursos implantados em suas sub-redes.|
-|Machine|30|Aplicar um controle de acesso à rede Just-In-Time|Aplique o controle de acesso da VM just-in-time para bloquear permanentemente o acesso às portas selecionadas e habilite os usuários autorizados a abri-las por meio do mesmo mecanismo e por um período de tempo limitado.|
-|Machine|20|Restringir acesso por meio de um ponto de extremidade para a Internet|Proteja os grupos de segurança de rede de suas VMs na Internet, restringindo o acesso às regras de permissão existentes.|
+|Machine|40|Grupos de segurança de rede para máquinas virtuais deve ser habilitados|Habilite os grupos de segurança de rede para controlar o acesso à rede de suas máquinas virtuais.|
+|Sub-rede|35|Grupos de segurança de rede no nível de sub-rede deve ser habilitados|Ative os grupos de segurança de rede para controlar o acesso à rede de recursos implantados em suas sub-redes.|
+|Machine|30|Controle de acesso à rede Just-In-Time deve ser aplicado em máquinas virtuais|Aplique o controle de acesso da VM just-in-time para bloquear permanentemente o acesso às portas selecionadas e habilite os usuários autorizados a abri-las por meio do mesmo mecanismo e por um período de tempo limitado.|
+|Machine|20|Restringir o acesso por meio de ponto de extremidade para a Internet|Proteja os grupos de segurança de rede de suas VMs na Internet, restringindo o acesso às regras de permissão existentes.|
 |Machine|10|Adicionar um firewall da próxima geração|Adicione uma solução de NGFW (Next Generation Firewall) para proteger melhor sua VM voltada para a Internet.|
 |Machine|5|Rotear o tráfego através do firewall de gateway de rede somente|Para concluir a implantação de sua solução de firewall de última geração, o tráfego para suas máquinas virtuais de internet protegidos deve ser roteado por meio de solução de firewall de última geração.|
-|Rede Virtual|5|Habilitar o padrão de proteção contra DDoS|Aplicativos com IPs públicos nessas redes virtuais não são protegidos com o padrão de serviço de proteção DDOS. É aconselhável habilitá-lo para permitir a mitigação dos ataques volumétricos e protocolares da rede.|
-|Machine|10|Adicionar um firewall da próxima geração|dd uma solução de Firewall de próxima geração (NGFW) para proteger suas máquinas virtuais de Internet.|
-|Machine|5|Rotear o tráfego através do firewall de gateway de rede somente|Para concluir a implantação da sua solução de firewall de próxima geração, o tráfego para suas VMs protegidas pela Internet deve ser roteado apenas por meio da solução de firewall de próxima geração.|
-Rede virtual|5|Habilitar o padrão de proteção contra DDoS|Aplicativos com endereços IP públicos nessas redes virtuais não são protegidos com o padrão de serviço de proteção DDOS. É aconselhável habilitá-lo para permitir a mitigação dos ataques volumétricos e protocolares da rede.|
+|VNET|5|Habilitar a proteção contra DDoS standard|Aplicativos com IPs públicos nessas redes virtuais não são protegidos com o padrão de serviço de proteção DDOS. É aconselhável habilitá-lo para permitir a mitigação dos ataques volumétricos e protocolares da rede.|
+
 ## <a name="see-also"></a>Consulte também
 Para saber mais sobre as recomendações que se aplicam aos outros tipos de recursos do Azure, consulte o seguinte:
 

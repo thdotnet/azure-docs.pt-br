@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/04/2019
 ms.author: juliako
-ms.openlocfilehash: 8f8a1434af768180e34afcaacd6e92ab402ad8cd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 464d01b7b818b461024737a83d88c78947453c37
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60736132"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428494"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Conectar-se à API de v3 de serviços de mídia - .NET
 
@@ -27,7 +27,7 @@ Este artigo mostra como se conectar ao SDK do .NET dos serviços de mídia do Az
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - [Crie uma conta de Serviços de Mídia](create-account-cli-how-to.md). Certifique-se de lembrar o nome do grupo de recursos e o nome da conta dos serviços de mídia
-- Instale uma ferramenta que você deseja usar para desenvolvimento no .NET. As etapas neste artigo mostram como usar [Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/). Você pode usar o Visual Studio Code, consulte [trabalhando com C# ](https://code.visualstudio.com/docs/languages/csharp). Ou, você pode usar um editor de código diferentes.
+- Instale uma ferramenta que você deseja usar para desenvolvimento no .NET. As etapas neste artigo mostram como usar [Community Edition do Visual Studio 2019](https://www.visualstudio.com/downloads/). Você pode usar o Visual Studio Code, consulte [trabalhando com C# ](https://code.visualstudio.com/docs/languages/csharp). Ou, você pode usar um editor de código diferentes.
 
 ## <a name="create-a-console-application"></a>Criar um aplicativo de console
 
@@ -40,7 +40,7 @@ O aplicativo de exemplo neste tópico, tem como alvo `netcoreapp2.0`. O código 
 ## <a name="add-required-nuget-packages"></a>Adicionar pacotes NuGet necessários
 
 1. No Visual Studio, selecione **ferramentas** > **Gerenciador de pacotes NuGet** > **Console do Gerenciador de NuGet**.
-2. No **Package Manager Console** janela, use `Install-Package` comando para adicionar os seguintes pacotes NuGet. Por exemplo, `Install-Package Microsoft.Azure.Management.Media`.
+2. No **Package Manager Console** janela, use `Install-Package` comando para adicionar os seguintes pacotes NuGet. Por exemplo: `Install-Package Microsoft.Azure.Management.Media`.
 
 |Pacote|DESCRIÇÃO|
 |---|---|

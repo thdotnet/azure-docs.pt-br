@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: reference
 ms.date: 05/23/2019
 ms.author: evansma
-ms.openlocfilehash: ae477068e2413678d5dd755cb5a7334f85655c74
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 1aba0ab7083c437210166d2d5a2d77e7a657afe9
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66259248"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66474592"
 ---
 # <a name="saas-fulfillment-apis-version-2"></a>APIs de preenchimento SaaS versão 2 
 
@@ -774,26 +774,35 @@ O publicador deve implementar um webhook neste serviço de SaaS para notificar o
 
 ```json
 {
-    "operationId": "<guid>",
-    "activityId": "<guid>",
-    "subscriptionId":"<guid>",
-    "offerId": "offer1",
-    "publisherId": "contoso",
-    "planId": "silver",
-    "quantity": "20"  ,
-    "action": "Subscribe",
-    "timeStamp": "2018-12-01T00:00:00"
+  "id": "<this is a Guid operation id, you can call operations API with this to get status>",
+  "activityId": "<this is a Guid correlation id>",
+  "subscriptionId": "<Guid to uniquely identify this resource>",
+  "publisherId": "<this is the publisher’s name>",
+  "offerId": "<this is the offer name>",
+  "planId": "<this is the plan id>",
+  "quantity": "<the number of seats, will be null if not per-seat saas offer>",
+  "timeStamp": "2019-04-15T20:17:31.7350641Z",
+  "action": "Unsubscribe",
+  "status": "NotStarted"  
+
 }
 ```
+Onde a ação pode ser um destes procedimentos: 
+- `Subscribe`, (Quando o recurso tiver sido ativado)
+- `Unsubscribe`, (Quando o recurso foi excluído)
+- `ChangePlan`, (Quando estiver concluída, a operação de alteração de plano)
+- `ChangeQuantity`, (Quando a operação de quantidade de alteração for concluída),
+- `Suspend`, (Ao recurso foi suspenso)
+- `Reinstate`, (Ao recurso foi restabelecido após suspensão)
 
-Onde a ação pode ser um dos seguintes: 
-- `Subscribe`  (Quando o recurso tiver sido ativado)
-- `Unsubscribe` (Quando o recurso foi excluído)
-- `ChangePlan` (Quando estiver concluída, a operação de alteração de plano)
-- `ChangeQuantity` (Quando estiver concluída, a operação de quantidade de alteração)
-- `Suspend` (Quando o recurso foi suspenso)
-- `Reinstate` (Quando recursos foi restabelecido após suspensão)
+Em que o status pode ser um destes procedimentos: <br>
+        -NotStarted, <br>
+        -Em andamento, <br>
+        -Foi bem-sucedida, <br>
+        -Falha, <br>
+        -Conflito <br>
 
+Status acionáveis são com êxito e falha em uma notificação de webhook. Ciclo de vida de uma operação é de NotStarted a um estado terminal como êxito/falha/conflito. Se você receber não foi iniciado ou em andamento, continue a solicitar o status por meio da operação de obtenção de API até que a operação atinja um estado terminal antes de realizar qualquer ação. 
 
 ## <a name="mock-api"></a>API de simulação
 

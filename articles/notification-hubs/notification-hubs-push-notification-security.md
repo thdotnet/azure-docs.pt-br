@@ -12,36 +12,36 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: multiple
 ms.topic: article
-ms.date: 05/23/2019
+ms.date: 05/31/2019
 ms.author: jowargo
-ms.openlocfilehash: 2ba3be0d51758cf7afd9f85258403bf79ca8401f
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 3f5b23028094b545262e9c01640890f2c0b989ca
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66239409"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66431245"
 ---
-# <a name="security-model-of-azure-notification-hubs"></a>Modelo de segurança dos Hubs de Notificação do Azure
+# <a name="notification-hubs-security"></a>Segurança dos Hubs de Notificação
 
 ## <a name="overview"></a>Visão geral
 
-Este tópico descreve o modelo de segurança dos Hubs de notificação do Azure. Como os Hubs de notificação são uma entidade do barramento de serviço, eles implementam o mesmo modelo de segurança que o barramento de serviço. Para mais informações, consulte os tópicos de [Autenticação do barramento de serviço](https://msdn.microsoft.com/library/azure/dn155925.aspx) .
+Este tópico descreve o modelo de segurança dos Hubs de notificação do Azure.
 
 ## <a name="shared-access-signature-security-sas"></a>Segurança de assinatura de acesso compartilhado (SAS)
 
 Os hubs de notificação implementam um esquema de segurança de nível de entidade chamado SAS (assinatura de acesso compartilhado). Esse esquema permite que as entidades de mensagens declarem até 12 regras de autorização nas suas descrições que concedem direitos naquela entidade.
 
-Cada regra contém um nome, um valor de chave (segredo compartilhado) e um conjunto de direitos, conforme explicado na seção “Declarações de segurança”. Ao criar um Hub de notificação, duas regras são automaticamente criadas: uma com direitos de escuta (que usa o aplicativo cliente) e outra com todos os direitos (que usa o back-end).
+Cada regra contém um nome, um valor de chave (segredo compartilhado) e um conjunto de direitos, conforme explicado em [declarações de segurança](#security-claims). Ao criar um Hub de notificação, duas regras são criadas automaticamente: uma com **escutar** direitos (que usa o aplicativo cliente) e outra com **todos os** direitos (que usa o back-end do aplicativo).
 
 Ao realizar o gerenciamento de registro dos aplicativos clientes, se as informações enviadas por meio de notificações não forem confidenciais (por exemplo, atualizações de clima), uma maneira comum de acessar um Hub de notificação é fornecer o valor da chave da regra de acesso de somente escuta para o aplicativo cliente e fornecer o valor de chave da regra de acesso completo para o back-end do aplicativo.
 
-Não é recomendável que você insira o valor da chave em aplicativos cliente da Windows Store. Uma maneira de evitar a inserção do valor chave é recuperar o aplicativo cliente do back-end do aplicativo na inicialização.
+Os aplicativos não deve inserir o valor da chave em aplicativos de cliente da Windows Store, em vez disso, ter o aplicativo cliente recuperá-los de back-end do aplicativo na inicialização.
 
-É importante entender que a chave de acesso de escuta permite que um aplicativo cliente seja registrado para qualquer marca. Se seu aplicativo tiver que restringir registros de marcas específicas para clientes específicos (por exemplo, quando as marcas representam IDs de usuário), o back-end do aplicativo deverá executar os registros. Para mais informações, consulte a seção Gerenciamento de registro. Observe que, dessa maneira, o aplicativo cliente não terá acesso direto aos Hubs de notificação.
+A chave com **escutar** acesso permite que um aplicativo cliente para se registrar para qualquer marca. Se seu aplicativo tiver que restringir registros para marcas específicas para clientes específicos (por exemplo, quando as marcas representam IDs de usuário), o back-end do aplicativo deve executar os registros. Para obter mais informações, consulte [gerenciamento de registro](notification-hubs-push-notification-registration-management.md). Observe que, dessa maneira, o aplicativo cliente não terá acesso direto aos Hubs de notificação.
 
 ## <a name="security-claims"></a>Declarações de segurança
 
-Semelhantes a outras entidades, as operações de Hub de notificação são permitidas para três declarações de segurança: Ouvir, Enviar e Gerenciar.
+Semelhantes a outras entidades, as operações de Hub de notificação são permitidas para três declarações de segurança: **Ouça**, **enviar**, e **gerenciar**.
 
 | Declaração   | DESCRIÇÃO                                          | Operações permitidas |
 | ------- | ---------------------------------------------------- | ------------------ |

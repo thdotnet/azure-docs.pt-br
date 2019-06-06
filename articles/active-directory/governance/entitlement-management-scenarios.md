@@ -16,17 +16,17 @@ ms.date: 04/23/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96442a9d49581da6841fa7acb8329354ec727f60
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 6a50f4a8a63022668dac68c974f8c828c72777c9
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64918468"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473196"
 ---
 # <a name="common-scenarios-in-azure-ad-entitlement-management-preview"></a>Cenários comuns no gerenciamento de direitos do AD do Azure (visualização)
 
 > [!IMPORTANT]
-> Gerenciamento de direitos do Active Directory (Azure AD) do Azure está atualmente em visualização pública.
+> No momento, o gerenciamento de direitos do Azure AD (Azure Active Directory) está em versão prévia pública.
 > Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
 > Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -50,7 +50,7 @@ Há várias maneiras que você pode configurar o gerenciamento de direitos para 
 > | **2.** [Adicionar funções de recurso para acessar o pacote](entitlement-management-access-package-edit.md#add-resource-roles)<ul><li>Grupos</li><li>Aplicativos</li><li>Sites do SharePoint</li></ul> | ![Adicionar funções de recurso](./media/entitlement-management-scenarios/resource-roles.png) |
 > | **3.** [Adicionar uma política](entitlement-management-access-package-edit.md#policy-for-users-in-your-directory)<ul><li>Para usuários em seu diretório</li><li>Exigir aprovação</li><li>Configurações de expiração</li></ul> | ![Adicionar política](./media/entitlement-management-scenarios/policy.png) |
 
-### <a name="i-want-to-allow-users-from-my-business-partners-including-users-not-yet-in-my-directory-to-request-access-to-groups-applications-or-sharepoint-sites"></a>Eu quero permitir que os usuários do meu parceiros comerciais (incluindo os usuários ainda não no meu diretório) para solicitar acesso a grupos, aplicativos ou sites do SharePoint
+### <a name="i-want-to-allow-users-from-my-business-partners-directory-including-users-not-yet-in-my-directory-to-request-access-to-groups-applications-or-sharepoint-sites"></a>Eu quero permitir que os usuários do meu diretório de parceiros de negócios (incluindo os usuários ainda não no meu diretório) para solicitar acesso a grupos, aplicativos ou sites do SharePoint
 
 > [!div class="mx-tableFixed"]
 > | Etapas | Exemplo |
@@ -124,4 +124,4 @@ Há várias maneiras que você pode configurar o gerenciamento de direitos para 
 ## <a name="next-steps"></a>Próximas etapas
 
 - [Tutorial: Criar seu primeiro pacote de acesso](entitlement-management-access-package-first.md)
-- [Editar e gerenciar um pacote existente de acesso](entitlement-management-access-package-edit.md)
+- [Editar e gerenciar um pacote de acesso existente](entitlement-management-access-package-edit.md)

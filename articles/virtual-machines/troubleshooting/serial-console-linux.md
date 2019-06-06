@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 5/1/2019
 ms.author: alsin
-ms.openlocfilehash: 52c79a0b883ff4c9ac77d7523764384b88c06a08
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: a561d29f462d44eb6bc440bb6110430cc5c51688
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66389033"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735254"
 ---
 # <a name="azure-serial-console-for-linux"></a>Console Serial do Azure para Linux
 
@@ -47,6 +47,7 @@ Para obter a documentação do Console Serial para Windows, consulte [Console Se
 
 - Para configurações específicas das distribuições do Linux, consulte [Disponibilidade de distribuição Linux do console serial](#serial-console-linux-distribution-availability).
 
+- A instância de conjunto de dimensionamento VM ou máquina virtual deve ser configurada para a saída serial em `ttys0`. Esse é o padrão para as imagens do Azure, mas convém Verifique isso em imagens personalizadas. Detalhes [abaixo](#custom-linux-images).
 
 
 ## <a name="get-started-with-the-serial-console"></a>Introdução ao Console Serial
@@ -84,6 +85,9 @@ Console serial está disponível em uma base por instância para conjuntos de di
 ## <a name="serial-console-linux-distribution-availability"></a>Disponibilidade de distribuição de Linux do Console Serial
 Para o console serial funcionar corretamente, o sistema operacional convidado deve ser configurado para ler e gravar mensagens do console na porta serial. A maioria das distribuições [endossadas do Linux do Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) tem o console serial configurado por padrão. A seleção do **console serial** na seção **Support + troubleshooting** do portal do Azure fornece acesso ao console serial.
 
+> [!NOTE]
+> Se você não estiver vendo nada no console serial, verifique se o diagnóstico de inicialização está habilitado na VM. Atingindo **Enter** geralmente será corrigir problemas em que nada está aparecendo no console serial.
+
 Distribuição      | Acesso ao console serial
 :-----------|:---------------------
 Red Hat Enterprise Linux    | Acesso ao console serial habilitado por padrão.
@@ -92,10 +96,13 @@ Ubuntu      | Acesso ao console serial habilitado por padrão.
 CoreOS      | Acesso ao console serial habilitado por padrão.
 SUSE        | Imagens mais recentes do SLES disponíveis no Azure têm acesso ao console serial ativado por padrão. Se você estiver usando versões mais antigas (10 ou anteriores) do SLES no Azure, consulte o [artigo do KB](https://www.novell.com/support/kb/doc.php?id=3456486) para ativar o console serial.
 Oracle Linux        | Acesso ao console serial habilitado por padrão.
-Imagens personalizadas do Linux     | Para ativar o console serial para sua imagem customizada da VM Linux, ative o acesso ao console no arquivo */ etc / inittab* para executar um terminal em`ttyS0`. Por exemplo: `S0:12345:respawn:/sbin/agetty -L 115200 console vt102`. Para obter mais informações sobre a criação adequada de imagens personalizadas, consulte [Criar e carregar um VHD do Linux no Azure](https://aka.ms/createuploadvhd). Se você está construindo um kernel personalizado, considere habilitar esses flags do kernel: `CONFIG_SERIAL_8250=y` e `CONFIG_MAGIC_SYSRQ_SERIAL=y`. O arquivo de configuração normalmente está localizado na */boot/* caminho.
 
-> [!NOTE]
-> Se você não estiver vendo nada no console serial, verifique se o diagnóstico de inicialização está habilitado na VM. Atingindo **Enter** geralmente será corrigir problemas em que nada está aparecendo no console serial.
+### <a name="custom-linux-images"></a>Imagens personalizadas do Linux
+Para ativar o console serial para sua imagem customizada da VM Linux, ative o acesso ao console no arquivo */ etc / inittab* para executar um terminal em`ttyS0`. Por exemplo: `S0:12345:respawn:/sbin/agetty -L 115200 console vt102`.
+
+Você também desejará adicionar ttys0 como o destino para a saída serial. Para obter mais informações sobre como configurar uma imagem personalizada para trabalhar com o console serial, consulte os requisitos gerais do sistema em [criar e carregar um VHD do Linux no Azure](https://aka.ms/createuploadvhd#general-linux-system-requirements).
+
+Se você está construindo um kernel personalizado, considere habilitar esses flags do kernel: `CONFIG_SERIAL_8250=y` e `CONFIG_MAGIC_SYSRQ_SERIAL=y`. O arquivo de configuração normalmente está localizado na */boot/* caminho. |
 
 ## <a name="common-scenarios-for-accessing-the-serial-console"></a>Cenários comuns para acessar o Console Serial
 
@@ -201,6 +208,7 @@ O texto do console serial ocupa apenas uma parte do tamanho da tela (geralmente 
 Colar longas cadeias de caracteres não funciona. | O console serial limita o comprimento de cadeias de caracteres colados em terminal a 2048 caracteres para impedir a sobrecarga da largura de banda de porta serial.
 O console serial não funciona com um firewall de conta de armazenamento. | Por design, o console serial não pode funcionar com firewalls de conta de armazenamento habilitados na conta de armazenamento do diagnóstico de inicialização.
 Console serial não funciona com uma conta de armazenamento usando o Azure Data Lake armazenamento Gen2 com namespaces hierárquicos. | Esse é um problema conhecido com namespaces hierárquicos. Para atenuar, certifique-se de que a conta de armazenamento de diagnóstico de inicialização da VM não é criada usando o Azure Data Lake armazenamento Gen2. Essa opção só pode ser definida no momento da criação da conta de armazenamento. Talvez você precise criar conta de armazenamento de um diagnóstico de inicialização separado sem o Azure Data Lake armazenamento Gen2 habilitado para atenuar esse problema.
+Entrada nas imagens SLES BYOS do teclado irregular. Entrada do teclado apenas esporadicamente é reconhecida. | Isso é um problema com o pacote Plymouth. Plymouth não deve ser executado no Azure, pois você não precisa de uma tela inicial e Plymouth interfere com a capacidade de plataforma de usar o Console Serial. Remover Plymouth com `sudo zypper remove plymouth` e, em seguida, reinicialize. Como alternativa, modifique a linha de kernel de sua configuração do GRUB acrescentando `plymouth.enable=0` até o final da linha. Você pode fazer isso [editando a entrada de inicialização no momento da inicialização](https://aka.ms/serialconsolegrub#single-user-mode-in-suse-sles), ou ao editar a linha GRUB_CMDLINE_LINUX `/etc/default/grub`, recompilação GRUB com `grub2-mkconfig -o /boot/grub2/grub.cfg`e, em seguida, reinicializar.
 
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes

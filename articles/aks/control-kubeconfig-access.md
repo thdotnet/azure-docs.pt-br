@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 01/03/2019
+ms.date: 05/31/2019
 ms.author: iainfou
-ms.openlocfilehash: d4d3d9a3ff57a7a388e9703d0d145d8ce6eafd12
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: b55cc226cfbb462cdccd73b3b80cfb0d56c10711
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66143015"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475602"
 ---
 # <a name="use-azure-role-based-access-controls-to-define-access-to-the-kubernetes-configuration-file-in-azure-kubernetes-service-aks"></a>Usar os controles de acesso baseado em função do Azure para definir o acesso ao arquivo de configuração do Kubernetes no AKS (Serviço de Kubernetes do Azure)
 
@@ -24,7 +24,7 @@ Este artigo mostra como atribuir funções RBAC que limitam quem pode obter as i
 
 Este artigo considera que já existe um cluster do AKS. Se você precisar de um cluster do AKS, confira o guia de início rápido do AKS [Usando a CLI do Azure][aks-quickstart-cli] ou [Usando o portal do Azure][aks-quickstart-portal].
 
-Este artigo exige que você esteja executando a versão 2.0.53 ou posterior da CLI do Azure. Execute `az --version` para encontrar a versão. Se precisar instalar ou atualizar, consulte [Instalar a CLI do Azure][azure-cli-install].
+Este artigo também requer que você está executando a CLI do Azure versão 2.0.65 ou posterior. Execute `az --version` para encontrar a versão. Se precisar instalar ou atualizar, consulte [Instalar a CLI do Azure][azure-cli-install].
 
 ## <a name="available-cluster-roles-permissions"></a>Permissões de funções de cluster disponíveis
 
@@ -45,9 +45,9 @@ Essas funções RBAC podem ser aplicadas a um grupo ou usuário do Azure Active 
 
 ## <a name="assign-role-permissions-to-a-user-or-group"></a>Atribuir permissões de função a um usuário ou grupo
 
-Para atribuir uma das funções disponíveis, você precisa obter a ID do recurso de cluster do AKS e a ID da conta de usuário do Azure AD ou grupo. Os seguintes comandos de exemplo realizam as seguintes etapas:
+Para atribuir uma das funções disponíveis, você precisa obter a ID do recurso de cluster do AKS e a ID da conta de usuário do Azure AD ou grupo. Os comandos de exemplo a seguir:
 
-* Obtêm a ID de recurso de cluster usando o comando [az aks show][az-aks-show] para o cluster chamado *myAKSCluster* no grupo de recursos *myResourceGroup*. Fornecem seu próprio cluster e nome de grupo de recursos, conforme necessário.
+* Obter a ID de recurso de cluster usando o [show do az aks] [ az-aks-show] comando para o cluster chamado *myAKSCluster* no *myResourceGroup* grupo de recursos. Fornecem seu próprio cluster e nome de grupo de recursos, conforme necessário.
 * Usa o [show do az conta] [ az-account-show] e [Mostrar de usuário do ad az] [ az-ad-user-show] comandos para obter sua ID de usuário.
 * Por fim, atribuem uma função usando o comando [az role assignment create][az-role-assignment-create].
 
@@ -69,7 +69,7 @@ az role assignment create \
 ```
 
 > [!TIP]
-> Se você deseja atribuir permissões a um grupo do AD do Azure, atualize o `--assignee` parâmetro com a ID de objeto para o grupo em vez de um usuário, conforme mostrado no exemplo anterior. Para obter a ID de objeto para um grupo, use o [Mostrar de grupo do ad az] [ az-ad-group-show] comando. O exemplo a seguir obtém a ID de objeto para o grupo do AD do Azure chamado *appdev*: `az ad group show --group appdev --query objectId -o tsv`
+> Se você deseja atribuir permissões a um grupo do AD do Azure, atualize o `--assignee` parâmetro mostrado no exemplo anterior com a ID de objeto para o *grupo* em vez de uma *usuário*. Para obter a ID de objeto para um grupo, use o [Mostrar de grupo do ad az] [ az-ad-group-show] comando. O exemplo a seguir obtém a ID de objeto para o grupo do AD do Azure chamado *appdev*: `az ad group show --group appdev --query objectId -o tsv`
 
 Você pode alterar a atribuição anterior para a *função de usuário de cluster* conforme necessário.
 

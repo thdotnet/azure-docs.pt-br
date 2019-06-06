@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/06/2019
 ms.author: mayg
-ms.openlocfilehash: bcfeca34eb11caaddac06971fe7f825a142586a2
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: efb49db6cce7ba238d40bf80ddf87b2a1a83834f
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65602072"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479991"
 ---
 # <a name="install-a-linux-master-target-server-for-failback"></a>Instalar um servidor de destino mestre Linux para failback
 Após o failover de suas máquinas virtuais para o Azure, você poderá executar failback das máquinas virtuais para o site local. Para realizar failback, você precisa proteger novamente a máquina virtual do Azure para o site local. Para este processo, é necessário um servidor de destino mestre para receber o tráfego. 
@@ -46,7 +46,7 @@ Crie o destino mestre de acordo com as seguintes diretrizes de dimensionamento:
 - **Tamanho de disco adicional para unidade de retenção**: 1 TB
 - **Núcleos de CPU**: 4 núcleos ou mais
 
-Há suporte para os kernels do Ubuntu a seguir.
+Os kernels do Ubuntu a seguir têm suporte.
 
 
 |Série de Kernel  |Suporte até  |
@@ -67,7 +67,7 @@ Mantenha um ISO do Ubuntu 16.04.2 Minimal de 64 bits na unidade de DVD e inicie 
 
 1.  Selecione **Inglês** como o idioma de preferência e selecione **Enter**.
     
-    ![Selecione um idioma](./media/vmware-azure-install-linux-master-target/image1.png)
+    ![Selecionar um idioma](./media/vmware-azure-install-linux-master-target/image1.png)
 1. Selecione **Instalar Servidor Ubuntu** e pressione **Enter**.
 
     ![Selecionar Instalar Ubuntu Server](./media/vmware-azure-install-linux-master-target/image2.png)
@@ -91,7 +91,7 @@ Mantenha um ISO do Ubuntu 16.04.2 Minimal de 64 bits na unidade de DVD e inicie 
 
 1. Para criar uma conta de usuário, digite o nome de usuário e selecione **Continuar**.
 
-      ![Criar uma conta de usuário](./media/vmware-azure-install-linux-master-target/image9.png)
+      ![Criar uma conta do usuário](./media/vmware-azure-install-linux-master-target/image9.png)
 
 1. Digite a senha para a nova conta de usuário e selecione **Continuar**.
 
@@ -245,9 +245,9 @@ Use as etapas a seguir para criar um disco de retenção:
 
     ![ID de vários caminhos](./media/vmware-azure-install-linux-master-target/image27.png)
 
-3. Formate a unidade e, em seguida, crie um sistema de arquivos na nova unidade: **mkfs.ext4 dev/mapper/<ID de vários caminhos do disco de retenção>**.
+3. Formate a unidade e, em seguida, crie um sistema de arquivos na nova unidade: **mkfs.ext4 dev/mapper/<ID de vários caminhos do disco de retenção>** .
     
-    ![Sistema de arquivo](./media/vmware-azure-install-linux-master-target/image23-centos.png)
+    ![Sistema de arquivos](./media/vmware-azure-install-linux-master-target/image23-centos.png)
 
 4. Depois de criar o sistema de arquivos, monte o disco de retenção.
 

@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 01/29/2019
+ms.date: 05/31/2019
 ms.author: iainfou
-ms.openlocfilehash: 23922ec02f7406b5cbc482c938dbcf6a56cad6d7
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 58552914f369c49eed33ccefbb7736cf8dbf1fc6
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66234155"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475636"
 ---
 # <a name="preview---automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Preview - dimensionar automaticamente um cluster para atender às demandas do aplicativo no serviço de Kubernetes do Azure (AKS)
 
@@ -28,11 +28,11 @@ Este artigo mostra como habilitar e gerenciar o dimensionador automático de clu
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-Este artigo exige a execução da CLI do Azure versão 2.0.55 ou posterior. Execute `az --version` para encontrar a versão. Se precisar instalar ou atualizar, consulte [Instalar a CLI do Azure][azure-cli-install].
+Este artigo exigirá que você está executando a CLI do Azure versão 2.0.65 ou posterior. Execute `az --version` para encontrar a versão. Se precisar instalar ou atualizar, consulte [Instalar a CLI do Azure][azure-cli-install].
 
 ### <a name="install-aks-preview-cli-extension"></a>Instalar a extensão da CLI aks-preview
 
-Os clusters do AKS que dão suporte ao dimensionador automático de cluster precisam usar conjuntos de dimensionamento de máquinas virtuais e executar o Kubernetes versão *1.12.4* ou posterior. Esse suporte do conjunto de dimensionamento está em versão prévia. Para aceitar e criar clusters que usam conjuntos de dimensionamento, primeiro instale a extensão da CLI do Azure *aks-preview* usando o comando [az extension add][az-extension-add], conforme mostrado exemplo a seguir:
+Clusters AKS que suportam o dimensionador automático de cluster devem usar conjuntos de dimensionamento de máquina virtual e executar a versão do Kubernetes *1.12.7* ou posterior. Esse suporte do conjunto de dimensionamento está em versão prévia. Para aceitar e criar clusters que usam conjuntos de dimensionamento, primeiro instale a extensão da CLI do Azure *aks-preview* usando o comando [az extension add][az-extension-add], conforme mostrado exemplo a seguir:
 
 ```azurecli-interactive
 az extension add --name aks-preview
@@ -63,9 +63,10 @@ az provider register --namespace Microsoft.ContainerService
 
 ## <a name="limitations"></a>Limitações
 
-As seguintes limitações se aplicam quando você criar e gerenciar clusters AKS que usam conjuntos de dimensionamento de máquina virtual:
+As seguintes limitações se aplicam quando você criar e gerenciar clusters AKS que usam o dimensionador automático de cluster:
 
 * O complemento de roteamento de aplicativo HTTP não pode ser usado.
+* Atualmente, não podem ser usados vários pools de nó (atualmente em visualização no AKS).
 
 ## <a name="about-the-cluster-autoscaler"></a>Sobre o dimensionador automático de cluster
 

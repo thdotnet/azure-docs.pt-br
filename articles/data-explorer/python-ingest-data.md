@@ -1,24 +1,24 @@
 ---
-title: 'Início Rápido: Ingerir dados usando a biblioteca Python do Azure Data Explorer'
-description: Neste início rápido, você aprenderá a inserir (carregar) dados no Azure Data Explorer usando Python.
+title: Ingerir dados usando a biblioteca Python do Azure Data Explorer
+description: Neste artigo, você aprenderá a ingestão de dados (carga) no Data Explorer do Azure usando o Python.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
-ms.topic: quickstart
-ms.date: 10/16/2018
-ms.openlocfilehash: fdeae2c6b598feee0abc57c80ea32f2108504330
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 06/03/2019
+ms.openlocfilehash: da23ec91891776e9a459b04c5718147427843991
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59046454"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66496912"
 ---
-# <a name="quickstart-ingest-data-using-the-azure-data-explorer-python-library"></a>Início Rápido: Ingerir dados usando a biblioteca Python do Azure Data Explorer
+# <a name="ingest-data-using-the-azure-data-explorer-python-library"></a>Ingerir dados usando a biblioteca Python do Azure Data Explorer
 
-O Azure Data Explorer é um serviço de exploração de dados rápido e altamente escalonável para dados de log e telemetria. O Data Explorer do Azure fornece duas bibliotecas de cliente para Python: uma [biblioteca de ingestão](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-ingest) e [uma biblioteca de dados](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-data). Essas bibliotecas permitem a inclusão de dados (carga) em um cluster e dados de consulta do seu código. Neste início rápido, primeiro você criará uma tabela e o mapeamento de dados em um cluster. Você, em seguida, enfileira ao cluster e valida os resultados.
+O Azure Data Explorer é um serviço de exploração de dados rápido e altamente escalonável para dados de log e telemetria. O Data Explorer do Azure fornece duas bibliotecas de cliente para Python: uma [biblioteca de ingestão](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-ingest) e [uma biblioteca de dados](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-data). Essas bibliotecas permitem a inclusão de dados (carga) em um cluster e dados de consulta do seu código. Neste artigo, você primeiro crie uma tabela e o mapeamento de dados em um cluster. Você, em seguida, enfileira ao cluster e valida os resultados.
 
-Este início rápido também está disponível como um [Azure Notebook](https://notebooks.azure.com/ManojRaheja/libraries/KustoPythonSamples/html/QueuedIngestSingleBlob.ipynb).
+Este artigo também está disponível como um [bloco de anotações do Azure](https://notebooks.azure.com/ManojRaheja/libraries/KustoPythonSamples/html/QueuedIngestSingleBlob.ipynb).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -170,7 +170,7 @@ Execute o seguinte comando para exibir o status de todas as operações de inges
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Caso você planeje seguir nossos outros guias de início rápido e tutoriais, mantenha os recursos que você criou. Caso contrário, execute o seguinte comando no seu banco de dados para limpar a tabela StormEvents.
+Se você planeja siga nossos outros artigos, manter os recursos que você criou. Caso contrário, execute o seguinte comando no seu banco de dados para limpar a tabela StormEvents.
 
 ```Kusto
 .drop table StormEvents
@@ -178,5 +178,4 @@ Caso você planeje seguir nossos outros guias de início rápido e tutoriais, ma
 
 ## <a name="next-steps"></a>Próximas etapas
 
-> [!div class="nextstepaction"]
-> [Consultar dados usando o Python](python-query-data.md)
+* [Consultar dados usando o Python](python-query-data.md)

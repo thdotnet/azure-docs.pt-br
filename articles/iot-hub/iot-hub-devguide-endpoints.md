@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
-ms.openlocfilehash: fe913f057d00fd18b1b163f124d9dd0b83abf0de
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 5854a795ba7ceeeb4512f1e2fd16d98826d55dd5
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925891"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66477978"
 ---
 # <a name="reference---iot-hub-endpoints"></a>Referência - Pontos de extremidade do Hub IoT
 
@@ -82,9 +82,9 @@ Atualmente, o Hub IoT é compatível com os seguintes serviços do Azure como po
 
 Para saber quais são os limites para o número de pontos de extremidade que você pode adicionar, confira [Cotas e limitação](iot-hub-devguide-quotas-throttling.md).
 
-Você pode usar a API REST [obter integridade do ponto de extremidade](https://docs.microsoft.com/rest/api/iothub/iothubresource/getendpointhealth#iothubresource_getendpointhealth) ao obter o status de integridade dos pontos de extremidade. É recomendável usar o [métricas do IoT Hub](iot-hub-metrics.md) relacionados ao roteamento de latência de mensagem para identificar e depurar erros quando a integridade do ponto de extremidade está inativo ou não está íntegro.
+Você pode usar a API REST [obter integridade do ponto de extremidade](https://docs.microsoft.com/rest/api/iothub/iothubresource/getendpointhealth#iothubresource_getendpointhealth) ao obter o status de integridade dos pontos de extremidade. É recomendável usar o [métricas do IoT Hub](iot-hub-metrics.md) relacionados ao roteamento de latência de mensagem para identificar e depurar erros quando a integridade do ponto de extremidade está inativo ou não está íntegro, como podemos esperar que a latência será maior quando o ponto de extremidade estiver em um desses estados.
 
-|Status de Integridade|DESCRIÇÃO|
+|Status de integridade|DESCRIÇÃO|
 |---|---|
 |Healthy|O ponto de extremidade é aceitar mensagens conforme o esperado.|
 |Não íntegro|O ponto de extremidade não está aceitando mensagens conforme o esperado e o IoT Hub está tentando novamente para enviar dados para esse ponto de extremidade. O status de um ponto de extremidade não íntegro será ser atualizado para íntegro quando o IoT Hub estabeleceu um estado consistente de integridade.|

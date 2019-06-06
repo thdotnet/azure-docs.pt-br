@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: iainfou
-ms.openlocfilehash: 2d51699138914e4a8ad5d2a133161fcfce71e9fe
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 5ce3290f7af32b10e1dfbf9b72686e5d30c885bb
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65074061"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66431325"
 ---
 # <a name="network-concepts-for-applications-in-azure-kubernetes-service-aks"></a>Conceitos de rede para aplicativos no Serviço de Kubernetes do Azure (AKS)
 
@@ -99,6 +99,8 @@ Quando você cria um serviço do tipo LoadBalancer, um recurso de balanceador de
 No AKS, você pode criar um recurso do Ingress usando algo como o NGINX ou usar o recurso de roteamento do aplicativo AKS HTTP. Quando você habilita o roteamento de aplicativo HTTP para um cluster AKS, a plataforma Azure cria o controlador Ingress e um controlador *External-DNS*. À medida que novos recursos do Ingress são criados no Kubernetes, os registros necessários do DNS A são criados em uma zona DNS específica do cluster. Para obter mais informações, consulte [implantar o roteamento de aplicativos HTTP][aks-http-routing].
 
 Outro recurso comum do Ingress é o encerramento de SSL / TLS. Em grandes aplicativos da Web acessados via HTTPS, a terminação do TLS pode ser manipulada pelo recurso Ingress, em vez de pelo próprio aplicativo. Para fornecer geração e configuração automática de certificação TLS, você pode configurar o recurso Ingress para usar provedores como o Let's Encrypt. Para obter mais informações sobre como configurar um controlador NGINX Ingress com o Let's Encrypt, consulte [Ingress e TLS][aks-ingress-tls].
+
+Você também pode configurar seu controlador de entrada para preservar o IP de origem do cliente em solicitações para contêineres no cluster do AKS. Quando uma solicitação do cliente é roteada para um contêiner no cluster do AKS por meio de seu controlador de entrada, o ip de origem original da solicitação não estará disponível para o contêiner de destino. Quando você habilita *preservação de IP de origem do cliente*, o IP de origem para o cliente está disponível no cabeçalho da solicitação sob *X-Forwarded-For*. Se você estiver usando a preservação de IP de origem do cliente em seu controlador de ingresso, você não pode usar a passagem SSL. Passagem SSL e preservação de IP de origem do cliente podem ser usados com outros serviços, como o *LoadBalancer* tipo.
 
 ## <a name="network-security-groups"></a>Grupos de segurança de rede
 

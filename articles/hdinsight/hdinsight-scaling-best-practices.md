@@ -6,13 +6,13 @@ ms.author: ashish
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 05/13/2019
-ms.openlocfilehash: 622261d0f7e602635aa6a638357278a9c63a6ecd
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.date: 06/03/2019
+ms.openlocfilehash: eb68421c4f62d94eedf266a0c34a0e276eacc4a6
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65990503"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479271"
 ---
 # <a name="scale-hdinsight-clusters"></a>Dimensionar clusters HDInsight
 
@@ -26,7 +26,7 @@ Você pode dimensionar um cluster manualmente usando um dos métodos descritos a
 
 A Microsoft fornece os seguintes utilitários para dimensionar clusters:
 
-|Utilitário | Descrição|
+|Utilitário | DESCRIÇÃO|
 |---|---|
 |[PowerShell Az](https://docs.microsoft.com/powershell/azure)|[Conjunto AzHDInsightClusterSize](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) - ClusterName \<nome do Cluster > - TargetInstanceCount \<NewSize >|
 |[PowerShell AzureRM](https://docs.microsoft.com/powershell/azure/azurerm) |[Conjunto AzureRmHDInsightClusterSize](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) - ClusterName \<nome do Cluster > - TargetInstanceCount \<NewSize >|
@@ -34,7 +34,7 @@ A Microsoft fornece os seguintes utilitários para dimensionar clusters:
 |[CLI do Azure](hdinsight-administer-use-command-line.md)|redimensionamento do cluster hdinsight do Azure \<clusterName > \<contagem de instâncias de destino > |
 |[Portal do Azure](https://portal.azure.com)|Abra o painel do cluster HDInsight, selecione **tamanho do Cluster** no menu à esquerda, em seguida, no painel de tamanho do Cluster, digite o número de nós de trabalho e selecione Salvar.|  
 
-![Dimensionar cluster](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
+![Dimensionar Cluster](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
 
 Usando qualquer um desses métodos, você pode aumentar ou reduzir verticalmente seu cluster HDInsight em apenas alguns minutos.
 
@@ -58,13 +58,12 @@ Para evitar que os trabalhos em execução falhar durante a operação de reduç
 1. Encerre manualmente os trabalhos.
 1. Reenvie os trabalhos após a conclusão da operação de escala.
 
-Para ver uma lista de pendentes e trabalhos em execução, você pode usar o YARN **ResourceManager UI**, siga estas etapas:
+Para ver uma lista de pendentes e trabalhos em execução, você pode usar o YARN **Gerenciador de recursos de UI**, siga estas etapas:
 
-1. Entre no [Portal do Azure](https://portal.azure.com).
-2. Da esquerda, navegue até **todos os serviços** > **Analytics** > **Clusters de HDInsight**e, em seguida, selecione seu cluster.
-3. No modo de exibição principal, navegue até **painéis do Cluster** > **Ambari base**. Insira suas credenciais do cluster.
-4. Na UI do Ambari, selecione **YARN** na lista de serviços no menu à esquerda.  
-5. Na página do YARN, selecione **Links rápidos** e passe o mouse sobre o nó principal ativo, em seguida, selecione **UI ResourceManager**.
+1. Dos [portal do Azure](https://portal.azure.com/), selecione o cluster.  Consulte [lista e mostrar clusters](./hdinsight-administer-use-portal-linux.md#showClusters) para obter instruções. O cluster é aberto em uma nova página do portal.
+2. No modo de exibição principal, navegue até **painéis do Cluster** > **Ambari base**. Insira suas credenciais do cluster.
+3. Na UI do Ambari, selecione **YARN** na lista de serviços no menu à esquerda.  
+4. Na página do YARN, selecione **Links rápidos** e passe o mouse sobre o nó principal ativo, em seguida, selecione **UI ResourceManager**.
 
     ![Interface do usuário do ResourceManager](./media/hdinsight-scaling-best-practices/resourcemanager-ui.png)
 

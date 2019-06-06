@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 11/24/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: b3177c5dfc5602dd2b6530b0934c17400ab5d528
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: 4b26446845d004b4dd92807c0b5ec0ada9ed181f
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65978889"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475230"
 ---
 # <a name="buy-a-custom-domain-name-for-azure-app-service"></a>Comprar um nome de domínio personalizado para Serviço de Aplicativo do Azure
 
@@ -55,7 +55,7 @@ A página de gerenciamento do aplicativo do Serviço de Aplicativo é exibida.
 
 ### <a name="check-the-pricing-tier"></a>Verifique o tipo de preço
 
-No painel de navegação à esquerda da página do aplicativo, role até a seção **Configurações** e selecione **Escalar verticalmente (plano do Serviço de Aplicativo)**.
+No painel de navegação à esquerda da página do aplicativo, role até a seção **Configurações** e selecione **Escalar verticalmente (plano do Serviço de Aplicativo)** .
 
 ![Menu Escalar verticalmente](./media/app-service-web-tutorial-custom-domain/scale-up-menu.png)
 
@@ -79,7 +79,7 @@ Quando você receber a notificação a seguir, a operação de escala terá sido
 
 ## <a name="buy-the-domain"></a>Comprar o domínio
 
-### <a name="pricing-information"></a>Informações Sobre Preços
+### <a name="pricing-information"></a>Informações sobre preços
 Para obter informações sobre domínios do serviço de aplicativo do Azure de preços, visite o [página de preços do serviço de aplicativo](https://azure.microsoft.com/pricing/details/app-service/windows/) e role para baixo até o domínio do serviço de aplicativo.
 
 ### <a name="sign-in-to-azure"></a>Entrar no Azure
@@ -116,7 +116,7 @@ Clique em **Informações de Contato** e preencha o formulário de informações
 
 Em seguida, selecione as opções desejadas para seu domínio. Consulte a tabela a seguir para obter explicações:
 
-| Configuração | Valor sugerido | Descrição |
+| Configuração | Valor sugerido | DESCRIÇÃO |
 |-|-|-|
 |Proteção de privacidade | Habilitar | Escolha "Proteção de privacidade," que está incluído no preço de compra _gratuitamente_. Alguns domínios de nível superior são gerenciados pelo registradores que não dão suporte à proteção de privacidade e eles são listados na página **Proteção de privacidade**. |
 | Atribuir nomes de host padrão | **www** e **\@** | Se você quiser, selecione as associações de nome do host desejadas. Quando a operação de compra de domínio for concluída, o aplicativo poderá ser acessado nos nomes do host selecionados. Se o aplicativo estiver atrás do [Gerenciador de Tráfego do Microsoft Azure](https://azure.microsoft.com/services/traffic-manager/), você não verá a opção para atribuir o domínio raiz (@) porque o Gerenciador de Tráfego não dá suporte a registros A. Você pode fazer alterações às atribuições de nome do host após a compra de domínio ser concluída. |
@@ -138,13 +138,17 @@ De volta à página **Domínio de Serviço de Aplicativo**, clique em **OK**. En
 
 ### <a name="test-the-hostnames"></a>Testar os nomes de host
 
-Se você tiver atribuído nomes do host padrão ao aplicativo, também verá uma notificação de êxito para cada nome do host selecionado. 
+Se você tiver atribuído nomes do host padrão ao aplicativo, também verá uma notificação de êxito para cada nome do host selecionado.
 
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-bind-success.png)
 
-Você também verá os nomes de host selecionados na página **Domínios personalizados** na seção **Nomes de host personalizados**. 
+Você também verá os nomes de host selecionados na página **Domínios personalizados** na seção **Nomes de host personalizados**.
 
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-hostnames-added.png)
+
+> [!NOTE]
+> Um **Observação Secure** rótulo dos meios de domínio personalizado que ainda não está associado a um certificado SSL e receberá qualquer solicitação de HTTPS em um navegador para seu domínio personalizado e erro ou aviso, dependendo do navegador. Para configurar a associação de SSL, consulte [comprar e configurar um certificado SSL para o serviço de aplicativo do Azure](web-sites-purchase-ssl-web-site.md).
+>
 
 Para testar os nomes de host, navegue até os nomes de host listados no navegador. No exemplo na captura de tela anterior, tente navegar até _kontoso.net_ e _www\.kontoso.net_.
 
@@ -275,7 +279,7 @@ No menu da esquerda do domínio, selecione **Associações de nome do host**. As
 
 Você não pode excluir o Domínio de Serviço de Aplicativo até que todas as associações de nome de host sejam excluídas.
 
-Exclua cada associação de nome do host selecionando **…** > **Excluir**. Depois que todas as associações forem excluídas, selecione **Salvar**.
+Exclua cada associação de nome do host selecionando **…**  > **Excluir**. Depois que todas as associações forem excluídas, selecione **Salvar**.
 
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-delete-hostname-bindings.png)
 

@@ -2,20 +2,20 @@
 title: Entrada na Web com OpenID Connect - Azure Active Directory B2C | Microsoft Docs
 description: Crie aplicativos web usando o protocolo de autenticação OpenID Connect no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/16/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 4137360fadab0206c6569b58d6a9a0519ce74450
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 85639e2648131f9475ad2ae77f31d43e64bf82e7
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64703944"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66509216"
 ---
 # <a name="web-sign-in-with-openid-connect-in-azure-active-directory-b2c"></a>Entrada na Web com o OpenID Connect no Azure Active Directory B2C
 
@@ -76,13 +76,13 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 | --------- | -------- | ----------- |
 | client_id | Sim | A ID de aplicativo do [portal do Azure](https://portal.azure.com/) atribuído ao seu aplicativo. |
 | response_type | Sim | Deve incluir um token de ID para o OpenID Connect. Se seu aplicativo web também precisa de tokens para chamar uma API da web, você pode usar `code+id_token`. |
-| redirect_uri | Não  | O `redirect_uri` parâmetro do seu aplicativo, onde as respostas de autenticação podem ser enviadas e recebidas pelo seu aplicativo. Ele deve corresponder exatamente a um do `redirect_uri` parâmetros que você registrou no portal do Azure, exceto que ele deve ser codificado por URL. |
+| redirect_uri | Não | O `redirect_uri` parâmetro do seu aplicativo, onde as respostas de autenticação podem ser enviadas e recebidas pelo seu aplicativo. Ele deve corresponder exatamente a um do `redirect_uri` parâmetros que você registrou no portal do Azure, exceto que ele deve ser codificado por URL. |
 | scope | Sim | Uma lista de escopos separados por espaços. O escopo `openid` indica uma permissão para entrar no usuário e obter dados sobre ele na forma de tokens de ID. O `offline_access` escopo é opcional para aplicativos da web. Ele indica que o seu aplicativo precisará uma *token de atualização* para acessar recursos estendido. |
-| response_mode | Não  | O método que é usado para enviar o código de autorização resultante de volta para seu aplicativo. Ele pode ser `query`, `form_post` ou `fragment`.  O modo de resposta `form_post` é recomendado para maior segurança. |
-| state | Não  | Um valor incluído na solicitação que também é retornada na resposta de token. Pode ser uma cadeia de caracteres de qualquer conteúdo desejado. Um valor exclusivo gerado aleatoriamente que normalmente é usado para impedir ataques de solicitação intersite forjada. O estado também é usado para codificar as informações sobre o estado do usuário no aplicativo antes da solicitação de autenticação ocorrida, como a página em que estava. |
+| response_mode | Não | O método que é usado para enviar o código de autorização resultante de volta para seu aplicativo. Ele pode ser `query`, `form_post` ou `fragment`.  O modo de resposta `form_post` é recomendado para maior segurança. |
+| estado | Não | Um valor incluído na solicitação que também é retornada na resposta de token. Pode ser uma cadeia de caracteres de qualquer conteúdo desejado. Um valor exclusivo gerado aleatoriamente que normalmente é usado para impedir ataques de solicitação intersite forjada. O estado também é usado para codificar as informações sobre o estado do usuário no aplicativo antes da solicitação de autenticação ocorrida, como a página em que estava. |
 | nonce | Sim | Um valor incluído na solicitação (gerado pelo aplicativo) que está incluída no token de ID resultante como uma declaração. O aplicativo pode, em seguida, verifique se esse valor para reduzir os ataques de reprodução de token. Normalmente, o valor é uma cadeia de caracteres aleatória e exclusiva que pode ser usada para identificar a origem da solicitação. |
 | p | Sim | O fluxo de usuário que é executado. É o nome de um fluxo de usuário que é criado em seu locatário do Azure AD B2C. O nome do fluxo de usuário deve começar com `b2c\_1\_`. |
-| prompt | Não  | O tipo de interação do usuário que é necessária. O único valor válido no momento é `login`, que força o usuário a inserir suas credenciais nessa solicitação. |
+| prompt | Não | O tipo de interação do usuário que é necessária. O único valor válido no momento é `login`, que força o usuário a inserir suas credenciais nessa solicitação. |
 
 Neste ponto, o usuário é solicitado a concluir o fluxo de trabalho. O usuário talvez precise inserir seu nome de usuário e senha, entrar com uma identidade social ou inscrever-se para o diretório. Pode haver qualquer outro número de etapas, dependendo de como o fluxo de usuário é definido.
 
@@ -100,8 +100,8 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
 | Parâmetro | DESCRIÇÃO |
 | --------- | ----------- |
 | id_token | O token de ID que o aplicativo solicitou. Você pode usar o token de ID para verificar a identidade do usuário e iniciar uma sessão com o usuário. |
-| código | O código de autorização que o aplicativo solicitou, se você usou `response_type=code+id_token`. O aplicativo pode usar o código de autorização para solicitar um token de acesso para um recurso de destino. Normalmente, os códigos de autorização expiram após cerca de 10 minutos. |
-| state | Se um parâmetro `state` estiver incluído na solicitação, o mesmo valor deverá aparecer na resposta. O aplicativo deve verificar se o `state` valores na solicitação e resposta são idênticos. |
+| code | O código de autorização que o aplicativo solicitou, se você usou `response_type=code+id_token`. O aplicativo pode usar o código de autorização para solicitar um token de acesso para um recurso de destino. Normalmente, os códigos de autorização expiram após cerca de 10 minutos. |
+| estado | Se um parâmetro `state` estiver incluído na solicitação, o mesmo valor deverá aparecer na resposta. O aplicativo deve verificar se o `state` valores na solicitação e resposta são idênticos. |
 
 As respostas de erro também podem ser enviadas para o `redirect_uri` parâmetro para que o aplicativo possa tratá-las adequadamente:
 
@@ -116,7 +116,7 @@ error=access_denied
 | --------- | ----------- |
 | error | Um código que pode ser usado para classificar os tipos de erros que ocorrem. |
 | error_description | Uma mensagem de erro específico que pode ajudar a identificar a causa raiz de um erro de autenticação. |
-| state | Se um parâmetro `state` estiver incluído na solicitação, o mesmo valor deverá aparecer na resposta. O aplicativo deve verificar se o `state` valores na solicitação e resposta são idênticos. |
+| estado | Se um parâmetro `state` estiver incluído na solicitação, o mesmo valor deverá aparecer na resposta. O aplicativo deve verificar se o `state` valores na solicitação e resposta são idênticos. |
 
 ## <a name="validate-the-id-token"></a>Validar o token de ID
 
@@ -167,8 +167,8 @@ grant_type=authorization_code&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&sco
 | p | Sim | O fluxo de usuário que foi usado para adquirir o código de autorização. Você não pode usar um fluxo de usuário diferente nessa solicitação. Adicione este parâmetro para a cadeia de caracteres de consulta, não ao corpo do POST. |
 | client_id | Sim | A ID de aplicativo do [portal do Azure](https://portal.azure.com/) atribuído ao seu aplicativo. |
 | grant_type | Sim | O tipo de concessão, que deve ser `authorization_code` para o fluxo do código de autorização. |
-| scope | Não  | Uma lista de escopos separados por espaços. O escopo `openid` indica uma permissão para conectar o usuário e obter dados sobre ele na forma de parâmetros de id_token. Ele pode ser usado para obter tokens para seu web de back-end do aplicativo API, que é representado pela mesma ID de aplicativo do cliente. O `offline_access` escopo indica que seu aplicativo precisa de um token de atualização para acessar recursos estendido. |
-| código | Sim | O código de autorização que você adquiriu no início do fluxo de usuário. |
+| scope | Não | Uma lista de escopos separados por espaços. O escopo `openid` indica uma permissão para conectar o usuário e obter dados sobre ele na forma de parâmetros de id_token. Ele pode ser usado para obter tokens para seu web de back-end do aplicativo API, que é representado pela mesma ID de aplicativo do cliente. O `offline_access` escopo indica que seu aplicativo precisa de um token de atualização para acessar recursos estendido. |
+| code | Sim | O código de autorização que você adquiriu no início do fluxo de usuário. |
 | redirect_uri | Sim | O parâmetro `redirect_uri` do aplicativo em que você recebeu o código de autorização. |
 | client_secret | Sim | O segredo do aplicativo que foi gerado na [portal do Azure](https://portal.azure.com/). O segredo do aplicativo é um artefato de segurança importante. Você deve armazená-lo com segurança no servidor. Altere esse segredo do cliente em intervalos periódicos. |
 
@@ -234,8 +234,8 @@ grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=op
 | p | Sim | O fluxo de usuário que foi usado para adquirir o token de atualização original. Você não pode usar um fluxo de usuário diferente nessa solicitação. Adicione este parâmetro para a cadeia de caracteres de consulta, não ao corpo do POST. |
 | client_id | Sim | A ID de aplicativo do [portal do Azure](https://portal.azure.com/) atribuído ao seu aplicativo. |
 | grant_type | Sim | O tipo de concessão, que deve ser um token de atualização para essa parte do fluxo de código de autorização. |
-| scope | Não  | Uma lista de escopos separados por espaços. O escopo `openid` indica uma permissão para entrar no usuário e obter dados sobre ele na forma de tokens de ID. Ele pode ser usado para enviar os tokens para seu web de back-end do aplicativo API, que é representado pela mesma ID de aplicativo do cliente. O `offline_access` escopo indica que seu aplicativo precisa de um token de atualização para acessar recursos estendido. |
-| redirect_uri | Não  | O parâmetro `redirect_uri` do aplicativo em que você recebeu o código de autorização. |
+| scope | Não | Uma lista de escopos separados por espaços. O escopo `openid` indica uma permissão para entrar no usuário e obter dados sobre ele na forma de tokens de ID. Ele pode ser usado para enviar os tokens para seu web de back-end do aplicativo API, que é representado pela mesma ID de aplicativo do cliente. O `offline_access` escopo indica que seu aplicativo precisa de um token de atualização para acessar recursos estendido. |
+| redirect_uri | Não | O parâmetro `redirect_uri` do aplicativo em que você recebeu o código de autorização. |
 | refresh_token | Sim | O token de atualização original que foi adquirido na segunda parte do fluxo. O `offline_access` escopo deve ser usado na autorização e solicitações de token para receber um token de atualização. |
 | client_secret | Sim | O segredo do aplicativo que foi gerado na [portal do Azure](https://portal.azure.com/). O segredo do aplicativo é um artefato de segurança importante. Você deve armazená-lo com segurança no servidor. Altere esse segredo do cliente em intervalos periódicos. |
 
@@ -289,7 +289,7 @@ p=b2c_1_sign_in
 | Parâmetro | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | p | Sim | O fluxo de usuário que você quer usar para desconectar o usuário do aplicativo. |
-| post_logout_redirect_uri | Não  | A URL à qual o usuário deve ser redirecionado após uma saída bem-sucedida. Se não for incluído, Azure AD B2C mostrará ao usuário uma mensagem genérica. |
+| post_logout_redirect_uri | Não | A URL à qual o usuário deve ser redirecionado após uma saída bem-sucedida. Se não for incluído, Azure AD B2C mostrará ao usuário uma mensagem genérica. |
 
 Direcionando o usuário para o `end_session` ponto de extremidade limpa alguns do estado do usuário único logon com o Azure AD B2C, mas ele não desconecta o usuário de sua sessão do IDP (provedor) de identidade social. Se o usuário selecionar o mesmo IDP durante uma conexão subsequente, eles são autenticados novamente sem inserir as credenciais. Se um usuário quiser sair do aplicativo, isso não significa necessariamente que desejam desconectar sua conta do Facebook. No entanto, se as contas locais forem usadas, a sessão do usuário termina corretamente.
 

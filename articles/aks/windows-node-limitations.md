@@ -5,14 +5,14 @@ services: container-service
 author: tylermsft
 ms.service: container-service
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 05/31/2019
 ms.author: twhitney
-ms.openlocfilehash: 34ece6e49332f781f688a8741db3514faf8c9a25
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 12fb9dc67e8afae3dcb9ade97dd61ab438e0fac5
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66304405"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475410"
 ---
 # <a name="current-limitations-for-windows-server-node-pools-and-application-workloads-in-azure-kubernetes-service-aks"></a>Limitações atuais para pools de nós do Windows Server e cargas de trabalho do aplicativo no serviço de Kubernetes do Azure (AKS)
 
@@ -45,6 +45,7 @@ As seguintes limitações de upstream para contêineres do Windows Server no Kub
 As seguintes limitações adicionais se aplicam ao suporte de pool de nós do Windows Server no AKS:
 
 - Um cluster do AKS sempre contém um pool de nós do Linux como o primeiro pool de nós. Este primeiro pool de nós baseados em Linux não pode ser excluído, a menos que o próprio cluster do AKS é excluído.
+- Atualmente, o AKS suporta apenas o balanceador de carga básico que só permite o pool de um back-end, o pool de nós do Linux padrão. Como resultado, o tráfego de saída dos pods do Windows sempre será [convertido em um endereço IP público do Azure gerenciado][azure-outbound-traffic]. Como esse endereço IP não é configurável, não é possível no momento para lista de permissões o tráfego proveniente de pods do Windows. 
 - Clusters AKS devem usar o modelo de rede (Avançado) CNI do Azure.
     - Não há suporte para a rede Kubenet (basic). Você não pode criar um cluster do AKS que usa kubenet. Para obter mais informações sobre as diferenças nos modelos de rede, consulte [rede conceitos para aplicativos no AKS][azure-network-models].
     - O modelo de rede CNI do Azure requer planejamento adicional e considerações sobre o gerenciamento de endereço IP. Para obter mais informações sobre como planejar e implementar o CNI do Azure, consulte [rede configurar CNI do Azure no AKS][configure-azure-cni].
@@ -87,3 +88,4 @@ Para obter uma introdução a contêineres do Windows Server no AKS, [criar um p
 [windows-node-cli]: windows-container-cli.md
 [aks-support-policies]: support-policies.md
 [aks-faq]: faq.md
+[azure-outbound-traffic]: ../load-balancer/load-balancer-outbound-connections.md#defaultsnat

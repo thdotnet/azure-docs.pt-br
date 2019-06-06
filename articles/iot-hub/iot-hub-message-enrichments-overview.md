@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: robinsh
-ms.openlocfilehash: 2de945d2ef1d87b47ea81aac034916466d3c9bda
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 6ddfd90956fde0c57e14083a3704cbf365456c75
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66258843"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735156"
 ---
 # <a name="message-enrichments-for-device-to-cloud-iot-hub-messages-preview"></a>Aprimoramentos de mensagem para mensagens do IoT Hub do dispositivo para nuvem (visualização)
 
@@ -49,6 +49,8 @@ As mensagens podem vir de qualquer fonte de dados com suporte pelo [roteamento d
 
 Você pode adicionar aprimoramentos para mensagens que serão o ponto de extremidade interno de um IoT Hub, ou que estão sendo roteadas para os pontos de extremidade personalizados, como o armazenamento de BLOBs do Azure, uma fila do barramento de serviço ou um tópico do barramento de serviço.
 
+Você também pode adicionar aprimoramentos para as mensagens que estão sendo publicadas, selecionando o ponto de extremidade como a grade de eventos à grade de eventos. Para obter mais informações, consulte [Iot Hub e a grade de eventos](iot-hub-event-grid.md).
+
 Aprimoramentos são aplicados por ponto de extremidade. Se você especificar cinco aprimoramentos ser marcada para um ponto de extremidade específico, todas as mensagens enviadas para esse ponto de extremidade são marcadas com os mesmos aprimoramentos de cinco.
 
 Para ver como experimentar os aprimoramentos de mensagem, consulte o [tutorial de aprimoramentos de mensagem](tutorial-message-enrichments.md)
@@ -75,7 +77,7 @@ Aprimoramentos de mensagem estão disponíveis sem nenhum custo adicional. No mo
 
 ## <a name="availability"></a>Disponibilidade
 
-Esse recurso está disponível em visualização e está disponível em todas as regiões, exceto o Leste dos EUA, oeste dos EUA, Europa Ocidental, [do Azure governamental](/azure-government/documentation-government-welcome.md), [do Azure na China 21Vianet](/azure/china/china-welcome.md), e [Azure Alemanha](https://azure.microsoft.com/global-infrastructure/germany/).
+Esse recurso está disponível em visualização e está disponível em todas as regiões, exceto o Leste dos EUA, oeste dos EUA, Europa Ocidental, [do Azure governamental](/azure/azure-government/documentation-government-welcome), [do Azure na China 21Vianet](/azure/china/china-welcome), e [Azure Alemanha](https://azure.microsoft.com/global-infrastructure/germany/).
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -1,34 +1,34 @@
 ---
-title: Gerenciar o Azure Data Box por meio do portal do Azure | Microsoft Docs
-description: Descreve como usar o portal do Azure para administrar o Azure Data Box.
+title: Gerenciar o Azure Data Box, Azure dados caixa pesada por meio do portal do Azure | Microsoft Docs
+description: Descreve como usar o portal do Azure para administrar o Azure Data Box e pesada de caixa de dados do Azure.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 04/15/2019
+ms.date: 05/30/2019
 ms.author: alkohli
-ms.openlocfilehash: 31909e1f13d211aa87f13547218a6967d8e195ac
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 5ece12e117db7b334bce8edfd49a5a622e46e13c
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65950553"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427726"
 ---
-# <a name="use-the-azure-portal-to-administer-your-azure-data-box"></a>Usar o portal do Azure para administrar o Azure Data Box
+# <a name="use-the-azure-portal-to-administer-your-azure-data-box-and-azure-data-box-heavy"></a>Usar o portal do Azure para administrar o Azure Data Box e pesada de caixa de dados do Azure
 
-Este artigo descreve alguns dos fluxos de trabalho complexos e tarefas de gerenciamento que podem ser executadas no Azure Data Box. Você pode gerenciar o Data Box pelo portal do Azure ou pela interface do usuário da Web local.
+Este artigo se aplica ao Azure Data Box e pesada de caixa de dados do Azure. Este artigo descreve alguns dos fluxos de trabalho complexos e tarefas de gerenciamento que podem ser executadas no dispositivo Azure Data Box. Você pode gerenciar o dispositivo Data Box pelo portal do Azure ou por meio do local da web da interface do usuário.
 
-Este artigo se concentra nas tarefas que você pode executar usando o portal do Azure. Use o portal do Azure para gerenciar pedidos, gerenciar o Data Box e acompanhar o status do pedido, conforme ele progride para a conclusão.
+Este artigo se concentra nas tarefas que você pode executar usando o portal do Azure. Use o portal do Azure para gerenciar pedidos, gerenciar o dispositivo Data Box e acompanhar o status do pedido conforme ela prossegue até a conclusão.
 
 
 ## <a name="cancel-an-order"></a>Cancelar um pedido
 
-Sempre pode haver a necessidade de cancelar um pedido depois de feito, por vários motivos. Você somente pode cancelar o pedido antes que ele seja processado. Depois que o pedido for processado e o Data Box for preparado, não será mais possível cancelar o pedido. 
+Sempre pode haver a necessidade de cancelar um pedido depois de feito, por vários motivos. Você somente pode cancelar o pedido antes que ele seja processado. Depois que o pedido é processado e dispositivo Data Box é preparado, não é possível cancelar o pedido.
 
 Execute as seguintes etapas para cancelar um pedido.
 
-1.  Vá para **Visão Geral > Cancelar**. 
+1.  Vá para **Visão Geral > Cancelar**.
 
     ![Cancelar pedido 1](media/data-box-portal-admin/cancel-order1.png)
 
@@ -36,11 +36,11 @@ Execute as seguintes etapas para cancelar um pedido.
 
     ![Cancelar pedido 2](media/data-box-portal-admin/cancel-order2.png)
 
-3.  Depois que o pedido for cancelado, o portal atualizará o status do pedido e o exibirá como **Cancelado**. 
+3.  Depois que o pedido for cancelado, o portal atualizará o status do pedido e o exibirá como **Cancelado**.
 
 ## <a name="clone-an-order"></a>Clonar um pedido
 
-A clonagem é útil em determinadas situações. Por exemplo, um usuário usou o Data Box para transferir alguns dados. Conforme mais dados são gerados, surge a necessidade de outro Data Box para transferir dados para o Azure. Nesse caso, o mesmo pedido pode simplesmente ser clonado.
+A clonagem é útil em determinadas situações. Por exemplo, um usuário usou o Data Box para transferir alguns dados. Conforme mais dados são gerados, é necessário para outro dispositivo Data Box transferir dados para o Azure. Nesse caso, o mesmo pedido pode simplesmente ser clonado.
 
 Execute as etapas a seguir para clonar um pedido.
 
@@ -67,15 +67,15 @@ Só é possível excluir pedidos que tenham sido concluídos ou cancelados. Exec
 
 3. Insira o nome do pedido quando solicitado a confirmar a exclusão de um pedido. Clique em **Excluir**.
 
-## <a name="download-shipping-label"></a>Baixar etiqueta de remessa
+## <a name="download-shipping-label"></a>Faça o download da etiqueta de remessa
 
-Talvez você precise baixar a etiqueta de remessa se a exibição de tinta virtual do Data Box não estiver funcionando e não exibir a etiqueta de remessa de devolução. 
+Talvez você precise baixar a etiqueta de remessa se a exibição de tinta virtual do Data Box não estiver funcionando e não exibir a etiqueta de remessa de devolução. Não há nenhuma exibição de tinta E sobre os dados de caixa pesadas e, portanto, esse fluxo de trabalho não se aplica a caixa de dados pesados.
 
 Execute as etapas a seguir para baixar uma etiqueta de remessa.
 
 1.  Vá para **Visão geral > Baixar etiqueta de remessa**. Essa opção fica disponível somente depois que o dispositivo é enviado. 
 
-    ![Baixar etiqueta de remessa](media/data-box-portal-admin/download-shipping-label.png)
+    ![Faça o download da etiqueta de remessa](media/data-box-portal-admin/download-shipping-label.png)
 
 2.  Essa opção baixa a etiqueta de remessa de devolução a seguir. Salve a etiqueta e imprimi-a. Dobre e insira a etiqueta na abertura do dispositivo. Verifique se a etiqueta está visível. Remova todos os adesivos do dispositivo referentes ao envio anterior.
 
@@ -97,7 +97,7 @@ Execute as etapas a seguir para editar o pedido.
 
 ## <a name="edit-notification-details"></a>Editar detalhes da notificação
 
-Talvez seja necessário alterar os usuários que devem receber os emails de status do pedido. Por exemplo, um usuário precisa ser informado quando o dispositivo é entregue ou recolhido. Outro usuário talvez precise ser informado quando a cópia de dados for concluída, para verificar que os dados estão na conta de armazenamento do Azure antes de excluí-la da origem. Nesses casos, você pode editar os detalhes da notificação.
+Talvez seja necessário alterar os usuários que devem receber os emails de status do pedido. Por exemplo, um usuário precisa ser informado quando o dispositivo é entregue ou recolhido. Outro usuário talvez precise ser informado quando a cópia de dados é concluída para que possa verificar se os dados estão na conta de armazenamento do Azure antes de excluí-los da origem. Nesses casos, você pode editar os detalhes da notificação.
 
 Execute as etapas a seguir para editar os detalhes de notificação.
 
@@ -110,7 +110,7 @@ Execute as etapas a seguir para editar os detalhes de notificação.
     ![Editar detalhes da notificação 2](media/data-box-portal-admin/edit-notification-details2.png)
 
 
-## <a name="download-order-history"></a>Baixar o histórico de pedidos
+## <a name="download-order-history"></a>Baixar histórico de pedidos
 
 Depois que o pedido do Data Box estiver completo, os dados nos discos do dispositivo serão apagados. Quando a limpeza de dispositivo for concluída, você poderá baixar o histórico de pedidos no portal do Azure.
 
@@ -120,7 +120,7 @@ Execute as etapas a seguir para baixar o histórico de pedidos.
 
     ![Baixar histórico de pedidos](media/data-box-portal-admin/download-order-history-1.png)
 
-2. Clique em **Baixar histórico de pedidos**. No histórico baixado, você verá um registro de logs de rastreamento da operadora. Se você rolar para baixo até a parte inferior desse log, poderá ver os links para:
+2. Clique em **Baixar histórico de pedidos**. No histórico baixado, você verá um registro de logs de rastreamento da operadora. Haverá dois conjuntos de log correspondente para os dois nós em uma caixa de dados pesados. Se você rolar para baixo até a parte inferior desse log, poderá ver os links para:
     
    - **Copiar logs**: tem a lista de arquivos com erros durante a cópia dos dados do Data Box para a conta de armazenamento do Azure.
    - **Logs de auditoria**: contêm informações sobre ativação e acesso compartilhado no Data Box quando ele está fora do datacenter do Azure.
@@ -197,22 +197,22 @@ Você também pode exibir a cadeia de logs de custódia que incluem os logs de a
 
 Quando o status do dispositivo for alterado no portal, você será notificado por email.
 
-|Status do pedido |Descrição |
+|Status do pedido |DESCRIÇÃO |
 |---------|---------|
 |Encomendado     | Pedido feito com êxito. <br>Se o dispositivo estiver disponível, a Microsoft identificará um dispositivo para envio e o preparará. <br> Se o dispositivo não estiver disponível imediatamente, o pedido apenas será processado quando o dispositivo estiver disponível. O pedido pode levar de vários dias a alguns meses para ser processado. Se o pedido não puder ser processado em até 90 dias, ele será cancelado e você será notificado.         |
 |Processado     | O processamento de pedidos foi concluído. De acordo com seu pedido, o dispositivo está preparado para o envio no data center.         |
 |Expedido     | O pedido foi enviado. Use a ID de acompanhamento exibida no pedido no portal para acompanhar a remessa.        |
 |Entregue     | A remessa foi entregue no endereço especificado no pedido.        |
-|Recebido     |A remessa de devolução foi recolhida e verificada pela transportadora.         |
+|Recolhido     |A remessa de devolução foi recolhida e verificada pela transportadora.         |
 |Recebido     | O dispositivo foi recebido e verificado no datacenter do Azure. <br> Depois que a remessa for inspecionada, o upload do dispositivo será iniciado.      |
 |Cópia de dados     | Cópia de dados em andamento. Acompanhe o progresso de cópia do pedido no portal do Azure. <br> Aguarde até que a cópia de dados seja concluída. |
 |Concluído       |Pedido concluído com êxito.<br> Verifique se os dados estão no Azure antes de excluir os dados locais dos servidores.         |
 |Concluído com erros| A cópia de dados foi concluída, mas apresentou erros. <br> Examine os logs de cópia usando o caminho fornecido no portal do Azure.   |
-|Cancelada            |Pedido cancelado. <br> Você cancelou o pedido ou ocorreu um erro e o serviço cancelou o pedido. Se o pedido não puder ser processado em até 90 dias, ele também será cancelado e você será notificado.     |
+|Cancelado            |Pedido cancelado. <br> Você cancelou o pedido ou ocorreu um erro e o serviço cancelou o pedido. Se o pedido não puder ser processado em até 90 dias, ele também será cancelado e você será notificado.     |
 |Limpar | Os dados nos discos do dispositivo foram apagados. A limpeza do dispositivo é considerada concluída quando o histórico de pedidos fica disponível no portal do Azure.|
 
 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba como [Solucionar problemas do Data Box](data-box-faq.md).
+- Saiba como [problemas de caixa de solucionar problemas de dados e dados caixa pesada](data-box-troubleshoot.md).

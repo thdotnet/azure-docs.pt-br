@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/21/2019
-ms.openlocfilehash: 949468dfe26b076b5c5cf5cab8bbdc2038c7bd2a
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 021b9035b10ad5a08bca1842e8d0714b33c84271
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66165893"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66492433"
 ---
 # <a name="create-and-access-datasets-preview-in-azure-machine-learning"></a>Criar e acessar os conjuntos de dados (versão prévia) no Azure Machine Learning
 
@@ -40,7 +40,7 @@ Para criar e trabalhar com conjuntos de dados, você precisa:
 
 * Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Serviço do Azure Machine Learning](https://aka.ms/AMLFree) hoje mesmo.
 
-* Um [espaço de trabalho do Azure Machine Learning serviço espaço de trabalho do Azure Machine Learning serviço](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace)
+* Um [espaço de trabalho de serviço de Azure Machine Learning](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace)
 
 * O [SDK de aprendizado de máquina do Azure para Python instalado](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py), que inclui o pacote azureml conjuntos de dados.
 

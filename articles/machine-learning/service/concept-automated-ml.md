@@ -11,12 +11,12 @@ author: nacharya1
 ms.author: nilesha
 ms.date: 05/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 16d100256f9252b478500488c2dc5a01c7e6a0b5
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 93eb0fba91ce5064d04a340e8b3e5b984ee73081
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66418068"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515561"
 ---
 # <a name="what-is-automated-machine-learning"></a>O que é o aprendizado de máquina automatizado?
 
@@ -155,11 +155,11 @@ Com o Azure Machine Learning, você pode usar ML automatizado para criar um mode
 
 ML automatizado também está disponível em outras soluções da Microsoft, como:
 
-|Integrações|DESCRIÇÃO
-|------------|-----------
-|ML.NET|Seleção automática de modelos e treinamento em aplicativos .NET usando o Visual Studio e Visual Studio Code do ML.NET automatizadas ML (visualização). [Saiba mais](https://docs.microsoft.com/dotnet/machine-learning/automl-overview).
-|HDIsnight|Escalar horizontalmente seus trabalhos de treinamento de AM automatizados no Spark em clusters do HDInsight em paralelo. [Saiba mais](../../hdinsight/spark/apache-spark-run-machine-learning-automl.md).
-|PowerBI|Chame modelos do machine learning diretamente no Power BI (visualização). [Saiba mais](https://docs.microsoft.com/power-bi/service-machine-learning-automated).
+|Integrações|DESCRIÇÃO|
+|------------|-----------|
+|[ML.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview)|Seleção automática de modelos e treinamento em aplicativos .NET usando o Visual Studio e Visual Studio Code do ML.NET automatizadas ML (visualização).|
+|[HDIsnight](../../hdinsight/spark/apache-spark-run-machine-learning-automl.md)|Escalar horizontalmente seus trabalhos de treinamento de AM automatizados no Spark em clusters do HDInsight em paralelo.|
+|[PowerBI](https://docs.microsoft.com/power-bi/service-machine-learning-automated)|Chame modelos do machine learning diretamente no Power BI (visualização).|
 
 ## <a name="next-steps"></a>Próximas etapas
 

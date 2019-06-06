@@ -15,17 +15,17 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/30/2018
 ms.author: cynthn
-ms.openlocfilehash: cc0eee9dc36878f7a02b97453c859d94ea99b901
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.openlocfilehash: 4ef485bb91fe52e138b805f347e729fc4097fc7c
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57217131"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66431103"
 ---
 # <a name="encrypt-virtual-disks-on-a-windows-vm"></a>Criptografar discos virtuais em uma VM do Windows
 Para conformidade e segurança aprimorados da VM (máquina virtual), os discos virtuais no Azure podem ser criptografados. Os discos são criptografados usando chaves criptográficas protegidas em um Azure Key Vault. Você controla essas chaves criptográficas e pode auditar seu uso. Este artigo descreve como criptografar discos virtuais em uma VM do Windows usando o Azure PowerShell. Você também pode [criptografar uma VM do Linux usando a CLI do Azure](../linux/encrypt-disks.md).
 
-[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
+[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
 ## <a name="overview-of-disk-encryption"></a>Visão geral da criptografia de disco
 Os discos virtuais em VMs do Windows são criptografados em repouso usando o BitLocker. Não há custo para criptografar discos virtuais no Azure. As chaves criptográficas são armazenadas em um Azure Key Vault usando a proteção de software ou você pode importar ou gerar suas chaves nos Módulos de Segurança de Hardware (HSMs) certificados para os padrões FIPS 140-2 nível 2. Chaves criptográficas são usadas para criptografar e descriptografar discos virtuais conectados à sua VM. Você mantém o controle dessas chaves criptográficas e pode auditar seu uso. 
@@ -85,12 +85,12 @@ New-AzKeyVault -Location $location `
     -EnabledForDiskEncryption
 ```
 
-Você pode armazenar chaves criptográficas usando o software ou a proteção do modelo de segurança de hardware (HSM).  Um cofre de chaves padrão armazena apenas chaves protegidas por software. O uso de um HSM exige um cofre de chave premium por um custo adicional. Para criar um cofre de chave premium, na etapa anterior, adicione o parâmetro *-Sku "Premium"*. O exemplo a seguir usa chaves protegidas por software, desde que criamos um Cofre de Chaves padrão. 
+Você pode armazenar chaves criptográficas usando o software ou a proteção do modelo de segurança de hardware (HSM).  Um cofre de chaves padrão armazena apenas chaves protegidas por software. O uso de um HSM exige um cofre de chave premium por um custo adicional. Para criar um cofre de chave premium, na etapa anterior, adicione o parâmetro *-Sku "Premium"* . O exemplo a seguir usa chaves protegidas por software, desde que criamos um Cofre de Chaves padrão. 
 
 Para ambos os modelos de proteção, a plataforma do Azure deve ter acesso para solicitar as chaves criptográficas quando a VM é inicializada para descriptografar os discos virtuais. Crie uma chave de criptografia em seu Key Vault com [Add-AzureKeyVaultKey](https://docs.microsoft.com/powershell/module/az.keyvault/add-azkeyvaultkey). O exemplo a seguir cria uma chave chamada *myKey*:
 
 ```azurepowershell-interactive
-Add-AzureKeyVaultKey -VaultName $keyVaultName `
+Add-AzKeyVaultKey -VaultName $keyVaultName `
     -Name "myKey" `
     -Destination "Software"
 ```

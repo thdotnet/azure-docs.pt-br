@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 05/31/2019
 ms.author: abnarain
-ms.openlocfilehash: 6a7daae90254bb4192dbaf13e1c2f9202e2d2baa
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 7c86577abe1e8e158299e3a6aee2cff7f3568241
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65232418"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427144"
 ---
 # <a name="integration-runtime-in-azure-data-factory"></a>Integration Runtime no Azure Data Factory
 O IR (tempo de execução de integração) é a infraestrutura de computação usada pelo Azure Data Factory para fornecer as seguintes funcionalidades de integração de dados entre diferentes ambientes de rede:
@@ -40,7 +40,7 @@ A tabela a seguir descreve as funcionalidades e o suporte de rede para cada um d
 
 Tipo de IR | Rede pública | Rede privada
 ------- | -------------- | ---------------
-Azure | Fluxo de Dados<br/>Movimentação de dados<br/>Expedição de atividade | &nbsp;
+Azure | Fluxo de dados<br/>Movimentação de dados<br/>Expedição de atividade | &nbsp;
 Auto-hospedado | Movimentação de dados<br/>Expedição de atividade | Movimentação de dados<br/>Expedição de atividade
 Azure-SSIS | Execução de pacote SSIS | Execução de pacote SSIS
 
@@ -114,11 +114,11 @@ A localização do IR define a localização da respectiva computação de back-
 ### <a name="azure-ir-location"></a>Localização do IR do Azure
 Você pode definir um determinado local de um IR do Azure, onde a movimentação de dados ou a expedição de atividade ocorrerá nessa região específica. 
 
-Se você optar por usar a IR do Azure de resolução automática, que é o padrão, 
+Se você optar por usar o **resolver automaticamente IR do Azure** que é o padrão 
 
 - Para a atividade de cópia, o ADF fará um melhor esforço para detectar automaticamente o armazenamento de dados do coletor e da fonte para escolher o melhor local na mesma região, se disponível, ou o mais próximo na mesma geografia. Ou, se não for detectável, usar a região do data factory como alternativa.
 
-- Para distribuição de atividade de transformação e execução de atividade de Pesquisa/GetMetadata, o ADF usará o IR na região do data factory.
+- Para a execução da atividade GetMetadata/pesquisa/exclusão (também conhecido como atividades de Pipeline), atividade de transformação expedição (também conhecido como externas atividades) e criação de operações (conexão de teste, lista de pastas de navegação e lista de tabelas, visualizar dados), ADF ele usará o IR na região da fábrica de dados.
 
 - Para o fluxo de dados, o ADF usará o IR na região da fábrica de dados. 
 

@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f37c501bb53b3b73c30d02d00d49515f907e4ae
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: d2889af6000e77fba7a91392c0adb227588b5306
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65463625"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66430786"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Associar ou adicionar uma assinatura do Azure ao seu locatário do Azure Active Directory
 
@@ -42,6 +42,7 @@ Antes de associar ou adicionar sua assinatura, você deve executar as seguintes 
     - Os usuários que receberam funções usando o RBAC perderão o acesso
     - Administrador de serviços e Coadministradores perderão o acesso
     - Se você tiver qualquer cofres de chaves, eles ficarão inacessíveis e você precisará corrigi-los após a associação
+    - Se você tiver qualquer identidade gerenciada para recursos como máquinas virtuais ou aplicativos lógicos, você precisará habilitar novamente ou recriá-los após a associação
     - Se você tiver uma pilha do Azure registrado, você precisará registrá-lo novamente após a associação
 
 1. Entre usando uma conta que:
@@ -76,7 +77,9 @@ Depois de associar uma assinatura para um diretório diferente, pode haver etapa
 
 1. Se você tiver qualquer cofres de chaves, você deve alterar a ID de locatário do Cofre de chaves. Para obter mais informações, consulte [alterar uma ID de locatário do Cofre de chaves depois de mover uma assinatura](../../key-vault/key-vault-subscription-move-fix.md).
 
-2. Se você tiver registrado uma pilha do Azure usando essa assinatura, você deve registrar novamente. Para obter mais informações, consulte [registrar o Azure Stack com o Azure](/azure-stack/operator/azure-stack-registration).
+2. Se você estivesse usando as identidades atribuído pelo sistema gerenciado para recursos, você deve reabilitar essas. Se você estivesse usando as identidades atribuídas ao usuário gerenciado, você deve recriar essas. Depois de habilitar novamente ou recriar as identidades gerenciadas, você deve estabelecer novamente as permissões atribuídas a essas identidades. Para obter mais informações, consulte [What ' s identidades gerenciadas para recursos do Azure?](../managed-identities-azure-resources/overview.md).
+
+3. Se você tiver registrado uma pilha do Azure usando essa assinatura, você deve registrar novamente. Para obter mais informações, consulte [registrar o Azure Stack com o Azure](/azure-stack/operator/azure-stack-registration).
 
 
 

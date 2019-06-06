@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: fa7730247ddc5f30c3d21a32421a6c55ec4ef72e
-ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
+ms.openlocfilehash: 9b2630614e549181f4dd2f4e79871c4594d09201
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64872757"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66496854"
 ---
 # <a name="vpn-gateways-overview"></a>Visão geral de gateways VPN
 
@@ -37,6 +37,8 @@ Casos de uso de VPN site a site incluem:
 * Transferência conveniente de modelos VM, ISOs e outros arquivos de recursos do local para seu vCenter de nuvem privada.
 * Acessibilidade de cargas de trabalho em execução em sua nuvem privada da sua rede local.
 
+![Topologia de conexão de VPN site a Site](media/cloudsimple-site-to-site-vpn-connection.png)
+
 ### <a name="cryptographic-parameters"></a>Parâmetros de criptografia
 
 Uma conexão de VPN site a site usa os seguintes parâmetros de criptografia padrão para estabelecer uma conexão segura.  Quando você cria uma conexão de dispositivo VPN no local, os parâmetros devem corresponder.
@@ -52,7 +54,7 @@ Uma conexão de VPN site a site usa os seguintes parâmetros de criptografia pad
 | Algoritmo de hash| SHA 256 | SHA 256 | SHA 1 |
 | Grupo do Diffie Hellman (DH grupo) | 1 | 1 | 1 |
 | Tempo de vida | 28.800 segundos | 28.800 segundos | 28.800 segundos |
-| Tamanho dos Dados | 4 GB | 4 GB | 4 GB |
+| Tamanho dos dados | 4 GB | 4 GB | 4 GB |
 
 
 #### <a name="phase-2-proposals"></a>Propostas de fase 2 
@@ -63,7 +65,7 @@ Uma conexão de VPN site a site usa os seguintes parâmetros de criptografia pad
 | Algoritmo de hash| SHA 256 | SHA 256 | SHA 1 |
 | Perfeito encaminhar Secrecy Group (grupo de PFS) | Nenhum | Nenhum | Nenhum |
 | Tempo de vida | 1.800 segundos | 1.800 segundos | 1.800 segundos |
-| Tamanho dos Dados | 4 GB | 4 GB | 4 GB |
+| Tamanho dos dados | 4 GB | 4 GB | 4 GB |
 
 ## <a name="point-to-site-vpn-gateway"></a>Gateway de VPN ponto a site
 

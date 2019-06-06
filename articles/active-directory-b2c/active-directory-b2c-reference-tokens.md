@@ -2,20 +2,20 @@
 title: Visão geral dos tokens - Azure Active Directory B2C | Microsoft Docs
 description: Saiba mais sobre os tokens usados no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/16/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: ac3c2132fc28d9813a9322898f79c7cdfffa12d7
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: b0a5eca4823bd6ec7d1197adb205f7fb98f8d67e
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64681904"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66509091"
 ---
 # <a name="overview-of-tokens-in-azure-active-directory-b2c"></a>Visão geral dos tokens no Azure Active Directory B2C
 
@@ -65,14 +65,14 @@ A tabela a seguir lista as declarações que você pode esperar nos tokens de ID
 | Referência de classe de contexto de autenticação | `acr` | Não aplicável | Usado apenas com políticas mais antigas. |
 | Política de estrutura confiável | `tfp` | `b2c_1_signupsignin1` | O nome da política que foi usada para adquirir o token de ID. |
 | Hora da autenticação | `auth_time` | `1438535543` | A hora em que um usuário entrou pela última vez credenciais, representada na época. |
-| Escopo | `scp` | `Read`| As permissões concedidas ao recurso para um token de acesso. Várias permissões concedidas são separadas por um espaço. |
+| Scope | `scp` | `Read`| As permissões concedidas ao recurso para um token de acesso. Várias permissões concedidas são separadas por um espaço. |
 | Entidade Autorizada | `azp` | `975251ed-e4f5-4efd-abcb-5f1a8f566ab7` | A **ID do aplicativo** do aplicativo cliente que iniciou a solicitação. |
 
 ## <a name="configuration"></a>Configuração
 
 As propriedades a seguir são usadas para [gerenciar tempos de vida de tokens de segurança](configure-tokens.md) emitidos pelo Azure AD B2C:
 
-- **Duração dos tokens de acesso e ID (minutos)**: o tempo de vida do token portador do OAuth 2.0 usado para obter acesso a um recurso protegido. O padrão é 60 minutos. O mínimo (inclusive) é de 5 minutos. O máximo (inclusive) é 1440 minutos.
+- **Duração dos tokens de acesso e ID (minutos)** : o tempo de vida do token portador do OAuth 2.0 usado para obter acesso a um recurso protegido. O padrão é 60 minutos. O mínimo (inclusive) é de 5 minutos. O máximo (inclusive) é 1440 minutos.
 
 - **Vida útil do token de atualização (dias)** – o período de tempo máximo antes que um token de atualização pode ser usado para adquirir um novo acesso ou token de ID. O período de tempo também aborda a aquisição de um novo token de atualização se seu aplicativo tiver sido concedido a `offline_access` escopo. O padrão é 14 dias. O mínimo (inclusive) é um dia. O máximo (inclusive) é de 90 dias.
 

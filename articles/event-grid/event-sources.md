@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: spelluru
-ms.openlocfilehash: f6c00f4ada0590df91fce0c36281d0c0cac67b77
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 3611072759c62f42294730405f1dc402c496acce
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66257942"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735016"
 ---
 # <a name="event-sources-in-azure-event-grid"></a>Fontes de eventos na Grade de Eventos do Azure
 
@@ -140,6 +140,15 @@ Assine eventos do Azure Mapas para responder a eventos de cerca geográfica. Por
 | [Reagir a eventos do Azure Mapas usando a Grade de Eventos](../azure-maps/azure-maps-event-grid-integration.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Visão geral da integração do Azure Mapas com a Grade de Eventos. |
 | [Tutorial: Configurar uma cerca geográfica](../azure-maps/tutorial-geofence.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Este tutorial orienta você pelas etapas básicas para configurar uma cerca geográfica usando o Azure Mapas. Você usa a Grade de Eventos do Azure para transmitir os resultados da cerca geográfica e configurar uma notificação de acordo com os resultados desse limite. |
 | [Esquema do evento](event-schema-azure-maps.md) | Mostra campos nos eventos do Azure Mapas. |
+
+## <a name="app-configuration"></a>Configuração de aplicativos
+Assine eventos de configuração de aplicativo do Azure para responder a eventos de modificação de chave-valor.
+
+|Title | DESCRIÇÃO |
+|---------|---------|
+| [Reagir a eventos de configuração de aplicativo do Azure usando a grade de eventos](../azure-app-configuration/concept-app-configuration-event.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Visão geral da integração de configuração de aplicativo do Azure com a grade de eventos. |
+| [Guia de início rápido: encaminhar eventos de configuração de aplicativo do Azure para um ponto de extremidade da web personalizado com CLI do Azure](../azure-app-configuration/howto-app-configuration-event.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Mostra como usar a CLI do Azure para enviar eventos de configuração de aplicativo do Azure para um WebHook. |
+| [Esquema do evento](event-schema-app-configuration.md) | Mostra campos nos eventos de configuração de aplicativo do Azure. |
 
 
 ## <a name="next-steps"></a>Próximas etapas

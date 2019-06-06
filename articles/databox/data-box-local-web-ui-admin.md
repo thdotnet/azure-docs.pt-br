@@ -1,25 +1,25 @@
 ---
-title: Administração da interface do usuário da Web local do Microsoft Azure Data Box | Microsoft Docs em dados
-description: Descreve como usar a interface do usuário da Web local para administrar o dispositivo Data Box
+title: Local da web administração de interface do usuário no Azure Data Box, pesada de caixa de dados do Azure | Microsoft Docs
+description: Descreve como usar a interface do usuário da web local para administrar seus dispositivos e pesada de caixa de dados do Data Box
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: pod
-ms.topic: overview
-ms.date: 02/01/2019
+ms.topic: article
+ms.date: 06/03/2019
 ms.author: alkohli
-ms.openlocfilehash: d5b6949930161f78c6edf4213df98471e96b1d42
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
-ms.translationtype: HT
+ms.openlocfilehash: bf8af37b0caf51966e336bcb4cea0c4ece5ca9c7
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57404035"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66496257"
 ---
-# <a name="use-the-local-web-ui-to-administer-your-data-box"></a>Usar a interface do usuário da Web local para administrar o Data Box
+# <a name="use-the-local-web-ui-to-administer-your-data-box-and-data-box-heavy"></a>Usar a interface do usuário da web local para administrar o Data Box e a caixa de dados pesados
 
-Este artigo descreve algumas das tarefas de configuração e de gerenciamento que podem ser executadas no Data Box. Você pode gerenciar o Data Box por meio da IU do portal do Azure e da IU da Web local para o dispositivo. Este artigo concentra-se nas tarefas que você pode executar usando a interface do usuário da Web local.
+Este artigo descreve algumas das tarefas de configuração e gerenciamento que podem ser executadas nos dispositivos Data Box e pesada de caixa de dados. Você pode gerenciar os dispositivos de caixa de dados e dados de caixa pesada por meio da interface do usuário do portal do Azure e a IU da web local para o dispositivo. Este artigo concentra-se nas tarefas que você pode executar usando a interface do usuário da Web local.
 
-A interface do usuário da Web local do Data Box é usada para a configuração inicial do dispositivo. Você também pode usar a interface do usuário da Web local para desligar ou reiniciar o Data Box, executar testes de diagnóstico, atualizar software, exibir logs de cópia e gerar um pacote de logs para o Suporte da Microsoft.
+Web local da interface do usuário para o Data Box e pesada de caixa de dados é usada para a configuração inicial do dispositivo. Você também pode usar a interface do usuário da web local para desligar ou reiniciar o dispositivo, execute testes de diagnóstico, atualização de software, exibir logs de cópia e gerar um pacote de log para o Microsoft Support. Em um dispositivo pesada de caixa de dados com dois nós independentes, você pode acessar duas interfaces do usuário web local separada correspondente a cada nó do dispositivo.
 
 Este artigo inclui os seguintes tutoriais:
 
@@ -27,7 +27,7 @@ Este artigo inclui os seguintes tutoriais:
 - Desligar ou reiniciar seu dispositivo
 - Baixar arquivos de manifesto ou BOM
 - Exibir a capacidade disponível no dispositivo
-- Ignorar a validação de soma de verificação 
+- Ignorar a validação de soma de verificação
 
 ## <a name="generate-support-package"></a>Gerar pacote de suporte
 
@@ -52,9 +52,9 @@ Se você enfrentar problemas no dispositivo, crie um pacote de suporte com os lo
 
 ## <a name="shut-down-or-restart-your-device"></a>Desligar ou reiniciar seu dispositivo
 
-Você pode desligar ou reiniciar o Data Box usando a interface do usuário da Web local. Nós recomendamos que antes de reiniciar, você coloque os compartilhamentos offline no host e, em seguida, no dispositivo. Isso minimiza a possibilidade de dados corrompidos. Verifique se a cópia de dados não está em andamento quando você desligar o dispositivo.
+Você pode desligar ou reiniciar seu dispositivo usando o interface do usuário da web local. Nós recomendamos que antes de reiniciar, você coloque os compartilhamentos offline no host e, em seguida, no dispositivo. Isso minimiza a possibilidade de dados corrompidos. Verifique se a cópia de dados não está em andamento quando você desligar o dispositivo.
 
-Para desligar o Data Box, execute as seguintes etapas.
+Para desligar seu dispositivo, execute as seguintes etapas.
 
 1. Na interface do usuário da Web local, acesse **Desligar ou reiniciar**.
 2. Clique em **Desligar**.
@@ -80,11 +80,11 @@ Para reiniciar o Data Box, execute as seguintes etapas.
 
 ## <a name="download-bom-or-manifest-files"></a>Baixar arquivos de manifesto ou BOM
 
-A BOM (Lista de Materiais) ou os arquivos de manifesto contêm a lista dos arquivos copiados para o Data Box. Esses arquivos são gerados quando você prepara o Data Box para envio.
+A fatura de materiais (BOM) ou os arquivos de manifesto contém a lista dos arquivos que são copiados para a caixa de dados ou a caixa de dados pesados. Esses arquivos são gerados quando você prepara o dispositivo para o envio.
 
-Antes de começar, verifique se o Data Box concluiu a etapa de **Preparar para o envio**. Siga estas etapas para baixar a BOM ou os arquivos de manifesto:
+Antes de começar, certifique-se de que o dispositivo foi concluída **preparar para o envio** etapa. Siga estas etapas para baixar a BOM ou os arquivos de manifesto:
 
-1. Vá para a IU da Web local para o Data Box. Você verá que o Data Box concluiu a preparação para o envio. Quando a preparação do dispositivo for concluída, o status do dispositivo será exibido como **Pronto para envio**.
+1. Vá para a IU da web local para seu dispositivo. Você verá que o dispositivo foi concluída a preparação para o envio. Quando a preparação do dispositivo for concluída, o status do dispositivo será exibido como **Pronto para envio**.
 
     ![O dispositivo está pronto para envio](media/data-box-portal-admin/ready-to-ship.png)
 
@@ -109,6 +109,9 @@ Antes de começar, verifique se o Data Box concluiu a etapa de **Preparar para o
     |mydbmdrg2_MDisk-BOM.txt     |Disco Gerenciado         |SMB/NFS         |
 
 Você usa esta lista para verificar os arquivos carregados na conta de Armazenamento do Azure depois que o Data Box retorna para o datacenter do Azure. Abaixo é mostrado um exemplo de arquivo de manifesto.
+
+> [!NOTE]
+> Em uma pesada de caixa de dados, dois conjuntos de lista de arquivos (BOM) são presentes correspondente para os dois nós no dispositivo.
 
 ```xml
 <file size="52689" crc64="0x95a62e3f2095181e">\databox\media\data-box-deploy-copy-data\prepare-to-ship2.png</file>
@@ -150,25 +153,24 @@ Você usa esta lista para verificar os arquivos carregados na conta de Armazenam
 <file size="3603" crc64="0x7e34c25d5606693f">\databox\TOC.yml</file>
 ```
 
-Esse arquivo contém a lista de todos os arquivos que foram copiados no Data Box. Nesse arquivo, o valor *crc64* se relaciona à soma de verificação gerada para o arquivo correspondente.
+Esse arquivo contém a lista de todos os arquivos que foram copiados na caixa de dados ou dados caixa pesada. Nesse arquivo, o valor *crc64* se relaciona à soma de verificação gerada para o arquivo correspondente.
 
 ## <a name="view-available-capacity-of-the-device"></a>Exibir a capacidade disponível no dispositivo
 
-Use o painel do dispositivo para exibir a capacidade disponível e é usada do dispositivo. 
+Use o painel do dispositivo para exibir a capacidade disponível e é usada do dispositivo.
 
 1. Na interface do usuário da Web local, acesse **Exibir o painel**.
 2. Em **Conectar e copiar**, o espaço livre e usado no dispositivo é mostrado.
 
     ![Exibir a capacidade disponível](media/data-box-local-web-ui-admin/verify-used-space-dashboard.png)
 
-
 ## <a name="skip-checksum-validation"></a>Ignorar a validação de soma de verificação
 
-As somas de verificação são geradas para os seus dados por padrão quando você se prepara para o envio. Em alguns casos raros, dependendo do tipo de dados (tamanhos de arquivo pequeno), o desempenho pode ser lento. Nesses casos, você pode ignorar a soma de verificação. 
+As somas de verificação são geradas para os seus dados por padrão quando você se prepara para o envio. Em alguns casos raros, dependendo do tipo de dados (tamanhos de arquivo pequeno), o desempenho pode ser lento. Nesses casos, você pode ignorar a soma de verificação.
 
 É altamente recomendado que você não desabilite a soma de verificação, a menos que o desempenho seja gravemente afetado.
 
-1. No canto superior direito da IU da Web local do dispositivo, acesse Configurações.
+1. No canto superior direito da web local da interface do usuário do seu dispositivo, acesse **configurações**.
 
     ![Desabilitar a soma de verificação](media/data-box-local-web-ui-admin/disable-checksum.png)
 
@@ -177,5 +179,5 @@ As somas de verificação são geradas para os seus dados por padrão quando voc
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba como [Gerenciar o Data Box pelo portal do Azure](data-box-portal-admin.md).
+- Saiba como [gerenciar o Data Box e pesada de caixa de dados por meio do portal do Azure](data-box-portal-admin.md).
 

@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 05/28/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 04808dda193a3a472813cda852a1a2f24d00e112
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: a597ab3519f4ba1696e111622541bcab89488558
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417989"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66425421"
 ---
 # <a name="content-key-policies"></a>Políticas da Chave de Conteúdo
 
@@ -35,7 +35,7 @@ As **Políticas de Chave de Conteúdo** podem ser atualizadas. Pode levar até 1
 > * As propriedades de **Políticas de Conteúdo de Chave** que são do tipo Datetime estão sempre no formato UTC.
 > * Você deve criar um conjunto limitado de políticas para sua conta de serviço de mídia e reutilizá-lo para os Localizadores de Streaming sempre que as mesmas opções forem necessárias. Para saber mais, consulte [Cotas e limitações](limits-quotas-constraints.md).
 
-## <a name="example"></a>Exemplo
+### <a name="example"></a>Exemplo
 
 Para obter a chave, use **GetPolicyPropertiesWithSecretsAsync**, conforme mostrado na [obter uma chave de assinatura da política existente](get-content-key-policy-dotnet-howto.md#get-contentkeypolicy-with-secrets) exemplo.
 

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/02/2019
-ms.openlocfilehash: 63f81c331db619323f74b77e48627fd8b432565f
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.openlocfilehash: 03fcbb0216d85e337b4161aa24ceeb7d3a2bdebe
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65518901"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479469"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Personalizar os clusters de HDInsight do Azure por meio de ações de script
 
@@ -58,7 +58,7 @@ Uma ação de script é Bash script executado em nós em um cluster HDInsight. E
 
      * Para clusters com ESP:
          
-         * O wasb [s] :// ou http [s] :// URIs são suportados.
+         * O wasb: / / ou wasbs: / / ou http [s] :// URIs são suportados.
             
 * Isso pode estar restrito à execução somente em determinados tipos de nó. Por exemplo, nós de cabeçalho ou nós de trabalho.
 
@@ -175,7 +175,7 @@ Esta seção explica as diferentes maneiras de usar ações de script ao criar u
     | --- | --- |
     | Selecionar um script | Para usar seu próprio script, selecione __Personalizado__. Caso contrário, selecione um dos scripts fornecidos. |
     | NOME |Especifique um nome para a ação de script. |
-    | URI do script de bash |Especificar o URI do script. |
+    | URI do script Bash |Especificar o URI do script. |
     | Cabeçalho/Trabalho/Zookeeper |Especifique os nós em que o script deve ser executado: **Cabeçalho**, **Trabalho** ou **ZooKeeper**. |
     | parâmetros |Especifique os parâmetros, se exigido pelo script. |
 
@@ -257,7 +257,7 @@ Vá para o [Portal do Azure](https://portal.azure.com):
     | --- | --- |
     | Selecionar um script | Para usar seu próprio script, selecione __personalizado__. Caso contrário, selecione um script fornecido. |
     | NOME |Especifique um nome para a ação de script. |
-    | URI do script de bash |Especificar o URI do script. |
+    | URI do script Bash |Especificar o URI do script. |
     | Cabeçalho/Trabalho/Zookeeper |Especifique os nós em que o script deve ser executado: **Cabeçalho**, **Trabalho** ou **ZooKeeper**. |
     | parâmetros |Especifique os parâmetros, se exigido pelo script. |
 
@@ -352,7 +352,7 @@ Para obter um exemplo de como usar o SDK .NET para aplicar scripts a um cluster,
 
     ![Propriedades de ações de script](./media/hdinsight-hadoop-customize-cluster-linux/promote-script-actions.png)
 
-6. Também é possível usar as reticências (**…**) à direita das entradas na seção de ações de script para executar ações.
+6. Também é possível usar as reticências ( **…** ) à direita das entradas na seção de ações de script para executar ações.
 
     ![Ações de script, reticências](./media/hdinsight-hadoop-customize-cluster-linux/deletepromoted.png)
 

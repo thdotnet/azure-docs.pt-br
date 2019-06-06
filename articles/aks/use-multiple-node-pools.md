@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/17/2019
 ms.author: iainfou
-ms.openlocfilehash: 4af2e97e8ace432c37a770f1930514dd19e30944
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: a295dfa1f7f2c58b3e45036212434837ac4bfb4d
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235763"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475458"
 ---
 # <a name="preview---create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Visualização – criar e gerenciar vários pools de nós para um cluster no serviço de Kubernetes do Azure (AKS)
 
@@ -74,6 +74,7 @@ As seguintes limitações se aplicam quando você cria e gerenciar clusters AKS 
 * É possível excluir o pool de nós primeiro.
 * O complemento de roteamento de aplicativo HTTP não pode ser usado.
 * Não é possível usando um modelo do Resource Manager existente, assim como acontece com a maioria das operações de pools de nós de adicionar/atualizar/excluir. Em vez disso, [usar um modelo do Gerenciador de recursos separado](#manage-node-pools-using-a-resource-manager-template) para fazer alterações em pools de nós em um cluster AKS.
+* O dimensionador automático de cluster (atualmente em visualização no AKS) não pode ser usado.
 
 Embora esse recurso está em visualização, as seguintes limitações adicionais se aplicam:
 
@@ -222,7 +223,7 @@ Demora alguns minutos para excluir os nós e o pool de nós.
 
 ## <a name="specify-a-vm-size-for-a-node-pool"></a>Especifique um tamanho VM para um pool de nós
 
-Nos exemplos anteriores para criar um pool de nós, um tamanho de VM padrão foi usado para os nós criados no cluster. Um cenário mais comum é para que você possa criar pools de nós com diferentes tamanhos VM e recursos. Por exemplo, você pode criar um pool de nós que contém nós com grandes quantidades de memória ou CPU, ou um pool de nós que fornece suporte GPU. Na próxima etapa, você [taints de uso e tolerations][#schedule-pods-using-taints-and-tolerations] para informar o Agendador Kubernetes como limitar o acesso a pods que podem ser executados em nós.
+Nos exemplos anteriores para criar um pool de nós, um tamanho de VM padrão foi usado para os nós criados no cluster. Um cenário mais comum é para que você possa criar pools de nós com diferentes tamanhos VM e recursos. Por exemplo, você pode criar um pool de nós que contém nós com grandes quantidades de memória ou CPU, ou um pool de nós que fornece suporte GPU. Na próxima etapa, você [usar taints e tolerations](#schedule-pods-using-taints-and-tolerations) para informar o Agendador Kubernetes como limitar o acesso a pods que podem ser executados em nós.
 
 No exemplo a seguir, crie um pool de nós com base em GPU que usa o *Standard_NC6* tamanho da VM. Essas VMs são alimentadas por placa NVIDIA Tesla K80. Para obter informações sobre tamanhos de VM disponíveis, consulte [tamanhos para máquinas virtuais Linux no Azure][vm-sizes].
 
@@ -332,7 +333,7 @@ Somente os pods que têm essa prejudicar aplicado podem ser agendados em nós *g
 
 ## <a name="manage-node-pools-using-a-resource-manager-template"></a>Gerenciar pools de nó usando um modelo do Resource Manager
 
-Quando você usa um modelo do Azure Resource Manager para criar e os recursos gerenciados, você normalmente pode atualizar as configurações no seu modelo e reimplantar para atualizar o recurso. Com nodepools no AKS, o perfil de nodepool inicial não pode ser atualizado quando o cluster do AKS tiver sido criado. Esse comportamento significa que você não pode atualizar um modelo do Resource Manager existente, faça uma alteração para os pools de nós e reimplantar. Em vez disso, você deve criar um modelo do Gerenciador de recursos separado que atualiza apenas os pools de agentes para um cluster AKS existente.
+Quando você usa um modelo do Azure Resource Manager para criar e os recursos gerenciados, você normalmente pode atualizar as configurações no seu modelo e reimplantar para atualizar o recurso. Com os pools de nó no AKS, o perfil de pool inicial do nó não pode ser atualizado quando o cluster do AKS tiver sido criado. Esse comportamento significa que você não pode atualizar um modelo do Resource Manager existente, faça uma alteração para os pools de nós e reimplantar. Em vez disso, você deve criar um modelo do Gerenciador de recursos separado que atualiza apenas os pools de agentes para um cluster AKS existente.
 
 Criar um modelo, como `aks-agentpools.json` e cole o manifesto de exemplo a seguir. Este modelo de exemplo define as seguintes configurações:
 
@@ -437,7 +438,7 @@ az group delete --name myResourceGroup --yes --no-wait
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste artigo você aprendeu a criar e gerenciar vários pools de nós em um cluster AKS. Para obter mais informações sobre como controlar os pods entre pools de nós, consulte [práticas recomendadas para recursos avançados do Agendador no AKS][operator-best-practices-advanced-scheduler].
+Neste artigo, você aprendeu a criar e gerenciar vários pools de nós em um cluster AKS. Para obter mais informações sobre como controlar os pods entre pools de nós, consulte [práticas recomendadas para recursos avançados do Agendador no AKS][operator-best-practices-advanced-scheduler].
 
 Para criar e usar pools de nós de contêiner do Windows Server, consulte [criar um contêiner do Windows Server no AKS][aks-windows].
 

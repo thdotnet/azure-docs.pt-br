@@ -2,18 +2,17 @@
 title: Práticas recomendadas para o Serviço de Kubernetes do Azure (AKS)
 description: Coleção de práticas recomendadas para o operador e o desenvolvedor do cluster para criar e gerenciar aplicativos no Serviço de Kubernetes do Azure (AKS)
 services: container-service
-author: rockboyfor
+author: iainfoulds
 ms.service: container-service
 ms.topic: article
-origin.date: 12/07/2018
-ms.date: 03/04/2019
-ms.author: v-yeche
-ms.openlocfilehash: c73f2fea808944847fab6a675914ee57e537560b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 12/07/2018
+ms.author: iainfou
+ms.openlocfilehash: 20922f0fb6932191b8e522e4640b1ba4fecd5ca4
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60467146"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514570"
 ---
 # <a name="cluster-operator-and-developer-best-practices-to-build-and-manage-applications-on-azure-kubernetes-service-aks"></a>Práticas recomendadas para o operador e o desenvolvedor do cluster para criar e gerenciar aplicativos no Serviço de Kubernetes do Azure (AKS)
 
@@ -41,7 +40,7 @@ Como um operador de cluster, trabalhe junto com os proprietários e desenvolvedo
 * [Práticas recomendadas para atualizações e segurança de cluster](operator-best-practices-cluster-security.md)
     * Inclui a proteção de acesso ao servidor de API, limitando o acesso do contêiner e o gerenciamento de atualizações e reinicializações de nó.
 * [Práticas recomendadas para gerenciamento e segurança de imagens de contêiner](operator-best-practices-container-image-management.md).
-    * Inclui proteção da imagem e tempos de execução, usando registros confiáveis e compilações automatizadas nas atualizações da imagem base...
+    * Inclui proteção a imagem e tempos de execução e compilações automatizadas nas atualizações da imagem base.
 * [Práticas recomendadas para segurança do pod](developer-best-practices-pod-security.md)
     * Inclui acesso seguro aos recursos, limitando a exposição de credencial e usando as identidades de pod e cofres de chaves digitais.
 

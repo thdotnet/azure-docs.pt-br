@@ -11,19 +11,17 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: sstein, carlrab
 manager: craigg
-ms.date: 04/19/2019
-ms.openlocfilehash: cbcdcfd151951334246a4e85d9f521a15bb6269d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 06/03/2019
+ms.openlocfilehash: 1b452fb0bac91429793f8d55e439c36c70784722
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66146130"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66492714"
 ---
 # <a name="use-read-only-replicas-to-load-balance-read-only-query-workloads"></a>Usar réplicas somente leitura para cargas de trabalho de consulta somente leitura de balanceamento de carga
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-> [!IMPORTANT]
-> O módulo do PowerShell do Azure Resource Manager ainda é compatível com o banco de dados SQL, mas todo o desenvolvimento futuro é para o módulo Az.Sql. Para esses cmdlets, consulte [azurerm. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Os argumentos para os comandos no módulo Az e nos módulos AzureRm são substancialmente idênticos.
 
 Como parte do [arquitetura de alta disponibilidade](./sql-database-high-availability.md#premium-and-business-critical-service-tier-availability), cada banco de dados na camada de serviço Premium, comercialmente crítico ou em hiperescala é provisionado automaticamente com uma réplica primária e várias réplicas secundárias. As réplicas secundárias são provisionadas com o mesmo tamanho de computação como a réplica primária. O **expansão de leitura** recurso permite que você a balancear a carga banco de dados SQL somente leitura cargas de trabalho usando a capacidade de uma das réplicas de somente leitura em vez de compartilhar a réplica de leitura / gravação. Dessa forma, a carga de trabalho somente leitura serão isoladas da carga de trabalho principal de leitura/gravação e não afetarão o desempenho. O recurso destina-se para os aplicativos que incluem logicamente separadas somente leitura cargas de trabalho, como análise. Eles poderiam obter benefícios de desempenho usando essa capacidade adicional sem nenhum custo extra.
 

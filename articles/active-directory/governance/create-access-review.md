@@ -15,12 +15,12 @@ ms.date: 05/21/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bafa4614e40bb1796ec90e07ecf5b9286a8acb9
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 1ef72f1649c3f3e0af7fba53b2e8dbcee49d4b59
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66113456"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734561"
 ---
 # <a name="create-an-access-review-of-groups-or-applications-in-azure-ad-access-reviews"></a>Criar uma revisão de acesso de grupos ou revisões de acesso de aplicativos no Azure AD
 
@@ -31,14 +31,13 @@ Este artigo descreve como criar as revisões de acesso de um ou mais para membro
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Azure AD Premium P2
-- [Revisões de Acesso habilitadas](access-reviews-overview.md)
 - Administrador global ou administrador de usuário
 
 Para obter mais informações, consulte [quais usuários devem ter licenças?](access-reviews-overview.md#which-users-must-have-licenses).
 
 ## <a name="create-one-or-more-access-reviews"></a>Criar um ou mais revisões de acesso
 
-1. Entrar no portal do Azure e abra o [página de revisões de acesso](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
+1. Entrar no portal do Azure e abra o [página de controle de identidade](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
 
 1. No menu à esquerda, clique em **revisões de acesso**.
 

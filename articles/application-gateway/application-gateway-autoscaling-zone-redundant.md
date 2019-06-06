@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 5/22/2019
+ms.date: 6/1/2019
 ms.author: victorh
-ms.openlocfilehash: 8e17c5e34ec3e2397c3054b1d0e0d97dbf410db2
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 40564e52cbcde0e835ed97132196bf7ed084f5b7
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65986883"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66431205"
 ---
 # <a name="autoscaling-and-zone-redundant-application-gateway"></a>Dimensionamento automático e o Gateway de aplicativo com redundância de zona 
 
@@ -26,8 +26,8 @@ A nova SKU v2 inclui os seguintes aprimoramentos:
   Redundância de zona está disponível apenas em que as zonas do Azure estão disponíveis. Em outras regiões, há suporte para todos os outros recursos. Para obter mais informações, consulte [o que são zonas de disponibilidade no Azure?](../availability-zones/az-overview.md#services-support-by-region)
 - **VIP estático**: Tipo de aplicativo gateway v2 SKU dá suporte ao VIP estático exclusivamente. Isso garante que o VIP associado ao gateway de aplicativo não seja alterado para o ciclo de vida da implantação, mesmo após uma reinicialização.
 - **Reconfiguração do cabeçalho**: O Gateway de aplicativo permite que você adicionar, remover ou atualizar os cabeçalhos de solicitação e resposta HTTP com SKU de v2. Para obter mais informações, consulte [cabeçalhos HTTP de reconfiguração com o Gateway de aplicativo](rewrite-http-headers.md)
-- **Integração do Key Vault (versão prévia)**: V2 do Gateway de aplicativo dá suporte à integração com o Key Vault (em visualização pública) para certificados de servidor que estão anexados para os ouvintes HTTPS habilitado. Para obter mais informações, consulte [terminação SSL com certificados do Key Vault](key-vault-certs.md).
-- **Controlador de entrada de serviço de Kubernetes do Azure (visualização)**: O controlador de entrada do Gateway de aplicativo v2 permite que o Gateway de aplicativo do Azure a ser usado como a entrada para um Azure Kubernetes AKS (serviço) conhecido como Cluster AKS. Para obter mais informações, consulte o [página de documentação](https://azure.github.io/application-gateway-kubernetes-ingress/).
+- **Integração do Key Vault (versão prévia)** : V2 do Gateway de aplicativo dá suporte à integração com o Key Vault (em visualização pública) para certificados de servidor que estão anexados para os ouvintes HTTPS habilitado. Para obter mais informações, consulte [terminação SSL com certificados do Key Vault](key-vault-certs.md).
+- **Controlador de entrada de serviço de Kubernetes do Azure (visualização)** : O controlador de entrada do Gateway de aplicativo v2 permite que o Gateway de aplicativo do Azure a ser usado como a entrada para um Azure Kubernetes AKS (serviço) conhecido como Cluster AKS. Para obter mais informações, consulte o [página de documentação](https://azure.github.io/application-gateway-kubernetes-ingress/).
 - **Aprimoramentos de desempenho**: O v2 SKU oferece até 5 X e melhor SSL descarregamento de desempenho em comparação com o SKU Standard/WAF.
 - **Tempo mais rápido de implantação e atualização** SKU v2 fornece tempo de implantação e atualização mais rápido em comparação com o SKU Standard/WAF. Isso também inclui alterações de configuração do WAF.
 
@@ -54,6 +54,8 @@ Diretrizes de unidade de computação:
 > [!NOTE]
 > Cada instância pode atualmente dar suporte a aproximadamente 10 unidades de capacidade.
 > O número de solicitações para que uma unidade de computação pode manipular depende de vários critérios, como tamanho de chave de certificado TLS, o algoritmo de troca de chaves, regravações de cabeçalho e no caso de tamanho de solicitação de entrada de WAF. É recomendável que você execute testes de aplicativo para determinar a taxa de solicitação por unidade de computação. Unidade de capacidade e a unidade de computação serão disponibilizados como uma métrica antes de cobrança é iniciado.
+
+A tabela a seguir mostra os preços de exemplo e é apenas para fins ilustrativos.
 
 **Preço no Leste dos EUA**:
 
@@ -110,7 +112,7 @@ A tabela a seguir compara os recursos disponíveis com cada SKU.
 | Redundância de zona                                   |          | &#x2713; |
 | VIP estático                                        |          | &#x2713; |
 | Controlador de entrada de serviço do Kubernetes (AKS) do Azure |          | &#x2713; |
-| Integração do Azure Key Vault                       |          | &#x2713; |
+| Integração do Cofre da Chave do Azure                       |          | &#x2713; |
 | Reescreva cabeçalhos HTTP (S)                           |          | &#x2713; |
 | Roteamento baseado em URL                                 | &#x2713; | &#x2713; |
 | Hospedagem de vários sites                             | &#x2713; | &#x2713; |
@@ -122,7 +124,7 @@ A tabela a seguir compara os recursos disponíveis com cada SKU.
 | Páginas de erro personalizadas                                | &#x2713; | &#x2713; |
 | Suporte para WebSocket                                 | &#x2713; | &#x2713; |
 | Suporte do HTTP/2                                    | &#x2713; | &#x2713; |
-| Descarga de conexão                               | &#x2713; | &#x2713; |
+| Descarregamento de conexão                               | &#x2713; | &#x2713; |
 
 > [!NOTE]
 > A v2 de dimensionamento automático agora é compatível com a SKU [investigações de integridade padrão](application-gateway-probe-overview.md#default-health-probe) para monitorar a integridade de todos os recursos em seu pool de back-end e realce os membros de back-end que são considerados não íntegro automaticamente. Investigação de integridade padrão é configurada automaticamente para o back-ends que não têm qualquer configuração de investigação personalizada. Para obter mais informações, consulte [investigações de integridade no gateway de aplicativo](application-gateway-probe-overview.md).
@@ -142,9 +144,12 @@ A tabela a seguir compara os recursos disponíveis com cada SKU.
 |Integração do Netwatcher|Sem suporte.|
 |Integração do Centro de suporte do Azure|Ainda não está disponível.
 
+## <a name="migrate-from-v1-to-v2"></a>Migrar de v1 para v2
+
+Um script do PowerShell do Azure está disponível na Galeria do PowerShell para ajudá-lo a migrar do seu v1 Application/WAF do Gateway para o dimensionamento automático de v2 SKU. Este script ajuda a copiar a configuração do seu gateway v1. Migração de tráfego ainda é sua responsabilidade. Para obter mais detalhes, consulte [migrar Application Gateway do Azure de v1 para v2](migrate-v1-v2.md).
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Início Rápido: Tráfego da web direto com o Gateway de aplicativo do Azure - portal do Azure](quick-create-portal.md)
+- [Início Rápido: Direcionar o tráfego da Web com o Gateway de Aplicativo do Azure – portal do Azure](quick-create-portal.md)
 - [Criar um gateway de aplicativo com redundância de zona e dimensionamento automático com um endereço IP virtual reservado usando o Azure PowerShell](tutorial-autoscale-ps.md)
 - Saiba mais sobre [Gateway de aplicativo](overview.md).
 - Saiba mais sobre [Firewall do Azure](../firewall/overview.md).

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/08/2019
-ms.openlocfilehash: 2724451d44a793023f7b69196b186f68f6fc6a26
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 320b8f948d08e46c43085e174dfbe838f44bac79
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64720474"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479152"
 ---
 # <a name="compare-storage-options-for-use-with-azure-hdinsight-clusters"></a>Comparar opções de armazenamento para uso com clusters do Azure HDInsight
 
@@ -42,18 +42,18 @@ Para obter mais informações sobre as camadas de acesso de armazenamento do Azu
 
 Você pode criar um cluster usando combinações diferentes de serviços para o armazenamento secundário primário e opcional. A tabela a seguir resume as configurações de armazenamento de cluster que atualmente têm suporte no HDInsight:
 
-| Versão do HDInsight | Armazenamento Primário | Armazenamento secundário | Com suporte |
+| Versão do HDInsight | Armazenamento primário | Armazenamento secundário | Com suporte |
 |---|---|---|---|
 | 3.6 & 4.0 | Uso geral V1, V2 de uso geral | Uso geral V1, V2 de uso geral, BlobStorage (Blobs de blocos) | Sim |
-| 3.6 & 4.0 | Uso geral V1, V2 de uso geral | Armazenamento do Data Lake Gen2 | Não  |
+| 3.6 & 4.0 | Uso geral V1, V2 de uso geral | Armazenamento do Data Lake Gen2 | Não |
 | 3.6 & 4.0 | Uso geral V1, V2 de uso geral | Armazenamento do Data Lake Gen1 | Sim |
 | 3.6 & 4.0 | Data Lake Storage Gen2* | Armazenamento do Data Lake Gen2 | Sim |
 | 3.6 & 4.0 | Data Lake Storage Gen2* | Uso geral V1, V2 de uso geral, BlobStorage (Blobs de blocos) | Sim |
-| 3.6 & 4.0 | Armazenamento do Data Lake Gen2 | Armazenamento do Data Lake Gen1 | Não  |
+| 3.6 & 4.0 | Armazenamento do Data Lake Gen2 | Armazenamento do Data Lake Gen1 | Não |
 | 3.6 | Armazenamento do Data Lake Gen1 | Armazenamento do Data Lake Gen1 | Sim |
 | 3.6 | Armazenamento do Data Lake Gen1 | Uso geral V1, V2 de uso geral, BlobStorage (Blobs de blocos) | Sim |
-| 3.6 | Armazenamento do Data Lake Gen1 | Armazenamento do Data Lake Gen2 | Não  |
-| 4,0 | Armazenamento do Data Lake Gen1 | Qualquer | Não  |
+| 3.6 | Armazenamento do Data Lake Gen1 | Armazenamento do Data Lake Gen2 | Não |
+| 4,0 | Armazenamento do Data Lake Gen1 | Qualquer | Não |
 
 * = Isso pode ser uma ou várias contas do Data Lake armazenamento Gen2, desde que eles são todos os configurado para usar a mesma identidade gerenciada para acesso ao cluster.
 
@@ -137,7 +137,7 @@ O HDInsight fornece acesso ao sistema de arquivos distribuídos que está anexad
 
 Por meio do HDInsight, também é possível acessar os dados no Armazenamento do Azure. A sintaxe é mostrada a seguir:
 
-    wasb[s]://<containername>@<accountname>.blob.core.windows.net/<path>
+    wasb://<containername>@<accountname>.blob.core.windows.net/<path>
 
 Considere os seguintes princípios ao usar uma conta de Armazenamento do Azure com clusters do HDInsight:
 

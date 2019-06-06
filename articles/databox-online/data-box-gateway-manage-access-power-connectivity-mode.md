@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 03/25/2019
+ms.date: 06/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 72d3455f37d0ccef0dd5b7d8882f70670de07572
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 44343f6bc6f48a6caa056f3336af55613a1e74d0
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60755399"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476791"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-gateway"></a>Gerenciar o acesso, a potência e o modo de conectividade para o Gateway de caixa de dados do Azure
 
@@ -41,7 +41,7 @@ Siga estas etapas na interface do usuário local para alterar a senha do disposi
 
 3. Clique em **alterar a senha**.
  
-### <a name="reset-device-password"></a>Redefinir senha do dispositivo
+### <a name="reset-device-password"></a>Redefinir a senha do dispositivo
 
 O fluxo de trabalho de redefinição não exige que o usuário recupere a senha antiga e é útil quando a senha é perdida. Esse fluxo de trabalho é executado no portal do Azure.
 
@@ -53,6 +53,48 @@ O fluxo de trabalho de redefinição não exige que o usuário recupere a senha 
 2. Digite a nova senha e confirme-a. A senha fornecida deve ter entre 8 e 16 caracteres. A senha deve ter 3 dos seguintes caracteres: maiúscula, minúscula, numérica e caracteres especiais. Clique em **redefinir**.
 
     ![Redefinir senha](media/data-box-gateway-manage-access-power-connectivity-mode/reset-password-2.png)
+
+## <a name="manage-resource-access"></a>Gerenciar o acesso aos recursos
+
+Para criar o dados de caixa de borda/dados de caixa de Gateway, o IoT Hub e o recurso de armazenamento do Azure, você precisa de permissões como um colaborador ou superior em um nível de grupo de recursos. Você também precisa os provedores de recursos correspondentes a serem registrados. Para todas as operações que envolvem as credenciais e a chave de ativação, também são necessárias permissões para a API do Graph do Azure Active Directory. Eles são descritos nas seções a seguir.
+
+### <a name="manage-microsoft-azure-active-directory-graph-api-permissions"></a>Gerenciar permissões do Azure Active Directory API do Microsoft Graph
+
+Ao gerar a chave de ativação para o dispositivo de borda da caixa de dados ou a realização de operações que exigem credenciais, você precisa de permissões para a API do Graph do Azure Active Directory. As operações que precisam de credenciais pode ser:
+
+-  Criando um compartilhamento com uma conta de armazenamento associada.
+-  Criando um usuário de quem pode acessar os compartilhamentos no dispositivo.
+
+Você deve ter uma `User` acessar no locatário do Active Directory, pois você precisa ser capaz de `Read all directory objects`. Você não pode ser um usuário convidado já que não têm permissões para `Read all directory objects`. Se você for um convidado e, em seguida, as operações como geração de uma chave de ativação, a criação de um compartilhamento em seu dispositivo de borda da caixa de dados, criação de um usuário todos falhará.
+
+Para obter mais informações sobre como fornecer acesso aos usuários para a API do Graph do Azure Active Directory, consulte [padrão de acesso para os administradores, usuários e usuários convidados](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
+
+### <a name="register-resource-providers"></a>Registrar provedores de recursos
+
+Para provisionar um recurso no Azure (no modelo do Azure Resource Manager), você precisa de um provedor de recursos que dá suporte à criação do recurso. Por exemplo, para provisionar uma máquina virtual, você deve ter um provedor de recursos 'Microsoft. Compute' disponível na assinatura.
+ 
+Provedores de recursos são registrados no nível da assinatura. Por padrão, qualquer nova assinatura do Azure é previamente registrada com uma lista de provedores de recursos comumente usados. O provedor de recursos 'Microsoft.DataBoxEdge' não está incluído nesta lista.
+
+Você não precisa conceder permissões de acesso para o nível de assinatura para que os usuários possam criar recursos, como 'Microsoft.DataBoxEdge' em seus grupos de recursos que eles têm direitos de proprietário, desde que os provedores de recursos para esses recursos já está registrado.
+
+Antes de tentar criar qualquer recurso, certifique-se de que o provedor de recursos está registrado na assinatura. Se o provedor de recursos não estiver registrado, você precisará certificar-se de que o usuário que está criando o novo recurso tem direitos suficientes para registrar o provedor de recurso necessário no nível da assinatura. Se você ainda não fez isso, bem, você verá o seguinte erro:
+
+*A assinatura <Subscription name> não tem permissões para registrar os provedores de recursos: Microsoft.DataBoxEdge.*
+
+
+Para obter uma lista de provedores de recursos registrado na assinatura atual, execute o seguinte comando:
+
+```PowerShell
+Get-AzResourceProvider -ListAvailable |where {$_.Registrationstate -eq "Registered"}
+```
+
+Para o dispositivo de borda da caixa de dados, `Microsoft.DataBoxEdge` deve ser registrado. Para registrar `Microsoft.DataBoxEdge`, administrador de assinatura deve ser executado o comando a seguir:
+
+```PowerShell
+Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
+```
+
+Para obter mais informações sobre como registrar um provedor de recursos, consulte [resolva erros de registro do provedor de recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-register-provider-errors).
 
 ## <a name="manage-connectivity-mode"></a>Gerenciar o modo de conectividade
 
@@ -80,7 +122,7 @@ Para alterar o modo de dispositivo, siga estas etapas:
 
 ## <a name="manage-power"></a>Gerenciar potência
 
-Você pode desligar ou reiniciar seu dispositivo físico e virtual usando a interface da Web local. Nós recomendamos que antes de reiniciar, você coloque os compartilhamentos offline no host e, em seguida, no dispositivo. Essa ação minimiza a possibilidade de corrupção de dados.
+Você pode desligar ou reiniciar seu dispositivo virtual usando a interface do usuário da Web local. Nós recomendamos que antes de reiniciar, você coloque os compartilhamentos offline no host e, em seguida, no dispositivo. Essa ação minimiza a possibilidade de corrupção de dados.
 
 1. Na interface do usuário de web local, vá para **manutenção > configurações de energia**.
 2. Clique em **desligamento** ou **reiniciar** dependendo do que você pretende fazer.

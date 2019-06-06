@@ -8,14 +8,14 @@ ms.subservice: heavy
 ms.topic: article
 ms.date: 05/22/2019
 ms.author: alkohli
-ms.openlocfilehash: 8cd2f96954cde367eb99d89e89bcf672b53dd590
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: b9e249885bd0e930773d4b374f85d72e60abdbdc
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66247988"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427748"
 ---
-# <a name="azure-data-box-heavy-system-requirements"></a>Requisitos de sistema pesadas de caixa de dados do Azure
+# <a name="azure-data-box-heavy-system-requirements-preview"></a>Requisitos de sistema pesadas de caixa de dados do Azure (visualização)
 
 Este artigo descreve os requisitos de sistema importantes para seu dispositivo pesada de caixa de dados do Azure e para clientes que se conectam ao dispositivo. Recomendamos que você examine as informações com atenção antes de implantar seu pesada de caixa de dados e, em seguida, voltar a ela conforme necessário durante a implantação e operação subsequente.
 

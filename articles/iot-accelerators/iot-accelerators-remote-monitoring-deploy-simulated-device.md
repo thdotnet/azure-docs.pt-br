@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 08/15/2018
 ms.topic: conceptual
-ms.openlocfilehash: cdd2b24e6f833ee0acb229a37c7cd3b8b6f36339
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7cbab38db859935c9f4490d79a131d6c9a7e302b
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66143385"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427575"
 ---
 # <a name="deploy-a-new-simulated-device"></a>Implantar um novo dispositivo simulado
 
@@ -88,13 +88,14 @@ Nesta seção, você configura o Docker para carregar os arquivos de modelo de d
 1. Copie os arquivos de modelo de dispositivo existentes do contêiner para o novo local. Primeiro, encontre a ID do contêiner para o contêiner de simulação de dispositivo:
 
     ```sh
-    docker ps
+    sudo docker ps
     ```
 
     Em seguida, copie os arquivos de modelo de dispositivo para a pasta **tmp** na máquina virtual. O comando a seguir supõe que a ID do contêiner é c378d6878407 -- substitua esse valor pela ID do contêiner de simulação do dispositivo:
 
     ```sh
-    docker cp c378d6878407:/app/webservice/data/devicemodels /tmp
+    sudo docker cp c378d6878407:/app/webservice/data/devicemodels /tmp
+    sudo chown -R azureuser /tmp/devicemodels/
     ```
 
     Mantenha a janela de **bash** com a sessão SSH aberta.
@@ -116,13 +117,13 @@ Nesta seção, você configura o Docker para carregar os arquivos de modelo de d
     Se você quiser ver o status dos contêineres do Docker em execução e as IDs do contêiner, use o comando a seguir:
 
     ```sh
-    docker ps
+    sudo docker ps
     ```
 
     Se você quiser ver o log do contêiner de simulação de dispositivo, execute o seguinte comando. Substitua a ID do contêiner pela ID do contêiner de simulação de dispositivo:
 
     ```sh
-    docker logs -f 5d3f3e78822e
+    sudo docker logs -f 5d3f3e78822e
     ```
 
 ## <a name="run-simulation"></a>Executar simulação

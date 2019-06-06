@@ -7,12 +7,12 @@ ms.date: 05/23/2019
 ms.author: maquaran
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 66eff6ee603ced03a8f4d75d4569752e0b11a6e7
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 09ea70ac302806b4cb0e97fde92dda4208e3d659
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66242527"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734511"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-trigger-in-azure-functions"></a>Diagnosticar e solucionar problemas ao usar o gatilho do Azure Cosmos DB no Azure Functions
 
@@ -88,6 +88,12 @@ Se você descobrir que algumas alterações não foram recebidas em todos os pel
 Além disso, o cenário pode ser validado, se você souber quantas instâncias do aplicativo de funções do Azure que você tem em execução. Se você inspecionar o contêiner de concessões e contar o número de itens de concessão dentro, os valores distintos do `Owner` propriedade nelas deve ser igual ao número de instâncias do seu aplicativo de funções. Se houver mais de proprietários que as instâncias do aplicativo de funções do Azure conhecidas, isso significa que esses proprietários extras são um "roubando" as alterações.
 
 Uma maneira fácil para solucionar essa situação é aplicar um `LeaseCollectionPrefix/leaseCollectionPrefix` para sua função com um valor novo/diferente ou, Alternativamente, teste com um novo contêiner de concessões.
+
+### <a name="binding-can-only-be-done-with-ireadonlylistdocument-or-jarray"></a>Associação só pode ser feita com IReadOnlyList<Document> ou JArray
+
+Esse erro ocorre se o seu projeto do Azure Functions (ou qualquer projeto referenciado) contém uma referência NuGet manual para o SDK do Azure Cosmos DB com uma versão diferente daquela fornecida pelos [Azure Functions Cosmos DB Extension](./troubleshoot-changefeed-functions.md#dependencies).
+
+Para solucionar essa situação, remover a referência do NuGet manual que foi adicionada e permitem que a referência de SDK do Azure Cosmos DB resolver por meio do pacote de extensão do Azure Functions Cosmos DB.
 
 ## <a name="next-steps"></a>Próximas etapas
 
