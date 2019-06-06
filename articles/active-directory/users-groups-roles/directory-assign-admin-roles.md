@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 06/04/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5044567396d832d3c3b2b46e3c3e90e053834595
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: d31bde1a33d622c2c0b7aa716cbbbfbc8ef42ecf
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417888"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514586"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Permissões da função de administrador no Azure Active Directory
 
@@ -407,7 +407,7 @@ Pode executar tarefas comuns de relacionadas à cobrança, como atualizar inform
 | microsoft.office365.supportTickets/allEntities/allTasks | Criar e gerenciar tíquetes de suporte do Office 365. |
 
 ### <a name="desktop-analytics-administrator"></a>Administrador de Análise de Área de Trabalho
-Pode acessar e gerenciar ferramentas de gerenciamento da Área de Trabalho e serviços, incluindo o Intune.
+Pode gerenciar a análise de área de trabalho e de serviços de política & de personalização do Office. Para uma análise da área de trabalho, isso inclui a capacidade de exibir o inventário de ativos, criar planos de implantação, exibir o status de integridade e a implantação. Para personalização do Office & política de serviço, essa função permite que os usuários gerenciem as diretivas do Office.
 
   > [!NOTE]
   > Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a descrição da função acima.
@@ -1302,7 +1302,7 @@ Administrador de Comunicações do Teams | Administrador de Comunicações do Te
 Engenheiro de Suporte de Comunicações do Teams | Engenheiro de Suporte de Comunicações do Teams | f70938a0-fc10-4177-9e90-2178f8765737
 Especialista em Suporte de Comunicações do Teams | Especialista em Suporte de Comunicações do Teams | fcf91098-03e3-41a9-b5ba-6f0ec8188a12
 Administrador de Serviços do Teams | Administrador de Serviços do Teams | 69091246-20e8-4a56-aa4d-066075b2a7a8
-User | User | a0b1b346-4d3e-4e8b-98f8-753987be4970
+Usuário | Usuário | a0b1b346-4d3e-4e8b-98f8-753987be4970
 Administrador da conta de usuário | Administrador de usuários | fe930be7-5e62-47db-91af-98c3a49a38b1
 Ingresso no Dispositivo no Local de Trabalho | Ingresso no dispositivo | c34f683f-4d5a-4403-affd-6615e00e3a7f
 

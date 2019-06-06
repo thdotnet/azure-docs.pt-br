@@ -1,18 +1,18 @@
 ---
-title: 'Início Rápido: Criar um cluster e banco de dados do Azure Data Explorer usando C#'
+title: Criar um cluster e banco de dados do Azure Data Explorer usando C#
 description: Saiba como criar um cluster e banco de dados do Azure Data Explorer usando C#
 author: oflipman
 ms.author: oflipman
 ms.reviewer: orspodek
 ms.service: data-explorer
-ms.topic: quickstart
-ms.date: 03/25/2019
-ms.openlocfilehash: 719aba498c08617b42d248d3c677499f8eb3e4b2
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 06/03/2019
+ms.openlocfilehash: e51551d4ce8061122fce52b05e68e102b71c27a8
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65900817"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66494602"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-c"></a>Criar um cluster e banco de dados do Azure Data Explorer usando C#
 
@@ -24,7 +24,7 @@ ms.locfileid: "65900817"
 > * [Python](create-cluster-database-python.md)
 >  
 
-O Azure Data Explorer é um serviço de análise de dados rápido e totalmente gerenciado para análise em tempo real de grandes volumes de streaming de dados de aplicativos, sites, dispositivos IoT e muito mais. Para usar o Azure Data Explorer, primeiro crie um cluster e um ou mais bancos de dados nesse cluster. Em seguida, ingira (carregue) dados em um banco de dados para poder executar consultas nele. Neste início rápido, você criará um cluster e um banco de dados usando o C#.
+O Azure Data Explorer é um serviço de análise de dados rápido e totalmente gerenciado para análise em tempo real de grandes volumes de streaming de dados de aplicativos, sites, dispositivos IoT e muito mais. Para usar o Azure Data Explorer, primeiro crie um cluster e um ou mais bancos de dados nesse cluster. Em seguida, ingira (carregue) dados em um banco de dados para poder executar consultas nele. Neste artigo, você cria um cluster e um banco de dados usando C#.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -112,7 +112,7 @@ Agora você tem um cluster e um banco de dados.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-* Caso você planeje seguir nossos outros guias de início rápido e tutoriais, mantenha os recursos que você criou.
+* Se você planeja siga nossos outros artigos, manter os recursos que você criou.
 * Para limpar recursos, exclua o cluster. Quando você exclui um cluster, também exclui todos os bancos de dados nele. Use o seguinte comando para excluir o cluster:
 
     ```C#-interactive
@@ -121,5 +121,4 @@ Agora você tem um cluster e um banco de dados.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-> [!div class="nextstepaction"]
-> [Início Rápido: Ingerir dados usando o SDK do .NET Standard no Azure Data Explorer (Versão prévia)](net-standard-ingest-data.md)
+* [Ingerir dados usando o SDK do .NET Standard no Azure Data Explorer (Versão prévia)](net-standard-ingest-data.md)

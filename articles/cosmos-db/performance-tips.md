@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: sngun
-ms.openlocfilehash: feab3ee1a21a52e8b18d59e67e8410fcbeb4ff5e
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: c8907f1b1c8069a3a3e92d01a5fa6341c06ec952
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65953794"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688811"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Dicas de desempenho para o Azure Cosmos DB e .NET
 
@@ -48,8 +48,8 @@ Assim, se você estiver se perguntando "Como posso melhorar o desempenho do meu 
      |Modo da conexão  |Protocolo com Suporte  |SDKs com suporte  |Porta/serviço de API  |
      |---------|---------|---------|---------|
      |Gateway  |   HTTPS    |  Todos os SDKS    |   SQL(443), Mongo(10250, 10255, 10256), Table(443), Cassandra(10350), Graph(443)    |
-     |Direto    |    HTTPS     |  SDK do .NET e Java    |   Portas dentro do intervalo de 10.000-20.000    |
-     |Direto    |     TCP    |  SDK .NET    | Portas dentro do intervalo de 10.000-20.000 |
+     |Direta    |    HTTPS     |  SDK do .NET e Java    |   Portas dentro do intervalo de 10.000-20.000    |
+     |Direta    |     TCP    |  SDK .NET    | Portas dentro do intervalo de 10.000-20.000 |
 
      O Cosmos DB oferece um modelo de programação RESTful simples e aberto via HTTPS. Além disso, ele oferece um protocolo TCP eficiente que também é RESTful em seu modelo de comunicação e está disponível por meio do SDK do cliente .NET. Tanto TCP direto quanto HTTPS usam SSL para criptografar tráfego e autenticação inicial. Para ter um melhor desempenho, use o protocolo TCP quando possível.
 
@@ -137,13 +137,21 @@ Assim, se você estiver se perguntando "Como posso melhorar o desempenho do meu 
    <a id="tune-page-size"></a>
 1. **Ajustar o tamanho da página para os feeds de leitura/consultas para ter o melhor desempenho**
 
-    Ao executar uma grande quantidade de leitura dos documentos utilizando a funcionalidade do feed de leitura (por exemplo, ReadDocumentFeedAsync) ou ao enviar uma consulta SQL do DocumentDB, os resultados são retornados de uma maneira segmentada se o conjunto de resultados for muito grande. Por padrão, os resultados são retornados em blocos de 100 itens ou 1 MB, o limite que for atingido primeiro.
+   Ao executar uma grande quantidade de leitura dos documentos utilizando a funcionalidade do feed de leitura (por exemplo, ReadDocumentFeedAsync) ou ao enviar uma consulta SQL do DocumentDB, os resultados são retornados de uma maneira segmentada se o conjunto de resultados for muito grande. Por padrão, os resultados são retornados em blocos de 100 itens ou 1 MB, o limite que for atingido primeiro.
 
-    Para reduzir o número de idas e vindas na rede necessárias para recuperar todos os resultados aplicáveis, você pode aumentar o tamanho da página para até 1000 usando o cabeçalho de solicitação [x-ms-max-item-count](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-request-headers). Nos casos em que você precisa exibir apenas alguns resultados, por exemplo, se a interface do usuário ou a API do aplicativo retornar apenas 10 resultados de uma vez, também será possível diminuir o tamanho da página para 10 para reduzir a taxa de transferência consumida pelas leituras e consultas.
+   Para reduzir o número de idas e vindas na rede necessárias para recuperar todos os resultados aplicáveis, você pode aumentar o tamanho da página para até 1000 usando o cabeçalho de solicitação [x-ms-max-item-count](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-request-headers). Nos casos em que você precisa exibir apenas alguns resultados, por exemplo, se a interface do usuário ou a API do aplicativo retornar apenas 10 resultados de uma vez, também será possível diminuir o tamanho da página para 10 para reduzir a taxa de transferência consumida pelas leituras e consultas.
 
-    Você também pode definir o tamanho da página usando os SDKs do Azure Cosmos DB disponíveis.  Por exemplo:
+   > [!NOTE] 
+   > A propriedade maxItemCount não deve ser usada apenas para fins de paginação. Ele é o principal uso para melhorar o desempenho das consultas, reduzindo o número máximo de itens retornados em uma única página.  
 
-        IQueryable<dynamic> authorResults = client.CreateDocumentQuery(documentCollection.SelfLink, "SELECT p.Author FROM Pages p WHERE p.Title = 'About Seattle'", new FeedOptions { MaxItemCount = 1000 });
+   Você também pode definir o tamanho da página usando os SDKs disponíveis para o Azure Cosmos DB. O [MaxItemCount](/dotnet/api/microsoft.azure.documents.client.feedoptions.maxitemcount?view=azure-dotnet) propriedade no FeedOptions permite que você defina o número máximo de itens a serem retornados na operação de enmuration. Quando `maxItemCount` é definido como -1, o SDK localiza automaticamente o valor ideal, dependendo do tamanho do documento. Por exemplo:
+    
+   ```csharp
+    IQueryable<dynamic> authorResults = client.CreateDocumentQuery(documentCollection.SelfLink, "SELECT p.Author FROM Pages p WHERE p.Title = 'About Seattle'", new FeedOptions { MaxItemCount = 1000 });
+   ```
+    
+   Quando uma consulta é executada, os dados resultantes são enviados dentro de um pacote TCP. Se você especificar um valor muito baixo para `maxItemCount`, o número de corridas necessários para enviar os dados dentro do pacote TCP é alto, o que afeta o desempenho. Portanto, se você não tiver certeza de qual valor deve ser definido para `maxItemCount` propriedade, é melhor defini-lo como -1 e permitir que o SDK, escolha o valor padrão. 
+
 10. **Aumentar o número de threads/tarefas**
 
     Consulte [Aumentar o número de threads/tarefas](#increase-threads) na seção Rede.
@@ -160,7 +168,7 @@ Assim, se você estiver se perguntando "Como posso melhorar o desempenho do meu 
 
     - Para aplicativos Web ASP.NET implantados no Azure, isso pode ser feito escolhendo o **plataforma de 64 bits** no **configurações do aplicativo** no portal do Azure.
 
-## <a name="indexing-policy"></a>Política de Indexação
+## <a name="indexing-policy"></a>Política de indexação
  
 1. **Excluir caminhos não utilizados da indexação para ter gravações mais rápidas**
 

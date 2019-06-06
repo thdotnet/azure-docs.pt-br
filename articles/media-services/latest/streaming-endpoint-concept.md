@@ -11,14 +11,14 @@ ms.workload: ''
 ms.topic: article
 ms.date: 04/27/2019
 ms.author: juliako
-ms.openlocfilehash: 3f939154d2b34e6dc043e505ab89897221bcfe23
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 3e1a5d8ba8b6d0ec8e3ec1ba9506a88ee87d8ed1
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149242"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515737"
 ---
-# <a name="streaming-endpoints-origin"></a>Pontos de extremidade de streaming (origem)
+# <a name="streaming-endpoints"></a>Ponto de extremidade de streaming 
 
 Nos serviços de mídia do Microsoft Azure, uma [ponto de extremidade de Streaming](https://docs.microsoft.com/rest/api/media/streamingendpoints) representa um dinâmico (just-in-time) empacotamento e a origem serviço que pode entregar seu conteúdo ao vivo e sob demanda diretamente a um aplicativo de player de cliente, usando uma da mídia protocolos de transmissão comuns (HLS ou DASH). Além disso, o **ponto de extremidade de Streaming** fornece a criptografia dinâmica (just-in-time) para DRMs de líderes do setor.
 
@@ -55,10 +55,10 @@ Para obter informações de SLA, consulte [preços e SLA](https://azure.microsof
 
 Recurso|Standard|Premium
 ---|---|---
-Libere os primeiros 15 dias <sup>1</sup>| Sim |Não 
+Libere os primeiros 15 dias <sup>1</sup>| Sim |Não
 Produtividade |Até 600 Mbps e pode fornecer uma muito eficaz taxa de transferência maior quando a CDN é usada.|200 Mbps por UA (unidade de streaming). Pode fornecer uma muito eficaz taxa de transferência maior quando a CDN é usada.
 CDN|Azure CDN, CDN de terceiros ou sem CDN.|Azure CDN, CDN de terceiros ou sem CDN.
-A cobrança é rateada| Diário|Diário
+A cobrança é rateada| Diariamente|Diariamente
 Criptografia dinâmica|Sim|Sim
 Empacotamento dinâmico|Sim|Sim
 Escala|Escala verticalmente automaticamente com a taxa de transferência de destino.|SUs adicionais
@@ -156,7 +156,7 @@ A integração da CDN é habilitada em todos os datacenters do Azure, exceto nas
 
 Você pode determinar se a alteração de DNS tiver sido feita em um ponto de extremidade de Streaming (o tráfego está sendo direcionado para a CDN do Azure) usando https://www.digwebinterface.com. Se os resultados têm nomes de domínio azureedge.net nos resultados, o tráfego agora está sendo apontado para o CDN.
 
-## <a name="ask-questions-give-feedback-get-updates"></a>Faça perguntas, comentários, obtenha atualizações
+## <a name="ask-questions-give-feedback-get-updates"></a>Fazer perguntas, comentar, obter atualizações
 
 Confira o artigo [comunidade dos Serviços de Mídia do Azure](media-services-community.md) para ver diferentes maneiras de fazer perguntas, comentários e obter atualizações sobre os serviços de mídia.
 

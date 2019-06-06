@@ -2,20 +2,20 @@
 title: Adicionar declarações e personalizar a entrada do usuário usando políticas personalizadas – Azure Active Directory B2C | Microsoft Docs
 description: Saiba como personalizar a entrada do usuário e adicionar declarações ao percurso de inscrição ou de entrada no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/07/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a64c58d23543279a3a32d2d7b612b43dee8741eb
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: c15d315d186af5622d9fa988945750d93e8eb11f
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65768002"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66507555"
 ---
 #  <a name="add-claims-and-customize-user-input-using-custom-policies-in-azure-active-directory-b2c"></a>Adicionar declarações e personalizar a entrada do usuário usando políticas personalizadas no Azure Active Directory B2C
 
@@ -263,7 +263,7 @@ Os elementos a seguir são usados para definir a declaração:
 1. Entre no [Portal do Azure](https://portal.azure.com).
 2. Verifique se você está usando o diretório que contém seu locatário do Azure AD clicando nos **filtros de assinatura e diretório** no menu superior e escolhendo o diretório que contém o locatário do Azure AD.
 3. Escolha **Todos os serviços** no canto superior esquerdo do portal do Azure e pesquise e selecione **Registros de aplicativo**.
-4. Selecione **Identity Experience Framework (versão prévia)**.
+4. Selecione **Identity Experience Framework (versão prévia)** .
 5. Selecione **Carregar política personalizada** e carregue os dois arquivos de política alterados.
 2. Selecione a política de inscrição ou de entrada carregada e clique no botão **Executar agora**.
 3. Você deverá conseguir se inscrever usando um endereço de email.

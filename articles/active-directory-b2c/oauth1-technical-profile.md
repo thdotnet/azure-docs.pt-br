@@ -2,20 +2,20 @@
 title: Definir um perfil de técnico OAuth1 em uma política personalizada no Azure Active Directory B2C | Microsoft Docs
 description: Defina um perfil de técnico OAuth1 em uma política personalizada no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 7b3d579e9d4ceb92ee961778ba6083292461c144
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 993fc8b2e318b59775f61de391ac75fa765485f0
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64699836"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66513110"
 ---
 # <a name="define-an-oauth1-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Definir um perfil de técnico OAuth1 em uma política personalizada do Azure Active Directory B2C
 
@@ -70,12 +70,12 @@ O perfil técnico também retorna declarações que não são retornadas pelo pr
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | client_id | Sim | O identificador do aplicativo do provedor de identidade. |
-| ProviderName | Não  | O nome do provedor de identidade. |
+| ProviderName | Não | O nome do provedor de identidade. |
 | request_token_endpoint | Sim | A URL do ponto de extremidade do token de solicitação, de acordo com RFC 5849. |
 | authorization_endpoint | Sim | A URL do ponto de extremidade da autorização, de acordo com RFC 5849. |
 | access_token_endpoint | Sim | A URL do ponto de extremidade do token, de acordo com RFC 5849. |
-| ClaimsEndpoint | Não  | A URL do ponto de extremidade de informações do usuário. | 
-| ClaimsResponseFormat | Não  | O formato de resposta de declarações.|
+| ClaimsEndpoint | Não | A URL do ponto de extremidade de informações do usuário. | 
+| ClaimsResponseFormat | Não | O formato de resposta de declarações.|
 
 ## <a name="cryptographic-keys"></a>Chaves de criptografia
 

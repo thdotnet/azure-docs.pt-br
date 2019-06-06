@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/02/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 9658ed46e1a46aa3fc2c7fe251fd73b2ef0a13dd
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 7bc7f3631748f4ac74a76e9e67aa2aef2c8f9a71
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65991361"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480311"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Solucionar problemas de Arquivos do Azure no Windows
 
@@ -136,14 +136,13 @@ O Erro 1816 ocorre quando você atingir o limite superior de identificadores abe
 
 Reduza o número de identificadores abertos simultâneos fechando alguns identificadores e tentando novamente. Para obter mais informações, consulte [Lista de verificação de desempenho e escalabilidade do Armazenamento do Microsoft Azure](../common/storage-performance-checklist.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
 
-<a id="accessdeniedportal"></a>
-## <a name="error-access-denied-when-browsing-to-an-azure-file-share-in-the-portal"></a>Erro "Acesso negado" ao procurar um compartilhamento de arquivos do Azure no portal
+<a id="authorizationfailureportal"></a>
+## <a name="error-authorization-failure-when-browsing-to-an-azure-file-share-in-the-portal"></a>Erro "Falha de autorização" durante a navegação em um compartilhamento de arquivos do Azure no portal
 
 A navegar até um compartilhamento de arquivos do Azure no portal, você pode receber o erro a seguir:
 
-Acesso negado  
-Você não tem acesso  
-Parece que você não tem acesso a este conteúdo. Para obter acesso, contate o proprietário.  
+Falha de autorização  
+Você não tem acesso 
 
 ### <a name="cause-1-your-user-account-does-not-have-access-to-the-storage-account"></a>Causa 1: Sua conta de usuário não tem acesso à conta de armazenamento
 
@@ -268,7 +267,7 @@ Esse problema poderá ocorrer se não houver cache suficiente no computador clie
 
 Para resolver esse problema, ajuste o valor do registro **DirectoryCacheEntrySizeMax** para permitir o cache de listagens de diretório maiores no computador cliente:
 
-- Local: HKLM\System\CCS\Services\Lanmanworkstation\Parameters
+- Localização: HKLM\System\CCS\Services\Lanmanworkstation\Parameters
 - Nome do valor: DirectoryCacheEntrySizeMax 
 - Tipo de valor: DWORD
  

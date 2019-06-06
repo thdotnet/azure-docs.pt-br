@@ -2,20 +2,20 @@
 title: Notas do desenvolvedor para políticas personalizadas – Azure Active Directory B2C | Microsoft Docs
 description: Observações para os desenvolvedores sobre a configuração e a manutenção do Azure AD B2C com políticas personalizadas.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 03/18/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 1093f1882328604819d5fbab33d87b26f1af2886
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 1d0be4ec2ed8feb308839377e0494ef2f4b78368
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64703253"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66510207"
 ---
 # <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Notas do desenvolvedor para políticas personalizadas no Azure Active Directory B2C
 
@@ -126,7 +126,7 @@ Recursos de estrutura de experiência de identidade/diretiva personalizada estã
 |-------- | ----------- | ------- | -- | ----- |
 | Chaves de política – gerar, manual, upload |  |  | X |  |
 | Chaves de política – RSA/Cert, segredos |  |  | X |  |
-| Upload de Política |  |  | X |  |
+| Upload de políticas |  |  | X |  |
 
 ### <a name="developer-interface"></a>Interface do desenvolvedor
 

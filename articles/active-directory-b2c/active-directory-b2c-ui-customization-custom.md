@@ -2,20 +2,20 @@
 title: Personalizar a interface do usuário do aplicativo usando uma política personalizada no Azure Active Directory B2C | Microsoft Docs
 description: Saiba mais sobre como personalizar uma interface do usuário usando uma política personalizada no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 12/18/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5dc60c1fbdbd04653160db4d7794f8887305859d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c3c97e786e2147f043a63b90b886e01eb5944cb4
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64696897"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66507685"
 ---
 # <a name="customize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Personalizar a interface do usuário do aplicativo usando uma política personalizada no Azure Active Directory B2C
 
@@ -37,7 +37,7 @@ Veja como ele funciona: O Azure AD B2C executa o código no navegador do cliente
 
 Crie conteúdo em HTML com o nome da marca de seu produto no título.
 
-1. Copie o snippet de HTML a seguir. É um HTML5 bem formado com um elemento vazio chamado *\<div id = "api"\>\</div\>* localizado dentro das marcas *\<body\>*. Esse elemento marca o local em que o conteúdo do Azure AD B2C será inserido.
+1. Copie o snippet de HTML a seguir. É um HTML5 bem formado com um elemento vazio chamado *\<div id = "api"\>\</div\>* localizado dentro das marcas *\<body\>* . Esse elemento marca o local em que o conteúdo do Azure AD B2C será inserido.
 
    ```html
    <!DOCTYPE html>
@@ -97,7 +97,7 @@ Para criar um contêiner público no armazenamento de Blobs, faça o seguinte:
 Configure o Armazenamento de nlobs para o Compartilhamento de Recursos entre Origens do Azure fazendo o seguinte:
 
 1. No menu, selecione **CORS**.
-2. Para **origens permitidas**, insira `https://your-tenant-name.b2clogin.com`. Substitua `your-tenant-name` pelo nome de seu locatário do Azure AD B2C. Por exemplo, `https://fabrikam.b2clogin.com`. Você precisa usar todas as letras minúsculas ao digitar o nome do seu locatário.
+2. Para **origens permitidas**, insira `https://your-tenant-name.b2clogin.com`. Substitua `your-tenant-name` pelo nome de seu locatário do Azure AD B2C. Por exemplo: `https://fabrikam.b2clogin.com`. Você precisa usar todas as letras minúsculas ao digitar o nome do seu locatário.
 3. Para **métodos permitidos**, selecione ambos `GET` e `OPTIONS`.
 4. Para **cabeçalhos permitidos**, digite um asterisco (*).
 5. Para **cabeçalhos expostos**, digite um asterisco (*).
@@ -121,7 +121,7 @@ Para configurar a personalização da interface do usuário, você deve copiar o
 3. Abra o arquivo de extensão. Por exemplo, *TrustFrameworkExtensions.xml*. Pesquise o elemento **BuildingBlocks**. Se o elemento não existir, adicione-o.
 4. Cole todo o conteúdo do elemento **ContentDefinitions** que você copiou como filho do elemento **BuildingBlocks**. 
 5. Pesquise o elemento **ContentDefinition** que contém `Id="api.signuporsignin"` no XML copiado.
-6. Altere o valor de **LoadUri** para a URL do arquivo HTML que você carregou no armazenamento. Por exemplo, `https://your-storage-account.blob.core.windows.net/your-container/customize-ui.html`.
+6. Altere o valor de **LoadUri** para a URL do arquivo HTML que você carregou no armazenamento. Por exemplo: `https://your-storage-account.blob.core.windows.net/your-container/customize-ui.html`.
     
     Sua política personalizada deverá ter a seguinte aparência:
 

@@ -2,20 +2,20 @@
 title: Definir um perfil técnico do Azure Active Directory em uma política personalizada no Azure Active Directory B2C | Microsoft Docs
 description: Defina um perfil técnico do Azure Active Directory em uma política personalizada no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 433307791201e3799b3bc9e54aec765d9fbeb4af
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 8b8bbe540d9e296b0f6a0c11a62d3b861e0115d3
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64718710"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66507439"
 ---
 # <a name="define-an-azure-active-directory-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Definir um perfil técnico do Azure Active Directory em uma política personalizada no Azure Active Directory B2C
 
@@ -255,12 +255,12 @@ O perfil técnico a seguir exclui uma conta de usuário social usando **alternat
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | Operação | Sim | A operação a ser executada. Valores possíveis: `Read`, `Write`, `DeleteClaims` ou `DeleteClaimsPrincipal`. | 
-| RaiseErrorIfClaimsPrincipalDoesNotExist | Não  | Gere um erro se o objeto de usuário não existe no diretório. Os valores possíveis são `true` ou `false`. | 
-| UserMessageIfClaimsPrincipalDoesNotExist | Não  | Caso um erro deva ser gerado (veja a descrição do atributo RaiseErrorIfClaimsPrincipalDoesNotExist), especifique a mensagem para mostrar ao usuário se o objeto de usuário não existe. O valor pode ser [localizado](localization.md).| 
-| RaiseErrorIfClaimsPrincipalAlreadyExists | Não  | Gere um erro se o objeto de usuário já existe. Os valores possíveis são `true` ou `false`.| 
-| UserMessageIfClaimsPrincipalAlreadyExists | Não  | Se um erro for gerado (veja a descrição do atributo RaiseErrorIfClaimsPrincipalAlreadyExists), especifique a mensagem a mostrar ao usuário se o objeto de usuário já existe. O valor pode ser [localizado](localization.md).| 
-| ApplicationObjectId | Não  | O identificador de objeto de aplicativo para atributos de extensão. Valor: ObjectId de um aplicativo. Para obter mais informações, veja [Atributos personalizados de uso em uma política de edição de perfil personalizada](active-directory-b2c-create-custom-attributes-profile-edit-custom.md). | 
-| ClientId | Não  | O identificador de cliente para acessar o locatário como um terceiro. Para obter mais informações, veja [Atributos personalizados de uso em uma política de edição de perfil personalizada](active-directory-b2c-create-custom-attributes-profile-edit-custom.md) | 
+| RaiseErrorIfClaimsPrincipalDoesNotExist | Não | Gere um erro se o objeto de usuário não existe no diretório. Os valores possíveis são `true` ou `false`. | 
+| UserMessageIfClaimsPrincipalDoesNotExist | Não | Caso um erro deva ser gerado (veja a descrição do atributo RaiseErrorIfClaimsPrincipalDoesNotExist), especifique a mensagem para mostrar ao usuário se o objeto de usuário não existe. O valor pode ser [localizado](localization.md).| 
+| RaiseErrorIfClaimsPrincipalAlreadyExists | Não | Gere um erro se o objeto de usuário já existe. Os valores possíveis são `true` ou `false`.| 
+| UserMessageIfClaimsPrincipalAlreadyExists | Não | Se um erro for gerado (veja a descrição do atributo RaiseErrorIfClaimsPrincipalAlreadyExists), especifique a mensagem a mostrar ao usuário se o objeto de usuário já existe. O valor pode ser [localizado](localization.md).| 
+| ApplicationObjectId | Não | O identificador de objeto de aplicativo para atributos de extensão. Valor: ObjectId de um aplicativo. Para obter mais informações, veja [Atributos personalizados de uso em uma política de edição de perfil personalizada](active-directory-b2c-create-custom-attributes-profile-edit-custom.md). | 
+| ClientId | Não | O identificador de cliente para acessar o locatário como um terceiro. Para obter mais informações, veja [Atributos personalizados de uso em uma política de edição de perfil personalizada](active-directory-b2c-create-custom-attributes-profile-edit-custom.md) | 
 
 
 

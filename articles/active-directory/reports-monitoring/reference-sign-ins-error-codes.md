@@ -17,12 +17,12 @@ ms.date: 05/08/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0986610007f5c470589eb94d6761b8d31dd79e72
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 3208afc7ec18013c6e70e148995d33114cf7e06c
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65463488"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66513661"
 ---
 # <a name="sign-in-activity-report-error-codes"></a>Códigos de erro do relatório de atividade de login 
 
@@ -53,7 +53,7 @@ Você também pode acessar programaticamente os dados de login usando a [API de 
 ## <a name="error-codes"></a>Códigos do Erro
 
 
-|Erro|Descrição|
+|Erro|DESCRIÇÃO|
 |---|---|
 |16000|Este é um detalhe de implementação interna e não uma condição de erro. É possível ignorar essa referência com segurança.|
 |20001|Há um problema com seu provedor de identidade federada. Entre em contato com seu IDP para resolver esse problema.|
@@ -181,6 +181,8 @@ Você também pode acessar programaticamente os dados de login usando a [API de 
 |500121| Falha de autenticação durante a solicitação de autenticação forte.|
 |500133| A declaração não está dentro de seu intervalo de tempo válido. Certifique-se de que o token de acesso não expirou antes de usá-lo para a declaração de usuário ou antes de solicitar um novo token.|
 |530021|Aplicativo não atende os requisitos de aplicativo de acesso condicional aprovado.|
+|7000218|O corpo da solicitação deve conter o seguinte parâmetro: 'client_assertion' ou 'client_secret'.|
+
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -2,20 +2,20 @@
 title: Exemplos de transformação de declarações de data do esquema do Identity Experience Framework do Azure Active Directory B2C | Microsoft Docs
 description: Exemplos de transformação de declarações de data para o esquema da Estrutura de Experiência de Identidade do Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 22484adcc709c1d2726d8086ac75300f189bcc41
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: ad4c6c78556f98e2905b3583910e498055257c36
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64710429"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66511122"
 ---
 # <a name="date-claims-transformations"></a>Transformações de declarações de data
 
@@ -29,8 +29,8 @@ Verifica se uma declaração de data e hora (tipo de dados de cadeia de caracter
 
 | item | TransformationClaimType | Tipo de Dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | leftOperand | string | O tipo da primeira declaração, que deve ser posterior à segunda declaração. |
-| InputClaim | rightOperand | string | O tipo da segunda declaração, que deve ser anterior à primeira declaração. |
+| InputClaim | leftOperand | cadeia de caracteres | O tipo da primeira declaração, que deve ser posterior à segunda declaração. |
+| InputClaim | rightOperand | cadeia de caracteres | O tipo da segunda declaração, que deve ser anterior à primeira declaração. |
 | InputParameter | AssertIfEqualTo | boolean | Especifica se essa declaração deve passar se o operando esquerdo for igual ao operando direito. |
 | InputParameter | AssertIfRightOperandIsNotPresent | boolean | Especifica se essa declaração deve passar se o operando à direita estiver ausente. |
 | InputParameter | TreatAsEqualIfWithinMillseconds | int | Especifica o número de milissegundos para permitir entre as duas datas e horas para considerar os tempos de igual (por exemplo, a conta para defasagem horária). |
@@ -143,7 +143,7 @@ Determine se uma dateTime é posterior, anterior ou igual a outra. O resultado �
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | firstDateTime | dateTime | O primeiro dateTime a fim de comparar se é anterior ou posterior ao segundo dateTime. Valor nulo gerará uma exceção. |
 | InputClaim | secondDateTime | dateTime | O segundo dateTime a fim de comparar se é anterior ou posterior ao primeiro dateTime. Valor nulo é tratado como o dateTime atual. |
-| InputParameter | operator | string | Um dos seguintes valores: mesmo, posterior ou anterior. |
+| InputParameter | operator | cadeia de caracteres | Um dos seguintes valores: mesmo, posterior ou anterior. |
 | InputParameter | timeSpanInSeconds | int | Adicione o intervalo de tempo para a primeira data e hora. |
 | OutputClaim | result | boolean | O ClaimType produzido depois de invocar esta ClaimsTransformation. |
 

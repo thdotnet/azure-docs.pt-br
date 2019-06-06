@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 04/02/2017
+ms.date: 06/04/2019
 ms.author: mbullwin
-ms.openlocfilehash: 1c360d60a429f137c4b74ad4afe8ae9bba895b7d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 07d52544b584adb02cc60790b7cb63c8aee1e366
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66130924"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514473"
 ---
 #  <a name="create-application-insights-resources-using-powershell"></a>Criar recursos do Application Insights usando o PowerShell
 
@@ -82,7 +82,7 @@ Criar um novo arquivo .json - vamos chamá-lo de `template1.json` neste exemplo.
                     2
                 ],
                 "metadata": {
-                    "description": "1 = Basic, 2 = Enterprise"
+                    "description": "1 = Per GB (Basic), 2 = Per Node (Enterprise)"
                 }
             },
             "dailyQuota": {
@@ -201,7 +201,7 @@ Para criar um recurso de aplicativo com o plano de preço Enterprise, usando o m
 |priceCode|plan|
 |---|---|
 |1|Basic|
-|2|Corporativo|
+|2|Enterprise|
 
 * Se desejar usar apenas o plano de preço Básico padrão, omita o recurso CurrentBillingFeatures do modelo.
 * Se você quiser alterar o plano de preço depois que o recurso do componente tiver sido criado, você poderá usar um modelo que omita o recurso "microsoft.insights/components". Além disso, omita o nó `dependsOn` do recurso de cobrança. 
@@ -452,4 +452,3 @@ Outros artigos sobre automação:
 * [Enviar o Diagnóstico do Azure para o Application Insights](powershell-azure-diagnostics.md)
 * [Implantar no Azure pelo GitHub](https://blogs.msdn.com/b/webdev/archive/2015/09/16/deploy-to-azure-from-github-with-application-insights.aspx)
 * [Criar anotações de versão](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1)
-

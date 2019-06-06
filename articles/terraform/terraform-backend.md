@@ -7,12 +7,12 @@ ms.service: azure
 ms.topic: article
 ms.date: 09/13/2018
 ms.author: tarcher
-ms.openlocfilehash: 89108f02957990ad1c7eb736f39de89537f06db5
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: a88ad25e335026d5172c7997f62629d5ada46f6e
+ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66297932"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66693302"
 ---
 # <a name="store-terraform-state-in-azure-storage"></a>Armazene o estado Terraform no armazenamento do Azure
 
@@ -102,7 +102,7 @@ Agora, inicialize a configuração com *Terraform init* e depois execute a confi
 
 Ao usar um Blob de Armazenamento do Azure para armazenamento de estado, o blob é bloqueado automaticamente antes de qualquer operação que grave o estado. Essa configuração impede várias operações de estado simultâneas, o que pode causar danos. Para obter mais informações, consulte [State Locking][terraform-state-lock] na documentação do Terraform.
 
-O bloqueio pode ser visto ao examinar o blob no portal do Azure ou em outras ferramentas de gerenciamento do Azure.
+O bloqueio pode ser visto ao examinar o blob por meio do portal do Azure ou outras ferramentas de gerenciamento do Azure.
 
 ![BLOBs do Azure com bloqueio](media/terraform-backend/lock.png)
 

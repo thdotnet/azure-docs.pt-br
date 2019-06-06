@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
-ms.date: 05/23/2019
+ms.date: 05/28/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: be0de7e809565fce4171401760d11ef9de45724e
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: e408439c4868a9fadfd15ab8ae303b2d881c481e
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66236112"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66494287"
 ---
 # <a name="azure-app-service-access-restrictions"></a>Restrições de acesso do serviço de aplicativo do Azure #
 
@@ -50,17 +50,25 @@ A lista mostrará todas as restrições atuais que estão em seu aplicativo. Se 
 
 Você pode clicar em **[+] adicionar** para adicionar uma nova regra de restrição de acesso. Depois de adicionar uma regra, entrará em vigor imediatamente. As regras são impostas em ordem de prioridade a partir do número mais baixo e para cima. Há uma negação implícita tudo o que está em vigor depois que você adicionar até mesmo uma única regra.
 
+### <a name="adding-ip-address-rules"></a>Adicionando regras de endereço IP
+
 ![Adicionar uma regra de restrição de acesso IP](media/app-service-ip-restrictions/access-restrictions-ip-add.png)
 
 Ao criar uma regra, você deve selecionar Permitir/Negar e também o tipo de regra. Você também deve fornecer o valor de prioridade e o que você está restringindo o acesso aos.  Opcionalmente, você pode adicionar um nome e descrição para a regra.  
 
-Para definir um endereço IP com base em regra, selecione um tipo de IPv4 ou IPv6. Notação de endereço IP deve ser especificada na notação de CIDR de endereços IPv4 e IPv6. Para especificar um endereço exato, você pode usar algo como 1.2.3.4/32 onde os quatro primeiros octetos representam o endereço IP e /32 é a máscara. A notação de CIDR de IPv4 para todos os endereços é 0.0.0.0/0. Para saber mais sobre a notação CIDR, leia [Roteamento entre domínios sem classe](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
+Para definir um endereço IP com base em regra, selecione um tipo de IPv4 ou IPv6. Notação de endereço IP deve ser especificada na notação de CIDR de endereços IPv4 e IPv6. Para especificar um endereço exato, você pode usar algo como 1.2.3.4/32 onde os quatro primeiros octetos representam o endereço IP e /32 é a máscara. A notação de CIDR de IPv4 para todos os endereços é 0.0.0.0/0. Para saber mais sobre a notação CIDR, leia [Roteamento entre domínios sem classe](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). 
+
+### <a name="service-endpoints"></a>Pontos de extremidade de serviço
 
 ![Adicionar uma regra de restrição de acesso de rede virtual](media/app-service-ip-restrictions/access-restrictions-vnet-add.png)
 
 Para restringir o acesso às sub-redes selecionadas, selecione um tipo de rede Virtual. Abaixo disso, você poderá escolher a assinatura, VNet e sub-rede que deseja permitir ou negar acesso com. Se os pontos de extremidade de serviço não já estarão habilitados com o Microsoft. Web para a sub-rede que você selecionou, ele automaticamente será ativado para você, a menos que você marcar a caixa pedindo para não fazer isso. A situação em que você desejaria para habilitá-lo no aplicativo, mas não a sub-rede está amplamente relacionada à se você tiver as permissões para habilitar os pontos de extremidade de serviço na sub-rede ou não. Se você precisar obter outra pessoa para habilitar pontos de extremidade de serviço na sub-rede, você pode a caixa de seleção e seu aplicativo configurado para pontos de extremidade de serviço em antecipação a ele que está sendo habilitado mais tarde na sub-rede. 
 
 Pontos de extremidade de serviço não podem ser usados para restringir o acesso a aplicativos que são executados em um ambiente de serviço de aplicativo. Quando seu aplicativo estiver em um ambiente de serviço de aplicativo, você pode controlar o acesso ao seu aplicativo com regras de acesso IP. 
+
+Com pontos de extremidade de serviço, você pode configurar seu aplicativo com Gateways de aplicativo ou outros dispositivos de WAF. Você também pode configurar aplicativos multicamadas com o back-ends seguro. Para obter mais detalhes sobre algumas das possibilidades, leia [recursos de rede e serviço de aplicativo](networking-features.md).
+
+### <a name="managing-access-restriction-rules"></a>Gerenciando regras de restrição de acesso
 
 Você pode clicar em qualquer linha para editar uma regra de restrição de acesso existente. As edições são eficazes imediatamente, incluindo as alterações na ordem de prioridade.
 
@@ -74,19 +82,19 @@ Para excluir uma regra, clique em **...**  em sua regra e clique em **remover**.
 
 ![Excluir regra de restrição de acesso](media/app-service-ip-restrictions/access-restrictions-delete.png)
 
-### <a name="scm-site"></a>Site do SCM 
-
-Além de ser capaz de controlar o acesso ao seu aplicativo, você também pode restringir o acesso para o site do scm usado pelo seu aplicativo. O site do scm é web implantar o ponto de extremidade e também o console do Kudu. Separadamente, você pode atribuir as restrições de acesso para o site do scm do aplicativo ou usar o mesmo conjunto para o aplicativo e o site do scm. Quando você marca a caixa para que as mesmas restrições que seu aplicativo, tudo o que é blanked-out. Se você desmarcar a caixa, são aplicadas a todas as configurações que você tinha anteriormente no site do scm. 
-
-![restrições de acesso de lista](media/app-service-ip-restrictions/access-restrictions-scm-browse.png)
-
-## <a name="blocking-a-single-ip-address"></a>Bloqueio de um único endereço IP ##
+### <a name="blocking-a-single-ip-address"></a>Bloqueio de um único endereço IP ##
 
 Ao adicionar sua primeira regra de restrição de IP, o serviço adicionará um explícito **negar tudo** regra com uma prioridade de 2147483647. Na prática, explícita **negar tudo** regra será a última regra executada e bloqueará o acesso a nenhum endereço IP que não é explicitamente permitido usando uma **permitir** regra.
 
 Para o cenário em que os usuários desejam bloquear explicitamente um único endereço IP ou o bloco de endereço IP, mas permitir que todo o acesso mais, é necessário adicionar uma explícita **permitir que todos os** regra.
 
 ![endereço ip único de bloco](media/app-service-ip-restrictions/block-single-address.png)
+
+### <a name="scm-site"></a>Site do SCM 
+
+Além de ser capaz de controlar o acesso ao seu aplicativo, você também pode restringir o acesso para o site do scm usado pelo seu aplicativo. O site do scm é web implantar o ponto de extremidade e também o console do Kudu. Separadamente, você pode atribuir as restrições de acesso para o site do scm do aplicativo ou usar o mesmo conjunto para o aplicativo e o site do scm. Quando você marca a caixa para que as mesmas restrições que seu aplicativo, tudo o que é blanked-out. Se você desmarcar a caixa, são aplicadas a todas as configurações que você tinha anteriormente no site do scm. 
+
+![restrições de acesso de lista](media/app-service-ip-restrictions/access-restrictions-scm-browse.png)
 
 ## <a name="programmatic-manipulation-of-access-restriction-rules"></a>Manipulação programática das regras de restrição de acesso ##
 

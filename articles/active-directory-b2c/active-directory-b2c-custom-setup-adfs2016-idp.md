@@ -2,20 +2,20 @@
 title: Adicionar ADFS como um provedor de identidade SAML usando políticas personalizadas no Azure Active Directory B2C | Microsoft Docs
 description: Configurar o ADFS 2016 usando o protocolo SAML e as políticas personalizadas no Azure Active Directory B2C
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/07/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: df4acf72a1a6ea134e1192512fda1d8cf1e92f0a
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 4510074619ff513b7284819d88fdb2532e4ce33a
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65767984"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66510425"
 ---
 # <a name="add-adfs-as-a-saml-identity-provider-using-custom-policies-in-azure-active-directory-b2c"></a>Adicionar ADFS como um provedor de identidade SAML usando políticas personalizadas no Azure Active Directory B2C
 
@@ -144,7 +144,7 @@ Agora que implementou um botão, você precisará vinculá-lo a uma ação. A a�
 Para usar o ADFS como um provedor de identidade no Azure AD B2C, é necessário criar uma confiança de terceira parte confiável do ADFS com os metadados SAML do Azure AD B2C. O exemplo a seguir mostra um endereço de URL para os metadados do SAML de um perfil técnico do Azure AD B2C:
 
 ```
-https://login.microsoftonline.com/te/your-tenant/your-policy/samlp/metadata?idptp=your-technical-profile
+https://your-tenant-name.b2clogin.com/your-tenant-name/your-policy/samlp/metadata?idptp=your-technical-profile
 ```
 
 Substitua os valores a seguir:
@@ -173,7 +173,7 @@ Abra um navegador e navegue até a URL. Certifique-se de digitar a URL correta e
     | Sobrenome | family_name |
     | Given-Name | given_name |
     | E-Mail-Address | email |
-    | Display-Name | nome |
+    | Display-Name | name |
     
 12.  Com base no tipo de certificado, talvez seja necessário definir o algoritmo de HASH. Na janela de propriedades de confiança de terceira parte confiável (Demonstração B2C), selecione a guia **Avançado** e altere o **algoritmo de Secure hash** para `SHA-256`, e clique em **OK**.  
 13. No Gerenciador do Servidor, selecione **Ferramentas** e, em seguida, selecione **Gerenciamento do ADFS**.

@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/14/2019
+ms.date: 06/04/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: vitavor
 ms.custom: secdec18
-ms.openlocfilehash: 89ba5b9641d156dfb098d51272b8bf8d3fd53f5b
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 946a9bd7595692dddd157d01945fd15bdf1ab965
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65785852"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66493766"
 ---
 # <a name="assign-access-to-cost-management-data"></a>Atribuir acesso a dados do Gerenciamento de Custos
 
@@ -37,8 +37,8 @@ Para exibir dados de custo de assinaturas do Azure EA, um usuário precisará te
 
 | **Escopo** | **Definido em** | **Acesso necessário para exibir dados** | **Configuração de pré-requisito de EA** | **Consolida os dados para** |
 | --- | --- | --- | --- | --- |
-| Conta de cobrança<sup>1</sup> | [https://ea.azure.com](https://ea.azure.com/) | Admin Corporativo | Nenhum | Todas as assinaturas do contrato empresarial |
-| Departamento | [https://ea.azure.com](https://ea.azure.com/) | Administrador de departamento | **Encargos de exibição do administrador de departamento** habilitados | Todas as assinaturas que pertencem a uma conta de registro que esteja vinculada ao departamento |
+| Conta de cobrança<sup>1</sup> | [https://ea.azure.com](https://ea.azure.com/) | Administrador Corporativo | Nenhum | Todas as assinaturas do contrato empresarial |
+| department | [https://ea.azure.com](https://ea.azure.com/) | Administrador de departamento | **Encargos de exibição do administrador de departamento** habilitados | Todas as assinaturas que pertencem a uma conta de registro que esteja vinculada ao departamento |
 | Conta de registro<sup>2</sup> | [https://ea.azure.com](https://ea.azure.com/) | Proprietário da conta | **Encargos de exibição do proprietário da conta** habilitados | Todas as assinaturas da conta de registro |
 | Grupo de gerenciamento | [https://portal.azure.com](https://portal.azure.com/) | Leitor do Gerenciamento de Custos (ou Leitor) | **Encargos de exibição do proprietário da conta** habilitados | Todas as assinaturas abaixo do grupo de gerenciamento |
 | Assinatura | [https://portal.azure.com](https://portal.azure.com/) | Leitor do Gerenciamento de Custos (ou Leitor) | **Encargos de exibição do proprietário da conta** habilitados | Todos os recursos/grupos de recursos na assinatura |
@@ -170,6 +170,13 @@ O acesso a um grupo de recursos requer pelo menos a permissão do Leitor de Gere
 7. Em **Atribuir acesso a**, selecione **Usuário, grupo ou aplicativo do Azure AD**.
 8. Para atribuir acesso, pesquise pelo usuário e selecione-o.
 9. Clique em **Salvar**.
+
+## <a name="cross-tenant-authentication-issues"></a>Problemas de autenticação entre locatários
+
+Atualmente, o gerenciamento de custos do Azure tem suporte limitado para autenticação entre locatários. Em algumas circunstâncias ao tentar autenticar entre locatários, você poderá receber um **acesso negado** erro na análise de custo. Esse problema pode ocorrer se você configurar o controle de acesso baseado em função (RBAC) para outra assinatura de locatário e, em seguida, tente exibir dados de custo.
+
+*Para contornar esse problema*: Depois de configurar o RBAC entre locatários, aguarde uma hora. Em seguida, tente exibir os custos em análise de custo ou conceder acesso de gerenciamento de custos para os usuários em ambos os locatários.  
+
 
 ## <a name="next-steps"></a>Próximas etapas
 

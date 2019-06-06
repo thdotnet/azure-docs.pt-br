@@ -2,20 +2,20 @@
 title: Fluxo de código de autorização - Azure Active Directory B2C | Microsoft Docs
 description: Saiba como compilar aplicativos Web usando o Azure AD B2C e o protocolo de autenticação OpenID Connect.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/19/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 72111bc54691b340bcb0d8af8ef52bf0bd103a21
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7157682d7952529f9dfa98e8bc8707df9cfe944f
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64703579"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66509237"
 ---
 # <a name="oauth-20-authorization-code-flow-in-azure-active-directory-b2c"></a>Fluxo de código de autorização do OAuth 2.0 no Azure Active Directory B2C
 
@@ -78,9 +78,9 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 | response_type |Obrigatório |O tipo de resposta, que deve incluir `code` para o fluxo do código de autorização. |
 | redirect_uri |Obrigatório |O URI de redirecionamento do seu aplicativo, no qual as respostas de autenticação são enviadas e recebidas pelo seu aplicativo. Ele deve corresponder exatamente a um dos URIs de redirecionamento registrados no portal, exceto que ele deve ser codificado como URL. |
 | scope |Obrigatório |Uma lista de escopos separados por espaços. Um valor de escopo único indica ao Azure AD (Azure Active Directory) que ambas as permissões estão sendo solicitadas. O uso da ID do cliente como o escopo indica que seu aplicativo precisa de um token de acesso que possa ser usado em relação a seu próprio serviço ou API Web, representado pela mesma ID de cliente.  O escopo `offline_access` indica que seu aplicativo precisa de um token de atualização para acesso de longa duração a recursos. Você também pode usar o escopo `openid` para solicitar um token de ID do Azure AD B2C. |
-| response_mode |Recomendadas |O método que você usa para enviar o código de autorização resultante para seu aplicativo. Pode ser `query`, `form_post` ou `fragment`. |
-| state |Recomendadas |Um valor incluído na solicitação que pode ser uma cadeia de caracteres de qualquer conteúdo que você deseja usar. Geralmente, um valor exclusivo gerado aleatoriamente é usado para evitar ataques de solicitação intersite forjada. O estado também é usado para codificar informações sobre o estado do usuário no aplicativo, antes que a solicitação de autenticação tenha ocorrido. Por exemplo, a página em que o usuário estava ou fluxo de usuário que estava sendo executado. |
-| p |Obrigatório |O fluxo de usuário que será executado. É o nome de um fluxo de usuário que é criado no diretório do Azure AD B2C. O valor do nome do fluxo de usuário deve começar com **b2c\_1\_**. Para saber mais sobre os fluxos de usuário, consulte [Fluxos de usuário do Azure AD B2C](active-directory-b2c-reference-policies.md). |
+| response_mode |Recomendado |O método que você usa para enviar o código de autorização resultante para seu aplicativo. Pode ser `query`, `form_post` ou `fragment`. |
+| estado |Recomendado |Um valor incluído na solicitação que pode ser uma cadeia de caracteres de qualquer conteúdo que você deseja usar. Geralmente, um valor exclusivo gerado aleatoriamente é usado para evitar ataques de solicitação intersite forjada. O estado também é usado para codificar informações sobre o estado do usuário no aplicativo, antes que a solicitação de autenticação tenha ocorrido. Por exemplo, a página em que o usuário estava ou fluxo de usuário que estava sendo executado. |
+| p |Obrigatório |O fluxo de usuário que será executado. É o nome de um fluxo de usuário que é criado no diretório do Azure AD B2C. O valor do nome do fluxo de usuário deve começar com **b2c\_1\_** . Para saber mais sobre os fluxos de usuário, consulte [Fluxos de usuário do Azure AD B2C](active-directory-b2c-reference-policies.md). |
 | prompt |Opcional |O tipo de interação do usuário que é necessário. Atualmente, o único valor válido é `login`, que força o usuário a inserir suas credenciais nessa solicitação. O logon único não terá efeito. |
 
 Nesse ponto, o usuário é solicitado a concluir o fluxo de trabalho do fluxo de usuário. Isso pode exigir que o usuário insira seu nome de usuário e senha, entre com uma identidade social, inscreva-se no diretório ou realize outras etapas. As ações do usuário dependem de como o fluxo de usuário é definido.
@@ -97,8 +97,8 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...        // the auth
 
 | Parâmetro | DESCRIÇÃO |
 | --- | --- |
-| código |O código de autorização que o aplicativo solicitou. O aplicativo pode usar o código de autorização para solicitar um token de acesso para um recurso de destino. Os códigos de autorização têm uma duração muito curta. Normalmente, eles expiram depois de cerca de 10 minutos. |
-| state |Consulte a descrição completa na tabela na seção anterior. Se um parâmetro `state` estiver incluído na solicitação, o mesmo valor deverá aparecer na resposta. O aplicativo deve verificar se os valores `state` na solicitação e na resposta são idênticos. |
+| code |O código de autorização que o aplicativo solicitou. O aplicativo pode usar o código de autorização para solicitar um token de acesso para um recurso de destino. Os códigos de autorização têm uma duração muito curta. Normalmente, eles expiram depois de cerca de 10 minutos. |
+| estado |Consulte a descrição completa na tabela na seção anterior. Se um parâmetro `state` estiver incluído na solicitação, o mesmo valor deverá aparecer na resposta. O aplicativo deve verificar se os valores `state` na solicitação e na resposta são idênticos. |
 
 As respostas de erro também podem ser enviadas ao URI de redirecionamento, de modo que o aplicativo possa tratá-las adequadamente:
 
@@ -113,7 +113,7 @@ error=access_denied
 | --- | --- |
 | error |Uma cadeia de caracteres de código de erro que você pode usar para classificar os tipos de erros que ocorrem. Você também pode usar a cadeia de caracteres para reagir a erros. |
 | error_description |Uma mensagem de erro específica que pode ajudar você a identificar a causa raiz de um erro de autenticação. |
-| state |Consulte a descrição completa na tabela anterior. Se um parâmetro `state` estiver incluído na solicitação, o mesmo valor deverá aparecer na resposta. O aplicativo deve verificar se os valores `state` na solicitação e na resposta são idênticos. |
+| estado |Consulte a descrição completa na tabela anterior. Se um parâmetro `state` estiver incluído na solicitação, o mesmo valor deverá aparecer na resposta. O aplicativo deve verificar se os valores `state` na solicitação e na resposta são idênticos. |
 
 ## <a name="2-get-a-token"></a>2. Obter um token
 Agora que você adquiriu um código de autorização, será possível resgatar o `code` de um token para o recurso desejado enviando uma solicitação POST para o ponto de extremidade `/token`. No Azure AD B2C, o único recurso para o qual você pode solicitar um token é a própria API Web de back-end do seu aplicativo. A convenção usada para solicitar um token para si mesmo é usar a ID do cliente do aplicativo como o escopo:
@@ -132,8 +132,8 @@ grant_type=authorization_code&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&sco
 | p |Obrigatório |O fluxo de usuário que foi usado para adquirir o código de autorização. Você não poderá usar um fluxo de usuário diferente nessa solicitação. Observe que esse parâmetro é adicionado à *cadeia de caracteres de consulta*e não ao corpo do POST. |
 | client_id |Obrigatório |A ID do aplicativo atribuída ao seu aplicativo no [portal do Azure](https://portal.azure.com). |
 | grant_type |Obrigatório |O tipo de concessão. Para o fluxo de código de autorização, o tipo de concessão deve ser `authorization_code`. |
-| scope |Recomendadas |Uma lista de escopos separados por espaços. Um valor de escopo único indica ao Azure AD que ambas as permissões estão sendo solicitadas. O uso da ID do cliente como o escopo indica que seu aplicativo precisa de um token de acesso que possa ser usado em relação a seu próprio serviço ou API Web, representado pela mesma ID de cliente.  O escopo `offline_access` indica que seu aplicativo precisa de um token de atualização para acesso de longa duração a recursos.  Você também pode usar o escopo `openid` para solicitar um token de ID do Azure AD B2C. |
-| código |Obrigatório |O código de autorização que você adquiriu no primeiro segmento do fluxo. |
+| scope |Recomendado |Uma lista de escopos separados por espaços. Um valor de escopo único indica ao Azure AD que ambas as permissões estão sendo solicitadas. O uso da ID do cliente como o escopo indica que seu aplicativo precisa de um token de acesso que possa ser usado em relação a seu próprio serviço ou API Web, representado pela mesma ID de cliente.  O escopo `offline_access` indica que seu aplicativo precisa de um token de atualização para acesso de longa duração a recursos.  Você também pode usar o escopo `openid` para solicitar um token de ID do Azure AD B2C. |
+| code |Obrigatório |O código de autorização que você adquiriu no primeiro segmento do fluxo. |
 | redirect_uri |Obrigatório |O URI de redirecionamento do aplicativo em que você recebeu o código de autorização. |
 
 Uma resposta de token bem-sucedido tem esta aparência:
@@ -151,7 +151,7 @@ Uma resposta de token bem-sucedido tem esta aparência:
 | Parâmetro | DESCRIÇÃO |
 | --- | --- |
 | not_before |A hora em que o token é considerado válido, nos valores de hora da época. |
-| token_type |O valor do tipo de token. O único tipo com suporte do Azure AD é Portador |
+| token_type |O valor do tipo de token. O único tipo com suporte do Azure AD é Portador. |
 | access_token |O JWT (Token Web JSON) assinado que você solicitou. |
 | scope |Os escopos para os quais o token é válido. Você também pode usar os escopos para armazenar tokens em cache para uso posterior. |
 | expires_in |O período de tempo pelo qual o token é válido (em segundos). |
@@ -216,7 +216,7 @@ Uma resposta de token bem-sucedido tem esta aparência:
 | Parâmetro | DESCRIÇÃO |
 | --- | --- |
 | not_before |A hora em que o token é considerado válido, nos valores de hora da época. |
-| token_type |O valor do tipo de token. O único tipo com suporte do Azure AD é Portador |
+| token_type |O valor do tipo de token. O único tipo com suporte do Azure AD é Portador. |
 | access_token |O JWT assinado que você solicitou. |
 | scope |Os escopos para os quais o token é válido. Você também pode usar os escopos para armazenar tokens em cache para uso posterior. |
 | expires_in |O período de tempo pelo qual o token é válido (em segundos). |

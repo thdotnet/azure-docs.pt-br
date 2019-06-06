@@ -2,20 +2,20 @@
 title: Adicionar um aplicativo Web – Azure Active Directory B2C | Microsoft Docs
 description: Saiba como adicionar um aplicativo Web ao seu locatário do Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
-ms.author: davidmu
+ms.author: marsma
 ms.date: 04/16/2019
 ms.custom: mvc
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: ede3fd0dd1d0351e691a9f160260c029d01c8f8a
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a1d098550c6fb733e088f8ad211d29f48f55d2d6
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64704035"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66511711"
 ---
 # <a name="add-a-web-api-application-to-your-azure-active-directory-b2c-tenant"></a>Adicionar um aplicativo de API Web ao locatário do Azure Active Directory B2C
 
@@ -28,7 +28,7 @@ ms.locfileid: "64704035"
 5. Insira um nome para o aplicativo. Por exemplo, *webapi1*.
 6. Para **Incluir aplicativo da Web / API da Web** e **Permitir fluxo implícito**, selecione **Sim**.
 7. Para a **URL de resposta**, insira um ponto de extremidade em que o Azure AD B2C deve retornar os tokens solicitados pelo seu aplicativo. Em seu aplicativo de produção, você pode definir a URL de resposta para um valor como `https://localhost:44332`. Para fins de teste, defina a URL de resposta `https://jwt.ms`.
-8. Para o **ID do aplicativo URI**, insira o identificador usado para sua API da web. O URI do identificador completo, incluindo o domínio, é gerado para você. Por exemplo, `https://contosotenant.onmicrosoft.com/api`.
+8. Para o **ID do aplicativo URI**, insira o identificador usado para sua API da web. O URI do identificador completo, incluindo o domínio, é gerado para você. Por exemplo: `https://contosotenant.onmicrosoft.com/api`.
 9. Clique em **Criar**.
 10. Na página de propriedades, registre a ID do aplicativo que você usará ao configurar o aplicativo Web.
 

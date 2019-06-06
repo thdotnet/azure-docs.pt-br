@@ -2,20 +2,20 @@
 title: Configurar tokens - Azure Active Directory B2C | Microsoft Docs
 description: Saiba como configurar as configurações de compatibilidade e o tempo de vida do token no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/16/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 69a6284ea7b8905bb5efdb1f4c9f26027bd6f9d9
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e1163c88a100ebb7500607475ab5740557904137
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64689603"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66511327"
 ---
 # <a name="configure-tokens-in-azure-active-directory-b2c"></a>Configurar tokens no Azure Active Directory B2C
 
@@ -32,7 +32,7 @@ Você pode configurar o tempo de vida de token em qualquer fluxo de usuário.
 1. Entre no [Portal do Azure](https://portal.azure.com).
 2. Verifique se que você estiver usando o diretório que contém o seu locatário do Azure AD B2C. Selecione o **filtro de diretório e assinatura** no menu superior e escolha o diretório que contém o seu locatário do Azure AD B2C.
 3. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
-4. Selecione **fluxos de usuário (diretivas)**.
+4. Selecione **fluxos de usuário (diretivas)** .
 5. Abra o fluxo de usuário que você criou anteriormente. 
 6. Selecione **Propriedades**.
 7. Sob **tempo de vida de Token**, ajustar as propriedades a seguir para as necessidades do seu aplicativo:
@@ -43,7 +43,7 @@ Você pode configurar o tempo de vida de token em qualquer fluxo de usuário.
 
 ## <a name="configure-token-compatibility"></a>Configurar a compatibilidade de token
 
-1. Selecione **fluxos de usuário (diretivas)**.
+1. Selecione **fluxos de usuário (diretivas)** .
 2. Abra o fluxo de usuário que você criou anteriormente. 
 3. Selecione **Propriedades**.
 4. Sob **configurações de compatibilidade de Token**, ajustar as propriedades a seguir para as necessidades do seu aplicativo:

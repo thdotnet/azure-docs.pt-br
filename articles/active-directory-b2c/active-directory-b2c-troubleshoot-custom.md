@@ -2,20 +2,20 @@
 title: Application Insights para solucionar problemas de políticas personalizadas no Azure Active Directory B2C | Microsoft Docs
 description: como configurar o Application Insights para rastrear a execução de políticas personalizadas.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/04/2017
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 9b25e5dc5d090ad7aab3d61e2c303a465b5d7443
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: df5d710792d8c47e491f5b06d88f4050e8eb4a01
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64703930"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66508066"
 ---
 # <a name="azure-active-directory-b2c-collecting-logs"></a>Azure Active Directory B2C: coletando logs
 
@@ -91,7 +91,7 @@ O Azure AD B2C oferece suporte a um recurso para envio de dados ao Application I
 1. Abra uma nova guia no Application Insights.
 1. Aqui está uma lista de consultas que você pode usar para ver os logs
 
-| Consultar | DESCRIÇÃO |
+| Consulta | DESCRIÇÃO |
 |---------------------|--------------------|
 traces | Veja todos os logs gerados pelo Azure AD B2C |
 rastreamentos \| onde carimbo de data/hora > ago(1d) | Veja todos os logs gerados pelo Azure AD B2C para o último dia

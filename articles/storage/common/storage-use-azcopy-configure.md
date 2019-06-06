@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/14/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: a160591ef0a47eed097ce8db373878f32965de9b
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 18dc3e224df18c900653e4549badcdd93f0df6ec
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66247118"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688030"
 ---
 # <a name="configure-optimize-and-troubleshoot-azcopy"></a>Configurar, otimizar e solucionar problemas de AzCopy
 
@@ -22,9 +22,9 @@ O AzCopy é um utilitário de linha de comando que você pode usar para copiar b
 > [!NOTE]
 > Se você estiver procurando o conteúdo para ajudar você a se familiarizar com o AzCopy, consulte um dos artigos a seguir:
 > - [Introdução ao AzCopy](storage-use-azcopy-v10.md)
-> - [Transferir dados com o armazenamento de BLOBs e AzCopy](storage-use-azcopy-blobs.md)
-> - [Transferir dados com o armazenamento de arquivos e AzCopy](storage-use-azcopy-files.md)
-> - [Transferir dados com o AzCopy e o Amazon S3 buckets](storage-use-azcopy-s3.md)
+> - [Transferir dados com o AzCopy e o Armazenamento de Blobs](storage-use-azcopy-blobs.md)
+> - [Transferir dados com o AzCopy e o Armazenamento de Arquivos](storage-use-azcopy-files.md)
+> - [Transferir dados com o AzCopy e os buckets do Amazon S3](storage-use-azcopy-s3.md)
 
 ## <a name="configure-proxy-settings"></a>Definir configurações de proxy
 
@@ -52,7 +52,7 @@ Use o `azcopy env` para verificar o valor atual dessa variável.  Se o valor é 
 
 ## <a name="change-the-location-of-the-log-files"></a>Alterar a localização dos arquivos de log
 
-Por padrão, os arquivos de log estão localizados na `%USERPROFILE\\.azcopy` pasta no Windows ou no `$HOME\\.azcopy` pasta no Mac e Linux. Você pode alterar esse local se você precisar usando estes comandos.
+Por padrão, os arquivos de log estão localizados na `%USERPROFILE\\.azcopy` diretório no Windows ou no `$HOME\\.azcopy` diretório no Mac e Linux. Você pode alterar esse local se você precisar usando estes comandos.
 
 | Sistema operacional | Comando  |
 |--------|-----------|
@@ -74,7 +74,7 @@ O AzCopy cria arquivos de log e o plano para cada trabalho. Você pode usar os l
 
 Os logs conterão o status de falha (`UPLOADFAILED`, `COPYFAILED`, e `DOWNLOADFAILED`), o caminho completo e o motivo da falha.
 
-Por padrão, os arquivos de log e o plano estão localizados na `%USERPROFILE\\.azcopy` pasta no Windows ou `$HOME\\.azcopy` pasta no Mac e Linux.
+Por padrão, os arquivos de log e o plano estão localizados na `%USERPROFILE\\.azcopy` do Windows ou `$HOME\\.azcopy` diretório no Mac e Linux.
 
 > [!IMPORTANT]
 > Ao enviar uma solicitação para o Microsoft Support (ou solucionar o problema que envolvem qualquer terceiro), compartilhar a versão em uma versão editada do comando que você deseja executar. Isso garante que a SAS não sejam acidentalmente compartilhada com qualquer pessoa. Você pode encontrar a versão editada no início do arquivo de log.

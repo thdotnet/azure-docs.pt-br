@@ -2,20 +2,20 @@
 title: UserJourneys | Microsoft Docs
 description: Especifica o elemento UserJourneys de uma política personalizada no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: f5e56d4953eecdb488d5dadd4497b1c42b932f35
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: d2e6ad9aa9692efa4ea5633dff78b262bb1917be
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65812574"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66512024"
 ---
 # <a name="userjourneys"></a>UserJourneys
 
@@ -29,19 +29,19 @@ Para definir os percursos do usuário com suporte da política, um elemento **Us
 
 O elemento **UserJourneys** contém o seguinte elemento:
 
-| Elemento | Ocorrências | Descrição |
+| Elemento | Ocorrências | DESCRIÇÃO |
 | ------- | ----------- | ----------- |
 | UserJourney | 1:n | Um percurso do usuário que define todos os constructos necessários para um fluxo completo do usuário. | 
 
 O elemento **UserJourney** contém o seguinte atributo:
 
-| Atributo | Obrigatório | Descrição |
+| Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | ID | Sim | Um identificador de um percurso do usuário que pode ser usado para referenciá-lo de outros elementos na política. O elemento **DefaultUserJourney** da [política de terceira parte confiável](relyingparty.md) aponta para esse atributo. |
 
 O elemento **UserJourney** contém os seguintes elementos:
 
-| Elemento | Ocorrências | Descrição |
+| Elemento | Ocorrências | DESCRIÇÃO |
 | ------- | ----------- | ----------- |
 | OrchestrationSteps | 1:n | Uma sequência de orquestração que deve ser seguida para ter uma transação bem-sucedida. Cada percurso do usuário consiste de uma lista ordenada de etapas de orquestração que são executadas em sequência. Se alguma delas falhar, a transação falhará. |
 
@@ -55,7 +55,7 @@ Para especificar a lista ordenada de etapas de orquestração, um elemento **Orc
 
 O elemento **OrchestrationSteps** contém o seguinte elemento:
 
-| Elemento | Ocorrências | Descrição |
+| Elemento | Ocorrências | DESCRIÇÃO |
 | ------- | ----------- | ----------- |
 | OrchestrationStep | 1:n | Uma etapa de orquestração ordenada. | 
 
@@ -71,7 +71,7 @@ O elemento **OrchestrationStep** contém os seguintes atributos:
 
 O elemento **OrchestrationStep** pode conter um dos seguintes elementos:
 
-| Elemento | Ocorrências | Descrição |
+| Elemento | Ocorrências | DESCRIÇÃO |
 | ------- | ----------- | ----------- | 
 | Pré-condições | 0:n | Uma lista de pré-condições que devem ser atendidas para que a etapa de orquestração seja executada. | 
 | ClaimsProviderSelections | 0:n | Uma lista de seleções do provedor de declarações para a etapa de orquestração. | 
@@ -81,7 +81,7 @@ O elemento **OrchestrationStep** pode conter um dos seguintes elementos:
 
 O elemento **Preconditions** contém o seguinte elemento:
 
-| Elemento | Ocorrências | Descrição |
+| Elemento | Ocorrências | DESCRIÇÃO |
 | ------- | ----------- | ----------- | 
 | Pré-condição | 0:n | Dependendo do perfil técnico usado, redireciona o cliente de acordo com a seleção do provedor de declarações ou faz uma chamada de servidor para trocar declarações. | 
 
@@ -97,7 +97,7 @@ O **pré-condição** elemento contém os seguintes atributos:
 
 O elemento **Precondition** contém os seguintes elementos:
 
-| Elemento | Ocorrências | Descrição |
+| Elemento | Ocorrências | DESCRIÇÃO |
 | ------- | ----------- | ----------- |
 | Value | 1:n | Um ClaimTypeReferenceId a ser consultado. Outro elemento de valor contém o valor a ser verificado.</li></ul>|
 | Ação | 1:1 | A ação que deverá ser executada se a verificação de pré-condição dentro de uma etapa de orquestração for verdadeira. Se o valor de `Action` estiver definido como `SkipThisOrchestrationStep`, o `OrchestrationStep` associado não deverá ser executado. | 
@@ -164,13 +164,13 @@ Uma etapa de orquestração do tipo `ClaimsProviderSelection` ou `CombinedSignIn
 
 O elemento **ClaimsProviderSelection** contém o seguinte elemento:
 
-| Elemento | Ocorrências | Descrição |
+| Elemento | Ocorrências | DESCRIÇÃO |
 | ------- | ----------- | ----------- |
 | ClaimsProviderSelection | 0:n | Fornece a lista de provedores de declarações que podem ser selecionados.|
 
 O elemento **ClaimsProviderSelection** contém os seguintes atributos: 
 
-| Atributo | Obrigatório | Descrição |
+| Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | TargetClaimsExchangeId | Não | O identificador da troca de declarações, que é executado na próxima etapa de orquestração da seleção do provedor de declarações. Esse atributo ou o atributo ValidationClaimsExchangeId deve ser especificado, mas não ambos. | 
 | ValidationClaimsExchangeId | Não | O identificador da troca de declarações, que é executado na etapa de orquestração atual para validar a seleção do provedor de declarações. Esse atributo ou o atributo TargetClaimsExchangeId deve ser especificado, mas não ambos. |
@@ -216,13 +216,13 @@ Na etapa de orquestração a seguir, o usuário pode optar por entrar com o Link
 
 O elemento **ClaimsExchanges** contém o seguinte elemento:
 
-| Elemento | Ocorrências | Descrição |
+| Elemento | Ocorrências | DESCRIÇÃO |
 | ------- | ----------- | ----------- |
 | ClaimsExchange | 0:n | Dependendo do perfil técnico usado, redireciona o cliente de acordo com a seleção do ClaimsProviderSelection ou faz uma chamada de servidor para trocar declarações. | 
 
 O elemento **ClaimsExchange** contém os seguintes atributos:
 
-| Atributo | Obrigatório | Descrição |
+| Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | ID | Sim | Um identificador da etapa de troca de declarações. O identificador é usado para referenciar a troca de declarações para uma etapa da seleção do provedor de declarações na política. | 
 | TechnicalProfileReferenceId | Sim | O identificador do perfil técnico que deve ser executado. |

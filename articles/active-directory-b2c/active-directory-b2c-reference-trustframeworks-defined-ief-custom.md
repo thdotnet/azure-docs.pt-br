@@ -2,20 +2,20 @@
 title: Referência – estruturas de confiança no Azure Active Directory B2C | Microsoft Docs
 description: Um tópico sobre as políticas personalizadas do Azure Active Directory B2C e a Estrutura de Experiência de Identidade.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/04/2017
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 20767c8903cd6617db4d37b756c3d8ae95cfb6ad
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 47e45a7dac8abc65f414fedd0fd910e3a7a78113
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64701218"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66508818"
 ---
 # <a name="define-trust-frameworks-with-azure-ad-b2c-identity-experience-framework"></a>Definir estruturas confiáveis com a Estrutura de Experiência de Identidade do Azure AD B2C
 
@@ -54,7 +54,7 @@ As TFs são a base do modelo de estrutura confiável da OIX (Open Identity Excha
 - **As políticas técnicas para a produção e o consumo de informações de identidade digital e, portanto, para medir LOA e LOP. Essas políticas escritas normalmente incluem as seguintes categorias de políticas:**
     - Políticas de verificação de identidade, por exemplo: *Qual é o nível de verificação das informações de uma pessoa?*
     - Políticas de segurança, por exemplo: *Qual é o nível de proteção de confidencialidade e integridade das informações?*
-    - Políticas de privacidade, por exemplo: *Qual controle um usuário tem sobre as próprias PII (informações de identificação pessoal)*?
+    - Políticas de privacidade, por exemplo: *Qual controle um usuário tem sobre as próprias PII (informações de identificação pessoal)* ?
     - Políticas de sustentabilidade, por exemplo: *Se um provedor encerra as operações, como funciona a continuidade e a proteção das PII?*
 
 - **Os perfis técnicos para produção e consumo de informações de identidade digital. Esses perfis incluem:**

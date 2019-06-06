@@ -9,19 +9,19 @@ ms.date: 05/11/2018
 ms.topic: conceptual
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Contêiner do Azure, contêineres
-ms.openlocfilehash: 8ee50289083b12b7b2abd3b9ece2c8de345df9fe
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.openlocfilehash: 900529d54a26729d9d0fb949d9217d5e2d618254
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65851426"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515287"
 ---
 # <a name="how-to-manage-secrets-when-working-with-an-azure-dev-space"></a>Como gerenciar segredos ao trabalhar com um Azure Dev Space
 
 Os serviços podem exigir determinadas senhas, cadeias de conexão e outros segredos, como bancos de dados, ou outros serviços seguros do Azure. Ao definir os valores desses segredos nos arquivos de configuração, será possível disponibilizá-los no código como variáveis de ambiente.  Estes devem ser manipulados com cuidado para evitar comprometer a segurança dos segredos.
 
-O Azure Dev Spaces fornece duas opções recomendadas para armazenar segredos: no arquivo values.dev.yaml e em linha diretamente no azds.yaml. Não é recomendável armazenar segredos em values.yaml.
- 
+Espaços de desenvolvimento do Azure fornece duas opções recomendadas e simplificadas para armazenar segredos em gráficos Helm gerados por ferramentas de cliente a espaços de desenvolvimento do Azure: no arquivo values.dev.yaml e embutido diretamente no azds.yaml. Não é recomendável armazenar segredos em values.yaml. Fora as duas abordagens para Helm gráficos gerados por ferramentas de cliente definida neste artigo, se você criar seu próprio gráfico do Helm, você pode usar o gráfico do Helm diretamente para gerenciar e armazenar segredos.
+
 ## <a name="method-1-valuesdevyaml"></a>Método 1: values.dev.yaml
 1. Abra o VS Code com o projeto que está habilitado para o Azure Dev Spaces.
 2. Adicione um arquivo chamado _values.dev.yaml_ na mesma pasta que o existente _azds.yaml_ e definir sua chave secreta e os valores, como no exemplo a seguir:

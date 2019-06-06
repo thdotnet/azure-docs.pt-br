@@ -2,20 +2,20 @@
 title: Sobre perfis técnicos em políticas personalizadas do Azure Active Directory B2C | Microsoft Docs
 description: Saiba mais sobre os perfis técnicos que são usados em uma política personalizada no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 8865da2f39f574656fe7f018eb1f1900b913391c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 80b8969ba657506705db2b1a3bbc5b389d0a992c
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64710900"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66512447"
 ---
 # <a name="about-technical-profiles-in-azure-active-directory-b2c-custom-policies"></a>Sobre perfis técnicos em políticas personalizadas do Azure Active Directory B2C
 
@@ -49,7 +49,7 @@ Todos os tipos de perfis técnicos compartilham o mesmo conceito. Você envia de
  
 1. **InputClaimsTransformation** – as declarações de entrada de todas as [transformações de declarações](claimstransformations.md) de entrada são recolhidas do recipiente de declarações e, após a execução, as declarações de saída são novamente colocadas no recipiente de declarações. As declarações de saída de uma transformação de declarações de entrada podem ser declarações de entrada de uma transformação de declarações de entrada subsequentes.
 2. **InputClaims** – as declarações são retiradas do recipiente de declarações e são usadas no perfil técnico. Por exemplo, um [perfil técnico autodeclarado](self-asserted-technical-profile.md) usa as declarações de entrada para preencher antecipadamente as declarações de saída fornecidas pelo usuário. Um perfil técnico da API REST usa as declarações de entrada para enviar parâmetros de entrada ao ponto de extremidade da API REST. O Azure Active Directory usa a declaração de entrada como um identificador exclusivo para ler, atualizar ou excluir uma conta.
-3. **Execução do perfil técnico** – o perfil técnico troca as declarações pela entidade configurada. Por exemplo: 
+3. **Execução do perfil técnico** – o perfil técnico troca as declarações pela entidade configurada. Por exemplo:
     - Redirecione o usuário para o provedor de identidade para concluir a conexão. Após conectar-se, o usuário retornará e prosseguirá com a execução do perfil técnico.
     - Chame uma API REST enquanto envia parâmetros como o InputClaims e receba de volta informações como o OutputClaims.
     - Crie ou atualize a conta de usuário.
@@ -57,7 +57,7 @@ Todos os tipos de perfis técnicos compartilham o mesmo conceito. Você envia de
 4. **ValidationTechnicalProfiles** – no caso de um [perfil técnico autodeclarado](self-asserted-technical-profile.md), é possível chamar um [perfil técnico de validação](validation-technical-profile.md) de entrada. O perfil técnico de validação valida os dados analisados pelo usuário e retorna uma mensagem de erro ou OK, com ou sem declarações de saída. Por exemplo, antes de criar uma nova conta, o Azure AD B2C verifica se o usuário já existe nos serviços de diretório. Você pode chamar um perfil técnico da API REST para adicionar sua própria lógica de negócios.<p>O escopo das declarações de saída de um perfil técnico de validação limita-se ao perfil técnico que invoca o perfil técnico de validação e outros perfis técnicos de validação no mesmo perfil técnico. Se você quiser usar as declarações de saída na próxima etapa da orquestração, será necessário incluir as declarações de saída no perfil técnico que chama o perfil técnico de validação.
 5. **OutputClaims** -declarações são retornadas ao recipiente de declarações. Você pode usar essas declarações na próxima etapa de orquestrações ou transformações de declarações de saída.
 6. **OutputClaimsTransformations** – as declarações de entrada de todas as [ transformações de declarações](claimstransformations.md) de saída são retiradas do recipiente de declarações. As declarações de saída do perfil técnico das etapas anteriores podem ser entradas de uma transformação de declarações de saída. Após a execução, as declarações de saída são recolocadas no recipiente de declarações. As declarações de saída de uma transformação de declarações de saída também podem ser declarações de entrada de uma transformação de declarações de saída subsequentes.
-7. **Gerenciamento de sessão de SSO (logon único)** - [Gerenciamento de sessão de SSO](active-directory-b2c-reference-sso-custom.md) controla a interação com um usuário após o usuário já ter se autenticado. Por exemplo, o administrador pode controlar se a seleção de provedores de identidade é exibida ou se os detalhes de conta local precisam ser inseridos novamente.
+7. **Gerenciamento de sessão de SSO (logon único)**  - [Gerenciamento de sessão de SSO](active-directory-b2c-reference-sso-custom.md) controla a interação com um usuário após o usuário já ter se autenticado. Por exemplo, o administrador pode controlar se a seleção de provedores de identidade é exibida ou se os detalhes de conta local precisam ser inseridos novamente.
 
 A alteração de configurações ou a adição de novas funcionalidades de um perfil técnico podem ser herdadas de outro perfil técnico.  O elemento **IncludeTechnicalProfile** é uma referência ao perfil técnico de base do qual um perfil técnico é derivado.  
 

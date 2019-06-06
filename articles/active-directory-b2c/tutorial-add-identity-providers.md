@@ -2,20 +2,20 @@
 title: Tutorial – adicionar provedores de identidade a seus aplicativos – Azure Active Directory B2C | Microsoft Docs
 description: Saiba como adicionar provedores de identidade a seus aplicativos no Azure Active Directory B2C usando o portal do Azure.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 02/01/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c1bd78442f6a7218dde3710236766117816c42fe
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 76e12dc6bf9bcb50dc58e7730f3a08dd6a9d4440
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64710137"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66512207"
 ---
 # <a name="tutorial-add-identity-providers-to-your-applications-in-azure-active-directory-b2c"></a>Tutorial: Adicionar provedores de identidade a seus aplicativos no Azure Active Directory B2C
 
@@ -48,7 +48,7 @@ Para habilitar a entrada para usuários do Azure AD, você precisará registrar 
 2. Verifique se você está usando o diretório que contém seu locatário do Azure AD clicando nos **filtros de assinatura e diretório** no menu superior e escolhendo o diretório que contém o locatário do Azure AD.
 3. Escolha **Todos os serviços** no canto superior esquerdo do portal do Azure e pesquise e selecione **Registros de aplicativo**.
 4. Selecione **Novo registro de aplicativo**.
-5. Insira um nome para seu aplicativo. Por exemplo, `Azure AD B2C App`.
+5. Insira um nome para seu aplicativo. Por exemplo: `Azure AD B2C App`.
 6. Para o **Tipo de aplicativo**, selecione `Web app / API`.
 7. Para a **URL de Logon**, digite a seguinte URL em letras minúsculas, em que `your-B2C-tenant-name` é substituído pelo nome do seu locatário do B2C do Azure AD.
 
@@ -56,7 +56,7 @@ Para habilitar a entrada para usuários do Azure AD, você precisará registrar 
     https://your-B2C-tenant-name.b2clogin.com/your-B2C-tenant-name.onmicrosoft.com/oauth2/authresp
     ```
     
-    Por exemplo, `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.
+    Por exemplo: `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.
     
     Agora todas as URLs devem estar usando [b2clogin.com](b2clogin.md).
 
@@ -103,10 +103,10 @@ Depois de criar o aplicativo para o provedor de identidade que você deseja adic
     https://login.microsoftonline.com/your-AD-tenant-domain/.well-known/openid-configuration
     ```
 
-    Por exemplo, `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`.
+    Por exemplo: `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`.
 
 8. Para **ID do cliente**, insira a ID do aplicativo que você registrou anteriormente e, para **Segredo do cliente**, insira o valor da chave que você registrou anteriormente.
-9. Opcionalmente, digite um valor para **Domain_hint**. Por exemplo, `ContosoAD`. 
+9. Opcionalmente, digite um valor para **Domain_hint**. Por exemplo: `ContosoAD`. 
 10. Clique em **OK**.
 11. Selecione **Mapear declarações do provedor de identidade** e defina as seguintes declarações:
     

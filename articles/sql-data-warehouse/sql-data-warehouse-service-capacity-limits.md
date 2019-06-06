@@ -2,26 +2,26 @@
 title: Limites de capacidade do SQL Data Warehouse do Azure | Microsoft Docs
 description: Valores máximos permitidos para vários componentes do Azure SQL Data Warehouse.
 services: sql-data-warehouse
-author: happynicolle
+author: mlee3gsd
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: design
 ms.date: 11/14/2018
-ms.author: nicw
+ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: f3c2ecbb4c83132b674b4c296adc1339027f5215
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 62213ca1910ff26287bcd398d89fe7f8caf3cfac
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65797792"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514676"
 ---
 # <a name="sql-data-warehouse-capacity-limits"></a>Limites de capacidade do SQL Data Warehouse
 Valores máximos permitidos para vários componentes do Azure SQL Data Warehouse.
 
 ## <a name="workload-management"></a>Gerenciamento de carga de trabalho
-| Category | Descrição | Máximo |
+| Categoria | DESCRIÇÃO | Máximo |
 |:--- |:--- |:--- |
 | [DWU (Unidades de Data Warehouse)](what-is-a-data-warehouse-unit-dwu-cdwu.md) |DWU máxima para um único Data Warehouse do SQL | Gen1: DW6000<br></br>Gen2: DW30000c |
 | [DWU (Unidades de Data Warehouse)](what-is-a-data-warehouse-unit-dwu-cdwu.md) |DTU padrão por servidor |54.000<br></br>Por padrão, cada SQL Server (por exemplo, myserver.database.windows.net) tem uma Cota de DTU de 54.000, que permite até DW6000c. Essa cota é simplesmente um limite de segurança. Você pode aumentar sua cota [criando um tíquete de suporte](sql-data-warehouse-get-started-create-support-ticket.md) e selecionando *Cota* como o tipo de solicitação.  Para calcular suas necessidades de DTU, multiplique 7,5 pelo total de DWU necessário ou 9,0 pelo total de cDWU necessário. Por exemplo:<br></br>DW6000 x 7,5 = 45.000 DTUs<br></br>DW6000c x 9,0 = 54.000 DTUs.<br></br>Exiba seu consumo atual de DTU na opção SQL Server no portal. Os bancos de dados em pausa e que não estão em pausa contam como a cota de DTU. |
@@ -30,11 +30,11 @@ Valores máximos permitidos para vários componentes do Azure SQL Data Warehouse
 | [Gerenciamento de carga de trabalho](resource-classes-for-workload-management.md) |Máximo de consultas simultâneas |128<br/><br/> O SQL Data Warehouse pode executar um máximo de 128 consultas simultâneas e coloca as consultas restantes na fila.<br/><br/>O número de consultas simultâneas pode diminuir quando os usuários são atribuídos a classes de recurso superiores ou quando o SQL Data Warehouse tem uma [unidade de data warehouse](memory-and-concurrency-limits.md) inferior. Algumas consultas, como consultas DMV, sempre podem ser executadas e não afetam o limite de consultas simultâneas. Para obter mais detalhes sobre a execução de consultas simultâneas, consulte o artigo [Limites máximos de simultaneidade](memory-and-concurrency-limits.md#concurrency-maximums). |
 | [tempdb](sql-data-warehouse-tables-temporary.md) |GB máximo |399 GB por DW100. Portanto, em DWU1000, o tempdb é dimensionado para 3,99 TB. |
 
-## <a name="database-objects"></a>Objetos do banco de dados
-| Category | Descrição | Máximo |
+## <a name="database-objects"></a>Objetos de banco de dados
+| Categoria | DESCRIÇÃO | Máximo |
 |:--- |:--- |:--- |
-| Banco de dados |Tamanho máximo | Gen1: 240 TB compactados em disco. Este espaço é independente do espaço de tempdb ou de log, portanto, é dedicado às tabelas permanentes.  A compactação do columnstore clusterizado é estimada em cinco vezes.  Essa compactação permite que o banco de dados aumente até aproximadamente 1 PB quando todas as tabelas são de columnstore clusterizado (o tipo de tabela padrão). <br/><br/> Gen2: 240 TB para rowstore e armazenamento ilimitado para tabelas columnstore |
-| Tabela |Tamanho máximo |60 TB compactados em disco |
+| Banco de dados |Tamanho máx. | Gen1: 240 TB compactados em disco. Este espaço é independente do espaço de tempdb ou de log, portanto, é dedicado às tabelas permanentes.  A compactação do columnstore clusterizado é estimada em cinco vezes.  Essa compactação permite que o banco de dados aumente até aproximadamente 1 PB quando todas as tabelas são de columnstore clusterizado (o tipo de tabela padrão). <br/><br/> Gen2: 240 TB para rowstore e armazenamento ilimitado para tabelas columnstore |
+| Tabela |Tamanho máx. |60 TB compactados em disco |
 | Tabela |Tabelas por banco de dados | 100.000 |
 | Tabela |Colunas por tabela |1024 colunas |
 | Tabela |Bytes por coluna |Dependente do [tipo de dados](sql-data-warehouse-tables-data-types.md)da coluna. O limite é de 8000 para tipos de dados char, 4000 para nvarchar ou 2 GB para tipos de dados MAX. |
@@ -52,12 +52,12 @@ Valores máximos permitidos para vários componentes do Azure SQL Data Warehouse
 | Visualizar |Colunas por exibição |1.024 |
 
 ## <a name="loads"></a>Cargas
-| Category | Descrição | Máximo |
+| Categoria | DESCRIÇÃO | Máximo |
 |:--- |:--- |:--- |
 | Cargas de Polybase |MB por segundo |1<br/><br/>O Polybase carrega linhas menores que 1 MB. Não há suporte para carregar tipos de dados LOB em tabelas com um índice de Columnstore clusterizado (CCI).<br/><br/> |
 
 ## <a name="queries"></a>Consultas
-| Category | Descrição | Máximo |
+| Categoria | DESCRIÇÃO | Máximo |
 |:--- |:--- |:--- |
 | Consulta |Consultas em fila em tabelas de usuário. |1000 |
 | Consulta |Consultas simultâneas em exibições do sistema. |100 |
@@ -65,10 +65,10 @@ Valores máximos permitidos para vários componentes do Azure SQL Data Warehouse
 | Consulta |Máximo de parâmetros |2098 |
 | Lote |Tamanho máximo |65.536*4096 |
 | Resultados de SELECT |Colunas por linha |4096<br/><br/>Nunca será possível ter mais de 4.096 colunas por linha no resultado de SELECT. Não há garantia de que você sempre terá 4096. Se o plano de consulta exigir uma tabela temporária, poderão ser aplicadas no máximo 1024 colunas por tabela. |
-| SELECT |Subconsultas aninhadas |32<br/><br/>Nunca será possível ter mais de 32 subconsultas aninhadas em uma instrução SELECT. Não há garantia de que você sempre terá 32. Por exemplo, JOIN pode introduzir uma subconsulta no plano de consulta. O número de subconsultas também pode ser limitado pela memória disponível. |
-| SELECT |Colunas por JOIN |1024 colunas<br/><br/>Nunca será possível ter mais de 1.024 colunas em JOIN. Não há garantia de que você sempre terá 1024. Se o plano JOIN exigir uma tabela temporária com mais colunas do que o resultado de JOIN, o limite de 1024 se aplicará à tabela temporária. |
-| SELECT |Bytes por colunas GROUP BY. |8.060<br/><br/>As colunas na cláusula GROUP BY podem ter, no máximo, 8.060 bytes. |
-| SELECT |Bytes por colunas ORDER BY |8060 bytes<br/><br/>As colunas na cláusula ORDER BY podem ter, no máximo, 8060 bytes |
+| SELECIONAR |Subconsultas aninhadas |32<br/><br/>Nunca será possível ter mais de 32 subconsultas aninhadas em uma instrução SELECT. Não há garantia de que você sempre terá 32. Por exemplo, JOIN pode introduzir uma subconsulta no plano de consulta. O número de subconsultas também pode ser limitado pela memória disponível. |
+| SELECIONAR |Colunas por JOIN |1024 colunas<br/><br/>Nunca será possível ter mais de 1.024 colunas em JOIN. Não há garantia de que você sempre terá 1024. Se o plano JOIN exigir uma tabela temporária com mais colunas do que o resultado de JOIN, o limite de 1024 se aplicará à tabela temporária. |
+| SELECIONAR |Bytes por colunas GROUP BY. |8.060<br/><br/>As colunas na cláusula GROUP BY podem ter, no máximo, 8.060 bytes. |
+| SELECIONAR |Bytes por colunas ORDER BY |8060 bytes<br/><br/>As colunas na cláusula ORDER BY podem ter, no máximo, 8060 bytes |
 | Identificadores por instrução |Número de identificadores referenciados |65.535<br/><br/>O SQL Data Warehouse do Azure limita o número de identificadores que podem estar contidos em uma única expressão de uma consulta. Exceder esse número resulta no erro 8632 do SQL Server. Para obter mais informações, confira [Erro interno: Foi atingido um limite dos serviços de expressão](https://support.microsoft.com/en-us/help/913050/error-message-when-you-run-a-query-in-sql-server-2005-internal-error-a). |
 | Literais de cadeia de caracteres | Número de literais de cadeia de caracteres em uma instrução | 20.000 <br/><br/>O SQL Data Warehouse do Azure limita o número de constantes da cadeias de caracteres em uma única expressão de uma consulta. Exceder esse número resulta no erro 8632 do SQL Server.|
 

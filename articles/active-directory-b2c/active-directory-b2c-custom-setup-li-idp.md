@@ -2,20 +2,20 @@
 title: Configurar o logon com uma conta do LinkedIn usando políticas personalizadas - Azure Active Directory B2C | Microsoft Docs
 description: Configure o entrar com uma conta do LinkedIn no Azure Active Directory B2C usando políticas personalizadas.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 3d927c2bf9344f2dc93cfe992e87457a0747f605
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: b336428592a4897319725782c994c3fae26bfae0
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190751"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66510410"
 ---
 # <a name="set-up-sign-in-with-a-linkedin-account-using-custom-policies-in-azure-active-directory-b2c"></a>Configurar a entrada com uma conta do LinkedIn usando políticas personalizadas no Azure Active Directory B2C
 
@@ -56,7 +56,7 @@ Você precisa armazenar o segredo do cliente que registrou anteriormente no seu 
 4. Na página de Visão Geral, selecione **Estrutura de Experiência de Identidade**.
 5. Selecione **Chaves de Política** e, em seguida, escolha **Adicionar**.
 6. Para **Opções**, escolha `Manual`.
-7. Insira um **Nome** para a chave de política. Por exemplo, `LinkedInSecret`. O prefixo `B2C_1A_` será adicionado automaticamente ao nome da chave.
+7. Insira um **Nome** para a chave de política. Por exemplo: `LinkedInSecret`. O prefixo `B2C_1A_` será adicionado automaticamente ao nome da chave.
 8. Em **Segredo**, insira o segredo do cliente que você registrou anteriormente.
 9. Para **Uso de chave**, selecione `Signature`.
 10. Clique em **Criar**.
@@ -174,7 +174,7 @@ Neste ponto, o provedor de identidade já foi definido, mas não está disponív
 2. Localize e copie todo o conteúdo do elemento **UserJourney** que inclui `Id="SignUpOrSignIn"`.
 3. Abra o *TrustFrameworkExtensions.xml* e localize o elemento **UserJourneys**. Se o elemento não existir, adicione um.
 4. Cole todo o conteúdo do elemento **UserJourney** que você copiou como filho do elemento **UserJourneys**.
-5. Renomeie a ID do percurso do usuário. Por exemplo, `SignUpSignInLinkedIn`.
+5. Renomeie a ID do percurso do usuário. Por exemplo: `SignUpSignInLinkedIn`.
 
 ### <a name="display-the-button"></a>Exibir o botão
 
@@ -198,7 +198,7 @@ Agora que implementou um botão, você precisará vinculá-lo a uma ação. Ness
     <ClaimsExchange Id="LinkedInExchange" TechnicalProfileReferenceId="LinkedIn-OAUTH" />
     ```
     
-    Atualize o valor de **TechnicalProfileReferenceId** para a ID do perfil técnico que você criou anteriormente. Por exemplo, `LinkedIn-OAUTH`.
+    Atualize o valor de **TechnicalProfileReferenceId** para a ID do perfil técnico que você criou anteriormente. Por exemplo: `LinkedIn-OAUTH`.
 
 3. Salve o arquivo *TrustFrameworkExtensions.xml* e carregue-o novamente para verificação.
 
@@ -219,7 +219,7 @@ A comunicação com o Azure AD B2C ocorre por meio de um aplicativo que você cr
 Atualize o arquivo de RP (terceira parte confiável) que iniciará o percurso do usuário que você criou.
 
 1. Faça uma cópia do *SignUpOrSignIn.xml* no diretório de trabalho e renomeie-a. Por exemplo, renomeie-o para *SignUpSignInLinkedIn.xml*.
-2. Abra o novo arquivo e atualize o valor do atributo **PolicyId** para **TrustFrameworkPolicy** com um valor exclusivo. Por exemplo, `SignUpSignInLinkedIn`.
+2. Abra o novo arquivo e atualize o valor do atributo **PolicyId** para **TrustFrameworkPolicy** com um valor exclusivo. Por exemplo: `SignUpSignInLinkedIn`.
 3. Atualize o valor de **PublicPolicyUri** com o URI da política. Por exemplo, `http://contoso.com/B2C_1A_signup_signin_linkedin`
 4. Atualize o valor do atributo **ReferenceId** em **DefaultUserJourney** para corresponder à ID do novo percurso do usuário que você criou (SignUpSignLinkedIn).
 5. Salve suas alterações, carregue o arquivo e, em seguida, selecione a nova política na lista.

@@ -1,6 +1,6 @@
 ---
-title: 'Referência de API do v2 do Monitor de Status do Azure: Desabilitar o monitoramento | Microsoft Docs'
-description: Status Monitor v2 API referência Disable-ApplicationInsightsMonitoring. Monitorar o desempenho do site sem reimplantar o site. Funciona com aplicativos web ASP.NET hospedado no local, em máquinas virtuais ou no Azure.
+title: 'Referência da API do v2 de Monitor de Status do Azure: Desabilitar o monitoramento | Microsoft Docs'
+description: Referência de API v2 de Monitor de status. Disable-ApplicationInsightsMonitoring. Monitorar o desempenho do site sem reimplantar o site. Funciona com aplicativos web do ASP.NET hospedados no local, em máquinas virtuais ou no Azure.
 services: application-insights
 documentationcenter: .net
 author: MS-TimothyMothra
@@ -12,26 +12,26 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 6f2bde824c2a9815dc9fd4791ab43e03558da835
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 201c5cc251896efae6b9f4639818471c0f011afe
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65144940"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514416"
 ---
 # <a name="status-monitor-v2-api-disable-applicationinsightsmonitoring-v021-alpha"></a>API de v2 do Monitor de status: Disable-ApplicationInsightsMonitoring (v0.2.1-alpha)
 
-Este documento descreve um cmdlet que é enviado como um membro do [módulo do Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
+Este artigo descreve um cmdlet que é um membro do [módulo do Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
 > [!IMPORTANT]
 > Status Monitor v2 está atualmente em visualização pública.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
-> Para obter mais informações, consulte [termos complementares de uso para visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
+> Esta versão de visualização é fornecida sem um contrato de nível de serviço, e não é recomendável para cargas de trabalho de produção. Alguns recursos podem não ter suporte e alguns podem ter recursos restritos.
+> Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="description"></a>DESCRIÇÃO
 
-Desabilite o monitoramento no computador de destino.
-Este cmdlet removerá as edições para o IIS applicationHost. config e remover chaves do registro.
+Desabilita o monitoramento no computador de destino.
+Este cmdlet removerá edições para o IIS applicationHost. config e remover chaves do registro.
 
 > [!IMPORTANT] 
 > Esse cmdlet requer uma sessão do PowerShell com permissões de administrador.
@@ -45,7 +45,7 @@ PS C:\> Disable-ApplicationInsightsMonitoring
 ## <a name="parameters"></a>parâmetros 
 
 ### <a name="-verbose"></a>-Verbose
-**Parâmetro comum.** Use esta opção para gerar logs detalhados.
+**Parâmetro comum.** Use essa opção para exibir os logs detalhados.
 
 ## <a name="output"></a>Saída
 
@@ -77,4 +77,4 @@ Successfully disabled Application Insights Status Monitor
 ## <a name="next-steps"></a>Próximas etapas
 
  Faça mais com v2 de Monitor de Status:
- - Use nosso guia para [solucione o problema](status-monitor-v2-troubleshoot.md) v2 do Monitor de Status.
+ - Use nosso guia para [solucionar problemas de](status-monitor-v2-troubleshoot.md) v2 do Monitor de Status.

@@ -2,20 +2,20 @@
 title: IDs de cadeias de caracteres de localização – Azure Active Directory B2C | Microsoft Docs
 description: Especifique as IDs de uma definição de conteúdo com uma ID de api.signuporsignin em uma política personalizada no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c6cabcc89e66e9fbf153f2931bfe8b9b70c5f426
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 41a72013f1538b0a857c76bc949a7109e1cd54b4
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64682715"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66510919"
 ---
 # <a name="localization-string-ids"></a>IDs de cadeia de caracteres de localização
 
@@ -33,7 +33,7 @@ As IDs a seguir são usadas para uma definição de conteúdo com uma ID de `api
 | **logonIdentifier_email** | Endereço de Email |
 | **requiredField_email** | Insira seu email |
 | **invalid_email** | Insira um endereço de email válido |
-| **email_pattern** | ^[a-zA-Z0-9.!#$%&’'*+/=?^_\`{\|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$ |
+| **email_pattern** | ^[a-zA-Z0-9.!#$%&’' *+/=?^_\`{\|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)* $ |
 | **local_intro_username** | Entre com seu nome de usuário |
 | **logonIdentifier_username** | Nome de Usuário |
 | **requiredField_username** | Insira seu nome de usuário |
@@ -120,7 +120,7 @@ A seguir, estão as IDs de definição de conteúdo com a ID `api.localaccountsi
 | **ver_incorrect_format** | Formato incorreto. |
 | **ver_but_edit** | Alterar email |
 | **ver_but_verify** | Verificar código |
-| **alert_no** | Não  |
+| **alert_no** | Não |
 | **ver_info_msg** | O código de verificação foi enviado para sua caixa de entrada. Copie-o para a caixa de entrada abaixo. |
 | **dia** | Dia |
 | **ver_fail_throttled** | Houve muitas solicitações para verificar este endereço de email. Aguarde alguns instantes e tente novamente. |

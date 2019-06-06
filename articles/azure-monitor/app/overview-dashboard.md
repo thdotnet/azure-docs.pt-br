@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 08/31/2018
+ms.date: 06/03/2019
 ms.author: mbullwin
-ms.openlocfilehash: 47c83e6bc700f972e6dff83e4d067e61218c04bd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d1823779f8a8070149811e2349fc9f4281072d38
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60255672"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66497162"
 ---
 # <a name="application-insights-overview-dashboard"></a>Painel de visão geral do Application Insights
 
@@ -60,9 +60,12 @@ Para navegar de volta para a experiência de visão geral basta selecionar:
 
 ![Botão Visão geral](./media/overview-dashboard/app-insights-overview-dashboard-07.png)
 
+## <a name="troubleshooting"></a>solução de problemas
+
+Se você selecionar **definir as configurações de bloco** e defina um intervalo de tempo personalizado que excede seu painel não exibirá mais de 31 dias de dados, mesmo com a retenção de dados padrão de 90 dias de 31 dias. Atualmente, não há nenhuma solução alternativa para esse comportamento.
+
 ## <a name="next-steps"></a>Próximas etapas
 
 - [Funis](../../azure-monitor/app/usage-funnels.md)
 - [Retenção](../../azure-monitor/app/usage-retention.md)
 - [Fluxos de Usuário](../../azure-monitor/app/usage-flows.md)
-- [Painéis](../../azure-monitor/app/app-insights-dashboards.md)

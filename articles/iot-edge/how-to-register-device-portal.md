@@ -4,27 +4,27 @@ description: Use o portal do Azure para registrar um novo dispositivo IoT Edge e
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 01/03/2019
+ms.date: 06/03/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 6414f694296ce1f5a8b65ccab30cceaf2172dee7
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 16660fbed465cc70f16cde430024f33b8aa4350e
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62126302"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66495354"
 ---
 # <a name="register-a-new-azure-iot-edge-device-from-the-azure-portal"></a>Registrar um novo dispositivo do Azure IoT Edge com portal do Azure
 
-Antes que você possa usar os seus dispositivos IoT com o Azure IoT Edge, você precisa registrá-los com o seu Hub IoT. Quando você registrar um dispositivo, você receberá uma cadeia de caracteres de conexão que pode ser usada para configurar o seu dispositivo para cargas de trabalho Edge.
+Antes de poder usar os dispositivos do IoT com Azure IoT Edge, será necessário registrá-los no hub IoT. Quando você registra um dispositivo, você receberá uma cadeia de caracteres de conexão que pode ser usada para configurar seu dispositivo para cargas de trabalho de IoT Edge.
 
 Este artigo descreve como registrar um novo dispositivo do IoT Edge usando portal do Azure.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Um [Hub IoT](../iot-hub/iot-hub-create-through-portal.md) na assinatura do Azure.
+Gratuito para standard [hub IoT](../iot-hub/iot-hub-create-through-portal.md) na sua assinatura do Azure.
 
 ## <a name="create-a-device"></a>Criar um dispositivo
 
@@ -33,7 +33,7 @@ No portal do Azure, dispositivos de extremidade IoT são criados e gerenciados s
 1. Entre no [Portal do Azure](https://portal.azure.com) e navegue até o Hub IoT.
 2. Selecionar **IoT Edge** do menu.
 3. Selecione **Adicionar um dispositivo IoT Edge**.
-4. Forneça um ID de dispositivo descritivo. Use as configurações padrão para a geração automática as chaves de autenticação e para conectar o novo dispositivo ao seu hub.
+4. Forneça um ID de dispositivo descritivo. Use as configurações padrão para gerar automaticamente as chaves de autenticação e conectar o novo dispositivo ao hub.
 5. Clique em **Salvar**.
 
 ## <a name="view-all-devices"></a>Exibir todos os dispositivos
@@ -42,11 +42,11 @@ Todos os habilitado borda dispositivos que se conectam ao seu hub IoT são lista
 
 ## <a name="retrieve-the-connection-string"></a>Recuperar a cadeia de conexão
 
-Quando você estiver pronto para configurar o seu dispositivo, você precisará de uma cadeia de caracteres de conexão que conecte o seu dispositivo físico com a sua identidade no Hub IoT.
+Quando estiver pronto para configurar o dispositivo, você precisará da cadeia de conexão que vincula o dispositivo físico à identidade no hub IoT.
 
-1. Do **IoT Edge** no portal, clique na ID de dispositivo na lista de dispositivos Edge.
-2. Copie o valor da **Cadeia de conexão (chave primária)** ou **Cadeia de conexão (chave secundária)**.
+1. Dos **do IoT Edge** no portal, clique na ID do dispositivo na lista de dispositivos do IoT Edge.
+2. Copie o valor da **Cadeia de conexão (chave primária)** ou **Cadeia de conexão (chave secundária)** .
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Saiba como [Implantar módulos em um dispositivo com o portal do Azure](how-to-deploy-modules-portal.md)
+Saiba como [implantar módulos em um dispositivo com o portal do Azure](how-to-deploy-modules-portal.md).

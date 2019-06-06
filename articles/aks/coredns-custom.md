@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 03/15/2019
 ms.author: jnoller
-ms.openlocfilehash: 9c67902f8a6c10552ea60fed145afc24f82b01a1
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 9f3a62c5782724f14f10b5875fc8db31dbffe67c
+ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65594299"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66693393"
 ---
 # <a name="customize-coredns-with-azure-kubernetes-service"></a>Personalizar CoreDNS com serviço de Kubernetes do Azure
 
@@ -27,7 +27,7 @@ Este artigo mostra como usar ConfigMaps para opções de personalização básic
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-Este artigo considera que já existe um cluster do AKS. Se você precisar um cluster do AKS, consulte o início rápido do AKS [usando a CLI do Azure] [aks-quickstart-cli] ou [usando o portal do Azure] [aks-quickstart-portal].
+Este artigo considera que já existe um cluster do AKS. Se você precisar de um cluster do AKS, confira o guia de início rápido do AKS [Usando a CLI do Azure][aks-quickstart-cli] ou [Usando o portal do Azure][aks-quickstart-portal].
 
 ## <a name="what-is-supportedunsupported"></a>O que é o suporte/sem suporte
 
@@ -192,5 +192,7 @@ Para saber mais sobre conceitos de rede, consulte [rede conceitos para aplicativ
 [kubectl delete]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete
 [coredns hosts]: https://coredns.io/plugins/hosts/
 
-<!-- LINKS - external -->
+<!-- LINKS - internal -->
 [concepts-network]: concepts-network.md
+[aks-quickstart-cli]: kubernetes-walkthrough.md
+[aks-quickstart-portal]: kubernetes-walkthrough-portal.md
