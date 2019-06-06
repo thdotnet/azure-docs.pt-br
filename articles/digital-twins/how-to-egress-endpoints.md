@@ -49,7 +49,7 @@ Eventos são enviados por objetos de IoT (por exemplo, dispositivos e sensores) 
 
 | Atributo | Type | DESCRIÇÃO |
 | --- | --- | --- |
-| ID | string | Identificador exclusivo do evento. |
+| id | string | Identificador exclusivo do evento. |
 | subject | string | Caminho definido pelo fornecedor para o assunto do evento. |
 | data | objeto | Dados do evento específicos ao provedor de recursos. |
 | eventType | string | Um dos tipos de evento registrados para a origem do evento. |
