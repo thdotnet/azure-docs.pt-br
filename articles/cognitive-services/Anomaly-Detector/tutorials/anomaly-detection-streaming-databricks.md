@@ -10,16 +10,16 @@ ms.subservice: anomaly-detector
 ms.topic: article
 ms.date: 05/08/2019
 ms.author: aahi
-ms.openlocfilehash: d1808bb88ac1bb27f2fd0652585521fbb2abdf56
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: a5790b5412023f06d9f9fd1d2ff61c11db4c53f3
+ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66734675"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66807472"
 ---
 # <a name="tutorial-anomaly-detection-on-streaming-data-using-azure-databricks"></a>Tutorial: Detecção de anomalias nos dados de streaming usando o Azure Databricks
 
-[O Azure Databricks](https://azure.microsoft.com/en-us/services/databricks/) é um serviço de análise rápida, fácil e colaborativa baseada no Apache Spark –. A API do Detector de anomalias, parte dos serviços Cognitivos do Azure, fornece uma maneira de monitorar seus dados de série temporal. Use este tutorial para executar a detecção de anomalias em um fluxo de dados quase em tempo real usando o Azure Databricks. Você ingerir dados do twitter usando os Hubs de eventos do Azure e importá-los para o Azure Databricks usando o conector de Hubs de eventos do Spark. Depois disso, você usará a API para detectar anomalias nos dados de streaming. 
+[O Azure Databricks](https://azure.microsoft.com/services/databricks/) é um serviço de análise rápida, fácil e colaborativa baseada no Apache Spark –. A API do Detector de anomalias, parte dos serviços Cognitivos do Azure, fornece uma maneira de monitorar seus dados de série temporal. Use este tutorial para executar a detecção de anomalias em um fluxo de dados quase em tempo real usando o Azure Databricks. Você ingerir dados do twitter usando os Hubs de eventos do Azure e importá-los para o Azure Databricks usando o conector de Hubs de eventos do Spark. Depois disso, você usará a API para detectar anomalias nos dados de streaming. 
 
 A ilustração a seguir mostra o fluxo do aplicativo:
 

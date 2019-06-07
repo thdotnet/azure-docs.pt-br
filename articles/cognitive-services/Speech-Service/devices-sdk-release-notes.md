@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: wellsi
-ms.openlocfilehash: fab23c86ee2e8f654ac4a9619c39d05ee4e9e4c1
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 1c91cde45a6a420376af36f70487adf7fe0ee83a
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66237927"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751818"
 ---
 # <a name="release-notes-of-cognitive-services-speech-devices-sdk"></a>Notas de versão do SDK dos Dispositivos de Fala dos Serviços Cognitivos
 As seções a seguir listam as alterações nas versões mais recentes.
@@ -49,7 +49,7 @@ As seções a seguir listam as alterações nas versões mais recentes.
 
 **Alterações da falha** 
 
-*   [Instalando um ativação word](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-qsg#run-a-sample-application) foi simplificado, agora é parte do aplicativo e não precisa de uma instalação separada no dispositivo.
+*   [Instalando um ativação word](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-create-kws) foi simplificado, agora é parte do aplicativo e não precisa de uma instalação separada no dispositivo.
 *   O reconhecimento da palavra wake foi alterado, e há suporte para dois eventos.
     - RecognizingKeyword, indica o resultado de fala contém o texto da palavra-chave (não verificado).
     - RecognizedKeyword, indica que esse reconhecimento de palavra-chave concluído reconhecer a palavra-chave determinada.

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: panosper
-ms.openlocfilehash: d93de4ff3f6dd00ac049ea9d83aebb7aad07137e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fd8362748c39389139e8384d0bad7e84d20128a4
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60539002"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751617"
 ---
 # <a name="text-to-speech-frequently-asked-questions"></a>Perguntas Frequentes sobre a Conversão de Texto em Fala
 
@@ -33,7 +33,7 @@ Se você não encontrar respostas para suas perguntas nas perguntas frequentes, 
 
 **P: Se eu quiser usar um modelo de voz personalizado, a API será a mesma das vozes padrão?**
 
-**R**: Quando um modelo de voz personalizada é criado e implantado, você obter um ponto de extremidade exclusivo para seu modelo. Para usar a voz para falar em seus aplicativos, você deve especificar o ponto de extremidade nas suas solicitações HTTP. A mesma funcionalidade que está disponível na API REST para o serviço de Conversão de Texto em Fala está disponível para seu ponto de extremidade personalizado. Saiba como [criar e usar o ponto de extremidade personalizado](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-customize-voice-font#create-and-use-a-custom-endpoint).
+**R**: Quando um modelo de voz personalizada é criado e implantado, você obter um ponto de extremidade exclusivo para seu modelo. Para usar a voz para falar em seus aplicativos, você deve especificar o ponto de extremidade nas suas solicitações HTTP. A mesma funcionalidade que está disponível na API REST para o serviço de Conversão de Texto em Fala está disponível para seu ponto de extremidade personalizado. Saiba como [criar e usar o ponto de extremidade personalizado](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-customize-voice-font#create-and-use-a-custom-voice-endpoint).
 
 **P: Preciso preparar os dados de treinamento para criar modelos de voz personalizada por conta própria?**
 
@@ -41,7 +41,7 @@ Se você não encontrar respostas para suas perguntas nas perguntas frequentes, 
 
 Uma coleção de dados de fala é necessária para criar um modelo de voz personalizado. Esta coleção consiste em um conjunto de arquivos de áudio de gravações de fala e um arquivo de texto da transcrição de cada arquivo de áudio. O resultado da sua voz digital depende intensamente da qualidade dos seus dados de treinamento. Para produzir uma voz de texto em fala bom, é importante que as gravações sejam feitas em uma sala silenciosa com um microfone de alta qualidade. Volume consistente, velocidade de fala, densidade fala e até a consistência nos maneirismos expressivos da fala são essenciais para compilação de uma excelente voz digital. É altamente recomendável gravar as vozes em um estúdio de gravação.
 
-Atualmente, não damos suporte para gravação online nem recomendações sobre estúdios de gravação. Para o requisito de formato, consulte [como preparar gravações e transcrições](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-customize-voice-font#prepare-recordings-and-transcripts).
+Atualmente, não damos suporte para gravação online nem recomendações sobre estúdios de gravação. Para o requisito de formato, consulte [como preparar gravações e transcrições](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-custom-voice-create-voice).
 
 **P: Quais scripts devo usar para registrar os dados de fala para treinamento de voz personalizada?**
 

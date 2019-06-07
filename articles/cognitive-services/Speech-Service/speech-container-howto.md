@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: diberry
-ms.openlocfilehash: 7a4153dd382a901db21752dd3d55a01803431791
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 763e7bc9298eee1ab602968360bbc79a58243e5b
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66388680"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752431"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Instalar e executar contêineres do serviço de fala
 
@@ -64,7 +64,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 A tabela a seguir descreve os núcleos de CPU e memória para alocar para cada contêiner fala mínimos e recomendados.
 
-| Contêiner | Mínimo | Recomendadas |
+| Contêiner | Mínimo | Recomendado |
 |-----------|---------|-------------|
 |cognitive-services-speech-to-text | Dois núcleos<br>2 GB de memória  | Quatro núcleos<br>4 GB de memória  |
 |cognitive-services-text-to-speech | 1 núcleo, 0,5 GB de memória| 2 núcleos, 1 GB de memória |
@@ -260,7 +260,7 @@ speech_config = speechsdk.SpeechConfig(subscription=speech_key, endpoint="ws://l
 
 ### <a name="text-to-speech"></a>Conversão de texto em fala
 
-O contêiner fornece o ponto de extremidade REST APIs que podem ser encontradas [aqui](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#text-to-speech-api) e os exemplos podem ser encontrados [aqui](https://azure.microsoft.com/resources/samples/cognitive-speech-tts/).
+O contêiner fornece o ponto de extremidade REST APIs que podem ser encontradas [aqui](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech) e os exemplos podem ser encontrados [aqui](https://azure.microsoft.com/resources/samples/cognitive-speech-tts/).
 
 
 [!INCLUDE [Validate container is running - Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
