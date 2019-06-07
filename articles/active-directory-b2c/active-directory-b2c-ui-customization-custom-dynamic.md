@@ -2,20 +2,20 @@
 title: Personalizar a interface do usuário do Azure AD B2C dinamicamente usando políticas personalizadas | Microsoft Docs
 description: Dar suporte a várias experiências de identidade visual com conteúdo HTML5/CSS que muda dinamicamente no tempo de execução.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/20/2017
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c655a1ed7cefcc7af8a22ed1d869b1a2e8b81715
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e1abdfa8bc47f42f7373760370588c0bc41fc1dc
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64708882"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66507771"
 ---
 # <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: configurar a interface do usuário com conteúdo dinâmico usando políticas personalizadas
 
@@ -68,7 +68,7 @@ Neste passo a passo, você vai:
 
 1. No Visual Studio, crie um projeto selecionando **Arquivo** > **Novo** > **Projeto**.
 
-2. Na janela **Novo Projeto**, selecione **Visual C#** > **Web** > **Aplicativo Web ASP.NET Core (.NET Core)**.
+2. Na janela **Novo Projeto**, selecione **Visual C#**  > **Web** > **Aplicativo Web ASP.NET Core (.NET Core)** .
 
 3. Nomeie o aplicativo (por exemplo, *Contoso.AADB2C.UI*) e, em seguida, selecione **OK**.
 
@@ -321,7 +321,7 @@ Modifique o método `unified` do HomeController para aceitar o parâmetro campai
 Se você selecionar o link **Inscrever-se agora** na página de entrada, o navegador exibirá a imagem de tela de fundo padrão, não a imagem que você definiu. Esse comportamento ocorre porque você alterou apenas a página de inscrição ou de entrada. Para alterar o restante das definições de conteúdo autodeclarado:
 1. Volte para a “Etapa 2” e faça o seguinte:
 
-     a. Baixe o arquivo *selfasserted*.
+    a. Baixe o arquivo *selfasserted*.
 
     b. Copie o conteúdo do arquivo.
 
@@ -331,7 +331,7 @@ Se você selecionar o link **Inscrever-se agora** na página de entrada, o naveg
 
 2. Volte para a “Etapa 4” e faça o seguinte: 
 
-     a. Na política de extensão, localize o nó `<ContentDefinition>` que contém `Id="api.selfasserted"`, `Id="api.localaccountsignup"` e `Id="api.localaccountpasswordreset"`.
+    a. Na política de extensão, localize o nó `<ContentDefinition>` que contém `Id="api.selfasserted"`, `Id="api.localaccountsignup"` e `Id="api.localaccountpasswordreset"`.
 
     b. Defina o atributo `LoadUri` para seu URI *selfasserted*.
 

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 5/8/2019
+ms.date: 6/6/2019
 ms.author: raiye
-ms.openlocfilehash: 71f66129aeec4f4c8b470a421caade22960d2d64
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: bdb3d0af93a69c1d15bd34a4badef5915ec0f01f
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65473209"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66743023"
 ---
 # <a name="azure-guest-os-releases-and-sdk-compatibility-matrix"></a>Matriz de compatibilidade de versões de SOs Convidados e do SDK do Azure
 Fornece a você informações atualizadas sobre as versões mais recentes do SO convidado do Azure para serviços de nuvem. Essas informações ajudam a planejar seu caminho de atualização antes que um SO convidado seja desabilitado. Se você configurar suas funções para usar atualizações *automáticas* de SO convidado, conforme descrito em [Configurações de atualização de SO convidado do Azure][Azure Guest OS Update Settings], não é essencial ler esta página.
@@ -42,6 +42,9 @@ Fornece a você informações atualizadas sobre as versões mais recentes do SO 
 Você não tem certeza de como atualizar o SO convidado? Confira [isto][cloud updates].
 
 ## <a name="news-updates"></a>Notícias atualizadas
+
+###### <a name="june-6-2019"></a>**6 de junho de 2019**
+O SO convidado de maio foi lançado.
 
 ###### <a name="may-7-2019"></a>**7 de maio de 2019**
 O SO convidado de abril foi lançado.
@@ -70,7 +73,7 @@ O SO convidado de outubro foi lançado.
 ###### <a name="october-12-2018"></a>**12 de outubro de 2018**
 O SO convidado de setembro foi lançado.
 
-## <a name="releases"></a>Versões
+## <a name="releases"></a>Lançamentos
 
 ## <a name="family-6-releases"></a>Lançamentos do Family 6
 **Windows Server 2019**
@@ -90,10 +93,11 @@ O SO convidado de setembro foi lançado.
 >
 
 
-| Cadeia de caracteres de configuração | Data de lançamento | Data da desabilitação |
+| Cadeia de caracteres de configuração | Data de liberação | Data da desabilitação |
 | --- | --- | --- |
+| WA-GUEST-OS-6.7_201905-01 |6 de junho de 2019 |POST 6.9 |
 | WA-GUEST-OS-6.6_201904-01 |7 de maio de 2019 |Post 6.8 |
-| WA-GUEST-OS-6.5_201903-01 |26 de março de 2019 |POST 6.7 |
+|~~WA-GUEST-OS-6.5_201903-01~~ |26 de março de 2019 |6 de junho de 2019 |
 |~~WA-GUEST-OS-6.4_201902-01~~ |12 de março de 2019 |7 de maio de 2019 |
 |~~WA-GUEST-OS-6.3_201901-01~~ |5 de fevereiro de 2019 |26 de março de 2019 |
 |~~WA-GUEST-OS-6.2_201812-01~~ |24 de janeiro de 2019 |12 de março de 2019 |
@@ -109,10 +113,11 @@ O SO convidado de setembro foi lançado.
 >
 
 
-| Cadeia de caracteres de configuração | Data de lançamento | Data da desabilitação |
+| Cadeia de caracteres de configuração | Data de liberação | Data da desabilitação |
 | --- | --- | --- |
+| WA-GUEST-OS-5.31_201905-01 |6 de junho de 2019 |Post 5.33 |
 | WA-GUEST-OS-5.30_201904-01 |7 de maio de 2019 |Post 5.32 |
-| WA-GUEST-OS-5.29_201903-01 |26 de março de 2019 |Post 5.31 |
+|~~WA-GUEST-OS-5.29_201903-01~~ |26 de março de 2019 |6 de junho de 2019 |
 |~~WA-GUEST-OS-5.28_201902-01~~ |12 de março de 2019 |7 de maio de 2019 |
 |~~WA-GUEST-OS-5.27_201901-01~~ |5 de fevereiro de 2019 |26 de março de 2019 |
 |~~WA-GUEST-OS-5.26_201812-01~~ |7 de janeiro de 2019 |12 de março de 2019 |
@@ -125,10 +130,11 @@ O SO convidado de setembro foi lançado.
 
 .NET Framework instalado: 3.5, 4.5.1
 
-| Cadeia de caracteres de configuração | Data de lançamento | Data da desabilitação |
+| Cadeia de caracteres de configuração | Data de liberação | Data da desabilitação |
 | --- | --- | --- |
+| WA-GUEST-OS-4.66_201905-01 |6 de junho de 2019 |POST 4.68 |
 | WA-GUEST-OS-4.65_201904-01 |7 de maio de 2019 |POST 4.67 |
-| WA-GUEST-OS-4.64_201903-01 |26 de março de 2019 |POST 4,66 |
+|~~WA-GUEST-OS-4.64_201903-01~~ |26 de março de 2019 |6 de junho de 2019 |
 |~~WA-GUEST-OS-4.63_201902-01~~ |12 de março de 2019 |7 de maio de 2019 |
 |~~WA-GUEST-OS-4.62_201901-01~~ |5 de fevereiro de 2019 |26 de março de 2019 |
 |~~WA-GUEST-OS-4.61_201812-01~~ |7 de janeiro de 2019 |12 de março de 2019 |
@@ -141,10 +147,11 @@ O SO convidado de setembro foi lançado.
 
 .NET Framework instalado: 3.5, 4.5
 
-| Cadeia de caracteres de configuração | Data de lançamento | Data da desabilitação |
+| Cadeia de caracteres de configuração | Data de liberação | Data da desabilitação |
 | --- | --- | --- |
+| WA-GUEST-OS-3.73_201905-01 |Junho de 67, 2019 |POST 3,75 |
 | WA-GUEST-OS-3.72_201904-01 |7 de maio de 2019 |Post 3.74 |
-| WA-GUEST-OS-3.71_201903-01 |26 de março de 2019 |POST 3.73 |
+|~~WA-GUEST-OS-3.71_201903-01~~ |26 de março de 2019 |6 de junho de 2019 |
 |~~WA-GUEST-OS-3.70_201902-01~~ |12 de março de 2019 |7 de maio de 2019 |
 |~~WA-GUEST-OS-3.69_201901-01~~ |5 de fevereiro de 2019 |26 de março de 2019 |
 |~~WA-GUEST-OS-3.68_201812-01~~ |7 de janeiro de 2019 |12 de março de 2019 |
@@ -157,10 +164,11 @@ O SO convidado de setembro foi lançado.
 
 .NET Framework instalado: 3.5 (inclui 2.0 e 3.0)
 
-| Cadeia de caracteres de configuração | Data de lançamento | Data da desabilitação |
+| Cadeia de caracteres de configuração | Data de liberação | Data da desabilitação |
 | --- | --- | --- |
+| WA-GUEST-OS-2.86_201905-01 |6 de junho de 2019 |Post 2.88 |
 | WA-GUEST-OS-2.85_201904-01 |7 de maio de 2019 |Post 2.87 |
-| WA-GUEST-OS-2.84_201903-01 |26 de março de 2019 |Post 2.86 |
+|~~WA-GUEST-OS-2.84_201903-01~~ |26 de março de 2019 |6 de junho de 2019 |
 |~~WA-GUEST-OS-2.83_201902-01~~ |12 de março de 2019 |7 de maio de 2019 |
 |~~WA-GUEST-OS-2.82_201901-01~~ |5 de fevereiro de 2019 |26 de março de 2019 |
 |~~WA-GUEST-OS-2.81_201812-01~~ |7 de janeiro de 2019 |12 de março de 2019 |
@@ -194,13 +202,13 @@ Quando a data de **validade** vence, qualquer Serviço de nuvem que ainda esteja
 As famílias de SO convidado são baseadas em versões lançadas do Microsoft Windows Server. O SO convidado é o sistema operacional subjacente sobre o qual os Serviços de Nuvem do Azure são executados. Cada SO convidado tem uma família, uma versão e um número de lançamento.
 
 * **Guest OS family**  
-   Uma versão do sistema operacional Windows Server na qual o SO Convidado se baseia. Por exemplo, a *família 3* baseia-se no Windows Server 2012.
+  Uma versão do sistema operacional Windows Server na qual o SO Convidado se baseia. Por exemplo, a *família 3* baseia-se no Windows Server 2012.
 * **Versão do SO Convidado**  
   Específica de uma imagem da família de SO convidado mais os patches relevantes do [MSRC (Microsoft Security Response Center)][msrc] disponíveis na data em que a nova versão do SO convidado é produzida. Nem todos os patches estarão necessariamente incluídos.
 
     Os números começam em 0 e são incrementados em 1 cada vez que um novo conjunto de atualizações é adicionado. Os zeros à direita são mostrados apenas se forem importantes. Ou seja, a versão 2.10 é uma versão diferente e muito posterior à versão 2.1.
 * **Versão do SO convidado**  
-   Um relançamento de uma versão do SO Convidado. Um relançamento ocorre quando a Microsoft encontra, durante os testes, problemas que exigem alterações. A versão mais recente sempre substitui quaisquer lançamentos anteriores, públicos ou não. O portal do Azure só permitirá que os usuários escolham o lançamento mais recente de uma determinada versão. Implantações executadas em uma versão anterior geralmente não sofrem atualização forçada, o que depende da gravidade do bug.
+  Um relançamento de uma versão do SO Convidado. Um relançamento ocorre quando a Microsoft encontra, durante os testes, problemas que exigem alterações. A versão mais recente sempre substitui quaisquer lançamentos anteriores, públicos ou não. O portal do Azure só permitirá que os usuários escolham o lançamento mais recente de uma determinada versão. Implantações executadas em uma versão anterior geralmente não sofrem atualização forçada, o que depende da gravidade do bug.
 
 No exemplo abaixo, 2 é a família, 12 é a versão e "rel2" é o lançamento.
 

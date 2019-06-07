@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: raynew
-ms.openlocfilehash: 2f48e0d8b46684d067fe2e32f241e28d94c2edbd
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: ef522785d5074187871c25c54deae84b156d69b1
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66399685"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66743172"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Matriz de suporte para backup de VM do Azure
 Você pode usar o [serviço de Backup do Azure](backup-overview.md) para fazer backup de máquinas locais e cargas de trabalho e máquinas virtuais (VMs). Este artigo resume as configurações de suporte e limitações quando você faz backup de VMs do Azure com o Backup do Azure.
@@ -42,10 +42,10 @@ Saiba mais sobre o backup [usando um servidor de backup](backup-architecture.md#
 --- | ---
 Habilitar o backup ao criar uma VM do Windows Azure | Com suporte para: <br/><br/> – Windows Server de 2019 (Datacenter/Datacenter Core/Standard) <br/><br/> -Windows Server 2016 (Core Datacenter/Datacenter/Standard) <br/><br/> -Windows Server 2012 R2 (Datacenter/Standard) <br/><br/> -Windows Server 2008 R2 (RTM e SP1 Standard)
 Habilitar backup ao criar uma VM do Linux | Com suporte para:<br/><br/> - Servidor Ubuntu: 18.04, 17.10, 17.04, 16.04 (LTS), 14.04 (LTS)<br/><br/> - Red Hat: RHEL 6.7, 6.8, 6.9, 7.2, 7.3, 7.4<br/><br/> - SUSE Linux Enterprise Server: 11 SP4, 12 SP2, 12 SP3, 15 <br/><br/> - Debian: 8, 9<br/><br/> - CentOS: 6.9, 7.3<br/><br/> – Oracle Linux: 6.7, 6.8, 6.9, 7.2, 7.3
-Fazer backup de uma VM que é um desligamento/offline VM |  Com suporte.<br/><br/> O instantâneo só é consistente com a falha e não com o aplicativo.
-Fazer backup de discos após a migração para discos gerenciados |  Com suporte.<br/><br/> O backup continuará a funcionar. Nenhuma ação é necessária.
+Fazer backup de uma VM que é um desligamento/offline VM | Com suporte.<br/><br/> O instantâneo só é consistente com a falha e não com o aplicativo.
+Fazer backup de discos após a migração para discos gerenciados | Com suporte.<br/><br/> O backup continuará a funcionar. Nenhuma ação é necessária.
 Backup de discos gerenciados depois de habilitar o bloqueio de grupo de recursos | Sem suporte.<br/><br/> O Backup do Azure não é possível excluir os pontos de recursos mais antigos e os backups serão começam a falhar quando é atingido o limite máximo de pontos de restauração.
-Modificar a política de backup de uma VM |  Com suporte.<br/><br/> A VM será feita backup, usando as configurações de retenção e agendamento na nova política. Se as configurações de retenção forem estendidas, os pontos de recuperação existentes serão marcados e mantidos. Se eles são reduzidos, pontos de recuperação existentes serão removidos no próximo trabalho de limpeza e, eventualmente, excluídos.
+Modificar a política de backup de uma VM | Com suporte.<br/><br/> A VM será feita backup, usando as configurações de retenção e agendamento na nova política. Se as configurações de retenção forem estendidas, os pontos de recuperação existentes serão marcados e mantidos. Se eles são reduzidos, pontos de recuperação existentes serão removidos no próximo trabalho de limpeza e, eventualmente, excluídos.
 Cancelar um trabalho de backup | Tem suporte durante o processo de instantâneo.<br/><br/> Não tem suporte quando o instantâneo está em transferência para o cofre.
 Backup da VM para uma região ou uma assinatura diferentes |  Sem suporte.
 Backups por dia (com a extensão de VM do Azure) | Um backup agendado por dia.<br/><br/> Você pode fazer até quatro backups sob demanda por dia.
@@ -54,6 +54,8 @@ Backups por dia (por meio do DPM/MABS) | Dois backups agendados por dia.
 Backup mensal/anual   | Não tem suporte durante o backup com a extensão de VM do Azure. Só há suporte para diários e semanais.<br/><br/> É possível configurar a política para manter backups diários/semanais por um período de retenção mensal/anual.
 Ajuste automático de relógio | Sem suporte.<br/><br/> O Backup do Azure não ajustar automaticamente para que as alterações de horário de verão ao fazer backup de uma VM.<br/><br/>  Modifique a política manualmente, se necessário.
 [Recursos de segurança para backups híbridos](https://docs.microsoft.com/azure/backup/backup-azure-security-feature) |  Desabilitar os recursos de segurança não é suportado.
+Fazer backup de VM cujo tempo de máquina é alterado | Sem suporte.<br/><br/> Se a hora do computador é alterada para uma data e hora futura após a habilitação do backup para a VM; No entanto, mesmo se a alteração de tempo é revertida, o backup bem-sucedido não é garantido.  
+
 
 ## <a name="operating-system-support-windows"></a>Suporte do sistema operacional (Windows)
 
@@ -131,24 +133,24 @@ Restaurar o disco com a conta de armazenamento habilitada com a Criptografia do 
 Restaurar as contas de armazenamento mistas | Sem suporte.<br/><br/> Com base no tipo de conta de armazenamento, todos os discos restaurados serão premium ou standard e não mistos.
 Restaurar a conta de armazenamento usando o armazenamento com redundância de zona (ZRS) | Com suporte (para VM que são armazenados em backup depois de janeiro de 2019 e onde [zona de disponibilidade](https://azure.microsoft.com/global-infrastructure/availability-zones/) estão disponíveis)
 Restaurar VM diretamente em um conjunto de disponibilidade | Para discos gerenciados, você pode restaurar o disco e use a opção de conjunto de disponibilidade no modelo.<br/><br/> Sem suporte para discos não gerenciados. Para discos não gerenciados, restaure o disco e crie uma VM no conjunto de disponibilidade.
-Restaurar o backup de VMs não gerenciadas, depois de atualizar para gerenciar a VM|  Com suporte.<br/><br/> Você pode restaurar discos e depois criar uma VM gerenciada.
-Restaurar uma VM em um ponto de restauração antes de migrar a VM para discos gerenciados |  Com suporte.<br/><br/> Restaure os discos não gerenciados (padrão), converta os discos restaurados para discos gerenciados e crie uma VM com discos gerenciados.
-Restaurar VM que foi excluída. |  Com suporte.<br/><br/> Você pode restaurar a VM usando um ponto de recuperação.
+Restaurar o backup de VMs não gerenciadas, depois de atualizar para gerenciar a VM| Com suporte.<br/><br/> Você pode restaurar discos e depois criar uma VM gerenciada.
+Restaurar uma VM em um ponto de restauração antes de migrar a VM para discos gerenciados | Com suporte.<br/><br/> Restaure os discos não gerenciados (padrão), converta os discos restaurados para discos gerenciados e crie uma VM com discos gerenciados.
+Restaurar VM que foi excluída. | Com suporte.<br/><br/> Você pode restaurar a VM usando um ponto de recuperação.
 A restauração de uma VM DC (controladora de domínio) que faça parte de uma configuração com vários DCs por meio do portal | Suporte se você restaurar o disco e criar uma VM usando o PowerShell.
-Restaurar a VM na rede virtual diferente |    Com suporte.<br/><br/> A rede virtual deve estar na mesma assinatura e região.
+Restaurar a VM na rede virtual diferente |   Com suporte.<br/><br/> A rede virtual deve estar na mesma assinatura e região.
 
 ## <a name="vm-compute-support"></a>Suporte de VM de computação
 
 **Computação** | **Suporte**
 --- | ---
 Tamanho da VM |   Qualquer tamanho de VM do Azure com, no mínimo, 2 núcleos de CPU e 1 GB de RAM.<br/><br/> [Saiba mais.](https://docs.microsoft.com/azure/virtual-machines/windows/sizes)
-Backup de VMs em [conjuntos de disponibilidade](https://docs.microsoft.com/azure/virtual-machines/windows/regions-and-availability#availability-sets) |  Com suporte.<br/><br/> Você não pode restaurar uma VM em um conjunto disponível, usando a opção para criar rapidamente uma VM. Em vez disso, quando você restaura a VM, restaure o disco e usá-lo para implantar uma VM, ou restaurar um disco e usá-lo para substituir um disco existente.
+Backup de VMs em [conjuntos de disponibilidade](https://docs.microsoft.com/azure/virtual-machines/windows/regions-and-availability#availability-sets) | Com suporte.<br/><br/> Você não pode restaurar uma VM em um conjunto disponível, usando a opção para criar rapidamente uma VM. Em vez disso, quando você restaura a VM, restaure o disco e usá-lo para implantar uma VM, ou restaurar um disco e usá-lo para substituir um disco existente.
 Backup de VMs em [zonas de disponibilidade](https://docs.microsoft.com/azure/availability-zones/az-overview) |  Sem suporte.
-Fazer backup de VMs que são implantadas com [benefício de uso híbrido (HUB)](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing) |  Com suporte.
+Fazer backup de VMs que são implantadas com [benefício de uso híbrido (HUB)](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing) | Com suporte.
 Fazer backup de VMs que são implantadas em um [conjunto de dimensionamento](https://docs.microsoft.com/azure/virtual-machine-scale-sets/overview) |  Sem suporte.
-Fazer backup de VMs implantadas por meio do [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?filters=virtual-machine-images)<br/><br/> (Publicada pela Microsoft, por terceiros) |   Com suporte.<br/><br/> A VM também deve estar em execução em um sistema operacional com suporte.<br/><br/> Ao recuperar arquivos na VM, você pode restaurar apenas em um sistema operacional compatível (não um SO anterior ou posterior).
-Fazer backup de VMs que são implantadas de uma imagem personalizada (terceiros) |    Com suporte.<br/><br/> A VM também deve estar em execução em um sistema operacional com suporte.<br/><br/> Ao recuperar arquivos na VM, você pode restaurar apenas em um sistema operacional compatível (não um SO anterior ou posterior).
-Fazer backup de VMs que são migradas para o Azure  |  Com suporte.<br/><br/> Para fazer backup da VM, o agente da VM deve estar instalado no computador migrado.
+Fazer backup de VMs implantadas por meio do [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?filters=virtual-machine-images)<br/><br/> (Publicada pela Microsoft, por terceiros) |  Com suporte.<br/><br/> A VM também deve estar em execução em um sistema operacional com suporte.<br/><br/> Ao recuperar arquivos na VM, você pode restaurar apenas em um sistema operacional compatível (não um SO anterior ou posterior). Não podemos restaurar a VM do Azure Marketplace com suporte como VMs, como informações de compra a essas necessidades, mas apenas como discos.
+Fazer backup de VMs que são implantadas de uma imagem personalizada (terceiros) |   Com suporte.<br/><br/> A VM também deve estar em execução em um sistema operacional com suporte.<br/><br/> Ao recuperar arquivos na VM, você pode restaurar apenas em um sistema operacional compatível (não um SO anterior ou posterior).
+Fazer backup de VMs que são migradas para o Azure  | Com suporte.<br/><br/> Para fazer backup da VM, o agente da VM deve estar instalado no computador migrado.
 Fazer backup de consistência de várias VMs | O Backup do Azure não oferece consistência de dados e aplicativos em várias VMs.
 Backup com [as configurações de diagnóstico](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview)  | Sem suporte. <br/><br/> Se a restauração da VM do Azure com as configurações de diagnóstico é disparada usando [criar novo](backup-azure-arm-restore-vms.md#create-a-vm) opção a restauração falhará.
 
@@ -160,12 +162,12 @@ Backup com [as configurações de diagnóstico](https://docs.microsoft.com/azure
 Discos de dados de VM do Azure | Faça o backup de uma VM com 16 discos de dados ou menos. <br/><br/> Suporte a tamanhos de disco de até 4 TB.
 Tamanho do disco de dados | O disco individual pode ter até 4.095 GB.<br/><br/> Se seus cofres estiver executando a versão mais recente do Backup do Azure (conhecido como a restauração instantânea), os tamanhos de discos de até 4 TB têm suporte. [Saiba mais](backup-instant-restore-capability.md).  
 Tipo de armazenamento | Premium HDD, SSD standard, Standard SSD. <br/><br/> SSD Standard tem suporte se os cofres são atualizados para a versão mais recente do backup de VM do Azure (conhecido como a restauração instantânea). [Saiba mais](backup-instant-restore-capability.md).
-Discos gerenciados |  Com suporte.
-Discos criptografados |  Com suporte.<br/><br/> As VMs do Azure habilitadas com o Azure Disk Encryption podem ser feitas (com ou sem o aplicativo do Azure AD).<br/><br/> As VMs criptografadas não podem ser recuperadas no nível de arquivo/pasta. Você deve recuperar toda a VM.<br/><br/> Você pode habilitar a criptografia em VMs que já estão protegidos pelo Backup do Azure.
+Discos gerenciados | Com suporte.
+Discos criptografados | Com suporte.<br/><br/> As VMs do Azure habilitadas com o Azure Disk Encryption podem ser feitas (com ou sem o aplicativo do Azure AD).<br/><br/> As VMs criptografadas não podem ser recuperadas no nível de arquivo/pasta. Você deve recuperar toda a VM.<br/><br/> Você pode habilitar a criptografia em VMs que já estão protegidos pelo Backup do Azure.
 Discos com o Acelerador de Gravação habilitado | Sem suporte.<br/><br/> Se você estiver executando a versão mais recente do backup de VM do Azure (conhecido como [Restauração Instantânea](backup-instant-restore-capability.md)), pode excluir discos com o Acelerador de Gravação habilitado a partir do backup.
 Fazer backup de discos com eliminação de duplicação | Sem suporte.
-Adicionar o disco à VM protegida |  Com suporte.
-Redimensionar o disco em uma VM protegida |  Com suporte.
+Adicionar o disco à VM protegida | Com suporte.
+Redimensionar o disco em uma VM protegida | Com suporte.
 Armazenamento compartilhado| Não é recomendável fazer backup de VMs usando o Cluster CSV (Volume compartilhado) ou servidor de arquivos de escalabilidade horizontal. Os gravadores CSV falhem têm probabilidade de falhar durante o backup. Na restauração, os discos que contém os volumes CSV podem não vêm-up.
 
 > [!NOTE]
@@ -177,18 +179,18 @@ Armazenamento compartilhado| Não é recomendável fazer backup de VMs usando o 
 **Componente** | **Suporte**
 --- | ---
 Número de adaptadores de rede (NICs) | Até o número máximo de NICs com suporte em um tamanho específico de VM do Azure.<br/><br/> As NICs são criadas quando a VM é criada durante o processo de restauração.<br/><br/> O número de NICs na VM restaurada espelha o número de NICs na VM quando você habilitou a proteção. Remoção de NICs após habilitar a proteção não afeta a contagem.
-Balanceador de carga interno/externo |    Com suporte. <br/><br/> [Saiba mais](backup-azure-arm-restore-vms.md#restore-vms-with-special-configurations) sobre a restauração de VMs com configurações de rede especiais.
-Vários endereços IP reservados |     Com suporte. <br/><br/> [Saiba mais](backup-azure-arm-restore-vms.md#restore-vms-with-special-configurations) sobre a restauração de VMs com configurações de rede especiais.
-VMs com múltiplos adaptadores de rede  |  Com suporte. <br/><br/> [Saiba mais](backup-azure-arm-restore-vms.md#restore-vms-with-special-configurations) sobre a restauração de VMs com configurações de rede especiais.
-VMs com endereços IP públicos    |  Com suporte.<br/><br/> Associar um endereço IP público existente a NIC, ou criar um endereço e associá-lo à NIC após a restauração é feita.
-NSG (Grupo de Segurança de Rede) na NIC/sub-rede. |    Com suporte.
+Balanceador de carga interno/externo |   Com suporte. <br/><br/> [Saiba mais](backup-azure-arm-restore-vms.md#restore-vms-with-special-configurations) sobre a restauração de VMs com configurações de rede especiais.
+Vários endereços IP reservados |    Com suporte. <br/><br/> [Saiba mais](backup-azure-arm-restore-vms.md#restore-vms-with-special-configurations) sobre a restauração de VMs com configurações de rede especiais.
+VMs com múltiplos adaptadores de rede  | Com suporte. <br/><br/> [Saiba mais](backup-azure-arm-restore-vms.md#restore-vms-with-special-configurations) sobre a restauração de VMs com configurações de rede especiais.
+VMs com endereços IP públicos    | Com suporte.<br/><br/> Associar um endereço IP público existente a NIC, ou criar um endereço e associá-lo à NIC após a restauração é feita.
+NSG (Grupo de Segurança de Rede) na NIC/sub-rede. |   Com suporte.
 Endereço IP Reservado (estático) | Sem suporte.<br/><br/> Você não pode fazer backup de uma VM com um endereço IP reservado e nenhum ponto de extremidade definido.
-Endereço IP dinâmico |     Com suporte.<br/><br/> Se a NIC na fonte de VM usa o endereçamento IP dinâmico, por padrão a NIC na VM restaurada irá usá-lo também.
-Gerenciador de Tráfego do Azure   |  Com suporte.<br/><br/>Se a VM de backup está no Gerenciador de tráfego, adicione manualmente a VM restaurada para a mesma instância do Gerenciador de tráfego.
-DNS do Azure |  Com suporte.
-DNS Personalizado |     Com suporte.
-Conectividade de saída por meio do proxy HTTP |  Com suporte.<br/><br/> Não há suporte para proxy autenticado.
-Pontos de extremidade de serviço de rede virtual   |  Com suporte.<br/><br/> Firewall e as configurações de conta de armazenamento de rede virtual devem permitir o acesso de todas as redes.
+Endereço IP dinâmico |    Com suporte.<br/><br/> Se a NIC na fonte de VM usa o endereçamento IP dinâmico, por padrão a NIC na VM restaurada irá usá-lo também.
+Gerenciador de Tráfego do Azure   | Com suporte.<br/><br/>Se a VM de backup está no Gerenciador de tráfego, adicione manualmente a VM restaurada para a mesma instância do Gerenciador de tráfego.
+DNS do Azure | Com suporte.
+DNS Personalizado |    Com suporte.
+Conectividade de saída por meio do proxy HTTP | Com suporte.<br/><br/> Não há suporte para proxy autenticado.
+Pontos de extremidade de serviço de rede virtual   | Com suporte.<br/><br/> Firewall e as configurações de conta de armazenamento de rede virtual devem permitir o acesso de todas as redes.
 
 
 

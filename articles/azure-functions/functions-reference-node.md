@@ -12,12 +12,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 02/24/2019
 ms.author: glenga
-ms.openlocfilehash: 635e72a8e8a70b8885afea282511fbfaf24d2f94
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: a021ed2be3a94add7500a98d71a962bb580078e9
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65957345"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729478"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Guia do desenvolvedor de JavaScript do Azure Functions
 
@@ -110,7 +110,7 @@ Em JavaScript, [ligações](functions-triggers-bindings.md) são configuradas e 
 
 ### <a name="inputs"></a>Entradas
 As entradas são divididas em duas categorias no Azure Functions: uma é a entrada de gatilho e a outra é a entrada adicional. Trigger e outras ligações de entrada (ligações de `direction === "in"`) podem ser lidas por uma função de três maneiras:
- - **_[Recomendado]_ Como parâmetros passados para sua função.** Eles são passados para a função na mesma ordem em que são definidos *function.json*. O `name` propriedade definida no *Function. JSON* não precisa corresponder ao nome do parâmetro, embora deveria.
+ - ** _[Recomendado]_ Como parâmetros passados para sua função.** Eles são passados para a função na mesma ordem em que são definidos *function.json*. O `name` propriedade definida no *Function. JSON* não precisa corresponder ao nome do parâmetro, embora deveria.
  
    ```javascript
    module.exports = async function(context, myTrigger, myInput, myOtherInput) { ... };
@@ -136,12 +136,12 @@ As entradas são divididas em duas categorias no Azure Functions: uma é a entra
    };
    ```
 
-### <a name="outputs"></a>Saídas
+### <a name="outputs"></a>outputs
 As saídas (ligações de `direction === "out"`) podem ser gravadas por uma função de várias maneiras. Em todos os casos, a propriedade `name` da ligação, conforme definido em *function.json*, corresponde ao nome do membro do objeto gravado na sua função. 
 
 Você pode atribuir os dados para as associações de saída em uma das seguintes maneiras (não o combine esses métodos):
 
--  **_[Recomendado para várias saídas]_ Retornando um objeto.** Se você estiver usando uma async/promessa de retorno de função, você pode retornar um objeto com dados de saída atribuído. No exemplo abaixo, as ligações de saída são nomeadas "httpResponse" e "queueOutput" em *function.json*.
+- ** _[Recomendado para várias saídas]_ Retornando um objeto.** Se você estiver usando uma async/promessa de retorno de função, você pode retornar um objeto com dados de saída atribuído. No exemplo abaixo, as ligações de saída são nomeadas "httpResponse" e "queueOutput" em *function.json*.
 
   ```javascript
   module.exports = async function(context) {
@@ -156,7 +156,7 @@ Você pode atribuir os dados para as associações de saída em uma das seguinte
   ```
 
   Se você estiver usando uma função síncrona, você pode retornar este objeto usando [`context.done`](#contextdone-method) (veja o exemplo).
-- **_[Recomendado para saída única]_ Retornando um valor diretamente e usando o nome de ligação $ return.** Isso funciona apenas para as funções de retorno assíncrono / Promessa. Veja o exemplo em [exportando uma função assíncrona](#exporting-an-async-function). 
+- ** _[Recomendado para saída única]_ Retornando um valor diretamente e usando o nome de ligação $ return.** Isso funciona apenas para as funções de retorno assíncrono / Promessa. Veja o exemplo em [exportando uma função assíncrona](#exporting-an-async-function). 
 - **Atribuindo valores a serem `context.bindings`**  você pode atribuir valores diretamente para Context. Bindings.
 
   ```javascript
@@ -273,7 +273,7 @@ context.log(message)
 Permite que você grave em logs de função de streaming no nível de rastreamento padrão. No `context.log`, há métodos de registro adicionais disponíveis para permitir que você grave logs de função em outros níveis de rastreamento:
 
 
-| Método                 | Descrição                                |
+| Método                 | DESCRIÇÃO                                |
 | ---------------------- | ------------------------------------------ |
 | **error(_message_)**   | Grava no registro em log no nível do erro, ou em um nível inferior.   |
 | **warn(_message_)**    | Grava no registro em log no nível do aviso, ou em um nível inferior. |
@@ -350,7 +350,7 @@ HTTP e gatilhos de webhook e associações de saída HTTP usam objetos de solici
 
 O objeto `context.req` (solicitação) tem as seguintes propriedades:
 
-| Propriedade      | Descrição                                                    |
+| Propriedade      | DESCRIÇÃO                                                    |
 | ------------- | -------------------------------------------------------------- |
 | _body_        | Um objeto que contém o corpo da solicitação.               |
 | _headers_     | Um objeto que contém os cabeçalhos da solicitação.                   |
@@ -365,7 +365,7 @@ O objeto `context.req` (solicitação) tem as seguintes propriedades:
 
 O objeto `context.res` (resposta) tem as seguintes propriedades:
 
-| Propriedade  | Descrição                                               |
+| Propriedade  | DESCRIÇÃO                                               |
 | --------- | --------------------------------------------------------- |
 | _body_    | Um objeto que contém o corpo da resposta.         |
 | _headers_ | Um objeto que contém os cabeçalhos da resposta.             |
@@ -397,9 +397,9 @@ Ao trabalhar com gatilhos HTTP, há várias maneiras de acessar os objetos de so
     ```javascript
     context.bindings.response = { status: 201, body: "Insert succeeded." };
     ```
-+ **_[Somente Resposta]_ Chamando`context.res.send(body?: any)`.** Uma resposta HTTP é criada com a entrada `body` como o corpo da resposta. `context.done()` é chamado implicitamente.
++ ** _[Somente Resposta]_ Chamando`context.res.send(body?: any)`.** Uma resposta HTTP é criada com a entrada `body` como o corpo da resposta. `context.done()` é chamado implicitamente.
 
-+ **_[Somente Resposta]_ Chamando`context.done()`.** Um tipo especial de associação HTTP que retorna a resposta passada ao método `context.done()`. A seguinte associação de saída HTTP define um parâmetro de saída `$return`:
++ ** _[Somente Resposta]_ Chamando`context.done()`.** Um tipo especial de associação HTTP que retorna a resposta passada ao método `context.done()`. A seguinte associação de saída HTTP define um parâmetro de saída `$return`:
 
     ```json
     {
@@ -465,23 +465,16 @@ Há duas maneiras de instalar pacotes no aplicativo de funções:
 
 ## <a name="environment-variables"></a>Variáveis de ambiente
 
-Em funções, [configurações do aplicativo](functions-app-settings.md), como conexão de serviço cadeias de caracteres, são expostas como variáveis de ambiente durante a execução. Você pode acessar essas configurações usando a função `process.env`, conforme mostrado aqui no `GetEnvironmentVariable`:
+Em funções, [configurações do aplicativo](functions-app-settings.md), como conexão de serviço cadeias de caracteres, são expostas como variáveis de ambiente durante a execução. Você pode acessar essas configurações usando `process.env`, conforme mostrado aqui nas chamadas de segundo e terceira `context.log()` onde podemos fazer a `AzureWebJobsStorage` e `WEBSITE_SITE_NAME` variáveis de ambiente:
 
 ```javascript
-module.exports = function (context, myTimer) {
+module.exports = async function (context, myTimer) {
     var timeStamp = new Date().toISOString();
 
     context.log('Node.js timer trigger function ran!', timeStamp);
-    context.log(GetEnvironmentVariable("AzureWebJobsStorage"));
-    context.log(GetEnvironmentVariable("WEBSITE_SITE_NAME"));
-
-    context.done();
+    context.log("AzureWebJobsStorage: " + process.env["AzureWebJobsStorage"]);
+    context.log("WEBSITE_SITE_NAME: " + process.env["WEBSITE_SITE_NAME"]);
 };
-
-function GetEnvironmentVariable(name)
-{
-    return name + ": " + process.env[name];
-}
 ```
 
 [!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]

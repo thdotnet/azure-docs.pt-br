@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 5/27/2019
+ms.date: 6/03/2019
 ms.author: monhaber
-ms.openlocfilehash: 807bde76bb6bb50490ee599768273a59c49d5e45
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: c5b5b88ee1334ac6d7b39b8ad53bd020e6042454
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66258700"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480529"
 ---
 # <a name="platforms-and-features-supported-by-azure-security-center"></a>Plataformas e recursos compatíveis com a Central de Segurança do Azure
 
@@ -67,7 +67,7 @@ Os sistemas operacionais Linux a seguir são compatíveis:
 * Oracle Linux 6
 * Red Hat Enterprise Linux Server 6
 * Debian GNU/Linux 8 e 9
-* Ubuntu Linux 14.04 LTS and 16.04 LTS
+* Ubuntu Linux 14.04 LTS e 16.04 LTS
 
 ## <a name="vms-and-cloud-services"></a>VMs e Serviços de Nuvem
 VMs que são executadas em um serviço de nuvem também são compatíveis. Apenas funções Web e de trabalho de serviços de nuvem que são executadas em slots de produção são monitorados. Para saber mais sobre os serviços de nuvem, confira [Visão geral dos Serviços de Nuvem do Azure](../cloud-services/cloud-services-choose-me.md).
@@ -78,7 +78,7 @@ VMs que são executadas em um serviço de nuvem também são compatíveis. Apena
 > [!div class="mx-tableFixed"]
 > 
 
-|Servidor| Windows||Linux||||Preços|
+|Servidor|Windows||Linux||||Preços|
 |----|----|----|----|----|----|----|----|
 |**Ambiente**|**As tabelas**||**Non-Azure**|**As tabelas**||**Non-Azure**||
 ||**Máquina Virtual**|**Conjunto de Dimensionamento de Máquinas Virtuais**||**Máquina Virtual**|**Conjunto de Dimensionamento de Máquinas Virtuais**|
@@ -93,7 +93,7 @@ VMs que são executadas em um serviço de nuvem também são compatíveis. Apena
 |FIM|✔|✔|✔|✔|✔|✔|Standard|
 |Avaliação de criptografia de disco|✔|✔|X|✔|✔|X|Grátis|
 |Implantação de terceiros|✔|X|X|✔|X|X|Grátis|
-|Avaliação de NSGs|✔|✔|X|✔|✔|X|Grátis|
+|Avaliação de NSG|✔|✔|X|✔|✔|X|Grátis|
 |Detecção de ameaças sem arquivo|✔|✔|✔|X|X|X|Standard|
 |Mapa de rede|✔|✔|X|✔|✔|X|Standard|
 |Controles de rede adaptável|✔|✔|X|✔|✔|X|Standard|
@@ -112,11 +112,11 @@ Para obter informações sobre quando as recomendações são geradas para cada 
 |------|------|-----|-----|
 | Windows Defender (Microsoft Antimalware)| Windows Server 2016| Não, Integrado no SO| Sim |
 | System Center Endpoint Protection (antimalware da Microsoft) | Windows Server 2012 R2, 2012, 2008 R2 (consulte a observação abaixo) | Via extensão | Sim |
-| Trend Micro – Todas as versões | Família Windows Server  | Não  | Sim |
-| Symantec v12.1.1100+| Família Windows Server  | Não  | Sim |
-| McAfee v10+ | Família Windows Server  | Não  | Sim |
-| Kaspersky| Família Windows Server  | Não | Não   |
-| Sophos| Família Windows Server  | Não  | Não   |
+| Trend Micro – Todas as versões | Família Windows Server  | Não | Sim |
+| Symantec v12.1.1100+| Família Windows Server  | Não | Sim |
+| McAfee v10+ | Família Windows Server  | Não | Sim |
+| Kaspersky| Família Windows Server  | Não | Não  |
+| Sophos| Família Windows Server  | Não | Não  |
 
 > [!NOTE]
 > - A detecção do System Center Endpoint Protection (SCEP) em uma máquina virtual do Windows Server 2008 R2 exige que o SCEP seja instalado após o PowerShell 3.0 (ou uma versão superior).
@@ -129,7 +129,7 @@ Para obter informações sobre quando as recomendações são geradas para cada 
 |SQL|✔| ✔|
 |PostGreSQL*|✔| ✔|
 |MySQL*|✔| ✔|
-|Contas de Armazenamento de Blobs do Azure*|✔| ✔|
+|Contas de armazenamento de BLOBs do Azure|✔| ✔|
 |Serviços de aplicativos|✔| ✔|
 |Serviços de Nuvem|✔| X|
 |VNets|✔| ND|
@@ -137,7 +137,6 @@ Para obter informações sobre quando as recomendações são geradas para cada 
 |NICs|✔| ND|
 |NSGs|✔| ND|
 |Assinatura|✔ **| ✔|
-|serviço de aplicativo|✔| ND|
 |Lote|✔| ND|
 |Service fabric|✔| ND|
 |Conta de automação|✔| ND|
@@ -147,14 +146,9 @@ Para obter informações sobre quando as recomendações são geradas para cada 
 |Stream Analytics|✔| ND|
 |Hub de Eventos|✔| ND|
 |Aplicativos lógicos|✔| ND|
-|Sub-rede|✔| ND|
-|Rede virtual|✔| ND|
 |Conta de armazenamento|✔| ND|
 |Redis|✔| ND|
-|SQL|✔| ND|
 |Data Lake Analytics|✔| ND|
-|Conta de armazenamento|✔| ND|
-|Assinatura|✔| ND|
 |Cofre de chaves|✔| ND|
 
 

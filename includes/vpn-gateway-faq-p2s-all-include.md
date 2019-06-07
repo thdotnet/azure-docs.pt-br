@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 01/18/2019
+ms.date: 05/23/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 42c94188c0c38448660998bcfc122ae626285566
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 20f0d6a88fead155225cff69ab89635de587a46d
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66249125"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66455170"
 ---
 ### <a name="how-many-vpn-client-endpoints-can-i-have-in-my-point-to-site-configuration"></a>Quantos pontos de extremidade de cliente VPN posso ter em minha configuração ponto a site?
 
@@ -60,7 +60,7 @@ Sim. Para o modelo de implantação do Gerenciador de Recursos, você deve ter u
 
 ### <a name="can-i-configure-a-point-to-site-client-to-connect-to-multiple-virtual-networks-at-the-same-time"></a>Posso configurar um cliente de ponto a site para se conectar a várias redes virtuais ao mesmo tempo?
 
- Não. Um cliente de Ponto a Site só pode se conectar aos recursos na rede virtual na qual o gateway de rede virtual reside.
+Não. Um cliente de Ponto a Site só pode se conectar aos recursos na rede virtual na qual o gateway de rede virtual reside.
 
 ### <a name="how-much-throughput-can-i-expect-through-site-to-site-or-point-to-site-connections"></a>Quanta taxa de transferência posso esperar por meio de conexões site a site ou ponto a site?
 
@@ -68,7 +68,7 @@ Sim. Para o modelo de implantação do Gerenciador de Recursos, você deve ter u
 
 ### <a name="can-i-use-any-software-vpn-client-for-point-to-site-that-supports-sstp-andor-ikev2"></a>Posso usar qualquer cliente de VPN de software para Ponto a Site que dê suporte a SSTP e/ou IKEv2?
 
- Não. Você só pode usar o cliente VPN nativo no Windows para SSTP, e o cliente VPN nativo no Mac para IKEv2. No entanto, você pode usar o cliente OpenVPN em todas as plataformas para se conectar via protocolo OpenVPN. Consulte a lista dos sistemas operacionais de cliente com suporte.
+Não. Você só pode usar o cliente VPN nativo no Windows para SSTP, e o cliente VPN nativo no Mac para IKEv2. No entanto, você pode usar o cliente OpenVPN em todas as plataformas para se conectar via protocolo OpenVPN. Consulte a lista dos sistemas operacionais de cliente com suporte.
 
 ### <a name="does-azure-support-ikev2-vpn-with-windows"></a>O Azure oferece suporte à VPN IKEv2 com o Windows?
 
@@ -78,7 +78,7 @@ Para preparar o Windows 10 ou Server 2016 para IKEv2:
 
 1. Instale a atualização.
 
-   | Versão do SO | Date | Número/Link |
+   | Versão do SO | Data | Número/Link |
    |---|---|---|
    | Windows Server 2016<br>Windows 10, versão 1607 | 17 de janeiro de 2018 | [KB4057142](https://support.microsoft.com/help/4057142/windows-10-update-kb4057142) |
    | Windows 10, versão 1703 | 17 de janeiro de 2018 | [KB4057144](https://support.microsoft.com/help/4057144/windows-10-update-kb4057144) |

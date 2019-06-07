@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.date: 04/29/2019
 ms.topic: conceptual
 ms.author: asgan
-ms.openlocfilehash: 1a13bda37c5bfac4efe6bd6109cb1dfcd5f7d2a9
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 271e3c31c3e08d170add84ca4995f4876d4d3a33
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925663"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66753781"
 ---
 # <a name="common-questions-azure-to-azure-disaster-recovery"></a>Perguntas comuns: Recuperação de desastre do Azure para o Azure
 
@@ -59,7 +59,7 @@ Sim, é possível excluir discos no momento da proteção usando o PowerShell. P
 Sim, isso é compatível para VMs do Azure com discos gerenciados. Quando você adiciona um novo disco a uma VM do Azure que está habilitado para replicação, integridade da replicação da VM mostra um aviso, com uma observação que especifica que um ou mais discos na VM estão disponíveis para proteção. Você pode habilitar a replicação para os discos adicionados.
 - Se você habilitar a proteção para os discos adicionados, o aviso desaparecerá após a replicação inicial.
 - Se você optar por não habilitar a replicação para o disco, você pode selecionar para ignorar o aviso.
-- Quando você executa o failover de uma VM ao qual você pode adiciona um disco e habilita a replicação para ele, pontos de replicação mostrará os discos que estão disponíveis para recuperação. Por exemplo, se uma VM tem um único disco e adicionar um novo, pontos de replicação que foram criados antes de adicionar o disco mostrará que o ponto de replicação consiste em "1 de 2 discos".
+- Quando você executa o failover de uma VM ao qual você pode adiciona um disco e habilita a replicação para ele, pontos de replicação mostrará os discos que estão disponíveis para recuperação. Por exemplo, se uma VM tiver um único disco e você adicionar um novo, os pontos de replicação que foram criados antes de você adicionar o disco mostrará que o ponto de replicação consiste em "1 de 2 discos".
 
 Site Recovery não dá suporte a "quente remover" de um disco de uma VM replicada. Se você remover um disco de VM, você precisará desabilitar e, em seguida, reabilitar a replicação para a VM.
 
@@ -143,7 +143,7 @@ Sim. Se você aumentar o período de retenção de 24 horas a 72 horas, o Site R
 Isso significa verificar se o ponto de recuperação é consistente em todas as máquinas virtuais replicadas.
 O Site Recovery fornece uma opção de "Consistência de várias VMs" que, quando você seleciona, cria um grupo de replicação para replicar todos os computadores que fazem parte do grupo.
 Todas as máquinas virtuais terão pontos de recuperação consistentes em termos de aplicativo e falha quando passaram por failover.
-Veja o tutorial para [habilitar a consistência de várias VMs](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication#enable-replication).
+Veja o tutorial para [habilitar a consistência de várias VMs](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication#enable-replication-for-a-vm).
 
 ### <a name="can-i-failover-single-virtual-machine-within-a-multi-vm-consistency-replication-group"></a>Posso realizar o failover de uma única máquina virtual dentro de um grupo de replicação de consistência de várias VMs?
 Ao selecionar a opção "Consistência de várias VMs", você está dizendo que o aplicativo tem uma dependência e todas as máquinas virtuais dentro de um grupo. Portanto, o failover de única máquina virtual não é permitido.
@@ -180,7 +180,7 @@ Saiba mais sobre [reter endereços IP durante o failover](site-recovery-retain-i
 O Site Recovery tenta fornecer o endereço IP no momento do failover. Se outra máquina virtual estiver usando esse endereço, o Site Recovery definirá o próximo endereço IP disponível como destino.
 Saiba mais sobre [configuração de mapeamento de rede e endereçamento IP para redes virtuais](azure-to-azure-network-mapping.md#set-up-ip-addressing-for-target-vms).
 
-### <a name="what-are-latest-lowest-rpo-recovery-points"></a>Quais são os pontos de recuperação **Mais recentes (menor RPO)**?
+### <a name="what-are-latest-lowest-rpo-recovery-points"></a>Quais são os pontos de recuperação **Mais recentes (menor RPO)** ?
 A opção **Mais recentes (menor RPO)** primeiro processa todos os dados enviados ao serviço do Site Recovery para criar um ponto de recuperação para cada VM antes de fazer failover para ela. Essa opção fornece o RPO (objetivo de ponto de recuperação) mais baixo porque a VM criada após o failover tem todos os dados replicados para o Site Recovery de quando o failover foi disparado.
 
 ### <a name="do-latest-lowest-rpo-recovery-points-have-an-impact-on-failover-rto"></a>Os pontos de recuperação **Mais recentes (menor RPO)** afetam o RTO do failover?

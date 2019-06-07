@@ -4,16 +4,16 @@ description: Aprenda a solucionar problemas com o Gerenciamento de Atualizaçõe
 services: automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 05/07/2019
+ms.date: 05/31/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: f286877c6a9e787c06a8a846efaf94668c04fc4e
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 9bcc871ecc9413f02545e6aec4caa6342d563b44
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65787702"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66474580"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Resolução de problemas com o Gerenciamento de Atualizações
 
@@ -78,21 +78,50 @@ $s = New-AzureRmAutomationSchedule -ResourceGroupName mygroup -AutomationAccount
 New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationAccountName $aa -Schedule $s -Windows -AzureVMResourceId $azureVMIdsW -NonAzureComputer $nonAzurecomputers -Duration (New-TimeSpan -Hours 2) -IncludedUpdateClassification Security,UpdateRollup -ExcludedKbNumber KB01,KB02 -IncludedKbNumber KB100
 ```
 
-### <a name="nologs"></a>Cenário: Dados de gerenciamento de atualização não visível nos logs do Azure Monitor para uma máquina
+### <a name="nologs"></a>Cenário: As máquinas não são exibidas no portal em gerenciamento de atualizações
 
 #### <a name="issue"></a>Problema
 
-Você tiver máquinas que mostram como **não avaliado** sob **conformidade**, mas você verá os dados de pulsação nos logs do Azure Monitor para o Hybrid Runbook Worker, mas não o gerenciamento de atualizações.
+Você pode encontrar os seguintes cenários:
+
+* Mostra sua máquina **não configurado** da exibição de gerenciamento de atualização de uma VM
+
+* As máquinas estão ausentes da exibição de gerenciamento de atualização de sua conta de automação
+
+* Você tiver máquinas que mostram como **não avaliado** sob **conformidade**, mas você verá os dados de pulsação nos logs do Azure Monitor para o Hybrid Runbook Worker, mas não o gerenciamento de atualizações.
 
 #### <a name="cause"></a>Causa
 
+Isso pode ser causado por problemas potenciais de configuração local ou por configuração de escopo configurado incorretamente.
+
 O Hybrid Runbook Worker talvez precise ser registrados novamente e reinstalado.
+
+Você pode ter definido uma cota em seu espaço de trabalho que tenha sido atingidos e parando dados sejam armazenados.
 
 #### <a name="resolution"></a>Resolução
 
-Siga as etapas descritas em [Implantar um Hybrid Runbook Worker do Windows](../automation-windows-hrw-install.md) para reinstalar o Hybrid Worker para o Windows ou [Implantar um Hybrid Runbook Worker do Linux](../automation-linux-hrw-install.md) para o Linux.
+* Certifique-se de que seu computador está relatando ao espaço de trabalho correto. Verifique se sua máquina está relatando ao qual espaço de trabalho. Para obter instruções sobre como verificar isso, consulte [verificar a conectividade do agente para o Log Analytics](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-log-analytics). Em seguida, verifique se que esse é o espaço de trabalho que esteja vinculado à sua conta de automação do Azure. Para confirmar isso, navegue até sua conta de automação e clique em **espaço de trabalho vinculado** sob **recursos relacionados**.
 
-## <a name="windows"></a> Windows
+* Verifique se os computadores aparecem no seu espaço de trabalho do Log Analytics. Execute a consulta a seguir no seu espaço de trabalho do Log Analytics que esteja vinculado à sua conta de automação. Se você não vir seu computador nos resultados da consulta, seu computador não é pulsação, o que significa que provavelmente há um problema de configuração local. Você pode executar a solução de problemas para [Windows](update-agent-issues.md#troubleshoot-offline) ou [Linux](update-agent-issues-linux.md#troubleshoot-offline) dependendo do sistema operacional, ou você pode [reinstalar o agente](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows). Se sua máquina aparece nos resultados da consulta, você precisa de muito a configuração do escopo especificada no marcador seguinte.
+
+  ```loganalytics
+  Heartbeat
+  | summarize by Computer, Solutions
+  ```
+
+* Verifique se há problemas de configuração de escopo. [A configuração de escopo](../automation-onboard-solutions-from-automation-account.md#scope-configuration) determina quais máquinas obterem configuradas para a solução. Se seu computador está aparecendo no seu espaço de trabalho, mas não está aparecendo você precisará configurar a configuração de escopo para as máquinas de destino. Para saber como fazer isso, consulte [integrar computadores no espaço de trabalho](../automation-onboard-solutions-from-automation-account.md#onboard-machines-in-the-workspace).
+
+* Se as etapas acima não resolverem seu problema, siga as etapas em [implantar um Hybrid Runbook Worker do Windows](../automation-windows-hrw-install.md) reinstalar o Hybrid Worker para Windows ou [implantar um Hybrid Runbook Worker do Linux](../automation-linux-hrw-install.md) para Linux.
+
+* No espaço de trabalho, execute a consulta a seguir. Se você vir o resultado `Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota` você tem uma cota definida no seu espaço de trabalho que foi atingido e parou de dados sejam salvos. No espaço de trabalho, navegue até **uso e custos estimados** > **gerenciamento de volume de dados** e verificar sua cota ou remover a cota que você tem.
+
+  ```loganalytics
+  Operation
+  | where OperationCategory == 'Data Collection Status'
+  | sort by TimeGenerated desc
+  ```
+
+## <a name="windows"></a>Windows
 
 Se você encontrar problemas ao tentar integrar a solução em uma máquina virtual, verifique o log de eventos **Operations Manager** em **Logs de Aplicativos e Serviços** na máquina local para eventos com o ID de evento **4502** e mensagem de evento contendo **Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent**.
 
@@ -255,7 +284,7 @@ Causas possíveis podem ser:
 
 * Gerenciador de pacotes não é saudável
 * Pacotes específicos podem interferir na correção baseada em nuvem
-* Outros motivos
+* Outras razões
 
 #### <a name="resolution"></a>Resolução
 

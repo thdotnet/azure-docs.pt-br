@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/28/2019
 ms.author: jingwang
-ms.openlocfilehash: 47b9ede2d529f78b14c21f53c6cd18ed691a3df3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 81a5f99b0babd79af0034f684c45bfcf1bb25bd8
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60768119"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66425614"
 ---
 # <a name="copy-activity-performance-and-tuning-guide"></a>Guia Desempenho e ajuste da Atividade de Cópia
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -79,7 +79,7 @@ Pontos a serem observados:
 
 ## <a name="data-integration-units"></a>Unidades de Integração de Dados
 
-Uma **Unidade de Integração de Dados (DIU)** (conhecida anteriormente como Unidade de Movimentação de Dados em Nuvem ou DMU) é uma medida que representa a potência (uma combinação de CPU, memória e alocação de recursos da rede) de uma unidade única no Data Factory. **A DIU se aplica somente ao [Integration Runtime do Azure](concepts-integration-runtime.md#azure-integration-runtime)**, mas não ao [Integration Runtime auto-hospedado](concepts-integration-runtime.md#self-hosted-integration-runtime).
+Uma **Unidade de Integração de Dados (DIU)** (conhecida anteriormente como Unidade de Movimentação de Dados em Nuvem ou DMU) é uma medida que representa a potência (uma combinação de CPU, memória e alocação de recursos da rede) de uma unidade única no Data Factory. **A DIU se aplica somente ao [Integration Runtime do Azure](concepts-integration-runtime.md#azure-integration-runtime)** , mas não ao [Integration Runtime auto-hospedado](concepts-integration-runtime.md#self-hosted-integration-runtime).
 
 **O mínimo de Unidades de Integração de Dados para capacitar a execução da atividade de cópia é dois.** Se ele não for especificado, a seguinte tabela listará as DIUs padrão usadas em diferentes cenários de cópia:
 
@@ -93,7 +93,7 @@ Para substituir esse padrão, especifique um valor para a propriedade **dataInte
 Você pode ver as Unidades de Integração de Dados realmente usadas para cada execução na saída da atividade de cópia ao monitorar uma execução da atividade. Obtenha detalhes de [Monitoramento da atividade de cópia](copy-activity-overview.md#monitoring).
 
 > [!NOTE]
-> A configuração de DIUs **maiores que quatro** atualmente funciona apenas quando você **copia vários arquivos do Armazenamento de Blobs/Data Lake Storage/Amazon S3/FTP na nuvem/SFTP na nuvem para quaisquer outros armazenamentos de dados de nuvem**.
+> Configuração de DIUs **maior que 4** atualmente só se aplica quando você **copiar vários arquivos do Azure armazenamento/Data Lake Store/Amazon S3/Google Cloud Storage/na nuvem FTP nuvem/SFTP para qualquer outros nuvem armazenamentos de dados**.
 >
 
 **Exemplo:**
@@ -191,9 +191,9 @@ Configure a definição **enableStaging** na Atividade de Cópia para especifica
 | Propriedade | Descrição | Valor padrão | Obrigatório |
 | --- | --- | --- | --- |
 | **enableStaging** |Especifique se você deseja copiar os dados por meio de um armazenamento de preparo provisório. |Falso |Não |
-| **linkedServiceName** |Especifique o nome de um serviço vinculado [AzureStorage](connector-azure-blob-storage.md#linked-service-properties), que se refere à instância do Armazenamento que você usa como um repositório de preparo provisório. <br/><br/>  Você não pode usar o Armazenamento com uma assinatura de acesso compartilhado para carregar dados no SQL Data Warehouse via PolyBase. Pode usar em todos os outros cenários. |N/D |Sim, quando **enableStaging** está definido para TRUE |
-| **path** |Especifique o caminho do armazenamento de Blobs que você deseja que contenha os dados preparados. Se você não fornecer um caminho, o serviço criará um contêiner para armazenar os dados temporários. <br/><br/>  Especifique um caminho somente se você usar o Armazenamento com uma assinatura de acesso compartilhado ou precisar que os dados temporários fiquem em um local específico. |N/D |Não |
-| **enableCompression** |Especifica se os dados devem ser compactados antes de serem copiados para o destino. Essa configuração reduz o volume de dados que são transferidos. |Falso |Não  |
+| **linkedServiceName** |Especifique o nome de um serviço vinculado [AzureStorage](connector-azure-blob-storage.md#linked-service-properties), que se refere à instância do Armazenamento que você usa como um repositório de preparo provisório. <br/><br/> Você não pode usar o Armazenamento com uma assinatura de acesso compartilhado para carregar dados no SQL Data Warehouse via PolyBase. Pode usar em todos os outros cenários. |N/D |Sim, quando **enableStaging** está definido para TRUE |
+| **path** |Especifique o caminho do armazenamento de Blobs que você deseja que contenha os dados preparados. Se você não fornecer um caminho, o serviço criará um contêiner para armazenar os dados temporários. <br/><br/> Especifique um caminho somente se você usar o Armazenamento com uma assinatura de acesso compartilhado ou precisar que os dados temporários fiquem em um local específico. |N/D |Não |
+| **enableCompression** |Especifica se os dados devem ser compactados antes de serem copiados para o destino. Essa configuração reduz o volume de dados que são transferidos. |Falso |Não |
 
 >[!NOTE]
 > Se você usar a cópia preparada com a compactação ativada, a entidade de serviço ou a autenticação MSI do serviço vinculado do blob de preparo não será compatível.

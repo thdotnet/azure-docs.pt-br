@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 6140a8aea3fe0fe0a8f1c01cd1c97404c41f7a69
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 5248b9546ffe931b72123778d0d23574e5238405
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65805975"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66742407"
 ---
 # <a name="extend-azure-iot-central-with-custom-rules-that-send-notifications"></a>Estender o Azure IoT Central com regras personalizadas que enviam notificações
 
@@ -40,7 +40,7 @@ Criar um aplicativo de IoT Central dos [do Azure IoT Central - meus aplicativos]
 
 | Configuração | Value |
 | ------- | ----- |
-| Plano de Pagamento | Pago conforme o uso |
+| Plano de Pagamento | Pré-paga |
 | Modelo de aplicativo | Exemplo Contoso |
 | Nome do aplicativo | Aceite o padrão ou escolha seu próprio nome |
 | URL | Aceite o padrão ou escolha seu próprio prefixo de URL exclusivo |
@@ -54,7 +54,7 @@ Os exemplos e capturas de tela neste artigo usam o **Leste dos EUA** região. Es
 
 Use o [portal do Azure para criar um grupo de recursos](https://portal.azure.com/#create/Microsoft.ResourceGroup) chamado **DetectStoppedDevices** para conter outros recursos que você criou. Crie os recursos do Azure no mesmo local do seu aplicativo IoT Central.
 
-### <a name="event-hubs-namespace"></a>Namespace de Event Hubs
+### <a name="event-hubs-namespace"></a>Namespace do Hubs de Eventos
 
 Use o [portal do Azure para criar um namespace de Hubs de eventos](https://portal.azure.com/#create/Microsoft.EventHub) com as seguintes configurações:
 
@@ -65,7 +65,7 @@ Use o [portal do Azure para criar um namespace de Hubs de eventos](https://porta
 | Assinatura | Sua assinatura |
 | Grupo de recursos | DetectStoppedDevices |
 | Local padrão | Leste dos EUA |
-| Unidades de Produtividade | 1 |
+| Unidades de produtividade | 1 |
 
 ### <a name="stream-analytics-job"></a>Trabalho do Stream Analytics
 
@@ -78,7 +78,7 @@ Use o [portal do Azure para criar um trabalho do Stream Analytics](https://porta
 | Grupo de recursos | DetectStoppedDevices |
 | Local padrão | Leste dos EUA |
 | Ambiente de hospedagem | Nuvem |
-| Unidades de streaming | 3 |
+| Unidades de transmissão | 3 |
 
 ### <a name="function-app"></a>Aplicativo de funções
 
@@ -89,10 +89,10 @@ Use o [portal do Azure para criar um aplicativo de funções](https://portal.azu
 | Nome do aplicativo    | Escolha o nome do seu aplicativo de função |
 | Assinatura | Sua assinatura |
 | Grupo de recursos | DetectStoppedDevices |
-| SO |  Windows |
-| Plano de Hospedagem | Plano de Consumo |
+| SO | Windows |
+| Plano de Hospedagem | Plano de consumo |
 | Local padrão | Leste dos EUA |
-| Pilha em Tempo de Execução | .NET |
+| Pilha de tempo de execução | .NET |
 | Armazenamento | Criar Novo |
 
 ### <a name="sendgrid-account"></a>Conta do SendGrid
@@ -102,7 +102,7 @@ Use o [portal do Azure para criar uma conta do SendGrid](https://portal.azure.co
 | Configuração | Valor |
 | ------- | ----- |
 | NOME    | Escolha seu nome de conta do SendGrid |
-| Senha | Crie uma senha |
+| Senha | Criar uma senha |
 | Assinatura | Sua assinatura |
 | Grupo de recursos | DetectStoppedDevices |
 | Tipo de preço | F1 Gratuito |
@@ -121,7 +121,7 @@ Você pode configurar um aplicativo de IoT Central a exportação contínua de t
 
 Seu namespace de Hubs de eventos é semelhante a captura de tela a seguir:
 
-![Namespace de Event Hubs](media/howto-create-custom-rules/event-hubs-namespace.png)
+![Namespace do Hubs de Eventos](media/howto-create-custom-rules/event-hubs-namespace.png)
 
 ## <a name="get-sendgrid-api-key"></a>Obter chave de API do SendGrid
 
@@ -312,11 +312,11 @@ Navegue até a [aplicativo IoT Central](https://aka.ms/iotcentral) criados a par
 
     | Configuração | Value |
     | ------- | ----- |
-    | Nome para exibição | Exportar para os Hubs de Eventos |
-    | Enabled | Ligar |
-    | Namespace de Event Hubs | O nome do namespace de Hubs de eventos |
+    | Nome para exibição | Exportar para Hubs de eventos |
+    | Enabled | Por |
+    | Namespace do Hubs de Eventos | O nome do namespace de Hubs de eventos |
     | Hub de Eventos | centralexport |
-    | Medidas | Ligar |
+    | Medidas | Por |
     | Dispositivos | Desativar |
     | Modelos de Dispositivo | Desativar |
 
@@ -353,4 +353,4 @@ Neste guia de instruções, você aprendeu como:
 * Crie uma consulta de Stream Analytics que detecta quando um dispositivo parou de envio de dados.
 * Envie uma notificação por email usando o Azure Functions e os serviços do SendGrid.
 
-Agora que você sabe como criar regras personalizadas e notificações, a próxima etapa sugerida é saber como [visualizar e analisar os dados do Azure IoT Central em um dashboard do Power BI](howto-connect-powerbi.md).
+Agora que você sabe como criar regras personalizadas e notificações, a próxima etapa sugerida é saber como [estender o Azure IoT Central com análises personalizadas](howto-create-custom-analytics.md).

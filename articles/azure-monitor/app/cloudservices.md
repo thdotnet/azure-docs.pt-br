@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.workload: tbd
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: 1520b01826de2a80d8baeccf4913fa180d385644
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: eb7cbb80be12498242363eb8141a468e08cba73a
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66256299"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66478317"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Application Insights para serviços de nuvem do Azure
 O [Application Insights][start] pode monitorar os [aplicativos de serviço de nuvem do Azure](https://azure.microsoft.com/services/cloud-services/) para analisar a disponibilidade, o desempenho, as falhas e o uso combinando os dados de SDKs do Application Insights com os dados do [Diagnóstico do Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) a partir de seus serviços de nuvem. Com os comentários que você obtiver sobre o desempenho e a eficiência de seu aplicativo em uso, você pode fazer escolhas informadas sobre a direção do projeto em cada ciclo de vida de desenvolvimento.
@@ -112,7 +112,7 @@ No Visual Studio, configure o SDK do Application Insights para cada projeto de a
 
 1. Para configurar as **funções de trabalho**: 
 
-     a. Clique com o botão direito do mouse no projeto e selecione **Gerenciar Pacotes NuGet**.
+    a. Clique com o botão direito do mouse no projeto e selecione **Gerenciar Pacotes NuGet**.
 
     b. Adicione [Application Insights para Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
 
@@ -120,7 +120,7 @@ No Visual Studio, configure o SDK do Application Insights para cada projeto de a
 
 1. Para configurar o SDK para enviar dados ao recurso do Application Insights:
 
-     a. Em uma função de inicialização adequada, defina a chave de instrumentação na configuração no arquivo *.cscfg*:
+    a. Em uma função de inicialização adequada, defina a chave de instrumentação na configuração no arquivo *.cscfg*:
  
     ```csharp
    
@@ -194,18 +194,18 @@ Para as funções de trabalho, você pode acompanhar as exceções de duas forma
 ## <a name="performance-counters"></a>contadores de desempenho
 Os seguintes contadores são coletados por padrão:
 
-    * \Process(??APP_WIN32_PROC??)\% Tempo do Processador
-    * \Memória\Bytes Disponíveis
-    * \.Exceções NET CLR (?. APP_CLR_PROC?)\# de exceções lançadas / s
-    * \Processo(??APP_WIN32_PROC??)\Bytes Privados
-    * \Processo(??APP_WIN32_PROC??)\Bytes de dados de ES/s
-    * \Processador(_Total)\% Tempo do processador
+* \Process(??APP_WIN32_PROC??)\% Tempo do Processador
+* \Memória\Bytes Disponíveis
+* \.Exceções NET CLR (?. APP_CLR_PROC?)\# de exceções lançadas / s
+* \Processo(??APP_WIN32_PROC??)\Bytes Privados
+* \Processo(??APP_WIN32_PROC??)\Bytes de dados de ES/s
+* \Processador(_Total)\% Tempo do processador
 
 Para funções web, esses contadores também são coletados:
 
-    * \Aplicativos ASP.NET(??APP_W3SVC_PROC??)\Solicitções/S
-    * \Aplicativos ASP.NET (?. APP_W3SVC_PROC?)\Tempo de Execução de Solicitação
-    * \Aplicativos ASP.NET (?. APP_W3SVC_PROC?)\Solicitações na Fila do Aplicativo
+* \Aplicativos ASP.NET(??APP_W3SVC_PROC??)\Solicitções/S
+* \Aplicativos ASP.NET (?. APP_W3SVC_PROC?)\Tempo de Execução de Solicitação
+* \Aplicativos ASP.NET (?. APP_W3SVC_PROC?)\Solicitações na Fila do Aplicativo
 
 É possível especificar contadores de desempenho personalizados adicionais ou outros contadores de desempenho do Windows editando o *ApplicationInsights.config*, [conforme mostrado neste exemplo](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/ApplicationInsights.config#L14).
 

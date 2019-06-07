@@ -5,17 +5,17 @@ services: virtual-machines
 author: cynthn
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 05/22/2019
+ms.date: 06/04/2019
 ms.author: cynthn;kareni
 ms.custom: include file
-ms.openlocfilehash: d2312fac64515756f5ed2e0feb22fdc6b7205376
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 46ade0ecb0e2e081585803a0b1bc7eab989e21e6
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66125179"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735204"
 ---
-**Última atualização do documento**: 14 de maio de 2019 10 10h PST.
+**Última atualização do documento**: 4 de junho de 2019 3 18H PST.
 
 A divulgação de uma [nova classe de vulnerabilidades de CPU](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV180002) conhecida como ataques de canal paralelo de execução especulativa resultou em várias perguntas dos clientes que queriam mais esclarecimentos sobre o assunto.  
 
@@ -46,9 +46,9 @@ Mais informações sobre como a segurança é integrada em todos os aspectos do 
 
 Embora uma atualização do sistema operacional não seja necessária para isolar os aplicativos em execução no Azure de outros clientes do Azure, é sempre uma melhor prática manter o software atualizado. Os últimos Pacotes Cumulativos de Atualizações de Segurança para o Windows contêm mitigações de várias vulnerabilidades de canal paralelo de execução especulativa. Da mesma forma, as distribuições Linux liberaram várias atualizações para resolver essas vulnerabilidades. Aqui estão nossas ações recomendadas para atualizar o sistema operacional:
 
-| Oferta | Ação Recomendada  |
+| Oferta | Ação recomendada  |
 |----------|---------------------|
-| Serviços de Nuvem do Azure  | Habilite a [atualização automática](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-configure-portal) ou verifique se você está executando o Sistema Operacional Convidado mais recente. |
+| Serviços de nuvem do Azure  | Habilite a [atualização automática](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-configure-portal) ou verifique se você está executando o Sistema Operacional Convidado mais recente. |
 | Máquinas Virtuais do Linux do Azure | Instale atualizações do provedor do sistema operacional. Para obter mais informações, confira [Linux](#linux) mais adiante neste documento. |
 | Máquinas Virtuais do Windows do Azure  | Instale o pacote cumulativo de atualizações de segurança mais recente.
 | Outros Serviços de PaaS do Azure | Não é necessária nenhuma ação para clientes que usam esses serviços. O Azure mantém automaticamente suas versões de Sistema Operacional atualizadas. |
@@ -72,12 +72,12 @@ Os clientes que não implementam um cenário que envolva um código não confiá
 
 Se você estiver executando o código não confiável, você pode habilitar recursos de segurança adicionais dentro de sua VM ou serviço de nuvem. Em paralelo, verifique se que seu sistema operacional é atualizado para habilitar os recursos de segurança dentro de sua VM ou serviço de nuvem
 
-### <a name="windows"></a> Windows 
+### <a name="windows"></a>Windows 
 
 O sistema operacional de destino precisa estar atualizado para habilitar esses recursos de segurança adicionais. Embora várias mitigações de ataques de canal paralelo de execução especulativa estejam habilitadas por padrão, os recursos adicionais descritos aqui precisam ser habilitados manualmente e podem causar um impacto no desempenho. 
 
 
-**Etapa 1: Desabilitar o hyperthreading na VM** – os clientes que executam código não confiável em uma máquina virtual precisará desabilitar o hyperthreading ou mover para um tamanho de VM não Hyper-threaded de hyperthreading. Para verificar se sua VM tem o hyperthreading habilitado, consulte o script usando a linha de comando do Windows de dentro da VM abaixo.
+**Etapa 1: Desabilitar o hyper-threading na VM** -os clientes que executam código não confiável em uma VM do hyper-threaded serão preciso desabilitar o hyper-threading ou mover para um tamanho VM não-hyper-threading. Referência [este documento](https://docs.microsoft.com/azure/virtual-machines/windows/acu) para obter uma lista dos tamanhos de VM hyper-threading (em que proporção de vCPU para núcleo é 2:1). Para verificar se sua VM tiver o hyper-threading habilitado, consulte o script usando a linha de comando do Windows de dentro da VM abaixo.
 
 Tipo `wmic` para entrar na interface interativa. Digite abaixo para exibir a quantidade de física e lógica processadores na máquina virtual.
 
@@ -85,7 +85,7 @@ Tipo `wmic` para entrar na interface interativa. Digite abaixo para exibir a qua
 CPU Get NumberOfCores,NumberOfLogicalProcessors /Format:List
 ```
 
-Se o número de processadores lógicos for maior do que processadores físicos (núcleos), em seguida, o hyperthreading está habilitado.  Se você estiver executando uma VM do Hyper-threaded, por favor [entre em contato com o suporte do Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) para obter o hyperthreading desabilitado.  Depois que o hyperthreading está desativado, **o suporte exigirá uma reinicialização completa da VM**. 
+Se o número de processadores lógicos for maior do que processadores físicos (núcleos), em seguida, hyper-threading está habilitada.  Se você estiver executando uma VM hyper-threading, por favor [entre em contato com o suporte do Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) para obter hyperthreading desabilitado.  Depois que o hyper-threading estiver desabilitada, **o suporte exigirá uma reinicialização completa da VM**. Consulte [contagem de núcleo](#core-count) para entender por que a contagem de núcleos VM é reduzido.
 
 
 **Etapa 2**: Em paralelo à etapa 1, siga as instruções em [KB4072698](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) para verificar se as proteções estão habilitadas usando o [SpeculationControl](https://aka.ms/SpeculationControlPS) módulo do PowerShell.
@@ -123,14 +123,14 @@ Se a saída mostra `MDS mitigation is enabled: False`, por favor [entre em conta
 <a name="linux"></a>A habilitação do conjunto de recursos de segurança adicionais internamente exige que o sistema operacional de destino esteja totalmente atualizado. Algumas mitigações serão habilitadas por padrão. A seção a seguir descreve os recursos que estão desativados por padrão e/ou que são dependentes de suporte de hardware (microcódigo). A habilitação desses recursos pode causar um impacto no desempenho. Referencie a documentação do provedor do sistema operacional para obter mais instruções
 
 
-**Etapa 1: Desabilitar o hyperthreading na VM** – os clientes que executam código não confiável em um Hyper-threaded VM será necessário desabilitar o hyperthreading ou mover para uma VM não Hyper-threaded.  Para verificar se você estiver executando uma VM do Hyper-threaded, execute o `lscpu` comando na VM do Linux. 
+**Etapa 1: Desabilitar o hyper-threading na VM** -os clientes que executam código não confiável em uma VM do hyper-threaded serão necessário desabilitar o hyper-threading ou mover para uma VM não-hyper-threading.  Referência [este documento](https://docs.microsoft.com/azure/virtual-machines/linux/acu) para obter uma lista dos tamanhos de VM hyper-threading (em que proporção de vCPU para núcleo é 2:1). Para verificar se você estiver executando uma VM hyper-threading, execute o `lscpu` comando na VM do Linux. 
 
-Se `Thread(s) per core = 2`, em seguida, o hyperthreading tiver sido habilitado. 
+Se `Thread(s) per core = 2`, em seguida, hyper-threading foi habilitada. 
 
-Se `Thread(s) per core = 1`, em seguida, o hyperthreading foi desabilitado. 
+Se `Thread(s) per core = 1`, em seguida, hyper-threading foi desabilitada. 
 
  
-Exemplo de saída para uma VM com hyperthreading habilitado: 
+Exemplo de saída para uma VM com o hyper-threading habilitado: 
 
 ```console
 CPU Architecture:      x86_64
@@ -145,7 +145,8 @@ NUMA node(s):          1
 
 ```
 
-Se você estiver executando uma VM do Hyper-threaded, por favor [entre em contato com o suporte do Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) para obter o hyperthreading desabilitado.  Depois que o hyperthreading está desativado, **o suporte exigirá uma reinicialização completa da VM**.
+Se você estiver executando uma VM hyper-threading, por favor [entre em contato com o suporte do Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) para obter hyperthreading desabilitado.  Depois que o hyper-threading estiver desabilitada, **o suporte exigirá uma reinicialização completa da VM**. Consulte [contagem de núcleo](#core-count) para entender por que a contagem de núcleos VM é reduzido.
+
 
 
 **Etapa 2**: Para atenuar qualquer um do abaixo de vulnerabilidades de canal lateral de execução especulativa, consulte a documentação do provedor do sistema operacional:   
@@ -153,6 +154,11 @@ Se você estiver executando uma VM do Hyper-threaded, por favor [entre em contat
 - [Red Hat e CentOS](https://access.redhat.com/security/vulnerabilities) 
 - [SUSE](https://www.suse.com/support/kb/?doctype%5B%5D=DT_SUSESDB_PSDB_1_1&startIndex=1&maxIndex=0) 
 - [Ubuntu](https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/) 
+
+
+### <a name="core-count"></a>Contagem de núcleos
+
+Quando uma VM hyper-threading é criada, o Azure aloca 2 threads por núcleo – eles são chamados de vCPUs. Quando o hyper-threading estiver desabilitada, o Azure remove um thread e superfícies de núcleos single-threaded (núcleos físicos). A proporção de vCPU para a CPU é de 2:1, assim que a hyper-threading estiver desabilitada, a contagem de CPU na VM parecerão ter diminuído pela metade. Por exemplo, uma VM D8_v3 é uma VM hyper-threading em execução em 8 vCPUs (2 threads por núcleos core x 4).  Quando o hyper-threading estiver desabilitada, CPUs descartará a 4 núcleos físicos com 1 thread por núcleo. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

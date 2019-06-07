@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/22/2019
 ms.author: magoedte
-ms.openlocfilehash: 76d18b6a942ed9b8c6871b0ff7cbc1c83917ada4
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: c84c3eb74d214a5c98aabef7b2e2987dfdf67c0f
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66130475"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472596"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-overview"></a>Habilitar o Azure Monitor para visão geral de máquinas virtuais (versão prévia)
 
@@ -40,6 +40,7 @@ Antes de começar, verifique se você compreende as informações descritas nas 
 O Azure Monitor para VMs oferece suporte a um espaço de trabalho do Log Analytics nas seguintes regiões:
 
 - Centro-Oeste dos EUA
+- Oeste dos EUA 2<sup>1</sup>
 - Leste dos EUA
 - Canada Central<sup>1</sup>
 - Sul do Reino Unido<sup>1</sup>
@@ -154,13 +155,13 @@ A tabela a seguir descreve as fontes conectadas para as quais o recurso Mapa dá
 |:--|:--|:--|
 | Agentes do Windows | Sim | Além do [Agente do Log Analytics](../../azure-monitor/platform/log-analytics-agent.md), os agentes do Windows exigem o Microsoft Dependency Agent. Para obter uma lista completa das versões de sistema operacional, confira os [sistemas operacionais compatíveis](#supported-operating-systems). |
 | Agentes do Linux | Sim | Além do [Agente do Log Analytics](../../azure-monitor/platform/log-analytics-agent.md), os agentes do Linux exigem o Microsoft Dependency Agent. Para obter uma lista completa das versões de sistema operacional, confira os [sistemas operacionais compatíveis](#supported-operating-systems). |
-| Grupo de gerenciamento do System Center Operations Manager | Não  | |
+| Grupo de gerenciamento do System Center Operations Manager | Não | |
 
 O Dependency Agent pode ser baixado nos seguintes locais:
 
 | Arquivo | SO | Versão | SHA-256 |
 |:--|:--|:--|:--|
-| [InstallDependencyAgent-Windows.exe](https://aka.ms/dependencyagentwindows) |  Windows | 9.8.1 | 622C99924385CBF539988D759BCFDC9146BB157E7D577C997CDD2674E27E08DD |
+| [InstallDependencyAgent-Windows.exe](https://aka.ms/dependencyagentwindows) | Windows | 9.8.1 | 622C99924385CBF539988D759BCFDC9146BB157E7D577C997CDD2674E27E08DD |
 | [InstallDependencyAgent-Linux64.bin](https://aka.ms/dependencyagentlinux) | Linux | 9.8.1 | 3037934A5D3FB7911D5840A9744AE9F980F87F620A7F7B407F05E276FE7AE4A8 |
 
 ## <a name="role-based-access-control"></a>Controle de acesso baseado em função
@@ -177,7 +178,7 @@ Para obter mais informações sobre como controlar o acesso a um espaço de trab
 
 Habilitar o Azure Monitor para VMs usando um dos métodos a seguir, descritos na tabela a seguir.
 
-| Estado de implantação | Método | Descrição |
+| Estado de implantação | Método | DESCRIÇÃO |
 |------------------|--------|-------------|
 | Conjunto de dimensionamento de VM do Azure ou máquina virtual único | [Diretamente da VM](vminsights-enable-single-vm.md) | Você pode habilitar uma única máquina virtual do Azure, selecionando **Insights (visualização)** diretamente do VM ou máquina virtual conjunto de dimensionamento. |
 | Várias VMs do Azure ou conjuntos de dimensionamento de máquina virtual | [Azure Policy](vminsights-enable-at-scale-policy.md) | Você pode habilitar várias VMs do Azure usando a política do Azure e definições de política disponíveis. |
@@ -197,11 +198,11 @@ O Azure Monitor para VMs configura um espaço de trabalho do Log Analytics para 
 |LogicalDisk |Média de segundos/Transferência do Disco |
 |LogicalDisk |Média de segundos/Gravação do Disco |
 |LogicalDisk |Bytes de Disco/s |
-|LogicalDisk |Bytes Lidos no Disco/s  |
-|LogicalDisk |Leituras de Disco/s  |
+|LogicalDisk |Bytes Lidos no Disco/s |
+|LogicalDisk |Leituras de Disco/s |
 |LogicalDisk |Transferências de Disco/s |
-|LogicalDisk | Bytes Gravados no Disco/s |
-|LogicalDisk | Gravações de Disco/s |
+|LogicalDisk |Bytes Gravados no Disco/s |
+|LogicalDisk |Gravações de Disco/s |
 |LogicalDisk |Megabytes Livres |
 |Memória |MBytes Disponíveis |
 |Adaptador de rede |Bytes Recebidos/s |
@@ -213,11 +214,11 @@ O Azure Monitor para VMs configura um espaço de trabalho do Log Analytics para 
 |Nome do objeto |Nome do contador |
 |------------|-------------|
 |Disco Lógico |% de Espaço Usado |
-|Disco Lógico |Bytes Lidos no Disco/s  |
-|Disco Lógico |Leituras de Disco/s  |
+|Disco Lógico |Bytes Lidos no Disco/s |
+|Disco Lógico |Leituras de Disco/s |
 |Disco Lógico |Transferências de Disco/s |
-|Disco Lógico | Bytes Gravados no Disco/s |
-|Disco Lógico | Gravações de Disco/s |
+|Disco Lógico |Bytes Gravados no Disco/s |
+|Disco Lógico |Gravações de Disco/s |
 |Disco Lógico |Megabytes Livres |
 |Disco Lógico |Bytes de Disco Lógico/s |
 |Memória |MBytes de Memória Disponíveis |

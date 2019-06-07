@@ -2,20 +2,20 @@
 title: Gerenciar o acesso de usuários no Azure Active Directory B2C | Microsoft Docs
 description: Saiba como identificar os menores, coletar a data de nascimento e país/região de dados e obter aceitação dos termos de uso em seu aplicativo usando o Azure AD B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/24/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: f4f2b93316c87a5e8ba572ca2b584dbd13f6536c
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 6aead01ec0084eb75ea385a67f7c85ea185b017a
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956959"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66510563"
 ---
 # <a name="manage-user-access-in-azure-active-directory-b2c"></a>Gerenciar o acesso do usuário no Azure Active Directory B2C
 
@@ -50,7 +50,7 @@ Este é um exemplo de um fluxo de usuário para a coleta de consentimento dos pa
 
 2. O aplicativo processa o token JSON e mostra uma tela para a menor, notificando-os de que o consentimento dos pais é necessário e solicitar o consentimento de um pai on-line. 
 
-3. O Azure AD B2C mostra uma jornada de logon na qual o usuário pode entrar normalmente e emite um token para o aplicativo que está definido para incluir **legalAgeGroupClassification = “minorWithParentalConsent”**. O aplicativo coleta o endereço de email do pai e verifica se o pai é um adulto. Para fazer isso, ele usa uma fonte confiável, como um escritório de identificação nacional, verificação de licença ou comprovante de cartão de crédito. Se a verificação for bem sucedida, o aplicativo solicita que o menor entre usando o fluxo de usuário do Azure AD B2C. Se a autorização for negada (por exemplo, **legalAgeGroupClassification = “minorWithoutParentalConsent”**), o Azure AD B2C retornará um token JSON (não um logon) ao aplicativo para reiniciar o processo de consentimento. Opcionalmente, é possível personalizar o fluxo de usuário em que um menor ou um adulto pode recuperar o acesso à conta do menor enviando um código de registro para o endereço de email do menor ou para o endereço de email do adulto no registro.
+3. O Azure AD B2C mostra uma jornada de logon na qual o usuário pode entrar normalmente e emite um token para o aplicativo que está definido para incluir **legalAgeGroupClassification = “minorWithParentalConsent”** . O aplicativo coleta o endereço de email do pai e verifica se o pai é um adulto. Para fazer isso, ele usa uma fonte confiável, como um escritório de identificação nacional, verificação de licença ou comprovante de cartão de crédito. Se a verificação for bem sucedida, o aplicativo solicita que o menor entre usando o fluxo de usuário do Azure AD B2C. Se a autorização for negada (por exemplo, **legalAgeGroupClassification = “minorWithoutParentalConsent”** ), o Azure AD B2C retornará um token JSON (não um logon) ao aplicativo para reiniciar o processo de consentimento. Opcionalmente, é possível personalizar o fluxo de usuário em que um menor ou um adulto pode recuperar o acesso à conta do menor enviando um código de registro para o endereço de email do menor ou para o endereço de email do adulto no registro.
 
 4. O aplicativo oferece uma opção para o menor revogar o consentimento.
 
@@ -70,7 +70,7 @@ As etapas a seguir mostram a lógica que é usada para calcular o **ageGroup** u
 
 2. Se o nó **MinorConsent** estiver presente no elemento de país:
 
-     a. Calcule a data em que o usuário deve ter nascido para ser considerado um adulto. Por exemplo, se a data atual for 14 de março de 2015 e **MinorConsent** for 18, a data de nascimento deverá ser o mais tardar em 14 de março de 2000.
+    a. Calcule a data em que o usuário deve ter nascido para ser considerado um adulto. Por exemplo, se a data atual for 14 de março de 2015 e **MinorConsent** for 18, a data de nascimento deverá ser o mais tardar em 14 de março de 2000.
 
     b. Compare a data de nascimento mínima com a data de nascimento real. Se a data de nascimento mínima for antes da data de nascimento do usuário, o cálculo retornará **Menor** como o cálculo de faixa etária.
 

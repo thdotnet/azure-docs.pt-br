@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 3fa463cb7178fa5cc2108383047a7ca94ffb48a3
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: bac897178c8220abe72a92a5cf14fc4767cdd3bf
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65797372"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755063"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Monitorar a atividade de consulta e o consumo de recursos no Azure Search
 
@@ -37,7 +37,7 @@ A guia **Uso** mostra a disponibilidade de recursos em relação aos [limites](s
 
 ## <a name="queries-per-second-qps-and-other-metrics"></a>QPS (consultas por segundo) e outras métricas
 
-A guia **Monitoramento** mostra a média móvel das métricas, como pesquisar *QPS (Consultas por segundo)*, agregadas por minuto. 
+A guia **Monitoramento** mostra a média móvel das métricas, como pesquisar *QPS (Consultas por segundo)* , agregadas por minuto. 
 *Pesquisar latência* demonstra a quantidade de tempo que o serviço de pesquisa precisou para processar consultas de pesquisa, agregadas por minuto. A *Porcentagem das consultas de pesquisa acelerada* (não exibida) é o percentual de consultas de pesquisa que foram limitadas, também agregadas por minuto.
 
 Esses números são aproximados e têm a intenção de fornecer uma ideia geral de quão bem o seu sistema está atendendo às solicitações. O QPS real pode ser maior ou menor que o número informado no portal.
@@ -58,7 +58,7 @@ O Azure Search não armazena nenhum dado além dos objetos que ele gerencia, o q
 
 A tabela a seguir compara as opções para armazenar logs, adicionar monitoramento detalhado das operações de serviço e consultar cargas de trabalho por meio do Application Insights.
 
-| Resource | Utilizado para |
+| Resource | Usado para |
 |----------|----------|
 | [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) | Eventos registrados em log e métricas de consulta, com base nos esquemas de abaixo, correlacionadas com eventos de usuário em seu aplicativo. Essa é a única solução que considera as ações ou os sinais do usuário, os eventos de mapeamento de pesquisas iniciadas pelo usuário, ao invés das solicitações de filtro enviadas pelo código do aplicativo. Para usar essa abordagem, copie e cole o código de instrumentação em seus arquivos de origem para direcionar as informações de solicitação para o Application Insights. Para saber mais, confira [Análise de tráfego de pesquisa](search-traffic-analytics.md). |
 | [Logs do Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview) | Eventos registrados em log e métricas de consulta, com base nos esquemas de abaixo. Eventos são registrados para um espaço de trabalho do Log Analytics. É possível executar as consultas em um espaço de trabalho para retornar informações detalhadas do log. Para obter mais informações, consulte [começar com os logs do Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata) |
@@ -113,12 +113,12 @@ Os blobs que contêm os logs de tráfego do serviço de pesquisa são estruturad
 
 | NOME | Type | Exemplo | Observações |
 | --- | --- | --- | --- |
-| time |datetime |"2018-12-07T00:00:43.6872559Z" |Carimbo de data/hora da operação |
-| resourceId |string |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/>  MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Seu ResourceId |
-| operationName |string |"Query.Search" |O nome da operação |
-| operationVersion |string |"2019-05-06" |A api-version usada |
+| time |Datetime |"2018-12-07T00:00:43.6872559Z" |Carimbo de data/hora da operação |
+| ResourceId |string |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/> MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Seu ResourceId |
+| operationName |cadeia de caracteres |"Query.Search" |O nome da operação |
+| operationVersion |cadeia de caracteres |"2019-05-06" |A api-version usada |
 | category |string |"OperationLogs" |constante |
-| resultType |string |"Success" |Valores possíveis: Êxito ou Falha |
+| resultType |cadeia de caracteres |"Success" |Valores possíveis: Êxito ou Falha |
 | resultSignature |int |200 |Código do resultado HTTP |
 | durationMS |int |50 |Duração da operação em milissegundos |
 | propriedades |objeto |confira a seguinte tabela |Objeto que contém os dados específicos da operação |
@@ -127,10 +127,10 @@ Os blobs que contêm os logs de tráfego do serviço de pesquisa são estruturad
 
 | NOME | Type | Exemplo | Observações |
 | --- | --- | --- | --- |
-| Descrição |string |"GET /indexes('content')/docs" |Ponto de extremidade da operação |
-| Consultar |string |"?search=AzureSearch&$count=true&api-version=2019-05-06" |Parâmetros da consulta |
+| DESCRIÇÃO |cadeia de caracteres |"GET /indexes('content')/docs" |Ponto de extremidade da operação |
+| Consultar |cadeia de caracteres |"?search=AzureSearch&$count=true&api-version=2019-05-06" |Parâmetros da consulta |
 | Documentos |int |42 |Número de documentos processados |
-| IndexName |string |"testindex" |Nome do índice associado à operação |
+| IndexName |cadeia de caracteres |"testindex" |Nome do índice associado à operação |
 
 ## <a name="metrics-schema"></a>Esquema de métricas
 
@@ -138,15 +138,15 @@ As métricas são capturadas para solicitações de consulta.
 
 | NOME | Type | Exemplo | Observações |
 | --- | --- | --- | --- |
-| resourceId |string |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/> MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |id do recurso |
-| metricName |string |"Latency" |o nome da métrica |
-| tempo real |datetime |"2018-12-07T00:00:43.6872559Z" |carimbo de data/hora da operação |
+| ResourceId |cadeia de caracteres |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/>MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |id do recurso |
+| metricName |cadeia de caracteres |"Latency" |o nome da métrica |
+| tempo real |Datetime |"2018-12-07T00:00:43.6872559Z" |carimbo de data/hora da operação |
 | média |int |64 |O valor médio das amostras brutas no intervalo de agregação da métrica |
 | mínimo |int |37 |O valor mínimo das amostras brutas no intervalo de agregação da métrica |
 | máximo |int |78 |O valor máximo das amostras brutas no intervalo de agregação da métrica |
 | total |int |258 |O valor total das amostras brutas no intervalo de agregação da métrica |
-| Contagem |int |4 |O número de amostras brutas usadas para gerar a métrica |
-| intervalo de tempo |string |"PT1M" |O intervalo de agregação da métrica no ISO 8601 |
+| count |int |4 |O número de amostras brutas usadas para gerar a métrica |
+| intervalo de tempo |cadeia de caracteres |"PT1M" |O intervalo de agregação da métrica no ISO 8601 |
 
 Todas as métricas são reportadas em intervalos de um minuto. Cada métrica expõe valores mínimo, máximo e médios por minuto.
 
@@ -175,7 +175,7 @@ A API REST do Azure Search e o SDK do .NET fornecem acesso via programação a i
 * [Contar documentos](/rest/api/searchservice/count-documents)
 * [Obter o status do indexador](/rest/api/searchservice/get-indexer-status)
 
-Para habilitar usando o PowerShell ou a CLI do Azure, consulte a documentação [aqui](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs#how-to-enable-collection-of-diagnostic-logs).
+Para habilitar usando o PowerShell ou a CLI do Azure, consulte a documentação [aqui](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview).
 
 ## <a name="next-steps"></a>Próximas etapas
 

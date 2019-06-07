@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: reference
 ms.date: 08/15/2018
-ms.openlocfilehash: 24e0a0ae2a6af964d3ed87d1817de6e5f403c9b1
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 506076e2d9b171e1ec1ff604519cbbfbe4339e87
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66416341"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66733063"
 ---
 # <a name="functions-reference-for-workflow-definition-language-in-azure-logic-apps-and-microsoft-flow"></a>Referência de funções para a linguagem de definição de fluxo de trabalho em aplicativos lógicos do Azure e Microsoft Flow
 
@@ -297,7 +297,7 @@ Para a referência completa sobre cada função, consulte a [lista alfabética](
 <a name="alphabetical-list"></a>
 <a name="action"></a>
 
-### <a name="action"></a>ação
+### <a name="action"></a>action
 
 Retorne a saída da ação *atual* em tempo de execução ou os valores de outros pares de nome e valor JSON, que podem ser atribuídos a uma expressão.
 Por padrão, essa função referencia todo o objeto de ação, mas você pode especificar uma propriedade cujo valor você deseja.
@@ -737,7 +737,7 @@ Este exemplo adiciona um dia ao carimbo de data/hora especificado:
 addToTime('2018-01-01T00:00:00Z', 1, 'Day')
 ```
 
-E retorna este resultado: `"2018-01-02T00:00:00:0000000Z"`
+E retorna este resultado: `"2018-01-02T00:00:00.0000000Z"`
 
 *Exemplo 2*
 
@@ -762,12 +762,12 @@ and(<expression1>, <expression2>, ...)
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 | --------- | -------- | ---- | ----------- |
-| <*expression1*>, <*expression2*>, ... | Sim | BOOLEAN | As expressões a serem verificadas |
+| <*expression1*>, <*expression2*>, ... | Sim | Boolean | As expressões a serem verificadas |
 |||||
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | -----| ----------- |
-| true ou false | BOOLEAN | Retornará true quando todas as expressões forem true. Retornará false quando pelo menos uma expressão for false. |
+| true ou false | Boolean | Retornará true quando todas as expressões forem true. Retornará false quando pelo menos uma expressão for false. |
 ||||
 
 *Exemplo 1*
@@ -1023,7 +1023,7 @@ bool(<value>)
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false | BOOLEAN | A versão booliana do valor especificado |
+| true ou false | Boolean | A versão booliana do valor especificado |
 ||||
 
 *Exemplo*
@@ -1134,7 +1134,7 @@ Especificamente, essa função funciona nestes tipos de coleção:
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false | BOOLEAN | Retornará true quando o item for localizado. Retorna false quando não localizada. |
+| true ou false | Boolean | Retornará true quando o item for localizado. Retorna false quando não localizada. |
 ||||
 
 *Exemplo 1*
@@ -1681,7 +1681,7 @@ empty([<collection>])
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false | BOOLEAN | Retornará true quando a coleção estiver vazia. Retornará false quando não estiver vazia. |
+| true ou false | Boolean | Retornará true quando a coleção estiver vazia. Retornará false quando não estiver vazia. |
 ||||
 
 *Exemplo*
@@ -1718,7 +1718,7 @@ endsWith('<text>', '<searchText>')
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false  | BOOLEAN | Retornará true quando a subcadeia de caracteres final for localizada. Retorna false quando não localizada. |
+| true ou false  | Boolean | Retornará true quando a subcadeia de caracteres final for localizada. Retorna false quando não localizada. |
 ||||
 
 *Exemplo 1*
@@ -1759,7 +1759,7 @@ equals('<object1>', '<object2>')
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false | BOOLEAN | Retornará true quando ambos forem equivalentes. Retornará false quando não forem equivalentes. |
+| true ou false | Boolean | Retornará true quando ambos forem equivalentes. Retornará false quando não forem equivalentes. |
 ||||
 
 *Exemplo*
@@ -2044,7 +2044,7 @@ greater('<value>', '<compareTo>')
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false | BOOLEAN | Retornará true quando o primeiro valor for maior que o segundo. Retornará false quando o primeiro valor for igual ou menor que o segundo. |
+| true ou false | Boolean | Retornará true quando o primeiro valor for maior que o segundo. Retornará false quando o primeiro valor for igual ou menor que o segundo. |
 ||||
 
 *Exemplo*
@@ -2081,7 +2081,7 @@ greaterOrEquals('<value>', '<compareTo>')
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false | BOOLEAN | Retornará true quando o primeiro valor for superior ou igual ao segundo. Retornará false quando o primeiro valor for menor que o segundo. |
+| true ou false | Boolean | Retornará true quando o primeiro valor for superior ou igual ao segundo. Retornará false quando o primeiro valor for menor que o segundo. |
 ||||
 
 *Exemplo*
@@ -2147,7 +2147,7 @@ if(<expression>, <valueIfTrue>, <valueIfFalse>)
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 | --------- | -------- | ---- | ----------- |
-| <*expression*> | Sim | BOOLEAN | A expressão a ser verificada |
+| <*expression*> | Sim | Boolean | A expressão a ser verificada |
 | <*valueIfTrue*> | Sim | Qualquer | O valor a ser retornado quando a expressão for verdadeira |
 | <*valueIfFalse*> | Sim | Qualquer | O valor a ser retornado quando a expressão for falsa |
 |||||
@@ -2623,7 +2623,7 @@ less('<value>', '<compareTo>')
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false | BOOLEAN | Retornará true quando o primeiro valor for menor que o segundo. Retornará false quando o primeiro valor for igual ou maior que o segundo. |
+| true ou false | Boolean | Retornará true quando o primeiro valor for menor que o segundo. Retornará false quando o primeiro valor for igual ou maior que o segundo. |
 ||||
 
 *Exemplo*
@@ -2660,7 +2660,7 @@ lessOrEquals('<value>', '<compareTo>')
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false  | BOOLEAN | Retornará true quando o primeiro valor for inferior ou igual ao segundo valor. Retornará false quando o primeiro valor for maior que o segundo. |
+| true ou false  | Boolean | Retornará true quando o primeiro valor for inferior ou igual ao segundo valor. Retornará false quando o primeiro valor for maior que o segundo. |
 ||||
 
 *Exemplo*
@@ -2866,12 +2866,12 @@ not(<expression>)
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 | --------- | -------- | ---- | ----------- |
-| <*expression*> | Sim | BOOLEAN | A expressão a ser verificada |
+| <*expression*> | Sim | Boolean | A expressão a ser verificada |
 |||||
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false | BOOLEAN | Retornará true quando a expressão for falsa. Retornará false quando a expressão for verdadeira. |
+| true ou false | Boolean | Retornará true quando a expressão for falsa. Retornará false quando a expressão for verdadeira. |
 ||||
 
 *Exemplo 1*
@@ -2915,12 +2915,12 @@ or(<expression1>, <expression2>, ...)
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 | --------- | -------- | ---- | ----------- |
-| <*expression1*>, <*expression2*>, ... | Sim | BOOLEAN | As expressões a serem verificadas |
+| <*expression1*>, <*expression2*>, ... | Sim | Boolean | As expressões a serem verificadas |
 |||||
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false | BOOLEAN | Retornará true quando pelo menos uma expressão for verdadeira. Retornará false quando todas as expressões forem falsas. |
+| true ou false | Boolean | Retornará true quando pelo menos uma expressão for verdadeira. Retornará false quando todas as expressões forem falsas. |
 ||||
 
 *Exemplo 1*
@@ -3319,7 +3319,7 @@ startsWith('<text>', '<searchText>')
 
 | Valor de retorno | Type | DESCRIÇÃO |
 | ------------ | ---- | ----------- |
-| true ou false  | BOOLEAN | Retornará true quando a subcadeia de caracteres inicial for localizada. Retorna false quando não localizada. |
+| true ou false  | Boolean | Retornará true quando a subcadeia de caracteres inicial for localizada. Retorna false quando não localizada. |
 ||||
 
 *Exemplo 1*

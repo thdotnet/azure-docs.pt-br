@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 24e0b61dfd9950a5c5990f8341e32d048453c5d6
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 6e0192029decef95dcaecc0c60dce5fd5b6f99ff
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64689575"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479911"
 ---
 # <a name="use-azure-storage-with-azure-hdinsight-clusters"></a>Usar o Armazenamento do Azure com clusters HDInsight
 
@@ -53,7 +53,7 @@ O HDInsight fornece acesso ao sistema de arquivos distribuídos que está anexad
 
 Além disso, o HDInsight permite que você acesse os dados armazenados no Armazenamento do Azure. A sintaxe do é:
 
-    wasb[s]://<containername>@<accountname>.blob.core.windows.net/<path>
+    wasb://<containername>@<accountname>.blob.core.windows.net/<path>
 
 Veja algumas considerações ao usar a conta de armazenamento do Azure com clusters HDInsight.
 
@@ -96,10 +96,10 @@ Determinados trabalhos e pacotes do MapReduce podem criar resultados intermediá
 O esquema de URI para acessar arquivos no Armazenamento do Azure pelo HDInsight é:
 
 ```config
-wasb[s]://<BlobStorageContainerName>@<StorageAccountName>.blob.core.windows.net/<path>
+wasb://<BlobStorageContainerName>@<StorageAccountName>.blob.core.windows.net/<path>
 ```
 
-O esquema de URI fornece acesso sem criptografia (com o prefixo *wasb:*) e acesso criptografado SSL (com *wasbs*). Recomendamos usar *wasbs* sempre que possível, mesmo ao acessar dados que residem dentro da mesma região do Azure.
+O esquema de URI fornece acesso sem criptografia (com o prefixo *wasb:* ) e acesso criptografado SSL (com *wasbs*). Recomendamos usar *wasbs* sempre que possível, mesmo ao acessar dados que residem dentro da mesma região do Azure.
 
 O `<BlobStorageContainerName>` identifica o nome do contêiner de BLOBs no armazenamento do Azure.
 O `<StorageAccountName>` identifica o nome da conta de armazenamento do Azure. Um FQDN (nome de domínio totalmente qualificado) é necessário.
@@ -137,7 +137,7 @@ O contêiner de blob padrão armazena informações específicas do cluster como
 
 A Microsoft fornece as seguintes ferramentas para trabalhar com o armazenamento do Azure:
 
-| Ferramenta | Linux | OS X |  Windows |
+| Ferramenta | Linux | OS X | Windows |
 | --- |:---:|:---:|:---:|
 | [Portal do Azure](../storage/blobs/storage-quickstart-blobs-portal.md) |✔ |✔ |✔ |
 | [CLI do Azure](../storage/blobs/storage-quickstart-blobs-cli.md) |✔ |✔ |✔ |

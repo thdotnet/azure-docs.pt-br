@@ -1,5 +1,5 @@
 ---
-title: 'Sincronização do Azure AD Connect: configurar o local de dados preferencial para funcionalidades multigeográficas no Office 365 | Microsoft Docs'
+title: 'Azure AD Connect: configurar o local de dados preferencial para recursos do Office 365'
 description: Descreve como colocar os recursos de usuário do Office 365 perto do usuário com a sincronização do Azure Active Directory Connect.
 services: active-directory
 documentationcenter: ''
@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/30/2018
+ms.date: 05/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a7b9c8827979ac4135bcaf4dfeef7cd5de02b2d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 927987237b51a47d0c8b7c66054842b0a7ff09a7
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60348121"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473031"
 ---
 # <a name="azure-active-directory-connect-sync-configure-preferred-data-location-for-office-365-resources"></a>Sincronização do Azure AD Connect: configurar o local de dados preferencial para recursos do Office 365
 O objetivo deste tópico é orientá-lo como configurar o atributo para o local de dados preferencial na sincronização do Azure Active Directory (Azure AD) Connect. Quando alguém usa recursos de Multi-Geo no Office 365, este atributo é usado para designar a localização geográfica de dados do Office 365 do usuário. (Os termos *região* e *área geográfica* são usados de maneira intercambiável.)
@@ -137,7 +137,7 @@ A regra de sincronização de entrada permite que o valor do atributo flua do at
 5. Mantenha o **Filtro de escopo** vazio para incluir todos os objetos. Talvez seja necessário ajustar o filtro de escopo de acordo com sua implantação do Azure AD Connect.
 6. Acesse a guia **Transformação** e implemente a seguinte regra de transformação:
 
-    | Tipo de fluxo | Atributo de destino | Fonte | Aplicar uma vez | Tipo de mesclagem |
+    | Tipo de fluxo | Atributo de destino | `Source` | Aplicar uma vez | Tipo de mesclagem |
     | --- | --- | --- | --- | --- |
     |Direta | preferredDataLocation | Selecione o atributo de origem | Desmarcado | Atualizar |
 
@@ -174,7 +174,7 @@ A regra de sincronização de saída permite que o valor do atributo flua do met
 
 6. Acesse a guia **Transformação** e implemente a seguinte regra de transformação:
 
-    | Tipo de fluxo | Atributo de destino | Fonte | Aplicar uma vez | Tipo de mesclagem |
+    | Tipo de fluxo | Atributo de destino | `Source` | Aplicar uma vez | Tipo de mesclagem |
     | --- | --- | --- | --- | --- |
     | Direta | preferredDataLocation | preferredDataLocation | Desmarcado | Atualizar |
 
@@ -216,7 +216,7 @@ Em geral, o ciclo completo de sincronização é necessário. Isso ocorre porque
    1. Clique com o botão direito do mouse no **Azure AD Connector** e selecione **Pesquisar Espaço Conector**.
    2. Na caixa de diálogo **Pesquisar Espaço Conector**:
 
-         a. Defina o **Escopo** como **Exportação Pendente**.<br>
+        a. Defina o **Escopo** como **Exportação Pendente**.<br>
         b. Marque todas as três caixas de seleção, incluindo **Adicionar, Modificar e Excluir**.<br>
         c. Para exibir a lista de objetos com alterações para exportar, selecione **Pesquisar**. Para examinar as alterações para um determinado objeto, clique duas vezes nele.<br>
         d. Verifique se as alterações são esperadas.

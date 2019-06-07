@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/25/2019
 ms.author: srrengar
-ms.openlocfilehash: 2126157f49bd978d2218986601245cae2e4157b6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0db341a9e36d61761321821de5631a564adea050
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60321974"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428160"
 ---
 # <a name="report-and-check-service-health"></a>Relatar e verificar a integridade de serviço
 Quando seus serviços enfrentam problemas, sua capacidade de reagir e corrigir os incidentes e as interrupções depende da sua capacidade de detectar os problemas rapidamente. Se relatar problemas e falhas ao gerenciador de integridade do Azure Service Fabric usando seu código de serviço, você pode usar ferramentas padrão de monitoramento de integridade fornecidas pelo Service Fabric para verificar o status de integridade.
@@ -37,7 +37,7 @@ Este artigo apresenta um exemplo que relata a integridade do código de serviço
 ## <a name="prerequisites"></a>Pré-requisitos
 Você deve ter o seguinte instalado:
 
-* Visual Studio 2015 ou Visual Studio 2017
+* Visual Studio 2015 ou Visual Studio de 2019
 * SDK da Malha do Serviço
 
 ## <a name="to-create-a-local-secure-dev-cluster"></a>Para criar um cluster de desenvolvimento local seguro
@@ -65,10 +65,10 @@ Você deve ter o seguinte instalado:
 Os modelos de projeto do Service Fabric no Visual Studio contêm código de exemplo. As etapas a seguir mostram como você pode relatar eventos de integridade personalizados do seu código de serviço. Esses relatórios serão exibidos automaticamente nas ferramentas padrão para monitoramento de integridade fornecidas pelo Service Fabric, como o Service Fabric Explorer, a exibição de integridade do Portal do Azure e o PowerShell.
 
 1. Abra novamente o aplicativo que você criou anteriormente no Visual Studio ou crie um novo usando o modelo de **Serviço com Estado** do Visual Studio.
-1. Abra o arquivo Stateful1.cs e encontre a chamada `myDictionary.TryGetValueAsync` no método `RunAsync`. Você pode ver que esse método retorna um `result` que mantém o valor atual do contador, pois a lógica principal desse aplicativo é manter uma contagem em execução. Se esse fosse um aplicativo real e a falta de resultado representasse uma falha, seria necessário sinalizar esse evento.
+1. Abra o arquivo Stateful1.cs e encontre a chamada `myDictionary.TryGetValueAsync` no método `RunAsync`. Você pode ver que esse método retorna um `result` que mantém o valor atual do contador, pois a lógica principal desse aplicativo é manter uma contagem em execução. Se este aplicativo foi um aplicativo real, e a falta de resultado representasse uma falha, você desejaria sinalizar que o evento.
 1. Para relatar um evento de integridade quando a falta de resultado representa uma falha, adicione as etapas a seguir.
    
-     a. Adicione o namespace `System.Fabric.Health` ao arquivo Stateful1.cs.
+    a. Adicione o namespace `System.Fabric.Health` ao arquivo Stateful1.cs.
    
     ```csharp
     using System.Fabric.Health;
@@ -96,7 +96,7 @@ Os modelos de projeto do Service Fabric no Visual Studio contêm código de exem
     ```
 1. Se o serviço estiver sendo executado com privilégios de administrador ou se o cluster não for [seguro](service-fabric-cluster-security.md), também será possível usar `FabricClient` para relatar a integridade conforme mostrado nas etapas a seguir.  
    
-     a. Crie a instância do `var myDictionary` após a declaração `FabricClient`.
+    a. Crie a instância do `var myDictionary` após a declaração `FabricClient`.
    
     ```csharp
     var fabricClient = new FabricClient(new FabricClientSettings() { HealthReportSendInterval = TimeSpan.FromSeconds(0) });
@@ -124,7 +124,7 @@ Os modelos de projeto do Service Fabric no Visual Studio contêm código de exem
     }
     ```
    Esse código aciona o relatório de integridade sempre que o `RunAsync` é executado. Depois de fazer a alteração, pressione **F5** para executar o aplicativo.
-1. Depois que o aplicativo estiver em execução, abra o Service Fabric Explorer para verificar a integridade do aplicativo. Desta vez, o Service Fabric Explorer mostra que o aplicativo não está íntegro. Isso ocorre devido ao erro relatado no código que adicionamos anteriormente.
+1. Depois que o aplicativo estiver em execução, abra o Service Fabric Explorer para verificar a integridade do aplicativo. Desta vez, o Service Fabric Explorer mostra que o aplicativo não está íntegro. O aplicativo mostra como não íntegro porque o erro foi relatado no código que adicionamos anteriormente.
    
     ![Aplicativo não íntegro no Gerenciador do Service Fabric](./media/service-fabric-diagnostics-how-to-report-and-check-service-health/sfx-unhealthy-app.png)
 1. Se você selecionar a réplica primária na exibição de árvore do Service Fabric Explorer, verá que **Estado de Integridade** indica um erro também. O Service Fabric Explorer também exibe os detalhes do relatório de integridade que foram adicionados ao parâmetro `HealthInformation` no código. Você pode ver os mesmos relatórios de integridade no PowerShell e no Portal do Azure.
@@ -148,7 +148,7 @@ var activationContext = FabricRuntime.GetActivationContext();
 activationContext.ReportApplicationHealth(healthInformation);
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 * [Aprofunde-se na integridade do Service Fabric](service-fabric-health-introduction.md)
 * [API REST para relatar a integridade do serviço](https://docs.microsoft.com/rest/api/servicefabric/report-the-health-of-a-service)
 * [API REST para relatar a integridade do aplicativo](https://docs.microsoft.com/rest/api/servicefabric/report-the-health-of-an-application)

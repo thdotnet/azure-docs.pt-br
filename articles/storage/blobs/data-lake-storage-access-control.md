@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 5adba958ed3bcb9efbf66c079b541e11ceed570c
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 72a72e385217178cb6afee237cc3a3e5c5d1248b
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66243603"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751645"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen2"></a>Controle de acesso no Azure Data Lake Storage Gen2
 
@@ -53,7 +53,7 @@ Você pode associar uma entidade de segurança com um nível de acesso para arqu
 
 Se você atribuiu uma função para uma entidade de segurança no nível de conta de armazenamento, você pode usar listas de controle de acesso para conceder a que essa entidade de segurança o acesso elevado para diretórios e arquivos específicos.
 
-Você não pode usar listas de controle de acesso para fornecer um nível de acesso que é menor do que um nível concedido por uma atribuição de função. Por exemplo, se você atribuir a [Colaborador de dados de Blob de armazenamento](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor-preview) listas de funções para uma entidade, será possível usar o controle de acesso de segurança para impedir que essa entidade de segurança grave em um diretório.
+Você não pode usar listas de controle de acesso para fornecer um nível de acesso que é menor do que um nível concedido por uma atribuição de função. Por exemplo, se você atribuir a [Colaborador de dados de Blob de armazenamento](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) listas de funções para uma entidade, será possível usar o controle de acesso de segurança para impedir que essa entidade de segurança grave em um diretório.
 
 ### <a name="set-file-and-directory-level-permissions-by-using-access-control-lists"></a>Conjunto de arquivos e diretórios permissões de nível usando listas de controle de acesso
 
@@ -270,7 +270,7 @@ def set_default_acls_for_new_child(parent, child):
 
 ### <a name="do-i-have-to-enable-support-for-acls"></a>É necessário habilitar o suporte para ACLs?
 
- Não. Controle de acesso via ACLs está habilitado para uma conta de armazenamento, desde que o Namespace hierárquico (HNS) é recurso ativadas.
+Não. Controle de acesso via ACLs está habilitado para uma conta de armazenamento, desde que o Namespace hierárquico (HNS) é recurso ativadas.
 
 Se HNS estiver desativado, as regras de autorização do RBAC do Azure ainda se aplicam.
 

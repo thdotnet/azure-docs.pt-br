@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.author: raynew
-ms.openlocfilehash: 479edc11604670189b0accba67aa8f345f6260cd
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: a0a2bc58603a81ba23ff3f1feb05f4d2350cfe72
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65551375"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688735"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Backup do Azure — Perguntas frequentes
 Este artigo responde às perguntas frequentes sobre o serviço de Backup do Azure.
@@ -182,8 +182,8 @@ A arquitetura de armazenamento do Backup do Azure oferece o melhor dos dois recu
 ### <a name="is-there-a-limit-on-the-number-of-recovery-points-that-can-be-created"></a>Há um limite para o número de pontos de recuperação que podem ser criados?
 Você pode criar até 9999 pontos de recuperação por instância protegida. Uma instância protegida é um computador, servidor (físico ou virtual) ou carga de trabalho que faz backup de dados no Azure.
 
-- Saiba mais sobre [backup e retenção](./backup-introduction-to-azure-backup.md#backup-and-retention).
-- Saiba mais sobre [instâncias protegidas](./backup-introduction-to-azure-backup.md#what-is-a-protected-instance).
+- Saiba mais sobre [backup e retenção](./backup-overview.md#backup-and-retention).
+
 
 ### <a name="how-many-times-can-i-recovery-data-thats-backed-up-to-azure"></a>Quantas vezes posso recuperar dados cujo backup foi feito no Azure?
 Não há limite para o número de recuperações do Backup do Azure.

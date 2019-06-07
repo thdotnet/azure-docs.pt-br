@@ -2,20 +2,20 @@
 title: Adicionar seus próprios atributos a políticas personalizadas no Azure Active Directory B2C | Microsoft Docs
 description: Um passo a passo sobre como usar propriedades de extensão e atributos personalizados e incluí-los na interface do usuário.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/04/2017
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 9f81f60c7153368ae12f80bb7bb6781c3e295cb8
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: ab7231c214060d17927e2509bee1687e2c9c87a3
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64689229"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66507569"
 ---
 # <a name="azure-active-directory-b2c-use-custom-attributes-in-a-custom-profile-edit-policy"></a>Azure Active Directory B2C: Usar atributos personalizados em uma política de edição de perfil personalizada
 
@@ -268,7 +268,7 @@ O token de id enviado novamente para o seu aplicativo inclui a propriedade de ex
 
 2. Use os mesmos atributos de extensão entre políticas internas e personalizadas. Quando você adiciona atributos de tensão ou personalizados, por meio da experiência do portal, esses atributos são registrados usando o **b2c-extensions-app** que existe em cada locatário B2C. Para realizar as etapas a seguir para usar os atributos de extensão em sua política personalizada:
 
-    a. Em seu locatário B2C no portal.azure.com, navegue até **Azure Active Directory** e selecione **Registros de aplicativo**.  
+   a. Em seu locatário B2C no portal.azure.com, navegue até **Azure Active Directory** e selecione **Registros de aplicativo**.  
    b. Localize seu **b2c-extensions-app** e selecione-o.  
    c. Em **Essentials**, registre a **ID de Aplicativo** e a **ID de objeto**.  
    d. Inclua-os em seus metadados de perfil técnico comuns do **AAD** dessa maneira:  

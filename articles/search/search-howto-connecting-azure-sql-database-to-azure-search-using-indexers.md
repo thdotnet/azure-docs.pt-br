@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: c23933e7f379a438d436fd99c5fea7899c5891ef
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 59a45791676f62f42763e0e834d327b0c0c4106d
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025351"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755104"
 ---
 # <a name="connect-to-and-index-azure-sql-database-content-using-azure-search-indexers"></a>Conecte-se ao conteúdo do Banco de Dados SQL do Azure e indexe-o usando indexadores do Azure Search
 
@@ -158,23 +158,7 @@ Você também pode organizar o indexador para que execute periodicamente com bas
 
 O parâmetro **interval** é necessário. O intervalo refere-se ao tempo entre o início de duas execuções consecutivas do indexador. O menor intervalo permitido é de cinco minutos, e o maior é de um dia. Ele deve ser formatado como um valor XSD de "dayTimeDuration" (um subconjunto restrito de um [valor de duração ISO 8601](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). O padrão para isso é: `P(nD)(T(nH)(nM))`. Exemplos: `PT15M` para cada 15 minutos, `PT2H` para cada 2 horas.
 
-O **startTime** opcional indica quando as execuções agendadas devem começar. Se for omitido, a hora UTC atual será usada. Esse tempo pode estar no passado; nesse caso, a primeira execução é agendada como se o indexador estivesse em execução contínua desde o startTime.  
-
-Só é possível ocorrer uma execução de um indexador por vez. Se um indexador é executado quando sua execução está agendada, a execução é adiada até a próxima hora agendada.
-
-Vamos considerar um exemplo para tornar isso mais concreto. Vamos supor que o seguinte agendamento por hora está configurado:
-
-    "schedule" : { "interval" : "PT1H", "startTime" : "2015-03-01T00:00:00Z" }
-
-Veja o que acontece:
-
-1. A primeira execução do indexador começa em, ou em torno de, 1º de março de 2015, meia-noite. UTC.
-2. Vamos supor que essa execução demore 20 minutos (ou menos de uma hora).
-3. A segunda execução começa em, ou em torno de, 1º de março de 2015, 01:00.
-4. Agora suponha que essa execução demore mais de uma hora, por exemplo, 70 minutos, então ela será concluída aproximadamente às 2:10.
-5. Agora são 2:00, hora da terceira execução começar. No entanto, como a segunda execução de 1h ainda está acontecendo, a terceira execução será ignorada. A terceira execução começa às 3h.
-
-Você pode adicionar, alterar ou excluir uma agenda de um indexador existente usando uma solicitação de **indexador PUT** .
+Para obter mais informações sobre como definir agendas do indexador, consulte [como programar indexadores para o Azure Search](search-howto-schedule-indexers.md).
 
 <a name="CaptureChangedRows"></a>
 
@@ -305,7 +289,7 @@ O indexador do SQL expõe várias definições de configuração:
 
 | Configuração | Tipo de dados | Finalidade | Valor padrão |
 | --- | --- | --- | --- |
-| queryTimeout |string |Define o tempo limite de execução da consulta SQL |5 minutos ("00:05:00") |
+| queryTimeout |cadeia de caracteres |Define o tempo limite de execução da consulta SQL |5 minutos ("00:05:00") |
 | disableOrderByHighWaterMarkColumn |bool |Faz com que a consulta SQL usada pela política de marca d'água alta omita a cláusula ORDER BY. Consulte [Política de marca d'água alta](#HighWaterMarkPolicy) |falso |
 
 Essas configurações são usadas no objeto `parameters.configuration` na definição do indexador. Por exemplo, para definir o tempo limite da consulta para 10 minutos, crie ou atualize o indexador com a seguinte configuração:

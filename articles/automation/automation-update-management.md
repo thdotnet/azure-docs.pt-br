@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 885c5266e80114b54007d05d2220fbf5ea5ab84e
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 4df40febefa872fa52afdfaaf31b94dba7000af5
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66397632"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729492"
 ---
 # <a name="update-management-solution-in-azure"></a>Solução Gerenciamento de Atualizações no Azure
 
@@ -78,9 +78,6 @@ A tabela a seguir mostra uma lista de sistemas operacionais com suporte:
 |Red Hat Enterprise 6 (x86/x64) e 7 (x64)     | Os agentes do Linux devem ter acesso a um repositório de atualização.        |
 |SUSE Linux Enterprise Server 11 (x86/x64) e 12 (x64)     | Os agentes do Linux devem ter acesso a um repositório de atualização.        |
 |Ubuntu 14.04 LTS, 16.04 LTS, e 18.04 (x86/x64)      |Os agentes do Linux devem ter acesso a um repositório de atualização.         |
-
-> [!NOTE]
-> Conjuntos de dimensionamento de máquina virtual do Azure podem ser gerenciados com o gerenciamento de atualizações. Gerenciamento de atualizações funciona nas instâncias de si mesmos e não a imagem base. Você precisará agendar as atualizações de forma incremental, para não atualizar todas as instâncias VM ao mesmo tempo.
 
 ### <a name="unsupported-client-types"></a>Tipos de clientes sem suporte
 
@@ -155,7 +152,7 @@ Heartbeat
 | where OSType == "Linux" | summarize arg_max(TimeGenerated, *) by SourceComputerId | top 500000 by Computer asc | render table
 ```
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 ```loganalytics
 Heartbeat
@@ -195,7 +192,7 @@ A seguinte tabela descreve as fontes conectadas que têm suporte nessa solução
 
 Uma verificação é executada duas vezes por dia para cada computador Windows gerenciado. A cada 15 minutos, a API do Windows é chamada para consultar a hora da última atualização para determinar se o status foi alterado. Se o status foi alterado, uma verificação de conformidade é iniciada.
 
-Uma verificação é executada a cada três horas para cada computador Linux gerenciado.
+Uma verificação é executada a cada hora para cada computador Linux gerenciado.
 
 Pode demorar entre 30 minutos e 6 horas para o painel exibir os dados atualizados dos computadores gerenciados.
 
@@ -492,7 +489,7 @@ Update
 | summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, Approved) by Computer, SourceComputerId, UpdateID
 | where UpdateState=~"Needed" and Approved!=false
 | summarize by UpdateID, Classification )
-| summarize allUpdatesCount=count(), criticalUpdatesCount=countif(Classification has "Critical"), securityUpdatesCount=countif(Classification has "Security"), otherUpdatesCount=countif(Classification !has "Critical" and Classification !has "Security"
+| summarize allUpdatesCount=count(), criticalUpdatesCount=countif(Classification has "Critical"), securityUpdatesCount=countif(Classification has "Security"), otherUpdatesCount=countif(Classification !has "Critical" and Classification !has "Security")
 ```
 
 ##### <a name="computers-list"></a>Lista de computadores

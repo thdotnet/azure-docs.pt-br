@@ -11,19 +11,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/13/2017
+ms.date: 05/28/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: d536e9d14edfa17e890480c07951eccb70e9eb9a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e9c34d3cfd5ce9bb3a8f9a9072f2843331065100
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61228299"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66496513"
 ---
 # <a name="use-an-app-service-environment"></a>Usar um ambiente do Serviço de Aplicativo #
-
-## <a name="overview"></a>Visão geral ##
 
 O Ambiente do Serviço de Aplicativo do Azure é uma implantação do Serviço de Aplicativo do Azure em uma sub-rede em uma rede virtual do Azure do cliente. Ele consiste em:
 
@@ -62,17 +60,14 @@ Para criar um aplicativo em um ASE:
 
 1. Selecione seu SO. 
 
-    * A hospedagem de um aplicativo do Linux em uma ASE é um novo recurso de visualização; portanto, sugerimos que você não adicione aplicativos Linux em um ASE que esteja atualmente executando cargas de trabalho de produção. 
-    * A adição de um aplicativo do Linux em um ASE significa que o ASE também estará no modo de visualização. 
-
 1. Selecione um plano do Serviço de Aplicativo existente no ASE ou crie um novo com as seguintes etapas:
 
-     a. Selecione **Criar Novo**.
+    a. Selecione **Criar Novo**.
 
     b. Insira o nome do plano do Serviço de Aplicativo.
 
-    c. Selecione o ASE na lista suspensa **Localização**. A hospedagem de um aplicativo Linux em ASE só está habilitada em 6 regiões. Atualmente: **Oeste dos EUA, Leste dos EUA, Europa Ocidental, Europa Setentrional, Leste da Austrália, Sudeste Asiático.** 
-
+    c. Selecione o ASE na lista suspensa **Localização**. 
+    
     d. Selecione o tipo de preço **Isolado**. Selecione **Selecionar**.
 
     e. Selecione **OK**.
