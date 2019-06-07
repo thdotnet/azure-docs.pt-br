@@ -137,6 +137,10 @@
               href: /rest/api/time-series-insights/preview-env
             - name: Sintaxe e expressão do Time Series
               href: /rest/api/time-series-insights/preview-tsx
+    - name: SDK do cliente
+      items:
+        - name: SDK do Cliente JavaScript
+          href: 'https://github.com/microsoft/tsiclient/blob/master/docs/API.md'
 - name: Relacionados
   items:
     - name: Soluções

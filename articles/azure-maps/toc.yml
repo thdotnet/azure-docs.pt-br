@@ -42,6 +42,8 @@
           href: render-coverage.md
         - name: Cobertura de roteamento
           href: routing-coverage.md
+        - name: Cobertura de mobilidade
+          href: mobility-coverage.md
     - name: Suporte de Localização
       href: supported-languages.md
     - name: Estilos de mapa compatíveis
@@ -50,6 +52,8 @@
       href: supported-browsers.md
     - name: Níveis de zoom e grade lado a lado
       href: zoom-levels-and-tile-grid.md
+    - name: Estrutura de dados do Serviço de Mobilidade
+      href: mobility-service-data-structure.md
 - name: Guias de instruções
   items:
     - name: Gerenciar contas do Azure Mapas
@@ -70,6 +74,10 @@
           href: how-to-use-best-practices-for-search.md
         - name: Renderizar dados personalizados no mapa estático
           href: how-to-render-custom-data.md
+        - name: Solicitar rotas de trânsito público
+          href: how-to-request-transit-data.md
+        - name: Solicitar dados de trânsito público em tempo real
+          href: how-to-request-real-time-data.md
     - name: Desenvolver com o SDK da Web
       items:
         - name: Controle de mapa

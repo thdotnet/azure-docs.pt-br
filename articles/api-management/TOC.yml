@@ -121,6 +121,8 @@
           href: api-management-howto-manage-protocols-ciphers.md
     - name: Personalizar a experiência do desenvolvedor
       items:
+        - name: Acessar e personalizar o novo portal do desenvolvedor
+          href: api-management-howto-developer-portal.md
         - name: Modificar o layout e o conteúdo da página
           href: api-management-modify-content-layout.md
         - name: Personalizar as páginas do sistema usando modelos

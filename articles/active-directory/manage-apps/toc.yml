@@ -2,8 +2,10 @@
   href: index.yml
 - name: Visão geral
   items:
-    - name: Sobre o gerenciamento de aplicativos
+    - name: O que é gerenciamento de aplicativos?
       href: what-is-application-management.md
+    - name: O que é o Proxy de Aplicativo?
+      href: what-is-application-proxy.md
 - name: Guia de início rápido
   expanded: true
   items:

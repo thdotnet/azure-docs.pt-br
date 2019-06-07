@@ -1,7 +1,11 @@
 - name: Visão geral
   items:
-    - name: Considerações para VMs do Oracle
-      href: oracle-considerations.md
+    - name: Visão geral das soluções Oracle
+      href: oracle-overview.md
+    - name: Soluções em VMs do Azure
+      href: oracle-vm-solutions.md
+    - name: Soluções com OCI – Versão prévia
+      href: oracle-oci-overview.md
 - name: Guia de início rápido
   items:
     - name: Criar um Oracle DB
@@ -10,7 +14,7 @@
   items:
     - name: Configurar o Oracle ASM
       href: configure-oracle-asm.md
-    - name: Configurar o Oracle DataGuard
+    - name: Configurar o Oracle Data Guard
       href: configure-oracle-dataguard.md
     - name: Configurar o Oracle GoldenGate
       href: configure-oracle-golden-gate.md
@@ -20,7 +24,7 @@
       href: oracle-design.md
     - name: Estratégia de backup para o Oracle DB
       href: oracle-backup-recovery.md
-    - name: Opções de recuperação de desastres do Oracle
+    - name: Opções de recuperação de desastre do Oracle
       href: oracle-disaster-recovery.md
 - name: Recursos
   items:
