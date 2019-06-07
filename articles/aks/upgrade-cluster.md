@@ -5,22 +5,24 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 05/31/2019
 ms.author: iainfou
-ms.openlocfilehash: 59d52db8c3f5f8968eae1a544abe1e5c6bbaacca
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 2cadd4b33cb52307599ce1e83eee8370ef9850fe
+ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65072726"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66692786"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Atualizar um cluster do Serviço de Kubernetes do Azure (AKS)
 
-Como parte do ciclo de vida de um cluster do AKS, muitas vezes você precisará atualizar para a versão mais recente do Kubernetes. É importante aplicar as versões mais recentes de segurança do Kubernetes ou atualizar para obter os recursos mais recentes. Este artigo mostra como atualizar um cluster do AKS existente.
+Como parte do ciclo de vida de um cluster do AKS, muitas vezes você precisará atualizar para a versão mais recente do Kubernetes. É importante aplicar as versões mais recentes de segurança do Kubernetes ou atualizar para obter os recursos mais recentes. Este artigo mostra como atualizar os componentes mestres ou um único pool de nós de padrão em um cluster AKS.
+
+Para o AKS clusters que usam vários pools de nós ou nós do Windows Server (tanto atualmente em visualização no AKS), consulte [Upgrade de um pool de nós no AKS][nodepool-upgrade].
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-Este artigo exige a execução da CLI do Azure versão 2.0.56 ou posterior. Execute `az --version` para encontrar a versão. Se precisar instalar ou atualizar, consulte [Instalar a CLI do Azure][azure-cli-install].
+Este artigo exigirá que você está executando a CLI do Azure versão 2.0.65 ou posterior. Execute `az --version` para encontrar a versão. Se precisar instalar ou atualizar, consulte [Instalar a CLI do Azure][azure-cli-install].
 
 ## <a name="check-for-available-aks-cluster-upgrades"></a>Verificação de atualizações disponíveis do cluster do AKS
 
@@ -31,24 +33,26 @@ az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster --outpu
 ```
 
 > [!NOTE]
-> Ao atualizar um cluster do AKS, as versões secundárias do Kubernetes não poderão ser ignoradas. Por exemplo, atualizações entre *1.10.x* -> *1.11.x* ou *1.11.x* -> *1.12.x* são permitidas, porém *1.10.x* -> *1.12.x* não são.
+> Ao atualizar um cluster do AKS, as versões secundárias do Kubernetes não poderão ser ignoradas. Por exemplo, upgrades entre *1.11.x* -> *1.12.x* ou *1.12.x* -> *1.13.x* são permitidos, porém *1.11.x* -> *1.13.x* não é.
 >
-> Para atualizar, do *1.10.x* -> *1.12.x*, primeiro atualize do *1.10.x* -> *1.11.x*, em seguida, atualize do *1.11.x* -> *1.12.x*.
+> A atualização, do *1.11.x* -> *1.13.x*, primeiro atualizar do *1.11.x* -> *1.12.x*, em seguida, faça upgrade partir *1.12.x* -> *1.13.x*.
 
-A saída de exemplo a seguir mostra que o cluster pode ser atualizado para a versão *1.11.5* ou *1.11.6*:
+A saída de exemplo a seguir mostra que o cluster pode ser atualizado para a versão *1.12.7* ou *1.12.8*:
 
 ```console
-Name     ResourceGroup    MasterVersion    NodePoolVersion    Upgrades
--------  ---------------  ---------------  -----------------  --------------
-default  myResourceGroup  1.10.12          1.10.12            1.11.5, 1.11.6
+Name     ResourceGroup    MasterVersion  NodePoolVersion  Upgrades
+-------  ---------------  -------------  ---------------  --------------
+default  myResourceGroup  1.11.9         1.11.9           1.12.7, 1.12.8
 ```
 
 ## <a name="upgrade-an-aks-cluster"></a>Atualizar um cluster AKS
 
-Com uma lista de versões disponíveis para o cluster do AKS, use o comando [az aks upgrade][az-aks-upgrade] para atualizar. Durante o processo de atualização, o AKS adiciona um novo nó ao cluster e, em seguida, cuidadosamente [isola e drena][kubernetes-drain] um nó por vez para minimizar a interrupção dos aplicativos em execução. Os exemplos a seguir atualizam um cluster para a versão *1.11.6*:
+Com uma lista de versões disponíveis para o cluster do AKS, use o comando [az aks upgrade][az-aks-upgrade] para atualizar. Durante o processo de atualização, o AKS adiciona um novo nó ao cluster que executa a versão especificada do Kubernetes, em seguida, cuidadosamente [cordon e anda] [ kubernetes-drain] um de nós do antigos para minimizar as interrupções para em execução aplicativos. Quando o novo nó foi confirmado como pods de aplicativo em execução, o nó antigo será excluído. Esse processo se repete até que todos os nós no cluster tenham sido atualizados.
+
+O exemplo a seguir atualiza um cluster para versão *1.12.8*:
 
 ```azurecli-interactive
-az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.11.6
+az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.12.8
 ```
 
 O cluster demora alguns minutos para ser atualizado, dependendo de quantos nós que você tem.
@@ -59,12 +63,12 @@ Para confirmar se a atualização teve êxito, use o comando [az aks show][az-ak
 az aks show --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
-A saída de exemplo a seguir mostra que o cluster agora executa a versão *1.11.6*:
+A saída de exemplo a seguir mostra que o cluster agora é executada *1.12.8*:
 
 ```json
 Name          Location    ResourceGroup    KubernetesVersion    ProvisioningState    Fqdn
 ------------  ----------  ---------------  -------------------  -------------------  ---------------------------------------------------------------
-myAKSCluster  eastus      myResourceGroup  1.11.6               Succeeded            myaksclust-myresourcegroup-19da35-90efab95.hcp.eastus.azmk8s.io
+myAKSCluster  eastus      myResourceGroup  1.12.8               Succeeded            myaksclust-myresourcegroup-19da35-90efab95.hcp.eastus.azmk8s.io
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
@@ -83,3 +87,4 @@ Este artigo mostrou como atualizar um cluster do AKS existente. Para saber mais 
 [az-aks-get-upgrades]: /cli/azure/aks#az-aks-get-upgrades
 [az-aks-upgrade]: /cli/azure/aks#az-aks-upgrade
 [az-aks-show]: /cli/azure/aks#az-aks-show
+[nodepool-upgrade]: use-multiple-node-pools.md#upgrade-a-node-pool

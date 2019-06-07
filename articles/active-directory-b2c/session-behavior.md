@@ -2,20 +2,20 @@
 title: Configurar o comportamento da sessão - Azure Active Directory B2C | Microsoft Docs
 description: Configure o comportamento da sessão no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/16/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 7bfa34f44ca8ba53b89e4218303a7cd77cd0add9
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 3167a63be46e0d777fbec0c6a3301684fb7636bd
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64700979"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66512559"
 ---
 # <a name="configure-session-behavior-in-azure-active-directory-b2c"></a>Configurar o comportamento da sessão no Azure Active Directory B2C
 
@@ -51,7 +51,7 @@ Os casos de uso a seguir são ativados usando estas propriedades:
 1. Entre no [Portal do Azure](https://portal.azure.com).
 2. Verifique se você está usando o diretório que contém seu locatário do Azure AD B2C clicando nos **filtros de pastas e de assinatura** no menu superior e escolhendo o diretório que contém seu locatário do Azure AD B2C.
 3. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
-4. Selecione **fluxos de usuário (diretivas)**.
+4. Selecione **fluxos de usuário (diretivas)** .
 5. Abra o fluxo de usuário que você criou anteriormente. 
 6. Selecione **Propriedades**.
 7. Configure **aplicativo Web (minutos) de vida útil da sessão**, **tempo limite de sessão do aplicativo Web**, **configuração de logon única**, e **exigem Token de ID em solicitações de logoff**  conforme necessário.

@@ -1,6 +1,6 @@
 ---
-title: 'Referência de API do v2 do Monitor de Status do Azure: Habilitar mecanismo de instrumentação | Microsoft Docs'
-description: Status Monitor v2 API referência Enable-InstrumentationEngine. Monitorar o desempenho do site sem reimplantar o site. Funciona com aplicativos web ASP.NET hospedado no local, em máquinas virtuais ou no Azure.
+title: 'Referência da API do v2 de Monitor de Status do Azure: Habilitar mecanismo de instrumentação | Microsoft Docs'
+description: Referência de API v2 de Monitor de status. Enable-InstrumentationEngine. Monitorar o desempenho do site sem reimplantar o site. Funciona com aplicativos web do ASP.NET hospedados no local, em máquinas virtuais ou no Azure.
 services: application-insights
 documentationcenter: .net
 author: MS-TimothyMothra
@@ -12,42 +12,40 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: e993378634262de25449975431c0a9e3145ca9fb
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 1e30490dbd51f541afd0b7036769cfc638a75877
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66255257"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514375"
 ---
 # <a name="status-monitor-v2-api-enable-instrumentationengine-v021-alpha"></a>API de v2 do Monitor de status: Enable-InstrumentationEngine (v0.2.1-alpha)
 
-Este documento descreve um cmdlet que é enviado como um membro do [módulo do Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
+Este artigo descreve um cmdlet que é um membro do [módulo do Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
 > [!IMPORTANT]
 > Status Monitor v2 está atualmente em visualização pública.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
-> Para obter mais informações, consulte [termos complementares de uso para visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
+> Esta versão de visualização é fornecida sem um contrato de nível de serviço, e não é recomendável para cargas de trabalho de produção. Alguns recursos podem não ter suporte e alguns podem ter recursos restritos.
+> Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="description"></a>DESCRIÇÃO
 
-Esse cmdlet permitirá que o mecanismo de instrumentação, definindo algumas chaves do registro.
-Reinicie o IIS para que essas alterações entrem em vigor.
+Permite que o mecanismo de instrumentação, definindo algumas chaves do registro.
+Reinicie o IIS para que as alterações entrem em vigor.
 
-O mecanismo de instrumentação podem complementar os dados coletados pelos SDKs .NET.
-Mensagens e eventos serão coletadas que descrevem a execução de um processo gerenciado. Incluindo mas não limitado a códigos de resultado de dependência, verbos HTTP e texto do comando SQL. 
+O mecanismo de instrumentação pode complementar os dados coletados pelos SDKs .NET.
+Ele coleta eventos e mensagens que descrevem a execução de um processo gerenciado. Esses eventos e mensagens incluem os códigos de resultado de dependência, verbos HTTP e texto do comando SQL.
 
 Habilite o mecanismo de instrumentação se:
-- Você já tiver habilitado o monitoramento usando o cmdlet Enable, mas não tiver habilitado o InstrumentationEngine.
+- Você já tiver habilitado o monitoramento com o cmdlet Enable, mas não tiver habilitado o mecanismo de instrumentação.
 - Você equipou manualmente seu aplicativo com os SDKs do .NET e coletar telemetria adicional.
 
 > [!IMPORTANT] 
 > Esse cmdlet requer uma sessão do PowerShell com permissões de administrador.
 
 > [!NOTE] 
-> Esse cmdlet exigirá que você examine e aceite nossa declaração de licença e privacidade.
-
-> [!NOTE] 
-> O mecanismo de instrumentação adiciona uma sobrecarga adicional e está desativado por padrão.
+> - Esse cmdlet requer que você examine e aceite nossa declaração de licença e privacidade.
+> - O mecanismo de instrumentação adiciona uma sobrecarga adicional e está desativado por padrão.
 
 ## <a name="examples"></a>Exemplos
 
@@ -55,7 +53,7 @@ Habilite o mecanismo de instrumentação se:
 PS C:\> Enable-InstrumentationEngine
 ```
 
-## <a name="parameters"></a>parâmetros 
+## <a name="parameters"></a>parâmetros
 
 ### <a name="-acceptlicense"></a>-AcceptLicense
 **Opcional** Use essa opção para aceitar a declaração de licença e privacidade em instalações sem periféricos.
@@ -76,17 +74,17 @@ Configuring registry for instrumentation engine...
 ## <a name="next-steps"></a>Próximas etapas
 
   Exiba sua telemetria:
- - [Explore as métricas](../../azure-monitor/app/metrics-explorer.md) para monitorar o desempenho e o uso
-- [Pesquise eventos e logs](../../azure-monitor/app/diagnostic-search.md) para diagnosticar problemas
-- [Analise](../../azure-monitor/app/analytics.md) para obter mais consultas avançadas
-- [Crie painéis](../../azure-monitor/app/overview-dashboard.md)
+ - [Explorar métricas](../../azure-monitor/app/metrics-explorer.md) para monitorar o desempenho e uso.
+- [Pesquise eventos e logs](../../azure-monitor/app/diagnostic-search.md) para diagnosticar problemas.
+- Use [analytics](../../azure-monitor/app/analytics.md) para obter mais informações de consultas avançadas.
+- [Crie painéis](../../azure-monitor/app/overview-dashboard.md).
  
  Adicione mais telemetria:
  - [Criar testes da web](monitor-web-app-availability.md) para garantir que seu site permanece ativo.
-- [Adicione telemetria do cliente web](../../azure-monitor/app/javascript.md) para ver as exceções no código de página da web e permitir que você insira chamadas de rastreamento.
-- [Adicione o SDK do Application Insights ao seu código](../../azure-monitor/app/asp-net.md) para que você possa inserir o rastreamento e chamadas de log
+- [Adicione telemetria do cliente web](../../azure-monitor/app/javascript.md) para ver as exceções no código de página da web e para habilitar chamadas de rastreamento.
+- [Adicione o SDK do Application Insights ao seu código](../../azure-monitor/app/asp-net.md) para que você possa inserir o rastreamento e registrar chamadas.
  
  Faça mais com v2 de Monitor de Status:
- - Use nosso guia para [solucione o problema](status-monitor-v2-troubleshoot.md) v2 do Monitor de Status.
+ - Use nosso guia para [solucionar problemas de](status-monitor-v2-troubleshoot.md) v2 do Monitor de Status.
  - [Obter a configuração](status-monitor-v2-api-get-config.md) para confirmar que suas configurações foram registradas corretamente.
  - [Obter o status](status-monitor-v2-api-get-status.md) para inspecionar o monitoramento.

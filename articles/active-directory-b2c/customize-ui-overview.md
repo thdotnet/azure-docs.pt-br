@@ -2,26 +2,26 @@
 title: Sobre a personalização da interface do usuário no Azure Active Directory B2C | Microsoft Docs
 description: Saiba como personalizar a interface do usuário de seus aplicativos que usam o Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/07/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 26dea1b636fce9e7f5defddd5cf4bc4c7d78d5da
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 6c9109cf4d6d67d3d8001a9de1d54e24622a9286
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64682012"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66511184"
 ---
 # <a name="about-user-interface-customization-in-azure-active-directory-b2c"></a>Sobre a personalização da interface do usuário no Azure Active Directory B2C
 
 A capacidade de definir a marca e personalizar a interface do usuário que o Azure AD (Azure Active Directory) B2C fornece a seus aplicativos é importante para fornecer uma experiência perfeita para o seu cliente. Essas experiências incluem inscrição, entrada, edição de perfil e redefinição de senha. Este artigo fornece informações para ajudá-lo a personalizar a interface do usuário dos seus aplicativos.
 
-Dependendo de suas necessidades quando se trata dessas experiências, personalize a interface do usuário do seu aplicativo de maneiras diferentes. Por exemplo: 
+Dependendo de suas necessidades quando se trata dessas experiências, personalize a interface do usuário do seu aplicativo de maneiras diferentes. Por exemplo:
 
 - Se estiver usando [fluxos de usuário](active-directory-b2c-reference-policies.md) para fornecer inscrição ou entrada, redefinição de senha ou experiências de edição de perfil em seu aplicativo, use o [portal do Azure para personalizar a interface do usuário](tutorial-customize-ui.md).
 - Se você estiver usando um fluxo de usuário do v2, você poderá usar um [modelo de layout de página](#page-layout-templates) para alterar a aparência de suas páginas de fluxo do usuário sem personalização adicional. Por exemplo, você pode aplicar um tema Azul oceano ou Cinza-ardósia a todas as páginas no fluxo do usuário.
@@ -48,7 +48,7 @@ Ao usar seus próprios arquivos HTML e CSS para personalizar a interface do usu�
 
 Para fluxos dos usuários do v2, você pode escolher um modelo predefinido que confere às suas páginas padrão um visual melhor e serve como uma boa base para sua própria personalização.
 
-No menu à esquerda, em **Personalizar**, selecione **Layouts da página**. Em seguida, selecione **Modelo (Versão Prévia)**.
+No menu à esquerda, em **Personalizar**, selecione **Layouts da página**. Em seguida, selecione **Modelo (Versão Prévia)** .
 
 ![Escolha um modelo de layout de página](media/customize-ui-overview/template.png)
 

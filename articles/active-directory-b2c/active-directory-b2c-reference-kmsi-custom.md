@@ -2,20 +2,20 @@
 title: Mantenha-Me Conectado no Azure Active Directory B2C | Microsoft Docs
 description: Aprenda a configurar o KMSI (Mantenha-me conectado) no Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 12/03/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 8cd48f2c194cc643d131a7def4b96285cde0bcbf
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 0ae6f19ea9a04aa6b2547fa031dbb09d03b887c3
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64712542"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66509421"
 ---
 # <a name="enable-keep-me-signed-in-kmsi-in-azure-active-directory-b2c"></a>Habilitar o KMSI (Mantenha-me conectado) no Azure Active Directory B2C
 
@@ -102,7 +102,7 @@ Adicione o provedor de declarações de entrada para uma conta local ao seu perc
 2. Localize o elemento **UserJourneys** e copie o conteúdo inteiro do elemento **UserJourney** que usa o identificador de `SignUpOrSignIn`.
 3. Abra o arquivo de extensão. Por exemplo, *TrustFrameworkExtensions.xml* e localize o elemento **UserJourneys**. Se o elemento não existir, adicione um.
 4. Cole todo o elemento **UserJourney** que copiou como um filho do elemento **UserJourneys**.
-5. Altere o valor do identificador para o novo percurso do usuário. Por exemplo, `SignUpOrSignInWithKmsi`.
+5. Altere o valor do identificador para o novo percurso do usuário. Por exemplo: `SignUpOrSignInWithKmsi`.
 6. Por fim, na primeira etapa de orquestração, altere o valor de **ContentDefinitionReferenceId** para `api.signuporsigninwithkmsi`. A configuração desse valor habilita a caixa de seleção no percurso do usuário. 
 7. Salve e faça o upload desse arquivo e verifique se todas as validações são bem-sucedidas.
 
@@ -147,8 +147,8 @@ Adicione o provedor de declarações de entrada para uma conta local ao seu perc
 Atualize o arquivo de RP (terceira parte confiável) que iniciará o percurso do usuário que você criou.
 
 1. Faça uma cópia do arquivo *SignUpOrSignIn.xml* no seu diretório de trabalho e, em seguida, renomeie-o. Por exemplo, *SignUpOrSignInWithKmsi.xml*.
-2. Abra o novo arquivo e atualize o atributo **PolicyId** para a **TrustFrameworkPolicy** com um valor exclusivo. Esse é o nome da sua política. Por exemplo, `SignUpOrSignInWithKmsi`.
-3. Altere o atributo **ReferenceId** para o elemento **DefaultUserJourney** para coincidir com o identificador do novo percurso do usuário que você criou. Por exemplo, `SignUpOrSignInWithKmsi`.
+2. Abra o novo arquivo e atualize o atributo **PolicyId** para a **TrustFrameworkPolicy** com um valor exclusivo. Esse é o nome da sua política. Por exemplo: `SignUpOrSignInWithKmsi`.
+3. Altere o atributo **ReferenceId** para o elemento **DefaultUserJourney** para coincidir com o identificador do novo percurso do usuário que você criou. Por exemplo: `SignUpOrSignInWithKmsi`.
 
     O KMSI foi configurado usando o elemento **UserJourneyBehaviors** com **SingleSignOn**,  **SessionExpiryType** e **SessionExpiryInSeconds** como os primeiros elementos filhos. O atributo **KeepAliveInDays** controla por quanto tempo o usuário permanece conectado. No exemplo a seguir, a sessão do KMSI expira automaticamente depois de `7` dias, não importa a frequência com que o usuário realiza a autenticação sem confirmação. A configuração do valor **KeepAliveInDays** para `0` desativa a funcionalidade KMSI. Por padrão, esse valor é `0`. Se o valor de **SessionExpiryType** for `Rolling`, a sessão do KMSI será estendida por `7` dias sempre que o usuário executar a autenticação sem confirmação.  Caso `Rolling` seja selecionado, mantenha o número de dias no mínimo. 
 
