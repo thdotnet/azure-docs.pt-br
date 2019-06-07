@@ -10,15 +10,15 @@ ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: quickstart
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: 368bc0402e56479ad8696ca9ed0702f246a670bd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 954bbc22e42865991ca7f38fbf3f6f0e8e78a437
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60240656"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754034"
 ---
 # <a name="quickstart-create-a-project-with-a-custom-environment"></a>Início Rápido: Criar um projeto com um ambiente personalizado
 
@@ -32,18 +32,18 @@ Um projeto no Azure Notebooks é uma coleção de arquivos, como notebooks, arqu
 
     ![Link Meus Projetos na parte superior da janela do navegador](media/quickstarts/my-projects-link.png)
 
-1. Na página **Meus Projetos**, selecione **+ Novo Projeto**(atalho de teclado: n); o botão poderá aparecer apenas como **+**, se a janela do navegador for estreita:
+1. Na página **Meus Projetos**, selecione **+ Novo Projeto**(atalho de teclado: n); o botão poderá aparecer apenas como **+** , se a janela do navegador for estreita:
 
     ![Comando Novo Projeto na página Meus Projetos](media/quickstarts/new-project-command.png)
 
 1. No pop-up **Criar Novo Projeto** exibido, insira ou defina os seguintes detalhes e selecione **Criar**:
 
-    - **Nome do projeto:**: Projeto com um ambiente personalizado
+    - **Nome do projeto:** : Projeto com um ambiente personalizado
     - **ID do projeto**: ambiente de projeto personalizado
     - **Projeto público**: (desmarcado)
     - **Criar um README.md**: (desmarcado)
 
-1. Após alguns instantes, o Azure Notebooks o direcionará para o novo projeto. Adicione um notebook ao projeto, selecionando o menu suspenso **+ Novo** (que pode aparecer somente como **+**) e, em seguida, selecionando **Notebook**.
+1. Após alguns instantes, o Azure Notebooks o direcionará para o novo projeto. Adicione um notebook ao projeto, selecionando o menu suspenso **+ Novo** (que pode aparecer somente como **+** ) e, em seguida, selecionando **Notebook**.
 
 1. Forneça um nome ao notebook como *environment.ipynb personalizado*, selecione **Python 3.6** para a linguagem e selecione **Novo**.
 
@@ -71,7 +71,7 @@ Um projeto no Azure Notebooks é uma coleção de arquivos, como notebooks, arqu
 
 1. Para testar o ambiente, crie e execute um novo notebook e, em seguida, crie uma célula de código com instruções que dependam de um pacote no ambiente como o uso de uma instrução Python`import`. Se a instrução tiver êxito, significa que o pacote necessário foi instalado com êxito no ambiente.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
 > [Gerenciar e configurar projetos no Azure Notebooks](configure-manage-azure-notebooks-projects.md)

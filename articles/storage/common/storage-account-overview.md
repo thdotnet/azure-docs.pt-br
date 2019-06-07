@@ -5,15 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 06/07/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 2eaf819870e2b70cc6238af6d1e9fa1dcb5caab8
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 00b94174debf915fac3ae5fb37f382c0dc46abfb
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236746"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754995"
 ---
 # <a name="azure-storage-account-overview"></a>Visão geral da conta de armazenamento do Azure
 
@@ -62,7 +62,11 @@ Embora as contas para uso geral v2 sejam recomendadas na maioria dos casos, as c
 
 ### <a name="block-blob-storage-accounts"></a>Contas de armazenamento de blobs de bloco
 
-Uma conta de armazenamento de blob de bloco é uma conta de armazenamento especializada para armazenar dados de objeto não estruturados como blobs de bloco ou blobs de acréscimo. Contas de armazenamento de blobs de bloco oferecem vários níveis de acesso para o armazenamento de dados com base nos seus padrões de uso. Para saber mais, confira [Camadas de acesso para dados de blob de blocos](#access-tiers-for-block-blob-data).
+Uma conta de armazenamento de blob de bloco é uma conta de armazenamento especializada para armazenar dados de objeto não estruturados como blobs de blocos. Essa conta de armazenamento dá suporte a blobs de blocos de tipo e acrescentar blobs, mas não os blobs de página, tabelas ou filas.
+
+Em comparação com o uso geral v2 e contas de armazenamento de blob, contas de armazenamento de blobs de bloco fornecem consistente e baixa latência e taxas de transação mais altas.
+
+Contas de armazenamento de blobs de bloco não damos suporte a disposição em camadas para frequente, esporádico ou arquivo as camadas de acesso.
 
 ### <a name="filestorage-preview-storage-accounts"></a>Contas de armazenamento FileStorage (visualização)
 
@@ -75,12 +79,16 @@ Ao nomear sua conta de armazenamento, lembre-se dessas regras:
 - Os nomes da conta de armazenamento devem ter entre 3 e 24 caracteres e podem conter apenas números e letras minúsculas.
 - O nome da sua conta de armazenamento deve ser exclusivo no Azure. Duas contas de armazenamento não podem ter o mesmo nome.
 
-## <a name="general-purpose-performance-tiers"></a>Níveis de desempenho de uso geral
+## <a name="performance-tiers"></a>Níveis de desempenho
 
 As contas de armazenamento para uso geral podem ser configuradas para qualquer um dos seguintes níveis de desempenho:
 
 * Um nível de desempenho padrão para armazenamento de blobs, arquivos, tabelas, filas e discos da máquina virtual do Azure.
 * Um nível de desempenho premium somente para armazenamento de discos de máquina virtual não gerenciado.
+
+Contas de armazenamento de blobs de bloco oferecem um nível de desempenho premium para armazenar blobs de blocos e blobs de acréscimo.
+
+Contas de armazenamento FileStorage (versão prévia) fornecem um nível de desempenho premium para compartilhamentos de arquivos do Azure.
 
 ## <a name="access-tiers-for-block-blob-data"></a>Camadas de acesso para dados de blob de blocos
 
@@ -90,7 +98,7 @@ As camadas de acesso disponíveis são:
 
 * A camada de acesso **quente** é otimizada para acesso frequente a objetos na conta de armazenamento. Acessar dados na camada frequente é mais econômico, enquanto os custos de armazenamento são mais altos. Por padrão, as novas contas de armazenamento são criadas na camada de acesso quente.
 * A camada de acesso **frio** é otimizada para armazenar grandes quantidades de dados acessados com menos frequência e armazenados por pelo menos 30 dias. Armazenamento de dados na camada esporádico é mais econômico, mas o acesso aos dados pode ser mais caro do que o acesso a dados na camada frequente.
-* A camada de acesso aos **Arquivos** só está disponível para blobs de blocos individuais. Essa camada é otimizada para dados que podem tolerar várias horas de latência de recuperação e permanecerão na camada de acesso aos arquivos por pelo menos 180 dias. A camada de acesso aos arquivos é a opção mais econômica para armazenar dados, mas acessá-los é mais caro que acessar os dados das camadas de acesso quente ou frio.
+* A camada de acesso aos **Arquivos** só está disponível para blobs de blocos individuais. Camada de arquivo é otimizada para dados que podem tolerar várias horas de latência de recuperação e permanecerão na camada de arquivo pelo menos 180 dias. A camada de acesso aos arquivos é a opção mais econômica para armazenar dados, mas acessá-los é mais caro que acessar os dados das camadas de acesso quente ou frio.
 
 Se houver uma alteração no padrão de uso dos dados, você poderá alternar entre as camadas de acesso a qualquer momento. Para obter mais informações sobre as camadas de acesso, consulte [armazenamento de BLOBs do Azure: quente, frio e arquivar as camadas de acesso](../blobs/storage-blob-storage-tiers.md).
 
@@ -119,7 +127,7 @@ Por exemplo, se a conta de armazenamento para uso geral chamar *mystorageaccount
 * Arquivos do Azure: http://*mystorageaccount*.file.core.windows.net
 
 > [!NOTE]
-> Uma conta de armazenamento de blobs expõe apenas o ponto de extremidade do serviço Blob.
+> Blob de blocos e as contas de armazenamento de BLOBs expõem apenas o serviço ponto de extremidade blob.
 
 A URL para acessar um objeto em uma conta de armazenamento é criada acrescentando o local do objeto na conta de armazenamento ao ponto de extremidade. Por exemplo, um endereço de blob pode ter este formato: http://*mystorageaccount*.blob.core.windows.net/*mycontainer*/*myblob*.
 
@@ -165,7 +173,7 @@ Para saber mais sobre a API REST do Armazenamento do Azure, confira a [Referênc
 > [!IMPORTANT]
 > Blobs criptografados usando metadados relacionados à criptografia de armazenamento no lado do cliente com o blob. Se você copiar um blob que é criptografado com criptografia do lado do cliente, verifique se que a operação de cópia preserva os metadados de blob e especialmente os metadados relacionados à criptografia. Se você copiar um blob sem os metadados de criptografia, o conteúdo do blob não poderá ser recuperado novamente. Para obter mais detalhes sobre os metadados relacionados à criptografia, confira [Criptografia no Lado do Cliente do Armazenamento do Azure](../common/storage-client-side-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
-### <a name="azure-importexport-service"></a>Serviço de Importação/Exportação do Azure
+### <a name="azure-importexport-service"></a>Serviço de Importação/exportação do Azure
 
 Se você tiver uma grande quantidade de dados a serem importados para sua conta de armazenamento, considere o serviço de Importação/Exportação do Azure. O serviço de Importação/Exportação do Azure permite importar com segurança grandes quantidades de dados para o armazenamento de blobs do Azure e Arquivos do Azure por meio do envio de unidades de disco rígido para um data center do Azure. 
 
@@ -177,5 +185,6 @@ Esse serviço também pode ser usado para transferir dados do armazenamento de B
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Para saber como criar uma conta de armazenamento do Azure, confira [Criar uma conta de armazenamento](storage-quickstart-create-account.md).
+* Para saber como criar uma conta de armazenamento do Azure para fins gerais, consulte [criar uma conta de armazenamento](storage-quickstart-create-account.md).
+* Para saber como criar uma conta de armazenamento de blob de bloco, consulte [criar uma conta de armazenamento de blob de bloco](../blobs/storage-blob-create-account-block-blob.md).
 * Para gerenciar ou excluir uma conta de armazenamento existente, confira [Gerenciar contas de armazenamento do Azure](storage-account-manage.md).

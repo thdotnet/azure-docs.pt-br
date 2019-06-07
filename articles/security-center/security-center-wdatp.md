@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2018
 ms.author: monhaber
-ms.openlocfilehash: 15232c92e60d21d759bec59597cb161480b8c2ea
-ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
+ms.openlocfilehash: d42b929807bf67b73d0587232608efc0cea6d717
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66743226"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752580"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Proteção Avançada contra Ameaças do Windows Defender com a Central de Segurança do Azure
 
@@ -93,7 +93,7 @@ Siga as instruções em [Atribuir acesso de usuário ao portal](https://docs.mic
 
 ## <a name="set-the-firewall-configuration"></a>Definir a configuração do firewall
 
-Quando um sensor do Windows Defender ATP estiver se conectando do contexto do sistema, caso você tenha um proxy ou firewall bloqueando o tráfego anônimo, verifique se o tráfego anônimo é permitido. Siga as instruções em [Permitir o acesso a URLs do serviço Windows Defender ATP no servidor proxy](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-proxy-internet-windows-defender-advanced-threat-protection#enable-access-to-windows-defender-atp-service-urls-in-the-proxy-server).
+Quando um sensor do Windows Defender ATP estiver se conectando do contexto do sistema, caso você tenha um proxy ou firewall bloqueando o tráfego anônimo, verifique se o tráfego anônimo é permitido. Siga as instruções em [Permitir o acesso a URLs do serviço Windows Defender ATP no servidor proxy](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-proxy-internet-windows-defender-advanced-threat-protection#enable-access-to-microsoft-defender-atp-service-urls-in-the-proxy-server).
 
 ## <a name="test-the-feature"></a>Testar o recurso
 

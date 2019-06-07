@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: c0f8a56df5b41236256115ced0d46a87c5ee91a5
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: df05bd984667283b0ccc143ba14fff6b35d69144
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400242"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66753166"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Configurar automatizados experimentos do ML no Python
 
@@ -134,7 +134,7 @@ y_valid |   Dataframe do Pandas ou matriz Numpy | data_train, rótulo | _Opciona
 sample_weight | Dataframe do Pandas ou matriz Numpy |   data_train, rótulo, colunas| _Opcional_ Um valor de peso para cada amostra. Use quando quiser atribuir pesos diferentes aos pontos de dados
 sample_weight_valid | Dataframe do Pandas ou matriz Numpy | data_train, rótulo, colunas |    _Opcional_ Um valor de peso para cada amostra de validação. Se não for especificado, sample_weight será dividido entre "treinar" e "validar"
 data_train |    Dataframe do Pandas |  X, y, X_valid, y_valid |    Todos os dados (recursos + rótulo) a serem treinados com
-label | string  | X, y, X_valid, y_valid |  Qual coluna em data_train representa o rótulo
+label | cadeia de caracteres  | X, y, X_valid, y_valid |  Qual coluna em data_train representa o rótulo
 colunas | Matriz de cadeias de caracteres  ||  _Opcional_ Lista de permissões de colunas a serem usadas para recursos
 cv_splits_indices   | Matriz de inteiros ||  _Opcional_ Lista de índices para dividir os dados para validação cruzada
 
@@ -158,7 +158,7 @@ Use o conjunto de dados de validação personalizada se divisão aleatória não
 
 Em seguida, determine onde o modelo será treinado. Um experimento de treinamento de aprendizado de máquina automatizado pode ser executado nas opções de computação a seguir:
 *   O computador local, como a área de trabalho ou o laptop local – geralmente, quando o conjunto de dados é pequeno e você ainda está na fase de exploração.
-*   Um computador remoto na nuvem – [Computação gerenciada do Azure Machine Learning](concept-azure-machine-learning-architecture.md#managed-and-unmanaged-compute-targets) é um serviço gerenciado que permite a capacidade de treinar modelos de machine learning em clusters de máquinas virtuais do Azure.
+*   Um computador remoto na nuvem – [Computação gerenciada do Azure Machine Learning](concept-compute-target.md#amlcompute) é um serviço gerenciado que permite a capacidade de treinar modelos de machine learning em clusters de máquinas virtuais do Azure.
 
 Confira o [site do GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning) para obter exemplos de notebooks com destinos de computação locais e remotos.
 

@@ -14,12 +14,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 7b3b3b019df70b6c27833afdd0447ecf32da32ff
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: a1dafb8e4c16a59bfed51016ce9ccb0ec3eb7d6c
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66305005"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754757"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Hubs de Eventos do Azure – Recuperação de desastre geográfico 
 
@@ -82,7 +82,7 @@ Se você iniciar o failover, as duas etapas são necessárias:
 
 Se você cometeu um erro, por exemplo, emparelhou as regiões erradas durante a configuração inicial, você pode interromper o emparelhamento dos dois namespaces a qualquer momento. Se você quiser usar os namespaces emparelhados como namespaces regulares, exclua o alias.
 
-## <a name="samples"></a>Exemplos
+## <a name="samples"></a>Amostras
 
 O [exemplo no GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/GeoDRClient) mostra como configurar e iniciar um failover. Esse exemplo demonstra os seguintes conceitos:
 
@@ -98,7 +98,7 @@ Observe as seguintes considerações a serem lembradas quanto a esta versão:
  
 2. O fato de que nenhum dado seja replicado significa que sessões atualmente ativas não são replicadas. Além disso, a detecção duplicada e mensagens programadas podem não funcionar. Novas sessões, mensagens programadas e novas duplicatas funcionarão. 
 
-3. O failover de uma infraestrutura complexa distribuída deve ser [testado](/azure/architecture/resiliency/disaster-recovery-azure-applications#disaster-simulation) pelo menos uma vez. 
+3. O failover de uma infraestrutura complexa distribuída deve ser [testado](/azure/architecture/reliability/disaster-recovery#disaster-recovery-plan) pelo menos uma vez. 
 
 4. A sincronização de entidades pode levar algum tempo, cerca de 50 a 100 entidades por minuto.
 

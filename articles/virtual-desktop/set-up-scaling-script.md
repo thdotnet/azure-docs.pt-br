@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 7687abf5fc4af0eea9fa6aa210cfd6734cec2b36
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: e9f500e3ab965b9dbfc5e395a6572497c85f6f8f
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65410582"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755137"
 ---
 # <a name="automatically-scale-session-hosts"></a>Dimensionar automaticamente hosts da sessão
 
@@ -26,7 +26,7 @@ O ambiente em que você executar o script deve ter o seguinte:
 
 - Um locatário de área de trabalho Virtual do Windows e a conta ou uma entidade de serviço com permissões para consultar esse locatário (por exemplo, o colaborador de RDS).
 - VMs do pool host de sessão configurado e registrado com o serviço de área de trabalho Virtual do Windows.
-- Uma máquina virtual adicional que executa a tarefa agendada por meio do Agendador de tarefas e tem acesso à rede para hosts de sessão. Isso será reffered para posteriormente neste documento como scaler VM.
+- Uma máquina virtual adicional que executa a tarefa agendada por meio do Agendador de tarefas e tem acesso à rede para hosts de sessão. Isso será ser chamado posteriormente neste documento de VM do scaler.
 - O [módulo Microsoft Azure Resource Manager PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps) instalado na VM que executa a tarefa agendada.
 - O [módulo Windows PowerShell de área de trabalho Virtual](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) instalado na VM que executa a tarefa agendada.
 
@@ -81,7 +81,7 @@ Em seguida, você precisará criar as credenciais armazenadas com segurança:
 
 Insira os valores relevantes para os campos a seguir para atualizar as configurações de script de colocação em escala em config. XML:
 
-| Campo                     | Descrição                    |
+| Campo                     | DESCRIÇÃO                    |
 |-------------------------------|------------------------------------|
 | AADTenantId                   | ID de locatário do AD do Azure que associa a assinatura em que executa o host de sessão de VMs     |
 | AADApplicationId              | ID da entidade de segurança de aplicativo de serviço                                                       |

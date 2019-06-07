@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/09/2019
+ms.date: 06/06/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 5a08c2ae0b82841fd15aac4af06a8874cf64ba53
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 04ceac3b06972687ef6cdeac4dad1f07fea611cb
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65949999"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754897"
 ---
 # <a name="understand-role-definitions-for-azure-resources"></a>Compreender as definições de função nos recursos do Azure
 
@@ -48,7 +48,7 @@ Operações são especificadas com cadeias de caracteres que têm o seguinte for
 
 A parte `{action}` de uma cadeia de caracteres de operação especifica o tipo de operações que você pode executar em um tipo de recurso. Por exemplo, você verá as seguintes subcadeias de caracteres em `{action}`:
 
-| Subcadeia de caracteres de ação    | Descrição         |
+| Subcadeia de caracteres de ação    | DESCRIÇÃO         |
 | ------------------- | ------------------- |
 | `*` | O caractere curinga concede acesso a todas as operações que correspondem à cadeia de caracteres. |
 | `read` | Habilita operações de leitura (GET). |
@@ -136,7 +136,7 @@ Proprietário
 &nbsp;&nbsp;&nbsp;&nbsp;Ações<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`*`
 
-Colaborador de Dados do Storage Blob
+Colaborador de dados de Blob de armazenamento
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ações<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/delete`<br>
@@ -157,7 +157,7 @@ Para saber mais sobre a segurança de plano de dados e gerenciamento, confira o 
 
 Para visualizar e trabalhar com operações de dados, você deve ter as versões corretas das ferramentas ou SDKs:
 
-| Tool  | Version  |
+| Ferramenta  | Version  |
 |---------|---------|
 | [PowerShell do Azure](/powershell/azure/install-az-ps) | 1.1.0 ou posterior |
 | [CLI do Azure](/cli/azure/install-azure-cli) | 2.0.30 ou posterior |
@@ -179,7 +179,7 @@ O portal do Azure também permite aos usuários procurar e gerenciar o conteúdo
 
 Uma permissão `Actions`especifica as operações de gerenciamento permitidas pela função a ser realizada. É uma coleção de cadeias de operação que identificam as operações protegíveis dos provedores de recursos do Azure. Aqui estão alguns exemplos de operações de gerenciamento que podem ser usadas no `Actions`.
 
-| Cadeia de caracteres da operação    | Descrição         |
+| Cadeia de caracteres da operação    | DESCRIÇÃO         |
 | ------------------- | ------------------- |
 | `*/read` | Concede acesso a operações de leitura a todos os tipos de recursos de todos os provedores de recursos do Azure.|
 | `Microsoft.Compute/*` | Concede acesso a todas as operações a todos os tipos de recursos no provedor de recursos Microsoft.Compute.|
@@ -199,7 +199,7 @@ A permissão `NotActions` especifica as operações de gerenciamento que são ex
 
 Uma permissão `DataActions` que especifica as operações de dados permitidas pela função em seus dados dentro desse objeto. Por exemplo, se um usuário tem acesso de leitura blob dados para uma conta de armazenamento, eles podem ler blobs dentro dessa conta de armazenamento. Aqui estão alguns exemplos de operações de dados que podem ser usados em `DataActions`.
 
-| Cadeia de caracteres da operação    | Descrição         |
+| Cadeia de caracteres da operação    | DESCRIÇÃO         |
 | ------------------- | ------------------- |
 | `Microsoft.Storage/storageAccounts/ blobServices/containers/blobs/read` | Retorna um blob ou uma lista de blobs. |
 | `Microsoft.Storage/storageAccounts/ blobServices/containers/blobs/write` | Retorna o resultado de escrever um blob. |
@@ -216,7 +216,7 @@ O `NotDataActions` permissão especifica as operações de dados que são exclu�
 
 ## <a name="assignablescopes"></a>AssignableScopes
 
-A propriedade `AssignableScopes` especifica os escopos (assinaturas, grupos de gerenciamento ou recursos) em que a função está disponível para atribuição. Você pode disponibilizar a função para atribuição apenas nas assinaturas ou grupos de recursos que a exijam e não sobrecarregar a experiência do usuário nas assinaturas ou grupos de recursos restantes. Você deve usar pelo menos uma assinatura, grupo de recursos ou ID de recurso.
+O `AssignableScopes` propriedade especifica os escopos (assinaturas, grupos de recursos ou recursos) que têm essa definição de função disponível. Você pode disponibilizar a função para atribuição em somente a assinaturas ou grupos de recursos que precisam dele e não sobrecarregar a experiência do usuário para o restante do assinaturas ou grupos de recursos. Você deve usar pelo menos uma assinatura, grupo de recursos ou ID de recurso.
 
 As funções internas têm `AssignableScopes` definido como o escopo raiz (`"/"`). O escopo raiz indica que a função está disponível para atribuição em todos os escopos. Exemplos de escopos válidos que podem ser atribuídos incluem:
 

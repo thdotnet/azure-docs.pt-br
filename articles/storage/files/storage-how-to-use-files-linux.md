@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/29/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 73ed98bf950f7c9f52e2b8eeb431fe4b36bfe324
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: 375d0de60b916becc8e86a1e33cf4ed46f12c077
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66427933"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754827"
 ---
 # <a name="use-azure-files-with-linux"></a>Usar o Arquivos do Azure com o Linux
 
@@ -75,7 +75,10 @@ ms.locfileid: "66427933"
 
     Em outras distribuições, use o gerenciador de pacotes apropriado ou [compile do código-fonte](https://wiki.samba.org/index.php/LinuxCIFS_utils#Download)
 
-* **Decida as permissões de diretório/arquivo do compartilhamento montado**: Nos exemplos abaixo, a permissão `0777` é usada para dar permissões de leitura, gravação e execução a todos os usuários. Você pode substituí-las por outras [permissões chmod](https://en.wikipedia.org/wiki/Chmod) se desejar.
+* **Decida as permissões de diretório/arquivo do compartilhamento montado**: Nos exemplos abaixo, a permissão `0777` é usada para dar permissões de leitura, gravação e execução a todos os usuários. Você pode substituí-lo com outros [permissões chmod](https://en.wikipedia.org/wiki/Chmod) conforme desejado, porém isso significa que potencialmente restringindo o acesso. Se você usar outras permissões, considere a possibilidade de usar também o uid e gid para manter o acesso para os grupos locais de sua escolha.
+
+> [!NOTE]
+> Se você não atribuir explicitamente permissão de arquivo e diretório com dir_mode e file_mode, eles usarão como padrão para 0755.
 
 * **Verifique se a porta 445 está aberta**: O SMB se comunica pela porta TCP 445: confira se o firewall não está bloqueando as portas TCP 445 do computador cliente.
 
@@ -89,7 +92,7 @@ ms.locfileid: "66427933"
     mkdir -p <storage_account_name>/<file_share_name>
     ```
 
-1. **Use o comando de montagem para montar o compartilhamento de arquivos do Azure**: Lembre-se de substituir **< nome_da_conta_de_armazenamento >** , **< nome_do_compartilhamento >** , **< smb_version >** , **< chave_da_conta_de_armazenamento >** , e **< ponto de montagem >** com as informações apropriadas para o seu ambiente. Se a sua distribuição do Linux dá suporte a SMB 3.0 com criptografia (consulte [requisitos do cliente SMB entender](#smb-client-reqs) para obter mais informações), use **3.0** para **< smb_version >** . Para distribuições de Linux que não dão suporte a SMB 3.0 com criptografia, use **2.1** para **< smb_version >** . Um compartilhamento de arquivos do Azure só pode ser montado fora de uma região do Azure (incluindo local ou em outra região do Azure) com SMB 3.0. 
+1. **Use o comando de montagem para montar o compartilhamento de arquivos do Azure**: Lembre-se de substituir **< nome_da_conta_de_armazenamento >** , **< nome_do_compartilhamento >** , **< smb_version >** , **< chave_da_conta_de_armazenamento >** , e **< ponto de montagem >** com as informações apropriadas para o seu ambiente. Se a sua distribuição do Linux dá suporte a SMB 3.0 com criptografia (consulte [requisitos do cliente SMB entender](#smb-client-reqs) para obter mais informações), use **3.0** para **< smb_version >** . Para distribuições de Linux que não dão suporte a SMB 3.0 com criptografia, use **2.1** para **< smb_version >** . Um compartilhamento de arquivos do Azure só pode ser montado fora de uma região do Azure (incluindo local ou em outra região do Azure) com SMB 3.0. Se desejar, você pode alterar as permissões de arquivo e diretório do seu compartilhamento montado, mas, isso poderia significar que restringir o acesso.
 
     ```bash
     sudo mount -t cifs //<storage_account_name>.file.core.windows.net/<share_name> <mount_point> -o vers=<smb_version>,username=<storage_account_name>,password=<storage_account_key>,dir_mode=0777,file_mode=0777,serverino

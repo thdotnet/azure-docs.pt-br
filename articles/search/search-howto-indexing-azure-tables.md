@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 5f0e7feb52b34a4bd29bef01925bf9ea8f84d7db
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: bca7c1b9ffe7ac0ab82f4287bba201a78fbf726a
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024794"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755075"
 ---
 # <a name="index-azure-table-storage-with-azure-search"></a>Indexação do Armazenamento de Tabelas do Azure com o Azure Search
 Este artigo mostra como usar o Azure Search para indexar dados armazenados no Armazenamento de Tabelas do Azure.
@@ -115,6 +115,8 @@ Esse indexador é executado a cada duas horas. (O intervalo de agendamento é de
 
 Para obter mais informações sobre Criar a API do Indexador, consulte [Criar Indexador](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
 
+Para obter mais informações sobre como definir agendas do indexador, consulte [como programar indexadores para o Azure Search](search-howto-schedule-indexers.md).
+
 ## <a name="deal-with-different-field-names"></a>Lidar com nomes de campos diferentes
 Algumas vezes, os nomes de campos no índice existente são diferentes dos nomes de propriedades na sua tabela. Você pode usar os mapeamentos de campo para mapear os nomes de propriedade da tabela para os nomes de campo em seu índice de pesquisa. Para saber mais sobre os mapeamentos de campo, consulte [Os mapeamentos de campo do Indexador do Azure Search reduzem as diferenças entre fontes de dados e índices de pesquisa](search-indexer-field-mappings.md).
 
@@ -128,7 +130,7 @@ Como as linhas de tabela têm uma chave composta, o Azure Search gera um campo s
 >
 >
 
-## <a name="incremental-indexing-and-deletion-detection"></a>Indexação incremental e detecção de exclusão 
+## <a name="incremental-indexing-and-deletion-detection"></a>Indexação incremental e detecção de exclusão
 Ao configurar um indexador de tabela para ser executado em um agendamento, ele reindexará somente linhas novas ou atualizadas, conforme determinado pelo valor `Timestamp` de uma linha. Você não precisa especificar uma política de detecção de alteração. Indexação incremental é habilitada automaticamente para você.
 
 Para indicar que determinados documentos devem ser removidos do índice, você pode usar uma estratégia de exclusão reversível. Em vez de excluir uma linha, adicione uma propriedade para indicar que ela foi excluída e configure uma política de detecção de exclusão reversível na fonte de dados. Por exemplo, a política a seguir considerará que uma linha foi excluída se esta tiver uma propriedade de metadados `IsDeleted` com o valor `"true"`:

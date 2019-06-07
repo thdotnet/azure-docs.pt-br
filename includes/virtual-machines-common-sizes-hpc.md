@@ -2,18 +2,18 @@
 title: Arquivo de inclusão
 description: Arquivo de inclusão
 services: virtual-machines
-author: jonbeck7
+author: vermagit
 ms.service: virtual-machines
 ms.topic: include
 ms.date: 04/26/2019
-ms.author: azcspmt;jonbeck;cynthn
+ms.author: azcspmt;jonbeck;cynthn;amverma
 ms.custom: include file
-ms.openlocfilehash: f3c1a946afb7f51a1c7543dabae7f2f42ff466be
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 9b4bdee19c883252e7de140ac7b19babd43d1df8
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66145844"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755193"
 ---
 Série H máquinas virtuais (VMs) são projetadas para oferecer desempenho de classe de liderança, escalabilidade MPI e economia para uma variedade de cargas de trabalho HPC reais.
 
@@ -27,17 +27,25 @@ VMs da série H são otimizadas para aplicativos orientados pela alta frequênci
 
 ## <a name="hb-series"></a>Série HB
 
-Armazenamento Premium: Suporte para o armazenamento Premium de cache: Com suporte
+ACU: 199-216
+
+Armazenamento Premium: Com suporte
+
+Cache de Armazenamento Premium: Com suporte
 
 | Tamanho | vCPU | Processador | Memória (GB) | Largura de banda de memória GB/s | Frequência de base da CPU (GHz) | Frequência de todos os núcleos (GHz, horário de pico) | Frequência de núcleo único (GHz, horário de pico) | Desempenho de RDMA (GB/s) | Suporte do MPI | Armazenamento temporário (GB) | Discos de dados máximos | Placas de rede Ethernet máx |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_HB60rs | 60 | AMD EPYC 7551 | 240 | 263 | 2.0 | 2.55 | 2.55 | 100 | Todos | 700 | 4 | 1 |
+| Standard_HB60rs | 60 | AMD EPYC 7551 | 240 | 263 | 2,0 | 2.55 | 2.55 | 100 | Todos | 700 | 4 | 1 |
 
 <br>
 
 ## <a name="hc-series"></a>Série HC
 
-Armazenamento Premium: Suporte para o armazenamento Premium de cache: Com suporte
+ACU: 297-315
+
+Armazenamento Premium: Com suporte
+
+Cache de Armazenamento Premium: Com suporte
 
 
 | Tamanho | vCPU | Processador | Memória (GB) | Largura de banda de memória GB/s | Frequência de base da CPU (GHz) | Frequência de todos os núcleos (GHz, horário de pico) | Frequência de núcleo único (GHz, horário de pico) | Desempenho de RDMA (GB/s) | Suporte do MPI | Armazenamento temporário (GB) | Discos de dados máximos | Placas de rede Ethernet máx |
@@ -51,19 +59,19 @@ Armazenamento Premium: Suporte para o armazenamento Premium de cache: Com suport
 
 ACU: 290-300
 
-Armazenamento Premium:  Sem Suporte
+Armazenamento Premium:  Sem suporte
 
-Cache de Armazenamento Premium:  Sem Suporte
+Cache de Armazenamento Premium:  Sem suporte
 
 | Tamanho | vCPU | Processador | Memória (GB) | Largura de banda de memória GB/s | Frequência de base da CPU (GHz) | Frequência de todos os núcleos (GHz, horário de pico) | Frequência de núcleo único (GHz, horário de pico) | Desempenho de RDMA (GB/s) | Suporte do MPI | Armazenamento temporário (GB) | Discos de dados máximos | Placas de rede Ethernet máx |
 | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_H8 | 8 | Intel Xeon E5 2667 v3 | 56 | 40 | 3.2 | 3.3 | 3.6 | 56 | Intel 5.x, MS-MPI | 1000 | 32 | 2 |
-| Standard_H16 | 16 | Intel Xeon E5 2667 v3 | 112 | 80 | 3.2 | 3.3 | 3.6 |  56 | Intel 5.x, MS-MPI | 2000 | 64 | 4 |
-| Standard_H8m | 8 | Intel Xeon E5 2667 v3 | 112 | 40 | 3.2 | 3.3 | 3.6 | 56 | Intel 5.x, MS-MPI | 1000 | 32 | 2 |
-| Standard_H16m | 16 | Intel Xeon E5 2667 v3 | 224 | 80 | 3.2 | 3.3 | 3.6 | 56 | Intel 5.x, MS-MPI | 2000 | 64 | 4 |
+| Standard_H8 | 8 | Intel Xeon E5 2667 v3 | 56 | 40 | 3.2 | 3.3 | 3.6 | - | Intel 5.x, MS-MPI | 1000 | 32 | 2 |
+| Standard_H16 | 16 | Intel Xeon E5 2667 v3 | 112 | 80 | 3.2 | 3.3 | 3.6 |  - | Intel 5.x, MS-MPI | 2000 | 64 | 4 |
+| Standard_H8m | 8 | Intel Xeon E5 2667 v3 | 112 | 40 | 3.2 | 3.3 | 3.6 | - | Intel 5.x, MS-MPI | 1000 | 32 | 2 |
+| Standard_H16m | 16 | Intel Xeon E5 2667 v3 | 224 | 80 | 3.2 | 3.3 | 3.6 | - | Intel 5.x, MS-MPI | 2000 | 64 | 4 |
 | Standard_H16r <sup>1</sup> | 16 | Intel Xeon E5 2667 v3 | 112 | 80 | 3.2 | 3.3 | 3.6 | 56 | Intel 5.x, MS-MPI | 2000 | 64 | 4 |
 | Standard_H16mr <sup>1</sup> | 16 | Intel Xeon E5 2667 v3 | 224 | 80 | 3.2 | 3.3 | 3.6 | 56 | Intel 5.x, MS-MPI | 2000 | 64 | 4 |
 
-<sup>1</sup> Para os aplicativos MPI, a rede de back-end RDMA dedicada é habilitada pela rede InfiniBand FDR, que fornece latência ultrabaixa e largura de banda alta.
+<sup>1</sup> para aplicativos MPI, a rede de back-end RDMA dedicada é habilitada pela rede InfiniBand FDR.
 
 <br>

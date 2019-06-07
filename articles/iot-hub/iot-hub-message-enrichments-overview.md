@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: robinsh
-ms.openlocfilehash: 6ddfd90956fde0c57e14083a3704cbf365456c75
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: 13e35ab93fc37541548785c6355489eaf3a3efc2
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66735156"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754554"
 ---
 # <a name="message-enrichments-for-device-to-cloud-iot-hub-messages-preview"></a>Aprimoramentos de mensagem para mensagens do IoT Hub do dispositivo para nuvem (visualização)
 
@@ -77,7 +77,7 @@ Aprimoramentos de mensagem estão disponíveis sem nenhum custo adicional. No mo
 
 ## <a name="availability"></a>Disponibilidade
 
-Esse recurso está disponível em visualização e está disponível em todas as regiões, exceto o Leste dos EUA, oeste dos EUA, Europa Ocidental, [do Azure governamental](/azure/azure-government/documentation-government-welcome), [do Azure na China 21Vianet](/azure/china/china-welcome), e [Azure Alemanha](https://azure.microsoft.com/global-infrastructure/germany/).
+Esse recurso está disponível em visualização e está disponível em todas as regiões, exceto o Leste dos EUA, oeste dos EUA, Europa Ocidental, [do Azure governamental](/azure/azure-government/documentation-government-welcome), [do Azure na China 21Vianet](/azure/china), e [Azure Alemanha](https://azure.microsoft.com/global-infrastructure/germany/).
 
 ## <a name="next-steps"></a>Próximas etapas
 

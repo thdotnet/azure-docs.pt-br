@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/22/2019
+ms.date: 06/06/2019
 ms.author: magoedte
-ms.openlocfilehash: b410dab40d5434a6f23950a9f151e50240ace63b
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 436685f3bba58ed7d06dfe834d808e7fe422176b
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64916371"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751987"
 ---
 # <a name="collect-log-data-with-the-azure-log-analytics-agent"></a>Colete dados de log com o agente do Log Analytics do Azure
 
@@ -59,7 +59,8 @@ Começando com versões lançadas depois de agosto de 2018, estamos fazendo as s
 * Não há suporte para novas versões do AMI.  
 * Apenas versões que executam o SSL 1.x por padrão são suportadas.
 
-Se você estiver usando uma distribuição ou versão que não é suportada no momento e não se alinha ao nosso modelo de suporte, recomendamos que você distribua esse repositório, reconhecendo que o suporte da Microsoft não fornecerá assistência com as versões do agente bifurcado.
+>[!NOTE]
+>Se você estiver usando uma distribuição ou versão que não é suportada no momento e não se alinha ao nosso modelo de suporte, recomendamos que você distribua esse repositório, reconhecendo que o suporte da Microsoft não fornecerá assistência com as versões do agente bifurcado.
 
 * Amazon Linux 2017.09 (x64)
 * CentOS Linux 6 (x86 x64) e 7 (x64)  
@@ -73,13 +74,28 @@ Se você estiver usando uma distribuição ou versão que não é suportada no m
 >OpenSSL 1.1.0 só tem suporte em plataformas de x86_x64 (64 bits) e OpenSSL mais cedo do que 1. x não tem suporte em qualquer plataforma.
 >
 
+### <a name="agent-prerequisites"></a>Pré-requisitos do agente
+
+A tabela a seguir destaca os pacotes necessários para distribuições Linux com suporte que o agente será instalado no.
+
+|Pacote necessário |DESCRIÇÃO |Versão mínima |
+|-----------------|------------|----------------|
+|Glibc |    Biblioteca GNU C | 2.5-12 
+|Openssl    | Bibliotecas OpenSSL | 1.0 ou 1.1 |
+|Curl | cliente Web cURL | 7.15.5 |
+|Python-ctypes | | 
+|PAM | Módulos de autenticação conectáveis | | 
+
+>[!NOTE]
+>Rsyslog ou syslog-ng são necessários para coletar mensagens de syslog. O daemon syslog padrão na versão 5 do Red Hat Enterprise Linux, CentOS e na versão Oracle Linux (sysklog) não tem suporte para a coleta de eventos de syslog. Para coletar dados de syslog nessa versão das distribuições, o daemon rsyslog deverá ser instalado e configurado para substituir sysklog.
+
 ## <a name="tls-12-protocol"></a>Protocolo TLS 1.2
 Para garantir a segurança dos dados em trânsito para os logs do Azure Monitor, recomendamos que você configure o agente para usar pelo menos segurança de camada de transporte (TLS) 1.2. Constatou-se que versões mais antigas do protocolo TLS/protocolo SSL eram vulneráveis e embora elas ainda funcionem no momento para permitir a compatibilidade com versões anteriores, elas **não são recomendadas**.  Para obter mais informações, examine [Enviando dados com segurança usando o TLS 1.2](../../azure-monitor/platform/data-security.md#sending-data-securely-using-tls-12). 
 
 ## <a name="network-firewall-requirements"></a>Requisitos de firewall de rede
 As informações abaixo listam as informações de configuração de proxy e firewall necessárias para o agente do Linux e Windows para se comunicar com os logs do Azure Monitor.  
 
-|Recurso de agente|Portas |Direção |Ignorar a inspeção de HTTPS|
+|Recurso de agente|Portas |Direction |Ignorar a inspeção de HTTPS|
 |------|---------|--------|--------|   
 |*.ods.opinsights.azure.com |Porta 443 |Saída|Sim |  
 |*.oms.opinsights.azure.com |Porta 443 |Saída|Sim |  
@@ -103,9 +119,9 @@ Para o agente Linux, o servidor proxy pode ser especificado durante a instalaç�
 |--------|-------------|
 |Protocol | HTTPS |
 |usuário | Nome de usuário opcional para autenticação de proxy |
-|Senha | Senha opcional para autenticação de proxy |
+|password | Senha opcional para autenticação de proxy |
 |proxyhost | Endereço ou FQDN do servidor proxy/gateway do Log Analytics |
-|porta | Número da porta opcional para o servidor proxy/gateway do Log Analytics |
+|port | Número da porta opcional para o servidor proxy/gateway do Log Analytics |
 
 Por exemplo: `https://user01:password@proxy01.contoso.com:30443`
 
@@ -115,7 +131,7 @@ Por exemplo: `https://user01:password@proxy01.contoso.com:30443`
 ## <a name="install-and-configure-agent"></a>Instalar e configurar o agente 
 Conectar máquinas na sua assinatura do Azure ou um ambiente híbrido diretamente com os logs do Azure Monitor pode ser feito usando métodos diferentes, dependendo de suas necessidades. A tabela a seguir realça cada método para determinar o que funciona melhor em sua organização.
 
-|Fonte | Método | DESCRIÇÃO|
+|`Source` | Método | DESCRIÇÃO|
 |-------|-------------|-------------|
 |VM do Azure| - Extensão de VM do Log Analytics para [Windows](../../virtual-machines/extensions/oms-windows.md) ou [Linux](../../virtual-machines/extensions/oms-linux.md) usando a CLI do Azure ou com um modelo do Azure Resource Manager<br>- [Manualmente no portal do Azure](../../azure-monitor/learn/quick-collect-azurevm.md?toc=/azure/azure-monitor/toc.json). | A extensão instala o agente do Log Analytics nas máquinas virtuais do Azure e as registra em uma área de trabalho do Azure Monitor existente.|
 | Computador Windows híbrido|- [Instalação manual](agent-windows.md)<br>- [DSC de Automação do Azure](agent-windows.md#install-the-agent-using-dsc-in-azure-automation)<br>- [Modelo do Resource Manager com o Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/MicrosoftMonitoringAgent-ext-win) |Instalar o agente Microsoft Monitoring da linha de comando ou usando um método automatizado como DSC de automação do Azure, [System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications), ou com um modelo do Azure Resource Manager, se você implantou o Microsoft Azure Stack no seu datacenter.| 

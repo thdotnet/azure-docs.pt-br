@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/11/2018
+ms.date: 06/06/2019
 ms.author: Kumud
-ms.openlocfilehash: 77c3c595994092ff2ca68f3cefa5eb3c8a54bcd6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ec68038a5b0fe7edca095e0d9b190d5da09c8e82
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60735071"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754673"
 ---
 # <a name="metrics-and-health-diagnostics-for-standard-load-balancer"></a>Diagnóstico de métricas e integridade para o Load Balancer Standard
 
@@ -31,14 +31,14 @@ Este artigo fornece um tour rápido dessas funcionalidades e oferece maneiras de
 
 ## <a name = "MultiDimensionalMetrics"></a>Métricas multidimensionais
 
-O Azure Load Balancer fornece novas métricas multidimensionais por meio das novas Métricas do Azure (versão prévia) no portal do Azure e ajuda a obter insights de diagnóstico em tempo real sobre os recursos do balanceador de carga. 
+O Azure Load Balancer fornece novas métricas multidimensionais por meio de novas métricas do Azure no portal do Azure e ajudá-lo a obter informações de diagnóstico em tempo real em sua carga de recursos do balanceador de. 
 
 As várias configurações do Load Balancer Standard oferecem as seguintes métricas:
 
 | Métrica | Tipo de recurso | DESCRIÇÃO | Agregação recomendada |
 | --- | --- | --- | --- |
-| Disponibilidade do VIP (disponibilidade do caminho de dados) | Balanceador de carga público | O Load Balancer Standard usa continuamente o caminho de dados de dentro de uma região para o front-end do balanceador de carga e até a pilha do SDN compatível com a sua VM. Contanto que instâncias íntegras permaneçam, a medição seguirá o mesmo caminho que o tráfego com balanceamento de carga do seu aplicativo. O caminho de dados que seus clientes usam também é validado. A medição é invisível para seu aplicativo e não interfere com outras operações.| Média |
-| Disponibilidade do DIP (status de investigação de integridade) |  Balanceador de carga público e interno | O Load Balancer Standard usa um serviço de investigação de integridade distribuído que monitora a integridade do ponto de extremidade do aplicativo de acordo com as definições de configuração. Essa métrica fornece uma exibição agregada ou por ponto de extremidade filtrado de cada ponto de extremidade de instância no pool do balanceador de carga. É possível ver como o Load Balancer exibe a integridade de seu aplicativo conforme indicado pela configuração de sua investigação de integridade. |  Média |
+| Disponibilidade de caminho de dados (disponibilidade de VIP)| Balanceador de carga público | O Load Balancer Standard usa continuamente o caminho de dados de dentro de uma região para o front-end do balanceador de carga e até a pilha do SDN compatível com a sua VM. Contanto que instâncias íntegras permaneçam, a medição seguirá o mesmo caminho que o tráfego com balanceamento de carga do seu aplicativo. O caminho de dados que seus clientes usam também é validado. A medição é invisível para seu aplicativo e não interfere com outras operações.| Média |
+| Status de investigação de integridade (disponibilidade DIP) |  Balanceador de carga público e interno | O Load Balancer Standard usa um serviço de investigação de integridade distribuído que monitora a integridade do ponto de extremidade do aplicativo de acordo com as definições de configuração. Essa métrica fornece uma exibição agregada ou por ponto de extremidade filtrado de cada ponto de extremidade de instância no pool do balanceador de carga. É possível ver como o Load Balancer exibe a integridade de seu aplicativo conforme indicado pela configuração de sua investigação de integridade. |  Média |
 | Pacotes SYN (sincronizar) |  Balanceador de carga público | O Load Balancer Standard não encerra conexões TCP nem interage com fluxos de pacote TCP ou UDP. Fluxos e seus handshakes estão sempre entre a origem e a instância VM. Para solucionar melhor os problemas dos cenários de protocolo TCP, é possível usar contadores de pacotes SYN para entender quantas tentativas de conexão TCP são feitas. A métrica informa o número de pacotes SYN do TCP que foram recebidos.| Média |
 | Conexões SNAT |  Balanceador de carga público |O Load Balancer Standard relata o número de fluxos de saída mascarados para o front-end do endereço IP Público. As portas SNAT (conversão de endereços de rede) de origem são um recurso esgotável. Essa métrica pode dar uma indicação do grau de dependência que seu aplicativo tem do SNAT para fluxos com origem externa. Contadores para fluxos SNAT de saída bem-sucedidos e com falha são relatados e podem ser usados para solucionar problemas e entender a integridade dos fluxos de saída.| Média |
 | Contadores de bytes |  Balanceador de carga público e interno | O Load Balancer Standard informa os dados processados por front-end.| Média |
@@ -46,18 +46,18 @@ As várias configurações do Load Balancer Standard oferecem as seguintes métr
 
 ### <a name="view-your-load-balancer-metrics-in-the-azure-portal"></a>Exibir suas métricas do balanceador de carga no portal do Azure
 
-O portal do Azure expõe as métricas do balanceador de carga por meio da página Métricas (versão prévia), disponível na página de recursos do balanceador de carga para um recurso específico e na página do Azure Monitor. 
+O portal do Azure expõe as métricas de Balanceador de carga por meio da página métricas, que está disponível na página de recursos do balanceador de carga para um determinado recurso e a página do Azure Monitor. 
 
 Para exibir as métricas de seus recursos do Load Balancer Standard:
-1. Acesse a página Métricas (versão prévia) e siga estes procedimentos:
+1. Vá para a página de métricas e siga um destes procedimentos:
    * Na página de recursos do balanceador de carga, selecione o tipo de métrica na lista suspensa.
    * Na página do Azure Monitor, selecione o recurso do balanceador de carga.
 2. Defina o tipo de agregação adequado.
 3. Ou configure a filtragem e o agrupamento necessários.
 
-![Exibição de métricas para o Load Balancer Standard](./media/load-balancer-standard-diagnostics/LBMetrics1.png)
+    ![Métricas para o balanceador de carga padrão](./media/load-balancer-standard-diagnostics/lbmetrics1anew.png)
 
-*Figura: Disponibilidade do DIP e métrica de status de investigação de integridade do Standard Load Balancer*
+    *Figura: Métrica de disponibilidade de caminho de dados para o balanceador de carga padrão*
 
 ### <a name="retrieve-multi-dimensional-metrics-programmatically-via-apis"></a>Recuperar as métricas multidimensionais programaticamente por meio de APIs
 
@@ -72,15 +72,15 @@ A métrica de disponibilidade do VIP descreve a integridade do caminho de dados 
 - Obter detalhes e entender se a plataforma na qual o serviço é implantado está íntegra ou se a instância do aplicativo ou o SO convidado está íntegro.
 - Isolar se um evento está relacionado ao seu serviço ou o plano de dados subjacente. Não confunda essa métrica com o status de investigação de integridade ("disponibilidade DIP").
 
-Para obter a disponibilidade de VIP para os recursos do Load Balancer Standard:
+Para obter a disponibilidade de caminho de dados para os seus recursos do balanceador de carga padrão:
 1. Verifique se o recurso do balanceador de carga correto está selecionado. 
-2. Na lista suspensa **Métrica**, selecione **Disponibilidade do VIP**. 
+2. No **métrica** lista suspensa, selecione **disponibilidade de caminho de dados**. 
 3. Na lista suspensa **Agregação**, selecione **Méd**. 
-4. Além disso, adicione um filtro no endereço VIP ou na porta VIP como a dimensão com o endereço IP de front-end ou a porta de front-end necessários e agrupe-os pela dimensão selecionada.
+4. Além disso, adicione um filtro do endereço de Frontend IP ou a porta de front-end, como a dimensão com o endereço IP de front-end solicitado ou a porta front-end e, em seguida, agrupá-los por dimensão selecionada.
 
 ![Investigação do VIP](./media/load-balancer-standard-diagnostics/LBMetrics-VIPProbing.png)
 
-*Figura: Detalhes de investigação do VIP do Load Balancer*
+*Figura: Detalhes de investigação front-end balanceador de carga*
 
 A métrica é gerada por uma medida de ativa e dentro da faixa. Um serviço de investigação dentro da região origina o tráfego da medida. O serviço é ativado assim que você cria uma implantação com um front-end público, e ele continua até que você remova o front-end. 
 
@@ -93,7 +93,7 @@ A disponibilidade de VIP falha pelos seguintes motivos:
 - Sua implantação não tem nenhuma VM íntegra restante no pool de back-end. 
 - Ocorreu uma interrupção de infraestrutura.
 
-Para fins de diagnóstico, é possível usar a [métrica de disponibilidade do VIP junto com o status de investigação de integridade](#vipavailabilityandhealthprobes).
+Para fins de diagnóstico, você pode usar o [métrica de disponibilidade de caminho de dados junto com o status de investigação de integridade](#vipavailabilityandhealthprobes).
 
 Use **Média** como a agregação para a maioria dos cenários.
 
@@ -101,13 +101,9 @@ Use **Média** como a agregação para a maioria dos cenários.
 
 A métrica de status de investigação de integridade descreve a integridade da implantação do aplicativo, conforme configurado por você ao configurar a investigação de integridade do balanceador de carga. O balanceador de carga usa o status da investigação de integridade para determinar para onde enviar novos fluxos. As investigações de integridade se originam de um endereço de infraestrutura do Azure e são visíveis no sistema operacional convidado da VM.
 
-Para obter a disponibilidade do DIP para os recursos do Load Balancer Standard:
-1. Selecione a métrica **Disponibilidade do DIP** com o tipo de agregação **Méd**. 
-2. Aplique um filtro no endereço IP ou porta (ou ambos) de VIP necessário.
-
-![Disponibilidade do DIP](./media/load-balancer-standard-diagnostics/LBMetrics-DIPAvailability.png)
-
-*Figura: Disponibilidade do VIP do Load Balancer*
+Para obter o status de investigação de integridade de seus recursos do balanceador de carga padrão:
+1. Selecione o **Status de investigação de integridade** métrica com **Avg** tipo de agregação. 
+2. Aplica um filtro sobre o endereço IP de Frontend solicitado ou porta (ou ambos).
 
 As investigações de integridade falham pelos seguintes motivos:
 - Ao configurar uma investigação de integridade em uma porta que não está escutando ou não está respondendo ou que está usando o protocolo incorreto. Se seu serviço está usando regras de DSR (retorno de servidor direto ou IP flutuante), verifique ele está escutando no endereço IP da configuração IP do NIC e não apenas no loopback configurado com o endereço IP de front-end.
@@ -165,13 +161,13 @@ Você pode usar métricas de investigação de integridade para entender como o 
 
 É possível executar uma etapa adicional e usar as métricas de disponibilidade do VIP para obter insights sobre como o Azure exibe a integridade do plano de dados subjacente responsável por sua implantação específica. Ao combinar as duas métricas, é possível isolar onde a falha pode estar, conforme ilustrado nesse exemplo:
 
-![Diagnóstico de VIP](./media/load-balancer-standard-diagnostics/LBMetrics-DIPnVIPAvailability.png)
+![Combinando as métricas de disponibilidade de caminho de dados e Status de investigação de integridade](./media/load-balancer-standard-diagnostics/lbmetrics-dipnvipavailability-2bnew.png)
 
-*Figura: Combinando métricas de disponibilidade do DIP e do VIP*
+*Figura: Combinando as métricas de disponibilidade de caminho de dados e Status de investigação de integridade*
 
 O gráfico exibe as seguintes informações:
-- A própria infraestrutura estava íntegra, a infraestrutura que hospeda suas VMs foi alcançada e mais de uma VM foi colocada no back-end. Essas informações são indicadas pelo traço azul para disponibilidade do VIP, que é de 100 por cento. 
-- No entanto, o status de investigação de integridade (disponibilidade do VIP) está em 0 por cento no início do gráfico, conforme indicado pelo traço laranja. A área circulada em verde destaca onde o status (disponibilidade do DIP) se tornou íntegro e em que ponto a implantação do cliente foi capaz de aceitar novos fluxos.
+- A infraestrutura que hospeda suas VMs foi indisponível e em 0% no início do gráfico. Posteriormente, a infraestrutura estava íntegra e as VMs foram acessíveis e mais de uma VM foi colocada no back-end. Essa informação é indicada pelo traço azul para disponibilidade de caminho de dados (disponibilidade de VIP), que foi posteriormente em 100 por cento. 
+- O status de investigação de integridade (disponibilidade DIP), indicado pelo traço roxo, é de 0% no início do gráfico. A área circulada em verdes Destaques em que o status de investigação de integridade (disponibilidade DIP) se tornaram íntegro, e no momento em que a implantação do cliente foi capaz de aceitar novos fluxos.
 
 O gráfico permite que os clientes resolvam problemas da implantação sozinhos sem a necessidade de adivinhar ou perguntar ao suporte se outros problemas estão ocorrendo. O serviço não estava disponível porque as investigações de integridade estavam falhando devido a um erro de configuração ou a um aplicativo com falha.
 

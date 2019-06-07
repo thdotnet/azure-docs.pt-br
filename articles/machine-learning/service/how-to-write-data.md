@@ -12,12 +12,12 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0275d27a0a27d0279886f6f7fd15b14d312a44ea
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: 6206ad1a7356221bf94134e5d293c27d778cc187
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65471999"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752874"
 ---
 # <a name="write-and-configure-data--with-the-azure-machine-learning-data-prep-sdk"></a>Escrever e configurar os dados com o SDK do Azure Machine Learning Data Prep
 
@@ -40,7 +40,7 @@ Os formatos de arquivo a seguir têm suporte
 Usando o SDK do Azure Machine Learning Data Prep Python, você pode gravar dados para:
 + um sistema de arquivos local
 + Armazenamento do Blobs do Azure
-+ Azure Data Lake Storage
++ Armazenamento do Azure Data Lake
 
 ## <a name="spark-considerations"></a>Considerações sobre o Spark
 
@@ -73,7 +73,7 @@ Saída de exemplo:
 
 ### <a name="delimited-file-example"></a>Exemplo de arquivo delimitado
 
-O código a seguir usa o [ `write_to_csv()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#write-to-csv-directory-path--destinationpath--separator--str--------na--str----na---error--str----error------azureml-dataprep-api-dataflow-dataflow) função para gravar dados em um arquivo delimitado.
+O código a seguir usa o [ `write_to_csv()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow#write-to-csv-directory-path--datadestination--separator--str--------na--str----na---error--str----error------azureml-dataprep-api-dataflow-dataflow) função para gravar dados em um arquivo delimitado.
 
 ```python
 # Create a new data flow using `write_to_csv` 
@@ -90,11 +90,11 @@ Saída de exemplo:
 
 | | Coluna1 | Coluna2 | Coluna3 | Coluna4 | Coluna5 | Coluna6 | Coluna7 | Coluna8 | Coluna9 |
 | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
-|0| 10000.0 | 99999.0 | ERRO | NÃO | NÃO | ENRS | NaN    | NaN | NaN |   
-|1| 10003.0 | 99999.0 | ERRO | NÃO | NÃO | ENSO |    NaN | NaN | NaN |   
-|2| 10010.0 | 99999.0 | ERRO | NÃO | JN | ENJA |    70933.0 | -8667.0 | 90.0 |
-|3| 10013.0 | 99999.0 | ERRO | NÃO | NÃO |     | NaN | NaN | NaN |
-|4| 10014.0 | 99999.0 | ERRO | NÃO | NÃO | ENSO |    59783.0 | 5350.0 |  500.0|
+|0| 10000.0 | 99999.0 | ERROR | NÃO | NÃO | ENRS | NaN    | NaN | NaN |   
+|1| 10003.0 | 99999.0 | ERROR | NÃO | NÃO | ENSO |    NaN | NaN | NaN |   
+|2| 10010.0 | 99999.0 | ERROR | NÃO | JN | ENJA |    70933.0 | -8667.0 | 90.0 |
+|3| 10013.0 | 99999.0 | ERROR | NÃO | NÃO |     | NaN | NaN | NaN |
+|4| 10014.0 | 99999.0 | ERROR | NÃO | NÃO | ENSO |    59783.0 | 5350.0 |  500.0|
 
 Na saída anterior, vários erros aparecem nas colunas numéricas por causa de números que não foram analisados corretamente. Quando gravados em CSV, valores nulos são substituídos com a cadeia de caracteres "ERROR", por padrão.
 
@@ -121,7 +121,7 @@ O código anterior produz esta saída:
 
 ### <a name="parquet-file-example"></a>Exemplo de arquivo parquet
 
-Semelhante ao `write_to_csv()`, o [ `write_to_parquet()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#write-to-parquet-file-path--typing-union--destinationpath--nonetype----none--directory-path--typing-union--destinationpath--nonetype----none--single-file--bool---false--error--str----error---row-groups--int---0-----azureml-dataprep-api-dataflow-dataflow) função retorna um novo fluxo de dados com uma gravação de etapa de Parquet que é executada quando o fluxo de dados é executado.
+Semelhante ao `write_to_csv()`, o [ `write_to_parquet()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow#write-to-parquet-file-path--typing-union--datadestination--nonetype----none--directory-path--typing-union--datadestination--nonetype----none--single-file--bool---false--error--str----error---row-groups--int---0-----azureml-dataprep-api-dataflow-dataflow) função retorna um novo fluxo de dados com uma gravação de etapa de Parquet que é executada quando o fluxo de dados é executado.
 
 ```python
 write_parquet_t = t.write_to_parquet(directory_path=dprep.LocalFileOutput('./test_parquet_out/'),

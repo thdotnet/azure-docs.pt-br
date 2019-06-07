@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2019
 ms.author: damaerte
-ms.openlocfilehash: f873f20f97b822e1f4dee716cb69535b0522dc2c
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 6b5f0e96b90ee0515c0a86f41c6ee2161d6c54a6
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64866491"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752722"
 ---
 # <a name="features--tools-for-azure-cloud-shell"></a>Recursos e ferramentas do Azure Cloud Shell
 
@@ -57,7 +57,7 @@ PowerShell no Cloud Shell contém uma compilação particular do módulo Exchang
 
 ![](media/features-powershell/exchangeonline.png)
 
- Execute o `Get-Command -Module tmp_*`
+ Execute `Get-Command -Module tmp_*`
 > [!NOTE]
 > O nome do módulo deve começar com `tmp_`, se você tiver instalado módulos com o mesmo prefixo, seus cmdlets também será mostrada. 
 
@@ -69,10 +69,10 @@ O Cloud Shell inclui autenticação pré-configurada para ferramentas de softwar
 
 ## <a name="tools"></a>Ferramentas
 
-|Category   |NOME   |
+|Categoria   |NOME   |
 |---|---|
 |Ferramentas do Linux            |bash<br> zsh<br> sh<br> tmux<br> dig<br>               |
-|Ferramentas do Azure            |[CLI do Azure](https://github.com/Azure/azure-cli) e [CLI clássica do Azure](https://github.com/Azure/azure-xplat-cli)<br> [AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-linux?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#writing-your-first-azcopy-command)<br> [CLI do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli)<br> [Shipyard de lote](https://github.com/Azure/batch-shipyard)<br> [blobxfer](https://github.com/Azure/blobxfer)|
+|Ferramentas do Azure            |[CLI do Azure](https://github.com/Azure/azure-cli) e [CLI clássica do Azure](https://github.com/Azure/azure-xplat-cli)<br> [AzCopy](https://docs.microsoft.com/previous-versions/azure/storage/storage-use-azcopy#writing-your-first-azcopy-command)<br> [CLI do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli)<br> [Shipyard de lote](https://github.com/Azure/batch-shipyard)<br> [blobxfer](https://github.com/Azure/blobxfer)|
 |Editores de texto           |código (editor do Cloud Shell)<br> vim<br> nano<br> emacs    |
 |Controle do código-fonte         |git                    |
 |Ferramentas de build            |make<br> maven<br> npm<br> pip         |

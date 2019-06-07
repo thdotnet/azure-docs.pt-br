@@ -7,18 +7,14 @@ author: vhorne
 ms.service: application-gateway
 ms.date: 6/5/2019
 ms.author: victorh
-ms.openlocfilehash: 62259749e04d66d78206a0bba77ce88f2c08c82f
-ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
+ms.openlocfilehash: d35e1dc96f65e51ab14c4962d1824334cbdb1616
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66688995"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752035"
 ---
 # <a name="custom-rules-for-web-application-firewall"></a>Regras personalizadas para o Firewall do aplicativo Web
-
-> [!IMPORTANT]
-> Regras personalizadas de WAF de Gateway de aplicativo do Azure está atualmente uma visualização pública. **Regras personalizadas estão disponíveis apenas para a SKU WAF_v2**.
-> Essa versão prévia pública é fornecida sem um SLA e não deve ser usada para cargas de trabalho de produção. Talvez alguns recursos não tenham suporte, tenham recursos restritos ou não estejam disponíveis em todos os locais do Azure. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 O firewall do aplicativo web do Azure o Gateway de aplicativo (WAF) vem com um conjunto de regras pré-configuradas, plataforma gerenciada que oferece proteção contra muitos tipos diferentes de ataques. Esses ataques incluem entre scripts sites, injeção de SQL e outros. Se você for um administrador de WAF, você talvez queira escrever a suas próprias regras para aumentar a regra principal definir regras (CRS). As regras podem bloquear ou permitir tráfego solicitado com base em critérios de correspondência.
 

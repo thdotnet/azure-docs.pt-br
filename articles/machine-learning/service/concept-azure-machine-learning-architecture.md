@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 04/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8bb06d04aec8e98308c0f5595b6b39e4b98302ff
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: f369f899d4a383205ad124e4fcd8dabf9f92f63f
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66480066"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66753198"
 ---
 # <a name="how-azure-machine-learning-service-works-architecture-and-concepts"></a>Como funciona o Serviço do Azure Machine Learning: Arquitetura e conceitos
 
@@ -27,7 +27,7 @@ Saiba mais sobre a arquitetura, conceitos e fluxo de trabalho para o serviço Az
 
 O fluxo de trabalho de aprendizado de máquina geralmente segue esta sequência:
 
-1. Desenvolver scripts de treinamento de aprendizado de máquina em **Python**.
+1. Desenvolver scripts de treinamento de aprendizado de máquina **Python** ou com a interface visual.
 1. Criar e configurar um **destino de computação**.
 1. **Enviar os scripts** para o destino de computação configurado para ser executado nesse ambiente. Durante o treinamento, os scripts podem ler ou gravar no **armazenamento de dados**. Além disso, os registros de execução são salvos como **execuções** no **workspace** e agrupados em **experimentos**.
 1. **Consulte o experimento** quanto a métricas registradas nas execuções atuais e anteriores. Se as métricas não indicarem um resultado desejado, volte para a etapa 1 e itere em seus scripts.
@@ -107,34 +107,7 @@ Use a API do SDK do Python ou a CLI do Azure Machine Learning para armazenar e r
 
 ## <a name="compute-target"></a>Destino de computação
 
-Um destino de computação é o recurso de computação usado para executar o script de treinamento ou hospedar a implantação do serviço. Os destinos de computação com suporte são:
-
-| Destino de computação | Treinamento | Implantação |
-| ---- |:----:|:----:|
-| Seu computador local | ✓ | &nbsp; |
-| Computação do Azure Machine Learning | ✓ | &nbsp; |
-| Uma VM do Linux no Azure</br>(como a Máquina Virtual de Ciência de Dados) | ✓ | &nbsp; |
-| Azure Databricks | ✓ | &nbsp; |
-| Análise Azure Data Lake | ✓ | &nbsp; |
-| Apache Spark para HDInsight | ✓ | &nbsp; |
-| Instâncias de Contêiner do Azure | &nbsp; | ✓ |
-| Serviço de Kubernetes do Azure | &nbsp; | ✓ |
-| Azure IoT Edge | &nbsp; | ✓ |
-| FPGA (Matriz de portas programáveis em campo) | &nbsp; | ✓ |
-
-Os destinos de computação são anexados a um workspace. Os destinos de computação diferentes do computador local são compartilhados por usuários do workspace.
-
-### <a name="managed-and-unmanaged-compute-targets"></a>Destinos de computação gerenciados e não gerenciados
-
-* **Gerenciado**: Destinos de computação gerenciados que são criados e gerenciados pelo Serviço do Azure Machine Learning. Esses destino de computação são otimizados para cargas de trabalho do machine learning. A computação do Azure Machine Learning é o único destino de computação gerenciada em 4 de dezembro de 2018. Destinos de computação gerenciados adicionais podem ser adicionados no futuro.
-
-    As instâncias de Computação do ML podem ser criadas diretamente por meio do workspace usando o portal do Azure, o SDK do Azure Machine Learning ou a CLI do Azure. Todos os outros destinos de computação devem ser criados fora do workspace, em seguida, anexados.
-
-* **Não Gerenciado**: Destinos de computação gerenciados que *não* são gerenciados pelo Serviço do Azure Machine Learning. Talvez você precise criá-los fora do Azure Machine Learning e, em seguida, anexá-los ao seu workspace antes do uso. Destinos de computação não gerenciados podem exigir etapas adicionais para manter ou melhorar o desempenho para cargas de trabalho do machine learning.
-
-Para obter informações sobre como selecionar um destino de computação para treinamento, consulte [Selecionar e usar um destino de computação para treinar seu modelo](how-to-set-up-training-targets.md).
-
-Para obter informações sobre como selecionar um destino de computação para a implantação, consulte [Implantar modelos com o Serviço do Azure Machine Learning](how-to-deploy-and-where.md).
+Um [destino de computação](concept-compute-target.md) permite que você especifique o recurso de computação em que você executa o script de treinamento ou o host de sua implantação do serviço. Esse local pode ser seu computador local ou um recurso de computação em nuvem. Destinos de computação tornam fácil alterar seu ambiente de computação sem alterar seu código. 
 
 ## <a name="training-script"></a>Script de treinamento
 

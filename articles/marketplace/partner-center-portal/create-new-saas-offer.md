@@ -7,12 +7,12 @@ ms.author: mattwoj
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: 9c8b8a6ad8a10a65a05b46bf433d00b4e3ecb402
-ms.sourcegitcommit: ec7b0bf593645c0d1ef401a3350f162e02c7e9b8
+ms.openlocfilehash: 897634ac0c30b4a2cc496c225965f465a94fe4e9
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455660"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751888"
 ---
 # <a name="create-a-new-saas-offer"></a>Criar uma nova oferta de SaaS
 
@@ -74,7 +74,7 @@ Para listar o Software como serviço (SaaS) oferece com o Marketplace comercial 
 
 - Sua oferta deve ser compatível com clientes do Azure. (Geralmente aplicativos SaaS também estão hospedados no Azure para obter melhor desempenho e compatibilidade, mas isso não é um requisito.) 
 - Sua oferta deve usar [Azure Active Directory (Azure AD)](https://azure.microsoft.com/services/active-directory/) para gerenciamento de identidade e autenticação.
-- Sua oferta deve usar [APIs de preenchimento SaaS](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-fulfillment-api-v2) para integrar com o Azure Marketplace.
+- Sua oferta deve usar [APIs de preenchimento SaaS](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2) para integrar com o Azure Marketplace.
 
 #### <a name="billing-infrastructure-costs"></a>Custos de infra-estrutura de faturamento
 Para ofertas de SaaS, você, como o Editor, deve considerar as taxas de uso de infraestrutura do Azure e taxas de licenciamento de software como um item único custo. Esse custo é representado como uma taxa mensal fixa para o cliente. Uso de infraestrutura do Azure é gerenciado e cobrado diretamente a você, o parceiro. Os valores reais de uso da infraestrutura não são vistos pelo cliente. Em geral, os editores optam por incluir os valores de uso da infraestrutura do Azure em seus preços de licença de software. 

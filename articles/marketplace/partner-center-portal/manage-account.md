@@ -7,12 +7,12 @@ ms.author: parthp
 ms.service: marketplace
 ms.topic: how-to
 ms.date: 05/30/2019
-ms.openlocfilehash: 935d2e1c96705506636c2883113a64bb70c39336
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 5cb4caa6f0f8098e68d693be6cc2f33b5ccbeb32
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65806185"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752838"
 ---
 # <a name="how-to-manage-your-commercial-marketplace-account-in-partner-center"></a>Como gerenciar sua conta do Marketplace comercial no Partner Center 
 
@@ -223,7 +223,7 @@ Se um dos seus usuários precisar alterar sua senha, eles podem fazer isso em si
 3.  Uma página de confirmação será exibida mostrando as informações de logon para o usuário, incluindo uma senha temporária. Não se esqueça de imprimir ou copiar essas informações e fornecê-la para o usuário, pois você não poderá acessar a senha temporária depois que você sair desta página.
 
 
-## <a name="manage-groups"></a>Gerenciar Grupos
+## <a name="manage-groups"></a>Gerenciar grupos
 
 Grupos permitem controlar várias funções de usuário e permissões todos juntas.
 
@@ -279,7 +279,7 @@ Se você deseja conceder acesso do Partner Center para o Azure uma totalmente no
 1.  Dos **os usuários** página (sob **configurações de conta**), selecione **adicionar aplicativos do Azure AD**.
 2.  Na próxima página, selecione **aplicativo de novo do Azure AD**.
 3.  Insira o **URL de resposta** para o novo aplicativo do Azure AD. Esta é a URL onde os usuários podem entrar e usar seu aplicativo do Azure AD (às vezes, também conhecido como a URL do aplicativo ou a URL de logon). O **URL de resposta** não pode ter mais de 256 caracteres e deve ser exclusivo dentro do seu diretório.
-4.  Insira o **URI da ID do aplicativo** para o novo aplicativo do Azure AD. Este é um identificador lógico para o aplicativo do Azure AD que é apresentado quando uma solicitação de logon única é enviada para o Azure AD. Observe que o **URI da ID do aplicativo** deve ser exclusivo para cada aplicativo do Azure AD em seu diretório. Essa ID não pode ter mais de 256 caracteres. Para obter mais informações sobre o URI da ID do aplicativo, consulte [integrando aplicativos com o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant).
+4.  Insira o **URI da ID do aplicativo** para o novo aplicativo do Azure AD. Este é um identificador lógico para o aplicativo do Azure AD que é apresentado quando uma solicitação de logon única é enviada para o Azure AD. Observe que o **URI da ID do aplicativo** deve ser exclusivo para cada aplicativo do Azure AD em seu diretório. Essa ID não pode ter mais de 256 caracteres. Para obter mais informações sobre o URI da ID do aplicativo, consulte [integrando aplicativos com o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/quickstart-modify-supported-accounts#change-the-application-registration-to-support-different-accounts).
 5.  No **funções** seção, especifique a função (ões) ou permissões personalizadas para o aplicativo do Azure AD.
 6.  Clique em **Salvar**.
 
@@ -315,7 +315,7 @@ Observe que as funções de locatário do Azure Active Directory (AAD) incluem a
 ||• Exibir, criar e gerenciar os usuários do parceiro|
 |Gerente|• Podem acessar todos os recursos de conta Microsoft, exceto as configurações de imposto e pagamento
 |      |• Pode gerenciar usuários, funções e trabalhar contas (locatários)|
-|Desenvolvedor|• Pode carregar pacotes, enviar aplicativos e complementos e exibir o relatório de uso para obter detalhes de telemetria
+|Desenvolvedores|• Pode carregar pacotes, enviar aplicativos e complementos e exibir o relatório de uso para obter detalhes de telemetria
 |      |• Não é possível acessar configurações de informações ou a conta financeiras|
 |Colaborador de negócios|• Pode acessar informações financeiras e definir os detalhes de preços
 |      |• Não é possível criar ou enviar novos aplicativos e complementos|
@@ -371,7 +371,7 @@ Quando você remove um locatário, todos os usuários que foram adicionados à c
 
 O **contratos** seção do Partner Center (sob **configurações de conta**) vamos você exibir uma lista dos contratos de publicação autorizados por você. Esses contratos são listados de acordo com o nome e número de versão, incluindo a data em que ele foi aceito e o nome do usuário que aceitou o contrato. 
 
-**As ações necessárias** podem aparecer na parte superior desta página se há atualizações de contrato que exigem sua atenção. Para aceitar um contrato atualizado, primeiro ler a versão de contrato vinculado e selecione **aceitá-**. 
+**As ações necessárias** podem aparecer na parte superior desta página se há atualizações de contrato que exigem sua atenção. Para aceitar um contrato atualizado, primeiro ler a versão de contrato vinculado e selecione **aceitá-** . 
 
 Para obter informações sobre os contratos de provedor de solução de nuvem (CSP) no Partner Center, visite [contratos de nuvem da Microsoft por região e idioma](https://docs.microsoft.com/partner-center/agreements).
 

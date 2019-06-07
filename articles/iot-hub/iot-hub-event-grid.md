@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: kgremban
-ms.openlocfilehash: f08845dbf4168627d0198e81d2092a1fe56c6c89
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: 73a9aebfd0c5338f63927860ce3f6c57b20428a4
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66733862"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754782"
 ---
 # <a name="react-to-iot-hub-events-by-using-event-grid-to-trigger-actions"></a>Reagir aos eventos do Hub IoT usando a Grade de Eventos para disparar ações
 
@@ -25,7 +25,7 @@ O Hub IoT do Azure integra-se com a Grade de Eventos do Azure para que você pos
 
 ## <a name="regional-availability"></a>Disponibilidade regional
 
-A integração da Grade de Eventos está disponível para os hubs IoT localizados nas regiões onde há suporte para a Grade de Eventos. Todos os eventos de dispositivo, exceto os eventos de telemetria do dispositivo estão geralmente disponíveis. Evento de telemetria do dispositivo está em visualização pública e está disponível em todas as regiões, exceto o Leste dos EUA, oeste dos EUA, Europa Ocidental, [do Azure governamental](/azure/azure-government/documentation-government-welcome), [do Azure na China 21Vianet](/azure/china/china-welcome), e [Azure Alemanha](https://azure.microsoft.com/global-infrastructure/germany/). Para obter a lista mais recente de regiões, consulte [Uma introdução à Grade de Eventos do Azure](../event-grid/overview.md).
+A integração da Grade de Eventos está disponível para os hubs IoT localizados nas regiões onde há suporte para a Grade de Eventos. Todos os eventos de dispositivo, exceto os eventos de telemetria do dispositivo estão geralmente disponíveis. Evento de telemetria do dispositivo está em visualização pública e está disponível em todas as regiões, exceto o Leste dos EUA, oeste dos EUA, Europa Ocidental, [do Azure governamental](/azure/azure-government/documentation-government-welcome), [do Azure na China 21Vianet](/azure/china), e [Azure Alemanha](https://azure.microsoft.com/global-infrastructure/germany/). Para obter a lista mais recente de regiões, consulte [Uma introdução à Grade de Eventos do Azure](../event-grid/overview.md).
 
 ## <a name="event-types"></a>Tipos de evento
 

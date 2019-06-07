@@ -10,18 +10,18 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 07989b06b756e1e360ac3c37927a8267c84d9162
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 0610f57e264189961a6803bee5bb93c1ec9fb103
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65522829"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66753993"
 ---
 # <a name="how-to-index-cosmos-db-using-an-azure-search-indexer"></a>Como indexar o Cosmos DB usando um indexador de Azure Search
 
 
 > [!Note]
-> Suporte de API do MongoDB está em versão prévia e não destina-se para uso em produção. O [API REST versão 2019-05-06-Preview](search-api-preview.md) fornece esse recurso. Não há nenhum portal ou o suporte do SDK do .NET no momento.
+> Suporte de API do MongoDB está em versão prévia e não destina-se para uso em produção. A [API REST versão 2019-05-06-versão prévia](search-api-preview.md) fornece esse recurso. Não há nenhum portal ou o suporte do SDK do .NET no momento.
 >
 > API do SQL está disponível.
 
@@ -52,7 +52,7 @@ Você deve ter uma conta de Cosmos, um banco de dados Cosmos do Azure mapeada pa
 
 Verifique se que seu banco de dados do Cosmos DB contém dados. O [Assistente para importar dados](search-import-data-portal.md) lê os metadados e realiza a amostragem de dados para inferir um esquema de índice, mas ele também carrega dados do Cosmos DB. Se os dados estão ausentes, o assistente parará com este erro "Erro detectando esquema de índice da fonte de dados: Não foi possível construir um protótipo de índice porque a fonte de dados 'emptycollection' não retornou nenhum dado".
 
-### <a name="2---start-import-data-wizard"></a>2 - Iniciar o Assistente para Importação de Dados 
+### <a name="2---start-import-data-wizard"></a>2 - Iniciar o Assistente para Importação de Dados
 
 Você pode [iniciar o assistente](search-import-data-portal.md) na barra de comandos na página do serviço Azure Search, ou clicando em **adicionar Azure Search** no **configurações** a esquerda da seção da sua conta de armazenamento Painel de navegação.
 
@@ -174,7 +174,7 @@ Para criar uma fonte de dados, formule uma solicitação POST:
 
 O corpo da solicitação contém a definição da fonte de dados, que deve incluir os seguintes campos:
 
-| Campo   | Descrição |
+| Campo   | DESCRIÇÃO |
 |---------|-------------|
 | **name** | Obrigatório. Escolha qualquer nome para representar seu objeto de fonte de dados. |
 |**type**| Obrigatório. Deve ser `cosmosdb`. |
@@ -255,10 +255,10 @@ Verifique se o esquema do índice de destino é compatível com o esquema dos do
 ### <a name="mapping-between-json-data-types-and-azure-search-data-types"></a>Mapeamento entre tipos de dados JSON e tipos de dados do Azure Search
 | Tipo de dados JSON | Tipos de campos de índice de destino compatíveis |
 | --- | --- |
-| Booleano |Edm.Boolean, Edm.String |
+| Bool |Edm.Boolean, Edm.String |
 | Números que se parecem com inteiros |Edm.Int32, Edm.Int64, Edm.String |
 | Números que se parecem com pontos flutuantes |Edm.Double, Edm.String |
-| String |Edm.String |
+| Cadeia de caracteres |Edm.String |
 | Matrizes de tipos primitivos, por exemplo, [“a”, “b”, “c”] |Collection(Edm.String) |
 | Cadeias de caracteres que se parecem com datas |Edm.DateTimeOffset, Edm.String |
 | Objetos GeoJSON, por exemplo, {"type": "Point", "coordinates": [long, lat] } |Edm.GeographyPoint |
@@ -282,6 +282,8 @@ Uma vez que o índice e a fonte de dados forem criados, será possível criar o 
 Esse indexador é executado a cada duas horas (o intervalo de agendamento é definido como "PT2H"). Para executar um indexador a cada 30 minutos, defina o intervalo para "PT30M". O intervalo mais curto com suporte é de 5 minutos. O agendamento é opcional – se ele for omitido, um indexador será executado apenas uma vez quando for criado. No entanto, você pode executar um indexador sob demanda a qualquer momento.   
 
 Para saber mais sobre a API Criar Indexador, veja [Criar indexador](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
+
+Para obter mais informações sobre como definir agendas do indexador, consulte [como programar indexadores para o Azure Search](search-howto-schedule-indexers.md).
 
 ## <a name="use-net"></a>Usar o .NET
 

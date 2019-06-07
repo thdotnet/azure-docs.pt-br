@@ -3,7 +3,7 @@ title: Tamanhos de VM Windows do Azure — HPC | Microsoft Docs
 description: Lista os diferentes tamanhos disponíveis para máquinas virtuais de computação de alto desempenho Windows no Azure. Lista informações sobre o número de vCPUs, discos de dados e NICs, bem como a taxa de transferência de armazenamento e largura de banda de rede para cada tamanho nessa série.
 services: virtual-machines-windows
 documentationcenter: ''
-author: jonbeck7
+author: vermagit
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager,azure-service-management
@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/12/2018
-ms.author: jonbeck
-ms.openlocfilehash: 58d4ced041b6f5cf767b45191e28a4b395f584b6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.author: jonbeck;amverma
+ms.openlocfilehash: ad490084b34a8bf6e89c7feb14d5cd2e70a8138f
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60540466"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755326"
 ---
 # <a name="high-performance-compute-vm-sizes"></a>Tamanhos de VM de computação de alto desempenho
 
@@ -35,20 +35,29 @@ ms.locfileid: "60540466"
 
 * **MPI** – Microsoft MPI (MS-MPI) 2012 R2 ou posterior, Intel MPI Library 5.x
 
-  Implementações de MPI com suporte usam a interface direta da rede Microsoft para comunicação entre instâncias. 
+  Em VMs de habilitado não SR-IOV, implementações de MPI com suporte usam a interface de Microsoft Network Direct (ND) para comunicação entre instâncias. O SR-IOV habilitados tamanhos de VM (HB e HC-series) no Azure permitem que praticamente qualquer versão do MPI para ser usado com OFED Mellanox. 
 
-* **Espaço de endereço de rede RDMA** - A rede RDMA no Azure reserva o espaço de endereço 172.16.0.0/16. Para executar aplicativos MPI em instâncias implantadas em uma rede virtual do Azure, verifique se o espaço do endereço de rede virtual não se sobrepõe à rede RDMA.
+* **Extensão de VM InfiniBandDriverWindows** – em VMs compatíveis com RDMA, adicione a extensão InfiniBandDriverWindows para habilitar InfiniBand. Essa extensão de VM do Windows instala drivers Windows Network Direct (em VMs não SR-IOV) ou drivers de Mellanox OFED (em VMs de SR-IOV) para conectividade RDMA.
+Em algumas implantações das instâncias A8 e A9, a extensão HpcVmDrivers é adicionada automaticamente. Observe que a extensão de VM HpcVmDrivers está sendo preterida; ele não será atualizado. Para adicionar a extensão de VM a uma VM, use cmdlets do [Azure PowerShell](/powershell/azure/overview). 
 
-* **Extensão de VM HpcVmDrivers**: em VMs compatíveis com RDMA, adicione a extensão HpcVmDrivers para instalar drivers de dispositivo de rede do Windows para conectividade RDMA. (Em algumas implantações das instâncias A8 e A9, a extensão HpcVmDrivers é adicionada automaticamente.) Para adicionar a extensão de VM a uma VM, use cmdlets do [Azure PowerShell](/powershell/azure/overview). 
-
-  
-  O comando a seguir instala a versão 1.1 mais recente da extensão HpcVMDrivers em uma VM compatível com RDMA existente denominada *myVM* implantada no grupo de recursos chamada *myResourceGroup* na região *Oeste dos EUA*:
+  O comando a seguir instala a extensão de InfiniBandDriverWindows mais recente versão 1.0 em uma VM compatível com RDMA existente denominada *myVM* implantada no grupo de recursos denominado *myResourceGroup* no  *Oeste dos EUA* região:
 
   ```powershell
-  Set-AzVMExtension -ResourceGroupName "myResourceGroup" -Location "westus" -VMName "myVM" -ExtensionName "HpcVmDrivers" -Publisher "Microsoft.HpcCompute" -Type "HpcVmDrivers" -TypeHandlerVersion "1.1"
+  Set-AzVMExtension -ResourceGroupName "myResourceGroup" -Location "westus" -VMName "myVM" -ExtensionName "InfiniBandDriverWindows" -Publisher "Microsoft.HpcCompute" -Type "InfiniBandDriverWindows" -TypeHandlerVersion "1.0"
+  ```
+  Como alternativa, as extensões de VM podem ser incluídas nos modelos do Azure Resource Manager para facilitar a implantação, com o seguinte elemento JSON:
+  ```json
+  "properties":{
+  "publisher": "Microsoft.HpcCompute",
+  "type": "InfiniBandDriverWindows",
+  "typeHandlerVersion": "1.0",
+  } 
   ```
   
   Para obter mais informações, consulte [Recursos e extensões da máquina virtual](extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Também é possível trabalhar com extensões de VMs implantadas no [modelo de implantação clássico](classic/manage-extensions.md).
+
+* **Espaço de endereço de rede RDMA** - A rede RDMA no Azure reserva o espaço de endereço 172.16.0.0/16. Para executar aplicativos MPI em instâncias implantadas em uma rede virtual do Azure, verifique se o espaço do endereço de rede virtual não se sobrepõe à rede RDMA.
+
 
 ### <a name="cluster-configuration-options"></a>Opções de configuração de cluster
 
@@ -56,7 +65,7 @@ O Azure fornece várias opções para criar clusters de VMs do Windows HPC que p
 
 * **Máquinas virtuais** - implante as VMs HPC compatíveis com RDMA no mesmo conjunto de disponibilidade (ao usar o modelo de implantação do Azure Resource Manager). Se você usar o modelo de implantação clássico, implante as VMs no mesmo serviço de nuvem. 
 
-* **Conjuntos de dimensionamento de máquinas virtuais**: em um conjunto de dimensionamento de VM, assegure-se de limitar a implantação a um único grupo de veiculações. Por exemplo, em um modelo do Resource Manager, defina a `singlePlacementGroup`propriedade como`true`. 
+* **Conjuntos de dimensionamento de máquina virtual** – em uma escala de máquina virtual definido, certifique-se de que você limite a implantação em um único grupo de posicionamento. Por exemplo, em um modelo do Resource Manager, defina a `singlePlacementGroup`propriedade como`true`. 
 
 * **Azure CycleCloud** - Crie um cluster HPC em [Azure CycleCloud](/azure/cyclecloud/) para executar tarefas MPI em nós do Windows.
 
@@ -79,7 +88,3 @@ O Azure fornece várias opções para criar clusters de VMs do Windows HPC que p
 - Para usar instâncias de computação intensiva para executar aplicativos MPI com o Lote do Azure, consulte [Usar tarefas de várias instâncias para executar aplicativos MPI (Interface de Transmissão de Mensagens) no Lote do Azure](../../batch/batch-mpi.md).
 
 - Saiba mais sobre como as [ACUs (unidade de computação do Azure)](acu.md) podem ajudar você a comparar o desempenho de computação entre SKUs do Azure.
-
-
-
-

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: 054aaf6f607bba216f979665a0b0672ec253ba7f
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: a815ec4ac97f8476403f773aeedb19ff84092b03
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66475989"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752951"
 ---
 # <a name="set-up-compute-targets-for-model-training"></a>Configurar destinos de computação para treinamento de modelo 
 
@@ -37,18 +37,8 @@ Neste artigo, você aprende a usar vários destinos de computação para treinam
 
 O Serviço do Azure Machine Learning tem suporte variado nos diferentes destinos de computação. Um ciclo de vida de desenvolvimento de modelo típico começa com experimentação/desenvolvimento em uma pequena quantidade de dados. Nessa fase, é recomendável usar um ambiente local. Por exemplo, o computador local ou uma VM baseada em nuvem. Na medida em que você aumenta o treinamento em conjuntos de dados maiores ou faz treinamento distribuído, é recomendável usar a Computação do Azure Machine Learning para criar um cluster de vários nós, ou de nó único, que dimensionará automaticamente sempre que você enviar uma execução. Também é possível anexar seu próprio recurso de computação, embora o suporte para vários cenários possa variar conforme detalhado abaixo:
 
+[!INCLUDE [aml-compute-target-train](../../../includes/aml-compute-target-train.md)]
 
-|Treinamento &nbsp;destinos| Suporte de GPU |ML automatizado | Pipelines de Machine Learning | Interface visual
-|----|:----:|:----:|:----:|:----:|
-|[Computador local](#local)| Talvez | Sim | &nbsp; | &nbsp; |
-|[Computação do Azure Machine Learning](#amlcompute)| Sim | Sim & <br/>hyperparameter&nbsp;tuning | Sim | Sim |
-|[VM remota](#vm) |Sim | Sim & <br/>gráfico de ajuste de hiperparâmetro | Sim | &nbsp; |
-|[Azure&nbsp;Databricks](how-to-create-your-first-pipeline.md#databricks)| &nbsp; | Sim | Sim | &nbsp; |
-|[Análise Azure Data Lake](how-to-create-your-first-pipeline.md#adla)| &nbsp; | &nbsp; | Sim | &nbsp; |
-|[Azure HDInsight](#hdinsight)| &nbsp; | &nbsp; | Sim | &nbsp; |
-|[Lote do Azure](#azbatch)| &nbsp; | &nbsp; | Sim | &nbsp; |
-
-**Todos os destinos de computação podem ser reutilizados para vários trabalhos de treinamento**. Por exemplo, após anexar uma VM remota ao seu workspace, você pode reutilizá-la para vários trabalhos.
 
 > [!NOTE]
 > A Computação do Azure Machine Learning pode ser criada como um recurso persistente ou criada dinamicamente quando você solicita uma execução. A criação baseada em execução remove o destino de computação após a conclusão da execução de treinamento, portanto, não é possível reutilizar os destinos de computação criados dessa maneira.

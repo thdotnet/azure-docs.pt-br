@@ -9,17 +9,17 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.custom: ''
-ms.openlocfilehash: 9d2cd2a2f4b3143d58d0ef03d67de094ea03303e
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 567f32cba76aaf2d1657b2476c4d11596d44dec5
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65523087"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66753883"
 ---
 # <a name="azure-search-encryption-using-customer-managed-keys-in-azure-key-vault"></a>Criptografia de pesquisa do Azure usando chaves gerenciadas pelo cliente no Azure Key Vault
 
 > [!Note]
-> Criptografia com chaves gerenciadas pelo cliente está em versão prévia e não destina-se para uso em produção. O [API REST versão 2019-05-06-Preview](search-api-preview.md) fornece esse recurso. Você também pode usar o SDK do .NET versão 8.0-preview.
+> Criptografia com chaves gerenciadas pelo cliente está em versão prévia e não destina-se para uso em produção. A [API REST versão 2019-05-06-versão prévia](search-api-preview.md) fornece esse recurso. Você também pode usar o SDK do .NET versão 8.0-preview.
 >
 > Esse recurso não está disponível para os serviços gratuitos. Você deve usar um serviço de pesquisa faturáveis criado a partir de 2019-01-01. Não há nenhum suporte do portal no momento.
 
@@ -227,7 +227,7 @@ Para criar um aplicativo do AAD no portal:
 
 1. [Criar um aplicativo do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-an-azure-active-directory-application).
 
-1. [Obter a chave de autenticação e ID do aplicativo](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-application-id-and-authentication-key) como aqueles serão necessárias para criar um índice criptografado. Você precisará fornecer os valores incluem **ID do aplicativo** e **chave de autenticação**.
+1. [Obter a chave de autenticação e ID do aplicativo](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) como aqueles serão necessárias para criar um índice criptografado. Você precisará fornecer os valores incluem **ID do aplicativo** e **chave de autenticação**.
 
 >[!Important]
 > Ao decidir usar um aplicativo do AAD de autenticação em vez de uma identidade gerenciada, considere o fato de que o Azure Search não está autorizado a gerenciar seu aplicativo do AAD em seu nome, e cabe a você gerenciar seu aplicativo do AAD, como rotação periódica de a chave de autenticação do aplicativo.

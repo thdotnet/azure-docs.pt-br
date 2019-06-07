@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 03/02/2019
 ms.author: alkohli
-ms.openlocfilehash: cdc1b07b93386c0225c1e6c5f570ea1247e450b5
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: e9092fb91ad98e6147647717e11d1a64bcff580e
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64924402"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754184"
 ---
 # <a name="use-cases-for-azure-data-box-gateway"></a>Casos de uso do Azure Data Box Gateway
 
@@ -50,7 +50,7 @@ Antes de começar, certifique-se de que o Data Box Gateway esteja em execução.
 - Depois que os dados forem carregados, será necessário movê-los para a camada de Arquivo Morto. É possível definir a camada de blob de duas maneiras: Script do Azure PowerShell e ou uma política de Gerenciamento de ciclo de vida de armazenamento do Azure.  
     - Se usar o Azure PowerShell, siga estas [etapas](/azure/databox/data-box-how-to-set-data-tier#use-azure-powershell-to-set-the-blob-tier) para mover os dados para a camada de Arquivo Morto.
     - Se usar o Gerenciamento de Ciclo de Vida de Armazenamento do Azure, siga estas etapas para mover os dados para a camada de Arquivo Morto.
-        - [Registre-se](/azure/storage/common/storage-lifecycle-management-concepts#register-for-preview) na versão prévia do serviço de Gerenciamento do Ciclo de Vida de Blobs para usar a camada de Arquivo Morto.
+        - [Registre-se](/azure/storage/common/storage-lifecycle-management-concepts) na versão prévia do serviço de Gerenciamento do Ciclo de Vida de Blobs para usar a camada de Arquivo Morto.
         - Use a seguinte política para [Arquivar dados em ingestão](/azure/storage/blobs/storage-lifecycle-management-concepts#archive-data-at-ingest).
 - Depois que os blobs são marcados como Arquivo Morto, eles não podem mais ser modificados pelo gateway, a menos que sejam movidos para a camada frequente ou para a camada esporádica. Se o arquivo estiver no armazenamento local, nenhuma alteração feita na cópia local (incluindo exclusões) será carregada na camada de Arquivo Morto.
 - Para ler os dados no Armazenamento de Arquivo Morto, eles devem ser reidratados alterando a camada de blob para frequente ou esporádica. [Atualizar o compartilhamento](data-box-gateway-manage-shares.md#refresh-shares) no gateway não reidrata o blob.

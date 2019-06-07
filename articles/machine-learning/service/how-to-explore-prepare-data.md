@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/23/2019
-ms.openlocfilehash: e692b0dc1089804b1d68b79c1a6f438f30554602
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: e29ef2616a43223ec582575ca6363f78b26e5f22
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66146289"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66753051"
 ---
 # <a name="explore-and-prepare-data-with-the-dataset-class-preview"></a>Explorar e preparar dados com a classe de conjunto de dados (visualização)
 
@@ -63,7 +63,7 @@ top_n_sample_dataset = dataset.sample('top_n', {'n': 5})
 top_n_sample_dataset.to_pandas_dataframe()
 ```
 
-||ID|Número do Caso|Date|Bloquear|IUCR|Texto Primário|...|
+||ID|Número do Caso|Data|Bloco|IUCR|Texto Primário|...|
 -|--|-----------|----|-----|----|------------|---
 0|10498554|HZ239907|4/4/2016 23:56|007XX E 111TH ST|1153|PRÁTICA ENGANOSA|...
 1|10516598|HZ258664|4/15/2016 17:00|082XX S MARSHFIELD AVE|890|ROUBO|...
@@ -80,7 +80,7 @@ simple_random_sample_dataset = dataset.sample('simple_random', {'probability':0.
 simple_random_sample_dataset.to_pandas_dataframe()
 ```
 
-||ID|Número do Caso|Date|Bloquear|IUCR|Texto Primário|...|
+||ID|Número do Caso|Data|Bloco|IUCR|Texto Primário|...|
 -|--|-----------|----|-----|----|------------|---
 0|10516598|HZ258664|4/15/2016 17:00|082XX S MARSHFIELD AVE|890|ROUBO|...
 1|10519196|HZ261252|4/15/2016 10:00|104XX S SACRAMENTO AVE|1154|PRÁTICA ENGANOSA|...
@@ -103,7 +103,7 @@ sample_dataset = dataset.sample('stratified', {'columns': ['Primary Type'], 'fra
 sample_dataset.to_pandas_dataframe()
 ```
 
-||ID|Número do Caso|Date|Bloquear|IUCR|Texto Primário|...|
+||ID|Número do Caso|Data|Bloco|IUCR|Texto Primário|...|
 -|--|-----------|----|-----|----|------------|---
 0|10516598|HZ258664|4/15/2016 17:00|082XX S MARSHFIELD AVE|890|ROUBO|...
 1|10534446|HZ277630|4/15/2016 10:00|055XX N KEDZIE AVE|890|ROUBO|...
@@ -117,15 +117,15 @@ sample_dataset.to_pandas_dataframe()
 dataset.get_profile()
 ```
 
-||Type|Min.|Máx|Count|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
+||Type|Min|max|Count|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio padrão|Variação|Distorção|Curtose
 -|----|---|---|-----|-------------|-----------------|---------------|-----------|-----------|-------------|-----------|-----------|------------|------------|------------|------------|------------|--------------|----|------------------|--------|--------|--------
 ID|FieldType.INTEGER|1.04986e + 07|1.05351e + 07|10.0|0,0|10.0|0,0|0,0|0,0|1.04986e + 07|1.04992e + 07|1.04986e + 07|1.05166e + 07|1.05209e + 07|1.05259e + 07|1.05351e + 07|1.05351e + 07|1.05351e + 07|1.05195e + 07|12302.7|1.51358e + 08|-0.495701|-1.02814
 Número do Caso|FieldType.STRING|HZ239907|HZ278872|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Date|FieldType.DATE|2016-04-04 23:56:00+00:00|2016-04-15 17:00:00+00:00|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Bloquear|FieldType.STRING|004XX S KILBOURN AVE|113XX S PRAIRIE AVE|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+Data|FieldType.DATE|2016-04-04 23:56:00+00:00|2016-04-15 17:00:00+00:00|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+Bloco|FieldType.STRING|004XX S KILBOURN AVE|113XX S PRAIRIE AVE|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
 IUCR|FieldType.INTEGER|810|1154|10.0|0,0|10.0|0,0|0,0|0,0|810|850|810|890|1136|1153|1154|1154|1154|1058.5|137.285|18847.2|-0.785501|-1.3543
 Texto Primário|FieldType.STRING|PRÁTICA ENGANOSA|ROUBO|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Descrição|FieldType.STRING|VERIFICAÇÃO DE FALSA|AO LONGO DE US $500|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+DESCRIÇÃO|FieldType.STRING|VERIFICAÇÃO DE FALSA|AO LONGO DE US $500|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
 Descrição do Local|FieldType.STRING||ESCOLA, PÚBLICA, CRIANDO|10.0|0,0|10.0|0,0|0,0|1.0||||||||||||||
 Detenção|FieldType.BOOLEAN|Falso|Falso|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
 Nacional|FieldType.BOOLEAN|Falso|Falso|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
@@ -148,7 +148,7 @@ Conjuntos de dados, valores nulos, do NaN e que não contêm nenhum conteúdo s�
 
 O perfil de conjunto de dados gerado na seção anterior, podemos ver que `Latitude` e `Longitude` colunas têm uma alta porcentagem de valores ausentes. Neste exemplo, podemos calcular a média e imputar valores ausentes para essas duas colunas.
 
-Primeiro, obtenha a definição mais recente do conjunto de dados com [ `get_definition()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#get-definition-version-id-none-) e reduzir os dados com [ `keep_columns()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#keep-columns-columns--multicolumnselection-----azureml-dataprep-api-dataflow-dataflow), portanto, podemos exibir apenas as colunas que desejamos endereço.
+Primeiro, obtenha a definição mais recente do conjunto de dados com [ `get_definition()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#get-definition-version-id-none-) e reduzir os dados com [ `keep_columns()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow#keep-columns-columns--multicolumnselection--validate-column-exists--bool---false-----azureml-dataprep-api-dataflow-dataflow), portanto, podemos exibir apenas as colunas que desejamos endereço.
 
 ```Python
 from azureml.core.dataset import Dataset
@@ -256,7 +256,7 @@ ds_def = ds_def.assert_value('Longitude', (value <= 180) & (value >= -87), error
 ds_def.get_profile()
 ```
 
-||Type|Min.|Máx|Count|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
+||Type|Min|max|Count|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio padrão|Variação|Distorção|Curtose
 -|----|---|---|-----|-------------|-----------------|---------------|-----------|-----------|-------------|-----------|-----------|------------|------------|------------|------------|------------|--------------|----|------------------|--------|--------|--------
 ID|FieldType.INTEGER|1.04986e + 07|1.05351e + 07|10.0|0,0|10.0|0,0|0,0|0,0|1.04986e + 07|1.04992e + 07|1.04986e + 07|1.05166e + 07|1.05209e + 07|1.05259e + 07|1.05351e + 07|1.05351e + 07|1.05351e + 07|1.05195e + 07|12302.7|1.51358e + 08|-0.495701|-1.02814
 Detenção|FieldType.BOOLEAN|Falso|Falso|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
@@ -288,13 +288,13 @@ dataset = Dataset.auto_read_files('./data/crime.csv')
 dataset.head(3)
 ```
 
-||ID|Número do Caso|Date|Bloquear|...|
+||ID|Número do Caso|Data|Bloco|...|
 -|---------|-----|---------|----|---
 0|10498554|HZ239907|2016-04-04 23:56:00|007XX E 111TH ST|...
 1|10516598|HZ258664|2016-04-15 17:00:00|082XX S MARSHFIELD AVE|...
 2|10519196|HZ261252|2016-04-15 10:00:00|104XX S SACRAMENTO AVE|...
 
-Digamos que você precisa transformar o formato de data e hora para 2016-04-04 10 e 23h às 00H '. No [ `derive_column_by_example()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#derive-column-by-example-source-columns--sourcecolumns--new-column-name--str--example-data--exampledata-----azureml-dataprep-api-dataflow-dataflow) argumento, fornecem exemplos de sua saída desejada na `example_data` parâmetro neste formato: *(saída original, a saída desejada)*.
+Digamos que você precisa transformar o formato de data e hora para 2016-04-04 10 e 23h às 00H '. No [ `derive_column_by_example()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#derive-column-by-example-source-columns--sourcecolumns--new-column-name--str--example-data--exampledata-----azureml-dataprep-api-dataflow-dataflow) argumento, fornecem exemplos de sua saída desejada na `example_data` parâmetro neste formato: *(saída original, a saída desejada)* .
 
 O código a seguir fornece dois exemplos de saída desejado, ("2016-04-04 23:56:00", "2016-04-04 10 PM-12 AM") e ("2016-04-15 17:00:00", "2016-04-15 às 16H - 6 PM")
 
@@ -310,7 +310,7 @@ ds_def.keep_columns(['ID','Date','Date_Time_Range']).head(3)
 
 Na tabela a seguir, observe que uma nova coluna, Date_Time_Range contém registros no formato especificado.
 
-||ID|Date|Date_Time_Range
+||ID|Data|Date_Time_Range
 -|--------|-----|----
 0|10498554|2016-04-04 23:56:00|2016-04-04 10 PM-12 AM
 1|10516598|2016-04-15 17:00:00|2016-04-15 ÀS 16H - 6 PM

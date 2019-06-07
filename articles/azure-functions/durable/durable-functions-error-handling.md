@@ -10,16 +10,16 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: f3d7f916d31a03d7b868749026f541dd646459f6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 79af90d1c2c5b698ee7394f7fb20486b3069038c
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60732511"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751952"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Lidando com erros nas Funções Duráveis (Azure Functions)
 
-Orquestrações de Funções Duráveis são implementadas no código e podem usar os recursos de tratamento de erros da linguagem de programação. Com isso em mente, não há novos conceitos que você precise aprender ao incorporar a compensação e o tratamento de erro às suas orquestrações. No entanto, há alguns comportamentos a que você deve estar atento.
+Orquestrações de Funções Duráveis são implementadas no código e podem usar os recursos de tratamento de erros da linguagem de programação. Com isso em mente, realmente não existem novos conceitos que você precisa saber sobre como incorporar a compensação e tratamento de erros em suas orquestrações. No entanto, há alguns comportamentos a que você deve estar atento.
 
 ## <a name="errors-in-activity-functions"></a>Erros em funções de atividade
 
