@@ -63,7 +63,7 @@ Um evento tem os seguintes dados de nível superior:
 | subject | string | Caminho definido pelo fornecedor para o assunto do evento. |
 | eventType | string | Um dos tipos de evento registrados para a origem do evento. |
 | eventTime | string | A hora em que o evento é gerado com base na hora UTC do provedor. |
-| ID | string | Identificador exclusivo do evento. |
+| id | string | Identificador exclusivo do evento. |
 | data | objeto | Dados de evento de hub de eventos. |
 | dataVersion | string | A versão do esquema do objeto de dados. O fornecedor define a versão do esquema. |
 | metadataVersion | string | A versão do esquema do metadados de evento. Grade de Eventos define o esquema de propriedades de nível superior. Grade de Eventos fornece esse valor. |
@@ -73,7 +73,7 @@ O objeto de dados tem as seguintes propriedades:
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
 | fileUrl | string | O caminho para o arquivo de captura. |
-| FileType | string | O tipo de arquivo para o arquivo de captura. |
+| fileType | string | O tipo de arquivo para o arquivo de captura. |
 | partitionId | string | A ID de fragmento. |
 | sizeInBytes | inteiro | Tamanho do arquivo. |
 | eventCount | inteiro | O número de eventos no arquivo. |
