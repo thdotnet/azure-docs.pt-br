@@ -240,7 +240,7 @@ Um evento tem os seguintes dados de nível superior:
 | subject | string | Caminho definido pelo fornecedor para o assunto do evento. |
 | eventType | string | Um dos tipos de evento registrados para a origem do evento. |
 | eventTime | string | A hora em que o evento é gerado com base na hora UTC do provedor. |
-| ID | string | Identificador exclusivo do evento. |
+| id | string | Identificador exclusivo do evento. |
 | data | objeto | Dados de evento do grupo de recursos. |
 | dataVersion | string | A versão do esquema do objeto de dados. O fornecedor define a versão do esquema. |
 | metadataVersion | string | A versão do esquema do metadados de evento. Grade de Eventos define o esquema de propriedades de nível superior. Grade de Eventos fornece esse valor. |
@@ -249,11 +249,11 @@ O objeto de dados tem as seguintes propriedades:
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
-| autorização | objeto | A autorização solicitada para a operação. |
-| declarações | objeto | As propriedades da declaração. Para obter mais informações, consulte [especificação JWT](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
+| authorization | objeto | A autorização solicitada para a operação. |
+| claims | objeto | As propriedades da declaração. Para obter mais informações, consulte [especificação JWT](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
 | correlationId | string | Uma ID de operação para solução de problemas. |
 | httpRequest | objeto | Os detalhes da operação. Esse objeto é apenas incluído ao atualizar um recurso existente ou excluir um recurso. |
-| ResourceProvider | string | O provedor de recursos para a operação. |
+| resourceProvider | string | O provedor de recursos para a operação. |
 | resourceUri | string | O URI do recurso na operação. |
 | operationName | string | A operação que foi feita. |
 | status | string | O status da operação. |
