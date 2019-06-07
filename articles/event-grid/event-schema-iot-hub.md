@@ -150,7 +150,7 @@ Todos os eventos conterão os mesmos dados de nível superior:
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
-| ID | string | Identificador exclusivo do evento. |
+| id | string | Identificador exclusivo do evento. |
 | topic | string | Caminho de recurso completo para a origem do evento. Esse campo não é gravável. Grade de Eventos fornece esse valor. |
 | subject | string | Caminho definido pelo fornecedor para o assunto do evento. |
 | eventType | string | Um dos tipos de evento registrados para a origem do evento. |
@@ -188,7 +188,7 @@ Para os eventos de Hub IoT **Dispositivo Criado** e **Dispositivo Excluído**, o
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
-| gêmeos | objeto | Informações sobre o dispositivo gêmeo, que é a representação de nuvem dos metadados de dispositivo do aplicativo. | 
+| twin | objeto | Informações sobre o dispositivo gêmeo, que é a representação de nuvem dos metadados de dispositivo do aplicativo. | 
 | deviceID | string | O identificador exclusivo do dispositivo gêmeo. | 
 | etag | string | Um validador para garantir a consistência das atualizações para um dispositivo gêmeo. Cada etag é garantida como sendo exclusivo por dispositivos gêmeos. |  
 | deviceEtag| string | Um validador para garantir a consistência das atualizações para um registro de dispositivo. Cada deviceEtag é garantida como sendo exclusivo por registro de dispositivo. |
@@ -202,8 +202,8 @@ Para os eventos de Hub IoT **Dispositivo Criado** e **Dispositivo Excluído**, o
 | primaryThumbprint | string | A impressão digital primária para o certificado x509. |
 | secondaryThumbprint | string | A impressão digital secundária para o certificado x509. | 
 | version | inteiro | Um inteiro que é incrementado em um cada vez que o dispositivo gêmeo é atualizado. |
-| desejado | objeto | Uma parte das propriedades que pode ser gravada apenas pelo back-end do aplicativo e lida pelo dispositivo. | 
-| relatado | objeto | Uma parte das propriedades que pode ser gravada somente pelo dispositivo e lida pelo back-end do aplicativo. |
+| desired | objeto | Uma parte das propriedades que pode ser gravada apenas pelo back-end do aplicativo e lida pelo dispositivo. | 
+| reported | objeto | Uma parte das propriedades que pode ser gravada somente pelo dispositivo e lida pelo back-end do aplicativo. |
 | lastUpdated | string | Atualizar o carimbo de data/hora ISO 8601 da ultima atualização de propriedade dos dispositivos gêmeos. | 
 
 ## <a name="next-steps"></a>Próximas etapas
