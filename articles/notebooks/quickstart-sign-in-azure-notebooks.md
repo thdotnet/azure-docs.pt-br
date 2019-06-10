@@ -10,15 +10,15 @@ ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: quickstart
 ms.date: 04/15/2019
 ms.author: kraigb
-ms.openlocfilehash: eb8ba7f23de99d333693430d806a8d887c55a678
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: a9ba6fcc0c8b74664f5c4b32e54530fb4aaa2881
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60237920"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751731"
 ---
 # <a name="quickstart-sign-in-and-set-a-user-id"></a>Início Rápido: Entrar e definir uma ID de usuário
 
@@ -35,7 +35,7 @@ Embora você sempre possa exibir os blocos de anotações do Azure Notebooks sem
     ![Criar novo comando de conta da Microsoft no prompt de entrada](media/accounts/create-new-microsoft-account.png)
 
     > [!Tip]
-    > Se você tentar criar uma nova conta com um endereço de email que já tenha uma conta associada a ele, você poderá ver a mensagem "você não pode se inscrever aqui com um trabalho ou endereço de email da escola. Use um email pessoal, como Gmail ou Yahoo!, ou obtenha um novo email do Outlook". Nesse caso, tente entrar com o endereço de email de trabalho sem criar uma nova conta.
+    > Se você tentar criar uma conta com um endereço de email que já tem uma conta associada a ele, poderá ver a mensagem "Não é possível inscrever-se aqui com um endereço corporativo ou de estudante. Use um email pessoal, como o Gmail ou o Yahoo!, ou obtenha um novo email do Outlook." Nesse caso, tente entrar com o email de trabalho sem criar uma conta.
 
 1. Insira a senha quando solicitado.
 
@@ -56,7 +56,7 @@ Embora você sempre possa exibir os blocos de anotações do Azure Notebooks sem
     ![Visão inicial de uma página de perfil do Azure Notebooks](media/accounts/profile-page-new.png)
 
 > [!NOTE]
-> Se você vir a mensagem, "ID de usuário já está em uso," Tente um ID diferente. As IDs de usuário são exclusivas em todas as contas do Azure Notebooks e blocos de anotações do Azure também reserva determinadas IDs de usuário, como nomes de marca da Microsoft.
+> Se você vir a mensagem "A ID de usuário já está em uso", tente usar uma ID diferente. As IDs do usuário são exclusivas entre todas as contas do Azure Notebooks, e o Azure Notebooks também reserva determinadas IDs de usuário, como nomes de marca da Microsoft.
 
 ## <a name="sign-out"></a>Sair
 

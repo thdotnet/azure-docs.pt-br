@@ -10,15 +10,15 @@ ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: quickstart
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: b1618e2ac997445606ce98fc72a1ec35ca1280be
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 42f5d3abda715d83d58b0d341aed784de639e460
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60239924"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751788"
 ---
 # <a name="quickstart-create-and-share-a-notebook"></a>Início Rápido: Criar e compartilhar um notebook
 
@@ -28,7 +28,7 @@ ms.locfileid: "60239924"
 
     ![Link Meus Projetos na parte superior da janela do navegador](media/quickstarts/my-projects-link.png)
 
-1. Na página **Meus Projetos**, selecione **+ Novo Projeto**(atalho de teclado: n); o botão poderá aparecer apenas como **+**, se a janela do navegador for estreita:
+1. Na página **Meus Projetos**, selecione **+ Novo Projeto**(atalho de teclado: n); o botão poderá aparecer apenas como **+** , se a janela do navegador for estreita:
 
     ![Comando Novo Projeto na página Meus Projetos](media/quickstarts/new-project-command.png)
 
@@ -41,11 +41,11 @@ ms.locfileid: "60239924"
 
      ![Pop-up Novo Projeto com detalhes preenchidos](media/quickstarts/new-project-popup.png)
 
-1. Após alguns instantes, o Azure Notebooks o direcionará para o novo projeto. Adicione um notebook ao projeto, selecionando o menu suspenso **+ Novo** (que pode aparecer somente como **+**) e, em seguida, selecionando **Notebook**:
+1. Após alguns instantes, o Azure Notebooks o direcionará para o novo projeto. Adicione um notebook ao projeto, selecionando o menu suspenso **+ Novo** (que pode aparecer somente como **+** ) e, em seguida, selecionando **Notebook**:
 
     [![](media/quickstarts/empty-project-new-notebook-button.png "Um novo projeto vazio e adicionar comando do notebook")](media/quickstarts/empty-project-new-notebook-button.png#lightbox)
 
-1. No pop-up **Criar Novo Notebook** que aparece, insira um nome de arquivo para o notebook, como *HelloWorldInPython.ipynb* (*.ipynb* que significa IronPython (Jupyter) Notebook), e selecione **Python 3.6** para a linguagem (também conhecido como *kernel*):
+1. No pop-up **Criar Novo Notebook** que aparece, insira um nome de arquivo para o notebook, como *HelloWorldInPython.ipynb* ( *.ipynb* que significa IronPython (Jupyter) Notebook), e selecione **Python 3.6** para a linguagem (também conhecido como *kernel*):
 
     ![Pop-up Criar Novo Notebook](media/quickstarts/new-notebook-popup.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "60239924"
 
     ![Ícone Salvar na barra de ferramentas do Jupyter Notebook](media/quickstarts/hello-results-save-icon.png)
 
-1. Selecione o **arquivo** > **fechar e interromper** comando de menu para parar o servidor e fechar a janela do navegador.
+1. Selecione o comando de menu **Arquivo** > **Fechar e Parar** para interromper o servidor e fechar a janela do navegador.
 
 ## <a name="share-the-notebook"></a>Compartilhar o notebook
 
@@ -103,7 +103,7 @@ Na página do projeto, também é possível usar o menu **Compartilhar** para ob
 
 ![Comando de compartilhamento de projeto](media/quickstarts/share-project-command.png)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
 > [Tutorial: criar e executar um Jupyter Notebook para fazer uma regressão linear](tutorial-create-run-jupyter-notebook.md)

@@ -10,15 +10,15 @@ ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: kraigb
-ms.openlocfilehash: c593b472326fc373c0b715865b839cca3b6bcf45
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
-ms.translationtype: MT
+ms.openlocfilehash: 09d4038e705fb3bc4ff2c82daf5dc4c07f346f94
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66480254"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751761"
 ---
 # <a name="tutorial-create-and-run-a-jupyter-notebook-with-python"></a>Tutorial: criar e executar um Jupyter Notebook com Python
 
@@ -49,7 +49,7 @@ O notebook completo pode ser encontrado em [GitHub – Exemplos do Azure Noteboo
 
 ## <a name="create-the-data-file"></a>Criar o arquivo de dados
 
-O modelo de regressão linear criado no notebook usa dados de um arquivo em seu projeto chamado *cricket_chirps.csv*. Você pode criar esse arquivo copiando-o de [GitHub - exemplos de blocos de anotações do Azure](https://github.com/Microsoft/AzureNotebooks/tree/master/Samples/Linear%20Regression%20-%20Cricket%20Chirps), ou inserindo os dados diretamente. As seções a seguir descrevem as duas abordagens.
+O modelo de regressão linear criado no notebook usa dados de um arquivo em seu projeto chamado *cricket_chirps.csv*. É possível criar esse arquivo copiando-o de [GitHub – Exemplos do Azure Notebooks](https://github.com/Microsoft/AzureNotebooks/tree/master/Samples/Linear%20Regression%20-%20Cricket%20Chirps) ou inserindo os dados diretamente. As seções a seguir descrevem as duas abordagens.
 
 ### <a name="upload-the-data-file"></a>Carregar o arquivo de dados
 
@@ -160,7 +160,7 @@ Os grupos de comandos de menu são os seguintes:
 | Kernel | Comandos para gerenciar como o código está sendo executado no kernel, juntamente com **Alterar kernel** a fim de alterar a linguagem ou a versão do Python usada para executar o notebook. |
 | Dados | Comandos para carregar e baixar arquivos do projeto ou da sessão. Consulte [Trabalhar com arquivos de dados do projeto](work-with-project-data-files.md) |
 | Widgets | Comandos para gerenciar [Jupyter Widgets](https://ipywidgets.readthedocs.io/en/stable/examples/Widget%20Basics.html), que fornecem recursos adicionais de visualização, mapeamento e plotagem.|
-| Help | Comandos que fornecem ajuda e documentação para a interface do Jupyter. |
+| Ajuda | Comandos que fornecem ajuda e documentação para a interface do Jupyter. |
 
 A maioria dos comandos na barra de ferramentas tem comandos de menu equivalentes. Uma exceção é **Inserir/Editar Apresentação de Slides RISE**, que é discutido em [Compartilhar e apresentar notebooks](present-jupyter-notebooks-slideshow.md).
 
