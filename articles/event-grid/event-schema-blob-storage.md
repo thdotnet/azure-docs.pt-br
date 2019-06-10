@@ -109,7 +109,7 @@ O objeto de dados tem as seguintes propriedades:
 | eTag | string | O valor que você pode usar para executar operações condicionalmente. |
 | contentType | string | O tipo de conteúdo especificado para o blob. |
 | contentLength | inteiro | O tamanho do blob em bytes. |
-| BlobType | string | O tipo de blob. Os valores válidos são "BlockBlob" ou "PageBlob". |
+| blobType | string | O tipo de blob. Os valores válidos são "BlockBlob" ou "PageBlob". |
 | url | string | O caminho para o blob. |
 | sequencer | string | Um valor controlado pelo usuário que você pode usar para controlar as solicitações. |
 | storageDiagnostics | objeto | Informações sobre o Diagnóstico de armazenamento. |
