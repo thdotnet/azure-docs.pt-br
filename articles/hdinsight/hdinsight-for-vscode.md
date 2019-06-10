@@ -312,14 +312,14 @@ Envie um arquivo, observe que a pasta .vscode é adicionada automaticamente à p
     | args | Argumentos de linha de comando do aplicativo | lista de cadeias de caracteres | 
     | jars | jars a serem usados nesta sessão | Lista de cadeias de caracteres | 
     | pyFiles | Arquivos Python a serem usados nesta sessão | Lista de cadeias de caracteres |
-    | de entrada | arquivos a serem usados nesta sessão | Lista de cadeias de caracteres |
+    | files | arquivos a serem usados nesta sessão | Lista de cadeias de caracteres |
     | driverMemory | Quantidade de memória a ser usada para o processo de driver | string |
     | driverCores | Quantidade de núcleos a ser usado para o processo de driver | int |
     | executorMemory | Quantidade de memória a ser usada por processo de executor | string |
     | executorCores | Número de núcleos a serem usados para cada executor | int |
     | numExecutors | Número de executores a serem iniciados para esta sessão | int |
     | archives | Arquivos a serem usados nesta sessão | Lista de cadeias de caracteres |
-    | fila | O nome da fila YARN ao qual foi enviado | cadeia de caracteres |
+    | queue | O nome da fila YARN ao qual foi enviado | cadeia de caracteres |
     | name | O nome desta sessão | string |
     | conf | Propriedades de configuração do Spark | Mapa de key=val |
 
@@ -332,7 +332,7 @@ Envie um arquivo, observe que a pasta .vscode é adicionada automaticamente à p
     | appId | A ID de aplicativo desta sessão |  Cadeia de caracteres |
     | appInfo | As informações detalhadas do aplicativo | Mapa de key=val |
     | log | As linhas do log | lista de cadeias de caracteres |
-    | estado |   O estado do lote | string |
+    | state |   O estado do lote | string |
 
 >[!NOTE]
 >A configuração de Livy atribuída será exibida no painel de saída ao enviar o script.
