@@ -56,11 +56,11 @@ O exemplo a seguir mostra as seções que compõem a estrutura básica de um arq
 | Nome do elemento | Obrigatório? | DESCRIÇÃO |
 | --- | --- | --- |
 | $schema |Não  |Local do arquivo de esquema JSON. O arquivo de esquema JSON pode lhe ajudar a testar a validade do arquivo de definição. |
-| título |Sim |Nome do artefato exibido no laboratório. |
+| title |Sim |Nome do artefato exibido no laboratório. |
 | description |Sim |Descrição do artefato exibido no laboratório. |
 | iconUri |Não |URI do ícone exibido no laboratório. |
 | targetOsType |Sim |Sistema operacional da VM em que o artefato está instalado. As opções com suporte são Windows e Linux. |
-| parâmetros |Não |Valores fornecidos quando o comando de instalação do artefato é executado em um computador. Isso ajuda você a personalizar seu artefato. |
+| parameters |Não |Valores fornecidos quando o comando de instalação do artefato é executado em um computador. Isso ajuda você a personalizar seu artefato. |
 | runCommand |Sim |Comando de instalação do artefato executado em uma VM. |
 
 ### <a name="artifact-parameters"></a>Parâmetros do artefato
