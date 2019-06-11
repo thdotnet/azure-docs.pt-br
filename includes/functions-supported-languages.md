@@ -19,7 +19,7 @@ ms.locfileid: "66271581"
 |Linguagem                                 |1.x         |2. x|
 |-----------------------------------------|------------|---|
 |[C#](../articles/azure-functions/functions-reference-csharp.md)|GA (.NET Framework 4.7)|GA (.NET Core 2.2)|
-|[JavaScript](../articles/azure-functions/functions-reference-node.md)|GA (Nó 6)|GA (Nó 8 e 10)|
+|[JavaScript](../articles/azure-functions/functions-reference-node.md)|GA (Node 6)|GA (Node 8 e 10)|
 |[F#](../articles/azure-functions/functions-reference-fsharp.md)|GA (.NET Framework 4.7)|GA (.NET Core 2.2)|
 |[Java](../articles/azure-functions/functions-reference-java.md)|N/D|GA (Java 8)|
 |[PowerShell](../articles/azure-functions/functions-reference-powershell.md) |Experimental|Visualização (PowerShell Core 6)|
