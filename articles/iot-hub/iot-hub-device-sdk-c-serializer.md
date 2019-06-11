@@ -68,8 +68,8 @@ Os tipos de dados a seguir têm suporte em modelos criados com a biblioteca do *
 | --- | --- |
 | double |número de ponto flutuante de precisão dupla |
 | int |inteiro de 32 bits |
-| flutuante |número de ponto flutuante de precisão única |
-| longo |inteiro longo |
+| float |número de ponto flutuante de precisão única |
+| long |inteiro longo |
 | int8\_t |inteiro de 8 bits |
 | int16\_t |inteiro de 16 bits |
 | int32\_t |inteiro de 32 bits |
