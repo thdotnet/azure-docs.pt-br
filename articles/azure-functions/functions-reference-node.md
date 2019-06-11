@@ -248,7 +248,7 @@ Retorna um objeto nomeado que contém dados de invocação de função e os meta
 context.done([err],[propertyBag])
 ```
 
-Permite que o tempo de execução saiba que seu código foi concluído. Quando sua função usa a declaração [`async function`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function), você não precisa usar`context.done()`. O `context.done` retorno de chamada é chamado implicitamente. As funções assíncronas estão disponíveis no Nó 8 ou em uma versão posterior, que requer a versão 2.x do tempo de execução de Funções.
+Permite que o tempo de execução saiba que seu código foi concluído. Quando sua função usa a declaração [`async function`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function), você não precisa usar`context.done()`. O retorno de chamada `context.done` é chamado implicitamente. As funções assíncronas estão disponíveis no Node.js 8 ou em uma versão posterior, que requer a versão 2.x do tempo de execução do Functions.
 
 Se a função não é uma função assíncrona, **você precisa chamar** `context.done` para informar ao tempo de execução que a função está concluída. Os tempos de execução se está ausente.
 
@@ -414,7 +414,7 @@ Ao trabalhar com gatilhos HTTP, há várias maneiras de acessar os objetos de so
     context.done(null, res);   
     ```  
 
-## <a name="node-version"></a>Versão do nó
+## <a name="node-version"></a>Versão do Node.js
 
 A tabela a seguir mostra a versão do Node.js usada por cada versão principal do tempo de execução do Functions:
 
