@@ -119,16 +119,16 @@ Estas etapas descrevem o processo detalhado que os Aplicativos Lógicos usam par
 
    | Campo de cabeçalho de solicitação de Aplicativos Lógicos | Value | Type | DESCRIÇÃO |
    |---------------------------------|-------|------|-------------|
-   | **x-ms-transfer-mode** | em partes | Cadeia de caracteres | Indica que o conteúdo é carregado em partes |
-   | **x-ms-content-length** | <*content-length*> | Número inteiro | O tamanho do conteúdo inteiro em bytes antes da divisão em partes |
+   | **x-ms-transfer-mode** | em partes | String | Indica que o conteúdo é carregado em partes |
+   | **x-ms-content-length** | <*content-length*> | Integer | O tamanho do conteúdo inteiro em bytes antes da divisão em partes |
    ||||
 
 2. O ponto de extremidade responde com o código de status de êxito “200” e essas informações opcionais:
 
    | Campo de cabeçalho de resposta do ponto de extremidade | Type | Obrigatório | DESCRIÇÃO |
    |--------------------------------|------|----------|-------------|
-   | **x-ms-chunk-size** | Número inteiro | Não  | O tamanho da parte sugerido em bytes |
-   | **Localidade** | Cadeia de caracteres | Não  | O local da URL para a qual enviar as mensagens HTTP PATCH |
+   | **x-ms-chunk-size** | Integer | Não  | O tamanho da parte sugerido em bytes |
+   | **Localidade** | String | Não  | O local da URL para a qual enviar as mensagens HTTP PATCH |
    ||||
 
 3. Seu aplicativo lógico cria e envia mensagens HTTP PATCH de acompanhamento, cada uma com essas informações:
@@ -139,9 +139,9 @@ Estas etapas descrevem o processo detalhado que os Aplicativos Lógicos usam par
 
      | Campo de cabeçalho de solicitação de Aplicativos Lógicos | Value | Type | DESCRIÇÃO |
      |---------------------------------|-------|------|-------------|
-     | **Content-Range** | <*range*> | Cadeia de caracteres | O intervalo de bytes da parte do conteúdo atual, incluindo o valor inicial, o valor final e o tamanho total do conteúdo, por exemplo, "bytes=0-1023/10100" |
-     | **Content-Type** | <*content-type*> | Cadeia de caracteres | O tipo de conteúdo em partes |
-     | **Content-Length** | <*content-length*> | Cadeia de caracteres | O comprimento do tamanho em bytes da parte atual |
+     | **Content-Range** | <*range*> | String | O intervalo de bytes da parte do conteúdo atual, incluindo o valor inicial, o valor final e o tamanho total do conteúdo, por exemplo, "bytes=0-1023/10100" |
+     | **Content-Type** | <*content-type*> | String | O tipo de conteúdo em partes |
+     | **Content-Length** | <*content-length*> | String | O comprimento do tamanho em bytes da parte atual |
      |||||
 
 4. Depois de cada solicitação PATCH, o ponto de extremidade confirma o recebimento para cada parte respondendo com o código de status “200”.
