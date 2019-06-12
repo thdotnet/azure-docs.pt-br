@@ -58,20 +58,20 @@ Você pode usar esses esquemas de acompanhamento AS2 em sua conta de integraçã
 
 | Propriedade | Type | DESCRIÇÃO |
 | --- | --- | --- |
-| senderPartnerName | Cadeia de caracteres | O nome do parceiro do remetente da mensagem AS2. (Opcional) |
-| receiverPartnerName | Cadeia de caracteres | O nome do parceiro do destinatário da mensagem AS2. (Opcional) |
-| as2To | Cadeia de caracteres | Nome do destinatário da mensagem AS2, dos cabeçalhos da mensagem AS2. (Obrigatório) |
-| as2From | Cadeia de caracteres | Nome do remetente da mensagem AS2, dos cabeçalhos da mensagem AS2. (Obrigatório) |
-| agreementName | Cadeia de caracteres | Nome do contrato AS2 para o qual as mensagens são resolvidas. (Opcional) |
-| direction | Cadeia de caracteres | Indica a direção do fluxo de mensagens, receber ou enviar. (Obrigatório) |
-| messageId | Cadeia de caracteres | ID da mensagem AS2, dos cabeçalhos da mensagem AS2 (Opcional) |
-| dispositionType |Cadeia de caracteres | Valor do tipo de disposição MDN (notificação de disposição de mensagem). (Opcional) |
-| fileName | Cadeia de caracteres | Nome do arquivo, do cabeçalho da mensagem AS2. (Opcional) |
+| senderPartnerName | String | O nome do parceiro do remetente da mensagem AS2. (Opcional) |
+| receiverPartnerName | String | O nome do parceiro do destinatário da mensagem AS2. (Opcional) |
+| as2To | String | Nome do destinatário da mensagem AS2, dos cabeçalhos da mensagem AS2. (Obrigatório) |
+| as2From | String | Nome do remetente da mensagem AS2, dos cabeçalhos da mensagem AS2. (Obrigatório) |
+| agreementName | String | Nome do contrato AS2 para o qual as mensagens são resolvidas. (Opcional) |
+| direction | String | Indica a direção do fluxo de mensagens, receber ou enviar. (Obrigatório) |
+| messageId | String | ID da mensagem AS2, dos cabeçalhos da mensagem AS2 (Opcional) |
+| dispositionType |String | Valor do tipo de disposição MDN (notificação de disposição de mensagem). (Opcional) |
+| fileName | String | Nome do arquivo, do cabeçalho da mensagem AS2. (Opcional) |
 | isMessageFailed |Boolean | Se a mensagem AS2 falha ou não. (Obrigatório) |
 | isMessageSigned | Boolean | Se a mensagem AS2 foi ou não assinada. (Obrigatório) |
 | isMessageEncrypted | Boolean | Se a mensagem AS2 foi ou não criptografada. (Obrigatório) |
 | isMessageCompressed |Boolean | Se a mensagem AS2 foi ou não comprimida. (Obrigatório) |
-| correlationMessageId | Cadeia de caracteres | ID da mensagem AS2 para correlacionar mensagens com MDNs. (Opcional) |
+| correlationMessageId | String | ID da mensagem AS2 para correlacionar mensagens com MDNs. (Opcional) |
 | incomingHeaders |Dicionário de JToken | Detalhes do cabeçalho da mensagem de entrada AS2. (Opcional) |
 | outgoingHeaders |Dicionário de JToken | Detalhes do cabeçalho da mensagem de saída AS2. (Opcional) |
 | isNrrEnabled | Boolean | Use o valor padrão se o valor não for conhecido. (Obrigatório) |
@@ -111,21 +111,21 @@ Você pode usar esses esquemas de acompanhamento AS2 em sua conta de integraçã
 
 | Propriedade | Type | DESCRIÇÃO |
 | --- | --- | --- |
-| senderPartnerName | Cadeia de caracteres | O nome do parceiro do remetente da mensagem AS2. (Opcional) |
-| receiverPartnerName | Cadeia de caracteres | O nome do parceiro do destinatário da mensagem AS2. (Opcional) |
-| as2To | Cadeia de caracteres | O nome do parceiro que recebe a mensagem AS2. (Obrigatório) |
-| as2From | Cadeia de caracteres | O nome do parceiro que envia a mensagem AS2. (Obrigatório) |
-| agreementName | Cadeia de caracteres | Nome do contrato AS2 para o qual as mensagens são resolvidas. (Opcional) |
-| direction |Cadeia de caracteres | Indica a direção do fluxo de mensagens, receber ou enviar. (Obrigatório) |
-| messageId | Cadeia de caracteres | ID da mensagem AS2. (Opcional) |
-| originalMessageId |Cadeia de caracteres | ID da mensagem AS2 original. (Opcional) |
-| dispositionType | Cadeia de caracteres | Valor do tipo de disposição MDN. (Opcional) |
+| senderPartnerName | String | O nome do parceiro do remetente da mensagem AS2. (Opcional) |
+| receiverPartnerName | String | O nome do parceiro do destinatário da mensagem AS2. (Opcional) |
+| as2To | String | O nome do parceiro que recebe a mensagem AS2. (Obrigatório) |
+| as2From | String | O nome do parceiro que envia a mensagem AS2. (Obrigatório) |
+| agreementName | String | Nome do contrato AS2 para o qual as mensagens são resolvidas. (Opcional) |
+| direction |String | Indica a direção do fluxo de mensagens, receber ou enviar. (Obrigatório) |
+| messageId | String | ID da mensagem AS2. (Opcional) |
+| originalMessageId |String | ID da mensagem AS2 original. (Opcional) |
+| dispositionType | String | Valor do tipo de disposição MDN. (Opcional) |
 | isMessageFailed |Boolean | Se a mensagem AS2 falha ou não. (Obrigatório) |
 | isMessageSigned |Boolean | Se a mensagem AS2 foi ou não assinada. (Obrigatório) |
 | isNrrEnabled | Boolean | Use o valor padrão se o valor não for conhecido. (Obrigatório) |
 | statusCode | Enum | Os valores aceitos são **Accepted**, **Rejected**, **AcceptedWithErrors**. (Obrigatório) |
 | micVerificationStatus | Enum | Os valores permitidos são **NotApplicable**, **Succeeded** ou **Failed**. (Obrigatório) |
-| correlationMessageId | Cadeia de caracteres | ID de correlação. A ID da mensagem original (a ID da mensagem para a qual o MDN está configurado). (Opcional) |
+| correlationMessageId | String | ID de correlação. A ID da mensagem original (a ID da mensagem para a qual o MDN está configurado). (Opcional) |
 | incomingHeaders | Dicionário de JToken | Indica detalhes do cabeçalho da mensagem de entrada. (Opcional) |
 | outgoingHeaders |Dicionário de JToken | Indica detalhes do cabeçalho da mensagem de saída. (Opcional) |
 ||||
