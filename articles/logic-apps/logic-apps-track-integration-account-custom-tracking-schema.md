@@ -59,7 +59,7 @@ Este artigo fornece código personalizado que você pode usar nas camadas fora d
 | Propriedade | Type | DESCRIÇÃO |
 | --- | --- | --- |
 | sourceType |   | O tipo da fonte de execução. Os valores permitidos são **Microsoft.Logic/workflows** e **personalizado**. (Obrigatório) |
-| Fonte |   | Se o tipo de fonte for **Microsoft.Logic/workflows**, as informações de origem precisarão seguir este esquema. Se o tipo de origem for **personalizado**, o esquema será um JToken. (Obrigatório) |
+| source |   | Se o tipo de fonte for **Microsoft.Logic/workflows**, as informações de origem precisarão seguir este esquema. Se o tipo de origem for **personalizado**, o esquema será um JToken. (Obrigatório) |
 | systemId | Cadeia de caracteres | ID do sistema de aplicativo lógico. (Obrigatório) |
 | runId | Cadeia de caracteres | ID de execução do aplicativo lógico. (Obrigatório) |
 | operationName | Cadeia de caracteres | O nome da operação (por exemplo, ação ou gatilho). (Obrigatório) |
