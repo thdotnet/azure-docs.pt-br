@@ -73,17 +73,17 @@ Ou você pode especificar manualmente a política de repetição na seção `inp
 
 | Value | Type | DESCRIÇÃO |
 |-------|------|-------------|
-| <*tipo de política de repetição*> | Cadeia de caracteres | O tipo de política de repetição que você deseja usar: `default`, `none`, `fixed`, ou `exponential` | 
-| <*intervalo de repetição*> | Cadeia de caracteres | O intervalo de repetição em que o valor deve usar [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations). O intervalo mínimo de padrão é `PT5S` e o intervalo máximo é `PT1D`. Ao usar a política de intervalo exponencial, você pode especificar valores mínimos e máximos diferentes. | 
-| <*tentativas de repetição*> | Número inteiro | O número de tentativas de repetição, que deve estar entre 1 e 90 | 
+| <*retry-policy-type*> | Cadeia de caracteres | O tipo de política de repetição que você deseja usar: `default`, `none`, `fixed`, ou `exponential` | 
+| <*retry-interval*> | Cadeia de caracteres | O intervalo de repetição em que o valor deve usar [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations). O intervalo mínimo de padrão é `PT5S` e o intervalo máximo é `PT1D`. Ao usar a política de intervalo exponencial, você pode especificar valores mínimos e máximos diferentes. | 
+| <*retry-attempts*> | Número inteiro | O número de tentativas de repetição, que deve estar entre 1 e 90 | 
 ||||
 
 *Opcional*
 
 | Value | Type | DESCRIÇÃO |
 |-------|------|-------------|
-| <*intervalo mínimo*> | Cadeia de caracteres | Para a política de intervalo exponencial, o menor intervalo para o intervalo selecionado aleatoriamente no formato [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) | 
-| <*intervalo máximo*> | Cadeia de caracteres | Para a política de intervalo exponencial, o maior intervalo para o intervalo selecionado aleatoriamente no formato [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) | 
+| <*minimum-interval*> | Cadeia de caracteres | Para a política de intervalo exponencial, o menor intervalo para o intervalo selecionado aleatoriamente no formato [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) | 
+| <*maximum-interval*> | Cadeia de caracteres | Para a política de intervalo exponencial, o maior intervalo para o intervalo selecionado aleatoriamente no formato [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) | 
 |||| 
 
 Aqui estão mais informações sobre os diferentes tipos de políticas.
