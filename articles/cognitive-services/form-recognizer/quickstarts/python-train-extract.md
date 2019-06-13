@@ -9,12 +9,12 @@ ms.subservice: form-recognizer
 ms.topic: quickstart
 ms.date: 04/24/2019
 ms.author: pafarley
-ms.openlocfilehash: 139c0c29033dc45d07fd0987c2eee92308512329
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: ebed76c82b647d11e34a17ae94edf208929f8c56
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65906974"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475247"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-by-using-the-rest-api-with-python"></a>Início Rápido: treinar em um modelo do Reconhecimento de Formulários e extrair dados de formulário usando a API REST com o Python
 
@@ -26,7 +26,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 Para concluir este início rápido, é necessário ter:
 - Acesso à versão prévia de acesso limitado do Reconhecimento de Formulários. Para obter acesso à versão prévia, preencha e envie o formulário de [Solicitação de acesso ao Reconhecimento de Formulários](https://aka.ms/FormRecognizerRequestAccess).
 - [Python](https://www.python.org/downloads/) instalado (se quiser executar o exemplo localmente).
-- Um conjunto com pelo menos cinco formulários do mesmo tipo. Você pode usar um [conjunto de dados de exemplo](https://go.microsoft.com/fwlink/?linkid=2090451) para este Início Rápido.
+- Um conjunto com pelo menos cinco formulários do mesmo tipo. Você usará esses dados para treinar o modelo. Você pode usar um [conjunto de dados de exemplo](https://go.microsoft.com/fwlink/?linkid=2090451) para este Início Rápido. Carregue os dados na raiz de uma conta do Armazenamento de Blobs do Azure.
 
 ## <a name="create-a-form-recognizer-resource"></a>Criar um recurso do Reconhecimento de Formulários
 
@@ -45,9 +45,12 @@ Quando o acesso para usar o Reconhecimento de Formulários for concedido, você 
 
 Quando o recurso de Reconhecimento de Formulários concluir a implantação, localize-o e selecione-o na lista **Todos os recursos** do portal. Em seguida, selecione a guia **Chaves** para exibir suas chaves de assinatura. A chave fornecerá ao aplicativo o acesso ao recurso. Copie o valor de **CHAVE 1**. Você o usará na próxima seção.
 
-## <a name="create-and-run-the-sample"></a>Criar e executar o exemplo
+## <a name="train-a-form-recognizer-model"></a>Treinar um modelo do Reconhecimento de Formulários
 
-Para criar e executar a amostra, faça as seguintes alterações no snippet de código a seguir:
+Primeiro, você precisará de um conjunto de dados de treinamento em um blob do Armazenamento do Azure. É necessário ter um mínimo de cinco formulários de exemplo (documentos PDF e/ou imagens) do mesmo tipo/da mesma estrutura dos dados de entrada principais. Ou você pode usar um único formulário vazio com dois formulários preenchidos. O nome do arquivo do formulário vazio precisa incluir a palavra "vazio".
+
+Para treinar um modelo do Reconhecimento de Formulários usando os documentos no contêiner de blob do Azure, chame a API **Treinar** executando o comando do Python a seguir. Antes de executar o código, faça estas alterações:
+
 1. Substitua `<Endpoint>` pela URL do ponto de extremidade do recurso do Reconhecimento de Formulários na região do Azure em que você obteve suas chaves de assinatura.
 1. Substitua `<SAS URL>` pela URL de SAS (Assinatura de Acesso Compartilhado) de um contêiner do Armazenamento de Blob do Azure no qual os dados de treinamento estão localizados.  
 1. Substitua `<Subscription key>` pela chave de assinatura que você copiou na etapa anterior.

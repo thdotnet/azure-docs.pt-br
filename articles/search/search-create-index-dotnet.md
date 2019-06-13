@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/16/2019
-ms.openlocfilehash: 8d186ae83e1016de9c4548d4b1c39303025a5270
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 0392cc6334aaf383f43d55134fa65f82c44270c3
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795810"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428398"
 ---
 # <a name="quickstart-1---create-an-azure-search-index-in-c"></a>Início Rápido: 1 - Criar um índice de pesquisa do Azure Search em C#
 > [!div class="op_single_selector"]
@@ -26,7 +26,7 @@ ms.locfileid: "65795810"
 > * [Postman](search-fiddler.md)
 >*
 
-Este artigo descreve o processo para criar [um índice do Azure Search](search-what-is-an-index.md) usando C# e o [SDK do .NET](https://aka.ms/search-sdk). Esta é a primeira lição em um exercício de três partes para criar, carregar e consultar um índice. A criação de índice é realizada executando estas tarefas:
+Este artigo descreve o processo para criar [um índice do Azure Search](search-what-is-an-index.md) usando C# e o [SDK do .NET](https://aka.ms/search-sdk). Este início rápido é a primeira lição em um exercício de três partes para criar, carregar e consultar um índice. A criação de índice é realizada executando estas tarefas:
 
 > [!div class="checklist"]
 > * Criar um objeto [`SearchServiceClient`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient?view=azure-dotnet) para conectar um serviço de pesquisa.
@@ -39,7 +39,7 @@ Os serviços, as ferramentas e os dados a seguir são usados neste início rápi
 
 + [Crie um serviço Azure Search](search-create-service-portal.md) ou [localize um serviço existente](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) na assinatura atual. É possível usar um serviço gratuito para este início rápido.
 
-+ [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/), qualquer edição. O código de exemplo e as instruções foram testados na edição gratuita da Comunidade.
+[Visual Studio 2019](https://visualstudio.microsoft.com/downloads/), qualquer edição. O código de exemplo e as instruções foram testados na edição gratuita da Comunidade.
 
 + [DotNetHowTo](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowTo) fornece a solução de amostra, um aplicativo de console .NET Core escrito em C#, localizado no repositório GitHub de amostras do Azure. Baixe e extraia a solução. Por padrão, as soluções são somente leitura. Clique com o botão direito do mouse na solução e desmarque o atributo somente leitura para que você possa modificar arquivos. Os dados são incluídos na solução.
 
@@ -61,15 +61,13 @@ Todas as solicitações requerem uma chave de api em cada pedido enviado ao serv
 
 1. Em appsettings.json, substitua o conteúdo padrão pelo exemplo abaixo e forneça o nome do serviço e chave de api de administração do serviço. 
 
-
    ```json
    {
        "SearchServiceName": "Put your search service name here (not the full URL)",
        "SearchServiceAdminApiKey": "Put your primary or secondary API key here",
     }
    ```
-
-  Para o nome do serviço, é necessário somente o próprio nome. Por exemplo, se a URL for https://mydemo.search.windows.net, adicione `mydemo` ao arquivo JSON.
+   Para o nome do serviço, é necessário somente o próprio nome. Por exemplo, se a URL for https://mydemo.search.windows.net, adicione `mydemo` ao arquivo JSON.
 
 1. Pressione F5 para criar a solução e executar o aplicativo de console. As etapas restantes neste exercício e as seguintes são uma exploração de como esse código funciona. 
 
@@ -108,7 +106,7 @@ Uma única chamada para o método `Indexes.Create` cria um índice. Esse método
 
 1. Defina a propriedade `Name` do objeto `Index` como o nome do índice.
 
-2. Defina a propriedade `Fields` do objeto `Index` para uma matriz de objetos `Field`. A maneira mais fácil de criar os objetos `Field` é chamando o método `FieldBuilder.BuildForType`, passando uma classe de modelo para o parâmetro de tipo. Uma classe de modelo tem propriedades que mapeiam para os campos do seu índice. Isso permite a vinculação de documentos do índice de pesquisa a instâncias da sua classe de modelo.
+2. Defina a propriedade `Fields` do objeto `Index` para uma matriz de objetos `Field`. A maneira mais fácil de criar os objetos `Field` é chamando o método `FieldBuilder.BuildForType`, passando uma classe de modelo para o parâmetro de tipo. Uma classe de modelo tem propriedades que mapeiam para os campos do seu índice. Esse mapeamento permite a vinculação de documentos do índice de pesquisa a instâncias da sua classe de modelo.
 
 > [!NOTE]
 > Se você não planeja usar uma classe de modelo, você ainda pode definir o índice criando objetos `Field` diretamente. Você pode fornecer o nome do campo ao construtor, junto com o tipo de dados (ou o analisador para os campos de cadeia de caracteres). Também é possível definir outras propriedades como `IsSearchable`, `IsFilterable`, para citar algumas.
@@ -203,7 +201,7 @@ serviceClient.Indexes.Create(definition);
 
 Para uma solicitação bem-sucedida, o método retornará manualmente. Se houver um problema com a solicitação como um parâmetro inválido, o método gerará `CloudException`.
 
-Ao concluir um índice e quiser excluí-lo, chame o método `Indexes.Delete` no `SearchServiceClient`. Por exemplo: 
+Ao concluir um índice e quiser excluí-lo, chame o método `Indexes.Delete` no `SearchServiceClient`. Por exemplo:
 
 ```csharp
 serviceClient.Indexes.Delete("hotels");

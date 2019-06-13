@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 04/02/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my corporate on-premises network(s) to my VNets using Virtual WAN and ExpressRoute.
-ms.openlocfilehash: 3e6ab347a86aa8d04c8ebd0382178b873c987300
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: d43cdec9e906087c98759a478ebc0c86beaa1354
+ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65605435"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66693276"
 ---
 # <a name="tutorial-create-an-expressroute-association-using-azure-virtual-wan-preview"></a>Tutorial: Criar uma associação do ExpressRoute usando a WAN Virtual do Azure (versão prévia)
 
@@ -48,6 +48,7 @@ Antes de configurar a WAN Virtual, você precisa inscrever sua assinatura na ver
 **Considerações sobre a versão prévia:**
 
 O circuito do ExpressRoute deve estar habilitado em um país/região compatível com o [Alcance Global do ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-faqs#where-is-expressroute-global-reach-supported).
+O circuito do ExpressRoute deve ser um Circuito Premium para se conectar ao hub da WAN Virtual. 
 
 ## <a name="vnet"></a>1. Criar uma rede virtual
 

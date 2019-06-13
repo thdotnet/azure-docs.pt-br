@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 05/23/2019
 ms.author: mjbrown
-ms.openlocfilehash: 07d177987db1dea261520e8ee2543d871d552acb
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: abd50f4e2ca08bea2af491f4b3991278a6dc3b5e
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66240901"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399878"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Gerenciar uma conta do Azure Cosmos
 
@@ -41,7 +41,7 @@ az cosmosdb create \
 
 ### <a id="create-database-account-via-ps"></a>PowerShell do Azure
 ```azurepowershell-interactive
-# Create an Azure Cosmos Account for Core (SQL) API
+# Create an Azure Cosmos account for Core (SQL) API
 $resourceGroupName = "myResourceGroup"
 $location = "West US"
 $accountName = "mycosmosaccount" # must be lower case.
@@ -71,7 +71,7 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 ### <a id="create-database-account-via-arm-template"></a>Modelo do Azure Resource Manager
 
-Este modelo do Azure Resource Manager criará uma conta do Azure Cosmos DB para qualquer API compatível configurada com duas regiões e as opções para selecionar o nível de consistência, o failover automático e vários mestres. Para implantar esse modelo, clique em Implantar no Azure, na página do arquivo Leiame, [Criar conta do Azure Cosmos DB](https://github.com/Azure/azure-quickstart-templates/tree/master/101-cosmosdb-create-multi-region-account)
+Este modelo do Azure Resource Manager criará uma conta do Azure Cosmos para qualquer API compatível configurada com duas regiões e as opções para selecionar o nível de consistência, o failover automático e vários mestres. Para implantar esse modelo, clique em Implantar no Azure na página do arquivo Leiame, [Criar uma conta do Azure Cosmos](https://github.com/Azure/azure-quickstart-templates/tree/master/101-cosmosdb-create-multi-region-account)
 
 ## <a name="addremove-regions-from-your-database-account"></a>Adicionar ou remover regiões de sua conta de banco de dados
 
@@ -185,7 +185,7 @@ az cosmosdb update --name $accountName --resource-group $resourceGroupName --ena
 ### <a id="configure-multiple-write-regions-ps"></a>PowerShell do Azure
 
 ```azurepowershell-interactive
-# Update an Azure Cosmos Account from single to multi-master
+# Update an Azure Cosmos account from single to multi-master
 
 $account = Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName -Name $accountName
@@ -200,7 +200,7 @@ Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 ### <a id="configure-multiple-write-regions-arm"></a>modelo do Resource Manager
 
-Uma conta pode ser migrada de mestre único para vários mestres com a implantação do modelo do Resource Manager usado para criar a conta e a configuração `enableMultipleWriteLocations: true`. O modelo do Azure Resource Manager a seguir é um modelo mínimo possível que implantará uma conta do Azure Cosmos DB para a API do SQL com uma região única e vários mestres habilitados.
+Uma conta pode ser migrada de mestre único para vários mestres com a implantação do modelo do Resource Manager usado para criar a conta e a configuração `enableMultipleWriteLocations: true`. O modelo do Azure Resource Manager a seguir é um modelo mínimo possível que implantará uma conta do Azure Cosmos para a API do SQL com uma única região e vários mestres habilitados.
 
 ```json
 {
@@ -239,13 +239,13 @@ Uma conta pode ser migrada de mestre único para vários mestres com a implanta�
 }
 ```
 
-## <a id="automatic-failover"></a>Habilitar o failover automático para a conta do Azure Cosmos DB
+## <a id="automatic-failover"></a>Habilitar failover automático a conta do Azure Cosmos
 
 A opção Failover automático permite que o Azure Cosmos DB faça failover para a região com a prioridade mais alta de failover sem nenhuma ação do usuário, caso uma região fique indisponível. Quando o failover automático estiver habilitado, a prioridade de região poderá ser modificada. A conta precisa ter duas ou mais regiões para habilitar o failover automático.
 
 ### <a id="enable-automatic-failover-via-portal"></a>Portal do Azure
 
-1. Na sua conta do Azure Cosmos DB, abra o painel **Replicar dados globalmente**.
+1. Na sua conta do Azure Cosmos, abra o painel **Replicar dados globalmente**.
 
 2. Escolha **Failover Automático** na parte superior do painel.
 
@@ -344,7 +344,7 @@ Invoke-AzResourceAction -Action failoverPriorityChange `
 O processo de execução de um failover manual envolve a alteração da região de gravação da conta (prioridade de failover = 0) para outra região configurada para a conta.
 
 > [!NOTE]
-> As contas de vários mestres não podem ter um failover manual. Para aplicativos que usam o SDK do Azure Cosmos DB, o SDK detectará quando uma região ficar indisponível e, em seguida, redirecionará automaticamente para a próxima região mais perto se a API de hospedagem múltipla estiver sendo usada no SDK.
+> As contas de vários mestres não podem ter um failover manual. Para aplicativos que usam o SDK do Azure Cosmos, o SDK detectará quando uma região ficar indisponível e, em seguida, fará o redirecionamento automático para a próxima região mais perto se a API de hospedagem múltipla estiver sendo usada no SDK.
 
 ### <a id="enable-manual-failover-via-portal"></a>Portal do Azure
 

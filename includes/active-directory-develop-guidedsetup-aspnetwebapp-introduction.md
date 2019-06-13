@@ -14,26 +14,26 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 86113246fab399e8364653198e9a6971317e3f2c
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 46247d42837f8ac181d33216d2b93d28e2533c09
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66121813"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66482258"
 ---
 # <a name="add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Adicionar a opção Entrar com uma Conta da Microsoft a um aplicativo Web ASP.NET
 
 Este guia demonstra como implementar a opção Entrar com uma Conta da Microsoft usando uma solução ASP.NET MVC com um aplicativo tradicional baseado em navegador da Web usando o OpenID Connect.
 
-Ao final deste guia, seu aplicativo poderá aceitar conexões de contas pessoais (incluindo outlook.com, live.com e outras), bem como contas corporativas ou de estudante de qualquer empresa ou organização que foi integrada ao Azure Active Directory.
+No fim deste guia, seu aplicativo poderá aceitar entradas de contas pessoais, por exemplo outlook.com, live.com e outros. Essas contas também incluem contas corporativas e de estudante de qualquer empresa ou organização que se integrou ao Azure Active Directory.
 
-> Este guia requer o Visual Studio 2017.  Ainda não tem?  [Baixar o Visual Studio 2017 gratuitamente](https://www.visualstudio.com/downloads/)
+> Este guia requer o Visual Studio 2019.  Ainda não tem?  [Baixe gratuitamente o Visual Studio 2019](https://www.visualstudio.com/downloads/)
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Como o aplicativo de exemplo gerado por este guia funciona
 
 ![Mostra como funciona o aplicativo de exemplo gerado por este tutorial](media/active-directory-develop-guidedsetup-aspnetwebapp-intro/aspnetbrowsergeneral.svg)
 
-Este aplicativo de exemplo criado por este guia se baseia no cenário em que um usuário usa o navegador para acessar um site ASP.NET, solicitando a autenticação de um usuário por meio de um botão de entrada. Nesse cenário, a maior parte do trabalho de renderização da página da Web ocorre no lado do servidor.
+Este aplicativo de exemplo que você cria é baseado no cenário em que você usa o navegador para acessar um site ASP.NET que solicita que um usuário faça sua autenticação por meio de um botão de entrada. Nesse cenário, a maior parte do trabalho de renderização da página da Web ocorre no lado do servidor.
 
 ## <a name="libraries"></a>Bibliotecas
 

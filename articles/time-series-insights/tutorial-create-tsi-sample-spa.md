@@ -8,12 +8,12 @@ ms.date: 04/25/2019
 ms.author: dpalled
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: 5ee6e9aefb235feb28468798c3bd6b107f8c7c49
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 2f25267b95e9ed5f7d5f6e6373fb9e3807927a7f
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244033"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735343"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-single-page-web-app"></a>Tutorial: Criar um aplicativo Web de página única do Azure Time Series Insights
 
@@ -126,7 +126,7 @@ Antes de compilar o aplicativo, você precisará registrá-lo no Azure AD. O reg
 
    1. Remova a marca de comentário das três linhas abaixo do comentário `"PROD RESOURCE LINKS"` para alternar as dependências de DESENVOLVIMENTO para PRODUÇÃO. Comente as três linhas abaixo do comentário `"DEV RESOURCE LINKS"`.
 
-      [!code-javascript[head-sample](~/samples-javascript/pages/tutorial/index.html?range=2-20&highlight=10-13,15-18)]
+      [!code-html[head-sample](~/samples-javascript/pages/tutorial/index.html?range=2-20&highlight=10-13,15-18)]
 
       As dependências devem ser comentadas como no exemplo a seguir:
 
@@ -146,7 +146,7 @@ Antes de compilar o aplicativo, você precisará registrá-lo no Azure AD. O reg
 
       [!code-javascript[head-sample](~/samples-javascript/pages/tutorial/index.html?range=147-153&highlight=4-5)]
 
-      Por exemplo: 
+      Por exemplo:
 
       ```javascript
       clientId: '8884d4ca-b9e7-403a-bd8a-366d0ce0d460',

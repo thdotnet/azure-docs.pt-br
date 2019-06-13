@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: tutorial
 ms.date: 04/23/2019
 ms.author: raynew
-ms.openlocfilehash: f69c2ea334109a42d63b85cb71de0deb7174beab
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 2a6319565aa05f34ce31a14c5fc57e591248f4ee
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64701665"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399704"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Sobre o Backup do SQL Server nas VMs do Azure
 
@@ -143,6 +143,8 @@ Completo somente de cópia |  Secundário
 
       ![Mensagem de êxito na implantação](./media/backup-azure-sql-database/notifications-db-discovered.png)
 
+> [!NOTE]
+> Se o SQL Server tiver várias instâncias do SQL Server instaladas, você precisará adicionar a permissão sysadmin para a conta **NT Service\AzureWLBackupPluginSvc** em todas as instâncias do SQL.
 
 ## <a name="next-steps"></a>Próximas etapas
 

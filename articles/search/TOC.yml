@@ -163,24 +163,28 @@
       items:
         - name: Visão geral dos indexadores
           href: search-indexer-overview.md
-        - name: Indexador do armazenamento de blobs
-          href: search-howto-indexing-azure-blob-storage.md
-        - name: Indexador do armazenamento de tabelas
+        - name: Indexador do Armazenamento de Tabelas do Azure
           href: search-howto-indexing-azure-tables.md
-        - name: Indexador de banco de dados SQL
+        - name: Indexador do Banco de Dados SQL do Azure
           href: search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md
         - name: Indexador do Azure Cosmos DB
           href: search-howto-index-cosmosdb.md
-        - name: Indexação de blob de um-para-muitos
-          href: search-howto-index-one-to-many-blobs.md
-        - name: Indexação de blob CSV
-          href: search-howto-index-csv-blobs.md
-        - name: Indexação de blob JSON
-          href: search-howto-index-json-blobs.md
+        - name: Indexador do armazenamento de Blobs do Azure
+          items:
+            - name: Configurar um indexador de Blob
+              href: search-howto-indexing-azure-blob-storage.md
+            - name: Indexar Blobs um-para-muitos
+              href: search-howto-index-one-to-many-blobs.md
+            - name: Indexar blobs do CSV
+              href: search-howto-index-csv-blobs.md
+            - name: Indexar blobs do JSON
+              href: search-howto-index-json-blobs.md
+        - name: Indexadores do agendamento
+          href: search-howto-schedule-indexers.md
+        - name: Mapear campos
+          href: search-indexer-field-mappings.md
         - name: Conectar-se às VMs do SQL Server
           href: search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md
-        - name: Mapeamentos de campo
-          href: search-indexer-field-mappings.md
         - name: Solução de problemas comuns
           href: search-indexer-troubleshooting.md
     - name: Aprimorar com IA

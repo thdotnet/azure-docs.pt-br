@@ -1,6 +1,6 @@
 ---
-title: O que é gerenciamento de dispositivos no Azure Active Directory? | Microsoft Docs
-description: Saiba como o gerenciamento de dispositivos pode ajudar você a controlar os dispositivos que estão acessando os recursos do seu ambiente.
+title: O que é a identidade do dispositivo no Azure Active Directory? | Microsoft Docs
+description: Saiba como o gerenciamento de identidade do dispositivo pode ajudar você a gerenciar dispositivos que estão acessando os recursos em seu ambiente.
 services: active-directory
 documentationcenter: ''
 author: MicrosoftGuyJFlo
@@ -13,35 +13,31 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 03/01/2019
+ms.date: 06/04/2019
 ms.author: joflore
-ms.reviewer: jairoc
+ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e756b260db0f6db752d345e085b16d58cee5555
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 8f91ff65d0e11ed2e9f923f94c740314c9136d99
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65997280"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688690"
 ---
-# <a name="what-is-device-management-in-azure-active-directory"></a>O que é gerenciamento de dispositivos no Azure Active Directory?
+# <a name="what-is-a-device-identity"></a>O que é uma identidade do dispositivo?
 
 Em um mundo que prioriza os dispositivos móveis e a nuvem, o Azure AD (Azure Active Directory) permite o logon único em dispositivos, aplicativos e serviços de qualquer lugar. Com a proliferação de dispositivos, incluindo a abordagem BYOD (traga seu próprio dispositivo), os profissionais de TI se deparam com duas metas conflitantes:
 
 - Capacitar os usuários finais para serem produtivos sempre e em qualquer lugar
 - Proteger os ativos corporativos a qualquer momento
 
-Por meio de dispositivos, os usuários têm acesso aos ativos corporativos. Para proteger os ativos corporativos, como um administrador de TI, você quer ter controle sobre esses dispositivos. Desse modo, você tem a certeza de que os usuários estão acessando os recursos de dispositivos que atendem aos padrões de segurança e conformidade.
+Por meio de dispositivos no Azure AD, os usuários têm acesso aos ativos corporativos. Para proteger seus ativos corporativos, como um administrador de TI, convém gerenciar essas identidades de dispositivo. Desse modo, você tem a certeza de que os usuários estão acessando os recursos de dispositivos que atendem aos padrões de segurança e conformidade.
 
-O gerenciamento de dispositivo também é a base para [acesso condicional com base no dispositivo](../conditional-access/require-managed-devices.md). Com o acesso condicional com base no dispositivo, você pode garantir que o acesso a recursos em seu ambiente somente seja possível com dispositivos gerenciados.
+O gerenciamento de identidades do dispositivo também é a base para o [acesso condicional com base no dispositivo](../conditional-access/require-managed-devices.md). Com o acesso condicional com base no dispositivo, você pode garantir que o acesso a recursos em seu ambiente somente seja possível com dispositivos gerenciados.
 
-Este artigo explica como funciona o gerenciamento de dispositivo no Azure Active Directory.
+## <a name="getting-devices-in-azure-ad"></a>Obter dispositivos no Azure AD
 
-> [!VIDEO https://www.youtube.com/embed/NeezfKhomQU]
-
-## <a name="getting-devices-under-the-control-of-azure-ad"></a>Colocando dispositivos sob controle do Azure AD
-
-Para colocar um dispositivo sob controle do Azure AD, você tem duas opções:
+Para obter um dispositivo no Azure AD, você tem duas opções:
 
 - Registro
 - Adição
@@ -54,7 +50,7 @@ A **adição** de um dispositivo é uma extensão do registro de um dispositivo.
 
 ## <a name="azure-ad-registered-devices"></a>Dispositivos registrados no Azure AD
 
-A meta dos dispositivos registrados no Azure AD é fornecer suporte ao cenário **BYOD (traga seu próprio dispositivo)**. Nesse cenário, um usuário pode acessar os recursos controlados pelo Azure Active Directory da sua organização usando um dispositivo pessoal.  
+A meta dos dispositivos registrados no Azure AD é fornecer suporte ao cenário **BYOD (traga seu próprio dispositivo)** . Nesse cenário, um usuário pode acessar os recursos controlados pelo Azure Active Directory da sua organização usando um dispositivo pessoal.  
 
 ![Dispositivos registrados no Azure AD](./media/overview/03.png)
 
@@ -66,7 +62,7 @@ Os usuários da organização podem adicionar uma conta corporativa ou de estuda
 - Ao acessar um aplicativo de trabalho pela primeira vez
 - Manualmente por meio do menu **Configurações** no caso do Windows 10
 
-Você pode configurar dispositivos registrados no Azure AD para Windows 10, iOS, Android e macOS.
+É possível configurar um estado de dispositivo registrado no Azure AD para dispositivos com **Windows 10 pessoal, iOS, Android e macOS**.
 
 ## <a name="azure-ad-joined-devices"></a>Dispositivos adicionados ao Azure AD
 
@@ -93,7 +89,6 @@ A implementação de dispositivos adicionados ao Azure AD proporciona os seguint
 - **Acesso à Windows Store para Empresas** usando uma conta do Azure AD. Os usuários podem escolher dentre um inventário de aplicativos pré-selecionados pela organização.
 - Suporte ao **Windows Hello** para acesso conveniente e seguro aos recursos de trabalho.
 - **Restrição de acesso** a aplicativos somente de dispositivos que atendem à política de conformidade.
-
 - **Acesso direto aos recursos locais** quando o dispositivo tem a linha de visão para o controlador de domínio local.
 
 Embora a adição ao Azure AD se destine basicamente às organizações que não têm uma infraestrutura do Active Directory local para Windows Server, você certamente pode usá-la em cenários em que:
@@ -129,9 +124,9 @@ Você deverá usar dispositivos adicionados ao Azure AD híbrido se:
 
 ## <a name="summary"></a>Resumo
 
-Com o gerenciamento de dispositivo no Azure AD, é possível:
+Com o gerenciamento de identidade do dispositivo no Azure AD, é possível:
 
-- Simplificar o processo de colocar dispositivos sob controle do Azure AD
+- Simplificar o processo de colocar e gerenciar dispositivos no Azure AD
 - Fornecer aos usuários um acesso fácil de usar a recursos baseados em nuvem da sua organização
 
 Como uma regra prática, você deve usar:
@@ -156,9 +151,9 @@ Como uma regra prática, você deve usar:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Para obter uma visão geral de como gerenciar dispositivos no portal do Azure, consulte [Gerenciar dispositivos usando o portal do Azure](device-management-azure-portal.md)
-- Para saber mais sobre o acesso condicional baseado em dispositivo, confira [Configurar as políticas de acesso condicional com base em dispositivo do Azure Active Directory](../conditional-access/require-managed-devices.md).
+- Confira uma visão geral de como gerenciar identidades de dispositivo no portal do Azure em [Gerenciar identidades de dispositivo usando o portal do Azure](device-management-azure-portal.md).
 - Para configurar:
-   - Dispositivos Windows 10 registrados Azure Active Directory, consulte [Como configurar dispositivos Windows 10 registrados no Azure Active Directory](../user-help/device-management-azuread-registered-devices-windows10-setup.md)
-   - Dispositivos adicionados ao Azure Active Directory, consulte [Como configurar dispositivos adicionados ao Azure Active Directory](../user-help/device-management-azuread-joined-devices-setup.md)
-   - Para dispositivos associados híbridos do Azure AD, consulte [Como planejar sua implementação de junção híbrida do Active Directory do Azure](hybrid-azuread-join-plan.md).
+   - Dispositivos Windows 10 registrados Azure Active Directory, confira [Como configurar dispositivos Windows 10 registrados no Azure Active Directory](../user-help/device-management-azuread-registered-devices-windows10-setup.md).
+   - Dispositivos ingressados no Azure Active Directory, confira [Como planejar sua implementação de junção do Active Directory do Azure](azureadjoin-plan.md).
+   - Para dispositivos associados híbridos do Azure AD, consulte [Como planejar sua implementação de junção híbrida do Active Directory do Azure](hybrid-azuread-join-plan.md).   
+- Para saber mais sobre o acesso condicional baseado em dispositivo, confira [Configurar as políticas de acesso condicional com base em dispositivo do Azure Active Directory](../conditional-access/require-managed-devices.md).

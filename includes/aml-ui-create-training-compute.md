@@ -10,32 +10,32 @@ ms.custom: include file
 ms.topic: include
 ms.date: 05/06/2019
 ms.openlocfilehash: cf35651f7dd839e8792029851b9bfe278036624c
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
-ms.translationtype: MT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65028509"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66397459"
 ---
-Um teste é executado em um destino de computação, um recurso de computação que é anexado ao seu espaço de trabalho.  Depois de criar um destino de computação, você pode reutilizá-lo para execuções futuras.
+Um experimento é executado em um destino de computação, um recurso de computação anexado ao workspace.  Depois de criar um destino de computação, você poderá reutilizá-lo para execuções futuras.
 
-1. Selecione **executar** na parte inferior para executar o experimento.
+1. Selecione **Executar** na parte inferior para executar o teste.
 
      ![Executar o experimento](./media/aml-ui-create-training-compute/run-experiment.png)
 
-1. Quando o **destinos de computação de instalação** caixa de diálogo aparece se o seu espaço de trabalho já tem um recurso de computação, você pode selecioná-lo agora.  Caso contrário, selecione **criar novo**.
+1. Quando a caixa de diálogo **Configurar Destinos de Computação** for exibida, se o workspace já tiver um recurso de computação, você poderá selecioná-lo agora.  Caso contrário, selecione **Criar**.
 
     > [!NOTE]
-    > A interface visual só pode executar experimentos em destinos de computação do Machine Learning. Outros destinos de computação não serão mostrados.
+    > A interface visual só pode executar experimentos em destinos de Computação do Machine Learning. Outros destinos de computação não serão mostrados.
 
 1. Forneça um nome para o recurso de computação.
 
 1. Selecione **Executar**.
 
-    ![Destino de computação do programa de instalação](./media/aml-ui-create-training-compute/set-compute.png)
+    ![Configurar o destino de computação](./media/aml-ui-create-training-compute/set-compute.png)
 
-    O recurso de computação agora será criado. Exiba o status no canto superior direito do experimento. 
+    O recurso de computação agora será criado. Veja o status no canto superior direito do experimento. 
 
     > [!NOTE]
-    > Ele leva aproximadamente 5 minutos para criar um recurso de computação. Depois que o recurso for criado, você pode reutilizá-lo e ignorar esse tempo de espera para execuções futuras.
+    > São necessários aproximadamente 5 minutos para criar um recurso de computação. Depois que o recurso for criado, você poderá reutilizá-lo e ignorar esse tempo de espera para execuções futuras.
     >
-    > O recurso de computação será o dimensionamento automático para 0 nós quando ele estiver ocioso para economizar o custo.  Quando você usá-lo novamente após um atraso, você pode enfrentar aproximadamente 5 minutos de tempo de espera enquanto ele é dimensionado back.
+    > O recurso de computação será dimensionado automaticamente para 0 nó quando estiver ocioso para economia de custos.  Quando você o usar novamente após um atraso, talvez precise aguardar aproximadamente 5 minutos enquanto ele é escalado verticalmente mais uma vez.

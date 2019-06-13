@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 04/06/2019
-ms.openlocfilehash: 52b5291e4b56b5065b9dddd5b8908ade0c1a8387
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: e37e99323c92adad0b9e897af8c276a8ac153371
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "66019843"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515627"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-visual-interface"></a>Tutorial: Prever o preço de automóveis com a interface visual
 
@@ -78,13 +78,13 @@ Se você reutilizou com êxito seu teste do Início Rápido, vá para a próxima
 
 Se você não concluiu o Início Rápido, siga estas etapas para criar rapidamente um teste que importa e limpa o conjunto de dados de automóveis.
 
-1. Crie um teste selecionando **+NOVO** na parte inferior da janela da interface visual.
+1. Crie um teste selecionando **+Novo** na parte inferior da janela da interface visual.
 
-1. Selecione **EXPERIMENTO** >  **Experimento em Branco**.
+1. Selecione **Experimentos** >  **Experimento em Branco**.
 
-1. Selecione o nome do teste padrão **"Teste Criado em...**" na parte superior da tela e renomeie-o para algo significativo. Por exemplo, **Previsão de preços de automóveis**. O nome não precisa ser exclusivo.
+1. Selecione o nome do teste padrão **"Teste Criado em...** " na parte superior da tela e renomeie-o para algo significativo. Por exemplo, **Previsão de preços de automóveis**. O nome não precisa ser exclusivo.
 
-1. À esquerda da tela do experimento está uma paleta de conjuntos de dados e módulos. Para encontrar os módulos, use a caixa de pesquisa na parte superior da paleta de módulos. Digite **automóvel** na caixa de pesquisa para encontrar o conjunto de dados rotulado **Dados de preços de automóveis (Brutos)**. Arraste este conjunto de dados até a tela do experimento.
+1. À esquerda da tela do experimento está uma paleta de conjuntos de dados e módulos. Para encontrar os módulos, use a caixa de pesquisa na parte superior da paleta de módulos. Digite **automóvel** na caixa de pesquisa para encontrar o conjunto de dados rotulado **Dados de preços de automóveis (Brutos)** . Arraste este conjunto de dados até a tela do experimento.
 
     ![Captura de tela de como encontrar o conjunto de dados de preços de automóveis](./media/ui-tutorial-automobile-price-train-score/automobile-dataset.png)
 
@@ -167,7 +167,7 @@ Agora que você treinou o modelo usando 70% de seus dados, use-o para pontuar os
 
 1. Digite **pontuar modelo** na caixa de pesquisa para encontrar o módulo **Pontuar Modelo** e arraste o módulo para a tela do teste. Conecte a saída do módulo **Treinar Modelo** à porta de entrada esquerda do módulo **Pontuar Modelo**. Conecte a saída de dados de teste (porta direita) do módulo **Dividir Dados** à porta de entrada direita do módulo **Pontuar Modelo**.
 
-1. Digite **avaliar** na caixa de pesquisa para encontrar o módulo **Avaliar Modelo** e arraste o módulo para a tela do teste. Conecte a saída do módulo **Pontuar Modelo** à entrada esquerda do módulo **Avaliar Modelo**. O experimento final deve se parecer como o seguinte:
+1. Digite **avaliar** na caixa de pesquisa para encontrar **Avaliar Modelo** e arraste o módulo para a tela do teste. Conecte a saída do módulo **Pontuar Modelo** à entrada esquerda do módulo **Avaliar Modelo**. O experimento final deve se parecer como o seguinte:
 
     ![Captura de tela mostrando a configuração correta final do teste.](./media/ui-tutorial-automobile-price-train-score/final-graph.png)
 
@@ -183,8 +183,8 @@ Agora que você treinou o modelo usando 70% de seus dados, use-o para pontuar os
 
 As seguintes estatísticas são mostradas para o modelo:
 
-* **MAE (Média de Erros Absolutos)**: A média de erros absolutos (um erro é a diferença entre o valor previsto e o valor real).
-* **RMSE (Raiz Quadrada da Média de Erros Quadrados)**: a raiz quadrada da média de erros quadrados de previsões feitas no conjunto de dados de teste.
+* **MAE (Média de Erros Absolutos)** : A média de erros absolutos (um erro é a diferença entre o valor previsto e o valor real).
+* **RMSE (Raiz Quadrada da Média de Erros Quadrados)** : a raiz quadrada da média de erros quadrados de previsões feitas no conjunto de dados de teste.
 * **Erro absoluto relativo**: a média de erros absolutos relativos à diferença absoluta entre os valores reais e a média de todos os valores reais.
 * **Erro ao quadrado relativo**: a média de erros quadrados relativos à diferença quadrada entre os valores reais e a média de todos os valores reais.
 * **Coeficiente de determinação**: Também conhecido como o valor de R-quadrado, essa é uma métrica estatística que indica se o modelo se encaixa bem nos dados.

@@ -533,8 +533,8 @@
           href: how-to-sql-subquery.md
     - name: Feed de alterações
       items:
-        - name: Logs de gatilho do Azure Cosmos DB
-          href: how-to-configure-cosmos-db-trigger-logs.md
+        - name: Política de conexão de gatilhos do Azure Cosmos DB
+          href: how-to-configure-cosmos-db-trigger-connection-policy.md
         - name: Vários gatilhos do Azure Cosmos DB
           href: how-to-create-multiple-cosmos-db-triggers.md
         - name: Solucionar problemas em gatilhos do Azure Cosmos DB
