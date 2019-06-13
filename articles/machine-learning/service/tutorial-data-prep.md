@@ -11,16 +11,16 @@ ms.author: MayMSFT
 ms.reviewer: trbye
 ms.date: 03/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: 67f3a0d10490c5c63dfe262d07985f51bb384e34
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 8b7bf5a0ece3927c7dbafdec9716b7c6f8dfbc0e
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65604483"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66474715"
 ---
 # <a name="tutorial-prepare-data-for-regression-modeling"></a>Tutorial: Preparar dados para modelagem de regressão
 
-Neste tutorial, você aprenderá como preparar dados para a modelagem de regressão usando o [pacote de preparação de dados para o Azure Machine Learning](https://aka.ms/data-prep-sdk). Você executará várias transformações para filtrar e combinar dois conjuntos diferentes de dados de táxi em Nova York.
+Neste tutorial, você aprenderá a preparar dados para a modelagem de regressão usando o [pacote de preparação de dados](https://aka.ms/data-prep-sdk) do [SDK do Azure Machine Learning](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py). Você executará várias transformações para filtrar e combinar dois conjuntos diferentes de dados de táxi em Nova York.
 
 Este tutorial é **parte uma de uma série de tutoriais de duas partes**. Depois de concluir a série de tutoriais, você poderá prever o custo de uma corrida de táxi treinando um modelo em recursos de dados. Esses recursos incluem o dia e a hora da retirada, o número de passageiros e o local de retirada.
 
@@ -38,7 +38,7 @@ Neste tutorial, você irá:
 Vá para [Configurar seu ambiente de desenvolvimento](#start) para ler as etapas do notebook ou use as instruções abaixo para obter o notebook e executá-lo em Azure Notebooks ou seu próprio servidor de notebook. Para executar o notebook, você precisará de:
 
 * Um servidor de notebook do Python 3.6 com o seguinte instalado:
-    *  Pacote azureml-dataprep do SDK do Azure Machine Learning para Python
+    * O pacote `azureml-dataprep` do SDK do Azure Machine Learning
 * O notebook do tutorial
 
 * Usar um [servidor de notebook de nuvem em seu workspace](#azure) 
@@ -46,7 +46,7 @@ Vá para [Configurar seu ambiente de desenvolvimento](#start) para ler as etapas
 
 ### <a name="azure"></a>Usar um servidor de notebook de nuvem em seu workspace
 
-É fácil começar a usar seu próprio servidor de notebook baseado em nuvem. O [SDK do Azure Machine Learning para Python](https://aka.ms/aml-sdk) já está instalado e configurado depois que você cria este recurso de nuvem.
+É fácil começar a usar seu próprio servidor de notebook baseado em nuvem. O SDK do Azure Machine Learning para Python já está instalado e configurado depois que você cria esse recurso de nuvem.
 
 [!INCLUDE [aml-azure-notebooks](../../../includes/aml-azure-notebooks.md)]
 
@@ -56,8 +56,8 @@ Vá para [Configurar seu ambiente de desenvolvimento](#start) para ler as etapas
 
 Use estas etapas para criar um servidor de notebook local do Jupyter no seu computador.  Após concluir as etapas, execute o notebook **tutorials/regression-part1-data-prep.ipynb**.
 
-1. Conclua as etapas de instalação no [Início Rápido do Python do Azure Machine Learning](setup-create-workspace.md#sdk) para criar um ambiente do Miniconda.  Fique à vontade ignorar a seção **Criar um workspace** se você desejar, mas você precisará dela para a [parte 2](tutorial-auto-train-models.md) desta série de tutoriais.
-1. Instale o azureml-dataprep em seu ambiente usando `pip install azureml-dataprep`.
+1. Conclua as etapas de instalação no [Início Rápido do Python do Azure Machine Learning](setup-create-workspace.md#sdk) para criar um ambiente do Miniconda e instalar o SDK.  Fique à vontade ignorar a seção **Criar um workspace** se você desejar, mas você precisará dela para a [parte 2](tutorial-auto-train-models.md) desta série de tutoriais.
+1. O pacote `azureml-dataprep` é instalado automaticamente quando você instala o SDK.
 1. Clone [o repositório do GitHub](https://aka.ms/aml-notebooks).
 
     ```
@@ -85,14 +85,14 @@ Use o comando a seguir para instalar os pacotes necessários se você ainda não
 pip install "azureml-dataprep[pandas]>=1.1.0,<1.2.0"
 ```
 
-Importe o SDK.
+Importe o pacote.
 
 ```python
 import azureml.dataprep as dprep
 ```
 
 > [!IMPORTANT]
-> Instale a versão mais recente. Este tutorial não funciona com versões anteriores à 1.1.0
+> Instale a última versão do pacote azureml.dataprep. Este tutorial não funciona com versões anteriores à 1.1.0
 
 ## <a name="load-data"></a>Carregar dados
 

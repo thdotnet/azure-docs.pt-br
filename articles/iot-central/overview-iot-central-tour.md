@@ -3,18 +3,18 @@ title: Faça um tour da interface do usuário do Azure IoT Central | Microsoft D
 description: Como um construtor, familiarize-se com as áreas principais da interface do usuário do Azure IoT Central que você usa para criar uma solução de IoT.
 author: dominicbetts
 ms.author: dobett
-ms.date: 01/24/2019
+ms.date: 05/31/2019
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 8a0621d0261bfbc7ab396abf837ee7b1123352d1
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 53306b2087a47f5a61fc2a228e2d1f527127f746
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65233453"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476329"
 ---
 # <a name="take-a-tour-of-the-azure-iot-central-ui"></a>Faça um tour da interface do usuário do Azure IoT Central
 
@@ -35,7 +35,7 @@ Como um _operador_, você pode usar a interface do usuário do Azure IoT Central
 
 ## <a name="use-the-left-navigation-menu"></a>Use o menu de navegação à esquerda
 
-Use o menu de navegação à esquerda para acessar as diferentes áreas do aplicativo. Você pode expandir ou recolher a barra de navegação, selecionando **<** ou **>**:
+Use o menu de navegação à esquerda para acessar as diferentes áreas do aplicativo. Você pode expandir ou recolher a barra de navegação, selecionando **<** ou **>** :
 
 | Menu | DESCRIÇÃO |
 | ---- | ----------- |
@@ -63,7 +63,9 @@ Você pode escolher entre um tema claro ou escuro para a interface do usuário:
 
 ![painel](media/overview-iot-central-tour/homepage.png)
 
-O painel é a primeira página que você vê quando entra no seu aplicativo do Azure IoT Central. Como um construtor, você pode adicionar blocos para personalizar o painel de outros usuários do aplicativo. Para obter mais informações, consulte o tutorial [Personalizar modo de exibição do operador do Azure IoT Central](tutorial-customize-operator.md). Os usuários também podem [criar seus próprios painéis](howto-personalize-dashboard.md).
+* O painel é a primeira página que você vê quando entra no seu aplicativo do Azure IoT Central. Como um construtor, você pode adicionar blocos para personalizar o painel de outros usuários do aplicativo. Para obter mais informações, consulte o tutorial [Personalizar modo de exibição do operador do Azure IoT Central](tutorial-customize-operator.md).
+
+* Como operador, você pode criar painéis personalizados e alternar entre eles e o painel padrão. Saiba mais no artigo de instruções [Criar e gerenciar painéis pessoais](howto-personalize-dashboard.md).
 
 ## <a name="device-explorer"></a>Gerenciador de dispositivos
 
@@ -92,23 +94,30 @@ A página Análise mostra gráficos que ajudam você a entender como os disposit
 
 A página de trabalhos permite que você execute operações de gerenciamento de dispositivos em massa em seus dispositivos. O construtor usa essa página para atualizar propriedades do dispositivo, configurações e comandos. Para saber mais, consulte o artigo [Executar um trabalho](howto-run-a-job.md).
 
-## <a name="device-templates"></a>Modelos de Dispositivo
+## <a name="device-templates"></a>Modelos de dispositivo
 
 ![Página Modelos de Dispositivo](media/overview-iot-central-tour/templates.png)
 
-A página Modelos de Dispositivo é o local em que um construtor cria e gerencia os modelos de dispositivo no aplicativo. Para saber mais, consulte o tutorial [Definir um novo tipo de dispositivo em seu aplicativo do Azure IoT Central](tutorial-define-device-type.md).
+A página Modelos de Dispositivo é o local em que um construtor cria e gerencia os modelos de dispositivo no aplicativo. Um modelo de dispositivo especifica as características do dispositivo, como:
 
-## <a name="continuous-data-export"></a>Exportação Contínua de Dados
+- medidas de telemetria, estado e evento.
+- configurações e propriedades.
+- comandos.
+- Regras com base em eventos ou valores de telemetria.
+
+Para saber mais, consulte o tutorial [Definir um novo tipo de dispositivo em seu aplicativo do Azure IoT Central](tutorial-define-device-type.md).
+
+## <a name="continuous-data-export"></a>Exportação contínua de dados
 
 ![Página Exportação Contínua de Dados](media/overview-iot-central-tour/export.png)
 
-A página Exportação Contínua de Dados é o local em que o administrador define como exportar dados, como a telemetria, por meio do aplicativo. Outros serviços podem armazenar os dados exportados ou usá-los para análise. Para saber mais, confira o artigo [Exportar seus dados no Azure IoT Central](howto-export-data.md).
+A página de exportação contínua de dados é onde o administrador define como transmitir dados, como a telemetria, do aplicativo. Outros serviços podem armazenar os dados exportados ou usá-los para análise. Para saber mais, confira o artigo [Exportar seus dados no Azure IoT Central](howto-export-data.md).
 
 ## <a name="administration"></a>Administração
 
 ![Página Administração](media/overview-iot-central-tour/administration.png)
 
-A página Administração contém links para as ferramentas que um administrador usa para definir usuários e funções no aplicativo. Para saber mais, consulte o artigo [Administrar seu aplicativo do Azure IoT Central](howto-administer.md).
+A página de administração contém links para as ferramentas usadas por um administrador para definir usuários e funções no aplicativo e personalizar a interface do usuário. Para saber mais, consulte o artigo [Administrar seu aplicativo do Azure IoT Central](howto-administer.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

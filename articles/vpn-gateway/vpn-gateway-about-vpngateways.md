@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: overview
 ms.date: 05/22/2019
 ms.author: cherylmc
-ms.openlocfilehash: 79697d44ea3e5126d43169f36c550046af3bc366
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 0d4bba41170408b640b4e8d3809c77b7a6443c6a
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66170580"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480043"
 ---
 # <a name="what-is-vpn-gateway"></a>O que é o Gateway de VPN?
 
@@ -23,7 +23,9 @@ Um gateway de VPN é um tipo específico de gateway de rede virtual que é usado
 
 Um gateway de rede virtual é composto por duas ou mais máquinas virtuais implantadas em uma sub-rede específica criada, que é chamada de *sub-rede de gateway*. As VMs localizadas na sub-rede de gateway são criadas quando você cria o gateway de rede virtual. As VMs de gateway de rede virtual são configuradas para conter as tabelas de roteamento e os serviços de gateway específicos do gateway. Não é possível configurar diretamente as VMs que fazem parte do gateway de rede virtual, e você nunca deve implantar recursos adicionais para a sub-rede de gateway.
 
-A criação de um gateway de rede virtual pode levar até 45 minutos para ser concluída. Quando você cria um gateway de rede virtual, as VMs de gateway são implantadas na sub-rede de gateway e definidas com as configurações especificadas. Uma das configurações que você define é o tipo de gateway. O tipo de gateway 'vpn' especifica que o tipo de gateway de rede virtual criado é um gateway de VPN. Depois de criar um gateway de VPN, você pode criar uma conexão de túnel de VPN IPsec/IKE entre o gateway de VPN e o outro gateway de VPN (rede virtual a rede virtual), ou criar uma conexão de túnel de VPN IPsec/IKE entre locais, entre o gateway de VPN e um dispositivo VPN local (Site a Site). Você também pode criar uma conexão VPN Ponto a Site (VPN sobre IKEv2 ou SSTP), que permite a você se conectar à sua rede virtual de um local remoto, como de uma conferência ou em casa.
+É possível implantar gateways de VPN em Zonas de Disponibilidade do Azure. Isso traz resiliência, escalabilidade e maior disponibilidade para gateways de rede virtual. A implantação de gateways em Zonas de Disponibilidade do Azure separa de forma física e lógica os gateways em uma região, enquanto protege a conectividade de rede local com o Azure de falhas no nível na zona. Confira [Sobre os gateways de rede virtual com redundância de zona em Zonas de Disponibilidade do Azure](about-zone-redundant-vnet-gateways.md)
+
+A criação de um gateway de rede virtual pode levar até 45 minutos para ser concluída. Quando você cria um gateway de rede virtual, as VMs de gateway são implantadas na sub-rede de gateway e definidas com as configurações especificadas. Uma das configurações que você define é o tipo de gateway. O tipo de gateway 'vpn' especifica que o tipo de gateway de rede virtual criado é um gateway de VPN. Depois de criar um gateway de VPN, você pode criar uma conexão de túnel de VPN IPsec/IKE entre o gateway de VPN e o outro gateway de VPN (rede virtual a rede virtual), ou criar uma conexão de túnel de VPN IPsec/IKE entre locais, entre o gateway de VPN e um dispositivo VPN local (Site a Site). Você também pode criar uma conexão VPN Ponto a Site (VPN sobre OpenVPN, IKEv2 ou SSTP), que permite a você se conectar à sua rede virtual de um local remoto, como de uma conferência ou em casa.
 
 ## <a name="configuring"></a>Configurando um Gateway de VPN
 
@@ -83,7 +85,7 @@ Esse tipo de conexão é uma variação da conexão Site a Site. Você pode cria
 
 [!INCLUDE [site-to-site and multi-site table](../../includes/vpn-gateway-table-site-to-site-include.md)]
 
-## <a name="P2S"></a>Ponto a Site (VPN sobre IKEv2 ou SSTP)
+## <a name="P2S"></a>VPN ponto a site
 
 Uma conexão de gateway de VPN Ponto a Site (P2S) permite que você crie uma conexão segura para sua rede virtual a partir de um computador cliente individual. Uma conexão P2S é estabelecida iniciando-a do computador cliente. Essa solução é útil para pessoas que trabalham remotamente que querem se conectar às VNets do Azure de um local remoto, como de casa ou de uma conferência. A VPN P2S também é uma solução útil para usar em vez de uma VPN S2S, quando você tiver apenas alguns clientes que precisam se conectar a uma rede virtual.
 

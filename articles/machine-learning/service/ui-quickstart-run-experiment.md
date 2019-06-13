@@ -9,18 +9,18 @@ ms.topic: quickstart
 author: sdgilley
 ms.author: sgilley
 ms.date: 05/02/2019
-ms.openlocfilehash: 0c492424e67853f7cb4a017fb4215d38a555a8a4
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 07b86138a95853673b5d54e272b40af41d58f418
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545079"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475949"
 ---
 # <a name="quickstart-prepare-and-visualize-data-without-writing-code-in-azure-machine-learning"></a>Início Rápido: Preparar e visualizar dados sem escrever código no Azure Machine Learning
 
-Prepare e visualize seus dados na interface visual do tipo "arrastar e soltar" (versão prévia) do Azure Machine Learning. Os dados que você usará incluem entradas para vários automóveis individuais, incluindo informações como marca, modelo, especificações técnicas e preço.  
+Prepare e visualize seus dados na interface visual do tipo "arrastar e soltar" (versão prévia) do Azure Machine Learning. Os dados que você usará incluem entradas para vários automóveis individuais, incluindo informações como marca, modelo, especificações técnicas e preço. Depois de concluir este início rápido, você estará pronto para usar esses dados para prever o preço de um automóvel. 
 
-Neste início rápido, você explorará e preparará dados:
+Antes de treinar um modelo de aprendizado de máquina, é necessário entender e preparar os dados.  Neste início rápido, você vai:
 
 - Crie seu primeiro teste para adicionar e visualizar dados
 - Preparar os dados removendo os valores ausentes
@@ -131,7 +131,7 @@ Agora que você executou o teste inicial, pode visualizar os dados para entender
 
      ![Visualizar os dados](./media/ui-quickstart-run-experiment/preview-data.gif)
 
-1. Clique em cada coluna para entender mais sobre seu conjunto de dados.
+1. Clique em cada coluna para entender mais sobre o conjunto de dados e pense se essas colunas serão úteis para prever o preço de um automóvel.
 
 ## <a name="prepare-data"></a>Preparar dados
 
@@ -176,7 +176,7 @@ Primeiro, remova a coluna **normalized-losses** completamente.
 
 ### <a name="clean-missing-data"></a>Limpar dados ausentes
 
-Agora adicione outro módulo que remove qualquer linha restante que tenha dados ausentes.
+Quando você treina um modelo, precisa fazer algo sobre os dados que estão faltando.  Nesse caso, você adicionará um módulo para remover qualquer linha restante que tenha dados ausentes.  
 
 1. Digite **Limpar** na caixa de pesquisa para encontrar o módulo **Limpar Dados Ausentes**.
 
@@ -216,7 +216,7 @@ Coo você fez alterações nos módulos do seu teste, o status mudou para “Em 
 
     Agora há 193 linhas e 25 colunas.
 
-    Ao clicar em **num-of-doors**, você verá que ele ainda tem dois valores exclusivos, mas agora tem 0 valores ausentes.  
+    Ao clicar em **num-of-doors**, você verá que ele ainda tem dois valores exclusivos, mas agora tem 0 valores ausentes. Clique no restante das colunas para ver que não há valores ausentes no conjunto de dados. 
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
@@ -228,7 +228,7 @@ Neste guia de início rápido, você aprendeu a:
 
 - Crie seu primeiro teste para adicionar e visualizar dados
 - Preparar os dados removendo os valores ausentes
-- Visualizar os dados resultantes
+- Visualizar os dados preparados
 
 Passe para o tutorial para usar esses dados para prever o preço de um automóvel.
 

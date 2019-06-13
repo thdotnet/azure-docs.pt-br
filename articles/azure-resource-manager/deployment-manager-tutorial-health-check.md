@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 05/06/2019
+ms.date: 05/31/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 8ffc64359faab539ab74e354caad4081f31fcd43
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: d43a0e7c48db9dd42c7cf3b52e5d4072a4827898
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65790121"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479170"
 ---
 # <a name="tutorial-use-health-check-in-azure-deployment-manager-public-preview"></a>Tutorial: Usar a verificação de integridade no Gerenciador de Implantação do Azure (versão prévia pública)
 
@@ -50,18 +50,18 @@ Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://a
 Para concluir este artigo, você precisa do seguinte:
 
 * Conclua [Usar o Gerenciador de Implantação do Azure com modelos do Resource Manager](./deployment-manager-tutorial.md).
-* Baixe [os modelos e os artefatos](https://armtutorials.blob.core.windows.net/admtutorial/ADMTutorial.zip) usados por este tutorial. 
+* Baixe [os modelos e os artefatos](https://armtutorials.blob.core.windows.net/admtutorial/ADMTutorial.zip) usados por este tutorial.
 
 ## <a name="create-a-health-check-service-simulator"></a>Criar um simulador de serviço de verificação de integridade
 
-Em produção, normalmente, são usados um ou mais provedores de monitoramento. Para facilitar ao máximo a integração de integridade, a Microsoft tem trabalhado com algumas das principais empresas de monitoramento de integridade de serviço para fornecer uma solução copiar/colar simples visando integrar as verificações de integridade às suas implantações. Para obter uma lista dessas empresas, confira [Provedores de monitoramento de integridade](./deployment-manager-health-check.md#health-monitoring-providers). Para fins deste tutorial, você criará uma [Função do Azure](/azure/azure-functions/) para simular um serviço de monitoramento de integridade. Essa função usa um código de status e retorna o mesmo código. O modelo do Gerenciador de Implantação do Azure usa o código de status para determinar como proceder com a implantação. 
+Em produção, normalmente, são usados um ou mais provedores de monitoramento. Para facilitar ao máximo a integração de integridade, a Microsoft tem trabalhado com algumas das principais empresas de monitoramento de integridade de serviço para fornecer uma solução copiar/colar simples visando integrar as verificações de integridade às suas implantações. Para obter uma lista dessas empresas, confira [Provedores de monitoramento de integridade](./deployment-manager-health-check.md#health-monitoring-providers). Para fins deste tutorial, você criará uma [Função do Azure](/azure/azure-functions/) para simular um serviço de monitoramento de integridade. Essa função usa um código de status e retorna o mesmo código. O modelo do Gerenciador de Implantação do Azure usa o código de status para determinar como proceder com a implantação.
 
 Os dois seguintes arquivos são usados para implantar a Função do Azure. Você não precisa baixar esses arquivos para acompanhar o tutorial.
 
-* Um modelo do Resource Manager localizado em [https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json](https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json). Você implantará esse modelo para criar uma Função do Azure.  
-* Um arquivo zip do código-fonte da Função do Azure, [http://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip](http://armtutorials.blob.core.windows.net/admtutorial/RestHealthTest.zip). Esse zip chamado é chamado pelo modelo do Resource Manager.
+* Um modelo do Resource Manager localizado em [https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json](https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json). Você implantará esse modelo para criar uma Função do Azure.
+* Um arquivo zip do código-fonte da Função do Azure, [http://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip](http://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip). Esse zip chamado é chamado pelo modelo do Resource Manager.
 
-Para implantar a função do Azure, selecione **Experimentar** para abrir o Azure Cloud Shell e, em seguida, cole o script a seguir na janela do shell.  Para colar o código, clique com o botão direito do mouse na janela do shell e, em seguida, selecione **Colar**. 
+Para implantar a função do Azure, selecione **Experimentar** para abrir o Azure Cloud Shell e, em seguida, cole o script a seguir na janela do shell.  Para colar o código, clique com o botão direito do mouse na janela do shell e, em seguida, selecione **Colar**.
 
 > [!IMPORTANT]
 > **projectName** no script do PowerShell é usado para gerar nomes para os serviços do Azure que são implantados neste tutorial. Diferentes serviços do Azure têm diferentes requisitos nos nomes. Para garantir que a implantação seja bem-sucedida, escolha um nome que tenha menos de 12 caracteres com apenas letras minúsculas e números.
@@ -81,7 +81,7 @@ Para verificar e testar a função do Azure:
 1. Abra o [Portal do Azure](https://portal.azure.com).
 1. Abra o grupo de recursos.  O nome padrão é o nome do projeto com **rg** acrescentado.
 1. Selecione o serviço de aplicativo no grupo de recursos.  O nome padrão do serviço de aplicativo é o nome do projeto com **webapp** acrescentado.
-1. Expanda **Funções** e, em seguida, selecione **HttpTrigger1**. 
+1. Expanda **Funções** e, em seguida, selecione **HttpTrigger1**.
 
     ![Função do Azure na verificação de integridade do Gerenciador de Implantação do Azure](./media/deployment-manager-tutorial-health-check/azure-deployment-manager-hc-function.png)
 
@@ -178,7 +178,7 @@ O objetivo desta seção é mostrar como incluir uma etapa de verificação de i
     },
     ```
 
-    Com base na definição, a distribuição prossegue se o status da integridade é *íntegro* ou *aviso*. 
+    Com base na definição, a distribuição prossegue se o status da integridade é *íntegro* ou *aviso*.
 
 1. Atualize o **dependsON** da definição de distribuição para incluir a etapa de verificação de integridade recém-definida:
 
@@ -189,7 +189,7 @@ O objetivo desta seção é mostrar como incluir uma etapa de verificação de i
     ],
     ```
 
-1. Atualize **stepGroups** para incluir a etapa de verificação de integridade. A **healthCheckStep** é chamada em **postDeploymentSteps** do **stepGroup2**. **stepGroup3** e **stepGroup4** são implantadas somente se o status íntegro é *íntegro* ou *aviso*. 
+1. Atualize **stepGroups** para incluir a etapa de verificação de integridade. A **healthCheckStep** é chamada em **postDeploymentSteps** do **stepGroup2**. **stepGroup3** e **stepGroup4** são implantadas somente se o status íntegro é *íntegro* ou *aviso*.
 
     ```json
     "stepGroups": [
@@ -265,7 +265,7 @@ Verifique se a topologia de serviço e os recursos de sublinhado foram criados c
 
 ## <a name="deploy-the-rollout-with-the-unhealthy-status"></a>Implantar a distribuição com o status não íntegro
 
-Para simplificar o tutorial, o modelo de distribuição revisado é compartilhado na localização a seguir, de modo que você não precise preparar sua própria cópia. Caso deseje usar sua própria cópia, siga as instruções do [Tutorial: Usar o Gerenciador de Implantação do Azure com modelos do Resource Manager](./deployment-manager-tutorial.md).
+Para simplificar o tutorial, o modelo de distribuição revisado é compartilhado nas localizações a seguir, de modo que você não precise preparar sua própria cópia. Caso deseje usar sua própria cópia, siga as instruções do [Tutorial: Usar o Gerenciador de Implantação do Azure com modelos do Resource Manager](./deployment-manager-tutorial.md).
 
 * Modelo de topologia: https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplatesHC/CreateADMRollout.json
 * Repositório de artefatos: https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore
@@ -394,7 +394,7 @@ Quando os recursos do Azure já não forem necessários, limpe os recursos impla
     * **&lt;namePrefix>ServiceWUSrg**: contém os recursos definidos pelo ServiceWUS.
     * **&lt;namePrefix>ServiceEUSrg**: contém os recursos definidos pelo ServiceEUS.
     * O grupo de recursos para a identidade gerenciada definida pelo usuário.
-3. Selecione o nome do grupo de recursos.  
+3. Selecione o nome do grupo de recursos.
 4. Escolha **Excluir grupo de recursos** no menu superior.
 5. Repita as duas últimas etapas para excluir outros grupos de recursos criados neste tutorial.
 

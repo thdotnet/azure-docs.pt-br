@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 04/10/2019
 ms.author: spelluru
-ms.openlocfilehash: 076e3b41a50681e453c1a07575ac6cb7071d97d2
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: e34599b12b8b0c487c6813038951b051d1eaf425
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "65992038"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400255"
 ---
 # <a name="quickstart-use-the-azure-cli-to-create-a-service-bus-queue"></a>Início Rápido: Usar a CLI do Azure para criar uma fila do Barramento de Serviço
 Este início rápido descreve como enviar e receber mensagens com o Barramento de Serviço usando a CLI do Azure e a biblioteca Java do Barramento de Serviço. Por fim, se você estiver interessado em mais detalhes técnicos poderá [ler uma explicação](#understand-the-sample-code) dos principais elementos do código de exemplo.
@@ -22,7 +22,7 @@ Este início rápido descreve como enviar e receber mensagens com o Barramento d
 [!INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
 ## <a name="prerequisites"></a>Pré-requisitos
-Se você não tiver uma assinatura do Azure, poderá criar uma [conta gratuita][] antes de começar.
+Se você não tiver uma assinatura do Azure, crie uma [conta gratuita][free account] antes de começar.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -377,7 +377,7 @@ Neste artigo, você criou um namespace de Barramento de Serviço e outros recurs
 > [!div class="nextstepaction"]
 > [Enviar e receber mensagens](service-bus-dotnet-get-started-with-queues.md)
 
-[conta gratuita]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[free account]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [fully qualified domain name]: https://wikipedia.org/wiki/Fully_qualified_domain_name
 [Install the Azure CLI]: /cli/azure/install-azure-cli
 [az group create]: /cli/azure/group#az_group_create

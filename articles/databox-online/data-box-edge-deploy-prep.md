@@ -6,18 +6,17 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 04/23/2019
+ms.date: 06/03/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Data Box Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: d7e66970db3397531c798bc37bf7c1f346e999bf
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 364ceabc3c9e7a577bd126b81bcd5256d947bbe3
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64924764"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476785"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-edge"></a>Tutorial: Preparar para implantar o Azure Data Box Edge  
-
 
 Este é o primeiro tutorial da série de tutoriais de implantação necessários para implantar completamente seu Azure Data Box Edge. Este tutorial descreve como preparar o portal do Azure para implantar um recurso do Data Box Edge.
 
@@ -31,7 +30,6 @@ Neste tutorial, você aprenderá como:
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-
 ### <a name="get-started"></a>Introdução
 
 Veja os tutoriais a seguir na sequência indicada para implantar o Data Box Edge.
@@ -42,7 +40,7 @@ Veja os tutoriais a seguir na sequência indicada para implantar o Data Box Edge
 | 2. |**[Instalar o Data Box Edge](data-box-edge-deploy-install.md)**|Desempacote, monte no rack e prepare o cabeamento do dispositivo físico do Data Box Edge.  |
 | 3. |**[Conectar-se, configurar e ativar o Data Box Edge](data-box-edge-deploy-connect-setup-activate.md)** |Conectar-se a interface do usuário da Web local, conclua a configuração do dispositivo e ativar o dispositivo. O dispositivo está pronto para configurar compartilhamentos NFS ou SMB.  |
 | 4. |**[Transferir dados com o Data Box Edge](data-box-edge-deploy-add-shares.md)** |Adicione compartilhamentos e conecte-se a ele por meio de SMB ou NFS. |
-| 5. |**[Transformar dados com o Data Box Edge](data-box-edge-deploy-configure-compute.md)** |Configure módulos do Edge no dispositivo para transformar os dados à medida que eles se movem para o Azure. |
+| 5. |**[Transformar dados com o Data Box Edge](data-box-edge-deploy-configure-compute.md)** |Configure módulos de computação no dispositivo para transformar os dados à medida que eles são migrados para o Azure. |
 
 Agora, você pode começar a configurar o portal do Azure.
 
@@ -55,7 +53,11 @@ A seguir estão os pré-requisitos de configuração para o recurso do Data Box 
 Antes de começar, verifique se:
 
 - Sua assinatura do Microsoft Azure está habilitada para o recurso do Data Box Edge. Não há suporte para as assinaturas pagas conforme o uso.
-- Você tem acesso de colaborador ou proprietário à sua assinatura.
+- Você tem acesso de proprietário ou colaborador no nível do grupo de recursos aos recursos do Data Box Edge/Data Box Gateway, do Hub IoT e do Armazenamento do Azure.
+
+    - Para criar qualquer recurso do Data Box Edge/Data Box Gateway, você deverá ter permissões como um colaborador (ou superior) com escopo no nível do grupo de recursos. Você também precisará verificar se o provedor `Microsoft.DataBoxEdge` está registrado. Para obter informações sobre como realizar o registro, acesse [Registrar o provedor de recursos](data-box-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
+    - Para criar qualquer recurso do Hub IoT, verifique se o provedor Microsoft.Devices está registrado. Para obter informações sobre como realizar o registro, acesse [Registrar o provedor de recursos](data-box-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
+    - Para criar um recurso da conta de armazenamento, novamente, você precisará ter acesso de colaborador ou superior com escopo no nível do grupo de recursos. O Armazenamento do Azure é, por padrão, um provedor de recursos registrado.
 - Você tem acesso de usuário ou administrador à API do Azure Active Directory Graph. Para obter mais informações, confira [API do Azure Active Directory Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
 - Você tem sua conta de armazenamento do Microsoft Azure com credenciais de acesso.
 
@@ -64,7 +66,7 @@ Antes de começar, verifique se:
 Antes de implantar um dispositivo físico, verifique se:
 
 - Você examinou as informações de segurança que foram incluídas no pacote de remessa.
-- Você tem um slot de 1 U disponível em um rack padrão de 19" no seu datacenter para montar o dispositivo em rack. 
+- Você tem um slot de 1U disponível em um rack padrão de 19” no datacenter para montar o dispositivo em rack.
 - Você tem acesso a uma superfície de trabalho plana, estável e nivelada na qual o dispositivo pode apoiar-se com segurança.
 - O local em que você pretende instalar o dispositivo tem alimentação CA padrão de uma fonte independente ou uma PDU (unidade de distribuição de energia) no rack com um no-break.
 - Você tem acesso a um dispositivo físico.

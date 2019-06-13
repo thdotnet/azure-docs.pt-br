@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/22/2019
+ms.date: 05/28/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5dd8af0ed016dca5ab9c14b117a2673ca214e08c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 554a4c63c8492d69ad0899176cdc58895c5146f5
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64688102"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66474118"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft"></a>Tutorial: Integração do Azure Active Directory com o SSO de SAML para o JIRA da Microsoft
 
@@ -44,7 +44,7 @@ Use sua conta do Microsoft Azure Active Directory com o servidor do Atlassian JI
 Para configurar a integração do Azure AD ao SSO do SAML para o JIRA da Microsoft, você precisa dos seguintes itens:
 
 - Uma assinatura do Azure AD
-- O JIRA Core e o Software 6.0 a 7.12 ou o JIRA Service Desk 3.0 a 3.5 devem ser instalados e configurados na versão de 64 bits do Windows
+- O JIRA Core e o Software 6.4 a 8.0 ou o JIRA Service Desk 3.0 a 3.5 devem ser instalados e configurados na versão de 64 bits do Windows
 - O servidor do JIRA é habilitado para HTTPS
 - Observe que as versões com suporte no Plug-in do JIRA são mencionadas na seção abaixo.
 - O servidor do JIRA é acessível pela Internet, especialmente na página de Logon do Azure AD para autenticação e deve conseguir receber o token do Azure AD
@@ -62,7 +62,7 @@ Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 
 ## <a name="supported-versions-of-jira"></a>Versões com suporte do JIRA
 
-* JIRA Core e Software: 6.0 a 7.12
+* JIRA Core e Software: 6.4 a 8.0
 * Jira Service Desk: 3.0.0 a 3.5.0
 * O JIRA também fornece suporte para 5.2. Para obter mais detalhes, clique em [Logon único do Microsoft Azure Active Directory para JIRA 5.2](jira52microsoft-tutorial.md)
 
@@ -133,7 +133,7 @@ Para configurar o logon único do Azure AD com o SSO de SAML para o JIRA da Micr
 
     ![Informações de logon único e domínio do SSO do SAML para o JIRA da Microsoft](common/sp-identifier-reply.png)
 
-     a. Na caixa de texto **URL de Entrada** digite uma URL usando o seguinte padrão: `https://<domain:port>/plugins/servlet/saml/auth`
+    a. Na caixa de texto **URL de Entrada** digite uma URL usando o seguinte padrão: `https://<domain:port>/plugins/servlet/saml/auth`
 
     b. Na caixa **Identificador**, digite uma URL usando o seguinte padrão: `https://<domain:port>/`
 
@@ -163,7 +163,7 @@ Para configurar o logon único do Azure AD com o SSO de SAML para o JIRA da Micr
     > [!NOTE]
     > Você deve estar configurando o servidor primeiro com as instruções abaixo e depois instalar o plugin.
 
-     a. Inclua abaixo o atributo na porta **do conector** no arquivo **server.xml** do aplicativo do servidor JIRA.
+    a. Inclua abaixo o atributo na porta **do conector** no arquivo **server.xml** do aplicativo do servidor JIRA.
 
     `scheme="https" proxyName="<subdomain.domain.com>" proxyPort="<proxy_port>" secure="true"`
 
@@ -179,34 +179,40 @@ Para configurar o logon único do Azure AD com o SSO de SAML para o JIRA da Micr
 
 6. Realize as seguintes etapas na página de configuração:
 
-    ![Configurar o logon único](./media/jiramicrosoft-tutorial/addon52.png)
+    ![Configurar o logon único](./media/jiramicrosoft-tutorial/addon53.png)
 
     > [!TIP]
     > Verifique se há apenas um certificado mapeado no aplicativo, para que não haja nenhum erro na resolução dos metadados. Se houver vários certificados, após a resolução dos metadados, o administrador receberá um erro.
 
-     a. Na caixa de texto **URL de Metadados**, cole o valor da **URL de metadados de federação do aplicativo** que você copiou do Portal do Azure e clique no botão **Resolver**. Ele lê a URL de metadados do IdP e popula todas as informações dos campos.
+    1. Na caixa de texto **URL de Metadados**, cole o valor da **URL de metadados de federação do aplicativo** que você copiou do Portal do Azure e clique no botão **Resolver**. Ele lê a URL de metadados do IdP e popula todas as informações dos campos.
 
-    b. Copie os valores de **Identificador, URL de Resposta e URL de Logon** e cole-os nas caixas de texto **Identificador, URL de Resposta e URL de Logon**, respectivamente, na seção **Domínio e URLs do SSO do SAML para o JIRA da Microsoft** do portal do Azure.
+    1. Copie os valores de **Identificador, URL de Resposta e URL de Logon** e cole-os nas caixas de texto **Identificador, URL de Resposta e URL de Logon**, respectivamente, na seção **Domínio e URLs do SSO do SAML para o JIRA da Microsoft** do portal do Azure.
 
-    c. Em **Nome do Botão de Logon**, digite o nome do botão que sua organização deseja que os usuários vejam na tela de logon.
+    1. Em **Nome do Botão de Logon**, digite o nome do botão que sua organização deseja que os usuários vejam na tela de logon.
 
-    d. Em **Locais da ID de Usuário SAML**, selecione **A ID de Usuário está no elemento NameIdentifier da instrução Subject** ou **A ID de Usuário está em um elemento Attribute**.  Essa ID deve ser a ID de usuário do JIRA. Se a ID de usuário não tiver uma correspondência, o sistema não permitirá que os usuários entrem.
+    1. Em **Locais da ID de Usuário SAML**, selecione **A ID de Usuário está no elemento NameIdentifier da instrução Subject** ou **A ID de Usuário está em um elemento Attribute**.  Essa ID deve ser a ID de usuário do JIRA. Se a ID de usuário não tiver uma correspondência, o sistema não permitirá que os usuários entrem.
 
-    > [!Note]
-    > O local padrão da ID de Usuário SAML é o Identificador de Nome. Você pode alterar isso para uma opção de atributo e inserir o nome de atributo apropriado.
+       > [!Note]
+       > O local padrão da ID de Usuário SAML é o Identificador de Nome. Você pode alterar isso para uma opção de atributo e inserir o nome de atributo apropriado.
 
-    e. Se você selecionar a opção **A ID de Usuário está em um elemento de atributo**, na caixa de texto **Nome do atributo**, digite o nome do atributo em que a ID de Usuário é esperada.
+    1. Se você selecionar a opção **A ID de Usuário está em um elemento de atributo**, na caixa de texto **Nome do atributo**, digite o nome do atributo em que a ID de Usuário é esperada.
 
-    f. Se estiver usando o domínio federado (como o ADFS, etc.) com o Azure AD, clique na opção **Habilitar Descoberta de Realm Inicial** e configure o **Nome de Domínio**.
+    1. Se estiver usando o domínio federado (como o ADFS, etc.) com o Azure AD, clique na opção **Habilitar Descoberta de Realm Inicial** e configure o **Nome de Domínio**.
 
-    g. Em **Nome de Domínio**, digite o nome de domínio aqui, no caso do logon baseado no ADFS.
+    1. Em **Nome de Domínio**, digite o nome de domínio aqui, no caso do logon baseado no ADFS.
 
-    h. Marque a opção **Habilitar Logoff Único** se desejar fazer logoff do Azure AD quando um usuário fizer logoff do JIRA.
+    1. Marque a opção **Habilitar Logoff Único** se desejar fazer logoff do Azure AD quando um usuário fizer logoff do JIRA.
+    
+    1. Habilite a caixa de seleção **Forçar Logon do Azure** caso deseje entrar somente por meio das credenciais do Azure AD.
+    
+       > [!Note]
+       > Para habilitar o formulário de logon padrão para o logon de administrador na página de logon quando a opção Forçar Logon do Azure estiver habilitada, adicione o parâmetro de consulta à URL do navegador.
+       > `https://<domain:port>/login.action?force_azure_login=false`
 
-    i. Clique no botão **Salvar** para salvar as alterações.
+    1. Clique no botão **Salvar** para salvar as alterações.
 
-    > [!NOTE]
-    > Para obter mais informações sobre instalação e solução de problemas, visite o [Guia do Administrador do Conector de SSO para MS JIRA](../ms-confluence-jira-plugin-adminguide.md), e há também as [perguntas frequentes](../ms-confluence-jira-plugin-faq.md) para auxiliá-lo
+       > [!NOTE]
+       > Para obter mais informações sobre a instalação e a solução de problemas, acesse o [Guia do Administrador do Conector de SSO para o MS JIRA](../ms-confluence-jira-plugin-adminguide.md). Há também uma seção de [perguntas frequentes](../ms-confluence-jira-plugin-faq.md) para auxiliá-lo.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 
@@ -282,7 +288,7 @@ Para permitir que os usuários do Azure AD entrem no servidor local do JIRA, ele
 
     ![Adicionar Funcionário](./media/jiramicrosoft-tutorial/user4.png) 
 
-     a. Na caixa de texto **Endereço de email**, digite o endereço de email do usuário, como Brittasimon@contoso.com.
+    a. Na caixa de texto **Endereço de email**, digite o endereço de email do usuário, como Brittasimon@contoso.com.
 
     b. Na caixa de texto **Nome completo**, digite o nome completo do usuário, como Brenda Fernandes.
 

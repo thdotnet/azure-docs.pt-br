@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 04/08/2019
+ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: fc15db91b8f4cc6dbdecd0e7321abdbf81744f08
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: df4f89bd1b2e3c0423f5d758cfa637e4da9e04d0
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59357982"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66396534"
 ---
 # <a name="migrate-on-premises-machines-to-azure"></a>Migrar máquinas locais para o Azure
 
@@ -118,7 +118,7 @@ Execute um failover para as máquinas que você deseja migrar.
 > [!WARNING]
 > **Não cancele um failover em andamento**: a replicação da VM é interrompida antes do início do failover. Se você cancelar um failover em andamento, o failover será interrompido, mas a VM não será replicada novamente.
 
-Em alguns cenários, o failover requer um processamento adicional que leva cerca de oito a dez minutos para ser concluído. É possível observar um tempo de failover de teste mais longo para servidores físicos, máquinas VMware Linux, VMs VMware que não têm o serviço DHCP habilitado e VMs VMware que não têm os seguintes drivers de inicialização: storvsc, vmbus, storflt, intelide, atapi.
+Em alguns cenários, o failover requer um processamento adicional que leva cerca de oito a dez minutos para ser concluído. Você pode observar tempos de failover de teste mais longos para servidores físicos, computadores VMware Linux, VMs do VMware que não têm o serviço DHCP habilitado e VMs do VMware que não têm os seguintes drivers de inicialização: storvsc, vmbus, storflt, intelide e atapi.
 
 ## <a name="after-migration"></a>Após a migração
 

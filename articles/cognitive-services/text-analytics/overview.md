@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: overview
 ms.date: 04/03/2019
 ms.author: aahi
-ms.openlocfilehash: ae1d8f18705b1058c10d4720c64f624ed0ef4a3d
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 7d52585b51af09c430130141c3680b5630f7b95e
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "60829524"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417281"
 ---
 # <a name="what-is-text-analytics-api"></a>O que é a API de Análise de Texto?
 
@@ -34,7 +34,7 @@ Análise de texto pode significar coisas diferentes, mas, em Serviços Cognitivo
 [Extraia frases-chave](how-tos/text-analytics-how-to-keyword-extraction.md) automaticamente para identificar rapidamente os principais pontos. Por exemplo, para o texto de entrada "A comida estava deliciosa e a equipe era maravilhosa", a API retorna os principais pontos de discussão: "comida" e "equipe maravilhosa". Você pode usar a API [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c6) aqui ou o SDK [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#install-the-nuget-sdk-package).
 
 ## <a name="language-detection"></a>Detecção de Idioma
-Para até 120 idiomas, [detecte em que idioma o texto de entrada está escrito](how-tos/text-analytics-how-to-language-detection.md) e relate um único código de idioma para cada documento enviado na solicitação. O código de idioma é emparelhado com uma pontuação que indica a intensidade da pontuação. Você pode usar a API [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c7) ou o SDK [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#install-the-nuget-sdk-package).
+Você pode [detectar em qual idioma o texto de entrada está escrito](how-tos/text-analytics-how-to-language-detection.md) e relatar um código de idioma único para cada documento enviado na solicitação em uma ampla variedade de idiomas, variantes, dialetos e alguns idiomas regionais/culturais. O código de idioma é emparelhado com uma pontuação que indica a intensidade da pontuação. Você pode usar a API [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c7) ou o SDK [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#install-the-nuget-sdk-package).
 
 ## <a name="named-entity-recognition"></a>Reconhecimento de Entidade Nomeada
 [Identifique e categorize entidades](how-tos/text-analytics-how-to-entity-linking.md) em seu texto como pessoas, locais, organizações, data/hora, quantidades, percentuais, moedas e muito mais. Entidades conhecidas também são reconhecidas e vinculadas a mais informações na Web. Usar a API [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/5ac4251d5b4ccd1554da7634).

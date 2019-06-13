@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: tutorial
-ms.date: 04/23/2019
+ms.date: 06/03/2019
 ms.author: alkohli
-ms.openlocfilehash: f9650cdb6935fb45f0c59e8a114a9ce1c8e2d809
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: d99b10598b9f16da2cf202330f0b5bac9219699f
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64686527"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476821"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-gateway"></a>Tutorial: Preparar para implantar o Azure Data Box Gateway
 
@@ -51,7 +51,11 @@ Aqui você encontra os pré-requisitos de configuração para o recurso Data Box
 Antes de começar, verifique se:
 
 - Sua assinatura do Microsoft Azure deve ser compatível com o recurso do Data Box Gateway. Não há suporte para as assinaturas pagas conforme o uso.
-- Você tem acesso de colaborador ou proprietário à sua assinatura.
+- Você tem acesso de proprietário ou colaborador no nível do grupo de recursos aos recursos do Data Box Edge/Data Box Gateway, do Hub IoT e do Armazenamento do Azure.
+
+    - Para criar qualquer recurso do Data Box Edge/Data Box Gateway, você deverá ter permissões como um colaborador (ou superior) com escopo no nível do grupo de recursos. Você também precisará verificar se o provedor `Microsoft.DataBoxEdge` está registrado. Para obter informações sobre como realizar o registro, acesse [Registrar o provedor de recursos](data-box-gateway-manage-access-power-connectivity-mode.md#register-resource-providers).
+    - Para criar qualquer recurso do Hub IoT, verifique se o provedor Microsoft.Devices está registrado. Para obter informações sobre como realizar o registro, acesse [Registrar o provedor de recursos](data-box-gateway-manage-access-power-connectivity-mode.md#register-resource-providers).
+    - Para criar um recurso da conta de armazenamento, novamente, você precisará ter acesso de colaborador ou superior com escopo no nível do grupo de recursos. O Armazenamento do Azure é, por padrão, um provedor de recursos registrado.
 - Você tem acesso de usuário ou administrador à API do Azure Active Directory Graph. Para obter mais informações, confira [API do Azure Active Directory Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
 - Você tem sua conta de armazenamento do Microsoft Azure com credenciais de acesso.
 

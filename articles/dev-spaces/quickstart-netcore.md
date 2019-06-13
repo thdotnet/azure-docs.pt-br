@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s
 manager: jeconnoc
-ms.openlocfilehash: 1ffb3f0071409e148f394913d4bda5ba73319e3e
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 3f502b84145b81153d5e39a03cca104d4285c581
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65861624"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393439"
 ---
 # <a name="quickstart-develop-with-net-core-on-kubernetes-using-azure-dev-spaces-visual-studio-code"></a>Início Rápido: Desenvolver com o .NET Core no Kubernetes usando o Azure Dev Spaces (Visual Studio Code)
 
@@ -35,7 +35,7 @@ Neste guia, você aprenderá a:
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Criar um cluster do Serviço de Kubernetes do Azure
 
-Você precisa criar um cluster do AKS em uma [região com suporte](https://docs.microsoft.com/azure/dev-spaces/#a-rapid,-iterative-kubernetes-development-experience-for-teams). Os comandos a seguir criam um grupo de recursos chamado *MyResourceGroup* e um cluster do AKS chamado *MyAKS*.
+Você precisa criar um cluster do AKS em uma [região com suporte][supported-regions]. Os comandos a seguir criam um grupo de recursos chamado *MyResourceGroup* e um cluster do AKS chamado *MyAKS*.
 
 ```cmd
 az group create --name MyResourceGroup --location eastus
@@ -115,13 +115,13 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 ...
 ```
 
-Veja o serviço em execução abrindo a URL pública que é exibida na saída do comando `azds up`. Neste exemplo, a URL pública é *http://webfrontend.1234567890abcdef1234.eus.azds.io/*.
+Veja o serviço em execução abrindo a URL pública que é exibida na saída do comando `azds up`. Neste exemplo, a URL pública é *http://webfrontend.1234567890abcdef1234.eus.azds.io/* .
 
 Se você parar o comando `azds up` usando *Ctrl + c*, o serviço continuará a executar no AKS e a URL pública permanecerá disponível.
 
 ## <a name="update-code"></a>Atualizar código
 
-Para implantar uma versão atualizada do serviço, você pode atualizar qualquer arquivo em seu projeto e executar novamente o comando `azds up`. Por exemplo: 
+Para implantar uma versão atualizada do serviço, você pode atualizar qualquer arquivo em seu projeto e executar novamente o comando `azds up`. Por exemplo:
 
 1. Se `azds up` ainda estiver em execução, pressione *Ctrl + c*.
 1. Atualize a [linha 20 em `Controllers/HomeController.cs`](https://github.com/Azure/dev-spaces/blob/master/samples/dotnetcore/getting-started/webfrontend/Controllers/HomeController.cs#L20) para:
@@ -171,7 +171,7 @@ Este comando compila e executa o serviço no Azure Dev Spaces no modo de depura�
 
 ## <a name="setting-and-using-breakpoints-for-debugging"></a>Definir e usar pontos de interrupção para depuração
 
-Inicie o serviço no modo de depuração usando *Iniciar .NET Core (AZDS)*.
+Inicie o serviço no modo de depuração usando *Iniciar .NET Core (AZDS)* .
 
 Navegue de volta para a exibição *Explorer* clicando em *Exibir* e, em seguida, *Explorer*. Abra `Controllers/HomeController.cs` e clique em algum lugar da linha 20 para colocar o cursor lá. Para definir um ponto de interrupção, pressione *F9* ou clique em *Depurar* e, em seguida, *Ativar/Desativar Pontos de Interrupção*.
 
@@ -183,7 +183,7 @@ Remova o ponto de interrupção, colocando o cursor na linha 20 em `Controllers/
 
 ## <a name="update-code-from-visual-studio-code"></a>Atualizar o código no Visual Studio Code
 
-Enquanto o serviço estiver em execução no modo de depuração, atualize a linha 20 em `Controllers/HomeController.cs`. Por exemplo: 
+Enquanto o serviço estiver em execução no modo de depuração, atualize a linha 20 em `Controllers/HomeController.cs`. Por exemplo:
 
 ```csharp
 ViewData["Message"] = "Your application description page in Azure while debugging!";
@@ -209,3 +209,6 @@ Saiba como o Azure Dev Spaces ajuda você a desenvolver aplicativos mais complex
 
 > [!div class="nextstepaction"]
 > [Trabalhando com vários contêineres e desenvolvimento em equipe](multi-service-netcore.md)
+
+
+[supported-regions]: about.md#supported-regions-and-configurations

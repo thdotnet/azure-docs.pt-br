@@ -8,14 +8,14 @@ ms.service: managed-applications
 ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
-ms.date: 07/10/2018
+ms.date: 06/04/2019
 ms.author: tomfitz
-ms.openlocfilehash: 61cac49c34eb193d641a94c9a7839282289dd9c7
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 40132f67b135b0dc081180c34361047e59776b81
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64572590"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688571"
 ---
 # <a name="azure-managed-applications-in-the-marketplace"></a>Aplicativos gerenciados do Azure no Marketplace
 
@@ -42,7 +42,7 @@ Além disso, existem vários pré-requisitos de negócios. Eles são:
 Para tornar-se um editor no Microsoft Azure Marketplace, você deverá:
 
 1. Criar uma ID da Microsoft - Crie sua conta Microsoft usando um endereço de email pertencente ao domínio da sua empresa, mas não a um único indivíduo. Esse endereço de email será usado tanto para a Central de Desenvolvedores da Microsoft como para o Portal do Cloud Partner. Para obter mais informações, consulte [Guia do Editor do Microsoft Azure Marketplace](https://aka.ms/sellerguide).
-1. Enviar o [Formulário de Nominação do Microsoft Azure Marketplace](https://aka.ms/ampnomination) - Para **Solução que você pretende publicar?** , selecione **Aplicativo Gerenciado**. Quando o formulário for enviado, a equipe de Integração do Marketplace revisará o aplicativo e validará a solicitação. O processo de aprovação poderá demorar de um a três dias. Quando a nomeação for aprovada, você receberá um código promocional para renunciar à taxa de registro para a central de desenvolvedores. Se você **não** concluir o Formulário de Nominação do Marketplace, será solicitado a você pagar uma taxa de registro de $ 99.
+1. Envie o [Formulário de Nominação do Microsoft Azure Marketplace](https://aka.ms/ampnomination) – Para **Solução que você pretende publicar?** , selecione **Aplicativo Gerenciado**. Quando o formulário for enviado, a equipe de Integração do Marketplace revisará o aplicativo e validará a solicitação. O processo de aprovação poderá demorar de um a três dias. Quando a nomeação for aprovada, você receberá um código promocional para renunciar à taxa de registro para a central de desenvolvedores. Se você **não** concluir o Formulário de Nominação do Marketplace, será solicitado a você pagar uma taxa de registro de $ 99.
 1. Registre-se no [Centro de Desenvolvedores](https://dev.windows.com/registration?accountprogram=azure): a Microsoft verificará que sua organização é uma entidade legal válida com uma ID DO IMPOSTO válida para o país/a região em que está registrada. O processo de aprovação poderá demorar de 5 a 10 dias. Para evitar a taxa de registro, utilize o código promocional recebido no email do processo de nominação. Para obter mais informações, consulte [Guia do Editor do Microsoft Azure Marketplace](https://aka.ms/sellerguide).
 1. Entre no [Portal do Cloud Partner](https://cloudpartner.azure.com) - No perfil do editor, associe sua conta da Central de Desenvolvedores ao Perfil do Editor do Marketplace. Para obter mais informações, consulte [Guia do Editor do Microsoft Azure Marketplace](https://aka.ms/sellerguide).
 
@@ -103,6 +103,8 @@ Um SKU aparece sob a oferta pai no marketplace. Ele aparece como sua própria en
 
    * **Versão**: Insira uma versão para o pacote carregado. Ela deve estar no formato `{number}.{number}.{number}{number}`.
    * **Arquivo de pacote (.zip)** : Esse pacote contém dois arquivos necessários compactados em um arquivo .zip. Um arquivo é um modelo do Resource Manager que define os recursos para implantar o aplicativo gerenciado. O outro arquivo define a [interface do usuário](create-uidefinition-overview.md) para os consumidores implantarem o aplicativo gerenciado por meio do portal. Na interface do usuário, você especifica os elementos que permitem aos consumidores fornecer valores de parâmetro.
+   * **ID do locatário**: a ID do locatário da conta para obter acesso.
+   * **Habilitar acesso JIT**: selecione **Sim** para habilitar [controle de acesso Just-In-Time](request-just-in-time-access.md) para a conta. Quando habilitado, você solicita acesso à conta do consumidor durante um período especificado. Para exigir que consumidores do seu aplicativo gerenciado permitam à sua conta acesso permanente, selecione **Não**.
    * **PrincipalId**: Essa propriedade é o identificador do Azure AD (Azure Active Directory) de um usuário, um grupo de usuários ou um aplicativo que recebeu o acesso aos recursos na assinatura do cliente. A Definição de Função descreve as permissões.
    * **Definição de Função**: Essa propriedade é uma lista de todas as funções internas do RBAC (controle de acesso baseado em função) fornecidas pelo Azure AD. Você pode selecionar a função mais apropriada para gerenciar os recursos em nome do cliente.
    * **Configurações de Política**: Aplique um [Azure Policy](../governance/policy/overview.md) ao aplicativo gerenciado para especificar os requisitos de conformidade para as soluções implantadas. Entre as opções disponíveis, selecione as políticas a serem aplicadas. Para **Parâmetros de Política**, forneça uma cadeia de caracteres JSON com os valores de parâmetro. Para definições de política e o formato dos valores de parâmetro, veja [Exemplos de Azure Policy](../governance/policy/samples/index.md).
@@ -117,7 +119,7 @@ O formulário do Marketplace pede campos que aparecem no [Azure Marketplace](htt
 
 ### <a name="preview-subscription-ids"></a>IDs de assinatura para versão prévia
 
-Insira uma lista de IDs de assinatura do Azure que podem acessar a oferta após a publicação. Use essas assinaturas da lista branca para testar a oferta de versão prévia antes de ativá-la. Você pode compilar uma lista branca com até 100 assinaturas no portal de parceiros.
+Insira uma lista de IDs de assinatura do Azure que podem acessar a oferta após a publicação. Use essas assinaturas da lista branca para testar a oferta de versão prévia antes de ativá-la. É possível compilar uma lista de permissões com até 100 assinaturas no portal de parceiros.
 
 ### <a name="suggested-categories"></a>Categorias sugeridas
 

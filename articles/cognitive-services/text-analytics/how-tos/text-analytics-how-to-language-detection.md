@@ -9,18 +9,22 @@ ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 02/26/2019
 ms.author: aahi
-ms.openlocfilehash: 4ccb8665c9880e21897c81ed4b4ff534e52bb6d1
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 481f7a7589a58baac922001d230f95198ed45eb7
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60002265"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417949"
 ---
 # <a name="example-how-to-detect-language-with-text-analytics"></a>Exemplo: Como detectar o idioma com a Análise de Texto
 
-A [API de Detecção de Idioma](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7) avalia o texto de entrada e para cada documento e retorna os identificadores de idioma com uma pontuação que indica a intensidade da análise. A Análise de Texto reconhece até 120 idiomas.
+O recurso [Detecção de Idioma](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7) da API avalia o texto de entrada e para cada documento e retorna os identificadores de idioma com uma pontuação que indica a intensidade da análise.
 
 Esse recurso é útil para conteúdo armazena esse texto arbitrário de coleção, onde o idioma é desconhecido. Você pode analisar os resultados dessa análise para determinar qual idioma é usado no documento de entrada. A resposta também retorna uma pontuação que reflete a confiança do modelo (um valor entre 0 e 1).
+
+Não publicamos a lista exata de idiomas para esse recurso, mas ele pode detectar uma ampla variedade de idiomas, variantes, dialetos e alguns idiomas regionais/culturais. 
+
+Se você tiver um conteúdo expresso em um idioma usado com menos frequência, experimente a Detecção de Idioma para ver se ela retorna um código. A resposta para idiomas que não pode ser detectada é `unknown`.
 
 > [!TIP]
 > A Análise de Texto também fornece um Docker baseado em imagem de contêiner do Linux para detecção de idioma, para que você possa [instalar e executar o contêiner de análise de texto](text-analytics-how-to-install-containers.md) perto de seus dados.
@@ -206,7 +210,7 @@ A saída resultante consiste no idioma predominante, com uma pontuação de meno
 
 Neste artigo, você aprendeu os conceitos e fluxo de trabalho para detecção de idioma usando a análise de texto em Serviços Cognitivos. A seguir está um lembrete rápido dos recursos explicados e demonstrados anteriormente:
 
-+ [A API de detecção de idioma](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7) está disponível para 120 idiomas.
++ A [Detecção de Idioma](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7) está disponível para uma ampla variedade de idiomas, variantes, dialetos e alguns idiomas regionais/culturais.
 + Documentos JSON no corpo da solicitação incluem uma ID e texto.
 + A solicitação POST é um `/languages` ponto de extremidade, usando uma [chave de acesso personalizada e um ponto de extremidade](text-analytics-how-to-access-key.md) que é válido para sua assinatura.
 + Saída de resposta, que consiste de identificadores de idioma para cada ID do documento, pode ser transmitida para qualquer aplicativo que aceita JSON, incluindo o Excel e Power BI, para citar alguns.

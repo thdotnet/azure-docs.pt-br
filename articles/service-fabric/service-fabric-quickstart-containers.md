@@ -15,18 +15,18 @@ ms.workload: NA
 ms.date: 01/31/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: afeaccd798204ab0973be87ea36c275e1d633403
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 03f2f6bb572c46a1683d73ba42f435eca59829e5
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66110383"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428090"
 ---
 # <a name="quickstart-deploy-windows-containers-to-service-fabric"></a>Início Rápido: Implantar contêineres do Windows no Service Fabric
 
 O Azure Service Fabric é uma plataforma de sistemas distribuídos para implantação e gerenciamento de contêineres e microsserviços escalonáveis e confiáveis.
 
-Executar um aplicativo existente em um contêiner do Windows em um cluster do Service Fabric não requer alterações no seu aplicativo. Este guia de início rápido mostra como implantar uma imagem de contêiner do Docker predefinida em um aplicativo do Service Fabric. Quando você terminar, terá um contêiner do IIS e um Servidor do Windows Server Core 2016 em execução. Este guia de início rápido descreve a implantação de um contêiner do Windows; leia [este guia de início rápido](service-fabric-quickstart-containers-linux.md) para implantar um contêiner do Linux.
+Executar um aplicativo existente em um contêiner do Windows em um cluster do Service Fabric não requer alterações no seu aplicativo. Este guia de início rápido mostra como implantar uma imagem de contêiner do Docker predefinida em um aplicativo do Service Fabric. Quando você terminar, terá um contêiner do IIS e um Servidor do Windows Server Core 2016 em execução. Este início rápido descreve a implantação de um contêiner do Windows. Leia [este início rápido](service-fabric-quickstart-containers-linux.md) para implantar um contêiner do Linux.
 
 ![Página de Web do IIS padrão][iis-default]
 
@@ -44,7 +44,7 @@ Neste guia de início rápido, você aprende a:
 
 * Uma assinatura do Azure (você pode criar um [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)).
 * Um computador de desenvolvimento executando:
-  * Visual Studio 2015 ou Visual Studio 2017.
+  * Visual Studio 2015 ou Windows 2019.
   * [Ferramentas e SDK do Service Fabric](service-fabric-get-started.md).
 
 ## <a name="package-a-docker-image-container-with-visual-studio"></a>Empacotar um recipiente de imagem do Docker com o Visual Studio
@@ -67,7 +67,7 @@ Chame o serviço de "MyContainerService" e clique em **OK**.
 
 ## <a name="specify-the-os-build-for-your-container-image"></a>Especifique o build do sistema operacional para a imagem de contêiner
 
-Contêineres criados com uma versão específica do Windows Server podem não ser executados em um host executando uma versão diferente do Windows Server. Por exemplo, os contêineres do Windows Server criados usando o Windows Server 1709 não funcionam em hosts que estão executando o Windows Server 2016. Para obter mais informações, consulte [Compatibilidade do sistema operacional contêiner e do sistema operacional do host do Windows Server](service-fabric-get-started-containers.md#windows-server-container-os-and-host-os-compatibility). 
+Contêineres criados com uma versão específica do Windows Server podem não ser executados em um host executando uma versão diferente do Windows Server. Por exemplo, contêineres criados usando o Windows Server 1709 não funcionam em hosts que estão executando o Windows Server 2016. Para obter mais informações, consulte [Compatibilidade do sistema operacional contêiner e do sistema operacional do host do Windows Server](service-fabric-get-started-containers.md#windows-server-container-os-and-host-os-compatibility). 
 
 Com a versão 6.1 do tempo de execução do Service Fabric e mais recente, você pode especificar várias imagens do sistema operacional por contêiner e marcar cada um com a versão do build do sistema operacional na que ele deve ser implantado. Isso ajuda a garantir que seu aplicativo será executado em hosts que executam diferentes versões do sistema operacional Windows. Para saber mais, consulte [Especifique a compilação do sistema operacional das imagens de contêiner específicas](service-fabric-get-started-containers.md#specify-os-build-specific-container-images). 
 
@@ -100,13 +100,13 @@ Se necessário, instale o Azure PowerShell usando as instruções no [Guia do Az
 
 Antes de executar o script a seguir, no PowerShell, execute `Connect-AzAccount` para criar uma conexão com o Azure.
 
-Copie o script a seguir para a área de transferência e abra o **ISE do Windows PowerShell**.  Cole o conteúdo na janela vazia Untitled1.ps1. Em seguida, forneça valores para as variáveis no script: `subscriptionId`, `certpwd`, `certfolder`, `adminuser`, `adminpwd`, etc.  O diretório especificado para `certfolder` deve existir antes da execução do script.
+Copie o script a seguir para a área de transferência e abra o **ISE do Windows PowerShell**.  Cole o conteúdo na janela vazia Untitled1.ps1. Forneça valores para as variáveis no script: `subscriptionId`, `certpwd`, `certfolder`, `adminuser`, `adminpwd` etc.  O diretório especificado para `certfolder` deve existir antes da execução do script.
 
 [!code-powershell[main](../../powershell_scripts/service-fabric/create-secure-cluster/create-secure-cluster.ps1 "Create a Service Fabric cluster")]
 
 Após fornecer seus valores para as variáveis, pressione **F5** para executar o script.
 
-Após a execução do script e a criação do cluster, localize o `ClusterEndpoint` na saída. Por exemplo: 
+Após a execução do script e a criação do cluster, localize o `ClusterEndpoint` na saída. Por exemplo:
 
 ```powershell
 ...
@@ -115,9 +115,9 @@ ClusterEndpoint : https://southcentralus.servicefabric.azure.com/runtime/cluster
 
 ### <a name="install-the-certificate-for-the-cluster"></a>Instalar o certificado do cluster
 
-Agora instalamos o PFX no repositório de certificados *CurrentUser\My*. O arquivo PFX estará no diretório especificado usando a variável de ambiente `certfolder` no script do PowerShell acima.
+Agora, instalaremos o PFX no repositório de certificados *CurrentUser\My*. O arquivo PFX estará no diretório especificado usando a variável de ambiente `certfolder` no script do PowerShell acima.
 
-Altere para esse diretório e, em seguida, execute o seguinte comando do PowerShell, substituindo o nome do arquivo PFX no diretório `certfolder` e a senha que você especificou na variável `certpwd`. Nesse exemplo, o diretório atual é definido como o diretório especificado pela variável `certfolder` no script do PowerShell. É aí que o comando `Import-PfxCertificate` é executado:
+Mude para esse diretório e execute o seguinte comando do PowerShell, substituindo o nome do arquivo PFX no diretório `certfolder` e a senha que você especificou na variável `certpwd`. Nesse exemplo, o diretório atual é definido como o diretório especificado pela variável `certfolder` no script do PowerShell. É aí que o comando `Import-PfxCertificate` é executado:
 
 ```powershell
 PS C:\mycertificates> Import-PfxCertificate -FilePath .\mysfclustergroup20190130193456.pfx -CertStoreLocation Cert:\CurrentUser\My -Password (ConvertTo-SecureString Password#1234 -AsPlainText -Force)

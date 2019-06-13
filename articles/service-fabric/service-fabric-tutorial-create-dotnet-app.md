@@ -15,18 +15,18 @@ ms.workload: NA
 ms.date: 01/14/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 097cb554523a9e75b265ca16e79769daf0a49b40
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 998d33730586316fe3bf423663ffae5148843ed0
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58665790"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515861"
 ---
 # <a name="tutorial-create-and-deploy-an-application-with-an-aspnet-core-web-api-front-end-service-and-a-stateful-back-end-service"></a>Tutorial: Criar e implantar um aplicativo com um serviço de front-end de API Web do ASP.NET Core e um serviço de back-end com estado
 
 Este tutorial é a primeira parte de uma série.  Você aprenderá a criar um aplicativo do Azure Service Fabric com um front-end da API Web do ASP.NET Core e um serviço de back-end com estado para armazenar seus dados. Quando terminar, você terá um aplicativo de votação com um front-end da Web do ASP.NET Core que salva os resultados da votação em um serviço de back-end com estado do cluster. Se você não quiser criar manualmente o aplicativo de votação, [baixe o código-fonte](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/) do aplicativo concluído e vá direto para [Percorrer o aplicativo de exemplo votação](#walkthrough_anchor).  Se preferir, você também pode assistir a um [vídeo de passo a passo](https://channel9.msdn.com/Events/Connect/2017/E100) deste tutorial.
 
-![Diagrama de aplicativo](./media/service-fabric-tutorial-create-dotnet-app/application-diagram.png)
+![Front-end da API do AngularJS+ASP.NET, conectando-se a um serviço de back-end com estado no Service Fabric](./media/service-fabric-tutorial-create-dotnet-app/application-diagram.png)
 
 Na primeira parte da série, você aprenderá a:
 
@@ -346,7 +346,7 @@ O Service Fabric permite que você armazene seus dados de forma consistente e co
 
 Neste tutorial, você cria um serviço que armazena um valor de contador em uma coleção confiável.
 
-1. No Gerenciador de Soluções, clique com o botão direito do mouse em **Serviços** no projeto do aplicativo de Votação e escolha **Adicionar -> Novo Serviço do Fabric Service...**.
+1. No Gerenciador de Soluções, clique com o botão direito do mouse em **Serviços** no projeto do aplicativo de Votação e escolha **Adicionar -> Novo Serviço do Fabric Service...** .
     
 2. Na caixa de diálogo **Novo Serviço do Service Fabric**, escolha **ASP.NET Core com Estado**, nomeie o serviço como **DadosVotação** e pressione **OK**.
 
@@ -625,18 +625,18 @@ Para ver o que acontece no código, conclua as seguintes etapas:
 
       ![Adicionar Serviço de Front-end de Voto](./media/service-fabric-tutorial-create-dotnet-app/addvote-frontend.png)
 
-   2. Primeiro, construa a URL para o ReverseProxy para o serviço de back-end **(1)**.
-   3. Em seguida, envie a solicitação PUT HTTP para o ReverseProxy **(2)**.
-   4. Por fim, retorne a resposta do serviço de back-end para o cliente **(3)**.
+   2. Primeiro, construa a URL para o ReverseProxy para o serviço de back-end **(1)** .
+   3. Em seguida, envie a solicitação PUT HTTP para o ReverseProxy **(2)** .
+   4. Por fim, retorne a resposta do serviço de back-end para o cliente **(3)** .
 
 5. Pressione **F5** para continuar.
    1. Agora você está no ponto de interrupção no serviço de back-end.
 
       ![Adicionar Serviço de Back-End de Voto](./media/service-fabric-tutorial-create-dotnet-app/addvote-backend.png)
 
-   2. Na primeira linha do método **(1)**, use `StateManager` para obter ou adicionar um dicionário confiável chamado `counts`.
+   2. Na primeira linha do método **(1)** , use `StateManager` para obter ou adicionar um dicionário confiável chamado `counts`.
    3. Todas as interações com valores em um dicionário confiável exigem uma transação e, portanto, o uso da instrução **(2)** cria essa transação.
-   4. Na transação, atualize o valor da chave relevante para a opção de votação e confirme a operação **(3)**. Depois que o método de confirmação for retornado, os dados serão atualizados no dicionário e replicados em outros nós no cluster. Os dados agora estão armazenados com segurança no cluster e o serviço de back-end pode fazer failover para outros nós, ainda tendo os dados disponíveis.
+   4. Na transação, atualize o valor da chave relevante para a opção de votação e confirme a operação **(3)** . Depois que o método de confirmação for retornado, os dados serão atualizados no dicionário e replicados em outros nós no cluster. Os dados agora estão armazenados com segurança no cluster e o serviço de back-end pode fazer failover para outros nós, ainda tendo os dados disponíveis.
 6. Pressione **F5** para continuar.
 
 Para interromper a sessão de depuração, pressione **Shift + F5**.

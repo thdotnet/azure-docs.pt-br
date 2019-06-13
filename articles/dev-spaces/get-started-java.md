@@ -10,12 +10,12 @@ ms.topic: tutorial
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s
 manager: mmontwil
-ms.openlocfilehash: 10f85ea697ad0ffae181112ae51eac928424ccc3
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 0677eb4c65da242f8cfcb20754ec88ffb02c5929
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65861739"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393155"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-java"></a>Introdução ao Azure Dev Spaces com Java
 
@@ -56,7 +56,7 @@ az account set --subscription <subscription ID>
 
 ## <a name="create-a-kubernetes-cluster-enabled-for-azure-dev-spaces"></a>Criar um cluster Kubernetes habilitado para Azure Dev Spaces
 
-No prompt de comando, crie o grupo de recursos em uma [região que dá suporte ao Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/#a-rapid,-iterative-kubernetes-development-experience-for-teams).
+No prompt de comando, crie o grupo de recursos em uma [região que dê suporte ao Azure Dev Spaces][supported-regions].
 
 ```cmd
 az group create --name MyResourceGroup --location <region>
@@ -221,3 +221,6 @@ Atualize o aplicativo Web no navegador. Sua mensagem personalizada deverá apare
 
 > [!div class="nextstepaction"]
 > [Saiba mais sobre o desenvolvimento de vários serviços](multi-service-java.md)
+
+
+[supported-regions]: about.md#supported-regions-and-configurations

@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/22/2019
+ms.date: 05/28/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45c9268495ed42ca67f815615b441986cf03332f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c9c422e93a6768b764873f21ad9eab6fad4a868e
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64683645"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66474152"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-confluence-saml-sso-by-microsoft"></a>Tutorial: Integração do Azure Active Directory ao SSO do SAML para o Confluence da Microsoft
 
@@ -78,6 +78,7 @@ A partir de agora, há suporte para as seguintes versões do Confluence:
 - Confluence: 6.10.0
 - Confluence: 6.11.0
 - Confluence: 6.12.0
+- Confluence: 6.15.3
 
 > [!NOTE]
 > Observe que o nosso plug-in do Confluence também funciona no Ubuntu versão 16.04
@@ -146,7 +147,7 @@ Para configurar o logon único do Azure AD com o SSO do SAML para o Confluence d
 
     ![Confluence SAML SSO por domínio da Microsoft e informações de logon único de URLs](common/sp-identifier-reply.png)
 
-     a. Na caixa de texto **URL de Entrada** digite uma URL usando o seguinte padrão: `https://<domain:port>/plugins/servlet/saml/auth`
+    a. Na caixa de texto **URL de Entrada** digite uma URL usando o seguinte padrão: `https://<domain:port>/plugins/servlet/saml/auth`
 
     b. Na caixa **Identificador**, digite uma URL usando o seguinte padrão: `https://<domain:port>/`
 
@@ -177,34 +178,40 @@ Para configurar o logon único do Azure AD com o SSO do SAML para o Confluence d
 
 5. Realize as seguintes etapas na página de configuração:
 
-    ![Configurar o logon único](./media/confluencemicrosoft-tutorial/addon52.png)
+    ![Configurar o logon único](./media/confluencemicrosoft-tutorial/addon53.png)
 
     > [!TIP]
     > Verifique se há apenas um certificado mapeado no aplicativo, para que não haja nenhum erro na resolução dos metadados. Se houver vários certificados, após a resolução dos metadados, o administrador receberá um erro.
 
-     a. Na caixa de texto **URL de Metadados**, cole o valor da **URL de metadados de federação do aplicativo** que você copiou do Portal do Azure e clique no botão **Resolver**. Ele lê a URL de metadados do IdP e popula todas as informações dos campos.
+    1. Na caixa de texto **URL de Metadados**, cole o valor da **URL de metadados de federação do aplicativo** que você copiou do Portal do Azure e clique no botão **Resolver**. Ele lê a URL de metadados do IdP e popula todas as informações dos campos.
 
-    b. Copie os valores de **Identificador, URL de Resposta e URL de Logon** e cole-os nas caixas de texto **Identificador, URL de Resposta e URL de Logon**, respectivamente, na seção **Configuração Básica do SAML** do portal do Azure.
+    1. Copie os valores de **Identificador, URL de Resposta e URL de Logon** e cole-os nas caixas de texto **Identificador, URL de Resposta e URL de Logon**, respectivamente, na seção **Configuração Básica do SAML** do portal do Azure.
 
-    c. Em **Nome do Botão de Logon**, digite o nome do botão que sua organização deseja que os usuários vejam na tela de logon.
+    1. Em **Nome do Botão de Logon**, digite o nome do botão que sua organização deseja que os usuários vejam na tela de logon.
 
-    d. Em **Locais da ID de Usuário SAML**, selecione **A ID de Usuário está no elemento NameIdentifier da instrução Subject** ou **A ID de Usuário está em um elemento Attribute**.  Essa ID deve ser a ID de usuário do Confluence. Se a ID de usuário não tiver uma correspondência, o sistema não permitirá que os usuários entrem. 
+    1. Em **Locais da ID de Usuário SAML**, selecione **A ID de Usuário está no elemento NameIdentifier da instrução Subject** ou **A ID de Usuário está em um elemento Attribute**.  Essa ID deve ser a ID de usuário do Confluence. Se a ID de usuário não tiver uma correspondência, o sistema não permitirá que os usuários entrem. 
 
-    > [!Note]
-    > O local padrão da ID de Usuário SAML é o Identificador de Nome. Você pode alterar isso para uma opção de atributo e inserir o nome de atributo apropriado.
+       > [!Note]
+       > O local padrão da ID de Usuário SAML é o Identificador de Nome. Você pode alterar isso para uma opção de atributo e inserir o nome de atributo apropriado.
     
-    e. Se você selecionar a opção **A ID de Usuário está em um elemento de atributo**, na caixa de texto **Nome do atributo**, digite o nome do atributo em que a ID de Usuário é esperada. 
+    1. Se você selecionar a opção **A ID de Usuário está em um elemento de atributo**, na caixa de texto **Nome do atributo**, digite o nome do atributo em que a ID de Usuário é esperada. 
 
-    f. Se estiver usando o domínio federado (como o ADFS, etc.) com o Azure AD, clique na opção **Habilitar Descoberta de Realm Inicial** e configure o **Nome de Domínio**.
+    1. Se estiver usando o domínio federado (como o ADFS, etc.) com o Azure AD, clique na opção **Habilitar Descoberta de Realm Inicial** e configure o **Nome de Domínio**.
     
-    g. Em **Nome de Domínio**, digite o nome de domínio aqui, no caso do logon baseado no ADFS.
+    1. Em **Nome de Domínio**, digite o nome de domínio aqui, no caso do logon baseado no ADFS.
 
-    h. Marque a opção **Habilitar Logoff Único** se desejar fazer logoff do Azure AD quando um usuário fizer logoff do Confluence. 
+    1. Marque a opção **Habilitar Logoff Único** se desejar fazer logoff do Azure AD quando um usuário fizer logoff do Confluence. 
 
-    i. Clique no botão **Salvar** para salvar as alterações.
+    1. Habilite a caixa de seleção **Forçar Logon do Azure** caso deseje entrar somente por meio das credenciais do Azure AD.
+    
+       > [!Note]
+       > Para habilitar o formulário de logon padrão para o logon de administrador na página de logon quando a opção Forçar Logon do Azure estiver habilitada, adicione o parâmetro de consulta à URL do navegador.
+       > `https://<domain:port>/login.action?force_azure_login=false`
+    
+    1. Clique no botão **Salvar** para salvar as alterações.
 
-    > [!NOTE]
-    > Para obter mais informações sobre instalação e solução de problemas, visite o [Guia do Administrador do Conector de SSO para MS Confluence](../ms-confluence-jira-plugin-adminguide.md) e há também as [perguntas frequentes](../ms-confluence-jira-plugin-faq.md) para auxiliá-lo
+       > [!NOTE]
+       > Para obter mais informações sobre a instalação e a solução de problemas, acesse o [Guia do Administrador do Conector de SSO para o MS Confluence](../ms-confluence-jira-plugin-adminguide.md). Há também uma seção de [perguntas frequentes](../ms-confluence-jira-plugin-faq.md) para auxiliá-lo.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD 
 
@@ -272,7 +279,7 @@ Para permitir que os usuários do Azure AD entrem no servidor local do Confluenc
 
     ![Adicionar Funcionário](./media/confluencemicrosoft-tutorial/user2.png) 
 
-     a. Na caixa de texto **Nome de usuário**, digite o email do usuário, como Brenda Fernandes.
+    a. Na caixa de texto **Nome de usuário**, digite o email do usuário, como Brenda Fernandes.
 
     b. Na caixa de texto **Nome completo**, digite o nome completo do usuário, como Brenda Fernandes.
 

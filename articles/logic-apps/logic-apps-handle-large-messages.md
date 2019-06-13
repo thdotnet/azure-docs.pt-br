@@ -57,7 +57,7 @@ Se um ponto de extremidade tiver habilitado a divisão em partes para downloads 
 
 Além disso, se uma ação HTTP já não habilitar a divisão em partes, você também deverá configurar a divisão em partes na propriedade `runTimeConfiguration` da ação. Você pode definir essa propriedade na ação, diretamente no editor de exibição de código conforme descrito posteriormente ou no Designer de Aplicativos Lógicos conforme descrito aqui:
 
-1. No canto superior direito da ação HTTP, escolha o botão de reticências (**...** ) e, em seguida, escolha **Configurações**.
+1. No canto superior direito da ação HTTP, escolha o botão de reticências ( **...** ) e, em seguida, escolha **Configurações**.
 
    ![Na ação, abra o menu de configurações](./media/logic-apps-handle-large-messages/http-settings.png)
 
@@ -127,8 +127,8 @@ Estas etapas descrevem o processo detalhado que os Aplicativos Lógicos usam par
 
    | Campo de cabeçalho de resposta do ponto de extremidade | Type | Obrigatório | DESCRIÇÃO |
    |--------------------------------|------|----------|-------------|
-   | **x-ms-chunk-size** | Integer | Não  | O tamanho da parte sugerido em bytes |
-   | **Localidade** | String | Não  | O local da URL para a qual enviar as mensagens HTTP PATCH |
+   | **x-ms-chunk-size** | Integer | Não | O tamanho da parte sugerido em bytes |
+   | **Localidade** | String | Não | O local da URL para a qual enviar as mensagens HTTP PATCH |
    ||||
 
 3. Seu aplicativo lógico cria e envia mensagens HTTP PATCH de acompanhamento, cada uma com essas informações:

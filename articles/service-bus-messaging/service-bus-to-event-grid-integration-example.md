@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: tutorial
 ms.date: 05/14/2019
 ms.author: spelluru
-ms.openlocfilehash: b29798bb87b7c5c677e7d80e552e45e8d1290541
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: b7dbc7dbc0b670de81a3f4603b0d52bce7559af8
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65786986"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428326"
 ---
 # <a name="respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Responder a eventos do Barramento de Serviço do Azure recebidos por meio da Grade de Eventos do Azure usando o Azure Functions e os Aplicativos Lógicos do Azure
 Neste tutorial, você aprenderá a responder a eventos do Barramento de Serviço do Azure que são recebidos por meio da Grade de Eventos do Azure usando o Azure Functions e os Aplicativos Lógicos do Azure. Siga as seguintes etapas:
@@ -270,7 +270,7 @@ Conecte um aplicativo lógico com o Barramento de Serviço do Azure e a Grade de
 2. Na página **Designer de Aplicativos Lógicos**, selecione **Aplicativo Lógico em Branco** em **Modelos**. 
 3. No designer, siga as seguintes etapas:
     1. Pesquise **Grade de Eventos**. 
-    2. Selecione **Grade de Eventos do Azure – quando ocorrer um evento de recurso (versão prévia)**. 
+    2. Selecione **Grade de Eventos do Azure – quando ocorrer um evento de recurso (versão prévia)** . 
 
         ![Designer de Aplicativos Lógicos – selecione o gatilho da Grade de Eventos](./media/service-bus-to-event-grid-integration-example/logic-apps-event-grid-trigger.png)
 4. Selecione **Entrar**, insira suas credenciais do Azure e selecione **Permitir o acesso**. 
@@ -280,13 +280,12 @@ Conecte um aplicativo lógico com o Barramento de Serviço do Azure e a Grade de
     3. Para **Nome de recurso**, selecione seu namespace do Barramento de Serviço. 
     4. Selecione **Adicionar novo parâmetro** e selecione **Filtro de sufixo**. 
     5. Para **Filtro de sufixo**, insira o nome da sua segunda assinatura do tópico do Barramento de Serviço. 
-
         ![Designer de Aplicativos Lógicos – configurar eventos](./media/service-bus-to-event-grid-integration-example/logic-app-configure-event.png)
 6. Selecione **+ Nova Etapa** no designer e siga as etapas abaixo:
     1. Pesquise **Barramento de Serviço**.
     2. Selecione **Barramento de Serviço** na lista. 
     3. Selecione **Receber mensagens** na lista **Ações**. 
-    4. Selecione **Receber mensagens de uma assinatura do tópico (bloqueio de inspeção)**. 
+    4. Selecione **Receber mensagens de uma assinatura do tópico (bloqueio de inspeção)** . 
 
         ![Designer de Aplicativos Lógicos – ação de recebimento de mensagens](./media/service-bus-to-event-grid-integration-example/service-bus-get-messages-step.png)
     5. Insira um **nome para a conexão**. Por exemplo:  **Receber mensagens da assinatura do tópico** e selecione o namespace do Barramento de Serviço. 

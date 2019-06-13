@@ -5,21 +5,25 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 05/14/2018
+ms.date: 06/04/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 787eb12faff381509fab3faf3b0e74c2c640d51c
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 3ef848d12e3a39c3bd83ea44fcb86d67bbdb38dc
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66149772"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735959"
 ---
-O Azure Cloud Shell é um shell interativo grátis que pode ser usado para executar as etapas neste artigo. Ele tem ferramentas do Azure instaladas e configuradas para usar com sua conta. Basta clicar em **Copiar** para copiar o código, colá-lo no Cloud Shell e depois pressione Enter para executá-lo. Há algumas maneiras de inicializar o Cloud Shell:
+Este artigo usa cmdlets do PowerShell. Para executar os cmdlets, é possível usar o Azure Cloud Shell, um ambiente de shell interativo hospedado no Azure e usado por meio do navegador. O Azure Cloud Shell vem com cmdlets do Azure PowerShell pré-instalados.
+
+Para executar qualquer código contido neste artigo no Azure Cloud Shell, abra uma sessão do Cloud Shell, use o botão **Copiar** em um bloco de códigos para copiar o código e colá-lo na sessão do Cloud Shell com __Ctrl+Shift+V__ no Windows e no Linux ou __Cmd+Shift+V__ no macOS. O texto colado não é executado automaticamente; portanto, pressione **Enter** para executar o código.
+
+É possível iniciar o Azure Cloud Shell com:
 
 |  |   |
 |-----------------------------------------------|---|
-| Clique em **Experimente** no canto superior direito de um bloco de código. | ![Cloud Shell neste artigo](./media/vpn-gateway-cloud-shell-powershell/cloud-shell-powershell-try-it.png) |
-| Abra o Cloud Shell em seu navegador. | [![https://shell.azure.com/powershell](./media/vpn-gateway-cloud-shell-powershell/launchcloudshell.png)](https://shell.azure.com/powershell) |
-| Clique no botão **Cloud Shell** no menu no canto superior direito do portal do Azure. | [![Cloud Shell no portal](./media/vpn-gateway-cloud-shell-powershell/cloud-shell-menu.png)](https://portal.azure.com) |
-|  |  |
+| Selecione **Experimente** no canto superior direito de um bloco de código. Isso __não__ copia automaticamente o texto para o Cloud Shell. | ![Exemplo de “Experimente” no Azure Cloud Shell](./media/cloud-shell-try-it/cli-try-it.png) |
+| Abra [shell.azure.com](https://shell.azure.com) no seu navegador. | [![Botão Iniciar o Azure Cloud Shell](./media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com) |
+| Selecione o botão **Cloud Shell** no menu no canto superior direito do [Portal do Azure](https://portal.azure.com). | ![Botão Cloud Shell no portal do Azure](./media/cloud-shell-try-it/cloud-shell-menu.png) |
+

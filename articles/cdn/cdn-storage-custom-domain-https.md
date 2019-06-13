@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: 7aaf4be23c806dda621430c4d1b0c142f41feb1f
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 51fcb1e504f853973d9772bcece7e893a2d94e44
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49090375"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472143"
 ---
 # <a name="tutorial-access-storage-blobs-using-an-azure-cdn-custom-domain-over-https"></a>Tutorial: Acessar blobs de armazenamento usando um domínio personalizado da CDN do Azure via HTTPS
 
@@ -28,7 +28,7 @@ Depois de integrar sua conta de armazenamento do Azure à CDN (Rede de Distribui
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Antes de concluir as etapas deste tutorial, primeiro você precisará integrar sua conta de armazenamento do Azure à CDN do Azure. Para obter mais informações, confira [Início Rápido: Integrar uma conta de armazenamento do Azure à CDN do Azure](cdn-create-a-storage-account-with-cdn.md).
+Antes de concluir as etapas deste tutorial, primeiro você precisará integrar sua conta de armazenamento do Azure à CDN do Azure. Para saber mais, confira [Início Rápido: Integrar uma conta de armazenamento do Azure à CDN do Azure](cdn-create-a-storage-account-with-cdn.md).
 
 ## <a name="add-a-custom-domain"></a>Adicionar um domínio personalizado
 Quando que você criar um ponto de extremidade da CDN em seu perfil, o nome do ponto de extremidade, que é um subdomínio de azureedge.net, será incluído na URL que distribui o conteúdo da CDN por padrão. Você também tem a opção de associar um domínio personalizado a um ponto de extremidade da CDN. Com essa opção, você distribui o conteúdo com um domínio personalizado na URL em vez de em um nome de ponto de extremidade. Para adicionar um domínio personalizado ao ponto de extremidade, siga as instruções deste tutorial: [Adicionar um domínio personalizado ao ponto de extremidade da CDN do Azure](cdn-map-content-to-custom-domain.md).
@@ -44,7 +44,7 @@ A CDN do Azure ignora as restrições adicionadas ao token SAS. Por exemplo, tod
 Se você criar várias URLs SAS para o mesmo ponto de extremidade de blob, considere a possibilidade de habilitar o cache da cadeia de consulta. Isso garante que cada URL seja tratada como uma entidade exclusiva. Para obter mais informações, confira [Controlando o comportamento de cache da CDN do Azure com cadeias de consulta](cdn-query-string.md).
 
 ## <a name="http-to-https-redirection"></a>Redirecionamento de HTTP para HTTPS
-Você pode optar por redirecionar o tráfego HTTP para HTTPS com a criação de uma [regra de Redirecionamento de URL](cdn-rules-engine-reference-features.md#url-redirect) com o [mecanismo de regras da CDN do Azure](cdn-rules-engine.md). Essa opção exige um perfil da **CDN do Azure Premium da Verizon**. 
+Você pode optar por redirecionar o tráfego HTTP para HTTPS com a criação de uma [regra de Redirecionamento de URL](cdn-verizon-premium-rules-engine-reference-features.md#url-redirect) com o [mecanismo de regras da CDN do Azure](cdn-verizon-premium-rules-engine.md). Essa opção exige um perfil da **CDN do Azure Premium da Verizon**.
 
 ![Regra de redirecionamento de URL](./media/cdn-storage-custom-domain-https/cdn-url-redirect-rule.png)
 

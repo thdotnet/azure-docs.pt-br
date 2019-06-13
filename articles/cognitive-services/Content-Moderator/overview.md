@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: overview
 ms.date: 02/20/2019
 ms.author: pafarley
-ms.openlocfilehash: 7e9c12c7da701fb627c51373e57f870d3fc77ac5
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: 14cf500cff9f1f7f8b1573862c3060326e6518fa
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65551296"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688849"
 ---
 # <a name="what-is-azure-content-moderator"></a>O que é o Azure Content Moderator?
 
@@ -25,11 +25,14 @@ A API do Azure Content Moderator é um serviço cognitivo que verifica conteúdo
 
 Estes são alguns cenários nos quais um desenvolvedor ou equipe de software usaria o Content Moderator:
 
-- Mercados online que moderam catálogos de produtos e outros tipos de conteúdo gerado pelo usuário
-- Empresas de jogos que moderam artefatos de jogos gerados pelo usuário e salas de chat
-- Plataformas de mensagens sociais que moderam imagens, textos e vídeos adicionados pelos usuários
-- Empresas de mídia corporativa que implementam moderação de conteúdo centralizada para seu conteúdo
-- Provedores de soluções de ensino fundamental e médio que filtram conteúdo considerado inapropriado para alunos e professores
+- Marketplaces online que moderam catálogos de produtos e outros tipos de conteúdo gerados pelo usuário.
+- Empresas de jogos que moderam artefatos de jogos gerados pelo usuário e salas de chat.
+- Plataformas de mensagens sociais que moderam imagens, textos e vídeos adicionados pelos usuários.
+- Empresas de mídia corporativa que implementam moderação de conteúdo centralizada para seu conteúdo.
+- Provedores de soluções de ensino fundamental e médio que filtram conteúdo considerado inapropriado para alunos e professores.
+
+> [!NOTE]
+> Não é possível usar o Content Moderator para examinar imagens ilícitas de exploração infantil. No entanto, as organizações qualificadas podem usar o [Serviço de Nuvem PhotoDNA](https://www.microsoft.com/photodna "Serviço de Nuvem do Microsoft PhotoDNA") para examinar este tipo de conteúdo.
 
 ## <a name="what-it-includes"></a>O que inclui
 

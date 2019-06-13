@@ -98,7 +98,7 @@ O controlador de entrada agora está acessível por meio do FQDN.
 
 ## <a name="install-cert-manager"></a>Instalar o cert-manager
 
-O controlador de entrada NGINX dá suporte para terminação TLS. Há várias maneiras de recuperar e configurar certificados para HTTPS. Este artigo demonstra como usar o [manager cert][cert-manager], que fornece a geração automática do certificado [Vamos Criptografar][lets-encrypt] e funcionalidade de gerenciamento.
+O controlador de entrada NGINX dá suporte para terminação TLS. Há várias maneiras de recuperar e configurar certificados para HTTPS. Este artigo demonstra como usar o [manager cert][cert-manager], que fornece a geração automática do certificado [Let's Encrypt][lets-encrypt] e funcionalidade de gerenciamento.
 
 > [!NOTE]
 > Este artigo usa o `staging` ambiente para Vamos criptografar. Em implantações de produção, use `letsencrypt-prod` e `https://acme-v02.api.letsencrypt.org/directory` nas definições do recurso e ao instalar o gráfico do Helm.
@@ -290,7 +290,7 @@ Como esses exemplos usam `letsencrypt-staging`, o certificado SSL emitido não �
 
 Quando você altera Vamos Criptografar para usar `prod` em vez de `staging`, um certificado confiável emitido pelo vamos criptografar é usado, conforme mostrado no exemplo a seguir:
 
-![Certificado Vamos Criptografar](media/ingress/certificate.png)
+![Certificado Let's Encrypt](media/ingress/certificate.png)
 
 O aplicativo de demonstração é mostrado no navegador da web:
 

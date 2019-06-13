@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 05/08/2019
 ms.author: edjez
-ms.openlocfilehash: b0dc8fbbb80a4d03b2cb64d09ffe9a36883c5bf9
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: a7f6c6fe25bf9dff2f102080f93fc1e0024ac660
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65521383"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66478638"
 ---
 # <a name="quickstart-personalize-content-using-c"></a>Início Rápido: Personalizar o conteúdo usando o C# 
 
@@ -40,7 +40,9 @@ A introdução ao Personalizador envolve as seguintes etapas:
 
 ## <a name="change-the-model-update-frequency"></a>Alterar a frequência de atualização do modelo
 
-No recurso do Personalizador no portal do Azure, altere a **Frequência de atualização do modelo** para 10 segundos. Isso treinará o serviço rapidamente, permitindo que você veja como a ação superior é alterada a cada iteração
+No recurso do Personalizador no portal do Azure, altere a **Frequência de atualização do modelo** para 10 segundos. Isso treinará o serviço rapidamente, permitindo que você veja como a ação superior é alterada a cada iteração.
+
+Quando o Loop do Personalizador é instanciado pela primeira vez, não há modelo, pois não houve nenhuma chamada à API de Recompensa com base na qual treinar. Chamadas de classificação retornarão probabilidades iguais para cada item. Seu aplicativo ainda deve classificar sempre o conteúdo usando a saída de RewardActionId.
 
 ![Alterar a frequência de atualização do modelo](./media/settings/configure-model-update-frequency-settings.png)
 

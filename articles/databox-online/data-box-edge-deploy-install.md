@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 03/20/2019
+ms.date: 05/31/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to install Data Box Edge in datacenter so I can use it to transfer data to Azure.
-ms.openlocfilehash: 7062e9d829242a62dfa4f661c21ce6c56b0db69c
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 0a9939155d92897019dc1ad5651d249cda11b993
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64924532"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476956"
 ---
 # <a name="tutorial-install-azure-data-box-edge"></a>Tutorial: Instalar o Azure Data Box Edge
 
@@ -70,7 +70,7 @@ Este dispositivo é fornecido em uma única caixa. Conclua as etapas a seguir pa
 1. Coloque a caixa em uma superfície plana e nivelada.
 2. Inspecione a caixa e a espuma da embalagem para verificar se não há amassados, cortes, danos por água ou qualquer outro dano visível. Se a caixa ou a embalagem estiver gravemente danificada, não a abra. Contate o Suporte da Microsoft para receber ajuda e saber se o dispositivo está em boas condições de funcionamento.
 3. Abra a caixa. Depois de abrir a caixa, verifique se você tem estes itens:
-    - Um dispositivo do Edge de compartimento único
+    - Um dispositivo do Data Box Edge de compartimento único
     - Dois cabos de alimentação
     - Um conjunto de kit de trilho
     - Um livreto Informações sobre Regulamentação, Segurança e Meio-ambiente
@@ -100,7 +100,7 @@ Localize os componentes para instalação do conjunto do kit de trilho:
 1. Dois conjuntos de trilho deslizante A7 Dell ReadyRails II
 2. Duas tiras com fixador de contato
 
-![Identificar o conteúdo do kit de trilho](./media/data-box-edge-deploy-install/identify-rail-kit-contents.png)
+    ![Identificar o conteúdo do kit de trilho](./media/data-box-edge-deploy-install/identify-rail-kit-contents.png)
 
 ### <a name="install-and-remove-tool-less-rails-square-hole-or-round-hole-racks"></a>Instale e remova os trilhos sem ferramentas (racks de orifício quadrado ou redondo)
 
@@ -112,7 +112,7 @@ Localize os componentes para instalação do conjunto do kit de trilho:
 3. Encaixe a extremidade traseira do trilho até que ela se ajuste totalmente na borda vertical do rack e a trava se encaixe no lugar. Repita essas etapas para posicionar e encaixar a extremidade dianteira da borda vertical do rack.
 4. Para remover os trilhos, aperte o botão de liberação da trava no ponto médio da extremidade e remova cada trilho.
 
-![Instalar e remover os trilhos sem ferramentas](./media/data-box-edge-deploy-install/installing-removing-tool-less-rails.png)
+    ![Instalar e remover os trilhos sem ferramentas](./media/data-box-edge-deploy-install/installing-removing-tool-less-rails.png)
 
 ### <a name="install-and-remove-tooled-rails-threaded-hole-racks"></a>Instalar e remover os trilhos com ferramentas (racks com orifício rosqueado)
 
@@ -124,7 +124,7 @@ Localize os componentes para instalação do conjunto do kit de trilho:
 3. Fixe os trilhos de montagem esquerdo e direito nas bordas verticais dianteiras do rack usando dois pares de parafusos.
 4. Deslize os suportes traseiros esquerdo e direito para frente em direção às bordas verticais traseiras do rack e fixe-os usando dois pares de parafusos.
 
-![Instalar e remover trilhos com ferramentas](./media/data-box-edge-deploy-install/installing-removing-tooled-rails.png)
+    ![Instalar e remover trilhos com ferramentas](./media/data-box-edge-deploy-install/installing-removing-tooled-rails.png)
 
 ### <a name="install-the-system-in-a-rack"></a>Instalar o sistema em um rack
 
@@ -133,7 +133,7 @@ Localize os componentes para instalação do conjunto do kit de trilho:
 3. Empurre o sistema para dentro até as alavancas de trava se encaixarem.
 4. Pressione os botões de trava de liberação deslizante em ambos os trilhos e deslize o sistema no rack.
 
-![Instalar o sistema em um rack](./media/data-box-edge-deploy-install/installing-system-rack.png)
+    ![Instalar o sistema em um rack](./media/data-box-edge-deploy-install/installing-system-rack.png)
 
 ### <a name="remove-the-system-from-the-rack"></a>Remover o sistema do rack
 
@@ -141,7 +141,7 @@ Localize os componentes para instalação do conjunto do kit de trilho:
 2. Destrave cada alavanca girando-a até a posição de liberação.
 3. Segure as laterais do sistema com firmeza e puxe-o para frente até os suportes do trilho ficarem na frente dos slots J. Levante o sistema para cima e longe do rack e coloque-o em uma superfície nivelada.
 
-![Remover o sistema do rack](./media/data-box-edge-deploy-install/removing-system-rack.png)
+    ![Remover o sistema do rack](./media/data-box-edge-deploy-install/removing-system-rack.png)
 
 ### <a name="engage-and-release-the-slam-latch"></a>Encaixar e liberar a trava do tipo slam
 
@@ -152,7 +152,7 @@ Localize os componentes para instalação do conjunto do kit de trilho:
 2. As travas fecham automaticamente conforme o sistema é empurrado para o rack e são liberadas quando puxadas para cima.
 3. Para fixar o sistema de remessa no rack ou para outros ambientes instáveis, localize o parafuso de montagem rígida sob cada trava e aperte cada parafuso com uma chave Phillips nº 2.
 
-![Encaixar e liberar a trava do tipo slam](./media/data-box-edge-deploy-install/engaging-releasing-slam-latch.png)
+    ![Encaixar e liberar a trava do tipo slam](./media/data-box-edge-deploy-install/engaging-releasing-slam-latch.png)
 
 ### <a name="route-the-cables"></a>Rotear os cabos
 
@@ -164,16 +164,16 @@ Localize os componentes para instalação do conjunto do kit de trilho:
 3. Passe as tiras com fixador de contato pelos slots nos suportes externos do CMA em cada lateral do sistema para fixar os conjuntos de cabos.
 
 
-![Rotear os cabos](./media/data-box-edge-deploy-install/routing-cables.png)
+    ![Rotear os cabos](./media/data-box-edge-deploy-install/routing-cables.png)
 
 ## <a name="cable-the-device"></a>Cabear o dispositivo
 
-Os procedimentos a seguir explicam como cabear o dispositivo do Edge para energia e rede.
+Os procedimentos a seguir explicam como cabear o dispositivo do Data Box Edge para energia e rede.
 
 Antes de começar o cabeamento do dispositivo, você precisará do seguinte:
 
-- Seu dispositivo físico do Edge, descompactado e montado no rack.
-- Dois cabos de alimentação. 
+- Seu dispositivo físico do Data Box Edge, desempacotado e montado no rack.
+- Dois cabos de alimentação.
 - Pelo menos um cabo de rede RJ-45 de 1 GbE para conectar-se à interface de gerenciamento. Há duas interfaces de rede de 1 GbE, uma de gerenciamento e uma de dados, no dispositivo.
 - Um cabo de cobre SFP+ de 25 GbE para cada interface de rede de dados a ser configurado. Pelo menos um adaptador de rede de dados da PORTA 2, PORTA 3, PORTA 4, PORTA 5 ou PORTA 6 precisa estar conectado à Internet (com conectividade com o Azure).  
 - Acesso a duas unidades de distribuição de energia (recomendado).
@@ -181,34 +181,46 @@ Antes de começar o cabeamento do dispositivo, você precisará do seguinte:
 > [!NOTE]
 > - Se você está conectando somente um adaptador de rede de dados, recomendamos que você use um adaptador de rede de 25/10 GbE, como a PORTA 3, a PORTA 4, a PORTA 5 ou a PORTA 6, para enviar dados para o Azure. 
 > - Para melhor desempenho e para lidar com grandes volumes de dados, considere a possibilidade de se conectar a todas as portas de dados.
-> - O dispositivo do Edge deve estar conectado à rede de datacenter de modo que possa receber dados de servidores de fonte de dados.
+> - O dispositivo do Data Box Edge deve estar conectado à rede de datacenter de modo que possa receber dados de servidores de fonte de dados.
 
-O dispositivo do Edge tem 8 SSDs NVMe. O painel frontal também tem botões de energia e LEDs de status. O dispositivo inclui PSUs (unidades de alimentação) redundantes na parte traseira. Seu dispositivo tem seis adaptadores de rede:
+Em seu dispositivo do Data Box Edge:
 
-- Duas interfaces de 1 Gbps
-- Quatro interfaces de 25 Gbps que também podem servir como interfaces de 10 Gbps.
-- Um controlador BMC. 
+- O painel frontal tem unidades de disco e um botão de energia.
 
-Identifique as várias portas de dados no backplane do dispositivo.
- 
-  ![Backplane de um dispositivo cabeado](./media/data-box-edge-deploy-install/backplane-cabled.png)
+    - Há 10 slots de discos na parte frontal do seu dispositivo.
+    - O slot 0 tem uma unidade SATA de 240 GB usada como um disco do sistema operacional. O slot 1 está vazio e os slots 2 a 9 são SSDs NVMe usados como discos de dados.
+- O backplane inclui PSUs (unidades de alimentação) redundantes.
+- O backplane tem seis adaptadores de rede:
 
-O dispositivo tem duas placas de rede correspondentes às 6 portas: 
+    - Duas interfaces de 1 Gbps.
+    - Quatro interfaces de 25 Gbps que também podem servir como interfaces de 10 Gbps.
+    - Um controlador BMC.
 
- - QLogic FastLinQ 41264
- - QLogic FastLinQ 41262
+- O backplane tem dois cartões de rede correspondentes às seis portas:
+
+    - QLogic FastLinQ 41264
+    - QLogic FastLinQ 41262
 
 Para obter uma lista completa de cabos, comutadores e transceptores compatíveis com essas placas de rede, acesse a [Matriz de interoperabilidade da Cavium FastlinQ série 41000](https://www.marvell.com/documents/xalflardzafh32cfvi0z/).
  
 Execute as etapas a seguir para cabear o dispositivo para obter energia e rede.
 
-1. Conecte os cabos de energia a cada uma das PSUs no compartimento. Para garantir a alta disponibilidade, instale e conecte as duas PSUs a diferentes fontes de alimentação.
+1. Identifique as várias portas no backplane do dispositivo.
 
-2. Ligue os cabos de alimentação às PDUs (unidades de distribuição de energia) do rack. Verifique se as duas PSUs usam fontes de energia separadas.
+    ![Backplane de um dispositivo cabeado](./media/data-box-edge-deploy-install/backplane-cabled.png)
 
-3. Conecte a PORTA 1 do adaptador de rede de 1 GbE ao computador usado para configurar o dispositivo físico. A PORTA 1 é o adaptador de gerenciamento dedicado.
+2. Localize os slots do disco e o botão de energia na parte frontal do dispositivo.
 
-4. Conecte uma ou mais das portas (PORTA 2, PORTA 3, PORTA 4, PORTA 5 ou PORTA 6) ao rede do datacenter/Internet. Se estiver se conectando na PORTA 2, use o cabo de rede RJ-45. Para os adaptadores de rede de 10/25 GbE, use os cabos de cobre SFP+.  
+    ![Plano frontal de um dispositivo](./media/data-box-edge-deploy-install/device-front-plane-labeled-1.png)
+
+3. Conecte os cabos de energia a cada uma das PSUs no compartimento. Para garantir a alta disponibilidade, instale e conecte as duas PSUs a diferentes fontes de alimentação.
+4. Ligue os cabos de alimentação às PDUs (unidades de distribuição de energia) do rack. Verifique se as duas PSUs usam fontes de energia separadas.
+5. Pressione o botão de energia para ligar o dispositivo.
+6. Conecte a PORTA 1 do adaptador de rede de 1 GbE ao computador usado para configurar o dispositivo físico. A PORTA 1 é o adaptador de gerenciamento dedicado.
+7. Conecte uma ou mais das portas (PORTA 2, PORTA 3, PORTA 4, PORTA 5 ou PORTA 6) ao rede do datacenter/Internet.
+
+    - Se estiver se conectando na PORTA 2, use o cabo de rede RJ-45.
+    - Para os adaptadores de rede de 10/25 GbE, use os cabos de cobre SFP+.
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -223,5 +235,3 @@ Vá para o próximo tutorial para aprender a conectar, configurar e ativar seu d
 
 > [!div class="nextstepaction"]
 > [Conectar e configurar o Data Box Edge](./data-box-edge-deploy-connect-setup-activate.md)
-
-

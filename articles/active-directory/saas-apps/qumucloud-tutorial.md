@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b376288bc74e6282fcc8477408ae5835c049f75e
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: 760aef6931cdd283382d72ae6de5e0865c95284c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565641"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64716169"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-qumu-cloud"></a>Tutorial: Integração do Azure Active Directory ao Qumu Cloud
 
@@ -56,7 +56,7 @@ Para configurar a integração do Qumu Cloud ao Microsoft Azure AD, você precis
 
 **Para adicionar o Qumu Cloud da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -108,7 +108,7 @@ Para configurar o logon único do Azure AD com o Qumu Cloud, execute as seguinte
 
     ![Informações de logon único em Domínio e URLs do Qumu Cloud](common/idp-intiated.png)
 
-     a. No **identificador** caixa de texto, digite uma URL usando o seguinte padrão: `https://<subdomain>.qumucloud.com/saml/SSO`
+    a. No **identificador** caixa de texto, digite uma URL usando o seguinte padrão: `https://<subdomain>.qumucloud.com/saml/SSO`
 
     b. No **URL de resposta** caixa de texto, digite uma URL usando o seguinte padrão: `https://<subdomain>.qumucloud.com/saml/SSO`
 
@@ -121,7 +121,7 @@ Para configurar o logon único do Azure AD com o Qumu Cloud, execute as seguinte
     > [!NOTE]
     > Esses valores não são reais. Atualize esses valores com o Identificador, a URL de Resposta e a URL de Logon reais. Contate a [equipe de suporte ao cliente do Qumu Cloud](mailto:support@qumu.com) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
-6. O aplicativo Qumu Cloud espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo **Atributos de Usuário** .
+6. O aplicativo Qumu Cloud espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo **Atributos de Usuário**.
 
     ![image](common/edit-attribute.png)
 

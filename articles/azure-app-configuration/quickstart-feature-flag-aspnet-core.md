@@ -14,18 +14,18 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 04/19/2019
 ms.author: yegu
-ms.openlocfilehash: 95f702b1d85dc8fe22b1800df3f7b0ebc987bee5
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: f83283dbf2a78b3717ba719f21dd9249a8a09d1f
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65411832"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393338"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Início Rápido: Adicionar sinalizadores de recurso a um aplicativo ASP.NET Core
 
-O gerenciamento de recursos no ASP.NET Core pode ser habilitado pela conexão de seu aplicativo à Configuração de Aplicativos do Azure. Use esse serviço gerenciado para armazenar todos os sinalizadores de recurso e controlar seus estados centralmente. Este Início Rápido mostra como incorporar o serviço em um aplicativo Web ASP.NET Core para criar uma implementação de ponta a ponta do gerenciamento de recursos.
+Você pode habilitar o gerenciamento de recursos no ASP.NET Core conectando seu aplicativo à Configuração de Aplicativos do Azure. Use esse serviço gerenciado para armazenar todos os sinalizadores de recurso e controlar seus estados centralmente. Este início rápido mostra como incorporar a Configuração de Aplicativos ao aplicativo Web ASP.NET Core para criar uma implementação de ponta a ponta do gerenciamento de recursos.
 
-As bibliotecas do Gerenciamento de Recursos do .NET Core estendem a estrutura com suporte abrangente para sinalizadores de recursos. Elas se baseiam no sistema de configuração do .NET Core. Elas são integradas diretamente à Configuração de Aplicativos por meio de seu provedor de configuração do .NET Core.
+As bibliotecas do Gerenciamento de Recursos do .NET Core estendem a estrutura com suporte abrangente para sinalizadores de recursos. Essas bibliotecas se baseiam no sistema de configuração do .NET Core. Elas são integradas diretamente à Configuração de Aplicativos por meio de seu provedor de configuração do .NET Core.
 
 Você pode usar qualquer editor de código para executar as etapas deste início rápido. O [Visual Studio Code](https://code.visualstudio.com/) é uma excelente opção disponível nas plataformas Windows, macOS e Linux.
 
@@ -35,11 +35,11 @@ Para fazer este início rápido, instale o [SDK do .NET Core](https://dotnet.mic
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-an-app-configuration-store"></a>Criar um repositório de configurações de aplicativo
+## <a name="create-an-app-configuration-store"></a>Criar um repositório de Configuração de Aplicativos
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Selecione **Gerenciador de Recursos** > **+ Criar** para adicionar os seguintes sinalizadores de recursos:
+6. Escolha **Gerenciador de Recursos** >  **+ Criar** para adicionar os seguintes sinalizadores de recursos:
 
     | Chave | Estado |
     |---|---|
@@ -47,19 +47,22 @@ Para fazer este início rápido, instale o [SDK do .NET Core](https://dotnet.mic
 
 ## <a name="create-an-aspnet-core-web-app"></a>Criar um aplicativo Web ASP.NET Core
 
-Você usa a [CLI (interface de linha de comando) do .NET Core](https://docs.microsoft.com/dotnet/core/tools/) para criar um novo projeto de aplicativo Web do MVC do ASP.NET Core. A vantagem de usar a CLI do .NET Core em relação ao Visual Studio é que ela está disponível nas plataformas Windows, MacOS e Linux.
+Você usa a [CLI (interface de linha de comando) do .NET Core](https://docs.microsoft.com/dotnet/core/tools/) para criar um novo projeto de aplicativo Web do MVC do ASP.NET Core. A vantagem de usar a CLI do .NET Core em vez do Visual Studio é que ela está disponível nas plataformas Windows, macOS e Linux.
 
 1. Crie uma nova pasta para o seu projeto. Para este Início Rápido, nomeie-o *TestFeatureFlags*.
 
-2. Na nova pasta, execute o seguinte comando para criar um novo projeto de aplicativo Web do MVC do ASP.NET Core:
+1. Na nova pasta, execute o seguinte comando para criar um novo projeto de aplicativo Web do MVC do ASP.NET Core:
 
-        dotnet new mvc
+   ```    
+   dotnet new mvc
+   ```
 
 ## <a name="add-secret-manager"></a>Adicionar o Gerenciador de Segredos
 
-Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspnet/core/security/app-secrets) ao projeto. A ferramenta Gerenciador de Segredos armazena dados confidenciais para o trabalho de desenvolvimento fora da árvore do seu projeto. Essa abordagem ajuda a impedir o compartilhamento acidental de segredos do aplicativo no código-fonte.
+Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspnet/core/security/app-secrets) ao projeto. A ferramenta Gerenciador de Segredos armazena dados confidenciais para o trabalho de desenvolvimento fora da árvore do projeto. Essa abordagem ajuda a impedir o compartilhamento acidental de segredos do aplicativo no código-fonte.
 
-- Abra o arquivo *.csproj*. Adicione um elemento `UserSecretsId`, conforme mostrado aqui e substitua o valor pelo seu próprio, que geralmente é um GUID. Salve o arquivo.
+1. Abra o arquivo *.csproj*.
+1. Adicione um elemento `UserSecretsId`, conforme mostrado no exemplo a seguir e substitua o valor pelo seu próprio, que geralmente é um GUID:
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -77,37 +80,45 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
     </Project>
     ```
 
-## <a name="connect-to-an-app-configuration-store"></a>Conectar um repositório de configurações de aplicativo
+1. Salve o arquivo.
+
+## <a name="connect-to-an-app-configuration-store"></a>Conectar um repositório de Configuração de Aplicativos
 
 1. Adicione referências aos pacotes NuGet `Microsoft.Extensions.Configuration.AzureAppConfiguration` e `Microsoft.FeatureManagement` executando os seguintes comandos:
 
-        dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration --version 1.0.0-preview-008520001
+    ```
+    dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration --version 1.0.0-preview-008520001
 
-        dotnet add package Microsoft.FeatureManagement.AspNetCore --version 1.0.0-preview-008560001-910
+    dotnet add package Microsoft.FeatureManagement.AspNetCore --version 1.0.0-preview-008560001-910
+    ```
 
-2. Execute o seguinte comando para restaurar pacotes do projeto:
+1. Execute o seguinte comando para restaurar pacotes do projeto:
 
-        dotnet restore
+    ```
+    dotnet restore
+    ```
 
-3. Adicione um segredo chamado *ConnectionStrings:AppConfig* ao Gerenciador de Segredos.
+1. Adicione um segredo chamado **ConnectionStrings:AppConfig** ao Gerenciador de Segredos.
 
-    Esse segredo contém a cadeia de conexão para acessar o repositório de configurações de aplicativo. Substitua o valor no seguinte comando pela cadeia de conexão do repositório de configurações de aplicativo.
+    Esse segredo contém a cadeia de conexão para acessar o repositório de Configuração de Aplicativos. Substitua o valor `<your_connection_string>` no seguinte comando pela cadeia de conexão do repositório de Configuração de Aplicativos.
 
     Este comando deve ser executado no mesmo diretório que o arquivo *.csproj*.
 
-        dotnet user-secrets set ConnectionStrings:AppConfig <your_connection_string>
+    ```
+    dotnet user-secrets set ConnectionStrings:AppConfig <your_connection_string>
+    ```
 
-    O Gerenciador de Segredos é usado apenas para testar o aplicativo Web localmente. Quando o aplicativo for implantado no [Serviço de Aplicativo do Azure](https://azure.microsoft.com/services/app-service/web), por exemplo, você usará uma configuração de aplicativo **Cadeias de Conexão** no Serviço de Aplicativo, em vez de armazenar a cadeia de conexão no Gerenciador de Segredos.
+    Use o Gerenciador de Segredos apenas para testar o aplicativo Web localmente. Quando o aplicativo for implantado no [Serviço de Aplicativo do Azure](https://azure.microsoft.com/services/app-service), por exemplo, você usará uma configuração de aplicativo chamada **Cadeias de Conexão** no Serviço de Aplicativo em vez de armazenar a cadeia de conexão no Gerenciador de Segredos.
 
-    Esse segredo é acessado com a API de configuração. Um sinal de dois pontos (:) funciona no nome da configuração com a API de configuração em todas as plataformas com suporte. Consulte [Configuração por ambiente](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/index?tabs=basicconfiguration&view=aspnetcore-2.0).
+    Esse segredo é acessado com a API de Configuração de Aplicativos. Um sinal de dois pontos (:) funciona no nome da configuração com a API de Configuração de Aplicativos em todas as plataformas compatíveis. Consulte [Configuração por ambiente](https://docs.microsoft.com/aspnet/core/fundamentals/configuration).
 
-4. Abra *Program.cs* e adicione uma referência ao provedor da Configuração de Aplicativos do .NET Core.
+1. Abra *Program.cs* e adicione uma referência ao provedor da Configuração de Aplicativos do .NET Core:
 
     ```csharp
     using Microsoft.Extensions.Configuration.AzureAppConfiguration;
     ```
 
-5. Atualize o método `CreateWebHostBuilder` para usar a Configuração de Aplicativos chamando o método `config.AddAzureAppConfiguration()`.
+1. Atualize o método `CreateWebHostBuilder` para usar a Configuração de Aplicativos chamando o método `config.AddAzureAppConfiguration()`.
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -123,13 +134,13 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
             .UseStartup<Startup>();
     ```
 
-6. Abra *Startup.cs* e adicione referências ao gerenciador de recursos do .NET Core.
+1. Abra *Startup.cs* e adicione referências ao gerenciador de recursos do .NET Core:
 
     ```csharp
     using Microsoft.FeatureManagement.AspNetCore;
     ```
 
-7. Atualize o método `ConfigureServices` para adicionar o suporte a sinalizadores de recurso chamando o método `services.AddFeatureManagement()` e, opcionalmente, inclua os filtros a serem usados com sinalizadores de recurso chamando `services.AddFeatureFilter<FilterType>()`:
+1. Atualize o método `ConfigureServices` para adicionar suporte ao sinalizador de recursos chamando o método `services.AddFeatureManagement()`. Opcionalmente, você pode incluir qualquer filtro que será usado com sinalizadores de recursos chamando `services.AddFeatureFilter<FilterType>()`:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -138,7 +149,7 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
     }
     ```
 
-8. Adicione um arquivo *MyFeatureFlags.cs*.
+1. Adicione um arquivo *MyFeatureFlags.cs*:
 
     ```csharp
     namespace TestFeatureFlags
@@ -150,7 +161,7 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
     }
     ```
 
-9. Adicione *BetaController.cs* ao diretório Controllers:
+1. Adicione *BetaController.cs* ao diretório *Controllers*:
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
@@ -176,13 +187,13 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
     }
     ```
 
-10. Abra *_ViewImports.cshtml* no diretório Views e adicione o auxiliar de marca do gerenciador de recursos:
+1. Abra *_ViewImports.cshtml* no diretório *Views* e adicione o auxiliar de marca do gerenciador de recursos:
 
     ```html
     @addTagHelper *, Microsoft.FeatureManagement.AspNetCore
     ```
 
-11. Abra *_Layout.cshtml* no diretório Exibições > Compartilhado e substitua a barra `<nav>` em `<body>` > `<header>` pelo seguinte código:
+1. Abra *_Layout.cshtml* no diretório *Views*\\*Shared* e substitua o código de barra `<nav>` em `<body>` > `<header>` pelo seguinte código:
 
     ```html
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -211,7 +222,7 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
     </nav>
     ```
 
-12. Crie um diretório Beta em Views e adicione *Index.cshtml* a ele:
+1. Crie um diretório *Beta* em *Views* e adicione *Index.cshtml* a ele:
 
     ```html
     @{
@@ -227,25 +238,29 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
 
 1. Para criar o aplicativo usando a CLI do .NET Core, execute o seguinte comando no shell de comando:
 
-        dotnet build
+    ```
+    dotnet build
+    ```
 
-2. Depois que a construção for concluída com êxito, execute o seguinte comando para executar o aplicativo Web localmente:
+1. Depois que a construção for concluída com êxito, execute o seguinte comando para executar o aplicativo Web localmente:
 
-        dotnet run
+    ```
+    dotnet run
+    ```
 
-3. Abra uma janela do navegador e vá para `https://localhost:5001`, que é a URL padrão do aplicativo Web hospedado localmente.
+1. Abra uma janela do navegador e vá para `https://localhost:5001`, que é a URL padrão do aplicativo Web hospedado localmente.
 
     ![Inicialização local do aplicativo do Início Rápido](./media/quickstarts/aspnet-core-feature-flag-local-before.png)
 
-4. Entre no [Portal do Azure](https://aka.ms/azconfig/portal). Selecione **Todos os recursos** e selecione a instância do repositório de configurações do aplicativo que você criou no início rápido.
+1. Entre no [Portal do Azure](https://portal.azure.com). Escolha **Todos os recursos** e escolha a instância do repositório de Configuração de Aplicativos que você criou no início rápido.
 
-5. Selecione **Gerenciador de Recursos** e altere o valor de *Beta* para *Ativado*:
+1. Escolha **Gerenciador de Recursos** e altere o estado da chave **Beta** para **Ativado**:
 
     | Chave | Estado |
     |---|---|
     | Beta | Por |
 
-6. Atualize a página do navegador para ver as novas definições de configuração.
+1. Atualize a página do navegador para ver as novas definições de configuração.
 
     ![Inicialização local do aplicativo do Início Rápido](./media/quickstarts/aspnet-core-feature-flag-local-after.png)
 
@@ -255,8 +270,8 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste Início Rápido, você criou um repositório de configurações de aplicativos e o usou para gerenciar recursos em um aplicativo Web ASP.NET Core por meio das [bibliotecas do Gerenciamento de Recursos](https://go.microsoft.com/fwlink/?linkid=2074664).
+Neste início rápido, você criou um novo repositório de Configuração de Aplicativos e o usou para gerenciar recursos em um aplicativo Web ASP.NET Core por meio das [bibliotecas do Gerenciamento de Recursos](https://go.microsoft.com/fwlink/?linkid=2074664).
 
-* Saiba mais sobre o [gerenciamento de recursos](./concept-feature-management.md)
-* [Gerenciar sinalizadores de recursos](./manage-feature-flags.md)
-* [Usar sinalizadores de recurso em um aplicativo ASP.NET Core](./use-feature-flags-dotnet-core.md)
+- Saiba mais sobre o [gerenciamento de recursos](./concept-feature-management.md).
+- [Gerenciar sinalizadores de recursos](./manage-feature-flags.md).
+- [Usar sinalizadores de recursos em um aplicativo ASP.NET Core](./use-feature-flags-dotnet-core.md).

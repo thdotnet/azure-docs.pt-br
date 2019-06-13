@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: 80e5feeccc4acc3e1f3dab6b815c8605332c7c71
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 976830232453eee0993e64ac445c2e6a2f7e20ef
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65834281"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66478585"
 ---
 # <a name="personalizer-settings"></a>Configurações do Personalizador
 
@@ -63,7 +63,9 @@ Depois de alterar essa configuração, selecione **Salvar**.
 
 ### <a name="model-update-frequency"></a>Frequência de atualização do modelo
 
-A **frequência de atualização do modelo** define a frequência com que um novo modelo do Personalizador é treinado novamente. 
+O modelo mais recente, treinado com base nas chamadas à API de Recomenda de cada evento ativo, não é usado automaticamente pela chamada de Classificação do Personalizador. A **Frequência de atualização do modelo** define a frequência com que o modelo usado pela Chamada de classificação é atualizado. 
+
+As altas frequências de atualização do modelo são úteis para situações em que você deseja acompanhar de perto as alterações em comportamentos do usuário. Os exemplos incluem sites executados em notícias em tempo real, conteúdo viral ou licitação de produtos ao vivo. Você pode usar uma frequência de 15 minutos nesses cenários. Na maioria dos casos de uso, uma frequência de atualização mais baixa é eficaz. Frequências de atualização de um minuto são úteis ao depurar o código de um aplicativo usando o Personalizador, executar demonstrações ou testar interativamente aspectos de aprendizado de máquina.
 
 ![A frequência de atualização do modelo define a frequência com que um novo modelo do Personalizador é treinado novamente.](media/settings/configure-model-update-frequency-settings.png)
 
@@ -77,7 +79,7 @@ Depois de alterar essa configuração, selecione **Salvar**.
 
 ## <a name="export-the-personalizer-model"></a>Exportar o modelo do Personalizador
 
-Na seção do Gerenciamento de recursos de **Modelo e Política**, examine a criação do modelo e a data da última atualização e exporte o modelo atual.
+Na seção do Gerenciamento de recursos de **Modelo e Política**, examine a criação do modelo e a data da última atualização e exporte o modelo atual. É possível usar o portal do Azure ou as APIs do Personalizador para exportar um arquivo de modelo para fins de arquivamento. 
 
 ![Exportar o modelo atual do Personalizador](media/settings/export-current-personalizer-model.png)
 

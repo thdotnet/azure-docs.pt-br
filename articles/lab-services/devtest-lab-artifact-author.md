@@ -55,7 +55,7 @@ O exemplo a seguir mostra as seções que compõem a estrutura básica de um arq
 
 | Nome do elemento | Obrigatório? | DESCRIÇÃO |
 | --- | --- | --- |
-| $schema |Não  |Local do arquivo de esquema JSON. O arquivo de esquema JSON pode lhe ajudar a testar a validade do arquivo de definição. |
+| $schema |Não |Local do arquivo de esquema JSON. O arquivo de esquema JSON pode lhe ajudar a testar a validade do arquivo de definição. |
 | title |Sim |Nome do artefato exibido no laboratório. |
 | description |Sim |Descrição do artefato exibido no laboratório. |
 | iconUri |Não |URI do ícone exibido no laboratório. |

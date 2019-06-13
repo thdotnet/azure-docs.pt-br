@@ -5,15 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: overview
-ms.date: 03/12/2019
+ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 3121c7e4b1b1adfb079368aa86c272e9ea473ead
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 907d12464156f551930098f6bd6a6a24596307cb
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57855207"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479928"
 ---
 # <a name="about-site-recovery"></a>Sobre o Azure Site Recovery
 
@@ -41,7 +41,7 @@ O Site Recovery pode gerenciar a replicação para:
 **Replicação de VM do Azure** | Você pode configurar a recuperação de desastre de VMs do Azure de uma região primária para uma região secundária.
 **Replicação de VM local** | Você pode replicar VMs locais e servidores físicos no Azure ou em um datacenter secundário local. A replicação no Azure elimina o custo e a complexidade de manter um data center secundário.
 **Replicação de carga de trabalho** | Replicar qualquer carga de trabalho em execução em VMs do Azure, Hyper-V local e VMs do VMware com suporte, bem como em servidores físicos Windows/Linux.
-**Resiliência de dados** | A recuperação de site gerencia a replicação e o failover, sem interceptar dados de aplicativo. Ao replicar ao Azure, os dados são armazenados no armazenamento do Azure, com toda a resiliência que ele oferece. Quando ocorrer um failover, as VMs do Azure serão criadas com base nos dados replicados.
+**Resiliência de dados** | O Site Recovery gerencia a replicação sem interceptar dados do aplicativo. Ao replicar ao Azure, os dados são armazenados no armazenamento do Azure, com toda a resiliência que ele oferece. Quando ocorrer um failover, as VMs do Azure serão criadas com base nos dados replicados.
 **Destinos de RTO e RPO** | Mantenha os objetivos de tempo de recuperação (RTO) e os objetivos de ponto de recuperação (RPO) dentro dos limites da organização. O Site Recovery fornece uma frequência da replicação tão baixa quanto 30 segundos para o Hyper-V, assim como a replicação contínua para o as VMs do Azure e VMs do VMware. Você pode reduzir ainda mais os RTO por meio da integração com o [Gerenciador de Tráfego do Azure](https://azure.microsoft.com/blog/reduce-rto-by-using-azure-traffic-manager-with-azure-site-recovery/).
 **Manter os aplicativos consistentes durante um failover** | Você pode replicar usando pontos de recuperação com instantâneos consistentes no aplicativo. Esses instantâneos capturam dados de disco, todos os dados na memória e todas as transações em andamento.
 **Testar sem interrupção** | Você pode executar facilmente análises de recuperação de desastre, sem afetar a replicação em andamento.
@@ -56,7 +56,7 @@ O Site Recovery pode gerenciar a replicação para:
 
 **Com suporte** | **Detalhes**
 --- | ---
-**Cenários de replicação** | Replicar VMs do Azure de uma região do Azure para outra.<br/><br/>  Replique VMs locais da VMware, VMs do Hyper-V, servidores físicos (Windows e Linux), VMs do Azure Stack no Azure.<br/><br/> Replique VMs locais da VMware, VMs do Hyper-V gerenciado pelo System Center VMM e servidores físicos para um site secundário.
+**Cenários de replicação** | Replicar VMs do Azure de uma região do Azure para outra.<br/><br/>  Replique VMs locais da VMware, VMs do Hyper-V, servidores físicos (Windows e Linux), VMs do Azure Stack no Azure.<br/><br/> <br/><br/> Replique instâncias do AWS Windows no Azure.<br/><br/> Replique VMs locais da VMware, VMs do Hyper-V gerenciado pelo System Center VMM e servidores físicos para um site secundário.
 **Regiões** | Examine as [regiões com suporte](https://azure.microsoft.com/regions/services/) para o Site Recovery. |
 **Computadores replicados** | Analise os requisitos de replicação para a replicação de [VM do Azure](azure-to-azure-support-matrix.md#replicated-machine-operating-systems), de [VMs VMware locais e de servidores físicos](vmware-physical-azure-support-matrix.md#replicated-machines) e de [VMs Hyper-V local](hyper-v-azure-support-matrix.md#replicated-vms).
 **Cargas de trabalho** | Você pode replicar qualquer carga de trabalho em execução em um computador com suporte para replicação. Além disso, a equipe do Site Recovery realizou testes específicos do aplicativo para [alguns aplicativos](site-recovery-workload.md#workload-summary).

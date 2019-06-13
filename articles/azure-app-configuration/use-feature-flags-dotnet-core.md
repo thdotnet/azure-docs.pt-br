@@ -1,6 +1,6 @@
 ---
 title: Tutorial para uso de sinalizadores de recurso em um aplicativo .NET Core | Microsoft Docs
-description: Neste tutorial, você aprenderá a implementar sinalizadores de recurso em aplicativos .NET Core
+description: Neste tutorial, você aprenderá a implementar sinalizadores de recursos em aplicativos .NET Core.
 services: azure-app-configuration
 documentationcenter: ''
 author: yegu-ms
@@ -14,28 +14,30 @@ ms.topic: tutorial
 ms.date: 04/19/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: b0e48a0db63eded9e9c4921d33b03af39656ce0d
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: fc5215f71af45d3273da437fc796bf0d396ba3f9
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66299275"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393523"
 ---
 # <a name="tutorial-use-feature-flags-in-a-net-core-app"></a>Tutorial: Usar sinalizadores de recursos em um aplicativo .NET Core
 
-As bibliotecas de Gerenciamento de Recursos do .NET Core fornecem suporte idiomático para implementação de sinalizadores de recursos em um aplicativo .NET ou ASP.NET Core. Elas permitem que você adicione sinalizadores de recurso ao código de forma mais declarativa, de modo que você não precise escrever todas as instruções `if` para elas manualmente. Elas gerenciam os ciclos de vida do sinalizador de recurso (por exemplo, atualizam e armazenam em cache os estados do sinalizador, garantem um estado de sinalizador imutável durante uma chamada de solicitação) nos bastidores. Além disso, a biblioteca ASP.NET Core oferece integrações prontas para uso, incluindo ações do controlador MVC, exibições, rotas e middleware.
+As bibliotecas de Gerenciamento de Recursos do .NET Core fornecem suporte idiomático para implementação de sinalizadores de recursos em um aplicativo .NET ou ASP.NET Core. Essas bibliotecas permitem que você adicione sinalizadores de recursos ao código de forma declarativa, de modo que você não precise escrever todas as instruções `if` para elas manualmente.
 
-O Início Rápido [Adicionar sinalizadores de recurso a um aplicativo ASP.NET Core](./quickstart-feature-flag-aspnet-core.md) mostra várias maneiras de adicionar sinalizadores de recurso a um aplicativo ASP.NET Core. Este tutorial explica-os mais detalhadamente. Confira a [documentação do gerenciamento de recursos do ASP.NET Core](https://go.microsoft.com/fwlink/?linkid=2091410) para obter uma referência completa.
+As bibliotecas do Gerenciamento de Recursos também gerenciam os ciclos de vida dos sinalizadores de recursos nos bastidores. Por exemplo, as bibliotecas atualizam e armazenam em cache os estados do sinalizador ou garantem um estado de sinalizador imutável durante uma chamada de solicitação. Além disso, a biblioteca ASP.NET Core oferece integrações prontas para uso, incluindo ações do controlador MVC, exibições, rotas e middleware.
+
+O [Início Rápido Adicionar sinalizadores de recursos a um aplicativo ASP.NET Core](./quickstart-feature-flag-aspnet-core.md) mostra várias maneiras de adicionar sinalizadores de recursos a um aplicativo ASP.NET Core. Este tutorial explica esses métodos mais detalhadamente. Para obter uma referência completa, confira a [documentação do gerenciamento de recursos do ASP.NET Core](https://go.microsoft.com/fwlink/?linkid=2091410).
 
 Neste tutorial, você aprenderá a:
 
 > [!div class="checklist"]
 > * Adicionar sinalizadores de recursos aos componentes principais de seu aplicativo para controlar a disponibilidade de recursos.
-> * Integrá-los à Configuração de Aplicativos ao usá-la para gerenciar sinalizadores de recurso.
+> * Integre-os à Configuração de Aplicativos ao usá-la para gerenciar sinalizadores de recursos.
 
-## <a name="setup"></a>Configuração
+## <a name="set-up-feature-management"></a>Configurar o gerenciamento de recursos
 
-O gerenciador de recursos `IFeatureManager` do .NET Core obtém os sinalizadores de recursos do sistema de configuração nativa da estrutura. Como resultado, você pode definir sinalizadores de recurso de seu aplicativo usando qualquer fonte de configuração compatível com o .NET Core, incluindo o arquivo *appsettings.json* local ou variáveis de ambiente. O gerenciador de recursos se baseia na injeção de dependência do .NET Core. Você pode registrar os serviços de gerenciamento de recursos usando as convenções padrão.
+O gerenciador de recursos `IFeatureManager` do .NET Core obtém os sinalizadores de recursos do sistema de configuração nativa da estrutura. Como resultado, você pode definir os sinalizadores de recursos do aplicativo usando qualquer fonte de configuração compatível com o .NET Core, incluindo o arquivo *appsettings.json* local ou variáveis de ambiente. O `IFeatureManager` se baseia na injeção de dependência do .NET Core. Você pode registrar os serviços de gerenciamento de recursos usando convenções padrão:
 
 ```csharp
 using Microsoft.FeatureManagement;
@@ -49,7 +51,7 @@ public class Startup
 }
 ```
 
-O gerenciador de recursos recupera os sinalizadores de recursos da seção "FeatureManagement" dos dados de configuração do .NET Core por padrão. O exemplo a seguir instrui-o a fazer a leitura de outra seção chamada "MyFeatureFlags".
+Por padrão, o gerenciador de recursos recupera os sinalizadores de recursos da seção `"FeatureManagement"` dos dados de configuração do .NET Core. O seguinte exemplo instrui o gerenciador de recursos a fazer a leitura de outra seção chamada `"MyFeatureFlags"`:
 
 ```csharp
 using Microsoft.FeatureManagement;
@@ -66,7 +68,7 @@ public class Startup
 }
 ```
 
-Se você usar filtros nos sinalizadores de recursos, precisará incluir uma biblioteca adicional e registrá-la. O exemplo a seguir mostra como usar um filtro de recurso interno chamado **PercentageFilter"** .
+Se você usar filtros nos sinalizadores de recursos, precisará incluir uma biblioteca adicional e registrá-la. O seguinte exemplo mostra como usar um filtro de recurso interno chamado `PercentageFilter`:
 
 ```csharp
 using Microsoft.FeatureManagement;
@@ -82,7 +84,9 @@ public class Startup
 }
 ```
 
-Para operar com eficiência, você deve manter os sinalizadores de recurso fora do aplicativo e gerenciá-los separadamente. Isso permite que você modifique os estados de sinalizador a qualquer momento e implemente essas alterações no aplicativo imediatamente. A Configuração de Aplicativos fornece um local centralizado para organizar e controlar todos os sinalizadores de recurso por meio de uma interface do usuário de portal dedicado e fornece os sinalizadores ao seu aplicativo diretamente por meio de suas bibliotecas de clientes .NET Core. A maneira mais fácil de conectar seu aplicativo ASP.NET Core à Configuração de Aplicativos é por meio do provedor de configuração `Microsoft.Extensions.Configuration.AzureAppConfiguration`. Use esse pacote NuGet no código adicionando o seguinte ao arquivo *Program.cs*:
+Recomendamos que você mantenha os sinalizadores de recursos fora do aplicativo e gerencie-os separadamente. Isso permite que você modifique os estados do sinalizador a qualquer momento e que essas alterações entrem em vigor no aplicativo imediatamente. A Configuração de Aplicativos fornece um local centralizado para organizar e controlar todos os sinalizadores de recursos por meio de uma interface do usuário dedicada do portal. A Configuração de Aplicativos também fornece os sinalizadores ao aplicativo diretamente por meio de suas bibliotecas de clientes do .NET Core.
+
+A maneira mais fácil de conectar seu aplicativo ASP.NET Core à Configuração de Aplicativos é por meio do provedor de configuração `Microsoft.Extensions.Configuration.AzureAppConfiguration`. Para usar esse pacote NuGet, adicione o seguinte código ao arquivo *Program.cs*:
 
 ```csharp
 using Microsoft.Extensions.Configuration.AzureAppConfiguration;
@@ -99,7 +103,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
            .UseStartup<Startup>();
 ```
 
-Os valores de sinalizadores de recurso devem ser alterados ao longo do tempo. Por padrão, o gerenciador de recursos atualizará os valores de sinalizadores de recursos a cada 30 segundos. Você pode usar outro intervalo de sondagem na chamada `options.UseFeatureFlags()` acima.
+Os valores de sinalizadores de recurso devem ser alterados ao longo do tempo. Por padrão, o gerenciador de recursos atualiza os valores dos sinalizadores de recursos a cada 30 segundos. O seguinte código mostra como alterar o intervalo de sondagem para 5 segundos na chamada `options.UseFeatureFlags()`:
 
 ```csharp
 config.AddAzureAppConfiguration(options => {
@@ -112,14 +116,16 @@ config.AddAzureAppConfiguration(options => {
 
 ## <a name="feature-flag-declaration"></a>Declaração do sinalizador de recurso
 
-Cada sinalizador de recurso tem duas partes: um nome e uma lista de um ou mais filtros que são usados para avaliar se o estado de um recurso é *ativado* (ou seja, quando seu valor é `True`). Um filtro define um caso de uso para o qual um recurso deve ser ativado. Se um sinalizador de recurso tem vários filtros, a lista de filtro é percorrida na ordem até um dos filtros determinar que o recurso deve ser habilitado. Neste ponto, o sinalizador de recurso é considerado *ativado* e os resultados restantes do filtro são ignorados. Se nenhum filtro indicar que o recurso deve ser habilitado, o sinalizador de recurso estará *desativado*.
+Cada sinalizador de recurso tem duas partes: um nome e uma lista de um ou mais filtros que são usados para avaliar se o estado de um recurso é *ativado* (ou seja, quando seu valor é `True`). Um filtro define um caso de uso para os casos em que um recurso deve ser ligado.
 
-O gerenciador de recursos dá suporte ao *appsettings.json* como uma fonte de configuração para sinalizadores de recursos. O exemplo a seguir mostra como configurar sinalizadores de recurso em um arquivo JSON.
+Quando um sinalizador de recursos tem vários filtros, a lista de filtro é percorrida na ordem até um dos filtros determinar que o recurso deve ser habilitado. Neste ponto, o sinalizador de recursos é *ativado* e os resultados restantes do filtro são ignorados. Se nenhum filtro indicar que o recurso deve ser habilitado, o sinalizador de recursos será *desativado*.
+
+O gerenciador de recursos dá suporte ao *appsettings.json* como uma fonte de configuração para sinalizadores de recursos. O seguinte exemplo mostra como configurar os sinalizadores de recursos em um arquivo JSON:
 
 ```JSON
 "FeatureManagement": {
-    "FeatureX": true, // Feature flag set to on
-    "FeatureY": false, // Feature flag set to off
+    "FeatureA": true, // Feature flag set to on
+    "FeatureB": false, // Feature flag set to off
     "FeatureC": {
         "EnabledFor": [
             {
@@ -133,15 +139,15 @@ O gerenciador de recursos dá suporte ao *appsettings.json* como uma fonte de co
 }
 ```
 
-Por convenção, a seção `FeatureManagement` deste documento JSON é usada para configurações de sinalizadores de recurso. O exemplo acima mostra três sinalizadores de recurso com seus filtros definidos na propriedade *EnabledFor*:
+Por convenção, a seção `FeatureManagement` deste documento JSON é usada para as configurações de sinalizadores de recursos. O exemplo anterior mostra três sinalizadores de recursos com seus filtros definidos na propriedade `EnabledFor`:
 
-* **FeatureA** está *ativado*.
-* **FeatureB** está *desativado*.
-* **FeatureC** especifica um filtro chamado *Percentage* com uma propriedade *Parameters*. *Percentage* é um exemplo de um filtro configurável e especifica uma probabilidade de 50% para o sinalizador **FeatureC** estar *ativado*.
+* `FeatureA` está *ativado*.
+* `FeatureB` está *desativado*.
+* `FeatureC` especifica um filtro chamado `Percentage` com uma propriedade `Parameters`. `Percentage` é um filtro configurável. Neste exemplo, `Percentage` especifica uma probabilidade de 50% de que o sinalizador `FeatureC` esteja *ativado*.
 
-## <a name="referencing"></a>Referência
+## <a name="feature-flag-references"></a>Referências de sinalizadores de recursos
 
-Embora não seja necessário, os sinalizadores de recurso devem ser definidos como variáveis `enum` para que possam ser referenciados com facilidade no código.
+Para que você possa referenciar sinalizadores de recursos no código com facilidade, defina-os como variáveis `enum`:
 
 ```csharp
 public enum MyFeatureFlags
@@ -152,9 +158,9 @@ public enum MyFeatureFlags
 }
 ```
 
-## <a name="feature-flag-check"></a>Verificação do sinalizador de recurso
+## <a name="feature-flag-checks"></a>Verificações de sinalizadores de recursos
 
-O padrão básico de gerenciamento de recursos é primeiro verificar se um sinalizador de recursos está definido como *ativado* e, em seguida, executar as ações embutidas, se for o caso.
+O padrão básico do gerenciamento de recursos é primeiro verificar se um sinalizador de recursos está definido como *ativado*. Nesse caso, em seguida, o gerenciador de recursos executa as ações contidas pelo recurso. Por exemplo:
 
 ```csharp
 IFeatureManager featureManager;
@@ -167,7 +173,7 @@ if (featureManager.IsEnabled(nameof(MyFeatureFlags.FeatureA)))
 
 ## <a name="dependency-injection"></a>Injeção de dependência
 
-No ASP.NET Core MVC, o gerenciador de recursos `IFeatureManager` pode ser acessado por meio da injeção de dependência.
+No ASP.NET Core MVC, você pode acessar o gerenciador de recursos `IFeatureManager` por meio da injeção de dependência:
 
 ```csharp
 public class HomeController : Controller
@@ -181,9 +187,9 @@ public class HomeController : Controller
 }
 ```
 
-## <a name="controller-action"></a>Ação do controlador
+## <a name="controller-actions"></a>Ações do controlador
 
-Em controladores MVC, um atributo `Feature` pode ser usado para controlar se uma classe de controlador inteira ou uma ação específica será habilitada. O controlador `HomeController` a seguir exige que *FeatureA* seja *ativado* antes que qualquer ação que ele contenha possa ser executada.
+Em controladores MVC, use o atributo `Feature` para controlar se uma classe de controlador inteira ou uma ação específica será habilitada. O seguinte controlador `HomeController` exige que `FeatureA` esteja *ativado* antes de executar qualquer ação contida pela classe do controlador:
 
 ```csharp
 [Feature(MyFeatureFlags.FeatureA)]
@@ -193,7 +199,7 @@ public class HomeController : Controller
 }
 ```
 
-A ação `Index` a seguir exige que *FeatureA* seja *ativado* para ser executado.
+A seguinte ação `Index` exige que `FeatureA` esteja *ativado* para ser executada:
 
 ```csharp
 [Feature(MyFeatureFlags.FeatureA)]
@@ -203,11 +209,11 @@ public IActionResult Index()
 }
 ```
 
-Quando uma ação ou um controlador MVC está bloqueado devido ao sinalizador de recurso de controle estar *desativado*, um `IDisabledFeatureHandler` registrado é chamado. O `IDisabledFeatureHandler` padrão retorna um código de status 404 para o cliente sem nenhum corpo de resposta.
+Quando uma ação ou um controlador MVC está bloqueado devido ao sinalizador de recursos controlador estar *desativado*, uma interface `IDisabledFeaturesHandler` registrada é chamada. A interface `IDisabledFeaturesHandler` padrão retorna um código de status 404 para o cliente sem nenhum corpo de resposta.
 
-## <a name="view"></a>Visualizar
+## <a name="mvc-views"></a>Exibições do MVC
 
-Em exibições do MVC, uma marca `<feature>` pode ser usada para renderizar o conteúdo com base em se um sinalizador de recurso está habilitado ou não.
+Em exibições do MVC, você pode usar uma marca `<feature>` para renderizar o conteúdo com base em se um sinalizador de recursos está habilitado:
 
 ```html
 <feature name="FeatureA">
@@ -215,9 +221,9 @@ Em exibições do MVC, uma marca `<feature>` pode ser usada para renderizar o co
 </feature>
 ```
 
-## <a name="mvc-filter"></a>Filtro do MVC
+## <a name="mvc-filters"></a>Filtros do MVC
 
-Os filtros do MVC podem ser configurados de modo que sejam ativados com base no estado de um sinalizador de recurso. O exemplo a seguir adiciona um filtro do MVC chamado `SomeMvcFilter`. Esse filtro só é disparado no pipeline do MVC se *FeatureA* está habilitado.
+Configure filtros do MVC de modo que eles sejam ativados com base no estado de um sinalizador de recursos. O exemplo a seguir adiciona um filtro do MVC chamado `SomeMvcFilter`. Esse filtro só é disparado no pipeline do MVC se `FeatureA` está habilitado.
 
 ```csharp
 using Microsoft.FeatureManagement.FeatureFilters;
@@ -232,9 +238,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-## <a name="route"></a>Rota
+## <a name="routes"></a>Rotas
 
-As rotas podem ser expostas dinamicamente com base nos sinalizadores de recurso. O exemplo a seguir adiciona uma rota, que define `Beta` como o controlador padrão, somente quando *FeatureA* está habilitado.
+Você pode usar sinalizadores de recursos para expor rotas dinamicamente. O seguinte exemplo adiciona uma rota, que só define `Beta` como o controlador padrão quando `FeatureA` está habilitado:
 
 ```csharp
 app.UseMvc(routes => {
@@ -244,13 +250,13 @@ app.UseMvc(routes => {
 
 ## <a name="middleware"></a>Middleware
 
-Os sinalizadores de recurso podem ser usados para adicionar branches de aplicativos e middleware condicionalmente. O exemplo a seguir insere um componente de middleware no pipeline de solicitação somente quando *FeatureA* está habilitado.
+Você também pode usar sinalizadores de recursos para adicionar middleware e branches do aplicativo condicionalmente. O seguinte exemplo só insere um componente de middleware no pipeline de solicitação quando `FeatureA` está habilitado:
 
 ```csharp
 app.UseMiddlewareForFeature<ThirdPartyMiddleware>(nameof(MyFeatureFlags.FeatureA));
 ```
 
-Isso cria a funcionalidade mais genérica para gerar um branch de todo o aplicativo com base em um sinalizador de recurso.
+Este código cria a funcionalidade mais genérica para gerar um branch de todo o aplicativo com base em um sinalizador de recursos:
 
 ```csharp
 app.UseForFeature(featureName, appBuilder => {
@@ -260,7 +266,7 @@ app.UseForFeature(featureName, appBuilder => {
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste tutorial, você aprendeu a implementar sinalizadores de recurso em seu aplicativo ASP.NET Core utilizando as bibliotecas `Microsoft.FeatureManagement`. Confira os recursos a seguir para obter mais informações sobre o suporte de gerenciamento de recursos no ASP.NET Core e na Configuração de Aplicativos.
+Neste tutorial, você aprendeu a implementar sinalizadores de recursos no aplicativo ASP.NET Core usando as bibliotecas `Microsoft.FeatureManagement`. Para obter mais informações sobre o suporte de gerenciamento de recursos no ASP.NET Core e na Configuração de Aplicativos, confira os seguintes recursos:
 
 * [Código de exemplo do sinalizador de recurso do ASP.NET Core](/azure/azure-app-configuration/quickstart-feature-flag-aspnet-core)
 * [Documentação de Microsoft.FeatureManagement](https://docs.microsoft.com/dotnet/api/microsoft.featuremanagement)

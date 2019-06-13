@@ -1,21 +1,17 @@
 ---
 title: Visão geral de aplicativos gerenciados do Azure | Microsoft Docs
 description: Descreve os conceitos de aplicativos gerenciados do Azure
-services: managed-applications
 author: tfitzmac
-manager: timlt
 ms.service: managed-applications
-ms.devlang: na
 ms.topic: overview
-ms.tgt_pltfrm: na
-ms.date: 10/04/2018
+ms.date: 05/31/2019
 ms.author: tomfitz
-ms.openlocfilehash: 48bb241a7871d2a209636f66837fb2afd95fd22c
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 5b6cb030c6eba5d80dfd046f1c3950609da1ed73
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66001807"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479815"
 ---
 # <a name="azure-managed-applications-overview"></a>Visão geral de aplicativos gerenciados do Azure
 
@@ -55,7 +51,9 @@ Para obter informações sobre como publicar aplicativos gerenciados para o Mark
 
 ## <a name="resource-groups-for-managed-applications"></a>Grupos de recursos para aplicativos gerenciados
 
-Normalmente, os recursos de um aplicativo gerenciado residem em dois grupos de recursos. O consumidor gerencia um grupo de recursos, e o fornecedor gerencia o outro grupo de recursos. Ao definir o aplicativo gerenciado, o fornecedor especifica os níveis de acesso. Atualmente não há suporte para restringir o acesso para [operações de dados](../role-based-access-control/role-definitions.md) para todos os provedores de dados no Azure.
+Normalmente, os recursos de um aplicativo gerenciado estão em dois grupos de recursos. O consumidor gerencia um grupo de recursos, e o fornecedor gerencia o outro grupo de recursos. Ao definir o aplicativo gerenciado, o fornecedor especifica os níveis de acesso. O publicador pode solicitar uma atribuição de função permanente, ou [acesso just-in-time](request-just-in-time-access.md) para uma atribuição que é restrita a um período de tempo.
+
+Atualmente não há suporte para restringir o acesso para [operações de dados](../role-based-access-control/role-definitions.md) para todos os provedores de dados no Azure.
 
 A imagem a seguir mostra um cenário no qual o fornecedor solicita a função de proprietário para o grupo de recursos gerenciados. O fornecedor aplicou um bloqueio somente leitura nesse grupo de recursos para o consumidor. As identidades do distribuidor que recebem acesso ao grupo de recursos gerenciados são isentas de bloqueio.
 
@@ -69,7 +67,7 @@ O consumidor tem acesso total ao grupo de recursos e o utiliza para gerenciar o 
 
 ### <a name="managed-resource-group"></a>Grupo de recursos gerenciado
 
-Este grupo de recursos contém todos os recursos necessários ao aplicativo gerenciado. Por exemplo, esse grupo de recursos contém as máquinas virtuais, contas de armazenamento e redes virtuais para a solução. O consumidor tem acesso limitado a esse grupo de recursos, pois não gerencia os recursos individuais do aplicativo gerenciado. O acesso do fornecedor a este grupo de recursos corresponde à função especificada na definição do aplicativo gerenciado. Por exemplo, o fornecedor pode solicitar a função de Proprietário ou Colaborador para este grupo de recursos.
+Este grupo de recursos contém todos os recursos necessários ao aplicativo gerenciado. Por exemplo, esse grupo de recursos contém as máquinas virtuais, contas de armazenamento e redes virtuais para a solução. O consumidor tem acesso limitado a esse grupo de recursos, pois não gerencia os recursos individuais do aplicativo gerenciado. O acesso do fornecedor a este grupo de recursos corresponde à função especificada na definição do aplicativo gerenciado. Por exemplo, o fornecedor pode solicitar a função de Proprietário ou Colaborador para este grupo de recursos. O acesso é permanente ou limitado a uma hora específica.
 
 Quando o consumidor exclui o aplicativo gerenciado, o grupo de recursos gerenciado também é excluído.
 

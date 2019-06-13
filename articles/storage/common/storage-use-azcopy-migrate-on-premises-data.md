@@ -9,12 +9,12 @@ ms.date: 05/14/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: 64d79abd1e142a231c08e02e7d62e8bfbab7b90e
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: e40a0b35cd99565bec4e26862c938f6228bf9836
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244735"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393740"
 ---
 #  <a name="tutorial-migrate-on-premises-data-to-cloud-storage-by-using-azcopy"></a>Tutorial: Migrar dados locais para o armazenamento em nuvem usando o AzCopy
 
@@ -119,9 +119,12 @@ Copie o comando AzCopy para um editor de texto. Atualize os valores de parâmetr
 
 Esses exemplos pressupõem que a pasta seja chamada `myFolder`, que o nome de sua conta de armazenamento seja `mystorageaccount` e que o nome do contêiner seja `mycontainer`.
 
+> [!NOTE]
+> O exemplo do Linux acrescenta um token SAS. Você precisará fornecer um no comando. A versão atual do AzCopy V10 não dá suporte à autorização do Azure AD em trabalhos do Cron.
+
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
-    azcopy sync "/mnt/myfiles" "https://mystorageaccount.blob.core.windows.net/mycontainer" --recursive=true
+    azcopy sync "/mnt/myfiles" "https://mystorageaccount.blob.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-05-30T06:57:40Z&st=2019-05-29T22:57:40Z&spr=https&sig=BXHippZxxx54hQn%2F4tBY%2BE2JHGCTRv52445rtoyqgFBUo%3D" --recursive=true
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 

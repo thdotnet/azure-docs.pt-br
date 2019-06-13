@@ -8,19 +8,22 @@ ms.topic: include
 ms.date: 05/22/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 211935aac56dff8d6e524706c416c126b1a0c3b8
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 8fb9e9ea0e126509697b4874bf1e5e0b6a380e7f
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66159330"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66425774"
 ---
-|**SKU**   | **S2S/VNet para VNet<br>Túneis** | **P2S<br> Conexões SSTP** | **P2S<br> Conexões IKEv2/OpenVPN** | **Parâmetro de comparação<br>de taxa de transferência total** | **BGP** |
-|---       | ---        | ---       | ---            | ---       | --- |
-|**Básico** | Máx. 10    | Máx. 128  | Sem suporte  | 100 Mbps  | Sem suporte|
-|**VpnGw1**| Máx. 30*   | Máx. 128  | Máx. 250       | 650 Mbps  | Com suporte |
-|**VpnGw2**| Máx. 30*   | Máx. 128  | Máx. 500       | 1 Gbps    | Com suporte |
-|**VpnGw3**| Máx. 30*   | Máx. 128  | Máx. 1000      | 1,25 Gbps | Com suporte |
+|**SKU**   | **S2S/VNet para VNet<br>Túneis** | **P2S<br> Conexões SSTP** | **P2S<br> Conexões IKEv2/OpenVPN** | **Parâmetro de comparação<br>de taxa de transferência total** | **BGP** | **Com redundância de zona** |
+|---       | ---        | ---       | ---            | ---       | --- | --- |
+|**Básico** | Máx. 10    | Máx. 128  | Sem suporte  | 100 Mbps  | Sem suporte| Não |
+|**VpnGw1**| Máx. 30*   | Máx. 128  | Máx. 250       | 650 Mbps  | Com suporte | Não |
+|**VpnGw2**| Máx. 30*   | Máx. 128  | Máx. 500       | 1 Gbps    | Com suporte | Não |
+|**VpnGw3**| Máx. 30*   | Máx. 128  | Máx. 1000      | 1,25 Gbps | Com suporte | Não |
+|**VpnGw1AZ**| Máx. 30*   | Máx. 128  | Máx. 250       | 650 Mbps  | Com suporte | Sim |
+|**VpnGw2AZ**| Máx. 30*   | Máx. 128  | Máx. 500       | 1 Gbps    | Com suporte | Sim |
+|**VpnGw3AZ**| Máx. 30*   | Máx. 128  | Máx. 1000      | 1,25 Gbps | Com suporte | Sim |
 
 
 (*) Use [WAN Virtual](../articles/virtual-wan/virtual-wan-about.md) se precisar de mais de 30 túneis de VPN S2S.

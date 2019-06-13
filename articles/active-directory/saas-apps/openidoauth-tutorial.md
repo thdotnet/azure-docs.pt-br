@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/07/2019
+ms.date: 05/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 713e4e7874b2ca650ab669d52f9d3026b5e80899
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 166452b052313397f1ec17adb59cad3c20fab1f9
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57780976"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66497517"
 ---
 # <a name="configure-an-openidoauth-application-from-the-azure-ad-app-gallery"></a>Configurar um aplicativo OpenID/OAuth da galeria de aplicativo do Azure AD
 
@@ -98,7 +98,25 @@ A API do Graph também fornece acesso a usuários e grupos do Azure AD e outros 
 
 As etapas a seguir mostram como a experiência de consentimento funciona para o desenvolvedor e o usuário do aplicativo:
 
-1. Suponha que você tenha um aplicativo cliente Web que precise solicitar permissões específicas para acessar um recurso ou API. O portal do Azure é usado para declarar as solicitações de permissão em tempo de configuração. Como outras definições de configuração, elas se tornam parte do registro do Azure AD do aplicativo:
+1. Suponha que você tenha um aplicativo cliente Web que precise solicitar permissões específicas para acessar um recurso ou API. O portal do Azure é usado para declarar as solicitações de permissão em tempo de configuração. Como outras definições de configuração, elas se tornam parte dos registros do Azure AD do aplicativo. Para o caminho de solicitação da permissão, é necessário seguir as etapas abaixo:
+
+    a. Clique nos **Registros de aplicativo** do lado esquerdo do menu e abra seu aplicativo, digitando o nome dele na caixa de pesquisa.
+
+    ![API do Graph](./media/openidoauth-tutorial/application.png)
+
+    b. Clique em **Exibir Permissões de API**.
+
+    ![API do Graph](./media/openidoauth-tutorial/api-permission.png)
+
+    c. Clique em **Adicionar uma permissão**.
+
+    ![API do Graph](./media/openidoauth-tutorial/add-permission.png)
+
+    d. Clique em **Microsoft Graph**.
+
+    ![API do Graph](./media/openidoauth-tutorial/microsoft-graph.png)
+
+    e. Selecione as opções obrigatórias de **Permissões delegadas** e **Permissões do Aplicativo**.
 
     ![API do Graph](./media/openidoauth-tutorial/graphapi.png)
 
@@ -118,12 +136,12 @@ Um usuário normal pode dar consentimento a algumas permissões. Outras permiss�
 
 ## <a name="difference-between-admin-consent-and-user-consent"></a>A diferença entre o consentimento do administrador e o consentimento do usuário
 
-Como administrador, você pode também concorda com permissões do aplicativo em nome de todos os usuários em seu locatário. O consentimento administrativo impedirá que a caixa de diálogo de consentimento apareça para cada usuário no locatário. Os usuários que têm a função de administrador podem fornecer consentimento no portal do Azure. Na página **Configurações** do seu aplicativo, selecione **Permissões Necessárias** > **Conceder Permissões**.
+Como administrador, você pode também concorda com permissões do aplicativo em nome de todos os usuários em seu locatário. O consentimento administrativo impedirá que a caixa de diálogo de consentimento apareça para cada usuário no locatário. Os usuários que têm a função de administrador podem fornecer consentimento no portal do Azure. Na página **Configurações** do seu aplicativo, selecione **Permissões Necessárias** > **Conceder consentimento do administrador**.
 
 ![Botão Conceder permissões](./media/openidoauth-tutorial/grantpermission.png)
 
 > [!NOTE]
-> A concessão explícita usando o botão **Conceder Permissões** agora é necessária para SPAs (aplicativos de página única) que usam o ADAL.js. Caso contrário, o aplicativo falhará quando o token de acesso for solicitado.
+> A concessão explícita usando o botão **Conceder consentimento do administrador** agora é necessária para SPAs (aplicativos de página única) que usam o ADAL.js. Caso contrário, o aplicativo falhará quando o token de acesso for solicitado.
 
 As permissões somente do aplicativo sempre exigem o consentimento do administrador de locatários. Se o aplicativo solicitar uma permissão somente aplicativo e um usuário tentar entrar nele, uma mensagem de erro será exibida. A mensagem informa que o usuário não pode consentir.
 

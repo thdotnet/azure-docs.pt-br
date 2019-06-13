@@ -7,14 +7,14 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.workload: data-services
 ms.topic: tutorial
-ms.custom: seodec18
-ms.date: 12/07/2018
-ms.openlocfilehash: 056e5a0f56e1a8998288e6a78f448f0f91777e1d
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.custom: mvc
+ms.date: 06/03/2019
+ms.openlocfilehash: f78555b37cc82c1e97a6f51ec504bc47937ee8c4
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65969290"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66493424"
 ---
 # <a name="analyze-phone-call-data-with-stream-analytics-and-visualize-results-in-power-bi-dashboard"></a>Analisar os dados de uma chamada telefônica com o Stream Analytics e visualizar os resultados em um dashboard do Power BI
 
@@ -32,10 +32,10 @@ Neste tutorial, você aprenderá como:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Antes de começar, verifique se você tem:
+Antes de começar, execute as seguintes ações:
 
 * Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/).
-* Faça logon no [Portal do Azure](https://portal.azure.com/).
+* Entre no [Portal do Azure](https://portal.azure.com/).
 * Faça o download do aplicativo gerador de evento de chamada telefônica [TelcoGenerator.zip](https://download.microsoft.com/download/8/B/D/8BD50991-8D54-4F59-AB83-3354B69C8A7E/TelcoGenerator.zip) do Centro de Download da Microsoft ou obtenha o código-fonte no [GitHub](https://aka.ms/azure-stream-analytics-telcogenerator).
 * Você precisará de uma conta do Power BI.
 
@@ -45,7 +45,7 @@ Para que o Stream Analytics possa analisar o fluxo de dados de chamadas fraudule
 
 Use as seguintes etapas para criar um Hub de Eventos e enviar dados de chamada para ele:
 
-1. Faça logon no [Portal do Azure](https://portal.azure.com/).
+1. Entre no [Portal do Azure](https://portal.azure.com/).
 2. Selecione **Criar um recurso** > **Internet das Coisas** > **Hubs de Eventos**.
 
    ![Criar um Hub de Eventos do Azure no portal](media/stream-analytics-manage-job/find-event-hub-resource.png)
@@ -71,7 +71,7 @@ Use as seguintes etapas para criar um Hub de Eventos e enviar dados de chamada p
 
 Antes que um processo possa enviar dados aos Hubs de Eventos do Azure, o hub de eventos deve ter uma política que permita o devido acesso. A política de acesso produz uma cadeia de conexão que inclui informações de autorização.
 
-1. Navegue até o hub de eventos que você criou na etapa anterior, *MyEventHub*. Escolha **Políticas de acesso compartilhado** em **Configurações** e, em seguida, **+ Adicionar**.
+1. Navegue até o hub de eventos que você criou na etapa anterior, MyEventHub*. Escolha **Políticas de acesso compartilhado** em **Configurações** e, em seguida, **+ Adicionar**.
 
 2. Nomeie a política **MyPolicy** e verifique se a opção **Gerenciar** está marcada. Em seguida, selecione **Criar**.
 
@@ -111,7 +111,7 @@ Antes de iniciar o aplicativo TelcoGenerator, configure-o para enviar dados para
    Esse comando usa os seguintes parâmetros:
    * Número de registros de dados de chamadas por hora.
    * Porcentagem de probabilidade de fraude, que é a frequência com que o aplicativo deve simular uma chamada fraudulenta. O valor 0,2 significa que cerca de 20% dos registros de chamada parecerão ser fraudulentos.
-   * Duração em horas, que é o número de horas em que o aplicativo deve ser executado. Você também pode interromper o aplicativo a qualquer momento encerrando o processo (**Ctrl+C**) na linha de comando.
+   * Duração em horas, que é o número de horas em que o aplicativo deve ser executado. Também é possível interromper o aplicativo a qualquer momento encerrando o processo (**Ctrl+C**) na linha de comando.
 
    Depois de alguns segundos, o aplicativo é iniciado exibindo registros de chamada telefônica na tela, enquanto envia para o hub de eventos. Os dados de chamadas telefônicas contêm os seguintes campos:
 
@@ -140,7 +140,7 @@ Agora que você tem um fluxo de eventos de chamada, pode criar um trabalho do St
    |Assinatura    |  \<Sua assinatura\>   |   Selecione uma assinatura do Azure em que deseja criar o trabalho.       |
    |Grupo de recursos   |   MyASADemoRG      |   Selecione **Usar existente** e insira um novo nome de grupo de recursos para sua conta.      |
    |Local padrão   |    Oeste dos EUA 2     |      Local onde o trabalho pode ser implantado. É recomendável colocar o trabalho e o hub de eventos na mesma região para melhor desempenho e para que não seja necessário pagar para transferir dados entre regiões.      |
-   |Ambiente de hospedagem    | Nuvem        |     Os trabalhos do Stream Analytics podem ser implantados na nuvem ou na borda. O Cloud permite que você implante no Azure Cloud e o Edge permite que você implante em um dispositivo IoT Edge.    |
+   |Ambiente de hospedagem    | Nuvem        |     Os trabalhos do Stream Analytics podem ser implantados na nuvem ou na borda. O Cloud permite que você implante no Azure Cloud, e o Edge permite que você implante em um dispositivo IoT Edge.    |
    |Unidades de transmissão     |    1       |      As unidades de streaming representam os recursos de computação necessários para executar um trabalho. Por padrão, esse valor é definido como 1. Para saber mais sobre como dimensionar unidades de streaming, confira o artigo [Entendendo e ajustando as unidades de streaming](stream-analytics-streaming-unit-consumption.md).      |
 
 4. Use as opções padrão nas configurações restantes, selecione **Criar** e aguarde até que a implantação seja concluída com êxito.
@@ -248,7 +248,7 @@ Você pode testar uma consulta no editor de consultas usando dados de exemplo. E
 
 4. No workspace do Power BI, escolha **+ Criar** para criar um painel novo chamado *Chamadas Fraudulentas*.
 
-5. Na parte superior da janela, escolha **Adicionar bloco**. Em seguida, escolha **Fluxo de Dados Personalizado** e **Avançar**. Escolha o **ASAdataset** em **Seus Conjuntos de Dados**. Escolha **Cartão** na lista suspensa **Tipo de visualização** e adicione **fraudulentcalls** a **Campos**. Escolha **Avançar** para inserir um nome para o bloco e escolha **Aplicar** para criar o bloco.
+5. Na parte superior da janela, escolha **Adicionar bloco**. Em seguida, escolha **Fluxo de Dados Personalizado** e **Avançar**. Escolha o **ASAdataset** em **Seus Conjuntos de Dados**. Escolha **Cartão** na lista suspensa **Tipo de visualização** e adicione **chamadas fraudulentas** a **Campos**. Escolha **Avançar** para inserir um nome para o bloco e escolha **Aplicar** para criar o bloco.
 
    ![Criar blocos de dashboard do Power BI](media/stream-analytics-manage-job/create-power-bi-dashboard-tiles.png)
 
@@ -258,18 +258,18 @@ Você pode testar uma consulta no editor de consultas usando dados de exemplo. E
    * Adicione um valor e selecione **fraudulentcalls**.
    * Para **Janela de tempo para exibir**, selecione os últimos 10 minutos.
 
-7. Seu painel deverá se parecer com o exemplo a seguir depois que ambos os blocos forem adicionados. Observe que, se você estiver executando o aplicativo de remetente do hub de eventos e o Stream Analytics, o painel do Power BI será atualizado periodicamente de acordo com a chegada de novos dados.
+7. Seu painel deverá se parecer com o exemplo a seguir depois que ambos os blocos forem adicionados. Observe que, se você estiver executando o aplicativo de remetente do hub de eventos e o Stream Analytics, o dashboard do Power BI será atualizado periodicamente de acordo com a chegada de novos dados.
 
    ![Exibir resultados no dashboard do Power BI](media/stream-analytics-manage-job/power-bi-results-dashboard.png)
 
-## <a name="embedding-your-powerbi-dashboard-in-a-web-application"></a>Inserindo seu painel do Power BI em um aplicativo Web
+## <a name="embedding-your-power-bi-dashboard-in-a-web-application"></a>Como inserir seu dashboard do Power BI em um aplicativo Web
 
-Nesta parte do tutorial, você usará um aplicativo Web [ASP.NET](https://asp.net/) de exemplo criado pela equipe do Power BI para inserir seu painel. Para saber mais sobre a inserção de painéis, confira o artigo [Inserindo com o Power BI](https://docs.microsoft.com/power-bi/developer/embedding).
+Nesta parte do tutorial, você usará um aplicativo Web [ASP.NET](https://asp.net/) de exemplo criado pela equipe do Power BI para inserir seu dashboard. Para saber mais sobre a inserção de painéis, confira o artigo [Inserindo com o Power BI](https://docs.microsoft.com/power-bi/developer/embedding).
 
 Para configurar o aplicativo, acesse o repositório [PowerBI-Developer-Samples](https://github.com/Microsoft/PowerBI-Developer-Samples) do GitHub e siga as instruções na seção **Usuário Tem Dados** (use as URLs de redirecionamento e de página inicial da subseção **integrate-dashboard-web-app**). Como estamos usando painel de exemplo, use o código de exemplo **integrate-dashboard-web-app** localizado no [repositório GitHub](https://github.com/Microsoft/PowerBI-Developer-Samples/tree/master/User%20Owns%20Data/integrate-dashboard-web-app).
 Quando o aplicativo estiver em execução no seu navegador, siga estas etapas para inserir o painel criado anteriormente na página:
 
-1. Selecione **Entrar no Power BI**, que concede ao aplicativo acesso aos painéis da sua conta do Power BI.
+1. Selecione **Entrar no Power BI**, que concede ao aplicativo acesso aos dashboards da sua conta do Power BI.
 
 2. Selecione o botão **Obter Painéis**, que exibe painéis da sua conta em uma tabela. Localize o nome do painel criado anteriormente, **powerbi-embedded-dashboard**, e copie a **EmbedUrl** correspondente.
 

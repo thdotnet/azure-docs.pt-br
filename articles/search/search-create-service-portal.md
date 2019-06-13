@@ -6,15 +6,15 @@ author: HeidiSteen
 services: search
 ms.service: search
 ms.topic: quickstart
-ms.date: 05/08/2019
+ms.date: 05/29/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 9de8fa297c2b3f89f74b17e0dac3eab007367b9b
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: 650dfa7284b41407e9b128a2096548d7acfc1567
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65471616"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393789"
 ---
 # <a name="create-an-azure-search-service-in-the-portal"></a>Criar um serviço de Azure Search no portal
 
@@ -69,11 +69,14 @@ Se você não estiver combinando recursos em um único grupo ou se os grupos de 
 
 ## <a name="select-a-location"></a>Selecione um local
 
-Como um serviço do Azure, a Azure Search pode ser hospedado em datacenters em todo o mundo. [Os preços podem variar](https://azure.microsoft.com/pricing/details/search/) de acordo com a geografia.
+Como um serviço do Azure, a Azure Search pode ser hospedado em datacenters em todo o mundo. A lista de regiões com suporte pode ser encontrada na [página de preços](https://azure.microsoft.com/pricing/details/search/). 
 
-Se você estiver indexando dados fornecidos por outro serviço do Azure (Armazenamento do Azure, Azure Cosmos DB, Banco de Dados SQL do Azure), crie seu serviço Azure Search na mesma região para evitar encargos de largura de banda. Não há encargos para dados de saída quando os serviços estão na mesma região.
+Se você estiver indexando dados fornecidos por outro serviço do Azure (Armazenamento do Azure, Azure Cosmos DB, Banco de Dados SQL do Azure), recomendamos a criação de seu serviço Azure Search na mesma região para evitar encargos de largura de banda. Não há encargos para dados de saída quando os serviços estão na mesma região.
 
 Se estiver usando enriquecimentos de IA da pesquisa cognitiva, crie seu serviço na mesma região que seu recurso dos Serviços Cognitivos. A colocalização de serviços é um requisito do enriquecimento de IA.
+
+> [!Note]
+> A Índia Central não está disponível atualmente para novos serviços. Para os serviços que já estão na Índia Central, você pode escalar verticalmente sem restrições, e seu serviço tem suporte total nessa região. A restrição nessa região é temporária e removeremos essa observação quando não mais se aplicar.
 
 ## <a name="select-a-pricing-tier-sku"></a>Selecionar um tipo de preço (SKU)
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: bb18aa35c89657f01319512eac6c15096174891f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: dd4fe4f7b105fd7aa2d2cf7ee568f85a7ad98ecb
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59265722"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734800"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-excelityglobal"></a>Tutorial: Integração do Azure Active Directory com ExcelityGlobal
 
@@ -52,7 +52,7 @@ Para configurar a integração do ExcelityGlobal ao Azure AD, você precisará a
 
 **Para adicionar o ExcelityGlobal da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -104,7 +104,7 @@ Para configurar o logon único do Azure AD com o ExcelityGlobal, execute as segu
 
     ![Informações de logon único em Domínio e URLs do ExcelityGlobal](common/idp-intiated.png)
 
-     a. Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão:
+    a. Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão:
 
     **Para o ambiente de produção:** : `https://ess.excelityglobal.com`
 
@@ -140,7 +140,7 @@ Para configurar o logon único do Azure AD com o ExcelityGlobal, execute as segu
 
 ### <a name="configure-excelityglobal-single-sign-on"></a>Configurar o logon único do ExcelityGlobal
 
-Para configurar o logon único no **ExcelityGlobal**, é necessário enviar o **valor da impressão digital** e as URLs copiadas adequadamente do portal do Azure para [a equipe de suporte do ExcelityGlobal](https://www.excelityglobal.com/contact-us/our-locations/). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+Para configurar o logon único no **ExcelityGlobal**, é necessário enviar o **valor da impressão digital** e as URLs copiadas adequadamente do portal do Azure para [a equipe de suporte do ExcelityGlobal](https://www.excelityglobal.com/contact-us). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
@@ -195,7 +195,7 @@ Nesta seção, você permite que Brenda Fernandes use o logon único do Azure co
 
 ### <a name="create-excelityglobal-test-user"></a>Criar usuário de teste do ExcelityGlobal
 
-Nesta seção, você criará uma usuária chamada Brenda Fernandes no ExcelityGlobal. Trabalhar com a  [equipe de suporte do ExcelityGlobal](https://www.excelityglobal.com/contact-us/our-locations/) para adicionar os usuários na plataforma do ExcelityGlobal. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará uma usuária chamada Brenda Fernandes no ExcelityGlobal. Trabalhar com a  [equipe de suporte do ExcelityGlobal](https://www.excelityglobal.com/contact-us) para adicionar os usuários na plataforma do ExcelityGlobal. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único
 

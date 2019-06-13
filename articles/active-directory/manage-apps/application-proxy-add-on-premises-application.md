@@ -12,12 +12,12 @@ ms.date: 05/21/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7110d7004ae9be58bb150674d516692049507608
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: 82c7b698f655b82ba95f66127f27a921def02cde
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66299074"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472988"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Tutorial: Adicionar um aplicativo local para acesso remoto por meio do Proxy de Aplicativo no Azure Active Directory
 
@@ -34,10 +34,11 @@ Este tutorial:
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-Para adicionar um aplicativo ao locatário, você precisará de:
+Para adicionar um aplicativo local ao Azure AD, você precisará:
 
 * Uma [assinatura premium ou básica do Azure AD](https://azure.microsoft.com/pricing/details/active-directory)
 * Uma conta de administrador de aplicativo
+* As identidades de usuário precisam ser sincronizadas de um diretório local ou criadas diretamente nos locatários do Azure AD. A Sincronização de Identidades permite que o Azure AD pré-autentique os usuários antes de permitir acesso a eles aos aplicativos publicados pelo Proxy de Aplicativo e tenha as informações de identificador de usuário necessárias para realizar o SSO (logon único).
 
 ### <a name="windows-server"></a>Windows Server
 

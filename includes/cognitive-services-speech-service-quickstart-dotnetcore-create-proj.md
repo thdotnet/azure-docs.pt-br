@@ -4,14 +4,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 12/12/2018
 ms.author: erhopf
-ms.openlocfilehash: 6e49db90aa9e9f933a190425afbafd15e0057fca
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 777b2608cf5f326556dfaea307f4f3e9346213f8
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66146053"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66482432"
 ---
-1. Inicie o Visual Studio 2017.
+1. Inicie o Visual Studio 2019.
 
 1. Verifique se a carga de trabalho **Desenvolvimento multiplataforma do .NET** está disponível. Escolha **Ferramentas** > **Obter Ferramentas e Recursos** na barra de menus do Visual Studio para abrir o instalador do Visual Studio. Se essa carga de trabalho já estiver habilitada, feche a caixa de diálogo.
 
@@ -19,7 +19,7 @@ ms.locfileid: "66146053"
 
    Caso contrário, marque a caixa ao lado de **Desenvolvimento multiplataforma do .NET Core** e selecione **Modificar** no canto inferior direito da caixa de diálogo. A instalação do novo recurso levará alguns instantes.
 
-1. Crie um novo Aplicativo de Console do .NET Core do Visual C#. Na caixa de diálogo **Novo Projeto**, no painel esquerdo, expanda **Instalado** > **Visual C#** > **.NET Core**. Em seguida, selecione **Aplicativo do Console (.NET Core)**. Para o nome do projeto, insira *helloworld*.
+1. Crie um novo Aplicativo de Console do .NET Core do Visual C#. Na caixa de diálogo **Novo Projeto**, no painel esquerdo, expanda **Instalado** > **Visual C#**  >  **.NET Core**. Em seguida, selecione **Aplicativo do Console (.NET Core)** . Para o nome do projeto, insira *helloworld*.
 
    ![Captura de tela da caixa de diálogo Novo Projeto](../articles/cognitive-services/Speech-Service/media/sdk/qs-csharp-dotnetcore-windows-01-new-console-app.png "Criar Aplicativo de Console do Visual C# (.NET Core)")
 

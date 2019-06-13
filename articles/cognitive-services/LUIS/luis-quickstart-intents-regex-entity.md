@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 05/07/2018
+ms.date: 06/03/2019
 ms.author: diberry
-ms.openlocfilehash: 71104ecf0514b61e4f0d224d25f2ace9457f3cd3
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 5e79de8dc8b4e81f427925b6e3d662bd4931804d
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65145519"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66497016"
 ---
 # <a name="tutorial-get-well-formatted-data-from-the-utterance"></a>Tutorial: Obter dados bem formatados do enunciado
 Neste tutorial, crie um aplicativo para extrair dados formatados de forma consistente de um enunciado usando a entidade de **Expressão Regular**.
@@ -121,11 +121,15 @@ Crie uma entidade de expressão regular para informar ao LUIS o que é um format
 
 [!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
-## <a name="get-intent-and-entity-prediction-from-endpoint"></a>Obter a previsão de entidade e de intenção do ponto de extremidade
+## <a name="get-intent-and-entity-prediction-from-endpoint"></a>Obter a previsão de intenção e de entidade do ponto de extremidade
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
-2. Vá até o final da URL no endereço e insira `When were HRF-123456 and hrf-234567 published in the last year?`. O último parâmetro de querystring é `q`, o enunciado **consulta**. Esse enunciado não é igual a nenhum dos enunciados rotulados, portanto, ele é um bom teste e deve retornar a intenção `FindForm` com os números de formulário de `HRF-123456` e `hrf-234567`.
+2. Vá até o final da URL no endereço e insira o seguinte enunciado:
+
+    `When were HRF-123456 and hrf-234567 published in the last year?`
+
+    O último parâmetro de querystring é `q`, o enunciado **consulta**. Esse enunciado não é igual a nenhum dos enunciados rotulados, portanto, ele é um bom teste e deve retornar a intenção `FindForm` com os números de formulário de `HRF-123456` e `hrf-234567`.
 
     ```json
     {

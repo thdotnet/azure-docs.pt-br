@@ -1,18 +1,18 @@
 ---
 title: 'Tutorial: Criar um Banco de Dados do Azure para MySQL usando o portal do Azure'
-description: Este tutorial explica como criar e gerenciar o Banco de Dados do Azure para o servidor e banco de dados MySQL usando o Portal do Azure.
+description: Este tutorial explica como criar e gerenciar o banco de dados e o servidor do Banco de Dados do Azure para MySQL usando o portal do Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: tutorial
 ms.date: 03/20/2018
 ms.custom: mvc
-ms.openlocfilehash: 0b637ab5f2b6234fed301a60ee1857960a464a33
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d9c6a16dd7e6c32a71d496abe8a67e23cc075a6d
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57864432"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515814"
 ---
 # <a name="tutorial-design-an-azure-database-for-mysql-database-using-the-azure-portal"></a>Tutorial: Criar um Banco de Dados do Azure para o banco de dados MySQL usando o portal do Azure
 O Banco de Dados do Azure para MySQL é um serviço gerenciado que permite executar, gerenciar e dimensionar bancos de dados altamente disponíveis do MySQL na nuvem. Usando o Portal do Azure, você pode gerenciar facilmente seu servidor e projetar um banco de dados.
@@ -58,6 +58,9 @@ Um Banco de Dados do Azure para o servidor MySQL é criado com um conjunto defin
     Tipo de preço | **Uso Geral**, **Gen 5**, **2 vCores**, **5 GB**, **7 dias**, **Com redundância geográfica** | As configurações de computação, armazenamento e backup para o novo servidor. Selecione **Tipo de preço**. Em seguida, selecione a guia **Uso Geral**. *Gen 5*, *2 vCores*, *5 GB*, e *7 dias* são os valores padrão para **Geração de Computação**, **vCore**, **Armazenamento** e **Período de Retenção de Backup**. Você pode deixar esses controles deslizantes como estão. Para habilitar os backups do servidor em armazenamento com redundância geográfica, selecione **Redundância Geográfica** das **Opções de Redundância de Backup**. Para salvar a seleção desse tipo de preço, selecione **OK**. A captura de tela a seguir demonstra essas seleções.
     
    ![Tipo de preço](./media/tutorial-design-database-using-portal/3-pricing-tier.png)
+
+   > [!TIP]
+   > Com o **aumento automático** habilitado, seu servidor aumenta o armazenamento quando você está se aproximando do limite alocado, sem afetar sua carga de trabalho.
 
 3. Clique em **Criar**. Em um ou dois minutos, um novo Banco de Dados para servidor MySQL estará em execução na nuvem. Na barra de ferramentas, clique no botão **Notificações** para monitorar o processo de implantação.
 

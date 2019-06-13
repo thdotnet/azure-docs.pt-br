@@ -6,14 +6,14 @@ author: vhorne
 ms.service: application-gateway
 ms.topic: overview
 ms.custom: mvc
-ms.date: 4/30/2019
+ms.date: 5/31/2019
 ms.author: victorh
-ms.openlocfilehash: 78dd4b31991a15d3d946c47c5394f64bb3afea95
-ms.sourcegitcommit: ed66a704d8e2990df8aa160921b9b69d65c1d887
+ms.openlocfilehash: e2e29bf0068fae5d6f4987ec5c3f2a52b883e4bd
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64947262"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66418118"
 ---
 # <a name="what-is-azure-application-gateway"></a>O que é o Gateway de Aplicativo do Azure?
 
@@ -29,9 +29,9 @@ Esse tipo de roteamento é conhecido como balanceamento de carga da camada de ap
 
 Os seguintes recursos estão incluídos no Gateway de Aplicativo do Azure:
 
-## <a name="secure-sockets-layer-ssl-termination"></a>Encerramento do protocolo SSL
+## <a name="secure-sockets-layer-ssltls-termination"></a>Terminação do protocolo SSL/TLS (Secure Sockets Layer)
 
-O gateway de aplicativo dá suporte a terminação SSL no gateway, pelo qual o tráfego flui geralmente descriptografado até os servidores de back-end. Esse recurso permite que os servidores Web fiquem livres da sobrecarga da criptografia e descriptografia dispendiosa. Mas, às vezes, a comunicação não criptografada com os servidores não é uma opção aceitável. Isso pode ocorrer devido a requisitos de segurança, de conformidade ou o aplicativo pode aceitar apenas uma conexão segura. Para tais aplicativos, o Gateway de Aplicativo dá suporte à criptografia SSL de ponta a ponta.
+O gateway de aplicativo dá suporte a terminação SSL/TLS no gateway, pelo qual o tráfego flui geralmente descriptografado até os servidores de back-end. Esse recurso permite que os servidores Web fiquem livres da sobrecarga da criptografia e descriptografia dispendiosa. Mas, às vezes, a comunicação não criptografada com os servidores não é uma opção aceitável. Isso pode ocorrer devido a requisitos de segurança, de conformidade ou o aplicativo pode aceitar apenas uma conexão segura. Para tais aplicativos, o Gateway de Aplicativo dá suporte à criptografia SSL/TLS de ponta a ponta.
 
 ## <a name="autoscaling"></a>Dimensionamento automático
 

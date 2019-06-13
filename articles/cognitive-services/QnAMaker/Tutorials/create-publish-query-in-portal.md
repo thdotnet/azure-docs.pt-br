@@ -1,7 +1,7 @@
 ---
 title: Criar, publicar e responder no QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Crie uma base de dados de conhecimento com perguntas e respostas de perguntas frequentes públicas baseadas na Web. Salve, treine e publique a base de dados de conhecimento. Depois que a base de dados de conhecimento for publicada, envie uma pergunta e receba uma resposta com um comando do cURL. Em seguida, crie um bot e teste o bot com a mesma pergunta.
+description: Crie uma base de dados de conhecimento com perguntas e respostas de perguntas frequentes públicas baseadas na Web. Salve, treine e publique a base de dados de conhecimento. Depois que a base de dados de conhecimento for publicada, envie uma pergunta e receba uma resposta com um comando do cURL. Em seguida, crie um bot e teste-o com a mesma pergunta.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,26 +11,27 @@ ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: a80a815d4a1a892b5258aef1c1fc7ef4ab881fe7
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: a13e0cb0e594571344b16d007ef13475b384b73d
+ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65594155"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66693014"
 ---
-# <a name="tutorial-from-qna-maker-portal-create-a-knowledge-base"></a>Tutorial: No portal do QnA Maker, crie uma base de dados de conhecimento
+# <a name="tutorial-from-the-qna-maker-portal-create-a-knowledge-base"></a>Tutorial: No portal do QnA Maker, crie uma base de dados de conhecimento
 
-Crie uma base de dados de conhecimento com perguntas e respostas de perguntas frequentes públicas baseadas na Web. Salve, treine e publique a base de dados de conhecimento. Depois que a base de dados de conhecimento for publicada, envie uma pergunta e receba uma resposta com um comando do cURL. Em seguida, crie um bot e teste o bot com a mesma pergunta. 
+Crie uma base de dados de conhecimento com perguntas e respostas de perguntas frequentes públicas baseadas na Web. Salve, treine e publique a base de dados de conhecimento. Depois que a base de dados de conhecimento for publicada, envie uma pergunta e receba uma resposta com um comando do cURL. Em seguida, crie um bot e teste-o com a mesma pergunta. 
 
 Neste tutorial, você aprenderá como: 
 
 > [!div class="checklist"]
-> * Criar uma base de dados de conhecimento no portal do QnA Maker
-> * Revisar, salvar e treinar a base de dados de conhecimento
-> * Publicar a base de dados de conhecimento
-> * Usar cURL para consultar a base de dados de conhecimento
-> * Criar um bot
-> 
+> * Criar uma base de dados de conhecimento no portal do QnA Maker.
+> * Examinar, salvar e treinar a base de dados de conhecimento.
+> * Publicar a base de dados de conhecimento.
+> * Usar cURL para consultar a base de dados de conhecimento.
+> * Criar um bot.
+ 
+
 > [!NOTE]
 > A versão programática deste tutorial está disponível com uma solução completa [ **Azure-Samples/cognitive-services-qnamaker-csharp** no repositório do GitHub](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/tree/master/documentation-samples/tutorials/create-publish-answer-knowledge-base).
 
@@ -44,25 +45,25 @@ Este tutorial requer um [serviço QnA Maker](../How-To/set-up-qnamaker-service-a
 
 1. Selecione **Criar uma base de dados de conhecimento** no menu superior.
 
-    ![Etapa 1 do processo de criação da base de dados de conhecimento](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-1.png)
+    ![Captura de tela do portal do QnA Maker](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-1.png)
 
-1. Ignore a primeira etapa, pois você usará o serviço QnA Maker existente. 
+1. Ignore a primeira etapa, porque você usará seu serviço do QnA Maker existente. 
 
-1. Na próxima etapa, selecione as configurações existentes:  
+1. Selecione suas configurações existentes:  
 
     |Configuração|Finalidade|
     |--|--|
-    |ID do Diretório do Microsoft Azure|Sua _ID de diretório do Microsoft Azure_ está associada à conta que você usa para entrar no portal do Azure e no portal do QnA Maker. |
-    |Nome da assinatura do Azure|Sua conta de cobrança em que o recurso QnA Maker foi criado.|
+    |ID do Diretório do Microsoft Azure|Essa ID está associada à conta que você usa para entrar no portal do Azure e no portal do QnA Maker. |
+    |Nome da assinatura do Azure|A conta de cobrança na qual você criou o recurso do QnA Maker.|
     |Serviço QnA do Azure|O recurso existente do QnA Maker.|
 
-    ![Etapa 2 do processo de criação da base de dados de conhecimento](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-2.png)
+    ![Captura de tela do portal do QnA Maker](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-2.png)
 
-1. Na próxima etapa, insira o nome da base de dados de conhecimento, `My Tutorial kb`.
+1. Insira o nome da sua base de dados de conhecimento, `My Tutorial kb`.
 
-    ![Etapa 3 do processo de criação da base de dados de conhecimento](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-3.png)
+    ![Captura de tela do portal do QnA Maker](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-3.png)
 
-1. Na próxima etapa, preencha a base de dados de conhecimento com as seguintes configurações:  
+1. Popule sua base de dados de conhecimento com as seguintes configurações:  
 
     |Nome da configuração|Valor da configuração|Finalidade|
     |--|--|--|
@@ -70,45 +71,45 @@ Este tutorial requer um [serviço QnA Maker](../How-To/set-up-qnamaker-service-a
     |Arquivo |_não usado neste tutorial_|Isso carrega arquivos para perguntas e respostas. |
     |Personalidade do bate-papo|Amigável|Isso oferece uma [personalidade](../Concepts/best-practices.md#chit-chat) casual e amigável para perguntas e respostas comuns. Você pode editar essas perguntas e respostas mais tarde. |
 
-    ![Etapa 4 do processo de criação da base de dados de conhecimento](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-4.png)
+    ![Captura de tela do portal do QnA Maker](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-4.png)
 
 1. Selecione **Criar sua KB** para concluir o processo de criação.
 
-    ![Etapa 5 do processo de criação da base de dados de conhecimento](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-5.png)
+    ![Captura de tela do portal do QnA Maker](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-5.png)
 
-## <a name="review-kb-save-and-train"></a>Revisar a base de dados de conhecimento, salvar e treinar
+## <a name="review-save-and-train-the-knowledge-base"></a>Revisar, salvar e treinar a base de dados de conhecimento
 
 1. Examine as perguntas e respostas. A primeira página é de perguntas e respostas da URL. 
 
-    ![Salvar e treinar](../media/qnamaker-tutorial-create-publish-query-in-portal/save-and-train-kb.png)
+    ![Captura de tela do portal do QnA Maker](../media/qnamaker-tutorial-create-publish-query-in-portal/save-and-train-kb.png)
 
 1. Selecione a última página de perguntas e respostas na parte inferior da tabela. A página mostra as perguntas e respostas da Personalidade do bate-papo. 
 
-1. Na barra de ferramentas acima da lista de perguntas e respostas, selecione o ícone **Opções de exibição** e selecione **Mostrar metadados**. Isso mostra as marcas de metadados para cada pergunta e resposta. As perguntas de bate-papo têm os metadados **editorial: bate-papo** já definidos. Esses metadados são retornados para o aplicativo cliente com a resposta selecionada. O aplicativo cliente, como um chatbot, pode usar esses metadados filtrados para determinar outros processamentos ou interações com o usuário.
+1. Na barra de ferramentas acima da lista de perguntas e respostas, selecione o ícone **Opções de exibição** e, em seguida, **Mostrar metadados**. Isso mostra as marcas de metadados para cada pergunta e resposta. As perguntas de bate-papo têm os metadados **editorial: bate-papo** já definidos. Esses metadados são retornados ao aplicativo cliente, juntamente com a resposta selecionada. O aplicativo cliente, como um chatbot, pode usar esses metadados filtrados para determinar outros processamentos ou interações com o usuário.
 
-    ![![View Metadata tags](../media/qnamaker-tutorial-create-publish-query-in-portal/save-and-train-kb-chit-chat.png)](../media/qnamaker-tutorial-create-publish-query-in-portal/save-and-train-kb-chit-chat.png#lightbox)
+    ![Captura de tela do portal do QnA Maker](../media/qnamaker-tutorial-create-publish-query-in-portal/save-and-train-kb-chit-chat.png)
 
 1. Selecione **Salvar e treinar** na barra de menus superior.
 
-## <a name="publish-to-get-kb-endpoints"></a>Publicar para obter pontos de extremidade da base de dados de conhecimento
+## <a name="publish-to-get-knowledge-base-endpoints"></a>Publicar para obter pontos de extremidade da base de dados de conhecimento
 
-Selecione o botão **Publicar** no menu superior. Quando você estiver na página de publicação, selecione **Publicar**, ao lado do botão **Cancelar**.
+Selecione o botão **Publicar** no menu superior. Na página de publicação, selecione **Publicar**.
 
-![Publicar](../media/qnamaker-tutorial-create-publish-query-in-portal/publish-1.png)
+![Captura de tela do portal do QnA Maker](../media/qnamaker-tutorial-create-publish-query-in-portal/publish-1.png)
 
-Depois que a base de dados de conhecimento é publicada, o ponto de extremidade é exibido
+Depois que a base de dados de conhecimento for publicada, o ponto de extremidade será exibido.
 
-![Publicar configurações de ponto de extremidade da página](../media/qnamaker-tutorial-create-publish-query-in-portal/publish-2.png)
+![Captura de tela das configurações do ponto de extremidade](../media/qnamaker-tutorial-create-publish-query-in-portal/publish-2.png)
 
-Não feche essa página **Publicar**; você a usará para criar um bot mais adiante no tutorial. 
+Não feche esta página **Publicar**. Você precisará dela posteriormente neste tutorial para criar um bot. 
 
 ## <a name="use-curl-to-query-for-an-faq-answer"></a>Usar o cURL para consultar uma resposta de perguntas frequentes
 
 1. Selecione a guia **cURL**. 
 
-    ![Comando de cURL](../media/qnamaker-tutorial-create-publish-query-in-portal/publish-3-curl.png)
+    ![Captura de tela da guia Curl](../media/qnamaker-tutorial-create-publish-query-in-portal/publish-3-curl.png)
 
-1. Copie o texto da guia **cURL** e execute em um terminal ou linha de comando habilitado para cURL. O valor do cabeçalho de autorização inclui o texto `Endpoint` com um espaço à direita e, em seguida, a chave.
+1. Copie o texto da guia **Curl** e execute-o em um terminal ou linha de comando habilitado para cURL. O valor do cabeçalho de autorização inclui o texto `Endpoint` com um espaço à direita e, em seguida, a chave.
 
 1. Substitua `<Your question>` por `How large can my KB be?`. Isso parece a pergunta `How large a knowledge base can I create?`, mas não exatamente. O QnA Maker aplica processamento de linguagem natural para determinar se as duas perguntas são iguais.     
 
@@ -178,7 +179,7 @@ Não feche essa página **Publicar**; você a usará para criar um bot mais adia
 
 ## <a name="use-curl-to-query-for-the-default-answer"></a>Usar o cURL para consultar a resposta padrão
 
-Todas as perguntas que não tenham resposta com grau de confiança do QnA Maker recebem a resposta padrão. Esta resposta é configurada no portal do Azure. 
+Todas as perguntas que não tenham grau de confiança do QnA Maker recebem a resposta padrão. Esta resposta é configurada no portal do Azure. 
 
 1. No terminal habilitado para cURL, substitua `Thank you` por `x`. 
 
@@ -200,7 +201,7 @@ Todas as perguntas que não tenham resposta com grau de confiança do QnA Maker 
     }
     ```
     
-    O QnA Maker retornou uma pontuação igual a `0`, o que significa nenhuma confiança, mas também retornou a resposta padrão. 
+    O QnA Maker retornou uma pontuação igual a `0`, o que significa nenhuma confiança. Ele também retornou uma resposta padrão. 
 
 ## <a name="create-a-knowledge-base-bot"></a>Criar um bot da base de dados de conhecimento
 
@@ -210,11 +211,11 @@ Para obter mais informações, confira [Criar um chatbot com esta base de dados 
 
 Quando terminar de trabalhar com o bot da base de dados de conhecimento, remova o grupo de recursos, `my-tutorial-rg`, para remover todos os recursos do Azure criados no processo do bot.
 
-Quando terminar de trabalhar com a base de dados de conhecimento, no portal do QnA Maker, selecione **Minhas bases de dados de conhecimento**, selecione a base de dados de conhecimento **Minha KB de tutorial** e, em seguida, o ícone Excluir na extremidade direita da linha.  
+Quando terminar de usar a base de dados de conhecimento, no portal do QnA Maker, selecione **Minhas bases de dados de conhecimento**. Em seguida, selecione a base de dados de conhecimento **Minha KB de tutorial** e selecione o ícone Excluir na extremidade direita da linha.  
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para obter mais informações sobre os formatos de arquivo com suporte, confira [Fontes de dados compatíveis](../Concepts/data-sources-supported.md). 
+Consulte as [Fontes de dados com suporte](../Concepts/data-sources-supported.md) para obter mais informações sobre os formatos de arquivo com suporte. 
 
 Saiba mais sobre [personalidades](../Concepts/best-practices.md#chit-chat) de bate-papo.
 

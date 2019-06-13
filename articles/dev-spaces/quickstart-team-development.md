@@ -10,12 +10,12 @@ ms.topic: quickstart
 description: Desenvolvimento em equipe no Kubernetes com contêineres e microsserviços no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s
 manager: jeconnoc
-ms.openlocfilehash: 94083639ca769d12b04c4dc316a9f9867e4209b1
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: e9f9198f8e086bee6c6b02b67ae7dd9cf523416c
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65765236"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480366"
 ---
 # <a name="quickstart-team-development-on-kubernetes-using-azure-dev-spaces"></a>Início Rápido: Desenvolvimento em equipe no Kubernetes usando o Azure Dev Spaces
 
@@ -35,7 +35,7 @@ Neste guia, você aprenderá a:
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Criar um cluster do Serviço de Kubernetes do Azure
 
-Você deve criar um cluster do AKS em uma [região com suporte](https://docs.microsoft.com/azure/dev-spaces/#a-rapid,-iterative-kubernetes-development-experience-for-teams). Os comandos a seguir criam um grupo de recursos chamado *MyResourceGroup* e um cluster do AKS chamado *MyAKS*.
+Você deve criar um cluster do AKS em uma [região com suporte][supported-regions]. Os comandos a seguir criam um grupo de recursos chamado *MyResourceGroup* e um cluster do AKS chamado *MyAKS*.
 
 ```cmd
 az group create --name MyResourceGroup --location eastus
@@ -92,6 +92,8 @@ cd charts/
 helm init --wait
 helm install -n bikesharing . --dep-up --namespace dev --atomic --wait
 ```
+> [!Note]
+> **Se você estiver usando um cluster habilitado por RBAC**, configure [uma conta de serviço para Tiller](https://helm.sh/docs/using_helm/#role-based-access-control). Caso contrário, o comando `helm` falhará.
 
 O comando `helm install` pode levar vários minutos para ser concluído. A saída do comando mostra o status de todos os serviços que ele implantou no cluster após a conclusão:
 
@@ -232,3 +234,6 @@ Saiba como o Azure Dev Spaces ajuda você a desenvolver aplicativos mais complex
 
 > [!div class="nextstepaction"]
 > [Trabalhando com vários contêineres e desenvolvimento em equipe](multi-service-nodejs.md)
+
+
+[supported-regions]: about.md#supported-regions-and-configurations
