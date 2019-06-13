@@ -67,7 +67,7 @@ O JSON a seguir mostra o esquema para a extensão para VM do Application Health.
 | ---- | ---- | ---- 
 | apiVersion | `2018-10-01` | date |
 | publicador | `Microsoft.ManagedServices` | string |
-| tipo | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
+| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
 | typeHandlerVersion | `1.0` | int |
 
 ### <a name="settings"></a>Configurações
@@ -75,7 +75,7 @@ O JSON a seguir mostra o esquema para a extensão para VM do Application Health.
 | NOME | Valor/Exemplo | Tipo de Dados
 | ---- | ---- | ----
 | protocol | `http` ou `tcp` | string |
-| porta | Obrigatório quando o protocolo for `http`, não é permitido quando o protocolo for `tcp` | int |
+| port | Obrigatório quando o protocolo for `http`, não é permitido quando o protocolo for `tcp` | int |
 | requestPath | Obrigatório quando o protocolo for `http`, não é permitido quando o protocolo for `tcp` | string |
 
 ## <a name="deploy-the-application-health-extension"></a>Implantar a Extensão de Integridade do Aplicativo
