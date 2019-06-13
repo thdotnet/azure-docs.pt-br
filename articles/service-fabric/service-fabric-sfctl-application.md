@@ -29,21 +29,21 @@ Criar, excluir e gerenciar aplicativos e tipos de aplicativo.
 |Comando|DESCRIÇÃO|
 | --- | --- |
 | create | Crie um aplicativo do Service Fabric usando a descrição especificada. |
-| excluir | Exclui um aplicativo existente do Service Fabric. |
+| delete | Exclui um aplicativo existente do Service Fabric. |
 | deployed | Obtém as informações sobre um aplicativo implantado em um nó do Service Fabric. |
 | deployed-health | Obtém as informações sobre a integridade de um aplicativo implantado em um nó do Service Fabric. |
 | deployed-list | Obtém a lista de aplicativos implantados em um nó do Service Fabric. |
-| integridade | Obtém a integridade do aplicativo do service fabric. |
-| informações | Obtém informações sobre um aplicativo do Service Fabric. |
+| health | Obtém a integridade do aplicativo do service fabric. |
+| info | Obtém informações sobre um aplicativo do Service Fabric. |
 | list | Obtém a lista de aplicativos criados no cluster do Service Fabric que correspondem aos filtros especificados. |
 | load | Obtém informações de carregamento sobre um aplicativo do Service Fabric. |
 | manifest | Obtém o manifesto que descreve um tipo de aplicativo. |
 | provision | Provisiona ou registra um tipo de aplicativo do Service Fabric com o cluster usando o pacote .sfpkg no armazenamento externo ou o pacote de aplicativos no repositório de imagens. |
 | report-health | Envia um relatório de integridade sobre o aplicativo do Service Fabric. |
-| Tipo | Obtém a lista de tipos de aplicativo criados no cluster do Service Fabric que correspondem exatamente ao nome especificado. |
+| type | Obtém a lista de tipos de aplicativo criados no cluster do Service Fabric que correspondem exatamente ao nome especificado. |
 | type-list | Obtém a lista de tipos de aplicativo criados no cluster do Service Fabric. |
 | unprovision | Remove ou cancela o registro de um tipo de aplicativo do Service Fabric do cluster. |
-| atualizar | Começa a atualização de um aplicativo no cluster do Service Fabric. |
+| upgrade | Começa a atualização de um aplicativo no cluster do Service Fabric. |
 | upgrade-resume | Retoma a atualização de um aplicativo no cluster do Service Fabric. |
 | upgrade-rollback | Começa a reversão da atualização em andamento no momento de um aplicativo no cluster do Service Fabric. |
 | upgrade-status | Obtém detalhes para a atualização mais recente realizada neste aplicativo. |
