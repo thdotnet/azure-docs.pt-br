@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/16/2018
 ms.author: glenga
-ms.openlocfilehash: 039b0951484a6bf57703d9a91d604c9c5e5c9a66
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: d25082c429c58c074726c75f7ff6f248daee4151
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64571163"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050610"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Guia do desenvolvedor de Python para o Azure Functions
 
@@ -30,7 +30,7 @@ Este artigo é uma introdução ao desenvolvimento do Azure Functions usando Pyt
 
 Uma função do Azure deve ser um método sem estado no script de Python que processa a entrada e produz a saída. Por padrão, o tempo de execução espera o método a ser implementada como um método global chamado `main()` no `__init__.py` arquivo.
 
-Você pode alterar a configuração padrão especificando as propriedades `scriptFile` e `entryPoint` no arquivo `function.json`. Por exemplo, o _function.json_ a seguir diz ao tempo de execução para usar o método _customentry()_ no arquivo _main.py_ como o ponto de entrada para sua função do Azure.
+Você pode alterar a configuração padrão, especificando o `scriptFile` e `entryPoint` propriedades na *Function. JSON* arquivo. Por exemplo, o _Function. JSON_ a seguir informa ao tempo de execução para usar o `customentry()` método na _main.py_ arquivo, como o ponto de entrada para sua função do Azure.
 
 ```json
 {
@@ -40,7 +40,7 @@ Você pode alterar a configuração padrão especificando as propriedades `scrip
 }
 ```
 
-Os dados de gatilhos e associações estão vinculados à função por meio de atributos de método usando a propriedade `name` definida no arquivo de configuração `function.json`. Por exemplo, o _Function. JSON_ a seguir descreve uma função simples disparada por uma solicitação HTTP denominada `req`:
+Dados de gatilhos e associações estão associados à função por meio de atributos de método usando o `name` propriedade definida em de *Function. JSON* arquivo. Por exemplo, o _Function. JSON_ a seguir descreve uma função simples disparada por uma solicitação HTTP denominada `req`:
 
 ```json
 {
@@ -68,7 +68,7 @@ def main(req):
     return f'Hello, {user}!'
 ```
 
-Opcionalmente, você também pode declarar os tipos de parâmetro e de retorno na função usando anotações de tipo do Python. Por exemplo, a mesma função pode ser escrita usando anotações, da seguinte maneira:
+Opcionalmente, para aproveitar os recursos de intellisense e preenchimento automático fornecidos pelo seu editor de código, você também pode declarar os tipos de atributo e tipo de retorno na função usando anotações de tipo de Python. 
 
 ```python
 import azure.functions
@@ -78,7 +78,7 @@ def main(req: azure.functions.HttpRequest) -> str:
     return f'Hello, {user}!'
 ```  
 
-Use as anotações do Python incluídas no pacote [azure.functions.*](/python/api/azure-functions/azure.functions?view=azure-python) para associar a entrada e as saídas a seus métodos. 
+Use as anotações do Python incluídas no pacote [azure.functions.*](/python/api/azure-functions/azure.functions?view=azure-python) para associar a entrada e as saídas a seus métodos.
 
 ## <a name="folder-structure"></a>Estrutura de pastas
 
@@ -97,8 +97,6 @@ A estrutura de pastas para um projeto Python do Functions é semelhante à segui
  | | - mySecondHelperFunction.py
  | - host.json
  | - requirements.txt
- | - extensions.csproj
- | - bin
 ```
 
 Há um arquivo [host.json](functions-host-json.md) compartilhado que pode ser usado para configurar o aplicativo de funções. Cada função possui seu próprio arquivo de código e arquivo de configuração de associação (function.json). 
@@ -106,16 +104,16 @@ Há um arquivo [host.json](functions-host-json.md) compartilhado que pode ser us
 O código compartilhado deve ser mantido em uma pasta separada. Para fazer referência a módulos na pasta SharedCode, você pode usar a seguinte sintaxe:
 
 ```
-from ..SharedCode import myFirstHelperFunction
+from __app__.SharedCode import myFirstHelperFunction
 ```
 
-As extensões de associação usadas pelo tempo de execução do Functions são definidas no arquivo `extensions.csproj`, com os arquivos de biblioteca reais na pasta `bin`. Ao desenvolver localmente, você deverá [registrar as extensões de associação](./functions-bindings-register.md#local-development-with-azure-functions-core-tools-and-extension-bundles) usando o Azure Functions Core Tools. 
-
-Ao implantar um projeto do Functions em seu aplicativo de funções no Azure, todo o conteúdo da pasta FunctionApp deverá ser incluído no pacote, mas não a pasta em si.
+Ao implantar um projeto de função para seu aplicativo de funções no Azure, todo o conteúdo a *FunctionApp* pasta deve ser incluída no pacote, mas não na própria pasta.
 
 ## <a name="triggers-and-inputs"></a>Gatilhos e entradas
 
-As entradas são divididas em duas categorias no Azure Functions: entrada do gatilho e entrada adicional. Embora elas sejam diferentes em `function.json`, seu uso é idêntico no código Python.  Cadeias de caracteres de Conexão para fontes de entrada e o gatilho devem ser mapeado para valores de `local.settings.json` arquivo localmente e as configurações de aplicativo em execução no Azure. Como exemplo, vejamos o snippet de código a seguir:
+As entradas são divididas em duas categorias no Azure Functions: entrada do gatilho e entrada adicional. Embora eles sejam diferentes entre o `function.json` arquivo, o uso é idêntico no código do Python.  Cadeias de caracteres de Conexão ou segredos para fontes de gatilho e entrada são mapeadas para valores no `local.settings.json` arquivo ao executar localmente e as configurações de aplicativo em execução no Azure. 
+
+Por exemplo, o código a seguir demonstra a diferença entre os dois:
 
 ```json
 // function.json
@@ -210,7 +208,7 @@ def main(req: func.HttpRequest,
     return message
 ```
 
-## <a name="logging"></a>Registro em log
+## <a name="logging"></a>Registrando em log
 
 O acesso ao agente de tempo de execução do Azure Functions está disponível por meio de um manipulador [`logging`](https://docs.python.org/3/library/logging.html#module-logging) raiz no seu aplicativo de funções. Esse agente é vinculado ao Application Insights e permite sinalizar avisos e erros encontrados durante a execução da função.
 
@@ -233,21 +231,9 @@ Há outros métodos de registro em log disponíveis que permitem a gravação no
 | logging.**info(_message_)**    | Grava uma mensagem com nível INFORMAÇÕES no agente raiz.  |
 | logging.**debug(_message_)** | Grava uma mensagem com nível DEPURAR no agente raiz.  |
 
-## <a name="importing-shared-code-into-a-function-module"></a>Importando o código compartilhado para um módulo de função
-
-Os módulos de Python publicados juntamente com os módulos de função devem ser importados usando a sintaxe de importação relativa:
-
-```python
-from . import helpers  # Use more dots to navigate up the folder structure.
-def main(req: func.HttpRequest):
-    helpers.process_http_request(req)
-```
-
-Como alternativa, coloque o código compartilhado em um pacote autônomo, publique-o em uma instância PyPI pública ou particular e especifique-o como uma dependência normal.
-
 ## <a name="async"></a>Assíncrono
 
-Como apenas um único processo de Python pode existir por aplicativo de funções, é recomendável implementar a função do Azure como uma rotina conjunta assíncrona usando a instrução `async def`.
+É recomendável que você escreva sua função do Azure como uma co-rotina assíncrona usando o `async def` instrução.
 
 ```python
 # Will be run with asyncio directly
@@ -255,7 +241,7 @@ async def main():
     await some_nonblocking_socket_io_op()
 ```
 
-Se a função main() é síncrona (sem qualificador `async`), podemos executá-la automaticamente em um pool de threads `asyncio`.
+Se a função Main () é síncrona (nenhuma `async` qualificador), executamos automaticamente a função em um `asyncio` pool de threads.
 
 ```python
 # Would be run in an asyncio thread-pool
@@ -267,7 +253,7 @@ def main():
 
 Para obter o contexto de invocação de uma função durante a execução, inclua o argumento `context` em sua assinatura. 
 
-Por exemplo: 
+Por exemplo:
 
 ```python
 import azure.functions
@@ -288,6 +274,21 @@ Nome da função.
 `invocation_id`  
 ID da invocação de função atual.
 
+## <a name="global-variables"></a>Variáveis globais
+
+Não há garantia de que o estado do aplicativo será preservado para execuções futuras. No entanto, o Azure Functions runtime geralmente reutiliza o mesmo processo para várias execuções do mesmo aplicativo. Para armazenar em cache os resultados de uma computação cara, declare-o como uma variável global. 
+
+```python
+CACHED_DATA = None
+
+def main(req):
+    global CACHED_DATA
+    if CACHED_DATA is None:
+        CACHED_DATA = load_json()
+
+    # ... use CACHED_DATA in code
+```
+
 ## <a name="python-version-and-package-management"></a>Versão do Python e gerenciamento de pacote
 
 Atualmente, o Azure Functions dá suporte apenas a Python 3.6.x (distribuição oficial do CPython).
@@ -295,10 +296,6 @@ Atualmente, o Azure Functions dá suporte apenas a Python 3.6.x (distribuição 
 Ao desenvolver localmente usando o Azure Functions Core Tools ou o Visual Studio Code, adicione os nomes e as versões dos pacotes necessários para os arquivos `requirements.txt` e instale-os usando `pip`.
 
 Por exemplo, o arquivo de requisitos e comando pip a seguir podem ser usados para instalar o pacote `requests` do PyPI.
-
-```bash
-pip install requests
-```
 
 ```txt
 requests==2.19.1
@@ -308,20 +305,9 @@ requests==2.19.1
 pip install -r requirements.txt
 ```
 
-Quando estiver pronto para publicação, verifique se todas as dependências estão listadas no arquivo `requirements.txt`, localizado na raiz do diretório do projeto. Para executar o Azure Functions com êxito, o arquivo de requisitos deverá conter, no mínimo, os seguintes pacotes:
-
-```txt
-azure-functions
-azure-functions-worker
-grpcio==1.14.1
-grpcio-tools==1.14.1
-protobuf==3.6.1
-six==1.11.0
-```
-
 ## <a name="publishing-to-azure"></a>Publicando no Azure
 
-Se você estiver usando um pacote que precisa de um compilador e não dá suporte à instalação de rodas do PyPI compatíveis com manylinux, a publicação no Azure falhará com o seguinte erro: 
+Quando estiver pronto para publicar, certifique-se de que todas as suas dependências estão listadas os *Requirements. txt* arquivo, que está localizado na raiz do diretório do projeto. Se você estiver usando um pacote que precisa de um compilador e não dá suporte à instalação de rodas do PyPI compatíveis com manylinux, a publicação no Azure falhará com o seguinte erro: 
 
 ```
 There was an error restoring dependencies.ERROR: cannot install <package name - version> dependency: binary dependencies without wheels are not supported.  
@@ -336,70 +322,83 @@ func azure functionapp publish <app name> --build-native-deps
 
 Nos bastidores, o Core Tools usará Docker para executar a imagem [mcr.microsoft.com/azure-functions/python](https://hub.docker.com/r/microsoft/azure-functions/) como um contêiner em seu computador local. Usando esse ambiente, ele compilará e instalará os módulos necessários da distribuição de origem antes de empacotá-las para a implantação final no Azure.
 
-> [!NOTE]
-> O Core Tools (func) usa o programa PyInstaller para congelar o código e as dependências do usuário em um único executável autônomo para ser executado no Azure. Essa funcionalidade está atualmente em versão prévia e pode não se estender a todos os tipos de pacotes de Python. Se você não puder importar os módulos, tente publicá-los novamente usando a opção `--no-bundler`. 
-> ```
-> func azure functionapp publish <app_name> --build-native-deps --no-bundler
-> ```
-> Se você continuar a ter problemas, informe-nos [abrindo um caso de problema](https://github.com/Azure/azure-functions-core-tools/issues/new) e incluindo uma descrição do problema. 
+Para criar as suas dependências e publicar usando um sistema de entrega contínua (CD), [usar Pipelines de DevOps do Azure](https://docs.microsoft.com/azure/azure-functions/functions-how-to-azure-devops). 
 
+## <a name="unit-testing"></a>Teste de unidade
 
-Para criar suas dependências e publicar usando um sistema de CI/CD (integração contínua/entrega contínua), você pode usar um [Pipeline do Azure](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml?view=vsts) ou um [script personalizado de CI do Travis](https://docs.travis-ci.com/user/deployment/script/). 
+Funções escritas em Python podem ser testadas como outro código do Python usando estruturas de teste padrão. Para a maioria das associações, é possível criar um objeto de entrada fictício, criando uma instância de uma classe apropriada do `azure.functions` pacote.
 
-Abaixo temos um exemplo de script `azure-pipelines.yml` para o processo de compilação e publicação.
-```yml
-pool:
-  vmImage: 'Ubuntu 16.04'
+Por exemplo, o seguinte é um teste de simulação de uma função disparada por HTTP:
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '8.x'
+```python
+# myapp/__init__.py
+import azure.functions as func
+import logging
 
-- script: |
-    set -e
-    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
-    curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-    sudo apt-get install -y apt-transport-https
-    echo "install Azure CLI..."
-    sudo apt-get update && sudo apt-get install -y azure-cli
-    npm i -g azure-functions-core-tools --unsafe-perm true
-    echo "installing dotnet core"
-    curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 2.0
-- script: |
-    set -e
-    az login --service-principal --username "$(APP_ID)" --password "$(PASSWORD)" --tenant "$(TENANT_ID)" 
-    func settings add FUNCTIONS_WORKER_RUNTIME python
-    func extensions install
-    func azure functionapp publish $(APP_NAME) --build-native-deps
+def main(req: func.HttpRequest,
+         obj: func.InputStream):
+
+    logging.info(f'Python HTTP triggered function processed: {obj.read()}')
 ```
 
-Abaixo temos um exemplo de script `.travis.yaml` para o processo de compilação e publicação.
+```python
+# myapp/test_func.py
+import unittest
 
-```yml
-sudo: required
+import azure.functions as func
+from . import my_function
 
-language: node_js
+class TestFunction(unittest.TestCase):
+    def test_my_function(self):
+        # Construct a mock HTTP request.
+        req = func.HttpRequest(
+            method='GET',
+            body=None,
+            url='/my_function', 
+            params={'name': 'Test'})
 
-node_js:
-  - "8"
+        # Call the function.
+        resp = my_function(req)
 
-services:
-  - docker
-
-before_install:
-  - echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
-  - curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-  - sudo apt-get install -y apt-transport-https
-  - sudo apt-get update && sudo apt-get install -y azure-cli
-  - npm i -g azure-functions-core-tools --unsafe-perm true
-
-
-script:
-  - az login --service-principal --username "$APP_ID" --password "$PASSWORD" --tenant "$TENANT_ID"
-  - az account get-access-token --query "accessToken" | func azure functionapp publish $APP_NAME --build-native-deps
-
+        # Check the output.
+        self.assertEqual(
+            resp.get_body(), 
+            'Hello, Test!',
+        )
 ```
+
+Aqui está outro exemplo, com uma função disparada por fila:
+
+```python
+# myapp/__init__.py
+import azure.functions as func
+
+def my_function(msg: func.QueueMessage) -> str:
+    return f'msg body: {msg.get_body().decode()}'
+```
+
+```python
+# myapp/test_func.py
+import unittest
+
+import azure.functions as func
+from . import my_function
+
+class TestFunction(unittest.TestCase):
+    def test_my_function(self):
+        # Construct a mock Queue message.
+        req = func.QueueMessage(
+            body=b'test')
+
+        # Call the function.
+        resp = my_function(req)
+
+        # Check the output.
+        self.assertEqual(
+            resp, 
+            'msg body: test',
+        )
+``` 
 
 ## <a name="known-issues-and-faq"></a>Problemas conhecidos e perguntas frequentes
 

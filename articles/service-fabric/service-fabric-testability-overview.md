@@ -15,16 +15,16 @@ ms.workload: NA
 ms.date: 06/15/2017
 ms.author: anmola
 ms.openlocfilehash: 3581550779b2387515b4f300d211b4e0a894edc7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60544800"
 ---
 # <a name="introduction-to-the-fault-analysis-service"></a>Introdução ao Serviço de Análise de Falha
 O Serviço de Análise de Falha foi desenvolvido para testar serviços criados com base no Microsoft Azure Service Fabric. Com o Serviço de Análise de Falha, é possível induzir falhas significativas e executar cenários de teste completos para seus aplicativos. Esses cenários e falhas praticam e validam os vários estados e transições pelos quais um serviço passa durante seu tempo de vida, tudo de maneira consistente, segura e controlada.
 
-Ações são as falhas individuais visando um serviço com o objetivo de testá-lo. Um desenvolvedor de serviço pode usá-las como blocos de construção para escrever cenários complicados. Por exemplo: 
+Ações são as falhas individuais visando um serviço com o objetivo de testá-lo. Um desenvolvedor de serviço pode usá-las como blocos de construção para escrever cenários complicados. Por exemplo:
 
 * Reinicie um nó para simular qualquer quantidade de situações nas quais um computador ou VM é reinicializada.
 * Mova uma réplica de seu serviço com estado para simular o balanceamento de carga, failover ou atualização do aplicativo.
@@ -58,7 +58,7 @@ A fim de testar a robustez de um sistema distribuído contra falhas, precisamos 
 1. No cliente, emita uma solicitação de desligamento do nó.
 1. Envie a solicitação ao nó correto.
    
-     a. Se o nó não for encontrado, a solicitação falhará.
+    a. Se o nó não for encontrado, a solicitação falhará.
    
     b. Se o nó for encontrado, haverá retorno apenas se ele for desligado.
 

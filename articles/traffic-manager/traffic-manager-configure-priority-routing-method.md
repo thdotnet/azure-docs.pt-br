@@ -3,20 +3,21 @@ title: Configurar o método de roteamento de tráfego de prioridade usando o Ger
 description: Este artigo explica como configurar o método de roteamento de tráfego de prioridade no Gerenciador de Tráfego
 services: traffic-manager
 documentationcenter: ''
-author: kumudd
+author: asudbring
+manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
-ms.author: kumud
-ms.openlocfilehash: 66c5bd9390d6fe0f26af66e18aed22c07a7da3e4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: allensu
+ms.openlocfilehash: 259457a604727cba6e6964851ec4fcf4b13a20a6
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60883979"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67048495"
 ---
 # <a name="configure-priority-traffic-routing-method-in-traffic-manager"></a>Configurar o método de roteamento de tráfego de prioridade no Gerenciador de Tráfego
 
@@ -33,7 +34,7 @@ Independentemente do modo de site, os Sites do Azure já fornecem funcionalidade
     1. Em **Configurações do método de roteamento de tráfego**, verifique se o método de roteamento de tráfego é **Prioridade**. Se não for, clique em **Prioridade** na lista suspensa.
     2. Defina as **Configurações do monitor de ponto de extremidade** de forma idêntica para todos os pontos de extremidade nesse perfil, da seguinte maneira:
         1. Selecione o **Protocolo** apropriado e especifique o número da **Porta**. 
-        2. Para **Caminho**, digite uma barra "/" */*. Para monitorar os pontos de extremidade, especifique um caminho e um nome de arquivo. A barra "/" é uma entrada válida para o caminho relativo e implica que o arquivo está no diretório raiz (padrão).
+        2. Para **Caminho**, digite uma barra "/" */* . Para monitorar os pontos de extremidade, especifique um caminho e um nome de arquivo. A barra "/" é uma entrada válida para o caminho relativo e implica que o arquivo está no diretório raiz (padrão).
         3. Na parte superior da página, clique em **Salvar**.
 5. Na seção **Configurações**, clique em **Pontos de Extremidade**.
 6. Na folha **Pontos de Extremidade**, examine a ordem de prioridade dos pontos de extremidade. Ao selecionar o método de roteamento de tráfego de **Prioridade**, a ordem dos pontos de extremidade selecionados é importante. Verifique a ordem de prioridade dos pontos de extremidade.  O ponto de extremidade primário está no topo. Verifique novamente a ordem em que eles são exibidos. Todas as solicitações serão roteadas para o primeiro ponto de extremidade e, se o Gerenciador de Tráfego o detectar como não íntegro, o tráfego fará failover automaticamente para o próximo ponto de extremidade. 

@@ -19,10 +19,10 @@ ms.reviewer: sahandle
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3357cfd5e845346534f263c768b5cf6b6a38ea4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60296068"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Introdução ao Azure Active Directory Identity Protection e ao Microsoft Graph
@@ -80,7 +80,7 @@ Antes de começar, será necessário:
    
     ![Criação de um aplicativo](./media/graph-get-started/44.png)
 
-     a. Na caixa de texto **Nome**, digite um nome para o aplicativo (por exemplo: Aplicativo de API do Evento de Risco AADIP).
+    a. Na caixa de texto **Nome**, digite um nome para o aplicativo (por exemplo: Aplicativo de API do Evento de Risco AADIP).
    
     b. Como **Tipo**, selecione **Aplicativo Web E/Ou API Web**.
    
@@ -139,7 +139,7 @@ Antes de começar, será necessário:
    
     ![Criação de um aplicativo](./media/graph-get-started/24.png)
 
-     a. Na caixa de texto **Descrição da chave**, digite uma descrição (por exemplo, *AADIP Risk Event*).
+    a. Na caixa de texto **Descrição da chave**, digite uma descrição (por exemplo, *AADIP Risk Event*).
     
     b. Como **Duração**, selecione **Em um ano**.
 
@@ -248,7 +248,7 @@ https://graph.microsoft.com/beta/identityRiskEvents?`$filter=userID eq '<userID>
 
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Parabéns, você acabou de criar sua primeira chamada para o Microsoft Graph!  
 Agora você pode consultar os eventos de risco de identidade e usar os dados como quiser.

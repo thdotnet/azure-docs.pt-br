@@ -9,10 +9,10 @@ ms.topic: reference
 ms.date: 3/5/2019
 ms.author: moderakh
 ms.openlocfilehash: 356838f16f7f13506657326bae5dbe994d54bdd5
-ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "57570089"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>SDK do Java Async do Azure Cosmos DB para a API do SQL: Notas sobre a versão e recursos
@@ -144,7 +144,7 @@ Qualquer solicitação feita ao Cosmos DB com o uso de um SDK desativado será r
 
 <br/>
 
-| Versão | Data do lançamento | Data de desativação |
+| Version | Data do lançamento | Data de desativação |
 | --- | --- | --- |
 | [2.4.3](#2.4.3) |5 de março de 2019|--- |
 | [2.4.2](#2.4.2) |1 de março de 2019|--- |

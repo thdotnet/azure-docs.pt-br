@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 940a35d89996b1eb9600fe4214863d2b5304750e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60242156"
 ---
 # <a name="azure-ad-connect-sync-best-practices-for-changing-the-default-configuration"></a>Sincronização do Azure AD Connect: Práticas recomendadas para alterar a configuração padrão
@@ -63,7 +63,7 @@ Na figura acima, o assistente de instalação encontrou um esquema antigo do Exc
 ### <a name="change-an-out-of-box-rule"></a>alterar uma regra integrada
 A única vez em que você deve alterar uma regra pronta para uso é quando você precisa alterar a regra de associação. Se você precisar alterar um fluxo de atributos, deverá criar uma regra de sincronização com precedência maior do que as regras prontas para uso. A única regra é praticamente necessário clone é a regra **em do AD – usuário Join**. Você pode substituir todas as outras regras com uma regra de prioridade mais alta.
 
-Se você precisar fazer alterações em uma regra integrada, deverá fazer uma cópia da regra integrada e desabilitar a regra original. Em seguida, faça as alterações desejadas à regra clonada. O Editor de Regra de Sincronização ajuda você com essas etapas. Quando você abre uma regra integrada, vê essa caixa de diálogo:   
+Se você precisar fazer alterações em uma regra integrada, deverá fazer uma cópia da regra integrada e desabilitar a regra original. Em seguida, faça as alterações desejadas à regra clonada. O Editor de Regra de Sincronização ajuda você com essas etapas. Quando você abre uma regra integrada, vê essa caixa de diálogo:  
 ![Aviso de regra integrada](./media/how-to-connect-sync-best-practices-changing-default-configuration/warningoutofboxrule.png)
 
 Selecione **Sim** para criar uma cópia da regra. Então, a regra clonada é aberta.  
@@ -71,7 +71,7 @@ Selecione **Sim** para criar uma cópia da regra. Então, a regra clonada é abe
 
 Na regra clonada, faça as alterações necessárias no escopo, na associação e nas transformações.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 **Tópicos de visão geral**
 
 * [Sincronização do Azure AD Connect: Compreender e personalizar a sincronização](how-to-connect-sync-whatis.md)

@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: alkarche
-ms.openlocfilehash: f13e498859986d5ee697cbd67907fd344147ed0c
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: a0bb34f8a43199a5d3a18064bce92ef4bec543af
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66492846"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050654"
 ---
 # <a name="azure-functions-networking-options"></a>O Azure Functions, as opções de rede
 
@@ -25,13 +25,13 @@ Você pode hospedar aplicativos de funções de duas maneiras:
 
 * Há um conjunto de opções de plano que são executados em uma infraestrutura de multilocatária, com vários níveis de conectividade de rede virtual e opções de dimensionamento:
     * O [plano de consumo](functions-scale.md#consumption-plan), que dimensiona dinamicamente em resposta ao carregamento e oferece opções de isolamento de rede mínimas.
-    * O [plano Premium](functions-scale.md#premium-plan-public-preview), que também dimensiona dinamicamente, além de oferecer isolamento de rede mais abrangente.
+    * O [plano Premium](functions-scale.md#premium-plan), que também dimensiona dinamicamente, além de oferecer isolamento de rede mais abrangente.
     * O Azure [plano do serviço de aplicativo](functions-scale.md#app-service-plan), que opera em uma escala fixa e oferece isolamento de rede semelhantes para o plano Premium.
 * Você pode executar funções em um [ambiente de serviço de aplicativo](../app-service/environment/intro.md). Este método implanta sua função na sua rede virtual e oferece isolamento e controle de rede completo.
 
 ## <a name="matrix-of-networking-features"></a>Matriz de recursos de rede
 
-|                |[Plano de consumo](functions-scale.md#consumption-plan)|[Plano Premium (versão prévia)](functions-scale.md#premium-plan-public-preview)|[Plano do Serviço de Aplicativo](functions-scale.md#app-service-plan)|[Ambiente do Serviço de Aplicativo](../app-service/environment/intro.md)|
+|                |[Plano de consumo](functions-scale.md#consumption-plan)|[Plano Premium (versão prévia)](functions-scale.md#premium-plan)|[Plano do Serviço de Aplicativo](functions-scale.md#app-service-plan)|[Ambiente do Serviço de Aplicativo](../app-service/environment/intro.md)|
 |----------------|-----------|----------------|---------|-----------------------|  
 |[Restrições de IP de entrada](#inbound-ip-restrictions)|✅Yes|✅Yes|✅Yes|✅Yes|
 |[Restrições de IP de saída](#private-site-access)|❌No| ❌No|❌No|✅Yes|

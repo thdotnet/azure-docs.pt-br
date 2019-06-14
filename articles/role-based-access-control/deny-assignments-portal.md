@@ -15,10 +15,10 @@ ms.date: 03/13/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 2dcbcbec9054b31312043ef6642f59fa64728b30
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60194289"
 ---
 # <a name="view-deny-assignments-for-azure-resources-using-the-azure-portal"></a>Exibir atribuições de negação para recursos do Azure usando o portal do Azure
@@ -42,7 +42,7 @@ Siga estas etapas para visualizar as atribuições de negação no escopo da ass
 
 1. Clique no grupo de gerenciamento ou na assinatura que você deseja visualizar.
 
-1. Clique em **controle de acesso (IAM)**.
+1. Clique em **controle de acesso (IAM)** .
 
 1. Clique na guia **Negar atribuições** (ou clique no botão **Visualizar** na peça Visualizar negar atribuições).
 
@@ -107,7 +107,7 @@ Siga estas etapas para visualizar detalhes adicionais sobre uma atribuição de 
 
     Na folha **Propriedades**, você pode ver o nome, a ID, a descrição e o escopo da atribuição de negação. A opção **Não se aplica a filhos** indica se a atribuição de negação é herdada para os subescópios. A chave **System protected** indica se essa atribuição de negação é gerenciada pelo Azure. Atualmente, isso é **Sim** em todos os casos.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Compreender atribuições de negação dos recursos do Azure](deny-assignments.md)
 * [Listar atribuições de negação para recursos do Azure usando a API REST](deny-assignments-rest.md)

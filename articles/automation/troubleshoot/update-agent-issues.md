@@ -10,10 +10,10 @@ ms.service: automation
 ms.subservice: update-management
 manager: carmonm
 ms.openlocfilehash: 864fe70d7702680f21234a1a15c02515b19f770b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60597737"
 ---
 # <a name="understand-the-windows-agent-check-results-in-update-management"></a>Reconheça os resultados da verificação de agente do Windows no Gerenciamento de Atualizações
@@ -36,8 +36,7 @@ Para computadores do Azure, ao clicar no link **Solução de Problemas** na colu
 ![Atualizar lista de gerenciamento de máquinas virtuais](../media/update-agent-issues/vm-list.png)
 
 > [!NOTE]
-> Para verificar a integridade de um agente, a VM deve estar em execução.
- Se a VM não estiver em execução, será exibido o botão **Iniciar a VM**.
+> Para verificar a integridade de um agente, a VM deve estar em execução. Se a VM não estiver em execução, será exibido o botão **Iniciar a VM**.
 
 Sobre o **solucionar problemas de atualização de agente** página, selecione **executar verificações de** para iniciar a solução de problemas. O solucionador de problemas usa [ Executar comando ](../../virtual-machines/windows/run-command.md) para executar um script na máquina para verificar as dependências do agente. Quando a solução de problemas é concluída, ela retorna o resultado das verificações.
 

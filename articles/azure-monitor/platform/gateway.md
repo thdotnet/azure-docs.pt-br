@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: magoedte
 ms.openlocfilehash: b0b221a9fe6c6482e8759664c297dbd25d0ee776
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60396196"
 ---
 # <a name="connect-computers-without-internet-access-by-using-the-log-analytics-gateway-in-azure-monitor"></a>Conectar computadores sem acesso à internet usando o gateway do Log Analytics no Azure Monitor
@@ -136,7 +136,7 @@ Para instalar um gateway usando o Assistente de instalação, siga estas etapas.
 1. Sobre o **contrato de licença** página, selecione **aceito os termos do contrato de licença** para concordar com os termos de licença de Software da Microsoft e, em seguida, selecione **próxima**.
 1. Na página **Porta e endereço de proxy**:
 
-    a. Insira o número da porta TCP a ser usado para o gateway. A instalação usa esse número de porta para configurar uma regra de entrada no Firewall do Windows.  O valor padrão é 8080.
+   a. Insira o número da porta TCP a ser usado para o gateway. A instalação usa esse número de porta para configurar uma regra de entrada no Firewall do Windows.  O valor padrão é 8080.
       O intervalo válido do número da porta é de 1 a 65535. Se a entrada não estiver dentro desse intervalo, uma mensagem de erro será exibida.
 
    b. Se o servidor onde o gateway estiver instalado precisar se comunicar por meio de um proxy, insira o endereço do proxy onde o gateway precisa para se conectar. Por exemplo, insira: `http://myorgname.corp.contoso.com:80`.  Se você deixar esse campo em branco, o gateway tentará se conectar diretamente à internet.  Se o servidor proxy exigir autenticação, insira um nome de usuário e senha.
@@ -250,7 +250,7 @@ Para configurar a integração, atualize a configuração de proxy do sistema us
 
 1. Abra um prompt de comando elevado:
 
-    a. Selecione **inicie** e insira **cmd**.  
+   a. Selecione **inicie** e insira **cmd**.  
 
    b. Clique com botão direito **Prompt de comando** e selecione **executar como administrador**.  
 

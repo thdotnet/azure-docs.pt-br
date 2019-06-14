@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: 6dd1dd0ce2395e2b06d80385ffd299835a280526
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 377ad49ae3a5ae0f61cd0fd93b68dd817d617397
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60614038"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050809"
 ---
 # <a name="cloud-init-support-for-virtual-machines-in-azure"></a>Cloud-init para máquinas virtuais no Azure
 Este artigo mostra que o suporte que existe para a [cloud-init](https://cloudinit.readthedocs.io) para configurar uma máquina virtual VM ou conjunto de dimensionamento de máquinas virtuais (VMSS) no momento do provisionamento no Azure. Esses scripts de cloud-init são executados na primeira inicialização depois que os recursos são provisionados pelo Azure.  
@@ -79,7 +79,7 @@ O exemplo a seguir cria uma VM denominada *centos74* e cria chaves SSH, se elas 
 az vm create \
   --resource-group myResourceGroup \
   --name centos74 \
-  --image OpenLogic:CentOS:7-CI:latest \
+  --image OpenLogic:CentOS-CI:7-CI:latest \
   --custom-data cloud-init.txt \
   --generate-ssh-keys 
 ```

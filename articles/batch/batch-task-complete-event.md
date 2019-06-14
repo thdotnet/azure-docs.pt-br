@@ -2,7 +2,7 @@
 title: Evento de conclusão de tarefa – Azure | Microsoft Docs
 description: Referência de evento de tarefa de lote concluída.
 services: batch
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 ms.assetid: ''
 ms.service: batch
@@ -10,14 +10,13 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
-origin.date: 04/20/2017
-ms.date: 05/14/2018
-ms.author: v-junlch
+ms.date: 04/20/2017
+ms.author: lahugh
 ms.openlocfilehash: b5fd1a8020c8e95323bc2333c0583dafe58e8456
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60549964"
 ---
 # <a name="task-complete-event"></a>Evento de conclusão de tarefa
@@ -56,7 +55,7 @@ ms.locfileid: "60549964"
 |Nome do elemento|Type|Observações|
 |------------------|----------|-----------|
 |jobId|Cadeia de caracteres|A ID do trabalho que contém a tarefa.|
-|ID|Cadeia de caracteres|A ID da tarefa.|
+|id|Cadeia de caracteres|A ID da tarefa.|
 |taskType|Cadeia de caracteres|O tipo de tarefa. Pode ser “JobManager” indicando que é uma tarefa do gerenciador de trabalhos ou “Usuário”, indicando que não é uma tarefa do gerenciador de trabalhos. Esse evento não é emitido para tarefas de preparação, lançamento ou inicialização de trabalho.|
 |systemTaskVersion|Int32|Esse é o contador interno de repetição de uma tarefa. Internamente, o serviço em lotes pode repetir uma tarefa para contabilizar problemas transitórios. Esses problemas podem incluir erros internos de agendamento ou tentativa de recuperar nós de computação em estado inválido.|
 |[nodeInfo](#nodeInfo)|Tipo complexo|Contém informações sobre o nó de computação em que a tarefa é executada.|
@@ -92,5 +91,3 @@ ms.locfileid: "60549964"
 |exitCode|Int32|O código de saída da tarefa.|
 |retryCount|Int32|O número de vezes que a tarefa foi repetida pelo serviço em lotes. A tarefa será repetida se a saída tiver um código de saída diferente de zero, até a MaxTaskRetryCount especificada.|
 |requeueCount|Int32|O número de vezes que a tarefa foi colocada em fila novamente pelo serviço em lotes, como resultado de uma solicitação de usuário.<br /><br /> Quando o usuário remove nós de um pool (redimensionando ou reduzindo o pool) ou quando o trabalho é desabilitado, o usuário pode especificar que as tarefas em execução nos nós sejam colocadas novamente na fila de execução. Essa contagem controla quantas vezes a tarefa foi colocada novamente em fila por esses motivos.|
-
-<!-- Update_Description: update metedata properties -->

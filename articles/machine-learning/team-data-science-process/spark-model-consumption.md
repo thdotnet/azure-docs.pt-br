@@ -12,10 +12,10 @@ ms.date: 03/15/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: dd0467479960df30b1d44aeaef7ed0ed0d6c2a87
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60253162"
 ---
 # <a name="operationalize-spark-built-machine-learning-models"></a>Operacionalizar modelos de aprendizado de máquina criados no Spark
@@ -43,7 +43,7 @@ Para modificar o notebook Jupyter para o Spark 1.6 para usar com um cluster do H
 ## <a name="setup-storage-locations-libraries-and-the-preset-spark-context"></a>Instalação: locais de armazenamento, bibliotecas e o contexto predefinido do Spark
 O Spark é capaz de ler e gravar em um Azure Storage Blob (WASB). Portanto, qualquer dado existente armazenado lá pode ser processado usando o Spark, e os resultados podem ser armazenados novamente no WASB.
 
-Para salvar arquivos ou modelos no WASB, o caminho deve ser especificado corretamente. O contêiner padrão anexado ao cluster Spark pode ser referenciado usando um caminho que começa com: *"wasb///"*. O exemplo de código a seguir especifica o local dos dados a serem lidos e o caminho do diretório de armazenamento de modelo em que a saída do modelo será salva. 
+Para salvar arquivos ou modelos no WASB, o caminho deve ser especificado corretamente. O contêiner padrão anexado ao cluster Spark pode ser referenciado usando um caminho que começa com: *"wasb///"* . O exemplo de código a seguir especifica o local dos dados a serem lidos e o caminho do diretório de armazenamento de modelo em que a saída do modelo será salva. 
 
 ### <a name="set-directory-paths-for-storage-locations-in-wasb"></a>Definir caminhos de diretório para locais de armazenamento no WASB
 Os modelos são salvos em: "wasb:///user/remoteuser/NYCTaxi/Models". Se esse caminho não estiver definido corretamente, os modelos não serão carregados para pontuação.
@@ -526,7 +526,7 @@ BoostedTreeRegressionFileLoc: GradientBoostingTreeRegression_2016-05-0317_23_56.
 ## <a name="consume-spark-models-through-a-web-interface"></a>Consumir modelos do Spark por meio de uma interface Web
 O Spark fornece um mecanismo para enviar remotamente trabalhos em lotes ou consultas interativas por meio de uma interface REST com um componente chamado Livy. O Livy está habilitado por padrão no cluster Spark no HDInsight. Para obter mais informações sobre o Livy, consulte: [Enviar trabalhos do Spark remotamente usando o Livy](../../hdinsight/spark/apache-spark-livy-rest-interface.md). 
 
-Você pode usar Livy para enviar um trabalho que pontua em lotes um arquivo armazenado em um blob do Azure e grava os resultados em outro blob. Para fazer isso, carregue o script em Python do   
+Você pode usar Livy para enviar um trabalho que pontua em lotes um arquivo armazenado em um blob do Azure e grava os resultados em outro blob. Para fazer isso, carregue o script em Python do  
 [GitHub](https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/Spark/Python/ConsumeGBNYCReg.py) no blob do cluster Spark. Você pode usar uma ferramenta como o **Explorador do Armazenamento do Microsoft Azure** ou o **AzCopy** para copiar o script no blob de cluster. Em nosso caso, carregamos o script em ***wasb:///example/python/ConsumeGBNYCReg.py***.   
 
 > [!NOTE]

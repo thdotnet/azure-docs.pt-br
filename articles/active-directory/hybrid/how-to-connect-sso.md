@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7c34d8de3dfd06540dd50542ab19da0c1d9b1567
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60242260"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Logon Único Contínuo do Azure Active Directory
@@ -63,7 +63,7 @@ O SSO Contínuo pode ser combinado com o método de entrada de [Sincronização 
 
 | Sistema operacional\Navegador |Internet Explorer|Microsoft Edge|Google Chrome|Mozilla Firefox|Safari|
 | --- | --- |--- | --- | --- | -- 
-|Windows 10|Sim\*|Não |Sim|Sim\*\*\*|N/D
+|Windows 10|Sim\*|Não|Sim|Sim\*\*\*|N/D
 |Windows 8.1|Sim\*|N/D|Sim|Sim\*\*\*|N/D
 |Windows 8|Sim\*|N/D|Sim|Sim\*\*\*|N/D
 |Windows 7|Sim\*|N/D|Sim|Sim\*\*\*|N/D

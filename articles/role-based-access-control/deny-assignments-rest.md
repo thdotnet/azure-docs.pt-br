@@ -16,10 +16,10 @@ ms.date: 03/13/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 59bcf2b33d203ae216b4965b963a727a6b34ae72
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60194660"
 ---
 # <a name="list-deny-assignments-for-azure-resources-using-the-rest-api"></a>Listar atribuições de negação para recursos do Azure usando a API REST
@@ -45,11 +45,11 @@ Para obter informações sobre uma atribuição de deny, você deve ter:
 
 1. Dentro do URI, substitua *{scope}* pelo escopo para o qual você deseja listar as atribuições de negação.
 
-    | Escopo | Type |
+    | Scope | Type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Assinatura |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Grupo de recursos |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Recurso |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
 
 1. Substitua *{deny-assignment-id}* pelo identificador de atribuição de negação que você deseja recuperar.
 
@@ -69,11 +69,11 @@ Para obter informações sobre uma atribuição de deny, você deve ter:
 
 1. Dentro do URI, substitua *{scope}* pelo escopo para o qual você deseja listar as atribuições de negação.
 
-    | Escopo | Type |
+    | Scope | Type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Assinatura |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Grupo de recursos |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Recurso |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
 
 1. Substitua *{filter}* pela condição que você deseja aplicar a fim de filtrar a lista de atribuição de negação.
 
@@ -102,7 +102,7 @@ Para obter informações sobre uma atribuição de deny, você deve ter:
 
 1. Remover acesso elevado.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Compreender atribuições de negação dos recursos do Azure](deny-assignments.md)
 - [Elevar o acesso de um Administrador Global no Azure Active Directory](elevate-access-global-admin.md)

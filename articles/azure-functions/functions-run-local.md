@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: glenga
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 3c8d64f34f01e4339b27bdeba455fac143ad53ff
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 6c0732b33608105009eda9bba2e4970e8e12e652
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66241167"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050572"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Trabalhar com o Azure Functions Core Tools
 
@@ -173,7 +173,7 @@ Para obter mais informações, consulte [Gatilhos e conceitos de associações d
 
 ## <a name="local-settings-file"></a>Arquivo de configurações local
 
-O arquivo local.settings.json armazena as configurações do aplicativo, as cadeias de conexão e as configurações para as Ferramentas básicas do Azure Functions. As configurações no arquivo local.settings.json só são usadas pelas ferramentas do Functions quando são executadas localmente. Por padrão, essas configurações não são migradas automaticamente quando o projeto é publicado no Azure. Use a opção `--publish-local-settings` [quando publicar](#publish) para se certificar de que essas configurações serão adicionadas ao aplicativo de funções no Azure. Observe que os valores em **ConnectionStrings** nunca são publicados. O arquivo tem a seguinte estrutura:
+O arquivo local.settings.json armazena as configurações do aplicativo, as cadeias de conexão e as configurações para as Ferramentas básicas do Azure Functions. As configurações no arquivo local.settings.json só são usadas pelas ferramentas do Functions quando são executadas localmente. Por padrão, essas configurações não são migradas automaticamente quando o projeto é publicado no Azure. Use a opção `--publish-local-settings` [quando publicar](#publish) para se certificar de que essas configurações serão adicionadas ao aplicativo de funções no Azure. Os valores em **ConnectionStrings** nunca são publicados. O arquivo tem a seguinte estrutura:
 
 ```json
 {
@@ -419,43 +419,37 @@ func run MyHttpTrigger -c '{\"name\": \"Azure\"}'
 
 ## <a name="publish"></a>Publicar no Azure
 
-O Core Tools dá suporte a dois tipos de implantação: a implantação de arquivos de projeto de função diretamente no aplicativo de funções e a implantação de um contêiner do Linux personalizado, com suporte somente na versão 2.x. É necessário já ter [criado um aplicativo de funções em sua assinatura do Azure](functions-cli-samples.md#create).
+As ferramentas básicas do Azure Functions dá suporte a dois tipos de implantação: implantar arquivos de projeto de função diretamente para o seu aplicativo de funções por meio [Zip implantar](functions-deployment-technologies.md#zip-deploy) e [Implantando um contêiner do Docker personalizado](functions-deployment-technologies.md#docker-container). É necessário já ter [criou um aplicativo de funções em sua assinatura do Azure](functions-cli-samples.md#create), aos quais você implantará seu código. Os projetos que exigem build devem ser compilados para que os binários possam ser implantados.
 
-Na versão 2.x, você precisa ter [registrado suas extensões](#register-extensions) no projeto antes da publicação. Os projetos que exigem build devem ser compilados para que os binários possam ser implantados.
+### <a name="project-file-deployment"></a>Implantação (arquivos de projeto)
 
-### <a name="project-file-deployment"></a>Implantação de arquivo de projeto
-
-O método mais comum de implantação envolve o uso do Core Tools para empacotar o projeto do aplicativo de funções, binários e dependências e implantar o pacote no aplicativo de funções. Você pode opcionalmente [executar suas funções diretamente do pacote de implantação](run-functions-from-deployment-package.md).
-
-Para publicar um projeto de funções em um aplicativo de funções no Azure, use o comando `publish`:
+Para publicar seu código local em um aplicativo de funções no Azure, use o `publish` comando:
 
 ```bash
 func azure functionapp publish <FunctionAppName>
 ```
 
-Esse comando publica a um aplicativo de funções existente no Azure. Um erro ocorre quando `<FunctionAppName>` não existe em sua assinatura. Para saber como criar um aplicativo de funções pelo prompt de comando ou pela janela do terminal usando a CLI do Azure, consulte [Criar um aplicativo de funções para execução sem servidor](./scripts/functions-cli-create-serverless.md).
-
-O comando `publish` faz upload o conteúdo do diretório do projeto de funções. Se você excluir arquivos localmente, o comando `publish` não os excluirá do Azure. Você pode excluir arquivos no Azure usando a [ferramenta Kudu](functions-how-to-use-azure-function-app-settings.md#kudu) no [Portal do Azure].
+Esse comando publica a um aplicativo de funções existente no Azure. Você obterá um erro se você tentar publicar um `<FunctionAppName>` que não existe em sua assinatura. Para saber como criar um aplicativo de funções pelo prompt de comando ou pela janela do terminal usando a CLI do Azure, consulte [Criar um aplicativo de funções para execução sem servidor](./scripts/functions-cli-create-serverless.md). Por padrão, esse comando permitirá que seu aplicativo seja executado [execução do pacote](run-functions-from-deployment-package.md) modo.
 
 >[!IMPORTANT]
 > Quando você cria um aplicativo de funções no portal do Azure, ele usa a versão 2.x do tempo de execução do Core Tools por padrão. Para que o aplicativo de funções use a versão 1.x do tempo de execução, siga as instruções em [Executar na versão 1.x](functions-versions.md#creating-1x-apps).
 > Você não pode alterar a versão do tempo de execução de um aplicativo de funções que tenha funções existentes.
 
-As opções de publicação do projeto a seguir se aplicam a ambas versões 1.x e 2.x:
+As opções de publicação a seguir se aplicam a versões, 1.x e 2.x:
 
 | Opção     | DESCRIÇÃO                            |
 | ------------ | -------------------------------------- |
 | **`--publish-local-settings -i`** |  Configurações de publicação em local.settings.json do Azure, a solicitação para substituir se a configuração já existe. Se você estiver usando o emulador de armazenamento, altere a configuração do aplicativo para uma [conexão de armazenamento real](#get-your-storage-connection-strings). |
 | **`--overwrite-settings -y`** | Suprima o prompt para substituir as configurações do aplicativo quando `--publish-local-settings -i` for usado.|
 
-As opções de publicação do projeto a seguir têm suporte apenas na versão 2. x:
+Somente há suporte para as seguintes opções de publicação na versão 2.x:
 
 | Opção     | DESCRIÇÃO                            |
 | ------------ | -------------------------------------- |
 | **`--publish-settings-only -o`** |  Somente publicar as configurações e ignorar o conteúdo. O padrão é solicitado. |
 |**`--list-ignored-files`** | Exibe uma lista de arquivos que são ignorados durante a publicação, que é baseada no arquivo .funcignore. |
 | **`--list-included-files`** | Exibe uma lista de arquivos que são publicados, que é baseada no arquivo .funcignore. |
-| **`--nozip`** | Transforma o padrão de `Run-From-Zip` modo desativado. |
+| **`--nozip`** | Transforma o padrão de `Run-From-Package` modo desativado. |
 | **`--build-native-deps`** | Ignora a geração da pasta .wheels durante a publicação de python de aplicativos de funções. |
 | **`--additional-packages`** | Lista de pacotes para instalar ao compilar dependências nativas. Por exemplo: `python3-dev libevent-dev`. |
 | **`--force`** | Ignorar a verificação de pré-publicação em determinados cenários. |
@@ -463,9 +457,9 @@ As opções de publicação do projeto a seguir têm suporte apenas na versão 2
 | **`--no-build`** | Ignorar a criação de funções do dotnet. |
 | **`--dotnet-cli-params`** | Durante a publicação de funções C# (.csproj), o Core Tools chama 'dotnet build --output bin/publish'. Todos os parâmetros passados para isso serão acrescentados à linha de comando. |
 
-### <a name="custom-container-deployment"></a>Implantação de contêiner personalizado
+### <a name="deployment-custom-container"></a>Implantação (contêiner personalizado)
 
-O Functions permite que você implante o projeto de função em um contêiner do Linux personalizado. Para obter mais informações, confira [Criar uma função no Linux usando uma imagem personalizada](functions-create-function-linux-custom-image.md). A versão 2.x do Core Tools dá suporte à implantação de um contêiner personalizado. Os contêineres personalizados precisam ter um Dockerfile. Use a opção –dockerfile em `func init`.
+O Azure Functions permite que você implante seu projeto de função em uma [contêiner do Docker personalizado](functions-deployment-technologies.md#docker-container). Para obter mais informações, confira [Criar uma função no Linux usando uma imagem personalizada](functions-create-function-linux-custom-image.md). Os contêineres personalizados precisam ter um Dockerfile. Para criar um aplicativo com um Dockerfile, usar a opção – dockerfile `func init`.
 
 ```bash
 func deploy

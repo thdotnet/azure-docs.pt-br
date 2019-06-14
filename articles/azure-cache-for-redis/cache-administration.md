@@ -15,10 +15,10 @@ ms.workload: tbd
 ms.date: 07/05/2017
 ms.author: yegu
 ms.openlocfilehash: 81ef669b62c822e10d8bf5c45e58dd769c5dbeb9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60233015"
 ---
 # <a name="how-to-administer-azure-cache-for-redis"></a>Como administrar o Cache Redis do Azure
@@ -120,6 +120,6 @@ Sim, você pode gerenciar as atualizações agendadas usando os cmdlets do Power
 ### <a name="what-pricing-tiers-can-use-the-schedule-updates-functionality"></a>Que tipos de preços podem usar a funcionalidade de agendamento de atualizações?
 O recurso **Agendar atualizações** está disponível apenas no tipo de preço premium.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 * Explore mais recursos da [camada premium do Cache Redis do Azure](cache-premium-tier-intro.md).
 

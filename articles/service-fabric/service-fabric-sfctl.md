@@ -15,10 +15,10 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: c195d0c4250022102e735cf584370278e354bc41
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60545037"
 ---
 # <a name="sfctl"></a>sfctl
@@ -43,7 +43,7 @@ Os comandos seguem o padrão de substantivo-verbo. Confira subgrupos para saber 
 | [rpm](service-fabric-sfctl-rpm.md) | Consultar e enviar comandos para o serviço de gerenciador de reparo. |
 | [sa-cluster](service-fabric-sfctl-sa-cluster.md) | Gerencie clusters autônomos do Service Fabric. |
 | [service](service-fabric-sfctl-service.md) | Crie, exclua e gerencie o serviço, os tipos de serviço e os pacotes de serviço. |
-| [configurações](service-fabric-sfctl-settings.md) | Defina as configurações locais para essa instância do sfctl. |
+| [settings](service-fabric-sfctl-settings.md) | Defina as configurações locais para essa instância do sfctl. |
 | [store](service-fabric-sfctl-store.md) | Execute operações de arquivo de nível básico no repositório de imagens do cluster. |
 
 ## <a name="next-steps"></a>Próximas etapas

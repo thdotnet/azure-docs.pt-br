@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 3/11/2019
 ms.author: victorh
 ms.openlocfilehash: 4ef9089c94d9e806cc519c4f8243cdcb7e73953a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60194014"
 ---
 # <a name="azure-firewall-threat-intelligence-based-filtering---public-preview"></a>A filtragem baseada em inteligência contra ameaças de Firewall do Azure - visualização pública
@@ -47,13 +47,13 @@ O seguinte trecho do log mostra uma regra de disparada:
 }
 ```
 
-## <a name="testing"></a>Testando
+## <a name="testing"></a>Testes
 
 - **Saída de teste** -alertas de tráfego de saída devem ser uma ocorrência rara, pois significa que seu ambiente tiver sido comprometido. Para ajudar a alertas de saída de teste estão funcionando, um teste FQDN tiver sido criado, o que dispara um alerta. Use **testmaliciousdomain.eastus.cloudapp.azure.com** para seus testes de saída.
 
 - **Teste de entrada** -você pode esperar ver alertas no tráfego de entrada, se as regras DNAT são configuradas no firewall. Isso é verdadeiro mesmo que apenas fontes específicas são permitidas na regra DNAT e o tráfego é negado caso contrário. Firewall do Azure não emite alertas sobre todos os scanners de porta conhecida. somente em scanners que são conhecidas também se envolvam em atividades mal-intencionadas.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Consulte [amostras de análise de Log de Firewall do Azure](log-analytics-samples.md)
 - Saiba como [implantar e configurar um Firewall do Azure](tutorial-firewall-deploy-portal.md)

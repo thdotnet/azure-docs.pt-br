@@ -16,10 +16,10 @@ ms.date: 08/08/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cbb94c28d56b0492fe3488d7c9e2e1257a8b9388
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60624100"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-safeconnect"></a>Tutorial: Integração do Azure Active Directory com o SafeConnect
@@ -50,7 +50,7 @@ Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 - Se não tiver um ambiente de avaliação do Azure AD, você pode [obter uma versão de avaliação de um mês](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Descrição do cenário
-Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste.  O cenário descrito neste tutorial consiste em dois blocos de construção principais:
+Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste. O cenário descrito neste tutorial consiste em dois blocos de construção principais:
 
 1. Adicionando SafeConnect da Galeria
 2. configurar e testar o logon único do AD do Azure
@@ -60,7 +60,7 @@ Para configurar a integração do TigerText ao Microsoft Azure Active Directory,
 
 **Para adicionar o SafeConnect da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
 
     ![O botão Azure Active Directory][1]
 

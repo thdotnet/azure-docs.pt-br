@@ -4,12 +4,12 @@ ms.service: virtual-machines-linux
 ms.topic: include
 ms.date: 11/25/2018
 ms.author: cynthn
-ms.openlocfilehash: 94f662cea5f20485659a7b93549b758fdd7770f6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 25e67a5a6c3abebbac2e0489ff636ca1457b62ea
+ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61476263"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66807723"
 ---
 Quando não precisar mais de um disco de dados conectado a uma VM (máquina virtual), você poderá desanexá-lo facilmente. Ao desanexar um disco da VM, o disco não é removido do armazenamento. Se desejar usar os dados existentes no disco novamente, você poderá reanexá-lo à mesma VM ou anexá-lo a outra.  
 
@@ -19,7 +19,7 @@ Quando não precisar mais de um disco de dados conectado a uma VM (máquina virt
 ## <a name="find-the-disk"></a>Localize o disco
 Antes de poder desanexar um disco de uma VM, você precisa descobrir o número LUN, que é um identificador para o disco a ser desanexado. Para fazer isso, siga estas etapas:
 
-1. Abra a CLI do Azure e [conecte-se à sua assinatura do Azure](/cli/azure/authenticate-azure-cli). Verifique se você está no modo de Gerenciamento de Serviços do Azure (`azure config mode asm`).
+1. Abra a CLI do Azure e [conectar-se à sua assinatura do Azure](/cli/azure/authenticate-azure-cli). Verifique se você está no modo de Gerenciamento de Serviços do Azure (`azure config mode asm`).
 2. Descubra quais discos estão anexados à sua VM. O exemplo a seguir lista os discos para a VM chamada `myVM`:
 
     ```azurecli

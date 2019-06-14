@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 5/23/2018
 ms.author: aljo, anmola
-ms.openlocfilehash: 147607bbea65199ff97459711ad6301a4ae93aa4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: caed77234646654d151b64d2c80b7231342f6d8c
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60837514"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050480"
 ---
 # <a name="containerize-your-service-fabric-reliable-services-and-reliable-actors-on-windows"></a>Colocar em contêineres seus Reliable Services e Reliable Actors do Service Fabric no Windows
 
@@ -119,6 +119,16 @@ Este documento fornece diretrizes para colocar o serviço em execução dentro d
    </ContainerHostPolicies>
    </Policies>
    ```
+
+> [!NOTE] 
+> Por padrão, os aplicativos do Service Fabric têm acesso ao tempo de execução do Service Fabric, na forma de um ponto de extremidade aceitando solicitações específicas do aplicativo. Considere desabilitar esse acesso quando o aplicativo hospeda o código não confiável. Para obter mais informações, consulte [práticas recomendadas de segurança no Service Fabric](service-fabric-best-practices-security.md#platform-isolation). Para desabilitar o acesso ao tempo de execução do Service Fabric, adicione a seguinte configuração na seção de políticas do manifesto do aplicativo que corresponde ao manifesto do serviço importado, da seguinte maneira:
+>
+```xml
+  <Policies>
+      <ServiceFabricRuntimeAccessPolicy RemoveServiceFabricRuntimeAccess="true"/>
+  </Policies>
+```
+>
 
 10. Para testar esse aplicativo, você precisa implantá-lo em um cluster que esteja executando a versão 5.7 ou superior. Para a versão 6.1 do tempo de execução ou versões inferiores, você precisa editar e atualizar as configurações de cluster para habilitar essa versão prévia do recurso. Execute as etapas neste [artigo](service-fabric-cluster-fabric-settings.md) para adicionar a configuração mostrada a seguir.
     ```

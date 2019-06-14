@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
 ms.openlocfilehash: 601f3bf05388406c8f96a7351f7fb3aa4de2650a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60588801"
 ---
 # <a name="threat-modeling-tool-feature-overview"></a>Visão geral do recurso Threat Modeling Tool
@@ -46,7 +46,7 @@ A experiência é semelhante a de outros produtos da Microsoft. Vamos analisar o
 
 ![Itens de menu](./media/azure-security-threat-modeling-tool-feature-overview/menuitems.png)
 
-| Rótulo                               | Detalhes      |
+| Rotular                               | Detalhes      |
 | --------------------------------------- | ------------ |
 | **Arquivo** | <ul><li>Abrir, salvar e fechar arquivos</li><li>Entrar e sair das contas do OneDrive.</li><li>Compartilhar links (exibir e editar).</li><li>Exibir informações do arquivo.</li><li>Aplicar um novo modelo aos modelos já existentes.</li></ul> |
 | **Editar** | Desfazer e refazer ações, bem como copiar, colar e excluir. |

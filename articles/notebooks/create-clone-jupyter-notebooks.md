@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: kraigb
 ms.openlocfilehash: 0ee0c7162e26b875c74796b6d5379b414981e2d5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60237498"
 ---
 # <a name="create-and-clone-projects"></a>Criar e clonar projetos
@@ -118,7 +118,7 @@ Pra clonar um projeto:
 
 1. Depois de selecionar o botão **Clone**, o Azure Notebooks navega diretamente para a cópia.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Explorar notebooks de exemplo](azure-notebooks-samples.md)
 - [Como: Configurar e gerenciar projetos](configure-manage-azure-notebooks-projects.md)

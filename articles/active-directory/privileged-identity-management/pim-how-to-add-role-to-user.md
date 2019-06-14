@@ -14,10 +14,10 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 07259d90c7119dec4ca9139e10af2fb20a439425
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60289264"
 ---
 # <a name="assign-azure-ad-roles-in-pim"></a>Atribuir funções do Azure AD no PIM
@@ -126,7 +126,7 @@ Siga estas etapas para atribuir a função de Administrador de Acesso do Usuári
 
 1. Escolha sua assinatura.
 
-1. Clique em **Controle de acesso (IAM)**.
+1. Clique em **Controle de acesso (IAM)** .
 
 1. Escolha **Atribuições de função** para ver a lista atual de atribuições de função no escopo da assinatura.
 
@@ -149,7 +149,7 @@ Siga estas etapas para atribuir a função de Administrador de Acesso do Usuári
    ![Função Administrador de Acesso do Usuário para o MS-PIM](./media/pim-how-to-add-role-to-user/ms-pim-user-access-administrator.png)
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Definir configurações de função de administrador do AD do Azure no PIM](pim-how-to-change-default-settings.md)
 - [Atribuir funções de recurso do Azure no PIM](pim-resource-roles-assign-roles.md)

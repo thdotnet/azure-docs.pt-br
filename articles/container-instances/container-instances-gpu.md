@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/17/2019
 ms.author: danlep
 ms.openlocfilehash: 5073b68f6ef3de330671e3ea25056e0cae976360
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60583799"
 ---
 # <a name="deploy-container-instances-that-use-gpu-resources"></a>Implantar instâncias de contêiner que usam recursos GPU
@@ -211,7 +211,7 @@ Adding run metadata for 999
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Como usar recursos GPU pode ser caro, certifique-se de que os contêineres não são executados inesperadamente por longos períodos. Monitore seus contêineres no portal do Azure, ou verifique o status de um grupo de contêiner com o comando do [az container show][az-container-show]. Por exemplo: 
+Como usar recursos GPU pode ser caro, certifique-se de que os contêineres não são executados inesperadamente por longos períodos. Monitore seus contêineres no portal do Azure, ou verifique o status de um grupo de contêiner com o comando do [az container show][az-container-show]. Por exemplo:
 
 ```azurecli
 az container show --resource-group myResourceGroup --name gpucontainergroup --output table

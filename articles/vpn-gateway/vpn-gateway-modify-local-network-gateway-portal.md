@@ -3,8 +3,8 @@ title: Modificar os prefixos de endereço IP do gateway de rede local e o endere
 description: Este artigo mostra o passo a passo da alteração dos prefixos de endereço IP do seu gateway de rede local usando o portal do Azure
 services: vpn-gateway
 documentationcenter: na
-author: WenJason
-manager: digimobile
+author: cherylmc
+manager: timlt
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,14 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-origin.date: 06/19/2017
-ms.date: 12/10/2018
-ms.author: v-jay
+ms.date: 06/19/2017
+ms.author: cherylmc
 ms.openlocfilehash: 12f1f8bbcb103d0882059cadc12bc1a8b9d40bdb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60419571"
 ---
 # <a name="modify-local-network-gateway-settings-using-the-azure-portal"></a>Modificar as configurações de gateway de rede local usando o portal do Azure
@@ -49,6 +48,6 @@ Se o dispositivo VPN ao qual você deseja se conectar mudou seu endereço IP pú
 
 [!INCLUDE [modify gateway IP](../../includes/vpn-gateway-modify-lng-gateway-ip-portal-include.md)]
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Você pode verificar a conexão de gateway. Confira [Verificar uma conexão de gateway](vpn-gateway-verify-connection-resource-manager.md).

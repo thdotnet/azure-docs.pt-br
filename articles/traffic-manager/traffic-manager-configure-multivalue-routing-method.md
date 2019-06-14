@@ -3,20 +3,21 @@ title: Configurar o método de roteamento de tráfego de múltiplos valores no G
 description: Este artigo explica como configurar o Gerenciador de Tráfego para rotear tráfego para pontos de extremidades A/AAAA.
 services: traffic-manager
 documentationcenter: ''
-author: KumudD
+author: asudbring
+manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
-ms.author: kumud
-ms.openlocfilehash: de7288e2062fdfab363c46749b34c7afcacbb6e1
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.author: allensu
+ms.openlocfilehash: 5db8e2932a43a2d6c6cb8a99c4f32b37a4a5a3f8
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58094796"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050910"
 ---
 # <a name="configure-multivalue-routing-method-in-traffic-manager"></a>Configurar o método de roteamento de Múltiplos Valores no Gerenciador de Tráfego
 
@@ -59,7 +60,7 @@ Adicione dois endereços IP como pontos de extremidade externos ao perfil do Ger
 2. Em **Perfil do Gerenciador de Tráfego**, na seção **Configurações**, clique em **Pontos de Extremidade** e clique em **Adicionar**.
 3. Insira, ou selecione, as informações a seguir, aceite os padrões para as configurações restantes e, em seguida, selecione **OK**:
 
-    | Configuração                 | Valor                                              |
+    | Configuração                 | Value                                              |
     | ---                     | ---                                                |
     | Type                    | Ponto de extremidade externo                                   |
     | NOME           | myEndpoint1                                        |

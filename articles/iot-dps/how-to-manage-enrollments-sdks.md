@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 manager: arjmands
 ms.openlocfilehash: c73a40e46d86632732454ae16ea4f83e3ffa0281
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60627262"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-device-provisioning-service-sdks"></a>Como gerenciar registros de dispositivo com SDKs do Serviço de Provisionamento de Dispositivos do Azure
@@ -21,7 +21,7 @@ Um *registro de dispositivo* cria um registro de um único dispositivo ou um gru
 ## <a name="prerequisites"></a>Pré-requisitos
 * Obtenha a cadeia de conexão da instância do Serviço de Provisionamento de Dispositivos.
 * Obter os artefatos de segurança do dispositivo para o [mecanismo de atestado](concepts-security.md#attestation-mechanism) usado:
-    * [**TPM (Trusted Platform Module)**](/azure/iot-dps/concepts-security#trusted-platform-module):
+    * [**TPM (Trusted Platform Module)** ](/azure/iot-dps/concepts-security#trusted-platform-module):
         * Registro individual: ID do Registro e Chave de Endosso de TPM de um dispositivo físico ou do Simulador de TPM.
         * O grupo de registros não é aplicável ao atestado de TPM.
     * [**X.509**](/azure/iot-dps/concepts-security):

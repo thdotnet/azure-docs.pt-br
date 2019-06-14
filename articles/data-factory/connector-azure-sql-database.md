@@ -10,17 +10,17 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/29/2019
+ms.date: 06/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 231f44612b5e87afdf84f31d86c80be644fb4484
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 6ae1094a6e47d19af97fbbb1ce988d0756f33731
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154334"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67048567"
 ---
 # <a name="copy-data-to-or-from-azure-sql-database-by-using-azure-data-factory"></a>Copiar dados de ou para o Banco de Dados SQL do Azure usando o Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you use:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você usar:"]
 > * [Versão 1](v1/data-factory-azure-sql-connector.md)
 > * [Versão atual](connector-azure-sql-database.md)
 
@@ -64,7 +64,7 @@ Essas propriedades são suportadas por um serviço vinculado ao Banco de Dados S
 | servicePrincipalId | Especifique a ID do cliente do aplicativo. | Sim, quando você usa a autenticação do Azure AD com uma entidade de serviço. |
 | servicePrincipalKey | Especifique a chave do aplicativo. Marque esse campo como **SecureString** para armazená-lo com segurança no Data Factory ou [referencie um segredo armazenado no Cofre de Chaves do Azure](store-credentials-in-key-vault.md). | Sim, quando você usa a autenticação do Azure AD com uma entidade de serviço. |
 | tenant | Especifique as informações de locatário (domínio nome ou ID do Locatário) em que o aplicativo reside. Para recuperá-lo, passe o mouse no canto superior direito do portal do Azure. | Sim, quando você usa a autenticação do Azure AD com uma entidade de serviço. |
-| connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode usar o Tempo de Execução de Integração do Azure ou um tempo de execução de integração auto-hospedado se o seu armazenamento de dados estiver localizado em uma rede privada. Se não for especificado, ele usa o Integration Runtime padrão do Azure. | Não  |
+| connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode usar o Tempo de Execução de Integração do Azure ou um tempo de execução de integração auto-hospedado se o seu armazenamento de dados estiver localizado em uma rede privada. Se não for especificado, ele usa o Integration Runtime padrão do Azure. | Não |
 
 Para diferentes tipos de autenticação, consulte as seções a seguir sobre pré-requisitos e amostras JSON, respectivamente:
 
@@ -266,9 +266,9 @@ Para copiar dados do Banco de Dados SQL do Azure, defina a propriedade **tipo** 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | tipo | A propriedade **tipo** da origem da Atividade de Cópia deve ser definida como **SqlSource**. | Sim |
-| sqlReaderQuery | Utiliza a consulta SQL personalizada para ler os dados. Exemplo: `select * from MyTable`. | Não  |
-| sqlReaderStoredProcedureName | O nome do procedimento armazenado que lê dados da tabela de origem. A última instrução SQL deve ser uma instrução SELECT no procedimento armazenado. | Não  |
-| storedProcedureParameters | Parâmetros para o procedimento armazenado.<br/>Valores permitidos são pares de nome ou valor. Nomes e uso de maiúsculas e minúsculas de parâmetros devem corresponder aos nomes e o uso de maiúsculas e minúsculas dos parâmetros do procedimento armazenado. | Não  |
+| sqlReaderQuery | Utiliza a consulta SQL personalizada para ler os dados. Exemplo: `select * from MyTable`. | Não |
+| sqlReaderStoredProcedureName | O nome do procedimento armazenado que lê dados da tabela de origem. A última instrução SQL deve ser uma instrução SELECT no procedimento armazenado. | Não |
+| storedProcedureParameters | Parâmetros para o procedimento armazenado.<br/>Valores permitidos são pares de nome ou valor. Nomes e uso de maiúsculas e minúsculas de parâmetros devem corresponder aos nomes e o uso de maiúsculas e minúsculas dos parâmetros do procedimento armazenado. | Não |
 
 ### <a name="points-to-note"></a>Pontos a serem observados
 
@@ -364,22 +364,22 @@ GO
 
 ### <a name="azure-sql-database-as-the-sink"></a>Banco de Dados SQL do Azure como o coletor
 
+> [!TIP]
+> Saiba mais sobre os comportamentos de gravação com suporte, configurações e a prática recomendada de [práticas recomendadas para carregar dados no banco de dados SQL](#best-practice-for-loading-data-into-azure-sql-database).
+
 Para copiar dados para o banco de dados SQL do Azure, defina o **tipo** do coletor de propriedade na atividade de cópia para **SqlSink**. As seguintes propriedades são suportadas na seção Copy Activity **sink**:
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | type | O **tipo** do coletor de atividade de cópia deve ser definida como **SqlSink**. | Sim |
-| writeBatchSize | Número de linhas para inserções na tabela SQL **por lote**.<br/> O valor permitido é **inteiro** (número de linhas). Por padrão, o Data Factory determinar dinamicamente o tamanho de lote apropriado com base no tamanho da linha. | Não  |
-| writeBatchTimeout | O tempo de espera para o lote inserir operação seja concluída antes de expirar.<br/> O valor permitido é **timespan**. Exemplo: “00:30:00” (30 minutos). | Não  |
-| preCopyScript | Especifique uma consulta SQL para que a Atividade de Cópia seja executada antes de gravar dados no Banco de Dados SQL do Azure. É invocado apenas uma vez por cópia. Use essa propriedade para limpar os dados pré-carregados. | Não  |
-| sqlWriterStoredProcedureName | O nome do procedimento armazenado que define como aplicar dados de origem em uma tabela de destino. Um exemplo é fazer upserts ou transformar usando sua própria lógica de negócios. <br/><br/>Este procedimento armazenado é **chamado por lote**. Para operações que são executadas apenas uma vez e não têm nada a ver com dados de origem, use a `preCopyScript` propriedade. Exemplos de operações são excluir e truncar. | Não  |
-| storedProcedureParameters |Parâmetros para o procedimento armazenado.<br/>Valores permitidos são pares de nome e valor. Nomes e uso de maiúsculas e minúsculas de parâmetros devem corresponder aos nomes e o uso de maiúsculas e minúsculas dos parâmetros do procedimento armazenado. | Não  |
-| sqlWriterTableType | Especifique um nome do tipo de tabela a ser usado no procedimento armazenado. A Atividade de Cópia torna os dados movidos disponíveis em uma tabela temporária com este tipo de tabela. O código de procedimento armazenado pode mesclar os dados sendo copiados com dados existentes. | Não  |
+| writeBatchSize | Número de linhas para inserções na tabela SQL **por lote**.<br/> O valor permitido é **inteiro** (número de linhas). Por padrão, o Data Factory determinar dinamicamente o tamanho de lote apropriado com base no tamanho da linha. | Não |
+| writeBatchTimeout | O tempo de espera para o lote inserir operação seja concluída antes de expirar.<br/> O valor permitido é **timespan**. Exemplo: “00:30:00” (30 minutos). | Não |
+| preCopyScript | Especifique uma consulta SQL para que a Atividade de Cópia seja executada antes de gravar dados no Banco de Dados SQL do Azure. É invocado apenas uma vez por cópia. Use essa propriedade para limpar os dados pré-carregados. | Não |
+| sqlWriterStoredProcedureName | O nome do procedimento armazenado que define como aplicar dados de origem em uma tabela de destino. <br/>Este procedimento armazenado é **chamado por lote**. Para operações que somente executar uma vez e não têm nada a fonte de dados, por exemplo, excluir ou truncar, use o `preCopyScript` propriedade. | Não |
+| storedProcedureParameters |Parâmetros para o procedimento armazenado.<br/>Valores permitidos são pares de nome e valor. Nomes e uso de maiúsculas e minúsculas de parâmetros devem corresponder aos nomes e o uso de maiúsculas e minúsculas dos parâmetros do procedimento armazenado. | Não |
+| sqlWriterTableType | Especifique um nome do tipo de tabela a ser usado no procedimento armazenado. A Atividade de Cópia torna os dados movidos disponíveis em uma tabela temporária com este tipo de tabela. O código de procedimento armazenado pode mesclar os dados sendo copiados com dados existentes. | Não |
 
-> [!TIP]
-> Quando você copia dados para o Banco de Dados SQL do Azure, a Atividade de Cópia anexa dados à tabela do coletor por padrão. Para fazer um upsert ou lógica de negócios adicional, use o procedimento armazenado em **SqlSink**. Saiba mais detalhes em [Invocando o procedimento armazenado do SQL Sink](#invoking-stored-procedure-for-sql-sink).
-
-#### <a name="append-data-example"></a>Anexar exemplo de dados
+**Exemplo 1: anexar dados**
 
 ```json
 "activities":[
@@ -411,7 +411,7 @@ Para copiar dados para o banco de dados SQL do Azure, defina o **tipo** do colet
 ]
 ```
 
-#### <a name="invoke-a-stored-procedure-during-copy-for-upsert-example"></a>Chamar um procedimento armazenado durante a cópia para o exemplo do upsert
+**Exemplo 2: invocar um procedimento armazenado durante a cópia**
 
 Saiba mais detalhes em [Invocando o procedimento armazenado do SQL Sink](#invoking-stored-procedure-for-sql-sink).
 
@@ -450,84 +450,69 @@ Saiba mais detalhes em [Invocando o procedimento armazenado do SQL Sink](#invoki
 ]
 ```
 
-## <a name="identity-columns-in-the-target-database"></a>Colunas de identidade no banco de dados de destino
+## <a name="best-practice-for-loading-data-into-azure-sql-database"></a>Prática recomendada para carregar dados no banco de dados SQL
 
-Esta seção mostra como copiar dados de uma tabela de origem sem uma coluna de identidade para uma tabela de destino com uma coluna de identidade.
+Quando você copia dados para o banco de dados SQL, você pode exigir comportamento diferente de gravação:
 
-#### <a name="source-table"></a>Tabela de origem
+- **[Acrescente](#append-data)** : minha fonte de dados só tem novos registros;
+- **[Upsert](#upsert-data)** : minha fonte de dados tem inserções e atualizações.
+- **[Substituir](#overwrite-entire-table)** : Eu quero recarregue a tabela de dimensões todo cada vez;
+- **[Escrever com lógica personalizada](#write-data-with-custom-logic)** : Preciso de processamento extra antes da inserção final na tabela de destino.
+
+Consulte as seções respectivamente sobre como configurar no AAD e as práticas recomendadas.
+
+### <a name="append-data"></a>Acrescentar dados
+
+Esse é o comportamento padrão desse conector de coletor do banco de dados SQL e fazer de ADF **inserção em massa** para gravar em sua tabela com eficiência. Você pode simplesmente configurar a fonte e coletor adequadamente na atividade de cópia.
+
+### <a name="upsert-data"></a>Upsert data
+
+**Opção eu** (sugerido especialmente quando você tiver grandes dados a serem copiados): o **abordagem de alto desempenho a maioria dos** fazer upsert é o seguinte: 
+
+- Em primeiro lugar, aproveite um [tabela temporária no escopo do banco de dados](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql?view=azuresqldb-current#database-scoped-global-temporary-tables-azure-sql-database) para carregamento em massa todos os registros usando a atividade de cópia. Como escopo de operações no banco de dados temporário tabelas não são registradas, você pode carregar milhões de registros em segundos.
+- Executar uma atividade de procedimento armazenado no ADF para aplicar uma [mesclar](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql?view=azuresqldb-current) (ou inserir/atualizar) a instrução e use o temp de tabela como fonte para executar todas as atualiza ou insere como uma única transação, reduzindo a quantidade de idas e voltas e operações de log. No final da atividade de procedimento armazenado, a tabela temporária pode ser truncada para estar pronto para o próximo ciclo de upsert. 
+
+Por exemplo, no Azure Data Factory, você pode criar um pipeline com uma **atividade de cópia** encadeado com um **atividade de procedimento armazenado** em caso de sucesso. O primeiro copia dados de seu armazenamento de origem em uma tabela temporária do banco de dados SQL, diga " **##UpsertTempTable**" como nome da tabela no conjunto de dados, em seguida, o último invoca um procedimento armazenado para mesclar a fonte de dados da tabela temp no destino tabela e limpar a tabela temporária.
+
+![Upsert](./media/connector-azure-sql-database/azure-sql-database-upsert.png)
+
+No banco de dados, defina um procedimento armazenado com lógica de mesclagem, semelhante à seguinte, que é apontada da atividade de procedimento armazenado acima. Supondo que o destino **Marketing** tabela com três colunas: **ProfileID**, **estado**, e **categoria**, e fazer o upsert com base no **ProfileID** coluna.
 
 ```sql
-create table dbo.SourceTbl
-(
-       name varchar(100),
-       age int
-)
+CREATE PROCEDURE [dbo].[spMergeData]
+AS
+BEGIN
+    MERGE TargetTable AS target
+    USING ##UpsertTempTable AS source
+    ON (target.[ProfileID] = source.[ProfileID])
+    WHEN MATCHED THEN
+        UPDATE SET State = source.State
+    WHEN NOT matched THEN
+        INSERT ([ProfileID], [State], [Category])
+      VALUES (source.ProfileID, source.State, source.Category);
+    
+    TRUNCATE TABLE ##UpsertTempTable
+END
 ```
 
-#### <a name="destination-table"></a>Tabela de destino
+**Opção II:** como alternativa, você pode optar por [invocar um procedimento armazenado dentro de atividade de cópia](#invoking-stored-procedure-for-sql-sink), enquanto essa abordagem é executada para cada linha na tabela de origem em vez de em massa de aproveitamento de nota inserir como a abordagem padrão na atividade de cópia, portanto, ele não se ajustar para upsert em larga escala.
 
-```sql
-create table dbo.TargetTbl
-(
-       identifier int identity(1,1),
-       name varchar(100),
-       age int
-)
-```
+### <a name="overwrite-entire-table"></a>Substituir a tabela inteira
 
-> [!NOTE]
-> A tabela de destino possui uma coluna de identidade.
+Você pode configurar **preCopyScript** coletor de propriedade na atividade de cópia, nesse caso, para cada execução de atividade de cópia, ADF executa o script pela primeira vez, em seguida, execute a cópia para inserir os dados. Por exemplo, para substituir a tabela inteira pelos dados mais recentes, você pode especificar um script para excluir primeiro todos os registros, antes de carregar em massa os novos dados da origem.
 
-#### <a name="source-dataset-json-definition"></a>Definição de JSON do conjunto de dados de origem
+### <a name="write-data-with-custom-logic"></a>Gravar dados com lógica personalizada
 
-```json
-{
-    "name": "SampleSource",
-    "properties": {
-        "type": " AzureSqlTable",
-        "linkedServiceName": {
-            "referenceName": "TestIdentitySQL",
-            "type": "LinkedServiceReference"
-        },
-        "typeProperties": {
-            "tableName": "SourceTbl"
-        }
-    }
-}
-```
-
-#### <a name="destination-dataset-json-definition"></a>Definição de JSON de conjunto de dados de destino
-
-```json
-{
-    "name": "SampleTarget",
-    "properties": {
-        "structure": [
-            { "name": "name" },
-            { "name": "age" }
-        ],
-        "type": "AzureSqlTable",
-        "linkedServiceName": {
-            "referenceName": "TestIdentitySQL",
-            "type": "LinkedServiceReference"
-        },
-        "typeProperties": {
-            "tableName": "TargetTbl"
-        }
-    }
-}
-```
-
-> [!NOTE]
-> Sua tabela de origem e destino tem esquema diferente. 
-
-O alvo tem uma coluna adicional com uma identidade. Nesse cenário, você deve especificar a propriedade **estrutura** na definição do conjunto de dados de destino, que não inclui a coluna de identidade.
+Semelhante, conforme descrito em [Upsert dados](#upsert-data) seção, quando você precisar aplicar processamento extra antes da inserção final dos dados de origem na tabela de destino, é possível um) para grande escala, de carga para uma tabela temporária com escopo de banco de dados e depois invocar um procedimento armazenado, ou b) invocar um procedimento armazenado durante a cópia.
 
 ## <a name="invoking-stored-procedure-for-sql-sink"></a> Invocar o procedimento armazenado do coletor SQL
 
-Quando você copiar dados para o banco de dados SQL do Azure, você também pode configurar e invocar um procedimento armazenado especificado pelo usuário com parâmetros adicionais.
+Quando você copia dados para o banco de dados SQL, você também pode configurar e invocar um procedimento armazenado especificado pelo usuário com parâmetros adicionais.
 
-Você pode usar um procedimento armazenado quando os mecanismos internos de cópia não atendem à finalidade. Eles são normalmente usados quando um upsert, insert plus update ou processamento extra deve ser feito antes da inserção final dos dados de origem na tabela de destino. Alguns exemplos de processamento extra são colunas de mesclagem, pesquisa valores adicionais e inserção em mais de uma tabela.
+> [!TIP]
+> Invocação de procedimento armazenado processa a dados linha por linha, em vez de operação em massa, o que não é sugerida para cópia de grande escala. Saiba mais sobre [práticas recomendadas para carregar dados no banco de dados SQL](#best-practice-for-loading-data-into-azure-sql-database).
+
+Você pode usar um procedimento armazenado quando mecanismos de cópia internos não têm essa finalidade, por exemplo, aplicar processamento extra antes da inserção final dos dados de origem na tabela de destino. Alguns exemplos de processamento extra são colunas de mesclagem, pesquisa valores adicionais e inserção em mais de uma tabela.
 
 A amostra a seguir mostra como usar um procedimento armazenado para fazer um upsert em uma tabela no Banco de Dados SQL do Azure. Supondo que os dados de entrada e cada tabela **Marketing** do coletor tenham três colunas: **ProfileID**, **State** e **Category**. Faça o upsert com base na coluna **ProfileID** e aplique-o apenas a uma categoria específica.
 
@@ -608,9 +593,9 @@ Quando você copia dados de ou para o Banco de Dados SQL do Azure, os seguintes 
 | binary |Byte[] |
 | bit |Boolean |
 | char |String, Char[] |
-| date |Datetime |
-| Datetime |Datetime |
-| datetime2 |Datetime |
+| date |DateTime |
+| DateTime |DateTime |
+| datetime2 |DateTime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
@@ -624,18 +609,18 @@ Quando você copia dados de ou para o Banco de Dados SQL do Azure, os seguintes 
 | nvarchar |String, Char[] |
 | real |Single |
 | rowversion |Byte[] |
-| smalldatetime |Datetime |
+| smalldatetime |DateTime |
 | smallint |Int16 |
 | smallmoney |Decimal |
 | sql_variant |Object |
 | text |String, Char[] |
 | time |TimeSpan |
-|  timestamp |Byte[] |
+| timestamp |Byte[] |
 | tinyint |Byte |
 | uniqueidentifier |Guid |
 | varbinary |Byte[] |
 | varchar |String, Char[] |
-| Xml |Xml |
+| xml |xml |
 
 >[!NOTE]
 > Em mapas de tipos de dados para o tipo provisório Decimal, atualmente o ADF dá suporte a uma precisão de até 28. Se você tiver dados com precisão maior do que 28, considere a conversão da cadeia de caracteres em consulta SQL.

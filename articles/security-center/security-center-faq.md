@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2019
 ms.author: v-mohabe
-ms.openlocfilehash: de652f508f6946219627b3a3d51b148cbee58dbf
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 300d96a792663a32a326d5d01f281b77ccf9c4bf
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65966854"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050516"
 ---
 # <a name="azure-security-center-frequently-asked-questions-faq"></a>Perguntas frequentes sobre a Central de Segurança do Azure
 Estas perguntas frequentes estão relacionadas à Central de Segurança do Azure, um serviço que ajuda você a impedir, detectar e responder a ameaças com maior visibilidade e controle sobre a segurança dos recursos do Microsoft Azure.
@@ -58,7 +58,7 @@ Confira [Permissões na Central de Segurança do Azure](security-center-permissi
 A Central de segurança coleta dados de suas máquinas virtuais (VMs), conjuntos de dimensionamento de máquinas virtuais (VMSS), os contêineres de IaaS e computadores não Azure (incluindo local) para monitorar as ameaças e vulnerabilidades de segurança. Os dados são coletados usando o Microsoft Monitoring Agent, que lê várias configurações e logs de eventos relacionados à segurança do computador e copia os dados em seu workspace para serem analisados.
 
 ### <a name="am-i-billed-for-azure-monitor-logs-on-the-workspaces-created-by-security-center"></a>Sou cobrado para logs do Azure Monitor em espaços de trabalho criados pela Central de segurança?
- Não. Espaços de trabalho criados pela Central de segurança, embora sejam configurados para logs do Azure Monitor por cobrança de nó, não incorrerão em encargos de logs do Azure Monitor. A cobrança da Central de Segurança sempre tem base em sua política de segurança da Central de Segurança e nas soluções instaladas em um workspace:
+Não. Espaços de trabalho criados pela Central de segurança, embora sejam configurados para logs do Azure Monitor por cobrança de nó, não incorrerão em encargos de logs do Azure Monitor. A cobrança da Central de Segurança sempre tem base em sua política de segurança da Central de Segurança e nas soluções instaladas em um workspace:
 
 - **Camada gratuita**: a Central de Segurança instala a solução 'SecurityCenterFree' no workspace padrão. Você não será cobrado pela Camada gratuita.
 - **Camada Standard**: a Central de Segurança habilita a solução 'Security' no workspace padrão.
@@ -126,8 +126,10 @@ Para obter mais informações, consulte [provisionamento automático em caso de 
 
 ### E se eu tivesse um Microsoft Monitoring Agent é instalado diretamente na máquina, mas não como uma extensão (agente direto)?<a name="directagentinstalled"></a>
 Se o Microsoft Monitoring Agent estiver instalado diretamente na VM (não como uma extensão do Azure), a Central de segurança instalará a extensão Microsoft Monitoring Agent e pode atualizar o Microsoft Monitoring agent para a versão mais recente.
-O agente instalado continuará reportando para seus espaços de trabalho já configurados e Além disso, irá relatar ao espaço de trabalho configurado na Central de segurança (há suporte para hospedagem múltipla).
+O agente instalado continuará reportando para seus espaços de trabalho já configurados e Além disso, irá relatar ao espaço de trabalho configurado na Central de segurança (hospedagem múltipla é suportada em computadores Windows).
 Se o espaço de trabalho configurado é um espaço de trabalho do usuário (não a Central de segurança espaço de trabalho padrão), você precisará instalar o "segurança / relatórios de solução de"SecurityCenterFree"nele para a Central de segurança iniciar o processamento de eventos de VMs e computadores para que espaço de trabalho.
+
+Para máquinas Linux, múltipla Agent ainda não tiver sido suporte – portanto, se uma instalação de agente existente for detectada, o provisionamento automático não ocorrerá e a configuração do computador não será alterada.
 
 Para máquinas existentes em integrado de assinaturas para a Central de segurança antes de 2019-03-17, quando um agente existente será detectado, a extensão Microsoft Monitoring Agent não será instalada e a máquina não será afetada. Para esses computadores, consulte a recomendação "Resolver problemas de integridade do agente em seus computadores de monitoramento" para resolver os problemas de instalação do agente nessas máquinas
 

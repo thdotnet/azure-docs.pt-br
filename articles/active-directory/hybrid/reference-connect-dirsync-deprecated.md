@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 803fcc0161f2a092006e60db5a98f5bf18dce1c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60381171"
 ---
 # <a name="upgrade-windows-azure-active-directory-sync-and-azure-active-directory-sync"></a>Atualizar o Windows Azure Active Directory Sync e o Azure Active Directory Sync
@@ -63,7 +63,7 @@ A notificação também foi enviada para clientes que estão usando o Azure AD C
 O DirSync e o Azure AD Sync continuarão funcionando em 13 de abril de 2017.  No entanto, o Azure AD pode deixar de aceitar comunicações do DirSync e do Azure AD Sync após 31 de dezembro de 2017.
 
 **P: De quais versões do DirSync eu posso atualizar?**  
- Há suporte para atualizar a partir de qualquer versão do DirSync que está sendo usada atualmente. 
+Há suporte para atualizar a partir de qualquer versão do DirSync que está sendo usada atualmente. 
 
 **P: E quanto ao Microsoft Azure Active Directory Connector para FIM/MIM?**  
 O Conector do Azure AD para FIM/MIM **não** foi anunciado como preterido. Ele se encontra no **estado de congelamento de recursos**. Nenhuma funcionalidade nova foi adicionada e ele não recebe correções de bug. A Microsoft recomenda que os clientes que o utilizam planejem a migração para o Azure AD Connect. É altamente recomendável não iniciar novas implantações usando este recurso. Esse Conector será anunciado como preterido no futuro.

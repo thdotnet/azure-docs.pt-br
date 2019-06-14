@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: jingwang
 ms.openlocfilehash: 743dad6032547f8f535543413adff416efb56ac0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60640071"
 ---
 # <a name="copy-data-from-cassandra-using-azure-data-factory"></a>Copiar dados do Cassandra usando o Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](v1/data-factory-onprem-cassandra-connector.md)
 > * [Versão atual](connector-cassandra.md)
 
@@ -60,7 +60,7 @@ As propriedades a seguir têm suporte para o serviço vinculado do Cassandra:
 | authenticationType | Tipo de autenticação usado para se conectar ao banco de dados Cassandra.<br/>Valores permitidos são: **Básico** e **Anônimo**. |Sim |
 | username |Especifique o nome de usuário da conta de usuário. |Sim, se authenticationType for definida como Básica. |
 | password |Especifique a senha para a conta de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). |Sim, se authenticationType for definida como Básica. |
-| connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode usar o Integration Runtime auto-hospedado ou o Integration Runtime do Azure (se seu armazenamento de dados estiver publicamente acessível). Se não for especificado, ele usa o Integration Runtime padrão do Azure. |Não  |
+| connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode usar o Integration Runtime auto-hospedado ou o Integration Runtime do Azure (se seu armazenamento de dados estiver publicamente acessível). Se não for especificado, ele usa o Integration Runtime padrão do Azure. |Não |
 
 >[!NOTE]
 >Atualmente, não há suporte para a conexão ao Cassandra usando SSL.
@@ -244,7 +244,7 @@ As tabelas a seguir mostram as tabelas virtuais que normalizam novamente os dado
 
 | pk_int | Map_key | Map_value |
 | --- | --- | --- |
-| 1 |S1 |O  |
+| 1 |S1 |O |
 | 1 |S2 |b |
 | 3 |S1 |t |
 
@@ -252,10 +252,10 @@ As tabelas a seguir mostram as tabelas virtuais que normalizam novamente os dado
 
 | pk_int | StringSet_value |
 | --- | --- |
-| 1 |O  |
+| 1 |O |
 | 1 |b |
 | 1 |C |
-| 3 |O  |
+| 3 |O |
 | 3 |E |
 
 ## <a name="next-steps"></a>Próximas etapas

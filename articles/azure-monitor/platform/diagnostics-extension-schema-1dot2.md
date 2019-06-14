@@ -10,10 +10,10 @@ ms.date: 05/15/2017
 ms.author: robb
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: dae74e730d6e175fa3e447150adce4caecd3d7a3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60237829"
 ---
 # <a name="azure-diagnostics-12-configuration-schema"></a>Esquema de configuração do Azure Diagnostics 1.2
@@ -112,7 +112,7 @@ Define as configurações para que os dados de telemetria sejam coletados. A tab
 |**DiagnosticInfrastructureLogs**|Habilite a coleta de logs gerados pelo Diagnóstico do Azure. Os logs de infraestrutura de diagnóstico são úteis para solucionar problemas de sistema de diagnóstico. Os atributos opcionais são:<br /><br /> -                     **scheduledTransferLogLevelFilter** - configura o nível de severidade mínimo dos logs coletados.<br /><br /> -                     **scheduledTransferPeriod** - o intervalo entre transferências agendadas para o Armazenamento do Azure arredondado para o minuto mais próximo. O valor é um [XML "Tipo de Dados de Duração".](https://www.w3schools.com/xml/schema_dtypes_date.asp)|  
 |**Diretórios**|Habilita a coleta do conteúdo de um diretório, logs de solicitação de acesso com falha do IIS e/ou logs do IIS. Atributo opcional:<br /><br /> **scheduledTransferPeriod** - o intervalo entre transferências agendadas para o armazenamento, arredondado para o minuto mais próximo. O valor é um [XML "Tipo de Dados de Duração".](https://www.w3schools.com/xml/schema_dtypes_date.asp)|  
 |**EtwProviders**|Configura a coleta de eventos ETW do EventSource e/ou os provedores baseados no Manifesto ETW.|  
-|**Métricas**|Este elemento permite gerar uma tabela de contador de desempenho otimizada para consultas rápidas. Cada contador de desempenho definido no elemento **PerformanceCounters** é armazenado na tabela Métricas e também na tabela Contador de Desempenho. Atributo obrigatório:<br /><br /> **resourceId** - esta é a ID de recurso da Máquina Virtual na qual você está implantando o Diagnóstico do Azure. Obtenha o **resourceID** do [portal do Azure](https://portal.azure.com). Selecione **Procurar** -> **Grupos de Recursos** -> **<Nome\>**. Clique no bloco **Propriedades** e copie o valor do campo **ID**.|  
+|**Métricas**|Este elemento permite gerar uma tabela de contador de desempenho otimizada para consultas rápidas. Cada contador de desempenho definido no elemento **PerformanceCounters** é armazenado na tabela Métricas e também na tabela Contador de Desempenho. Atributo obrigatório:<br /><br /> **resourceId** - esta é a ID de recurso da Máquina Virtual na qual você está implantando o Diagnóstico do Azure. Obtenha o **resourceID** do [portal do Azure](https://portal.azure.com). Selecione **Procurar** -> **Grupos de Recursos** ->  **<Nome\>** . Clique no bloco **Propriedades** e copie o valor do campo **ID**.|  
 |**PerformanceCounters**|Habilita a coleta de contadores de desempenho. Atributo opcional:<br /><br /> **scheduledTransferPeriod** - o intervalo entre transferências agendadas para o armazenamento, arredondado para o minuto mais próximo. O valor é um [XML "Tipo de Dados de Duração".](https://www.w3schools.com/xml/schema_dtypes_date.asp)|  
 |**WindowsEventLog**|Habilita a coleta de Logs de Eventos do Windows. Atributo opcional:<br /><br /> **scheduledTransferPeriod** - o intervalo entre transferências agendadas para o armazenamento, arredondado para o minuto mais próximo. O valor é um [XML "Tipo de Dados de Duração".](https://www.w3schools.com/xml/schema_dtypes_date.asp)|  
 
@@ -185,7 +185,7 @@ Define as configurações para que os dados de telemetria sejam coletados. A tab
 
 |Nome do elemento|DESCRIÇÃO|  
 |------------------|-----------------|  
-|**PerformanceCounterConfiguration**|Os atributos a seguir são obrigatórios:<br /><br /> -                     **counterSpecifier** - o nome do contador de desempenho. Por exemplo, `\Processor(_Total)\% Processor Time`. Para obter uma lista de contadores de desempenho no seu host, execute o comando `typeperf`.<br /><br /> -                     **sampleRate** - Com que frequência o contador deve ser testado.<br /><br /> Atributo opcional:<br /><br /> **unit** - a unidade de medida do contador.|  
+|**PerformanceCounterConfiguration**|Os atributos a seguir são obrigatórios:<br /><br /> -                     **counterSpecifier** - o nome do contador de desempenho. Por exemplo: `\Processor(_Total)\% Processor Time`. Para obter uma lista de contadores de desempenho no seu host, execute o comando `typeperf`.<br /><br /> -                     **sampleRate** - Com que frequência o contador deve ser testado.<br /><br /> Atributo opcional:<br /><br /> **unit** - a unidade de medida do contador.|  
 
 ## <a name="performancecounterconfiguration-element"></a>Elemento PerformanceCounterConfiguration  
  A tabela abaixo descreve os elementos filhos:  
@@ -199,5 +199,5 @@ Define as configurações para que os dados de telemetria sejam coletados. A tab
 
 |Nome do elemento|DESCRIÇÃO|  
 |------------------|-----------------|  
-|**DataSource**|Os logs de Eventos do Windows a serem coletados. Atributo obrigatório:<br /><br /> **name** - a consulta XPath que descreve os eventos do windows a serem coletados. Por exemplo: <br /><br /> `Application!*[System[(Level >= 3)]], System!*[System[(Level <=3)]], System!*[System[Provider[@Name='Microsoft Antimalware']]], Security!*[System[(Level >= 3]]`<br /><br /> Para coletar todos os eventos, especifique "*".|
+|**DataSource**|Os logs de Eventos do Windows a serem coletados. Atributo obrigatório:<br /><br /> **name** - a consulta XPath que descreve os eventos do windows a serem coletados. Por exemplo:<br /><br /> `Application!*[System[(Level >= 3)]], System!*[System[(Level <=3)]], System!*[System[Provider[@Name='Microsoft Antimalware']]], Security!*[System[(Level >= 3]]`<br /><br /> Para coletar todos os eventos, especifique "*".|
 

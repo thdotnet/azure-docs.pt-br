@@ -14,10 +14,10 @@ ms.date: 01/11/2018
 ms.author: lizross
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f113c42ff45811f31eb77a92873fb187dd51ea6b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60530885"
 ---
 # <a name="register-for-self-service-password-reset"></a>Registro de redefinição de senha de autoatendimento
@@ -56,7 +56,7 @@ Seus administradores podem exigir que você confirme os métodos de autenticaç�
 | Recebo uma mensagem de erro "sua conta não está habilitada para redefinição de senha" depois de inserir a ID de usuário | Sua conta não está habilitada para redefinição de senha. <br> <br> A equipe de TI não configurou sua conta para usar esse serviço. <br> <br> Se desejar, podemos pode contatar um administrador na sua organização para redefinir a senha para você. | Essa mensagem aparece porque a equipe de TI não habilitou a redefinição de senha para a organização usando o link **Não é possível acessar sua conta** ou não licenciou você para usar o recurso. <br> <br> Para redefinir sua senha, selecione o link **Contate um administrador**. Um email será enviado para a equipe de TI da sua empresa. O email informa o desejo de redefinir sua senha no Office 365, para que eles possam habilitar o recurso para você. |
 | Recebo uma mensagem de erro "não foi possível verificar sua conta" depois de inserir a ID de usuário | Não foi possível verificar sua conta. <br> <br> Se desejar, podemos pode contatar um administrador na sua organização para redefinir a senha para você. | A mensagem aparece porque a redefinição de senha está habilitada, mas você não se registrou para usar o serviço. Para se registrar na redefinição de senha, vá para a [página de registro de redefinição de senha](https://aka.ms/ssprsetup) depois de recuperar o acesso à sua conta. <br> <br> Para redefinir a senha, selecione o link **Contate um administrador** e envie um email à equipe de TI da empresa. |
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Alterar a senha usando a redefinição de senha de autoatendimento](active-directory-passwords-update-your-own-password.md)
 * [Página de registro de redefinição de senha](https://aka.ms/ssprsetup)

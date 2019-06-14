@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 08/01/2018
 ms.author: ergreenl
 ms.openlocfilehash: df189e405dcd5277c1ccbd94e9d5d302660be79b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60359770"
 ---
 # <a name="enable-secure-ldap-ldaps-for-an-azure-ad-domain-services-managed-domain"></a>Habilitar o LDAPS (LDAP Seguro) para um domínio gerenciado do Azure AD Domain Services
@@ -31,7 +31,7 @@ Completar a [Tarefa 2 – exportar o certificado LDAP seguro para um arquivo .PF
 ## <a name="task-3-enable-secure-ldap-for-the-managed-domain-using-the-azure-portal"></a>Tarefa 3: Habilitar o LDAP seguro para o domínio gerenciado usando o portal do Azure
 Execute as seguintes etapas de configuração para habilitar o LDAP seguro:
 
-1. Navegue até o **[Portal do Azure](https://portal.azure.com)**.
+1. Navegue até o **[Portal do Azure](https://portal.azure.com)** .
 
 2. Pesquise por “domain services” na caixa de pesquisa **Pesquisar recursos**. Selecione **Azure AD Domain Services** nos resultados da pesquisa. A página **Azure AD Domain Services** lista seu domínio gerenciado.
 

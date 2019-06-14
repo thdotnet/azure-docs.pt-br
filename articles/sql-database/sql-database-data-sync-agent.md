@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/20/2018
 ms.openlocfilehash: adb8917605a00208b328e7fd15f96d28c7838988
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60201630"
 ---
 # <a name="data-sync-agent-for-azure-sql-data-sync"></a>Agente de Sincronização de Dados para a Sincronização de Dados SQL
@@ -148,7 +148,7 @@ Você descobriu que o agente não está sendo executado em um computador que hos
 - **Resolução**. Atualize a senha do agente para a senha atual do servidor:
 
   1. Localize o serviço do agente do cliente da Sincronização de Dados SQL.  
-     a. Selecione **Iniciar**.  
+    a. Selecione **Iniciar**.  
     b. Insira **services.msc** na caixa de pesquisa.  
     c. Nos resultados da pesquisa, selecione **Serviços**.  
     d. Na janela **Serviços**, role até a entrada de **Agente da Sincronização de Dados SQL**.  
@@ -214,7 +214,7 @@ Se um ponto de extremidade local (ou seja, um banco de dados) registrado em um a
 
   1. Saia do aplicativo.  
   1. Abra o Painel de Serviços de Componentes.  
-     a. Na caixa de pesquisa da barra de tarefas, digite **services.msc**.  
+    a. Na caixa de pesquisa da barra de tarefas, digite **services.msc**.  
     b. Clique duas vezes em **Serviços** nos resultados da pesquisa.  
   1. Pare o serviço de **Sincronização de Dados SQL**.
   1. Reinicie o serviço de **Sincronização de Dados SQL**.  

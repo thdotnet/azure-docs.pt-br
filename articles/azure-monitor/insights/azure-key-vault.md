@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: bwren
 ms.openlocfilehash: 481b643f2f7201a2a1745c7aef9ddd81883da020
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60498303"
 ---
 # <a name="azure-key-vault-analytics-solution-in-azure-monitor"></a>Solução de Azure Key Vault Analytics no Azure Monitor
@@ -103,7 +103,7 @@ Depois de clicar na **Key Vault Analytics** lado a lado, você pode exibir resum
 ## <a name="azure-monitor-log-records"></a>Registros de log do Azure Monitor
 A solução de Cofre de Chaves do Azure analisa os registros que têm um tipo de **KeyVaults** que são coletados de [logs de AuditEvent](../../key-vault/key-vault-logging.md) no Diagnóstico do Azure.  As propriedades desses registros são descritas na tabela a seguir:  
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Description |
 |:--- |:--- |
 | Type |*AzureDiagnostics* |
 | SourceSystem |*As tabelas* |
@@ -145,7 +145,7 @@ Para usar a solução atualizada:
    + Para qualquer campo que tenha um sufixo de \_o no nome, os dados são divididos em campos individuais com base nos nomes de campos aninhados. Por exemplo, o UPN do chamador é armazenado em um campo `identity_claim_http_schemas_xmlsoap_org_ws_2005_05_identity_claims_upn_s`
    + O campo CallerIpAddress mudou para CallerIPAddress
    + O campo RemoteIPCountry não está mais presente
-4. Remova a solução *Análise do Key Vault (preterida)*. Se você estiver usando o PowerShell, use `Set-AzureOperationalInsightsIntelligencePack -ResourceGroupName <resource group that the workspace is in> -WorkspaceName <name of the log analytics workspace> -IntelligencePackName "KeyVault" -Enabled $false`
+4. Remova a solução *Análise do Key Vault (preterida)* . Se você estiver usando o PowerShell, use `Set-AzureOperationalInsightsIntelligencePack -ResourceGroupName <resource group that the workspace is in> -WorkspaceName <name of the log analytics workspace> -IntelligencePackName "KeyVault" -Enabled $false`
 
 Os dados coletados antes da alteração não estão visíveis na nova solução. Você pode continuar a consultar esses dados usando os nomes de campo e tipo antigos.
 

@@ -12,10 +12,10 @@ ms.date: 11/09/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: be75490e4e86956337ce38133df6095790b3a374
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60303632"
 ---
 # <a name="explore-data-in-sql-server-virtual-machine-on-azure"></a>Explorar dados na Máquina Virtual do SQL Server no Azure
@@ -41,7 +41,7 @@ Aqui estão alguns scripts de SQL de exemplo que podem ser usados para explorar 
 3. Obter o número de níveis na combinação de duas colunas categóricas 
    
     `select <column_a>, <column_b>,count(*) from <tablename> group by <column_a>, <column_b>`
-4. Obter a distribuição de colunas numéricas 
+4. Obter a distribuição de colunas numéricas
    
     `select <column_name>, count(*) from <tablename> group by <column_name>`
 

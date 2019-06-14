@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: bwren
 ms.openlocfilehash: 8fcab1ead4ab6135e715dc173829178e43f8af2a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60236897"
 ---
 # <a name="windows-event-log-data-sources-in-azure-monitor"></a>Fontes de dados do log de eventos do Windows no Azure Monitor
@@ -28,7 +28,7 @@ Logs de eventos do Windows são uma das mais comuns [fontes de dados](agent-data
 ## <a name="configuring-windows-event-logs"></a>Configurando os logs de eventos do Windows
 Configure os logs de Eventos do Windows no [menu Dados em Configurações Avançadas](agent-data-sources.md#configuring-data-sources).
 
-O Azure Monitor coleta apenas os eventos dos logs de eventos do Windows especificados nas configurações.  Você pode adicionar um novo log de evento digitando o nome do log e clicando em **+**.  Para cada log, somente eventos com as severidades selecionadas são coletados.  Marque as severidades para o log específico que você deseja coletar.  Você não pode fornecer quaisquer critérios adicionais para filtrar eventos.
+O Azure Monitor coleta apenas os eventos dos logs de eventos do Windows especificados nas configurações.  Você pode adicionar um novo log de evento digitando o nome do log e clicando em **+** .  Para cada log, somente eventos com as severidades selecionadas são coletados.  Marque as severidades para o log específico que você deseja coletar.  Você não pode fornecer quaisquer critérios adicionais para filtrar eventos.
 
 Conforme você digita o nome de um log de eventos, o Azure Monitor fornece sugestões de nomes comuns de log de eventos. Se o log que você deseja adicionar não aparecer na lista, você ainda poderá adicioná-lo digitando o nome completo do log. Você pode encontrar o nome completo do log usando o visualizador de eventos. No visualizador de eventos, abra a página *Propriedades* para o log e copie a cadeia de caracteres do campo *Nome Completo*.
 
@@ -56,15 +56,15 @@ Os registros de eventos do Windows têm um tipo de **Evento** e têm as propried
 | ParameterXml |Valores de parâmetro de evento em formato XML. |
 | ManagementGroupName |Nome do grupo de gerenciamento para agentes do System Center Operations Manager.  Para outros agentes, esse valor é `AOI-<workspace ID>` |
 | RenderedDescription |Descrição do evento com valores de parâmetro |
-| Fonte |Fonte do evento. |
-| SourceSystem |Tipo de agente do qual o evento foi coletado. <br> OpsManager - agente do Windows: conexão direta ou Operations Manager gerenciado <br>  Linux: todos os agentes do Linux  <br>  AzureStorage: Diagnóstico do Azure |
+| source |Fonte do evento. |
+| SourceSystem |Tipo de agente do qual o evento foi coletado. <br> OpsManager - agente do Windows: conexão direta ou Operations Manager gerenciado <br> Linux: todos os agentes do Linux  <br> AzureStorage: Diagnóstico do Azure |
 | TimeGenerated |Data e hora em que o evento foi criado no Windows. |
 | UserName |Nome de usuário da conta que registrou o evento. |
 
 ## <a name="log-queries-with-windows-events"></a>Consultas de log com Eventos do Windows
 A tabela a seguir fornece diferentes exemplos de consultas de log que recuperam registros de Eventos do Windows.
 
-| Consultar | DESCRIÇÃO |
+| Consulta | DESCRIÇÃO |
 |:---|:---|
 | Evento |Todos os eventos do Windows. |
 | Event &#124; where EventLevelName == "error" |Todos os eventos do Windows com severidade de erro. |
@@ -72,7 +72,7 @@ A tabela a seguir fornece diferentes exemplos de consultas de log que recuperam 
 | Event &#124; where EventLevelName == "error" &#124; summarize count() by Source |Contagem de eventos de erro do Windows por fonte. |
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 * Configure o Log Analytics para coletar outras [fontes de dados](agent-data-sources.md) para análise.
 * Saiba mais sobre [registrar consultas](../log-query/log-query-overview.md) para analisar os dados coletados de fontes de dados e soluções.  
 * Configure a [coleta de contadores de desempenho](data-sources-performance-counters.md) de seus agentes do Windows.

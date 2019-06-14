@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/02/2019
+ms.date: 10/06/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 8fed3ce98b23c5ac1cc97b88a278c5946f06af8e
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: b1280274122800147c442b73b360bc5141530a0e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65968762"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050588"
 ---
 # <a name="data-collection-in-azure-security-center"></a>Coleta de dados na Central de Segurança do Azure
-A Central de segurança coleta dados de suas máquinas virtuais (VMs), os conjuntos de dimensionamento de máquina virtual, os contêineres de IaaS e os computadores não Azure (incluindo local) para monitorar as ameaças e vulnerabilidades de segurança. Os dados são coletados usando o Microsoft Monitoring Agent, que lê várias configurações e logs de eventos relacionados à segurança do computador e copia os dados em seu workspace para serem analisados. Exemplos desses dados são: tipo e versão do sistema operacional, logs do sistema operacional (logs de eventos do Windows), processos em execução, nome do computador, endereços IP e usuário conectado. O agente Microsoft Monitoring Agent também copia os arquivos de despejo para seu espaço de trabalho.
+A Central de segurança coleta dados de suas máquinas virtuais (VMs), conjuntos de dimensionamento de máquinas virtuais, contêineres de IaaS e computadores não Azure (incluindo local) para monitorar as ameaças e vulnerabilidades de segurança. Os dados são coletados usando o Microsoft Monitoring Agent, que lê várias configurações e logs de eventos relacionados à segurança do computador e copia os dados em seu workspace para serem analisados. Exemplos desses dados são: tipo e versão do sistema operacional, logs do sistema operacional (logs de eventos do Windows), processos em execução, nome do computador, endereços IP e usuário conectado. O agente Microsoft Monitoring Agent também copia os arquivos de despejo para seu espaço de trabalho.
 
 A coleta de dados é necessária para fornecer visibilidade sobre atualizações ausentes, definições de segurança do sistema operacional configuradas incorretamente, habilitação da proteção de ponto de extremidade e detecções de ameaças e da integridade. 
 
@@ -31,12 +31,11 @@ Este artigo fornece diretrizes sobre como instalar um Microsoft Monitoring Agent
 > [!NOTE]
 > - Coleta de dados é necessário apenas para recursos de computação (máquinas virtuais, conjuntos de dimensionamento de máquinas virtuais, contêineres de IaaS e computadores não Azure). Você pode aproveitar a Central de Segurança do Azure mesmo se não provisionar agentes, no entanto, a segurança será limitada e as funcionalidades listadas acima não terão suporte.  
 > - Para ver a lista das plataformas compatíveis, consulte [Plataformas compatíveis com a Central de Segurança do Azure](security-center-os-coverage.md).
-> - Atualmente, a coleta de dados não é compatível com o conjunto de dimensionamento de máquinas virtuais.
-> - Armazenando dados no Log Analytics, independentemente de você usar um espaço de trabalho novo ou existente, poderá incorrer em encargos adicionais para o armazenamento de dados, consulte a página de preços para obter mais detalhes.
+> - Armazenamento de dados no Log Analytics, independentemente de você usar um espaço de trabalho novo ou existente, pode incorrer em encargos adicionais para o armazenamento de dados. Para obter mais detalhes, consulte o [página de preços](https://azure.microsoft.com/pricing/details/security-center/).
 
 ## Habilitar provisionamento automático do Microsoft Monitoring Agent <a name="auto-provision-mma"></a>
 
-Para coletar os dados dos computadores, instale o Microsoft Monitoring Agent.  A instalação do agente pode ser realizada automaticamente (recomendado) ou você pode optar por instalar o agente manualmente.  
+Para coletar os dados de computadores, você deve ter o Microsoft Monitoring Agent instalado.  Instalação do agente pode ser feita automaticamente (recomendado) ou você pode instalar o agente manualmente.  
 
 >[!NOTE]
 > O provisionamento automático é desativado por padrão. Para configurar a Central de Segurança para instalar o provisionamento automático por padrão, defina-o como **Ativado**.
@@ -88,9 +87,7 @@ Para selecionar um workspace criados pela Central de Segurança:
 
 > [!NOTE]
 > O tipo de preço do Log Analytics para workspaces criados pela Central de Segurança não afeta a cobrança da Central de Segurança. A cobrança da Central de Segurança sempre se baseia na sua política de segurança da Central de Segurança e nas soluções instaladas em um workspace. Para a Camada gratuita, a Central de Segurança instala a solução *SecurityCenterFree* no workspace padrão. Para a Camada Standard, a Central de Segurança habilita a solução *Security* no workspace padrão.
-> O armazenamento de dados no Log Analytics pode gerar cobranças adicionais pelo armazenamento de dados, consulte a página de preços para obter mais detalhes.
-
-Para saber mais sobre preços, confira [preços da Central de Segurança](https://azure.microsoft.com/pricing/details/security-center/).
+> Armazenamento de dados no Log Analytics pode incorrer em encargos adicionais para o armazenamento de dados. Para obter mais detalhes, consulte o [página de preços](https://azure.microsoft.com/pricing/details/security-center/).
 
 Para obter mais informações sobre as contas existentes do log analytics, consulte [os clientes de análise de log existente](security-center-faq.md#existingloganalyticscust).
 
@@ -102,7 +99,7 @@ Para usar o espaço de trabalho do Log Analytics existente, você precisará ter
 
 > [!NOTE]
 > Soluções habilitadas no workspace existente serão aplicadas às VMs do Azure que estão conectados a ele. Para soluções pagas, isso pode resultar em cobranças adicionais. Por questões de considerações de privacidade de dados, verifique se seu workspace selecionado está na região geográfica correta.
-> Armazenamento de dados no log analytics pode incorrer em encargos adicionais para o armazenamento de dados, consulte a página de preços para obter mais detalhes.
+> Armazenamento de dados no log analytics pode incorrer em encargos adicionais para o armazenamento de dados. Para obter mais detalhes, consulte o [página de preços](https://azure.microsoft.com/pricing/details/security-center/).
 
 Para selecionar um espaço de trabalho do Log Analytics existente:
 
@@ -134,7 +131,7 @@ Para selecionar um espaço de trabalho do Log Analytics existente:
 
 5. Selecione o tipo de preço para o workspace desejado que você pretende definir no Microsoft Monitoring Agent. <br>Para usar um workspace existente, defina o tipo de preço do workspace. Isso instalará uma solução da Central de Segurança no workspace, se ainda não existir.
 
-     a.  No menu principal da Central de Segurança, selecione **Política de segurança**.
+    a.  No menu principal da Central de Segurança, selecione **Política de segurança**.
      
     b.  Selecione o Espaço de Trabalho desejado no qual você pretende conectar o agente, clicando em **Editar configurações** na coluna Configurações da assinatura desejada na lista.
         ![Selecione o workspace][8] c. Defina o tipo de preço.
@@ -150,7 +147,7 @@ Ao selecionar um workspace para armazenar os dados, todos os workspaces em todas
 ## <a name="data-collection-tier"></a>Camada de coleta de dados
 A seleção de uma camada de coleta de dados na Central de Segurança do Azure afetará apenas o armazenamento de eventos de segurança no espaço de trabalho do Log Analytics. O agente do Log Analytics ainda será colete e analise os eventos de segurança necessários para detecções de ameaças da Central de segurança do Azure, independentemente de qual camada de eventos de segurança que você optar por armazenar em seu espaço de trabalho do Log Analytics (se houver). A escolha de armazenar eventos de segurança na área de trabalho permitirá investigar, pesquisar e auditar esses eventos na área de trabalho. 
 > [!NOTE]
-> Armazenamento de dados no log analytics pode incorrer em encargos adicionais para o armazenamento de dados, consulte a página de preços para obter mais detalhes.
+> Armazenamento de dados no log analytics pode incorrer em encargos adicionais para o armazenamento de dados. Para obter mais detalhes, consulte o [página de preços](https://azure.microsoft.com/pricing/details/security-center/).
 > 
 > É possível escolher a diretiva de filtragem correta para assinaturas e espaços de trabalho de quatro conjuntos de eventos a serem armazenados na área de trabalho: 
 
@@ -205,8 +202,10 @@ Os casos de uso a seguir especificam como o provisionamento automático funciona
 
 - Microsoft Monitoring Agent estiver instalado no computador, mas não como uma extensão (agente direto)<br>
 Se o Microsoft Monitoring Agent estiver instalado diretamente na VM (não como uma extensão do Azure), a Central de segurança instalará a extensão Microsoft Monitoring Agent e pode atualizar o Microsoft Monitoring agent para a versão mais recente.
-O agente instalado continuará reportando para seus espaços de trabalho já configurados e Além disso, irá relatar ao espaço de trabalho configurado na Central de segurança (há suporte para hospedagem múltipla).
+O agente instalado continuará reportando para seus espaços de trabalho já configurados e Além disso, irá relatar ao espaço de trabalho configurado na Central de segurança (hospedagem múltipla é suportada em computadores Windows).
 Se o espaço de trabalho configurado é um espaço de trabalho do usuário (não a Central de segurança espaço de trabalho padrão), você precisará instalar o "segurança / solução"securityFree"nele para a Central de segurança iniciar o processamento de eventos de VMs e computadores relatando para esse espaço de trabalho.<br>
+<br>
+Para máquinas Linux, múltipla Agent ainda não tiver sido suporte – portanto, se uma instalação de agente existente for detectada, o provisionamento automático não ocorrerá e a configuração do computador não será alterada.
 <br>
 Para máquinas existentes em integrado de assinaturas para a Central de segurança antes de 2019-03-17, quando um agente existente será detectado, a extensão Microsoft Monitoring Agent não será instalada e a máquina não será afetada. Para esses computadores, consulte a recomendação "Resolver problemas de integridade do agente em seus computadores de monitoramento" para resolver os problemas de instalação do agente nessas máquinas.
 
@@ -251,7 +250,7 @@ Há diversas maneiras de instalar o Microsoft Monitoring Agent manualmente. Veri
 1. Selecione o Provisionamento automático – Desativado.
 2. Crie um workspace e defina o tipo de preço para o workspace que você pretende definir no Microsoft Monitoring Agent:
 
-    a.  No menu principal da Central de Segurança, selecione **Política de segurança**.
+   a.  No menu principal da Central de Segurança, selecione **Política de segurança**.
      
    b.  Selecione o Workspace ao qual você pretende conectar o agente. Verifique se que o workspace está na mesma assinatura usada na Central de Segurança e se você tem permissões de leitura/gravação no workspace.
        ![Selecione o workspace][8]
@@ -263,7 +262,7 @@ Há diversas maneiras de instalar o Microsoft Monitoring Agent manualmente. Veri
 
 4. Se você quiser implantar os agentes em novas VMs usando um modelo do Resource Manager, instale a extensão de máquina virtual do OMS:
 
-    a.  [Instalar a extensão da máquina virtual do OMS para Windows](../virtual-machines/extensions/oms-windows.md)
+   a.  [Instalar a extensão da máquina virtual do OMS para Windows](../virtual-machines/extensions/oms-windows.md)
     
    b.  [Instalar a extensão da máquina virtual do OMS para Linux](../virtual-machines/extensions/oms-linux.md)
 5. Para implantar as extensões em VMs existentes, siga as instruções em [Coletar dados sobre Máquinas Virtuais do Microsoft Azure](../azure-monitor/learn/quick-collect-azurevm.md).

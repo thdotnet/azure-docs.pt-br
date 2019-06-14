@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b42a6b667a8708aeb2edeb0c80a5ab747b6c60a9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60246082"
 ---
 # <a name="azure-ad-connect-sync-understanding-the-default-configuration"></a>Sincronização do Azure AD Connect: Noções básicas sobre a configuração padrão
@@ -52,7 +52,7 @@ Os seguintes objetos de usuário **não** estão sincronizados ao AD do Azure:
   * `(Left([sAMAccountName], 4) = "CAS_" && (InStr([sAMAccountName], "}")> 0))`
 * Não sincronize objetos que não funcionem no Exchange Online.
   `CBool(IIF(IsPresent([msExchRecipientTypeDetails]),BitAnd([msExchRecipientTypeDetails],&H21C07000) > 0,NULL))`  
-   Essa máscara de bit (& H21C07000) filtraria os objetos a seguir:
+  Essa máscara de bit (& H21C07000) filtraria os objetos a seguir:
   * Pasta pública habilitada para Email (em versão prévia desde a versão 1.1.524.0)
   * Caixa de correio do Atendedor do sistema
   * Caixa de correio do banco de dados de correio (caixa de correio do sistema)
@@ -179,7 +179,7 @@ As regras de associação são avaliadas apenas uma vez. Quando um objeto de esp
 
 Ao serem avaliadas Regras de Sincronização, apenas uma Regra de Sincronização com as regras de associação definidas deve estar no escopo. Se forem encontradas várias Regras de Sincronização com regras de associação para um objeto, um erro será gerado. Por esse motivo, a prática recomendada é ter apenas uma Regra de Sincronização com associação definida quando várias Regras de Sincronização estão no escopo de um objeto. Na configuração pronta para uso para a sincronização do Azure AD Connect, essas regras podem ser encontradas examinando-se o nome para localizar aquelas com a palavra **Join** no fim do nome. Uma Regra de Sincronização sem regras de associação definidas aplicará os fluxos de atributo se outra Regra de Sincronização tiver associado os objetos ou provisionado um novo objeto no destino.
 
-Se você examinar a figura acima, poderá ver que a regra está tentando associar **objectSID** a **msExchMasterAccountSid** (Exchange) e a **msRTCSIP OriginatorSid (Lync)**, que é o que esperamos em uma topologia de floresta de recurso de conta. Você encontrará a mesma regra em todas as florestas. Pressupõe-se que cada floresta possa ser uma conta ou um recurso de floresta. Essa configuração também funcionará se você tiver contas que residam em uma única floresta e não precisem ser unidas.
+Se você examinar a figura acima, poderá ver que a regra está tentando associar **objectSID** a **msExchMasterAccountSid** (Exchange) e a **msRTCSIP OriginatorSid (Lync)** , que é o que esperamos em uma topologia de floresta de recurso de conta. Você encontrará a mesma regra em todas as florestas. Pressupõe-se que cada floresta possa ser uma conta ou um recurso de floresta. Essa configuração também funcionará se você tiver contas que residam em uma única floresta e não precisem ser unidas.
 
 #### <a name="transformations"></a>Transformações
 A seção de transformação define todos os fluxos de atributo que serão aplicados ao objeto de destino quando os objetos forem associados e o filtro de escopo for satisfeito. Voltando à Regra de Sincronização **Entrada do AD – usuário AccountEnabled** , você encontra as seguintes transformações:

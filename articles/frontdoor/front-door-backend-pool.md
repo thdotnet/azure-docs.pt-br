@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
 ms.openlocfilehash: 543e237a4a8390a8ebf74d0eb2a1f4be41dcd911
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60193702"
 ---
 # <a name="backends-and-backend-pools-in-azure-front-door-service"></a>Back-ends e pools de back-end no Azure Front Door Service
@@ -71,7 +71,7 @@ Serviço de porta da frente envia solicitações periódicas de investigação H
 
 - **Protocolo**. Define se deseja enviar as solicitações de investigação de integridade do serviço de porta da frente ao seu back-ends com o protocolo HTTP ou HTTPS.
 
-- **Intervalo (segundos)**. Define a frequência de investigações de integridade para seu back-ends ou os intervalos em que cada um dos ambientes da frente envia uma investigação.
+- **Intervalo (segundos)** . Define a frequência de investigações de integridade para seu back-ends ou os intervalos em que cada um dos ambientes da frente envia uma investigação.
 
     >[!NOTE]
     >Para failovers mais rápidos, defina o intervalo como um valor mais baixo. Quanto menor o valor, quanto maior o volume de investigação de integridade recebem seu back-ends. Por exemplo, se o intervalo é definido como 30 segundos com ambientes de porta da frente de 90 ou POPs globalmente, cada back-end receberá sobre solicitações de investigação de 3 a 5 por segundo.
@@ -85,7 +85,7 @@ Configurações de balanceamento de carga para o pool de back-end definem como a
 
 - **Tamanho da amostra bem-sucedida**. Define o tamanho da amostra como mencionado anteriormente, o número de amostras bem-sucedidas necessárias para chamar o back-end íntegro. Por exemplo, suponha que um intervalo de investigação de integridade da frente é de 30 segundos, tamanho da amostra é 5 e tamanho da amostra bem-sucedida é 3. Investigações de cada vez que podemos avaliar a integridade para o back-end, vamos examinar as últimas cinco amostras mais de 150 segundos (5 x 30). Pelo menos três investigações bem-sucedidas são necessárias para declarar o back-end íntegro.
 
-- **Sensibilidade de latência (latência adicional)**. Define se deseja que a porta da frente para enviar a solicitação ao back-ends dentro do intervalo de sensibilidade de medida de latência ou encaminhar a solicitação para o back-end mais próximo.
+- **Sensibilidade de latência (latência adicional)** . Define se deseja que a porta da frente para enviar a solicitação ao back-ends dentro do intervalo de sensibilidade de medida de latência ou encaminhar a solicitação para o back-end mais próximo.
 
 Para obter mais informações, consulte [menor latência com base em método de roteamento](front-door-routing-methods.md#latency).
 

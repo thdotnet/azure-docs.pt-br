@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: aelnably
 ms.custom: ''
-ms.openlocfilehash: 27b5dc9ccee8647d4fbb617063865df18b80bc5d
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: ce57aae1119261c0545b59a037226fdc12ec115f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65990269"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050671"
 ---
 # <a name="continuous-delivery-using-azure-devops"></a>Entrega contínua com o DevOps do Azure
 
@@ -36,9 +36,7 @@ Cada linguagem tem etapas de compilação específica para criar um artefato de 
 Você pode usar o exemplo a seguir para criar o arquivo YAML para compilar seu aplicativo .NET.
 
 ```yaml
-jobs:
-  - job: Build
-    pool:
+pool:
       vmImage: 'VS2017-Win2016'
 steps:
 - script: |
@@ -69,9 +67,7 @@ steps:
 Você pode usar o exemplo a seguir para criar o arquivo YAML para compilar seu aplicativo JavaScript:
 
 ```yaml
-jobs:
-  - job: Build
-    pool:
+pool:
       vmImage: ubuntu-16.04 # Use 'VS2017-Win2016' if you have Windows native +Node modules
 steps:
 - bash: |
@@ -99,9 +95,7 @@ steps:
 Você pode usar o exemplo a seguir para criar o arquivo YAML para compilar seu aplicativo Python, o Python tem suporte somente para Linux do Azure Functions:
 
 ```yaml
-jobs:
-  - job: Build
-    pool:
+pool:
       vmImage: ubuntu-16.04
 steps:
 - task: UsePythonVersion@0
@@ -118,6 +112,25 @@ steps:
     source worker_venv/bin/activate
     pip3.6 install setuptools
     pip3.6 install -r requirements.txt
+- task: ArchiveFiles@2
+  displayName: "Archive files"
+  inputs:
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
+    includeRootFolder: false
+    archiveFile: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
+    name: 'drop'
+```
+#### <a name="powershell"></a>PowerShell
+
+Você pode usar o exemplo a seguir para criar o arquivo YAML para empacotar seu aplicativo do PowerShell, PowerShell tem suporte apenas para o Windows Azure Functions:
+
+```yaml
+pool:
+      vmImage: 'VS2017-Win2016'
+steps:
 - task: ArchiveFiles@2
   displayName: "Archive files"
   inputs:
@@ -175,6 +188,10 @@ Depois de configurar a origem do seu código, modelos de compilação de pesquis
 
 ![Modelos de compilação do Azure Functions](media/functions-how-to-azure-devops/build-templates.png)
 
+Em alguns casos, os artefatos de compilação têm uma estrutura de pasta específica e talvez você precise verificar o **Prepend nome da pasta raiz para arquivar caminhos** opção.
+
+![Preceda a pasta raiz](media/functions-how-to-azure-devops/prepend-root-folder.png)
+
 #### <a name="javascript-apps"></a>Aplicativos de JavaScript
 
 Se seu aplicativo JavaScript têm uma dependência em módulos nativos do Windows, você precisará atualizar:
@@ -182,10 +199,6 @@ Se seu aplicativo JavaScript têm uma dependência em módulos nativos do Window
 - A versão do Pool de agentes para **VS2017 hospedado**
 
   ![Alterar agente de compilação do sistema operacional](media/functions-how-to-azure-devops/change-agent.png)
-
-- O script a **criar extensões** etapa no modelo para `IF EXIST *.csproj dotnet build extensions.csproj --output ./bin`
-
-  ![Script de alteração](media/functions-how-to-azure-devops/change-script.png)
 
 ### <a name="deploy-your-app"></a>Implantar seu aplicativo
 

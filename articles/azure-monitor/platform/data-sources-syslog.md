@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 03/22/2019
 ms.author: magoedte
 ms.openlocfilehash: 41ea6222689516f224fc23ce6a658d17f7f81866
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60240835"
 ---
 # <a name="syslog-data-sources-in-azure-monitor"></a>Fontes de dados de syslog no Azure Monitor
@@ -54,7 +54,7 @@ O agente do Log Analytics para Linux coletará apenas eventos com as instalaçõ
 ### <a name="configure-syslog-in-the-azure-portal"></a>Configurar o Syslog no Portal do Azure
 Configure o Syslog no menu [Menu de Dados nas Configurações Avançadas](agent-data-sources.md#configuring-data-sources). Essa configuração é entregue ao arquivo de configuração em cada agente do Linux.
 
-Você pode adicionar um novo recurso, digitando seu nome e clicando em **+**. Para cada recurso, somente mensagens com as severidades selecionadas serão coletados.  Marque as severidades para o recurso específico que você deseja coletar. Você não pode fornecer quaisquer critérios adicionais para filtrar mensagens.
+Você pode adicionar um novo recurso, digitando seu nome e clicando em **+** . Para cada recurso, somente mensagens com as severidades selecionadas serão coletados.  Marque as severidades para o recurso específico que você deseja coletar. Você não pode fornecer quaisquer critérios adicionais para filtrar mensagens.
 
 ![Configurar Syslog](media/data-sources-syslog/configure.png)
 
@@ -215,14 +215,14 @@ Os registros do syslog têm um tipo de **Syslog** e têm as propriedades na tabe
 ## <a name="log-queries-with-syslog-records"></a>Consultas do log com registros do Syslog
 A tabela a seguir fornece diferentes exemplos de consultas de log que recuperam registros do Syslog.
 
-| Consultar | DESCRIÇÃO |
+| Consulta | DESCRIÇÃO |
 |:--- |:--- |
 | syslog |Todos os Syslogs. |
 | Syslog &#124; where SeverityLevel == "error" |Todos os registros do Syslog com a severidade de erro. |
 | Syslog &#124; summarize AggregatedValue = count() by Computer |Contagem de registros do Syslog por computador. |
 | Syslog &#124; summarize AggregatedValue = count() by Facility |Contagem de registros do Syslog por recurso. |
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 * Saiba mais sobre [registrar consultas](../../azure-monitor/log-query/log-query-overview.md) para analisar os dados coletados de fontes de dados e soluções.
 * Use [campos personalizados](../../azure-monitor/platform/custom-fields.md) para analisar dados dos registros do syslog em campos individuais.
 * [Configure Agentes do Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) para coletar outros tipos de dados.

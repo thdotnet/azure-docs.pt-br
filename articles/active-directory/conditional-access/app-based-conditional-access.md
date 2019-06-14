@@ -19,10 +19,10 @@ ms.author: joflore
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 12bfd70336c01e5595a086f360ce176df190a20e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60356397"
 ---
 # <a name="how-to-require-approved-client-apps-for-cloud-app-access-with-conditional-access"></a>Como: Exigir aplicativos cliente aprovados para acesso de aplicativo de nuvem com acesso condicional 
@@ -117,11 +117,11 @@ Para a política de acesso condicional nesta etapa, você precisa configurar os 
 
 4. **Condições:** como **Condições**, você precisa configurar **Plataformas de dispositivo** e **Aplicativos cliente**:
 
-     a. Como **Plataformas de dispositivo**, selecione **Android** e **iOS**.
+    a. Como **Plataformas de dispositivo**, selecione **Android** e **iOS**.
 
     ![Acesso condicional](./media/app-based-conditional-access/03.png)
 
-    b. Como **Aplicativos cliente (versão prévia)**, selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes de autenticação moderna**.
+    b. Como **Aplicativos cliente (versão prévia)** , selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes de autenticação moderna**.
 
     ![Acesso condicional](./media/app-based-conditional-access/91.png)
 
@@ -145,9 +145,9 @@ Para a política de acesso condicional nesta etapa, você precisa configurar os 
 
     ![Acesso condicional](./media/app-based-conditional-access/07.png)
 
-4. **Condições:** como **Condições**, você precisa configurar **Aplicativos cliente (versão prévia)**. 
+4. **Condições:** como **Condições**, você precisa configurar **Aplicativos cliente (versão prévia)** . 
 
-     a. Como **Aplicativos cliente (versão prévia)**, selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes do Exchange ActiveSync**.
+    a. Como **Aplicativos cliente (versão prévia)** , selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes do Exchange ActiveSync**.
 
     ![Acesso condicional](./media/app-based-conditional-access/92.png)
 
@@ -198,11 +198,11 @@ Para a política de acesso condicional nesta etapa, você precisa configurar os 
 
 4. **Condições:** como **Condições**, você precisa configurar **Plataformas de dispositivo** e **Aplicativos cliente**:
 
-     a. Como **Plataformas de dispositivo**, selecione **Android** e **iOS**.
+    a. Como **Plataformas de dispositivo**, selecione **Android** e **iOS**.
 
     ![Acesso condicional](./media/app-based-conditional-access/03.png)
 
-    b. Como **Aplicativos cliente (versão prévia)**, selecione **Aplicativos móveis e clientes da área de trabalho** e **Clientes de autenticação moderna**.
+    b. Como **Aplicativos cliente (versão prévia)** , selecione **Aplicativos móveis e clientes da área de trabalho** e **Clientes de autenticação moderna**.
 
     ![Acesso condicional](./media/app-based-conditional-access/91.png)
 
@@ -229,7 +229,7 @@ Para a política de acesso condicional nesta etapa, você precisa configurar os 
 
 4. **Condições:** Como **Condições**, você precisa configurar **Aplicativos cliente**:
 
-     a. Como **Aplicativos cliente (versão prévia)**, selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes do Exchange ActiveSync**.
+    a. Como **Aplicativos cliente (versão prévia)** , selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes do Exchange ActiveSync**.
 
     ![Acesso condicional](./media/app-based-conditional-access/92.png)
 
@@ -282,11 +282,11 @@ Para a política de acesso condicional nesta etapa, você precisa configurar os 
 
 4. **Condições:** como **Condições**, você precisa configurar **Plataformas de dispositivo** e **Aplicativos cliente**. 
  
-     a. Como **Plataformas de dispositivo**, selecione **Android** e **iOS**.
+    a. Como **Plataformas de dispositivo**, selecione **Android** e **iOS**.
 
     ![Acesso condicional](./media/app-based-conditional-access/03.png)
 
-    b. Como **Aplicativos cliente (versão prévia)**, selecione **Aplicativos móveis e clientes da área de trabalho** e **Clientes de autenticação moderna**.
+    b. Como **Aplicativos cliente (versão prévia)** , selecione **Aplicativos móveis e clientes da área de trabalho** e **Clientes de autenticação moderna**.
 
     ![Acesso condicional](./media/app-based-conditional-access/91.png)
 
@@ -318,7 +318,7 @@ Para a política de acesso condicional nesta etapa, você precisa configurar os 
 
 4. **Condições:** Como **Condições**, você precisa configurar **Aplicativos cliente**. 
 
-    Como **Aplicativos cliente (versão prévia)**, selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes do Exchange ActiveSync**.
+    Como **Aplicativos cliente (versão prévia)** , selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes do Exchange ActiveSync**.
 
     ![Acesso condicional](./media/app-based-conditional-access/91.png)
 
@@ -378,11 +378,11 @@ Para a política de acesso condicional nesta etapa, você precisa configurar os 
 
 4. **Condições:** como **Condições**, você precisa configurar **Plataformas de dispositivo** e **Aplicativos cliente**. 
  
-     a. Como **Plataformas de dispositivo**, selecione **Android** e **iOS**.
+    a. Como **Plataformas de dispositivo**, selecione **Android** e **iOS**.
 
     ![Acesso condicional](./media/app-based-conditional-access/03.png)
 
-    b. Como **Aplicativos cliente (versão prévia)**, selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes de autenticação moderna**.
+    b. Como **Aplicativos cliente (versão prévia)** , selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes de autenticação moderna**.
 
     ![Acesso condicional](./media/app-based-conditional-access/91.png)
 
@@ -412,9 +412,9 @@ Para a política de acesso condicional nesta etapa, você precisa configurar os 
 
     ![Acesso condicional](./media/app-based-conditional-access/07.png)
 
-4. **Condições:** como **Condições**, você precisa configurar **Aplicativos cliente (versão prévia)**. 
+4. **Condições:** como **Condições**, você precisa configurar **Aplicativos cliente (versão prévia)** . 
 
-    Como **Aplicativos cliente (versão prévia)**, selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes do Exchange ActiveSync**.
+    Como **Aplicativos cliente (versão prévia)** , selecione **Aplicativos móveis e aplicativos da área de trabalho** e **Clientes do Exchange ActiveSync**.
 
     ![Acesso condicional](./media/app-based-conditional-access/92.png)
 
