@@ -9,10 +9,10 @@ ms.date: 08/01/2016
 ms.author: jeconnoc
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: 23379e9d9bb29efb7fb026260e8245e8eb8a2d71
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60395060"
 ---
 # <a name="store-and-view-diagnostic-data-in-azure-storage"></a>Armazenar e exibir dados de diagnóstico no Armazenamento do Azure
@@ -71,7 +71,7 @@ Os dados de log são armazenados no armazenamento de Blob ou de Tabela com os se
 * **"custom"** – um contêiner personalizado com base na configuração de diretórios que são monitorados pelo monitor de diagnóstico.  O nome desse contêiner de blob será especificado em WADDirectoriesTable.
 
 ## <a name="tools-to-view-diagnostic-data"></a>Ferramentas para exibir dados de diagnóstico
-Várias ferramentas estão disponíveis para exibir os dados depois de serem transferidos para o armazenamento. Por exemplo: 
+Várias ferramentas estão disponíveis para exibir os dados depois de serem transferidos para o armazenamento. Por exemplo:
 
 * Gerenciador de Servidores no Visual Studio – Se tiver instalado as Ferramentas do Azure para o Microsoft Visual Studio, será possível usar o nó do Armazenamento do Azure no Gerenciador de Servidores para exibir os dados de tabela e de blob somente leitura de suas contas de armazenamento do Azure. Você pode exibir dados de conta do emulador de armazenamento local e também de contas de armazenamento que você criou para o Azure. Para obter mais informações, veja [Procurando e gerenciando recursos de armazenamento com o Gerenciador de Servidores](/visualstudio/azure/vs-azure-tools-storage-resources-server-explorer-browse-manage).
 * [Gerenciamento de Armazenamento do Microsoft Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md) é um aplicativo autônomo que permite trabalhar facilmente com os dados de Armazenamento do Azure no Windows, OSX e Linux.

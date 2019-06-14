@@ -17,10 +17,10 @@ ms.date: 08/22/2017
 ms.author: aelnably
 ms.custom: seodec18
 ms.openlocfilehash: 21f6963fbaada4524f27602454d38e7252a5e8b9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60850077"
 ---
 # <a name="manage-web-app-for-containers-using-azure-cli"></a>Gerenciar aplicativo Web para Contêineres usando a CLI do Azure
@@ -108,5 +108,5 @@ az webapp deployment source config -n sname -g rgname --repo-url <gitrepo url> -
 * [O que é o Serviço de Aplicativo do Azure no Linux?](app-service-linux-intro.md)
 * [Instalar a CLI do Azure.](https://docs.microsoft.com/cli/azure/install-azure-cli)
 * [Azure Cloud Shell (versão prévia)](../../cloud-shell/overview.md)
-* [Configurar ambientes de preparo no Serviço de Aplicativo do Azure](../../app-service/deploy-staging-slots.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
+* [Configurar ambientes de preparo no serviço de aplicativo do Azure](../../app-service/deploy-staging-slots.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 * [Implantação Contínua com o Aplicativo Web para Contêineres](app-service-linux-ci-cd.md)

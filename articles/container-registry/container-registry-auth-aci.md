@@ -2,17 +2,16 @@
 title: Autenticar no Registro de Contêiner do Azure por meio das Instâncias de Contêiner do Azure
 description: Saiba como fornecer acesso a imagens em seu registro de contêiner particular das Instâncias de Contêiner do Azure usando uma entidade de serviço do Azure Active Directory.
 services: container-registry
-author: rockboyfor
+author: dlepow
 ms.service: container-registry
 ms.topic: article
-origin.date: 04/23/2018
-ms.date: 03/25/2019
-ms.author: v-yeche
+ms.date: 04/23/2018
+ms.author: danlep
 ms.openlocfilehash: 8a2d19a09233e510055e147fa1cf95dd4471768b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61333559"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-container-instances"></a>Autenticar no Registro de Contêiner do Azure por meio das Instâncias de Contêiner do Azure
@@ -23,7 +22,7 @@ Neste artigo, você aprende a criar e configurar uma entidade de serviço do Azu
 
 ## <a name="when-to-use-a-service-principal"></a>Quando usar uma entidade de serviço
 
-Você deve usar uma entidade de serviço para a autenticação no ACI em **cenários “sem periféricos”**, como em aplicativos ou serviços que criam instâncias de contêiner de maneira automatizada ou autônoma.
+Você deve usar uma entidade de serviço para a autenticação no ACI em **cenários “sem periféricos”** , como em aplicativos ou serviços que criam instâncias de contêiner de maneira automatizada ou autônoma.
 
 Por exemplo, se você tem um script automatizado que é executado à noite e que cria uma [instância de contêiner baseada em tarefa](../container-instances/container-instances-restart-policy.md) para processar alguns dados, ele pode usar uma entidade de serviço com permissões somente pull para se autenticar no registro. Em seguida, você pode girar as credenciais da entidade de serviço ou revogar o acesso por completo, sem afetar outros serviços e aplicativos.
 
@@ -35,12 +34,12 @@ As entidades de serviço também devem ser usadas quando o registro [usuário ad
 
 Para iniciar um contêiner em Instâncias de Contêiner do Azure usando uma entidade de serviço, especifique sua ID para `--registry-username` e sua senha para `--registry-password`.
 
-```azurecli
+```azurecli-interactive
 az container create \
     --resource-group myResourceGroup \
     --name mycontainer \
-    --image mycontainerregistry.azurecr.cn/myimage:v1 \
-    --registry-login-server mycontainerregistry.azurecr.cn \
+    --image mycontainerregistry.azurecr.io/myimage:v1 \
+    --registry-login-server mycontainerregistry.azurecr.io \
     --registry-username <service-principal-ID> \
     --registry-password <service-principal-password>
 ```

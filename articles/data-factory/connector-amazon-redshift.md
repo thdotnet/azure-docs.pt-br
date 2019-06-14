@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
 ms.openlocfilehash: 9e1dde57dc1903e87704bd55fb0b942b7cc349e5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61261790"
 ---
 # <a name="copy-data-from-amazon-redshift-using-azure-data-factory"></a>Copiar dados do Amazon Redshift usando o Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](v1/data-factory-amazon-redshift-connector.md)
 > * [Versão atual](connector-amazon-redshift.md)
 
@@ -55,11 +55,11 @@ As propriedades a seguir têm suporte para o serviço vinculado do Amazon Redshi
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **AmazonRedshift** | Sim |
 | server |Endereço IP ou nome do host do servidor Amazon Redshift. |Sim |
-| port |O número da porta TCP usada pelo servidor Amazon Redshift para ouvir conexões de cliente. |Não, o padrão é 5439 |
-| database |Nome do banco de dados do Amazon Redshift. |Sim |
-| username |Nome de usuário que tem acesso ao banco de dados. |Sim |
-| password |Senha para a conta de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). |Sim |
-| connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode usar o Integration Runtime do Azure ou o Integration Runtime auto-hospedado (se o armazenamento de dados estiver localizado em uma rede privada). Se não for especificado, ele usa o Integration Runtime padrão do Azure. |Não  |
+| porta |O número da porta TCP usada pelo servidor Amazon Redshift para ouvir conexões de cliente. |Não, o padrão é 5439 |
+| Banco de Dados |Nome do banco de dados do Amazon Redshift. |Sim |
+| Nome de Usuário |Nome de usuário que tem acesso ao banco de dados. |Sim |
+| Senha |Senha para a conta de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). |Sim |
+| connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode usar o Integration Runtime do Azure ou o Integration Runtime auto-hospedado (se o armazenamento de dados estiver localizado em uma rede privada). Se não for especificado, ele usa o Integration Runtime padrão do Azure. |Não |
 
 **Exemplo:**
 
@@ -127,7 +127,7 @@ Para copiar dados do Amazon Redshift, defina o tipo de fonte na atividade de có
 |:--- |:--- |:--- |
 | type | A propriedade type da fonte da atividade de cópia deve ser definida como: **AmazonRedshiftSource** | Sim |
 | query |Utiliza a consulta personalizada para ler os dados. Por exemplo: select * from MyTable. |Não (se "tableName" no conjunto de dados for especificado) |
-| redshiftUnloadSettings | Grupo de propriedades ao usar UNLOAD do Amazon Redshift. | Não  |
+| redshiftUnloadSettings | Grupo de propriedades ao usar UNLOAD do Amazon Redshift. | Não |
 | s3LinkedServiceName | Refere-se a um Amazon S3 que será usado como um repositório provisório especificando um nome de serviço vinculado do tipo "AmazonS3". | Sim se estiver usando UNLOAD |
 | bucketName | Indique o bucket S3 para armazenar os dados intermediários. Se não for fornecido, o serviço Data Factory o gerará automaticamente.  | Sim se estiver usando UNLOAD |
 
@@ -210,9 +210,9 @@ Ao copiar dados do Amazon Redshift, os seguintes mapeamentos são usados de tipo
 | Tipo de dados do Amazon Redshift | Tipo de dados provisório do Data Factory |
 |:--- |:--- |
 | BIGINT |Int64 |
-| BOOLEAN |String |
-| CHAR |String |
-| DATE |DateTime |
+| BOOLEAN |Cadeia de caracteres |
+| CHAR |Cadeia de caracteres |
+| DATE |Datetime |
 | DECIMAL |Decimal |
 | DOUBLE PRECISION |Double |
 | INTEGER |Int32 |
@@ -220,7 +220,7 @@ Ao copiar dados do Amazon Redshift, os seguintes mapeamentos são usados de tipo
 | SMALLINT |Int16 |
 | TEXT |String |
 | TIMESTAMP |DateTime |
-| VARCHAR |String |
+| VARCHAR |Cadeia de caracteres |
 
 ## <a name="next-steps"></a>Próximas etapas
 Para obter uma lista de armazenamentos de dados com suporte como origens e coletores pela atividade de cópia no Azure Data Factory, consulte [Armazenamentos de dados com suporte](copy-activity-overview.md##supported-data-stores-and-formats).

@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 12/04/2018
 ms.openlocfilehash: 5aff7e93dcfaa5320be0d6f7d427abcdc88c69e4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60585501"
 ---
 # <a name="deploy-a-split-merge-service-to-move-data-between-sharded-databases"></a>Implantar um serviço de mesclagem dividida para mover dados entre bancos de dados compartilhados
@@ -142,12 +142,12 @@ Se sua função de trabalho não fica online, mas sua função web tiver êxito,
    Server=myservername.database.windows.net; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30
    ```
 
-* Verifique se o nome do servidor não começa com **https://**.
+* Verifique se o nome do servidor não começa com **https://** .
 * Certifique-se de que o servidor de Banco de Dados SQL do Azure permite que os Serviços do Azure se conectem a ele. Para fazer isso, abra o banco de dados no portal e verifique se a configuração **Permitir acesso aos serviços do Azure** está definida como **Habilitada** **.
 
 ## <a name="test-the-service-deployment"></a>Testar a implantação do serviço
 ### <a name="connect-with-a-web-browser"></a>Conectar-se com um navegador da Web
-Determine o ponto de extremidade da web do serviço de Divisão-Mesclagem. Encontre-o no portal acessando a **Visão geral** do serviço de nuvem e procurando em **URL do Site** no lado direito. Substitua **http://** por **https://**, uma vez que as configurações de segurança padrão desabilitam o ponto de extremidade HTTP. Carregue a página para este URL no seu navegador.
+Determine o ponto de extremidade da web do serviço de Divisão-Mesclagem. Encontre-o no portal acessando a **Visão geral** do serviço de nuvem e procurando em **URL do Site** no lado direito. Substitua **http://** por **https://** , uma vez que as configurações de segurança padrão desabilitam o ponto de extremidade HTTP. Carregue a página para este URL no seu navegador.
 
 ### <a name="test-with-powershell-scripts"></a>Testes com scripts do PowerShell
 A implantação e sue ambiente podem ser testados, executando os scripts de exemplo do PowerShell incluídos.

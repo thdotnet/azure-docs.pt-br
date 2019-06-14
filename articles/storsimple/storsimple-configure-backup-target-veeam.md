@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 12/06/2016
 ms.author: hkanna
 ms.openlocfilehash: e7659cca9081834d41f64ef0fbd8ea3686044bfd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60633634"
 ---
 # <a name="storsimple-as-a-backup-target-with-veeam"></a>StorSimple como um destino de backup com o Veeam
@@ -293,7 +293,7 @@ Com base nas premissas anteriores, crie um volume em camadas StorSimple de 26 Ti
 
     ![Console de gerenciamento Veeam, configurações de compatibilidade do armazenamento](./media/storsimple-configure-backup-target-using-veeam/veeamimage5.png)
 
-6.  Na caixa de diálogo **Novo Repositório de Backup**, marque a caixa de seleção **Habilitar o serviço vPower NFS no servidor de montagem (recomendado)**. Selecione **Avançar**.
+6.  Na caixa de diálogo **Novo Repositório de Backup**, marque a caixa de seleção **Habilitar o serviço vPower NFS no servidor de montagem (recomendado)** . Selecione **Avançar**.
 
     ![Console de gerenciamento do Veeam, página de repositório de backup](./media/storsimple-configure-backup-target-using-veeam/veeamimage6.png)
 

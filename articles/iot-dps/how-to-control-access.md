@@ -2,17 +2,17 @@
 title: Pontos de extremidade de segurança no Serviço de Provisionamento de Dispositivo IoT | Microsoft Docs
 description: Conceitos - como controlar o acesso ao Serviço de Provisionamento de Dispositivos no IoT para aplicativos de back-end. Inclui informações sobre tokens de autenticação de segurança.
 author: wesmc7777
-manager: timlt
+manager: philmea
 ms.service: iot-dps
 services: iot-dps
 ms.topic: conceptual
-ms.date: 09/28/2017
+ms.date: 04/09/2019
 ms.author: wesmc
 ms.openlocfilehash: 7ff622ceac9c49eda7ba6bca1a8bb3aaabccb816
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60626632"
 ---
 # <a name="control-access-to-azure-iot-hub-device-provisioning-service"></a>Controlar o acesso ao Serviço de Provisionamento de Dispositivo do Hub IoT do Azure
@@ -79,7 +79,7 @@ Veja os valores esperados:
 | --- | --- |
 | {signature} |Uma cadeia de caracteres de assinatura HMAC-SHA256 no formato: `{URL-encoded-resourceURI} + "\n" + expiry`. **Importante**: a chave é decodificada da base64 e usada como chave para executar o cálculo de HMAC-SHA256.|
 | {expiry} |As cadeias de caracteres UTF8 para o número de segundos desde a época 00:00:00 UTC em 1º de janeiro de 1970. |
-| {URL-encoded-resourceURI} | Codificação de URL em letras minúsculas do URI de recurso em letras minúsculas. Prefixo de URI (por segmento) dos pontos de extremidade que podem ser acessados com esse token, começando com o nome de host do Serviço de Provisionamento de Dispositivo de IoT (sem protocolo). Por exemplo, `mydps.azure-devices-provisioning.net`. |
+| {URL-encoded-resourceURI} | Codificação de URL em letras minúsculas do URI de recurso em letras minúsculas. Prefixo de URI (por segmento) dos pontos de extremidade que podem ser acessados com esse token, começando com o nome de host do Serviço de Provisionamento de Dispositivo de IoT (sem protocolo). Por exemplo: `mydps.azure-devices-provisioning.net`. |
 | {policyName} |O nome da política de acesso compartilhado a qual se refere esse token. |
 
 **Observação sobre o prefixo**: o prefixo URI é computado por segmento e não por caractere. Por exemplo, `/a/b` é um prefixo para `/a/b/c`, mas não para `/a/bc`.

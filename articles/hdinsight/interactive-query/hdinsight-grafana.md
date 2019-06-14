@@ -8,10 +8,10 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.openlocfilehash: 42429f0e8e541d0481f991761ead63e4751fcc3d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64719732"
 ---
 # <a name="access-grafana-in-azure-hdinsight"></a>Acessar Grafana no Microsoft Azure HDInsight
@@ -78,7 +78,7 @@ Nesta seção, você criará um cluster do Interactive Query no HDInsight usando
 
     ![Portal do painel do cluster HDInsight](./media/hdinsight-grafana/hdinsight-portal-cluster-dashboard.png "Painel do cluster HDInsight no portal")
 
-4. No painel, clique no bloco **Grafana**. Como alternativa, navegue até o caminho `/grafana/` da URL do cluster. Por exemplo, `https://<clustername>.azurehdinsight.net/grafana/`.
+4. No painel, clique no bloco **Grafana**. Como alternativa, navegue até o caminho `/grafana/` da URL do cluster. Por exemplo: `https://<clustername>.azurehdinsight.net/grafana/`.
 
 5. Insira as credenciais de usuário do cluster Hadoop.
 

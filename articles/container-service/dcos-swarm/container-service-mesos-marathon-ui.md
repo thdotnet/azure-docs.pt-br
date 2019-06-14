@@ -10,10 +10,10 @@ ms.date: 04/04/2017
 ms.author: iainfou
 ms.custom: mvc
 ms.openlocfilehash: 16c16c0217a796ffbb57e10430f90cb4a7660ac6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61468096"
 ---
 # <a name="deprecated-manage-an-azure-container-service-dcos-cluster-through-the-marathon-web-ui"></a>(PRETERIDO) Gerenciar um cluster de DC/OS do Serviço de Contêiner do Azure por meio da interface do usuário da Web do Marathon
@@ -55,7 +55,7 @@ Para implantar um novo contêiner usando o Marathon, clique em **Criar Aplicativ
 | Image |nginx |
 | Rede |Com ponte |
 | Porta de host |80 |
-| Protocolo |TCP |
+| Protocol |TCP |
 
 ![Interface do usuário do novo aplicativo – geral](./media/container-service-mesos-marathon-ui/dcos4.png)
 

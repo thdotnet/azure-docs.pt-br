@@ -14,10 +14,10 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 25cf9c3b7968be16dcc22f4140725efc22d785f2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66156527"
 ---
 # <a name="azure-data-factory---json-scripting-reference"></a>Azure Data Factory - Referência de Script do JSON
@@ -462,7 +462,7 @@ Para definir um conjunto de dados de Blob do Azure, defina o **type** do conjunt
 | folderPath |Caminho para o contêiner e a pasta no armazenamento de blob. Exemplo: myblobcontainer\myblobfolder\ |Sim |
 | fileName |O nome do blob. fileName é opcional e diferencia maiúsculas de minúsculas.<br/><br/>Caso você especifique um nome de arquivo, a atividade (incluindo Cópia) funcionará no Blob específico.<br/><br/>Quando fileName não for especificado, a Cópia incluirá todos os Blobs do folderPath para o conjunto de dados de entrada.<br/><br/>Quando fileName não for especificado para um conjunto de dados de saída, o nome do arquivo gerado seria a seguir este formato: `Data.<Guid>.txt` (por exemplo:: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |Não |
 | partitionedBy |partitionedBy é uma propriedade opcional. Você pode usá-lo para especificar um folderPath dinâmico e o nome de arquivo para dados de série temporal. Por exemplo, folderPath pode ser parametrizado para cada hora dos dados. |Não |
-| formato | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
+| format | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
 | compression | Especifique o tipo e o nível de compactação para os dados. Tipos compatíveis são: **GZip**, **Deflate**, **BZip2** e **ZipDeflate**. Níveis compatíveis são: **Ideal** e **Mais Rápido**. Para saber mais, confira [File and compression formats in Azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support) (Formatos de arquivo e de compactação no Azure Data Factory). |Não |
 
 #### <a name="example"></a>Exemplo
@@ -645,7 +645,7 @@ Para definir um conjunto de dados do Azure Data Lake Store, defina o **type** do
 | folderPath |Caminho para o contêiner e a pasta no repositório do Azure Data Lake. |Sim |
 | fileName |O nome do arquivo no repositório Azure Data Lake. fileName é opcional e diferencia maiúsculas de minúsculas. <br/><br/>Caso você especifique um nome de arquivo, a atividade (incluindo Cópia) funcionará no arquivo específico.<br/><br/>Quando fileName não for especificado, a Cópia incluirá todos os arquivos do folderPath para o conjunto de dados de entrada.<br/><br/>Quando fileName não for especificado para um conjunto de dados de saída, o nome do arquivo gerado seria a seguir este formato: `Data.<Guid>.txt` (por exemplo:: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |Não |
 | partitionedBy |partitionedBy é uma propriedade opcional. Você pode usá-lo para especificar um folderPath dinâmico e o nome de arquivo para dados de série temporal. Por exemplo, folderPath pode ser parametrizado para cada hora dos dados. |Não |
-| formato | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
+| format | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
 | compression | Especifique o tipo e o nível de compactação para os dados. Tipos compatíveis são: **GZip**, **Deflate**, **BZip2** e **ZipDeflate**. Níveis compatíveis são: **Ideal** e **Mais Rápido**. Para saber mais, confira [File and compression formats in Azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support) (Formatos de arquivo e de compactação no Azure Data Factory). |Não |
 
 #### <a name="example"></a>Exemplo
@@ -1711,7 +1711,7 @@ Para definir um serviço vinculado do IBM DB2, defina o **type** do serviço vin
 | schema |Nome do esquema no banco de dados. O nome do esquema diferencia maiúsculas de minúsculas. |Não |
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados DB2. Os valores possíveis são: Anônima, Básica e Windows. |Sim |
 | Nome de Usuário |Especifique o nome de usuário se você estiver usando a autenticação Basic ou Windows. |Não |
-| Senha |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados DB2 local. |Sim |
 
 #### <a name="example"></a>Exemplo
@@ -1823,11 +1823,11 @@ Para definir um serviço vinculado do MySQL, defina o **type** do serviço vincu
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | Servidor |Nome do servidor MySQL. |Sim |
-| Banco de Dados |Nome do banco de dados MySQL. |Sim |
+| database |Nome do banco de dados MySQL. |Sim |
 | schema |Nome do esquema no banco de dados. |Não |
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados MySQL. Os valores possíveis são: `Basic`. |Sim |
 | Nome de Usuário |Especifique o nome de usuário para se conectar ao banco de dados MySQL. |Sim |
-| Senha |Especifique a senha da conta de usuário que você especificou. |Sim |
+| password |Especifique a senha da conta de usuário que você especificou. |Sim |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados MySQL local. |Sim |
 
 #### <a name="example"></a>Exemplo
@@ -2114,11 +2114,11 @@ Para definir um serviço vinculado do PostgreSQL, defina o **type** do serviço 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | Servidor |Nome do servidor PostgreSQL. |Sim |
-| Banco de Dados |Nome do banco de dados PostgreSQL. |Sim |
+| database |Nome do banco de dados PostgreSQL. |Sim |
 | schema |Nome do esquema no banco de dados. O nome do esquema diferencia maiúsculas de minúsculas. |Não |
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados PostgreSQL. Os valores possíveis são: Anônima, Básica e Windows. |Sim |
 | Nome de Usuário |Especifique o nome de usuário se você estiver usando a autenticação Basic ou Windows. |Não |
-| Senha |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados PostgreSQL local. |Sim |
 
 #### <a name="example"></a>Exemplo
@@ -2457,8 +2457,8 @@ A tabela a seguir fornece a descrição para elementos JSON específicos para o 
 | type |A propriedade de tipo deve ser configurada como: **OnPremisesSqlServer**. |Sim |
 | connectionString |Especifique as informações de connectionString necessárias para conexão com o banco de dados do SQL Server local usando a autenticação do SQL ou então a autenticação do Windows. |Sim |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados do SQL Server local. |Sim |
-| Nome de Usuário |Especifique o nome de usuário se você estiver usando a Autenticação do Windows. Exemplo: **domainname\\username**. |Não |
-| Senha |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
+| username |Especifique o nome de usuário se você estiver usando a Autenticação do Windows. Exemplo: **domainname\\username**. |Não |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
 
 Você pode criptografar as credenciais usando o **New-AzDataFactoryEncryptValue** cmdlet e usá-los na cadeia de conexão, conforme mostrado no exemplo a seguir (**EncryptedCredential** propriedade):
 
@@ -2676,7 +2676,7 @@ Para definir um serviço vinculado do Sybase, defina o **type** do serviço vinc
 | schema |Nome do esquema no banco de dados. |Não |
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados Sybase. Os valores possíveis são: Anônima, Básica e Windows. |Sim |
 | Nome de Usuário |Especifique o nome de usuário se você estiver usando a autenticação Basic ou Windows. |Não |
-| Senha |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados local do Sybase. |Sim |
 
 #### <a name="example"></a>Exemplo
@@ -2794,7 +2794,7 @@ Para definir um serviço vinculado do Teradata, defina o **type** do serviço vi
 | Servidor |Nome do servidor Teradata. |Sim |
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados Teradata. Os valores possíveis são: Anônima, Básica e Windows. |Sim |
 | Nome de Usuário |Especifique o nome de usuário se você estiver usando a autenticação Basic ou Windows. |Não |
-| Senha |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados Teradata local. |Sim |
 
 #### <a name="example"></a>Exemplo
@@ -3181,7 +3181,7 @@ Para definir um conjunto de dados do Amazon S3, defina o **type** do conjunto de
 | chave |A chave do objeto S3. |Cadeia de caracteres |Não |
 | prefix |Prefixo da chave do objeto S3. Objetos cujas chaves começam com esse prefixo serão selecionados. Aplica-se apenas quando a chave está vazia. |Cadeia de caracteres |Não |
 | version |A versão do objeto S3 se o controle de versão do S3 está habilitado. |Cadeia de caracteres |Não |
-| formato | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não | |
+| format | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não | |
 | compression | Especifique o tipo e o nível de compactação para os dados. Tipos compatíveis são: **GZip**, **Deflate**, **BZip2** e **ZipDeflate**. Os níveis compatíveis são: **Ideal** e **Mais Rápido**. Para saber mais, confira [File and compression formats in Azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support) (Formatos de arquivo e de compactação no Azure Data Factory). |Não | |
 
 
@@ -3320,7 +3320,7 @@ Você pode vincular um sistema de arquivos local ao Azure Data Factory com o ser
 | type |Verifique se a propriedade de tipo foi definida como **OnPremisesFileServer**. |Sim |
 | host |Especifica o caminho raiz da pasta que você deseja copiar. Use o caractere de escape ‘ \ ’ para caracteres especiais na cadeia de caracteres. Confira Definições de conjunto de dados e serviço vinculado de exemplo para obter exemplos. |Sim |
 | userid |Especifique a ID do usuário que tem acesso ao servidor. |Não (se você escolher encryptedcredential) |
-| Senha |Especifique a senha para o usuário (userid). |Não (se você escolher encryptedcredential |
+| password |Especifique a senha para o usuário (userid). |Não (se você escolher encryptedcredential |
 | encryptedCredential |Especifique as credenciais criptografadas que você pode obter executando o cmdlet New-AzDataFactoryEncryptValue. |Não (se você optar por especificar userid e password em texto sem formatação) |
 | gatewayName |Especifica o nome do gateway que o Data Factory deve usar para se conectar ao servidor de arquivos local. |Sim |
 
@@ -3376,7 +3376,7 @@ Para definir um conjunto de dados do Sistema de Arquivos, defina o **type** do c
 | fileName |Especifique o nome do arquivo no **folderPath** se quiser que a tabela se refira a um arquivo específico na pasta. Se você não especificar algum valor para essa propriedade, a tabela apontará para todos os arquivos na pasta.<br/><br/>Quando o fileName não for especificado para um conjunto de dados de saída, o nome do arquivo gerado será no seguinte formato: <br/><br/>`Data.<Guid>.txt` (Exemplo: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt) |Não |
 | fileFilter |Especifique um filtro a ser usado para selecionar um subconjunto de arquivos no folderPath em vez de todos os arquivos. <br/><br/>Os valores permitidos são: `*` (vários caracteres) e `?` (um único caractere).<br/><br/>Exemplo 1: "fileFilter": "*.log"<br/>Exemplo 2: "fileFilter": 2016-1-?.txt"<br/><br/>Observe que fileFilter é aplicável a um conjunto de dados FileShare de entrada. |Não |
 | partitionedBy |Você pode usar partitionedBy para especificar um folderPath/fileName dinâmico para dados de série temporal. Um exemplo é folderPath parametrizado para cada hora dos dados. |Não |
-| formato | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
+| format | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
 | compression | Especifique o tipo e o nível de compactação para os dados. Tipos compatíveis são: **GZip**, **Deflate**, **BZip2** e **ZipDeflate**; e os níveis com suporte são: **Ideal** e **Mais Rápido**. confira [Formatos de arquivo e de compactação no Azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support). |Não |
 
 > [!NOTE]
@@ -3642,7 +3642,7 @@ Para definir um conjunto de dados do FTP, defina o **type** do conjunto de dados
 | fileName |Especifique o nome do arquivo no **folderPath** se quiser que a tabela se refira a um arquivo específico na pasta. Se você não especificar algum valor para essa propriedade, a tabela apontará para todos os arquivos na pasta.<br/><br/>Quando o fileName não for especificado para um conjunto de dados de saída, o nome do arquivo gerado será no seguinte formato: <br/><br/>`Data.<Guid>.txt` (Exemplo: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt) |Não |
 | fileFilter |Especifique um filtro a ser usado para selecionar um subconjunto de arquivos no folderPath em vez de todos os arquivos.<br/><br/>Os valores permitidos são: `*` (vários caracteres) e `?` (um único caractere).<br/><br/>Exemplo 1: `"fileFilter": "*.log"`<br/>Exemplo 2: `"fileFilter": 2016-1-?.txt"`<br/><br/> fileFilter é aplicável a um conjunto de dados FileShare de entrada. Essa propriedade não tem suporte com HDFS. |Não |
 | partitionedBy |partitionedBy pode usado para especificar um filename, folderPath dinâmico para dados de série temporal. Por exemplo, folderPath parametrizado para cada hora dos dados. |Não |
-| formato | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
+| format | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
 | compression | Especifique o tipo e o nível de compactação para os dados. Tipos compatíveis são: **GZip**, **Deflate**, **BZip2** e **ZipDeflate**; e os níveis com suporte são: **Ideal** e **Mais Rápido**. Para saber mais, confira [File and compression formats in Azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support) (Formatos de arquivo e de compactação no Azure Data Factory). |Não |
 | useBinaryTransfer |Especifique se deve usar o modo de transferência Binário. True para o modo binário e ASCII false. Valor padrão: True. Essa propriedade só pode ser usada quando o tipo de serviço vinculado associado é do tipo: FtpServer. |Não |
 
@@ -3783,7 +3783,7 @@ Para definir um conjunto de dados do HDFS, defina o **type** do conjunto de dado
 | folderPath |Caminho para a pasta. Exemplo: `myfolder`<br/><br/>Use o caractere de escape ' \ ' para caracteres especiais na cadeia de caracteres. Por exemplo: para pasta\subpasta, especifique a pasta\\\\subpasta e para d:\pastadeexemplo, especifique d:\\\\pastadeexemplo.<br/><br/>Você pode combinar essa propriedade com **partitionBy** para ter caminhos de pastas com base na fatia de data/hora de início/término. |Sim |
 | fileName |Especifique o nome do arquivo no **folderPath** se quiser que a tabela se refira a um arquivo específico na pasta. Se você não especificar algum valor para essa propriedade, a tabela apontará para todos os arquivos na pasta.<br/><br/>Quando o fileName não for especificado para um conjunto de dados de saída, o nome do arquivo gerado será no seguinte formato: <br/><br/>`Data.<Guid>.txt` (por exemplo:: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |Não |
 | partitionedBy |partitionedBy pode usado para especificar um filename, folderPath dinâmico para dados de série temporal. Exemplo: folderPath parametrizado para cada hora dos dados. |Não |
-| formato | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
+| format | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
 | compression | Especifique o tipo e o nível de compactação para os dados. Tipos compatíveis são: **GZip**, **Deflate**, **BZip2** e **ZipDeflate**. Níveis compatíveis são: **Ideal** e **Mais Rápido**. Para saber mais, confira [File and compression formats in Azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support) (Formatos de arquivo e de compactação no Azure Data Factory). |Não |
 
 > [!NOTE]
@@ -3880,8 +3880,8 @@ Para usar a autenticação Básica, defina `authenticationType` como `Basic` e e
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
-| Nome de Usuário | Usuário que tem acesso ao servidor SFTP. |Sim |
-| Senha | Senha do usuário (nome de usuário). | Sim |
+| username | Usuário que tem acesso ao servidor SFTP. |Sim |
+| password | Senha do usuário (nome de usuário). | Sim |
 
 ```json
 {
@@ -3929,10 +3929,10 @@ Para usar a autenticação Básica, defina `authenticationType` como `SshPublicK
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
-| Nome de Usuário |Usuário que tem acesso ao servidor SFTP |Sim |
+| username |Usuário que tem acesso ao servidor SFTP |Sim |
 | privateKeyPath | Especifique, para o arquivo de chave privada, um caminho absoluto que esse gateway possa acessar. | Especifique `privateKeyPath` ou `privateKeyContent`. <br><br> Aplique somente quando estiver copiando dados de um servidor SFTP local. |
 | privateKeyContent | Uma cadeia de caracteres serializada do conteúdo da chave privada. O Assistente de Cópia pode ler o arquivo de chave privada e extrair o conteúdo da chave privada automaticamente. Se você estiver usando qualquer outra ferramenta/SDK, use a propriedade privateKeyPath em seu lugar. | Especifique `privateKeyPath` ou `privateKeyContent`. |
-| passPhrase | Especifique a senha/frase secreta para descriptografar a chave particular se o arquivo de chave for protegido por uma frase secreta. | Sim, se o arquivo de chave privada for protegido por uma frase secreta. |
+| password | Especifique a senha/frase secreta para descriptografar a chave particular se o arquivo de chave for protegido por uma frase secreta. | Sim, se o arquivo de chave privada for protegido por uma frase secreta. |
 
 ```json
 {
@@ -3984,7 +3984,7 @@ Para definir um conjunto de dados do SFTP, defina o **type** do conjunto de dado
 | fileName |Especifique o nome do arquivo no **folderPath** se quiser que a tabela se refira a um arquivo específico na pasta. Se você não especificar algum valor para essa propriedade, a tabela apontará para todos os arquivos na pasta.<br/><br/>Quando o fileName não for especificado para um conjunto de dados de saída, o nome do arquivo gerado será no seguinte formato: <br/><br/>`Data.<Guid>.txt` (Exemplo: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt) |Não |
 | fileFilter |Especifique um filtro a ser usado para selecionar um subconjunto de arquivos no folderPath em vez de todos os arquivos.<br/><br/>Os valores permitidos são: `*` (vários caracteres) e `?` (um único caractere).<br/><br/>Exemplo 1: `"fileFilter": "*.log"`<br/>Exemplo 2: `"fileFilter": 2016-1-?.txt"`<br/><br/> fileFilter é aplicável a um conjunto de dados FileShare de entrada. Essa propriedade não tem suporte com HDFS. |Não |
 | partitionedBy |partitionedBy pode usado para especificar um filename, folderPath dinâmico para dados de série temporal. Por exemplo, folderPath parametrizado para cada hora dos dados. |Não |
-| formato | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
+| format | Há suporte para os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Defina a propriedade **type** sob formato como um desses valores. Para saber mais, veja as seções [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato Json](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format), e [Formato Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Se você quiser **copiar arquivos no estado em que se encontram** entre repositórios baseados em arquivo (cópia binária), ignore a seção de formato nas duas definições de conjunto de dados de entrada e de saída. |Não |
 | compression | Especifique o tipo e o nível de compactação para os dados. Tipos compatíveis são: **GZip**, **Deflate**, **BZip2** e **ZipDeflate**. Níveis compatíveis são: **Ideal** e **Mais Rápido**. Para saber mais, confira [File and compression formats in Azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support) (Formatos de arquivo e de compactação no Azure Data Factory). |Não |
 | useBinaryTransfer |Especifique se deve usar o modo de transferência Binário. True para o modo binário e ASCII false. Valor padrão: True. Essa propriedade só pode ser usada quando o tipo de serviço vinculado associado é do tipo: FtpServer. |Não |
 
@@ -4085,7 +4085,7 @@ Defina `authenticationType` como `Basic`, `Digest` ou `Windows` e especifique as
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | Nome de Usuário | Nome de usuário para acessar o ponto de extremidade HTTP. | Sim |
-| Senha | Senha do usuário (nome de usuário). | Sim |
+| password | Senha do usuário (nome de usuário). | Sim |
 
 ```json
 {
@@ -4274,7 +4274,7 @@ Para definir um serviço vinculado do OData, defina o **type** do serviço vincu
 | url |URL do serviço OData. |Sim |
 | authenticationType |Tipo de autenticação usada para se conectar ao armazenamento de dados OData. <br/><br/> Para o OData de nuvem, os valores possíveis são Anônimo, Básico e OAuth (observe que o Azure Data Factory dá suporte no momento apenas a OAuth baseado no Azure Active Directory). <br/><br/> Para OData local, os valores possíveis são Anonymous, Basic e Windows. |Sim |
 | Nome de Usuário |Especifique o nome de usuário se você estiver usando a autenticação Básica. |Sim (apenas se você estiver usando a autenticação Básica) |
-| Senha |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Sim (apenas se você estiver usando a autenticação Básica) |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Sim (apenas se você estiver usando a autenticação Básica) |
 | authorizedCredential |Se você estiver usando OAuth, clique no botão **Autorizar** no Editor ou Assistente de Cópia do Data Factory e digite suas credenciais. O valor dessa propriedade será gerado automaticamente. |Sim (apenas se você estiver usando a autenticação OAuth) |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao serviço OData local. Especifique apenas se você estiver copiando dados de origem de OData local. |Não |
 
@@ -4351,7 +4351,7 @@ Para definir um conjunto de dados do OData, defina o **type** do conjunto de dad
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
-| caminho |Caminho para o recurso OData |Não |
+| path |Caminho para o recurso OData |Não |
 
 #### <a name="example"></a>Exemplo
 
@@ -4442,10 +4442,10 @@ Para definir um serviço vinculado do ODBC, defina o **type** do serviço vincul
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | connectionString |A parte da credencial que não está relacionada ao acesso da cadeia de conexão e uma credencial criptografada opcional. Veja os exemplos nas seções a seguir. |Sim |
-| credencial |A parte da credencial de acesso da cadeia de conexão especificada no formato propriedade-valor específico do driver. Exemplo: `“Uid=<user ID>;Pwd=<password>;RefreshToken=<secret refresh token>;”.` |Não |
+| credential |A parte da credencial de acesso da cadeia de conexão especificada no formato propriedade-valor específico do driver. Exemplo: `“Uid=<user ID>;Pwd=<password>;RefreshToken=<secret refresh token>;”.` |Não |
 | authenticationType |Tipo de autenticação usado para se conectar ao armazenamento de dados ODBC. Os valores possíveis são: Anônimo e Básico. |Sim |
 | Nome de Usuário |Especifique o nome de usuário se você estiver usando a autenticação Básica. |Não |
-| Senha |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao armazenamento de dados ODBC. |Sim |
 
 #### <a name="example---using-basic-authentication"></a>Exemplo - Usando a autenticação básica
@@ -4597,7 +4597,7 @@ Para definir um serviço vinculado da Salesforce, defina o **type** do serviço 
 | --- | --- | --- |
 | environmentUrl | Especifica a URL da instância do Salesforce. <br><br> – O padrão é "https:\//login.salesforce.com". <br> – Para copiar dados da área restrita, especifique “https://test.salesforce.com”. <br> – Para copiar dados do domínio personalizado, especifique, por exemplo, "https://[domínio].my.salesforce.com". |Não |
 | username |Especifique um nome de usuário para a conta de usuário. |Sim |
-| password |Especifique um senha para a conta de usuário. |Sim |
+| Senha |Especifique um senha para a conta de usuário. |Sim |
 | securityToken |Especifique um token de segurança para a conta de usuário. Veja [Obter token de segurança](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm) para ver instruções sobre como redefinir/obter o token de segurança. Para saber mais sobre os tokens de segurança em geral, veja [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Segurança e a API). |Sim |
 
 #### <a name="example"></a>Exemplo
@@ -5063,8 +5063,8 @@ A tabela a seguir fornece a descrição para elementos JSON específicos para o 
 | type |A propriedade de tipo deve ser configurada como: **OnPremisesSqlServer**. |Sim |
 | connectionString |Especifique as informações de connectionString necessárias para conexão com o banco de dados do SQL Server local usando a autenticação do SQL ou então a autenticação do Windows. |Sim |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados do SQL Server local. |Sim |
-| Nome de Usuário |Especifique o nome de usuário se você estiver usando a Autenticação do Windows. Exemplo: **domainname\\username**. |Não |
-| Senha |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
+| username |Especifique o nome de usuário se você estiver usando a Autenticação do Windows. Exemplo: **domainname\\username**. |Não |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
 
 Você pode criptografar as credenciais usando o **New-AzDataFactoryEncryptValue** cmdlet e usá-los na cadeia de conexão, conforme mostrado no exemplo a seguir (**EncryptedCredential** propriedade):
 
@@ -5176,8 +5176,8 @@ Você pode especificar as seguintes propriedades em uma definição de JSON de a
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | script |Especificar o script de Pig embutido |Não |
-| caminho do script |Armazenar o script de Pig em um armazenamento de blob do Azure e fornecer o caminho para o arquivo. Use a propriedade 'script' ou 'scriptPath'. As duas não podem ser usadas juntas. O nome do arquivo diferencia maiúsculas de minúsculas. |Não |
-| define |Especificar parâmetros como pares chave/valor para referenciar dentro do script de Pig |Não |
+| scriptPath |Armazenar o script de Pig em um armazenamento de blob do Azure e fornecer o caminho para o arquivo. Use a propriedade 'script' ou 'scriptPath'. As duas não podem ser usadas juntas. O nome do arquivo diferencia maiúsculas de minúsculas. |Não |
+| defines |Especificar parâmetros como pares chave/valor para referenciar dentro do script de Pig |Não |
 
 Essas propriedades de tipo são específicas para a atividade de Pig. Outras propriedades (fora da seção typeProperties) possuem suporte para todas as atividades.
 
@@ -5352,7 +5352,7 @@ Você pode especificar as seguintes propriedades em uma definição de JSON de A
 | rootPath | O contêiner de Blob do Azure e a pasta que contém o arquivo Spark. O nome do arquivo diferencia maiúsculas de minúsculas. | Sim |
 | entryFilePath | Caminho relativo à pasta raiz do código/pacote Spark. | Sim |
 | className | Classe principal de Java/Spark do aplicativo | Não |
-| argumentos | Uma lista de argumentos de linha de comando para o programa Spark. | Não |
+| arguments | Uma lista de argumentos de linha de comando para o programa Spark. | Não |
 | proxyUser | A conta de usuário a ser representada para execução do programa Spark | Não |
 | sparkConfig | Propriedades de configuração do Spark. | Não |
 | getDebugInfo | Especifica quando os arquivos de log do Spark são copiados no armazenamento do Azure usado pelo cluster HDInsight (ou) especificado por sparkJobLinkedService. Valores permitidos: Nenhum, Sempre ou Falha. Valor padrão: Nenhuma. | Não |

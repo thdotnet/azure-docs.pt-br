@@ -9,10 +9,10 @@ ms.date: 12/12/2018
 ms.author: jaredro
 ms.custom: seodec18
 ms.openlocfilehash: 89ada41c5f3c9cf1ca7a2ac707363f57080c361d
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64869975"
 ---
 # <a name="configure-expressroute-global-reach-by-using-the-azure-cli"></a>Configurar o alcance Global do ExpressRoute usando a CLI do Azure
@@ -54,7 +54,7 @@ Você pode habilitar o alcance Global do ExpressRoute entre quaisquer dois circu
 
 Ao executar o comando para habilitar a conectividade, observe os seguintes requisitos para valores de parâmetro:
 
-* *peer-circuit* deve ser a ID de recurso completo. Por exemplo: 
+* *peer-circuit* deve ser a ID de recurso completo. Por exemplo:
 
   > /subscriptions/{your_subscription_id}/resourceGroups/{your_resource_group}/providers/Microsoft.Network/expressRouteCircuits/{your_circuit_name}
 

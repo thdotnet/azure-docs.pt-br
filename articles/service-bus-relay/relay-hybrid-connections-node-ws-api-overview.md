@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 01/23/2018
 ms.author: spelluru
 ms.openlocfilehash: 794e797e504d6064c13ffe0a4ed131e668d86e97
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60421600"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64699387"
 ---
 # <a name="relay-hybrid-connections-node-api-overview"></a>Visão geral da API de Node de Conexões Híbridas de Retransmissão
 
@@ -131,7 +131,7 @@ Argumentos do Construtor:
 - `server` (obrigatório) – o URI totalmente qualificado para um nome de Conexão Híbrida a escutar costuma ser construído com o método auxiliar WebSocket.createRelayListenUri().
 - `token` (obrigatório) – esse argumento contém uma cadeia de caracteres de token emitida anteriormente ou uma função de retorno de chamada que pode ser chamada para obter uma cadeia de caracteres tal token. A opção de retorno de chamada é preferencial, pois permite renovação de tokens.
 
-#### <a name="events"></a>Eventos
+#### <a name="events"></a>Events
 
 `RelayedServer`instâncias de emitem três eventos que permitem lidar com solicitações de entrada, estabelecer conexões e detectar condições de erro. Você deve assinar o evento `connect` para lidar com mensagens. 
 

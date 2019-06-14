@@ -2,18 +2,17 @@
 title: Como fornecer o provisionamento dos dispositivos para multilocação com o Serviço de Provisionamento de Dispositivos no Hub IoT do Azure | Microsoft Docs
 description: Como fornecer o provisionamento dos dispositivos para multilocação com a Instância de Serviço de Provisionamento de Dispositivos
 author: wesmc7777
-ms.author: v-yiso
-origin.date: 04/10/2019
-ms.date: 05/06/2019
+ms.author: wesmc
+ms.date: 04/10/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.openlocfilehash: 84e1f57175d772ad281c18b67fa1be484c0cac69
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66116080"
 ---
 # <a name="how-to-provision-for-multitenancy"></a>Como provisionar para multilocação 
@@ -42,6 +41,8 @@ Este artigo usa uma amostra de dispositivo simulado com o [SDK do Azure IoT C](h
 
 * Conclusão do guia de início rápido [Configurar o Serviço de Provisionamento de Dispositivos no Hub IoT com o portal do Azure](./quick-setup-auto-provision.md).
 
+
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 
 ## <a name="create-two-regional-iot-hubs"></a>Criar dois Hubs IoT regionais
@@ -192,7 +193,7 @@ Para fazer a limpeza, essas VMs serão adicionadas ao mesmo grupo de recursos qu
 Nesta seção, você clona o SDK do Azure IoT C em cada VM. O SDK contém um exemplo que simulará a configuração de cada região do dispositivo de um locatário.
 
 
-1. Para cada VM, instale **Cmake**, **g++**, **gcc**, e [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) usando os seguintes comandos:
+1. Para cada VM, instale **Cmake**, **g++** , **gcc**, e [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) usando os seguintes comandos:
 
     ```bash
     sudo apt-get update
@@ -299,7 +300,7 @@ Nesta seção, você atualizará um exemplo de provisionamento no SDK de C do Io
 
 Esse código de exemplo simula uma sequência de inicialização do dispositivo que envia a solicitação de provisionamento à sua instância do Serviço de Provisionamento de Dispositivos. A sequência de inicialização fará com que o dispositivo seja reconhecido e atribuído ao Hub IoT que esteja mais próximo baseado em latência.
 
-1. No portal do Azure, selecione a guia **Visão Geral** de seu serviço de Provisionamento de Dispositivos e anote o valor de **_Escopo da ID_**.
+1. No portal do Azure, selecione a guia **Visão Geral** de seu serviço de Provisionamento de Dispositivos e anote o valor de **_Escopo da ID_** .
 
     ![Extrair informações do ponto de extremidade do Serviço de Provisionamento de Dispositivo na folha do portal](./media/quick-create-simulated-device-x509/extract-dps-endpoints.png) 
 
@@ -411,9 +412,9 @@ Para excluir o grupo de recursos por nome:
 
 1. Entre no [portal do Azure](https://portal.azure.com) e clique em **Grupos de recursos**.
 
-2. Na caixa de texto **Filtrar por nome...**, digite o nome do grupo de recursos que contém seus recursos, **contoso-us-resource-group**. 
+2. Na caixa de texto **Filtrar por nome...** , digite o nome do grupo de recursos que contém seus recursos, **contoso-us-resource-group**. 
 
-3. À direita do seu grupo de recursos, na lista de resultados, clique em **...**, depois em **Excluir grupo de recursos**.
+3. À direita do seu grupo de recursos, na lista de resultados, clique em **...** , depois em **Excluir grupo de recursos**.
 
 4. Você receberá uma solicitação para confirmar a exclusão do grupo de recursos. Digite o nome do grupo de recursos novamente para confirmar e clique em **Excluir**. Após alguns instantes, o grupo de recursos, e todos os recursos contidos nele, serão excluídos.
 

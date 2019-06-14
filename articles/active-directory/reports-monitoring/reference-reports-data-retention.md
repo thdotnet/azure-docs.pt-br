@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 41fa12c9d79d14a6602d995ed93b5d1a23be8a4d
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65781053"
 ---
 # <a name="how-long-does-azure-ad-store-reporting-data"></a>Quanto tempo o Azure AD armazena dados de relatório?
@@ -33,7 +33,7 @@ Neste artigo, você saberá mais sobre as políticas de retenção de dados dos 
 | Edição do Azure AD | Início da Coleta |
 | :--              | :--   |
 | Azure AD Premium P1 <br /> Azure AD Premium P2 | Quando você se inscrever para uma assinatura |
-| Azure AD Gratuito <br /> Azure AD Básico | Na primeira vez que você abrir a [folha do Azure Active Directory](https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) ou usar as [APIs de relatório](https://aka.ms/aadreports)  |
+| AD do Azure Gratuito <br /> AD Basic do Azure | Na primeira vez que você abrir a [folha do Azure Active Directory](https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) ou usar as [APIs de relatório](https://aka.ms/aadreports)  |
 
 ---
 
@@ -66,7 +66,7 @@ Para sinais de segurança, o processo de coleção é iniciado quando você acei
 
 **Relatórios de atividades**    
 
-| Relatório                 | Azure AD Gratuito | Azure AD Básico | Azure AD Premium P1 | Azure AD Premium P2 |
+| Relatório                 | AD do Azure Gratuito | AD Basic do Azure | Azure AD Premium P1 | Azure AD Premium P2 |
 | :--                    | :--           | :--            | :--                 | :--                 |
 | Logs de auditoria             | 7 dias        |  7 dias        | 30 dias             | 30 dias             |
 | Entradas               | N/D           |  N/D           | 30 dias             | 30 dias             |
@@ -76,7 +76,7 @@ Para sinais de segurança, o processo de coleção é iniciado quando você acei
 
 **Sinais de Segurança**
 
-| Relatório         | Azure AD Gratuito | Azure AD Básico | Azure AD Premium P1 | Azure AD Premium P2 |
+| Relatório         | AD do Azure Gratuito | AD Basic do Azure | Azure AD Premium P1 | Azure AD Premium P2 |
 | :--            | :--           | :--            | :--                 | :--                 |
 | Usuários em risco  | 7 dias        | 7 dias         | 30 dias             | 90 dias             |
 | Entradas de risco | 7 dias        | 7 dias         |  30 dias            | 90 dias             |

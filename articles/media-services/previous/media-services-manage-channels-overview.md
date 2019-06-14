@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: c5dd0146fe59e7dc85787f146b10cfde7d6addb4
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64867904"
 ---
 # <a name="overview-of-live-streaming-using-media-services"></a>Visão geral da transmissão ao vivo usando os Serviços de Mídia
@@ -74,17 +74,17 @@ A tabela a seguir fornece um guia de comparação dos dois tipos de Canal com su
 
 | Recurso | Canal de passagem | Canal padrão |
 | --- | --- | --- |
-| A entrada de taxa de bits única é codificada em várias taxas de bits na nuvem |Não  |Sim |
+| A entrada de taxa de bits única é codificada em várias taxas de bits na nuvem |Não |Sim |
 | Resolução máxima, número de camadas |1080p, 8 camadas, 60+fps |720p, 6 camadas, 30 fps |
 | Protocolos de entrada |RTMP, Smooth Streaming |RTMP, Smooth Streaming |
 | Preço |Confira a [página de preços](https://azure.microsoft.com/pricing/details/media-services/) e clique na guia “Vídeo ao vivo” |Confira a [página de preços](https://azure.microsoft.com/pricing/details/media-services/) |
 | Tempo de execução máximo |24x7 |8 horas |
-| Suporte para inserção de imagens fixas |Não  |Sim |
-| Suporte para sinalização de anúncios |Não  |Sim |
+| Suporte para inserção de imagens fixas |Não |Sim |
+| Suporte para sinalização de anúncios |Não |Sim |
 | Legendas CEA 608/708 de passagem |Sim |Sim |
 | Suporte para GOPs de entrada não uniforme |Sim |Não – a entrada deve ser GOPs de 2 s fixos |
 | Suporte para entrada de taxa de quadros variável |Sim |Não – a entrada deve ser uma taxa de quadros fixa.<br/>Pequenas variações são toleradas, por exemplo, durante cenas ricas em movimento. No entanto, o codificador não poderá reduzir para 10 quadros por segundo. |
-| Desligamento automático de Canais quando há perda do feed de entrada |Não  |Após 12 horas, se não houver nenhum Programa em execução |
+| Desligamento automático de Canais quando há perda do feed de entrada |Não |Após 12 horas, se não houver nenhum Programa em execução |
 
 ## <a name="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders-pass-through"></a>Trabalhando com canais que recebem a transmissão ao vivo de taxa de bits múltipla de codificadores locais (passagem)
 
@@ -153,7 +153,7 @@ A tabela a seguir mostra como os estados de canal são mapeados para o modo de c
 | Iniciando |Iniciando |Nenhum (estado transitório) |
 | Executando |Pronto (nenhum programa em execução)<br/>ou o<br/>Streaming (há pelo menos um programa em execução) |SIM |
 | Parando |Parando |Nenhum (estado transitório) |
-| Parado |Parado |Não  |
+| Parado |Parado |Não |
 
 ## <a name="media-services-learning-paths"></a>Roteiros de aprendizagem dos Serviços de Mídia
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

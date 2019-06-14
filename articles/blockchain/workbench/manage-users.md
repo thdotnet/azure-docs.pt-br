@@ -11,10 +11,10 @@ ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
 ms.openlocfilehash: 15babefda36ba37cf6df7820ac888668e4a502be
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65509913"
 ---
 # <a name="manage-users-in-azure-blockchain-workbench"></a>Gerenciar usuários no Azure Blockchain Workbench
@@ -36,7 +36,7 @@ Usuários Blockchain Workbench precisam existir no locatário do Microsoft Azure
 3.  Selecione **Microsoft Azure Active Directory > Usuários**. Você verá uma lista de usuários em seu diretório.
 4.  Para adicionar usuários ao diretório, selecione **Novo usuário**. Para usuários externos, selecione **Novo usuário convidado**.
 
-    ![Novo Usuário](./media/manage-users/add-ad-user.png)
+    ![Novo usuário](./media/manage-users/add-ad-user.png)
 
 5.  Preencha os campos obrigatórios para o novo usuário. Selecione **Criar**.
 

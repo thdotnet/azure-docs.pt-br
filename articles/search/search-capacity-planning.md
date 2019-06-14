@@ -10,10 +10,10 @@ ms.date: 03/22/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 6879dd975f97ba2746165e87a135e5d90e8b229f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60308685"
 ---
 # <a name="scale-partitions-and-replicas-for-query-and-indexing-workloads-in-azure-search"></a>Dimensionar partições e réplicas de consulta e indexação de cargas de trabalho no Azure Search
@@ -29,7 +29,7 @@ Usar menos SUs resulta em uma lista menor proporcionalmente. A cobrança fica em
 ## <a name="terminology-replicas-and-partitions"></a>Terminologia: réplicas e partições
 Partições e réplicas são os principais recursos que dão suporte a um serviço de pesquisa.
 
-| Recurso | Definição |
+| Resource | Definição |
 |----------|------------|
 |*Partições* | Fornecem armazenamento de índice e E/S para operações de leitura/gravação (por exemplo, ao recompilar ou atualizar um índice).|
 |*Réplicas* | Instâncias do serviço de pesquisa, usadas principalmente para equilibrar a carga das operações de consulta. Cada réplica sempre hospeda uma cópia de um índice. Se você tiver 12 réplicas, terá 12 cópias de cada índice carregadas no serviço.|

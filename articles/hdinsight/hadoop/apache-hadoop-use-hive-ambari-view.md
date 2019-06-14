@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: hrasheed
 ms.openlocfilehash: 55f8f453faf35d52c5c292e6b309194443980466
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64719571"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Use o Apache Ambari Hive View com o Apache Hadoop no HDInsight
@@ -23,7 +23,7 @@ Saiba como executar as consultas do Hive usando o Apache Ambari Hive View. A Exi
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Um cluster de Hadoop no HDInsight. Ver [Introdução ao HDInsight no Linux](./apache-hadoop-linux-tutorial-get-started.md).
+* Um cluster de Hadoop no HDInsight. Consulte [Introdução ao HDInsight no Linux](./apache-hadoop-linux-tutorial-get-started.md).
 * Um navegador da Web
 
 ## <a name="run-a-hive-query"></a>Executar um trabalho do Hive
@@ -150,7 +150,7 @@ add jar /myudfs.jar;
 create temporary function myawesomeudf as 'com.myudfs.Awesome';
 ```
 
-Você pode usar a UDF em sua consulta. Por exemplo, `SELECT myawesomeudf(name) FROM people;`.
+Você pode usar a UDF em sua consulta. Por exemplo: `SELECT myawesomeudf(name) FROM people;`.
 
 Para saber mais sobre como usar UDFs com Hive no HDInsight, consulte os seguintes artigos:
 

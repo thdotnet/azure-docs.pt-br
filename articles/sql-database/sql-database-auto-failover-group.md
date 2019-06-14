@@ -13,10 +13,10 @@ ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 05/06/2019
 ms.openlocfilehash: e999e4d96dcb5a1042806c0905ce331dc0a4dc0b
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65522847"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Use grupos de failover automático para habilitar o failover transparente e coordenado de vários bancos de dados
@@ -137,7 +137,7 @@ O grupo de failover automático precisa ser configurado no servidor do Banco de 
 
 Ao projetar um serviço pensando em continuidade de negócios, siga estas diretrizes gerais:
 
-- **Use um ou vários grupos de failover para gerenciar failover de vários bancos de dados** 
+- **Use um ou vários grupos de failover para gerenciar failover de vários bancos de dados**
 
   Um ou mais grupos de failover podem ser criados entre dois servidores em diferentes regiões (servidores primário e secundário). Cada grupo pode conter um ou vários bancos de dados que são recuperados como uma unidade no caso de alguns ou todos os bancos de dados primários ficarem indisponíveis devido a uma interrupção na região primária. O grupo de failover cria um banco de dados geograficamente secundário com o mesmo objetivo de serviço do primário. Se você adicionar uma relação de replicação geográfica existente ao grupo de failover, certifique-se de que o geograficamente secundário esteja configurado com o mesma camada de serviço e tamanho de computação do primário.
 

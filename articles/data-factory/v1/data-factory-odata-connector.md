@@ -14,14 +14,14 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: b2c665de94750c4c6f41bda47960fdb9ba17e819
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60824024"
 ---
 # <a name="move-data-from-an-odata-source-using-azure-data-factory"></a>Mover dados de uma origem de OData usando o Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](data-factory-odata-connector.md)
 > * [Versão 2 (versão atual)](../connector-odata.md)
 
@@ -66,10 +66,10 @@ A tabela a seguir fornece a descrição para elementos JSON específicos do serv
 | type |A propriedade type deve ser definida como: **OData** |Sim |
 | url |URL do serviço OData. |Sim |
 | authenticationType |Tipo de autenticação usada para se conectar ao armazenamento de dados OData. <br/><br/> Para o OData de nuvem, os valores possíveis são Anônimo, Básico e OAuth (observe que o Azure Data Factory dá suporte no momento apenas a OAuth baseado no Azure Active Directory). <br/><br/> Para OData local, os valores possíveis são Anonymous, Basic e Windows. |Sim |
-| username |Especifique o nome de usuário se você estiver usando a autenticação Básica. |Sim (apenas se você estiver usando a autenticação Básica) |
+| Nome de Usuário |Especifique o nome de usuário se você estiver usando a autenticação Básica. |Sim (apenas se você estiver usando a autenticação Básica) |
 | password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Sim (apenas se você estiver usando a autenticação Básica) |
 | authorizedCredential |Se você estiver usando OAuth, clique no botão **Autorizar** no Editor ou Assistente de Cópia do Data Factory e digite suas credenciais. O valor dessa propriedade será gerado automaticamente. |Sim (apenas se você estiver usando a autenticação OAuth) |
-| gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao serviço OData local. Especifique apenas se você estiver copiando dados de origem de OData local. |Não  |
+| gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao serviço OData local. Especifique apenas se você estiver copiando dados de origem de OData local. |Não |
 
 ### <a name="using-basic-authentication"></a>Usando a autenticação Básica
 ```json
@@ -148,7 +148,7 @@ A seção **typeProperties** é diferente para cada tipo de conjunto de dados e 
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
-| path |Caminho para o recurso OData |Não  |
+| path |Caminho para o recurso OData |Não |
 
 ## <a name="copy-activity-properties"></a>Propriedades da atividade de cópia
 Para obter uma lista completa das seções e propriedades disponíveis para definir atividades, confia o artigo [Criando pipelines](data-factory-create-pipelines.md). As propriedades, como nome, descrição, tabelas de entrada e saída, e política, estão disponíveis para todos os tipos de atividades.
@@ -159,7 +159,7 @@ Quando a fonte é do tipo **RelationalSource** (que inclui o OData), as seguinte
 
 | Propriedade | DESCRIÇÃO | Exemplo | Obrigatório |
 | --- | --- | --- | --- |
-| query |Utiliza a consulta personalizada para ler os dados. |"?$select=Name, Description&$top=5" |Não  |
+| query |Utiliza a consulta personalizada para ler os dados. |"?$select=Name, Description&$top=5" |Não |
 
 ## <a name="type-mapping-for-odata"></a>Mapeamento de tipos para OData
 Como mencionado no artigo sobre as [atividades de movimentação de dados](data-factory-data-movement-activities.md) , a atividade de Cópia executa conversões automáticas dos tipos de fonte nos tipos de coletor com a seguinte abordagem de duas etapas.

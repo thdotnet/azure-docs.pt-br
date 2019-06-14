@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/20/2018
 ms.author: jingwang
 ms.openlocfilehash: 82418c03039219adedf45828d769d278a14499ff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61259698"
 ---
 # <a name="copy-data-to-or-from-azure-cosmos-dbs-api-for-mongodb-by-using-azure-data-factory"></a>Copiar dados de e para o Azure Cosmos DB (API do MongoDB) usando o Azure Data Factory
@@ -51,7 +51,7 @@ As propriedades a seguir têm suporte no serviço vinculado da API do Azure Cosm
 | type | O **tipo** de propriedade deve ser definido como **CosmosDbMongoDbApi**. | Sim |
 | connectionString |Especifique a cadeia de conexão da API do Azure Cosmos DB para MongoDB. Encontre-a no portal do Azure -> sua folha Cosmos DB -> cadeia de caracteres de conexão primária ou secundária, com o padrão de `mongodb://<cosmosdb-name>:<password>@<cosmosdb-name>.documents.azure.com:10255/?ssl=true&replicaSet=globaldb`. <br/><br />Marque esse campo como um tipo **SecureString** para armazená-lo com segurança no Data Factory. Você também pode [referenciar um segredo armazenado no Cofre de Chaves do Azure](store-credentials-in-key-vault.md). |Sim |
 | database | O nome do banco de dados que você deseja criar. | Sim |
-| connectVia | O [Tempo de Integração](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você poderá usar o Azure Integration Runtime ou um tempo de execução da integração auto-hospedada (se o armazenamento de dados estiver localizado em uma rede privada). Se essa propriedade não for especificada, o Azure Integration Runtime padrão será usado. |Não  |
+| connectVia | O [Tempo de Integração](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você poderá usar o Azure Integration Runtime ou um tempo de execução da integração auto-hospedada (se o armazenamento de dados estiver localizado em uma rede privada). Se essa propriedade não for especificada, o Azure Integration Runtime padrão será usado. |Não |
 
 **Exemplo**
 
@@ -115,12 +115,12 @@ As seguintes propriedades são suportadas na seção **source** da atividade de 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | type | O **tipo** de propriedade da fonte da atividade de cópia deve ser definido como **CosmosDbMongoDbApiSource**. |Sim |
-| filter | Especifica o filtro de seleção usando operadores de consulta. Para retornar todos os documentos em uma coleção, omita esse parâmetro ou passe um documento vazio ({}). | Não  |
-| cursorMethods.project | Especifica os campos a serem retornados nos documentos para projeção. Para retornar todos os campos nos documentos correspondentes, omita este parâmetro. | Não  |
-| cursorMethods.sort | Especifica a ordem na qual a consulta retorna documentos correspondentes. Consulte [cursor.sort()](https://docs.mongodb.com/manual/reference/method/cursor.sort/#cursor.sort). | Não  |
-| cursorMethods.limit | Especifica o número máximo de documentos que o servidor retorna. Consulte [cursor.limit()](https://docs.mongodb.com/manual/reference/method/cursor.limit/#cursor.limit).  | Não  | 
-| cursorMethods.skip | Especifica o número de documentos a serem ignorados e de onde o MongoDB começa a retornar resultados. Consulte [cursor.skip()](https://docs.mongodb.com/manual/reference/method/cursor.skip/#cursor.skip). | Não  |
-| batchSize | Especifica o número de documentos a serem retornados em cada lote da resposta da instância do MongoDB. Na maioria dos casos, modificar o tamanho do lote não afetará o usuário ou o aplicativo. O Cosmos DB limita cada lote para que ele não exceda 40 MB, que é a soma do tamanho do número de documentos do batchSize, portanto, diminua esse valor se o tamanho do documento for grande. | Não <br/>(o padrão é **100**) |
+| filter | Especifica o filtro de seleção usando operadores de consulta. Para retornar todos os documentos em uma coleção, omita esse parâmetro ou passe um documento vazio ({}). | Não |
+| cursorMethods.project | Especifica os campos a serem retornados nos documentos para projeção. Para retornar todos os campos nos documentos correspondentes, omita este parâmetro. | Não |
+| cursorMethods.sort | Especifica a ordem na qual a consulta retorna documentos correspondentes. Consulte [cursor.sort()](https://docs.mongodb.com/manual/reference/method/cursor.sort/#cursor.sort). | Não |
+| cursorMethods.limit | Especifica o número máximo de documentos que o servidor retorna. Consulte [cursor.limit()](https://docs.mongodb.com/manual/reference/method/cursor.limit/#cursor.limit).  | Não | 
+| cursorMethods.skip | Especifica o número de documentos a serem ignorados e de onde o MongoDB começa a retornar resultados. Consulte [cursor.skip()](https://docs.mongodb.com/manual/reference/method/cursor.skip/#cursor.skip). | Não |
+| batchSize | Especifica o número de documentos a serem retornados em cada lote da resposta da instância do MongoDB. Na maioria dos casos, modificar o tamanho do lote não afetará o usuário ou o aplicativo. O Cosmos DB limita cada lote para que ele não exceda 40 MB, que é a soma do tamanho do número de documentos do batchSize, portanto, diminua esse valor se o tamanho do documento for grande. | Não<br/>(o padrão é **100**) |
 
 >[!TIP]
 >Suporte do ADF consumindo o documento BSON em **Modo estrito**. Verifique se sua consulta de filtro está em Modo estrito em vez do modo Shell. Veja mais descrições no [manual do MongoDB](https://docs.mongodb.com/manual/reference/mongodb-extended-json/index.html).
@@ -170,9 +170,9 @@ As seguintes propriedades são suportadas na seção Copy Activity **sink**:
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | type | O **tipo** de propriedade do coletor de atividade de cópia deve ser definido como **CosmosDbMongoDbApiSink**. |Sim |
-| writeBehavior |Descreve como gravar dados no Azure Cosmos DB. Valores permitidos são **insert** e **upsert**.<br/><br/>O comportamento de **upsert** é substituir o documento se um documento com a mesma ID já existir; caso contrário, inserir o documento.<br /><br />**Observação**: O Data Factory gerará automaticamente uma ID para um documento se uma ID não for especificada no documento original ou pelo mapeamento de coluna. Isso significa que, para **upsert** funcionar conforme esperado, o documento deve ter uma ID. |Não <br />(o padrão é **insert**) |
-| writeBatchSize | A propriedade **writeBatchSize** controla o tamanho dos documentos que escrevemos em cada lote. Você pode tentar aumentar o valor de **writeBatchSize** para melhorar o desempenho e diminuir o valor se o tamanho do documento for grande. |Não <br />(o padrão é **10.000**) |
-| writeBatchTimeout | O tempo de espera para o lote inserir operação seja concluída antes de expirar. O valor permitido é timespan. | Não <br/>(o padrão é **30:00:00** - 30 minutos) |
+| writeBehavior |Descreve como gravar dados no Azure Cosmos DB. Valores permitidos são **insert** e **upsert**.<br/><br/>O comportamento de **upsert** é substituir o documento se um documento com a mesma ID já existir; caso contrário, inserir o documento.<br /><br />**Observação**: O Data Factory gerará automaticamente uma ID para um documento se uma ID não for especificada no documento original ou pelo mapeamento de coluna. Isso significa que, para **upsert** funcionar conforme esperado, o documento deve ter uma ID. |Não<br />(o padrão é **insert**) |
+| writeBatchSize | A propriedade **writeBatchSize** controla o tamanho dos documentos que escrevemos em cada lote. Você pode tentar aumentar o valor de **writeBatchSize** para melhorar o desempenho e diminuir o valor se o tamanho do documento for grande. |Não<br />(o padrão é **10.000**) |
+| writeBatchTimeout | O tempo de espera para o lote inserir operação seja concluída antes de expirar. O valor permitido é timespan. | Não<br/>(o padrão é **30:00:00** - 30 minutos) |
 
 **Exemplo**
 

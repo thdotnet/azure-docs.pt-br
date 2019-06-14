@@ -15,10 +15,10 @@ ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: eef13c5a4e3757b0eafd77c0915717175c2dbd8c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60768964"
 ---
 # <a name="create-an-external-app-service-environment"></a>Como criar um ambiente externo do Serviço de Aplicativo
@@ -92,7 +92,7 @@ Para criar um ASE durante a criação de um plano do serviço de aplicativo:
 
 9. Especifica os detalhes da sua rede virtual do Azure. Escolha **Criar novo** ou **Selecionar existente**. A opção de selecionar uma VNet existente está disponível somente se você tiver uma rede virtual na região selecionada. Se você selecionar **Criar novo**, insira um nome para a VNet. Então, é criado um novo VNet do Resource Manager com o nome inserido. Ele usa o espaço de endereço `192.168.250.0/23` na região selecionada. Se você escolher **Selecionar Existente**, precisará:
 
-     a. Selecione o bloco de endereço da VNet, se tiver mais de um.
+    a. Selecione o bloco de endereço da VNet, se tiver mais de um.
 
     b. Digite um novo nome de sub-rede.
 
@@ -128,7 +128,7 @@ Para criar um ASE durante a criação de um plano do serviço de aplicativo:
 
 1. Especifica os detalhes da sua rede virtual do Azure. Escolha **Criar novo** ou **Selecionar existente**. A opção de selecionar uma VNet existente está disponível somente se você tiver uma rede virtual na região selecionada. Se você selecionar **Criar novo**, insira um nome para a VNet. Então, é criado um novo VNet do Resource Manager com o nome inserido. Ele usa o espaço de endereço `192.168.250.0/23` na região selecionada. Se você escolher **Selecionar Existente**, precisará:
 
-     a. Selecione o bloco de endereço da VNet, se tiver mais de um.
+    a. Selecione o bloco de endereço da VNet, se tiver mais de um.
 
     b. Digite um novo nome de sub-rede.
 

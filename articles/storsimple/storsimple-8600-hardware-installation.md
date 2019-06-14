@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: be3f68a00647840801e7c205d7abb34b718bd61c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60630811"
 ---
 # <a name="unpack-rack-mount-and-cable-your-storsimple-8600-device"></a>Desembalar, montar em rack e cabear o dispositivo StorSimple 8600.
@@ -46,7 +46,7 @@ Conclua as etapas a seguir para desempacotar o dispositivo.
    
     **Exibição do dispositivo de armazenamento desempacotado**
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    | --- | --- |
    |   1 |Embalagem |
    |   2 |Cabos SAS (na bandeja de acessórios e cabos) |
@@ -110,7 +110,7 @@ Um conjunto de trilhos de montagem será fornecido para ser usado com o gabinete
    
     **Fixando corrediças do trilho às laterais do compartimento**
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    | --- | --- |
    |  1 |Parafusos de cabeça abaulada M 3x4 |
    |  2 |Corrediças dos chassis |
@@ -123,7 +123,7 @@ Um conjunto de trilhos de montagem será fornecido para ser usado com o gabinete
    
     **Fixando os conjuntos de trilhos ao rack**
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    | --- | --- |
    |   1 |Parafuso de travamento |
    |   2 |Parafuso da coluna do rack frontal para orifício quadrado |
@@ -149,7 +149,7 @@ Usando os trilhos do rack que acabaram de ser instalados, execute as etapas a se
    
     **Instalando as tampas do flange**
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    | --- | --- |
    |   1 |Parafuso de fixação do compartimento |
 
@@ -202,7 +202,7 @@ Para oferecer suporte a este failover de controlador redundante, você precisa c
    
     **Parte de trás do dispositivo mostrando as portas de dados**
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    | --- | --- |
    |   0,1,4,5 |Interfaces de rede de 1 GbE |
    |   2,3 |Interfaces de rede de 10 GbE |
@@ -213,9 +213,9 @@ Para oferecer suporte a este failover de controlador redundante, você precisa c
 
 **Cabeamento de rede para o dispositivo**
 
-| Rótulo | DESCRIÇÃO |
+| Rotular | DESCRIÇÃO |
 | --- | --- |
-| O  |LAN com acesso à Internet |
+| O |LAN com acesso à Internet |
 | B |Controlador 0 |
 | C |PCM 0 |
 | D |Controlador 1 |
@@ -252,7 +252,7 @@ Execute as etapas a seguir para cabear a porta serial.
 4. Instale os drivers de USB seriais (fornecidos com o dispositivo) em seu computador.
 5. Configure a conexão serial como se segue:
    
-   * 115.200 bauds
+   * 115\.200 bauds
    * 8 bits de dados
    * 1 bit de parada
    * Sem paridade

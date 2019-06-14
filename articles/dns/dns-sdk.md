@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 09/19/2016
 ms.author: victorh
 ms.openlocfilehash: a06d629087e853c2578e6d35a2ea90c5a8eff840
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60308936"
 ---
 # <a name="create-dns-zones-and-record-sets-using-the-net-sdk"></a>Criar zonas DNS e conjuntos de registros usando o SDK do .NET
@@ -42,7 +42,7 @@ Normalmente, o acesso programático aos recursos do Azure é concedido por meio 
 Para usar o SDK do .NET de DNS, você precisa instalar o pacote NuGet da **Biblioteca de Gerenciamento de DNS do Azure** e outros pacotes do Azure requeridos.
 
 1. No **Visual Studio**, abra um projeto ou um novo projeto.
-2. Acesse **Ferramentas** **>** **Gerenciamento de Pacotes NuGet** **>** **Gerenciar Pacotes NuGet para Solução...**.
+2. Acesse **Ferramentas** **>** **Gerenciamento de Pacotes NuGet** **>** **Gerenciar Pacotes NuGet para Solução...** .
 3. Clique em **Procurar**, marque a caixa de seleção **Incluir pré-lançamento** e digite **Microsoft.Azure.Management.Dns** na caixa de pesquisa.
 4. Selecione o pacote e clique em **Instalar** adicioná-lo a seu projeto do Visual Studio.
 5. Repita o processo acima para também instalar os seguintes pacotes: **Microsoft.Rest.ClientRuntime.Azure.Authentication** e **ResourceManager**.
@@ -145,7 +145,7 @@ recordSet = await dnsClient.RecordSets.CreateOrUpdateAsync(resourceGroupName, zo
 
 ## <a name="list-zones-and-record-sets"></a>Listar zonas e conjuntos de registros
 
-Para listar as zonas, use os métodos *DnsManagementClient.Zones.List...*, que oferecem suporte listando todas as zonas em um grupo de recursos dado ou todas as zonas em uma determinada assinatura do Azure (entre os grupos de recursos.) Para listar os conjuntos de registros, use os métodos *DnsManagementClient.RecordSets.List...*, que oferecem suporte listando todos os conjuntos de registros em uma determinada região ou apenas os conjuntos de registros de um tipo específico.
+Para listar as zonas, use os métodos *DnsManagementClient.Zones.List...* , que oferecem suporte listando todas as zonas em um grupo de recursos dado ou todas as zonas em uma determinada assinatura do Azure (entre os grupos de recursos.) Para listar os conjuntos de registros, use os métodos *DnsManagementClient.RecordSets.List...* , que oferecem suporte listando todos os conjuntos de registros em uma determinada região ou apenas os conjuntos de registros de um tipo específico.
 
 Observe ao listar zonas e conjuntos de registros que os resultados poderão ser paginados.  O exemplo a seguir mostra como percorrer as páginas de resultados. (Um tamanho de página '2' artificialmente pequeno é usado para forçar a paginação; na prática, esse parâmetro deve ser omitido e o tamanho de página padrão usado.)
 
@@ -163,6 +163,6 @@ while (page.NextPageLink != null)
 }
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Baixe o [projeto de exemplo SDK do .NET do DNS do Azure](https://www.microsoft.com/en-us/download/details.aspx?id=47268&WT.mc_id=DX_MVP4025064&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True), que inclui mais exemplos de como usar o SDK do .NET do DNS do Azure, incluindo exemplos para outros tipos de registro DNS.

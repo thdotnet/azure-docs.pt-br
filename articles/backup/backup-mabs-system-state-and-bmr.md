@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: raynew
 ms.openlocfilehash: 35ab150670cdc27efcedca233928e0c2184aeca6
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62116168"
 ---
 # <a name="back-up-system-state-and-restore-to-bare-metal-with-azure-backup-server"></a>Fazer backup de estado do sistema e restaurar bare-metal com o servidor de Backup do Azure
@@ -34,7 +34,7 @@ A tabela a seguir resume o que você pode fazer backup e recuperar. Para obter i
 |**Dados de arquivo**<br /><br />Backup de dados regular<br /><br />Backup de estado do sistema/BMR|Dados de arquivos perdidos|S|N|N|
 |**Dados de arquivo**<br /><br />Backup de arquivos de dados do Servidor de Backup do Azure<br /><br />Backup de estado do sistema/BMR|Sistema operacional perdido ou danificado|N|S|S|
 |**Dados de arquivo**<br /><br />Backup de arquivos de dados do Servidor de Backup do Azure<br /><br />Backup de estado do sistema/BMR|Servidor perdido (volumes de dados intactos)|N|N|S|
-|**Dados de arquivo**<br /><br />Backup de arquivos de dados do Servidor de Backup do Azure<br /><br />Backup de estado do sistema/BMR|Servidor perdido (volumes de dados intactos)|S|Não |Sim (BMR, seguida de recuperação regular de dados do arquivo de backup)|
+|**Dados de arquivo**<br /><br />Backup de arquivos de dados do Servidor de Backup do Azure<br /><br />Backup de estado do sistema/BMR|Servidor perdido (volumes de dados intactos)|S|Não|Sim (BMR, seguida de recuperação regular de dados do arquivo de backup)|
 |**Dados do SharePoint**:<br /><br />Backup de dados do farm do Servidor de Backup do Azure<br /><br />Backup de estado do sistema/BMR|Site perdido, listas, itens de lista, documentos|S|N|N|
 |**Dados do SharePoint**:<br /><br />Backup de dados do farm do Servidor de Backup do Azure<br /><br />Backup de estado do sistema/BMR|Sistema operacional perdido ou danificado|N|S|S|
 |**Dados do SharePoint**:<br /><br />Backup de dados do farm do Servidor de Backup do Azure<br /><br />Backup de estado do sistema/BMR|Recuperação de desastre|N|N|N|

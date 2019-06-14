@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/17/2018
 ms.openlocfilehash: 6894486118f69e682353142be04821e1d28440e5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60814666"
 ---
 # <a name="schedule-u-sql-jobs-using-sql-server-integration-services-ssis"></a>Agendar trabalhos do U-SQL usando SSIS (SQL Server Integration Services)
@@ -131,7 +131,7 @@ Além de usar arquivos do U-SQL armazenados na nuvem, você também poderá usar
 
 1. Clique com o botão direito do mouse em **Gerenciadores de Conexões** no projeto SSIS e escolha **Novo Gerenciador de Conexões**.
 
-2. Selecione o tipo de **Arquivo** e clique em **Adicionar...**.
+2. Selecione o tipo de **Arquivo** e clique em **Adicionar...** .
 
 3. Defina **Tipo de uso** para **Arquivo existente** e defina o **Arquivo** para o arquivo no computador local.
 

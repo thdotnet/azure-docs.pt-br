@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: b367b6e7126a442dc68646ff52a29c955f50b798
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60631100"
 ---
 # <a name="unpack-rack-mount-and-cable-your-storsimple-8100-device"></a>Desembalar, montar em rack e cabear o dispositivo StorSimple 8100.
@@ -46,7 +46,7 @@ Conclua as etapas a seguir para desempacotar o dispositivo.
    
     **Exibição do dispositivo de armazenamento desempacotado**
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    | --- | --- |
    |   1 |Embalagem |
    |   2 |Espuma inferior |
@@ -122,7 +122,7 @@ Um conjunto de trilhos de montagem é fornecido para ser usado com o gabinete de
    
     **Fixando os conjuntos de trilhos internos ao rack**
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    | --- | --- |
    |   1 |Parafuso de travamento |
    |   2 |Parafuso da coluna do rack frontal para orifício quadrado |
@@ -148,7 +148,7 @@ Usando os trilhos do rack que acabaram de ser instalados, execute as etapas a se
    
     **Instalando as tampas do flange**
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    | --- | --- |
    |   1 |Parafuso de fixação do compartimento |
 
@@ -188,7 +188,7 @@ Para oferecer suporte a este failover de controlador redundante, você precisa c
    
     **Parte traseira do dispositivo mostrando as portas de dados**
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    | --- | --- |
    |   0,1,4,5 |Interfaces de rede de 1 GbE |
    |   2,3 |Interfaces de rede de 10 GbE |
@@ -199,9 +199,9 @@ Para oferecer suporte a este failover de controlador redundante, você precisa c
 
     **Cabeamento de rede para o dispositivo**
 
-   |Rótulo | DESCRIÇÃO |
+   |Rotular | DESCRIÇÃO |
    |----- | ----------- |
-   | O     | LAN com acesso à Internet |
+   | O    | LAN com acesso à Internet |
    | B    | Controlador 0 |
    | C    | PCM 0 |
    | D    | Controlador 1 |

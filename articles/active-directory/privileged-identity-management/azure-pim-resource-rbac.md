@@ -17,10 +17,10 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 74607f6a746558238ead65036d708b515d370035
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60441292"
 ---
 # <a name="view-activity-and-audit-history-for-azure-resource-roles-in-pim"></a>Exibir a atividade e o histórico de auditoria para funções de recurso do Azure no PIM
@@ -85,7 +85,7 @@ A auditoria de recursos fornece uma exibição de todas as atividades de funçã
 
     ![Filtrar auditoria de recurso](media/azure-pim-resource-rbac/rbac-resource-audit.png)
 
-1. Em **Tipo de auditoria**, selecione **Ativar (Atribuído + Ativado)**.
+1. Em **Tipo de auditoria**, selecione **Ativar (Atribuído + Ativado)** .
 
     ![Detalhes da atividade](media/azure-pim-resource-rbac/rbac-audit-activity.png)
 

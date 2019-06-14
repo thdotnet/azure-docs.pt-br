@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 7c2e3b2bea7ddef3dfbf69f85b499d9a60158689
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60584976"
 ---
 # <a name="get-started-with-elastic-database-tools"></a>Introdução às ferramentas do Banco de Dados Elástico
@@ -84,7 +84,7 @@ Para baixar e executar a amostra, siga estas etapas:
 
 1. Baixe as [Ferramentas de Banco de Dados Elástico para Azure SQL – Introdução](https://code.msdn.microsoft.com/windowsapps/Elastic-Scale-with-Azure-a80d8dc6) do MSDN. Descompacte o exemplo em um local de sua escolha.
 
-2. Para criar um projeto, abra a solução *ElasticScaleStarterKit.sln* do diretório *C#*.
+2. Para criar um projeto, abra a solução *ElasticScaleStarterKit.sln* do diretório *C#* .
 
 3. Na solução para o exemplo de projeto, abra o arquivo *app.config*. Siga as instruções no arquivo para adicionar o nome de seu servidor do Banco de Dados SQL do Microsoft Azure e suas informações de entrada (nome de usuário e senha).
 

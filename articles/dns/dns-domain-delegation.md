@@ -2,16 +2,16 @@
 title: Visão geral da delegação do DNS do Azure
 description: Entenda como alterar a delegação de domínio e usar os servidores de nomes do Azure DNS para fornecer hospedagem do domínio.
 services: dns
-author: WenJason
+author: vhorne
 ms.service: dns
-origin.date: 2/19/2019
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.date: 2/19/2019
+ms.author: victorh
+ms.topic: conceptual
 ms.openlocfilehash: 70c1c1ab0dd5d1998054cf0c68325022803dff06
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60563131"
 ---
 # <a name="delegation-of-dns-zones-with-azure-dns"></a>Delegação de zonas DNS com o DNS do Azure
@@ -22,7 +22,7 @@ O Azure DNS permite hospedar uma zona DNS e gerenciar os registros DNS para um d
 
 ### <a name="domains-and-zones"></a>Zonas e domínios
 
-O Sistema de Nomes de Domínio é uma hierarquia de domínios. A hierarquia começa no domínio 'raiz', cujo nome é simplesmente '**.**'.  Abaixo dele vêm domínios de nível superior, como 'com', 'net', 'org', 'uk' ou 'jp'.  Abaixo desses domínios de alto nível estão domínios de segundo nível, como 'org.uk' ou 'co.jp'.  E assim por diante. Os domínios na hierarquia de DNS são hospedados usando zonas DNS separadas. Essas zonas são distribuídas globalmente, hospedadas por servidores de nomes DNS pelo mundo.
+O Sistema de Nomes de Domínio é uma hierarquia de domínios. A hierarquia começa no domínio 'raiz', cujo nome é simplesmente ' **.** '.  Abaixo dele vêm domínios de nível superior, como 'com', 'net', 'org', 'uk' ou 'jp'.  Abaixo desses domínios de alto nível estão domínios de segundo nível, como 'org.uk' ou 'co.jp'.  E assim por diante. Os domínios na hierarquia de DNS são hospedados usando zonas DNS separadas. Essas zonas são distribuídas globalmente, hospedadas por servidores de nomes DNS pelo mundo.
 
 **Zona DNS** - Um domínio é um nome exclusivo no Sistema de Nomes de Domínio, por exemplo, 'contoso.com'. Uma zona DNS é usada para hospedar os registros DNS para um domínio específico. Por exemplo, o domínio 'contoso.com' pode conter vários registros DNS, como 'mail.contoso.com' (para um servidor de email) e 'www.contoso.com' (para um site da Web).
 

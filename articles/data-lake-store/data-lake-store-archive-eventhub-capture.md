@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: bb67c1769510710b368bef4dc0b501f939b3427e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60879414"
 ---
 # <a name="use-azure-data-lake-storage-gen1-to-capture-data-from-event-hubs"></a>Use o Azure Data Lake Storage Gen1 para capturar dados dos Hubs de Eventos
@@ -45,7 +45,7 @@ Nesta seção, você criará uma pasta dentro da conta na qual você deseja capt
 
 1. Atribua permissões na raiz do Data Lake Storage Gen1. 
 
-     a. Clique em **Data Explorer**, selecione a raiz da conta do Data Lake Storage Gen1 e, em seguida, clique em **Acesso**.
+    a. Clique em **Data Explorer**, selecione a raiz da conta do Data Lake Storage Gen1 e, em seguida, clique em **Acesso**.
 
     ![Atribuir permissões à raiz do Data Lake Storage Gen1](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-permissions-to-root.png "Atribuir permissões à raiz do Data Lake Storage Gen1")
 
@@ -66,7 +66,7 @@ Nesta seção, você criará uma pasta dentro da conta na qual você deseja capt
 
 1. Atribua permissões para a pasta na conta do Data Lake Storage Gen1 em que você deseja capturar dados.
 
-     a. Clique em **Data Explorer**, selecione a pasta na conta do Data Lake Storage Gen1 e, em seguida, clique em **Acesso**.
+    a. Clique em **Data Explorer**, selecione a pasta na conta do Data Lake Storage Gen1 e, em seguida, clique em **Acesso**.
 
     ![Atribuir permissões à pasta do Data Lake Storage Gen1](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-permissions-to-folder.png "Atribuir permissões à pasta do Data Lake Storage Gen1")
 
@@ -94,7 +94,7 @@ Nesta seção, você criará um Hub de Eventos dentro de um namespace de Hubs de
 
     ![Criar Hub de Eventos](./media/data-lake-store-archive-eventhub-capture/data-lake-store-configure-eventhub.png "Criar Hub de Eventos")
 
-     a. Forneça um nome para o Hub de Eventos.
+    a. Forneça um nome para o Hub de Eventos.
     
     b. Para este tutorial, defina **Contagem de Partições** e **Retenção de Mensagem** com os valores padrão.
     

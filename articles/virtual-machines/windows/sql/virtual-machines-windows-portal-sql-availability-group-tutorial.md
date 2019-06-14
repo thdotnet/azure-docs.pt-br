@@ -17,10 +17,10 @@ ms.workload: iaas-sql-server
 ms.date: 08/30/2018
 ms.author: mikeray
 ms.openlocfilehash: d86538fca907f7181bf58ff236bba8de186641fb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60593790"
 ---
 # <a name="tutorial-configure-always-on-availability-group-in-azure-vm-manually"></a>Tutorial: Configurar grupos de disponibilidade Sempre ativo na VM do Azure manualmente
@@ -140,7 +140,7 @@ Neste exemplo, o cluster do Windows usa um compartilhamento de arquivos para cri
 
 1. Em **Nome, Descrição e Configurações**, verifique o nome de compartilhamento e o caminho. Clique em **Avançar**.
 
-1. Em **Permissões de Pasta Compartilhada**, defina **Personalizar permissões**. Clique em **Personalizar...**.
+1. Em **Permissões de Pasta Compartilhada**, defina **Personalizar permissões**. Clique em **Personalizar...** .
 
 1. Em **Personalizar Permissões**, clique em **Adicionar...** .
 
@@ -242,7 +242,7 @@ Repeat these steps on the second SQL Server.
 
 1. Em **Nome, Descrição e Configurações**, verifique o nome de compartilhamento e o caminho. Clique em **Avançar**.
 
-1. Em **Permissões de Pasta Compartilhada**, defina **Personalizar permissões**. Clique em **Personalizar...**.
+1. Em **Permissões de Pasta Compartilhada**, defina **Personalizar permissões**. Clique em **Personalizar...** .
 
 1. Em **Personalizar Permissões**, clique em **Adicionar...** .
 
@@ -299,7 +299,7 @@ Agora você está pronto para configurar um Grupo de Disponibilidade usando as s
 
     ![Novo assistente de AG, selecionar sincronização de dados inicial](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/66-endpoint.png)
 
-8. Na página **Selecionar Sincronização de Dados Inicial** , selecione **Completo** e especifique um local de rede compartilhada. Para o local, use o [compartilhamento de backup criado](#backupshare). No exemplo, era **\\\\\<First SQL Server\>\Backup\\**. Clique em **Avançar**.
+8. Na página **Selecionar Sincronização de Dados Inicial** , selecione **Completo** e especifique um local de rede compartilhada. Para o local, use o [compartilhamento de backup criado](#backupshare). No exemplo, era **\\\\\<First SQL Server\>\Backup\\** . Clique em **Avançar**.
 
    >[!NOTE]
    >A sincronização completa usa um backup completo do banco de dados na primeira instância do SQL Server e o restaura na segunda instância. Em caso de grandes bancos de dados, a sincronização completa não é recomendada porque pode levar muito tempo. Você pode reduzir esse tempo manualmente usando um backup do banco de dados e restaurando-o com `NO RECOVERY`. Se o banco de dados já foi restaurado com `NO RECOVERY` no segundo SQL Server antes da configuração do Grupo de Disponibilidade, escolha **Somente junção**. Se você quiser usar o backup depois de configurar o Grupo de Disponibilidade, escolha **Ignorar sincronização inicial de dados**.
@@ -362,7 +362,7 @@ Um Azure Load Balancer pode ser um Standard Load Balancer ou um Balanceador de C
    | **Tipo** |Interna |
    | **Rede virtual** |Use o nome da rede virtual do Azure. |
    | **Sub-rede** |Use o nome da sub-rede em que a máquina virtual está.  |
-   | **Atribuição de endereço IP** |estático |
+   | **Atribuição de endereço IP** |Estático |
    | **Endereço IP** |Use um endereço disponível da sub-rede. Use este endereço para o ouvinte do grupo de disponibilidade. Observe que isso é diferente do endereço IP de cluster.  |
    | **Assinatura** |Use a mesma assinatura da máquina virtual. |
    | **Localidade** |Use o mesmo local da máquina virtual. |

@@ -11,10 +11,10 @@ ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 87e35573eea836fc8a88c7515409c070ec63aa3b
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65024889"
 ---
 # <a name="indexers-in-azure-search"></a>Indexadores no Azure Search
@@ -47,7 +47,7 @@ Todas as operações relacionadas a indexadores, incluindo solicitações GET pa
 
 Armazenamentos de dados de rastreamento de indexadores no Azure.
 
-* [SQL Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
+* [Azure SQL](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [Armazenamento de Blobs do Azure](search-howto-indexing-azure-blob-storage.md)
 * [Armazenamento de Tabelas do Azure](search-howto-indexing-azure-tables.md) 

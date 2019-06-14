@@ -16,10 +16,10 @@ ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
 ms.openlocfilehash: d2daae2a3317d3b48748262d87ab8d7f7e13f2b0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60653331"
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Solução de problemas de funções do serviço de nuvem com falha de inicialização
@@ -78,7 +78,7 @@ Navegar até o site agora retornará mensagens de erro mais explícitas:
 * Descrição: Ocorreu uma exceção sem tratamento durante a execução da solicitação da web atual. Examine o rastreamento de pilha para obter mais informações sobre o erro e em que ponto ele ocorreu no código.
 * Detalhes da exceção: System.IO.FIleNotFoundException: Não foi possível carregar arquivo ou assembly ' Microsoft.WindowsAzure.StorageClient, versão Version=1.1.0.0, Culture = neutral, PublicKeyToken = 31bf856ad364e35' ou uma de suas dependências. O sistema não pode encontrar o arquivo especificado.
 
-Por exemplo: 
+Por exemplo:
 
 ![Erro de servidor explícito no aplicativo '/'](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503389.png)
 

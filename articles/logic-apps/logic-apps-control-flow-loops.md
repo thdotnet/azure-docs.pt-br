@@ -11,10 +11,10 @@ manager: jeconnoc
 ms.date: 01/05/2019
 ms.topic: article
 ms.openlocfilehash: 339d4270dc1803879607663e9e2db4a86591ec76
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60683819"
 ---
 # <a name="create-loops-that-repeat-workflow-actions-or-process-arrays-in-azure-logic-apps"></a>Criar loops que repetem ações de fluxo de trabalho ou processam matrizes nos Aplicativos Lógicos do Azure
@@ -54,7 +54,7 @@ Este exemplo de aplicativo lógico envia um resumo diário para um RSS feed de u
 2. Entre o gatilho RSS e enviar ação de email, adicione um loop "Foreach". 
 
    1. Para adicionar um loop entre as etapas, mova o ponteiro sobre a seta entre essas etapas. 
-   Escolha o sinal **mais** (**+**) que aparece e selecione **Adicionar uma ação**.
+   Escolha o sinal **mais** ( **+** ) que aparece e selecione **Adicionar uma ação**.
 
       ![Selecione "Adicionar uma ação"](media/logic-apps-control-flow-loops/add-for-each-loop.png)
 
@@ -126,7 +126,7 @@ Se você estiver trabalhando na exibição de código para o aplicativo lógico,
 
 Por padrão, os ciclos em um loop "Foreach" são executados em paralelo. Para executar cada ciclo sequencialmente, defina a opção **Sequencial** do loop. Os loops "Foreach" devem ser executados sequencialmente quando você tem loops aninhados ou variáveis dentro de loops em que você espera resultados previsíveis. 
 
-1. No canto superior direito do loop, escolha **reticências** (**...**) > **Configurações**.
+1. No canto superior direito do loop, escolha **reticências** ( **...** ) > **Configurações**.
 
    ![No loop "Foreach" loop, escolha "..." > "Configurações"](media/logic-apps-control-flow-loops/for-each-loop-settings.png)
 

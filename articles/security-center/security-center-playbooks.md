@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/28/2018
 ms.author: rkarlin
 ms.openlocfilehash: ec16e6daec099adbede625c5ec6fe6909059143b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60906887"
 ---
 # <a name="security-playbook-in-azure-security-center-preview"></a>Guia estratégico de segurança na Central de Segurança do Azure (versão prévia)
@@ -34,11 +34,11 @@ Guia estratégico de segurança é uma coleção de procedimentos que podem ser 
 Siga estas etapas para criar um novo guia estratégico de segurança na Central de Segurança:
 
 1.  Abra o painel **Central de Segurança**.
-2.  Na seção **Automação e Orquestração** no painel esquerdo, clique em **Guias Estratégicos (Versão prévia)**.
+2.  Na seção **Automação e Orquestração** no painel esquerdo, clique em **Guias Estratégicos (Versão prévia)** .
 
     ![Aplicativo Lógico](./media/security-center-playbooks/security-center-playbooks-fig17.png)
 
-3. Em **Central de Segurança - Guias estratégicos (Versão prévia)**, clique no botão **Adicionar**.
+3. Em **Central de Segurança - Guias estratégicos (Versão prévia)** , clique no botão **Adicionar**.
 
     ![Criar aplicativo lógico](./media/security-center-playbooks/security-center-playbooks-fig2.png)
 

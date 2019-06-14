@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 12/02/2016
 ms.author: ghogen
 ms.openlocfilehash: f6f1a3a7f0a406e1dbb40f4bfc6a358da7ac68fa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60391110"
 ---
 # <a name="getting-started-with-azure-queue-storage-and-visual-studio-connected-services-webjob-projects"></a>Introdução ao Armazenamento de Fila do Azure e aos Serviços Conectados do Visual Studio (Projetos WebJob)
@@ -216,7 +216,7 @@ public static void CreateQueueMessage(
 O SDK serializa automaticamente o objeto em JSON. Uma mensagem da fila sempre é criada, mesmo que o objeto seja nulo.
 
 ### <a name="create-multiple-messages-or-in-async-functions"></a>Criar várias mensagens ou em funções assíncronas
-Para criar várias mensagens, crie o tipo de parâmetro para a fila de saída **ICollector<T>** ou **IAsyncCollector<T>**, conforme mostrado no exemplo a seguir.
+Para criar várias mensagens, crie o tipo de parâmetro para a fila de saída **ICollector<T>** ou **IAsyncCollector<T>** , conforme mostrado no exemplo a seguir.
 
 ```csharp
 public static void CreateQueueMessages(
@@ -342,7 +342,7 @@ As mensagens cujo conteúdo faz com que uma função falhe são chamadas de *men
 ### <a name="automatic-poison-message-handling"></a>Manipulação automática de mensagens suspeitas
 O SDK chamará uma função até 5 vezes para processar uma mensagem da fila. Se a quinta tentativa falhar, a mensagem é movida para uma fila de mensagens suspeitas. Veja como configurar o número máximo de tentativas em [Como definir opções de configuração](#how-to-set-configuration-options).
 
-A fila de mensagens suspeita é denominada *{originalqueuename}*-suspeita. Você pode gravar uma função para processar as mensagens da fila de mensagens suspeitas registrando-as ou enviando uma notificação de que a atenção manual é necessária.
+A fila de mensagens suspeita é denominada *{originalqueuename}* -suspeita. Você pode gravar uma função para processar as mensagens da fila de mensagens suspeitas registrando-as ou enviando uma notificação de que a atenção manual é necessária.
 
 No exemplo a seguir a função **CopyBlob** falhará quando uma mensagem da fila tiver o nome de um blob que não existe. Quando isso acontece, a mensagem será movida da fila copyblobqueue para a fila copyblobqueue-poison. O **ProcessPoisonMessage**, em seguida, registra a mensagem suspeita.
 
@@ -544,7 +544,7 @@ No painel do SDK do Web Jobs, as 100 linhas da saída do Console mais recentes s
 
 ![Ativar/Desativar Saída](./media/vs-storage-webjobs-getting-started-queues/dashboardapplogs.png)
 
-Em um Trabalho Web contínuo, os logs de aplicativo são mostrados em /data/jobs/continuous/*{nomedowebjob}*/job_log.txt no sistema de arquivos do aplicativo Web.
+Em um Trabalho Web contínuo, os logs de aplicativo são mostrados em /data/jobs/continuous/ *{nomedowebjob}* /job_log.txt no sistema de arquivos do aplicativo Web.
 
         [09/26/2014 21:01:13 > 491e54: INFO] Console.Write - Hello world!
         [09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!

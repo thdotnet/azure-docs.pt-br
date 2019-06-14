@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: cherylmc
 ms.openlocfilehash: 923c478909e0393f36da06802023b3f40ee63a3d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60419113"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64723887"
 ---
 # <a name="modify-local-network-gateway-settings-using-powershell"></a>Modificar as configurações de gateway de rede local usando o PowerShell
 
@@ -45,6 +45,6 @@ Instale a versão mais recente dos cmdlets do PowerShell do Azure Resource Manag
 
 [!INCLUDE [vpn-gateway-modify-lng-gateway-ip-rm](../../includes/vpn-gateway-modify-lng-gateway-ip-rm-include.md)]
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Você pode verificar a conexão de gateway. Confira [Verificar uma conexão de gateway](vpn-gateway-verify-connection-resource-manager.md).

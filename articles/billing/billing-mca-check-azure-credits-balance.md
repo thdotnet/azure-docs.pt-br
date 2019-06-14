@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 02/28/2019
 ms.author: amberb
 ms.openlocfilehash: 1e8c3e6863b9cd8f2f5ced18a57918c32c865e75
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60372205"
 ---
 # <a name="track-azure-credit-balance-for-microsoft-customer-agreement"></a>Acompanhar o saldo de crédito do Azure para o acordo de cliente da Microsoft
@@ -59,8 +59,8 @@ Este artigo se aplicam a uma conta de cobrança para um contrato de cliente da M
 
    | Termo                 | Definição                           |
    |----------------------|--------------------------------------------------------|
-   | Fonte               | A fonte de aquisição do crédito |
-   | Data inicial           | A data quando você tiver adquirido o crédito |
+   | source               | A fonte de aquisição do crédito |
+   | Data de início           | A data quando você tiver adquirido o crédito |
    | Data de validade      | A data de vencimento do crédito |
    | Saldo              | O saldo a partir de sua última fatura |
    | Valor original      | A quantidade original de crédito |

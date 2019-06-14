@@ -12,10 +12,10 @@ ms.date: 04/16/2019
 ms.author: tulasim
 ms.custom: seodec18
 ms.openlocfilehash: 3f78b8a2566137d596f4ab3f083e1d14289365c3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61379208"
 ---
 # <a name="knowledge-base-lifecycle-in-qna-maker"></a>Ciclo de vida da base de dados de conhecimento no QnA Maker
@@ -31,7 +31,7 @@ O ponto de extremidade de KB (base de dados de conhecimento) do QnA Maker fornec
 A base de dados de conhecimento está pronta para testes, uma vez que é preenchida com conteúdo, seja editorialmente ou através de extração automática. Teste interativo pode ser feito no portal do QnA Maker por meio de **teste** painel inserindo consultas comuns de usuário e verificar que as respostas retornem com a resposta correta e a pontuação de confiança suficiente. 
 
 * **Para corrigir as pontuações de confiança baixa**: Adicionar perguntas alternativas. 
-* **Quando uma consulta retorna incorretamente a [resposta padrão](confidence-score.md#change-default-answer)**: adicionar novas respostas para a pergunta correta. 
+* **Quando uma consulta retorna incorretamente a [resposta padrão](confidence-score.md#change-default-answer)** : adicionar novas respostas para a pergunta correta. 
 
 Este loop estreito de atualização de teste continuará até que você esteja satisfeito com os resultados. Saiba como [testar a base de dados de conhecimento](../How-To/test-knowledge-base.md).
 
@@ -62,7 +62,7 @@ Para registrar os logs de chat do seu serviço, é necessário habilitar o Appli
 
 De acordo com o que aprende-se com as análises, faça as [atualizações da base de dados de conhecimento](../How-To/edit-knowledge-base.md) apropriadas.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
 > [Pontuação de confiança](./confidence-score.md)

@@ -11,10 +11,10 @@ ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 45be3d7f865c7b72ae62efbf99dbbb4594b1846f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60811829"
 ---
 # <a name="tasks-for-the-team-lead-in-the-team-data-science-process-team"></a>Tarefas para o líder de equipe do Processo de Ciência de Dados da Equipe
@@ -98,17 +98,17 @@ Conclua esta etapa se você estiver usando o Azure DevOps como sua plataforma de
 
     ![4](./media/team-lead-tasks/team-leads-4-create-new-team-3.png)
 
-- Se aparecer uma janela pop-up **Parabéns!**, clique em **Adicionar código** (botão na caixa vermelha). Caso contrário, clique em **Código** (na caixa amarela). Você será direcionado para a página do repositório Git do seu projeto. 
+- Se aparecer uma janela pop-up **Parabéns!** , clique em **Adicionar código** (botão na caixa vermelha). Caso contrário, clique em **Código** (na caixa amarela). Você será direcionado para a página do repositório Git do seu projeto. 
 
     ![5](./media/team-lead-tasks/team-leads-5-team-project-home.png)
 
 ### <a name="create-the-myprojecttemplate-repository-r3-on-git"></a>Criar o repositório MyProjectTemplate (R3) no Git
 
-- Na página do repositório Git do seu projeto, clique na seta para baixo ao lado do nome do repositório **MyTeam** e selecione **Gerenciar repositórios...**.
+- Na página do repositório Git do seu projeto, clique na seta para baixo ao lado do nome do repositório **MyTeam** e selecione **Gerenciar repositórios...** .
 
     ![6](./media/team-lead-tasks/team-leads-6-rename-team-project-repo.png)
 
-- Na guia **Controle de versão** do painel de controle do seu projeto, clique em **MyTeam** e, em seguida, selecione **Renomear repositório...**. 
+- Na guia **Controle de versão** do painel de controle do seu projeto, clique em **MyTeam** e, em seguida, selecione **Renomear repositório...** . 
 
     ![7](./media/team-lead-tasks/team-leads-7-rename-team-project-repo-2.png)
 

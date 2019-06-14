@@ -11,10 +11,10 @@ ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
 ms.openlocfilehash: 8bacc3940cebaf9c62179cee0788e5903e56a310
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60751748"
 ---
 # <a name="copy-other-peoples-work-to-do-data-science"></a>Copiar o trabalho de outras pessoas para fazer a ciência de dados
@@ -52,14 +52,14 @@ Um dos segredos da ciência de dados fazer com que outras pessoas trabalhem para
 
 A Microsoft tem um serviço baseado em nuvem chamado [Azure Machine Learning Studio](https://azure.microsoft.com/services/machine-learning-studio/), que você pode experimentar gratuitamente. Ele fornece um workspace em que você pode experimentar diferentes algoritmos de aprendizado de máquina e, ao encontrar a solução, pode iniciá-lo como um serviço Web.
 
-Parte desse serviço é algo chamado **[Galeria de IA do Azure](https://gallery.azure.ai/)**. Ele contém recursos, incluindo uma coleção de experimentos do Azure Machine Learning Studio ou modelos que as pessoas criaram e forneceram para outros utilizarem. Os experimentos são uma ótima maneira de aproveitar a reflexão e o trabalho árduo de outras pessoas para que você comece a desenvolver suas próprias soluções. Todos são bem-vindos para pesquisá-la.
+Parte desse serviço é algo chamado **[Galeria de IA do Azure](https://gallery.azure.ai/)** . Ele contém recursos, incluindo uma coleção de experimentos do Azure Machine Learning Studio ou modelos que as pessoas criaram e forneceram para outros utilizarem. Os experimentos são uma ótima maneira de aproveitar a reflexão e o trabalho árduo de outras pessoas para que você comece a desenvolver suas próprias soluções. Todos são bem-vindos para pesquisá-la.
 
 ![Galeria de IA do Azure](./media/data-science-for-beginners-copy-other-peoples-work-to-do-data-science/azure-ai-gallery.png)
 
 Se clicar em **Experimentos** na parte superior, você verá vários dos experimentos mais recentes e populares na galeria. Você pode pesquisar o restante do experimentos clicando em **Procurar Tudo** na parte superior da tela e, assim, pode inserir termos de pesquisa e escolher filtros de pesquisa.
 
 ## <a name="find-and-use-a-clustering-algorithm-example"></a>Localizar e usar um exemplo do algoritmo de clustering
-Digamos que você queira ver um exemplo de funcionamento do clustering. Assim, você pesquisa experimentos de **"limpeza de clustering"**.
+Digamos que você queira ver um exemplo de funcionamento do clustering. Assim, você pesquisa experimentos de **"limpeza de clustering"** .
 
 ![Pesquisar experimentos de clustering](./media/data-science-for-beginners-copy-other-peoples-work-to-do-data-science/search-for-clustering-experiments.png)
 

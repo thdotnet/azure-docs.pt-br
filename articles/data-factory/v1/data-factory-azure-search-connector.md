@@ -14,14 +14,14 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 7ad328eec7e16b5368b78a0dfccbf5c09adb5c13
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60567223"
 ---
 # <a name="push-data-to-an-azure-search-index-by-using-azure-data-factory"></a>Enviar dados para um índice do Azure Search usando o Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](data-factory-azure-search-connector.md)
 > * [Versão 2 (versão atual)](../connector-azure-search.md)
 
@@ -79,8 +79,8 @@ Na Atividade de Cópia, quando o coletor é do tipo **AzureSearchIndexSink**, as
 
 | Propriedade | DESCRIÇÃO | Valores permitidos | Obrigatório |
 | -------- | ----------- | -------------- | -------- |
-| WriteBehavior | Especifica se deve mesclar ou substituir quando já existe um documento no índice. Veja a [propriedade WriteBehavior](#writebehavior-property).| Merge (padrão)<br/>Carregar| Não  |
-| WriteBatchSize | Carrega dados para o índice do Azure Search quando o tamanho do buffer atinge writeBatchSize. Veja a [propriedade WriteBatchSize](#writebatchsize-property) para obter detalhes. | 1 a 1.000. O valor padrão é 1000. | Não  |
+| WriteBehavior | Especifica se deve mesclar ou substituir quando já existe um documento no índice. Veja a [propriedade WriteBehavior](#writebehavior-property).| Merge (padrão)<br/>Carregar| Não |
+| WriteBatchSize | Carrega dados para o índice do Azure Search quando o tamanho do buffer atinge writeBatchSize. Veja a [propriedade WriteBatchSize](#writebatchsize-property) para obter detalhes. | 1 a 1.000. O valor padrão é 1000. | Não |
 
 ### <a name="writebehavior-property"></a>Propriedade WriteBehavior
 Upsert do AzureSearchSink ao gravar dados. Em outras palavras, ao escrever um documento, se a chave do documento já existe no índice do Azure Search, o Azure Search atualiza o documento existente, em vez de lançar uma exceção de conflito.

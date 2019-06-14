@@ -9,10 +9,10 @@ ms.assetid: cf5633d4-bc43-444e-90fc-f90fbd0b7935
 ms.topic: conceptual
 ms.date: 02/12/2018
 ms.openlocfilehash: 7fd88383e909ebd6be64c22721b813946e37179e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60616478"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-analytics"></a>Acessando os logs de diagnóstico do Azure Data Lake Analytics
@@ -185,7 +185,7 @@ Aqui está um exemplo de entrada no log de auditoria formatado em JSON. Cada blo
 | operationName |Cadeia de caracteres |Nome da operação que está registrada. Por exemplo, JobSubmitted. |
 | resultType |Cadeia de caracteres |Um substatus para o status do trabalho (operationName). |
 | resultSignature |Cadeia de caracteres |Detalhes adicionais sobre o status do trabalho (operationName). |
-| identidade |Cadeia de caracteres |O usuário que solicitou a operação. Por exemplo, susan@contoso.com. |
+| identidade |Cadeia de caracteres |O usuário que solicitou a operação. Por exemplo: susan@contoso.com. |
 | propriedades |JSON |Veja a próxima seção (Esquema de propriedades do log de auditoria) para obter detalhes |
 
 > [!NOTE]

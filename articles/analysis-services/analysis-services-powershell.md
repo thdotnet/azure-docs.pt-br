@@ -9,10 +9,10 @@ ms.date: 12/19/2018
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 1f9c30f1c914f6c8d42967e014d967ba0d5b85cc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66142307"
 ---
 # <a name="manage-azure-analysis-services-with-powershell"></a>Gerenciar o Azure Analysis Services com PowerShell
@@ -33,7 +33,7 @@ Para operações de servidor usando cmdlets do PowerShell do Azure, sua conta ou
 
 Módulo - [Az.AnalysisServices](/powershell/module/az.analysisservices)
 
-|Cmdlet|Descrição| 
+|Cmdlet|DESCRIÇÃO| 
 |------------|-----------------| 
 |[Get-AzAnalysisServicesServer](/powershell/module/az.analysisservices/get-azanalysisservicesserver)|Obtém detalhes de uma instância do servidor.|  
 |[New-AzAnalysisServicesServer](/powershell/module/az.analysisservices/new-azanalysisservicesserver)|Cria uma instância de servidor.|   
@@ -49,7 +49,7 @@ Módulo - [Az.AnalysisServices](/powershell/module/az.analysisservices)
 
 Módulo – [Azure.AnalysisServices](https://www.powershellgallery.com/packages/Azure.AnalysisServices)
 
-|Cmdlet|Descrição| 
+|Cmdlet|DESCRIÇÃO| 
 |------------|-----------------| 
 |[Add-AzAnalysisServicesAccount](/powershell/module/az.analysisservices/add-AzAnalysisServicesaccount)|Adiciona uma conta autenticada a ser usada para solicitações de cmdlet do servidor do Azure Analysis Services.| 
 |[Export-AzAnalysisServicesInstance](/powershell/module/az.analysisservices/export-AzAnalysisServicesinstancelog)|Exporta um log de uma instância do servidor do Analysis Services conectada no momento no ambiente conforme especificado no comando Add-AzAnalysisServicesAccount|  
@@ -63,7 +63,7 @@ As operações de banco de dados do Azure Analysis Services usam o mesmo módulo
 O módulo SqlServer fornece cmdlets de gerenciamento de banco de dados de tarefas específicas e o cmdlet Invoke-ASCmd de uso geral que aceita um script ou consulta de Linguagem de Script de Modelo Tabular (TMSL). Os cmdlets a seguir no módulo SqlServer têm suporte para o Azure Analysis Services.
 
   
-|Cmdlet|Descrição|
+|Cmdlet|DESCRIÇÃO|
 |------------|-----------------| 
 |[Add-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/Add-RoleMember)|Adicionar um membro a uma função de banco de dados.| 
 |[Backup-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/backup-asdatabase)|Fazer backup de um banco de dados do Analysis Services.|  

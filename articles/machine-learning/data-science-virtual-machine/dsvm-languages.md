@@ -18,10 +18,10 @@ ms.topic: conceptual
 ms.date: 09/11/2017
 ms.author: gokuma
 ms.openlocfilehash: 586f37ff972a6102da351794365f719a185857fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60502207"
 ---
 # <a name="languages-supported-on-the-data-science-virtual-machine"></a>Linguagens com suporte na Máquina Virtual de Ciência de Dados 
@@ -234,12 +234,12 @@ O local Julia padrão é um ambiente global legível por todos os usuários. Por
 
 ## <a name="other-languages"></a>Outras linguagens
 
-**C#**: Disponível no Windows e acessível por meio do Visual Studio Community Edition ou em um `Developer Command Prompt for Visual Studio`, no qual é possível executar o comando `csc`. 
+**C#** : Disponível no Windows e acessível por meio do Visual Studio Community Edition ou em um `Developer Command Prompt for Visual Studio`, no qual é possível executar o comando `csc`. 
 
 **Java**: O OpenJDK está disponível nas edições para Linux e Windows do DSVM e definido no caminho. Você pode digitar o comando `javac` ou `java` no prompt de comando no Windows ou no shell bash no Linux para usar Java. 
 
 **node.js**: node.js está disponível nas edições para Linux e Windows do DSVM e definido no caminho. Você pode digitar o comando `node` ou `npm` no prompt de comando no Windows ou no shell bash no Linux para acessar node.js. No Windows, a extensão Ferramentas Node.js para Visual Studio está instalada para fornecer um IDE gráfico para desenvolver seu aplicativo node.js. 
 
-**F#**: Disponível no Windows e acessível por meio do Visual Studio Community Edition ou em um `Developer Command Prompt for Visual Studio`, no qual é possível executar o comando `fsc`. 
+**F#** : Disponível no Windows e acessível por meio do Visual Studio Community Edition ou em um `Developer Command Prompt for Visual Studio`, no qual é possível executar o comando `fsc`. 
 
 

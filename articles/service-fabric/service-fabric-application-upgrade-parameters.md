@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 11/08/2018
 ms.author: subramar
 ms.openlocfilehash: 9a93c0993ee45e72b11b023982dfbbe8c6528272
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60614389"
 ---
 # <a name="application-upgrade-parameters"></a>Parâmetros de atualização de aplicativo
@@ -112,7 +112,7 @@ max-unhealthy-apps | O valor padrão e recomendado é 0. Especifica o número m�
 modo | Os valores permitidos são **Monitored**, **UpgradeMode**, **UnmonitoredAuto**, **UnmonitoredManual**. O padrão é **UnmonitoredAuto**. Consulte a seção *Parâmetros Necessários* do Visual Studio e PowerShell para obter as descrições desses valores.|
 replica-set-check-timeout |Medido em segundos. <br>**Serviço sem monitoração de estado**: em um único domínio de atualização, o Service Fabric tenta garantir que haja instâncias adicionais do serviço disponíveis. Se a contagem de instâncias de destino for mais de um, o Service Fabric esperará que mais de uma instância fique disponível, até um valor de tempo limite máximo. Esse tempo limite é especificado usando a propriedade *replica-set-check-timeout*. Se o tempo limite expirar, o Service Fabric continua com a atualização, independentemente do número de instâncias de serviço. Se a contagem de instâncias de destino for um, a Malha do Serviço não espera e prossegue imediatamente com a atualização.<br><br>**Serviço com monitoração de estado**: em um único domínio de atualização, o Service Fabric tenta garantir que o conjunto de réplicas tenha um quorum. O Service Fabric aguarda a disponibilidade de um quórum, até um valor de tempo limite máximo (especificado pela propriedade *replica-set-check-timeout*). Se o tempo limite expirar, o Service Fabric continuará com a atualização, independentemente de quorum. Essa configuração está definida como nunca (infinito) durante o roll forward e 1200 segundos durante a reversão. |
 service-health-policy | Mapa codificado em JSON com a política de integridade de tipo de serviço por nome de tipo de serviço. O mapa está vazio por padrão. [Parâmetro de formato JSON.](https://docs.microsoft.com/rest/api/servicefabric/sfclient-model-applicationhealthpolicy#servicetypehealthpolicymap). O JSON da parte "Valor" contém **MaxPercentUnhealthyServices**, **MaxPercentUnhealthyPartitionsPerService** e **MaxPercentUnhealthyReplicasPerPartition**. Consulte a seção Parâmetros Opcionais do Visual Studio e PowerShell para obter as descrições desses parâmetros.
-Tempo limite | Especifica o período de tempo limite em segundos para a operação. Padrão: 60. |
+timeout | Especifica o período de tempo limite em segundos para a operação. Padrão: 60. |
 upgrade-domain-timeout | A quantidade de tempo que cada domínio de atualização deve concluir antes de *FailureAction* ser executado. Primeiro, é interpretado como uma cadeia de caracteres representando uma duração ISO 8601. Se isso falhar, será interpretado como um número que representa o número total de milissegundos. O valor padrão nunca é (infinito) e deve ser personalizado adequadamente para o seu aplicativo. Padrão: P10675199DT02H48M05.4775807S. |
 upgrade-timeout | A quantidade de tempo que cada domínio de atualização deve concluir antes de *FailureAction* ser executado. Primeiro, é interpretado como uma cadeia de caracteres representando uma duração ISO 8601. Se isso falhar, será interpretado como um número que representa o número total de milissegundos. O valor padrão nunca é (infinito) e deve ser personalizado adequadamente para o seu aplicativo. Padrão: P10675199DT02H48M05.4775807S.|
 warning-as-error | Os valores permitidos são **True** e **False**. O valor padrão é **False**. Pode ser passado como um sinalizador. Trata os eventos de integridade de aviso do aplicativo como erros ao avaliar a integridade do aplicativo durante a atualização. Por padrão, o Service Fabric não avalia os eventos de integridade de aviso como falhas (erros); portanto, a atualização pode continuar mesmo se houver eventos de aviso. |

@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 1a61de6b0b6f73e112dd69108272ded3a67497e8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60516747"
 ---
 # <a name="managing-resource-consumption-and-load-in-service-fabric-with-metrics"></a>Gerenciando o consumo e a carga de recursos no Service Fabric com métricas
@@ -37,7 +37,7 @@ Digamos que você deseja começar a escrever e implantar seu serviço. Neste pon
 | --- | --- | --- | --- | --- |
 | PrimaryCount |0 |0 |1 |Alto |
 | ReplicaCount |0 |1 |1 |Média |
-| Contagem |1 |1 |1 |Baixo |
+| Count |1 |1 |1 |Baixo |
 
 
 Para cargas de trabalho básicas, as métricas padrão fornecem uma distribuição razoável de trabalho no cluster. No exemplo a seguir, vamos ver o que acontece quando criamos dois serviços e dependemos das métricas padrão para balanceamento. O primeiro serviço é um serviço com estado com três partições e um tamanho de conjunto de réplicas de destino de três. O segundo serviço é um serviço sem estado com uma partição e uma contagem de instâncias de três.
@@ -144,7 +144,7 @@ Lembre-se: se você quiser usar as métricas padrão, não precisará sequer enc
 Agora, vamos percorrer cada uma dessas configurações mais detalhadamente e falar sobre o comportamento que ela influencia.
 
 ## <a name="load"></a>Carregar
-O objetivo da definição de métricas é representar alguma carga. *Carga* é a quantidade de determinada métrica consumida por alguma instância de serviço ou réplica em determinado nó. A carga pode ser configurada em praticamente qualquer ponto. Por exemplo: 
+O objetivo da definição de métricas é representar alguma carga. *Carga* é a quantidade de determinada métrica consumida por alguma instância de serviço ou réplica em determinado nó. A carga pode ser configurada em praticamente qualquer ponto. Por exemplo:
 
   - A carga pode ser definida quando um serviço é criado. Isso é chamado de _carga padrão_.
   - As informações de métrica, inclusive as cargas padrão, para um serviço podem ser atualizadas depois que o serviço é criado. Isso é chamado de _atualização de um serviço_. 

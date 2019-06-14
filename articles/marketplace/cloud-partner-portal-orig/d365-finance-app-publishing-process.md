@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: pabutler
 ms.openlocfilehash: 04278f50366ee91738fd36e64331572e14baf17c
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935155"
 ---
 # <a name="app-publishing-steps"></a>Etapas de publicação de aplicativo
@@ -76,7 +76,7 @@ Normalmente, estas etapas podem levar mais de uma semana, e não é necessário 
 Sua oferta passará por um processamento final. Seu aplicativo passou na validação de marketing e técnica, mas agora precisa passar por um processamento final para ficar pronto para o App Source.
 
 
-**Ativa**
+**Live**
 
 Sua oferta está online agora no AppSource, e os clientes poderão exibir e implantar o aplicativo em suas assinaturas do Microsoft Dynamics 365 Business Central. Você receberá um email nosso, informando que seu aplicativo ficou público no App Source. A qualquer momento, clique na guia Todas as ofertas e veja o status de todas as suas ofertas listadas na coluna à direita. Você pode clicar no status para ver em detalhes o status do fluxo de publicação de sua oferta.
 

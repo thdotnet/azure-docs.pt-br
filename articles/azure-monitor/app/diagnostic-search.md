@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: mbullwin
 ms.openlocfilehash: dfbaabd3d27804909334a7a370bcc89115e625c4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60899922"
 ---
 # <a name="using-search-in-application-insights"></a>Usar a Pesquisa no Application Insights
@@ -112,7 +112,7 @@ Você talvez queira definir um tempo de intervalo, já que pesquisas em um inter
 
 Pesquisar por palavras inteiras, não subcadeias de caracteres. Use aspas para delimitar caracteres especiais.
 
-| string | *não* é encontrada por | porém, pode ser encontrada por |
+| cadeia de caracteres | *não* é encontrada por | porém, pode ser encontrada por |
 | --- | --- | --- |
 | ControladorInicial.Sobre |inicial<br/>controlador<br/>obre | homecontroller<br/>about<br/>"homecontroller.about"|
 |Estados Unidos|Uni<br/>dos|unidos<br/>estados<br/>estados AND unidos<br/>“estados unidos”

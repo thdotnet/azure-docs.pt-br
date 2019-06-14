@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 12/12/2018
 ms.openlocfilehash: 00a3904bd78f3bb76266c726af28582770b23921
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60723905"
 ---
 # <a name="connect-to-sql-database-using-c-and-c"></a>Conectar-se ao Banco de Dados SQL usando C e C++
@@ -51,7 +51,7 @@ No [Portal do Azure](https://portal.azure.com/), vá para a cadeia de conexão O
 
 ![ODBCConnectionStringProps](./media/sql-database-develop-cplusplus-simple/dbconnection.png)
 
-Copie o conteúdo da cadeia de caracteres **ODBC (inclui Node.js) [autenticação do SQL]**. Usaremos essa cadeia de caracteres posteriormente para conectar do nosso interpretador de linha de comando ODBC C++. Essa cadeia de caracteres fornece detalhes como o driver, servidor e outros parâmetros de conexão de banco de dados.
+Copie o conteúdo da cadeia de caracteres **ODBC (inclui Node.js) [autenticação do SQL]** . Usaremos essa cadeia de caracteres posteriormente para conectar do nosso interpretador de linha de comando ODBC C++. Essa cadeia de caracteres fornece detalhes como o driver, servidor e outros parâmetros de conexão de banco de dados.
 
 ## <a id="Firewall"></a>Etapa 3:  Adicionar o IP ao firewall
 Vá para a seção de firewall para o servidor de Banco de dados e adicione seu [IP do cliente ao firewall usando estas etapas](sql-database-configure-firewall-settings.md) para verificar se é possível estabelecer uma conexão bem-sucedida:

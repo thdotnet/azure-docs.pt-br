@@ -9,10 +9,10 @@ ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
 ms.openlocfilehash: db0b5bbe1261c7bdf76393c69a1189d2a850cd07
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64719763"
 ---
 # <a name="understand-resource-locking-in-azure-blueprints"></a>Entenda o bloqueio de recursos nos Blueprints do Azure
@@ -26,7 +26,7 @@ No entanto, os modos de bloqueio não podem ser alterados fora dos blueprints.
 
 Os recursos criados por artefatos em uma atribuição de blueprint têm quatro estados: **Não Bloqueado**, **Somente Leitura**, **Não é Possível Editar/Excluir** ou **Não é Possível Excluir**. Cada tipo de artefato pode estar no estado **Não Bloqueado**. A seguinte tabela pode ser usada para determinar o estado de um recurso:
 
-|Mode|Tipo de recurso do artefato|Estado|DESCRIÇÃO|
+|Modo|Tipo de recurso do artefato|Estado|DESCRIÇÃO|
 |-|-|-|-|
 |Não Bloquear|*|Não Bloqueado|Os recursos não são protegidos pelos blueprints. Esse estado também é usado para recursos adicionados a um artefato do grupo de recursos **Somente Leitura** ou **Não Excluir** fora de uma atribuição de blueprint.|
 |Somente leitura|Grupo de recursos|Não é Possível Editar/Excluir|O grupo de recursos é somente leitura e as marcas no grupo de recursos não podem ser modificadas. Os recursos **Não Bloqueados** podem ser adicionados, movidos, alterados ou excluídos desse grupo de recursos.|
@@ -56,7 +56,7 @@ Uma ação de negação [negar atribuições](../../../role-based-access-control
 
 O [Negar atribuição propriedades](../../../role-based-access-control/deny-assignments.md#deny-assignment-properties) de cada modo são da seguinte maneira:
 
-|Mode |Permissions.Actions |Permissions.NotActions |Principals[i].Type |ExcludePrincipals [i]. ID | DoNotApplyToChildScopes |
+|Modo |Permissions.Actions |Permissions.NotActions |Principals[i].Type |ExcludePrincipals [i]. ID | DoNotApplyToChildScopes |
 |-|-|-|-|-|-|
 |Somente leitura |**\*** |**\*/read** |SystemDefined (todos) |Especificações técnicas de atribuição e definidas pelo usuário no **excludedPrincipals** |Grupo de recursos - _verdadeira_; Recursos - _false_ |
 |Não exclua |**\*/delete** | |SystemDefined (todos) |Especificações técnicas de atribuição e definidas pelo usuário no **excludedPrincipals** |Grupo de recursos - _verdadeira_; Recursos - _false_ |

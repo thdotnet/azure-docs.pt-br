@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako;cenkdin;anilmur
 ms.openlocfilehash: 01bb628a6520488dcebf49a1e868213b955abc31
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61465865"
 ---
 # <a name="use-the-fmle-encoder-to-send-a-single-bitrate-live-stream"></a>Usar o codificador FMLE para enviar uma transmissão ao vivo de taxa de bits única 
@@ -47,7 +47,7 @@ Este tutorial descreve como usar o AAC. No entanto, por padrão, o FMLE dá supo
 * Ao usar codificadores baseados em software, feche todos os programas desnecessários.
 
 ## <a name="create-a-channel"></a>Criar um canal
-1. Na ferramenta AMSE, navegue até a guia **Ao Vivo** e clique com o botão direito do mouse na área de canais. Selecione **Criar canal...**  no menu.
+1. Na ferramenta AMSE, navegue até a guia **Ao Vivo** e clique com o botão direito do mouse na área de canais. Selecione **Criar canal...** no menu.
 
     ![FMLE](./media/media-services-fmle-live-encoder/media-services-fmle1.png)
 
@@ -155,7 +155,7 @@ Se um erro for recebido, será necessário redefinir o canal e ajustar as config
     >[!NOTE]
     >A criação do programa leva menos tempo do que a criação do canal.
         
-5. Quando o programa estiver em execução, confirme a reprodução clicando com o botão direito do mouse do programa e navegando até **Reproduzir o(s) programa(s)**, em seguida, selecionando **com o Player de Mídia do Azure**.  
+5. Quando o programa estiver em execução, confirme a reprodução clicando com o botão direito do mouse do programa e navegando até **Reproduzir o(s) programa(s)** , em seguida, selecionando **com o Player de Mídia do Azure**.  
 6. Depois de confirmar, clique novamente com botão direito no programa e selecione **Copiar a URL de Saída para Área de Transferência** (ou recupere essas informações na opção **Informações e configurações do programa** do menu).
 
 A transmissão agora está pronta para ser inserida em um player ou distribuída para um público para a exibição ao vivo.  

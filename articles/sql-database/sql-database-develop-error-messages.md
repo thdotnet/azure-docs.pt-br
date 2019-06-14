@@ -14,10 +14,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 03/06/2019
 ms.openlocfilehash: 2682f98628f3c1cf22a2c3767f52bedbc148fa62
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60723485"
 ---
 # <a name="sql-error-codes-for-sql-database-client-applications-database-connection-errors-and-other-issues"></a>Códigos de erro do SQL para aplicativos de cliente do Banco de Dados SQL: erros de conexão de banco de dados e outros problemas
@@ -86,7 +86,7 @@ Os erros a seguir podem ser encontrados durante a cópia de um banco de dados no
 
 ## <a name="resource-governance-errors"></a>Erros de governança de recursos
 
-Os erros a seguir são causados pelo uso excessivo de recursos enquanto você trabalha com o Banco de Dados SQL do Azure. Por exemplo: 
+Os erros a seguir são causados pelo uso excessivo de recursos enquanto você trabalha com o Banco de Dados SQL do Azure. Por exemplo:
 
 * Uma transação está aberta há muito tempo.
 * Uma transação está mantendo bloqueios demais.
@@ -216,7 +216,7 @@ Os erros a seguir não se enquadram em nenhuma categoria anterior.
 | 40652 |16 |Não é possível mover ou criar o servidor. A assinatura (subscription-id) excederá a cota do servidor. |
 | 40671 |17 |Falha de comunicação entre o gateway e o serviço de gerenciamento. Tente novamente mais tarde. |
 | 40852 |16 |Não é possível abrir o banco de dados '%.\*ls' no servidor '%.\*ls' solicitado pelo logon. O acesso ao banco de dados é permitido apenas usando uma cadeia de conexão habilitada para segurança. Para acessar esse banco de dados, modifique as cadeias de conexão para conter “secure” no servidor FQDN – 'server name'.database.windows.net deve ser modificado para 'server name'.database`secure`.windows.net. |
-| 40914 | 16 | Não é possível abrir o servidor '*[nome-do-servidor]*' solicitado pelo logon. O cliente não tem permissão para acessar o servidor.<br /><br />Para corrigir, considere adicionar uma [regra da rede virtual](sql-database-vnet-service-endpoint-rule-overview.md). |
+| 40914 | 16 | Não é possível abrir o servidor ' *[nome-do-servidor]* ' solicitado pelo logon. O cliente não tem permissão para acessar o servidor.<br /><br />Para corrigir, considere adicionar uma [regra da rede virtual](sql-database-vnet-service-endpoint-rule-overview.md). |
 | 45168 |16 |O sistema do SQL Azure está sob carga e está estabelecendo um limite superior para operações CRUD de BD simultâneas para um único servidor do Banco de Dados SQL (por exemplo, criar banco de dados). O servidor especificado na mensagem de erro ultrapassou o número máximo de conexões simultâneas. Tente novamente mais tarde. |
 | 45169 |16 |O sistema SQL Azure está sob carga e está estabelecendo um limite superior para o número de operações CRUD de servidor simultâneas para uma única assinatura (por exemplo, criar servidor). A assinatura especificada na mensagem de erro ultrapassou o número máximo de conexões simultâneas e a solicitação foi negada. Tente novamente mais tarde. |
 

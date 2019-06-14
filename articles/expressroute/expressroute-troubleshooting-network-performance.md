@@ -9,10 +9,10 @@ ms.date: 12/20/2017
 ms.author: jonor
 ms.custom: seodec18
 ms.openlocfilehash: 9ec310ffaa9d2bb297abde9341bf7b6c2dc763b4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60883213"
 ---
 # <a name="troubleshooting-network-performance"></a>Solução de problemas de desempenho de rede
@@ -160,7 +160,7 @@ Configuração do teste:
  - Um circuito Premium do ExpressRoute de 10 Gbps no local identificado, com o Emparelhamento privado habilitado.
  - Uma Rede Virtual do Azure com um gateway UltraPerformance na região especificada.
  - Uma VM DS5v2 executando o Windows Server 2016 na Rede Virtual. A VM era não ingressada no domínio, criada com base na imagem padrão do Azure (sem otimização ou personalização), com o AzureCT instalado.
- - Todos os testes usaram o comando Get-LinkPerformance do AzureCT com um teste de carga de 5 minutos para cada uma das seis execuções de teste. Por exemplo: 
+ - Todos os testes usaram o comando Get-LinkPerformance do AzureCT com um teste de carga de 5 minutos para cada uma das seis execuções de teste. Por exemplo:
 
     ```powershell
     Get-LinkPerformance -RemoteHost 10.0.0.1 -TestSeconds 300
@@ -181,19 +181,19 @@ Configuração do teste:
 |-|-|-|-|-|-|
 |ExpressRoute<br/>Local padrão|Azure<br/>Região|Estimada (km)<br/>Distância|Latency|Sessão 1<br/>Largura de banda|Máximo<br/>Largura de banda|
 | Seattle | Oeste dos EUA 2        |    191 km |   5 ms | 262,0 Mbits/s |  3,74 Gbits/s |
-| Seattle | Oeste dos EUA          |  1.094 km |  18 ms |  82,3 Mbits/s |  3,70 Gbits/s |
-| Seattle | Centro dos EUA       |  2.357 km |  40 ms |  38,8 Mbits/s |  2,55 Gbits/s |
-| Seattle | Centro-Sul dos Estados Unidos |  2.877 km |  51 ms |  30,6 Mbits/s |  2,49 Gbits/s |
-| Seattle | Centro-Norte dos EUA |  2.792 km |  55 ms |  27,7 Mbits/s |  2,19 Gbits/s |
-| Seattle | Leste dos EUA 2        |  3.769 km |  73 ms |  21,3 Mbits/s |  1,79 Gbits/s |
-| Seattle | Leste dos EUA          |  3.699 km |  74 ms |  21,1 Mbits/s |  1,78 Gbits/s |
-| Seattle | Leste do Japão       |  7.705 km | 106 ms |  14,6 Mbits/s |  1,22 Gbits/s |
-| Seattle | Sul do Reino Unido         |  7.708 km | 146 ms |  10,6 Mbits/s |   896 Mbits/s |
-| Seattle | Europa Ocidental      |  7.834 km | 153 ms |  10,2 Mbits/s |   761 Mbits/s |
-| Seattle | Leste da Austrália   | 12.484 km | 165 ms |   9,4 Mbits/s |   794 Mbits/s |
-| Seattle | Sudeste Asiático   | 12.989 km | 170 ms |   9,2 Mbits/s |   756 Mbits/s |
-| Seattle | Sul do Brasil *   | 10.930 km | 189 ms |   8,2 Mbits/s |   699 Mbits/s |
-| Seattle | Sul da Índia      | 12.918 km | 202 ms |   7,7 Mbits/s |   634 Mbits/s |
+| Seattle | Oeste dos EUA          |  1\.094 km |  18 ms |  82,3 Mbits/s |  3,70 Gbits/s |
+| Seattle | Centro dos EUA       |  2\.357 km |  40 ms |  38,8 Mbits/s |  2,55 Gbits/s |
+| Seattle | Centro-Sul dos Estados Unidos |  2\.877 km |  51 ms |  30,6 Mbits/s |  2,49 Gbits/s |
+| Seattle | Centro-Norte dos EUA |  2\.792 km |  55 ms |  27,7 Mbits/s |  2,19 Gbits/s |
+| Seattle | Leste dos EUA 2        |  3\.769 km |  73 ms |  21,3 Mbits/s |  1,79 Gbits/s |
+| Seattle | Leste dos EUA          |  3\.699 km |  74 ms |  21,1 Mbits/s |  1,78 Gbits/s |
+| Seattle | Leste do Japão       |  7\.705 km | 106 ms |  14,6 Mbits/s |  1,22 Gbits/s |
+| Seattle | Sul do Reino Unido         |  7\.708 km | 146 ms |  10,6 Mbits/s |   896 Mbits/s |
+| Seattle | Europa Ocidental      |  7\.834 km | 153 ms |  10,2 Mbits/s |   761 Mbits/s |
+| Seattle | Leste da Austrália   | 12\.484 km | 165 ms |   9,4 Mbits/s |   794 Mbits/s |
+| Seattle | Sudeste Asiático   | 12\.989 km | 170 ms |   9,2 Mbits/s |   756 Mbits/s |
+| Seattle | Sul do Brasil *   | 10\.930 km | 189 ms |   8,2 Mbits/s |   699 Mbits/s |
+| Seattle | Sul da Índia      | 12\.918 km | 202 ms |   7,7 Mbits/s |   634 Mbits/s |
 
 \* A latência até o Brasil é um bom exemplo em que a distância em linha reta difere significativamente da distância que a fibra percorre. Eu esperava que a latência seria de cerca de 160 ms, mas é de 189 ms na realidade. Essa diferença em relação a minha expectativa poderia indicar um problema de rede em algum lugar, mas é mais provável que o caminho da fibra não vá até o Brasil em uma linha reta e tenha cerca de 1.000 km a mais para chegar até o Brasil, partindo de Seattle.
 

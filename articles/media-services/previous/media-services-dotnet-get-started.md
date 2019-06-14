@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 2d55af3e9ed3ad64f9ba7726799b31acb6b48580
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61465009"
 ---
 # <a name="get-started-with-delivering-content-on-demand-using-net-sdk"></a>Introdução ao fornecimento de conteúdo sob demanda usando o SDK do .NET  
@@ -375,7 +375,7 @@ Para transmitir o vídeo, cole a URL na caixa de texto de URL no [Azure Media Se
 
 Para testar o download progressivo, cole uma URL em um navegador (por exemplo, Internet Explorer, Chrome ou Safari).
 
-Para saber mais, consulte os tópicos a seguir:
+Para mais informações, consulte os seguintes tópicos:
 
 - [Reprodução de seu conteúdo com players existentes](media-services-playback-content-with-existing-players.md)
 - [Desenvolver aplicativos de player de vídeo](media-services-develop-video-players.md)

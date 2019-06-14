@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 07/09/2018
 ms.author: shants
 ms.openlocfilehash: 31d4829c6adaf4bd5392ef393dcaefbeb7dc6255
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60618448"
 ---
 # <a name="planned-maintenance-notifications-for-virtual-machine-scale-sets"></a>Notificações de manutenção planejada para conjuntos de dimensionamento de máquinas virtuais
@@ -89,7 +89,7 @@ A **Manutenção de autoatendimento** agora aparece na lista de conjuntos de dim
 | Value | DESCRIÇÃO |
 |-------|-------------|
 | Sim | Pelo menos uma VM no conjunto de dimensionamento de máquinas virtuais está em uma janela de autoatendimento. Você pode iniciar a manutenção a qualquer momento durante essa janela de autoatendimento. | 
-| Não  | Nenhuma VM está em uma janela de autoatendimento no conjunto de dimensionamento de máquinas virtuais afetado. | 
+| Não | Nenhuma VM está em uma janela de autoatendimento no conjunto de dimensionamento de máquinas virtuais afetado. | 
 | - | Os conjuntos de dimensionamento de máquinas virtuais não fazem parte de uma onda de manutenção planejada.| 
 
 ## <a name="notification-and-alerts-in-the-portal"></a>Notificação e alertas no portal
@@ -98,7 +98,7 @@ O Azure comunica uma agenda para manutenção planejada, enviando um email para 
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 2. No menu esquerdo, selecione **Monitorar**. 
-3. No painel **Monitorar - Alertas (clássico)**, selecione **+Adicionar alerta do log de atividades**.
+3. No painel **Monitorar - Alertas (clássico)** , selecione **+Adicionar alerta do log de atividades**.
 4. Na página **Adicionar alerta do log de atividades**, selecione ou insira as informações solicitadas. Em **Critérios**, certifique-se de definir os valores a seguir:
    - **Categoria do evento**: Selecione **Integridade do Serviço**.
    - **Serviços**: selecione **Conjuntos de Dimensionamento de Máquinas Virtuais e Máquinas Virtuais**.

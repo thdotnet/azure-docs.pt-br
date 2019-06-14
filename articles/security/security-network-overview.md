@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 10/29/2018
 ms.author: terrylan
 ms.openlocfilehash: 2aabe3d1fa8a6034c2dab38c8d6fa6da4b00ac1b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60444258"
 ---
 # <a name="azure-network-security-overview"></a>Visão geral da segurança de rede do Azure
@@ -390,7 +390,7 @@ Saiba mais:
 
 * [TAP de rede virtual](../virtual-network/virtual-network-tap-overview.md)
 
-### <a name="logging"></a>Registro em log
+### <a name="logging"></a>Registrando em log
 
 O log em um nível de rede é uma função essencial em qualquer cenário de segurança de rede. No Azure, é possível registrar as informações obtidas dos NSGs para obter informações de log no nível de rede. Com o log do NSG, você obtém informações dos seguintes:
 

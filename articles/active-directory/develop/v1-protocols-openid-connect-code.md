@@ -19,10 +19,10 @@ ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9df592272b97bded9eba64249aa7608c72f8abdf
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66121535"
 ---
 # <a name="authorize-access-to-web-applications-using-openid-connect-and-azure-active-directory"></a>Autorizar o acesso aos aplicativos Web usando o OpenID Connect e o Azure Active Directory
@@ -90,12 +90,12 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &nonce=7362CAEA-9CA5-4B43-9BA3-34D7C303EBA7
 ```
 
-| Parâmetro |  | Descrição |
+| Parâmetro |  | DESCRIÇÃO |
 | --- | --- | --- |
 | tenant |obrigatório |O valor `{tenant}` no caminho da solicitação pode ser usado para controlar quem pode entrar no aplicativo. Os valores permitidos são identificadores de locatário, por exemplo, `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` ou `contoso.onmicrosoft.com` ou `common` para tokens independentes de locatário |
 | client_id |obrigatório |A ID do Aplicativo atribuída para o aplicativo ao registrá-lo no Azure Active Directory. Você pode encontrar isso no Portal do Azure. Clique em **Azure Active Directory**, clique em **registros de aplicativo**, escolha o aplicativo e localize a ID do aplicativo na página do aplicativo. |
 | response_type |obrigatório |Deve incluir `id_token` para conexão do OpenID Connect. Também pode incluir outros response_types, como `code` ou `token`. |
-| escopo | recomendável | A especificação do OpenID Connect requer o escopo `openid`, que é convertido para a permissão "Sign in" no consentimento da interface do usuário. Isso e outros escopos OIDC são ignorados no ponto de extremidade v1.0, mas ainda é uma prática recomendada para clientes compatíveis com os padrões. |
+| scope | recomendável | A especificação do OpenID Connect requer o escopo `openid`, que é convertido para a permissão "Sign in" no consentimento da interface do usuário. Isso e outros escopos OIDC são ignorados no ponto de extremidade v1.0, mas ainda é uma prática recomendada para clientes compatíveis com os padrões. |
 | nonce |obrigatório |Um valor incluído na solicitação, gerado pelo aplicativo, que é incluído no `id_token` resultante como uma declaração. O aplicativo pode verificar esse valor para reduzir os ataques de reprodução de token. Normalmente, o valor é uma cadeia de caracteres aleatória e exclusiva ou um GUID que pode ser usado para identificar a origem da solicitação. |
 | redirect_uri | recomendável |O redirect_uri do seu aplicativo, onde as respostas de autenticação podem ser enviadas e recebidas pelo aplicativo. Ele deve corresponder exatamente a um dos redirect_uris que você registrou no portal, com exceção de que ele deve ser codificado por url. Se estiverem ausentes, o agente do usuário será enviado para um dos URIs de redirecionamento registrados para o aplicativo, aleatoriamente. O comprimento máximo é de 255 bytes |
 | response_mode |opcional |Especifica o método que deve ser usado para enviar o authorization_code resultante de volta ao aplicativo. Os valores suportados são `form_post` para *post do formulário HTTP* e `fragment` para o *fragmento de URL*. Em aplicativos Web, é recomendável usar `response_mode=form_post` a fim de garantir a transferência mais segura de tokens para seu aplicativo. O padrão para qualquer fluxo, incluindo um id_token é `fragment`.|
@@ -117,7 +117,7 @@ Content-Type: application/x-www-form-urlencoded
 id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
 ```
 
-| Parâmetro | Descrição |
+| Parâmetro | DESCRIÇÃO |
 | --- | --- |
 | id_token |O `id_token` solicitado pelo aplicativo. Você pode usar o `id_token` para verificar a identidade do usuário e iniciar uma sessão com o usuário. |
 | estado |Um valor incluído na solicitação que também retorna na resposta do token. Um valor exclusivo gerado aleatoriamente normalmente é usado para [impedir ataques de solicitação intersite forjada](https://tools.ietf.org/html/rfc6749#section-10.12). O estado também é usado para codificar as informações sobre o estado do usuário no aplicativo antes da solicitação de autenticação ocorrida, como a página ou exibição em que ele estava. |
@@ -134,16 +134,16 @@ Content-Type: application/x-www-form-urlencoded
 error=access_denied&error_description=the+user+canceled+the+authentication
 ```
 
-| Parâmetro | Descrição |
+| Parâmetro | DESCRIÇÃO |
 | --- | --- |
-| erro |Uma cadeia de caracteres de códigos de erro que pode ser usada para classificar tipos de erro que ocorrem e pode ser usada para responder aos erros. |
+| error |Uma cadeia de caracteres de códigos de erro que pode ser usada para classificar tipos de erro que ocorrem e pode ser usada para responder aos erros. |
 | error_description |Uma mensagem de erro específica que pode ajudar um desenvolvedor a identificar a causa raiz de um erro de autenticação. |
 
 #### <a name="error-codes-for-authorization-endpoint-errors"></a>Códigos de erro para erros de ponto de extremidade de autorização
 
 A tabela a seguir descreve os vários códigos de erro que podem ser retornados no parâmetro `error` da resposta de erro.
 
-| Código do Erro | Descrição | Ação do Cliente |
+| Código do Erro | DESCRIÇÃO | Ação do Cliente |
 | --- | --- | --- |
 | invalid_request |Erro de protocolo, como um parâmetro obrigatório ausente. |Corrija e reenvie a solicitação. Esse é um erro de desenvolvimento que, normalmente, é capturado durante os testes iniciais. |
 | unauthorized_client |O aplicativo cliente não tem permissão para solicitar um código de autorização. |Isso geralmente ocorre quando o aplicativo cliente não está registrado no Azure AD ou não é adicionado ao locatário do Azure AD do usuário. O aplicativo pode solicitar que o usuário instale o aplicativo e o adicione ao Azure AD. |
@@ -179,7 +179,7 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 
 ```
 
-| Parâmetro |  | Descrição |
+| Parâmetro |  | DESCRIÇÃO |
 | --- | --- | --- |
 | post_logout_redirect_uri |recomendável |A URL à qual o usuário deve ser redirecionado após uma saída bem-sucedida. Se não estiver incluído, o usuário verá uma mensagem genérica. |
 
@@ -226,10 +226,10 @@ Content-Type: application/x-www-form-urlencoded
 id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...&state=12345
 ```
 
-| Parâmetro | Descrição |
+| Parâmetro | DESCRIÇÃO |
 | --- | --- |
 | id_token |O `id_token` solicitado pelo aplicativo. Você pode usar o `id_token` para verificar a identidade do usuário e iniciar uma sessão com o usuário. |
-| código |O authorization_code que o aplicativo solicitou. O aplicativo pode usar o código de autorização para solicitar um token de acesso para o recurso de destino. Authorization_codes têm uma duração curta e, geralmente, expiram depois de aproximadamente 10 minutos. |
+| code |O authorization_code que o aplicativo solicitou. O aplicativo pode usar o código de autorização para solicitar um token de acesso para o recurso de destino. Authorization_codes têm uma duração curta e, geralmente, expiram depois de aproximadamente 10 minutos. |
 | estado |Se um parâmetro de estado estiver incluído na solicitação, o mesmo valor deverá aparecer na resposta. O aplicativo deve verificar se os valores de estado na solicitação e na resposta são idênticos. |
 
 ### <a name="error-response"></a>Resposta de erro
@@ -244,9 +244,9 @@ Content-Type: application/x-www-form-urlencoded
 error=access_denied&error_description=the+user+canceled+the+authentication
 ```
 
-| Parâmetro | Descrição |
+| Parâmetro | DESCRIÇÃO |
 | --- | --- |
-| erro |Uma cadeia de caracteres de códigos de erro que pode ser usada para classificar tipos de erro que ocorrem e pode ser usada para responder aos erros. |
+| error |Uma cadeia de caracteres de códigos de erro que pode ser usada para classificar tipos de erro que ocorrem e pode ser usada para responder aos erros. |
 | error_description |Uma mensagem de erro específica que pode ajudar um desenvolvedor a identificar a causa raiz de um erro de autenticação. |
 
 Para obter uma descrição dos possíveis códigos de erro e sua ação recomendada do cliente, veja [Códigos de erro para erros de ponto de extremidade de autorização](#error-codes-for-authorization-endpoint-errors).

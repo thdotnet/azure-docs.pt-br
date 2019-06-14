@@ -12,14 +12,13 @@ ms.workload: tbd
 ms.tgt_pltfrm: cache
 ms.devlang: multiple
 ms.topic: article
-origin.date: 01/23/2017
-ms.date: 02/27/2019
-ms.author: v-junlch
+ms.date: 01/23/2017
+ms.author: yegu
 ms.openlocfilehash: 73c771ab18d1cc2944298818c1cab90eb2f277ff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60829796"
 ---
 # <a name="azure-cache-for-redis-samples"></a>Exemplos do Cache Redis do Azure
@@ -32,14 +31,14 @@ O exemplo [Hello world](https://github.com/rustd/RedisSamples/tree/master/HelloW
 
 Este exemplo mostra como:
 
-- Usar várias opções de conexão
-- Ler e gravar objetos em cache usando operações síncronas e assíncronas
-- Usar comandos MGET/MSET do Redis para retornar valores de chaves especificadas
-- Executar operações transacionais do Redis
-- Trabalhar com listas do Redis e conjuntos classificados
-- Armazenar objetos .NET usando serializadores JsonConvert
-- Usar conjuntos do Redis para implementar a marcação
-- Trabalhar com o Cluster Redis
+* Usar várias opções de conexão
+* Ler e gravar objetos em cache usando operações síncronas e assíncronas
+* Usar comandos MGET/MSET do Redis para retornar valores de chaves especificadas
+* Executar operações transacionais do Redis
+* Trabalhar com listas do Redis e conjuntos classificados
+* Armazenar objetos .NET usando serializadores JsonConvert
+* Usar conjuntos do Redis para implementar a marcação
+* Trabalhar com o Cluster Redis
 
 Para obter mais informações, consulte a documentação do [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) no GitHub e para ver mais cenários de uso, consulte os testes da unidade [StackExchange.Redis.Tests](https://github.com/StackExchange/StackExchange.Redis/tree/master/tests).
 
@@ -53,8 +52,8 @@ O exemplo [Usar o Cache do Azure para Redis como um Backplane de expansão para 
 ## <a name="azure-cache-for-redis-customer-query-sample"></a>Exemplo de consulta do cliente do Cache do Azure para Redis
 Esse exemplo demonstra a comparação de desempenho entre o acesso a dados de um cache e o acesso a dados do armazenamento de persistência. Esse exemplo tem dois projetos.
 
-- [Demonstração de como o Cache do Azure para Redis pode melhorar o desempenho armazenando dados em cache](https://github.com/rustd/RedisSamples/tree/master/RedisCacheCustomerQuerySample)
-- [Propagar o banco de dados e o cache para a demonstração](https://github.com/rustd/RedisSamples/tree/master/SeedCacheForCustomerQuerySample)
+* [Demonstração de como o Cache do Azure para Redis pode melhorar o desempenho armazenando dados em cache](https://github.com/rustd/RedisSamples/tree/master/RedisCacheCustomerQuerySample)
+* [Propagar o banco de dados e o cache para a demonstração](https://github.com/rustd/RedisSamples/tree/master/SeedCacheForCustomerQuerySample)
 
 ## <a name="aspnet-session-state-and-output-caching"></a>Estado de sessão do ASP.NET e cache de saída
 O exemplo [Usar o Cache do Azure para Redis para armazenar SessionState e OutputCache do ASP.NET](https://github.com/rustd/RedisSamples/tree/master/SessionState_OutputCaching) demonstra como usar o Cache do Azure para Redis para armazenar a Sessão do ASP.NET e o Cache de Saída usando os provedores SessionState e OutputCache para Redis.
@@ -70,6 +69,4 @@ O exemplo [Retwis](https://github.com/SyntaxC4-MSFT/retwis) é o Redis Hello Wor
 
 ## <a name="bandwidth-monitor"></a>Monitor de largura de banda
 O exemplo de [Monitor de largura de banda](https://github.com/JonCole/SampleCode/tree/master/BandWidthMonitor) permite que você monitore a largura de banda usada no cliente. Para medir a largura de banda, execute o exemplo no computador cliente de cache, faça chamadas ao cache e observe a largura de banda relatada pelo exemplo de monitor de largura de banda.
-
-<!-- Update_Description: update metedata properties -->
 

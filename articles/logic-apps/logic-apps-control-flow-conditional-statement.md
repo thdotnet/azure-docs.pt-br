@@ -10,10 +10,10 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 10/09/2018
 ms.openlocfilehash: 9ee484971e217b0ca4dd7ad855e9e6dc3313e5d4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60684724"
 ---
 # <a name="create-conditional-statements-that-control-workflow-actions-in-azure-logic-apps"></a>Crie instruções condicionais que controlam ações de fluxo de trabalho nos Aplicativos Lógicos do Azure
@@ -39,13 +39,13 @@ Por exemplo, suponha que você tenha um aplicativo lógico que envia muitos emai
 
 1. Adicione uma condição no local que deseja. 
 
-   Para adicionar uma condição entre etapas, mova o ponteiro sobre a seta onde você quer adicionar a condição. Escolha o **sinal de adição** (**+**) que aparece e, em seguida, escolha **Adicionar uma ação**. Por exemplo: 
+   Para adicionar uma condição entre etapas, mova o ponteiro sobre a seta onde você quer adicionar a condição. Escolha o **sinal de adição** ( **+** ) que aparece e, em seguida, escolha **Adicionar uma ação**. Por exemplo:
 
    ![Adicionar ação entre etapas](./media/logic-apps-control-flow-conditional-statement/add-action.png)
 
    Quando você quiser adicionar uma condição no final do fluxo de trabalho, na parte inferior do aplicativo lógico, escolha **Nova etapa** > **Adicionar uma ação**.
 
-1. Na caixa de pesquisa, insira "condição" como o filtro. Selecione esta ação: **Condição - controle**
+1. Na caixa de pesquisa, insira "condição" como o filtro. Selecione esta ação: **Condição – Controle**
 
    ![Adicionar condição](./media/logic-apps-control-flow-conditional-statement/add-condition.png)
 
@@ -72,7 +72,7 @@ Por exemplo, suponha que você tenha um aplicativo lógico que envia muitos emai
    Para adicionar um grupo com subcondições, escolha **Adicionar** > **Adicionar grupo**. 
    Para agrupar linhas existentes, marque as caixas de seleção dessas linhas, escolha o botão de reticências (...) para qualquer linha e escolha **Fazer grupo**.
 
-1. Em **Se verdadeiro** e **Se falso**, adicione as etapas a serem executadas com base em se a condição é atendida. Por exemplo: 
+1. Em **Se verdadeiro** e **Se falso**, adicione as etapas a serem executadas com base em se a condição é atendida. Por exemplo:
 
    ![Condição com caminhos "Se verdadeiro" e "Se falso"](./media/logic-apps-control-flow-conditional-statement/condition-yes-no-path.png)
 

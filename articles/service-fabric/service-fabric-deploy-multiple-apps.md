@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 02/23/2018
 ms.author: mikhegn
 ms.openlocfilehash: 69df9eff85d96c9cc6ca7fa1d3aabd2c54fae416
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60583852"
 ---
 # <a name="deploy-multiple-guest-executables"></a>Implantar vários executáveis de convidado
@@ -28,7 +28,7 @@ Embora este passo a passo mostre como implantar um aplicativo com um front-end N
 
 Você pode usar o Visual Studio para gerar o pacote de aplicativos que contém vários executáveis de convidado. Veja [Uso do Visual Studio para empacotar um aplicativo existente](service-fabric-deploy-existing-app.md). Depois de adicionar o primeiro executável de convidado, clique com o botão direito do mouse no projeto de aplicativo e selecione **Adicionar -> Novo serviço do Service Fabric** para adicionar o segundo projeto do executável de convidado à solução. Observação: Se você optar por vincular a origem no projeto do Visual Studio, criando a solução do Visual Studio, garantirá que seu pacote de aplicativo será atualizado com as alterações na fonte. 
 
-## <a name="samples"></a>Exemplos
+## <a name="samples"></a>Amostras
 * [Exemplo de empacotamento e implantação de um executável convidado](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Exemplo de dois executáveis convidados (C# e nodejs) se comunicando por meio do Serviço de nomenclatura usando REST](https://github.com/Azure-Samples/service-fabric-containers)
 

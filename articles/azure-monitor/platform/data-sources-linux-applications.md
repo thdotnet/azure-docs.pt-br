@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 05/04/2017
 ms.author: magoedte
 ms.openlocfilehash: ea74440a5c8a9a2584e742ec72ccf888b6bb5ad9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60628907"
 ---
 # <a name="collect-performance-counters-for-linux-applications-in-azure-monitor"></a>Coletar contadores de desempenho para aplicativos do Linux no Azure Monitor 
@@ -50,9 +50,9 @@ As entradas no arquivo de autenticação são descritas na tabela a seguir.
 
 | Propriedade | DESCRIÇÃO |
 |:--|:--|
-| Porta | Representa a porta atual em que a instância do MySQL está escutando. A porta 0 significa que as propriedades a seguir são usadas para a instância padrão. |
+| Port | Representa a porta atual em que a instância do MySQL está escutando. A porta 0 significa que as propriedades a seguir são usadas para a instância padrão. |
 | Endereço de Ligação| Endereço de associação atual de MySQL. |
-| Nome de Usuário| Usuário do MySQL a utilizar para monitorar a instância do servidor MySQL. |
+| username| Usuário do MySQL a utilizar para monitorar a instância do servidor MySQL. |
 | Senha codificada em Base64| Senha do usuário de monitoramento do MySQL codificada em Base64. |
 | Atualização Automática| Especifica se será feita uma nova varredura em busca de alterações no arquivo my.cnf e uma substituição do arquivo de Autenticação de OMI do MySQL quando o Provedor de OMI do MySQL é atualizado. |
 

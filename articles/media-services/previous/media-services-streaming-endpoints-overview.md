@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: a45e2af6f2cb9c105c084585a03a6de615fa1397
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64573046"
 ---
 # <a name="streaming-endpoints-overview"></a>Visão geral dos pontos de extremidade de streaming  
@@ -86,10 +86,10 @@ Se seu ponto de extremidade de streaming **versão “1.0”** tiver >=1 SU (uni
 
 Recurso|Standard|Premium
 ---|---|---
-Libere os primeiros 15 dias <sup>1</sup>| Sim |Não 
+Libere os primeiros 15 dias <sup>1</sup>| Sim |Não
 Produtividade |Até 600 Mbps e pode fornecer uma muito eficaz taxa de transferência maior quando a CDN é usada.|200 Mbps por UA (unidade de streaming). Pode fornecer uma muito eficaz taxa de transferência maior quando a CDN é usada.
 CDN|Azure CDN, CDN de terceiros ou sem CDN.|Azure CDN, CDN de terceiros ou sem CDN.
-A cobrança é rateada| Diário|Diário
+A cobrança é rateada| Diariamente|Diariamente
 Criptografia dinâmica|Sim|Sim
 Empacotamento dinâmico|Sim|Sim
 Escala|Escala verticalmente automaticamente com a taxa de transferência de destino.|Unidades de streaming adicionais.

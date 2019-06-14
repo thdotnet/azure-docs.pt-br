@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 01/14/2019
 ms.openlocfilehash: 82b85ffd685df52e702db15e5a5b57a53a3b4f64
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60342037"
 ---
 # <a name="tutorial-set-up-sql-data-sync-between-azure-sql-database-and-sql-server-on-premises"></a>Tutorial: Configurar a sincronização de dados SQL entre o banco de dados SQL do Azure e SQL Server local
@@ -63,7 +63,7 @@ Para obter exemplos do PowerShell sobre como configurar a Sincronização de Dad
 
 ## <a name="add-sync-members"></a>Adicionar membros de sincronização
 
-Depois que o novo grupo de sincronização for criado e implantado, o item **Adicionar membros de sincronização (etapa 2)**, ficará realçado na página **Novo grupo de sincronização**.
+Depois que o novo grupo de sincronização for criado e implantado, o item **Adicionar membros de sincronização (etapa 2)** , ficará realçado na página **Novo grupo de sincronização**.
 
 Na seção **Banco de Dados Hub**, insira as credenciais existentes do servidor do Banco de Dados SQL em que o banco de dados hub está localizado. Não insira *novas* credenciais nesta seção.
 
@@ -150,7 +150,7 @@ Na seção **Banco de Dados Membro**, opcionalmente, adicione um SQL Server loca
 
 ## <a name="configure-sync-group"></a>Configurar o grupo de sincronização
 
-Depois que os novos membros do grupo de sincronização forem criados e implantados, o item **Configurar grupo de sincronização (etapa 3)**, fica realçado na página **Novo grupo de sincronização**.
+Depois que os novos membros do grupo de sincronização forem criados e implantados, o item **Configurar grupo de sincronização (etapa 3)** , fica realçado na página **Novo grupo de sincronização**.
 
 ![Configurações da etapa 3](media/sql-database-get-started-sql-data-sync/stepthree.png)
 

@@ -2,18 +2,16 @@
 title: Visão geral do gerenciamento de dispositivos com o Hub IoT do Azure | Microsoft Docs
 description: Visão geral do gerenciamento de dispositivos no Hub IoT do Azure ‒ ciclo de vida do dispositivo de empresa e padrões de gerenciamento do dispositivo como a reinicialização, redefinição de fábrica, atualização de firmware, configuração, gêmeos de dispositivo, consultas, trabalhos.
 author: bzurcher
-manager: ''
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-origin.date: 08/24/2017
-ms.date: 10/29/2018
-ms.author: v-yiso
+ms.date: 08/24/2017
+ms.author: briz
 ms.openlocfilehash: bdc55af23568b5785a831e81f352400c728c902e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60400864"
 ---
 # <a name="overview-of-device-management-with-iot-hub"></a>Visão geral do gerenciamento de dispositivos com o Hub IoT
@@ -24,25 +22,29 @@ O Hub IoT do Azure fornece os recursos e um modelo de extensibilidade que habili
 
 Uma parte crucial da criação de uma solução IoT empresarial bem-sucedida é fornecer uma estratégia para os operadores lidarem com o gerenciamento contínuo de sua coleção de dispositivos. Os operadores de IoT precisam de ferramentas simples e confiáveis e aplicativos que permitam focar nos aspectos mais estratégicos de seus trabalhos. Esse artigo fornece:
 
-- Uma breve visão geral da abordagem de Hub IoT do Azure para gerenciamento de dispositivos.
-- Uma descrição dos princípios de gerenciamento de dispositivo comuns.
-- Uma descrição do ciclo de vida do dispositivo.
-- Uma visão geral dos padrões comuns de gerenciamento de dispositivo.
+* Uma breve visão geral da abordagem de Hub IoT do Azure para gerenciamento de dispositivos.
+* Uma descrição dos princípios de gerenciamento de dispositivo comuns.
+* Uma descrição do ciclo de vida do dispositivo.
+* Uma visão geral dos padrões comuns de gerenciamento de dispositivo.
 
 ## <a name="device-management-principles"></a>Princípios de gerenciamento de dispositivos
+
 A IoT traz um conjunto exclusivo de desafios de gerenciamento de dispositivo, e cada solução corporativa deve resolver os seguintes princípios:
 
 ![Gráfico dos princípios de gerenciamento de dispositivos](media/iot-hub-device-management-overview/image4.png)
 
-- **Escala e automação**: Soluções de IoT exigem ferramentas simples que podem automatizar tarefas de rotina e habilitar uma equipe de operações relativamente pequena a gerenciar milhões de dispositivos. Diariamente, os operadores esperam lidar com operações de dispositivo remotamente, em massa, e só receberem alertas quando surgirem problemas que exijam sua atenção direta.
+* **Escala e automação**: Soluções de IoT exigem ferramentas simples que podem automatizar tarefas de rotina e habilitar uma equipe de operações relativamente pequena a gerenciar milhões de dispositivos. Diariamente, os operadores esperam lidar com operações de dispositivo remotamente, em massa, e só receberem alertas quando surgirem problemas que exijam sua atenção direta.
 
-- **Abertura e compatibilidade**: O ecossistema de dispositivos é incrivelmente diverso. Ferramentas de gerenciamento devem ser personalizadas a fim de acomodar vários protocolos, classes e plataformas de dispositivos. Os operadores devem ser capazes de dar suporte a muitos tipos de dispositivos, desde os chips de processo único incorporados mais restritos, até computadores eficientes e totalmente funcionais.
-- **Reconhecimento de contexto**: Ambientes de IoT são dinâmicos e em constante mudança. A confiabilidade do serviço é fundamental. As operações de gerenciamento de dispositivos devem levar em consideração os seguintes fatores para garantir que esse tempo de inatividade de manutenção não afete as operações de negócios críticos ou crie condições perigosas:
+* **Abertura e compatibilidade**: O ecossistema de dispositivos é incrivelmente diverso. Ferramentas de gerenciamento devem ser personalizadas a fim de acomodar vários protocolos, classes e plataformas de dispositivos. Os operadores devem ser capazes de dar suporte a muitos tipos de dispositivos, desde os chips de processo único incorporados mais restritos, até computadores eficientes e totalmente funcionais.
+
+* **Reconhecimento de contexto**: Ambientes de IoT são dinâmicos e em constante mudança. A confiabilidade do serviço é fundamental. As operações de gerenciamento de dispositivos devem levar em consideração os seguintes fatores para garantir que esse tempo de inatividade de manutenção não afete as operações de negócios críticos ou crie condições perigosas:
+
     * Janelas de manutenção do SLA
     * Estados de energia e de rede
     * Condições de uso
     * Localização geográfica do dispositivo
-- **Muitas funções de serviço**: Suporte para os fluxos de trabalho exclusivos e os processos de funções de operações de IoT é crucial. A equipe de operações deve trabalhar de forma harmoniosa com as restrições de determinado departamentos de TI internos.  Também deve encontrar formas sustentáveis de detectar informações de operações de dispositivo em tempo real para supervisores e outras funções de gerente de negócios.
+
+* **Muitas funções de serviço**: Suporte para os fluxos de trabalho exclusivos e os processos de funções de operações de IoT é crucial. A equipe de operações deve trabalhar de forma harmoniosa com as restrições de determinado departamentos de TI internos.  Também deve encontrar formas sustentáveis de detectar informações de operações de dispositivo em tempo real para supervisores e outras funções de gerente de negócios.
 
 ## <a name="device-lifecycle"></a>Ciclo de vida do dispositivo
 Há um conjunto de estágios de gerenciamento geral de dispositivos que são comuns a todos os projetos de IoT empresariais. Na IoT do Azure, há cinco fases no ciclo de vida do dispositivo:
@@ -114,6 +116,7 @@ O Hub IoT habilita o seguinte conjunto de padrões de gerenciamento de dispositi
     ![Grafo de padrão de status e progresso de relatório de gerenciamento de dispositivos](./media/iot-hub-device-management-overview/report-progress-pattern.png)
 
 ## <a name="next-steps"></a>Próximas etapas
+
 As funcionalidades, os padrões e as bibliotecas de código que o gerenciamento de dispositivos do Hub IoT fornece para gerenciamento de dispositivos, permitem que você crie aplicativos IoT que atendam aos requisitos corporativos de operador IoT em cada estágio do ciclo de vida do dispositivo.
 
 Para continuar a aprender sobre as funcionalidades de gerenciamento de dispositivos no Hub IoT, confira o tutorial [Introdução ao gerenciamento de dispositivos](iot-hub-node-node-device-management-get-started.md).

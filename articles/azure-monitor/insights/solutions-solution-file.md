@@ -15,10 +15,10 @@ ms.date: 01/09/2018
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 4e5c27911fe86a6916235014f8602327df929e20
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60595761"
 ---
 # <a name="creating-a-management-solution-file-in-azure-preview"></a>Criar um arquivo de solução de gerenciamento no Azure (versão prévia)
@@ -129,7 +129,7 @@ A seguir está a estrutura dos parâmetros padrão que você pode copiar e colar
     }
 
 
-Consulte os valores de parâmetro em outros elementos da solução com a sintaxe **parameters('nome do parâmetro')**.  Por exemplo, para acessar o nome do workspace, você usaria **parameters('workspaceName')**
+Consulte os valores de parâmetro em outros elementos da solução com a sintaxe **parameters('nome do parâmetro')** .  Por exemplo, para acessar o nome do workspace, você usaria **parameters('workspaceName')**
 
 ## <a name="variables"></a>variáveis
 [Variáveis](../../azure-resource-manager/resource-group-authoring-templates.md#variables) são valores que serão usados no restante da solução de gerenciamento.  Esses valores não são expostos ao usuário que instala a solução.  Eles se destinam a fornecer ao autor um único local onde ele pode gerenciar os valores que podem ser usados várias vezes em toda a solução. É necessário colocar os valores específicos à solução em variáveis, em vez de embuti-los em código no elemento **resources**.  Isso torna o código mais legível e permite que você altere esses valores facilmente em versões posteriores.
@@ -144,7 +144,7 @@ A seguir está um exemplo de um elemento **variables** com parâmetros típicos 
         "AutomationApiVersion": "2015-10-31"
     },
 
-Você consulta os valores de variáveis por toda a solução com a sintaxe **variables('nome da variável')**.  Por exemplo, para acessar a variável SolutionName, você usará **variables('SolutionName')**.
+Você consulta os valores de variáveis por toda a solução com a sintaxe **variables('nome da variável')** .  Por exemplo, para acessar a variável SolutionName, você usará **variables('SolutionName')** .
 
 Você também pode definir variáveis complexas que têm vários conjuntos de valores.  Elas são particularmente úteis em soluções de gerenciamento, quando você estiver definindo várias propriedades para diferentes tipos de recursos.  Por exemplo, é possível reestruturar as variáveis da solução mostradas acima, conforme indicado a seguir.
 
@@ -213,7 +213,7 @@ O recurso da solução tem as propriedades na tabela a seguir.  Isso inclui os r
 
 | Propriedade | DESCRIÇÃO |
 |:--- |:--- |
-| workspaceResourceId |ID do espaço de trabalho do Log Analytics no formulário  *\<ID do grupo de recursos > /providers/Microsoft.OperationalInsights/workspaces/\<nome do espaço de trabalho\>*. |
+| workspaceResourceId |ID do espaço de trabalho do Log Analytics no formulário  *\<ID do grupo de recursos > /providers/Microsoft.OperationalInsights/workspaces/\<nome do espaço de trabalho\>* . |
 | referencedResources |Lista de recursos na solução que não deverão ser removidos quando a solução for removida. |
 | containedResources |Lista de recursos na solução que deverão ser removidos quando a solução for removida. |
 

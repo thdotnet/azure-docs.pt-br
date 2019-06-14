@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: cenkd;juliako
 ms.openlocfilehash: b3357436d068396c5c3c4fae10ed6857759c5aed
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61219865"
 ---
 # <a name="azure-media-services-fragmented-mp4-live-ingest-specification"></a>Especificação da ingestão dinâmica de MP4 fragmentado para os Serviços de Mídia do Azure 
@@ -112,7 +112,7 @@ Nesta seção, abordamos os cenários de failover de serviço. Nesse caso, a fal
 1. É recomendável que o codificador NÃO limite o número de tentativas para estabelecer uma conexão ou retomar o streaming após a ocorrência de um erro TCP.
 1. Após um erro TCP:
   
-     a. A conexão atual DEVERÁ ser fechada e uma nova conexão DEVERÁ ser criada para uma nova solicitação HTTP POST.
+    a. A conexão atual DEVERÁ ser fechada e uma nova conexão DEVERÁ ser criada para uma nova solicitação HTTP POST.
 
     b. A nova URL de HTTP POST DEVERÁ ser a mesma URL do POST inicial.
   
@@ -162,7 +162,7 @@ As etapas a seguir são uma implementação recomendada para ingestão de faixa 
 1. Em **Live Server Manifest Box**, **manifestOutput** DEVE ser definido como **true**.
 1. Devido à natureza esparsa do evento de sinalização, recomendamos o seguinte:
    
-     a. No início do evento ao vivo, o codificador envia as caixas de cabeçalho inicial ao serviço, o que permite ao serviço registrar a faixa esparsa no manifesto do cliente.
+    a. No início do evento ao vivo, o codificador envia as caixas de cabeçalho inicial ao serviço, o que permite ao serviço registrar a faixa esparsa no manifesto do cliente.
    
     b. O codificador DEVE encerrar a solicitação HTTP POST quando os dados não estiverem sendo enviados. Um HTTP POST de execução longa que não envia dados pode impedir que os Serviços de Mídia se desconectem rapidamente do codificador no caso de uma atualização de serviço ou reinicialização do servidor. Nesses casos, o servidor de mídia está temporariamente bloqueado em uma operação de recebimento no soquete.
    

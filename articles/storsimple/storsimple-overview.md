@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 07/10/2017
 ms.author: v-sharos@microsoft.com
 ms.openlocfilehash: 63906e65acb8e8aa836e6e59714bddca24ea21eb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60630151"
 ---
 # <a name="storsimple-8000-series-a-hybrid-cloud-storage-solution"></a>Série 8000 StorSimple: uma solução de armazenamento em nuvem híbrida
@@ -29,7 +29,7 @@ O StorSimple usa [armazenamento em camadas](#automatic-storage-tiering) para ger
 
 Além do gerenciamento de armazenamento, os recursos de proteção de dados do StorSimple permitem que você crie backups agendados e sob demanda e os armazene localmente ou na nuvem. Os backups são realizados na forma de instantâneos incrementais, o que significa que eles podem ser criados e restaurados rapidamente. Os instantâneos em nuvem podem ser extremamente importantes em cenários de recuperação de desastres, pois substituem os sistemas de armazenamento secundário (como backup em fita) e permitem restaurar dados para o data center ou para locais alternativos, se necessário.
 
-![ícone de vídeo](./media/storsimple-overview/video_icon.png)  Assista ao vídeo que apresenta uma rápida introdução ao Microsoft Azure StorSimple.
+![ícone de vídeo](./media/storsimple-overview/video_icon.png) Assista ao vídeo que apresenta uma rápida introdução ao Microsoft Azure StorSimple.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/StorSimple-Hybrid-Cloud-Storage-Solution/player]
 
@@ -238,7 +238,7 @@ Veja a seguir uma lista dos componentes da infraestrutura com suporte do StorSim
 | Geral |DataCore FC |Sim* |Suporte com DataCore SANsymphony |Todas as versões |
 | Geral |DFSR |Sim* |Com suporte somente com volumes afixados localmente |Todas as versões |
 | Geral |Indexação |Sim* |Para volumes em camadas, somente a indexação de metadados tem suporte (sem dados).<br>Para volumes afixados localmente, a indexação completa tem suporte. |Todas as versões |
-| Geral |Antivírus |Sim* |Para volumes em camadas, há suporte apenas para verificação ao abrir e fechar.<br>  Para volumes afixados localmente, há suporte para verificação completa. |Todas as versões |
+| Geral |Antivírus |Sim* |Para volumes em camadas, há suporte apenas para verificação ao abrir e fechar.<br> Para volumes afixados localmente, há suporte para verificação completa. |Todas as versões |
 
 *Sim&#42; – Diretrizes e restrições da solução devem ser aplicadas.*
 
