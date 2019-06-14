@@ -16,10 +16,10 @@ ms.date: 12/01/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: abdeb7ce5327db57b8a6ae48fdd8d8c0c81879a7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60290776"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-to-acquire-an-access-token"></a>Como usar identidades gerenciadas para recursos do Azure em uma VM do Azure para adquirir um token de acesso 
@@ -64,7 +64,7 @@ Um aplicativo cliente pode solicitar identidades gerenciadas para o [token de ac
 
 A interface fundamental para adquirir um token de acesso é baseada em REST, tornando-a acessível para qualquer aplicativo cliente em execução na VM que pode fazer chamadas REST HTTP. Isso é semelhante ao modelo de programação do Azure AD, exceto que o cliente usa um ponto de extremidade na máquina virtual (em vez de um ponto de extremidade do Azure AD).
 
-Exemplo de solicitação usando o ponto de extremidade do serviço de metadados na instância do Azure (IMDS) *(recomendado)*:
+Exemplo de solicitação usando o ponto de extremidade do serviço de metadados na instância do Azure (IMDS) *(recomendado)* :
 
 ```
 GET 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/' HTTP/1.1 Metadata: true
@@ -81,7 +81,7 @@ GET 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-0
 | `client_id` | (Opcional) Um parâmetro de cadeia de consulta, indicando o client_id da identidade gerenciada para a qual você deseja o token. Obrigatório, se a VM tiver várias identidades gerenciadas atribuídas ao usuário.|
 | `mi_res_id` | (Opcional) Um cadeia de caracteres parâmetro de consulta, que indica o mi_res_id (ID do recurso do Azure) de identidade gerenciada que você gostaria que o token para. Obrigatório, se a VM tiver várias identidades gerenciadas atribuídas ao usuário. |
 
-Solicitação de exemplo usando as identidades gerenciadas do Ponto de Extremidade de Extensão de VM dos recursos do Azure *(previsão de reprovação em janeiro de 2019)*:
+Solicitação de exemplo usando as identidades gerenciadas do Ponto de Extremidade de Extensão de VM dos recursos do Azure *(previsão de reprovação em janeiro de 2019)* :
 
 ```http
 GET http://localhost:50342/oauth2/token?resource=https%3A%2F%2Fmanagement.azure.com%2F HTTP/1.1
@@ -358,7 +358,7 @@ As identidades gerenciadas do ponto de extremidade de recursos do Azure sinaliza
 | 429 Número excessivo de solicitações. |  Atingido o limite de restrição IMDS. | Tentar novamente com Retirada Exponencial. Consulte as diretrizes abaixo. |
 | o erro 4xx na solicitação. | Um ou mais parâmetros de solicitação estava incorreto. | Não tente novamente.  Examine os detalhes do erro para obter mais informações.  Os erros 4xx são erros de tempo de design.|
 | Erro 5xx transitório do serviço. | As identidades gerenciadas do subsistema de recursos do Azure ou do Azure Active Directory retornaram um erro transitório. | É seguro tentar novamente após aguardar pelo menos 1 segundo.  Se tentar novamente muito rápido ou com muita frequência, o IMDS e/ou o Microsoft Azure Active Directory poderá retornar um erro de limite de taxa (429).|
-| Tempo limite | Ponto de extremidade IMDS está atualizando. | Tente novamente com Expontential retirada. Consulte as diretrizes abaixo. |
+| timeout | Ponto de extremidade IMDS está atualizando. | Tente novamente com Expontential retirada. Consulte as diretrizes abaixo. |
 
 Se ocorrer um erro, o corpo da resposta HTTP correspondente conterá o JSON com os detalhes do erro:
 
@@ -373,7 +373,7 @@ Esta seção documenta as possíveis respostas de erro. Um status "200 OK" é um
 
 | Código de status | Erro | Descrição do erro | Solução |
 | ----------- | ----- | ----------------- | -------- |
-| 400 Solicitação Inválida | invalid_resource | AADSTS50001: O aplicativo chamado *\<URI\>* não foi encontrado no locatário chamado *\<TENANT-ID\>*. Isso poderá acontecer se o aplicativo não tiver sido instalado pelo administrador do locatário ou aceito por qualquer usuário no locatário. Talvez você tenha enviado a solicitação de autenticação ao locatário errado.\ | (Apenas Linux) |
+| 400 Solicitação Inválida | invalid_resource | AADSTS50001: O aplicativo chamado *\<URI\>* não foi encontrado no locatário chamado *\<TENANT-ID\>* . Isso poderá acontecer se o aplicativo não tiver sido instalado pelo administrador do locatário ou aceito por qualquer usuário no locatário. Talvez você tenha enviado a solicitação de autenticação ao locatário errado.\ | (Apenas Linux) |
 | 400 Solicitação Inválida | bad_request_102 | Cabeçalho de metadados necessário não especificado | O campo de cabeçalho de solicitação `Metadata` está ausente da solicitação ou está formatado incorretamente. O valor deve ser especificado como `true`, com todas as letras minúsculas. Consulte a "Solicitação de exemplo" na seção REST anterior para obter um exemplo.|
 | 401 Não Autorizado | unknown_source | *\<URI\>* de origem desconhecida | Verifique se o URI da solicitação HTTP GET está formatado corretamente. A parte `scheme:host/resource-path` deve ser especificada como `http://localhost:50342/oauth2/token`. Consulte a "Solicitação de exemplo" na seção REST anterior para obter um exemplo.|
 |           | invalid_request | A solicitação não tem um parâmetro obrigatório, inclui um valor de parâmetro inválido, inclui um parâmetro mais de uma vez ou está malformada. |  |

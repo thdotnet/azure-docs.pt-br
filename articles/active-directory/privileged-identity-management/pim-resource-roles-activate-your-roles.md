@@ -16,10 +16,10 @@ ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 04e8615cc5534255308c35fa1f675ef3a85aa84e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60438356"
 ---
 # <a name="activate-my-azure-resource-roles-in-pim"></a>Ativar minhas funções de recurso do Azure no PIM
@@ -135,7 +135,7 @@ Se você receber uma mensagem de que um recurso do Azure está bloqueado ao tent
 - Exclua o bloqueio conforme descrito em [Bloquear recursos para evitar alterações inesperadas](../../azure-resource-manager/resource-group-lock-resources.md).
 - Se você quiser manter o bloqueio, torne a atribuição de função permanente ou use uma conta break-glass.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Estender ou renovar funções de recurso do Azure no PIM](pim-resource-roles-renew-extend.md)
 - [Ativar minhas funções do Azure AD no PIM](pim-how-to-activate-role.md)

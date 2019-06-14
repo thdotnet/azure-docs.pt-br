@@ -13,10 +13,10 @@ ms.workload: big-compute
 ms.date: 04/20/2017
 ms.author: lahugh
 ms.openlocfilehash: 176f00de77c2d353d6efeb8b5a535a607b8f3204
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60776500"
 ---
 # <a name="pool-create-event"></a>Evento de criação de pool
@@ -49,7 +49,7 @@ ms.locfileid: "60776500"
 
 |Elemento|Tipo|Observações|
 |-------------|----------|-----------|
-|ID|Cadeia de caracteres|A ID do pool.|
+|id|Cadeia de caracteres|A ID do pool.|
 |displayName|Cadeia de caracteres|O nome de exibição do pool.|
 |vmSize|Cadeia de caracteres|O tamanho das máquinas virtuais no pool. Todas as máquinas virtuais em um pool têm o mesmo tamanho. <br/><br/> Para obter informações sobre tamanhos disponíveis de máquinas virtuais para pools de serviços de nuvem (pools criados com cloudServiceConfiguration), consulte [Tamanhos para serviços de nuvem](https://azure.microsoft.com/documentation/articles/cloud-services-sizes-specs/). O lote dá suporte a todos os tamanhos de VM de serviços de nuvem, exceto `ExtraSmall`.<br/><br/> Para obter informações sobre tamanhos de VM disponíveis para pools usando imagens do Marketplace de máquinas virtuais (pools criados com virtualMachineConfiguration) consulte [Tamanhos de máquinas virtuais](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-sizes/) (Linux) ou [Tamanhos de máquinas virtuais](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-sizes/) (Windows). O Lote dá suporte a todos os tamanhos de VM do Azure, exceto `STANDARD_A0` e aqueles com armazenamento premium (série `STANDARD_GS`, `STANDARD_DS` e `STANDARD_DSV2`).|
 |[cloudServiceConfiguration](#bk_csconf)|Tipo complexo|A configuração do serviço de nuvem para o pool.|

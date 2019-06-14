@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
 ms.openlocfilehash: 8883c1e7f2874e1e2e61b8eca122f2ec294c7849
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60808944"
 ---
 # <a name="azure-monitor-data-platform"></a>Plataforma de dados do Azure Monitor
@@ -33,7 +33,7 @@ As métricas, logs e rastreamentos distribuídos são conhecidos como os três p
 Recursos do Azure geram uma quantidade significativa de dados de monitoramento. O Azure Monitor consolida esses dados, juntamente com os dados de outras fontes de monitoramento para um uma plataforma de métricas ou Logs. Cada um é otimizada para cenários de monitoramento específicos, e cada um oferece suporte a recursos diferentes no Azure Monitor. Recursos como análise de dados, visualizações ou alertas exigem que você a compreender as diferenças, para que você possa implementar seu cenário necessário da maneira mais eficiente e econômica. Insights no Azure Monitor, como [Application Insights](../app/app-insights-overview.md) ou [do Azure Monitor para VMs](../insights/vminsights-overview.md) têm ferramentas de análise que permitem que você se concentre no cenário de monitoramento específico sem precisar compreender os diferenças entre os dois tipos de dados. 
 
 
-### <a name="metrics"></a>Métricas
+### <a name="metrics"></a>metrics
 As [Métricas](data-platform-metrics.md) são valores numéricos que descrevem algum aspecto de um sistema em um ponto específico no tempo. Eles são coletados em intervalos regulares e são identificados com um carimbo de hora, um nome, um valor e um ou mais rótulos de definição. As métricas podem ser agregadas usando uma variedade de algoritmos, em comparação com outras métricas e analisados tendências ao longo do tempo. 
 
 Métricas no Azure Monitor são armazenadas em um banco de dados de série temporal que é otimizado para análise de dados de carimbo de data / hora. Isso torna as métricas particularmente adequado para o alerta e rápida a detecção de problemas. Eles podem lhe dizer como está o desempenho do seu sistema, mas normalmente precisam ser combinados com os logs para identificar a causa raiz dos problemas.
@@ -67,7 +67,7 @@ Leia mais sobre o rastreamento em distribuído [o que é o rastreamento distribu
 
 A tabela a seguir compara as métricas e Logs no Azure Monitor.
 
-| Atributo  | Métricas | Logs |
+| Atributo  | metrics | Logs |
 |:---|:---|:---|
 | Benefícios | Leve e capaz de cenários de quase em tempo real, como alertas. Ideal para a detecção rápida de problemas. | Analisados com avançada linguagem de consulta. Ideal para uma análise profunda e identificar a causa raiz. |
 | Dados | Valores numéricos apenas | Dados numéricos ou de texto |

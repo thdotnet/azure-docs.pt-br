@@ -11,10 +11,10 @@ ms.date: 05/17/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: bcbda2464a4607aaa0b1bb96ef8f34c8713cb5f1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60738673"
 ---
 # <a name="role-based-access-control-in-azure-automation"></a>Controle de acesso com base em função na Automação do Azure
@@ -283,7 +283,7 @@ A seção a seguir mostra como configurar o RBAC em sua conta de automação por
 
 #### <a name="add-a-new-user-and-assign-a-role"></a>Adicionar um novo usuário e atribuir uma função
 
-1. Na página **Controle de acesso (IAM)**, clique em **+ Adicionar atribuição de função** para abrir a página **Adicionar atribuição de função**, na qual você pode adicionar um usuário, grupo ou aplicativo e atribuir uma função a eles.
+1. Na página **Controle de acesso (IAM)** , clique em **+ Adicionar atribuição de função** para abrir a página **Adicionar atribuição de função**, na qual você pode adicionar um usuário, grupo ou aplicativo e atribuir uma função a eles.
 
 2. Selecione uma função na lista de funções disponíveis. É possível escolher qualquer uma das funções internas disponíveis compatíveis com uma Conta de Automação ou qualquer função personalizada que você tenha definido.
 
@@ -307,7 +307,7 @@ A seção a seguir mostra como configurar o RBAC em sua conta de automação por
 
 Você pode remover a permissão de acesso de um usuário que não está gerenciando a Conta de Automação ou que não trabalha mais para a organização. Veja abaixo as etapas para remover um usuário:
 
-1. Na página **Controle de acesso (IAM)**, selecione o usuário que você deseja remover e clique em **Remover**.
+1. Na página **Controle de acesso (IAM)** , selecione o usuário que você deseja remover e clique em **Remover**.
 2. Clique no botão **Remover** na página de detalhes da atribuição.
 3. Clique em **Sim** para confirmar a remoção.
 

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 05/27/2017
 ms.author: bwren
 ms.openlocfilehash: 67378a5911e5bd83888342aa3773f7f5ed4ccf29
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60453898"
 ---
 # <a name="collect-data-in-log-analytics-with-an-azure-automation-runbook"></a>Coletar dados no Log Analytics com um runbook na Automação do Azure
@@ -68,7 +68,7 @@ As [variáveis de Automação](../../automation/automation-variables.md) contêm
 | NOME | WorkspaceId | WorkspaceKey |
 | Type | Cadeia de caracteres | Cadeia de caracteres |
 | Valor | Cole a ID do espaço de trabalho do seu espaço de trabalho do Log Analytics. | Cole com a chave primária ou secundária do seu espaço de trabalho do Log Analytics. |
-| Criptografado | Não  | Sim |
+| Criptografado | Não | Sim |
 
 ## <a name="3-create-runbook"></a>3. Criar runbook
 
@@ -185,7 +185,7 @@ A maneira mais comum para iniciar um runbook que coleta dados de monitoramento �
 | Inicia | Selecione qualquer horário pelo menos 5 minutos após a hora atual. |
 | Recorrência | Recorrente |
 | Repetir a cada | 1 hora |
-| Definir a validade | Não  |
+| Definir a validade | Não |
 
 Depois de criar a agenda, você precisará definir os valores de parâmetro que serão usados sempre que essa agenda iniciar o runbook.
 

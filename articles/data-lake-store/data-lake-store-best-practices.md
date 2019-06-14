@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: sachins
 ms.openlocfilehash: 50d0ed644b5afa744e8bce478199079fd4fb7432
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60878936"
 ---
 # <a name="best-practices-for-using-azure-data-lake-storage-gen1"></a>Melhores práticas para utilizar o Microsoft Azure Data Lake Storeage Gen1
@@ -23,7 +23,7 @@ ms.locfileid: "60878936"
 
 Neste artigo, você aprenderá sobre as melhores práticas e considerações para trabalhar com o Azure Data Lake Storage Gen1. Este artigo fornece informações sobre segurança, desempenho, resiliência e monitoramento do Data Lake Storage Gen1. Antes do Data Lake Storage Gen1, trabalhar com Big Data em serviços como o Microsoft Azure HDInsight era realmente complexo. Era necessário fragmentar dados em várias contas de Armazenamento de Blobs para que o armazenamento de petabyte e o desempenho ideal nessa escala pudessem ser alcançados. Com o Data Lake Storage Gen1, a maioria dos limites rígidos para tamanho e desempenho foi removida. No entanto, ainda há algumas considerações que este artigo abrange para que seja possível obter o melhor desempenho com o Data Lake Storage Gen1.
 
-## <a name="security-considerations"></a>Considerações de segurança
+## <a name="security-considerations"></a>Considerações sobre segurança
 
 O Azure Data Lake Storage Gen1 oferece controles de acesso POSIX e auditoria detalhada para usuários, grupos e entidades de serviço do Microsoft Azure AD (Azure Active Directory). Esses controles de acesso podem ser configurados para arquivos e pastas existentes. Os controles de acesso também podem ser utilizados para criar padrões que podem ser aplicados a novos arquivos ou pastas. Quando as permissões forem definidas para pastas existentes e objetos secundários, as permissões deverão ser propagadas recursivamente em cada objeto. Se houver um grande número de arquivos, a propagação das permissões poderá demorar muito tempo. O tempo escolhido pode variar entre 30 e 50 objetos processados por segundo. Portanto, planeje a estrutura de pasta e os grupos de usuários adequadamente. Caso contrário, atrasos e problemas imprevistos poderão ocorrer ao trabalhar com os dados.
 
@@ -45,7 +45,7 @@ As entidades de serviço do Azure Active Directory normalmente são usadas por s
 
 ### <a name="enable-the-data-lake-storage-gen1-firewall-with-azure-service-access"></a>Habilitar o firewall do Data Lake Storage Gen1 com acesso à serviços do Azure
 
-Um Data Lake Storage Gen1 dá suporte para a opção de ativar um firewall e limitar acesso apenas para serviços do Azure, o que é recomendado para um vetor de ataque menor de intrusões externas. O Firewall pode ser habilitado na conta do Data Lake Storage Gen1 no portal do Azure usando as opções **Firewall** > **Habilitar Firewall (ON)** > **Permitir acesso a serviços do Azure**.
+Um Data Lake Storage Gen1 dá suporte para a opção de ativar um firewall e limitar acesso apenas para serviços do Azure, o que é recomendado para um vetor de ataque menor de intrusões externas. O Firewall pode ser habilitado na conta do Data Lake Storage Gen1 no portal do Azure usando as opções **Firewall** > **Habilitar Firewall (ON)**  > **Permitir acesso a serviços do Azure**.
 
 ![Configurações de firewall no Data Lake Storage Gen1](./media/data-lake-store-best-practices/data-lake-store-firewall-setting.png "Configurações de firewall no Data Lake Storage Gen1")
 
@@ -101,7 +101,7 @@ A seguir, são apresentadas as três principais opções recomendadas para orque
 |  |Distcp  |Fábrica de dados do Azure  |AdlCopy  |
 |---------|---------|---------|---------|
 |**Limites de escala**     | Limitado por nós de trabalho        | Limitado por unidades de Movimentação de Dados de Nuvem        | Limitado por unidades do Analytics        |
-|**Oferece suporte à cópia deltas**     |   Sim      | Não         | Não          |
+|**Oferece suporte à cópia deltas**     |   Sim      | Não         | Não         |
 |**Orquestração interna**     |  Não (utilize trabalhos cron ou ventilação excessiva Oozie)       | Sim        | Não (utilize a Automação do Azure ou o Agendador de Tarefas do Windows)         |
 |**Com suporte para sistemas de arquivos**     | ADL, HDFS, WASB, S3, GS, CFS        |Vários, consulte [Conectores](../data-factory/connector-azure-blob-storage.md).         | ADL para ADL, WASB para ADL (mesma região somente)        |
 |**Suporte SO**     |Qualquer SO executando Hadoop         | N/D          | Windows 10         |

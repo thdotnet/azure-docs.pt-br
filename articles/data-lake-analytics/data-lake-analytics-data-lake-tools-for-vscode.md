@@ -10,10 +10,10 @@ ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.topic: conceptual
 ms.date: 02/09/2018
 ms.openlocfilehash: 5042d89f1cb5e928444e4b3c9a23db7bb1d66585
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60508746"
 ---
 # <a name="use-azure-data-lake-tools-for-visual-studio-code"></a>Usar as Ferramentas do Azure Data Lake para Visual Studio Code
@@ -155,7 +155,7 @@ Use as Ferramentas do Data Lake para registrar assemblies de código personaliza
 
 **Para registrar um assembly**
 
-Você pode registrar o assembly por meio do comando **ADL: Registrar Assembly** ou **ADL: Registrar Assembly (Avançado)**.
+Você pode registrar o assembly por meio do comando **ADL: Registrar Assembly** ou **ADL: Registrar Assembly (Avançado)** .
 
 **Para registrar por meio do comando ADL: Registrar Assembly**
 1.  Selecione Ctrl + Shift + P para abrir a paleta de comandos.
@@ -170,7 +170,7 @@ Uma maneira mais conveniente de disparar o comando **ADL: Registrar Assembly** �
 
 **Para registrar por meio do comando ADL: Registrar Assembly (Avançado)**
 1.  Selecione Ctrl + Shift + P para abrir a paleta de comandos.
-2.  Digite **ADL: Registrar Assembly (Avançado)**. 
+2.  Digite **ADL: Registrar Assembly (Avançado)** . 
 3.  Especifique o caminho do assembly local. 
 4.  O arquivo JSON será exibido. Examine e edite as dependências do assembly e os parâmetros de recursos, se necessário. As instruções serão exibidas na janela **Saída**. Para prosseguir com o registro do assembly, salve (CTRL+S) o arquivo JSON.
 
@@ -366,10 +366,10 @@ Outra maneira de carregar arquivos para armazenamento é pelo menu de atalho no 
 
 
 ### <a name="download-a-file"></a>Baixar um arquivo 
-Você pode baixar um arquivo usando o comando **ADL: Baixar Arquivo** ou **ADL: Baixar Arquivo (Avançado)**.
+Você pode baixar um arquivo usando o comando **ADL: Baixar Arquivo** ou **ADL: Baixar Arquivo (Avançado)** .
 
 **Para baixar um arquivo por meio do comando ADL: Baixar Arquivo (Avançado)**
-1. Clique com o botão direito do mouse no editor de scripts e, depois, selecione **Baixar Arquivo (Avançado)**.
+1. Clique com o botão direito do mouse no editor de scripts e, depois, selecione **Baixar Arquivo (Avançado)** .
 2. O VS Code exibe um arquivo JSON. É possível inserir os caminhos de arquivo e baixar vários arquivos ao mesmo tempo. As instruções serão exibidas na janela **Saída**. Para prosseguir com o download dos arquivos, salve (CTRL+S) o arquivo JSON.
 
     ![Arquivo JSON com os caminhos para download de arquivo](./media/data-lake-analytics-data-lake-tools-for-vscode/download-multi-files.png)

@@ -17,10 +17,10 @@ ms.date: 05/29/2018
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 610f3073594f73f04a68865593be6bfb4188d4f1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60883663"
 ---
 # <a name="overview-of-autoscale-with-azure-virtual-machine-scale-sets"></a>Visão geral de dimensionamento automático com conjuntos de dimensionamento de máquinas virtuais do Azure
@@ -83,7 +83,7 @@ Quando você cria regras de dimensionamento automático para monitorar determina
 | Mínimo          |
 | Máximo          |
 | Total            |
-| Último             |
+| Last             |
 | Contagem            |
 
 As regras de dimensionamento automático são acionadas quando as métricas são comparadas com o limite definido com um dos operadores abaixo:

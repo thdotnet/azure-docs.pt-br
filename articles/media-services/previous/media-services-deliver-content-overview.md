@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 5db2cb983c0c3cd0e2194f7686964d9ec3828d6f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61232261"
 ---
 # <a name="deliver-content-to-customers"></a>Distribuir conteúdo aos clientes
@@ -155,7 +155,7 @@ Um ponto de extremidade de streaming representa um serviço de streaming que pod
 
 ## <a name="known-issues"></a>Problemas conhecidos
 ### <a name="changes-to-smooth-streaming-manifest-version"></a>Alterações na versão do manifesto do Smooth Streaming
-Antes da liberação do serviço em julho de 2016 — quando ativos produzidos pelo Codificador de Mídia Padrão, Fluxo de Trabalho Premium de Codificação de Mídia ou o antigo Codificador de Mídia do Azure eram transmitidos usando o empacotamento dinâmico — o manifesto Smooth Streaming retornado seria conforme à versão 2.0. Na versão 2.0, as durações de fragmento não usam as chamadas marcações de repetição ('r'). Por exemplo: 
+Antes da liberação do serviço em julho de 2016 — quando ativos produzidos pelo Codificador de Mídia Padrão, Fluxo de Trabalho Premium de Codificação de Mídia ou o antigo Codificador de Mídia do Azure eram transmitidos usando o empacotamento dinâmico — o manifesto Smooth Streaming retornado seria conforme à versão 2.0. Na versão 2.0, as durações de fragmento não usam as chamadas marcações de repetição ('r'). Por exemplo:
 
 
     <?xml version="1.0" encoding="UTF-8"?>
@@ -169,7 +169,7 @@ Antes da liberação do serviço em julho de 2016 — quando ativos produzidos p
         </StreamIndex>
     </SmoothStreamingMedia>
 
-Na liberação do serviço de julho de 2016, o manifesto do Smooth Streaming gerado está em conformidade com a versão 2.2, com durações de fragmentos que usam marcações de repetição. Por exemplo: 
+Na liberação do serviço de julho de 2016, o manifesto do Smooth Streaming gerado está em conformidade com a versão 2.2, com durações de fragmentos que usam marcações de repetição. Por exemplo:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <SmoothStreamingMedia MajorVersion="2" MinorVersion="2" Duration="8000" TimeScale="1000">

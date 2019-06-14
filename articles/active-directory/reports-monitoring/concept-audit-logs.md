@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3da96c09026baff3965e0a90d1f461fd948a3a50
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60440906"
 ---
 # <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Relatórios de atividades de auditoria no portal do Azure Active Directory 
@@ -98,7 +98,7 @@ O **serviço** filtro permite que você selecione em uma lista suspensa dos segu
 - B2C
 - Acesso Condicional
 - Diretório principal
-- Gerenciamento de Direitos
+- Gerenciamento de direitos
 - Identity Protection
 - Usuários Convidados
 - PIM
@@ -127,12 +127,12 @@ O **categoria** filtro permite que você selecione um dos seguintes filtros:
 
 O **atividade** filtro se baseia a seleção de tipo de recurso da categoria e a atividade feita. Você pode selecionar uma atividade específica que deseja exibir ou escolher todas. 
 
-Você pode obter a lista de todas as Atividades de Auditoria usando a API do Graph https://graph.windows.net/$tenantdomain/activities/auditActivityTypes?api-version=beta, onde $tenantdomain = seu nome de domínio ou consulte o artigo [eventos do relatório de auditoria](reference-audit-activities.md).
+Você pode obter a lista de todas as Atividades de Auditoria usando a API do Graph https://graph.windows.net/ $tenantdomain/activities/auditActivityTypes?api-version=beta, onde $tenantdomain = seu nome de domínio ou consulte o artigo [eventos do relatório de auditoria](reference-audit-activities.md).
 
 O **Status** filtro permite que você filtre com base no status de uma operação de auditoria. O status pode ser um dos seguintes:
 
 - Todos
-- Sucesso
+- Êxito
 - Failure
 
 O **destino** filtro permite que você pesquise um destino específico por nome ou nome de usuário principal (UPN). O nome de destino e o UPN diferenciam maiusculas de minúsculas. 

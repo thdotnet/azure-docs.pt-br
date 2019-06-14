@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
 ms.openlocfilehash: 5a7c16e6ac565d1660fee02cb7df178344b195e7
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62122916"
 ---
 # <a name="get-started-with-azure-blob-storage-and-visual-studio-connected-services-webjob-projects"></a>Introdução ao armazenamento de Blob do Azure e aos serviços conectados do Visual Studio (projetos WebJob)
@@ -144,7 +144,7 @@ O número máximo de novas tentativas é configurável. A mesma **MaxDequeueCoun
 
 A mensagem da fila para blobs suspeitos é um objeto JSON que contém as seguintes propriedades:
 
-* FunctionId (no formato *{nome do trabalho Web}*. Funções. *{Nome da função}*, por exemplo: WebJob1.Functions.CopyBlob)
+* FunctionId (no formato *{nome do trabalho Web}* . Funções. *{Nome da função}* , por exemplo: WebJob1.Functions.CopyBlob)
 * BlobType ("BlockBlob" ou "PageBlob")
 * ContainerName
 * BlobName
@@ -193,7 +193,7 @@ O SDK de WebJobs garante que nenhuma função **BlobTrigger** seja chamada mais 
 
 Os recebimentos de blob são armazenados em um contêiner denominado *azure-webjobs-hosts* na conta de armazenamento do Azure especificada pela cadeia de conexão AzureWebJobsStorage. Um recebimento de blob tem as seguintes informações:
 
-* A função que foi chamada para o blob ("*{nome do trabalho Web}*. Funções. *{Nome da função}*", por exemplo: "WebJob1.Functions.CopyBlob")
+* A função que foi chamada para o blob (" *{nome do trabalho Web}* . Funções. *{Nome da função}* ", por exemplo: "WebJob1.Functions.CopyBlob")
 * O nome do contêiner
 * O tipo de blob ("BlockBlob" ou "PageBlob")
 * O nome do blob

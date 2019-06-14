@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 0755c01fe8e13e8e39c0b453198f2b67c51a2bc4
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66149637"
 ---
 #### <a name="to-download-hotfixes"></a>Para baixar os hotfixes
@@ -92,7 +92,7 @@ Siga as etapas abaixo para instalar e verificar os hotfixes do modo normal. Caso
     > [!NOTE]
     > Ocasionalmente, o cmdlet relatará `False` quando a atualização ainda estiver em andamento. Para garantir que o hotfix seja concluído, aguarde alguns minutos, execute esse comando novamente e verifique se `RunInProgress` é `False`. Em caso positivo, o hotfix foi concluído.
 
-6. Depois que a atualização do software estiver concluída, verifique as versões de software do sistema. Tipo:
+6. Depois que a atualização do software estiver concluída, verifique as versões de software do sistema. Digite:
    
     `Get-HcsSystem`
    
@@ -123,7 +123,7 @@ Observe que, se o firmware de disco já estiver atualizado, você não precisar�
 
 Para instalar as atualizações de firmware de disco, siga as instruções abaixo.
 
-1. Coloque o dispositivo no modo de manutenção. **Observe que você não deve usar a comunicação remota do Windows PowerShell ao se conectar a um dispositivo no modo de manutenção. Em vez disso, execute esse cmdlet no controlador do dispositivo quando conectado por meio do console serial do dispositivo.** Tipo:
+1. Coloque o dispositivo no modo de manutenção. **Observe que você não deve usar a comunicação remota do Windows PowerShell ao se conectar a um dispositivo no modo de manutenção. Em vez disso, execute esse cmdlet no controlador do dispositivo quando conectado por meio do console serial do dispositivo.** Digite:
    
     `Enter-HcsMaintenanceMode`
    
@@ -164,7 +164,7 @@ Para instalar as atualizações de firmware de disco, siga as instruções abaix
         [Y] Yes [N] No (Default is "Y"): Y
         WARNING: Installation is currently in progress. This operation can take several minutes to complete.
 3. Monitore o progresso da instalação usando o comando `Get-HcsUpdateStatus` . A atualização é concluída quando o `RunInProgress` muda para `False`.
-4. Depois que a instalação for concluída, o controlador no qual o hotfix do modo de manutenção foi instalado será reiniciado. Faça logon como opção 1, **Faça logon com acesso completo**, e verifique a versão de firmware de disco. Tipo:
+4. Depois que a instalação for concluída, o controlador no qual o hotfix do modo de manutenção foi instalado será reiniciado. Faça logon como opção 1, **Faça logon com acesso completo**, e verifique a versão de firmware de disco. Digite:
    
    `Get-HcsFirmwareVersion`
    

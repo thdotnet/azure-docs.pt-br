@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 5/21/2019
 ms.author: cherylmc
 ms.openlocfilehash: 6b66a9cf28faccf5ba22bc016297f1d53febe533
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66157294"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Para isso, configure uma conexão ponto a site em uma VNet usando a autenticação de certificado nativa do Azure: Portal do Azure
@@ -46,7 +46,7 @@ Você pode usar os seguintes valores para criar um ambiente de teste ou fazer re
 * **Servidor DNS:** (opcional) endereço IP do servidor DNS que você deseja usar para a resolução de nome.
 * **Nome do gateway de rede virtual:** VNet1GW
 * **Tipo de gateway:** VPN
-* **Tipo de VPN:** Baseado em rota
+* **Tipo de VPN:** Baseado em rotas
 * **Nome do endereço IP público:** VNet1GWpip
 * **Tipo de conexão**: Point-to-site
 * **Pool de endereços do cliente:** 172.16.201.0/24<br>Os clientes VPN que se conectarem à rede virtual usando esta conexão Ponto a Site receberão um endereço IP do pool de endereços do cliente.

@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 09/25/2018
 ms.author: scottwhi
 ms.openlocfilehash: 1639b8066f3c9943bc42f5151fcb456585441baf
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64866239"
 ---
 # <a name="language-and-region-support-for-the-bing-visual-search-api"></a>Idiomas e regiões compatíveis com a API da Pesquisa Visual do Bing
@@ -34,7 +34,7 @@ Como alternativa, é possível especificar o país/região usando o parâmetro d
 > - Insights de receitas, compras e páginas que incluem o termo de pesquisa só estão disponíveis no mercado en-US.
 
 
-## <a name="countriesregions"></a>Países/Regiões
+## <a name="countriesregions"></a>Países/regiões
 
 |País/Região|Código|
 |-------|----|

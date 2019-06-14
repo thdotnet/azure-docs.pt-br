@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
 ms.openlocfilehash: 195a2dd88f443120f337ba441358389f0dc290f8
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62119500"
 ---
 # <a name="work-with-the-net-backend-server-sdk-for-azure-mobile-apps"></a>Trabalhar com o servidor .NET back-end do SDK para Aplicativos Móveis do Azure
@@ -51,9 +51,9 @@ De volta à folha *Introdução*, em **Criar uma API de tabela**, escolha **C#**
 
 Instale a carga de trabalho do Azure por meio do Instalador do Visual Studio para publicar no projeto dos Aplicativos Móveis do Azure no Visual Studio. Depois de instalar o SDK, crie um aplicativo ASP.NET usando as seguintes etapas:
 
-1. Abra a caixa de diálogo **Novo Projeto** (de **Arquivo** > **Novo** > **Projeto...**).
+1. Abra a caixa de diálogo **Novo Projeto** (de **Arquivo** > **Novo** > **Projeto...** ).
 2. Expanda **Visual C#** e selecione **Web**.
-3. Selecione **Aplicativo Web ASP .NET (.NET Framework)**.
+3. Selecione **Aplicativo Web ASP .NET (.NET Framework)** .
 4. Preencha o nome do projeto. Em seguida, clique em **OK**.
 5. Selecione **Aplicativo Móvel do Azure** da lista de modelos.
 6. Clique em **OK** para criar a solução.
@@ -64,7 +64,7 @@ Instale a carga de trabalho do Azure por meio do Instalador do Visual Studio par
 
 Instale o [SDK do Azure para .NET][4] (versão 2.9.0 ou posterior) para criar um projeto dos Aplicativos Móveis no Visual Studio. Depois de instalar o SDK, crie um aplicativo ASP.NET usando as seguintes etapas:
 
-1. Abra a caixa de diálogo **Novo Projeto** (de **Arquivo** > **Novo** > **Projeto...**).
+1. Abra a caixa de diálogo **Novo Projeto** (de **Arquivo** > **Novo** > **Projeto...** ).
 2. Expanda **Modelos** > **Visual C#** e selecione **Web**.
 3. Selecione **Aplicativo Web do ASP.NET**.
 4. Preencha o nome do projeto. Em seguida, clique em **OK**.
@@ -104,7 +104,7 @@ Para habilitar recursos individuais, você deve chamar os métodos de extensão 
         .MapApiControllers()
         .ApplyTo(config);
 
-O início rápido do servidor do portal do Azure chama **UseDefaultConfiguration()**. Isso equivale à configuração a seguir:
+O início rápido do servidor do portal do Azure chama **UseDefaultConfiguration()** . Isso equivale à configuração a seguir:
 
         new MobileAppConfiguration()
             .AddMobileAppHomeController()             // from the Home package
@@ -166,7 +166,7 @@ Defina um Controlador de Tabela para expor uma tabela SQL a clientes móveis.  A
 2. Configurar uma referência de tabela na classe DbContext móvel.
 3. Criar um controlador de tabela.
 
-Um DTO (objeto de transferência de dados) é um objeto C# simples que herda de `EntityData`.  Por exemplo: 
+Um DTO (objeto de transferência de dados) é um objeto C# simples que herda de `EntityData`.  Por exemplo:
 
     public class TodoItem : EntityData
     {
@@ -197,7 +197,7 @@ O DTO é usado para definir a tabela no Banco de Dados SQL.  Para criar a entrad
 
 Se você tiver o SDK do Azure instalado, poderá criar um controlador de tabela de modelo da seguinte maneira:
 
-1. Clique com o botão direito do mouse na pasta Controladores e selecione **Adicionar** > **Controlador...**.
+1. Clique com o botão direito do mouse na pasta Controladores e selecione **Adicionar** > **Controlador...** .
 2. Selecione a opção **Controlador de Tabela de Aplicativos Móveis do Azure** e clique em **Adicionar**.
 3. No diálogo **Adicionar controlador** :
    * Na lista suspensa **Classe modelo** , selecione o novo DTO.
@@ -435,7 +435,7 @@ O Serviço de Aplicativo do Azure fornece várias técnicas de depuração e de 
 * [Habilitar o registro em log de diagnósticos no Serviço de Aplicativo do Azure](../app-service/troubleshoot-diagnostic-logs.md)
 * [Solucionar problemas de um Serviço de Aplicativo do Azure no Visual Studio](../app-service/troubleshoot-dotnet-visual-studio.md)
 
-### <a name="logging"></a>Registro em log
+### <a name="logging"></a>Registrando em log
 É possível gravar em logs de diagnóstico do Serviço de Aplicativo usando a gravação de rastreamento padrão do ASP.NET. Antes de gravar os logs, habilite o diagnóstico no back-end do aplicativo móvel.
 
 Para habilitar o diagnóstico e gravar logs:

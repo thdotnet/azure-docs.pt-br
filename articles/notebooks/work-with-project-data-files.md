@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
 ms.openlocfilehash: b522b0bd641d0147518843b11be4cd3a1430ae20
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60240395"
 ---
 # <a name="work-with-data-files-in-azure-notebook-projects"></a>Trabalhar com arquivos de dados em projetos do Azure Notebook
@@ -62,11 +62,11 @@ Você pode trazer arquivos para um projeto no painel do projeto ou em um bloco d
 
 1. No popup **Carregar status** exibido, escolha uma **Pasta de destino** na lista suspensa:
 
-    - Pasta da sessão (*~/* ): Carrega arquivos para a sessão atual do bloco de anotações, mas não cria arquivos no projeto. A pasta de sessão cria um par com a pasta do projeto, mas ela não persistirá após o término da sessão. Para acessar arquivos de sessão no código, use o prefixo *../* nos nomes de arquivo com o caminho relativo.
+    - Pasta da sessão ( *~/* ): Carrega arquivos para a sessão atual do bloco de anotações, mas não cria arquivos no projeto. A pasta de sessão cria um par com a pasta do projeto, mas ela não persistirá após o término da sessão. Para acessar arquivos de sessão no código, use o prefixo *../* nos nomes de arquivo com o caminho relativo.
 
         O uso da pasta de sessão é útil para experimentações e evita a acumulação de arquivos que poderão ou não ser necessários a longo prazo no projeto. Você também pode carregar arquivos para a pasta de sessão que tenha nomes idênticos aos arquivos do projeto sem causar conflitos ou precisar renomear os arquivos. Por exemplo, digamos que você tenha uma versão de *data.csv* no projeto, mas deseja experimentar uma versão diferente de *data.csv*. Ao carregar o arquivo na pasta de sessão, você pode executar o bloco de anotações usando dados no arquivo carregado (referindo-se a ele no código usando *../data.csv*) em vez dos dados no arquivo do projeto.
 
-    - Pasta do projeto (*/project*): carrega arquivos no projeto onde eles poderão ser acessados usando nomes de caminho relativos no código. Carregar um arquivo para essa pasta é o mesmo que carregar um arquivo no painel do projeto. O arquivo é salvo com o projeto e ficará disponível em sessões posteriores.
+    - Pasta do projeto ( */project*): carrega arquivos no projeto onde eles poderão ser acessados usando nomes de caminho relativos no código. Carregar um arquivo para essa pasta é o mesmo que carregar um arquivo no painel do projeto. O arquivo é salvo com o projeto e ficará disponível em sessões posteriores.
 
         O carregamento falhará se você tentar carregar um arquivo que tenha o mesmo nome de um arquivo existente no projeto. Para substituir um arquivo, carregue o novo arquivo no painel do projeto e, assim, terá a opção de substitui-lo.
 

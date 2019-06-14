@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 09/06/2018
 ms.author: hermannd
 ms.openlocfilehash: 5091932989849943f00cb71f72378dd17af23a4a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60204485"
 ---
 # <a name="quickstart-manual-installation-of-single-instance-sap-hana-on-azure-virtual-machines"></a>Início Rápido: Instalação manual do SAP HANA de instância única em máquinas virtuais do Azure
@@ -177,7 +177,7 @@ Aqui está um exemplo de como verificar se há patches disponíveis para o SUSE 
 
 Dependendo do tipo de defeito, os patches são classificados por categoria e gravidade. Os valores usados para categoria são: 
 - Segurança
-- Recomendadas
+- Recomendado
 - Opcional
 - Recurso
 - Documento
@@ -189,7 +189,7 @@ Os valores usados para gravidade são:
 - Importante
 - Moderado
 - Baixo
-- Não especificado
+- não especificado
 
 O comando **zypper** procura somente as atualizações que os seus pacotes instalados precisam. Por exemplo, você pode usar este comando:
 

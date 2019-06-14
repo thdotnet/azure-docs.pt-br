@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.date: 08/17/2018
 ms.author: jingwang
 ms.openlocfilehash: 4bf4c5c8339c8c56d91737fa1ff62f55b9c38696
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60786366"
 ---
 # <a name="copy-data-from-db2-by-using-azure-data-factory"></a>Copiar dados do DB2 usando o Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](v1/data-factory-onprem-db2-connector.md)
 > * [Versão atual](connector-db2.md)
 
@@ -67,7 +67,7 @@ As propriedades a seguir têm suporte para o serviço vinculado do DB2:
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados DB2.<br/>O valor permitido é: **Básica**. |Sim |
 | username |Especifica o nome de usuário para se conectar ao banco de dados DB2. |Sim |
 | password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). |Sim |
-| connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode usar o Integration Runtime auto-hospedado ou o Integration Runtime do Azure (se seu armazenamento de dados estiver publicamente acessível). Se não for especificado, ele usa o Integration Runtime padrão do Azure. |Não  |
+| connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode usar o Integration Runtime auto-hospedado ou o Integration Runtime do Azure (se seu armazenamento de dados estiver publicamente acessível). Se não for especificado, ele usa o Integration Runtime padrão do Azure. |Não |
 
 **Exemplo:**
 
@@ -176,7 +176,7 @@ Ao copiar dados do DB2, os seguintes mapeamentos são usados de tipos de dados d
 | BigInt |Int64 |
 | Binary |Byte[] |
 | Blob |Byte[] |
-| Char |String |
+| Char |Cadeia de caracteres |
 | Clob |String |
 | Date |Datetime |
 | DB2DynArray |String |
@@ -196,7 +196,7 @@ Ao copiar dados do DB2, os seguintes mapeamentos são usados de tipos de dados d
 | Time |TimeSpan |
 | Timestamp |Datetime |
 | VarBinary |Byte[] |
-| VarChar |String |
+| VarChar |Cadeia de caracteres |
 | VarGraphic |String |
 | Xml |Byte[] |
 

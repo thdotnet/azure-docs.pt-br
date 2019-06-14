@@ -12,10 +12,10 @@ ms.date: 03/21/2016
 ms.author: lesun
 ROBOTS: NOINDEX
 ms.openlocfilehash: 7611f5f16111b5d8b0d2d293750f658125e50837
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60535421"
 ---
 # <a name="constituency-parsing"></a>Análise de clientes
@@ -65,7 +65,7 @@ Há várias frases desse tipo: *Eu*, *um automóvel híbrido novo*, *Bluetooth* 
 
 ## <a name="phrase-types"></a>Tipos de frase (locuções)
 
-| Rótulo | DESCRIÇÃO | Exemplo |
+| Rotular | DESCRIÇÃO | Exemplo |
 |-------|-------------|---------|
 |ADJP   | Locução adjetiva | "tão grosseiro" |
 |ADVP   | Locução adverbial | "limpar através de" |

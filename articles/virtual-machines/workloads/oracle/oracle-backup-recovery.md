@@ -16,10 +16,10 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
 ms.openlocfilehash: c41f13a6437f69121d3bbb387c96d8e13f2be0b3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60566611"
 ---
 # <a name="back-up-and-recover-an-oracle-database-12c-database-on-an-azure-linux-virtual-machine"></a>Fazer backup e recuperar um banco de dados Oracle Database 12c em uma máquina virtual Linux do Azure
@@ -170,7 +170,7 @@ Os backups consistentes com aplicativo são um novo recurso do Backup do Azure. 
 
 4. Edite o arquivo JSON.
 
-    Edite o arquivo VMSnapshotScriptPluginConfig.json para incluir os parâmetros `PreScriptLocation` e `PostScriptlocation`. Por exemplo: 
+    Edite o arquivo VMSnapshotScriptPluginConfig.json para incluir os parâmetros `PreScriptLocation` e `PostScriptlocation`. Por exemplo:
 
     ```azurecli
     {
@@ -303,7 +303,7 @@ Para saber mais, consulte [Backup consistente com aplicativo para VMs Linux](htt
 
     ![Página de detalhes myVault de cofres dos Serviços de Recuperação](./media/oracle-backup-recovery/recovery_service_08.png)
 
-9.  Na folha **Itens de Backup (Máquina Virtual do Azure)**, do lado direito da página, clique no botão de reticências (**...**) e clique em **Fazer backup agora**.
+9.  Na folha **Itens de Backup (Máquina Virtual do Azure)** , do lado direito da página, clique no botão de reticências ( **...** ) e clique em **Fazer backup agora**.
 
     ![Comando Fazer backup agora dos cofres dos Serviços de Recuperação](./media/oracle-backup-recovery/recovery_service_09.png)
 
@@ -351,11 +351,11 @@ Para restaurar os arquivos excluídos, conclua o as etapas a seguir:
 
     ![Contagem de itens de backup de Máquina Virtual do Azure dos cofres dos Serviços de Recuperação](./media/oracle-backup-recovery/recovery_service_13.png)
 
-3. Na folha **myvm1**, clique em **Recuperação de Arquivo (Versão Prévia)**.
+3. Na folha **myvm1**, clique em **Recuperação de Arquivo (Versão Prévia)** .
 
     ![Captura de tela da página de recuperação de arquivos dos cofres dos Serviços de Recuperação](./media/oracle-backup-recovery/recovery_service_14.png)
 
-4. No painel **Recuperação de Arquivo (Versão Prévia)**, clique em **Baixar Script**. Em seguida, salve o arquivo de download (.sh) em uma pasta no computador cliente.
+4. No painel **Recuperação de Arquivo (Versão Prévia)** , clique em **Baixar Script**. Em seguida, salve o arquivo de download (.sh) em uma pasta no computador cliente.
 
     ![Opções de salvamento do arquivo de script de download](./media/oracle-backup-recovery/recovery_service_15.png)
 
@@ -444,7 +444,7 @@ Para restaurar os arquivos excluídos, conclua o as etapas a seguir:
     
 10. Desmonte o disco.
 
-    No Portal do Azure, na folha **Recuperação de Arquivos (Versão Prévia)**, clique em **Desmontar Discos**.
+    No Portal do Azure, na folha **Recuperação de Arquivos (Versão Prévia)** , clique em **Desmontar Discos**.
 
     ![Comando Desmontar discos](./media/oracle-backup-recovery/recovery_service_17.png)
 
@@ -468,11 +468,11 @@ Em vez de restaurar os arquivos excluídos dos cofres dos Serviços de Recupera�
 
     ![Itens de backup de myVault](./media/oracle-backup-recovery/recover_vm_03.png)
 
-3.  Na folha **Itens de Backup (Máquina Virtual do Azure)**, selecione **myvm1**.
+3.  Na folha **Itens de Backup (Máquina Virtual do Azure)** , selecione **myvm1**.
 
     ![Página VM de Recuperação](./media/oracle-backup-recovery/recover_vm_04.png)
 
-4.  Na folha **myvm1**, clique no botão de reticências (**...**) e, em seguida, clique em **Restaurar VM**.
+4.  Na folha **myvm1**, clique no botão de reticências ( **...** ) e, em seguida, clique em **Restaurar VM**.
 
     ![Comando Restaurar VM](./media/oracle-backup-recovery/recover_vm_05.png)
 

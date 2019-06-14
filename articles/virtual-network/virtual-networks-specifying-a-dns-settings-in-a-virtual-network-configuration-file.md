@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/23/2016
 ms.author: genli
 ms.openlocfilehash: 36f7ed9b02b66718327c1a05a6cf29eedf39e7a5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60232853"
 ---
 # <a name="specifying-dns-settings-in-a-virtual-network-configuration-file"></a>Especificando as configurações de DNS em um arquivo de configuração de rede virtual
@@ -64,7 +64,7 @@ O arquivo de configuração de rede pode conter os seguintes elementos. O títul
 > 
 > 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 * Entenda o [Esquema de configuração da Rede Virtual do Azure](https://go.microsoft.com/fwlink/?LinkId=248093).
 * Entenda o [Esquema de configuração do Serviço do Azure](https://msdn.microsoft.com/library/windowsazure/ee758710).
 * [Configure uma rede virtual usando os arquivos de configuração de Rede](virtual-networks-using-network-configuration-file.md).

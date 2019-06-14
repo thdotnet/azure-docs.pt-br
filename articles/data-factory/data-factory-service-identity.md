@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: jingwang
 ms.openlocfilehash: 3c1bb38eb12ce77d172257706cd458cebda4bd8c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66153416"
 ---
 # <a name="managed-identity-for-data-factory"></a>Identidade gerenciada para o Data Factory
@@ -158,8 +158,8 @@ Você pode recuperar a identidade gerenciada do portal do Azure ou programaticam
 
 Você pode encontrar as informações de identidade gerenciada do portal do Azure -> seu data factory -> Propriedades:
 
-- ID de Objeto da Identidade Gerenciada
-- Locatário da Identidade Gerenciada
+- Identificação de identidade do objeto gerenciado
+- Locatário de identidade gerenciada
 - **Gerenciado a ID do aplicativo de identidade** > Copie este valor
 
 ![Recuperar a identidade gerenciada](media/data-factory-service-identity/retrieve-service-identity-portal.png)

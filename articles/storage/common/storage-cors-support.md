@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: bb296db0d97382deac984369704777de5d5cb362
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65147683"
 ---
 # <a name="cross-origin-resource-sharing-cors-support-for-the-azure-storage-services"></a>Suporte para o compartilhamento de recursos entre origens (CORS) para os serviços de armazenamento do Azure
@@ -166,12 +166,12 @@ A tabela a seguir indica como o armazenamento do Azure responderá às solicita�
 | --- | --- | --- | --- | --- | --- | --- |
 | **Cabeçalho da origem presente na solicitação** |**Regra(s) de CORS especificada(s) para este serviço** |**Existe uma regra de correspondência que permite todas as origens(*)** |**Regra de correspondência existe para correspondência exata da origem** |**Resposta inclui o cabeçalho Vary definido como origem** |**A resposta inclui Access-Control-Allowed-Origin: "*"** |**Resposta inclui Access-Control-Exposed-Headers** |
 | Não |Não |Não |Não |Não |Não |Não |
-| Não  |Sim |Não |Não  |Sim |Não |Não |
-| Não  |sim |sim |Não |Não  |sim |sim |
-| sim |Não |Não |Não |Não |Não |Não  |
-| sim |sim |Não  |sim |sim |Não  |sim |
-| sim |sim |Não |Não  |Sim |Não |Não  |
-| sim |sim |sim |Não |Não  |sim |Sim |
+| Não |Sim |Não |Não |Sim |Não |Não |
+| Não |sim |sim |Não |Não |sim |sim |
+| sim |Não |Não |Não |Não |Não |Não |
+| sim |sim |Não |sim |sim |Não |sim |
+| sim |sim |Não |Não |Sim |Não |Não |
+| sim |sim |sim |Não |Não |sim |Sim |
 
 ## <a name="billing-for-cors-requests"></a>Cobrança para solicitações CORS
 Solicitações de simulação com êxito são cobradas se você tiver CORS habilitado para qualquer um dos serviços de armazenamento para sua conta (chamando [Definir propriedades do serviço Blob](https://msdn.microsoft.com/library/hh452235.aspx), [Definir propriedades do serviço Fila](https://msdn.microsoft.com/library/hh452232.aspx) ou [Definir propriedades do serviço Tabela](https://msdn.microsoft.com/library/hh452240.aspx)). Para minimizar encargos, é recomendável configurar o elemento **MaxAgeInSeconds** em suas regras CORS para um valor grande para que o agente do usuário armazene a solicitação em cache.

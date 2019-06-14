@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/17/2018
 ms.author: cherylmc
 ms.openlocfilehash: 2263996b84b17f7de9826c07eb28e4b7668cd915
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62095568"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-powershell"></a>Conectar redes virtuais de diferentes modelos de implantação usando o PowerShell
@@ -44,17 +44,17 @@ Você pode usar esses valores para criar um ambiente de teste ou consultá-los p
 
 **Configurações da Rede Virtual clássica**
 
-Nome da rede virtual = ClassicVNet  <br>
+Nome da rede virtual = ClassicVNet <br>
 Local = Oeste dos EUA <br>
 Espaços de Endereço da Rede Virtual = 10.0.0.0/24 <br>
 Subnet-1 = 10.0.0.0/27 <br>
 GatewaySubnet = 10.0.0.32/29 <br>
 Nome da rede local = RMVNetLocal <br>
- GatewayType = DynamicRouting
+GatewayType = DynamicRouting
 
 **Configurações de Rede Virtual do Resource Manager**
 
-Nome da VNet = RMVNet  <br>
+Nome da VNet = RMVNet <br>
 Grupo de recursos = RG1 <br>
 Espaços de Endereço do IP da Rede Virtual = 192.168.0.0/16 <br>
 Subnet-1 = 192.168.1.0/24 <br>
@@ -63,7 +63,7 @@ Local = Leste dos EUA <br>
 Nome do IP Público do Gateway = gwpip <br>
 Gateway de Rede Local = ClassicVNetLocal <br>
 Nome do Gateway de Rede Virtual = RMGateway <br>
- Configuração de endereçamento IP do gateway = gwipconfig
+Configuração de endereçamento IP do gateway = gwipconfig
 
 ## <a name="createsmgw"></a>Seção 1 - Configurar a rede virtual clássica
 ### <a name="1-download-your-network-configuration-file"></a>1. Baixar o arquivo de configuração de rede

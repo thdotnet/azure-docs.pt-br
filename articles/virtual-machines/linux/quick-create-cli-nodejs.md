@@ -15,10 +15,10 @@ ms.workload: infrastructure
 ms.date: 12/15/2016
 ms.author: v-livech
 ms.openlocfilehash: 569e90c7908ce435689a80f7917b20275703f537
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61473732"
 ---
 # <a name="create-a-linux-vm-using-the-azure-classic-cli"></a>Criar uma VM Linux usando a CLI do Azure clássica
@@ -67,7 +67,7 @@ O exemplo de `quick-create` anterior somente chamou o sinalizador `-M` para iden
 * Nome da VM
 * local (`westus` ou `westeurope` são bons padrões)
 * Linux (para permitir que o Azure saiba qual é o sistema operacional desejado)
-* Nome de Usuário
+* username
 
 O exemplo a seguir especifica todos os valores para que nenhuma outra notificação seja necessária. Enquanto houver um `~/.ssh/id_rsa.pub` como arquivo de chave pública de formato ssh-rsa, ele funcionará como está:
 

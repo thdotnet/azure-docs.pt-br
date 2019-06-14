@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bfd61b78ca3027ade1f2f48dec33e0a8ed508d3d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60349805"
 ---
 # <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect: Atualização automática
@@ -69,7 +69,7 @@ O código de resultado tem um prefixo com uma visão geral do estado.
 
 | Prefixo do código de resultado | DESCRIÇÃO |
 | --- | --- |
-| Sucesso |A instalação foi atualizada com êxito. |
+| Êxito |A instalação foi atualizada com êxito. |
 | UpgradeAborted |Uma condição temporária interrompeu a atualização. Ela será tentada novamente e a expectativa é de que tenha êxito posteriormente. |
 | UpgradeNotSupported |O sistema tem uma configuração que está impedindo que o sistema seja atualizado automaticamente. A atualização será tentada novamente para ver se o estado está mudando, mas a expectativa é de que o sistema precise ser atualizado manualmente. |
 
@@ -103,5 +103,5 @@ Esta é uma lista das mensagens mais comuns que você encontrará. Ela não list
 | UpgradeNotSupportedStagingModeEnabled |O servidor está definido como em [modo de preparo](how-to-connect-sync-staging-server.md). |
 | UpgradeNotSupportedUserWritebackEnabled |Você habilitou o recurso [write-back de usuário](how-to-connect-preview.md#user-writeback) . |
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Saiba mais sobre [Como integrar suas identidades locais ao Active Directory do Azure](whatis-hybrid-identity.md).

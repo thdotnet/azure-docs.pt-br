@@ -14,25 +14,26 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/05/2017
 ms.author: rkarlin
-ms.openlocfilehash: 01f6da4f5ad6b618c444949fce8d2b7aa3367e17
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: bc0fd83bd45e7c5c671b387d124cdddc75244ade
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60705012"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64573514"
 ---
 # <a name="monitoring-and-processing-security-events-in-azure-security-center"></a>Monitoramento e processamento de eventos de segurança na Central de Segurança do Azure
 O painel Eventos fornece uma visão geral do número de eventos de segurança coletado ao longo do tempo, além de uma lista de eventos notáveis que possam demandar sua atenção.  
 
 > [!NOTE]
-> Para usar esse recurso, seu workspace deve estar executando a versão 2 do Log Analytics e estar na camada Standard da Central de Segurança. Consulte a [página de preços](security-center-pricing.md) da Central de Segurança para obter mais informações sobre a camada Standard.
->
->
+> Painel de eventos de segurança será desativado em 31 de julho de 2019. Para obter mais informações e serviços alternativos, consulte [recursos de desativação da Central de segurança (julho de 2019)](security-center-features-retirement-july2019.md#menu_events).
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="what-is-a-security-event"></a>O que é um evento de segurança?
 A Central de Segurança usa o Microsoft Monitoring Agent para coletar diversas configurações e eventos relacionados a segurança em seus computadores e armazena esses eventos em seu workspace. Exemplos desses dados são: logs do sistema operacional (logs de eventos do Windows), processos em execução e eventos de soluções de segurança integrados com a Central de Segurança. O Microsoft Monitoring Agent também copia os arquivos de despejo de falha para seus workspaces.
+
+## <a name="requirements"></a>Requisitos
+Para usar esse recurso, seu workspace deve estar executando a versão 2 do Log Analytics e estar na camada Standard da Central de Segurança. Consulte a [página de preços](security-center-pricing.md) da Central de Segurança para obter mais informações sobre a camada Standard.
 
 ## <a name="events-processed-dashboard"></a>Painel de eventos processados
 Você acessa o painel **Eventos** no menu principal da Central de Segurança ou na folha **Visão geral** da Central de Segurança.  

@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 04/21/2019
 ms.author: juliako
 ms.openlocfilehash: 9154e5d58a36bde1827d63d11d57a77b4289a781
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64689368"
 ---
 # <a name="analyzing-video-and-audio-files"></a>Analisando os arquivos de áudio e vídeos
@@ -64,9 +64,9 @@ A saída inclui um arquivo JSON (insights.json) com todas as informações que f
 
 |NOME|DESCRIÇÃO|
 |---|---|
-|ID|A ID da linha.|
+|id|A ID da linha.|
 |text|A própria transcrição.|
-|Linguagem|O idioma da transcrição. Tem o objetivo dar suporte à transcrição na qual cada linha pode ter um idioma diferente.|
+|language|O idioma da transcrição. Tem o objetivo dar suporte à transcrição na qual cada linha pode ter um idioma diferente.|
 |instances|Uma lista com os intervalos de tempo nos quais essa linha apareceu. Se a instância for transcrita, ela terá apenas 1 instância.|
 
 Exemplo:
@@ -102,10 +102,10 @@ Exemplo:
 
 |NOME|DESCRIÇÃO|
 |---|---|
-|ID|A ID da linha de OCR.|
+|id|A ID da linha de OCR.|
 |text|O texto de OCR.|
 |confidence|A confiança do reconhecimento.|
-|Linguagem|O idioma do OCR.|
+|language|O idioma do OCR.|
 |instances|Uma lista de intervalos de tempo nos quais essa OCR apareceu (o mesmo OCR pode aparecer várias vezes).|
 
 ```json
@@ -145,15 +145,15 @@ Exemplo:
 
 |NOME|DESCRIÇÃO|
 |---|---|
-|ID|A ID da face.|
-|Nome|O nome da face. Pode ser "Desconhecido #0", uma celebridade identificada ou uma pessoa treinada pelo cliente.|
+|id|A ID da face.|
+|name|O nome da face. Pode ser "Desconhecido #0", uma celebridade identificada ou uma pessoa treinada pelo cliente.|
 |confidence|A confiança de identificação da face.|
 |description|Uma descrição da celebridade. |
 |thumbnailId|O ID da miniatura dessa face.|
 |knownPersonId|Se é uma pessoa conhecida, o seu ID interno.|
 |referenceId|Se for uma celebridade do Bing, o seu ID do Bing.|
 |referenceType|No momento, apenas Bing.|
-|título|Se é uma celebridade, seu título (por exemplo, "CEO da Microsoft").|
+|title|Se é uma celebridade, seu título (por exemplo, "CEO da Microsoft").|
 |imageUrl|Se é uma celebridade, o seu URL de imagem.|
 |instances|Essas são as ocorrências do aparecimento da face no intervalo de tempo determinado. Cada ocorrência também tem uma thumbnailsId. |
 
@@ -190,7 +190,7 @@ Exemplo:
 
 |NOME|DESCRIÇÃO|
 |---|---|
-|ID|A ID da captura.|
+|id|A ID da captura.|
 |keyFrames|Uma lista com os quadros-chave dentro da captura (cada um tem uma ID e uma lista de intervalos de tempo de instâncias). As instâncias de frames principais têm um campo thumbnailId com o ID de miniatura da keyFrame.|
 |instances|Uma lista com os intervalos de tempo desta captura (as capturas têm apenas 1 instância).|
 
@@ -260,7 +260,7 @@ Os sentimentos são agregadas de acordo com seu campo sentimentType (Positivo/Ne
 
 |NOME|DESCRIÇÃO|
 |---|---|
-|ID|A ID do sentimento.|
+|id|A ID do sentimento.|
 |averageScore |A média de todas as pontuações de todas as instâncias desse tipo de sentimento - Neutral/positivo/negativo|
 |instances|Uma lista com os intervalos de tempo nos quais esse sentimento apareceu.|
 |sentimentType |O tipo pode ser 'Positivo', 'Neutro' ou 'Negativo'.|
@@ -295,9 +295,9 @@ Os sentimentos são agregadas de acordo com seu campo sentimentType (Positivo/Ne
 
 |NOME|DESCRIÇÃO|
 |---|---|
-|ID|A ID do rótulo.|
-|Nome|O nome do rótulo (por exemplo, "Computador", "TV").|
-|Linguagem|O idioma do nome do rótulo (quando traduzido). BCP-47|
+|id|A ID do rótulo.|
+|name|O nome do rótulo (por exemplo, "Computador", "TV").|
+|language|O idioma do nome do rótulo (quando traduzido). BCP-47|
 |instances|Uma lista de intervalos de tempo nos quais esse rótulo apareceu (um rótulo pode aparecer várias vezes). Cada instância tem um campo de confiança. |
 
 
@@ -354,10 +354,10 @@ Os sentimentos são agregadas de acordo com seu campo sentimentType (Positivo/Ne
 
 |NOME|DESCRIÇÃO|
 |---|---|
-|ID|A ID da palavra-chave.|
+|id|A ID da palavra-chave.|
 |text|O texto da palavra-chave.|
 |confidence|A confiança do reconhecimento da palavra-chave.|
-|Linguagem|O idioma da palavra-chave (quando traduzida).|
+|language|O idioma da palavra-chave (quando traduzida).|
 |instances|Uma lista de intervalos de tempo nos quais essa palavra-chave apareceu (uma palavra-chave pode aparecer várias vezes).|
 
 ```json
@@ -405,7 +405,7 @@ Os vídeos que contêm conteúdo adulto ou atraente podem estar disponíveis ape
 
 |NOME|DESCRIÇÃO|
 |---|---|
-|ID|A ID de moderação de conteúdo visual.|
+|id|A ID de moderação de conteúdo visual.|
 |adultScore|A pontuação de conteúdo adulta (do moderador de conteúdo).|
 |racyScore|A pontuação racista (de moderação de conteúdo).|
 |instances|Uma lista de intervalos de tempo em que apareceu esse visual moderação de conteúdo.|

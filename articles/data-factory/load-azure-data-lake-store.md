@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 01/17/2018
 ms.author: jingwang
 ms.openlocfilehash: 522b9743af28dedb2aec5682a1ae95b9d52ad2d9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60548358"
 ---
 # <a name="load-data-into-azure-data-lake-storage-gen1-by-using-azure-data-factory"></a>Carregar dados no Azure Data Lake Storage Gen1, usando o Azure Data Factory
@@ -52,7 +52,7 @@ Este artigo mostra como usar a ferramenta Copiar Dados do Data Factory para _car
       
    ![Página de novo data factory](./media/load-data-into-azure-data-lake-store//new-azure-data-factory.png)
  
-    * **Nome**: Insira um nome globalmente exclusivo para o Azure Data Factory. Se você receber o erro "Nome do data factory \"LoadADLSG1Demo\" não está disponível", digite outro nome para o data factory. Por exemplo, use o nome _**seunome**_**ADFTutorialDataFactory**. Tente criar o data factory novamente. Para ver as regras de nomenclatura de artefatos do Data Factory, confira [Regras de nomenclatura do Data Factory](naming-rules.md).
+    * **Nome**: Insira um nome globalmente exclusivo para o Azure Data Factory. Se você receber o erro "Nome do data factory \"LoadADLSG1Demo\" não está disponível", digite outro nome para o data factory. Por exemplo, use o nome _**seunome**_ **ADFTutorialDataFactory**. Tente criar o data factory novamente. Para ver as regras de nomenclatura de artefatos do Data Factory, confira [Regras de nomenclatura do Data Factory](naming-rules.md).
     * **Assinatura**: Selecione a assinatura do Azure para criar o Data Factory. 
     * **Grupo de recursos**: Selecione um grupo de recursos existente na lista suspensa ou selecione a opção **Criar novo** e insira o nome de um grupo de recursos. Para saber mais sobre grupos de recursos, consulte [Usando grupos de recursos para gerenciar recursos do Azure](../azure-resource-manager/resource-group-overview.md).  
     * **Versão**: Selecione **V2**.
@@ -104,7 +104,7 @@ Este artigo mostra como usar a ferramenta Copiar Dados do Data Factory para _car
 
     ![Página Armazenamento de dados de destino](./media/load-data-into-azure-data-lake-store/destination-data-storage-page.png)
 
-8. Na página **Novo Serviço Vinculado (Azure Data Lake Storage Gen1)**, execute as seguintes etapas: 
+8. Na página **Novo Serviço Vinculado (Azure Data Lake Storage Gen1)** , execute as seguintes etapas: 
 
    1. Selecione sua conta do Data Lake Storage Gen1 para o **nome da conta do Data Lake Store**.
    2. Especifique o **Locatário** e selecione Concluir.

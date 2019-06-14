@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
 ms.openlocfilehash: 42561570e24aec5edd33248ef1738e53175e480e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60632281"
 ---
 # <a name="replace-a-power-and-cooling-module-on-your-storsimple-device"></a>Substituir um módulo de energia e resfriamento em seu dispositivo StorSimple
@@ -61,7 +61,7 @@ Siga estas instruções quando estiver pronto para remover um módulo de energia
    
      **Figura 1** Parte frontal do dispositivo  
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    |:--- |:--- |
    | 1 |Botão silenciar |
    | 2 |Energia do sistema |
@@ -74,7 +74,7 @@ Siga estas instruções quando estiver pronto para remover um módulo de energia
    
      **Figura 2** Parte posterior do PCM com LEDs indicadores
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    |:--- |:--- |
    | 1 |Falha de energia CA |
    | 2 |Falha do ventilador |
@@ -88,7 +88,7 @@ Siga estas instruções quando estiver pronto para remover um módulo de energia
    
      **Figura 3** Parte traseira do dispositivo com módulos de plug-in 
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    |:--- |:--- |
    | 1 |PCM 0 |
    | 2 |PCM 1 |

@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.openlocfilehash: 5d3525952ec09474d60618c4f99138cef1fce57a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61416784"
 ---
 # <a name="deploy-storsimple-virtual-array--set-up-as-an-iscsi-server-via-azure-portal"></a>Implantar o StorSimple Virtual Array — configurar como um servidor iSCSI por meio do portal do Azure
@@ -88,7 +88,7 @@ Use as instruções passo a passo a seguir para preparar e configurar sua Matriz
       > Se estiver ingressando em seu servidor iSCSI em um domínio, certifique-se de que sua matriz virtual esteja em sua própria unidade organizacional (UO) do Microsoft Azure Active Directory e que não haja objetos de política de grupo (GPO) aplicados a ele.
       > 
       > 
-   4. Uma caixa de diálogo aparecerá. Insira suas credenciais de domínio no formato especificado. Clique no ícone de verificação  ![ícone de verificação](./media/storsimple-virtual-array-deploy3-iscsi-setup/image15.png). As credenciais de domínio serão verificadas. Você verá uma mensagem de erro se as credenciais estiverem incorretas.
+   4. Uma caixa de diálogo aparecerá. Insira suas credenciais de domínio no formato especificado. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-virtual-array-deploy3-iscsi-setup/image15.png). As credenciais de domínio serão verificadas. Você verá uma mensagem de erro se as credenciais estiverem incorretas.
       
        ![credenciais](./media/storsimple-virtual-array-deploy3-iscsi-setup/image8.png)
    5. Clique em **Aplicar**. Isso aplicará e validará as configurações do dispositivo.

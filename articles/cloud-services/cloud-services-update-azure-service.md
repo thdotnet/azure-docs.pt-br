@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/19/2017
 ms.author: jeconnoc
 ms.openlocfilehash: ff4dd571911719e4f2ec27952785432960a56d42
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60653853"
 ---
 # <a name="how-to-update-a-cloud-service"></a>Como atualizar um serviço de nuvem
@@ -60,7 +60,7 @@ A tabela a seguir mostra as alterações permitidas em um serviço durante uma a
 | Configurações de armazenamento local |Apenas aumento<sup>2</sup> |Sim |Sim |
 | Adicionar ou remover funções em um serviço |Sim |sim |Sim |
 | Número de instâncias de uma função específica |Sim |sim |Sim |
-| Número ou tipo de pontos de extremidade de um serviço |Sim<sup>2</sup> |Não  |Sim |
+| Número ou tipo de pontos de extremidade de um serviço |Sim<sup>2</sup> |Não |Sim |
 | Nomes e valores dos parâmetros de configuração |Sim |sim |Sim |
 | Valores (mas não nomes) dos parâmetros de configuração |Sim |sim |Sim |
 | Adicionar novos certificados |Sim |sim |Sim |

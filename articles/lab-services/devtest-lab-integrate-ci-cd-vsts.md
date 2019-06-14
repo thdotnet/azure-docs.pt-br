@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: 7806599c1a2f1396ff4b07d6f0538057654029d7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66157122"
 ---
 # <a name="integrate-azure-devtest-labs-into-your-azure-devops-continuous-integration-and-delivery-pipeline"></a>Integrar o Azure DevTest Labs em seu pipeline de integração contínua e entrega do Azure DevOps
@@ -98,7 +98,7 @@ Para criar um pipeline de lançamento, faça o seguinte:
 1. Para abrir o menu de atalho, no novo pipeline de lançamento, selecione as reticências (...) ao lado do nome do ambiente e, em seguida, selecione **Configurar variáveis**. 
 1. Na janela **Configurar – ambiente**, para as variáveis usadas nas tarefas de pipeline de lançamento, insira os seguintes valores:
 
-    a. Para **vmName**, insira o nome que você atribuiu à VM quando criou o modelo do Resource Manager no Portal do Azure.
+   a. Para **vmName**, insira o nome que você atribuiu à VM quando criou o modelo do Resource Manager no Portal do Azure.
 
    b. Para **userName**, insira o nome de usuário que você atribuiu à VM quando criou o modelo do Resource Manager no Portal do Azure.
 
@@ -114,7 +114,7 @@ A próxima etapa da implantação é criar a VM para usar como a "imagem dourada
    > [!NOTE]
    > Para criar a VM a ser usada para implantações subsequentes, consulte [Tarefas do Azure DevTest Labs](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks).
 
-    a. Para **Assinatura do Azure RM**, selecione uma conexão na lista **Conexões de Serviço do Azure Disponíveis** ou crie uma conexão de permissões mais restritas para sua assinatura do Azure. Para saber mais, confira [Ponto de extremidade de serviço do Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
+   a. Para **Assinatura do Azure RM**, selecione uma conexão na lista **Conexões de Serviço do Azure Disponíveis** ou crie uma conexão de permissões mais restritas para sua assinatura do Azure. Para saber mais, confira [Ponto de extremidade de serviço do Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
 
    b. Para **Nome do Laboratório**, selecione o nome da instância que você criou anteriormente.
 
@@ -142,7 +142,7 @@ A próxima etapa da implantação é criar a VM para usar como a "imagem dourada
    > [!NOTE]
    > Para coletar os detalhes da VM do DevTest Labs, confira [Implantar: Azure PowerShell](https://github.com/Microsoft/azure-pipelines-tasks/tree/master/Tasks/AzurePowerShellV3) e execute o script.
 
-    a. Para **Tipo de Conexão do Azure**, selecione o **Azure Resource Manager**.
+   a. Para **Tipo de Conexão do Azure**, selecione o **Azure Resource Manager**.
 
    b. Para **Assinatura do Azure RM**, selecione uma conexão na lista em **Conexões de Serviço do Azure Disponíveis** ou crie uma conexão de permissões mais restritas para sua assinatura do Azure. Para saber mais, confira [Ponto de extremidade de serviço do Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
 
@@ -171,7 +171,7 @@ A próxima etapa é criar uma imagem da VM recém-implantada em sua instância d
    > [!NOTE]
    > Para criar a imagem, consulte [Tarefas do Azure DevTest Labs](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks).
 
-    a. Para **Assinatura do Azure RM**, na lista **Conexões de Serviço do Azure Disponíveis**, selecione uma conexão na lista ou crie uma conexão de permissões mais restritas para sua assinatura do Azure. Para saber mais, confira [Ponto de extremidade de serviço do Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
+   a. Para **Assinatura do Azure RM**, na lista **Conexões de Serviço do Azure Disponíveis**, selecione uma conexão na lista ou crie uma conexão de permissões mais restritas para sua assinatura do Azure. Para saber mais, confira [Ponto de extremidade de serviço do Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
 
    b. Para **Nome do Laboratório**, selecione o nome da instância que você criou anteriormente.
 
@@ -179,7 +179,7 @@ A próxima etapa é criar uma imagem da VM recém-implantada em sua instância d
 
    d. (Opcional) Para **Descrição**, insira uma descrição para que seja fácil selecionar a imagem correta posteriormente.
 
-   e. Para **VM do Laboratório de Origem – ID da VM do Laboratório de Origem**, se você alterou o nome padrão da variável de ambiente que foi populada automaticamente com a ID da VM do Laboratório por uma tarefa anterior, edite-o aqui. O valor padrão é **$(labVMId)**.
+   e. Para **VM do Laboratório de Origem – ID da VM do Laboratório de Origem**, se você alterou o nome padrão da variável de ambiente que foi populada automaticamente com a ID da VM do Laboratório por uma tarefa anterior, edite-o aqui. O valor padrão é **$(labVMId)** .
 
    f. Para **Variáveis de saída – ID da Imagem Personalizada**, você precisa da ID da imagem recém-criada quando deseja gerenciá-la ou excluí-la. O nome padrão da variável de ambiente que é populada automaticamente com esta ID é definido na seção **Variáveis de Saída**. Se necessário, você pode editar a variável.
 
@@ -192,9 +192,9 @@ A última etapa é excluir a VM que você implantou em sua instância do Azure D
       > [!NOTE]
       > Para excluir a VM, consulte [Tarefas do Azure DevTest Labs](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks).
 
-    a. Para **Assinatura do Azure RM**, selecione uma conexão na lista **Conexões de Serviço do Azure Disponíveis** ou crie uma conexão de permissões mais restritas para sua assinatura do Azure. Para saber mais, confira [Ponto de extremidade de serviço do Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
+   a. Para **Assinatura do Azure RM**, selecione uma conexão na lista **Conexões de Serviço do Azure Disponíveis** ou crie uma conexão de permissões mais restritas para sua assinatura do Azure. Para saber mais, confira [Ponto de extremidade de serviço do Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
  
-   b. Para **ID da VM do Laboratório de Origem**, se você alterou o nome padrão da variável de ambiente que foi populada automaticamente com a ID da VM do Laboratório por uma tarefa anterior, edite-o aqui. O valor padrão é **$(labVMId)**.
+   b. Para **ID da VM do Laboratório de Origem**, se você alterou o nome padrão da variável de ambiente que foi populada automaticamente com a ID da VM do Laboratório por uma tarefa anterior, edite-o aqui. O valor padrão é **$(labVMId)** .
 
 1. Insira um nome para o pipeline de lançamento e, em seguida, salve-o.
 1. Crie uma nova versão, selecione o build mais recente e implante-o no ambiente único no pipeline.

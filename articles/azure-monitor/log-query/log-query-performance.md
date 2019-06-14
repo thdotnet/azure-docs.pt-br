@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 01/17/2019
 ms.author: bwren
 ms.openlocfilehash: 25d6b582ed4d4e24df3841f4191471296e25abd8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60519377"
 ---
 # <a name="writing-efficient-log-queries-in-azure-monitor"></a>Escrever consultas de log eficientes no Azure Monitor
@@ -104,5 +104,5 @@ customEvents
 Ao usar o operador [join](/azure/kusto/query/joinoperator), escolha a tabela com menos linhas para estar no lado esquerdo da consulta.
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Para saber mais sobre as práticas recomendadas de consulta, veja [Práticas recomendadas de consulta](/azure/kusto/query/best-practices).

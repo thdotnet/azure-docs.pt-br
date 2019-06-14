@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 07/02/2017
 ms.author: aljo
 ms.openlocfilehash: bfac14c598b405a398cad916787aa3312589bfd1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60393516"
 ---
 # <a name="package-and-deploy-an-existing-executable-to-service-fabric"></a>Empacotar e implantar um executável existente no Service Fabric
@@ -170,7 +170,7 @@ No exemplo anterior, o SetupEntryPoint executa um arquivo em lote chamado `Launc
 
 O elemento `EntryPoint` no arquivo de manifesto do serviço é usado para especificar como iniciar o serviço.
 
-O elemento `ExeHost` especifica o executável e os argumentos que devem ser usados para iniciar o serviço. Opcionalmente, é possível adicionar o atributo `IsExternalExecutable="true"` a `ExeHost` para indicar que o programa é um executável externo fora do pacote de código. Por exemplo, `<ExeHost IsExternalExecutable="true">`.
+O elemento `ExeHost` especifica o executável e os argumentos que devem ser usados para iniciar o serviço. Opcionalmente, é possível adicionar o atributo `IsExternalExecutable="true"` a `ExeHost` para indicar que o programa é um executável externo fora do pacote de código. Por exemplo: `<ExeHost IsExternalExecutable="true">`.
 
 * `Program` especifica o nome do executável que deve iniciar o serviço.
 * `Arguments` especifica os argumentos que devem ser passados para o executável. Pode ser uma lista de parâmetros com argumentos.

@@ -14,10 +14,10 @@ ms.reviewer: davidph
 manager: cgronlun
 ms.date: 04/11/2019
 ms.openlocfilehash: 01d3af14963e92393d34a952bddc8097b7b08f18
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65232616"
 ---
 # <a name="work-with-r-and-sql-data-in-azure-sql-database-machine-learning-services-preview"></a>Trabalhar com dados de R e SQL no banco de dados para SQL Azure Machine Learning Services (versão prévia)
@@ -171,7 +171,7 @@ Nos bastidores, a coluna de três valores é convertida em uma matriz de coluna 
 |---|---|---|---|
 |12|13|14|15|
 |120|130|140|150|
-|1.200|1300|1.400|1500|
+|1\.200|1300|1\.400|1500|
 
 No entanto, observe o que acontece quando você alterar o tamanho da matriz `y`.
 

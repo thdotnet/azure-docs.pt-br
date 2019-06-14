@@ -13,10 +13,10 @@ ms.date: 04/08/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 28c880e8709074d808a41d9920361eaa2b20ecc4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60732358"
 ---
 # <a name="filtering-ordering-paging-of-media-services-entities"></a>Filtragem, classificação, paginação de entidades dos Serviços de Mídia
@@ -56,8 +56,8 @@ A tabela a seguir mostra como as opções de filtragem e classificação podem s
 
 |NOME|Filter|Classificar|
 |---|---|---|
-|ID|||
-|Nome|eq, gt, lt| ordem crescente e decrescente|
+|id|||
+|name|eq, gt, lt| ordem crescente e decrescente|
 |properties.alternateId |eq||
 |properties.alternateId |eq||
 |properties.container |||
@@ -66,7 +66,7 @@ A tabela a seguir mostra como as opções de filtragem e classificação podem s
 |properties.lastModified |||
 |properties.storageAccountName |||
 |properties.storageEncryptionFormat | ||
-|tipo|||
+|type|||
 
 O exemplo C# a seguir filtra a data da criação:
 
@@ -143,14 +143,14 @@ A tabela abaixo mostra como essas opções podem ser aplicadas às propriedades 
 
 |NOME|Filter|Classificar|
 |---|---|---|
-|ID|||
-|Nome|eq, ne, ge, le, gt, lt|ordem crescente e decrescente|
+|id|||
+|name|eq, ne, ge, le, gt, lt|ordem crescente e decrescente|
 |properties.created |eq, ne, ge, le, gt, lt|ordem crescente e decrescente|
 |properties.description |eq, ne, ge, le, gt, lt||
 |properties.lastModified|eq, ne, ge, le, gt, lt|ordem crescente e decrescente|
 |Properties.Options |||
 |properties.policyId|eq, ne||
-|tipo|||
+|type|||
 
 ### <a name="pagination"></a>Paginação
 
@@ -178,7 +178,7 @@ A tabela abaixo mostra como essas opções podem ser aplicadas às propriedades 
 
 | NOME    | Filter                        | Classificar |
 |---------|-------------------------------|-------|
-| Nome                    | eq            | ordem crescente e decrescente|
+| name                    | eq            | ordem crescente e decrescente|
 | properties.state        | eq, ne        |                         |
 | properties.created      | gt, ge, lt, le| ordem crescente e decrescente|
 | properties.lastModified | gt, ge, lt, le | ordem crescente e decrescente| 
@@ -225,8 +225,8 @@ A tabela a seguir mostra como essas opções podem ser aplicadas às propriedade
 
 |NOME|Filter|Classificar|
 |---|---|---|
-|ID |||
-|Nome|eq, ne, ge, le, gt, lt|ordem crescente e decrescente|
+|id |||
+|name|eq, ne, ge, le, gt, lt|ordem crescente e decrescente|
 |properties.alternativeMediaId  |||
 |properties.assetName   |||
 |properties.contentKeys |||
@@ -236,7 +236,7 @@ A tabela a seguir mostra como essas opções podem ser aplicadas às propriedade
 |properties.startTime   |||
 |properties.streamingLocatorId  |||
 |properties.streamingPolicyName |||
-|tipo   |||
+|type   |||
 
 ### <a name="pagination"></a>Paginação
 
@@ -264,15 +264,15 @@ A tabela a seguir mostra como essas opções podem ser aplicadas às propriedade
 
 |NOME|Filter|Classificar|
 |---|---|---|
-|ID|||
-|Nome|eq, ne, ge, le, gt, lt|ordem crescente e decrescente|
+|id|||
+|name|eq, ne, ge, le, gt, lt|ordem crescente e decrescente|
 |properties.commonEncryptionCbcs|||
 |properties.commonEncryptionCenc|||
 |properties.created |eq, ne, ge, le, gt, lt|ordem crescente e decrescente|
 |properties.defaultContentKeyPolicyName |||
 |properties.envelopeEncryption|||
 |properties.noEncryption|||
-|Tipo|||
+|type|||
 
 ### <a name="pagination"></a>Paginação
 
@@ -300,7 +300,7 @@ A tabela abaixo mostra como essas opções podem ser aplicadas às propriedades 
 
 | NOME    | Filter                        | Classificar |
 |---------|-------------------------------|-------|
-| Nome                    | eq            | ordem crescente e decrescente|
+| name                    | eq            | ordem crescente e decrescente|
 | properties.created      | gt, ge, lt, le| ordem crescente e decrescente|
 | properties.lastModified | gt, ge, lt, le | ordem crescente e decrescente|
 

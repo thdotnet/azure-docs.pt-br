@@ -13,10 +13,10 @@ ms.date: 12/09/2018
 ms.author: mavane
 ms.custom: seodec18
 ms.openlocfilehash: 390e49a09136c21f3fd2f6555c0d56fde6e3b267
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60388077"
 ---
 # <a name="develop-azure-resource-manager-templates-for-cloud-consistency"></a>Desenvolva modelos do Azure Resource Manager para consistência de nuvem
@@ -493,7 +493,7 @@ Para recuperar uma lista das imagens de VM disponíveis em um local, execute o s
 az vm image list -all
 ```
 
-Recupere a mesma lista com o cmdlet [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) do Azure PowerShell e especifique o local desejado com o parâmetro `-Location`. Por exemplo: 
+Recupere a mesma lista com o cmdlet [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) do Azure PowerShell e especifique o local desejado com o parâmetro `-Location`. Por exemplo:
 
 ```azurepowershell-interactive
 Get-AzureRmVMImagePublisher -Location "West Europe" | Get-AzureRmVMImageOffer | Get-AzureRmVMImageSku | Get-AzureRmVMImage
@@ -596,7 +596,7 @@ Para recuperar uma lista das extensões de VM que estão disponíveis para uma r
 az vm extension image list --location myLocation
 ```
 
-Execute também o cmdlet [Get-AzureRmVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) do Azure PowerShell e use `-Location` para especificar o local da imagem de máquina virtual. Por exemplo: 
+Execute também o cmdlet [Get-AzureRmVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) do Azure PowerShell e use `-Location` para especificar o local da imagem de máquina virtual. Por exemplo:
 
 ```azurepowershell-interactive
 Get-AzureRmVmImagePublisher -Location myLocation | Get-AzureRmVMExtensionImageType | Get-AzureRmVMExtensionImage | Select Type, Version
@@ -671,7 +671,7 @@ Considere as seguintes dicas para testes e automação:
 * Lembre-se de que alguns testes podem ser executados sem uma conexão com o Azure Resource Manager. Outros, como o teste de implantação de modelo, exigem que o Resource Manager execute determinadas ações que não podem ser executadas offline.
 * O teste de um modelo de implantação na API de validação não é igual a uma implantação real. Além disso, mesmo se você implantar um modelo de um arquivo local, as referências aos modelos aninhados no modelo serão recuperadas pelo Resource Manager diretamente, e os artefatos referenciados pelas extensões de VM serão recuperados pelo agente de VM em execução dentro da VM implantada.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Considerações sobre o modelo do Azure Resource Manager](/azure-stack/user/azure-stack-develop-templates)
 * [Melhores práticas para modelos do Azure Resource Manager](resource-group-authoring-templates.md)

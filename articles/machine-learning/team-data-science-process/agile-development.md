@@ -11,10 +11,10 @@ ms.date: 11/28/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: adf713fc3f875168f99b302b0a9affef88e8414f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60327588"
 ---
 # <a name="agile-development-of-data-science-projects"></a>Desenvolvimento do Agile de projetos de ciência de dados
@@ -176,7 +176,7 @@ Após a criação do modelo do processo de ciência de dados, você poderá cria
     ![18](./media/agile-development/18-workitems.png)
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 [Codificação colaborativa com Git](collaborative-coding-with-git.md) descreve como fazer o desenvolvimento de colaboração de código para projetos de ciência de dados usando o Git como a estrutura de desenvolvimento de código compartilhado e como vincular essas atividades de codificação ao trabalho planejado com o processo do agile.
 

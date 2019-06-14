@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 01/23/2018
 ms.author: alkohli
 ms.openlocfilehash: ef95ca7b9f94690b607e37fbf5d9378c2f2bcfda
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60530986"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64698632"
 ---
 # <a name="storsimple-8000-series-update-4-release-notes"></a>Notas de versão da Atualização 4 para o StorSimple 8000 Series
 
@@ -66,10 +66,10 @@ Veja a seguir as principais melhorias e correções de bugs feitas na Atualizaç
 
 A tabela a seguir fornece um resumo dos problemas que foram corrigidos na Atualização 4.    
 
-| Não  | Recurso | Problema | Aplica-se ao dispositivo físico | Aplica-se ao dispositivo virtual |
+| Não | Recurso | Problema | Aplica-se ao dispositivo físico | Aplica-se ao dispositivo virtual |
 | --- | --- | --- | --- | --- |
 | 1 |Failover |Na versão anterior, após o failover, houve um problema relacionado à limpeza observada no site do cliente. Esse problema foi corrigido nesta versão. |Sim |Sim |
-| 2 |Volumes fixados localmente |Na versão anterior, havia um problema para a criação de volume relacionado para volumes localmente fixos que possam resultar em falhas na criação do volume. Esse problema foi causado pela raiz e corrigido nesta versão. |Sim |Não  |
+| 2 |Volumes fixados localmente |Na versão anterior, havia um problema para a criação de volume relacionado para volumes localmente fixos que possam resultar em falhas na criação do volume. Esse problema foi causado pela raiz e corrigido nesta versão. |Sim |Não |
 | 3 |Pacote de suporte |Na versão anterior, havia problemas relacionados ao pacote de suporte que resultaria em uma exceção de System.OutOfMemory ou outros erros, resultando em uma falha de criação do pacote de suporte. Esses bugs foram corrigidos nesta versão. |Sim |Sim |
 | 4 |Monitoramento |Na versão anterior, existe um problema relacionado ao monitoramento de gráficos para localmente fixada volumes onde consumo foi mostrado na Web. Esse bug foi corrigido nesta versão. |Sim |Sim |
 | 5 |Migração |Na versão anterior, havia vários problemas relacionados à confiabilidade da migração da série 5000-7000 para dispositivos 8000 série. Esses problemas foram resolvidos nesta versão. |Sim |Sim |

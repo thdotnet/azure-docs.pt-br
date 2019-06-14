@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
 ms.openlocfilehash: 167f697d4928d88114a30739a1d39a576c87ac84
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62126641"
 ---
 # <a name="diagnostics-in-durable-functions-in-azure"></a>Diagnóstico no Durable Functions no Azure
@@ -155,7 +155,7 @@ O resultado é uma lista de IDs de instância e seu status de tempo de execuçã
 
 ![Consulta do Application Insights](./media/durable-functions-diagnostics/app-insights-single-summary-query.png)
 
-## <a name="logging"></a>Registro em log
+## <a name="logging"></a>Registrando em log
 
 É importante ter em mente o comportamento de reprodução do orquestrador ao gravar logs diretamente de uma função de orquestrador. Por exemplo, considere a seguinte função de orquestrador:
 
@@ -312,7 +312,7 @@ O clientes terão a seguinte resposta:
 > [!WARNING]
 > O conteúdo do status personalizado é limitado a 16 KB de textoUTF-16 JSON porque ele precisa ser capaz de caber em uma coluna de Armazenamento de Tabelas do Azure. Você pode usar o armazenamento externo se precisar de conteúdo maior.
 
-## <a name="debugging"></a>Depurando
+## <a name="debugging"></a>Depuração
 
 O Azure Functions dá suporte à depuração do código de função diretamente e esse mesmo suporte se estende às Funções Duráveis, seja em execução no Azure ou localmente. No entanto, há alguns comportamentos a que você deve estar atento ao depurar:
 

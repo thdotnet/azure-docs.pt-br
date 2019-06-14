@@ -14,14 +14,14 @@ ms.date: 12/05/2017
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: c188c23f87715b6ba5b90f6015b59f2a347ec0cf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60486902"
 ---
 # <a name="move-data-by-using-copy-activity"></a>Mover dados usando a Atividade de Cópia
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](data-factory-data-movement-activities.md)
 > * [Versão 2 (versão atual)](../copy-activity-overview.md)
 
@@ -197,7 +197,7 @@ Confira o artigo [Guia de desempenho e ajuste da Atividade de Cópia](data-facto
 ## <a name="fault-tolerance"></a>Tolerância a falhas
 Por padrão, a atividade de cópia interromperá a cópia de dados e retornará uma falha ao encontrar dados incompatíveis entre a origem e o coletor, embora seja possível configurar explicitamente para ignorar e registrar as linhas incompatíveis e copiar apenas esses dados compatíveis para tornar a cópia bem-sucedida. Consulte a [Tolerância a falhas da Atividade de Cópia](data-factory-copy-activity-fault-tolerance.md) para obter mais detalhes.
 
-## <a name="security-considerations"></a>Considerações de segurança
+## <a name="security-considerations"></a>Considerações sobre segurança
 Consulte as [Considerações sobre segurança](data-factory-data-movement-security-considerations.md), que descreve a infraestrutura básica de segurança usada pelos serviços de movimentação de dados no Azure Data Factory para proteger os dados.
 
 ## <a name="scheduling-and-sequential-copy"></a>Agendamento e cópia sequencial

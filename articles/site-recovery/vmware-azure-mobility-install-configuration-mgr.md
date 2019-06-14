@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 04/14/2019
 ms.author: ramamill
 ms.openlocfilehash: 35c317c4b73e9a22e3b0d6192abcfc2a596066b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60598274"
 ---
 # <a name="automate-mobility-service-installation-with-system-center-configuration-manager"></a>Automatizar a instalação do Serviço de Mobilidade com o System Center Configuration Manager
@@ -210,7 +210,7 @@ IF NOT %ERRORLEVEL% EQU 0 (
 > [!TIP]
 > Para evitar reinicializações desnecessárias, agende a instalação do pacote durante a janela de manutenção mensal ou a janela de atualizações de software.
 
-É possível monitorar o andamento da implantação usando o console do Configuration Manager. Acesse **Monitoramento** > **Implantações** > *[nome do pacote]*.
+É possível monitorar o andamento da implantação usando o console do Configuration Manager. Acesse **Monitoramento** > **Implantações** >  *[nome do pacote]* .
 
   ![Captura de tela da opção Configuration Manager para monitorar as implantações](./media/vmware-azure-mobility-install-configuration-mgr/report.PNG)
 

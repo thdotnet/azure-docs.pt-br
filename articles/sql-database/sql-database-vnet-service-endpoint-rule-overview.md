@@ -13,10 +13,10 @@ ms.reviewer: vanto, genemi
 manager: craigg
 ms.date: 03/12/2019
 ms.openlocfilehash: 8c33cd7fe702f46f9c88643895b96445a9aa6a78
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60331362"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-database-servers"></a>Use os pontos de extremidade e regras de serviço de rede virtual para os servidores do banco de dados
@@ -209,7 +209,7 @@ O PolyBase é comumente usado para carregar dados no SQL Data Warehouse do Azure
        CREATE MASTER KEY [ENCRYPTION BY PASSWORD = 'somepassword'];
        ```
     
-   1. Criar credencial com escopo de banco de dados com **IDENTITY = 'Managed Service Identity'**:
+   1. Criar credencial com escopo de banco de dados com **IDENTITY = 'Managed Service Identity'** :
 
        ```SQL
        CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Service Identity';
@@ -248,7 +248,7 @@ O erro de conexão 40914 está relacionado a *regras da rede virtual*, conforme 
 
 ### <a name="error-40914"></a>Erro 40914
 
-*Texto da mensagem:* Não é possível abrir o servidor '*[nome-do-servidor]*' solicitado pelo logon. O cliente não tem permissão para acessar o servidor.
+*Texto da mensagem:* Não é possível abrir o servidor ' *[nome-do-servidor]* ' solicitado pelo logon. O cliente não tem permissão para acessar o servidor.
 
 *Descrição do erro:* o cliente está em uma sub-rede que tem pontos de extremidade de servidor de rede virtual. Mas o servidor do Banco de Dados SQL do Azure não tem nenhuma regra de rede virtual que conceda à sub-rede o direito de se comunicar com o Banco de Dados SQL.
 

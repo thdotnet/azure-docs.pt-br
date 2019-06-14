@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 09/28/2017
 ms.author: alkohli
 ms.openlocfilehash: f05e3e85d36ffc23a193a6771a0271c71b2f8544
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60631896"
 ---
 # <a name="storsimple-8000-series-software-high-availability-and-networking-requirements"></a>Requisitos de software, de alta disponibilidade e de rede do StorSimple série 8000
@@ -63,14 +63,14 @@ Seu dispositivo StorSimple é um dispositivo bloqueado. No entanto, é preciso a
 
 | Nº da porta<sup>1,2</sup> | Entrada ou saída | Escopo da porta | Obrigatório | Observações |
 | --- | --- | --- | --- | --- |
-| TCP 80 (HTTP)<sup>3</sup> |Saída |WAN |Não  |<ul><li>A porta de saída é usada para acesso à Internet para recuperar atualizações.</li><li>O proxy Web de saída é configurável pelo usuário.</li><li>Para permitir atualizações do sistema, esta porta também deve estar aberta para o IPs fixos do controlador.</li></ul> |
+| TCP 80 (HTTP)<sup>3</sup> |Saída |WAN |Não |<ul><li>A porta de saída é usada para acesso à Internet para recuperar atualizações.</li><li>O proxy Web de saída é configurável pelo usuário.</li><li>Para permitir atualizações do sistema, esta porta também deve estar aberta para o IPs fixos do controlador.</li></ul> |
 | TCP 443 (HTTPS)<sup>3</sup> |Saída |WAN |Sim |<ul><li>A porta de saída é usada para acessar dados na nuvem.</li><li>O proxy Web de saída é configurável pelo usuário.</li><li>Para permitir atualizações do sistema, esta porta também deve estar aberta para o IPs fixos do controlador.</li><li>Esta porta também é usada em ambos os controladores para coleta de lixo.</li></ul> |
 | UDP 53 (DNS) |Saída |WAN |Em alguns casos; consulte as observações. |Esta porta só será necessária se você estiver usando um servidor DNS baseado na Internet. |
 | UDP 123 (NTP) |Saída |WAN |Em alguns casos; consulte as observações. |Esta porta é necessária apenas se você estiver usando um servidor NTP baseado na Internet. |
 | TCP 9354 |Saída |WAN |Sim |A porta de saída é usada pelo dispositivo StorSimple para se comunicar com o serviço StorSimple Device Manager. |
-| 3260 (iSCSI) |No |LAN |Não  |Esta porta é usada para acessar dados em iSCSI. |
-| 5985 |No |LAN |Não  |A porta de entrada é usada pelo StorSimple Snapshot Manager para se comunicar com o dispositivo do StorSimple.<br>Essa porta também é usada quando você se conecta remotamente ao Windows PowerShell para o StorSimple via HTTP. |
-| 5986 |No |LAN |Não  |Esta porta é usada quando você se conecta remotamente ao Windows PowerShell para StorSimple via HTTPS. |
+| 3260 (iSCSI) |Em |LAN |Não |Esta porta é usada para acessar dados em iSCSI. |
+| 5985 |Em |LAN |Não |A porta de entrada é usada pelo StorSimple Snapshot Manager para se comunicar com o dispositivo do StorSimple.<br>Essa porta também é usada quando você se conecta remotamente ao Windows PowerShell para o StorSimple via HTTP. |
+| 5986 |Em |LAN |Não |Esta porta é usada quando você se conecta remotamente ao Windows PowerShell para StorSimple via HTTPS. |
 
 <sup>1</sup> Nenhuma porta de entrada precisa estar aberta na Internet pública.
 

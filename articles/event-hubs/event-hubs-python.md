@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 11/26/2018
 ms.author: shvija
 ms.openlocfilehash: 88fdaec9e19c082a6fe981dc4d9a0e015335f1e2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60202965"
 ---
 # <a name="how-to-use-azure-event-hubs-from-a-python-application"></a>Como usar Hubs de Eventos de um aplicativo Python
@@ -164,5 +164,5 @@ Para obter um tutorial completo sobre como ler os dados do Hubs de Eventos em um
 ## <a name="github-samples"></a>Exemplos do GitHub
 Você pode encontrar exemplos de Python no [repositório azure-event-hubs-python](https://github.com/Azure/azure-event-hubs-python/).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Leia os artigos na seção Conceitos a partir [da visão geral dos recursos de Hubs de Eventos](event-hubs-features.md).

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 7/11/2018
 ms.author: victorh
 ms.openlocfilehash: fe1b8f9d56b0f4faa0baa25463b2aa29a59715cb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60193044"
 ---
 # <a name="enable-the-azure-firewall-public-preview"></a>Habilitar a visualização pública do Firewall do Azure
@@ -43,7 +43,7 @@ Após a conclusão do registro, execute o seguinte comando:
 Register-AzResourceProvider -ProviderNamespace Microsoft.Network
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Tutorial: Implantar e configurar o Firewall do Azure usando o portal do Azure](tutorial-firewall-deploy-portal.md)
 

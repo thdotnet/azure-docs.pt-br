@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: gracez
 ms.openlocfilehash: 6324da55c8af4934185fa39a106939844788adba
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60653709"
 ---
 # <a name="migrate-from-bing-speech-to-the-speech-service"></a>Migrar da Fala do Bing para o Serviço de Fala
@@ -87,7 +87,7 @@ Os clientes de Fala do Bing devem entrar em contato com o atendimento ao cliente
 
 Para obter suporte de API, SDK e serviço de fala, visite os serviços de fala [página de suporte](support.md).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Experimente gratuitamente o serviços de fala](get-started.md)
 * [Início Rápido: reconhecer a fala em um aplicativo UWP usando o SDK de Fala](quickstart-csharp-uwp.md)

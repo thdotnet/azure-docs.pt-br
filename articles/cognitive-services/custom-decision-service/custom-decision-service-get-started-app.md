@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/10/2018
 ms.author: slivkins
 ms.openlocfilehash: 0e5c99aae61fb927ea7f101bab74d661a747f88b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60511560"
 ---
 # <a name="call-api-from-an-app"></a>Chamar a API de um aplicativo
@@ -86,7 +86,7 @@ Por fim, você precisa fornecer a API de Conjunto de Ações, que retorna a list
 
 Aqui, cada elemento `<item>` de nível superior descreve um artigo. O `<link>` é obrigatório e é usado como uma ID de ação pelo Serviço de Decisão Personalizada. Especifique `<date>` (em um formato padrão do RSS) se você tiver mais de 15 artigos. Os 15 artigos mais recentes são usados. O `<title>` é opcional e é usado para criar recursos relacionados ao texto para o artigo.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * Acompanhe um [tutorial](custom-decision-service-tutorial-news.md) para obter um exemplo mais detalhado.
 * Consulte a [API](custom-decision-service-api-reference.md) de referência para saber mais sobre a funcionalidade fornecida.

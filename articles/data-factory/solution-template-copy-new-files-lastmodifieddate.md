@@ -14,10 +14,10 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 3/8/2019
 ms.openlocfilehash: cae75f4d64c8b3f74cc40e94a675c0f10a6bd9ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60312623"
 ---
 # <a name="copy-new-and-changed-files-by-lastmodifieddate-with-azure-data-factory"></a>Copie os arquivos novos e alterados por LastModifiedDate com o Azure Data Factory
@@ -60,12 +60,12 @@ O modelo define quatro parâmetros:
     ![Mostrar o pipeline](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate5.png)
 
 6. Selecione **Debug**, escreva o valor para o **parâmetros** e selecione **concluir**.  Na imagem abaixo, podemos definir os parâmetros da seguinte maneira.
-   - **FolderPath_Source** = **/source/**
-   - **FolderPath_Destination** = **/destination/**
+   - **FolderPath_Source** =  **/source/**
+   - **FolderPath_Destination** =  **/destination/**
    - **LastModified_From** =  **2019-02-01T00:00:00Z**
    - **LastModified_To** = **2019-03-01T00:00:00Z**
     
-     O exemplo é que indica os arquivos que foram modificados pela última vez em que o período de tempo entre *2019-02-01T00:00:00Z* e *2019-03-01T00:00:00Z* serão copiados de uma pasta */source/*  para uma pasta */destination/*.  Você pode substituí-las com seus próprios parâmetros.
+     O exemplo é que indica os arquivos que foram modificados pela última vez em que o período de tempo entre *2019-02-01T00:00:00Z* e *2019-03-01T00:00:00Z* serão copiados de uma pasta */source/*  para uma pasta */destination/* .  Você pode substituí-las com seus próprios parâmetros.
     
      ![Executar o pipeline](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate6.png)
 
@@ -86,10 +86,10 @@ O modelo define quatro parâmetros:
     ![Criar gatilho](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate10.png)    
     
 11. Gravar o valor para o **parâmetros de execução de gatilho** como a seguir e selecione **concluir**.
-    - **FolderPath_Source** = **/source/**.  Você pode substituir com sua pasta no armazenamento de dados de origem.
-    - **FolderPath_Destination** = **/destination/**.  Você pode substituir com sua pasta no repositório de dados de destino.
-    - **LastModified_From** =  **@trigger().outputs.windowStartTime**.  É uma variável de sistema do gatilho determinar a hora quando o pipeline foi disparado última vez.
-    - **LastModified_To** = **@trigger().outputs.windowEndTime**.  É uma variável de sistema do gatilho determinar a hora quando o pipeline é disparado neste momento.
+    - **FolderPath_Source** =  **/source/** .  Você pode substituir com sua pasta no armazenamento de dados de origem.
+    - **FolderPath_Destination** =  **/destination/** .  Você pode substituir com sua pasta no repositório de dados de destino.
+    - **LastModified_From** =   **@trigger().outputs.windowStartTime**.  É uma variável de sistema do gatilho determinar a hora quando o pipeline foi disparado última vez.
+    - **LastModified_To** =  **@trigger().outputs.windowEndTime**.  É uma variável de sistema do gatilho determinar a hora quando o pipeline é disparado neste momento.
     
     ![Parâmetros de entrada](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate11.png)
     
@@ -107,6 +107,6 @@ O modelo define quatro parâmetros:
 
     ![Revisar o resultado](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate15.png)
     
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Introdução ao Azure Data Factory](introduction.md)

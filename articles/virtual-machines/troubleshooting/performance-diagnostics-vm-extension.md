@@ -15,10 +15,10 @@ ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 769305cc3d838832f8f445ac9623a1724603f968
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60307824"
 ---
 # <a name="azure-performance-diagnostics-vm-extension-for-windows"></a>Extensão de VM de Diagnóstico de Desempenho do Azure para Windows
@@ -71,7 +71,7 @@ O JSON a seguir mostra o esquema para a Extensão da VM de Diagnóstico de Desem
 |--------------|-------------------|----------------------------|
 |apiVersion|2015-06-15|A versão da API.
 |publicador|Microsoft.Azure.Performance.Diagnostics|O namespace do publicador para a extensão.
-|tipo|AzurePerformanceDiagnostics|O tipo da extensão de VM.
+|type|AzurePerformanceDiagnostics|O tipo da extensão de VM.
 |typeHandlerVersion|1.0|A versão do manipulador de extensão.
 |performanceScenario|básico|O cenário de desempenho para o qual capturar dados. Os valores válidos são: **basic**, **vmslow**, **azurefiles** e **custom**.
 |traceDurationInSeconds|300|A duração dos rastreamentos se qualquer uma das opções de rastreamento estiver selecionada.
@@ -81,7 +81,7 @@ O JSON a seguir mostra o esquema para a Extensão da VM de Diagnóstico de Desem
 |storPortTrace|s|Opção para habilitar o rastreamento do StorPort. Os valores válidos são **s** ou valor vazio. Se você não deseja capturar esse rastreamento, deixe o valor como vazio.
 |srNumber|123452016365929|O número do tíquete de suporte, se disponível. Deixe o valor como vazio se você não o tiver.
 |requestTimeUtc|2017-09-28T22:08:53.736Z|Data e hora atual em Utc. Caso esteja usando o portal para instalar essa extensão, você não precisará fornecer esse valor.
-|resourceId|/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}|Identificador exclusivo de uma VM.
+|ResourceId|/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}|Identificador exclusivo de uma VM.
 |storageAccountName|mystorageaccount|O nome da conta de armazenamento para armazenar os logs de diagnóstico e os resultados.
 |storageAccountKey|lDuVvxuZB28NNP…hAiRF3voADxLBTcc==|A chave da conta de armazenamento.
 
@@ -113,7 +113,7 @@ Siga estas instruções para instalar a extensão em máquinas virtuais do Windo
 Para remover a extensão de uma máquina virtual, siga estas etapas:
 
 1. Faça logon no [Portal do Azure](https://portal.azure.com), selecione a máquina virtual em que você deseja remover a extensão e, em seguida, selecione a folha **Extensões**. 
-2. Clique no (**...**) da entrada de Extensão de Diagnóstico de Desempenho na lista e selecione **Desinstalar**.
+2. Clique no ( **...** ) da entrada de Extensão de Diagnóstico de Desempenho na lista e selecione **Desinstalar**.
 
     ![Captura de tela da folha Extensões, com a opção Desinstalar realçada](media/performance-diagnostics-vm-extension/uninstall-the-extension.png)
 
@@ -234,7 +234,7 @@ A ferramenta PerfInsights coleta vários logs, configurações, dados de diagnó
 
 ## <a name="view-and-share-the-results"></a>Exibir e compartilhar os resultados
 
-A saída da extensão pode ser encontrada em um arquivo zip carregado na conta de armazenamento especificada durante a instalação e é compartilhada por 30 dias usando [Assinaturas de Acesso Compartilhado (SAS)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md). Este arquivo zip contém logs de diagnóstico e de um relatório com os resultados e recomendações. Um link SAS para o arquivo zip de saída pode ser encontrado em um arquivo de texto chamado *zipfilename*_saslink.txt na pasta **C:\Packages\Plugins\Microsoft.Azure.Performance.Diagnostics.AzurePerformanceDiagnostics\\\<version>**. Qualquer pessoa que tenha esse link pode baixar o arquivo zip.
+A saída da extensão pode ser encontrada em um arquivo zip carregado na conta de armazenamento especificada durante a instalação e é compartilhada por 30 dias usando [Assinaturas de Acesso Compartilhado (SAS)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md). Este arquivo zip contém logs de diagnóstico e de um relatório com os resultados e recomendações. Um link SAS para o arquivo zip de saída pode ser encontrado em um arquivo de texto chamado *zipfilename*_saslink.txt na pasta **C:\Packages\Plugins\Microsoft.Azure.Performance.Diagnostics.AzurePerformanceDiagnostics\\\<version>** . Qualquer pessoa que tenha esse link pode baixar o arquivo zip.
 
 Para ajudar o engenheiro de suporte que está trabalhando no seu tíquete de suporte, a Microsoft pode usar esse link das SAS para baixar os dados de diagnóstico.
 

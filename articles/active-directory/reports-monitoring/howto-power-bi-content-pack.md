@@ -16,10 +16,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 934562147fedcc81b16fd1ad2534af5662ef4b78
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60437575"
 ---
 # <a name="how-to-use-the-azure-active-directory-power-bi-content-pack"></a>Como usar o pacote de conteúdo do Power BI do Azure Active Directory
@@ -140,7 +140,7 @@ Para obter ajuda geral com o Power BI, confira esses [artigos de ajuda](https://
 | ---   | ---        |
 | Dependendo do tamanho do locatário, essa etapa poderá demorar de alguns minutos a 30 minutos. | Se a mensagem não for alterada para mostrar o painel dentro de uma hora, [registre um ticket de suporte](../fundamentals/active-directory-troubleshooting-support-howto.md).|
   
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Instalar pacote de conteúdo do Power BI](quickstart-install-power-bi-content-pack.md).
 * [O que são relatórios do Azure AD?](overview-reports.md).

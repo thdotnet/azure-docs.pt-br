@@ -9,15 +9,15 @@ ms.date: 08/16/2018
 ms.author: clemensv
 ms.custom: include file
 ms.openlocfilehash: 2684f89088854ecf05c547c77852155168baa38d
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66150367"
 ---
 ### <a name="create-a-console-application"></a>Criar um aplicativo de console
 
-N o Visual Studio, crie um novo projeto de **Aplicativo de Console (.NET Framework)**.
+N o Visual Studio, crie um novo projeto de **Aplicativo de Console (.NET Framework)** .
 
 ### <a name="add-the-relay-nuget-package"></a>Adicione o pacote NuGet de retransmissão
 

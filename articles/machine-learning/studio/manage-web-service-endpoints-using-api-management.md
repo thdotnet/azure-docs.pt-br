@@ -11,10 +11,10 @@ ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 11/03/2017
 ms.openlocfilehash: 0d79bc167ea0416218a4d4822bcd6221699643ca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60346995"
 ---
 # <a name="manage-azure-machine-learning-studio-web-services-using-api-management"></a>Gerenciar serviços da web do Azure Machine Learning Studio usando o Gerenciamento de API
@@ -150,7 +150,7 @@ As operações podem ser chamadas diretamente do Portal do Desenvolvedor, que fo
 
 4. Para os **Parâmetros de solicitação**, digite seu **workspace** e **serviço**, digite “2.0” para **apiversion** e “true” para os **detalhes**. Você pode encontrar o **workspace** e o **serviço** no painel de serviço Web do AzureML (confira **Testar o serviço Web** no Apêndice A).
 
-   Para **Cabeçalhos de solicitação**, clique em **Adicionar cabeçalho** e digite "Content-Type" e "application/json". Clique em **Adicionar cabeçalho** novamente e digite "Autorização" e "Portador *\<sua chave da API de serviço\>*". Você pode encontrar a API-KEY no painel de serviço Web do AzureML (confira **Testar o serviço Web** no Apêndice A).
+   Para **Cabeçalhos de solicitação**, clique em **Adicionar cabeçalho** e digite "Content-Type" e "application/json". Clique em **Adicionar cabeçalho** novamente e digite "Autorização" e "Portador *\<sua chave da API de serviço\>* ". Você pode encontrar a API-KEY no painel de serviço Web do AzureML (confira **Testar o serviço Web** no Apêndice A).
 
    Para o **corpo da solicitação**, digite `{"Inputs": {"input1": {"ColumnNames": ["Col2"], "Values": [["This is a good day"]]}}, "GlobalParameters": {}}`.
 
@@ -166,7 +166,7 @@ Após invocar uma operação, o portal do desenvolvedor exibe a **URL solicitada
 
 ## <a name="appendix-a---creating-and-testing-a-simple-azureml-web-service"></a>Apêndice A - criando e testando um serviço Web do AzureML simples
 ### <a name="creating-the-experiment"></a>Criando o teste
-Veja abaixo as etapas para criar um teste simples do AzureML e implantá-lo como um serviço Web. O serviço Web assume como entrada uma coluna de texto arbitrário e retorna um conjunto de recursos representados como números inteiros. Por exemplo: 
+Veja abaixo as etapas para criar um teste simples do AzureML e implantá-lo como um serviço Web. O serviço Web assume como entrada uma coluna de texto arbitrário e retorna um conjunto de recursos representados como números inteiros. Por exemplo:
 
 | Text | Texto marcado com sustenido |
 | --- | --- |

@@ -6,17 +6,16 @@ ms.subservice: performance
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: WenJason
-ms.author: v-jay
+author: danimir
+ms.author: danil
 ms.reviewer: jrasnik, carlrab
-manager: digimobile
-origin.date: 01/25/2019
-ms.date: 02/25/2019
+manager: craigg
+ms.date: 01/25/2019
 ms.openlocfilehash: adbccd5f9cfd5ddd1912e304f800f3ebe04912c7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60584757"
 ---
 # <a name="monitor-and-improve-performance"></a>Monitorar e melhorar o desempenho
@@ -41,10 +40,10 @@ Essa exibição fornece um resumo do desempenho de seu banco de dados e lhe ajud
 
 ![Desempenho](./media/sql-database-performance/performance.png)
 
-* O bloco **Recomendações** fornece uma divisão das recomendações de ajuste para seu banco de dados (as três principais recomendações serão exibidas, se existirem mais). Ao clicar nesse bloco, será direcionado para **[Recomendações de desempenho](#performance-recommendations)**. 
+* O bloco **Recomendações** fornece uma divisão das recomendações de ajuste para seu banco de dados (as três principais recomendações serão exibidas, se existirem mais). Ao clicar nesse bloco, será direcionado para **[Recomendações de desempenho](#performance-recommendations)** . 
 * O bloco **Atividade de ajuste** fornece um resumo das atividades de ajuste em andamento e concluídas para o banco de dados, oferecendo uma visão rápida do histórico de atividades de ajuste. Clicar nesse bloco leva você para a exibição do histórico completo de ajustes do banco de dados.
 * O bloco **Ajuste automático** mostra a[configuração de ajuste automático](sql-database-automatic-tuning-enable.md) para o banco de dados (opções de ajuste que são aplicadas automaticamente ao banco de dados). Clicar nesse bloco abre a caixa de diálogo de configuração de automação.
-* O bloco **Consultas de banco de dados** mostra o resumo do desempenho de consulta do banco de dados (uso geral de DTU e consultas com maior consumo de recursos). Ao clicar nesse bloco, será direcionado para **[Análise de Desempenho de Consultas](#query-performance-insight)**.
+* O bloco **Consultas de banco de dados** mostra o resumo do desempenho de consulta do banco de dados (uso geral de DTU e consultas com maior consumo de recursos). Ao clicar nesse bloco, será direcionado para **[Análise de Desempenho de Consultas](#query-performance-insight)** .
 
 ## <a name="performance-recommendations"></a>Recomendações de desempenho
 
@@ -74,7 +73,7 @@ Os bancos de dados SQL do Azure podem ajustar o desempenho do banco de dados aut
 
   ![painel de desempenho](./media/sql-database-query-performance/performance.png)
 
-Localize mais informações sobre essa página no artigo  **[Como usar a Análise de Desempenho de Consultas](sql-database-query-performance.md)**.
+Localize mais informações sobre essa página no artigo  **[Como usar a Análise de Desempenho de Consultas](sql-database-query-performance.md)** .
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

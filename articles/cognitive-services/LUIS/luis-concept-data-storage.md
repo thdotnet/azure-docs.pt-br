@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: diberry
 ms.openlocfilehash: a1093c2a6303b453a17a52058303913de5ecfa8d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60812946"
 ---
 # <a name="data-storage-and-removal-in-language-understanding-luis-cognitive-services"></a>Armazenamento e remoção de dados nos Serviços Cognitivos do LUIS (Reconhecimento vocal)
@@ -40,7 +40,7 @@ Exclua enunciados de exemplo usados para treinar o [LUIS](luis-reference-regions
 
 ### <a name="delete-utterances-in-review-from-active-learning"></a>Excluir declarações de revisão de aprendizado ativo
 
-É possível excluir declarações da lista de declarações do usuário sugeridas pelo LUIS na **[página Examinar declarações de ponto de extremidade](luis-how-to-review-endpoint-utterances.md)**. Excluir enunciados dessa lista impede que eles sejam sugeridos, mas não os exclui dos logs.
+É possível excluir declarações da lista de declarações do usuário sugeridas pelo LUIS na **[página Examinar declarações de ponto de extremidade](luis-how-to-review-endpoint-utterances.md)** . Excluir enunciados dessa lista impede que eles sejam sugeridos, mas não os exclui dos logs.
 
 Se você não quiser que as declarações de aprendizado ativo, você poderá [desabilitar aprendizado ativo](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Desabilitar o aprendizado ativo também desabilita o registro em log.
 

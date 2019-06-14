@@ -3,21 +3,20 @@ title: Copiar dados de/para SAP Cloud for Customer usando Azure Data Factory | M
 description: Saiba como copiar dados do SAP Cloud for Customer para armazenamentos de dados de coletor compatíveis (ou) de armazenamentos de dados de origem compatíveis para o SAP Cloud for Customer usando o Data Factory.
 services: data-factory
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: linda33wj
+manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-origin.date: 04/17/2018
-ms.date: 04/22/2019
-ms.author: v-jay
+ms.date: 04/17/2018
+ms.author: jingwang
 ms.openlocfilehash: e4625b934f9e1cf98254f3dee59f9c26e8e16fb5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60578701"
 ---
 # <a name="copy-data-from-sap-cloud-for-customer-c4c-using-azure-data-factory"></a>Copiar dados do SAP Cloud for Customer (C4C) usando o Azure Data Factory
@@ -45,7 +44,7 @@ As propriedades a seguir são compatíveis com o serviço vinculado SAP Cloud fo
 | type | A propriedade type deve ser definida como: **SapCloudForCustomer**. | Sim |
 | url | A URL do serviço SAP C4C OData. | Sim |
 | username | Especifique o nome de usuário para se conectar ao SAP C4C. | Sim |
-| password | Especifique a senha da conta de usuário que você especificou para o nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
+| Senha | Especifique a senha da conta de usuário que você especificou para o nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
 | connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Se não for especificado, ele usa o Integration Runtime padrão do Azure. | Não para fonte, Sim para o coletor |
 
 >[!IMPORTANT]
@@ -59,7 +58,7 @@ As propriedades a seguir são compatíveis com o serviço vinculado SAP Cloud fo
     "properties": {
         "type": "SapCloudForCustomer",
         "typeProperties": {
-            "url": "https://<tenantname>.crm.ondemand.cn/sap/c4c/odata/v1/c4codata/" ,
+            "url": "https://<tenantname>.crm.ondemand.com/sap/c4c/odata/v1/c4codata/" ,
             "username": "<username>",
             "password": {
                 "type": "SecureString",
@@ -114,7 +113,7 @@ Para copiar dados do SAP Cloud for Customer, defina o tipo de origem na atividad
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **SapCloudForCustomerSource**  | Sim |
-| query | Especifique a consulta OData personalizada para ler dados. | Não  |
+| query | Especifique a consulta OData personalizada para ler dados. | Não |
 
 Consulta de exemplo para obter dados de um dia específico:`"query": "$filter=CreatedOn ge datetimeoffset'2017-07-31T10:02:06.4202620Z' and CreatedOn le datetimeoffset'2017-08-01T10:02:06.4202620Z'"`
 

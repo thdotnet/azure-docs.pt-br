@@ -13,11 +13,11 @@ ms.date: 07/09/2018
 ms.author: cshoe
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: cc6ca29af1866c5d26d3b73b26121451440c4dac
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60306611"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64511792"
 ---
 # <a name="twilio-binding-for-azure-functions"></a>Associação de Twilio para o Azure Functions
 
@@ -401,7 +401,7 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 | propriedade function.json v1 | propriedade function.json v2 | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|---------|----------------------|
-|**tipo**|**tipo**| deve ser definido como `twilioSms`.|
+|**type**|**type**| deve ser definido como `twilioSms`.|
 |**direction**|**direction**| deve ser definido como `out`.|
 |**name**|**name**| Nome da variável usada no código de função para a mensagem de texto SMS do Twilio. |
 |**accountSid**|**accountSidSetting**| **AccountSidSetting**| Esse valor deve ser definido como o nome de uma Configuração de aplicativo que contém a SID da sua conta do Twilio, por exemplo, TwilioAccountSid. Se não configurado, o nome da configuração do aplicativo padrão será "AzureWebJobsTwilioAccountSid". |
@@ -412,7 +412,7 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
 > [Aprenda mais sobre gatilhos e de associações do Azure Functions](functions-triggers-bindings.md)

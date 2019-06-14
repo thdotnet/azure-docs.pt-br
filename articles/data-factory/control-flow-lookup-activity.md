@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: shlo
 ms.openlocfilehash: 4f0662a71ee14af3c2c1aafee210641fc8b51f1b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60768642"
 ---
 # <a name="lookup-activity-in-azure-data-factory"></a>Atividade de pesquisa no Azure Data Factory
@@ -57,7 +57,7 @@ As seguintes fontes de dados são compatíveis com a atividade Lookup. O maior n
 NOME | DESCRIÇÃO | Type | Obrigatório?
 ---- | ----------- | ---- | --------
 dataset | Fornece a referência de conjunto de dados para a pesquisa. Obtenha detalhes na seção **Propriedades do conjunto de dados** em cada artigo de conector correspondente. | Pares chave/valor | Sim
-fonte | Contém propriedades de origem específicas do banco de dados, as mesmas que as da origem da atividade Copy. Obtenha detalhes na seção **Propriedades da atividade Copy** em cada artigo de conector correspondente. | Pares chave/valor | Sim
+source | Contém propriedades de origem específicas do banco de dados, as mesmas que as da origem da atividade Copy. Obtenha detalhes na seção **Propriedades da atividade Copy** em cada artigo de conector correspondente. | Pares chave/valor | Sim
 firstRowOnly | Indica se deve-se retornar apenas a primeira linha ou todas as linhas. | Boolean | Não. O padrão é `true`.
 
 > [!NOTE]
@@ -70,7 +70,7 @@ firstRowOnly | Indica se deve-se retornar apenas a primeira linha ou todas as li
 
 O resultado de pesquisa é retornado na seção `output` do resultado da execução de atividade.
 
-* **Quando `firstRowOnly` é definido como `true` (padrão)**, o formato de saída é como mostrado no código a seguir. O resultado da pesquisa fica sob um chave `firstRow` fixa. Para usar o resultado na atividade subsequente, use o padrão de `@{activity('MyLookupActivity').output.firstRow.TableName}`.
+* **Quando `firstRowOnly` é definido como `true` (padrão)** , o formato de saída é como mostrado no código a seguir. O resultado da pesquisa fica sob um chave `firstRow` fixa. Para usar o resultado na atividade subsequente, use o padrão de `@{activity('MyLookupActivity').output.firstRow.TableName}`.
 
     ```json
     {
@@ -82,7 +82,7 @@ O resultado de pesquisa é retornado na seção `output` do resultado da execuç
     }
     ```
 
-* **Quando `firstRowOnly` for definido como `false` (padrão)**, o formato de saída será como mostrado no código a seguir. Um campo `count` indica quantos registros são retornados. Os valores detalhados são exibidos em uma matriz `value` fixa. Nesse caso, a atividade Lookup é seguida por uma [atividade Foreach](control-flow-for-each-activity.md). Passe a matriz `value` para o campo `items` da atividade ForEach usando o padrão de `@activity('MyLookupActivity').output.value`. Para acessar elementos na matriz `value`, use a seguinte sintaxe: `@{activity('lookupActivity').output.value[zero based index].propertyname}`. Um exemplo é `@{activity('lookupActivity').output.value[0].tablename}`.
+* **Quando `firstRowOnly` for definido como `false` (padrão)** , o formato de saída será como mostrado no código a seguir. Um campo `count` indica quantos registros são retornados. Os valores detalhados são exibidos em uma matriz `value` fixa. Nesse caso, a atividade Lookup é seguida por uma [atividade Foreach](control-flow-for-each-activity.md). Passe a matriz `value` para o campo `items` da atividade ForEach usando o padrão de `@activity('MyLookupActivity').output.value`. Para acessar elementos na matriz `value`, use a seguinte sintaxe: `@{activity('lookupActivity').output.value[zero based index].propertyname}`. Um exemplo é `@{activity('lookupActivity').output.value[0].tablename}`.
 
     ```json
     {

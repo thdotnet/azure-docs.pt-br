@@ -15,10 +15,10 @@ ms.author: rolyon
 ms.custom: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1755d627473b0ae47bbc4bc74a3f0d2210e5372b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60440579"
 ---
 # <a name="deploy-azure-ad-privileged-identity-management-pim"></a>Implantar o Azure AD Privileged Identity Management (PIM)
@@ -153,7 +153,7 @@ Para automatizar as etapas 3 e 4, você pode utilizar a função de revisão de 
 
 ![Criar uma análise de acesso](./media/pim-deployment-plan/create-access-review.png)
 
-Os revisores deve ser definidos como **Membros (por conta própria)**. Isso enviará um email para todos os membros na função para que eles confirmem se precisam de acesso. Você também deve ativar **Requer motivo sob aprovação** nas configurações avançadas para que os usuários possam indicar por que precisam da função. Com base nessas informações, você poderá remover usuários de funções desnecessárias e delegar funções de administrador mais granulares no caso de Administradores Globais.
+Os revisores deve ser definidos como **Membros (por conta própria)** . Isso enviará um email para todos os membros na função para que eles confirmem se precisam de acesso. Você também deve ativar **Requer motivo sob aprovação** nas configurações avançadas para que os usuários possam indicar por que precisam da função. Com base nessas informações, você poderá remover usuários de funções desnecessárias e delegar funções de administrador mais granulares no caso de Administradores Globais.
 
 As revisões de acesso dependem de emails para notificar as pessoas sobre o acesso às funções. Se você tiver contas que não têm emails vinculados com privilégios, lembre-se de preencher o campo de email secundário nessas contas. Para saber mais, confira [Atributo proxyAddresses no Azure AD](https://support.microsoft.com/help/3190357/how-the-proxyaddresses-attribute-is-populated-in-azure-ad).
 
@@ -353,7 +353,7 @@ Se o PIM não funcionar como desejado no ambiente de produção, as etapas de re
 1. Entre no [Portal do Azure](https://portal.azure.com/).
 1. Abra o **Azure AD Privileged Identity Management**.
 1. Clique em **Funções do Azure AD** e, em seguida, clique em **Funções**.
-1. Para cada função configurada, clique nas reticências (**...**) para todos os usuários com uma atribuição qualificada.
+1. Para cada função configurada, clique nas reticências ( **...** ) para todos os usuários com uma atribuição qualificada.
 1. Clique na opção **Tornar permanente** para tornar a atribuição de função permanente.
 
 #### <a name="azure-resource-roles"></a>Funções de recurso do Azure
@@ -362,7 +362,7 @@ Se o PIM não funcionar como desejado no ambiente de produção, as etapas de re
 1. Abra o **Azure AD Privileged Identity Management**.
 1. Clique em **Recursos do Azure** e, em seguida, clique em uma assinatura ou recurso que deseja reverter.
 1. Clique em **Funções**.
-1. Para cada função configurada, clique nas reticências (**...**) para todos os usuários com uma atribuição qualificada.
+1. Para cada função configurada, clique nas reticências ( **...** ) para todos os usuários com uma atribuição qualificada.
 1. Clique na opção **Tornar permanente** para tornar a atribuição de função permanente.
 
 ## <a name="step-4-next-steps-after-deploying-pim"></a>Etapa 4. Próximas etapas após a implantação do PIM

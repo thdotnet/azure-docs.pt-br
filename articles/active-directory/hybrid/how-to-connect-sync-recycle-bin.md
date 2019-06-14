@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5fe7d3ea7d4f6d648438efc1a484d5909ade2f23
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60382888"
 ---
 # <a name="azure-ad-connect-sync-enable-ad-recycle-bin"></a>Sincronização do Azure AD Connect: Habilitar lixeira do AD
@@ -41,7 +41,7 @@ Esse recurso ajuda a restaurar os objetos de usuário do Azure AD, fazendo o seg
 > [!NOTE]
 > Por padrão, o Azure AD mantém objetos de usuário excluídos do Azure AD em estado de exclusão temporária durante 30 dias antes que eles sejam excluídos permanentemente. No entanto, os administradores podem acelerar a exclusão desses objetos. Depois que os objetos forem excluídos permanentemente, eles não poderão mais ser recuperados, mesmo se o recurso Lixeira do AD local estiver habilitado.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 **Tópicos de visão geral**
 
 * [Sincronização do Azure AD Connect: Compreender e personalizar a sincronização](how-to-connect-sync-whatis.md)

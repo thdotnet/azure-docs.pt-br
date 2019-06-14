@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 ms.openlocfilehash: 5a053ab213390a12c5d2051a802a1fa98279c344
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66155165"
 ---
 # <a name="until-activity-in-azure-data-factory"></a>Atividade Until no Azure Data Factory
@@ -54,10 +54,10 @@ A atividade Until fornece a mesma funcionalidade que uma estrutura de loop do-un
 
 Propriedade | DESCRIÇÃO | Valores permitidos | Obrigatório
 -------- | ----------- | -------------- | --------
-name | Nome da atividade `Until`. | String | Sim
-tipo | Deve ser definido como **Until**. | String | Sim
+name | Nome da atividade `Until`. | Cadeia de caracteres | Sim
+type | Deve ser definido como **Until**. | Cadeia de caracteres | Sim
 expressão | Expressão que deve ser avaliada como verdadeira ou falsa | Expressão.  | Sim
-Tempo limite | O loop do-until atinge o tempo limite após o tempo especificado aqui. | Cadeia de caracteres. `d.hh:mm:ss` (ou) `hh:mm:ss`. O valor padrão é de 7 dias. Valor máximo: 90 dias. | Não
+timeout | O loop do-until atinge o tempo limite após o tempo especificado aqui. | Cadeia de caracteres. `d.hh:mm:ss` (ou) `hh:mm:ss`. O valor padrão é de 7 dias. Valor máximo: 90 dias. | Não
 Atividades | Conjunto de atividades que é executado até que a expressão seja avaliada como `true`. | Matriz de atividades. |  Sim
 
 ## <a name="example-1"></a>Exemplo 1

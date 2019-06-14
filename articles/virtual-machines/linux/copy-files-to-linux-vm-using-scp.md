@@ -17,10 +17,10 @@ ms.date: 07/12/2017
 ms.author: danlep
 ms.subservice: disks
 ms.openlocfilehash: 7d5b2d2ee7e7320fb8bf91c8a62a0f46c403c977
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60328758"
 ---
 # <a name="move-files-to-and-from-a-linux-vm-using-scp"></a>Mover arquivos de e para uma VM Linux usando o SCP
@@ -57,7 +57,7 @@ Para obter mais informações sobre como configurar o `~/.ssh/config` e chaves S
 
 Para o primeiro exemplo, copiamos um arquivo de configuração do Azure para uma VM Linux usada para implantar a automação. Já que esse arquivo contém credenciais de API do Azure, as quais incluem segredos, a segurança é importante. O túnel criptografado fornecido por SSH protege o conteúdo do arquivo.
 
-O comando a seguir copia o arquivo local *.azure/config* para uma VM do Azure com o FQDN *myserver.eastus.cloudapp.azure.com*. O nome de usuário administrador na VM do Azure é *azureuser*. O arquivo é direcionado para o diretório */home/azureuser/*. Substitua seus próprios valores nesse comando.
+O comando a seguir copia o arquivo local *.azure/config* para uma VM do Azure com o FQDN *myserver.eastus.cloudapp.azure.com*. O nome de usuário administrador na VM do Azure é *azureuser*. O arquivo é direcionado para o diretório */home/azureuser/* . Substitua seus próprios valores nesse comando.
 
 ```bash
 scp ~/.azure/config azureuser@myserver.eastus.cloudapp.com:/home/azureuser/config

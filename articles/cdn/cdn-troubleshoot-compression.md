@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: 4df8e5d4560a813c47319833a8cd91726abcb8e6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60323720"
 ---
 # <a name="troubleshooting-cdn-file-compression"></a>Solucionando problemas de compactação de arquivo CDN
@@ -97,7 +97,7 @@ Navegue até seu ponto de extremidade no [Portal do Azure](https://portal.azure.
 
 Usando as ferramentas de desenvolvedor do navegador, verifique os cabeçalhos de resposta para garantir que o arquivo está armazenado em cache na região em que está sendo solicitado.
 
-* Verifique o cabeçalho de resposta **Server** .  O cabeçalho deve ter o formato **Plataforma (POP/ID do Servidor)**, como mostrado no exemplo a seguir.
+* Verifique o cabeçalho de resposta **Server** .  O cabeçalho deve ter o formato **Plataforma (POP/ID do Servidor)** , como mostrado no exemplo a seguir.
 * Verifique o cabeçalho de resposta **X-Cache** .  No cabeçalho, deve-se ler **HIT**.  
 
 ![Cabeçalhos de resposta CDN](./media/cdn-troubleshoot-compression/cdn-response-headers.png)

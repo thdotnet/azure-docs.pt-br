@@ -14,10 +14,10 @@ ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: f290a7e16938c66d45fab9b78086f77bfdfe4839
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60319506"
 ---
 # <a name="troubleshoot-an-rdp-general-error-in-azure-vm"></a>Solucionar um problema de erro geral de protocolo RDP em uma VM do Azure
@@ -67,7 +67,7 @@ Para resolver esse problema, [faça backup do disco do sistema operacional](../w
 
 #### <a name="step-1-open-cmd-instance-in-serial-console"></a>Etapa 1: Instância CMD aberta no console Serial
 
-1. Acesso ao [Console Serial](serial-console-windows.md) selecionando **Suporte e solução de problemas** > **Console serial (visualização)**. Se o recurso estiver habilitado na VM, você poderá conectar a VM com êxito.
+1. Acesso ao [Console Serial](serial-console-windows.md) selecionando **Suporte e solução de problemas** > **Console serial (visualização)** . Se o recurso estiver habilitado na VM, você poderá conectar a VM com êxito.
 
 2. Crie um novo canal para uma instância de CMD. Digite **CMD** para iniciar o canal e obter o nome do canal.
 

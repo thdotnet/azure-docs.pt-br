@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/25/2017
 ms.author: robmcm
 ms.openlocfilehash: ef24e356c9ac8424fc519a3b16af5d37a20e706f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60444127"
 ---
 # <a name="how-to-use-the-azure-slave-plug-in-with-hudson-continuous-integration"></a>Como usar o plug-in subordinado do Azure com a Integração contínua do Hudson
@@ -152,7 +152,7 @@ Nesta seção, você criará uma tarefa do Hudson que será executada em um nó 
 5. Na página de configuração de trabalho, selecione **Restrict where this project can be run**.
 6. Selecione **Menu de nó e rótulo** e selecione **linux** (especificamos esse rótulo ao criar o modelo de máquina virtual na seção anterior).
 7. No seção **Build**, clique em **Adicionar etapa de build** e selecione **Executar shell**.
-8. Edite o seguinte script, substituindo **{nome da sua conta do GitHub}**, **{nome do projeto}** e **{diretório do projeto}** por valores apropriados e cole o script editado na área de texto exibida.
+8. Edite o seguinte script, substituindo **{nome da sua conta do GitHub}** , **{nome do projeto}** e **{diretório do projeto}** por valores apropriados e cole o script editado na área de texto exibida.
    
         # Clone from git repo
    

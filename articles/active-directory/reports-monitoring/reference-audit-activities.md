@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 66dd017e8f78f1e93c96262b42dc084c165cdef7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60285481"
 ---
 # <a name="azure-ad-audit-activity-reference"></a>Referência das atividades de auditoria do Azure AD
@@ -103,9 +103,9 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Gerenciamento de diretórios|Remover OAuth2PermissionGrant|
 |Gerenciamento de diretórios|Remover a atribuição de função de aplicativo da entidade de serviço|
 |Gerenciamento de diretórios|Remover proprietário do aplicativo|
-|Recurso|Remover proprietário da entidade de serviço|
-|Recurso|Remover política da entidade de serviço|
-|Recurso|Remover entidade de serviço|
+|Resource|Remover proprietário da entidade de serviço|
+|Resource|Remover política da entidade de serviço|
+|Resource|Remover entidade de serviço|
 
 
 ## <a name="automated-password-rollover"></a>Substituição de senha automática
@@ -269,79 +269,79 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Chave|Diretório excluído|
 |Outros|Diretório excluído permanentemente|
 |Outros|Diretório agendado para exclusão|
-|Recurso|Promover empresa à condição de parceira|
-|Recurso|Limpar propriedades de gerenciamento de direitos|
-|Recurso|Remover parceiro da empresa|
-|Recurso|Remover domínio não verificado|
-|Recurso|Remover domínio verificado|
-|Recurso|Definir informações da empresa|
-|Recurso|Definir recurso DirSync|
-|Recurso|Definir sinalizador DirSyncEnabled|
-|Recurso|Definir parceria|
-|Recurso|Definir limite de exclusão acidental|
-|Recurso|Definir local de dados permitido da empresa|
-|Recurso|Definir recurso multinacional de empresa como habilitado|
-|Recurso|Definir recurso de diretório no locatário|
-|Recurso|Definir a autenticação de domínio|
-|Recurso|Definir configurações de federação no domínio|
-|Recurso|Definir política de senha|
-|Recurso|Definir propriedades de gerenciamento de direitos|
-|Recurso|Atualizar empresa|
-|Recurso|Atualizar configurações da empresa|
-|Recurso|Domínio de atualização|
-|Recurso|Verificar domínio|
-|Recurso|Verificar domínio por email|
-|Recurso|Integração|
-|Recurso|Atualizar configurações de alerta|
-|Recurso|Atualizar configurações de resumo semanal|
-|Recurso|Desabilitar write-back de senha para o diretório|
-|Recurso|Habilitar write-back de senha para o diretório|
-|Recurso|Adicionar atribuição de função de aplicativo ao grupo|
-|Recurso|Adicionar grupo|
-|Recurso|Adicionar membro ao grupo|
-|Recurso|Adicionar proprietário ao grupo|
-|Recurso|Criar configurações de grupo|
-|Recurso|Excluir grupo|
-|Recurso|Excluir configurações de grupo|
-|Recurso|Concluir a aplicação de licença com base em grupo aos usuários|
-|Recurso|Excluir grupo irreversivelmente|
-|Recurso|Remover atribuição de função de aplicativo do grupo|
-|Recurso|Remover membro do grupo|
-|Recurso|Remover proprietário do grupo|
-|Recurso|Restaurar grupo|
-|Recurso|Definir licença de grupo|
-|Recurso|Definir grupo a ser gerenciado pelo usuário|
-|Recurso|Iniciar a aplicação de licença com base em grupo aos usuários|
-|Recurso|Disparar recálculo de licença do grupo|
-|Recurso|Atualizar grupo|
-|Recurso|Atualizar configurações de grupo|
-|Recurso|Adicionar membro|
-|Recurso|Criar Grupo|
-|Recurso|Excluir grupo|
-|Recurso|Remover membro|
-|Recurso|Atualizar grupo|
-|Recurso|Aprovar uma solicitação pendente para ingressar em um grupo|
-|Recurso|Cancelar uma solicitação pendente para ingressar em um grupo|
-|Recurso|Criar política de gerenciamento de ciclo de vida|
-|Recurso|Excluir uma solicitação pendente para ingressar em um grupo|
-|Recurso|Rejeitar uma solicitação pendente para ingressar em um grupo|
-|Recurso|Renovar grupo|
-|Recurso|Solicitar ingresso em um grupo|
-|Recurso|Definir propriedades de grupo dinâmico|
-|Recurso|Atualizar política de gerenciamento de ciclo de vida|
-|Recurso|Adicionar uma chave baseada em segredo ASCII a um contêiner de chave CPIM|
-|Recurso|Adicionar uma chave a um contêiner de chave CPIM|
-|Recurso|Excluir um contêiner de chave CPIM|
-|Recurso|Excluir contêiner de chave|
-|Recurso|Obter metadados de chave ativa do contêiner de chave em JWK|
-|Recurso|Obter metadados do contêiner de chave|
-|Recurso|Obtém um contêiner de chave CPIM em formato jwk|
-|Recurso|Obtém uma lista de contêineres de chave no locatário|
-|Recurso|Restaurar um backup de contêiner de chave CPIM|
-|Recurso|Salvar contêiner de chave|
-|Recurso|Carregar uma chave CPIM criptografada|
-|Recurso|Emitir um código de autorização para o aplicativo|
-|Recurso|Emitir um id_token para o aplicativo|
+|Resource|Promover empresa à condição de parceira|
+|Resource|Limpar propriedades de gerenciamento de direitos|
+|Resource|Remover parceiro da empresa|
+|Resource|Remover domínio não verificado|
+|Resource|Remover domínio verificado|
+|Resource|Definir informações da empresa|
+|Resource|Definir recurso DirSync|
+|Resource|Definir sinalizador DirSyncEnabled|
+|Resource|Definir parceria|
+|Resource|Definir limite de exclusão acidental|
+|Resource|Definir local de dados permitido da empresa|
+|Resource|Definir recurso multinacional de empresa como habilitado|
+|Resource|Definir recurso de diretório no locatário|
+|Resource|Definir a autenticação de domínio|
+|Resource|Definir configurações de federação no domínio|
+|Resource|Definir política de senha|
+|Resource|Definir propriedades de gerenciamento de direitos|
+|Resource|Atualizar empresa|
+|Resource|Atualizar configurações da empresa|
+|Resource|Domínio de atualização|
+|Resource|Verificar domínio|
+|Resource|Verificar domínio por email|
+|Resource|Integração|
+|Resource|Atualizar configurações de alerta|
+|Resource|Atualizar configurações de resumo semanal|
+|Resource|Desabilitar write-back de senha para o diretório|
+|Resource|Habilitar write-back de senha para o diretório|
+|Resource|Adicionar atribuição de função de aplicativo ao grupo|
+|Resource|Adicionar grupo|
+|Resource|Adicionar membro ao grupo|
+|Resource|Adicionar proprietário ao grupo|
+|Resource|Criar configurações de grupo|
+|Resource|Excluir grupo|
+|Resource|Excluir configurações de grupo|
+|Resource|Concluir a aplicação de licença com base em grupo aos usuários|
+|Resource|Excluir grupo irreversivelmente|
+|Resource|Remover atribuição de função de aplicativo do grupo|
+|Resource|Remover membro do grupo|
+|Resource|Remover proprietário do grupo|
+|Resource|Restaurar grupo|
+|Resource|Definir licença de grupo|
+|Resource|Definir grupo a ser gerenciado pelo usuário|
+|Resource|Iniciar a aplicação de licença com base em grupo aos usuários|
+|Resource|Disparar recálculo de licença do grupo|
+|Resource|Atualizar grupo|
+|Resource|Atualizar configurações de grupo|
+|Resource|Adicionar membro|
+|Resource|Criar Grupo|
+|Resource|Excluir grupo|
+|Resource|Remover membro|
+|Resource|Atualizar grupo|
+|Resource|Aprovar uma solicitação pendente para ingressar em um grupo|
+|Resource|Cancelar uma solicitação pendente para ingressar em um grupo|
+|Resource|Criar política de gerenciamento de ciclo de vida|
+|Resource|Excluir uma solicitação pendente para ingressar em um grupo|
+|Resource|Rejeitar uma solicitação pendente para ingressar em um grupo|
+|Resource|Renovar grupo|
+|Resource|Solicitar ingresso em um grupo|
+|Resource|Definir propriedades de grupo dinâmico|
+|Resource|Atualizar política de gerenciamento de ciclo de vida|
+|Resource|Adicionar uma chave baseada em segredo ASCII a um contêiner de chave CPIM|
+|Resource|Adicionar uma chave a um contêiner de chave CPIM|
+|Resource|Excluir um contêiner de chave CPIM|
+|Resource|Excluir contêiner de chave|
+|Resource|Obter metadados de chave ativa do contêiner de chave em JWK|
+|Resource|Obter metadados do contêiner de chave|
+|Resource|Obtém um contêiner de chave CPIM em formato jwk|
+|Resource|Obtém uma lista de contêineres de chave no locatário|
+|Resource|Restaurar um backup de contêiner de chave CPIM|
+|Resource|Salvar contêiner de chave|
+|Resource|Carregar uma chave CPIM criptografada|
+|Resource|Emitir um código de autorização para o aplicativo|
+|Resource|Emitir um id_token para o aplicativo|
 
 
 ## <a name="core-directory"></a>Diretório principal
@@ -432,18 +432,18 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Gerenciamento de política|GetIEFPolicies|
 |Gerenciamento de política|GetIdentityProviders|
 |Gerenciamento de política|GetTrustFrameworkPolicy|
-|Recurso|MigrateTenantMetadata|
-|Recurso|Mover recursos|
-|Recurso|Fazer patch de IdentityProvider|
-|Recurso|PutTrustFrameworkPolicy|
-|Recurso|PutTrustFrameworkpolicy|
-|Recurso|Remover um Percurso do Usuário|
-|Recurso|Atualizar IDP personalizado|
-|Recurso|Atualizar IDP|
-|Recurso|Atualizar IDP local|
-|Recurso|Exibir um recurso de diretório do B2C|
-|Recurso|Atualizar política|
-|Recurso|Atualizar status da assinatura|
+|Resource|MigrateTenantMetadata|
+|Resource|Mover recursos|
+|Resource|Fazer patch de IdentityProvider|
+|Resource|PutTrustFrameworkPolicy|
+|Resource|PutTrustFrameworkpolicy|
+|Resource|Remover um Percurso do Usuário|
+|Resource|Atualizar IDP personalizado|
+|Resource|Atualizar IDP|
+|Resource|Atualizar IDP local|
+|Resource|Exibir um recurso de diretório do B2C|
+|Resource|Atualizar política|
+|Resource|Atualizar status da assinatura|
 |Gerenciamento de funções|Atualizar atributo de usuário|
 |Gerenciamento de funções|Validar movimentação de recursos|
 |Gerenciamento de funções|Adicionar dispositivo|
@@ -599,7 +599,7 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Termos de Uso|Cancelar a publicação dos Termos de Uso|
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Visão geral dos relatórios do Azure AD](overview-reports.md).
 - [Relatório de logs de auditoria](concept-audit-logs.md). 

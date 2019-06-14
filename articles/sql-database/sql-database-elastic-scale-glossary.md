@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 12/04/2018
 ms.openlocfilehash: 446203b45744a95c32cd41d9ded26fd960ac8a22
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60585538"
 ---
 # <a name="elastic-database-tools-glossary"></a>Glossário de ferramentas do banco de dados elástico
@@ -29,7 +29,7 @@ Esses termos são usados em [Adicionando um fragmento usando ferramentas de Banc
 
 **Banco de dados**: Um banco de dados SQL do Azure. 
 
-**Roteamento dependente de dados**: A funcionalidade que permite que um aplicativo conecte um fragmento com uma chave de fragmentação específica. Consulte [Roteamento dependente de dados](sql-database-elastic-scale-data-dependent-routing.md). Compare com a **[Multi-Shard Query](sql-database-elastic-scale-multishard-querying.md)**.
+**Roteamento dependente de dados**: A funcionalidade que permite que um aplicativo conecte um fragmento com uma chave de fragmentação específica. Consulte [Roteamento dependente de dados](sql-database-elastic-scale-data-dependent-routing.md). Compare com a **[Multi-Shard Query](sql-database-elastic-scale-multishard-querying.md)** .
 
 **Mapa de fragmentos global**: O mapa entre as chaves de fragmentação seus respectivos fragmentos em um **conjunto de fragmentos**. O mapa de fragmentos global é armazenado no **gerenciador do mapa de fragmentos**. Compare com o **mapa de fragmentos local**.
 

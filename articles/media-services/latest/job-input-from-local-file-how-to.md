@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 02/18/2019
 ms.author: juliako
 ms.openlocfilehash: 3eb16034cc6507944ca7bebb59893e0d72a6f4c9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60322576"
 ---
 # <a name="create-a-job-input-from-a-local-file"></a>Criar uma entrada de trabalho de um arquivo local
@@ -38,6 +38,6 @@ O código a seguir mostra como criar um ativo de entrada e usá-lo como entrada 
 
 Confira [Códigos de erro](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 [Criar uma entrada de trabalho de uma URL HTTPS](job-input-from-http-how-to.md).

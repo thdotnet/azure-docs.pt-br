@@ -14,15 +14,15 @@ ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: ea0094624727ca1395a1276e7968ac1c74b750e7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60487275"
 ---
 # <a name="create-monitor-and-manage-azure-data-factories-using-azure-data-factory-net-sdk"></a>Criar, monitorar e gerenciar data factories do Azure usando o SDK do .NET do Azure Data Factory
 > [!NOTE]
-> Este artigo aplica-se à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte o [tutorial de atividade de cópia](../quickstart-create-data-factory-dot-net.md). 
+> Este artigo se aplica à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte o [tutorial de atividade de cópia](../quickstart-create-data-factory-dot-net.md). 
 
 ## <a name="overview"></a>Visão geral
 Você pode criar, monitorar e gerenciar as Data Factory do Azure programaticamente usando o SDK do .NET da Data Factory. Este artigo contém uma explicação passo a passo que você pode seguir para criar um aplicativo de console .NET de exemplo que cria e monitora uma Data Factory. 
@@ -113,7 +113,7 @@ A atividade de cópia realiza a movimentação de dados no Azure Data Factory. A
 1. Usando o Visual Studio 2012/2013/2015, crie um aplicativo de console C# .NET.
    1. Inicie o **Visual Studio** 2012/2013/2015.
    2. Clique em **Arquivo**, aponte para **Novo** e clique em **Projeto**.
-   3. Expanda **Modelos** e selecione **Visual C#**. Neste passo a passo, você usa C#, mas você pode usar qualquer linguagem .NET.
+   3. Expanda **Modelos** e selecione **Visual C#** . Neste passo a passo, você usa C#, mas você pode usar qualquer linguagem .NET.
    4. Selecione **Aplicativo de console** na lista de tipos de projetos à direita.
    5. Digite **DataFactoryAPITestApp** como o Nome.
    6. Selecione **C:\ADFGetStarted** como o Local.
@@ -139,7 +139,7 @@ A atividade de cópia realiza a movimentação de dados no Azure Data Factory. A
         </appSettings>
     </configuration>
     ```
-5. No arquivo App.Config, atualize os valores para **&lt;ID do aplicativo&gt;**, **&lt;Senha&gt;**, **&lt;ID da assinatura&gt;** e **&lt;ID do locatário&gt;** com os seus próprios valores.
+5. No arquivo App.Config, atualize os valores para **&lt;ID do aplicativo&gt;** , **&lt;Senha&gt;** , **&lt;ID da assinatura&gt;** e **&lt;ID do locatário&gt;** com os seus próprios valores.
 6. Adicione as seguintes instruções **using** ao arquivo **Program.cs** no projeto.
 
     ```csharp
@@ -224,7 +224,7 @@ A atividade de cópia realiza a movimentação de dados no Azure Data Factory. A
 
     O **FolderPath** para o blob de entrada é definido como **adftutorial/** em que **adftutoria**l é o nome do contêiner no seu armazenamento de blobs. Se esse contêiner não existir em seu armazenamento de blob do Azure, crie um contêiner com o nome **adftutorial** e carregue um arquivo de texto no contêiner.
 
-    O FolderPath para o blob de saída é definido como: **adftutorial/apifactoryoutput /{Slice}**, em que a **Slice** é dinamicamente calculada com base no valor de **SliceStart** (data e hora de início de cada fatia).
+    O FolderPath para o blob de saída é definido como: **adftutorial/apifactoryoutput /{Slice}** , em que a **Slice** é dinamicamente calculada com base no valor de **SliceStart** (data e hora de início de cada fatia).
 
     ```csharp
     // create input and output datasets

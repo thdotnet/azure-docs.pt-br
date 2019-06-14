@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/27/2018
 ms.author: raynew
 ms.openlocfilehash: eeadfd6a57ff8a26f3f124e2a807fcd66e77b85f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61036582"
 ---
 # <a name="plan-capacity-for-hyper-v-vm-disaster-recovery"></a>Planejar a capacidade de recuperação de desastre de VM do Hyper-V 
@@ -52,9 +52,9 @@ Você pode executar a ferramenta em dois modos:
 
 3. Na planilha **Planejador de Capacidade**, insira as informações necessárias. Preencha todos os campos circulados em vermelho na seguinte captura de tela:
 
-    a. Em **Selecionar seu cenário**, escolha **Hyper-V para Azure** ou **VMware/físico para Azure**.
+   a. Em **Selecionar seu cenário**, escolha **Hyper-V para Azure** ou **VMware/físico para Azure**.
 
-   b. Em **Taxa média diária de alteração de dados (%)**, insira as informações coletadas usando a [ferramenta de planejamento de capacidade do Hyper-V](site-recovery-capacity-planning-for-hyper-v-replication.md) ou o [Planejador de Implantação do Site Recovery](./site-recovery-deployment-planner.md).
+   b. Em **Taxa média diária de alteração de dados (%)** , insira as informações coletadas usando a [ferramenta de planejamento de capacidade do Hyper-V](site-recovery-capacity-planning-for-hyper-v-replication.md) ou o [Planejador de Implantação do Site Recovery](./site-recovery-deployment-planner.md).
 
    c. A configuração **Compactação** não é usada quando você replica VMs do Hyper-V para o Azure. Para compactação, use um dispositivo de terceiros como o Riverbed.
 
@@ -66,9 +66,9 @@ Você pode executar a ferramenta em dois modos:
 
 4. Depois que você inserir os valores para o ambiente de origem, a saída exibida incluirá:
 
-   * **Largura de Banda necessária para a replicação delta (em Megabits / segundo)**: A largura de banda de rede para a replicação delta é calculada segundo a taxa média diária de alteração de dados.
-   * **Largura de Banda necessária para a replicação inicial (em Megabits/segundo)**: A largura de banda de rede para a replicação inicial é calculada segundo os valores de replicação inicial inseridos.
-   * **Armazenamento necessário (em GBs)**: Armazenamento total do Azure necessário.
+   * **Largura de Banda necessária para a replicação delta (em Megabits / segundo)** : A largura de banda de rede para a replicação delta é calculada segundo a taxa média diária de alteração de dados.
+   * **Largura de Banda necessária para a replicação inicial (em Megabits/segundo)** : A largura de banda de rede para a replicação inicial é calculada segundo os valores de replicação inicial inseridos.
+   * **Armazenamento necessário (em GBs)** : Armazenamento total do Azure necessário.
    * **IOPS total em contas de armazenamento padrão**: O número é calculado de acordo com o tamanho da unidade de IOPS de 8.000 no total de contas de armazenamento standard. Para o Planejador Rápido, o número é calculado com base em todos os discos de VM de origem e na taxa diária de alteração dos dados. Para o Planejador Detalhado, o número é calculado com base no número total de VMs mapeadas para as VMs standard do Azure e na taxa diária de alteração dessas VMs.
    * **Número de contas de armazenamento padrão**: O número total de contas de armazenamento padrão necessárias para proteger as VMs. Uma conta de armazenamento standard pode conter até 20 mil IOPS em todas as VMs em um armazenamento standard. Há suporte para o máximo de 500 IOPS por disco.
    * **Número de discos de Blob necessários**: O número de discos criados no armazenamento do Azure.
@@ -90,19 +90,19 @@ Você pode executar a ferramenta em dois modos:
 
 3. Na planilha **Qualificação de Carga de Trabalho**, insira as informações necessárias. Preencha todos os campos marcados.
 
-    a. Em **Núcleos de Processador**, especifique o número total de núcleos em um servidor de origem.
+   a. Em **Núcleos de Processador**, especifique o número total de núcleos em um servidor de origem.
 
-   b. Em **Alocação de memória (em MBs)**, especifique o tamanho da RAM de um servidor de origem.
+   b. Em **Alocação de memória (em MBs)** , especifique o tamanho da RAM de um servidor de origem.
 
    c. Em **Número de NICs** especifica o número de adaptadores de rede em um servidor de origem.
 
-   d. Em **Total de Armazenamento (em GB)**, especifique o tamanho total do armazenamento da VM. Por exemplo, se o servidor de origem tiver três discos, cada um com 500 GB, o tamanho total de armazenamento será de 1.500 GB.
+   d. Em **Total de Armazenamento (em GB)** , especifique o tamanho total do armazenamento da VM. Por exemplo, se o servidor de origem tiver três discos, cada um com 500 GB, o tamanho total de armazenamento será de 1.500 GB.
 
    e. Em **Número de discos anexados**, especifique o número total de discos de um servidor de origem.
 
-   f. Em **Utilização da capacidade do disco (%)**, especifique a utilização média.
+   f. Em **Utilização da capacidade do disco (%)** , especifique a utilização média.
 
-   g. Em **Taxa de alteração de dados diária (%)**, especifique a taxa diária de alteração de dados de um servidor de origem.
+   g. Em **Taxa de alteração de dados diária (%)** , especifique a taxa diária de alteração de dados de um servidor de origem.
 
    h. Em **Mapeando o tamanho da VM do Azure**, insira o tamanho da VM do Azure que você deseja mapear. Se você não quiser fazer isso manualmente, selecione **Computar VMs IaaS**. Se você inserir uma configuração manual e selecionar **Computar VMs IaaS**, a configuração manual poderá ser substituída. O processo de computação identifica automaticamente a melhor correspondência no tamanho da VM do Azure.
 

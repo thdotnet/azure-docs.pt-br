@@ -15,10 +15,10 @@ ms.date: 03/03/2018
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: ea46b5e57e4e508a3311de8633ae61d346b574eb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60764778"
 ---
 # <a name="integrate-your-ilb-app-service-environment-with-the-azure-application-gateway"></a>Integrar o Ambiente do Serviço de Aplicativo do ILB com o Gateway de Aplicativo do Azure #
@@ -67,7 +67,7 @@ Você também consegue colocar o gateway na sub-rede que usa o Ambiente do Servi
 
 2. Na área **Básico**:
 
-    a. Para **Nome**, insira o nome do Gateway de Aplicativo.
+   a. Para **Nome**, insira o nome do Gateway de Aplicativo.
 
    b. Para **Camada**, selecione **WAF**.
 
@@ -81,7 +81,7 @@ Você também consegue colocar o gateway na sub-rede que usa o Ambiente do Servi
 
 3. Na área **Configurações**:
 
-    a. Para **Rede virtual**, selecione a rede virtual do Ambiente do Serviço de Aplicativo.
+   a. Para **Rede virtual**, selecione a rede virtual do Ambiente do Serviço de Aplicativo.
 
    b. Para **Sub-rede**, selecione a sub-rede onde o Gateway de Aplicativo precisa ser implantado. Não use o GatewaySubnet, pois isso impedirá a criação de gateways de VPN.
 

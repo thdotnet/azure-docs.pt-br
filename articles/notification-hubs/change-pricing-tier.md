@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 01/28/2019
 ms.author: jowargo
 ms.openlocfilehash: 99ea21b3eb01a674a89c70a1b923f02e600cc3c5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60234499"
 ---
 # <a name="change-pricing-tier-of-an-azure-notification-hubs-namespace"></a>Alterar tipo de preço de um namespace de hubs de notificações do Microsoft Azure
@@ -82,5 +82,5 @@ Body: <NotificationHubPlan xmlns:i="https://www.w3.org/2001/XMLSchema-instance" 
 
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Para saber mais sobre esses tipos e preços, confira [Notification Hubs pricing](https://azure.microsoft.com/pricing/details/notification-hubs/) (Preços dos Hubs de Notificação).

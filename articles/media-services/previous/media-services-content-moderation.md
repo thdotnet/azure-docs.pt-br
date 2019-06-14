@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: sajagtap
 ms.openlocfilehash: eb16f5e1e72e5a9379ad530ab9677adba2ccbbcd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61465670"
 ---
 # <a name="use-azure-media-content-moderator-to-detect-possible-adult-and-racy-content"></a>Usar o Azure Media Content Moderator para detectar possível conteúdo adulto e erótico 
@@ -59,7 +59,7 @@ O JSON de saída contém os seguintes elementos:
 
 |Elemento|DESCRIÇÃO|
 |---|---|
-| iniciar |A hora de início do primeiro evento em "tiques". |
+| start |A hora de início do primeiro evento em "tiques". |
 | duration |A duração do fragmento, em “tiques”. |
 | intervalo |O intervalo de cada entrada de evento dentro do fragmento, em “tiques”. |
 | [events](#events-json-elements) |Cada evento representa um clipe e cada clipe contém quadros-chave detectados e rastreados dentro dessa duração de tempo. É uma matriz de eventos. A matriz externa representa um intervalo de tempo. A matriz interna é composta por 0 ou mais eventos que ocorreram nesse ponto no tempo.|
@@ -71,8 +71,8 @@ O JSON de saída contém os seguintes elementos:
 | reviewRecommended | `true` ou `false` dependendo de **adultScore** ou **racyScore** exceder os limites internos. |
 | adultScore | Pontuação de confiança para o possível conteúdo adulto, em uma escala de 0,00 a 0,99. |
 | racyScore | Pontuação de confiança para o possível conteúdo erótico, em uma escala de 0,00 a 0,99. |
-| índice | Índice do quadro em uma escala desde o primeiro quadro do índice até o último quadro do índice. |
-|  timestamp | O local do quadro, em "tiques". |
+| index | Índice do quadro em uma escala desde o primeiro quadro do índice até o último quadro do índice. |
+| timestamp | O local do quadro, em "tiques". |
 | shotIndex | O índice da captura pai. |
 
 

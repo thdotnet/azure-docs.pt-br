@@ -8,10 +8,10 @@ ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
 ms.openlocfilehash: 4c93abdfb5c523d48ce115ed7d3251a346937f5f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60775382"
 ---
 # <a name="rendering-applications"></a>Aplicativos de renderização
@@ -33,7 +33,7 @@ Além dos renderizadores incorporados no 3ds Max, os seguintes renderizadores es
 
 Invocar o `3dsmaxcmdio.exe` aplicativo para executar a renderização de linha de comando em um nó de pool.  Este aplicativo está no caminho de quando a tarefa é executada. O `3dsmaxcmdio.exe` aplicativo tem os mesmos parâmetros disponíveis que o `3dsmaxcmd.exe` aplicativo, que está documentado na [3ds Max ajuda documentação](https://help.autodesk.com/view/3DSMAX/2018/ENU/) (renderização | Seção de renderização de linha de comando).
 
-Por exemplo: 
+Por exemplo:
 
 ```
 3dsmaxcmdio.exe -v:5 -rfw:0 -start:{0} -end:{0} -bitmapPath:"%AZ_BATCH_JOB_PREP_WORKING_DIR%\sceneassets\images" -outputName:dragon.jpg -w:1280 -h:720 "%AZ_BATCH_JOB_PREP_WORKING_DIR%\scenes\dragon.max"

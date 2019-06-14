@@ -17,10 +17,10 @@ ms.date: 05/31/2017
 ms.author: saurabh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 00b4a145da9104cab410c5a07f6d7ec5ded5c45d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60800004"
 ---
 # <a name="use-monitoring-and-diagnostics-with-a-windows-vm-and-azure-resource-manager-templates"></a>Usar monitoramento e diagnóstico com uma VM Windows e modelos do Azure Resource Manager
@@ -63,7 +63,7 @@ Para um Gerenciador de Recursos simples baseado em máquina virtual, adicione a 
 ]
 ```
 
-Outra prática comum é adicionar a configuração de extensão ao nó de recursos raiz do modelo, em vez de defini-la no nó de recursos da máquina virtual. Com essa abordagem, você deve especificar claramente uma relação hierárquica entre a extensão e a máquina virtual com os valores *name* e *type*. Por exemplo:  
+Outra prática comum é adicionar a configuração de extensão ao nó de recursos raiz do modelo, em vez de defini-la no nó de recursos da máquina virtual. Com essa abordagem, você deve especificar claramente uma relação hierárquica entre a extensão e a máquina virtual com os valores *name* e *type*. Por exemplo: 
 
 ```json
 "name": "[concat(variables('vmName'),'Microsoft.Insights.VMDiagnosticsSettings')]",

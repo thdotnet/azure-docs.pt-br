@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/03/2018
 ms.openlocfilehash: 47235fa5676acd8de8a7cc0d969b813837faf0af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60628686"
 ---
 # <a name="use-a-u-sql-database-project-to-develop-a-u-sql-database-for-azure-data-lake"></a>Usar um projeto de banco de dados U-SQL para desenvolver o banco de dados U-SQL para o Azure Data Lake
@@ -105,7 +105,7 @@ Um projeto U-SQL pode fazer referência a um projeto de banco de dados U-SQL. A 
 
 ### <a name="how-to-add-a-u-sql-database-reference"></a>Como adicionar uma referência de banco de dados U-SQL
 
-1. Clique com o botão direito do mouse no projeto U-SQL no **Gerenciador de Soluções** e escolha **Adicionar Referência de Banco de Dados U-SQL...**.
+1. Clique com o botão direito do mouse no projeto U-SQL no **Gerenciador de Soluções** e escolha **Adicionar Referência de Banco de Dados U-SQL...** .
 
     ![Ferramentas do Data Lake para Visual Studio -- adicionar uma referência do projeto de banco de dados](./media/data-lake-analytics-data-lake-tools-develop-usql-database/data-lake-tools-add-database-project-reference.png)
 

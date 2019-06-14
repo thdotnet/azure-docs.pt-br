@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 04/06/2018
 ms.author: rapatchi
 ms.openlocfilehash: c33ecce5610dbef0dce13aa95f04ae4f0620603b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60949942"
 ---
 # <a name="service-fabric-plug-in-for-eclipse-java-application-development"></a>Plug-in do Service Fabric para o desenvolvimento de aplicativos Eclipse Java
@@ -115,7 +115,7 @@ Para aprender como depurar seu aplicativo no Eclipse usando o cluster local, con
 Você também pode implantar seu aplicativo no cluster local com o comando **Publish Application**:
 
 1. Clique com o botão direito do mouse no aplicativo Service Fabric e selecione **Service Fabric**.
-2. No menu de contexto, clique em **Publicar aplicativo...**.
+2. No menu de contexto, clique em **Publicar aplicativo...** .
 3. Na janela **Publicar aplicativo**, escolha **PublishProfiles / Local.json** como o Perfil de destino e clique em **Publicar**.
 
     ![Caixa de diálogo Publicar local](./media/service-fabric-get-started-eclipse/localjson.png)
@@ -154,7 +154,7 @@ Para publicar seu aplicativo na nuvem, siga estas etapas:
      ```
 
 2. Clique com o botão direito do mouse no aplicativo Service Fabric e selecione **Service Fabric**.
-3. No menu de contexto, clique em **Publicar aplicativo...**.
+3. No menu de contexto, clique em **Publicar aplicativo...** .
 3. Na janela **Publicar aplicativo**, escolha **PublishProfiles / Cloud.json** como o Perfil de destino e clique em **Publicar**.
 
     ![Caixa de diálogo Publicar em nuvem](./media/service-fabric-get-started-eclipse/cloudjson.png)

@@ -14,10 +14,10 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 1/24/2019
 ms.openlocfilehash: c89764d746f07e6100b1f250d4c107bb700fe014
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61098291"
 ---
 # <a name="incrementally-copy-new-files-based-on-time-partitioned-file-name-by-using-the-copy-data-tool"></a>Copiar incrementalmente os novos arquivos com base no nome de arquivo particionada de tempo usando a ferramenta Copy Data
@@ -48,11 +48,11 @@ Prepare seu armazenamento de BLOBs para o tutorial executando as seguintes etapa
     ![upload de arquivos](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/upload-file.png)
     
     > [!NOTE]
-    > Ajuste o nome da pasta com a hora UTC.  Por exemplo, se a hora UTC atual for 2:03 PM em 26 de fevereiro de 2019, você pode criar o caminho da pasta como **fonte/2019/02/26/14/** pela regra de **origem / {ano} / {Month} / {Day} / {hora} /**.
+    > Ajuste o nome da pasta com a hora UTC.  Por exemplo, se a hora UTC atual for 2:03 PM em 26 de fevereiro de 2019, você pode criar o caminho da pasta como **fonte/2019/02/26/14/** pela regra de **origem / {ano} / {Month} / {Day} / {hora} /** .
 
 2. Crie um contêiner denominado **destino**. É possível usar várias ferramentas para executar essas tarefas, como o [Azure Storage Explorer](https://storageexplorer.com/).
 
-## <a name="create-a-data-factory"></a>Criar uma data factory
+## <a name="create-a-data-factory"></a>Criar um data factory
 
 1. No menu à esquerda, selecione **Criar um recurso** > **Dados + Análise** > **Data Factory**: 
    
@@ -66,11 +66,11 @@ Prepare seu armazenamento de BLOBs para o tutorial executando as seguintes etapa
    
    ![Mensagem de erro do novo data factory](./media/tutorial-copy-data-tool/name-not-available-error.png)
    
-   Se você receber uma mensagem de erro sobre o valor do nome, insira um nome diferente para o data factory. Por exemplo, use o nome _**seunome**_**ADFTutorialDataFactory**. Para ver as regras de nomenclatura de artefatos do Data Factory, confira [Regras de nomenclatura do Data Factory](naming-rules.md).
+   Se você receber uma mensagem de erro sobre o valor do nome, insira um nome diferente para o data factory. Por exemplo, use o nome _**seunome**_ **ADFTutorialDataFactory**. Para ver as regras de nomenclatura de artefatos do Data Factory, confira [Regras de nomenclatura do Data Factory](naming-rules.md).
 3. Selecione a **assinatura** do Azure na qual deseja criar o novo data factory. 
 4. Em **Grupo de Recursos**, use uma das seguintes etapas:
      
-     a. Selecione **Usar existente**e selecione um grupo de recursos existente na lista suspensa.
+    a. Selecione **Usar existente**e selecione um grupo de recursos existente na lista suspensa.
 
     b. Selecione **Criar novo**e insira o nome de um grupo de recursos. 
          
@@ -96,13 +96,13 @@ Prepare seu armazenamento de BLOBs para o tutorial executando as seguintes etapa
    
 2. Sobre o **propriedades** página, execute as seguintes etapas:
 
-     a. Sob **nome da tarefa**, insira **DeltaCopyFromBlobPipeline**.
+    a. Sob **nome da tarefa**, insira **DeltaCopyFromBlobPipeline**.
 
     b. Sob **cadência de tarefa ou agendamento de tarefa**, selecione **executados regularmente em programação**.
 
     c. Sob **o tipo de disparador**, selecione **janela em cascata**.
     
-    d. Sob **recorrência**, insira **1 hora (s)**. 
+    d. Sob **recorrência**, insira **1 hora (s)** . 
     
     e. Selecione **Avançar**. 
     
@@ -111,7 +111,7 @@ Prepare seu armazenamento de BLOBs para o tutorial executando as seguintes etapa
     ![Página Propriedades](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/copy-data-tool-properties-page.png)
 3. Na página **Configurações do armazenamento de dados**, conclua as seguintes etapas:
 
-     a. Clique em **+ criar nova conexão**, para adicionar uma conexão.
+    a. Clique em **+ criar nova conexão**, para adicionar uma conexão.
 
     ![Página Armazenamento de dados de origem](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/source-data-store-page.png)
     
@@ -128,7 +128,7 @@ Prepare seu armazenamento de BLOBs para o tutorial executando as seguintes etapa
    ![Página Armazenamento de dados de origem](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/source-data-store-page-select-linkedservice.png)
 4. Na página **Escolher o arquivo ou a pasta de entrada**, execute as etapas a seguir:
     
-     a. Procure e selecione o **fonte** contêiner, em seguida, selecione **escolha**.
+    a. Procure e selecione o **fonte** contêiner, em seguida, selecione **escolha**.
     
     ![Escolha o arquivo ou a pasta de entrada](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/choose-input-file-folder.png)
     
@@ -148,7 +148,7 @@ Prepare seu armazenamento de BLOBs para o tutorial executando as seguintes etapa
     ![Página Armazenamento de dados de destino](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/destination-data-store-page-select-linkedservice.png) 
 6. Sobre o **escolha o arquivo de saída ou a pasta** página, faça as seguintes etapas:
     
-     a. Procure e selecione o **destino** pasta, em seguida, clique em **escolha**.
+    a. Procure e selecione o **destino** pasta, em seguida, clique em **escolha**.
     
     ![Escolha o arquivo ou a pasta de saída](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/choose-output-file-folder.png)   
     
@@ -184,7 +184,7 @@ Prepare seu armazenamento de BLOBs para o tutorial executando as seguintes etapa
     ![Monitorar execuções de pipeline](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/monitor-pipeline-runs4.png)
     
     > [!NOTE]
-    > Você pode estar ciente de que um novo caminho de pasta é necessário a ser criado. Ajuste o nome da pasta com a hora UTC.  Por exemplo, se a hora UTC atual é 3:20 PM em 26 de fevereiro de 2019, você pode criar o caminho da pasta como **fonte/2019/02/26/15/** pela regra de **{ano} / {Month} / {Day} / {hora} /**.
+    > Você pode estar ciente de que um novo caminho de pasta é necessário a ser criado. Ajuste o nome da pasta com a hora UTC.  Por exemplo, se a hora UTC atual é 3:20 PM em 26 de fevereiro de 2019, você pode criar o caminho da pasta como **fonte/2019/02/26/15/** pela regra de **{ano} / {Month} / {Day} / {hora} /** .
     
 13. Para voltar para o **as execuções de Pipeline** exibição, selecione **todas as execuções de Pipelines**e aguarde até que o mesmo canal que está sendo disparado novamente automaticamente após a outra de uma hora.  
 

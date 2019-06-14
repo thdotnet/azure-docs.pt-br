@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: 3656acfb-eefd-4e75-b5d2-73da56c424c9
 ms.date: 10/15/2017
 ms.openlocfilehash: 134a8f9625b45a8196ebd47f10286093f6ba0d46
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61459572"
 ---
 # <a name="create-logic-app-workflows-from-prebuilt-templates"></a>Criar fluxos de trabalho de aplicativo lógico com modelos predefinidos
@@ -63,7 +63,7 @@ Caso você não tenha uma assinatura do Azure, [crie uma conta gratuita do Azure
    Depois que o Azure implanta o aplicativo lógico, o Designer de Aplicativos Lógicos é exibido e mostra uma página com um vídeo de introdução. 
    Neste vídeo, você encontrará modelos para padrões de aplicativos lógicos comuns. 
 
-5. Role a tela até passar pelo vídeo de introdução e pelos gatilhos comuns até **Modelos**. Escolha um modelo predefinido. Por exemplo: 
+5. Role a tela até passar pelo vídeo de introdução e pelos gatilhos comuns até **Modelos**. Escolha um modelo predefinido. Por exemplo:
 
    ![Escolha um modelo de aplicativo lógico](./media/logic-apps-create-logic-apps-from-templates/choose-logic-app-template.png)
 
@@ -71,7 +71,7 @@ Caso você não tenha uma assinatura do Azure, [crie uma conta gratuita do Azure
    > Para criar seu aplicativo lógico do zero, escolha **Aplicativo Lógico em Branco**.
 
    Quando você seleciona um modelo predefinido, é possível exibir mais informações sobre esse modelo. 
-   Por exemplo: 
+   Por exemplo:
 
    ![Escolha um modelo predefinido](./media/logic-apps-create-logic-apps-from-templates/logic-app-choose-prebuilt-template.png)
 
@@ -85,7 +85,7 @@ Caso você não tenha uma assinatura do Azure, [crie uma conta gratuita do Azure
 
    * Se você já configurou essas conexões, escolha **Continuar**.
 
-   Por exemplo: 
+   Por exemplo:
 
    ![Criar conexões](./media/logic-apps-create-logic-apps-from-templates/logic-app-create-connection.png)
 
@@ -103,16 +103,16 @@ Caso você não tenha uma assinatura do Azure, [crie uma conta gratuita do Azure
 
 1. No [Portal do Azure](https://portal.azure.com "Portal do Azure"), encontre e abra seu aplicativo lógico no Designer de Aplicativos Lógicos.
 
-2. Na barra de ferramentas do designer, escolha **Modelos**. Essa ação descartará as alterações não salvas, por isso uma mensagem de aviso será exibida para você poder confirmar que deseja continuar. Para confirmar, escolha **OK**. Por exemplo: 
+2. Na barra de ferramentas do designer, escolha **Modelos**. Essa ação descartará as alterações não salvas, por isso uma mensagem de aviso será exibida para você poder confirmar que deseja continuar. Para confirmar, escolha **OK**. Por exemplo:
 
    ![Escolha “Modelos”](./media/logic-apps-create-logic-apps-from-templates/logic-app-update-existing-with-template.png)
 
-3. Role a tela até passar pelo vídeo de introdução e pelos gatilhos comuns até **Modelos**. Escolha um modelo predefinido. Por exemplo: 
+3. Role a tela até passar pelo vídeo de introdução e pelos gatilhos comuns até **Modelos**. Escolha um modelo predefinido. Por exemplo:
 
    ![Escolha um modelo de aplicativo lógico](./media/logic-apps-create-logic-apps-from-templates/choose-logic-app-template.png)
 
    Quando você seleciona um modelo predefinido, é possível exibir mais informações sobre esse modelo. 
-   Por exemplo: 
+   Por exemplo:
 
    ![Escolha um modelo predefinido](./media/logic-apps-create-logic-apps-from-templates/logic-app-choose-prebuilt-template.png)
 

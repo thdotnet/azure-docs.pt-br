@@ -9,10 +9,10 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/29/2018
 ms.openlocfilehash: 7082ebc4ca3066f84ca9790797cfa04e437f78a3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60626172"
 ---
 # <a name="reference---choose-a-communication-protocol"></a>Referência – escolha um protocolo de comunicação
@@ -29,7 +29,7 @@ Para saber mais sobre como esses protocolos dão suporte a recursos específicos
 
 A tabela a seguir fornece as recomendações de alto nível para sua escolha de protocolo:
 
-| Protocolo | Quando você deve escolher este protocolo |
+| Protocol | Quando você deve escolher este protocolo |
 | --- | --- |
 | MQTT <br> MQTT sobre WebSocket |Use em todos os dispositivos que não exigem conectar vários dispositivos (cada um com suas próprias credenciais por dispositivo) sobre a mesma conexão TLS. |
 | AMQP <br> AMQP sobre WebSocket |Use em gateways de campo e de nuvem para tirar proveito da multiplexação de conexão entre dispositivos. |
@@ -54,7 +54,7 @@ Considere os seguintes pontos ao escolher seu protocolo de comunicação do lado
 
 Os dispositivos podem se comunicar com o Hub IoT no Azure usando uma variedade de protocolos. Normalmente, a opção de protocolo é orientada por requisitos específicos da solução. A tabela a seguir lista as portas de saída que devem ser abertas para um dispositivo para poder usar um protocolo específico:
 
-| Protocolo | Porta |
+| Protocol | Port |
 | --- | --- |
 | MQTT |8883 |
 | MQTT sobre WebSockets |443 |

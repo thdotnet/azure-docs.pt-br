@@ -13,10 +13,10 @@ ms.reviewer: genemi
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: e76b5ecd3d6401c317f6500ec376fc25d3fa55b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60331121"
 ---
 # <a name="how-to-use-batching-to-improve-sql-database-application-performance"></a>Como usar o envio em lote para melhorar o desempenho do aplicativo Banco de Dados SQL
@@ -105,7 +105,7 @@ A tabela a seguir mostra alguns resultados de testes ad-hoc. Os testes executara
 | 100 |12662 |10395 |
 | 1000 |128852 |102917 |
 
-**Do Azure para o Azure (mesmo datacenter)**:
+**Do Azure para o Azure (mesmo datacenter)** :
 
 | Operações | Sem transação (ms) | Com transação (ms) |
 | --- | --- | --- |

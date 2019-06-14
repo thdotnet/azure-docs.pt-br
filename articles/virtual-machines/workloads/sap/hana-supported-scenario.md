@@ -15,10 +15,10 @@ ms.date: 07/06/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 501c5ffa86f2360e44c187e087f7285bbf4084fd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60477600"
 ---
 # <a name="supported-scenarios-for-hana-large-instances"></a>Cenários suportados para instâncias grandes do HANA
@@ -62,13 +62,13 @@ Cada servidor provisionado vem pré-configurado com os conjuntos de interfaces E
 - **C**: essa interface é usada na conectividade entre o nó e o armazenamento.
 - **D**: essa interface é usada pela conectividade entre o nó e o dispositivo ISCSI para a configuração do STONITH. Essa interface é configurada somente quando a configuração do HSR é solicitada.  
 
-| INTERFACES LÓGICAS DA NIC | TIPO SKU  | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
+| INTERFACES LÓGICAS DA NIC | TIPO SKU | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
 | --- | --- | --- | --- | --- |
-| O  | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
+| O | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
 | b | TIPO I | eth2.tenant | eno3.tenant | Nó para nó |
 | C | TIPO I | eth1.tenant | eno2.tenant | Nó para armazenamento |
 | D | TIPO I | eth4.tenant | eno4.tenant | STONITH |
-| O  | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
+| O | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
 | b | TIPO II | VLAN\<tenantNo + 2 > | team0.tenant+2 | Nó para nó |
 | C | TIPO II | VLAN\<tenantNo + 1 > | team0.tenant+1 | Nó para armazenamento |
 | D | TIPO II | VLAN\<tenantNo + 3 > | team0.tenant+3 | STONITH |
@@ -136,13 +136,13 @@ Esta topologia suporta um nó em uma configuração de scale up com um SID.
 ### <a name="ethernet"></a>Ethernet
 As seguintes interfaces de rede são pré-configuradas:
 
-| INTERFACES LÓGICAS DA NIC | TIPO SKU  | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
+| INTERFACES LÓGICAS DA NIC | TIPO SKU | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
 | --- | --- | --- | --- | --- |
-| O  | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
+| O | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
 | b | TIPO I | eth2.tenant | eno3.tenant | Configurado, mas não em uso |
 | C | TIPO I | eth1.tenant | eno2.tenant | Nó para armazenamento |
 | D | TIPO I | eth4.tenant | eno4.tenant | Configurado, mas não em uso |
-| O  | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
+| O | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
 | b | TIPO II | VLAN\<tenantNo + 2 > | team0.tenant+2 | Configurado, mas não em uso |
 | C | TIPO II | VLAN\<tenantNo + 1 > | team0.tenant+1 | Nó para armazenamento |
 | D | TIPO II | VLAN\<tenantNo + 3 > | team0.tenant+3 | Configurado, mas não em uso |
@@ -171,13 +171,13 @@ Esta topologia suporta um nó em uma configuração de expansão com vários SID
 ### <a name="ethernet"></a>Ethernet
 As seguintes interfaces de rede são pré-configuradas:
 
-| INTERFACES LÓGICAS DA NIC | TIPO SKU  | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
+| INTERFACES LÓGICAS DA NIC | TIPO SKU | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
 | --- | --- | --- | --- | --- |
-| O  | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
+| O | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
 | b | TIPO I | eth2.tenant | eno3.tenant | Configurado, mas não em uso |
 | C | TIPO I | eth1.tenant | eno2.tenant | Nó para armazenamento |
 | D | TIPO I | eth4.tenant | eno4.tenant | Configurado, mas não em uso |
-| O  | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
+| O | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
 | b | TIPO II | VLAN\<tenantNo + 2 > | team0.tenant+2 | Configurado, mas não em uso |
 | C | TIPO II | VLAN\<tenantNo + 1 > | team0.tenant+1 | Nó para armazenamento |
 | D | TIPO II | VLAN\<tenantNo + 3 > | team0.tenant+3 | Configurado, mas não em uso |
@@ -211,13 +211,13 @@ Esta topologia suporta um nó em uma configuração de scale up com um ou vário
 ### <a name="ethernet"></a>Ethernet
 As seguintes interfaces de rede são pré-configuradas:
 
-| INTERFACES LÓGICAS DA NIC | TIPO SKU  | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
+| INTERFACES LÓGICAS DA NIC | TIPO SKU | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
 | --- | --- | --- | --- | --- |
-| O  | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
+| O | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
 | b | TIPO I | eth2.tenant | eno3.tenant | Configurado, mas não em uso |
 | C | TIPO I | eth1.tenant | eno2.tenant | Nó para armazenamento |
 | D | TIPO I | eth4.tenant | eno4.tenant | Configurado, mas não em uso |
-| O  | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
+| O | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
 | b | TIPO II | VLAN\<tenantNo + 2 > | team0.tenant+2 | Configurado, mas não em uso |
 | C | TIPO II | VLAN\<tenantNo + 1 > | team0.tenant+1 | Nó para armazenamento |
 | D | TIPO II | VLAN\<tenantNo + 3 > | team0.tenant+3 | Configurado, mas não em uso |
@@ -252,13 +252,13 @@ Esta topologia suporta um nó em uma configuração de scale up com um ou vário
 ### <a name="ethernet"></a>Ethernet
 As seguintes interfaces de rede são pré-configuradas:
 
-| INTERFACES LÓGICAS DA NIC | TIPO SKU  | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
+| INTERFACES LÓGICAS DA NIC | TIPO SKU | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
 | --- | --- | --- | --- | --- |
-| O  | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
+| O | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
 | b | TIPO I | eth2.tenant | eno3.tenant | Configurado, mas não em uso |
 | C | TIPO I | eth1.tenant | eno2.tenant | Nó para armazenamento |
 | D | TIPO I | eth4.tenant | eno4.tenant | Configurado, mas não em uso |
-| O  | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
+| O | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
 | b | TIPO II | VLAN\<tenantNo + 2 > | team0.tenant+2 | Configurado, mas não em uso |
 | C | TIPO II | VLAN\<tenantNo + 1 > | team0.tenant+1 | Nó para armazenamento |
 | D | TIPO II | VLAN\<tenantNo + 3 > | team0.tenant+3 | Configurado, mas não em uso |
@@ -306,13 +306,13 @@ Essa topologia suporta dois nós para a configuração do HANA System Replicatio
 ### <a name="ethernet"></a>Ethernet
 As seguintes interfaces de rede são pré-configuradas:
 
-| INTERFACES LÓGICAS DA NIC | TIPO SKU  | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
+| INTERFACES LÓGICAS DA NIC | TIPO SKU | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
 | --- | --- | --- | --- | --- |
-| O  | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
+| O | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
 | b | TIPO I | eth2.tenant | eno3.tenant | Configurado, mas não em uso |
 | C | TIPO I | eth1.tenant | eno2.tenant | Nó para armazenamento |
 | D | TIPO I | eth4.tenant | eno4.tenant | Used for STONITH |
-| O  | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
+| O | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
 | b | TIPO II | VLAN\<tenantNo + 2 > | team0.tenant+2 | Configurado, mas não em uso |
 | C | TIPO II | VLAN\<tenantNo + 1 > | team0.tenant+1 | Nó para armazenamento |
 | D | TIPO II | VLAN\<tenantNo + 3 > | team0.tenant+3 | Used for STONITH |
@@ -354,13 +354,13 @@ No diagrama, o cenário de várias finalidades é representado onde, no site de 
 ### <a name="ethernet"></a>Ethernet
 As seguintes interfaces de rede são pré-configuradas:
 
-| INTERFACES LÓGICAS DA NIC | TIPO SKU  | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
+| INTERFACES LÓGICAS DA NIC | TIPO SKU | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
 | --- | --- | --- | --- | --- |
-| O  | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
+| O | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
 | b | TIPO I | eth2.tenant | eno3.tenant | Configurado, mas não em uso |
 | C | TIPO I | eth1.tenant | eno2.tenant | Nó para armazenamento |
 | D | TIPO I | eth4.tenant | eno4.tenant | Used for STONITH |
-| O  | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
+| O | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
 | b | TIPO II | VLAN\<tenantNo + 2 > | team0.tenant+2 | Configurado, mas não em uso |
 | C | TIPO II | VLAN\<tenantNo + 1 > | team0.tenant+1 | Nó para armazenamento |
 | D | TIPO II | VLAN\<tenantNo + 3 > | team0.tenant+3 | Used for STONITH |
@@ -413,13 +413,13 @@ Esta topologia suporta dois nós em uma configuração de failover automático d
 ### <a name="ethernet"></a>Ethernet
 As seguintes interfaces de rede são pré-configuradas:
 
-| INTERFACES LÓGICAS DA NIC | TIPO SKU  | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
+| INTERFACES LÓGICAS DA NIC | TIPO SKU | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
 | --- | --- | --- | --- | --- |
-| O  | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
+| O | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
 | b | TIPO I | eth2.tenant | eno3.tenant | Nó para comunicação de nó |
 | C | TIPO I | eth1.tenant | eno2.tenant | Nó para armazenamento |
 | D | TIPO I | eth4.tenant | eno4.tenant | Configurado, mas não em uso |
-| O  | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
+| O | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
 | b | TIPO II | VLAN\<tenantNo + 2 > | team0.tenant+2 | Nó para comunicação de nó |
 | C | TIPO II | VLAN\<tenantNo + 1 > | team0.tenant+1 | Nó para armazenamento |
 | D | TIPO II | VLAN\<tenantNo + 3 > | team0.tenant+3 | Configurado, mas não em uso |
@@ -454,13 +454,13 @@ Essa topologia permite vários nós em uma configuração de expansão. Existe u
 ### <a name="ethernet"></a>Ethernet
 As seguintes interfaces de rede são pré-configuradas:
 
-| INTERFACES LÓGICAS DA NIC | TIPO SKU  | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
+| INTERFACES LÓGICAS DA NIC | TIPO SKU | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
 | --- | --- | --- | --- | --- |
-| O  | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
+| O | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
 | b | TIPO I | eth2.tenant | eno3.tenant | Nó para comunicação de nó |
 | C | TIPO I | eth1.tenant | eno2.tenant | Nó para armazenamento |
 | D | TIPO I | eth4.tenant | eno4.tenant | Configurado, mas não em uso |
-| O  | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
+| O | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
 | b | TIPO II | VLAN\<tenantNo + 2 > | team0.tenant+2 | Nó para comunicação de nó |
 | C | TIPO II | VLAN\<tenantNo + 1 > | team0.tenant+1 | Nó para armazenamento |
 | D | TIPO II | VLAN\<tenantNo + 3 > | team0.tenant+3 | Configurado, mas não em uso |
@@ -490,13 +490,13 @@ Essa topologia permite vários nós em uma configuração de expansão. Há um n
 ### <a name="ethernet"></a>Ethernet
 As seguintes interfaces de rede são pré-configuradas:
 
-| INTERFACES LÓGICAS DA NIC | TIPO SKU  | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
+| INTERFACES LÓGICAS DA NIC | TIPO SKU | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
 | --- | --- | --- | --- | --- |
-| O  | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
+| O | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
 | b | TIPO I | eth2.tenant | eno3.tenant | Nó para comunicação de nó |
 | C | TIPO I | eth1.tenant | eno2.tenant | Nó para armazenamento |
 | D | TIPO I | eth4.tenant | eno4.tenant | Configurado, mas não em uso |
-| O  | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
+| O | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
 | b | TIPO II | VLAN\<tenantNo + 2 > | team0.tenant+2 | Nó para comunicação de nó |
 | C | TIPO II | VLAN\<tenantNo + 1 > | team0.tenant+1 | Nó para armazenamento |
 | D | TIPO II | VLAN\<tenantNo + 3 > | team0.tenant+3 | Configurado, mas não em uso |
@@ -529,13 +529,13 @@ Esta topologia permite vários nós em uma expansão com DR. Ambos normal e mult
 ### <a name="ethernet"></a>Ethernet
 As seguintes interfaces de rede são pré-configuradas:
 
-| INTERFACES LÓGICAS DA NIC | TIPO SKU  | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
+| INTERFACES LÓGICAS DA NIC | TIPO SKU | Nome com SUSE OS | Nome com RHEL OS | Caso de uso|
 | --- | --- | --- | --- | --- |
-| O  | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
+| O | TIPO I | eth0.tenant | eno1.tenant | Cliente para HLI |
 | b | TIPO I | eth2.tenant | eno3.tenant | Nó para comunicação de nó |
 | C | TIPO I | eth1.tenant | eno2.tenant | Nó para armazenamento |
 | D | TIPO I | eth4.tenant | eno4.tenant | Configurado, mas não em uso |
-| O  | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
+| O | TIPO II | vlan\<tenantNo> | team0.tenant | Cliente para HLI |
 | b | TIPO II | VLAN\<tenantNo + 2 > | team0.tenant+2 | Nó para comunicação de nó |
 | C | TIPO II | VLAN\<tenantNo + 1 > | team0.tenant+1 | Nó para armazenamento |
 | D | TIPO II | VLAN\<tenantNo + 3 > | team0.tenant+3 | Configurado, mas não em uso |
@@ -550,7 +550,7 @@ Os seguintes pontos de montagem são pré-configurados:
 |/hana/data/SID/mnt00001 | Arquivos de dados são instalados para o SID de produção | 
 |/hana/log/SID/mnt00001 | Arquivos de log são instalados para o SID de produção | 
 |/hana/logbackups/SID | Redo logs para produção SID |
-|**No nó DR** |
+|**No nó DR**|
 |/hana/shared | Instalação do HANA para produção SID | 
 |/hana/data/SID/mnt00001 | Arquivos de dados são instalados para o SID de produção | 
 |/hana/log/SID/mnt00001 | Arquivos de log são instalados para o SID de produção | 

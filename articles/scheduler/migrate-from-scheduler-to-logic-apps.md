@@ -10,10 +10,10 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 09/20/2018
 ms.openlocfilehash: 25ed66fd75301475542dbac8e8a01670ee37563c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60531686"
 ---
 # <a name="migrate-azure-scheduler-jobs-to-azure-logic-apps"></a>Migrar trabalhos do Agendador do Azure para Aplicativos Lógicos do Azure
@@ -159,7 +159,7 @@ Veja outras maneiras como você pode personalizar seus trabalhos.
 
 Para controlar a maneira como uma ação tenta ser executada novamente em seu aplicativo lógico quando ocorrem falhas intermitentes, é possível definir a [política de repetição](../logic-apps/logic-apps-exception-handling.md#retry-policies) nas configurações de cada ação, por exemplo:
 
-1. Abra o menu (**...**) da ação e selecione **Configurações**.
+1. Abra o menu ( **...** ) da ação e selecione **Configurações**.
 
    ![Abrir configurações da ação](./media/migrate-from-scheduler-to-logic-apps/action-settings.png)
 
@@ -179,7 +179,7 @@ No Agendador do Azure, se a ação padrão não for executada, será possível e
 
    ![Adicionar ação paralela](./media/migrate-from-scheduler-to-logic-apps/add-parallel-action.png)
 
-1. Na ação alternativa, abra o menu (**...**) e selecione **Configurar execução depois**.
+1. Na ação alternativa, abra o menu ( **...** ) e selecione **Configurar execução depois**.
 
    ![Configurar execução depois](./media/migrate-from-scheduler-to-logic-apps/configure-run-after.png)
 

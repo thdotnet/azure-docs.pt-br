@@ -15,10 +15,10 @@ ms.date: 02/24/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: bb23cbc275e01eab5361504c547c020b0a29f4c3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60533171"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-the-azure-portal"></a>Gerenciar o acesso aos recursos do Azure usando o RBAC e o portal do Azure
@@ -29,7 +29,7 @@ O [RBAC (controle de acesso baseado em função)](overview.md) serve para gerenc
 
 Para adicionar e remover as atribuições de função, você deve ter:
 
-- `Microsoft.Authorization/roleAssignments/write` e `Microsoft.Authorization/roleAssignments/delete` permissões, como [administrador de acesso do usuário](built-in-roles.md#user-access-administrator) ou [proprietário](built-in-roles.md#owner)
+- as permissões `Microsoft.Authorization/roleAssignments/write` e `Microsoft.Authorization/roleAssignments/delete`, como [Administrador de Acesso do Usuário](built-in-roles.md#user-access-administrator) ou [Proprietário](built-in-roles.md#owner)
 
 ## <a name="overview-of-access-control-iam"></a>Visão geral do controle de acesso (IAM)
 
@@ -69,7 +69,7 @@ A primeira coisa que você precisa decidir é onde abrir a folha IAM (controle) 
 
 1. Clique no recurso específico.
 
-1. Clique em **Controle de acesso (IAM)**.
+1. Clique em **Controle de acesso (IAM)** .
 
     O exemplo a seguir mostra um exemplo de folha de controle (IAM) de acesso para uma assinatura. Se você fizer qualquer alteração de controle de acesso aqui, eles seriam aplica a toda a assinatura.
 
@@ -161,7 +161,7 @@ Para tornar um usuário administrador de uma assinatura do Azure, atribua-o à f
 
 1. Clique na assinatura em que você deseja conceder acesso.
 
-1. Clique em **controle de acesso (IAM)**.
+1. Clique em **controle de acesso (IAM)** .
 
 1. Clique na guia **Atribuições de funções** para visualizar todas as atribuições de função para essa assinatura.
 

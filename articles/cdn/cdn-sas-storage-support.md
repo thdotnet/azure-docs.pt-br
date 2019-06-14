@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 06/21/2018
 ms.author: magattus
 ms.openlocfilehash: 7edf0a9f8d4eb4c01b6d80fd82a1061b6cbb1e35
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60324061"
 ---
 # <a name="using-azure-cdn-with-sas"></a>Usando a CDN do Azure com SAS
@@ -39,7 +39,7 @@ Depois de gerar um token SAS, você pode acessar o arquivo de armazenamento de b
 
 `https://<account name>.blob.core.windows.net/<container>/<file>?sv=<SAS token>`
  
-Por exemplo: 
+Por exemplo:
  ```
 https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&ss=b&srt=co&sp=r&se=2038-01-02T21:30:49Z&st=2018-01-02T13:30:49Z&spr=https&sig=QehoetQFWUEd1lhU5iOMGrHBmE727xYAbKJl5ohSiWI%3D
 ```
@@ -60,7 +60,7 @@ Esta opção é a mais simples e usa apenas um token de SAS, que é passado da C
    
    A URL de ponto de extremidade de CDN tem o seguinte formato: `https://<endpoint hostname>.azureedge.net/<container>/<file>?sv=<SAS token>`
 
-   Por exemplo:    
+   Por exemplo:   
    ```
    https://demoendpoint.azureedge.net/container1/demo.jpg/?sv=2017-07-29&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
    ```
@@ -91,7 +91,7 @@ Essa opção só está disponível para perfis da **CDN Premium do Azure da Veri
 
 2. Depois que a nova regra se torna ativa, qualquer pessoa pode acessar arquivos no contêiner especificado no ponto de extremidade de CDN, independentemente de a pessoa usar ou não um token SAS na URL. Este é o formato: `https://<endpoint hostname>.azureedge.net/<container>/<file>`
  
-   Por exemplo:    
+   Por exemplo:   
    `https://sasstoragedemo.azureedge.net/container1/demo.jpg`
        
 
@@ -106,7 +106,7 @@ Para usar a autenticação de token de segurança da CDN do Azure, você precisa
    Uma URL de ponto de extremidade de token de segurança tem o seguinte formato:   
    `https://<endpoint hostname>.azureedge.net/<container>/<file>?<security_token>`
  
-   Por exemplo:    
+   Por exemplo:   
    ```
    https://sasstoragedemo.azureedge.net/container1/demo.jpg?a4fbc3710fd3449a7c99986bkquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
    ```
@@ -140,7 +140,7 @@ Como parâmetros da SAS não são visíveis para a CDN do Azure, a CDN do Azure 
 | Endereços IP permitidos | Opcional. Se estiver usando a **CDN do Azure da Verizon**, você poderá definir esse parâmetro para os intervalos definidos em [Azure CDN from Verizon Edge Server IP Ranges](/azure/cdn/cdn-pop-list-api) (CDN do Azure de Intervalos de IP do Servidor de Borda Verizon). Se estiver usando a **CDN do Azure da Akamai**, você não poderá definir o parâmetro de intervalos de IP porque os endereços de IP não são estáticos.|
 | Protocolos permitidos | Os protocolos permitidos para uma solicitação feita com a conta de SAS. A configuração HTTPS é recomendada.|
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Para saber mais sobre SAS, veja os seguintes artigos:
 - [Como usar SAS (assinaturas de acesso compartilhado)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)

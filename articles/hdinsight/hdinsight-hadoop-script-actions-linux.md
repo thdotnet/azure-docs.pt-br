@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/22/2019
 ms.openlocfilehash: 66132a2a6a7b5b89bca0767efe7c194ca3dec051
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64687441"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Desenvolvimento de ação de script com o HDInsight
@@ -161,13 +161,13 @@ HDInsight registra em log a saída do script que é gravada para STDOUT e STDERR
 > [!NOTE]  
 > O Apache Ambari só estará disponível se o cluster for criado com êxito. Se você usar uma ação de script durante a criação do cluster e a criação falhar, confira a seção de solução de problemas [Personalizar clusters HDInsight usando a ação de script](hdinsight-hadoop-customize-cluster-linux.md#troubleshooting) para conhecer outras maneiras de acessar informações registradas em log.
 
-A maioria dos pacotes de instalação e utilitários já grava informações para STDOUT e STDERR; no entanto, talvez você queira adicionar registro em log adicional. Para enviar texto para STDOUT, use `echo`. Por exemplo: 
+A maioria dos pacotes de instalação e utilitários já grava informações para STDOUT e STDERR; no entanto, talvez você queira adicionar registro em log adicional. Para enviar texto para STDOUT, use `echo`. Por exemplo:
 
 ```bash
 echo "Getting ready to install Foo"
 ```
 
-Por padrão, `echo` envia a cadeia de caracteres para STDOUT. Para direcioná-lo para STDERR, adicione `>&2` antes de `echo`. Por exemplo: 
+Por padrão, `echo` envia a cadeia de caracteres para STDOUT. Para direcioná-lo para STDERR, adicione `>&2` antes de `echo`. Por exemplo:
 
 ```bash
 >&2 echo "An error occurred installing Foo"

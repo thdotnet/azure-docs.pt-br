@@ -18,10 +18,10 @@ ms.date: 02/03/2019
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: a840deb2349d952b1ef4faeab4ee860e6b0b99df
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60651552"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
@@ -196,7 +196,7 @@ ms.locfileid: "60651552"
 
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-file-share-on-azure"></a>Alta disponibilidade de vários SIDs da instância do SAP ASCS com clustering de failover do Windows Server e compartilhamento de arquivos no Azure
 
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 
 Você pode gerenciar vários endereços IP virtuais usando um [balanceador de carga interno do Azure][load-balancer-multivip-overview]. 
@@ -268,8 +268,8 @@ Você pode reutilizar existente \<SAPGlobalHost > e o Volume1 do SAP primeiro \<
 _**Figura 3:** SOFS com vários SIDs é o mesmo que o Nome de host Global do SAP_
 
 > [!IMPORTANT]
->Para o segundo sistema **SAP \<SID2>**, o mesmo Volume1 e a mesma rede **\<SAPGlobalHost>** estão sendo usados.
->Como você já definiu **SAPMNT** como o nome do compartilhamento para vários sistemas SAP, para reutilizar o nome de rede **\<SAPGlobalHost >**, você deve usar o mesmo **Volume1**.
+>Para o segundo sistema **SAP \<SID2>** , o mesmo Volume1 e a mesma rede **\<SAPGlobalHost>** estão sendo usados.
+>Como você já definiu **SAPMNT** como o nome do compartilhamento para vários sistemas SAP, para reutilizar o nome de rede **\<SAPGlobalHost >** , você deve usar o mesmo **Volume1**.
 >
 >O caminho do arquivo para o \<SID2 > host global é C:\ClusterStorage\\**Volume1**\usr\sap\<SID2 > \SYS\.
 >
@@ -327,7 +327,7 @@ Set-Acl $UsrSAPFolder $Acl -Verbose
 
 ### <a name="prepare-the-infrastructure-on-the-sofs-cluster-by-using-a-different-sap-global-host"></a>Prepare a infraestrutura no cluster SOFS usando um Host Global do SAP diferente
 
-Você pode configurar o segundo SOFS (por exemplo, a função de cluster do segundo SOFS com **\<SAPGlobalHost2>** e um **Volume2** diferente para o segundo **\<SID2>**).
+Você pode configurar o segundo SOFS (por exemplo, a função de cluster do segundo SOFS com **\<SAPGlobalHost2>** e um **Volume2** diferente para o segundo **\<SID2>** ).
 
 ![Figura 4: SOFS com vários SIDs é o mesmo que o nome de host 2 GLOBAL do SAP][sap-ha-guide-figure-8015]
 

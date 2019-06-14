@@ -9,10 +9,10 @@ ms.service: azure-databricks
 ms.topic: conceptual
 ms.date: 04/02/2019
 ms.openlocfilehash: 345e07fac30f4ad0c8e9918cb8a1ff0fb8aeb811
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60770493"
 ---
 # <a name="tutorial-query-a-sql-server-linux-docker-container-in-a-virtual-network-from-an-azure-databricks-notebook"></a>Tutorial: Consulta de um contêiner de Docker do Linux do SQL Server em uma rede virtual de um bloco de anotações do Azure Databricks
@@ -64,8 +64,8 @@ Neste tutorial, você aprenderá como:
     
     |Configuração|Valor sugerido|DESCRIÇÃO|
     |-------|---------------|-----------|
-    |Fonte|Endereços IP|Endereços IP Especifica que tráfego de entrada de uma fonte específica de endereço IP será permitido ou negado por essa regra.|
-    |Endereços IP da fonte|< seu ip público\>|Insira o seu endereço IP público. Você pode encontrar seu endereço IP público visitando [bing.com](https://www.bing.com/) e procurando **"Meu IP"**.|
+    |source|Endereços IP|Endereços IP Especifica que tráfego de entrada de uma fonte específica de endereço IP será permitido ou negado por essa regra.|
+    |Endereços IP da fonte|< seu ip público\>|Insira o seu endereço IP público. Você pode encontrar seu endereço IP público visitando [bing.com](https://www.bing.com/) e procurando **"Meu IP"** .|
     |Intervalos de portas de origem|*|Permitir o tráfego de qualquer porta.|
     |Destino|Endereços IP|Endereços IP Especifica que o tráfego para uma fonte específica de endereço IP será permitido ou negado por essa regra de saída.|
     |Endereços IP de destino|< seu ip público da vm\>|Insira o endereço IP público da máquina virtual. Você pode encontrá-lo sobre a **visão geral** página de sua máquina virtual.|
@@ -80,7 +80,7 @@ Neste tutorial, você aprenderá como:
 
     |Configuração|Valor sugerido|DESCRIÇÃO|
     |-------|---------------|-----------|
-    |Fonte|Endereços IP|Endereços IP Especifica que tráfego de entrada de uma fonte específica de endereço IP será permitido ou negado por essa regra.|
+    |source|Endereços IP|Endereços IP Especifica que tráfego de entrada de uma fonte específica de endereço IP será permitido ou negado por essa regra.|
     |Endereços IP da fonte|10.179.0.0/16|Insira o intervalo de endereços para sua rede virtual.|
     |Intervalos de portas de origem|*|Permitir o tráfego de qualquer porta.|
     |Destino|Endereços IP|Endereços IP Especifica que o tráfego para uma fonte específica de endereço IP será permitido ou negado por essa regra de saída.|

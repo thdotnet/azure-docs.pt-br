@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: bwren
 ms.openlocfilehash: 31a902302ba806889854330c6517d9f5745f1c0c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60551681"
 ---
 # <a name="filters-in-azure-monitor-views"></a>Filtros em exibições do Azure Monitor
@@ -28,7 +28,7 @@ Clique no intervalo de tempo de data na parte superior de uma exibição para ab
 
 ![Exemplo de filtro](media/view-designer-filters/filters-example-time.png)
 
-Clique em **+** para adicionar um filtro usando filtros personalizados que são definidos para a visualização. Selecione um valor para o filtro no menu suspenso ou digite um valor. Continue a adicionar filtros clicando em **+**. 
+Clique em **+** para adicionar um filtro usando filtros personalizados que são definidos para a visualização. Selecione um valor para o filtro no menu suspenso ou digite um valor. Continue a adicionar filtros clicando em **+** . 
 
 
 ![Exemplo de filtro](media/view-designer-filters/filters-example-custom.png)

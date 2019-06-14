@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: cenkd;juliako
 ms.openlocfilehash: da20e4601b75bcb22546d21f6ad218ac9ba2728b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61463775"
 ---
 # <a name="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders"></a>Trabalhando com canais que recebam transmissão ao vivo de múltiplas taxas de bits de codificadores locais
@@ -189,7 +189,7 @@ A tabela a seguir mostra como os estados de canal são mapeados para o modo de c
 | **Iniciando** |**Iniciando** |Nenhum (estado transitório) |
 | **Executando** |**Pronto** (nenhum programa em execução)<p><p>ou o<p>**Streaming** (há pelo menos um programa em execução) |Sim |
 | **Parando** |**Parando** |Nenhum (estado transitório) |
-| **Interrompido** |**Interrompido** |Não  |
+| **Interrompido** |**Interrompido** |Não |
 
 ## <a id="cc_and_ads"></a>Legendagem oculta e inserção de anúncios
 A tabela a seguir demonstra os padrões com suporte de legendagem oculta e inserção de anúncios.

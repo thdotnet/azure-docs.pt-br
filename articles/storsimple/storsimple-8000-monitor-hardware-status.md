@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 08/15/2018
 ms.author: alkohli
 ms.openlocfilehash: a987239669e7437a179f5f24034f4dbe45535663
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60632788"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-monitor-hardware-components-and-status"></a>Usar o serviço Gerenciador de Dispositivos do StorSimple para monitorar componentes e status de hardware
@@ -82,14 +82,14 @@ A tabela a seguir descreve os componentes físicos e lógicos contidos no compar
 | Componente | Módulo | Type | Local padrão | Unidade renovável (FRU)? | DESCRIÇÃO |
 | --- | --- | --- | --- | --- | --- |
 | Unidade no slot [0-11] |Unidades de disco |Físico |Compartilhado |Sim |É apresentada uma linha para cada uma das unidades SSD ou HDD no compartimento primário. |
-| Sensor de temperatura ambiente |Compartimento |Físico |Compartilhado |Não  |Mede a temperatura dentro do chassi. |
-| Sensor de temperatura do plano intermediário |Compartimento |Físico |Compartilhado |Não  |Mede a temperatura do plano intermediário. |
-| Alarme audível |Compartimento |Físico |Compartilhado |Não  |Indica se o subsistema de alarme audível dentro do gabinete é funcional. |
+| Sensor de temperatura ambiente |Compartimento |Físico |Compartilhado |Não |Mede a temperatura dentro do chassi. |
+| Sensor de temperatura do plano intermediário |Compartimento |Físico |Compartilhado |Não |Mede a temperatura do plano intermediário. |
+| Alarme audível |Compartimento |Físico |Compartilhado |Não |Indica se o subsistema de alarme audível dentro do gabinete é funcional. |
 | Compartimento |Compartimento |Físico |Compartilhado |Sim |Indica a presença de um chassi. |
-| Configurações de compartimento |Compartimento |Físico |Compartilhado |Não  |Refere-se ao painel frontal do chassi. |
-| Sensores de tensão de linha |PCM |Físico |Compartilhado |Não  |Vários sensores de tensão de linha têm seu estado exibido, que indica se a tensão medida está dentro da tolerância. |
-| Sensores de corrente de linha |PCM |Físico |Compartilhado |Não  |Vários sensores de corrente de linha têm seu estado exibido, que indica se a corrente medida está dentro da tolerância. |
-| Sensores de temperatura em PCM |PCM |Físico |Compartilhado |Não  |Vários sensores de temperatura, como de Entrada e Ponto de acesso, têm seu estado exibido, indicando se a temperatura medida está dentro da tolerância. |
+| Configurações de compartimento |Compartimento |Físico |Compartilhado |Não |Refere-se ao painel frontal do chassi. |
+| Sensores de tensão de linha |PCM |Físico |Compartilhado |Não |Vários sensores de tensão de linha têm seu estado exibido, que indica se a tensão medida está dentro da tolerância. |
+| Sensores de corrente de linha |PCM |Físico |Compartilhado |Não |Vários sensores de corrente de linha têm seu estado exibido, que indica se a corrente medida está dentro da tolerância. |
+| Sensores de temperatura em PCM |PCM |Físico |Compartilhado |Não |Vários sensores de temperatura, como de Entrada e Ponto de acesso, têm seu estado exibido, indicando se a temperatura medida está dentro da tolerância. |
 | Fonte de alimentação [0-1] |PCM |Físico |Compartilhado |Sim |É apresentada uma linha para cada uma das fontes de alimentação nos dois PCMs localizados na parte posterior do dispositivo. |
 | Resfriamento [0-1] |PCM |Físico |Compartilhado |Sim |É apresentada uma linha para cada um dos quatro ventiladores que residem nos dois PCMs. |
 | Bateria [0-1] |PCM |Físico |Compartilhado |Sim |É apresentada uma linha para cada um dos módulos de bateria de backup que estão encaixados no PCM. |
@@ -106,16 +106,16 @@ A tabela a seguir descreve os componentes físicos e lógicos contidos no compar
 | Pool de armazenamento do HDD |N/D |Lógico |Compartilhado |N/D |Exibe o estado do pool de armazenamento lógico que é criado a partir dos HDDs de dispositivo. |
 | Pool de armazenamento do SSD |N/D |Lógico |Compartilhado |N/D |Exibe o estado do pool de armazenamento lógico que é criado a partir dos SSDs de dispositivo. |
 | Controller [0-1] [estado] |E/S |Físico |Controller |Sim |Exibe o estado do controlador e se ele está no modo ativo ou em espera dentro do chassi. |
-| Sensores de temperatura no controlador |E/S |Físico |Controller |Não  |Vários sensores de temperatura, como o módulo de E/S, temperatura da CPU, sensores DIMM e PCI e têm seu estado exibido, que indica se a temperatura encontrada está ou não dentro da tolerância. |
-| Expansor SAS |E/S |Físico |Controller |Não  |Indica o estado do expansor serial anexado SCSI (SAS), que é usado para conectar o armazenamento integrado ao controlador. |
-| Conector SAS [0-1] |E/S |Físico |Controller |Não  |Indica o estado de cada conector SAS, que é usado para conectar o armazenamento integrado ao expansor SAS. |
-| Interconexão de plano intermediário de SBB |E/S |Físico |Controller |Não  |Indica o estado do conector intermediário, que é usado para conectar cada controlador ao plano intermediário. |
-| Núcleo do processador |E/S |Físico |Controller |Não  |Indica o estado dos núcleos de processador em cada controlador. |
-| Energia de eletrônicos do compartimento |E/S |Físico |Controller |Não  |Indica o estado do sistema de energia usado pelo compartimento. |
-| Diagnósticos de eletrônicos do compartimento |E/S |Físico |Controller |Não  |Indica o estado dos subsistemas de diagnóstico fornecidos pelo controlador. |
-| Controlador de Gerenciamento de Placa-base (BMC) |E/S |Físico |Controller |Não  |Indica o estado do Controlador de Gerenciamento de Placa-base (BMC), que é um processador de serviço especializado que monitora o dispositivo de hardware por meio de sensores e se comunica com o administrador do sistema por meio de uma conexão independente. |
-| Ethernet |E/S |Físico |Controller |Não  |Indica o estado de cada uma das interfaces de rede, ou seja, o gerenciamento e as portas de dados fornecidas no controlador. |
-| NVRAM |E/S |Físico |Controller |Não  |Indica o estado da NVRAM, uma memória de acesso aleatório não volátil com a bateria de reserva que serve para guardar informações importantes de aplicativos em caso de falha de energia. |
+| Sensores de temperatura no controlador |E/S |Físico |Controller |Não |Vários sensores de temperatura, como o módulo de E/S, temperatura da CPU, sensores DIMM e PCI e têm seu estado exibido, que indica se a temperatura encontrada está ou não dentro da tolerância. |
+| Expansor SAS |E/S |Físico |Controller |Não |Indica o estado do expansor serial anexado SCSI (SAS), que é usado para conectar o armazenamento integrado ao controlador. |
+| Conector SAS [0-1] |E/S |Físico |Controller |Não |Indica o estado de cada conector SAS, que é usado para conectar o armazenamento integrado ao expansor SAS. |
+| Interconexão de plano intermediário de SBB |E/S |Físico |Controller |Não |Indica o estado do conector intermediário, que é usado para conectar cada controlador ao plano intermediário. |
+| Núcleo do processador |E/S |Físico |Controller |Não |Indica o estado dos núcleos de processador em cada controlador. |
+| Energia de eletrônicos do compartimento |E/S |Físico |Controller |Não |Indica o estado do sistema de energia usado pelo compartimento. |
+| Diagnósticos de eletrônicos do compartimento |E/S |Físico |Controller |Não |Indica o estado dos subsistemas de diagnóstico fornecidos pelo controlador. |
+| Controlador de Gerenciamento de Placa-base (BMC) |E/S |Físico |Controller |Não |Indica o estado do Controlador de Gerenciamento de Placa-base (BMC), que é um processador de serviço especializado que monitora o dispositivo de hardware por meio de sensores e se comunica com o administrador do sistema por meio de uma conexão independente. |
+| Ethernet |E/S |Físico |Controller |Não |Indica o estado de cada uma das interfaces de rede, ou seja, o gerenciamento e as portas de dados fornecidas no controlador. |
+| NVRAM |E/S |Físico |Controller |Não |Indica o estado da NVRAM, uma memória de acesso aleatório não volátil com a bateria de reserva que serve para guardar informações importantes de aplicativos em caso de falha de energia. |
 
 ## <a name="component-list-for-ebod-enclosure-of-storsimple-device"></a>Lista de componentes para o compartimento EBOD do dispositivo StorSimple
 A tabela a seguir descreve os componentes físicos e lógicos contidos no compartimento EBOD (apenas presente no modelo 8600) do seu dispositivo StorSimple local.
@@ -123,25 +123,25 @@ A tabela a seguir descreve os componentes físicos e lógicos contidos no compar
 | Componente | Módulo | Type | Local padrão | FRU? | DESCRIÇÃO |
 | --- | --- | --- | --- | --- | --- |
 | Unidade no slot [0-11] |Unidades de disco |Físico |Compartilhado |Sim |É apresentada uma linha para cada uma das unidades HDD na frente do compartimento EBOD. |
-| Sensor de temperatura ambiente |Compartimento |Físico |Compartilhado |Não  |Mede a temperatura dentro do chassi. |
-| Sensor de temperatura do plano intermediário |Compartimento |Físico |Compartilhado |Não  |Mede a temperatura do plano intermediário. |
-| Alarme audível |Compartimento |Físico |Compartilhado |Não  |Indica se o subsistema de alarme audível dentro do gabinete é funcional. |
+| Sensor de temperatura ambiente |Compartimento |Físico |Compartilhado |Não |Mede a temperatura dentro do chassi. |
+| Sensor de temperatura do plano intermediário |Compartimento |Físico |Compartilhado |Não |Mede a temperatura do plano intermediário. |
+| Alarme audível |Compartimento |Físico |Compartilhado |Não |Indica se o subsistema de alarme audível dentro do gabinete é funcional. |
 | Compartimento |Compartimento |Físico |Compartilhado |Sim |Indica a presença de um chassi. |
-| Configurações de compartimento |Compartimento |Físico |Compartilhado |Não  |Refere-se ao OPS ou ao painel frontal do chassi. |
-| Sensores de tensão de linha |PCM |Físico |Compartilhado |Não  |Vários sensores de tensão de linha têm seu estado exibido, que indica se a tensão medida está dentro da tolerância. |
-| Sensores de corrente de linha |PCM |Físico |Compartilhado |Não  |Vários sensores de corrente de linha têm seu estado exibido, que indica se a corrente medida está dentro da tolerância. |
-| Sensores de temperatura em PCM |PCM |Físico |Compartilhado |Não  |Vários sensores de temperatura, como de Entrada e Ponto de acesso, têm seu estado exibido, indicando se a temperatura medida está dentro da tolerância. |
+| Configurações de compartimento |Compartimento |Físico |Compartilhado |Não |Refere-se ao OPS ou ao painel frontal do chassi. |
+| Sensores de tensão de linha |PCM |Físico |Compartilhado |Não |Vários sensores de tensão de linha têm seu estado exibido, que indica se a tensão medida está dentro da tolerância. |
+| Sensores de corrente de linha |PCM |Físico |Compartilhado |Não |Vários sensores de corrente de linha têm seu estado exibido, que indica se a corrente medida está dentro da tolerância. |
+| Sensores de temperatura em PCM |PCM |Físico |Compartilhado |Não |Vários sensores de temperatura, como de Entrada e Ponto de acesso, têm seu estado exibido, indicando se a temperatura medida está dentro da tolerância. |
 | Fonte de alimentação [0-1] |PCM |Físico |Compartilhado |Sim |É apresentada uma linha para cada uma das fontes de alimentação nos dois PCMs localizados na parte posterior do dispositivo. |
 | Resfriamento [0-1] |PCM |Físico |Compartilhado |Sim |É apresentada uma linha para cada um dos quatro ventiladores que residem nos dois PCMs. |
 | Armazenamento local [HDD] |N/D |Lógico |Compartilhado |N/D |Exibe o estado do pool de armazenamento lógico que é criado a partir dos HDDs de dispositivo. |
 | Controller [0-1] [estado] |E/S |Físico |Controller |Sim |Exibe o estado dos controladores no módulo EBOD. |
-| Sensores de temperatura no EBOD |E/S |Físico |Controller |Não  |Vários sensores de temperatura têm seu estado exibido, indicando se a temperatura encontrada está dentro da tolerância. |
-| Expansor SAS |E/S |Físico |Controller |Não  |Indica o estado do expansor SAS, que é usado para conectar o armazenamento integrado ao controlador. |
-| Conector SAS [0-2] |E/S |Físico |Controller |Não  |Indica o estado de cada conector SAS, que é usado para conectar o armazenamento integrado ao expansor SAS. |
-| Interconexão de plano intermediário de SBB |E/S |Físico |Controller |Não  |Indica o estado do conector intermediário, que é usado para conectar cada controlador ao plano intermediário. |
-| Energia de eletrônicos do compartimento |E/S |Físico |Controller |Não  |Indica o estado do sistema de energia usado pelo compartimento. |
-| Diagnósticos de eletrônicos do compartimento |E/S |Físico |Controller |Não  |Indica o estado dos subsistemas de diagnóstico fornecidos pelo controlador. |
-| Conexão com o controlador de dispositivo |E/S |Físico |Controller |Não  |Indica o estado da conexão entre o módulo E/S do EBOD e o controlador do dispositivo. |
+| Sensores de temperatura no EBOD |E/S |Físico |Controller |Não |Vários sensores de temperatura têm seu estado exibido, indicando se a temperatura encontrada está dentro da tolerância. |
+| Expansor SAS |E/S |Físico |Controller |Não |Indica o estado do expansor SAS, que é usado para conectar o armazenamento integrado ao controlador. |
+| Conector SAS [0-2] |E/S |Físico |Controller |Não |Indica o estado de cada conector SAS, que é usado para conectar o armazenamento integrado ao expansor SAS. |
+| Interconexão de plano intermediário de SBB |E/S |Físico |Controller |Não |Indica o estado do conector intermediário, que é usado para conectar cada controlador ao plano intermediário. |
+| Energia de eletrônicos do compartimento |E/S |Físico |Controller |Não |Indica o estado do sistema de energia usado pelo compartimento. |
+| Diagnósticos de eletrônicos do compartimento |E/S |Físico |Controller |Não |Indica o estado dos subsistemas de diagnóstico fornecidos pelo controlador. |
+| Conexão com o controlador de dispositivo |E/S |Físico |Controller |Não |Indica o estado da conexão entre o módulo E/S do EBOD e o controlador do dispositivo. |
 
 ## <a name="next-steps"></a>Próximas etapas
 * Para usar o serviço Gerenciador de Dispositivos do StorSimple para administrar seu dispositivo, acesse [usar o serviço Gerenciador de Dispositivos do StorSimple para administrar o dispositivo StorSimple](storsimple-8000-manager-service-administration.md).

@@ -9,10 +9,10 @@ ms.date: 05/22/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 7abd0ac3d95825594dffe385bccc1672d0f71c5f
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66142554"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Fontes de dados com suporte no Azure Analysis Services
@@ -24,7 +24,7 @@ Fontes de dados e conectores mostrados no Get Data ou no Assistente de Importaç
 |Fonte de dados  |Na memória  |DirectQuery  |
 |---------|---------|---------|
 |Banco de Dados SQL do Azure<sup>[2](#azsqlmanaged)</sup>     |   Sim      |    Sim      |
-|SQL Data Warehouse do Azure     |   Sim      |   Sim       |
+|Azure SQL Data Warehouse     |   Sim      |   Sim       |
 |Armazenamento de Blobs do Azure<sup>[1](#tab1400a)</sup>     |   Sim       |    Não      |
 |Armazenamento de tabelas do Azure<sup>[1](#tab1400a)</sup>    |   Sim       |    Não      |
 |Azure Cosmos DB<sup>[1](#tab1400a)</sup>     |  Sim        |  Não        |
@@ -82,7 +82,7 @@ Conectar a fontes de dados locais e ao servidor de AS do Azure requer um gateway
 |SAP HANA<sup>[1](#tab1400b)</sup>    |  
 |SAP Business Warehouse<sup>[1](#tab1400b)</sup>    |  
 |SharePoint List<sup>[1](#tab1400b)</sup>, <sup>[2](#filesSP)</sup>     |   
-|Banco de Dados Sybase     |  
+|Banco de dados Sybase     |  
 |Arquivo TXT  |
 |Tabela XML<sup>[1](#tab1400b)</sup>    |  
 ||
@@ -92,7 +92,7 @@ Conectar a fontes de dados locais e ao servidor de AS do Azure requer um gateway
 
 ## <a name="specifying-a-different-provider"></a>Especificar um provedor diferente
 
-Os modelos de dados no Azure Analysis Services podem exigir diferentes provedores de dados durante a conexão com certas fontes de dados. Em alguns casos, modelos de tabela que se conectam a fontes de dados usando provedores nativos, como o SQL Server Native Client (SQLNCLI11), podem retornar um erro. Se usar provedores nativos diferentes de SQLOLEDB, você poderá ver a mensagem de erro: **O provedor 'SQLNCLI11.1' não está registrado**. Ou, se tiver um modelo DirectQuery que se conecta a fontes de dados locais e usar provedores nativos, você verá a mensagem de erro: **Erro ao criar o conjunto de linhas do OLE DB. Sintaxe incorreta próxima a 'LIMIT'**.
+Os modelos de dados no Azure Analysis Services podem exigir diferentes provedores de dados durante a conexão com certas fontes de dados. Em alguns casos, modelos de tabela que se conectam a fontes de dados usando provedores nativos, como o SQL Server Native Client (SQLNCLI11), podem retornar um erro. Se usar provedores nativos diferentes de SQLOLEDB, você poderá ver a mensagem de erro: **O provedor 'SQLNCLI11.1' não está registrado**. Ou, se tiver um modelo DirectQuery que se conecta a fontes de dados locais e usar provedores nativos, você verá a mensagem de erro: **Erro ao criar o conjunto de linhas do OLE DB. Sintaxe incorreta próxima a 'LIMIT'** .
 
 Ao migrar um modelo de tabela local do SQL Server Analysis Services para o Azure Analysis Services, talvez seja necessário alterar o provedor.
 

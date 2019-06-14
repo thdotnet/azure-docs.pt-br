@@ -10,10 +10,10 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 10/08/2018
 ms.openlocfilehash: 2a3f8ee5cba3110d392555fad78c1cb2513b5d4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60683062"
 ---
 # <a name="create-switch-statements-that-run-workflow-actions-based-on-specific-values-in-azure-logic-apps"></a>Criar instruções switch que executam ações de fluxo de trabalho com base em valores específicos nos Aplicativos Lógicos do Azure
@@ -45,7 +45,7 @@ Por exemplo, suponhamos que você deseje um aplicativo lógico que execute etapa
 
 1. Para este exemplo, adicione uma instrução switch no final do fluxo de trabalho de amostra. Após a última etapa, escolha **Nova etapa**.
 
-   Quando você deseja adicionar uma instrução de comutação entre as etapas, mova o ponteiro sobre a seta onde você deseja adicionar a instrução de comutação. Escolha o **sinal de adição** (**+**) que aparece e, em seguida, escolha **Adicionar uma ação**.
+   Quando você deseja adicionar uma instrução de comutação entre as etapas, mova o ponteiro sobre a seta onde você deseja adicionar a instrução de comutação. Escolha o **sinal de adição** ( **+** ) que aparece e, em seguida, escolha **Adicionar uma ação**.
 
 1. Na caixa de pesquisa, digite “switch” como filtro. Selecione esta ação: **Comutador - controle**
 
@@ -113,7 +113,7 @@ Agora que você criou um aplicativo lógico usando uma instrução switch, vamos
 }
 ```
 
-| Rótulo | DESCRIÇÃO |
+| Rotular | DESCRIÇÃO |
 |-------|-------------|
 | `"Switch"`         | O nome da instrução de comutação, que pode ser renomeada para facilitar a leitura |
 | `"type": "Switch"` | Especifica que a ação é uma instrução de comutação |

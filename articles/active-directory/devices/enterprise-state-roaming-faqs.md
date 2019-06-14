@@ -18,10 +18,10 @@ ms.date: 10/25/2018
 ms.author: joflore
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a77cf89b7697b7b6b08dead34339ae50dbba8518
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60296309"
 ---
 # <a name="settings-and-data-roaming-faq"></a>Configurações e perguntas frequentes sobre o roaming de dados
@@ -125,6 +125,6 @@ Se sua organização já estiver usando o roaming no Windows 10 com a assinatura
 ## <a name="known-issues"></a>Problemas conhecidos
 Confira a documentação na seção de [solução de problemas](enterprise-state-roaming-troubleshooting.md) para obter uma lista de problemas conhecidos. 
 
-## <a name="next-steps"></a>Próximos passos 
+## <a name="next-steps"></a>Próximas etapas 
 
 Para obter uma visão geral, consulte [visão geral de roaming de estado empresarial](enterprise-state-roaming-overview.md)

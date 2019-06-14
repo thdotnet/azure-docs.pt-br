@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 51fffbd170daecfec6fcea95caa0526e6d881407
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64724109"
 ---
 # <a name="media-services-development-with-net"></a>Desenvolvimento de serviços de mídia com o .NET 
@@ -59,7 +59,7 @@ Como alternativa, você pode obter os bits mais recentes do SDK do .NET dos Serv
 4. Para promover um ambiente de desenvolvimento mais limpo, considere a ativação da restauração de pacote do NuGet. Para obter mais informações, consulte [Restauração do pacote NuGet"](https://docs.nuget.org/consume/package-restore).
 5. Adicionar uma referência ao assembly **System.Configuration** . Este assembly contém a classe System.Configuration.**ConfigurationManager** que é utilizada para acessar arquivos de configuração (por exemplo, App.config).
    
-    1. Para adicionar referências usando a caixa de diálogo Gerenciar referências, clique com o botão direito do mouse no nome do projeto no Gerenciador de Soluções. Em seguida, clique em **Adicionar** e em **Referência...**.
+    1. Para adicionar referências usando a caixa de diálogo Gerenciar referências, clique com o botão direito do mouse no nome do projeto no Gerenciador de Soluções. Em seguida, clique em **Adicionar** e em **Referência...** .
    
     2. Aparece a caixa de diálogo Gerenciar referências.
     3. Em Assemblies do .NET Framework, localize e selecione o assembly System.Configuration e clique em **OK**.

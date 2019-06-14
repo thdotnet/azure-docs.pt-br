@@ -14,15 +14,15 @@ ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
 ms.openlocfilehash: 08e7341bfd1c384e41e6d3f1bd7810552899849a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60488311"
 ---
 # <a name="data-management-gateway---high-availability-and-scalability-preview"></a>Gateway de Gerenciamento de Dados – alta disponibilidade e escalabilidade (versão prévia)
 > [!NOTE]
-> Este artigo aplica-se à versão 1 do Data Factory. Se estiver usando a versão atual do serviço do Data Factory, consulte [IR auto-hospedado na](../create-self-hosted-integration-runtime.md). 
+> Este artigo se aplica à versão 1 do Data Factory. Se estiver usando a versão atual do serviço do Data Factory, consulte [IR auto-hospedado na](../create-self-hosted-integration-runtime.md). 
 
 
 Este artigo ajudará a configurar a solução de alta disponibilidade e escalabilidade com o Gateway/Integração de Gerenciamento de Dados.    
@@ -165,7 +165,7 @@ Aqui estão os requisitos para o certificado TLS/SSL usado para proteger as comu
 - Cada nó de tempo de execução de integração deve confiar nesse certificado, bem como no computador cliente que está executando o aplicativo do gerenciador de credenciais. 
   > [!NOTE]
   > O aplicativo do gerenciador de credenciais é usado durante a configuração segura da credencial do Assistente para Cópia/Portal do Azure. E isso pode ser disparado de qualquer computador na mesma rede que o armazenamento de dados local/privado.
-- Há suporte para certificados curinga. Se o nome FQDN for **node1.domain.contoso.com**, você poderá usar ***.domain.contoso.com** como nome da entidade do certificado.
+- Há suporte para certificados curinga. Se o nome FQDN for **node1.domain.contoso.com**, você poderá usar * **.domain.contoso.com** como nome da entidade do certificado.
 - Certificados SAN não são recomendados, já que apenas o último item dos Nomes Alternativos de Entidade será usado e todos os outros serão ignorados devido à limitação atual. Por exemplo você tem um certificado SAN cujo SAN é **node1.domain.contoso.com** e **node2.domain.contoso.com**, você só pode usar este certificado no computador cujo FQDN é **node2.domain.contoso.com**.
 - Dá suporte a qualquer tamanho de chave com suporte pelo Windows Server 2012 R2 para certificados SSL.
 - Não há suporte para certificado usando chaves CNG.

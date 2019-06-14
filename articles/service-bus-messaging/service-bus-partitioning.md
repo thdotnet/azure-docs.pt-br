@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 02/06/2019
 ms.author: aschhab
 ms.openlocfilehash: 699581c7ccd3f36da0cd0c1def623607b7c0a13b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60589670"
 ---
 # <a name="partitioned-queues-and-topics"></a>Filas e tópicos particionados
@@ -47,7 +47,7 @@ Em um namespace de camada Premium, não há suporte para particionamento de enti
 
 ### <a name="create-a-partitioned-entity"></a>Criar uma entidade particionada
 
-Há várias maneiras de criar uma fila ou um tópico particionado. Ao criar a fila ou o tópico de seu aplicativo, você pode habilitar o particionamento de fila ou tópico definindo respectivamente a propriedade [QueueDescription.EnablePartitioning][QueueDescription.EnablePartitioning] ou [TopicDescription.EnablePartitioning][TopicDescription.EnablePartitioning] como **true**. Essas propriedades devem ser definidas no momento em que a fila ou tópico é criado e estão disponíveis somente na antiga biblioteca [WindowsAzure.ServiceBus](https://www.nuget.org/packages/WindowsAzure.ServiceBus/). Conforme declarado anteriormente, não é possível alterar essas propriedades em uma fila ou um tópico existente. Por exemplo: 
+Há várias maneiras de criar uma fila ou um tópico particionado. Ao criar a fila ou o tópico de seu aplicativo, você pode habilitar o particionamento de fila ou tópico definindo respectivamente a propriedade [QueueDescription.EnablePartitioning][QueueDescription.EnablePartitioning] ou [TopicDescription.EnablePartitioning][TopicDescription.EnablePartitioning] como **true**. Essas propriedades devem ser definidas no momento em que a fila ou tópico é criado e estão disponíveis somente na antiga biblioteca [WindowsAzure.ServiceBus](https://www.nuget.org/packages/WindowsAzure.ServiceBus/). Conforme declarado anteriormente, não é possível alterar essas propriedades em uma fila ou um tópico existente. Por exemplo:
 
 ```csharp
 // Create partitioned topic
@@ -87,7 +87,7 @@ Uma chave de partição "fixa" uma mensagem para uma partição específica. Se 
 
 ## <a name="advanced-topics-use-transactions-with-partitioned-entities"></a>Tópicos avançados: usar transações com entidades particionadas
 
-As mensagens enviadas como parte de uma transação devem especificar uma chave de partição. A chave pode ser uma das seguintes propriedades: [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid), [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey) ou [MessageId](/dotnet/api/microsoft.azure.servicebus.message.messageid). Todas as mensagens que são enviadas como parte da mesma transação devem especificar a mesma chave de partição. Caso você tente enviar uma mensagem sem uma chave de partição em uma transação, o Barramento de Serviço retornará uma exceção de operação inválida. Caso você tente enviar várias mensagens que tenham chaves de partição diferentes na mesma transação, o Barramento de Serviço retornará uma exceção de operação inválida. Por exemplo: 
+As mensagens enviadas como parte de uma transação devem especificar uma chave de partição. A chave pode ser uma das seguintes propriedades: [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid), [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey) ou [MessageId](/dotnet/api/microsoft.azure.servicebus.message.messageid). Todas as mensagens que são enviadas como parte da mesma transação devem especificar a mesma chave de partição. Caso você tente enviar uma mensagem sem uma chave de partição em uma transação, o Barramento de Serviço retornará uma exceção de operação inválida. Caso você tente enviar várias mensagens que tenham chaves de partição diferentes na mesma transação, o Barramento de Serviço retornará uma exceção de operação inválida. Por exemplo:
 
 ```csharp
 CommittableTransaction committableTransaction = new CommittableTransaction();
@@ -107,7 +107,7 @@ Se qualquer uma das propriedades que servem como uma chave de partição for def
 
 Para enviar uma mensagem transacional a uma fila ou um tópico com reconhecimento de sessão, a mensagem deve ter a propriedade [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid) definida. Se a propriedade [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey) também for especificada, ela deverá ser idêntica à propriedade [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid). Caso elas sejam diferentes, o Barramento de Serviço retornará uma exceção de operação inválida.
 
-Diferentemente de filas ou tópicos regulares (não particionados), não é possível usar uma única transação para enviar várias mensagens a sessões diferentes. Se você tentar fazer isso, o Barramento de Serviço retornará uma exceção de operação inválida. Por exemplo: 
+Diferentemente de filas ou tópicos regulares (não particionados), não é possível usar uma única transação para enviar várias mensagens a sessões diferentes. Se você tentar fazer isso, o Barramento de Serviço retornará uma exceção de operação inválida. Por exemplo:
 
 ```csharp
 CommittableTransaction committableTransaction = new CommittableTransaction();

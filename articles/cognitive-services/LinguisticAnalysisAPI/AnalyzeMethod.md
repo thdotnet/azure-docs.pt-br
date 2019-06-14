@@ -12,10 +12,10 @@ ms.date: 12/13/2016
 ms.author: lesun
 ROBOTS: NOINDEX
 ms.openlocfilehash: 02c41e2510fd77f4bb65143faf62737f0985d2b7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61401178"
 ---
 # <a name="analyze-method"></a>Método Analisar
@@ -26,7 +26,7 @@ ms.locfileid: "61401178"
 A API REST **Analisar** é usada para analisar uma entrada de linguagem natural determinada.
 Que pode envolver a localização a [frases e tokens](Sentences-and-Tokens.md) dentro do que a entrada, localizando a [marcas de parte da fala](POS-tagging.md), ou localizar os [árvore de clientes](Constituency-Parsing.md).
 Você pode especificar quais resultados você deseja selecionando os analisadores relevantes.
-Para listar todos os analisadores disponíveis, examine os **[analisadores](AnalyzersMethod.md)**.
+Para listar todos os analisadores disponíveis, examine os **[analisadores](AnalyzersMethod.md)** .
 
 Observe que você precisa especificar a linguagem da cadeia de caracteres de entrada.
 
@@ -40,9 +40,9 @@ https://westus.api.cognitive.microsoft.com/linguistics/v1.0/analyze
 
 NOME | Type | Obrigatório | DESCRIÇÃO
 -----|-------|----------|------------
-**linguagem**    | string | Sim | As duas letras do código de idioma ISO a ser usado para análise. Por exemplo, inglês é "en".
+**language**    | cadeia de caracteres | Sim | As duas letras do código de idioma ISO a ser usado para análise. Por exemplo, inglês é "en".
 **analyzerIds** | lista de cadeias de caracteres | Sim | Lista de GUIDs de analisadores para aplicar. Para obter mais informações, confira a documentação do Analisadores.
-**text**        | string | Sim | Entrada bruta a ser analisada. Isso pode ser uma cadeia de caracteres curta, como uma palavra ou frase, um período completo, ou um parágrafo completo ou discurso.
+**text**        | cadeia de caracteres | Sim | Entrada bruta a ser analisada. Isso pode ser uma cadeia de caracteres curta, como uma palavra ou frase, um período completo, ou um parágrafo completo ou discurso.
 
 ## <a name="response-json"></a>Resposta (JSON)
 
@@ -52,7 +52,7 @@ Os resultados são semelhantes ao seguinte:
 
 NOME | Type | DESCRIÇÃO
 -----|------|--------------
-analyzerId | string | GUID do analisador especificado
+analyzerId | cadeia de caracteres | GUID do analisador especificado
 result | objeto | resultado do analisador
 
 Observe que o tipo do resultado depende do tipo de analisador de entrada.
@@ -67,8 +67,8 @@ result[x].Len | int | comprimento em caracteres de cada frase |
 result[x].Tokens | lista de objetos de token | limites de tokens identificados dentro da frase |
 result[x].Tokens[y].Offset | int | deslocamento de caractere inicial de token |
 result[x].Tokens[y].Len | int | comprimento em caracteres do token |
-result[x].Tokens[y].RawToken | string | os caracteres dentro desse token, antes da normalização |
-result[x].Tokens[y].NormalizedToken | string | uma forma normalizada de caractere, seguro para uso em uma [árvore de análise](Constituency-Parsing.md); por exemplo, um caractere parêntese de abertura ' (' torna-se '- LRB-' |
+result[x].Tokens[y].RawToken | cadeia de caracteres | os caracteres dentro desse token, antes da normalização |
+result[x].Tokens[y].NormalizedToken | cadeia de caracteres | uma forma normalizada de caractere, seguro para uso em uma [árvore de análise](Constituency-Parsing.md); por exemplo, um caractere parêntese de abertura ' (' torna-se '- LRB-' |
 
 Entrada de exemplo: "Este é um teste. Olá.”
 Exemplo de resposta JSON:

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 02/08/2018
 ms.author: jomolesk
 ms.openlocfilehash: 13ea2b68027c81bca7b43cef62cf7039aa0ea8dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60609487"
 ---
 # <a name="azure-security-and-compliance-blueprint---three-tier-iaas-web-application-for-uk-official"></a>Blueprint de conformidade e segurança do Azure - Aplicativo Web de IaaS de três camadas para OFICIAL DO REINO UNIDO
@@ -154,7 +154,7 @@ Essas VNets ainda são gerenciados como recursos separados, mas aparecem como um
 
 **Grupos de Segurança de Rede**: Os [NSGs](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) contêm Listas de Controle de Acesso que permitem ou negam o tráfego em uma VNET. Os NSGs podem ser usados para proteger o tráfego em nível individual de VM ou sub-rede.
 
-**AD DS (Active Directory Domain Services)**: Essa arquitetura fornece uma implantação dedicada do [Active Directory Domain Services](https://technet.microsoft.com/library/hh831484.aspx).
+**AD DS (Active Directory Domain Services)** : Essa arquitetura fornece uma implantação dedicada do [Active Directory Domain Services](https://technet.microsoft.com/library/hh831484.aspx).
 
 **Log e Auditoria**: O [Log de Atividades do Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) captura as operações executadas nos recursos em sua assinatura, como quem iniciou a operação, quando a operação ocorreu, o status da operação e os valores de outras propriedades que podem ajudá-lo a pesquisar a operação. O Log de Atividades do Azure é um serviço da plataforma Azure que captura todas as ações em uma assinatura. Os logs podem ser arquivados ou exportados se necessário.
 

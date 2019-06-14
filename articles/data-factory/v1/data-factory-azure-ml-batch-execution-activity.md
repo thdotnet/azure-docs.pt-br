@@ -14,15 +14,15 @@ ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 4093febd19d71512e3c80704e88f9d5cf669d7d9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60567380"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-and-azure-data-factory"></a>Criar pipelines de previsão usando Azure Machine Learning e o Azure Data Factory
 
-> [!div class="op_single_selector" title1="Transformation Activities"]
+> [!div class="op_single_selector" title1="Atividades de transformação"]
 > * [Atividade de Hive](data-factory-hive-activity.md)
 > * [Atividade Pig](data-factory-pig-activity.md)
 > * [Atividade MapReduce](data-factory-map-reduce.md)
@@ -36,7 +36,7 @@ ms.locfileid: "60567380"
 
 ## <a name="introduction"></a>Introdução
 > [!NOTE]
-> Este artigo aplica-se à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [transformar dados usando aprendizado de máquina no Data Factory](../transform-data-using-machine-learning.md).
+> Este artigo se aplica à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [transformar dados usando aprendizado de máquina no Data Factory](../transform-data-using-machine-learning.md).
 
 
 ### <a name="azure-machine-learning"></a>Azure Machine Learning
@@ -184,7 +184,7 @@ Recomendamos que você percorra o tutorial [Compilar seu primeiro pipeline com o
     }
     ```
 
-    O arquivo csv de entrada deve ter a linha de cabeçalho de coluna. Se você estiver usando a **Atividade de cópia** para criar/mover o csv para dentro do armazenamento de blobs, você deve definir a propriedade de coleta **blobWriterAddHeade**r como **true**. Por exemplo: 
+    O arquivo csv de entrada deve ter a linha de cabeçalho de coluna. Se você estiver usando a **Atividade de cópia** para criar/mover o csv para dentro do armazenamento de blobs, você deve definir a propriedade de coleta **blobWriterAddHeade**r como **true**. Por exemplo:
 
     ```JSON
     sink:
@@ -303,7 +303,7 @@ Recomendamos que você percorra o tutorial [Compilar seu primeiro pipeline com o
       }
       ```
 
-      Ambos os valores de data/hora de **início** e de **término** devem estar no [formato ISO](https://en.wikipedia.org/wiki/ISO_8601). Por exemplo:  2014-10-14T16:32:41Z. O tempo **final** é opcional. Se você não especificar o valor para a propriedade **end**, ele será calculado como "**início + 48 horas**" Para executar o pipeline indefinidamente, especifique **9999-09-09** como o valor para a propriedade **end**. Consulte a [Referência de script JSON](https://msdn.microsoft.com/library/dn835050.aspx) para obter detalhes sobre as propriedades JSON.
+      Ambos os valores de data/hora de **início** e de **término** devem estar no [formato ISO](https://en.wikipedia.org/wiki/ISO_8601). Por exemplo: 2014-10-14T16:32:41Z. O tempo **final** é opcional. Se você não especificar o valor para a propriedade **end**, ele será calculado como "**início + 48 horas**" Para executar o pipeline indefinidamente, especifique **9999-09-09** como o valor para a propriedade **end**. Consulte a [Referência de script JSON](https://msdn.microsoft.com/library/dn835050.aspx) para obter detalhes sobre as propriedades JSON.
 
       > [!NOTE]
       > A especificação de entrada para a atividade AzureMLBatchExecution é opcional.
@@ -407,7 +407,7 @@ Ao usar o módulo de leitor em uma experiência de Azure Machine Learning, é po
 No exemplo JSON acima:
 
 * O serviço Web implantado de Azure Machine Learning usa um modulo leitor e gravador para ler/gravar dados de/para um banco de dados SQL do Azure. Este serviço Web expõe os quatro parâmetros a seguir:  Nome do servidor de banco de dados, Nome do banco de dados, Nome de conta de usuário do servidor e Senha de conta de usuário do servidor.
-* Ambos os valores de data/hora de **início** e de **término** devem estar no [formato ISO](https://en.wikipedia.org/wiki/ISO_8601). Por exemplo:  2014-10-14T16:32:41Z. O tempo **final** é opcional. Se você não especificar o valor para a propriedade **end**, ele será calculado como "**início + 48 horas**" Para executar o pipeline indefinidamente, especifique **9999-09-09** como o valor para a propriedade **end**. Consulte a [Referência de script JSON](https://msdn.microsoft.com/library/dn835050.aspx) para obter detalhes sobre as propriedades JSON.
+* Ambos os valores de data/hora de **início** e de **término** devem estar no [formato ISO](https://en.wikipedia.org/wiki/ISO_8601). Por exemplo: 2014-10-14T16:32:41Z. O tempo **final** é opcional. Se você não especificar o valor para a propriedade **end**, ele será calculado como "**início + 48 horas**" Para executar o pipeline indefinidamente, especifique **9999-09-09** como o valor para a propriedade **end**. Consulte a [Referência de script JSON](https://msdn.microsoft.com/library/dn835050.aspx) para obter detalhes sobre as propriedades JSON.
 
 ### <a name="other-scenarios"></a>Outros cenários
 #### <a name="web-service-requires-multiple-inputs"></a>Serviço Web exige várias entradas

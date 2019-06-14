@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: shlo
 ms.openlocfilehash: 6fbdee71ab1123c258a5191a78e38f51eb41cbab
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66152923"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-tumbling-window"></a>Criar um gatilho que execute um pipeline em uma janela em cascata
@@ -74,18 +74,18 @@ Uma janela em cascata tem as seguintes propriedades de tipo de gatilho:
 
 A seguinte tabela fornece uma visão geral de alto nível dos principais elementos de JSON relacionados à recorrência e ao agendamento de um gatilho de janela em cascata:
 
-| Elemento JSON | Descrição | Type | Valores permitidos | Obrigatório |
+| Elemento JSON | DESCRIÇÃO | Type | Valores permitidos | Obrigatório |
 |:--- |:--- |:--- |:--- |:--- |
-| **type** | O tipo do gatilho. O tipo é o valor fixo "TumblingWindowTrigger." | String | "TumblingWindowTrigger" | Sim |
-| **runtimeState** | O estado atual do tempo de execução do gatilho.<br/>**Observação**: Este elemento é \<readOnly >. | String | “Iniciado”, “Interrompido”, “Desabilitado” | Sim |
-| **frequency** | Uma cadeia de caracteres que representa a unidade de frequência (em minutos ou horas) no qual o gatilho ocorre periodicamente. Se os valores de dados **startTime** são mais granulares do que o valor de **frequência**, os dados **startTime** são consideradas quando os limites da janela são computados. Por exemplo, se o valor de **frequência** for de hora em hora e o valor **startTime** for 2017-09-01T10:10:10Z, a primeira janela será (2017-09-01T10:10:10Z, 2017-09-01T11:10:10Z). | String | "minuto", "hora"  | Sim |
-| **interval** | Um inteiro positivo que indica o intervalo para o valor de **frequência**, que determina a frequência com a qual o gatilho é executado. Por exemplo, se **intervalo** for 3 e **frequência** é "hora", o gatilho é repetido a cada 3 horas. | Integer | Um número inteiro positivo. | Sim |
+| **type** | O tipo do gatilho. O tipo é o valor fixo "TumblingWindowTrigger." | Cadeia de caracteres | "TumblingWindowTrigger" | Sim |
+| **runtimeState** | O estado atual do tempo de execução do gatilho.<br/>**Observação**: Este elemento é \<readOnly >. | Cadeia de caracteres | “Iniciado”, “Interrompido”, “Desabilitado” | Sim |
+| **frequency** | Uma cadeia de caracteres que representa a unidade de frequência (em minutos ou horas) no qual o gatilho ocorre periodicamente. Se os valores de dados **startTime** são mais granulares do que o valor de **frequência**, os dados **startTime** são consideradas quando os limites da janela são computados. Por exemplo, se o valor de **frequência** for de hora em hora e o valor **startTime** for 2017-09-01T10:10:10Z, a primeira janela será (2017-09-01T10:10:10Z, 2017-09-01T11:10:10Z). | Cadeia de caracteres | "minuto", "hora"  | Sim |
+| **interval** | Um inteiro positivo que indica o intervalo para o valor de **frequência**, que determina a frequência com a qual o gatilho é executado. Por exemplo, se **intervalo** for 3 e **frequência** é "hora", o gatilho é repetido a cada 3 horas. | Número inteiro | Um número inteiro positivo. | Sim |
 | **startTime**| A primeira ocorrência, que pode estar no passado. O primeiro intervalo do gatilho é (**startTime**, **startTime** + **intervalo**). | DateTime | Um valor Datetime. | Sim |
 | **endTime**| A última ocorrência, que pode estar no passado. | DateTime | Um valor Datetime. | Sim |
 | **delay** | A quantidade de tempo para atrasar o início do processamento de dados para a janela. A execução do pipeline é iniciada após o tempo de execução esperado mais a quantidade de **atraso**. O **atraso** define quanto tempo o gatilho espera antes de disparar uma nova execução. O **atraso** não altera a janela **startTime**. Por exemplo, um valor **atraso** igual a 00:10:00 indica um atraso de 10 minutos. | Timespan<br/>(hh:mm:ss)  | Um valor temporal em que o padrão é 00:00:00. | Não |
-| **maxConcurrency** | O número de execuções do gatilho simultâneas que são acionadas para janelas prontas. Por exemplo, para fazer o preenchimento por hora é executada para resultados de ontem em 24 janelas. Se **maxConcurrency** = 10, os eventos de gatilho serão disparados somente para as 10 primeiras janelas (00:00-01:00 - 09:00-10:00). Após a conclusão das primeiras 10 execuções de pipeline disparada, as execuções de gatilho serão disparadas para as próximas 10 janelas (10:00-11:00-19:00 às 20:00). Continuando com esse exemplo de **maxConcurrency** = 10, se houver 10 janelas prontas, há 10 execuções totais de pipeline. Se houver apenas 1 janela pronta, há apenas 1 execução do pipeline. | Integer | Um número inteiro entre 1 e 50. | Sim |
-| **retryPolicy: Count** | O número de repetições antes da execução do pipeline ser marcada como "Failed."  | Integer | Um inteiro, em que o padrão é 0 (sem repetições). | Não |
-| **retryPolicy: intervalInSeconds** | O intervalo entre tentativas de repetição especificado em segundos. | Integer | O número de segundos, em que o padrão é 30. | Não |
+| **maxConcurrency** | O número de execuções do gatilho simultâneas que são acionadas para janelas prontas. Por exemplo, para fazer o preenchimento por hora é executada para resultados de ontem em 24 janelas. Se **maxConcurrency** = 10, os eventos de gatilho serão disparados somente para as 10 primeiras janelas (00:00-01:00 - 09:00-10:00). Após a conclusão das primeiras 10 execuções de pipeline disparada, as execuções de gatilho serão disparadas para as próximas 10 janelas (10:00-11:00-19:00 às 20:00). Continuando com esse exemplo de **maxConcurrency** = 10, se houver 10 janelas prontas, há 10 execuções totais de pipeline. Se houver apenas 1 janela pronta, há apenas 1 execução do pipeline. | Número inteiro | Um número inteiro entre 1 e 50. | Sim |
+| **retryPolicy: Count** | O número de repetições antes da execução do pipeline ser marcada como "Failed."  | Número inteiro | Um inteiro, em que o padrão é 0 (sem repetições). | Não |
+| **retryPolicy: intervalInSeconds** | O intervalo entre tentativas de repetição especificado em segundos. | Número inteiro | O número de segundos, em que o padrão é 30. | Não |
 
 ### <a name="windowstart-and-windowend-system-variables"></a>Variáveis do sistema WindowStart e WindowEnd
 

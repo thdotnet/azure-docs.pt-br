@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e94b307d562c4317a87713612a62e6da007f9703
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64570647"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Integrar sua infraestrutura VPN com a MFA do Azure usando a extensão Servidor de Políticas de Rede para o Azure
@@ -153,7 +153,7 @@ Para funcionar corretamente nesse cenário, o servidor NPS deve ser registrado n
 
 Você pode usar um padrão (baseado em assistente) ou a opção de configuração avançada para configurar o servidor RADIUS. Esta seção pressupõe que você esteja usando a opção de configuração padrão baseada em assistente.
 
-1. No console do Servidor de Políticas de Rede, clique em **NPS (Local)**.
+1. No console do Servidor de Políticas de Rede, clique em **NPS (Local)** .
 
 2. Em **Configuração Padrão**, selecione **Servidor RADIUS para Conexões VPN ou de Conexão Discada**s e, em seguida, selecione **Configurar VPN ou de Conexão Discada**.
 
@@ -242,11 +242,11 @@ Nesta seção, você configura o servidor VPN para usar a autenticação RADIUS.
 
 7. Na janela **Adicionar servidor do RADIUS**, faça o seguinte:
 
-     a. Na caixa **Nome do servidor**, digite o nome ou o endereço IP do servidor RADIUS que você configurou na seção anterior.
+    a. Na caixa **Nome do servidor**, digite o nome ou o endereço IP do servidor RADIUS que você configurou na seção anterior.
 
     b. Para o **Segredo compartilhado**, selecione **Alterar** e, em seguida, insira a senha de segredo compartilhado que você criou e registrou anteriormente.
 
-    c. Na caixa **Tempo limite (segundos)**, selecione um valor de **30** a **60**.  
+    c. Na caixa **Tempo limite (segundos)** , selecione um valor de **30** a **60**.  
     O valor de tempo limite é necessário para dar tempo suficiente para concluir o segundo fator de autenticação.
 
     ![Adicionar janela de servidor RADIUS, configurando o tempo limite](./media/howto-mfa-nps-extension-vpn/image16.png)
@@ -269,7 +269,7 @@ Nesta seção, você pode verificar se o cliente VPN é autenticado e autorizado
 
 4. Selecione **Adicionar uma conexão VPN**.
 
-5. Na janela **Adicionar uma conexão VPN**, na caixa **Provedor VPN**, selecione **Windows (interno)**, preencha os campos restantes conforme apropriado e, em seguida, selecione **Salvar**.
+5. Na janela **Adicionar uma conexão VPN**, na caixa **Provedor VPN**, selecione **Windows (interno)** , preencha os campos restantes conforme apropriado e, em seguida, selecione **Salvar**.
 
     ![A janela "Adicionar uma conexão VPN"](./media/howto-mfa-nps-extension-vpn/image17.png)
 

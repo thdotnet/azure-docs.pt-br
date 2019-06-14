@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/20/2018
 ms.openlocfilehash: 6e94aac47ce5b45e700e2413d2e86d5f36596348
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60614935"
 ---
 # <a name="monitor-sql-data-sync-with-azure-monitor-logs"></a>Monitorar a sincronização de dados do SQL com logs do Azure Monitor 
@@ -136,7 +136,7 @@ Para criar um alerta que usa os logs do Azure Monitor, faça o seguinte. Como pr
 
 1.  No portal do Azure, selecione **Pesquisa de Logs**.
 
-2.  Crie uma consulta para selecionar os erros e avisos por grupo de sincronização dentro do intervalo selecionado. Por exemplo: 
+2.  Crie uma consulta para selecionar os erros e avisos por grupo de sincronização dentro do intervalo selecionado. Por exemplo:
 
     `Type=DataSyncLog\_CL LogLevel\_s!=Success| measure count() by SyncGroupName\_s interval 60minute`
 

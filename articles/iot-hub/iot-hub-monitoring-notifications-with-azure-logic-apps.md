@@ -10,11 +10,11 @@ ms.tgt_pltfrm: arduino
 ms.date: 04/19/2019
 ms.author: robinsh
 ms.openlocfilehash: 26637468f44e12f7ad66f907e0f6be3d907e578f
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62125989"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64719316"
 ---
 # <a name="iot-remote-monitoring-and-notifications-with-azure-logic-apps-connecting-your-iot-hub-and-mailbox"></a>Monitoramento remoto IoT e notificações com os Aplicativos Lógicos do Azure conectando o hub IoT e a caixa de correio
 
@@ -78,7 +78,7 @@ Criar um namespace do Barramento de Serviço e da fila. Neste tópico, você pod
 
    ![Adicionar uma fila do barramento de serviço ao portal do Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/create-service-bus-queue.png)
 
-1. Volta a **Namespace de barramento de serviço** painel, em **entidades**, selecione **filas**. Abrir a fila do barramento de serviço na lista e, em seguida, selecione **políticas de acesso compartilhado** > **+ adicionar**.
+1. Volta a **Namespace de barramento de serviço** painel, em **entidades**, selecione **filas**. Abrir a fila do barramento de serviço na lista e, em seguida, selecione **políticas de acesso compartilhado** >  **+ adicionar**.
 
 1. Insira um nome para a política, marque **Manage**e, em seguida, selecione **criar**.
 
@@ -158,7 +158,7 @@ Na seção anterior, você configurar seu hub IoT para rotear mensagens contendo
 
    ![Selecionar o barramento de serviço para começar a criar o aplicativo lógico no portal do Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/6-select-service-bus-when-creating-blank-logic-app-azure-portal.png)
 
-1. Sob **disparadores**, selecione **quando uma ou mais mensagens chegam em uma fila (conclusão automática)**.
+1. Sob **disparadores**, selecione **quando uma ou mais mensagens chegam em uma fila (conclusão automática)** .
 
    ![Selecione o gatilho para seu aplicativo lógico no portal do Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/select-service-bus-trigger.png)
 
@@ -214,7 +214,7 @@ Na seção anterior, você configurar seu hub IoT para rotear mensagens contendo
 
    1. Sobre o **smtp Conexão de API** painel, em **geral**, selecione **conexão de API editar**.
 
-   1. Sobre o **Editar Conexão de API** painel, selecione **habilitar SSL?**, insira novamente a senha para sua conta de email e selecione **salvar**.
+   1. Sobre o **Editar Conexão de API** painel, selecione **habilitar SSL?** , insira novamente a senha para sua conta de email e selecione **salvar**.
 
       ![Editar conexão de API do SMTP em seu aplicativo lógico no portal do Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/re-enable-smtp-connection-ssl.png)
 

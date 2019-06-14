@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: abnarain
 ms.openlocfilehash: f038510c20e70c9d6b9dc8e396d9a15beb7270ca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66155147"
 ---
 # <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory-with-powershell"></a>Criar um tempo de execução da integração auto-hospedada compartilhado no Azure Data Factory com o PowerShell
@@ -39,7 +39,7 @@ Este guia passo a passo mostra como criar um tempo de execução de integração
 > [!NOTE]  
 > Para obter uma lista de regiões do Azure nas quais o Data Factory está atualmente disponível, selecione as regiões que lhe interessam em [Produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory).
 
-## <a name="create-a-data-factory"></a>Criar uma data factory
+## <a name="create-a-data-factory"></a>Criar um data factory
 
 1. Inicie o ISE (ambiente de script integrado) do Windows PowerShell.
 

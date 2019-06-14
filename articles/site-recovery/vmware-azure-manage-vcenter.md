@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: ramamill
 ms.openlocfilehash: 9694c682f171ab715812b05fed2064c9bbcd36b3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60600353"
 ---
 # <a name="manage-vmware-vcenter-server"></a>Gerenciar o servidor VMware vCenter
@@ -98,7 +98,7 @@ Assim que o endereço IP é atualizado, componentes do Site Recovery começará 
 ## <a name="migrate-few-protected-virtual-machines-to-a-new-vcenter"></a>Migrar algumas máquinas virtuais protegidas para um novo vCenter
 
 > [!NOTE]
-> Esta seção é aplicável somente quando você estiver migrando algumas das suas máquinas virtuais protegidas para um novo vCenter. Se você quiser proteger um novo conjunto de máquinas virtuais de um novo vCenter, [adicionar novos detalhes do vCenter ao servidor de configuração](#add-vmware-server-to-the-vault) e que começam com  **[habilitar a proteção](vmware-azure-tutorial.md#enable-replication)**.
+> Esta seção é aplicável somente quando você estiver migrando algumas das suas máquinas virtuais protegidas para um novo vCenter. Se você quiser proteger um novo conjunto de máquinas virtuais de um novo vCenter, [adicionar novos detalhes do vCenter ao servidor de configuração](#add-vmware-server-to-the-vault) e que começam com  **[habilitar a proteção](vmware-azure-tutorial.md#enable-replication)** .
 
 Para mover algumas máquinas virtuais para um novo vCenter:
 
@@ -108,7 +108,7 @@ Para mover algumas máquinas virtuais para um novo vCenter:
 4. Agora, proteger as máquinas virtuais migradas por [selecionando o novo vCenter ao habilitar a proteção](vmware-azure-tutorial.md#enable-replication).
 
 > [!TIP]
-> Se for o número de máquinas virtuais que estão sendo migrados **superior** que o número de número de máquinas virtuais retidos no vCenter antigo, atualize o endereço IP do novo vCenter usando as instruções fornecidas aqui. Algumas das máquinas virtuais que são mantidos no vCenter antigo, [desabilitar a replicação](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-vmware-vm-or-physical-server-vmware-to-azure); [adicionar novos detalhes do vCenter ao servidor de configuração](#add-vmware-server-to-the-vault)e inicie  **[habilitar a proteção](vmware-azure-tutorial.md#enable-replication)**.
+> Se for o número de máquinas virtuais que estão sendo migrados **superior** que o número de número de máquinas virtuais retidos no vCenter antigo, atualize o endereço IP do novo vCenter usando as instruções fornecidas aqui. Algumas das máquinas virtuais que são mantidos no vCenter antigo, [desabilitar a replicação](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-vmware-vm-or-physical-server-vmware-to-azure); [adicionar novos detalhes do vCenter ao servidor de configuração](#add-vmware-server-to-the-vault)e inicie  **[habilitar a proteção](vmware-azure-tutorial.md#enable-replication)** .
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
 

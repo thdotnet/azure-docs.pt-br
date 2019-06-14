@@ -13,10 +13,10 @@ ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ea9e4ae21ecc6538b33aed1566c10ddcd22b86c7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60482212"
 ---
 # <a name="set-up-security-info-preview-to-use-text-messaging"></a>Configurar informações de segurança (versão prévia) para usar mensagens de texto
@@ -86,11 +86,11 @@ Se quiser que mensagens de texto sejam o método padrão usado ao entrar na sua 
 
     ![Link Alterar do método de entrada padrão](media/security-info/securityinfo-myprofile-phonetext-defaultchange.png)
 
-2. Selecione **Telefone – texto (*_seu_número_de_telefone_*)** na lista suspensa de métodos disponíveis e, em seguida, selecione **Confirmar**.
+2. Selecione **Telefone – texto ( *_seu_número_de_telefone_* )** na lista suspensa de métodos disponíveis e, em seguida, selecione **Confirmar**.
 
     ![Selecione o método de entrada padrão](media/security-info/securityinfo-myprofile-phonetext-changeddefault.png)
 
-    O método padrão usado para alterações de entrada para **Telefone – texto (*_seu_número_de_telefone_*)**.
+    O método padrão usado para alterações de entrada para **Telefone – texto ( *_seu_número_de_telefone_* )** .
 
 ## <a name="additional-security-info-methods"></a>Métodos de informações de segurança adicionais
 Você tem opções adicionais de como sua organização entra em contato com você para confirmar sua identidade, com base no que você está tentando fazer. As opções incluem:
@@ -106,7 +106,7 @@ Você tem opções adicionais de como sua organização entra em contato com voc
     >[!Note]
     >Se algumas dessas opções estiverem ausentes, é mais provável que sua organização não permita esses métodos. Se esse for o caso, você precisará escolher um método disponível ou entrar em contato com o administrador para obter mais ajuda.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Redefina sua senha se você a perdeu ou esqueceu, do [portal de redefinição de senha](https://passwordreset.microsoftonline.com/) ou siga as etapas no artigo [Redefinir sua senha de trabalho ou escola](user-help-reset-password.md).
 

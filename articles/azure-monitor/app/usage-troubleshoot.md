@@ -14,10 +14,10 @@ ms.reviewer: mbullwin
 ms.pm_owner: daviste;NumberByColors
 ms.author: daviste
 ms.openlocfilehash: eabc47c2acb33d8c6ee03477b5e8c7783edebbb7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60371845"
 ---
 # <a name="troubleshoot-user-behavior-analytics-tools-in-application-insights"></a>Solucionar problemas de ferramentas de análise de comportamento do usuário no Application Insights
@@ -51,7 +51,7 @@ Se o seu aplicativo estiver enviando muitos nomes de exibição de página, veri
 
 Se o seu aplicativo estiver enviando um número excessivo de nomes de evento personalizado, altere o nome no código para ser menos específico. Novamente, evite colocar URLs e outras informações por página ou dinâmicas diretamente nos nomes de evento personalizado. Em vez disso, mova esses detalhes para as propriedades personalizadas do evento personalizado com a API `trackEvent`. Por exemplo, em vez de `appInsights.trackEvent("Edit button clicked on http://www.contoso.com/index")`, sugerimos algo como `appInsights.trackEvent("Edit button clicked", { "Source URL": "http://www.contoso.com/index" })`.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Visão geral das ferramentas de análise de comportamento do usuário](usage-overview.md)
 

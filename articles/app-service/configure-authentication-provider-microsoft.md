@@ -16,10 +16,10 @@ ms.date: 04/19/2018
 ms.author: mahender
 ms.custom: seodec18
 ms.openlocfilehash: e3da856efd7d44f15f9de27c9e38375d40dc211d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60850915"
 ---
 # <a name="how-to-configure-your-app-service-application-to-use-microsoft-account-login"></a>Como configurar seu aplicativo do Serviço de Aplicativo para usar o logon da Conta da Microsoft
@@ -36,7 +36,7 @@ Este tópico mostra como configurar o Serviço de Aplicativo do Azure para usar 
 6. Em "Redirecionar URIs", forneça o ponto de extremidade para seu aplicativo e clique em **Salvar**. 
    
    > [!NOTE]
-   > O URI de redirecionamento é a URL do seu aplicativo acrescentada com o caminho */.auth/login/microsoftaccount/callback*. Por exemplo, `https://contoso.azurewebsites.net/.auth/login/microsoftaccount/callback`.   
+   > O URI de redirecionamento é a URL do seu aplicativo acrescentada com o caminho */.auth/login/microsoftaccount/callback*. Por exemplo: `https://contoso.azurewebsites.net/.auth/login/microsoftaccount/callback`.   
    > Certifique-se de que você está usando o esquema HTTPS.
    
 7. Em "Segredos do Aplicativo", clique em **Gerar nova senha**. Anote o valor que aparece. Depois que você sair da página, ela não será exibida novamente.

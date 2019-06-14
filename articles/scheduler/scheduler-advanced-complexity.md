@@ -11,10 +11,10 @@ ms.assetid: 5c124986-9f29-4cbc-ad5a-c667b37fbe5a
 ms.topic: article
 ms.date: 11/14/2018
 ms.openlocfilehash: a413261d251c8dfc1de9209168ee8137b85009f1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60531822"
 ---
 # <a name="build-advanced-schedules-and-recurrences-for-jobs-in-azure-scheduler"></a>Criar agendamentos avançados e recorrências para trabalhos no Agendador do Azure
@@ -63,15 +63,15 @@ Para criar um agendamento básico com a [API REST do Agendador do Azure](/rest/a
 
 Esta tabela fornece uma visão geral de alto nível para os principais elementos JSON que podem ser usados ao configurar recorrências e agendamentos para trabalhos. 
 
-| Elemento | Necessário | DESCRIÇÃO | 
+| Elemento | Obrigatório | DESCRIÇÃO | 
 |---------|----------|-------------|
-| **startTime** | Não  | Um valor de cadeia de caracteres de DateTime em [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) que especifica quando o trabalho é iniciado em um cronograma básico. <p>Para agendas complexas, o trabalho não inicia antes do **startTime**. | 
-| **recurrence** | Não  | As regras de recorrência para quando o trabalho é executado. O objeto de **recorrência** tem suporte para estes elementos: **frequency**, **interval**, **schedule**, **count** e **endTime**. <p>Se você usar o elemento **recurrence**, também deverá usar o **frequency**, enquanto outros elementos **recurrence** são opcionais. |
+| **startTime** | Não | Um valor de cadeia de caracteres de DateTime em [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) que especifica quando o trabalho é iniciado em um cronograma básico. <p>Para agendas complexas, o trabalho não inicia antes do **startTime**. | 
+| **recurrence** | Não | As regras de recorrência para quando o trabalho é executado. O objeto de **recorrência** tem suporte para estes elementos: **frequency**, **interval**, **schedule**, **count** e **endTime**. <p>Se você usar o elemento **recurrence**, também deverá usar o **frequency**, enquanto outros elementos **recurrence** são opcionais. |
 | **frequency** | Sim, quando você usa **recurrence** | A unidade de tempo entre ocorrências e a compatibilidade desses valores: “Minute”, “Hour”, “Day”, “Week”, “Month”, “Year” | 
-| **interval** | Não  | Um inteiro positivo que determina o número de unidades de tempo entre ocorrências com base em **frequency**. <p>Por exemplo, se **interval** for 10 e **frequency** for "Week", o trabalho se repetirá a cada 10 semanas. <p>Aqui estão o maior número de intervalos para cada frequência: <p>– 18 meses <br>– 78 semanas <br>– 548 dias <br>– Para horas e minutos, o intervalo é 1 <= <*interval*> <= 1000. | 
-| **schedule** | Não  | Defina as alterações para a recorrência com base nas marcas de minuto, marcas de hora, dias da semana e dias do mês especificados | 
-| **count** | Não  | Um número inteiro positivo que especifica o número de vezes que o trabalho é executado antes de ser concluído. <p>Por exemplo, quando um trabalho diário tem **count** definido como 7 e a data de início é Monday, o trabalho conclui a execução em um domingo. Se a data de início já tiver passado, a primeira execução será calculada do momento da criação. <p>Sem **endTime** ou **count**, o trabalho será executado de maneira infinita. Não é possível usar **count** e **endTime** no mesmo trabalho, mas a regra que termina primeiro é respeitada. | 
-| **endTime** | Não  | Um valor de cadeia de caracteres de Date ou DateTime no [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) que especifica quando o trabalho para de ser executado. Você pode definir um valor para **endTime** que está no passado. <p>Sem **endTime** ou **count**, o trabalho será executado de maneira infinita. Não é possível usar **count** e **endTime** no mesmo trabalho, mas a regra que termina primeiro é respeitada. |
+| **interval** | Não | Um inteiro positivo que determina o número de unidades de tempo entre ocorrências com base em **frequency**. <p>Por exemplo, se **interval** for 10 e **frequency** for "Week", o trabalho se repetirá a cada 10 semanas. <p>Aqui estão o maior número de intervalos para cada frequência: <p>– 18 meses <br>– 78 semanas <br>– 548 dias <br>– Para horas e minutos, o intervalo é 1 <= <*interval*> <= 1000. | 
+| **schedule** | Não | Defina as alterações para a recorrência com base nas marcas de minuto, marcas de hora, dias da semana e dias do mês especificados | 
+| **count** | Não | Um número inteiro positivo que especifica o número de vezes que o trabalho é executado antes de ser concluído. <p>Por exemplo, quando um trabalho diário tem **count** definido como 7 e a data de início é Monday, o trabalho conclui a execução em um domingo. Se a data de início já tiver passado, a primeira execução será calculada do momento da criação. <p>Sem **endTime** ou **count**, o trabalho será executado de maneira infinita. Não é possível usar **count** e **endTime** no mesmo trabalho, mas a regra que termina primeiro é respeitada. | 
+| **endTime** | Não | Um valor de cadeia de caracteres de Date ou DateTime no [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) que especifica quando o trabalho para de ser executado. Você pode definir um valor para **endTime** que está no passado. <p>Sem **endTime** ou **count**, o trabalho será executado de maneira infinita. Não é possível usar **count** e **endTime** no mesmo trabalho, mas a regra que termina primeiro é respeitada. |
 |||| 
 
 Por exemplo, esse esquema JSON descreve um agendamento básico e a recorrência para um trabalho: 

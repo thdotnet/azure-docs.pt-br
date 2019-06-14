@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: b06fec8ab726f48e1937bae4cfbdbd9842788d0a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61480521"
 ---
 # <a name="performing-sentiment-analysis-by-using-azure-stream-analytics-and-azure-machine-learning"></a>Como realizar uma análise de sentimento usando o Azure Stream Analytics e o Azure Machine Learning
@@ -175,7 +175,7 @@ Nesta seção do tutorial, você define uma função do trabalho de Stream Analy
 
 1. Verifique se que você tem a URL do serviço Web e a chave de API baixada anteriormente na pasta de trabalho do Excel.
 
-2. Navegue para a folha do trabalho > **Funções** > **+ Adicionar** > **AzureML**
+2. Navegue para a folha do trabalho > **Funções** >  **+ Adicionar** > **AzureML**
 
 3. Preencha a folha **Função do Azure Machine Learning** com estes valores:
 

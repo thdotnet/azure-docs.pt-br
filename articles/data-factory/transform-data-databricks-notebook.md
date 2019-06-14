@@ -13,10 +13,10 @@ author: sharonlo101
 ms.author: shlo
 manager: craigg
 ms.openlocfilehash: 8036a8694bb8c8d0db236eba831f13dc2bf47d0a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60311657"
 ---
 # <a name="transform-data-by-running-a-databricks-notebook"></a>Transformar dados executando um notebook do Databricks
@@ -59,13 +59,13 @@ A tabela a seguir descreve as propriedades JSON usadas na definição de JSON:
 
 |Propriedade|DESCRIÇÃO|Obrigatório|
 |---|---|---|
-|Nome|Nome da atividade no pipeline.|Sim|
-|description|Texto que descreve o que a atividade faz.|Não |
-|tipo|Para Atividade de Notebook do Databricks, o tipo da atividade é DatabricksNotebook.|Sim|
+|name|Nome da atividade no pipeline.|Sim|
+|description|Texto que descreve o que a atividade faz.|Não|
+|type|Para Atividade de Notebook do Databricks, o tipo da atividade é DatabricksNotebook.|Sim|
 |linkedServiceName|Nome do serviço vinculado do Databricks no qual o notebook do Databricks executa. Saiba mais sobre esse serviço vinculado no artigo  [Serviços de computação vinculados](compute-linked-services.md) .|Sim|
 |notebookPath|O caminho absoluto do notebook a ser executado no workspace do Databricks. Esse caminho deve começar com uma barra.|Sim|
-|baseParameters|Uma matriz de pares chave-valor. Parâmetros básicos podem ser utilizados para cada execução de atividade. Se o notebook utilizar um parâmetro que não for especificado, será usado o valor padrão do notebook. Encontre mais informações sobre os parâmetros em [Notebooks do Databricks](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|Não |
-|bibliotecas|Uma lista de bibliotecas a serem instaladas no cluster, que executará o trabalho. Pode ser uma matriz de \<cadeia de caracteres, object>.|Não |
+|baseParameters|Uma matriz de pares chave-valor. Parâmetros básicos podem ser utilizados para cada execução de atividade. Se o notebook utilizar um parâmetro que não for especificado, será usado o valor padrão do notebook. Encontre mais informações sobre os parâmetros em [Notebooks do Databricks](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|Não|
+|bibliotecas|Uma lista de bibliotecas a serem instaladas no cluster, que executará o trabalho. Pode ser uma matriz de \<cadeia de caracteres, object>.|Não|
 
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Bibliotecas com suporte para atividades do Databricks

@@ -17,10 +17,10 @@ ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
 ms.openlocfilehash: f9e31ac7685d597c741033bc165c6a51280e3d72
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64571735"
 ---
 # <a name="configure-an-always-on-availability-group-on-azure-virtual-machines-in-different-regions"></a>Configurar um Grupo de Disponibilidade Always On em máquinas virtuais do Azure em diferentes regiões
@@ -174,7 +174,7 @@ Depois de testar a conectividade, mova a réplica primária de volta para seu da
 
 ### <a name="more-information-about-planned-and-forced-manual-failover"></a>Para obter mais informações sobre failover manual forçado e não planejado
 
-Para saber mais, consulte os tópicos a seguir:
+Para mais informações, consulte os seguintes tópicos:
 
 - [Executar um Failover Manual planejado de um grupo de disponibilidade (SQL Server)](https://msdn.microsoft.com/library/hh231018.aspx)
 - [Executar um Failover Manual forçado de um grupo de disponibilidade (SQL Server)](https://msdn.microsoft.com/library/ff877957.aspx)

@@ -10,10 +10,10 @@ ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 5f9cd5edfb360da507320306314e67ac61503132
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60738467"
 ---
 # <a name="managing-azure-automation-data"></a>Gerenciando dados da Automação do Azure
@@ -67,7 +67,7 @@ A replicação geográfica, padrão em contas da Automação do Azure, faz o bac
 
 A tabela a seguir mostra os emparelhamentos disponíveis das regiões primárias e secundárias.
 
-| Primário | Secundário |
+| Primária | Secundário |
 | --- | --- |
 | Centro-Sul dos Estados Unidos |Centro-Norte dos EUA |
 | Leste dos EUA 2 |Centro dos EUA |

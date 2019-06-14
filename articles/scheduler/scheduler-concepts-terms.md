@@ -11,10 +11,10 @@ ms.assetid: 3ef16fab-d18a-48ba-8e56-3f3e0a1bcb92
 ms.topic: conceptual
 ms.date: 08/18/2016
 ms.openlocfilehash: d701fba39685d781d1a4c2d8a6cf194ca7eb2908
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60530931"
 ---
 # <a name="concepts-terminology-and-entities-in-azure-scheduler"></a>Conceitos, terminologia e entidades do Agendador do Azure
@@ -81,13 +81,13 @@ Em alto nível, um trabalho do Agendador tem essas partes básicas:
 
 O trabalho também inclui os dados fornecidos pelo sistema, como tempo de execução agendada do próximo do trabalho. A definição do código desse trabalho é um objeto no formato JSON (JavaScript Object Notation), que tem estes elementos:
 
-| Elemento | Necessário | DESCRIÇÃO | 
+| Elemento | Obrigatório | DESCRIÇÃO | 
 |---------|----------|-------------| 
-| [**startTime**](#start-time) | Não  | A hora de início do trabalho com um deslocamento de fuso horário em [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | 
+| [**startTime**](#start-time) | Não | A hora de início do trabalho com um deslocamento de fuso horário em [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | 
 | [**action**](#action) | Sim | Os detalhes para a ação principal, que podem incluir um objeto **errorAction** | 
-| [**errorAction**](#error-action) | Não  | Os detalhes para a ação secundária que é executada se a ação principal falha |
-| [**recurrence**](#recurrence) | Não  | Os detalhes, como a frequência e o intervalo para um trabalho recorrente | 
-| [**retryPolicy**](#retry-policy) | Não  | Os detalhes de quantas vezes repetir uma ação | 
+| [**errorAction**](#error-action) | Não | Os detalhes para a ação secundária que é executada se a ação principal falha |
+| [**recurrence**](#recurrence) | Não | Os detalhes, como a frequência e o intervalo para um trabalho recorrente | 
+| [**retryPolicy**](#retry-policy) | Não | Os detalhes de quantas vezes repetir uma ação | 
 | [**state**](#state) | Sim | Os detalhes do estado atual do trabalho |
 | [**Status**](#status) | Sim | Os detalhes do status atual do trabalho, que é controlado pelo serviço |
 ||||
@@ -147,7 +147,7 @@ No objeto **startTime**, você pode especificar a hora de início e um deslocame
 
 <a name="action"></a>
 
-## <a name="action"></a>ação
+## <a name="action"></a>action
 
 Seu trabalho do Agendador executa uma **action** primária com base no agendamento especificado. O Agendador é compatível com ações HTTP, de fila de armazenamento, de tópico do Barramento de Serviço e de fila do Barramento de Serviço. Se a **action** primária falha, o Agendador pode executar uma [**errorAction**](#erroraction) secundária que cuida do erro. O objeto **action** descreve estes elementos:
 
@@ -248,15 +248,15 @@ Um trabalho se repetirá se a definição do JSON do trabalho incluir o objeto *
 | Propriedade | Necessário | Value | DESCRIÇÃO | 
 |----------|----------|-------|-------------| 
 | **frequency** | Sim, quando **recurrence** é usado | "Minute", "Hour", "Day", "Week", "Month", "Year" | A unidade de tempo entre ocorrências | 
-| **interval** | Não  | 1 a 1000, inclusive | Um inteiro positivo que determina o número de unidades de tempo entre cada ocorrência com base em **frequency** | 
-| **schedule** | Não  | Varia | Os detalhes de agendamentos mais avançados e complexos. Veja **hours**, **minutes**, **weekDays**, **months** e **monthDays** | 
-| **horas** | Não  | 1 a 24 | Uma matriz com as marcas de hora para quando executar o trabalho | 
-| **minutos** | Não  | 0 a 59 | Uma matriz com as marcas de minutos para quando executar o trabalho | 
-| **months** | Não  | 1 a 12 | Uma matriz com os meses para quando executar o trabalho | 
-| **Dias do mês** | Não  | Varia | Uma matriz com os dias do mês para quando executar o trabalho | 
-| **Dias da semana** | Não  | "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" | Uma matriz com os dias da semana para quando executar o trabalho | 
-| **count** | Não  | <*none*> | O número de recorrências. O padrão é repetir indefinidamente. Não é possível usar **count** e **endTime**, mas a regra que termina primeiro é respeitada. | 
-| **endTime** | Não  | <*none*> | A data e hora para quando interromper a recorrência. O padrão é repetir indefinidamente. Não é possível usar **count** e **endTime**, mas a regra que termina primeiro é respeitada. | 
+| **interval** | Não | 1 a 1000, inclusive | Um inteiro positivo que determina o número de unidades de tempo entre cada ocorrência com base em **frequency** | 
+| **schedule** | Não | Varia | Os detalhes de agendamentos mais avançados e complexos. Veja **hours**, **minutes**, **weekDays**, **months** e **monthDays** | 
+| **horas** | Não | 1 a 24 | Uma matriz com as marcas de hora para quando executar o trabalho | 
+| **minutos** | Não | 0 a 59 | Uma matriz com as marcas de minutos para quando executar o trabalho | 
+| **months** | Não | 1 a 12 | Uma matriz com os meses para quando executar o trabalho | 
+| **Dias do mês** | Não | Varia | Uma matriz com os dias do mês para quando executar o trabalho | 
+| **Dias da semana** | Não | "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" | Uma matriz com os dias da semana para quando executar o trabalho | 
+| **count** | Não | <*none*> | O número de recorrências. O padrão é repetir indefinidamente. Não é possível usar **count** e **endTime**, mas a regra que termina primeiro é respeitada. | 
+| **endTime** | Não | <*none*> | A data e hora para quando interromper a recorrência. O padrão é repetir indefinidamente. Não é possível usar **count** e **endTime**, mas a regra que termina primeiro é respeitada. | 
 ||||
 
 Para obter mais informações sobre esses elementos, consulte [Criar agendamentos complexos e recorrências avançadas](../scheduler/scheduler-advanced-complexity.md).
@@ -278,15 +278,15 @@ Para o caso quando um trabalho do Agendador falhar, você pode configurar uma po
 | Propriedade | Necessário | Value | DESCRIÇÃO | 
 |----------|----------|-------|-------------| 
 | **retryType** | Sim | **Fixed**, **None** | Determina se você especifica uma política de repetição (**fixed**) ou não (**none**). | 
-| **retryInterval** | Não  | PT30S | Especifica o intervalo e a frequência entre as tentativas de repetição no [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations). O valor mínimo é 15 segundos, enquanto o valor máximo é 18 meses. | 
-| **retryCount** | Não  | 4 | Especifica o número de tentativas de repetição. O valor máximo é 20. | 
+| **retryInterval** | Não | PT30S | Especifica o intervalo e a frequência entre as tentativas de repetição no [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations). O valor mínimo é 15 segundos, enquanto o valor máximo é 18 meses. | 
+| **retryCount** | Não | 4 | Especifica o número de tentativas de repetição. O valor máximo é 20. | 
 ||||
 
 Para obter mais informações, consulte [Alta disponibilidade e confiabilidade](../scheduler/scheduler-high-availability-reliability.md).
 
 <a name="status"></a>
 
-## <a name="state"></a>state
+## <a name="state"></a>estado
 
 O estado de um trabalho é **Enabled**, **Disabled**, **Completed** ou **Faulted**, por exemplo: 
 
@@ -307,7 +307,7 @@ Depois que um trabalho é iniciado, o Agendador retorna informações sobre o st
 * O número de falhas, se houver
 * O número de falhas, se houver
 
-Por exemplo: 
+Por exemplo:
 
 ```json
 "status": {

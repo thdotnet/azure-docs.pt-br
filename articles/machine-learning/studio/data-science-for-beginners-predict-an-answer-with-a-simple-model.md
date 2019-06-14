@@ -11,10 +11,10 @@ ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
 ms.openlocfilehash: 9165e51d07cf97756408c7f73720931abe067bb2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60751511"
 ---
 # <a name="predict-an-answer-with-a-simple-model"></a>Prever uma resposta com um modelo simples
@@ -87,7 +87,7 @@ Desenhando uma linha, criamos um *modelo*. Pense nisso como pegar o mundo real e
 
 O fato de que todos os pontos não passam exatamente pela linha não tem qualquer problema. Cientistas de dados explicam isso dizendo que há o modelo (essa é a linha) e cada ponto tem algum *ruído* ou *variação* associado a ele. Há a relação perfeita subjacente, e há o mundo real que adiciona ruído e incerteza.
 
-Como estamos tentando responder à pergunta *quanto custa?*, isso é chamado de *regressão*. E, como estamos usando uma linha reta, é uma *regressão linear*.
+Como estamos tentando responder à pergunta *quanto custa?* , isso é chamado de *regressão*. E, como estamos usando uma linha reta, é uma *regressão linear*.
 
 ## <a name="use-the-model-to-find-the-answer"></a>Usar o modelo para encontrar a resposta
 Agora temos um modelo e a nossa pergunta é: Quanto custará um diamante de 1,35 quilate?

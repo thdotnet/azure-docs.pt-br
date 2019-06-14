@@ -10,10 +10,10 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 06/28/2017
 ms.openlocfilehash: 3658b57d003ddc5429c6857f88044376fe1aaa93
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60399060"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub"></a>Carregar arquivos do seu dispositivo para a nuvem com o Hub IoT
@@ -26,7 +26,7 @@ Este tutorial baseia-se no código do tutorial [Enviar mensagens da nuvem para o
 
 * Usar as notificações de carregamento de arquivo do Hub IoT para disparar o processamento do arquivo no back-end do aplicativo.
 
-A [Enviar telemetria para o Hub IoT (Java)](quickstart-send-telemetry-java.md) e [Enviar mensagens de nuvem para dispositivo com os tutoriais do Hub IoT (Java)](iot-hub-java-java-c2d.md) mostra o dispositivo básico para a nuvem e nuvem para dispositivo funcionalidade de mensagens do Hub IoT. O [configurar o roteamento de mensagens com o IoT Hub](tutorial-routing.md) tutorial descreve uma maneira de armazenar mensagens do dispositivo para nuvem de forma confiável no armazenamento de BLOBs do Azure. No entanto, em alguns cenários você não pode mapear facilmente os dados que seus dispositivos enviam em mensagens relativamente menores do dispositivo para a nuvem que o Hub IoT aceita. Por exemplo: 
+A [Enviar telemetria para o Hub IoT (Java)](quickstart-send-telemetry-java.md) e [Enviar mensagens de nuvem para dispositivo com os tutoriais do Hub IoT (Java)](iot-hub-java-java-c2d.md) mostra o dispositivo básico para a nuvem e nuvem para dispositivo funcionalidade de mensagens do Hub IoT. O [configurar o roteamento de mensagens com o IoT Hub](tutorial-routing.md) tutorial descreve uma maneira de armazenar mensagens do dispositivo para nuvem de forma confiável no armazenamento de BLOBs do Azure. No entanto, em alguns cenários você não pode mapear facilmente os dados que seus dispositivos enviam em mensagens relativamente menores do dispositivo para a nuvem que o Hub IoT aceita. Por exemplo:
 
 * Arquivos grandes que contêm imagens
 * vídeos
@@ -260,7 +260,7 @@ Você pode usar o portal para exibir o arquivo carregado no contêiner de armaze
 
 ![Arquivo carregado](media/iot-hub-java-java-upload/uploaded-file.png)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Neste tutorial, você aprendeu a usar os recursos de carregamento de arquivo do Hub IoT para simplificar os carregamentos de arquivos de dispositivos. Você pode continuar explorando os recursos e cenários do Hub IoT com os seguintes artigos:
 

@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 11/06/2018
 ms.author: genli
 ms.openlocfilehash: baed2b23a321c53a614303d3085fbb3a4bf6ad0b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60831088"
 ---
 # <a name="back-end-server-certificate-is-not-whitelisted-for-an-application-gateway-using-an-internal-load-balancer-with-an-app-service-environment"></a>O certificado de servidor back-end não está na lista de permissões para um gateway de aplicativo usando um Balanceador de Carga Interno com um ambiente de serviço de aplicativo
@@ -36,9 +36,9 @@ Quando você cria um gateway de aplicativo usando um ILB com um ASE no back-end,
 - **Nome do host:** test.appgwtestase.com
 - **Certificado SSL**: CN=test.appgwtestase.com
 - **Pool de back-end**: Endereço IP ou FQDN
-- **Endereço IP:**: 10.1.5.11
+- **Endereço IP:** : 10.1.5.11
 - **Configurações HTTP:** HTTPS
-- **Porta:**: 443
+- **Porta:** : 443
 - **Investigação personalizada:** Nome do host - test.appgwtestase.com
 - **Certificado de autenticação:** .cer do test.appgwtestase.com
 - **Integridade do back-end:** Não íntegro – o certificado do servidor back-end não está na lista de permissões do Gateway de Aplicativo.

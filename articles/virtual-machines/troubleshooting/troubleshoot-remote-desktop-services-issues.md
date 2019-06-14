@@ -14,10 +14,10 @@ ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
 ms.openlocfilehash: 5458a02c09a3600875c7300b27c5a87a735b2f1b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60318862"
 ---
 # <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Serviços de área de trabalho remota não estiver iniciando uma VM do Azure
@@ -146,7 +146,7 @@ Para solucionar esse problema, use o Console Serial. Ou então, [repare a VM off
 
     1. [Anexar um disco de dados à VM](../windows/attach-managed-disk-portal.md
 ).
-    2. Use o Console Serial, você pode copiar o arquivo para a nova unidade. Por exemplo, `copy C:\temp\ProcMonTrace.PML F:\`. Nesse comando, F é a letra do driver do disco de dados anexado.
+    2. Use o Console Serial, você pode copiar o arquivo para a nova unidade. Por exemplo: `copy C:\temp\ProcMonTrace.PML F:\`. Nesse comando, F é a letra do driver do disco de dados anexado.
     3. Desanexe a unidade de dados e conecte-a em uma VM funcional que tenha o ubstakke do Process Monitor instalado.
 
 6. Abra **ProcMonTrace.PML** usando o Process Monitor na VM funcional. Em seguida, filtre por  **O resultado é ACCESS DENIED**, conforme mostrado na seguinte imagem:

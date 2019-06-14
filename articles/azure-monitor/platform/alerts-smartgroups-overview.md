@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 05/15/2018
 ms.author: anantr
-ms.component: alerts
+ms.subservice: alerts
 ms.openlocfilehash: e0bef0fc4f4b61add24c243af0dac64933ad5bab
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60346308"
 ---
 # <a name="smart-groups"></a>Grupos inteligentes
@@ -49,7 +49,7 @@ A página de detalhes do grupo inteligente é exibida aos selecionar um grupo in
 
 A página de detalhes do grupo inteligente inclui as seções a seguir.
 
-| Seção | DESCRIÇÃO |
+| `Section` | DESCRIÇÃO |
 |:---|:---|
 | Alertas | Lista os alertas individuais que estão incluídos no grupo inteligente. Selecione um alerta para abrir a página de detalhes do alerta. |
 | Histórico | Lista cada ação tomada pelo grupo inteligente e quaisquer alterações feitas no grupo. Atualmente, isso se limita a alterações de estado e alterações de associação do alerta. |
@@ -58,8 +58,9 @@ A página de detalhes do grupo inteligente inclui as seções a seguir.
 
 O nome de um grupo inteligente é o nome do seu primeiro alerta. Você não pode criar ou renomear um grupo inteligente.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Gerenciar grupos inteligentes](https://aka.ms/managing-smart-groups)
 - [Alterar o estado do grupo inteligente e o alerta](https://aka.ms/managing-alert-smart-group-states)
+
 

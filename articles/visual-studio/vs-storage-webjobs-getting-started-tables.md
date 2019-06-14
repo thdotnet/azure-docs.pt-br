@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
 ms.openlocfilehash: a9a4475465fefb01ec53e6e0eb814f9b8f192a1b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60390779"
 ---
 # <a name="getting-started-with-azure-storage-azure-webjob-projects"></a>Introdução ao Armazenamento do Azure (Projetos WebJob do Azure)
@@ -30,7 +30,7 @@ O serviço de armazenamento de Tabela do Azure armazena grandes quantidades de d
 Alguns dos snippets de código mostram o atributo **Table** usado nas funções que são chamadas manualmente ou seja, que não usam um dos atributos de gatilho.
 
 ## <a name="how-to-add-entities-to-a-table"></a>Como adicionar entidades a uma tabela
-Para adicionar entidades a uma tabela, use o atributo **Table** com um parâmetro **ICollector<T>** ou **IAsyncCollector<T>**, em que **T** especifica o esquema das entidades que você deseja adicionar. O construtor de atributo tem um parâmetro de cadeia que especifica o nome da tabela.
+Para adicionar entidades a uma tabela, use o atributo **Table** com um parâmetro **ICollector<T>** ou **IAsyncCollector<T>** , em que **T** especifica o esquema das entidades que você deseja adicionar. O construtor de atributo tem um parâmetro de cadeia que especifica o nome da tabela.
 
 O exemplo de código a seguir adiciona entidades **Person** a uma tabela denominada *Ingress*.
 
@@ -79,7 +79,7 @@ Quando a função é concluída, a página **Detalhes de Invocação** relata o 
 ![Função de entrada concluída](./media/vs-storage-webjobs-getting-started-tables/ingresssuccess.png)
 
 ## <a name="how-to-read-multiple-entities-from-a-table"></a>Como ler várias entidades de uma tabela
-Para ler uma tabela, use o atributo **Table** com um parâmetro **IQueryable<T>**, em que o tipo **T** deriva de **TableEntity** ou implementa **ITableEntity**.
+Para ler uma tabela, use o atributo **Table** com um parâmetro **IQueryable<T>** , em que o tipo **T** deriva de **TableEntity** ou implementa **ITableEntity**.
 
 O seguinte exemplo de código lê e registra em log todas as linhas da tabela **Ingress** :
 
@@ -144,6 +144,6 @@ Para saber mais sobre como usar o objeto **CloudTable** , consulte [Como usar o 
 ## <a name="related-topics-covered-by-the-queues-how-to-article"></a>Tópicos relacionados abordados no artigo de instruções sobre filas
 Para obter informações sobre como lidar com o processamento de tabelas acionado por uma mensagem da fila ou para cenários do SDK de WebJobs não específicos do processamento de tabelas, consulte [Introdução ao Armazenamento de Filas do Azure e aos serviços conectados do Visual Studio (Projetos do WebJob)](../storage/vs-storage-webjobs-getting-started-queues.md).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Este artigo forneceu exemplos de código que mostram como lidar com cenários comuns para trabalhar com tabelas do Azure. Para obter mais informações sobre como usar o Azure WebJobs e o SDK do WebJobs, consulte [Recursos de documentação do Azure WebJobs](https://go.microsoft.com/fwlink/?linkid=390226).
 

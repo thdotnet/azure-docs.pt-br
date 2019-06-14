@@ -15,10 +15,10 @@ ms.date: 04/04/2018
 ms.author: aelnably;nicking
 ms.custom: seodec18
 ms.openlocfilehash: 8d4290f1411749e2d8d3d27fbd792ceeeea47ef7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60851287"
 ---
 # <a name="restore-an-app-in-azure-from-a-snapshot"></a>Restaurar um aplicativo no Azure a partir de um instantâneo
@@ -43,7 +43,7 @@ A restauração usando instantâneos está disponível para aplicativos que são
 
 ## <a name="restore-an-app-from-a-snapshot"></a>Restaurar um aplicativo usando um instantâneo
 
-1. Na página **Configurações** de seu aplicativo no [Portal do Azure](https://portal.azure.com), clique em **Backups** para exibir a página **Backups**. Em seguida, clique em **Restaurar** na seção **Instantâneo (Versão prévia)**.
+1. Na página **Configurações** de seu aplicativo no [Portal do Azure](https://portal.azure.com), clique em **Backups** para exibir a página **Backups**. Em seguida, clique em **Restaurar** na seção **Instantâneo (Versão prévia)** .
    
     ![](./media/app-service-web-restore-snapshots/1.png)
 

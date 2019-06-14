@@ -16,10 +16,10 @@ ms.date: 05/24/2018
 ms.author: lahugh
 ms.custom: ''
 ms.openlocfilehash: 1e9d039769e7fbcb9c2b7285aa727acd7322bcdf
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62127821"
 ---
 # <a name="use-an-azure-file-share-with-a-batch-pool"></a>Usar um compartilhamento de arquivos do Azure com um pool do Lote
@@ -54,7 +54,7 @@ Por exemplo, inclua um comando `net use` para montar o compartilhamento de arqui
 * **Nome de usuário**: AZURE\\\<nomedacontadearmazenamento\>, por exemplo, AZURE\\*nomedaminhacontadearmazenamento*
 * **Senha**: <ChaveDeContaDeArmazenamentoQueTermina em==>, por exemplo, *XXXXXXXXXXXXXXXXXXXXX==*
 
-O comando a seguir monta um compartilhamento de arquivos *meucompartilhamentodearquivos* na conta de armazenamento *nomedaminhacontadearmazenamento* como a unidade *S:*:
+O comando a seguir monta um compartilhamento de arquivos *meucompartilhamentodearquivos* na conta de armazenamento *nomedaminhacontadearmazenamento* como a unidade *S:* :
 
 ```
 net use S: \\mystorageaccountname.file.core.windows.net\myfileshare /user:AZURE\mystorageaccountname XXXXXXXXXXXXXXXXXXXXX==
@@ -71,7 +71,7 @@ Para simplificar a operação de montagem, opcionalmente mantenha as credenciais
 
    ```
 
-2. Montar o compartilhamento em cada nó como parte de cada tarefa usando `net use`. Por exemplo, a seguinte linha de comando da tarefa monta o compartilhamento de arquivos como a unidade *S:*. Isso deve ser seguido por um comando ou script que referencie o compartilhamento. As credenciais armazenadas em cache são usadas na chamada para `net use`. Esta etapa pressupõe que você esteja usando a mesma identidade de usuário para as tarefas que usou na tarefa inicial no pool, o que não é apropriado para todos os cenários.
+2. Montar o compartilhamento em cada nó como parte de cada tarefa usando `net use`. Por exemplo, a seguinte linha de comando da tarefa monta o compartilhamento de arquivos como a unidade *S:* . Isso deve ser seguido por um comando ou script que referencie o compartilhamento. As credenciais armazenadas em cache são usadas na chamada para `net use`. Esta etapa pressupõe que você esteja usando a mesma identidade de usuário para as tarefas que usou na tarefa inicial no pool, o que não é apropriado para todos os cenários.
 
    ```
    cmd /c "net use S: \\mystorageaccountname.file.core.windows.net\myfileshare" 

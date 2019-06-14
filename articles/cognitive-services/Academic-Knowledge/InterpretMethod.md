@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
 ms.openlocfilehash: b679f1da0ada3e61fca79cdb985a43dc445877ce
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61338445"
 ---
 # <a name="interpret-method"></a>Método Interpretar
@@ -32,11 +32,11 @@ Para fornecer uma experiência interativa, é possível chamar esse método repe
 NOME     | Value | Obrigatório?  | DESCRIÇÃO
 ---------|---------|---------|---------
 **query**    | Cadeia de caracteres de texto | Sim | Consulta inserida pelo usuário.  Se o parâmetro completo estiver definido como 1, a consulta será interpretada como um prefixo para gerar sugestões de preenchimento automático de consulta.        
-**modelo**    | Cadeia de caracteres de texto | Não   | Nome do modelo que você quer consultar.  Atualmente, o valor padrão é o *mais recente*.        
-**completo** | 0 ou 1 | Não <br>default:0  | 1 significa que as sugestões de preenchimento automático são geradas com base nos dados de grafo e gramática.         
-**count**    | Número | Não <br>default:10 | Número máximo de interpretações para retornar.         
-**offset**   | Número | Não <br>default:0  | Índice da primeira interpretação para retornar. Por exemplo, *count=2&offset=0* retorna as interpretações 0 e 1. *count=2&offset=2* retorna interpretações 2 e 3.       
-**tempo limite**  | Número | Não <br>default:1000 | Tempo limite em milissegundos. Somente interpretações localizadas antes que o tempo limite tenha decorrido serão retornadas.
+**modelo**    | Cadeia de caracteres de texto | Não  | Nome do modelo que você quer consultar.  Atualmente, o valor padrão é o *mais recente*.        
+**completo** | 0 ou 1 | Não<br>default:0  | 1 significa que as sugestões de preenchimento automático são geradas com base nos dados de grafo e gramática.         
+**count**    | Número | Não<br>default:10 | Número máximo de interpretações para retornar.         
+**offset**   | Número | Não<br>default:0  | Índice da primeira interpretação para retornar. Por exemplo, *count=2&offset=0* retorna as interpretações 0 e 1. *count=2&offset=2* retorna interpretações 2 e 3.       
+**timeout**  | Número | Não<br>default:1000 | Tempo limite em milissegundos. Somente interpretações localizadas antes que o tempo limite tenha decorrido serão retornadas.
 
 <br>
   

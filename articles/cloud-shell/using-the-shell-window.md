@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.author: damaerte
 ms.openlocfilehash: 2511f2c8fb706e232cde9ee4c02c7f8114bd3a2b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60200540"
 ---
 # <a name="using-the-azure-cloud-shell-window"></a>Usando a janela do Azure Cloud Shell
@@ -28,7 +28,7 @@ Este documento explica como usar a janela do Cloud Shell.
 ## <a name="swap-between-bash-and-powershell-environments"></a>Alternar entre os ambientes Bash e PowerShell
 
 Use o seletor de ambiente na barra de ferramentas do Cloud Shell para alternar entre os ambientes Bash e PowerShell.  
-![Selecionar ambiente](media/using-the-shell-window/env-selector.png)
+![Selecione o ambiente](media/using-the-shell-window/env-selector.png)
 
 ## <a name="restart-cloud-shell"></a>Reiniciar o Cloud Shell
 Clique no ícone de reinicialização na barra de ferramentas do Cloud Shell para redefinir o estado da máquina.  
@@ -86,7 +86,7 @@ Role com o mouse ou teclado para ir ao texto de terminal.
 ## <a name="exit-command"></a>Comando de saída
 Executar `exit` encerra a sessão ativa. Esse comportamento ocorre por padrão após 20 minutos sem interação.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 [Início rápido do Bash no Cloud Shell](quickstart.md) <br>
 [Início Rápido do PowerShell no Cloud Shell](quickstart-powershell.md)

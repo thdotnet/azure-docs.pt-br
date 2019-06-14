@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 06/18/2018
 ms.author: yexu
 ms.openlocfilehash: 107687c785433f81870449d1445136b5148a4d2c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60787623"
 ---
 # <a name="copy-data-tool-in-azure-data-factory"></a>Ferramenta Copiar Dados no Azure Data Factory
@@ -78,7 +78,7 @@ A captura de tela a seguir mostra uma consulta SQL para filtrar os dados.
 ![Filtrar dados em um banco de dados](./media/copy-data-tool/filter-data-in-database.png)
 
 ### <a name="filter-data-in-an-azure-blob-folder"></a>Filtrar dados em uma pasta de blobs do Azure
-Você pode usar variáveis no caminho da pasta para copiar dados de uma pasta. As variáveis com suporte são: **{ano}**, **{mês}**, **{dia}**, **{hora}** e **{minuto}**. Por exemplo: pastadeentrada/{ano}/{mês}/{dia}. 
+Você pode usar variáveis no caminho da pasta para copiar dados de uma pasta. As variáveis com suporte são: **{ano}** , **{mês}** , **{dia}** , **{hora}** e **{minuto}** . Por exemplo: pastadeentrada/{ano}/{mês}/{dia}. 
 
 Suponha que você tenha pastas de entrada no seguinte formato: 
 
@@ -91,7 +91,7 @@ Suponha que você tenha pastas de entrada no seguinte formato:
 
 Clique no botão **Procurar** de **Arquivo ou pasta**, navegue até uma dessas pastas (por exemplo, 2016->03->01->02) e clique em **Escolher**. Você verá 2016/03/01/02 na caixa de texto. 
 
-Em seguida, substitua **2016** por **{ano}**, **03** por **{mês}**, **01** por **{dia}**, **02** por **{hora}** e pressione a tecla **Tab**. Você deverá ver listas suspensas para escolher o formato dessas quatro variáveis:
+Em seguida, substitua **2016** por **{ano}** , **03** por **{mês}** , **01** por **{dia}** , **02** por **{hora}** e pressione a tecla **Tab**. Você deverá ver listas suspensas para escolher o formato dessas quatro variáveis:
 
 ![Filtrar arquivo ou pasta](./media/copy-data-tool/filter-file-or-folder.png)
 

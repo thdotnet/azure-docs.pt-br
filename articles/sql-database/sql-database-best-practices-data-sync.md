@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/20/2018
 ms.openlocfilehash: 0b1e3b98fe5b934b712db2a5549ebdc865523bfb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61412543"
 ---
 # <a name="best-practices-for-sql-data-sync"></a>Práticas recomendadas para a Sincronização de Dados SQL 
@@ -163,7 +163,7 @@ As alterações podem apresentar falha na propagação por um dos seguintes moti
 Monitore a integridade do banco de dados e do grupo de sincronização regularmente através da interface de log e do Portal.
 
 
-## <a name="maintenance"></a>Manutenção 
+## <a name="maintenance"></a>Manutenção
 
 ### <a name="avoid-out-of-date-databases-and-sync-groups"></a> Evitar bancos de dados e grupos de sincronização desatualizados
 

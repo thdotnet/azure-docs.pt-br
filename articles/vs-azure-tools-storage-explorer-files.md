@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 03/09/2017
 ms.author: cawa
 ms.openlocfilehash: fe3a8ab5b43c41b7e9f79f92de674515377fa9ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60456547"
 ---
 # <a name="using-storage-explorer-with-azure-file-storage"></a>Uso do Gerenciador de Armazenamento com o armazenamento de arquivos do Azure
@@ -203,7 +203,7 @@ As etapas a seguir ilustram como gerenciar os arquivos (e pastas) dentro de um c
 
         ![Carregar arquivos](media/vs-azure-tools-storage-explorer-files/image18.png)
         
-        b. Na caixa de diálogo **Carregar arquivos**, escolha o botão de reticências (**...**) no lado direito da caixa de texto **Arquivos** para selecionar os arquivos que você deseja carregar.
+        b. Na caixa de diálogo **Carregar arquivos**, escolha o botão de reticências ( **...** ) no lado direito da caixa de texto **Arquivos** para selecionar os arquivos que você deseja carregar.
 
         ![Adicionando arquivos](media/vs-azure-tools-storage-explorer-files/image19.png)
 
@@ -215,7 +215,7 @@ As etapas a seguir ilustram como gerenciar os arquivos (e pastas) dentro de um c
 
         ![Menu Carregar pasta](media/vs-azure-tools-storage-explorer-files/image20.png)
 
-        b. Na caixa de diálogo **Carregar pasta**, escolha o botão de reticências (**...**) no lado direito da caixa de texto **Pasta** para selecionar a pasta cujo conteúdo você deseja carregar.
+        b. Na caixa de diálogo **Carregar pasta**, escolha o botão de reticências ( **...** ) no lado direito da caixa de texto **Pasta** para selecionar a pasta cujo conteúdo você deseja carregar.
 
         c. Como opção, especifique uma pasta de destino na qual o conteúdo da pasta selecionada será carregado. Se a pasta de destino não existir, ela será criada.
 
@@ -257,7 +257,7 @@ As etapas a seguir ilustram como gerenciar os arquivos (e pastas) dentro de um c
 
         c. Escolha **Sim** na caixa de diálogo de confirmação.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Exibir as [notas de versão e os vídeos mais recentes do Gerenciador de Armazenamento](https://www.storageexplorer.com/).
 

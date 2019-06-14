@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 40918493071fe0dd694c43e2b087a2bf7eb197d8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60414607"
 ---
 # <a name="troubleshooting-combined-security-information-registration-preview"></a>Solução de problemas combinado de registro de informações de segurança (visualização)
@@ -37,14 +37,14 @@ A tabela a seguir lista todos os eventos de auditoria gerados por registro combi
 
 | Atividade | Status | Motivo | DESCRIÇÃO |
 | --- | --- | --- | --- |
-| O usuário registrou todas as informações de segurança necessárias | Sucesso | O usuário registrou todas as informações de segurança necessárias. | Esse evento ocorre quando um usuário for concluída com êxito o registro.|
+| O usuário registrou todas as informações de segurança necessárias | Êxito | O usuário registrou todas as informações de segurança necessárias. | Esse evento ocorre quando um usuário for concluída com êxito o registro.|
 | O usuário registrou todas as informações de segurança necessárias | Failure | O usuário cancelou o registro de informações de segurança. | Esse evento ocorre quando um usuário cancela o registro do modo de interrupção.|
-| Informações de segurança do usuário registrado | Sucesso | Usuário registrado *método*. | Esse evento ocorre quando um usuário registra um método individual. *Método* podem ser autenticador app, telefone, Email, segurança perguntas, aplicativo senha, telefone alternativo e assim por diante.| 
-| Informações de segurança do usuário revisada | Sucesso | Usuário analisado com êxito as informações de segurança. | Esse evento ocorre quando um usuário seleciona **parece bom** na página de revisão de informações de segurança.|
+| Informações de segurança do usuário registrado | Êxito | Usuário registrado *método*. | Esse evento ocorre quando um usuário registra um método individual. *Método* podem ser autenticador app, telefone, Email, segurança perguntas, aplicativo senha, telefone alternativo e assim por diante.| 
+| Informações de segurança do usuário revisada | Êxito | Usuário analisado com êxito as informações de segurança. | Esse evento ocorre quando um usuário seleciona **parece bom** na página de revisão de informações de segurança.|
 | Informações de segurança do usuário revisada | Failure | O usuário não pôde analisar as informações de segurança. | Esse evento ocorre quando um usuário seleciona **parece bom** sobre as informações de segurança Revise a página, mas algo falhar no back-end.|
-| Informações de segurança do usuário excluído | Sucesso | Usuário excluído *método*. | Esse evento ocorre quando um usuário exclui um método individual. *Método* podem ser autenticador app, telefone, Email, segurança perguntas, aplicativo senha, telefone alternativo e assim por diante.|
+| Informações de segurança do usuário excluído | Êxito | Usuário excluído *método*. | Esse evento ocorre quando um usuário exclui um método individual. *Método* podem ser autenticador app, telefone, Email, segurança perguntas, aplicativo senha, telefone alternativo e assim por diante.|
 | Informações de segurança do usuário excluído | Failure | O usuário não pôde excluir *método*. | Esse evento ocorre quando um usuário tenta excluir um método, mas a tentativa falhar por algum motivo. *Método* podem ser autenticador app, telefone, Email, segurança perguntas, aplicativo senha, telefone alternativo e assim por diante.|
-| Informações de segurança padrão de usuário alterada | Sucesso | O usuário alterou as informações de segurança padrão para *método*. | Esse evento ocorre quando um usuário altera o método padrão. *Método* podem ser notificação de aplicativo do autenticador, um código do meu aplicativo authenticator ou token, ligue para + X XXXXXXXXXX, texto, um código para + X XXXXXXXXX e assim por diante.|
+| Informações de segurança padrão de usuário alterada | Êxito | O usuário alterou as informações de segurança padrão para *método*. | Esse evento ocorre quando um usuário altera o método padrão. *Método* podem ser notificação de aplicativo do autenticador, um código do meu aplicativo authenticator ou token, ligue para + X XXXXXXXXXX, texto, um código para + X XXXXXXXXX e assim por diante.|
 | Informações de segurança padrão de usuário alterada | Failure | Usuário não pôde alterar as informações de segurança padrão para *método*. | Esse evento ocorre quando um usuário tenta alterar o método padrão, mas a tentativa falhar por algum motivo. *Método* podem ser notificação de aplicativo do autenticador, um código do meu aplicativo authenticator ou token, ligue para + X XXXXXXXXXX, texto, um código para + X XXXXXXXXX e assim por diante.|
 
 ## <a name="troubleshooting-interrupt-mode"></a>Solução de problemas de modo de interrupção
@@ -160,6 +160,6 @@ Para desabilitar a experiência de visualização para seus usuários, conclua e
 
 Os usuários não serão solicitados a registrar usando a experiência de visualização.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Saiba mais sobre a visualização pública do registro combinado para redefinição de senha de autoatendimento e autenticação multifator do Azure](concept-registration-mfa-sspr-combined.md)

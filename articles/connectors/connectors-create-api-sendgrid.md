@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 08/24/2018
 ms.openlocfilehash: 7eecd3908883b195b52755d03e70872afe9180bb
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62105727"
 ---
 # <a name="send-emails-and-manage-mailing-lists-in-sendgrid-by-using-azure-logic-apps"></a>Envie emails e gerencie listas de endereçamento no SendGrid usando os Aplicativos Lógicos do Azure
@@ -56,7 +56,7 @@ Se ainda não estiver familiarizado com os aplicativos lógicos, veja [O que é 
      -ou-
 
    * Entre as etapas em que você deseja adicionar uma ação, mova o ponteiro sobre a seta entre as etapas. 
-   Escolha o sinal de adição (**+**) que aparece e, em seguida, selecione **Adicionar uma ação**.
+   Escolha o sinal de adição ( **+** ) que aparece e, em seguida, selecione **Adicionar uma ação**.
 
 1. Na caixa de pesquisa, insira "sendgrid" como filtro. Na lista de ações, selecione a ação desejada.
 

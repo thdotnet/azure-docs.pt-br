@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 ms.openlocfilehash: 52f96b8fc2a1288c652169817a3a73d7b26caac9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66153478"
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Atividade If Condition no Azure Data Factory
@@ -66,8 +66,8 @@ A atividade If Condition fornece a mesma funcionalidade que uma instrução if f
 
 Propriedade | DESCRIÇÃO | Valores permitidos | Obrigatório
 -------- | ----------- | -------------- | --------
-nome | O nome da atividade de condição if. | String | Sim
-tipo | Deve ser definido para **IfCondition** | String | Sim
+name | O nome da atividade de condição if. | Cadeia de caracteres | Sim
+type | Deve ser definido para **IfCondition** | Cadeia de caracteres | Sim
 expressão | Expressão que deve ser avaliada como verdadeira ou falsa | Expressão com tipo de resultado booliano | Sim
 ifTrueActivities | Conjunto de atividades que são executadas quando a expressão é avaliada como `true`. | Matriz | Sim
 ifFalseActivities | Conjunto de atividades que são executadas quando a expressão é avaliada como `false`. | Matriz | Sim

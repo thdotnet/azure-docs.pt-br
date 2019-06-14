@@ -14,10 +14,10 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 5b70edd4f65538b52c70881258bc500a34b04d80
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60826351"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Monitorar e gerenciar os pipelines do Azure Data Factory usando o aplicativo de Monitoramento e Gerenciamento
@@ -28,7 +28,7 @@ ms.locfileid: "60826351"
 >
 
 > [!NOTE]
-> Este artigo aplica-se à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [Monitorar e gerenciar pipelines do Data Factory em](../monitor-visually.md).
+> Este artigo se aplica à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [Monitorar e gerenciar pipelines do Data Factory em](../monitor-visually.md).
 
 Este artigo descreve como usar o aplicativo de Monitoramento e Gerenciamento para monitorar, gerenciar e depurar seus pipelines do Data Factory. Comece a usar o aplicativo assistindo ao seguinte vídeo:
 

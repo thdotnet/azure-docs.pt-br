@@ -9,10 +9,10 @@ ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
 ms.openlocfilehash: 8602027431fdf2c1378834419977606bab5c6921
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60254073"
 ---
 # <a name="custom-metrics-in-azure-monitor"></a>Métricas personalizadas no Azure Monitor
@@ -80,8 +80,8 @@ As dimensões são opcionais, nem todas as métricas podem ter dimensões. Se um
 ### <a name="metric-values"></a>Valores métricos
 O Azure Monitor armazena todas as métricas em intervalos com granularidade de um minuto. Entendemos que, durante um determinado minuto, uma métrica pode precisar ser amostrada várias vezes. Um exemplo é a utilização da CPU. Ou talvez precise ser medido para muitos eventos distintos. Um exemplo é latências de transações de entrada. Para limitar o número de valores brutos que você precisa emitir e pagar no Azure Monitor, é possível pré-agregar os valores localmente e emiti-los:
 
-* **Mín.**: O valor mínimo observado de todas os exemplos e medições durante o minuto.
-* **Máx.**: O valor máximo observado de todas os exemplos e medições durante o minuto.
+* **Mín.** : O valor mínimo observado de todas os exemplos e medições durante o minuto.
+* **Máx.** : O valor máximo observado de todas os exemplos e medições durante o minuto.
 * **Soma**: A soma de todos os valores observados de todos os exemplos e medições durante o minuto.
 * **Contagem**: O número de exemplos e medições feitas durante o minuto.
 
@@ -183,13 +183,13 @@ O Monitor do Azure impõe os seguintes limites de uso em métricas personalizada
 
 |Categoria|Limite|
 |---|---|
-|Série de tempo de atividade/assinaturas/região|50.000|
+|Série de tempo de atividade/assinaturas/região|50\.000|
 |Chaves de dimensão por métrica|10|
 |Tamanho da cadeia de caracteres para namespaces de métrica, nomes de métrica, chaves de dimensão e valores de dimensão|256 caracteres|
 
 Uma série temporal ativa é definida como qualquer combinação exclusiva de métrica, chave de dimensão ou valor de dimensão que teve valores de métrica publicados nas últimas 12 horas.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Use métricas personalizadas de diferentes serviços: 
  - [Máquinas virtuais](collect-custom-metrics-guestos-resource-manager-vm.md)
  - [Conjunto de dimensionamento de máquinas virtuais](collect-custom-metrics-guestos-resource-manager-vmss.md)

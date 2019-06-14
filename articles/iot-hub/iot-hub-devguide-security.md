@@ -9,10 +9,10 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.openlocfilehash: bb402a5a059fb6f2836bddbd951220271ca77ba3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60400586"
 ---
 # <a name="control-access-to-iot-hub"></a>Controlar o acesso ao Hub IoT
@@ -108,7 +108,7 @@ Ao usar o SASL PLAIN com AMQP, um cliente que está se conectando a um hub IoT p
 
 ## <a name="scope-iot-hub-level-credentials"></a>Escopo das credenciais no nível do Hub IoT
 
-Você pode definir o escopo das políticas de segurança no nível do Hub IoT por meio da criação de tokens com um URI de recursos restrito. Por exemplo, o ponto de extremidade para enviar mensagens do dispositivo para a nuvem é **/devices/{deviceId}/messages/events**. Você também pode usar uma política de acesso compartilhado no nível do Hub IoT com permissões **DeviceConnect** para assinar um token cujo resourceURI é **/devices/{deviceId}**. Essa abordagem cria um token que pode ser usado somente para enviar mensagens em nome do dispositivo **deviceId**.
+Você pode definir o escopo das políticas de segurança no nível do Hub IoT por meio da criação de tokens com um URI de recursos restrito. Por exemplo, o ponto de extremidade para enviar mensagens do dispositivo para a nuvem é **/devices/{deviceId}/messages/events**. Você também pode usar uma política de acesso compartilhado no nível do Hub IoT com permissões **DeviceConnect** para assinar um token cujo resourceURI é **/devices/{deviceId}** . Essa abordagem cria um token que pode ser usado somente para enviar mensagens em nome do dispositivo **deviceId**.
 
 Esse mecanismo é semelhante à [política do editor dos Hubs de Eventos](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab) e permite implementar métodos de autenticação personalizados.
 
@@ -457,7 +457,7 @@ Outros tópicos de referência no Guia do desenvolvedor do Hub IoT incluem:
 
 * O [suporte ao MQTT do Hub IoT](iot-hub-mqtt-support.md) fornece mais informações sobre o suporte do Hub IoT ao protocolo MQTT.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Agora que você aprendeu como controlar o acesso ao Hub IoT, pode ser interessante ler os seguintes tópicos do Guia do desenvolvedor do Hub IoT:
 

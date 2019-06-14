@@ -16,10 +16,10 @@ ms.date: 01/11/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 7c6f0a6371b38f0271237db0f7d80b831ecc145c
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62127133"
 ---
 # <a name="deploy-storsimple-virtual-array---prepare-the-azure-portal"></a>Implantar o StorSimple Virtual Array – preparar o portal do Azure
@@ -44,7 +44,7 @@ Consulte os artigos a seguir na sequência prescrita para implantar sua Matriz V
 | --- | --- | --- | --- |
 | 1. |**Configurar o portal do Azure** |Crie e configure o serviço Gerenciador de Dispositivos StorSimple antes do provisionamento de uma Matriz Virtual StorSimple. |[Preparar o portal](storsimple-virtual-array-deploy1-portal-prep.md) |
 | 2. |**Provisionar o Virtual Array** |Para o Hyper-V, provisione e conecte-se a uma Matriz Virtual StorSimple em um sistema de host que executa o Hyper-V no Windows Server 2012 R2, Windows Server 2012 ou Windows Server 2008 R2. <br></br> <br></br> Para o VMware, provisione e se conecte a uma Matriz Virtual StorSimple local em um sistema de host que executa o VMware ESXi 5.0, 5.5, 6.0 ou 6.5.<br></br> |[Provisionar uma matriz virtual no Hyper-V](storsimple-virtual-array-deploy2-provision-hyperv.md) <br></br> <br></br> [Provisionar uma matriz virtual no VMware](storsimple-virtual-array-deploy2-provision-vmware.md) |
-| 3. |**Configurar o Virtual Array** |Para seu servidor de arquivos, execute a configuração inicial, registre seu servidor de arquivos do StorSimple e conclua a configuração do dispositivo. Em seguida, é possível provisionar compartilhamentos SMB. <br></br> <br></br>  Para o servidor iSCSI, realize a configuração inicial, registre seu servidor iSCSI do StorSimple e conclua a configuração do dispositivo. Em seguida, é possível provisionar volumes iSCSI. |[Configurar a matriz virtual como um servidor de arquivos](storsimple-virtual-array-deploy3-fs-setup.md)<br></br> <br></br>[Configurar a matriz virtual como um servidor iSCSI](storsimple-virtual-array-deploy3-iscsi-setup.md) |
+| 3. |**Configurar o Virtual Array** |Para seu servidor de arquivos, execute a configuração inicial, registre seu servidor de arquivos do StorSimple e conclua a configuração do dispositivo. Em seguida, é possível provisionar compartilhamentos SMB. <br></br> <br></br> Para o servidor iSCSI, realize a configuração inicial, registre seu servidor iSCSI do StorSimple e conclua a configuração do dispositivo. Em seguida, é possível provisionar volumes iSCSI. |[Configurar a matriz virtual como um servidor de arquivos](storsimple-virtual-array-deploy3-fs-setup.md)<br></br> <br></br>[Configurar a matriz virtual como um servidor iSCSI](storsimple-virtual-array-deploy3-iscsi-setup.md) |
 
 Agora, você pode começar a configurar o portal do Azure.
 

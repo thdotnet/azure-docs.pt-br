@@ -10,10 +10,10 @@ ms.workload: storage-backup-recovery
 ms.date: 03/04/2019
 ms.author: mayg
 ms.openlocfilehash: 2156ee6cf27ecfa32b19ad5bbef7549e99c3f7ef
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61280583"
 ---
 # <a name="troubleshoot-errors-when-failing-over-vmware-vm-or-physical-machine-to-azure"></a>Solucionar erros ao fazer failover de VM VMWare ou de computador físico para o Azure
@@ -92,14 +92,14 @@ Se o botão **Conectar** da VM com failover no Azure estiver disponível (não e
 2. Se o aplicativo na máquina virtual não responder, tente o failover para um ponto de recuperação consistente do aplicativo.
 3. Se a máquina virtual estiver ingressada no domínio, verifique se esse controlador de domínio está funcionando corretamente. Isso pode ser feito seguindo as etapas fornecidas abaixo:
 
-     a. Criar uma nova máquina virtual na mesma rede.
+    a. Criar uma nova máquina virtual na mesma rede.
 
     b.  Verifique se ele é capaz de ingressar no mesmo domínio no qual a máquina virtual com failover deve aparecer.
 
     c. Se o controlador de domínio **não** estiver funcionando corretamente, tente fazer logon na máquina virtual com failover usando uma conta do administrador local.
 4. Se você estiver usando um servidor DNS personalizado, verifique se ele é acessível. Isso pode ser feito seguindo as etapas fornecidas abaixo:
 
-     a. Crie uma nova máquina virtual na mesma rede e
+    a. Crie uma nova máquina virtual na mesma rede e
 
     b. Verifique se a máquina virtual é capaz de executar a resolução de nome usando o servidor DNS personalizado
 

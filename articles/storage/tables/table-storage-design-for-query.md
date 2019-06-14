@@ -9,10 +9,10 @@ ms.date: 04/23/2018
 ms.author: sngun
 ms.subservice: tables
 ms.openlocfilehash: 97373f6f0138d3ed8028ed4327b7e6cf90ad76a7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60325860"
 ---
 # <a name="design-for-querying"></a>Design para consulta
@@ -96,7 +96,7 @@ Muitos aplicativos têm requisitos para usar dados classificados em ordens difer
 * [Padrão de índice secundário entre partições](table-storage-design-patterns.md#inter-partition-secondary-index-pattern) - Armazene várias cópias de cada entidade usando valores diferentes de RowKey em partições e tabelas separadas, para permitir pesquisas rápidas e eficientes e ordens de classificação alternativas usando valores diferentes de RowKey.
 * [Padrão de rastro do log](table-storage-design-patterns.md#log-tail-pattern) - Recupere as entidades *n* adicionadas recentemente em uma partição, usando um valor **RowKey** que classifica em ordem de data e hora inversa.  
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Padrões de design de tabela](table-storage-design-patterns.md)
 - [Relações de modelagem](table-storage-design-modeling.md)

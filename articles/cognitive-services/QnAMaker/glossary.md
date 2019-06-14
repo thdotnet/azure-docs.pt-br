@@ -12,10 +12,10 @@ ms.date: 02/21/2019
 ms.author: tulasim
 ms.custom: seodec18
 ms.openlocfilehash: bb3b262f3bde0599cb6dea009d0fbbeafb1c529a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61430674"
 ---
 # <a name="glossary-for-qna-maker-knowledge-base-and-service"></a>Glossário do serviço e base de dados de conhecimento do QnA Maker
@@ -35,7 +35,7 @@ Uma base de dados de conhecimento tem dois estados - testada e publicada. A base
 ## <a name="published-knowledge-base"></a>Base de Dados de Conhecimento Publicada
 Uma base de dados de conhecimento tem dois estados - Testada e Publicada.  A base de dados de conhecimento publicada é a versão que é usada no aplicativo/bot de chat. A ação de publicação de uma base de dados de conhecimento coloca o conteúdo da base de dados de conhecimento de Teste na versão Publicada da base de dados de conhecimento. Como a base de dados de conhecimento publicada é a versão que usa o aplicativo por meio do ponto de extremidade, tome cuidado para garantir que o conteúdo está correto e bem testado.
 
-## <a name="query"></a>Consultar
+## <a name="query"></a>Consulta
 Uma consulta de usuário é a pergunta que o usuário final ou o testador faz para a base de dados de conhecimento. A consulta é feita geralmente em um formato de idioma natural ou em algumas palavras-chave que representam a pergunta.
 
 ## <a name="response"></a>Response

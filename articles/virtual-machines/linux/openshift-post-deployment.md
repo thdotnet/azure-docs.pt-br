@@ -16,15 +16,15 @@ ms.workload: infrastructure
 ms.date: 04/19/2019
 ms.author: haroldw
 ms.openlocfilehash: fba29cd55f2d765faa107de3a8961032ef44deec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60771307"
 ---
 # <a name="post-deployment-tasks"></a>Tarefas de pós-implantação
 
-Depois de implantar um cluster OpenShift, você pode configurar itens adicionais. Este artigo cobre:
+Depois de implantar um cluster OpenShift, você pode configurar itens adicionais. Este artigo aborda:
 
 - Como configurar o logon único entre o Active Directory do Azure (Azure AD)
 - Como configurar logs do Azure Monitor para monitorar o OpenShift
@@ -83,7 +83,7 @@ No Portal do Azure:
 
    ![Registro do Aplicativo](media/openshift-post-deployment/app-registration.png)
 
-6. Clique em etapa 1: Selecionar API e, em seguida, clique em **Azure Active Directory do Windows (ActiveDirectory)**. Na parte inferior, selecione **Selecionar**.
+6. Clique em etapa 1: Selecionar API e, em seguida, clique em **Azure Active Directory do Windows (ActiveDirectory)** . Na parte inferior, selecione **Selecionar**.
 
    ![Registro de aplicativo Selecionar API](media/openshift-post-deployment/app-registration-select-api.png)
 

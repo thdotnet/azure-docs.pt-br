@@ -11,10 +11,10 @@ ms.reviewer: klam, LADocs
 ms.date: 10/03/2018
 ms.topic: article
 ms.openlocfilehash: 48fb2d14cd4cf99510fff88b25b9ae45814a92a8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60685262"
 ---
 # <a name="run-actions-based-on-group-status-with-scopes-in-azure-logic-apps"></a>Executar ações com base no status do grupo com os escopos em aplicativos lógicos do Azure
@@ -125,7 +125,7 @@ Primeiro, crie esse aplicativo lógico de exemplo para que seja possível adicio
 
    1. Na lista Conteúdo dinâmico, escolha **Expressão**.
 
-   1. Localizar e selecionar a função **div( )**. 
+   1. Localizar e selecionar a função **div( )** . 
       Coloque o cursor no dentro dos parênteses da função.
 
    1. Enquanto o cursor estiver dentro dos parênteses da função, escolha **Conteúdo dinâmico** para que a lista de conteúdo dinâmico seja exibida. 
@@ -165,7 +165,7 @@ Em seguida, adicione um escopo para que seja possível agrupar ações específi
 1. Adicione um escopo na localização do fluxo de trabalho desejado. Por exemplo, para adicionar um escopo entre etapas existentes no fluxo de trabalho de aplicativo lógico, siga estas etapas: 
 
    1. Mova o ponteiro sobre a seta onde você deseja adicionar o escopo. 
-   Escolha o **sinal de adição** (**+**) > **adicionar uma ação**.
+   Escolha o **sinal de adição** ( **+** ) > **adicionar uma ação**.
 
       ![Adicionar um escopo](./media/logic-apps-control-flow-run-steps-group-scopes/add-scope.png)
 

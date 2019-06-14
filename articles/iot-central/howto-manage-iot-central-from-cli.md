@@ -9,10 +9,10 @@ ms.date: 02/07/2019
 ms.topic: conceptual
 manager: philmea
 ms.openlocfilehash: 9e5d842cece316bc9c53e1e8583f40a0f222b91d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66151950"
 ---
 # <a name="manage-iot-central-from-azure-cli"></a>Gerenciar Central IoT da CLI do Azure
@@ -50,19 +50,19 @@ az iotcentral app create \
 
 Primeiro, esses comandos criam um grupo de recursos em que a região Leste dos EUA para o aplicativo. A tabela a seguir descreve os parâmetros usados com o **az iotcentral aplicativo criar** comando:
 
-| Parâmetro         | Descrição |
+| Parâmetro         | DESCRIÇÃO |
 | ----------------- | ----------- |
 | resource-group    | O grupo de recursos que contém o aplicativo. Esse grupo de recursos já precisa existir na sua assinatura. |
 | location          | Por padrão, esse comando usa o local do grupo de recursos. No momento, você pode criar um aplicativo do IoT Central nas regiões **Leste dos EUA**, **Oeste dos EUA**, **Europa Setentrional** ou **Europa Ocidental**. |
-| nome              | Digite o nome do aplicativo no portal do Azure. |
+| name              | Digite o nome do aplicativo no portal do Azure. |
 | Subdomínio         | O subdomínio na URL do aplicativo. No exemplo, a URL do aplicativo é https://mysubdomain.azureiotcentral.com. |
 | sku               | Atualmente, o único valor é **S1** (camada standard). Confira [Preço do Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
-| modelo          | O modelo de aplicativo a usar. Para obter mais informações, confira a tabela a seguir: |
+| template          | O modelo de aplicativo a usar. Para obter mais informações, confira a tabela a seguir: |
 | nome de exibição      | O nome do aplicativo, conforme exibido na interface do usuário. |
 
 **Modelos de aplicativo**
 
-| Nome do modelo            | Descrição |
+| Nome do modelo            | DESCRIÇÃO |
 | ------------------------ | ----------- |
 | iotc-default@1.0.0       | Cria um aplicativo vazio para você preencher com seus próprios dispositivos e modelos de dispositivos. |
 | iotc-demo@1.0.0          | Cria um aplicativo que inclui um modelo de dispositivo já criado para uma Máquina de Vendas Refrigerada. Use esse modelo para começar a explorar o Azure IoT Central. |

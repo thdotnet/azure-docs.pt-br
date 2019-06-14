@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 05/24/2017
 ms.author: huishao
 ms.openlocfilehash: 2e580a94e568f201587c06efa827006386cd6bd9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60327673"
 ---
 # <a name="create-and-upload-an-openbsd-disk-image-to-azure"></a>Criar e carregar uma imagem de disco OpenBSD no Azure
@@ -174,7 +174,7 @@ ssh azureuser@<ip address>
 ```
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Se você quiser saber mais sobre o suporte de Hyper-V em OpenBSD6.1, leia [OpenBSD 6.1](https://www.openbsd.org/61.html) e [hyperv.4](https://man.openbsd.org/hyperv.4).
 
 Se você quiser criar uma VM de disco gerenciado, leia [disco az](/cli/azure/disk). 

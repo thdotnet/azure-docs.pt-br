@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 0b5d9deacdd4266da30f17c95b6e575a652d2f76
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66155835"
 ---
 Neste procedimento, você vai:
@@ -37,7 +37,7 @@ Neste procedimento, você vai:
        `exec mssqlrbs.rbs_sp_set_config_value ‘garbage_collection_time_window’ , ’time 00:00:00’`
    
        `exec mssqlrbs.rbs_sp_set_config_value ‘delete_scan_period’ , ’time 00:00:00’`
-2. No servidor Web front-end, em **Administração Central**, edite as **Configurações Gerais do Aplicativo Web** para o banco de dados de conteúdo desejado a fim de desabilitar temporariamente a Lixeira. Essa ação também esvaziará a Lixeira para qualquer coleção de site relacionada. Para fazer isso, clique em **Administração Central** -> **Gerenciamento de Aplicativos** -> **Aplicativos Web (Gerenciar aplicativos Web)** -> **SharePoint - 80** -> **Configurações Gerais de Aplicativos**. Defina o **Status da Lixeira** como **DESATIVADO**.
+2. No servidor Web front-end, em **Administração Central**, edite as **Configurações Gerais do Aplicativo Web** para o banco de dados de conteúdo desejado a fim de desabilitar temporariamente a Lixeira. Essa ação também esvaziará a Lixeira para qualquer coleção de site relacionada. Para fazer isso, clique em **Administração Central** -> **Gerenciamento de Aplicativos** -> **Aplicativos Web (Gerenciar aplicativos Web)**  -> **SharePoint - 80** -> **Configurações Gerais de Aplicativos**. Defina o **Status da Lixeira** como **DESATIVADO**.
    
     ![Configurações Gerais do Aplicativo Web](./media/storsimple-sharepoint-adapter-garbage-collection/HCS_WebApplicationGeneralSettings-include.png)
 
@@ -61,5 +61,5 @@ Neste procedimento, você vai:
       `exec mssqlrbs.rbs_sp_set_config_value ‘delete_scan_period’ , ’days 30’`
    
       `exec mssqlrbs.rbs_sp_set_config_value ‘orphan_scan_period’ , ’days 30’`
-2. No servidor Web front-end, na **Administração Central**, edite as **Configurações Gerais do Aplicativo Web** para o banco de dados de conteúdo desejado a fim de reabilitar a Lixeira. Para fazer isso, clique em **Administração Central** -> **Gerenciamento de Aplicativos** -> **Aplicativos Web (Gerenciar aplicativos Web)** -> **SharePoint - 80** -> **Configurações Gerais de Aplicativos**. Defina o Status da Lixeira para **ATIVADO**.
+2. No servidor Web front-end, na **Administração Central**, edite as **Configurações Gerais do Aplicativo Web** para o banco de dados de conteúdo desejado a fim de reabilitar a Lixeira. Para fazer isso, clique em **Administração Central** -> **Gerenciamento de Aplicativos** -> **Aplicativos Web (Gerenciar aplicativos Web)**  -> **SharePoint - 80** -> **Configurações Gerais de Aplicativos**. Defina o Status da Lixeira para **ATIVADO**.
 

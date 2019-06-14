@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/13/2018
 ms.author: chrisgre
 ms.openlocfilehash: 598bf82e375f472b2f723c3462ba7ba7b4d25fbe
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61333627"
 ---
 # <a name="automatic-iot-device-management-at-scale-using-the-azure-portal"></a>Gerenciamento automático de dispositivo do IoT em escala usando o portal do Azure
@@ -88,7 +88,7 @@ As métricas fornecem contagens resumidas de vários estados em que um dispositi
 
 2. Insira uma consulta para **Critérios da métrica**.  A consulta é baseada nas propriedades reportadas de dispositivo gêmeo.  A métrica representa o número de linhas retornadas pela consulta.
 
-Por exemplo: 
+Por exemplo:
 
 ```sql
 SELECT deviceId FROM devices 
@@ -178,7 +178,7 @@ Para modificar uma configuração, use as seguintes etapas:
    * Condição de destino 
    * Rótulos 
    * Prioridade 
-   * Métricas
+   * metrics
 
 4. Clique em **Salvar**.
 

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
 ms.openlocfilehash: d2e628fb7fc502ef9ba81d20680d66f24fd7d138
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61339073"
 ---
 # <a name="evaluate-method"></a>Método Avaliar
@@ -33,11 +33,11 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/evaluate?
 NOME     | Value | Obrigatório?  | DESCRIÇÃO
 -----------|-----------|---------|--------
 **expr**       | Cadeia de caracteres de texto | Sim | Uma expressão de consulta que especifica quais entidades devem ser retornadas.
-**modelo**      | Cadeia de caracteres de texto | Não   | Nome do modelo que você quer consultar.  Atualmente, o valor padrão é o *mais recente*.        
-**atributos** | Cadeia de caracteres de texto | Não <br>padrão: ID | Uma lista delimitada por vírgulas que especifica os valores de atributo que são incluídos na resposta. Os nomes de atributo diferenciam maiúsculas de minúsculas.
-**count**        | Número | Não <br>Padrão: 10 | Número de resultados para retornar.
-**offset**     | Número |   Não <br>Padrão: 0    | Índice do primeiro resultado para retornar.
-**orderby** |   Cadeia de caracteres de texto | Não <br>Padrão: diminuindo prob | Nome de um atributo que é usado para classificar as entidades. Opcionalmente, pode ser especificado ascendente/descendente. O formato é: *name:asc* ou *name:desc*.
+**modelo**      | Cadeia de caracteres de texto | Não  | Nome do modelo que você quer consultar.  Atualmente, o valor padrão é o *mais recente*.        
+**atributos** | Cadeia de caracteres de texto | Não<br>padrão: ID | Uma lista delimitada por vírgulas que especifica os valores de atributo que são incluídos na resposta. Os nomes de atributo diferenciam maiúsculas de minúsculas.
+**count**        | Número | Não<br>Padrão: 10 | Número de resultados para retornar.
+**offset**     | Número |   Não<br>Padrão: 0    | Índice do primeiro resultado para retornar.
+**orderby** |   Cadeia de caracteres de texto | Não<br>Padrão: diminuindo prob | Nome de um atributo que é usado para classificar as entidades. Opcionalmente, pode ser especificado ascendente/descendente. O formato é: *name:asc* ou *name:desc*.
   
  <br>
 

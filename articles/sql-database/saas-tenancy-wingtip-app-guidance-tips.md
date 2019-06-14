@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: 758cb47760f4a15e262a4d682089ac7d9fee64e8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60326237"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Diretrizes gerais para trabalhar com aplicativos SaaS de exemplo do Wingtip Tickets
@@ -79,7 +79,7 @@ Use o [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/
 
 Inicialmente, a implantação tem locatários e servidores do Banco de Dados SQL do catálogo para se conectar. A nomenclatura dos servidores depende do padrão de locação do banco de dados (veja abaixo detalhes específicos). 
 
-   - **Aplicativo autônomo:** servidores para cada locatário (ex. servidor *contosoconcerthall-&lt;Usuário&gt;*) e *catalog-sa-&lt;Usuário&gt;*
+   - **Aplicativo autônomo:** servidores para cada locatário (ex. servidor *contosoconcerthall-&lt;Usuário&gt;* ) e *catalog-sa-&lt;Usuário&gt;*
    - **Banco de dados por locatário:** *tenants1-dpt-&lt;Usuário&gt;*  e servidores *catalog-dpt-&lt;Usuário&gt;*
    - **Base de dados multilocatário:** *tenants1-mt-&lt;User&gt;* e servidores *catalog-mt-&lt;User&gt;*
 
@@ -90,7 +90,7 @@ Para garantir uma conexão de demonstração bem-sucedida, todos os servidores t
     - **Aplicativo autônomo:** servidores de inquilinos individuais (ex. *contosoconcerthall-&lt;Usuário&gt;.database.windows.net*) 
     - **Banco de dados por locatário:** *tenants1-dpt-&lt;Usuário&gt;.database.windows.net*
     - **Banco de dados multilocatário:** *tenants1-mt-&lt;Usuário&gt;.database.windows.net* 
-2. Clique em **Conectar** > **Mecanismo de Banco de Dados...**:
+2. Clique em **Conectar** > **Mecanismo de Banco de Dados...** :
 
    ![servidor catalog](media/saas-tenancy-wingtip-app-guidance-tips/connect.png)
 

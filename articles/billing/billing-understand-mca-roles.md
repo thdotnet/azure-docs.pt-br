@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 02/28/2019
 ms.author: banders
 ms.openlocfilehash: 780870cc71e95507a52ba6a9338026f895a96ac1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60370833"
 ---
 # <a name="understand-microsoft-customer-agreement-administrative-roles-in-azure"></a>Entender as funções administrativas do contrato de cliente da Microsoft no Azure
@@ -34,17 +34,17 @@ A tabela a seguir descreve as funções de cobrança você usa para gerenciar su
 |---|---|
 |Proprietário da conta de cobrança|Gerenciar tudo para a conta de cobrança|
 |Colaborador da conta de cobrança|Gerenciar tudo, exceto permissões na conta de cobrança|
-|Leitor da conta de cobrança|Exibição somente leitura de tudo na conta de cobrança|
+|Leitor de conta de cobrança|Exibição somente leitura de tudo na conta de cobrança|
 |Proprietário do perfil de cobrança|Gerenciar tudo para o perfil de cobrança|
-|Colaborador do perfil de cobrança|Gerenciar tudo, exceto as permissões no perfil de cobrança|
-|Leitor do perfil de cobrança|Exibição somente leitura de tudo no perfil de cobrança|
-|Gerenciador de fatura|Exibir e pagar notas fiscais para perfil de cobrança|
-|Proprietário da seção de fatura|Gerenciar todos os itens na seção de nota fiscal|
-|Colaborador da seção de fatura|Gerenciar tudo, exceto as permissões na seção de nota fiscal|
-|Leitor da seção de fatura|Exibição somente leitura de tudo o que na seção de nota fiscal|
-|Criador de assinatura do Azure|Criar assinaturas do Azure|
+|Colaborador de perfil de cobrança|Gerenciar tudo, exceto as permissões no perfil de cobrança|
+|Leitor de perfil de cobrança|Exibição somente leitura de tudo no perfil de cobrança|
+|Gerenciador de faturas|Exibir e pagar notas fiscais para perfil de cobrança|
+|Proprietário da seção de nota fiscal|Gerenciar todos os itens na seção de nota fiscal|
+|Colaborador da seção de nota fiscal|Gerenciar tudo, exceto as permissões na seção de nota fiscal|
+|Leitor de seção de nota fiscal|Exibição somente leitura de tudo o que na seção de nota fiscal|
+|Criador da assinatura do Azure|Criar assinaturas do Azure|
 
-## <a name="billing-account-roles-and-tasks"></a>Funções e tarefas da conta de cobrança
+## <a name="billing-account-roles-and-tasks"></a>Tarefas e funções da conta de cobrança
 
 Uma conta de cobrança lhe permite gerenciar a cobrança para sua organização. Você pode usar conta de cobrança para organizar os custos, encargos de monitoramento e faturas e controlar o acesso de cobrança para sua organização. Para obter mais informações, consulte [entender a conta de cobrança](billing-mca-overview.md#understand-billing-account).
 
@@ -52,7 +52,7 @@ As tabelas a seguir mostram qual função você precisa concluir tarefas no cont
 
 ### <a name="manage-billing-account-permissions-and-properties"></a>Gerenciar propriedades e permissões de conta de cobrança
 
-|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança|
+|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança|
 |---|---|---|---|
 |Exibir as permissões existentes para a conta de cobrança|✔|✔|✔|
 |Conceder a outros usuários permissões para exibir e gerenciar a conta de cobrança|✔|✘|✘|
@@ -60,37 +60,37 @@ As tabelas a seguir mostram qual função você precisa concluir tarefas no cont
 
 ### <a name="manage-billing-profiles-for-billing-account"></a>Gerenciar perfis de cobrança para a conta de cobrança
 
-|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança|
+|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança|
 |---|---|---|---|
 |Exibir todos os perfis de cobrança na conta|✔|✔|✔|
 
 ### <a name="manage-invoices-for-billing-account"></a>Gerenciar as notas fiscais para a conta de cobrança
 
-|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança|
+|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança|
 |---|---|---|---|
 |Exibir todas as notas fiscais na conta|✔|✔|✔|
 |Baixar as faturas, os arquivos de uso e os encargos do Azure, folhas de preços e documentos na conta de imposto|✔|✔|✔|
 
 ### <a name="manage-invoice-sections-for-billing-account"></a>Gerenciar seções de nota fiscal para a conta de cobrança
 
-|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança|
+|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança|
 |---|---|---|---|
 |Exibir todas as seções de nota fiscal na conta|✔|✔|✔|
 
 ### <a name="manage-transactions-for-billing-account"></a>Gerenciar transações para a conta de cobrança
 
-|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança|
+|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança|
 |---|---|---|---|
 |Exibir todas as transações para a conta de cobrança|✔|✔|✔|
 |Exibir todos os produtos comprados para a conta|✔|✔|✔|
 
 ### <a name="manage-subscriptions-for-billing-account"></a>Gerenciar assinaturas para a conta de cobrança
 
-|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança|
+|Tarefa|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança|
 |---|---|---|---|
 |Exibir todas as assinaturas do Azure na conta de cobrança|✔|✔|✔|
 
-## <a name="billing-profile-roles-and-tasks"></a>Tarefas e funções do perfil de cobrança
+## <a name="billing-profile-roles-and-tasks"></a>Tarefas e funções de perfil de cobrança
 
 Um perfil de cobrança permite que você gerencie seus métodos de pagamento e notas fiscais. Uma fatura mensal é gerada para as assinaturas do Azure e outros produtos adquiridos usando o perfil de cobrança. Você pode usar os métodos de pagamento para pagar a nota fiscal. Para obter mais informações, consulte [entender a cobrança perfis](billing-mca-overview.md#understand-billing-profiles).
 
@@ -98,7 +98,7 @@ As tabelas a seguir mostram qual função você precisa concluir tarefas no cont
 
 ### <a name="manage-billing-profile-permissions-properties-and-policies"></a>Gerenciar políticas, propriedades e permissões de perfil de cobrança
 
-|Tarefa|Proprietário do perfil de cobrança|Colaborador do perfil de cobrança|Leitor do perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança
+|Tarefa|Proprietário do perfil de cobrança|Colaborador de perfil de cobrança|Leitor de perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança
 |---|---|---|---|---|---|---|---|
 |Exibir as permissões existentes para o perfil de cobrança|✔|✔|✔|✔|✔|✔|✔|
 |Conceder a outros usuários permissões para exibir e gerenciar o perfil de cobrança|✔|✘|✘|✘|✘|✘|✘|
@@ -109,38 +109,38 @@ As tabelas a seguir mostram qual função você precisa concluir tarefas no cont
 
 ### <a name="manage-invoices-for-billing-profile"></a>Gerenciar as notas fiscais para o perfil de cobrança
 
-|Tarefa|Proprietário do perfil de cobrança|Colaborador do perfil de cobrança|Leitor do perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança
+|Tarefa|Proprietário do perfil de cobrança|Colaborador de perfil de cobrança|Leitor de perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança
 |---|---|---|---|---|---|---|---|
 |Exibir todas as notas fiscais para o perfil de cobrança|✔|✔|✔|✔|✔|✔|✔|
 |Baixar as faturas, os arquivos de uso e os encargos do Azure, folhas de preços e documentos para o perfil de cobrança de imposto|✔|✔|✔|✔|✔|✔|✔|
 
 ### <a name="manage-invoice-sections-for-billing-profile"></a>Gerenciar seções de fatura para o perfil de cobrança
 
-|Tarefa|Proprietário do perfil de cobrança|Colaborador do perfil de cobrança|Leitor do perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança
+|Tarefa|Proprietário do perfil de cobrança|Colaborador de perfil de cobrança|Leitor de perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança
 |---|---|---|---|---|---|---|---|
 |Exibir todas as seções de fatura para o perfil de cobrança|✔|✔|✔|✔|✔|✔|✔|
 |Criar nova seção de fatura para o perfil de cobrança|✔|✔|✘|✘|✘|✘|✘|
 
 ### <a name="manage-transactions-for-billing-profile"></a>Gerenciar transações para o perfil de cobrança
 
-|Tarefa|Proprietário do perfil de cobrança|Colaborador do perfil de cobrança|Leitor do perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança
+|Tarefa|Proprietário do perfil de cobrança|Colaborador de perfil de cobrança|Leitor de perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança
 |---|---|---|---|---|---|---|---|
 |Exibir todas as transações de cobrança para o perfil de cobrança|✔|✔|✔|✔|✔|✔|✔|
 
 ### <a name="manage-payment-methods-for-billing-profile"></a>Gerenciar métodos de pagamento para cobrança de perfil
 
-|Tarefa|Proprietário do perfil de cobrança|Colaborador do perfil de cobrança|Leitor do perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança
+|Tarefa|Proprietário do perfil de cobrança|Colaborador de perfil de cobrança|Leitor de perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança
 |---|---|---|---|---|---|---|---|
 |Métodos de pagamento do modo de exibição para o perfil de cobrança|✔|✔|✔|✔|✔|✔|✔|
 |Acompanhar o saldo de créditos do Azure para o perfil de cobrança|✔|✔|✔|✔|✔|✔|✔|
 
 ### <a name="manage-subscriptions-for-billing-profile"></a>Gerenciar assinaturas para o perfil de cobrança
 
-|Tarefa|Proprietário do perfil de cobrança|Colaborador do perfil de cobrança|Leitor do perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança
+|Tarefa|Proprietário do perfil de cobrança|Colaborador de perfil de cobrança|Leitor de perfil de cobrança|Gerenciador de faturas|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança
 |---|---|---|---|---|---|---|---|
 |Exibir todas as assinaturas do Azure para o perfil de cobrança|✔|✔|✔|✔|✔|✔|✔|
 
-## <a name="invoice-section-roles-and-tasks"></a>Tarefas e funções da seção de fatura
+## <a name="invoice-section-roles-and-tasks"></a>Tarefas e funções de seção de nota fiscal
 
 Uma seção de nota fiscal permite que você organize os custos em sua fatura. Você pode criar uma seção para organizar seus custos por departamento, ambiente de desenvolvimento, ou com base nas necessidades da sua organização. Conceda permissão para criar assinaturas do Azure para a seção a outros. Quaisquer encargos de uso e compras para as assinaturas e em seguida, Mostrar na seção da nota fiscal. Para obter mais informações, consulte [seção de nota fiscal de compreender](billing-mca-overview.md#understand-invoice-sections).
 
@@ -148,7 +148,7 @@ As tabelas a seguir mostram qual função você precisa concluir tarefas no cont
 
 ### <a name="manage-invoice-section-permissions-and-properties"></a>Gerenciar permissões de seção de nota fiscal e propriedades
 
-|Tarefas|Proprietário da seção de fatura|Colaborador da seção de fatura|Leitor da seção de fatura|Criador de assinatura do Azure|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança | |
+|Tarefas|Proprietário da seção de nota fiscal|Colaborador da seção de nota fiscal|Leitor de seção de nota fiscal|Criador da assinatura do Azure|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança | |
 |---|---|---|---|---|---|---|---|---|
 |Exibir todas as permissões na seção de nota fiscal|✔|✔|✔|✔|✔|✔|✔| |
 |Conceder a outros usuários permissões para exibir e gerenciar a seção de nota fiscal|✔|✘|✘|✘|✘|✘|✘| |
@@ -157,25 +157,25 @@ As tabelas a seguir mostram qual função você precisa concluir tarefas no cont
 
 ### <a name="manage-products-for-invoice-section"></a>Gerenciar produtos para a seção de nota fiscal
 
-|Tarefas|Proprietário da seção de fatura|Colaborador da seção de fatura|Leitor da seção de fatura|Criador de assinatura do Azure|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança
+|Tarefas|Proprietário da seção de nota fiscal|Colaborador da seção de nota fiscal|Leitor de seção de nota fiscal|Criador da assinatura do Azure|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança
 |---|---|---|---|---|---|---|---|
 |Exibir todos os produtos comprados na seção de nota fiscal|✔|✔|✔|✘|✔|✔|✔|
 |Gerenciar a cobrança para os produtos para a seção de nota fiscal, como cancelar, desative a renovação automática e muito mais|✔|✔|✘|✘|✘|✘|✘|
 |Seção de nota fiscal de alteração para os produtos|✔|✔|✘|✘|✘|✘|✘|
 
-### <a name="manage-subscriptions-for-invoice-section"></a>Gerenciar as assinaturas da seção da fatura
+### <a name="manage-subscriptions-for-invoice-section"></a>Gerenciar assinaturas para a seção de nota fiscal
 
-|Tarefas|Proprietário da seção de fatura|Colaborador da seção de fatura|Leitor da seção de fatura|Criador de assinatura do Azure|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor da conta de cobrança
+|Tarefas|Proprietário da seção de nota fiscal|Colaborador da seção de nota fiscal|Leitor de seção de nota fiscal|Criador da assinatura do Azure|Proprietário da conta de cobrança|Colaborador da conta de cobrança|Leitor de conta de cobrança
 |---|---|---|---|---|---|---|---|
 |Exibir todas as assinaturas do Azure para a seção de nota fiscal|✔|✔|✔|✘|✔|✔|✔|
 |Seção de nota fiscal de alteração para as assinaturas|✔|✔|✘|✘|✘|✘|✘|
 |Solicitar a propriedade da cobrança de assinaturas de usuários em outras contas de cobrança|✔|✔|✘|✘|✘|✘|✘|
 
-## <a name="subscription-billing-roles-and-tasks"></a>Tarefas e funções de cobrança de assinatura
+## <a name="subscription-billing-roles-and-tasks"></a>Tarefas e funções de cobrança da assinatura
 
 A tabela a seguir mostra qual função você precisa concluir tarefas no contexto de uma assinatura.
 
-|Tarefas|Proprietário da seção de fatura|Colaborador da seção de fatura|Leitor da seção de fatura|Criador de assinatura do Azure|
+|Tarefas|Proprietário da seção de nota fiscal|Colaborador da seção de nota fiscal|Leitor de seção de nota fiscal|Criador da assinatura do Azure|
 |---|---|---|---|---|
 |Criar assinaturas do Azure|✔|✔|✘|✔|
 |Centro de custo para a assinatura de atualização|✔|✔|✘|✘|

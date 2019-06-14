@@ -12,14 +12,14 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 ms.openlocfilehash: aaf1d72a0c9c56e7d140fb615caf014507ebf263
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60928043"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-and-azure-data-factory"></a>Criar pipelines de previsão usando Azure Machine Learning e o Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](v1/data-factory-azure-ml-batch-execution-activity.md)
 > * [Versão atual](transform-data-using-machine-learning.md)
 
@@ -126,13 +126,13 @@ O snippet JSON a seguir define uma atividade de execução em lotes do Azure Mac
 
 | Propriedade          | DESCRIÇÃO                              | Obrigatório |
 | :---------------- | :--------------------------------------- | :------- |
-| Nome              | Nome da atividade no pipeline     | Sim      |
-| description       | Texto que descreve o que a atividade faz.  | Não        |
-| Tipo              | Para a atividade do U-SQL do Data Lake Analytics, o tipo de atividade é **AzureMLBatchExecution**. | Sim      |
+| name              | Nome da atividade no pipeline     | Sim      |
+| description       | Texto que descreve o que a atividade faz.  | Não       |
+| type              | Para a atividade do U-SQL do Data Lake Analytics, o tipo de atividade é **AzureMLBatchExecution**. | Sim      |
 | linkedServiceName | Serviços vinculados ao serviço vinculado do Azure Machine Learning. Para saber mais sobre esse serviço vinculado, consulte o artigo [Compute linked services](compute-linked-services.md) (Serviços de computação vinculados). | Sim      |
-| webServiceInputs  | Pares chave-valor, mapeando os nomes das entradas do serviço Web do Azure Machine Learning. A chave deve corresponder aos parâmetros de entrada definidos no serviço Web do Azure Machine Learning publicado. Valor é um par de propriedades FilePath e serviços vinculados do Armazenamento do Azure especificando os locais de Blob de entrada. | Não        |
-| webServiceOutputs | Pares chave-valor, mapeando os nomes das saídas do serviço Web do Azure Machine Learning. A chave deve corresponder aos parâmetros de saída definidos no serviço Web do Azure Machine Learning publicado. Valor é um par de propriedades FilePath e serviços vinculados do Armazenamento do Azure especificando os locais de Blob de saída. | Não        |
-| globalParameters  | Pares de chave/valor a serem passados ao ponto de extremidade do Serviço de Execução em Lotes do Azure Machine Learning Studio. As chaves devem corresponder aos nomes dos parâmetros do serviço Web definidos no serviço Web do Azure Machine Learning Studio publicado. Os valores são passados na propriedade GlobalParameters da solicitação de execução em lotes do Azure Machine Learning Studio | Não        |
+| webServiceInputs  | Pares chave-valor, mapeando os nomes das entradas do serviço Web do Azure Machine Learning. A chave deve corresponder aos parâmetros de entrada definidos no serviço Web do Azure Machine Learning publicado. Valor é um par de propriedades FilePath e serviços vinculados do Armazenamento do Azure especificando os locais de Blob de entrada. | Não       |
+| webServiceOutputs | Pares chave-valor, mapeando os nomes das saídas do serviço Web do Azure Machine Learning. A chave deve corresponder aos parâmetros de saída definidos no serviço Web do Azure Machine Learning publicado. Valor é um par de propriedades FilePath e serviços vinculados do Armazenamento do Azure especificando os locais de Blob de saída. | Não       |
+| globalParameters  | Pares de chave/valor a serem passados ao ponto de extremidade do Serviço de Execução em Lotes do Azure Machine Learning Studio. As chaves devem corresponder aos nomes dos parâmetros do serviço Web definidos no serviço Web do Azure Machine Learning Studio publicado. Os valores são passados na propriedade GlobalParameters da solicitação de execução em lotes do Azure Machine Learning Studio | Não       |
 
 ### <a name="scenario-1-experiments-using-web-service-inputsoutputs-that-refer-to-data-in-azure-blob-storage"></a>Cenário 1: Experimentos usando entradas/saídas de serviço Web que consultam dados no Armazenamento de Blobs do Azure
 

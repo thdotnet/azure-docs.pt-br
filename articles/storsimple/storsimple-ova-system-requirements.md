@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 01/11/2019
 ms.author: alkohli
 ms.openlocfilehash: a6bea2b5447435930cb0e1f80073a11007e80415
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60629298"
 ---
 # <a name="storsimple-virtual-array-system-requirements"></a>Requisitos de sistema da matriz virtual StorSimple
@@ -52,7 +52,7 @@ Os requisitos de software incluem as informações sobre os navegadores da Web, 
 | --- | --- |
 | Número mínimo de processadores virtuais (núcleos) |4 |
 | Mínimo de memória (RAM) |8 GB <br> Para um servidor de arquivos, 8 GB para menos de 2 milhões de arquivos e 16 GB para 2 a 4 milhões de arquivos|
-| Espaço em disco<sup>1</sup> |Disco do sistema operacional - 80 GB  <br></br>Disco de dados - 500 GB a 8 TB |
+| Espaço em disco<sup>1</sup> |Disco do sistema operacional - 80 GB <br></br>Disco de dados - 500 GB a 8 TB |
 | Número mínimo de interface(s) de rede |1 |
 | Largura de banda de Internet<sup>2</sup> |Largura de banda mínima necessária: 5 Mbps <br> Largura de banda recomendada: 100 Mbps <br> A velocidade de transferência de dados é ajustada conforme a largura de banda de Internet. Por exemplo, 100 GB de dados levam dois dias para serem transferidos a 5 Mbps, o que pode levar a falhas de backup porque os backups diários não serão concluídos em um dia. Com uma largura de banda de 100 Mbps, 100 GB de dados podem ser transferido em 2,5 horas.   |
 
@@ -72,7 +72,7 @@ Os requisitos de software a seguir referem-se aos iniciadores iSCSI que acessam 
 
 | **Sistemas operacionais com suporte** | **Versão necessária** | **Requisitos/observações adicionais** |
 | --- | --- | --- |
-| Windows Server |2008R2 SP1, 2012, 2012R2 |O StorSimple pode criar volumes com provisionamento dinâmico e provisionamento completo. Ele não pode criar volumes com provisionamento parcial. Os volumes iSCSI do StorSimple têm suporte apenas em:  <ul><li>Volumes simples em discos básicos do Windows.</li><li>Windows NTFS para formatar um volume.</li> |
+| Windows Server |2008R2 SP1, 2012, 2012R2 |O StorSimple pode criar volumes com provisionamento dinâmico e provisionamento completo. Ele não pode criar volumes com provisionamento parcial. Os volumes iSCSI do StorSimple têm suporte apenas em: <ul><li>Volumes simples em discos básicos do Windows.</li><li>Windows NTFS para formatar um volume.</li> |
 
 Os requisitos de software a seguir referem-se aos clientes SMB que acessam o StorSimple Array Virtual (configurado como um servidor de arquivos).
 
@@ -94,13 +94,13 @@ A tabela a seguir lista as portas que devem ser abertas no firewall para permiti
 
 | **Porta No.<sup>1</sup>** | **Entrada ou saída** | **Escopo da porta** | **Obrigatório** | **Observações** |
 | --- | --- | --- | --- | --- |
-| TCP 80 (HTTP) |Saída |WAN |Não  |A porta de saída é usada para acesso à Internet para recuperar atualizações. <br></br>O proxy Web de saída é configurável pelo usuário. |
+| TCP 80 (HTTP) |Saída |WAN |Não |A porta de saída é usada para acesso à Internet para recuperar atualizações. <br></br>O proxy Web de saída é configurável pelo usuário. |
 | TCP 443 (HTTPS) |Saída |WAN |Sim |A porta de saída é usada para acessar dados na nuvem. <br></br>O proxy Web de saída é configurável pelo usuário. |
 | UDP 53 (DNS) |Saída |WAN |Em alguns casos; consulte as observações. |Esta porta só será necessária se você estiver usando um servidor DNS baseado na Internet. <br></br> Observe que, caso esteja implantando um servidor de arquivos, recomendamos usar o servidor DNS local. |
 | UDP 123 (NTP) |Saída |WAN |Em alguns casos; consulte as observações. |Esta porta é necessária apenas se você estiver usando um servidor NTP baseado na Internet.<br></br> Observe que, caso esteja implantando um servidor de arquivos, recomendamos sincronizar a hora com os controladores de domínio do Active Directory. |
 | TCP 80 (HTTP) |No |LAN |Sim |Essa é a porta de entrada para a interface do usuário local no dispositivo StorSimple para gerenciamento local. <br></br> Observe que o acesso à interface do usuário local por HTTP será redirecionado automaticamente para HTTPS. |
-| TCP 443 (HTTPS) |No |LAN |Sim |Essa é a porta de entrada para a interface do usuário local no dispositivo StorSimple para gerenciamento local. |
-| TCP 3260 (iSCSI) |No |LAN |Não  |Esta porta é usada para acessar dados em iSCSI. |
+| TCP 443 (HTTPS) |Em |LAN |Sim |Essa é a porta de entrada para a interface do usuário local no dispositivo StorSimple para gerenciamento local. |
+| TCP 3260 (iSCSI) |Em |LAN |Não |Esta porta é usada para acessar dados em iSCSI. |
 
 <sup>1</sup> Nenhuma porta de entrada precisa estar aberta na Internet pública.
 

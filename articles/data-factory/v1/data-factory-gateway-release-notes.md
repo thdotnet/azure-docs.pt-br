@@ -13,15 +13,15 @@ ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
 ms.openlocfilehash: 865bfdae199bca7ebee888be527db239d34511d1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60486457"
 ---
 # <a name="release-notes-for-data-management-gateway"></a>Notas de versão para o Gateway de Gerenciamento de Dados
 > [!NOTE]
-> Este artigo aplica-se à versão 1 do Data Factory. Se estiver usando a versão atual do serviço do Data Factory, consulte [tempo de execução de integração auto-hospedado na V2](../create-self-hosted-integration-runtime.md).
+> Este artigo se aplica à versão 1 do Data Factory. Se estiver usando a versão atual do serviço do Data Factory, consulte [tempo de execução de integração auto-hospedado na V2](../create-self-hosted-integration-runtime.md).
 
 Um dos desafios da integração de dados moderna é mover dados entre o local e a nuvem. O Data Factory faz essa integração com o Gateway de Gerenciamento de Dados, que é um agente que você pode instalar localmente para habilitar a movimentação de dados híbridos.
 
@@ -103,7 +103,7 @@ Não mantemos mais as Notas de versão aqui. Obtenha as notas de versão mais re
 *  Permite a configuração do proxy HTTP para o gateway usando o Gerenciador de Configurações do Gateway. Se configurado, o Blob do Azure, a Tabela do Azure, o Azure Data Lake e o DocumentDB serão acessados por meio do proxy HTTP.
 *  Dá suporte ao tratamento de cabeçalho para TextFormat na cópia de dados dentro e fora do Blob do Azure, Azure Data Lake Store, Sistema de Arquivos Local e HDFS local.
 *  Dá suporte à cópia de dados do Blob de Acréscimos e Blob de Páginas com o Blob de Blocos já com suporte.
-*  Introduz um novo status de gateway **Online (Limitado)**, que indica se a funcionalidade principal do gateway funciona, com exceção do suporte à operação interativa do Assistente de Cópia.
+*  Introduz um novo status de gateway **Online (Limitado)** , que indica se a funcionalidade principal do gateway funciona, com exceção do suporte à operação interativa do Assistente de Cópia.
 *  Aprimora a robustez do registro de gateway usando a chave do Registro.
 
 ## <a name="216040"></a>2.1.6040.

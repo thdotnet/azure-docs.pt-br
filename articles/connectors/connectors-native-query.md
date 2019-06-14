@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 07/20/2016
 ms.author: jehollan
 ms.openlocfilehash: 2a82afe396039857e5b9ad6b8a6d0e710573037f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60538205"
 ---
 # <a name="get-started-with-the-query-action"></a>Introdução à ação de consulta
@@ -67,9 +67,9 @@ A ação de consulta vem com uma ação possível. As tabelas a seguir descrevem
 Estes são os campos de entrada para a ação, o que cria uma solicitação HTTP de saída.
 Um * significa que é um campo obrigatório.
 
-| Nome de exibição | Nome da propriedade | DESCRIÇÃO |
+| Display name | Nome da propriedade | DESCRIÇÃO |
 | --- | --- | --- |
-| De* |de |A matriz a ser filtrada |
+| De* |from |A matriz a ser filtrada |
 | Condição* |onde |A condição a ser avaliada para cada item |
 
 <br>
@@ -81,6 +81,6 @@ A seguir, os detalhes de saída para a resposta HTTP.
 | --- | --- | --- |
 | Matriz filtrada |matriz |Uma matriz que contém um objeto para cada resultado filtrado |
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Agora, experimente a plataforma e [crie um aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md). Você pode explorar os outros conectores disponíveis em aplicativos lógicos examinando nossa [lista de APIs](apis-list.md).
 

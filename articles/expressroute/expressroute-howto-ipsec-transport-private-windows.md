@@ -9,10 +9,10 @@ ms.date: 10/17/2018
 ms.author: fabferri
 ms.custom: seodec18
 ms.openlocfilehash: d728980517988e2dc39be4e4b64d20157a1aef54
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60366663"
 ---
 # <a name="configure-ipsec-transport-mode-for-expressroute-private-peering"></a>Configurar o modo de transporte IPsec para emparelhamento privado do ExpressRoute
@@ -104,7 +104,7 @@ Verifique se os seguintes pré-requisitos foram atendidos:
 1. Para criar um novo GPO vinculado a uma UO, abra o snap-in de Gerenciamento de Política de Grupo e localize a UO à qual o GPO será vinculado. No exemplo, a UO é denominada **IPSecOU**. 
 
    [![9]][9]
-2. No snap-in Gerenciamento de Política de Grupo, selecione a UO e clique com o botão direito do mouse. No menu suspenso, clique em "**Criar uma GPO neste domínio e vinculá-la aqui…**".
+2. No snap-in Gerenciamento de Política de Grupo, selecione a UO e clique com o botão direito do mouse. No menu suspenso, clique em "**Criar uma GPO neste domínio e vinculá-la aqui…** ".
 
    [![10]][10]
 3. Dê ao GPO um nome intuitivo para que você possa localizá-lo facilmente mais tarde. Clique em **OK** para criar e vincular o GPO.
@@ -122,7 +122,7 @@ Para aplicar o GPO à UO, o GPO deve não apenas ser vinculado a UO, mas o link 
 
 ## <a name="filteraction"></a>3. Definir a ação de filtro IP
 
-1. Na lista suspensa, clique com o botão direito do mouse em **Política de Segurança de IP no Active Directory** e, em seguida, clique em **Gerenciar listas de filtro IP e ações de filtro...**.
+1. Na lista suspensa, clique com o botão direito do mouse em **Política de Segurança de IP no Active Directory** e, em seguida, clique em **Gerenciar listas de filtro IP e ações de filtro...** .
 
    [![15]][15]
 2. Na guia "**Gerenciar Ações de filtro**", clique em **Adicionar**.
@@ -141,7 +141,7 @@ Para aplicar o GPO à UO, o GPO deve não apenas ser vinculado a UO, mas o link 
 6. Na página **Comunicação com computadores que não dão suporte a IPsec**, selecione **Não permitir comunicação não segura** e, em seguida, clique em **Avançar**.
 
    [![20]][20]
-7. Na página **Tráfego e Segurança de IP**, selecione **Personalizado** e clique em **Configurações...**.
+7. Na página **Tráfego e Segurança de IP**, selecione **Personalizado** e clique em **Configurações...** .
 
    [![21]][21]
 8. Na página **Configurações de Método de Segurança Personalizado**, selecione **Integridade de dados e criptografia (ESP): SHA1, 3DES**. Em seguida, clique em **OK**.
@@ -158,13 +158,13 @@ Crie uma lista de filtros que especifica o tráfego HTTP criptografado com a por
 1. Para qualificar os tipos de tráfego que devem ser criptografados, use uma **lista de filtros IP**. Na guia **Gerenciar Listas de Filtros IP**, clique em **Adicionar** para adicionar uma nova lista de filtros IP.
 
    [![24]][24]
-2. No campo **Nome:**, digite um nome para sua lista de filtros IP. Por exemplo, **azure-onpremises-HTTP8080**. Em seguida, clique em **Adicionar**.
+2. No campo **Nome:** , digite um nome para sua lista de filtros IP. Por exemplo, **azure-onpremises-HTTP8080**. Em seguida, clique em **Adicionar**.
 
    [![25]][25]
 3. Na página **Descrição do filtro IP e propriedade espelhada**, selecione **Espelhado**. A configuração espelhada corresponde a pacotes que vão em ambos os sentidos, o que permite comunicação bidirecional. Em seguida, clique em **Próximo**.
 
    [![26]][26]
-4. Na página **Origem do Tráfego IP**, na lista suspensa **Endereço de origem:**, escolha **Uma Sub-rede ou Endereço IP Específico**. 
+4. Na página **Origem do Tráfego IP**, na lista suspensa **Endereço de origem:** , escolha **Uma Sub-rede ou Endereço IP Específico**. 
 
    [![27]][27]
 5. Especifique **Sub-rede ou Endereço IP:** do endereço de origem do tráfego IP e clique em **Avançar**.
@@ -176,7 +176,7 @@ Crie uma lista de filtros que especifica o tráfego HTTP criptografado com a por
 7. Na página **Tipo de Protocolo IP**, selecione **TCP**. Em seguida, clique em **Avançar**.
 
    [![30]][30]
-8. Na página **Porta do Protocolo IP**, selecione **De qualquer porta** e **Para esta porta:**. Digite **8080** na caixa de texto. Essas configurações especificam que apenas o tráfego HTTP na porta 8080 do destino será criptografado. Em seguida, clique em **Avançar**.
+8. Na página **Porta do Protocolo IP**, selecione **De qualquer porta** e **Para esta porta:** . Digite **8080** na caixa de texto. Essas configurações especificam que apenas o tráfego HTTP na porta 8080 do destino será criptografado. Em seguida, clique em **Avançar**.
 
    [![31]][31]
 9. Exibir a lista de filtro IP.  A configuração da Lista de Filtro IP **azure-onpremises-HTTP8080** dispara a criptografia para todo o tráfego que corresponde aos critérios a seguir:

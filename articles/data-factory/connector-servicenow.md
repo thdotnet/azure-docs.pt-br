@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: jingwang
 ms.openlocfilehash: 234b78a97c2663121d0d585154695887a58b9522
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60203407"
 ---
 # <a name="copy-data-from-servicenow-using-azure-data-factory"></a>Copiar dados do ServiceNow usando o Azure Data Factory
@@ -46,11 +46,11 @@ As propriedades a seguir têm suporte para o serviço vinculado do ServiceNow:
 | authenticationType | O tipo de autenticação a ser usado. <br/>Valores permitidos são: **Básica**, **OAuth2** | Sim |
 | username | O nome de usuário usado para se conectar ao servidor ServiceNow para autenticação básica e OAuth2.  | Sim |
 | password | A senha correspondente ao nome de usuário para autenticação básica e OAuth2. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
-| clientId | A ID do cliente para autenticação OAuth2.  | Não  |
-| clientSecret | O segredo do cliente para autenticação OAuth2. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não  |
-| useEncryptedEndpoints | Especifica se os endpoints de fonte de dados são criptografados usando HTTPS. O valor padrão é true.  | Não  |
-| useHostVerification | Especifica se é necessário o nome do host no certificado do servidor para corresponder ao nome de host do servidor ao se conectar via SSL. O valor padrão é true.  | Não  |
-| usePeerVerification | Especifica se deve verificar a identidade do servidor quando se conecta por meio de SSL. O valor padrão é true.  | Não  |
+| clientId | A ID do cliente para autenticação OAuth2.  | Não |
+| clientSecret | O segredo do cliente para autenticação OAuth2. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não |
+| useEncryptedEndpoints | Especifica se os endpoints de fonte de dados são criptografados usando HTTPS. O valor padrão é true.  | Não |
+| useHostVerification | Especifica se é necessário o nome do host no certificado do servidor para corresponder ao nome de host do servidor ao se conectar via SSL. O valor padrão é true.  | Não |
+| usePeerVerification | Especifica se deve verificar a identidade do servidor quando se conecta por meio de SSL. O valor padrão é true.  | Não |
 
 **Exemplo:**
 
@@ -117,7 +117,7 @@ Observe o seguinte ao especificar o esquema e a coluna para ServiceNow em consul
 - **Esquema:** especifique o esquema como `Actual` ou `Display` na consulta do ServiceNow, que pode ser visto como o parâmetro `sysparm_display_value` como verdadeiro ou falso ao chamar [APIs restful do ServiceNow](https://developer.servicenow.com/app.do#!/rest_api_doc?v=jakarta&id=r_AggregateAPI-GET). 
 - **Coluna:** o nome da coluna para o valor real no esquema `Actual` é `[column name]_value`, e para o valor de exibição no esquema `Display` é `[column name]_display_value`. Observe que o nome da coluna precisa ser mapeado para o esquema que está sendo usado na consulta.
 
-**Exemplo de consulta:**
+**Exemplo de consulta:** 
 `SELECT col_value FROM Actual.alm_asset` OU 
 `SELECT col_display_value FROM Display.alm_asset`
 
@@ -156,7 +156,7 @@ Observe o seguinte ao especificar o esquema e a coluna para ServiceNow em consul
 
 ### <a name="schema-to-use"></a>Esquema a ser usado
 
-O ServiceNow possui 2 esquemas diferentes, um é **"Real"** que retorna dados reais, o outro é **"Display"**, que retorna os valores de exibição dos dados. 
+O ServiceNow possui 2 esquemas diferentes, um é **"Real"** que retorna dados reais, o outro é **"Display"** , que retorna os valores de exibição dos dados. 
 
 Se você tiver um filtro em sua consulta, use o esquema "Real" que tenha melhor desempenho de cópia. Ao consultar o esquema "Real", o ServiceNow suporta de forma nativa o filtro ao buscar os dados para retornar apenas o conjunto de resultados filtrado, enquanto ao consultar o esquema "Exibir", o ADF recupera todos os dados e aplica o filtro internamente.
 

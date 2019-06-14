@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: orspodek
 ms.openlocfilehash: f501257903f3b7c621512f06d1c8c7109e22db1e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60394499"
 ---
 # <a name="copy-data-to-or-from-azure-data-explorer-using-azure-data-factory"></a>Copiar dados para ou do Azure Data Explorer usando o Azure Data Factory
@@ -139,7 +139,7 @@ Para copiar dados do Azure Data Explorer, defina a propriedade **type** na fonte
 |:--- |:--- |:--- |
 | type | A propriedade **type** da fonte da atividade de cópia deve ser definida como: **AzureDataExplorerSource** | Sim |
 | query | Uma solicitação somente leitura fornecida em um [formato KQL](/azure/kusto/query/). Use a consulta KQL personalizada como referência. | Sim |
-| queryTimeout | O tempo de espera antes que a solicitação de consulta expire. O valor padrão é 10 min (00:10:00); o valor máximo permitido é 1 hora (01: 00:00). | Não  |
+| queryTimeout | O tempo de espera antes que a solicitação de consulta expire. O valor padrão é 10 min (00:10:00); o valor máximo permitido é 1 hora (01: 00:00). | Não |
 
 >[!NOTE]
 >Fonte de dados Explorer do Azure por padrão tem um limite de tamanho de 500.000 registros ou 64 MB. Para recuperar todos os registros sem truncamento, você pode especificar `set notruncation;` no início de sua consulta. Consulte a [limites de consulta](https://docs.microsoft.com/azure/kusto/concepts/querylimits) em mais detalhes.
@@ -184,7 +184,7 @@ Para copiar dados do Azure Data Explorer, defina a propriedade type no coletor d
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | type | A propriedade **type** do coletor da atividade de cópia deve ser definida como: **AzureDataExplorerSink** | Sim |
-| ingestionMappingName | Nome do criada previamente **[mapeamento](/azure/kusto/management/mappings#csv-mapping)** em uma tabela do Kusto. Para mapear as colunas de origem para o Azure Data Explorer - aplica-se ao **[todos com suporte/formatos de repositórios de origem](copy-activity-overview.md#supported-data-stores-and-formats)** incluindo em JSON/CSV/Avro formatos etc., você pode usar a atividade de cópia [coluna Mapeando](copy-activity-schema-and-type-mapping.md) (implicitamente por nome ou explicitamente, conforme configurado) e/ou mapeamentos de Gerenciador de dados do Azure. | Não  |
+| ingestionMappingName | Nome do criada previamente **[mapeamento](/azure/kusto/management/mappings#csv-mapping)** em uma tabela do Kusto. Para mapear as colunas de origem para o Azure Data Explorer - aplica-se ao **[todos com suporte/formatos de repositórios de origem](copy-activity-overview.md#supported-data-stores-and-formats)** incluindo em JSON/CSV/Avro formatos etc., você pode usar a atividade de cópia [coluna Mapeando](copy-activity-schema-and-type-mapping.md) (implicitamente por nome ou explicitamente, conforme configurado) e/ou mapeamentos de Gerenciador de dados do Azure. | Não |
 
 **Exemplo:**
 

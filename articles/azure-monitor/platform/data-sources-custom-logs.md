@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 02/12/2019
 ms.author: bwren
 ms.openlocfilehash: c80736dcd8be0c7ff3aae850aaaf9659f47daf36
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60996085"
 ---
 # <a name="custom-logs-in-azure-monitor"></a>Logs personalizados de atividades no Azure Monitor
@@ -29,7 +29,7 @@ Os arquivos de log a serem coletados devem corresponder aos critérios a seguir.
 
 - O log deve ter uma única entrada por linha ou usar um carimbo de data/hora correspondente a um dos formatos a seguir no início de cada entrada.
 
-    AAAA-MM-DD HH:MM:SS <br>M/D/AAAA HH:MM:SS AM/PM<br>Seg DD, AAAA HH:MM:SS<br />aaMMdd hh<br />ddMMaa HH:mm:ss<br />aaMMdd hh<br />dd/MMM/aaaa:HH:mm:ss zzz<br />aaaa-MM-ddTHH:mm:ssK
+    AAAA-MM-DD HH:MM:SS<br>M/D/AAAA HH:MM:SS AM/PM<br>Seg DD, AAAA HH:MM:SS<br />aaMMdd hh<br />ddMMaa HH:mm:ss<br />aaMMdd hh<br />dd/MMM/aaaa:HH:mm:ss zzz<br />aaaa-MM-ddTHH:mm:ssK
 
 - O arquivo de log não deve permitir log circular ou rotação de log, em que o arquivo é substituído por novas entradas.
 - O arquivo de log deve usar a codificação ASCII ou UTF-8.  Não há suporte para outros formatos, como UTF-16.
@@ -134,7 +134,7 @@ Os registros de log personalizado têm um tipo com o nome do log que você forne
 | Propriedade | DESCRIÇÃO |
 |:--- |:--- |
 | TimeGenerated |Data e hora em que o registro foi coletado pelo Azure Monitor.  Se o log usar um delimitador baseado na hora, essa será a hora coletada da entrada. |
-| SourceSystem |Tipo de registro do qual os dados foram coletados. <br> OpsManager – agente do Windows, conexão direta ou System Center Operations Manager <br>  Linux: todos os agentes do Linux |
+| SourceSystem |Tipo de registro do qual os dados foram coletados. <br> OpsManager – agente do Windows, conexão direta ou System Center Operations Manager <br> Linux: todos os agentes do Linux |
 | RawData |Texto completo da entrada coletada. Você provavelmente desejará [analisar esses dados em propriedades individuais](../log-query/parse-text.md). |
 | ManagementGroupName |Nome do grupo de gerenciamento para agentes do System Center Operations Manager.  Para outros agentes, ele é AOI-\<ID do espaço de trabalho\> |
 

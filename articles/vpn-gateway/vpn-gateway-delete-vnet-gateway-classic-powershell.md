@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 05/11/2017
 ms.author: cherylmc
 ms.openlocfilehash: ca014e4f5fbc4a5695dbc5fedc85826c71a2a906
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60863973"
 ---
 # <a name="delete-a-virtual-network-gateway-using-powershell-classic"></a>Excluir um gateway de rede virtual usando o PowerShell (clássico)
@@ -56,7 +56,7 @@ Neste exemplo, o arquivo de configuração de rede é exportado para C:\AzureNet
 Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
 ```
 
-Abra o arquivo com um editor de texto e exiba o nome da rede virtual clássica. Quando você cria uma VNet no portal do Azure, o nome completo usado pelo Azure não fica visível no portal. Por exemplo, uma VNet que parece ser chamada “ClassicVNet1” no portal do Azure pode ter um nome muito mais longo no arquivo de configuração de rede. O nome poderia ser semelhante ao seguinte: 'Grupo ClassicRG1 ClassicVNet1'. Os nomes de rede virtual são listados como **'VirtualNetworkSite name ='**. Use os nomes no arquivo de configuração de rede ao executar os cmdlets do PowerShell.
+Abra o arquivo com um editor de texto e exiba o nome da rede virtual clássica. Quando você cria uma VNet no portal do Azure, o nome completo usado pelo Azure não fica visível no portal. Por exemplo, uma VNet que parece ser chamada “ClassicVNet1” no portal do Azure pode ter um nome muito mais longo no arquivo de configuração de rede. O nome poderia ser semelhante ao seguinte: 'Grupo ClassicRG1 ClassicVNet1'. Os nomes de rede virtual são listados como **'VirtualNetworkSite name ='** . Use os nomes no arquivo de configuração de rede ao executar os cmdlets do PowerShell.
 
 ## <a name="delete"></a>Etapa 3: Excluir o gateway de rede virtual
 

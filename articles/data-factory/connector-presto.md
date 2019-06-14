@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: jingwang
 ms.openlocfilehash: b0bbfe973f18067284514e39d36442a63bd3efc8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60508866"
 ---
 # <a name="copy-data-from-presto-using-azure-data-factory-preview"></a>Copiar dados do Presto usando o Azure Data Factory (visualização)
@@ -48,16 +48,16 @@ As propriedades a seguir têm suporte para o serviço vinculado do Presto:
 | host | O endereço IP ou nome do host do servidor Presto. (ou seja, 192.168.222.160)  | Sim |
 | serverVersion | A versão do servidor Presto. (ou seja, 0.148-t)  | Sim |
 | catalog | O contexto de catálogo para todas as solicitações no servidor.  | Sim |
-| port | A porta TCP usada pelo servidor Presto para ouvir conexões de cliente. O valor padrão é 8080.  | Não  |
+| port | A porta TCP usada pelo servidor Presto para ouvir conexões de cliente. O valor padrão é 8080.  | Não |
 | authenticationType | O mecanismo de autenticação usado para se conectar ao servidor do Presto. <br/>Valores permitidos são: **Anônimo**, **LDAP** | Sim |
-| username | O nome de usuário usado para se conectar ao servidor do Presto.  | Não  |
-| password | A senha correspondente ao nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não  |
-| enableSsl | Especifica se as conexões com o servidor são criptografadas usando SSL. O valor padrão é falso.  | Não  |
-| trustedCertPath | O caminho completo do arquivo .pem que contém certificados de autoridade de certificação confiáveis para verificar o servidor ao se conectar via SSL. Essa propriedade só pode ser definida ao usar o SSL em IR auto-hospedado. O valor padrão é o arquivo de cacerts.pem instalado com o IR.  | Não  |
-| useSystemTrustStore | Especifica se deve usar um certificado de autoridade de certificação do repositório de confiança de sistema ou de um arquivo PEM especificado. O valor padrão é falso.  | Não  |
-| allowHostNameCNMismatch | Especifica se é necessário o nome do certificado SSL emitido pela autoridade de certificação para corresponder ao nome de host do servidor ao se conectar via SSL. O valor padrão é falso.  | Não  |
-| allowSelfSignedServerCert | Especifica se deve permitir os certificados autoassinados do servidor. O valor padrão é falso.  | Não  |
-| timeZoneID | O fuso horário local usado pela conexão. Os valores válidos para essa opção são especificados no banco de dados de fuso horário IANA. O valor padrão é o fuso horário do sistema.  | Não  |
+| username | O nome de usuário usado para se conectar ao servidor do Presto.  | Não |
+| password | A senha correspondente ao nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não |
+| enableSsl | Especifica se as conexões com o servidor são criptografadas usando SSL. O valor padrão é falso.  | Não |
+| trustedCertPath | O caminho completo do arquivo .pem que contém certificados de autoridade de certificação confiáveis para verificar o servidor ao se conectar via SSL. Essa propriedade só pode ser definida ao usar o SSL em IR auto-hospedado. O valor padrão é o arquivo de cacerts.pem instalado com o IR.  | Não |
+| useSystemTrustStore | Especifica se deve usar um certificado de autoridade de certificação do repositório de confiança de sistema ou de um arquivo PEM especificado. O valor padrão é falso.  | Não |
+| allowHostNameCNMismatch | Especifica se é necessário o nome do certificado SSL emitido pela autoridade de certificação para corresponder ao nome de host do servidor ao se conectar via SSL. O valor padrão é falso.  | Não |
+| allowSelfSignedServerCert | Especifica se deve permitir os certificados autoassinados do servidor. O valor padrão é falso.  | Não |
+| timeZoneID | O fuso horário local usado pela conexão. Os valores válidos para essa opção são especificados no banco de dados de fuso horário IANA. O valor padrão é o fuso horário do sistema.  | Não |
 
 **Exemplo:**
 
@@ -155,5 +155,5 @@ Para copiar dados do Presto, defina o tipo de fonte na atividade de cópia como 
 ]
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Para obter uma lista de armazenamentos de dados com suporte como origens e coletores pela atividade de cópia no Azure Data Factory, consulte [Armazenamentos de dados com suporte](copy-activity-overview.md#supported-data-stores-and-formats).

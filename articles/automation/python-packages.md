@@ -10,10 +10,10 @@ ms.date: 02/25/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: b53e07d6086f2a02fd1bbd158ffc09dc95b0c377
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60500069"
 ---
 # <a name="manage-python-2-packages-in-azure-automation"></a>Gerenciar pacotes do Python 2 no Automação do Azure
@@ -91,6 +91,6 @@ for group in groups:
 
 Para desenvolver e testar os runbooks do Python 2 offline, você pode usar o módulo de [ativos emulados do python de Automação do Azure](https://github.com/azureautomation/python_emulated_assets) no GitHub. Esse módulo permite referenciar os recursos compartilhados como credenciais, variáveis, conexões e certificados.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Para começar a usar os runbooks do Python 2, consulte [Meu primeiro runbook do Python 2](automation-first-runbook-textual-python2.md)

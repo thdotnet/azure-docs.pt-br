@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 11/28/2017
 ms.author: anwestg
 ms.openlocfilehash: aae6bc41f3c2fc2c5f8cf63d07f6b4d79bb3564a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61022689"
 ---
 # <a name="install-the-azure-functions-runtime-preview-2"></a>Instale a versão prévia 2 do Azure Functions Runtime
@@ -118,7 +118,7 @@ Para criar sua primeira função na versão prévia do Azure Functions Runtime
 
     ![Nome e plano da assinatura do portal da versão prévia do Azure Functions Runtime][16]
 
-1. Todos os seus aplicativos de funções estão listados no painel esquerdo do portal.  Para criar um novo aplicativo de funções, selecione o título **Aplicativo de Funções** e clique na opção **+**.
+1. Todos os seus aplicativos de funções estão listados no painel esquerdo do portal.  Para criar um novo aplicativo de funções, selecione o título **Aplicativo de Funções** e clique na opção **+** .
 
 1. Insira um nome para seu aplicativo de funções, selecione a assinatura correta, escolha a versão do Azure Functions Runtime que deseja programar e clique em **Criar**
 

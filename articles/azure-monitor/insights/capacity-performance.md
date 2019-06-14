@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: magoedte
 ms.openlocfilehash: fcf71bf144b559c4867303988d4c1f08b7aa5605
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62101907"
 ---
 # <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Planejar a capacidade de máquina virtual do Hyper-V com a solução capacidade e desempenho (preterida)
@@ -49,9 +49,9 @@ A tabela a seguir descreve as fontes conectadas que têm suporte dessa solução
 | Fonte Conectada | Suporte | DESCRIÇÃO |
 |---|---|---|
 | [Agentes do Windows](../../azure-monitor/platform/agent-windows.md) | Sim | A solução coleta informações de dados de desempenho e capacidade de agentes do Windows. |
-| [Agentes do Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Não     | A solução não coleta informações de dados de desempenho e capacidade de agentes do Linux diretos.|
+| [Agentes do Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Não    | A solução não coleta informações de dados de desempenho e capacidade de agentes do Linux diretos.|
 | [Grupo de gerenciamento do SCOM](../../azure-monitor/platform/om-agents.md) | Sim |A solução coleta dados de desempenho e capacidade de agentes em um grupo de gerenciamento do SCOM conectado. Uma conexão direta do agente do SCOM ao Log Analytics não é necessária.|
-| [Conta de armazenamento do Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md) | Não  | O armazenamento do Azure não inclui dados de desempenho, nem de capacidade.|
+| [Conta de armazenamento do Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md) | Não | O armazenamento do Azure não inclui dados de desempenho, nem de capacidade.|
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

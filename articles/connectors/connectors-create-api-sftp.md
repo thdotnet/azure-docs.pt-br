@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 10/26/2018
 ms.openlocfilehash: 42e1ef3e311633f9631163bc9d3df212b608ef3a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60450753"
 ---
 # <a name="monitor-create-and-manage-sftp-files-by-using-azure-logic-apps"></a>Monitorar, criar e gerenciar recursos do SFTP usando os Aplicativos Lógicos do Azure
@@ -73,7 +73,7 @@ Para outras diferenças entre o conector SFTP e o conector SFTP SSH, examine [co
    Na lista de ações, selecione a ação desejada.
 
    Para adicionar uma ação entre as etapas, mova o ponteiro sobre a seta entre as etapas. 
-   Escolha o sinal de adição (**+**) que aparece e, em seguida, selecione **Adicionar uma ação**.
+   Escolha o sinal de adição ( **+** ) que aparece e, em seguida, selecione **Adicionar uma ação**.
 
 1. Forneça os detalhes necessários para sua conexão.
 
@@ -112,7 +112,7 @@ Quando um gatilho encontra um novo arquivo, o gatilho verifica se ele está conc
 
 Ao solicitar o conteúdo do arquivo, os gatilhos não obtêm arquivos com mais de 50 MB. Para obter arquivos maiores que 50 MB, siga este padrão: 
 
-* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)**.
+* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)** .
 
 * Siga o gatilho com uma ação que leia o arquivo completo, como **Obter conteúdo do arquivo usando caminho** e faça a ação usar o [agrupamento de mensagem](../logic-apps/logic-apps-handle-large-messages.md).
 
@@ -128,7 +128,7 @@ Esse acionador inicia um fluxo de trabalho de aplicativo lógico quando um arqui
 
 Ao solicitar o conteúdo do arquivo, os gatilhos não obtêm arquivos com mais de 50 MB. Para obter arquivos maiores que 50 MB, siga este padrão: 
 
-* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)**.
+* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)** .
 
 * Siga o gatilho com uma ação que leia o arquivo completo, como **Obter conteúdo do arquivo usando caminho** e faça a ação usar o [agrupamento de mensagem](../logic-apps/logic-apps-handle-large-messages.md).
 
@@ -140,7 +140,7 @@ Esta ação obtém o conteúdo de um arquivo em um servidor SFTP. Por exemplo, v
 
 Ao solicitar o conteúdo do arquivo, os gatilhos não obtêm arquivos com mais de 50 MB. Para obter arquivos maiores que 50 MB, siga este padrão: 
 
-* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)**.
+* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)** .
 
 * Siga o gatilho com uma ação que leia o arquivo completo, como **Obter conteúdo do arquivo usando caminho** e faça a ação usar o [agrupamento de mensagem](../logic-apps/logic-apps-handle-large-messages.md).
 

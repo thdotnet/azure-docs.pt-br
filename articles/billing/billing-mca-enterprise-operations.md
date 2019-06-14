@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 02/24/2018
 ms.author: banders
 ms.openlocfilehash: 9b76fa935263904957c87cd062c84d0607771369
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60371319"
 ---
 # <a name="complete-enterprise-agreement-tasks-in-your-billing-account-for-a-microsoft-customer-agreement"></a>Concluir tarefas de Enterprise Agreement em sua conta de cobrança para um contrato de cliente da Microsoft
@@ -150,7 +150,7 @@ Você pode ver os encargos para uma assinatura ou sobre o [página assinaturas](
 
 Se precisar de ajuda, [contate o suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) para resolver seu problema rapidamente.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Entender a conta de cobrança para um contrato de cliente da Microsoft](billing-mca-overview.md)
 - [Entenda sua fatura](billing-understand-your-bill.md)

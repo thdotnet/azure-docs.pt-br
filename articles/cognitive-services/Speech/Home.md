@@ -12,10 +12,10 @@ ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: d2c7211831658a18e65e04aa753607f4eb22dac8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60515082"
 ---
 # <a name="what-is-bing-speech"></a>O que é a Fala do Bing?
@@ -37,9 +37,9 @@ A API de reconhecimento de fala da Microsoft *transcreve* transmissões por stre
 | Casos de uso | [APIs REST](GetStarted/GetStartedREST.md) | [Bibliotecas de cliente](GetStarted/GetStartedClientLibraries.md) |
 |-----|-----|-----|
 | Converter um áudio curto falado, por exemplo, comandos (tamanho do áudio < 15 s) sem resultados intermediários | Sim | Sim |
-| Converter um áudio longo (> 15 s) | Não  | Sim |
-| Fluxo de áudio desejado com resultados intermediários | Não  | Sim |
-| Entender o texto convertido de áudio usando LUIS | Não  | Sim |
+| Converter um áudio longo (> 15 s) | Não | Sim |
+| Fluxo de áudio desejado com resultados intermediários | Não | Sim |
+| Entender o texto convertido de áudio usando LUIS | Não | Sim |
 
 Qualquer que seja a abordagem que os desenvolvedores escolham (APIs REST ou bibliotecas de cliente), o serviço de fala Microsoft suporta o seguinte:
 

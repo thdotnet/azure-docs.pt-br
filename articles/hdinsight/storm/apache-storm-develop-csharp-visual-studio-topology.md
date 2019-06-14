@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/27/2017
 ROBOTS: NOINDEX
 ms.openlocfilehash: 14aa45808f44f7ca6fe34b70ef282a99f230bf0d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64687746"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>Desenvolver topologias C# para Apache Storm usando ferramentas do Data Lake para Visual Studio
@@ -450,7 +450,7 @@ Você também pode usar as ferramentas do Data Lake para Visual Studio para cria
 
 Para um exemplo de topologia híbrida, crie um projeto e selecione **Amostra Híbrida do Storm**. Esse tipo de exemplo demonstra os seguintes conceitos:
 
-* **Spout Java** e **bolt C#**: Definidos em **HybridTopology_javaSpout_csharpBolt**.
+* **Spout Java** e **bolt C#** : Definidos em **HybridTopology_javaSpout_csharpBolt**.
 
     * Uma versão transacional é definida em **HybridTopologyTx_javaSpout_csharpBolt**.
 

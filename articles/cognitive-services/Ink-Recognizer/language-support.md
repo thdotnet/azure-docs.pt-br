@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: aahi
 ms.openlocfilehash: 98962182da86fceb0b6fcc8540422f93bc0058f5
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65026294"
 ---
 # <a name="language-and-region-support-for-the-ink-recognizer-api"></a>Suporte de idioma e região para a API de reconhecimento de tinta
@@ -30,8 +30,8 @@ Este artigo explica quais linguagens têm suporte para a API de reconhecimento d
 | Basco                                     |     `eu-ES`     |
 | Bósnio (latim)                            | `bs-Latn-BA`    |
 | Catalão                                    |     `ca-ES`     |
-| Chinês (Simplificado, China)                |     `zh-CN`     |
-| Chinês (Tradicional, Taiwan)              |     `zh-TW`     |
+| Chinês (simplificado, China)                |     `zh-CN`     |
+| Chinês (tradicional, Taiwan)              |     `zh-TW`     |
 | Croata (Croácia)                         |     `hr-HR`     |
 | Tcheco                                      |     `cs-CZ`     |
 | Dinamarquês                                     |     `da-DK`     |
@@ -54,7 +54,7 @@ Este artigo explica quais linguagens têm suporte para a API de reconhecimento d
 | Italiano (Itália)                            |     `it-IT`     |
 | Japonês                                   |     `ja-JP`     |
 | Quiniaruanda                                |     `rw-RW`     |
-| Suaíli (Quênia)                          |     `sw-KE`     |
+| Quissuaile (Quênia)                          |     `sw-KE`     |
 | Coreano                                     |     `ko-KR`     |
 | Luxemburguês                              |     `lb-LU`     |
 | Malaio (Brunei Darussalam)                  |     `ms-BN`     |
@@ -71,12 +71,12 @@ Este artigo explica quais linguagens têm suporte para a API de reconhecimento d
 | Gaélico escocês                            |     `gd-GB`     |
 | Soto setentrional                           |    `nso-ZA`     |
 | Sérvio (cirílico, Bósnia e Herzegovina) |  `sr-Cyrl-BA`   |
-| Sérvio (Cirílico, Montenegro)             |  `sr-Cyrl-ME`   |
-| Sérvio (Cirílico, Sérvia)                 |  `sr-Cyrl-RS`   |
+| Serbian (Cyrillic, Montenegro)             |  `sr-Cyrl-ME`   |
+| Sérvio (cirílico, Sérvia)                 |  `sr-Cyrl-RS`   |
 | Sérvio (latino, Bósnia e Herzegovina)    |  `sr-Latn-BA`   |
-| Sérvio (Latino, Montenegro)                |  `sr-Latn-ME`   |
-| Sérvio (Latino, Sérvia)                    |  `sr-Latn-RS`   |
-| Tswana (África do Sul)                    |     `tn-ZA`     |
+| Sérvio (latino, Montenegro)                |  `sr-Latn-ME`   |
+| Sérvio (latino, Sérvia)                    |  `sr-Latn-RS`   |
+| Setsuana (África do Sul)                    |     `tn-ZA`     |
 | Eslovaco                                     |     `sk-SK`     |
 | Esloveno                                  |     `sl-SI`     |
 | Espanhol (Argentina)                        |     `es-AR`     |
@@ -91,5 +91,5 @@ Este artigo explica quais linguagens têm suporte para a API de reconhecimento d
 
 ## <a name="see-also"></a>Consulte também
 
-* [O que é a API de reconhecimento de tinta?](overview.md)
+* [O que é a API de Reconhecimento de Tinta Digital?](overview.md)
 * [Envio de traços de tinta digital para a API de reconhecimento de tinta](concepts/send-ink-data.md)

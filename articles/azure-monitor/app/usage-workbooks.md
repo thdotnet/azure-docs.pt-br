@@ -14,10 +14,10 @@ ms.reviewer: mbullwin
 ms.pm_owner: daviste;NumberByColors
 ms.author: daviste
 ms.openlocfilehash: 6d84ad69b067f730bbfbcad9e46bdc9ae2036ead
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64569612"
 ---
 # <a name="create-interactive-reports-with-azure-monitor-workbooks"></a>Crie relatórios interativos com pastas de trabalho do Azure Monitor
@@ -166,7 +166,7 @@ Há quatro tipos diferentes de parâmetros que têm suporte no momento:
 
 ### <a name="using-a-text-parameter"></a>Usando um parâmetro de texto
 
-O valor que um usuário digita na caixa de texto é substituído diretamente na consulta, sem escape ou aspas. Se o valor que você precisa é uma cadeia de caracteres, a consulta deve ter aspas ao redor do parâmetro (como **'{parameter}'**).
+O valor que um usuário digita na caixa de texto é substituído diretamente na consulta, sem escape ou aspas. Se o valor que você precisa é uma cadeia de caracteres, a consulta deve ter aspas ao redor do parâmetro (como **'{parameter}'** ).
 
 Isso permite que o valor em uma caixa de texto seja usado em qualquer lugar. Pode ser um nome de tabela, o nome da coluna, nome da função, operador, etc.
 

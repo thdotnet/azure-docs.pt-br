@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 08/31/2017
 ms.author: banders
 ms.openlocfilehash: 8f71f42386ce49d4d7178cb03d28d74edacd7e39
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60371301"
 ---
 # <a name="understand-terms-on-your-azure-usage-and-charges-csv-for-a-microsoft-customer-agreement"></a>Compreender os termos na sua encargos CSV e o uso do Azure para um contrato de cliente da Microsoft
@@ -44,24 +44,24 @@ Se você fosse um cliente EA, você observará que os termos no perfil de cobran
 | Ano | date |
 | Produto | product |
 | MeterId | meterID |
-| Categoria do Medidor | meterCategory |
-| Sub-categoria do Medidor | meterSubCategory |
-| Região do Medidor | meterRegion |
-| Nome do Medidor | meterName |
+| MeterCategory | meterCategory |
+| MeterSubCategory | meterSubCategory |
+| MeterRegion | meterRegion |
+| MeterName | meterName |
 | ConsumedQuantity | quantidade |
-| Taxa de Recursos | effectivePrice | <!-- this was highlighted -->
-| Custos Estendidos | cost |
-| Localização do Recurso | resourceLocation |
-| Serviço Consumido | consumedService |
+| ResourceRate | effectivePrice | <!-- this was highlighted -->
+| ExtendedCost | cost |
+| ResourceLocation | resourceLocation |
+| ConsumedService | consumedService |
 | InstanceId | instanceId |
-| Informações de Serviço 1 | serviceInfo1 |
-| Informações de Serviço 2 | serviceInfo2 |
-| Informações Adicionais | additionalInfo |
-| Marcas | marcas |
-| Identificador de Serviço da Loja | N/D |
+| ServiceInfo1 | serviceInfo1 |
+| ServiceInfo2 | serviceInfo2 |
+| AdditionalInfo | additionalInfo |
+| tags | marcas |
+| StoreServiceIdentifier | N/D |
 | DepartmentName | invoiceSection | <!-- this was highlighted -->
 | CostCenter | costCenter |
-| Unidade de Medida | unitofMeasure |
+| UnitOfMeasure | unitofMeasure |
 | ResourceGroup | resourceGroup |
 | ChargesBilledSeparately | isAzureCreditEligible | <!-- this was highlighted -->
 
@@ -107,7 +107,7 @@ publisherType | Tipo de publicador (valores: firstParty, thirdPartyReseller, thi
 publisherName | Publicador para os serviços do Marketplace
 resourceGroupId | Identificador exclusivo para o grupo de recursos associado ao recurso
 resourceGroupName | Nome do grupo de recursos associado ao recurso
-resourceId | Identificador exclusivo para a instância do recurso
+ResourceId | Identificador exclusivo para a instância do recurso
 resourceType | Tipo de instância do recurso
 resourceLocation | Identifica o local do data center onde o recurso está em execução.
 location | Normalizado local do recurso se os locais de recursos diferentes são configurados para as regiões do mesmas
@@ -131,7 +131,7 @@ Se há um encargo em seu arquivo de uso detalhado que você deseja obter mais de
 
 Se você tiver dúvidas ou precisar de Ajuda, [criar uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Exibir e baixar sua fatura do Microsoft Azure](billing-download-azure-invoice.md)
 - [Exibir e baixar seus encargos e o uso do Microsoft Azure](billing-download-azure-daily-usage.md)

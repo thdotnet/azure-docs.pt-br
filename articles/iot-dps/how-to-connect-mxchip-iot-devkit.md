@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 manager: jeffya
 ms.openlocfilehash: 80e4895e0b276e701a6d7f10d8fc67649db0f188
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62122804"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Use o provisionamento automático do Serviço de Provisionamento de Dispositivos no Hub IoT do Azure para registrar o MXChip IoT DevKit com o Hub IoT
@@ -38,7 +38,7 @@ Para concluir as etapas neste tutorial, faça primeiro as tarefas a seguir:
 
 1. Verifique se o kit de desenvolvimento de IoT **não está conectado** ao computador. Inicie o VS Code primeiro e, em seguida, conecte o kit de desenvolvimento ao computador.
 
-1. Clique em `F1` para abrir a paleta de comandos, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Abrir Exemplos...**. Em seguida, selecione **Kit de Desenvolvimento de IoT** como placa.
+1. Clique em `F1` para abrir a paleta de comandos, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Abrir Exemplos...** . Em seguida, selecione **Kit de Desenvolvimento de IoT** como placa.
 
 1. Na página de exemplos do Workbench, encontre **Registro de Dispositivo com DPS** em clique em **Abrir Exemplo**. Em seguida, selecione o caminho padrão para baixar o código de exemplo.
     ![Abrir exemplo](media/how-to-connect-mxchip-iot-devkit/open-sample.png)
@@ -60,7 +60,7 @@ Salvar uma UDS no Kit de desenvolvimento:
 
 1. No kit de desenvolvimento, mantenha pressionado o **botão A**, pressione e solte o botão **redefinir** e, em seguida, solte o **botão A**. Seu kit de desenvolvimento entra no modo de configuração.
 
-1. Clique em `F1` para abrir a paleta de comandos, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Definir as configurações do dispositivo... > Definir a Cadeia de Unique Device String (UDS)**.
+1. Clique em `F1` para abrir a paleta de comandos, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Definir as configurações do dispositivo... > Definir a Cadeia de Unique Device String (UDS)** .
   ![Configurar UDS](media/how-to-connect-mxchip-iot-devkit/config-uds.png)
 
 1. Anote a cadeia de caracteres do UDS gerado. Você precisará dele para gerar o certificado X.509. Em seguida, pressione `Enter`.

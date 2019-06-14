@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 04/03/2018
 ms.author: srrengar
 ms.openlocfilehash: 641f9150d1135f4f214038150b95b6691a37ecc0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60393244"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Coleta e agregação de eventos utilizando o Diagnóstico do Windows Azure
@@ -180,7 +180,7 @@ Em seguida, atualize a seção `VirtualMachineProfile` do arquivo template.json 
 Após modificar o arquivo template.json conforme descrito, republique o modelo do Resource Manager. Se o modelo tiver sido exportado, a execução do arquivo deploy.ps1 republicará o modelo. Após implantar, verifique se o status de **ProvisioningState** é **Com êxito**.
 
 > [!TIP]
-> Se você pretende implantar contêineres para seu cluster, habilite o WAD para acompanhar as estatísticas do docker adicionando eles à sua seção **"WadCfg > DiagnosticMonitorConfiguration"**.
+> Se você pretende implantar contêineres para seu cluster, habilite o WAD para acompanhar as estatísticas do docker adicionando eles à sua seção **"WadCfg > DiagnosticMonitorConfiguration"** .
 >
 >```json
 >"DockerSources": {

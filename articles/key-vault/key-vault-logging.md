@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/18/2019
 ms.author: barclayn
 ms.openlocfilehash: 89f9ef37ed7c53817854442b3a32b32b7d11ae27
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64706013"
 ---
 # <a name="azure-key-vault-logging"></a>Log do Azure Key Vault
@@ -168,7 +168,7 @@ Os valores de data e hora usam UTC.
 
 Como você pode usar a mesma conta de armazenamento para coletar logs de vários recursos, a ID do recurso completa no nome do blob é útil para acessar ou baixar apenas os blobs que você precisa. Mas, antes de fazer isso, primeiro vamos mostrar como baixar todos os blobs.
 
-Crie uma pasta para baixar os blobs. Por exemplo: 
+Crie uma pasta para baixar os blobs. Por exemplo:
 
 ```powershell 
 New-Item -Path 'C:\Users\username\ContosoKeyVaultLogs' -ItemType Directory -Force
@@ -188,7 +188,7 @@ $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVault
 
 Quando você executa esse segundo comando, o delimitador **/** nos nomes de blob cria uma estrutura de pastas completa na pasta de destino. Você usará essa estrutura para baixar e armazenar os blobs como arquivos.
 
-Use caracteres curinga para baixar seletivamente os blobs. Por exemplo: 
+Use caracteres curinga para baixar seletivamente os blobs. Por exemplo:
 
 * Se você tiver vários cofres da chave e quiser baixar logs de apenas um cofre da chave, chamado CONTOSOKEYVAULT3:
 
@@ -264,7 +264,7 @@ A tabela a seguir lista os nomes de campo e descrições:
 | **identidade** |Identidade do token que foi apresentado na solicitação de API REST. Isso geralmente é um "usuário", uma "entidade de serviço" ou a combinação "usuário + appId," como no caso de uma solicitação que é resultante de um cmdlet do PowerShell do Azure. |
 | **properties** |Informações que variam de acordo com a operação (**operationName**). Na maioria dos casos, esse campo contém informações de cliente (a sequência de agente usuário passada pelo cliente), o URI de solicitação de API REST exato e o código de status HTTP. Além disso, quando um objeto é retornado como resultado de uma solicitação (por exemplo, **KeyCreate** ou **VaultGet**), ele também contém a chave URI (como "id"), URI ou o URI do segredo do cofre. |
 
-O **operationName** valores de campo são na *ObjectVerb* formato. Por exemplo: 
+O **operationName** valores de campo são na *ObjectVerb* formato. Por exemplo:
 
 * Todas as operações do Cofre de chaves têm o `Vault<action>` Formatar, como `VaultGet` e `VaultCreate`.
 * Todas as operações de chave têm o `Key<action>` Formatar, como `KeySign` e `KeyList`.

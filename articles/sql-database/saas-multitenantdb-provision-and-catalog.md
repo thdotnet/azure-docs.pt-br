@@ -13,10 +13,10 @@ ms.reviewer: billgib,andrela,stein
 manager: craigg
 ms.date: 09/24/2018
 ms.openlocfilehash: d29baaad6090cea5eb31f5f50bba444cb3771155
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61485847"
 ---
 # <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-azure-sql-database"></a>Provisionar e catalogar novos locatários em um aplicativo de SaaS usando um banco de dados SQL do Azure multilocatário fragmentado do Azure
@@ -161,7 +161,7 @@ Para entender como o aplicativo Wingtip implementa o provisionamento do novo loc
    - **$VenueType** = **blues**, um dos tipos de local predefinidos: blues, classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, soccer (letras minúsculas, sem espaços).
    - **$DemoScenario** = **1**, para provisionar um locatário em um banco de dados compartilhado com outros locatários.
 
-2. Adicione um ponto de interrupção, colocando o cursor em qualquer local na linha 38, que diz: *New-Tenant '*, em seguida, pressione **F9**.
+2. Adicione um ponto de interrupção, colocando o cursor em qualquer local na linha 38, que diz: *New-Tenant '* , em seguida, pressione **F9**.
 
    ![ponto de interrupção](media/saas-multitenantdb-provision-and-catalog/breakpoint.png)
 

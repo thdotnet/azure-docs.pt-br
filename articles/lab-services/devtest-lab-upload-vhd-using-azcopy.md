@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: 8cd778762bebf4a9dda3688292ac0a3674e446e1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60634960"
 ---
 # <a name="upload-vhd-file-to-labs-storage-account-using-azcopy"></a>Carregar arquivo VHD na conta de armazenamento do laboratório usando o AzCopy
@@ -45,7 +45,7 @@ As etapas a seguir mostram como carregar um arquivo VHD no Azure DevTest Labs us
 
 1. Na folha do laboratório, selecione **Configuração**. 
 
-1. Na folha **Configuração** do laboratório, selecione **Imagens personalizadas (VHDs)**.
+1. Na folha **Configuração** do laboratório, selecione **Imagens personalizadas (VHDs)** .
 
 1. Na folha **Imagens personalizadas**, selecione **+Adicionar**. 
 

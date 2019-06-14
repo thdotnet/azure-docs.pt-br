@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: eeb2af6283e5c9d8a41e74152a94b85efdae1866
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60243232"
 ---
 # <a name="azure-ad-connect-sync-configure-filtering"></a>Sincronização do Azure AD Connect: Configurar a filtragem
@@ -80,7 +80,7 @@ Você pode aplicar os seguintes tipos de configuração de filtragem à Ferramen
 
 * [**Baseada em grupo**](#group-based-filtering): a filtragem baseada em um único grupo só pode ser configurada na instalação inicial usando o assistente de instalação.
 * [**Baseada em domínio**](#domain-based-filtering): essa opção permite que você selecione quais domínios devem sincronizar com o Azure AD. Você também pode adicionar e remover domínios da configuração do mecanismo de sincronização quando fizer alterações na infraestrutura local, depois de instalar da sincronização do Azure AD Connect.
-* [**Baseada na unidade organizacional (UO):**](#organizational-unitbased-filtering): essa opção permite que você selecione quais UOs sincronizar com o Azure AD. Essa opção é para todos os tipos de objeto em UOs selecionadas.
+* [**Baseada na unidade organizacional (UO):** ](#organizational-unitbased-filtering): essa opção permite que você selecione quais UOs sincronizar com o Azure AD. Essa opção é para todos os tipos de objeto em UOs selecionadas.
 * [**Baseada em atributo**](#attribute-based-filtering): essa opção permite que você filtre objetos com base nos valores de atributo que eles possuem. Você também pode ter filtros diferentes para tipos de objeto diferentes.
 
 Você pode usar várias opções de filtragem ao mesmo tempo. Por exemplo, você pode usar a filtragem baseada em unidade organizacional para incluir apenas os objetos em uma unidade organizacional. Ao mesmo tempo, você pode usar a filtragem baseada em atributo para filtrar ainda mais os objetos. Quando você usa vários métodos de filtragem, os filtros usam um “E” lógico entre eles.
@@ -216,9 +216,9 @@ A filtragem de entrada usa a configuração padrão, na qual objetos em direçã
 
 Na filtragem de entrada, você usa o **escopo** para determinar quais objetos devem ou não ser sincronizados. Aqui, você faz os ajustes para os requisitos da sua própria organização. O módulo do escopo tem um **grupo** e uma **cláusula** para determinar quando uma regra de sincronização deve estar no escopo. Um grupo contém uma ou muitas cláusulas. Há um “E” lógico entre várias cláusulas e um “OU” lógico entre vários grupos.
 
-Vamos examinar um exemplo:   
+Vamos examinar um exemplo:  
 ![Escopo](./media/how-to-connect-sync-configure-filtering/scope.png)  
-Isso deve ser lido como **(departamento = TI) OU (departamento = Vendas E c = EUA)**.
+Isso deve ser lido como **(departamento = TI) OU (departamento = Vendas E c = EUA)** .
 
 Nos exemplos e nas etapas abaixo, usaremos o objeto de usuário como um exemplo, mas você poderá usar isso para todos os tipos de objeto.
 
@@ -328,6 +328,6 @@ Durante a sincronização de várias florestas do AD, você pode configurar a fi
 * Você tem um usuário em uma floresta que possui um contato correspondente em outra floresta. Além disso, você configurou o Azure AD Connect para vincular o usuário com o contato de correio. Ambos os objetos deverão estar dentro do escopo de filtragem baseada no grupo. Caso contrário, o usuário não será sincronizado com o Azure Active Directory.
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 - Saiba mais sobre a configuração da [sincronização do Azure AD Connect](how-to-connect-sync-whatis.md).
 - Saiba mais sobre a [integração de identidades locais com o Azure AD](whatis-hybrid-identity.md).

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
 ms.openlocfilehash: 9d74cd3bd466578c61f8f12bf9b6e862c046e9bc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61074802"
 ---
 # <a name="user-profile-templates-in-azure-api-management"></a>Modelos de perfil de usuário no Gerenciamento de API do Azure
@@ -106,15 +106,15 @@ O Gerenciamento de API do Azure fornece a capacidade de personalizar o conteúdo
   
 |Propriedade|Type|DESCRIÇÃO|  
 |--------------|----------|-----------------|  
-|`firstName`|string|O primeiro nome do usuário atual.|  
-|`lastName`|string|O sobrenome do usuário atual.|  
-|`companyName`|string|O nome da empresa do usuário atual.|  
-|`addresserEmail`|string|Endereço de email do usuário atual.|  
-|`developersUsageStatisticsLink`|string|URL relativa para exibir a análise para o usuário atual.|  
+|`firstName`|cadeia de caracteres|O primeiro nome do usuário atual.|  
+|`lastName`|cadeia de caracteres|O sobrenome do usuário atual.|  
+|`companyName`|cadeia de caracteres|O nome da empresa do usuário atual.|  
+|`addresserEmail`|cadeia de caracteres|Endereço de email do usuário atual.|  
+|`developersUsageStatisticsLink`|cadeia de caracteres|URL relativa para exibir a análise para o usuário atual.|  
 |`subscriptions`|Coleção de entidades de [Assinatura](api-management-template-data-model-reference.md#Subscription).|As assinaturas da usuário atual.|  
 |`applications`|Coleção de entidades de [Aplicativo](api-management-template-data-model-reference.md#Application).|Os aplicativos do usuário atual.|  
-|`changePasswordUrl`|string|A URL relativa para alterar a senha do usuário atual.|  
-|`changeNameOrEmailUrl`|string|A URL relativa para alterar o nome e o email para o usuário atual.|  
+|`changePasswordUrl`|cadeia de caracteres|A URL relativa para alterar a senha do usuário atual.|  
+|`changeNameOrEmailUrl`|cadeia de caracteres|A URL relativa para alterar o nome e o email para o usuário atual.|  
 |`canChangePassword`|boolean|Se o usuário atual pode alterar sua senha.|  
 |`isSystemUser`|boolean|Se o usuário atual é membro de um dos [grupos](api-management-key-concepts.md#groups) internos.|  
   
@@ -327,15 +327,15 @@ O Gerenciamento de API do Azure fornece a capacidade de personalizar o conteúdo
   
 |Propriedade|Type|DESCRIÇÃO|  
 |--------------|----------|-----------------|  
-|`firstName`|string|O primeiro nome do usuário atual.|  
-|`lastName`|string|O sobrenome do usuário atual.|  
-|`companyName`|string|O nome da empresa do usuário atual.|  
-|`addresserEmail`|string|Endereço de email do usuário atual.|  
-|`developersUsageStatisticsLink`|string|URL relativa para exibir a análise para o usuário atual.|  
+|`firstName`|cadeia de caracteres|O primeiro nome do usuário atual.|  
+|`lastName`|cadeia de caracteres|O sobrenome do usuário atual.|  
+|`companyName`|cadeia de caracteres|O nome da empresa do usuário atual.|  
+|`addresserEmail`|cadeia de caracteres|Endereço de email do usuário atual.|  
+|`developersUsageStatisticsLink`|cadeia de caracteres|URL relativa para exibir a análise para o usuário atual.|  
 |`subscriptions`|Coleção de entidades de [Assinatura](api-management-template-data-model-reference.md#Subscription).|As assinaturas da usuário atual.|  
 |`applications`|Coleção de entidades de [Aplicativo](api-management-template-data-model-reference.md#Application).|Os aplicativos do usuário atual.|  
-|`changePasswordUrl`|string|A URL relativa para alterar a senha do usuário atual.|  
-|`changeNameOrEmailUrl`|string|A URL relativa para alterar o nome e o email para o usuário atual.|  
+|`changePasswordUrl`|cadeia de caracteres|A URL relativa para alterar a senha do usuário atual.|  
+|`changeNameOrEmailUrl`|cadeia de caracteres|A URL relativa para alterar o nome e o email para o usuário atual.|  
 |`canChangePassword`|boolean|Se o usuário atual pode alterar sua senha.|  
 |`isSystemUser`|boolean|Se o usuário atual é membro de um dos [grupos](api-management-key-concepts.md#groups) internos.|  
   
@@ -490,15 +490,15 @@ O Gerenciamento de API do Azure fornece a capacidade de personalizar o conteúdo
   
 |Propriedade|Type|DESCRIÇÃO|  
 |--------------|----------|-----------------|  
-|`firstName`|string|O primeiro nome do usuário atual.|  
-|`lastName`|string|O sobrenome do usuário atual.|  
-|`companyName`|string|O nome da empresa do usuário atual.|  
-|`addresserEmail`|string|Endereço de email do usuário atual.|  
-|`developersUsageStatisticsLink`|string|URL relativa para exibir a análise para o usuário atual.|  
+|`firstName`|cadeia de caracteres|O primeiro nome do usuário atual.|  
+|`lastName`|cadeia de caracteres|O sobrenome do usuário atual.|  
+|`companyName`|cadeia de caracteres|O nome da empresa do usuário atual.|  
+|`addresserEmail`|cadeia de caracteres|Endereço de email do usuário atual.|  
+|`developersUsageStatisticsLink`|cadeia de caracteres|URL relativa para exibir a análise para o usuário atual.|  
 |`subscriptions`|Coleção de entidades de [Assinatura](api-management-template-data-model-reference.md#Subscription).|As assinaturas da usuário atual.|  
 |`applications`|Coleção de entidades de [Aplicativo](api-management-template-data-model-reference.md#Application).|Os aplicativos do usuário atual.|  
-|`changePasswordUrl`|string|A URL relativa para alterar a senha do usuário atual.|  
-|`changeNameOrEmailUrl`|string|A URL relativa para alterar o nome e o email para o usuário atual.|  
+|`changePasswordUrl`|cadeia de caracteres|A URL relativa para alterar a senha do usuário atual.|  
+|`changeNameOrEmailUrl`|cadeia de caracteres|A URL relativa para alterar o nome e o email para o usuário atual.|  
 |`canChangePassword`|boolean|Se o usuário atual pode alterar sua senha.|  
 |`isSystemUser`|boolean|Se o usuário atual é membro de um dos [grupos](api-management-key-concepts.md#groups) internos.|  
   

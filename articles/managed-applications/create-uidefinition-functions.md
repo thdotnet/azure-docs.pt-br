@@ -14,28 +14,28 @@ ms.workload: na
 ms.date: 10/12/2017
 ms.author: tomfitz
 ms.openlocfilehash: 80fd593eecf189d516a8c9d7ef2a94ec9f23fc39
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60587913"
 ---
 # <a name="createuidefinition-functions"></a>Funções de CreateUiDefinition
 Esta seção contém as assinaturas para todas as funções com suporte de uma CreateUiDefinition.
 
-Para usar uma função, coloque a declaração entre colchetes. Por exemplo: 
+Para usar uma função, coloque a declaração entre colchetes. Por exemplo:
 
 ```json
 "[function()]"
 ```
 
-Cadeias de caracteres e outras funções podem ser referenciadas como parâmetros de uma função, mas as cadeias de caracteres devem estar entre aspas simples. Por exemplo: 
+Cadeias de caracteres e outras funções podem ser referenciadas como parâmetros de uma função, mas as cadeias de caracteres devem estar entre aspas simples. Por exemplo:
 
 ```json
 "[fn1(fn2(), 'foobar')]"
 ```
 
-Quando aplicável, referencie propriedades da saída de uma função usando o operador de ponto. Por exemplo: 
+Quando aplicável, referencie propriedades da saída de uma função usando o operador de ponto. Por exemplo:
 
 ```json
 "[func().prop1]"
@@ -511,7 +511,7 @@ O exemplo a seguir retorna `2`:
 "[int(2.9)]"
 ```
 
-### <a name="float"></a>flutuante
+### <a name="float"></a>float
 Converte o parâmetro em um ponto flutuante. Essa função dá suporte a parâmetros dos tipos número e cadeia de caracteres.
 
 O exemplo a seguir retorna `1.0`:
@@ -526,7 +526,7 @@ O exemplo a seguir retorna `2.9`:
 "[float(2.9)]"
 ```
 
-### <a name="string"></a>string
+### <a name="string"></a>cadeia de caracteres
 Converte o parâmetro em uma cadeia de caracteres. Essa função dá suporte a parâmetros de todos os tipos de dados JSON.
 
 O exemplo a seguir retorna `"1"`:

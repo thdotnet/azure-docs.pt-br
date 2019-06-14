@@ -12,10 +12,10 @@ ms.date: 11/29/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: ac627907e3f595ef59edc606f34fd27353e4c577
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60305533"
 ---
 # <a name="the-team-data-science-process-in-action---using-an-azure-hdinsight-hadoop-cluster-on-a-1-tb-dataset"></a>O Processo de Ciência de Dados de Equipe em ação - usando um cluster Hadoop do Azure HDInsight em um conjunto de dados de 1 TB
@@ -52,7 +52,7 @@ Dois exemplos de problemas de previsão são abordados neste passo a passo:
 1. **Classificação binária**: prevê se um usuário clicou em um anúncio:
 
    * Classe 0: Nenhum clique
-   * Classe 1: Clique em 
+   * Classe 1: Clique em
 2. **Regressão**: prevê a probabilidade de um clique no anúncio por meio de características do usuário.
 
 ## <a name="setup"></a>Configurar um cluster Hadoop do HDInsight para ciência de dados
@@ -81,7 +81,7 @@ Os dados residem em um local público do [Armazenamento de blobs do Azure](../..
    1. A subpasta *raw/count/* contém os primeiros 21 dias de dados, de dia\_00 a dia\_20
    2. A subpasta *raw/train/* consiste de um dia de dados, dia\_21
    3. A subpasta *raw/test/* consiste de dois dias de dados, dia\_22 e dia\_23
-2. Para quem quiser começar com os dados no gzip brutos, eles também estão disponíveis na pasta principal, *raw/*, como dia_NN.gz, em que NN vai de 00 a 23.
+2. Para quem quiser começar com os dados no gzip brutos, eles também estão disponíveis na pasta principal, *raw/* , como dia_NN.gz, em que NN vai de 00 a 23.
 
 Uma abordagem alternativa para acessar, explorar e modelar esses dados que não requer nenhum download local é explicada mais adiante neste passo a passo, quando criamos tabelas de Hive.
 
