@@ -9,10 +9,10 @@ ms.date: 07/25/2018
 ms.author: johnkem
 ms.subservice: ''
 ms.openlocfilehash: b5299af375646e7759d0770139df2cd6d7ce105c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60237692"
 ---
 # <a name="stream-azure-diagnostic-logs-to-an-event-hub"></a>Transmitir logs de diagnóstico do Azure para um hub de eventos
@@ -24,7 +24,7 @@ Veja algumas maneiras de usar o recurso de streaming para os Logs de Diagnóstic
 * **Transmitir logs para sistemas de registro em log e telemetria de terceiros** – você pode transmitir todos os logs de diagnóstico para um único hub de eventos a fim de enviar os dados de log por pipe para uma ferramenta de análise de logs ou um SIEM de terceiros.
 * **Exibir a integridade do serviço transmitindo dados de "afunilamento" para o Power BI** – usando Hubs de Eventos, Stream Analytics e Power BI, é fácil transformar seus dados de diagnóstico em insights quase em tempo real nos seus serviços do Azure. [Este artigo de documentação apresenta uma excelente visão geral de como configurar Hubs de Eventos, processar dados com o Stream Analytics e usar o Power BI como saída](../../stream-analytics/stream-analytics-power-bi-dashboard.md). Aqui estão algumas dicas para configurá-lo com os logs de diagnóstico:
 
-  * Um hub de eventos de uma categoria de logs de diagnóstico é criado automaticamente quando você marca a opção no portal ou habilita-a por meio do PowerShell, de modo que você possa selecionar o hub de evento no namespace com o nome que começa com **insights-**.
+  * Um hub de eventos de uma categoria de logs de diagnóstico é criado automaticamente quando você marca a opção no portal ou habilita-a por meio do PowerShell, de modo que você possa selecionar o hub de evento no namespace com o nome que começa com **insights-** .
   * O código SQL a seguir é um exemplo de consulta do Stream Analytics que você pode usar para analisar todos os dados de log em uma tabela do Power BI:
 
     ```sql
@@ -184,7 +184,7 @@ Aqui está um exemplo de dados de saída dos Hubs de Eventos:
 | records |Uma matriz de todos os eventos de log nessa carga. |
 | time |A hora na qual o evento ocorreu. |
 | category |Categoria do log desse evento. |
-| resourceId |ID de recurso do recurso que gerou esse evento. |
+| ResourceId |ID de recurso do recurso que gerou esse evento. |
 | operationName |Nome da operação. |
 | level |Opcional. Indica o nível do evento de log. |
 | propriedades |Propriedades do evento. |
@@ -195,7 +195,7 @@ Aqui está um exemplo de dados de saída dos Hubs de Eventos:
 
 Também é possível transmitir logs de diagnóstico de recursos de Computação usando o agente do Diagnóstico do Azure. [Consulte este artigo](../../azure-monitor/platform/diagnostics-extension-stream-event-hubs.md) para saber como configurar isso.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Transmitir logs do Azure Active Directory com o Azure Monitor](../../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md)
 * [Saiba mais sobre os Logs de Diagnóstico do Azure](diagnostic-logs-overview.md)

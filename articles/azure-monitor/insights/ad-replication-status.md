@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/24/2018
 ms.author: magoedte
 ms.openlocfilehash: f7bbde98c6ef35021cc03b2646193d3601ca1cff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60495068"
 ---
 # <a name="monitor-active-directory-replication-status-with-azure-monitor"></a>Monitorar o Status de Replicação do Active Directory com o Azure Monitor
@@ -54,7 +54,7 @@ A tabela a seguir mostra os métodos de coleta de dados e outros detalhes sobre 
 
 | plataforma | Agente direto | Agente SCOM | Armazenamento do Azure | SCOM necessário? | Os dados do agente SCOM enviados por meio do grupo de gerenciamento | frequência de coleta |
 | --- | --- | --- | --- | --- | --- | --- |
-|  Windows |&#8226; |&#8226; |  |  |&#8226; |a cada cinco dias |
+| Windows |&#8226; |&#8226; |  |  |&#8226; |a cada cinco dias |
 
 
 
@@ -106,7 +106,7 @@ Conforme observado anteriormente, o bloco do painel para a solução de Status d
 >
 
 ### <a name="ad-replication-status-details"></a>Detalhes do status de Replicação do AD
-Ao clicar em qualquer item de uma das listas, você verá detalhes adicionais sobre ele usando a uma consulta de log. Os resultados são filtrados para mostrar somente os erros relacionados a esse item. Por exemplo, se clicar no primeiro controlador de domínio listado em **Status do Servidor de Destino (ADDC02)**, você verá os resultados da consulta filtrados para mostrar erros com esse controlador de domínio listado como o servidor de destino:
+Ao clicar em qualquer item de uma das listas, você verá detalhes adicionais sobre ele usando a uma consulta de log. Os resultados são filtrados para mostrar somente os erros relacionados a esse item. Por exemplo, se clicar no primeiro controlador de domínio listado em **Status do Servidor de Destino (ADDC02)** , você verá os resultados da consulta filtrados para mostrar erros com esse controlador de domínio listado como o servidor de destino:
 
 ![Erros de Status de Replicação do AD nos resultados da consulta](./media/ad-replication-status/oms-ad-replication-search-details.png)
 
