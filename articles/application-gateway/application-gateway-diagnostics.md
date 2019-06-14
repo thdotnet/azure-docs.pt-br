@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/28/2019
 ms.author: amitsriva
-ms.openlocfilehash: 367da8a1948b9feb42bc82d85762ae314fe165a0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a8b0ee159b1c4a4072ce5a86f9fb925744a415b3
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66135598"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67048707"
 ---
 # <a name="back-end-health-diagnostic-logs-and-metrics-for-application-gateway"></a>Integridade do back-end, logs de diagnóstico e métricas do Gateway de Aplicativo
 
@@ -155,10 +155,9 @@ O Azure gera o log de atividades por padrão. Os logs são preservados por 90 di
 
 ### <a name="access-log"></a>Log de acesso
 
-O log de acesso é gerado apenas se você o habilitou em cada instância do Gateway de Aplicativo, conforme detalhado nas etapas anteriores. Os dados são armazenados na conta de armazenamento especificada quando o log foi habilitado. Cada acesso do Gateway de Aplicativo é registrado no formato JSON, conforme mostrado no seguinte exemplo:
+O log de acesso é gerado apenas se você o habilitou em cada instância do Gateway de Aplicativo, conforme detalhado nas etapas anteriores. Os dados são armazenados na conta de armazenamento especificada quando o log foi habilitado. Cada acesso do Gateway de aplicativo é registrado no formato JSON, conforme mostrado no exemplo a seguir para v1:
 
-
-|Value  |Descrição  |
+|Value  |DESCRIÇÃO  |
 |---------|---------|
 |instanceId     | Instância do Gateway de Aplicativo que atendeu à solicitação.        |
 |clientIP     | IP de origem da solicitação.        |
@@ -196,19 +195,71 @@ O log de acesso é gerado apenas se você o habilitou em cada instância do Gate
     }
 }
 ```
+Para o Gateway de aplicativo e WAF v2, os logs de mostram mais algumas informações:
+
+|Value  |DESCRIÇÃO  |
+|---------|---------|
+|instanceId     | Instância do Gateway de Aplicativo que atendeu à solicitação.        |
+|clientIP     | IP de origem da solicitação.        |
+|clientPort     | Porta de origem da solicitação.       |
+|httpMethod     | Método HTTP usado pela solicitação.       |
+|requestUri     | URI da solicitação recebida.        |
+|RequestQuery     | **Server-Routed**: Instância do pool de back-end que recebeu a solicitação.</br>**X-AzureApplicationGateway-LOG-ID**: ID de correlação usado para a solicitação. Ela pode ser usada para solucionar problemas de tráfego nos servidores back-end. </br>**SERVER-STATUS**: Código de resposta HTTP que o Gateway de Aplicativo recebeu do back-end.       |
+|UserAgent     | Agente do usuário do cabeçalho da solicitação HTTP.        |
+|httpStatus     | Código de status HTTP retornado ao cliente do Gateway de Aplicativo.       |
+|httpVersion     | Versão HTTP da solicitação.        |
+|receivedBytes     | Tamanho do pacote recebido, em bytes.        |
+|sentBytes| Tamanho do pacote enviado, em bytes.|
+|timeTaken| Duração (em milissegundos) necessária para que uma solicitação seja processada e sua resposta seja enviada. Isso é calculado como o intervalo a partir da hora em que o Gateway de Aplicativo recebe o primeiro byte de uma solicitação HTTP até a hora em que a operação de envio de resposta é concluída. É importante observar que o campo Time-Taken geralmente inclui a hora em que os pacotes de solicitação e resposta são transmitidos pela rede. |
+|sslEnabled| Indica se a comunicação com os pools de back-end usou o SSL. Os valores válidos são ativado e desativado.|
+|sslCipher| Pacote de criptografia que está sendo usado para comunicação SSL (se o SSL estiver habilitado).|
+|sslProtocol| Protocolo SSL que está sendo usado (se o SSL estiver habilitado).|
+|serverRouted| O servidor de back-end esse gateway de aplicativo roteia a solicitação.|
+|serverStatus| Código de status HTTP do servidor back-end.|
+|serverResponseLatency| Latência da resposta do servidor de back-end.|
+|host| Endereço listado no cabeçalho do host da solicitação.|
+```json
+{
+    "resourceId": "/SUBSCRIPTIONS/{subscriptionId}/RESOURCEGROUPS/PEERINGTEST/PROVIDERS/MICROSOFT.NETWORK/APPLICATIONGATEWAYS/{applicationGatewayName}",
+    "operationName": "ApplicationGatewayAccess",
+    "time": "2017-04-26T19:27:38Z",
+    "category": "ApplicationGatewayAccessLog",
+    "properties": {
+        "instanceId": "ApplicationGatewayRole_IN_0",
+        "clientIP": "191.96.249.97",
+        "clientPort": 46886,
+        "httpMethod": "GET",
+        "requestUri": "/phpmyadmin/scripts/setup.php",
+        "requestQuery": "X-AzureApplicationGateway-CACHE-HIT=0&SERVER-ROUTED=10.4.0.4&X-AzureApplicationGateway-LOG-ID=874f1f0f-6807-41c9-b7bc-f3cfa74aa0b1&SERVER-STATUS=404",
+        "userAgent": "-",
+        "httpStatus": 404,
+        "httpVersion": "HTTP/1.0",
+        "receivedBytes": 65,
+        "sentBytes": 553,
+        "timeTaken": 205,
+        "sslEnabled": "off"
+        "sslCipher": "",
+        "sslProtocol": "",
+        "serverRouted": "104.41.114.59:80",
+        "serverStatus": "200",
+        "serverResponseLatency": "0.023",
+        "host": "52.231.230.101"
+    }
+}
+```
 
 ### <a name="performance-log"></a>Log de desempenho
 
 O log de desempenho é gerado apenas se você o habilitou em cada instância do Gateway de Aplicativo, conforme detalhado nas etapas anteriores. Os dados são armazenados na conta de armazenamento especificada quando o log foi habilitado. Os dados do log de desempenho são gerados em intervalos de 1 minuto. Os seguintes dados são registrados em log:
 
 
-|Value  |Descrição  |
+|Value  |DESCRIÇÃO  |
 |---------|---------|
 |instanceId     |  Instância do Gateway de Aplicativo para a qual os dados de desempenho estão sendo gerados. Para um gateway de aplicativo de várias instâncias, há uma linha por instância.        |
 |healthyHostCount     | Número de hosts íntegros no pool de back-end.        |
 |unHealthyHostCount     | Número de hosts não íntegros no pool de back-end.        |
 |requestCount     | Número de solicitações atendidas.        |
-|latência | Latência média (em milissegundos) de solicitações da instância para o back-end que atende às solicitações. |
+|latency | Latência média (em milissegundos) de solicitações da instância para o back-end que atende às solicitações. |
 |failedRequestCount| Número de solicitações com falha.|
 |throughput| Vazão de dados média desde o último log, medida em bytes por segundo.|
 
@@ -239,7 +290,7 @@ O log de desempenho é gerado apenas se você o habilitou em cada instância do 
 O log de firewall é gerado apenas se você o habilitou em cada gateway de aplicativo, conforme detalhado nas etapas anteriores. Esse log também exige a configuração de um firewall de aplicativo Web em um gateway de aplicativo. Os dados são armazenados na conta de armazenamento especificada quando o log foi habilitado. Os seguintes dados são registrados em log:
 
 
-|Value  |Descrição  |
+|Value  |DESCRIÇÃO  |
 |---------|---------|
 |instanceId     | Instância do Gateway de Aplicativo para a qual os dados de firewall estão sendo gerados. Para um gateway de aplicativo de várias instâncias, há uma linha por instância.         |
 |clientIp     |   IP de origem da solicitação.      |
@@ -248,8 +299,8 @@ O log de firewall é gerado apenas se você o habilitou em cada gateway de aplic
 |ruleSetType     | Tipo de conjunto de regras. O valor disponível é OWASP.        |
 |ruleSetVersion     | Versão utilizada do conjunto de regras. Os valores disponíveis são 2.2.9 e 3.0.     |
 |ruleId     | ID da Regra do evento de gatilho.        |
-|mensagem     | Mensagem amigável para o evento de gatilho. Mais detalhes são fornecidos na seção de detalhes.        |
-|ação     |  Ação executada na solicitação. Os valores disponíveis são Bloqueada e Permitida.      |
+|message     | Mensagem amigável para o evento de gatilho. Mais detalhes são fornecidos na seção de detalhes.        |
+|action     |  Ação executada na solicitação. Os valores disponíveis são Bloqueada e Permitida.      |
 |site     | Site para o qual o log foi gerado. No momento, somente Global é listado porque as regras são globais.|
 |detalhes     | Detalhes do evento de gatilho.        |
 |details.message     | Descrição da regra.        |
@@ -307,7 +358,7 @@ Você também pode se conectar à sua conta de armazenamento e recuperar as entr
 
 Publicamos um modelo do Resource Manager que instala e executa o popular analisador de logs [GoAccess](https://goaccess.io/) para logs de acesso do Gateway de Aplicativo. O GoAccess fornece valiosas estatísticas de tráfego HTTP, tais como visitantes exclusivos, arquivos solicitados, hosts, sistemas operacionais, navegadores, códigos de status HTTP e muito mais. Para obter mais detalhes, consulte o [arquivo Leiame na pasta de modelo do Resource Manager no GitHub](https://aka.ms/appgwgoaccessreadme).
 
-## <a name="metrics"></a>Métricas
+## <a name="metrics"></a>metrics
 
 Métricas são um recurso para alguns recursos do Azure, nas quais você pode exibir os contadores de desempenho no portal. Para o Gateway de Aplicativo, as seguintes métricas estão disponíveis:
 

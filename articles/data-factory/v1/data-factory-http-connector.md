@@ -13,15 +13,15 @@ ms.date: 05/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: f7e070788d2fc11addcafc30d9f232f194f44782
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60318471"
 ---
 # <a name="move-data-from-an-http-source-by-using-azure-data-factory"></a>Mover dados de uma fonte HTTP usando o Azure Data Factory
 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](data-factory-http-connector.md)
 > * [Versão 2 (versão atual)](../connector-http.md)
 
@@ -56,9 +56,9 @@ A tabela a seguir descreve elementos JSON que são específicos para o serviço 
 | type | O **tipo** propriedade deve ser definida como **Http**. | Sim |
 | url | A URL base para o servidor web. | Sim |
 | authenticationType | Especifica o tipo de autenticação. Os valores permitidos são **Anonymous**, **Basic**, **Digest**, **Windows** e **ClientCertificate**. <br><br> Consulte as seções posteriores deste artigo para mais propriedades e amostras JSON para esses tipos de autenticação. | Sim |
-| enableServerCertificateValidation | Especifica se deve ativar a validação do certificado SSL do servidor se a origem for um servidor da Web HTTPS. Quando seu servidor HTTPS usa um certificado autoassinado, configure isso para **falso**. | Não <br /> (o padrão é **verdadeiro**) |
+| enableServerCertificateValidation | Especifica se deve ativar a validação do certificado SSL do servidor se a origem for um servidor da Web HTTPS. Quando seu servidor HTTPS usa um certificado autoassinado, configure isso para **falso**. | Não<br /> (o padrão é **verdadeiro**) |
 | gatewayName | O nome da instância do Data Management Gateway a ser usada para se conectar a uma origem HTTP local. | Sim, se você estiver copiando dados de uma fonte HTTP local |
-| encryptedCredential | A credencial criptografada para acessar o terminal HTTP. O valor é gerado automaticamente quando você configura as informações de autenticação no Assistente de Cópia ou usando a caixa de diálogo **ClickOnce**. | Não <br /> (aplica-se somente quando você copia dados de um servidor HTTP local) |
+| encryptedCredential | A credencial criptografada para acessar o terminal HTTP. O valor é gerado automaticamente quando você configura as informações de autenticação no Assistente de Cópia ou usando a caixa de diálogo **ClickOnce**. | Não<br /> (aplica-se somente quando você copia dados de um servidor HTTP local) |
 
 Para obter detalhes sobre a configuração de credenciais para uma fonte de dados de conector HTTP local, consulte [Mover dados entre fontes locais e a nuvem usando o Data Management Gateway](data-factory-move-data-between-onprem-and-cloud.md).
 
@@ -98,7 +98,7 @@ Para usar a autenticação básica, defina **authenticationType** como  **Client
 | --- | --- | --- |
 | embeddedCertData | O conteúdo codificado em Base64 de dados binários do arquivo PFX. | Especificar **embeddedCertData** ou **certThumbprint** |
 | certThumbprint | A impressão digital do certificado que foi instalado no repositório de certificados do computador do gateway. Aplique somente quando você copiar dados de uma origem HTTP local. | Especificar **embeddedCertData** ou **certThumbprint** |
-| password | A senha associada com o certificado. | Não  |
+| password | A senha associada com o certificado. | Não |
 
 Se você usar **certThumbprint** para autenticação e o certificado estiver instalado no armazenamento pessoal do computador local, conceda permissões de leitura ao serviço de gateway:
 
@@ -160,13 +160,13 @@ A seção **typeProperties** é diferente para cada tipo de conjunto de dados. A
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| type | O **tipo** do conjunto de dados deve ser definida como **Http**. | Sim |
-| relativeUrl | Uma URL relativa para o recurso que contém os dados. Quando o caminho não é especificado, somente o URL especificado na definição de serviço vinculada é usado. <br><br> Para construir um URL dinâmico, você pode usar [funções do Data Factory e variáveis do sistema](data-factory-functions-variables.md). Exemplo: **relativeUrl**: **$$ Text.Format ('/ my / report? Month = {0: aaaa - - {0: MM} & fmt = csv', SliceStart)** . | Não  |
-| requestMethod | O método HTTP. Valores permitidos são **Obtenha** e **POST**. | Não  <br />(o padrão é **obter**) |
-| additionalHeaders | Cabeçalhos de solicitação HTTP adicionais. | Não  |
-| requestBody | O corpo da solicitação HTTP. | Não  |
-| format | Se você deseja *recuperar os dados de um endpoint HTTP como está* sem analisá-los, ignore a configuração **formato**. <br><br> Se quiser analisar o conteúdo da resposta HTTP durante a cópia, os seguintes tipos de formato são compatíveis: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** e **ParquetFormat**. Para obter mais informações, consulte [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format) e [Formato de parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Não  |
-| compression | Especifique o tipo e o nível de compactação para os dados. Tipos com suporte: **GZip**, **Deflate**, **BZip2** e **ZipDeflate**. Níveis compatíveis: **Ideal** e **Mais Rápido**. Para saber mais, confira [File and compression formats in Azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support) (Formatos de arquivo e de compactação no Azure Data Factory). |Não  |
+| Tipo | O **tipo** do conjunto de dados deve ser definida como **Http**. | Sim |
+| relativeUrl | Uma URL relativa para o recurso que contém os dados. Quando o caminho não é especificado, somente o URL especificado na definição de serviço vinculada é usado. <br><br> Para construir um URL dinâmico, você pode usar [funções do Data Factory e variáveis do sistema](data-factory-functions-variables.md). Exemplo: **relativeUrl**: **$$ Text.Format ('/ my / report? Month = {0: aaaa - - {0: MM} & fmt = csv', SliceStart)** . | Não |
+| requestMethod | O método HTTP. Valores permitidos são **Obtenha** e **POST**. | Não <br />(o padrão é **obter**) |
+| additionalHeaders | Cabeçalhos de solicitação HTTP adicionais. | Não |
+| requestBody | O corpo da solicitação HTTP. | Não |
+| formato | Se você deseja *recuperar os dados de um endpoint HTTP como está* sem analisá-los, ignore a configuração **formato**. <br><br> Se quiser analisar o conteúdo da resposta HTTP durante a cópia, os seguintes tipos de formato são compatíveis: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** e **ParquetFormat**. Para obter mais informações, consulte [Formato de texto](data-factory-supported-file-and-compression-formats.md#text-format), [Formato JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Formato Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Formato Orc](data-factory-supported-file-and-compression-formats.md#orc-format) e [Formato de parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Não |
+| compression | Especifique o tipo e o nível de compactação para os dados. Tipos com suporte: **GZip**, **Deflate**, **BZip2** e **ZipDeflate**. Níveis compatíveis: **Ideal** e **Mais Rápido**. Para saber mais, confira [File and compression formats in Azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support) (Formatos de arquivo e de compactação no Azure Data Factory). |Não |
 
 **Exemplo: usando o método GET (padrão)**
 
@@ -223,7 +223,7 @@ Atualmente, quando a origem em Copy Activity é do tipo **HttpSource**, as segui
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | -------- | ----------- | -------- |
-| httpRequestTimeout | O tempo limite (o valor **TimeSpan**) para a solicitação HTTP para obter uma resposta. É o tempo limite para obter uma resposta, não o tempo limite para ler os dados de resposta. | Não <br />(valor padrão: **00:01:40**) |
+| httpRequestTimeout | O tempo limite (o valor **TimeSpan**) para a solicitação HTTP para obter uma resposta. É o tempo limite para obter uma resposta, não o tempo limite para ler os dados de resposta. | Não<br />(valor padrão: **00:01:40**) |
 
 ## <a name="supported-file-and-compression-formats"></a>Formatos de arquivo e de compactação com suporte
 

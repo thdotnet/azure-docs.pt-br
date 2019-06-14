@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f1a7b740a6b248a12fa3d95f85f602ef7a8b2fa5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60242370"
 ---
 # <a name="user-privacy-and-azure-active-directory-pass-through-authentication"></a>Privacidade do usuário e autenticação de passagem do Azure Active Directory
@@ -93,12 +93,12 @@ Para agendar esse script para ser executado a cada 48 horas, siga estas etapas:
 1.  Salve o script em um arquivo com a extensão ".PS1".
 2.  Abra o **Painel de Controle** e clique em **Sistema e Segurança**.
 3.  No cabeçalho **Ferramentas Administrativas**, clique em “**Agendar Tarefas**”.
-4.  Em **Agendador de Tarefas**, clique com o botão direito do mouse em “**Biblioteca de Agendamento de Tarefas**” e clique em “**Criar tarefa básica…**”.
+4.  Em **Agendador de Tarefas**, clique com o botão direito do mouse em “**Biblioteca de Agendamento de Tarefas**” e clique em “**Criar tarefa básica…** ”.
 5.  Insira o nome para a nova tarefa e clique em **Avançar**.
 6.  Selecione “**Diariamente**” para o **Disparador de Tarefa** e clique em **Avançar**.
 7.  Defina a recorrência para dois dias e clique em **Avançar**.
 8.  Selecione “**Iniciar um programa**” como a ação e clique em **Avançar**.
-9.  Digite “**PowerShell**” na caixa para o programa/script e, na caixa rotulada “**Adicionar argumentos (opcional)**”, insira o caminho completo para o script que você criou anteriormente e clique em **Avançar**.
+9.  Digite “**PowerShell**” na caixa para o programa/script e, na caixa rotulada “**Adicionar argumentos (opcional)** ”, insira o caminho completo para o script que você criou anteriormente e clique em **Avançar**.
 10. A próxima tela mostra um resumo da tarefa que você está prestes a criar. Verifique os valores e clique em **Concluir** para criar a tarefa:
  
 ### <a name="note-about-domain-controller-logs"></a>Observação sobre os logs do Controlador de Domínio

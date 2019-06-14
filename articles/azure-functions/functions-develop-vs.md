@@ -10,12 +10,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 10/08/2018
 ms.author: glenga
-ms.openlocfilehash: 4366f09ccc9a3b2335e0aa84b7fb7398825cb87e
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: c6104a977a02211dcab17a5f232991d0d9cbb852
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65864525"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050738"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Desenvolver o Azure Functions usando o Visual Studio  
 
@@ -89,7 +89,7 @@ Para saber mais, confira [Projeto de biblioteca de classe de funções](function
 
 ## <a name="configure-the-project-for-local-development"></a>Configurar seu projeto para desenvolvimento local
 
-O tempo de execução do Functions usa internamente uma conta de Armazenamento do Azure. Para todos os tipos de gatilhos diferentes de HTTP e webhooks, você deve definir a chave **Values.AzureWebJobsStorage** para uma cadeia de conexão de conta de Armazenamento do Azure válida. O aplicativo de funções também pode usar o [Emulador de Armazenamento do Microsoft Azure](../storage/common/storage-use-emulator.md) para a configuração de conexão **AzureWebJobsStorage** exigida pelo projeto. Para usar o emulador, defina o valor de **AzureWebJobsStorage** para `UseDevelopmentStorage=true`. É necessário alterar essa configuração para uma conexão de armazenamento real antes da implantação.
+O tempo de execução do Functions usa internamente uma conta de Armazenamento do Azure. Para todos os tipos de gatilhos diferentes de HTTP e webhooks, você deve definir a chave **Values.AzureWebJobsStorage** para uma cadeia de conexão de conta de Armazenamento do Azure válida. O aplicativo de funções também pode usar o [Emulador de Armazenamento do Microsoft Azure](../storage/common/storage-use-emulator.md) para a configuração de conexão **AzureWebJobsStorage** exigida pelo projeto. Para usar o emulador, defina o valor de **AzureWebJobsStorage** para `UseDevelopmentStorage=true`. Altere essa configuração para uma conexão de armazenamento real antes da implantação.
 
 Para definir a cadeia de conexão da conta de armazenamento:
 
@@ -184,6 +184,10 @@ Para saber mais sobre o uso das Ferramentas Básicas do Azure Functions, consult
 ## <a name="publish-to-azure"></a>Publicar no Azure
 
 [!INCLUDE [Publish the project to Azure](../../includes/functions-vstools-publish.md)]
+
+### <a name="deployment-technology"></a>Tecnologia de implantação
+
+Ao publicar no Visual Studio, uma das duas tecnologias é usada para executar a implantação: [Implantação da Web](functions-deployment-technologies.md#web-deploy-msdeploy) e [Zip implantar com a execução do pacote habilitado (recomendado)](functions-deployment-technologies.md#zip-deploy).
 
 ## <a name="function-app-settings"></a>Configurações do aplicativo de funções
 

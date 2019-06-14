@@ -2,21 +2,22 @@
 title: Configurar o método de roteamento de tráfego de desempenho usando o Gerenciador de Tráfego do Azure | Microsoft Docs
 description: Este artigo explica como configurar o Gerenciador de Tráfego para rotear o tráfego para o ponto de extremidade com a menor latência
 services: traffic-manager
+manager: twooley
 documentationcenter: ''
-author: kumudd
+author: asudbring
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
-ms.author: kumud
-ms.openlocfilehash: 4c948668e355b87026240588c6fac11d86e355b2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: allensu
+ms.openlocfilehash: 5e9b02a4145d86b86ea3ba0d509d06b7c148cc6d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60883945"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67048466"
 ---
 # <a name="configure-the-performance-traffic-routing-method"></a>Configurar o método de roteamento de tráfego de desempenho
 
@@ -31,7 +32,7 @@ O método de roteamento de tráfego de Desempenho permite direcionar o tráfego 
     1. Em **Configurações do método de roteamento de tráfego**, para **Método de roteamento** selecione **Desempenho**.
     2. Defina as **Configurações do monitor de ponto de extremidade** de forma idêntica para todos os pontos de extremidade nesse perfil, da seguinte maneira:
         1. Selecione o **Protocolo** apropriado e especifique o número da **Porta**. 
-        2. Para **Caminho**, digite uma barra "/" */*. Para monitorar os pontos de extremidade, especifique um caminho e um nome de arquivo. A barra "/" é uma entrada válida para o caminho relativo e implica que o arquivo está no diretório raiz (padrão).
+        2. Para **Caminho**, digite uma barra "/" */* . Para monitorar os pontos de extremidade, especifique um caminho e um nome de arquivo. A barra "/" é uma entrada válida para o caminho relativo e implica que o arquivo está no diretório raiz (padrão).
         3. Na parte superior da página, clique em **Salvar**.
 5.  Teste as alterações na configuração da seguinte maneira:
     1.  Na barra de pesquisa do portal, pesquise o nome do perfil do Gerenciador de Tráfego e clique no perfil do Gerenciador de Tráfego nos resultados exibidos.

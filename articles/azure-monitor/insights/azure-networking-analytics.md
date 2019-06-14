@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/21/2018
 ms.author: bwren
-ms.openlocfilehash: 244df90a9db2a2b0d5f6ca6e1874bce94fc7f5bf
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 13908706f8dcec0eb2d1773bcef2ee622b4ebcc1
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506409"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67048647"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Monitorando as soluções no Azure Monitor de rede do Azure
 
@@ -54,7 +54,7 @@ Você pode habilitar o diagnóstico e a solução correspondente para o Gateway 
 Se você não habilitar o registro em log de diagnósticos para um tipo de recurso específico, mas instalar a solução, as folhas de painel para esse recurso ficarão em branco e exibirão uma mensagem de erro.
 
 > [!NOTE]
-> Em janeiro de 2017, a maneira com suporte de envio de logs de grupos de segurança de rede e Gateways de aplicativo para um espaço de trabalho do Log Analytics alterado. Se você vir a solução **Análise de Rede do Azure (preterida)**, consulte [Migrando da solução de Análise de Rede antiga](#migrating-from-the-old-networking-analytics-solution) para encontrar as etapas que devem ser seguidas.
+> Em janeiro de 2017, a maneira com suporte de envio de logs de grupos de segurança de rede e Gateways de aplicativo para um espaço de trabalho do Log Analytics alterado. Se você vir a solução **Análise de Rede do Azure (preterida)** , consulte [Migrando da solução de Análise de Rede antiga](#migrating-from-the-old-networking-analytics-solution) para encontrar as etapas que devem ser seguidas.
 >
 >
 
@@ -221,13 +221,13 @@ Para usar as soluções atualizadas:
 
      | Em vez de: | Use: |
      | --- | --- |
-     | NetworkApplicationgateways &#124; onde OperationName=="ApplicationGatewayAccess" | AzureDiagnostics &#124; onde ResourceType="APPLICATIONGATEWAYS" e OperationName=="ApplicationGatewayAccess" |
-     | NetworkApplicationgateways &#124; onde OperationName=="ApplicationGatewayPerformance" | AzureDiagnostics &#124; onde ResourceType=="APPLICATIONGATEWAYS" e OperationName=ApplicationGatewayPerformance |
+     | NetworkApplicationgateways &#124; onde OperationName=="ApplicationGatewayAccess" | AzureDiagnostics &#124; where ResourceType=="APPLICATIONGATEWAYS" and OperationName=="ApplicationGatewayAccess" |
+     | NetworkApplicationgateways &#124; onde OperationName=="ApplicationGatewayPerformance" | AzureDiagnostics &#124; where ResourceType=="APPLICATIONGATEWAYS" and OperationName=="ApplicationGatewayPerformance" |
      | NetworkSecurityGroups | AzureDiagnostics &#124; onde ResourceType=="NETWORKSECURITYGROUPS" |
 
    + Para qualquer campo que tenha um sufixo de \_s, \_d ou \_g no nome, altere o primeiro caractere para minúsculo
    + Para qualquer campo que tenha um sufixo de \_o no nome, os dados são divididos em campos individuais com base nos nomes de campos aninhados.
-4. Remova a solução *Análise de Rede do Azure (preterida)*.
+4. Remova a solução *Análise de Rede do Azure (preterida)* .
    + Se você estiver usando o PowerShell, use `Set-AzureOperationalInsightsIntelligencePack -ResourceGroupName <resource group that the workspace is in> -WorkspaceName <name of the log analytics workspace> -IntelligencePackName "AzureNetwork" -Enabled $false`
 
 Os dados coletados antes da alteração não estão visíveis na nova solução. Você pode continuar a consultar esses dados usando os nomes de campo e tipo antigos.

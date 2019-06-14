@@ -19,10 +19,10 @@ ms.author: joflore
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2250449c0ef342332945b80cb10cb9a02885b259
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60355851"
 ---
 # <a name="require-app-protection-policy-for-cloud-app-access-with-conditional-access-preview"></a>Exigir a política de proteção do aplicativo para acesso de aplicativo de nuvem com acesso condicional (visualização)
@@ -111,17 +111,17 @@ Para a política de acesso condicional nesta etapa, configure os seguintes compo
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/07.png)
 
-4. Na **condições**, configure **plataformas de dispositivo** e **aplicativos cliente (visualização)**:
+4. Na **condições**, configure **plataformas de dispositivo** e **aplicativos cliente (visualização)** :
 
-     a. Na **plataformas de dispositivo**, selecione **Android** e **iOS**.
+    a. Na **plataformas de dispositivo**, selecione **Android** e **iOS**.
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/03.png)
 
-    b. Na **aplicativos de cliente (visualização)**, selecione **aplicativos móveis e clientes da área de trabalho** e **clientes de autenticação moderna**.
+    b. Na **aplicativos de cliente (visualização)** , selecione **aplicativos móveis e clientes da área de trabalho** e **clientes de autenticação moderna**.
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/91.png)
 
-5. Sob **controles de acesso**, selecione **exigem a política de proteção de aplicativo (visualização)**.
+5. Sob **controles de acesso**, selecione **exigem a política de proteção de aplicativo (visualização)** .
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/05.png)
  
@@ -141,13 +141,13 @@ Para a política de acesso condicional nesta etapa, configure os seguintes compo
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/07.png)
 
-4. Na **condições**, configure **aplicativos cliente (visualização)**. 
+4. Na **condições**, configure **aplicativos cliente (visualização)** . 
 
-     a. Na **aplicativos de cliente (visualização)**, selecione **aplicativos móveis e clientes da área de trabalho** e **clientes do Exchange ActiveSync**.
+    a. Na **aplicativos de cliente (visualização)** , selecione **aplicativos móveis e clientes da área de trabalho** e **clientes do Exchange ActiveSync**.
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/92.png)
 
-    b. Sob **controles de acesso**, selecione **exigem a política de proteção de aplicativo (visualização)**.
+    b. Sob **controles de acesso**, selecione **exigem a política de proteção de aplicativo (visualização)** .
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/05.png)
 
@@ -194,13 +194,13 @@ Para a política de acesso condicional nesta etapa, configure os seguintes compo
 
      ![Acesso condicional](./media/app-protection-based-conditional-access/07.png)
 
-4. Na **condições**, configure **plataformas de dispositivo** e **aplicativos cliente (visualização)**. 
+4. Na **condições**, configure **plataformas de dispositivo** e **aplicativos cliente (visualização)** . 
  
-     a. Na **plataformas de dispositivo**, selecione **Android** e **iOS**.
+    a. Na **plataformas de dispositivo**, selecione **Android** e **iOS**.
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/03.png)
 
-    b. Na **aplicativos de cliente (visualização)**, selecione **aplicativos móveis e clientes da área de trabalho** e **clientes de autenticação moderna**.
+    b. Na **aplicativos de cliente (visualização)** , selecione **aplicativos móveis e clientes da área de trabalho** e **clientes de autenticação moderna**.
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/91.png)
 
@@ -230,9 +230,9 @@ Para a política de acesso condicional nesta etapa, configure os seguintes compo
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/07.png)
 
-4. Na **condições**, configure **aplicativos cliente (visualização)**. 
+4. Na **condições**, configure **aplicativos cliente (visualização)** . 
 
-    Na **aplicativos de cliente (visualização)**, selecione **aplicativos móveis e clientes da área de trabalho** e **clientes do Exchange ActiveSync**.
+    Na **aplicativos de cliente (visualização)** , selecione **aplicativos móveis e clientes da área de trabalho** e **clientes do Exchange ActiveSync**.
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/92.png)
 
@@ -296,13 +296,13 @@ Para a política de acesso condicional nesta etapa, configure os seguintes compo
 
      ![Acesso condicional](./media/app-protection-based-conditional-access/07.png)
 
-4. Na **condições**, configure **plataformas de dispositivo** e **aplicativos cliente (visualização)**. 
+4. Na **condições**, configure **plataformas de dispositivo** e **aplicativos cliente (visualização)** . 
  
-     a. Na **plataformas de dispositivo**, selecione **Android** e **iOS**.
+    a. Na **plataformas de dispositivo**, selecione **Android** e **iOS**.
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/03.png)
 
-    b. Na **aplicativos de cliente (visualização)**, selecione **aplicativos móveis e clientes da área de trabalho** e **clientes de autenticação moderna**.
+    b. Na **aplicativos de cliente (visualização)** , selecione **aplicativos móveis e clientes da área de trabalho** e **clientes de autenticação moderna**.
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/91.png)
 
@@ -332,9 +332,9 @@ Para a política de acesso condicional nesta etapa, configure os seguintes compo
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/07.png)
 
-4. Na **condições**, configure **aplicativos cliente (visualização)**. 
+4. Na **condições**, configure **aplicativos cliente (visualização)** . 
 
-    Na **aplicativos de cliente (visualização)**, selecione **aplicativos móveis e clientes da área de trabalho** e **clientes do Exchange ActiveSync**.
+    Na **aplicativos de cliente (visualização)** , selecione **aplicativos móveis e clientes da área de trabalho** e **clientes do Exchange ActiveSync**.
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/92.png)
 
@@ -403,13 +403,13 @@ Para a política de acesso condicional nesta etapa, configure os seguintes compo
 
      ![Acesso condicional](./media/app-protection-based-conditional-access/02.png)
 
-4. Na **condições**, configure **plataformas de dispositivo** e **aplicativos cliente (visualização)**. 
+4. Na **condições**, configure **plataformas de dispositivo** e **aplicativos cliente (visualização)** . 
  
-     a. Na **plataformas de dispositivo**, selecione **Android** e **iOS**.
+    a. Na **plataformas de dispositivo**, selecione **Android** e **iOS**.
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/03.png)
 
-    b. Na **aplicativos de cliente (visualização)**, selecione **aplicativos móveis e clientes da área de trabalho** e **clientes de autenticação moderna**.
+    b. Na **aplicativos de cliente (visualização)** , selecione **aplicativos móveis e clientes da área de trabalho** e **clientes de autenticação moderna**.
 
     ![Acesso condicional](./media/app-protection-based-conditional-access/91.png)
 
@@ -434,7 +434,7 @@ Para obter mais informações, consulte [proteger aplicativos e dados com o Micr
 
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Se você quiser saber como configurar uma política de acesso condicional, consulte [Exigir MFA para aplicativos específicos com acesso condicional do Azure Active Directory](app-based-mfa.md).
 - Se você estiver pronto para configurar políticas de acesso condicional para o seu ambiente, consulte [práticas recomendadas para acesso condicional no Azure Active Directory](best-practices.md). 

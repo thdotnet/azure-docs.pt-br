@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ba5455680647b90b113d31c55816a2e0b0131b33
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60243619"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quick-start"></a>Autenticação de passagem do Azure Active Directory: Início rápido
@@ -140,7 +140,7 @@ Primeiro, você pode fazer isso de forma interativa simplesmente executando o ex
 Segundo, você pode criar e executar um script de implantação autônomo. Isso é útil quando você deseja implantar vários Agentes de Autenticação ao mesmo tempo, ou instalar Agentes de Autenticação em servidores Windows que não possuem a interface do usuário ativada ou que você não pode acessar com a Área de Trabalho Remota. Aqui estão as instruções sobre como usar essa abordagem:
 
 1. Execute o seguinte comando para instalar um Agente de Autenticação: `AADConnectAuthAgentSetup.exe REGISTERCONNECTOR="false" /q`.
-2. Você pode registrar o Agente de Autenticação com nosso serviço usando o Windows PowerShell. Crie um objeto de credenciais do PowerShell `$cred` que contém um nome de usuário de administrador global e uma senha para seu locatário. Execute o seguinte comando, substituindo *\<nome de usuário\>* e *\<senha\>*:
+2. Você pode registrar o Agente de Autenticação com nosso serviço usando o Windows PowerShell. Crie um objeto de credenciais do PowerShell `$cred` que contém um nome de usuário de administrador global e uma senha para seu locatário. Execute o seguinte comando, substituindo *\<nome de usuário\>* e *\<senha\>* :
 
         $User = "<username>"
         $PlainPassword = '<password>'

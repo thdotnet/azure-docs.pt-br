@@ -9,10 +9,10 @@ ms.date: 11/30/2018
 ms.author: cherylmc
 ms.custom: seodec18
 ms.openlocfilehash: d78c110f3317f4dd9f16cbe243aeca437e9890a1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60364569"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Monitoramento, alertas e métricas do ExpressRoute
@@ -47,7 +47,7 @@ Você pode exibir métricas para emparelhamento privado, público e da Microsoft
 
 2. Clique em **+ Selecionar destino** e selecione o recurso de conexão de gateway do ExpressRoute.
 
-   ![destino]( ./media/expressroute-monitoring-metrics-alerts/alerthowto2.jpg)
+   ![target]( ./media/expressroute-monitoring-metrics-alerts/alerthowto2.jpg)
 3. Defina os detalhes do alerta.
 
    ![grupo de ações](./media/expressroute-monitoring-metrics-alerts/alerthowto3.jpg)

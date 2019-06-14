@@ -10,10 +10,10 @@ ms.date: 05/15/2017
 ms.author: robb
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: ac2b79d670b803573a359dfc9f8738f972f2d9b5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60237851"
 ---
 # <a name="azure-diagnostics-10-configuration-schema"></a>Esquema de Configuração do Azure Diagnostics 1.0
@@ -101,7 +101,7 @@ O elemento de nível superior do arquivo de configuração de diagnóstico.
 
 Atributos:
 
-|Atributo  |Type   |Necessário| Padrão | DESCRIÇÃO|  
+|Atributo  |Type   |Obrigatório| Padrão | DESCRIÇÃO|  
 |-----------|-------|--------|---------|------------|  
 |**configurationChangePollInterval**|duration|Opcional | PT1M| Especifica o intervalo no qual o monitor de diagnóstico sonda em busca de alterações de configuração de diagnóstico.|  
 |**overallQuotaInMB**|unsignedInt|Opcional| 4000 MB. Se você fornecer um valor, ele não deverá exceder esse valor |A quantidade total de armazenamento de sistema de arquivos alocado para todos os buffers de registro em log.|  

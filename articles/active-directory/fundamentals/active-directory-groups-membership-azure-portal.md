@@ -14,10 +14,10 @@ ms.custom: it-pro, seodec18
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 68b6c1e037992930a70630b0d218cc98beba931d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60249264"
 ---
 # <a name="add-or-remove-a-group-from-another-group-using-azure-active-directory"></a>Adicionar ou remover um grupo de outro grupo usando o Azure Active Directory
@@ -47,7 +47,7 @@ Este artigo explica como adicionar e remover um grupo de outro grupo usando o Az
 
 4. Na página **Política de MDM - Oeste - Associações de grupo**, selecione **Associações de grupo**, selecione **Adicionar**, localize o grupo no qual você quer que seu grupo seja membro e, em seguida, escolha **Selecionar**. Para esse exercício, estamos usando o grupo **Política de MDM - Toda org**.
 
-    O grupo **Política de MDM - Oeste** agora é membro da **Política de MDM - Toda org.**, herdando todas as propriedades e configurações do grupo Política de MDM - Toda org.
+    O grupo **Política de MDM - Oeste** agora é membro da **Política de MDM - Toda org.** , herdando todas as propriedades e configurações do grupo Política de MDM - Toda org.
 
     ![Criar uma associação de grupo, adicionando grupo a outro grupo](media/active-directory-groups-membership-azure-portal/add-group-membership.png)
 
@@ -55,7 +55,7 @@ Este artigo explica como adicionar e remover um grupo de outro grupo usando o Az
 
     ![Política de MDM - Oeste - Associações de grupo mostrando o grupo pai](media/active-directory-groups-membership-azure-portal/group-membership-blade.png)
 
-6. Para uma exibição mais detalhada da relação de membro e grupo, selecione o nome do grupo (**Política de MDM - Toda org.**) e dê uma olhada nos detalhes da página **Política de MDM - Oeste**.
+6. Para uma exibição mais detalhada da relação de membro e grupo, selecione o nome do grupo (**Política de MDM - Toda org.** ) e dê uma olhada nos detalhes da página **Política de MDM - Oeste**.
 
     ![Página de associação de grupo mostrando os detalhes do membro e do grupo](media/active-directory-groups-membership-azure-portal/group-membership-review.png)
 

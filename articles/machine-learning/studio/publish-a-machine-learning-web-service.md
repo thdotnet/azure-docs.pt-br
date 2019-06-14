@@ -11,10 +11,10 @@ ms.author: amlstudiodocs
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 01/06/2017
 ms.openlocfilehash: 2ffc9055f23b8221a6f711f741b6146545ff0821
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60333894"
 ---
 # <a name="deploy-an-azure-machine-learning-studio-web-service"></a>Implantar um serviço da web do Azure Machine Learning Studio
@@ -33,7 +33,7 @@ A entrada para BES é como os dados de entrada que RRS usa. A principal diferen�
 Em um ponto de exibição de alto nível, implante seu modelo em três etapas:
 
 * **[Criar um teste de treinamento]** – no Studio, é possível treinar e testar um modelo de análise preditiva usando dados de treinamento que você fornece e um grande conjunto de algoritmos internos de aprendizado de máquina.
-* **[Convertê-lo em um teste preditivo]**: depois que o modelo tiver sido treinado com dados existentes e você estiver pronto para usá-lo para pontuar novos dados, prepare e simplifique seu teste de previsões.
+* **[Convertê-lo em um teste preditivo]** : depois que o modelo tiver sido treinado com dados existentes e você estiver pronto para usá-lo para pontuar novos dados, prepare e simplifique seu teste de previsões.
 * **Implante-o** como um **[novo serviço Web]** ou um **[serviço Web clássico]** – Quando você implanta seu teste preditivo como um serviço Web do Azure, os usuários podem enviar dados para seu modelo e receber previsões dele.
 
 ## <a name="create-a-training-experiment"></a>Criar um teste de treinamento
@@ -65,7 +65,7 @@ As etapas a seguir descrevem a implantação de um teste preditivo como um novo 
 
 Agora que o teste preditivo foi preparado, é possível implantá-lo como um novo serviço Web do Azure (baseado no Resource Manager). Usando o serviço Web, os usuários podem enviar dados para seu modelo e o modelo retornará suas previsões.
 
-Para implantar o teste preditivo, clique em **Executar** na parte inferior da tela do teste. Após a conclusão do teste, clique em **Implantar Serviço Web** e selecione **Implantar Serviço Web [novo]**.  A página de implantação do portal do serviço Web do Machine Learning Studio é aberta.
+Para implantar o teste preditivo, clique em **Executar** na parte inferior da tela do teste. Após a conclusão do teste, clique em **Implantar Serviço Web** e selecione **Implantar Serviço Web [novo]** .  A página de implantação do portal do serviço Web do Machine Learning Studio é aberta.
 
 > [!NOTE] 
 > Para implantar um novo serviço Web, você precisa ter permissões suficientes na assinatura na qual o serviço Web está sendo implantado. Para obter mais informações, consulte [Gerenciar um serviço Web usando o portal de Serviços Web do Azure Machine Learning](manage-new-webservice.md). 

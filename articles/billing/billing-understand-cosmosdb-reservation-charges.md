@@ -10,10 +10,10 @@ ms.date: 04/13/2019
 ms.author: banders
 ms.reviewer: sngun
 ms.openlocfilehash: d5a13e4466234d73bafe8dbe76cae92955cf64bd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60370740"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-cosmos-db"></a>Entenda como o desconto de reserva é aplicado ao Azure Cosmos DB
@@ -89,8 +89,8 @@ O desconto coberto por uma reserva é calculado como: consumo de taxa de transfe
 
 |Descrição de medidor | Região |Consumo de taxa de transferência (RU/s) |Desconto de reserva aplicado a RU/s |
 |---------|---------|---------|---------|
-|Azure Cosmos DB – 100 RU/s/hora – Centro-Norte dos EUA  |   Centro-Norte dos EUA  | 50.000  | 50.000  |
-|Azure Cosmos DB – 100 RU/s/hora - Oeste dos EUA  |  Oeste dos EUA   |  50.000  |  50.000 |
+|Azure Cosmos DB – 100 RU/s/hora – Centro-Norte dos EUA  |   Centro-Norte dos EUA  | 50\.000  | 50\.000  |
+|Azure Cosmos DB – 100 RU/s/hora - Oeste dos EUA  |  Oeste dos EUA   |  50\.000  |  50\.000 |
 
 **Cenário 2**
 
@@ -98,8 +98,8 @@ Por exemplo, suponha que você precise de implantações do Azure Cosmos DB nas 
 
 |Descrição de medidor | Região |Consumo de taxa de transferência (RU/s) |Desconto de reserva aplicado a RU/s |
 |---------|---------|---------|---------|
-|Azure Cosmos DB – 100 RU/s/hora – Austrália Central 2  |  Austrália Central 2   |  50.000  |  50.000   |
-|Sul da França de - 100 RU/s/hora – Azure Cosmos DB  |  Sul da França   |  50.000 |  15,384  |
+|Azure Cosmos DB – 100 RU/s/hora – Austrália Central 2  |  Austrália Central 2   |  50\.000  |  50\.000   |
+|Sul da França de - 100 RU/s/hora – Azure Cosmos DB  |  Sul da França   |  50\.000 |  15,384  |
 
 Um uso de 50.000 unidades na região "Austrália Central 2" corresponde a 75.000 RU/s de uso faturável (ou uso normalizado). Esse valor é computado como: consumo de taxa de transferência * taxa_de_desconto_de_reserva_da_região. O cálculo é igual a 75.000 RU/s de uso faturável ou normalizado. Esse valor é computado como: 50.000 * 1,5 = 75.000 RU/s.
 
@@ -113,7 +113,7 @@ Para entender e visualizar o aplicativo de suas reservas do Azure nos relatório
 
 Se você tiver dúvidas ou precisar de ajuda, [crie uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Para saber mais sobre as reservas do Azure, consulte os seguintes artigos:
 

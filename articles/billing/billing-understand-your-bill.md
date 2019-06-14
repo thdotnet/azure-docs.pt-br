@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 02/19/2019
 ms.author: banders
 ms.openlocfilehash: 4303b79a7ee69d029504bf6ca2359f6e6070e5b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60370098"
 ---
 # <a name="understand-your-microsoft-azure-bill"></a>Entenda sua fatura do Microsoft Azure
@@ -48,7 +48,7 @@ Os encargos de uso são exibidos no nível do medidor. Os termos na lista a segu
 |Ciclo de cobrança | Período de Cobrança |
  |NOME |Categoria de medidor |
  |Type |Subcategoria de medidor |
- |Recurso |Nome do medidor |
+ |Resource |Nome do medidor |
  |Região |Região do medidor |
  |Consumido |Quantidade consumida |
  |Incluso |Quantidade incluída |

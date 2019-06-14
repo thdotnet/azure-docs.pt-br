@@ -16,10 +16,10 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1e0a4eed020728bea5de196eebe438947ae509e4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60515654"
 ---
 # <a name="tutorial-configure-salesforce-sandbox-for-automatic-user-provisioning"></a>Tutorial: Configurar a Área Restrita Salesforce para o provisionamento automático de usuário
@@ -72,7 +72,7 @@ O objetivo desta seção é descrever como habilitar o provisionamento de contas
 
 1. Na seção **Credenciais de Administrador**, forneça as seguintes definições de configuração:
    
-     a. Na caixa de texto **Nome de Usuário Administrador**, digite o nome da conta da Área Restrita Salesforce com o perfil **Administrador de Sistema** do Salesforce.com atribuído.
+    a. Na caixa de texto **Nome de Usuário Administrador**, digite o nome da conta da Área Restrita Salesforce com o perfil **Administrador de Sistema** do Salesforce.com atribuído.
    
     b. Na caixa de texto **Senha do Administrador**, digite a senha dessa conta.
 

@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: magoedte
 ms.openlocfilehash: 6dd5872d5ec3e79e3c76b1807aea946015fb0eac
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60496244"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Coletar informações sobre a infraestrutura DNS com a solução Visualização da Análise de DNS
@@ -43,9 +43,9 @@ A seguinte tabela descreve as fontes conectadas que têm suporte nessa solução
 | **Fonte conectada** | **Suporte** | **Descrição** |
 | --- | --- | --- |
 | [Agentes do Windows](../platform/agent-windows.md) | Sim | A solução coleta informações de DNS dos agentes do Windows. |
-| [Agentes do Linux](../learn/quick-collect-linux-computer.md) | Não  | A solução não coleta informações de DNS dos agentes diretos do Linux. |
+| [Agentes do Linux](../learn/quick-collect-linux-computer.md) | Não | A solução não coleta informações de DNS dos agentes diretos do Linux. |
 | [Grupo de gerenciamento do System Center Operations Manager](../platform/om-agents.md) | Sim | A solução coleta informações de DNS dos agentes em um grupo de gerenciamento conectado do Operations Manager. Não é necessária uma conexão direta entre o agente do Operations Manager e o Azure Monitor. Os dados são encaminhados do grupo de gerenciamento para o espaço de trabalho do Log Analytics. |
-| [Conta de armazenamento do Azure](../platform/collect-azure-metrics-logs.md) | Não  | O armazenamento do Azure não é usado pela solução. |
+| [Conta de armazenamento do Azure](../platform/collect-azure-metrics-logs.md) | Não | O armazenamento do Azure não é usado pela solução. |
 
 ### <a name="data-collection-details"></a>Detalhes da coleta de dados
 
@@ -170,7 +170,7 @@ Na página Pesquisa de Logs, é possível criar uma consulta. Você pode filtrar
 
     ![Pesquisa de logs de DnsEvents](./media/dns-analytics/log-search-dnsevents.png)  
 
-     a. Para exibir os dados de logs das consultas de pesquisa, selecione **LookUpQuery** como o filtro **Subtipo** no controle de faceta à esquerda. É exibida uma tabela que lista os eventos de consulta de pesquisa do período selecionado.
+    a. Para exibir os dados de logs das consultas de pesquisa, selecione **LookUpQuery** como o filtro **Subtipo** no controle de faceta à esquerda. É exibida uma tabela que lista os eventos de consulta de pesquisa do período selecionado.
 
     b. Para exibir os dados de logs dos registros dinâmicos, selecione **DynamicRegistration** como o filtro **Subtipo** no controle de faceta à esquerda. É exibida uma tabela que lista os eventos de registro dinâmico do período selecionado.
 

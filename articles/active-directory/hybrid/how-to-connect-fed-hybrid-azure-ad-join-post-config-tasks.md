@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a9af969700f4f2dfbedc4833badd7e7349696302
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60244586"
 ---
 # <a name="post-configuration-tasks-for-hybrid-azure-ad-join"></a>Tarefas de configuração de postagem para junção do Microsoft Azure Active Directory Híbrido
@@ -71,7 +71,7 @@ Para registrar dispositivos de nível inferior do Windows, você precisa garanti
 
 * Efetue logon na sua conta no portal do Azure.
 * Acesse:  Microsoft Azure Active Directory > Dispositivos > Configurações do dispositivo
-* Defina “Usuários podem registrar seus dispositivos com o Microsoft Azure Active Directory” para TODOS. 
+* Defina “Usuários podem registrar seus dispositivos com o Microsoft Azure Active Directory” para TODOS.
 * Clique em Salvar
 
 ## <a name="8-add-azure-ad-endpoint-to-windows-down-level-devices"></a>8. Adicionar o ponto de extremidade do Microsoft Azure Active Directory para os dispositivos de nível inferior do Windows

@@ -18,10 +18,10 @@ ms.topic: article
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 646119f223067fac5ee36574fb10273819251cce
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60295813"
 ---
 # <a name="how-to-investigate-risky-users-and-sign-ins"></a>Como: Investigar entradas e usuários arriscados 
@@ -272,7 +272,7 @@ O filtro **Aplicativo** permite que você especifique o aplicativo de nuvem que 
 O filtro **status de entrada** permite que você selecione:
 
 - Todos
-- Sucesso
+- Êxito
 - Failure
 
 
@@ -302,7 +302,7 @@ O filtro **Acesso condicional** permite que você selecione:
 
 - Todos
 - Não aplicado
-- Sucesso
+- Êxito
 - Failure
 
 

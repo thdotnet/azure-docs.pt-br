@@ -16,10 +16,10 @@ ms.date: 07/12/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dfef1371b7ac61712c0f70efd48c0e791c4c729d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60518268"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-runmyprocess"></a>Tutorial: Integração do Azure Active Directory com o RunMyProcess
@@ -50,7 +50,7 @@ Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 - Caso não tenha um ambiente de avaliação do Azure AD, obtenha uma avaliação de um mês aqui: [oferta de avaliação](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Descrição do cenário
-Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste.  O cenário descrito neste tutorial consiste em dois blocos de construção principais:
+Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste. O cenário descrito neste tutorial consiste em dois blocos de construção principais:
 
 1. Adicionando o RunMyProcess da galeria
 1. configurar e testar o logon único do AD do Azure
@@ -60,7 +60,7 @@ Para configurar a integração do RunMyProcess ao Azure AD, você precisa adicio
 
 **Para adicionar o RunMyProcess por meio da galeria, realize as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
 
     ![Active Directory][1]
 
@@ -140,7 +140,7 @@ Nesta seção, você habilita o logon único do Azure AD no portal do Azure e co
    
     ![Configurar o logon único no lado do aplicativo](./media/runmyprocess-tutorial/tutorial_runmyprocess_002.png)
 
-     a. Em **Método**, selecione **SSO com Samlv2**. 
+    a. Em **Método**, selecione **SSO com Samlv2**. 
 
     b. Na caixa de texto **Redirecionamento de SSO**, cole o valor da **URL do Serviço de Logon Único SAML** copiado do portal do Azure.
 
@@ -203,7 +203,7 @@ Para permitir que os usuários do Azure AD façam logon no RunMyProcess, eles de
    
     ![Perfil](./media/runmyprocess-tutorial/tutorial_runmyprocess_004.png "Perfil") 
   
-     a. Digite o **Nome** e o **Email** de uma conta válida do Azure AD que você deseja provisionar nas caixas de texto relacionadas. 
+    a. Digite o **Nome** e o **Email** de uma conta válida do Azure AD que você deseja provisionar nas caixas de texto relacionadas. 
 
     b. Selecione uma **Linguagem IDE**, um **Idioma** e um **Perfil**. 
 
