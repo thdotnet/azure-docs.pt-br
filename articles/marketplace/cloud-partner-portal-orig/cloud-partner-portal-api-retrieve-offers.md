@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: 67109c3605ea96123ff41cb88d5ac328a09991e6
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935343"
 ---
 <a name="retrieve-offers"></a>Recuperar ofertas
@@ -71,7 +71,7 @@ Recupera uma lista resumida de ofertas em um namespace do editor.
 |  offerTypeId    | Identifica o tipo de oferta                                                                                           |
 |  publisherId    | Identificador que identifica exclusivamente o editor                                                                      |
 |  status         | Status da oferta. Para a lista de valores possíveis, consulte [Status da oferta](#offer-status) abaixo.                         |
-|  ID             | GUID que identifica exclusivamente a oferta no namespace do editor.                                                    |
+|  id             | GUID que identifica exclusivamente a oferta no namespace do editor.                                                    |
 |  version        | Versão atual da oferta. A propriedade de versão não pode ser modificada pelo cliente. Isso é incrementado após cada publicação. |
 |  definição     | Contém uma visão resumida da definição real da carga de trabalho. Para obter uma definição detalhada, use a [API Recuperar oferta específica](./cloud-partner-portal-api-retrieve-specific-offer.md). |
 |  changedTime    | Hora em UTC quando a oferta foi modificada pela última vez                                                                              |

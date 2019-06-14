@@ -16,10 +16,10 @@ ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 086161b73e2a3e07df835394dc26082e12fbd434
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65963991"
 ---
 # <a name="automate-user-provisioning-and-deprovisioning-to-saas-applications-with-azure-active-directory"></a>Automatize o provisionamento e o desprovisionamento de usuários para aplicativos SaaS com o Azure Active Directory
@@ -91,7 +91,7 @@ Para obter informações sobre como conectar aplicativos de forma genérica que 
 
 Use o portal do Azure Active Directory para configurar o provisionamento de serviço para um aplicativo selecionado do Azure AD.
 
-1. Abra o  **[portal do Azure Active Directory](https://aad.portal.azure.com)**.
+1. Abra o  **[portal do Azure Active Directory](https://aad.portal.azure.com)** .
 
 1. Selecione **aplicativos empresariais** no painel esquerdo. Uma lista de todos os aplicativos configurados é mostrados.
 
@@ -202,13 +202,13 @@ A tabela a seguir resume os tempos de sincronização para cenários comuns de p
 | Configuração de escopo | Usuários, grupos e membros no escopo | Tempo de sincronização inicial | Tempo de sincronização incremental |
 | -------- | -------- | -------- | -------- |
 | Sincronizar somente usuários e grupos atribuídos |  Menos de 1.000 |  Menos de 30 minutos | Menos de 30 minutos |
-| Sincronizar somente usuários e grupos atribuídos |  1.000 a 10.000 | 142 a 708 minutos | Menos de 30 minutos |
-| Sincronizar somente usuários e grupos atribuídos |   10.000 a 100.000 | 1.170 a 2.340 minutos | Menos de 30 minutos |
+| Sincronizar somente usuários e grupos atribuídos |  1\.000 a 10.000 | 142 a 708 minutos | Menos de 30 minutos |
+| Sincronizar somente usuários e grupos atribuídos |   10\.000 a 100.000 | 1\.170 a 2.340 minutos | Menos de 30 minutos |
 | Sincronizar todos os usuários e grupos no Azure AD |  Menos de 1.000 | Menos de 30 minutos  | Menos de 30 minutos |
-| Sincronizar todos os usuários e grupos no Azure AD |  1.000 a 10.000 | Menos de 30 minutos a 120 minutos | Menos de 30 minutos |
-| Sincronizar todos os usuários e grupos no Azure AD |  10.000 a 100.000  | 713 minutos a 1.425 minutos | Menos de 30 minutos |
+| Sincronizar todos os usuários e grupos no Azure AD |  1\.000 a 10.000 | Menos de 30 minutos a 120 minutos | Menos de 30 minutos |
+| Sincronizar todos os usuários e grupos no Azure AD |  10\.000 a 100.000  | 713 minutos a 1.425 minutos | Menos de 30 minutos |
 | Sincronizar todos os usuários no Azure AD|  Menos de 1.000  | Menos de 30 minutos | Menos de 30 minutos |
-| Sincronizar todos os usuários no Azure AD | 1.000 a 10.000  | 43 a 86 minutos | Menos de 30 minutos |
+| Sincronizar todos os usuários no Azure AD | 1\.000 a 10.000  | 43 a 86 minutos | Menos de 30 minutos |
 
 
 Para a configuração **Sincronizar apenas usuários e grupos atribuídos**, use as fórmulas a seguir para determinar os valores mínimo e máximo aproximados esperados dos tempos de **sincronização inicial**:

@@ -17,16 +17,16 @@ ms.author: rolyon
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 312658bd653d94f3e1a32204b3c5ae4ae290558e
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65832731"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management-preview"></a>Criar um novo pacote de acesso no gerenciamento de direitos do AD do Azure (visualização)
 
 > [!IMPORTANT]
-> Gerenciamento de direitos do Active Directory (Azure AD) do Azure está atualmente em visualização pública.
+> No momento, o gerenciamento de direitos do Azure AD (Azure Active Directory) está em versão prévia pública.
 > Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
 > Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -48,13 +48,13 @@ O diagrama a seguir mostra o processo de alto nível para criar um novo pacote d
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 
-1. Clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. Clique em **Azure Active Directory** e, em seguida, clique em **Governança de Identidade**.
 
-1. No menu à esquerda, clique em **acessar pacotes**.
+1. No menu esquerdo, clique em **Pacotes de acesso**.
 
     ![Gerenciamento de direitos no portal do Azure](./media/entitlement-management-shared/elm-access-packages.png)
 
-1. Clique em **novo pacote de acesso**.
+1. Clique em **Novo pacote de acesso**.
 
 ## <a name="basics"></a>Noções básicas
 
@@ -112,7 +112,7 @@ Sobre o **diretiva** guia, você cria a primeira diretiva para especificar quem 
 
 [!INCLUDE [Entitlement management policy](../../../includes/active-directory-entitlement-management-policy.md)]
 
-## <a name="review--create"></a>Revisar + criar
+## <a name="review--create"></a>Examinar + criar
 
 Sobre o **revisar + criar** guia, você pode examinar as configurações e verificar se há erros de validação.
 

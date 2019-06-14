@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: danlep
 ms.openlocfilehash: bdf88657c11bdb5ab5bcde97c155780328065c7e
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65954462"
 ---
 # <a name="acr-tasks-reference-yaml"></a>Referência das Tarefas do ACR: YAML
@@ -79,33 +79,33 @@ az configure --defaults acr=myregistry
 
 Propriedades da tarefa normalmente são exibidos na parte superior de um `acr-task.yaml` de arquivo e são as propriedades globais que se aplicam durante a execução completa de etapas do. Algumas dessas propriedades globais podem ser substituídas em uma etapa individual.
 
-| Propriedade | Type | Opcional | Descrição | Substituição com suporte | Valor padrão |
+| Propriedade | Type | Opcional | DESCRIÇÃO | Substituição com suporte | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------------------ | ------------- |
-| `version` | string | Sim | A versão do arquivo `acr-task.yaml` conforme analisado pelo serviço de Tarefas do ACR. Enquanto as Tarefas do ACR se esforçam para manter a compatibilidade com versões anteriores, esse valor permite que as Tarefas do ACR mantenham a compatibilidade dentro de uma versão definida. Se não for especificado, assume como padrão para a versão mais recente. | Não | Nenhum |
+| `version` | cadeia de caracteres | Sim | A versão do arquivo `acr-task.yaml` conforme analisado pelo serviço de Tarefas do ACR. Enquanto as Tarefas do ACR se esforçam para manter a compatibilidade com versões anteriores, esse valor permite que as Tarefas do ACR mantenham a compatibilidade dentro de uma versão definida. Se não for especificado, assume como padrão para a versão mais recente. | Não | Nenhum |
 | `stepTimeout` | int (segundos) | Sim | O número máximo de segundos em que uma etapa pode ser executada. Se a propriedade é especificada em uma tarefa, ele define o padrão `timeout` propriedade de todas as etapas. Se o `timeout` propriedade é especificada em uma etapa, ela substitui a propriedade fornecida pela tarefa. | Sim | 600 (10 minutos) |
-| `workingDirectory` | string | Sim | O diretório de trabalho do contêiner durante o tempo de execução. Se a propriedade é especificada em uma tarefa, ele define o padrão `workingDirectory` propriedade de todas as etapas. Se especificado em uma etapa, ele substitui a propriedade fornecida pela tarefa. | Sim | `$HOME` |
+| `workingDirectory` | cadeia de caracteres | Sim | O diretório de trabalho do contêiner durante o tempo de execução. Se a propriedade é especificada em uma tarefa, ele define o padrão `workingDirectory` propriedade de todas as etapas. Se especificado em uma etapa, ele substitui a propriedade fornecida pela tarefa. | Sim | `$HOME` |
 | `env` | [string, string, ...] | Sim |  Matriz de cadeias de caracteres em `key=value` formato que define as variáveis de ambiente para a tarefa. Se a propriedade é especificada em uma tarefa, ele define o padrão `env` propriedade de todas as etapas. Se especificado em uma etapa, ele substitui quaisquer variáveis de ambiente herdadas da tarefa. | Nenhum |
 | `secrets` | [segredo, segredo,...] | Sim | Matriz de [segredo](#secret) objetos. | Nenhum |
 | `networks` | [network, rede,...] | Sim | Matriz de [rede](#network) objetos. | Nenhum |
 
-### <a name="secret"></a>secreta
+### <a name="secret"></a>secret
 
 O objeto de segredo tem as seguintes propriedades.
 
-| Propriedade | Type | Opcional | Descrição | Valor padrão |
+| Propriedade | Type | Opcional | DESCRIÇÃO | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------- |
-| `id` | string | Não | O identificador do segredo. | Nenhum |
-| `keyvault` | string | Sim | A URL de segredo do Cofre de chaves do Azure. | Nenhum |
-| `clientID` | string | Sim | ID do cliente do que o usuário atribuído gerenciado de identidade para recursos do Azure. | Nenhum |
+| `id` | cadeia de caracteres | Não | O identificador do segredo. | Nenhum |
+| `keyvault` | cadeia de caracteres | Sim | A URL de segredo do Cofre de chaves do Azure. | Nenhum |
+| `clientID` | cadeia de caracteres | Sim | ID do cliente do que o usuário atribuído gerenciado de identidade para recursos do Azure. | Nenhum |
 
 ### <a name="network"></a>rede
 
 O objeto de rede tem as seguintes propriedades.
 
-| Propriedade | Type | Opcional | Descrição | Valor padrão |
+| Propriedade | Type | Opcional | DESCRIÇÃO | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------- | 
-| `name` | string | Não | O nome da rede. | Nenhum |
-| `driver` | string | Sim | O driver para gerenciar a rede. | Nenhum |
+| `name` | cadeia de caracteres | Não | O nome da rede. | Nenhum |
+| `driver` | cadeia de caracteres | Sim | O driver para gerenciar a rede. | Nenhum |
 | `ipv6` | bool | Sim | Se a rede IPv6 está habilitada. | `false` |
 | `skipCreation` | bool | Sim | Se deseja ignorar a criação de rede. | `false` |
 | `isDefault` | bool | Sim | Se a rede é uma rede padrão fornecida com o registro de contêiner do Azure | `false` |
@@ -114,7 +114,7 @@ O objeto de rede tem as seguintes propriedades.
 
 As Tarefas do ACR dão suporte a três tipos de etapas. Cada tipo de etapa dá suporte a várias propriedades, detalhadas na seção para cada tipo de etapa.
 
-| Tipo de etapa | Descrição |
+| Tipo de etapa | DESCRIÇÃO |
 | --------- | ----------- |
 | [`build`](#build) | Compila uma imagem de contêiner usando a sintaxe `docker build` familiar. |
 | [`push`](#push) | Executa um `docker push` de imagens recentemente compiladas ou remarcadas em um registro de contêiner. Há suporte para o Registro de Contêiner do Azure, outros Registros privados e o Hub do Docker público. |
@@ -135,7 +135,7 @@ steps:
 
 O tipo de etapa `build` suporta os parâmetros na tabela a seguir. O tipo de etapa `build` também suporta todas as opções de construção do comando [docker build](https://docs.docker.com/engine/reference/commandline/build/), como `--build-arg` para definir variáveis de tempo de criação.
 
-| Parâmetro | Descrição | Opcional |
+| Parâmetro | DESCRIÇÃO | Opcional |
 | --------- | ----------- | :-------: |
 | `-t` &#124; `--image` | Define o `image:tag` totalmente qualificado da imagem compilada.<br /><br />Como as imagens podem ser utilizadas para validações de tarefas internas, como testes funcionais, nem todas as imagens exigem `push` para um Registro. No entanto, para criar uma instância de uma imagem dentro de uma execução de Tarefa, a imagem precisa de um nome para fazer referência.<br /><br />Ao contrário de `az acr build`, executando tarefas de ACR não fornece o comportamento de envio por push padrão. Com as Tarefas do ACR, o cenário padrão pressupõe a capacidade de compilar, validar e efetuar push de uma imagem. Confira [push](#push) para saber como efetuar push de imagens compiladas opcionalmente. | Sim |
 | `-f` &#124; `--file` | Especifica o Dockerfile passado para `docker build`. Se não for especificado, o Dockerfile padrão na raiz do contexto será considerado. Para especificar um Dockerfile, passe o nome do arquivo relativo à raiz do contexto. | Sim |
@@ -149,12 +149,12 @@ O tipo de etapa `build` dá suporte às propriedades a seguir. Encontrar detalhe
 | -------- | ---- | -------- |
 | `detach` | bool | Opcional |
 | `disableWorkingDirectoryOverride` | bool | Opcional |
-| `entryPoint` | string | Opcional |
+| `entryPoint` | cadeia de caracteres | Opcional |
 | `env` | [string, string, ...] | Opcional |
 | `expose` | [string, string, ...] | Opcional |
-| `id` | string | Opcional |
+| `id` | cadeia de caracteres | Opcional |
 | `ignoreErrors` | bool | Opcional |
-| `isolation` | string | Opcional |
+| `isolation` | cadeia de caracteres | Opcional |
 | `keep` | bool | Opcional |
 | `network` | objeto | Opcional |
 | `ports` | [string, string, ...] | Opcional |
@@ -166,7 +166,7 @@ O tipo de etapa `build` dá suporte às propriedades a seguir. Encontrar detalhe
 | `startDelay` | int (segundos) | Opcional |
 | `timeout` | int (segundos) | Opcional |
 | `when` | [string, string, ...] | Opcional |
-| `workingDirectory` | string | Opcional |
+| `workingDirectory` | cadeia de caracteres | Opcional |
 
 ### <a name="examples-build"></a>Exemplos: compilar
 
@@ -220,7 +220,7 @@ O tipo de etapa `push` dá suporte às propriedades a seguir. Encontrar detalhes
 | | | |
 | -------- | ---- | -------- |
 | `env` | [string, string, ...] | Opcional |
-| `id` | string | Opcional |
+| `id` | cadeia de caracteres | Opcional |
 | `ignoreErrors` | bool | Opcional |
 | `startDelay` | int (segundos) | Opcional |
 | `timeout` | int (segundos) | Opcional |
@@ -266,12 +266,12 @@ O tipo de etapa `cmd` dá suporte às propriedades a seguir:
 | -------- | ---- | -------- |
 | `detach` | bool | Opcional |
 | `disableWorkingDirectoryOverride` | bool | Opcional |
-| `entryPoint` | string | Opcional |
+| `entryPoint` | cadeia de caracteres | Opcional |
 | `env` | [string, string, ...] | Opcional |
 | `expose` | [string, string, ...] | Opcional |
-| `id` | string | Opcional |
+| `id` | cadeia de caracteres | Opcional |
 | `ignoreErrors` | bool | Opcional |
-| `isolation` | string | Opcional |
+| `isolation` | cadeia de caracteres | Opcional |
 | `keep` | bool | Opcional |
 | `network` | objeto | Opcional |
 | `ports` | [string, string, ...] | Opcional |
@@ -283,7 +283,7 @@ O tipo de etapa `cmd` dá suporte às propriedades a seguir:
 | `startDelay` | int (segundos) | Opcional |
 | `timeout` | int (segundos) | Opcional |
 | `when` | [string, string, ...] | Opcional |
-| `workingDirectory` | string | Opcional |
+| `workingDirectory` | cadeia de caracteres | Opcional |
 
 É possível encontrar detalhes sobre essas propriedades na seção [Propriedades das etapas das tarefas](#task-step-properties) deste artigo.
 
@@ -362,16 +362,16 @@ Usando o padrão `docker run` convenção de referência de imagem `cmd` pode ex
 
 Cada tipo de etapa dá suporte a várias propriedades apropriadas para seu tipo. A tabela a seguir define todas as propriedades das etapas disponíveis. Nem todos os tipos de etapas dão suporte a todas as propriedades. Para ver quais dessas propriedades estão disponíveis para cada tipo de etapa, confira as seções de referência de tipo de etapa [cmd](#cmd), [compilar](#build) e [efetuar push](#push).
 
-| Propriedade | Type | Opcional | Descrição | Valor padrão |
+| Propriedade | Type | Opcional | DESCRIÇÃO | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------- |
 | `detach` | bool | Sim | Se o contêiner deve ser desanexado quando está em execução. | `false` |
 | `disableWorkingDirectoryOverride` | bool | Sim | Se deseja desabilitar `workingDirectory` substituir a funcionalidade. Use isso em combinação com `workingDirectory` ter controle total sobre o diretório de trabalho do contêiner. | `false` |
-| `entryPoint` | string | Sim | Substitui o `[ENTRYPOINT]` do contêiner de uma etapa. | Nenhum |
+| `entryPoint` | cadeia de caracteres | Sim | Substitui o `[ENTRYPOINT]` do contêiner de uma etapa. | Nenhum |
 | `env` | [string, string, ...] | Sim | Matriz de cadeias de caracteres no formato `key=value` que definem as variáveis de ambiente para a etapa. | Nenhum |
 | `expose` | [string, string, ...] | Sim | Matriz de portas que são expostas a partir do contêiner. |  Nenhum |
-| [`id`](#example-id) | string | Sim | Identifica a etapa dentro da tarefa com exclusividade. Outras etapas na tarefa podem fazer referência ao `id` da etapa, como para verificação de dependência com `when`.<br /><br />O `id` também é o nome do contêiner em execução. Processos em execução em outros contêineres na tarefa podem consultar o `id` como seu nome de host DNS ou para acessá-lo com logs de docker [id], por exemplo. | `acb_step_%d`, onde `%d` é o índice de base 0 da etapa de cima para baixo no arquivo YAML |
+| [`id`](#example-id) | cadeia de caracteres | Sim | Identifica a etapa dentro da tarefa com exclusividade. Outras etapas na tarefa podem fazer referência ao `id` da etapa, como para verificação de dependência com `when`.<br /><br />O `id` também é o nome do contêiner em execução. Processos em execução em outros contêineres na tarefa podem consultar o `id` como seu nome de host DNS ou para acessá-lo com logs de docker [id], por exemplo. | `acb_step_%d`, onde `%d` é o índice de base 0 da etapa de cima para baixo no arquivo YAML |
 | `ignoreErrors` | bool | Sim | Se marcar a etapa como bem-sucedida, independentemente se ocorreu um erro durante a execução do contêiner. | `false` |
-| `isolation` | string | Sim | O nível de isolamento do contêiner. | `default` |
+| `isolation` | cadeia de caracteres | Sim | O nível de isolamento do contêiner. | `default` |
 | `keep` | bool | Sim | Se o contêiner da etapa deve ser mantido após a execução. | `false` |
 | `network` | objeto | Sim | Identifica uma rede na qual o contêiner é executado. | Nenhum |
 | `ports` | [string, string, ...] | Sim | Matriz de portas que são publicados do contêiner para o host. |  Nenhum |
@@ -384,8 +384,8 @@ Cada tipo de etapa dá suporte a várias propriedades apropriadas para seu tipo.
 | `startDelay` | int (segundos) | Sim | Número de segundos para atrasar a execução do contêiner. | 0 |
 | `timeout` | int (segundos) | Sim | Número máximo de segundos em que uma etapa poderá ser executada antes de terminar. | 600 |
 | [`when`](#example-when) | [string, string, ...] | Sim | Configura a dependência de uma etapa em relação a uma ou mais etapas diferentes dentro da tarefa. | Nenhum |
-| `user` | string | Sim | O nome de usuário ou UID de um contêiner | Nenhum |
-| `workingDirectory` | string | Sim | Define o diretório de trabalho para uma etapa. Por padrão, as Tarefas do ACR criam um diretório raiz como o diretório de trabalho. No entanto, se o build tiver várias etapas, as etapas anteriores poderão compartilhar artefatos com as etapas posteriores se o mesmo diretório de trabalho for especificado. | `$HOME` |
+| `user` | cadeia de caracteres | Sim | O nome de usuário ou UID de um contêiner | Nenhum |
+| `workingDirectory` | cadeia de caracteres | Sim | Define o diretório de trabalho para uma etapa. Por padrão, as Tarefas do ACR criam um diretório raiz como o diretório de trabalho. No entanto, se o build tiver várias etapas, as etapas anteriores poderão compartilhar artefatos com as etapas posteriores se o mesmo diretório de trabalho for especificado. | `$HOME` |
 
 ### <a name="examples-task-step-properties"></a>Exemplos: Propriedades das etapas das tarefas
 

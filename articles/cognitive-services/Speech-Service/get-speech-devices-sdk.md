@@ -12,10 +12,10 @@ ms.date: 05/02/2019
 ms.author: erhopf
 ms.custom: seodec18
 ms.openlocfilehash: b9a0890000cda0b3663ac29bee61fc1c702f6254
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65410703"
 ---
 # <a name="get-the-cognitive-services-speech-devices-sdk"></a>Obter o SDK de Dispositivos de Fala dos Serviços Cognitivos
@@ -24,7 +24,7 @@ O SDK de dispositivos de fala é uma biblioteca de pretuned projetada para traba
 
 ## <a name="choose-a-development-kit"></a>Escolha um kit de desenvolvimento
 
-|Dispositivos|Especificação|Descrição|Cenários|
+|Dispositivos|Especificação|DESCRIÇÃO|Cenários|
 |--|--|--|--|
 |[Kit de desenvolvimento de áudio Roobo inteligente](https://ddk.roobo.com)</br>[Programa de instalação](speech-devices-sdk-roobo-v1.md) / [guia de início rápido](speech-devices-sdk-android-quickstart.md)![Roobo inteligente Kit de desenvolvimento de áudio](media/speech-devices-sdk/device-roobo-v1.jpg)|Wi-Fi de matriz do mic, SOC ARM, 7, a saída de áudio, e/s. </br>Android|O SDK de dispositivos fala primeiro para se adaptar a frente do SDK, de processamento para o desenvolvimento de cenários de transcrição e fala de alta qualidade e Microsoft Mic Array|Transcrição de conversa, alto-falante inteligente, agente, o dispositivo portátil de voz|
 |[Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/)![Azure Kinect DK](media/speech-devices-sdk/device-azure-kinect-dk.jpg)|Câmeras de RGB de matriz do mic e a profundidade 7. </br>Windows/Linux|Um kit de desenvolvedor com sensores avançados a inteligência artificial (AI) para criar modelos de fala e visão do computador sofisticados. Ele combina uma câmera de microfone espacial do melhor da matriz e a profundidade com uma câmera de vídeo e o sensor de orientação — tudo em um dispositivo pequeno com vários modos de opções e SDKs para acomodar uma variedade de tipos de computação.|Construção de inteligente de transcrição, robótica, de conversa|

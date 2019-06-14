@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: rogarana
 ms.openlocfilehash: e7e57c6a821731874dcb1d99a3133b6ede1da26e
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66148170"
 ---
 **Discos de máquina de virtual não gerenciados Premium: Limites por conta**
@@ -25,8 +25,8 @@ ms.locfileid: "66148170"
 
 | Tipo de disco de armazenamento Premium | P10 | P20 | P30 | P40 | P50 |
 | --- | --- | --- | --- | --- | --- |
-| Tamanho do disco |128 GiB |512 GiB |1.024 giB (1 TB) |2.048 giB (2 TB)|4095 giB (4 TB)|
-| Máximo de IOPS por disco |500 |2.300 |5.000 |7.500 |7.500 |
+| Tamanho do disco |128 GiB |512 GiB |1\.024 giB (1 TB) |2\.048 giB (2 TB)|4095 giB (4 TB)|
+| Máximo de IOPS por disco |500 |2\.300 |5\.000 |7\.500 |7\.500 |
 | Taxa de transferência máxima por disco |100 MB/s | 150 MB/s |200 MB/s |250 MB/s |250 MB/s |
 | Número máximo de discos por conta de armazenamento |280 |70 |35 | 17 | 8 |
 
@@ -34,6 +34,6 @@ ms.locfileid: "66148170"
 
 | Resource | Limite padrão |
 | --- | --- |
-| Máximo de IOPS por VM |80.000 IOPS com VM GS5 |
-| Taxa de transferência máxima por VM |2.000 MB/s com VM GS5 |
+| Máximo de IOPS por VM |80\.000 IOPS com VM GS5 |
+| Taxa de transferência máxima por VM |2\.000 MB/s com VM GS5 |
 

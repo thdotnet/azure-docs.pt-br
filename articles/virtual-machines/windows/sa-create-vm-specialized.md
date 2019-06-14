@@ -17,11 +17,11 @@ ms.date: 05/23/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
 ms.openlocfilehash: f2110a749c41f59b11a6d400faa2e42e751305fe
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60251070"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64693826"
 ---
 # <a name="create-a-vm-from-a-specialized-vhd-in-a-storage-account"></a>Criar uma VM a partir de um VHD especializado em uma conta de armazenamento
 
@@ -126,7 +126,7 @@ Desaloque a VM para liberar o VHD a ser copiado.
 Stop-AzVM -ResourceGroupName myResourceGroup -Name myVM
 ```
 
-O **Status** da VM no Portal do Azure muda de **Parado** para **Parado (desalocado)**.
+O **Status** da VM no Portal do Azure muda de **Parado** para **Parado (desalocado)** .
 
 ### <a name="get-the-storage-account-urls"></a>Obter as URLs da conta de armazenamento
 Você precisará das URLs das contas de armazenamento de origem e de destino. As URLs serão semelhantes a: `https://<storageaccount>.blob.core.windows.net/<containerName>/`. Se você já souber os nomes da conta de armazenamento e do contêiner, basta substituir as informações entre colchetes para criar sua URL. 

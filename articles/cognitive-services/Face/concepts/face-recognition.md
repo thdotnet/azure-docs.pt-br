@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: pafarley
 ms.openlocfilehash: fa38c492530cb8938e49bc15e13fdd39ed5b6f1c
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65890890"
 ---
 # <a name="face-recognition-concepts"></a>Conceitos de reconhecimento facial
@@ -25,7 +25,7 @@ Este artigo explica os conceitos das operações de reconhecimento de face verif
 
 As operações de reconhecimento usam principalmente as seguintes estruturas de dados. Esses objetos são armazenados na nuvem e podem ser referenciados por suas cadeias de caracteres de ID. Cadeias de caracteres de ID sempre são exclusivas dentro de uma assinatura. Campos de nome podem ser duplicado.
 
-|NOME|Descrição|
+|NOME|DESCRIÇÃO|
 |:--|:--|
 |DetectedFace| Essa representação única face recuperada com o [detecção facial](../Face-API-How-to-Topics/HowtoDetectFacesinImage.md) operação. Sua ID expira 24 horas após sua criação.|
 |PersistedFace| Quando objetos DetectedFace são adicionados a um grupo, como FaceList ou pessoa, eles se tornam objetos PersistedFace. Eles podem ser [recuperados](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524c) a qualquer hora e não expiram.|
@@ -37,7 +37,7 @@ As operações de reconhecimento usam principalmente as seguintes estruturas de 
 
 Esta seção fornece detalhes sobre como as quatro operações de reconhecimento usam as estruturas de dados descritas anteriormente. Para obter uma descrição de cada operação de reconhecimento ampla, consulte [visão geral](../Overview.md).
 
-### <a name="verify"></a>Verifique
+### <a name="verify"></a>Verificar
 
 O [Verify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a) operação usa uma ID de face de DetectedFace ou PersistedFace e outro face ID ou um objeto Person e determina se eles pertencem à mesma pessoa. Se você passar um objeto Person, você pode, opcionalmente, passar um PersonGroup ao qual essa pessoa pertence para melhorar o desempenho.
 

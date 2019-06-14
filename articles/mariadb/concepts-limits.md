@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 04/15/2019
 ms.openlocfilehash: b78671cc61a4fe755b908ed9f71052cbd0a70b38
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65550501"
 ---
 # <a name="limitations-in-azure-database-for-mariadb"></a>Limitações no Banco de Dados do Azure para o MariaDB
@@ -27,13 +27,13 @@ O número máximo de conexões por tipo de preço e vCores é o seguinte:
 |Uso geral| 4| 625|
 |Uso geral| 8| 1250|
 |Uso geral| 16| 2500|
-|Uso geral| 32| 5.000|
+|Uso geral| 32| 5\.000|
 |Uso geral| 64| 10000|
-|Memória Otimizada| 2| 600|
-|Memória Otimizada| 4| 1250|
-|Memória Otimizada| 8| 2500|
-|Memória Otimizada| 16| 5.000|
-|Memória Otimizada| 32| 10000|
+|Otimizado para memória| 2| 600|
+|Otimizado para memória| 4| 1250|
+|Otimizado para memória| 8| 2500|
+|Otimizado para memória| 16| 5\.000|
+|Otimizado para memória| 32| 10000|
 
 Quando as conexões excederem o limite, você poderá receber o seguinte erro:
 > ERRO 1040 (08004): Muitas conexões
@@ -77,7 +77,7 @@ Quando as conexões excederem o limite, você poderá receber o seguinte erro:
 - Ao usar o recurso PITR, o novo servidor é criado com as mesmas configurações nas quais o servidor está baseado.
 - Não há suporte para restaurar um servidor eliminado.
 
-### <a name="subscription-management"></a>Gerenciamento de assinatura
+### <a name="subscription-management"></a>Gerenciamento de assinaturas
 - Não há suporte para mover dinamicamente servidores criados previamente entre a assinatura e o grupo de recursos.
 
 ### <a name="vnet-service-endpoints"></a>Ponto de extremidade de serviço VNet

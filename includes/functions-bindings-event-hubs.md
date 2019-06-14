@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 03/05/2019
 ms.author: cshoe
 ms.openlocfilehash: 421e0db48f045c5cbce52a0641902e6d2a11276e
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66132454"
 ---
 ## <a name="trigger"></a>Gatilho
@@ -22,7 +22,7 @@ Cada instância de uma função de evento disparado é apoiada por um único [Ev
 Por exemplo, considere um Hub de eventos da seguinte maneira:
 
 * 10 partições
-* 1.000 eventos distribuídos uniformemente entre todas as partições, com 100 mensagens em cada partição
+* 1\.000 eventos distribuídos uniformemente entre todas as partições, com 100 mensagens em cada partição
 
 Quando sua função é habilitada pela primeira vez, há apenas uma instância da função. Vamos chamar a primeira instância de função `Function_0`. O `Function_0` função tem uma única instância do [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor) que contém uma concessão em todas as partições de dez. Esta instância está lendo eventos das partições 0 a 9. Deste ponto em diante, uma destas opções ocorre:
 

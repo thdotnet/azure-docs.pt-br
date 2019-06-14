@@ -9,10 +9,10 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/11/2019
 ms.openlocfilehash: ea9bea8b314d00db87ad7addacc49a976e0da08e
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65550478"
 ---
 # <a name="reference---iot-hub-quotas-and-throttling"></a>Referência - Cotas e limitação do Hub IoT
@@ -34,13 +34,13 @@ A tabela a seguir mostra as limitações impostas. Os valores referem-se a um hu
 | Restrição | Gratuito, B1 e S1 | B2 e S2 | B3 e S3 | 
 | -------- | ------- | ------- | ------- |
 | [Operações de registro de identidade](#identity-registry-operations-throttle) (criar, recuperar, listar, atualizar e excluir) | 1,67/s/unidade (100/min/unidade) | 1,67/s/unidade (100/min/unidade) | 83.33/SEC/Unit (5.000/min/unidade) |
-| [Novas conexões de dispositivo](#device-connections-throttle) (esse limite se aplica à taxa de _novas conexões_, não o número total de conexões) | Máximo de 100/s ou 12/s/unidade <br/> Por exemplo, duas unidades de S1 são 2\*12 = 24 novas conexões/s, mas você tem pelo menos 100 novas conexões s em suas unidades. Com nove unidades S1 você tem 108/s novas conexões/s (9\*12) em suas uniddes. | 120 novas conexões/s/unidade | 6.000 novas conexões/s/unidade |
-| Envios do dispositivo para a nuvem | Máximo de 100/s ou 12/s/unidade <br/> Por exemplo, duas unidades de S1 são 2\*12 = 24/s, mas você tem pelo menos 100/s em suas unidades. Com nove unidades S1 você tem 108/s (9\*12) em suas unidades. | 120/s/unidade | 6.000/s/unidade |
+| [Novas conexões de dispositivo](#device-connections-throttle) (esse limite se aplica à taxa de _novas conexões_, não o número total de conexões) | Máximo de 100/s ou 12/s/unidade <br/> Por exemplo, duas unidades de S1 são 2\*12 = 24 novas conexões/s, mas você tem pelo menos 100 novas conexões s em suas unidades. Com nove unidades S1 você tem 108/s novas conexões/s (9\*12) em suas uniddes. | 120 novas conexões/s/unidade | 6\.000 novas conexões/s/unidade |
+| Envios do dispositivo para a nuvem | Máximo de 100/s ou 12/s/unidade <br/> Por exemplo, duas unidades de S1 são 2\*12 = 24/s, mas você tem pelo menos 100/s em suas unidades. Com nove unidades S1 você tem 108/s (9\*12) em suas unidades. | 120/s/unidade | 6\.000/s/unidade |
 | Envios de nuvem para dispositivo<sup>1</sup> | 1,67/s/unidade (100/min/unidade) | 1,67/s/unidade (100/min/unidade) | 83.33/SEC/Unit (5.000/min/unidade) |
 | Recebimentos de nuvem para dispositivo<sup>1</sup> <br/> (somente quando o dispositivo usar HTTPS)| 16.67/SEC/Unit (1.000/min/unidade) | 16.67/SEC/Unit (1.000/min/unidade) | 833.33/SEC/Unit (50.000/min/unidade) |
-| Upload de arquivo | 1,67 notificações de carregamento de arquivo/s/unidade (100/min/unidade) | 1,67 notificações de carregamento de arquivo/s/unidade (100/min/unidade) | arquivo 83,33 notificações de upload/s/unidade (5.000/min/unidade) |
+| Upload de arquivos | 1,67 notificações de carregamento de arquivo/s/unidade (100/min/unidade) | 1,67 notificações de carregamento de arquivo/s/unidade (100/min/unidade) | arquivo 83,33 notificações de upload/s/unidade (5.000/min/unidade) |
 | Métodos diretos<sup>1</sup> | 160KB/seg/unidade<sup>2</sup> | 480KB/seg/unidade<sup>2</sup> | 24MB/seg/unidade<sup>2</sup> | 
-| Consultas | 20/min/unidade | 20/min/unidade | 1.000/min/unidade |
+| Consultas | 20/min/unidade | 20/min/unidade | 1\.000/min/unidade |
 | Leituras de (dispositivos e módulos) gêmeos <sup>1</sup> | 100/s | Máximo de 100/s ou 10/s/unidade | 500/s/unidade |
 | Atualizações de (dispositivo e módulo) gêmeos <sup>1</sup> | 50/s | Máximo de 50/s ou 5/s/unidade | 250/s/unidade |
 | Operações de trabalhos<sup>1</sup> <br/> (criar, atualizar, listar, excluir) | 1,67/s/unidade (100/min/unidade) | 1,67/s/unidade (100/min/unidade) | 83.33/SEC/Unit (5.000/min/unidade) |
@@ -76,7 +76,7 @@ IoT Hub impõe outros limites operacionais:
 | Operação | Limite |
 | --------- | ----- |
 | Dispositivos | O número máximo de dispositivos que você pode se conectar a um único hub IoT é 1.000.000. A única maneira de aumentar esse limite é contatar [Microsoft Support](https://azure.microsoft.com/support/options/).| 
-| URIs de upload de arquivos | URIs de SAS de 10.000 podem estar fora de uma conta de armazenamento ao mesmo tempo. <br/>  10 URIs de SAS/dispositivo podem estar fora ao mesmo tempo. |
+| URIs de upload de arquivos | URIs de SAS de 10.000 podem estar fora de uma conta de armazenamento ao mesmo tempo. <br/> 10 URIs de SAS/dispositivo podem estar fora ao mesmo tempo. |
 | Trabalhos<sup>1</sup> | Máximo de trabalhos simultâneos é 1 (para gratuito e S1), 5 (para S2) e 10 (para S3). No entanto, a máximo simultâneas [trabalhos de importação/exportação do dispositivo](iot-hub-bulk-identity-mgmt.md) é 1 para todas as camadas. <br/>Histórico de trabalhos é retido por até 30 dias. |
 | Pontos de extremidade adicionais | Hubs SKU pagos podem ter 10 pontos de extremidade adicionais. Hubs SKU gratuitos podem ter um ponto de extremidade adicional. |
 | Regras de roteamento de mensagem | Hubs SKU pagos podem ter 100 regras de roteamento. Hubs SKU gratuitos podem ter cinco regras de roteamento. |

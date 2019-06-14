@@ -10,12 +10,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 5df4c9dfe18b02ade3a37717da9c68acbfcf1853
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 40035b946d0f2b09929f8c7f1ac27231546e6746
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61480853"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64692909"
 ---
 # <a name="develop-net-standard-user-defined-functions-for-azure-stream-analytics-edge-jobs-preview"></a>Desenvolver funções definidas pelo usuário do .NET Standard para trabalhos do Edge do Azure Stream Analytics (versão prévia)
 
@@ -38,13 +38,13 @@ O formato de qualquer pacote UDF possui o caminho `/UserCustomCode/CLR/*`. As DL
 
 |**Tipo de UDF (C#)**  |**Tipo do Azure Stream Analytics**  |
 |---------|---------|
-|longo  |  bigint   |
+|long  |  bigint   |
 |double  |  double   |
-|string  |  nvarchar(max)   |
+|cadeia de caracteres  |  nvarchar(max)   |
 |dateTime  |  dateTime   |
 |struct  |  IRecord   |
 |objeto  |  IRecord   |
-|Matriz<object>  |  IArray   |
+|Matriz\<objeto >  |  IArray   |
 |dictionary<string, object>  |  IRecord   |
 
 ## <a name="codebehind"></a>CodeBehind

@@ -8,10 +8,10 @@ ms.topic: reference
 ms.service: blueprints
 manager: carmonm
 ms.openlocfilehash: dc72113a8f5ed978d64d35c43e94dc9e19e4cdb1
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65209426"
 ---
 # <a name="functions-for-use-with-azure-blueprints"></a>Funções para uso com as especificações técnicas do Azure
@@ -35,9 +35,9 @@ Retorna que um objeto de propriedades preenchido com esse artefato do blueprint 
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| artifactName |Sim |string |O nome de um artefato de blueprint. |
+| artifactName |Sim |cadeia de caracteres |O nome de um artefato de blueprint. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -107,14 +107,14 @@ Um artefato de modelo do Resource Manager com a ID _myTemplateArtifact_ propried
 
 Alguns exemplos de recuperação de dados das _myTemplateArtifact_ exemplo são:
 
-| Expressão | Type | Value |
+| Expression | Type | Value |
 |:---|:---|:---|
 |`[artifacts("myTemplateArtifact").outputs.myArray]` | Matriz | \["first", "second"\] |
-|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | String | "first" |
-|`[artifacts("myTemplateArtifact").outputs.myString]` | String | "meu valor de cadeia de caracteres" |
+|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | Cadeia de caracteres | "first" |
+|`[artifacts("myTemplateArtifact").outputs.myString]` | Cadeia de caracteres | "meu valor de cadeia de caracteres" |
 |`[artifacts("myTemplateArtifact").outputs.myObject]` | Object | { "myproperty": "my value", "anotherProperty": true } |
-|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | String | "meu valor" |
-|`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Booleano | True |
+|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | Cadeia de caracteres | "meu valor" |
+|`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Bool | True |
 
 ## <a name="concat"></a>concat
 
@@ -124,10 +124,10 @@ Combina vários valores de cadeia de caracteres e retorna o resultado concatenad
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| string1 |Sim |string |O primeiro valor de concatenação. |
-| argumentos adicionais |Não |string |Valores adicionais em ordem sequencial para concatenação |
+| string1 |Sim |cadeia de caracteres |O primeiro valor de concatenação. |
+| argumentos adicionais |Não |cadeia de caracteres |Valores adicionais em ordem sequencial para concatenação |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -149,9 +149,9 @@ Retorna um valor de parâmetro de especificações técnicas. O nome do parâmet
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| parameterName |Sim |string |O nome do parâmetro a retornar. |
+| parameterName |Sim |cadeia de caracteres |O nome do parâmetro a retornar. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -270,9 +270,9 @@ Retorna um objeto que representa o artefato de grupo de recursos especificado. A
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| placeholderName |Sim |string |O nome do espaço reservado do artefato de grupo de recursos para retornar. |
+| placeholderName |Sim |cadeia de caracteres |O nome do espaço reservado do artefato de grupo de recursos para retornar. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -324,7 +324,7 @@ Em seguida, use o `resourceGroups()` função a partir do contexto de qualquer a
 }
 ```
 
-## <a name="subscription"></a>assinatura
+## <a name="subscription"></a>subscription
 
 `subscription()`
 

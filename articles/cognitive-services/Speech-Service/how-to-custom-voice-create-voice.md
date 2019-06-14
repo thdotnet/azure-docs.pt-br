@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: erhopf
 ms.openlocfilehash: 6189ea2866d1c16f994179df0179e29353e6c47d
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65410706"
 ---
 # <a name="create-a-custom-voice"></a>Criar uma voz personalizadas
@@ -47,8 +47,8 @@ A tabela a seguir mostra os estados de processamento dos conjuntos de dados impo
 | Estado | Significado |
 | ----- | ------- |
 | Processando | O conjunto de dados foi recebido e está sendo processado. |
-| Bem-sucedido | Seu conjunto de dados tiver sido validado e agora pode ser usado para criar um modelo de voz. |
-| Falhou | O conjunto de dados falhou durante o processamento devido a muitos motivos, por exemplo, erros de arquivo, problemas de dados ou problemas de rede. |
+| Bem-sucedida | Seu conjunto de dados tiver sido validado e agora pode ser usado para criar um modelo de voz. |
+| Com falha | O conjunto de dados falhou durante o processamento devido a muitos motivos, por exemplo, erros de arquivo, problemas de dados ou problemas de rede. |
 
 Após a conclusão da validação, você pode ver o número total de declarações correspondentes para cada um dos conjuntos de dados na **declarações** coluna. Se você tiver selecionado o tipo de dados requer segmentação de áudio longa, esta coluna reflete somente as declarações que podemos ter segmentados para você com base em suas transcrições ou por meio do serviço de transcrição de fala. Além disso, você pode baixar o conjunto de dados validado para exibir os resultados de detalhe das declarações que foram importados com êxito e suas transcrições de mapeamento. Dica: segmentação de áudio longa pode levar mais de uma hora para concluir o processamento de dados.
 
@@ -89,8 +89,8 @@ O status mostrado reflete o processo de conversão de seu conjunto de dados em u
 | Estado | Significado |
 | ----- | ------- |
 | Processando | Seu modelo de voz está sendo criado. |
-| Bem-sucedido | Seu modelo de voz tiver sido criado e pode ser implantado. |
-| Falhou | Seu modelo de voz falhou no treinamento devido a muitos motivos, problemas de rede ou problemas de dados não vistos por exemplo. |
+| Bem-sucedida | Seu modelo de voz tiver sido criado e pode ser implantado. |
+| Com falha | Seu modelo de voz falhou no treinamento devido a muitos motivos, problemas de rede ou problemas de dados não vistos por exemplo. |
 
 O tempo de treinamento varia dependendo do volume de dados de áudio processados. Intervalos de tempo típicos variam de aproximadamente 30 minutos para centenas de enunciados a 40 horas para 20.000 enunciados. Depois que o treinamento do modelo for bem-sucedida, você pode começar a testá-lo.
 

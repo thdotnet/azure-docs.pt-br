@@ -9,15 +9,15 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/10/2017
 ms.openlocfilehash: 0bfb66f54ec09e86b46a41499211e93a0083e8d1
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65779922"
 ---
 # <a name="set-up-x509-security-in-your-azure-iot-hub"></a>Configurar a segurança de X.509 em seu Hub IoT do Azure
 
-Este tutorial simula as etapas necessárias para proteger seu Hub IoT do Azure usando a *Autenticação de certificado X.509*. Para fins ilustrativos, mostraremos como usar a ferramenta de software livre OpenSSL para criar certificados localmente no seu computador Windows. É recomendável que você use este tutorial apenas para fins de teste. Para o ambiente de produção, você deve adquirir os certificados de uma *autoridade de certificado raiz (AC)*.
+Este tutorial simula as etapas necessárias para proteger seu Hub IoT do Azure usando a *Autenticação de certificado X.509*. Para fins ilustrativos, mostraremos como usar a ferramenta de software livre OpenSSL para criar certificados localmente no seu computador Windows. É recomendável que você use este tutorial apenas para fins de teste. Para o ambiente de produção, você deve adquirir os certificados de uma *autoridade de certificado raiz (AC)* .
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -52,7 +52,7 @@ Estas etapas mostram como adicionar uma nova Autoridade de certificação ao Hub
 
 4. Após receber uma notificação de que o certificado foi carregado com êxito, clique em **Salvar**.
 
-    ![Carregar certificado](./media/iot-hub-security-x509-get-started/add-new-cert.png)  
+    ![Carregar um certificado](./media/iot-hub-security-x509-get-started/add-new-cert.png)  
 
    Isso exibirá o certificado na lista **Gerenciador de Certificados**. Observe que o **STATUS** desse certificado é *Não verificado*.
 
@@ -92,7 +92,7 @@ Em seguida, mostraremos como criar um aplicativo C# para simular o dispositivo X
 
    ![Criar projeto de dispositivo X.509 no Visual Studio](./media/iot-hub-security-x509-get-started/create-device-project.png)
 
-2. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **SimulateX509Device** e clique em **Gerenciar Pacotes NuGet...**. Na janela Gerenciador de Pacotes NuGet, selecione **Procurar** e pesquise por **microsoft.azure.devices.client**. Selecione **Instalar** para instalar o pacote **Microsoft.Azure.Devices.Client** e aceite os termos de uso. Esse procedimento baixa, instala e adiciona uma referência ao pacote NuGet do SDK do dispositivo IoT do Azure e suas dependências.
+2. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **SimulateX509Device** e clique em **Gerenciar Pacotes NuGet...** . Na janela Gerenciador de Pacotes NuGet, selecione **Procurar** e pesquise por **microsoft.azure.devices.client**. Selecione **Instalar** para instalar o pacote **Microsoft.Azure.Devices.Client** e aceite os termos de uso. Esse procedimento baixa, instala e adiciona uma referência ao pacote NuGet do SDK do dispositivo IoT do Azure e suas dependências.
 
    ![Adicionar o pacote do NuGet do SDK de dispositivo no Visual Studio](./media/iot-hub-security-x509-get-started/device-sdk-nuget.png)
 
@@ -115,7 +115,7 @@ Em seguida, mostraremos como criar um aplicativo C# para simular o dispositivo X
         private static Random rnd = new Random();
     ```
 
-     Use o nome de dispositivo fácil usado na seção anterior em vez do espaço reservado _<your_device_id >_.
+     Use o nome de dispositivo fácil usado na seção anterior em vez do espaço reservado _<your_device_id >_ .
 
 5. Adicione a função a seguir para criar números aleatórios de temperatura e umidade e envie esses valores para o hub:
 

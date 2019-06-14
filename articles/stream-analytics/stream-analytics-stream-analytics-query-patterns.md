@@ -9,10 +9,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/16/2019
 ms.openlocfilehash: f6971038be7404850d958de67eb4755ae7d21a29
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65761963"
 ---
 # <a name="query-examples-for-common-stream-analytics-usage-patterns"></a>Exemplos de consulta para padrões de uso do Stream Analytics
@@ -35,7 +35,7 @@ JSON e Avro podem conter tipos complexos, como matrizes ou objetos aninhados (re
 
 **Entrada**:
 
-| Faça | Time | Peso |
+| Faça | Hora | Peso |
 | --- | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |"1000" |
 | Honda |2015-01-01T00:00:02.0000000Z |"2000" |
@@ -68,7 +68,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Entrada**:
 
-| Faça | PlacaDeCarro | Time |
+| Faça | PlacaDeCarro | Hora |
 | --- | --- | --- |
 | Honda |ABC-123 |2015-01-01T00:00:01.0000000Z |
 | Toyota |AAA-999 |2015-01-01T00:00:02.0000000Z |
@@ -76,7 +76,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Saída**:
 
-| Faça | PlacaDeCarro | Time |
+| Faça | PlacaDeCarro | Hora |
 | --- | --- | --- |
 | Toyota |AAA-999 |2015-01-01T00:00:02.0000000Z |
 | Nissan |ABC-369 |2015-01-01T00:00:03.0000000Z |
@@ -100,7 +100,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Entrada**:
 
-| Faça | Time |
+| Faça | Hora |
 | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |
 | Toyota |2015-01-01T00:00:02.0000000Z |
@@ -108,7 +108,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Saída**:
 
-| CarrosPassaram | Time |
+| CarrosPassaram | Hora |
 | --- | --- |
 | 1 Honda |2015-01-01T00:00:10.0000000Z |
 | 2 Toyotas |2015-01-01T00:00:10.0000000Z |
@@ -137,7 +137,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Entrada**:
 
-| Faça | Time |
+| Faça | Hora |
 | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |
 | Honda |2015-01-01T00:00:02.0000000Z |
@@ -147,7 +147,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Saída1**:
 
-| Faça | Time |
+| Faça | Hora |
 | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |
 | Honda |2015-01-01T00:00:02.0000000Z |
@@ -157,7 +157,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Saída2**:
 
-| Faça | Time | Count |
+| Faça | Hora | Contagem |
 | --- | --- | --- |
 | Toyota |2015-01-01T00:00:10.0000000Z |3 |
 
@@ -211,7 +211,7 @@ Por exemplo:
 
 **Entrada**:
 
-| Faça | Time |
+| Faça | Hora |
 | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |
 | Honda |2015-01-01T00:00:02.0000000Z |
@@ -221,7 +221,7 @@ Por exemplo:
 
 **Saída:**
 
-| CountMake | Time |
+| CountMake | Hora |
 | --- | --- |
 | 2 |2015-01-01T00:00:02.000Z |
 | 1 |2015-01-01T00:00:04.000Z |
@@ -238,7 +238,7 @@ GROUP BY
 ```
 
 
-**Explicação:**
+**Explicação:** 
 **COUNT(DISTINCT Marca)** retorna o número de valores distintos na coluna **Marca** dentro de uma janela de tempo.
 
 ## <a name="query-example-determine-if-a-value-has-changed"></a>Exemplo de consulta: Determinar se um valor foi alterado
@@ -247,14 +247,14 @@ GROUP BY
 
 **Entrada**:
 
-| Faça | Time |
+| Faça | Hora |
 | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |
 | Toyota |2015-01-01T00:00:02.0000000Z |
 
 **Saída**:
 
-| Faça | Time |
+| Faça | Hora |
 | --- | --- |
 | Toyota |2015-01-01T00:00:02.0000000Z |
 
@@ -278,7 +278,7 @@ GROUP BY
 
 **Entrada**:
 
-| PlacaDeCarro | Faça | Time |
+| PlacaDeCarro | Faça | Hora |
 | --- | --- | --- |
 | DXE 5291 |Honda |2015-07-27T00:00:05.0000000Z |
 | YZK 5704 |Ford |2015-07-27T00:02:17.0000000Z |
@@ -290,7 +290,7 @@ GROUP BY
 
 **Saída**:
 
-| PlacaDeCarro | Faça | Time |
+| PlacaDeCarro | Faça | Hora |
 | --- | --- | --- |
 | DXE 5291 |Honda |2015-07-27T00:00:05.0000000Z |
 | QYF 9358 |Honda |2015-07-27T00:12:02.0000000Z |
@@ -310,7 +310,7 @@ GROUP BY
 
 Agora vamos alterar o problema e localize o primeiro carro de determinada marca em cada intervalo de 10 minutos.
 
-| PlacaDeCarro | Faça | Time |
+| PlacaDeCarro | Faça | Hora |
 | --- | --- | --- |
 | DXE 5291 |Honda |2015-07-27T00:00:05.0000000Z |
 | YZK 5704 |Ford |2015-07-27T00:02:17.0000000Z |
@@ -337,7 +337,7 @@ Agora vamos alterar o problema e localize o primeiro carro de determinada marca 
 
 **Entrada**:
 
-| PlacaDeCarro | Faça | Time |
+| PlacaDeCarro | Faça | Hora |
 | --- | --- | --- |
 | DXE 5291 |Honda |2015-07-27T00:00:05.0000000Z |
 | YZK 5704 |Ford |2015-07-27T00:02:17.0000000Z |
@@ -349,7 +349,7 @@ Agora vamos alterar o problema e localize o primeiro carro de determinada marca 
 
 **Saída**:
 
-| PlacaDeCarro | Faça | Time |
+| PlacaDeCarro | Faça | Hora |
 | --- | --- | --- |
 | VFE 1616 |Toyota |2015-07-27T00:09:31.0000000Z |
 | MDR 6128 |BMW |2015-07-27T00:13:45.0000000Z |
@@ -386,7 +386,7 @@ Por exemplo, dois carros consecutivos da mesma marca entraram na rodovia nos úl
 
 **Entrada**:
 
-| Faça | PlacaDeCarro | Time |
+| Faça | PlacaDeCarro | Hora |
 | --- | --- | --- |
 | Honda |ABC-123 |2015-01-01T00:00:01.0000000Z |
 | Honda |AAA-999 |2015-01-01T00:00:02.0000000Z |
@@ -395,7 +395,7 @@ Por exemplo, dois carros consecutivos da mesma marca entraram na rodovia nos úl
 
 **Saída**:
 
-| Faça | Time | PlacaDoCarroAtual | PlacaDoPrimeiroCarro | HoraDoPrimeiroCarro |
+| Faça | Hora | PlacaDoCarroAtual | PlacaDoPrimeiroCarro | HoraDoPrimeiroCarro |
 | --- | --- | --- | --- | --- |
 | Honda |2015-01-01T00:00:02.0000000Z |AAA-999 |ABC-123 |2015-01-01T00:00:01.0000000Z |
 
@@ -422,14 +422,14 @@ Por exemplo, dois carros consecutivos da mesma marca entraram na rodovia nos úl
 
 **Entrada**:  
 
-| Usuário | Recurso | Evento | Time |
+| Usuário | Recurso | Evento | Hora |
 | --- | --- | --- | --- |
 | user@location.com |RightMenu |Iniciar |2015-01-01T00:00:01.0000000Z |
-| user@location.com |RightMenu |Fim |2015-01-01T00:00:08.0000000Z |
+| user@location.com |RightMenu |End |2015-01-01T00:00:08.0000000Z |
 
 **Saída**:  
 
-| Usuário | Recurso | Duração |
+| Usuário | Recurso | Duration |
 | --- | --- | --- |
 | user@location.com |RightMenu |7 |
 
@@ -443,7 +443,7 @@ Por exemplo, dois carros consecutivos da mesma marca entraram na rodovia nos úl
         Event = 'end'
 ```
 
-**Explicação**: Use a função **LAST** para recuperar o último valor de **TIME**, quando o tipo de evento era **Start**. Observe que a função **LAST** usa **PARTITION BY [usuário]** para indicar que o resultado foi calculado por usuário exclusivo. A consulta tem um limite máximo de uma hora de diferença de tempo entre os eventos **Start** e **Stop**, mas é configurável como necessária **(LIMIT DURATION(hour, 1)**.
+**Explicação**: Use a função **LAST** para recuperar o último valor de **TIME**, quando o tipo de evento era **Start**. Observe que a função **LAST** usa **PARTITION BY [usuário]** para indicar que o resultado foi calculado por usuário exclusivo. A consulta tem um limite máximo de uma hora de diferença de tempo entre os eventos **Start** e **Stop**, mas é configurável como necessária **(LIMIT DURATION(hour, 1)** .
 
 ## <a name="query-example-detect-the-duration-of-a-condition"></a>Exemplo de consulta: Detectar a duração de uma condição
 **Descrição**: Descubra por quanto tempo ocorreu uma condição.
@@ -451,7 +451,7 @@ Por exemplo, suponha que um bug resultou no peso incorreto de todos os carros (a
 
 **Entrada**:
 
-| Faça | Time | Peso |
+| Faça | Hora | Peso |
 | --- | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |2000 |
 | Toyota |2015-01-01T00:00:02.0000000Z |25000 |
@@ -614,7 +614,7 @@ WHERE
 
 **Entrada**:
 
-| PlacaDeCarro | Faça | Time | TollID |
+| PlacaDeCarro | Faça | Hora | TollID |
 | --- | --- | --- | --- |
 | DXE 5291 |Honda |2015-07-27T00:00:01.0000000Z | 1 |
 | YHN 6970 |Toyota |2015-07-27T00:00:05.0000000Z | 1 |
@@ -655,7 +655,7 @@ GROUP BY TUMBLINGWINDOW(second, 5), TollId
 
 **Entrada**:  
 
-| DeviceID | Time | Atributo | Value |
+| deviceId | Hora | Atributo | Value |
 | --- | --- | --- | --- |
 | 1 |2018-07-27T00:00:01.0000000Z |Temperatura |50 |
 | 1 |2018-07-27T00:00:01.0000000Z |Temperatura |50 |
@@ -666,7 +666,7 @@ GROUP BY TUMBLINGWINDOW(second, 5), TollId
 
 **Saída**:  
 
-| AverageValue | DeviceID |
+| AverageValue | deviceId |
 | --- | --- |
 | 70 | 1 |
 |45 | 2 |

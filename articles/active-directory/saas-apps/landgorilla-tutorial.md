@@ -16,10 +16,10 @@ ms.date: 03/13/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d12519a2bd0a5e3951d0ca9ae51a54bd728a782b
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65987889"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-land-gorilla-client"></a>Tutorial: Integração do Azure Active Directory com o Land Gorilla Client
@@ -54,7 +54,7 @@ Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 
 
 ## <a name="scenario-description"></a>Descrição do cenário
-Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste.  O cenário descrito neste tutorial consiste em dois blocos de construção principais:
+Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste. O cenário descrito neste tutorial consiste em dois blocos de construção principais:
 
 1. Adicionando Land Gorilla Client da galeria
 1. configurar e testar o logon único do AD do Azure
@@ -65,7 +65,7 @@ Para configurar a integração do Land Gorilla Client com o Azure AD, é necess�
 
 **Para adicionar o Land Gorilla Client da galeria, siga as etapas abaixo:**
 
-1. No **[Portal de Gerenciamento do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
+1. No **[Portal de Gerenciamento do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
 
     ![Active Directory][1]
 
@@ -119,7 +119,7 @@ Nesta seção, você habilitará o logon único do Azure AD no Portal de Gerenci
 
     ![Configurar o logon único](./media/landgorilla-tutorial/tutorial_landgorilla_url_02.png)
 
-     a. Na caixa de texto **Identificador**, digite um valor usando o seguinte padrão: 
+    a. Na caixa de texto **Identificador**, digite um valor usando o seguinte padrão: 
     
     `https://<customer domain>.landgorilla.com/` 
     
@@ -172,7 +172,7 @@ O objetivo desta seção é criar um usuário de teste no portal de gerenciament
  
     ![Criação de um usuário de teste do AD do Azure](./media/landgorilla-tutorial/create_aaduser_04.png) 
 
-     a. No **nome** caixa de texto, digite **B. Simon**.
+    a. No **nome** caixa de texto, digite **B. Simon**.
 
     b. No **nome de usuário** caixa de texto, digite o **endereço de email** de B. Fernandes.
 

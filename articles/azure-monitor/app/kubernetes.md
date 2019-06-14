@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: alkaplan
 ms.openlocfilehash: c94d589875195207ec6f71c35ad077cac281fda5
-ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65555827"
 ---
 # <a name="zero-instrumentation-application-monitoring-for-kubernetes-hosted-applications"></a>Monitoramento de aplicativos zero instrumentação para Kubernetes aplicativos hospedados
@@ -34,7 +34,7 @@ O Azure Monitor agora aproveita a tecnologia de malha do serviço em seu cluster
 - Um [recurso do Application Insights](create-new-resource.md)
 - Ter uma malha de serviço. Se o cluster não tiver Istio implantado, você pode aprender como [instalar e usar Istio no serviço Kubernetes do Azure](https://docs.microsoft.com/azure/aks/istio-install).
 
-## <a name="capabilities"></a>Recursos
+## <a name="capabilities"></a>Funcionalidades
 
 Usando o zero de monitoramento para o Kubernetes aplicativos hospedados do aplicativo de instrumentação, você será capaz de usar:
 
@@ -78,7 +78,7 @@ Aplicativos em execução fora da malha de serviço não são afetados.
 3. Editar *application-insights-istio-mixer-adapter-deployment.yaml*
     - Editar o valor de *ISTIO_MIXER_PLUGIN_AI_INSTRUMENTATIONKEY* variável de ambiente para conter a chave de instrumentação do recurso do Application Insights no portal do Azure para conter a telemetria.
     - Se necessário, edite o valor de *ISTIO_MIXER_PLUGIN_WATCHLIST_NAMESPACES* variável de ambiente para conter uma lista separada por vírgulas de namespaces para o qual você gostaria de habilitar o monitoramento. Deixe em branco para monitorar todos os namespaces.
-4. Aplique *cada* YAML arquivo encontrado em *src/kubernetes/* executando o seguinte (você ainda deve estar dentro de */src/kubernetes/*):
+4. Aplique *cada* YAML arquivo encontrado em *src/kubernetes/* executando o seguinte (você ainda deve estar dentro de */src/kubernetes/* ):
 
    ```console
    kubectl apply -f .

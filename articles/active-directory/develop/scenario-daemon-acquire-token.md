@@ -17,10 +17,10 @@ ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: aa4f5dc7a5aceaf81f71eacd36d131471a57e5c0
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65075364"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Aplicativo daemon que chama APIs - web adquirir um token
@@ -65,7 +65,7 @@ O escopo usado para as credenciais do cliente deve ser sempre resourceId + "/ pa
 
 > [!IMPORTANT]
 > Para a MSAL (ponto de extremidade v2.0) solicitando um token de acesso para um recurso de aceitar um token de acesso de v 1.0, AD do Azure analisa o público-alvo desejado do escopo solicitado considerando tudo antes da última barra e usá-lo como o identificador de recurso.
-> Portanto se, como o SQL Azure (**https://database.windows.net**) o recurso espera um público-alvo terminando com uma barra (para SQL Azure: `https://database.windows.net/`), você precisará solicitar um escopo de `https://database.windows.net//.default` (Observe as barras duplas). Consulte também MSAL.NET problema [747 #](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): Uma barra à direita do recurso da url for omitida, o que causou a falha de autenticação do sql.
+> Portanto se, como o SQL Azure ( **https://database.windows.net** ) o recurso espera um público-alvo terminando com uma barra (para SQL Azure: `https://database.windows.net/` ), você precisará solicitar um escopo de `https://database.windows.net//.default` (Observe as barras duplas). Consulte também MSAL.NET problema [747 #](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): Uma barra à direita do recurso da url for omitida, o que causou a falha de autenticação do sql.
 
 ## <a name="acquiretokenforclient-api"></a>AcquireTokenForClient API
 
