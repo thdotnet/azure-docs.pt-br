@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 10/05/2018
 ms.author: yijenj
 ms.openlocfilehash: 3345dd82a1de4f9144cdeb5acd5d3e506dc55de8
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64937839"
 ---
 # <a name="azure-marketplace-listing-guidelines"></a>Diretrizes de listagem do Azure Marketplace
@@ -53,7 +53,7 @@ Todas as ofertas precisam cumprir [Todos os requisitos de listagem](https://docs
 |:--- |:--- |:--- |:--- |
 | 1 | Título da oferta |<br>• Deve conter apenas caracteres alfanuméricos minúsculos, traços ou sublinhados. Não pode ser modificado após a publicação. <br>• Descritivo da oferta de solução.<br>• Corresponde à promoção online da solução no site do parceiro. | Contém palavras-chave de pesquisa |
 | 2 | Informações técnicas: Configuração |<br>• Para um aplicativo SaaS, escolha se você deseja listar seu aplicativo ou se deseja permitir que os clientes comprem seu aplicativo por meio do Azure.<br>• Selecione o texto apropriado que você deseja no botão de aquisição da oferta: Gratuito, Avaliação gratuita ou Entre em contato comigo<br>•   Só selecione (caixa pop-up) um destes produtos aplicáveis se seu aplicativo utiliza a tecnologia: Cortana Intelligence, Power BI Solution Templates, Power Apps |  |
-| 3 | Test drive | Selecione: Sim ou não | O cliente pode entender facilmente quais são as próximas etapas disponíveis: <br>1. Experimentar a avaliação gratuita <br>2. Comprar agora <br>3. Entre em contato por email ou número de telefone para providenciar a Prova de Conceito, Avaliação ou Resumo. |
+| 3 | Test drive | Selecione: Sim ou Não | O cliente pode entender facilmente quais são as próximas etapas disponíveis: <br>1. Experimentar a avaliação gratuita <br>2. Comprar agora <br>3. Entre em contato por email ou número de telefone para providenciar a Prova de Conceito, Avaliação ou Resumo. |
 | 4 | Detalhes da vitrine: Resumo da oferta | Aparecerá na página de pesquisa do seu aplicativo com um máximo de 100 caracteres | |
 | 5 | Detalhes da vitrine: Indústrias | Setores (máx. de 2): Selecione os setores aos quais seu aplicativo é mais adequado e aplicável. | |
 | 6 | Descrição da oferta | <br>• É permitido HTML simples, incluindo p, em, ul, li, ol e marcações de cabeçalho. Máximo de 3.000 caracteres. <br>• 2 a 3 parágrafos <br>•    A oferta de solução pode ser entendida de modo fácil e rápido <br>•    A descrição é abrangente e captura: público-alvo*, tipo de usuário, por que ela é valiosa (proposta de valor) <br>• A descrição da oferta está em formato narrativo de parágrafo, com frases curtas e fáceis de entender. | <br>•   O setor-alvo é indicado (se relevante) <br>• Boa formatação de estilo, com cada cabeçalho de parágrafo tendo uma sentença ou frase que resume o conteúdo e que segue, e inclui, marcadores (conforme o caso) para enfatizar os principais benefícios. O objetivo é que o leitor entenda a oferta de forma rápida, em um formato de fácil exibição, sem precisar ler parágrafos. <br>• Há espaçamento entre cada parágrafo e leituras, como um folheto de carro. Ou seja, não há recursos técnicos ou jargão, mas um descritivo da oferta em termos simples e que seja abrangente. | 

@@ -14,10 +14,10 @@ ms.workload: infrastructure
 ms.date: 10/15/2018
 ms.author: genli
 ms.openlocfilehash: 1c97b1da094b759ccf85f310ceec4c7abfd91b9b
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65472287"
 ---
 # <a name="windows-reboot-loop-on-an-azure-vm"></a>Loop de reinicialização do Windows em uma VM do Azure
@@ -41,7 +41,7 @@ Há um serviço de terceiros sinalizado como crítico e não é possível inici�
 
 Algumas alterações foram feitas ao sistema operacional. Geralmente, elas estão relacionadas a uma instalação de atualização, à instalação de aplicativo ou a uma nova política. Talvez você precise verificar os seguintes logs para obter detalhes adicionais:
 
-- Logs de Eventos
+- Logs de eventos
 - CBS.logWindows
 - Update.log
 

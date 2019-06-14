@@ -14,10 +14,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 11/14/2018
 ms.openlocfilehash: 56b4e948f4e1aab20de95a16f45ab790c7e591bb
-ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66019815"
 ---
 # <a name="working-with-sql-database-connection-issues-and-transient-errors"></a>Trabalhando com problemas de conexão do Banco de Dados SQL do Azure e erros transitórios
@@ -340,17 +340,17 @@ As classes do EntLib60 a seguir são particularmente úteis para lógica de repe
 
 No namespace **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling**:
 
-- **RetryPolicy** 
-  - **ExecuteAction** 
-- **ExponentialBackoff** 
-- **SqlDatabaseTransientErrorDetectionStrategy** 
-- **ReliableSqlConnection** 
-  - **ExecuteCommand** 
+- **RetryPolicy**
+  - **ExecuteAction**
+- **ExponentialBackoff**
+- **SqlDatabaseTransientErrorDetectionStrategy**
+- **ReliableSqlConnection**
+  - **ExecuteCommand**
 
 No namespace **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.TestSupport**:
 
-- **AlwaysTransientErrorDetectionStrategy** 
-- **NeverTransientErrorDetectionStrategy** 
+- **AlwaysTransientErrorDetectionStrategy**
+- **NeverTransientErrorDetectionStrategy**
 
 Estes são alguns links para informações sobre o EntLib60:
 

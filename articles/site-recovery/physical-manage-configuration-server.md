@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 02/28/2019
 ms.author: mayg
 ms.openlocfilehash: 10bec01a3b90776c8dd8c32a74ba7754264da131
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62119715"
 ---
 # <a name="manage-the-configuration-server-for-physical-server-disaster-recovery"></a>Gerenciar servidor de configuração para recuperação de desastres do servidor físico
@@ -38,7 +38,7 @@ A tabela resume os pré-requisitos para implantação do computador do servidor 
 | Políticas de grupo| Não habilite estas políticas de grupo: <br> - Impedir o acesso ao prompt de comando <br> - Impedir o acesso às ferramentas de edição do registro <br> - Lógica de confiança para anexos de arquivo <br> - Ativar a execução do script <br> [Saiba mais](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)|
 | IIS | – Nenhum site da Web padrão já existente <br> - Habilitar [Autenticação anônima](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx) <br> - Habilitar configuração [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx)  <br> – Nenhum aplicativo/site da Web pré-existente escutando na porta 443<br>|
 | Tipo de NIC | VMXNET3 (quando implantado como uma VM VMware) |
-| Tipo de endereço IP | estático |
+| Tipo de endereço IP | Estático |
 | Acesso à Internet | O servidor precisa de acesso a estas URLs: <br> - \*.accesscontrol.windows.net<br> - \*.backup.windowsazure.com <br>- \*.store.core.windows.net<br> - \*.blob.core.windows.net<br> - \*.hypervrecoverymanager.windowsazure.com <br> - https://management.azure.com <br> - *.services.visualstudio.com <br> - https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-5.7.20.0.msi (não obrigatório para servidores de processo de expansão) <br> - time.nist.gov <br> - time.windows.com |
 | Portas | 443 (orquestração do canal de controle)<br>9443 (transporte de dados)|
 
@@ -79,7 +79,7 @@ A versão mais recente do arquivo de instalação do servidor de configuração 
 9. Em **Localização de Instalação**, selecione a localização em que você deseja instalar os binários e armazenar o cache. A unidade selecionado deve ter ao menos 5 GB de espaço em disco disponível, mas é recomendável uma unidade de cache com ao menos 600 GB de espaço livre.
 
     ![Local de instalação](./media/physical-manage-configuration-server/combined-wiz8.png)
-10. Na **seleção de rede**, primeiro selecione a NIC usada pelo servidor de processo integrado para a instalação de descoberta e por push do serviço de mobilidade em máquinas de origem e, em seguida, selecione a NIC que usa o servidor de configuração para conectividade com o Azure. A porta 9443 é a porta padrão usada para enviar e receber o tráfego de replicação, mas você pode modificar esse número de porta para atender aos requisitos do seu ambiente. Além da porta 9443, também podemos abrir a porta 443, usada por um servidor Web para coordenar operações de replicação. Não use a porta 443 para enviar ou receber tráfego de replicação.
+10. Em **Seleção da Rede**, primeiro selecione a NIC usada pelo servidor de processo interno para descoberta e instalação por push do serviço de mobilidade em computadores de origem. Em seguida, selecione a NIC que o servidor de configuração usa para conectividade com o Azure. A porta 9443 é a porta padrão usada para enviar e receber o tráfego de replicação, mas você pode modificar esse número de porta para atender aos requisitos do seu ambiente. Além da porta 9443, também podemos abrir a porta 443, usada por um servidor Web para coordenar operações de replicação. Não use a porta 443 para enviar ou receber tráfego de replicação.
 
     ![Seleção da Rede](./media/physical-manage-configuration-server/combined-wiz9.png)
 
@@ -217,7 +217,7 @@ Você pode modificar as configurações de proxy para o computador do servidor d
 
 ## <a name="upgrade-a-configuration-server"></a>Atualizar um servidor de configuração
 
-Você executa pacotes cumulativos de atualização para atualizar o servidor de configuração. As atualizações podem ser aplicadas até versões N-4. Por exemplo: 
+Você executa pacotes cumulativos de atualização para atualizar o servidor de configuração. As atualizações podem ser aplicadas até versões N-4. Por exemplo:
 
 - Se estiver executando 9.7, 9.8, 9.9 ou 9.10, você poderá atualizar diretamente para 9.11.
 - Se você estiver executando 9.6 ou anterior e você quiser atualizar para 9.11, você deverá primeiramente atualizar para a versão 9.7. antes de 9.11.

@@ -9,10 +9,10 @@ ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 861c2e86d623c46c14366f19457d1f689386a316
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64577339"
 ---
 # <a name="firewall-tables-overview"></a>Visão geral de tabelas do firewall
@@ -53,7 +53,7 @@ Regras adicionais podem ser necessárias para o fluxo de tráfego em direção i
 
 Regras padrão a seguir são criadas em cada tabela de firewall.
 
-|Prioridade|NOME|Acompanhamento de estado|Direção|Tipo de tráfego|Protocol|Fonte|Porta de origem|Destino|Porta de destino|Ação|
+|Prioridade|NOME|Acompanhamento de estado|Direction|Tipo de tráfego|Protocol|source|Porta de origem|Destino|Porta de destino|Ação|
 |--------|----|--------------|---------|------------|--------|------|-----------|-----------|----------------|------|
 |65000|Permitir-all-para-a internet|Com estado|Saída|Tráfego de internet ou IP público|Todos|Qualquer|Qualquer|Qualquer|Qualquer|PERMITIR|
 |65001|deny-all-from-internet|Com estado|Entrada|Tráfego de internet ou IP público|Todos|Qualquer|Qualquer|Qualquer|Qualquer|Negar|

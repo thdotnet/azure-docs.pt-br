@@ -14,10 +14,10 @@ ms.date: 05/16/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 07c1a726e33eb8287634b63ef2e309483c05c3f3
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65962107"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Operações do provedor de recursos do Azure Resource Manager
@@ -1213,9 +1213,9 @@ As operações do provedor de recursos estão sempre em evolução. Para obter a
 > | Ação | Microsoft.Compute/locations/usages/read | Obter as quantidades de uso atual e limites de serviço para os recursos de computação da assinatura em determinado local |
 > | Ação | Microsoft.Compute/locations/vmSizes/read | Listar os tamanhos de máquina virtual disponível em um local |
 > | Ação | Microsoft.Compute/operations/read | Listar as operações disponíveis no provedor de recursos Microsoft.Compute |
-> | Ação | Microsoft.Compute/proximityPlacementGroups/delete | Exclui o Grupo de Posicionamento de Proximidade |
-> | Ação | Microsoft.Compute/proximityPlacementGroups/read | Obtém as Propriedades de um Grupo de Posicionamento de Proximidade |
-> | Ação | Microsoft.Compute/proximityPlacementGroups/write | Cria um Grupo de Posicionamento de Proximidade ou atualiza um que já existe |
+> | Ação | Microsoft.Compute/proximityPlacementGroups/delete | Exclui o grupo de posicionamento de proximidade |
+> | Ação | Microsoft.Compute/proximityPlacementGroups/read | Obter as propriedades de um grupo de posicionamento de proximidade |
+> | Ação | Microsoft.Compute/proximityPlacementGroups/write | Cria um novo grupo de posicionamento de proximidade ou atualiza uma existente |
 > | Ação | Microsoft.Compute/register/action | Registra a assinatura com o provedor de recursos Microsoft.Compute |
 > | Ação | Microsoft.Compute/restorePointCollections/delete | Excluir a coleção de pontos de restauração e os pontos contidos nela |
 > | Ação | Microsoft.Compute/restorePointCollections/read | Obter as propriedades de uma coleção de pontos de restauração |
@@ -2304,13 +2304,13 @@ As operações do provedor de recursos estão sempre em evolução. Para obter a
 > | Ação | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/read | Ler um keyspace ou listar todos os de keyspaces. Aplicável somente para tipos de API: 'cassandra'. |
 > | Ação | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/settings/throughput/read | Leia uma taxa de transferência de keyspace. Aplicável somente para tipos de API: 'cassandra'. |
 > | Ação | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/settings/throughput/write | Atualize uma taxa de transferência de keyspace. Aplicável somente para tipos de API: 'cassandra'. |
-> | Ação | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/delete | Excluir uma tabela. Aplicável somente para tipos de API: 'cassandra'. |
+> | Ação | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/delete | Exclua uma tabela. Aplicável somente para tipos de API: 'cassandra'. |
 > | Ação | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/read | Ler uma tabela ou lista todas as tabelas. Aplicável somente para tipos de API: 'cassandra'. |
 > | Ação | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/settings/throughput/read | Leia uma taxa de transferência de tabela. Aplicável somente para tipos de API: 'cassandra'. |
 > | Ação | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/settings/throughput/write | Atualize uma taxa de transferência de tabela. Aplicável somente para tipos de API: 'cassandra'. |
 > | Ação | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/write | Criar ou atualizar uma tabela. Aplicável somente para tipos de API: 'cassandra'. |
 > | Ação | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/write | Crie um keyspace. Aplicável somente para tipos de API: 'cassandra'. |
-> | Ação | Microsoft.DocumentDB/databaseAccounts/apis/tables/delete | Excluir uma tabela. Aplicável somente para tipos de API: 'table'. |
+> | Ação | Microsoft.DocumentDB/databaseAccounts/apis/tables/delete | Exclua uma tabela. Aplicável somente para tipos de API: 'table'. |
 > | Ação | Microsoft.DocumentDB/databaseAccounts/apis/tables/read | Ler uma tabela ou lista todas as tabelas. Aplicável somente para tipos de API: 'table'. |
 > | Ação | Microsoft.DocumentDB/databaseAccounts/apis/tables/settings/throughput/read | Leia uma taxa de transferência de tabela. Aplicável somente para tipos de API: 'table'. |
 > | Ação | Microsoft.DocumentDB/databaseAccounts/apis/tables/settings/throughput/write | Atualize uma taxa de transferência de tabela. Aplicável somente para tipos de API: 'table'. |
@@ -2807,7 +2807,7 @@ As operações do provedor de recursos estão sempre em evolução. Para obter a
 > | Ação | Microsoft.Insights/MetricDefinitions/Microsoft.Insights/Read | Ler definições de métrica |
 > | Ação | Microsoft.Insights/MetricDefinitions/providers/Microsoft.Insights/Read | Ler definições de métrica |
 > | Ação | Microsoft.Insights/MetricDefinitions/Read | Ler definições de métrica |
-> | Ação | Microsoft.Insights/Metricnamespaces/Read | Ler namespaces de métrica |
+> | Ação | Microsoft.Insights/Metricnamespaces/Read | Namespaces de métrica de leitura |
 > | Ação | Microsoft.Insights/Metrics/Action | Ação de Métrica |
 > | Ação | Microsoft.Insights/Metrics/Microsoft.Insights/Read | Ler métrica |
 > | Ação | Microsoft.Insights/Metrics/providers/Metrics/Read | Ler métrica |
@@ -4596,7 +4596,7 @@ As operações do provedor de recursos estão sempre em evolução. Para obter a
 > | Ação | Microsoft.Resources/deployments/operations/read | Obter ou lista operações de implantação. |
 > | Ação | Microsoft.Resources/deployments/read | Obter ou lista implantações. |
 > | Ação | Microsoft.Resources/deployments/validate/action | Validar uma implantação. |
-> | Ação | Microsoft.Resources/deployments/whatIf/action | Prevê as alterações de implantação de modelo. |
+> | Ação | Microsoft.Resources/deployments/whatIf/action | Prevê alterações do modelo de implantação. |
 > | Ação | Microsoft.Resources/deployments/write | Criar ou atualizar uma implantação. |
 > | Ação | Microsoft.Resources/links/delete | Excluir um link de recurso. |
 > | Ação | Microsoft.Resources/links/read | Obter ou listar links de recursos. |

@@ -14,10 +14,10 @@ ms.date: 03/10/2019
 ms.author: cephalin;byvinyal
 ms.custom: seodec18
 ms.openlocfilehash: b054e56afdec65ac000b0dc18a0c1a3fd845b4c3
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65955987"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Configurar as credenciais de implantação do Serviço de Aplicativo do Azure
@@ -33,7 +33,7 @@ Você pode configurar as credenciais de usuário na [página de recursos](../azu
 
 Para configurar as credenciais de usuário:
 
-1. No [portal do Azure](https://portal.azure.com), no menu à esquerda, clique em **serviços de aplicativos** > **&lt;qualquer_aplicativo >** > **implantação Centro** > **credenciais de implantação**.
+1. No [portal do Azure](https://portal.azure.com), no menu à esquerda, clique em **serviços de aplicativos** >  **&lt;qualquer_aplicativo >**  > **implantação Centro** > **credenciais de implantação**.
 
     No portal, você deve ter pelo menos um aplicativo antes de poder acessar a página de credenciais de implantação. No entanto, com a [CLI do Azure](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set), é possível configurar credenciais de usuário sem um aplicativo existente.
 
@@ -63,7 +63,7 @@ Uma vez que as credenciais de usuário são vinculadas ao usuário e não um rec
 ## <a name="appscope"></a>Definir e redefinir credenciais de aplicativo
 Para definir e redefinir credenciais de aplicativo:
 
-1. No [portal do Azure](https://portal.azure.com), no menu à esquerda, clique em **serviços de aplicativos** > **&lt;qualquer_aplicativo >** > **implantação Centro** > **credenciais de implantação**.
+1. No [portal do Azure](https://portal.azure.com), no menu à esquerda, clique em **serviços de aplicativos** >  **&lt;qualquer_aplicativo >**  > **implantação Centro** > **credenciais de implantação**.
 
 2. Clique em **credenciais de aplicativo**e clique no **cópia** link para copiar o nome de usuário ou senha.
 

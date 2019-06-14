@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: pafarley
 ms.openlocfilehash: e61048eeab9d7061c18f3237db22fc87ca52f526
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65891159"
 ---
 # <a name="face-detection-and-attributes"></a>Detecção facial e atributos
@@ -80,4 +80,4 @@ Se você estiver detectando rostos de uma transmissão de vídeo, você poderá 
 
 Agora que você está familiarizado com conceitos de detecção de face, saiba como escrever um script que detecta rostos em uma determinada imagem.
 
-* [Detecte rostos em uma imagem](../Face-API-How-to-Topics/HowtoDetectFacesinImage.md)
+* [Detectar faces em uma imagem](../Face-API-How-to-Topics/HowtoDetectFacesinImage.md)

@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e8606a0d4e203e1a910a5cd15ca83a622f5286bd
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65812544"
 ---
 # <a name="how-users-in-your-organization-can-invite-guest-users-to-an-app"></a>Como usuários na organização podem convidar usuários convidados para um aplicativo
@@ -35,11 +35,11 @@ Depois que um usuário convidado tiver sido adicionado ao diretório no Azure AD
 Depois que um aplicativo é configurado para autoatendimento, os proprietários de aplicativos podem usar o próprio Painel de Acesso para convidar um usuário convidado para o aplicativo que deseja compartilhar. O usuário convidado não precisa necessariamente ser adicionado ao Azure AD com antecedência. 
 
 1. Abra o Painel de Acesso, indo para `https://myapps.microsoft.com`.
-2. Aponte para o aplicativo, selecione as reticências (**...**) e, em seguida, selecione **Gerenciar aplicativo**.
+2. Aponte para o aplicativo, selecione as reticências ( **...** ) e, em seguida, selecione **Gerenciar aplicativo**.
  
    ![Captura de tela mostrando o gerenciar aplicativo submenu para o aplicativo Salesforce](media/add-users-iw/access-panel-manage-app.png)
  
-3. Na parte superior da lista de usuários, selecione**+**.
+3. Na parte superior da lista de usuários, selecione **+** .
    
    ![Captura de tela mostrando o símbolo de adição para adicionar membros ao aplicativo](media/add-users-iw/access-panel-manage-app-add-user.png)
    
@@ -62,7 +62,7 @@ Depois que um aplicativo é configurado para autoatendimento, os proprietários 
    
    ![Captura de tela mostrando onde selecionar um grupo para os grupos que possuo](media/add-users-iw/access-panel-groups-i-own.png)
    
-5. Na parte superior da lista de membros do grupo, selecione **+**.
+5. Na parte superior da lista de membros do grupo, selecione **+** .
    
    ![Captura de tela mostrando o símbolo de adição para adicionar membros ao grupo](media/add-users-iw/access-panel-groups-add-member.png)
    
@@ -109,7 +109,7 @@ O gerenciamento de aplicativos de autoatendimento exige alguma configuração in
 6. Em **Gerenciar**, selecione **Autoatendimento** e configure o acesso ao aplicativo de autoatendimento. (Para detalhes, consulte [como usar o acesso ao aplicativo de autoatendimento](https://docs.microsoft.com/azure/active-directory/application-access-panel-self-service-applications-how-to).) 
 
     > [!NOTE]
-    > Para a configuração **Para qual grupo os usuários atribuídos devem ser adicionados?**, selecione o grupo criado na seção anterior.
+    > Para a configuração **Para qual grupo os usuários atribuídos devem ser adicionados?** , selecione o grupo criado na seção anterior.
 7. Em **Gerenciar**, selecione **Usuários e Grupos** e verifique se o grupo de autoatendimento que você criou aparece na lista.
 8. Para adicionar o aplicativo ao Painel de Acesso do proprietário do grupo, selecione **Adicionar usuário** > **Usuários e Grupos**. Pesquise o proprietário do grupo e selecione o usuário, clique em **Selecionar** e, em seguida, clique em **Atribuir** para adicionar o usuário ao aplicativo.
 

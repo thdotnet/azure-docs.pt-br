@@ -14,10 +14,10 @@ ms.date: 04/30/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 64fae56bfc95b62bd60444d49100689845f64278
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66123143"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Monitorar e gerenciar os pipelines do Azure Data Factory usando o Portal do Azure e o PowerShell
@@ -26,7 +26,7 @@ ms.locfileid: "66123143"
 > * [Usando o aplicativo de Monitoramento e Gerenciamento](data-factory-monitor-manage-app.md)
 
 > [!NOTE]
-> Este artigo aplica-se à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [Monitorar e gerenciar pipelines do Data Factory em](../monitor-visually.md).
+> Este artigo se aplica à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [Monitorar e gerenciar pipelines do Data Factory em](../monitor-visually.md).
 
 Este artigo descreve como monitorar, gerenciar e depurar seus pipelines usando o portal do Azure e o PowerShell.
 
@@ -63,7 +63,7 @@ Esta seção também descreve como uma fatia do conjunto de dados faz a transiç
 #### <a name="diagram-view-of-your-data-factory"></a>Modo de exibição de diagrama de uma data factory
 O modo de exibição de **Diagrama** de uma data factory fornece um único painel onde você pode monitorar e gerenciar o data factory e seus ativos. Para ver o modo de exibição de **Diagrama** de seu data factory, clique em **Diagrama** na home page do data factory.
 
-![Exibição de Diagrama](./media/data-factory-monitor-manage-pipelines/diagram-view.png)
+![Modo de Exibição de Diagrama](./media/data-factory-monitor-manage-pipelines/diagram-view.png)
 
 Você pode ampliar, reduzir, ajustar o nível de zoom, aplicar zoom para 100%, bloquear o layout do diagrama e posicionar pipelines e conjuntos de dados automaticamente. Você também pode ver as informações de linhagem de dados (ou seja, mostrar itens upstream e downstream dos itens selecionados).
 
@@ -89,7 +89,7 @@ As fatias do conjunto de dados no data factory podem ter um dos seguintes status
 
 <table>
 <tr>
-    <th align="left">Estado</th><th align="left">Subestado</th><th align="left">Descrição</th>
+    <th align="left">Estado</th><th align="left">Subestado</th><th align="left">DESCRIÇÃO</th>
 </tr>
 <tr>
     <td rowspan="8">Aguardando</td><td>ScheduleTime</td><td>Não chegou o momento de execução da fatia.</td>
@@ -117,24 +117,24 @@ As fatias do conjunto de dados no data factory podem ter um dos seguintes status
 </tr>
 <tr>
 <tr>
-<td rowspan="2">EmAndamento</td><td>Validando</td><td>Validação em andamento.</td>
+<td rowspan="2">InProgress</td><td>Validando</td><td>Validação em andamento.</td>
 </tr>
 <td>-</td>
 <td>A fatia está sendo processada.</td>
 </tr>
 <tr>
-<td rowspan="4">Falhou</td><td>TimedOut</td><td>A execução demorou mais do que o permitido pela atividade.</td>
+<td rowspan="4">Com falha</td><td>TimedOut</td><td>A execução demorou mais do que o permitido pela atividade.</td>
 </tr>
 <tr>
-<td>Cancelada</td><td>A fatia foi cancelada por ação do usuário.</td>
+<td>Cancelado</td><td>A fatia foi cancelada por ação do usuário.</td>
 </tr>
 <tr>
-<td>Validação</td><td>Falha na validação.</td>
+<td>Validação</td><td>A validação falhou.</td>
 </tr>
 <tr>
 <td>-</td><td>Não foi possível gerar e/ou validar a fatia.</td>
 </tr>
-<td>Pronto</td><td>-</td><td>A fatia está pronta para consumo.</td>
+<td>Ready</td><td>-</td><td>A fatia está pronta para consumo.</td>
 </tr>
 <tr>
 <td>Ignorado</td><td>Nenhum</td><td>A fatia não está sendo processada.</td>
@@ -152,7 +152,7 @@ Veja os detalhes de uma fatia clicando em uma entrada de fatia na folha **Fatias
 
 Se a fatia tiver sido executada várias vezes, você verá várias linhas na lista **Execuções de atividade** . Você pode exibir detalhes sobre uma execução de atividade clicando na entrada da execução na lista **Execuções de atividade** . A lista mostra todos os arquivos de log, junto com uma mensagem de erro, se houver. Esse recurso é útil para exibir e depurar logs sem precisar sair de sua data factory.
 
-![Detalhes da execução de atividade](./media/data-factory-monitor-manage-pipelines/activity-run-details.png)
+![Detalhes da execução da atividade](./media/data-factory-monitor-manage-pipelines/activity-run-details.png)
 
 Quando a fatia não está no estado **Pronto**, você pode ver as fatias upstream que não estão prontas e estão impedindo a execução da fatia atual na lista **Fatias upstream que não estão prontas**. Esse recurso é útil quando a fatia estiver no estado **Aguardando** e você quiser entender as dependências de upstream em que a fatia está aguardando.
 

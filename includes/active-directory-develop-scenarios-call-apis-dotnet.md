@@ -15,10 +15,10 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: include file
 ms.openlocfilehash: 0196d39f5b131bc54e00412beb7fdf10b7352336
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66121870"
 ---
 ### <a name="authenticationresult-properties-in-msalnet"></a>Propriedades de AuthenticationResult no MSAL.NET
@@ -44,7 +44,7 @@ O diagrama a seguir mostra a estrutura do `IAccount` interface:
 
 O `AccountId` classe identifica uma conta em um locatário específico. Ele tem as seguintes propriedades:
 
-| Propriedade | Descrição |
+| Propriedade | DESCRIÇÃO |
 |----------|-------------|
 | `TenantId` | Uma representação de cadeia de caracteres para um GUID, que é a ID do locatário onde reside a conta. |
 | `ObjectId` | Uma representação de cadeia de caracteres para um GUID, que é a ID do usuário que é proprietária da conta no locatário. |
@@ -52,7 +52,7 @@ O `AccountId` classe identifica uma conta em um locatário específico. Ele tem 
 
 O `IAccount` interface representa informações sobre uma única conta. O mesmo usuário pode estar presente em locatários diferentes, ou seja, um usuário pode ter várias contas. Seus membros são:
 
-| Propriedade | Descrição |
+| Propriedade | DESCRIÇÃO |
 |----------|-------------|
 | `Username` | Uma cadeia de caracteres que contém o valor que pode ser exibido no formato UPN (UserPrincipalName), por exemplo, john.doe@contoso.com. Essa cadeia de caracteres pode ser nula, enquanto o HomeAccountId e HomeAccountId.Identifier não serão nula. Essa propriedade substitui a `DisplayableId` propriedade de `IUser` nas versões anteriores do MSAL.NET. |
 | `Environment` | Uma cadeia de caracteres que contém o provedor de identidade da conta, por exemplo, `login.microsoftonline.com`. Essa propriedade substitui a `IdentityProvider` propriedade de `IUser`, exceto que `IdentityProvider` também tinha informações sobre o locatário (além do ambiente de nuvem), enquanto que aqui o valor é somente o host. |

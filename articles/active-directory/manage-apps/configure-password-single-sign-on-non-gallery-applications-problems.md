@@ -16,10 +16,10 @@ ms.date: 07/11/2017
 ms.author: celested
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f8787008b396c2dd8ce1c006a40fee1e32e8100d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60442057"
 ---
 # <a name="problem-configuring-password-single-sign-on-for-a-non-gallery-application"></a>Como configurar o logon único com senha para um aplicativo que não seja da galeria
@@ -66,7 +66,7 @@ Configurar **Logon único baseado em senha** para um aplicativo usando **captura
 
 9. Insira a **URL de Entrada**, a URL onde os usuários inserem o nome de usuário e senha para entrar. **Verifique se os campos de entrada estão visíveis na URL que você fornece**.
 
-10. Clique no botão **Salvar** .
+10. Clique no botão **Salvar**.
 
 11. Depois de fazer isso, essa URL é automaticamente recortada para uma caixa de entrada de nome de usuário e senha e permite que você use o Azure Active Directory para transmitir com segurança senhas a esse aplicativo, usando a extensão do navegador do painel de acesso.
 
@@ -96,7 +96,7 @@ Para configurar **Logon único baseado em senha** para um aplicativo usando **ca
 
 9. Insira a **URL de Entrada**, a URL onde os usuários inserem o nome de usuário e senha para entrar. **Verifique se os campos de entrada estão visíveis na URL que você fornece**.
 
-10. Clique no botão **Salvar** .
+10. Clique no botão **Salvar**.
 
 11. Depois de fazer isso, essa URL é automaticamente recortada para uma caixa de entrada de nome de usuário e senha e permite que você use o Azure Active Directory para transmitir com segurança senhas a esse aplicativo, usando a extensão do navegador do painel de acesso. Em caso de falha, você poderá **alterar o modo de entrada para usar a captura de campo de entrada manual** continuando até a etapa 12.
 

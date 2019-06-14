@@ -14,14 +14,14 @@ ms.author: abnarain
 manager: craigg
 robots: noindex
 ms.openlocfilehash: f7e3b1496890a4b97fc435b49ab9bf282134d1a6
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65910823"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Usar atividades personalizadas em um pipeline do Data Factory do Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](data-factory-use-custom-activities.md)
 > * [Versão 2 (versão atual)](../transform-data-using-dotnet-custom-activity.md)
 
@@ -628,7 +628,7 @@ Nesta etapa, você cria conjuntos de dados para representar a entrada e saída d
     ![Bloco do diagrama](./media/data-factory-use-custom-activities/DataFactoryBlade.png)
 2. Na exibição Diagrama, clique em OutputDataset.
 
-    ![Exibição de Diagrama](./media/data-factory-use-custom-activities/diagram.png)
+    ![Modo de Exibição de Diagrama](./media/data-factory-use-custom-activities/diagram.png)
 3. Você verá que as cinco fatias de saída estão no estado Pronto. Se não estiverem no estado Pronto, ainda não foram produzidas.
 
    ![Fatias de saída](./media/data-factory-use-custom-activities/OutputSlices.png)

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.custom: seodec18
 ms.openlocfilehash: e06313cf83768421bedc6c7baddd30c2ef2e4846
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65789415"
 ---
 # <a name="azure-stream-analytics-custom-blob-output-partitioning"></a>Particionamento de saída de blob personalizado do Azure Stream Analytics
@@ -72,7 +72,7 @@ Padrões de caminho de DateTime personalizados permitem que você especifique um
 
 Os seguintes tokens especificadores de formato podem ser usados sozinhos ou de forma combinada para chegar aos formatos de DateTime personalizados:
 
-|Especificador de formato   |Descrição   |Resulta na hora de exemplo 2018-01-02T10:06:08|
+|Especificador de formato   |DESCRIÇÃO   |Resulta na hora de exemplo 2018-01-02T10:06:08|
 |----------|-----------|------------|
 |{datetime:yyyy}|O ano como um número de quatro dígitos|2018|
 |{datetime:MM}|Mês de 01 a 12|01|

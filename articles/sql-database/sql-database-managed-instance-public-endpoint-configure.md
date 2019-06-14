@@ -12,17 +12,17 @@ ms.reviewer: vanto, carlrab
 manager: craigg
 ms.date: 05/07/2019
 ms.openlocfilehash: d3e68a5287e59c576f85491e6e5eba33fac080ca
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65465144"
 ---
 # <a name="configure-public-endpoint-in-azure-sql-database-managed-instance"></a>Configurar o ponto de extremidade público na instância gerenciada do banco de dados SQL
 
 Ponto de extremidade público para um [instância gerenciada](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-index) permite o acesso de dados a sua instância gerenciada de fora a [rede virtual](../virtual-network/virtual-networks-overview.md). É possível acessar a instância gerenciada dos serviços do Azure de multilocatário, como Power BI, serviço de aplicativo do Azure ou uma rede local. Usando o ponto de extremidade público em uma instância gerenciada, você não precisa usar uma VPN, que pode ajudar a evitar problemas de taxa de transferência VPN.
 
-Neste artigo, você aprenderá como:
+Neste artigo, você aprenderá a:
 
 > [!div class="checklist"]
 > - Habilitar o ponto de extremidade público para sua instância gerenciada no portal do Azure
@@ -93,7 +93,7 @@ Set-AzSqlInstance -PublicDataEndpointEnabled $false -force
 
 1. Selecione o **regras de segurança de entrada** guia, e **Add** uma regra que tem prioridade maior do que o **deny_all_inbound** regra com as seguintes configurações: </br> </br>
 
-    |Configuração  |Valor sugerido  |Descrição  |
+    |Configuração  |Valor sugerido  |DESCRIÇÃO  |
     |---------|---------|---------|
     |**Fonte**     |Qualquer endereço IP ou a marca de serviço         |<ul><li>Para serviços do Azure como o Power BI, selecione a marca de serviço de nuvem do Azure</li> <li>Para seu computador ou VM do Azure, use o endereço IP de NAT</li></ul> |
     |**Intervalos de porta de origem**     |*         |Deixar esta opção para * (qualquer) como portas de origem geralmente são alocado dinamicamente e como, imprevisível |

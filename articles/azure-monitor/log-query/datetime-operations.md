@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.openlocfilehash: 402511ba3c45e8bd12cb7f92ecd54f6084c8ada2
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62112350"
 ---
 # <a name="working-with-date-time-values-in-azure-monitor-log-queries"></a>Trabalhar com valores de data e hora em consultas de log do Azure Monitor
@@ -134,13 +134,13 @@ Event
 
 Essa consulta produz os seguintes resultados:
 
-| timestamp|count_|
+|timestamp|count_|
 |--|--|
-|2018-07-28T00:00:00.000|7.136|
-|2018-07-29T00:00:00.000|12.315|
-|2018-07-30T00:00:00.000|16.847|
-|2018-07-31T00:00:00.000|12.616|
-|2018-08-01T00:00:00.000|5.416|
+|2018-07-28T00:00:00.000|7\.136|
+|2018-07-29T00:00:00.000|12\.315|
+|2018-07-30T00:00:00.000|16\.847|
+|2018-07-31T00:00:00.000|12\.616|
+|2018-08-01T00:00:00.000|5\.416|
 
 
 ## <a name="time-zones"></a>Fusos horários
@@ -153,7 +153,7 @@ Event
 
 ## <a name="related-functions"></a>Funções relacionadas
 
-| Category | Função |
+| Categoria | Função |
 |:---|:---|
 | Converter tipos de dados | [todatetime](/azure/kusto/query/todatetimefunction)  [totimespan](/azure/kusto/query/totimespanfunction)  |
 | Valor arredondado para o tamanho do compartimento | [bin](/azure/kusto/query/binfunction) |

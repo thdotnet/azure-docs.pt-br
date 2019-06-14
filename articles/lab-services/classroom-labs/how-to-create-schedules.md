@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/30/2019
 ms.author: spelluru
 ms.openlocfilehash: 34bc8263053cd4a701c16ee1832cf1b27340a345
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60695924"
 ---
 # <a name="create-and-manage-schedules-for-classroom-labs-in-azure-lab-services"></a>Criar e gerenciar agendamentos para laboratórios de sala de aula do Azure Lab Services 
@@ -32,10 +32,10 @@ Agendamentos permitem que você configure um laboratório de sala de aula, de mo
 
     ![Botão Adicionar agendamento na página Agendamentos](../media/how-to-create-schedules/add-schedule-button.png)
 2. Na página **Adicionar agendamento**, verifique se a opção **Uma vez** está selecionada na parte superior. Se não estiver, selecione **Uma vez**. 
-3. Para **Data de agendamento (obrigatório)**, insira a data ou selecione o ícone de calendário para selecionar uma data. 
+3. Para **Data de agendamento (obrigatório)** , insira a data ou selecione o ícone de calendário para selecionar uma data. 
 4. Para **Hora de início**, selecione a hora em que você deseja que as VMs sejam iniciadas. A hora de início é necessária se a hora de término não está definida. Selecione **Remover evento de início** se você quiser especificar apenas a hora de término. Se a **Hora de início** é desabilitada, selecione **Adicionar evento de início** ao lado da lista suspensa para habilitá-lo. 
 5. Para **Hora de término**, selecione a hora em que você deseja que as VMs sejam desligadas. A hora de término é necessária se a hora de início não está definida. Selecione **Remover evento de interrupção** se você quiser especificar apenas a hora de início. Se a **Hora de término** é desabilitada, selecione **Adicionar evento de interrupção** ao lado da lista suspensa para habilitá-lo.
-6. Para **Fuso horário (obrigatório)**, selecione o fuso horário das horas de início e de término especificadas por você. 
+6. Para **Fuso horário (obrigatório)** , selecione o fuso horário das horas de início e de término especificadas por você. 
 7. Para **Anotações**, insira qualquer descrição ou anotações para o agendamento. 
 8. Clique em **Salvar**. 
 
@@ -47,12 +47,12 @@ Agendamentos permitem que você configure um laboratório de sala de aula, de mo
 
     ![Botão Adicionar agendamento na página Agendamentos](../media/how-to-create-schedules/add-schedule-button.png)
 2. Na página **Adicionar agendamento**, alterne para **Semanal** na parte superior. 
-3. Para **Dias do agendamento (obrigatório)**, selecione os dias em que você deseja que o agendamento entre em vigor. No exemplo abaixo, a marca Segunda-Sexta foi selecionada. 
+3. Para **Dias do agendamento (obrigatório)** , selecione os dias em que você deseja que o agendamento entre em vigor. No exemplo abaixo, a marca Segunda-Sexta foi selecionada. 
 4. No campo **De**, insira a **data de início do agendamento** ou escolha uma data, selecionando o botão **calendário**. Esse campo é obrigatório. 
 5. Para **data de término do agendamento**, insira ou selecione uma data de término em que as VMs devem ser desligadas. 
 6. Para **Hora de início**, selecione a hora em que você deseja que as VMs sejam iniciadas. A hora de início é necessária se a hora de término não está definida. Selecione **Remover evento de início** se você quiser especificar apenas a hora de término. Se a **Hora de início** é desabilitada, selecione **Adicionar evento de início** ao lado da lista suspensa para habilitá-lo. 
 7. Para **Hora de término**, selecione a hora em que você deseja que as VMs sejam desligadas. A hora de término é necessária se a hora de início não está definida. Selecione **Remover evento de interrupção** se você quiser especificar apenas a hora de início. Se a **Hora de término** é desabilitada, selecione **Adicionar evento de interrupção** ao lado da lista suspensa para habilitá-lo.
-8. Para **Fuso horário (obrigatório)**, selecione o fuso horário das horas de início e de término especificadas por você.  
+8. Para **Fuso horário (obrigatório)** , selecione o fuso horário das horas de início e de término especificadas por você.  
 9. Para **Anotações**, insira qualquer descrição ou anotações para o agendamento. 
 10. Clique em **Salvar**. 
 

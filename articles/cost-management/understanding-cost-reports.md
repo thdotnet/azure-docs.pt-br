@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: benshy
 ms.custom: seodec18
 ms.openlocfilehash: 91dc386641c758c42f64afff387d0463d1445f1d
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65969069"
 ---
 # <a name="understanding-cloudyn-cost-management-reports"></a>Noções básicas dos relatórios de gerenciamento de custos do Cloudyn
@@ -73,7 +73,7 @@ Cada área numerada na imagem anterior é descrita detalhadamente nas seguintes 
 
    Os exemplos podem incluir:
    - Centro de custo
-   - Departamento
+   - department
    - Aplicativo
    - Ambiente
    - Código de custo
@@ -147,7 +147,7 @@ Cada área numerada na imagem anterior é descrita detalhadamente nas seguintes 
     - Diariamente
     - Semanalmente
     - Mensalmente
-    - Trimestralmente
+    - Trimestral
     - Anual
 
 9. **Regras de alocação**

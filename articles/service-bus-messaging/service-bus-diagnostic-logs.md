@@ -16,17 +16,17 @@ ms.workload: data-services
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 7d4cb8e55c5d1561c09cf85122550a66e3671f17
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60714094"
 ---
 # <a name="service-bus-diagnostic-logs"></a>Logs de diagnóstico do Barramento de Serviço
 
 É possível exibir dois tipos de logs para o Barramento de Serviço do Azure:
-* **[Logs de atividades](../azure-monitor/platform/activity-logs-overview.md)**. Esses logs contém informações sobre as operações executadas em um trabalho. Os logs estão sempre habilitados.
-* **[Logs de diagnóstico](../azure-monitor/platform/diagnostic-logs-overview.md)**. É possível configurar logs de diagnóstico para obter informações mais detalhadas sobre tudo o que acontece em um trabalho. Os logs de diagnóstico abrangem atividades desde o momento em que o trabalho é criado até sua exclusão, incluindo atualizações e atividades que ocorrem durante a execução do trabalho.
+* **[Logs de atividades](../azure-monitor/platform/activity-logs-overview.md)** . Esses logs contém informações sobre as operações executadas em um trabalho. Os logs estão sempre habilitados.
+* **[Logs de diagnóstico](../azure-monitor/platform/diagnostic-logs-overview.md)** . É possível configurar logs de diagnóstico para obter informações mais detalhadas sobre tudo o que acontece em um trabalho. Os logs de diagnóstico abrangem atividades desde o momento em que o trabalho é criado até sua exclusão, incluindo atualizações e atividades que ocorrem durante a execução do trabalho.
 
 ## <a name="turn-on-diagnostic-logs"></a>Ativar logs de diagnóstico
 
@@ -68,12 +68,12 @@ Nome | Descrição
 ------- | -------
 ActivityId | ID interna, usada para acompanhamento
 EventName | Nome da operação           
-resourceId | ID de recurso do Azure Resource Manager
+ResourceId | ID de recurso do Azure Resource Manager
 SubscriptionId | ID da assinatura
 EventTimeString | Tempo de operação
 EventProperties | Propriedades da operação
 Status | Status da operação
-Chamador | Chamador da operação (portal do Azure ou cliente de gerenciamento)
+Caller | Chamador da operação (portal do Azure ou cliente de gerenciamento)
 category | OperationalLogs
 
 Este é um exemplo de uma cadeia de caracteres JSON do log operacional:

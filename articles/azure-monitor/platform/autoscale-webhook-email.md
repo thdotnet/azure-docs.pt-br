@@ -9,10 +9,10 @@ ms.date: 04/03/2017
 ms.author: ancav
 ms.subservice: autoscale
 ms.openlocfilehash: 25ef2541dfa0b4cbd6e11d64381da645acfe653a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60787285"
 ---
 # <a name="use-autoscale-actions-to-send-email-and-webhook-alert-notifications-in-azure-monitor"></a>Use ações de dimensionamento automático para enviar notificações de alerta por email e webhook no Azure Monitor
@@ -108,17 +108,17 @@ Quando a notificação de escala automática é gerada, os metadados a seguir s�
 | status |Sim |O status que indica que uma ação de escala automática foi gerada |
 | operation |Sim |Para um aumento de instâncias, será "Escalar Horizontalmente" e para uma diminuição de instâncias, será "Reduzir Horizontalmente" |
 | context |Sim |O contexto de ação de escala automática |
-|  timestamp |Sim |Carimbo de data/hora de quando a ação de escala automática foi disparada |
-| ID |Sim |ID do Gerenciador de Recursos da configuração de autoescala |
-| Nome |Sim |O nome da configuração de escala automática |
+| timestamp |Sim |Carimbo de data/hora de quando a ação de escala automática foi disparada |
+| id |Sim |ID do Gerenciador de Recursos da configuração de autoescala |
+| name |Sim |O nome da configuração de escala automática |
 | detalhes |Sim |Explicação da ação que o serviço de escala automática realizada a alteração na contagem da instância |
 | subscriptionId |Sim |ID da assinatura do recurso de destino que está sendo escalado |
 | resourceGroupName |Sim |Nome do Grupo de Recursos do recurso de destino que está sendo escalado |
 | resourceName |Sim |Nome do recurso de destino que está sendo escalado |
 | resourceType |Sim |Os três valores com suporte: "microsoft.classiccompute/domainnames/slots/roles" - funções de Serviço de Nuvem, "microsoft.compute/virtualmachinescalesets" - Conjuntos de Escala de Máquina Virtual e "Microsoft.Web/serverfarms" - Aplicativo Web |
-| resourceId |Sim |ID do Gerenciador de Recursos do recurso de destino que está sendo dimensionado |
+| ResourceId |Sim |ID do Gerenciador de Recursos do recurso de destino que está sendo dimensionado |
 | portalLink |Sim |Link do portal do Azure para a página de resumo do recurso de destino |
 | oldCapacity |Sim |A atual (antiga) contagem de instância quando Escala Automática adotou uma ação de escala |
 | newCapacity |Sim |A nova contagem de instância para a qual a Escala Automática escalou o recurso |
-| propriedades |Não  |Opcional. Conjunto de pares de <Chave, Valor> (por exemplo, Dicionário <Cadeia de caracteres, Cadeia de caracteres>). O campo de propriedades é opcional. Em uma interface do usuário personalizada ou fluxo de trabalho de aplicativo Lógico, você pode inserir as chaves e valores que podem ser passados usando a carga útil. Uma maneira alternativa de passar as propriedades personalizadas de volta para a chamada de saída do webhook é usar o URI do webhook em si (como parâmetros de consulta) |
+| propriedades |Não |Opcional. Conjunto de pares de <Chave, Valor> (por exemplo, Dicionário <Cadeia de caracteres, Cadeia de caracteres>). O campo de propriedades é opcional. Em uma interface do usuário personalizada ou fluxo de trabalho de aplicativo Lógico, você pode inserir as chaves e valores que podem ser passados usando a carga útil. Uma maneira alternativa de passar as propriedades personalizadas de volta para a chamada de saída do webhook é usar o URI do webhook em si (como parâmetros de consulta) |
 

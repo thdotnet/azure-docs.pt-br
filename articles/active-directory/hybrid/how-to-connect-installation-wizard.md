@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8ff2caae7cb387f4f0d88cf059d01ad28861b9ad
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60348347"
 ---
 # <a name="azure-ad-connect-sync-running-the-installation-wizard-a-second-time"></a>Sincronização do Azure AD Connect: Executando o assistente de instalação uma segunda vez
@@ -75,7 +75,7 @@ Quando você seleciona essa opção, todos os diretórios na sua configuração 
 ## <a name="configure-staging-mode"></a>Configurar modo de preparo
 Essa opção permite habilitar e desabilitar o modo de preparo no servidor. Encontre mais informações sobre o modo de preparo e como ele é usado em [Operações](how-to-connect-sync-staging-server.md).
 
-A opção mostra se o teste está habilitado ou desabilitado atualmente:   
+A opção mostra se o teste está habilitado ou desabilitado atualmente:  
 ![Opção que também está mostrando o estado atual do modo de preparo](./media/how-to-connect-installation-wizard/stagingmodecurrentstate.png)
 
 Para alterar o estado, selecione essa opção e marque ou desmarque a caixa de seleção.  

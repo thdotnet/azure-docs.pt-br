@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 309adfbebd4f4b615ac1f4061823ca01f3d3ee15
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65139283"
 ---
 # <a name="azure-ad-connect-sync-scheduler"></a>Sincronização do Azure AD Connect: Agendador
@@ -72,7 +72,7 @@ A configuração do agendador é armazenada no Azure AD. Se você tiver um servi
 
 ### <a name="customizedsynccycleinterval"></a>CustomizedSyncCycleInterval
 Sintaxe: `Set-ADSyncScheduler -CustomizedSyncCycleInterval d.HH:mm:ss`  
- d - dias, HH - horas, mm - minutos, ss - segundos
+d - dias, HH - horas, mm - minutos, ss - segundos
 
 Exemplo: `Set-ADSyncScheduler -CustomizedSyncCycleInterval 03:00:00`  
 Altera o Agendador para executar a cada três horas.
@@ -93,7 +93,7 @@ Quando você fizer as alterações, não se esqueça de habilitar o agendador no
 Por padrão, o agendador é executado a cada 30 minutos. Em alguns casos, é bom executar um ciclo de sincronização entre os ciclos agendados ou terá que executar um tipo diferente.
 
 ### <a name="delta-sync-cycle"></a>Ciclo de sincronização delta
- Um ciclo de sincronização delta inclui as seguintes etapas:
+Um ciclo de sincronização delta inclui as seguintes etapas:
 
 
 - Importação delta em todos os conectores
@@ -199,7 +199,7 @@ Get-ADSyncConnectorRunStatus
 ```
 
 ![Status de execução do conector](./media/how-to-connect-sync-feature-scheduler/getconnectorrunstatus.png)  
- Na imagem acima, a primeira linha é de um estado em que o mecanismo de sincronização está ocioso. A segunda linha é de quando o Conector do Azure AD está em execução.
+Na imagem acima, a primeira linha é de um estado em que o mecanismo de sincronização está ocioso. A segunda linha é de quando o Conector do Azure AD está em execução.
 
 ## <a name="scheduler-and-installation-wizard"></a>Agendador e o assistente de instalação
 Se você iniciar o assistente de instalação, o agendador será temporariamente suspenso. Esse comportamento ocorre porque ele pressupõe que você fará alterações na configuração e as definições não poderão ser aplicadas se o mecanismo de sincronização estiver ativamente em execução. Por esse motivo, não deixe o assistente de instalação aberto, já que ele impede que o mecanismo de sincronização execute ações de sincronização.

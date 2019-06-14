@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 10/31/2016
 ms.author: mbullwin
 ms.openlocfilehash: 5dfbc6fa18b5d1b5b3058db14eb1232be27a0c40
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66130975"
 ---
 # <a name="use-powershell-to-set-alerts-in-application-insights"></a>Usar o PowerShell para configurar alertas no Application Insights
@@ -98,7 +98,7 @@ Tenho um aplicativo em que uso o [TrackMetric()](../../azure-monitor/app/api-cus
 A mesma regra pode ser usada para a métrica relatada usando o [parâmetro de medida](../../azure-monitor/app/api-custom-events-metrics.md#properties) de outra chamada de controle, como TrackEvent ou trackPageView.
 
 ## <a name="metric-names"></a>Nomes de métrica
-| Nome da métrica | Nome da tela | Descrição |
+| Nome da métrica | Nome da tela | DESCRIÇÃO |
 | --- | --- | --- |
 | `basicExceptionBrowser.count` |Exceções de navegador |Contagem de exceções não identificadas lançadas no navegador. |
 | `basicExceptionServer.count` |Exceções do servidor |Contagem de exceções sem tratamento lançadas pelo aplicativo |
@@ -116,18 +116,18 @@ A mesma regra pode ser usada para a métrica relatada usando o [parâmetro de me
 | `performanceCounter.request_execution_time.value` |Tempo de execução de solicitação do ASP.NET |Tempo de execução da solicitação mais recente. |
 | `performanceCounter.requests_in_application_queue.value` |Solicitações do ASP.NET na fila de execução |Comprimento da fila de solicitação de aplicativo. |
 | `performanceCounter.requests_per_sec.value` |Taxa de solicitação do ASP.NET |Taxa de todas as solicitações para o aplicativo por segundo do ASP.NET. |
-| `remoteDependencyFailed.durationMetric.count` |Falhas na dependência |Contagem de falhas de chamadas feitas pelo aplicativo servidor para recursos externos. |
+| `remoteDependencyFailed.durationMetric.count` |Falhas de dependência |Contagem de falhas de chamadas feitas pelo aplicativo servidor para recursos externos. |
 | `request.duration` |Tempo de resposta do servidor |Tempo entre o recebimento de uma solicitação HTTP e a finalização do envio da resposta. |
 | `request.rate` |Taxa de solicitação |Taxa de todas as solicitações para o aplicativo por segundo. |
-| `requestFailed.count` |Solicitações com falha |Contagem de solicitações HTTP que resultaram em um código de resposta >= 400 |
-| `view.count` |Exibições de página |Contagem de solicitações de usuário  cliente para uma página da Web. O tráfego sintético é filtrado. |
+| `requestFailed.count` |Solicitações falhas |Contagem de solicitações HTTP que resultaram em um código de resposta >= 400 |
+| `view.count` |Visualizações de página |Contagem de solicitações de usuário  cliente para uma página da Web. O tráfego sintético é filtrado. |
 | {o nome de métrica personalizada} |{O nome da métrica} |O valor de métrica relatado pelo [TrackMetric](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric) ou o [parâmetro de medidas de uma chamada de controle](../../azure-monitor/app/api-custom-events-metrics.md#properties). |
 
 As métricas são enviadas por diferentes módulos de telemetria:
 
 | Grupo de métricas | Módulo de coletor |
 | --- | --- |
-| basicExceptionBrowser,<br/>clientPerformance,<br/>exibir |[JavaScript do navegador](../../azure-monitor/app/javascript.md) |
+| basicExceptionBrowser,<br/>clientPerformance,<br/>view |[JavaScript do navegador](../../azure-monitor/app/javascript.md) |
 | performanceCounter |[Desempenho](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
 | remoteDependencyFailed |[Dependência](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
 | request,<br/>requestFailed |[Solicitação do servidor](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |

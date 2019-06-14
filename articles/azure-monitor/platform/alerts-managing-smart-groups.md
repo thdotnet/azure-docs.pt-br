@@ -1,18 +1,18 @@
 ---
 title: Gerenciar grupos inteligentes
 description: Como gerenciar Grupos Inteligentes criados de acordo com suas instâncias de alerta
-author: lingliw
+author: anantr
 services: monitoring
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 01/21/19
-ms.author: v-lingwu
+ms.date: 09/24/2018
+ms.author: anantr
 ms.subservice: alerts
 ms.openlocfilehash: a9434bebe82687b14f45b3c375572717d71d0e55
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60713301"
 ---
 # <a name="manage-smart-groups"></a>Gerenciar grupos inteligentes
@@ -26,4 +26,5 @@ Os [Grupos inteligentes](https://aka.ms/smart-groups) usam algoritmos de aprendi
 ![Monitoramento](./media/alerts-managing-smart-groups/sg-list.jpg)
 3.  Clicar em qualquer Grupo Inteligente abre a página de detalhes, onde você pode ver o motivo de agrupamento, juntamente com os alertas de membro. Essa agregação permite que você lide com um grupo inteligente singular, em vez de precisar examinar vários alertas.   
 ![Monitoramento](./media/alerts-managing-smart-groups/sg-details.jpg)
+
 

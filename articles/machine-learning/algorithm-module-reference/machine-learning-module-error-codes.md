@@ -11,10 +11,10 @@ ms.author: zhanxia
 ms.date: 05/02/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: 09a2b616e2bba93be86241c64d37daec7d6dea3b
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65029754"
 ---
 # <a name="exceptions-and-error-codes-for-algorithm--module-reference"></a>Exceções e códigos de erro para referência de módulo e algoritmos
@@ -347,7 +347,7 @@ Para colunas que você pretende usar para agrupamento ou categorização, tome m
 ## <a name="error-0018"></a>Erro 0018  
  Ocorrerá uma exceção se o conjunto de dados de entrada não é válido.  
   
-**Resolução:** Esse erro no Azure Machine Learning pode aparecer em vários contextos, portanto, não há não uma única solução. Em geral, o erro indica que os dados fornecidos como entrada para um módulo tem um número incorreto de colunas, ou que o tipo de dados não coincide com os requisitos do módulo. Por exemplo:   
+**Resolução:** Esse erro no Azure Machine Learning pode aparecer em vários contextos, portanto, não há não uma única solução. Em geral, o erro indica que os dados fornecidos como entrada para um módulo tem um número incorreto de colunas, ou que o tipo de dados não coincide com os requisitos do módulo. Por exemplo:  
   
 -   O módulo requer uma coluna de rótulo, mas nenhuma coluna está marcada como um rótulo, ou você não selecionou uma coluna de rótulo ainda.  
   
@@ -415,7 +415,7 @@ Para colunas que você pretende usar para agrupamento ou categorização, tome m
 ## <a name="error-0022"></a>Erro 0022  
  Ocorrerá uma exceção se o número de colunas selecionadas no conjunto de dados de entrada não é igual ao número esperado.  
   
- Esse erro no Azure Machine Learning pode ocorrer quando o módulo downstream ou a operação requer um número específico de colunas ou entradas, e você forneceu muitas ou poucas entradas ou colunas. Por exemplo:   
+ Esse erro no Azure Machine Learning pode ocorrer quando o módulo downstream ou a operação requer um número específico de colunas ou entradas, e você forneceu muitas ou poucas entradas ou colunas. Por exemplo:  
   
 -   Você especifica uma coluna de rótulo único ou a coluna de chave e selecionou acidentalmente várias colunas.  
   
@@ -1192,7 +1192,7 @@ Consulte os seguintes artigos para obter ajuda com consultas do Hive para o mach
   
  Se houver uma mensagem SQL gerado relatada pela exceção módulo, agir com base no erro relatado. Por exemplo, as mensagens de erro, às vezes, incluem orientações específicas sobre o erro provavelmente:
 + *O banco de dados ausente ou não existe coluna*, indicando que você pode ter digitado um nome de coluna incorreto. Se você tiver certeza do nome da coluna está correto, tente usar colchetes ou aspas para delimitar o identificador da coluna.
-+ *Erro de lógica SQL quase \<palavra-chave SQL\>*, indicando que você pode ter um erro de sintaxe antes da palavra-chave especificada
++ *Erro de lógica SQL quase \<palavra-chave SQL\>* , indicando que você pode ter um erro de sintaxe antes da palavra-chave especificada
 
   
 |Mensagens de Exceção|  
@@ -1500,7 +1500,7 @@ Em geral, uma transformação com base em Contagem só pode ser aplicada aos con
 ## <a name="error-0100"></a>Erro 0100  
  Ocorrerá uma exceção quando um idioma sem suporte é especificado para um módulo personalizado.  
   
- Esse erro no Azure Machine Learning ocorre quando a criação de um módulo personalizado e a propriedade name do **linguagem** elemento em um arquivo de definição de xml do módulo personalizado tem um valor inválido. Atualmente, o único valor válido para essa propriedade é `R`. Por exemplo:   
+ Esse erro no Azure Machine Learning ocorre quando a criação de um módulo personalizado e a propriedade name do **linguagem** elemento em um arquivo de definição de xml do módulo personalizado tem um valor inválido. Atualmente, o único valor válido para essa propriedade é `R`. Por exemplo:  
   
  `<Language name="R" sourceFile="CustomAddRows.R" entryPoint="CustomAddRows" />`  
   
@@ -1555,7 +1555,7 @@ Em geral, uma transformação com base em Contagem só pode ser aplicada aos con
 ## <a name="error-0104"></a>Erro 0104  
  Gerada quando um arquivo de definição de módulo faz referência a um script que não pode ser localizado  
   
- Esse erro no Azure Machine Learning é gerado quando um arquivo de definição de xml do módulo personalizado faz referência a um arquivo de script do **linguagem** elemento que não existe no pacote zip. O caminho do arquivo de script é definido na **sourceFile** propriedade da **idioma** elemento. O caminho para o arquivo de origem é relativa à raiz do pacote zip (mesmo local que os arquivos de definição de xml do módulo). Se o arquivo de script estiver em uma subpasta, o caminho relativo para o arquivo de script deve ser especificado. Por exemplo, se todos os scripts foram armazenados em um **myScripts** pasta dentro do pacote de zip, o **idioma** elemento precisaria adicionar este caminho para o **sourceFile** a propriedade como abaixo. Por exemplo:   
+ Esse erro no Azure Machine Learning é gerado quando um arquivo de definição de xml do módulo personalizado faz referência a um arquivo de script do **linguagem** elemento que não existe no pacote zip. O caminho do arquivo de script é definido na **sourceFile** propriedade da **idioma** elemento. O caminho para o arquivo de origem é relativa à raiz do pacote zip (mesmo local que os arquivos de definição de xml do módulo). Se o arquivo de script estiver em uma subpasta, o caminho relativo para o arquivo de script deve ser especificado. Por exemplo, se todos os scripts foram armazenados em um **myScripts** pasta dentro do pacote de zip, o **idioma** elemento precisaria adicionar este caminho para o **sourceFile** a propriedade como abaixo. Por exemplo:  
   
  `<Language name="R" sourceFile="myScripts/CustomAddRows.R" entryPoint="CustomAddRows" />`  
   
@@ -1879,7 +1879,7 @@ Em geral, uma transformação com base em Contagem só pode ser aplicada aos con
 |Mensagens de Exceção|  
 |------------------------|  
 |O arquivo especificado não foi encontrado o arquivo zip de int.|  
-|Arquivo especificado não encontrado. Encontrar os arquivos a seguir: {0}|  
+|O arquivo especificado não foi encontrado. Encontrar os arquivos a seguir: {0}|  
   
 
 ## <a name="error-0134"></a>Erro 0134
@@ -2191,4 +2191,4 @@ Para obter mais ajuda, é recomendável que você postar a mensagem detalhada qu
 |------------------------|  
 |Exceção de biblioteca.|  
 |Exceção de biblioteca: {0}|  
-|{0} exceção de biblioteca: {1}|  
+|{0} Exceção de biblioteca: {1}|  

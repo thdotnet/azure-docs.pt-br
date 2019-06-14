@@ -14,10 +14,10 @@ ms.workload: infrastructure
 ms.date: 09/24/2018
 ms.author: hermannd
 ms.openlocfilehash: 4483a7f53e084be5f245840829f4c9c95648b1af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60477006"
 ---
 # <a name="verify-and-troubleshoot-sap-hana-scale-out-high-availability-setup-on-sles-12-sp3"></a>Verificar e solucionar problemas de instalação de alta disponibilidade de expansão do SAP HANA no SLES 12 SP3 
@@ -473,7 +473,7 @@ Depois que tudo estiver configurado corretamente, você poderá executar o segui
 systemctl status pacemaker
 </code></pre>
 
-A parte superior da saída deve se parecer com a amostra a seguir. É importante que o status após **Ativo** seja mostrado como **carregado** e **ativo (em execução)**. O status após **Loaded** deve ser mostrado como **ativado**.
+A parte superior da saída deve se parecer com a amostra a seguir. É importante que o status após **Ativo** seja mostrado como **carregado** e **ativo (em execução)** . O status após **Loaded** deve ser mostrado como **ativado**.
 
 <pre><code>
   pacemaker.service - Pacemaker High Availability Cluster Manager
@@ -802,7 +802,7 @@ Os comandos **SAPHanaSR showAttr** e **crm status** não indicam algo sobre as r
 crm configure show
 </code></pre>
 
-Dentro da configuração de cluster, você deve encontrar uma nova restrição de local causada pela antiga migração de recurso manual. Esta entrada de exemplo começa com **location cli-**:
+Dentro da configuração de cluster, você deve encontrar uma nova restrição de local causada pela antiga migração de recurso manual. Esta entrada de exemplo começa com **location cli-** :
 
 <pre><code>
 location cli-ban-msl_SAPHanaCon_HSO_HDB00-on-hso-hana-vm-s1-0 msl_SAPHanaCon_HSO_HDB00 role=Started -inf: hso-hana-vm-s1-0

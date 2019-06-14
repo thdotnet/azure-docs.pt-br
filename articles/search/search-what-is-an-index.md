@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.custom: seodec2018
 ms.openlocfilehash: 462a99ffab8038f34b1ffd038ce5c8e8ec9a8565
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65024440"
 ---
 # <a name="create-a-basic-index-in-azure-search"></a>Criar um índice básico no Azure Search
@@ -213,7 +213,7 @@ As seguintes opções podem ser definidas para CORS:
 
 + **maxAgeInSeconds** (opcional): Os navegadores usam esse valor para determinar a duração (em segundos) para armazenar em cache as respostas CORS de simulação. Esse deve ser um inteiro não negativo. Quanto maior for esse valor, melhor será o desempenho, porém, mais tempo levará para que as alterações de política CORS entrem em vigor. Se ele não for definido, uma duração padrão de cinco minutos será usada.
 
-## <a name="encryption-key"></a>Chave de Criptografia
+## <a name="encryption-key"></a>Chave de criptografia
 
 Enquanto todos os índices de pesquisa do Azure são criptografados por padrão usando chaves gerenciadas pela Microsoft, os índices podem ser configurados para serem criptografados com **chaves gerenciadas do cliente** no cofre de chaves. Para obter mais informações, consulte [gerenciar chaves de criptografia no Azure Search](search-security-manage-encryption-keys.md).
 

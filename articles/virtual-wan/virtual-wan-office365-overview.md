@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 9/24/2018
 ms.author: cherylmc
 ms.openlocfilehash: cb91c1364a91c101ecf8362acd7aab01440143fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60458570"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64685278"
 ---
 # <a name="office-365-control-plane-in-virtual-wan"></a>Plano de controle do Office 365 na WAN Virtual
 
@@ -26,7 +26,7 @@ Os clientes de WAN virtual com dispositivos SDWAN selecionados podem configurar 
 Usando esse recurso na WAN Virtual, os clientes agora podem especificar as categorias de tráfego do Office 365 em que confiam para sessões de Internet direta. Esse tráfego do O365 confiável ignorará os proxies e encaminhará diretamente da localização do usuário para o POP da Microsoft mais próximo. Evita o retorno do tráfego e o acesso por rede externa, oferecendo a experiência ideal ao usuário e economizando em custos de WAN. 
 
 ### <a name="what-are-the-office-365-traffic-categories"></a>Quais são as categorias do tráfego do Office 365?
-Os pontos de extremidade do Office 365 representam as sub-redes e os endereços de rede. Os pontos de extremidade podem ser URLs, intervalos de IP ou endereços IP. As URLs podem ser um FQDN, como *account.office.net*, ou uma URL curinga, como **.office365.com*. Os pontos de extremidade são separados em três categorias: **Otimizar**, **Permitir** e **Padrão**, com base em sua gravidade. Há mais detalhes sobre as categorias de ponto de extremidade [aqui](https://docs.microsoft.com/office365/enterprise/office-365-network-connectivity-principles#BKMK_Categories).
+Os pontos de extremidade do Office 365 representam as sub-redes e os endereços de rede. Os pontos de extremidade podem ser URLs, intervalos de IP ou endereços IP. As URLs podem ser um FQDN, como *account.office.net*, ou uma URL curinga, como * *.office365.com*. Os pontos de extremidade são separados em três categorias: **Otimizar**, **Permitir** e **Padrão**, com base em sua gravidade. Há mais detalhes sobre as categorias de ponto de extremidade [aqui](https://docs.microsoft.com/office365/enterprise/office-365-network-connectivity-principles#BKMK_Categories).
 
 ### <a name="which-office-365-traffic-category-is-recommended-by-microsoft-for-direct-internet-breakout"></a>Qual categoria de tráfego do Office 365 é recomendada pela Microsoft para sessões de Internet direta?
 A categoria **Otimizar** é os pontos de extremidade de rede mais críticos e é necessária para ignorar a interrupção de SSL e inspecionar outros dispositivos de segurança de rede. Ela deve ter a saída de Internet direta próxima dos usuários. Esses pontos de extremidade representam cenários do Office 365 que são mais sensíveis ao desempenho, à latência e à disponibilidade de rede. Essa categoria inclui um conjunto pequeno (na ordem de cerca de 10) de URLs principais e um conjunto definido de sub-redes IP dedicado às cargas de trabalho principais do Office 365, como o Exchange Online, o SharePoint Online, o Skype for Business Online e o Microsoft Teams. 

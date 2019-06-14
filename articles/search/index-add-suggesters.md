@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: eb6667a1429382ed566826de64ad7ffbe83183cf
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65521878"
 ---
 # <a name="add-suggesters-to-an-index-for-typeahead-in-azure-search"></a>Adicionar sugestores a um índice para digitação antecipada no Azure Search
@@ -101,7 +101,7 @@ Principais pontos a observar sobre sugestores é que há um nome (sugestores sã
 
 Propriedades que definem um sugestor incluem o seguinte:
 
-|Propriedade      |Descrição      |
+|Propriedade      |DESCRIÇÃO      |
 |--------------|-----------------|
 |`name`        |O nome do sugestor. Você usar o nome do sugestor ao chamar o [API REST de sugestões](https://docs.microsoft.com/rest/api/searchservice/suggestions) ou [API REST de preenchimento automático](https://docs.microsoft.com/rest/api/searchservice/autocomplete).|
 |`searchMode`  |A estratégia usada para pesquisar frases candidatas. O único modo com suporte atualmente é `analyzingInfixMatching`, que executa a correspondência flexível de frases no início ou no meio da frase.|
@@ -123,7 +123,7 @@ Para .NET, use [SuggestWithHttpMessagesAsync](https://docs.microsoft.com/dotnet/
 
 Para obter um exemplo que demonstra as duas solicitações, consulte [exemplo de como adicionar sugestões e preenchimento automático no Azure Search](search-autocomplete-tutorial.md).
 
-## <a name="sample-code"></a>Código de exemplo
+## <a name="sample-code"></a>Exemplo de código
 
 O [DotNetHowToAutocomplete](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToAutocomplete) exemplo contém ambas C# e o código Java e demonstra uma construção encarregado da sugestão, as consultas sugeridas, preenchimento automático e navegação facetada. 
 

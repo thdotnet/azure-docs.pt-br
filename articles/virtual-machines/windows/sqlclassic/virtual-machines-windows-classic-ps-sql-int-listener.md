@@ -16,10 +16,10 @@ ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
 ms.openlocfilehash: 0e6a52ea2fdd05546a4da9f8cd1165b41ed27944
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62097638"
 ---
 # <a name="configure-an-ilb-listener-for-always-on-availability-groups-in-azure"></a>Configurar um ouvinte de ILB para grupos de disponibilidade AlwaysOn no Azure
@@ -105,7 +105,7 @@ Crie um ponto de extremidade com carga equilibrada para cada VM que hospeda uma 
             Get-AzureVM -ServiceName $ServiceName -Name $node | Add-AzureEndpoint -Name "ListenerEndpoint" -LBSetName "ListenerEndpointLB" -Protocol tcp -LocalPort 1433 -PublicPort 1433 -ProbePort 59999 -ProbeProtocol tcp -ProbeIntervalInSeconds 10 -InternalLoadBalancerName $ILBName -DirectServerReturn $true | Update-AzureVM
         }
 
-13. Depois de definir as variáveis, copie o script do editor de texto para sua sessão do PowerShell a fim de executá-lo. Se o prompt ainda mostrar **>>**, pressione Enter novamente para ter certeza de que o script será executado.
+13. Depois de definir as variáveis, copie o script do editor de texto para sua sessão do PowerShell a fim de executá-lo. Se o prompt ainda mostrar **>>** , pressione Enter novamente para ter certeza de que o script será executado.
 
 ## <a name="verify-that-kb2854082-is-installed-if-necessary"></a>Verifique se KB2854082 está instalado, se necessário
 [!INCLUDE [kb2854082](../../../../includes/virtual-machines-ag-listener-kb2854082.md)]
@@ -151,7 +151,7 @@ Crie o ouvinte do grupo de disponibilidade em duas etapas. Primeiro, crie o recu
 
         cluster res $IPResourceName /priv enabledhcp=0 address=$ILBIP probeport=59999  subnetmask=255.255.255.255
 
-3. Depois de definir as variáveis, abra uma janela elevada do Windows PowerShell, cole o script do editor de texto em sua sessão do PowerShell para executá-lo. Se o prompt ainda mostrar **>>**, pressione Enter novamente para ter certeza de que o script será executado.
+3. Depois de definir as variáveis, abra uma janela elevada do Windows PowerShell, cole o script do editor de texto em sua sessão do PowerShell para executá-lo. Se o prompt ainda mostrar **>>** , pressione Enter novamente para ter certeza de que o script será executado.
 
 4. Repita as etapas anteriores para cada VM.  
     Esse script configura o recurso de endereço IP com o endereço IP do serviço de nuvem e define outros parâmetros, como a porta de investigação. Quando o recurso de endereço IP é colocado online, ele pode responder à sondagem na porta de investigação do ponto de extremidade com balanceamento de carga criado anteriormente.

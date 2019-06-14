@@ -14,10 +14,10 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: e95f167cf6dcfe90fff1c2be174ca197cb2aa004
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65204032"
 ---
 # <a name="process-large-scale-datasets-by-using-data-factory-and-batch"></a>Processar conjuntos de dados em larga escala usando o Data Factory e o Lote
@@ -111,7 +111,7 @@ Crie um pool do Lote com pelo menos dois nós de computação.
 
 1. Na folha **Pools**, selecione o botão **Adicionar** na barra de ferramentas para adicionar um pool.
 
-    a. Insira uma ID para o pool (**ID do Pool**). Anote a ID do pool. Você precisará dela quando criar a solução de data factory.
+   a. Insira uma ID para o pool (**ID do Pool**). Anote a ID do pool. Você precisará dela quando criar a solução de data factory.
 
    b. Especifique **Windows Server 2012 R2** para a configuração **Família de Sistemas Operacionais**.
 
@@ -180,11 +180,11 @@ O método tem alguns componentes principais que você precisa entender:
 #### <a name="procedure-create-the-custom-activity"></a>Procedimento: Criar a atividade personalizada
 1. Crie um projeto de biblioteca de classes .NET no Visual Studio.
 
-    a. Inicie o Visual Studio 2012/2013/2015.
+   a. Inicie o Visual Studio 2012/2013/2015.
 
    b. Selecione **Arquivo** > **Novo** > **Projeto**.
 
-   c. Expanda **Modelos** e selecione **Visual C\#**. Neste passo a passo, você pode usar C\#, mas pode usar qualquer linguagem .NET para desenvolver a atividade personalizada.
+   c. Expanda **Modelos** e selecione **Visual C\#** . Neste passo a passo, você pode usar C\#, mas pode usar qualquer linguagem .NET para desenvolver a atividade personalizada.
 
    d. Selecione **Biblioteca de Classes** na lista de tipos de projeto à direita.
 
@@ -528,7 +528,7 @@ A apresentação passo a passo a seguir dá os detalhes adicionais.
 #### <a name="step-1-create-the-data-factory"></a>Etapa 1: Criar o data factory
 1. Depois de entrar no [portal do Azure](https://portal.azure.com/), execute as seguintes etapas:
 
-    a. Selecione **NOVO** no menu à esquerda.
+   a. Selecione **NOVO** no menu à esquerda.
 
    b. Selecione **Dados + Análise** na folha **Novo**.
 
@@ -571,7 +571,7 @@ Nesta etapa, você cria um serviço vinculado para sua conta do Lote que é usad
 
 1. No script JSON:
 
-    a. Substitua **nome da conta** pelo nome de sua conta do Lote.
+   a. Substitua **nome da conta** pelo nome de sua conta do Lote.
 
    b. Substitua **chave de acesso** pela chave de acesso da conta do Lote.
 

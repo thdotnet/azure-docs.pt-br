@@ -8,10 +8,10 @@ ms.topic: conceptional
 ms.date: 04/22/2019
 ms.author: alzam
 ms.openlocfilehash: e54dadbda0582095e8152ea30376d369177bfd86
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65509899"
 ---
 # <a name="set-up-alerts-on-vpn-gateway-metrics"></a>Configurar alertas em métricas do Gateway de VPN
@@ -23,14 +23,14 @@ Este artigo ajuda você a configurar alertas em métricas do Gateway de VPN do A
 |---       | ---        | ---       | ---            | ---       |
 |**AverageBandwidth**| Bytes/s  | 5 minutos| Média de utilização de largura de banda combinada de todas as conexões site a site no gateway.     |
 |**P2SBandwidth**| Bytes/s  | 1 minuto  | Média de utilização de largura de banda combinada de todas as conexões ponto a site no gateway.    |
-|**P2SConnectionCount**| Count  | 1 minuto  | Contagem de conexões ponto a site no gateway.   |
+|**P2SConnectionCount**| Contagem  | 1 minuto  | Contagem de conexões ponto a site no gateway.   |
 |**TunnelAverageBandwidth** | Bytes/s    | 5 minutos  | Média de utilização de largura de banda de túneis criada no gateway. |
 |**TunnelEgressBytes** | Bytes | 5 minutos | Tráfego de saída em túneis criados no gateway.   |
-|**TunnelEgressPackets** | Count | 5 minutos | Contagem de pacotes de saída nos túneis criados no gateway.   |
+|**TunnelEgressPackets** | Contagem | 5 minutos | Contagem de pacotes de saída nos túneis criados no gateway.   |
 |**TunnelEgressPacketDropTSMismatch** | Count | 5 minutos | Contagem de pacotes de saída descartados em túneis causados por incompatibilidade do seletor de tráfego. |
 |**TunnelIngressBytes** | Bytes | 5 minutos | Tráfego de entrada nos túneis criados no gateway.   |
 |**TunnelIngressPackets** | Count | 5 minutos | Contagem de pacotes de entrada nos túneis criados no gateway.   |
-|**TunnelIngressPacketDropTSMismatch** | Count | 5 minutos | Contagem de pacotes de entrada descartados em túneis causados por incompatibilidade do seletor de tráfego. |
+|**TunnelIngressPacketDropTSMismatch** | Contagem | 5 minutos | Contagem de pacotes de entrada descartados em túneis causados por incompatibilidade do seletor de tráfego. |
 
 
 ## <a name="setup"></a>Configurar alertas do Azure Monitor com base nas métricas usando o portal do Azure
@@ -57,7 +57,7 @@ As etapas de exemplo a seguir criará um alerta em um gateway para:
    ![Selecionado métrica na lista de métricas](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert3.png "selecione")
 4. Configure a lógica de sinal. Há três componentes:
 
-     a. **Dimensões**: Se a métrica tem dimensões, você pode selecionar valores de dimensão específicos para que o alerta é avaliado somente os dados da dimensão. Estes são opcionais.
+    a. **Dimensões**: Se a métrica tem dimensões, você pode selecionar valores de dimensão específicos para que o alerta é avaliado somente os dados da dimensão. Estes são opcionais.
 
     b. **Condição**: Esta é a operação para avaliar o valor da métrica.
 

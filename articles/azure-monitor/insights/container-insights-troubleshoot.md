@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 03/27/2018
 ms.author: magoedte
 ms.openlocfilehash: 2e3e39ef24d82393d981c0ce276b3338419e0b2d
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65521762"
 ---
 # <a name="troubleshooting-azure-monitor-for-containers"></a>Solução de problemas do Azure Monitor para contêineres
@@ -34,7 +34,7 @@ Você pode conceder essa função também manualmente no portal do Azure executa
 1. Entre no [Portal do Azure](https://portal.azure.com). 
 2. No Portal do Azure, clique em **Todos os serviços**, localizado no canto superior esquerdo. Na lista de recursos, digite **Kubernetes**. Quando você começa a digitar, a lista é filtrada com base em sua entrada. Selecione **Kubernetes do Azure**.
 3. Na lista de clusters Kubernetes, selecione um na lista.
-2. No menu à esquerda, clique em **controle de acesso (IAM)**.
+2. No menu à esquerda, clique em **controle de acesso (IAM)** .
 3. Selecione **+ adicionar** para adicionar uma atribuição de função e selecione o **Publisher de métricas de monitoramento** função e, nas **selecione** caixa, digite **AKS** para filtro definidas na assinatura de entidades de serviço dos resultados em apenas os clusters. Selecione uma na lista que é específica para esse cluster.
 4. Selecione **Salvar** para finalizar a atribuição da função. 
 

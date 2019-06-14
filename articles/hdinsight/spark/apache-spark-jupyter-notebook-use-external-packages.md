@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: hrasheed
 ms.openlocfilehash: 6af25b95aa3a38c4a2e9f3bd8147604dccae0abb
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64715159"
 ---
 # <a name="use-external-packages-with-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Usar pacotes externos com blocos de anotações Jupyter em clusters Apache Spark no HDInsight
@@ -61,13 +61,13 @@ Você deve ter o seguinte:
 
 1. O snippet de código acima espera as coordenadas do maven para o pacote externo no Repositório Central do Maven. Nesse snippet de código, `com.databricks:spark-csv_2.10:1.4.0` é a coordenada do maven para o pacote **spark-csv**. Veja como você constrói as coordenadas de um pacote.
    
-     a. Localize o pacote no Repositório Maven. Para este tutorial, usamos [spark-csv](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
+    a. Localize o pacote no Repositório Maven. Para este tutorial, usamos [spark-csv](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
    
     b. No repositório, colete os valores para **GroupId**, **ArtifactId** e **Version**. Certifique-se de que os valores que você coletar correspondam ao cluster. Nesse caso, estamos usando um pacote de Spark 1.4.0 e Scala 2.10, mas talvez seja necessário selecionar versões diferentes para a versão apropriada do Spark ou do Scala no cluster. Você pode encontrar a versão do Scala no cluster executando `scala.util.Properties.versionString` no kernel Jupyter do Spark ou em Spark submit. Você pode encontrar a versão do Spark no cluster executando `sc.version` em Notebooks Jupyter.
    
     ![Usar pacotes externos com blocos de anotações do Jupyter](./media/apache-spark-jupyter-notebook-use-external-packages/use-external-packages-with-jupyter.png "Usar pacotes externos com blocos de anotações do Jupyter")
    
-    c. Concatene os três valores, separados por dois pontos (**:**).
+    c. Concatene os três valores, separados por dois pontos ( **:** ).
    
         com.databricks:spark-csv_2.10:1.4.0
 

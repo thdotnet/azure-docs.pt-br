@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: shlo
 ms.openlocfilehash: 09f80f69857ae17a0136229fe9bf13d4f63e7096
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65151081"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-schedule"></a>Criar um gatilho que executa um pipeline com base em um agendamento
@@ -44,7 +44,7 @@ Crie um **gatilho de agendamento** para agendar a execução periódica de um pi
 3. Na página **Novo Gatilho**, execute as seguintes etapas: 
 
     1. Confirme se **Agendamento** está selecionado para **Tipo**. 
-    2. Especifique o datetime de início do gatilho em **Data de Início (UTC)**. Ele está definido como o datetime atual por padrão. 
+    2. Especifique o datetime de início do gatilho em **Data de Início (UTC)** . Ele está definido como o datetime atual por padrão. 
     3. Especifique **Recorrência** para o gatilho. Selecione um dos valores na lista suspensa (A Cada minuto, Por hora, Diariamente, Semanalmente e Mensalmente). Insira o multiplicador na caixa de texto. Por exemplo, se você deseja que o gatilho seja executado uma vez a cada 15 minutos, selecione **A Cada Minuto** e insira **15** na caixa de texto. 
     4. Para o campo **Término**, caso não deseje especificar um datetime de término para o gatilho, selecione **Sem Término**. Para especificar um datetime de término, selecione **Na Data**, especifique o datetime de término e clique em **Aplicar**. Há um custo associado a cada execução do pipeline. Se estiver testando, recomendamos garantir que o pipeline é disparado apenas algumas vezes. No entanto, verifique se há tempo suficiente para a execução do pipeline entre a hora da publicação e a hora de término. O gatilho só entra em vigor depois de você publicar a solução no Data Factory, e não ao salvar o gatilho na interface do usuário.
 
@@ -327,11 +327,11 @@ A seguinte tabela fornece uma visão geral de alto nível dos principais element
 
 | Propriedade JSON | type | Obrigatório | Valor padrão | Valores válidos | Exemplo |
 |:--- |:--- |:--- |:--- |:--- |:--- |
-| **startTime** | String | Sim | Nenhum | Data e hora ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
+| **startTime** | Cadeia de caracteres | Sim | Nenhum | Data e hora ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
 | **recurrence** | Object | Sim | Nenhum | Objeto de recorrência | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
-| **interval** | Número | Não  | 1 | 1 a 1.000 | `"interval":10` |
-| **endTime** | String | Sim | Nenhum | Um valor de Data/Hora que representa uma hora no futuro. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
-| **schedule** | Object | Não  | Nenhum | Objeto Agendamento | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **interval** | Número | Não | 1 | 1 a 1.000 | `"interval":10` |
+| **endTime** | Cadeia de caracteres | Sim | Nenhum | Um valor de Data/Hora que representa uma hora no futuro. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
+| **schedule** | Object | Não | Nenhum | Objeto Agendamento | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="starttime-property"></a>Propriedade startTime
 A seguinte tabela mostra como a propriedade **startTime** controla uma execução de gatilho:

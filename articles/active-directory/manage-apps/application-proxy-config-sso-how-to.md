@@ -17,10 +17,10 @@ ms.author: mimart
 ms.reviewer: japere, asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f26b28b34a569673b397fa4700c5332c3550500f
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65825861"
 ---
 # <a name="how-to-configure-single-sign-on-to-an-application-proxy-application"></a>Como configurar o logon único para um aplicativo de Application Proxy
@@ -43,7 +43,7 @@ Configure o tipo específico de logon único. Os métodos de logon são classifi
 
 -   **Logon baseado em cabeçalho**: O logon baseado em cabeçalho é habilitado por meio de uma parceria e exige alguma configuração adicional. Para obter detalhes sobre a parceria e instruções passo a passo para configurar o logon único para um aplicativo que usa cabeçalhos para autenticação, consulte o [PingAccess para a documentação do Azure AD](application-proxy-configure-single-sign-on-with-ping-access.md).
 
--   **Logon único SAML**: Com o SAML SSO, Azure AD autentica o aplicativo usando a conta do usuário do Azure AD. O Azure AD comunica as informações do logon para o aplicativo por meio de um protocolo de conexão. Com o logon único baseado em SAML, você pode mapear os usuários para funções de aplicativo específicas com base nas regras definidas nas suas declarações SAML. Para obter informações sobre como configurar o logon único SAML, consulte [SAML para logon único com Proxy de aplicativo](application-proxy-configure-single-sign-on-on-premises-apps.md).
+-   **Logon único SAML**: Com o logon único SAML, o Azure AD realiza a autenticação do aplicativo usando a conta do Azure AD do usuário. O Azure AD comunica as informações do logon para o aplicativo por meio de um protocolo de conexão. Com o logon único baseado em SAML, você pode mapear os usuários para funções de aplicativo específicas com base nas regras definidas nas suas declarações SAML. Para obter informações sobre como configurar o logon único SAML, consulte [SAML para logon único com Proxy de aplicativo](application-proxy-configure-single-sign-on-on-premises-apps.md).
 
 Cada uma dessas opções pode ser encontrada indo em seu aplicativo em "Aplicativos empresariais" e abrindo a página **Logon Único** no menu à esquerda. Observe que, se seu aplicativo foi criado no portal antigo, você talvez não veja todas essas opções.
 

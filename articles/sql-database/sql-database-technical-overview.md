@@ -14,10 +14,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 04/08/2019
 ms.openlocfilehash: ed94677eea91e3543dced9825a1372f60550a524
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65073609"
 ---
 # <a name="what-is-azure-sql-database-service"></a>O que é o serviço de banco de dados SQL
@@ -39,11 +39,11 @@ A ilustração a seguir mostra essas opções de implantação:
 
 O Banco de Dados SQL compartilha a sua base de código com o [mecanismo de banco de dados do Microsoft SQL Server](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation). Com a estratégia de prioridade de nuvem da Microsoft, os recursos mais recentes do SQL Server são liberados primeiro no Banco de Dados SQL e, em seguida, no próprio SQL Server. Essa abordagem fornece a você os recursos mais recentes do SQL Server sem sobrecarga para aplicação de patch ou atualização, e com esses novos recursos testados em milhões de bancos de dados. Para obter informações sobre novos recursos conforme vão são anunciados, consulte:
 
-- **[Mapa do Azure para o Banco de Dados SQL](https://azure.microsoft.com/roadmap/?category=databases)**:
+- **[Mapa do Azure para o Banco de Dados SQL](https://azure.microsoft.com/roadmap/?category=databases)** :
 
   Um lugar para descobrir quais são as novidades e o que está por vir.
 
-- **[Blog do banco de dados SQL do Azure](https://azure.microsoft.com/blog/topics/database)**:
+- **[Blog do banco de dados SQL do Azure](https://azure.microsoft.com/blog/topics/database)** :
 
   Um lugar onde os membros da equipe de produto do SQL Server escrevem sobre novidades e recursos do Banco de Dados SQL.
 
@@ -110,20 +110,20 @@ As zonas de disponibilidade do Azure é uma opção sobre o problema de alta dis
 
 Na verdade, a disponibilidade de 99,99% líder no mercado do Azure de contrato de nível de serviço [(SLA)](https://azure.microsoft.com/support/legal/sla/), alimentado por uma rede global de datacenters gerenciada pela Microsoft, ajuda a manter seu aplicativo em execução 24 horas, 7. A plataforma do Azure gerencia completamente cada banco de dados e garante alto percentual de disponibilidade de dados sem perda de dados. O Azure controla automaticamente a aplicação de patches, potenciais falhas subjacentes de hardware, software ou rede, a implantação de correções de bug, failovers, upgrades de banco de dados e outras tarefas de manutenção. A disponibilidade padrão é obtida por uma separação de camadas de computação e armazenamento. A disponibilidade premium é obtida integrando computação e armazenamento em um único nó para desempenho e, em seguida, implementando uma tecnologia semelhante a Always On Availability Groups nas capas. Para conferir uma discussão completa sobre os recursos de alta disponibilidade do Banco de Dados SQL do Azure, veja [Disponibilidade do Banco de Dados SQL](sql-database-high-availability.md). Além disso, o Banco de Dados SQL fornece recursos internos de [continuidade dos negócios e a escalabilidade global](sql-database-business-continuity.md), incluindo:
 
-- **[Backups automáticos](sql-database-automated-backups.md)**:
+- **[Backups automáticos](sql-database-automated-backups.md)** :
 
   Banco de dados SQL executa automaticamente completo, diferencial e backups de log de transações de bancos de dados SQL do Azure para que você possa restaurar para qualquer ponto no tempo. Para bancos de dados individuais e bancos de dados em pool, você pode configurar o banco de dados SQL para armazenar os backups de banco de dados completo para o armazenamento do Azure para retenção de longo prazo. Para instâncias gerenciadas, você também pode executar backups somente cópia para retenção de backup de longo prazo.
 
-- **[Restaurações point-in-time](sql-database-recovery-using-backups.md)**:
+- **[Restaurações point-in-time](sql-database-recovery-using-backups.md)** :
 
   Todas as opções de implantação de Banco de Dados SQL dão suporte à recuperação para qualquer ponto no tempo dentro do período de retenção de backup automático para qualquer banco de dados SQL do Azure.
-- **[Replicação geográfica ativa](sql-database-active-geo-replication.md)**:
+- **[Replicação geográfica ativa](sql-database-active-geo-replication.md)** :
 
   Bancos de dados individuais e bancos de dados em pool permitem que você configure até quatro bancos de dados secundários legíveis nos datacenters do Azure iguais ou distribuídos globalmente.  Por exemplo, se você tiver um aplicativo SaaS com um banco de dados de catálogo que tem um alto volume de transações simultâneas somente leitura, use a replicação geográfica ativa para habilitar a escala global de leitura e remover gargalos no primário devido a cargas de trabalho de leitura. Para instâncias gerenciadas, use grupos de failover automático.
-- **[Grupos de failover automático](sql-database-auto-failover-group.md)**:
+- **[Grupos de failover automático](sql-database-auto-failover-group.md)** :
 
   Todas as opções de implantação de Banco de Dados SQL permitem que você use grupos de failover para habilitar a alta disponibilidade e balanceamento de carga em escala global, incluindo replicação geográfica transparente e failover de grandes conjuntos de instâncias gerenciadas, pools elásticos e bancos de dados. Grupos de failover permitem a criação de aplicativos SaaS globalmente distribuídos com sobrecarga de administração mínima, deixando todos o monitoramento complexos, roteamento e coordenação de failover para o Banco de Dados SQL.
-- **[Bancos de dados com redundância de zona](sql-database-high-availability.md)**:
+- **[Bancos de dados com redundância de zona](sql-database-high-availability.md)** :
 
   O Banco de Dados SQL permite provisionar bancos de dados premium ou comercialmente críticos ou pools elásticos em várias zonas de disponibilidade. Como esses bancos de dados e pools elásticos têm várias réplicas de redundância para alta disponibilidade, colocar essas réplicas em várias zonas de disponibilidade fornece maior resiliência, incluindo a capacidade de recuperar automaticamente de falhas de escala do datacenter sem perda de dados.
 
@@ -191,16 +191,16 @@ O Banco de Dados SQL participa de auditorias regulares e foi certificado por vá
 
 O Banco de Dados SQL torna a compilação e o gerenciamento de aplicativos mais fáceis e produtivos. O Banco de Dados SQL permite a você focar no que há de melhor: compilar aplicativos ótimos. Você pode gerenciar e desenvolver no Banco de Dados SQL usando ferramentas e técnicas já existentes.
 
-- **[O portal do Azure](https://portal.azure.com/)**:
+- **[O portal do Azure](https://portal.azure.com/)** :
 
   Um aplicativo baseado na Web para gerenciar todos os serviços do Azure
-- **[SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)**:
+- **[SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)** :
 
   Um aplicativo cliente gratuito e transferível para gerenciar qualquer infraestrutura SQL, do SQL Server ao Banco de Dados SQL
-- **[SQL Server Data Tools no Visual Studio](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt)**:
+- **[SQL Server Data Tools no Visual Studio](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt)** :
 
   Um aplicativo cliente gratuito que pode ser baixado para desenvolver bancos de dados relacionais do SQL Server, bancos de dados SQL do Azure, pacotes do Integration Services, modelos de dados do Analysis Services e relatórios do Reporting Services.
-- **[Visual Studio Code](https://code.visualstudio.com/docs)**:
+- **[Visual Studio Code](https://code.visualstudio.com/docs)** :
 
   Um editor de código gratuito, baixável e de código aberto para Windows, macOS e Linux que suporta extensões, incluindo a [extensão mssql](https://aka.ms/mssql-marketplace) para consultar o Microsoft SQL Server, o Banco de Dados SQL do Azure e o SQL Data Warehouse.
 
@@ -214,7 +214,7 @@ A versão atual do banco de dados SQL é V12. Versão V11 foi desativado.
 
 ### <a name="can-i-control-when-patching-downtime-occurs"></a>É possível controlar quando ocorre tempo de inatividade de patch
 
- Não. O impacto de patch geralmente não será perceptível, se você [empregar lógica de repetição](sql-database-develop-overview.md#resiliency) no aplicativo. Para obter mais informações sobre como se preparar para eventos de manutenção planejada em seu banco de dados SQL do Azure, consulte [planejamento de eventos de manutenção do Azure no Banco de Dados SQL do Azure](sql-database-planned-maintenance.md).
+Não. O impacto de patch geralmente não será perceptível, se você [empregar lógica de repetição](sql-database-develop-overview.md#resiliency) no aplicativo. Para obter mais informações sobre como se preparar para eventos de manutenção planejada em seu banco de dados SQL do Azure, consulte [planejamento de eventos de manutenção do Azure no Banco de Dados SQL do Azure](sql-database-planned-maintenance.md).
 
 ### <a name="azure-hybrid-benefit-questions"></a>Perguntas do Benefício Híbrido do Azure
 

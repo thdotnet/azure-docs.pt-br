@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.openlocfilehash: 479f77791a0b035f2d1de6085dfb12f5196288ee
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65979320"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Políticas de autor para propriedades de matriz em recursos do Azure
@@ -212,4 +212,4 @@ Para obter mais informações, consulte o [acrescentar exemplos](../concepts/eff
 - Revisar [Compreendendo os efeitos da política](../concepts/effects.md).
 - Entender como [criar políticas de forma programática](programmatically-create.md).
 - Saiba como [corrigir recursos sem conformidade](remediate-resources.md).
-- Examine o que um grupo de gerenciamento com [organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).
+- Veja o que é um grupo de gerenciamento com [Organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).

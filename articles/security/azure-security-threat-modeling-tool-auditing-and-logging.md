@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.openlocfilehash: 4843828c89b04e36b0bcc73dcedf9c5735b73729
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60610853"
 ---
 # <a name="security-frame-auditing-and-logging--mitigations"></a>Quadro de segurança: Auditoria e log | Mitigações 
@@ -26,7 +26,7 @@ ms.locfileid: "60610853"
 | Produto/Serviço | Artigo |
 | --------------- | ------- |
 | **Dynamics CRM**    | <ul><li>[Identificar entidades sensíveis em sua solução e implementar a auditoria de alteração](#sensitive-entities)</li></ul> |
-| **Aplicativo Web** | <ul><li>[Certifique-se de que a auditoria e registro em log é imposto no aplicativo](#auditing)</li><li>[Certifique-se de que a rotação de log e separação estão em vigor](#log-rotation)</li><li>[Certifique-se de que o aplicativo não registra dados confidenciais do usuário](#log-sensitive-data)</li><li>[Verifique se os arquivos de Log e auditoria tem acesso restrito](#log-restricted-access)</li><li>[Certifique-se de que os eventos de gerenciamento de usuário estão registrados](#user-management)</li><li>[Verifique se o sistema tem embutidas defesas contra uso indevido](#inbuilt-defenses)</li><li>[Habilitar o registro em log de diagnóstico para aplicativos Web no Serviço de Aplicativo do Azure](#diagnostics-logging)</li></ul> |
+| **Aplicativo Web** | <ul><li>[Certifique-se de que a auditoria e registro em log é imposto no aplicativo](#auditing)</li><li>[Certifique-se de que a rotação de log e separação estão em vigor](#log-rotation)</li><li>[Certifique-se de que o aplicativo não registra dados confidenciais do usuário](#log-sensitive-data)</li><li>[Verifique se os arquivos de Log e auditoria tem acesso restrito](#log-restricted-access)</li><li>[Certifique-se de que os eventos de gerenciamento de usuário estão registrados](#user-management)</li><li>[Verifique se o sistema tem embutidas defesas contra uso indevido](#inbuilt-defenses)</li><li>[Habilitar log de diagnósticos para aplicativos Web no Serviço de Aplicativo do Azure](#diagnostics-logging)</li></ul> |
 | **Banco de dados** | <ul><li>[Verifique se a auditoria de logon é habilitada no SQL Server](#identify-sensitive-entities)</li><li>[Ativar a detecção de ameaças no SQL Azure](#threat-detection)</li></ul> |
 | **Armazenamento do Azure** | <ul><li>[Uso da Análise de Armazenamento do Azure para auditar o acesso do Armazenamento do Azure](#analytics)</li></ul> |
 | **WCF** | <ul><li>[Implementar o log suficiente](#sufficient-logging)</li><li>[Implementar o tratamento de falha de auditoria suficiente](#audit-failure-handling)</li></ul> |

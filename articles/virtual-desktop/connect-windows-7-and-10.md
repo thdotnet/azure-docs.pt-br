@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 04/24/2019
 ms.author: helohr
 ms.openlocfilehash: b7d7b25d0355f2379b90313f17e2b595234df827
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65145980"
 ---
 # <a name="connect-from-windows-10-or-windows-7"></a>Conectar-se do Windows 10 ou Windows 7
@@ -51,7 +51,7 @@ Depois de inscrito em um feed, o conteúdo do feed é atualizado automaticamente
 
 Após a assinatura, você pode exibir informações adicionais sobre o feed, acessando o painel de detalhes.
 
-1. Na página principal do cliente, selecione as reticências (**...** ) à direita do nome do feed.
+1. Na página principal do cliente, selecione as reticências ( **...** ) à direita do nome do feed.
 1. No menu suspenso, selecione **detalhes**.
 1. O painel de detalhes aparece no lado direito do cliente.
 
@@ -68,7 +68,7 @@ Se necessário, você pode iniciar uma atualização manual, selecionando na **a
 
 Esta seção ensinará como cancelar a assinatura de um feed. Você pode cancelar a inscrição para assinar novamente com uma conta diferente ou remova os recursos do sistema.
 
-1. Na página principal do cliente, selecione as reticências (**...** ) à direita do nome do feed.
+1. Na página principal do cliente, selecione as reticências ( **...** ) à direita do nome do feed.
 1. No menu suspenso, selecione **Unsubscribe**.
 1. Examine e marque **continuar** na caixa de diálogo.
 

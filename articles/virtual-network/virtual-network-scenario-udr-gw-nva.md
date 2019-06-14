@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2016
 ms.author: kumud
 ms.openlocfilehash: 1bdc485dfb352144e8a8d0fb75965cbb78288e2c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64575595"
 ---
 # <a name="virtual-appliance-scenario"></a>Cenário de dispositivo virtual
@@ -42,11 +42,11 @@ A solução a seguir usa dispositivos virtuais de firewall para implementar uma 
 ## <a name="considerations"></a>Considerações
 Você pode implantar o ambiente explicado anteriormente no Azure usando da seguinte maneira diferentes recursos disponíveis hoje.
 
-* **Rede virtual (VNet)**. Uma VNet do Azure funciona de maneira semelhante a uma rede local e pode ser segmentada em uma ou mais sub-redes para fornecer isolamento de tráfego e separação de preocupações.
+* **Rede virtual (VNet)** . Uma VNet do Azure funciona de maneira semelhante a uma rede local e pode ser segmentada em uma ou mais sub-redes para fornecer isolamento de tráfego e separação de preocupações.
 * **Dispositivo virtual**. Vários parceiros fornecem dispositivos virtuais no Azure Marketplace que podem ser usados para os três firewalls descritos acima. 
-* **UDR (Rotas Definidas pelo Usuário)**. As tabelas de rotas podem conter UDRs usadas pela rede do Azure para controlar o fluxo de pacotes em uma VNet. Essas tabelas de rotas podem ser aplicadas a sub-redes. Um dos recursos mais recentes no Azure é a capacidade de aplicar uma tabela de rotas para o GatewaySubnet, fornecendo a capacidade de encaminhar todo o tráfego de entrada da VNet do Azure de uma conexão híbrida para um dispositivo virtual.
+* **UDR (Rotas Definidas pelo Usuário)** . As tabelas de rotas podem conter UDRs usadas pela rede do Azure para controlar o fluxo de pacotes em uma VNet. Essas tabelas de rotas podem ser aplicadas a sub-redes. Um dos recursos mais recentes no Azure é a capacidade de aplicar uma tabela de rotas para o GatewaySubnet, fornecendo a capacidade de encaminhar todo o tráfego de entrada da VNet do Azure de uma conexão híbrida para um dispositivo virtual.
 * **Encaminhamento IP**. Por padrão, o mecanismo de rede do Azure encaminhará pacotes a NICs (placas de interface de rede virtual) somente se o endereço IP de destino do pacote corresponder ao endereço IP da NIC. Portanto, se uma UDR definir que um pacote deverá ser enviado para um determinado dispositivo virtual, o mecanismo de rede do Azure deverá remover esse pacote. Para garantir que o pacote seja entregue a uma VM (no caso, um dispositivo virtual) que não seja o destino real do pacote, você precisará habilitar o encaminhamento IP para o dispositivo virtual.
-* **NSGs (Grupos de Segurança de Rede)**. O exemplo a seguir não faz uso de NSGs, mas você pode usar os NSGs aplicados às sub-redes e/ou NICs nesta solução para filtrar ainda mais o tráfego de entrada e saída dessas NICs e sub-redes.
+* **NSGs (Grupos de Segurança de Rede)** . O exemplo a seguir não faz uso de NSGs, mas você pode usar os NSGs aplicados às sub-redes e/ou NICs nesta solução para filtrar ainda mais o tráfego de entrada e saída dessas NICs e sub-redes.
 
 ![Conectividade IPv6](./media/virtual-network-scenario-udr-gw-nva/figure01.png)
 

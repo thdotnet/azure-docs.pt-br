@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 04/19/2019
 ms.author: pabouwer
 ms.openlocfilehash: 33d86ab8c88b45c7787620773f0df6e7fe888cf3
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65850409"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Instalar e usar o Istio no AKS (Serviço de Kubernetes do Azure)
@@ -148,7 +148,7 @@ echo "source ~/completions/istioctl.bash" >> ~/.bashrc
 
 Agora passaremos para a próxima seção para [instalar o CRDs Istio no AKS](#install-the-istio-crds-on-aks).
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 Para instalar o Istio `istioctl` cliente binário em um **Powershell**-shell com base no Windows, use os seguintes comandos. Copie estes comandos de `istioctl` cliente binário em uma pasta Istio e disponibilizá-lo permanentemente por meio de seu `PATH`. Você não precisa de privilégios de (administrador) com privilégios elevados para executar esses comandos.
 
@@ -195,7 +195,7 @@ Bash
 kubectl get crds | grep 'istio.io' | wc -l
 ```
 
-PowerShell
+Powershell
 
 ```powershell
 (kubectl get crds | Select-String -Pattern 'istio.io').Count
@@ -237,7 +237,7 @@ data:
 EOF
 ```
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 ```powershell
 $GRAFANA_USERNAME=[Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("grafana"))
@@ -281,7 +281,7 @@ data:
 EOF
 ```
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 ```powershell
 $KIALI_USERNAME=[Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("kiali"))
@@ -324,7 +324,7 @@ helm install install/kubernetes/helm/istio --name istio --namespace istio-system
   --set kiali.enabled=true
 ```
 
-PowerShell
+Powershell
 
 ```powershell
 helm install install/kubernetes/helm/istio --name istio --namespace istio-system `
@@ -517,7 +517,7 @@ Bash
 kubectl get crds -o name | grep 'istio.io' | xargs -n1 kubectl delete
 ```
 
-PowerShell
+Powershell
 ```powershell
 kubectl get crds -o name | Select-String -Pattern 'istio.io' |% { kubectl delete $_ }
 ```

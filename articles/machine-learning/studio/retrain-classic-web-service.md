@@ -11,10 +11,10 @@ ms.author: amlstudiodocs
 ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/14/2019
 ms.openlocfilehash: b636883ee1f08fa0fb6d080b6980cd07553dde1b
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65234056"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-web-service"></a>Treinar novamente e implantar um serviço Web clássico do Studio
@@ -134,7 +134,7 @@ O valor do parâmetro *Nome* em *Recursos* deve corresponder ao Nome do Recurso 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 1. No menu esquerdo, clique em **Machine Learning**.
 1. Em Nome, clique em seu workspace e, em seguida, clique em **Serviços Web**.
-1. Em Nome, clique em **Modelo de Censo [exp. preditivo]**.
+1. Em Nome, clique em **Modelo de Censo [exp. preditivo]** .
 1. Clique no novo ponto de extremidade adicionado.
 1. No painel do ponto de extremidade, clique em **Atualizar Recurso**.
 1. Na página Documentação da API de Atualizar Recurso para o serviço web, você pode encontrar o **Nome do Recurso** em **Recursos Atualizáveis**.

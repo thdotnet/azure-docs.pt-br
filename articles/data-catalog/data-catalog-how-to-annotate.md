@@ -9,10 +9,10 @@ ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 01/18/2018
 ms.openlocfilehash: 18dfd9eb66c1dc71ecb14bb748d9cdd6afeb00a7
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65953178"
 ---
 # <a name="how-to-annotate-data-sources"></a>Como anotar fontes de dados
@@ -37,7 +37,7 @@ O Catálogo de Dados dá suporte aos seguintes tipos de anotações:
 | Anotação | Observações |
 | --- | --- |
 | Nome amigável |Os nomes amigáveis podem ser fornecidos no nível do ativo de dado, para facilitar a compreensão dos ativos de dados. Os nomes amigáveis serão mais úteis quando o nome do objeto subjacente for confuso, abreviado ou não significativa para os usuários. |
-| Descrição |As descrições podem ser fornecidas nos níveis do atributo e do ativo de dados/coluna. As descrições são anotações de texto curto de forma livre que descrevem a perspectiva do usuário sobre o ativo de dados ou seu uso. |
+| DESCRIÇÃO |As descrições podem ser fornecidas nos níveis do atributo e do ativo de dados/coluna. As descrições são anotações de texto curto de forma livre que descrevem a perspectiva do usuário sobre o ativo de dados ou seu uso. |
 | Marcas (marcas de usuário) |As marcas podem ser fornecidas nos níveis do atributo e do ativo de dados/coluna As marcas de usuário são rótulos definidos pelo usuário que podem ser usados para categorizar os ativos de dados ou os atributos. |
 | Marcas (marcas de glossário) |As marcas podem ser fornecidas nos níveis do atributo e do ativo de dados/coluna Marcas de glossário são termos de glossário definidos centralmente que podem ser usados para categorizar os ativos de dados ou atributos usando uma taxonomia comum de negócios. Para saber mais, consulte [Como configurar o Glossário de Negócios para a Marcação Governada](data-catalog-how-to-business-glossary.md) |
 | Especialistas |Os especialistas podem ser fornecidos no nível do ativo de dados. Os especialistas identificam usuários ou grupos com perspectivas de especialista sobre os dados e podem servir como pontos de contato para usuários que descobrirem as fontes de dados registradas e que tenham dúvidas não respondidas pelas anotações existentes. |

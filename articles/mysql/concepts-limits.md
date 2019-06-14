@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 12/6/2018
 ms.openlocfilehash: 9088e9ad98633b46dc3a7f0ee9002a0dd9fc5a55
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65551888"
 ---
 # <a name="limitations-in-azure-database-for-mysql"></a>Limitações no Banco de Dados do Azure para MySQL
@@ -27,13 +27,13 @@ O número máximo de conexões por tipo de preço e vCores é o seguinte:
 |Uso geral| 4| 625|
 |Uso geral| 8| 1250|
 |Uso geral| 16| 2500|
-|Uso geral| 32| 5.000|
+|Uso geral| 32| 5\.000|
 |Uso geral| 64| 10000|
-|Memória Otimizada| 2| 600|
-|Memória Otimizada| 4| 1250|
-|Memória Otimizada| 8| 2500|
-|Memória Otimizada| 16| 5.000|
-|Memória Otimizada| 32| 10000|
+|Otimizado para memória| 2| 600|
+|Otimizado para memória| 4| 1250|
+|Otimizado para memória| 8| 2500|
+|Otimizado para memória| 16| 5\.000|
+|Otimizado para memória| 32| 10000|
 
 Quando as conexões excederem o limite, você poderá receber o seguinte erro:
 > ERRO 1040 (08004): Muitas conexões

@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: 058dc97054aad310135ccc1f51d765f0af3f571b
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65147020"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-with-java-for-microsoft-azure-storage"></a>Criptografia do lado do cliente e o Azure Key Vault com Java para o Armazenamento do Microsoft Azure
@@ -56,7 +56,7 @@ Durante a criptografia, a biblioteca de cliente gerará um vetor de inicializaç
 > 
 > 
 
-Baixar um blob criptografado envolve a recuperação do conteúdo do blob inteiro usando o **Baixe**/**/openinputstream** métodos de conveniência. O CEK encapsulado é desempacotado e usado em conjunto com o IV (armazenado como metadados de blob neste caso) para retornar os dados descriptografados para os usuários.
+Baixar um blob criptografado envolve a recuperação do conteúdo do blob inteiro usando o **Baixe**/ **/openinputstream** métodos de conveniência. O CEK encapsulado é desempacotado e usado em conjunto com o IV (armazenado como metadados de blob neste caso) para retornar os dados descriptografados para os usuários.
 
 Baixar um intervalo arbitrário (**downloadRange** métodos) no blob criptografado envolve o ajuste do intervalo fornecido pelos usuários para obter uma pequena quantidade de dados adicionais que podem ser usados para descriptografar o solicitado com êxito intervalo.  
 
@@ -252,6 +252,6 @@ Observe que criptografar seu armazenamento de dados resulta em uma sobrecarga ad
 * Baixar a [Biblioteca de cliente do Armazenamento do Azure para o pacote Java Maven](https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage)  
 * Baixar a [Biblioteca de cliente do Armazenamento do Azure para o código-fonte Java do GitHub](https://github.com/Azure/azure-storage-java)   
 * Baixe a biblioteca do Azure Key Vault Maven para pacotes Java Maven:
-  * [Core](https://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault-core) 
-  * [Client](https://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault) 
+  * [Core](https://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault-core)
+  * [Client](https://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault)
 * Visitar a [Documentação do Cofre de Chaves do Azure](../../key-vault/key-vault-whatis.md)

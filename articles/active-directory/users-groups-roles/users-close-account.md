@@ -14,10 +14,10 @@ ms.reviewer: ''
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 39b359ef7feeaec541ba17e98a5d1e9b74c6403a
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65957994"
 ---
 # <a name="close-your-work-or-school-account-in-an-unmanaged-directory"></a>Fechar sua conta corporativa ou de estudante em um diretório não gerenciado
@@ -39,7 +39,7 @@ Antes de fechar sua conta, você deve confirmar os seguintes itens:
 > [!WARNING]
 > Fechando sua conta é irreversível. Quando você fechar sua conta, todos os dados pessoais serão removidos. Você não terá mais acesso à sua conta e dados associados com sua conta.
 
-## <a name="close-your-account"></a>Encerrar sua conta
+## <a name="close-your-account"></a>Fechar sua conta
 
 Para fechar uma conta de escola ou não gerenciado, siga estas etapas:
 

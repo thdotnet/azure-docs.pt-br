@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/26/2019
 ms.author: tulasim
 ms.openlocfilehash: 8fcc3ea8340a8645a1983eebb4a619904f884a19
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61379217"
 ---
 # <a name="data-sources-for-qna-maker-content"></a>Fontes de dados para conteúdo do QnA Maker
@@ -141,7 +141,7 @@ Abaixo está um exemplo de arquivo *.xls* de QnA estruturada, com conteúdo HTML
 
 Importar uma base de dados de conhecimento substitui o conteúdo da base de dados de conhecimento existente. A importação requer um arquivo .tsv estruturado que contenha informações de fonte de dados. Essas informações ajudam o QnA Maker a agrupar os pares de resposta de pergunta e atribuí-los a uma fonte de dados específico.
 
-| Pergunta  | Resposta  | Fonte| Metadados (1 tecla: valor de 1) |          
+| Pergunta  | Resposta  | source| Metadados (1 tecla: valor de 1) |          
 |-----------|---------|----|---------------------|
 | Pergunta1 | Resposta1 | Url1 | <code>Key1:Value1 &#124; Key2:Value2</code> |
 | Pergunta2 | Resposta2 | Editorial|    `Key:Value`       |

@@ -16,10 +16,10 @@ ms.date: 02/27/2017
 ms.author: lahugh
 ms.custom: seodec18
 ms.openlocfilehash: 085bfa582b676f34a02e4c1c5ae7e69c49e5cb4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60550035"
 ---
 # <a name="use-visual-studio-project-templates-to-jump-start-batch-solutions"></a>Usar modelos de projeto do Visual Studio para iniciar rapidamente soluções em lote
@@ -89,7 +89,7 @@ Para adicionar um Gerenciador de trabalho à solução que você criou anteriorm
 
 1. Abra sua solução existente no Visual Studio.
 2. No Gerenciador de Soluções, clique com o botão direito do mouse na solução e clique em **Adicionar** > **Novo Projeto**.
-3. No **Visual C#**, clique em **Nuvem** e em **Gerenciador de trabalho do Lote do Azure com o Divisor de trabalho**.
+3. No **Visual C#** , clique em **Nuvem** e em **Gerenciador de trabalho do Lote do Azure com o Divisor de trabalho**.
 4. Digite um nome que descreva o aplicativo e identifique esse projeto como o Gerenciador de trabalho (por exemplo, "GerenciadorDeTrabalhoLitware").
 5. Para criar o projeto, clique em **OK**.
 6. Por fim, compile o projeto para forçar o Visual Studio a carregar todos os pacotes NuGet referenciados e verificar se o projeto é válido antes de você começar a modificá-lo.
@@ -258,7 +258,7 @@ Para adicionar um Processador de tarefas à solução que você criou anteriorme
 
 1. Abra sua solução existente no Visual Studio.
 2. No Gerenciador de Soluções, clique com o botão direito na solução, clique em **Adicionar** e em **Novo Projeto**.
-3. No **Visual C#**, clique em **Nuvem** e em **Processador de Tarefas do Lote do Azure**.
+3. No **Visual C#** , clique em **Nuvem** e em **Processador de Tarefas do Lote do Azure**.
 4. Digite um nome que descreva o aplicativo e identifique esse projeto como o Processador de tarefas (por exemplo, "ProcessadorDeTarefasLitware").
 5. Para criar o projeto, clique em **OK**.
 6. Por fim, compile o projeto para forçar o Visual Studio a carregar todos os pacotes NuGet referenciados e verificar se o projeto é válido antes de você começar a modificá-lo.

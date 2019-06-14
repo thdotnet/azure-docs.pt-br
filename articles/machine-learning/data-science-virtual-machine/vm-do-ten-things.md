@@ -18,10 +18,10 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: gokuma
 ms.openlocfilehash: f30c241feced3031d9ed9791c27c6bb1e1e99efb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60365717"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>Dez coisas que você pode fazer na Máquina Virtual de Ciência de Dados do Windows
@@ -61,7 +61,7 @@ Para R, você pode usar um IDE como o RStudio que pode ser encontrado no menu In
 
 Para Python, você pode usar um IDE como o Visual Studio Community Edition, que tem a extensão PTVS (Ferramentas Python para Visual Studio) pré-instalada. Por padrão, somente o Python 3.6, o ambiente do conda raiz, é configurado em PTVS. Para habilitar o Anaconda Python 2.7, é preciso fazer o seguinte:
 
-* Criar ambientes personalizados para cada versão navegando para **Ferramentas** -> **Ferramentas Python** -> **Ambientes Python** e clicando em “**+ Personalizado**” no Visual Studio Community Edition
+* Criar ambientes personalizados para cada versão navegando para **Ferramentas** -> **Ferramentas Python** -> **Ambientes Python** e clicando em “ **+ Personalizado**” no Visual Studio Community Edition
 * Forneça uma descrição e defina o caminho de prefixo do ambiente como *c:\anaconda\envs\python2* para o Anaconda Python 2.7
 * Clique em **Detecção Automática** e em **Aplicar** para salvar o ambiente.
 
@@ -403,7 +403,7 @@ Se os dados residirem no Armazenamento de Blobs, você poderá lê-los diretamen
 
 ![Captura de tela da caixa de diálogo Adicionar Fonte de Dados](./media/vm-do-ten-things/Link_Blob_to_ADLA_v2.PNG)
 
-No Visual Studio, você pode ler dados no armazenamento de blobs, manipular alguns dados, realizar engenharia de recursos, bem como gerar os dados resultantes para o Azure Data Lake ou Armazenamento de Blobs do Azure. Quando fizer referência aos dados no Armazenamento de Blobs, use **wasb://**; quando fizer referência aos dados no Azure Data Lake, use **swbhdfs://**
+No Visual Studio, você pode ler dados no armazenamento de blobs, manipular alguns dados, realizar engenharia de recursos, bem como gerar os dados resultantes para o Azure Data Lake ou Armazenamento de Blobs do Azure. Quando fizer referência aos dados no Armazenamento de Blobs, use **wasb://** ; quando fizer referência aos dados no Azure Data Lake, use **swbhdfs://**
 
 ![Captura da tela da consulta com a entrada WASB realçada](./media/vm-do-ten-things/USQL_Read_Blob_v2.PNG)
 
@@ -896,7 +896,7 @@ Da mesma forma, se sua necessidade de capacidade de processamento de VM for redu
 ## <a name="10-install-additional-tools-on-your-virtual-machine"></a>10. Instalar ferramentas adicionais na sua máquina virtual
 Há várias ferramentas internas previamente compiladas no DSVM que podem resolver muitas das necessidades comuns de análise de dados. Isso economiza tempo ao evitar ter que instalar e configurar seus ambientes um por um e economiza dinheiro porque você paga apenas os recursos que usar.
 
-Utilize outros serviços de análise e dados do Azure listados neste artigo para aprimorar seu ambiente de análise. Em alguns casos, suas necessidades podem exigir ferramentas adicionais, incluindo algumas ferramentas de terceiros. Você tem acesso administrativo completo na máquina virtual para instalar novas ferramentas necessárias. Também é possível instalar pacotes adicionais no Python e no R que não foram pré-instalados. Para Python, você pode usar ```conda``` ou ```pip```. Para R, você pode usar o ```install.packages()``` no console do R ou usar o IDE e escolher "**Pacotes** -> **Instalar Pacotes...**".
+Utilize outros serviços de análise e dados do Azure listados neste artigo para aprimorar seu ambiente de análise. Em alguns casos, suas necessidades podem exigir ferramentas adicionais, incluindo algumas ferramentas de terceiros. Você tem acesso administrativo completo na máquina virtual para instalar novas ferramentas necessárias. Também é possível instalar pacotes adicionais no Python e no R que não foram pré-instalados. Para Python, você pode usar ```conda``` ou ```pip```. Para R, você pode usar o ```install.packages()``` no console do R ou usar o IDE e escolher "**Pacotes** -> **Instalar Pacotes...** ".
 
 ## <a name="summary"></a>Resumo
 Essas são apenas algumas das coisas que você pode fazer na Máquina Virtual de Ciência de Dados da Microsoft. Há muito mais coisas que você fazer para torná-la um ambiente eficaz de análise.

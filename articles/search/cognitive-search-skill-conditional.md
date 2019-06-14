@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/01/2019
 ms.author: luisca
 ms.openlocfilehash: 149b701d4a1700787656448e2bdd0d92d2a93844
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65791511"
 ---
 #   <a name="conditional-skill"></a>Habilidade condicional
@@ -87,9 +87,9 @@ Como a habilidade de condicional dá suporte à avaliação, você pode usá-lo 
 ## <a name="skill-inputs"></a>Entradas de habilidades
 As entradas diferenciam maiúsculas de minúsculas.
 
-| Entrada   | Descrição |
+| Entrada   | DESCRIÇÃO |
 |-------------|-------------|
-| condição   | Essa entrada é um [avaliado campo](#evaluated-fields) que representa a condição a ser avaliada. Essa condição deve ser avaliada como um valor booliano (*verdadeira* ou *falso*).   <br/>  Exemplos: <br/> "= true" <br/> "= $(/document/language) =='fr'" <br/> "= $(/document/pages/\*/language) == $(/document/expectedLanguage)" <br/> |
+| condition   | Essa entrada é um [avaliado campo](#evaluated-fields) que representa a condição a ser avaliada. Essa condição deve ser avaliada como um valor booliano (*verdadeira* ou *falso*).   <br/>  Exemplos: <br/> "= true" <br/> "= $(/document/language) =='fr'" <br/> "= $(/document/pages/\*/language) == $(/document/expectedLanguage)" <br/> |
 | whenTrue    | Essa entrada é um [avaliado o campo](#evaluated-fields) que representa o valor a ser retornado se a condição é avaliada como *verdadeiro*. Cadeias de caracteres constantes devem ser retornadas entre aspas simples ('e'). <br/>Valores de exemplo: <br/> "= 'contract'"<br/>"= $(/ documentos/contractType)" <br/> "= $(/documentos/entidades/\*)" <br/> |
 | whenFalse   | Essa entrada é um [avaliado o campo](#evaluated-fields) que representa o valor a ser retornado se a condição é avaliada como *falso*. <br/>Valores de exemplo: <br/> "= 'contract'"<br/>"= $(/ documentos/contractType)" <br/> "= $(/documentos/entidades/\*)" <br/>
 

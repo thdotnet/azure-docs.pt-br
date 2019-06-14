@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
 ms.openlocfilehash: 6429568b33ece3ed4f26614e55e8c3069dd65d71
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65204399"
 ---
 # <a name="connect-your-domain-name-server"></a>Connect your domain name server
@@ -51,7 +51,7 @@ Conexão do DNS é feito pela instalação de um agente no computador do DNS. O 
 
 2. Se sua máquina DNS não for uma VM do Azure:
     1. Clique em **baixar e instalar o agente para máquinas do Windows Azure não**.
-    1. No **agente direto** janela, selecione **agente baixar o Windows (64 bits)** ou **agente baixar o Windows (32 bits)**.
+    1. No **agente direto** janela, selecione **agente baixar o Windows (64 bits)** ou **agente baixar o Windows (32 bits)** .
     1. Instale o agente em seu computador DNS. Cópia de **ID do espaço de trabalho**, **chave primária**, e **chave secundária** e usá-los quando solicitado durante a instalação.
 
 3. Para usar o esquema relevante no Log Analytics para os logs DNS, pesquise **DnsEvents**.

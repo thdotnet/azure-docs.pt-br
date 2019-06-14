@@ -16,10 +16,10 @@ ms.date: 08/30/2016
 ms.author: stefsch
 ms.custom: seodec18
 ms.openlocfilehash: 5e25de1ad2042ac978c3698165b9d9baba20e816
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62130680"
 ---
 # <a name="implementing-a-layered-security-architecture-with-app-service-environments"></a>Implementando uma arquitetura de segurança em camadas com Ambientes do Serviço de Aplicativo
@@ -42,7 +42,7 @@ Para saber quais regras de segurança de rede são necessárias, você precisa d
 Como os [NSGs (grupos de segurança de rede)][NetworkSecurityGroups] são aplicados às sub-redes e os Ambientes do Serviço de Aplicativo são implantados em sub-redes, as regras contidas em um NSG se aplicam a **todos** os aplicativos em execução em um Ambiente do Serviço de Aplicativo.  Usando a arquitetura de exemplo deste artigo, depois que um grupo de segurança de rede for aplicado à sub-rede contendo “apiase”, todos os aplicativos em execução no Ambiente do Serviço de Aplicativo “apiase” estarão protegidos pelo mesmo conjunto de regras de segurança. 
 
 * **Determine o endereço IP de saída de chamadores upstream:**  O que são os endereços IP dos chamadores upstream?  Esses endereços precisarão receber explicitamente a permissão de acesso no NSG.  Como as chamadas entre os Ambientes do Serviço de Aplicativo são consideradas chamadas da “Internet”, o endereço IP de saída atribuído a cada um dos três Ambientes do Serviço de Aplicativo upstream precisa receber permissão de acesso no NSG para a sub-rede “apiase”.   Para obter mais informações sobre como determinar o endereço IP de saída para aplicativos executados em um Ambiente do Serviço de Aplicativo, confira o artigo de Visão geral da [Arquitetura de rede][NetworkArchitecture].
-* **O aplicativo de API de back-end precisará chamar a si mesmo?**   Um ponto sutil e às vezes negligenciado é o cenário em que o aplicativo de back-end precisa chamar a si mesmo.  Se um aplicativo de API de back-end em um Ambiente do Serviço de Aplicativo precisar chamar a si mesmo, isso também será tratado como uma chamada da “Internet”.  Na arquitetura de exemplo, isso também requer a permissão de acesso do endereço IP de saída do Ambiente do Serviço de Aplicativo “apiase”.
+* **O aplicativo de API de back-end precisará chamar a si mesmo?**  Um ponto sutil e às vezes negligenciado é o cenário em que o aplicativo de back-end precisa chamar a si mesmo.  Se um aplicativo de API de back-end em um Ambiente do Serviço de Aplicativo precisar chamar a si mesmo, isso também será tratado como uma chamada da “Internet”.  Na arquitetura de exemplo, isso também requer a permissão de acesso do endereço IP de saída do Ambiente do Serviço de Aplicativo “apiase”.
 
 ## <a name="setting-up-the-network-security-group"></a>Configurando o Grupo de Segurança de Rede
 Depois que o conjunto de endereços IP de saída forem conhecidos, a próxima etapa é criar um grupo de segurança de rede.  Os grupos de segurança de rede podem ser criados para as redes virtuais baseadas no Resource Manager, bem como para as redes virtuais clássicas.  Os exemplos a seguir mostram a criação e a configuração de um NSG em uma rede virtual clássica usando o Powershell.

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 4/23/2019
 ms.author: ramamill
 ms.openlocfilehash: 1b6084b4e93f3dc17f633f1b8496f9c26e7f576f
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64925484"
 ---
 # <a name="scale-with-additional-process-servers"></a>Dimensionar com servidores de processo adicionais
@@ -54,7 +54,7 @@ Baixe o arquivo de instalação para o servidor de processo da seguinte maneira:
 1. Entrar no portal do Azure e navegue até seu cofre dos serviços de recuperação.
 2. Abra **Infraestrutura do Site Recovery** > **VMWare e Computadores Físicos** > **Servidores de Configuração** (sob Para VMware e Computadores Físicos).
 3. Selecione o servidor de configuração para fazer drill down nos detalhes do servidor. Clique em **+ Servidor de processo**.
-4. Em **Adicionar servidor de processo** >  **, escolha onde você quer implantar um servidor de processo** e selecione **Implantar uma expansão de servidor de processo local**.
+4. Em **Adicionar servidor de processo** >   **, escolha onde você quer implantar um servidor de processo** e selecione **Implantar uma expansão de servidor de processo local**.
 
    ![Página Adicionar Servidores](./media/vmware-azure-set-up-process-server-scale/add-process-server.png)
 1. Clique em **Baixar a Configuração Unificada do Microsoft Azure Site Recovery**. A versão mais recente do arquivo de instalação será baixada.
@@ -81,7 +81,7 @@ Em que os parâmetros de linha de comando são os seguintes:
 
 [!INCLUDE [site-recovery-unified-setup-parameters](../../includes/site-recovery-unified-installer-command-parameters.md)]
 
-Por exemplo: 
+Por exemplo:
 
 ```
 MicrosoftAzureSiteRecoveryUnifiedSetup.exe /q /x:C:\Temp\Extracted

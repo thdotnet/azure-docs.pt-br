@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
 ms.openlocfilehash: a228c5b90e47c9c24c5da70484a1a28f9a3054b1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60498815"
 ---
 # <a name="calchistogram-method"></a>Método CalcHistogram
@@ -33,11 +33,11 @@ https:// westus.api.cognitive.microsoft.com/academic/v1.0/calchistogram?
 NOME  |Value | Obrigatório?  |DESCRIÇÃO
 -----------|----------|--------|----------
 **expr**    |Cadeia de caracteres de texto | Sim  |Uma expressão de consulta que especifica as entidades sobre as quais calcular histogramas.
-**modelo** |Cadeia de caracteres de texto | Não  |Selecione o nome do modelo que você deseja consultar.  Atualmente, o valor padrão é o *mais recente*.
-**atributos** | Cadeia de caracteres de texto | Não <br>padrão: | Uma lista delimitada por vírgulas que especifica os valores de atributo que são incluídos na resposta. Os nomes de atributo diferenciam maiúsculas de minúsculas.
-**count** |Número | Não <br>Padrão: 10 |Número de resultados para retornar.
-**offset**  |Número | Não <br>Padrão: 0 |Índice do primeiro resultado para retornar.
-**tempo limite**  |Número | Não <br>Padrão: 1000 |Tempo limite em milissegundos. Somente interpretações localizadas antes que o tempo limite tenha decorrido serão retornadas.
+**modelo** |Cadeia de caracteres de texto | Não |Selecione o nome do modelo que você deseja consultar.  Atualmente, o valor padrão é o *mais recente*.
+**atributos** | Cadeia de caracteres de texto | Não<br>padrão: | Uma lista delimitada por vírgulas que especifica os valores de atributo que são incluídos na resposta. Os nomes de atributo diferenciam maiúsculas de minúsculas.
+**count** |Número | Não<br>Padrão: 10 |Número de resultados para retornar.
+**offset**  |Número | Não<br>Padrão: 0 |Índice do primeiro resultado para retornar.
+**timeout**  |Número | Não<br>Padrão: 1000 |Tempo limite em milissegundos. Somente interpretações localizadas antes que o tempo limite tenha decorrido serão retornadas.
 
 ## <a name="response-json"></a>Resposta (JSON)
 
@@ -65,7 +65,7 @@ https:// westus.api.cognitive.microsoft.com/academic/v1.0/calchistogram?expr=And
 ```
 https:// westus.api.cognitive.microsoft.com/academic/v1.0/interpret?query=papers by jaime teevan after 2012
 ```
-<br>A expressão na primeira interpretação que é retornada da API de interpretação é *And(Composite(AA.AuN=='jaime teevan'),Y>2012)*.
+<br>A expressão na primeira interpretação que é retornada da API de interpretação é *And(Composite(AA.AuN=='jaime teevan'),Y>2012)* .
 <br>Esse valor de expressão, em seguida, é passado para a API **calchistogram**. O parâmetro *attributes=Y,F.FN* indica que as distribuições de contagens de artigos devem ser por ano e o campo de estudo, por exemplo:
 ```
 https:// westus.api.cognitive.microsoft.com/academic/v1.0/calchistogram?expr=And(Composite(AA.AuN=='jaime teevan'),Y>2012)&attributes=Y,F.FN&count=4

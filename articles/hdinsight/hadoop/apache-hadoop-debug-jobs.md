@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
 ms.openlocfilehash: f96171e1c75676a185edf4a1901ef65b7181135a
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64721003"
 ---
 # <a name="analyze-apache-hadoop-logs"></a>Analisar logs do Apache Hadoop
@@ -32,7 +32,7 @@ Quando você cria um cluster HDInsight, seis tabelas são criadas automaticament
 * ambariserverlog
 * ambariagentlog
 
-Os nomes de arquivo da tabela são **u\<ClusterName > DDMonYYYYatHHMMSSsss\<TableName >**.
+Os nomes de arquivo da tabela são **u\<ClusterName > DDMonYYYYatHHMMSSsss\<TableName >** .
 
 Essas tabelas contêm os seguintes campos:
 
@@ -41,7 +41,7 @@ Essas tabelas contêm os seguintes campos:
 * EventTimestamp
 * Host
 * MALoggingHash
-* Mensagem
+* Message
 * N
 * PreciseTimeStamp
 * Função
@@ -89,7 +89,7 @@ Agora você pode usar o Excel para filtrar e classificar conforme o necessário.
 3. No **Gerenciador de Nuvem**, selecione **Tipos de Recurso**.  A outra opção disponível é **Grupos de Recursos**.
 4. Expanda as **Contas de Armazenamento**, a conta de armazenamento padrão do cluster, em seguida, **Tabelas**.
 5. Clique duas vezes em **hadoopservicelog**.
-6. Adicione um filtro. Por exemplo: 
+6. Adicione um filtro. Por exemplo:
    
         TraceLevel eq 'ERROR'
    

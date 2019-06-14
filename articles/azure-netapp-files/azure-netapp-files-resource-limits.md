@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: b-juche
 ms.openlocfilehash: b55467d77beb8f97b8e392b72682268ae0407e54
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65826373"
 ---
 # <a name="resource-limits-for-azure-netapp-files"></a>Limites de recursos no Azure NetApp Files
@@ -43,7 +43,7 @@ A tabela a seguir descreve os limites de recursos para arquivos do NetApp do Azu
 |  Máximo atribuído a cota de um único volume *   |   92 TiB   |    Não   |
 |  Tamanho máximo de um único volume *     |    100 TiB    |    Não       |
 
-* Um volume pode ser criado manualmente ou redimensionado para TiB 92 máximo. No entanto, um volume pode crescer até 100 TiB em um cenário de excedente. Ver [modelo de custo para arquivos do Azure NetApp](azure-netapp-files-cost-model.md) para obter detalhes sobre o excedente de capacidade. 
+\* Um volume pode ser criado manualmente ou redimensionado para TiB 92 máximo. No entanto, um volume pode crescer até 100 TiB em um cenário de excedente. Ver [modelo de custo para arquivos do Azure NetApp](azure-netapp-files-cost-model.md) para obter detalhes sobre o excedente de capacidade. 
 
 ## <a name="request-limit-increase"></a>Aumento de limite de solicitação 
 
@@ -54,7 +54,7 @@ Plano de navegação do portal do Azure:
 1. Clique em **ajuda + suporte**.
 2. Clique em **+ novo solicitação de suporte**.
 3. Na guia de Noções básicas, forneça as seguintes informações: 
-    1. Tipo de problema: Selecione **limites de serviço e assinatura (cotas)**.
+    1. Tipo de problema: Selecione **limites de serviço e assinatura (cotas)** .
     2. Assinaturas: Selecione a assinatura para o recurso que você precisa que a cota aumentada.
     3. Tipo de cota: Selecione **armazenamento: Limita os arquivos do Azure do NetApp**.
     4. Clique em **Avançar: Soluções**.
@@ -64,7 +64,7 @@ Plano de navegação do portal do Azure:
         |  Resource  |    Recursos do pai      |    Novos limites solicitados     |    Motivo para aumento de cota       |
         |----------------|------------------------------|---------------------------------|------------------------------------------|
         |  Conta |  *ID da assinatura*   |  *Novo máximo solicitado **conta** número*    |  *Qual cenário ou caso de uso solicitado da solicitação?*  |
-        |  Pool    |  *ID de assinatura, o URI da conta*  |  *Novo máximo solicitado **pool** número*   |  *Qual cenário ou caso de uso solicitado da solicitação?*  |
+        |  pool    |  *ID de assinatura, o URI da conta*  |  *Novo máximo solicitado **pool** número*   |  *Qual cenário ou caso de uso solicitado da solicitação?*  |
         |  Volume  |  *ID da assinatura, URI, da conta de Pool de URI*   |  *Novo máximo solicitado **volume** número*     |  *Qual cenário ou caso de uso solicitado da solicitação?*  |
 
     2. Especifique o suporte ao método apropriado e forneça suas informações de contrato.

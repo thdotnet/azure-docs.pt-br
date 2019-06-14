@@ -13,10 +13,10 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
 ms.openlocfilehash: cfa9d6a1a287281bec91facf04c73506db81f84a
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64711563"
 ---
 # <a name="customize-setup-for-the-azure-ssis-integration-runtime"></a>Personalizar configuração do tempo de execução de integração do Azure-SSIS
@@ -66,7 +66,7 @@ Para personalizar o IR do Azure-SSIS, você precisa do seguinte:
 
 1. Baixe, instale e execute o [Azure Storage Explorer](https://storageexplorer.com/).
 
-   1. No **(Local e Anexo)**, selecione com o botão de **Contas de Armazenamento** e selecione **Conecte-se ao Armazenamento do Azure**.
+   1. No **(Local e Anexo)** , selecione com o botão de **Contas de Armazenamento** e selecione **Conecte-se ao Armazenamento do Azure**.
 
       ![Conectar-se ao armazenamento do Azure](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image1.png)
 
@@ -105,7 +105,7 @@ Para personalizar o IR do Azure-SSIS, você precisa do seguinte:
 
       ![Insira a Assinatura de Acesso Compartilhado](media/tutorial-create-azure-ssis-runtime-portal/advanced-settings.png)
 
-      Quando você provisionar ou reconfigurar o IR do Azure-SSIS com o PowerShell, antes de iniciar o IR do Azure-SSIS, execute o cmdlet `Set-AzDataFactoryV2IntegrationRuntime` com o URI de SAS do seu contêiner como o valor para o novo parâmetro `SetupScriptContainerSasUri`. Por exemplo: 
+      Quando você provisionar ou reconfigurar o IR do Azure-SSIS com o PowerShell, antes de iniciar o IR do Azure-SSIS, execute o cmdlet `Set-AzDataFactoryV2IntegrationRuntime` com o URI de SAS do seu contêiner como o valor para o novo parâmetro `SetupScriptContainerSasUri`. Por exemplo:
 
       ```powershell
       Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName $MyDataFactoryName `
@@ -122,7 +122,7 @@ Para personalizar o IR do Azure-SSIS, você precisa do seguinte:
 
 1. Para obter outros exemplos de instalação personalizada, conecte-se ao contêiner de visualização pública com o Azure Storage Explorer.
 
-    a.  Em **(Local e conectado)**, clique com botão direito em **Contas de Armazenamento**, selecione **Conectar ao armazenamento do Azure**, selecione **Usar uma cadeia de caracteres de conexão ou uma URI de assinatura de acesso compartilhado** e, em seguida, selecione **Próximo**.
+   a.  Em **(Local e conectado)** , clique com botão direito em **Contas de Armazenamento**, selecione **Conectar ao armazenamento do Azure**, selecione **Usar uma cadeia de caracteres de conexão ou uma URI de assinatura de acesso compartilhado** e, em seguida, selecione **Próximo**.
 
       ![Conecte-se ao armazenamento do Azure com a Assinatura de Acesso Compartilhado](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image9.png)
 

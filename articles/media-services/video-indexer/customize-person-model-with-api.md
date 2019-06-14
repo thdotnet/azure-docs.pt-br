@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: anzaman
 ms.openlocfilehash: 6c4980536eddd0226fac422ae17ddb717e34630d
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65799462"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-api"></a>Personalizar um modelo de Pessoa com a API do Video Indexer
@@ -53,14 +53,14 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 
 [Confira os parâmetros necessários e teste-os usando o portal do desenvolvedor do Video Indexer](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-Person-Model?).
 
-### <a name="request-parameters"></a>Parâmetros de solicitação 
+### <a name="request-parameters"></a>Parâmetros da solicitação 
 
 |**Nome**|**Tipo**|**Obrigatório**|**Descrição**|
 |---|---|---|---|
-|location|string|Sim|A região do Azure para a qual a chamada deve ser roteada. Para obter mais informações, confira [Regiões do Azure e Video Indexer](regions.md).|
-|accountId|string|Sim|Identificador global exclusivo para a conta|
-|nome|string|Sim|O nome do modelo de Pessoa|
-|accessToken|string|Sim|Token de acesso (precisa ser do escopo [Token de Acesso da Conta](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) a ser autenticado na chamada. Os tokens de acesso expiram em 1 hora.|
+|location|cadeia de caracteres|Sim|A região do Azure para a qual a chamada deve ser roteada. Para obter mais informações, confira [Regiões do Azure e Video Indexer](regions.md).|
+|accountId|cadeia de caracteres|Sim|Identificador global exclusivo para a conta|
+|name|cadeia de caracteres|Sim|O nome do modelo de Pessoa|
+|accessToken|cadeia de caracteres|Sim|Token de acesso (precisa ser do escopo [Token de Acesso da Conta](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) a ser autenticado na chamada. Os tokens de acesso expiram em 1 hora.|
 
 ### <a name="request-body"></a>Corpo da solicitação
 
@@ -98,14 +98,14 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 [Confira os parâmetros necessários e teste-os usando o portal do desenvolvedor do Video Indexer](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Person-Model?).
 
-### <a name="request-parameters"></a>Parâmetros de solicitação
+### <a name="request-parameters"></a>Parâmetros da solicitação
 
 |**Nome**|**Tipo**|**Obrigatório**|**Descrição**|
 |---|---|---|---|
-|location|string|Sim|A região do Azure para a qual a chamada deve ser roteada. Para obter mais informações, confira [Regiões do Azure e Video Indexer](regions.md).|
-|accountId|string|Sim|Identificador global exclusivo para a conta|
-|ID|string|Sim|A ID do modelo de Pessoa (gerada quando o modelo de pessoa é criado)|
-|accessToken|string|Sim|Token de acesso (precisa ser do escopo [Token de Acesso da Conta](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) a ser autenticado na chamada. Os tokens de acesso expiram em 1 hora.|
+|location|cadeia de caracteres|Sim|A região do Azure para a qual a chamada deve ser roteada. Para obter mais informações, confira [Regiões do Azure e Video Indexer](regions.md).|
+|accountId|cadeia de caracteres|Sim|Identificador global exclusivo para a conta|
+|id|cadeia de caracteres|Sim|A ID do modelo de Pessoa (gerada quando o modelo de pessoa é criado)|
+|accessToken|cadeia de caracteres|Sim|Token de acesso (precisa ser do escopo [Token de Acesso da Conta](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) a ser autenticado na chamada. Os tokens de acesso expiram em 1 hora.|
 
 ### <a name="request-body"></a>Corpo da solicitação
 
@@ -135,13 +135,13 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 [Confira os parâmetros necessários e teste-os usando o portal do desenvolvedor do Video Indexer](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Person-Models?).
 
-### <a name="request-parameters"></a>Parâmetros de solicitação
+### <a name="request-parameters"></a>Parâmetros da solicitação
 
 |**Nome**|**Tipo**|**Obrigatório**|**Descrição**|
 |---|---|---|---|
-|location|string|Sim|A região do Azure para a qual a chamada deve ser roteada. Para obter mais informações, confira [Regiões do Azure e Video Indexer](regions.md).|
-|accountId|string|Sim|Identificador global exclusivo para a conta|
-|accessToken|string|Sim|Token de acesso (precisa ser do escopo [Token de Acesso da Conta](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) a ser autenticado na chamada. Os tokens de acesso expiram em 1 hora.|
+|location|cadeia de caracteres|Sim|A região do Azure para a qual a chamada deve ser roteada. Para obter mais informações, confira [Regiões do Azure e Video Indexer](regions.md).|
+|accountId|cadeia de caracteres|Sim|Identificador global exclusivo para a conta|
+|accessToken|cadeia de caracteres|Sim|Token de acesso (precisa ser do escopo [Token de Acesso da Conta](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) a ser autenticado na chamada. Os tokens de acesso expiram em 1 hora.|
 
 ### <a name="request-body"></a>Corpo da solicitação
 
@@ -190,16 +190,16 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Vide
 
 [Confira os parâmetros necessários e teste-os usando o portal do desenvolvedor do Video Indexer](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Video-Face?).
 
-### <a name="request-parameters"></a>Parâmetros de solicitação
+### <a name="request-parameters"></a>Parâmetros da solicitação
 
 |**Nome**|**Tipo**|**Obrigatório**|**Descrição**|
 |---|---|---|---|
-|location|string|Sim|A região do Azure para a qual a chamada deve ser roteada. Para obter mais informações, confira [Regiões do Azure e Video Indexer](regions.md).|
-|accountId|string|Sim|Identificador global exclusivo para a conta|
-|videoId|string|Sim|ID do vídeo no qual o rosto que você deseja atualizar é exibido. Isso é criado quando o vídeo é carregado e indexado.|
+|location|cadeia de caracteres|Sim|A região do Azure para a qual a chamada deve ser roteada. Para obter mais informações, confira [Regiões do Azure e Video Indexer](regions.md).|
+|accountId|cadeia de caracteres|Sim|Identificador global exclusivo para a conta|
+|videoId|cadeia de caracteres|Sim|ID do vídeo no qual o rosto que você deseja atualizar é exibido. Isso é criado quando o vídeo é carregado e indexado.|
 |faceId|inteiro|Sim|ID do rosto que será atualizado. Você pode obter o faceId do índice do vídeo|
-|accessToken|string|Sim|Token de acesso (precisa ser do escopo [Token de Acesso da Conta](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) a ser autenticado na chamada. Os tokens de acesso expiram em 1 hora.|
-|nome|string|Sim|O novo nome com o qual atualizar o rosto.|
+|accessToken|cadeia de caracteres|Sim|Token de acesso (precisa ser do escopo [Token de Acesso da Conta](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) a ser autenticado na chamada. Os tokens de acesso expiram em 1 hora.|
+|name|cadeia de caracteres|Sim|O novo nome com o qual atualizar o rosto.|
 
 Os nomes são exclusivos para modelos de Pessoa; portanto se você der o mesmo valor do parâmetro **name** a dois rostos diferentes no mesmo modelo de Pessoa, o Video Indexer exibirá os rostos como a mesma pessoa e os convergirá depois que você reindexar o vídeo. 
 

@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: micflan
 ms.custom: ''
 ms.openlocfilehash: 717c0f110ebbeee53e2c9b9207350385288d57c3
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65991391"
 ---
 # <a name="understand-and-work-with-scopes"></a>Entender e trabalhar com escopos
@@ -170,7 +170,7 @@ Ao trabalhar com APIs de gerenciamento de custo, sabendo que o escopo é crític
 5. Copie a conta de cobrança e as IDs de perfil de cobrança.
 6. O escopo é: `"/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}"`
 
-### <a name="invoice-sections"></a>Seções de fatura
+### <a name="invoice-sections"></a>Seções de nota fiscal
 
 1. Abra o portal do Azure e, em seguida, navegue até **gerenciamento de custos + cobrança** na lista de serviços.
 2. Selecione **seções de nota fiscal** no menu de conta de cobrança.
@@ -218,7 +218,7 @@ Ao trabalhar com APIs de gerenciamento de custo, sabendo que o escopo é crític
 4. Copie o valor de campo de ID do recurso.
 5. O escopo é: `"/subscriptions/{id}/resourceGroups/{name}"`
 
-Gerenciamento de custos é suportado atualmente no [Azure Global](https://management.azure.com) e [do Azure governamental](https://management.usgovcloudapi.net). Para obter mais informações sobre o Azure governamental, consulte [pontos de extremidade Global do Azure e a API do governo](../azure-government/documentation-government-developer-guide.md#endpoint-mapping)_._
+Gerenciamento de custos é suportado atualmente no [Azure Global](https://management.azure.com) e [do Azure governamental](https://management.usgovcloudapi.net). Para obter mais informações sobre o Azure governamental, consulte [pontos de extremidade Global do Azure e a API do governo](../azure-government/documentation-government-developer-guide.md#endpoint-mapping) _._
 
 ## <a name="next-steps"></a>Próximas etapas
 

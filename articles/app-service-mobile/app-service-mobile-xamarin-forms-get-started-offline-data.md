@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 10/04/2016
 ms.author: crdun
 ms.openlocfilehash: 506c59ca24aeafbac59b1508bb78142051302765
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62127872"
 ---
 # <a name="enable-offline-sync-for-your-xamarinforms-mobile-app"></a>Habilitar sincronização offline para seu aplicativo móvel Xamarin.Forms
@@ -34,7 +34,7 @@ Para saber mais sobre o recurso de sincronização offline, confira o tópico [S
 ## <a name="enable-offline-sync-functionality-in-the-quickstart-solution"></a>Habilitar a funcionalidade de sincronização offline na solução de início rápido
 O código de sincronização offline é incluído no projeto usando diretivas de pré-processador C#. Quando o símbolo **OFFLINE\_SYNC\_ENABLED** é definido, esses caminhos de código são incluídos na compilação. Para aplicativos do Windows, você deve instalar também a plataforma SQLite.
 
-1. No Visual Studio, clique com o botão direito do mouse na solução > **Gerenciar Pacotes NuGet para a Solução...**, procure e instale o pacote NuGet **Microsoft.Azure.Mobile.Client.SQLiteStore** para todos os projetos na solução.
+1. No Visual Studio, clique com o botão direito do mouse na solução > **Gerenciar Pacotes NuGet para a Solução...** , procure e instale o pacote NuGet **Microsoft.Azure.Mobile.Client.SQLiteStore** para todos os projetos na solução.
 2. No Gerenciador de Soluções, abra o arquivo TodoItemManager.cs do projeto com **Portable** no nome, que é o projeto da Biblioteca de Classes Portátil e remova o comentário da seguinte diretiva de pré-processador:
 
         #define OFFLINE_SYNC_ENABLED

@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 02/19/2019
 ms.author: banders
 ms.openlocfilehash: f93152ae3db926fb989c219d1e515abaf0281bf4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60372041"
 ---
 # <a name="understand-the-charges-on-your-microsoft-customer-agreements-invoice"></a>Entender os encargos na fatura do contrato cliente da Microsoft
@@ -52,7 +52,7 @@ Este artigo se aplicam a uma conta de cobrança para um contrato de cliente da M
     |Família de produtos     | A categoria de produto, como computação para máquinas virtuais ou banco de dados para o banco de dados SQL do Azure|
     |Sku do produto     | Um código exclusivo que identifica a instância do seu produto |
     |Amount     |  O valor de transação      |
-    |Seção de fatura     | A transação aparecerá nessa seção da fatura do perfil de cobrança |
+    |Seção de nota fiscal     | A transação aparecerá nessa seção da fatura do perfil de cobrança |
     |Perfil de faturamento     | A transação é mostrada na fatura de cobrança desse perfil |
 
 5. Pesquisar na ID da nota fiscal para filtrar as transações da nota fiscal.

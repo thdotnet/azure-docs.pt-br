@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
 ms.openlocfilehash: cf23ef5df3bdcaad23841da111fa06cc36b4cd57
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61459132"
 ---
 # <a name="securely-push-notifications-from-azure-notification-hubs"></a>Enviar notificações por push com segurança do Hubs de Notificação do Azure
@@ -90,7 +90,7 @@ Este tutorial de Push Seguro mostra como enviar uma notificação por push de ma
 A próxima etapa é criar o componente de segundo plano de push.
 
 1. No Gerenciador de Soluções, clique com o botão direito do mouse no nó do nível superior da solução (**Solução SecurePush** nesse caso) e clique em **Adicionar** e em **Novo Projeto**.
-2. Expanda **Aplicativos da Loja** e clique em **Aplicativos do Windows Phone** e em **Componente do Tempo de Execução do Windows (Windows Phone)**. Nomeie o projeto **PushBackgroundComponent** e clique em **OK** para criar o projeto.
+2. Expanda **Aplicativos da Loja** e clique em **Aplicativos do Windows Phone** e em **Componente do Tempo de Execução do Windows (Windows Phone)** . Nomeie o projeto **PushBackgroundComponent** e clique em **OK** para criar o projeto.
 
     ![][12]
 3. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **PushBackgroundComponent (Windows Phone 8.1)** e clique em **Adicionar** e em **Classe**. Nomeie a nova classe `PushBackgroundTask.cs`. Clique em **Adicionar** para gerar a classe.
@@ -157,8 +157,8 @@ A próxima etapa é criar o componente de segundo plano de push.
     using Windows.UI.Notifications;
     using Windows.Data.Xml.Dom;
     ```
-11. No Gerenciador de Soluções, no projeto **NotifyUserWindowsPhone (Windows Phone 8.1)**, clique com o botão direito do mouse em **Referências** e em **Adicionar Referência...**. Na caixa de diálogo Gerenciador de Referências, marque a caixa próxima a **PushBackgroundComponent** e clique em **OK**.
-12. No Gerenciador de Soluções, clique duas vezes em **Package.appxmanifest** no projeto **NotifyUserWindowsPhone (Windows Phone 8.1)**. Em **Notificações**, defina **Compatível com Toast** como **Sim**.
+11. No Gerenciador de Soluções, no projeto **NotifyUserWindowsPhone (Windows Phone 8.1)** , clique com o botão direito do mouse em **Referências** e em **Adicionar Referência...** . Na caixa de diálogo Gerenciador de Referências, marque a caixa próxima a **PushBackgroundComponent** e clique em **OK**.
+12. No Gerenciador de Soluções, clique duas vezes em **Package.appxmanifest** no projeto **NotifyUserWindowsPhone (Windows Phone 8.1)** . Em **Notificações**, defina **Compatível com Toast** como **Sim**.
 
     ![][3]
 13. Ainda em **Package.appxmanifest**, clique no menu **Declarações** próximo à parte superior. Na lista suspensa **Declarações Disponíveis**, clique em **Tarefas de Segundo Plano** e em **Adicionar**.

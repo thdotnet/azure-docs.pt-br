@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/15/2019
 ms.author: sajagtap
 ms.openlocfilehash: f88ccbabc925b651abbc06f571a9d4220ed8aeb2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61285316"
 ---
 # <a name="configure-the-review-tool"></a>Configurar a ferramenta de análise
@@ -64,7 +64,7 @@ Se você for um membro de mais de uma subequipe, você pode alternar entre esses
 
 ![Alternar entre subequipes](images/3-review-image-subteam-2.png)
 
-## <a name="tags"></a>Marcas
+## <a name="tags"></a>tags
 
 O **marcas** guia permite que você defina as marcas de moderação personalizados, além das marcas de moderação de padrão de dois&mdash;**isadult** (**um**) e **isracy**  (**r**). Quando você cria uma marca personalizada, ele fica disponível em revisões junto com as marcas padrão. Você pode alterar as marcas que aparecem nas revisões alterando suas configurações de visibilidade.
 
@@ -138,6 +138,6 @@ Para usar a chave do Azure com as APIs de análise, você precisa recuperar a ID
 
 Se você inseriu sua chave de assinatura em ambos os locais, a chave de avaliação que vem com sua conta da ferramenta de revisão não será usada, mas permanecerão disponível.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Siga as [início rápido de ferramenta de revisão](../quick-start.md) para começar a usar a ferramenta de análise em cenários de moderação de conteúdo.

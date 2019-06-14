@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: jeconnoc
 ms.openlocfilehash: 3082ca34f2bcb71dd7aa02b4539899997374cfc0
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65595174"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Introdução aos Serviços de Nuvem do Azure e ao ASP.NET
@@ -208,7 +208,7 @@ Você usará uma [transformação de Web.config](https://www.asp.net/mvc/tutoria
     Deixe o arquivo aberto para edição.
 2. No [portal do Azure](https://portal.azure.com), clique em **Bancos de Dados SQL** no painel esquerdo, clique no banco de dados criado para este tutorial e clique em **Mostrar cadeias de conexão**.
 
-    ![Mostrar Cadeias de Conexão](./media/cloud-services-dotnet-get-started/showcs.png)
+    ![Mostrar cadeias de conexão](./media/cloud-services-dotnet-get-started/showcs.png)
 
     O portal exibe as cadeias de conexão com um espaço reservado para a senha.
 
@@ -236,7 +236,7 @@ As cadeias de conexão da conta de armazenamento do Azure do projeto de função
 2. Clique na guia **Configurações** . Na caixa suspensa **Configuração de Serviço** selecione **Nuvem**.
 
     ![Configuração de nuvem](./media/cloud-services-dotnet-get-started/sccloud.png)
-3. Selecione a entrada **StorageConnectionString** e você verá um botão de reticências (**...**) na extremidade direita da linha. Clique no botão para abrir a caixa de diálogo **Criar cadeia de conexão da conta de armazenamento** .
+3. Selecione a entrada **StorageConnectionString** e você verá um botão de reticências ( **...** ) na extremidade direita da linha. Clique no botão para abrir a caixa de diálogo **Criar cadeia de conexão da conta de armazenamento** .
 
     ![Abra a caixa Criar Cadeia de Conexão](./media/cloud-services-dotnet-get-started/opencscreate.png)
 4. Na caixa de diálogo **Criar Cadeia de Conexão de Armazenamento**, clique em **Sua assinatura**, escolha a conta de armazenamento que você criou anteriormente e, em seguida, clique em **OK**. Se você não tiver feito logon, suas credenciais da conta do Azure serão solicitadas.
@@ -381,7 +381,7 @@ Nesta seção iremos configurar o Armazenamento do Azure e as cadeias de conexã
 3. No projeto ContosoAdsCloudService, clique com o botão direito do mouse em ContosoAdsWeb abaixo de **Funções** e depois clique em **Propriedades**.
 
     ![Propriedades da função](./media/cloud-services-dotnet-get-started/roleproperties.png)
-4. Na janela Propriedades de **ContosoAdsWeb [Função]**, clique na guia **Configurações** e, em seguida, em **Adicionar Configuração**.
+4. Na janela Propriedades de **ContosoAdsWeb [Função]** , clique na guia **Configurações** e, em seguida, em **Adicionar Configuração**.
 
     Deixe **Configuração de Serviço** definida como **Todas as configurações**.
 5. Adicione uma configuração chamada *StorageConnectionString*. Defina **Tipo** como *ConnectionString* e defina **Valor** como *UseDevelopmentStorage=true*.
@@ -392,7 +392,7 @@ Nesta seção iremos configurar o Armazenamento do Azure e as cadeias de conexã
 8. Ainda na janela de propriedades de **ContosoAdsWorker [Role]** , adicione outra cadeia de conexão:
 
    * Nome: ContosoAdsDbConnectionString
-   * Tipo: String
+   * Digite: Cadeia de caracteres
    * Valor: Cole a mesma cadeia de conexão usada para o projeto de função Web. (O exemplo a seguir é para o Visual Studio 2013. Não se esqueça de alterar a fonte de dados se for copiar este exemplo e se estiver usando o Visual Studio 2015 ou superior.)
 
        ```

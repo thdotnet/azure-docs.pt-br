@@ -9,10 +9,10 @@ ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
 ms.openlocfilehash: 6ad6f9414df17f9edff7565752ef3845e0d3c88e
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66116198"
 ---
 # <a name="understand-azure-policy-effects"></a>Compreender os efeitos do Azure Policy
@@ -88,7 +88,7 @@ Exemplo 2: dois pares **campo/valor** para acrescentar um conjunto de marcas.
 }
 ```
 
-Exemplo 3: Única **valor do campo** emparelhar usando um não -**[\*]** [alias](definition-structure.md#aliases) com uma matriz **valor** para definir regras de IP em uma conta de armazenamento. Quando o alias não **[\*]** é uma matriz, o efeito acrescenta o **valor** como a matriz inteira. Se já existir a matriz, ocorre um evento de negação como resultado do conflito.
+Exemplo 3: Única **valor do campo** emparelhar usando um não - **[\*]** [alias](definition-structure.md#aliases) com uma matriz **valor** para definir regras de IP em uma conta de armazenamento. Quando o alias não **[\*]** é uma matriz, o efeito acrescenta o **valor** como a matriz inteira. Se já existir a matriz, ocorre um evento de negação como resultado do conflito.
 
 ```json
 "then": {
@@ -103,7 +103,7 @@ Exemplo 3: Única **valor do campo** emparelhar usando um não -**[\*]** [alias]
 }
 ```
 
-Exemplo 4: Par **campo/valor** exclusivo usando um [alias](definition-structure.md#aliases) **[\*]** com uma matriz **value** para definir as regras de IP em uma conta de armazenamento. Ao usar o alias **[\*]**, o efeito acrescenta o **valor** a uma matriz potencialmente já existente. Se a matriz ainda não existir, ela será criada.
+Exemplo 4: Par **campo/valor** exclusivo usando um [alias](definition-structure.md#aliases) **[\*]** com uma matriz **value** para definir as regras de IP em uma conta de armazenamento. Ao usar o alias **[\*]** , o efeito acrescenta o **valor** a uma matriz potencialmente já existente. Se a matriz ainda não existir, ela será criada.
 
 ```json
 "then": {
@@ -373,4 +373,4 @@ Cada atribuição é avaliada individualmente. Assim, não existe chance de um r
 - Entender como [criar políticas de forma programática](../how-to/programmatically-create.md).
 - Saiba como [obter dados de conformidade](../how-to/getting-compliance-data.md).
 - Saiba como [corrigir recursos sem conformidade](../how-to/remediate-resources.md).
-- Examine o que um grupo de gerenciamento com [organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).
+- Veja o que é um grupo de gerenciamento com [Organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).

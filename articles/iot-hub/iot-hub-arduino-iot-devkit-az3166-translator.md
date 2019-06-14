@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 12/19/2018
 ms.author: liydu
 ms.openlocfilehash: df7e7b426a8c85c8051d7f588c706a6f8811e183
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60518954"
 ---
 # <a name="use-iot-devkit-az3166-with-azure-functions-and-cognitive-services-to-make-a-language-translator"></a>Usar o Kit de Desenvolvimento da IoT AZ3166 com um Azure Functions e os Serviços Cognitivos para criar um tradutor de idiomas
@@ -40,14 +40,14 @@ Para concluir as etapas neste tutorial, faça primeiro as tarefas a seguir:
 
 1. Verifique se o kit de desenvolvimento de IoT **não está conectado** ao computador. Inicie o VS Code primeiro e, em seguida, conecte o kit de desenvolvimento ao computador.
 
-1. Clique em `F1` para abrir a paleta de comandos, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Abrir Exemplos...**. Em seguida, selecione **Kit de Desenvolvimento de IoT** como placa.
+1. Clique em `F1` para abrir a paleta de comandos, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Abrir Exemplos...** . Em seguida, selecione **Kit de Desenvolvimento de IoT** como placa.
 
 1. Na página de Exemplos do IoT Workbench, encontre **Introdução** e clique em **Abrir Exemplo**. Em seguida, selecione o caminho padrão para baixar o código de exemplo.
   ![Abrir exemplo](media/iot-hub-arduino-iot-devkit-az3166-translator/open-sample.png)
 
 ## <a name="use-speech-service-with-azure-functions"></a>Usar o Serviço de Fala com o Azure Functions
 
-1. No Visual Studio Code clique em `F1` novamente, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Provisionar Serviços do Azure...**. ![Provisionar Serviços do Azure](media/iot-hub-arduino-iot-devkit-az3166-translator/provision.png)
+1. No Visual Studio Code clique em `F1` novamente, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Provisionar Serviços do Azure...** . ![Provisionar Serviços do Azure](media/iot-hub-arduino-iot-devkit-az3166-translator/provision.png)
 
 1. Siga as etapas para concluir o provisionamento do Hub IoT e do Azure Functions.
    ![Provisionar passos](media/iot-hub-arduino-iot-devkit-az3166-translator/provision-steps.png)
@@ -66,7 +66,7 @@ Para concluir as etapas neste tutorial, faça primeiro as tarefas a seguir:
    const string deviceName = "";
    ```
 
-1. Clique em `F1`, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Implantar no Azure...**. Se o VS Code solicitar a confirmação de reimplantação, clique em **Sim**.
+1. Clique em `F1`, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Implantar no Azure...** . Se o VS Code solicitar a confirmação de reimplantação, clique em **Sim**.
    ![Implantar o aviso](media/iot-hub-arduino-iot-devkit-az3166-translator/deploy-warning.png)
 
 1. Verifique se a implantação foi bem-sucedida.

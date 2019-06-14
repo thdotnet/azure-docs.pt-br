@@ -12,10 +12,10 @@ ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: d6601f57d87b518b2061df64174818432b822755
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60515333"
 ---
 # <a name="bing-speech-websocket-protocol"></a>Protocolo WebSocket da Fala do Bing
@@ -69,7 +69,7 @@ O cabeçalho de *autorização* deve conter um token de acesso do JSON Web Token
 
 Para obter informações sobre como se inscrever e obter chaves de API que são usadas para recuperar os tokens de acesso JWT válidos, consulte a página [Assinatura serviços Cognitivos](https://azure.microsoft.com/try/cognitive-services/).
 
-A chave de API é passada para o serviço de token. Por exemplo: 
+A chave de API é passada para o serviço de token. Por exemplo:
 
 ``` HTTP
 POST https://api.cognitive.microsoft.com/sts/v1.0/issueToken
@@ -82,7 +82,7 @@ As seguintes informações de cabeçalho são necessárias para o token de acess
 |----|----|----|
 | Ocp-Apim-Subscription-Key | ASCII | Sua chave de assinatura |
 
-O serviço de token retorna o token de acesso do JWT como `text/plain`. Em seguida, o JWT é passado como um `Base64 access_token` para o handshake como um cabeçalho de *Autorização* prefixado com a cadeia de caracteres `Bearer`. Por exemplo: 
+O serviço de token retorna o token de acesso do JWT como `text/plain`. Em seguida, o JWT é passado como um `Base64 access_token` para o handshake como um cabeçalho de *Autorização* prefixado com a cadeia de caracteres `Bearer`. Por exemplo:
 
 `Authorization: Bearer [Base64 access_token]`
 
@@ -98,7 +98,7 @@ Os clientes *devem* oferecer suporte os mecanismos de redirecionamento padrão e
 
 Os clientes *devem* usar um ponto de extremidade apropriado do serviço de fala. O ponto de extremidade é baseado no modo de reconhecimento e idioma. A tabela abaixo mostra alguns exemplos.
 
-| Mode | Caminho | URI de serviço |
+| Modo | Caminho | URI de serviço |
 | -----|-----|-----|
 | Interativo | /speech/recognition/interactive/cognitiveservices/v1 | https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=pt-BR |
 | Conversação | /speech/recognition/conversation/cognitiveservices/v1 | https://speech.platform.bing.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US |
@@ -219,17 +219,17 @@ O elemento system.version da `speech.config` mensagem contém a versão de fala 
 
 | Campo | DESCRIÇÃO | Uso |
 |-|-|-|
-| os.platform | A plataforma OS que hospeda o aplicativo, por exemplo, Windows, Android, iOS ou SO Linux |Necessário |
-| os.name | Nome de produto do sistema operacional, por exemplo, Debian ou Windows 10 | Necessário |
-| os.version | A versão do sistema operacional no formulário *major.minor.build.branch* | Necessário |
+| os.platform | A plataforma OS que hospeda o aplicativo, por exemplo, Windows, Android, iOS ou SO Linux |Obrigatório |
+| os.name | Nome de produto do sistema operacional, por exemplo, Debian ou Windows 10 | Obrigatório |
+| os.version | A versão do sistema operacional no formulário *major.minor.build.branch* | Obrigatório |
 
 ##### <a name="device-element"></a>Elemento de dispositivo
 
 | Campo | DESCRIÇÃO | Uso |
 |-|-|-|
-| device.manufacturer | O fabricante de hardware do dispositivo | Necessário |
-| device.model | O modelo do dispositivo. | Necessário |
-| device.version | A versão do software do dispositivo fornecida pelo fabricante do dispositivo. Esse valor especifica uma versão do dispositivo que pode ser acompanhado pelo fabricante. | Necessário |
+| device.manufacturer | O fabricante de hardware do dispositivo | Obrigatório |
+| device.model | O modelo do dispositivo. | Obrigatório |
+| device.version | A versão do software do dispositivo fornecida pelo fabricante do dispositivo. Esse valor especifica uma versão do dispositivo que pode ser acompanhado pelo fabricante. | Obrigatório |
 
 ### <a name="message-audio"></a>Mensagem `audio`
 
@@ -243,7 +243,7 @@ O serviço de fala usa a primeira `audio` mensagem que contém um identificador 
 
 | Campo | DESCRIÇÃO |
 |-------------|----------------|
-| Codificação de mensagem WebSocket | Binário |
+| Codificação de mensagem WebSocket | Binary |
 | Corpo | Dados binários para a parte de áudio. O tamanho máximo é de 8.192 bytes. |
 
 #### <a name="required-message-headers"></a>Cabeçalhos de mensagem necessários
@@ -498,7 +498,7 @@ Os clientes devem incluir valores de tempo de recebimento para todas as mensagen
 
 Os clientes *devem* confirmar o recebimento de todas as mensagens enviadas pelo serviço, incluindo os carimbos de hora para essas mensagens no corpo JSON. Se um cliente não conseguir confirmar o recebimento de uma mensagem, o serviço pode encerrar a conexão.
 
-### <a name="metrics"></a>Métricas
+### <a name="metrics"></a>metrics
 
 Os clientes devem incluir informações sobre eventos que ocorreram durante o tempo de vida de uma solicitação. As métricas a seguir têm suporte: `Connection`, `Microphone`, e `ListeningTrigger`.
 
@@ -508,10 +508,10 @@ A `Connection` métrica especifica detalhes sobre as tentativas de conexão pelo
 
 | Campo | DESCRIÇÃO | Uso |
 | ----- | ----------- | ----- |
-| NOME | `Connection` | Necessário |
-| ID | O valor do identificador de conexão que foi usado no cabeçalho *X ConnectionId* para esta solicitação de conexão | Necessário |
-| Iniciar | A hora em que o cliente enviou a solicitação de conexão | Necessário |
-| End | A hora quando o cliente recebe a notificação de que a conexão foi estabelecida com êxito, em casos de erro, rejeitada, recusada ou com falha | Necessário |
+| NOME | `Connection` | Obrigatório |
+| ID | O valor do identificador de conexão que foi usado no cabeçalho *X ConnectionId* para esta solicitação de conexão | Obrigatório |
+| Iniciar | A hora em que o cliente enviou a solicitação de conexão | Obrigatório |
+| End | A hora quando o cliente recebe a notificação de que a conexão foi estabelecida com êxito, em casos de erro, rejeitada, recusada ou com falha | Obrigatório |
 | Erro | Uma descrição do erro que ocorreu, se houver. Se a operação de gatilho for bem-sucedida, os clientes devem omitir esse campo. O comprimento máximo deste campo é de 50 caracteres. | Necessário para casos de erro, caso contrário omitidos |
 
 A descrição do erro deve ser no máximo de 50 caracteres e idealmente deve ser um dos valores listados na tabela a seguir. Se a condição de erro não coincidir com um desses valores, os clientes podem usar uma descrição sucinta da condição de erro usando [CamelCasing](https://en.wikipedia.org/wiki/Camel_case) sem espaço em branco. A capacidade de enviar uma mensagem de *telemetria* requer uma conexão para o serviço, portanto apenas transitório ou condições de erro temporárias podem ser relatadas na mensagem de *telemetria*. As condições de erro que *permanentemente* bloqueiam um cliente de estabelecer uma conexão para o serviço evitam que o cliente envie uma mensagem para o serviço, incluindo mensagens de *telemetria*.
@@ -548,9 +548,9 @@ O valor de tempo *Final* para a `Microphone` métrica registra a hora em que o a
 
 | Campo | DESCRIÇÃO | Uso |
 | ----- | ----------- | ----- |
-| NOME | Microfone | Necessário |
-| Iniciar | A hora de quando o cliente iniciou usando a entrada de áudio do microfone ou outro fluxo de áudio ou recebeu um gatilho de spotter a palavra-chave | Necessário |
-| End | A hora em que o cliente interrompeu usando o fluxo de áudio ou microfone | Necessário |
+| NOME | Microfone | Obrigatório |
+| Iniciar | A hora de quando o cliente iniciou usando a entrada de áudio do microfone ou outro fluxo de áudio ou recebeu um gatilho de spotter a palavra-chave | Obrigatório |
+| End | A hora em que o cliente interrompeu usando o fluxo de áudio ou microfone | Obrigatório |
 | Erro | Uma descrição do erro que ocorreu, se houver. Se as operações de microfone forem bem-sucedidas, os clientes devem omitir esse campo. O comprimento máximo deste campo é de 50 caracteres. | Necessário para casos de erro, caso contrário omitidos |
 
 ### <a name="metric-listeningtrigger"></a>Métrica `ListeningTrigger`
@@ -569,8 +569,8 @@ Use os exemplos a seguir como diretrizes para valores de tempo de gravação *In
 | Campo | DESCRIÇÃO | Uso |
 | ----- | ----------- | ----- |
 | NOME | ListeningTrigger | Opcional |
-| Iniciar | A hora de início do gatilho de escuta do cliente | Necessário |
-| End | A hora de início do gatilho de escuta do cliente | Necessário |
+| Iniciar | A hora de início do gatilho de escuta do cliente | Obrigatório |
+| End | A hora de início do gatilho de escuta do cliente | Obrigatório |
 | Erro | Uma descrição do erro que ocorreu, se houver. Se a operação de gatilho for bem-sucedida, os clientes devem omitir esse campo. O comprimento máximo deste campo é de 50 caracteres. | Necessário para casos de erro, caso contrário omitidos |
 
 #### <a name="sample-message"></a>Mensagem de exemplo

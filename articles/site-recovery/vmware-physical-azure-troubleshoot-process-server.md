@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 04/29/2019
 ms.author: raynew
 ms.openlocfilehash: 6e31308800f72d60381f1e4ecd540482ba263851
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65969358"
 ---
 # <a name="troubleshoot-the-process-server"></a>Solucionar problemas do servidor de processo
@@ -51,15 +51,15 @@ O servidor de processo gera um número de alertas de integridade. Esses alertas 
 
 **Tipo de alerta** | **Erro** | **Solucionar problemas**
 --- | --- | --- 
-![Adequado][green] | Nenhum  | Servidor de processo está conectado e íntegro.
+![Healthy][green] | Nenhum  | Servidor de processo está conectado e íntegro.
 ![Aviso][yellow] | A serviços especificados não estão em execução. | 1. Verifique se os serviços estão em execução.<br/> 2. Se os serviços estão sendo executados conforme o esperado, siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).
 ![Aviso][yellow]  | CPU utilização > 80% nos últimos 15 minutos. | 1. Não adicione novas máquinas.<br/>2. Verifique se o número de VMs usando o servidor de processo se alinha à [definidos limites](site-recovery-plan-capacity-vmware.md#capacity-considerations)e considere a configuração de um [servidor de processo adicional](vmware-azure-set-up-process-server-scale.md).<br/>3. Siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).
-![Crítica][red] |  CPU utilização > 95% nos últimos 15 minutos. | 1. Não adicione novas máquinas.<br/>2. Verifique se o número de VMs usando o servidor de processo se alinha à [definidos limites](site-recovery-plan-capacity-vmware.md#capacity-considerations)e considere a configuração de um [servidor de processo adicional](vmware-azure-set-up-process-server-scale.md).<br/>3. Siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).<br/> 4. Se o problema persistir, execute as [Planejador de implantação](https://aka.ms/asr-v2a-deployment-planner) para replicação de servidor do VMware/físicos.
+![Crítico][red] |  CPU utilização > 95% nos últimos 15 minutos. | 1. Não adicione novas máquinas.<br/>2. Verifique se o número de VMs usando o servidor de processo se alinha à [definidos limites](site-recovery-plan-capacity-vmware.md#capacity-considerations)e considere a configuração de um [servidor de processo adicional](vmware-azure-set-up-process-server-scale.md).<br/>3. Siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).<br/> 4. Se o problema persistir, execute as [Planejador de implantação](https://aka.ms/asr-v2a-deployment-planner) para replicação de servidor do VMware/físicos.
 ![Aviso][yellow] | Memória uso > 80% nos últimos 15 minutos. |  1. Não adicione novas máquinas.<br/>2. Verifique se o número de VMs usando o servidor de processo se alinha à [definidos limites](site-recovery-plan-capacity-vmware.md#capacity-considerations)e considere a configuração de um [servidor de processo adicional](vmware-azure-set-up-process-server-scale.md).<br/>3. Siga as instruções associadas ao aviso.<br/> 4. Se o problema persistir, siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).
-![Crítica][red] | Memória uso > 95% nos últimos 15 minutos. | 1. Não adicione novas máquinas e considerando a configuração de um [servidor de processo adicional](vmware-azure-set-up-process-server-scale.md).<br/> 2. Siga as instruções associadas ao aviso.<br/> 3. 4. Se o problema persistir, siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).<br/> 4. Se o problema persistir, execute as [Planejador de implantação](https://aka.ms/asr-v2a-deployment-planner) para problemas de replicação de servidor do VMware/físicos.
+![Crítico][red] | Memória uso > 95% nos últimos 15 minutos. | 1. Não adicione novas máquinas e considerando a configuração de um [servidor de processo adicional](vmware-azure-set-up-process-server-scale.md).<br/> 2. Siga as instruções associadas ao aviso.<br/> 3. 4. Se o problema persistir, siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).<br/> 4. Se o problema persistir, execute as [Planejador de implantação](https://aka.ms/asr-v2a-deployment-planner) para problemas de replicação de servidor do VMware/físicos.
 ![Aviso][yellow] | Cache pasta espaço livre < 30% nos últimos 15 minutos. | 1. Não adicionar novas máquinas e considere a configuração de um [servidor de processo adicional](vmware-azure-set-up-process-server-scale.md).<br/>2. Verifique se o número de VMs usando o servidor de processo se alinha à [diretrizes](site-recovery-plan-capacity-vmware.md#capacity-considerations).<br/> 3. Siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).
-![Crítica][red] |  Espaço livre < 25% para os últimos 15 minutos | 1. Siga as instruções associadas com o aviso para esse problema.<br/> 2. 3. Siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).<br/> 3. Se o problema persistir, execute as [Planejador de implantação](https://aka.ms/asr-v2a-deployment-planner) para replicação de servidor do VMware/físicos.
-![Crítica][red] | Não há pulsação do servidor de processo para 15 minutos ou mais. O serviço tmansvs não está se comunicando com o servidor de configuração. | 1) Verifique se o servidor de processo está em execução.<br/> 2. Verifique se o tmassvc está em execução no servidor de processo.<br/> 3. Siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).
+![Crítico][red] |  Espaço livre < 25% para os últimos 15 minutos | 1. Siga as instruções associadas com o aviso para esse problema.<br/> 2. 3. Siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).<br/> 3. Se o problema persistir, execute as [Planejador de implantação](https://aka.ms/asr-v2a-deployment-planner) para replicação de servidor do VMware/físicos.
+![Crítico][red] | Não há pulsação do servidor de processo para 15 minutos ou mais. O serviço tmansvs não está se comunicando com o servidor de configuração. | 1) Verifique se o servidor de processo está em execução.<br/> 2. Verifique se o tmassvc está em execução no servidor de processo.<br/> 3. Siga as instruções abaixo para [solucionar problemas de conectividade e replicação](#check-connectivity-and-replication).
 
 
 ![Chave de tabela](./media/vmware-physical-azure-troubleshoot-process-server/table-key.png)
@@ -69,7 +69,7 @@ O servidor de processo gera um número de alertas de integridade. Esses alertas 
 
 Serviços que devem estar em execução no servidor de processo são resumidos na tabela a seguir. Há pequenas diferenças nos serviços, dependendo de como o servidor de processo é implantado. 
 
-Para todos os serviços, exceto o agente de serviços de recuperação do Microsoft Azure (obengine), verifique se o StartType está definido como **automáticas** ou **automática (início atrasado)**.
+Para todos os serviços, exceto o agente de serviços de recuperação do Microsoft Azure (obengine), verifique se o StartType está definido como **automáticas** ou **automática (início atrasado)** .
  
 **Implantação** | **Serviços em execução**
 --- | ---

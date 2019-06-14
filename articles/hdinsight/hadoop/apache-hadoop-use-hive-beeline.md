@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: hrasheed
 ms.openlocfilehash: dcfcd4b55f848e1725e286e6ef2a87a2c36e5a71
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64684925"
 ---
 # <a name="use-the-apache-beeline-client-with-apache-hive"></a>Usar o cliente Apache Beeline com Apache Hive
@@ -95,7 +95,7 @@ beeline -u 'jdbc:hive2://headnodehost:10002/;transportMode=http'
 
 ## <a id="prereq"></a>Pré-requisitos
 
-* Um cluster de Hadoop no HDInsight. Ver [Introdução ao HDInsight no Linux](./apache-hadoop-linux-tutorial-get-started.md).
+* Um cluster de Hadoop no HDInsight. Consulte [Introdução ao HDInsight no Linux](./apache-hadoop-linux-tutorial-get-started.md).
 
 * Observe que o [esquema de URI](../hdinsight-hadoop-linux-information.md#URI-and-scheme) para armazenamento primário do seu cluster. Por exemplo, `wasb://` para o armazenamento do Azure `abfs://` para o Azure Data Lake armazenamento Gen2, ou `adl://` para Gen1 de armazenamento do Azure Data Lake. Se a transferência segura é habilitada para o armazenamento do Azure ou Data Lake armazenamento Gen2, o URI é `wasbs://` ou `abfss://`, respectivamente. Para obter mais informações, consulte [transferência segura](../../storage/common/storage-require-secure-transfer.md).
 
@@ -187,7 +187,7 @@ Este exemplo baseia-se sobre como usar o cliente Beeline de uma conexão SSH.
 
     * `STORED AS TEXTFILE LOCATION` – O local em que os dados são armazenados e em qual formato de arquivo.
 
-    * `SELECT` – Seleciona uma contagem de todas as linhas em que a coluna **t4** contém o valor **[ERROR]**. Essa consulta deve retornar um valor de **3**, já que existem três linhas que contêm esse valor.
+    * `SELECT` – Seleciona uma contagem de todas as linhas em que a coluna **t4** contém o valor **[ERROR]** . Essa consulta deve retornar um valor de **3**, já que existem três linhas que contêm esse valor.
 
     * `INPUT__FILE__NAME LIKE '%.log'` – O Hive tenta aplicar o esquema a todos os arquivos no diretório. Nesse caso, o diretório contém arquivos que não correspondem ao esquema. Para evitar dados incorretos nos resultados, essa instrução informa ao Hive que deve retornar apenas dados de arquivos que terminam em .log.
 
@@ -248,7 +248,7 @@ Esta é uma continuação do exemplo anterior. Use as etapas a seguir para criar
     > [!NOTE]  
     > Diferentemente de tabelas externas, o descarte de uma tabela interna excluirá também os dados subjacentes.
 
-3. Para salvar o arquivo, use **Ctrl**+**_X**, insira **Y** e, por fim, **Enter**.
+3. Para salvar o arquivo, use **Ctrl**+ **_X**, insira **Y** e, por fim, **Enter**.
 
 4. Use o seguinte para executar o arquivo usando Beeline:
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 10/29/2018
 ms.author: yijenj
 ms.openlocfilehash: bd8cdbec42ea7df34ceee3ab82a1c6cac60ab59e
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65849713"
 ---
 # <a name="azure-marketplace-commercial-transaction-capabilities-and-considerations"></a>Recursos e considerações sobre transações comerciais do Azure Marketplace
@@ -162,7 +162,7 @@ Os clientes também podem pagar usando um cartão de crédito e uma fatura mensa
 
 Por exemplo, se o cliente compra usando um cartão de crédito:
 
-|Descrição    |    Date  |
+|DESCRIÇÃO    |    Data  |
 |----------|----------|
 |Período de ordem   | 15 de agosto de 2018 – 30 de agosto de 2018 |
 |Prazo final (mês)   | 30 de agosto de 2018 |
@@ -176,7 +176,7 @@ Por exemplo, se o cliente compra usando um cartão de crédito:
 
 Se o cliente comprar usando um Enterprise Agreement:
 
-| Descrição |    Date  |
+| DESCRIÇÃO |    Data  |
 |----------|----------|
 |Período de ordem | 15 de agosto de 2018 – 30 de agosto de 2018 |
 |Prazo final (trimestre) | 30 de setembro de 2018 |
@@ -225,7 +225,7 @@ Os requisitos de transação para diferentes tipos de oferta são abordados nest
 * A conta do Centro de Desenvolvimento contém todos os detalhes financeiros relevantes necessários para que a Microsoft colete valores do cliente em nome do editor e pague o editor.
 * Embora você possa usar a mesma organizacional ou detalhes de entrada da Microsoft em ambas as contas, o Centro de desenvolvimento é uma conta separada da conta do Portal do Cloud Partner. Para usar a opção de publicação transacionar, o editor deve concluir o processo de inscrição na conta do Centro de Desenvolvimento, além de se inscrever para acessar o Portal do Cloud Partner.
 
-*Para obter mais informações sobre como configurar essas contas, consulte [Torne-se um editor do Cloud Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher).* 
+*Para obter mais informações sobre como configurar essas contas, consulte [Torne-se um editor do Cloud Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher).*
 
 ### <a name="requirements-for-specific-offer-types"></a>Requisitos para tipos de oferta específica
 

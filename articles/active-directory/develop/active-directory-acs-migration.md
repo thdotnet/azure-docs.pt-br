@@ -18,10 +18,10 @@ ms.author: ryanwi
 ms.reviewer: jlu, annaba, hirsin
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 84a8c2954473401a9e57cba045907c60862ed61f
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65546228"
 ---
 # <a name="how-to-migrate-from-the-azure-access-control-service"></a>Como: Migrar do Serviço de Controle de Acesso do Azure
@@ -135,7 +135,7 @@ Cada um dos serviços em nuvem da Microsoft que aceitam tokens emitidos pelo Con
 | Retransmissão do Barramento de Serviço do Azure | [Migrar para Assinaturas de Acesso Compartilhado](https://docs.microsoft.com/azure/service-bus-relay/relay-migrate-acs-sas) |
 | Cache Gerenciado do Azure | [Migrar para o Cache do Azure para Redis](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-faq#which-azure-cache-offering-is-right-for-me) |
 | DataMarket do Azure | [Migrar para as APIs de Serviços Cognitivos](https://docs.microsoft.com/azure/machine-learning/studio/datamarket-deprecation) |
-| Serviços BizTalk | [Migrar para o recurso de Aplicativos Lógicos do Serviço de Aplicativo do Azure](https://docs.microsoft.com/azure/machine-learning/studio/datamarket-deprecation) |
+| Serviços do BizTalk | [Migrar para o recurso de Aplicativos Lógicos do Serviço de Aplicativo do Azure](https://docs.microsoft.com/azure/machine-learning/studio/datamarket-deprecation) |
 | Serviços de Mídia do Azure | [Migrar para a Autenticação do Azure AD](https://azure.microsoft.com/blog/azure-media-service-aad-auth-and-acs-deprecation/) |
 | Serviço de Backup do Azure | [Atualizar o Agente de Backup do Azure](https://docs.microsoft.com/azure/backup/backup-azure-file-folder-backup-faq) |
 
@@ -199,7 +199,7 @@ Em um alto nível, o *Azure Active Directory provavelmente é a melhor opção p
 | Contas do Facebook, Google, Yahoo | Com suporte | Sem nenhum suporte |
 | **Protocolos e compatibilidade do SDK** | | |
 | WIF | Com suporte | Com suporte, mas instruções limitadas estão disponíveis |
-| Web Services Federation | Com suporte | Com suporte |
+| O certificado do provedor de identidade do Web Services Federation | Com suporte | Com suporte |
 | OAuth 2.0 | Suporte para Draft 13 | Suporte para RFC 6749, a especificação mais moderna |
 | WS-Trust | Com suporte | Sem suporte |
 | **Formatos de Token** | | |
@@ -250,7 +250,7 @@ A tabela a seguir compara os recursos do Controle de Acesso que são relevantes 
 | Contas do Facebook, Google, Yahoo | Com suporte | Suporte nativo ao Facebook e Google, suporte para Yahoo por meio da federação do OpenID Connect usando políticas personalizadas |
 | **Protocolos e compatibilidade do SDK** | | |
 | Windows Identity Foundation (WIF) | Com suporte | Sem suporte |
-| Web Services Federation | Com suporte | Sem suporte |
+| O certificado do provedor de identidade do Web Services Federation | Com suporte | Sem suporte |
 | OAuth 2.0 | Suporte para Draft 13 | Suporte para RFC 6749, a especificação mais moderna |
 | WS-Trust | Com suporte | Sem suporte |
 | **Formatos de Token** | | |

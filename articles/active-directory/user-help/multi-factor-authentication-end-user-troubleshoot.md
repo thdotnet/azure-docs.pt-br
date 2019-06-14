@@ -14,10 +14,10 @@ ms.author: lizross
 ms.reviewer: kexia
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b74049833b055caa112c346b74798893f2c0febf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60476647"
 ---
 # <a name="get-help-with-two-step-verification"></a>Obter ajuda com a verificação em duas etapas
@@ -31,7 +31,7 @@ Embora a Microsoft oferece verificação em duas etapas, é sua organização qu
 
 ## <a name="why-do-i-need-to-use-another-verification-method"></a>Por que eu preciso usar outro método de verificação?
 
-Há vários motivos por que talvez você precise usar um método de verificação alternativo com sua conta. Por exemplo: 
+Há vários motivos por que talvez você precise usar um método de verificação alternativo com sua conta. Por exemplo:
 
 - **Você esqueceu seu telefone ou dispositivo.** Em alguns dias, você deixa seu telefone em casa, mas ainda precisa entrar no trabalho. Primeiro, você deve tentar entrar usando um método diferente que não precise de seu telefone.
 

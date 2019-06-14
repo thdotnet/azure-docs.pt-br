@@ -17,10 +17,10 @@ ms.date: 12/12/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1a6797c7bd0c6bd8ce8d3f51b42cb4c2b1338fd6
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65950460"
 ---
 # <a name="faqs-and-known-issues-with-managed-identities-for-azure-resources"></a>Perguntas frequentes e problemas conhecidos com identidades gerenciadas para recursos do Azure
@@ -84,8 +84,8 @@ Não. Identidades gerenciadas não têm suporte a cenários entre diretórios.
 
 ### <a name="what-azure-rbac-permissions-are-required-to-managed-identity-on-a-resource"></a>Quais permissões de RBAC do Azure são necessários para identidade gerenciada em um recurso? 
 
-- Identidade gerenciada atribuído pelo sistema: Você precisa de permissões de gravação sobre o recurso. Por exemplo: Essa ação ou Microsoft.Compute/virtualMachines/write está incluída no recurso funções internas específicas, como [colaborador da máquina Virtual](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).
-- Identidade atribuída pelo usuário gerenciada: Você precisa de permissões de gravação sobre o recurso. Por exemplo: Microsoft.Compute/virtualMachines/write. Além [operador de identidade gerenciada](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-identity-operator) atribuição de função sobre a identidade gerenciada. 
+- Identidade gerenciada atribuído pelo sistema: Você precisa de permissões de gravação sobre o recurso. Por exemplo:  Essa ação ou Microsoft.Compute/virtualMachines/write está incluída no recurso funções internas específicas, como [colaborador da máquina Virtual](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).
+- Identidade atribuída pelo usuário gerenciada: Você precisa de permissões de gravação sobre o recurso. Por exemplo:  Microsoft.Compute/virtualMachines/write. Além [operador de identidade gerenciada](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-identity-operator) atribuição de função sobre a identidade gerenciada. 
 
 ### <a name="how-do-you-restart-the-managed-identities-for-azure-resources-extension"></a>Como você reinicia as identidades gerenciadas para a extensão de recursos do Azure?
 No Windows e em determinadas versões do Linux, se a extensão for interrompida, o cmdlet a seguir poderá ser usado para reiniciá-lo:

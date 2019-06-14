@@ -3,9 +3,8 @@ title: Conectar ao Office 365 Outlook – Aplicativos Lógicos do Azure | Micros
 description: Gerenciar emails, contatos e calendários com as APIs REST do Office 365 e os Aplicativos Lógicos do Azure
 author: ecfan
 manager: jeconnoc
-ms.author: v-yiso
-origin.date: 10/18/2016
-ms.date: 09/03/2018
+ms.author: estfan
+ms.date: 10/18/2016
 ms.topic: article
 ms.service: logic-apps
 services: logic-apps
@@ -13,10 +12,10 @@ ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
 ms.openlocfilehash: 52abf17e869216e65780129a7b48df79bd79f67a
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62105047"
 ---
 # <a name="get-started-with-the-office-365-outlook-connector"></a>Introdução ao conector do Outlook do Office 365

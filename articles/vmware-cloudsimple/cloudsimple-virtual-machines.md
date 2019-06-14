@@ -9,10 +9,10 @@ ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 77a2901ae2d81f42780110b1576c1f32c7ff397b
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65209497"
 ---
 # <a name="cloudsimple-virtual-machines-overview"></a>Visão geral de máquinas virtuais CloudSimple
@@ -31,7 +31,7 @@ Máquinas virtuais de CloudSimple do portal do Azure fornecem um mecanismo de au
   * Adicionar ou remover NICs
 * Operações de energia da VM CloudSimple
   * Ligar e desligar
-  * Redefinir VM
+  * Redefinição de VM
 * Excluir VM
 
 ## <a name="next-steps"></a>Próximas etapas

@@ -13,10 +13,10 @@ ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 51ad6ea2abcc18b985e9c45fbfb1ffba98fb2c1f
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66113094"
 ---
 # <a name="understand-azure-ad-application-proxy-connectors"></a>Noções básicas sobre conectores de Proxy de Aplicativo Azure AD
@@ -50,7 +50,7 @@ O servidor do Windows precisa ter o TLS 1.2 ativado antes de instalar o conector
 
 Para saber mais sobre os requisitos de rede para o servidor de conector, confira [Introdução ao Proxy de Aplicativo e instalar um conector](application-proxy-add-on-premises-application.md).
 
-## <a name="maintenance"></a>Manutenção 
+## <a name="maintenance"></a>Manutenção
 Os conectores e o serviço cuidam de todas as tarefas de alta disponibilidade. Eles podem ser adicionados ou removidos dinamicamente. Sempre que uma nova solicitação chega, ela é roteada para um dos conectores que está disponível no momento. Se um conector estiver temporariamente indisponível, ele não responderá a esse tráfego.
 
 Os conectores são sem estado e não têm nenhum dado de configuração no computador. Os únicos dados que eles armazenam são as configurações para conectar o serviço e seu certificado de autenticação. Quando se conectam ao serviço, eles extraem todos os dados de configuração necessários e os atualizam a cada dois minutos.
@@ -85,7 +85,7 @@ Os grupos de conectores facilitam o gerenciamento de grandes implantações. Ele
 
 Para saber mais sobre os grupos de conectores, confira [Publicar aplicativos em redes e locais separados usando grupos de conector](application-proxy-connector-groups.md).
 
-## <a name="capacity-planning"></a>Planejamento de Capacidade 
+## <a name="capacity-planning"></a>Planejamento da capacidade 
 
 É importante você confirmar se planejou capacidade suficiente entre os conectores para lidar com o volume de tráfego esperado. É recomendável que cada grupo de conectores tem pelo menos dois conectores para fornecer alta disponibilidade e escala. É ideal ter três conectores no caso de você precisará de uma máquina em qualquer ponto de serviço. 
 

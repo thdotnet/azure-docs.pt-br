@@ -13,12 +13,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: glenga
-ms.openlocfilehash: 5d028768c062ef7df74d48f83ccc4e27a506f1ac
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 283487eeb0f1f85940da4db8c932602e1b45efd3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60737050"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64695796"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Automatizar a implantação de recursos para seu aplicativo de funções do Azure Functions
 
@@ -216,7 +216,7 @@ Se você definir explicitamente seu plano de consumo, você precisará definir o
 
 ### <a name="create-a-function-app"></a>Criar um aplicativo de funções
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 No Windows, um plano de consumo requer duas configurações adicionais na configuração do site: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` e `WEBSITE_CONTENTSHARE`. Essas propriedades configuram a conta de armazenamento e o caminho do arquivo em que o código e as configurações do aplicativo de funções estão armazenados.
 
@@ -663,6 +663,27 @@ Este é um exemplo que usa HTML:
 ```html
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/<url-encoded-path-to-azuredeploy-json>" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"></a>
 ```
+
+### <a name="deploy-using-powershell"></a>Implantar usando o PowerShell
+
+Os seguintes comandos do PowerShell cria um grupo de recursos e implantar um modelo que cria um aplicativo de funções com recursos necessários. Para executar localmente, você deve ter [Azure PowerShell](/powershell/azure/install-az-ps) instalado. Execute [ `Connect-AzAccount` ](/powershell/module/az.accounts/connect-azaccount) para entrar.
+
+```powershell
+# Register Resource Providers if they're not already registered
+Register-AzResourceProvider -ProviderNamespace "microsoft.web"
+Register-AzResourceProvider -ProviderNamespace "microsoft.storage"
+
+# Create a resource group for the function app
+New-AzResourceGroup -Name "MyResourceGroup" -Location 'West Europe'
+
+# Create the parameters for the file, which for this template is the function app name.
+$TemplateParams = @{"appName" = "<function-app-name>"}
+
+# Deploy the template
+New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile template.json -TemplateParameterObject $TemplateParams -Verbose
+```
+
+Para testar essa implantação, você pode usar um [modelo como este](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-function-app-create-dynamic/azuredeploy.json) que cria um aplicativo de funções no Windows em um plano de consumo. Substitua `<function-app-name>` com um nome exclusivo para seu aplicativo de funções.
 
 ## <a name="next-steps"></a>Próximas etapas
 

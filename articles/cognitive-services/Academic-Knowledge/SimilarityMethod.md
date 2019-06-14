@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/18/2017
 ms.author: alch
 ms.openlocfilehash: 7f692c08f8af322bf7e6ab576e2e6f516594a6c4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61336510"
 ---
 # <a name="similarity-method"></a>Método de Similaridade
@@ -49,7 +49,7 @@ NOME | DESCRIÇÃO
 
 Status HTTP | Motivo | Response
 -----------|----------|--------
-**200**         |Sucesso | Número de ponto flutuante
+**200**         |Êxito | Número de ponto flutuante
 **400**         | Solicitação incorreta ou solicitação inválida | Mensagem de erro      
 **500**         |Erro interno do servidor | Mensagem de erro
 **Tempo Limite**     | Atingiu tempo limite solicitado.  | Mensagem de erro

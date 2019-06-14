@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 05/02/2019
 ms.author: kumud
 ms.openlocfilehash: f9742d14fc14230f2424d005aa6aa8b1db3cece4
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65967728"
 ---
 # <a name="outbound-connections-in-azure"></a>Conexões de saída no Azure
@@ -40,7 +40,7 @@ Há vários [cenários de saída](#scenarios). É possível combinar esses cená
 
 O Azure Load Balancer e os recursos relacionados são explicitamente definidos ao utilizar o [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).  Atualmente, o Azure fornece três métodos diferentes para alcançar a conectividade de saída para recursos do Azure Resource Manager. 
 
-| SKUs | Cenário | Método | Protocolos IP | Descrição |
+| SKUs | Cenário | Método | Protocolos IP | DESCRIÇÃO |
 | --- | --- | --- | --- | --- |
 | Standard, Básico | [1. VM com um endereço IP Público em Nível de Instância (com ou sem Load Balancer)](#ilpip) | SNAT, disfarce de porta não usado | TCP, UDP, ICMP, ESP | O Azure usa o IP público atribuído à configuração de IP do NIC da instância. A instância possui todas as portas efêmeras disponíveis. Ao usar o Standard Load Balancer, você precisa usar [regras de saída](load-balancer-outbound-rules-overview.md) para definir explicitamente a conectividade de saída |
 | Standard, Básico | [2. Load Balancer público associado a uma VM (sem endereço IP Público em Nível de Instância)](#lb) | SNAT com PAT (disfarce de porta) usando front-ends do Load Balancer | TCP, UDP |O Azure compartilha o endereço IP público dos front-ends do Load Balancer público com vários endereços IP privados. O Azure usa os portas efêmeras dos front-ends para PAT. |
@@ -156,7 +156,7 @@ A tabela a seguir mostra as pré-alocações de porta SNAT para níveis de taman
 
 | Tamanho do pool (instâncias VM) | Portas SNAT pré-alocadas por configuração de IP|
 | --- | --- |
-| 1-50 | 1.024 |
+| 1-50 | 1\.024 |
 | 51-100 | 512 |
 | 101-200 | 256 |
 | 201-400 | 128 |

@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/16/2019
 ms.author: aahi
 ms.openlocfilehash: c8319dbcb8cebe51dae2a4d7e8d9749c3ab7674f
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65231433"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Como usar o reconhecimento de entidade nomeada na análise de texto
@@ -33,7 +33,7 @@ O NER (reconhecimento de entidade nomeada) é a capacidade de identificar difere
 
 Na análise de texto [versão 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634), vinculação de entidade e o reconhecimento de entidade nomeada (NER) estão disponíveis.
 
-### <a name="language-support"></a>Suporte de idioma
+### <a name="language-support"></a>Suporte ao idioma
 
 O uso da vinculação de entidade em vários idiomas exige o uso de uma base de conhecimento correspondente em cada idioma. Para vinculação de entidade na Análise de Texto, isso significa que cada idioma com suporte do ponto de extremidade `entities` será vinculado ao corpus da Wikipédia correspondente nesse idioma. Como o tamanho do corpora varia entre as linguagens, espera-se que a funcionalidade de vinculação de entidade também variará.
 
@@ -45,21 +45,21 @@ O uso da vinculação de entidade em vários idiomas exige o uso de uma base de 
 | Local padrão      | N/D\*         | "Redmond, Washington", "Paris"  |
 | Organização  | N/D\*         | "Microsoft"   |
 | Quantidade      | Número        | "6", "seis"     | 
-| Quantidade      | Porcentagem    | "50%", "cinquenta por cento"| 
+| Quantidade      | Percentual    | "50%", "cinquenta por cento"| 
 | Quantidade      | Ordinal       | "2º", "segundo"     | 
 | Quantidade      | NumberRange   | "4 a 8"     | 
 | Quantidade      | Idade           | "90 dias", "30 anos"    | 
-| Quantidade      | Conversor de Moedas      | "US$ 10,99"     | 
+| Quantidade      | Moeda      | "US$ 10,99"     | 
 | Quantidade      | Dimensão     | "10 milhas", "40 cm"     | 
 | Quantidade      | Temperatura   | "32 graus"    |
 | DateTime      | N/D\*         | "18h30 em 4 de fevereiro de 2012"      | 
 | DateTime      | Data          | "2 de maio de 2017", "02/05/2017"   | 
-| DateTime      | Time          | "8h", "8:00"  | 
+| DateTime      | Hora          | "8h", "8:00"  | 
 | DateTime      | DateRange     | "2 de maio a 5 de maio"    | 
 | DateTime      | TimeRange     | "18h às 19h"     | 
-| DateTime      | Duração      | "1 minuto e 45 segundos"   | 
-| DateTime      | Conjunto           | "toda terça-feira"     | 
-| DateTime      | TimeZone      |    | 
+| DateTime      | Duration      | "1 minuto e 45 segundos"   | 
+| DateTime      | Definir           | "toda terça-feira"     | 
+| DateTime      | timeZone      |    | 
 | URL           | N/D\*         | "https:\//www.bing.com"    |
 | Email         | N/D\*         | "support@contoso.com" |
 

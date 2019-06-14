@@ -11,10 +11,10 @@ ms.author: mhopkins
 ms.reviewer: cbrooks
 ms.subservice: queues
 ms.openlocfilehash: 30a090aeb2d66c732e70a9acce67d5f3374c32fa
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65153158"
 ---
 # <a name="how-to-use-queue-storage-from-ruby"></a>Como usar o Armazenamento de fila do Ruby
@@ -88,7 +88,7 @@ azure_queue_service.create_message("test-queue", "test message")
 ```
 
 ## <a name="how-to-peek-at-the-next-message"></a>Como: espiar a próxima mensagem
-Você pode inspecionar a mensagem na frente de uma fila sem removê-la da fila chamando o método **peek\_messages()**. Por padrão, o **peek\_messages()** inspeciona uma única mensagem. Você também pode especificar quantas mensagens deseja inspecionar.
+Você pode inspecionar a mensagem na frente de uma fila sem removê-la da fila chamando o método **peek\_messages()** . Por padrão, o **peek\_messages()** inspeciona uma única mensagem. Você também pode especificar quantas mensagens deseja inspecionar.
 
 ```ruby
 result = azure_queue_service.peek_messages("test-queue",
@@ -98,8 +98,8 @@ result = azure_queue_service.peek_messages("test-queue",
 ## <a name="how-to-dequeue-the-next-message"></a>Como: Remover a próxima mensagem da fila
 É possível remover uma mensagem da fila em duas etapas.
 
-1. Quando você chamar **list\_messages()**, receberá a próxima mensagem em uma fila por padrão. Você também pode especificar quantas mensagens deseja obter. As mensagens retornadas de **list\_messages()** se tornam invisíveis para todas as outras mensagens de leitura de código da fila. Passe o tempo limite de visibilidade em segundos como um parâmetro.
-2. Para concluir a remoção da mensagem da fila, chame também **delete_message()**.
+1. Quando você chamar **list\_messages()** , receberá a próxima mensagem em uma fila por padrão. Você também pode especificar quantas mensagens deseja obter. As mensagens retornadas de **list\_messages()** se tornam invisíveis para todas as outras mensagens de leitura de código da fila. Passe o tempo limite de visibilidade em segundos como um parâmetro.
+2. Para concluir a remoção da mensagem da fila, chame também **delete_message()** .
 
 Este processo de duas etapas de remover uma mensagem garante que quando o código não processa uma mensagem devido à falhas de hardware ou de software, outra instância do seu código pode receber a mesma mensagem e tentar novamente. Seu código chama **delete\_message()** logo depois que a mensagem é processada.
 

@@ -13,10 +13,10 @@ ms.reviewer: billgib, stein
 manager: craigg
 ms.date: 10/16/2018
 ms.openlocfilehash: 350e67f5a1e7e1eab7abe27a6ca851ed2420af84
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65978535"
 ---
 # <a name="deploy-and-explore-a-sharded-multi-tenant-application"></a>Implantar e explorar um aplicativo multilocatário fragmentado
@@ -58,7 +58,7 @@ Para concluir este tutorial, verifique se todos os pré-requisitos a seguir são
 ### <a name="plan-the-names"></a>Planejar os nomes
 
 Nas etapas desta seção, você fornece um valor *user* que é usado para garantir que os nomes de recursos fiquem globalmente exclusivos, e um nome para o *grupo de recursos* que contém todos os recursos criados por uma implantação do aplicativo. Para uma pessoa denominada *Aline Faria*, sugerimos:
-- *Usuário:* **af1***(suas iniciais mais um dígito.   Use um valor diferente (por exemplo, af2) se você implantar o aplicativo novamente.)*
+- *Usuário:* **af1** *(suas iniciais mais um dígito. Use um valor diferente (por exemplo, af2) se você implantar o aplicativo novamente.)*
 - *Grupo de recursos:* **wingtip-mt-af1** *(wingtip-mt indica que esse é o aplicativo multilocatário fragmentado. A anexação do nome de usuário af1 correlaciona o nome do grupo de recursos com os nomes dos recursos que ele contém.)*
 
 Escolha seus nomes agora e os escreva. 
@@ -104,7 +104,7 @@ Enquanto o aplicativo for implantado, baixe os scripts de gerenciamento e de có
 6. Clique em **OK**.
 7. Extraia os arquivos.
 
-Os scripts estão localizados na pasta *... \\módulos de aprendizado\\WingtipSaaS mester\\*.
+Os scripts estão localizados na pasta *... \\módulos de aprendizado\\WingtipSaaS mester\\* .
 
 ## <a name="update-the-configuration-file-for-this-deployment"></a>Atualize o arquivo de configuração para sua implantação
 
@@ -125,7 +125,7 @@ Cada local obtém um aplicativo Web personalizado para listar seus eventos e ven
 Uma página da Web central do **Hub de Eventos** fornece uma lista de links para os locatários em sua implantação particular. Use as seguintes etapas para vivenciar a página da Web do **Hub de Eventos** e um aplicativo Web individual:
 
 1. Abra o **Hub de eventos** no navegador da web:
-   - http://events.wingtip-mt.&lt;user&gt;.trafficmanager.net &nbsp; *(Substitua &lt;user&gt; pelo valor de usuário da implantação.)*
+   - http://events.wingtip-mt.&lt ;user&gt;.trafficmanager.net &nbsp; *(Substitua &lt; user&gt; pelo valor de usuário da implantação.)*
 
      ![hub de eventos](media/saas-multitenantdb-get-started-deploy/events-hub.png)
 
@@ -137,7 +137,7 @@ Uma página da Web central do **Hub de Eventos** fornece uma lista de links para
 
 Para controlar a distribuição das solicitações de entrada, o aplicativo Wingtip usa o [Gerenciador de Tráfego do Azure](../traffic-manager/traffic-manager-overview.md). A página de eventos de cada locatário inclui o nome do locatário em sua URL. Cada URL também inclui seu valor específico de Usuário. Cada URL obedece o formato mostrado usando as seguintes etapas:
 
-- http://events.wingtip-mt.&lt;user&gt;.trafficmanager.net/*fabrikamjazzclub*
+- http://events.wingtip-mt.&lt ;user&gt;.trafficmanager.net/*fabrikamjazzclub*
 
 1. O aplicativo de eventos analisa o nome do locatário a partir da URL. O nome do locatário é *fabrikamjazzclub* na URL de exemplo anterior.
 2. O aplicativo faz o hash do nome do locatário para criar uma chave para acessar um catálogo usando o [gerenciamento de mapa de fragmentos](sql-database-elastic-scale-shard-map-management.md).

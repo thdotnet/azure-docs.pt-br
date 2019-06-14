@@ -18,10 +18,10 @@ ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bf236bff2300129ec97d3b8946c4c2a2748bca77
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65602138"
 ---
 # <a name="xamarin-ios-specific-considerations-with-msalnet"></a>Considerações de específicas do iOS Xamarin com MSAL.NET
@@ -123,6 +123,6 @@ Isso é *Além disso* para habilitar o acesso ao conjunto de chaves no `Entitlem
 
 Mais detalhes são fornecidos a [considerações específicas do iOS](https://github.com/azure-samples/active-directory-xamarin-native-v2#ios-specific-considerations) parágrafo do arquivo readme.md do exemplo a seguir:
 
-Amostra | Plataforma | Descrição 
+Amostra | Plataforma | DESCRIÇÃO 
 ------ | -------- | -----------
 [https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP | Um aplicativo Xamarin Forms simples, mostrando como usar MSAL para autenticar a MSA e o Azure AD por meio do ponto de extremidade V2.0 do AAD e acessar o Microsoft Graph com o token resultante. <br>![Topologia](media/msal-net-xamarin-ios-considerations/topology.png)

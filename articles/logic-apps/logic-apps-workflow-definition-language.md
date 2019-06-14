@@ -10,10 +10,10 @@ ms.reviewer: klam, LADocs
 ms.topic: reference
 ms.date: 05/13/2019
 ms.openlocfilehash: 3b0ad33ea6348f24079b3c88f972437244c0bc93
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65596751"
 ---
 # <a name="schema-reference-for-workflow-definition-language-in-azure-logic-apps"></a>Referência de esquema para linguagem de definição de fluxo de trabalho nos Aplicativos Lógicos do Azure
@@ -58,7 +58,7 @@ Em uma definição de fluxo de trabalho, as seções `triggers` e `actions` defi
 
 <a name="outputs"></a>
 
-## <a name="outputs"></a>Saídas
+## <a name="outputs"></a>outputs
 
 Na seção `outputs`, defina os dados que o fluxo de trabalho pode retornar quando terminar sua execução. Por exemplo, para rastrear um valor ou status específico em cada execução, especifique que a saída do fluxo de trabalho retorne esses dados.
 
@@ -76,9 +76,9 @@ Esta é a estrutura geral de uma definição de saída:
 }
 ```
 
-| Atributo | Obrigatório | Type | Descrição |
+| Atributo | Obrigatório | Type | DESCRIÇÃO |
 |-----------|----------|------|-------------|
-| <*key-name*> | Sim | String | O nome da chave do valor retornado da saída |
+| <*key-name*> | Sim | Cadeia de caracteres | O nome da chave do valor retornado da saída |
 | <*key-type*> | Sim | int, float, string, securestring, bool, array, objeto JSON | O tipo do valor retornado da saída |
 | <*key-value*> | Sim | Mesmo que <*tipo de chave*> | O valor retornado da saída |
 |||||
@@ -108,7 +108,7 @@ Esta é a estrutura geral de uma definição de parâmetro:
 },
 ```
 
-| Atributo | Obrigatório | Type | Descrição |
+| Atributo | Obrigatório | Type | DESCRIÇÃO |
 |-----------|----------|------|-------------|
 | <*parameter-type*> | Sim | int, float, string, securestring, bool, array, objeto JSON, secureobject <p><p>**Observação**: Para todas as senhas, chaves e segredos, use os tipos `securestring` e `secureobject`, porque a operação `GET` não retorna esses tipos. Para obter mais informações sobre como proteger parâmetros, consulte [proteger seu aplicativo lógico](../logic-apps/logic-apps-securing-a-logic-app.md#secure-action-parameters) | O tipo do parâmetro |
 | <*default-parameter-values*> | Sim | O mesmo que `type` | O valor de parâmetro padrão quando nenhum valor é especificado ao criar uma instância do fluxo de trabalho |
@@ -143,13 +143,13 @@ No `staticResults` atributo, definem a simulação de uma ação `outputs` e `st
 }
 ```
 
-| Atributo | Obrigatório | Type | Descrição |
+| Atributo | Obrigatório | Type | DESCRIÇÃO |
 |-----------|----------|------|-------------|
-| <*static-result-definition-name*> | Sim | String | O nome de uma definição de resultado estático pode fazer referência a uma definição de ação por meio de um `runtimeConfiguration.staticResult` objeto. Para obter mais informações, consulte [Configurações de tempo de execução](../logic-apps/logic-apps-workflow-actions-triggers.md#runtime-config-options). <p>Você pode usar qualquer nome exclusivo que você deseja. Por padrão, esse nome exclusivo é acrescentado com um número, que é incrementado conforme necessário. |
+| <*static-result-definition-name*> | Sim | Cadeia de caracteres | O nome de uma definição de resultado estático pode fazer referência a uma definição de ação por meio de um `runtimeConfiguration.staticResult` objeto. Para obter mais informações, consulte [Configurações de tempo de execução](../logic-apps/logic-apps-workflow-actions-triggers.md#runtime-config-options). <p>Você pode usar qualquer nome exclusivo que você deseja. Por padrão, esse nome exclusivo é acrescentado com um número, que é incrementado conforme necessário. |
 | <*output-attributes-and-values-returned*> | Sim | Varia | Os requisitos para esses atributos variam com base em condições diferentes. Por exemplo, quando o `status` está `Succeeded`, o `outputs` atributo inclui atributos e valores retornados fictícios como saídas da ação. Se o `status` está `Failed`, o `outputs` atributo inclui a `errors` atributo, que é uma matriz com um ou mais erros `message` objetos que têm informações de erro. |
 | <*header-values*> | Não | JSON | Os valores de cabeçalho retornados pela ação |
-| <*status-code-returned*> | Sim | String | O código de status retornado pela ação |
-| <*action-status*> | Sim | String | O status da ação, por exemplo, `Succeeded` ou `Failed` |
+| <*status-code-returned*> | Sim | Cadeia de caracteres | O código de status retornado pela ação |
+| <*action-status*> | Sim | Cadeia de caracteres | O status da ação, por exemplo, `Succeeded` ou `Failed` |
 |||||
 
 Por exemplo, nessa definição de ação de HTTP, o `runtimeConfiguration.staticResult.name` as referências ao atributo `HTTP0` dentro de `staticResults` atributo onde as saídas fictícias para a ação são definidas. O `runtimeConfiguration.staticResult.staticResultOptions` atributo especifica que a configuração de resultado estático `Enabled` na ação de HTTP.

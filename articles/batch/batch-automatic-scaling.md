@@ -16,10 +16,10 @@ ms.date: 06/20/2017
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: fdc2cd8f2218d50aa49d6b4eab2800eb6c92d9c9
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62118104"
 ---
 # <a name="create-an-automatic-scaling-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Criar uma fórmula de dimensionamento automático para expandir nós de computação em um pool do Lote
@@ -160,8 +160,8 @@ Essas operações são permitidas nos tipos listados na seção anterior.
 | doubleVec *operador* doubleVec |+, -, *, / |doubleVec |
 | timeinterval *operador* double |\*, / |timeinterval |
 | timeinterval *operador* timeinterval |+, - |timeinterval |
-| timeinterval *operador* timestamp |+ | timestamp |
-| timestamp *operador* timeinterval |+ | timestamp |
+| timeinterval *operador* timestamp |+ |timestamp |
+| timestamp *operador* timeinterval |+ |timestamp |
 | timestamp *operador* timestamp |- |timeinterval |
 | *operador*double |-, ! |double |
 | *operador*timeinterval |- |timeinterval |
@@ -195,7 +195,7 @@ Essas **funções** predefinidas estão disponíveis para usar na definição de
 | std(doubleVecList) |double |Retorna o desvio padrão da amostra dos valores em doubleVecList. |
 | stop() | |Interrompe a avaliação da expressão de dimensionamento automático. |
 | sum(doubleVecList) |double |Retorna a soma de todos os componentes em doubleVecList. |
-| time(string dateTime="") | timestamp |Retorna o carimbo de data/hora do horário atual se nenhum parâmetro for passado, ou o carimbo de data/hora da cadeia de caracteres dateTime se algum parâmetro passar. Os formatos de dateTime com suporte são W3C-DTF e RFC1123. |
+| time(string dateTime="") |timestamp |Retorna o carimbo de data/hora do horário atual se nenhum parâmetro for passado, ou o carimbo de data/hora da cadeia de caracteres dateTime se algum parâmetro passar. Os formatos de dateTime com suporte são W3C-DTF e RFC1123. |
 | val(doubleVec v, double i) |double |Retorna o valor do elemento que está no local i do vetor v com um índice inicial de zero. |
 
 Algumas das funções descritas na tabela anterior podem aceitar uma lista como um argumento. A lista separada por vírgulas é qualquer combinação de *double* e *doubleVec*. Por exemplo:

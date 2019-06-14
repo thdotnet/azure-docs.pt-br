@@ -11,10 +11,10 @@ ms.service: sql-data-warehouse
 ms.topic: article
 ms.date: 04/03/2019
 ms.openlocfilehash: 999c75d07ef7e24d4d75587b6b42a4ab1b2192cf
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65596120"
 ---
 # <a name="upgrade-your-data-warehouse-to-gen2"></a>Atualizar o seu data warehouse para Gen2
@@ -22,7 +22,7 @@ ms.locfileid: "65596120"
 A Microsoft está ajudando a reduzir o custo da execução de um data warehouse de nível básico.  Quanto menor de computação camadas capazes de tratar mais exigentes de consultas agora estão disponíveis para o Azure SQL Data Warehouse. Leia o comunicado completo [inferior computação suporte de camada para Gen2](https://azure.microsoft.com/blog/azure-sql-data-warehouse-gen2-now-supports-lower-compute-tiers/). A nova oferta está disponível nas regiões observados na tabela a seguir. Para regiões compatíveis, data warehouses Gen1 existentes podem ser atualizados para Gen2 por um destes processos:
 
 - **O processo de atualização automática:** As atualizações automáticas não comece assim que o serviço está disponível em uma região.  Quando as atualizações automáticas são iniciadas em uma região específica, as atualizações individuais do data warehouse ocorrem durante o agendamento de manutenção selecionado.
-- [**Atualização automática para Gen2:**](#self-upgrade-to-gen2) Você pode controlar quando a atualização, fazendo uma atualização automática para Gen2. Se ainda não há suporte para a sua região, você pode restaurar de um ponto de restauração diretamente a uma instância de Gen2 em uma região com suporte.
+- [**Atualização automática para Gen2:** ](#self-upgrade-to-gen2) Você pode controlar quando a atualização, fazendo uma atualização automática para Gen2. Se ainda não há suporte para a sua região, você pode restaurar de um ponto de restauração diretamente a uma instância de Gen2 em uma região com suporte.
 
 ## <a name="automated-schedule-and-region-availability-table"></a>Agendamento automatizado e tabela de disponibilidade na região
 
@@ -131,7 +131,7 @@ Para saber mais, confira [Atualizar para Gen2](upgrade-to-latest-generation.md).
 - R: Se você estiver executando um DW600 ou DW1200 em Gen1, é aconselhável usar DW500c ou DW1000c, respectivamente, pois Gen2 fornece mais memória e recursos, além de um desempenho mais alto do que Gen1.
 
 **P: Posso desabilitar o backup geográfico?**
-- R: Não. O backup geográfico é um recurso corporativo para preservar a disponibilidade do seu data warehouse no caso de uma região se tornar indisponível. Abra uma [solicitação de suporte](sql-data-warehouse-get-started-create-support-ticket.md) em caso de outras dúvidas.
+- R:  Não. O backup geográfico é um recurso corporativo para preservar a disponibilidade do seu data warehouse no caso de uma região se tornar indisponível. Abra uma [solicitação de suporte](sql-data-warehouse-get-started-create-support-ticket.md) em caso de outras dúvidas.
 
 **P: Há uma diferença na sintaxe do T-SQL entre Gen1 e Gen2?**
 
@@ -143,7 +143,7 @@ Para saber mais, confira [Atualizar para Gen2](upgrade-to-latest-generation.md).
 
 **P: Serei capaz de criar uma nova instância de Gen1 depois que minha região for atualizada?**
 
-- R: Não. Depois que uma região for atualizada, a criação de novas instâncias de Gen1 será desabilitada.
+- R:  Não. Depois que uma região for atualizada, a criação de novas instâncias de Gen1 será desabilitada.
 
 ## <a name="next-steps"></a>Próximas etapas
 

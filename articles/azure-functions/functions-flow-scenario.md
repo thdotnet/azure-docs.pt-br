@@ -13,10 +13,10 @@ ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
 ms.openlocfilehash: d3e777b5611dec382dc4eaaac5ec1594abcdab31
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65787683"
 ---
 # <a name="call-a-function-from-microsoft-flow"></a>Chamar uma função do Microsoft Flow
@@ -50,7 +50,7 @@ Você começa criando uma lista que usa como uma fonte de dados para o fluxo. A 
 | Coluna de lista     | Tipo de Dados           | Observações                                    |
 |-----------------|---------------------|------------------------------------------|
 | **Título**           | Linha única de texto | Nome da turbina                      |
-| **LastServiceDate** | Date                |                                          |
+| **LastServiceDate** | Data                |                                          |
 | **MaxOutput**       | Número              | Saída de turbina, em KwH            |
 | **ServiceRequired** | Sim/Não              |                                          |
 | **EstimatedEffort** | Número              | Tempo estimado para o reparo, em horas |
@@ -128,11 +128,11 @@ Você primeiro cria um fluxo de espaço em branco (sem um modelo) e adiciona um 
 
 3. Para **Endereço do site**, digite o nome do site do SharePoint e, para **Nome da lista**, insira a lista que contém os dados da turbina.
 
-    ![Escolha um gatilho](media/functions-flow-scenario/site-list.png)
+    ![Escolher um gatilho](media/functions-flow-scenario/site-list.png)
 
 4. Clique em **Nova etapa** e, em seguida, **Adicionar uma condição**.
 
-    ![Adicionar uma condição](media/functions-flow-scenario/add-condition.png)
+    ![Adicione uma condição](media/functions-flow-scenario/add-condition.png)
 
     Microsoft Flow adiciona duas ramificações ao fluxo: **Em caso afirmativo** e **se nenhum**. Você adiciona etapas a uma ou ambas as ramificações depois de definir a condição que você deseja corresponder.
 
@@ -172,13 +172,13 @@ Agora, você adiciona o conector personalizado que chama a função no Azure. Vo
 
     Para **Horas**, selecione **EstimatedEffort** e, para **Capacidade**, selecione **MaxOutput**.
 
-    ![Escolha uma ação](media/functions-flow-scenario/calculates-costs-fields.png)
+    ![Escolher uma ação](media/functions-flow-scenario/calculates-costs-fields.png)
 
      Agora você adiciona outra condição baseada na saída da função.
 
 4. Na parte inferior da ramificação **Se sim**, clique em **Mais** e, em seguida, **Adicionar uma condição**.
 
-    ![Adicionar uma condição](media/functions-flow-scenario/condition2-add.png)
+    ![Adicione uma condição](media/functions-flow-scenario/condition2-add.png)
 
 5. No cartão **Condição 2**, clique na primeira caixa e selecione **Mensagem** na caixa de diálogo **Conteúdo dinâmico**.
 
@@ -246,7 +246,7 @@ Agora que o fluxo está concluído, você adiciona uma linha à lista do SharePo
 
 5. Em **HISTÓRICO DE EXECUÇÃO**, clique na execução do fluxo.
 
-    ![Hist. de ex.](media/functions-flow-scenario/run-history.png)
+    ![Histórico da execução](media/functions-flow-scenario/run-history.png)
 
     Se a execução tiver sido bem-sucedida, você poderá examinar as operações de fluxo na próxima página. Se a execução falhar por algum motivo, a próxima página fornecerá informações de solução de problemas.
 

@@ -9,10 +9,10 @@ ms.date: 01/23/2017
 ms.author: muralikk
 ms.subservice: common
 ms.openlocfilehash: 00e226134039d29efd744290c4bc63abd50adc89
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61478599"
 ---
 # <a name="azure-importexport-service-log-file-format"></a>Formato de arquivo de log de serviço de Importação/Exportação do Azure
@@ -33,8 +33,8 @@ A tabela a seguir mostra as opções possíveis:
   
 |Método de autenticação|Valor de `ImportExportStatesPath`Elemento|Local dos Blobs de Log|  
 |---------------------------|----------------------------------------------|---------------------------|  
-|Chave da conta de armazenamento|Valor padrão|Um contêiner denominado `waimportexport`, que é o contêiner padrão. Por exemplo: <br /><br /> `https://myaccount.blob.core.windows.net/waimportexport`|  
-|Chave da conta de armazenamento|Valores especificados pelo usuário|Um contêiner nomeado pelo usuário. Por exemplo: <br /><br /> `https://myaccount.blob.core.windows.net/mylogcontainer`|  
+|Chave da conta de armazenamento|Valor padrão|Um contêiner denominado `waimportexport`, que é o contêiner padrão. Por exemplo:<br /><br /> `https://myaccount.blob.core.windows.net/waimportexport`|  
+|Chave da conta de armazenamento|Valores especificados pelo usuário|Um contêiner nomeado pelo usuário. Por exemplo:<br /><br /> `https://myaccount.blob.core.windows.net/mylogcontainer`|  
 |SAS do contêiner|Valor padrão|Um diretório virtual chamado `waimportexport`, que é o nome padrão, sob o contêiner especificado na SAS.<br /><br /> Por exemplo, se a SAS especificada para o trabalho é `https://myaccount.blob.core.windows.net/mylogcontainer?sv=2012-02-12&se=2015-05-22T06%3A54%3A55Z&sr=c&sp=wl&sig=sigvalue`, então o local do log será`https://myaccount.blob.core.windows.net/mylogcontainer/waimportexport`|  
 |SAS do contêiner|Valores especificados pelo usuário|Um diretório virtual nomeado pelo usuário, sob o contêiner especificado na SAS.<br /><br /> Por exemplo, se a SAS especificada para o trabalho é `https://myaccount.blob.core.windows.net/mylogcontainer?sv=2012-02-12&se=2015-05-22T06%3A54%3A55Z&sr=c&sp=wl&sig=sigvalue`, e o diretório virtual especificado for denominado `mylogblobs`, então o local do log será `https://myaccount.blob.core.windows.net/mylogcontainer/waimportexport/mylogblobs`.|  
   

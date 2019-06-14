@@ -15,10 +15,10 @@ ms.date: 12/08/2018
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 6d4b7ba842d08723b90a4f2491d9e79e68dd932e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60733565"
 ---
 # <a name="apple-fairplay-license-requirements-and-configuration"></a>Requisitos e configuração de licença do Apple FairPlay 
@@ -35,7 +35,7 @@ Os itens a seguir são necessários ao usar os Serviços de Mídia para criptogr
 * A Apple exige que o proprietário do conteúdo obtenha o [pacote de implantação](https://developer.apple.com/contact/fps/). Declare que você já implementou o KSM (Módulo de Segurança de Chave) com os Serviços de Mídia e que está solicitando o pacote final do FPS. Há instruções no pacote final do FPS para gerar certificação e obter a ASK (Chave de Segredo do Aplicativo). Você usa a ASK para configurar o FairPlay.
 * Os itens a seguir devem ser definidos no lado de entrega de chave/licença dos Serviços de Mídia:
 
-    * **Certificado do aplicativo (AC)**: Trata-se de um arquivo .pfx que contém a chave privada. Você cria esse arquivo e o criptografa com uma senha. O arquivo .pfx deve estar no formato Base64.
+    * **Certificado do aplicativo (AC)** : Trata-se de um arquivo .pfx que contém a chave privada. Você cria esse arquivo e o criptografa com uma senha. O arquivo .pfx deve estar no formato Base64.
 
         As etapas a seguir descrevem como gerar um arquivo de certificado .pfx para FairPlay:
 
@@ -54,7 +54,7 @@ Os itens a seguir são necessários ao usar os Serviços de Mídia para criptogr
     
 * Os seguintes itens devem ser definidos pelo lado do cliente FPS:
 
-  * **Certificado do aplicativo (AC)**: Trata-se de um arquivo .cer/.der que contém a chave pública que o sistema operacional usa para criptografar conteúdo. Os Serviços de Mídia precisam ter conhecimento sobre ele, uma vez que ele é exibido pelo player. O serviço de distribuição de chaves descriptografa-o usando a chave privada correspondente.
+  * **Certificado do aplicativo (AC)** : Trata-se de um arquivo .cer/.der que contém a chave pública que o sistema operacional usa para criptografar conteúdo. Os Serviços de Mídia precisam ter conhecimento sobre ele, uma vez que ele é exibido pelo player. O serviço de distribuição de chaves descriptografa-o usando a chave privada correspondente.
 
 * Para reproduzir uma transmissão criptografada do FairPlay, obtenha a ASK real primeiro e, em seguida, gere um certificado real. Esse processo cria três partes:
 

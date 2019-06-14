@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2dca71023cbed34ef3661ca980cf1eac4ca620c1
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65784289"
 ---
 # <a name="azure-ad-connect-sync-attributes-synchronized-to-azure-active-directory"></a>Sincronização do Azure AD Connect: Atributos sincronizados com o Active Directory do Azure
@@ -28,7 +28,7 @@ Este tópico lista os atributos que são sincronizados pela sincronização do A
 Os atributos são agrupados pelos aplicativos relacionados do AD do Azure.
 
 ## <a name="attributes-to-synchronize"></a>Atributos para sincronizar
-Uma pergunta comum é *qual é a lista de atributos mínimos para sincronizar*. A abordagem padrão e recomendada é manter os atributos padrão para que uma GAL (Lista de Endereços Global) completa possa ser construída na nuvem e obter todos os recursos nas cargas de trabalho do Office 365. Em alguns casos, há alguns atributos que sua organização não deseja sincronizar com a nuvem, já que eles contêm dados confidenciais ou PII (Informações de identificação pessoal), como neste exemplo:   
+Uma pergunta comum é *qual é a lista de atributos mínimos para sincronizar*. A abordagem padrão e recomendada é manter os atributos padrão para que uma GAL (Lista de Endereços Global) completa possa ser construída na nuvem e obter todos os recursos nas cargas de trabalho do Office 365. Em alguns casos, há alguns atributos que sua organização não deseja sincronizar com a nuvem, já que eles contêm dados confidenciais ou PII (Informações de identificação pessoal), como neste exemplo:  
 ![atributos incorretos](./media/reference-connect-sync-attributes-synchronized/badextensionattribute.png)
 
 Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles que poderiam conter dados confidenciais ou PII e que não podem ser sincronizados. Então, desmarque-os durante a instalação usando o [aplicativo Azure AD e a filtragem de atributos](how-to-connect-install-custom.md#azure-ad-app-and-attribute-filtering).
@@ -39,7 +39,7 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 >
 
 ## <a name="office-365-proplus"></a>Office 365 ProPlus
-| Nome do Atributo | Usuário | Comentário |
+| Nome do atributo | Usuário | Comentário |
 | --- |:---:| --- |
 | accountEnabled |X |Define se uma conta está habilitada. |
 | cn |X | |
@@ -52,7 +52,7 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | userPrincipalName |X |UPN é a ID de logon do usuário. Geralmente, o mesmo valor de [mail]. |
 
 ## <a name="exchange-online"></a>Exchange Online
-| Nome do Atributo | Usuário | Contato | Agrupar | Comentário |
+| Nome do atributo | Usuário | Contato | Agrupar | Comentário |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Define se uma conta está habilitada. |
 | assistente |X |X | | |
@@ -86,13 +86,13 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | facsimiletelephonenumber |X |X | | |
 | givenName |X |X | | |
 | homePhone |X |X | | |
-| informações |X |X |X |Atualmente, este atributo não é consumido para grupos. |
-| Iniciais |X |X | | |
+| info |X |X |X |Atualmente, este atributo não é consumido para grupos. |
+| Initials |X |X | | |
 | l |X |X | | |
 | legacyExchangeDN |X |X |X | |
 | mailNickname |X |X |X | |
 | managedBy | | |X | |
-| gerenciador |X |X | | |
+| manager |X |X | | |
 | member | | |X | |
 | Serviço Móvel |X |X | | |
 | msDS-HABSeniorityIndex |X |X |X | |
@@ -166,7 +166,7 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | telephoneAssistant |X |X | | |
 | telephoneNumber |X |X | | |
 | thumbnailphoto |X |X | | |
-| título |X |X | | |
+| title |X |X | | |
 | unauthOrig |X |X |X | |
 | usageLocation |X | | |propriedade mecânica. País/região do usuário. Usado para atribuição de licença. |
 | userCertificate |X |X | | |
@@ -175,7 +175,7 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | wWWHomePage |X |X | | |
 
 ## <a name="sharepoint-online"></a>SharePoint Online
-| Nome do Atributo | Usuário | Contato | Agrupar | Comentário |
+| Nome do atributo | Usuário | Contato | Agrupar | Comentário |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Define se uma conta está habilitada. |
 | authOrig |X |X |X | |
@@ -208,14 +208,14 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | givenName |X |X | | |
 | hideDLMembership | | |X | |
 | homePhone |X |X | | |
-| informações |X |X |X | |
+| info |X |X |X | |
 | Initials |X |X | | |
 | ipPhone |X |X | | |
 | l |X |X | | |
 | mail |X |X |X | |
 | mailNickname |X |X |X | |
 | managedBy | | |X | |
-| gerenciador |X |X | | |
+| manager |X |X | | |
 | member | | |X | |
 | middleName |X |X | | |
 | Serviço Móvel |X |X | | |
@@ -248,7 +248,7 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | telephoneAssistant |X |X | | |
 | telephoneNumber |X |X | | |
 | thumbnailphoto |X |X | | |
-| título |X |X | | |
+| title |X |X | | |
 | unauthOrig |X |X |X | |
 | url |X |X | | |
 | usageLocation |X | | |propriedade mecânica. País/região do usuário
@@ -257,7 +257,7 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | wWWHomePage |X |X | | |
 
 ## <a name="teams-and-skype-for-business-online"></a>As equipes e Skype for Business Online
-| Nome do Atributo | Usuário | Contato | Agrupar | Comentário |
+| Nome do atributo | Usuário | Contato | Agrupar | Comentário |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Define se uma conta está habilitada. |
 | c |X |X | | |
@@ -275,7 +275,7 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | mail |X |X |X | |
 | mailNickname |X |X |X | |
 | managedBy | | |X | |
-| gerenciador |X |X | | |
+| manager |X |X | | |
 | member | | |X | |
 | Serviço Móvel |X |X | | |
 | msExchHideFromAddressLists |X |X |X | |
@@ -299,19 +299,19 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | streetAddress |X |X | | |
 | telephoneNumber |X |X | | |
 | thumbnailphoto |X |X | | |
-| título |X |X | | |
+| title |X |X | | |
 | usageLocation |X | | |propriedade mecânica. País/região do usuário. Usado para atribuição de licença. |
 | userPrincipalName |X | | |UPN é a ID de logon do usuário. Geralmente, o mesmo valor de [mail]. |
 | wWWHomePage |X |X | | |
 
 ## <a name="azure-rms"></a>Azure RMS
-| Nome do Atributo | Usuário | Contato | Agrupar | Comentário |
+| Nome do atributo | Usuário | Contato | Agrupar | Comentário |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Define se uma conta está habilitada. |
 | cn |X | |X |Alias ou nome comum. Geralmente, o prefixo do valor [mail]. |
 | displayName |X |X |X |Uma cadeia de caracteres que representa o nome geralmente é mostrada como um nome amigável (nome sobrenome). |
 | mail |X |X |X |endereço de email completo. |
-| membro | | |X | |
+| member | | |X | |
 | objectSID |X | |X |propriedade mecânica. Identificador de usuário do AD usado para manter a sincronização entre o AD do Azure e o AD. |
 | proxyAddresses |X |X |X |propriedade mecânica. Usado pelo AD do Azure. Contém todos os endereços de email secundários para o usuário. |
 | pwdLastSet |X | | |propriedade mecânica. Usado para saber quando invalidar tokens já emitidos. |
@@ -320,7 +320,7 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | userPrincipalName |X | | |Este UPN é a ID de logon do usuário. Geralmente, o mesmo valor de [mail]. |
 
 ## <a name="intune"></a>Intune
-| Nome do Atributo | Usuário | Contato | Agrupar | Comentário |
+| Nome do atributo | Usuário | Contato | Agrupar | Comentário |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Define se uma conta está habilitada. |
 | c |X |X | | |
@@ -338,7 +338,7 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | userPrincipalName |X | | |UPN é a ID de logon do usuário. Geralmente, o mesmo valor de [mail]. |
 
 ## <a name="dynamics-crm"></a>Dynamics CRM
-| Nome do Atributo | Usuário | Contato | Agrupar | Comentário |
+| Nome do atributo | Usuário | Contato | Agrupar | Comentário |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Define se uma conta está habilitada. |
 | c |X |X | | |
@@ -352,7 +352,7 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | givenName |X |X | | |
 | l |X |X | | |
 | managedBy | | |X | |
-| gerenciador |X |X | | |
+| manager |X |X | | |
 | member | | |X | |
 | Serviço Móvel |X |X | | |
 | objectSID |X | |X |propriedade mecânica. Identificador de usuário do AD usado para manter a sincronização entre o AD do Azure e o AD. |
@@ -365,7 +365,7 @@ Nesse caso, inicie com a lista de atributos neste tópico e identifique aqueles 
 | st |X |X | | |
 | streetAddress |X |X | | |
 | telephoneNumber |X |X | | |
-| título |X |X | | |
+| title |X |X | | |
 | usageLocation |X | | |propriedade mecânica. País/região do usuário. Usado para atribuição de licença. |
 | userPrincipalName |X | | |UPN é a ID de logon do usuário. Geralmente, o mesmo valor de [mail]. |
 
@@ -377,7 +377,7 @@ Esse grupo é um conjunto de atributos usados como os atributos mínimos necess�
 
 Esse é um conjunto de atributos que poderão ser usados se o diretório do Azure AD não for usado para dar suporte ao Office 365, Dynamics ou Intune. Ele tem um pequeno conjunto de atributos principais.
 
-| Nome do Atributo | Usuário | Contato | Agrupar | Comentário |
+| Nome do atributo | Usuário | Contato | Agrupar | Comentário |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Define se uma conta está habilitada. |
 | cn |X | |X | |
@@ -399,7 +399,7 @@ Esse é um conjunto de atributos que poderão ser usados se o diretório do Azur
 ## <a name="windows-10"></a>Windows 10
 Um computador (dispositivo) ingressado no domínio do Windows 10 sincroniza alguns atributos com o Azure AD. Para saber mais sobre os cenários, veja [Conectar dispositivos ingressados no domínio ao Azure AD para experiências com o Windows 10](../active-directory-azureadjoin-devices-group-policy.md). Esses atributos sempre são sincronizados e o Windows 10 não aparece como um aplicativo que pode ser desmarcado. Um computador do Windows 10 ingressado no domínio é identificado por ter o atributo userCertificate populado.
 
-| Nome do Atributo | Dispositivos | Comentário |
+| Nome do atributo | Dispositivo | Comentário |
 | --- |:---:| --- |
 | accountEnabled |X | |
 | deviceTrustType |X |Valor fixo no código para computadores ingressados do domínio. |
@@ -413,7 +413,7 @@ Um computador (dispositivo) ingressado no domínio do Windows 10 sincroniza algu
 
 Esses atributos para o **usuário** são adicionais aos outros aplicativos que você selecionou.  
 
-| Nome do Atributo | Usuário | Comentário |
+| Nome do atributo | Usuário | Comentário |
 | --- |:---:| --- |
 | domainFQDN |X |Também chamado de dnsDomainName. Por exemplo, contoso.com. |
 | domainNetBios |X |Também chamado de netBiosName. Por exemplo, CONTOSO. |
@@ -437,7 +437,7 @@ Esses atributos para o **usuário** são adicionais aos outros aplicativos que v
 ## <a name="exchange-mail-public-folder"></a>Pasta pública do Exchange Mail
 Esses atributos são sincronizados do Active Directory local para o Azure AD quando você opta por habilitar a **Pasta pública do Exchange Mail**.
 
-| Nome do Atributo | PublicFolder | Comentário |
+| Nome do atributo | PublicFolder | Comentário |
 | --- | :---:| --- |
 | displayName | X |  |
 | mail | X |  |
@@ -449,7 +449,7 @@ Esses atributos são sincronizados do Active Directory local para o Azure AD qua
 ## <a name="device-writeback"></a>Write-back de dispositivo
 Os objetos do dispositivo são criados no Active Directory. Esses objetos podem ser dispositivos ingressados no domínio do Azure AD ou computadores ingressados no domínio do Windows 10.
 
-| Nome do Atributo | Dispositivos | Comentário |
+| Nome do atributo | Dispositivo | Comentário |
 | --- |:---:| --- |
 | altSecurityIdentities |X | |
 | displayName |X | |

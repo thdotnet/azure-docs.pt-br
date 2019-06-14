@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/05/2019
 ms.author: juliako
 ms.openlocfilehash: bbf43ecb07947fad8cc1ee064d2038e4a21d4444
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65964758"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs"></a>Monitorar logs de diagnóstico e métricas de serviços de mídia
@@ -34,7 +34,7 @@ As métrica são coletadas em intervalos regulares independentemente da mudança
 
 Atualmente, os seguintes serviços de mídia [pontos de extremidade de Streaming](https://docs.microsoft.com/rest/api/media/streamingendpoints) métricas são emitidas pelo Azure:
 
-|Métrica|Display name|Descrição|
+|Métrica|Display name|DESCRIÇÃO|
 |---|---|---|
 |Requests|Requests|Fornece detalhes sobre o número total de solicitações atendidas pelo ponto de extremidade de Streaming.|
 |Saída|Saída|Número total de bytes de saída. Por exemplo, bytes transmitidos pelo ponto de extremidade de Streaming.|
@@ -54,7 +54,7 @@ Para obter informações sobre como criar alertas de métrica, consulte [criar, 
 
 No momento, você pode obter os logs de diagnóstico a seguir:
 
-|NOME|Descrição|
+|NOME|DESCRIÇÃO|
 |---|---|
 |Solicitação de serviço de distribuição de chaves|Logs que mostram as informações de solicitação de serviço de distribuição de chaves. Para obter mais detalhes, consulte [esquemas](media-services-diagnostic-logs-schema.md).|
 

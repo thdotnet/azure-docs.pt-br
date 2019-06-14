@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: barclayn
 ms.openlocfilehash: d7d76458601b2afecafc1313e334215bf08b6545
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64713839"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Gerenciar o Key Vault usando a CLI do Azure 
@@ -147,7 +147,7 @@ Se você já tiver uma chave em um arquivo .pem, carregue-a no Azure Key Vault. 
 az keyvault key import --vault-name "ContosoKeyVault" --name "ContosoFirstKey" --pem-file "./softkey.pem" --pem-password "hVFkk965BuUv" --protection software
 ```
 
-Agora você pode fazer referência à chave que criada ou carregada no Cofre da Chave do Azure, usando o URI. Use **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey** para sempre obter a versão atual. Use https://[keyvault-name].vault.azure.net/keys/[keyname]/[key-unique-id] para obter essa versão específica. Por exemplo, **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**. 
+Agora você pode fazer referência à chave que criada ou carregada no Cofre da Chave do Azure, usando o URI. Use **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey** para sempre obter a versão atual. Use https://[keyvault-name].vault.azure.net/keys/[keyname]/[key-unique-id] para obter essa versão específica. Por exemplo, **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** . 
 
 Adicione um segredo ao cofre, que é uma senha chamada SQLPassword, com o valor "hVFkk965BuUv" para Azure Key Vaults. 
 
@@ -155,7 +155,7 @@ Adicione um segredo ao cofre, que é uma senha chamada SQLPassword, com o valor 
 az keyvault secret set --vault-name "ContosoKeyVault" --name "SQLPassword" --value "hVFkk965BuUv "
 ```
 
-Faça referência a essa senha usando o URI. Use **https://ContosoVault.vault.azure.net/secrets/SQLPassword** para obter sempre a versão atual, e https://[keyvault-name].vault.azure.net/secret/[secret-name]/[secret-unique-id] para obter essa versão específica. Por exemplo, **https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**.
+Faça referência a essa senha usando o URI. Use **https://ContosoVault.vault.azure.net/secrets/SQLPassword** para obter sempre a versão atual, e https://[keyvault-name].vault.azure.net/secret/[secret-name]/[secret-unique-id] para obter essa versão específica. Por exemplo, **https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d** .
 
 Importe um certificado para o cofre usando um .pem ou .pfx.
 

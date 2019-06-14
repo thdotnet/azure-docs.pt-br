@@ -9,10 +9,10 @@ ms.date: 04/08/2019
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: e542ad59f6fd64b52aef9438ed0f646e9e36fc4a
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65209635"
 ---
 # <a name="use-the-azure-importexport-service-to-export-data-from-azure-blob-storage"></a>Usar o serviço de Importação/ Exportação do Azure para exportar dados do Armazenamento de Blobs do Azure
@@ -52,7 +52,7 @@ Execute as etapas a seguir para criar um trabalho de exportação no portal do A
     - Digite um nome descritivo para o trabalho de exportação. Use o nome escolhido para acompanhar o andamento dos trabalhos. 
         - O nome só pode conter letras minúsculas, números, hifens e sublinhados.
         - O nome deve começar com uma letra e não pode conter espaços. 
-    - Selecionar uma assinatura.
+    - Selecione uma assinatura.
     - Insira ou selecione um grupo de recursos.
 
         ![Noções básicas](./media/storage-import-export-data-from-blobs/export-from-blob3.png) 
@@ -128,7 +128,7 @@ A exportação foi concluída. Neste momento, você pode excluir o trabalho ou e
 Essa etapa *opcional* ajuda você a determinar o número de unidades necessárias para o trabalho de exportação. Execute essa etapa em um sistema Windows executando uma [versão do sistema operacional com suporte](storage-import-export-requirements.md#supported-operating-systems).
 
 1. [Baixe o WAImportExport versão 1](https://aka.ms/waiev1) no sistema Windows. 
-2. Descompacte para a pasta padrão `waimportexportv1`. Por exemplo, `C:\WaImportExportV1`.
+2. Descompacte para a pasta padrão `waimportexportv1`. Por exemplo: `C:\WaImportExportV1`.
 3. Abra um PowerShell ou janela de linha de comando com privilégios administrativos. Para alterar o diretório para a pasta descompactada, execute o seguinte comando:
     
     `cd C:\WaImportExportV1`
@@ -139,7 +139,7 @@ Essa etapa *opcional* ajuda você a determinar o número de unidades necessária
 
     Os parâmetros estão descritos na tabela a seguir:
     
-    |Parâmetro de linha de comando|Descrição|  
+    |Parâmetro de linha de comando|DESCRIÇÃO|  
     |--------------------------|-----------------|  
     |**/logdir:**|Opcional. O diretório de log. Os arquivos de log detalhados são gravados nesse diretório. Se nenhum for especificado, o diretório atual será usado como o diretório de log.|  
     |**/sn:**|Obrigatório. O nome da conta de armazenamento do trabalho de exportação.|  
@@ -193,7 +193,7 @@ Number of drives needed:        3
 
 A tabela a seguir mostra exemplos de caminhos de blob válidos:
    
-   | Seletor | Caminho do Blob | Descrição |
+   | Seletor | Caminho do Blob | DESCRIÇÃO |
    | --- | --- | --- |
    | Começa com |/ |Exporta todos os blobs na conta de armazenamento |
    | Começa com |/$root/ |Exporta todos os blobs no contêiner raiz |

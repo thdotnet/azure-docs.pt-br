@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2caca430de5ad666f4f4341e0723bc3173d6d91a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65137797"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Perguntas frequentes do Azure Active Directory Connect
@@ -62,7 +62,7 @@ Sim, há suporte para esse cenário. Consulte [Vários domínios](how-to-connect
 **P: É possível ter vários conectores para o mesmo domínio do Active Directory no Azure AD Connect?**  
 Não há suporte para nenhum, vários conectores para o mesmo domínio do AD. 
 
-**P: Posso mover o banco de dados do Azure AD Connect do banco de dados local para uma instância remota do SQL Server?**   
+**P: Posso mover o banco de dados do Azure AD Connect do banco de dados local para uma instância remota do SQL Server?**    
 Sim, as etapas a seguir fornecem diretrizes gerais sobre como fazer isso. Estamos trabalhando atualmente em um documento mais detalhado.
 1. Fazer backup de banco de dados ADSync do LocalDB.
 A maneira mais simples de fazer isso é usar o SQL Server Management Studio instalado no mesmo computador que o Azure AD Connect. Conectar-se ao *(LocalDb).\ADSync*, e, em seguida, fazer backup de banco de dados ADSync.
@@ -130,7 +130,7 @@ Embora seja altamente não usar essa configuração de rede ([consulte o artigo]
 Não, o Azure AD Connect não oferece suporte a florestas locais que contêm namespaces contíguos.
 
 **P: Há suporte para nomes NetBios com pontos?**  
- Não, o Azure AD Connect não oferece suporte a florestas/domínios locais em que o nome NetBios contém um ponto (.) no nome.
+Não, o Azure AD Connect não oferece suporte a florestas/domínios locais em que o nome NetBios contém um ponto (.) no nome.
 
 **P: Há suporte para ambiente puro do IPv6?**  
 Não, o Azure AD Connect não oferece suporte ao ambiente puro do IPv6.
@@ -169,12 +169,12 @@ Não, definindo manualmente o atributo de ImmutableId em um objeto de contato/gr
 
 ## <a name="custom-configuration"></a>Configuração personalizada
 **P: Onde estão documentados os cmdlets do PowerShell para o Azure AD Connect?**  
- Com exceção dos cmdlets documentados neste site, não há suporte para outros cmdlets do PowerShell encontrados no Azure AD Connect para uso do cliente.
+Com exceção dos cmdlets documentados neste site, não há suporte para outros cmdlets do PowerShell encontrados no Azure AD Connect para uso do cliente.
 
 **P: Posso usar a opção de "exportação/importação do servidor" encontrada no Synchronization Service Manager para mover a configuração entre servidores?**  
 Não. Essa opção não irá recuperar todos os parâmetros de configuração e não deve ser usada. Em vez disso, use o assistente para criar a configuração básica no segundo servidor e usar o editor de regra de sincronização para gerar scripts do PowerShell para mover qualquer regra personalizada entre servidores. Para mais informações, consulte [Migração Swing](how-to-upgrade-previous-version.md#swing-migration).
 
-**P: As senhas podem ser armazenadas em cache para a página de entrada do Azure? Esse cache pode ser bloqueado por conter um elemento de entrada de senha com o atributo *autocomplete = "false"*?**  
+**P: As senhas podem ser armazenadas em cache para a página de entrada do Azure? Esse cache pode ser bloqueado por conter um elemento de entrada de senha com o atributo *autocomplete = "false"* ?**  
 Atualmente, modificar os atributos HTML do campo de entrada de **senha**, incluindo a marca de preenchimento automático, não há suporte. Estamos trabalhando em um recurso que permitirá Javascript personalizado, e permitirá que você adicione qualquer atributo ao campo de **Senha**.
 
 **P: A página de entrada do Azure exibe os nomes dos usuários que se conectaram anteriormente com êxito. Esse comportamento pode ser desativado?**  

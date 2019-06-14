@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 04/29/2019
 ms.author: jingwang
 ms.openlocfilehash: 360b794f0d8ba9c145a92f015f264eb624fbb0f1
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65144889"
 ---
 # <a name="parquet-format-in-azure-data-factory"></a>Formato parquet no Azure Data Factory
@@ -28,9 +28,9 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 | Propriedade         | DESCRIÇÃO                                                  | Obrigatório |
 | ---------------- | ------------------------------------------------------------ | -------- |
-| Tipo             | A propriedade type do conjunto de dados deve ser definida como **Parquet**. | Sim      |
+| type             | A propriedade type do conjunto de dados deve ser definida como **Parquet**. | Sim      |
 | location         | Configurações de local dos arquivos. Cada conector com base em arquivo tem seu próprio tipo de local e suporte para propriedades em `location`. **Consulte detalhes no artigo de conector -> seção de propriedades do conjunto de dados**. | Sim      |
-| compressionCodec | O codec de compactação a ser usado ao gravar em arquivos Parquet. Ao ler de arquivos Parquet, o Data Factory determine automaticamente o codec de compactação com base nos metadados do arquivo.<br>Tipos com suporte são "**none**","**gzip**","**snappy**" (padrão), e "**lzo**". Observe, no momento, atividade de cópia não dá suporte a LZO. | Não        |
+| compressionCodec | O codec de compactação a ser usado ao gravar em arquivos Parquet. Ao ler de arquivos Parquet, o Data Factory determine automaticamente o codec de compactação com base nos metadados do arquivo.<br>Tipos com suporte são "**none**","**gzip**","**snappy**" (padrão), e "**lzo**". Observe, no momento, atividade de cópia não dá suporte a LZO. | Não       |
 
 > [!NOTE]
 > Não há suporte para o espaço em branco no nome da coluna para arquivos Parquet.
@@ -69,8 +69,8 @@ As propriedades a seguir têm suporte na atividade de cópia ***\*código-fonte\
 
 | Propriedade      | DESCRIÇÃO                                                  | Obrigatório |
 | ------------- | ------------------------------------------------------------ | -------- |
-| Tipo          | A propriedade type da fonte da atividade de cópia deve ser definida como **ParquetSource**. | Sim      |
-| storeSettings | Um grupo de propriedades sobre como ler dados de um armazenamento de dados. Cada conector com base em arquivo tem suas próprias configurações de leitura com suporte em `storeSettings`. **Consulte detalhes no artigo de conector -> seção de propriedades de atividade de cópia**. | Não        |
+| type          | A propriedade type da fonte da atividade de cópia deve ser definida como **ParquetSource**. | Sim      |
+| storeSettings | Um grupo de propriedades sobre como ler dados de um armazenamento de dados. Cada conector com base em arquivo tem suas próprias configurações de leitura com suporte em `storeSettings`. **Consulte detalhes no artigo de conector -> seção de propriedades de atividade de cópia**. | Não       |
 
 ### <a name="parquet-as-sink"></a>Parquet como coletor
 
@@ -78,8 +78,8 @@ As propriedades a seguir têm suporte na atividade de cópia ***\*coletor\**** s
 
 | Propriedade      | DESCRIÇÃO                                                  | Obrigatório |
 | ------------- | ------------------------------------------------------------ | -------- |
-| Tipo          | A propriedade type da fonte da atividade de cópia deve ser definida como **ParquetSink**. | Sim      |
-| storeSettings | Um grupo de propriedades sobre como gravar dados em um armazenamento de dados. Cada conector com base em arquivo tem suas próprias configurações de gravação com suporte em `storeSettings`. **Consulte detalhes no artigo de conector -> seção de propriedades de atividade de cópia**. | Não        |
+| type          | A propriedade type da fonte da atividade de cópia deve ser definida como **ParquetSink**. | Sim      |
+| storeSettings | Um grupo de propriedades sobre como gravar dados em um armazenamento de dados. Cada conector com base em arquivo tem suas próprias configurações de gravação com suporte em `storeSettings`. **Consulte detalhes no artigo de conector -> seção de propriedades de atividade de cópia**. | Não       |
 
 ## <a name="mapping-data-flow-properties"></a>Propriedades do mapeamento de fluxo de dados
 

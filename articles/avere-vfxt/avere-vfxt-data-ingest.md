@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: v-erkell
 ms.openlocfilehash: a3d6cb745c782d2a7166208f2a8dd1202a330b15
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60410071"
 ---
 # <a name="moving-data-to-the-vfxt-cluster---parallel-data-ingest"></a>Mover dados para o cluster vFXT – ingestão de dados paralela 
@@ -272,7 +272,7 @@ Para usar msrsync para preencher um volume de nuvem do Azure com um cluster Aver
 1. Instalar msrsync e seus pré-requisitos (rsync e Python 2.6 ou posterior)
 1. Determine o número total de arquivos e diretórios a serem copiados.
 
-   Por exemplo, use o utilitário Avere ``prime.py`` com os argumentos ```prime.py --directory /path/to/some/directory``` (disponíveis baixando da URL https://github.com/Azure/Avere/blob/master/src/clientapps/dataingestor/prime.py)).
+   Por exemplo, use o utilitário Avere ``prime.py`` com os argumentos ```prime.py --directory /path/to/some/directory``` (disponíveis baixando da URL https://github.com/Azure/Avere/blob/master/src/clientapps/dataingestor/prime.py) ).
 
    Se você não estiver usando ``prime.py``, poderá calcular o número de itens com a ferramenta ``find`` Gnu da seguinte maneira:
 

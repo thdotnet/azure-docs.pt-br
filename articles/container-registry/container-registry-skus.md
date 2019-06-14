@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/06/2019
 ms.author: danlep
 ms.openlocfilehash: f36b206ff015511dea7369617febe9220282bbe5
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65069051"
 ---
 # <a name="azure-container-registry-skus"></a>SKUs do Registro de Contêiner do Azure
@@ -23,7 +23,7 @@ O ACR (Registro de Contêiner do Azure) está disponível em várias camadas de 
 | **Básico** | Sim | Um ponto de entrada de otimização de custo para desenvolvedores aprendendo sobre o Registro de Contêiner do Azure. Registros básicos têm os mesmos recursos de programação que Standard e Premium (como o Azure Active Directory [integração de autenticação](container-registry-authentication.md#individual-login-with-azure-ad), [exclusão de imagem][container-registry-delete], e [webhooks][container-registry-webhook]). No entanto, o armazenamento incluído e a taxa de transferência de imagem são mais apropriados para cenários de uso mais baixos. |
 | **Standard** | Sim | Os registros Standard oferecem os mesmos recursos do Básico, com maior armazenamento incluído e taxa de transferência de imagem. Registros Standard devem atender às necessidades da maioria dos cenários de produção. |
 | **Premium** | Sim | Os registros Premium fornecem a maior quantidade de armazenamento incluído e operações simultâneas, permitindo cenários de alto volume. Além de maior taxa de transferência de imagem, o Premium adiciona recursos, incluindo [replicação geográfica] [ container-registry-geo-replication] para gerenciar um único registro em várias regiões, [relação de confiança de conteúdo](container-registry-content-trust.md) para a assinatura de marca de imagem, e [firewalls e redes virtuais (versão prévia)](container-registry-vnet.md) para restringir o acesso ao registro. |
-|  Clássico (*não está disponível depois de abril de 2019*) | Não  | Esta SKU permitiu a versão inicial do serviço Registro de Contêiner do Azure no Azure. Os registros Clássicos contam com uma conta de armazenamento que o Azure cria em sua assinatura, o que limita a capacidade do ACR de fornecer recursos de níveis mais altos, como uma maior taxa de transferência e a replicação geográfica. |
+|  Clássico (*não está disponível depois de abril de 2019*) | Não | Esta SKU permitiu a versão inicial do serviço Registro de Contêiner do Azure no Azure. Os registros Clássicos contam com uma conta de armazenamento que o Azure cria em sua assinatura, o que limita a capacidade do ACR de fornecer recursos de níveis mais altos, como uma maior taxa de transferência e a replicação geográfica. |
 
 > [!IMPORTANT]
 > O registro clássico SKU está sendo **preterido**e não estará disponível após **abril de 2019**. É recomendável usar Basic, Standard ou Premium para todos os registros novos. Todos os registros clássicos existentes devem ser atualizados antes de abril de 2019. Para obter informações de atualização, consulte [atualizar um registro clássico][container-registry-upgrade].

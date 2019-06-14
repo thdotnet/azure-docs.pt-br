@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 04/02/2019
 ms.author: diberry
 ms.openlocfilehash: a4e176552fcbab9d54da696439c7e46750be3944
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65522358"
 ---
 # <a name="api-v1-to-v2-migration-guide-for-luis-apps"></a>Guia de migração da API v1 para a v2 para aplicativos do LUIS
@@ -112,7 +112,7 @@ As APIs da chave do ponto de extremidade de assinatura estão preteridas, retorn
 |1|/luis/v1.0/prog/subscriptions|
 |1|/luis/v1.0/prog/subscriptions/{subscriptionKey}|
 
-As [chaves de ponto de extremidade](luis-how-to-azure-subscription.md) são geradas no portal do Azure. Atribua a chave a um aplicativo LUIS na página **[Publicar](luis-how-to-azure-subscription.md)**. Não é necessário saber o valor real da chave. O LUIS usa o nome da assinatura para fazer a atribuição. 
+As [chaves de ponto de extremidade](luis-how-to-azure-subscription.md) são geradas no portal do Azure. Atribua a chave a um aplicativo LUIS na página **[Publicar](luis-how-to-azure-subscription.md)** . Não é necessário saber o valor real da chave. O LUIS usa o nome da assinatura para fazer a atribuição. 
 
 ## <a name="new-versioning-route"></a>Nova rota de controle de versão
 Agora o modelo v2 está contido em uma [versão](luis-how-to-manage-versions.md). Um nome de versão tem 10 caracteres na rota. A versão padrão é "0,1".

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 11/25/2014
 ms.author: microsofthelp@twilio.com
 ms.openlocfilehash: 386b4b8440c74f6599e7147996b5843ea0f67e68
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60623945"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-in-java"></a>Como usar a Twilio para obter recursos de voz e SMS no Java
@@ -42,17 +42,17 @@ A API usa os verbos do Twilio; por exemplo, o verbo **&lt;Say&gt;** instrui o Tw
 
 A seguir está uma lista de verbos do Twilio.
 
-* **&lt;Dial&gt;**: Conecta o chamador a outro telefone.
-* **&lt;Gather&gt;**: Coleta os dígitos numéricos inseridos no teclado do telefone.
-* **&lt;Hangup&gt;**: Encerra uma chamada.
-* **&lt;Play&gt;**: Reproduz um arquivo de áudio.
-* **&lt;Queue&gt;**: Adiciona a chamada a uma fila de chamadores.
-* **&lt;Pause&gt;**: Espera silenciosamente por um número especificado de segundos.
-* **&lt;Record&gt;**: Grava a voz do chamador e retorna uma URL de um arquivo que contém a gravação.
-* **&lt;Redirect&gt;**: Transfere o controle de uma chamada ou SMS para o TwiML em uma URL diferente.
-* **&lt;Reject&gt;**: Rejeita uma chamada recebida para o número do Twilio sem cobrança.
-* **&lt;Say&gt;**: Faz conversão de texto em fala realizada em uma chamada.
-* **&lt;Sms&gt;**: Envia uma mensagem SMS.
+* **&lt;Dial&gt;** : Conecta o chamador a outro telefone.
+* **&lt;Gather&gt;** : Coleta os dígitos numéricos inseridos no teclado do telefone.
+* **&lt;Hangup&gt;** : Encerra uma chamada.
+* **&lt;Play&gt;** : Reproduz um arquivo de áudio.
+* **&lt;Queue&gt;** : Adiciona a chamada a uma fila de chamadores.
+* **&lt;Pause&gt;** : Espera silenciosamente por um número especificado de segundos.
+* **&lt;Record&gt;** : Grava a voz do chamador e retorna uma URL de um arquivo que contém a gravação.
+* **&lt;Redirect&gt;** : Transfere o controle de uma chamada ou SMS para o TwiML em uma URL diferente.
+* **&lt;Reject&gt;** : Rejeita uma chamada recebida para o número do Twilio sem cobrança.
+* **&lt;Say&gt;** : Faz conversão de texto em fala realizada em uma chamada.
+* **&lt;Sms&gt;** : Envia uma mensagem SMS.
 
 ### <a id="TwiML"></a>TwiML
 TwiML é um conjunto de instruções em XML com base nos verbos do Twilio que informam o Twilio como processar uma chamada ou SMS.
@@ -158,7 +158,7 @@ O conteúdo abaixo mostra como enviar uma mensagem SMS usando a classe **Message
 Para obter mais informações sobre os parâmetros passados para o método **Message.creator**, consulte [https://www.twilio.com/docs/api/rest/sending-sms][twilio_rest_sending_sms].
 
 ## <a id="howto_provide_twiml_responses"></a>Como: Fornecer respostas TwiML de seu próprio site
-Quando o aplicativo iniciar uma chamada para a API do Twilio, por exemplo, por meio do método **CallCreator.create**, o Twilio enviará a solicitação para uma URL que deverá retornar uma resposta em TwiML. O exemplo acima usa a URL fornecida pelo Twilio [https://twimlets.com/message][twimlet_message_url]. (O TwiML destina-se ao uso pelos serviços Web, mas você pode exibir o TwiML no seu navegador. Por exemplo, clique em [https://twimlets.com/message][twimlet_message_url] para ver um elemento **&lt;Response&gt;** vazio; como outro exemplo, clique em [https://twimlets.com/message?Message%5B0%5D=Hello%20World%21][twimlet_message_url_hello_world] para ver um elemento **&lt;Response&gt;** que contenha **&lt;Diga&gt;** Elemento).
+Quando o aplicativo iniciar uma chamada para a API do Twilio, por exemplo, por meio do método **CallCreator.create**, o Twilio enviará a solicitação para uma URL que deverá retornar uma resposta em TwiML. O exemplo acima usa a URL fornecida pelo Twilio [https://twimlets.com/message][twimlet_message_url]. (O TwiML destina-se ao uso pelos serviços Web, mas você pode exibir o TwiML no seu navegador. Por exemplo, clique em [https://twimlets.com/message][twimlet_message_url] para ver um elemento **&lt; Response&gt;** vazio; como outro exemplo, clique em [https://twimlets.com/message?Message%5B0%5D=Hello%20World%21][twimlet_message_url_hello_world] para ver um elemento **&lt; Response&gt;** que contenha **&lt; Diga&gt;** Elemento).
 
 Em vez de contar com a URL fornecida pela Twilio, você pode criar seu próprio site URL que retorna respostas HTTP. Você pode criar o site em qualquer linguagem que retorna respostas HTTP; este tópico pressupõe que você hospedará a URL em uma página JSP.
 

@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 02/15/2018
 ms.author: alkohli
 ms.openlocfilehash: c83326212dc84348a04d54f04348a6c4c7699bde
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60631508"
 ---
 # <a name="storsimple-solution-support"></a>Suporte da solução StorSimple
@@ -89,7 +89,7 @@ O suporte para questões de faturamento e gerenciamento de assinatura está disp
 
 | **GRAVIDADE** |**SITUAÇÃO DO CLIENTE**                                                                                                                                | RESPOSTA ESPERADA DA MICROSOFT<sup>2                                                                                       | RESPOSTA ESPERADA DO CLIENTE                                                                                                                                                       |
 |----------|-----------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| O         | Impacto comercial crítico: <ul> <br> <li> O negócio do cliente sofre uma perda significativa ou degradação dos serviços. <sup>1</sup> <br> <li> Requer atenção imediata.                          | Resposta inicial: <sup>1</sup> <ul><br> <li>1 hora ou menos para Premium. <br> <li> 2 horas ou menos para Standard. <br> <li> Esforço contínuo o dia todo, todos os dias. | <ul><li> Alocação de recursos apropriados para manter um esforço contínuo o dia todo, todos os dias. <br> <li> Informações de contato precisas sobre o proprietário do caso.                                                |
+| O        | Impacto comercial crítico: <ul> <br> <li> O negócio do cliente sofre uma perda significativa ou degradação dos serviços. <sup>1</sup> <br> <li> Requer atenção imediata.                          | Resposta inicial: <sup>1</sup> <ul><br> <li>1 hora ou menos para Premium. <br> <li> 2 horas ou menos para Standard. <br> <li> Esforço contínuo o dia todo, todos os dias. | <ul><li> Alocação de recursos apropriados para manter um esforço contínuo o dia todo, todos os dias. <br> <li> Informações de contato precisas sobre o proprietário do caso.                                                |
 | b        | Impacto comercial moderado: <ul><br> <li> O negócio do cliente sofre perda moderada ou degradação de serviços, mas o trabalho pode continuar de modo razoável sem prejuízo. | Resposta inicial: <sup>1</sup><ul><br> <li> 2 horas ou menos para Premium. <br> <li> 4 horas ou menos para Standard.                                      | <ul><li> Alocação de recursos apropriados para manter o esforço contínuo durante o horário comercial, a menos que o cliente solicite a recusa de 24 horas por dia, 7 dias por semana. <br> <li> Informações de contato precisas sobre o proprietário do caso. |
 | C        | Impacto comercial mínimo: <ul><br> <li> O negócio do cliente está funcionando substancialmente com impedimentos menores ou nenhum impedimento do serviço.                                 | Resposta inicial: <sup>1</sup><ul> <br> <li> 4 horas ou menos para Premium. <br> <li> 8 horas ou menos para Standard.                                      | <ul><li>Informações de contato precisas sobre o proprietário do caso                                                                                                                                    |
  

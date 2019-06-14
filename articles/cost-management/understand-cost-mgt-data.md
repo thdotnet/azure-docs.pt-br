@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: micflan
 ms.custom: ''
 ms.openlocfilehash: f4c296aeefacc9516303ad75dd8b7d67325e38ee
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65969062"
 ---
 # <a name="understand-cost-management-data"></a>Entender os dados de Gerenciamento de Custos
@@ -27,7 +27,7 @@ Gerenciamento de custos inclui o uso e compras, incluindo as reservas e ofertas 
 
 As informações a seguir mostram as atuais [ofertas do Microsoft Azure](https://azure.microsoft.com/support/legal/offer-details/) com suporte no Gerenciamento de Custos do Azure.  Uma oferta do Azure é o tipo de assinatura do Azure que você tem.
 
-| Category  | **Nome da oferta** | **ID da cota** | **Número da oferta** |
+| Categoria  | **Nome da oferta** | **ID da cota** | **Número da oferta** |
 | --- | --- | --- | --- |
 | **Azure Alemanha** | [Pagamento Conforme o Uso do Azure Alemanha](https://azure.microsoft.com/offers/ms-azr-de-0003p)      | PayAsYouGo_2014-09-01 | MS-AZR-DE-0003P |
 | **Azure Governamental** | Azure Governamental Enterprise                                                         | EnterpriseAgreement_2014-09-01 | MS-AZR-USGOV-0017P |
@@ -51,12 +51,12 @@ As informações a seguir mostram as atuais [ofertas do Microsoft Azure](https:/
 
 A tabela a seguir mostra ofertas sem suporte.
 
-| Category  | **Nome da oferta** | **ID da cota** | **Número da oferta** |
+| Categoria  | **Nome da oferta** | **ID da cota** | **Número da oferta** |
 | --- | --- | --- | --- |
 | **CSP (Provedor de Soluções na Nuvem)** | Microsoft Azure                                    | CSP_2015-05-01 | MS-AZR-0145P |
 | **CSP (Provedor de Soluções na Nuvem)** | CSP do Azure Governamental                               | CSP_2015-05-01 | MS-AZR-USGOV-0145P |
 | **CSP (Provedor de Soluções na Nuvem)** | CSP do Azure na Alemanha para o Microsoft Cloud Alemanha   | CSP_2015-05-01 | MS-AZR-DE-0145P |
-| **Pré-paga**                 | Iniciador do Azure para Alunos | DreamSpark_2015-02-01 | MS-AZR-0144P |
+| **Pré-paga**                 | Azure for Students Starter | DreamSpark_2015-02-01 | MS-AZR-0144P |
 | **Pré-paga**                 | [Microsoft Azure Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/) | Sponsored_2016-01-01 | MS-AZR-0036P |
 | **Planos de suporte** | Suporte Standard                    | Default_2014-09-01 | MS-AZR-0041P |
 | **Planos de suporte** | Suporte Professional Direct         | Default_2014-09-01 | MS-AZR-0042P |

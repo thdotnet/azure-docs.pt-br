@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 09/08/2018
 ms.author: glenga
 ms.openlocfilehash: ddd3b0889eedd55f809dbb57b2ef41a2ae3f9c94
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65521387"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x"></a>Referência host.json para o Azure Functions 2.x  
 
-> [!div class="op_single_selector" title1="Select the version of the Azure Functions runtime you are using: "]
+> [!div class="op_single_selector" title1="Selecione a versão do tempo de execução do Azure Functions que você está usando: "]
 > * [Versão 1](functions-host-json-v1.md)
 > * [Versão 2](functions-host-json.md)
 
@@ -114,7 +114,7 @@ Controla o [recurso de amostragem no Application Insights](./functions-monitorin
 > [!NOTE]
 > A amostragem de log pode fazer com que algumas execuções não apareçam na folha do Monitor do Application Insights.
 
-|Propriedade  |Padrão | Descrição |
+|Propriedade  |Padrão | DESCRIÇÃO |
 |---------|---------|---------| 
 |isEnabled|verdadeiro|Habilita ou desabilita a amostragem.| 
 |maxTelemetryItemsPerSecond|5|O limite em que a amostragem começa.| 
@@ -171,7 +171,7 @@ Definições de configuração para [monitor de integridade de Host](https://git
 }
 ```
 
-|Propriedade  |Padrão | Descrição |
+|Propriedade  |Padrão | DESCRIÇÃO |
 |---------|---------|---------| 
 |enabled|verdadeiro|Especifica se o recurso está habilitado. | 
 |healthCheckInterval|10 segundos|O intervalo de tempo entre as verificações de integridade em segundo plano. | 
@@ -205,7 +205,7 @@ Controla os comportamentos de registro em log do aplicativo de funções, inclui
 }
 ```
 
-|Propriedade  |Padrão | Descrição |
+|Propriedade  |Padrão | DESCRIÇÃO |
 |---------|---------|---------|
 |fileLoggingMode|debugOnly|Define qual nível de log de arquivos está habilitado.  As opções são: `never`, `always` e `debugOnly`. |
 |logLevel|n/d|Objeto que define a filtragem da categoria de log para funções no aplicativo. A versão 2.x segue o layout do ASP.NET Core para filtragem de categoria de log. Isso permite filtrar o registro para funções específicas. Para obter mais informações, consulte [Filtragem de logs](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering) na documentação do ASP.NET Core. |
@@ -228,7 +228,7 @@ Essa configuração é a filha de [Registro em log](#logging). Ela controla o lo
 }
 ```
 
-|Propriedade  |Padrão | Descrição |
+|Propriedade  |Padrão | DESCRIÇÃO |
 |---------|---------|---------| 
 |isEnabled|falso|Habilita ou desabilita o log de console.| 
 
@@ -260,7 +260,7 @@ Parâmetro de configuração para o comportamento de bloqueio de Singleton. Para
 }
 ```
 
-|Propriedade  |Padrão | Descrição |
+|Propriedade  |Padrão | DESCRIÇÃO |
 |---------|---------|---------| 
 |lockPeriod|00:00:15|O período em que ocorrem os bloqueios de nível de função. Os bloqueios têm renovação automática.| 
 |listenerLockPeriod|00:01:00|O período em que ocorrem os bloqueios de ouvinte.| 

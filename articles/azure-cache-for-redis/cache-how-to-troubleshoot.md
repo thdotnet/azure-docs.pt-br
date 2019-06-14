@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/15/2019
 ms.author: yegu
 ms.openlocfilehash: 66361871d365068a90a2eeab70d92adb6b246a83
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60830000"
 ---
 # <a name="how-to-troubleshoot-azure-cache-for-redis"></a>Como solucionar problemas do Cache do Azure para Redis
@@ -202,7 +202,7 @@ Essa mensagem de erro contém métricas que podem ajudar a indicar a causa e a p
 | --- | --- |
 | inst |Na última fração de tempo: 0 comandos foram emitidos |
 | mgr |O Gerenciador do soquete está fazendo `socket.select`, que significa que ele está solicitando que o sistema operacional indique um soquete que tem algo a fazer. O leitor não está lendo ativamente da rede porque ele acha que não há nada a fazer |
-| fila |Existem 73 operações em andamento no total |
+| queue |Existem 73 operações em andamento no total |
 | qu |6 das operações em andamento estão na fila não enviada e ainda ainda não foram escritos para a rede de saída |
 | qs |67 das operações em andamento foram enviadas ao servidor, mas uma resposta ainda não está disponível. A resposta pode ser `Not yet sent by the server` ou `sent by the server but not yet processed by the client.` |
 | qc |0 das operações em andamento viram respostas, mas ainda não foram marcados como concluídas porque está aguardando do loop de conclusão |

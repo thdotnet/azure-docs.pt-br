@@ -2,18 +2,17 @@
 title: Padrões de design de tabela de armazenamento do Azure | Microsoft Docs
 description: Use padrões para soluções de serviço de tabela do Azure.
 services: storage
-author: WenJason
+author: tamram
 ms.service: storage
 ms.topic: article
-origin.date: 04/08/2019
-ms.date: 04/22/2019
-ms.author: v-jay
+ms.date: 04/08/2019
+ms.author: tamram
 ms.subservice: tables
 ms.openlocfilehash: a428abd95f955a16d03c4ab86f05644f6db65da5
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62101415"
 ---
 # <a name="table-design-patterns"></a>Padrões de design de tabela
@@ -264,7 +263,7 @@ Em um banco de dados relacional, você geralmente normaliza dados para remover a
 ![Entidade de departamento e funcionário](media/storage-table-design-guide/storage-table-design-IMAGE16.png)
 
 ### <a name="solution"></a>Solução
-Em vez de armazenar os dados em duas entidades separadas, desnormalize os dados e mantenha uma cópia dos detalhes do gerente na entidade de departamento. Por exemplo:   
+Em vez de armazenar os dados em duas entidades separadas, desnormalize os dados e mantenha uma cópia dos detalhes do gerente na entidade de departamento. Por exemplo:  
 
 ![Entidade de departamento](media/storage-table-design-guide/storage-table-design-IMAGE17.png)
 
@@ -349,7 +348,7 @@ Você pode retornar ao valor de data/hora usando o seguinte código:
 
 A consulta a tabela tem esta aparência:  
 
-`https://myaccount.table.core.chinacloudapi.cn/EmployeeExpense(PartitionKey='empid')?$top=10`  
+`https://myaccount.table.core.windows.net/EmployeeExpense(PartitionKey='empid')?$top=10`  
 
 ### <a name="issues-and-considerations"></a>Problemas e considerações
 Considere os seguintes pontos ao decidir como implementar esse padrão:  

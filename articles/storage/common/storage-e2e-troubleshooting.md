@@ -11,10 +11,10 @@ ms.author: normesta
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: 2707081adafa74237e3fb7730837f581e0c8b790
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65154232"
 ---
 # <a name="end-to-end-troubleshooting-using-azure-storage-metrics-and-logging-azcopy-and-message-analyzer"></a>Solução de problemas ponta a ponta usando Métricas de Armazenamento do Azure e Registro em Log, AzCopy e Analisador de Mensagem
@@ -220,7 +220,7 @@ Além de usar os layouts do modo de Armazenamento do Azure, você também pode d
 ### <a name="apply-color-rules-to-the-analysis-grid"></a>Aplicar regras de cores à grade de análise
 Os ativos de armazenamento também incluem regras de cores, que oferecem uma maneira visual de identificar os diferentes tipos de erros na grade de análise. As regras de cores predefinidas aplicam-se aos erros HTTP, por isso elas aparecem somente para o rastreamento de rede e de log do servidor.
 
-Para aplicar as regras da cor, selecione **Regras da Cor** na faixa de opções da barra de ferramentas. Você verá as regras de cores do Armazenamento do Azure no menu. Para o tutorial, selecione **Erros do Cliente (StatusCode entre 400 e 499)**, conforme mostrado na figura abaixo.
+Para aplicar as regras da cor, selecione **Regras da Cor** na faixa de opções da barra de ferramentas. Você verá as regras de cores do Armazenamento do Azure no menu. Para o tutorial, selecione **Erros do Cliente (StatusCode entre 400 e 499)** , conforme mostrado na figura abaixo.
 
 ![Layout de Exibição do Armazenamento do Azure](./media/storage-e2e-troubleshooting/color-rules-menu.png)
 
@@ -278,7 +278,7 @@ A figura a seguir mostra uma solicitação específica em que uma operação Get
 
 Em seguida, correlacionamos essa ID de solicitação do cliente com os dados de log do cliente para ver as ações que o cliente tomou quando o erro ocorreu. Você pode exibir uma nova exibição de grade de análise para essa sessão para exibir os dados de log do cliente, que é aberto em uma segunda guia:
 
-1. Primeiro, copie o valor do campo **ClientRequestId** para a área de transferência. Você pode fazer isso selecionando qualquer linha, localizando o campo **ClientRequestId**, clicando com o botão direito no valor dos dados e escolhendo **Copiar 'ClientRequestId'**.
+1. Primeiro, copie o valor do campo **ClientRequestId** para a área de transferência. Você pode fazer isso selecionando qualquer linha, localizando o campo **ClientRequestId**, clicando com o botão direito no valor dos dados e escolhendo **Copiar 'ClientRequestId'** .
 2. Na faixa de opções da barra de ferramentas, selecione **Novo Visualizador** e **Grade de Análise** para abrir uma nova guia. A nova guia mostra todos os dados em seus arquivos de log, sem agrupamento, filtragem ou regras de cores.
 3. Na faixa de opções da barra de ferramentas, selecione **Layout de Exibição** e **Todas as Colunas do Cliente .NET** na seção **Armazenamento do Azure**. Esse layout do modo de exibição mostra dados do log do cliente, bem como os logs de rastreamento de servidor e rede. Por padrão, ele é classificado pela coluna **MessageNumber** .
 4. Em seguida, pesquise o log do cliente para a ID de solicitação do cliente. Na faixa de opções da barra de ferramentas, selecione **Localizar Mensagens** e especifique um filtro personalizado na ID de solicitação do cliente no campo **Localizar**. Use esta sintaxe para o filtro, especificando sua própria ID de solicitação de cliente:

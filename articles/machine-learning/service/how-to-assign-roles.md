@@ -12,10 +12,10 @@ author: Blackmist
 ms.date: 02/20/2019
 ms.custom: seodec18
 ms.openlocfilehash: 2410787c3307136f827ea7fc34df9a545a59cbf4
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65850899"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Gerenciar o acesso a um espaço de trabalho do Azure Machine Learning
@@ -58,7 +58,7 @@ O `user` campo é o endereço de email de um usuário existente na instância do
 az ml workspace share -n my_workspace -g my_resource_group --role Contributor --user jdoe@contoson.com
 ```
 
-## <a name="create-custom-role"></a>Criar uma função personalizada
+## <a name="create-custom-role"></a>Criar função personalizada
 
 Se as funções internas não forem suficientes, você pode criar funções personalizadas. Funções personalizadas podem ter ler, gravar, excluir e permissões de recurso no espaço de trabalho de computação. Você pode disponibilizar a função em um nível de espaço de trabalho específico, um nível de grupo de recursos específico ou um nível de assinatura específica.
 

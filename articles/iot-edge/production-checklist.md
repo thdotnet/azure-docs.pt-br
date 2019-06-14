@@ -10,10 +10,10 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: cb72949c0bb543885498b1b997fa0b4a644c204a
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65956971"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>Prepare-se para implantar sua solução IoT Edge em produção
@@ -50,7 +50,7 @@ Antes de colocar qualquer dispositivo em produção, você deve saber como geren
 * Bibliotecas do sistema operacional
 * Mecanismo de contêiner, como Moby
 * Daemon do IoT Edge
-* Certificados de Autoridade de Certificação
+* Certificados de AC
 
 Para conhecer as etapas para atualizar o daemon do IoT Edge, consulte [Atualizar o tempo de execução do IoT Edge](how-to-update-iot-edge.md). Os métodos atuais para atualizar o daemon IoT Edge exigem acesso físico ou SSH ao dispositivo IoT Edge. Se você tiver muitos dispositivos para atualizar, considere adicionar as etapas de atualização a um script ou use uma ferramenta de automação como Ansible para executar atualizações em escala.
 
@@ -215,7 +215,7 @@ Adicionar (ou acrescentar) essas informações em um arquivo chamado `daemon.jso
 | Plataforma | Local padrão |
 | -------- | -------- |
 | Linux | `/etc/docker/` |
-|  Windows | `C:\ProgramData\iotedge-moby\config\` |
+| Windows | `C:\ProgramData\iotedge-moby\config\` |
 
 O mecanismo de contêiner deve ser reiniciado para que as alterações entrem em vigor.
 

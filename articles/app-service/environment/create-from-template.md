@@ -15,10 +15,10 @@ ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: bdf722ffa7a7c499ff256392886e0f229f27c7a5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66137088"
 ---
 # <a name="create-an-ase-by-using-an-azure-resource-manager-template"></a>Criar um ASE usando um modelo do Azure Resource Manager
@@ -45,7 +45,7 @@ Para automatizar a criação do ASE:
 
 2. Depois que o ASE ILB for criado, um certificado SSL correspondente ao domínio do ASE ILB será carregado.
 
-3. O certificado SSL carregado é atribuído ao ASE ILB como seu certificado SSL “padrão”.  Esse certificado SSL será usado para o tráfego SSL dos aplicativos no ASE ILB quando eles usam o domínio-raiz comum atribuído ao ASE (por exemplo, https://someapp.mycustomrootdomain.com)).
+3. O certificado SSL carregado é atribuído ao ASE ILB como seu certificado SSL “padrão”.  Esse certificado SSL será usado para o tráfego SSL dos aplicativos no ASE ILB quando eles usam o domínio-raiz comum atribuído ao ASE (por exemplo, https://someapp.mycustomrootdomain.com) ).
 
 
 ## <a name="create-the-ase"></a>Criar o ASE
@@ -69,12 +69,12 @@ New-AzResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-
 Leva aproximadamente uma hora para o ASE ser criado. Em seguida, o ASE aparece no portal na lista de ASEs para a assinatura que disparou a implantação.
 
 ## <a name="upload-and-configure-the-default-ssl-certificate"></a>Carregar e configurar o certificado SSL "padrão"
-Um certificado SSL deve ser associado ao ASE como o certificado SSL “padrão” que é usado para estabelecer conexões SSL com aplicativos. Se o sufixo DNS padrão do ASE for *internal-contoso.com*, uma conexão com https://some-random-app.internal-contoso.com irá requerer um certificado SSL válido para **.internal-contoso.com*. 
+Um certificado SSL deve ser associado ao ASE como o certificado SSL “padrão” que é usado para estabelecer conexões SSL com aplicativos. Se o sufixo DNS padrão do ASE for *internal-contoso.com*, uma conexão com https://some-random-app.internal-contoso.com irá requerer um certificado SSL válido para * *.internal-contoso.com*. 
 
 Obtenha um certificado SSL válido, usando autoridades de certificação internas, adquirindo um certificado de um emissor externo ou usando um certificado autoassinado. Independentemente da origem do certificado SSL, os seguintes atributos de certificado devem ser configurados corretamente:
 
-* **Subject**: Esse atributo deve ser definido como **.your-root-domain-here.com*.
-* **Nome Alternativo da Entidade**: Esse atributo deve incluir **.your-root-domain-here.com* e **.scm.your-root-domain-here.com*. Conexões SSL para o site SCM/Kudu associados a cada aplicativo usam um endereço no formato *nome-do-seu-aplicativo.scm.seu-domínio-raiz-aqui.com*.
+* **Subject**: Esse atributo deve ser definido como * *.your-root-domain-here.com*.
+* **Nome Alternativo da Entidade**: Esse atributo deve incluir * *.your-root-domain-here.com* e * *.scm.your-root-domain-here.com*. Conexões SSL para o site SCM/Kudu associados a cada aplicativo usam um endereço no formato *nome-do-seu-aplicativo.scm.seu-domínio-raiz-aqui.com*.
 
 Com um certificado SSL válido em mãos, são necessárias mais duas etapas preparatórias. Converta ou salve o certificado SSL como um arquivo .pfx. Lembre-se que o arquivo .pfx deve incluir todos os certificados intermediários e raiz. Proteja-o com uma senha.
 
@@ -108,7 +108,7 @@ Depois que o certificado SSL for gerado com êxito e convertido em uma cadeia de
 Os parâmetros no arquivo *azuredeploy.parameters.json* estão listados abaixo:
 
 * *appServiceEnvironmentName*: o nome do ASE ILB que está sendo configurado.
-* *existingAseLocation*: cadeia de caracteres de texto que contém a região do Azure em que o ASE ILB foi implantado.  Por exemplo: "Centro-Sul dos EUA".
+* *existingAseLocation*: cadeia de caracteres de texto que contém a região do Azure em que o ASE ILB foi implantado.  Por exemplo:  "Centro-Sul dos EUA".
 * *pfxBlobString*: A representação de cadeia de caracteres codificada em base 64 do arquivo .pfx. Use o snippet de código mostrado anteriormente e copie a cadeia de caracteres contida em "exportedcert.pfx.b64". Cole-o como o valor de atributo *pfxBlobString*.
 * *password*: a senha usada para proteger o arquivo .pfx.
 * *certificateThumbprint*: A impressão digital do certificado. Se você recuperar esse valor do PowerShell (por exemplo, *$certificate.Thumbprint* do snippet de código anterior), poderá usar o valor como estiver. Se você copiar o valor da caixa de diálogo Certificado Windows, lembre-se de retirar os espaços estranhos. O *certificateThumbprint* deve ser semelhante a: AF3143EB61D43F6727842115BB7F17BBCECAECAE.
@@ -154,7 +154,7 @@ New-AzResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-
 
 Leva cerca de 40 minutos por front-end ASE para aplicar a alteração. Por exemplo, para um ASE padrão dimensionado que usa dois front-ends, o modelo leva aproximadamente uma hora e 20 minutos para concluir. Enquanto o modelo estiver em execução, o ASE não pode ser dimensionado.  
 
-Depois que o modelo for concluído, aplicativos em ASE ILB podem ser acessados via HTTPS. As conexões são protegidas usando o certificado SSL padrão. O certificado SSL padrão é usado quando aplicativos no ASE ILB forem endereçados utilizando uma combinação de nome do aplicativo com o nome do host padrão. Por exemplo, https://mycustomapp.internal-contoso.com usa o certificado SSL padrão para **.internal-contoso.com*.
+Depois que o modelo for concluído, aplicativos em ASE ILB podem ser acessados via HTTPS. As conexões são protegidas usando o certificado SSL padrão. O certificado SSL padrão é usado quando aplicativos no ASE ILB forem endereçados utilizando uma combinação de nome do aplicativo com o nome do host padrão. Por exemplo, https://mycustomapp.internal-contoso.com usa o certificado SSL padrão para * *.internal-contoso.com*.
 
 No entanto, assim como os aplicativos que são executados no serviço público multilocatário, os desenvolvedores podem configurar nomes de host personalizados para aplicativos individuais. Eles também podem configurar associações de certificado SSL SNI exclusivas para aplicativos individuais.
 

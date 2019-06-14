@@ -13,10 +13,10 @@ ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9c1620be30d8cdf3a592ab0fc118938783579689
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60474890"
 ---
 # <a name="set-up-security-info-preview-to-use-phone-calls"></a>Configurar informações de segurança (versão prévia) para usar chamadas telefônicas
@@ -86,11 +86,11 @@ Se quiser que chamadas telefônicas sejam o método padrão usando ao entrar na 
 
     ![Link Alterar do método de entrada padrão](media/security-info/securityinfo-myprofile-phonetext-defaultchange.png)
 
-2. Selecione **Telefone – chamada (*_seu_número_de_telefone_*)** na lista suspensa de métodos disponíveis e, em seguida, selecione **Confirmar**.
+2. Selecione **Telefone – chamada ( *_seu_número_de_telefone_* )** na lista suspensa de métodos disponíveis e, em seguida, selecione **Confirmar**.
 
     ![Selecione o método de entrada padrão](media/security-info/securityinfo-myprofile-phonecall-changeddefault.png)
 
-    O método padrão usado para alterações de entrada para **Telefone – chamada (*_seu_número_de_telefone_*)**.
+    O método padrão usado para alterações de entrada para **Telefone – chamada ( *_seu_número_de_telefone_* )** .
 
 ## <a name="additional-security-info-methods"></a>Métodos de informações de segurança adicionais
 Você tem opções adicionais de como sua organização entra em contato com você para confirmar sua identidade, com base no que você está tentando fazer. As opções incluem:

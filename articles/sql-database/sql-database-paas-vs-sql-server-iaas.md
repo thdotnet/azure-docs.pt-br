@@ -14,10 +14,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 03/11/2019
 ms.openlocfilehash: d9cd5ba0b697cbf67f943eb49d66010745d8561e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60584839"
 ---
 # <a name="choose-the-right-sql-server-option-in-azure"></a>Escolher a melhor opção do Microsoft SQL Server no Azure
@@ -25,7 +25,7 @@ ms.locfileid: "60584839"
 No Azure, suas cargas de trabalho do SQL Server podem ser executadas em uma infraestrutura hospedada (IaaS) ou como um serviço hospedado ([PaaS](https://azure.microsoft.com/overview/what-is-paas/)). Em PaaS, você tem várias opções de implantação e camadas de serviço dentro de cada opção de implantação. A questão principal que você precisa perguntar ao decidir entre PaaS ou IaaS é se você deseja gerenciar seu banco de dados, aplicar patches, fazer backups ou deseja delegar essas operações para o Azure?
 Dependendo da resposta, você tem as seguintes opções:
 
-- [Banco de Dados SQL do Azure](sql-database-technical-overview.md): Um mecanismo de banco de dados SQL totalmente gerenciado, com base na Edição Enterprise mais estável do Microsoft SQL Server. Isso é um banco de dados relacional como serviço (DBaaS) hospedado na nuvem do Azure que se enquadra na categoria do setor *Platform-as-a-Service (PaaS)*. O Banco de Dados SQL tem várias opções de implantação, cada uma das quais se baseia no hardware e no software padronizados que são de propriedade, hospedados e mantidos pela Microsoft. Com o Banco de Dados SQL, você pode usar recursos e funcionalidades internos que exigem ampla configuração quando usados no SQL Server (localmente ou em uma máquina virtual do Azure). Quando você usa o Banco de Dados SQL, ele é pré-pago, com opções para escalar verticalmente ou horizontalmente, de modo a ter maior capacidade, sem interrupção. O Banco de Dados SQL tem recursos adicionais que não estão disponíveis no SQL Server, como alta disponibilidade, inteligência e gerenciamento internos. O Banco de Dados SQL do Azure oferece as seguintes opções de implantação:
+- [Banco de Dados SQL do Azure](sql-database-technical-overview.md): Um mecanismo de banco de dados SQL totalmente gerenciado, com base na Edição Enterprise mais estável do Microsoft SQL Server. Isso é um banco de dados relacional como serviço (DBaaS) hospedado na nuvem do Azure que se enquadra na categoria do setor *Platform-as-a-Service (PaaS)* . O Banco de Dados SQL tem várias opções de implantação, cada uma das quais se baseia no hardware e no software padronizados que são de propriedade, hospedados e mantidos pela Microsoft. Com o Banco de Dados SQL, você pode usar recursos e funcionalidades internos que exigem ampla configuração quando usados no SQL Server (localmente ou em uma máquina virtual do Azure). Quando você usa o Banco de Dados SQL, ele é pré-pago, com opções para escalar verticalmente ou horizontalmente, de modo a ter maior capacidade, sem interrupção. O Banco de Dados SQL tem recursos adicionais que não estão disponíveis no SQL Server, como alta disponibilidade, inteligência e gerenciamento internos. O Banco de Dados SQL do Azure oferece as seguintes opções de implantação:
   
   - Como um [banco de dados individual](sql-database-single-database.md) com seu próprio conjunto de recursos gerenciado por um servidor do Banco de Dados SQL. Um banco de dados individual é semelhante a [bancos de dados independentes](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases) no SQL Server. Essa opção é otimizada para o desenvolvimento moderno de aplicativo de novos aplicativos de nuvem.
   - Uma [pool Elástico](sql-database-elastic-pool.md), que é uma coleção de bancos de dados com um conjunto compartilhado de recursos gerenciados por meio de um servidor do Banco de Dados SQL. Bancos de dados individuais podem ser movidos para dentro e para fora de um pool elástico. Essa opção é otimizada para desenvolvimento de aplicativos modernos de novos aplicativos de nuvem usando o aplicativo SaaS multilocatário.
@@ -107,7 +107,7 @@ No momento, o **Banco de Dados SQL** é vendido como um serviço e está dispon�
 
 - Com o banco de dados individual do Banco de Dados SQL, você pode escolher uma camada de serviço que atenda às suas necessidades de uma ampla variedade de preços começando em US$ 5/mês para a camada básica.
 - Você pode criar [pools elásticos](sql-database-elastic-pool.md) para compartilhar recursos entre as instâncias de banco de dados para reduzir os custos e acomodar os picos de uso.
-- Com a instância gerenciada do Banco de Dados SQL, você também pode usar sua própria licença. Para obter mais informações sobre como utilizar seu próprio licenciamento, consulte [Mobilidade de Licenças por meio do Software Assurance no Azure](https://azure.microsoft.com/pricing/license-mobility/) ou use a [calculadora do Benefício Híbrido do Azure](https://azure.microsoft.com/pricing/hybrid-benefit/#sql-database) para ver como **economizar até 40%**.
+- Com a instância gerenciada do Banco de Dados SQL, você também pode usar sua própria licença. Para obter mais informações sobre como utilizar seu próprio licenciamento, consulte [Mobilidade de Licenças por meio do Software Assurance no Azure](https://azure.microsoft.com/pricing/license-mobility/) ou use a [calculadora do Benefício Híbrido do Azure](https://azure.microsoft.com/pricing/hybrid-benefit/#sql-database) para ver como **economizar até 40%** .
 
 Além disso, você será cobrado pelo tráfego de Internet de saída a [taxas de transferência de dados](https://azure.microsoft.com/pricing/details/data-transfers/)regulares. Você ajustar as camadas de serviço e os tamanhos da computação dinamicamente para atender à variação das necessidades de produtividade do aplicativo.
 

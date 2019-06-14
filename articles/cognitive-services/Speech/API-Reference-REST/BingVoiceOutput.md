@@ -12,10 +12,10 @@ ms.date: 09/18/2018
 ms.author: priyar
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: a046bec5d81d828d88716d31c84e9cbcdcea1a08
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60515432"
 ---
 # <a name="bing-text-to-speech-api"></a>API de conversão de texto em fala do Bing
@@ -41,9 +41,9 @@ Content-Length: 0
 
 As informações de cabeçalho necessárias para o token de acesso são as seguintes.
 
-NOME| Formatar | Descrição
+NOME| Formatar | DESCRIÇÃO
 ----|----|----
-Ocp-Apim-Subscription-Key | ASCII | A chave de sua assinatura
+Ocp-Apim-Subscription-Key | ASCII | Sua chave de assinatura
 
 O serviço de token retorna o token de acesso do JWT como `text/plain`. Em seguida, o JWT é passado como `Base64 access_token` para o ponto de extremidade de fala como um cabeçalho de autorização prefixado com a cadeia de caracteres `Bearer`. Por exemplo:
 
@@ -62,7 +62,7 @@ A tabela a seguir mostra os cabeçalhos HTTP que são usados para solicitações
 
 Cabeçalho |Value |Comentários
 ----|----|----
-Tipo de Conteúdo | application/ssml+xml | O tipo do conteúdo de entrada.
+Tipo de conteúdo | application/ssml+xml | O tipo do conteúdo de entrada.
 X-Microsoft-OutputFormat | **1.** ssml-16khz-16bit-mono-tts <br> **2.** raw-16khz-16bit-mono-pcm <br>**3.** audio-16khz-16kbps-mono-siren <br> **4.** riff-16khz-16kbps-mono-siren <br> **5.** riff-16khz-16bit-mono-pcm <br> **6.** audio-16khz-128kbitrate-mono-mp3 <br> **7.** audio-16khz-64kbitrate-mono-mp3 <br> **8.** audio-16khz-32kbitrate-mono-mp3 | O formato de áudio de saída.
 X-Search-AppId | Um GUID (somente hexadecimal, sem traços) | Uma ID que identifica exclusivamente o aplicativo cliente. Pode ser a ID de armazenamento de aplicativos. Se uma não estiver disponível, a ID pode ser gerada pelo usuário para um aplicativo.
 X-Search-ClientID | Um GUID (somente hexadecimal, sem traços) | Uma ID que identifica exclusivamente uma instância de aplicativo para cada instalação.
@@ -122,7 +122,7 @@ Content-Length: 0
 
 ### <a name="ErrorResponse"></a>Respostas de erro
 
-Erro | Descrição
+Erro | DESCRIÇÃO
 ----|----
 HTTP/400 Bad Request | Um parâmetro obrigatório está faltando, é vazio ou nulo, ou o valor passado como um parâmetro obrigatório ou opcional é inválido. Um motivo para obter a resposta “inválida” é passar um valor de cadeia de caracteres maior do que o comprimento permitido. Inclui uma breve descrição do parâmetro problemático.
 HTTP/401 Unauthorized | A solicitação não foi autorizada.
@@ -215,9 +215,9 @@ en-IE | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Sp
 en-IN | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-IN, Heera, Apollo)”
 en-IN | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-IN, PriyaRUS)”
 en-IN | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-IN, Ravi, Apollo)”
-pt-BR | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-US, ZiraRUS)”
-pt-BR | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-US, JessaRUS)”
-pt-BR | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-US, BenjaminRUS)”
+en-US | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-US, ZiraRUS)”
+en-US | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-US, JessaRUS)”
+en-US | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (en-US, BenjaminRUS)”
 es-ES | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (es-ES, Laura, Apollo)”
 es-ES | Feminino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (es-ES, HelenaRUS)”
 es-ES | Masculino | “Voz da Conversão de Texto em Fala do Microsoft Server Speech (es-ES, Pablo, Apollo)”

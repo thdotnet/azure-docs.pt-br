@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/07/2019
 ms.openlocfilehash: 7415e13a445a73af197362c6cfbd3a865a2fea02
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65604057"
 ---
 # <a name="time-series-analysis-in-azure-data-explorer"></a>Análise de série temporal no Data Explorer do Azure
@@ -72,7 +72,7 @@ Na tabela acima, temos três partições. Podemos criar uma série de tempo sepa
 Nesta seção, executaremos funções típicas de processamento em série.
 Depois que um conjunto de séries temporais é criado, o ADX suporta uma lista crescente de funções para processá-las e analisá-las, que podem ser encontradas na [documentação de séries temporais](/azure/kusto/query/machine-learning-and-tsa). Descreveremos algumas funções representativas para processar e analisar séries temporais.
 
-### <a name="filtering"></a>Filtrando
+### <a name="filtering"></a>Filtragem
 
 A filtragem é uma prática comum no processamento de sinais e útil para tarefas de processamento de séries temporais (por exemplo, suavizar um sinal com ruído, alterar a detecção).
 - Há duas funções genéricas de filtragem:
@@ -142,7 +142,7 @@ demo_series3
 
 |   |   |   |   |
 | --- | --- | --- | --- |
-|   | períodos | scores | dias |
+|   | períodos | scores | days |
 |   | 84 | 0.820622786055595 | 7 |
 |   | 12 | 0.764601405803502 | 1 |
 
@@ -222,7 +222,7 @@ demo_many_series1
 
 |   |   |
 | --- | --- |
-|   | Count |
+|   | Contagem |
 |   | 18339 |
 
 Agora, vamos criar um conjunto de 18339 séries temporais da métrica de contagem de leitura. Adicionamos a cláusula `by` à instrução make-series, aplicamos a regressão linear e selecionamos as duas primeiras séries temporais que apresentaram a tendência decrescente mais significativa:

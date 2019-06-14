@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 02/28/2019
 ms.author: banders
 ms.openlocfilehash: ea625a61ed600dbaa22fef85987e9570a6fb7dbc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60371438"
 ---
 # <a name="get-started-with-your-billing-account-for-a-microsoft-customer-agreement"></a>Introdução à sua conta de cobrança para um contrato de cliente da Microsoft
@@ -59,7 +59,7 @@ Cada perfil de cobrança tem seus próprios métodos de pagamento que são usado
 | Type             | Definição  |
 |------------------|-------------|
 |Créditos do Azure    |  Os créditos são aplicados automaticamente para a quantidade total cobrada em sua fatura para calcular o valor que você precisa pagar. Para obter mais informações, consulte [acompanhar o saldo de crédito do Azure para o perfil de cobrança](billing-mca-check-azure-credits-balance.md). |
-|Cheque ou transferência eletrônica | Você pode pagar o valor devido para obter a fatura por meio da seleção ou um cabo de transferência. As instruções de pagamento são fornecidas na nota fiscal |
+|Seleção ou um cabo de transferência | Você pode pagar o valor devido para obter a fatura por meio da seleção ou um cabo de transferência. As instruções de pagamento são fornecidas na nota fiscal |
 
 ### <a name="control-azure-marketplace-and-reservation-purchases-by-applying-policies"></a>Compras de reserva e controle do Azure Marketplace por meio da aplicação de políticas
 
@@ -71,8 +71,8 @@ Os planos do Azure são habilitados automaticamente quando você cria um perfil 
 
 | Plano             | Definição  |
 |------------------|-------------|
-|Plano do Microsoft Azure   | Permitir que os usuários criem assinaturas que podem executar qualquer carga de trabalho. Para obter mais informações, consulte [plano do Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g/) |
-|Plano do Microsoft Azure para Desenvolvimento/Teste | Permitir que os assinantes do Visual Studio criar assinaturas que são restritas para o desenvolvimento ou teste de cargas de trabalho. Essas assinaturas obtêm os benefícios como acesso a imagens de máquina de virtual exclusivo e taxas menores no portal do Azure. Para obter mais informações, consulte [plano do Microsoft Azure para desenvolvimento/teste](https://azure.microsoft.com/offers/ms-azr-0148g/)|
+|Microsoft Azure Plan   | Permitir que os usuários criem assinaturas que podem executar qualquer carga de trabalho. Para obter mais informações, consulte [plano do Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g/) |
+|Plano do Microsoft Azure para desenvolvimento/teste | Permitir que os assinantes do Visual Studio criar assinaturas que são restritas para o desenvolvimento ou teste de cargas de trabalho. Essas assinaturas obtêm os benefícios como acesso a imagens de máquina de virtual exclusivo e taxas menores no portal do Azure. Para obter mais informações, consulte [plano do Microsoft Azure para desenvolvimento/teste](https://azure.microsoft.com/offers/ms-azr-0148g/)|
 
 ## <a name="understand-invoice-sections"></a>Entender as seções de nota fiscal
 

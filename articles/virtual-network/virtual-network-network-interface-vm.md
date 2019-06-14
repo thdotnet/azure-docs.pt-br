@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 12/15/2017
 ms.author: kumud
 ms.openlocfilehash: 23e46290af6bdb4c217d8fa0cd836673652fc81d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64701383"
 ---
 # <a name="add-network-interfaces-to-or-remove-network-interfaces-from-virtual-machines"></a>Adicionar adaptadores de rede ou remover adaptadores de rede de máquinas virtuais
@@ -56,7 +56,7 @@ Antes de criar a VM, crie um adaptador de rede usando as etapas em [Criar um ada
 
 1. Entre no Portal do Azure.
 2. Na caixa de pesquisa na parte superior do portal, digite o nome da VM à qual você deseja adicionar o adaptador de rede, ou procure a VM selecionando **Todos os serviços** e, em seguida, **Máquinas virtuais**. Depois de encontrar a VM, selecione-a. A VM deve dar suporte ao número de adaptadores de rede que você deseja adicionar. Para descobrir a quantos adaptadores de rede cada tamanho da VM dá suporte, consulte [Tamanhos de máquinas virtuais Linux no Azure](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) ou [Tamanhos de máquinas virtuais Windows no Azure](../virtual-machines/virtual-machines-windows-sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).  
-3. Selecione **Visão geral**, em **CONFIGURAÇÕES**. Selecione **Parar** e aguarde até que o **Status** da VM seja alterado para **Parado (desalocado)**.
+3. Selecione **Visão geral**, em **CONFIGURAÇÕES**. Selecione **Parar** e aguarde até que o **Status** da VM seja alterado para **Parado (desalocado)** .
 4. Selecione **Rede** em **CONFIGURAÇÕES**.
 5. Selecione **Anexar o adaptador de rede**. Na lista de adaptadores de rede que não estão conectados a outra VM, selecione aquele que você deseja anexar.
 
@@ -95,7 +95,7 @@ Você pode exibir os adaptadores de rede atualmente anexados a uma VM para saber
 
 1. Entre no Portal do Azure.
 2. Na caixa de pesquisa na parte superior do portal, procure o nome da VM da qual você deseja remover (desanexar) o adaptador de rede ou procure a VM selecionando **Todos os serviços** e, em seguida, **Máquinas virtuais**. Depois de encontrar a VM, selecione-a.
-3. Selecione **Visão geral**, em **CONFIGURAÇÕES**, e **Parar**. Aguarde até que o **Status** da VM seja alterado para **Parado (desalocado)**.
+3. Selecione **Visão geral**, em **CONFIGURAÇÕES**, e **Parar**. Aguarde até que o **Status** da VM seja alterado para **Parado (desalocado)** .
 4. Selecione **Rede** em **CONFIGURAÇÕES**.
 5. Selecione **Desanexar adaptador de rede**. Na lista de adaptadores de rede atualmente conectados à máquina virtual, selecione o adaptador de rede que você deseja desanexar.
 

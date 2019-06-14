@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 6bb587de2f0f3ef9c4e8c4a856ee4b7430e9b9cf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: f2b454e812db1eea686f82e92841163f1129b6c8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60631533"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64715225"
 ---
 # <a name="troubleshoot-storsimple-device-deployment-issues"></a>Solucionar problemas de implantação do dispositivo StorSimple
 ## <a name="overview"></a>Visão geral
@@ -82,7 +82,7 @@ As tabelas a seguir listam os erros comuns que podem ser encontrados quando voc�
 ## <a name="errors-during-the-optional-web-proxy-settings"></a>Erros durante as configurações de proxy da Web opcional
 | Nº | Mensagem de erro | Possíveis causas | Ação recomendada |
 | --- | --- | --- | --- |
-| 1 |Invoke-HcsSetupWizard: Parâmetro inválido (exceção de HRESULT: 0x80070057) |Um dos parâmetros fornecidos para as configurações do proxy não é válido. |O URI não foi fornecido no formato correto. Use o seguinte formato: http://*<IP address or FQDN of the web proxy server>*:*<TCP port number>* |
+| 1 |Invoke-HcsSetupWizard: Parâmetro inválido (exceção de HRESULT: 0x80070057) |Um dos parâmetros fornecidos para as configurações do proxy não é válido. |O URI não foi fornecido no formato correto. Use o seguinte formato: http:// *\<IP endereço ou FQDN do servidor proxy da web >* : *\<número da porta TCP >* |
 | 2 |Invoke-HcsSetupWizard: Servidor RPC não está disponível (exceção de HRESULT: 0x800706ba) |A causa raiz é uma das seguintes:<ol><li>O cluster não está ativo.</li><li>O controlador passivo não pode se comunicar com o controlador ativo e o comando é executado no controlador passivo.</li></ol> |Dependendo da causa raiz:<ol><li>[Contate o Suporte da Microsoft](storsimple-8000-contact-microsoft-support.md) para certificar-se de que o cluster esteja ativo.</li><li>Execute o comando do controlador ativo. Se você quiser executar o comando do controlador passivo, você precisará garantir que o controlador passivo pode se comunicar com o controlador ativo. Você precisará [contatar o Suporte da Microsoft](storsimple-8000-contact-microsoft-support.md) se essa conectividade for interrompida.</li></ol> |
 | 3 |Invoke-HcsSetupWizard: Falha na chamada RPC (exceção de HRESULT: 0x800706be) |O cluster está inoperante. |[Contate o Suporte da Microsoft](storsimple-8000-contact-microsoft-support.md) para certificar-se de que o cluster esteja ativo. |
 | 4 |Invoke-HcsSetupWizard: Cluster recurso não encontrado (exceção de HRESULT: 0x8007138f) |O recurso de cluster não foi encontrado. Isso poderá acontecer quando a instalação não tiver sido correta. |Talvez seja necessário redefinir o dispositivo para as configurações padrão de fábrica. [Contate o Suporte da Microsoft](storsimple-8000-contact-microsoft-support.md) para criar um recurso de cluster. |
@@ -135,7 +135,7 @@ Use o serviço Gerenciador de Dispositivos StorSimple em execução no Microsoft
 | 5 |Erro 350031: O dispositivo já foi registrado. | |Nenhuma ação é necessária. |
 | 6 |Erro 350016: Falha no registro de dispositivo. | |Verifique se a chave de registro está correta. |
 | 7 |Invoke-HcsSetupWizard: Ocorreu um erro ao registrar seu dispositivo; Isso pode ser devido a endereço IP incorreto ou o nome DNS. Verifique suas configurações de rede e tente novamente. Se o problema persistir, [contate o Suporte da Microsoft](storsimple-8000-contact-microsoft-support.md). (Erro 350050) |Verifique se o dispositivo pode executar ping na rede externa. Se você não tiver conectividade com a rede externa, o registro poderá falhar com esse erro. Esse erro pode ser uma combinação de um ou mais dos seguintes:<ul><li>IP incorreto</li><li>Sub-rede incorreta</li><li>Gateway incorreto</li><li>Configurações de DNS incorretas</li></ul> |Consulte as etapas no [Exemplo passo a passo de solução de problemas](#step-by-step-storsimple-troubleshooting-example). |
-| 8 |Invoke-HcsSetupWizard: A operação atual falhou devido a um erro de serviço interno [0x1FBE2]. Repita a operação após algum tempo. Se o problema persistir, contate o Suporte da Microsoft. |Esse é um erro genérico lançado para todos os erros de usuário invisíveis do serviço ou agente. O motivo mais comum pode a falha na autenticação do ACS. Uma possível causa da falha é que há problemas com a configuração do servidor NTP e hora do dispositivo não está definida corretamente. |Corrija a hora (se houver problemas) e, em seguida, repita a operação de registro. Se você usar o comando Set-HcsSystem -Timezone para ajustar o fuso horário, coloque em maiúscula a primeira letra de todas as palavras no fuso horário (por exemplo, "Hora Padrão do Pacífico").  Se o problema persistir, [contate o Suporte da Microsoft](storsimple-8000-contact-microsoft-support.md) para as próximas etapas. |
+| 8 |Invoke-HcsSetupWizard: A operação atual falhou devido a um erro de serviço interno [0x1FBE2]. Tente a operação novamente após algum tempo. Se o problema persistir, contate o Suporte da Microsoft. |Esse é um erro genérico lançado para todos os erros de usuário invisíveis do serviço ou agente. O motivo mais comum pode a falha na autenticação do ACS. Uma possível causa da falha é que há problemas com a configuração do servidor NTP e hora do dispositivo não está definida corretamente. |Corrija a hora (se houver problemas) e, em seguida, repita a operação de registro. Se você usar o comando Set-HcsSystem -Timezone para ajustar o fuso horário, coloque em maiúscula a primeira letra de todas as palavras no fuso horário (por exemplo, "Hora Padrão do Pacífico").  Se o problema persistir, [contate o Suporte da Microsoft](storsimple-8000-contact-microsoft-support.md) para as próximas etapas. |
 | 9 |Aviso: Não foi possível ativar o dispositivo. As senhas do administrador do dispositivo e do Gerenciador de Instantâneos StorSimple não foram alteradas. |Se o registro falhar, as senhas do administrador do dispositivo e do Gerenciador de Instantâneos StorSimple não serão alteradas. | |
 
 ## <a name="tools-for-troubleshooting-storsimple-deployments"></a>Ferramentas para solucionar problemas em implantações do StorSimple

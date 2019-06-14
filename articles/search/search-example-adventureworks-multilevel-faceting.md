@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: chstone
 ms.openlocfilehash: e17a91a35b69102e4e0ac6025559bbc32e71d8fb
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65024121"
 ---
 # <a name="example-multi-level-facets-in-azure-search"></a>Exemplo: Facetas de vários níveis no Azure Search
@@ -87,7 +87,7 @@ O objeto **categories** agora pode ser usado para renderizar uma árvore de taxo
   ![filtro com faceta de vários níveis](./media/search-example-adventureworks/multi-level-facet.png "multilevel faceted filter")
 
  
-Cada link na árvore deverá aplicar o filtro relacionado. Por exemplo: 
+Cada link na árvore deverá aplicar o filtro relacionado. Por exemplo:
 
 + **taxonomy/any**`(x:x eq 'Accessories')` retorna todos os documentos no branch Acessórios
 + **taxonomy/any**`(x:x eq 'Accessories|Bike Racks')` retorna apenas os documentos com uma subcategoria Suportes de Bicicleta no branch Acessórios.

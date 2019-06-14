@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 13808871d67bb47dce82c5a3493fd89b0dfe1dcd
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65952851"
 ---
 # <a name="email-one-time-passcode-authentication-preview"></a>Autenticação por senha avulsa por email (versão prévia)
@@ -74,7 +74,7 @@ Pode levar alguns minutos para que a ação de aceitação entre em vigor. Depoi
 2.  No painel de navegação, selecione **Azure Active Directory**.
 3.  Em **Gerenciar**, selecione **Relações Organizacionais**.
 4.  Escolha a opção **Configurações**.
-5.  Em **Habilitar Senha Avulsa por Email para convidados (Versão Prévia)**, selecione **Sim**.
+5.  Em **Habilitar Senha Avulsa por Email para convidados (Versão Prévia)** , selecione **Sim**.
  
 ### <a name="to-opt-in-using-powershell"></a>Para aceitar usando o PowerShell
 
@@ -141,7 +141,7 @@ Pode levar alguns minutos para que a ação de recusa entre em vigor. Se você d
 2.  No painel de navegação, selecione **Azure Active Directory**.
 3.  Em **Gerenciar**, selecione **Relações Organizacionais**.
 4.  Escolha a opção **Configurações**.
-5.  Em **Habilitar Senha Avulsa por Email para convidados (Versão Prévia)**, selecione **Não**.
+5.  Em **Habilitar Senha Avulsa por Email para convidados (Versão Prévia)** , selecione **Não**.
 
 ### <a name="to-turn-off-the-preview-using-powershell"></a>Para desativar a versão prévia usando o PowerShell
 Instale o módulo mais recente do AzureADPreview se você ainda não o tiver (confira [Pré-requisito: Instalar o módulo AzureADPreview mais recente](#prerequisite-install-the-latest-azureadpreview-module) acima). Em seguida, verifique se a política de versão prévia de senha avulsa existe atualmente, executando o seguinte:

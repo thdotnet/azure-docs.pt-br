@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/06/2019
 ms.author: terrylan
 ms.openlocfilehash: 9da7a3b91223b8a6fd25814a10a0cbafd645d132
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65231125"
 ---
 # <a name="securing-paas-deployments"></a>Proteção de implantações de PaaS
@@ -115,7 +115,7 @@ A tabela a seguir lista as ameaças STRIDE e fornece algumas mitigações de exe
 | --- | --- | --- |
 | Falsificação | Authentication | Exigir conexões HTTPS. |
 | Violação | Integridade | Validar certificados SSL. |
-| Repúdio | Não recusa | Habilitar o [monitoramento e diagnóstico](https://docs.microsoft.com/azure/architecture/best-practices/monitoring) do Azure. |
+| Repúdio | Não repúdio | Habilitar o [monitoramento e diagnóstico](https://docs.microsoft.com/azure/architecture/best-practices/monitoring) do Azure. |
 | Divulgação de informações confidenciais | Confidencialidade | Criptografar dados confidenciais em repouso usando [certificados de serviço](https://docs.microsoft.com/rest/api/appservice/certificates). |
 | Negação de serviço | Disponibilidade | Monitorar as métricas de desempenho quanto a possíveis condições de negação de serviço. Implementar filtros de conexão. |
 | Elevação de privilégio | Autorização | Usar o [Privileged Identity Management](../active-directory/privileged-identity-management/subscription-requirements.md). |

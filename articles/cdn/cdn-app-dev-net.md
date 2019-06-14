@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: 838c76e6a383b61ff465f3ed7506af34c8cd01d4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60579879"
 ---
 # <a name="get-started-with-azure-cdn-development"></a>Introdução ao desenvolvimento de CDN do Azure
@@ -51,7 +51,7 @@ Nosso projeto usará algumas bibliotecas do Azure contidas em pacotes NuGet.  Va
 1. Clique no menu **Ferramentas**, **Gerenciador de Pacotes Nuget** e, em seguida, **Console do Gerenciador de Pacotes**.
    
     ![Gerenciar pacotes NuGet](./media/cdn-app-dev-net/cdn-manage-nuget.png)
-2. No Console do Gerenciador de Pacotes, execute o seguinte comando para instalar a **ADAL (Biblioteca de Autenticação do Active Directory)**:
+2. No Console do Gerenciador de Pacotes, execute o seguinte comando para instalar a **ADAL (Biblioteca de Autenticação do Active Directory)** :
    
     `Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory`
 3. Execute o seguinte para instalar a **biblioteca de gerenciamento do Azure CDN**:
@@ -73,7 +73,7 @@ Vejamos a estrutura básica do nosso programa gravado.
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
     using Microsoft.Rest;
     ```
-2. Precisamos definir algumas constantes que serão usadas nos nossos métodos.  Na classe `Program`, mas antes do método `Main`, adicione o seguinte.  Certifique-se de substituir os espaços reservados, inclusive os **&lt;colchetes angulares&gt;**, por seus próprios valores, conforme necessário.
+2. Precisamos definir algumas constantes que serão usadas nos nossos métodos.  Na classe `Program`, mas antes do método `Main`, adicione o seguinte.  Certifique-se de substituir os espaços reservados, inclusive os **&lt;colchetes angulares&gt;** , por seus próprios valores, conforme necessário.
    
     ```csharp
     //Tenant app constants

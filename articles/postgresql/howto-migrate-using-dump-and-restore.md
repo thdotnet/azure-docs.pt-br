@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: aa9485ec8fcabdc0276e0598bd3e19f04d70dfa1
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65066974"
 ---
 # <a name="migrate-your-postgresql-database-using-dump-and-restore"></a>Migrar seu banco de dados PostgreSQL usando despejar e restaurar
@@ -61,7 +61,7 @@ Uma maneira de migrar seu banco de dados PostgreSQL existente para o serviço Ba
 >
 
 ### <a name="for-the-backup"></a>Para o backup
-- Faça o backup com a opção -Fc para que você possa executar a restauração em paralelo para acelerá-la. Por exemplo: 
+- Faça o backup com a opção -Fc para que você possa executar a restauração em paralelo para acelerá-la. Por exemplo:
 
     ```
     pg_dump -h MySourceServerName -U MySourceUserName -Fc -d MySourceDatabaseName > Z:\Data\Backups\MyDatabaseBackup.dump
@@ -72,7 +72,7 @@ Uma maneira de migrar seu banco de dados PostgreSQL existente para o serviço Ba
 
 - Isso já deve estar feito por padrão, mas abra o arquivo de despejo para verificar se as instruções create index estão após a inserção dos dados. Se não estiverem, coloque as instruções create index após a inserção dos dados.
 
-- Restauração com as opções -Fc e -j *#* para paralelizar a restauração. *#* é o número de núcleos no servidor de destino. Você também pode experimentar com *#* definido como duas vezes o número de núcleos do servidor de destino para ver o impacto. Por exemplo: 
+- Restauração com as opções -Fc e -j *#* para paralelizar a restauração. *#* é o número de núcleos no servidor de destino. Você também pode experimentar com *#* definido como duas vezes o número de núcleos do servidor de destino para ver o impacto. Por exemplo:
 
     ```
     pg_restore -h MyTargetServer.postgres.database.azure.com -U MyAzurePostgreSQLUserName -Fc -j 4 -d MyTargetDatabase Z:\Data\Backups\MyDatabaseBackup.dump

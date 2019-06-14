@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 07/13/2018
 ms.author: kumud
 ms.openlocfilehash: 3267d79387586f5ca8475d7ac0ed0f86d3f64f0d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60595036"
 ---
 # <a name="outbound-connections-classic"></a>Conexões de saída (Clássico)
@@ -39,7 +39,7 @@ O Azure fornece três métodos diferentes para obter implantações Clássicas d
 
 | Cenário | Método | Protocolos de IP | DESCRIÇÃO | Função de trabalho da Web | IaaS | 
 | --- | --- | --- | --- | --- | --- |
-| [1. VM com um endereço IP em Nível de Instância](#ilpip) | SNAT, disfarce de porta não usado | TCP, UDP, ICMP, ESP | O Azure usa a máquina virtual atribuída ao IP público. A instância possui todas as portas efêmeras disponíveis. | Não  | Sim |
+| [1. VM com um endereço IP em Nível de Instância](#ilpip) | SNAT, disfarce de porta não usado | TCP, UDP, ICMP, ESP | O Azure usa a máquina virtual atribuída ao IP público. A instância possui todas as portas efêmeras disponíveis. | Não | Sim |
 | [2. ponto de extremidade público com balanceamento de carga](#publiclbendpoint) | SNAT com disfarce de porta (PAT) para o ponto de extremidade público | TCP, UDP | O Azure compartilha o ponto de extremidade público do endereço IP público com vários pontos de extremidade privados. O Azure usa portas efêmeras do ponto de extremidade público para PAT. | Sim | Sim |
 | [3. VM autônoma](#defaultsnat) | SNAT com disfarce de porta (PAT) | TCP, UDP | O Azure designa automaticamente um endereço IP público para SNAT, compartilha esse endereço IP público com toda a implantação e usa portas efêmeras do endereço IP do ponto de extremidade público para PAT. Este é um cenário de fallback para os cenários anteriores. Não é recomendável se você precisar de visibilidade e controle. | Sim | Sim |
 
@@ -110,7 +110,7 @@ A tabela a seguir mostra as pré-alocações de porta SNAT para níveis de taman
 
 | Instâncias | Portas SNAT pré-alocadas por instância |
 | --- | --- |
-| 1-50 | 1.024 |
+| 1-50 | 1\.024 |
 | 51-100 | 512 |
 | 101-200 | 256 |
 | 201-400 | 128 |

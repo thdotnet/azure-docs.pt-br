@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: hrasheed
 ms.openlocfilehash: 7480dafe435e555bfba81ebd9242bb5724c0bf3f
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65861588"
 ---
 # <a name="run-apache-hive-queries-using-the-data-lake-tools-for-visual-studio"></a>Executar consultas do Apache Hive usando as ferramentas do Data Lake para Visual Studio
@@ -21,7 +21,7 @@ Saiba como usar as ferramentas do Data Lake para Visual Studio para consultar o 
 
 ## <a id="prereq"></a>Pré-requisitos
 
-* Um cluster do Apache Hadoop no HDInsight. Ver [Introdução ao HDInsight no Linux](./apache-hadoop-linux-tutorial-get-started.md).
+* Um cluster do Apache Hadoop no HDInsight. Consulte [Introdução ao HDInsight no Linux](./apache-hadoop-linux-tutorial-get-started.md).
 
 * Visual Studio (uma das versões a seguir):
 
@@ -67,7 +67,7 @@ Consultas ad hoc podem ser executadas em qualquer um **lote** ou **interativo** 
    
     ![Captura de tela de um exemplo 2 de IntelliSense das Ferramentas do Visual Studio do HDInsight](./media/apache-hadoop-use-hive-visual-studio/vs-intellisense-column-name.png "U-SQL IntelliSense")
 
-7. Selecione **Enviar** ou **Enviar (Avançado)**.
+7. Selecione **Enviar** ou **Enviar (Avançado)** .
 
    Se você selecionar a opção de envio avançado, configure **Nome do Trabalho**, **Argumentos**, **Configurações Adicionais** e **Diretório de Status** para o script:
 

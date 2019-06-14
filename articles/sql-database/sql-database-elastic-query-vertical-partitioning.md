@@ -7,17 +7,16 @@ ms.subservice: scale-out
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: WenJason
-ms.author: v-jay
+author: MladjoA
+ms.author: mlandzic
 ms.reviewer: sstein
-manager: digimobile
-origin.date: 01/25/2019
-ms.date: 02/25/2019
+manager: craigg
+ms.date: 01/25/2019
 ms.openlocfilehash: e7ba8057cd22c5cc1080b4a6d95f17bf76d4acb2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60585385"
 ---
 # <a name="query-across-cloud-databases-with-different-schemas-preview"></a>Consultar entre bancos de dados na nuvem com esquemas diferentes (visualização)
@@ -52,7 +51,7 @@ A credencial é usada pela consulta elástica para se conectar aos bancos de dad
     [;]
 
 > [!NOTE]
-> Verifique se o `<username>` não inclui nenhum sufixo **"\@servername"**. 
+> Verifique se o `<username>` não inclui nenhum sufixo **"\@servername"** . 
 >
 
 ## <a name="create-external-data-sources"></a>Criar fontes de dados externas
@@ -62,8 +61,8 @@ Sintaxe:
     <External_Data_Source> ::=
     CREATE EXTERNAL DATA SOURCE <data_source_name> WITH 
                (TYPE = RDBMS,
-                LOCATION = '<fully_qualified_server_name>',
-                DATABASE_NAME = '<remote_database_name>',  
+                LOCATION = ’<fully_qualified_server_name>’,
+                DATABASE_NAME = ‘<remote_database_name>’,  
                 CREDENTIAL = <credential_name> 
                 ) [;] 
 
@@ -79,7 +78,7 @@ O exemplo a seguir ilustra o uso da instrução CRIAR para fontes de dados exter
     WITH 
     ( 
         TYPE=RDBMS, 
-        LOCATION='myserver.database.chinacloudapi.cn', 
+        LOCATION='myserver.database.windows.net', 
         DATABASE_NAME='ReferenceData', 
         CREDENTIAL= SqlUser 
     ); 
@@ -143,7 +142,7 @@ A instrução DDL a seguir remove uma definição existente da tabela externa do
 
 **Permissões para CREATE/DROP EXTERNAL TABLE**: As permissões ALTER ANY EXTERNAL DATA SOURCE são necessárias para a DDL da tabela externa, o que também é necessário para fazer referência à fonte de dados subjacente.  
 
-## <a name="security-considerations"></a>Considerações de segurança
+## <a name="security-considerations"></a>Considerações sobre segurança
 
 Usuários com acesso à tabela externa têm acesso automaticamente a tabelas remotas subjacentes com a credencial fornecida na definição de fonte de dados externa. Você deve gerenciar cuidadosamente o acesso à tabela externa para evitar a elevação indesejada de privilégios por meio da credencial da fonte de dados externa. Permissões de SQL regulares podem ser usadas para o acesso de GRANT ou REVOKE a uma tabela externa como se ela fosse uma tabela normal.  
 

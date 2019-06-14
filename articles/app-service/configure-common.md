@@ -17,10 +17,10 @@ ms.date: 04/25/2017
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: bcc970375120f76e4ec8a90f487d251296f92dba
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65957904"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Configurar um aplicativo de serviço de aplicativo no portal do Azure
@@ -31,7 +31,7 @@ Este tópico explica como definir as configurações comuns para aplicativos web
 
 Serviço de aplicativo, você usará as configurações de aplicativo como variáveis de ambiente. No [portal do Azure], navegue até a página de gerenciamento do seu aplicativo. No menu da esquerda do aplicativo, clique em **Configuration** > **configurações do aplicativo**.
 
-![Configurações do Aplicativo](./media/configure-common/open-ui.png)
+![Configurações do aplicativo](./media/configure-common/open-ui.png)
 
 Para os desenvolvedores ASP.NET e ASP.NET Core, as configurações de aplicativo de configuração no serviço de aplicativo são como defini-las na `<appSettings>` na *Web. config*, mas os valores no serviço de aplicativo substituem aquelas na *Web. config*. Você pode manter as configurações de desenvolvimento (por exemplo, senha local do MySQL) no *Web. config*, mas os segredos de produção (por exemplo, senha de banco de dados MySQL do Azure) seguros no serviço de aplicativo. O mesmo código usa as configurações de desenvolvimento quando você depura localmente e, em seguida, usa seus segredos de produção quando implantado no Azure.
 
@@ -92,7 +92,7 @@ Configurações do aplicativo tem a formatação do seguinte JSON:
 
 No [portal do Azure], navegue até a página de gerenciamento do aplicativo. No menu da esquerda do aplicativo, clique em **Configuration** > **configurações do aplicativo**.
 
-![Configurações do Aplicativo](./media/configure-common/open-ui.png)
+![Configurações do aplicativo](./media/configure-common/open-ui.png)
 
 Para os desenvolvedores ASP.NET e ASP.NET Core, cadeias de caracteres de conexão de configuração no serviço de aplicativo são como defini-las na `<connectionStrings>` na *Web. config*, mas os valores definidos no serviço de aplicativo substituem aquelas na *Web. config*. Você pode manter as configurações de desenvolvimento (por exemplo, um arquivo de banco de dados) em *Web. config* e segredos de produção (por exemplo, credenciais de banco de dados SQL) seguros no serviço de aplicativo. O mesmo código usa as configurações de desenvolvimento quando você depura localmente e, em seguida, usa seus segredos de produção quando implantado no Azure.
 

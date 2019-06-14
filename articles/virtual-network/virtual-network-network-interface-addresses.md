@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 07/24/2017
 ms.author: kumud
 ms.openlocfilehash: 4582f7be8e48e493a1adcb8ffc6c3a8bfe43a58e
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65506370"
 ---
 # <a name="add-change-or-remove-ip-addresses-for-an-azure-network-interface"></a>Adicionar, alterar ou remover endereços IP para um adaptador de rede do Azure
@@ -56,12 +56,12 @@ Você pode adicionar quantos endereços [IPv4](#ipv4) [privados](#private) e [p�
    |NOME|Sim|Deve ser exclusivo ao adaptador de rede|
    |Type|Sim|Como você está adicionando uma configuração de IP a um adaptador de rede existente, e cada adaptador de rede deve ter uma configuração de IP [primária](#primary), sua única opção é **Secundária**.|
    |Método de atribuição de endereço IP privado|Sim|[**Dinâmico**](#dynamic): o Azure atribui o próximo endereço disponível para o intervalo de endereços de sub-rede na qual o adaptador de rede está implantado. [**Estático**](#static): você atribui um endereço não usado ao intervalo de endereços de sub-rede na qual o adaptador de rede está implantado.|
-   |Endereço IP Público|Não|**Desabilitado:** no momento, nenhum recurso de endereço IP público está associado à configuração de IP. **Habilitado:** selecione um endereço IP público IPv4 existente ou crie um novo. Para saber como criar um endereço IP público, leia o artigo [Endereços IP públicos](virtual-network-public-ip-address.md#create-a-public-ip-address).|
+   |Endereço IP público|Não|**Desabilitado:** no momento, nenhum recurso de endereço IP público está associado à configuração de IP. **Habilitado:** selecione um endereço IP público IPv4 existente ou crie um novo. Para saber como criar um endereço IP público, leia o artigo [Endereços IP públicos](virtual-network-public-ip-address.md#create-a-public-ip-address).|
 6. Adicione manualmente endereços IP privados secundários ao sistema operacional da máquina virtual seguindo as instruções do artigo [Como atribuir vários endereços IP a sistemas operacionais de máquina virtual](virtual-network-multiple-ip-addresses-portal.md#os-config). Confira endereços IP [privados](#private) para ver considerações especiais antes de adicionar manualmente os endereços IP ao sistema operacional de uma máquina virtual. Não adicione endereços IP públicos ao sistema operacional da máquina virtual.
 
 **Comandos**
 
-|Tool|Comando|
+|Ferramenta|Comando|
 |---|---|
 |CLI|[az network nic ip-config create](/cli/azure/network/nic/ip-config)|
 |PowerShell|[Add-AzNetworkInterfaceIpConfig](/powershell/module/az.network/add-aznetworkinterfaceipconfig)|
@@ -82,7 +82,7 @@ Você pode precisar alterar o método de atribuição de endereço IPv4, alterar
 
 **Comandos**
 
-|Tool|Comando|
+|Ferramenta|Comando|
 |---|---|
 |CLI|[az network nic ip-config update](/cli/azure/network/nic/ip-config)|
 |PowerShell|[Set-AzNetworkInterfaceIpConfig](/powershell/module/az.network/set-aznetworkinterfaceipconfig)|
@@ -98,7 +98,7 @@ Você pode remover endereços IP [privados](#private) e [públicos ](#public) de
 
 **Comandos**
 
-|Tool|Comando|
+|Ferramenta|Comando|
 |---|---|
 |CLI|[az network nic ip-config delete](/cli/azure/network/nic/ip-config)|
 |PowerShell|[Remove-AzNetworkInterfaceIpConfig](/powershell/module/az.network/remove-aznetworkinterfaceipconfig)|
@@ -107,7 +107,7 @@ Você pode remover endereços IP [privados](#private) e [públicos ](#public) de
 
 Os endereços IP [privados](#private) e (opcionalmente) [públicos](#public) são atribuídos a uma ou mais configurações de IP atribuídas a um adaptador de rede. Há dois tipos de configurações de IP:
 
-### <a name="primary"></a>Principal
+### <a name="primary"></a>Primária
 
 Cada adaptador de rede recebe uma configuração de IP primário. Uma configuração de IP primário:
 
@@ -170,7 +170,7 @@ Endereços IPv4 e (opcionalmente) IPv6 privados dinâmicos são atribuídos por 
 - **Somente público**: o Azure atribui o endereço de um intervalo exclusivo a cada região do Azure. Para saber quais intervalos são atribuídos a cada região, consulte [Intervalos de IP de Datacenter do Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). O endereço pode ser alterado quando uma máquina virtual é parada (desalocada) e, em seguida, iniciada novamente. Não é possível atribuir um endereço IPv6 público a uma configuração de IP usando um desses métodos de atribuição.
 - **Somente privado**: o Azure reserva os primeiros quatro endereços em cada intervalo de endereços de sub-rede e não atribui os endereços. O Azure atribui o próximo endereço disponível a um recurso no intervalo de endereços de sub-rede. Por exemplo, se o intervalo de endereços da sub-rede é 10.0.0.0/16 e os endereços 10.0.0.0.4-10.0.0.14 já estão atribuídos (.0-.3 estão reservados), o Azure atribui 10.0.0.15 ao recurso. Dinâmico é o método de alocação padrão. Uma vez atribuído, os endereços IP dinâmicos só são liberados se um adaptador de rede é excluído, atribuído a uma sub-rede diferente na mesma rede virtual ou se o método de alocação é alterado para estático e um endereço IP diferente é especificado. Por padrão, o Azure atribui o endereço anterior atribuído dinamicamente como o endereço estático quando você altera o método de alocação de dinâmico para estático. Você só pode atribuir um endereço IPv6 privado usando o método de atribuição dinâmica.
 
-### <a name="static"></a>Static
+### <a name="static"></a>Estático
 
 Você pode, como opção, atribuir um endereço IPv4 estático público ou privado a uma configuração de IP. Não é possível atribuir um endereço IPv6 estático público ou privado a uma configuração de IP. Para saber mais sobre como o Azure atribui endereços IPv4 estáticos públicos, confira [Endereço IP público](virtual-network-public-ip-address.md).
 
@@ -204,7 +204,7 @@ Um endereço IP público é criado com o SKU Básico ou Standard. Para obter mai
 ## <a name="next-steps"></a>Próximas etapas
 Para criar uma máquina virtual com diferentes configurações de IP, leia os seguintes artigos:
 
-|Tarefa|Tool|
+|Tarefa|Ferramenta|
 |---|---|
 |Criar uma VM com várias interfaces de rede|[CLI](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [PowerShell](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 |Criar uma VM com um NIC com vários endereços IPv4|[CLI](virtual-network-multiple-ip-addresses-cli.md), [PowerShell](virtual-network-multiple-ip-addresses-powershell.md)|

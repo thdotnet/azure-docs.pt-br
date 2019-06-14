@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: yagupta
 ms.openlocfilehash: a009f212bd8baaa353d602dc6090aeeccddd4936
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60878347"
 ---
 # <a name="encryption-of-data-in-azure-data-lake-storage-gen1"></a>Criptografia de dados no Azure Data Lake Storage Gen1
@@ -56,11 +56,11 @@ Aqui está uma breve comparação dos recursos fornecidos por dois modos de gere
 | --- | --- | --- |
 |Como os dados são armazenados?|Sempre criptografados antes de serem armazenados.|Sempre criptografados antes de serem armazenados.|
 |Qual é a Chave de Criptografia Mestra armazenada?|Key Vault|Key Vault|
-|Qualquer chave de criptografia é armazenada de modo transparente fora do Key Vault? |Não |Não |
+|Qualquer chave de criptografia é armazenada de modo transparente fora do Key Vault? |Não|Não|
 |A MEK pode recuperada pelo Key Vault?|Não. Após a MEK ser armazenada no Key Vault, ela só pode ser usada para criptografia e descriptografia.|Não. Após a MEK ser armazenada no Key Vault, ela só pode ser usada para criptografia e descriptografia.|
 |Quem possui a instância e a MEK do Key Vault?|O serviço Azure Data Lake Storage Gen1|Você é o proprietário da instância do Key Vault, que pertence à sua própria assinatura do Azure. A MEK no Key Vault pode ser gerenciada pelo software ou hardware.|
-|É possível revogar o acesso ao MEK para o serviço Data Lake Storage Gen1?|Não |Sim. É possível gerenciar listas de controle de acesso no Key Vault e remover entradas de controle de acesso à identidade de serviço do serviço Data Lake Storage Gen1.|
-|Você pode excluir permanentemente a MEK?|Não |Sim. Se você excluir a MEK do Key Vault, os dados da conta Data Lake Storage Gen1 não poderão ser descriptografados por ninguém, incluindo o serviço Data Lake Storage Gen1. <br><br> Se você fez explicitamente um backup da MEK antes da exclui-la do Key Vault, a MEK pode ser restaurada e os dados podem ser recuperados. No entanto, se você não tiver feito o backup da MEK antes de excluí-la do Key Vault, os dados da conta Data Lake Storage Gen1 nunca poderão ser descriptografados depois disso.|
+|É possível revogar o acesso ao MEK para o serviço Data Lake Storage Gen1?|Não|Sim. É possível gerenciar listas de controle de acesso no Key Vault e remover entradas de controle de acesso à identidade de serviço do serviço Data Lake Storage Gen1.|
+|Você pode excluir permanentemente a MEK?|Não|Sim. Se você excluir a MEK do Key Vault, os dados da conta Data Lake Storage Gen1 não poderão ser descriptografados por ninguém, incluindo o serviço Data Lake Storage Gen1. <br><br> Se você fez explicitamente um backup da MEK antes da exclui-la do Key Vault, a MEK pode ser restaurada e os dados podem ser recuperados. No entanto, se você não tiver feito o backup da MEK antes de excluí-la do Key Vault, os dados da conta Data Lake Storage Gen1 nunca poderão ser descriptografados depois disso.|
 
 
 Além dessa diferença de quem gerencia a MEK e a instância do Key Vault no qual ela reside, o restante do design é o mesmo para ambos os modos.

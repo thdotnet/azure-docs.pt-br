@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ericrad
 ms.openlocfilehash: e6a376803d8617e01ee279e40a33f6c1c3b748fd
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65508191"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-windows-vms"></a>Serviço de Metadados do Azure: Eventos Agendados para VMs do Windows
@@ -68,7 +68,7 @@ O serviço de eventos agendados tem controle de versão. As versões são obriga
 | - | - | - | - |
 | 2017-11-01 | Disponibilidade geral | Todos | <li> Adicionado suporte para remoção de VMs de baixa prioridade EventType 'Preempt'<br> | 
 | 2017-08-01 | Disponibilidade geral | Todos | <li> Removido o sublinhado inicial dos nomes de recursos para as VMs de IaaS<br><li>Requisito de cabeçalho de metadados imposto para todas as solicitações | 
-| 2017-03-01 | Visualizar | Todos |<li>Versão inicial
+| 2017-03-01 | Visualização | Todos |<li>Versão inicial
 
 > [!NOTE] 
 > Versões de visualização anteriores de eventos agendados compatíveis {mais recentes} como a api-version. Esse formato não é mais suportado e será substituído no futuro.
@@ -91,7 +91,7 @@ Ao consultar o Serviço de Metadados você deverá fornecer o cabeçalho `Metada
 ### <a name="query-for-events"></a>Consulta de eventos
 Você pode consultar Eventos agendados realizando a chamada a seguir:
 
-#### <a name="powershell"></a>PowerShell
+#### <a name="powershell"></a>Powershell
 ```
 curl http://169.254.169.254/metadata/scheduledevents?api-version=2017-11-01 -H @{"Metadata"="true"}
 ```
@@ -116,7 +116,7 @@ No caso de haver eventos agendados, a resposta contém uma matriz de eventos:
 O DocumentIncarnation é uma ETag e fornece uma maneira fácil de inspecionar se a carga de eventos foi alterada desde a última consulta.
 
 ### <a name="event-properties"></a>Propriedades do evento
-|Propriedade  |  Descrição |
+|Propriedade  |  DESCRIÇÃO |
 | - | - |
 | EventId | Identificador global exclusivo para esse evento. <br><br> Exemplo: <br><ul><li>602d9444-d2cd-49c7-8624-8643e7171297  |
 | EventType | Impacto desse evento. <br><br> Valores: <br><ul><li> `Freeze`: A máquina Virtual está agendada para pausar por alguns segundos. Conectividade de rede e CPU pode ser suspenso, mas não há nenhum impacto na memória ou em arquivos abertos. <li>`Reboot`: A Máquina Virtual está agendada para ser reinicializada (a memória não persistente é perdida). <li>`Redeploy`: A Máquina Virtual está agendada para ser movida para outro nó (os discos efêmeros são perdidos). <li>`Preempt`: A máquina Virtual de baixa prioridade está sendo excluída (discos efêmeros são perdidos).|
@@ -131,7 +131,7 @@ Cada evento é agendado uma quantidade mínima de tempo no futuro com base no ti
 |EventType  | Aviso mínimo |
 | - | - |
 | Congelamento| 15 minutos |
-| Reinicializar | 15 minutos |
+| Reboot | 15 minutos |
 | Reimplantar | 10 minutos |
 | Antecipe | 30 segundos |
 
@@ -159,7 +159,7 @@ A seguir vemos o json esperado no corpo da solicitação `POST`. A solicitação
 }
 ```
 
-#### <a name="powershell"></a>PowerShell
+#### <a name="powershell"></a>Powershell
 ```
 curl -H @{"Metadata"="true"} -Method POST -Body '{"StartRequests": [{"EventId": "f020ba2e-3bc0-4c40-a10b-86575a9eabd5"}]}' -Uri http://169.254.169.254/metadata/scheduledevents?api-version=2017-11-01
 ```

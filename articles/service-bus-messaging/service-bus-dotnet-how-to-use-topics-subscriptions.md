@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/15/2019
 ms.author: aschhab
 ms.openlocfilehash: 2ca8f0e34b63802453c8876f878b531e78e66d76
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65991765"
 ---
 # <a name="get-started-with-service-bus-topics"></a>Introdução aos tópicos do Barramento de Serviço
@@ -47,7 +47,7 @@ Para enviar mensagens para o tópico, escreva um aplicativo de console C# usando
 
 ### <a name="create-a-console-application"></a>Criar um aplicativo de console
 
-Inicie o Visual Studio e crie um novo projeto de **Aplicativo de console (.NET Core)**.
+Inicie o Visual Studio e crie um novo projeto de **Aplicativo de console (.NET Core)** .
 
 ### <a name="add-the-service-bus-nuget-package"></a>Adicionar o pacote NuGet do Barramento de Serviço
 
@@ -395,7 +395,7 @@ Para receber as mensagens enviadas por você, crie outro aplicativo de console .
 Parabéns! Usando a biblioteca .NET padrão, você acabou de criar um tópico e uma assinatura, enviar 10 mensagens e receber essas mensagens.
 
 > [!NOTE]
-> Você pode gerenciar recursos do barramento de serviço com [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). O Service Bus Explorer permite aos usuários para se conectar a um namespace do barramento de serviço e administrar entidades de mensagens de uma maneira fácil. A ferramenta fornece recursos avançados, como a funcionalidade de importação/exportação ou a capacidade de testar tópico, filas, assinaturas, serviços de retransmissão, os hubs de notificação e os hubs de eventos. 
+> É possível gerenciar os recursos do Barramento de Serviço com o [Gerenciador de Barramento de Serviço](https://github.com/paolosalvatori/ServiceBusExplorer/). O Gerenciador de Barramento de Serviço permite que usuários se conectem a um namespace de serviço do Barramento de Serviço e administrem entidades de mensagens de uma maneira fácil. A ferramenta fornece recursos avançados, como a funcionalidade de importação/exportação ou a capacidade de testar tópicos, filas, assinaturas, serviços de retransmissão, hubs de notificação e hubs de eventos. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

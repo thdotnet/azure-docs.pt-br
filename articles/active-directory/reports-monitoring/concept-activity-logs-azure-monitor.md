@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cffef4028a684e27c0941c234df551d844f13420
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65896871"
 ---
 # <a name="azure-ad-activity-logs-in-azure-monitor"></a>Logs de atividades do Azure AD no Azure Monitor
@@ -78,10 +78,10 @@ A tabela a seguir contém uma estimativa de custo, dependendo do tamanho do loca
 
 | Categoria do log | Número de usuários | Eventos por dia | Volume de dados por mês (est.) | Custo por mês (est.) | Custo por ano (est.) |
 |--------------|-----------------|----------------------|--------------------------------------|----------------------------|---------------------------|
-| Audit | 100.000 | 1,5&nbsp;milhão | 90 GB | US$ 1,93 | US$ 23,12 |
-| Audit | 1.000 | 15.000 | 900 MB | US$ 0,02 | US$ 0,24 |
-| Entradas | 1.000 | 34.800 | 4 GB | US$ 0,13 | US$ 1,56 |
-| Entradas | 100.000 | 15&nbsp;milhões | 1.7 TB | US$ 35,41 | US$ 424,92 |
+| Audit | 100\.000 | 1,5&nbsp;milhão | 90 GB | US$ 1,93 | US$ 23,12 |
+| Audit | 1\.000 | 15\.000 | 900 MB | US$ 0,02 | US$ 0,24 |
+| Entradas | 1\.000 | 34\.800 | 4 GB | US$ 0,13 | US$ 1,56 |
+| Entradas | 100\.000 | 15&nbsp;milhões | 1.7 TB | US$ 35,41 | US$ 424,92 |
  
 
 
@@ -102,9 +102,9 @@ A tabela a seguir contém custos estimados por mês para um hub de eventos bási
 
 | Categoria do log | Número de usuários | Eventos por segundo | Eventos por intervalo de cinco minutos | Volume por intervalo | Mensagens por intervalo | Mensagens por mês | Custo por mês (est.) |
 |--------------|-----------------|-------------------------|----------------------------------------|---------------------|---------------------------------|------------------------------|----------------------------|
-| Audit | 100.000 | 18 | 5.400 | 10.8 MB | 43 | 371.520 | US$ 10,83 |
-| Audit | 1.000 | 0,1 | 52 | 104 KB | 1 | 8.640 | US$ 10,80 |
-| Entradas | 1.000 | 178 | 53.400 | 106.8&nbsp;MB | 418 | 3.611.520 | US$ 11,06 |  
+| Audit | 100\.000 | 18 | 5\.400 | 10.8 MB | 43 | 371\.520 | US$ 10,83 |
+| Audit | 1\.000 | 0,1 | 52 | 104 KB | 1 | 8\.640 | US$ 10,80 |
+| Entradas | 1\.000 | 178 | 53\.400 | 106.8&nbsp;MB | 418 | 3\.611.520 | US$ 11,06 |  
 
 ### <a name="azure-monitor-logs-cost-considerations"></a>Considerações de custo dos logs do Azure Monitor
 
@@ -112,9 +112,9 @@ A tabela a seguir contém custos estimados por mês para um hub de eventos bási
 
 | Categoria do log       | Número de usuários | Eventos por dia | Eventos por mês (30 dias) | Custo por mês em USD (est). |
 | :--                | ---             | ---            | ---                        | --:                          |
-| Auditoria e entradas | 100.000         | 16,500,000     | 495,000,000                |  $1093.00                       |
-| Audit              | 100.000         | 1,500,000      | 45.000.000                 |  $246.66                     |
-| Entradas           | 100.000         | 15.000.000     | 450,000,000                |  $847.28                     |
+| Auditoria e entradas | 100\.000         | 16,500,000     | 495,000,000                |  $1093.00                       |
+| Audit              | 100\.000         | 1,500,000      | 45\.000.000                 |  $246.66                     |
+| Entradas           | 100\.000         | 15\.000.000     | 450,000,000                |  $847.28                     |
 
 
 

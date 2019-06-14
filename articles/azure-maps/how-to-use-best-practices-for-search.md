@@ -8,10 +8,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 9cb0f89b4a48d7139adb35dcef48c0115b005c57
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65205616"
 ---
 # <a name="best-practices-to-use-azure-maps-search-service"></a>Práticas recomendadas para usar o serviço de pesquisa do Azure mapas
@@ -683,7 +683,7 @@ Além disso, vamos dar uma olhada na estrutura de resposta abaixo. Os tipos de r
 }
 ```
 
-### <a name="geometry"></a>Geometria
+### <a name="geometry"></a>geometria
 
 Quando o tipo de resposta é **geometria**, ele pode incluir a ID de geometria que é retornada na **fontes de dados** objeto sob "geometria" e "id". Por exemplo, [serviço de polígono obter](https://docs.microsoft.com/rest/api/maps/search/getsearchpolygon) permite solicitar os dados de geometria no formato GeoJSON, como uma cidade ou aeroporto da estrutura de tópicos para um conjunto de entidades. Você pode usar esses dados de limite para [Geofencing](https://docs.microsoft.com/azure/azure-maps/tutorial-geofence) ou [POIs pesquisa dentro da geometria](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry).
 

@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7519f47037d2d7ff37564ab27c1cc58b65ff6c14
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64572791"
 ---
 # <a name="troubleshoot-azure-ad-connectivity"></a>Solucionar problemas de conectividade do Azure AD
@@ -43,7 +43,7 @@ O servidor proxy também deve ter as URLs necessárias abertas. A lista oficial 
 
 Dessas URLs, a tabela a seguir é o mínimo absoluto para oferecer a capacidade de se conectar ao AD do Azure. Essa lista não inclui quaisquer recursos opcionais, como write-back de senha ou Azure AD Connect Health. Ela está documentado aqui para ajudar na solução de problemas da configuração inicial.
 
-| URL | Porta | DESCRIÇÃO |
+| URL | Port | DESCRIÇÃO |
 | --- | --- | --- |
 | mscrl.microsoft.com |HTTP/80 |Usada para baixar as listas CRL. |
 | \*.verisign.com |HTTP/80 |Usada para baixar as listas CRL. |

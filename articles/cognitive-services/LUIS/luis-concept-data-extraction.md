@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
 ms.openlocfilehash: 15d6b0d28f926bdb39b35b763b89422cddcccc84
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65150691"
 ---
 # <a name="extract-data-from-utterance-text-with-intents-and-entities"></a>Extrair dados de texto de expressão com as intenções e entidades
@@ -48,7 +48,7 @@ Os dados primários são o **nome da intenção** da pontuação mais alta. Usan
 
 |Objeto de dados|Tipo de Dados|Local dos dados|Value|
 |--|--|--|--|
-|Intenção|String|topScoringIntent.intent|"GetStoreInfo"|
+|Intenção|Cadeia de caracteres|topScoringIntent.intent|"GetStoreInfo"|
 
 Se o chatbot ou o aplicativo que chama o LUIS tomar uma decisão com base em mais de uma pontuação de intenção, retorne as pontuações de todas as intenções definindo o parâmetro querystring, `verbose=true`. A resposta do ponto de extremidade é:
 
@@ -77,8 +77,8 @@ As intenções são ordenadas da pontuação mais alta para a mais baixa.
 
 |Objeto de dados|Tipo de Dados|Local dos dados|Value|Pontuação|
 |--|--|--|--|:--|
-|Intenção|String|intents[0].intent|"GetStoreInfo"|0,984749258|
-|Intenção|String|intents[1].intent|"None"|0,0168218873|
+|Intenção|Cadeia de caracteres|intents[0].intent|"GetStoreInfo"|0,984749258|
+|Intenção|Cadeia de caracteres|intents[1].intent|"None"|0,0168218873|
 
 Se você adicionar domínios predefinidos, o nome da intenção indicará o domínio, como `Utilties` ou `Communication`, assim como a intenção:
 
@@ -108,9 +108,9 @@ Se você adicionar domínios predefinidos, o nome da intenção indicará o dom�
 
 |Domínio|Objeto de dados|Tipo de Dados|Local dos dados|Value|
 |--|--|--|--|--|
-|Utilidades|Intenção|String|intents[0].intent|"<b>Utilities</b>.ShowNext"|
-|Comunicação|Intenção|String|intents[1].intent|<b>Communication</b>.StartOver"|
-||Intenção|String|intents[2].intent|"None"|
+|Utilidades|Intenção|Cadeia de caracteres|intents[0].intent|"<b>Utilities</b>.ShowNext"|
+|Comunicação|Intenção|Cadeia de caracteres|intents[1].intent|<b>Communication</b>.StartOver"|
+||Intenção|Cadeia de caracteres|intents[2].intent|"None"|
 
 
 ## <a name="data-from-entities"></a>Dados de entidades

@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 08/13/2018
 ms.author: saudas
 ms.openlocfilehash: f0b0ff3ff4ac742a7e850798c736eb31098f66e8
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65966386"
 ---
 # <a name="aks-troubleshooting"></a>Solução de problemas do AKS
@@ -78,8 +78,8 @@ Você pode estar recebendo este erro porque modificou as tags nos nós do agente
 Esse erro ocorre quando clusters entram em um estado com falha por vários motivos. Siga as etapas abaixo para resolver o estado do cluster falhado antes de tentar novamente a operação que falhou anteriormente:
 
 1. Até que o cluster está fora do `failed` estado, `upgrade` e `scale` operações não obterá êxito. Problemas comuns de raiz e resoluções incluem:
-    * Dimensionamento com **cota insuficiente computação (CRP)**. Para resolver, primeiro dimensione o cluster para um estado estável meta dentro da cota. Em seguida, siga estas [etapas para solicitar uma cota de computação aumentam](../azure-supportability/resource-manager-core-quotas-request.md) antes de tentar escalar verticalmente novamente os limites de cota inicial além dele.
-    * Dimensionar um cluster com rede avançada e **recursos de sub-rede insuficiente (rede)**. Para resolver, primeiro dimensione o cluster para um estado estável meta dentro da cota. Em seguida, siga [estas etapas para solicitar uma cota de recursos aumentam](../azure-resource-manager/resource-manager-quota-errors.md#solution) antes de tentar escalar verticalmente novamente os limites de cota inicial além dele.
+    * Dimensionamento com **cota insuficiente computação (CRP)** . Para resolver, primeiro dimensione o cluster para um estado estável meta dentro da cota. Em seguida, siga estas [etapas para solicitar uma cota de computação aumentam](../azure-supportability/resource-manager-core-quotas-request.md) antes de tentar escalar verticalmente novamente os limites de cota inicial além dele.
+    * Dimensionar um cluster com rede avançada e **recursos de sub-rede insuficiente (rede)** . Para resolver, primeiro dimensione o cluster para um estado estável meta dentro da cota. Em seguida, siga [estas etapas para solicitar uma cota de recursos aumentam](../azure-resource-manager/resource-manager-quota-errors.md#solution) antes de tentar escalar verticalmente novamente os limites de cota inicial além dele.
 2. Quando a causa de falha de atualização for resolvida, o cluster deve estar em um estado de êxito. Depois que um estado de êxito for verificado, repita a operação original.
 
 ## <a name="im-receiving-errors-when-trying-to-upgrade-or-scale-that-state-my-cluster-is-being-currently-being-upgraded-or-has-failed-upgrade"></a>Estou recebendo erros ao tentar atualizar ou escala esse estado meu cluster está atualmente sendo sendo atualizado ou falha na atualização

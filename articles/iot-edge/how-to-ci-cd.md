@@ -10,10 +10,10 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: f449449c542ce6ac04daa58ff37a3577f0d75aee
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61221683"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge"></a>Integração contínua e implantação contínua no Azure IoT Edge
@@ -47,7 +47,7 @@ Nesta seção, você criará um novo pipeline de build. Configure o pipeline par
 >
 >Para saber mais, confira [Criar um pipeline de build](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=vsts&tabs=new-nav#create-a-build-pipeline).
 
-1. Logon em sua organização de DevOps do Azure (**https:\//dev.azure.com/{your organização} /**) e abra o projeto que contém seu repositório de solução de IoT Edge.
+1. Logon em sua organização de DevOps do Azure (**https:\//dev.azure.com/{your organização} /** ) e abra o projeto que contém seu repositório de solução de IoT Edge.
 
    Neste artigo, criamos um repositório chamado **IoTEdgeRepo**. Esse repositório contém **IoTEdgeSolution**, que tem o código para um módulo denominado **filtermodule**. 
 
@@ -77,7 +77,7 @@ Nesta seção, você criará um novo pipeline de build. Configure o pipeline par
     
      ![Configurar o pool de agentes de build](./media/how-to-ci-cd/configure-env.png)
 
-5. O pipeline vem pré-configurado com um trabalho chamado **Trabalho do agente 1**. Clique no sinal de adição (**+**) para adicionar três tarefas ao trabalho: **Azure IoT Edge** duas vezes e **Publicar artefatos de build** uma vez. Passe o mouse sobre o nome de cada tarefa para ver o botão **Adicionar**.
+5. O pipeline vem pré-configurado com um trabalho chamado **Trabalho do agente 1**. Clique no sinal de adição ( **+** ) para adicionar três tarefas ao trabalho: **Azure IoT Edge** duas vezes e **Publicar artefatos de build** uma vez. Passe o mouse sobre o nome de cada tarefa para ver o botão **Adicionar**.
 
    ![Adicionar tarefa do Azure IoT Edge](./media/how-to-ci-cd/add-iot-edge-task.png)
 
@@ -89,7 +89,7 @@ Nesta seção, você criará um novo pipeline de build. Configure o pipeline par
 
    * **Nome de exibição**: aceite o padrão **Azure IoT Edge – Compilar imagens de módulo**.
    * **Ação**: aceite o padrão **Compilar imagens de módulo**. 
-   * **Arquivo .template.json**: selecione as reticências (**...**) e navegue até o arquivo **deployment.template.json** no repositório que contém sua solução do IoT Edge. 
+   * **Arquivo .template.json**: selecione as reticências ( **...** ) e navegue até o arquivo **deployment.template.json** no repositório que contém sua solução do IoT Edge. 
    * **Plataforma padrão**: selecione a plataforma adequada para os módulos com base no dispositivo do IoT Edge de destino. 
    * **Variáveis de saída**: as variáveis de saída incluem um nome de referência que você pode usar para configurar o caminho de arquivo onde o arquivo deployment.json será gerado. Defina um nome de referência fácil de lembrar, como **edge**. 
 
@@ -98,12 +98,12 @@ Nesta seção, você criará um novo pipeline de build. Configure o pipeline par
    * **Nome de exibição**: o nome de exibição é atualizado automaticamente quando o campo de ação é alterado. 
    * **Ação**: use a lista suspensa para selecionar **Efetuar push de imagens de módulo**. 
    * **Tipo de registro de contêiner**: selecione o tipo de registro de contêiner usado para armazenar as imagens de módulo. Dependendo do tipo de registro escolhido, o formulário é alterado. Se você escolher **Registro de Contêiner do Azure**, use as listas suspensas para selecionar a assinatura do Azure e o nome do registro de contêiner. Se você escolher **Registro de Contêiner Genérico**, selecione **Novo** para criar uma conexão de serviço de registro. 
-   * **Arquivo .template.json**: selecione as reticências (**...**) e navegue até o arquivo **deployment.template.json** no repositório que contém sua solução do IoT Edge. 
+   * **Arquivo .template.json**: selecione as reticências ( **...** ) e navegue até o arquivo **deployment.template.json** no repositório que contém sua solução do IoT Edge. 
    * **Plataforma padrão**: selecione a mesma plataforma em que estão as imagens dos módulos compilados.
 
    Se você tiver vários registros de contêiner para hospedar suas imagens de módulo, você precisará duplicar essa tarefa, selecione o registro de contêiner diferente e usar **Ignorar módulos** nas configurações avançadas para ignorar as imagens que não são para esse registro específico.
 
-8. Selecione a tarefa **Publicar artefatos de build** para editá-la. Forneça o caminho de arquivo para o arquivo de implantação gerado pela tarefa de build. Defina o valor de **Caminho de publicação** para coincidir com a variável de saída definida na tarefa de compilação de módulo. Por exemplo, `$(edge.DEPLOYMENT_FILE_PATH)`. Deixe os outros valores com seus padrões. 
+8. Selecione a tarefa **Publicar artefatos de build** para editá-la. Forneça o caminho de arquivo para o arquivo de implantação gerado pela tarefa de build. Defina o valor de **Caminho de publicação** para coincidir com a variável de saída definida na tarefa de compilação de módulo. Por exemplo: `$(edge.DEPLOYMENT_FILE_PATH)`. Deixe os outros valores com seus padrões. 
 
 9. Abra a guia **Gatilhos** e marque a caixa **Ativar integração contínua**. Verifique se o branch que contém seu código está incluído.
 
@@ -152,7 +152,7 @@ Crie um novo pipeline e configure o primeiro estágio para implantações de gar
 
 8. No estágio QA, você deve ver um **Trabalho do agente** padrão. É possível configurar detalhes sobre o trabalho do agente, mas a tarefa de implantação não diferencia a plataforma, de modo que você pode escolher **VS2017 hospedado** ou **Ubuntu 1604 hospedado** no **Pool de agente** (ou qualquer outro agente gerenciado por você). 
 
-9. Selecione o sinal de adição (**+**) para adicionar uma tarefa. Pesquise e adicione **Azure IoT Edge**. 
+9. Selecione o sinal de adição ( **+** ) para adicionar uma tarefa. Pesquise e adicione **Azure IoT Edge**. 
 
     ![Adicionar tarefas para Garantia de Qualidade](./media/how-to-ci-cd/add-task-qa.png)
 

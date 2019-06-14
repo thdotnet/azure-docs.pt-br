@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 11/13/2018
 ms.author: spelluru
 ms.openlocfilehash: e681652c13e521bd33524e247db65088f47a794c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60394848"
 ---
 # <a name="export-or-delete-personal-data-from-azure-devtest-labs"></a>Exportar ou excluir dados pessoais do Azure DevTest Labs
@@ -39,10 +39,10 @@ O DevTest Labs usa o endereço de email do usuário para enviar notificações d
 ### <a name="user-object-id"></a>ID de objeto de usuário
 O DevTest Labs usa a ID de objeto de usuário para mostrar as tendências de custo mês a mês e o custo das informações do recurso aos administradores de laboratório. Isso permite controlar custos e gerenciar limites do Lab. 
 
-**Tendência de custo estimado para o mês atual:**
+**Tendência de custo estimado para o mês atual:** 
 ![Tendência de custo estimado para o mês atual](./media/personal-data-delete-export/estimated-cost-trend-per-month.png)
 
-**Custo estimado do mês por recurso:**
+**Custo estimado do mês por recurso:** 
 ![Custo estimado do mês por recurso](./media/personal-data-delete-export/estimated-month-to-date-cost-by-resource.png)
 
 
@@ -74,7 +74,7 @@ Como usuário de laboratório, você pode solicitar uma exportação nos dados p
 
     ![Baixar arquivo CSV](./media/personal-data-delete-export/download-csv-file.png)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Confira os seguintes artigos: 
 
 - [Definir políticas para um laboratório](devtest-lab-get-started-with-lab-policies.md)

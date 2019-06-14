@@ -8,10 +8,10 @@ ms.author: cabailey
 manager: barbkess
 ms.date: 05/07/2019
 ms.openlocfilehash: 468e392cd2c45d79cbb24f8d737a6e83fbcd2725
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65079264"
 ---
 # <a name="customer-lockbox-for-microsoft-azure"></a>Cofre do cliente para o Microsoft Azure
@@ -64,7 +64,7 @@ As etapas a seguir descrevem um fluxo de trabalho típico para uma solicitação
     
     ![Cofre do Azure de cliente - exibir a solicitação pendente](./media/azure-customer-lockbox/customer-lockbox-pending-requests.png)
 
-10. O aprovador designado também pode selecionar o **ID da solicitação de serviço** para exibir a solicitação de tíquete de suporte que foi criada pelo usuário original. Essas informações fornecem contexto para por que o Microsoft Support for acionado e o histórico do problema relatado. Por exemplo: 
+10. O aprovador designado também pode selecionar o **ID da solicitação de serviço** para exibir a solicitação de tíquete de suporte que foi criada pelo usuário original. Essas informações fornecem contexto para por que o Microsoft Support for acionado e o histórico do problema relatado. Por exemplo:
     
     ![Cofre do Azure de cliente - exibir a solicitação de tíquete de suporte](./media/azure-customer-lockbox/customer-lockbox-support-ticket.png)
 

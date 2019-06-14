@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: hrasheed
 ms.openlocfilehash: b580890b1663aa6ce742443e927e4d760585d4ce
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64700283"
 ---
 # <a name="use-multiple-hdinsight-clusters-with-an-azure-data-lake-storage-account"></a>Usar múltiplos clusters HDInsight com uma conta do Azure Data Lake Storage
@@ -50,10 +50,10 @@ Para obter instruções sobre como criar um aplicativo do AAD (que também cria 
 
 Veja alguns pontos principais a considerar.
 
-- A estrutura de pastas dois níveis (**/clusters/finance/**) deve ser criada e provisionada com permissões apropriadas pelo administrador do Data Lake Storage **antes da** conta de armazenamento ser usada para clusters. Essa estrutura não é criada automaticamente durante a criação de clusters.
+- A estrutura de pastas dois níveis ( **/clusters/finance/** ) deve ser criada e provisionada com permissões apropriadas pelo administrador do Data Lake Storage **antes da** conta de armazenamento ser usada para clusters. Essa estrutura não é criada automaticamente durante a criação de clusters.
 - O exemplo acima recomenda que se configure o grupo proprietário de **/clusters/finance** como **FINGRP** e se conceda acesso **r-x** a FINGRP para a hierarquia de pastas inteira, começando da raiz. Isso assegura que os membros de FINGRP possam navegar pela estrutura de pastas começando da raiz.
 - No caso em que entidades de serviço do AAD diferentes podem criar clusters em **/clusters/finance**, o sticky bit (quando definido na pasta **finance**) assegura que as pastas criadas por uma entidade de serviço não possam ser excluídas pela outra.
-- Depois que a estrutura de pastas e as permissões estão em vigor, o processo de criação de cluster do HDInsight cria um local de armazenamento de cluster específico sob **/clusters/Finanças/**. Por exemplo, o armazenamento de um cluster com o nome fincluster01 poderia ser **/clusters/finance/fincluster01**. A propriedade e as permissões para as pastas criadas pelo cluster HDInsight são mostrados na tabela apresentada aqui.
+- Depois que a estrutura de pastas e as permissões estão em vigor, o processo de criação de cluster do HDInsight cria um local de armazenamento de cluster específico sob **/clusters/Finanças/** . Por exemplo, o armazenamento de um cluster com o nome fincluster01 poderia ser **/clusters/finance/fincluster01**. A propriedade e as permissões para as pastas criadas pelo cluster HDInsight são mostrados na tabela apresentada aqui.
 
     |Pasta  |Permissões  |Usuário proprietário  |Grupo proprietário  | Usuário nomeado | Permissões de usuário nomeado | Grupo nomeado | Permissões de grupo nomeado |
     |---------|---------|---------|---------|---------|---------|---------|---------|
@@ -88,7 +88,7 @@ Sabe-se que essas configurações afetam um caso de uso específico do HDInsight
 Conforme declarado no JIRA YARN vinculado anteriormente, ao localizar recursos públicos, o localizador valida que todos os recursos solicitados estão realmente públicos verificando as permissões deles no sistema de arquivos remoto. Qualquer LocalResource que não satisfaz essa condição é rejeitado para localização. Para verificar se há permissões, o acesso de leitura para o arquivo é incluído para "outros". Esse cenário não funciona de modo integrado ao hospedar clusters HDInsight no Azure Data Lake, uma vez que o Azure Data Lake nega todo o acesso a "outros" no nível da pasta raiz.
 
 #### <a name="workaround"></a>Solução alternativa
-Defina permissões de leitura-execução **outros** por meio da hierarquia, por exemplo, em **/**, **/clusters** e **/clusters/finance**, conforme mostrado na tabela acima.
+Defina permissões de leitura-execução **outros** por meio da hierarquia, por exemplo, em **/** , **/clusters** e **/clusters/finance**, conforme mostrado na tabela acima.
 
 ## <a name="see-also"></a>Consulte também
 

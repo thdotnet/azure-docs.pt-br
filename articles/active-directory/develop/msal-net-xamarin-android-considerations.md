@@ -18,10 +18,10 @@ ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cb0cfb06e95cadbb549f669e5d59bdb0d795c896
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65545874"
 ---
 # <a name="xamarin-android-specific-considerations-with-msalnet"></a>Considerações sobre o Xamarin Android específicos com MSAL.NET
@@ -110,6 +110,6 @@ Isso provavelmente ocorre porque o Visual Studio não atualizou corretamente o a
 
 Mais detalhes e exemplos são fornecidos na [Android considerações específicas](https://github.com/azure-samples/active-directory-xamarin-native-v2#android-specific-considerations) parágrafo do arquivo readme.md do exemplo a seguir:
 
-| Amostra | Plataforma | Descrição |
+| Amostra | Plataforma | DESCRIÇÃO |
 | ------ | -------- | ----------- |
 |[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP | Um aplicativo Xamarin Forms simples, mostrando como usar MSAL para autenticar a MSA e o Azure AD por meio do ponto de extremidade v2.0 adicione e acessar o Microsoft Graph com o token resultante. <br>![Topologia](media/msal-net-xamarin-android-considerations/topology.png) |

@@ -11,10 +11,10 @@ ms.reviewer: trbye
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.openlocfilehash: c7f4b6d8aa614a460772fb7af11f9b83dc3fc979
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65800807"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Autotreinar um modelo de previsão de série temporal
@@ -81,7 +81,7 @@ Para tarefas de previsão, aprendizado de máquina automatizado usa as etapas de
 
 O `AutoMLConfig` objeto define as configurações e os dados necessários para que uma tarefa de aprendizado de máquina automatizado. Semelhante a um problema de regressão, você define parâmetros de treinamento padrão, como o tipo de tarefa, o número de iterações, dados, de treinamento e o número de validações cruzada. Para tarefas de previsão, há parâmetros adicionais que devem ser definidos que afetam o experimento. A tabela a seguir explica cada parâmetro e seu uso.
 
-| Param | Descrição | Obrigatório |
+| Param | DESCRIÇÃO | Obrigatório |
 |-------|-------|-------|
 |`time_column_name`|Usado para especificar a coluna de data e hora nos dados de entrada usados para criar a série temporal e inferindo sua frequência.|✓|
 |`grain_column_names`|Nomes de definição de grupos de séries individuais nos dados de entrada. Se o detalhamento não estiver definido, o conjunto de dados é considerado uma série de tempo.||

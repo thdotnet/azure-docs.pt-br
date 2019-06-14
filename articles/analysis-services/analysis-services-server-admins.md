@@ -9,10 +9,10 @@ ms.date: 12/19/2018
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 25eb111871bbe3b18f59b0d6c123c72f3e55c859
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60498673"
 ---
 # <a name="manage-server-administrators"></a>Gerenciar administradores de servidor
@@ -52,7 +52,7 @@ Use [Atualizar](https://docs.microsoft.com/rest/api/analysisservices/servers/upd
 
 
 
-## <a name="next-steps"></a>Próximos passos 
+## <a name="next-steps"></a>Próximas etapas 
 
 [Autenticação e permissões de usuário](analysis-services-manage-users.md)  
 [Gerenciar usuários e funções de banco de dados](analysis-services-database-users.md)  

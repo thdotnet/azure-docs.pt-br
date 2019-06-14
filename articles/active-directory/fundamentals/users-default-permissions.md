@@ -14,10 +14,10 @@ ms.reviewer: vincesm
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0cb0fe056ff7ff4794667d6b28782daad100609f
-ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65921023"
 ---
 # <a name="what-are-the-default-user-permissions-in-azure-active-directory"></a>Quais são as permissões de usuário padrão no Azure Active Directory?
@@ -37,11 +37,11 @@ Permissões padrão para convidados são restritivas por padrão. Convidados pod
 Usuários e contatos | Ler todas as propriedades públicas de usuários e contatos<br>Convidar pessoas<br>Alterar a própria senha<br>Gerenciar o próprio número de celular<br>Gerenciar a própria foto<br>Invalidar os próprios tokens de atualização | Ler as próprias propriedades<br>Ler nome de exibição, email, nome de entrada, foto, nome principal de usuário e propriedades de tipo de usuário de outros usuários e contatos<br>Alterar a própria senha
 Grupos | Criar grupos de segurança<br>Criar grupos do Office 365<br>Ler todas as propriedades de grupos<br>Ler associações de grupos não ocultos<br>Ler associações de grupo oculto do Office 365 para grupo associado<br>Gerenciar propriedades, posse e associação de grupos pertencentes ao usuário<br>Adicionar convidados a grupos próprios<br>Gerenciar configurações de associação dinâmica<br>Excluir grupos próprios<br>Restaurar grupos próprios do Office 365 | Ler todas as propriedades de grupos<br>Ler associações de grupos não ocultos<br>Ler associações de grupo do Office 365 oculto para grupos associados<br>Gerenciar grupos próprios<br>Adicionar convidados a grupos próprios (se permitido)<br>Excluir grupos próprios<br>Restaurar grupos próprios do Office 365<br>Ler propriedades dos grupos aos quais pertencem, incluindo associação.
 Aplicativos | Registrar (criar) novo aplicativo<br>Ler propriedades de aplicativos registrados e corporativos<br>Gerenciar propriedades do aplicativo, atribuições e credenciais para aplicativos próprios<br>Criar ou excluir senha de aplicativo do usuário<br>Excluir aplicativos próprios<br>Restaurar aplicativos próprios | Ler propriedades de aplicativos registrados e corporativos<br>Gerenciar propriedades do aplicativo, atribuições e credenciais para aplicativos próprios<br>Excluir aplicativos próprios<br>Restaurar aplicativos próprios
-Dispositivos | Ler todas as propriedades de dispositivos<br>Gerenciar todas as propriedades de dispositivos próprios<br> | Sem permissões<br>Excluir dispositivos próprios<br>
+Dispositivos | Ler todas as propriedades de dispositivos<br>Gerenciar todas as propriedades de dispositivos próprios<br> | Nenhuma permissão<br>Excluir dispositivos próprios<br>
 Diretório | Ler todas as informações da empresa<br>Ler todos os domínios<br>Ler todos os contratos de parceiro | Ler nome de exibição e domínios verificados
-Funções e escopos | Ler todas as funções e associações administrativas<br>Ler todas as propriedades e associação de unidades administrativas | Sem permissões 
-Inscrições | Ler todas as assinaturas<br>Habilitar Membro de plano de serviço | Sem permissões
-Políticas | Ler todas as propriedades de políticas<br>Gerenciar todas as propriedades de política própria | Sem permissões
+Funções e escopos | Ler todas as funções e associações administrativas<br>Ler todas as propriedades e associação de unidades administrativas | Nenhuma permissão 
+Assinaturas | Ler todas as assinaturas<br>Habilitar Membro de plano de serviço | Nenhuma permissão
+Políticas | Ler todas as propriedades de políticas<br>Gerenciar todas as propriedades de política própria | Nenhuma permissão
 
 ## <a name="to-restrict-the-default-permissions-for-member-users"></a>Para restringir as permissões padrão para usuários membro
 
@@ -50,10 +50,10 @@ Permissões padrão para usuários membro podem ser restringidas das seguintes m
 Permissão | Configurar explicação
 ---------- | ------------
 Os usuários podem registrar aplicativo | Definir essa opção como não impede que usuários criem registros de aplicativo. A capacidade de, em seguida, pode ser concedida para indivíduos específicos adicionando-os à função de desenvolvedor do aplicativo.
-Permitir que os usuários conectem a conta corporativa ou de estudante ao LinkedIn | Definir essa opção como não impede que os usuários se conectem a sua conta corporativa ou de Estudante com sua conta do LinkedIn.  Ver [compartilhamento de dados de conexões e o consentimento da conta LinkedIn](https://docs.microsoft.com/azure/active-directory/users-groups-roles/linkedin-user-consent) para obter mais informações.
+Permitir que os usuários se conectem a conta corporativa ou de Estudante com o LinkedIn | Definir essa opção como não impede que os usuários se conectem a sua conta corporativa ou de Estudante com sua conta do LinkedIn.  Ver [compartilhamento de dados de conexões e o consentimento da conta LinkedIn](https://docs.microsoft.com/azure/active-directory/users-groups-roles/linkedin-user-consent) para obter mais informações.
 Capacidade de criar grupos de segurança | Definir essa opção como Não impede que os usuários criem grupos de segurança. Os administradores globais e administradores de usuário ainda podem criar grupos de segurança. Consulte [Cmdlets do Active Directory do Azure para definir as configurações de grupo](../users-groups-roles/groups-settings-cmdlets.md) para saber como.
 Capacidade de criar grupos do Office 365 | Definir essa opção como Não impede que os usuários criem grupos do Office 365. Definir essa opção para Alguns permite que um conjunto selecionado de usuários crie grupos do Office 365. Os administradores globais e administradores de usuários ainda poderão criar grupos do Office 365. Consulte [Cmdlets do Active Directory do Azure para definir as configurações de grupo](../users-groups-roles/groups-settings-cmdlets.md) para saber como.
-Acesso restrito ao Portal de administração do Azure AD | Definir essa opção como Sim impede que os usuários de acessar o Active Directory do Azure por meio do portal do Azure.
+Restringir o acesso ao portal de administração do Azure AD | Definir essa opção como Sim impede que os usuários de acessar o Active Directory do Azure por meio do portal do Azure.
 Capacidade de ler outros usuários | Essa configuração só está disponível no PowerShell. A definição como $false impede que todos os não administradores leiam informações de usuário do diretório. Isso não impede a leitura de informações de usuário em outros serviços da Microsoft, como o Exchange Online. Essa configuração destina-se a circunstâncias especiais e configurar como $false não é recomendado.
 
 ## <a name="object-ownership"></a>Propriedade do objeto

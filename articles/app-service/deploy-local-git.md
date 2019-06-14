@@ -15,10 +15,10 @@ ms.date: 06/05/2018
 ms.author: dariagrigoriu;cephalin
 ms.custom: seodec18
 ms.openlocfilehash: b879036dcd79901cb634fa197932e833cb22d12a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65956091"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Implantação do Git local para o Serviço de Aplicativo do Azure
@@ -114,7 +114,7 @@ No painel de navegação esquerdo da página do aplicativo, clique em **Centro d
 
 ![](media/app-service-deploy-local-git/portal-enable.png)
 
-Clique em **Pipelines do Azure (versão prévia)** > **continuar**.
+Clique em **Pipelines do Azure (versão prévia)**  > **continuar**.
 
 ![](media/app-service-deploy-local-git/pipeline-builds.png)
 
@@ -215,7 +215,7 @@ git config --global http.postBuffer 524288000
       OU
   * `npm ERR! [modulename@version] preinstall: \make || gmake\`
 
-## <a name="additional-resources"></a>Recursos Adicionais
+## <a name="additional-resources"></a>Recursos adicionais
 
 * [Documentação do projeto Kudu](https://github.com/projectkudu/kudu/wiki)
 * [Implantação contínua no Serviço de Aplicativo do Azure](deploy-continuous-deployment.md)

@@ -14,14 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/11/2017
 ms.author: rkarlin
-ms.openlocfilehash: 6cbf3d70bd835ce1b838b19c93507f7d9487a418
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 90dbb33fa516d3a831d4e60969ac6b6c8312d539
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60332549"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64574148"
 ---
 # <a name="azure-security-center-search"></a>Pesquisa da Central de Segurança do Azure
+
+> [!NOTE]
+> Painel de pesquisa da Central de segurança será desativado em 31 de julho de 2019. Para obter mais informações e serviços alternativos, consulte [recursos de desativação da Central de segurança (julho de 2019)](security-center-features-retirement-july2019.md#menu_search).
+
 Central de segurança do Azure usa [pesquisa de logs do Azure Monitor](../log-analytics/log-analytics-log-searches.md) para recuperar e analisar seus dados de segurança. Os logs do Azure Monitor inclui uma linguagem de consulta para recuperar e consolidar dados rapidamente. Central de segurança, você pode aproveitar a pesquisa de logs do Azure Monitor para construir consultas e analisar os dados coletados.
 
 A pesquisa está disponível nas camadas Gratuita e Standard da Central de Segurança.  Os dados disponíveis em suas pesquisas de log dependem do nível de camada aplicado ao seu workspace.  Para saber mais, confira a [página de preços](../security-center/security-center-pricing.md) da Central de Segurança.
@@ -45,7 +49,7 @@ A pesquisa está disponível nas camadas Gratuita e Standard da Central de Segur
 
    SecurityEvent | where EventID == 4625 | summarize count() by TargetAccount
 
-   O resultado mostra todas as contas com falha de logon (evento 4625).
+   Resultado mostra todas as contas que não conseguiu entrar (evento 4625).
 
    ![Resultados da Pesquisa][3]
 

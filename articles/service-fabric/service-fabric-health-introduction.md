@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 2/28/2018
 ms.author: oanapl
 ms.openlocfilehash: d0ef9f34d6b657a063e50b0f144197c41905e809
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60949112"
 ---
 # <a name="introduction-to-service-fabric-health-monitoring"></a>Introdução ao monitoramento da integridade do Service Fabric
@@ -42,7 +42,7 @@ As entidades de integridade espelham as entidades do Service Fabric. (Por exempl
 As entidades de integridade e a hierarquia proporcionam relatório, depuração e monitoramento efetivos do cluster e dos aplicativos. O modelo de integridade oferece uma representação precisa e *granular* da integridade das muitas partes móveis do cluster.
 
 ![Entidades de integridade.][1]
- As entidades de integridade, organizadas em uma hierarquia com base nas relações de pai/filho.
+As entidades de integridade, organizadas em uma hierarquia com base nas relações de pai/filho.
 
 [1]: ./media/service-fabric-health-introduction/servicefabric-health-hierarchy.png
 
@@ -211,7 +211,7 @@ Os [relatórios de integridade](https://docs.microsoft.com/dotnet/api/system.fab
 * **RemoveWhenExpired**. Um booliano. Se definido como verdadeiro, o relatório de integridade expirado será removido automaticamente do Repositório de Integridade e o relatório não afetará a avaliação da integridade da entidade. Usado quando o relatório for válido apenas por um período especificado de tempo e o relator não precisar removê-lo explicitamente. Ele também é usado para excluir relatórios do repositório de integridade (por exemplo, um watchdog é alterado e interrompe o envio de relatórios com propriedade e origem anteriores). Portanto, ele pode enviar um relatório com TimeToLive curto e RemoveWhenExpired para eliminar qualquer estado anterior do Repositório de Integridade. Se o valor for definido como false, o relatório expirado será tratado como erro na avaliação de integridade. O valor false indica ao repositório de integridade que a origem deve relatar periodicamente essa propriedade. Caso contrário, deve haver algo errado com o watchdog. A integridade do watchdog é capturada ao considerar o evento como um erro.
 * **SequenceNumber**. Um inteiro positivo que sempre precisa ser aumentado, pois ele representa a ordem dos relatórios. Ele é usado pelo Repositório de Integridade para detectar relatórios obsoletos que são recebidos em atraso devido a atrasos na rede ou outros problemas. Um relatório é rejeitado se o número da sequência for menor ou igual ao aplicado mais recentemente para a mesma entidade, origem e propriedade. Se não for especificado, o número de sequência é gerado automaticamente. É necessário colocar o número de sequência apenas ao relatar transições de estado. Nessa situação, a origem precisa lembrar quais relatórios enviou e manter as informações de recuperação no failover.
 
-Essas quatro informações: SourceId, identificador da entidade, Propriedade e HealthState são obrigatórios para cada relatório de integridade. A cadeia de caracteres SourceId não pode iniciar com o prefixo "**System.**", que é reservado para relatórios do sistema. Para a mesma entidade, há apenas um relatório para a mesma origem e propriedade. Vários relatórios para a mesma fonte e propriedade substituirão uns aos outros, seja no lado do cliente de integridade (se estiverem divididos em lotes), seja no lado do Repositório de Integridade. A substituição é baseada nos números da sequência: relatórios mais recentes (com número de sequência mais alto) substituem os relatórios mais antigos.
+Essas quatro informações: SourceId, identificador da entidade, Propriedade e HealthState são obrigatórios para cada relatório de integridade. A cadeia de caracteres SourceId não pode iniciar com o prefixo "**System.** ", que é reservado para relatórios do sistema. Para a mesma entidade, há apenas um relatório para a mesma origem e propriedade. Vários relatórios para a mesma fonte e propriedade substituirão uns aos outros, seja no lado do cliente de integridade (se estiverem divididos em lotes), seja no lado do Repositório de Integridade. A substituição é baseada nos números da sequência: relatórios mais recentes (com número de sequência mais alto) substituem os relatórios mais antigos.
 
 ### <a name="health-events"></a>Eventos de integridade
 Internamente, o Repositório de Integridade mantém os [eventos de integridade](https://docs.microsoft.com/dotnet/api/system.fabric.health.healthevent), que contêm todas as informações de relatórios e metadados adicionais. Os metadados incluem a hora em que o relatório foi fornecido ao cliente de integridade e a hora em que ele foi modificado no lado do servidor. Os eventos de integridade são retornados pelas [consultas de integridade](service-fabric-view-entities-aggregated-health.md#health-queries).

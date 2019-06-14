@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
 ms.openlocfilehash: b609a708a987194398c53bdf83f0d6e1f281808d
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66139872"
 ---
 Por padrão, APIs em um back-end de Aplicativos Móveis podem ser chamadas de forma anônima. Em seguida, você precisa restringir o acesso somente aos clientes autenticados.  
@@ -16,7 +16,7 @@ Por padrão, APIs em um back-end de Aplicativos Móveis podem ser chamadas de fo
 * **Back-end do Node.js (por meio do portal do Azure)** :  
 
     Nas configurações de seus Aplicativos Móveis, clique em **Tabelas Fáceis** e selecione a tabela. Clique em **Alterar permissões**, selecione **Apenas acesso autenticado** para todas as permissões e clique em **Salvar**.
-* **Back-end do .NET (C#)**:  
+* **Back-end do .NET (C#)** :  
 
     No projeto do servidor, navegue até **Controladores** > **TodoItemController.cs**. Adicione o atributo `[Authorize]` à classe **TodoItemController** , como a seguir. Para restringir o acesso somente aos métodos específicos, você também pode aplicar esse atributo apenas aos métodos, em vez de à classe. Republicar o projeto de servidor.
 

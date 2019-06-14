@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: juliako
 ms.openlocfilehash: ce04e19022a9902c228079e866c192985694134c
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65799255"
 ---
 # <a name="tutorial-use-the-video-indexer-api"></a>Tutorial: Usar a API do Video Indexer
@@ -40,14 +40,14 @@ Este artigo mostra como os desenvolvedores podem aproveitar a [API do Video Inde
 
     Selecione a guia [Produtos](https://api-portal.videoindexer.ai/products). Em seguida, selecione a autorização e inscrever-se. 
     
-    ![Entrar](./media/video-indexer-use-apis/video-indexer-api02.png)
+    ![Inscrição](./media/video-indexer-use-apis/video-indexer-api02.png)
 
     > [!NOTE]
     > Novos usuários são automaticamente inscritos na Autorização.
     
     Depois de se inscrever, você poderá ver sua assinatura e suas chaves primárias e secundárias. As chaves devem ser protegidas. As chaves só devem ser usadas pelo seu código do servidor. Eles não devem estar disponíveis no lado do cliente (.js, .html, etc.).
 
-    ![Entrar](./media/video-indexer-use-apis/video-indexer-api03.png)
+    ![Inscrição](./media/video-indexer-use-apis/video-indexer-api03.png)
 
 > [!TIP]
 > O usuário do Video Indexer pode usar uma chave de assinatura única para se conectar a várias contas do aplicativo. Depois você pode vincular essas contas do Video Indexer para diferentes contas de Serviços de Mídia.

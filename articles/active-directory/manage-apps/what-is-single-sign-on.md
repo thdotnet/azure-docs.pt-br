@@ -13,10 +13,10 @@ ms.author: mimart
 ms.reviewer: arvindh, japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 51b3066a529183d7a8a13e4673d7879136aa0d7a
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65824158"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Logon único para aplicativos no Azure Active Directory
@@ -68,7 +68,7 @@ Escolha o logon único baseado em SAML quando o aplicativo der suporte a ele.
 O logon único baseado em SAML é compatível com aplicativos que usam qualquer um desses protocolos:
 
 - SAML 2.0
-- Web Services Federation
+- O certificado do provedor de identidade do Web Services Federation
 
 Para configurar um aplicativo SaaS de baseado em SAML single sign-on, consulte [baseado em SAML de configurar o logon único no](configure-single-sign-on-portal.md). Além disso, muitos aplicativos SaaS (Software como Serviço) têm um [tutorial específico de aplicativo](../saas-apps/tutorial-list.md) que explica a configuração para logon único baseado em SAML.
 
@@ -175,7 +175,7 @@ Escolha o logon único baseado em cabeçalho quando:
 
 Para configurar a autenticação baseada em cabeçalho, confira [Autenticação baseada em cabeçalho para logon único com o Proxy de Aplicativo](application-proxy-configure-single-sign-on-with-ping-access.md). 
 
-### <a name="what-is-pingaccess-for-azure-ad"></a>O que é o PingAccess para Azure AD?
+### <a name="what-is-pingaccess-for-azure-ad"></a>O que é PingAccess para Azure AD?
 
 Usando o PingAccess para o Azure AD, os usuários podem acessar e realizar o logon único em aplicativos que usam cabeçalhos para autenticação. O Proxy de Aplicativo trata esses aplicativos como qualquer outro, usando o Azure AD para autenticar o acesso e, depois, passando o tráfego por meio do serviço de conector. Após a autenticação, o serviço de PingAccess converte o token de acesso do Azure AD em um formato de cabeçalho que é enviado para o aplicativo.
 

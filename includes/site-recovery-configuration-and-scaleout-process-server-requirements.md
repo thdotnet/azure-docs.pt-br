@@ -10,10 +10,10 @@ ms.date: 06/10/2018
 ms.author: raynew
 ms.custom: include file
 ms.openlocfilehash: 371cbcc50b574f95e8d9ba4efe79058b2b25a8ba
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66127710"
 ---
 **Configuração/Requisitos do servidor de processo**
@@ -35,7 +35,7 @@ Políticas de grupo | Não habilite estas políticas de grupo: <br> - Impedir o 
 IIS | – Nenhum site da Web padrão já existente <br> - Nenhum aplicativo/site da Web pré-existente escutando na porta 443 <br>- Habilitar [autenticação anônima](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx) <br> - Habilitar configuração [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx) 
 | 
 **CONFIGURAÇÕES DE REDE** | 
-Tipo de endereço IP | Static 
+Tipo de endereço IP | Estático 
 Portas | 443 (orquestração do canal de controle)<br>9443 (transporte de dados) 
 Tipo de NIC | VMXNET3 (se o Servidor de Configuração for uma VM do VMware)
  |

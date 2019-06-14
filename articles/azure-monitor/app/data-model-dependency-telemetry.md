@@ -13,10 +13,10 @@ ms.date: 04/17/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
 ms.openlocfilehash: 3e3d6b8fdc9ac8dd28f73fecd6231e97a5645407
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60901008"
 ---
 # <a name="dependency-telemetry-application-insights-data-model"></a>Telemetria de dependência: Modelo de dados do Application Insights
@@ -51,7 +51,7 @@ Duração da solicitação no formato: `DD.HH:MM:SS.MMMMMM`. Deve ser menor que 
 
 Código de resultado de uma chamada de dependência. Os exemplos são o código de erro do SQL e o código de status HTTP.
 
-## <a name="success"></a>Sucesso
+## <a name="success"></a>Êxito
 
 Indicação de chamada bem-sucedida ou malsucedida.
 

@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 87371f91d9ea1f556d0f78beebd73b8a28977b71
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65510372"
 ---
 # <a name="create-and-manage-read-replicas-in-azure-database-for-postgresql---single-server-from-the-azure-portal"></a>Criar e gerenciar réplicas de leitura no banco de dados do Azure para PostgreSQL – servidor único do portal do Azure
@@ -67,7 +67,7 @@ Para criar uma réplica de leitura, siga estas etapas:
 
 5. Selecione um local para a réplica. Você pode criar uma réplica em qualquer região do Azure. O local padrão é o mesmo que o servidor mestre.
 
-    ![Selecione uma localização](./media/howto-read-replicas-portal/location-replica.png)
+    ![Selecione um local](./media/howto-read-replicas-portal/location-replica.png)
 
 6. Selecione **OK** para confirmar a criação da réplica.
 
@@ -81,7 +81,7 @@ Depois que a réplica de leitura é criada, ela pode ser exibida na janela **Rep
 ![Exibir a nova réplica na janela Replicação](./media/howto-read-replicas-portal/list-replica.png)
  
 
-## <a name="stop-replication"></a>Parar a replicação
+## <a name="stop-replication"></a>Parar replicação
 Você pode interromper a replicação entre um servidor mestre e uma réplica de leitura.
 
 > [!IMPORTANT]

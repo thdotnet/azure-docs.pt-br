@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: ormaoz
 ms.custom: ''
 ms.openlocfilehash: 007b6c409dde248a4dde7a15fd16b543add234bc
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64870306"
 ---
 # <a name="manage-aws-costs-and-usage-in-azure"></a>Gerenciar os custos do AWS e o uso no Azure
@@ -80,8 +80,8 @@ A tabela a seguir descreve as dimensões disponíveis para agrupar e filtrar na 
 | Zona de disponibilidade | lineitem/AvailabilityZone | Todos |   |
 | Local padrão | produto/região | Todos |   |
 | Medidor |   | Todos |   |
-| Medir categoria | lineItem/ProductCode | Todos |   |
-| Medidor de subcategoria | lineitem/UsageType | Todos |   |
+| Categoria do medidor | lineItem/ProductCode | Todos |   |
+| Subcategoria do medidor | lineitem/UsageType | Todos |   |
 | Operação | lineItem/operação | Todos |   |
 | Resource | lineItem/ResourceId | Todos |   |
 | Tipo de recurso | product/instanceType | Todos | Se o produto/instanceType for nulo, lineItem/UsageType será usado. |

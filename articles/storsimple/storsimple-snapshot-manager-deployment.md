@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: v-sharos
 ms.openlocfilehash: ee17e4b69d1e6c9de465e4241ee2237361e320b7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61077382"
 ---
 # <a name="deploy-the-storsimple-snapshot-manager-mmc-snap-in"></a>Implantar o snap-in do MMC StorSimple Snapshot Manager
@@ -88,7 +88,7 @@ Use as etapas a seguir para instalar o StorSimple Snapshot Manager.
 #### <a name="to-install-storsimple-snapshot-manager"></a>Para instalar o StorSimple Snapshot Manager
 1. Baixe o software do StorSimple Snapshot Manager (acesse [StorSimple Snapshot Manager](https://www.microsoft.com/download/details.aspx?id=44220) no Centro de Download da Microsoft) e salve-o localmente no host.
 2. No Explorador de Arquivos, clique com o botão direito do mouse na pasta compactada e em **Extrair todos**.
-3. Na janela **Extrair pastas compactadas (zipadas)**, na caixa **Selecione um destino e extraia os arquivos**, digite ou procure o caminho no qual gostaria de extrair o arquivo.
+3. Na janela **Extrair pastas compactadas (zipadas)** , na caixa **Selecione um destino e extraia os arquivos**, digite ou procure o caminho no qual gostaria de extrair o arquivo.
    
     > [!IMPORTANT]
     > Você deve instalar o StorSimple Snapshot Manager na unidade C:.

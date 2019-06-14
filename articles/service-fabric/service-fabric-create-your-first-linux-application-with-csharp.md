@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 04/11/2018
 ms.author: subramar
 ms.openlocfilehash: 7bb9b1c545d30f66a09817ba977f12666a9f41c9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60394280"
 ---
 # <a name="create-your-first-azure-service-fabric-application"></a>Criar seu primeiro aplicativo do Azure Service Fabric
@@ -129,9 +129,9 @@ Projetos de atores não fazem nada por conta própria. Eles exigem outro serviç
 
 Para adicionar outro serviço a um aplicativo já criado usando `yo`, execute as seguintes etapas:
 1. Altere o diretório para a raiz do aplicativo existente.  Por exemplo, `cd ~/YeomanSamples/MyApplication`, se `MyApplication` é o aplicativo criado pelo Yeoman.
-2. Execute o `yo azuresfcsharp:AddService`
+2. Execute `yo azuresfcsharp:AddService`
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Interação com os clusters do Service Fabric usando a CLI do Service Fabric](service-fabric-cli.md)
 * Saiba mais sobre as [opções de suporte do Service Fabric](service-fabric-support.md)

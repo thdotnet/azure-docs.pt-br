@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 09/18/2018
 ms.author: vashan, rajraj, changov
 ms.openlocfilehash: efa10f5beae64105857b00b186683d491edb00f5
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65233770"
 ---
 # <a name="troubleshooting-api-throttling-errors"></a>Solução de problemas de erros de limitação de API 
@@ -32,7 +32,7 @@ Quando um cliente da API do Azure recebe um erro de limitação, o status HTTP �
 
 ## <a name="call-rate-informational-response-headers"></a>Cabeçalhos de resposta informativa de taxa de chamada 
 
-| Cabeçalho                            | Formato de valor                           | Exemplo                               | Descrição                                                                                                                                                                                               |
+| Cabeçalho                            | Formato de valor                           | Exemplo                               | DESCRIÇÃO                                                                                                                                                                                               |
 |-----------------------------------|----------------------------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | x-ms-ratelimit-remaining-resource |```<source RP>/<policy or bucket>;<count>```| Microsoft.Compute/HighCostGet3Min;159 | Contagem de chamadas à API restante para a política de limitação abrangendo o grupo de operações ou o bucket de recursos, incluindo o destino dessa solicitação                                                                   |
 | x-ms-request-charge               | ```<count>```                             | 1                                     | O número de contagens de chamadas "cobradas" para essa solicitação HTTP para o limite da política aplicável. Geralmente é 1. Solicitações em lote, por exemplo, para dimensionar um conjunto de dimensionamento de máquinas virtuais, podem cobrar várias contagens. |

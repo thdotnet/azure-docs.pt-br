@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 94b35f0530dacfadb799f1d44d7a9eb666def6c9
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65891981"
 ---
 # <a name="add-google-as-an-identity-provider-for-b2b-guest-users"></a>Adicionar o Google como provedor de identidade para usuários convidados B2B
@@ -101,7 +101,7 @@ Agora, você definirá a ID do cliente e o segredo do cliente do Google, seja in
 1. Vá para o [Portal do Azure](https://portal.azure.com). No painel esquerdo, selecione **Azure Active Directory**. 
 2. Selecione **Relações organizacionais**.
 3. Selecione **provedores de identidade**.
-4. Sobre o **Google** , selecione o menu de contexto (**...** ) e, em seguida, selecione **excluir**. 
+4. Sobre o **Google** , selecione o menu de contexto ( **...** ) e, em seguida, selecione **excluir**. 
    
    ![Captura de tela mostrando a opção de exclusão para o provedor de identidade social](media/google-federation/google-social-identity-providers.png)
 

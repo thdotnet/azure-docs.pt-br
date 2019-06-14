@@ -16,10 +16,10 @@ ms.date: 04/18/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 4024f6fdb40c752ef61f348d15f681e81d81c08c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60596688"
 ---
 # <a name="create-custom-roles-for-azure-resources-using-the-rest-api"></a>Criar funções personalizadas para recursos do Azure usando a API REST
@@ -54,7 +54,7 @@ Para listar as funções personalizadas em um escopo, use o [definições de fun
 
 1. Dentro da URI, substitua *{scope}* pelo escopo para o qual você deseja listar as funções.
 
-    | Escopo | Type |
+    | Scope | Type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Assinatura |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Grupo de recursos |
@@ -78,7 +78,7 @@ Para obter informações sobre uma função personalizada por seu nome de exibi�
 
 1. Dentro da URI, substitua *{scope}* pelo escopo para o qual você deseja listar as funções.
 
-    | Escopo | Type |
+    | Scope | Type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Assinatura |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Grupo de recursos |
@@ -104,7 +104,7 @@ Para obter informações sobre uma função personalizada por seu identificador 
 
 1. Dentro da URI, substitua *{scope}* pelo escopo para o qual você deseja listar as funções.
 
-    | Escopo | Type |
+    | Scope | Type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Assinatura |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Grupo de recursos |
@@ -152,7 +152,7 @@ Para criar uma função personalizada, use [Definições de Função - Criar ou 
 
 1. Dentro da URI, substita *{scope}* pelo primeiro `assignableScopes` da função personalizada.
 
-    | Escopo | Type |
+    | Scope | Type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Assinatura |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Grupo de recursos |
@@ -217,7 +217,7 @@ Para atualizar uma função personalizada, use [Definições de Função - Criar
 
 1. Dentro da URI, substita *{scope}* pelo primeiro `assignableScopes` da função personalizada.
 
-    | Escopo | Type |
+    | Scope | Type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Assinatura |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Grupo de recursos |
@@ -301,7 +301,7 @@ Para excluir uma função personalizada, use [Definições de Função - Excluir
 
 1. Dentro da URI, substitua *{scope}* pelo escopo para o qual você deseja excluir a função personalizada.
 
-    | Escopo | Type |
+    | Scope | Type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Assinatura |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Grupo de recursos |

@@ -14,14 +14,14 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 72c88ef10bf1df217ec6e24ac744d0b30386b4a3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60824007"
 ---
 # <a name="move-data-from-db2-by-using-azure-data-factory-copy-activity"></a>Mover dados do DB2 usando a Atividade de Cópia do Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](data-factory-onprem-db2-connector.md)
 > * [Versão 2 (versão atual)](../connector-db2.md)
 
@@ -81,13 +81,13 @@ A tabela a seguir lista as propriedades JSON que são específicas a um serviço
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
-| **tipo** |Essa propriedade deve ser definida como **OnPremisesDb2**. |Sim |
+| **type** |Essa propriedade deve ser definida como **OnPremisesDb2**. |Sim |
 | **server** |O nome do servidor DB2. |Sim |
 | **database** |O nome do banco de dados DB2. |Sim |
-| **schema** |O nome do esquema no banco de dados DB2. Essa propriedade diferencia maiúsculas de minúsculas. |Não  |
+| **schema** |O nome do esquema no banco de dados DB2. Essa propriedade diferencia maiúsculas de minúsculas. |Não |
 | **authenticationType** |O tipo de autenticação que é usado para se conectar ao banco de dados DB2. Os valores possíveis são: Anônimo, Básico e Windows. |Sim |
-| **username** |O nome da conta de usuário, se você usar a autenticação Básica ou do Windows. |Não  |
-| **password** |A senha para a conta de usuário. |Não  |
+| **username** |O nome da conta de usuário, se você usar a autenticação Básica ou do Windows. |Não |
+| **password** |A senha para a conta de usuário. |Não |
 | **gatewayName** |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados DB2 local. |Sim |
 
 ## <a name="dataset-properties"></a>Propriedades do conjunto de dados
@@ -320,12 +320,12 @@ Os seguintes mapeamentos são usados quando a Atividade de Cópia converte os da
 | Data |DateTime |
 | Hora |TimeSpan |
 | Timestamp |Datetime |
-| Xml |Byte[] |
+| xml |Byte[] |
 | Char |Cadeia de caracteres |
 | VarChar |Cadeia de caracteres |
 | LongVarChar |Cadeia de caracteres |
 | DB2DynArray |Cadeia de caracteres |
-| Binário |Byte[] |
+| Binary |Byte[] |
 | VarBinary |Byte[] |
 | LongVarBinary |Byte[] |
 | Graphic |Cadeia de caracteres |
@@ -346,7 +346,7 @@ Os seguintes mapeamentos são usados quando a Atividade de Cópia converte os da
 | Data |DateTime |
 | Hora |TimeSpan |
 | Timestamp |Datetime |
-| Xml |Byte[] |
+| xml |Byte[] |
 | Char |Cadeia de caracteres |
 
 ## <a name="map-source-to-sink-columns"></a>Mapear origem para colunas de coletor

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: fdfd7794961b0254526b124525c6e978d13b0114
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65800271"
 ---
 # <a name="message-expiration-time-to-live"></a>Expiração da mensagem (vida útil)
@@ -74,7 +74,7 @@ Aqui está o que é considerado ociosidade de entidades (filas, tópicos e assin
     - Não há envios  
     - Não há atualizações para o tópico  
     - Não há mensagens agendadas 
-- Inscrições
+- Assinaturas
     - Não recebe  
     - Não há atualizações para a assinatura  
     - Não há novas regras adicionadas à assinatura  

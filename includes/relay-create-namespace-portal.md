@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: clemensv
 ms.openlocfilehash: bbcf38ab54632144920b729f433c222f426d96dc
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66111537"
 ---
 1. Entre no [Portal do Azure][Azure portal].
@@ -18,7 +18,7 @@ ms.locfileid: "66111537"
 5. Na caixa [Grupo de recursos](../articles/azure-resource-manager/manage-resource-groups-portal.md), selecione um grupo de recursos existente no qual colocar o namespace, ou então crie um novo.  
 6. Em **Localização**, selecione o país ou região no qual o namespace deve ser hospedado.
    
-    ![Criar namespace][create-namespace]
+    ![Criar um namespace][create-namespace]
 7. Selecione **Criar**. O sistema cria o seu namespace e o habilita. Depois de alguns minutos, o sistema provisiona recursos para sua conta.
 
 ### <a name="get-management-credentials"></a>Obter credenciais de gerenciamento

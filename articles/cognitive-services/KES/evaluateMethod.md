@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
 ms.openlocfilehash: dcfa9bb7931cf3b682bacf722b67acd6d4a370c0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60814097"
 ---
 # <a name="evaluate-method"></a>Método Avaliar
@@ -34,7 +34,7 @@ atributos | Cadeia de caracteres de texto | Lista delimitada por vírgulas de at
 count      | Número (padrão = 10) | Número máximo de resultados a serem retornados.
 deslocamento     | Número (padrão = 0) | Índice do primeiro resultado para retornar.
 orderby |   Cadeia de caracteres de texto | Nome do atributo usado para classificar os resultados, seguidos por ordem de classificação opcional (padrão = asc):"*attrname*[:(asc&#124;desc)]".  Se não for especificado, os resultados são retornados, diminuindo a probabilidade de log natural.
-Tempo limite  | Número (padrão = 1000) | Tempo limite em milissegundos. Somente resultados computados antes que o tempo limite tenha decorrido serão retornados.
+timeout  | Número (padrão = 1000) | Tempo limite em milissegundos. Somente resultados computados antes que o tempo limite tenha decorrido serão retornados.
 
 Usando os parâmetros *contagem* e *deslocamento*, um grande número de resultados pode ser obtido incrementalmente por várias solicitações.
   

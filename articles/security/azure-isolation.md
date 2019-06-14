@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
 ms.openlocfilehash: b8142551d9c20c18d83c256b3f07a0deb291577c
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66147649"
 ---
 # <a name="isolation-in-the-azure-public-cloud"></a>Isolamento na nuvem pública do Azure
@@ -72,7 +72,7 @@ Usuários, grupos e aplicativos do diretório podem gerenciar recursos na assina
 
 Para as necessidades de diagnóstico e manutenção, um modelo operacional que emprega um sistema de elevação de privilégio just-in-time é exigido e usado. O Azure AD Privileged Identity Management (PIM) introduz o conceito de um administrador elegível. [Administradores elegíveis](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-configure) devem ser usuários que precisam de acesso privilegiado às vezes, mas não todos os dias. A função fica inativa até que o usuário precise de acesso, então ele conclui um processo de ativação e torna-se um administrador ativo por um tempo predeterminado.
 
-![Azure AD Privileged Identity Management](./media/azure-isolation/azure-isolation-fig2.png)
+![Gerenciamento de identidades com privilégios do AD do Azure](./media/azure-isolation/azure-isolation-fig2.png)
 
 O Azure Active Directory hospeda cada locatário em seu próprio contêiner protegido, com políticas e permissões para e dentro do contêiner que é de propriedade e gerenciamento exclusivo do locatário.
 
@@ -310,7 +310,7 @@ Os bancos de dados mestres lógicos incluem:
 
 -   Logons do SQL usados para se conectar ao servidor
 
--   Regras de Firewall
+-   Regras de firewall
 
 Não há garantia de que as informações relacionadas à cobrança e ao uso para Bancos de Dados SQL do Azure do mesmo servidor lógico estejam na mesma instância física em cluster do SQL Azure, em vez disso, os aplicativos devem fornecer o nome do banco de dados de destino durante a conexão.
 

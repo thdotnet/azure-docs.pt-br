@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/28/2018
 ms.author: spelluru
 ms.openlocfilehash: bd62624406adb006fdcd7d59f72db3fb5e1848a0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60421787"
 ---
 # <a name="azure-relay-metrics-in-azure-monitor-preview"></a>Métricas da Retransmissão do Azure no Azure Monitor (versão prévia)
@@ -41,7 +41,7 @@ As métricas estão habilitadas por padrão e você pode acessar os dados dos ú
 
 ![][1]
 
-Você também pode acessar as métricas diretamente por meio do namespace. Para fazer isso, selecione seu namespace e clique em **Métricas (versão prévia)**. 
+Você também pode acessar as métricas diretamente por meio do namespace. Para fazer isso, selecione seu namespace e clique em **Métricas (versão prévia)** . 
 
 Para métricas com suporte para dimensões, você deve filtrar pelo valor da dimensão desejado.
 
@@ -60,16 +60,16 @@ Todos os valores de métricas são enviados para o Azure Monitor a cada minuto. 
 
 | Nome da métrica | DESCRIÇÃO |
 | ------------------- | ----------------- |
-| ListenerConnections-Success (versão prévia) | O número de conexões de ouvinte bem-sucedidas feitas para a Retransmissão do Azure durante o período especificado. <br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
-|ListenerConnections-ClientError (versão prévia)|O número de erros de cliente em conexões de ouvinte durante um período especificado.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
-|ListenerConnections-ServerError (versão prévia)|O número de erros de servidor nas conexões de ouvinte durante um período especificado.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+| ListenerConnections-Success (versão prévia) | O número de conexões de ouvinte bem-sucedidas feitas para a Retransmissão do Azure durante o período especificado. <br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+|ListenerConnections-ClientError (versão prévia)|O número de erros de cliente em conexões de ouvinte durante um período especificado.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+|ListenerConnections-ServerError (versão prévia)|O número de erros de servidor nas conexões de ouvinte durante um período especificado.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
 |SenderConnections-Success (versão prévia)|O número de conexões de remetente bem-sucedidas feitas durante o período especificado.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
-|SenderConnections-ClientError (versão prévia)|O número de erros de cliente em conexões de remetente durante um período especificado.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
-|SenderConnections-ServerError (versão prévia)|O número de erros de servidor em conexões de remetente durante um período especificado.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
-|ListenerConnections-TotalRequests (versão prévia)|O número total de conexões de ouvinte durante um período especificado.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+|SenderConnections-ClientError (versão prévia)|O número de erros de cliente em conexões de remetente durante um período especificado.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+|SenderConnections-ServerError (versão prévia)|O número de erros de servidor em conexões de remetente durante um período especificado.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+|ListenerConnections-TotalRequests (versão prévia)|O número total de conexões de ouvinte durante um período especificado.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
 |SenderConnections-TotalRequests (versão prévia)|As solicitações de conexão feitas por remetentes durante um período especificado.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
-|ActiveConnections (versão prévia)|O número de conexões ativas durante um período especificado.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
-|ActiveListeners (versão prévia)|O número de ouvintes ativos durante um período especificado.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+|ActiveConnections (versão prévia)|O número de conexões ativas durante um período especificado.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+|ActiveListeners (versão prévia)|O número de ouvintes ativos durante um período especificado.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
 |ListenerDisconnects (versão prévia)|O número de ouvintes desconectados durante um período especificado.<br/><br/> Unidade: Bytes <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
 |SenderDisconnects (versão prévia)|O número de remetentes desconectados durante um período especificado.<br/><br/> Unidade: Bytes <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
 
@@ -87,7 +87,7 @@ A Retransmissão do Azure dá suporte às seguintes dimensões para métricas no
 | ------------------- | ----------------- |
 |EntityName| A Retransmissão do Azure dá suporte a entidades de mensagens no namespace.|
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Consulte [Visão geral do Monitoramento do Azure](../monitoring-and-diagnostics/monitoring-overview.md).
 

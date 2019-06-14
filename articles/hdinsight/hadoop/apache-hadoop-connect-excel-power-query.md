@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.openlocfilehash: e35e86bee4dfee21d0a98867c3e0d1d7850ed0ec
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65762001"
 ---
 # <a name="connect-excel-to-apache-hadoop-by-using-power-query"></a>Conectar o Excel ao Apache Hadoop com o Power Query
@@ -41,7 +41,7 @@ O suplemento do Power Query para Excel facilita a importação de dados de seu c
 
    - Excel 2016
 
-     - Clique no menu **Dados**, clique em **Obter Dados** da faixa de opções **Obter e Transformar Dados**, clique em **Do Azure** e, em seguida, em **Do Azure HDInsight (HDFS)**.
+     - Clique no menu **Dados**, clique em **Obter Dados** da faixa de opções **Obter e Transformar Dados**, clique em **Do Azure** e, em seguida, em **Do Azure HDInsight (HDFS)** .
 
        ![HDI.PowerQuery.SelectHdiSource](./media/apache-hadoop-connect-excel-power-query/hdi.powerquery.selecthdisource.excel2016.png)
 
@@ -54,10 +54,10 @@ O suplemento do Power Query para Excel facilita a importação de dados de seu c
        **Observação:** Se você não vir as **Power Query** menu, vá para **arquivo** > **opções** > **Add-ins**e selecione  **COM Add-ins** na lista suspensa **gerenciar** caixa na parte inferior da página. Selecione o botão **Ir...** e verifique se a caixa do suplemento Power Query para Excel está marcada.
        
        **Observação:** O Power Query também permite que você importe dados do HDFS clicando em **De Outras Fontes**.
-4. Para **Nome da conta**, insira o nome da conta de Armazenamento de Blobs do Azure associada ao cluster e, em seguida, clique em **OK**. Essa conta pode ser a conta de armazenamento padrão ou uma conta de armazenamento vinculada.  O formato é *https://&lt;StorageAccountName>.blob.core.windows.net/*.
+4. Para **Nome da conta**, insira o nome da conta de Armazenamento de Blobs do Azure associada ao cluster e, em seguida, clique em **OK**. Essa conta pode ser a conta de armazenamento padrão ou uma conta de armazenamento vinculada.  O formato é *https://&lt;StorageAccountName>.blob.core.windows.net/* .
 5. Para **Chave de Conta**, insira a chave para a conta de Armazenamento de Blobs e clique em **Salvar**. (Você precisa inserir as informações da conta somente na primeira vez que acessar este repositório.)
 6. No painel **Navegador** à esquerda do Editor de Consulta, clique duas vezes no nome do contêiner de armazenamento de Blob. Por padrão, o nome do contêiner é igual ao nome do cluster.
-7. Localize **HiveSampleData.txt** na coluna **Nome** (o caminho da pasta é **../hive/warehouse/hivesampletable/**) e clique em **Binário** à esquerda de HiveSampleData.txt. HiveSampleData.txt acompanha todo o cluster. Se desejar, você pode usar seu próprio arquivo.
+7. Localize **HiveSampleData.txt** na coluna **Nome** (o caminho da pasta é **../hive/warehouse/hivesampletable/** ) e clique em **Binário** à esquerda de HiveSampleData.txt. HiveSampleData.txt acompanha todo o cluster. Se desejar, você pode usar seu próprio arquivo.
    
     ![HDI.PowerQuery.ImportData][image-hdi-powerquery-importdata]
 8. Se desejar, você pode renomear os nomes das colunas. Quando estiver pronto, clique em **Fechar e Carregar**.  Os dados foram carregados em sua pasta de trabalho:

@@ -18,10 +18,10 @@ ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cb89b1ef4dbbef234fba3152d7f85bbadfbdc64a
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65873879"
 ---
 # <a name="known-issues-on-safari-browser-with-msaljs"></a>Problemas conhecidos no navegador Safari com msal 
@@ -36,7 +36,7 @@ Msal usa um Iframe oculto para executar a aquisição de token silenciosa e reno
 
 Não há solução para esse problema no momento e estamos avaliando as opções com a comunidade de padrões.
 
-### <a name="work-around"></a>Solução alternativa
+### <a name="work-around"></a>Contornar
 
 Por padrão, a configuração de ITP está habilitada no navegador Safari. Você pode desabilitar essa configuração, navegando até **preferências** -> **privacidade** e desmarcando o **impedir que o rastreamento de sites** opção.
 

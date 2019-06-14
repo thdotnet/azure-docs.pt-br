@@ -9,24 +9,24 @@ ms.date: 04/22/2019
 ms.author: jroth
 ms.custom: include file
 ms.openlocfilehash: 712b70960e09a9c2b0e7a998bc0bddbc28c1e112
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66146232"
 ---
 | Resource | Limite padrão | Limite máximo |
 | --- | --- | --- |
-| VMs por [assinatura](../articles/billing-buy-sign-up-azure-subscription.md) |25.000<sup>1</sup> por região. |25.000 por região. |
+| VMs por [assinatura](../articles/billing-buy-sign-up-azure-subscription.md) |25\.000<sup>1</sup> por região. |25\.000 por região. |
 | Total de núcleos da VM por [assinatura](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> por região. | Entre em contato com o suporte. |
 | Núcleos de VM por séries como Dv2 e F, por [assinatura](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> por região. | Entre em contato com o suporte. |
 | [Coadministradores](../articles/billing-add-change-azure-subscription-administrator.md) por assinatura |Ilimitado. |Ilimitado. |
 | [Contas de armazenamento](../articles/storage/common/storage-quickstart-create-account.md) por região e assinatura |250 |250 |
 | [Grupos de recursos](../articles/azure-resource-manager/resource-group-overview.md) por assinatura |980 |980 |
-| [Conjuntos de disponibilidade](../articles/virtual-machines/windows/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) por assinatura |2.000 por região. |2.000 por região. |
+| [Conjuntos de disponibilidade](../articles/virtual-machines/windows/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) por assinatura |2\.000 por região. |2\.000 por região. |
 | Tamanho de solicitação de API do Gerenciador de recursos do Azure |4,194,304 bytes. |4,194,304 bytes. |
 | Marcas por assinatura<sup>2</sup> |Ilimitado. |Ilimitado. |
-| Cálculos de marca exclusivos por assinatura<sup>2</sup> | 10.000 | 10.000 |
+| Cálculos de marca exclusivos por assinatura<sup>2</sup> | 10\.000 | 10\.000 |
 | [Serviços de nuvem](../articles/cloud-services/cloud-services-choose-me.md) por assinatura |N/A<sup>3</sup> |N/A<sup>3</sup> |
 | [Grupos de afinidade](../articles/virtual-network/virtual-networks-migrate-to-regional-vnet.md) por assinatura |N/A<sup>3</sup> |N/A<sup>3</sup> |
 | [Implantações de nível de assinatura](../articles/azure-resource-manager/deploy-to-subscription.md) por local | 800<sup>4</sup> | 800 |

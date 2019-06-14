@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/13/2019
 ms.custom: seodec2018
 ms.openlocfilehash: 95f5dde12ad9e34a0a04c988a816538ac30e01e6
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65595969"
 ---
 # <a name="how-to-compose-a-query-in-azure-search"></a>Como compor uma consulta no Azure Search
@@ -26,7 +26,7 @@ Uma solicitação de consulta é um constructo avançado, que especifica quais c
 
 A tabela a seguir lista as APIs e as abordagens baseadas em ferramentas para enviar consultas.
 
-| Metodologia | Descrição |
+| Metodologia | DESCRIÇÃO |
 |-------------|-------------|
 | [Gerenciador de pesquisa (portal)](search-explorer.md) | Fornece uma barra de pesquisa e opções para seleções de versão da API e índice. Os resultados são retornados como documentos JSON. <br/>[Saiba mais.](search-get-started-portal.md#query-index) | 
 | [Postman ou Fiddler](search-fiddler.md) | As ferramentas de teste da Web são uma excelente opção para formular chamadas REST. A API REST dá suporte a todas as operações possíveis no Azure Search. Neste arquivo, aprenda a configurar um cabeçalho e um corpo de solicitação HTTP para enviar consultas ao Azure Search.  |
@@ -51,11 +51,11 @@ Exemplos são úteis para introduzir novos conceitos. Como uma consulta represen
 
 + **`queryType`** Define o analisador, que, no Azure Search pode ser o [padrão do analisador de consulta simples](search-query-simple-examples.md) (ideais para a pesquisa de texto completo), ou o [completa o analisador de consulta Lucene](search-query-lucene-examples.md) usado para compilações de consulta avançada, como expressões regulares , pesquisa por proximidade, difusa e pesquisa de curinga, para citar alguns.
 
-+ **`search`** fornece os critérios de correspondência, geralmente texto, mas geralmente acompanhados por operadores booleanos. Termos de autônomo único são *termo* consultas. Consultas de várias partes com delimitação de cotação são *consultas de frase-chave*. A pesquisa pode ser indefinida, como em **`search=*`**, mas mais provavelmente consiste em termos, expressões e operadores semelhantes ao que aparece no exemplo.
++ **`search`** fornece os critérios de correspondência, geralmente texto, mas geralmente acompanhados por operadores booleanos. Termos de autônomo único são *termo* consultas. Consultas de várias partes com delimitação de cotação são *consultas de frase-chave*. A pesquisa pode ser indefinida, como em **`search=*`** , mas mais provavelmente consiste em termos, expressões e operadores semelhantes ao que aparece no exemplo.
 
 + **`searchFields`** é opcional, usado para restringir a execução de consultas a campos específicos.
 
-As respostas são moldadas também pelos parâmetros incluídos na consulta. No exemplo, o conjunto de resultados consiste em campos listados na instrução **`select`**. Somente os 10 principais hits são retornados nessa consulta, mas **`count`** informa quantos documentos correspondem em geral. Nesta consulta, as linhas são classificadas pelo daysOnMarket.
+As respostas são moldadas também pelos parâmetros incluídos na consulta. No exemplo, o conjunto de resultados consiste em campos listados na instrução **`select`** . Somente os 10 principais hits são retornados nessa consulta, mas **`count`** informa quantos documentos correspondem em geral. Nesta consulta, as linhas são classificadas pelo daysOnMarket.
 
 Na Pesquisa do Azure, a execução da consulta é sempre em relação a um índice, autenticado usando uma chave de API fornecida na solicitação. No REST, ambas são fornecidas nos cabeçalhos de solicitação.
 
@@ -86,8 +86,8 @@ Os elementos obrigatórios em uma solicitação de consulta incluem os component
 
 + Coleta de documentos de endpoint e índice de serviço, expressa como uma URL contendo componentes fixos e definidos pelo usuário: **`https://<your-service-name>.search.windows.net/indexes/<your-index-name>/docs`**
 + **`api-version`** (Somente REST) é necessária porque mais de uma versão da API está disponível em todos os momentos. 
-+ **`api-key`**, seja uma consulta ou uma chave de administrador, autentica a solicitação em seu serviço.
-+ **`queryType`**, seja simples ou completo, que pode ser omitido se você estiver usando a sintaxe simples padrão incorporada.
++ **`api-key`** , seja uma consulta ou uma chave de administrador, autentica a solicitação em seu serviço.
++ **`queryType`** , seja simples ou completo, que pode ser omitido se você estiver usando a sintaxe simples padrão incorporada.
 + **`search`** ou **`filter`** fornece os critérios de correspondência, que podem não ser especificados se você quiser realizar uma pesquisa vazia. Os dois tipos de consulta são discutidos em termos do analisador simples, mas até mesmo as consultas avançadas exigem o parâmetro de pesquisa para passar expressões de consulta complexas.
 
 Todos os outros parâmetros de pesquisa são opcionais. Para obter a lista completa de atributos, consulte [criar índice (REST)](https://docs.microsoft.com/rest/api/searchservice/create-index). Para examinar mais detalhadamente como os parâmetros são usados durante o processamento, consulte [como funciona a pesquisa de texto completo no Azure Search](search-lucene-query-architecture.md).
@@ -149,18 +149,18 @@ Ocasionalmente, a substância e não a estrutura dos resultados são inesperadas
 + Altere a técnica de consulta se o texto ou a análise lexical for necessária, mas o tipo de consulta impede o processamento linguístico. Na pesquisa de texto completo, texto ou análise lexical autocorrects para erros de ortografia, formulários de plural a única palavra e até mesmo irregulares verbos ou substantivos. Para algumas consultas, como pesquisa difusa ou com curinga, a análise de texto não faz parte do pipeline de análise de consulta. Para alguns cenários, expressões regulares foram usadas como um solução alternativa. 
 
 ### <a name="paging-results"></a>Resultados da paginação
-O Azure Search facilita implementar a paginação dos resultados da pesquisa. Ao usar os parâmetros **`top`** e **`skip`**, você pode emitir solicitações de pesquisa que permitem que você receba o conjunto total de resultados de pesquisa em subconjuntos organizáveis e ordenados que facilitam facilmente uma boa pesquisar práticas de interface do usuário. Ao receber esses subconjuntos menores de resultados, você também pode receber a contagem de documentos no conjunto total de resultados da pesquisa.
+O Azure Search facilita implementar a paginação dos resultados da pesquisa. Ao usar os parâmetros **`top`** e **`skip`** , você pode emitir solicitações de pesquisa que permitem que você receba o conjunto total de resultados de pesquisa em subconjuntos organizáveis e ordenados que facilitam facilmente uma boa pesquisar práticas de interface do usuário. Ao receber esses subconjuntos menores de resultados, você também pode receber a contagem de documentos no conjunto total de resultados da pesquisa.
 
 Você pode aprender mais sobre a paginação dos resultados da pesquisa no artigo [Como paginar os resultados da pesquisa no Azure Search](search-pagination-page-layout.md).
 
 ### <a name="ordering-results"></a>Ordenando resultados
 Ao receber os resultados de uma consulta de pesquisa, você pode solicitar que o Azure Search apresente os resultados ordenados por valores em um campo específico. Por padrão, o Azure Search ordena os resultados da pesquisa com base na classificação de pontuação da pesquisa de cada documento, que é derivada de [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
 
-Se você quiser que o Azure Search retorne os resultados ordenados por um valor diferente da pontuação da pesquisa, poderá usar o **`orderby`** parâmetro de pesquisa. Você pode especificar o valor do parâmetro **`orderby`** para incluir nomes de campo e chamadas para a [**`geo.distance()` função**](query-odata-filter-orderby-syntax.md) para valores geoespaciais. Each expression can be followed by `asc` to indicate that results are requested in ascending order, and **`desc`** to indicate that results are requested in descending order. Ordem ascendente da classificação padrão.
+Se você quiser que o Azure Search retorne os resultados ordenados por um valor diferente da pontuação da pesquisa, poderá usar o **`orderby`** parâmetro de pesquisa. Você pode especificar o valor do parâmetro **`orderby`** para incluir nomes de campo e chamadas para a [ **`geo.distance()` função**](query-odata-filter-orderby-syntax.md) para valores geoespaciais. Each expression can be followed by `asc` to indicate that results are requested in ascending order, and **`desc`** to indicate that results are requested in descending order. Ordem ascendente da classificação padrão.
 
 
 ### <a name="hit-highlighting"></a>Realce de ocorrência
-Na Pesquisa do Azure, enfatizar a parte exata dos resultados de pesquisa que correspondem à consulta de pesquisa é facilitada usando **`highlight`**, **`highlightPreTag`** e **`highlightPostTag`** parâmetros. Você pode especificar quais campos *pesquisáveis* devem ter o texto correspondido enfatizado, bem como especificar as marcas da cadeia de caracteres exatas para anexar ao início e ao término do texto correspondente que o Azure Search retorna.
+Na Pesquisa do Azure, enfatizar a parte exata dos resultados de pesquisa que correspondem à consulta de pesquisa é facilitada usando **`highlight`** , **`highlightPreTag`** e **`highlightPostTag`** parâmetros. Você pode especificar quais campos *pesquisáveis* devem ter o texto correspondido enfatizado, bem como especificar as marcas da cadeia de caracteres exatas para anexar ao início e ao término do texto correspondente que o Azure Search retorna.
 
 ## <a name="see-also"></a>Consulte também
 

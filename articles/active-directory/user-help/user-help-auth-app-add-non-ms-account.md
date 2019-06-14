@@ -13,10 +13,10 @@ ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e6f94ba30c06fc6975ab212c895cecefe5d383fa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60473899"
 ---
 # <a name="add-your-non-microsoft-accounts"></a>Adicionar contas não Microsoft
@@ -51,7 +51,7 @@ Adicione sua conta do Google ativando a verificação de dois fatores e, em segu
 
     Você recebe um código QR que pode usar para associar automaticamente sua conta ao aplicativo Microsoft Authenticator. Não feche esta janela.
 
-3. Abra o aplicativo Microsoft Authenticator, selecione **Adicionar conta** do ícone **Personalizar e controlar** na parte superior direita e selecione **Outra conta (Google, Facebook etc.)**.
+3. Abra o aplicativo Microsoft Authenticator, selecione **Adicionar conta** do ícone **Personalizar e controlar** na parte superior direita e selecione **Outra conta (Google, Facebook etc.)** .
 
 4. No computador, use a câmera do dispositivo para ler o código QR da página **Configurar Autenticador**.
 
@@ -90,7 +90,7 @@ Adicione sua conta do Facebook ativando a verificação de dois fatores e, em se
 
     Você recebe um código QR que pode usar para associar automaticamente sua conta ao aplicativo Microsoft Authenticator. Não feche esta janela.
 
-2. Abra o aplicativo Microsoft Authenticator, selecione **Adicionar conta** do ícone **Personalizar e controlar** na parte superior direita e selecione **Outra conta (Google, Facebook etc.)**.
+2. Abra o aplicativo Microsoft Authenticator, selecione **Adicionar conta** do ícone **Personalizar e controlar** na parte superior direita e selecione **Outra conta (Google, Facebook etc.)** .
 
 3. No computador, use a câmera do dispositivo para ler o código QR da página **Autenticação de dois fatores**.
 
@@ -161,7 +161,7 @@ Adicione sua conta da Amazon ativando a verificação de dois fatores e, em segu
 
     As página muda para mostrar a você um código QR. Não feche esta página.
 
-5. Abra o aplicativo Microsoft Authenticator, selecione **Adicionar conta** do ícone **Personalizar e controlar** na parte superior direita e selecione **Outra conta (Google, Facebook etc.)**.
+5. Abra o aplicativo Microsoft Authenticator, selecione **Adicionar conta** do ícone **Personalizar e controlar** na parte superior direita e selecione **Outra conta (Google, Facebook etc.)** .
 
 6. No computador, use a câmera do dispositivo para ler o código QR da página **Escolha como você vai receber códigos**.
 
