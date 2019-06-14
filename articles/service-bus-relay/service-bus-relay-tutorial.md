@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/01/2018
 ms.author: spelluru
 ms.openlocfilehash: db73363a05734db5d7e3375a5755a807eb7ce2a5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60790008"
 ---
 # <a name="expose-an-on-premises-wcf-rest-service-to-external-client-by-using-azure-wcf-relay"></a>Expor um serviço de REST do WCF local ao cliente externo usando a Retransmissão do WCF do Azure
@@ -68,7 +68,7 @@ O contrato de serviço especifica a quais operações (a terminologia do serviç
 
 3. Instalar o pacote NuGet do Barramento de Serviço. Esse pacote adiciona automaticamente referências para as bibliotecas do Barramento de Serviço, bem como o WCF **System.ServiceModel**. [System.ServiceModel](https://msdn.microsoft.com/library/system.servicemodel.aspx) é o namespace que permite o acesso programático aos recursos básicos do WCF. O Barramento de Serviço usa vários dos objetos e atributos do WCF para definir contratos de serviço.
 
-    No Gerenciador de Soluções, clique com o botão direito do mouse no projeto e em **Gerenciar Pacotes NuGet...**. Clique na guia Procurar e então procure **WindowsAzure.ServiceBus**. Verifique se o nome do projeto está selecionado na caixa **Versão(ões)**. Clique em **Instalar**e aceite os termos de uso.
+    No Gerenciador de Soluções, clique com o botão direito do mouse no projeto e em **Gerenciar Pacotes NuGet...** . Clique na guia Procurar e então procure **WindowsAzure.ServiceBus**. Verifique se o nome do projeto está selecionado na caixa **Versão(ões)** . Clique em **Instalar**e aceite os termos de uso.
 
     ![Pacote de Barramento de Serviço][3]
 4. No Gerenciador de Soluções, clique duas vezes no arquivo Program.cs para abri-lo no editor, se já não estiver aberto.
