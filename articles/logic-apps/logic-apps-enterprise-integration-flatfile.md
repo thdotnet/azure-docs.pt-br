@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: 82152dab-c7ad-43df-b721-596559703be8
 ms.date: 07/08/2016
 ms.openlocfilehash: d0ef61b94d7bd604b6c0062341224510f3048c57
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61467206"
 ---
 # <a name="encode-or-decode-flat-files-with-azure-logic-apps-and-enterprise-integration-pack"></a>Codificar ou decodificar arquivos simples com os Aplicativos Lógicos do Azure e o Enterprise Integration Pack
@@ -29,7 +29,7 @@ Execute estas etapas para adicionar um conector de codificação de arquivo simp
    ![Captura de tela do gatilho a ser selecionado](./media/logic-apps-enterprise-integration-b2b/flatfile-1.png)    
 1. Adicione uma ação de codificação de arquivo simples, desta maneira:
    
-     a. Selecione o sinal de **mais** .
+    a. Selecione o sinal de **mais** .
    
     b. Selecione o link **Adicionar uma ação** (que aparece após a seleção do sinal de adição).
    
@@ -59,7 +59,7 @@ Agora você pode testar seu conector fazendo uma solicitação ao ponto de extre
    ![Captura de tela do gatilho a ser selecionado](./media/logic-apps-enterprise-integration-b2b/flatfile-1.png)    
 1. Adicione a ação de decodificação de arquivo simples, desta maneira:
    
-     a. Selecione o sinal de **mais** .
+    a. Selecione o sinal de **mais** .
    
     b. Selecione o link **Adicionar uma ação** (que aparece após a seleção do sinal de adição).
    

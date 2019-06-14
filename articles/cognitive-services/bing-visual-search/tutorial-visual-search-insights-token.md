@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/26/2019
 ms.author: rosh
 ms.openlocfilehash: ebe54f5319986f0588e06a980a6f914beb6adbcc
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65909385"
 ---
 # <a name="find-similar-images-from-previous-searches-using-imageinsightstoken"></a>Localizar imagens semelhantes de pesquisas anteriores usando ImageInsightsToken
@@ -25,7 +25,7 @@ O código-fonte completo para este tutorial pode ser encontrado com anotações 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Qualquer edição do [Visual Studio de 2019](https://www.visualstudio.com/downloads/).
+* Qualquer edição do [Visual Studio 2019](https://www.visualstudio.com/downloads/).
 * Se você estiver usando Linux/MacOS, você pode executar esse aplicativo usando [Mono](https://www.mono-project.com/).
 * O pacotes de Pesquisa Visual do NuGet e Pesquisa de Imagem.
     - Gerenciador de soluções no Visual Studio, clique com botão direito no seu projeto e selecione **gerenciar pacotes NuGet** no menu. Instalar o `Microsoft.Azure.CognitiveServices.Search.CustomSearch` pacote e o `Microsoft.Azure.CognitiveServices.Search.ImageSearch` pacote. Instalar os pacotes do NuGet também instala o seguinte:

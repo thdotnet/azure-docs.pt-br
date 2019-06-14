@@ -12,10 +12,10 @@ ms.date: 03/04/2019
 ms.author: tulasim
 ms.custom: seodec18
 ms.openlocfilehash: 02111ac90fe97ddaddbd41ad42410e7e76f1c405
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61379204"
 ---
 # <a name="what-is-a-qna-maker-knowledge-base"></a>O que é uma base de dados de conhecimento do QnA Maker?
@@ -36,7 +36,7 @@ Um único QnA, representado por uma ID numérica do QnA, tem diversas variantes 
 
 Ao receber o conteúdo avançado em uma base de dados de conhecimento, o QnA Maker tenta converter o conteúdo em markdown. Leia [este](https://aka.ms/qnamaker-docs-markdown-support) blog para entender os formatos de markdown reconhecidos pela maioria dos clientes de chat.
 
-Os campos de metadados consistem em pares chave-valor separados por dois-pontos **(Produto: Shredder)**. A chave e o valor devem ser somente texto. A chave de metadados não deve conter espaços. Metadados dá suporte a apenas um valor por chave.
+Os campos de metadados consistem em pares chave-valor separados por dois-pontos **(Produto: Shredder)** . A chave e o valor devem ser somente texto. A chave de metadados não deve conter espaços. Metadados dá suporte a apenas um valor por chave.
 
 ## <a name="next-steps"></a>Próximas etapas
 

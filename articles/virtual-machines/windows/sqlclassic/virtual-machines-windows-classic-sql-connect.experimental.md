@@ -17,10 +17,10 @@ ms.author: mathoma
 ms.reviewer: jroth
 experimental_id: d51f3cc6-753b-4e
 ms.openlocfilehash: 51694ca085e131150217ffb3fbac9830980108cb
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62108404"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure-classic-deployment"></a>Conectar-se a uma máquina virtual do SQL Server no Azure (implantação clássica)
@@ -58,7 +58,7 @@ Nesse cenário, você pode se conectar usando o **Nome** da VM (também mostrado
 ### <a name="connect-to-sql-server-over-the-internet"></a>Conectar-se ao SQL Server pela Internet
 Se quiser se conectar ao seu mecanismo de banco de dados do SQL Server pela Internet, você deve criar um ponto de extremidade de máquina virtual para a comunicação TCP de entrada. Essa etapa de configuração do Azure, direciona o tráfego da porta TCP de entrada para uma porta TCP que está acessível para a máquina virtual.
 
-Para se conectar pela Internet, é necessário usar o nome DNS da VM e o número da porta do ponto de extremidade da VM (configurado adiante neste artigo). Para encontrar o Nome DNS, navegue até o Portal do Azure e selecione **Máquinas virtuais (clássicas)**. Em seguida, selecione sua máquina virtual. O **Nome DNS** é mostrado na seção **Visão geral**.
+Para se conectar pela Internet, é necessário usar o nome DNS da VM e o número da porta do ponto de extremidade da VM (configurado adiante neste artigo). Para encontrar o Nome DNS, navegue até o Portal do Azure e selecione **Máquinas virtuais (clássicas)** . Em seguida, selecione sua máquina virtual. O **Nome DNS** é mostrado na seção **Visão geral**.
 
 Por exemplo, considere uma máquina virtual clássica chamada **mysqlvm** com o nome DNS **mysqlvm7777.cloudapp.net** e um ponto de extremidade da VM de **57500**. Supondo uma conectividade configurada corretamente, a seguinte cadeia de conexão poderia ser usada para acessar a máquina virtual em qualquer lugar na Internet:
 

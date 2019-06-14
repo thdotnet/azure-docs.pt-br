@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: diberry
 ms.openlocfilehash: 383ce4c4248f7e21f745f503c74a29cb613983e2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60814000"
 ---
 # <a name="prediction-scores-indicate-prediction-accuracy-for-intent-and-entities"></a>Pontuações de previsão indicam a precisão da previsão de intenções e entidades
@@ -24,10 +24,10 @@ Uma pontuação de previsão indica o grau de confiança LUIS tem para resultado
 
 Uma pontuação de previsão é entre zero (0) e um (1). Um exemplo de uma pontuação com alta confiança do LUIS é 0,99. Um exemplo de uma pontuação com baixa confiança é 0,01. 
 
-|Valor da pontuação|Confiança|
+|Valor da pontuação|Confidence|
 |--|--|
 |1|correspondência definida|
-|0.99|alta confiança|
+|0,99|alta confiança|
 |0,01|baixa confiança|
 |0|falha definida na correspondência|
 

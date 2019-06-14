@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/05/2016
 ms.author: erikre
 ms.openlocfilehash: f2d653441598a47986913d525057672eed24b435
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60931697"
 ---
 # <a name="how-to-send-email-using-sendgrid-from-nodejs"></a>Como enviar emails usando o SendGrid do Node.js
@@ -72,7 +72,7 @@ var email = new sendgrid.Email({
 });
 ```
 
-Você também pode especificar uma mensagem de HTML a clientes que dão suporte a ela, definindo a propriedade de html. Por exemplo: 
+Você também pode especificar uma mensagem de HTML a clientes que dão suporte a ela, definindo a propriedade de html. Por exemplo:
 
 ```javascript
 html: This is a sample <b>HTML<b> email message.
@@ -96,7 +96,7 @@ sendgrid.send(email, function(err, json){
 ```
 
 > [!NOTE]
-> Enquanto os exemplos acima mostram a passagem em uma função de retorno de chamada e de objeto de email, você pode invocar diretamente as funções de envio especificando diretamente as propriedades do email. Por exemplo:   
+> Enquanto os exemplos acima mostram a passagem em uma função de retorno de chamada e de objeto de email, você pode invocar diretamente as funções de envio especificando diretamente as propriedades do email. Por exemplo:  
 > 
 > ```javascript
 > sendgrid.send({

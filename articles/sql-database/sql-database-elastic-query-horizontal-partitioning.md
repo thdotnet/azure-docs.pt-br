@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/03/2019
 ms.openlocfilehash: 3b2b472407175df307c569704d4c7611737c4ea1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60694328"
 ---
 # <a name="reporting-across-scaled-out-cloud-databases-preview"></a>Relatórios entre bancos de dados em nuvem expandidos (visualização)
@@ -55,7 +55,7 @@ A credencial é usada pela consulta elástica para se conectar aos bancos de dad
     [;]
 
 > [!NOTE]
-> Verifique se o *"\<username\>"* não inclui nenhum sufixo *"\@servername"*.
+> Verifique se o *"\<username\>"* não inclui nenhum sufixo *"\@servername"* .
 
 ## <a name="12-create-external-data-sources"></a>1.2 Criar fontes de dados externas
 
@@ -143,13 +143,13 @@ As cláusulas SCHEMA\_NAME e OBJECT\_NAME mapeiam a definição da tabela extern
 
 A cláusula DISTRIBUTION especifica a distribuição de dados usada para esta tabela. O processador de consultas utiliza as informações fornecidas na cláusula DISTRIBUTION para criar planos de consulta mais eficientes.
 
-1. **SHARDED** significa que os dados são particionados horizontalmente entre os bancos de dados. A chave de particionamento para a distribuição de dados é o parâmetro **<sharding_column_name>**.
+1. **SHARDED** significa que os dados são particionados horizontalmente entre os bancos de dados. A chave de particionamento para a distribuição de dados é o parâmetro **<sharding_column_name>** .
 2. **REPLICATED** significa que cópias idênticas da tabela estão presentes em cada banco de dados. É sua responsabilidade assegurar que as réplicas sejam idênticas entre os bancos de dados.
 3. **ROUND\_ROBIN** significa que a tabela é horizontalmente particionada usando um método de distribuição dependente do aplicativo.
 
 **Referência da camada de dados**: A DDL da tabela externa faz referência a uma fonte de dados externa. A fonte de dados externa especifica um mapa de fragmentos que fornece à tabela externa as informações necessárias para localizar todos os bancos de dados em sua camada de dados.
 
-### <a name="security-considerations"></a>Considerações de segurança
+### <a name="security-considerations"></a>Considerações sobre segurança
 
 Usuários com acesso à tabela externa têm acesso automaticamente a tabelas remotas subjacentes com a credencial fornecida na definição de fonte de dados externa. Evite a elevação de privilégios indesejada usando credencial da fonte de dados externa. Use GRANT ou REVOKE para uma tabela externa como se fosse uma tabela normal.  
 

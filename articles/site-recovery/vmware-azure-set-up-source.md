@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/14/2019
 ms.author: ramamill
 ms.openlocfilehash: 075f86b24e2915d9689db8097889a830bade74c5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60723419"
 ---
 # <a name="set-up-the-source-environment-for-vmware-to-azure-replication"></a>Configurar o ambiente de origem para replicação de VMware no Azure
@@ -33,7 +33,7 @@ O artigo supõe que você já tenha:
 2. Em **Introdução**, selecione Site Recovery. Depois selecione **Preparar Infraestrutura**.
 3. Em **Objetivo de proteção** > **Onde os seus computadores estão localizados**, selecione **local**.
 4. Em **Para qual deseja replicar os seus computadores**, selecione **Para o Azure**.
-5. Em **Os seus computadores estão virtualizados?**, selecione **Sim, com o Hipervisor do VMware vSphere**. Depois, selecione **OK**.
+5. Em **Os seus computadores estão virtualizados?** , selecione **Sim, com o Hipervisor do VMware vSphere**. Depois, selecione **OK**.
 
 ## <a name="set-up-the-configuration-server"></a>Configurar o servidor de configuração
 

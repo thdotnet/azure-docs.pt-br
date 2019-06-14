@@ -13,10 +13,10 @@ ms.date: 12/07/2018
 ms.author: lahugh
 ms.custom: seodec18
 ms.openlocfilehash: 80d2e995a18a2d6dafbb8d92fdd5996b10eab17c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60783717"
 ---
 # <a name="use-azure-batch-cli-templates-and-file-transfer"></a>Usar modelos CLI do Azure de Lote e o arquivo de transferência
@@ -144,7 +144,7 @@ Se o arquivo de modelo foi nomeado _pool-ffmpeg.json_, invoque o modelo conforme
 az batch pool create --template pool-ffmpeg.json
 ```
 
-A CLI solicita que você forneça valores para o `poolId` e `nodeCount` parâmetros. Você também pode fornecer os parâmetros em um arquivo JSON. Por exemplo: 
+A CLI solicita que você forneça valores para o `poolId` e `nodeCount` parâmetros. Você também pode fornecer os parâmetros em um arquivo JSON. Por exemplo:
 
 ```json
 {

@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.openlocfilehash: 52fe8c05101f9647549acec276f0bdb9fa52d1c7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60537784"
 ---
 # <a name="connect-hdinsight-to-your-on-premises-network"></a>Conectar o HDInsight à sua rede local
@@ -280,7 +280,7 @@ Você pode usar NSGs (grupos de segurança de rede) ou UDRs (rotas definidas pel
 2. Para os endereços IP identificados na etapa 1, permita tráfego de entrada desses endereços IP.
 
    * Se estiver usando __NSG__: permita o tráfego de __entrada__ na porta __443__ para os endereços IP.
-   * Se estiver usando __UDR:__: defina o tipo __Próximo Salto__ da rota como __Internet__ para os endereços IP.
+   * Se estiver usando __UDR:__ : defina o tipo __Próximo Salto__ da rota como __Internet__ para os endereços IP.
 
 Para obter um exemplo de como usar o Azure PowerShell ou a CLI do Azure para criar as NSGs, consulte o documento [Estender o HDInsight com Redes Virtuais do Azure](./hdinsight-extend-hadoop-virtual-network.md#hdinsight-nsg).
 

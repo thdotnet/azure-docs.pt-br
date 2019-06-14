@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/04/2019
 ms.author: sajagtap
 ms.openlocfilehash: 006f7d6691b8872aaa7ff8ccacff484585761d00
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61271036"
 ---
 # <a name="define-and-use-moderation-workflows"></a>Definir e usar fluxos de trabalho de moderação
@@ -81,6 +81,6 @@ Vá para o **imagem** guia sob **examine** e verifique se existe uma revisão de
 
 ![Analisar imagens](images/image-workflow-review.PNG)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Neste guia, você aprendeu a configurar e usar fluxos de trabalho de moderação do Content Moderator [ferramenta de revisão](https://contentmoderator.cognitive.microsoft.com). Em seguida, consulte a [guia da API REST](../try-review-api-workflow.md) para aprender a criar fluxos de trabalho de forma programática.

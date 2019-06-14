@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: alinast
 ms.openlocfilehash: 35d12d0114f9677905c85a9df94ecd074e5f8f75
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60925793"
 ---
 # <a name="device-connectivity-and-telemetry-ingress"></a>Conectividade do dispositivo e entrada de telemetria
@@ -70,9 +70,9 @@ Você pode personalizar o payload e o formato de mensagem do dispositivo para at
 | Nome da propriedade | Value | Obrigatório | DESCRIÇÃO |
 |---|---|---|---|
 | **DigitalTwins-Telemetry** | 1.0 | Sim | Um valor constante que identifica uma mensagem para o sistema. |
-| **DigitalTwins-SensorHardwareId** | `string(72)` | Sim | Um identificador exclusivo do sensor que envia a **Mensagem**. Esse valor deve corresponder a uma propriedade **HardwareId** do objeto para o sistema para processá-lo. Por exemplo, `00FF0643BE88-CO2`. |
-| **CreationTimeUtc** | `string` | Não  | Uma cadeia de data formatada [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) que identifica o tempo de amostragem da carga útil. Por exemplo, `2018-09-20T07:35:00.8587882-07:00`. |
-| **CorrelationId** | `string` | Não  | Um UUID que foi usado para eventos de rastreamento em todo o sistema. Por exemplo, `cec16751-ab27-405d-8fe6-c68e1412ce1f`.
+| **DigitalTwins-SensorHardwareId** | `string(72)` | Sim | Um identificador exclusivo do sensor que envia a **Mensagem**. Esse valor deve corresponder a uma propriedade **HardwareId** do objeto para o sistema para processá-lo. Por exemplo: `00FF0643BE88-CO2`. |
+| **CreationTimeUtc** | `string` | Não | Uma cadeia de data formatada [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) que identifica o tempo de amostragem da carga útil. Por exemplo: `2018-09-20T07:35:00.8587882-07:00`. |
+| **CorrelationId** | `string` | Não | Um UUID que foi usado para eventos de rastreamento em todo o sistema. Por exemplo: `cec16751-ab27-405d-8fe6-c68e1412ce1f`.
 
 ### <a name="send-your-message-to-digital-twins"></a>Envie sua mensagem para Gêmeos Digitais
 

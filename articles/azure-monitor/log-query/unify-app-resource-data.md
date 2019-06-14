@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: magoedte
 ms.openlocfilehash: 3f3de81197b05d4f025a3fd8638cffe4b07cecad
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61424629"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Unificar vários recursos do Application Insights do Azure Monitor 
@@ -106,9 +106,9 @@ A tabela a seguir mostra as diferenças de esquema entre o Log Analytics e o App
 | AvailabilityDuration | duration |
 | AvailabilityMessage | message |
 | AvailabilityRunLocation | location |
-| AvailabilityTestId | ID |
-| AvailabilityTestName | Nome |
-| AvailabilityTimestamp |  timestamp |
+| AvailabilityTestId | id |
+| AvailabilityTestName | name |
+| AvailabilityTimestamp | timestamp |
 | Navegador | client_browser |
 | City | client_city |
 | ClientIP | client_IP |
@@ -116,31 +116,31 @@ A tabela a seguir mostra as diferenças de esquema entre o Log Analytics e o App
 | País/Região | client_CountryOrRegion | 
 | CustomEventCount | itemCount | 
 | CustomEventDimensions | customDimensions |
-| CustomEventName | Nome | 
+| CustomEventName | name | 
 | DeviceModel | client_Model | 
 | DeviceType | client_Type | 
 | ExceptionCount | itemCount | 
 | ExceptionHandledAt | handledAt |
 | ExceptionMessage | message | 
-| ExceptionType | tipo |
+| ExceptionType | type |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
 | SO | client_OS | 
 | PageViewCount | itemCount |
 | PageViewDuration | duration | 
-| PageViewName | Nome | 
+| PageViewName | name | 
 | ParentOperationID | operation_Id | 
 | RequestCount | itemCount | 
 | RequestDuration | duration | 
-| RequestID | ID | 
-| RequestName | Nome | 
+| RequestID | id | 
+| RequestName | name | 
 | RequestSuccess | sucesso | 
 | ResponseCode | resultCode | 
 | Função | cloud_RoleName |
 | RoleInstance | cloud_RoleInstance |
 | SessionId | session_Id | 
 | SourceSystem | operation_SyntheticSource |
-| TelemetryTYpe | tipo |
+| TelemetryTYpe | type |
 | URL | _url |
 | UserAccountId | user_AccountId |
 

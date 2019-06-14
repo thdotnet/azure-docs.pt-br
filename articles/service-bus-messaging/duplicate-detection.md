@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: d9f814a49924ca95078f3b3decca4f3922c74c2b
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65413654"
 ---
 # <a name="duplicate-detection"></a>Detecção de duplicidade
@@ -39,7 +39,7 @@ A *MessageId* sempre pode ser algum GUID, mas a ancoragem o identificador para o
 > [!NOTE]
 > Se a detecção de duplicidades estiver habilitada e a chave de partição ou a ID de sessão não forem definidas, a ID da mensagem é usada como a chave de partição. Se a ID da mensagem também não for definida, as bibliotecas .NET e AMQP geram automaticamente uma ID de mensagem para a mensagem. Para obter mais informações, consulte [uso de chaves de partição](service-bus-partitioning.md#use-of-partition-keys).
 
-## <a name="enable-duplicate-detection"></a>Habilitar detecção de duplicidades
+## <a name="enable-duplicate-detection"></a>Habilitar detecção de duplicidade
 
 No portal, o recurso é ativado durante a criação de entidade com a caixa de seleção **Habilitar detecção de duplicidade**, que está desativado por padrão. A configuração para criar novos tópicos é equivalente.
 

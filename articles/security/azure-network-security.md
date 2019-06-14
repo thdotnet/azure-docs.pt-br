@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
 ms.openlocfilehash: f684a9d7bca77a8aa3aa60f5079dda0ce3b58a1c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60587231"
 ---
 # <a name="azure-network-security"></a>Segurança de rede do Azure
@@ -280,13 +280,13 @@ Os NSGs usam cinco tuplas para avaliar o tráfego (e que são usadas nas regras 
 
 Isso significa que você pode controlar o acesso entre uma VM individual e um grupo de VMs ou entre uma VM individual e outra VM individual ou ainda entre sub-redes inteiras. Novamente, tenha em mente que isso é simples uma filtragem de pacote com estado simples e não uma inspeção de pacote completa. Não há nenhuma capacidade IPS ou IDS de nível de rede ou de validação de protocolo em um Grupo de Segurança de Rede.
 
-Um NSG vem com algumas regras internas às quais você deve estar atento. Estes são:
+Um NSG vem com algumas regras internas às quais você deve estar atento. Elas são:
 
 -   **Permitir todo o tráfego em uma rede virtual específica:** Todas as VMs em uma mesma Rede Virtual do Azure podem se comunicar entre si.
 
--   **Permitir a entrada de balanceamento de carga do Azure:** essa regra permite tráfego de qualquer endereço de origem para qualquer endereço de destino para o Azure Load Balancer.
+-   **Permitir a entrada de balanceamento de carga do Azure:**  essa regra permite tráfego de qualquer endereço de origem para qualquer endereço de destino para o Azure Load Balancer.
 
--   **Negar todas as entradas:** essa regra bloqueia todo o fornecimento de tráfego da Internet que você tenha permitido explicitamente.
+-   **Negar todas as entradas:**  essa regra bloqueia todo o fornecimento de tráfego da Internet que você tenha permitido explicitamente.
 
 -   **Permitir todo o tráfego de saída para a Internet:** Essa regra permite que VMs iniciem conexões com a Internet. Se você não quiser que essas conexões sejam iniciadas, você precisará criar uma regra para bloquear as conexões ou aplicar o túnel forçado.
 
@@ -588,7 +588,7 @@ As operações executadas como parte da configuração das redes são registrada
 Os logs de auditoria estão disponíveis para as operações realizadas em todos os recursos da rede.
 
 
-#### <a name="metrics"></a>Métricas
+#### <a name="metrics"></a>metrics
 
 As métricas são medidas de desempenho e contadores coletados em um período de tempo. As métricas estão disponíveis atualmente para o Gateway de Aplicativo. As métricas podem ser usadas para disparar alertas com base no limite. Por padrão, o Gateway de Aplicativo do Azure monitora a integridade de todos os recursos em seu pool de back-end e remove automaticamente qualquer recurso do pool que não for considerado íntegro. O Gateway de Aplicativo continua monitorando as instâncias não íntegras e as adiciona de volta ao pool de back-end íntegro depois que elas se tornarem disponíveis e responderem a investigações de integridade. O Gateway de Aplicativo envia as investigações de integridade na mesma porta que é definida nas configurações de HTTP do back-end. A configuração assegura que a investigação teste a mesma porta que os clientes usariam para se conectar ao back-end.
 

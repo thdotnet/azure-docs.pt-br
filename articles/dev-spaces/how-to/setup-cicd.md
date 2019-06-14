@@ -11,10 +11,10 @@ manager: yuvalm
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Contêiner do Azure, contêineres
 ms.openlocfilehash: 983af0dd75e6ae62630c85d04ac3819c7e260439
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60687241"
 ---
 # <a name="use-cicd-with-azure-dev-spaces"></a>Usar CI/CD com o Azure Dev Spaces
@@ -43,7 +43,7 @@ Crie um novo espaço chamado _dev_ usando o comando `azds space select`. O espa�
 azds space select -n dev
 ```
 
-Quando solicitado a selecionar um espaço de desenvolvimento pai, selecione _\<none\>_.
+Quando solicitado a selecionar um espaço de desenvolvimento pai, selecione _\<none\>_ .
 
 Depois que seu espaço de desenvolvimento tiver sido criado, você precisa determinar o sufixo de host. Use o `azds show-context` comando para mostrar o sufixo de host do controlador de ingresso do Azure Dev espaços.
 
@@ -79,7 +79,7 @@ Para criar um pipeline desse arquivo:
 1. Selecione a opção para criar uma **New** compilar o pipeline.
 1. Selecione **GitHub** como a origem, autorizar com sua conta do GitHub se necessário e selecione o _azds_updates_ branch da versão bifurcado do repositório sampleapp espaços de desenvolvimento.
 1. Selecione **configuração como código**, ou **YAML**, como o seu modelo.
-1. Você agora verá uma página de configuração para o pipeline de build. Conforme mencionado acima, navegue até o caminho específico do idioma para o **caminho do arquivo YAML** usando o **...**  botão. Por exemplo, `samples/dotnetcore/getting-started/azure-pipelines.dotnet.yml`.
+1. Você agora verá uma página de configuração para o pipeline de build. Conforme mencionado acima, navegue até o caminho específico do idioma para o **caminho do arquivo YAML** usando o **...**  botão. Por exemplo: `samples/dotnetcore/getting-started/azure-pipelines.dotnet.yml`.
 1. Vá para o **variáveis** guia.
 1. Adicione manualmente _dockerId_ como uma variável, que é o nome de usuário de sua [conta de administrador do Registro de Contêiner do Azure](../../container-registry/container-registry-authentication.md#admin-account). (Mencionado nos pré-requisitos do artigo)
 1. Adicione manualmente _dockerPassword_ como uma variável, que é a senha da sua conta do administrador do [Registro de Contêiner do Azure](../../container-registry/container-registry-authentication.md#admin-account). Certifique-se de especificar _dockerPassword_ como um Segredo (selecionando o ícone de bloqueio) para fins de segurança.

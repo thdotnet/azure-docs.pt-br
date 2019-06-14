@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: yegu
 ms.openlocfilehash: 1d7a18f3f46cec73d70389b82eed5a85e440d340
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62119071"
 ---
 # <a name="how-to-create-and-manage-azure-cache-for-redis-using-the-azure-classic-cli"></a>Como criar e gerenciar o Azure Cache para Redis usando a CLI clássica do Azure
@@ -44,9 +44,9 @@ Para criar e gerenciar instâncias do Azure Cache para Redis usando a CLI cláss
 ## <a name="azure-cache-for-redis-properties"></a>Propriedades do Cache Redis do Azure
 As propriedades a seguir são usadas durante a criação e a atualização de instâncias do Azure Cache para Redis.
 
-| Propriedade | Switch | DESCRIÇÃO |
+| Propriedade | Alternar | DESCRIÇÃO |
 | --- | --- | --- |
-| Nome |-n, --name |Nome do Azure Cache para Redis. |
+| name |-n, --name |Nome do Azure Cache para Redis. |
 | grupo de recursos |-g, --resource-group |Nome do Grupo de Recursos. |
 | location |-l, --location |Local para criar o cache. |
 | tamanho |-z, --size |Tamanho do Azure Cache para Redis. Valores válidos: [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4] |

@@ -16,10 +16,10 @@ ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 610aeec9e4c40d0aad0c28f02697e2cf01edbe4a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60438594"
 ---
 # <a name="assign-azure-resource-roles-in-pim"></a>Atribuir funções de recurso do Azure no PIM
@@ -125,7 +125,7 @@ Siga estas etapas para atualizar ou remover uma atribuição de função existen
 
     Para obter informações sobre como estender uma atribuição de função, consulte [Estender ou renovar funções de recurso do Azure no PIM](pim-resource-roles-renew-extend.md).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Estender ou renovar funções de recurso do Azure no PIM](pim-resource-roles-renew-extend.md)
 - [Definir configurações de função de recurso do Azure no PIM](pim-resource-roles-configure-role-settings.md)

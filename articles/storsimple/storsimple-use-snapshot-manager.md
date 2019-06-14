@@ -16,10 +16,10 @@ ms.date: 06/05/2017
 ms.author: v-sharos
 ms.custom: ''
 ms.openlocfilehash: 46225e5a332e035e4d1cc256e71c4b5d8686fd47
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60845064"
 ---
 # <a name="use-storsimple-snapshot-manager-user-interface-to-manage-backup-jobs-and-backup-catalog"></a>Usar a interface de usuário do StorSimple Snapshot Manager para gerenciar trabalhos de backup e catálogo de backups
@@ -118,7 +118,7 @@ A tabela a seguir contém uma lista em ordem alfabética das ações do StorSimp
 | Detalhes |Clique no nó **Dispositivos** e, em seguida, clique com o botão direito do mouse em um dispositivo no painel **Resultados**. |Clique em **Detalhes** para ver os detalhes da configuração de um dispositivo. |
 | Editar |Clique em **Políticas de Backup** e clique com o botão direito do mouse em uma política no painel **Resultados**. |Clique em **Editar** para alterar o agendamento de backup de um grupo de volumes. |
 | Exportar Lista |Clique em um nó ou resultado (esse item aparece em todos os menus de **Ação** e nos painéis de **Ações**.) |Clique em **Exportar Lista** para salvar uma lista em um arquivo CSV (valores separados por vírgulas). Em seguida, você pode importar esse arquivo para um aplicativo de planilha para análise. |
-| Ajuda |Clique em qualquer nó ou resultado. (Esse item aparece em todos os menus de **Ação** e painéis de **Ações**.) |Clique em **Ajuda** para abrir a Ajuda online em uma janela separada do navegador. |
+| Help |Clique em qualquer nó ou resultado. (Esse item aparece em todos os menus de **Ação** e painéis de **Ações**.) |Clique em **Ajuda** para abrir a Ajuda online em uma janela separada do navegador. |
 | Nova Janela a Partir Daqui |Clique em um nó ou resultado (esse item aparece em todos os menus de **Ação** e nos painéis de **Ações**.) |Clique em **Nova Janela a Partir Daqui** para abrir uma nova janela do StorSimple Snapshot Manager. |
 | Atualizar |Clique em um nó ou resultado (esse item aparece em todos os menus de **Ação** e nos painéis de **Ações**.) |Clique em **Atualizar** para atualizar a janela StorSimple Snapshot Manager exibida atualmente. |
 | Atualizar Dispositivo |Clique no nó **Dispositivos** e clique com o botão direito do mouse em um dispositivo no painel **Resultados**. |Clique em **Atualizar Dispositivo** para sincronizar um dispositivo específico conectado ao StorSimple Snapshot Manager. |
@@ -359,7 +359,7 @@ A tabela a seguir descreve as combinações de teclas de atalho da barra de menu
 | ALT + F |Abre o menu **Arquivo** . |N |Abre uma nova instância do console. |
 |  |O |Abre a página **Ferramentas Administrativas** . | |
 |  |S |Salva o console do StorSimple Snapshot Manager. | |
-|  |O  |Abre a página **Salvar Como** . | |
+|  |O |Abre a página **Salvar Como** . | |
 |  |M |Abre a página **Adicionar/Remover Snap-in** . | |
 |  |P |Abre a página **Opções** . | |
 |  |H |Abre a Ajuda online. | |
@@ -368,9 +368,9 @@ A tabela a seguir descreve as combinações de teclas de atalho da barra de menu
 |  |F |Atualiza o console do StorSimple Snapshot Manager. | |
 |  |L |Abre a página **Exportar Lista** . | |
 |  |H |Abre a Ajuda online. | |
-| ALT+V |Abre o menu **Exibição** . |O  |Abre a página **Adicionar/Remover Colunas** . |
+| ALT+V |Abre o menu **Exibição** . |O |Abre a página **Adicionar/Remover Colunas** . |
 |  |U |Abre a página **Personalizar Modo de Exibição** . | |
-| ALT+O |Abre o menu **Favoritos** . |O  |Abre a página **Adicionar aos Favoritos** . |
+| ALT+O |Abre o menu **Favoritos** . |O |Abre a página **Adicionar aos Favoritos** . |
 |  |O |Abre a página **Organizar Favoritos** . | |
 | ALT+W |Abre o menu **Janela** . |N |Abre outra janela do StorSimple Snapshot Manager. |
 |  |C |Exibe todas as janelas de console abertas em um estilo em cascata. | |
@@ -378,7 +378,7 @@ A tabela a seguir descreve as combinações de teclas de atalho da barra de menu
 |  |I |Organiza os ícones em uma linha horizontal na parte inferior da tela. | |
 | ALT+H |Abre o menu **Ajuda** . |H |Abre a Ajuda online. |
 |  |T |Abre a página da Web do Microsoft TechNet Tech Center. | |
-|  |O  |Abre a página **Sobre o Console de Gerenciamento Microsoft** . | |
+|  |O |Abre a página **Sobre o Console de Gerenciamento Microsoft** . | |
 
 ### <a name="scope-pane-shortcut-keys"></a>Teclas de atalho do painel Escopo
 As tabelas a seguir mostram as combinações de teclas de atalho para cada nó no painel **Escopo** . 

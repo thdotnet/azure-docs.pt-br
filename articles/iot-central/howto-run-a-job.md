@@ -9,10 +9,10 @@ ms.date: 03/18/2019
 ms.topic: conceptual
 manager: peterpr
 ms.openlocfilehash: ec7033719316bb186408ea78f6dabac43c383491
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60519362"
 ---
 # <a name="create-and-run-a-job-in-your-azure-iot-central-application"></a>Criar e executar trabalhos em seu aplicativo Azure IoT Central
@@ -100,7 +100,7 @@ Para exibir o status do trabalho e todos os dispositivos afetados, selecione o t
 > [!NOTE]
 > Se um dispositivo tiver sido excluído, não é possível selecionar o dispositivo e o exibe como excluído com a ID do dispositivo.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Agora que você aprendeu como criar trabalhos em seu aplicativo do Azure IoT Central, aqui estão algumas das próximas etapas:
 

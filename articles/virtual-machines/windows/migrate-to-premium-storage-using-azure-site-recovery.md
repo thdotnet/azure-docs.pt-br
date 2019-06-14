@@ -11,10 +11,10 @@ ms.date: 08/15/2017
 ms.author: luywang
 ms.subservice: disks
 ms.openlocfilehash: 5744ee76d36b1cea256cd2594bcbc07c954f38f7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60849654"
 ---
 # <a name="migrate-to-premium-storage-by-using-azure-site-recovery"></a>Migrar para o Armazenamento Premium usando o Azure Site Recovery
@@ -77,7 +77,7 @@ Você pode usar o Site Recovery para migrar VMs IaaS do Azure entre regiões ou 
 ### <a name="step-1-create-a-recovery-services-vault"></a>Etapa 1: Criar um cofre dos Serviços de Recuperação
 
 1. Abra o [Portal do Azure](https://portal.azure.com).
-2. Selecione **Criar um recurso** > **Gerenciamento** > **Backup e Site Recovery (OMS)**. Como alternativa, você pode selecionar **Procurar** > **Cofre dos Serviços de Recuperação** > **Adicionar**.
+2. Selecione **Criar um recurso** > **Gerenciamento** > **Backup e Site Recovery (OMS)** . Como alternativa, você pode selecionar **Procurar** > **Cofre dos Serviços de Recuperação** > **Adicionar**.
    >[!NOTE]
    >Backup e Recuperação de Site foi anteriormente parte da ![OMS suite](https://github.com/MicrosoftDocs/azure-docs-pr/pull/azure-monitor/azure-monitor-rebrand.md#retirement-of-operations-management-suite-brand).
 1. Especifique uma região para a qual as VMs serão replicadas. Para fins de migração na mesma região, selecione a região em que estão as VMs e as contas de armazenamento de origem. 
@@ -144,7 +144,7 @@ Para verificar se o seu servidor de configuração está corretamente associado 
 ### <a name="step-6-plan-capacity"></a>Etapa 6: Planejar a capacidade
 
 1. Use o [planejador de capacidade](../../site-recovery/site-recovery-capacity-planner.md) para estimar com precisão a largura de banda de rede, o armazenamento e outros requisitos para atender às suas necessidades de replicação. 
-2. Quando terminar, selecione **Sim, eu fiz isso** na caixa **Você concluiu o planejamento da capacidade?**.
+2. Quando terminar, selecione **Sim, eu fiz isso** na caixa **Você concluiu o planejamento da capacidade?** .
 
    ![para confirmar que você concluiu o planejamento de capacidade][11]
 

@@ -18,10 +18,10 @@ ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 04d2be76072866da2b21718f60fd0c9a5923b15b
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65545119"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-resource-owner-password-credential"></a>Plataforma de identidade da Microsoft e a credencial de senha de proprietário de recurso do OAuth 2.0
@@ -41,7 +41,7 @@ O diagrama a seguir mostra o fluxo do ROPC.
 
 ![Fluxo ROPC](./media/v2-oauth2-ropc/v2-oauth-ropc.svg)
 
-## <a name="authorization-request"></a>Solicitação da autorização
+## <a name="authorization-request"></a>Solicitação de autorização
 
 O fluxo ROPC é uma solicitação única &mdash;, envia a identificação do cliente e as credenciais do usuário para o IDP e, em seguida, recebe os tokens em retorno. O cliente deve solicitar o endereço de e-mail (UPN) e a senha do usuário antes de fazer isso. Imediatamente após uma solicitação bem-sucedida, o cliente deve liberar com segurança as credenciais do usuário da memória. Ele nunca deve salvá-los.
 
@@ -64,13 +64,13 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &grant_type=password
 ```
 
-| Parâmetro | Condição | Descrição |
+| Parâmetro | Condição | DESCRIÇÃO |
 | --- | --- | --- |
 | `tenant` | Obrigatório | O locatário do diretório no qual você deseja fazer o login. Pode estar no formato de nome amigável ou de GUID. Este parâmetro não pode ser definido como `common` ou `consumers`, mas pode ser definido como `organizations`. |
 | `grant_type` | Obrigatório | Deve ser definido como `password`. |
 | `username` | Obrigatório | Endereço de email do usuário. |
 | `password` | Obrigatório | A senha do usuário. |
-| `scope` | Recomendado | Uma lista separada por espaço de [escopos](v2-permissions-and-consent.md) ou permissões que o aplicativo exige. Em um fluxo interativo, o administrador ou o usuário deve concordar com esses escopos antecipadamente. |
+| `scope` | Recomendadas | Uma lista separada por espaço de [escopos](v2-permissions-and-consent.md) ou permissões que o aplicativo exige. Em um fluxo interativo, o administrador ou o usuário deve concordar com esses escopos antecipadamente. |
 
 ### <a name="successful-authentication-response"></a>Resposta de autenticação bem sucedida
 
@@ -87,9 +87,9 @@ O exemplo a seguir mostra uma resposta bem-sucedida de token:
 }
 ```
 
-| Parâmetro | Formatar | Descrição |
+| Parâmetro | Formatar | DESCRIÇÃO |
 | --------- | ------ | ----------- |
-| `token_type` | String | Sempre defina como `Bearer`. |
+| `token_type` | Cadeia de caracteres | Sempre defina como `Bearer`. |
 | `scope` | Cadeia de caracteres separadas por espaço | Se um token de acesso foi retornado, esse parâmetro lista os escopos para os quais o token de acesso é válido. |
 | `expires_in`| int | Número de segundos para o qual o token de acesso incluído é válido. |
 | `access_token`| Cadeia de caracteres opaca | Emitido para os [escopos](v2-permissions-and-consent.md) que foram solicitados. |
@@ -102,7 +102,7 @@ Você pode usar o token de atualização para adquirir novos tokens de acesso e 
 
 Se o usuário não tiver fornecido o nome de usuário ou a senha corretos, ou se o cliente não tiver recebido o consentimento solicitado, a autenticação falhará.
 
-| Erro | Descrição | Ação do cliente |
+| Erro | DESCRIÇÃO | Ação do cliente |
 |------ | ----------- | -------------|
 | `invalid_grant` | A autenticação falhou | As credenciais estavam incorretas ou o cliente não tem consentimento para os escopos solicitados. Se os escopos não forem concedidos, um `consent_required` erro será retornado. Se isso ocorrer, o cliente deve enviar o usuário para um prompt interativo usando uma visualização da Web ou um navegador. |
 | `invalid_request` | A solicitação foi mal construída | O tipo de concessão não é suportado na `/common` ou `/consumers` contextos de autenticação.  Use `/organizations` em vez disso. |

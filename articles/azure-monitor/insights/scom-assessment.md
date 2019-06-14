@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: magoedte
 ms.openlocfilehash: 27b55af74a713c51655891df8c852ff44cd3744a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60401596"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>Otimizar seu ambiente com a solução System Center Operations Manager Health Check (Versão prévia)
@@ -86,7 +86,7 @@ Antes de tudo, a conta Executar como deve atender aos seguintes requisitos:
 1. Abra o console do Operations Manager e selecione o botão de navegação **Administração**.
 2. Em **Configuração para Executar Como**, clique em **Contas**.
 3. No assistente **Criar Conta Executar Como**, na página **Introdução**, clique em **Avançar**.
-4. Na página **Propriedades Gerais**, selecione **Windows** na lista **Tipo de Conta Executar Como:**.
+4. Na página **Propriedades Gerais**, selecione **Windows** na lista **Tipo de Conta Executar Como:** .
 5. Digite um nome para exibição na caixa de texto **Nome de Exibição**; opcionalmente, digite uma descrição na caixa **Descrição** e clique em **Avançar**.
 6. Na página **Segurança da Distribuição**, selecione **Mais seguro**.
 7. Clique em **Criar**.  

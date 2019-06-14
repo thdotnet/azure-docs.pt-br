@@ -13,10 +13,10 @@ ms.reviewer: MightyPen, sstein
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: a658e2fe32ec95dfabad54684a0c9095af7a341d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61484789"
 ---
 # <a name="explore-saas-analytics-with-azure-sql-database-sql-data-warehouse-data-factory-and-power-bi"></a>Explore a análise de SaaS com o Banco de Dados SQL do Azure, o SQL Data Warehouse, o Data Factory e o Power BI
@@ -87,22 +87,22 @@ Este tutorial explora a análise de dados de vendas de ingressos. Nesta etapa, v
 ### <a name="deploy-sql-data-warehouse-data-factory-and-blob-storage"></a>Implantar o SQL Data Warehouse, o Data Factory e o Armazenamento de Blobs 
 No aplicativo Wingtip Tickets, os dados transacionais dos locatários são distribuídos entre vários bancos de dados. O ADF (Azure Data Factory) é usado para orquestrar o processo de ELT (extração, carregamento e transformação) desses dados no data warehouse. Para carregar dados no SQL Data Warehouse com mais eficiência, o ADF extrai dados em arquivos de blob intermediários e, em seguida, usa o [PolyBase](https://docs.microsoft.com/azure/sql-data-warehouse/design-elt-data-loading) para carregar os dados no data warehouse.   
 
-Nesta etapa, você implanta os recursos adicionais usados no tutorial: um SQL Data Warehouse chamado _tenantanalytics_, um Azure Data Factory chamado _dbtodwload-\<usuário\>_ e uma conta de armazenamento do Azure chamada _wingtipstaging\<usuário\>_. A conta de armazenamento é usada para armazenar temporariamente os arquivos de dados extraídos como blobs antes que eles sejam carregados no data warehouse. Essa etapa também implanta o esquema do data warehouse e define os pipelines do ADF que orquestram o processo de ELT.
+Nesta etapa, você implanta os recursos adicionais usados no tutorial: um SQL Data Warehouse chamado _tenantanalytics_, um Azure Data Factory chamado _dbtodwload-\<usuário\>_ e uma conta de armazenamento do Azure chamada _wingtipstaging\<usuário\>_ . A conta de armazenamento é usada para armazenar temporariamente os arquivos de dados extraídos como blobs antes que eles sejam carregados no data warehouse. Essa etapa também implanta o esquema do data warehouse e define os pipelines do ADF que orquestram o processo de ELT.
 1. No ISE do PowerShell, abra *…\Learning Modules\Operational Analytics\Tenant Analytics DW\Demo-TenantAnalyticsDW.ps1* e defina:
     - **$DemoScenario** = **2** Implantar data warehouse, armazenamento de blob e data factory de análise de locatário 
 1. Pressione **F5** para executar o script de demonstração e implantar os recursos do Azure. 
 
 Agora, examine os recursos do Azure implantados:
 #### <a name="tenant-databases-and-analytics-store"></a>Bancos de dados de locatário e repositório de análise
-Use o [SSMS (SQL Server Management Studio)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) para se conectar aos servidores **tenants1-dpt-&lt;usuário&gt;** e **catalog-dpt-&lt;usuário&gt;**. Substitua &lt;usuário&gt; pelo valor usado quando você implantou o aplicativo. Usar o logon = *developer* e a senha = *P\@ssword1*. Veja o [tutorial introdutório](saas-dbpertenant-wingtip-app-overview.md) para obter instruções.
+Use o [SSMS (SQL Server Management Studio)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) para se conectar aos servidores **tenants1-dpt-&lt;usuário&gt;** e **catalog-dpt-&lt;usuário&gt;** . Substitua &lt;usuário&gt; pelo valor usado quando você implantou o aplicativo. Usar o logon = *developer* e a senha = *P\@ssword1*. Veja o [tutorial introdutório](saas-dbpertenant-wingtip-app-overview.md) para obter instruções.
 
 ![Conectar-se ao servidor do Banco de Dados SQL do SSMS](media/saas-tenancy-tenant-analytics/ssmsSignIn.JPG)
 
 No Pesquisador de Objetos:
 
-1. Expanda o servidor *tenants1-dpt-&lt;usuário&gt;*.
+1. Expanda o servidor *tenants1-dpt-&lt;usuário&gt;* .
 1. Expanda o nó Bancos de dados e veja a lista de bancos de dados de locatário.
-1. Expanda o servidor *catalog-dpt-&lt;usuário&gt;*.
+1. Expanda o servidor *catalog-dpt-&lt;usuário&gt;* .
 1. Verifique se você vê o repositório de análise que contém os seguintes objetos:
     1. As tabelas **raw_Tickets**, **raw_Customers**, **raw_Events** e **raw_Venues** contêm dados extraídos brutos dos bancos de dados de locatário.
     1. As tabelas de esquema em estrela são **fact_Tickets**, **dim_Customers**, **dim_Venues**, **dim_Events** e **dim_Dates** .
@@ -126,7 +126,7 @@ No grupo de recursos no [portal do Azure](https://ms.portal.azure.com), verifiqu
  ![adf_portal](media/saas-tenancy-tenant-analytics/adf-data-factory-portal.png)
 
 Esta seção explora o data factory criado. Siga as etapas abaixo para iniciar o data factory:
-1. No portal, clique no data factory chamado **dbtodwload-\<usuário\>**.
+1. No portal, clique no data factory chamado **dbtodwload-\<usuário\>** .
 2. Clique no bloco **Criar e Monitorar** para iniciar o designer do Azure Data Factory em uma guia separada. 
 
 ## <a name="extract-load-and-transform-data"></a>Extrair, carregar e transformar dados
@@ -189,7 +189,7 @@ Os dados no esquema em estrela fornecem todos os dados de vendas de ingressos ne
 Use as seguintes etapas para se conectar ao Power BI e importar os modos de exibição que você criou anteriormente:
 
 1. Inicie o Power BI desktop.
-2. Na faixa de opções Página Inicial, selecione **Obter Dados** e **Mais...**  no menu.
+2. Na faixa de opções Página Inicial, selecione **Obter Dados** e **Mais...** no menu.
 3. Na janela **Obter Dados**, selecione **Banco de Dados SQL do Azure**.
 4. Na janela de logon do banco de dados, digite o nome do servidor (**catalog-dpt-&lt;Usuário&gt;.database.windows.net**). Selecione **Importar** para **Modo de Conectividade de Dados** e, em seguida, clique em **OK**. 
 

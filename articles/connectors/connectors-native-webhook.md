@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 07/21/2016
 ms.openlocfilehash: c3047000843e054e71ec1a80313118a25e7c4905
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60447175"
 ---
 # <a name="create-event-based-workflows-or-actions-by-using-webhooks-and-azure-logic-apps"></a>Criar ações ou fluxos de trabalho baseados em evento usando webhooks e os Aplicativos Lógicos do Azure
@@ -93,11 +93,11 @@ Aqui estão mais detalhes sobre os gatilhos e ações aos quais o webhook dá su
 Assine uma URL de retorno de chamada para um serviço que possa chamar a URL, de modo a acionar o aplicativo lógico conforme a necessidade.
 Um * significa que o campo é obrigatório.
 
-| Nome de exibição | Nome da Propriedade | DESCRIÇÃO |
+| Nome para exibição | Nome da Propriedade | DESCRIÇÃO |
 | --- | --- | --- |
-| Método de Assinatura* |estático |Método HTTP a ser usado para solicitação de assinatura |
+| Método de Assinatura* |method |Método HTTP a ser usado para solicitação de assinatura |
 | URI da Assinatura* |uri |URI do HTTP a ser usado para solicitação de assinatura |
-| Método de Cancelamento da Assinatura* |estático |Método HTTP a ser usado para solicitação de cancelamento da assinatura |
+| Método de Cancelamento da Assinatura* |method |Método HTTP a ser usado para solicitação de cancelamento da assinatura |
 | URI do Cancelamento da Assinatura* |uri |URI do HTTP a ser usado para solicitação de cancelamento da assinatura |
 | Corpo da Assinatura |corpo |Corpo da solicitação HTTP da assinatura |
 | Cabeçalhos da Assinatura |headers |Cabeçalhos da solicitação HTTP da assinatura |
@@ -129,11 +129,11 @@ Solicitação de webhook
 Assine uma URL de retorno de chamada para um serviço que possa chamar a URL, de modo a retomar uma etapa do fluxo de trabalho conforme a necessidade.
 Um * significa que o campo é obrigatório.
 
-| Nome de exibição | Nome da Propriedade | DESCRIÇÃO |
+| Nome para exibição | Nome da Propriedade | DESCRIÇÃO |
 | --- | --- | --- |
-| Método de Assinatura* |estático |Método HTTP a ser usado para solicitação de assinatura |
+| Método de Assinatura* |method |Método HTTP a ser usado para solicitação de assinatura |
 | URI da Assinatura* |uri |URI do HTTP a ser usado para solicitação de assinatura |
-| Método de Cancelamento da Assinatura* |estático |Método HTTP a ser usado para solicitação de cancelamento da assinatura |
+| Método de Cancelamento da Assinatura* |method |Método HTTP a ser usado para solicitação de cancelamento da assinatura |
 | URI do Cancelamento da Assinatura* |uri |URI do HTTP a ser usado para solicitação de cancelamento da assinatura |
 | Corpo da Assinatura |corpo |Corpo da solicitação HTTP da assinatura |
 | Cabeçalhos da Assinatura |headers |Cabeçalhos da solicitação HTTP da assinatura |

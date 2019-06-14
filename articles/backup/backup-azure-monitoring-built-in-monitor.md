@@ -11,10 +11,10 @@ ms.date: 03/05/2019
 ms.author: pullabhk
 ms.assetid: 86ebeb03-f5fa-4794-8a5f-aa5cbbf68a81
 ms.openlocfilehash: ab7d2c0af4bc71733a7995b7e781f0facbfbb29f
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65236444"
 ---
 # <a name="monitoring-azure-backup-workloads"></a>Monitoramento de cargas de trabalho de Backup do Azure
@@ -49,7 +49,7 @@ Os alertas são principalmente a cenários em que os usuários são notificados 
 Os cenários a seguir são definidos pelo serviço como cenários podem gerar alertas.
 
   - Falhas de backup/restauração
-  - Backup bem-sucedido com avisos para o agente de Backup do Azure (MAB)
+  - Backup bem-sucedido com avisos para o Agente de Backup do Azure (MAB)
   - Interrompa a proteção com reter dados/parar a proteção com excluir dados
 
 ### <a name="exceptions-when-an-alert-is-not-raised"></a>Exceções quando um alerta não será gerado.
@@ -63,7 +63,7 @@ As exceções acima são projetadas desde o entendimento de que o resultado dess
 
 ### <a name="alerts-from-the-following-azure-backup-solutions-are-shown-here"></a>Alertas de soluções de Backup do Azure a seguir são mostrados aqui:
 
-  - Backups VM do Azure
+  - Backups de VM do Azure
   - Backups de arquivo do Azure
   - Backups de carga de trabalho do Azure, como SQL
   - Agente de Backup do Azure (MAB)

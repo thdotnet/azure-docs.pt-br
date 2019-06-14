@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 06/04/2018
 ms.author: ellacroi
 ms.openlocfilehash: 1b3f987ff54a4b5eeeb1034d1e99302d0d6d43d6
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935602"
 ---
 # <a name="build-your-landing-page"></a>Criar a página de aterrissagem
@@ -24,7 +24,7 @@ Comece identificando suas metas. Para as soluções, escolha o cliente-alvo e a 
 *   Obter uma solução agora
 
 Você pode fazer referência à sua página de aterrissagem entre várias táticas de marketing. É possível usar as táticas de marketing a seguir: 
-*   Eventos
+*   Events
 *   Webcasts
 *   Mídia social
 *   White papers
@@ -43,7 +43,7 @@ Quando você tiver um plano de campanha pronto, crie a página de aterrissagem n
 | **Criar uma URL curta e fácil de lembrar** | Usando URLs longas. URLs longas não são memorizáveis e são difíceis de localizar. |
 | **Adicionar conteúdo visual relevante, como um vídeo de depoimentos de cliente ou uma arquitetura de solução** | Usar muito texto faz com que seus clientes ignorem o conteúdo e parem a exploração.|
 | **Crie um plano de ação claro para direcionar os visitantes à sua página do catálogo do Marketplace** | Ter muitos links ou ações na página. |
-| **Coloque seu plano de ação em um cabeçalho ou seção claramente delineado**  | Inserir os links para sua listagem do Marketplace em um parágrafo do texto. |
+| **Coloque seu plano de ação em um cabeçalho ou seção claramente delineado** | Inserir os links para sua listagem do Marketplace em um parágrafo do texto. |
 | **Pesquisar as melhores palavras-chave e otimizar a página para pesquisa** | Supondo que o nome do seu produto gerará classificações de pesquisa superiores. |
 | **Usar as palavras-chave das suas campanhas publicitárias** | Usar muitas palavras-chave diferentes em suas propriedades da Web dilui seus investimentos de publicidade. |
 | **Colocar nomes de produtos e palavras-chave relevantes "em destaque"** | Fazer com que os usuários rolem a página para ver qual produto ou solução está sendo apresentada. |

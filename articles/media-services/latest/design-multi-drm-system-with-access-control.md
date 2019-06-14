@@ -15,10 +15,10 @@ ms.date: 12/21/2018
 ms.author: willzhan
 ms.custom: seodec18
 ms.openlocfilehash: ef695d913c73f0a4266b20f21f1008108b85b4d0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60734004"
 ---
 # <a name="design-of-a-multi-drm-content-protection-system-with-access-control"></a>Criação de um sistema de proteção de conteúdo de DRM múltiplo com controle de acesso 
@@ -329,7 +329,7 @@ Para registrar e configurar o aplicativo de ponteiro no Azure AD, execute as seg
 
 3. Atualize o arquivo de manifesto do aplicativo para que a propriedade groupMembershipClaims tenha o valor "groupMembershipClaims": "All".
 
-4. No aplicativo do Azure AD que aponta para o aplicativo Web de player, na seção **Permissões para outros aplicativos**, adicione o aplicativo de recurso que foi adicionado na etapa 1. Em **Permissão delegada**, selecione **Acessar [resource_name]**. Essa opção concede permissão ao aplicativo Web para criar tokens de acesso que acessam o aplicativo de recurso. Faça isso para a versão local e a implantada do aplicativo Web se você desenvolve com Visual Studio e o Aplicativo Web do Azure.
+4. No aplicativo do Azure AD que aponta para o aplicativo Web de player, na seção **Permissões para outros aplicativos**, adicione o aplicativo de recurso que foi adicionado na etapa 1. Em **Permissão delegada**, selecione **Acessar [resource_name]** . Essa opção concede permissão ao aplicativo Web para criar tokens de acesso que acessam o aplicativo de recurso. Faça isso para a versão local e a implantada do aplicativo Web se você desenvolve com Visual Studio e o Aplicativo Web do Azure.
 
 O JWT emitido pelo Azure AD é o token de acesso usado para acessar o recurso de ponteiro.
 

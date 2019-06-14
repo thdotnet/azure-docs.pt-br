@@ -14,10 +14,10 @@ ms.reviewer: mbullwin
 ms.pm_owner: daviste;NumberByColors
 ms.author: daviste
 ms.openlocfilehash: 91274fad4e56c69777333c81ea3b32dccdcf64ff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60373245"
 ---
 # <a name="analyze-user-navigation-patterns-with-user-flows-in-application-insights"></a>Analisar padrões de navegação do usuário com o Fluxos de Usuário no Azure Application Insights
@@ -44,7 +44,7 @@ A ferramenta Fluxos de Usuário inicia de uma exibição de página inicial, eve
 
 Para começar a responder perguntas com a ferramenta Fluxos de Usuário, escolha uma exibição de página ou um evento personalizado inicial para servir como o ponto de partida para a visualização:
 
-1. Clique no link no título **O que os usuários fazem depois de...?**, ou clique no botão**Editar**.
+1. Clique no link no título **O que os usuários fazem depois de...?** , ou clique no botão**Editar**.
 2. Selecione uma exibição de página, evento personalizado ou exceção do menu suspenso **Evento inicial**.
 3. Clique em **Criar grafo**.
 
@@ -94,7 +94,7 @@ Use as opções **Dividir por** no menu **Editar**:
 1. Escolha o evento que você deseja dividir no menu **Evento**.
 2. Escolha uma dimensão no menu **Dimensão**. Por exemplo, se você tiver um evento chamado “Botão clicado”, tente uma propriedade personalizada chamada “Nome do botão.”
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Visão geral do uso](usage-overview.md)
 * [Usuários, Sessões e Eventos](usage-segmentation.md)

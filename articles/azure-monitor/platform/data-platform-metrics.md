@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
 ms.openlocfilehash: 319def9072dbf38eff44ca4459428f1ef99a2b54
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64867974"
 ---
 # <a name="metrics-in-azure-monitor"></a>Métricas no Azure Monitor
@@ -52,7 +52,7 @@ Dados coletados pelo Azure Monitor métricas são armazenados em um banco de dad
 * Algumas métricas podem ter várias dimensões, conforme descrito em [métricas multidimensionais](#multi-dimensional-metrics). As métricas personalizadas podem ter até 10 dimensões.
 
 ## <a name="multi-dimensional-metrics"></a>Métricas multidimensionais
-Um dos desafios para os dados de métrica é que ela geralmente tem informações limitadas para fornecer contexto para valores coletados. O Azure Monitor resolve esse desafio com métricas multidimensionais. Dimensões de uma métrica são pares nome-valor que contêm dados adicionais para descrever o valor da métrica. Por exemplo, uma métrica _espaço em disco disponível_ poderia ter uma dimensão chamada _unidade_ com valores _c:_, _unidade d:_, que permitiria a exibição o espaço em disco disponível em todas as unidades ou para cada unidade individualmente.
+Um dos desafios para os dados de métrica é que ela geralmente tem informações limitadas para fornecer contexto para valores coletados. O Azure Monitor resolve esse desafio com métricas multidimensionais. Dimensões de uma métrica são pares nome-valor que contêm dados adicionais para descrever o valor da métrica. Por exemplo, uma métrica _espaço em disco disponível_ poderia ter uma dimensão chamada _unidade_ com valores _c:_ , _unidade d:_ , que permitiria a exibição o espaço em disco disponível em todas as unidades ou para cada unidade individualmente.
 
 O exemplo abaixo ilustra dois conjuntos de dados de uma métrica hipotética chamada _Taxa de Transferência de Rede_. O primeiro conjunto de dados não tem nenhuma dimensão. O segundo conjunto de dados mostra os valores com duas dimensões, _Endereço IP_ e _Direção_:
 
@@ -60,9 +60,9 @@ O exemplo abaixo ilustra dois conjuntos de dados de uma métrica hipotética cha
 
 | Timestamp     | Valor da Métrica |
 | ------------- |:-------------|
-| 9/8/2017 8h14 | 1.331,8 Kbps |
-| 9/8/2017 8h15 | 1.141,4 Kbps |
-| 9/8/2017 8h16 | 1.110,2 Kbps |
+| 9/8/2017 8h14 | 1\.331,8 Kbps |
+| 9/8/2017 8h15 | 1\.141,4 Kbps |
+| 9/8/2017 8h16 | 1\.110,2 Kbps |
 
 Essa métrica não dimensional pode responder apenas a uma pergunta básica, como “qual era minha taxa de transferência de rede em determinado horário?”
 

@@ -13,10 +13,10 @@ ms.topic: reference
 ms.date: 10/09/2018
 ms.author: syclebsc
 ms.openlocfilehash: fbc5a149e59bff1897d3949185272e9ca664f989
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64717815"
 ---
 # <a name="azure-functions-f-developer-reference"></a>Referência do desenvolvedor em F# do Azure Functions
@@ -57,7 +57,7 @@ Há um arquivo [host.json](functions-host-json.md) compartilhado que pode ser us
 As extensões de associação necessárias na [versão 2.x](functions-versions.md) do tempo de execução do Functions são definidas no arquivo `extensions.csproj`, com os arquivos de biblioteca reais na pasta `bin`. Ao desenvolver localmente, você precisa [registrar as extensões de associação](./functions-bindings-register.md#local-development-with-azure-functions-core-tools-and-extension-bundles). Ao desenvolver funções no portal do Azure, esse registro é feito para você.
 
 ## <a name="binding-to-arguments"></a>Binding para argumentos
-Cada associação oferece suporte a um conjunto de argumentos, conforme detalhado na [Referências de gatilhos e de associações do Azure Functions para desenvolvedores](functions-triggers-bindings.md). Por exemplo, uma das associações de argumento com suporte de um gatilho de blob é um POCO, que pode ser expresso usando um registro em F#. Por exemplo: 
+Cada associação oferece suporte a um conjunto de argumentos, conforme detalhado na [Referências de gatilhos e de associações do Azure Functions para desenvolvedores](functions-triggers-bindings.md). Por exemplo, uma das associações de argumento com suporte de um gatilho de blob é um POCO, que pode ser expresso usando um registro em F#. Por exemplo:
 
 ```fsharp
 type Item = { Id: string }
@@ -71,7 +71,7 @@ O Azure Function em F# usará um ou mais argumentos. Quando falamos sobre os arg
 
 No exemplo acima, `blob` é um argumento de entrada e `output` é um argumento de saída. Observe que utilizamos `byref<>` para `output` (não é necessário adicionar a anotação `[<Out>]`). O uso de um tipo `byref<>` permite que sua função altere o registro ou o objeto ao qual o argumento se refere.
 
-Quando um registro em F# é usado como um tipo de entrada, a definição de registro deve ser marcada com `[<CLIMutable>]` para permitir que a estrutura do Azure Functions defina os campos adequadamente antes de passar o registro para a função. Nos bastidores, `[<CLIMutable>]` gera setters para as propriedades de registro. Por exemplo: 
+Quando um registro em F# é usado como um tipo de entrada, a definição de registro deve ser marcada com `[<CLIMutable>]` para permitir que a estrutura do Azure Functions defina os campos adequadamente antes de passar o registro para a função. Nos bastidores, `[<CLIMutable>]` gera setters para as propriedades de registro. Por exemplo:
 
 ```fsharp
 [<CLIMutable>]
@@ -83,7 +83,7 @@ let Run(req: TestObject, log: ILogger) =
     { req with Greeting = sprintf "Hello, %s" req.SenderName }
 ```
 
-Uma classe de F# também pode ser usada para ambos os argumentos. Para uma classe, as propriedades geralmente exigirão getters e setters. Por exemplo: 
+Uma classe de F# também pode ser usada para ambos os argumentos. Para uma classe, as propriedades geralmente exigirão getters e setters. Por exemplo:
 
 ```fsharp
 type Item() =
@@ -95,8 +95,8 @@ let Run(input: string, item: byref<Item>) =
     item <- result
 ```
 
-## <a name="logging"></a>Registro em log
-Para registrar a saída em seus [logs de streaming](../app-service/troubleshoot-diagnostic-logs.md) em F#, sua função deve usar um argumento do tipo [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). Para manter a consistência, recomendamos que esse argumento seja denominado `log`. Por exemplo: 
+## <a name="logging"></a>Registrando em log
+Para registrar a saída em seus [logs de streaming](../app-service/troubleshoot-diagnostic-logs.md) em F#, sua função deve usar um argumento do tipo [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). Para manter a consistência, recomendamos que esse argumento seja denominado `log`. Por exemplo:
 
 ```fsharp
 let Run(blob: string, output: byref<string>, log: ILogger) =
@@ -188,7 +188,7 @@ Além disso, os seguintes assemblies têm regras de maiúsculas e minúsculas es
 Se precisar fazer referência a um assembly particular, carregue o arquivo do assembly em uma pasta `bin` relativa à sua função e faça referência a ela usando o nome do arquivo (por exemplo, `#r "MyAssembly.dll"`). Para obter informações sobre como carregar arquivos na pasta da função, consulte a seção a seguir sobre gerenciamento de pacotes.
 
 ## <a name="editor-prelude"></a>Prelúdio do editor
-Um editor que oferece suporte aos Serviços de compilador em F# não estará ciente dos namespaces e assemblies que o Azure Functions inclui automaticamente. Dessa forma, pode ser útil incluir um prelúdio que ajuda o editor a encontrar os assemblies que você está usando e a abrir explicitamente os namespaces. Por exemplo: 
+Um editor que oferece suporte aos Serviços de compilador em F# não estará ciente dos namespaces e assemblies que o Azure Functions inclui automaticamente. Dessa forma, pode ser útil incluir um prelúdio que ajuda o editor a encontrar os assemblies que você está usando e a abrir explicitamente os namespaces. Por exemplo:
 
 ```fsharp
 #if !COMPILED
@@ -264,7 +264,7 @@ let Run(timer: TimerInfo, log: ILogger) =
 ```
 
 ## <a name="reusing-fsx-code"></a>Reutilizar o código .fsx
-Você pode usar código de outros arquivos `.fsx` usando uma diretiva `#load`. Por exemplo: 
+Você pode usar código de outros arquivos `.fsx` usando uma diretiva `#load`. Por exemplo:
 
 `run.fsx`
 

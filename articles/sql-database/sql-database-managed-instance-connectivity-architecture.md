@@ -13,10 +13,10 @@ ms.reviewer: sstein, bonova, carlrab
 manager: craigg
 ms.date: 04/16/2019
 ms.openlocfilehash: dbb5ee122e715aeaa66d786f02966beedd2447c3
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65522325"
 ---
 # <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Arquitetura de conectividade para uma instância gerenciada SQL do Azure
@@ -97,7 +97,7 @@ Implante uma instância gerenciada em uma sub-rede dedicada dentro da rede virtu
 
 ### <a name="mandatory-inbound-security-rules"></a>Regras de segurança de entrada obrigatórias
 
-| NOME       |Port                        |Protocol|`Source`           |Destino|Ação|
+| NOME       |Port                        |Protocol|source           |Destino|Ação|
 |------------|----------------------------|--------|-----------------|-----------|------|
 |gerenciamento  |9000, 9003, 1438, 1440, 1452|TCP     |Qualquer              |SUB-REDE DA MI  |PERMITIR |
 |mi_subnet   |Qualquer                         |Qualquer     |SUB-REDE DA MI        |SUB-REDE DA MI  |PERMITIR |
@@ -105,7 +105,7 @@ Implante uma instância gerenciada em uma sub-rede dedicada dentro da rede virtu
 
 ### <a name="mandatory-outbound-security-rules"></a>Regras de segurança de saída obrigatórias
 
-| NOME       |Port          |Protocol|`Source`           |Destino|Ação|
+| NOME       |Port          |Protocol|source           |Destino|Ação|
 |------------|--------------|--------|-----------------|-----------|------|
 |gerenciamento  |80, 443, 12000|TCP     |SUB-REDE DA MI        |AzureCloud |PERMITIR |
 |mi_subnet   |Qualquer           |Qualquer     |SUB-REDE DA MI        |SUB-REDE DA MI  |PERMITIR |

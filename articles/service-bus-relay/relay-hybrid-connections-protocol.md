@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 05/02/2018
 ms.author: clemensv
 ms.openlocfilehash: e96d0103a03e841f39e8adb88215f6d6e24a305a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60420035"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64706086"
 ---
 # <a name="azure-relay-hybrid-connections-protocol"></a>Protocolo de Conexões Híbridas de Retransmissão do Azure
 
@@ -149,7 +149,7 @@ As opções de parâmetro de cadeia de caracteres de consulta são conforme demo
 | `sb-hc-action`   | sim      | Para a função de ouvinte, o parâmetro precisa ser **sb-hc-action=listen**
 | `{path}`         | sim      | O caminho de namespace codificado como URL da Conexão Híbrida pré-configurada na qual este ouvinte será registrado. Esta expressão é acrescentada à parte do caminho `$hc/` fixa.
 | `sb-hc-token`    | Sim\*    | O ouvinte deve fornecer um Token de Acesso válido, compartilhado com o Barramento de Serviço, em formato codificado de URL para o namespace ou Conexão Híbrida que confere o direito **Listen** (escutar).
-| `sb-hc-id`       | Não        | Essa ID opcional fornecida pelo cliente permite o rastreamento de diagnóstico de ponta a ponta.
+| `sb-hc-id`       | Não       | Essa ID opcional fornecida pelo cliente permite o rastreamento de diagnóstico de ponta a ponta.
 
 Se a conexão de WebSocket falhar porque o caminho de Conexão Híbrida não está sendo registrado, porque há um token inválido ou ausente ou por algum outro erro, os comentários de erro serão fornecidos usando o modelo comum de comentários de status HTTP 1.1. A descrição do status conterá uma ID de acompanhamento de erro que poderá ser comunicada ao pessoal de suporte do Azure:
 
@@ -208,7 +208,7 @@ A URL deve ser usada no estado em que se encontra para estabelecer o soquete de 
 | -------------- | -------- | -------------------------------------------------------------------
 | `sb-hc-action` | sim      | Para aceitar um soquete, o parâmetro deverá ser `sb-hc-action=accept`
 | `{path}`       | sim      | (confira no parágrafo a seguir)
-| `sb-hc-id`     | Não        | Consulte a descrição anterior de **id**.
+| `sb-hc-id`     | Não       | Consulte a descrição anterior de **id**.
 
 `{path}` é o caminho do namespace em formato codificado de URL da Conexão Híbrida pré-configurada na qual este ouvinte deve ser registrado. Esta expressão é acrescentada à parte do caminho `$hc/` fixa.
 
@@ -439,7 +439,7 @@ As opções de parâmetro de cadeia de caracteres de consulta são conforme demo
 | `sb-hc-action` | sim       | Para a função de remetente, o parâmetro deve ser `sb-hc-action=connect`.
 | `{path}`       | sim       | (confira no parágrafo a seguir)
 | `sb-hc-token`  | Sim\*     | O ouvinte deve fornecer um Token de Acesso válido, compartilhado com o Barramento de Serviço, em formato codificado de URL para o namespace ou Conexão Híbrida que confere o direito **Send**.
-| `sb-hc-id`     | Não         | Uma ID opcional que possibilita o rastreamento de diagnóstico de ponta a ponta e é disponibilizada para o ouvinte durante o handshake de aceitação.
+| `sb-hc-id`     | Não        | Uma ID opcional que possibilita o rastreamento de diagnóstico de ponta a ponta e é disponibilizada para o ouvinte durante o handshake de aceitação.
 
  O `{path}` é o namespace em formato codificado de URL da Conexão Híbrida pré-configurada na qual este ouvinte deve ser registrado. A expressão `path` pode ser estendida com um sufixo e uma expressão de cadeia de caracteres de consulta para se comunicar ainda mais. Se a Conexão Híbrida for registrada no caminho `hyco`, a expressão `path` poderá ser `hyco/suffix?param=value&...` seguida por parâmetros de cadeia de caracteres de consulta definidos aqui. Assim, uma expressão completa pode ser da seguinte maneira:
 

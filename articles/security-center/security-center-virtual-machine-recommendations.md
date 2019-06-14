@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 12/12/2018
 ms.author: rkarlin
 ms.openlocfilehash: a4aaf440856746895a31914aeee2bddec2ce23f6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60544969"
 ---
 # <a name="understand-azure-security-center-resource-recommendations"></a>Compreender as recomendações de recurso da Central de Segurança do Azure
@@ -50,7 +50,7 @@ Use as tabelas abaixo como referência para entender as recomendações de servi
 | Os soquetes da Web devem ser desabilitados para o aplicativo Web| É recomendável que você examine cuidadosamente o uso de soquetes da Web em aplicativos Web.  O protocolo de soquetes da Web é vulnerável a diferentes tipos de ameaças de segurança. |
 | Usar domínios personalizados para seu aplicativo Web | É recomendável o uso de domínios personalizados para proteger um aplicativo Web de ataques comuns como phishing e outros ataques relacionados a DNS. |
 | Configurar restrições de IP para o aplicativo Web | É recomendável que você defina uma lista de endereços IP que tem autorização para acessar seu aplicativo.  O uso de restrições de IP protege um aplicativo Web de ataques comuns. |
-| Não permita que todos os recursos ('*') acessem o aplicativo | É recomendável que você não defina o parâmetro WEBSITE_LOAD_CERTIFICATES como ‘*’. Definir o parâmetro como '*' significa que todos os certificados serão carregados para seu repositório de certificados pessoal de aplicativos Web.  Isso pode levar a abuso do princípio de privilégio mínimo porque é improvável que o site precise de acesso a todos os certificados em tempo de execução. |
+| Não permita que todos os recursos ('*') acessem o aplicativo | É recomendável que você não defina o parâmetro WEBSITE_LOAD_CERTIFICATES como ‘ *’. Definir o parâmetro como '* ' significa que todos os certificados serão carregados para seu repositório de certificados pessoal de aplicativos Web.  Isso pode levar a abuso do princípio de privilégio mínimo porque é improvável que o site precise de acesso a todos os certificados em tempo de execução. |
 | O CORS não deve permitir o acesso a todos os recursos ao seu aplicativo | É recomendável que você permita que apenas os domínios necessários interajam com seu aplicativo Web. O CORS (compartilhamento de recurso de origem cruzada) não deve permitir que todos os domínios acessem seu aplicativo Web. |
 | Use o .NET Framework compatível mais recente para o aplicativo Web | É recomendável que você use a versão mais recente do .NET Framework para as classes de segurança mais recentes. Usar classes e tipos mais antigos pode tornar seu aplicativo vulnerável. |
 | Use a versão mais recente compatível do Java para o aplicativo Web | É recomendável que você use a versão mais recente do Java para as classes de segurança mais recentes. Usar classes e tipos mais antigos pode tornar seu aplicativo vulnerável. |

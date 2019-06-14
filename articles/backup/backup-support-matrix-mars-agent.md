@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.author: raynew
 manager: carmonm
 ms.openlocfilehash: 9799914cdabf1f64fccfd6bfd891f9498b860e39
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64922995"
 ---
 # <a name="support-matrix-for-backup-with-the-microsoft-azure-recovery-services-mars-agent"></a>Matriz de suporte para backup com o agente MARS (Serviços de Recuperação do Microsoft Azure)
@@ -66,7 +66,7 @@ O agente MARS precisa de acesso a estas URLs:
 
 **Recurso** | **Detalhes**
 --- | ---
-Controle de Largura de Banda |  Com suporte. No agente de MARS, use **alterar propriedades** para ajustar a largura de banda.
+Controle de Largura de Banda | Com suporte. No agente de MARS, use **alterar propriedades** para ajustar a largura de banda.
 Limitação de rede | Não disponível para máquinas de backup que executam o Windows Server 2008 R2, Windows Server 2008 SP2 ou Windows 7.
 
 ## <a name="support-for-direct-backups"></a>Suporte para backups diretos
@@ -75,16 +75,16 @@ Você pode usar o agente MARS para fazer backup diretamente no Azure em alguns s
 
 **Sistema operacional** | **Arquivos/pastas** | **Estado do sistema**
 --- | --- | ---
-Windows 10 (Enterprise, Pro, Home) | Sim | Não 
-Windows 8.1 (Enterprise, Pro)| Sim |Não 
-Windows 8 (Enterprise, Pro) | Sim | Não 
-Windows 7 (Ultimate, Enterprise, Pro, Home Premium/Básico, Starter) | Sim | Não 
+Windows 10 (Enterprise, Pro, Home) | Sim | Não
+Windows 8.1 (Enterprise, Pro)| Sim |Não
+Windows 8 (Enterprise, Pro) | Sim | Não
+Windows 7 (Ultimate, Enterprise, Pro, Home Premium/Básico, Starter) | Sim | Não
 Windows Server 2016 (Standard, Datacenter, Essentials) | Sim | Sim
 Windows Server 2012 R2 (Standard, Datacenter, Foundation, Essentials) | Sim | Sim
 Windows Server 2012 (Standard, Datacenter, Foundation) | Sim | Sim
 Windows Server 2008 R2 (Standard, Enterprise, Datacenter, Foundation) | Sim | Sim
-Windows Server 2008 SP2 (Standard, Datacenter, Foundation) | Sim | Não 
-Windows Storage Server 2016/2012 R2/2012 (Standard, Workgroup) | Sim | Não 
+Windows Server 2008 SP2 (Standard, Datacenter, Foundation) | Sim | Não
+Windows Storage Server 2016/2012 R2/2012 (Standard, Workgroup) | Sim | Não
 
 Para obter mais informações, consulte [sistemas operacionais com suporte MABS e DPM](backup-support-matrix-mabs-dpm.md#supported-mabs-and-dpm-operating-systems).
 
@@ -94,21 +94,21 @@ O Backup do Azure limita o tamanho de uma fonte de dados de arquivo ou pasta que
 
 **Sistema operacional** | **Limite de tamanho**
 --- | ---
-Windows Server 2012 ou posterior |  54.400 GB
-Windows Server 2008 R2 SP1 |    1.700 GB
-Windows Server 2008 SP2 | 1.700 GB
-Windows 8 ou superior  | 54.400 GB
-Windows 7   | 1.700 GB
+Windows Server 2012 ou posterior |  54\.400 GB
+Windows Server 2008 R2 SP1 |    1\.700 GB
+Windows Server 2008 SP2 | 1\.700 GB
+Windows 8 ou superior  | 54\.400 GB
+Windows 7   | 1\.700 GB
 
 
 ## <a name="supported-file-types-for-backup"></a>Tipos de arquivo compatíveis para backup
 
 **Tipo** | **Suporte**
 --- | ---
-Criptografado   |  Com suporte.
-Compactado |  Com suporte.
-Esparsos |  Com suporte.
-Compactados e esparsos |  Com suporte.
+Criptografado   | Com suporte.
+Compactado | Com suporte.
+Esparsos | Com suporte.
+Compactados e esparsos | Com suporte.
 Links físicos  | Sem suporte. Ignorado.
 Ponto de nova análise   | Sem suporte. Ignorado.
 Criptografados e esparsos |  Sem suporte. Ignorado.

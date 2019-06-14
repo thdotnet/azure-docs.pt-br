@@ -9,10 +9,10 @@ ms.date: 06/04/2018
 ms.author: vinagara
 ms.subservice: alerts
 ms.openlocfilehash: 9d734f74c4e12b369e46c15dcb9d01a8185dddd6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60431018"
 ---
 # <a name="extend-alerts-from-log-analytics-into-azure-alerts"></a>Estender alertas do Log Analytics para os Alertas do Azure
@@ -232,12 +232,12 @@ A seguir são apresentadas as etapas de correção para cada erro:
 
     Quando o [Azure Policy](../../governance/policy/overview.md) for aplicado restringirá qualquer novo recurso em um grupo de recursos ou assinatura que contenha o workspace do Log Analytics (Operations Management Suite). O sistema não pode estender alertas para o Azure e criar grupos de ações necessários.
     
-    Para resolver, edite a política que está causando o erro *[RequestDisallowedByPolicy](../../azure-resource-manager/resource-manager-policy-requestdisallowedbypolicy-error.md)*, o que impede a criação de novos recursos no grupo de recursos ou assinatura que contém o workspace. É possível fazer isso usando o portal do Azure, o PowerShell, a CLI do Azure ou a API. Você pode auditar ações para localizar a política apropriada que está causando falhas. Para saber mais, consulte [visualizando logs de atividades para auditar ações](../../azure-resource-manager/resource-group-audit.md). 
+    Para resolver, edite a política que está causando o erro *[RequestDisallowedByPolicy](../../azure-resource-manager/resource-manager-policy-requestdisallowedbypolicy-error.md)* , o que impede a criação de novos recursos no grupo de recursos ou assinatura que contém o workspace. É possível fazer isso usando o portal do Azure, o PowerShell, a CLI do Azure ou a API. Você pode auditar ações para localizar a política apropriada que está causando falhas. Para saber mais, consulte [visualizando logs de atividades para auditar ações](../../azure-resource-manager/resource-group-audit.md). 
     
     Quando você resolve o erro usando as etapas ilustradas no artigo, o Operations Management Suite estenderá os alertas para o Azure na execução agendada do dia seguinte. Não será necessário tomar mais nenhuma ação nem iniciar nada.
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * Saiba mais sobre a nova [experiência de Alertas do Azure](../../azure-monitor/platform/alerts-overview.md).
 * Saiba mais sobre os [Alertas de log nos Alertas do Azure](alerts-unified-log.md).

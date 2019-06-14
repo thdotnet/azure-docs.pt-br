@@ -13,17 +13,17 @@ ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
 ms.openlocfilehash: df85aafc81b199610c02f0faecb06e804fda24bb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60899275"
 ---
 # <a name="trace-telemetry-application-insights-data-model"></a>Telemetria de rastreamento: Modelo de dados do Application Insights
 
 A telemetria de rastreamento (em [Application Insights](../../azure-monitor/app/app-insights-overview.md)) representa instruções de rastreamento de estilo `printf` pesquisadas por texto. `Log4Net`, `NLog` e outras entradas do arquivo de log baseadas em texto são convertidas em instâncias desse tipo. O rastreamento não tem medidas como uma extensibilidade.
 
-## <a name="message"></a>Mensagem
+## <a name="message"></a>Message
 
 Mensagem de rastreamento.
 

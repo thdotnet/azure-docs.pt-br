@@ -13,10 +13,10 @@ ms.date: 05/02/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: ca4e343ea4774bbe4ff992ad671575b150b3c045
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65890973"
 ---
 # <a name="developing-with-media-services-v3-apis"></a>Desenvolver com os serviços de mídia APIs v3
@@ -106,7 +106,7 @@ Os serviços de mídia tem as seguintes operações de longa execução:
 > [!NOTE]
 > Os SDKs dos Serviços de Mídia do Azure v3 não têm garantia de serem thread-safe. Ao desenvolver um aplicativo com multi-thread, você deverá adicionar sua própria lógica de sincronização de thread para proteger o cliente ou usar um novo objeto AzureMediaServicesClient por thread. Você também deve tomar cuidado com problemas de multi-threading introduzidos por objetos opcionais fornecidos pelo código ao cliente (como uma instância do HttpClient no .NET).
 
-|SDK|Referência|
+|.|Referência|
 |---|---|
 |[SDK .NET](https://aka.ms/ams-v3-dotnet-sdk)|[Referência do .NET](https://aka.ms/ams-v3-dotnet-ref)|
 |[Java SDK](https://aka.ms/ams-v3-java-sdk)|[Referência de Java](https://aka.ms/ams-v3-java-ref)|

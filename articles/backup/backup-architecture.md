@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: raynew
 ms.openlocfilehash: 98ffe145103b4be04014627ed04d04dcf7542015
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60647335"
 ---
 # <a name="azure-backup-architecture"></a>Arquitetura de Backup do Azure
@@ -49,8 +49,8 @@ Cofres dos serviços de recuperação têm os seguintes recursos:
 - Você pode monitorar itens de backup em um cofre, incluindo as máquinas locais e VMs do Azure.
 - É possível gerenciar o acesso ao cofre com o [controle de acesso baseado em função (RBAC)](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) do Azure.
 - Você especifica como os dados no cofre são replicados para redundância:
-    - **LRS (armazenamento com redundância local)**: Para proteger contra falhas em um data center, você pode usar o LRS. O LRS replica os dados para uma unidade de escala de armazenamento. [Saiba mais](https://docs.microsoft.com/azure/storage/common/storage-redundancy-lrs).
-    - **GRS (Armazenamento com redundância geográfica)**: Para proteger contra interrupções de toda a região, você pode usar GRS. GRS replica seus dados para uma região secundária. [Saiba mais](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs). 
+    - **LRS (armazenamento com redundância local)** : Para proteger contra falhas em um data center, você pode usar o LRS. O LRS replica os dados para uma unidade de escala de armazenamento. [Saiba mais](https://docs.microsoft.com/azure/storage/common/storage-redundancy-lrs).
+    - **GRS (Armazenamento com redundância geográfica)** : Para proteger contra interrupções de toda a região, você pode usar GRS. GRS replica seus dados para uma região secundária. [Saiba mais](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs). 
     - Por padrão, os cofres dos serviços de recuperação usam GRS. 
 
 ## <a name="backup-agents"></a>Agentes de backup
@@ -178,7 +178,7 @@ Para obter mais informações sobre o armazenamento em disco e os tipos de disco
 
 Você pode fazer backup de máquinas virtuais do Azure usando o armazenamento premium com o Backup do Azure:
 
-- Durante o processo de backup de máquinas virtuais com o armazenamento premium, o serviço de Backup cria um local de preparo temporário, denominado *AzureBackup -*, na conta de armazenamento. O tamanho do local de preparo é igual ao tamanho do instantâneo de ponto de recuperação.
+- Durante o processo de backup de máquinas virtuais com o armazenamento premium, o serviço de Backup cria um local de preparo temporário, denominado *AzureBackup -* , na conta de armazenamento. O tamanho do local de preparo é igual ao tamanho do instantâneo de ponto de recuperação.
 - Certifique-se de que a conta de armazenamento premium tenha espaço livre suficiente para acomodar o local de preparo temporário. [Saiba mais](../storage/common/storage-scalability-targets.md#premium-performance-storage-account-scale-limits). Não modifique o local de preparo.
 - Após a conclusão do trabalho de backup, o local de preparo será excluído.
 - O preço do armazenamento usado para o local de preparo é consistente com os [preços do armazenamento premium](../virtual-machines/windows/disks-types.md#billing).

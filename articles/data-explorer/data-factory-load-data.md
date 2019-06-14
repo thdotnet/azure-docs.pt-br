@@ -9,10 +9,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/15/2019
 ms.openlocfilehash: 64856d53168a7676cf279da2d8675ce81e1985f7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60447634"
 ---
 # <a name="copy-data-to-azure-data-explorer-using-azure-data-factory"></a>Copiar dados para o Data Explorer do Azure usando o Azure Data Factory 
@@ -34,7 +34,7 @@ Este artigo mostra como usar a ferramenta Copiar dados do Data Factory para carr
 * [Um cluster do Gerenciador de dados do Azure e o banco de dados](create-cluster-database-portal.md)
 * Fonte de dados.
 
-## <a name="create-a-data-factory"></a>Criar uma data factory
+## <a name="create-a-data-factory"></a>Criar um data factory
 
 1. Selecione o **criar um recurso** botão (+) no canto superior esquerdo do portal > **Analytics** > **Data Factory**.
 
@@ -46,7 +46,7 @@ Este artigo mostra como usar a ferramenta Copiar dados do Data Factory para carr
 
     **Configuração**  | **Descrição do campo**
     |---|---|
-    | **Nome** | Insira um nome globalmente exclusivo para seu data factory. Se você receber o erro *"nome do Data factory \"LoadADXDemo\" não está disponível"*, insira um nome diferente para o data factory. Para regras de nomenclatura de artefatos do Data Factory, consulte [regras de nomenclatura do Data Factory](/azure/data-factory/naming-rules).|
+    | **Nome** | Insira um nome globalmente exclusivo para seu data factory. Se você receber o erro *"nome do Data factory \"LoadADXDemo\" não está disponível"* , insira um nome diferente para o data factory. Para regras de nomenclatura de artefatos do Data Factory, consulte [regras de nomenclatura do Data Factory](/azure/data-factory/naming-rules).|
     | **Assinatura** | Selecione a assinatura do Azure para criar o Data Factory. |
     | **Grupo de recursos** | Selecione **criar novo** e insira o nome de um novo grupo de recursos. Selecione **usar existente**, se você tiver um grupo de recursos. |
     | **Versão** | Selecione **V2** |
@@ -180,7 +180,7 @@ Azure Data Explorer novo serviço vinculado é criado para copiar os dados na ta
 
     ![Página Implantação](media/data-factory-load-data/deployment.png)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * Saiba mais sobre o [conector do Gerenciador de dados do Azure](/azure/data-factory/connector-azure-data-explorer) no Azure Data Factory.
 

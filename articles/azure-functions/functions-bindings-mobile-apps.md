@@ -12,10 +12,10 @@ ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
 ms.openlocfilehash: 5fd220f15f363c1987f1576009519e4b2feae6b9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61438118"
 ---
 # <a name="mobile-apps-bindings-for-azure-functions"></a>Associações de Aplicativos Móveis para o Azure Functions 
@@ -142,11 +142,11 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 |Propriedade function.json | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|----------------------|
-| **tipo**|| Deve ser definido como "mobileTable"|
+| **type**|| Deve ser definido como "mobileTable"|
 | **direction**||Deve ser definido como "in"|
 | **name**|| Nome do parâmetro de entrada na assinatura de função.|
 |**tableName** |**TableName**|Nome da tabela de dados do aplicativo móvel|
-| **ID**| **Id** | O identificador exclusivo do registro a ser recuperado. Pode ser estático ou se basear no gatilho que invoca a função. Por exemplo, se você usar um gatilho da fila para sua função, o `"id": "{queueTrigger}"` usará o valor de cadeia de caracteres da mensagem da fila como a ID de registro a ser recuperada.|
+| **id**| **Id** | O identificador exclusivo do registro a ser recuperado. Pode ser estático ou se basear no gatilho que invoca a função. Por exemplo, se você usar um gatilho da fila para sua função, o `"id": "{queueTrigger}"` usará o valor de cadeia de caracteres da mensagem da fila como a ID de registro a ser recuperada.|
 |**conexão**|**Conexão**|O nome de uma configuração de aplicativo que tem a URL do aplicativo móvel. A função usa essa URL para construir as operações REST necessárias no aplicativo móvel. Crie uma configuração de aplicativo no aplicativo de funções que contenha a URL do aplicativo móvel e especifique o nome da configuração do aplicativo na propriedade `connection` na associação de entrada. A URL é semelhante a `http://<appname>.azurewebsites.net`.
 |**apiKey**|**ApiKey**|O nome de uma configuração de aplicativo que tem a chave de API do seu aplicativo móvel. Forneça a chave de API se [implementar uma chave de API no aplicativo móvel do Node.js](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/api-key) ou se [implementar uma chave de API no aplicativo móvel do .NET](https://github.com/Azure/azure-mobile-apps-net-server/wiki/Implementing-Application-Key). Para fornecer a chave, crie uma configuração de aplicativo no aplicativo de funções que contém a chave de API e adicione a propriedade `apiKey` na associação de entrada ao nome da configuração do aplicativo. |
 
@@ -300,7 +300,7 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 |Propriedade function.json | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|----------------------|
-| **tipo**|| Deve ser definido como "mobileTable"|
+| **type**|| Deve ser definido como "mobileTable"|
 | **direction**||Deve ser definido como "out"|
 | **name**|| Nome do parâmetro de saída na assinatura de função.|
 |**tableName** |**TableName**|Nome da tabela de dados do aplicativo móvel|

@@ -18,10 +18,10 @@ ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 392b7a08d9422658c5620f60e9c1caca074bc85e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60452664"
 ---
 # <a name="faqs-and-known-issues-with-identity-protection-refreshed-in-azure-active-directory"></a>Perguntas frequentes e problemas conhecidos com o Identity Protection (atualizado) no Azure Active Directory
@@ -32,7 +32,7 @@ ms.locfileid: "60452664"
 **Ignorar o risco de usuário** no Identity Protection clássico define o ator no histórico de risco do usuário no Identity Protection (atualizado) para o **Azure AD**.
 
 
-**Ignorar o risco de usuário** no Identity Protection (atualizado) define o ator no histórico de risco do usuário no Identity Protection (atualizado) para **\<nome do administrador com um hiperlink que aponta para a folha do usuário\>**.
+**Ignorar o risco de usuário** no Identity Protection (atualizado) define o ator no histórico de risco do usuário no Identity Protection (atualizado) para **\<nome do administrador com um hiperlink que aponta para a folha do usuário\>** .
 
 Há um problema conhecido atual causando latências no fluxo de descarte de risco de usuário. Se você tiver uma "política de risco do usuário", ela deixará de ser aplicada aos usuários descartados alguns minutos após clicar em "Ignorar o risco de usuário". No entanto, há atrasos conhecidos na experiência do usuário que atualizam o "Estado de risco" de usuários descartados. Como alternativa, atualize a página no nível do navegador para ver o "Estado de risco" mais recente do usuário.
 
@@ -43,7 +43,7 @@ As consultas no campo **nome de usuário** diferenciam maiúsculas de minúscula
 
 Ativar/desativar **Mostrar datas como** oculta a coluna **ÚLTIMA ATUALIZAÇÃO DO RISCO**. Para adicionar novamente o clique de coluna **Colunas** na parte superior da folha Usuários Arriscados.
 
-**Ignorar todos os eventos** no Identity Protection clássico define o status dos eventos de risco para **Fechado (resolvido)**.
+**Ignorar todos os eventos** no Identity Protection clássico define o status dos eventos de risco para **Fechado (resolvido)** .
 
 
 ## <a name="risky-sign-ins-report-known-issues"></a>Relatório de entradas arriscadas problemas conhecidos
@@ -76,7 +76,7 @@ O mapeamento de localização geográfica do IP é um desafio de toda a indústr
 
 **Confirmar como seguro** (em uma entrada) – informa o Azure AD Identity Protection que a entrada foi executada pelo proprietário da identidade e não indica um comprometimento.
 
-- Depois de receber esses comentários, movemos o estado de risco de entrada (não o de usuário) para **Confirmado como seguro** e o nível de risco para **-**.
+- Depois de receber esses comentários, movemos o estado de risco de entrada (não o de usuário) para **Confirmado como seguro** e o nível de risco para **-** .
 
 - Além disso, fornecemos as informações para nossos sistemas de aprendizado de máquina para futuras melhorias na avaliação de risco.
 

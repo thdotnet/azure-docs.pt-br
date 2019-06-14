@@ -9,10 +9,10 @@ ms.date: 02/22/2016
 ms.author: ancav
 ms.subservice: autoscale
 ms.openlocfilehash: 6da653bc94c8b549282ab9124dba23b08771c5f1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60787746"
 ---
 # <a name="advanced-autoscale-configuration-using-resource-manager-templates-for-vm-scale-sets"></a>Configuração avançada de autoescala usando modelos do Resource Manager para Conjuntos de Dimensionamento de VMs
@@ -31,7 +31,7 @@ Neste passo a passo, usamos [Azure Resource Manager](https://resources.azure.com
 
     ![Azure Explorer](media/autoscale-virtual-machine-scale-sets/azure_explorer_navigate.png)
 
-    A execução do modelo criou uma configuração padrão de dimensionamento automático com o nome **'autoscalewad'**. No lado direito, você pode exibir a definição completa dessa configuração de dimensionamento automático. Nesse caso, a configuração de dimensionamento automático padrão vem com uma regra de escala e redução baseada em % CPU.  
+    A execução do modelo criou uma configuração padrão de dimensionamento automático com o nome **'autoscalewad'** . No lado direito, você pode exibir a definição completa dessa configuração de dimensionamento automático. Nesse caso, a configuração de dimensionamento automático padrão vem com uma regra de escala e redução baseada em % CPU.  
 
 3. Agora você pode adicionar mais perfis e regras com base no agendamento ou em requisitos específicos. Podemos criar uma configuração de dimensionamento automático com três perfis. Para entender as regras de dimensionamento automático e perfis, confira [Práticas recomendadas de dimensionamento automático](autoscale-best-practices.md).  
 

@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 04/29/2019
 ms.author: jingwang
 ms.openlocfilehash: 9108f83e854b51720c64c5a74a828543cc5e7688
-ms.sourcegitcommit: 2c09af866f6cc3b2169e84100daea0aac9fc7fd0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64875810"
 ---
 # <a name="schema-mapping-in-copy-activity"></a>Mapeamento de esquema na atividade de cópia
@@ -91,17 +91,17 @@ As propriedades a seguir têm suporte sob `translator`  ->  `mappings` -> objeto
 | Propriedade | DESCRIÇÃO                                                  | Obrigatório |
 | -------- | ------------------------------------------------------------ | -------- |
 | name     | Nome da coluna de origem ou o coletor.                           | Sim      |
-| ordinal  | Índice da coluna. Começam com 1. <br>Aplicar e necessário ao usar delimitado por texto sem a linha de cabeçalho. | Não        |
-| cpath     | Expressão de caminho JSON para cada campo extrair ou mapear. Se aplicam a dados hierárquicos, por exemplo, o MongoDB/REST.<br>Para os campos sob o objeto raiz, o caminho JSON começa com root $; para os campos dentro da matriz escolhidos pela `collectionReference` propriedade, o caminho JSON começa do elemento de matriz. | Não        |
-| type     | Tipo de dados provisórios da fábrica de dados da coluna de origem ou o coletor. | Não        |
-| culture  | Cultura da coluna de origem ou o coletor. <br>Aplicar quando o tipo é `Datetime` ou `Datetimeoffset`. O padrão é `en-us`. | Não        |
-| format   | Formatar cadeia de caracteres a ser usado quando o tipo é `Datetime` ou `Datetimeoffset`. Consulte [Data personalizada e cadeias de caracteres de formato de hora](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) sobre como formatar a data e hora. | Não        |
+| ordinal  | Índice da coluna. Começam com 1. <br>Aplicar e necessário ao usar delimitado por texto sem a linha de cabeçalho. | Não       |
+| cpath     | Expressão de caminho JSON para cada campo extrair ou mapear. Se aplicam a dados hierárquicos, por exemplo, o MongoDB/REST.<br>Para os campos sob o objeto raiz, o caminho JSON começa com root $; para os campos dentro da matriz escolhidos pela `collectionReference` propriedade, o caminho JSON começa do elemento de matriz. | Não       |
+| Tipo     | Tipo de dados provisórios da fábrica de dados da coluna de origem ou o coletor. | Não       |
+| culture  | Cultura da coluna de origem ou o coletor. <br>Aplicar quando o tipo é `Datetime` ou `Datetimeoffset`. O padrão é `en-us`. | Não       |
+| formato   | Formatar cadeia de caracteres a ser usado quando o tipo é `Datetime` ou `Datetimeoffset`. Consulte [Data personalizada e cadeias de caracteres de formato de hora](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) sobre como formatar a data e hora. | Não       |
 
 As propriedades a seguir têm suporte sob `translator`  ->  `mappings` além do objeto com `source` e `sink`:
 
 | Propriedade            | DESCRIÇÃO                                                  | Obrigatório |
 | ------------------- | ------------------------------------------------------------ | -------- |
-| collectionReference | Suporte para somente quando dados hierárquicos, por exemplo, o MongoDB/REST são o código-fonte.<br>Se você quiser fazer uma iteração e extrair dados de objetos **dentro de um campo de matriz** com o mesmo padrão e converter para por linha por objeto, especifique o caminho JSON da matriz para realizar a aplicação cruzada. | Não        |
+| collectionReference | Suporte para somente quando dados hierárquicos, por exemplo, o MongoDB/REST são o código-fonte.<br>Se você quiser fazer uma iteração e extrair dados de objetos **dentro de um campo de matriz** com o mesmo padrão e converter para por linha por objeto, especifique o caminho JSON da matriz para realizar a aplicação cruzada. | Não       |
 
 ### <a name="alternative-column-mapping"></a>Mapeamento de coluna alternativos
 
@@ -203,9 +203,9 @@ Você pode especificar cópia -> atividade `translator`  ->  `schemaMapping` par
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| type | A propriedade type do tradutor da atividade de cópia deve ser definida como: **TabularTranslator** | Sim |
+| Tipo | A propriedade type do tradutor da atividade de cópia deve ser definida como: **TabularTranslator** | Sim |
 | schemaMapping | Uma coleção de pares chave-valor, que representa a relação de mapeamento **do lado do código-fonte para o coletor lado**.<br/>- **Chave:** fonte representa. Para **origem tabular**, especifique o nome da coluna conforme definido na estrutura do conjunto de dados; para **origem hierárquica**, especifique a expressão de caminho JSON para cada campo extrair e mapear.<br>- **Valor:** coletor representa. Para **coletor tabular**, especifique o nome da coluna conforme definido na estrutura do conjunto de dados; para **coletor hierárquica**, especifique a expressão de caminho JSON para cada campo extrair e mapear. <br>No caso de dados hierárquicos, campos sob o objeto raiz, o caminho JSON começa com root $; para os campos dentro da matriz escolhidos pela `collectionReference` propriedade, o caminho JSON começa do elemento de matriz.  | Sim |
-| collectionReference | Se você quiser fazer uma iteração e extrair dados de objetos **dentro de um campo de matriz** com o mesmo padrão e converter para por linha por objeto, especifique o caminho JSON da matriz para realizar a aplicação cruzada. Essa propriedade só terá suporte quando os dados hierárquicos forem a origem. | Não  |
+| collectionReference | Se você quiser fazer uma iteração e extrair dados de objetos **dentro de um campo de matriz** com o mesmo padrão e converter para por linha por objeto, especifique o caminho JSON da matriz para realizar a aplicação cruzada. Essa propriedade só terá suporte quando os dados hierárquicos forem a origem. | Não |
 
 **Exemplo: copiar do MongoDB para o Oracle:**
 
@@ -236,7 +236,7 @@ Por exemplo, se você tiver o documento do MongoDB com o seguinte conteúdo:
 }
 ```
 
-e você deseja copiá-lo para uma tabela do Azure SQL no formato a seguir, ao nivelar os dados de dentro da matriz *(order_pd e order_price)* e fazer uma união cruzada com as informações de raiz comuns *(número, data e cidade)*:
+e você deseja copiá-lo para uma tabela do Azure SQL no formato a seguir, ao nivelar os dados de dentro da matriz *(order_pd e order_price)* e fazer uma união cruzada com as informações de raiz comuns *(número, data e cidade)* :
 
 | orderNumber | orderDate | order_pd | order_price | city |
 | --- | --- | --- | --- | --- |
@@ -287,7 +287,7 @@ O Data Factory dá suporte aos seguintes tipos de dados provisórios: você pode
 
 * Byte[]
 * Boolean
-* Datetime
+* DateTime
 * Datetimeoffset
 * Decimal
 * Double
@@ -296,7 +296,7 @@ O Data Factory dá suporte aos seguintes tipos de dados provisórios: você pode
 * Int32
 * Int64
 * Single
-* String
+* Cadeia de caracteres
 * Timespan
 
 ## <a name="next-steps"></a>Próximas etapas

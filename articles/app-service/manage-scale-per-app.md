@@ -16,10 +16,10 @@ ms.date: 05/13/2019
 ms.author: byvinyal
 ms.custom: seodec18
 ms.openlocfilehash: 824abbdfd1b3980b419e6d6c46814bb0318adf13
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65602339"
 ---
 # <a name="high-density-hosting-on-azure-app-service-using-per-app-scaling"></a>Hospedagem de alta densidade no serviço de aplicativo do Azure usando o dimensionamento por aplicativo
@@ -31,7 +31,7 @@ Ao usar o serviço de aplicativo, você pode dimensionar seus aplicativos por me
 *Dimensionamento por aplicativo* pode ser habilitado no nível do plano de serviço de aplicativo para permitir o dimensionamento de um aplicativo independentemente do plano de serviço de aplicativo que o hospeda. Dessa forma, um Plano do Serviço de Aplicativo pode ser dimensionado para 10 instâncias, mas um aplicativo pode ser configurado para usar apenas cinco.
 
 > [!NOTE]
-> O dimensionamento por aplicativo está disponível somente para camadas de preço **Standard**, **Premium**, **Premium V2** e **Isolado** 
+> O dimensionamento por aplicativo está disponível somente para camadas de preço **Standard**, **Premium**, **Premium V2** e **Isolado**
 >
 
 Aplicativos são alocados para o plano de serviço de aplicativo disponível usando uma abordagem melhor do esforço para uma distribuição uniforme entre instâncias. Enquanto uma distribuição uniforme não é garantida, a plataforma garantirá que as duas instâncias do mesmo aplicativo não serão hospedadas na mesma instância de plano do serviço de aplicativo.

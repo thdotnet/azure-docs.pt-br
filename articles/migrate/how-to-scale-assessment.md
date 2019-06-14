@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: raynew
 ms.openlocfilehash: fe86c758dbf05f91d53cb918b7794c12ab3f39bc
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65518749"
 ---
 # <a name="discover-and-assess-a-large-vmware-environment"></a>Descobrir e avaliar um grande ambiente VMware
@@ -58,9 +58,9 @@ Planeje suas descobertas e avaliações com base nos limites a seguir:
 
 | **Entidade** | **Limite de máquinas** |
 | ---------- | ----------------- |
-| Projeto    | 1.500             |
-| Descoberta  | 1.500             |
-| Avaliação | 1.500             |
+| Project    | 1\.500             |
+| Descoberta  | 1\.500             |
+| Avaliação | 1\.500             |
 
 Lembre-se dessas considerações de planejamento:
 
@@ -238,7 +238,7 @@ Para cada descoberta que você precisa executar, execute o coletor para descobri
 3.  Na área de trabalho, selecione o atalho **Executar coletor**.
 4.  No Coletor de Migrações para Azure, abra **Configurar pré-requisitos** e:
 
-     a. Aceite os termos de licença e leia as informações de terceiros.
+    a. Aceite os termos de licença e leia as informações de terceiros.
 
     O coletor verifica se a VM tem acesso à Internet.
 

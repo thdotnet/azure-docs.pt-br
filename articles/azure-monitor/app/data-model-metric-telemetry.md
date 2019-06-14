@@ -13,10 +13,10 @@ ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
 ms.openlocfilehash: 0973c86d055ff4ebbe7e5a3c4a2ca4e3dcabc6a0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60900453"
 ---
 # <a name="metric-telemetry-application-insights-data-model"></a>Telemetria de métrica: Modelo de dados do Application Insights
@@ -49,7 +49,7 @@ Nome da métrica que você gostaria de ver na interface do usuário e no portal 
 
 Valor único para medida. Soma de medidas individuais para a agregação.
 
-## <a name="count"></a>Contagem
+## <a name="count"></a>Count
 
 Peso da métrica agregada. Não deve ser definido para uma medida.
 

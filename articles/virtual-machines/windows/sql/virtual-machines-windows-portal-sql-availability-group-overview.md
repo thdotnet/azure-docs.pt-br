@@ -16,10 +16,10 @@ ms.workload: iaas-sql-server
 ms.date: 01/13/2017
 ms.author: mikeray
 ms.openlocfilehash: b9977965dc076ec36aa90680a1732b6640b1e41a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60325793"
 ---
 # <a name="introducing-sql-server-always-on-availability-groups-on-azure-virtual-machines"></a>Introdução aos grupos de disponibilidade do AlwaysOn do SQL Server em máquinas virtuais do Azure #
@@ -38,9 +38,9 @@ Além disso, em um cluster de failover de convidado de VM IaaS do Azure, recomen
 
 |  | Versão do Windows Server | Versão do SQL Server | Edição do SQL Server | Configuração de Quorum WSFC | Recuperação de Desastre com várias regiões | Suporte a várias sub-redes | Suporte para um anúncio existente | Recuperação de Desastre com várias zona mesma região | Suporte de dist AG com nenhum domínio do AD | Suporte a AG dist com nenhum cluster |  
 | :------ | :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----|
-| [CLI DE VM DO SQL](virtual-machines-windows-sql-availability-group-cli.md) | 2016 | 2017 </br>2016   | ENT | Testemunha da nuvem | Não  | sim | sim | sim | Não | Não  |
-| [Modelos de início rápido](virtual-machines-windows-sql-availability-group-quickstart-template.md) | 2016 | 2017</br>2016  | ENT | Testemunha da nuvem | Não  | sim | sim | sim | Não | Não  |
-| [Modelo do Portal](virtual-machines-windows-portal-sql-alwayson-availability-groups.md) | 2016 </br>2012 R2 | 2016</br>2014 | ENT | Compartilhamento de arquivo | Não  | Não | Não | Não | Não | Não  |
+| [CLI DE VM DO SQL](virtual-machines-windows-sql-availability-group-cli.md) | 2016 | 2017 </br>2016   | ENT | Testemunha da nuvem | Não | sim | sim | sim | Não | Não |
+| [Modelos de início rápido](virtual-machines-windows-sql-availability-group-quickstart-template.md) | 2016 | 2017</br>2016  | ENT | Testemunha da nuvem | Não | sim | sim | sim | Não | Não |
+| [Modelo do Portal](virtual-machines-windows-portal-sql-alwayson-availability-groups.md) | 2016 </br>2012 R2 | 2016</br>2014 | ENT | Compartilhamento de arquivo | Não | Não | Não | Não | Não | Não |
 | [Manual](virtual-machines-windows-portal-sql-availability-group-prereq.md) | Todos | Todos | Todos | Todos | Sim | sim | sim | sim | sim | Sim |
 | &nbsp; | &nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |
 

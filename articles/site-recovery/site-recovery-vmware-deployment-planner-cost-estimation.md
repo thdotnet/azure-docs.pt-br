@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 3/14/2019
 ms.author: mayg
 ms.openlocfilehash: 8a36a80903a47bb4163666baf86ed8dac13a00de
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61471077"
 ---
 # <a name="review-the-cost-estimation-report-in-the-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Examine o relatório de estimativa de custo no Planejador de Implantações do Azure Site Recovery para recuperação de desastres do VMware para o Azure
@@ -122,17 +122,17 @@ Para adicionar manualmente as máquinas virtuais:
 
 **Número de VMs**: O número de VMs que correspondem à configuração. Você pode atualizar o número de VMs existentes se as VMs de configuração semelhantes não tiverem sido analisadas mas ainda assim serão protegidas.
 
-**Tamanho de IaaS (recomendação)**: É o tamanho da função VM da VM compatível recomendado pela ferramenta. 
+**Tamanho de IaaS (recomendação)** : É o tamanho da função VM da VM compatível recomendado pela ferramenta. 
 
-**Tamanho de IaaS (sua seleção)**: Por padrão, é o mesmo tamanho da função VM recomendado. Você pode alterar a função com base no requisito. O custo de computação se baseia no tamanho da função de VM selecionada.
+**Tamanho de IaaS (sua seleção)** : Por padrão, é o mesmo tamanho da função VM recomendado. Você pode alterar a função com base no requisito. O custo de computação se baseia no tamanho da função de VM selecionada.
 
 **Tipo de armazenamento**: O tipo de armazenamento usado pela VM. É armazenamento standard ou premium.
 
-**Tamanho total de armazenamento da VM (GB)**: Armazenamento total da VM.
+**Tamanho total de armazenamento da VM (GB)** : Armazenamento total da VM.
 
 **Número de análises de DR em um ano**: O número de vezes que você executa análises de DR em um ano. Por padrão, é quatro vezes ao ano. Você pode modificar o período de VMs específicas ou aplicar o novo valor a todas as VMs inserindo o novo valor na linha superior e clicando no botão 'Aplicar a todos'. Com base no número de Análises de Recuperação de Desastre e do período de duração de cada Análise de Recuperação de Desastre, o custo total da Análise de Recuperação de Desastre é calculado.  
 
-**Duração de cada Análise de DR (dias)**: A duração de cada análise de DR. Por padrão, é de sete dias a cada 90 dias, de acordo com o [benefício do Software Assurance de Recuperação de Desastre](https://azure.microsoft.com/pricing/details/site-recovery). Você pode modificar o período de VMs específicas ou pode aplicar um novo valor a todas as VMs inserindo o novo valor na linha superior e clicando no botão 'Aplicar a todos'. O custo total da Análise de Recuperação de Desastre é calculado com base no número de análises de recuperação de desastre em um ano e no período de duração de cada Análise de Recuperação de Desastre.
+**Duração de cada Análise de DR (dias)** : A duração de cada análise de DR. Por padrão, é de sete dias a cada 90 dias, de acordo com o [benefício do Software Assurance de Recuperação de Desastre](https://azure.microsoft.com/pricing/details/site-recovery). Você pode modificar o período de VMs específicas ou pode aplicar um novo valor a todas as VMs inserindo o novo valor na linha superior e clicando no botão 'Aplicar a todos'. O custo total da Análise de Recuperação de Desastre é calculado com base no número de análises de recuperação de desastre em um ano e no período de duração de cada Análise de Recuperação de Desastre.
   
 **Tipo do SO**: O tipo do SO da VM. É Windows ou Linux. Se o tipo de sistema operacional for Windows, o Benefício Híbrido do Azure poderá ser aplicado a essa VM. 
 
@@ -144,7 +144,7 @@ Para adicionar manualmente as máquinas virtuais:
 
 **Custo de replicação de estado contínuo**: Inclui o custo de armazenamento para replicação.
 
-**Custo total de Análise de DR (média)**: Inclui o custo de computação e armazenamento para Análise de DR.
+**Custo total de Análise de DR (média)** : Inclui o custo de computação e armazenamento para Análise de DR.
 
 **Custo de licença do ASR**: Custo de licença do Azure Site Recovery.
 

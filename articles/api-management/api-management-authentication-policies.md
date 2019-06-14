@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 11/27/2017
 ms.author: apimpm
 ms.openlocfilehash: c0f8da779ca656cf357c418b8766a53307643695
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64708801"
 ---
 # <a name="api-management-authentication-policies"></a>Políticas de autenticação de Gerenciamento de API
@@ -57,8 +57,8 @@ Este tópico fornece uma referência para as políticas de Gerenciamento de API 
   
 |NOME|DESCRIÇÃO|Obrigatório|Padrão|  
 |----------|-----------------|--------------|-------------|  
-|Nome de Usuário|Especifica o nome de usuário da credencial do Basic.|Sim|N/D|  
-|Senha|Especifica a senha da credencial do Basic.|Sim|N/D|  
+|username|Especifica o nome de usuário da credencial do Basic.|Sim|N/D|  
+|password|Especifica a senha da credencial do Basic.|Sim|N/D|  
   
 ### <a name="usage"></a>Uso  
  Essa política pode ser usada nas [seções](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) e nos [escopos](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes) da política a seguir.  
@@ -132,9 +132,9 @@ Neste exemplo o certificado do cliente é identificado por nome de recurso.
   
 |NOME|DESCRIÇÃO|Obrigatório|Padrão|  
 |----------|-----------------|--------------|-------------|  
-|recurso|Cadeia de caracteres. O URI de ID do aplicativo de destino API web (recurso seguro) no Azure Active Directory.|Sim|N/D|  
-|saída-token-variable-name|Cadeia de caracteres. Nome da variável de contexto que receberá o valor do token como um tipo de objeto `string`.|Não |N/D|  
-|ignore-error|Booliano. Se definido como `true`, o pipeline de apólices dará continuidade à execução mesmo se não for obtido um token de acesso.|Não |falso|  
+|resource|Cadeia de caracteres. O URI de ID do aplicativo de destino API web (recurso seguro) no Azure Active Directory.|Sim|N/D|  
+|saída-token-variable-name|Cadeia de caracteres. Nome da variável de contexto que receberá o valor do token como um tipo de objeto `string`.|Não|N/D|  
+|ignore-error|Booliano. Se definido como `true`, o pipeline de apólices dará continuidade à execução mesmo se não for obtido um token de acesso.|Não|falso|  
   
 ### <a name="usage"></a>Uso  
  Essa política pode ser usada nas [seções](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) e nos [escopos](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes) da política a seguir.  

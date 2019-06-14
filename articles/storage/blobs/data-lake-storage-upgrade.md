@@ -9,10 +9,10 @@ ms.date: 02/07/2019
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.openlocfilehash: 84e3aff9c1c8cb3e7fe399c861c2c7d58c278fed
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64730542"
 ---
 # <a name="upgrade-your-big-data-analytics-solutions-from-azure-data-lake-storage-gen1-to-azure-data-lake-storage-gen2"></a>Atualize suas soluções de análise de Big Data do Azure Data Lake Storage Gen1 para o Azure Data Lake Storage Gen2
@@ -162,7 +162,7 @@ O Data Lake Storage Gen1 envia por push dados e informações específicas para 
 | Dados de cobrança – medidores que são enviados para a equipe de comércio para cobrança e, em seguida, disponibilizados para os clientes  | *Disponível agora*                                                                                             | *Disponível agora*                                                                                                                           |
 | Logs de atividade                                                                                          | [Link](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-diagnostic-logs#audit-logs)   | Solicitações únicas para logs por uma duração específica usando o tíquete de suporte – *disponível agora* Integração do Monitoramento do Azure – *ainda não disponível* |
 | Logs de diagnóstico                                                                                        | [Link](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-diagnostic-logs#request-logs) | Solicitações únicas para logs por uma duração específica usando o tíquete de suporte – *disponível agora* Integração do Monitoramento do Azure – *ainda não disponível* |
-| Métricas                                                                                                | *Sem suporte*                                                                                               | *Disponível agora –* [Link](https://docs.microsoft.com/azure/storage/common/storage-metrics-in-azure-monitor)                          |
+| metrics                                                                                                | *Sem suporte*                                                                                               | *Disponível agora –* [Link](https://docs.microsoft.com/azure/storage/common/storage-metrics-in-azure-monitor)                          |
 
 ## <a name="planning-for-an-upgrade"></a>Planejando uma atualização
 

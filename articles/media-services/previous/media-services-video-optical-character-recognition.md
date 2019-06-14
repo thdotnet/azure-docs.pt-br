@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 91fad34073d7505c596bedfb6c93946ee7393dd7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60825601"
 ---
 # <a name="use-azure-media-analytics-to-convert-text-content-in-video-files-into-digital-text"></a>Usar a Análise de Mídia do Azure para converter o conteúdo de texto em arquivos de vídeo em texto digital  
@@ -107,11 +107,11 @@ A saída contém os seguintes atributos:
 | --- | --- |
 | Escala de tempo |"Tiques" por segundo do vídeo |
 | Deslocamento |diferença de tempo para carimbos de data/hora. Na versão 1.0 das APIs de Vídeo, sempre será 0. |
-| Taxa de quadros |Quadros por segundo do vídeo |
+| Framerate |Quadros por segundo do vídeo |
 | width |largura do vídeo em pixels |
 | height |altura do vídeo em pixels |
-| Fragmentos |matriz de partes com base em tempo do vídeo nas quais os metadados estão em bloco |
-| iniciar |hora de início de um fragmento em "tiques" |
+| Fragments |matriz de partes com base em tempo do vídeo nas quais os metadados estão em bloco |
+| start |hora de início de um fragmento em "tiques" |
 | duration |duração de um fragmento em "tiques" |
 | intervalo |intervalo de cada evento dentro do fragmento determinado |
 | events |matriz que contém regiões |

@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 12/1/2016
 ms.author: alkohli
 ms.openlocfilehash: 92671206a4171ca838423f55b526191ef30e5c35
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60630233"
 ---
 # <a name="use-the-web-ui-to-administer-your-storsimple-virtual-array"></a>Usar a interface do usuário da Web para administrar o StorSimple Virtual Array
@@ -84,7 +84,7 @@ Você pode desligar ou reiniciar seu dispositivo virtual usando a interface do u
 2. Na parte inferior da página, clique em **Desligar**.
    
     ![desligamento de dispositivo 1](./media/storsimple-ova-web-ui-admin/image36.png)
-3. Um aviso será exibido informando que um desligamento do dispositivo interromperá quaisquer E/Ss em andamento, resultando em um tempo de inatividade. Clique no ícone de verificação  ![ícone de verificação](./media/storsimple-ova-web-ui-admin/image3.png).
+3. Um aviso será exibido informando que um desligamento do dispositivo interromperá quaisquer E/Ss em andamento, resultando em um tempo de inatividade. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-ova-web-ui-admin/image3.png).
    
     ![aviso de desligamento de dispositivo](./media/storsimple-ova-web-ui-admin/image37.png)
    
@@ -99,7 +99,7 @@ Você pode desligar ou reiniciar seu dispositivo virtual usando a interface do u
 2. Na parte inferior da página, clique em **Reiniciar**.
    
     ![reinicialização do dispositivo](./media/storsimple-ova-web-ui-admin/image36.png)
-3. Um aviso será exibido informando que reiniciar o dispositivo interromperá quaisquer E/Ss em andamento, resultando em um tempo de inatividade. Clique no ícone de verificação  ![ícone de verificação](./media/storsimple-ova-web-ui-admin/image3.png).
+3. Um aviso será exibido informando que reiniciar o dispositivo interromperá quaisquer E/Ss em andamento, resultando em um tempo de inatividade. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-ova-web-ui-admin/image3.png).
    
     ![aviso de reinicialização](./media/storsimple-ova-web-ui-admin/image37.png)
    

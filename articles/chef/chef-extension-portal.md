@@ -9,10 +9,10 @@ ms.author: tarcher
 ms.date: 05/15/2018
 ms.topic: article
 ms.openlocfilehash: cf7afb50006fb273b4d685f9e4259be1cb60fe4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60563734"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>Instalar o cliente do Chef no portal do Azure
@@ -74,7 +74,7 @@ Nesta seção, primeiro você usará o portal do Azure para criar uma máquina L
 
      ![Selecione Adicionar extensão para adicionar uma extensão para uma máquina virtual](./media/chef-extension-portal/add-vm-add-extension.png)
 
-1. Na guia **Novo recurso** guia, selecione **extensão Chef do Linux (1.2.3)**.
+1. Na guia **Novo recurso** guia, selecione **extensão Chef do Linux (1.2.3)** .
 
      ![O Chef tem extensões para as máquinas virtuais Linux e Windows](./media/chef-extension-portal/select-linux-chef-extension.png)
 
@@ -82,7 +82,7 @@ Nesta seção, primeiro você usará o portal do Azure para criar uma máquina L
 
 1. Na guia **Instalar extensão**, especifique os valores a seguir, e em seguida, selecione **OK**.
 
-    - **URL de servidor do Chef** – insira a URL de servidor do Chef que inclui o nome da organização, por exemplo, *https://api.chef.io/organization/mycompany*.
+    - **URL de servidor do Chef** – insira a URL de servidor do Chef que inclui o nome da organização, por exemplo, *https://api.chef.io/organization/mycompany* .
     - **Nome do nó Chef** -insira o nome do nó do Chef. Isso pode ser qualquer valor.
     - **Lista de execução** - insira a lista de execução do Chef que é adicionado à máquina. Isso pode ser deixado em branco.
     - **Nome do cliente de validação** - insira o nome do cliente de validação do Chef. por exemplo, *tarcher-validator*.

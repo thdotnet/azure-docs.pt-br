@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 04/13/2018
 ms.author: rosh, v-gedod
 ms.openlocfilehash: 09fab691ea04ad98472abc4f4dee5ecb4d22e660
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60721004"
 ---
 # <a name="project-answer-search-v7-reference"></a>Referência da Pesquisa de Resposta de Projeto v7
@@ -87,9 +87,9 @@ A solicitação pode incluir os parâmetros de consulta a seguir. Confira a colu
 |----------|-----------|----------|--------------|  
 |<a name="mkt" />mkt|O mercado do qual os resultados são obtidos. <br /><br />Para obter uma lista dos possíveis valores de mercado, confira Códigos de mercado.<br /><br /> **OBSERVAÇÃO:** Atualmente, a API de Visualização de URL dá suporte apenas ao mercado e ao idioma en-us.<br /><br />|Cadeia de caracteres|Sim|  
 |<a name="query" />q|A URL a ser visualizada|Cadeia de caracteres|Sim|  
-|<a name="responseformat" />responseFormat|O tipo de mídia a ser usado para a resposta. Veja a seguir os possíveis valores que não diferenciam maiúsculas de minúsculas.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> O padrão é JSON. Para obter informações sobre os objetos JSON contidos na resposta, confira [Objetos de resposta](#response-objects).<br /><br />  Se você especificar JsonLd, o corpo da resposta incluirá objetos JSON-LD que contêm os resultados da pesquisa. Para obter informações sobre o JSON-LD, confira [JSON-LD](https://json-ld.org/).|Cadeia de caracteres|Não |  
-|<a name="safesearch" />Pesquisa Segura|Um filtro usado para filtrar o conteúdo para adulto. Veja a seguir os possíveis valores de filtro que não diferenciam maiúsculas de minúsculas.<br /><ul><li>Desativado – retorna páginas da Web com texto, imagens ou vídeos para adulto.<br /><br/></li><li>Moderado – retorna páginas da Web com texto para adulto, mas não imagens nem vídeos para adulto.<br /><br/></li><li>Estrito – não retorna páginas da Web com texto, imagens ou vídeos para adulto.</li></ul><br /> O padrão é Moderado.<br /><br /> **OBSERVAÇÃO:** Se a solicitação for proveniente de um mercado cuja política de conteúdo para adulto do Bing exija que `safeSearch` seja definido como Estrito, o Bing ignorará o valor `safeSearch` e usará Estrito.<br/><br/>**OBSERVAÇÃO:** Se você usar o operador de consulta `site:`, haverá a possibilidade da resposta poder conter conteúdo adulto, independentemente de como o parâmetro de consulta `safeSearch` está definido. Só use `site:` se estiver ciente do conteúdo do site e se o cenário der suporte à possibilidade de conteúdo para adulto. |Cadeia de caracteres|Não |  
-|<a name="setlang" />setLang|O idioma a ser usado para cadeias de caracteres de interface do usuário. Especifique o idioma usando o código de idioma ISO 639-1 de 2 letras. Por exemplo, o código de idioma para o inglês é EN. O padrão é EN (inglês).<br /><br /> Embora isso seja opcional, você sempre deve especificar o idioma. Normalmente, você define `setLang` com o mesmo idioma especificado por `mkt`, a menos que o usuário deseje exibir as cadeias de caracteres de interface do usuário em outro idioma.<br /><br /> Esse parâmetro e o cabeçalho [Accept-Language](#acceptlanguage) são mutuamente exclusivos – não especifique ambos.<br /><br /> Uma cadeia de caracteres de interface do usuário é uma cadeia de caracteres que é usada como um rótulo em uma interface do usuário. Há poucas cadeias de caracteres de interface do usuário nos objetos de resposta JSON. Além disso, todos os links para as propriedades de Bing.com nos objetos de resposta aplicam o idioma especificado.|Cadeia de caracteres|Não | 
+|<a name="responseformat" />responseFormat|O tipo de mídia a ser usado para a resposta. Veja a seguir os possíveis valores que não diferenciam maiúsculas de minúsculas.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> O padrão é JSON. Para obter informações sobre os objetos JSON contidos na resposta, confira [Objetos de resposta](#response-objects).<br /><br />  Se você especificar JsonLd, o corpo da resposta incluirá objetos JSON-LD que contêm os resultados da pesquisa. Para obter informações sobre o JSON-LD, confira [JSON-LD](https://json-ld.org/).|Cadeia de caracteres|Não|  
+|<a name="safesearch" />Pesquisa Segura|Um filtro usado para filtrar o conteúdo para adulto. Veja a seguir os possíveis valores de filtro que não diferenciam maiúsculas de minúsculas.<br /><ul><li>Desativado – retorna páginas da Web com texto, imagens ou vídeos para adulto.<br /><br/></li><li>Moderado – retorna páginas da Web com texto para adulto, mas não imagens nem vídeos para adulto.<br /><br/></li><li>Estrito – não retorna páginas da Web com texto, imagens ou vídeos para adulto.</li></ul><br /> O padrão é Moderado.<br /><br /> **OBSERVAÇÃO:** Se a solicitação for proveniente de um mercado cuja política de conteúdo para adulto do Bing exija que `safeSearch` seja definido como Estrito, o Bing ignorará o valor `safeSearch` e usará Estrito.<br/><br/>**OBSERVAÇÃO:** Se você usar o operador de consulta `site:`, haverá a possibilidade da resposta poder conter conteúdo adulto, independentemente de como o parâmetro de consulta `safeSearch` está definido. Só use `site:` se estiver ciente do conteúdo do site e se o cenário der suporte à possibilidade de conteúdo para adulto. |Cadeia de caracteres|Não|  
+|<a name="setlang" />setLang|O idioma a ser usado para cadeias de caracteres de interface do usuário. Especifique o idioma usando o código de idioma ISO 639-1 de 2 letras. Por exemplo, o código de idioma para o inglês é EN. O padrão é EN (inglês).<br /><br /> Embora isso seja opcional, você sempre deve especificar o idioma. Normalmente, você define `setLang` com o mesmo idioma especificado por `mkt`, a menos que o usuário deseje exibir as cadeias de caracteres de interface do usuário em outro idioma.<br /><br /> Esse parâmetro e o cabeçalho [Accept-Language](#acceptlanguage) são mutuamente exclusivos – não especifique ambos.<br /><br /> Uma cadeia de caracteres de interface do usuário é uma cadeia de caracteres que é usada como um rótulo em uma interface do usuário. Há poucas cadeias de caracteres de interface do usuário nos objetos de resposta JSON. Além disso, todos os links para as propriedades de Bing.com nos objetos de resposta aplicam o idioma especificado.|Cadeia de caracteres|Não| 
 
 
 ## <a name="response-objects"></a>Objetos de resposta  
@@ -131,7 +131,7 @@ Define a licença sob a qual a foto ou o texto pode ser usado.
   
 |NOME|Value|Type|  
 |----------|-----------|----------|  
-|Nome|O nome da licença.|Cadeia de caracteres|  
+|name|O nome da licença.|Cadeia de caracteres|  
 |url|A URL para um site em que o usuário pode obter mais informações sobre a licença.<br /><br /> Use o nome e a URL para criar um hiperlink.|Cadeia de caracteres|  
   
 
@@ -188,7 +188,7 @@ Observe que um editor pode fornecer seu nome, seu site ou ambos.
   
 |NOME|Value|Type|  
 |----------|-----------|----------|  
-|Nome|O nome do editor.|Cadeia de caracteres|  
+|name|O nome do editor.|Cadeia de caracteres|  
 |url|A URL para o site do editor.<br /><br /> Observe que o editor pode não fornecer um site.|Cadeia de caracteres|  
   
   
@@ -198,7 +198,7 @@ Define as informações sobre uma página da Web na visualização.
   
 |NOME|Value|Type|  
 |----------|-----------|----------|
-|Nome|O título de página, não necessariamente o título HTML|Cadeia de caracteres|
+|name|O título de página, não necessariamente o título HTML|Cadeia de caracteres|
 |url|A URL que foi realmente rastreada (a solicitação pode ter seguido os redirecionamentos)|Cadeia de caracteres|  
 |description|Breve descrição da página e do conteúdo|Cadeia de caracteres|  
 |isFamilyFriendly|Mais preciso para itens no índice da Web; os fetches em tempo real fazem essa detecção baseada somente na URL e não no conteúdo da página|boolean|
@@ -220,14 +220,14 @@ Define o contexto de consulta usado pelo Bing para a solicitação.
 
 |NOME|Value|Type|  
 |-------------|-----------------|----------|
-|ID|Um identificador de recurso|Cadeia de caracteres|
+|id|Um identificador de recurso|Cadeia de caracteres|
  
 ### <a name="rankinggroup"></a>RankingGroup
 Define um grupo de resultados da pesquisa, como linha principal.
 
 |NOME|Value|Type|  
 |-------------|-----------------|----------|
-|itens|Uma lista de resultados da pesquisa a serem exibidos no grupo.|RankingItem|
+|items|Uma lista de resultados da pesquisa a serem exibidos no grupo.|RankingItem|
 
 ### <a name="rankingitem"></a>RankingItem
 Define um item de resultado da pesquisa a ser exibido.
@@ -257,7 +257,7 @@ Observe que se o serviço suspeitar de um ataque de negação de serviço, a sol
 |NOME|Value|Type|  
 |----------|-----------|----------|  
 |_type|Dica de tipo, que é definida como SearchResponse.|Cadeia de caracteres|  
-|WebPage|Um objeto JSON que define a visualização|string|  
+|WebPage|Um objeto JSON que define a visualização|cadeia de caracteres|  
   
   
 ### <a name="textattribution"></a>TextAttribution  

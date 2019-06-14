@@ -14,15 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/29/2018
 ms.author: rkarlin
-ms.openlocfilehash: 6ba21c6eacd5b72d13706c08f0cc9883ccc91388
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 55def52d248babd439227cdcd4170c0a3ca91bb1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60704689"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64569832"
 ---
 # <a name="investigate-incidents-and-alerts-in-azure-security-center-preview"></a>Investigar os incidentes e alertas na Central de Segurança do Azure (Versão prévia)
 Este documento ajuda você a usar o recurso de investigação na Central de Segurança do Azure para investigar alertas e incidentes de segurança.
+
+> [!NOTE]
+> A experiência de investigação de incidentes e alertas será desativada em 31 de julho de 2019. Para obter mais informações e serviços alternativos, consulte [recursos de desativação da Central de segurança (julho de 2019)](security-center-features-retirement-july2019.md#menu_investigate).
 
 ## <a name="what-is-investigation-in-security-center"></a>O que é a investigação na Central de Segurança?
 O recurso de investigação na Central de Segurança permite que você faça triagem, compreenda o escopo e rastreie a causa raiz de um possível [incidente de segurança](https://docs.microsoft.com/azure/security-center/security-center-incident).
@@ -38,7 +41,7 @@ A intenção é facilitar o processo de investigação vinculando todas as entid
 ## <a name="how-investigation-works"></a>Como a investigação funciona?
 A investigação é composta por um grafo que ocupa a área central do painel de investigação. O grafo sempre se concentra em uma entidade específica e apresenta as entidades que estão relacionadas a ela. Uma entidade pode ser um alerta de segurança, um usuário, um computador ou um incidente.
 
-![Mapear](./media/security-center-investigation/security-center-investigation-fig1.png)
+![Mapa](./media/security-center-investigation/security-center-investigation-fig1.png)
 
 O usuário pode navegar de uma entidade para outra clicando no grafo. O grafo centraliza na entidade selecionada e nas entidades relacionadas automaticamente. As entidades que não são mais relevantes podem ser removidas do grafo.
 

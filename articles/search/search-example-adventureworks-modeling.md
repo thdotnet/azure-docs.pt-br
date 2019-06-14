@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: chstone
 ms.openlocfilehash: 6d5d01dfbbcfda56818f5c38b06117a87e021445
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61291870"
 ---
 # <a name="example-model-the-adventureworks-inventory-database-for-azure-search"></a>Exemplo: Modelar o banco de dados de Inventário AdventureWorks para Azure Search
@@ -43,7 +43,7 @@ Resolver esse problema não é tão simples quanto mover o índice de destino pa
 
 ## <a name="use-a-collection-data-type"></a>Usar um tipo de dados de Coleção
 
-A "abordagem correta" é utilizar um recurso de esquema de pesquisa que não possui um paralelo direto no modelo de banco de dados: **Collection(Edm.String)**. Um tipo de dados de Coleção é usado quando há uma lista de cadeia de caracteres individuais, em vez de uma cadeia de caracteres muito longa (única). Se houver marcas ou palavras-chave, é possível usar um tipo de dados de Coleção para esse campo.
+A "abordagem correta" é utilizar um recurso de esquema de pesquisa que não possui um paralelo direto no modelo de banco de dados: **Collection(Edm.String)** . Um tipo de dados de Coleção é usado quando há uma lista de cadeia de caracteres individuais, em vez de uma cadeia de caracteres muito longa (única). Se houver marcas ou palavras-chave, é possível usar um tipo de dados de Coleção para esse campo.
 
 Ao definir campos de índice de vários valores de **Collection(Edm.String)** para "cor", "tamanho" e "imagem", as informações auxiliares são retidas para facetamento e filtragem sem poluir o índice com entradas duplicadas. Da mesma forma, aplique funções de agregação aos campos do Produto numérico, indexando **minListPrice** em vez de cada produto individual **listPrice**.
 

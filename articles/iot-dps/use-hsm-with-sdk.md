@@ -10,10 +10,10 @@ services: iot-dps
 manager: arjmands
 ms.custom: mvc
 ms.openlocfilehash: af59ccc6d14dce49d06e178aac3ecafc29bd982c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61248123"
 ---
 # <a name="how-to-use-different-attestation-mechanisms-with-device-provisioning-service-client-sdk-for-c"></a>Como usar mecanismo de atestado diferentes com o SDK do Cliente de Serviço de Provisionamento de Dispositivos para C
@@ -96,7 +96,7 @@ Crie o SDK antes de criar o registro do dispositivo.
     ctest -C "debug" -V
     ```
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 - Para criar o SDK do Windows, siga estas etapas para gerar arquivos de projeto:
   - Abra o “Prompt de comando do desenvolvedor para VS2015”
   - Execute os seguintes comandos do CMake na raiz do repositório:

@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 09/19/2017
 ms.author: mbullwin
 ms.openlocfilehash: cb32069de295b883cdc6d3a9fa495b1bea719c39
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60691742"
 ---
 # <a name="diagnose-exceptions-in-your-web-apps-with-application-insights"></a>Diagnosticar exceções em seus aplicativos Web com o Application Insights
@@ -191,7 +191,7 @@ Mas se você tiver redirecionamentos ativos, adicione as seguintes linhas para a
 ## <a name="mvc"></a>MVC
 Começar com o SDK do Application Insights Web versão 2.6 (beta3 e posterior), exceções de coleta sem tratamento do Application Insights lançadas automaticamente nos métodos de controladores MVC 5+. Se você já adicionou um manipulador personalizado para controlar essas exceções (conforme descrito nos exemplos a seguir), você pode remover para evitar o controle duplo de exceções.
 
-Há um número de casos que não podem lidar com os filtros de exceção. Por exemplo: 
+Há um número de casos que não podem lidar com os filtros de exceção. Por exemplo:
 
 * Exceções geradas por construtores de controlador.
 * Exceções geradas por manipuladores de mensagens.
@@ -283,7 +283,7 @@ Registre AiHandleErrorAttribute como um filtro global em FilterConfig.cs:
 ## <a name="web-api"></a>API Web
 Começar com o SDK do Application Insights Web versão 2.6 (beta3 e posterior), exceções de coleta sem tratamento do Application Insights lançadas automaticamente nos métodos de controladores para WebAPI 2+. Se você já adicionou um manipulador personalizado para controlar essas exceções (conforme descrito nos exemplos a seguir), você pode remover para evitar o controle duplo de exceções.
 
-Há um número de casos que não podem lidar com os filtros de exceção. Por exemplo: 
+Há um número de casos que não podem lidar com os filtros de exceção. Por exemplo:
 
 * Exceções geradas por construtores de controlador.
 * Exceções geradas por manipuladores de mensagens.

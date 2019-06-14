@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
 ms.openlocfilehash: 77b64f09b7fd1429eb23c4407c729dfc0aafdf2b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60460938"
 ---
 # <a name="set-up-vmware-disaster-recovery-in-a-multi-tenancy-environment-with-the-cloud-solution-provider-csp-program"></a>Configurar a recuperação de desastre do VMware em um ambiente multilocatário com o programa CSP (Provedor de Solução de Nuvem)
@@ -52,7 +52,7 @@ Você pode acessar a assinatura do locatário por meio do Painel do Microsoft Pa
 
 1. Na página **Clientes**, clique no nome da conta de locatário.
 2. Na página **Assinaturas** da conta do locatário, você pode monitorar as assinaturas existentes da conta e adicionar mais assinaturas, conforme necessário.
-3. Para gerenciar operações de recuperação de desastre do locatário, selecione **Todos os recursos (Portal do Azure)**. Isso concede a você o acesso às assinaturas do Azure do locatário.
+3. Para gerenciar operações de recuperação de desastre do locatário, selecione **Todos os recursos (Portal do Azure)** . Isso concede a você o acesso às assinaturas do Azure do locatário.
 
     ![O link Todos os Recursos](./media/vmware-azure-multi-tenant-csp-disaster-recovery/all-resources-select.png)  
 
@@ -89,15 +89,15 @@ Agora você pode executar e gerenciar todas as operações do Site Recovery do l
 
 Há três modelos principais de multilocatários:
 
-* **HSP (Provedor de Serviços de Hospedagem Compartilhado)**: O parceiro é o proprietário da infraestrutura física e usa recursos compartilhados (vCenter, datacenters, armazenamento físico, e assim por diante) para hospedar VMs de vários locatários na mesma infraestrutura. O parceiro pode fornecer gerenciamento de recuperação de desastre como um serviço gerenciado ou o locatário pode ter recuperação de desastre como uma solução de autoatendimento.
+* **HSP (Provedor de Serviços de Hospedagem Compartilhado)** : O parceiro é o proprietário da infraestrutura física e usa recursos compartilhados (vCenter, datacenters, armazenamento físico, e assim por diante) para hospedar VMs de vários locatários na mesma infraestrutura. O parceiro pode fornecer gerenciamento de recuperação de desastre como um serviço gerenciado ou o locatário pode ter recuperação de desastre como uma solução de autoatendimento.
 
 * **Provedor de Serviços de Hospedagem Dedicado**: O parceiro é proprietário da infraestrutura física, mas usa recursos dedicados (vários vCenters, armazenamentos de dados físicos, e assim por diante) para hospedar as VMs de cada locatário em uma infraestrutura separada. O parceiro pode fornecer gerenciamento de recuperação de desastre como um serviço gerenciado ou o locatário pode já tê-la como uma solução de autoatendimento.
 
-* **MSP (Provedor de Serviços Gerenciado)**: O cliente possui a infraestrutura física que hospeda as VMs e o parceiro fornece a habilitação e gerenciamento de recuperação de desastre.
+* **MSP (Provedor de Serviços Gerenciado)** : O cliente possui a infraestrutura física que hospeda as VMs e o parceiro fornece a habilitação e gerenciamento de recuperação de desastre.
 
 Ao configurar assinaturas de locatários, conforme descrito neste artigo, você pode iniciar rapidamente permitindo os clientes em qualquer um dos modelos de multilocatários relevantes. Você pode aprender mais sobre os diferentes modelos de multilocatários e habilitar o controles de acesso no local [aqui](vmware-azure-multi-tenant-overview.md).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 - Saiba mais sobre [o controle de acesso baseado em função](site-recovery-role-based-linked-access-control.md) para gerenciar implantações do Azure Site Recovery.
 - Saiba mais sobre [a arquitetura de replicação](vmware-azure-architecture.md) de VMware para o Azure.
 - [Revise o tutorial](vmware-azure-tutorial.md) para replicar VMs VMware no Azure.

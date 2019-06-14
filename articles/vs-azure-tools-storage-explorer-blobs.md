@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/18/2016
 ms.author: cawa
 ms.openlocfilehash: f46467871a5ae0147b5dc60881bda4175eabac56
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60458252"
 ---
 # <a name="manage-azure-blob-storage-resources-with-storage-explorer"></a>Gerenciar recursos de Armazenamento de Blobs com o Gerenciador de Armazenamento do Azure
@@ -172,7 +172,7 @@ As etapas a seguir ilustram como gerenciar os blobs (e pastas) dentro de um cont
      1. Na barra de ferramentas do painel principal, escolha **Carregar** e **Carregar Arquivos** no menu suspenso.
 
         ![Menu Carregar arquivos][15]
-     2. Na caixa de diálogo **Carregar arquivos**, escolha o botão de reticências (**...**) no lado direito da caixa de texto **Arquivos** para selecionar os arquivos que você deseja carregar.
+     2. Na caixa de diálogo **Carregar arquivos**, escolha o botão de reticências ( **...** ) no lado direito da caixa de texto **Arquivos** para selecionar os arquivos que você deseja carregar.
 
         ![Opções de Carregar arquivos][16]
      3. Especifique o tipo de **Tipo de blob**. Consulte [Criar um contêiner e definir permissões](storage/blobs/storage-quickstart-blobs-dotnet.md#upload-blobs-to-the-container) para obter mais informações.
@@ -183,7 +183,7 @@ As etapas a seguir ilustram como gerenciar os blobs (e pastas) dentro de um cont
      1. Na barra de ferramentas do painel principal, escolha **Carregar** e **Carregar Pasta** no menu suspenso.
 
         ![Menu Carregar pasta][17]
-     2. Na caixa de diálogo **Carregar pasta**, escolha o botão de reticências (**...**) no lado direito da caixa de texto **Pasta** para selecionar a pasta cujo conteúdo você deseja carregar.
+     2. Na caixa de diálogo **Carregar pasta**, escolha o botão de reticências ( **...** ) no lado direito da caixa de texto **Pasta** para selecionar a pasta cujo conteúdo você deseja carregar.
 
         ![Opções de Carregar pasta][18]
      3. Especifique o tipo de **Tipo de blob**. Consulte [Criar um contêiner e definir permissões](storage/blobs/storage-quickstart-blobs-dotnet.md#upload-blobs-to-the-container) para obter mais informações.
@@ -212,7 +212,7 @@ As etapas a seguir ilustram como gerenciar os blobs (e pastas) dentro de um cont
      2. Na barra de ferramentas do painel principal, escolha **Excluir**.
      3. Escolha **Sim** na caixa de diálogo de confirmação.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 * Exibir as [notas de versão e os vídeos mais recentes do Gerenciador de Armazenamento](https://www.storageexplorer.com).
 * Saiba como [criar aplicativos usando os blobs, tabelas, filas e arquivos do Azure](https://azure.microsoft.com/documentation/services/storage/).
 

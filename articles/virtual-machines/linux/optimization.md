@@ -18,10 +18,10 @@ ms.date: 09/06/2016
 ms.author: rclaus
 ms.subservice: disks
 ms.openlocfilehash: 30d153863a20dcdddc702ee5a37c34a2938d7446
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61473902"
 ---
 # <a name="optimize-your-linux-vm-on-azure"></a>Otimizar sua VM do Linux no Azure
@@ -31,7 +31,7 @@ ms.locfileid: "61473902"
 Este tópico pressupõe que você já tenha uma Assinatura do Azure ativa ([inscrição de avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/)) e já tenha provisionado uma VM na sua Assinatura do Azure. Certifique-se de que você tenha a versão mais recente da [CLI do Azure](/cli/azure/install-az-cli2) instalada e conectada à sua assinatura do Azure com [logon az](/cli/azure/reference-index) antes de [criar uma VM](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ## <a name="azure-os-disk"></a>Disco do sistema operacional do Azure
-Depois de criar uma VM Linux no Azure, ela terá dois discos associados. **/dev/sda** é o disco do sistema operacional, **/dev/sdb** é o disco temporário.  Use o disco do sistema operacional principal (**/dev/sda**) somente para o sistema operacional, pois ele é otimizado para um tempo de inicialização rápido da VM e não fornece bom desempenho para suas cargas de trabalho. Você deseja anexar um ou mais discos à sua VM para obter um armazenamento persistente e otimizado para seus dados. 
+Depois de criar uma VM Linux no Azure, ela terá dois discos associados. **/dev/sda** é o disco do sistema operacional, **/dev/sdb** é o disco temporário.  Use o disco do sistema operacional principal ( **/dev/sda**) somente para o sistema operacional, pois ele é otimizado para um tempo de inicialização rápido da VM e não fornece bom desempenho para suas cargas de trabalho. Você deseja anexar um ou mais discos à sua VM para obter um armazenamento persistente e otimizado para seus dados. 
 
 ## <a name="adding-disks-for-size-and-performance-targets"></a>Adicionando discos para metas de desempenho e tamanho
 Com base no tamanho da VM, é possível anexar até 16 discos adicionais em um computador da série A, 32 discos em uma da série D e 64 discos em uma da série G, cada uma com até 1 TB de tamanho. Adicione discos adicionais conforme necessário para seus requisitos de IOps e espaço. Cada disco tem uma meta de desempenho de 500 IOps para o Armazenamento Standard e até 5000 IOps por disco para Armazenamento Premium.
@@ -51,7 +51,7 @@ Ao lidar com cargas de trabalho de IOps altas e se tiver escolhido o Armazenamen
  
 
 ## <a name="your-vm-temporary-drive"></a>Unidade temporária da VM
-Por padrão, quando você cria uma VM, o Azure fornece um disco de sistema operacional (**/dev/sda**) e um disco temporário (**/dev/sdb**).  Todos os discos extras que você adicionar aparecerão como **/dev/sdc**, **/dev/sdd**, **/dev/sde** e assim por diante. Todos os dados no disco temporário (**/dev/sdb**) não são duráveis e poderão ser perdidos se eventos específicos, como redimensionamento de VM, reimplantação ou manutenção, forçarem uma reinicialização da VM.  O tamanho e tipo de disco temporário está relacionado ao tamanho da VM escolhida no momento da implantação. Todas as VMs de tamanho Premium (séries DS, G e DS_V2) e a unidade temporária contam com um SSD local para desempenho adicional de até 48k IOps. 
+Por padrão, quando você cria uma VM, o Azure fornece um disco de sistema operacional ( **/dev/sda**) e um disco temporário ( **/dev/sdb**).  Todos os discos extras que você adicionar aparecerão como **/dev/sdc**, **/dev/sdd**, **/dev/sde** e assim por diante. Todos os dados no disco temporário ( **/dev/sdb**) não são duráveis e poderão ser perdidos se eventos específicos, como redimensionamento de VM, reimplantação ou manutenção, forçarem uma reinicialização da VM.  O tamanho e tipo de disco temporário está relacionado ao tamanho da VM escolhida no momento da implantação. Todas as VMs de tamanho Premium (séries DS, G e DS_V2) e a unidade temporária contam com um SSD local para desempenho adicional de até 48k IOps. 
 
 ## <a name="linux-swap-file"></a>Arquivo de permuta do Linux
 Se a sua VM do Azure for de uma imagem do Ubuntu ou CoreOS, você poderá usar o CustomData para enviar um cloud-config para cloud-init. Se você [carregou uma imagem do Linux personalizada](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) que usa a inicialização de nuvem, configure também as partições de troca usando a inicialização de nuvem.
@@ -126,7 +126,7 @@ echo 'echo noop >/sys/block/sda/queue/scheduler' >> /etc/rc.local
 ```
 
 ## <a name="using-software-raid-to-achieve-higher-iops"></a>Usando o RAID de software para alcançar I/Ops mais altos
-Se suas cargas de trabalho exigem mais IOps que um único disco pode fornecer, você precisa usar uma configuração RAID de software de vários discos. Como o Azure já executa a resiliência do disco na camada de malha local, você obterá o maior nível de desempenho de uma configuração de distribuição de RAID-0.  Provisione e crie discos no ambiente do Azure e anexe-os à sua VM Linux antes do particionamento, da formatação e da montagem das unidades.  Mais detalhes sobre como definir uma configuração de RAID de software em sua VM Linux no Azure podem ser encontrados no documento **[Configuração do RAID de software no Linux](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**.
+Se suas cargas de trabalho exigem mais IOps que um único disco pode fornecer, você precisa usar uma configuração RAID de software de vários discos. Como o Azure já executa a resiliência do disco na camada de malha local, você obterá o maior nível de desempenho de uma configuração de distribuição de RAID-0.  Provisione e crie discos no ambiente do Azure e anexe-os à sua VM Linux antes do particionamento, da formatação e da montagem das unidades.  Mais detalhes sobre como definir uma configuração de RAID de software em sua VM Linux no Azure podem ser encontrados no documento **[Configuração do RAID de software no Linux](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)** .
 
 ## <a name="next-steps"></a>Próximas etapas
 Lembre-se de que, como com todas as discussões de otimização, você precisará executar testes antes e após cada alteração para medir o impacto que elas causarão.  A otimização é um processo passo a passo que tem resultados distintos em computadores diferentes no seu ambiente.  O que funciona para uma configuração pode não funcionar para outras.

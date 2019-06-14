@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 01/03/2019
 ms.openlocfilehash: 1bab1ed9e2a24b0a84f4327d47a910934319b397
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61475875"
 ---
 # <a name="using-the-recoverymanager-class-to-fix-shard-map-problems"></a>Usando a classe RecoveryManager para corrigir problemas do mapa de fragmentos
@@ -33,7 +33,7 @@ Para obter definições de termos, consulte o [Glossário de ferramentas do Banc
 
 ## <a name="why-use-the-recovery-manager"></a>Por que usar o gerenciador de recuperação
 
-Em um ambiente de banco de dados fragmentado, há um locatário por banco de dados e muitos bancos de dados por servidor. Também pode haver vários servidores no ambiente. Cada banco de dados é mapeado no mapa de fragmento para que as chamadas possam ser encaminhadas para o banco de dados e servidor corretos. Os bancos de dados são controlados de acordo com uma **chave de fragmentação** e um **intervalo de valores de chave** é atribuído a cada fragmento. Por exemplo, uma chave de fragmentação pode representar os nomes de clientes de "D" a "F". O mapeamento de todos os fragmentos (também conhecido como bancos de dados) e seus intervalos de mapeamento estão contidos no **GSM (mapa de fragmentos global)**. Cada banco de dados também contém um mapa dos intervalos contidos no fragmento – isso é conhecido como o **LSM (mapa de fragmentos local)**. Quando um aplicativo se conecta a um fragmento, o mapeamento é armazenado em cache com o aplicativo para recuperação rápida. O LSM é usado para validar dados em cache.
+Em um ambiente de banco de dados fragmentado, há um locatário por banco de dados e muitos bancos de dados por servidor. Também pode haver vários servidores no ambiente. Cada banco de dados é mapeado no mapa de fragmento para que as chamadas possam ser encaminhadas para o banco de dados e servidor corretos. Os bancos de dados são controlados de acordo com uma **chave de fragmentação** e um **intervalo de valores de chave** é atribuído a cada fragmento. Por exemplo, uma chave de fragmentação pode representar os nomes de clientes de "D" a "F". O mapeamento de todos os fragmentos (também conhecido como bancos de dados) e seus intervalos de mapeamento estão contidos no **GSM (mapa de fragmentos global)** . Cada banco de dados também contém um mapa dos intervalos contidos no fragmento – isso é conhecido como o **LSM (mapa de fragmentos local)** . Quando um aplicativo se conecta a um fragmento, o mapeamento é armazenado em cache com o aplicativo para recuperação rápida. O LSM é usado para validar dados em cache.
 
 O GSM e o LSM podem ficar fora de sincronia pelos seguintes motivos:
 

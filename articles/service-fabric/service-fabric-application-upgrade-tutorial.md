@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
 ms.openlocfilehash: 8fe0bf9c8827b7248195f89377176fd834845e32
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60615224"
 ---
 # <a name="service-fabric-application-upgrade-tutorial-using-visual-studio"></a>Tutorial de atualização do aplicativo Service Fabric usando o Visual Studio
@@ -43,7 +43,7 @@ A seleção de **Publicar** exibe um pop-up, e você pode definir o **Perfil de 
 
 Agora, clique em **Publicar** na caixa de diálogo. Você pode usar o [Gerenciador do Service Fabric para exibir o cluster e o aplicativo](service-fabric-visualizing-your-cluster.md). O aplicativo Visual Objects tem um serviço Web que pode ser acessado digitando [http://localhost:8081/visualobjects/](http://localhost:8081/visualobjects/) na barra de endereços do navegador.  Você deve ver 10 objetos visuais flutuantes na tela.
 
-**OBSERVAÇÃO:** Se implantando `Cloud.xml` perfil (Azure Service Fabric), o aplicativo deve estar disponível em **http://{ServiceFabricName}. { Region}.cloudapp.Azure.com:8081/visualobjects/**. Verifique se você tem `8081/TCP` configurado no Balanceador de Carga (localize o Balanceador de Carga no mesmo grupo de recursos que a instância do Service Fabric).
+**OBSERVAÇÃO:** Se implantando `Cloud.xml` perfil (Azure Service Fabric), o aplicativo deve estar disponível em **http://{ServiceFabricName}. { Region}.cloudapp.Azure.com:8081/visualobjects/** . Verifique se você tem `8081/TCP` configurado no Balanceador de Carga (localize o Balanceador de Carga no mesmo grupo de recursos que a instância do Service Fabric).
 
 ## <a name="step-2-update-the-visual-objects-sample"></a>Etapa 2: Atualizar o exemplo de Objetos Visuais
 Você pode notar que a com a versão implantada na Etapa 1, os objetos visuais não giram. Vamos atualizar esse aplicativo para um onde os objetos visuais possam girar.

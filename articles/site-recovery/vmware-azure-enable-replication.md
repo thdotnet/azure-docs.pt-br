@@ -7,10 +7,10 @@ ms.date: 05/10/2019
 ms.topic: conceptual
 ms.author: ramamill
 ms.openlocfilehash: add0f8252bdae6857b28deeb7de4c1d09973e452
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65540783"
 ---
 # <a name="enable-replication-to-azure-for-vmware-vms"></a>Habilitar a replicação no Azure de VMs VMware
@@ -46,7 +46,7 @@ Antes de seguir as etapas nesta seção, observe as seguintes informações:
 2. Na página **Origem** > **Origem**, selecione o servidor de configuração.
 3. Para **tipo de computador**, selecione **máquinas virtuais** ou **máquinas físicas**.
 4. Em **Hipervisor do vCenter/vSphere**, selecione o servidor vCenter que gerencia o host vSphere ou selecione o host. Essa configuração não é relevante se você estiver replicando computadores físicos.
-5. Selecione o servidor de processo. Se não houver nenhum servidor de processo adicional criado, o servidor incorporados ao processo do servidor de configuração estará disponível na lista suspensa. Status de integridade de cada servidor de processo é indicado, de acordo com limites recomendados e outros parâmetros. Escolha um servidor de processo íntegro. Um [críticos](vmware-physical-azure-monitor-process-server.md#process-server-alerts) servidor de processo não pode ser escolhido. Você pode [solucionar problemas e resolver](vmware-physical-azure-troubleshoot-process-server.md) os erros **ou** configurar uma [servidor de processo de expansão](vmware-azure-set-up-process-server-scale.md).
+5. Selecione o servidor de processo. Se não houver nenhum servidor de processo adicional criado, o servidor incorporados ao processo do servidor de configuração estará disponível na lista suspensa. O status de integridade de cada servidor de processo é indicado de acordo com os limites recomendados e outros parâmetros. Escolha um servidor de processo íntegro. Um servidor de processo [crítico](vmware-physical-azure-monitor-process-server.md#process-server-alerts) não pode ser escolhido. Você pode [solucionar problemas e resolver](vmware-physical-azure-troubleshoot-process-server.md) os erros **ou** configurar um [servidor de processo de expansão](vmware-azure-set-up-process-server-scale.md).
     ![Habilitar janela de origem de replicação](media/vmware-azure-enable-replication/ps-selection.png)
 
 > [!NOTE]

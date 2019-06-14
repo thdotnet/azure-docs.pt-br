@@ -11,10 +11,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/17/2018
 ms.openlocfilehash: 0617dc617309d49cdc7c8cddd4e91619b873b914
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65785693"
 ---
 # <a name="monitor-azure-sql-database-using-azure-sql-analytics-preview"></a>Monitorar o Banco de Dados SQL do Azure usando a Análise de SQL do Azure (Versão Prévia)
@@ -37,10 +37,10 @@ A Análise de SQL do Azure é uma solução de monitoramento somente em nuvem qu
 | Fonte Conectada | Com suporte | DESCRIÇÃO |
 | --- | --- | --- |
 | [Diagnóstico do Azure](../platform/collect-azure-metrics-logs.md) | **Sim** | Dados de métrica e de log do Azure são enviados para os Logs do Azure Monitor diretamente pelo Azure. |
-| [Conta de armazenamento do Azure](../platform/collect-azure-metrics-logs.md) | Não  | O Azure Monitor não lê os dados de uma conta de armazenamento. |
-| [Agentes do Windows](../platform/agent-windows.md) | Não  | Agentes diretos do Windows não são usados pela solução. |
-| [Agentes do Linux](../learn/quick-collect-linux-computer.md) | Não  | Agentes do Linux diretos não são usados pela solução. |
-| [Grupo de gerenciamento do System Center Operations Manager](../platform/om-agents.md) | Não  | Uma conexão direta do agente do Operations Manager para o Azure Monitor não é usado pela solução. |
+| [Conta de armazenamento do Azure](../platform/collect-azure-metrics-logs.md) | Não | O Azure Monitor não lê os dados de uma conta de armazenamento. |
+| [Agentes do Windows](../platform/agent-windows.md) | Não | Agentes diretos do Windows não são usados pela solução. |
+| [Agentes do Linux](../learn/quick-collect-linux-computer.md) | Não | Agentes do Linux diretos não são usados pela solução. |
+| [Grupo de gerenciamento do System Center Operations Manager](../platform/om-agents.md) | Não | Uma conexão direta do agente do Operations Manager para o Azure Monitor não é usado pela solução. |
 
 ## <a name="configuration"></a>Configuração
 Use o processo descrito em [soluções de adicionar o Azure Monitor da Galeria de soluções](../../azure-monitor/insights/solutions.md) para adicionar a solução de análise de SQL do Azure (visualização) para seu espaço de trabalho do Log Analytics.
@@ -106,8 +106,8 @@ A tabela abaixo descreve as perspectivas compatíveis com duas versões do paine
 | Recurso por tipo | Perspectiva que conta todos os recursos monitorados. | Sim | Sim |
 | Insights | Fornece uma busca detalhada hierárquica no Intelligent Insights sobre o desempenho. | Sim | Sim |
 | Errors | Fornece drill down hierárquico sobre erros do SQL que ocorreram nos bancos de dados. | Sim | Sim |
-| Tempos limite | Fornece drill down hierárquico sobre tempos limite do SQL que ocorreram nos bancos de dados. | Sim | Não  |
-| Bloqueios | Fornece drill down hierárquico sobre bloqueios do SQL que ocorreram nos bancos de dados. | Sim | Não  |
+| Tempos limite | Fornece drill down hierárquico sobre tempos limite do SQL que ocorreram nos bancos de dados. | Sim | Não |
+| Bloqueios | Fornece drill down hierárquico sobre bloqueios do SQL que ocorreram nos bancos de dados. | Sim | Não |
 | Esperas do banco de dados | Fornece drill down hierárquico sobre estatísticas de espera do SQL sobre o nível do banco de dados. Inclui resumos de tempo de espera total e o tempo de espera por tipo de espera. |Sim | Sim |
 | Duração da consulta | Fornece drill down hierárquico sobre as estatísticas de execução de consulta como duração da consulta, uso da CPU, uso de E/S dos dados, uso de E/S do log. | Sim | Sim |
 | Esperas da consulta | Fornece drill down hierárquico sobre as estatísticas de espera da consulta por categoria de espera. | Sim | Sim |

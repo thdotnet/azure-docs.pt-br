@@ -10,10 +10,10 @@ services: azure-maps
 manager: ''
 ms.custom: codepen
 ms.openlocfilehash: f61c7a939902ee5d02b2e9ba896c7555968f9d0d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60769508"
 ---
 # <a name="add-a-shape-to-a-map"></a>Adicionar uma forma a um mapa
@@ -126,7 +126,7 @@ A camada de polígono tem apenas algumas opções de estilo. Aqui está uma ferr
 
 ## <a name="add-a-circle-to-the-map"></a>Adicionar um círculo no mapa
 
-Mapas do Azure usa uma versão estendida do esquema GeoJSON que fornece uma definição para círculos conforme observado [aqui](extend-geojson.md#circle). Um círculo pode ser renderizado no mapa com a criação de um `Point` recurso que tem um `subType` propriedade com um valor de `"Circle"` e um `radius` propriedade que tem um número que representa o raio em metros. Por exemplo: 
+Mapas do Azure usa uma versão estendida do esquema GeoJSON que fornece uma definição para círculos conforme observado [aqui](extend-geojson.md#circle). Um círculo pode ser renderizado no mapa com a criação de um `Point` recurso que tem um `subType` propriedade com um valor de `"Circle"` e um `radius` propriedade que tem um número que representa o raio em metros. Por exemplo:
 
 ```javascript
 {

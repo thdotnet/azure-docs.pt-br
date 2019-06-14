@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/02/2018
 ms.author: jomolesk
 ms.openlocfilehash: fa10ff14bf893c268d6b6b1a0d181d11a3f27dc4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60586249"
 ---
 # <a name="azure-security-and-compliance-blueprint-analytics-for-fedramp"></a>Blueprint de Segurança e Conformidade do Azure: Análise para FedRAMP
@@ -59,7 +59,7 @@ O Usuário operacional atualiza os dados regularmente e é responsável pela ger
 
 A solução usa os serviços do Azure a seguir. Há detalhes da arquitetura de implantação na seção [Arquitetura de implantação](#deployment-architecture).
 - Funções do Azure
-- Banco de Dados SQL do Azure
+- Banco de dados SQL do Azure
 - Azure Analysis Services
 - Azure Active Directory
 - Cofre da Chave do Azure
@@ -90,7 +90,7 @@ Cada NSG tem portas e protocolos específicos abertos para que a solução possa
 A arquitetura protege dados em repouso usando criptografia, auditoria de banco de dados e outras medidas.
 
 **Replicação de dados** O Azure Governamental tem duas opções de [replicação de dados](https://docs.microsoft.com/azure/storage/common/storage-redundancy):
- - A configuração padrão para replicação de dados é o **GRS (armazenamento com redundância geográfica)**, que armazena de forma assíncrona os dados do cliente em um data center separado fora da região primária. Isso garante a recuperação de dados em caso de perda total no data center primário.
+ - A configuração padrão para replicação de dados é o **GRS (armazenamento com redundância geográfica)** , que armazena de forma assíncrona os dados do cliente em um data center separado fora da região primária. Isso garante a recuperação de dados em caso de perda total no data center primário.
  - Como alternativa, o **LRS (armazenamento com redundância local)** também pode ser configurado por meio da Conta de Armazenamento do Azure. O LRS replica os dados dentro de uma unidade de escala de armazenamento, que é hospedada na mesma região em que o cliente cria sua conta. Todos os dados são replicados simultaneamente, garantindo que nenhum dado de backup seja perdido em uma falha da unidade de escala de armazenamento principal.
 
 **Armazenamento do Azure** Para atender aos requisitos de dados em repouso criptografados, todos os serviços implantados nessa da arquitetura de referência usam o [Armazenamento do Azure](https://azure.microsoft.com/services/storage/), que armazena dados com a [Criptografia do Serviço de Armazenamento](https://docs.microsoft.com/azure/storage/storage-service-encryption).

@@ -16,10 +16,10 @@ ms.date: 09/11/2018
 ms.author: ryanwi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a8b93f26080229e980b680c157f59db4edf33e7a
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65545493"
 ---
 # <a name="how-to-fill-out-specific-fields-for-a-custom-developed-application"></a>Como preencher campos específicos para um aplicativo personalizado
@@ -42,13 +42,13 @@ Este artigo oferece uma breve descrição de todos os campos disponíveis no for
 | Campo            | DESCRIÇÃO                                                                              |
 |------------------|------------------------------------------------------------------------------------------|
 | NOME             | O nome do aplicativo. Ele deve ter um mínimo de quatro caracteres.                |
-| Tipo de Aplicativo | **Aplicativo Web/API Web**: Um aplicativo que representa um aplicativo Web, uma API Web, ou ambos 
+| Tipo de aplicativo | **Aplicativo Web/API Web**: Um aplicativo que representa um aplicativo Web, uma API Web, ou ambos 
 | |**Nativo**: Um aplicativo que pode ser instalado no dispositivo ou no computador de um usuário           |
-| URL de entrada      | A URL em que os usuários podem entrar para usar o aplicativo                                  |
+| URL de logon      | A URL em que os usuários podem entrar para usar o aplicativo                                  |
 
 Após você preencher os campos acima, o aplicativo é registrado no portal do Azure e você é redirecionado para a página do aplicativo. O botão **Configurações** no painel do aplicativo abre a página Configurações, que tem mais campos para você personalizar seu aplicativo. A tabela a seguir descreve todos os campos na página Configurações. Observe que você verá apenas um subconjunto desses campos, dependendo tipo de aplicativo que você criou, um aplicativo Web ou um aplicativo nativo.
 
-| Campo           | Descrição                                                                                                                                                                                                                                                                                                     |
+| Campo           | DESCRIÇÃO                                                                                                                                                                                                                                                                                                     |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ID do aplicativo  | Quando você registra um aplicativo, o Azure AD atribui a seu aplicativo uma ID de aplicativo. A ID do aplicativo pode ser usada para identificar exclusivamente o aplicativo nas solicitações de autenticação no Azure AD, além de acessar recursos, como a API do Graph.                                                          |
 | URI de ID do aplicativo      | Deve ser um URI exclusivo, geralmente com o formato **https://&lt;locatário\_nome&gt;/&lt;aplicativo\_nome&gt;.** Ele é usado durante o fluxo de concessão de autorização como um identificador exclusivo para especificar o recurso para o qual o token deve ser emitido. Ele também se torna a declaração "aud" no token de acesso emitido. |
@@ -57,7 +57,7 @@ Após você preencher os campos acima, o aplicativo é registrado no portal do A
 | URL de logoff      | É a URL de logoff único. O Azure AD envia uma solicitação de logoff para essa URL quando o usuário limpa a sessão com o Azure AD usando qualquer outro aplicativo registrado.                                                                                                                                       |
 | Multilocatário  | Esta opção especifica se o aplicativo pode ser usado por vários locatários. Normalmente, isso significa que organizações externas podem usar seu aplicativo registrando-o em seu locatário e concedendo acesso aos dados da organização.                                                                   |
 | URLs de resposta      | As URLs de resposta são pontos de extremidade em que o Azure AD retorna tokens que seu aplicativo solicita.                                                                                                                                                                                                          |
-| URIs de Redirecionamento   | Para aplicativos nativos, é para onde o usuário é enviado após uma autorização bem-sucedida. O Azure AD verifica se o URI de redirecionamento que seu aplicativo fornece na solicitação OAuth 2.0 corresponde a um dos valores registrados no portal.                                                            |
+| URIs de redirecionamento   | Para aplicativos nativos, é para onde o usuário é enviado após uma autorização bem-sucedida. O Azure AD verifica se o URI de redirecionamento que seu aplicativo fornece na solicitação OAuth 2.0 corresponde a um dos valores registrados no portal.                                                            |
 | simétricas            | Você pode criar chaves para acessar programaticamente APIs Web protegidas pelo Azure AD sem interação do usuário. Na página \*\*Chaves\*\*, insira uma descrição da chave e a data de validade e salve para gerar a chave. Certifique-se de salvá-la em algum lugar seguro, pois você não poderá acessá-la depois.             |
 
 ## <a name="next-steps"></a>Próximas etapas

@@ -17,10 +17,10 @@ ms.date: 11/02/2018
 ms.author: banders
 ms.custom: seodec18
 ms.openlocfilehash: 8c2843840790d1e0dbfd4a789775c6c7ceb51a54
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60918420"
 ---
 # <a name="manage-access-to-billing-information-for-azure"></a>Gerenciar acesso a informações de cobrança do Azure
@@ -71,7 +71,7 @@ O recurso Leitor de Cobrança está na visualização prévia e ainda não ofere
 1. Entre no [Portal do Azure](https://portal.azure.com/).
 1. Selecione sua assinatura na [folha de Assinaturas](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) no portal do Azure.
 
-1. Selecione **IAM (Controle de acesso)**.
+1. Selecione **IAM (Controle de acesso)** .
 1. Selecione **Atribuições de função** para exibir todas as atribuições de função para esta assinatura.
 1. Selecione **Adicionar atribuição de função**.
 1. Na lista suspensa **Função**, escolha **Leitor de Cobrança**.

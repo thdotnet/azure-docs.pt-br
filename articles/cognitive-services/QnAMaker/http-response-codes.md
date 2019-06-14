@@ -12,10 +12,10 @@ ms.date: 02/20/2019
 ms.author: tulasim
 ms.custom: seodec18
 ms.openlocfilehash: cdfa5212f321cc6ec976ea9df301243acc54a23f
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65794854"
 ---
 # <a name="qna-maker-api-http-response-codes"></a>Códigos de resposta HTTP da API de QnA Maker
@@ -25,7 +25,7 @@ As APIs de [gerenciamento](https://go.microsoft.com/fwlink/?linkid=2092179) e pr
 
 |Código|Explicação|
 |:--|--|
-|2xx|Sucesso|
+|2xx|Êxito|
 |400|Os parâmetros da solicitação estão incorretos, o que significa que os parâmetros necessários estão ausentes, errados ou são muitos grandes|
 |400|O corpo da solicitação está incorreto, o que significa que o JSON está ausente, errado ou é muito grande|
 |401|Chave inválida|

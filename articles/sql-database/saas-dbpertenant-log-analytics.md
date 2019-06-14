@@ -13,10 +13,10 @@ ms.reviewer: billgib
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 6380488faa9a4554df5df5ea67e11dbeb8853fff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61389295"
 ---
 # <a name="set-up-and-use-azure-monitor-logs-with-a-multitenant-sql-database-saas-app"></a>Configurar e usar os logs do Azure Monitor com um aplicativo multilocatário de SaaS de banco de dados SQL
@@ -51,13 +51,13 @@ Os workspaces do OMS agora são chamados de workspaces do Log Analytics. As áre
 1. No ISE do PowerShell, abra *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Módulos de Aprendizado\\Gerenciamento e Monitoramento do desempenho\\Demo-PerformanceMonitoringAndManagement.ps1*. Mantenha esse script aberto, pois você talvez queira executar vários dos cenários de geração de carga durante este tutorial.
 1. Se você já não fez isso, provisione um lote de locatários para tornar o contexto de monitoramento mais interessante. Esse processo leva alguns minutos.
 
-    a. Defina **$DemoScenario = 1,** _Provisionar um lote de locatários_.
+   a. Defina **$DemoScenario = 1,** _Provisionar um lote de locatários_.
 
    b. Para executar o script e implantar mais 17 locatários, pressione F5.
 
 1. Agora, inicie o gerador de carga para executar uma carga simulada em todos os locatários.
 
-     a. Definir **$DemoScenario = 2**, _gerar carga de intensidade normal (aproximadamente 30 DTU)_.
+    a. Definir **$DemoScenario = 2**, _gerar carga de intensidade normal (aproximadamente 30 DTU)_ .
 
     b. Para executar o script, pressione F5.
 
@@ -83,7 +83,7 @@ Neste exercício, abra o espaço de trabalho do Log Analytics no portal do Azure
 
    ![Abrir espaço de trabalho do Log Analytics](media/saas-dbpertenant-log-analytics/log-analytics-open.png)
 
-1. Selecione o workspace chamado _wtploganalytics-&lt;user&gt;_.
+1. Selecione o workspace chamado _wtploganalytics-&lt;user&gt;_ .
 
 1. Selecione **visão geral** para abrir a solução de análise de log no portal do Azure.
 

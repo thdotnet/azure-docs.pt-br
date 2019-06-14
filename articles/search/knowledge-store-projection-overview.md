@@ -11,16 +11,16 @@ ms.date: 05/02/2019
 ms.author: vikurpad
 ms.custom: seomay2019
 ms.openlocfilehash: f1c7278909557dc92f86c5dfc1f190fddf33f607
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65540817"
 ---
 # <a name="working-with-projections-in-a-knowledge-store-in-azure-search"></a>Trabalhando com projeções em um repositório de dados de Conhecimento no Azure Search
 
 > [!Note]
-> Armazenamento de dados de conhecimento está em versão prévia e não destina-se para uso em produção. O [API REST versão 2019-05-06-Preview](search-api-preview.md) fornece esse recurso. Não há nenhum suporte de SDK do .NET no momento.
+> O armazenamento de dados de conhecimento está em versão prévia e não é destinado para uso em produção. A [API REST versão 2019-05-06-versão prévia](search-api-preview.md) fornece esse recurso. Não há suporte para SDK do .NET no momento.
 >
 
 O Azure Search permite o enriquecimento de conteúdo por meio de habilidades cognitivas de inteligência Artificial e habilidades personalizadas como parte da indexação. Aprimoramentos de adicionam estrutura a documentos e facilitar a pesquisa mais eficiente. Em muitos casos, os documentos enriquecidos são úteis para outros cenários além da pesquisa, por exemplo, para mineração de dados de Conhecimento.

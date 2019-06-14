@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 07/18/2016
 ms.author: jehollan
 ms.openlocfilehash: 0f6ee8729cbed9cb8baf3668f7b1a332bc5eddc1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60538087"
 ---
 # <a name="get-started-with-the-request-and-response-components"></a>Introdução aos componentes de solicitação e resposta
@@ -86,7 +86,7 @@ As tabelas a seguir descrevem os campos de entrada para o gatilho e a ação e o
 #### <a name="request-trigger"></a>Gatilho de solicitação
 A seguir, um campo de entrada para o gatilho de uma solicitação HTTP de entrada.
 
-| Nome de exibição | Nome da propriedade | DESCRIÇÃO |
+| Display name | Nome da propriedade | DESCRIÇÃO |
 | --- | --- | --- |
 | Esquema JSON |schema |O esquema JSON do corpo da solicitação HTTP |
 
@@ -104,7 +104,7 @@ A seguir, os detalhes de saída para a solicitação.
 #### <a name="response-action"></a>Ação de resposta
 Estes são os campos de entrada da ação de Resposta HTTP. Um * significa que é um campo obrigatório.
 
-| Nome de exibição | Nome da propriedade | DESCRIÇÃO |
+| Display name | Nome da propriedade | DESCRIÇÃO |
 | --- | --- | --- |
 | Código de status* |statusCode |O código de status HTTP |
 | Cabeçalhos |headers |Um objeto JSON de cabeçalhos de resposta a serem incluídos |

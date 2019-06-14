@@ -10,10 +10,10 @@ ms.author: grhuynh
 ms.topic: conceptual
 ms.date: 02/05/2018
 ms.openlocfilehash: 399b1ed735ce1b7a3fca1d27155863f6bfa18776
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60780871"
 ---
 # <a name="submit-a-workflow-using-multiple-inputs-from-the-same-sample"></a>Enviar um fluxo de trabalho usando várias entradas do mesmo exemplo
@@ -28,7 +28,7 @@ Este artigo pressupõe que você já instalou e executou o cliente `msgen` e est
 ## <a name="multiple-bam-files"></a>Vários arquivos BAM
 
 ### <a name="upload-your-input-files-to-azure-storage"></a>Carregar seus arquivos de entrada no armazenamento do Azure
-Vamos assumir que você tem vários arquivos BAM como entrada, *reads.bam*, *additional_reads.bam* e *yet_more_reads.bam*, e já os carregou na sua conta de armazenamento *myaccount* no Azure. Você tem a URL da API e sua chave de acesso. Você deseja ter saídas em **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>**.
+Vamos assumir que você tem vários arquivos BAM como entrada, *reads.bam*, *additional_reads.bam* e *yet_more_reads.bam*, e já os carregou na sua conta de armazenamento *myaccount* no Azure. Você tem a URL da API e sua chave de acesso. Você deseja ter saídas em **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>** .
 
 
 ### <a name="submit-your-job-to-the-msgen-client"></a>Enviar o trabalho para o cliente `msgen` 
@@ -91,7 +91,7 @@ Envie o arquivo `config.txt` com esta invocação: `msgen submit -f config.txt`
 ## <a name="multiple-paired-fastq-files"></a>Vários arquivos FASTQ emparelhados
 
 ### <a name="upload-your-input-files-to-azure-storage"></a>Carregar seus arquivos de entrada no armazenamento do Azure
-Vamos assumir que você tem diversos arquivos FASTQ emparelhados como entrada, *reads_1.fq.gz* e *reads_2.fq.gz*, *additional_reads_1.fq.gz* e *additional_reads_2.fq.gz*, *yet_more_reads_1.fq.gz* e *yet_more_reads_2.fq.gz*. Você os carregou para sua conta de armazenamento *myaccount* no Azure e você tem a URL da API e sua chave de acesso. Você deseja ter saídas em **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>**.
+Vamos assumir que você tem diversos arquivos FASTQ emparelhados como entrada, *reads_1.fq.gz* e *reads_2.fq.gz*, *additional_reads_1.fq.gz* e *additional_reads_2.fq.gz*, *yet_more_reads_1.fq.gz* e *yet_more_reads_2.fq.gz*. Você os carregou para sua conta de armazenamento *myaccount* no Azure e você tem a URL da API e sua chave de acesso. Você deseja ter saídas em **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>** .
 
 
 ### <a name="submit-your-job-to-the-msgen-client"></a>Enviar o trabalho para o cliente `msgen` 

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: milanga;juliako;
 ms.openlocfilehash: 46e60583da79006c133c8d9fac63e27f28bd699f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61217142"
 ---
 # <a name="detect-face-and-emotion-with-azure-media-analytics"></a>Detectar a face e a emoção com o Azure Media Analytics
@@ -77,7 +77,7 @@ Ao criar uma tarefa com o **Azure Media Face Detector**, é necessário especifi
 #### <a name="attribute-descriptions"></a>Descrições de atributos
 | Nome do atributo | DESCRIÇÃO |
 | --- | --- |
-| Mode |Mais rápido: maior velocidade de processamento, mas menos precisão (padrão).|
+| Modo |Mais rápido: maior velocidade de processamento, mas menos precisão (padrão).|
 
 ### <a name="json-output"></a>Saída em JSON
 O exemplo de saída JSON a seguir foi truncado.
@@ -152,7 +152,7 @@ Ao criar uma tarefa com o **Azure Media Face Detector**, é necessário especifi
 #### <a name="attribute-descriptions"></a>Descrições de atributos
 | Nome do atributo | DESCRIÇÃO |
 | --- | --- |
-| Mode |Faces: Somente detecção facial.<br/>PerFaceEmotion: Retorna a emoção independente para cada detecção facial.<br/>AggregateEmotion: Retorna uma média dos valores de emoção para todas as faces no quadro. |
+| Modo |Faces: Somente detecção facial.<br/>PerFaceEmotion: Retorna a emoção independente para cada detecção facial.<br/>AggregateEmotion: Retorna uma média dos valores de emoção para todas as faces no quadro. |
 | AggregateEmotionWindowMs |Use se o modo AggregateEmotion for selecionado. Especifica a duração do vídeo usado para produzir cada resultado da agregação, em milissegundos. |
 | AggregateEmotionIntervalMs |Use se o modo AggregateEmotion for selecionado. Especifica com que frequência deve-se produzir resultados agregados. |
 
@@ -162,7 +162,7 @@ Abaixo, temos os valores recomendados para as configurações de janela e interv
 || Padrões | Máx. | Mín. |
 |--- | --- | --- | --- |
 | AggregateEmotionWindowMs |0,5 |2 |0,25|
-| AggregateEmotionIntervalMs |0,5 |1 |0,25|
+| AggregateEmotionIntervalMs |0,5 |1 |0.25|
 
 ### <a name="json-output"></a>Saída em JSON
 Saída em JSON para agregação de emoção (truncada):

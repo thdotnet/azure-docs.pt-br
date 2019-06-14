@@ -13,15 +13,15 @@ ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 0c0e0e3983344bba76f5f305ecaf73f91110f3bc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60567278"
 ---
 # <a name="updating-azure-machine-learning-models-using-update-resource-activity"></a>Atualizando os modelos do Machine Learning do Azure usando a Atividade de Recurso de Atualização
 
-> [!div class="op_single_selector" title1="Transformation Activities"]
+> [!div class="op_single_selector" title1="Atividades de transformação"]
 > * [Atividade de Hive](data-factory-hive-activity.md) 
 > * [Atividade Pig](data-factory-pig-activity.md)
 > * [Atividade MapReduce](data-factory-map-reduce.md)
@@ -35,7 +35,7 @@ ms.locfileid: "60567278"
 
 
 > [!NOTE]
-> Este artigo aplica-se à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [atualizar modelos de aprendizado de máquina no Data Factory](../update-machine-learning-models.md).
+> Este artigo se aplica à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [atualizar modelos de aprendizado de máquina no Data Factory](../update-machine-learning-models.md).
 
 Este artigo complementa o artigo principal sobre o Azure Data Factory - integração do Azure Machine Learning: [Criar pipelines de previsão usando Azure Machine Learning e o Azure Data Factory](data-factory-azure-ml-batch-execution-activity.md). Se você ainda não fez isso, leia o artigo principal antes de ler este. 
 

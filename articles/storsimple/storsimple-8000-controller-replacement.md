@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.openlocfilehash: dd2f6fcc9b2f5d716566e91e89487969613d1005
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61482740"
 ---
 # <a name="replace-a-controller-module-on-your-storsimple-device"></a>Substituir um módulo de controlador em seu dispositivo StorSimple
@@ -90,7 +90,7 @@ Conclua as etapas a seguir se um dos controladores do dispositivo Microsoft Azur
    
     **Figura 1** Parte posterior do dispositivo StorSimple
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    |:--- |:--- |
    | 1 |PCM 0 |
    | 2 |PCM 1 |
@@ -166,7 +166,7 @@ Use o procedimento a seguir para remover um módulo do controlador com falha do 
 1. Segure a trava do módulo entre o polegar e o dedo indicador.
 2. Aperte gentilmente o polegar e o dedo indicador para liberar a trava do controlador.
    
-    ![ Liberando a trava do controlador](./media/storsimple-controller-replacement/IC741047.png)
+    ![Liberando a trava do controlador](./media/storsimple-controller-replacement/IC741047.png)
    
     **Figura 2** Liberando a trava do controlador
 3. Use a trava como alça para deslizar o controlador para fora do chassi.
@@ -231,7 +231,7 @@ Se esse LED estiver piscando, o controlador estará ativo e o outro controlador 
 
 **Figura 8** Parte traseira do compartimento primário com portas de dados e LEDs de monitoramento
 
-| Rótulo | DESCRIÇÃO |
+| Rotular | DESCRIÇÃO |
 |:--- |:--- |
 | 1-6 |Portas de rede DATA 0 – 5 |
 | 7 |LED azul |

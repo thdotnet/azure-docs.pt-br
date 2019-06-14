@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 12/13/2018
 ms.author: danlep
 ms.openlocfilehash: 5d8904b5906adbdab68989b3a5cf9c3975c23533
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61347049"
 ---
 # <a name="azure-container-registry-authentication-with-service-principals"></a>Autenticação do Registro de Contêiner do Azure com entidades de serviço
@@ -32,7 +32,7 @@ Por exemplo, o aplicativo Web pode usar uma entidade de serviço que fornece som
 
 ## <a name="when-to-use-a-service-principal"></a>Quando usar uma entidade de serviço
 
-Você deve usar uma entidade de serviço para fornecer o acesso de registro em **cenários “sem periféricos”**. Em outras palavras, qualquer aplicativo, serviço ou script que precisa enviar por push ou efetuar pull de imagens de contêiner de maneira automatizada ou autônoma.
+Você deve usar uma entidade de serviço para fornecer o acesso de registro em **cenários “sem periféricos”** . Em outras palavras, qualquer aplicativo, serviço ou script que precisa enviar por push ou efetuar pull de imagens de contêiner de maneira automatizada ou autônoma.
 
 Para acesso individual a um registro, como quando você efetua pull manualmente de uma imagem de contêiner para sua estação de trabalho de desenvolvimento, você deve usar sua própria [identidade do Azure AD](container-registry-authentication.md#individual-login-with-azure-ad) para acesso de registro (por exemplo, com [az acr login][az-acr-login]).
 

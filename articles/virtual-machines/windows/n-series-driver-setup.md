@@ -16,10 +16,10 @@ ms.date: 09/24/2018
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 5b6f0d79e773ac7b79c79e4be6206fe39928cd0a
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62127770"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-windows"></a>Instalar drivers de GPU NVIDIA em VMs da série N que executam o Windows 
@@ -50,7 +50,7 @@ Para consultar o estado do dispositivo GPU, execute o utilitário de linha de co
 
 1. Abra um prompt de comando e mude para o diretório **C:\Program Files\NVIDIA Corporation\NVSMI**.
 
-2. Execute `nvidia-smi`. Se o driver estiver instalado, você verá uma saída parecida com a mostrada a seguir. O **GPU-Util** mostra **0%**, a menos que você esteja atualmente executando uma carga de trabalho de GPU na VM. Sua versão de driver e os detalhes GPU podem ser diferentes daqueles mostrados.
+2. Execute `nvidia-smi`. Se o driver estiver instalado, você verá uma saída parecida com a mostrada a seguir. O **GPU-Util** mostra **0%** , a menos que você esteja atualmente executando uma carga de trabalho de GPU na VM. Sua versão de driver e os detalhes GPU podem ser diferentes daqueles mostrados.
 
 ![Status do dispositivo NVIDIA](./media/n-series-driver-setup/smi.png)  
 

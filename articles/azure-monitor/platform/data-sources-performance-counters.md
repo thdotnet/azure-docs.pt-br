@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: magoedte
 ms.openlocfilehash: 76f4061af816c59e644db99913193ed6fcf24d18
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65205745"
 ---
 # <a name="windows-and-linux-performance-data-sources-in-azure-monitor"></a>Fontes de dados de desempenho do Windows e do Linux no Azure Monitor
@@ -96,11 +96,11 @@ A tabela a seguir lista os objetos e contadores que você pode especificar no ar
 | Disco Lógico | % de Espaço Livre |
 | Disco Lógico | % de Inodes Usados |
 | Disco Lógico | % de Espaço Usado |
-| Disco Lógico | Bytes Lidos no Disco/s  |
-| Disco Lógico | Leituras de Disco/s  |
+| Disco Lógico | Bytes Lidos no Disco/s |
+| Disco Lógico | Leituras de Disco/s |
 | Disco Lógico | Transferências de Disco/s |
-| Disco Lógico |  Bytes Gravados no Disco/s |
-| Disco Lógico |  Gravações de Disco/s |
+| Disco Lógico | Bytes Gravados no Disco/s |
+| Disco Lógico | Gravações de Disco/s |
 | Disco Lógico | Megabytes Livres |
 | Disco Lógico | Bytes de Disco Lógico/s |
 | Memória | % de Memória Disponível |
@@ -126,10 +126,10 @@ A tabela a seguir lista os objetos e contadores que você pode especificar no ar
 | Disco Físico | Média de segundos/Transferência do Disco |
 | Disco Físico | Média de segundos/Gravação do Disco |
 | Disco Físico | Bytes/s do Disco Físico |
-| Processo | % de Tempo Privilegiado |
-| Processo | % de Tempo do Usuário |
-| Processo | KBytes de Memória Usada |
-| Processo | Memória Virtual Compartilhada |
+| Process | % de Tempo Privilegiado |
+| Process | % de Tempo do Usuário |
+| Process | KBytes de Memória Usada |
+| Process | Memória Virtual Compartilhada |
 | Processador | % de Tempo de DPC |
 | Processador | % de Tempo Ocioso |
 | Processador | % de Tempo de Interrupção |
@@ -195,7 +195,7 @@ Os registros de desempenho têm um tipo de **Perf** e têm as propriedades na ta
 | CounterValue |Valor numérico do contador. |
 | InstanceName |Nome da instância do evento.  Vazio se não houver nenhuma instância. |
 | ObjectName |Nome do objeto de desempenho |
-| SourceSystem |Tipo de agente do qual os dados foram coletados. <br><br>OpsManager - agente do Windows, conexão direta ou SCOM <br>  Linux: todos os agentes do Linux  <br>  AzureStorage: Diagnóstico do Azure |
+| SourceSystem |Tipo de agente do qual os dados foram coletados. <br><br>OpsManager - agente do Windows, conexão direta ou SCOM <br> Linux: todos os agentes do Linux  <br> AzureStorage: Diagnóstico do Azure |
 | TimeGenerated |Data e hora em que os dados foram amostrados. |
 
 ## <a name="sizing-estimates"></a>Estimativas de dimensionamento
@@ -206,7 +206,7 @@ Os registros de desempenho têm um tipo de **Perf** e têm as propriedades na ta
 ## <a name="log-queries-with-performance-records"></a>Consultas de log com registros de Desempenho
 A tabela a seguir fornece diferentes exemplos de consultas de log que recuperam registros de Desempenho.
 
-| Consultar | DESCRIÇÃO |
+| Consulta | DESCRIÇÃO |
 |:--- |:--- |
 | Perf |Todos os dados de desempenho |
 | Perf &#124; where Computer == "MyComputer" |Todos os dados de desempenho de um computador específico |

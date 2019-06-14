@@ -16,10 +16,10 @@ ms.workload: infrastructure
 ms.date: 06/05/2018
 ms.author: cynthn
 ms.openlocfilehash: 2b078cd769a9b4e5e66fe132fd4ef73ec4621efc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60391354"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Criar uma máquina virtual do Linux que usa autenticação SSH com a API REST
@@ -54,8 +54,8 @@ Os cabeçalhos a seguir são necessários:
 
 | Cabeçalho da solicitação   | DESCRIÇÃO |
 |------------------|-----------------|
-| *Tipo de Conteúdo:*  | Obrigatório. Defina como `application/json`. |
-| *Autorização:* | Obrigatório. Defina como um `Bearer` [token de acesso](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) válido. |
+| *Content-Type:*  | Obrigatório. Defina como `application/json`. |
+| *Authorization:* | Obrigatório. Defina como um `Bearer` [token de acesso](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) válido. |
 
 Para obter informações gerais sobre como trabalhar com solicitações da API REST, confira [Componentes de uma solicitação/resposta da API REST](/rest/api/azure/#components-of-a-rest-api-requestresponse).
 
@@ -63,10 +63,10 @@ Para obter informações gerais sobre como trabalhar com solicitações da API R
 
 As definições comuns a seguir são usadas para criar um corpo de solicitação:
 
-| NOME                       | Necessário | Type                                                                                | DESCRIÇÃO  |
+| NOME                       | Obrigatório | Type                                                                                | DESCRIÇÃO  |
 |----------------------------|----------|-------------------------------------------------------------------------------------|--------------|
 | location                   | True     | cadeia de caracteres                                                                              | Local do recurso. |
-| Nome                       |          | cadeia de caracteres                                                                              | Nome da máquina virtual. |
+| name                       |          | cadeia de caracteres                                                                              | Nome da máquina virtual. |
 | properties.hardwareProfile |          | [HardwareProfile](/rest/api/compute/virtualmachines/createorupdate#hardwareprofile) | Especifica as configurações de hardware da máquina virtual. |
 | properties.storageProfile  |          | [StorageProfile](/rest/api/compute/virtualmachines/createorupdate#storageprofile)   | Especifica as configurações de armazenamento dos discos da máquina virtual. |
 | properties.osProfile       |          | [OSProfile](/rest/api/compute/virtualmachines/createorupdate#osprofile)             | Especifica as configurações do sistema operacional da máquina virtual. |
@@ -133,7 +133,7 @@ Para obter uma lista completa das definições de disponíveis no corpo da solic
 
 É possível usar o cliente de sua preferência para enviar essa solicitação HTTP. Você também pode usar uma [ferramenta no navegador](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate) clicando no botão **Experimentar**.
 
-### <a name="responses"></a>Respostas
+### <a name="responses"></a>Responses
 
 Há duas respostas bem-sucedidas para a operação criar ou atualizar uma máquina virtual:
 

@@ -17,16 +17,16 @@ ms.author: rolyon
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1b2d07638f6c6f153ee3640273fbee5e56df0ab2
-ms.sourcegitcommit: 9ad75f83bbf0fc4623b7995794f33bbf823b31c0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64541519"
 ---
 # <a name="approve-or-deny-access-requests-in-azure-ad-entitlement-management-preview"></a>Aprovar ou negar solicitações de acesso no gerenciamento de direitos do AD do Azure (visualização)
 
 > [!IMPORTANT]
-> Gerenciamento de direitos do Active Directory (Azure AD) do Azure está atualmente em visualização pública.
+> No momento, o gerenciamento de direitos do Azure AD (Azure Active Directory) está em versão prévia pública.
 > Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
 > Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -60,7 +60,7 @@ Depois de abrir uma solicitação pendente de aprovação de acesso, você pode 
 
 **Função de pré-requisito:** Aprovador
 
-1. Clique o **exibição** link para abrir o painel de solicitações de acesso.
+1. Clique no link **Exibir** para abrir o painel Solicitação de acesso.
 
 1. Clique em **detalhes** para ver detalhes sobre a solicitação de acesso.
 
@@ -70,9 +70,9 @@ Depois de abrir uma solicitação pendente de aprovação de acesso, você pode 
 
 1. Se necessário, insira um motivo.
 
-    ![Meu portal de acesso – solicitação de acesso](./media/entitlement-management-shared/my-access-approve-request.png)
+    ![Portal Meus Acessos – Solicitação de acesso](./media/entitlement-management-shared/my-access-approve-request.png)
 
-1. Clique em **enviar** para enviar sua decisão.
+1. Clique em **Enviar** para enviar sua decisão.
 
     Se uma política é configurada com vários aprovadores, somente um aprovador precisa tomar uma decisão sobre a aprovação pendente. Depois que um aprovador enviou sua decisão para a solicitação de acesso, a solicitação é concluída e não está mais disponível para outros aprovadores aprovar ou negar a solicitação. Outros aprovadores podem ver a decisão de solicitação e o tomador de decisões em seu portal meu acesso. Neste momento, há suporte para apenas a aprovação de fase única.
 

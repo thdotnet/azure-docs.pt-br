@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 01/12/2019
 ms.author: spelluru
 ms.openlocfilehash: 6cbfc06f380d7c4818ca82e858c23bb18849fb7c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60561686"
 ---
 # <a name="azure-event-grid-event-schema-for-resource-groups"></a>Esquema de eventos para assinatura da Grade de Eventos do Azure
@@ -253,7 +253,7 @@ O objeto de dados tem as seguintes propriedades:
 | claims | objeto | As propriedades da declaração. Para obter mais informações, consulte [especificação JWT](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
 | correlationId | string | Uma ID de operação para solução de problemas. |
 | httpRequest | objeto | Os detalhes da operação. Esse objeto é apenas incluído ao atualizar um recurso existente ou excluir um recurso. |
-| resourceProvider | string | O provedor de recursos para a operação. |
+| ResourceProvider | string | O provedor de recursos para a operação. |
 | resourceUri | string | O URI do recurso na operação. |
 | operationName | string | A operação que foi feita. |
 | status | string | O status da operação. |

@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ae83cea866367fa6a6596caa683d0287bea96c29
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60456086"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Solucionar problemas de Autenticação de Passagem do Azure Active Directory
@@ -133,7 +133,7 @@ Para análises detalhadas, habilite o log de "Sessão" (botão direito do mouse 
 
 ### <a name="detailed-trace-logs"></a>Logs de rastreamento detalhados
 
-Para solucionar problemas de falhas de conexão do usuário, procure os logs de rastreamento em **%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\\**. Esses logs incluem os motivos pelos quais um usuário específico falha ao entrar usando o recurso de Autenticação de Passagem. Esses erros também são mapeados para os motivos de falha de entrada mostrados na tabela de motivos de falha de entrada anterior. A seguir está um exemplo de entrada de log:
+Para solucionar problemas de falhas de conexão do usuário, procure os logs de rastreamento em **%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\\** . Esses logs incluem os motivos pelos quais um usuário específico falha ao entrar usando o recurso de Autenticação de Passagem. Esses erros também são mapeados para os motivos de falha de entrada mostrados na tabela de motivos de falha de entrada anterior. A seguir está um exemplo de entrada de log:
 
 ```
     AzureADConnectAuthenticationAgentService.exe Error: 0 : Passthrough Authentication request failed. RequestId: 'df63f4a4-68b9-44ae-8d81-6ad2d844d84e'. Reason: '1328'.

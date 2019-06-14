@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 10/12/2018
 ms.author: genli
 ms.openlocfilehash: 8afed4eb1add0ba3a7db474e54b2f78a0babab06
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60789070"
 ---
 # <a name="reserved-ip-addresses-classic-deployment"></a>Endereços IP Reservados (implantação clássica)
@@ -34,7 +34,7 @@ Para saber mais sobre endereços IP no Azure, leia o artigo [Endereços IP](virt
 
 ## <a name="when-do-i-need-a-reserved-ip"></a>Quando eu precisarei de um IP reservado?
 * **Você deseja garantir que o IP seja reservado em sua assinatura**. Se você quiser reservar um endereço IP que não seja liberado da sua assinatura sob nenhuma circunstância, você deverá usar um IP público reservado.  
-* **Você deseja que o IP permaneça com seu serviço de nuvem, mesmo nos estados parados ou desalocados (VMs)**. Se você quiser que seu serviço seja acessado usando um endereço IP que não seja alterado, mesmo quando VMs do serviço de nuvem estejam paradas ou desalocadas.
+* **Você deseja que o IP permaneça com seu serviço de nuvem, mesmo nos estados parados ou desalocados (VMs)** . Se você quiser que seu serviço seja acessado usando um endereço IP que não seja alterado, mesmo quando VMs do serviço de nuvem estejam paradas ou desalocadas.
 * **Você deseja garantir que o tráfego de saída do Azure use um endereço IP previsível**. Você pode ter seu firewall local configurado para permitir apenas o tráfego de endereços IP específicos. Ao reservar um IP, você conhecerá o endereço IP de origem e não terá de atualizar suas regras de firewall devido a uma alteração de IP.
 
 ## <a name="faqs"></a>Perguntas frequentes

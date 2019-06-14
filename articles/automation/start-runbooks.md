@@ -10,10 +10,10 @@ ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: b065b611c923c4a28dc79c390ffb56ed97b316fd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60880173"
 ---
 # <a name="start-a-runbook-in-azure-automation"></a>Inicie um runbook na Automação do Azure
@@ -84,7 +84,7 @@ O serviço Web da Automação do Azure fornece uma funcionalidade especial para 
 
 ### <a name="named-values"></a>Valores nomeados
 
-Se o parâmetro é do tipo de dados [object], você pode usar o seguinte formato JSON para enviar-lhe uma lista de valores nomeados: *{Name1:'Value1', Name2:'Value2', Name3:'Value3'}*. Esses valores devem ser tipos simples. O runbook recebe o parâmetro como um [PSCustomObject](/dotnet/api/system.management.automation.pscustomobject) com propriedades que correspondem a cada valor nomeado.
+Se o parâmetro é do tipo de dados [object], você pode usar o seguinte formato JSON para enviar-lhe uma lista de valores nomeados: *{Name1:'Value1', Name2:'Value2', Name3:'Value3'}* . Esses valores devem ser tipos simples. O runbook recebe o parâmetro como um [PSCustomObject](/dotnet/api/system.management.automation.pscustomobject) com propriedades que correspondem a cada valor nomeado.
 
 Considere o runbook de teste a seguir que aceita um parâmetro chamado user.
 
@@ -121,7 +121,7 @@ Smith
 
 ### <a name="arrays"></a>Matrizes
 
-Se o parâmetro é uma matriz, como [array] ou [string[]], você pode usar o seguinte formato JSON para enviar-lhe uma lista de valores: *[Value1, Value2, Value3]*. Esses valores devem ser tipos simples.
+Se o parâmetro é uma matriz, como [array] ou [string[]], você pode usar o seguinte formato JSON para enviar-lhe uma lista de valores: *[Value1, Value2, Value3]* . Esses valores devem ser tipos simples.
 
 Considere o runbook de teste a seguir que aceita um parâmetro chamado *user*.
 

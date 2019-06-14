@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: diberry
 ms.openlocfilehash: 9da79e5b744f8ba70c0e265f0d1f0126b37eba49
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60509663"
 ---
 # <a name="understand-how-and-when-to-use-a-luis-version"></a>Reconhecer como e quando usar uma versão do LUIS
@@ -46,12 +46,12 @@ Clone uma versão para criar uma cópia de uma versão existente e salve-a como 
 ## <a name="import-and-export-a-version"></a>Importar e exportar uma versão
 É possível importar uma versão no nível do aplicativo. Essa versão se tornará a versão ativa e usava a ID de versão na propriedade "versionId" do arquivo do aplicativo. Também é possível importar, no nível da versão, para um aplicativo existente. A nova versão torna-se a versão ativa. 
 
-É possível exportar uma versão no nível do aplicativo ou no nível da versão. A única diferença é que a versão exportada do nível do aplicativo é a versão ativa no momento, enquanto no nível da versão, é possível escolher qualquer versão para ser exportada na página **[Configurações](luis-how-to-manage-versions.md)**. 
+É possível exportar uma versão no nível do aplicativo ou no nível da versão. A única diferença é que a versão exportada do nível do aplicativo é a versão ativa no momento, enquanto no nível da versão, é possível escolher qualquer versão para ser exportada na página **[Configurações](luis-how-to-manage-versions.md)** . 
 
 O arquivo exportado não contém informações de aprendizado de máquina, porque o aplicativo é treinado novamente após a importação. O arquivo exportado não contém colaboradores – é necessário adicioná-los de volta, porque a versão importada para o novo aplicativo.
 
 ## <a name="export-each-version-as-app-backup"></a>Exportar cada versão como backup do aplicativo
-Para fazer backup do aplicativo LUIS, exporte cada versão na página **[Configurações](luis-how-to-manage-versions.md)**.
+Para fazer backup do aplicativo LUIS, exporte cada versão na página **[Configurações](luis-how-to-manage-versions.md)** .
 
 ## <a name="delete-a-version"></a>Excluir uma versão
 É possível excluir todas as versões, exceto a versão ativa, da lista de versões na página Configurações. 

@@ -15,10 +15,10 @@ ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 041c8bb6b4de2bbe2cbeb4c1a89e452239ae57bd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60473634"
 ---
 # <a name="register-your-personal-device-on-your-organizations-network"></a>Registre seu dispositivo pessoal na rede da sua organização
@@ -50,7 +50,7 @@ Siga estas etapas para registrar seu dispositivo pessoal em sua rede.
 
     ![Tela Acesso corporativo ou de estudante com a opção Conectar realçada](./media/user-help-register-device-on-network/register-device-access-work-school-connect.png)
 
-3. Na tela **Adicionar uma conta corporativa ou de estudante**, digite o endereço de email da sua conta corporativa ou de estudante e, em seguida, selecione **Avançar**. Por exemplo, alain@contoso.com.
+3. Na tela **Adicionar uma conta corporativa ou de estudante**, digite o endereço de email da sua conta corporativa ou de estudante e, em seguida, selecione **Avançar**. Por exemplo: alain@contoso.com.
 
 4. Entre em sua conta corporativa ou de estudante e depois selecione **Entrar**.
 

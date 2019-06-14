@@ -10,10 +10,10 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.openlocfilehash: 3bcc511ec6ad8a246c2b1b3a33eb59043a45830e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60784700"
 ---
 # <a name="frequently-asked-questions-about-azure-databricks"></a>Perguntas frequentes a respeito do Azure Databricks
@@ -67,7 +67,7 @@ A seguir, estão algumas soluções para esse problema:
 
 * Esse erro também poderá ocorrer se o seu nome de domínio de e-mail estiver atribuído a vários diretórios no AD do Azure. Para contornar esse problema, crie um novo usuário no diretório que contém a assinatura com o seu workspace do Databricks.
 
-     a. No portal do Azure, vá para o AD do Azure. Selecione **Usuários e Grupos** > **Adicione um usuário**.
+    a. No portal do Azure, vá para o AD do Azure. Selecione **Usuários e Grupos** > **Adicione um usuário**.
 
     b. Adicione um usuário com um `@<tenant_name>.onmicrosoft.com` email em vez do `@<your_domain>` email. Você pode encontrar essa opção em **Domínios personalizados**, no AD do Azure no portal do Azure.
     
@@ -99,7 +99,7 @@ Os clusters do Azure Databricks usam um endereço IP público por nó. Caso sua 
 #### <a name="error-message"></a>Mensagem de erro
 
 "Falha de inicialização do provedor de nuvem: Foi encontrado um erro de provedor de nuvem durante a configuração do cluster. Para obter mais informações, consulte o guia do Databricks.
-Código de erro do Azure: Mensagem de erro do MissingSubscriptionRegistration Azure: A assinatura não está registrada para usar o namespace 'Microsoft.Compute'. Consulte https://aka.ms/rps-not-found para saber como registrar assinaturas.
+Código de erro do Azure: Mensagem de erro do MissingSubscriptionRegistration Azure: A assinatura não está registrada para usar o namespace 'Microsoft. Compute'. Consulte https://aka.ms/rps-not-found para saber como registrar assinaturas.
 
 #### <a name="solution"></a>Solução
 

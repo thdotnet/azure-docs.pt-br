@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
 ms.openlocfilehash: 673dcbeb630899eebc328cd4fae16f7fe8f47a55
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60557878"
 ---
 # <a name="azure-api-management-template-resources"></a>Recursos de modelo no Gerenciamento de API do Azure
@@ -132,7 +132,7 @@ Há suporte para as seguintes opções de localização:
 |WebDevelopersAppDeleteConfirmation|Tem certeza de que deseja remover o aplicativo?|  
 |WebDevelopersAppNotPublished|Não publicado|  
 |WebDevelopersAppNotSubmitted|Não enviado|  
-|WebDevelopersAppTableCategoryHeader|Category|  
+|WebDevelopersAppTableCategoryHeader|Categoria|  
 |WebDevelopersAppTableNameHeader|NOME|  
 |WebDevelopersAppTableStateHeader|Estado|  
 |WebDevelopersEditLink|Editar|  

@@ -2,17 +2,16 @@
 title: Melhores práticas do operador - Isolamento de cluster no Azure Kubernetes Services (AKS)
 description: Aprenda as práticas recomendadas do operador de cluster para isolamento no Azure Kubernetes Service (AKS)
 services: container-service
-author: rockboyfor
+author: iainfoulds
 ms.service: container-service
 ms.topic: conceptual
-origin.date: 11/26/2018
-ms.date: 03/04/2019
-ms.author: v-yeche
+ms.date: 11/26/2018
+ms.author: iainfou
 ms.openlocfilehash: 94aaa72497a8a5f171d6b42f59a3c5b507c71492
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60465268"
 ---
 # <a name="best-practices-for-cluster-isolation-in-azure-kubernetes-service-aks"></a>Práticas recomendadas para isolamento de cluster no Azure Kubernetes Service (AKS)
@@ -57,7 +56,7 @@ Uma abordagem comum para o isolamento de cluster é usar clusters AKS fisicament
 
 Clusters fisicamente separados geralmente têm uma baixa densidade de vagem. Como cada equipe ou carga de trabalho possui seu próprio cluster AKS, o cluster geralmente é provisionado em excesso com recursos de computação. Geralmente, um pequeno número de pods é planejado nesses nós. A capacidade não utilizada nos nós não pode ser usada para aplicativos ou serviços em desenvolvimento por outras equipes. Esses recursos em excesso contribuem para os custos adicionais em clusters fisicamente separados.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Este artigo concentra-se em isolamento de cluster. Para obter mais informações sobre operações de cluster no AKS, consulte as seguintes práticas recomendadas:
 

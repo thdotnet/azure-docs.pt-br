@@ -10,10 +10,10 @@ ms.assetid: 07830b36-2fe3-4809-a846-129cf67b6a9e
 ms.topic: conceptual
 ms.date: 06/18/2017
 ms.openlocfilehash: f2a4b98404139abead411c20648b82d9081481f9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60614984"
 ---
 # <a name="manage-azure-data-lake-analytics-using-a-java-app"></a>Gerenciar o Azure Data Lake Analytics usando um aplicativo Java
@@ -33,7 +33,7 @@ O snippet de código a seguir fornece o código para a autenticação **não int
 ## <a name="create-a-java-application"></a>Criar um aplicativo Java
 1. Abra o IntelliJ e crie um projeto Java usando o modelo **Aplicativo de linha de comando**.
 2. Clique com o botão direito do mouse no projeto no lado esquerdo da tela e clique em **Adicionar Suporte da Estrutura**. Escolha **Maven** e clique em **OK**.
-3. Abra o arquivo **"pom.xml"** recém-criado e adicione o seguinte snippet de texto entre as marcas **\</version&gt;** e **\</project&gt;**:
+3. Abra o arquivo **"pom.xml"** recém-criado e adicione o seguinte snippet de texto entre as marcas **\</version&gt;** e **\</project&gt;** :
 
 ```
 <repositories>

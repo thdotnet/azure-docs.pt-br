@@ -17,10 +17,10 @@ ms.reviewer: asteen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 90000f34ff247fdd5939dc19971c170aa4b70386
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65824654"
 ---
 # <a name="disable-user-sign-ins-for-an-enterprise-app-in-azure-active-directory"></a>Desabilitar entradas de usuário em um aplicativo empresarial no Azure Active Directory
@@ -32,7 +32,7 @@ ms.locfileid: "65824654"
 1. Sobre o **Azure Active Directory** -  ***directoryname*** painel (ou seja, o Azure AD para o diretório que você está gerenciando), selecione **aplicativos empresariais**.
 1. Sobre o **aplicativos empresariais – todos os aplicativos** painel, você ver uma lista de aplicativos você pode gerenciar. Selecione um aplicativo.
 1. No painel ***nomedoaplicativo*** (ou seja, o painel com o nome do aplicativo selecionado no título), selecione **Propriedades**.
-1. No painel ***nomedoaplicativo*** -  **Propriedades**, selecione **Não** para **Habilitar para os usuários entrarem?**.
+1. No painel ***nomedoaplicativo*** -  **Propriedades**, selecione **Não** para **Habilitar para os usuários entrarem?** .
 1. Escolha o comando **Salvar** .
 
 ## <a name="next-steps"></a>Próximas etapas

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
 ms.openlocfilehash: 1283f812799fe71ef6987dbc7fab092aed4d3417
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62112643"
 ---
 # <a name="enable-offline-syncing-with-ios-mobile-apps"></a>Habilitar a sincronização offline com aplicativos móveis do iOS
@@ -147,7 +147,7 @@ Abra **QSDataModel.xcdatamodeld**. Há quatro tabelas definidas - três que são
   * TodoItem: Armazena os itens pendentes. As colunas do sistema **createdAt**, **updatedAt** e **version** são propriedades opcionais do sistema.
 
 > [!NOTE]
-> O SDK dos Aplicativos Móveis reserva nomes de coluna que começam com "**``**". Não use esse prefixo em algo diferente das colunas do sistema. Caso contrário, os nomes de coluna serão modificados ao usar o back-end remoto.
+> O SDK dos Aplicativos Móveis reserva nomes de coluna que começam com " **``** ". Não use esse prefixo em algo diferente das colunas do sistema. Caso contrário, os nomes de coluna serão modificados ao usar o back-end remoto.
 >
 >
 
@@ -161,10 +161,10 @@ Ao usar o recurso de sincronização offline, você define as três tabelas do s
 
 | Atributo | Type |
 | --- | --- |
-| ID | Número Inteiro 64 |
+| id | Número Inteiro 64 |
 | itemId | Cadeia de caracteres |
 | propriedades | Dados binários |
-| tabela | Cadeia de caracteres |
+| table | Cadeia de caracteres |
 | tableKind | Número inteiro 16 |
 
 
@@ -174,7 +174,7 @@ Ao usar o recurso de sincronização offline, você define as três tabelas do s
 
 | Atributo | Type |
 | --- | --- |
-| ID |Cadeia de caracteres |
+| id |Cadeia de caracteres |
 | operationId |Número Inteiro 64 |
 | propriedades |Dados binários |
 | tableKind |Número inteiro 16 |
@@ -185,10 +185,10 @@ Ao usar o recurso de sincronização offline, você define as três tabelas do s
 
 | Atributo | Type |
 | --- | --- |
-| ID |Cadeia de caracteres |
+| id |Cadeia de caracteres |
 | chave |Cadeia de caracteres |
 | keyType |Número Inteiro 64 |
-| tabela |Cadeia de caracteres |
+| table |Cadeia de caracteres |
 | value |Cadeia de caracteres |
 
 ### <a name="data-table"></a>Tabela de dados
@@ -197,7 +197,7 @@ Ao usar o recurso de sincronização offline, você define as três tabelas do s
 
 | Atributo | Type | Observação |
 | --- | --- | --- |
-| ID | Cadeia de caracteres, marcadas como obrigatórias |Chave primária no repositório remoto |
+| id | Cadeia de caracteres, marcadas como obrigatórias |Chave primária no repositório remoto |
 | concluído | Boolean | Campo To-do item |
 | text |string |Campo To-do item |
 | createdAt | Data | (opcional) É mapeado para a propriedade do sistema **createdAt** |

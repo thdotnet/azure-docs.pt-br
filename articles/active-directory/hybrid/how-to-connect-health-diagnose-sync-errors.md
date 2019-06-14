@@ -15,10 +15,10 @@ ms.date: 05/11/2018
 ms.author: zhiweiw
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fbdeef7c591221756ad206bf2f3dd78ac3d26c4f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60349883"
 ---
 # <a name="diagnose-and-remediate-duplicated-attribute-sync-errors"></a>Diagnosticar e corrigir erros de sincronização de atributos duplicados
@@ -107,7 +107,7 @@ Para o **cenário de objeto órfão**, apenas o único usuário **Joe Johnson** 
 ### <a name="do-both-of-these-accounts-belong-to-the-same-user"></a>Ambas as contas pertencem ao mesmo usuário?
 Essa pergunta verifica se um usuário conflitante de entrada e o objeto de usuário existente no Azure AD verificam se pertencem ao mesmo usuário.  
 1. O objeto conflitante é recém-sincronizado no Azure Active Directory. Compare os atributos dos objetos:  
-   - Nome de exibição
+   - Nome para exibição
    - Nome UPN
    - ID de objeto
 2. Se o Azure AD não conseguir compará-los, verifique se o Active Directory tem objetos com o  **UserPrincipalNames** fornecido. Responda **Não** se você encontrar os dois.

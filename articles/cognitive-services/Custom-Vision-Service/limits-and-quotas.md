@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: anroth
 ms.openlocfilehash: 85abc4a50710629d3485d05115698e59a93fc96e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60995589"
 ---
 # <a name="limits-and-quotas"></a>Limites e cotas
@@ -26,8 +26,8 @@ Espera-se que o número de imagens de treinamento por projeto e tags por projeto
 ||**F0**|**S0**|
 |-----|-----|-----|
 |Projetos|2|100|
-|Imagens de treinamento por projeto |5.000|100.000|
-|Previsões/mês|10.000 |Ilimitado|
+|Imagens de treinamento por projeto |5\.000|100\.000|
+|Previsões/mês|10\.000 |Ilimitado|
 |Marcas/projeto|50|500|
 |Iterações |10|10|
 |Min rotulado imagens por marca, classificação (mais de 50 recomendado) |5|5|

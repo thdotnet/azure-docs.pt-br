@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 03/29/2018
 ms.author: rosh
 ms.openlocfilehash: 69db722295c9c81d45913bd078fe9cc5ab74c512
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60462581"
 ---
 # <a name="project-url-preview-v7-reference"></a>Referência de Visualização de URL de Projeto v7
@@ -73,11 +73,11 @@ Veja a seguir os cabeçalhos que podem ser incluídos em uma solicitação e uma
 ## <a name="query-parameters"></a>Parâmetros de consulta
 A solicitação pode incluir os parâmetros de consulta a seguir. Confira a coluna Obrigatório para obter os parâmetros necessários. É necessário codificar os parâmetros de consulta em URL. A consulta precisa ser uma URL absoluta com um esquema HTTP ou HTTPS; não damos suporte para URLs relativas ou outros esquemas como ftp://
 
-|NOME|Value|Type|Necessário|
+|NOME|Value|Type|Obrigatório|
 |----------|-----------|----------|--------------|
 |<a name="mkt" />mkt|O mercado do qual os resultados são obtidos. <br /><br />Para obter uma lista dos possíveis valores de mercado, confira Códigos de mercado.<br /><br /> **OBSERVAÇÃO:** Atualmente, a API de Visualização de URL dá suporte apenas à geografia dos EUA e ao idioma inglês.<br /><br />|Cadeia de caracteres|Sim|
 |<a name="query" />q|A URL a ser visualizada|Cadeia de caracteres|Sim|
-|<a name="responseformat" />responseFormat|O tipo de mídia a ser usado para a resposta. Veja a seguir os possíveis valores que não diferenciam maiúsculas de minúsculas.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> O padrão é JSON. Para obter informações sobre os objetos JSON contidos na resposta, confira [Objetos de resposta](#response-objects).<br /><br />Se você especificar JsonLd, o corpo da resposta incluirá objetos JSON-LD que contêm os resultados da pesquisa. Para obter informações sobre o JSON-LD, confira [JSON-LD](https://json-ld.org/).|Cadeia de caracteres|Não |
+|<a name="responseformat" />responseFormat|O tipo de mídia a ser usado para a resposta. Veja a seguir os possíveis valores que não diferenciam maiúsculas de minúsculas.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> O padrão é JSON. Para obter informações sobre os objetos JSON contidos na resposta, confira [Objetos de resposta](#response-objects).<br /><br />Se você especificar JsonLd, o corpo da resposta incluirá objetos JSON-LD que contêm os resultados da pesquisa. Para obter informações sobre o JSON-LD, confira [JSON-LD](https://json-ld.org/).|Cadeia de caracteres|Não|
 |<a name="safesearch"/>Pesquisa Segura|O conteúdo ilegal para adulto ou pirateado é bloqueado com o código de erro 400 e o sinalizador *isFamilyFriendly* não é retornado. <p>Para obter conteúdo legal para adulto, veja abaixo o comportamento. O código de status retorna 200 e o sinalizador *isFamilyFriendly* é definido como false.<ul><li>safeSearch=strict: Título, descrição, URL e imagem não serão retornados.</li><li>safeSearch=moderate; Obtém o título, a URL e a descrição, mas não a imagem descritiva.</li><li>safeSearch=off; Obtém todos os elementos/objetos de resposta – título, URL, descrição e imagem.</li></ul> |Cadeia de caracteres|Não obrigatório. </br> Usa como padrão safeSearch=strict.|
 
 ## <a name="response-objects"></a>Objetos de resposta
@@ -112,7 +112,7 @@ Define as informações sobre uma página da Web na visualização.
 
 |NOME|Value|Type|
 |----------|-----------|----------|
-|Nome|O título de página, não necessariamente o título HTML|Cadeia de caracteres|
+|name|O título de página, não necessariamente o título HTML|Cadeia de caracteres|
 |url|A URL que foi realmente rastreada (a solicitação pode ter seguido os redirecionamentos)|Cadeia de caracteres|
 |description|Breve descrição da página e do conteúdo|Cadeia de caracteres|
 |isFamilyFriendly|Mais preciso para itens no índice da Web; os fetches em tempo real fazem essa detecção baseada somente na URL e não no conteúdo da página|boolean|
@@ -121,7 +121,7 @@ Define as informações sobre uma página da Web na visualização.
 ### <a name="identifiable"></a>Identifiable
 |NOME|Value|Type|
 |-------------|-----------------|----------|
-|ID|Um identificador de recurso|Cadeia de caracteres|
+|id|Um identificador de recurso|Cadeia de caracteres|
 
 ## <a name="error-codes"></a>Códigos do Erro
 

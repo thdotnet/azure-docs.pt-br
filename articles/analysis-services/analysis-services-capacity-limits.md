@@ -9,10 +9,10 @@ ms.date: 04/11/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 0ffbffc788baaffd4a0532c3918ed82cc3eaf5c3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61023530"
 ---
 # <a name="analysis-services-resource-and-object-limits"></a>Limites de recurso e objeto do Analysis Services
@@ -60,14 +60,14 @@ Esses limites são teóricos. Desempenho será ser diminuído em números mais b
 
 |Object|Tamanho máximo/números|  
 |------------|----------------------------|  
-|Bancos de dados em uma instância|16.000|  
-|Número combinado de tabelas e colunas em um banco de dados|16.000|  
+|Bancos de dados em uma instância|16,000|  
+|Número combinado de tabelas e colunas em um banco de dados|16,000|  
 |Linhas em uma tabela|Ilimitado<br /><br /> **Aviso:** Com a restrição de que nenhuma coluna única na tabela pode ter mais de 1.999.999.997 valores distintos.|  
 |Hierarquias em uma tabela|15,999|  
 |Níveis em uma hierarquia|15,999|  
-|Relações|8.000|  
+|Relações|8\.000|  
 |Colunas de chave na tabela de todos os|15,999|  
-|Medidas em tabelas|2 ^ 31-1 = 2.147.483.647|  
+|Medidas em tabelas|2^31-1 = 2,147,483,647|  
 |Células retornadas por uma consulta|2 ^ 31-1 = 2.147.483.647|  
 |Tamanho do registro de consulta de fonte|64 k|  
 |Comprimento de nomes de objeto|512 caracteres|  

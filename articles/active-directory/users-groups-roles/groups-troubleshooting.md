@@ -14,10 +14,10 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0eededcc180d7652fd52c79b85ca3c34f65a22a4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60469691"
 ---
 # <a name="troubleshoot-and-resolve-groups-issues"></a>Solucionar problemas e resolver problemas de grupos
@@ -66,8 +66,8 @@ Atualmente, não há nenhuma maneira para disparar automaticamente o grupo a ser
 
 | Erro do analisador de regra | Erro de uso | Uso corrigido |
 | --- | --- | --- |
-| Erro: Atributo sem suporte. |(user.invalidProperty -eq "Valor") |(user.department -eq "value") A propriedade <br/><br/>Verifique se o atributo está na [lista de propriedades com suporte](groups-dynamic-membership.md#supported-properties). |
-| Erro: Não há suporte para o operador no atributo. |(user.accountEnabled -contains true) |(user.accountEnabled -eq true) A propriedade <br/><br/>Não há suporte para o operador usado para o tipo de propriedade (neste exemplo, -contains não pode ser usado no tipo booliano). Use os operadores corretos para o tipo de propriedade. |
+| Erro: Atributo sem suporte. |(user.invalidProperty -eq "Valor") |(user.department -eq "value") A propriedade<br/><br/>Verifique se o atributo está na [lista de propriedades com suporte](groups-dynamic-membership.md#supported-properties). |
+| Erro: Não há suporte para o operador no atributo. |(user.accountEnabled -contains true) |(user.accountEnabled -eq true) A propriedade<br/><br/>Não há suporte para o operador usado para o tipo de propriedade (neste exemplo, -contains não pode ser usado no tipo booliano). Use os operadores corretos para o tipo de propriedade. |
 | Erro: Erro de compilação da consulta. | 1. (user.department -eq "Sales") (user.department -eq "Marketing")<br>2. (user.userPrincipalName -match "*@domain.ext") | 1. Operador ausente. Use -and ou -or para unir predicados<br>(user.department -eq "Sales") -or (user.department -eq "Marketing")<br>2. Erro na expressão regular usada com -match<br>(user.userPrincipalName -match "*@domain.ext")<br>ou alternativamente: (user.userPrincipalName -match "@domain.ext") |
 
 ## <a name="next-steps"></a>Próximas etapas

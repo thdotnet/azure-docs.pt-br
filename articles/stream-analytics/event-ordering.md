@@ -9,10 +9,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/12/2019
 ms.openlocfilehash: 970eeb871775e24abb87c8b977e214645e514d3b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60789466"
 ---
 # <a name="configuring-event-ordering-policies-for-azure-stream-analytics"></a>Configurar políticas para o Azure Stream Analytics da ordenação de eventos
@@ -41,7 +41,7 @@ Vamos ver um exemplo dessas políticas em ação.
 <br> **Política de entrada tardia:** 15 s
 <br> **Política de fora de ordem:** 8 segundos
 
-| Evento n º | Hora do Evento | Horário de chegada | System.Timestamp | Explicação |
+| Evento n º | Hora do evento | Horário de chegada | System.Timestamp | Explicação |
 | --- | --- | --- | --- | --- |
 | **1** | 00:10:00  | 00:10:40  | 00:10:25  | Evento foi recebido o nível de tolerância atrasados e fora. Portanto, hora do evento obtém ajustada para a tolerância da chegada máximo.  |
 | **2** | 00:10:30 | 00:10:41  | 00:10:30  | Evento chegou tarde, mas dentro do nível de tolerância. Portanto, a hora do evento não é ajustada.  |
@@ -73,7 +73,9 @@ Quando várias partições do mesmo fluxo de entrada são combinadas, a tolerân
 <br><code>
 {"message Time":"2/3/2019 8:54:16 PM UTC","message":"Input Partition [2] does not have additional data for more than [5] minute(s). Partition will not progress until either events arrive or late arrival threshold is met.","type":"InputPartitionNotProgressing","correlation ID":"2328d411-52c7-4100-ba01-1e860c757fc2"} 
 </code><br><br>
-Esta mensagem para informar que pelo menos uma partição na sua entrada está vazia e atrasará a sua saída pelo limite de chegada tardia. Para resolver este problema, é recomendável que você a: 1. Certifique-se de que todas as partições do Hub IoT/Hub de eventos receberem a entrada. 2. Use partição por PartitionID cláusula em sua consulta. 
+Esta mensagem para informar que pelo menos uma partição na sua entrada está vazia e atrasará a sua saída pelo limite de chegada tardia. Para resolver este problema, é recomendável que você a: 
+1. Certifique-se de que todas as partições do Hub IoT/Hub de eventos receberem a entrada. 
+2. Use partição por PartitionID cláusula em sua consulta. 
 
 ## <a name="next-steps"></a>Próximas etapas
 * [Considerações de tratamento de tempo](stream-analytics-time-handling.md)

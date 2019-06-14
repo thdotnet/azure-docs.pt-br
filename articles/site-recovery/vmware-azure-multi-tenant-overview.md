@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
 ms.openlocfilehash: d227b8d038dd686bde9b031ca2c58adc7dd6d76b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60718018"
 ---
 # <a name="overview-of-multi-tenant-support-for-vmware-disaster-recovery-to-azure-with-csp"></a>Visão geral do suporte multilocatário para recuperação de desastre do VMware para o Azure com o CSP
@@ -24,11 +24,11 @@ Este artigo fornece uma visão geral de implementação e gerenciamento da repli
 
 Há três modelos principais de multilocatários:
 
-* **HSP (Provedor de Serviços de Hospedagem Compartilhado)**: O parceiro é o proprietário da infraestrutura física e usa recursos compartilhados (vCenter, datacenters, armazenamento físico, e assim por diante) para hospedar VMs de vários locatários na mesma infraestrutura. O parceiro pode fornecer gerenciamento de recuperação de desastre como um serviço gerenciado ou o locatário pode ter recuperação de desastre como uma solução de autoatendimento.
+* **HSP (Provedor de Serviços de Hospedagem Compartilhado)** : O parceiro é o proprietário da infraestrutura física e usa recursos compartilhados (vCenter, datacenters, armazenamento físico, e assim por diante) para hospedar VMs de vários locatários na mesma infraestrutura. O parceiro pode fornecer gerenciamento de recuperação de desastre como um serviço gerenciado ou o locatário pode ter recuperação de desastre como uma solução de autoatendimento.
 
 * **Provedor de Serviços de Hospedagem Dedicado**: O parceiro é proprietário da infraestrutura física, mas usa recursos dedicados (vários vCenters, armazenamentos de dados físicos, e assim por diante) para hospedar as VMs de cada locatário em uma infraestrutura separada. O parceiro pode fornecer gerenciamento de recuperação de desastre como um serviço gerenciado ou o locatário pode já tê-la como uma solução de autoatendimento.
 
-* **MSP (Provedor de Serviços Gerenciado)**: O cliente possui a infraestrutura física que hospeda as VMs e o parceiro fornece a habilitação e gerenciamento de recuperação de desastre.
+* **MSP (Provedor de Serviços Gerenciado)** : O cliente possui a infraestrutura física que hospeda as VMs e o parceiro fornece a habilitação e gerenciamento de recuperação de desastre.
 
 ## <a name="shared-hosting-services-provider-hsp"></a>HSP (provedor de serviços de hospedagem compartilhada)
 
@@ -110,7 +110,7 @@ Para restringir as operações de recuperação de desastre a somente failover (
 ### <a name="deploy-resources-to-the-tenant-subscription"></a>Implantar recursos na assinatura do locatário
 
 1. No Portal do Azure, crie um grupo de recursos e implante um cofre dos Serviços de Recuperação de acordo com o processo normal.
-2. Baixe a chave do registro do cofre.
+2. Baixar a chave de registro do cofre.
 3. Registre o CS para o locatário usando a chave de registro do cofre.
 4. Insira as credenciais para as duas contas de acesso, a conta para acessar o servidor vCenter e a conta para acessar a máquina virtual.
 

@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.openlocfilehash: f977a48338f784562ec84355aabb212e5a3dade4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60946531"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Microsoft Azure Service Fabric para Visual Studio Code
@@ -70,7 +70,7 @@ A extensão de serviços confiáveis do Service Fabric para VS Code fornece muit
 * O Service Fabric: Criar um aplicativo 
 * O Service Fabric: Publicar aplicativo 
 * O Service Fabric: Implantar aplicativo 
-* O Service Fabric: Remover Aplicativo  
+* O Service Fabric: Remover aplicativo  
 * O Service Fabric: Criar aplicativo 
 * O Service Fabric: Limpar aplicativo 
 
@@ -86,7 +86,7 @@ O **do Service Fabric: Criar aplicativo** comando cria um novo aplicativo do Ser
 5.  O novo aplicativo do Microsoft Azure Service Fabric aparece no workspace.
 6.  Abra a nova pasta de aplicativo para que ele se torne a pasta raiz no workspace. Você pode continuar a execução de comandos aqui.
 
-### <a name="service-fabric-add-service"></a>O Service Fabric: Adicionar Serviço
+### <a name="service-fabric-add-service"></a>O Service Fabric: Adicionar serviço
 O **do Service Fabric: Adicionar serviço** comando adiciona um novo serviço para um aplicativo do Service Fabric existente. O aplicativo que o serviço será adicionado ao deve ser o diretório raiz do workspace. 
 
 1.  Selecione o **do Service Fabric: Adicionar serviço** comando.
@@ -113,7 +113,7 @@ O **do Service Fabric: Implantar aplicativo** comando implanta o aplicativo do S
 > [!NOTE]
 > Não há suporte para a implantação de aplicativos Java para o cluster local nos computadores do Windows.
 
-### <a name="service-fabric-remove-application"></a>O Service Fabric: Remover Aplicativo
+### <a name="service-fabric-remove-application"></a>O Service Fabric: Remover aplicativo
 O **do Service Fabric: Remover aplicativo** comando remove um aplicativo do Service Fabric do cluster que ele foi implantado anteriormente para usar a extensão do VS Code. 
 
 1.  Selecione o **do Service Fabric: Remover aplicativo** comando.

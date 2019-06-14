@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: kraigb
 ms.openlocfilehash: b8c21b908ca9162a7e44c7af1e222babc6ee1eb7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60631919"
 ---
 # <a name="your-profile-and-user-id-for-azure-notebooks"></a>Perfil e ID de usuário do Azure Notebooks
@@ -57,7 +57,7 @@ Seu perfil é composto de informações visíveis publicamente na URL, `https://
 
 Para editar seu perfil, use o comando **Editar Informações de Perfil** na sua página de perfil. As seções do seu perfil são as seguintes:
 
-| Seção | Conteúdo |
+| `Section` | Conteúdo |
 | --- | --- |
 | Foto de perfil | Uma imagem que é mostrada na sua página de perfil. |
 | Informações da conta | Seu nome de exibição, ID de usuário e conta de email pública. Aqui, a conta de email fornece aos outros usuários uma maneira de como contatá-lo e essa conta pode ser diferente da [conta](azure-notebooks-user-account.md) que você usa para entrar no Azure Notebooks. |

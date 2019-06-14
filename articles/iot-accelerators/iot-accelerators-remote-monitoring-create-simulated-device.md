@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: conceptual
 ms.openlocfilehash: 5044f8b85e59911633a4ffab509efc000948144a
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65832591"
 ---
 # <a name="create-and-test-a-new-simulated-device"></a>Criar e testar um novo dispositivo simulado
@@ -66,7 +66,7 @@ A tabela a seguir mostra o status inicial do dispositivo:
 | ------------------------ | -------|
 | Cor inicial            | Branco  |
 | Brilho inicial       | 75     |
-| Vida útil restante inicial   | 10.000 |
+| Vida útil restante inicial   | 10\.000 |
 | Status de telemetria inicial | "on"   |
 | Temperatura da telemetria inicial | 200   |
 
@@ -123,7 +123,7 @@ Nesta seção, você adiciona um novo tipo de telemetria de **Temperatura Intern
 
 1. Copie os seguintes arquivos para a nova pasta a partir da cópia baixada do microsserviço de simulação de dispositivo:
 
-    | `Source` | Destino |
+    | source | Destino |
     | ------ | ----------- |
     | Services\data\devicemodels\chiller-01.json | C:\temp\devicemodels\chiller-01.json |
     | Services\data\devicemodels\scripts\chiller-01-state.js | C:\temp\devicemodels\scripts\chiller-01-state.js |

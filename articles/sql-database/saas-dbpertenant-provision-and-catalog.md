@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 09/24/2018
 ms.openlocfilehash: 803d05e1aaf4d9c26a6132bde30f101ce3905924
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61388286"
 ---
 # <a name="learn-how-to-provision-new-tenants-and-register-them-in-the-catalog"></a>Saiba como provisionar novos locatários e registrá-los no catálogo
@@ -92,7 +92,7 @@ Para entender como o aplicativo Wingtip Tickets implementa o novo provisionament
 
 4. Depois que a execução do script for interrompida no ponto de interrupção, pressione F11 para entrar no código.
 
-   ![Depurando](media/saas-dbpertenant-provision-and-catalog/debug.png)
+   ![Depuração](media/saas-dbpertenant-provision-and-catalog/debug.png)
 
 
 

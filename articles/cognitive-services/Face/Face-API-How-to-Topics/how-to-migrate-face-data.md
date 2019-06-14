@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: lewlu
 ms.openlocfilehash: 702aed12860c090e83b997e6b56d56e06b416568
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65913795"
 ---
 # <a name="migrate-your-face-data-to-a-different-face-subscription"></a>Migrar seus dados de detecção facial para uma assinatura diferente de Detecção Facial
@@ -233,5 +233,5 @@ Em seguida, consulte a documentação de referência de API relevante, explorar 
 - [Documentação de referência do instantâneo (SDK do .NET)](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.snapshotoperations?view=azure-dotnet)
 - [Exemplo de instantâneo de API de detecção facial](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample)
 - [Adicionar faces](how-to-add-faces.md)
-- [Detecte rostos em uma imagem](HowtoDetectFacesinImage.md)
-- [Identifique rostos em uma imagem](HowtoIdentifyFacesinImage.md)
+- [Detectar faces em uma imagem](HowtoDetectFacesinImage.md)
+- [Identificar faces em imagens](HowtoIdentifyFacesinImage.md)

@@ -15,15 +15,15 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 90f78428601d7b039d00d39c1ca8339ab3ace9ba
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60487828"
 ---
 # <a name="copy-or-move-data-easily-with-azure-data-factory-copy-wizard"></a>Copiar ou mover dados facilmente com o Assistente de Cópia do Azure Data Factory
 > [!NOTE]
-> Este artigo aplica-se à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte o [tutorial de atividade de cópia](../quickstart-create-data-factory-dot-net.md). 
+> Este artigo se aplica à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte o [tutorial de atividade de cópia](../quickstart-create-data-factory-dot-net.md). 
 
 
 O Assistente de cópia do Azure Data Factory serve para facilitar o processo de ingestão de dados, que geralmente é uma primeira etapa em um cenário de integração de dados de ponta a ponta. Ao executar o Assistente de cópia do Azure Data Factory, você não precisa entender nenhuma definição de JSON para serviços vinculados, conjuntos de dados e pipelines. No entanto, depois de concluir todas as etapas no assistente, o assistente cria automaticamente um pipeline para copiar dados da fonte de dados selecionada para o destino selecionado. Além disso, o Assistente de cópia ajuda a validar os dados que estão sendo ingeridos no momento da criação, o que poupa muito tempo, especialmente quando você estiver ingerindo dados pela primeira vez da fonte de dados. Para iniciar o Assistente de Cópia, clique no bloco **Copiar dados** na home page da sua fábrica de dados.
@@ -63,7 +63,7 @@ No exemplo, a consulta SQL usa a função `Text.Format` e variável `WindowStart
 ![Validar expressões](./media/data-factory-copy-wizard/validate-expressions.png)
 
 ### <a name="filtering-of-data-in-an-azure-blob-folder"></a>Filtragem de dados em uma pasta de blobs do Azure
-Você pode usar variáveis no caminho da pasta para copiar dados de uma pasta determinada em tempo de execução com base nas [variáveis do sistema](data-factory-functions-variables.md#data-factory-system-variables). As variáveis com suporte são: **{ano}**, **{mês}**, **{dia}**, **{hora}**, **{minuto}** e **{personalizado}**. Exemplo: pastadeentrada/{ano}/{mês}/{dia}.
+Você pode usar variáveis no caminho da pasta para copiar dados de uma pasta determinada em tempo de execução com base nas [variáveis do sistema](data-factory-functions-variables.md#data-factory-system-variables). As variáveis com suporte são: **{ano}** , **{mês}** , **{dia}** , **{hora}** , **{minuto}** e **{personalizado}** . Exemplo: pastadeentrada/{ano}/{mês}/{dia}.
 
 Suponha que você tenha pastas de entrada no seguinte formato:
 
@@ -72,7 +72,7 @@ Suponha que você tenha pastas de entrada no seguinte formato:
     2016/03/01/03
     ...
 
-Clique no botão **Procurar** de **Arquivo ou pasta**, navegue até uma dessas pastas (por exemplo, 2016->03->01->02) e clique em **Escolher**. Você verá `2016/03/01/02` na caixa de texto. Agora, substitua **2016** por **{ano}**, **03** por **{mês}**, **01** por **{dia}**, **02** por **{hora}** e pressione Tab. Você deverá ver listas suspensas para escolher o formato dessas quatro variáveis:
+Clique no botão **Procurar** de **Arquivo ou pasta**, navegue até uma dessas pastas (por exemplo, 2016->03->01->02) e clique em **Escolher**. Você verá `2016/03/01/02` na caixa de texto. Agora, substitua **2016** por **{ano}** , **03** por **{mês}** , **01** por **{dia}** , **02** por **{hora}** e pressione Tab. Você deverá ver listas suspensas para escolher o formato dessas quatro variáveis:
 
 ![Usando variáveis de sistema](./media/data-factory-copy-wizard/blob-standard-variables-in-folder-path.png)   
 
@@ -92,6 +92,6 @@ Uma operação de cópia única permite, uma única vez, a movimentação de dad
 
 ![Propriedades de agendamento](./media/data-factory-copy-wizard/scheduling-properties.png)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Confira um breve passo a passo sobre como usar o Assistente de Cópia do Data Factory para criar um pipeline com uma Atividade de Cópia no [Tutorial: Criar um pipeline usando o Assistente de Cópia](data-factory-copy-data-wizard-tutorial.md).
 

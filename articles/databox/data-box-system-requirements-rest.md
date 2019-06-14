@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/19/2019
 ms.author: alkohli
 ms.openlocfilehash: 71e0ebf7d7851ae65a6fba67a1695d755fd98bb1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61436487"
 ---
 # <a name="azure-data-box-blob-storage-requirements"></a>Requisitos de armazenamento de Blobs do Azure Data Box
@@ -29,7 +29,7 @@ Recomendamos que você leia as informações com atenção antes de se conectar 
 |    Armazenamento de arquivos do Azure                                   |    Compartilhamentos de arquivos SMB baseado em nuvem com suporte              |    Sem suporte      |
 |    Criptografia do Serviço para dados inativos                  |    Criptografia AES de 256 bits                             |    Criptografia AES de 256 bits |
 |    Tipo de conta de armazenamento                                 |    Contas de armazenamento de Blobs do Azure e de uso geral    |    Uso geral v1 apenas|
-|    Nome de blob                                            |    1.024 caracteres (2.048 bytes)                     |    880 caracteres (1.760 bytes)|
+|    Nome de blob                                            |    1\.024 caracteres (2.048 bytes)                     |    880 caracteres (1.760 bytes)|
 |    Tamanho máximo do blob de blocos                              |    4,75 TB (100 MB X 50.000 blocos)                   |    4,75 TB (100 MB x 50.000 blocos) para o Azure Data Box v1.8 em diante.|
 |    Tamanho máximo de blob de páginas                               |    8 TB                                               |    1 TB                   |
 |    Tamanho da página do blob de páginas                                  |    512 bytes                                          |    4 KB                   |
@@ -42,8 +42,8 @@ Azure Data Box 1.8 em diante
 
 - [09-11-2017](/rest/api/storageservices/version-2017-11-09)
 - [29-07-2017](/rest/api/storageservices/version-2017-07-29)
-- [17-04-2017](/rest/api/storageservices/version-2017-04-17)
-- [31-05-2016](/rest/api/storageservices/version-2016-05-31)
+- [2017-04-17](/rest/api/storageservices/version-2017-04-17)
+- [2016-05-31](/rest/api/storageservices/version-2016-05-31)
 - [11-12-2015](/rest/api/storageservices/version-2015-12-11)
 - [08-07-2015](/rest/api/storageservices/version-2015-07-08)
 - [2015-04-05](/rest/api/storageservices/version-2015-04-05) |
@@ -57,7 +57,7 @@ Para o armazenamento de Blob do Azure Data Box, há bibliotecas específicas de 
 |--------------------|--------------------------------------------|--------|---------------------------------|
 |    .NET                |    9.2.0                                           |    Pacote Nuget:   https://www.nuget.org/packages/WindowsAzure.Storage/9.2.0    <br>Versão do GitHub:  https://github.com/Azure/azure-storage-net/releases/tag/v9.2.0                                                                                                                                                                                               |    app.config file                 |
 |    Java                |    7.0.0                                           |    Maven Package:   https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/6.1.0   <br>Versão do GitHub:  https://github.com/Azure/azure-storage-java/releases/tag/v7.0.0                                                                                                                                                                              |    Configuração de cadeia de conexão         |
-|    Node.js             |    2.8.3                                           |    Link do NPM:   https://www.npmjs.com/package/azure-storage   (Run: `npm install azure-storage@2.7.0`)   <br>Versão do GitHub:  https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3                                                                                                                                                                        |    Declaração de instância de serviço    |
+|    Node.js             |    2.8.3                                           |    Link do NPM:   https://www.npmjs.com/package/azure-storage   (Run: `npm install azure-storage@2.7.0` )   <br>Versão do GitHub:  https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3                                                                                                                                                                        |    Declaração de instância de serviço    |
 |    C++                 |    5.2.0                                           |    Pacote Nuget:   https://www.nuget.org/packages/wastorage.v140/5.2.0   <br>Versão do GitHub:  https://github.com/Azure/azure-storage-cpp/releases/tag/v5.2.0                                                                                                                                                                                                     |    Configuração de cadeia de conexão         |
 |    PHP                 |    1.2.0                                           |    Versão do GitHub:<br>Comum: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-common   <br>Blob: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-blob      <br>Instalar por meio do Composer (para saber mais, veja os detalhes abaixo).                                                                                                             |    Configuração de cadeia de conexão         |
 |    Python              |    1.1.0                                           |    Versão do GitHub:<br>Comum:   https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-common <br>Blob:   https://github.com/Azure/azure-storage-python/releases/tag/v1.1.0-blob                                                                                                                                                                          |    Declaração de instância de serviço    |

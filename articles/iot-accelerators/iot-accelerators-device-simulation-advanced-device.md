@@ -10,10 +10,10 @@ ms.custom: mvc
 ms.date: 03/18/2019
 ms.author: troyhop
 ms.openlocfilehash: 4401d4b93a27e76554368ce72d256b38de61df4c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61448967"
 ---
 # <a name="create-an-advanced-device-model"></a>Criar um modelo de dispositivo avançados
@@ -149,7 +149,7 @@ O serviço de simulação pode enviar vários tipos de telemetria para cada disp
 ],
 ```
 
-Os espaços reservados usam uma sintaxe especial **$ {NAME}**, onde **NAME** é uma chave do objeto de estado do dispositivo retornado pela função **principal** do JavaScript. As strings devem ser citadas, enquanto os números não devem.
+Os espaços reservados usam uma sintaxe especial **$ {NAME}** , onde **NAME** é uma chave do objeto de estado do dispositivo retornado pela função **principal** do JavaScript. As strings devem ser citadas, enquanto os números não devem.
 
 #### <a name="message-schema"></a>Esquema de mensagem
 
@@ -169,7 +169,7 @@ Os campos listados no esquema podem ser dos tipos a seguir:
 
 ### <a name="supported-methods"></a>Métodos com suporte
 
-Dispositivos simulados também podem reagir a chamadas de método, caso em que executam alguma lógica e fornecem alguma resposta. Da mesma forma que a simulação, a lógica do método é armazenada em um arquivo JavaScript e pode interagir com o estado do dispositivo. Por exemplo: 
+Dispositivos simulados também podem reagir a chamadas de método, caso em que executam alguma lógica e fornecem alguma resposta. Da mesma forma que a simulação, a lógica do método é armazenada em um arquivo JavaScript e pode interagir com o estado do dispositivo. Por exemplo:
 
 ```json
 "CloudToDeviceMethods": {
@@ -259,7 +259,7 @@ Os arquivos JavaScript devem ter uma função **principal**, que aceita dois par
     * **deviceModel**. Por exemplo, **elevador**.
 * Um **estado** objeto que é o valor retornado pela função na chamada anterior. Esse estado do dispositivo é mantido pelo serviço de simulação e usado para gerar mensagens de telemetria.
 
-A função **principal** retorna o novo estado do dispositivo. Por exemplo: 
+A função **principal** retorna o novo estado do dispositivo. Por exemplo:
 
 ```JavaScript
 function main(context, state) {

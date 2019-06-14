@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 04/16/2018
 ms.author: srrengar
 ms.openlocfilehash: 819f6ee4ab079361279a567bceeb74c33fe14186
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60952334"
 ---
 # <a name="performance-monitoring-with-azure-monitor-logs"></a>Monitoramento de desempenho com logs do Azure Monitor
@@ -76,7 +76,7 @@ Você pode baixar e modificar este modelo para implantar um cluster que melhor a
 
 Agora que você adicionou o agente do Log Analytics, vá direto para o portal do Log Analytics para escolher quais contadores de desempenho você deseja coletar.
 
-1. No portal do Azure, vá para o grupo de recursos em que você criou a solução Análise do Service Fabric. Selecione **ServiceFabric\<nameOfLog AnalyticsWorkspace\>**.
+1. No portal do Azure, vá para o grupo de recursos em que você criou a solução Análise do Service Fabric. Selecione **ServiceFabric\<nameOfLog AnalyticsWorkspace\>** .
 
 2. Clique em **Log Analytics**.
 

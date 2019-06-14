@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/07/2019
 ms.author: crdun
 ms.openlocfilehash: 45b5ac0c9b3535e5cc5efdc6827d694b41e0b8dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60859385"
 ---
 # <a name="how-to-use-the-azure-mobile-apps-sdk-for-android"></a>Como usar o SDK de Aplicativos Móveis do Azure para Android
@@ -108,7 +108,7 @@ O `<MobileAppUrl>` é uma cadeia de caracteres ou um objeto de URL que aponta pa
 
 O cliente também exige acesso à atividade ou ao contexto - o parâmetro `this` no exemplo.  A construção de MobileServiceClient deve acontecer dentro do método `onCreate()` da Atividade referenciada no arquivo `AndroidManifest.xml`.
 
-Como prática recomendada, você deve abstrair a comunicação do servidor em sua própria classe (padrão singleton).  Nesse caso, você deve passar a Atividade dentro do construtor para configurar corretamente o serviço.  Por exemplo: 
+Como prática recomendada, você deve abstrair a comunicação do servidor em sua própria classe (padrão singleton).  Nesse caso, você deve passar a Atividade dentro do construtor para configurar corretamente o serviço.  Por exemplo:
 
 ```java
 package com.example.appname.services;
@@ -160,7 +160,7 @@ O fundamental do SDK de Aplicativos Móveis do Azure é fornecer acesso aos dado
 
 Para acessar dados de tabelas do SQL Azure, defina as classes de dados do cliente que correspondem às tabelas no back-end de aplicativo móvel. Os exemplos deste tópico pressupõem a existência de uma tabela denominada **MyDataTable** com as seguintes colunas:
 
-* ID
+* id
 * text
 * concluído
 
@@ -207,7 +207,7 @@ Uma tabela de back-end dos Aplicativos Móveis do Azure define cinco campos espe
 * `byte[] version`: Normalmente é representado como uma cadeia de caracteres, a versão também é definida pelo servidor.
 * `boolean deleted`: Indica que o registro foi excluído, mas ainda não foi limpo.  Não use `deleted` como uma propriedade em sua classe.
 
-O campo `id` é obrigatório.  O campo `updatedAt` e o campo `version` são usados para sincronização offline (para sincronização incremental e resolução de conflitos, respectivamente).  O campo `createdAt` é um campo de referência e não é usado pelo cliente.  Os nomes são nomes "across-the-wire" nomes das propriedades e não são ajustáveis.  No entanto, você pode criar um mapeamento entre seu objeto e os nomes "across-the-wire" usando a biblioteca [gson][3].  Por exemplo: 
+O campo `id` é obrigatório.  O campo `updatedAt` e o campo `version` são usados para sincronização offline (para sincronização incremental e resolução de conflitos, respectivamente).  O campo `createdAt` é um campo de referência e não é usado pelo cliente.  Os nomes são nomes "across-the-wire" nomes das propriedades e não são ajustáveis.  No entanto, você pode criar um mapeamento entre seu objeto e os nomes "across-the-wire" usando a biblioteca [gson][3].  Por exemplo:
 
 ```java
 package com.example.zumoappname;
@@ -456,7 +456,7 @@ Uma solicitação para todos os registros usando esse método cria no mínimo du
 
 ### <a name="chaining"></a>Como: Concatenar métodos de consulta
 
-Os métodos usados nas tabelas de back-end de consulta podem ser concatenados. O encadeamento de métodos de consulta permite a você selecionar colunas específicas ou linhas filtradas que são classificadas e paginadas. Você pode criar filtros lógicos complexos.  Cada método de consulta retorna um objeto de consulta. Para encerrar a série de métodos e realmente executar a consulta, chame o método **execute** . Por exemplo: 
+Os métodos usados nas tabelas de back-end de consulta podem ser concatenados. O encadeamento de métodos de consulta permite a você selecionar colunas específicas ou linhas filtradas que são classificadas e paginadas. Você pode criar filtros lógicos complexos.  Cada método de consulta retorna um objeto de consulta. Para encerrar a série de métodos e realmente executar a consulta, chame o método **execute** . Por exemplo:
 
 ```java
 List<ToDoItem> results = mToDoTable
@@ -487,7 +487,7 @@ A associação de dados envolve três componentes:
 * O layout da tela
 * O adaptador que vincula os dois.
 
-Em nosso código de exemplo, retornamos os dados da tabela **ToDoItem** do SQL Azure dos Aplicativos Móveis em uma matriz. Essa atividade é um padrão comum para aplicativos de dados.  As consultas de banco de dados geralmente retornam uma coleção de linhas que o cliente obtém em uma lista ou uma matriz. Neste exemplo, a matriz é a fonte de dados.  O código especifica um layout de tela que define a exibição dos dados que são exibidos no dispositivo.  E os dois são associados juntos com um adaptador, que, nesse código, é uma extensão da classe **ArrayAdapter&lt;ToDoItem&gt;**.
+Em nosso código de exemplo, retornamos os dados da tabela **ToDoItem** do SQL Azure dos Aplicativos Móveis em uma matriz. Essa atividade é um padrão comum para aplicativos de dados.  As consultas de banco de dados geralmente retornam uma coleção de linhas que o cliente obtém em uma lista ou uma matriz. Neste exemplo, a matriz é a fonte de dados.  O código especifica um layout de tela que define a exibição dos dados que são exibidos no dispositivo.  E os dois são associados juntos com um adaptador, que, nesse código, é uma extensão da classe **ArrayAdapter&lt;ToDoItem&gt;** .
 
 #### <a name="layout"></a>Definir o layout
 
@@ -519,14 +519,14 @@ No código anterior, o atributo *listitem* especifica a id do layout para uma li
 ```
 
 #### <a name="adapter"></a>Definir o adaptador
-Como a fonte de dados da nossa exibição é uma matriz de**ToDoItem**, podemos criar a subclasse do nosso adaptador por meio de uma classe **ArrayAdapter&lt;ToDoItem&gt;**. Esta subclasse produz uma exibição para cada **ToDoItem** usando o layout **row_list_to_do**.  No nosso código, definimos a seguinte classe que é uma extensão da classe **ArrayAdapter&lt;E&gt;**:
+Como a fonte de dados da nossa exibição é uma matriz de**ToDoItem**, podemos criar a subclasse do nosso adaptador por meio de uma classe **ArrayAdapter&lt;ToDoItem&gt;** . Esta subclasse produz uma exibição para cada **ToDoItem** usando o layout **row_list_to_do**.  No nosso código, definimos a seguinte classe que é uma extensão da classe **ArrayAdapter&lt;E&gt;** :
 
 ```java
 public class ToDoItemAdapter extends ArrayAdapter<ToDoItem> {
 }
 ```
 
-Substitua o método **getView** dos adaptadores. Por exemplo: 
+Substitua o método **getView** dos adaptadores. Por exemplo:
 
 ```java
     @Override
@@ -672,7 +672,7 @@ mToDoTable
 
 ## <a name="lookup"></a>Pesquisar um item específico por ID
 
-Pesquise um item com determinado campo **id** com o método **lookUp()**:
+Pesquise um item com determinado campo **id** com o método **lookUp()** :
 
 ```java
 ToDoItem result = mToDoTable
@@ -1112,7 +1112,7 @@ Você pode usar a ADAL (Biblioteca de autenticação do Active Directory) para c
     * Substitua **INSERT-AUTHORITY-HERE** pelo nome do locatário no qual o aplicativo foi provisionado. O formato deve ser https://login.microsoftonline.com/contoso.onmicrosoft.com.
     * Substitua **INSERT-RESOURCE-ID-HERE** pela ID do cliente do seu back-end de aplicativo móvel. Você pode obter a ID do cliente na guia **Avançadas** em **Configurações do Azure Active Directory** no portal.
     * Substitua **INSERT-CLIENT-ID-HERE** pela ID do cliente copiada do aplicativo cliente nativo.
-    * Substitua **INSERT-REDIRECT-URI-HERE** pelo ponto de extremidade */.auth/login/done* do site, usando o esquema HTTPS. Este valor deve ser semelhante a *https://contoso.azurewebsites.net/.auth/login/done*.
+    * Substitua **INSERT-REDIRECT-URI-HERE** pelo ponto de extremidade */.auth/login/done* do site, usando o esquema HTTPS. Este valor deve ser semelhante a *https://contoso.azurewebsites.net/.auth/login/done* .
 
 ```java
 private AuthenticationContext mContext;

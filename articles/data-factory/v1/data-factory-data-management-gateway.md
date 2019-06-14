@@ -14,15 +14,15 @@ ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
 ms.openlocfilehash: 63b9cc26b927f78598422575646c876d90954bed
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65143296"
 ---
 # <a name="data-management-gateway"></a>Gateway de gerenciamento de dados
 > [!NOTE]
-> Este artigo aplica-se à versão 1 do Data Factory. Se estiver usando a versão atual do serviço do Data Factory, consulte [IR auto-hospedado na](../create-self-hosted-integration-runtime.md).
+> Este artigo se aplica à versão 1 do Data Factory. Se estiver usando a versão atual do serviço do Data Factory, consulte [IR auto-hospedado na](../create-self-hosted-integration-runtime.md).
 
 > [!NOTE]
 > O Gateway de Gerenciamento de Dados agora foi remarcado como Tempo de Execução de Integração Auto-Hospedado.
@@ -143,10 +143,10 @@ No nível do firewall corporativo, você precisa configurar os seguintes domíni
 
 | Nomes de domínio | Portas | DESCRIÇÃO |
 | --- | --- | --- |
-| * .servicebus.windows.net |443 |Usado para comunicação com o back-end do Serviço de Movimentação de Dados |
+| *.servicebus.windows.net |443 |Usado para comunicação com o back-end do Serviço de Movimentação de Dados |
 | *.core.windows.net |443 |Usado para cópia em etapas usando Blobs do Azure (se estiver configurado)|
 | *.frontend.clouddatahub.net |443 |Usado para comunicação com o back-end do Serviço de Movimentação de Dados |
-| * .servicebus.windows.net |9350-9354, 5671 |Retransmissão de barramento de serviço opcional sobre TCP usado pelo Assistente de cópia |
+| *.servicebus.windows.net |9350-9354, 5671 |Retransmissão de barramento de serviço opcional sobre TCP usado pelo Assistente de cópia |
 
 No nível do Firewall do Windows, essas portas de saída normalmente são habilitadas. Se não forem, você poderá configurar as portas e os domínios adequadamente no computador do gateway.
 
@@ -511,7 +511,7 @@ Esta seção descreve como criar e registrar um gateway usando cmdlets do PowerS
     Key               : ADF#00000000-0000-4fb8-a867-947877aef6cb@fda06d87-f446-43b1-9485-78af26b8bab0@4707262b-dc25-4fe5-881c-c8a7c3c569fe@wu#nfU4aBlq/heRyYFZ2Xt/CD+7i73PEO521Sj2AFOCmiI
     ```
 
-1. No Azure PowerShell, alterne para a pasta: *C:\\\\Program Files\\Microsoft Integration Runtime\\3.0\\PowerShellScript\\*. Execute *RegisterGateway.ps1* associado à variável local **$Key**, conforme mostrado no comando a seguir. Esse script registra o agente cliente instalado no computador com o gateway lógico criado anteriormente.
+1. No Azure PowerShell, alterne para a pasta: *C:\\\\Program Files\\Microsoft Integration Runtime\\3.0\\PowerShellScript\\* . Execute *RegisterGateway.ps1* associado à variável local **$Key**, conforme mostrado no comando a seguir. Esse script registra o agente cliente instalado no computador com o gateway lógico criado anteriormente.
 
     ```powershell
     PS C:\> .\RegisterGateway.ps1 $MyDMG.Key

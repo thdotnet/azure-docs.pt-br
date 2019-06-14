@@ -12,10 +12,10 @@ ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
 ms.openlocfilehash: a076eee9818f294a8e5c4b10cebbcb9e5a55d80c
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65021843"
 ---
 #   <a name="language-detection-cognitive-skill"></a>Habilidade cognitiva de detecção de idioma
@@ -24,12 +24,12 @@ O **detecção de idioma** habilidade detecta o idioma de texto de entrada e rel
 
 Esse recurso é especialmente útil quando você precisa fornecer o idioma do texto como entrada para outras habilidades (por exemplo, a habilidade de [Análise de Sentimento](cognitive-search-skill-sentiment.md) ou [Habilidade de Divisão de Texto](cognitive-search-skill-textsplit.md)).
 
-Detecção de idioma aproveita a bibliotecas de processamento de linguagem natural do Bing, que excede o número de [suporte para idiomas e regiões](https://docs.microsoft.com/azure/cognitive-services/text-analytics/language-support) listados para análise de texto. A lista exata de idiomas não for publicada, mas inclui todos os idiomas falados amplamente, além de variantes, dialetos e alguns idiomas regionais e culturais. Se você tiver um conteúdo expressado em uma linguagem usada com menos frequência, você poderá [Experimente a API de detecção de idioma](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7) para ver se ele retorna um código. A resposta para idiomas que não pode ser detectado é `unknown`.
+Detecção de idioma aproveita a bibliotecas de processamento de linguagem natural do Bing, que excede o número de [suporte para idiomas e regiões](https://docs.microsoft.com/azure/cognitive-services/text-analytics/language-support) listados para análise de texto. A lista exata de idiomas não for publicada, mas inclui todos os idiomas falados amplamente, além de variantes, dialetos e alguns idiomas regionais e culturais. Se você tiver um conteúdo expressado em uma linguagem usada com menos frequência, você poderá [Experimente a API de detecção de idioma](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7) para ver se ele retorna um código. A resposta para idiomas que não pode ser detectada é `unknown`.
 
 > [!NOTE]
-> Como expandir escopo, aumentando a frequência de processamento, adicionando mais documentos, ou adicionar mais algoritmos de inteligência Artificial, você precisará [anexar a um recurso de serviços Cognitivos faturável](cognitive-search-attach-cognitive-services.md). As cobranças são geradas ao chamar APIs nos Serviços Cognitivos e para a extração de imagem como parte do estágio de decodificação de documentos no Azure Search. Não há encargos para extração de texto em documentos.
+> À medida que expandir o escopo aumentando a frequência de processamento, adicionando mais documentos ou adicionando mais algoritmos de IA, você precisará [anexar um recurso de Serviços Cognitivos faturável](cognitive-search-attach-cognitive-services.md). As cobranças são geradas ao chamar APIs nos Serviços Cognitivos e para a extração de imagem como parte do estágio de decodificação de documentos no Azure Search. Não há encargos para extração de texto em documentos.
 >
-> Execução de habilidades internas é cobrada existente [dos serviços Cognitivos pagamento medida que vá preços](https://azure.microsoft.com/pricing/details/cognitive-services/). Preços de extração de imagem é descrita na [página de preços do Azure Search](https://go.microsoft.com/fwlink/?linkid=2042400).
+> A execução de habilidades integradas é cobrada nos [preços pagos conforme o uso dos Serviços Cognitivos](https://azure.microsoft.com/pricing/details/cognitive-services/) existentes. O preço de extração de imagem é descrito na [página de preços do Azure Search](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 
 ## <a name="odatatype"></a>@odata.type  

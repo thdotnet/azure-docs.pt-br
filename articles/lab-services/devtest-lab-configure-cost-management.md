@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/07/2019
 ms.author: spelluru
 ms.openlocfilehash: f761af3a5a3f08e4da89d8869aea5d666ecd69d0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60868194"
 ---
 # <a name="track-costs-associated-with-a-lab-in-azure-devtest-labs"></a>Controlar os custos associados a um laboratório no Azure DevTest Labs
@@ -39,7 +39,7 @@ Para exibir o gráfico Tendência de custo estimado mensal, siga estas etapas:
 
     O valor **Custo estimado** é o custo estimado até a data do mês do calendário atual. O **Custo projetado** é o custo estimado para todo o mês do calendário atual, calculado usando o custo do laboratório nos cinco dias anteriores.
 
-    Observe que os valores do custo são arredondados para o próximo número inteiro. Por exemplo:  
+    Observe que os valores do custo são arredondados para o próximo número inteiro. Por exemplo: 
 
    * 5.01 arredonda até 6 
    * 5.50 arredonda até 6

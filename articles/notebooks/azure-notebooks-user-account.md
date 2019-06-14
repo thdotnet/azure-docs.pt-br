@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.author: kraigb
 ms.openlocfilehash: 311f4d612c9deab23e7537b0c53ff3932c312cd4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60631988"
 ---
 # <a name="your-user-account-for-azure-notebooks"></a>Sua conta de usuário para o Microsoft Azure Notebooks
@@ -43,7 +43,7 @@ Se você não tiver certeza, selecione o comando **Criar** no prompt de comando.
 ![Comando para criar uma nova conta Microsoft](media/accounts/create-new-microsoft-account.png)
 
 > [!Note]
-> Se você tentar criar uma nova conta com um endereço de email que já tenha uma conta associada a ele, você poderá ver a mensagem "você não pode se inscrever aqui com um trabalho ou endereço de email da escola. Use um email pessoal, como Gmail ou Yahoo!, ou obtenha um novo email do Outlook". Nesse caso, tente entrar com o endereço de email de trabalho sem criar uma nova conta.
+> Se você tentar criar uma conta com um endereço de email que já tem uma conta associada a ele, poderá ver a mensagem "Não é possível inscrever-se aqui com um endereço corporativo ou de estudante. Use um email pessoal, como o Gmail ou o Yahoo!, ou obtenha um novo email do Outlook." Nesse caso, tente entrar com o email de trabalho sem criar uma conta.
 
 Para contas de criança, o acesso ao Azure Notebooks é bloqueado por padrão. Entrar com uma conta de criança exibe o erro mostrado abaixo:
 

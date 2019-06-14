@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: spelluru
 ms.openlocfilehash: 145960db27247a8535eb96640000b86d810619c0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60419677"
 ---
 # <a name="expose-an-on-premises-wcf-service-to-a-web-application-in-the-cloud-by-using-azure-relay"></a>Expor um serviço WCF local a um aplicativo Web na nuvem usando a Retransmissão do Azure 
@@ -81,7 +81,7 @@ Primeiro, você criará um sistema de catálogo de produtos local simulado.  Est
 ### <a name="create-the-project"></a>Criar o projeto
 1. Utilizando privilégios do administrador, inicie o Microsoft Visual Studio. Para fazer isso, clique com o botão direito do mouse no ícone do programa do Visual Studio e, em seguida, clique em **Executar como administrador**.
 2. No Visual Studio, no menu **Arquivo**, clique em **Novo** e clique em **Projeto**.
-3. Em **Modelos Instalados**, em **Visual C#**, clique em **Aplicativo de Console (.NET Framework)**. Na caixa **Nome**, digite o nome **ServidorDeProdutos**:
+3. Em **Modelos Instalados**, em **Visual C#** , clique em **Aplicativo de Console (.NET Framework)** . Na caixa **Nome**, digite o nome **ServidorDeProdutos**:
 
    ![Caixa de diálogo Novo Projeto][11]
 4. Clique em **OK** para criar o projeto **ServidorDeProdutos**.
@@ -229,7 +229,7 @@ Nesta seção, você criará um aplicativo ASP.NET simples que exibe os dados re
 
 1. Certifique-se de que o Visual Studio está sendo executado com os privilégios de administrador.
 2. No Visual Studio, no menu **Arquivo**, clique em **Novo** e clique em **Projeto**.
-3. Em **Modelos Instalados**, em **Visual C#**, clique em **Aplicativo Web ASP.NET (.NET Framework)**. Nomeie o projeto como **PortalDeProdutos**. Em seguida, clique em **OK**.
+3. Em **Modelos Instalados**, em **Visual C#** , clique em **Aplicativo Web ASP.NET (.NET Framework)** . Nomeie o projeto como **PortalDeProdutos**. Em seguida, clique em **OK**.
 
    ![Caixa de diálogo Novo Projeto][15]
 

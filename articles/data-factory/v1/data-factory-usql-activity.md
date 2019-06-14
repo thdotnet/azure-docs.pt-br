@@ -14,14 +14,14 @@ ms.author: abnarain
 manager: craigg
 robots: noindex
 ms.openlocfilehash: 5835c37363c7e9d2dd3253c08ab97f17852725f5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61248140"
 ---
 # <a name="transform-data-by-running-u-sql-scripts-on-azure-data-lake-analytics"></a>Transforme dados executando scripts U-SQL no serviço de computação do Azure Data Lake Analytics 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](data-factory-usql-activity.md)
 > * [Versão 2 (versão atual)](../transform-data-using-data-lake-analytics.md)
 
@@ -48,9 +48,9 @@ A tabela a seguir apresenta as descrições das propriedades genéricas usadas n
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
-| **tipo** |A propriedade de tipo deve ser configurada como: **AzureDataLakeAnalytics**. |Sim |
+| **type** |A propriedade de tipo deve ser configurada como: **AzureDataLakeAnalytics**. |Sim |
 | **accountName** |Nome da conta da Análise Azure Data Lake. |Sim |
-| **dataLakeAnalyticsUri** |URI da Análise Azure Data Lake. |Não  |
+| **dataLakeAnalyticsUri** |URI da Análise Azure Data Lake. |Não |
 | **subscriptionId** |Id de assinatura do Azure |Não (se não for especificado, a assinatura do Data Factory é usada). |
 | **resourceGroupName** |Nome do grupo de recursos do Azure |Não (se não for especificado, o grupo de recursos do Data Factory é usado). |
 
@@ -208,16 +208,16 @@ A tabela a seguir descreve os nomes e as descrições de propriedades que são e
 
 | Propriedade            | DESCRIÇÃO                              | Obrigatório                                 |
 | :------------------ | :--------------------------------------- | :--------------------------------------- |
-| Tipo                | A propriedade type deve ser definida como **DataLakeAnalyticsU-SQL**. | Sim                                      |
+| type                | A propriedade type deve ser definida como **DataLakeAnalyticsU-SQL**. | Sim                                      |
 | linkedServiceName   | Referência ao Azure Data Lake Analytics registrado como um serviço vinculado ao Data Factory | Sim                                      |
 | scriptPath          | Caminho para a pasta que contém o script U-SQL. O nome do arquivo diferencia maiúsculas de minúsculas. | Não (se você usar o script)                   |
 | scriptLinkedService | Serviço vinculado que vincula o armazenamento que contém o script para a fábrica de dados | Não (se você usar o script)                   |
 | script              | Especificar script embutido em vez de especificar scriptPath e scriptLinkedService. Por exemplo: `"script": "CREATE DATABASE test"`. | Não (se você usar scriptPath e scriptLinkedService) |
-| degreeOfParallelism | O número máximo de nós usados simultaneamente para executar o trabalho. | Não                                        |
-| prioridade            | Determina quais trabalhos de todos os que estão na fila devem ser selecionados para serem executados primeiro. Quanto menor o número, maior a prioridade. | Não                                        |
-| parâmetros          | Parâmetros do script U-SQL          | Não                                        |
-| runtimeVersion      | Versão de tempo de execução do mecanismo U-SQL a ser usado | Não                                        |
-| compilationMode     | <p>Modo de compilação do U-SQL. Deve ser um destes valores:</p> <ul><li>**Semantic:** execute apenas as verificações de semântica e as verificações de integridade necessárias.</li><li>**Full:** execute a compilação completa, incluindo verificação de sintaxe, otimização, geração de código, etc.</li><li>**SingleBox:** executa a compilação completa com a configuração TargetType como SingleBox.</li></ul><p>Se você não especificar um valor para essa propriedade, o servidor determinará o modo de compilação ideal. </p> | Não                                        |
+| degreeOfParallelism | O número máximo de nós usados simultaneamente para executar o trabalho. | Não                                       |
+| prioridade            | Determina quais trabalhos de todos os que estão na fila devem ser selecionados para serem executados primeiro. Quanto menor o número, maior a prioridade. | Não                                       |
+| parâmetros          | Parâmetros do script U-SQL          | Não                                       |
+| runtimeVersion      | Versão de tempo de execução do mecanismo U-SQL a ser usado | Não                                       |
+| compilationMode     | <p>Modo de compilação do U-SQL. Deve ser um destes valores:</p> <ul><li>**Semantic:** execute apenas as verificações de semântica e as verificações de integridade necessárias.</li><li>**Full:** execute a compilação completa, incluindo verificação de sintaxe, otimização, geração de código, etc.</li><li>**SingleBox:** executa a compilação completa com a configuração TargetType como SingleBox.</li></ul><p>Se você não especificar um valor para essa propriedade, o servidor determinará o modo de compilação ideal. </p> | Não                                       |
 
 Consulte [Definição do Script SearchLogProcessing.txt](#sample-u-sql-script) para ver a definição do script. 
 
@@ -331,7 +331,7 @@ Na definição de pipeline de exemplo, os parâmetros in e out são atribuídos 
 }
 ```
 
-É possível usar parâmetros dinâmicos em vez disso. Por exemplo:  
+É possível usar parâmetros dinâmicos em vez disso. Por exemplo: 
 
 ```json
 "parameters": {

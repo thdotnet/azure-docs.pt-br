@@ -8,14 +8,13 @@ manager: jeconnoc
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: reference
-origin.date: 02/18/2019
-ms.date: 03/04/2019
-ms.author: v-junlch
+ms.date: 02/18/2019
+ms.author: cshoe
 ms.openlocfilehash: 3865f748a9ca2fe09660d6454542d64f73a8e3c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61020955"
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Conceitos de gatilhos e de associações do Azure Functions
@@ -24,7 +23,7 @@ Neste artigo, você aprenderá os conceitos de alto nível que envolvem funçõe
 
 Os gatilhos são o que fazer com que uma função a ser executada. Um gatilho define como uma função é invocada e uma função deve ter exatamente um gatilho. Gatilhos têm dados associados, que geralmente são fornecidos como a carga da função. 
 
-Associação a uma função é uma maneira de conectar declarativamente a outro recurso para a função; associações podem estar conectadas como *associações de entrada*, *associações de saída*, ou ambos. Dados de associações são fornecidos para a função como parâmetros.
+Associação a uma função é uma maneira de conectar declarativamente a outro recurso para a função; associações podem estar conectadas como *associações de entrada*, *associações de saída*, ou ambos. Dados de associações são fornecidos à função como parâmetros.
 
 Você pode misturar e combinar diferentes vinculações para atender às suas necessidades. Associações são opcionais e uma função pode ter um ou vários entrada e/ou associações de saída.
 
@@ -97,5 +96,3 @@ Para obter informações sobre quais associações estão na visualização ou s
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]
 > [Registrar as extensões de associação de funções do Azure](./functions-bindings-register.md)
-
-<!-- Update_Description: wording update -->

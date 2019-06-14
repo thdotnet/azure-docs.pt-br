@@ -9,10 +9,10 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 01/29/2018
 ms.openlocfilehash: fa7d46d45c350435c0ffba8f3755ad8bea651c3e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60387005"
 ---
 # <a name="manage-azure-data-lake-analytics-using-the-azure-command-line-interface-cli"></a>Gerenciar o Azure Data Lake Analytics usando a CLI (interface de linha de comando) do Azure
@@ -60,7 +60,7 @@ Execute o comando a seguir para criar uma conta Data Lake,
 
 ### <a name="update-accounts"></a>Atualizar contas
 
-O comando a seguir atualiza as propriedades de uma conta existente da Análise Data Lake 
+O comando a seguir atualiza as propriedades de uma conta existente da Análise Data Lake
 
    ```azurecli
    az dla account update --account "<Data Lake Analytics Account Name>" --firewall-state "Enabled" --query-store-retention 7
@@ -143,7 +143,7 @@ Para listar as contas do Armazenamento de Blobs:
    az dla account blob-storage list --account "<Data Lake Analytics account name>"
    ```
 
-![Fonte de dados de lista da Análise Data Lake  ](./media/data-lake-analytics-manage-use-cli/data-lake-analytics-list-data-source.png)
+![Fonte de dados de lista da Análise Data Lake](./media/data-lake-analytics-manage-use-cli/data-lake-analytics-list-data-source.png)
 
 ### <a name="delete-data-sources"></a>Excluir fontes de dados:
 Para excluir uma conta do Repositório do Data Lake:
@@ -167,7 +167,7 @@ Você deve ter uma conta da Análise Data Lake antes de criar um trabalho.  Para
    az dla job list --account "<Data Lake Analytics account name>"
    ```
 
-   ![Fonte de dados de lista da Análise Data Lake  ](./media/data-lake-analytics-manage-use-cli/data-lake-analytics-list-jobs.png)
+   ![Fonte de dados de lista da Análise Data Lake](./media/data-lake-analytics-manage-use-cli/data-lake-analytics-list-jobs.png)
 
 ### <a name="get-job-details"></a>Exibir detalhes do trabalho
 

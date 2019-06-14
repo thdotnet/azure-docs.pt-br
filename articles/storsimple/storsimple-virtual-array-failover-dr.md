@@ -16,10 +16,10 @@ ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: be3d98dc0b3a8119fb853493440c6fc78d65c5a2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61409473"
 ---
 # <a name="disaster-recovery-and-device-failover-for-your-storsimple-virtual-array-via-azure-portal"></a>Failover de dispositivo e recuperação de desastre para o StorSimple Virtual Array via portal do Azure
@@ -134,7 +134,7 @@ Execute as seguintes etapas para restaurar o dispositivo para um dispositivo vir
     
     1. O campo de dispositivo de origem é preenchido automaticamente. Observe o tamanho total dos dados para o dispositivo de origem. O tamanho dos dados deve ser menor do que a capacidade disponível no dispositivo de destino. Examine os detalhes associados ao dispositivo de origem, como o nome do dispositivo, a capacidade total e os nomes dos compartilhamentos submetidos a failover.
 
-    2. Na lista suspensa de dispositivos disponíveis, escolha um **Dispositivo de destino**.  Somente os dispositivos com capacidade suficiente são exibidos na lista suspensa.
+    2. Na lista suspensa de dispositivos disponíveis, escolha um **Dispositivo de destino**. Somente os dispositivos com capacidade suficiente são exibidos na lista suspensa.
 
     3. Verifique se **Estou ciente de que esta operação fará failover dos dados para o dispositivo de destino**. 
 

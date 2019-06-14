@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 ms.openlocfilehash: a0ece499262464bc28f55c37188698a3313e2c04
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60808859"
 ---
 # <a name="execute-pipeline-activity-in-azure-data-factory"></a>Atividade de execução de pipeline no Azure Data Factory
@@ -62,11 +62,11 @@ A atividade de execução de pipeline permite que um pipeline do Data Factory in
 
 Propriedade | DESCRIÇÃO | Valores permitidos | Obrigatório
 -------- | ----------- | -------------- | --------
-Nome | Nome da atividade de execução de pipeline. | Cadeia de caracteres | Sim
-Tipo | Precisa ser definido como: **ExecutePipeline**. | Cadeia de caracteres | Sim
+name | Nome da atividade de execução de pipeline. | Cadeia de caracteres | Sim
+type | Precisa ser definido como: **ExecutePipeline**. | Cadeia de caracteres | Sim
 pipeline | Referência de pipeline para o pipeline dependente que invoca esse pipeline. Um objeto de referência do pipeline tem duas propriedades: **referenceName** e **type**. A propriedade referenceName especifica o nome do pipeline de referência. A propriedade type deve ser definida como PipelineReference. | PipelineReference | Sim
-parameters | Parâmetros a serem passados para o pipeline invocado | Um objeto JSON que mapeia os nomes de parâmetro para os valores de argumento | Não 
-waitOnCompletion | Define se a atividade de execução aguarda a execução do pipeline dependente ser concluída. O padrão é falso. | Boolean | Não 
+parameters | Parâmetros a serem passados para o pipeline invocado | Um objeto JSON que mapeia os nomes de parâmetro para os valores de argumento | Não
+waitOnCompletion | Define se a atividade de execução aguarda a execução do pipeline dependente ser concluída. O padrão é falso. | Boolean | Não
 
 ## <a name="sample"></a>Amostra
 Este cenário tem dois pipelines:

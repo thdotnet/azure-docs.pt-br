@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 931865803328189d89c0fbae15caa801c3f7f7c6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60454944"
 ---
 # <a name="troubleshoot-an-object-that-is-not-synchronizing-with-azure-active-directory"></a>Solucionar problemas de um objeto que não está sincronizando com o Azure Active Directory
@@ -75,7 +75,7 @@ A coluna **Status** traz as informações mais importantes e mostra o problema m
 
 | Status | Comentário |
 | --- | --- |
-| stopped- *  |Não foi possível concluir a execução. Isso pode acontecer, por exemplo, se o sistema remoto está inoperante e não pode ser contatado. |
+| stopped- * |Não foi possível concluir a execução. Isso pode acontecer, por exemplo, se o sistema remoto está inoperante e não pode ser contatado. |
 | stopped-error-limit |Há mais de 5.000 erros. A execução foi interrompida automaticamente devido ao grande número de erros. |
 | completed-\*-errors |A execução foi concluída, mas há erros (menos de 5.000) que devem ser investigados. |
 | completed-\*-warnings |A execução foi concluída, mas alguns dados não estão no estado esperado. Se houver erros, geralmente, essa mensagem indicará apenas um sintoma. Não investigue os avisos até que tenha resolvido os erros. |
@@ -91,7 +91,7 @@ Comece selecionando a cadeia de caracteres de erro. (Na figura anterior, a cadei
 
 Clique com o botão direito do mouse na caixa **Informações da Pilha de Chamadas**, clique em **Selecionar tudo** e em **Copiar**. Copie a pilha e examine o erro em seu editor favorito, como o Bloco de Notas.
 
-Se o erro for proveniente de **SyncRulesEngine**, as informações da pilha de chamadas irão primeiro listar todos os atributos no objeto. Role para baixo até ver o cabeçalho **InnerException =>**.  
+Se o erro for proveniente de **SyncRulesEngine**, as informações da pilha de chamadas irão primeiro listar todos os atributos no objeto. Role para baixo até ver o cabeçalho **InnerException =>** .  
 
   ![Captura de tela do Synchronization Service Manager mostrando as informações de erro no cabeçalho InnerException = >](./media/tshoot-connect-object-not-syncing/errorinnerexception.png)
   

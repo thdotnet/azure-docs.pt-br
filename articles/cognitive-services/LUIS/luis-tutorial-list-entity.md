@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
 ms.openlocfilehash: 929dc7a86d141446a2070b046c6febfda4a07f0f
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62117441"
 ---
 # <a name="use-a-list-entity-to-increase-entity-detection"></a>Usar uma entidade de lista para aumentar a detecção de entidade 
@@ -212,12 +212,12 @@ O dispositivo específico de **termostato** é identificado com uma consulta ori
 
 Tente as outras duas expressões para ver o que eles também retornaram como termostato. 
 
-|#|enunciado|entidade|tipo|value|
+|#|enunciado|entidade|type|value|
 |--|--|--|--|--|
 |1|ligue o ac| ac | DevicesList | Termostato|
 |2|ativar o aquecimento|calor| DevicesList |Termostato|
 |3|mais frio|mais frio|DevicesList|Termostato|
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Você pode criar outra entidade de lista para expandir os locais de dispositivo para salas, andares ou edifícios. 

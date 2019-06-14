@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 10/15/2018
 tags: connectors
 ms.openlocfilehash: e5aeaa707c7a839483484c524e982204d6fe055c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60408462"
 ---
 # <a name="create-monitor-and-manage-ftp-files-by-using-azure-logic-apps"></a>Criar, monitorar e gerenciar arquivos FTP usando Aplicativos Lógicos do Azure
@@ -61,7 +61,7 @@ Você pode usar gatilhos que obtêm respostas de seu servidor FTP e disponibiliz
    Na lista de ações, selecione a ação desejada.
 
    Para adicionar uma ação entre as etapas, mova o ponteiro sobre a seta entre as etapas. 
-   Escolha o sinal de adição (**+**) que aparece e, em seguida, selecione **Adicionar uma ação**.
+   Escolha o sinal de adição ( **+** ) que aparece e, em seguida, selecione **Adicionar uma ação**.
 
 1. Forneça os detalhes necessários para sua conexão e, em seguida, escolha **Criar**.
 
@@ -69,7 +69,7 @@ Você pode usar gatilhos que obtêm respostas de seu servidor FTP e disponibiliz
 
 Ao solicitar o conteúdo do arquivo, o gatilho não obtém arquivos com mais de 50 MB. Para obter arquivos maiores que 50 MB, siga este padrão:
 
-* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)**.
+* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)** .
 
 * Siga o gatilho com uma ação que leia o arquivo completo, como **Obter conteúdo do arquivo usando caminho** e faça a ação usar o [agrupamento de mensagem](../logic-apps/logic-apps-handle-large-messages.md).
 
@@ -85,7 +85,7 @@ Esse gatilho inicia um fluxo de trabalho do aplicativo lógico ao detectar quand
 
 Ao solicitar o conteúdo do arquivo, os gatilhos não é possível obter arquivos de mais de 50 MB. Para obter arquivos maiores que 50 MB, siga este padrão: 
 
-* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)**.
+* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)** .
 
 * Siga o gatilho com uma ação que leia o arquivo completo, como **Obter conteúdo do arquivo usando caminho** e faça a ação usar o [agrupamento de mensagem](../logic-apps/logic-apps-handle-large-messages.md).
 
@@ -106,7 +106,7 @@ Este é um exemplo que mostra esse gatilho: **Quando um arquivo é adicionado ou
 
    ![Criar conexão do FTP](./media/connectors-create-api-ftp/create-ftp-connection-trigger.png)  
 
-1. Ao lado da **Pasta**, escolha o ícone da pasta, para que a lista apareça. Para localizar a pasta que você deseja monitorar arquivos novos ou editados, selecione a seta de ângulo direito (**>**), navegue até essa pasta e, em seguida, selecione a pasta.
+1. Ao lado da **Pasta**, escolha o ícone da pasta, para que a lista apareça. Para localizar a pasta que você deseja monitorar arquivos novos ou editados, selecione a seta de ângulo direito ( **>** ), navegue até essa pasta e, em seguida, selecione a pasta.
 
    ![Localize e selecione a pasta a ser monitorada](./media/connectors-create-api-ftp/select-folder.png)  
 
@@ -124,7 +124,7 @@ Esta ação obtém o conteúdo de um arquivo em um servidor FTP quando esse arqu
 
 Ao solicitar o conteúdo do arquivo, os gatilhos não é possível obter arquivos de mais de 50 MB. Para obter arquivos maiores que 50 MB, siga este padrão: 
 
-* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)**.
+* Use um gatilho que retorna propriedades de arquivo, como **Quando um arquivo é adicionado ou modificado (somente propriedades)** .
 
 * Siga o gatilho com uma ação que leia o arquivo completo, como **Obter conteúdo do arquivo usando caminho** e faça a ação usar o [agrupamento de mensagem](../logic-apps/logic-apps-handle-large-messages.md).
 

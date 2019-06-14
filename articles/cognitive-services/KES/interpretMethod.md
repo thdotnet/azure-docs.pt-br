@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
 ms.openlocfilehash: 88776e2f4167c950d60c0405dcf950b5173fb989
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60814141"
 ---
 # <a name="interpret-method"></a>Método Interpretar
@@ -31,7 +31,7 @@ query    | Cadeia de caracteres de texto | Consulta inserida pelo usuário.  Se 
 concluído | 0 (padrão) ou 1 | 1 significa que as sugestões de preenchimento automático são geradas com base nos dados de índice e gramática.         
 count    | Número (padrão = 10) | Número máximo de interpretações para retornar.         
 deslocamento   | Número (padrão = 0) | Índice da primeira interpretação para retornar.  Por exemplo, *count=2&offset=0* retorna as interpretações 0 e 1. *count=2&offset=2* retorna interpretações 2 e 3.       
-Tempo limite  | Número (padrão = 1000) | Tempo limite em milissegundos. Somente interpretações localizadas antes que o tempo limite tenha decorrido serão retornadas.
+timeout  | Número (padrão = 1000) | Tempo limite em milissegundos. Somente interpretações localizadas antes que o tempo limite tenha decorrido serão retornadas.
 
 Usando os parâmetros *contagem* e *deslocamento*, um grande número de resultados pode ser obtido incrementalmente por várias solicitações.
 

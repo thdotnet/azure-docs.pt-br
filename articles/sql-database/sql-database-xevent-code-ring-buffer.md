@@ -13,10 +13,10 @@ ms.reviewer: jrasnik
 manager: craigg
 ms.date: 12/19/2018
 ms.openlocfilehash: bb493fc0a9d3a9173ef4faf17b3cdd4e3781a557
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60331019"
 ---
 # <a name="ring-buffer-target-code-for-extended-events-in-sql-database"></a>Código de destino do Buffer de Anéis para eventos estendidos no Banco de Dados SQL
@@ -30,7 +30,7 @@ Este tópico apresenta um exemplo de código Transact-SQL que:
 1. Cria uma tabela com dados para demonstração.
 2. Cria uma sessão para um evento estendido existente, ou seja, **sqlserver.sql_statement_starting**.
    
-   * O evento é limitado a instruções SQL que contêm uma determinada cadeia de caracteres de Atualização: **statement LIKE '%UPDATE tabEmployee%'**.
+   * O evento é limitado a instruções SQL que contêm uma determinada cadeia de caracteres de Atualização: **statement LIKE '%UPDATE tabEmployee%'** .
    * Escolhe enviar a saída do evento para um destino do tipo Buffer de Anéis, ou seja, **package0.ring_buffer**.
 3. Inicia a sessão de evento.
 4. Emite algumas instruções SQL UPDATE simples.
@@ -55,7 +55,7 @@ Este tópico apresenta um exemplo de código Transact-SQL que:
 
 ## <a name="code-sample"></a>Exemplo de código
 
-Com modificações mínimas, o exemplo de código do Buffer de Anéis a seguir pode ser executado no Banco de Dados SQL do Azure ou no Microsoft SQL Server. A diferença é a presença do nó “_database” no nome de algumas exibições de gerenciamento dinâmico (DMVs) na cláusula FROM na Etapa 5. Por exemplo: 
+Com modificações mínimas, o exemplo de código do Buffer de Anéis a seguir pode ser executado no Banco de Dados SQL do Azure ou no Microsoft SQL Server. A diferença é a presença do nó “_database” no nome de algumas exibições de gerenciamento dinâmico (DMVs) na cláusula FROM na Etapa 5. Por exemplo:
 
 * sys.dm_xe<strong>_database</strong>_session_targets
 * sys.dm_xe_session_targets

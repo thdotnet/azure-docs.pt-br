@@ -14,14 +14,14 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 6b16b6c4de8c8d2d7a821dd476f07c8ab1135408
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60487242"
 ---
 # <a name="datasets-in-azure-data-factory"></a>Conjuntos de dados no Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](data-factory-create-datasets.md)
 > * [Versão 2 (versão atual)](../concepts-datasets-linked-services.md)
 
@@ -83,11 +83,11 @@ A tabela a seguir descreve as propriedades no JSON acima:
 | --- | --- | --- | --- |
 | name |Nome do conjunto de dados. Confira [Azure Data Factory - Regras de nomenclatura](data-factory-naming-rules.md) para ver as regras de nomenclatura. |Sim |ND |
 | type |Tipo de conjunto de dados. Especifique um dos tipos compatíveis com o Data Factory (por exemplo: AzureBlob, AzureSqlTable). <br/><br/>Para obter detalhes, consulte [Tipo de conjunto de dados](#Type). |Sim |ND |
-| structure |Esquema do conjunto de dados.<br/><br/>Para obter detalhes, consulte [Estrutura de conjunto de dados](#Structure). |Não  |ND |
+| structure |Esquema do conjunto de dados.<br/><br/>Para obter detalhes, consulte [Estrutura de conjunto de dados](#Structure). |Não |ND |
 | typeProperties | As propriedades de tipo são diferentes para cada tipo (por exemplo: Blob do Azure, tabela do SQL Azure). Para obter detalhes sobre os tipos com suporte e suas propriedades, consulte [Tipo de conjunto de dados](#Type). |Sim |ND |
-| external | Sinalizador booliano para especificar se um conjunto de dados é explicitamente produzido por um pipeline de data factory ou não. Se o conjunto de dados de entrada para uma atividade não é produzido pelo pipeline atual, defina esse sinalizador como true. Defina esse sinalizador como true para o conjunto de dados de entrada da primeira atividade no pipeline.  |Não  |falso |
+| externo | Sinalizador booliano para especificar se um conjunto de dados é explicitamente produzido por um pipeline de data factory ou não. Se o conjunto de dados de entrada para uma atividade não é produzido pelo pipeline atual, defina esse sinalizador como true. Defina esse sinalizador como true para o conjunto de dados de entrada da primeira atividade no pipeline.  |Não |falso |
 | availability | Define a janela de processamento (por exemplo, por hora ou diária) ou o modelo de divisão para a produção de conjunto de dados. Cada unidade de dados consumida e produzida por uma execução de atividade é chamada de uma fatia de dados. Se a disponibilidade de um conjunto de dados de saída é definida como diária (frequência - Dia, intervalo - 1), uma fatia é produzida diariamente. <br/><br/>Para obter detalhes, confira Disponibilidade do conjunto de dados. <br/><br/>Para obter detalhes sobre o modelo de divisão do conjunto de dados, consulte o artigo [Agendamento e execução](data-factory-scheduling-and-execution.md). |Sim |ND |
-| policy |Define os critérios ou a condição que as fatias de conjunto de dados devem atender. <br/><br/>Para obter detalhes, consulte a seção [Política do conjunto de dados](#Policy). |Não  |ND |
+| policy |Define os critérios ou a condição que as fatias de conjunto de dados devem atender. <br/><br/>Para obter detalhes, consulte a seção [Política do conjunto de dados](#Policy). |Não |ND |
 
 ## <a name="dataset-example"></a>Exemplo de conjunto de dados
 No exemplo a seguir, o conjunto de dados representa uma tabela chamada **MyTable** em um banco de dados SQL.
@@ -194,16 +194,16 @@ Cada coluna da seção Estrutura contém as seguintes propriedades:
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | name |Nome da coluna. |Sim |
-| type |Tipo de dados da coluna.  |Não  |
-| culture |Cultura baseada em .NET a ser usada quando o tipo é um tipo .NET `Datetime` ou `Datetimeoffset`. O padrão é `en-us`. |Não  |
-| forma |O formato de cadeia de caracteres a ser usado quando o tipo é um tipo .NET `Datetime` ou `Datetimeoffset`. |Não  |
+| type |Tipo de dados da coluna.  |Não |
+| culture |Cultura baseada em .NET a ser usada quando o tipo é um tipo .NET `Datetime` ou `Datetimeoffset`. O padrão é `en-us`. |Não |
+| formato |O formato de cadeia de caracteres a ser usado quando o tipo é um tipo .NET `Datetime` ou `Datetimeoffset`. |Não |
 
 As diretrizes a seguir ajudam você a determinar quando incluir informações de estrutura e o que incluir na seção **estrutura**.
 
 * **Para fontes de dados estruturadas**, especifique a seção de estrutura somente se desejar mapear colunas de origem para colunas do coletor; além disso, seus nomes não são os mesmos. Esse tipo de fonte de dados estruturada armazena informações de esquema de dados e de tipo juntamente com os próprios dados. Exemplos de fontes de dados estruturadas incluem SQL Server, Oracle e tabela do Azure.
   
     Como as informações de tipo já estão disponíveis para fontes de dados estruturadas, não inclua informações de tipo quando incluir a seção de estrutura.
-* **Para o esquema em fontes de dados de leitura (especificamente o armazenamento de Blobs)**, você pode optar por armazenar os dados sem armazenar nenhuma informação de tipo ou de esquema juntamente com os dados. Para esses tipos de fontes de dados, inclua a estrutura quando desejar mapear as colunas de origem para as colunas do coletor. Também inclua a estrutura quando o conjunto de dados for uma entrada para uma atividade de cópia e os tipos de dados do conjunto de dados de origem precisarem ser convertidos em tipos nativos para o coletor.
+* **Para o esquema em fontes de dados de leitura (especificamente o armazenamento de Blobs)** , você pode optar por armazenar os dados sem armazenar nenhuma informação de tipo ou de esquema juntamente com os dados. Para esses tipos de fontes de dados, inclua a estrutura quando desejar mapear as colunas de origem para as colunas do coletor. Também inclua a estrutura quando o conjunto de dados for uma entrada para uma atividade de cópia e os tipos de dados do conjunto de dados de origem precisarem ser convertidos em tipos nativos para o coletor.
     
     O Data Factory dá suporte aos seguintes valores para fornecer informações de tipo na estrutura: **Int16, Int32, Int64, Single, Double, Decimal, Byte[], Boolean, String, Guid, Datetime, Datetimeoffset e Timespan**. Esses valores são valores de tipo baseados em NET e em conformidade com CLS (Common Language Specification).
 
@@ -235,11 +235,11 @@ A tabela a seguir descreve as propriedades que você pode usar na seção de dis
 
 | Propriedade | DESCRIÇÃO | Obrigatório | Padrão |
 | --- | --- | --- | --- |
-| frequency |Especifica a unidade de tempo para a produção da fatia de conjunto de dados.<br/><br/><b>Frequência compatível</b>: Minuto, Hora, Dia, Semana, Mês |Sim |ND |
-| interval |Especifica um multiplicador para a frequência.<br/><br/>“Frequência x intervalo” determina a frequência com que a fatia é gerada. Por exemplo, se você precisa que o conjunto de dados seja dividido por hora, defina <b>frequência</b> como <b>Hora</b> e <b>intervalo</b> como <b>1</b>.<br/><br/>Observe que, caso você especifique a **frequência** como **Minuto**, deverá definir o intervalo como não inferior a 15. |Sim |ND |
-| style |Especifica se a fatia deve ser gerada no início ou término do intervalo.<ul><li>StartOfInterval</li><li>EndOfInterval</li></ul>Se a **frequência** for definida como **Mês** e o **estilo** como **EndOfInterval**, a fatia será gerada no último dia do mês. Se o **estilo** for definido como **StartOfInterval**, a fatia será gerada no primeiro dia do mês.<br/><br/>Se a **frequência** for definida como **Dia** e o **estilo** como **EndOfInterval**, a fatia será gerada na última hora do dia.<br/><br/>Se a **frequência** for definida como **Hora** e o **estilo** como **EndOfInterval**, a fatia será gerada ao final da hora. Por exemplo, para uma fatia do período 13h às 14h, a fatia é gerada às 14h. |Não  |EndOfInterval |
-| anchorDateTime |Define a posição absoluta no tempo usada pelo agendador para computar limites de fatia do conjunto de dados. <br/><br/>Observe que, se essa propriedade tiver partes de datas que são mais granulares do que a frequência especificada, as partes mais granulares são ignoradas. Por exemplo, se o **intervalo** for **por hora** (frequência: hora e intervalo: 1) e o **AnchorDateTime** contiver **minutos e segundos**, as partes de minutos e segundos de **anchorDateTime** serão ignoradas. |Não  |01/01/0001 |
-| offset |O período de tempo no qual o início e o término de todas as fatias de conjunto de dados são deslocados. <br/><br/>Observe que, se **anchorDateTime** e **offset** forem especificados, o resultado será um deslocamento combinado. |Não  |ND |
+| frequência |Especifica a unidade de tempo para a produção da fatia de conjunto de dados.<br/><br/><b>Frequência compatível</b>: Minuto, Hora, Dia, Semana, Mês |Sim |ND |
+| intervalo |Especifica um multiplicador para a frequência.<br/><br/>“Frequência x intervalo” determina a frequência com que a fatia é gerada. Por exemplo, se você precisa que o conjunto de dados seja dividido por hora, defina <b>frequência</b> como <b>Hora</b> e <b>intervalo</b> como <b>1</b>.<br/><br/>Observe que, caso você especifique a **frequência** como **Minuto**, deverá definir o intervalo como não inferior a 15. |Sim |ND |
+| estilo |Especifica se a fatia deve ser gerada no início ou término do intervalo.<ul><li>StartOfInterval</li><li>EndOfInterval</li></ul>Se a **frequência** for definida como **Mês** e o **estilo** como **EndOfInterval**, a fatia será gerada no último dia do mês. Se o **estilo** for definido como **StartOfInterval**, a fatia será gerada no primeiro dia do mês.<br/><br/>Se a **frequência** for definida como **Dia** e o **estilo** como **EndOfInterval**, a fatia será gerada na última hora do dia.<br/><br/>Se a **frequência** for definida como **Hora** e o **estilo** como **EndOfInterval**, a fatia será gerada ao final da hora. Por exemplo, para uma fatia do período 13h às 14h, a fatia é gerada às 14h. |Não |EndOfInterval |
+| anchorDateTime |Define a posição absoluta no tempo usada pelo agendador para computar limites de fatia do conjunto de dados. <br/><br/>Observe que, se essa propriedade tiver partes de datas que são mais granulares do que a frequência especificada, as partes mais granulares são ignoradas. Por exemplo, se o **intervalo** for **por hora** (frequência: hora e intervalo: 1) e o **AnchorDateTime** contiver **minutos e segundos**, as partes de minutos e segundos de **anchorDateTime** serão ignoradas. |Não |01/01/0001 |
+| deslocamento |O período de tempo no qual o início e o término de todas as fatias de conjunto de dados são deslocados. <br/><br/>Observe que, se **anchorDateTime** e **offset** forem especificados, o resultado será um deslocamento combinado. |Não |ND |
 
 ### <a name="offset-example"></a>exemplo de deslocamento
 Por padrão, as fatias diárias (`"frequency": "Day", "interval": 1`) começam às 00h (meia-noite) em UTC (Tempo Universal Coordenado). Se desejar que a hora de início para hora UTC de 6 horas em vez disso, define o deslocamento, conforme mostrado no snippet a seguir:
@@ -282,8 +282,8 @@ A seção **política** na definição do conjunto de dados define os critérios
 ### <a name="validation-policies"></a>Políticas de validação
 | Nome da política | DESCRIÇÃO | Aplicado a | Obrigatório | Padrão |
 | --- | --- | --- | --- | --- |
-| minimumSizeMB |Valida se os dados em um **armazenamento de Blobs do Azure** atendem aos requisitos de tamanho mínimo (em megabytes). |Armazenamento de Blobs do Azure |Não  |ND |
-| minimumRows |Valida que os dados em um **Banco de Dados SQL do Azure** ou uma **tabela do Azure** contêm o número mínimo de linhas. |<ul><li>Banco de Dados SQL do Azure</li><li>Tabela do Azure</li></ul> |Não  |ND |
+| minimumSizeMB |Valida se os dados em um **armazenamento de Blobs do Azure** atendem aos requisitos de tamanho mínimo (em megabytes). |Armazenamento de Blobs do Azure |Não |ND |
+| minimumRows |Valida que os dados em um **Banco de Dados SQL do Azure** ou uma **tabela do Azure** contêm o número mínimo de linhas. |<ul><li>Banco de Dados SQL do Azure</li><li>Tabela do Azure</li></ul> |Não |ND |
 
 #### <a name="examples"></a>Exemplos
 **minimumSizeMB:**
@@ -318,10 +318,10 @@ A menos que um conjunto de dados seja gerado pelo Data Factory, ele deverá ser 
 
 | NOME | DESCRIÇÃO | Obrigatório | Valor padrão |
 | --- | --- | --- | --- |
-| dataDelay |O tempo de atraso da verificação da disponibilidade dos dados externos da divisão especificada. Por exemplo, é possível atrasar uma verificação por hora usando essa configuração.<br/><br/>A configuração se aplica somente à hora atual. Por exemplo, se agora forem 13hs e se esse valor for 10 minutos, a validação começará às 13:10hs.<br/><br/>Observe que essa configuração não afeta as fatias do passado. Fatias com **Hora de Término da Fatia** + **dataDelay** < **Agora** são processadas sem atrasos.<br/><br/>Horas maiores que 23h59 horas devem ser especificadas com o formato `day.hours:minutes:seconds`. Por exemplo, para especificar 24 horas, não use 24:00:00. Em vez disso, use 1.00:00:00. Se você usar 24:00:00, isso será tratado como 24 dias (24.00:00:00). Para 1 dia e 4 horas, especifique 1:04:00:00. |Não  |0 |
-| retryInterval |O tempo de espera entre uma falha e a próxima tentativa. Essa configuração se aplica à hora atual. Se a tentativa anterior falhou, a próxima tentativa ocorrerá após o período de **retryInterval**. <br/><br/>Se agora for 1:00 PM, iniciaremos a primeira tentativa. Se a duração para concluir a primeira verificação de validação for 1 minuto e a operação tiver falhado, a próxima repetição será às 13h + 1min (duração) + 1min (intervalo de repetição) = 13h02. <br/><br/>Para fatias no passado, não haverá nenhum atraso. A repetição acontece imediatamente. |Não  |00:01:00 (1 minuto) |
-| retryTimeout |O tempo limite para cada tentativa de repetição.<br/><br/>Se essa propriedade for definida como 10 minutos, a validação deverá ser concluída em 10 minutos. Se demorar mais de 10 minutos para executar a validação, a repetição atingirá o tempo limite.<br/><br/>Se todas as tentativas para a validação atingirem o tempo limite, a fatia será marcada como **TimedOut**. |Não  |00:10:00 (10 minutos) |
-| maximumRetry |O número de vezes para verificar a disponibilidade dos dados externos. O valor máximo permitido é 10. |Não  |3 |
+| dataDelay |O tempo de atraso da verificação da disponibilidade dos dados externos da divisão especificada. Por exemplo, é possível atrasar uma verificação por hora usando essa configuração.<br/><br/>A configuração se aplica somente à hora atual. Por exemplo, se agora forem 13hs e se esse valor for 10 minutos, a validação começará às 13:10hs.<br/><br/>Observe que essa configuração não afeta as fatias do passado. Fatias com **Hora de Término da Fatia** + **dataDelay** < **Agora** são processadas sem atrasos.<br/><br/>Horas maiores que 23h59 horas devem ser especificadas com o formato `day.hours:minutes:seconds`. Por exemplo, para especificar 24 horas, não use 24:00:00. Em vez disso, use 1.00:00:00. Se você usar 24:00:00, isso será tratado como 24 dias (24.00:00:00). Para 1 dia e 4 horas, especifique 1:04:00:00. |Não |0 |
+| retryInterval |O tempo de espera entre uma falha e a próxima tentativa. Essa configuração se aplica à hora atual. Se a tentativa anterior falhou, a próxima tentativa ocorrerá após o período de **retryInterval**. <br/><br/>Se agora for 1:00 PM, iniciaremos a primeira tentativa. Se a duração para concluir a primeira verificação de validação for 1 minuto e a operação tiver falhado, a próxima repetição será às 13h + 1min (duração) + 1min (intervalo de repetição) = 13h02. <br/><br/>Para fatias no passado, não haverá nenhum atraso. A repetição acontece imediatamente. |Não |00:01:00 (1 minuto) |
+| retryTimeout |O tempo limite para cada tentativa de repetição.<br/><br/>Se essa propriedade for definida como 10 minutos, a validação deverá ser concluída em 10 minutos. Se demorar mais de 10 minutos para executar a validação, a repetição atingirá o tempo limite.<br/><br/>Se todas as tentativas para a validação atingirem o tempo limite, a fatia será marcada como **TimedOut**. |Não |00:10:00 (10 minutos) |
+| maximumRetry |O número de vezes para verificar a disponibilidade dos dados externos. O valor máximo permitido é 10. |Não |3 |
 
 
 ## <a name="create-datasets"></a>Criar conjuntos de dados

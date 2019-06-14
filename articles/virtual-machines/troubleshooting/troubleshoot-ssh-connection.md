@@ -16,10 +16,10 @@ ms.topic: troubleshooting
 ms.date: 05/30/2017
 ms.author: genli
 ms.openlocfilehash: 81e00c4a3b9490a05667d58952f7bdf8945bacdb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61405200"
 ---
 # <a name="troubleshoot-ssh-connections-to-an-azure-linux-vm-that-fails-errors-out-or-is-refused"></a>Solucionar problemas em conexões SSH com uma VM Linux do Azure que falha, apresenta erro ou é recusada
@@ -255,7 +255,7 @@ azure vm redeploy --resource-group myResourceGroup --name myVM
 ## <a name="vms-created-by-using-the-classic-deployment-model"></a>VMs criadas com o modelo de implantação clássico
 Experimente essas etapas para resolver as falhas de conexão SSH mais comuns em VMs criadas usando o modelo de implantação clássico. Após cada etapa, tente se reconectar à VM.
 
-* Redefina o acesso remoto no [Portal do Azure](https://portal.azure.com). No portal do Azure, selecione a sua VM e, então, **Redefinir Remoto...**.
+* Redefina o acesso remoto no [Portal do Azure](https://portal.azure.com). No portal do Azure, selecione a sua VM e, então, **Redefinir Remoto...** .
 * Reinicie a VM. No [portal do Azure](https://portal.azure.com), selecione a sua VM e, então **Reiniciar**.
 
 * Reimplante a VM em um novo nó do Azure. Para obter informações sobre como reimplantar uma VM, veja [Reimplantar Máquina Virtual em um novo nó do Azure](../windows/redeploy-to-new-node.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

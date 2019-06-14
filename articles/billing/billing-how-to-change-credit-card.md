@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 3/13/2019
 ms.author: banders
 ms.openlocfilehash: b910cb3061b1451ea80b9843e2aa4047a784548f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60918468"
 ---
 # <a name="add-update-or-remove-a-credit-or-debit-card-for-azure"></a>Adicionar, atualizar ou remover um cartão de crédito ou débito do Azure
@@ -44,12 +44,12 @@ No portal do Azure, você pode adicionar um novo cartão de crédito, atualize u
 
     ![Captura de tela que mostra a opção Gerenciar formas de pagamento selecionada.](./media/billing-how-to-change-credit-card/payment-methods-blade-x.png)
 
-1. No canto superior esquerdo, selecione "+" para adicionar um cartão. Um formulário de cartão de crédito será exibida à direita.
+1. No canto superior esquerdo, selecione "+" para adicionar um cartão. Um formulário de cartão de crédito será exibido à direita.
 1. Insira os detalhes do cartão de crédito ou débito.
 
     ![Captura de tela que mostra a adição de um novo cartão.](./media/billing-how-to-change-credit-card/sub-add-new-x.png)
 
-1. Para fazer isso de cartão de seu método de pagamento ativo, a caixa de seleção ao lado **tornar este meu método de pagamento ativo** acima do formulário. Essa placa se tornará o instrumento de pagamento ativo para todas as assinaturas usando o mesmo cartão, como a assinatura selecionada.
+1. Para fazer isso de cartão de seu método de pagamento ativo, a caixa de seleção ao lado **tornar este meu método de pagamento ativo** acima do formulário. Esse cartão se tornará o meio de pagamento ativo para todas as assinaturas usando o mesmo cartão, como a assinatura selecionada.
 
 1. Selecione **Avançar**.
 
@@ -68,7 +68,7 @@ Se seu cartão de crédito for renovado e o número permaneça o mesmo, atualize
 
     ![Captura de tela que mostra a opção Gerenciar formas de pagamento selecionada.](./media/billing-how-to-change-credit-card/payment-methods-blade-x.png)
 
-1. Clique em de crédito ou débito cartão que você deseja editar. Um formulário de cartão de crédito será exibida à direita.
+1. Clique no cartão de crédito ou débito que você deseja editar. Um formulário de cartão de crédito será exibido à direita.
 
     ![Captura de tela que mostra o cartão de crédito ou débito selecionado.](./media/billing-how-to-change-credit-card/edit-card-x.png)
 

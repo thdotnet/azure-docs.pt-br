@@ -16,10 +16,10 @@ ms.date: 07/24/2018
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: e2bd67ebb977a37c75631f16fbbf4c7dbd6bf250
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60782541"
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Gerenciar recursos do Lote com a CLI do Azure
@@ -39,7 +39,7 @@ Você pode executar a CLI do Azure mais recente no [Azure Cloud Shell](../cloud-
 
 ## <a name="command-help"></a>Ajuda de comando
 
-Você pode exibir um texto de ajuda para todo comando na CLI do Azure acrescentando `-h` ao comando. Omita as outras opções. Por exemplo: 
+Você pode exibir um texto de ajuda para todo comando na CLI do Azure acrescentando `-h` ao comando. Omita as outras opções. Por exemplo:
 
 * Para obter ajuda sobre o comando `az`, insira: `az -h`
 * Para obter uma lista de todos os comandos do Lote na CLI, use: `az batch -h`
@@ -122,7 +122,7 @@ Consulte os [exemplos de script da CLI](cli-samples.md) para o Lote a fim de rea
 
 ## <a name="json-files-for-resource-creation"></a>Arquivos JSON para a criação de recursos
 
-Ao criar recursos do Lote, como pools e trabalhos, você pode especificar um arquivo JSON contendo a nova configuração do recurso, em vez de passar seus parâmetros como opções da linha de comando. Por exemplo: 
+Ao criar recursos do Lote, como pools e trabalhos, você pode especificar um arquivo JSON contendo a nova configuração do recurso, em vez de passar seus parâmetros como opções da linha de comando. Por exemplo:
 
 ```azurecli
 az batch pool create my_batch_pool.json

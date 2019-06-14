@@ -5,13 +5,13 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 12/04/2018
+ms.date: 5/6/2019
 ms.author: iainfou
-ms.openlocfilehash: 7476747de31819907cf144e5a6b33cb29e1f866f
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: e7f45a3a0e62b2b559002b71bd8816e050f062ab
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65072643"
 ---
 # <a name="best-practices-for-storage-and-backups-in-azure-kubernetes-service-aks"></a>Práticas recomendadas para armazenamento e backups no Serviço de Kubernetes do Azure (AKS)
@@ -34,12 +34,12 @@ Os aplicativos geralmente exigem diferentes tipos e velocidades de armazenamento
 
 A tabela a seguir descreve os tipos de armazenamento disponíveis e suas funcionalidades:
 
-| Caso de uso | Plug-in de volume | Ler/gravar uma vez | Muitos somente leitura | Muitos ler/gravar |
-|----------|---------------|-----------------|----------------|-----------------|
-| Configuração compartilhada       | Arquivos do Azure   | Sim | sim | Sim |
-| Dados de aplicativo estruturados        | Discos do Azure   | Sim | Não  | Não   |
-| Dados de aplicativo, compartilhamentos somente leitura | [Dysk (versão prévia)][dysk] | Sim | sim | Não   |
-| Dados não estruturados, operações do sistema de arquivos | [BlobFuse (versão prévia)][blobfuse] | Sim | sim | Sim |
+| Caso de uso | Plug-in de volume | Ler/gravar uma vez | Muitos somente leitura | Muitos ler/gravar | Suporte de contêiner do Windows Server |
+|----------|---------------|-----------------|----------------|-----------------|--------------------|
+| Configuração compartilhada       | Arquivos do Azure   | Sim | sim | sim | Sim |
+| Dados de aplicativo estruturados        | Discos do Azure   | Sim | Não  | Não  | Sim |
+| Dados de aplicativo, compartilhamentos somente leitura | [Dysk (versão prévia)][dysk] | Sim | sim | Não  | Não |
+| Dados não estruturados, operações do sistema de arquivos | [BlobFuse (versão prévia)][blobfuse] | Sim | sim | sim | Não |
 
 Os dois principais tipos de armazenamento fornecidos para volumes no AKS são apoiados pelos Discos do Azure ou Arquivos do Azure. Para melhorar a segurança, os dois tipos de armazenamento usam a Criptografia do Serviço de Armazenamento do Azure (SSE) por padrão, que criptografa os dados em repouso. No momento, os discos não podem ser criptografados usando a Criptografia de Disco do Azure no nível do nó do AKS.
 
@@ -64,8 +64,8 @@ Se seus aplicativos exigirem os Discos do Azure como solução de armazenamento,
 
 | Tamanho e tipo de nó | vCPU | Memória (GiB) | Discos de dados máximos | IOPS de discos com taxa de transferência sem cache | Taxa de transferência máxima não armazenada em cache (MBps) |
 |--------------------|------|--------------|----------------|------------------------|--------------------------------|
-| Standard_B2ms      | 2    | 8            | 4              | 1.920                  | 22,5                           |
-| Standard_DS2_v2    | 2    | 7            | 8              | 6.400                  | 96                             |
+| Standard_B2ms      | 2    | 8            | 4              | 1\.920                  | 22,5                           |
+| Standard_DS2_v2    | 2    | 7            | 8              | 6\.400                  | 96                             |
 
 Aqui, o *Standard_DS2_v2* permite duplicar o número de discos anexados e fornece três a quatro vezes a quantidade de IOPS e a taxa de transferência do disco. Se só tiver analisado os recursos de computação principais e comparado os custos, é possível que, ao escolher o tamanho de VM *Standard_B2ms*, você tenha desempenho e limitações de armazenamento insatisfatórios. Trabalhe com sua equipe de desenvolvimento de aplicativos para entender suas necessidades de capacidade de armazenamento e desempenho. Escolha o tamanho de VM apropriado para os nós do AKS para atender ou superar suas necessidades de desempenho. Crie aplicativos de linha de base regularmente para ajustar o tamanho da VM conforme necessário.
 

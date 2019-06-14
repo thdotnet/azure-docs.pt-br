@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 3/20/2019
 ms.author: mayg
 ms.openlocfilehash: cbea6785239c70a3cdb229d0811497f051224238
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61472360"
 ---
 # <a name="analyze-the-azure-site-recovery-deployment-planner-report-for-vmware-disaster-recovery-to-azure"></a>Analise o relatório do Azure Site Recovery Deployment Planner para recuperação de desastre do VMware no Azure
@@ -32,13 +32,13 @@ A planilha Resumo local fornece uma visão geral do ambiente VMware analisado.
 
 **Número médio de discos por máquina virtual compatível**: O número médio de discos calculado em todas as VMs compatíveis.
 
-**Tamanho médio do disco (GB)**: O tamanho médio de disco calculado em todas as VMs compatíveis.
+**Tamanho médio do disco (GB)** : O tamanho médio de disco calculado em todas as VMs compatíveis.
 
-**RPO desejado (minutos)**: O objetivo de ponto de recuperação padrão ou o valor passado para o parâmetro DesiredRPO no momento da geração de relatórios para estimar a largura de banda necessária.
+**RPO desejado (minutos)** : O objetivo de ponto de recuperação padrão ou o valor passado para o parâmetro DesiredRPO no momento da geração de relatórios para estimar a largura de banda necessária.
 
-**Largura de banda (Mbps)**: O valor passado para o parâmetro 'Largura de Banda' no momento da geração de relatórios para estimar o RPO atingível.
+**Largura de banda (Mbps)** : O valor passado para o parâmetro 'Largura de Banda' no momento da geração de relatórios para estimar o RPO atingível.
 
-**Registro de dados típicos observado por dia (GB)**: A variação de dados média observada na criação de perfil todos os dias. Esse número é usado como uma das entradas para decidir o número de servidores de configuração e servidores de processo adicionais a serem usados na implantação.
+**Registro de dados típicos observado por dia (GB)** : A variação de dados média observada na criação de perfil todos os dias. Esse número é usado como uma das entradas para decidir o número de servidores de configuração e servidores de processo adicionais a serem usados na implantação.
 
 ## <a name="recommendations"></a>Recomendações
 
@@ -183,7 +183,7 @@ Pode haver uma situação em que você saiba que não é possível definir uma l
 
 **Nome da VM**: O nome da VM ou o endereço IP que é usado em VMListFile quando um relatório é gerado. Essa coluna também lista os discos (VMDKs) que estão anexados às VMs. Para diferenciar VMs vCenter com nomes ou endereços IP duplicados, os nomes incluem o nome do host ESXi. O host ESXi listado é aquele em que a VM foi colocada quando a ferramenta realizou a descoberta durante o período de criação de perfil.
 
-**Compatibilidade da VM**: Os valores são **Sim** e **Sim**\*. **Sim**\* é para instâncias em que a VM é adequada para [SSDs premium](../virtual-machines/windows/disks-types.md). Aqui, a alta variação da criação de perfil ou o disco IOPS se encaixam na categoria P20 ou P30, mas o tamanho do disco faz com que ele seja mapeado para P10 ou P20. A conta de armazenamento decide para qual tipo de disco de armazenamento premium um disco deve ser mapeado, com base em seu tamanho. Por exemplo: 
+**Compatibilidade da VM**: Os valores são **Sim** e **Sim**\*. **Sim**\* é para instâncias em que a VM é adequada para [SSDs premium](../virtual-machines/windows/disks-types.md). Aqui, a alta variação da criação de perfil ou o disco IOPS se encaixam na categoria P20 ou P30, mas o tamanho do disco faz com que ele seja mapeado para P10 ou P20. A conta de armazenamento decide para qual tipo de disco de armazenamento premium um disco deve ser mapeado, com base em seu tamanho. Por exemplo:
 * <128 GB é P10.
 * 128 GB até 256 GB é um P15
 * 256 GB a 512 GB é um P20.
@@ -199,9 +199,9 @@ Por exemplo, se as características de carga de trabalho de um disco o colocarem
 
 **Conta de Armazenamento**: O nome que usa o prefixo de conta de armazenamento sugerido.
 
-**Pico R/W IOPS (com Fator de Crescimento)**: IOPS de leitura/gravação de carga de trabalho de pico no disco (o padrão é o 95%), incluindo o fator de crescimento futuro (o padrão é 30%). Observe que o IOPS total de leitura/gravação de uma VM nem sempre é a soma de IOPS de leitura/gravação dos discos individuais da VM, pois o IOPS de leitura/gravação de pico da VM é o pico da soma do IOPS de leitura/gravação dos discos individuais durante cada minuto do período de criação de perfil.
+**Pico R/W IOPS (com Fator de Crescimento)** : IOPS de leitura/gravação de carga de trabalho de pico no disco (o padrão é o 95%), incluindo o fator de crescimento futuro (o padrão é 30%). Observe que o IOPS total de leitura/gravação de uma VM nem sempre é a soma de IOPS de leitura/gravação dos discos individuais da VM, pois o IOPS de leitura/gravação de pico da VM é o pico da soma do IOPS de leitura/gravação dos discos individuais durante cada minuto do período de criação de perfil.
 
-**Variação de Dados de Pico em Mbps (com Fator de Crescimento)**: A taxa de variação de pico no disco (o padrão é o 95%), incluindo o fator de crescimento futuro (o padrão é 30%). Observe que a variação total dos dados da VM nem sempre é a soma da variação de dados dos discos individuais da VM, pois o pico da variação de dados da VM é o pico da soma da variação dos discos individuais durante cada minuto do período de criação de perfil.
+**Variação de Dados de Pico em Mbps (com Fator de Crescimento)** : A taxa de variação de pico no disco (o padrão é o 95%), incluindo o fator de crescimento futuro (o padrão é 30%). Observe que a variação total dos dados da VM nem sempre é a soma da variação de dados dos discos individuais da VM, pois o pico da variação de dados da VM é o pico da soma da variação dos discos individuais durante cada minuto do período de criação de perfil.
 
 **Tamanho da VM do Azure**: O tamanho ideal de máquina virtual mapeada dos Serviços de Nuvem do Azure para essa VM local. O mapeamento é baseado na memória da VM local, no número de discos/núcleos/NICs e IOPS de leitura/gravação. A recomendação é sempre o menor tamanho de VM do Azure que corresponde a todas as características de VM local.
 
@@ -211,7 +211,7 @@ Por exemplo, se as características de carga de trabalho de um disco o colocarem
 
 **Núcleos**: O número de núcleos de CPUs na VM.
 
-**Memória (MB)**: RAM na VM.
+**Memória (MB)** : RAM na VM.
 
 **NICs**: O número de NICs na VM.
 
@@ -251,9 +251,9 @@ Por exemplo, se as características de carga de trabalho de um disco o colocarem
 * A variação do total de dados por dia excede o limite diário de variação de 2 TB por um Servidor de Processo.
 
 
-**Pico R/W IOPS (com Fator de Crescimento)**: IOPS de carga de trabalho de pico no disco (o padrão é o 95%), incluindo o fator de crescimento futuro (o padrão é 30%). Observe que o IOPS total de leitura/gravação da VM nem sempre é a soma de IOPS de leitura/gravação dos discos individuais da VM, pois o IOPS de leitura/gravação de pico da VM é o pico da soma do IOPS de leitura/gravação dos discos individuais durante cada minuto do período de criação de perfil.
+**Pico R/W IOPS (com Fator de Crescimento)** : IOPS de carga de trabalho de pico no disco (o padrão é o 95%), incluindo o fator de crescimento futuro (o padrão é 30%). Observe que o IOPS total de leitura/gravação da VM nem sempre é a soma de IOPS de leitura/gravação dos discos individuais da VM, pois o IOPS de leitura/gravação de pico da VM é o pico da soma do IOPS de leitura/gravação dos discos individuais durante cada minuto do período de criação de perfil.
 
-**Variação de Dados de Pico em Mbps (com Fator de Crescimento)**: A taxa de variação de pico no disco (o padrão é 95%) incluindo o fator de crescimento futuro (o padrão é 30%). Observe que a variação total dos dados da VM nem sempre é a soma da variação de dados dos discos individuais da VM, pois o pico da variação de dados da VM é o pico da soma da variação dos discos individuais durante cada minuto do período de criação de perfil.
+**Variação de Dados de Pico em Mbps (com Fator de Crescimento)** : A taxa de variação de pico no disco (o padrão é 95%) incluindo o fator de crescimento futuro (o padrão é 30%). Observe que a variação total dos dados da VM nem sempre é a soma da variação de dados dos discos individuais da VM, pois o pico da variação de dados da VM é o pico da soma da variação dos discos individuais durante cada minuto do período de criação de perfil.
 
 **Número de discos**: O número total de VMDKs na VM.
 
@@ -261,7 +261,7 @@ Por exemplo, se as características de carga de trabalho de um disco o colocarem
 
 **Núcleos**: O número de núcleos de CPUs na VM.
 
-**Memória (MB)**: A quantidade de RAM na VM.
+**Memória (MB)** : A quantidade de RAM na VM.
 
 **NICs**: O número de NICs na VM.
 

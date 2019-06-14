@@ -14,10 +14,10 @@ ms.workload: load-balancer
 ms.date: 06/06/2018
 ms.author: kumud
 ms.openlocfilehash: 159fe9d6a891858d8d2cc2315e9544b79eb44cff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60884972"
 ---
 # <a name="create-an-azure-basic-load-balancer-using-rest-api"></a>Criar um Azure Load Balancer básico usando a API REST
@@ -33,12 +33,12 @@ Use a seguinte solicitação HTTP PUT para criar um novo Azure Load Balancer Bá
   ```
 ### <a name="uri-parameters"></a>Parâmetros de URI
 
-|NOME  |No  |Obrigatório |Type |DESCRIÇÃO |
+|NOME  |Em  |Obrigatório |Type |DESCRIÇÃO |
 |---------|---------|---------|---------|--------|
-|subscriptionId   |  caminho       |  True       |   string      |  As credenciais de assinatura que identificam exclusivamente a assinatura do Microsoft Azure. A ID da assinatura faz parte do URI para cada chamada de serviço.      |
-|resourceGroupName     |     caminho    | True        |  string       |   O nome do grupo de recursos.     |
-|loadBalancerName     |  caminho       |      True   |    string     |    O nome do balanceador de carga.    |
-|api-version    |   query     |  True       |     string    |  Versão de API do cliente.      |
+|subscriptionId   |  caminho       |  True       |   cadeia de caracteres      |  As credenciais de assinatura que identificam exclusivamente a assinatura do Microsoft Azure. A ID da assinatura faz parte do URI para cada chamada de serviço.      |
+|resourceGroupName     |     caminho    | True        |  cadeia de caracteres       |   O nome do grupo de recursos.     |
+|loadBalancerName     |  caminho       |      True   |    cadeia de caracteres     |    O nome do balanceador de carga.    |
+|api-version    |   query     |  True       |     cadeia de caracteres    |  Versão de API do cliente.      |
 
 
 
@@ -48,7 +48,7 @@ O único parâmetro necessário é `location`. Se você não definir a versão d
 
 | NOME | Type | DESCRIÇÃO |
 | :--- | :--- | :---------- |
-| location | string | Local do recurso. Obtenha uma lista atual de locais usando a operação [Listar locais](https://docs.microsoft.com/rest/api/resources/subscriptions/listlocations). |
+| location | cadeia de caracteres | Local do recurso. Obtenha uma lista atual de locais usando a operação [Listar locais](https://docs.microsoft.com/rest/api/resources/subscriptions/listlocations). |
 
 
 ## <a name="example-create-and-update-a-basic-load-balancer"></a>Exemplo: criar e atualizar um Load Balancer Básico

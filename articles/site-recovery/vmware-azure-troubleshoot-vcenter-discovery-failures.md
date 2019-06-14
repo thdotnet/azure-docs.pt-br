@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: v-doglov
 ms.openlocfilehash: c598c5e238458c010500579c5371622b85e71de0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60565184"
 ---
 # <a name="troubleshoot-vcenter-discovery-failures"></a>Solucionar problemas de falhas de descoberta do vCenter
@@ -47,7 +47,7 @@ Em geral, o proxy é usado para se comunicar com redes públicas; como se comuni
 Quando esse problema é encontrado, ocorrem as seguintes situações:
 
 - O servidor do vCenter \<vCenter > não está acessível devido ao erro: O servidor remoto retornou um erro: (503) Server Unavailable
-- O servidor do vCenter \<vCenter > não está acessível devido ao erro: O servidor remoto retornou um erro: Não é possível se conectar com o servidor remoto.
+- O servidor do vCenter \<vCenter > não está acessível devido ao erro: O servidor remoto retornou um erro: Não é possível se conectar ao servidor remoto.
 - Não é possível se conectar ao servidor vCenter/ESXi.
 
 Como resolver o problema:

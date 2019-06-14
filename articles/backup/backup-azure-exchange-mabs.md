@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/24/2017
 ms.author: kasinh
 ms.openlocfilehash: 40541596b4da9e0590d497785afd7d6d7f4cbcb4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60641408"
 ---
 # <a name="back-up-an-exchange-server-to-azure-with-azure-backup-server"></a>Fazer backup de um servidor do Exchange no Azure com o Servidor de Backup do Azure
@@ -53,7 +53,7 @@ Execute estas etapas para instalar o agente de proteção do MABS no servidor do
     Depois de escolher essa opção, a verificação de consistência do backup será executada no MABS a fim de evitar o tráfego de E/S gerado pela execução do comando **eseutil** no servidor Exchange.
 
    > [!NOTE]
-   > Para usar essa opção, você deve copiar os arquivos Ese.dll e Eseutil.exe no diretório C:\Arquivos de Programas\Backup do Microsoft Azure\DPM\DPM\bin no servidor MAB. Caso contrário, o seguinte erro será disparado:   
+   > Para usar essa opção, você deve copiar os arquivos Ese.dll e Eseutil.exe no diretório C:\Arquivos de Programas\Backup do Microsoft Azure\DPM\DPM\bin no servidor MAB. Caso contrário, o seguinte erro será disparado:  
    > ![erro de eseutil](./media/backup-azure-backup-exchange-server/eseutil-error.png)
    >
    >
@@ -68,10 +68,10 @@ Execute estas etapas para instalar o agente de proteção do MABS no servidor do
 11. Confira o espaço em disco disponível e clique em **Próximo**.
 12. Escolha a hora na qual o servidor MAB criará a replicação inicial e clique em **Próximo**.
 13. Escolha as opções de verificação de consistência e clique em **Próximo**.
-14. Escolha o banco de dados do qual você deseja fazer backup no Azure e clique em **Próximo**. Por exemplo: 
+14. Escolha o banco de dados do qual você deseja fazer backup no Azure e clique em **Próximo**. Por exemplo:
 
     ![Especificar dados de proteção online](./media/backup-azure-backup-exchange-server/specify-online-protection-data.png)
-15. Defina o cronograma do **Backup do Azure** e clique em **Próximo**. Por exemplo: 
+15. Defina o cronograma do **Backup do Azure** e clique em **Próximo**. Por exemplo:
 
     ![Especifique o cronograma do backup online](./media/backup-azure-backup-exchange-server/specify-online-backup-schedule.png)
 

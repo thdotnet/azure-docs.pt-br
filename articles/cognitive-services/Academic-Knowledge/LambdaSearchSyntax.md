@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alch
 ms.openlocfilehash: 4d4c540e00794bfdf1df265457798cc13530c828
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61337781"
 ---
 # <a name="lambda-search-syntax"></a>Sintaxe de Pesquisa Lambda
@@ -33,13 +33,13 @@ FollowEdge(params string[] edgeTypes)
 > [!NOTE]
 > Se não nos importam os tipos de edge(s) a seguir, basta omitir *FollowEdge()* entre dois nós: a consulta passará por todos os edges possíveis entre esses dois nós.
 
-Podemos especificar as ações de passagem a serem executadas em um nó por meio de *VisitNode()*, ou seja, se deseja parar este nó e retornar o caminho atual como o resultado ou continuar a explorar o gráfico.  O tipo enumerado *Ação* define dois tipos de ações: *Action.Return* e *Action.Continue*. Podemos passar um valor de enumeração diretamente em *VisitNode()*, ou combiná-los com o operador AND bit-a-bit '&'. Quando dois ação são combinadas, isso significa que ambas as ações serão tomadas. Observação: não use o operador bit-a-bit ' |' em ações. Isso fará com que a consulta finalize sem retornar nada. Ignorar *VisitNode()* entre duas chamadas *FollowEdge()* fará com que a consulta explore incondicionalmente o gráfico após chegar a um nó.
+Podemos especificar as ações de passagem a serem executadas em um nó por meio de *VisitNode()* , ou seja, se deseja parar este nó e retornar o caminho atual como o resultado ou continuar a explorar o gráfico.  O tipo enumerado *Ação* define dois tipos de ações: *Action.Return* e *Action.Continue*. Podemos passar um valor de enumeração diretamente em *VisitNode()* , ou combiná-los com o operador AND bit-a-bit '&'. Quando dois ação são combinadas, isso significa que ambas as ações serão tomadas. Observação: não use o operador bit-a-bit ' |' em ações. Isso fará com que a consulta finalize sem retornar nada. Ignorar *VisitNode()* entre duas chamadas *FollowEdge()* fará com que a consulta explore incondicionalmente o gráfico após chegar a um nó.
 
 ```
 VisitNode(Action action, IEnumerable<string> select = null)
 ```
 
-Para *VisitNode()*, também podemos passar em uma expressão lambda do tipo *Expression\<Func\<INode, Action\>\>*, que usa um *INode* e retorna uma ação de passagem:
+Para *VisitNode()* , também podemos passar em uma expressão lambda do tipo *Expression\<Func\<INode, Action\>\>* , que usa um *INode* e retorna uma ação de passagem:
 
 ```
 VisitNode(Expression<Func<INode, Action>> action, IEnumerable<string> select = null)
@@ -65,11 +65,11 @@ Indica se existe um campo com o nome fornecido no nó atual.
 
 ##### <a name="string-getstring-fieldname"></a>string get(string fieldName)
 
-Funciona como *GetField\<string\>(fieldName)*. No entanto, não retorna exceções quando o campo não é encontrado, ele retorna uma cadeia de caracteres vazia ("") em vez disso.
+Funciona como *GetField\<string\>(fieldName)* . No entanto, não retorna exceções quando o campo não é encontrado, ele retorna uma cadeia de caracteres vazia ("") em vez disso.
 
 ##### <a name="bool-hasstring-fieldname"></a>bool has(string fieldName)
 
-Indica se existe a propriedade especificada no nó atual. Mesmo que *ContainsField(fieldName)*.
+Indica se existe a propriedade especificada no nó atual. Mesmo que *ContainsField(fieldName)* .
 
 ##### <a name="bool-hasstring-fieldname-string-value"></a>bool has(string fieldName, string value)
 

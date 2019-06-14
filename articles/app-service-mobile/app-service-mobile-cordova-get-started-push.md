@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 10/30/2016
 ms.author: crdun
 ms.openlocfilehash: 40a7552ffd0bfcab173d2e35c52313a94ec3d0bb
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62114318"
 ---
 # <a name="add-push-notifications-to-your-apache-cordova-app"></a>Adicionar notificações por push ao seu aplicativo Apache Cordova
@@ -316,7 +316,7 @@ Se a ID do Aplicativo que você criou na sua conta de Desenvolvedor Apple já co
    > [!NOTE]
    > O aplicativo solicita confirmação para notificações por push durante a primeira execução.
 
-3. No aplicativo, digite uma tarefa e, em seguida, selecione o ícone de adição **(+)**.
+3. No aplicativo, digite uma tarefa e, em seguida, selecione o ícone de adição **(+)** .
 4. Verifique se uma notificação foi recebida. Em seguida, selecione **OK** para ignorar a notificação.
 
 ## <a name="optional-configure-and-run-on-windows"></a>(Opcional) Configurar e executar no Windows

@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 075d0e2471457e1a585f7fdea9b523b1d13499c7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61388537"
 ---
 # <a name="monitor-and-manage-performance-of-azure-sql-databases-and-pools-in-a-multi-tenant-saas-app"></a>Monitore e gerencie o desempenho dos pools e dos bancos de dados SQL do Azure em um aplicativo SaaS multilocatário
@@ -104,7 +104,7 @@ O aplicativo de banco de dados multilocatário SaaS Wingtip Tickets é um aplica
 
 Para monitorar o uso de recursos que resulta da carga que está sendo aplicada, abra o portal no pool que contém os bancos de dados de locatário:
 
-1. Abra o [portal do Azure](https://portal.azure.com) e navegue para o servidor *tenants1-&lt;USER&gt;*.
+1. Abra o [portal do Azure](https://portal.azure.com) e navegue para o servidor *tenants1-&lt;USER&gt;* .
 1. Role para baixo e localize os pools elásticos e clique em **Pool1**. Este pool contém todos os bancos de dados de locatário criados até agora.
 
 Observe os gráficos **Monitoramento do pool elástico** e **Monitoramento do banco de dados elástico**.
@@ -122,7 +122,7 @@ Como há outros bancos de dados no pool além dos cinco mais utilizados, a utili
 
 Defina um alerta no pool que é disparado após \>75% de utilização, da seguinte maneira:
 
-1. Abra *Pool1* (no servidor *tenants1-\<usuário\>*) no [Portal do Azure](https://portal.azure.com).
+1. Abra *Pool1* (no servidor *tenants1-\<usuário\>* ) no [Portal do Azure](https://portal.azure.com).
 1. Clique em **Regras de Alerta** e, em seguida, clique em **+ Adicionar alerta**:
 
    ![adicionar alerta](media/saas-dbpertenant-performance-monitoring/add-alert.png)
@@ -167,7 +167,7 @@ Os bancos de dados permanecem online e totalmente disponíveis durante todo o pr
 
 Como alternativa a escalar verticalmente o pool, crie um segundo pool e mova os bancos de dados para balancear a carga entre os dois pools. Para fazer isso, o novo pool deve ser criado no mesmo servidor que o primeiro.
 
-1. No [portal do Azure](https://portal.azure.com), abra o servidor **tenants1-dpt&lt;USER&gt;**.
+1. No [portal do Azure](https://portal.azure.com), abra o servidor **tenants1-dpt&lt;USER&gt;** .
 1. Clique em **+ Novo pool** para criar um pool no servidor atual.
 1. No modelo **Pool elástico**:
 
@@ -185,7 +185,7 @@ Como alternativa a escalar verticalmente o pool, crie um segundo pool e mova os 
 
 A criação do pool e a movimentação dos bancos de dados leva apenas alguns minutos. Conforme os bancos de dados são movidos, eles permanecem online e totalmente acessíveis até o último momento, quando todas as conexões abertas são fechadas. Desde que você tenha uma lógica de repetição, os clientes se conectarão ao banco de dados no novo pool.
 
-Procure **Pool2** (no servidor *tenants1-dpt-\<user\>*) para abrir o pool e monitorar seu desempenho. Se ele não estiver visível, aguarde até que o provisionamento do novo pool seja concluído.
+Procure **Pool2** (no servidor *tenants1-dpt-\<user\>* ) para abrir o pool e monitorar seu desempenho. Se ele não estiver visível, aguarde até que o provisionamento do novo pool seja concluído.
 
 Agora você vê que o uso de recursos do *Pool1* caiu e que o *Pool2* é carregado de maneira semelhante.
 
@@ -201,7 +201,7 @@ Este exercício simula o efeito do Contoso Concert Hall experimentando uma alta 
 1. Execute o script usando **F5**.
 
 
-1. No [Portal do Azure](https://portal.azure.com) navegue até a lista de bancos de dados no servidor *tenants1-dpt-\<user\>*. 
+1. No [Portal do Azure](https://portal.azure.com) navegue até a lista de bancos de dados no servidor *tenants1-dpt-\<user\>* . 
 1. Clique no banco de dados **contosoconcerthall**.
 1. Clique no pool em que **contosoconcerthall** se encontra. Encontre o pool na seção **Pool elástico**.
 

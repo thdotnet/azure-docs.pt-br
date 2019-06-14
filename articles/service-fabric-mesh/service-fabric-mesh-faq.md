@@ -10,10 +10,10 @@ ms.topic: troubleshooting
 ms.service: service-fabric-mesh
 manager: jeanpaul.connock
 ms.openlocfilehash: 950f9ac89b9d3224db29b32fe2d1e403ccc98116
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65143285"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Perguntas frequentes sobre Malha do Service Fabric
@@ -49,7 +49,7 @@ Atualmente, limitamos o tempo de vida de um aplicativo a dois dias. Isso é para
 
 Se isso acontecer, você poderá validar que o sistema a desliga executando o comando `az mesh app show` na CLI do Azure . Verifique se ele retorna `"status": "Failed", "statusDetails": "Stopped resource due to max lifetime policies for an application during preview. Delete the resource to continue."` 
 
-Por exemplo:  
+Por exemplo: 
 
 ```cli
 ~$ az mesh app show --resource-group myResourceGroup --name helloWorldApp
@@ -110,7 +110,7 @@ As consultas DNS de saída de um contêiner para o serviço DNS do Service Fabri
 
 - Use o Windows Fall Creators update (versão 1709) ou superior como sua imagem de contêiner base.
 - Se o nome do serviço sozinho não funcionar, tente o nome totalmente qualificado: ServiceName.ApplicationName.
-- No arquivo do Docker para seu serviço, adicionar `EXPOSE <port>` onde a porta é a porta na qual você está expondo seu serviço. Por exemplo: 
+- No arquivo do Docker para seu serviço, adicionar `EXPOSE <port>` onde a porta é a porta na qual você está expondo seu serviço. Por exemplo:
 
 ```Dockerfile
 EXPOSE 80

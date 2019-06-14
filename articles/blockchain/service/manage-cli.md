@@ -11,10 +11,10 @@ ms.service: azure-blockchain
 ms.reviewer: seal
 manager: femila
 ms.openlocfilehash: d078ca181b2eed4b80d4f12f1c03b42f4e242194
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65154450"
 ---
 # <a name="manage-azure-blockchain-service-with-azure-cli"></a>Gerenciar o serviço de Blockchain do Azure com a CLI do Azure
@@ -35,17 +35,17 @@ az resource create --resource-group <myResourceGroup> --name <myMemberName> --re
 
 | Parâmetro | DESCRIÇÃO |
 |---------|-------------|
-| **resource-group** | Nome do grupo de recursos onde os recursos do serviço de Blockchain do Azure são criados. |
-| **name** | Um nome exclusivo que identifica o membro de blockchain do serviço de Blockchain do Azure. O nome é usado para o endereço do ponto de extremidade público. Por exemplo, `myblockchainmember.blockchain.azure.com`. |
-| **local** | Região do Azure em que o membro de blockchain é criado. Por exemplo, `eastus`. Escolha o local mais próximo para os usuários ou para outros aplicativos do Azure. |
-| **password** | A senha da conta de membro. A senha da conta de membro é usada para autenticar no ponto de extremidade público do blockchain membro usando a autenticação básica. A senha deve atender três dos quatro requisitos a seguir: comprimento precisa ter entre 12 e 72 caracteres, 1 caractere minúsculo, 1 caractere maiusculo, 1 número e 1 caractere especial que é o número não sign(#), percent(%), vírgula (,), star(*), aspa (\`), clique duas vezes quote("), quote(') único, dash(-) e semicolumn(;)|
+| **resource-group** | Nome do grupo de recursos no qual os recursos do serviço Azure Blockchain são criados. |
+| **name** | Um nome exclusivo que identifica o membro do blockchain do serviço Azure Blockchain. O nome é usado para o endereço do ponto de extremidade público. Por exemplo: `myblockchainmember.blockchain.azure.com`. |
+| **local** | Região do Azure em que o membro do blockchain é criado. Por exemplo: `eastus`. Escolha o local mais próximo para os usuários ou para outros aplicativos do Azure. |
+| **password** | A senha da conta de membro. A senha da conta de membro é usada para autenticação no ponto de extremidade público do membro do blockchain usando a autenticação básica. A senha deve atender três dos quatro requisitos a seguir: comprimento precisa ter entre 12 e 72 caracteres, 1 caractere minúsculo, 1 caractere maiusculo, 1 número e 1 caractere especial que é o número não sign(#), percent(%), vírgula (,), star(*), aspa (\`), clique duas vezes quote("), quote(') único, dash(-) e semicolumn(;)|
 | **protocol** | Visualização pública dá suporte ao Quorum. |
-| **consortium** | Nome do consórcio para criar ou ingressar. |
-| **consortiumManagementAccountPassword** | A senha de gerenciamento consortium. A senha é usada para ingressar em um consórcio. |
+| **consortium** | Nome do consórcio a ser ingressado ou criado. |
+| **consortiumManagementAccountPassword** | A senha de gerenciamento do consórcio. A senha é usada para ingressar em um consórcio. |
 | **ruleName** | Nome da regra de lista de permissões de um intervalo de endereços IP. Parâmetro opcional para as regras de firewall.|
 | **startIpAddress** | Início do intervalo de endereços IP para a lista de permissões. Parâmetro opcional para as regras de firewall. |
 | **endIpAddress** | Fim do intervalo de endereços IP para a lista de permissões. Parâmetro opcional para as regras de firewall. |
-| **skuName** | Tipo de camada. Use S0 para Standard e B0 para Basic. |
+| **skuName** | Tipo de camada. Use S0 para Standard e B0 para Básico. |
 
 ## <a name="change-blockchain-member-password"></a>Alteração de senha de membro de blockchain
 
@@ -56,7 +56,7 @@ az resource update --resource-group <myResourceGroup> --name <myMemberName> --re
 ```
 | Parâmetro | DESCRIÇÃO |
 |---------|-------------|
-| **resource-group** | Nome do grupo de recursos onde os recursos do serviço de Blockchain do Azure são criados. |
+| **resource-group** | Nome do grupo de recursos no qual os recursos do serviço Azure Blockchain são criados. |
 | **name** | Nome que identifica o membro de serviço de Blockchain do Azure. |
 | **password** | A senha da conta de membro. A senha deve atender três dos quatro requisitos a seguir: comprimento precisa ter entre 12 e 72 caracteres, 1 caractere minúsculo, 1 caractere maiusculo, 1 número e 1 caractere especial que é o número não sign(#), percent(%), vírgula (,), star(*), aspa (\`), clique duas vezes quote("), quote(') único, dash(-) e semicolon(;). |
 
@@ -71,9 +71,9 @@ az resource create --resource-group <myResourceGroup> --name <myMemberName>/tran
 
 | Parâmetro | DESCRIÇÃO |
 |---------|-------------|
-| **resource-group** | Nome do grupo de recursos onde os recursos do serviço de Blockchain do Azure são criados. |
+| **resource-group** | Nome do grupo de recursos no qual os recursos do serviço Azure Blockchain são criados. |
 | **name** | Nome do membro de blockchain do serviço de Blockchain do Azure que também inclui o novo nome de nó da transação. |
-| **local** | Região do Azure em que o membro de blockchain é criado. Por exemplo, `eastus`. Escolha o local mais próximo para os usuários ou para outros aplicativos do Azure. |
+| **local** | Região do Azure em que o membro do blockchain é criado. Por exemplo: `eastus`. Escolha o local mais próximo para os usuários ou para outros aplicativos do Azure. |
 | **password** | A senha do nó de transação. A senha deve atender três dos quatro requisitos a seguir: comprimento precisa ter entre 12 e 72 caracteres, 1 caractere minúsculo, 1 caractere maiusculo, 1 número e 1 caractere especial que é o número não sign(#), percent(%), vírgula (,), star(*), aspa (\`), clique duas vezes quote("), quote(') único, dash(-) e semicolon(;). |
 | **ruleName** | Nome da regra de lista de permissões de um intervalo de endereços IP. Parâmetro opcional para as regras de firewall. |
 | **startIpAddress** | Início do intervalo de endereços IP para a lista de permissões. Parâmetro opcional para as regras de firewall. |
@@ -103,7 +103,7 @@ az resource update --resource-group <myResourceGroup> --name <myMemberName> --re
 
 | Parâmetro | DESCRIÇÃO |
 |---------|-------------|
-| **resource-group** | Nome do grupo de recursos onde os recursos do serviço de Blockchain do Azure são criados. |
+| **resource-group** | Nome do grupo de recursos no qual os recursos do serviço Azure Blockchain são criados. |
 | **name** | Nome que identifica o membro de serviço de Blockchain do Azure. |
 | **consortiumManagementAccountPassword** | A senha de conta de gerenciamento consortium. A senha deve atender três dos quatro requisitos a seguir: comprimento precisa ter entre 12 e 72 caracteres, 1 caractere minúsculo, 1 caractere maiusculo, 1 número e 1 caractere especial que é o número não sign(#), percent(%), vírgula (,), star(*), aspa (\`), clique duas vezes quote("), quote(') único, dash(-) e semicolon(;). |
   

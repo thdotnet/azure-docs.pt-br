@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 08/10/2018
 ms.author: mbullwin
 ms.openlocfilehash: a57393918992019844e2ff4ccc13d671f0b90ed5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60900062"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Alimentar o Power BI do Application Insights
@@ -42,7 +42,7 @@ Instalar o [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/).
 ### <a name="export-an-analytics-query"></a>Exportar uma consulta do Analytics
 1. [Abra o Analytics e escreva sua consulta](../../azure-monitor/log-query/get-started-portal.md).
 2. Teste e ajuste a consulta até ficar satisfeito com os resultados. Certifique-se de que a consulta seja executada corretamente no Analytics antes de ser exportada.
-3. No menu **Exportar**, escolha **Power BI (M)**. Salve o arquivo de texto.
+3. No menu **Exportar**, escolha **Power BI (M)** . Salve o arquivo de texto.
    
     ![Captura de tela do Analytics, com o menu Exportar realçado](./media/export-power-bi/analytics-export-power-bi.png)
 4. No Power BI Desktop, selecione **Obter Dados** > **Consulta em Branco**. Em seguida, no editor de consultas, em **Exibir**, selecione **Editor Avançado**.

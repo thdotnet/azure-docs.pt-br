@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/09/2018
 ms.author: alkohli
 ms.openlocfilehash: eb1fe69a7fb99949ac95291c33e76c1a32bf5439
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60506460"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-8000-series-devices"></a>Implantar o serviço do Gerenciador de Dispositivos do StorSimple para dispositivos StorSimple da série 8000
@@ -194,16 +194,16 @@ No Portal do Azure, há suporte apenas para dispositivos StorSimple que executam
 | Examinar, baixar e instalar atualizações                                                                                             | Sim            |
 | Desativar um dispositivo                                                                                                               | Sim            |
 | Excluir um dispositivo                                                                                                                   | Sim            |
-| Criar, modificar e excluir um contêiner de volume                                                                                   | Não              |
-| Criar, modificar e excluir um volume                                                                                             | Não              |
-| Criar, modificar e excluir uma política de backup                                                                                      | Não              |
-| Fazer um backup manual                                                                                                            | Não              |
+| Criar, modificar e excluir um contêiner de volume                                                                                   | Não             |
+| Criar, modificar e excluir um volume                                                                                             | Não             |
+| Criar, modificar e excluir uma política de backup                                                                                      | Não             |
+| Fazer um backup manual                                                                                                            | Não             |
 | Realizar um backup agendado                                                                                                         | Não aplicável |
-| Restaurar de um conjunto de backup                                                                                                        | Não              |
+| Restaurar de um conjunto de backup                                                                                                        | Não             |
 | Clonar para um dispositivo que executa a Atualização 3.0 e posterior <br> O dispositivo de origem executa uma versão anterior à Atualização 3.0.                                | Sim            |
-| Clonar para um dispositivo que executa uma versão anterior à Atualização 3.0                                                                          | Não              |
+| Clonar para um dispositivo que executa uma versão anterior à Atualização 3.0                                                                          | Não             |
 | Failover como dispositivo de origem <br> (de um dispositivo que executa uma versão anterior à Atualização 3.0 para um dispositivo que executa a Atualização 3.0 e posterior)                                                               | Sim            |
-| Failover como dispositivo de destino <br> (para um dispositivo que executa uma versão de software anterior à Atualização 3.0)                                                                                   | Não              |
+| Failover como dispositivo de destino <br> (para um dispositivo que executa uma versão de software anterior à Atualização 3.0)                                                                                   | Não             |
 | Limpar um alerta                                                                                                                  | Sim            |
 | Exibir políticas de backup, catálogo de backup, volumes, contêineres de volume, gráficos de monitoramento, trabalhos e alertas criados no portal clássico | Sim            |
 | Ativar e desativar controladores de dispositivo                                                                                              | Sim            |

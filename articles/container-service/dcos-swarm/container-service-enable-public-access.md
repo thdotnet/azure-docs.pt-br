@@ -10,10 +10,10 @@ ms.date: 08/26/2016
 ms.author: saudas
 ms.custom: mvc
 ms.openlocfilehash: 3e4ba15fa1925ca40ad7760acbd14331fbdd1343
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61457160"
 ---
 # <a name="deprecated-enable-public-access-to-an-azure-container-service-application"></a>(PRETERIDO) Habilitar acesso público a um aplicativo do Serviço de Contêiner do Azure
@@ -38,7 +38,7 @@ Primeiro, é necessário abrir a porta que queremos.
    | Campo | DESCRIÇÃO |
    | --- | --- |
    | NOME |Um nome descritivo da investigação. |
-   | Porta |A porta do contêiner a ser testado. |
+   | Port |A porta do contêiner a ser testado. |
    | Caminho |(Quando em modo HTTP) O caminho relativo do site para investigação. Não há suporte para HTTPS. |
    | Interval |O tempo entre as tentativas de investigação, em segundos. |
    | Limite não íntegro |Número de tentativas consecutivas de investigação antes de considerar o contêiner não íntegro. |
@@ -50,7 +50,7 @@ Primeiro, é necessário abrir a porta que queremos.
    | Campo | DESCRIÇÃO |
    | --- | --- |
    | NOME |Um nome descritivo do balanceador de carga. |
-   | Porta |A porta de entrada pública. |
+   | Port |A porta de entrada pública. |
    | Porta de back-end |A porta pública interna do contêiner para o qual o tráfego será roteado. |
    | Pool de back-end |Os contêineres nesse pool serão o destino para este balanceador de carga. |
    | Investigação |A investigação usada para determinar se um destino no **Pool de back-end** está íntegro. |
@@ -74,9 +74,9 @@ Em seguida, precisamos adicionar uma regra de segurança que encaminhe o tráfeg
    | --- | --- |
    | NOME |Um nome descritivo da regra do firewall. |
    | Prioridade |Classificação de prioridade para a regra. Quanto menor o número, maior a prioridade. |
-   | Fonte |Restrinja o intervalo de endereços IP de entrada a ser permitido ou negado por essa regra. Use **Qualquer** para não especificar uma restrição. |
+   | source |Restrinja o intervalo de endereços IP de entrada a ser permitido ou negado por essa regra. Use **Qualquer** para não especificar uma restrição. |
    | O Barramento de |Selecione um conjunto de serviços predefinidos para os quais foi definida essa regra de segurança. Caso contrário, use **Personalizada** para criar suas próprias. |
-   | Protocolo |Restrinja o tráfego baseado em **TCP** ou **UDP**. Use **Qualquer** para não especificar uma restrição. |
+   | Protocol |Restrinja o tráfego baseado em **TCP** ou **UDP**. Use **Qualquer** para não especificar uma restrição. |
    | Intervalo de portas |Quando **Serviço** for **Personalizado**, especifica o intervalo de portas afetadas por essa regra. Você pode usar uma única porta, como **80** ou um intervalo, como **1024–1500**. |
    | Ação |Permita ou negue o tráfego que atenda aos critérios. |
 

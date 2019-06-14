@@ -14,14 +14,14 @@ ms.date: 06/06/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: de1263d68e96a23bd6b5eca4297e74b56ba22e40
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60823939"
 ---
 # <a name="move-data-from-mysql-using-azure-data-factory"></a>Mover dados do MySQL usando o Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](data-factory-onprem-mysql-connector.md)
 > * [Versão 2 (versão atual)](../connector-mysql.md)
 
@@ -73,7 +73,7 @@ A tabela a seguir fornece a descrição para elementos JSON específicos para o 
 | database |Nome do banco de dados MySQL. |Sim |
 | schema |Nome do esquema no banco de dados. |Não |
 | authenticationType |Tipo de autenticação usado para se conectar ao banco de dados MySQL. Os valores possíveis são: `Basic`. |Sim |
-| userName |Especifique o nome de usuário para se conectar ao banco de dados MySQL. |Sim |
+| Nome de Usuário |Especifique o nome de usuário para se conectar ao banco de dados MySQL. |Sim |
 | password |Especifique a senha da conta de usuário que você especificou. |Sim |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao banco de dados MySQL local. |Sim |
 

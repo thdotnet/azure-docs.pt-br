@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 11/25/2014
 ms.author: MicrosoftHelp@twilio.com
 ms.openlocfilehash: 40b633c4e51a34e6640a9557be49bbe30543daf5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61457644"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-in-ruby"></a>Como usar o Twilio para recursos de voz e SMS no Ruby
@@ -52,16 +52,16 @@ Os verbos do Twilio são marcas XML que dizem ao Twilio o que **fazer**. Por exe
 
 A seguir está uma lista de verbos do Twilio.
 
-* **&lt;Dial&gt;**: Conecta o chamador a outro telefone.
-* **&lt;Gather&gt;**: Coleta os dígitos numéricos inseridos no teclado do telefone.
-* **&lt;Hangup&gt;**: Encerra uma chamada.
-* **&lt;Play&gt;**: Reproduz um arquivo de áudio.
-* **&lt;Pause&gt;**: Espera silenciosamente por um número especificado de segundos.
-* **&lt;Record&gt;**: Grava a voz do chamador e retorna uma URL de um arquivo que contém a gravação.
-* **&lt;Redirect&gt;**: Transfere o controle de uma chamada ou SMS para o TwiML em uma URL diferente.
-* **&lt;Reject&gt;**: Rejeita uma chamada recebida para o número do Twilio sem cobrança
-* **&lt;Say&gt;**: Faz conversão de texto em fala realizada em uma chamada.
-* **&lt;Sms&gt;**: Envia uma mensagem SMS.
+* **&lt;Dial&gt;** : Conecta o chamador a outro telefone.
+* **&lt;Gather&gt;** : Coleta os dígitos numéricos inseridos no teclado do telefone.
+* **&lt;Hangup&gt;** : Encerra uma chamada.
+* **&lt;Play&gt;** : Reproduz um arquivo de áudio.
+* **&lt;Pause&gt;** : Espera silenciosamente por um número especificado de segundos.
+* **&lt;Record&gt;** : Grava a voz do chamador e retorna uma URL de um arquivo que contém a gravação.
+* **&lt;Redirect&gt;** : Transfere o controle de uma chamada ou SMS para o TwiML em uma URL diferente.
+* **&lt;Reject&gt;** : Rejeita uma chamada recebida para o número do Twilio sem cobrança
+* **&lt;Say&gt;** : Faz conversão de texto em fala realizada em uma chamada.
+* **&lt;Sms&gt;** : Envia uma mensagem SMS.
 
 Para obter mais informações sobre os verbos do Twilio, seus atributos e o TwiML, consulte [TwiML][twiml]. Para obter mais informações sobre a API do Twilio, consulte [API do Twilio][twilio_api].
 

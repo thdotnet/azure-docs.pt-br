@@ -17,10 +17,10 @@ ms.date: 04/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9167a5ed72e6fec2ca03cc97d1d41dd6cd4aaba6
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62104555"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-secret-server-on-premises"></a>Tutorial: Integração do Azure Active Directory ao Secret Server (On-Premises)
@@ -51,7 +51,7 @@ Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 - Se não tiver um ambiente de avaliação do Azure AD, você pode [obter uma versão de avaliação de um mês](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Descrição do cenário
-Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste.  O cenário descrito neste tutorial consiste em dois blocos de construção principais:
+Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste. O cenário descrito neste tutorial consiste em dois blocos de construção principais:
 
 1. Adicionar o Servidor de Segredo (no local) da galeria
 1. configurar e testar o logon único do AD do Azure
@@ -61,7 +61,7 @@ Para configurar a integração do Servidor de Segredo (local) ao Microsoft Azure
 
 **Para adicionar o Servidor de Segredo (local) da galeria, execute as etapas a seguir:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
 
     ![O botão Azure Active Directory][1]
 
@@ -73,7 +73,7 @@ Para configurar a integração do Servidor de Segredo (local) ao Microsoft Azure
 
     ![O botão Novo aplicativo][3]
 
-1. Na caixa de pesquisa, digite **Servidor de Segredo (local)**, selecione **Servidor de Segredo (local)** no painel de resultados e, depois, clique no botão **Adicionar** para adicionar o aplicativo.
+1. Na caixa de pesquisa, digite **Servidor de Segredo (local)** , selecione **Servidor de Segredo (local)** no painel de resultados e, depois, clique no botão **Adicionar** para adicionar o aplicativo.
 
     ![Servidor de Segredo (local) na lista de resultados](./media/secretserver-on-premises-tutorial/tutorial_secretserver_addfromgallery.png)
 
@@ -97,7 +97,7 @@ Nesta seção, você habilita o logon único do Microsoft Azure AD no Portal do 
 
 **Para configurar o logon único do Microsoft Azure AD com o Servidor de Segredo (local), execute as etapas a seguir:**
 
-1. No Portal do Azure, na página de integração do aplicativo do **Servidor de Segredo (local)**, clique em **Logon único**.
+1. No Portal do Azure, na página de integração do aplicativo do **Servidor de Segredo (local)** , clique em **Logon único**.
 
     ![Link Configurar logon único][4]
 
@@ -105,11 +105,11 @@ Nesta seção, você habilita o logon único do Microsoft Azure AD no Portal do 
 
     ![Caixa de diálogo Logon único](./media/secretserver-on-premises-tutorial/tutorial_secretserver_samlbase.png)
 
-1. Na seção **Domínio e URLs do Servidor de Segredo (local)**, execute as etapas a seguir se você deseja configurar o aplicativo no modo iniciado pelo **IDP**:
+1. Na seção **Domínio e URLs do Servidor de Segredo (local)** , execute as etapas a seguir se você deseja configurar o aplicativo no modo iniciado pelo **IDP**:
 
     ![Informações de logon único de Domínio e URLs do Servidor de Segredo (local)](./media/secretserver-on-premises-tutorial/tutorial_secretserver_url.png)
 
-     a. Na caixa de texto **Identificador**, insira o valor escolhido pelo usuário como um exemplo: `https://secretserveronpremises.azure`
+    a. Na caixa de texto **Identificador**, insira o valor escolhido pelo usuário como um exemplo: `https://secretserveronpremises.azure`
 
     b. Na caixa de texto **URL de resposta**, digite uma URL no seguinte padrão: `https://<SecretServerURL>/SAML/AssertionConsumerService.aspx`
 
@@ -137,11 +137,11 @@ Nesta seção, você habilita o logon único do Microsoft Azure AD no Portal do 
 
     ![Botão Salvar em Configurar Logon Único](./media/secretserver-on-premises-tutorial/tutorial_general_400.png)
     
-1. Na seção **Configuração do Servidor de Segredo (local)**, clique em **Configurar Servidor de Segredo (local)** para abrir a janela **Configurar logon**. Copie a **URL de saída, a ID da Entidade SAML e a URL do Serviço de Logon Único SAML** da **seção de Referência Rápida.**
+1. Na seção **Configuração do Servidor de Segredo (local)** , clique em **Configurar Servidor de Segredo (local)** para abrir a janela **Configurar logon**. Copie a **URL de saída, a ID da Entidade SAML e a URL do Serviço de Logon Único SAML** da **seção de Referência Rápida.**
 
     ![Configuração do Servidor de Segredo (local)](./media/secretserver-on-premises-tutorial/tutorial_secretserver_configure.png)
 
-1. Para configurar logon único no **Servidor de Segredo (local)**, é necessário enviar o **Certificado (Base64) baixado, a URL de Entrada, URL do Serviço de Logon Único do SAML** e **ID da Entidade SAML** para a [Equipe de suporte do Servidor de Segredo (local) ](https://thycotic.force.com/support/s/). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+1. Para configurar logon único no **Servidor de Segredo (local)** , é necessário enviar o **Certificado (Base64) baixado, a URL de Entrada, URL do Serviço de Logon Único do SAML** e **ID da Entidade SAML** para a [Equipe de suporte do Servidor de Segredo (local) ](https://thycotic.force.com/support/s/). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
@@ -191,7 +191,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
     ![Atribuir usuário][201]
 
-1. Na lista de aplicativos, escolha **Servidor de Segredo (local)**.
+1. Na lista de aplicativos, escolha **Servidor de Segredo (local)** .
 
     ![O link do Servidor de Segredo (local) na lista de Aplicativos](./media/secretserver-on-premises-tutorial/tutorial_secretserver_app.png)
 

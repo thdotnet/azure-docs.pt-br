@@ -9,10 +9,10 @@ ms.date: 02/12/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: d1ec5168b898d0aa75c12e6eb435e20c09de1929
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64700264"
 ---
 # <a name="migrate-bulk-data-to-azure-file-sync"></a>Migrar dados em massa para a sincronização de arquivos do Azure
@@ -51,7 +51,7 @@ Aqui está como configurar a sincronização de arquivos do Azure de forma que s
 
 | Etapa | Detalhes |
 |---|---------------------------------------------------------------------------------------|
-| ![Etapa 1](media/storage-sync-files-offline-data-transfer/bullet_1.png) | [Solicite o Data Box](../../databox/data-box-deploy-ordered.md). As ofertas de família do Data Box [vários produtos](https://azure.microsoft.com/services/storage/databox/data) para atender às suas necessidades. Quando você receber o Data Box, execute sua [documentação para copiar seus dados](../../databox/data-box-deploy-copy-data.md#copy-data-to-data-box) a esse caminho UNC no Data Box:  *\\< DeviceIPAddres\>\<StorageAccountName_AzFile\> \<ShareName\>*. Aqui, *ShareName* é o nome do compartilhamento de preparo. Envie o Data Box para o Azure. |
+| ![Etapa 1](media/storage-sync-files-offline-data-transfer/bullet_1.png) | [Solicite o Data Box](../../databox/data-box-deploy-ordered.md). As ofertas de família do Data Box [vários produtos](https://azure.microsoft.com/services/storage/databox/data) para atender às suas necessidades. Quando você receber o Data Box, execute sua [documentação para copiar seus dados](../../databox/data-box-deploy-copy-data.md#copy-data-to-data-box) a esse caminho UNC no Data Box:  *\\< DeviceIPAddres\>\<StorageAccountName_AzFile\> \<ShareName\>* . Aqui, *ShareName* é o nome do compartilhamento de preparo. Envie o Data Box para o Azure. |
 | ![Etapa 2](media/storage-sync-files-offline-data-transfer/bullet_2.png) | Aguarde até que os arquivos exibidos em compartilhamentos de arquivos do Azure que você escolheu como compartilhamentos de preparo temporários. *Não habilite a sincronização a esses compartilhamentos.* |
 | ![Etapa 3](media/storage-sync-files-offline-data-transfer/bullet_3.png) | Crie um novo compartilhamento vazio para cada compartilhamento de arquivos que a caixa de dados criada para você. Esse novo compartilhamento deve ser na mesma conta de armazenamento que o compartilhamento de dados de caixa. [Como criar um novo compartilhamento de arquivos do Azure](storage-how-to-create-file-share.md). |
 | ![Etapa 4](media/storage-sync-files-offline-data-transfer/bullet_4.png) | [Criar um grupo de sincronização](storage-sync-files-deployment-guide.md#create-a-sync-group-and-a-cloud-endpoint) em um serviço de sincronização de armazenamento. Referenciar o compartilhamento vazio como um ponto de extremidade de nuvem. Repita essa etapa para cada compartilhamento de arquivos do Data Box. [Configurar a sincronização de arquivos do Azure](storage-sync-files-deployment-guide.md). |

@@ -8,14 +8,13 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-origin.date: 12/07/2017
-ms.date: 02/21/2019
-ms.author: v-junlch
+ms.date: 12/07/2017
+ms.author: azfuncdf
 ms.openlocfilehash: 596eedab39ff926fcdc880c82c49ac464b7ff23b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60730253"
 ---
 # <a name="task-hubs-in-durable-functions-azure-functions"></a>Hubs de tarefas nas Funções Duráveis (Azure Functions)
@@ -30,11 +29,11 @@ Se vários aplicativos de funções compartilham uma conta de armazenamento, cad
 
 Um hub de tarefas é composto pelos seguinte recursos de armazenamento:
 
-- Uma ou mais filas de controle.
-- Uma fila de item de trabalho.
-- Uma tabela de histórico.
-- Uma tabela de instâncias.
-- Um contêiner de armazenamento que contém um ou mais blobs de concessão.
+* Uma ou mais filas de controle.
+* Uma fila de item de trabalho.
+* Uma tabela de histórico.
+* Uma tabela de instâncias.
+* Um contêiner de armazenamento que contém um ou mais blobs de concessão.
 
 Todos esses recursos são criados automaticamente na conta padrão do Armazenamento do Azure quando funções de atividade ou orquestrador são executadas ou estão agendadas para execução. O artigo [Desempenho e Escala](durable-functions-perf-and-scale.md) explica como esses recursos são usados.
 
@@ -141,5 +140,3 @@ Nomes de hubs de tarefas devem começar com uma letra e devem ser compostos some
 
 > [!div class="nextstepaction"]
 > [Saiba como lidar com o controle de versão](durable-functions-versioning.md)
-
-<!-- Update_Description: wording update -->

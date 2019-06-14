@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/06/2019
 ms.author: iainfou
 ms.openlocfilehash: a0512806ec797f43fc54d8a28a7cbadf86faf1d9
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65229986"
 ---
 # <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Proteger o tráfego entre os pods usando as políticas de rede no Serviço de Kubernetes do Azure (AKS)
@@ -64,7 +64,7 @@ Política de rede funciona somente com a opção CNI do Azure (Avançado). Imple
 | Conformidade com a especificação do Kubernetes | Todos os tipos de política com suporte |  Todos os tipos de política com suporte |
 | Recursos adicionais                      | Nenhum                       | Estendido consistindo de ponto de extremidade do Host, rede Global definida e a política de rede Global de modelo de política. Para obter mais informações sobre como usar o `calicoctl` CLI para gerenciar esses recursos, consulte [referência de usuário calicoctl][calicoctl]. |
 | Suporte                                  | Compatível com a equipe de engenharia e suporte do Azure | Suporte da comunidade de Malhado. Para obter mais informações sobre o suporte pago adicional, consulte [opções de suporte do projeto Malhado][calico-support]. |
-| Registro em Log                                  | Regras adicionadas / excluídas no IPTables são registradas em todos os hosts sob */var/log/azure-npm.log* | Para obter mais informações, consulte [logs do componente Malhado][calico-logs] |
+| Registrando em log                                  | Regras adicionadas / excluídas no IPTables são registradas em todos os hosts sob */var/log/azure-npm.log* | Para obter mais informações, consulte [logs do componente Malhado][calico-logs] |
 
 ## <a name="create-an-aks-cluster-and-enable-network-policy"></a>Cria um cluster do AKS e habilita a política de rede
 

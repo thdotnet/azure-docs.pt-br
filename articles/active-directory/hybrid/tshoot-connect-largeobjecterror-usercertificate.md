@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c851b5ef024e6584e6f8c93995208b08a91fbb60
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62095482"
 ---
 # <a name="azure-ad-connect-sync-handling-largeobject-errors-caused-by-usercertificate-attribute"></a>Sincronização do Azure AD Connect: tratar erros de LargeObject causados pelo atributo userCertificate
@@ -92,16 +92,16 @@ Deve haver uma regra de sincronização existente que é habilitada e configurad
 
     | Atributo | Value |
     | --- | --- |
-    | Direção |**Saída** |
+    | Direction |**Saída** |
     | Tipo de Objeto de MV |**Pessoa** |
     | Conector |*nome de seu conector do Azure AD* |
     | Tipo de Objeto de Conector |**user** |
     | Atributos de MV |**userCertificate** |
 
-3. Se você estiver usando regras de sincronização OOB (integradas) para o conector do Azure AD para exportar o atributo userCertificate de objetos User, deverá retornar à regra *“Saída para AAD – Exchange Online do Usuário”*.
+3. Se você estiver usando regras de sincronização OOB (integradas) para o conector do Azure AD para exportar o atributo userCertificate de objetos User, deverá retornar à regra *“Saída para AAD – Exchange Online do Usuário”* .
 4. Anote o valor de **precedência** dessa regra de sincronização.
 5. Selecione a regra de sincronização e clique em **Editar**.
-6. Na caixa de diálogo pop-up *“Editar Confirmação de Regra Reservada”*, clique em **Não**. (Não se preocupe; não vamos fazer nenhuma alteração nessa regra de sincronização).
+6. Na caixa de diálogo pop-up *“Editar Confirmação de Regra Reservada”* , clique em **Não**. (Não se preocupe; não vamos fazer nenhuma alteração nessa regra de sincronização).
 7. Na tela de edição, selecione a guia **Filtro de escopo**.
 8. Anote a configuração de filtro de escopo. Se você estiver usando a regra de sincronização OOB, deverá haver exatamente **um grupo de filtro de escopo que contém duas cláusulas**, incluindo:
 
