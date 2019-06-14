@@ -40,7 +40,7 @@ A solicitação exige os seguintes campos:
 | lastName             | Sobrenome do usuário                               |
 | emailAddress         | Endereço de email do usuário                           |
 | externalId           | Microsoft Azure Active Directory do usuário                      |
-| ConnectionId         | Identificador exclusivo para a conexão blockchain |
+| connectionId         | Identificador exclusivo para a conexão blockchain |
 | messageSchemaVersion | Versão do esquema de mensagens                            |
 | messageName          | **CreateUserRequest**                               |
 
@@ -66,7 +66,7 @@ Blockchain Workbench retorna uma resposta com os seguintes campos:
 | requestId             | GUID do cliente fornecido |
 | userId                | ID do usuário que foi criado |
 | userChainIdentifier   | Endereço do usuário que foi criado na rede blockchain. No Ethereum, o endereço é o endereço  **on-chain**  do usuário. |
-| ConnectionId          | Identificador exclusivo para a conexão blockchain|
+| connectionId          | Identificador exclusivo para a conexão blockchain|
 | messageSchemaVersion  | Versão do esquema de mensagens |
 | messageName           | **CreateUserUpdate** |
 | status                | Status da solicitação de criação do usuário.  Se bem sucedido, o valor é **Sucesso**. Em caso de falha, o valor é **falha**.     |
