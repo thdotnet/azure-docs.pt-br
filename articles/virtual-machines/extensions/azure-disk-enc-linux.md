@@ -75,8 +75,8 @@ O Azure Disk Encryption para Linux exige conectividade com a Internet para acess
 | Nome | Valor/Exemplo | Tipo de Dados |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publicador | Microsoft.Azure.Security | string |
-| Tipo | AzureDiskEncryptionForLinux | string |
+| publisher | Microsoft.Azure.Security | string |
+| type | AzureDiskEncryptionForLinux | string |
 | typeHandlerVersion | 0.1, 1.1 (VMSS) | int |
 | AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
 | AADClientSecret | Senha | string |
@@ -86,7 +86,7 @@ O Azure Disk Encryption para Linux exige conectividade com a Internet para acess
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
 | KeyEncryptionKeyURL | url | string |
 | KeyVaultURL | url | string |
-| Senha | Senha | string | 
+| Passphrase | Senha | string | 
 | SequenceVersion | uniqueidentifier | string |
 | VolumeType | Sistema operacional, Dados, Tudo | string |
 
