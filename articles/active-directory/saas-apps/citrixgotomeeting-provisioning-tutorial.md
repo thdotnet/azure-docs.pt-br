@@ -16,10 +16,10 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6e3145d0faaa3aecb90b582b3b6ef0063572ff43
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60430755"
 ---
 # <a name="tutorial-configure-gotomeeting-for-automatic-user-provisioning"></a>Tutorial: Configurar GoToMeeting para provisionamento automático de usuário
@@ -69,11 +69,11 @@ Esta seção orienta você quanto à conexão do Azure AD com a API de provision
 
 1. Na seção “Credenciais de Administrador”, realize as seguintes etapas:
    
-     a. Na caixa de texto **Nome de Usuário Administrador do GoToMeeting**, digite o nome de usuário de um administrador.
+    a. Na caixa de texto **Nome de Usuário Administrador do GoToMeeting**, digite o nome de usuário de um administrador.
 
     b. Na caixa de texto **Senha do Administrador do GoToMeeting**, digite a senha do administrador.
 
-1. No portal do Azure, clique em **Testar conexão** para garantir que o Azure AD possa se conectar ao seu aplicativo GoToMeeting. Se a conexão falhar, verifique se a sua conta do GoToMeeting tem permissões de Administrador de Equipe e repita a etapa **"Credenciais de Administrador"**.
+1. No portal do Azure, clique em **Testar conexão** para garantir que o Azure AD possa se conectar ao seu aplicativo GoToMeeting. Se a conexão falhar, verifique se a sua conta do GoToMeeting tem permissões de Administrador de Equipe e repita a etapa **"Credenciais de Administrador"** .
 
 1. Insira o endereço de email de uma pessoa ou um grupo que deve receber notificações de erro de provisionamento no campo **Email de Notificação** e marque a caixa de seleção.
 

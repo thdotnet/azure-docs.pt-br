@@ -17,10 +17,10 @@ ms.date: 02/02/2017
 ms.author: rclaus
 ms.subservice: disks
 ms.openlocfilehash: e773fdcb031f0f8f896ea40d76231fd54a603dc4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60328792"
 ---
 # <a name="configure-software-raid-on-linux"></a>Configurar RAID de software no Linux
@@ -122,7 +122,7 @@ Neste exemplo, criamos uma única partição de disco em /dev/sdc. A nova parti�
 
 1. Criar o sistema de arquivos no novo dispositivo RAID
    
-     a. **CentOS, Oracle Linux, SLES 12, openSUSE e Ubuntu**
+    a. **CentOS, Oracle Linux, SLES 12, openSUSE e Ubuntu**
 
     ```bash   
     sudo mkfs -t ext4 /dev/md127

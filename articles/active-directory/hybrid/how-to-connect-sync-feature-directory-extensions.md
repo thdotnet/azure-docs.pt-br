@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ff0fd4d01eab739b79685c1de67cb8fe28873961
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60347936"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Sincronização do Azure AD Connect: Extensões de diretório
@@ -35,7 +35,7 @@ Configure quais atributos adicionais você deseja sincronizar no caminho de conf
 
 ![Assistente de extensão de esquema](./media/how-to-connect-sync-feature-directory-extensions/extension2.png)  
 
- A instalação mostra os seguintes atributos, que são candidatos válidos:
+A instalação mostra os seguintes atributos, que são candidatos válidos:
 
 * Tipos de objeto de Usuário e de Grupo
 * Atributos de valor único: cadeia de caracteres, booliano, inteiro, binário
@@ -62,7 +62,7 @@ Esses atributos agora estão disponíveis por meio da API do Microsoft Azure AD 
 Ou você pode consultar os atributos através da API do Microsoft Graph, usando o [Explorador do Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer#).
 
 >[!NOTE]
-> É necessário solicitar que o atributo seja retornado. Selecione explicitamente atributos como este: https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com?$select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division. 
+> É necessário solicitar que o atributo seja retornado. Selecione explicitamente atributos como este: https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com? $select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division. 
 >
 > Para obter mais informações, consulte [Microsoft Graph: usar parâmetros de consulta](https://developer.microsoft.com/graph/docs/concepts/query_parameters#select-parameter).
 

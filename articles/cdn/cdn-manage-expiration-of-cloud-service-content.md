@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 02/15/2018
 ms.author: magattus
 ms.openlocfilehash: c21ae227d74442be5701dd906180392b1e0fdf8b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60636635"
 ---
 # <a name="manage-expiration-of-web-content-in-azure-cdn"></a>Gerenciar a expiração do conteúdo da Web na CDN do Azure
@@ -72,7 +72,7 @@ O método preferencial para configurar um cabeçalho `Cache-Control` do servidor
 
 1. Em **Personalizar regras de cache**, crie duas condições de combinação:
 
-      a. Para a primeira condição de correspondência, ajuste **Condição de correspondência** para **Path** e insira `/webfolder1/*` para o **Valor de correspondência**. Defina o **Comportamento de cache**  para **Substituição** e insira 4 na caixa **Horas**.
+     a. Para a primeira condição de correspondência, ajuste **Condição de correspondência** para **Path** e insira `/webfolder1/*` para o **Valor de correspondência**. Defina o **Comportamento de cache**  para **Substituição** e insira 4 na caixa **Horas**.
 
      b. Para a segunda condição de correspondência, ajuste **Condição de correspondência** para **Path** e insira `/webfolder1/file1.txt` para o **Valor de correspondência**. Defina o **Comportamento de cache**  para **Substituição** e insira 2 na caixa **Horas**.
 

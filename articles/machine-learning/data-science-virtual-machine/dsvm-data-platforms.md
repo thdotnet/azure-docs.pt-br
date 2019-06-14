@@ -17,10 +17,10 @@ ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: gokuma
 ms.openlocfilehash: 27e0deae9c35ad8fa00659e3e3e505cace6e9014
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60516490"
 ---
 # <a name="data-platforms-supported-on-the-data-science-virtual-machine"></a>Plataformas de dados compatíveis com a Máquina Virtual de Ciência de Dados
@@ -34,7 +34,7 @@ A seguir estão as ferramentas de plataforma de dados com suporte na DSVM.
 | | |
 | ------------- | ------------- |
 | O que é?   | Uma instância de banco de dados relacional local      |
-| Edições do DSVM com suporte      |  Windows      |
+| Edições do DSVM com suporte      | Windows      |
 | Usos típicos      | Desenvolvimento rápido localmente com o menor conjunto de dados <br/> Executar R no banco de dados   |
 | Links para exemplos      |    Uma pequena amostra do Conjunto de Dados de Nova Iorque é carregada para o banco de dados SQL `nyctaxi`. <br/> Exemplo do Jupyter mostrando Microsoft R e análise no banco de dados pode ser encontrado em:<br/> `~notebooks/SQL_R_Services_End_to_End_Tutorial.ipynb`  |
 | Ferramentas relacionadas ao DSVM       | SQL Server Management Studio <br/> Drivers ODBC/JDBC<br/> pyodbc, RODBC<br />Análise do Apache      |
@@ -101,7 +101,7 @@ Você pode interromper os serviços Hadoop relacionados quando não precisar mai
 ### <a name="how-is-it-configured--installed-on-the-dsvm"></a>Como é configurado/instalado no DSVM? 
 |Plataforma|Local de instalação ($SPARK_HOME)|
 |:--------|:--------|
-| Windows | c:\dsvm\tools\spark-X.X.X-bin-hadoopX.X|
+|Windows | c:\dsvm\tools\spark-X.X.X-bin-hadoopX.X|
 |Linux   | /dsvm/tools/spark-X.X.X-bin-hadoopX.X|
 
 

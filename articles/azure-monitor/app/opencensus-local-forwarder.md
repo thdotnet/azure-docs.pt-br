@@ -13,10 +13,10 @@ ms.date: 09/18/2018
 ms.reviewer: nimolnar
 ms.author: mbullwin
 ms.openlocfilehash: a7efe663a75fa29a31e7157c5eab24c2973a3758
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60699286"
 ---
 # <a name="local-forwarder-preview"></a>Encaminhador de local (versão prévia)
@@ -27,7 +27,7 @@ O encaminhador local é um agente que coleta telemetria do Application Insights 
 
 O encaminhador local é um [projeto de software livre no GitHub](https://github.com/Microsoft/ApplicationInsights-LocalForwarder/releases). Há várias formas de executar o encaminhador local em várias plataformas.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 #### <a name="windows-service"></a>Windows Service
 
@@ -35,7 +35,7 @@ A maneira mais fácil de executar o encaminhador local no Windows é instalando-
 
 > [!NOTE]
 > O serviço do encaminhador local exige, no mínimo, a versão 4.7 do .NET Framework. Se você não tiver o .NET Framework 4.7, o serviço será instalado, mas não será iniciado. Para acessar a versão mais recente do .NET Framework, **[visite a página de download do .NET Framework](
-https://www.microsoft.com/net/download/dotnet-framework-runtime/net472?utm_source=getdotnet&utm_medium=referral)**.
+https://www.microsoft.com/net/download/dotnet-framework-runtime/net472?utm_source=getdotnet&utm_medium=referral)** .
 
 1. Faça o download do arquivo LF.WindowsServiceHost.zip na [página de versão do encaminhador local](https://github.com/Microsoft/ApplicationInsights-LocalForwarder/releases) no GitHub.
 
@@ -146,7 +146,7 @@ systemctl enable localforwarder
 systemctl start localforwarder
 ```
 
-* Monitore o serviço inspecionando os arquivos **.log* no diretório /home/SAMPLE_USER/LOCALFORWARDER_DIR.
+* Monitore o serviço inspecionando os arquivos * *.log* no diretório /home/SAMPLE_USER/LOCALFORWARDER_DIR.
 
 ### <a name="mac"></a>Mac
 O encaminhador local pode funcionar com o macOS, mas ele não tem suporte oficial no momento.
@@ -177,7 +177,7 @@ host.Stop();
 
 ## <a name="monitoring-local-forwarder"></a>Como monitor o encaminhador local
 
-Os rastreamentos são gravados no sistema de arquivo ao lado do executável que executa o encaminhador local (procure os arquivos **.log*). É possível colocar um arquivo chamado *NLog.config* ao lado do executável para fornecer sua própria configuração em vez da configuração padrão. Confira a [documentação](https://github.com/NLog/NLog/wiki/Configuration-file#configuration-file-format) para obter a descrição do formato.
+Os rastreamentos são gravados no sistema de arquivo ao lado do executável que executa o encaminhador local (procure os arquivos * *.log*). É possível colocar um arquivo chamado *NLog.config* ao lado do executável para fornecer sua própria configuração em vez da configuração padrão. Confira a [documentação](https://github.com/NLog/NLog/wiki/Configuration-file#configuration-file-format) para obter a descrição do formato.
 
 Se nenhum arquivo de configuração for fornecido (o que é o padrão), o encaminhador local usará a configuração padrão, que pode ser encontrada [aqui](https://github.com/Microsoft/ApplicationInsights-LocalForwarder/blob/master/src/Common/NLog.config).
 

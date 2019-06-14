@@ -16,10 +16,10 @@ ms.date: 07/12/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8199f106c234e216a0982dc9e51413ccf30ae93a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60268701"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jobscience"></a>Tutorial: Integração do Azure Active Directory ao Jobscience
@@ -50,7 +50,7 @@ Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 - Se você não tiver um ambiente de avaliação do Azure AD, é possível obter uma avaliação por um mês aqui: [Oferta de avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Descrição do cenário
-Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste.  O cenário descrito neste tutorial consiste em dois blocos de construção principais:
+Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste. O cenário descrito neste tutorial consiste em dois blocos de construção principais:
 
 1. Adicionando o Jobscience por meio da galeria
 1. configurar e testar o logon único do AD do Azure
@@ -60,7 +60,7 @@ Para configurar a integração do Jobscience ao Azure AD, é necessário adicion
 
 **Para adicionar o Jobscience por meio da galeria, realize as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
 
     ![Active Directory][1]
 
@@ -152,7 +152,7 @@ Nesta seção, você habilita o logon único do Azure AD no portal do Azure e co
     
     ![Configurações de Logon Único](./media/jobscience-tutorial/ic781026.png "Configurações de Logon Único")
     
-     a. Selecione **SAML Habilitado**.
+    a. Selecione **SAML Habilitado**.
 
     b. Clique em **Novo**.
 
@@ -160,7 +160,7 @@ Nesta seção, você habilita o logon único do Azure AD no portal do Azure e co
     
     ![Configurações de Logon Único do SAML](./media/jobscience-tutorial/ic784365.png "Configurações de Logon Único do SAML")
     
-     a. Na caixa de texto **Nome** , digite um nome para a sua configuração.
+    a. Na caixa de texto **Nome** , digite um nome para a sua configuração.
 
     b. Na caixa de texto **Emissor**, cole o valor da **ID da Entidade SAML** copiado do portal do Azure.
 
@@ -256,7 +256,7 @@ Para permitir que os usuários do Azure AD façam logon no Jobscience, eles deve
    
    ![Editar Usuário](./media/jobscience-tutorial/ic784371.png "Editar Usuário")
    
-    a. Na caixa de texto **Nome**, digite um nome do usuário, como Brenda.
+   a. Na caixa de texto **Nome**, digite um nome do usuário, como Brenda.
    
    b. Na caixa de texto **Sobrenome**, digite um sobrenome do usuário, como Fernandes.
    

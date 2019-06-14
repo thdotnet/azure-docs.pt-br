@@ -12,10 +12,10 @@ ms.date: 11/29/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: d26bc6044ca106b0f081cee5a39405b4b78ce7ac
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60303821"
 ---
 # <a name="the-team-data-science-process-in-action-use-azure-hdinsight-hadoop-clusters"></a>O Processo de Ciência de Dados da Equipe na prática: Use os clusters do Azure HDInsight Hadoop
@@ -761,7 +761,7 @@ Agora você pode continuar a criação e a implantação do modelo no [Machine L
 
   **O aprendiz usou:** Regressão logística de duas classes
 
-   a. Para esse problema, o rótulo (ou a classe) de destino é **tipped**. O conjunto de dados original convertidos tem algumas colunas que são vazamentos de destino para esse teste de classificação. Em particular, **tip\_class**, **tip\_amount** e **total\_amount** revelam informações sobre o rótulo de destino que não estão disponíveis no momento do teste. Deixamos de considerar essas colunas usando o módulo [Selecionar Colunas no Conjunto de Dados][select-columns].
+  a. Para esse problema, o rótulo (ou a classe) de destino é **tipped**. O conjunto de dados original convertidos tem algumas colunas que são vazamentos de destino para esse teste de classificação. Em particular, **tip\_class**, **tip\_amount** e **total\_amount** revelam informações sobre o rótulo de destino que não estão disponíveis no momento do teste. Deixamos de considerar essas colunas usando o módulo [Selecionar Colunas no Conjunto de Dados][select-columns].
 
   O seguinte diagrama mostra nosso experimento para prever se uma gorjeta foi paga ou não para determinada corrida:
 
@@ -781,7 +781,7 @@ Agora você pode continuar a criação e a implantação do modelo no [Machine L
 
   **O aprendiz usou:** Regressão logística de multiclasse
 
-   a. Para esse problema, nosso rótulo (ou nossa classe) de destino é **tip\_class**, que pode ter um dos cinco valores (0, 1, 2, 3 ou 4). Como no caso de classificação binária, temos algumas colunas que são vazamentos de destino para esse experimento. Em particular, **tipped**, **tip\_amount** e **total\_amount** revelam informações sobre o rótulo de destino que não estão disponíveis no momento do teste. Removemos essas colunas usando o módulo [Selecionar Colunas no Conjunto de Dados][select-columns].
+  a. Para esse problema, nosso rótulo (ou nossa classe) de destino é **tip\_class**, que pode ter um dos cinco valores (0, 1, 2, 3 ou 4). Como no caso de classificação binária, temos algumas colunas que são vazamentos de destino para esse experimento. Em particular, **tipped**, **tip\_amount** e **total\_amount** revelam informações sobre o rótulo de destino que não estão disponíveis no momento do teste. Removemos essas colunas usando o módulo [Selecionar Colunas no Conjunto de Dados][select-columns].
 
   O diagrama a seguir mostra o experimento para prever em qual compartimento uma gorjeta provavelmente se enquadrará. Os compartimentos são: Classe 0: gorjeta = $0, Classe 1: gorjeta > $0 e gorjeta <= $5, Classe 2: gorjeta > $5 e gorjeta <= $10, Classe 3: gorjeta > $10 e gorjeta <= $20 e Classe 4: gorjeta > $20.
 
@@ -801,7 +801,7 @@ Agora você pode continuar a criação e a implantação do modelo no [Machine L
 
   **O aprendiz usou:** Árvore de decisão aumentada
 
-   a. Para esse problema, o rótulo (ou a classe) de destino é **tip\_amount**. As perdas de destino nesse caso são: **tipped**, **tip\_class** e **total\_amount**. Todas essas variáveis revelam informações sobre o valor da gorjeta que normalmente não estão disponíveis no momento do teste. Removemos essas colunas usando o módulo [Selecionar Colunas no Conjunto de Dados][select-columns].
+  a. Para esse problema, o rótulo (ou a classe) de destino é **tip\_amount**. As perdas de destino nesse caso são: **tipped**, **tip\_class** e **total\_amount**. Todas essas variáveis revelam informações sobre o valor da gorjeta que normalmente não estão disponíveis no momento do teste. Removemos essas colunas usando o módulo [Selecionar Colunas no Conjunto de Dados][select-columns].
 
   O seguinte diagrama mostra o experimento para prever o valor da gorjeta oferecida:
 

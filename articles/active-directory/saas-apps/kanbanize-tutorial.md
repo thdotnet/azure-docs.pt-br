@@ -16,10 +16,10 @@ ms.date: 07/12/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 22c136225e5a8526afd482e5ef8400198947422f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60263587"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kanbanize"></a>Tutorial: Integração do Azure Active Directory com o Kanbanize
@@ -50,7 +50,7 @@ Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 - Se não tiver um ambiente de avaliação do Azure AD, você pode [obter uma versão de avaliação de um mês](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Descrição do cenário
-Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste.  O cenário descrito neste tutorial consiste em dois blocos de construção principais:
+Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste. O cenário descrito neste tutorial consiste em dois blocos de construção principais:
 
 1. Adicionar o Kanbanize da Galeria
 2. configurar e testar o logon único do AD do Azure
@@ -60,7 +60,7 @@ Para configurar a integração do Kanbanize com o Azure AD, você precisará adi
 
 **Para adicionar o Kanbanize da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
 
     ![O botão Azure Active Directory][1]
 
@@ -108,7 +108,7 @@ Nesta seção, você habilitará o logon único do Azure AD no Portal do Azure e
 
     ![Informações de logon único de Domínio e URLs do Kanbanize](./media/kanbanize-tutorial/tutorial_kanbanize_url.png)
 
-     a. Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão: `https://<subdomain>.kanbanize.com/`
+    a. Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão: `https://<subdomain>.kanbanize.com/`
 
     b. Na caixa de texto **URL de resposta**, digite uma URL no seguinte padrão: `https://<subdomain>.kanbanize.com/saml/acs`
 
@@ -155,7 +155,7 @@ Nesta seção, você habilitará o logon único do Azure AD no Portal do Azure e
 
     ![Integrações do Kanbanize](./media/kanbanize-tutorial/tutorial_kanbanize_save.png)
 
-     a. Na caixa de texto **ID da Entidade de Idp**, cole o valor da **ID da Entidade SAML** copiado do portal do Azure.
+    a. Na caixa de texto **ID da Entidade de Idp**, cole o valor da **ID da Entidade SAML** copiado do portal do Azure.
 
     b. Na caixa de texto **Ponto de Extremidade de Logon do IdP**, cole o valor da **URL do Serviço de Logon Único SAML** copiado do portal do Azure.
 

@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 11/14/2018
 ms.openlocfilehash: 712ccfa71c85629111428a4e0c7acaea050942b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60331326"
 ---
 # <a name="automate-the-replication-of-schema-changes-in-azure-sql-data-sync"></a>Automatize a replicação de alterações de esquema no Azure SQL Data Sync
@@ -186,7 +186,7 @@ A lógica de replicação descrita neste artigo para de funcionar em algumas sit
 
 1.  Consulte a tabela para listar todos os comandos com uma ID maior que o valor de ID recuperado na etapa anterior de controle de alterações de esquema.
 
-     a.  Ignore os comandos que não podem ser executados no banco de dados do ponto de extremidade. Você precisa lidar com a inconsistência de esquema. Reverta as alterações do esquema original se a inconsistência afetar seu aplicativo.
+    a.  Ignore os comandos que não podem ser executados no banco de dados do ponto de extremidade. Você precisa lidar com a inconsistência de esquema. Reverta as alterações do esquema original se a inconsistência afetar seu aplicativo.
 
     b.  Aplica manualmente os comandos que devem ser aplicados.
 

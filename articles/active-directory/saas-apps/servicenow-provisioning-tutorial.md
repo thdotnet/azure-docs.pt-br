@@ -17,10 +17,10 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 19b3e4cc5ba4bc0173721947bd1e1a680ca7b3a3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60869820"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning-with-azure-active-directory"></a>Tutorial: Configurar o ServiceNow para provisionamento automático de usuários com o Azure Active Directory
@@ -79,13 +79,13 @@ Esta seção explica como conectar o Azure AD à API de provisionamento de conta
 
 1. Na seção “Credenciais de Administrador”, realize as seguintes etapas:
    
-     a. Na caixa de texto **Nome de Instância do ServiceNow** , digite o nome da instância do ServiceNow.
+    a. Na caixa de texto **Nome de Instância do ServiceNow** , digite o nome da instância do ServiceNow.
 
     b. Na caixa de texto **Nome de Usuário do Administrador do ServiceNow**, digite o nome de usuário de um administrador.
 
     c. Na caixa de texto **Senha do Administrador do ServiceNow**, digite a senha do administrador.
 
-1. No portal do Azure, clique em **Testar conectividade** para garantir que o Azure AD pode se conectar ao aplicativo ServiceNow. Se a conexão falhar, verifique se a sua conta do ServiceNow tem permissões de Administrador de Equipe e repita a etapa **"Credenciais de Administrador"**.
+1. No portal do Azure, clique em **Testar conectividade** para garantir que o Azure AD pode se conectar ao aplicativo ServiceNow. Se a conexão falhar, verifique se a sua conta do ServiceNow tem permissões de Administrador de Equipe e repita a etapa **"Credenciais de Administrador"** .
 
 1. Insira o endereço de email de uma pessoa ou um grupo que deve receber notificações de erro de provisionamento no campo **Email de Notificação** e marque a caixa de seleção.
 

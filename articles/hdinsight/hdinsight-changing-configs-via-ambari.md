@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: hrasheed
 ms.openlocfilehash: f0db36fa380d0d1bb7f2b581c4bf8fa1abfaadaf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60698491"
 ---
 # <a name="use-apache-ambari-to-optimize-hdinsight-cluster-configurations"></a>Use o Apache Ambari para otimizar as configurações de cluster do HDInsight
@@ -178,10 +178,10 @@ Os tipos de compactação disponíveis são:
 
 | Formatar | Ferramenta | Algoritmo | Extensão de arquivo | Divisível? |
 | -- | -- | -- | -- | -- |
-| Gzip | Gzip | DEFLATE | .gz | Não  |
+| Gzip | Gzip | DEFLATE | .gz | Não |
 | Bzip2 | Bzip2 | Bzip2 |.bz2 | Sim |
 | LZO | Lzop | LZO | .lzo | Sim, se indexado |
-| Snappy | N/D | Snappy | Snappy | Não  |
+| Snappy | N/D | Snappy | Snappy | Não |
 
 Como regra geral, é importante que o método de compactação seja divisível. Caso contrário, poucos mapeadores serão criados. Se os dados de entrada forem texto, `bzip2` será a melhor opção. Para o formato ORC, o Snappy é a opção de compactação mais rápida.
 
@@ -196,7 +196,7 @@ Como regra geral, é importante que o método de compactação seja divisível. 
 
 1. Para adicionar uma configuração personalizada:
 
-     a. Navegue até a guia **Configurações** do Hive e selecione a guia **Avançado**.
+    a. Navegue até a guia **Configurações** do Hive e selecione a guia **Avançado**.
 
     b. Na guia **Avançado**, localize e expanda o painel **hive-site personalizado**.
 

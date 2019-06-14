@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.author: raynew
 manager: carmonm
 ms.openlocfilehash: 704bb409d2b21e2ae258dbb2d627b1c088d80db7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60254645"
 ---
 # <a name="support-matrix-for-backup-with-microsoft-azure-backup-server-or-system-center-dpm"></a>Matriz de suporte para backup com o servidor de Backup do Microsoft Azure ou o System Center DPM
@@ -75,7 +75,7 @@ O Backup do Azure pode fazer backup de instâncias MABS/DPM que estão executand
 
 **Cenário** | **DPM/MABS** 
 --- | --- 
-**MABS na VM do Azure** |  Windows Server 2012 R2.<br/><br/> Windows 2016 Datacenter.<br/><br/> Datacenter do Windows de 2019.<br/><br/> É recomendável que você comece com uma imagem do marketplace.<br/><br/> Mínimo A2 Standard com dois núcleos e 3,5 GB de RAM. 
+**MABS na VM do Azure** | Windows Server 2012 R2.<br/><br/> Windows 2016 Datacenter.<br/><br/> Datacenter do Windows de 2019.<br/><br/> É recomendável que você comece com uma imagem do marketplace.<br/><br/> Mínimo A2 Standard com dois núcleos e 3,5 GB de RAM. 
 **DPM na VM do Azure** | System Center 2012 R2 com atualização 3 ou posterior.<br/><br/> Sistema de operacional Windows conforme [exigido pelo System Center](https://docs.microsoft.com/system-center/dpm/prepare-environment-for-dpm?view=sc-dpm-1807#dpm-server).<br/><br/> É recomendável que você comece com uma imagem do marketplace.<br/><br/> Mínimo A2 Standard com dois núcleos e 3,5 GB de RAM. 
 **O MABS no local** | Sistemas operacionais de 64 bits compatíveis:<br/><br/> O MABS v3 e posterior: Windows Server 2019 (Standard, Datacenter, Essentials). <br/><br/> O MABS v2 e posterior: Windows Server 2016 (Standard, Datacenter, Essentials).<br/><br/> Todas as versões do MABS: Windows Server 2012 R2, Windows Server 2012 (Standard, Datacenter, Foundation).<br/><br/>Todas as versões do MABS: Windows Storage Server 2012 R2, Windows Server 2012 (Standard, Workgroup).
 **O DPM no local** | Servidor físico/VM do Hyper-V: System Center 2012 SP1 ou posterior.<br/><br/> VM do VMware: System Center 2012 R2 com atualização 5 ou posterior. 

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
 ms.openlocfilehash: 938801148b175456553865b54d59271021811401
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60873294"
 ---
 # <a name="enterprise-push-architectural-guidance"></a>Orientação arquitetural do push corporativo
@@ -69,7 +69,7 @@ O código de exemplo completo está disponível em [Exemplos do Hub de Notifica�
 
 1. **EnterprisePushBackendSystem**
 
-     a. Este projeto usa o pacote **WindowsAzure.ServiceBus** do Nuget e é baseado na [Programação do Barramento de Serviço Pub/Sub].
+    a. Este projeto usa o pacote **WindowsAzure.ServiceBus** do Nuget e é baseado na [Programação do Barramento de Serviço Pub/Sub].
 
     b. Este aplicativo é um aplicativo de console em C# simples para simular um sistema LoB que inicia a mensagem a ser entregue ao aplicativo móvel.
 
@@ -138,7 +138,7 @@ O código de exemplo completo está disponível em [Exemplos do Hub de Notifica�
     ```
 2. **ReceiveAndSendNotification**
 
-     a. Este projeto usa os pacotes *WindowsAzure.ServiceBus* e **Microsoft.Web.WebJobs.Publish** do Nuget e se baseia na [Programação do Barramento de Serviço Pub/Sub].
+    a. Este projeto usa os pacotes *WindowsAzure.ServiceBus* e **Microsoft.Web.WebJobs.Publish** do Nuget e se baseia na [Programação do Barramento de Serviço Pub/Sub].
 
     b. O aplicativo de console a seguir é executado como um [Trabalho Web do Azure] porque ele precisa ser executado continuamente para ouvir mensagens dos sistemas LoB/back-end. Este aplicativo faz parte do seu back-end móvel.
 
@@ -238,7 +238,7 @@ O código de exemplo completo está disponível em [Exemplos do Hub de Notifica�
 
 3. **EnterprisePushMobileApp**
 
-     a. Este é um aplicativo da Windows Store que recebe notificações do WebJob em execução como parte do back-end móvel e as exibe. Este código se baseia em [Hubs de Notificação - tutorial universal do Windows].  
+    a. Este é um aplicativo da Windows Store que recebe notificações do WebJob em execução como parte do back-end móvel e as exibe. Este código se baseia em [Hubs de Notificação - tutorial universal do Windows].  
 
     b. Certifique-se de que seu aplicativo está habilitado para receber notificações do sistema.
 

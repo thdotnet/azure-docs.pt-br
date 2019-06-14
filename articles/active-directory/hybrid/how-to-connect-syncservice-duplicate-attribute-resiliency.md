@@ -17,13 +17,13 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a65af5a5ea0629b617c4e736d8c110cbb9aa540c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60348752"
 ---
-# <a name="identity-synchronization-and-duplicate-attribute-resiliency"></a>Sincronização de identidades e resiliência do atributo duplicado 
+# <a name="identity-synchronization-and-duplicate-attribute-resiliency"></a>Sincronização de identidades e resiliência do atributo duplicado
 A Resiliência do Atributo Duplicado é um recurso do Azure Active Directory que eliminará o atrito causado por conflitos de **UserPrincipalName** e **ProxyAddress** ao executar uma das ferramentas de sincronização da Microsoft.
 
 Esses dois atributos geralmente precisam ser exclusivos em todos os objetos **User**, **Group** ou **Contact** em um determinado locatário do Azure Active Directory.
@@ -45,7 +45,7 @@ Se o atributo não for necessário, como um **ProxyAddress**, o Azure Active Dir
 
 Ao colocar em quarentena o atributo, as informações sobre o conflito são enviadas no mesmo email de relatório de erro usado no antigo comportamento. No entanto, essas informações só aparecem no relatório de erro uma vez, quando ocorre a quarentena; elas não continuam a ser registradas em log em emails futuros. Além disso, uma vez que a exportação deste objeto foi bem-sucedida, o cliente de sincronização não registra em log um erro nem tenta repetir a operação para criar/atualizar nos ciclos de sincronização subsequentes.
 
-Para dar suporte a esse comportamento, foi adicionado um novo atributo às classes de objeto User, Group e Contact:   
+Para dar suporte a esse comportamento, foi adicionado um novo atributo às classes de objeto User, Group e Contact:  
 **DirSyncProvisioningErrors**
 
 Este é um atributo com valores múltiplos usado para armazenar os atributos conflitantes que violariam a restrição de exclusividade, caso adicionados normalmente. Uma tarefa de temporizador em segundo plano foi habilitada no Azure Active Directory, que é executada a cada hora para procurar por conflitos de atributo duplicado que foram resolvidos e remove automaticamente os atributos em questão da quarentena.
@@ -90,7 +90,7 @@ Uma vez conectado, para ver uma lista geral dos erros de provisionamento do atri
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict`
 
-Isso produz um resultado semelhante ao seguinte:   
+Isso produz um resultado semelhante ao seguinte:  
  ![Get-MsolDirSyncProvisioningError](./media/how-to-connect-syncservice-duplicate-attribute-resiliency/1.png "Get-MsolDirSyncProvisioningError")  
 
 #### <a name="by-property-type"></a>Por Tipo de Propriedade
@@ -103,7 +103,7 @@ Ou
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName ProxyAddresses`
 
 #### <a name="by-conflicting-value"></a>Por Valor Conflitante
-Para ver os erros relacionados a uma propriedade específica, adicione o sinalizador **-PropertyValue** (**-PropertyName** também deve ser usado ao adicionar esse sinalizador):
+Para ver os erros relacionados a uma propriedade específica, adicione o sinalizador **-PropertyValue** ( **-PropertyName** também deve ser usado ao adicionar esse sinalizador):
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyValue User@domain.com -PropertyName UserPrincipalName`
 
@@ -128,7 +128,7 @@ Para obter instruções sobre como exibir erros de sincronização de diretório
 ### <a name="identity-synchronization-error-report"></a>Relatório de erros de sincronização de identidades
 Quando um objeto com um conflito de atributo duplicado é tratado com esse novo comportamento, uma notificação é incluída no email padrão do Relatório de Erros de Sincronização de Identidades enviado para o contato de Notificação Técnica do locatário. No entanto, há uma alteração importante nesse comportamento. No passado, as informações sobre um conflito de atributo duplicado eram incluídas em todos os relatórios de erro subsequentes até o conflito ser resolvido. Com esse novo comportamento, a notificação de erro para determinado conflito só aparece uma vez, no momento em que o atributo conflitante está de quarentena.
 
-Este é exemplo da aparência da notificação por email de um conflito ProxyAddress:   
+Este é exemplo da aparência da notificação por email de um conflito ProxyAddress:  
     ![Usuários ativos](./media/how-to-connect-syncservice-duplicate-attribute-resiliency/6.png "Usuários ativos")  
 
 ## <a name="resolving-conflicts"></a>Resolução de conflitos
@@ -142,9 +142,9 @@ Nenhum desses problemas conhecidos causa degradação do serviço nem a perda de
 **Comportamento básico:**
 
 1. Os objetos com configurações de atributo específicas continuam a receber erros de exportação em vez de colocar os atributos duplicados em quarentena.  
-   Por exemplo: 
+   Por exemplo:
    
-     a. Novo usuário é criado no AD com o UPN **Joe\@contoso.com** e o ProxyAddress **smtp:Joe\@contoso.com**
+    a. Novo usuário é criado no AD com o UPN **Joe\@contoso.com** e o ProxyAddress **smtp:Joe\@contoso.com**
    
     b. As propriedades desse objeto em conflito com um grupo existente, onde é o ProxyAddress **SMTP:Joe\@contoso.com**.
    
@@ -154,9 +154,9 @@ Nenhum desses problemas conhecidos causa degradação do serviço nem a perda de
 **Relatório do Portal do Office**:
 
 1. A mensagem de erro detalhada para dois objetos em um conjunto de conflitos UPN é a mesma. Isso indica que ambos tiveram seus UPNS alterados/colocados em quarentena, quando, na verdade, apenas um deles teve os dados alterados.
-2. A mensagem de erro detalhada de um conflito UPN mostra o displayName incorreto para um usuário que teve seu UPN alterado/colocado em quarentena. Por exemplo: 
+2. A mensagem de erro detalhada de um conflito UPN mostra o displayName incorreto para um usuário que teve seu UPN alterado/colocado em quarentena. Por exemplo:
    
-     a. **O usuário A** é sincronizado primeiro com **UPN = User\@contoso.com**.
+    a. **O usuário A** é sincronizado primeiro com **UPN = User\@contoso.com**.
    
     b. **O usuário B** tentou ser sincronizado em seguida com **UPN = User\@contoso.com**.
    

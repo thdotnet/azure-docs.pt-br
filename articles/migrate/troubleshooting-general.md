@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: raynew
 ms.openlocfilehash: dff3c96cf3ac8eea7c1160ee1834cc70390c0333
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60533216"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Solucionar problemas das Migrações para Azure
@@ -34,7 +34,7 @@ O dispositivo de descoberta contínua apenas coleta dados de desempenho continua
 Quando você exclui um projeto de Migrações para Azure, o projeto de migração é excluído juntamente com todos os grupos e avaliações. No entanto, se você anexou um espaço de trabalho do Log Analytics ao projeto, ele não exclui automaticamente o espaço de trabalho do Log Analytics. Isso ocorre porque o mesmo espaço de trabalho do Log Analytics pode ser usado para vários casos de uso. Se você desejar excluir o espaço de trabalho do Log Analytics, precisará fazer isso manualmente.
 
 1. Navegue até o espaço de trabalho do Log Analytics associado ao projeto.
-    a. Se você ainda não excluiu o projeto de migração, poderá encontrar o link para o workspace na página de visão geral do projeto, na seção Essenciais.
+   a. Se você ainda não excluiu o projeto de migração, poderá encontrar o link para o workspace na página de visão geral do projeto, na seção Essenciais.
 
    ![Workspace do LA](./media/troubleshooting-general/LA-workspace.png)
 
@@ -53,13 +53,13 @@ Se você não conseguir exportar o relatório de avaliação do portal, tente us
 
 1. Instale *armclient* em seu computador (se você já não tiver instalado):
 
-    a. Em uma janela de Prompt de Comando do administrador, execute o seguinte comando: ```@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"```
+   a. Em uma janela de Prompt de Comando do administrador, execute o seguinte comando: ```@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"```
 
    b. Em uma janela do Windows PowerShell do administrador, execute o seguinte comando: ```choco install armclient```
 
 2. Obter a URL de download para o relatório de avaliação usando a API REST de Migrações para Azure
 
-    a.    Em uma janela do Windows PowerShell do administrador, execute o seguinte comando: ```armclient login```
+   a.    Em uma janela do Windows PowerShell do administrador, execute o seguinte comando: ```armclient login```
 
         This opens the Azure login pop-up where you need to sign in to Azure.
 
@@ -156,7 +156,7 @@ Esse problema pode ocorrer devido a um problema com a instalação do VMware Pow
 1. Se você não estiver usando a versão mais recente do dispositivo coletor, [atualize o coletor para a versão mais recente](https://aka.ms/migrate/col/checkforupdates) e verifique se o problema for resolvido.
 2. Se você já tiver a última versão do coletor, siga as etapas abaixo para fazer uma instalação limpa do PowerCLI:
 
-    a. Feche o navegador da Web no dispositivo.
+   a. Feche o navegador da Web no dispositivo.
 
    b. Interrompa o serviço 'Coletor de Migrações para Azure' acessando o Windows Service Manager (Abra 'Executar' e digite services.msc para abrir o Windows Service Manager). Clique com o botão direito do mouse no serviço Coletor de Migrações para Azure e clique em Parar.
 
@@ -169,7 +169,7 @@ Esse problema pode ocorrer devido a um problema com a instalação do VMware Pow
 
 3. Se as opções acima não resolver o problema, siga as etapas um a c acima e, em seguida, instale manualmente o PowerCLI no dispositivo usando as seguintes etapas:
 
-    a. Limpar PowerCLI incompleta todos os arquivos de instalação, seguindo as etapas #a para #c na etapa #2 acima.
+   a. Limpar PowerCLI incompleta todos os arquivos de instalação, seguindo as etapas #a para #c na etapa #2 acima.
 
    b. Vá para Iniciar > Executar > PowerShell(x86) aberta do Windows no modo de administrador
 
@@ -181,7 +181,7 @@ Esse problema pode ocorrer devido a um problema com a instalação do VMware Pow
 
 4. Se não for possível baixar o módulo no dispositivo devido a problemas de firewall, baixe e instale o módulo em um computador que tenha acesso à internet usando as seguintes etapas:
 
-     a. Limpar PowerCLI incompleta todos os arquivos de instalação, seguindo as etapas #a para #c na etapa #2 acima.
+    a. Limpar PowerCLI incompleta todos os arquivos de instalação, seguindo as etapas #a para #c na etapa #2 acima.
 
     b. Vá para Iniciar > Executar > PowerShell(x86) aberta do Windows no modo de administrador
 

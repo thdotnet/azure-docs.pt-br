@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: jingwang
 ms.openlocfilehash: 6a7e0a27d3cda4193a04467d541f851a9e57fa46
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60547906"
 ---
 # <a name="load-data-into-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Carregar dados no SQL Data Warehouse usando o Azure Data Factory
@@ -53,7 +53,7 @@ Este artigo mostra como usar a ferramenta de cópia de dados do Data Factory par
       
    ![Página de novo data factory](./media/load-azure-sql-data-warehouse/new-azure-data-factory.png)
  
-    * **Nome**: Insira um nome globalmente exclusivo para o Azure Data Factory. Se você receber o erro "Nome do Data factory \"LoadSQLDWDemo\" não está disponível," digite um nome diferente para o data factory. Por exemplo, use o nome _**seunome**_**ADFTutorialDataFactory**. Tente criar o data factory novamente. Para ver as regras de nomenclatura de artefatos do Data Factory, confira [Regras de nomenclatura do Data Factory](naming-rules.md).
+    * **Nome**: Insira um nome globalmente exclusivo para o Azure Data Factory. Se você receber o erro "Nome do Data factory \"LoadSQLDWDemo\" não está disponível," digite um nome diferente para o data factory. Por exemplo, use o nome _**seunome**_ **ADFTutorialDataFactory**. Tente criar o data factory novamente. Para ver as regras de nomenclatura de artefatos do Data Factory, confira [Regras de nomenclatura do Data Factory](naming-rules.md).
     * **Assinatura**: Selecione a assinatura do Azure para criar o Data Factory. 
     * **Grupo de recursos**: Selecione um grupo de recursos existente na lista suspensa ou selecione a opção **Criar novo** e insira o nome de um grupo de recursos. Para saber mais sobre grupos de recursos, consulte [Usando grupos de recursos para gerenciar recursos do Azure](../azure-resource-manager/resource-group-overview.md).  
     * **Versão**: Selecione **V2**.
@@ -77,7 +77,7 @@ Este artigo mostra como usar a ferramenta de cópia de dados do Data Factory par
 
 1. Na página **Armazenamento de dados de origem**, conclua as etapas a seguir:
 
-     a. clique em **+ Cria nova conexão**:
+    a. clique em **+ Cria nova conexão**:
 
     ![Página Armazenamento de dados de origem](./media/load-azure-sql-data-warehouse/new-source-linked-service.png)
 
@@ -99,7 +99,7 @@ Este artigo mostra como usar a ferramenta de cópia de dados do Data Factory par
 
 1. Na página **Armazenamento de dados de destino**, conclua as etapas a seguir:
 
-     a. Clique em **+ Criar nova conexão** para adicionar uma conexão
+    a. Clique em **+ Criar nova conexão** para adicionar uma conexão
 
     ![Página de armazenamento de dados do coletor](./media/load-azure-sql-data-warehouse/new-sink-linked-service.png)
 
@@ -128,7 +128,7 @@ Este artigo mostra como usar a ferramenta de cópia de dados do Data Factory par
 
 1. Na página **Configurações**, execute as seguintes etapas:
 
-     a. Na seção **Configurações de preparo**, clique em **+ Novo** para criar um novo armazenamento de preparo. O armazenamento é usado para preparar os dados antes de serem carregados no SQL Data Warehouse usando o PolyBase. Depois que a cópia for concluída, os dados provisórios no Azure Storage serão limpos automaticamente. 
+    a. Na seção **Configurações de preparo**, clique em **+ Novo** para criar um novo armazenamento de preparo. O armazenamento é usado para preparar os dados antes de serem carregados no SQL Data Warehouse usando o PolyBase. Depois que a cópia for concluída, os dados provisórios no Azure Storage serão limpos automaticamente. 
 
     ![Configure o preparo](./media/load-azure-sql-data-warehouse/configure-staging.png)
 

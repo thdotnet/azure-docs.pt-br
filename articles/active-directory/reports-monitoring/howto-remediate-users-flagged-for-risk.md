@@ -16,10 +16,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7209f468f493e226fae22ccd260e8ceb2e570494
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60286667"
 ---
 # <a name="remediate-users-flagged-for-risk-in-the-azure-active-directory-portal"></a>Corrigir usuários sinalizados como de risco no portal do Azure Active Directory
@@ -63,7 +63,7 @@ Execute as seguintes ações para ajudar a corrigir as contas afetadas e protege
 2.  [Ative a autenticação multi fator](https://aka.ms/MFAuth) para todos os usuários. 
 3.  Use esta [script de correção](https://aka.ms/remediate) para cada conta afetada, para executar automaticamente as etapas a seguir: 
 
-     a. Redefina a senha para proteger a conta e elimine as sessões ativas.
+    a. Redefina a senha para proteger a conta e elimine as sessões ativas.
 
     b. Remover representantes de caixa de correio.
 

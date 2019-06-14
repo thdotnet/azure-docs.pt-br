@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako;anilmur
 ms.openlocfilehash: c168182f0b34329ed3e72e90ce86456dfbe210ca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61217144"
 ---
 # <a name="live-streaming-using-azure-media-services-to-create-multi-bitrate-streams"></a>Transmissão ao vivo usando os Serviços de Mídia do Azure para criar fluxos de múltiplas taxas de bits
@@ -72,7 +72,7 @@ A tabela a seguir mostra como os estados de canal são mapeados para o modo de c
 | Iniciando |Iniciando |Nenhum (estado transitório) |
 | Executando |Pronto (nenhum programa em execução)<br/>ou o<br/>Streaming (há pelo menos um programa em execução) |SIM |
 | Parando |Parando |Nenhum (estado transitório) |
-| Parado |Parado |Não  |
+| Parado |Parado |Não |
 
 ### <a name="automatic-shut-off-for-unused-channels"></a>Desligamento automático para canais não usados
 A partir de 25 de janeiro de 2016, os Serviços de Mídia distribuíram uma atualização que interrompe automaticamente um canal (com codificação ativa desabilitada) depois que ele tiver sido executado em um estado não utilizado por um longo período. Isso se aplica aos canais que não tem programas ativos e que não receberam um feed de contribuição de entrada por um período de tempo estendido.
@@ -124,7 +124,7 @@ A seguir, as etapas gerais envolvidas na criação de aplicativos comuns de stre
 ### <a id="Ingest_Protocols"></a>Protocolo de streaming de ingestão
 Se o **Tipo de codificador** está definido como **Standard**, as opções válidas são:
 
-*  **RTMP**
+* **RTMP**
 * **MP4 fragmentado** de taxa de bits única (Smooth Streaming)
 
 #### <a id="single_bitrate_RTMP"></a>RTMP de taxa de bits única
@@ -315,7 +315,7 @@ A tabela a seguir mostra como os estados de canal são mapeados para o modo de c
 | Iniciando |Iniciando |Nenhum (estado transitório) |
 | Executando |Pronto (nenhum programa em execução)<br/>ou o<br/>Streaming (há pelo menos um programa em execução) |SIM |
 | Parando |Parando |Nenhum (estado transitório) |
-| Parado |Parado |Não  |
+| Parado |Parado |Não |
 
 > [!NOTE]
 > Atualmente, a média de início de Canal é de cerca de 2 minutos, mas às vezes pode levar até 20 minutos ou mais. A redefinição de canal pode levar até 5 minutos.

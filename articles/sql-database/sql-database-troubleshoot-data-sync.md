@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/20/2018
 ms.openlocfilehash: 4e2808378834a0270586ce674e1043ca443320c5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60331189"
 ---
 # <a name="troubleshoot-issues-with-sql-data-sync"></a>Solucionar problemas com a Sincronização de Dados SQL do Azure
@@ -155,7 +155,7 @@ Falha ao tentar excluir um grupo de sincronização. Qualquer um dos cenários a
 - **Causa**. O agente cliente está desinstalado ou ausente.
 
 - **Resolução**. Se o agente cliente estiver desinstalado ou de outra maneira ausente:  
-     a. Remova o arquivo XML do agente da pasta de instalação da Sincronização de Dados SQL caso o arquivo exista.  
+    a. Remova o arquivo XML do agente da pasta de instalação da Sincronização de Dados SQL caso o arquivo exista.  
     b. Instale o agente em um computador local (pode ser o mesmo ou em outro computador). Em seguida, envie a chave do agente que é gerada no portal para o agente que é mostrado como offline.
 
 - **Causa**. Um banco de dados está offline.
@@ -175,7 +175,7 @@ Falha ao tentar excluir um grupo de sincronização. Qualquer um dos cenários a
   Se essa operação não conseguir remover o banco de dados do grupo de sincronização:
 
   1. Pare e, em seguida, reinicie o serviço de host do agente cliente:  
-     a. Selecione o menu **Iniciar**.  
+    a. Selecione o menu **Iniciar**.  
     b. Insira **services.msc** na caixa de pesquisa.  
     c. Na seção **Programas** do painel de resultados da pesquisa, clique duas vezes em **Serviços**.  
     d. Clique com o botão direito do mouse no serviço **Sincronização de Dados SQL**.  
@@ -231,7 +231,7 @@ Não é possível excluir um grupo de sincronização em até três minutos apó
   1. Remova um grupo de sincronização enquanto os agentes de sincronização associados estiverem online (recomendado).
   1. Se o agente estiver offline, mas estiver instalado, coloque-o online no computador local. Aguarde até que o status do agente seja exibido como **Online** no portal da Sincronização de Dados SQL. Em seguida, remova o grupo de sincronização.
   1. Se o agente estiver offline porque foi desinstalado:  
-     a.  Remova o arquivo XML do agente da pasta de instalação da Sincronização de Dados SQL caso o arquivo exista.  
+    a.  Remova o arquivo XML do agente da pasta de instalação da Sincronização de Dados SQL caso o arquivo exista.  
     b.  Instale o agente em um computador local (pode ser o mesmo ou em outro computador). Em seguida, envie a chave do agente que é gerada no portal para o agente que é mostrado como offline.  
     c. Tente excluir o grupo de sincronização.
 

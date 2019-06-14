@@ -2,20 +2,19 @@
 title: Status de orquestração personalizada em Funções Duráveis – Azure
 description: Saiba como configurar e usar o status de orquestração personalizado para Funções Duráveis.
 services: functions
-author: kashimiz
+author: ggailey777
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-origin.date: 12/07/2018
-ms.date: 12/25/2018
-ms.author: v-junlch
+ms.date: 12/07/2018
+ms.author: azfuncdf
 ms.openlocfilehash: 8d36c797e80702302a1954d2f00e1e4daabcaa88
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60709993"
 ---
 # <a name="custom-orchestration-status-in-durable-functions-azure-functions"></a>Status de orquestração personalizado em Funções Duráveis (Azure Functions)
@@ -347,7 +346,3 @@ O clientes terão a seguinte resposta:
 
 > [!div class="nextstepaction"]
 > [Saiba mais sobre as APIs HTTP em Funções Duráveis](durable-functions-http-api.md)
-
-
-
-<!-- Update_Description: wording update -->

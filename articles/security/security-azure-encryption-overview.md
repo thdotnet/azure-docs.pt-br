@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/20/2018
 ms.author: barclayn
 ms.openlocfilehash: 272cc843ab90eade06525f665d3cf2decf74a26f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60444509"
 ---
 # <a name="azure-encryption-overview"></a>Visão geral da criptografia do Azure
@@ -39,7 +39,7 @@ O Azure dá suporte a vários modelos de criptografia, incluindo criptografia no
 
 ### <a name="client-side-encryption"></a>Criptografia do cliente
 
-A criptografia no cliente é realizada fora do Azure.  Ele inclui:
+A criptografia no cliente é realizada fora do Azure. Ele inclui:
 
 - Dados criptografados por um aplicativo em execução no datacenter do cliente ou por um aplicativo de serviço.
 - Dados já criptografados quando recebidos pelo Azure.

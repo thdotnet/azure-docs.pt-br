@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 31fe3877fd6098b18686b9d99a012cbfbef7c300
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60243958"
 ---
 # <a name="azure-ad-connect-sync-make-a-change-to-the-default-configuration"></a>Sincronização do Azure AD Connect: Fazer uma alteração na configuração padrão
@@ -71,7 +71,7 @@ O [Agendador](how-to-connect-sync-feature-scheduler.md) é executado a cada 30 m
    ![Filtrar escopo das regras de entrada](./media/how-to-connect-sync-change-the-configuration/scopingfilter.png)  
    Esta seção é usada para definir a quais objetos a regra deve ser aplicada. Se deixada em branco, a regra se aplicaria a todos os objetos de usuário. Contudo, isso incluiria as salas de conferência, contas de serviço e outros objetos de usuário que não são de pessoas.
 4. Na página **Regras de associação**, deixe o campo vazio.
-5. Na página **Transformações**, altere o **FlowType** para **Expression**. Para **Atributo de destino**, selecione **givenName**. E para **Fonte**, digite **PCase([givenName])**.
+5. Na página **Transformações**, altere o **FlowType** para **Expression**. Para **Atributo de destino**, selecione **givenName**. E para **Fonte**, digite **PCase([givenName])** .
    ![Transformações das regras de entrada](./media/how-to-connect-sync-change-the-configuration/transformations.png)  
    O mecanismo de sincronização diferencia as letras maiúsculas das minúsculas no nome da função e no nome do atributo. Se você digitar algo errado, verá um aviso quando adicionar a regra. Você pode salvar e continuar, mas precisa reabrir e corrigir a regra.
 6. Clique em **Adicionar** para salvar a regra.
@@ -101,7 +101,7 @@ Abra o **Serviço de Sincronização** no menu **Iniciar**. As etapas nesta seç
    3. Use o **Escopo** para localizar um objeto que você deseja usar para testar a alteração. Selecione o objeto e clique em **Visualizar**. 
    4. Na nova tela, selecione **Visualização de Confirmação**.  
    ![Commit preview](./media/how-to-connect-sync-change-the-configuration/commitpreview.png)  
-    Agora, a alteração está confirmada no metaverso.
+   Agora, a alteração está confirmada no metaverso.
 
 **Ver o objeto no metaverso**  
 
@@ -119,7 +119,7 @@ A seção anterior descreveu como fazer alterações em um fluxo de atributos. N
 ### <a name="use-an-attribute-other-than-the-default"></a>Usar outro atributo diferente do padrão
 Nesse cenário do Fabrikam, há uma floresta na qual o alfabeto local é usado para o nome dado, sobrenome e nome de exibição. A representação de caracteres latinos desses atributos pode ser encontrada nos atributos de extensão. Para compilar uma lista de endereços global no Azure AD e no Office 365, a organização deseja usar esses atributos.
 
-Com uma configuração padrão, um objeto da floresta local tem esta aparência:   
+Com uma configuração padrão, um objeto da floresta local tem esta aparência:  
 ![Fluxo de atributos 1](./media/how-to-connect-sync-change-the-configuration/attributeflowjp1.png)
 
 Para criar uma regra com outros fluxos de atributos, faça o seguinte:
@@ -135,7 +135,7 @@ Para criar uma regra com outros fluxos de atributos, faça o seguinte:
 7. Clique em **Adicionar** para salvar a regra.
 8. Vá para o **Synchronization Service Manager**. Em **Conectores**, selecione o conector ao qual você adicionou a regra. Selecione **Executar** e depois **Sincronização Completa**. Uma sincronização completa recalcula todos os objetos usando as regras atuais.
 
-Este é o resultado para o mesmo objeto com essa regra personalizada:   
+Este é o resultado para o mesmo objeto com essa regra personalizada:  
 ![Fluxo de atributos 4](./media/how-to-connect-sync-change-the-configuration/attributeflowjp4.png)
 
 ### <a name="length-of-attributes"></a>Comprimento de atributos
@@ -286,13 +286,13 @@ A regra de sincronização de entrada permite que o valor do atributo flua do at
 
 6. Acesse a guia **Transformação** e implemente a regra de transformação desejada. Por exemplo, se você designou um atributo local AD não utilizado (como extensionAttribute1) como o atributo de origem para o UserType; você pode implementar um fluxo de atributos direto:
 
-    | Tipo de fluxo | Atributo de destino | Fonte | Aplicar uma vez | Tipo de mesclagem |
+    | Tipo de fluxo | Atributo de destino | source | Aplicar uma vez | Tipo de mesclagem |
     | --- | --- | --- | --- | --- |
     | Direta | UserType | extensionAttribute1 | Desmarcado | Atualizar |
 
     Em outro exemplo, você deseja derivar o valor do atributo UserType de outras propriedades. Por exemplo, você deseja sincronizar todos os usuários como Convidados, caso seu respectivo atributo UserPrincipalName local do AD termine com a parte do domínio <em>@partners.fabrikam123.org</em>. Você pode implementar uma expressão como esta:
 
-    | Tipo de fluxo | Atributo de destino | Fonte | Aplicar uma vez | Tipo de mesclagem |
+    | Tipo de fluxo | Atributo de destino | source | Aplicar uma vez | Tipo de mesclagem |
     | --- | --- | --- | --- | --- |
     | Expression | UserType | IIF(IsPresent([userPrincipalName]),IIF(CBool(InStr(LCase([userPrincipalName]),"@partners.fabrikam123.org")=0),"Member","Guest"),Error("UserPrincipalName não está presente para determinar UserType")) | Desmarcado | Atualizar |
 
@@ -329,7 +329,7 @@ A regra de sincronização de saída permite que o valor do atributo flua do met
 
 6. Acesse a guia **Transformação** e implemente a seguinte regra de transformação:
 
-    | Tipo de fluxo | Atributo de destino | Fonte | Aplicar uma vez | Tipo de mesclagem |
+    | Tipo de fluxo | Atributo de destino | source | Aplicar uma vez | Tipo de mesclagem |
     | --- | --- | --- | --- | --- |
     | Direta | UserType | UserType | Desmarcado | Atualizar |
 
@@ -396,7 +396,7 @@ Reabilite o agendador de sincronização interno:
 2. Reabilite a sincronização agendada executando o cmdlet: `Set-ADSyncScheduler -SyncCycleEnabled $true`.
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 * Leia mais sobre o modelo de configuração em [Noções básicas do provisionamento declarativo](concept-azure-ad-connect-sync-declarative-provisioning.md).
 * Leia mais sobre a linguagem de expressão em [Noções básicas sobre expressões de provisionamento declarativo](concept-azure-ad-connect-sync-declarative-provisioning-expressions.md).
 

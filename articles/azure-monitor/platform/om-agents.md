@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/22/2019
 ms.author: magoedte
 ms.openlocfilehash: 19ae3322d26447cf7c7dd94d06f073ccf013738e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60255075"
 ---
 # <a name="connect-operations-manager-to-azure-monitor"></a>Conectar o Operations Manager para o Azure Monitor
@@ -99,7 +99,7 @@ Realize a série de etapas a seguir para configurar o grupo de gerenciamento do 
 Durante o registro inicial do grupo de gerenciamento do Operations Manager com um espaço de trabalho do Log Analytics, a opção para especificar a configuração do proxy para o grupo de gerenciamento não está disponível no console de Operações.  O grupo de gerenciamento deve ser registrado com êxito com o serviço antes que essa opção esteja disponível.  Para contornar isso, você precisa atualizar a configuração do proxy do sistema usando o Netsh no sistema em que está executando o console de Operações para configurar a integração e todos os servidores de gerenciamento no grupo de gerenciamento.  
 
 1. Abra um prompt de comando com privilégios elevados.
-    a. Vá para **Iniciar** e digite **cmd**.
+   a. Vá para **Iniciar** e digite **cmd**.
    b. Clique com o botão direito do mouse no **prompt de comando** e selecione Executar como administrador**.
 1. Digite o comando a seguir e pressione **Enter**:
 
@@ -202,7 +202,7 @@ Há algumas maneiras diferentes, você pode verificar que o Azure Monitor para i
 ### <a name="to-confirm-integration-from-the-operations-console"></a>Para confirmar a integração do console de Operações
 
 1. Abra o console do Operations Manager e selecione o workspace **Administração**.
-1. Clique em **Pacotes de Gerenciamento** e, na caixa de texto **Procurar por:**, digite **Advisor** ou **Intelligence**.
+1. Clique em **Pacotes de Gerenciamento** e, na caixa de texto **Procurar por:** , digite **Advisor** ou **Intelligence**.
 1. Dependendo das soluções que tiver habilitado, você verá um pacote de gerenciamento correspondente listado nos resultados da pesquisa.  Por exemplo, se tiver habilitado a solução de Gerenciamento de Alertas, o pacote de gerenciamento do Gerenciamento de Alertas do Microsoft System Center Advisor constará na lista.
 1. Da exibição **Monitoramento**, navegue até a exibição **Operations Management Suite\Estado de Integridade**.  Selecione um servidor de Gerenciamento no painel **Estado do Servidor de Gerenciamento** e, no painel **Exibição de Detalhes**, confirme se o valor da propriedade **URI do serviço de autenticação** coincide com a ID do espaço de trabalho do Log Analytics.
    
@@ -229,7 +229,7 @@ Pacotes de gerenciamento para as soluções que você habilitou que se integram 
     >  
 
 1. Abra o Console de operações do Operations Manager com uma conta que seja membro da função Administradores do Operations Manager.
-1. Em **Administração**, selecione o nó **Pacotes de Gerenciamento** e, na caixa **Procurar por:**, digite **Advisor** e verifique se os seguintes pacotes de gerenciamento ainda foram importados no grupo de gerenciamento:
+1. Em **Administração**, selecione o nó **Pacotes de Gerenciamento** e, na caixa **Procurar por:** , digite **Advisor** e verifique se os seguintes pacotes de gerenciamento ainda foram importados no grupo de gerenciamento:
    
    * Microsoft System Center Advisor
    * Microsoft System Center Advisor Interno

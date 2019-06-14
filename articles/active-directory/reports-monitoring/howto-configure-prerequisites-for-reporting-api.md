@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8ab30dfeccc4ae1c7b09a8f48846ffb9e71cfc23
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60438854"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Pré-requisitos para acessar a API de relatório do Azure Active Directory
@@ -76,7 +76,7 @@ Para configurar seu diretório para acessar a API de relatórios do Microsoft Az
 
     ![Registrar aplicativo](./media/howto-configure-prerequisites-for-reporting-api/04.png)
 
-     a. Na caixa de texto **Nome**, digite `Reporting API application`.
+    a. Na caixa de texto **Nome**, digite `Reporting API application`.
 
     b. Como **Tipo de aplicativo**, selecione **Aplicativo/API Web**.
 
@@ -207,7 +207,7 @@ Para obter o segredo do cliente do aplicativo, você precisa criar uma nova chav
 
     ![Registrar aplicativo](./media/howto-configure-prerequisites-for-reporting-api/14.png)
 
-     a. Na caixa de texto **Descrição**, digite `Reporting API`.
+    a. Na caixa de texto **Descrição**, digite `Reporting API`.
 
     b. Como **Expira**, selecione **Em 2 anos**.
 
@@ -252,7 +252,7 @@ Siga as etapas nos [Pré-requisitos para acessar a API de relatório do Azure Ac
 
 Siga as etapas nos [Pré-requisitos para acessar a API de relatório do Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md) para garantir que seu aplicativo esteja em execução com o conjunto certo de permissões. 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Obter dados usando a API de Relatório do Azure Active Directory com certificados](tutorial-access-api-with-certificates.md)
 * [Referência da API de auditoria](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 

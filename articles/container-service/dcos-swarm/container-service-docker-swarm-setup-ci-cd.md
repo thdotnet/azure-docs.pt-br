@@ -10,10 +10,10 @@ ms.date: 12/08/2016
 ms.author: jucoriol
 ms.custom: mvc
 ms.openlocfilehash: f28ea3dd2837a241c538057bd118409d4f5b858a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60643438"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-docker-swarm-using-azure-devops-services"></a>(PRETERIDO) Pipeline de CI/CD completo para implantar um aplicativo com vários contêineres no Serviço de Contêiner do Azure com Docker Swarm usando Azure DevOps Services
@@ -162,7 +162,7 @@ Você precisa adicionar duas etapas do Docker para cada imagem, uma para compila
 
 1. Depois de configurar as etapas de compilação e envio para cada uma das cinco imagens, adicione mais duas etapas do fluxo de trabalho de compilação.
 
-     a. Uma tarefa da linha de comando que usa um script bash para substituir a ocorrência *BuildNumber* no arquivo docker-compose.yml pela ID atual de compilação. Consulte a tela a seguir para obter detalhes.
+    a. Uma tarefa da linha de comando que usa um script bash para substituir a ocorrência *BuildNumber* no arquivo docker-compose.yml pela ID atual de compilação. Consulte a tela a seguir para obter detalhes.
 
     ![Azure DevOps Services – Atualizar arquivo de composição](./media/container-service-docker-swarm-setup-ci-cd/vsts-build-replace-build-number.png)
 
@@ -180,7 +180,7 @@ O Azure DevOps Services permite que você [gerencie as versões nos ambientes](h
 
 ### <a name="initial-release-setup"></a>Configuração da versão inicial
 
-1. Para criar um pipeline de lançamento, clique em **Versões** > **+ Versão**
+1. Para criar um pipeline de lançamento, clique em **Versões** >  **+ Versão**
 
 1. Para configurar a fonte do artefato, clique em **Artefatos** > **Vincular uma fonte do artefato**. Aqui, vincule esse novo pipeline de lançamento ao build definido na etapa anterior. Fazendo isso, o arquivo docker-compose.yml fica disponível no processo da versão.
 

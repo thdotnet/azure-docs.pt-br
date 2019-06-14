@@ -17,10 +17,10 @@ ms.topic: article
 ms.date: 05/08/2018
 ms.author: gokuma
 ms.openlocfilehash: 0146ee6ee37c2eb9e98d831b54df2218d7de5b62
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60502361"
 ---
 # <a name="set-up-a-common-identity-on-the-data-science-virtual-machine"></a>Configurar uma identidade comum na Máquina Virtual de Ciência de Dados
@@ -41,7 +41,7 @@ O Azure AD DS simplifica o gerenciamento de identidades, fornecendo um serviço 
 
 1. No portal do Azure, adicione o usuário ao Active Directory: 
 
-    a. Entre no [Centro de administração do Azure Active Directory](https://aad.portal.azure.com) com uma conta que seja um administrador global do diretório.
+   a. Entre no [Centro de administração do Azure Active Directory](https://aad.portal.azure.com) com uma conta que seja um administrador global do diretório.
     
    b. Selecione **Azure Active Directory** e, em seguida, **Usuários e grupos**.
     
@@ -68,7 +68,7 @@ O Azure AD DS simplifica o gerenciamento de identidades, fornecendo um serviço 
 1. Siga as [instruções](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-join-ubuntu-linux-vm ) para adicionar a DSVM ao Active Directory. 
 1. Crie um compartilhamento de Arquivos do Azure para hospedar seu diretório raiz ou notebook para habilitar a montagem de seu workspace em qualquer computador. (Se você precisar de rigorosas permissões de nível de arquivo, será necessário um NFS em execução em uma ou mais VMs).
 
-    a. [Criar um compartilhamento de arquivos do Azure](../../storage/files/storage-how-to-create-file-share.md).
+   a. [Criar um compartilhamento de arquivos do Azure](../../storage/files/storage-how-to-create-file-share.md).
     
    b. Monte-o em DSVM no Linux. Quando você selecionar o botão **Conectar** para o compartilhamento de Arquivos do Azure em sua conta de armazenamento no Portal do Azure, o comando a ser executado no shell do Bash na DSVM do Linux será mostrado. O comando se parece com o seguinte:
    

@@ -12,10 +12,10 @@ ms.topic: reference
 ms.date: 02/13/2019
 ms.author: juliako
 ms.openlocfilehash: f9fe689e6911c5e9497ee82132e8b70bd9aada7e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60322226"
 ---
 # <a name="azure-event-grid-schemas-for-media-services-events"></a>Esquemas de Grade de Eventos do Azure para eventos dos Serviços de Mídia
@@ -131,7 +131,7 @@ O objeto de dados tem as seguintes propriedades:
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
 | previousState | cadeia de caracteres | O estado do trabalho antes do evento. |
-| state | cadeia de caracteres | O novo estado do trabalho que está sendo notificado nesse evento. Por exemplo, "Agendado: O trabalho está pronto para iniciar " ou "Concluído: O trabalho está concluído".|
+| estado | cadeia de caracteres | O novo estado do trabalho que está sendo notificado nesse evento. Por exemplo, "Agendado: O trabalho está pronto para iniciar " ou "Concluído: O trabalho está concluído".|
 
 Onde o estado do trabalho pode ser um dos valores: *Em fila*, *Agendado*, *Processando*, *Concluído*, *Erro*, *Cancelado*, *Cancelando*
 
@@ -457,7 +457,7 @@ O objeto de dados tem as seguintes propriedades:
 | trackType | cadeia de caracteres | Tipo de faixa (Áudio/Vídeo). |
 | trackName | cadeia de caracteres | Nome da faixa. |
 | taxa de bits | inteiro | Taxa de bits da faixa. |
-|  timestamp | cadeia de caracteres | O carimbo de data/hora da parte de dados é descartado. |
+| timestamp | cadeia de caracteres | O carimbo de data/hora da parte de dados é descartado. |
 | escala de tempo | cadeia de caracteres | Escala de tempo do carimbo de data/hora. |
 | resultCode | cadeia de caracteres | Motivo do descarte da parte de dados. **FragmentDrop_OverlapTimestamp** ou **FragmentDrop_NonIncreasingTimestamp**. |
 
@@ -500,7 +500,7 @@ O objeto de dados tem as seguintes propriedades:
 | IngestUrl | cadeia de caracteres | URL de ingestão fornecida pelo evento ao vivo. |
 | encoderIp | cadeia de caracteres  | IP do codificador. |
 | encoderPort | cadeia de caracteres | Porta do codificador de onde vem esse fluxo. |
-|  timestamp | cadeia de caracteres | O primeiro carimbo de data/hora da parte de dados recebida. |
+| timestamp | cadeia de caracteres | O primeiro carimbo de data/hora da parte de dados recebida. |
 | escala de tempo | cadeia de caracteres | Escala de tempo em que o carimbo de data/hora é representado. |
 
 ### <a name="liveeventincomingstreamsoutofsync"></a>LiveEventIncomingStreamsOutOfSync
@@ -621,7 +621,7 @@ O objeto de dados tem as seguintes propriedades:
 | discontinuityCount | inteiro | Número do descontinuidades observadas nos últimos 20 segundos. |
 | nonIncreasingCount | inteiro | Número de partes de dados com os carimbos de data/hora no passado recebidas nos últimos 20 segundos. |
 | unexpectedBitrate | bool | Se as taxas de bits esperadas e reais apresentarem diferença superior ao limite permitido nos últimos 20 segundos. É true se e somente se, IncomingBitrate >= 2* taxa de bits OU IncomingBitrate <= taxa de bits/2 OU IncomingBitrate = 0. |
-| state | cadeia de caracteres | Estado do evento ao vivo. |
+| estado | cadeia de caracteres | Estado do evento ao vivo. |
 | Healthy | bool | Indica se a ingestão está íntegra com base nas contagens e nos sinalizadores. Healthy será true se OverlapCount = 0 && DiscontinuityCount = 0 && NonIncreasingCount = 0 && UnexpectedBitrate = false. |
 
 ### <a name="liveeventtrackdiscontinuitydetected"></a>LiveEventTrackDiscontinuityDetected
@@ -671,14 +671,14 @@ Um evento tem os seguintes dados de nível superior:
 | -------- | ---- | ----------- |
 | topic | cadeia de caracteres | O tópico EventGrid. Essa propriedade tem a ID de recurso para a conta de Serviços de Mídia. |
 | subject | cadeia de caracteres | O caminho do recurso para o canal dos Serviços de Mídia sob a conta de Serviços de Mídia. A concatenação de tópico e assunto dê a você o recurso de ID para o trabalho. |
-| eventType | cadeia de caracteres | Um dos tipos de evento registrados para a origem do evento. Por exemplo, "Microsoft.Media.JobStateChange". |
-| eventTime | cadeia de caracteres | A hora em que o evento é gerado com base na hora UTC do provedor. |
-| ID | cadeia de caracteres | Identificador exclusivo do evento. |
+| eventType | string | Um dos tipos de evento registrados para a origem do evento. Por exemplo, "Microsoft.Media.JobStateChange". |
+| eventTime | string | A hora em que o evento é gerado com base na hora UTC do provedor. |
+| id | string | Identificador exclusivo do evento. |
 | data | objeto | Dados de eventos dos Serviços de Mídia. |
-| dataVersion | cadeia de caracteres | A versão do esquema do objeto de dados. O fornecedor define a versão do esquema. |
-| metadataVersion | cadeia de caracteres | A versão do esquema do metadados de evento. Grade de Eventos define o esquema de propriedades de nível superior. Grade de Eventos fornece esse valor. |
+| dataVersion | string | A versão do esquema do objeto de dados. O fornecedor define a versão do esquema. |
+| metadataVersion | string | A versão do esquema do metadados de evento. Grade de Eventos define o esquema de propriedades de nível superior. Grade de Eventos fornece esse valor. |
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 [Registre-se para eventos de alteração de estado do trabalho](job-state-events-cli-how-to.md)
 

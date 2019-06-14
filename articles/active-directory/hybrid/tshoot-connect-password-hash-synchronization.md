@@ -12,16 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 03/13/2017
-ms.date: 04/09/2019
+ms.date: 03/13/2017
 ms.subservice: hybrid
-ms.author: v-junlch
+ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6feed11fcfc597658f3ec148b5dd18bb7e3f8f83
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60382959"
 ---
 # <a name="troubleshoot-password-hash-synchronization-with-azure-ad-connect-sync"></a>Solução de problemas de sincronização de hash de senha com a sincronização do Azure AD Connect
@@ -236,7 +235,7 @@ Para solucionar problemas em que nenhuma senha esteja sincronizada para um usuá
    Invoke-ADSyncDiagnostics -PasswordSync -ADConnectorName <Name-of-AD-Connector> -DistinguishedName <DistinguishedName-of-AD-object>
    ```
 
-   Por exemplo: 
+   Por exemplo:
 
    ```powershell
    Invoke-ADSyncDiagnostics -PasswordSync -ADConnectorName "contoso.com" -DistinguishedName "CN=TestUserCN=Users,DC=contoso,DC=com"
@@ -310,7 +309,7 @@ Você pode solucionar problemas de sincronização de hash de senha problemas fa
 
 2. Se a senha estiver correta no Active Directory, siga o usuário no mecanismo de sincronização. Seguindo o usuário do Active Directory local ao Azure AD, você pode ver se há algum erro descritivo no objeto.
 
-     a. Inicie o [Synchronization Service Manager](how-to-connect-sync-service-manager-ui.md).
+    a. Inicie o [Synchronization Service Manager](how-to-connect-sync-service-manager-ui.md).
 
     b. Clique em **Conectores**.
 
@@ -354,7 +353,7 @@ A coluna de status pode ter os seguintes valores:
 
 | Status | DESCRIÇÃO |
 | --- | --- |
-| Sucesso |A senha foi sincronizada com êxito. |
+| Êxito |A senha foi sincronizada com êxito. |
 | FilteredByTarget |A senha está definida para **O usuário deve alterar a senha no próximo logon**. A senha não foi sincronizada. |
 | NoTargetConnection |Nenhum objeto no metaverso ou no espaço conector do AD do Azure. |
 | SourceConnectorNotPresent |Nenhum objeto encontrado no espaço conector do Active Directory local. |
@@ -372,7 +371,7 @@ A coluna de status pode ter os seguintes valores:
 ```powershell
 Import-Module ADSync
 $connectors = Get-ADSyncConnector
-$aadConnectors = $connectors | Where-Object {$_.SubType -eq "Azure Active Directory (Microsoft)"}
+$aadConnectors = $connectors | Where-Object {$_.SubType -eq "Windows Azure Active Directory (Microsoft)"}
 $adConnectors = $connectors | Where-Object {$_.ConnectorTypeName -eq "AD"}
 if ($aadConnectors -ne $null -and $adConnectors -ne $null)
 {
@@ -443,10 +442,8 @@ Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConn
 Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $true
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Implementação de sincronização de hash de senha com a sincronização do Azure AD Connect](how-to-connect-password-hash-synchronization.md)
 * [Sincronização do Azure AD Connect: Personalizar opções de sincronização](how-to-connect-sync-whatis.md)
 * [Integração de suas identidades locais com o Active Directory do Azure](whatis-hybrid-identity.md)
-
-<!-- Update_Description: wording update -->

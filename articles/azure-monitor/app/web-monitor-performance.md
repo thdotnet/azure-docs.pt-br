@@ -14,10 +14,10 @@ ms.date: 05/10/2018
 ms.reviewer: sdash
 ms.author: mbullwin
 ms.openlocfilehash: d7b8037f50fc4877fe233925f3e922648169f73b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60372948"
 ---
 # <a name="monitor-performance-in-web-applications"></a>Monitore o desempenho em aplicativos da web
@@ -103,7 +103,7 @@ Defina o recurso antes de outras propriedades. Não escolha os recursos webtest 
 
 Observe as unidades quando você for solicitado para inserir o valor de limite.
 
-*Não vejo o botão Adicionar Alerta.*  - Esta é uma conta de grupo para a qual você tem acesso somente leitura? Verifique com o administrador da conta.
+*Não vejo o botão Adicionar Alerta.* - Esta é uma conta de grupo para a qual você tem acesso somente leitura? Verifique com o administrador da conta.
 
 ## <a name="diagnosis"></a>Diagnosticando problemas
 Aqui estão algumas dicas para localizar e diagnosticar problemas de desempenho:

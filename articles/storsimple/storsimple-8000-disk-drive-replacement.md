@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 8/25/2017
 ms.author: alkohli
 ms.openlocfilehash: 3d6ef22e4df36996d68194589f43ea0f57def22c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60576769"
 ---
 # <a name="replace-a-disk-drive-on-your-storsimple-8000-series-device"></a>Substituir uma unidade de disco em um dispositivo StorSimple da série 8000
@@ -46,14 +46,14 @@ Este procedimento explica como os bloqueios antiviolação em seu dispositivo St
    
     **Figura 1** Bloqueio antiviolação ativado
    
-   | Rótulo | DESCRIÇÃO |
+   | Rotular | DESCRIÇÃO |
    |:--- |:--- |
    | 1 |Abertura do indicador |
    | 2 |Bloqueio antiviolação |
 2. Gire a chave no sentido anti-horário até que o indicador vermelho não esteja visível na abertura acima da chave.
 3. Remova a chave.
    
-    ![ Unidade de disco desbloqueada](./media/storsimple-disk-drive-replacement/IC741057.png)
+    ![Unidade de disco desbloqueada](./media/storsimple-disk-drive-replacement/IC741057.png)
    
     **Figura 2** Unidade de disco desbloqueada
 4. A unidade de disco agora pode ser removida.

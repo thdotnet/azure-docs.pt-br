@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 11/21/2018
 ms.author: srrengar
 ms.openlocfilehash: ee1608c40801f568b38ace4670b0d5ea7f73003c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60392884"
 ---
 # <a name="performance-metrics"></a>Métricas de desempenho
@@ -36,10 +36,10 @@ Para as máquinas em seu cluster, considere a possibilidade de coletar os seguin
 | PhysicalDisk(per Disco) | Média Tamanho de Fila de Gravação de Disco |
 | PhysicalDisk(per Disco) | Média de segundos/Leitura do Disco |
 | PhysicalDisk(per Disco) | Média de segundos/Gravação do Disco |
-| PhysicalDisk(per Disco) | Leituras de Disco/s  |
-| PhysicalDisk(per Disco) | Bytes Lidos no Disco/s  |
-| PhysicalDisk(per Disco) |  Gravações de Disco/s |
-| PhysicalDisk(per Disco) |  Bytes Gravados no Disco/s |
+| PhysicalDisk(per Disco) | Leituras de Disco/s |
+| PhysicalDisk(per Disco) | Bytes Lidos no Disco/s |
+| PhysicalDisk(per Disco) | Gravações de Disco/s |
+| PhysicalDisk(per Disco) | Bytes Gravados no Disco/s |
 | Memória | MBytes Disponíveis |
 | PagingFile | % Uso |
 | Processador(total) | % Tempo do Processador |

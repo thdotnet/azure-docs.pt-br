@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: a9c857ab9e9a3cfc0d1314600b612c4e6293173d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60332258"
 ---
 # <a name="scale-out-databases-with-the-shard-map-manager"></a>Escale horizontalmente os bancos de dados com o gerenciador do mapa de fragmentos
@@ -55,10 +55,10 @@ A Escala Elástica dá suporte aos tipos a seguir, como chaves de fragmentação
 | .NET | Java |
 | --- | --- |
 | inteiro |inteiro |
-| longo |longo |
+| long |long |
 | GUID |uuid |
 | byte[]  |byte[] |
-| datetime |  timestamp |
+| Datetime | timestamp |
 | TimeSpan | duration|
 | datetimeoffset |offsetdatetime |
 
@@ -80,7 +80,7 @@ Mapas de fragmentos podem ser construídos usando **listas de valores de chave d
 
 ### <a name="range-shard-maps"></a>Mapas de fragmentos de intervalo
 
-Em um **intervalo de mapas de fragmentos**, o intervalo de chaves é descrito por um par **[Valor baixo, Valor alto)**, em que o *Valor baixo* é a chave mínima no intervalo e o *Valor alto* é o primeiro valor maior que o intervalo.
+Em um **intervalo de mapas de fragmentos**, o intervalo de chaves é descrito por um par **[Valor baixo, Valor alto)** , em que o *Valor baixo* é a chave mínima no intervalo e o *Valor alto* é o primeiro valor maior que o intervalo.
 
 Por exemplo, **(0, 100)** inclui todos os números inteiros iguais ou maiores que 0 e menores que 100. Observe que vários intervalos podem apontar para o mesmo banco de dados e intervalos separados tem suporte (por exemplo, ambos [100,200) e [400,600) apontam para o banco de dados C no exemplo a seguir).
 
@@ -98,8 +98,8 @@ Cada uma das tabelas mostradas acima é um exemplo conceitual de um objeto **Sha
 
 Na biblioteca do cliente, o gerenciador de mapa de fragmentos é uma coleção de mapas de fragmentos. Os dados gerenciados por uma instância **ShardMapManager** são mantidos em três locais:
 
-1. **GSM (Global Shard Map)**: Você especifica um banco de dados para servir como o repositório para todos os mapas de fragmento e mapeamentos. Procedimentos armazenados e tabelas especiais são criados automaticamente para gerenciar as informações. Geralmente trata-se de um banco de dados pequeno e pouco acessado, que não deve ser usado para outras necessidades do aplicativo. As tabelas estão em um esquema especial chamado **__ShardManagement**.
-2. **LSM (Local Shard Map)**: Cada banco de dados especificado como fragmento é modificado para conter várias tabelas pequenas e procedimentos armazenados especiais que contêm e gerenciam informações de mapas de fragmentos específicas para aquele fragmento. Essas informações são redundantes com as informações de GSM e permitem que o aplicativo validar informações de mapa do fragmento em cache sem colocar nenhuma carga no GSM. O aplicativo usa o LSM para determinar se um mapeamento em cache ainda é válido. As tabelas correspondentes ao LSM em cada fragmento também estão no esquema **__ShardManagement**.
+1. **GSM (Global Shard Map)** : Você especifica um banco de dados para servir como o repositório para todos os mapas de fragmento e mapeamentos. Procedimentos armazenados e tabelas especiais são criados automaticamente para gerenciar as informações. Geralmente trata-se de um banco de dados pequeno e pouco acessado, que não deve ser usado para outras necessidades do aplicativo. As tabelas estão em um esquema especial chamado **__ShardManagement**.
+2. **LSM (Local Shard Map)** : Cada banco de dados especificado como fragmento é modificado para conter várias tabelas pequenas e procedimentos armazenados especiais que contêm e gerenciam informações de mapas de fragmentos específicas para aquele fragmento. Essas informações são redundantes com as informações de GSM e permitem que o aplicativo validar informações de mapa do fragmento em cache sem colocar nenhuma carga no GSM. O aplicativo usa o LSM para determinar se um mapeamento em cache ainda é válido. As tabelas correspondentes ao LSM em cada fragmento também estão no esquema **__ShardManagement**.
 3. **Cache do aplicativo**: Cada instância do aplicativo que acessa um objeto **ShardMapManager** mantém um cache na memória local dos mapeamentos. Ele armazena informações de roteamento que recentemente foi recuperadas.
 
 ## <a name="constructing-a-shardmapmanager"></a>Construindo um ShardMapManager

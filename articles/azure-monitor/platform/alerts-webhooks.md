@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 04/03/2017
 ms.author: snmuvva
-ms.component: alerts
+ms.subservice: alerts
 ms.openlocfilehash: 264f3eb042a3c29523ed93df93dfa6d45c00ae87
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60345764"
 ---
 # <a name="have-a-classic-metric-alert-notify-a-non-azure-system-using-a-webhook"></a>Fazer um alerta de métrica clássico notificar um sistema diferente do Azure usando um webhook
@@ -73,9 +73,9 @@ A operação POST contém o seguinte esquema e conteúdo JSON para todos os aler
 |:--- |:--- |:--- |:--- |
 | status |S |Activated, Resolved |O status do alerta como base nas condições que você definiu. |
 | context |S | |O contexto do alerta. |
-|  timestamp |S | |A hora em que o alerta foi disparado. |
-| ID |S | |Cada regra de alerta tem uma ID exclusiva. |
-| Nome |S | |O nome do alerta. |
+| timestamp |S | |A hora em que o alerta foi disparado. |
+| id |S | |Cada regra de alerta tem uma ID exclusiva. |
+| name |S | |O nome do alerta. |
 | description |S | |Uma descrição do alerta. |
 | conditionType |S |Metric, Event |Há suporte para dois tipos de alertas: de métrica e evento. Alertas de métricas são baseados na condição de uma métrica. Alertas de eventos são baseados em um evento no log de atividades. Use esse valor para verificar se o alerta é baseado em uma métrica ou em um evento. |
 | condition |S | |Os campos específicos para verificação com base no valor de **conditionType**. |
@@ -90,10 +90,10 @@ A operação POST contém o seguinte esquema e conteúdo JSON para todos os aler
 | resourceGroupName |S | |O nome do grupo de recursos do recurso afetado. |
 | resourceName |S | |O nome do recurso afetado. |
 | resourceType |S | |O tipo do recurso afetado. |
-| resourceId |S | |A ID do recurso afetado. |
+| ResourceId |S | |A ID do recurso afetado. |
 | resourceRegion |S | |A região ou local do recurso afetado. |
 | portalLink |S | |Um link direto para a página de resumo de recursos do portal. |
-| propriedades |N |Opcional |Um conjunto de pares chave/valor que tem detalhes sobre o evento. Por exemplo, `Dictionary<String, String>`. O campo de propriedades é opcional. Em um fluxo de trabalho personalizado baseado em aplicativo lógico ou em interface do usuário, os usuários podem inserir pares chave/valor que podem ser transmitidos por meio do conteúdo. Um modo alternativo de transmitir as propriedades personalizadas para o webhook é por meio do próprio URI do webhook (como parâmetros de consulta). |
+| propriedades |N |Opcional |Um conjunto de pares chave/valor que tem detalhes sobre o evento. Por exemplo: `Dictionary<String, String>`. O campo de propriedades é opcional. Em um fluxo de trabalho personalizado baseado em aplicativo lógico ou em interface do usuário, os usuários podem inserir pares chave/valor que podem ser transmitidos por meio do conteúdo. Um modo alternativo de transmitir as propriedades personalizadas para o webhook é por meio do próprio URI do webhook (como parâmetros de consulta). |
 
 > [!NOTE]
 > Somente é possível definir o campo de **propriedades** usando [APIs REST do Azure Monitor](https://msdn.microsoft.com/library/azure/dn933805.aspx).
@@ -106,3 +106,4 @@ A operação POST contém o seguinte esquema e conteúdo JSON para todos os aler
 * Saiba como [usar um aplicativo lógico para enviar uma mensagem de SMS por meio do Twilio de um alerta do Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app).
 * Saiba como [usar um aplicativo lógico para enviar uma mensagem do Slack de um alerta do Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app).
 * Saiba como [usar um aplicativo lógico para enviar uma mensagem a uma fila do Azure de um alerta do Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app).
+

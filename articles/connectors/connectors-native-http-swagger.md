@@ -12,10 +12,10 @@ tags: connectors
 ms.topic: article
 ms.date: 07/18/2016
 ms.openlocfilehash: 9408b66f74391b080ef46c758b07850b2ae8de57
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60448609"
 ---
 # <a name="call-rest-endpoints-with-http--swagger-connector-in-azure-logic-apps"></a>Chamar pontos de extremidade REST com conector HTTP + Swagger nos Aplicativos Lógicos do Azure
@@ -72,14 +72,14 @@ Veja as etapas para criar, configurar e armazenar documentos do Swagger no Armaz
 A seguir, os detalhes dos gatilhos e das ações com suporte deste conector HTTP + Swagger.
 
 ## <a name="http--swagger-triggers"></a>Gatilhos de HTTP + Swagger
-Um gatilho é um evento que pode ser usado para iniciar o fluxo de trabalho definido em um aplicativo lógico.  O conector HTTP + Swagger tem um gatilho. [Saiba mais sobre gatilhos](../connectors/apis-list.md).
+Um gatilho é um evento que pode ser usado para iniciar o fluxo de trabalho definido em um aplicativo lógico. O conector HTTP + Swagger tem um gatilho. [Saiba mais sobre gatilhos](../connectors/apis-list.md).
 
 | Gatilho | DESCRIÇÃO |
 | --- | --- |
 | HTTP + Swagger |Faz uma chamada HTTP e retorna o conteúdo da resposta |
 
 ## <a name="http--swagger-actions"></a>Ações de HTTP + Swagger
-Uma ação é uma operação executada pelo fluxo de trabalho definido em um aplicativo lógico.  O conector HTTP + Swagger tem uma ação possível. [Saiba mais sobre ações](../connectors/apis-list.md).
+Uma ação é uma operação executada pelo fluxo de trabalho definido em um aplicativo lógico. O conector HTTP + Swagger tem uma ação possível. [Saiba mais sobre ações](../connectors/apis-list.md).
 
 | Ação | DESCRIÇÃO |
 | --- | --- |
@@ -92,9 +92,9 @@ O conector HTTP + Swagger vem uma ação possível. A seguir, as informações s
 Faça uma solicitação de saída HTTP com a assistência dos metadados do Swagger.
 Um asterisco (*) significa um campo obrigatório.
 
-| Nome de exibição | Nome da propriedade | DESCRIÇÃO |
+| Display name | Nome da propriedade | DESCRIÇÃO |
 | --- | --- | --- |
-| Método* |estático |Verbo HTTP a ser usado. |
+| Método* |method |Verbo HTTP a ser usado. |
 | URI* |uri |URI da solicitação HTTP. |
 | Cabeçalhos |headers |Um objeto JSON de cabeçalhos HTTP a serem incluídos. |
 | Corpo |body |O corpo da solicitação HTTP. |

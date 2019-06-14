@@ -16,10 +16,10 @@ ms.date: 04/20/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 64edf2aa47211c1d2a598417a7b2edc00f260075
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60320999"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-scalex-enterprise"></a>Tutorial: Integração do Azure Active Directory com ScaleX Enterprise
@@ -50,7 +50,7 @@ Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 - Se não tiver um ambiente de avaliação do AD do Azure, você pode obter uma versão de avaliação de um mês [aqui](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Descrição do cenário
-Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste.  O cenário descrito neste tutorial consiste em dois blocos de construção principais:
+Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste. O cenário descrito neste tutorial consiste em dois blocos de construção principais:
 
 1. Adicionando o ScaleX Enterprise por meio da galeria
 1. configurar e testar o logon único do AD do Azure
@@ -60,7 +60,7 @@ Para configurar a integração do ScaleX Enterprise ao Azure AD, você precisa a
 
 **Para adicionar o ScaleX Enterprise por meio da galeria, realize as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
 
     ![Active Directory][1]
 
@@ -113,7 +113,7 @@ Nesta seção, você habilita o logon único do Azure AD no portal do Azure e co
 
     ![Configurar o logon único](./media/scalexenterprise-tutorial/tutorial_scalexenterprise_url1.png)
 
-     a. Na caixa de texto **Identificador**, digite o valor usando o seguinte padrão: `https://platform.rescale.com/saml2/<company id>/`
+    a. Na caixa de texto **Identificador**, digite o valor usando o seguinte padrão: `https://platform.rescale.com/saml2/<company id>/`
 
     b. Na caixa de texto **URL de resposta**, digite uma URL no seguinte padrão: `https://platform.rescale.com/saml2/<company id>/acs/`
 
@@ -130,7 +130,7 @@ Nesta seção, você habilita o logon único do Azure AD no portal do Azure e co
 
     ![Configurar o logon único](./media/scalexenterprise-tutorial/scalex_attributes.png)
     
-     a. Clique com o botão direito do mouse no atributo **name** e clique em Excluir.
+    a. Clique com o botão direito do mouse no atributo **name** e clique em Excluir.
 
     ![Configurar o logon único](./media/scalexenterprise-tutorial/delete_attribute_name.png)
 
@@ -167,7 +167,7 @@ Nesta seção, você habilita o logon único do Azure AD no portal do Azure e co
 
     ![Configurar o logon único](./media/scalexenterprise-tutorial/scalex_admin_save.png) 
     
-     a. Selecione **“Criar qualquer usuário que pode se autenticar com o SSO”.**
+    a. Selecione **“Criar qualquer usuário que pode se autenticar com o SSO”.**
 
     b. **Saml do provedor de serviços**: Cole o valor ***urn:oasis:names:tc:SAML:2.0:nameid-format:persistent***
 

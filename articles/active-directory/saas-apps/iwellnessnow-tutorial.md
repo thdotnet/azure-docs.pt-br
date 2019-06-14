@@ -17,10 +17,10 @@ ms.date: 05/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 02b831df98db5b9d63873a0da93e603cd7cbf308
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60269455"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iwellnessnow"></a>Tutorial: Integração do Azure Active Directory com iWellnessNow
@@ -51,7 +51,7 @@ Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 - Se não tiver um ambiente de avaliação do Azure AD, você pode [obter uma versão de avaliação de um mês](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Descrição do cenário
-Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste.  O cenário descrito neste tutorial consiste em dois blocos de construção principais:
+Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste. O cenário descrito neste tutorial consiste em dois blocos de construção principais:
 
 1. Adição do iWellnessNow por meio da galeria
 1. configurar e testar o logon único do AD do Azure
@@ -61,7 +61,7 @@ Para configurar a integração do iWellnessNow ao Azure AD, você precisará adi
 
 **Para adicionar o iWellnessNow por meio da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
 
     ![O botão Azure Active Directory][1]
 
@@ -87,7 +87,7 @@ Para fazer a configuração e o teste do logon único do Azure AD com o iWellnes
 
 1. **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** – para habilitar seus usuários a usar esse recurso.
 1. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
-1. **[Criar um usuário de testes do iWellnessNow](#create-an-iwellnessnow-test-user)**: para ter um equivalente de Brenda Fernandes no iWellnessNow vinculado à representação do usuário no Azure AD.
+1. **[Criar um usuário de testes do iWellnessNow](#create-an-iwellnessnow-test-user)** : para ter um equivalente de Brenda Fernandes no iWellnessNow vinculado à representação do usuário no Azure AD.
 1. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
 1. **[Teste o logon único](#test-single-sign-on)** – para verificar se a configuração funciona.
 
@@ -109,7 +109,7 @@ Nesta seção, você habilitará o logon único do Azure AD no Portal do Azure e
 
     ![Carregamento de logon único em Domínio e URLs do iWellnessNow](./media/iwellnessnow-tutorial/tutorial_iwellnessnow_upload.png)
 
-     a. Clique em **Carregar arquivo de metadados**.
+    a. Clique em **Carregar arquivo de metadados**.
 
     ![Configuração de carregamento de logon único em Domínio e URLs do iWellnessNow](./media/iwellnessnow-tutorial/tutorial_iwellnessnow_uploadconfig.png)
 
@@ -123,7 +123,7 @@ Nesta seção, você habilitará o logon único do Azure AD no Portal do Azure e
 
     ![Domínio iWellnessNow e informações de logon único de URLs](./media/iwellnessnow-tutorial/tutorial_iwellnessnow_url.png)
 
-     a. Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão: `http://<CustomerName>.iwellnessnow.com`
+    a. Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão: `http://<CustomerName>.iwellnessnow.com`
 
     b. Na caixa de texto **URL de resposta**, digite uma URL no seguinte padrão: `https://<CustomerName>.iwellnessnow.com/ssologin`
 
