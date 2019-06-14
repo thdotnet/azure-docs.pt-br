@@ -13,10 +13,10 @@ ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
 ms.openlocfilehash: 26f6502f63b39d3f1ecf8dfeb09c8df4daa63b68
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65786129"
 ---
 # <a name="call-a-function-from-powerapps"></a>Chamar uma função do PowerApps
@@ -136,7 +136,7 @@ Agora que as fontes de dados estão disponíveis no aplicativo, adicione uma tel
 
 1. No painel **Dados**, selecione **Turbines** na lista.
 
-    ![Selecionar fonte de dados](media/functions-powerapps-scenario/select-data-source.png)
+    ![Selecione uma fonte de dados](media/functions-powerapps-scenario/select-data-source.png)
 
     O conjunto de dados não contém uma imagem, então, em seguida, altere o layout para ajustar melhor os dados. 
 

@@ -12,10 +12,10 @@ ms.date: 05/18/2018
 ms.author: v-jansko
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 7498ba08b9ce7b6aae10f38a393eb8cba37f3f4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60827894"
 ---
 # <a name="translator-speech-api-languages"></a>API de Tradução de Fala: Languages
@@ -38,7 +38,7 @@ Um cliente usa o parâmetro de consulta `scope` para definir os conjuntos de idi
 * **Tradução de texto:** use o parâmetro de consulta `scope=text` para recuperar o conjunto de idiomas disponíveis para traduzir texto transcrito.
 * **Conversão de texto em fala:**  use o parâmetro de consulta `scope=tts` para recuperar o conjunto de idiomas e vozes disponíveis para sintetizar o texto traduzido de volta em fala.
 
-Um cliente pode recuperar vários conjuntos simultaneamente ao especificar uma lista separada por vírgulas de opções. Por exemplo, `scope=speech,text,tts`.
+Um cliente pode recuperar vários conjuntos simultaneamente ao especificar uma lista separada por vírgulas de opções. Por exemplo: `scope=speech,text,tts`.
 
 Uma resposta bem-sucedida é um objeto JSON com uma propriedade para cada conjunto solicitado.
 
@@ -134,16 +134,16 @@ Languages { speech (object, optional), text (object, optional), tts (object, opt
 
 |Cabeçalho|DESCRIÇÃO|Type|
 :--|:--|:--|
-X-RequestId|Valor gerado pelo servidor para identificar a solicitação e usado para fins de solução de problemas.|string|
+X-RequestId|Valor gerado pelo servidor para identificar a solicitação e usado para fins de solução de problemas.|cadeia de caracteres|
 
 ### <a name="parameters"></a>parâmetros
 
 |Parâmetro|DESCRIÇÃO|Tipo de Parâmetro|Tipo de Dados|
 |:--|:--|:--|:--|
-|api-version    |Versão da API solicitada pelo cliente. Os valores permitidos são: `1.0`.|query|string|
-|scope  |Conjuntos de idiomas ou vozes compatíveis para retornar ao cliente. Esse parâmetro é especificado como uma lista separada por vírgulas das palavras-chave. As palavras-chave a seguir estão disponíveis:<ul><li>`speech`: fornece o conjunto de idiomas compatíveis para transcrever fala.</li><li>`tts`: fornece o conjunto de vozes compatíveis para conversão de texto em fala.</li><li>`text`: fornece o conjunto de idiomas compatíveis para a tradução de texto.</li></ul>Se um valor não for especificado, o valor de `scope` usará `text` como padrão.|query|string|
-|X-ClientTraceId    |Um GUID gerado pelo cliente usado para rastrear uma solicitação. Para facilitar a solução de problemas, os clientes devem fornecer um novo valor com cada solicitação e registrá-lo em log.|cabeçalho|string|
-|Idioma aceito    |Alguns dos campos na resposta são nomes de idiomas ou regiões. Use esse parâmetro para definir o idioma no qual os nomes são retornados. O idioma é especificado fornecendo uma marcação de idioma BCP 47 bem formada. Selecione uma marcação na lista de identificadores de idioma retornados com o escopo `text`. Para idiomas sem suporte, os nomes são fornecidos no idioma inglês.<br/>Por exemplo, use o valor `fr` para solicitar nomes em francês ou use o valor `zh-Hant` para solicitar nomes em chinês tradicional.|cabeçalho|string|
+|api-version    |Versão da API solicitada pelo cliente. Os valores permitidos são: `1.0`.|query|cadeia de caracteres|
+|scope  |Conjuntos de idiomas ou vozes compatíveis para retornar ao cliente. Esse parâmetro é especificado como uma lista separada por vírgulas das palavras-chave. As palavras-chave a seguir estão disponíveis:<ul><li>`speech`: fornece o conjunto de idiomas compatíveis para transcrever fala.</li><li>`tts`: fornece o conjunto de vozes compatíveis para conversão de texto em fala.</li><li>`text`: fornece o conjunto de idiomas compatíveis para a tradução de texto.</li></ul>Se um valor não for especificado, o valor de `scope` usará `text` como padrão.|query|cadeia de caracteres|
+|X-ClientTraceId    |Um GUID gerado pelo cliente usado para rastrear uma solicitação. Para facilitar a solução de problemas, os clientes devem fornecer um novo valor com cada solicitação e registrá-lo em log.|cabeçalho|cadeia de caracteres|
+|Idioma aceito    |Alguns dos campos na resposta são nomes de idiomas ou regiões. Use esse parâmetro para definir o idioma no qual os nomes são retornados. O idioma é especificado fornecendo uma marcação de idioma BCP 47 bem formada. Selecione uma marcação na lista de identificadores de idioma retornados com o escopo `text`. Para idiomas sem suporte, os nomes são fornecidos no idioma inglês.<br/>Por exemplo, use o valor `fr` para solicitar nomes em francês ou use o valor `zh-Hant` para solicitar nomes em chinês tradicional.|cabeçalho|cadeia de caracteres|
 
 ### <a name="response-messages"></a>Mensagens de resposta
 

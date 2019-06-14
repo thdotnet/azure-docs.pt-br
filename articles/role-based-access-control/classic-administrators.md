@@ -15,10 +15,10 @@ ms.date: 02/19/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 9c3bd2480853f5c4134cd560c20a6007b044e138
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64924646"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Administradores da assinatura clássica do Azure
@@ -38,7 +38,7 @@ Este artigo descreve como adicionar ou alterar as funções Administrador de Ser
 
     Coadministradores somente podem ser atribuídos no escopo da assinatura.
 
-1. Clique em **Controle de acesso (IAM)**.
+1. Clique em **Controle de acesso (IAM)** .
 
 1. Clique na guia **Administradores clássicos**.
 
@@ -71,7 +71,7 @@ Observe que as [funções internas para recursos do Azure](../role-based-access-
 
 1. Abra [Assinaturas](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) e selecione a assinatura.
 
-1. Clique em **Controle de acesso (IAM)**.
+1. Clique em **Controle de acesso (IAM)** .
 
 1. Clique na guia **Administradores clássicos**.
 
@@ -133,8 +133,8 @@ Se você estiver conectado com uma conta corporativa ou de estudante, poderá ad
 
   | Método de entrada | Adicionar usuário da conta Microsoft como Administrador de Serviços? | Adicionar conta corporativa ou de estudante na mesma organização que um Administrador de Serviços? | Adicionar conta corporativa ou de estudante em organização diferente como Administrador de Serviços? |
   | --- | --- | --- | --- |
-  |  Conta da Microsoft |Sim |Não |Não  |
-  |  Conta corporativa ou de estudante |Sim |sim |Não  |
+  |  Conta da Microsoft |Sim |Não |Não |
+  |  Conta corporativa ou de estudante |Sim |sim |Não |
 
 ## <a name="view-the-account-administrator"></a>Exibir o Administrador da Conta
 

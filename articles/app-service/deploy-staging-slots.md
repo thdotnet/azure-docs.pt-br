@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 01/03/2019
 ms.author: cephalin
 ms.openlocfilehash: 1e09eec89c683d36df49110227488a6413ed371c
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65955801"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Configurar ambientes de preparo no Serviço de Aplicativo do Azure
@@ -54,11 +54,11 @@ O aplicativo precisa estar em execução na camada **Standard**, **Premium** ou 
 
 3. Na caixa de diálogo **Adicionar um slot**, dê um nome ao slot e escolha se deseja clonar a configuração de aplicativo de outro slot de implantação existente. Clique em **Adicionar** para continuar.
    
-    ![Origem de Configuração](./media/web-sites-staged-publishing/ConfigurationSource1.png)
+    ![Fonte de configuração](./media/web-sites-staged-publishing/ConfigurationSource1.png)
    
     É possível clonar a configuração de qualquer slot existente. As configurações que podem ser clonadas incluem configurações de aplicativo, cadeias de conexão, versões da estrutura de linguagem, soquetes da Web, versão HTTP e número de bits da plataforma.
 
-4. Depois que o slot for adicionado, clique em **Fechar** para fechar a caixa de diálogo. O novo slot agora é mostrado na página **Slots de implantação (Versão Prévia)**. Por padrão, o **% do Tráfego** está definido como 0 para o novo slot, com todo o tráfego de clientes roteado para o slot de produção.
+4. Depois que o slot for adicionado, clique em **Fechar** para fechar a caixa de diálogo. O novo slot agora é mostrado na página **Slots de implantação (Versão Prévia)** . Por padrão, o **% do Tráfego** está definido como 0 para o novo slot, com todo o tráfego de clientes roteado para o slot de produção.
 
 5. Clique no novo slot de implantação para abrir a página de recursos desse slot.
    
@@ -94,12 +94,12 @@ Recursos marcados com um * estão planejadas para ficar adesivo no slot.
 **Configurações que não são alternadas**:
 
 * Pontos de extremidade de publicação
-* Nomes de Domínio Personalizados
+* Nomes de domínio personalizados
 * Associações SSL e certificados privados
-* Configurações de dimensionamento
+* Configurações de escala
 * Agendadores de Trabalhos Web
 * Restrições de IP
-* Sempre ativado
+* Always On
 * Configurações do protocolo (HTTP**S**, versão do TLS, certificados de cliente)
 * Configurações de log de diagnóstico
 * CORS
@@ -115,7 +115,7 @@ Para definir uma configuração de aplicativo ou uma cadeia de conexão para que
 ## <a name="swap-two-slots"></a>Alternar dois slots 
 Alterne os slots de implantação na página **Slots de implantação (Versão Prévia)** do aplicativo. 
 
-Você também pode alternar os slots nas páginas **Visão Geral** e **Slots de implantação**, mas atualmente elas fornecem a experiência antiga. Este guia mostra como usar a nova interface do usuário na página **Slots de implantação (Versão Prévia)**.
+Você também pode alternar os slots nas páginas **Visão Geral** e **Slots de implantação**, mas atualmente elas fornecem a experiência antiga. Este guia mostra como usar a nova interface do usuário na página **Slots de implantação (Versão Prévia)** .
 
 > [!IMPORTANT]
 > Antes de alternar um aplicativo de um slot de implantação para produção, verifique se todas as configurações estão definidas exatamente como você deseja tê-las no destino da alternância.
@@ -132,7 +132,7 @@ Para alternar os slots de implantação, siga estas etapas:
 
 2. Selecione os slots de **Origem** e de **Destino** desejados. Geralmente, o destino é o slot de produção. Além disso, clique nas guias **Alterações na Origem** e **Alterações no Destino** e verifique se as alterações de configuração são esperadas. Quando terminar, você poderá alternar os slots imediatamente clicando em **Alternância**.
 
-    ![Completar troca](./media/web-sites-staged-publishing/SwapImmediately.png)
+    ![Troca completa](./media/web-sites-staged-publishing/SwapImmediately.png)
 
     Para ver como o slot de destino será executado com as novas configurações antes que a alternância realmente ocorra, não clique em **Alternância**, mas siga as instruções descritas em [Alternância com visualização](#Multi-Phase).
 
@@ -195,7 +195,7 @@ A Alternância Automática simplifica cenários de DevOps em que você deseja im
 
 Para configurar a Alternância Automática, siga estas etapas:
 
-1. Navegue para a página de recursos do aplicativo. Selecione **Slots de implantação (Versão Prévia)** > *\<slot de origem desejado>* > **Configurações de aplicativo**.
+1. Navegue para a página de recursos do aplicativo. Selecione **Slots de implantação (Versão Prévia)**  >  *\<slot de origem desejado>*  > **Configurações de aplicativo**.
    
 2. Em **Alternância Automática**, selecione **Ativado**, selecione o slot de destino desejado em **Slot de Alternância Automática** e clique em **Salvar** na barra de comandos. 
    
@@ -238,7 +238,7 @@ Por padrão, todas as solicitações de cliente para a URL de produção do apli
 
 Para rotear o tráfego de produção automaticamente, siga estas etapas:
 
-1. Navegue para a página de recursos do aplicativo e selecione **Slots de implantação (Versão Prévia)**.
+1. Navegue para a página de recursos do aplicativo e selecione **Slots de implantação (Versão Prévia)** .
 
 2. Na coluna **% do Tráfego** do slot para o qual você deseja rotear, especifique um percentual (entre 0 e 100) para representar a quantidade de tráfego total que deseja rotear. Clique em **Salvar**.
 
@@ -272,7 +272,7 @@ Por padrão, novos slots recebem uma regra de roteamento de `0%`, conforme mostr
 
 ## <a name="delete-slot"></a>Excluir um slot
 
-Navegue para a página de recursos do aplicativo. Selecione **Slots de implantação (Versão Prévia)** > *\<slot a ser excluído>* > **Visão Geral**. Clique em **Excluir** na barra de comandos.  
+Navegue para a página de recursos do aplicativo. Selecione **Slots de implantação (Versão Prévia)**  >  *\<slot a ser excluído>*  > **Visão Geral**. Clique em **Excluir** na barra de comandos.  
 
 ![Excluir um slot de implantação](./media/web-sites-staged-publishing/DeleteStagingSiteButton.png)
 
@@ -289,7 +289,7 @@ O Azure PowerShell é um módulo que fornece cmdlets para gerenciar o Azure por 
 Para obter mais informações sobre como instalar e configurar o PowerShell do Azure, e como autenticar o PowerShell do Azure com sua assinatura do Azure, consulte [Como instalar e configurar o PowerShell do Microsoft Azure](/powershell/azure/overview).  
 
 - - -
-### <a name="create-web-app"></a>Criar aplicativo Web
+### <a name="create-web-app"></a>Criar um aplicativo Web
 ```powershell
 New-AzWebApp -ResourceGroupName [resource group name] -Name [app name] -Location [location] -AppServicePlan [app service plan name]
 ```

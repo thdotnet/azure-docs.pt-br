@@ -10,10 +10,10 @@ ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: a0eefe38fdffd04bb95826f960771bd6430ea687
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65024770"
 ---
 # <a name="import-data-wizard-for-azure-search"></a>Assistente de Importação de Dados do Azure Search
@@ -72,7 +72,7 @@ O índice estará pronto para consulta assim que o primeiro documento for carreg
 
 O assistente de **Importação de Dados** cria um objeto de fonte de dados persistentes especificando as informações de conexão com uma fonte de dados externa. O objeto da fonte de dados é usado exclusivamente com [indexadores](search-indexer-overview.md) e pode ser criado para as seguintes fontes de dados: 
 
-* [SQL Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
+* [Azure SQL](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [Armazenamento de Blobs do Azure](search-howto-indexing-azure-blob-storage.md)
 * [Armazenamento de Tabelas do Azure](search-howto-indexing-azure-tables.md) (não tem suporte para pipelines de [pesquisa cognitiva](cognitive-search-concept-intro.md))

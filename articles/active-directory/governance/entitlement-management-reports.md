@@ -17,22 +17,22 @@ ms.author: rolyon
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 60a61a581574c77a57939ea23fdadc7b060b82af
-ms.sourcegitcommit: 9ad75f83bbf0fc4623b7995794f33bbf823b31c0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64541534"
 ---
 # <a name="view-reports-and-logs-in-azure-ad-entitlement-management-preview"></a>Exibir relatórios e logs no gerenciamento de direitos do AD do Azure (visualização)
 
 > [!IMPORTANT]
-> Gerenciamento de direitos do Active Directory (Azure AD) do Azure está atualmente em visualização pública.
+> No momento, o gerenciamento de direitos do Azure AD (Azure Active Directory) está em versão prévia pública.
 > Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
 > Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="view-resources-a-user-has-access-to"></a>Exibir recursos de um usuário tem acesso ao
 
-1. Clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. Clique em **Azure Active Directory** e, em seguida, clique em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **relatório de atribuições de usuário**.
 
@@ -62,7 +62,7 @@ Quando o Azure AD recebe uma nova solicitação, ele grava um registro de audito
 
 O Azure AD será gravar registros de auditoria adicionais enquanto a solicitação está em andamento, incluindo:
 
-| Category | Atividade | Status da solicitação |
+| Categoria | Atividade | Status da solicitação |
 | :---- | :------------ | :------------ |
 | `EntitlementManagement` | `Auto approve access package assignment request` | Solicitação não requer aprovação |
 | `UserManagement` | `Create request approval` | Solicitação requer aprovação |

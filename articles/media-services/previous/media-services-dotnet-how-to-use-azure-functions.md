@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 618acae10b874eb5ebd5b6da7fe081368528dbd8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61217451"
 ---
 # <a name="develop-azure-functions-with-media-services"></a>Desenvolver o Azure Functions com os Serviços de Mídia
@@ -64,11 +64,11 @@ Depois que o aplicativo de funções for implantado, você poderá encontrá-lo 
 2. Escolha a linguagem **C#** e o cenário **Processamento de Dados**.
 3. Escolha o modelo **BlobTrigger**. Essa função será disparada sempre que um blob for carregado no contêiner **input**. O nome de **input** é especificado no **Caminho**, na próxima etapa.
 
-    ![de entrada](./media/media-services-azure-functions/media-services-azure-functions004.png)
+    ![files](./media/media-services-azure-functions/media-services-azure-functions004.png)
 
 4. Depois de selecionar **BlobTrigger**, alguns outros controles serão exibidos na página.
 
-    ![de entrada](./media/media-services-azure-functions/media-services-azure-functions005.png)
+    ![files](./media/media-services-azure-functions/media-services-azure-functions005.png)
 
 4. Clique em **Criar**. 
 
@@ -76,7 +76,7 @@ Depois que o aplicativo de funções for implantado, você poderá encontrá-lo 
 
 A função do Azure está associada a arquivos de código e a outros arquivos descritos nesta seção. Quando você usar o Portal do Azure para criar uma função, **function.json** e **run.csx** são criadas para você. Você precisa adicionar ou carregar um arquivo **project.json**. O restante desta seção mostra uma breve explicação de cada arquivo e mostra as respectivas definições.
 
-![de entrada](./media/media-services-azure-functions/media-services-azure-functions003.png)
+![files](./media/media-services-azure-functions/media-services-azure-functions003.png)
 
 ### <a name="functionjson"></a>function.json
 

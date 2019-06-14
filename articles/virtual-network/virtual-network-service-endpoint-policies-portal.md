@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 09/18/2018
 ms.author: kumud
 ms.openlocfilehash: b1d2d04e74828323166810d93c52a60671bf71e8
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64710926"
 ---
 # <a name="create-change-or-delete-service-endpoint-policy-using-the-azure-portal"></a>Criar, alterar ou excluir a política de ponto de extremidade de serviço usando o portal do Azure
@@ -73,7 +73,7 @@ Entre no Portal do Azure em https://portal.azure.com.
  
 ## <a name="view-endpoint-policies"></a>Exibir políticas de ponto de extremidade 
 
-1. Na caixa *Todos os serviços* no portal, comece digitando *políticas de ponto de extremidade de serviço*. Selecione **Políticas de ponto de extremidade de serviço (Versão prévia)**.
+1. Na caixa *Todos os serviços* no portal, comece digitando *políticas de ponto de extremidade de serviço*. Selecione **Políticas de ponto de extremidade de serviço (Versão prévia)** .
 2. Em **Assinaturas**, selecione sua assinatura e grupo de recursos, conforme mostrado na imagem a seguir
 
    ![Mostrar política](./media/virtual-network-service-endpoint-policies-portal/virtual-network-endpoint-policies-viewpolicies.PNG)

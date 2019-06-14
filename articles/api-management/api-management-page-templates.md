@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/09/2018
 ms.author: apimpm
 ms.openlocfilehash: 1fbafcdab938a0f8653df48631d7733cc58a3668
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60656757"
 ---
 # <a name="page-templates-in-azure-api-management"></a>Modelos de página no Gerenciamento de API do Azure
@@ -228,11 +228,11 @@ O Gerenciamento de API do Azure fornece a capacidade de personalizar o conteúdo
   
 |Propriedade|Type|DESCRIÇÃO|  
 |--------------|----------|-----------------|  
-|referenceCode|string|Código gerado se esta página foi exibida devido a um erro interno.|  
-|errorCode|string|Código gerado se esta página foi exibida devido a um erro interno.|  
-|emailBody|string|Corpo de email gerado se esta página foi exibida devido a um erro interno.|  
-|requestedUrl|string|A URL solicitada quando a página não foi encontrada.|  
-|referrerUrl|string|A URL de referência para a URL solicitada.|  
+|referenceCode|cadeia de caracteres|Código gerado se esta página foi exibida devido a um erro interno.|  
+|errorCode|cadeia de caracteres|Código gerado se esta página foi exibida devido a um erro interno.|  
+|emailBody|cadeia de caracteres|Corpo de email gerado se esta página foi exibida devido a um erro interno.|  
+|requestedUrl|cadeia de caracteres|A URL solicitada quando a página não foi encontrada.|  
+|referrerUrl|cadeia de caracteres|A URL de referência para a URL solicitada.|  
   
 ### <a name="sample-template-data"></a>Amostra de dados do modelo  
   

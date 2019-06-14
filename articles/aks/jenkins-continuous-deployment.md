@@ -7,11 +7,11 @@ author: zr-msft
 ms.author: zarhoads
 ms.topic: article
 ms.date: 01/09/2019
-ms.openlocfilehash: 703aa081c8acf41f9206e2b0ccff45571367d2e8
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 7a81f26b4dad5f7257e5c3fd012dffaf06d573bb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65073778"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-aks-with-jenkins-continuous-integration-and-deployment"></a>Tutorial: Implantar o GitHub para o AKS (Serviço de Kubernetes do Azure) com a integração e implantação contínuas do Jenkins
@@ -48,6 +48,9 @@ Para concluir este tutorial, você precisará destes itens:
 ## <a name="prepare-your-app"></a>Preparação do aplicativo
 
 Neste artigo, você usa um aplicativo de voto do Azure de exemplo que contém uma interface da Web hospedada em um ou mais pods, além de um segundo pod que hospeda o Redis para armazenamento de dados temporário. Antes de integrar o Jenkins e o AKS para implantações automatizadas, primeiro prepare e implante manualmente o aplicativo de voto do Azure no seu cluster do AKS. Essa implantação manual é a versão um do aplicativo e permite que você veja o aplicativo em ação.
+
+> [!NOTE]
+> O aplicativo de voto do Azure de exemplo usa um pod de Linux que está agendado para ser executado em um nó do Linux. O fluxo descrito neste artigo também funciona para um pod do Windows Server agendado em um nó do Windows Server.
 
 Faça a bifurcação do repositório do GitHub a seguir para o aplicativo de exemplo – [https://github.com/Azure-Samples/azure-voting-app-redis](https://github.com/Azure-Samples/azure-voting-app-redis). Para bifurcar o repositório para sua conta do GitHub, selecione o botão **Bifurcação** no canto superior direito.
 
@@ -208,7 +211,7 @@ az role assignment create --assignee 626dd8ea-042d-4043-a8df-4ef56273670f --role
 
 Com a atribuição de função criada no Azure, armazene suas credenciais do ACR em um objeto de credencial do Jenkins. Essas credenciais são referenciadas durante o trabalho de build do Jenkins.
 
-De volta ao lado esquerdo do portal do Jenkins, clique em **Credenciais** > **Jenkins** > **Credenciais globais (irrestritas)** > **Adicionar credenciais**
+De volta ao lado esquerdo do portal do Jenkins, clique em **Credenciais** > **Jenkins** > **Credenciais globais (irrestritas)**  > **Adicionar credenciais**
 
 Verifique se o tipo de credencial é **Nome de usuário com senha** e insira os seguintes itens:
 

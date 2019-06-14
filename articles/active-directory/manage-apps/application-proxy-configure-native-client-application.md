@@ -17,15 +17,15 @@ ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cb36d6a03da07681db468184a489a79f7f0deab7
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65825485"
 ---
 # <a name="how-to-enable-native-client-applications-to-interact-with-proxy-applications"></a>Como habilitar aplicativos cliente nativos interagir com aplicativos de proxy
 
-Você pode usar o Proxy de aplicativo do Azure Active Directory (Azure AD) para publicar aplicativos web, mas ele também pode ser usado para publicar aplicativos cliente nativos que são configurados com biblioteca de autenticação de AD (ADAL) do Azure. Aplicativos cliente nativos diferem dos aplicativos web porque estão instalados em um dispositivo, enquanto os aplicativos web são acessados por meio de um navegador.
+Você pode usar o Proxy de aplicativo do Azure Active Directory (Azure AD) para publicar aplicativos web, mas ele também pode ser usado para publicar aplicativos cliente nativos que são configurados com biblioteca de autenticação de AD (ADAL) do Azure. Os aplicativos cliente nativos diferem dos aplicativos Web porque eles são instalados em um dispositivo, enquanto os aplicativos Web são acessados por meio de um navegador.
 
 Para dar suporte a aplicativos cliente nativos, o Proxy de aplicativo aceita tokens emitidos pelo AD do Azure que são enviados no cabeçalho. O serviço de Proxy de aplicativo faz a autenticação para os usuários. Essa solução não usa tokens de aplicativo para autenticação.
 
@@ -54,7 +54,7 @@ Agora, você precisará registrar seu aplicativo no Azure AD, da seguinte maneir
    - Para direcionar apenas as contas que são internas para sua organização, selecione **contas neste diretório organizacional apenas**.
    - Para definir o destino apenas os negócios ou clientes educacionais, selecione **contas em qualquer diretório organizacional**.
    - Para direcionar o conjunto mais amplo de identidades da Microsoft, selecione **contas em qualquer diretório organizacional e contas pessoais da Microsoft**.
-7. No **URI de redirecionamento** título, selecione **cliente público (dispositivos móvel e desktop)**, e, em seguida, digite o URI de redirecionamento para seu aplicativo.
+7. No **URI de redirecionamento** título, selecione **cliente público (dispositivos móvel e desktop)** , e, em seguida, digite o URI de redirecionamento para seu aplicativo.
 8. Selecione e leia as **políticas de plataforma da Microsoft**e, em seguida, selecione **registrar**. Uma página de visão geral para o novo registro de aplicativo é criada e exibida.
 
 Para obter mais informações sobre como criar um novo registro de aplicativo, consulte [integrando aplicativos com o Azure Active Directory](../develop/quickstart-v1-integrate-apps-with-azure-ad.md).

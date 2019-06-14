@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 78b1eb6272fa97ef392e97723454d29cf56bb4bf
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62106143"
 ---
 # <a name="send-email-from-your-smtp-account-with-azure-logic-apps"></a>Enviar um email de sua conta SMTP com Aplicativos Lógicos do Azure
@@ -47,7 +47,7 @@ Com os Aplicativos Lógicos do Azure e o conector de protocolo SMTP (SMTP), voc�
 1. Na última etapa em que você deseja adicionar uma ação de SMTP, escolha **Nova etapa**. 
 
    Para adicionar uma ação entre as etapas, mova o ponteiro sobre a seta entre as etapas. 
-   Escolha o sinal de adição (**+**) que aparece e, em seguida, selecione **Adicionar uma ação**.
+   Escolha o sinal de adição ( **+** ) que aparece e, em seguida, selecione **Adicionar uma ação**.
 
 1. Na caixa de pesquisa, insira "smtp" como filtro. Na lista de ações, selecione a ação desejada.
 
@@ -59,8 +59,8 @@ Com os Aplicativos Lógicos do Azure e o conector de protocolo SMTP (SMTP), voc�
    | **Endereço do Servidor SMTP** | Sim | O endereço do seu servidor SMTP | 
    | **Nome de usuário** | Sim | O nome de usuário da sua conta SMTP | 
    | **Senha** | Sim | A senha da sua conta SMTP | 
-   | **Porta do Servidor SMTP** | Não  | Uma porta específica no servidor SMTP que você deseja usar | 
-   | **Habilitar SSL?** | Não  | Ligar ou desligar a criptografia SSL. | 
+   | **Porta do Servidor SMTP** | Não | Uma porta específica no servidor SMTP que você deseja usar | 
+   | **Habilitar SSL?** | Não | Ligar ou desligar a criptografia SSL. | 
    |||| 
 
 1. Forneça os detalhes necessários para a ação selecionada. 

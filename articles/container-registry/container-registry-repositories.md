@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 01/05/2018
 ms.author: cristyg
 ms.openlocfilehash: 685c978ff206e75d770918f2528a826ad522b706
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60427083"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64710193"
 ---
 # <a name="view-container-registry-repositories-in-the-azure-portal"></a>Exibir os repositórios do registro de contêiner no Portal do Azure
 
@@ -48,7 +48,7 @@ Por exemplo, se você enviou por push a imagem Nginx como indicado em [Efetuar p
 
 ![Repositórios no portal](./media/container-registry-repositories/container-registry-repositories.png)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Agora que você conhece as noções básicas sobre como exibir e trabalhar com repositórios no portal, experimente usar o Registro de Contêiner do Azure com um cluster do [Serviço de Kubernetes do Azure (AKS)](../aks/tutorial-kubernetes-prepare-app.md).
 

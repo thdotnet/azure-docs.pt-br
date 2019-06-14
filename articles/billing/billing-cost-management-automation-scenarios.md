@@ -16,10 +16,10 @@ ms.workload: billing
 ms.date: 6/13/2018
 ms.author: erikre
 ms.openlocfilehash: cb7a13d9abcf7c677d51f03df002ea06b543014e
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65232469"
 ---
 # <a name="automation-scenarios-for-billing-and-cost-management"></a>Cenários de automação para gerenciamento de custos e de cobrança
@@ -48,11 +48,11 @@ Você pode APIs de gerenciamento de custos e de cobrança em vários cenários p
 |:---------------------------:|:-------------------------:|:----------------:|:--------------------:|:----------------:|:------------------:|:---------:|
 | Orçamentos                     |                           |                  |           X          |                  |                    |     X     |
 | Cobranças do Marketplace                |             X             |         X        |           X          |         X        |          X         |     X     |
-| Tabela de Preços                 |             X             |         X        |           X          |         X        |          X         |           |
+| Tabela de preços                 |             X             |         X        |           X          |         X        |          X         |           |
 | Recomendações de reserva |                           |                  |           X          |                  |                    |           |
 | Detalhes da reserva         |                           |                  |           X          |         X        |                    |           |
 | Resumos da reserva       |                           |                  |           X          |         X        |                    |           |
-| Detalhes de Uso               |             X             |         X        |           X          |         X        |          X         |     X     |
+| Detalhes de uso               |             X             |         X        |           X          |         X        |          X         |     X     |
 | Períodos de Cobrança             |             X             |         X        |           X          |         X        |                    |           |
 | Faturas                    |             X             |         X        |           X          |         X        |                    |           |
 | RateCard                    |             X             |                  |           X          |         X        |          X         |           |

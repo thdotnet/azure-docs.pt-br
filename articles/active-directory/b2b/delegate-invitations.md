@@ -12,10 +12,10 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 11dda7fc3760f468c094fb4cf4484a27895f83b9
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65812682"
 ---
 # <a name="enable-b2b-external-collaboration-and-manage-who-can-invite-guests"></a>Habilitar a colaboração de B2B externa e gerenciar quem pode convidar pessoas
@@ -42,13 +42,13 @@ Por padrão, todos os usuários, incluindo convidados, podem convidar usuários 
    > As **configurações de colaboração externa** também estão disponíveis na página **Relações organizacionais**. No Azure Active Directory, em **Gerenciar**, acesse **Relações organizacionais** > **Configurações**.
 4. Sobre o **configurações de colaboração externa** , escolha as políticas que você deseja habilitar.
 
-   ![Configurações de colaboração externa](./media/delegate-invitations/control-who-to-invite.png)
+   ![Configuração de colaboração externa](./media/delegate-invitations/control-who-to-invite.png)
 
   - **Permissões de usuários convidados são limitadas**: Essa política determina as permissões para convidados em seu diretório. Selecione **Sim** para convidados do bloco de determinadas tarefas de diretório, como enumerar usuários, grupos ou outros recursos de diretório. Selecione **não** para fornecer convidados com o mesmo acesso aos dados do diretório como usuários regulares em seu diretório.
    - **Administradores e usuários na função de convidador podem convidar**: Para permitir que administradores e usuários na função "Emissor do convite convidado" convidar pessoas, definir essa política como **Sim**.
    - **Membros podem convidar**: Para permitir que os membros não-administrador do seu diretório convidar pessoas, definir essa política como **Sim**.
    - **Convidados podem convidar**: Para permitir que os convidados convidarem outras pessoas, definir essa política como **Sim**.
-   - **Permitir senha de uso único de Email para convidados (visualização)**: Para obter mais informações sobre o recurso de senha de uso único, consulte [autenticação de senha de uso único de Email (visualização)](one-time-passcode.md).
+   - **Permitir senha de uso único de Email para convidados (visualização)** : Para obter mais informações sobre o recurso de senha de uso único, consulte [autenticação de senha de uso único de Email (visualização)](one-time-passcode.md).
    - **Restrições de colaboração**: Para obter mais informações sobre como permitir ou bloquear convites para domínios específicos, consulte [permitir ou bloquear convites para usuários B2B de organizações específicas](allow-deny-list.md).
 
 ## <a name="assign-the-guest-inviter-role-to-a-user"></a>Atribua a função de emissor do convite convidado a um usuário

@@ -10,10 +10,10 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 10/23/2018
 ms.openlocfilehash: 12799a308157c3c0e19de1f82c0fe3df44fad37e
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62106293"
 ---
 # <a name="monitor-b2b-messages-with-azure-monitor-logs-in-azure-logic-apps"></a>Monitorar mensagens B2B com logs do Azure Monitor em aplicativos lógicos do Azure
@@ -54,7 +54,7 @@ Quando terminar, escolha **Adicionar configuração de diagnóstico**.
    | **Recurso** | <*integration-account-name*> | O nome do recurso do Azure no qual você deseja ativar o registro os logs | 
    ||||  
 
-   Por exemplo: 
+   Por exemplo:
 
    ![Configurar o diagnóstico para sua conta de integração](media/logic-apps-monitor-b2b-message/turn-on-diagnostics-integration-account.png)
 
@@ -71,7 +71,7 @@ Quando terminar, escolha **Adicionar configuração de diagnóstico**.
 
    1. Em **Log**, selecione a categoria **IntegrationAccountTrackingEvents** e escolha **Salvar**.
 
-   Por exemplo:  
+   Por exemplo: 
 
    ![Configurar logs do Azure Monitor para que você pode enviar dados de diagnóstico em um log](media/logic-apps-monitor-b2b-message/send-diagnostics-data-log-analytics-workspace.png)
 
@@ -96,7 +96,7 @@ Quando terminar, escolha **Adicionar configuração de diagnóstico**.
    | **Recurso** | <*integration-account-name*> | O nome do recurso do Azure no qual você deseja ativar o registro os logs | 
    ||||  
 
-   Por exemplo: 
+   Por exemplo:
 
    ![Configurar o diagnóstico para sua conta de integração](media/logic-apps-monitor-b2b-message/turn-on-diagnostics-integration-account.png)
 
@@ -113,7 +113,7 @@ Quando terminar, escolha **Adicionar configuração de diagnóstico**.
 
    1. Em **Log**, selecione a categoria **IntegrationAccountTrackingEvents** e escolha **Salvar**.
 
-   Por exemplo:  
+   Por exemplo: 
 
    ![Configurar logs do Azure Monitor para que você pode enviar dados de diagnóstico em um log](media/logic-apps-monitor-b2b-message/send-diagnostics-data-log-analytics-workspace.png)
 
@@ -126,7 +126,7 @@ Juntamente com os logs do Azure Monitor, você pode estender como usar dados de 
 * [Arquivar logs do Diagnóstico do Azure no Armazenamento do Azure](../azure-monitor/platform/archive-diagnostic-logs.md)
 * [Transmitir logs do Diagnóstico do Azure para os Hubs de Eventos do Azure](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md) 
 
-Depois, obtenha o monitoramento em tempo real usando a telemetria e a análise de outros serviços, como o [Stream Analytics do Azure](../stream-analytics/stream-analytics-introduction.md) e o [Power BI](../azure-monitor/platform/powerbi.md). Por exemplo: 
+Depois, obtenha o monitoramento em tempo real usando a telemetria e a análise de outros serviços, como o [Stream Analytics do Azure](../stream-analytics/stream-analytics-introduction.md) e o [Power BI](../azure-monitor/platform/powerbi.md). Por exemplo:
 
 * [Transmitir dados dos Hubs de Eventos para o Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
 * [Analisar dados de streaming com o Stream Analytics e criar um painel de análise em tempo real no Power BI](../stream-analytics/stream-analytics-power-bi-dashboard.md)

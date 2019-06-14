@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: philmea
 ms.openlocfilehash: 5497e4956fbdc74eced302867c33a66d07d6a184
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60888889"
 ---
 # <a name="connect-a-generic-client-application-to-your-azure-iot-central-application-nodejs"></a>Conectar um aplicativo cliente genérico ao aplicativo Azure IoT Central (Node.js)
@@ -34,7 +34,7 @@ Em seu aplicativo do Azure IoT Central, você precisa de um modelo de dispositiv
 
 Adicionar a telemetria a seguir sobre o **medidas** página:
 
-| Nome de exibição | Nome do campo  | Unidades | Min | max | Casas Decimais |
+| Nome para exibição | Nome do campo  | Unidades | Min | max | Casas Decimais |
 | ------------ | ----------- | ----- | --- | --- | -------------- |
 | Temperatura  | temperatura | F     | 60  | 110 | 0              |
 | Umidade     | umidade    | %     | 0   | 100 | 0              |
@@ -49,7 +49,7 @@ Insira os nomes dos campos exatamente como mostrado na tabela no modelo de dispo
 
 Adicione o seguinte o estado na **medidas** página:
 
-| Nome de exibição | Nome do campo  | Valor 1 | Nome de exibição | Valor 2 | Nome de exibição |
+| Nome para exibição | Nome do campo  | Valor 1 | Nome para exibição | Valor 2 | Nome para exibição |
 | ------------ | ----------- | --------| ------------ | ------- | ------------ | 
 | Modo ventilação     | fanmode     | 1       | Executando      | 0       | Parado      |
 
@@ -62,7 +62,7 @@ Insira os nomes dos campos exatamente como mostrado na tabela no modelo de dispo
 
 Adicione o seguinte evento sobre o **medidas** página:
 
-| Nome de exibição | Nome do campo  | Severity |
+| Nome para exibição | Nome do campo  | Severity |
 | ------------ | ----------- | -------- |
 | Superaquecimento  | overheat    | Erro    |
 
@@ -73,7 +73,7 @@ Adicione o seguinte evento sobre o **medidas** página:
 
 Adicione as seguintes propriedades de dispositivo na **propriedades** página:
 
-| Nome de exibição        | Nome do campo        | Tipo de dados |
+| Nome para exibição        | Nome do campo        | Tipo de dados |
 | ------------------- | ----------------- | --------- |
 | Número de série       | serialNumber      | text      |
 | Fabricante do dispositivo | manufacturer      | text      |
@@ -84,7 +84,7 @@ Insira os nomes de campo exatamente conforme mostrado na tabela no modelo de dis
 
 Adicione o seguinte **número** configurações de **configurações** página:
 
-| Nome de exibição    | Nome do campo     | Unidades | Decimais | Min | max  | Inicial |
+| Nome para exibição    | Nome do campo     | Unidades | Decimais | Min | max  | Inicial |
 | --------------- | -------------- | ----- | -------- | --- | ---- | ------- |
 | Velocidade da ventoinha       | fanSpeed       | rpm   | 0        | 0   | 3000 | 0       |
 | Temperatura definida | setTemperature | F     | 0        | 20  | 200  | 80      |
@@ -95,13 +95,13 @@ Insira o nome de campo exatamente conforme mostrado na tabela no modelo de dispo
 
 Adicione o seguinte comando na **comandos** página:
 
-| Nome de exibição    | Nome do campo     | Tempo limite padrão | Tipo de Dados |
+| Nome para exibição    | Nome do campo     | Tempo limite padrão | Tipo de Dados |
 | --------------- | -------------- | --------------- | --------- |
 | Contagem regressiva       | Contagem regressiva      | 30              | número    |
 
 Adicione o seguinte campo de entrada para o comando de contagem regressiva:
 
-| Nome de exibição    | Nome do campo     | Tipo de Dados | Value |
+| Nome para exibição    | Nome do campo     | Tipo de Dados | Value |
 | --------------- | -------------- | --------- | ----- |
 | Contagem de      | countFrom      | número    | 10    |
 

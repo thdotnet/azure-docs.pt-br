@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: be7dbe35800bbe911bc56d1883462534a16499a0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61485321"
 ---
 # <a name="monitor-and-manage-performance-of-sharded-multi-tenant-azure-sql-database-in-a-multi-tenant-saas-app"></a>Monitorar e gerenciar o desempenho do banco de dados SQL do Azure multilocatário fragmentado em um aplicativo SaaS multilocatário
@@ -98,7 +98,7 @@ O aplicativo de banco de dados multilocatário SaaS Wingtip Tickets é um aplica
 
 Para monitorar o uso de recursos que resulta da carga que está sendo aplicada, abra o portal para o banco de dados multilocatário, **tenants1**, que contém os locatários:
 
-1. Abra o [portal do Azure](https://portal.azure.com) e navegue até o servidor *tenants1-mt-&lt;USER&gt;*.
+1. Abra o [portal do Azure](https://portal.azure.com) e navegue até o servidor *tenants1-mt-&lt;USER&gt;* .
 1. Role para baixo, localize os bancos de dados e clique em **tenants1**. Esse banco de dados multilocatário fragmentado contém todos os locatários criados até o momento.
 
 ![gráfico de banco de dados](./media/saas-multitenantdb-performance-monitoring/multitenantdb.png)
@@ -109,7 +109,7 @@ Observe o gráfico de **DTU**.
 
 Defina um alerta no banco de dados que é disparado após \>75% de utilização, da seguinte maneira:
 
-1. Abra o banco de dados *tenants1* (no servidor *tenants1-mt-&lt;USER&gt;*) no [portal do Azure](https://portal.azure.com).
+1. Abra o banco de dados *tenants1* (no servidor *tenants1-mt-&lt;USER&gt;* ) no [portal do Azure](https://portal.azure.com).
 1. Clique em **Regras de Alerta** e, em seguida, clique em **+ Adicionar alerta**:
 
    ![adicionar alerta](media/saas-multitenantdb-performance-monitoring/add-alert.png)

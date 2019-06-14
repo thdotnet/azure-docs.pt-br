@@ -11,10 +11,10 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
 ms.openlocfilehash: 4f3fb624f5e6137c9edb0be97adc16d8c808ebd9
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65523083"
 ---
 # <a name="how-to-index-json-blobs-using-azure-search-blob-indexer"></a>Como indexar blobs JSON usando o indexador de BLOBs do Azure Search
@@ -45,7 +45,7 @@ O método mais fácil para indexação de documentos JSON é usar um assistente 
 
 Será necessário o nome da conta de armazenamento, nome do contêiner e para recuperar os dados em uma chave de acesso a **importar dados** assistente.
 
-### <a name="2---start-import-data-wizard"></a>2 - Iniciar o Assistente para Importação de Dados 
+### <a name="2---start-import-data-wizard"></a>2 - Iniciar o Assistente para Importação de Dados
 
 Na página de visão geral do serviço Azure Search, você pode [iniciar o assistente](search-import-data-portal.md) na barra de comandos ou clicando em **adicionar Azure Search** no **serviço Blob** seção do seu Painel de navegação esquerdo da conta de armazenamento.
 
@@ -128,7 +128,7 @@ Ordem das operações requer que você cria e chama os objetos nesta ordem. Em c
 
 Blobs JSON no armazenamento de BLOBs do Azure são normalmente um único documento JSON ou um "matriz" do JSON. O indexador de blob no Azure Search pode analisar a construção, dependendo de como você definir o parâmetro **parsingMode** na solicitação.
 
-| Documento JSON | parsingMode | Descrição | Disponibilidade |
+| Documento JSON | parsingMode | DESCRIÇÃO | Disponibilidade |
 |--------------|-------------|--------------|--------------|
 | Um por blob | `json` | Analisa blobs JSON como um único bloco de texto. Cada blob JSON torna-se um único documento do Azure Search. | Disponível em ambos os [restante](https://docs.microsoft.com/rest/api/searchservice/indexer-operations) API e [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer) SDK. |
 | Múltiplos por blob | `jsonArray` | Analisa uma matriz JSON no blob, onde cada elemento da matriz se torna um documento do Azure Search separado.  | Disponível em ambos os [restante](https://docs.microsoft.com/rest/api/searchservice/indexer-operations) API e [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer) SDK. |
@@ -292,7 +292,7 @@ O SDK do .NET tem paridade completa com a API REST. É recomendável examinar a 
 
 Blobs JSON podem assumir várias formas. O **parsingMode** parâmetro do indexador JSON determina como o conteúdo do blob JSON é analisado e estruturado em um índice de Azure Search:
 
-| parsingMode | Descrição |
+| parsingMode | DESCRIÇÃO |
 |-------------|-------------|
 | `json`  | Indexe cada blob como um único documento. Esse é o padrão. |
 | `jsonArray` | Escolha este modo se seus blobs consistem em matrizes JSON, e você precisa que cada elemento da matriz se torne um documento separado no Azure Search. |

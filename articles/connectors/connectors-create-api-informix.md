@@ -12,10 +12,10 @@ ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
 ms.openlocfilehash: 6004c02f190bbfcf374b3b5d2a5c478f0e52c961
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60690740"
 ---
 # <a name="get-started-with-the-informix-connector"></a>Introdução ao conector do Informix
@@ -58,7 +58,7 @@ No aplicativo lógico, você pode adicionar uma ação para listar tabelas em um
 2. Na lista de **gatilhos**, selecione **Recorrência**. 
 3. No gatilho **Recorrência**, clique em **Editar**, escolha a lista suspensa **Frequência** para selecionar **Dia** e defina o **Intervalo** como **7**.  
 4. Selecione a caixa **+ Nova etapa** e escolha **Adicionar uma ação**.
-5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Obter tabelas (Visualização)**.
+5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Obter tabelas (Visualização)** .
    
    ![](./media/connectors-create-api-informix/InformixconnectorActions.png)  
 6. No painel de configuração **Informix - Obter tabelas**, marque **caixa de seleção** para habilitar **Conectar via gateway de dados local**. Observe que as configurações mudam de nuvem para local.
@@ -82,11 +82,11 @@ Este conector dá suporte às conexões com os bancos de dados no local e na nuv
 
 | Propriedade | DESCRIÇÃO |
 | --- | --- |
-| Servidor |Obrigatório. Aceita um valor da cadeia de caracteres que representa um endereço TCP/IP ou alias no formato IPv4 ou IPv6, seguido de (delimitado por dois pontos) um número de porta TCP/IP. |
-| Banco de Dados |Obrigatório. Aceita um valor da cadeia de caracteres que representa um Nome do Banco de Dados Relacional (RDBNAM) DRDA. O Informix aceita uma cadeia de caracteres de 128 bytes (o banco de dados é conhecido como um nome de banco de dados IBM Informix (dbname)). |
+| server |Obrigatório. Aceita um valor da cadeia de caracteres que representa um endereço TCP/IP ou alias no formato IPv4 ou IPv6, seguido de (delimitado por dois pontos) um número de porta TCP/IP. |
+| database |Obrigatório. Aceita um valor da cadeia de caracteres que representa um Nome do Banco de Dados Relacional (RDBNAM) DRDA. O Informix aceita uma cadeia de caracteres de 128 bytes (o banco de dados é conhecido como um nome de banco de dados IBM Informix (dbname)). |
 | Autenticação |Opcional. Aceita um valor de item de lista, Básica ou Windows (kerberos). |
-| Nome de Usuário |Obrigatório. Aceita um valor de cadeia de caracteres. |
-| Senha |Obrigatório. Aceita um valor de cadeia de caracteres. |
+| username |Obrigatório. Aceita um valor de cadeia de caracteres. |
+| password |Obrigatório. Aceita um valor de cadeia de caracteres. |
 | Gateway |Obrigatório. Aceita um valor de item da lista, que representa o gateway de dados local definido para os Aplicativos Lógicos no grupo de armazenamento. |
 
 ## <a name="create-the-on-premises-gateway-connection"></a>Criar a conexão de gateway local
@@ -128,8 +128,8 @@ Você pode criar uma ação de aplicativo lógico para buscar todas as linhas na
 2. Na lista de **gatilhos**, selecione **Recorrência**. 
 3. No gatilho **Recorrência**, clique em **Editar**, escolha a lista suspensa **Frequência** para selecionar **Dia** e defina o **Intervalo** como **7**. 
 4. Selecione a caixa **+ Nova etapa** e escolha **Adicionar uma ação**.
-5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Obter linhas (Visualização)**.
-6. Na ação **Obter linhas (Visualização)**, selecione **Alterar conexão**.
+5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Obter linhas (Visualização)** .
+6. Na ação **Obter linhas (Visualização)** , selecione **Alterar conexão**.
 7. No painel de configuração **Conexões**, selecione **Criar novo**. 
    
     ![](./media/connectors-create-api-informix/InformixconnectorNewConnection.png)
@@ -165,8 +165,8 @@ Você pode criar uma ação de aplicativo lógico para adicionar uma linha em um
 2. Na lista de **gatilhos**, selecione **Recorrência**. 
 3. No gatilho **Recorrência**, clique em **Editar**, escolha a lista suspensa **Frequência** para selecionar **Dia** e defina o **Intervalo** como **7**. 
 4. Selecione a caixa **+ Nova etapa** e escolha **Adicionar uma ação**.
-5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Inserir linha (Visualização)**.
-6. Na ação **Obter linhas (Visualização)**, selecione **Alterar conexão**. 
+5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Inserir linha (Visualização)** .
+6. Na ação **Obter linhas (Visualização)** , selecione **Alterar conexão**. 
 7. No painel de configuração **Conexões** , selecione uma conexão. Por exemplo, selecione **hisdemo2**.
    
     ![](./media/connectors-create-api-informix/InformixconnectorChangeConnection.png)
@@ -192,8 +192,8 @@ Você pode criar uma ação de aplicativo lógico para buscar uma linha em uma t
 2. Na lista de **gatilhos**, selecione **Recorrência**. 
 3. No gatilho **Recorrência**, clique em **Editar**, escolha a lista suspensa **Frequência** para selecionar **Dia** e defina o **Intervalo** como **7**. 
 4. Selecione a caixa **+ Nova etapa** e escolha **Adicionar uma ação**.
-5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Obter linhas (Visualização)**.
-6. Na ação **Obter linhas (Visualização)**, selecione **Alterar conexão**. 
+5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Obter linhas (Visualização)** .
+6. Na ação **Obter linhas (Visualização)** , selecione **Alterar conexão**. 
 7. No painel de configurações de **Conexões** , selecione uma conexão existente. Por exemplo, selecione **hisdemo2**.
    
     ![](./media/connectors-create-api-informix/InformixconnectorChangeConnection.png)
@@ -220,8 +220,8 @@ Você pode criar uma ação de aplicativo lógico para alterar uma linha em uma 
 2. Na lista de **gatilhos**, selecione **Recorrência**. 
 3. No gatilho **Recorrência**, clique em **Editar**, escolha a lista suspensa **Frequência** para selecionar **Dia** e defina o **Intervalo** como **7**. 
 4. Selecione a caixa **+ Nova etapa** e escolha **Adicionar uma ação**.
-5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Atualizar linha (Visualização)**.
-6. Na ação **Obter linhas (Visualização)**, selecione **Alterar conexão**. 
+5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Atualizar linha (Visualização)** .
+6. Na ação **Obter linhas (Visualização)** , selecione **Alterar conexão**. 
 7. No painel de configurações de **Conexões** , selecione uma conexão existente. Por exemplo, selecione **hisdemo2**.
    
     ![](./media/connectors-create-api-informix/InformixconnectorChangeConnection.png)
@@ -247,8 +247,8 @@ Você pode criar uma ação de aplicativo lógico para remover uma linha em uma 
 2. Na lista de **gatilhos**, selecione **Recorrência**. 
 3. No gatilho **Recorrência**, clique em **Editar**, escolha a lista suspensa **Frequência** para selecionar **Dia** e defina o **Intervalo** como **7**. 
 4. Selecione a caixa **+ Nova etapa** e escolha **Adicionar uma ação**.
-5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Excluir linha (Visualização)**.
-6. Na ação **Obter linhas (Visualização)**, selecione **Alterar conexão**. 
+5. Na lista de **ações**, digite **informix** na caixa de edição **Procurar mais ações** e selecione **Informix - Excluir linha (Visualização)** .
+6. Na ação **Obter linhas (Visualização)** , selecione **Alterar conexão**. 
 7. No painel de configurações de **Conexões** , selecione uma conexão existente. Por exemplo, selecione **hisdemo2**.
    
     ![](./media/connectors-create-api-informix/InformixconnectorChangeConnection.png)

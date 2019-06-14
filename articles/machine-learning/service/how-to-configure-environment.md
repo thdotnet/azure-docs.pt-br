@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 05/14/2019
 ms.custom: seodec18
 ms.openlocfilehash: 7be6c9eda6d0a70d929efe4c00f661eb67105820
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65606419"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Configurar um ambiente de desenvolvimento para Azure Machine Learning
@@ -74,7 +74,7 @@ O bloco de anotações a VM é:
 
   Se você estiver no código, a máquina virtual inclui tutoriais e exemplos para ajudá-lo a explorar e aprender como usar o serviço Azure Machine Learning. Os notebooks de exemplo são armazenados na conta de armazenamento de BLOBs do Azure de seu espaço de trabalho torná-los podem ser compartilhadas entre VMs. Quando executado, eles também têm acesso a repositórios de dados e recursos de seu espaço de trabalho de computação. 
 
-+ **Configuração simples**: Crie um qualquer momento de seu espaço de trabalho do Azure Machine Learning. Forneça apenas um nome e especifique um tipo de VM do Azure. Experimente agora com este [guia de início rápido: Usar um servidor de notebook com base em nuvem para começar com o Azure Machine Learning](quickstart-run-cloud-notebook.md).
++ **Configuração simples**: Crie um qualquer momento de seu espaço de trabalho do Azure Machine Learning. Forneça apenas um nome e especifique um tipo de VM do Azure. Experimente agora com este [guia de início rápido: Usar um servidor do notebook baseado em nuvem para começar a usar o Azure Machine Learning](quickstart-run-cloud-notebook.md).
 
 + **Personalizável**. Enquanto uma VM segura e gerenciada oferta, você mantém o acesso completo aos recursos de hardware e personalizá-lo para seu desejar. Por exemplo, crie rapidamente a versão mais recente que NVIDIA V100 alimentado VM para realizar a depuração passo a passo da nova arquitetura de rede Neural.
 
@@ -378,9 +378,9 @@ Para usar esse arquivo de seu código, use `ws=Workspace.from_config()`. Esse c�
 
 É possível criar o arquivo de configuração de três maneiras:
 
-* **Siga as etapas em [criar um espaço de trabalho do serviço de Azure Machine Learning](setup-create-workspace.md#sdk)**: Um arquivo *config.json* é criado na biblioteca do Azure Notebooks. O arquivo contém as informações de configuração do workspace. É possível baixar ou copiar o *config.json* para outros ambientes de desenvolvimento.
+* **Siga as etapas em [criar um espaço de trabalho do serviço de Azure Machine Learning](setup-create-workspace.md#sdk)** : Um arquivo *config.json* é criado na biblioteca do Azure Notebooks. O arquivo contém as informações de configuração do workspace. É possível baixar ou copiar o *config.json* para outros ambientes de desenvolvimento.
 
-* **Baixe o arquivo**: No portal do Azure, selecione **Baixar config.json** na seção **Visão geral** do seu espaço de trabalho.
+* **Baixe o arquivo**: No [portal do Azure](https://ms.portal.azure.com), selecione **Baixar config.json** na seção **Visão geral** do seu espaço de trabalho.
 
      ![Portal do Azure](./media/how-to-configure-environment/configure.png)
 

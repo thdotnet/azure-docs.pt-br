@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
 ms.openlocfilehash: 2a160ab7447304dc6eb14f76a723df4e8a4d9f46
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60813578"
 ---
 # <a name="patterns-improve-prediction-accuracy"></a>Padrões aumentam a precisão da previsão
@@ -100,7 +100,7 @@ Uma combinação de **agrupando** com **opcional** sintaxe tem um limite de 3 n�
 |Permitido|Exemplo|
 |--|--|
 |Sim|( [ ( test1 &#x7c; test2 ) ] &#x7c; test3 )|
-|Não |( [ ( [ test1 ] &#x7c; test2 ) ] &#x7c; test3 )|
+|Não|( [ ( [ test1 ] &#x7c; test2 ) ] &#x7c; test3 )|
 
 ## <a name="nesting-limits-for-groups-with-or-ing-syntax"></a>Limites de aninhamento de grupos com sintaxe ing ou
 
@@ -109,7 +109,7 @@ Uma combinação de **agrupando** com **ing ou** sintaxe tem um limite de 2 barr
 |Permitido|Exemplo|
 |--|--|
 |Sim|(test1 &#x7c; test2 &#x7c; (test3 &#x7c; test4))|
-|Não |(test1 &#x7c; test2 &#x7c; test3 &#x7c; (test4 &#x7c; test5)) |
+|Não|(test1 &#x7c; test2 &#x7c; test3 &#x7c; (test4 &#x7c; test5)) |
 
 ## <a name="syntax-to-add-an-entity-to-a-pattern-template"></a>Sintaxe para adicionar uma entidade em um modelo de padrão
 Para adicionar uma entidade no modelo de padrão, coloque o nome de entidade entre chaves, como `Who does {Employee} manage?`. 
@@ -170,7 +170,7 @@ Marque texto opcional na expressão usando a sintaxe colchete de expressão regu
 |Padrão com texto opcional|Significado|
 |--|--|
 |`[find] email about {subject} [from {person}]`|`find` e `from {person}` são opcionais|
-|' Você pode ajudar a me [?] | Os sinais de pontuação é opcional|
+|' Você pode ajudar a me [?]|Os sinais de pontuação é opcional|
 
 Marcas de pontuação (`?`, `!`, `.`) deve ser ignorado e você precisa para ignorá-los usando a sintaxe de colchete quadrado em padrões. 
 

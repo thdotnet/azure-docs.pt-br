@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 11/03/2017
 ms.author: v-sharos
 ms.openlocfilehash: 8ad3f09bf46caf426b2008b583ebd2ff78522462
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60302510"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64713054"
 ---
 # <a name="troubleshoot-an-operational-storsimple-device"></a>Solucionar problemas de um dispositivo operacional do StorSimple
 > [!NOTE]
@@ -50,7 +50,7 @@ A tabela a seguir descreve os erros que você poderá encontrar ao executar o as
 | 1 |Erro 350032: Este dispositivo já foi desativado. |Você verá esse erro se executar o assistente de instalação em um dispositivo que esteja desativado. |[Contate o Suporte da Microsoft Support](storsimple-contact-microsoft-support.md) para as próximas etapas. Um dispositivo desativado não pode ser colocado em serviço. Uma redefinição de fábrica pode ser necessária antes que seja possível ativar o dispositivo novamente. |
 | 2 |Invoke-HcsSetupWizard: ERROR_INVALID_FUNCTION (exceção de HRESULT: 0x80070001) |A atualização do servidor DNS está falhando. As configurações de DNS são configurações globais e são aplicadas a todas as interfaces de rede habilitadas. |Habilite a interface e aplique as configurações de DNS novamente. Isso poderá afetar a rede para outras interfaces habilitadas, já que essas configurações são globais. |
 | 3 |O dispositivo parece estar online no portal de serviço do StorSimple Manager, mas quando você tenta concluir a instalação mínima e salvar a configuração, a operação falha. |Durante a instalação inicial, o proxy da Web não foi configurado, mesmo havendo um servidor proxy real pronto. |Use o [cmdlet Test-HcsmConnection][2] para localizar o erro. [Contate o Suporte da Microsoft](storsimple-contact-microsoft-support.md) se você não puder corrigir o problema. |
-| 4 |Invoke-HcsSetupWizard: Valor não está no intervalo esperado. |Uma máscara de sub-rede incorreta gera esse erro. As possíveis causas são:  <ul><li> A máscara de sub-rede está ausente ou vazia.</li><li>O formato de prefixo Ipv6 está incorreto.</li><li>A interface está habilitada para a nuvem, mas o gateway está ausente ou incorreto.</li></ul>Observe que DATA 0 será automaticamente habilitado para nuvem se configurado por meio do assistente de instalação. |Para determinar o problema, use a sub-rede 0.0.0.0 ou 256.256.256.256 e, em seguida, examine a saída. Insira os valores corretos para a máscara de sub-rede, o gateway e o prefixo Ipv6, como necessário. |
+| 4 |Invoke-HcsSetupWizard: Valor não está no intervalo esperado. |Uma máscara de sub-rede incorreta gera esse erro. As possíveis causas são: <ul><li> A máscara de sub-rede está ausente ou vazia.</li><li>O formato de prefixo Ipv6 está incorreto.</li><li>A interface está habilitada para a nuvem, mas o gateway está ausente ou incorreto.</li></ul>Observe que DATA 0 será automaticamente habilitado para nuvem se configurado por meio do assistente de instalação. |Para determinar o problema, use a sub-rede 0.0.0.0 ou 256.256.256.256 e, em seguida, examine a saída. Insira os valores corretos para a máscara de sub-rede, o gateway e o prefixo Ipv6, como necessário. |
 
 ## <a name="error-codes"></a>Códigos do Erro
 Os erros estão listados em ordem numérica.

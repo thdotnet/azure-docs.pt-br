@@ -9,10 +9,10 @@ ms.date: 01/23/2017
 ms.author: muralikk
 ms.subservice: common
 ms.openlocfilehash: ee53cc3a639a79e1b29ac6cd537bfb04e05b1bca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61478616"
 ---
 # <a name="azure-importexport-service-manifest-file-format"></a>Formato de arquivo de manifesto do serviço de Importação/Exportação do Azure
@@ -106,7 +106,7 @@ Os elementos de dados e os atributos do formato XML de manifesto da unidade são
 |`BlobList/PropertiesPath/@Hash`|Atributo, cadeia de caracteres|Especifica o valor de hash MD5 codificado com Base16 do arquivo de propriedades.|  
 |`Blob`|Elemento XML aninhado|Contém informações sobre cada blob em cada lista de blobs.|  
 |`Blob/BlobPath`|Cadeia de caracteres|O URI relativo do blob, começando com o nome do contêiner. Se o blob estiver no contêiner raiz, ele deverá começar com `$root`.|  
-|`Blob/FilePath`|Cadeia de caracteres|Especifica o caminho relativo até o arquivo na unidade. Para trabalhos de exportação, o caminho do blob será usado para o caminho do arquivo, se for possível; *, por exemplo,*, `pictures/bob/wild/desert.jpg` serão exportados para `\pictures\bob\wild\desert.jpg`. No entanto, devido a limitações de nomes NTFS, um blob pode ser exportado para um arquivo com um caminho que não lembra o caminho do blob.|  
+|`Blob/FilePath`|Cadeia de caracteres|Especifica o caminho relativo até o arquivo na unidade. Para trabalhos de exportação, o caminho do blob será usado para o caminho do arquivo, se for possível; *, por exemplo,* , `pictures/bob/wild/desert.jpg` serão exportados para `\pictures\bob\wild\desert.jpg`. No entanto, devido a limitações de nomes NTFS, um blob pode ser exportado para um arquivo com um caminho que não lembra o caminho do blob.|  
 |`Blob/ClientData`|Cadeia de caracteres|Opcional. Contém comentários do cliente. Esse valor não é interpretado pelo serviço de Importação/Exportação.|  
 |`Blob/Snapshot`|DateTime|Opcional para trabalhos de exportação. Especifica o identificador de instantâneo de um instantâneo de blob exportado.|  
 |`Blob/Length`|Número inteiro|Especifica o comprimento total do blob em bytes. O valor pode ser de até 200 GB para um blob de blocos e de até 1 TB para um blob de páginas. Para um blob de páginas, esse valor deve ser um múltiplo de 512.|  

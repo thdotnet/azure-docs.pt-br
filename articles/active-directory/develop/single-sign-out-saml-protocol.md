@@ -19,10 +19,10 @@ ms.custom: aaddev
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 06fd36935c1f43cc14697748666eccd9e6d31168
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65545957"
 ---
 # <a name="single-sign-out-saml-protocol"></a>Protocolo SAML de Logout Único
@@ -47,7 +47,7 @@ O serviço de nuvem envia uma mensagem `LogoutRequest` ao Azure AD para indicar 
 O elemento `LogoutRequest` enviado ao Azure AD requer os seguintes atributos:
 
 * `ID` - isso identifica a solicitação de saída. O valor de `ID` não deve começar com um número. A prática comum é acrescentar **id** à representação de cadeia de caracteres de um GUID.
-* `Version` - Defina o valor desse elemento como **2.0**. Esse valor é necessário.
+* `Version` - Defina o valor desse elemento como **2.0**. Esse valor é obrigatório.
 * `IssueInstant` - esta é uma cadeia de caracteres `DateTime` com um valor de UTC (Tempo Universal Coordenado) e [formato de ida e volta ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). O Microsoft Azure Active Directory espera um valor desse tipo, mas não é obrigatório.
 
 ### <a name="issuer"></a>Emissor

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 02/27/2019
 ms.author: ellacroi
 ms.openlocfilehash: d39ebf993498cea3ede11e07c5e71628287b81ac
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64938543"
 ---
 # <a name="cloud-solution-providers"></a>Provedores de Soluções de Nuvem
@@ -28,7 +28,7 @@ A tabela a seguir mostra tipos de oferta e modelos de preços que podem aceitar 
 | :---------------- | :---------|:----------|:-----------|
 | VMs  | Sim | sim | Sim |
 | Contêineres | N/D | Sim | N/D |
-| Modelos de Solução | N/D | Sim | N/D |
+| Modelos de solução | N/D | Sim | N/D |
 | Aplicativos gerenciados | N/D | Sim | Sim |
 | Solução de TI SaaS (por preços de site) | N/D | Sim | Sim |
 |   |   |   |

@@ -9,10 +9,10 @@ ms.date: 05/01/2018
 ms.author: vinagara
 ms.subservice: alerts
 ms.openlocfilehash: 809c98c1e2e51ae51d7fe03f2165a5d9eecb05cc
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64681811"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Ações de webhook para regras de alerta do log
@@ -42,7 +42,7 @@ Webhooks incluem uma URL e uma carga formatada em JSON, que são os dados enviad
 |:--- |:--- |:--- |
 | AlertRuleName |#alertrulename |Nome da regra de alerta. |
 | Severity |#severity |Severidade definida para o alerta do log disparado. |
-| AlertThresholdOperator |#thresholdoperator |O operador de limite da regra de alerta.  *Greater than (Maior que)* ou *Less than (Menor que)*. |
+| AlertThresholdOperator |#thresholdoperator |O operador de limite da regra de alerta.  *Greater than (Maior que)* ou *Less than (Menor que)* . |
 | AlertThresholdValue |#thresholdvalue |O valor de limite para a regra de alerta. |
 | LinkToSearchResults |#linktosearchresults |Vincular ao portal do Analytics que retorna os registros da consulta que criou o alerta. |
 | ResultCount |#searchresultcount |Número de registros nos resultados da pesquisa. |

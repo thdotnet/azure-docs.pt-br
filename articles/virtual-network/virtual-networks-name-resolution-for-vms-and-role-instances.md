@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 3/25/2019
 ms.author: rohink
 ms.openlocfilehash: e0f3de95cfd4a18294e5e8e2adcf3b52a7487dbb
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65411350"
 ---
 # <a name="name-resolution-for-resources-in-azure-virtual-networks"></a>Resolução de nomes para recursos em redes virtuais do Azure
@@ -88,15 +88,15 @@ O cliente DNS padrão do Windows tem um cache DNS interno. Algumas distribuiçõ
 
 Há um número de pacotes disponíveis de cache do DNS diferente (por exemplo, dnsmasq). Veja como instalar o dnsmasq nas distribuições mais comuns:
 
-* **Ubuntu (usa resolvconf)**:
+* **Ubuntu (usa resolvconf)** :
   * Instale o pacote dnsmasq com `sudo apt-get install dnsmasq`.
-* **SUSE (usa netconf)**:
+* **SUSE (usa netconf)** :
   * Instale o pacote dnsmasq com `sudo zypper install dnsmasq`.
   * Habilite o serviço dnsmasq com `systemctl enable dnsmasq.service`. 
   * Inicie o serviço dnsmasq com `systemctl start dnsmasq.service`. 
   * Edite **/etc/sysconfig/network/config** e altere *NETCONFIG_DNS_FORWARDER =""* para *dnsmasq*.
   * Atualize resolv.conf com `netconfig update` para definir o cache como o resolvedor DNS local.
-* **CentOS (usa NetworkManager)**:
+* **CentOS (usa NetworkManager)** :
   * Instale o pacote dnsmasq com `sudo yum install dnsmasq`.
   * Habilite o serviço dnsmasq com `systemctl enable dnsmasq.service`.
   * Inicie o serviço dnsmasq com `systemctl start dnsmasq.service`.
@@ -154,7 +154,7 @@ O encaminhamento do DNS também possibilita a resolução do DNS entre redes vir
 
 ![Diagrama do DNS entre redes virtuais](./media/virtual-networks-name-resolution-for-vms-and-role-instances/inter-vnet-dns.png)
 
-Quando você estiver usando a resolução de nomes fornecida pelo Azure, o protocolo de configuração de Host dinâmico (DHCP) do Azure fornecerá um sufixo DNS interno (**.internal.cloudapp.net**) para cada VM. Esse sufixo permite que a resolução de nomes do host, assim como os registros de nomes do host, estejam na zona **internal.cloudapp.net**. Ao usar sua própria solução de resolução de nomes, esse sufixo não será fornecido para as VMs, pois interfere com outras arquiteturas de DNS (como cenários associados ao domínio). Em vez disso, o Azure fornece um espaço reservado não funcional (*reddog.microsoft.com*).
+Quando você estiver usando a resolução de nomes fornecida pelo Azure, o protocolo de configuração de Host dinâmico (DHCP) do Azure fornecerá um sufixo DNS interno ( **.internal.cloudapp.net**) para cada VM. Esse sufixo permite que a resolução de nomes do host, assim como os registros de nomes do host, estejam na zona **internal.cloudapp.net**. Ao usar sua própria solução de resolução de nomes, esse sufixo não será fornecido para as VMs, pois interfere com outras arquiteturas de DNS (como cenários associados ao domínio). Em vez disso, o Azure fornece um espaço reservado não funcional (*reddog.microsoft.com*).
 
 Se necessário, você pode determinar o sufixo DNS interno usando o PowerShell ou a API:
 

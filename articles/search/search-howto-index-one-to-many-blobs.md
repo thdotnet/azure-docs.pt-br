@@ -11,10 +11,10 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seofeb2018
 ms.openlocfilehash: 628ced069c9d32c6e874c2e36a1e3b752c476003
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65024661"
 ---
 # <a name="indexing-blobs-producing-multiple-search-documents"></a>Indexação de blobs para produzir vários documentos de pesquisa
@@ -61,7 +61,7 @@ Quando você cria um indexador e defina as **parsingMode** para `jsonLines` – 
 
 Essa configuração resultará no índice de Azure Search, que contém as informações a seguir (id de codificação base64 reduzido para fins de brevidade)
 
-| ID | temperatura | pressão |  timestamp |
+| id | temperatura | pressão | timestamp |
 |----|-------------|----------|-----------|
 | aHR0 ... YjEuanNvbjsx | 100 | 100 | 2019-02-13T00:00:00Z |
 | aHR0 ... YjEuanNvbjsy | 33 | 30 | 2019-02-14T00:00:00Z |

@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: jegeib
 ms.openlocfilehash: 6315e6d39a3b68854beb6563d075e3c79ca93a69
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60610833"
 ---
 # <a name="getting-started-with-the-threat-modeling-tool"></a>Introdução ao Threat Modeling Tool
 
-A Microsoft Threat Modeling Tool 2018 foi lançada em GA em setembro de 2018 como um componente gratuito do tipo **[clique para baixar](https://aka.ms/threatmodelingtool)**. A alteração no mecanismo de entrega nos permite efetuar push dos aprimoramentos mais recentes e correções de bug para os clientes toda vez que eles abrem a ferramenta, facilitando a manutenção e o uso da ferramenta.
+A Microsoft Threat Modeling Tool 2018 foi lançada em GA em setembro de 2018 como um componente gratuito do tipo **[clique para baixar](https://aka.ms/threatmodelingtool)** . A alteração no mecanismo de entrega nos permite efetuar push dos aprimoramentos mais recentes e correções de bug para os clientes toda vez que eles abrem a ferramenta, facilitando a manutenção e o uso da ferramenta.
 Este artigo explica o processo de como começar a usar a abordagem de modelagem de ameaça do Microsoft Security Development Lifecycle (SDL), além de mostrar como usar a ferramenta para desenvolver excelentes modelos de ameaça como um alicerce do seu processo de segurança.
 
-Este artigo se baseia no conhecimento existente da abordagem de modelagem de ameaça do SDL. Para fazer uma análise rápida, confira **[Aplicativos Web de modelagem de ameaça](https://msdn.microsoft.com/library/ms978516.aspx)** e uma versão arquivada do artigo do MSDN **[Descubra falhas de segurança usando a abordagem STRIDE](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxzZWN1cmVwcm9ncmFtbWluZ3xneDo0MTY1MmM0ZDI0ZjQ4ZDMy)**, publicado em 2006.
+Este artigo se baseia no conhecimento existente da abordagem de modelagem de ameaça do SDL. Para fazer uma análise rápida, confira **[Aplicativos Web de modelagem de ameaça](https://msdn.microsoft.com/library/ms978516.aspx)** e uma versão arquivada do artigo do MSDN **[Descubra falhas de segurança usando a abordagem STRIDE](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxzZWN1cmVwcm9ncmFtbWluZ3xneDo0MTY1MmM0ZDI0ZjQ4ZDMy)** , publicado em 2006.
 
 Em poucas palavras, a abordagem envolve a criação de um diagrama, a identificação de ameaças, a mitigação delas e a validação de cada mitigação. Veja um diagrama que destaca esse processo:
 
@@ -44,7 +44,7 @@ Ao iniciar o Threat Modeling Tool, você perceberá alguns itens, como pode ser 
 | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Botão Comentários, Sugestões e Problemas** | Direciona você para o **[Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sdlprocess)** em relação a todos os assuntos sobre o SDL. Desse modo, você tem a oportunidade de saber o que os outros usuários estão fazendo, além de encontrar soluções alternativas e recomendações. Caso não encontre o que está procurando, envie um email para tmtextsupport@microsoft.com e nossa equipe de suporte ajudará você                                                                                                                            |
 | **Criar um modelo**                          | Abre uma tela em branco para desenhar seu diagrama. Não se esqueça de escolher o padrão que deseja usar no seu modelo                                                                                                                                                                                                                                                                                                                                                                       |
-| **Padrão para novos modelos**                 | Você deve escolher o padrão a ser usado antes de criar um modelo. Nosso modelo principal é Azure Threat Model Template, que contém estênceis, ameaças e mitigações específicos do Azure. Para modelos genéricos, escolha Base de Dados de Conhecimento de TM do SDL no menu suspenso. Deseja criar seu próprio modelo ou enviar um novo para todos os usuários? Confira nossa Página no GitHub, **[Repositório de Modelos](https://github.com/Microsoft/threat-modeling-templates)**, para saber mais                              |
+| **Padrão para novos modelos**                 | Você deve escolher o padrão a ser usado antes de criar um modelo. Nosso modelo principal é Azure Threat Model Template, que contém estênceis, ameaças e mitigações específicos do Azure. Para modelos genéricos, escolha Base de Dados de Conhecimento de TM do SDL no menu suspenso. Deseja criar seu próprio modelo ou enviar um novo para todos os usuários? Confira nossa Página no GitHub, **[Repositório de Modelos](https://github.com/Microsoft/threat-modeling-templates)** , para saber mais                              |
 | **Abrir um modelo**                            | <p>Abre modelos de ameaça salvos anteriormente. Caso você precise abrir os arquivos mais recentes, Modelos Abertos Recentemente é um excelente recurso. Ao passar o mouse sobre a seleção, você verá 2 maneiras de abrir modelos:</p><p><ul><li>Abrir deste Computador – modo clássico de abrir um arquivo usando o armazenamento local</li><li>Abrir do OneDrive – as equipes podem usar pastas no OneDrive para salvar e compartilhar seus modelos de ameaças em um único local, de modo a ajudar a aumentar a produtividade e a colaboração</li></ul></p> |
 | **Guia de Introdução**                   | Abre a página principal do **[Microsoft Threat Modeling Tool](./azure-security-threat-modeling-tool.md)**                                                                                                                                                                                                                                                                                                                                                                                            |
 
@@ -79,14 +79,14 @@ Eles passarão pelo processo de desenvolver o primeiro modelo de ameaça.
 > - Ele está enviando comandos para nosso servidor Web — o círculo
 > - O servidor Web está consultando um banco de dados (duas linhas paralelas)
 
-O que Ricardo acabou de mostrar a Cristina é um DFD, isto é, **[Diagrama de Fluxo de Dados](https://en.wikipedia.org/wiki/Data_flow_diagram)**. A ferramenta Threat Modeling Tool permite que os usuários especifiquem limites confiáveis, indicados pelas linhas pontilhadas vermelhas, para mostrar onde as diferentes entidades estão no controle. Por exemplo, os administradores de TI exigem um sistema do Active Directory para fins de autenticação, de modo que o Active Directory está fora do controle deles.
+O que Ricardo acabou de mostrar a Cristina é um DFD, isto é, **[Diagrama de Fluxo de Dados](https://en.wikipedia.org/wiki/Data_flow_diagram)** . A ferramenta Threat Modeling Tool permite que os usuários especifiquem limites confiáveis, indicados pelas linhas pontilhadas vermelhas, para mostrar onde as diferentes entidades estão no controle. Por exemplo, os administradores de TI exigem um sistema do Active Directory para fins de autenticação, de modo que o Active Directory está fora do controle deles.
 
 > Cristina: Para mim, parece que está tudo certo. E quanto às ameaças?
 > Ricardo: Deixe-me mostrar.
 
 ## <a name="analyzing-threats"></a>Analisando ameaças
 
-Quando ele clica no modo de exibição de análise na seleção de menu do ícone (arquivo com a lupa), ele vê uma lista de ameaças geradas que o Threat Modeling Tool encontrou com base no modelo padrão, que usa a abordagem SDL chamada **[STRIDE (Falsificação, Adulteração, Divulgação de Informações, Repúdio, Negação de Serviço e Elevação de Privilégio)](https://en.wikipedia.org/wiki/STRIDE_(security))**. A ideia é que o software incorra em um conjunto previsível de ameaças, que pode ser encontrado usando estas 6 categorias.
+Quando ele clica no modo de exibição de análise na seleção de menu do ícone (arquivo com a lupa), ele vê uma lista de ameaças geradas que o Threat Modeling Tool encontrou com base no modelo padrão, que usa a abordagem SDL chamada **[STRIDE (Falsificação, Adulteração, Divulgação de Informações, Repúdio, Negação de Serviço e Elevação de Privilégio)](https://en.wikipedia.org/wiki/STRIDE_(security))** . A ideia é que o software incorra em um conjunto previsível de ameaças, que pode ser encontrado usando estas 6 categorias.
 
 Pense nessa abordagem como se você estivesse protegendo sua casa, garantindo que cada porta e janela tenha um mecanismo de trava, antes de ter um sistema de alarme ou de registrar um boletim de ocorrência por roubo.
 

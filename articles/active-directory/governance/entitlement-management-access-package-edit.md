@@ -17,16 +17,16 @@ ms.author: rolyon
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ce51f4df50de50cef06bba699ca7c6f76bc5d166
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65833222"
 ---
 # <a name="edit-and-manage-an-existing-access-package-in-azure-ad-entitlement-management-preview"></a>Editar e gerenciar um pacote existente de acesso no gerenciamento de direitos do AD do Azure (visualização)
 
 > [!IMPORTANT]
-> Gerenciamento de direitos do Active Directory (Azure AD) do Azure está atualmente em visualização pública.
+> No momento, o gerenciamento de direitos do Azure AD (Azure Active Directory) está em versão prévia pública.
 > Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
 > Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -40,7 +40,7 @@ Uma função de recurso é uma coleção de permissões associadas a um recurso.
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 
@@ -138,7 +138,7 @@ Azure AD pode atribuir automaticamente os usuários acesso a um site do SharePoi
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 
@@ -146,7 +146,7 @@ Azure AD pode atribuir automaticamente os usuários acesso a um site do SharePoi
 
 1. Na lista de funções de recurso, localize a função do recurso que deseja remover.
 
-1. Clique no botão de reticências (**...** ) e, em seguida, clique em **Remover função de recurso**.
+1. Clique no botão de reticências ( **...** ) e, em seguida, clique em **Remover função de recurso**.
 
     Todos os usuários com as atribuições existentes para o pacote de acesso terão automaticamente seu acesso revogado a essa função de recurso quando ele é removido.
 
@@ -160,7 +160,7 @@ O diagrama a seguir mostra o processo de alto nível para criar uma política pa
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 
@@ -180,7 +180,7 @@ Você pode editar uma política a qualquer momento. Se você alterar a data de v
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 
@@ -202,7 +202,7 @@ Em alguns casos, talvez você queira atribuir diretamente a usuários específic
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 
@@ -230,7 +230,7 @@ Em alguns casos, talvez você queira atribuir diretamente a usuários específic
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 
@@ -250,7 +250,7 @@ Em alguns casos, talvez você queira atribuir diretamente a usuários específic
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 
@@ -262,7 +262,7 @@ Em alguns casos, talvez você queira atribuir diretamente a usuários específic
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 
@@ -282,7 +282,7 @@ Você só pode cancelar uma solicitação pendente que ainda não foram entregue
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 
@@ -298,13 +298,13 @@ A maioria dos usuários em seu diretório podem entrar portal do meu acesso e ve
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 
 1. Na página Visão geral, copie o **link do portal de acesso Meus**.
 
-    ![Visão geral do acesso pacote - link meu acesso do portal](./media/entitlement-management-shared/my-access-portal-link.png)
+    ![Visão geral do pacote de acesso – Link do portal Meus Acessos](./media/entitlement-management-shared/my-access-portal-link.png)
 
 1. Envie um email ou envie o link para seu parceiro de negócios externos. Eles podem compartilhar o link com seus usuários para solicitar o acesso de pacote.
 
@@ -314,7 +314,7 @@ Pacotes de acesso são detectáveis por padrão. Isso significa que se uma polí
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 
@@ -332,7 +332,7 @@ Um pacote de acesso só pode ser excluído se ele tiver nenhuma atribuição de 
 
 **Função de pré-requisito:** Usuário administrador, o proprietário do catálogo ou o Gerenciador de pacotes de acesso
 
-1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, clique em **governança de identidade**.
+1. No portal do Azure, clique em **Azure Active Directory** e, em seguida, em **Governança de Identidade**.
 
 1. No menu à esquerda, clique em **acessar pacotes** e, em seguida, abra o pacote de acesso.
 

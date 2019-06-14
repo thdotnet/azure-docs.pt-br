@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 3b5826d472b80179c5eb76e0e3a6b1c7ee282487
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66001084"
 ---
 # <a name="security-attributes-for-api-management"></a>Atributos de segurança para gerenciamento de API
@@ -72,6 +72,6 @@ Este artigo documenta os atributos de segurança integrados de gerenciamento de 
 
 Esta seção documenta as vulnerabilidades mais comuns, que não afetam o gerenciamento de API do Azure.
 
-| Vulnerabilidade               | Descrição                                                                                                                                                                                                                                                                                                               |
+| Vulnerabilidade               | DESCRIÇÃO                                                                                                                                                                                                                                                                                                               |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ticketbleed (CVE-2016-9244) | Ticketbleed é uma vulnerabilidade na implementação da extensão TLS SessionTicket encontrado em alguns produtos de F5. Ele permite que o vazamento ("mais avançadas") de até 31 bytes de dados de memória não inicializada. Isso é causado pela pilha de TLS, preenchimento de uma ID de sessão passada do cliente, com os dados para torná-lo 32 bits de comprimento. |

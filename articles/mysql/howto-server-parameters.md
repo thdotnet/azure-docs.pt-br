@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.openlocfilehash: 103e09a0e2b9dd409fa2ddaff1c5311ef9936d22
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61422077"
 ---
 # <a name="how-to-configure-server-parameters-in-azure-database-for-mysql-by-using-the-azure-portal"></a>Como configurar parâmetros de servidor no Banco de Dados do Azure para MySQL usando o portal do Azure
@@ -47,17 +47,17 @@ Pool de buffers InnoDB e Máximo de Conexões não são configuráveis e são as
 |Uso geral| Gen 4| 4| 7680| 625|
 |Uso geral| Gen 4| 8| 15360| 1250|
 |Uso geral| Gen 4| 16| 31232| 2500|
-|Uso geral| Gen 4| 32| 62976| 5.000|
+|Uso geral| Gen 4| 32| 62976| 5\.000|
 |Uso geral| Gen 5| 2| 3584| 300|
 |Uso geral| Gen 5| 4| 7680| 625|
 |Uso geral| Gen 5| 8| 15360| 1250|
 |Uso geral| Gen 5| 16| 31232| 2500|
-|Uso geral| Gen 5| 32| 62976| 5.000|
+|Uso geral| Gen 5| 32| 62976| 5\.000|
 |Uso geral| Gen 5| 64| 125952| 10000|
 |Otimizado para memória| Gen 5| 2| 7168| 600|
 |Otimizado para memória| Gen 5| 4| 15360| 1250|
 |Otimizado para memória| Gen 5| 8| 30720| 2500|
-|Otimizado para memória| Gen 5| 16| 62464| 5.000|
+|Otimizado para memória| Gen 5| 16| 62464| 5\.000|
 |Otimizado para memória| Gen 5| 32| 125952| 10000|
 
 Esses parâmetros de servidor adicionais não são configuráveis no sistema:

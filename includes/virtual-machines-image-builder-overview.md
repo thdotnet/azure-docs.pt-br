@@ -6,10 +6,10 @@ ms.topic: include
 ms.service: virtual-machines-linux
 manager: jeconnoc
 ms.openlocfilehash: e1b3b5fe603072069cb3a19c7597fcc1872fefd7
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66111448"
 ---
 Imagens padronizadas VM (máquina virtual) permitem que as organizações a migrar para a nuvem e garantir a consistência nas implantações. Imagens normalmente incluem configurações de segurança e configuração predefinidas e o software necessário. Configurar seu próprio pipeline da geração de imagens exige tempo, infraestrutura e configuração, mas com o construtor de imagem de VM do Azure, basta fornecer uma configuração simples que descreve sua imagem, enviá-lo para o serviço e a imagem é criada e distribuída.
@@ -20,7 +20,7 @@ O construtor de imagens de VM do Azure (construtor de imagens do Azure) permite 
 > Construtor de imagens do Azure está atualmente em visualização pública.
 > Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="preview-features"></a>Recursos de visualização
+## <a name="preview-features"></a>Versão prévia dos recursos
 
 Para a visualização, há suporte para esses recursos:
 
@@ -51,7 +51,7 @@ AIB dará suporte a imagens de sistema operacional base do Azure Marketplace:
 - Windows 2019
 
 
-## <a name="how-it-works"></a>Como funciona
+## <a name="how-it-works"></a>Como ele funciona
 
 
 ![Desenho conceitual do construtor de imagens do Azure](./media/virtual-machines-image-builder-overview/image-builder.png)

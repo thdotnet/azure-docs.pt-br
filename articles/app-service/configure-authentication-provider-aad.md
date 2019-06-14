@@ -16,10 +16,10 @@ ms.date: 02/20/2019
 ms.author: mahender
 ms.custom: seodec18
 ms.openlocfilehash: d687e770fae6c32ee351a597e12d1aca6094e5cb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60851337"
 ---
 # <a name="configure-your-app-service-app-to-use-azure-active-directory-sign-in"></a>Configurar seu aplicativo do Serviço de Aplicativo para usar as credenciais do Azure Active Directory
@@ -79,12 +79,12 @@ Agora você está pronto para usar o Azure Active Directory para autenticação 
 1. Navegue até o **Azure Active Directory** no [Portal do Azure].
 2. No painel de navegação esquerdo, selecione **Registros de aplicativo**. Clique em **Novo registro de aplicativo** na parte superior.
 4. Na página **Criar** , insira um **Nome** para o registro do seu aplicativo. Selecione **Nativo** em **Tipo de aplicativo**.
-5. Na caixa **URI de redirecionamento**, digite o ponto de extremidade do site */.auth/login/done*, usando o esquema HTTPS. Este valor deve ser semelhante a *https://contoso.azurewebsites.net/.auth/login/done*. Caso queira criar um aplicativo do Windows, use o [SID de pacote](../app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library.md#package-sid) como o URI.
+5. Na caixa **URI de redirecionamento**, digite o ponto de extremidade do site */.auth/login/done*, usando o esquema HTTPS. Este valor deve ser semelhante a *https://contoso.azurewebsites.net/.auth/login/done* . Caso queira criar um aplicativo do Windows, use o [SID de pacote](../app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library.md#package-sid) como o URI.
 5. Clique em **Criar**.
 6. Uma vez que o registro do aplicativo foi adicionado, selecione-o para abri-lo. Localize o **ID do Aplicativo** e anote esse valor.
 7. Clique em **Todas as configurações** > **Permissões necessárias** > **Adicionar** > **Selecionar um API**.
 8. Digite o nome do aplicativo do Serviço de Aplicativo que você registrou anteriormente para pesquisá-lo e, em seguida, selecione-o e clique em **Selecionar**.
-9. Selecione **Acessar \<app_name>**. Em seguida, clique em **Selecionar**. Em seguida, clique em **Concluído**.
+9. Selecione **Acessar \<app_name>** . Em seguida, clique em **Selecionar**. Em seguida, clique em **Concluído**.
 
 Você já configurou um aplicativo de cliente nativo que pode acessar seu aplicativo do Serviço de aplicativo.
 

@@ -15,10 +15,10 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9bea0a870a6ef0685f4f4bce5ad3b0d1ff1f616a
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65414002"
 ---
 # <a name="adding-an-azure-active-directory-by-using-connected-services-in-visual-studio"></a>Adicionando um Active Directory do Azure usando Serviços Conectados no Visual Studio
@@ -48,7 +48,7 @@ No momento, o serviço conectado do Active Directory não dá suporte a aplicati
 
     ![Página Introdução](./media/vs-azure-active-directory/configure-azure-ad-wizard-1.png)
 
-1. Na página **Logon único**, selecione um domínio na lista suspensa **Domínio**. A lista contém todos os domínios que podem ser acessados por contas listadas na caixa de diálogo Configurações de Conta do Visual Studio (**Arquivo > Configurações de conta...**). Como alternativa, você poderá inserir um nome de domínio se não encontrar o que estiver procurando, por exemplo `mydomain.onmicrosoft.com`. Você pode escolher a opção para criar um novo aplicativo do Azure Active Directory ou usar as configurações de um aplicativo do Azure Active Directory existente. Quando terminar, escolha **Avançar**.
+1. Na página **Logon único**, selecione um domínio na lista suspensa **Domínio**. A lista contém todos os domínios que podem ser acessados por contas listadas na caixa de diálogo Configurações de Conta do Visual Studio (**Arquivo > Configurações de conta...** ). Como alternativa, você poderá inserir um nome de domínio se não encontrar o que estiver procurando, por exemplo `mydomain.onmicrosoft.com`. Você pode escolher a opção para criar um novo aplicativo do Azure Active Directory ou usar as configurações de um aplicativo do Azure Active Directory existente. Quando terminar, escolha **Avançar**.
 
     ![Página Logon único](./media/vs-azure-active-directory/configure-azure-ad-wizard-2.png)
 

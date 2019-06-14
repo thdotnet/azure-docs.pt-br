@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 12/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 0f9669d491648ecc621aab27d0908dcc3dc84438
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65823338"
 ---
 # <a name="understand-the-device-model-schema"></a>Compreender o esquema de modelo do dispositivo
@@ -68,7 +68,7 @@ Cada modelo do dispositivo, como um resfriador ou caminhão, define um tipo de d
 
 A tabela a seguir descreve as entradas de esquema de nível superior:
 
-| Entrada de esquema | Descrição |
+| Entrada de esquema | DESCRIÇÃO |
 | -- | --- |
 | `SchemaVersion` | A versão do esquema sempre é `1.0.0` e específica para o formato desse arquivo. |
 | `Id` | Uma ID exclusiva para esse modelo do dispositivo. |
@@ -165,7 +165,7 @@ Atualmente, é possível usar somente os esquemas de mensagens JSON. Os campos l
 * Binário - serializado usando base64
 * Text
 * Boolean
-* Integer
+* Número inteiro
 * Double
 * DateTime
 

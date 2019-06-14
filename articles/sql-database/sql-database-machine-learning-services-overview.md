@@ -12,10 +12,10 @@ ms.reviewer: carlrab
 manager: cgronlun
 ms.date: 03/01/2019
 ms.openlocfilehash: fe472b8a19b45d7f7b00a8f858c9179d6ee51999
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65951588"
 ---
 # <a name="azure-sql-database-machine-learning-services-with-r-preview"></a>Serviços do Azure SQL banco de dados de Machine Learning com R (versão prévia)
@@ -43,7 +43,7 @@ Os Serviços do Machine Learning incluem uma distribuição base do R, sobrepost
 
 Pacotes de R de código-fonte aberto mais comuns são pré-instalados no serviços de Machine Learning. Os seguintes pacotes R da Microsoft também estão incluídos:
 
-| Pacote R | Descrição|
+| Pacote R | DESCRIÇÃO|
 |-|-|
 | [Microsoft R Open](https://mran.microsoft.com/rro) | O Microsoft R Open é a distribuição aprimorada de R da Microsoft. É uma plataforma completa de código-fonte aberto para a ciência de dados e análise estatística. É baseada no R e totalmente compatível com ele, além de incluir outras funcionalidades para um melhor desempenho e capacidade de reprodução. |
 | [RevoScaleR](https://docs.microsoft.com/sql/advanced-analytics/r/ref-r-revoscaler) | O RevoScaleR é a biblioteca principal para o R escalonável. As funções nessa biblioteca estão entre mais amplamente usadas. As transformações e a manipulação de dados, resumo estatístico, visualização e muitas formas de modelagem e de análises são encontrados nessas bibliotecas. Além disso, as funções nessas bibliotecas distribuem automaticamente as cargas de trabalho entre os núcleos disponíveis para processamento paralelo, com a capacidade de trabalhar em partes de dados coordenadas e gerenciadas pelo mecanismo de cálculo. |

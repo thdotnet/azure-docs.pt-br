@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: menchi
 ms.openlocfilehash: cd0a9a66f3014a39a73cf04badfc67cd2ff4c3de
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61363161"
 ---
 # <a name="understand-and-use-module-twins-in-iot-hub"></a>Entender e usar módulos gêmeos no Hub IoT
@@ -113,7 +113,7 @@ No exemplo anterior, o módulo gêmeo contém uma propriedade `batteryLevel` que
 
 ### <a name="desired-property-example"></a>Exemplo da propriedade desejada
 
-No exemplo anterior, as propriedades relatadas e desejadas do módulo gêmeo `telemetryConfig` são usadas pelo aplicativo do módulo e pelo back-end da solução para sincronizar a configuração de telemetria para o módulo em questão. Por exemplo: 
+No exemplo anterior, as propriedades relatadas e desejadas do módulo gêmeo `telemetryConfig` são usadas pelo aplicativo do módulo e pelo back-end da solução para sincronizar a configuração de telemetria para o módulo em questão. Por exemplo:
 
 1. O back-end da solução define a propriedade desejada com o valor de configuração desejado. Aqui está a parte do documento com o conjunto de propriedades desejado:
 
@@ -275,7 +275,7 @@ O Hub IoT rejeita com erro todas as operações que podem aumentar o tamanho des
 ## <a name="module-twin-metadata"></a>Metadados do módulo gêmeo
 
 O Hub IoT mantém o carimbo de data e hora da última atualização de cada objeto JSON nas propriedades desejadas e reportadas do módulo gêmeo. Os carimbos de data e hora estão em UTC e são codificados no formato [ISO8601](https://en.wikipedia.org/wiki/ISO_8601)`YYYY-MM-DDTHH:MM:SS.mmmZ`.
-Por exemplo: 
+Por exemplo:
 
 ```json
 {

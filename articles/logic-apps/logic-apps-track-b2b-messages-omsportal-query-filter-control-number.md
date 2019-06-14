@@ -10,10 +10,10 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 10/19/2018
 ms.openlocfilehash: d4a94e75de34bbafd3bc8f1c1a0d1a6817245e5f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60846401"
 ---
 # <a name="create-tracking-queries-for-b2b-messages-in-azure-monitor-logs-for-azure-logic-apps"></a>Criar consultas de rastreamento para mensagens B2B nos logs do Azure Monitor para aplicativos lógicos do Azure
@@ -48,7 +48,7 @@ Para encontrar mensagens com base em propriedades ou valores específicos, você
 1. No menu da sua área de trabalho, em **Geral**, selecione **Logs (clássico)** ou **Logs**. 
 
    Este exemplo mostra como usar a exibição clássica de logs. 
-   Se você escolher **Exibir logs** na seção **Maximizar sua experiência do Log Analytics**, em **Pesquisar e analisar logs**, você receberá os **logs (visualização clássica)**. 
+   Se você escolher **Exibir logs** na seção **Maximizar sua experiência do Log Analytics**, em **Pesquisar e analisar logs**, você receberá os **logs (visualização clássica)** . 
 
    ![Visualizar logs clássicos](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/view-classic-logs.png)
 
@@ -84,7 +84,7 @@ Para encontrar mensagens com base em propriedades ou valores específicos, você
 
 ## <a name="save-query"></a>Salvar consulta
 
-Para salvar sua consulta no modo de exibição **Logs (clássico)**, siga estas etapas:
+Para salvar sua consulta no modo de exibição **Logs (clássico)** , siga estas etapas:
 
 1. Na consulta, na **Logs (clássico)** , escolha **Analytics**. 
 

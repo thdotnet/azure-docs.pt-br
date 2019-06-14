@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f32952dff8f09db5b790818a5f98c527a04c2ef5
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65823401"
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Políticas e restrições de senha do Active Directory do Azure
@@ -34,8 +34,8 @@ A política de duas portas requer dois tipos de dados de autenticação, como um
   * Administrador de assistência técnica
   * Administrador de suporte a serviço
   * Administrador de cobrança
-  * Suporte de Camada1 a Parceiros
-  * Suporte de Camada2 a Parceiros
+  * Suporte de camada 1 do parceiro
+  * Suporte de camada 2 do parceiro
   * Administrador do Exchange
   * Administrador do Skype for Business
   * Administrador de usuários
@@ -45,12 +45,12 @@ A política de duas portas requer dois tipos de dados de autenticação, como um
   * Administrador de conformidade
   * Administrador de aplicativos
   * Administrador de segurança
-  * Administrador de funções com privilégios
+  * Administrador de função com privilégios
   * Administrador do Intune
   * Administrador de serviços de Proxy do aplicativo
   * Administrador do Dynamics 365
   * Administrador de serviços do Power BI
-  * Administrador de autenticação
+  * Administrador da autenticação
   * Administrador com privilégios de autenticação
 
 * Caso tenham se passado 30 dias decorridos de uma assinatura de avaliação; ou

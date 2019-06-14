@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.openlocfilehash: 1928185521419006a487a933e2ecba79894a09d3
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64686777"
 ---
 # <a name="localization-support-in-azure-maps"></a>Suporte de localização em mapas do Azure
@@ -85,7 +85,7 @@ Os Mapas do Azure foram traduzidos para variedade de idiomas nos serviços. A ta
 
 ## <a name="azure-maps-supported-views"></a>Mapas do Azure com suporte a modos de exibição
 
-Parâmetro de mapas de exibição do Azure (também chamado de "parâmetro de região do usuário") é um código de país ISO 3166 2 letras que mostrará o maps correto para esse país/região especificando qual conjunto de geopoliticamente questionadas bordas e rótulos são exibidos no mapa.  Por padrão, o parâmetro de modo de exibição é definido como **"Unificada"**.  País/regiões que não estão na lista de exibição padrão será o modo de exibição "Unified". É sua responsabilidade para determinar o local dos seus usuários e, em seguida, defina o parâmetro View corretamente para esse local. O parâmetro de modo de exibição em mapas do Azure deve ser usado em conformidade com as leis aplicáveis, incluindo aquelas sobre mapeamento do país em que os mapas, imagens e outros conteúdos de terceiros e dados que você está autorizado a acessar por meio do Azure mapas é disponibilizado.
+Parâmetro de mapas de exibição do Azure (também chamado de "parâmetro de região do usuário") é um código de país ISO 3166 2 letras que mostrará o maps correto para esse país/região especificando qual conjunto de geopoliticamente questionadas bordas e rótulos são exibidos no mapa.  Por padrão, o parâmetro de modo de exibição é definido como **"Unificada"** .  País/regiões que não estão na lista de exibição padrão será o modo de exibição "Unified". É sua responsabilidade para determinar o local dos seus usuários e, em seguida, defina o parâmetro View corretamente para esse local. O parâmetro de modo de exibição em mapas do Azure deve ser usado em conformidade com as leis aplicáveis, incluindo aquelas sobre mapeamento do país em que os mapas, imagens e outros conteúdos de terceiros e dados que você está autorizado a acessar por meio do Azure mapas é disponibilizado.
 
 A tabela a seguir fornece exibições com suporte.
 

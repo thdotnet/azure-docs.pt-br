@@ -17,10 +17,10 @@ ms.author: mimart
 ms.reviewer: luleon, asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1985b7bbcfdaab2aa303f67a9b1d090c85eedd5d
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65825204"
 ---
 # <a name="problems-signing-in-to-a-gallery-application-configured-for-federated-single-sign-on"></a>Problemas ao entrar em um aplicativo na galeria configurado para logon único federado
@@ -263,7 +263,7 @@ Exclua as URLs de resposta não utilizados, configurados para o aplicativo.
 
 6.  Selecione o aplicativo para o qual você deseja configurar o logon único.
 
-7.  Depois que o aplicativo for carregado, abra **Configuração Básica de SAML**. No **URL de resposta (URL de serviço do consumidor de declaração)**, delete não utilizado ou URLs de resposta padrão criado pelo sistema. Por exemplo: `https://127.0.0.1:444/applications/default.aspx`.
+7.  Depois que o aplicativo for carregado, abra **Configuração Básica de SAML**. No **URL de resposta (URL de serviço do consumidor de declaração)** , delete não utilizado ou URLs de resposta padrão criado pelo sistema. Por exemplo: `https://127.0.0.1:444/applications/default.aspx`.
 
 ## <a name="problem-when-customizing-the-saml-claims-sent-to-an-application"></a>Problema ao personalizar as declarações SAML enviadas para um aplicativo
 

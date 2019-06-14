@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/24/2019
 ms.author: pabutler
 ms.openlocfilehash: 5bb5f39ef5f5bce09a8639ba9eedc6d042e60c1d
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64942336"
 ---
 # <a name="dynamics-365-for-customer-engagement-application-test-drive-tab"></a>Guia Test Drive do aplicativo do Dynamics 365 for Customer Engagement
@@ -54,7 +54,7 @@ Onde os campos têm as seguintes finalidades.  Os campos obrigatórios são indi
 
 |      Campo                    |    DESCRIÇÃO                  |
 |    ---------                  |  ---------------                |
-| Tipo de teste de unidade\*            | Escolha **Hospedado pela Microsoft (Dynamics 365 for Customer Engagement)**.  |
+| Tipo de teste de unidade\*            | Escolha **Hospedado pela Microsoft (Dynamics 365 for Customer Engagement)** .  |
 | Unidades de teste simultânea máxima\*    | Número de instâncias simultâneas de um test drive ativo a qualquer momento. Cada usuário consumirá uma licença do Dynamics enquanto seu test drive estiver ativo, portanto, verifique se você tem pelo menos esse número de licenças do Dynamics disponíveis para usuários do test drive. O valor recomendado é de 3 a 5.  |
 | Teste de unidade de duração (horas)\*   | Número máximo de horas durante as quais a instância de Test Drive do usuário ficará ativa. Após esse período, a instância será desprovisionada do locatário. O valor recomendado é de 2 a 24 horas, dependendo da complexidade do aplicativo. O usuário sempre poderá solicitar outro Test Drive se atingir o tempo limite e desejar fazer uma nova avaliação.  |
 | URL da instância\*                  | URL para a qual o Test Drive navegará inicialmente. Normalmente, essa é a URL da instância do Dynamics 365 que contém o aplicativo e os dados de exemplo instalados.  |
@@ -62,7 +62,7 @@ Onde os campos têm as seguintes finalidades.  Os campos obrigatórios são indi
 | ID de aplicativo do Azure AD\*               | GUID do aplicativo do Azure AD  |
 | Chave de aplicativo do Azure AD\*              | Segredo do aplicativo do Azure AD, por exemplo: `IJUgaIOfq9b9LbUjeQmzNBW4VGn6grr1l/n3aMrnfdk=` |
 | Nome do locatário do AD do Azure\*          | Nome do locatário do Azure para a instância do Dynamics 365. Use o formato <nomedolocatário.>onmicrosoft.com, por exemplo: `testdrive.onmicrosoft.com`  |
-| URL da API da Web de instância\*          | URL da API Web da instância do Dynamics 365. Recupere esse valor fazendo logon em sua instância do Microsoft Dynamics 365 e navegando para **Configurações** > **Personalização** > **Recursos para Desenvolvedores** > **API Web da Instância (copie esta URL)**. Valor de exemplo: `https://testdrive.crm.dynamics.com/api/data/v9.0`  |
+| URL da API da Web de instância\*          | URL da API Web da instância do Dynamics 365. Recupere esse valor fazendo logon em sua instância do Microsoft Dynamics 365 e navegando para **Configurações** > **Personalização** > **Recursos para Desenvolvedores** > **API Web da Instância (copie esta URL)** . Valor de exemplo: `https://testdrive.crm.dynamics.com/api/data/v9.0`  |
 | Nome da função\*                     | Nome da função de segurança personalizada do Dynamics 365 criada para o Test Drive e que será atribuída aos usuários quando eles o executarem, por exemplo, `testdriveuser`. |
 |  |  |
 

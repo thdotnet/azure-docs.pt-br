@@ -17,10 +17,10 @@ ms.topic: conceptual
 ms.date: 09/11/2017
 ms.author: gokuma
 ms.openlocfilehash: 59f88d54d3542738f1a500c8c476995eb1535ecf
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62130257"
 ---
 # <a name="deep-learning-and-ai-frameworks"></a>Estruturas de Aprendizado Profundo e de AI
@@ -79,7 +79,7 @@ Aqui estão os detalhes sobre todas as estruturas de aprendizado profundo sobre 
 | O que é?   | Estrutura de aprendizado profundo      |
 | Edições do DSVM com suporte      | Ubuntu     |
 | Como é configurado/instalado no DSVM?  | O Caffe é instalado em `/opt/caffe`.    |
-| Como alternar para o Python 2.7 | Execute o `source activate root` |
+| Como alternar para o Python 2.7 | Execute `source activate root` |
 | Links para exemplos      | Os exemplos são incluídos no `/opt/caffe/examples`.      |
 | Ferramentas relacionadas ao DSVM      | Caffe2      |
 

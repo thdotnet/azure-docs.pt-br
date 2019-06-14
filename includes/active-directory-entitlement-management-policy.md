@@ -9,13 +9,13 @@ ms.date: 05/16/2019
 ms.author: rolyon
 ms.custom: include file
 ms.openlocfilehash: 6711506c1e489dcbd50aedd36241affc3bbed80b
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66113399"
 ---
-### <a name="policy-for-users-in-your-directory"></a>Política: Para usuários em seu diretório
+### <a name="policy-for-users-in-your-directory"></a>política: Para usuários em seu diretório
 
 Siga estas etapas se desejar que sua política para usuários e grupos no diretório que podem solicitar este pacote de acesso.
 
@@ -31,7 +31,7 @@ Siga estas etapas se desejar que sua política para usuários e grupos no diret�
 
 1. Pular para a [política: Solicitar](#policy-request) seção.
 
-### <a name="policy-for-users-not-in-your-directory"></a>Política: Para que os usuários não em seu diretório
+### <a name="policy-for-users-not-in-your-directory"></a>política: Para que os usuários não em seu diretório
 
 Siga estas etapas se desejar que sua política para usuários não em seu diretório que podem solicitar este pacote de acesso. Diretórios devem ser configurados para ser permitido na **restrições de colaboração de relações organizacionais** configurações.
 
@@ -59,7 +59,7 @@ Siga estas etapas se desejar que sua política para usuários não em seu diret�
 
 1. Pular para a [política: Solicitar](#policy-request) seção.
 
-### <a name="policy-none-administrator-direct-assignments-only"></a>Política: None (atribuições diretas administrador somente)
+### <a name="policy-none-administrator-direct-assignments-only"></a>política: None (atribuições diretas administrador somente)
 
 Siga estas etapas se desejar que sua política para ignorar as solicitações de acesso e permitem aos administradores atribuir diretamente a usuários específicos para o pacote de acesso. Os usuários não precisam solicitar o acesso de pacote. Você ainda pode definir as configurações de expiração, mas não há nenhuma configuração de solicitação.
 
@@ -69,7 +69,7 @@ Siga estas etapas se desejar que sua política para ignorar as solicitações de
 
 1. Pular para a [política: Expiração](#policy-expiration) seção.
 
-### <a name="policy-request"></a>Política: Solicitação
+### <a name="policy-request"></a>política: Solicitação
 
 Na seção Request, você especificar as configurações de aprovação quando os usuários solicitam o pacote de acesso.
 
@@ -95,7 +95,7 @@ Na seção Request, você especificar as configurações de aprovação quando o
 
 1. No **tempo limite de solicitação de aprovação (dias)** , especifique a quantidade de tempo que os aprovadores tem para uma solicitação de revisão. Se nenhum aprovador revisá-lo neste número de dias, a expiração da solicitação e o usuário terá que enviar outra solicitação para o pacote de acesso.
 
-### <a name="policy-expiration"></a>Política: Expiração
+### <a name="policy-expiration"></a>política: Expiração
 
 Na seção expiração, você especificar quando a atribuição do usuário para o pacote de acesso expira.
 
@@ -115,7 +115,7 @@ Na seção expiração, você especificar quando a atribuição do usuário para
 
     ![Pacote de acesso - configurações de política de expiração](./media/active-directory-entitlement-management-policy/policy-expiration.png)
 
-### <a name="policy-enable-policy"></a>Política: Habilitar política
+### <a name="policy-enable-policy"></a>política: Habilitar política
 
 1. Se você quiser que o pacote fique imediatamente disponível para os usuários na política de acesso, clique em **Sim** para habilitar a política.
 

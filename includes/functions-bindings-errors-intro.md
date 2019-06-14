@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
 ms.openlocfilehash: c1784111cd2fc2c93b67510f310b9e513cf2b86e
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66132477"
 ---
 Os [gatilhos e associações](../articles/azure-functions/functions-triggers-bindings.md) do Azure Functions se comunicam com vários serviços do Azure. Ao se integrar com esses serviços, você pode ter erros gerados com origem nas APIs dos serviços do Azure subjacentes. Também podem ocorrer erros quando você tenta se comunicar com outros serviços do seu código de função usando bibliotecas REST ou de cliente. Para evitar perda de dados e garantir o bom comportamento das funções, é importante tratar os erros de qualquer fonte.

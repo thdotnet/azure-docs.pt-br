@@ -9,10 +9,10 @@ ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 5e6548a5a04e32b374a8a9c29d2ca5f89fd65c78
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65160179"
 ---
 # <a name="private-cloud-vmware-components"></a>Componentes de VMware da nuvem privada
@@ -37,7 +37,7 @@ Uma pilha de nuvem privada do VMware é implantada com a seguinte versão de sof
 
 ## <a name="esxi"></a>ESXi
 
-VMware ESXi está instalado em nós de CloudSimple adquiridas, quando você cria uma nuvem privada.  ESXi fornece o hipervisor para implantar a carga de trabalho VMs (máquinas virtuais).  Nós fornecem infraestrutura hiperconvergida (computação e armazenamento) em sua nuvem privada.  Os nós são uma parte do cluster vSphere na nuvem privada.  Cada nó tem quatro interfaces de redes físicas conectadas à rede de base.  Duas interfaces de rede física são usados para criar uma **vSphere Distributed Switch (VDS)** no vCenter e duas são usados para criar um **NSX gerenciado distribuído comutador virtual (VDS N)**.  Interfaces de rede são configurados no modo ativo-ativo para alta disponibilidade.
+VMware ESXi está instalado em nós de CloudSimple adquiridas, quando você cria uma nuvem privada.  ESXi fornece o hipervisor para implantar a carga de trabalho VMs (máquinas virtuais).  Nós fornecem infraestrutura hiperconvergida (computação e armazenamento) em sua nuvem privada.  Os nós são uma parte do cluster vSphere na nuvem privada.  Cada nó tem quatro interfaces de redes físicas conectadas à rede de base.  Duas interfaces de rede física são usados para criar uma **vSphere Distributed Switch (VDS)** no vCenter e duas são usados para criar um **NSX gerenciado distribuído comutador virtual (VDS N)** .  Interfaces de rede são configurados no modo ativo-ativo para alta disponibilidade.
 
 Saiba mais sobre o VMware ESXi
 

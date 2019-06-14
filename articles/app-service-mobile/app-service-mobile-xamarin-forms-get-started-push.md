@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 10/12/2016
 ms.author: crdun
 ms.openlocfilehash: 99f2d9fb7c9a74e57eff3cd0b007fcee459cab88
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62098685"
 ---
 # <a name="add-push-notifications-to-your-xamarinforms-app"></a>Adicionar notificações por push ao aplicativo Xamarin.Forms
@@ -59,7 +59,7 @@ Conclua esta seção para habilitar notificações por push para o projeto Droid
 
 Com o back-end configurado com o FCM, é possível adicionar componentes e códigos ao cliente para registrá-lo no FCM. Também é possível se registrar para receber notificações por push com os Hubs de Notificação do Azure por meio do back-end dos Aplicativos Móveis e receber as notificações.
 
-1. No projeto **Droid**, clique com o botão direito do mouse em **Referências > Gerenciar pacotes NuGet...**.
+1. No projeto **Droid**, clique com o botão direito do mouse em **Referências > Gerenciar pacotes NuGet...** .
 1. Na janela do Gerenciador de Pacotes do NuGet, procure o pacote **Xamarin.Firebase.Messaging** e adicione-o ao projeto.
 1. Nas propriedades do projeto para o projeto **Droid**, configure o aplicativo para compilar usando o Android versão 7.0 ou superior.
 1. Adicione o arquivo **google-services.json** baixado do console Firebase na raiz do projeto **Droid** e defina sua ação de compilação ao **GoogleServicesJson**. Para obter mais informações, consulte [Adicionar o arquivo JSON de serviços do Google](https://developer.xamarin.com/guides/android/data-and-cloud-services/google-messaging/remote-notifications-with-fcm/#Add_the_Google_Services_JSON_File).
@@ -118,9 +118,9 @@ Com o back-end configurado com o FCM, é possível adicionar componentes e códi
     }
     ```
 
-    A classe `FirebaseRegistrationService` é responsável pela geração de tokens de segurança que autorizam o aplicativo a acessar o FCM. O método `OnTokenRefresh` é invocado quando o aplicativo recebe um token de registro do FCM. O método retorna o token da propriedade `FirebaseInstanceId.Instance.Token`, que é atualizada de forma assíncrona pelo FCM. O método `OnTokenRefresh` é invocado com pouca frequência, isso porque o token só é atualizado quando o aplicativo é instalado ou desinstalado, quando o usuário exclui dados de aplicativos, quando o aplicativo apaga a ID da instância ou quando a segurança do token tiver sido comprometida. Além disso, o serviço de ID de instância do FCM solicita que o aplicativo atualize seu token periodicamente, em geral, a cada 6 meses.
+    A classe `FirebaseRegistrationService` é responsável pela geração de tokens de segurança que autorizam o aplicativo a acessar o FCM. O método `OnTokenRefresh` é invocado quando o aplicativo recebe um token de registro do FCM. O método recupera o token a partir de `FirebaseInstanceId.Instance.Token` propriedade, que é atualizada de forma assíncrona pelo FCM. O `OnTokenRefresh` método é invocado com pouca frequência, porque o token é atualizado somente quando o aplicativo é instalado ou desinstalado, quando o usuário exclui dados de aplicativos, quando o aplicativo apaga a ID da instância, ou quando a segurança do token tiver sido comprometido. Além disso, o serviço de ID de instância do FCM solicita que o aplicativo atualize seu token periodicamente, normalmente a cada 6 meses.
 
-    O método `OnTokenRefresh` também invoca o método `SendRegistrationTokenToAzureNotificationHub`, que é usado para associar o token de registro do usuário com o Hub de Notificação do Azure.
+    O `OnTokenRefresh` também invoca um método de `SendRegistrationTokenToAzureNotificationHub` método, que é usado para associar o token de registro do usuário com o Hub de notificação do Azure.
 
 #### <a name="registering-with-the-azure-notification-hub"></a>Registrando com Hub de Notificação do Azure
 
@@ -220,7 +220,7 @@ Com o back-end configurado com o FCM, é possível adicionar componentes e códi
     }
     ```
 
-    O método `OnMessageReceived`, que é invocado quando um aplicativo recebe uma notificação do FCM, extrai o conteúdo da mensagem e chama o método `SendNotification`. Esse método converte o conteúdo da mensagem em uma notificação de local que é iniciada enquanto o aplicativo está em execução, com a notificação aparecendo na área de notificação.
+    O método `OnMessageReceived`, que é invocado quando um aplicativo recebe uma notificação do FCM, extrai o conteúdo da mensagem e chama o método `SendNotification`. Este método converte o conteúdo da mensagem em uma notificação de local que é iniciada enquanto o aplicativo é executado, com a notificação que aparece na área de notificação.
 
 Agora, você está pronto para testar as notificações por push no aplicativo em execução em um dispositivo ou no emulador Android.
 
@@ -232,7 +232,7 @@ As duas primeiras etapas serão necessárias apenas quando o teste estiver sendo
 2. Adicione uma conta do Google ao dispositivo Android clicando em **Aplicativos** > **Configurações** > **Adicionar conta**. Depois, siga os prompts para adicionar uma conta existente do Google ao dispositivo ou para criar uma nova.
 3. No Visual Studio ou Xamarin Studio, clique com o botão direito do mouse no projeto **Droid** e clique em **Definir como projeto de inicialização**.
 4. Clique em **Executar** para criar o projeto e iniciar o aplicativo no emulador ou no dispositivo Android.
-5. No aplicativo, digite uma tarefa e clique no ícone do sinal de adição (**+**).
+5. No aplicativo, digite uma tarefa e clique no ícone do sinal de adição ( **+** ).
 6. Verifique se uma notificação é recebida quando um item é adicionado.
 
 ## <a name="configure-and-run-the-ios-project-optional"></a>Configurar e executar o projeto do iOS (opcional)
@@ -326,7 +326,7 @@ Seu aplicativo foi atualizado para dar suporte a notificações por push.
    > [!NOTE]
    > Você deve aceitar explicitamente as notificações por push do seu aplicativo. Essa solicitação ocorrerá apenas na primeira vez que o aplicativo for executado.
 
-3. No aplicativo, digite uma tarefa e clique no ícone do sinal de adição (**+**).
+3. No aplicativo, digite uma tarefa e clique no ícone do sinal de adição ( **+** ).
 4. Verifique se uma notificação é recebida e clique em **OK** para ignorar a notificação.
 
 ## <a name="configure-and-run-windows-projects-optional"></a>Configurar e executar projetos do Windows (opcional)
@@ -398,7 +398,7 @@ Esta seção trata da execução dos projetos WinApp e WinPhone81 de Xamarin.For
 
 1. No Visual Studio, clique com o botão direito do mouse no projeto do Windows e clique em **Definir como projeto de inicialização**.
 2. Pressione o botão **Executar** para compilar o projeto e iniciar o aplicativo.
-3. No aplicativo, digite um nome para um novo todoitem e, em seguida, clique no ícone de adição (**+**) para adicioná-lo.
+3. No aplicativo, digite um nome para um novo todoitem e, em seguida, clique no ícone de adição ( **+** ) para adicioná-lo.
 4. Verifique se uma notificação é recebida quando o item é adicionado.
 
 ## <a name="next-steps"></a>Próximas etapas
@@ -409,12 +409,12 @@ Saiba mais sobre as notificações por push:
 * [Firebase Cloud Messaging](https://developer.xamarin.com/guides/android/data-and-cloud-services/google-messaging/firebase-cloud-messaging/)
 * [Notificações remotas com o Firebase Cloud Messaging](https://developer.xamarin.com/guides/android/data-and-cloud-services/google-messaging/remote-notifications-with-fcm/)
 * [Diagnosticar problemas com notificações por push](../notification-hubs/notification-hubs-push-notification-fixer.md)  
-   há vários motivos por que as notificações podem ser abandonadas ou não irem terminar nos dispositivos. Este tópico mostra como analisar e descobrir a causa de falhas de notificação por push.
+  há vários motivos por que as notificações podem ser abandonadas ou não irem terminar nos dispositivos. Este tópico mostra como analisar e descobrir a causa de falhas de notificação por push.
 
 Continue também com um dos seguintes tutoriais:
 
 * [Adicionar autenticação ao seu aplicativo](app-service-mobile-xamarin-forms-get-started-users.md)  
-   Saiba como autenticar usuários de seu aplicativo com um provedor de identidade.
+  Saiba como autenticar usuários de seu aplicativo com um provedor de identidade.
 * [Habilitar sincronização offline para seu aplicativo](app-service-mobile-xamarin-forms-get-started-offline-data.md)  
   Saiba como adicionar suporte offline para o aplicativo usando um back-end dos Aplicativos Móveis. Com a sincronização offline, os usuários podem interagir com um aplicativo móvel &mdash; exibindo, adicionando ou modificando dados &mdash; mesmo quando não há nenhuma conexão de rede.
 

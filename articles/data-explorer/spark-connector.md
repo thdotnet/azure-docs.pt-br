@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 4/29/2019
 ms.openlocfilehash: 854e29b67b6e24c583a98b5851bf17551cfcbf61
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65441358"
 ---
 # <a name="azure-data-explorer-connector-for-apache-spark-preview"></a>Conector do Gerenciador de dados do Azure para o Apache Spark (visualização)
@@ -109,7 +109,7 @@ Conector do Spark do Gerenciador de dados do Azure permite que você autentique 
 
 Método de autenticação simples e comuns a maioria dos. Esse método é recomendado para uso do conector Spark do Azure Data Explorer.
 
-|propriedades  |Descrição  |
+|propriedades  |DESCRIÇÃO  |
 |---------|---------|
 |**KUSTO_AAD_CLIENT_ID**     |   Identificador do aplicativo (cliente) do AD do Azure.      |
 |**KUSTO_AAD_AUTHORITY_ID**     |  Autoridade de autenticação do AD do Azure. ID de diretório do AD (Locatário) do Azure.        |

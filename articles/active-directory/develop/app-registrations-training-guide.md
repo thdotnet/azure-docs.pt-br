@@ -18,10 +18,10 @@ ms.reviewer: lenalepa, keyam
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 118c6ecb16d325a384246a0b3d9e685f6f6f04ee
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64870111"
 ---
 # <a name="training-guide-app-registrations-in-the-azure-portal"></a>Guia de treinamento: Registros de aplicativo no portal do Azure  
@@ -41,7 +41,7 @@ Você pode encontrar várias melhorias no novo [registros de aplicativo](https:/
 
 ## <a name="new-app-registration"></a>Novo registro de aplicativo
 
-Na experiência herdada, para registrar um aplicativo, você foi solicitado a fornecer: **Nome da**, **tipo de aplicativo**, e **fazer logon no URI de redirecionamento deURL/**. Os aplicativos que foram criados eram aplicativos de locatário único somente do Azure AD que significa que eles só tem suporte a contas institucionais do diretório em que o aplicativo foi registrado no.
+Na experiência herdada, para registrar um aplicativo, você foi solicitado a fornecer: **Nome da**, **tipo de aplicativo**, e **fazer logon no URI de redirecionamento deURL/** . Os aplicativos que foram criados eram aplicativos de locatário único somente do Azure AD que significa que eles só tem suporte a contas institucionais do diretório em que o aplicativo foi registrado no.
 
 Na nova experiência, você deve fornecer um **nome** para o aplicativo e escolha o **suporte para tipos de conta**. Opcionalmente, você pode fornecer um **URI de redirecionamento**. Se você fornecer um URI de redirecionamento, você precisará especificar se é web/pública (móvel e desktop). Para obter mais informações sobre como registrar um aplicativo usando os registros de aplicativo nova experiência, consulte [este guia de início rápido](quickstart-register-app.md).
 

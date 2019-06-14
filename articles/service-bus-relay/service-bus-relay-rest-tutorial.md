@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/06/2018
 ms.author: spelluru
 ms.openlocfilehash: 4ed45e1ed18ad630831772997b1fc150882731bd
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62123392"
 ---
 # <a name="azure-wcf-relay-rest-tutorial"></a>Tutorial do REST de Retransmissão de WCF do Azure
@@ -56,12 +56,12 @@ A principal diferença entre um contrato do WCF e um contrato no estilo REST é 
 ### <a name="to-create-a-contract-with-an-interface"></a>Para criar um contrato com uma interface
 
 1. Abra o Visual Studio como administrador: clique com o botão direito no programa no menu **Iniciar** e, em seguida, clique em **Executar como administrador**.
-2. Crie um novo projeto de aplicativo de console. Clique no menu **Arquivo** e selecione **Novo** e, em seguida, **Projeto**. Na caixa de diálogo **Novo Projeto**, clique em **Visual C#**, selecione o modelo **Aplicativo de Console** e chame-o de **ImageListener**. Use o **Local** padrão. Clique em **OK** para criar o projeto.
+2. Crie um novo projeto de aplicativo de console. Clique no menu **Arquivo** e selecione **Novo** e, em seguida, **Projeto**. Na caixa de diálogo **Novo Projeto**, clique em **Visual C#** , selecione o modelo **Aplicativo de Console** e chame-o de **ImageListener**. Use o **Local** padrão. Clique em **OK** para criar o projeto.
 3. Para um projeto C#, o Visual Studio cria um arquivo `Program.cs`. Essa classe contém um método `Main()` vazio, necessário para um projeto de aplicativo de console ser criado corretamente.
 4. Adicione referências ao Barramento de Serviço e ao **System.ServiceModel.dll** ao projeto instalando o pacote do NuGet do Barramento de Serviço. Esse pacote adiciona automaticamente referências para as bibliotecas do Barramento de Serviço, bem como o WCF **System.ServiceModel**. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **ImageListener** e clique em **Gerenciar Pacotes NuGet**. Clique na guia **Procurar** e procure `Microsoft Azure Service Bus`. Clique em **Instalar**e aceite os termos de uso.
 5. Você precisa adicionar explicitamente uma referência a **System.ServiceModel.Web.dll** ao projeto:
    
-     a. No Gerenciador de Soluções, clique com o botão direito do mouse na pasta **Referências**, na pasta do projeto e clique em **Adicionar Referência**.
+    a. No Gerenciador de Soluções, clique com o botão direito do mouse na pasta **Referências**, na pasta do projeto e clique em **Adicionar Referência**.
    
     b. Na caixa de diálogo **Adicionar Referência**, clique na guia **Estrutura** no lado esquerdo e, na caixa **Pesquisar**, digite **System.ServiceModel.Web**. Marque a caixa de seleção **System.ServiceModel.Web** e clique em **OK**.
 6. Adicione as instruções `using` abaixo na parte superior do arquivo Program.cs.
@@ -180,7 +180,7 @@ Assim como nas etapas anteriores, há pouca diferença entre a implementação d
    
     Esta é uma imagem exibida pelo serviço no navegador receptor. Clique com o botão direito do mouse em seu projeto e clique em **Adicionar**. Em seguida, clique em **Item Existente**. Use a caixa de diálogo **Adicionar Item Existente** para navegar até um .jpg adequado e,em seguida, clique em **Adicionar**.
    
-    Ao adicionar o arquivo, certifique-se de que a opção **Todos os Arquivos** esteja selecionada na lista suspensa ao lado do campo **Nome do arquivo:**. O restante deste tutorial supõe que o nome da imagem seja "image.jpg". Se você tiver um arquivo diferente, será necessário renomear a imagem ou alterar seu código para compensar.
+    Ao adicionar o arquivo, certifique-se de que a opção **Todos os Arquivos** esteja selecionada na lista suspensa ao lado do campo **Nome do arquivo:** . O restante deste tutorial supõe que o nome da imagem seja "image.jpg". Se você tiver um arquivo diferente, será necessário renomear a imagem ou alterar seu código para compensar.
 4. Para ter certeza de que o serviço em execução consegue encontrar o arquivo de imagem, no **Gerenciador de Soluções**, clique com o botão direito do mouse no arquivo de imagem e clique em **Propriedades**. No painel **Propriedades**, defina **Copiar para o Diretório de Saída** como **Copiar se for mais recente**.
 5. Adicione uma referência ao assembly **System.Drawing.dll** ao projeto, e adicione também as seguintes instruções `using` associadas.  
    

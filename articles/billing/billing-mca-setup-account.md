@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 02/28/2019
 ms.author: banders
 ms.openlocfilehash: 284480ab8b9973c02f365dbf3ebfd3a103ef4b42
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64919160"
 ---
 # <a name="set-up-your-billing-account-for-a-microsoft-customer-agreement"></a>Configurar sua conta de cobrança para um contrato de cliente da Microsoft
@@ -81,7 +81,7 @@ Você pode solicitar que os administradores de empresa do registro para concluir
 
 O usuário em sua organização, quem assinou o contrato de cliente da Microsoft é adicionado como o proprietário do perfil de cobrança. Solicite o usuário para adicioná-lo como um proprietário para que você possa concluir a instalação.  <!-- Todo Are there any next steps -->
 
-## <a name="understand-changes-to-your-billing-hierarchy"></a>Entender as alterações na hierarquia de cobrança
+## <a name="understand-changes-to-your-billing-hierarchy"></a>Entender as alterações na sua hierarquia de cobrança
 
 Sua nova conta de cobrança simplifica a cobrança para sua organização, fornecendo a você aprimorada de cobrança e recursos de gerenciamento de custos. O diagrama a seguir explica como a cobrança é organizada na nova conta de cobrança.
 

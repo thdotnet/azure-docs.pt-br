@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 68378c87e18df874059579445352b8fd1b2b6c13
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62105573"
 ---
 # <a name="exchange-messages-in-the-cloud-with-azure-service-bus-and-azure-logic-apps"></a>Trocar mensagens na nuvem com o Barramento de Serviço do Azure e os Aplicativos Lógicos do Azure
@@ -79,7 +79,7 @@ Confirme se seu aplicativo lógico tem permissões para acessar o namespace do B
    ![Selecionar um gatilho do Barramento de Serviço](./media/connectors-create-api-azure-service-bus/select-service-bus-trigger.png)
 
    > [!NOTE]
-   > Alguns gatilhos podem gerar uma mensagem ou mais; por exemplo, o gatilho, **Quando uma ou mais mensagens chegam em uma fila (preenchimento automático)**. Quando esses gatilhos são disparados, eles retornam entre um e o número de mensagens especificado pela propriedade **Contagem máxima de mensagens**.
+   > Alguns gatilhos podem gerar uma mensagem ou mais; por exemplo, o gatilho, **Quando uma ou mais mensagens chegam em uma fila (preenchimento automático)** . Quando esses gatilhos são disparados, eles retornam entre um e o número de mensagens especificado pela propriedade **Contagem máxima de mensagens**.
 
    *Todos os gatilhos de Barramento de Serviço são gatilhos de sondagem longa*, o que significa que quando um gatilho dispara, o gatilho processa todas as mensagens e aguarda 30 segundos para que mais mensagens apareçam na fila ou na assinatura do tópico. 
    Se nenhuma mensagem aparecer em 30 segundos, a execução do gatilho será ignorada. 
@@ -90,7 +90,7 @@ Confirme se seu aplicativo lógico tem permissões para acessar o namespace do B
    1. Na última etapa em que você deseja adicionar uma ação, escolha **Nova etapa**. 
 
       Para adicionar uma ação entre as etapas, mova o ponteiro sobre a seta entre as etapas. 
-      Escolha o sinal de adição (**+**) que aparece e, em seguida, selecione **Adicionar uma ação**.
+      Escolha o sinal de adição ( **+** ) que aparece e, em seguida, selecione **Adicionar uma ação**.
 
    1. Na caixa de pesquisa, insira "Barramento de Serviço do Azure" como filtro. 
    Na lista de ações, selecione a ação desejada. 

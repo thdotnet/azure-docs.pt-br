@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 05/22/2019
 ms.author: diberry
 ms.openlocfilehash: b7b4e25c78ef08bdf9a7c2f3faf96725fc5f5fc8
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66123879"
 ---
 # <a name="preview-migrate-to-api-version-3x--for-luis-apps"></a>Visualização: Migrar para a versão de API 3.x para aplicativos do LUIS
@@ -56,7 +56,7 @@ A API de V3 tem parâmetros de cadeia de caracteres de consulta diferentes.
 
 |Nome do parâmetro|Type|Version|Finalidade|
 |--|--|--|--|
-|`query`|string|Somente V3|**Na V2**, a expressão a ser previsto é no `q` parâmetro. <br><br>**Na V3**, a funcionalidade é passada a `query` parâmetro.|
+|`query`|cadeia de caracteres|Somente V3|**Na V2**, a expressão a ser previsto é no `q` parâmetro. <br><br>**Na V3**, a funcionalidade é passada a `query` parâmetro.|
 |`show-all-intents`|boolean|Somente V3|Retornar todas as intenções com a pontuação correspondente na **prediction.intents** objeto. Tentativas são retornadas como objetos em uma pasta pai `intents` objeto. Isso permite o acesso programático sem a necessidade de localizar a intenção em uma matriz: `prediction.intents.give`. Na versão 2, eles foram retornados em uma matriz. |
 |`verbose`|boolean|V2 E V3|**Na V2**, quando definido como true, previstos todas as intenções foram retornados. Se você precisar previstas todas as intenções, use o param V3 de `show-all-intents`.<br><br>**Na V3**, esse parâmetro só fornece entidade detalhes de metadados de previsão de entidade.  |
 

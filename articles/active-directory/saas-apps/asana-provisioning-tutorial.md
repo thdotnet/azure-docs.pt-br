@@ -17,10 +17,10 @@ ms.author: arvinh
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 10d5ceedfd1f0fad0c6f03feba2150968aecf02b
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65964214"
 ---
 # <a name="tutorial-configure-asana-for-automatic-user-provisioning"></a>Tutorial: Configurar o Asana para o provisionamento automático de usuário
@@ -71,7 +71,7 @@ Esta seção orienta você sobre como conectar o Azure AD à API de provisioname
 
 1. Na seção de **Credenciais de Administrador**, siga essas instruções para gerar o token e inseri-la em **Token Secreto**:
 
-     a. Entre no [Asana](https://app.asana.com) usando sua conta do administrador.
+    a. Entre no [Asana](https://app.asana.com) usando sua conta do administrador.
 
     b. Selecione a foto do perfil da barra superior e selecione as configurações atuais de nome da organização.
 

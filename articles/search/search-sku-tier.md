@@ -11,10 +11,10 @@ ms.date: 05/08/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 00422209302bbcc2139be4f6b490f0bb2816c051
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65539272"
 ---
 # <a name="choose-a-pricing-tier-for-azure-search"></a>Escolher um tipo de preço para o Azure Search
@@ -43,7 +43,7 @@ Dentro de uma camada, você pode [ajustar os recursos de partição e réplica](
 
 A tabela a seguir lista as camadas disponíveis. Você pode encontrar mais informações sobre as várias camadas na [página de preços](https://azure.microsoft.com/pricing/details/search/), no [limites de serviço no Azure Search](search-limits-quotas-capacity.md) do artigo e no portal de página quando você está Provisionando um serviço.
 
-|Tipo | Capacity |
+|Camada | Capacity |
 |-----|-------------|
 |Grátis | Compartilhado com outros assinantes. Não é escalonável. Limitado a três índices e 50 MB de armazenamento. |
 |Basic | Recursos de computação dedicados para cargas de trabalho de produção em uma escala menor. Uma partição de 2 GB e até três réplicas. |

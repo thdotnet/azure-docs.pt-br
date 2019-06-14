@@ -11,10 +11,10 @@ ms.author: zarhoads
 ms.custom: mvc
 keywords: Cosmos DB, Open Service Broker, Open Service Broker para Azure
 ms.openlocfilehash: 46fa5564e5dd3429f812b263295044d867a8511c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61028400"
 ---
 # <a name="integrate-existing-mongodb-application-with-azure-cosmos-db-api-for-mongodb-and-open-service-broker-for-azure-osba"></a>Integrar aplicativo MongoDB existente com a API do Azure Cosmos DB para MongoDB e OSBA (Open Service Broker para Azure)
@@ -204,7 +204,7 @@ Use o conjunto de ferramentas do Azure Dev Spaces para preparar o aplicativo par
 azds prep --public
 ```
 
-Esse comando gera vários artefatos, incluindo uma pasta *charts/*, que é o gráfico do Helm, na raiz do projeto. Esse comando não pode gerar um *Dockerfile* para este projeto específico, portanto, será necessário criá-lo.
+Esse comando gera vários artefatos, incluindo uma pasta *charts/* , que é o gráfico do Helm, na raiz do projeto. Esse comando não pode gerar um *Dockerfile* para este projeto específico, portanto, será necessário criá-lo.
 
 Crie um arquivo na raiz do projeto nomeado *Dockerfile* com este conteúdo:
 
@@ -267,7 +267,7 @@ press Ctrl+C to detach
 ...
 ```
 
-Navegue até a URL exibida nos logs. No exemplo anterior, você usaria *http://spring-music.1234567890abcdef1234.eastus.aksapp.io/*. 
+Navegue até a URL exibida nos logs. No exemplo anterior, você usaria *http://spring-music.1234567890abcdef1234.eastus.aksapp.io/* . 
 
 Verifique se você vê o aplicativo junto com suas alterações.
 

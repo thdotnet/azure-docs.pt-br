@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 63715f668438519131eba5bfff7aa38fc73267d0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61094635"
 ---
 # <a name="retry-logic-in-the-media-services-sdk-for-net"></a>Lógica de repetição no SDK de Serviços de Mídia para .NET  
@@ -37,49 +37,49 @@ Ao trabalhar com os serviços do Microsoft Azure, algumas falhas transitórias p
 ## <a name="exception-types"></a>Tipos de exceção
 A tabela a seguir descreve as exceções que o SDK dos Serviços de Mídia para .NET trata ou não para algumas operações que podem causar falhas transitórias.  
 
-| Exceção | Solicitação da Web | Armazenamento | Consultar | SaveChanges |
+| Exceção | Solicitação da Web | Armazenamento | Consulta | SaveChanges |
 | --- | --- | --- | --- | --- |
 | WebException<br/>Para saber mais, consulte a seção [Códigos de status WebException](media-services-retry-logic-in-dotnet-sdk.md#WebExceptionStatus). |Sim |sim |sim |Sim |
-| DataServiceClientException<br/> Para saber mais, consulte [Códigos de status de erro HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Não  |sim |sim |Sim |
-| DataServiceQueryException<br/> Para saber mais, consulte [Códigos de status de erro HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Não  |sim |sim |Sim |
-| DataServiceRequestException<br/> Para saber mais, consulte [Códigos de status de erro HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Não  |sim |sim |Sim |
-| DataServiceTransportException |Não  |Não  |sim |Sim |
-| TimeoutException |Sim |sim |sim |Não  |
+| DataServiceClientException<br/> Para saber mais, consulte [Códigos de status de erro HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Não |sim |sim |Sim |
+| DataServiceQueryException<br/> Para saber mais, consulte [Códigos de status de erro HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Não |sim |sim |Sim |
+| DataServiceRequestException<br/> Para saber mais, consulte [Códigos de status de erro HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Não |sim |sim |Sim |
+| DataServiceTransportException |Não |Não |sim |Sim |
+| TimeoutException |Sim |sim |sim |Não |
 | SocketException |Sim |sim |sim |Sim |
-| StorageException |Não  |Sim |Não |Não  |
-| IOException |Não  |Sim |Não |Não  |
+| StorageException |Não |Sim |Não |Não |
+| IOException |Não |Sim |Não |Não |
 
 ### <a name="WebExceptionStatus"></a> Códigos de status WebException
 A tabela a seguir mostra para quais códigos de erro WebException a lógica de repetição é implementada. A enumeração [WebExceptionStatus](https://msdn.microsoft.com/library/system.net.webexceptionstatus.aspx) define os códigos de status.  
 
-| Status | Solicitação da Web | Armazenamento | Consultar | SaveChanges |
+| Status | Solicitação da Web | Armazenamento | Consulta | SaveChanges |
 | --- | --- | --- | --- | --- |
 | ConnectFailure |Sim |sim |sim |Sim |
 | NameResolutionFailure |Sim |sim |sim |Sim |
 | ProxyNameResolutionFailure |Sim |sim |sim |Sim |
 | SendFailure |Sim |sim |sim |Sim |
-| PipelineFailure |Sim |sim |sim |Não  |
-| ConnectionClosed |Sim |sim |sim |Não  |
-| KeepAliveFailure |Sim |sim |sim |Não  |
-| UnknownError |Sim |sim |sim |Não  |
-| ReceiveFailure |Sim |sim |sim |Não  |
-| RequestCanceled |Sim |sim |sim |Não  |
-| Tempo limite |Sim |sim |sim |Não  |
+| PipelineFailure |Sim |sim |sim |Não |
+| ConnectionClosed |Sim |sim |sim |Não |
+| KeepAliveFailure |Sim |sim |sim |Não |
+| UnknownError |Sim |sim |sim |Não |
+| ReceiveFailure |Sim |sim |sim |Não |
+| RequestCanceled |Sim |sim |sim |Não |
+| Tempo limite |Sim |sim |sim |Não |
 | ProtocolError <br/>A repetição em ProtocolError é controlada pela manipulação do código de status HTTP. Para saber mais, consulte [Códigos de status de erro HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Sim |sim |sim |Sim |
 
 ### <a name="HTTPStatusCode"></a> Códigos de status de erro HTTP
 Quando as operações de Consulta e SaveChanges lançam DataServiceClientException, DataServiceQueryException ou DataServiceQueryException, o código de status de erro HTTP retorna na propriedade StatusCode.  A tabela a seguir mostra para quais códigos de erro a lógica de repetição é implementada.  
 
-| Status | Solicitação da Web | Armazenamento | Consultar | SaveChanges |
+| Status | Solicitação da Web | Armazenamento | Consulta | SaveChanges |
 | --- | --- | --- | --- | --- |
-| 401 |Não  |Sim |Não |Não  |
-| 403 |Não  |Sim<br/>Tratar repetições sem esperas longas. |Não  |Não  |
+| 401 |Não |Sim |Não |Não |
+| 403 |Não |Sim<br/>Tratar repetições sem esperas longas. |Não |Não |
 | 408 |Sim |sim |sim |Sim |
 | 429 |Sim |sim |sim |Sim |
-| 500 |Sim |sim |sim |Não  |
-| 502 |Sim |sim |sim |Não  |
+| 500 |Sim |sim |sim |Não |
+| 502 |Sim |sim |sim |Não |
 | 503 |Sim |sim |sim |Sim |
-| 504 |Sim |sim |sim |Não  |
+| 504 |Sim |sim |sim |Não |
 
 Se você quiser dar uma olhada na implementação real do SDK dos Serviços de Mídia para .NET, consulte [azure-sdk-for-media-services](https://github.com/Azure/azure-sdk-for-media-services/tree/dev/src/net/Client/TransientFaultHandling).
 

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
 ms.openlocfilehash: 673b1df6094703bebcbfd9d82c1268c01d46e814
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65233590"
 ---
 # <a name="connect-your-external-solution-using-syslog"></a>Conectar-se a sua solução externa usando Syslog
@@ -32,7 +32,7 @@ Você pode se conectar a qualquer dispositivo local com suporte para Syslog para
 > [!NOTE]
 > Se seu dispositivo dá suporte a CEF Syslog, a conexão é mais completo e você deve escolher essa opção e siga as instruções em [conexão dos dados do CEF](connect-common-event-format.md).
 
-## <a name="how-it-works"></a>Como funciona
+## <a name="how-it-works"></a>Como ele funciona
 
 Conexão de syslog é realizado usando um agente para Linux. Por padrão, o agente para Linux recebe eventos de Syslog daemon através de UDP, mas em casos em que uma máquina Linux é esperada para coletar um alto volume de eventos de Syslog, como quando um agente do Linux é receber eventos de outros dispositivos, a configuração seja alterada para Use o transporte TCP entre o daemon do Syslog e o agente.
 

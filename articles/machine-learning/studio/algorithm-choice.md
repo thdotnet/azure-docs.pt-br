@@ -11,10 +11,10 @@ ms.author: amlstudiodocs
 ms.custom: previous-ms.author=pakalra, previous-author=pakalra
 ms.date: 03/04/2019
 ms.openlocfilehash: 3bb88f2f9546ec25433061a0704bd144730bd34c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60752801"
 ---
 # <a name="how-to-choose-algorithms-for-azure-machine-learning-studio"></a>Como escolher algoritmos do Azure Machine Learning Studio
@@ -41,7 +41,7 @@ Essas recomendações são comentários e dicas compilados de vários cientistas
 
 ### <a name="how-to-use-the-cheat-sheet"></a>Como usar a página de dicas úteis
 
-Leia os rótulos do caminho e do algoritmo no gráfico, como “Para *&lt;rótulo do caminho&gt;*, use *&lt;algoritmo&gt;*”. Por exemplo, “Para *velocidade*, use *regressão logística de duas classes*”. Às vezes, mais de uma ramificação se aplica.
+Leia os rótulos do caminho e do algoritmo no gráfico, como “Para *&lt;rótulo do caminho&gt;* , use *&lt;algoritmo&gt;* ”. Por exemplo, “Para *velocidade*, use *regressão logística de duas classes*”. Às vezes, mais de uma ramificação se aplica.
 Às vezes, nenhuma delas é a solução perfeita. Elas se destinam a serem recomendações gerais, portanto não se preocupe com a exatidão delas.
 Vários cientistas de dados, falamos com disse que a única maneira para encontrar o melhor algoritmo é experimentar todos eles.
 

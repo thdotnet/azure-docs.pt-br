@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/12/2019
 ms.openlocfilehash: 6764d8d812789c9f54fa59e10b2a3e416e583a9c
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62129392"
 ---
 # <a name="use-apache-sqoop-with-hadoop-in-hdinsight"></a>Usar Apache Sqoop com o Hadoop no HDInsight
@@ -45,14 +45,14 @@ O cluster HDInsight é fornecido com alguns dados de exemplo. Você usa estas du
   
   | Campo | Tipo de dados |
   | --- | --- |
-  | clientid |string |
-  | querytime |string |
-  | market |string |
-  | deviceplatform |string |
-  | devicemake |string |
-  | devicemodel |string |
-  | state |string |
-  | country |string |
+  | clientid |cadeia de caracteres |
+  | querytime |cadeia de caracteres |
+  | market |cadeia de caracteres |
+  | deviceplatform |cadeia de caracteres |
+  | devicemake |cadeia de caracteres |
+  | devicemodel |cadeia de caracteres |
+  | estado |cadeia de caracteres |
+  | country |cadeia de caracteres |
   | querydwelltime |double |
   | sessionid |bigint |
   | sessionpagevieworder |bigint |
@@ -107,7 +107,7 @@ O HDInsight pode executar trabalhos do Sqoop usando vários métodos. Use a tabe
 |:--- |:---:|:---:|:--- |:--- |
 | [SSH](apache-hadoop-use-sqoop-mac-linux.md) |? |? |Linux, Unix, Mac OS X ou Windows |
 | [SDK .NET para Hadoop](apache-hadoop-use-sqoop-dotnet-sdk.md) |&nbsp; |?  |Windows (por enquanto) |
-| [PowerShell do Azure](apache-hadoop-use-sqoop-powershell.md) |&nbsp; |? | Windows |
+| [PowerShell do Azure](apache-hadoop-use-sqoop-powershell.md) |&nbsp; |? |Windows |
 
 ## <a name="limitations"></a>Limitações
 

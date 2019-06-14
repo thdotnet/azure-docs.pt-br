@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: sachdevaswati
 ms.openlocfilehash: 649e50634d901ab48f1cb36c39d7331401c0cc51
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64700163"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Perguntas Frequentes sobre bancos de dados do SQL Server que estão em execução em um backup de VM do Azure
@@ -37,7 +37,7 @@ Em algumas circunstâncias, o serviço de Backup do Azure dispara backups corret
 Restabelecimento automático como um recurso for habilitado para todos os usuários por padrão. No entanto, caso você optar por recusar dele, em seguida, executar a abaixo:
 
   * Na instância do SQL Server, nos *C:\Program Files \ carga de trabalho Backup\bin* pasta, crie ou edite o **ExtensionSettingsOverrides.json** arquivo.
-  * No **ExtensionSettingsOverrides.json**, defina *{"EnableAutoHealer": false}*.
+  * No **ExtensionSettingsOverrides.json**, defina *{"EnableAutoHealer": false}* .
   * Salve suas alterações e feche o arquivo.
   * Na instância do SQL Server, abra **tarefa gerenciar** e, em seguida, reinicie o **AzureWLBackupCoordinatorSvc** service.  
 

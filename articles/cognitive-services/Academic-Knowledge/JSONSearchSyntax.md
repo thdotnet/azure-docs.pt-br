@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alch
 ms.openlocfilehash: fddd2291fe7fbb46c57d31e9aebc7fc6244df971
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61336959"
 ---
 # <a name="json-search-syntax"></a>Sintaxe de pesquisa JSON
@@ -33,7 +33,7 @@ ms.locfileid: "61336959"
 }
 ```
 
-Os nomes de nós em um caminho de consulta (_v0, v1, ..._) servem como identificadores de nós que podem ser referenciados no objeto de consulta; os nomes das arestas (_e0, e1, ..._) no caminho representam os tipos das arestas correspondentes. É possível usar um asterisco _*_ como um nó ou nome de borda (exceto para o nó inicial, que deve ser fornecido) para declarar que não há restrições em tal elemento. Por exemplo, um caminho de consulta `/v0/*/v1/e1/*/` recupera caminhos do grafo sem restringir o tipo da borda _(v0, v1)_. Enquanto isso, a consulta também não possui restrições no destino (o último nó) do caminho.
+Os nomes de nós em um caminho de consulta (_v0, v1, ..._ ) servem como identificadores de nós que podem ser referenciados no objeto de consulta; os nomes das arestas (_e0, e1, ..._ ) no caminho representam os tipos das arestas correspondentes. É possível usar um asterisco _*_ como um nó ou nome de borda (exceto para o nó inicial, que deve ser fornecido) para declarar que não há restrições em tal elemento. Por exemplo, um caminho de consulta `/v0/*/v1/e1/*/` recupera caminhos do grafo sem restringir o tipo da borda _(v0, v1)_ . Enquanto isso, a consulta também não possui restrições no destino (o último nó) do caminho.
 
 Quando um caminho contém apenas um nó, digamos _v0_, a consulta simplesmente retornará todas as entidades que satisfazem as restrições. Um objeto de restrição aplicado ao nó inicial é chamado de *Objeto de Consulta Inicial*, cuja especificação é fornecida da seguinte forma.
 

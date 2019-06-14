@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 4cc9b0051eaa12eee07f067352126ad159107a83
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61442824"
 ---
 # <a name="integrate-azure-time-series-insights-with-remote-monitoring"></a>Integrar o Azure Time Series Insights com o Monitoramento Remoto
@@ -136,7 +136,7 @@ A próxima etapa é configurar o microsserviço do Azure Stream Analytics Manage
 
 1. Escolha o grupo de recursos **ContosoRM**.
 
-1. Encontre o Stream Analytics ASA (Azure) o trabalho na lista de recursos de streaming. O nome do recurso começa com **streamingjobs-**.
+1. Encontre o Stream Analytics ASA (Azure) o trabalho na lista de recursos de streaming. O nome do recurso começa com **streamingjobs-** .
 
 1. Na parte superior, clique no botão para interromper os trabalhos de streaming do ASA.
 

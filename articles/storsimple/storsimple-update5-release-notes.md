@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 11/13/2017
 ms.author: alkohli
 ms.openlocfilehash: 462cbd6261723aa91bbfd23292611e758a800ed2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60844084"
 ---
 # <a name="storsimple-8000-series-update-5-release-notes"></a>Notas de versão da Atualização 5 para o StorSimple Série 8000
@@ -51,9 +51,9 @@ Veja a seguir as principais melhorias e correções de bugs feitas na Atualizaç
 
 A tabela a seguir fornece um resumo dos problemas que foram corrigidos na Atualização 5.
 
-| Não  | Recurso | Problema | Aplica-se ao dispositivo físico | Aplica-se ao dispositivo virtual |
+| Não | Recurso | Problema | Aplica-se ao dispositivo físico | Aplica-se ao dispositivo virtual |
 | --- | --- | --- | --- | --- |
-| 1 |Comunicação remota do Windows PowerShell |Na versão anterior, um usuário receberia um erro ao tentar estabelecer uma conexão remota com o Dispositivo de Nuvem StorSimple por meio do Windows PowerShell. Esse problema foi causado pela raiz e corrigido nesta versão. |Não  |Sim |
+| 1 |Comunicação remota do Windows PowerShell |Na versão anterior, um usuário receberia um erro ao tentar estabelecer uma conexão remota com o Dispositivo de Nuvem StorSimple por meio do Windows PowerShell. Esse problema foi causado pela raiz e corrigido nesta versão. |Não |Sim |
 | 2 |Modelos de largura de banda |Na versão anterior, havia um problema com os modelos de largura de banda, que resultava em menor largura de banda do que para a qual o dispositivo foi configurado. Esse problema foi corrigido nesta versão. |Sim |Sim |
 | 3 |Failover |Na versão anterior, quando um dispositivo com um grande número de volumes passava por failover para outro dispositivo que executava a Atualização 4, o processo falhava ao tentar aplicar os registros de controle de acesso. Esse problema foi corrigido nesta versão. |Sim |Sim |
 

@@ -11,10 +11,10 @@ ms.author: zhanxia
 ms.date: 05/02/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: d372adf75d46fdedb7a6f2b17e47822475d1f155
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65442367"
 ---
 # <a name="decision-forest-regression-module"></a>Módulo de regressão de floresta de decisão
@@ -25,7 +25,7 @@ Use este módulo para criar um modelo de regressão com base em um ensemble de �
 
 Depois de configurar o modelo, você deve treinar o modelo usando um conjunto de dados rotulado e o [treinar modelo](./train-model.md) módulo.  O modelo treinado, em seguida, pode ser usado para fazer previsões. 
 
-## <a name="how-it-works"></a>Como funciona
+## <a name="how-it-works"></a>Como ele funciona
 
 Árvores de decisão são modelos não paramétricos que executam uma sequência de testes simples para cada instância, percorrendo uma estrutura de dados de árvore binária até que um nó folha (decisão) seja atingido.
 

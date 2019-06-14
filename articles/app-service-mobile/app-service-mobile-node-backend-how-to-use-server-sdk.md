@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
 ms.openlocfilehash: 831f6b4bdc99e63859b390f8a9bb88d74301284e
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62128093"
 ---
 # <a name="how-to-use-the-mobile-apps-nodejs-sdk"></a>Como usar o SDK do Node.js para Aplicativos Móveis
@@ -284,7 +284,7 @@ O SDK do Node.js dos Aplicativos Móveis usa o [pacote de Node.js mssql] para es
 1. Baixe e instale o [Microsoft SQL Server 2014 Express]. Certifique-se de instalar o SQL Server 2014 Express com Tools Edition. A menos que você precise explicitamente do suporte de 64 bits, a versão de 32 bits consome menos memória durante a execução.
 1. Execute o Gerenciador de Configurações do SQL Server 2014:
 
-    a. Expanda o nó **Configuração de Rede do SQL Server** no menu de árvore.
+   a. Expanda o nó **Configuração de Rede do SQL Server** no menu de árvore.
 
    b. Selecione **Protocolos para SQLEXPRESS**.
 
@@ -404,7 +404,7 @@ O uso do Banco de Dados SQL do Azure como armazenamento de dados é idêntico em
 1. Na caixa **Grupo de Recursos** , digite o mesmo nome do aplicativo.
 1. O Plano do Serviço de Aplicativo padrão é selecionado. Se você quiser alterar o Plano do Serviço de Aplicativo:
 
-    a. Selecione **Plano do Serviço de Aplicativo** > **+Criar novo**.
+   a. Selecione **Plano do Serviço de Aplicativo** >  **+Criar novo**.
 
    b. Forneça um nome ao novo Plano de Serviço de Aplicativo e selecione um local apropriado.
 
@@ -422,7 +422,7 @@ Você pode escolher conectar um banco de dados SQL existente ao seu back-end de 
 > [!NOTE]
 > Se já houver um banco de dados no mesmo local do back-end de Aplicativos móveis, você poderá selecionar **Usar um banco de dados existente** e selecionar esse banco de dados. É recomendável o uso de um banco de dados em um local diferente devido a latências mais altas.
 
-1. No novo back-end de Aplicativos Móveis, selecione **Configurações** > **Aplicativos Móveis** > **Dados** > **+Adicionar**.
+1. No novo back-end de Aplicativos Móveis, selecione **Configurações** > **Aplicativos Móveis** > **Dados** >  **+Adicionar**.
 1. No painel **Adicionar conexão de dados**, selecione **Banco de Dados SQL - Definir configurações necessárias** > **Criar um novo banco de dados**. Insira o nome do novo banco de dados na caixa **Nome**.
 1. Selecione o **Servidor**. No painel **Novo servidor**, insira um nome de servidor exclusivo na caixa **Nome do servidor** e forneça um logon do administrador do servidor e senha adequados. Certifique-se de que **Permitir que os serviços do Azure acessem o servidor** está selecionado. Selecione **OK**.
 

@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: ormaoz
 ms.custom: ''
 ms.openlocfilehash: 951178a82e0975f5f2af71bd48cf0f931246ae37
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66002117"
 ---
 # <a name="set-up-and-configure-aws-cost-and-usage-report-integration"></a>Instalar e configurar a integração de relatório de uso e custo do AWS
@@ -67,7 +67,7 @@ Use o Assistente de criação de nova função:
 3. Selecione **funções** e, em seguida, selecione **Create Role**.
 4. Na próxima página, selecione **outra conta do AWS**.
 5. Na **ID da conta**, insira **432263259397**.
-6. Na **opções**, selecione **exigir ID externa (melhor prática quando um terceiro assumirá que essa função)**.
+6. Na **opções**, selecione **exigir ID externa (melhor prática quando um terceiro assumirá que essa função)** .
 7. Na **ID externa**, insira a ID externa. A ID externa é uma senha compartilhada entre a função do AWS e o gerenciamento de custos do Azure. A mesma ID externa também é usada na **novo conector** página no gerenciamento de custos. Por exemplo, se parece com uma ID externa _Companyname1234567890123_.
 
     > [!NOTE]
@@ -100,7 +100,7 @@ Configure a permissão para o Gerenciador de custo:
 
 1. Selecione **escolher um serviço**.
 2. Insira **serviço do Gerenciador de custo**.
-3. Selecione **ações de todos os serviço de Gerenciador de custo (ce:\*)**. Esta ação valida se a coleção está correta.
+3. Selecione **ações de todos os serviço de Gerenciador de custo (ce:\*)** . Esta ação valida se a coleção está correta.
 4. Selecione **adicionar permissões adicionais**.
 
 Adicione a permissão para organizações de AWS:

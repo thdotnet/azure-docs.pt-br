@@ -11,10 +11,10 @@ ms.date: 04/13/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: be811d0dc2ce2eca0b20ca12165eaf0799bd6b5d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61077489"
 ---
 # <a name="my-first-graphical-runbook"></a>O meu primeiro runbook gráfico
@@ -142,7 +142,7 @@ Agora que você tem uma variável para manter a ID de assinatura, você pode con
 1. Na página de Valor do Parâmetro, selecione **Ativo de Variável** para a **Fonte de dados**, selecione **AzureSubscriptionId** na lista e clique em **OK** duas vezes.
 1. Passe o mouse sobre **Login no Azure** até que um círculo apareça na parte inferior da forma. Clique no círculo e arraste a seta para **Especificar Id de Assinatura**.
 
-Seu runbook deve ser semelhante ao seguinte:  <br>![Configuração da autenticação do runbook](media/automation-first-runbook-graphical/runbook-auth-config.png)
+Seu runbook deve ser semelhante ao seguinte: <br>![Configuração da autenticação do runbook](media/automation-first-runbook-graphical/runbook-auth-config.png)
 
 ## <a name="add-activity-to-start-a-vm"></a>Adicionar atividade para iniciar uma VM
 
@@ -157,7 +157,7 @@ Aqui, adicione uma atividade **Start-AzureRmVM** para iniciar uma máquina virtu
 1. Clique em Painel de teste para que você possa testar o runbook.
 1. Clique em **Iniciar** para iniciar o teste. Quando for concluído, verifique se a máquina virtual foi iniciada.
 
-Seu runbook deve ser semelhante ao seguinte:  <br>![Configuração da autenticação do runbook](media/automation-first-runbook-graphical/runbook-startvm.png)
+Seu runbook deve ser semelhante ao seguinte: <br>![Configuração da autenticação do runbook](media/automation-first-runbook-graphical/runbook-startvm.png)
 
 ## <a name="add-additional-input-parameters"></a>Adicionar parâmetros de entrada adicionais
 
@@ -209,13 +209,13 @@ Agora, modifique o runbook para que ele tente iniciar a máquina virtual apenas 
 
 1. Crie um link de **Obter Status** para **Start-AzureRmVM**.<br> ![Runbook com Módulo de Código](media/automation-first-runbook-graphical/runbook-startvm-get-status.png)  
 1. Selecione o link e no painel de Configuração, altere **Aplicar condição** para **Sim**. Observe que o link muda para uma linha tracejada, indicando que a atividade de destino é executada apenas se a condição é resolvida como verdadeira.  
-1. Para a **Expressão da condição**, digite *$ActivityOutput['Get Status'] -eq "Stopped"*. **Start-AzureRmVM** é executada apenas se a máquina virtual está parada.
+1. Para a **Expressão da condição**, digite *$ActivityOutput['Get Status'] -eq "Stopped"* . **Start-AzureRmVM** é executada apenas se a máquina virtual está parada.
 1. No controle de biblioteca, expanda **Cmdlets** e **Microsoft.PowerShell.Utility**.
 1. Adicione **Write-Output** à tela duas vezes.
 1. No primeiro controle **Write-Output**, clique em **Parâmetros** e altere o valor **Rótulo** para *Notificar VM Iniciada*.
-1. Para **InputObject**, altere a **Fonte de dados** para **Expressão do PowerShell** e digite a expressão *"$VMName.Name iniciada com êxito."*.
+1. Para **InputObject**, altere a **Fonte de dados** para **Expressão do PowerShell** e digite a expressão *"$VMName.Name iniciada com êxito."* .
 1. No segundo controle **Write-Output**, clique em **Parâmetros** e altere o valor **Rótulo** para *Falha ao Notificar VM Iniciada*
-1. Para **InputObject**, altere a **Fonte de dados** para a **Expressão do PowerShell** e digite a expressão *"$VMName não pôde iniciar."*.
+1. Para **InputObject**, altere a **Fonte de dados** para a **Expressão do PowerShell** e digite a expressão *"$VMName não pôde iniciar."* .
 1. Criar um link de **Start-AzureRmVM** para **Notificar VM Iniciada** e **Falha ao Notificar VM Iniciada**.
 1. Selecione o link para **Notificar VM Iniciada** e altere **Aplicar condição** para **True**.
 1. Para a **Expressão da condição**, digite *$ActivityOutput['Start-AzureRmVM'].IsSuccessStatusCode -eq $true*. Agora, o controle Write-Output é executado apenas se a máquina virtual é iniciada com êxito.

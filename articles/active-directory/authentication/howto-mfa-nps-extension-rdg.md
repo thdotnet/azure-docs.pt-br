@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 638703e4d67cbd004f0bd616ba31475f507dfd8a
-ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64873421"
 ---
 # <a name="integrate-your-remote-desktop-gateway-infrastructure-using-the-network-policy-server-nps-extension-and-azure-ad"></a>Integrar a infraestrutura do seu Gateway de Área de Trabalho Remota usando a extensão do Servidor de Políticas de Rede (NPS) e o Azure AD
@@ -209,7 +209,7 @@ As políticas de autorização de conexão de Área de Trabalho Remota (RD CAPs)
 Para garantir que haja tempo para validar as credenciais do usuário, executar a verificação em duas etapas, receber respostas e responder a mensagens RADIUS, é necessário ajustar o valor de tempo limite do RADIUS.
 
 1. No servidor de Gateway de Área de Trabalho Remota, abra Gerenciador do Servidor. No menu, clique em **Ferramentas** e, em seguida, clique em **Servidor de Políticas de Rede**.
-1. No console **NPS (Local)**, expanda **Clientes e Servidores RADIUS** e selecione **Servidor RADIUS remoto**.
+1. No console **NPS (Local)** , expanda **Clientes e Servidores RADIUS** e selecione **Servidor RADIUS remoto**.
 
    ![Console de gerenciamento de servidor de diretivas de rede mostrando o servidor RADIUS remoto](./media/howto-mfa-nps-extension-rdg/image12.png)
 
@@ -265,7 +265,7 @@ Para funcionar corretamente nesse cenário, o servidor NPS deve ser registrado n
 
 O Gateway de Área de Trabalho Remota deve ser configurado como um cliente RADIUS para o servidor NPS.
 
-1. No servidor NPS onde a extensão NPS estiver instalada, no console **NPS (Local)**, clique com botão direito em **Clientes RADIUS** e clique em **Novo**.
+1. No servidor NPS onde a extensão NPS estiver instalada, no console **NPS (Local)** , clique com botão direito em **Clientes RADIUS** e clique em **Novo**.
 
    ![Criar um novo cliente RADIUS no console do NPS](./media/howto-mfa-nps-extension-rdg/image17.png)
 
@@ -327,7 +327,7 @@ Depois de autenticado com sucesso usando o método de autenticação secundária
 
 Para exibir os eventos de logon com sucesso nos logs do Visualizador de Eventos do Windows, você pode emitir o seguinte comando do Windows PowerShell para consultar os logs de Serviços de Terminal do Windows e a Segurança do Windows.
 
-Para consultar eventos de entrada bem-sucedida nos logs operacionais do Gateway _(Event Viewer\Applications and Services Logs\Microsoft\Windows\TerminalServices-Gateway\Operational)_, use os seguintes comandos do PowerShell:
+Para consultar eventos de entrada bem-sucedida nos logs operacionais do Gateway _(Event Viewer\Applications and Services Logs\Microsoft\Windows\TerminalServices-Gateway\Operational)_ , use os seguintes comandos do PowerShell:
 
 * `Get-WinEvent -Logname Microsoft-Windows-TerminalServices-Gateway/Operational | where {$_.ID -eq '300'} | FL`
 * Este comando exibe os eventos do Windows que mostram que o usuário atende aos requisitos da política de autorização de recursos (RD RAPS) e foi concedido acesso.

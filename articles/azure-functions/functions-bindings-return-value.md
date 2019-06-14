@@ -8,14 +8,13 @@ manager: jeconnoc
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: reference
-origin.date: 01/14/2019
-ms.date: 03/04/2019
-ms.author: v-junlch
+ms.date: 01/14/2019
+ms.author: cshoe
 ms.openlocfilehash: 4ccfe192eaea94cb9b199bd3c6f0bdacf1685519
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61437711"
 ---
 # <a name="using-the-azure-function-return-value"></a>Usando o valor de retorno de função do Azure
@@ -24,8 +23,8 @@ Este artigo explica como os valores de retorno de trabalho dentro de uma funçã
 
 Em linguagens que têm um valor de retorno, você pode associar uma função [associação de saída](./functions-triggers-bindings.md#binding-direction) para o valor de retorno:
 
-- Em uma biblioteca de classe C#, aplique o atributo de associação de saída para o valor de retorno do método.
-- Em outras linguagens, defina a propriedade `name` em *function.json* para `$return`.
+* Em uma biblioteca de classe C#, aplique o atributo de associação de saída para o valor de retorno do método.
+* Em outras linguagens, defina a propriedade `name` em *function.json* para `$return`.
 
 Se houver várias associações de saída, use o valor de retorno de apenas um deles.
 
@@ -33,11 +32,11 @@ No C# e script C#, formas alternativas de enviar os dados para uma associação 
 
 Veja o exemplo específico de uma linguagem que mostra o uso do valor de retorno:
 
-- [C#](#c-example)
-- [Script do C# (.csx)](#c-script-example)
-- [F#](#f-example)
-- [JavaScript](#javascript-example)
-- [Python](#python-example)
+* [C#](#c-example)
+* [Script do C# (.csx)](#c-script-example)
+* [F#](#f-example)
+* [JavaScript](#javascript-example)
+* [Python](#python-example)
 
 ## <a name="c-example"></a>Exemplo de C#
 
@@ -170,4 +169,3 @@ def main(input: azure.functions.InputStream) -> str:
 
 > [!div class="nextstepaction"]
 > [Tratar erros de associação de funções do Azure](./functions-bindings-errors.md)
-

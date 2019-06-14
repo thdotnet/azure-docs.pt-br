@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: 26ee8b5b1879c505f8200671558fe065ace068a3
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935448"
 ---
 <a name="retrieve-offer-status"></a>Recuperar status da oferta 
@@ -125,14 +125,14 @@ Recupera o status atual da oferta.
 |  **Nome**             |    **Descrição**                                                                             |
 | --------------------  |   -------------------------------------------------------------------------------------------- |
 |  status               | O status da oferta. Para a lista de valores possíveis, consulte [Status da oferta](#offer-status) abaixo. |
-|   da nuvem para o dispositivo             | Matriz de mensagens associadas à oferta                                                    |
+|  da nuvem para o dispositivo             | Matriz de mensagens associadas à oferta                                                    |
 |  etapas                | Matriz das etapas que a oferta passa durante a publicação uma oferta                      |
 |  estimatedTimeFrame   | Estimativa do tempo que levaria para concluir essa etapa, em formato amigável                       |
-|  ID                   | Identificador da etapa                                                                         |
+|  id                   | Identificador da etapa                                                                         |
 |  stepName             | Nome da etapa                                                                               |
 |  description          | Descrição da etapa                                                                        |
 |  status               | Status da etapa. Para a lista de valores possíveis, consulte [Status da etapa](#step-status) abaixo.    |
-|   da nuvem para o dispositivo             | Matriz de mensagens relacionadas à etapa                                                          |
+|  da nuvem para o dispositivo             | Matriz de mensagens relacionadas à etapa                                                          |
 |  processPercentage    | Porcentagem de conclusão da etapa                                                              |
 |  previewLinks         | *Não implementado atualmente*                                                                    |
 |  liveLinks            | *Não implementado atualmente*                                                                    |

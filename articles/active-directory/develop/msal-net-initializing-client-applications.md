@@ -18,10 +18,10 @@ ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2f22ff41e380a16af2aa45df9a61eefbf293ff83
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65544327"
 ---
 # <a name="initialize-client-applications-using-msalnet"></a>Inicializar os aplicativos cliente usando MSAL.NET
@@ -100,7 +100,7 @@ Nos trechos de código usando os criadores de aplicativos, um número de `.With`
 
 Os modificadores que você pode definir em um cliente público ou o construtor do aplicativo cliente confidencial são:
 
-|Parâmetro | Descrição|
+|Parâmetro | DESCRIÇÃO|
 |--------- | --------- |
 |`.WithAuthority()` substituições de 7 | Define a autoridade de padrão de aplicativo a uma autoridade do AD do Azure, com a possibilidade de escolha de nuvem do Azure, o público-alvo, o locatário (locatário ID ou nome de domínio), ou diretamente fornecendo o URI de autoridade.|
 |`.WithAdfsAuthority(string)` | Define a autoridade de padrão de aplicativo para ser uma autoridade do AD FS.|
@@ -119,7 +119,7 @@ Os modificadores que você pode definir em um cliente público ou o construtor d
 
 Os modificadores que você pode definir em um construtor de aplicativo cliente público no xamarin. IOS são:
 
-|Parâmetro | Descrição|
+|Parâmetro | DESCRIÇÃO|
 |--------- | --------- |
 |`.WithIosKeychainSecurityGroup()` | **Xamarin. IOS somente**: Define o grupo de segurança de conjunto de chaves do iOS (para a persistência de cache).|
 
@@ -127,7 +127,7 @@ Os modificadores que você pode definir em um construtor de aplicativo cliente p
 
 Os modificadores que você pode definir em um construtor de aplicativo cliente confidencial são:
 
-|Parâmetro | Descrição|
+|Parâmetro | DESCRIÇÃO|
 |--------- | --------- |
 |`.WithCertificate(X509Certificate2 certificate)` | Define o certificado que identifica o aplicativo com o Azure AD.|
 |`.WithClientSecret(string clientSecret)` | Define o segredo do cliente (senha de aplicativo) identifica o aplicativo com o Azure AD.|

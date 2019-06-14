@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: jowargo
 ms.openlocfilehash: 31a22aabc7b0f1d51a673ef8642037103badcc02
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61457750"
 ---
 # <a name="routing-and-tag-expressions"></a>Expressões de marca e roteamento
@@ -35,7 +35,7 @@ A única maneira de direcionar registros de notificações específicos é assoc
 2. **Marca**: todos os registros que contêm a marca especificada recebem a notificação.
 3. **Expressão de marca**: todos os registros cujos conjuntos de marcas correspondem à expressão especificada recebem a notificação.
 
-## <a name="tags"></a>Marcas
+## <a name="tags"></a>tags
 
 Uma marca pode ser qualquer cadeia de caracteres com até 120 caracteres que contenha caracteres alfanuméricos e os seguintes caracteres não alfanuméricos: ‘_’, ‘@’, ‘#’, ‘.’, ‘:’, ‘-’. O exemplo a seguir mostra um aplicativo do qual você pode receber notificações de aviso sobre grupos musicais específicos. Nesse cenário, uma maneira simples de direcionar as notificações é rotular os registros com marcas que representem as diferentes bandas, como na seguinte imagem:
 

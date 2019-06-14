@@ -14,15 +14,15 @@ ms.topic: article
 ms.date: 12/17/2018
 ms.author: lahugh
 ms.openlocfilehash: 3974be886b57fbf685b211369094edf844d96ab6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60776517"
 ---
 # <a name="use-rdma-or-gpu-instances-in-batch-pools"></a>Usar instâncias de GPU ou RDMA em pools do Lote
 
-Para executar determinados trabalhos do Lote, é possível aproveitar os tamanhos de VM do Azure projetados para computação em grande escala. Por exemplo: 
+Para executar determinados trabalhos do Lote, é possível aproveitar os tamanhos de VM do Azure projetados para computação em grande escala. Por exemplo:
 
 * Para executar [cargas de trabalho MPI](batch-mpi.md) de várias instâncias, escolha séries H ou outros tamanhos que tenham um adaptador de rede para RDMA (Acesso Remoto Direto à Memória). Esses tamanhos se conectam a uma rede InfiniBand para comunicação entre nós, o que pode acelerar aplicativos de MPI. 
 

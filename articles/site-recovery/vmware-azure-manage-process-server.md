@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/28/2019
 ms.author: ramamill
 ms.openlocfilehash: 2c27779719c73adf4d7fc1a61a0c77d03df71815
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64925597"
 ---
 # <a name="manage-process-servers"></a>Gerenciar servidores de processo
@@ -61,7 +61,7 @@ Mova a carga de trabalho inteira manuseada por um servidor de processo para outr
 3. Clique no servidor de processo do qual você deseja alternar a carga de trabalho.
 4. Clique em **comutador**, selecione o servidor de processo de destino ao qual você deseja mover a carga de trabalho. Em seguida, clique em **Okey**
 
-    ![Switch](media/vmware-azure-manage-process-server/Switch.PNG)
+    ![Alternar](media/vmware-azure-manage-process-server/Switch.PNG)
 
 5. No cofre, monitorar o progresso do trabalho em **Monitoring** > **trabalhos do Site Recovery**.
 

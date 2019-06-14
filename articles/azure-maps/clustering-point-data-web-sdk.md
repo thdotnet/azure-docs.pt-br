@@ -10,10 +10,10 @@ services: azure-maps
 manager: cpendleton
 ms.custom: codepen
 ms.openlocfilehash: 6dbd4461e7b8382ec3c4075b9688de59678f98f5
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65957323"
 ---
 # <a name="clustering-point-data"></a>Clustering de ponto de dados
@@ -44,7 +44,7 @@ var datasource = new atlas.source.DataSource(null, {
 
 O `DataSource` classe também tem os seguintes métodos relacionados ao cluster:
 
-| Método | Tipo de retorno | Descrição |
+| Método | Tipo de retorno | DESCRIÇÃO |
 |--------|-------------|-------------|
 | getClusterChildren(clusterId: number) | Promessa&lt;Array&lt;recurso&lt;geometria, qualquer&gt; \| forma&gt;&gt; | Recupera os filhos de um determinado cluster no próximo nível de zoom. Esses filhos podem ser uma combinação de formas e subclusters. Os subclusters será recursos com propriedades que correspondem a ClusteredProperties. |
 | getClusterExpansionZoom(clusterId: number) | Promise&lt;number&gt; | Calcula um nível de zoom no qual o cluster comece expandindo ou separar. |
@@ -84,12 +84,12 @@ Consulte a caneta <a href='https://codepen.io/azuremaps/pen/VRJrgO/'>Cluster pon
 
 Quando ocorrem eventos de mouse em uma camada que contêm pontos de dados em cluster, o ponto de dados em cluster será retornado para o evento como um objeto de recurso de ponto GeoJSON. Esse recurso de ponto terá as seguintes propriedades:
 
-| Nome da propriedade | Type | Descrição |
+| Nome da propriedade | Type | DESCRIÇÃO |
 |---------------|------|-------------|
 | cluster | boolean | Indica se o recurso representa um cluster. |
-| cluster_id | string | Uma ID exclusiva para o cluster que pode ser usado com a fonte de dados `getClusterExpansionZoom`, `getClusterChildren`, e `getClusterLeaves` métodos. |
+| cluster_id | cadeia de caracteres | Uma ID exclusiva para o cluster que pode ser usado com a fonte de dados `getClusterExpansionZoom`, `getClusterChildren`, e `getClusterLeaves` métodos. |
 | point_count | número | O número de pontos que contém o cluster. |
-| point_count_abbreviated | string | Uma cadeia de caracteres que abrevia o `point_count` valor se ele for longo. (por exemplo, 4.000 se torna 4K) |
+| point_count_abbreviated | cadeia de caracteres | Uma cadeia de caracteres que abrevia o `point_count` valor se ele for longo. (por exemplo, 4.000 se torna 4K) |
 
 Este exemplo usa uma camada de bolha que renderiza os pontos de cluster e adiciona um evento de clique que quando disparado, calcular e aplique zoom no mapa para o próximo nível de zoom no qual o cluster será interrompido entre eles usando o `getClusterExpansionZoom` método da `DataSource` classe e o `cluster_id` ponto de dados em cluster de propriedade do clicado. 
 

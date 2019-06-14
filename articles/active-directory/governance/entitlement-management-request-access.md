@@ -17,16 +17,16 @@ ms.author: rolyon
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 39a50240b4360c5b4adcd6020c2b80b0f06315f7
-ms.sourcegitcommit: 9ad75f83bbf0fc4623b7995794f33bbf823b31c0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64541549"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management-preview"></a>Solicitar acesso a um pacote de acesso no gerenciamento de direitos do AD do Azure (visualização)
 
 > [!IMPORTANT]
-> Gerenciamento de direitos do Active Directory (Azure AD) do Azure está atualmente em visualização pública.
+> No momento, o gerenciamento de direitos do Azure AD (Azure Active Directory) está em versão prévia pública.
 > Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
 > Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -54,9 +54,9 @@ Depois de encontrar o pacote de acesso no portal do meu acesso, você pode envia
 
 1. Clique na marca de seleção para selecionar o pacote de acesso.
 
-    ![O portal de acesso - pacotes de acesso](./media/entitlement-management-shared/my-access-access-packages.png)
+    ![Portal Meus Acessos – Pacotes de acesso](./media/entitlement-management-shared/my-access-access-packages.png)
 
-1. Clique em **solicitar acesso** para abrir o painel de acesso de solicitação.
+1. Clique em **Solicitar acesso** para abrir o painel Solicitar acesso.
 
 1. Se o **justificativa de negócios** caixa é exibida, digite uma justificativa para que precisam de acesso.
 
@@ -64,7 +64,7 @@ Depois de encontrar o pacote de acesso no portal do meu acesso, você pode envia
 
 1. Se necessário, especifique a data de início e data de término.
 
-    ![Meu portal de acesso – solicitação de acesso](./media/entitlement-management-shared/my-access-request-access.png)
+    ![Portal Meus Acessos – Solicitar acesso](./media/entitlement-management-shared/my-access-request-access.png)
 
 1. Quando terminar, clique em **enviar** para enviar sua solicitação.
 

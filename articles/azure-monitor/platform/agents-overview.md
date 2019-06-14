@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: magoedte
 ms.openlocfilehash: 12eea032c37c8d737ae004d622b72536195c4444
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65977580"
 ---
 # <a name="overview-of-the-azure-monitoring-agents"></a>Visão geral dos agentes de monitoramento do Azure 
@@ -39,7 +39,7 @@ Você pode optar por coletar:
 * Logs de saída de rastreamento de aplicativos .NET
 * Eventos de ETW (Rastreamento de Eventos para Windows) 
 * Coletar eventos de log do syslog  
-* Despejos de memória 
+* Despejos de falhas 
 
 O agente do Azure Diagnostics deve ser usado quando você quiser:
 

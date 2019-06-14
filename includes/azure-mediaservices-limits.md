@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
 ms.openlocfilehash: de3fd8dc0d45ea10e64af8e2258682a9e98639dc
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66116330"
 ---
 >[!NOTE]
@@ -18,15 +18,15 @@ ms.locfileid: "66116330"
 | --- | --- | 
 | Contas de serviços de mídia do Azure em uma única assinatura | 25 (fixo) |
 | Unidades por conta dos serviços de mídia reservadas de mídia |25 (S1)<br/>10 (S2, S3)<sup>1</sup> | 
-| Trabalhos por conta dos Serviços de Mídia | 50.000<sup>2</sup> |
+| Trabalhos por conta dos Serviços de Mídia | 50\.000<sup>2</sup> |
 | Tarefas encadeadas por trabalho | 30 (fixo) |
-| Ativos por conta dos serviços de mídia | 1.000.000|
+| Ativos por conta dos serviços de mídia | 1\.000.000|
 | Ativos por tarefa | 50 |
 | Ativos por trabalho | 100 |
 | Localizadores exclusivos associados a um ativo simultaneamente | 5<sup>4</sup> |
 | Canais ao vivo por conta dos serviços de mídia |5|
-| Programas no estado interrompido por canal  |50|
-| Programa em estado de execução por canal  |3|
+| Programas no estado interrompido por canal |50|
+| Programa em estado de execução por canal |3|
 | Streaming de pontos de extremidade que são interrompidos ou em execução por conta dos serviços de mídia|2|
 | Unidades de streaming por ponto de extremidade de streaming |10 |
 | Contas de armazenamento | 1,000<sup>5</sup> (fixo) |

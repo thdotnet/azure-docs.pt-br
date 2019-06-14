@@ -16,10 +16,10 @@ ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ec88caafa9a6168860a8e9e2ff9e2abe0cfd0e77
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62096106"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Perguntas frequentes do Azure AD Connect Health
@@ -67,10 +67,10 @@ Não há suporte para o Azure AD Connect Health na nuvem da Alemanha, exceto par
 
 | Funções | Recursos | Há suporte na nuvem da Alemanha |
 | ------ | --------------- | --- |
-| Connect Health para sincronização | Monitoramento/insights/alertas/análise | Não  |
+| Connect Health para sincronização | Monitoramento/insights/alertas/análise | Não |
 |  | Relatório de erros de sincronização | Sim |
-| Connect Health para ADFS | Monitoramento/insights/alertas/análise | Não  |
-| Connect Health para ADDS | Monitoramento/insights/alertas/análise | Não  |
+| Connect Health para ADFS | Monitoramento/insights/alertas/análise | Não |
+| Connect Health para ADDS | Monitoramento/insights/alertas/análise | Não |
 
 Para garantir a conectividade do agente do Connect Health para sincronização, configure o [requisito de instalação](how-to-connect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints) corretamente.
 

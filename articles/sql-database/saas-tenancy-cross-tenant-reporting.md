@@ -13,10 +13,10 @@ ms.reviewers: billgib,ayolubek
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 9562d0cd1ad97a459c3630456a6070ac2b6e63f3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61484609"
 ---
 # <a name="cross-tenant-reporting-using-distributed-queries"></a>Relatório entre locatários usando consultas distribuídas
@@ -128,7 +128,7 @@ Este exercício adiciona o esquema (a fonte de dados externa e as definições d
 
     ![Criar fonte de dados externa](media/saas-tenancy-cross-tenant-reporting/create-external-data-source.png)
 
-   As tabelas externas que fazem referência a exibições globais descritas na seção anterior e definidas com **DISTRIBUTION = SHARDED(VenueId)**. Como cada *VenueId* mapeia para um banco de dados individual, isso melhora o desempenho em muitos cenários, como mostrado na próxima seção.
+   As tabelas externas que fazem referência a exibições globais descritas na seção anterior e definidas com **DISTRIBUTION = SHARDED(VenueId)** . Como cada *VenueId* mapeia para um banco de dados individual, isso melhora o desempenho em muitos cenários, como mostrado na próxima seção.
 
     ![criar tabelas externas](media/saas-tenancy-cross-tenant-reporting/external-tables.png)
 
@@ -148,7 +148,7 @@ Agora que o banco de dados *adhocreporting* está configurado, siga em frente e 
 
 Ao inspecionar o plano de execução, passe o mouse sobre os ícones de plano para obter detalhes. 
 
-É importante observar que configurar **DISTRIBUTION = SHARDED(VenueId)**, quando definida a fonte de dados externa, melhora o desempenho em muitos cenários. Como cada *VenueId* é mapeado para um banco de dados individual, a filtragem é facilmente feita remotamente, retornando somente os dados necessários.
+É importante observar que configurar **DISTRIBUTION = SHARDED(VenueId)** , quando definida a fonte de dados externa, melhora o desempenho em muitos cenários. Como cada *VenueId* é mapeado para um banco de dados individual, a filtragem é facilmente feita remotamente, retornando somente os dados necessários.
 
 1. Abra ...\\Módulos de Aprendizado\\Análise Operacional\\Relatórios Ad hoc\\*Demo-AdhocReportingQueries.sql* no SSMS.
 2. Verifique se você está conectado ao banco de dados **adhocreporting**.

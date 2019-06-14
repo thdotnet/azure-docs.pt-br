@@ -16,10 +16,10 @@ ms.author: mimart
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ecadb499d140ccfc993820080cae0b749977fc61
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65824736"
 ---
 # <a name="manage-certificates-for-federated-single-sign-on-in-azure-active-directory"></a>Gerenciar certificados para logon único federado no Azure Active Directory
@@ -30,11 +30,11 @@ Este artigo é relevante apenas para aplicativos que são configurados para usar
 
 ## <a name="auto-generated-certificate-for-gallery-and-non-gallery-applications"></a>Certificado gerado automaticamente para aplicativos da galeria e inexistentes na galeria
 
-Quando você adicionar um novo aplicativo da galeria e configurar um baseado em SAML logon (selecionando **logon único** > **SAML** da página de visão geral do aplicativo), o Azure AD gera um certificado para o aplicativo que é válido por três anos. Para baixar o certificado do Active Directory como um certificado de segurança (**. cer**) arquivo, retorne para a página (**baseado em SAML logon**) e selecione um link de download no **certificado de autenticação de SAML** título. Você pode escolher entre o bruto (binário) ou certificado de Base64 (base texto codificado 64). Para aplicativos da galeria, essa seção também pode mostrar um link para baixar o certificado como o XML de metadados de Federação (um **. XML** arquivo), dependendo do requisito do aplicativo.
+Quando você adicionar um novo aplicativo da galeria e configurar um baseado em SAML logon (selecionando **logon único** > **SAML** da página de visão geral do aplicativo), o Azure AD gera um certificado para o aplicativo que é válido por três anos. Para baixar o certificado do Active Directory como um certificado de segurança ( **. cer**) arquivo, retorne para a página (**baseado em SAML logon**) e selecione um link de download no **certificado de autenticação de SAML** título. Você pode escolher entre o bruto (binário) ou certificado de Base64 (base texto codificado 64). Para aplicativos da galeria, essa seção também pode mostrar um link para baixar o certificado como o XML de metadados de Federação (um **. XML** arquivo), dependendo do requisito do aplicativo.
 
 ![Ativas opções assinatura de download de certificado SAML](./media/manage-certificates-for-federated-single-sign-on/active-certificate-download-options.png)
 
-Você também pode baixar um certificado ativo ou inativo, selecionando o **certificado de autenticação SAML** do título **editar** ícone (um lápis), que exibe o **certificado de autenticação de SAML** página. Selecione as reticências (**...** ) ao lado do certificado que você deseja baixar e, em seguida, escolha qual formato de certificado que você deseja. Você tem a opção adicional para baixar o certificado no formato de email reforçados para privacidade (PEM). Esse formato é idêntico em Base64, mas com um **. PEM** arquivo de extensão de nome, que não é reconhecido no Windows como um formato de certificado.
+Você também pode baixar um certificado ativo ou inativo, selecionando o **certificado de autenticação SAML** do título **editar** ícone (um lápis), que exibe o **certificado de autenticação de SAML** página. Selecione as reticências ( **...** ) ao lado do certificado que você deseja baixar e, em seguida, escolha qual formato de certificado que você deseja. Você tem a opção adicional para baixar o certificado no formato de email reforçados para privacidade (PEM). Esse formato é idêntico em Base64, mas com um **. PEM** arquivo de extensão de nome, que não é reconhecido no Windows como um formato de certificado.
 
 ![Opções de download de certificado (ativas e inativas) de assinatura de SAML](./media/manage-certificates-for-federated-single-sign-on/all-certificate-download-options.png)
 
@@ -88,7 +88,7 @@ Em seguida, baixe o novo certificado no formato correto, carregá-lo para o apli
 
 3. Siga as instruções de [certificado gerado automaticamente para aplicativos da galeria e não](#auto-generated-certificate-for-gallery-and-non-gallery-applications) seção anteriormente. Esta etapa baixa o certificado no formato de codificação necessário para carregamento pelo aplicativo.
 
-4. Quando você deseja passar para o novo certificado, volte para o **certificado de autenticação SAML** página e na linha certificado recém-salvo, selecione as reticências (**...** ) e selecione **Ativar certificado**. O status do novo certificado muda para **Active**, e o certificado anteriormente ativo é alterado para um status de **inativo**.
+4. Quando você deseja passar para o novo certificado, volte para o **certificado de autenticação SAML** página e na linha certificado recém-salvo, selecione as reticências ( **...** ) e selecione **Ativar certificado**. O status do novo certificado muda para **Active**, e o certificado anteriormente ativo é alterado para um status de **inativo**.
 
 5. Continue a seguir instruções de configuração de logon do SAML do aplicativo exibido anteriormente, para que você possa carregar a assinatura de SAML de certificado no formato de codificação correto.
 
@@ -116,7 +116,7 @@ Se um certificado está prestes a expirar, você poderá renová-lo usando um pr
 
 2. Se o aplicativo pode acumular automaticamente um certificado, defina o novo certificado para o Active Directory seguindo estas etapas:
    1. Volte para o **certificado de autenticação SAML** página.
-   2. Na linha certificado recém-salvo, selecione as reticências (**...** ) e, em seguida, selecione **Ativar certificado**.
+   2. Na linha certificado recém-salvo, selecione as reticências ( **...** ) e, em seguida, selecione **Ativar certificado**.
    3. Ignore as próximas duas etapas.
 
 3. Se o aplicativo pode lidar somente com um certificado por vez, escolha um intervalo de tempo de inatividade para executar a próxima etapa. (Caso contrário, se o aplicativo não seleciona automaticamente o novo certificado, mas pode lidar com mais de um certificado de autenticação, você pode executar a próxima etapa a qualquer momento.)

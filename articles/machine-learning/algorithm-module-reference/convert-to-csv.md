@@ -11,10 +11,10 @@ ms.author: zhanxia
 ms.date: 05/02/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: 8b8b6758cc2df7a092ce36e9507f84ac534d0e3d
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65028719"
 ---
 # <a name="convert-to-csv-module"></a>Converter em CSV módulo
@@ -27,7 +27,7 @@ Use este módulo para converter um conjunto de dados em um formato CSV que pode 
 
 O formato CSV, o que significa "valores separados por vírgula", é um formato de arquivo usado por muitas ferramentas de aprendizado de máquina externa. CSV é um formato de intercâmbio comum ao trabalhar com linguagens de código-fonte aberto como R ou Python.
 
-Mesmo se você fazer a maior parte do seu trabalho no Azure Machine Learning, há vezes quando você talvez ache útil para converter seu conjunto de dados em CSV para usar em ferramentas externas. Por exemplo: 
+Mesmo se você fazer a maior parte do seu trabalho no Azure Machine Learning, há vezes quando você talvez ache útil para converter seu conjunto de dados em CSV para usar em ferramentas externas. Por exemplo:
 
 + Baixe o arquivo CSV para abri-lo com o Excel ou importá-lo para um banco de dados relacional.  
 + Salve o arquivo CSV para o armazenamento em nuvem e conectá-lo do Power BI para criar visualizações.  

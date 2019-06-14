@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 09/21/2016
 ms.author: alkohli
 ms.openlocfilehash: 8303195f0f3228ee145cbba9e322ea4e5e4c1264
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60302527"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64726953"
 ---
 # <a name="supported-hardware-for-the-10-gbe-network-interfaces-on-your-storsimple-device"></a>Suporte para hardware de interfaces de rede de 10 GbE em seu dispositivo StorSimple
 ## <a name="overview"></a>Visão geral
@@ -58,7 +58,7 @@ Esta seção contém a lista dos dispositivos que têm sido implantados com êxi
 | Comutador   versão do sistema operacional |JunOS 12.3R9.4 |
 | Folha   modelo |Portas integradas (PIC 0) |
 | Forma do transceptor |Juniper |
-| Transceptor   modelo |Peça número 740-021308  <br></br>  Peça número 740-030658 |
+| Transceptor   modelo |Peça número 740-021308 <br></br> Peça número 740-030658 |
 | Transceptor   versão do firmware |Rev 01 Versão 0.0 (reportada) |
 | Cabo   modelo |Duplex jumper LC/LC 50/125µ,   OM3, LSZH |
 | StorSimple   modelo |8600 |

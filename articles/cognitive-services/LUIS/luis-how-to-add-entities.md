@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: diberry
 ms.openlocfilehash: 241e89ac7fa78184e7c55f9e8065e1534cea9143
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65148720"
 ---
 # <a name="create-entities-without-utterances"></a>Criar entidades sem declarações
@@ -114,7 +114,7 @@ No enunciado `Where is Request relocation from employee new to the company on th
 
 Uma função é um subtipo nomeado com base no contexto. Ele está disponível em todas as entidades, incluindo as entidades predefinidas e não computador aprendeu. 
 
-A sintaxe para uma função é **`{Entityname:Rolename}`** onde o nome de entidade é seguido por dois-pontos e, em seguida, o nome da função. Por exemplo, `Move {personName} from {LocationUsingRoles:Origin} to {LocationUsingRoles:Destination}`.
+A sintaxe para uma função é **`{Entityname:Rolename}`** onde o nome de entidade é seguido por dois-pontos e, em seguida, o nome da função. Por exemplo: `Move {personName} from {LocationUsingRoles:Origin} to {LocationUsingRoles:Destination}`.
 
 1. Na seção **Build**, selecione **Entities** no painel esquerdo.
 

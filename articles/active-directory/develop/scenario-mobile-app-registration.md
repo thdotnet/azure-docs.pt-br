@@ -17,10 +17,10 @@ ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2b6ebab0eeca6895e1c7a0f6008972030d81da42
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65962395"
 ---
 # <a name="mobile-app-that-calls-web-apis---app-registration"></a>Aplicativo móvel que chamadas às APIs - registro de aplicativo da web
@@ -43,7 +43,7 @@ Se você preferir configurar manualmente o URI de redirecionamento, você pode f
 - ***Android***: `msauth://<PACKAGE_NAME>/<SIGNATURE_HASH>`
   - O hash de assinatura Android pode ser gerado usando as chaves de versão ou depuração por meio do comando KeyTool.
 
-## <a name="api-permissions"></a>Permissões de APIs
+## <a name="api-permissions"></a>Permissões de API
 
 Aplicativos móveis chamam APIs em nome do usuário conectado. Seu aplicativo precisará solicitar permissões delegadas, também conhecidas como escopos. Dependendo da experiência desejada, isso pode ser feito estaticamente por meio do portal do Azure ou dinamicamente em tempo de execução. Registrar estaticamente permissões permite que os administradores aprovar facilmente seu aplicativo e é recomendado.
 

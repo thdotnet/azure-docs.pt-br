@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/29/2018
 ms.author: yijenj
 ms.openlocfilehash: 225a4936bbbb8d068caa0ee2a3280c395dbd490e
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65964118"
 ---
 # <a name="consulting-services-for-azure-marketplace-and-appsource"></a>Consulte de Serviços para o Azure Marketplace e AppSource
@@ -30,7 +30,7 @@ As vitrines do Marketplace estão alinhadas com o público e os produtos de nuve
 |Relevância da solução     |Aplicativos técnicos criados para ou criados no Azure|Aplicativos de negócios que aproveitam/estendem D365, Power BI, O365, Azure. (Suplemento ou complemento de aplicativos terminados)|
 |Opções de publicação     |Contate-me, Avaliação, Transact ou os Serviços de Consultoria|Contate-me, Avaliação ou os Serviços de Consultoria|
 |Experiência de produto      |Portal de Gerenciamento do Azure|Dynamics 365, Office 365, aplicativos de cliente do Office| 
-|Outro      |Publicar local por meio do Azure Stack|Serviços de Consultoria para Dynamics e Power BI|
+|Outros      |Publicar local por meio do Azure Stack|Serviços de Consultoria para Dynamics e Power BI|
 
 As ofertas de serviço baseadas no Microsoft Dynamics 365, Office 365 e Power BI são qualificadas para serem listadas no AppSource. Para obter mais informações, consulte [diretrizes da lista de serviços de consultoria do Microsoft AppSource](https://smp-cdn-prod.azureedge.net/documents/Microsoft%20AppSource%20Partner%20Listing%20Guidelines.pdf). 
 

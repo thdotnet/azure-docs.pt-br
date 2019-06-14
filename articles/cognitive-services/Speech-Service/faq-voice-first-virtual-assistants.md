@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: travisw
 ms.openlocfilehash: 8427417c9b579c7dfa21f834ce1ca77099159eb2
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65072615"
 ---
 # <a name="voice-first-virtual-assistants-preview-frequently-asked-questions"></a>Assistentes de voz-first virtuais Preview: Perguntas frequentes
@@ -31,7 +31,7 @@ Se você não encontrar respostas para suas perguntas neste documento, fazer che
 
 **R:** A melhor maneira para começar a criação de um Assistente de voz-first virtual é iniciar com [criando um bot básico do Bot Framework](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0). Em seguida, conecte seu bot para o [canal de fala de linha direta](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
 
-## <a name="debugging"></a>Depurando
+## <a name="debugging"></a>Depuração
 
 **P: Recebo um erro 401 ao conectar-se e nada funciona. Sei que minha chave de assinatura de fala é válido. O que está acontecendo?**
 

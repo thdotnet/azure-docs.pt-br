@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/21/2018
 tags: connectors
 ms.openlocfilehash: 7146e59eabf9e30fa263f957f1c546414ad0fe26
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60952495"
 ---
 # <a name="find-news-with-bing-search-and-azure-logic-apps"></a>Encontre notícias com a Pesquisa do Bing e os Aplicativos Lógicos do Azure
@@ -89,7 +89,7 @@ Em Aplicativos Lógicos do Azure, uma [ação](../logic-apps/logic-apps-overview
    ![Adicionar ação](./media/connectors-create-api-bing-search/add-action.png)
 
    Para adicionar uma ação entre etapas existentes, mova o mouse sobre a seta de conexão. 
-   Escolha o sinal de adição (**+**) que aparece e, em seguida, escolha **Adicionar uma ação**.
+   Escolha o sinal de adição ( **+** ) que aparece e, em seguida, escolha **Adicionar uma ação**.
 
 3. Na caixa de pesquisa, insira "Pesquisa do Bing" como seu filtro.
 Na lista de ações, selecione a ação desejada.
@@ -122,7 +122,7 @@ Na lista de ações, selecione a ação desejada.
 
       Agora, é possível iniciar a criação da expressão.
 
-   2. Na lista funções, selecione a função **contains()**, que aparece na caixa de expressões. Clique em **Conteúdo dinâmico** para que a lista de campos seja exibida novamente, mas certifique-se de que o cursor permaneça dentro dos parênteses.
+   2. Na lista funções, selecione a função **contains()** , que aparece na caixa de expressões. Clique em **Conteúdo dinâmico** para que a lista de campos seja exibida novamente, mas certifique-se de que o cursor permaneça dentro dos parênteses.
 
       ![Definir uma função](./media/connectors-create-api-bing-search/expression-select-function.png)
 

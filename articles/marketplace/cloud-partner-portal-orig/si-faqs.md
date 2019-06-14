@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: pabutler
 ms.openlocfilehash: 2719b6b47225576f2eadeb5e5b40b3aa7b39444d
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64943077"
 ---
 <a name="seller-insights-faq"></a>Perguntas Frequentes sobre os Insights do Vendedor
@@ -35,19 +35,19 @@ Depois de baixar suas transações de módulo de pagamento, localize a coluna ro
 <a name="calculate-my-open-accounts-receivable"></a>Calcular o valor a receber pelas minhas contas abertas
 -------------------------------------
 
-Depois de baixar suas transações de módulo de pagamento, localize a coluna rotulada **Status do pagamento** e aplique o filtro para exibir apenas o valor "Pagamento futuro" e "Não pronto para pagamento". Em seguida, some a coluna rotulada **Valor do pagamento (PC)**.
+Depois de baixar suas transações de módulo de pagamento, localize a coluna rotulada **Status do pagamento** e aplique o filtro para exibir apenas o valor "Pagamento futuro" e "Não pronto para pagamento". Em seguida, some a coluna rotulada **Valor do pagamento (PC)** .
 
 
 <a name="calculate-revenue-by-customer-usage-period"></a>Calcular a receita por período de uso do cliente
 ------------------------------------------
 
-Depois de baixar suas transações de módulo de pagamento, localize a coluna rotulada **Status de transação**e filtrar o valor "Pago".   Para cada transação listados, a coluna rotulada **quantidade do pagamento (PC)** representa o valor foi pago.  Para calcular o período de uso associado à transação, use a coluna **data de cobrança**, que é uma aproximação do último dia de uso para o período para o qual a transação se aplica.
+Depois de baixar suas transações de módulo de pagamento, localize a coluna rotulada **Status de transação**e filtrar o valor "Pago".   Para cada transação listados, a coluna rotulada **quantidade do pagamento (PC)**  representa o valor foi pago.  Para calcular o período de uso associado à transação, use a coluna **data de cobrança**, que é uma aproximação do último dia de uso para o período para o qual a transação se aplica.
 
 
 <a name="calculate-your-bad-debt"></a>Calcular sua dívida inválida
 ---------------------
 
-Depois de baixar suas transações de módulo de pagamento, localize a coluna rotulada **Status final da coleta** e aplique o filtro para exibir apenas o valor "Dar baixa". Em seguida, some a coluna rotulada **Valor do pagamento (PC)**.
+Depois de baixar suas transações de módulo de pagamento, localize a coluna rotulada **Status final da coleta** e aplique o filtro para exibir apenas o valor "Dar baixa". Em seguida, some a coluna rotulada **Valor do pagamento (PC)** .
 
 
 <a name="view-payout-or-customer-contact-information"></a>Exibir informações de contato de cliente ou de pagamento

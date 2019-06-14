@@ -15,13 +15,13 @@ ms.workload: na
 ms.date: 05/21/2019
 ms.author: aschhab
 ms.openlocfilehash: af67b27dacf3bb86c2dd5c878a2751e027a53acb
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66003129"
 ---
-# <a name="overview-of-service-bus-dead-letter-queues"></a>Visão geral das filas de mensagens mortas do Barramento de Serviço 
+# <a name="overview-of-service-bus-dead-letter-queues"></a>Visão geral das filas de mensagens mortas do Barramento de Serviço
 
 As filas e as assinaturas de tópico do Barramento de Serviço do Azure fornecem uma subfila secundária chamada DLQ (*fila de mensagens mortas*). A fila de mensagens mortas não precisa ser explicitamente criada e não pode ser excluída ou de alguma forma gerenciada independentemente da entidade principal.
 
@@ -49,7 +49,7 @@ Os aplicativos podem definir seus próprios códigos para a propriedade `DeadLet
 | !TopicDescription.<br />EnableFilteringMessagesBeforePublishing e SubscriptionDescription.<br />EnableDeadLetteringOnFilterEvaluationExceptions |exception.GetType().Name |exception.Message |
 | EnableDeadLetteringOnMessageExpiration |TTLExpiredException |A mensagem expirou e foi colocada no estado de mensagem morta. |
 | SubscriptionDescription.RequiresSession |A ID da sessão é nula. |A entidade habilitada para sessão não permite uma mensagem cuja identificação de sessão seja nula. |
-| !fila de mensagens mortas |MaxTransferHopCountExceeded |Null |
+| !fila de mensagens mortas |MaxTransferHopCountExceeded |Nulo |
 | Mensagem morta explícita do aplicativo |Especificado pelo aplicativo |Especificado pelo aplicativo |
 
 ## <a name="exceeding-maxdeliverycount"></a>Excedendo MaxDeliveryCount

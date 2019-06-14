@@ -12,10 +12,10 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 ms.openlocfilehash: 90e43ab0448646650067dbf151702132f434c01e
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65967951"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Criar e configurar um tempo de execução da integração auto-hospedada
@@ -104,7 +104,7 @@ Aqui está o fluxo de dados de alto nível para e o resumo das etapas para a có
     ```
 11. Na página **Registrar Integration Runtime (auto-hospedado)** do Configuration Manager do Microsoft Integration Runtime em seu computador, realize as seguintes etapas:
 
-     a. Cole a chave de autenticação na área de texto.
+    a. Cole a chave de autenticação na área de texto.
 
     b. Opcionalmente, selecione **Mostrar chave de autenticação** para ver o texto da chave.
 
@@ -126,7 +126,7 @@ Para associar vários nós, instale o software do tempo de execução da integra
 
 ### <a name="scale-considerations"></a>Considerações de escala
 
-#### <a name="scale-out"></a>Escalar horizontalmente
+#### <a name="scale-out"></a>Expansão
 
 Quando a memória disponível no IR auto-hospedado for baixa e o uso da CPI for alto, adicionar um novo nó ajuda a expandir a carga entre os computadores. Se as atividades falharem por causa de tempo limite ou porque o nó do IR auto-hospedado ficou offline, ajudará se você adicionar um nó ao gateway.
 
@@ -224,9 +224,9 @@ Há dois firewalls a considerar: o *firewall corporativo* em execução no rotea
 
 No nível do *firewall corporativo*, é necessário configurar os seguintes domínios e portas de saída:
 
-Nomes de domínio | Portas | Descrição
+Nomes de domínio | Portas | DESCRIÇÃO
 ------------ | ----- | ------------
-* .servicebus.windows.net | 443 | Usado para comunicação com o serviço de movimentação de dados de back-end
+*.servicebus.windows.net | 443 | Usado para comunicação com o serviço de movimentação de dados de back-end
 *.core.windows.net | 443 | Usado para cópia em etapas por meio do Armazenamento de Blobs do Azure (se estiver configurado)
 *.frontend.clouddatahub.net | 443 | Usado para comunicação com o serviço de movimentação de dados de back-end
 download.microsoft.com | 443 | Usado para baixar as atualizações

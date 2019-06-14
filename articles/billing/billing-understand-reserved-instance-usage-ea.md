@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 05/07/2019
 ms.author: banders
 ms.openlocfilehash: b2452580eaecc0ab922f8e7db48676f70831a8ca
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66126854"
 ---
 # <a name="get-enterprise-agreement-reservation-costs-and-usage"></a>Obter o uso e custos de reserva do Enterprise Agreement
@@ -94,7 +94,7 @@ No portal do Azure, navegue até [gerenciamento de custos + cobrança](https://p
 2. Clique em **uso + encargos**.
 3. Clique em **Download**.  
 ![Exemplo mostrando onde baixar o arquivo de dados de uso do CSV no portal do Azure](./media/billing-understand-reserved-instance-usage-ea/portal-download-csv.png)
-4. Na **baixar uso + encargos** , em **detalhes de uso da versão 2** , selecione **todos os encargos (uso e compras)** e, em seguida, clique em baixar. Repita a operação em **amortizado encargos (uso e compras)**.
+4. Na **baixar uso + encargos** , em **detalhes de uso da versão 2** , selecione **todos os encargos (uso e compras)** e, em seguida, clique em baixar. Repita a operação em **amortizado encargos (uso e compras)** .
 
 Os arquivos CSV que você baixar contêm os custos reais e os custos amortizados.
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 06/20/2018
 ms.author: dlap
 ms.openlocfilehash: bb186ab2700b147bee3a7dd81474409ccafb76fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60608093"
 ---
 # <a name="trusted-internet-connections-guidance"></a>Diretrizes de Conexão Confiável com a Internet
@@ -142,8 +142,8 @@ Serviços que dão suporte à implantação de instâncias dedicadas em uma rede
 |Azure Data Lake                | Visualização particular  |
 |Banco de Dados do Azure para PostgreSQL  | Visualização particular  |
 |Banco de Dados do Azure para MySQL       | Visualização particular  |
-|SQL Data Warehouse do Azure       | Versão prévia pública   |
-|Banco de Dados SQL do Azure             | Disponibilidade Geral (GA) |
+|Azure SQL Data Warehouse       | Versão prévia pública   |
+|Banco de dados SQL do Azure             | Disponibilidade Geral (GA) |
 |Armazenamento do Azure                  | GA               |
 
 ### <a name="support-for-virtual-network-injection"></a>Suporte para a injeção de rede virtual
@@ -151,7 +151,7 @@ Serviços que dão suporte à implantação de instâncias dedicadas em uma rede
 |Serviço                               |Disponibilidade      |
 |--------------------------------------|------------------|
 |Instância Gerenciada do Banco de Dados SQL do Azure   | Versão prévia pública   |
-|AKS (Serviço do Kubernetes do Azure)        | Versão prévia pública   |
+|AKS (Serviço de Kubernetes do Azure)        | Versão prévia pública   |
 |Azure Service Fabric                  | GA               |
 |Gerenciamento de API do Azure                  | GA               |
 |Azure Active Directory                | GA               |
@@ -247,7 +247,7 @@ Você pode configurar facilmente o acesso ao Microsoft Azure, ao Office 365 e ao
 
 ## <a name="appendix-trusted-internet-connections-patterns-for-common-workloads"></a>Apêndice: Padrões de conexões de Internet confiáveis para cargas de trabalho comuns
 
-| Category | Carga de trabalho | IaaS | PaaS dedicado / injeção de rede virtual  | Pontos de extremidade de serviço  |
+| Categoria | Carga de trabalho | IaaS | PaaS dedicado / injeção de rede virtual  | Pontos de extremidade de serviço  |
 |---------|---------|---------|---------|--------|
 | Computação | Máquinas Virtuais do Linux do Azure | Sim | | |
 | Computação | Máquinas Virtuais do Windows do Azure | Sim | | |
@@ -258,10 +258,10 @@ Você pode configurar facilmente o acesso ao Microsoft Azure, ao Office 365 e ao
 | Web e móvel | Aplicativos de API | | Ambiente do Serviço de Aplicativo | |
 | Contêineres | Serviço de Contêiner do Azure | | | Sim |
 | Contêineres | AKS (Serviço do Kubernetes do Azure) \* | | | Sim |
-| Banco de dados | Banco de Dados SQL do Azure | | Instância Gerenciada do Banco de Dados SQL do Azure \* | SQL do Azure |
+| Banco de dados | Banco de dados SQL do Azure | | Instância Gerenciada do Banco de Dados SQL do Azure \* | SQL do Azure |
 | Banco de dados | Banco de Dados do Azure para MySQL | | | Sim |
 | Banco de dados | Banco de Dados do Azure para PostgreSQL | | | Sim |
-| Banco de dados | SQL Data Warehouse do Azure | | | Sim |
+| Banco de dados | Azure SQL Data Warehouse | | | Sim |
 | Banco de dados | Azure Cosmos DB | | | Sim |
 | Banco de dados | Cache Redis do Azure | | Sim | |
 | Armazenamento | Armazenamento de Blobs do Azure | Sim | | |

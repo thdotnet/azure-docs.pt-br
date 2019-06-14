@@ -11,10 +11,10 @@ ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 12/18/2017
 ms.openlocfilehash: e6a7eaa94e7196c830a66b2d77023bd562119c92
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64699435"
 ---
 # <a name="analyze-customer-churn-using-azure-machine-learning-studio"></a>Analisar a rotatividade de clientes usando o Azure Machine Learning Studio
@@ -188,7 +188,7 @@ Os modelos hospedados no Estúdio do Machine Learning superaram o desempenho de 
 Na indústria de telecomunicações, diversas práticas surgiram para analisar a variação, incluindo:  
 
 * As métricas se derivam de quatro categorias essenciais:
-  * **Entidade (por exemplo, uma assinatura)**. Provisione informações básicas sobre a assinatura e/ou cliente sujeito à variação.
+  * **Entidade (por exemplo, uma assinatura)** . Provisione informações básicas sobre a assinatura e/ou cliente sujeito à variação.
   * **Atividade**. Obter todas as informações de uso possíveis relacionadas à entidade, por exemplo, o número de logons.
   * **Atendimento ao cliente**. Colete informações por meio dos logs de suporte do cliente para indicar se a assinatura teve problemas ou interações com o atendimento ao cliente.
   * **Dados empresariais e de concorrência**. Obter todas as informações possíveis sobre o cliente (por exemplo, ele pode estar indisponível ou ser difícil de rastrear).

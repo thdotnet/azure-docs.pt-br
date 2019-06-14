@@ -8,10 +8,10 @@ ms.date: 05/21/2019
 ms.author: rimman
 ms.reviewer: sngun
 ms.openlocfilehash: a097539e51aa2a2130dead236d553d60f2ebb89d
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65965672"
 ---
 # <a name="understand-your-azure-cosmos-db-bill"></a>Entendendo sua fatura do Azure Cosmos DB
@@ -28,7 +28,7 @@ Este artigo usa alguns exemplos para ajudá-lo a entender os detalhes encontrado
 
 * Vamos supor que você configurou uma taxa de transferência de 1.000 RU/s em um contêiner e ele existe por 24 horas * 30 dias do mês = 720 horas no total.  
 
-* 1.000 RU/s representa 10 unidades de 100 RU/s por hora para cada hora de existência do contêiner (ou seja, 1.000/100 = 10). 
+* 1\.000 RU/s representa 10 unidades de 100 RU/s por hora para cada hora de existência do contêiner (ou seja, 1.000/100 = 10). 
 
 * Multiplicando 10 unidades por hora ao custo de US$ 0,008 (por 100 RU/s por hora) = US$ 0,08 por hora. 
 
@@ -203,7 +203,7 @@ Vamos considerar outro exemplo, em que você deseja proativamente estimar sua fa
 |**Custo de armazenamento** | |
 |----|----|
 |Tamanho médio dos registros (KB) |1 |
-|Número de registros  |100.000.000  |
+|Número de registros  |100\.000.000  |
 |Armazenamento total (GB)  |100 |
 |Custo mensal por GB  |US$ 0,25  |
 |Custo mensal esperado pelo armazenamento   |US$ 25,00  |
@@ -212,7 +212,7 @@ Vamos considerar outro exemplo, em que você deseja proativamente estimar sua fa
 
 |**Custo de taxa de transferência** | | | |
 |----|----|----|----|
-|Tipo de Operação| Solicitações/s| Média RU/solicitação| RUs necessárias|
+|Tipo de operação| Solicitações/s| Média RU/solicitação| RUs necessárias|
 |Gravar| 100 | 5 | 500|
 |Ler| 400| 1| 400|
 

@@ -18,10 +18,10 @@ ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 83fb999b0cf66cfd8d96e82d23ed43626352a8aa
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65544130"
 ---
 # <a name="universal-windows-platform-specific-considerations-with-msalnet"></a>Considerações de específico da plataforma Windows universais com MSAL.NET
@@ -44,7 +44,7 @@ A implementação subjacente na plataforma UWP (WAB) não funciona corretamente 
 ## <a name="next-steps"></a>Próximas etapas
 Mais detalhes são fornecidos nos exemplos a seguir:
 
-Amostra | Plataforma | Descrição 
+Amostra | Plataforma | DESCRIÇÃO 
 |------ | -------- | -----------|
 |[active-directory-dotnet-native-uwp-v2](https://github.com/azure-samples/active-directory-dotnet-native-uwp-v2) | UWP | Um aplicativo de cliente de plataforma Universal do Windows usando msal.net, acessando o Microsoft Graph para um usuário autenticar com o ponto de extremidade do Azure AD v 2.0. <br>![Topologia](media/msal-net-uwp-considerations/topology-native-uwp.png)|
 |[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/Azure-Samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP | Um aplicativo Xamarin Forms simples, mostrando como usar MSAL para autenticar a MSA e o Azure AD por meio do ponto de extremidade v2.0 AAD e acessar o Microsoft Graph com o token resultante. <br>![Topologia](media/msal-net-uwp-considerations/topology-xamarin-native.png)|

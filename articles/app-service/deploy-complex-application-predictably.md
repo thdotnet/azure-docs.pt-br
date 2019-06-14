@@ -16,10 +16,10 @@ ms.date: 01/06/2016
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: e6d18222e15f62f12592362827b6dbc4a3d7dfbc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60766590"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Provisionar e implantar microsserviços previsíveis no Azure
@@ -193,7 +193,7 @@ Novamente, os recursos aninhados devem ter uma hierarquia muito semelhante àque
 O botão **Implantar no Azure** é ótimo, mas só permite que você implante o modelo de grupo de recursos em azuredeploy.json se você já tiver enviado azuredeploy.json por push para o GitHub. O SDK .NET do Azure também fornece as ferramentas para implantar qualquer arquivo de modelo JSON diretamente do computador local. Para fazer isso, siga as etapas abaixo:
 
 1. No Visual Studio, clique em **Arquivo** > **Novo** > **Projeto**.
-2. Clique em **Visual C#** > **Nuvem** > **Grupo de Recursos do Azure**, em seguida, clique em **OK**.
+2. Clique em **Visual C#**  > **Nuvem** > **Grupo de Recursos do Azure**, em seguida, clique em **OK**.
    
    ![](./media/app-service-deploy-complex-application-predictably/deploy-1-vsproject.png)
 3. Em **Selecionar Modelo do Azure**, selecione **Modelo em Branco** e clique em **OK**.

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/24/2016
 ms.author: paulhsu
 ms.openlocfilehash: 018552982a8ece3bbbaea2d60e2a6e64f681f822
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60815148"
 ---
 # <a name="command-line-interface"></a>Interface de Linha de Comando
@@ -82,7 +82,7 @@ O comando **host_service** hospeda uma instância do serviço KES no computador 
 | `<indexFile>`   | Caminho de entrada de índice binário           |
 | `--port <port>` | Número da porta local.  Padrão: 8000 |
 
-Esses arquivos podem ser especificados por caminhos de arquivo local ou caminhos de URL para blobs do Azure.  Um serviço web será hospedado em http://localhost:&lt; porta&gt;/.  Consulte [APIs da Web](WebAPI.md) para obter uma lista de operações com suporte.
+Esses arquivos podem ser especificados por caminhos de arquivo local ou caminhos de URL para blobs do Azure.  Um serviço web será hospedado em http://localhost:&lt ; porta&gt; /.  Consulte [APIs da Web](WebAPI.md) para obter uma lista de operações com suporte.
 
 Fora do ambiente do Azure, os serviços hospedados localmente são limitados aos arquivos de índice de até 1 MB em tamanho, 10 solicitações por segundo e total de 1000 chamadas.  Para superar essas limitações, execute **host_service** dentro de uma VM do Azure, ou implantar um serviço de nuvem do Azure usando **deploy_service**.
 

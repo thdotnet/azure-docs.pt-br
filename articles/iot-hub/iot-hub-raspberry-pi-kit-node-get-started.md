@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/11/2018
 ms.author: wesmc
 ms.openlocfilehash: 72d7956036404d13849f7c2b08f9df4210f12aa7
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65597262"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Conectar o Raspberry Pi ao Hub IoT do Azure (Node.js)
@@ -98,7 +98,7 @@ Preparar o cartão microSD para instalação da imagem do Raspbian.
 
 1. Baixe o Raspbian.
 
-    a. [Baixe o Raspbian Stretch](https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/) (o arquivo .zip).
+   a. [Baixe o Raspbian Stretch](https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/) (o arquivo .zip).
 
    > [!WARNING]
    > Use o link acima para baixar a imagem zip `raspbian-2017-07-5`. A versão mais recente das imagens Raspbian tem alguns problemas conhecidos com o nó Wiring-Pi, que podem causar falhas nas próximas etapas.
@@ -107,7 +107,7 @@ Preparar o cartão microSD para instalação da imagem do Raspbian.
 
 2. Instale o Raspbian no cartão microSD.
 
-    a. [Baixe e instale o utilitário gravador de cartão SD Etcher](https://etcher.io/).
+   a. [Baixe e instale o utilitário gravador de cartão SD Etcher](https://etcher.io/).
 
    b. Execute o Etcher e selecione a imagem do Raspbian extraída na etapa 1.
 
@@ -178,7 +178,7 @@ Ligue o Pi usando o cabo micro USB e a fonte de alimentação. Use o cabo Ethern
 
    **Usuários do Windows**
   
-    a. Baixe e instale o [PuTTY](https://www.putty.org/) para Windows. 
+   a. Baixe e instale o [PuTTY](https://www.putty.org/) para Windows. 
 
    b. Copie o endereço IP do seu Pi para a seção Nome do host (ou Endereço IP) e selecione SSH como o tipo de conexão.
 

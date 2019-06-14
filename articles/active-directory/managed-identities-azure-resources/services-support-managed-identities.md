@@ -11,10 +11,10 @@ ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0809423472bde0240145d43f4c28d9594b517928
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65518684"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Serviços que dão suporte a identidades gerenciadas para recursos do Azure
@@ -76,8 +76,8 @@ Veja a lista a seguir para configurar a identidade gerenciada para Serviço de A
 
 |Tipo de identidade gerenciada | Todos Disponíveis ao Público Geral<br>Regiões Globais do Azure | Azure Government | Azure Alemanha | Azure China 21Vianet |
 | --- | --- | --- | --- | --- |
-| Sistema atribuído | Visualização | Não disponível | Não disponível | Não disponível |
-| Usuário atribuído | Visualização | Não disponível | Não disponível | Não disponível |
+| Atribuído pelo sistema | Visualização | Não disponível | Não disponível | Não disponível |
+| Atribuído pelo usuário | Visualização | Não disponível | Não disponível | Não disponível |
 
 Consulte a lista a seguir para usar uma identidade gerenciada com [do Azure BluePrint](../../governance/blueprints/overview.md):
 
@@ -102,8 +102,8 @@ Veja a lista a seguir para configurar a identidade gerenciada para Azure Functio
 
 Tipo de identidade gerenciada | Todos Disponíveis ao Público Geral<br>Regiões Globais do Azure | Azure Government | Azure Alemanha | Azure China 21Vianet |
 | --- | --- | --- | --- | --- |
-| Sistema atribuído | Visualização | Visualização | Não disponível | Visualização |
-| Usuário atribuído | Não disponível | Não disponível | Não disponível | Não disponível |
+| Atribuído pelo sistema | Visualização | Visualização | Não disponível | Visualização |
+| Atribuído pelo usuário | Não disponível | Não disponível | Não disponível | Não disponível |
 
 Veja a lista a seguir para configurar a identidade gerenciada para Aplicativos Lógicos do Azure (em regiões em que estiverem disponíveis):
 
@@ -161,7 +161,7 @@ Consulte a lista a seguir para configurar o acesso ao Azure Resource Manager:
 - [Atribuir acesso por meio da CLI do Azure](howto-assign-access-CLI.md)
 - [Atribuir acesso por meio do modelo do Resource Manager](../../role-based-access-control/role-assignments-template.md)
 
-| Nuvem | ID do Recurso | Status |
+| Nuvem | ID de Recurso | Status |
 |--------|------------|--------|
 | Azure Global | `https://management.azure.com/`| Disponível |
 | Azure Government | `https://management.usgovcloudapi.net/` | Disponível |
@@ -170,7 +170,7 @@ Consulte a lista a seguir para configurar o acesso ao Azure Resource Manager:
 
 ### <a name="azure-key-vault"></a>Cofre da Chave do Azure
 
-| Nuvem | ID do Recurso | Status |
+| Nuvem | ID de Recurso | Status |
 |--------|------------|--------|
 | Azure Global | `https://vault.azure.net`| Disponível |
 | Azure Government | `https://vault.usgovcloudapi.net` | Disponível |
@@ -179,16 +179,16 @@ Consulte a lista a seguir para configurar o acesso ao Azure Resource Manager:
 
 ### <a name="azure-data-lake"></a>Azure Data Lake 
 
-| Nuvem | ID do Recurso | Status |
+| Nuvem | ID de Recurso | Status |
 |--------|------------|--------|
 | Azure Global | `https://datalake.azure.net/` | Disponível |
-| Azure Government |  | Não Disponível |
-| Azure Alemanha |   | Não Disponível |
-| Azure China 21Vianet |  | Não Disponível |
+| Azure Government |  | Não disponível |
+| Azure Alemanha |   | Não disponível |
+| Azure China 21Vianet |  | Não disponível |
 
 ### <a name="azure-sql"></a>SQL do Azure 
 
-| Nuvem | ID do Recurso | Status |
+| Nuvem | ID de Recurso | Status |
 |--------|------------|--------|
 | Azure Global | `https://database.windows.net/` | Disponível |
 | Azure Government | `https://database.usgovcloudapi.net/` | Disponível |
@@ -197,25 +197,25 @@ Consulte a lista a seguir para configurar o acesso ao Azure Resource Manager:
 
 ### <a name="azure-event-hubs"></a>Hubs de eventos do Azure
 
-| Nuvem | ID do Recurso | Status |
+| Nuvem | ID de Recurso | Status |
 |--------|------------|--------|
 | Azure Global | `https://eventhubs.azure.net` | Visualização |
-| Azure Government |  | Não Disponível |
-| Azure Alemanha |   | Não Disponível |
-| Azure China 21Vianet |  | Não Disponível |
+| Azure Government |  | Não disponível |
+| Azure Alemanha |   | Não disponível |
+| Azure China 21Vianet |  | Não disponível |
 
 ### <a name="azure-service-bus"></a>Barramento de Serviço do Azure
 
-| Nuvem | ID do Recurso | Status |
+| Nuvem | ID de Recurso | Status |
 |--------|------------|--------|
 | Azure Global | `https://servicebus.azure.net`  | Visualização |
-| Azure Government |  | Não Disponível |
-| Azure Alemanha |   | Não Disponível |
-| Azure China 21Vianet |  | Não Disponível |
+| Azure Government |  | Não disponível |
+| Azure Alemanha |   | Não disponível |
+| Azure China 21Vianet |  | Não disponível |
 
 ### <a name="azure-storage-blobs-and-queues"></a>Filas e blobs de armazenamento do azure
 
-| Nuvem | ID do Recurso | Status |
+| Nuvem | ID de Recurso | Status |
 |--------|------------|--------|
 | Azure Global | `https://storage.azure.com/` | Disponível |
 | Azure Government | `https://storage.azure.com/` | Disponível |
@@ -224,7 +224,7 @@ Consulte a lista a seguir para configurar o acesso ao Azure Resource Manager:
 
 ### <a name="azure-analysis-services"></a>Azure Analysis Services
 
-| Nuvem | ID do Recurso | Status |
+| Nuvem | ID de Recurso | Status |
 |--------|------------|--------|
 | Azure Global | `https://*.asazure.windows.net` | Disponível |
 | Azure Government | `https://*.asazure.usgovcloudapi.net` | Disponível |

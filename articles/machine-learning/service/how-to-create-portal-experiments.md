@@ -12,10 +12,10 @@ manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/02/2019
 ms.openlocfilehash: a2a281fda9272fb794692becb0ca08f3cf791458
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65990146"
 ---
 # <a name="create-and-explore-automated-machine-learning-experiments-in-the-azure-portal-preview"></a>Criar e explorar automatizado experimentos de machine learning no portal do Azure (visualização)
@@ -58,7 +58,7 @@ Selecione o botão Criar experimento para preencher o formulário a seguir.
 
     ![Criar nova computação para teste](media/how-to-create-portal-experiments/create-new-compute.png)
 
-    Campo|Descrição
+    Campo|DESCRIÇÃO
     ---|---
     Nome de computação| Insira um nome exclusivo que identifica seu contexto de computação.
     Tamanho da máquina virtual| Selecione o tamanho de máquina virtual para sua computação.
@@ -100,7 +100,7 @@ Selecione o botão Criar experimento para preencher o formulário a seguir.
 
 1. (Opcional) Configurações avançadas: configurações adicionais que você pode usar para controlar melhor o trabalho de treinamento.
 
-    Configurações avançadas|Descrição
+    Configurações avançadas|DESCRIÇÃO
     ------|------
     Métrica principal| Métrica principal usada para pontuar o modelo. [Saiba mais sobre as métricas do modelo](https://docs.microsoft.com/azure/machine-learning/service/how-to-configure-auto-train#explore-model-metrics).
     Critérios de saída| Quando qualquer um desses critérios são atendidos, o trabalho de treinamento termina antes da conclusão completo. <br> *O tempo (minutos) do trabalho de treinamento*: Quanto tempo para permitir a execução do trabalho de treinamento.  <br> *Número máximo de iterações*: Número máximo de pipelines (iterações) para o trabalho de treinamento de teste. O trabalho não será executado mais do que o número especificado de iterações. <br> *Métrica de limite de pontuação*:  Pontuação mínima de métrica para todos os pipelines. Isso garante que se você tiver uma métrica de destino definida que você deseja acessar, não gastar mais tempo no trabalho de treinamento que o necessário.
@@ -154,7 +154,7 @@ Você pode obter uma ampla variedade de estatísticas de resumo em seu conjunto 
 
 Ao configurar seus testes, você pode habilitar a configuração avançada `Preprocess`. Portanto, a fazer significa que as seguintes etapas de pré-processamento e a personalização de dados são executadas automaticamente.
 
-|Pré-processamento&nbsp;etapas| Descrição |
+|Pré-processamento&nbsp;etapas| DESCRIÇÃO |
 | ------------- | ------------- |
 |Remover alta cardinalidade ou nenhum recurso de variação|Cancele-os de conjuntos de treinamento e validação, incluindo recursos com todos os valores ausentes, o mesmo valor em todas as linhas ou com cardinalidade muito alta (por exemplo, hashes, IDs ou GUIDs).|
 |Acrescentar valores ausentes|Para recursos numéricos, imputar com média de valores na coluna.<br/><br/>Para recursos categóricos, imputar com o valor mais frequente.|

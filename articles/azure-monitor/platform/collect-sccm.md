@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: magoedte
 ms.openlocfilehash: 26ddb0cdd2728f9dff5d45494a14841cdc1a20cd
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64922875"
 ---
 # <a name="connect-configuration-manager-to-azure-monitor"></a>Conectar o Configuration Manager para o Azure Monitor
@@ -49,7 +49,7 @@ No procedimento a seguir, você concede a função *Colaborador* no espaço de t
 
 1. No Portal do Azure, clique em **Todos os serviços**, localizado no canto superior esquerdo. Na lista de recursos, digite **Log Analytics**. Quando você começa a digitar, a lista é filtrada com base em sua entrada. Selecione **Log Analytics**.
 2. Na lista de workspaces do Log Analytics, selecione o workspace para modificar.
-3. No painel esquerdo, selecione **Controle de acesso (IAM)**.
+3. No painel esquerdo, selecione **Controle de acesso (IAM)** .
 4. Na página Controle de acesso (IAM), clique em **Adicionar atribuição de função** e o painel **Adicionar atribuição de função** será exibido.
 5. No painel **Adicionar atribuição de função** na lista suspensa **Função**, selecione a função **Colaborador**.  
 6. Na lista suspensa **Atribuir acesso a** selecione o aplicativo Configuration Manager criado no AD anteriormente e clique em **OK**.  
@@ -89,8 +89,8 @@ Depois que você tiver vinculado o Configuration Manager para o Azure Monitor, v
 ## <a name="update-log-analytics-workspace-connection-properties"></a>Atualizar propriedades de conexão de área de trabalho do Log Analytics
 Se uma senha ou chave secreta do cliente expirar ou for perdida, será necessário atualizar manualmente as propriedades de conexão do Log Analytics.
 
-1. No Configuration Manager, navegue até **Serviços de Nuvem**, selecione **Conector OMS** para abrir a página **OMS Connection Properties (Propriedades da Conexão do OMS)**.
-2. Nessa página, clique na guia **Azure Active Directory** para exibir seu **Locatário**, **ID do Cliente**, **Client secret key expiration (Expiração da chave secreta do cliente)**. **Verifique se** sua **Chave secreta do cliente** caso ela tenha expirado.
+1. No Configuration Manager, navegue até **Serviços de Nuvem**, selecione **Conector OMS** para abrir a página **OMS Connection Properties (Propriedades da Conexão do OMS)** .
+2. Nessa página, clique na guia **Azure Active Directory** para exibir seu **Locatário**, **ID do Cliente**, **Client secret key expiration (Expiração da chave secreta do cliente)** . **Verifique se** sua **Chave secreta do cliente** caso ela tenha expirado.
 
 ## <a name="import-collections"></a>Importe coleções
 Depois de adicionar uma conexão do Log Analytics ao Configuration Manager e o agente foi instalado no computador que executa a conexão de serviço do Configuration Manager ponto de função do sistema de site, a próxima etapa é importar coleções do Configuration Manager no Azure Monitorar como grupos de computadores.

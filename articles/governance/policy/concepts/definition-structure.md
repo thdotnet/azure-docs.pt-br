@@ -9,10 +9,10 @@ ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
 ms.openlocfilehash: 91dd1ebc457bfeed5c9e8d0d62ecc23740ca5d8d
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65979542"
 ---
 # <a name="azure-policy-definition-structure"></a>Estrutura de definição da Política do Azure
@@ -505,7 +505,7 @@ Vários aliases disponíveis têm uma versão que é exibida como um nome "norma
 
 O alias 'normal' representa o campo como um único valor. Este campo é para cenários de comparação de correspondência exata quando todo o conjunto de valores deve ser exatamente conforme definido, nem mais, nem menos.
 
-O **[\*]** alias torna possível a ser comparada com o valor de cada elemento da matriz e as propriedades específicas de cada elemento. Essa abordagem torna possível comparar as propriedades do elemento para 'se nenhum', 'se qualquer um dos', ou ' se todos os de ' cenários. Usando o **ipRules [\*]**, um exemplo seria possível validar que cada _ação_ é _negar_, mas não se preocupar sobre quantas regras existem ou o que o IP _valor_ é. Esta regra de exemplo verifica as correspondências de **ipRules [\*]. Value** ao **10.0.4.1** e aplica-se a **effectType** somente se não encontrar pelo menos uma correspondência:
+O **[\*]** alias torna possível a ser comparada com o valor de cada elemento da matriz e as propriedades específicas de cada elemento. Essa abordagem torna possível comparar as propriedades do elemento para 'se nenhum', 'se qualquer um dos', ou ' se todos os de ' cenários. Usando o **ipRules [\*]** , um exemplo seria possível validar que cada _ação_ é _negar_, mas não se preocupar sobre quantas regras existem ou o que o IP _valor_ é. Esta regra de exemplo verifica as correspondências de **ipRules [\*]. Value** ao **10.0.4.1** e aplica-se a **effectType** somente se não encontrar pelo menos uma correspondência:
 
 ```json
 "policyRule": {
@@ -614,4 +614,4 @@ O exemplo a seguir ilustra como criar uma iniciativa para lidar com duas marcas:
 - Entender como [criar políticas de forma programática](../how-to/programmatically-create.md).
 - Saiba como [obter dados de conformidade](../how-to/getting-compliance-data.md).
 - Saiba como [corrigir recursos sem conformidade](../how-to/remediate-resources.md).
-- Examine o que um grupo de gerenciamento com [organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).
+- Veja o que é um grupo de gerenciamento com [Organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).

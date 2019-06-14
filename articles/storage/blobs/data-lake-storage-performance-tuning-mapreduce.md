@@ -10,10 +10,10 @@ ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: stewu
 ms.openlocfilehash: 7d20f1b398c50a3b98ee862332338dbf3aaece59
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64939373"
 ---
 # <a name="performance-tuning-guidance-for-mapreduce-on-hdinsight-and-azure-data-lake-storage-gen2"></a>Orientação de ajuste de desempenho para o MapReduce no HDInsight e no Azure Data Lake Storage Gen2
@@ -54,7 +54,7 @@ Por padrão, o MapReduce usará o cluster inteiro para o trabalho.  Você pode u
 
 O tamanho da memória para tarefas de mapeamento e redução dependerá do trabalho específico.  Caso deseje aumentar a simultaneidade, você poderá reduzir o tamanho da memória.  O número de tarefas em execução simultânea depende do número de contêineres.  Diminuindo a quantidade de memória por mapeador ou redutor, mais contêineres podem ser criados, o que permite a execução simultânea de mais mapeadores ou redutores.  Diminuir muito a quantidade de memória pode fazer com que alguns processos fiquem sem memória.  Se você receber um erro de heap quando executar seu trabalho, você deverá aumentar a memória por mapeador ou redutor.  Considere que adicionar mais contêineres adicionará sobrecarga extra para cada contêiner adicional, o que pode degradar o desempenho.  Outra alternativa é de obter mais memória pelo uso de um cluster com maiores quantidades de memória ou pelo aumento do número de nós no cluster.  Mais memória permitirá o uso de mais contêineres, o que significa mais simultaneidade.  
 
- **Etapa 3: Determinar a memória YARN Total**
+**Etapa 3: Determinar a memória YARN Total**
 
 Para ajustar mapreduce.job.maps/mapreduce.job.reduces, você deve considerar a quantidade de memória YARN total disponível para uso.  Essas informações estão disponíveis no Ambari.  Navegue até YARN e exiba a guia Configurações.  A memória YARN é exibida nessa janela.  Para obter a memória YARN total, você deve multiplicar a memória YARN por nó pelo número de nós em seu cluster.
 
@@ -88,7 +88,7 @@ Neste exemplo, estamos executando um trabalho com uso intensivo de E/S e decidim
 
     mapreduce.map.memory = 3GB
 
- **Etapa 3: Determinar a memória YARN Total**
+**Etapa 3: Determinar a memória YARN Total**
 
     Total memory from the cluster is 8 nodes * 96GB of YARN memory for a D14 = 768GB
 **Etapa 4: Calcular o número de contêineres YARN**

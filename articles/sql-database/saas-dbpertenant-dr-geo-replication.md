@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: b6f0d25f621768f79e8262f38617152e91692a23
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62129834"
 ---
 # <a name="disaster-recovery-for-a-multi-tenant-saas-application-using-database-geo-replication"></a>Recuperação de desastre para um aplicativo SaaS multilocatário usando replicação geográfica do banco de dados
@@ -90,9 +90,9 @@ Mais tarde, em uma etapa de repatriação separada, você faz failover dos banco
 ## <a name="review-the-healthy-state-of-the-application"></a>Examinar o estado de integridade do aplicativo
 
 Antes de iniciar o processo de recuperação, examine o estado de integridade normal do aplicativo.
-1. No navegador da Web, abra o Hub de eventos da Wingtip Tickets (http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net – substitua &lt;user&gt; com o valor de usuário da implantação).
+1. No navegador da Web, abra o Hub de eventos da Wingtip Tickets (http://events.wingtip-dpt.&lt ;user&gt;.trafficmanager.net – substitua &lt; user&gt; com o valor de usuário da implantação).
     * Role até a parte inferior da página e observe o nome do servidor de catálogo e a localização no rodapé. A localização é a região em que você implantou o aplicativo.
-    *DICA: Passe o mouse sobre a localização para ampliar a exibição.*
+    *DICA: Passe o mouse sobre a localização para ampliar a exibição.* 
     ![Estado íntegro do hub de eventos na região original](media/saas-dbpertenant-dr-geo-replication/events-hub-original-region.png)
 
 2. Clique no locatário Contoso Concert Hall e abra sua página de eventos.
@@ -207,7 +207,7 @@ Enquanto o ponto de extremidade do aplicativo estiver desabilitado no Gerenciado
  
      ![Hub de eventos offline](media/saas-dbpertenant-dr-geo-replication/events-hub-offlinemode.png) 
 
-   * Se você abrir a página Eventos de um locatário offline diretamente, ela exibirá uma notificação de 'locatário offline'. Por exemplo, se Contoso Concert Hall estiver offline, tente abrir http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net/contosoconcerthall ![página Contoso Offline](media/saas-dbpertenant-dr-geo-replication/dr-in-progress-offline-contosoconcerthall.png) 
+   * Se você abrir a página Eventos de um locatário offline diretamente, ela exibirá uma notificação de 'locatário offline'. Por exemplo, se Contoso Concert Hall estiver offline, tente abrir http://events.wingtip-dpt.&lt ;user&gt;.trafficmanager.net/contosoconcerthall ![ página Contoso Offline](media/saas-dbpertenant-dr-geo-replication/dr-in-progress-offline-contosoconcerthall.png) 
 
 ### <a name="provision-a-new-tenant-in-the-recovery-region"></a>Provisionar um novo locatário na região de recuperação
 Antes mesmo de todos os bancos de dados de locatário existentes terem passado por failover, você poderá provisionar novos locatários na região de recuperação.  
@@ -256,7 +256,7 @@ Nesta tarefa, você atualiza um dos bancos de dados de locatário.
 2. No *ISE do PowerShell*, no script ...\Learning Modules\Business Continuity and Disaster Recovery\DR-FailoverToReplica\Demo-FailoverToReplica.ps1, defina o valor a seguir:
     * **$DemoScenario = 5** Exclua um evento de um locatário na região de recuperação
 3. Pressione **F5** para executar o script
-4. Atualize a página de eventos do Contoso Concert Hall (http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net/contosoconcerthall - substitua &lt;user&gt; com o valor de usuário da implantação) e observe que o último evento foi excluído.
+4. Atualize a página de eventos do Contoso Concert Hall (http://events.wingtip-dpt.&lt ;user&gt;.trafficmanager.net/contosoconcerthall - substitua &lt; user&gt; com o valor de usuário da implantação) e observe que o último evento foi excluído.
 
 ## <a name="repatriate-the-application-to-its-original-production-region"></a>Repatrie o aplicativo para sua região de produção original
 
@@ -289,7 +289,7 @@ Agora vamos imaginar que a interrupção foi resolvida e o script de repatriaç�
     * Pressione **F5** para executar o script de recuperação em uma nova janela do PowerShell.  A repatriação levará vários minutos e pode ser monitorada na janela do PowerShell.
     ![Processo de repatriação](media/saas-dbpertenant-dr-geo-replication/repatriation-process.png)
 
-4. Durante a execução do script, atualize a página do Hub de eventos (http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net)
+4. Durante a execução do script, atualize a página do Hub de eventos (http://events.wingtip-dpt.&lt ;user&gt;.trafficmanager.net)
     * Observe que todos os locatários estão online e acessíveis durante este processo.
 
 5. Depois que a repatriação for concluída, atualize o Hub de eventos e abra a página de eventos para Hawthorn Hall. Observe que esse banco de dados foi repatriado para a região original.

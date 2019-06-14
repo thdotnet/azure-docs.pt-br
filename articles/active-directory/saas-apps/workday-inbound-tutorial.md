@@ -16,10 +16,10 @@ ms.date: 05/16/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 31cf1f6da515aa9b453987383e78f466c5ba4fb9
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65827286"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Tutorial: Configurar o Workday para provisionamento automático do usuário
@@ -330,7 +330,7 @@ Nesta etapa, você concederá permissões de política de “segurança de proce
 
     ![Políticas de Segurança de Processo Empresarial](./media/workday-inbound-tutorial/wd_isu_13.png "Políticas de Segurança de Processo Empresarial")  
 
-3. Na página **Editar Política de Segurança de Processo Empresarial**, role até a seção **Manter informações de contato (serviço Web)**.
+3. Na página **Editar Política de Segurança de Processo Empresarial**, role até a seção **Manter informações de contato (serviço Web)** .
 
     ![Políticas de Segurança de Processo Empresarial](./media/workday-inbound-tutorial/wd_isu_14.png "Políticas de Segurança de Processo Empresarial")  
 
@@ -544,8 +544,8 @@ Nesta seção, você irá configurar o fluxo de dados de usuário do Workday par
 | **PreferredNameData**  |  displayName |     |   Criar + atualizar |
 | **Empresa**         | company   |     |  Criar + atualizar |
 | **SupervisoryOrganization**  | department  |     |  Criar + atualizar |
-| **ManagerReference**   | gerenciador  |     |  Criar + atualizar |
-| **BusinessTitle**   |  título     |     |  Criar + atualizar | 
+| **ManagerReference**   | manager  |     |  Criar + atualizar |
+| **BusinessTitle**   |  title     |     |  Criar + atualizar | 
 | **AddressLineData**    |  streetAddress  |     |   Criar + atualizar |
 | **Município**   |   l   |     | Criar + atualizar |
 | **CountryReferenceTwoLetter**      |   co |     |   Criar + atualizar |
@@ -959,7 +959,7 @@ A solução atualmente não dá suporte a atributos binários de configuração,
 
 #### <a name="how-do-i-format-display-names-in-ad-based-on-the-users-departmentcountrycity-attributes-and-handle-regional-variances"></a>Como formatar nomes de exibição no AD com base em atributos de país/departamento/cidade do usuário e tratar as variações regionais?
 
-Ele é um requisito comum para configurar o *displayName* atributo no AD para que ele também fornece informações sobre o departamento do usuário e o país/região. Por exemplo, se John Smith trabalha no Departamento de Marketing nos Estados Unidos, você poderá querer que o seu *displayName* apareça como *Smith, John (Marketing-EUA)*.
+Ele é um requisito comum para configurar o *displayName* atributo no AD para que ele também fornece informações sobre o departamento do usuário e o país/região. Por exemplo, se John Smith trabalha no Departamento de Marketing nos Estados Unidos, você poderá querer que o seu *displayName* apareça como *Smith, John (Marketing-EUA)* .
 
 Aqui está como você pode lidar com tais requisitos para construir *CN* ou *displayName* incluir atributos como empresa, unidade de negócios, cidade ou país/região.
 
@@ -988,14 +988,14 @@ Aqui está como você pode lidar com tais requisitos para construir *CN* ou *dis
 
   Confirme com sua equipe do Workday se as expressões de API acima são válidas para a sua configuração de locatário do Workday. Se necessário, você pode editar conforme descrito na seção [Personalizar a lista de atributos de usuário do Workday](#customizing-the-list-of-workday-user-attributes).
 
-* Para compilar a expressão de mapeamento de atributo à direita, identifique qual atributo do Workday "autoritativo" representa o usuário primeiro nome, sobrenome, país/região e departamento. Digamos que os atributos são *PreferredFirstName*, *PreferredLastName*, *CountryReferenceTwoLetter* e *SupervisoryOrganization* respectivamente. Você pode usar isso para criar uma expressão para o atributo *displayName* conforme a seguir para obter um nome de exibição, como *Smith, John (Marketing-EUA)*.
+* Para compilar a expressão de mapeamento de atributo à direita, identifique qual atributo do Workday "autoritativo" representa o usuário primeiro nome, sobrenome, país/região e departamento. Digamos que os atributos são *PreferredFirstName*, *PreferredLastName*, *CountryReferenceTwoLetter* e *SupervisoryOrganization* respectivamente. Você pode usar isso para criar uma expressão para o atributo *displayName* conforme a seguir para obter um nome de exibição, como *Smith, John (Marketing-EUA)* .
 
     ```
      Append(Join(", ",[PreferredLastName],[PreferredFirstName]), Join(""," (",[SupervisoryOrganization],"-",[CountryReferenceTwoLetter],")"))
     ```
     Após conseguir a expressão correta, edite a tabela de Mapeamentos de Atributos e modifique o mapeamento do atributo *displayName*, conforme mostrado abaixo:   ![Mapeamento de DisplayName](./media/workday-inbound-tutorial/wd_displayname_map.png)
 
-* Estendendo o exemplo acima, vamos dizer que você gostaria de converter nomes de cidades provenientes do Workday em valores de abreviação e, em seguida, usá-los para criar nomes de exibição, como *Smith, John (Nova York)* ou *Ninguém, Zé (NYC)*, em seguida, esse resultado pode ser obtido usando uma expressão Alternar com o atributo *Município* do Workday como a variável determinante.
+* Estendendo o exemplo acima, vamos dizer que você gostaria de converter nomes de cidades provenientes do Workday em valores de abreviação e, em seguida, usá-los para criar nomes de exibição, como *Smith, John (Nova York)* ou *Ninguém, Zé (NYC)* , em seguida, esse resultado pode ser obtido usando uma expressão Alternar com o atributo *Município* do Workday como a variável determinante.
 
      ```
     Switch

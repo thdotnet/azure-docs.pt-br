@@ -13,10 +13,10 @@ ms.date: 05/13/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 1e76569c7f5157dce681d15ec8d499b90e080102
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65762300"
 ---
 # <a name="media-services-concepts"></a>Conceitos de serviços de mídia
@@ -32,7 +32,7 @@ Os conceitos fundamentais descritos nestes tópicos devem ser examinados antes d
 
 Esta seção mostra como alguns termos comuns do setor são mapeados para a API dos serviços de mídia v3.
 
-### <a name="live-event"></a>Evento ao Vivo
+### <a name="live-event"></a>Evento ao vivo
 
 Um **evento ao vivo** representa um pipeline para ingestão, transcodificação (opcionalmente) e transmissões ao vivo de metadados de vídeo, áudio e em tempo real de empacotamento.
 
@@ -62,7 +62,7 @@ Para codificar com os serviços de mídia v3, você precisará criar **transform
 - [Transformações e Trabalhos](transforms-jobs-concept.md)
 - [Codificação com os serviços de mídia](encoding-concept.md)
 
-## <a name="media-analytics"></a>Análise de Mídia
+## <a name="media-analytics"></a>Análise de mídia
 
 Para analisar seus arquivos de áudio e vídeos, você também precisará criar **transforma** e **trabalhos**.
 

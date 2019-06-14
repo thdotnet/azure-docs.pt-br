@@ -2,17 +2,16 @@
 title: Exemplo de configuração para conexão de dispositivos Cisco ASA a gateways de VPN do Azure | Microsoft Docs
 description: Este artigo apresenta um exemplo de configuração para conectar dispositivos Cisco ASA a gateways de VPN do Azure.
 services: vpn-gateway
-author: WenJason
+author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
-origin.date: 10/19/2018
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.date: 10/19/2018
+ms.author: yushwang
 ms.openlocfilehash: e575fac61a1c5d9351391d39d200b87e34ff26cd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60648731"
 ---
 # <a name="sample-configuration-cisco-asa-device-ikev2no-bgp"></a>Configuração de exemplo: Dispositivo Cisco ASA (IKEv2/sem BGP)
@@ -28,7 +27,7 @@ Este artigo apresenta exemplos de configuração para conectar dispositivos Cisc
 | Modelo testado           | ASA 5505                          |
 | Versão testada         | 9.2                               |
 | Versão do IKE            | IKEv2                             |
-| BGP                    | Não                                 |
+| BGP                    | Não                                |
 | Tipo de gateway VPN do Azure | Gateway VPN baseado em rota           |
 |                        |                                   |
 
@@ -79,7 +78,7 @@ A tabela a seguir lista os algoritmos e os parâmetros de IPsec/IKE usados no ex
 | * Criptografia IPsec | AES256                               |
 | * Integridade do IPsec  | SHA1                                 |
 | Grupo PFS        | PFS24                                |
-| Tempo de vida da QM SA   | 7.200 segundos                         |
+| Tempo de vida da QM SA   | 7\.200 segundos                         |
 | Seletor de tráfego | UsePolicyBasedTrafficSelectors $True |
 | Chave Pré-Compartilhada   | PreSharedKey                         |
 |                  |                                      |
@@ -303,4 +302,3 @@ Use estes comandos ASA para fins de depuração:
 
 ## <a name="next-steps"></a>Próximas etapas
 Para configurar conexões de VNet a VNet e ativo-ativo entre locais, consulte [Configurar gateways VPN ativo-ativo](vpn-gateway-activeactive-rm-powershell.md).
-<!--Update_Description: wording update -->

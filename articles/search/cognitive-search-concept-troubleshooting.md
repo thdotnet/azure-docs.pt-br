@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: ebc0ca718ab8edf5ef644993c71b0353861265b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c97ccd82a9c09e10572733040e238443cbf777da
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60334872"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64696606"
 ---
 # <a name="troubleshooting-tips-for-cognitive-search"></a>Dicas de solução de problemas para a pesquisa cognitiva
 
@@ -84,7 +84,7 @@ Adicione um campo ```enriched``` como parte da definição do índice para fins 
 
 A falta de conteúdo pode ser resultado da remoção de documentos durante a indexação. As camadas Básica e Gratuita têm limites baixos de tamanho do documento. Qualquer arquivo que ultrapassar o limite será removido durante a indexação. Você pode verificar se há documentos removidos no portal do Azure. No painel do serviço de pesquisa, clique duas vezes no bloco Indexadores. Examine a proporção de documentos indexados com êxito. Se ela não for de 100%, você poderá clicar nela para obter mais detalhes. 
 
-Se o problema está relacionado ao tamanho do arquivo, você poderá ver um erro como este: "O blob <nome do arquivo>" tem um tamanho de <tamanho do arquivo> bytes, que excede o tamanho máximo de extração de documento para sua camada de serviço atual. " Para obter mais informações sobre os limites de indexador, confira [Limites de serviço](search-limits-quotas-capacity.md).
+Se o problema está relacionado ao tamanho do arquivo, você poderá ver um erro como este: "O blob \<nome do arquivo >" tem o tamanho de \<tamanho do arquivo > bytes, que excede o tamanho máximo para a extração de documento para a camada de serviço atual. " Para obter mais informações sobre os limites de indexador, confira [Limites de serviço](search-limits-quotas-capacity.md).
 
 Um segundo motivo para o conteúdo não aparecer pode ser a presença de erros de mapeamento de entrada/saída. Por exemplo, o nome da saída de destino é "People", mas o nome do campo de índice é "people", com letras minúsculas. O sistema pode retornar mensagens de êxito 201 para todo o pipeline, o que levará você a achar que a indexação foi bem-sucedida, quando na verdade um campo está vazio. 
 

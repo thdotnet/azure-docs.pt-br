@@ -18,10 +18,10 @@ ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c57ed956ec50c8bac26720a27894c07353928336
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65873894"
 ---
 # <a name="known-issues-on-internet-explorer-and-microsoft-edge-browsers-with-msaljs"></a>Problemas conhecidos nos navegadores Internet Explorer e Microsoft Edge com msal
@@ -32,7 +32,7 @@ Tivemos vários relatórios de problemas com a autenticação no IE e Microsoft 
 ### <a name="cause"></a>Causa
 A causa para a maioria desses problemas é da seguinte maneira. O armazenamento de sessão e o armazenamento local são particionados por zonas de segurança no navegador Microsoft Edge. Nesta versão específica do Microsoft Edge, quando o aplicativo é redirecionado em zonas, o armazenamento de sessão e o armazenamento local são desmarcadas. Especificamente, o armazenamento de sessão está desmarcado no painel de navegação normal do navegador e a sessão e o armazenamento local são limpas no modo do navegador InPrivate. Msal salva determinado estado no armazenamento de sessão e se baseia na verificação nesse estado durante os fluxos de autenticação. Quando o armazenamento de sessão é desmarcado, esse estado é perdido e, portanto, resulta em experiências quebradas.
 
-### <a name="issues"></a>Questões
+### <a name="issues"></a>Problemas
 
 - **Recarrega a página e loops de redirecionamento infinitos durante a autenticação**. Quando os usuários entram aplicativo no Microsoft Edge, eles são redirecionados de volta na página de logon do AAD e são preso em um loop de redirecionamento infinito, resultando em recargas de página repetidas. Isso geralmente é acompanhado por um `invalid_state` erro no armazenamento de sessão.
 

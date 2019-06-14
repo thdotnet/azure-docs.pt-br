@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/14/2019
 ms.openlocfilehash: 6a2b3af4240a5c400bd1eaf4fd1e93b09fc702b1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61075232"
 ---
 # <a name="resources-limits-for-elastic-pools-using-the-dtu-based-purchasing-model"></a>Limites de recursos para pools elásticos usando o modelo de compra baseado em DTU
@@ -68,11 +68,11 @@ Para pools elásticos do Banco de Dados SQL, as tabelas a seguir mostram os recu
 
 | eDTUs por pool | **1200** | **1600** | **2000** | **2500** | **3000** |
 |:---|---:|---:|---:| ---: | ---: |
-| Armazenamento incluído por pool (GB) | 1.200 | 1600 | 2000 | 2500 | 3000 |
+| Armazenamento incluído por pool (GB) | 1\.200 | 1600 | 2000 | 2500 | 3000 |
 | Opções de máximo de armazenamento por pool (GB) | 1200, 1280, 1536, 1792, 2048, 2304, 2560 | 1600, 1792, 2048, 2304, 2560, 2816, 3072 | 2000, 2048, 2304, 2560, 2816, 3072, 3328, 3584 | 2500, 2560, 2816, 3072, 3328, 3584, 3840, 4096 | 3000, 3072, 3328, 3584, 3840, 4096 |
 | Armazenamento máximo OLTP na memória por pool (GB) | N/D | N/D | N/D | N/D | N/D |
 | Número máximo de BDs por pool | 500 | 500 | 500 | 500 | 500 |
-| Máximo de trabalhos simultâneos (solicitações) por pool | 2400 | 3200 | 4000 | 5.000 | 6000 |
+| Máximo de trabalhos simultâneos (solicitações) por pool | 2400 | 3200 | 4000 | 5\.000 | 6000 |
 | Máximo de sessões simultâneas por pool | 30000 | 30000 | 30000 | 30000 | 30000 |
 | Opções de mínimo de eDTUs por banco de dados | 0, 10, 20, 50, 100, 200, 300, 400, 800, 1200 | 0, 10, 20, 50, 100, 200, 300, 400, 800, 1200, 1600 | 0, 10, 20, 50, 100, 200, 300, 400, 800, 1200, 1600, 2000 | 0, 10, 20, 50, 100, 200, 300, 400, 800, 1200, 1600, 2000, 2500 | 0, 10, 20, 50, 100, 200, 300, 400, 800, 1200, 1600, 2000, 2500, 3000 |
 | Opções de máximo de eDTUs por banco de dados | 10, 20, 50, 100, 200, 300, 400, 800, 1200 | 10, 20, 50, 100, 200, 300, 400, 800, 1200, 1600 | 10, 20, 50, 100, 200, 300, 400, 800, 1200, 1600, 2000 | 10, 20, 50, 100, 200, 300, 400, 800, 1200, 1600, 2000, 2500 | 10, 20, 50, 100, 200, 300, 400, 800, 1200, 1600, 2000, 2500, 3000 |
@@ -98,8 +98,8 @@ Para pools elásticos do Banco de Dados SQL, as tabelas a seguir mostram os recu
 
 | eDTUs por pool | **2000** | **2500** | **3000** | **3500** | **4000**|
 |:---|---:|---:|---:| ---: | ---: |
-| Armazenamento incluído por pool (GB) | 2.048 | 2560 | 3072 | 3548 | 4096 |
-| Opções de máximo de armazenamento por pool (GB) | 2.048 | 2560 | 3072 | 3548 | 4096|
+| Armazenamento incluído por pool (GB) | 2\.048 | 2560 | 3072 | 3548 | 4096 |
+| Opções de máximo de armazenamento por pool (GB) | 2\.048 | 2560 | 3072 | 3548 | 4096|
 | Armazenamento máximo OLTP na memória por pool (GB) | 16 | 20 | 24 | 28 | 32 |
 | Número máximo de BDs por pool | 100 | 100 | 100 | 100 | 100 |
 | Máximo de trabalhos simultâneos (solicitações) por pool | 3200 | 4000 | 4800 | 5600 | 6400 |

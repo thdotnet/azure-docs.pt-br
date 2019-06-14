@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/19/2018
 ms.author: apimpm
-ms.openlocfilehash: 2bde63bb668188936b3dd3cf5ecbf3b8c604eb95
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 87693caa5343e359bb3ab424de489c2270bbca62
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60564300"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64704431"
 ---
 # <a name="error-handling-in-api-management-policies"></a>Tratamento de erro em políticas de Gerenciamento de API
 
@@ -77,15 +77,15 @@ A seção de política `on-error` pode ser usada em qualquer escopo. Os editores
 
  Quando ocorre um erro e o controle salta para a seção de política `on-error` o erro é armazenado na propriedade [context.LastError](api-management-policy-expressions.md#ContextVariables),que pode ser acessada por políticas na seção `on-error`. LastError tem as propriedades a seguir.  
   
-| NOME     | Type   | DESCRIÇÃO                                                                                               | Obrigatório |
-|----------|--------|-----------------------------------------------------------------------------------------------------------|----------|
-| `Source`   | string | Indica o elemento em que ocorreu o erro. Pode ser o nome de uma etapa do pipeline interno ou política.     | Sim      |
-| Reason   | string | Código de erro amigável para computadores, que pode ser usado no tratamento de erro.                                       | Não        |
-| Message  | string | Descrição de erro legível por humanos.                                                                         | Sim      |
-| Scope    | string | Nome do escopo em que ocorreu o erro e pode ser um dos "global", "produto", "api" ou "operação" | Não        |
-| `Section`  | string | Nome da seção em que ocorreu o erro. Valores possíveis: "inbound", "backend", "outbound" ou "on-error".       | Não        |
-| `Path`     | string | Especifica a política aninhada, por exemplo "choose[3]/when[2]".                                                        | Não        |
-| `PolicyId` | string | O valor do atributo `id`, se especificado pelo cliente, na política em que ocorreu o erro             | Não        |
+| NOME       | Type   | DESCRIÇÃO                                                                                               | Obrigatório |
+|------------|--------|-----------------------------------------------------------------------------------------------------------|----------|
+| `Source`   | cadeia de caracteres | Indica o elemento em que ocorreu o erro. Pode ser o nome de uma etapa do pipeline interno ou política.     | Sim      |
+| `Reason`   | cadeia de caracteres | Código de erro amigável para computadores, que pode ser usado no tratamento de erro.                                       | Não       |
+| `Message`  | cadeia de caracteres | Descrição de erro legível por humanos.                                                                         | Sim      |
+| `Scope`    | cadeia de caracteres | Nome do escopo em que ocorreu o erro e pode ser um dos "global", "produto", "api" ou "operação" | Não       |
+| `Section`  | cadeia de caracteres | Nome da seção em que ocorreu o erro. Valores possíveis: "inbound", "backend", "outbound" ou "on-error".       | Não       |
+| `Path`     | cadeia de caracteres | Especifica a política aninhada, por exemplo "choose[3]/when[2]".                                                        | Não       |
+| `PolicyId` | cadeia de caracteres | O valor do atributo `id`, se especificado pelo cliente, na política em que ocorreu o erro             | Não       |
 
 > [!TIP]
 > É possível acessar o código de status por meio de context.Response.StatusCode.  
@@ -96,16 +96,16 @@ A seção de política `on-error` pode ser usada em qualquer escopo. Os editores
 ## <a name="predefined-errors-for-built-in-steps"></a>Erros predefinidos para etapas internas  
  Os erros a seguir são predefinidos para condições de erro que podem ocorrer durante a avaliação das etapas de processamento interno.  
   
-| Fonte        | Condição                                 | Motivo                  | Mensagem                                                                                                                |
+| source        | Condição                                 | Motivo                  | Message                                                                                                                |
 |---------------|-------------------------------------------|-------------------------|------------------------------------------------------------------------------------------------------------------------|
 | configuração | O Uri não corresponde a nenhuma API ou Operação | OperationNotFound       | Não é possível corresponder a solicitação recebida a uma operação.                                                                      |
-| autorização | Chave de assinatura não fornecida             | SubscriptionKeyNotFound | Acesso negado devido à ausência da chave de assinatura. Certifique-se de incluir a chave de assinatura ao fazer solicitações para esta API. |
-| autorização | O valor chave e assinatura é inválido         | SubscriptionKeyInvalid  | Acesso negado devido à chave de assinatura inválida. Certifique-se de fornecer uma chave válida para uma assinatura ativa.            |
+| authorization | Chave de assinatura não fornecida             | SubscriptionKeyNotFound | Acesso negado devido à ausência da chave de assinatura. Certifique-se de incluir a chave de assinatura ao fazer solicitações para esta API. |
+| authorization | O valor chave e assinatura é inválido         | SubscriptionKeyInvalid  | Acesso negado devido à chave de assinatura inválida. Certifique-se de fornecer uma chave válida para uma assinatura ativa.            |
   
 ## <a name="predefined-errors-for-policies"></a>Erros predefinidos para políticas  
  Os erros a seguir são predefinidos para condições de erro que podem ocorrer durante a avaliação da política.  
   
-| Fonte       | Condição                                                       | Motivo                    | Mensagem                                                                                                                              |
+| source       | Condição                                                       | Motivo                    | Message                                                                                                                              |
 |--------------|-----------------------------------------------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | rate-limit   | Limite de taxa excedido                                             | RateLimitExceeded         | O limite da taxa foi excedido                                                                                                               |
 | quota        | Cota excedida                                                  | QuotaExceeded             | Fora da cota do volume de chamada. A cota será reposta em xx:xx:xx. – ou – Sem cota de largura de banda. A cota será reposta em xx:xx:xx. |

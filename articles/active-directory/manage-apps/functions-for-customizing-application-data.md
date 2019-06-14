@@ -15,10 +15,10 @@ ms.date: 01/21/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ec1994169891d5256436ac4de741339c865bb268
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65824636"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Escrevendo expressões para mapeamentos de atributo no Active Directory do Azure
@@ -27,7 +27,7 @@ Quando você configura o provisionamento de um aplicativo SaaS, um dos tipos de 
 ## <a name="syntax-overview"></a>Visão geral da sintaxe
 A sintaxe de expressões para mapeamentos de atributos é semelhante à das funções de VBA (Visual Basic for Applications).
 
-* A expressão inteira deve ser definida em termos de funções, que consistem em um nome seguido pelos argumentos entre parênteses:  <br>
+* A expressão inteira deve ser definida em termos de funções, que consistem em um nome seguido pelos argumentos entre parênteses: <br>
   *FunctionName(`<<argument 1>>`,`<<argument N>>`)*
 * Você pode aninhar funções dentro umas das outras. Por exemplo: <br> *FunctionOne(FunctionTwo(`<<argument1>>`))*
 * Você pode passar três tipos diferentes de argumentos em funções:
@@ -42,34 +42,34 @@ A sintaxe de expressões para mapeamentos de atributos é semelhante à das fun�
 
 - - -
 ### <a name="append"></a>Acrescentar
-**Função:**<br>  Append(source, suffix)
+**Função:**<br> Append(source, suffix)
 
-**Descrição:**<br>  seleciona um valor da cadeia de caracteres de source e acrescenta o sufixo ao final dela.
+**Descrição:**<br> seleciona um valor da cadeia de caracteres de source e acrescenta o sufixo ao final dela.
 
 **Parâmetros:**<br> 
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **fonte** |Obrigatório |String |Normalmente o nome do atributo do objeto de source. |
-| **suffix** |Obrigatório |String |A cadeia de caracteres que você deseja acrescentar ao final do valor de source. |
+| **fonte** |Obrigatório |Cadeia de caracteres |Normalmente o nome do atributo do objeto de source. |
+| **suffix** |Obrigatório |Cadeia de caracteres |A cadeia de caracteres que você deseja acrescentar ao final do valor de source. |
 
 - - -
 ### <a name="formatdatetime"></a>FormatDateTime
-**Função:**<br>  FormatDateTime(source, inputFormat, outputFormat)
+**Função:**<br> FormatDateTime(source, inputFormat, outputFormat)
 
-**Descrição:**<br>  obtém uma cadeia de caracteres de data de um formato e a converte em um formato diferente.
+**Descrição:**<br> obtém uma cadeia de caracteres de data de um formato e a converte em um formato diferente.
 
 **Parâmetros:**<br> 
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **fonte** |Obrigatório |String |Normalmente o nome do atributo do objeto de source. |
-| **inputFormat** |Obrigatório |String |Formato esperado do valor de source. Para formatos com suporte, consulte [https://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx](https://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx). |
-| **outputFormat** |Obrigatório |String |Formato da data de saída. |
+| **fonte** |Obrigatório |Cadeia de caracteres |Normalmente o nome do atributo do objeto de source. |
+| **inputFormat** |Obrigatório |Cadeia de caracteres |Formato esperado do valor de source. Para formatos com suporte, consulte [https://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx](https://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx). |
+| **outputFormat** |Obrigatório |Cadeia de caracteres |Formato da data de saída. |
 
 - - -
 ### <a name="join"></a>Ingressar
-**Função:**<br>  Join(separator, source1, source2, …)
+**Função:**<br> Join(separator, source1, source2, …)
 
 **Descrição:**<br> Join() é semelhante a Append(), exceto por poder combinar diversos valores de cadeia de caracteres **source** em uma única cadeia de caracteres, e cada valor será separado por uma cadeia de caracteres de **separator**.
 
@@ -79,20 +79,20 @@ Se um dos valores de source for um atributo com vários valores, todos os valore
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **separator** |Obrigatório |String |Cadeia de caracteres usada para separar os valores de source quando eles são concatenados em uma cadeia de caracteres. Pode ser "" se não for necessário nenhum separador. |
-| **source1  … sourceN** |Obrigatório, número de vezes variável |String |Valores de cadeia de caracteres a serem unidos. |
+| **separator** |Obrigatório |Cadeia de caracteres |Cadeia de caracteres usada para separar os valores de source quando eles são concatenados em uma cadeia de caracteres. Pode ser "" se não for necessário nenhum separador. |
+| **source1  … sourceN** |Obrigatório, número de vezes variável |Cadeia de caracteres |Valores de cadeia de caracteres a serem unidos. |
 
 - - -
 ### <a name="mid"></a>Mid
-**Função:**<br>  Mid(source, start, length)
+**Função:**<br> Mid(source, start, length)
 
-**Descrição:**<br>  retorna uma subcadeia de caracteres do valor de source. Uma subcadeia de caracteres é uma cadeia de caracteres que contém apenas alguns dos caracteres da cadeia de caracteres de source.
+**Descrição:**<br> retorna uma subcadeia de caracteres do valor de source. Uma subcadeia de caracteres é uma cadeia de caracteres que contém apenas alguns dos caracteres da cadeia de caracteres de source.
 
 **Parâmetros:**<br> 
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **fonte** |Obrigatório |String |Geralmente o nome do atributo. |
+| **fonte** |Obrigatório |Cadeia de caracteres |Geralmente o nome do atributo. |
 | **iniciar** |Obrigatório |inteiro |Índice na cadeia de caracteres de **source** em que a subcadeia de caracteres deve começar. O primeiro caractere na cadeia de caracteres terá o índice de 1, o segundo caractere terá o índice 2 e assim por diante. |
 | **length** |Obrigatório |inteiro |Comprimento da subcadeia de caracteres. Se o comprimento terminar fora da cadeia de caracteres **source**, a função retornará uma subcadeia de caracteres do índice **start** até o final da cadeia de caracteres **source**. |
 
@@ -106,11 +106,11 @@ Se um dos valores de source for um atributo com vários valores, todos os valore
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **fonte** |Obrigatório |String | Geralmente um atributo de nome ou sobrenome. |
+| **fonte** |Obrigatório |Cadeia de caracteres | Geralmente um atributo de nome ou sobrenome. |
 
 - - -
 ### <a name="not"></a>não
-**Função:**<br>  Not(source)
+**Função:**<br> Not(source)
 
 **Descrição:**<br> Inverte o valor booliano de **source**. Se o valor de **source** for "*True*", retorna "*False*". Caso contrário, retorna "*True*".
 
@@ -121,11 +121,11 @@ Se um dos valores de source for um atributo com vários valores, todos os valore
 | **fonte** |Obrigatório |Cadeia de caracteres booliana |Os valores de **source** esperados são "True" ou "False". |
 
 - - -
-### <a name="replace"></a>Substituir
+### <a name="replace"></a>Substitua
 **Função:**<br> Substitua(source, oldValue, regexPattern, regexGroupName, replacementValue, replacementAttributeName, template)
 
 **Descrição:**<br>
- substitui valores dentro de uma cadeia de caracteres. Ela funciona de maneira diferente dependendo dos parâmetros fornecidos:
+substitui valores dentro de uma cadeia de caracteres. Ela funciona de maneira diferente dependendo dos parâmetros fornecidos:
 
 * Quando **oldValue** e **replacementValue** são fornecidos:
   
@@ -145,13 +145,13 @@ Se um dos valores de source for um atributo com vários valores, todos os valore
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **fonte** |Obrigatório |String |Normalmente o nome do atributo do objeto de source. |
-| **oldValue** |Opcional |String |Valor a ser substituído em **source** ou **template**. |
-| **regexPattern** |Opcional |String |Padrão de Regex para o valor a ser substituído em **source**. Ou, quando replacementPropertyName for usado, o padrão para extrair o valor da propriedade de substituição. |
-| **regexGroupName** |Opcional |String |Nome do grupo dentro de **regexPattern**. Somente quando replacementPropertyName for usado, extrairemos o valor desse grupo como replacementValue da propriedade de substituição. |
-| **replacementValue** |Opcional |String |Novo valor com o qual substituir um antigo. |
-| **replacementAttributeName** |Opcional |String |Nome do atributo a ser usado para o valor de substituição quando source não tiver nenhum valor. |
-| **template** |Opcional |String |Quando o valor de **template** for fornecido, procuraremos **oldValue** dentro de template e o substituiremos pelo valor de source. |
+| **fonte** |Obrigatório |Cadeia de caracteres |Normalmente o nome do atributo do objeto de source. |
+| **oldValue** |Opcional |Cadeia de caracteres |Valor a ser substituído em **source** ou **template**. |
+| **regexPattern** |Opcional |Cadeia de caracteres |Padrão de Regex para o valor a ser substituído em **source**. Ou, quando replacementPropertyName for usado, o padrão para extrair o valor da propriedade de substituição. |
+| **regexGroupName** |Opcional |Cadeia de caracteres |Nome do grupo dentro de **regexPattern**. Somente quando replacementPropertyName for usado, extrairemos o valor desse grupo como replacementValue da propriedade de substituição. |
+| **replacementValue** |Opcional |Cadeia de caracteres |Novo valor com o qual substituir um antigo. |
+| **replacementAttributeName** |Opcional |Cadeia de caracteres |Nome do atributo a ser usado para o valor de substituição quando source não tiver nenhum valor. |
+| **template** |Opcional |Cadeia de caracteres |Quando o valor de **template** for fornecido, procuraremos **oldValue** dentro de template e o substituiremos pelo valor de source. |
 
 - - -
 ### <a name="selectuniquevalue"></a>SelectUniqueValue
@@ -168,7 +168,7 @@ Se um dos valores de source for um atributo com vários valores, todos os valore
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **uniqueValueRule1  … uniqueValueRuleN** |Pelo menos 2 são necessários, sem limite superior |String | Lista de regras de geração de valor exclusivo para avaliar. |
+| **uniqueValueRule1  … uniqueValueRuleN** |Pelo menos 2 são necessários, sem limite superior |Cadeia de caracteres | Lista de regras de geração de valor exclusivo para avaliar. |
 
 
 - - -
@@ -181,10 +181,10 @@ Se um dos valores de source for um atributo com vários valores, todos os valore
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **[appRoleAssignments]** |Obrigatório |String |Objeto **[appRoleAssignments]**. |
+| **[appRoleAssignments]** |Obrigatório |Cadeia de caracteres |Objeto **[appRoleAssignments]** . |
 
 - - -
-### <a name="split"></a>Dividir
+### <a name="split"></a>Divisão
 **Função:**<br> Split(source, delimiter)
 
 **Descrição:**<br> Divide uma cadeia de caracteres em uma matriz com vários valores, usando o caractere delimitador especificado.
@@ -193,24 +193,24 @@ Se um dos valores de source for um atributo com vários valores, todos os valore
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **fonte** |Obrigatório |String |**fonte** a atualizar. |
-| **delimiter** |Obrigatório |String |Especifica o caractere que será usado para dividir a cadeia de caracteres (exemplo: ",") |
+| **fonte** |Obrigatório |Cadeia de caracteres |**fonte** a atualizar. |
+| **delimiter** |Obrigatório |Cadeia de caracteres |Especifica o caractere que será usado para dividir a cadeia de caracteres (exemplo: ",") |
 
 - - -
 ### <a name="stripspaces"></a>StripSpaces
-**Função:**<br>  StripSpaces(source)
+**Função:**<br> StripSpaces(source)
 
-**Descrição:**<br>  remove todos os caracteres de espaço (" ") da caracteres da cadeia de source.
+**Descrição:**<br> remove todos os caracteres de espaço (" ") da caracteres da cadeia de source.
 
 **Parâmetros:**<br> 
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **fonte** |Obrigatório |String |**fonte** a atualizar. |
+| **fonte** |Obrigatório |Cadeia de caracteres |**fonte** a atualizar. |
 
 - - -
 ### <a name="switch"></a>Switch
-**Função:**<br>  Switch(source, defaultValue, key1, value1, key2, value2, …)
+**Função:**<br> Switch(source, defaultValue, key1, value1, key2, value2, …)
 
 **Descrição:**<br> Quando o valor de **source** corresponde a um parâmetro **key**, retorna **value** para esse parâmetro **key**. Se o valor de **source** não corresponder a nenhum parâmetro key, **defaultValue** será retornado.  Os parâmetros **key** e **value** devem sempre ocorrer em pares. A função sempre espera um número par de parâmetros.
 
@@ -218,10 +218,10 @@ Se um dos valores de source for um atributo com vários valores, todos os valore
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **fonte** |Obrigatório |String |**Source** a atualizar. |
-| **defaultValue** |Opcional |String |Valor padrão a ser usado quando source não corresponde a nenhum parâmetro. Pode ser uma cadeia de caracteres vazia (""). |
-| **chave** |Obrigatório |String |Parâmetro **key** com o qual comparar o valor de **source**. |
-| **valor** |Obrigatório |String |Valor de substituição para o **source** que corresponde ao parâmetro key. |
+| **fonte** |Obrigatório |Cadeia de caracteres |**Source** a atualizar. |
+| **defaultValue** |Opcional |Cadeia de caracteres |Valor padrão a ser usado quando source não corresponde a nenhum parâmetro. Pode ser uma cadeia de caracteres vazia (""). |
+| **chave** |Obrigatório |Cadeia de caracteres |Parâmetro **key** com o qual comparar o valor de **source**. |
+| **valor** |Obrigatório |Cadeia de caracteres |Valor de substituição para o **source** que corresponde ao parâmetro key. |
 
 - - -
 ### <a name="tolower"></a>ToLower
@@ -233,8 +233,8 @@ Se um dos valores de source for um atributo com vários valores, todos os valore
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **fonte** |Obrigatório |String |Normalmente o nome do atributo do objeto de source |
-| **cultura** |Opcional |String |O formato para o nome da cultura com base em RFC 4646 é *languagecode2-country/regioncode2*, em que *regioncode2* é o código de idioma de duas letras e *country/regioncode2* é o código de subcultura de duas letras. Exemplos incluem ja-JP para japonês (Japão) e en-US para inglês (Estados Unidos). Quando não há um código de idioma de duas letras disponível, um código de três letras derivado da ISO 639-2 é usado.|
+| **fonte** |Obrigatório |Cadeia de caracteres |Normalmente o nome do atributo do objeto de source |
+| **cultura** |Opcional |Cadeia de caracteres |O formato para o nome da cultura com base em RFC 4646 é *languagecode2-country/regioncode2*, em que *regioncode2* é o código de idioma de duas letras e *country/regioncode2* é o código de subcultura de duas letras. Exemplos incluem ja-JP para japonês (Japão) e en-US para inglês (Estados Unidos). Quando não há um código de idioma de duas letras disponível, um código de três letras derivado da ISO 639-2 é usado.|
 
 - - -
 ### <a name="toupper"></a>ToUpper
@@ -246,18 +246,18 @@ Se um dos valores de source for um atributo com vários valores, todos os valore
 
 | NOME | Obrigatório/repetição | Type | Observações |
 | --- | --- | --- | --- |
-| **fonte** |Obrigatório |String |Normalmente o nome do atributo do objeto de source. |
-| **culture** |Opcional |String |O formato para o nome da cultura com base em RFC 4646 é *languagecode2-country/regioncode2*, em que *regioncode2* é o código de idioma de duas letras e *country/regioncode2* é o código de subcultura de duas letras. Exemplos incluem ja-JP para japonês (Japão) e en-US para inglês (Estados Unidos). Quando não há um código de idioma de duas letras disponível, um código de três letras derivado da ISO 639-2 é usado.|
+| **fonte** |Obrigatório |Cadeia de caracteres |Normalmente o nome do atributo do objeto de source. |
+| **culture** |Opcional |Cadeia de caracteres |O formato para o nome da cultura com base em RFC 4646 é *languagecode2-country/regioncode2*, em que *regioncode2* é o código de idioma de duas letras e *country/regioncode2* é o código de subcultura de duas letras. Exemplos incluem ja-JP para japonês (Japão) e en-US para inglês (Estados Unidos). Quando não há um código de idioma de duas letras disponível, um código de três letras derivado da ISO 639-2 é usado.|
 
 ## <a name="examples"></a>Exemplos
 ### <a name="strip-known-domain-name"></a>Retirar o nome de domínio conhecido
 Você precisa retirar um nome de domínio conhecido do email de um usuário para obter um nome de usuário. <br>
- Por exemplo, se o domínio for "contoso.com", você pode usar a seguinte expressão:
+Por exemplo, se o domínio for "contoso.com", você pode usar a seguinte expressão:
 
 **Expressão:** <br>
 `Replace([mail], "@contoso.com", , ,"", ,)`
 
-**Entrada/saída de exemplo:**  <br>
+**Entrada/saída de exemplo:** <br>
 
 * **INPUT** (mail): "john.doe@contoso.com"
 * **SAÍDA**: "davi.barros"
@@ -309,7 +309,7 @@ Split([extensionAttribute5], ",")
 
 ### <a name="output-date-as-a-string-in-a-certain-format"></a>Gerar data como uma cadeia de caracteres em um determinado formato
 Você deseja enviar datas para um aplicativo SaaS em um determinado formato. <br>
- Por exemplo, você deseja formatar datas para o ServiceNow.
+Por exemplo, você deseja formatar datas para o ServiceNow.
 
 **Expressão:** <br>
 
@@ -323,7 +323,7 @@ Você deseja enviar datas para um aplicativo SaaS em um determinado formato. <br
 ### <a name="replace-a-value-based-on-predefined-set-of-options"></a>Substituir um valor com base em um conjunto predefinido de opções
 
 Você precisa definir o fuso horário do usuário com base no código de estado armazenado no AD do Azure. <br>
- Se o código de estado não corresponder a nenhuma das opções predefinidas, use o valor padrão de "Australia/Sydney".
+Se o código de estado não corresponder a nenhuma das opções predefinidas, use o valor padrão de "Australia/Sydney".
 
 **Expressão:** <br>
 `Switch([state], "Australia/Sydney", "NSW", "Australia/Sydney","QLD", "Australia/Brisbane", "SA", "Australia/Adelaide")`

@@ -8,10 +8,10 @@ ms.topic: troubleshoot
 ms.date: 04/08/2019
 ms.author: v-chjenk
 ms.openlocfilehash: 88e843c410a750387ecf58497dec79586e2a59d8
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65523323"
 ---
 # <a name="tenant-and-host-pool-creation"></a>Criação do pool de host e de locatário
@@ -320,7 +320,7 @@ Exemplo de erro bruto:
 Se você estiver executando a oferta do Azure Marketplace, forneça valores para os seguintes parâmetros autenticar corretamente a área de trabalho Virtual do Windows:
 
 - Locatário de área de trabalho Virtual do Windows RDS proprietário: Entidade de serviço
-- ID do Aplicativo: A identificação da entidade de serviço novo que você criou
+- ID do aplicativo: A identificação da entidade de serviço novo que você criou
 - Senha/Confirmar senha: O segredo de senha gerado para a entidade de serviço
 - ID do locatário do Azure AD: A ID de locatário do Azure AD da entidade de serviço que você criou
 

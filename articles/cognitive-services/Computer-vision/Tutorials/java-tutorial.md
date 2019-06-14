@@ -12,10 +12,10 @@ ms.author: kefre
 ms.custom: seodec18
 ms.date: 04/30/2019
 ms.openlocfilehash: a22308e0c7ff924205f715692d011a4572b2bdb8
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65232637"
 ---
 # <a name="use-computer-vision-features-with-the-rest-api-and-java"></a>Usar recursos de pesquisa Visual computacional com a API REST e o Java
@@ -60,11 +60,11 @@ Não é necessário extrair o conteúdo do arquivo .zip, porque o NetBeans impor
 
 Importe o arquivo **cognitive-services-java-computer-vision-tutorial-master.zip** para o NetBeans.
 
-1. No NetBeans, clique em **Arquivo** > **Importar Projeto** > **De ZIP...**. A caixa de diálogo **Importar projetos do ZIP** é exibida.
-1. No campo **Arquivo ZIP:**, clique no botão **Procurar** para localizar o arquivo **cognitive-services-java-computer-vision-tutorial-master.zip** e, em seguida, clique e **Abrir**.
+1. No NetBeans, clique em **Arquivo** > **Importar Projeto** > **De ZIP...** . A caixa de diálogo **Importar projetos do ZIP** é exibida.
+1. No campo **Arquivo ZIP:** , clique no botão **Procurar** para localizar o arquivo **cognitive-services-java-computer-vision-tutorial-master.zip** e, em seguida, clique e **Abrir**.
 1. Clique em **Importar** na caixa de diálogo **Importar projetos do ZIP**.
-1. No painel **Projetos**, expanda **ComputerVision** > **Pacotes de origem** > **&lt;pacote padrão&gt;**. 
-   Algumas versões do NetBeans usam **src** em vez de **Pacotes de origem** > **&lt;pacote padrão&gt;**. Nesse caso, expanda **src**.
+1. No painel **Projetos**, expanda **ComputerVision** > **Pacotes de origem** >  **&lt;pacote padrão&gt;** . 
+   Algumas versões do NetBeans usam **src** em vez de **Pacotes de origem** >  **&lt;pacote padrão&gt;** . Nesse caso, expanda **src**.
 1. Clique duas vezes em **MainFrame.java** para carregar o arquivo no editor do NetBeans. A guia **Design** do arquivo **MainFrame.java** é exibida.
 1. Clique na guia **Origem** para exibir o código-fonte Java.
 

@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 12/18/2017
 ms.author: ancav
-ms.component: autoscale
+ms.subservice: autoscale
 ms.openlocfilehash: 02840b8a909f46c37130bdb7162674c694a0ff96
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60787488"
 ---
 # <a name="understand-autoscale-settings"></a>Compreender configurações de Autoescala
@@ -111,7 +111,7 @@ Para ilustrar o esquema de configuração de Autoescala, a seguinte configuraç�
 | Regra | scaleAction | A ação a ser executada quando o metricTrigger da regra for acionado. |
 | scaleAction | direction | "Increase" para escalar horizontalmente ou "Decrease" para reduzir horizontalmente.|
 | scaleAction | value | Quanto aumentar ou diminuir a capacidade do recurso. |
-| scaleAction | cooldown | O período de tempo a esperar após uma operação de dimensionamento antes de escalonar novamente. Por exemplo, se **cooldown = “PT10M”**, a Autoescala não tentará escalonar novamente nos próximos 10 minutos. O resfriamento deve permitir que as métricas se estabilizem após a adição ou a remoção de instâncias. |
+| scaleAction | cooldown | O período de tempo a esperar após uma operação de dimensionamento antes de escalonar novamente. Por exemplo, se **cooldown = “PT10M”** , a Autoescala não tentará escalonar novamente nos próximos 10 minutos. O resfriamento deve permitir que as métricas se estabilizem após a adição ou a remoção de instâncias. |
 
 ## <a name="autoscale-profiles"></a>Perfis de dimensionamento automático
 
@@ -290,13 +290,13 @@ A Autoescala usa a seguinte sequência para escolher o perfil:
 
 ### <a name="how-does-autoscale-evaluate-multiple-rules"></a>Como o dimensionamento automático avalia várias regras?
 
-Depois que a Autoescala determina qual perfil executar, ela avalia todas as regras para escalar horizontalmente no perfil (essas são regras com **direction = “Increase”**).
+Depois que a Autoescala determina qual perfil executar, ela avalia todas as regras para escalar horizontalmente no perfil (essas são regras com **direction = “Increase”** ).
 
 Se uma ou mais regras para escalar horizontalmente forem disparadas, a Autoescala calculará a nova capacidade determinada pela **scaleAction** de cada uma dessas regras. Então, ela escalará horizontalmente até o máximo dessas capacidades para garantir a disponibilidade do serviço.
 
 Por exemplo, digamos que há um conjunto de dimensionamento de máquinas virtuais com uma capacidade atual de 10. Há duas regras de escalonamento horizontal: uma que aumenta a capacidade em 10% e outra que aumenta 3 pontos na capacidade. A primeira regra resultará em uma nova capacidade igual a 11 e a segunda regra resultará em uma capacidade igual a 13. Para garantir a disponibilidade do serviço, a Autoescala escolhe a ação que resulta na capacidade máxima, portanto, a segunda regra é escolhida.
 
-Se nenhuma regra para escalar horizontalmente for acionada, a Autoescala avaliará todas as regras para reduzir horizontalmente (regras com **direction = “Decrease”**). O dimensionamento automático só executará uma ação de redução se todas as regras para reduzir forem acionadas.
+Se nenhuma regra para escalar horizontalmente for acionada, a Autoescala avaliará todas as regras para reduzir horizontalmente (regras com **direction = “Decrease”** ). O dimensionamento automático só executará uma ação de redução se todas as regras para reduzir forem acionadas.
 
 A Autoescala calculará a nova capacidade determinada pela **scaleAction** de cada uma dessas regras. Em seguida, ele escolherá a ação de dimensionamento que resultará no máximo dessas capacidades para garantir a disponibilidade do serviço.
 
@@ -310,3 +310,4 @@ Saiba mais sobre a Autoescala consultando o seguinte:
 * [Práticas recomendadas para dimensionamento automático do Azure Monitor](../../azure-monitor/platform/autoscale-best-practices.md)
 * [Usar ações de dimensionamento automático para enviar notificações de alerta por email e webhook](../../azure-monitor/platform/autoscale-webhook-email.md)
 * [API REST do Dimensionamento Automático](https://msdn.microsoft.com/library/dn931953.aspx)
+

@@ -19,10 +19,10 @@ ms.reviewer: jesakowi, justhu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6fb4342e024d826c65ed33184aaf33012d09190a
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65545204"
 ---
 # <a name="permissions-and-consent-in-the-azure-active-directory-v10-endpoint"></a>Permissões e consentimento no ponto de extremidade v1.0 do Azure Active Directory
@@ -47,7 +47,7 @@ Permissões efetivas são as permissões que seu aplicativo terá ao fazer solic
 * Para permissões de aplicativo, as permissões efetivas do seu aplicativo são o nível completo de privilégios indicado pela permissão. Por exemplo, um aplicativo que tenha o `User.ReadWrite.All` permissão de aplicativo pode atualizar o perfil de todos os usuários na organização.
 
 ## <a name="permission-attributes"></a>Atributos de permissão
-As permissões no AD do Azure têm um número de propriedades que ajudam, administradores ou desenvolvedores de aplicativo a tomarem decisões conscientes sobre o que a permissão concede acesso. 
+As permissões no AD do Azure têm um número de propriedades que ajudam, administradores ou desenvolvedores de aplicativo a tomarem decisões conscientes sobre o que a permissão concede acesso.
 
 > [!NOTE]
 > Você pode exibir as permissões de um aplicativo do Azure AD ou a Entidade de Serviço expõe usando o portal do Azure ou o PowerShell. Tente este script para exibir as permissões expostas pelo Microsoft Graph.
@@ -61,14 +61,14 @@ As permissões no AD do Azure têm um número de propriedades que ajudam, admini
 > (Get-AzureADServicePrincipal -filter "DisplayName eq 'Microsoft Graph'").AppRoles
 > ```
 
-| Nome da propriedade | Descrição | Exemplo |
+| Nome da propriedade | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | `ID` | É um valor de GUID que identifica exclusivamente esta permissão. | 570282fd-fa5c-430d-a7fd-fc8dc98a9dca |
 | `IsEnabled` | Indica se essa permissão está disponível para uso. | verdadeiro |
 | `Type` | Indica se essa permissão requer o consentimento do usuário ou consentimento do administrador. | Usuário |
-| `AdminConsentDescription` | É uma descrição que é exibida para os administradores durante as experiências de consentimento do administrador | Permite que o aplicativo leia emails nas caixas de entrada dos usuários.  |
+| `AdminConsentDescription` | É uma descrição que é exibida para os administradores durante as experiências de consentimento do administrador | Permite que o aplicativo leia emails nas caixas de entrada dos usuários. |
 | `AdminConsentDisplayName` | É um nome fácil exibido aos administradores durante as experiências de consentimento do administrador. | Ler email de usuário |
-| `UserConsentDescription` | É uma descrição que é exibida aos usuários durante a experiência de consentimento do usuário. |  Permite que o aplicativo leia emails em sua caixa de email.  |
+| `UserConsentDescription` | É uma descrição que é exibida aos usuários durante a experiência de consentimento do usuário. |  Permite que o aplicativo leia emails em sua caixa de email. |
 | `UserConsentDisplayName` | É um nome fácil que é exibido aos usuários durante uma experiência de consentimento do usuário. | Leia seu email |
 | `Value` | É a cadeia de caracteres que é usada para identificar a permissão durante os fluxos de autorização OAuth 2.0. `Value` também pode ser combinado com a cadeia de caracteres do URI da ID do aplicativo para formar um nome totalmente qualificado de permissão. | `Mail.Read` |
 

@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
 ms.openlocfilehash: 3fc14b821064719f39eb877aa2253f8084496a66
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65523506"
 ---
 # <a name="language-understanding-glossary-of-common-vocabulary-and-concepts"></a>Glossário de noções básicas de linguagem de conceitos e vocabulário comuns
@@ -82,11 +82,11 @@ Um exemplo de ponto de extremidade tem a seguinte aparência:
 
 |Parâmetro querystring|description|
 |--|--|
-|Região| [região publicada](luis-reference-regions.md#publishing-regions) |
+|region| [região publicada](luis-reference-regions.md#publishing-regions) |
 |appID | ID do aplicativo LUIS |
 |subscriptionID | Chave de ponto de extremidade (assinatura) de LUIS criada no portal do Azure |
 |q | utterance |
-|timezoneOffset| minutos|
+|timezoneOffset| minutes|
 
 ## <a name="entity"></a>Entidade
 

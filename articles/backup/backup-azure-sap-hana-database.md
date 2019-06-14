@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: raynew
 ms.openlocfilehash: 5ed41013535e4591d88bff5c017c1fcf4c4053cc
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65237801"
 ---
 # <a name="back-up-an-sap-hana-database"></a>Fazer backup de um banco de dados do SAP HANA
@@ -40,7 +40,7 @@ ms.locfileid: "65237801"
 - Você pode fazer backup de logs de banco de dados a cada 15 minutos. Backups de log somente começam a fluir depois que um backup completo com êxito para o banco de dados foi concluída.
 - Você pode fazer backups completos e diferenciais. Atualmente, não há suporte para backup incremental.
 - Você não pode modificar a política de backup depois de aplicá-la para backups do SAP HANA. Se você quiser fazer backup com configurações diferentes, crie uma nova política ou atribuir uma política diferente. 
-    - Para criar uma nova política, no cofre, clique **diretivas** > **políticas de Backup** > **+ adicionar** > **SAP HANA em VM do Azure**e especifique as configurações de política.
+    - Para criar uma nova política, no cofre, clique **diretivas** > **políticas de Backup** >  **+ adicionar** > **SAP HANA em VM do Azure**e especifique as configurações de política.
     - Para atribuir uma política diferente, nas propriedades da VM que executa o banco de dados, clique no nome de política atual. Em seguida, na **política de Backup** página você pode selecionar uma política diferente a ser usado para o backup.
 
 
@@ -91,7 +91,7 @@ Integrar a visualização pública da seguinte maneira:
 ## <a name="discover-the-databases"></a>Descobrir os bancos de dados
 
 
-1. No cofre, no **guia de Introdução**, clique em **Backup**. Na **onde sua carga de trabalho é executada?**, selecione **SAP HANA na VM do Azure**.
+1. No cofre, no **guia de Introdução**, clique em **Backup**. Na **onde sua carga de trabalho é executada?** , selecione **SAP HANA na VM do Azure**.
 2. Clique em **iniciar descoberta**. Isso inicia a descoberta de VMs do Linux desprotegidos na região do cofre.
 
    - Após a descoberta, VMs não protegidas são exibidos no portal, listados por nome e grupo de recursos.

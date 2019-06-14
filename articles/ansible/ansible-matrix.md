@@ -9,15 +9,15 @@ manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
 ms.openlocfilehash: b3396b2f4639cc7298b77810dbaafadd308d6b24
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65230984"
 ---
 # <a name="ansible-module-and-version-matrix"></a>Matriz de módulo e versão Ansible do Azure
 
-O Ansible inclui um conjunto de módulos para uso em provisionar e configurar recursos do Azure. Esses recursos incluem máquinas virtuais, conjuntos de dimensionamento, serviços e serviços de contêiner de rede. Este artigo lista vários módulos de Ansible do Azure e as versões do Ansible no qual eles são fornecidos.
+O Ansible inclui um conjunto de módulos para uso no provisionamento e configuração de recursos do Azure. Esses recursos incluem máquinas virtuais, conjuntos de dimensionamento, serviços de rede e serviços de contêiner. Este artigo lista vários módulos de Ansible do Azure e as versões do Ansible no qual eles são fornecidos.
 
 ## <a name="ansible-modules-for-azure"></a>Módulos de Ansible do Azure
 

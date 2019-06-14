@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: v-sharos
 ms.openlocfilehash: be761f0a2e59878139ae54dba62634a53b172711
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60302956"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64715287"
 ---
 # <a name="use-the-mmc-menu-actions-in-storsimple-snapshot-manager"></a>Usar as ações de menu do MMC no StorSimple Snapshot Manager
 
@@ -30,7 +30,7 @@ No StorSimple Snapshot Manager, você verá as seguintes ações listadas em tod
 * Nova Janela a Partir Daqui 
 * Atualizar 
 * Exportar Lista 
-* Ajuda 
+* Help 
 
 Essas ações fazem parte do MMC (Console de Gerenciamento Microsoft) e não são específicas ao StorSimple Snapshot Manager. Este tutorial descreve essas ações e explica como usar cada uma delas no StorSimple Snapshot Manager.
 
@@ -91,14 +91,14 @@ Você pode usar a ação **Exportar Lista** para salvar uma lista em um arquivo 
       
       ![Exportar lista como um arquivo de valores separados por vírgula](./media/storsimple-snapshot-manager-mmc-menu/HCS_SSM_Export_List.png) 
 
-## <a name="help"></a>Ajuda
+## <a name="help"></a>Help
 Você pode usar o menu **Ajuda** para exibir a ajuda online disponível para o MMC e o StorSimple Snapshot Manager.
 
 #### <a name="to-view-available-online-help"></a>Para exibir a ajuda online disponível
 1. Clique no ícone da área de trabalho para iniciar o StorSimple Snapshot Manager.
 2. No painel **Escopo**, clique com o botão direito em qualquer nó ou expanda o nó e clique com o botão direito em um item no painel **Resultados**, em seguida, clique em **Ajuda**. 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 * Saiba mais sobre [a interface do usuário do StorSimple Snapshot Manager](storsimple-use-snapshot-manager.md).
 * Saiba mais sobre [como usar o StorSimple Snapshot Manager para administrar sua solução do StorSimple](storsimple-snapshot-manager-admin.md).
 

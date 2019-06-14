@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 021f18f588613817110539d408f9260fb9247895
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61449217"
 ---
 # <a name="integrate-the-remote-monitoring-solution-with-azure-data-lake-store"></a>Integrar a solução de Monitoramento Remoto com o Azure Data Lake Store
@@ -103,7 +103,7 @@ Crie um trabalho do Azure Stream Analytics para transmitir os dados de seu hub I
 
 1. Selecione a conta do Data Lake Store que você criou nas etapas anteriores e forneça a estrutura de pastas para transmitir dados para o armazenamento.
 
-1. No campo Formato de data, insira **/streaming/ {date}/{time}**. Deixe o formato de Data padrão de AAAA/MM/DD e de hora de HH.
+1. No campo Formato de data, insira **/streaming/ {date}/{time}** . Deixe o formato de Data padrão de AAAA/MM/DD e de hora de HH.
 
     ![Fornecer a estrutura de pastas](./media/iot-accelerators-integrate-data-lake/stream-analytics-new-output.png)
 

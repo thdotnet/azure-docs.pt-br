@@ -11,10 +11,10 @@ ms.author: zhanxia
 ms.date: 05/02/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: ee15b6fb7160ece907d55e790b0ae38ee458ab96
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65028599"
 ---
 # <a name="enter-data-manually-module"></a>Insira o módulo de dados manualmente
@@ -31,7 +31,7 @@ Esse módulo pode ser útil em cenários como estes:
   
 - Digitar uma lista de nomes de coluna a ser inserido em um conjunto de dados
 
-## <a name="enter-data-manually"></a>Inserir os dados manualmente 
+## <a name="enter-data-manually"></a>Inserir Dados Manualmente 
   
 1.  Adicione a [inserir manualmente dados](./enter-data-manually.md) módulo ao seu experimento. Você pode encontrar esse módulo na **dados de entrada e saída** categoria no Azure Machine Learning. 
   

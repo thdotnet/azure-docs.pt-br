@@ -14,10 +14,10 @@ ms.date: 02/27/2019
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 0975b23a8f96da6fc2dfcc8bd9ad046847a68aa9
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62104810"
 ---
 # <a name="adding-log-analytics-saved-searches-and-alerts-to-management-solution-preview"></a>Adicionar alertas e pesquisas salvas do Log Analytics à solução de gerenciamento (versão prévia)
@@ -49,7 +49,7 @@ Todos os recursos do Log Analytics definidos em um modelo do Resource Manager t�
 
 A tabela a seguir lista a versão de API para o recurso usado neste exemplo.
 
-| Tipo de recurso | Versão da API | Consultar |
+| Tipo de recurso | Versão da API | Consulta |
 |:---|:---|:---|
 | savedSearches | 2017-03-15-preview | Event &#124; where EventLevelName == "Error"  |
 
@@ -83,7 +83,7 @@ Todas as propriedades de uma pesquisa salva são descritas na tabela a seguir.
 | query | Consulta a executar. |
 
 > [!NOTE]
-> Você talvez precise usar caracteres de escape na consulta, se ele inclui os caracteres que podem ser interpretados como JSON. Por exemplo, se a consulta fosse **AzureActivity | OperationName:"Microsoft.Compute/virtualMachines/write"**, ela deveria ser gravada no arquivo de solução como **AzureActivity | OperationName:/\"Microsoft.Compute/virtualMachines/write\"**.
+> Você talvez precise usar caracteres de escape na consulta, se ele inclui os caracteres que podem ser interpretados como JSON. Por exemplo, se a consulta fosse **AzureActivity | OperationName:"Microsoft.Compute/virtualMachines/write"** , ela deveria ser gravada no arquivo de solução como **AzureActivity | OperationName:/\"Microsoft.Compute/virtualMachines/write\"** .
 
 ## <a name="alerts"></a>Alertas
 Os [Alertas de Log do Azure](../../azure-monitor/platform/alerts-unified-log.md) são criados por regras de Alerta do Azure que executam consultas de log especificadas em intervalos regulares. Se os resultados da consulta correspondência aos critérios especificados, será criado um registro de alerta e uma ou mais ações são executadas usando [Grupos de Ação](../../azure-monitor/platform/action-groups.md).
@@ -123,7 +123,7 @@ As propriedades de recursos de agendamento são descritas na tabela a seguir.
 
 | Nome do elemento | Obrigatório | DESCRIÇÃO |
 |:--|:--|:--|
-| Habilitado       | Sim | Especifica se o alerta está habilitado quando ele é criado. |
+| enabled       | Sim | Especifica se o alerta está habilitado quando ele é criado. |
 | intervalo      | Sim | A frequência com a consulta é executada em minutos. |
 | queryTimeSpan | Sim | Período de tempo em minutos no qual avaliar resultados. |
 
@@ -178,7 +178,7 @@ As propriedades de Recursos de ação de alerta são descritas nas tabelas a seg
 |:--|:--|:--|
 | Type | Sim | Tipo da ação.  Isso será **Alerta** para ações de alerta. |
 | NOME | Sim | Nome de exibição para o alerta.  Esse é o nome que é exibido no console para a regra de alerta. |
-| DESCRIÇÃO | Não  | Descrição opcional do alerta. |
+| DESCRIÇÃO | Não | Descrição opcional do alerta. |
 | Severidade | Sim | Severidade do alerta registro dos seguintes valores:<br><br> **crítico**<br>**aviso**<br>**informativo**
 
 
@@ -218,8 +218,8 @@ O usuário que tiver estendido seus alertas ao Azure tem uma agenda que deve ter
 | Nome do elemento | Obrigatório | DESCRIÇÃO |
 |:--|:--|:--|
 | AzNsNotification | Sim | A ID de recurso do grupo de ações do Azure a ser associada ao alerta para tomar as ações necessárias quando os critérios de alerta são atendidos. |
-| CustomEmailSubject | Não  | A linha do assunto personalizada do email enviado para todos os endereços especificados no grupo de ação associado. |
-| CustomWebhookPayload | Não  | Conteúdo personalizado a ser enviado a todos os pontos de extremidade de webhook definidos no grupo de ações associado. O formato depende do que está o webhook está esperando e deve ser um JSON válido serializado. |
+| CustomEmailSubject | Não | A linha do assunto personalizada do email enviado para todos os endereços especificados no grupo de ação associado. |
+| CustomWebhookPayload | Não | Conteúdo personalizado a ser enviado a todos os pontos de extremidade de webhook definidos no grupo de ações associado. O formato depende do que está o webhook está esperando e deve ser um JSON válido serializado. |
 
 #### <a name="actions-for-oms-legacy"></a>Ações para OMS (herdado)
 
@@ -235,7 +235,7 @@ Cada agenda tem uma ação **Alerta**. Isso define os detalhes do alerta e, opci
 |:--|:--|:--|
 | Recipients | Sim | Lista delimitada por vírgulas de endereços de email para enviar notificações quando um alerta é criado, como no exemplo a seguir.<br><br>**[ "recipient1\@contoso.com", "recipient2\@contoso.com" ]** |
 | Subject | Sim | Linha de assunto do email. |
-| Attachment | Não  | Anexos não são atualmente suportados. Se este elemento for incluído, ele deve ser **nenhum**. |
+| Attachment | Não | Anexos não são atualmente suportados. Se este elemento for incluído, ele deve ser **nenhum**. |
 
 ##### <a name="remediation"></a>Correção
 Esta seção é opcional. Inclua-a se desejar que um runbook seja iniciado em resposta ao alerta. 
@@ -244,7 +244,7 @@ Esta seção é opcional. Inclua-a se desejar que um runbook seja iniciado em re
 |:--|:--|:--|
 | RunbookName | Sim | Nome do runbook para iniciar. |
 | WebhookUri | Sim | URI do webhook para o runbook. |
-| Expiry | Não  | Data e hora em que a correção expira. |
+| Expiry | Não | Data e hora em que a correção expira. |
 
 ##### <a name="webhook-actions"></a>Ações de Webhook
 
@@ -269,12 +269,12 @@ Se o alerta for chamar um webhook, ele precisará de um recurso de ação com um
     }
 As propriedades de recursos de ação do Webhook são descritas nas tabelas a seguir.
 
-| Nome do elemento | Obrigatório | DESCRIÇÃO |
+| Nome do elemento | Obrigatório | Descrição |
 |:--|:--|:--|
-| Tipo | Sim | Tipo da ação. Isso é **Webhook** para ações de webhook. |
-| Nome | Sim | Nome de exibição para a ação. Isso não é exibido no console. |
+| type | Sim | Tipo da ação. Isso é **Webhook** para ações de webhook. |
+| name | Sim | Nome de exibição para a ação. Isso não é exibido no console. |
 | webhookUri | Sim | URI para o webhook. |
-| customPayload | Não  | Carga personalizada a ser enviada para o webhook. O formato depende do que o webhook está esperando. |
+| customPayload | Não | Carga personalizada a ser enviada para o webhook. O formato depende do que o webhook está esperando. |
 
 ## <a name="sample"></a>Amostra
 

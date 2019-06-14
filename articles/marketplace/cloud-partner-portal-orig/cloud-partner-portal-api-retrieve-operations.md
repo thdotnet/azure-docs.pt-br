@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 09/14/2018
 ms.author: pabutler
 ms.openlocfilehash: 1fbcc1d50dbc4488c4123be64e85de612233ccc3
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935771"
 ---
 <a name="retrieve-operations"></a>Recuperar operações
@@ -178,7 +178,7 @@ Recuperar todas as operações na oferta ou obter uma operação específica par
 
 |  **Nome**                    |  **Descrição**                                                                                  |
 |  --------------------        |  ------------------------------------------------------------------------------------------------ |
-|  ID                          | GUID que identifica exclusivamente a operação                                                       |
+|  id                          | GUID que identifica exclusivamente a operação                                                       |
 |  submissionType              | Identifica o tipo de operação que está sendo relatada para a oferta, por exemplo, `Publish/GGoLive`      |
 |  createdDateTime             | Data e hora em UTC quando a operação foi criada                                                       |
 |  lastActionDateTime          | Data e hora em UTC quando a última atualização foi feita na operação                                       |

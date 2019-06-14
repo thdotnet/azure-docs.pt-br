@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8d4d02f9e99acb68db126ccde465f73cc2294e06
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65594025"
 ---
 # <a name="azure-active-directory-reporting-latencies"></a>Latências de relatórios do Azure Active Directory
@@ -62,7 +62,7 @@ A tabela a seguir lista as informações de latência para relatórios de segura
 | Relatório | Mínimo | Média | Máximo |
 | :-- | --- | --- | --- |
 | Usuários em risco          | 5 minutos   | 15 minutos  | 2 horas  |
-| Entradas arriscadas         | 5 minutos   | 15 minutos  | 2 horas  |
+| Entradas de risco         | 5 minutos   | 15 minutos  | 2 horas  |
 
 ## <a name="risk-events"></a>Eventos de risco
 
@@ -75,7 +75,7 @@ A tabela a seguir lista as informações de latência para eventos de risco.
 | Entradas de endereços IP anônimos |5 minutos |15 minutos |2 horas |
 | Entradas de locais desconhecidos |5 minutos |15 minutos |2 horas |
 | Usuários com credenciais vazadas |2 horas |4 horas |8 horas |
-| Viagem impossível a localizações atípicas |5 minutos |1 hora |8 horas  |
+| Viagem impossível a locais atípicos |5 minutos |1 hora |8 horas  |
 | Entradas de dispositivos infectados |2 horas |4 horas |8 horas  |
 | Entradas de endereços IP com atividade suspeita |2 horas |4 horas |8 horas  |
 

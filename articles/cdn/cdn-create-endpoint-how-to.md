@@ -15,10 +15,10 @@ ms.date: 06/12/2018
 ms.author: magattus
 ms.custom: mvc
 ms.openlocfilehash: 296f1df9175f4595274a57ed936282abb73da18b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60679516"
 ---
 # <a name="create-an-azure-cdn-endpoint"></a>Criar um ponto de extremidade CDN do Azure
@@ -44,7 +44,7 @@ Faça logon no [Portal do Azure](https://portal.azure.com) com sua conta do Azur
    
     ![Adicionar página de ponto de extremidade](./media/cdn-create-endpoint-how-to/cdn-add-endpoint-page.png)
 
-3. Em **Nome**, insira um nome exclusivo para o novo ponto de extremidade de CDN. Esse nome é usado para acessar os recursos armazenados em cache no domínio  _\<endpointname >_. azureedge.net.
+3. Em **Nome**, insira um nome exclusivo para o novo ponto de extremidade de CDN. Esse nome é usado para acessar os recursos armazenados em cache no domínio  _\<endpointname >_ . azureedge.net.
 
 4. Para **Tipo de origem**, escolha um dos seguintes tipos de origem: 
    - **Armazenamento** para Armazenamento do Azure
@@ -62,7 +62,7 @@ Faça logon no [Portal do Azure](https://portal.azure.com) com sua conta do Azur
    > Alguns tipos de origens, como o Armazenamento do Azure e Aplicativos Web, exigem que o cabeçalho de host corresponda ao domínio da origem. A menos que tenha uma origem que exija um cabeçalho de host diferente do seu domínio, você deverá deixar o valor padrão.
    > 
     
-8. Para **Protocolo** e **Porta de origem**, especifique os protocolos e as portas usadas para acessar os recursos no servidor de origem. É necessário selecionar pelo menos um protocolo (HTTP ou HTTPS). Usar o domínio fornecido pela CDN (_\<endpointname >_. azureedge.net) para acessar o conteúdo HTTPS. 
+8. Para **Protocolo** e **Porta de origem**, especifique os protocolos e as portas usadas para acessar os recursos no servidor de origem. É necessário selecionar pelo menos um protocolo (HTTP ou HTTPS). Usar o domínio fornecido pela CDN ( _\<endpointname >_ . azureedge.net) para acessar o conteúdo HTTPS. 
    
    > [!NOTE]
    > O valor da **Porta de origem** determina somente a porta usada pelo ponto de extremidade para recuperar as informações do servidor de origem. O ponto de extremidade em si só estará disponível para os clientes finais nas portas HTTP e HTTPS (80 e 443) padrão, independentemente do valor de **Porta de origem**.  

@@ -13,10 +13,10 @@ ms.author: celested
 ms.reviewer: arvinh,luleon
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e34e6257b4800387470cdc1b7d624bf3ebd1d3e6
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65989204"
 ---
 # <a name="configure-single-sign-on-to-non-gallery-applications-in-microsoft-identity-platform"></a>Configurar o logon único para aplicativos na plataforma de identidade da Microsoft
@@ -64,7 +64,7 @@ Adicionando um aplicativo dessa maneira, você pode fornecer uma experiência se
 - **Baseado em senha**
 - **Vinculado**
 
-![Selecione um método de logon único](./media/configure-single-sign-on-non-gallery-applications/select-a-single-sign-on-method.png)
+![Selecionar um método de logon único](./media/configure-single-sign-on-non-gallery-applications/select-a-single-sign-on-method.png)
 
 Para obter mais informações sobre essas opções, consulte as seguintes seções deste artigo.
 
@@ -125,11 +125,11 @@ Os dois campos a seguir são necessários:
 
 Três campos a seguir são opcionais:
 
-- **URL de logon (iniciado por SP somente)**. Esse valor indica onde o usuário vai para entrar nesse aplicativo. Se o aplicativo executa SSO iniciado por SP, em seguida, quando um usuário navega para essa URL, SP fará o redirecionamento necessário para o Azure AD para autenticar e conectar o usuário. Se você especificar esse campo, o Azure AD usa essa URL para iniciar o aplicativo do Office 365 e o painel de acesso do AD do Azure. Se você omitir esse campo, do Azure AD em vez disso executa logon iniciado pelo IdP durante inicializações do aplicativo do Office 365, o painel de acesso do AD do Azure ou a URL de SSO do Azure AD (que você pode copiar do **Dashboard** página).
+- **URL de logon (iniciado por SP somente)** . Esse valor indica onde o usuário vai para entrar nesse aplicativo. Se o aplicativo executa SSO iniciado por SP, em seguida, quando um usuário navega para essa URL, SP fará o redirecionamento necessário para o Azure AD para autenticar e conectar o usuário. Se você especificar esse campo, o Azure AD usa essa URL para iniciar o aplicativo do Office 365 e o painel de acesso do AD do Azure. Se você omitir esse campo, do Azure AD em vez disso executa logon iniciado pelo IdP durante inicializações do aplicativo do Office 365, o painel de acesso do AD do Azure ou a URL de SSO do Azure AD (que você pode copiar do **Dashboard** página).
 
 - **Estado de retransmissão**. Você pode especificar um estado de retransmissão do SAML para instruir o aplicativo para onde redirecionar usuários após a autenticação. O valor é normalmente uma URL ou caminho que leva os usuários em um local específico dentro do aplicativo.
 
-- **URL de logoff**. Esse valor é usado para enviar a resposta de logoff do SAML para o aplicativo.
+- **URL de Logoff**. Esse valor é usado para enviar a resposta de logoff do SAML para o aplicativo.
 
 Para obter mais informações, consulte [único protocolo de logon SAML](../develop/single-sign-on-saml-protocol.md).
 
@@ -183,7 +183,7 @@ Para atribuir um novo usuário ou grupo ao seu aplicativo:
 
 1. Na barra lateral do aplicativo, selecione **usuários e grupos**. O  **\<nome do aplicativo >-usuários e grupos** página for exibida, que mostra a lista atual de usuários e grupos atribuídos.
 2. Selecione **adicionar usuários**. O **Adicionar atribuições** página será exibida.
-3. Selecione **usuários e grupos (\<número > selecionados)**. O **usuários e grupos** página for exibida, mostrando uma lista de usuários e grupos disponíveis.
+3. Selecione **usuários e grupos (\<número > selecionados)** . O **usuários e grupos** página for exibida, mostrando uma lista de usuários e grupos disponíveis.
 4. Tipo ou role para encontrar o usuário ou grupo que você deseja atribuir na lista.
 5. Selecione cada usuário ou grupo que você deseja adicionar e, em seguida, selecione a **selecionar** botão. O **usuários e grupos** desaparece da página.
 6. No **Adicionar atribuições** página, selecione **atribuir**. O  **<application name> -usuários e grupos** página será exibida com os mostrado na lista de usuários adicionais.

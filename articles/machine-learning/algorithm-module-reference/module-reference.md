@@ -10,10 +10,10 @@ author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/02/2019
 ms.openlocfilehash: 8825f1dc3b66a5c4981ba25a90813aec63975b1f
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65145144"
 ---
 # <a name="algorithm--module-reference-overview"></a>Visão geral de referência de módulo e algoritmos
@@ -41,7 +41,7 @@ Módulos são organizados por funcionalidade:
 | Regressão | Prever um valor. | [Regressão linear](linear-regression.md)  <br/> [Regressão de rede neural](neural-network-regression.md)  <br/> [Regressão de floresta de decisão](decision-forest-regression.md)  <br/> [Boosted&nbsp;decisão&nbsp;árvore&nbsp;regressão](boosted-decision-tree-regression.md)
 |  | **Criar e avaliar modelos**: | |
 | Treinar   | Dados de execução através do algoritmo. | [Modelo de treinamento](train-model.md)  <br/> [Treinar o modelo de Clustering](train-clustering-model.md)    |
-| Avaliar modelo | Medir a precisão do modelo treinado. |  [Avaliar modelo](evaluate-model.md)
+| Avaliar Modelo | Medir a precisão do modelo treinado. |  [Avaliar modelo](evaluate-model.md)
 | Pontuação | Obter as previsões do modelo que acabou de treinar. | [Aplicar transformação](apply-transformation.md)<br/>[Atribua&nbsp;dados&nbsp;para&nbsp;Clusters](assign-data-to-clusters.md) <br/>[Modelo de pontuação](score-model.md)
 
 ## <a name="error-messages"></a>Mensagens de erro

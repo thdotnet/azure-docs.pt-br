@@ -17,10 +17,10 @@ ms.reviewer: asteen
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9b6f069489738e9dceeee350a36aa2b45715a314
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65825024"
 ---
 # <a name="how-to-deploy-the-access-panel-extension-for-internet-explorer-using-group-policy"></a>Como implantar a Extensão do Painel de Acesso no Internet Explorer usando a Política de Grupo
@@ -104,7 +104,7 @@ Além da execução do instalador, todas as extensões do Internet Explorer deve
    * `User Configuration/Policies/Administrative Templates/Windows Components/Internet Explorer/Security Features/Add-on Management`
 2. Clique com o botão direito do mouse em **Lista de Complementos** e selecione **Editar**.
     ![Edite a Lista de Complementos.](./media/deploy-access-panel-browser-extension/edit-add-on-list.png)
-3. Na janela **Lista de Complementos**, selecione **Habilitado**. Em seguida, na seção **Opções**, clique em **Mostrar...**.
+3. Na janela **Lista de Complementos**, selecione **Habilitado**. Em seguida, na seção **Opções**, clique em **Mostrar...** .
    
     ![Clique em Habilitar e clique em Mostrar...](./media/deploy-access-panel-browser-extension/edit-add-on-list-window.png)
 4. Na janela **Mostrar Conteúdo** , execute as seguintes etapas:

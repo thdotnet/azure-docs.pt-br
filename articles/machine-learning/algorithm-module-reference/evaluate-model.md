@@ -11,10 +11,10 @@ ms.author: zhanxia
 ms.date: 05/06/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: 40a8247c22da1f7a057e222565ffb2ec4c6b7fb3
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65028734"
 ---
 # <a name="evaluate-model-module"></a>Avaliar o módulo de modelo
@@ -81,7 +81,7 @@ Por exemplo, a imagem a seguir representa uma comparação dos resultados de doi
 
 Como esse é um modelo de clustering, os resultados da avaliação são diferentes de se em comparação com as pontuações de dois modelos de regressão, ou em comparação com dois modelos de classificação. No entanto, toda a apresentação é o mesmo. 
 
-## <a name="metrics"></a>Métricas
+## <a name="metrics"></a>metrics
 
 Esta seção descreve as métricas retornadas para os tipos específicos de modelos de suporte para uso com **avaliar modelo**:
 

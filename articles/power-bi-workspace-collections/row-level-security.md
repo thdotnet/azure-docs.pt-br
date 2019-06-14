@@ -9,10 +9,10 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.openlocfilehash: 2d0c8629e4abf9e27cd204b9a13b79808b177501
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64715205"
 ---
 # <a name="row-level-security-with-power-bi-workspace-collections"></a>Segurança em nível de linha com Coleções de Workspaces do Power BI
@@ -48,7 +48,7 @@ Eis algumas observações em relação a esse esquema:
 
 * Todas as medidas, como **Total de vendas**, são armazenadas na tabela de fatos **Vendas**.
 * Há quatro tabelas de dimensões adicionais relacionadas: **Item**, **Tempo**, **Loja** e **Distrito**.
-* As setas nas linhas de relação indicam como os filtros podem fluir de uma tabela para outra. Por exemplo, se um filtro é colocado em **Hora[Data]**, no esquema atual ele filtraria somente valores na tabela **Vendas**. Nenhuma outra tabela seria afetada por esse filtro, já que todas as setas nas linhas de relação apontam em direção à tabela de vendas, e não para fora dela.
+* As setas nas linhas de relação indicam como os filtros podem fluir de uma tabela para outra. Por exemplo, se um filtro é colocado em **Hora[Data]** , no esquema atual ele filtraria somente valores na tabela **Vendas**. Nenhuma outra tabela seria afetada por esse filtro, já que todas as setas nas linhas de relação apontam em direção à tabela de vendas, e não para fora dela.
 * A tabela **Região** indica quem é o gerente de cada região:
   
   ![Linhas da tabela de região](media/row-level-security/district-table-4.png)

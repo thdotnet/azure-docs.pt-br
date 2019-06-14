@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 10/30/2018
 ms.openlocfilehash: d4c5a2ca88f982626c8c2a8b37e4a7d6dfdbe599
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61485693"
 ---
 # <a name="run-ad-hoc-analytics-queries-across-multiple-azure-sql-databases"></a>Executar consultas de análise ad hoc em vários bancos de dados SQL do Azure
@@ -96,7 +96,7 @@ Este exercício adiciona o esquema (a fonte de dados externa e as definições d
 
     ![Criar fonte de dados externa](media/saas-multitenantdb-adhoc-reporting/create-external-data-source.png)
 
-   As tabelas externas que referenciam as tabelas de locatários são definidas com **DISTRIBUTION = SHARDED(VenueId)**. Isso encaminha uma consulta de uma *VenueId* específica para o banco de dados apropriado e melhora o desempenho para muitos cenários, conforme mostrado na próxima seção.
+   As tabelas externas que referenciam as tabelas de locatários são definidas com **DISTRIBUTION = SHARDED(VenueId)** . Isso encaminha uma consulta de uma *VenueId* específica para o banco de dados apropriado e melhora o desempenho para muitos cenários, conforme mostrado na próxima seção.
 
     ![criar tabelas externas](media/saas-multitenantdb-adhoc-reporting/external-tables.png)
 

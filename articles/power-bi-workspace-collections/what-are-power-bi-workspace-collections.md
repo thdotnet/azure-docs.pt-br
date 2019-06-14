@@ -11,10 +11,10 @@ ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: rkarlin
 ms.openlocfilehash: 7f23856363b337a361f329ed54e2152842faf26e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64705133"
 ---
 # <a name="what-are-power-bi-workspace-collections"></a>O que são Coleções de Workspaces do Power BI?
@@ -60,7 +60,7 @@ Conjuntos de dados em cache podem ser usados.  No entanto, você não pode atual
 
 ## <a name="authentication-and-authorization-with-app-tokens"></a>Autenticação e autorização com tokens de aplicativo
 
-As **Coleções de Workspaces do Microsoft Power BI** transferem para o seu aplicativo para executar toda a autorização e autenticação de usuário necessárias. Não há nenhum requisito explícito de que os usuários finais sejam os clientes do Azure Active Directory (Azure AD).  Em vez disso, o aplicativo dá às **Coleções de Workspaces do Microsoft Power BI** autorização expressa para renderizar um relatório do Microsoft Power BI pelo uso de **Tokens de Autenticação de Aplicativo (Tokens de Aplicativo)**.  Esses **Tokens de Aplicativo** são criados conforme necessário, quando seu aplicativo deseja renderizar um relatório.
+As **Coleções de Workspaces do Microsoft Power BI** transferem para o seu aplicativo para executar toda a autorização e autenticação de usuário necessárias. Não há nenhum requisito explícito de que os usuários finais sejam os clientes do Azure Active Directory (Azure AD).  Em vez disso, o aplicativo dá às **Coleções de Workspaces do Microsoft Power BI** autorização expressa para renderizar um relatório do Microsoft Power BI pelo uso de **Tokens de Autenticação de Aplicativo (Tokens de Aplicativo)** .  Esses **Tokens de Aplicativo** são criados conforme necessário, quando seu aplicativo deseja renderizar um relatório.
 
 ![Diagrama de uso do token do aplicativo](media/what-are-power-bi-workspace-collections/app-tokens.png)
 

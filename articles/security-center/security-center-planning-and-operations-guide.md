@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/11/2019
 ms.author: v-mohabe
 ms.openlocfilehash: 04cfe489e9eea53bf58dd64e0eac3e5a95033bcc
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65966850"
 ---
 # <a name="azure-security-center-planning-and-operations-guide"></a>Guia de planejamento e operações da Central de Segurança do Azure
@@ -29,7 +29,7 @@ Este guia destina-se a profissionais de TI (tecnologia da informação), arquite
 Este guia aborda um conjunto de etapas e tarefas que você pode seguir para otimizar seu uso da Central de Segurança com base no modelo de gerenciamento de nuvem e nos requisitos de segurança de sua organização. Para tirar total proveito da Central de Segurança, é importante entender como as pessoas ou equipes diferentes em sua organização usam o serviço para atender às necessidades de desenvolvimento e operações seguras, monitoramento, administração resposta a incidentes. As principais áreas a serem consideradas ao planejar o uso da Central de Segurança são:
 
 * Funções de segurança e controles de acesso
-* Políticas de segurança e recomendações 
+* Políticas de segurança e recomendações
 * Coleta de dados e armazenamento
 * Recursos não Azure em andamento
 * Monitoramento contínuo de segurança
@@ -47,7 +47,7 @@ Dependendo do tamanho e da estrutura de sua organização, vários indivíduos e
 
 ![Funções](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig01-new.png)
 
-A Central de Segurança permite que essas pessoas atendam a várias responsabilidades. Por exemplo: 
+A Central de Segurança permite que essas pessoas atendam a várias responsabilidades. Por exemplo:
 
 **Matheus (proprietário da carga de trabalho)**
 
@@ -116,7 +116,7 @@ Ao planejar o controle de acesso usando o RBAC para a Central de Segurança, com
 >
 >
 
-## <a name="security-policies-and-recommendations"></a>Políticas de segurança e recomendações 
+## <a name="security-policies-and-recommendations"></a>Políticas de segurança e recomendações
 Uma política de segurança define a configuração desejada de suas cargas de trabalho e ajuda a garantir a conformidade com requisitos de regulamentação de segurança ou da empresa. Na Central de Segurança, você pode definir políticas para suas assinaturas do Azure, que podem ser adaptadas para o tipo de carga de trabalho ou a confidencialidade dos dados.
 
 As políticas de Central de Segurança contêm os seguintes componentes:
