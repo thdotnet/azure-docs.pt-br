@@ -9,10 +9,10 @@ ms.date: 01/28/2018
 ms.author: robb
 ms.subservice: alerts
 ms.openlocfilehash: 6fb49baf8ab58ae6cfe7639cedcc4466810c8b96
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60347394"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Visão geral dos alertas no Microsoft Azure 
@@ -148,7 +148,7 @@ Clique em Total de Alertas para ver a página com todos os alertas. Nela, é pos
 | Assinatura | Selecione até cinco assinaturas do Azure. Somente os alertas nas assinaturas selecionadas são incluídos na exibição. |
 | Grupo de recursos | Selecione um único grupo de recursos. Somente alertas com destinos no grupo de recursos selecionado são incluídos na exibição. |
 | Tipo de recurso | Selecione um ou mais tipos de recurso. Somente alertas com destinos do tipo selecionado são incluídos na exibição. Essa coluna somente estará disponível depois que um grupo de recursos for especificado. |
-| Recurso | Selecione um recurso. Apenas alertas com esse recurso como um destino são incluídos na exibição. Essa coluna somente estará disponível depois que um tipo de recurso for especificado. |
+| Resource | Selecione um recurso. Apenas alertas com esse recurso como um destino são incluídos na exibição. Essa coluna somente estará disponível depois que um tipo de recurso for especificado. |
 | Severity | Selecione uma gravidade de alerta ou selecione *Todos* para incluir alertas de todas as gravidades. |
 | Monitorar condição | Selecione uma condição de monitor ou selecione *Todos* incluir alertas de condições. |
 | Estado de alerta | Selecione um estado de alerta ou selecione *Todos* para incluir alertas de estados. |
@@ -164,7 +164,7 @@ A página de detalhes do Alerta é exibida ao selecionar um alerta. Ela fornece 
 
 A página de detalhes do alerta inclui as seções a seguir.
 
-| Seção | DESCRIÇÃO |
+| `Section` | DESCRIÇÃO |
 |:---|:---|
 | Conceitos básicos | Exibe as propriedades e outras informações significativas sobre o alerta. |
 | Histórico | Lista cada ação realizada pelo alerta e todas as alterações feitas no alerta. Atualmente limitado a alterações de estado. |
@@ -179,7 +179,7 @@ O recurso de alerta do log de atividades e de métricas do Azure Monitor anterio
 Para saber mais, confira [Alertas clássicos](./../../azure-monitor/platform/alerts-classic.overview.md)
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Saiba mais sobre os grupos inteligentes](https://aka.ms/smart-groups)
 - [Saiba mais sobre grupos de ação](../../azure-monitor/platform/action-groups.md)

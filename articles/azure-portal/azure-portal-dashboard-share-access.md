@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 08/01/2016
 ms.author: tomfitz
 ms.openlocfilehash: fbbc8a4f636a95d18baa0dc5de541279ce36789b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60551889"
 ---
 # <a name="share-azure-dashboards-by-using-role-based-access-control"></a>Compartilhar painéis do Azure usando o Controle de Acesso Baseado em Função
@@ -36,7 +36,7 @@ Com o RBAC (Controle de Acesso Baseado em Função), você pode atribuir usuári
 
 * subscription
 * grupo de recursos
-* recurso
+* resource
 
 As permissões atribuídas são herdadas da assinatura até o recurso. O painel publicado é um recurso. Portanto, você já pode ter os usuários atribuídos a funções da assinatura que também funcionam para o painel publicado. 
 

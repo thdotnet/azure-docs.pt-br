@@ -10,10 +10,10 @@ ms.assetid: bdf27b4d-6f58-4093-ab83-4fa3a99b5650
 ms.topic: conceptual
 ms.date: 08/02/2017
 ms.openlocfilehash: 905100f8a1444f6f6ee18d3bf9e9eab2ede8c805
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60616046"
 ---
 # <a name="use-job-browser-and-job-view-for-azure-data-lake-analytics"></a>Usar o Navegador de Trabalhos e a Exibição de Trabalho para o Azure Data Lake Analytics
@@ -88,7 +88,7 @@ A Exibição de Trabalho contém:
     * SV1 Extract: o nome de um estágio, nomeado por um número e pelo método da operação.
     * 84 vértices: a contagem total de vértices neste estágio. O número indica em quantas partes o trabalho está dividido nesse estágio.
     * 12,9 s/vértice: o tempo de execução de vértice médio para este estágio. Esse número é calculado pela SOMA (tempo de execução de todos os vértices) / (contagem total de vértices). Isso significa que se você puder atribuir todos os vértices executados em paralelismo, o estágio inteiro será concluído em 12,9 s. Isso também significa que se todo o trabalho neste estágio for feito em série, o custo seria nº. de vértices * tempo MÉDIO.
-    * 850.895 linhas gravadas: contagem total de linhas gravadas nesse estágio.
+    * 850\.895 linhas gravadas: contagem total de linhas gravadas nesse estágio.
     * L/G: a quantidade de dados lidos/gravados nesse estágio, em bytes.
     * Cores: cores são usadas no estágio para indicar status de vértice diferentes.
       

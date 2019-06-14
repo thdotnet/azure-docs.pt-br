@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: mbullwin
 ms.openlocfilehash: 0f348e3e7dc2812bf354d1f8ec86330b0742439a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60373637"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Recursos, funções e controle de acesso no Application Insights
@@ -99,7 +99,7 @@ Quando aplicável, vincular a documentação de referência oficial associada.
 | [Leitor de monitoramento](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) | Pode ler todos os dados de monitoramento. |
 | Colaborador da Política de Recursos (Versão prévia) | Os usuários preenchidos da EA, com direitos para criar / modificar a política de recursos, criam tickets de suporte e leem recursos / hierarquias.  |
 | [Administrador de Acesso do Usuário](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) | Permite que um usuário gerencie o acesso de outros usuários aos recursos do Azure.|
-| [Colaborador do Site](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#website-contributor) | Permite gerenciar sites (não planos da web), mas não acessá-los..|
+| [Colaborador do Site](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#website-contributor) | Permite gerenciar sites (não planos da web), mas não acessá-los.|
 
 A 'edição' inclui a criação, a exclusão e a atualização:
 

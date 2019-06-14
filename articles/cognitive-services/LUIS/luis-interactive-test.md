@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
 ms.openlocfilehash: 51c6a58567b35c9b8486d8634b0bed1af7218994
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60198999"
 ---
 # <a name="test-your-luis-app-in-the-luis-portal"></a>Testar seu aplicativo LUIS no portal do LUIS
@@ -63,7 +63,7 @@ Inspecione detalhes do resultado do teste no painel **Inspecionar**.
 
 ## <a name="view-sentiment-results"></a>Exibir resultados de sentimento
 
-Se a **Análise de sentimento** estiver configurada na página **[Publicar](luis-how-to-publish-app.md#enable-sentiment-analysis)**, os resultados de teste incluirão o sentimento encontrado na declaração. 
+Se a **Análise de sentimento** estiver configurada na página **[Publicar](luis-how-to-publish-app.md#enable-sentiment-analysis)** , os resultados de teste incluirão o sentimento encontrado na declaração. 
 
 ![Imagem do painel de Teste com análise de sentimento](./media/luis-how-to-interactive-test/sentiment.png)
 
@@ -103,9 +103,9 @@ Use o seguinte procedimento para incluir o serviço [Verificação Ortográfica 
 
 1. No painel **Teste**, insira uma declaração. Quando as declarações são previstas, selecione **[Inspecionar](#inspect-score)** embaixo da declaração inserida. 
 
-2. Quando o painel **Inspecionar** abrir, selecione **[Comparar com publicado](#compare-with-published-version)**. 
+2. Quando o painel **Inspecionar** abrir, selecione **[Comparar com publicado](#compare-with-published-version)** . 
 
-3. Quando o painel **Publicado** abrir, selecione **[Configurações Adicionais](#additional-settings-in-test-panel)**.
+3. Quando o painel **Publicado** abrir, selecione **[Configurações Adicionais](#additional-settings-in-test-panel)** .
 
 4. Na caixa de diálogo pop-up, insira sua chave de serviço da **Verificação Ortográfica do Bing**. 
     ![Inserir chave de serviço da Verificação Ortográfica do Bing](./media/luis-how-to-interactive-test/interactive-with-spell-check-service-key.png)

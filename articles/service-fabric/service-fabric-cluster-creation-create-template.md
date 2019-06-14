@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 08/16/2018
 ms.author: aljo
 ms.openlocfilehash: 2fdea1f088dd6eabdf7d72342c837d976133a1bc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60386867"
 ---
 # <a name="create-a-service-fabric-cluster-resource-manager-template"></a>Criar um modelo do Resource Manager do cluster do Service Fabric
@@ -258,7 +258,7 @@ O diagrama a seguir ilustra onde a configuração do cofre de chaves e do Azure 
 
 ![Mapa de dependências do Resource Manager][cluster-security-arm-dependency-map]
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Agora que você tem um modelo para o cluster, saiba como [implantar o cluster no Azure](service-fabric-cluster-creation-via-arm.md).  Se você ainda não tiver feito isso, leia a [Lista de verificação de preparação para produção](service-fabric-production-readiness-checklist.md) antes de implantar um cluster de produção.
 
 Para saber mais sobre as propriedades e a sintaxe JSON dos recursos implantados neste artigo, consulte:

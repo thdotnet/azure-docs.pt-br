@@ -13,10 +13,10 @@ ms.topic: troubleshooting
 ms.date: 11/16/2018
 ms.author: genli
 ms.openlocfilehash: 3a8e005f8678deef9fc4aebd2d620619fe6074bc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60307270"
 ---
 # <a name="how-to-reset-network-interface-for-azure-windows-vm"></a>Como redefinir o adaptador de rede de uma VM Windows do Azure 
@@ -79,7 +79,7 @@ Para redefinir o adaptador de rede, siga estas etapas:
 #### <a name="use-azure-portal"></a>Usar o portal do Azure
 
 1.  Vá para o [Portal do Azure]( https://ms.portal.azure.com).
-2.  Selecione **Máquinas Virtuais (Clássicas)**.
+2.  Selecione **Máquinas Virtuais (Clássicas)** .
 3.  Selecione a Máquina Virtual afetada.
 4.  Selecione **Endereços IP**.
 5.  Se a **Atribuição de IP privado** não for **Estática**, altere-a para **Estática**.

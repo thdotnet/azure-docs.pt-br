@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 08/13/2018
 ms.author: asrastog
 ms.openlocfilehash: 94d3599fe919cf648be7115be68002d2aa458ee3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60400636"
 ---
 # <a name="iot-hub-message-routing-query-syntax"></a>Sintaxe de consulta do roteamento de mensagens do Hub IoT
@@ -66,7 +66,7 @@ Propriedades do aplicativo são cadeias de caracteres definidas pelo usuário qu
 
 ### <a name="query-expressions"></a>Expressões de consulta
 
-Um consulta às propriedades do sistema de mensagens deve ser prefixada com o símbolo `$`. Consultas às propriedades do aplicativo são acessadas com o nome delas e não devem ser prefixadas com o símbolo `$`. Se um nome de propriedade do aplicativo começa com `$`, então o Hub IoT irá pesquisá-lo nas propriedades do sistema e, se não for encontrado, ele irá procurar nas propriedades do aplicativo. Por exemplo:  
+Um consulta às propriedades do sistema de mensagens deve ser prefixada com o símbolo `$`. Consultas às propriedades do aplicativo são acessadas com o nome delas e não devem ser prefixadas com o símbolo `$`. Se um nome de propriedade do aplicativo começa com `$`, então o Hub IoT irá pesquisá-lo nas propriedades do sistema e, se não for encontrado, ele irá procurar nas propriedades do aplicativo. Por exemplo: 
 
 Para consultar a propriedade do sistema contentEncoding 
 
@@ -210,7 +210,7 @@ $body.Weather.Temperature = 50 AND $twin.properties.desired.telemetryConfig.send
 $twin.tags.deploymentLocation.floor = 1 
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * Saiba mais sobre [roteamento de mensagens](iot-hub-devguide-messages-d2c.md).
 * Experimente o [tutorial de roteamento da mensagens](tutorial-routing.md).

@@ -17,10 +17,10 @@ ms.workload: iaas-sql-server
 ms.date: 06/11/2018
 ms.author: mikeray
 ms.openlocfilehash: a758cce85645e72bfd9434a69393133d3da6b57d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60591555"
 ---
 # <a name="configure-sql-server-failover-cluster-instance-on-azure-virtual-machines"></a>Configurar a instância de Cluster de Failover do SQL Server em máquinas virtuais do Azure
@@ -238,7 +238,7 @@ Valide o cluster na interface do usuário ou com o PowerShell.
 Para validar o cluster com a interface do usuário, execute as etapas a seguir em uma das máquinas virtuais.
 
 1. Em **Gerenciador do Servidor**, clique em **Ferramentas** e clique em **Gerenciador de Cluster de Failover**.
-1. Em **Gerenciador de Cluster de Failover**, clique em **Ação** e clique em **Validar Configuração...**.
+1. Em **Gerenciador de Cluster de Failover**, clique em **Ação** e clique em **Validar Configuração...** .
 1. Clique em **Avançar**.
 1. Em **Selecionar Servidores ou um Cluster**, digite o nome de ambas as máquinas virtuais.
 1. Em **Opções de teste**, escolha **Executar apenas os testes selecionados**. Clique em **Avançar**.
@@ -416,12 +416,12 @@ Para criar o balanceador de carga:
    - **Nome**: um nome para a regras de balanceamento de carga.
    - **Endereço IP de front-end**: use o endereço IP do recurso de rede de cluster de FCI do SQL Server.
    - **Porta**: definido para a porta TCP da FCI do SQL Server. A porta de instância padrão é 1433.
-   - **Porta de back-end**: esse valor usa a mesma porta que o valor de **Porta** quando você habilita **IP flutuante (retorno de servidor direto)**.
+   - **Porta de back-end**: esse valor usa a mesma porta que o valor de **Porta** quando você habilita **IP flutuante (retorno de servidor direto)** .
    - **Pool de back-end**: use o nome do pool de back-end que você já configurou.
    - **Investigação de integridade**: use a investigação de integridade que você já configurou.
    - **Persistência de sessão**: Nenhuma.
-   - **Tempo limite de ociosidade (minutos)**: 4.
-   - **IP flutuante (retorno de servidor direto)**: Enabled
+   - **Tempo limite de ociosidade (minutos)** : 4.
+   - **IP flutuante (retorno de servidor direto)** : Enabled
 
 1. Clique em **OK**.
 

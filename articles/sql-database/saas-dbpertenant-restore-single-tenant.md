@@ -13,10 +13,10 @@ ms.reviewer: billgib
 manager: craigg
 ms.date: 12/04/2018
 ms.openlocfilehash: 4059b0f979e7e6856905f1759129167d62d7b5f5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60326305"
 ---
 # <a name="restore-a-single-tenant-with-a-database-per-tenant-saas-application"></a>Restaurar um único locatário com um aplicativo de banco de dados por locatário SaaS
@@ -76,7 +76,7 @@ Para demonstrar esses cenários de recuperação, precisamos excluir “acidenta
 
 1. No ISE do PowerShell, abra ... \\Módulos de aprendizado\\Continuidade de negócios e recuperação de desastres\\RestoreTenant\\*Demo-RestoreTenant.ps1* e defina o seguinte valor:
 
-   * **$DemoScenario** = **1**, *Excluir o último evento (sem venda de ingressos)*.
+   * **$DemoScenario** = **1**, *Excluir o último evento (sem venda de ingressos)* .
 2. Pressione F5 para executar o script e excluir o último evento. A seguinte mensagem de confirmação é exibida:
 
    ```Console
@@ -124,7 +124,7 @@ Você restaurou com êxito o banco de dados para um ponto no tempo antes da excl
 
 Depois de restaurar o banco de dados, levará mais 10 a 15 minutos antes de o primeiro backup completo ficar disponível para restauração.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Neste tutorial, você aprendeu como:
 

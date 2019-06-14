@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: abnarain
 ms.openlocfilehash: 635b45fe7f0108795c34f51081fa374c604036b2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66153263"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Considerações sobre segurança para movimentação de dados no Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 >
 > * [Versão 1](v1/data-factory-data-movement-security-considerations.md)
 > * [Versão atual](data-movement-security-considerations.md)
@@ -79,10 +79,10 @@ Caso o armazenamento de dados em nuvem dê suporte a HTTPS ou TLS, todas as tran
 ### <a name="data-encryption-at-rest"></a>Criptografia de dados em repouso
 Alguns armazenamentos de dados dão suporte à criptografia de dados em repouso. Recomendamos que você habilite o mecanismo de criptografia de dados nesses armazenamentos de dados. 
 
-#### <a name="azure-sql-data-warehouse"></a>SQL Data Warehouse do Azure
+#### <a name="azure-sql-data-warehouse"></a>Azure SQL Data Warehouse
 A TDE (Transparent Data Encryption) no SQL Data Warehouse do Azure ajuda a proteger contra a ameaça de atividades mal-intencionadas por meio da execução de criptografia e descriptografia de seus dados em repouso. Esse comportamento é transparente para o cliente. Para obter mais informações, consulte [Proteger um banco de dados no SQL Data Warehouse](../sql-data-warehouse/sql-data-warehouse-overview-manage-security.md).
 
-#### <a name="azure-sql-database"></a>Banco de Dados SQL do Azure
+#### <a name="azure-sql-database"></a>Banco de dados SQL do Azure
 O Banco de Dados SQL do Azure também dá suporte à TDE (Transparent Data Encryption), que ajuda a proteger contra ameaças de atividades mal-intencionadas por meio da execução de criptografia e descriptografia em tempo real dos dados, sem a necessidade de alterações no aplicativo. Esse comportamento é transparente para o cliente. Para obter mais informações, consulte [Transparent Data Encryption para o Banco de Dados SQL e SQL Warehouse](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql).
 
 #### <a name="azure-data-lake-store"></a>Repositório Azure Data Lake
@@ -135,11 +135,11 @@ A Rede Virtual do Azure é uma representação lógica de sua rede na nuvem. Voc
 
 A tabela a seguir resume as recomendações de configuração de rede e tempo de execução de integração auto-hospedado de acordo com diferentes combinações dos locais de origem e de destino para a movimentação de dados híbridos.
 
-| `Source`      | Destino                              | Configuração da rede                    | Configuração do tempo de execução de integração                |
+| source      | Destino                              | Configuração de rede                    | Configuração do tempo de execução de integração                |
 | ----------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Local | Máquinas virtuais e serviços de nuvem implantados em redes virtuais | VPN IPsec (ponto a site ou site a site) | O tempo de execução de integração auto-hospedado deve ser instalado em uma máquina virtual do Azure na rede virtual.  |
-| Local | Máquinas virtuais e serviços de nuvem implantados em redes virtuais | ExpressRoute (emparelhamento privado)           | O tempo de execução de integração auto-hospedado deve ser instalado em uma máquina virtual do Azure na rede virtual.  |
-| Local | Serviços baseados no Azure que têm um ponto de extremidade público | ExpressRoute (emparelhamento da Microsoft)            | O tempo de execução de integração auto-hospedado pode ser instalado localmente ou em uma máquina virtual do Azure. |
+| Configuração local | Máquinas virtuais e serviços de nuvem implantados em redes virtuais | VPN IPsec (ponto a site ou site a site) | O tempo de execução de integração auto-hospedado deve ser instalado em uma máquina virtual do Azure na rede virtual.  |
+| Configuração local | Máquinas virtuais e serviços de nuvem implantados em redes virtuais | ExpressRoute (emparelhamento privado)           | O tempo de execução de integração auto-hospedado deve ser instalado em uma máquina virtual do Azure na rede virtual.  |
+| Configuração local | Serviços baseados no Azure que têm um ponto de extremidade público | ExpressRoute (emparelhamento da Microsoft)            | O tempo de execução de integração auto-hospedado pode ser instalado localmente ou em uma máquina virtual do Azure. |
 
 As imagens a seguir mostram o uso do tempo de execução de integração auto-hospedado para mover dados entre um banco de dados local e os serviços do Azure usando o ExpressRoute e a VPN IPsec (com a Rede Virtual do Azure):
 
@@ -158,7 +158,7 @@ Em uma empresa, um firewall corporativo é executado no roteador central da orga
 
 A tabela a seguir fornece os requisitos de porta de saída e de domínio dos firewalls corporativos:
 
-| Nomes de domínio                  | Portas de saída | Descrição                              |
+| Nomes de domínio                  | Portas de saída | DESCRIÇÃO                              |
 | ----------------------------- | -------------- | ---------------------------------------- |
 | `*.servicebus.windows.net`    | 443            | Necessárias para que o tempo de execução de integração auto-hospedado se conecte aos serviços de movimentação de dados no Data Factory. |
 | `*.frontend.clouddatahub.net` | 443            | Necessárias para que o tempo de execução de integração auto-hospedado se conecte ao serviço do Data Factory. |
@@ -172,7 +172,7 @@ A tabela a seguir fornece os requisitos de porta de saída e de domínio dos fir
 
 A tabela a seguir fornece os requisitos de porta de entrada do Firewall do Windows:
 
-| Portas de entrada | Descrição                              |
+| Portas de entrada | DESCRIÇÃO                              |
 | ------------- | ---------------------------------------- |
 | 8060 (TCP)    | Exigido pelo cmdlet de criptografia do PowerShell conforme descrito em [Criptografar credenciais para armazenamentos de dados locais no Azure Data Factory](encrypt-credentials-self-hosted-integration-runtime.md), e pelo aplicativo gerenciador de credenciais para definir credenciais com segurança para armazenamentos de dados locais no tempo de execução de integração auto-hospedado. |
 

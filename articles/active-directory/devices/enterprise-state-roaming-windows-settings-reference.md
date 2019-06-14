@@ -18,10 +18,10 @@ ms.date: 01/30/2019
 ms.author: joflore
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e6c80ee5d2a4d72be131c6a781cf793d1981e780
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60353206"
 ---
 # <a name="windows-10-roaming-settings-reference"></a>Referência de configurações de roaming do Windows 10
@@ -30,12 +30,12 @@ A seguir, uma lista completa de todas as configurações que serão ser movidas 
 ## <a name="devices-and-endpoints"></a>Dispositivos e pontos de extremidade
 Veja a tabela a seguir para obter um resumo dos dispositivos e dos tipos de conta compatíveis com a estrutura de sincronização, de backup e de restauração no Windows 10.
 
-| Tipo e operação de conta | Desktop | Móvel |
+| Tipo e operação de conta | Desktop | Celular |
 | --- | --- | --- |
-| Active Directory do Azure: sincronização |Sim |Não  |
-| Active Directory do Azure: backup/restauração |Não  |Não  |
+| Active Directory do Azure: sincronização |Sim |Não |
+| Active Directory do Azure: backup/restauração |Não |Não |
 | Conta da Microsoft: sincronização |Sim |Sim |
-| Conta da Microsoft: backup/restauração |Não  |Sim |
+| Conta da Microsoft: backup/restauração |Não |Sim |
 
 ## <a name="what-is-backup"></a>O que é backup?
 As configurações do Windows geralmente são sincronizadas por padrão, mas algumas configurações são incluídas apenas no backup, como a lista de aplicativos instalados em um dispositivo. O backup é destinado somente a dispositivos móveis e atualmente não está disponível para usuários do Enterprise State Roaming. O backup usa uma conta da Microsoft e armazena as configurações e dados do aplicativo no OneDrive. Se um usuário desabilitar a sincronização no dispositivo usando o aplicativo Configurações, os dados de aplicativo que normalmente são sincronizados se tornarão somente backup. Os dados de backup só podem ser acessados por meio da operação de restauração durante a primeira execução de um novo dispositivo. Os backups podem ser desabilitados por meio de configurações do dispositivo e podem ser gerenciados e excluídos por meio da conta do OneDrive do usuário.
@@ -67,7 +67,7 @@ Na tabela a seguir, Outras entradas na coluna Grupo de Configurações refere-se
 As entradas internas na coluna Grupo de Configurações referem-se às configurações e aos aplicativos que só podem ter a sincronização desabilitada no próprio aplicativo ou por meio da desabilitação da sincronização do dispositivo inteiro usando o gerenciamento de dispositivos móveis (MDM) ou as configurações da Política de Grupo.
 As configurações que não forem movidas ou sincronizadas não pertencerão a um grupo.
 
-| Configurações | Desktop | Móvel | Agrupar |
+| Configurações | Desktop | Celular | Agrupar |
 | --- | --- | --- | --- |
 | **Contas**: imagem da conta |sync |X |Tema |
 | **Contas**: outras configurações de conta |X |X | |
@@ -76,19 +76,19 @@ As configurações que não forem movidas ou sincronizadas não pertencerão a u
 | **Lista de aplicativos**: lista de aplicativos instalados |X |backup |Outros |
 | **Bluetooth**: todas as configurações do Bluetooth |X |X | |
 | **Prompt de comando**: configurações "Padrão " de prompt de comando |sync |X |interno |
-| **Credenciais**: Cofre de credenciais |sync |sync |Senha |
-| **Data, Hora e Região**: horário automático (sincronização de horário da Internet) |sync |sync |Linguagem |
-| **Data, Hora e Região**: Relógio de 24 horas |sync |X |Linguagem |
-| **Data, Hora e Região**: data e hora |sync |X |Linguagem |
-| **Data, Hora e Região**: fuso horário | |X |Linguagem |
-| **Data, Hora e Região**: horário de verão |sync |X |Linguagem |
-| **Data, Hora e Região**: país/região |sync |X |Linguagem |
-| **Data, Hora e Região**: primeiro dia da semana |sync |X |Linguagem |
-| **Data, Hora e Região**: formato de região (localidade) |sync |X |Linguagem |
-| **Data, Hora e Região**: data abreviada |sync |X |Linguagem |
-| **Data, Hora e Região**: data longa |sync |X |Linguagem |
+| **Credenciais**: Cofre de credenciais |sync |sync |password |
+| **Data, Hora e Região**: horário automático (sincronização de horário da Internet) |sync |sync |language |
+| **Data, Hora e Região**: Relógio de 24 horas |sync |X |language |
+| **Data, Hora e Região**: data e hora |sync |X |language |
+| **Data, Hora e Região**: fuso horário | |X |language |
+| **Data, Hora e Região**: horário de verão |sync |X |language |
+| **Data, Hora e Região**: país/região |sync |X |language |
+| **Data, Hora e Região**: primeiro dia da semana |sync |X |language |
+| **Data, Hora e Região**: formato de região (localidade) |sync |X |language |
+| **Data, Hora e Região**: data abreviada |sync |X |language |
+| **Data, Hora e Região**: data longa |sync |X |language |
 | **Data, Hora e Região**: hora abreviada |sync |X |idioma |
-| **Data, Hora e Região**: hora longa |sync |X |Linguagem |
+| **Data, Hora e Região**: hora longa |sync |X |language |
 | **Personalização da área de trabalho**: tema da área de trabalho (tela de fundo, cor do sistema, sons do sistema padrão, proteção de tela) |sync |X |Tema |
 | **Personalização da área de trabalho**: papel de parede de apresentação de slides |sync |X |Tema |
 | **Personalização da área de trabalho**: configurações da barra de tarefas (posição, ocultar automaticamente etc.) |sync |X |Tema |
@@ -181,7 +181,7 @@ As configurações que não forem movidas ou sincronizadas não pertencerão a u
 ###### <a name="footnote-1"></a>Nota de rodapé 1
 Versão mínima do SO com suporte da Atualização do Windows para Criadores (Build 15063). 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Para obter uma visão geral, confira [visão geral do Enterprise State Roaming](enterprise-state-roaming-overview.md).
 

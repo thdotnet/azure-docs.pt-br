@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4d420c64c5834f7d3cb11d2f5f59e3ed85a54891
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60386917"
 ---
 # <a name="azure-ad-connect-how-to-recover-from-localdb-10-gb-limit"></a>Azure AD Connect: Como se recuperar de um limite de 10 GB do LocalDB
@@ -29,7 +29,7 @@ O Azure AD Connect requer um banco de dados do SQL Server para armazenar dados d
 ## <a name="symptoms"></a>Sintomas
 Há dois sintomas comuns:
 
-* O Serviço de sincronização do Azure do AD Connect **está em execução**, mas não consegue sincronizar com o erro *"stopped-database-disk-full"*.
+* O Serviço de sincronização do Azure do AD Connect **está em execução**, mas não consegue sincronizar com o erro *"stopped-database-disk-full"* .
 
 * Serviço de sincronização do Azure do AD Connect **não pode iniciar**. Quando você tentar iniciar o serviço, ele falha com o evento 6323 e mensagem de erro *"o servidor encontrou um erro porque o SQL Server está sem espaço em disco“.*
 

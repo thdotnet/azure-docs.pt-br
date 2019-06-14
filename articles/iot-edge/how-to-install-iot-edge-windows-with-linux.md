@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: kgremban
 ms.openlocfilehash: b7386cbbe18d7e05c2fbffb96f6214b468956192
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66151698"
 ---
 # <a name="use-iot-edge-on-windows-to-run-linux-containers"></a>Usar o IoT Edge no Windows para executar contêineres do Linux
@@ -66,7 +66,7 @@ Você pode ler mais sobre as opções de instalação diferente e os parâmetros
 2. Execute o PowerShell como administrador.
 
    >[!NOTE]
-   >Use uma sessão de AMD64 do PowerShell para instalar o IoT Edge, PowerShell (x86). Se você não tiver certeza de qual tipo de sessão que você está usando, execute o seguinte comando:
+   >Use uma sessão do AMD64 do PowerShell para instalar o IoT Edge e não o PowerShell (x86). Se não tiver certeza de qual tipo de sessão você está usando, execute o seguinte comando:
    >
    >```powershell
    >(Get-Process -Id $PID).StartInfo.EnvironmentVariables["PROCESSOR_ARCHITECTURE"]

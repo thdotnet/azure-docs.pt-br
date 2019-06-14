@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: d4d837bb49e4ce80340d59f8a01334f3c80ff413
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60402848"
 ---
 # <a name="net-multi-tier-application-using-azure-service-bus-queues"></a>Aplicativo multicamadas .NET usando filas do Barramento de Serviço do Azure
@@ -72,7 +72,7 @@ Depois, adiciona o código que envia os itens para uma fila do Barramento de Ser
 1. Usando os privilégios de administrador, inicie o Visual Studio: clique com o botão direito no ícone do programa do **Visual Studio**, em seguida, clique em **Executar como administrador**. O emulador de computação do Azure, discutido mais adiante neste artigo, exige iniciar o Visual Studio com privilégios de administrador.
    
    No Visual Studio, no menu **Arquivo**, clique em **Novo** e clique em **Projeto**.
-2. Em **Modelos Instalados**, em **Visual C#**, clique em **Nuvem** e em **Serviço de Nuvem do Azure**. Nomeie o projeto como **AppVáriasCamadas**. Em seguida, clique em **OK**.
+2. Em **Modelos Instalados**, em **Visual C#** , clique em **Nuvem** e em **Serviço de Nuvem do Azure**. Nomeie o projeto como **AppVáriasCamadas**. Em seguida, clique em **OK**.
    
    ![][9]
 3. No painel **Funções**, clique duas vezes em **Função Web ASP.NET**.

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 6e5895392db1d75a985674bf2f878a84bc8dd926
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60310993"
 ---
 # <a name="distributed-tracing-and-correlation-through-service-bus-messaging"></a>Rastreamento distribuído e correlação por meio de mensagens do Barramento de Serviço
@@ -139,7 +139,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 Neste exemplo, o ouvinte registra duração, resultado, identificador exclusivo e a hora de início para cada operação de Barramento de Serviço.
 
-#### <a name="events"></a>Eventos
+#### <a name="events"></a>Events
 
 Para cada operação, dois eventos são enviados: 'Iniciar' e 'Parar'. Provavelmente, você só está interessado em eventos de 'Stop'. Eles fornecem o resultado da operação, bem como hora de início e duração como propriedades de uma atividade.
 

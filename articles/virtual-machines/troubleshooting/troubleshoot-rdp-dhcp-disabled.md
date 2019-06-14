@@ -14,10 +14,10 @@ ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
 ms.openlocfilehash: daddb859c6bfc6309ef833c6c6c3ea43c70f1889
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60362281"
 ---
 #  <a name="cannot-rdp-to-azure-virtual-machines-because-the-dhcp-client-service-is-disabled"></a>Não é possível RDP para máquinas virtuais do Azure porque o serviço de cliente DHCP está desativado
@@ -124,7 +124,7 @@ Para resolver esse problema, use o controle serial para ativar o DHCP ou [redefi
 
     1. [Anexar um disco de dados à VM](../windows/attach-managed-disk-portal.md
 ).
-    2. Use o Console Serial, você pode copiar o arquivo para a nova unidade. Por exemplo, `copy C:\temp\ProcMonTrace.PML F:\`. Nesse comando, F é a letra do driver do disco de dados anexado. Substitua a letra conforme apropriado pelo valor correto.
+    2. Use o Console Serial, você pode copiar o arquivo para a nova unidade. Por exemplo: `copy C:\temp\ProcMonTrace.PML F:\`. Nesse comando, F é a letra do driver do disco de dados anexado. Substitua a letra conforme apropriado pelo valor correto.
     3. Desanexe a unidade de dados e conecte-a à uma VM funcional que tenha o ubstakke do Process Monitor instalado.
 
 6. Abra **ProcMonTrace.PML** usando o Process Monitor na VM funcional. Em seguida, filtre por  **O resultado é ACCESS DENIED**, conforme mostrado na seguinte imagem:

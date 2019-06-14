@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/01/2019
 tags: connectors
 ms.openlocfilehash: 5a1bfe8ca38fc23f09b13195fb8ca5bd443a4afd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60312520"
 ---
 # <a name="upload-and-manage-files-in-dropbox-by-using-azure-logic-apps"></a>Carregar e gerenciar arquivos no Dropbox usando aplicativos lógicos do Azure
@@ -57,7 +57,7 @@ Na lista de ações, selecione esta ação: **Obter o conteúdo do arquivo usand
 
 1. Se você já não tiver autorizado a aplicativos de lógicos do Azure para acessar o Dropbox, autorize o acesso agora.
 
-1. Para navegar até o caminho do arquivo que você deseja usar, ao lado de **caminho do arquivo** , escolha as reticências (**...** ) botão. 
+1. Para navegar até o caminho do arquivo que você deseja usar, ao lado de **caminho do arquivo** , escolha as reticências ( **...** ) botão. 
 
    Você também pode clicar dentro de **caminho do arquivo** caixa e, em seguida, na lista de conteúdo dinâmica, selecione **caminho do arquivo**, cujo valor está disponível como saída do gatilho que você adicionou na seção anterior.
 

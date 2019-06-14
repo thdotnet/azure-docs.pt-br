@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 08/23/2018
 tags: connectors
 ms.openlocfilehash: 7785d1788e8d5e9b432a8189345f293ebf05ef7c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60313909"
 ---
 # <a name="manage-ibm-db2-resources-with-azure-logic-apps"></a>Gerenciar recursos do IBM DB2 com os Aplicativos Lógicos do Azure
@@ -85,7 +85,7 @@ Para configurar sua conexão, forneça estes detalhes de conexão quando solicit
 
 | Propriedade | Obrigatório | DESCRIÇÃO |
 |----------|----------|-------------|
-| **Conectar-se por meio do gateway local** | Não  | Aplica-se somente para conexões locais. |
+| **Conectar-se por meio do gateway local** | Não | Aplica-se somente para conexões locais. |
 | **Nome da Conexão** | Sim | O nome da sua conexão, por exemplo, "MyLogicApp-DB2-connection" |
 | **Servidor** | Sim | O endereço ou alias dois pontos número da porta para seu servidor DB2, por exemplo, "myDB2server.cloudapp.net:50000" <p><p>**Observação**: Esse valor é uma cadeia de caracteres que representa um endereço TCP/IP ou alias, no formato IPv4 ou IPv6, seguido por dois-pontos e um número de porta TCP/IP. |
 | **Banco de dados** | Sim | O nome do seu banco de dados <p><p>**Observação**: Esse valor é uma cadeia de caracteres que representa um nome de banco de dados relacional DRDA (RDBNAM): <p>– O DB2 para z/OS aceita uma cadeia de caracteres de 16 bytes e que o banco de dados é conhecido como um local "IBM DB2 para z/OS". <br>– O DB2 para i aceita uma cadeia de caracteres de 18 bytes em que o banco de dados é conhecido como um banco de dados relacional "IBM DB2 para i". <br>– O DB2 para LUW aceita uma cadeia de caracteres de 8 bytes. |
@@ -93,7 +93,7 @@ Para configurar sua conexão, forneça estes detalhes de conexão quando solicit
 | **Senha** | Sim | Sua senha do banco de dados |
 ||||
 
-Por exemplo: 
+Por exemplo:
 
 ![Detalhes de conexão para bancos de dados baseados em nuvem](./media/connectors-create-api-db2/create-db2-cloud-connection.png)
 
@@ -115,7 +115,7 @@ Antes de criar sua conexão, é necessário já ter o gateway de dados local ins
 | **Gateway** | Sim | O nome do seu gateway de dados local instalado <p><p>**Observação**: Selecione esse valor na lista, que inclui todos os gateways de dados instalados em sua assinatura do Azure e o grupo de recursos. |
 ||||
 
-Por exemplo: 
+Por exemplo:
 
 ![Detalhes da conexão para bancos de dados locais](./media/connectors-create-api-db2/create-db2-on-premises-connection.png)
 
@@ -242,7 +242,7 @@ Para adicionar um único registro a uma tabela do banco de dados DB2, use a aç�
    | **ID da região** | Sim | A ID da região a ser adicionada, como "102" |
    |||| 
 
-   Por exemplo: 
+   Por exemplo:
 
    ![Selecionar tabela](./media/connectors-create-api-db2/db2-insert-row-action-select-table.png)
 
@@ -290,7 +290,7 @@ Para atualizar um único registro em uma tabela do banco de dados DB2, use a aç
    | **ID da região** | Sim | A nova ID da região, como "102" |
    ||||
 
-   Por exemplo: 
+   Por exemplo:
 
    ![Selecionar tabela](./media/connectors-create-api-db2/db2-update-row-action-select-table.png)
 
@@ -335,7 +335,7 @@ Para excluir um único registro de uma tabela do banco de dados DB2, use a açã
    | **ID da linha** | Sim | A ID do registro a ser excluído, como "99999" |
    ||||
 
-   Por exemplo: 
+   Por exemplo:
 
    ![Selecionar tabela](./media/connectors-create-api-db2/db2-delete-row-action-select-table.png)
 

@@ -14,10 +14,10 @@ ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
 ms.openlocfilehash: 550b971602d1736e0ba3981a5b7ca546862ea034
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60318945"
 ---
 # <a name="remote-desktop-license-server-isnt-available-when-you-connect-to-an-azure-vm"></a>O servidor de licenças da Área de Trabalho Remota não está disponível quando você se conecta a uma VM do Azure
@@ -63,7 +63,7 @@ Para resolver esse problema, [faça backup do disco de SO](../windows/snapshot-c
 
     Se você não conseguir se conectar à VM usando uma sessão administrativa, poderá usar o [Console Serial da Máquina Virtual no Azure](serial-console-windows.md) para acessar a VM da seguinte maneira:
 
-    1. Acesse o Console Serial, selecionando **Suporte e Resolução de problemas** > **Console serial (versão prévia)**. Se o recurso estiver habilitado na VM, você poderá conectar a VM com êxito.
+    1. Acesse o Console Serial, selecionando **Suporte e Resolução de problemas** > **Console serial (versão prévia)** . Se o recurso estiver habilitado na VM, você poderá conectar a VM com êxito.
 
     2. Crie um novo canal para uma instância de CMD. Digite **CMD** para iniciar o canal e obter o nome do canal.
 

@@ -14,14 +14,14 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: dc72ec9bf2e7e7c5c77685368167357a0108f2d3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60335413"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Mover dados do Amazon Redshift usando o Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](data-factory-amazon-redshift-connector.md)
 > * [Versão 2 (versão atual)](../connector-amazon-redshift.md)
 
@@ -60,9 +60,9 @@ As seções que se seguem descrevem as propriedades de JSON que são usadas para
 
 A tabela a seguir fornece descrições dos elementos JSON específicos para o serviço vinculado Amazon Redshift.
 
-| Propriedade | DESCRIÇÃO | Necessário |
+| Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
-| **tipo** |Essa propriedade deve ser definida como: **AmazonRedshift**. |Sim |
+| **type** |Essa propriedade deve ser definida como: **AmazonRedshift**. |Sim |
 | **server** |O endereço IP ou nome do host do servidor Amazon Redshift. |Sim |
 | **port** |O número da porta TCP usada pelo servidor Amazon Redshift para ouvir conexões de cliente. |Não (o padrão é 5439) |
 | **database** |O nome do banco de dados do Amazon Redshift. |Sim |
@@ -75,7 +75,7 @@ Para obter uma lista das seções e propriedades disponíveis para definir os co
 
 A seção **typeProperties** é diferente para cada tipo de conjunto de dados e fornece informações sobre o local dos dados no repositório. **A seção typeProperties** de um conjunto de dados do tipo **RelationalTable**, que inclui o conjunto de dados do Amazon Redshift, tem as propriedades a seguir:
 
-| Propriedade | DESCRIÇÃO | Necessário |
+| Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | **tableName** |O nome da tabela no banco de dados do Amazon Redshift ao qual o serviço vinculado se refere. |Não (se a propriedade **query** de uma atividade de cópia do tipo **RelationalSource** for especificada) |
 
@@ -85,16 +85,16 @@ Para obter uma lista das seções e propriedades disponíveis para definir as at
 
 Para a atividade de cópia, quando a origem é do tipo **AmazonRedshiftSource**, as seguintes propriedades estão disponíveis na seção **typeProperties**:
 
-| Propriedade | DESCRIÇÃO | Necessário |
+| Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | **query** | Use a consulta personalizada para ler os dados. |Não (se a propriedade **tableName** de um conjunto de dados for especificada) |
-| **redshiftUnloadSettings** | Contém o grupo de propriedades ao usar o comando **UNLOAD** do Redshift. | Não  |
+| **redshiftUnloadSettings** | Contém o grupo de propriedades ao usar o comando **UNLOAD** do Redshift. | Não |
 | **s3LinkedServiceName** | O Amazon S3 para usar como um repositório provisório. O serviço vinculado é especificado usando um nome do Azure Data Factory do tipo **AwsAccessKey**. | Necessário ao usar a propriedade **redshiftUnloadSettings** |
 | **bucketName** | Indica o bucket do Amazon S3 a ser usado para armazenar os dados provisórios. Se essa propriedade não for fornecida, a atividade de cópia gerará um bucket automaticamente. | Necessário ao usar a propriedade **redshiftUnloadSettings** |
 
 Como alternativa, você pode usar o tipo **RelationalSource**, que inclui o Amazon Redshift, com a propriedade a seguir na seção **typeProperties**. Observe que esse tipo de origem não dá suporte para o comando **UNLOAD** do Redshift.
 
-| Propriedade | DESCRIÇÃO | Necessário |
+| Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
 | **query** |Use a consulta personalizada para ler os dados. | Não (se a propriedade **tableName** de um conjunto de dados for especificada) |
 
@@ -339,8 +339,8 @@ Os seguintes mapeamentos são usados quando a Atividade de Cópia converte os da
 | BOOLEAN |Cadeia de caracteres |
 | CHAR |Cadeia de caracteres |
 | VARCHAR |Cadeia de caracteres |
-| DATE |Datetime |
-| TIMESTAMP |Datetime |
+| DATE |DateTime |
+| TIMESTAMP |DateTime |
 | TEXT |Cadeia de caracteres |
 
 ## <a name="map-source-to-sink-columns"></a>Mapear origem para colunas de coletor

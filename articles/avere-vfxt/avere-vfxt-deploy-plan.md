@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: v-erkell
 ms.openlocfilehash: 46978d19a0789bb43e861ca89661aa5b78eb4ec7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60409866"
 ---
 # <a name="plan-your-avere-vfxt-system"></a>Planejar seu sistema Avere vFXT
@@ -42,7 +42,7 @@ Siga estas diretrizes ao planejar a infraestrutura de rede do seu sistema do Ave
 
 * O modelo de criação de cluster pode criar a maioria dos recursos de infraestrutura necessária para o cluster, incluindo contas de armazenamento, redes virtuais, sub-redes e grupos de recursos. Se você quiser usar os recursos que já existem, certifique-se de que eles atendem aos requisitos nesta tabela. 
 
-  | Recurso | Usar existente? | Requisitos |
+  | Resource | Usar existente? | Requisitos |
   |----------|-----------|----------|
   | Grupo de recursos | Sim, se estiver vazia | Deve estar vazio| 
   | Conta de armazenamento | Sim se conectando a um existente contêiner do Blob após a criação do cluster <br/>  Não se criar um novo contêiner de Blob durante a criação do cluster | Contêiner de Blob existente deve estar vazio <br/> &nbsp; |
@@ -76,7 +76,7 @@ Cada nó vFXT será idêntico. Ou seja, se você criar um cluster de três nós,
 
 | Tipo de instância | vCPUs | Memória  | Armazenamento SSD local  | Discos de dados máximos | Taxa de transferência de disco sem cache | NIC (contagem) |
 | --- | --- | --- | --- | --- | --- | --- |
-| Standard_E32s_v3 | 32  | 256 GiB | 512 GiB  | 32 | 51.200 IOPS <br/> 768 MBps | 16.000 MBps (8)  |
+| Standard_E32s_v3 | 32  | 256 GiB | 512 GiB  | 32 | 51\.200 IOPS <br/> 768 MBps | 16\.000 MBps (8)  |
 
 O cache de disco por nó é configurável e pode variar de 1.000 GB a 8.000 GB. 4 TB por nó é o tamanho de cache recomendado para nós Standard_E32s_v3.
 

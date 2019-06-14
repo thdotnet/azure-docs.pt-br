@@ -12,16 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-origin.date: 07/13/2017
-ms.date: 04/09/2019
+ms.date: 07/13/2017
 ms.subservice: hybrid
-ms.author: v-junlch
+ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 10a4078f49abbdf431f42c6cde7cf882112e5848
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60384691"
 ---
 # <a name="azure-ad-connect-sync-service-shadow-attributes"></a>Atributos sombra do serviço de sincronização do Azure AD Connect
@@ -43,7 +42,7 @@ Um usuário tem os seguintes valores de atributo em um domínio não verificado:
 | --- | --- |
 | userPrincipalName local | lee.sperry@fabrikam.com |
 | shadowUserPrincipalName do Azure AD | lee.sperry@fabrikam.com |
-| userPrincipalName do Azure AD | lee.sperry@fabrikam.partner.onmschina.cn |
+| userPrincipalName do Azure AD | lee.sperry@fabrikam.onmicrosoft.com |
 
 O atributo userPrincipalName é o valor que você vê ao usar o PowerShell.
 
@@ -78,5 +77,3 @@ Os atributos sombra também são usados quando há valores de atributo duplicado
 ## <a name="see-also"></a>Consulte também
 * [Sincronização do Azure AD Connect](how-to-connect-sync-whatis.md)
 * [Integração de suas identidades locais com o Azure Active Directory](whatis-hybrid-identity.md).
-
-<!-- Update_Description: wording update -->

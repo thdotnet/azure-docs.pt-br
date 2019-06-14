@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: seodec18
 ms.openlocfilehash: 695591fedfacb34742335a6e9d6ca32a9c77eb7e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66148473"
 ---
 # <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities"></a>Autenticar o Stream Analytics para o Azure Data Lake armazenamento Gen1 usando identidades gerenciadas
@@ -180,7 +180,7 @@ Esse recurso não oferece suporte a seguir:
 
 1. **Acesso de vários locatário**: A entidade de serviço criada para um determinado trabalho de Stream Analytics reside no locatário do Azure Active Directory no qual o trabalho foi criado e não pode ser usado em um recurso que reside em um locatário do Azure Active Directory diferente. Portanto, somente você pode usar o MSI em recursos do ADLS Gen 1 que estão no mesmo locatário do Azure Active Directory que o trabalho do Azure Stream Analytics. 
 
-2. **[Identidade atribuída pelo usuário](../active-directory/managed-identities-azure-resources/overview.md)**: não há suporte. Isso significa que o usuário não é capaz de inserir sua própria entidade de serviço a ser usado por seu trabalho de Stream Analytics. A entidade de serviço é gerada pelo Azure Stream Analytics.
+2. **[Identidade atribuída pelo usuário](../active-directory/managed-identities-azure-resources/overview.md)** : não há suporte. Isso significa que o usuário não é capaz de inserir sua própria entidade de serviço a ser usado por seu trabalho de Stream Analytics. A entidade de serviço é gerada pelo Azure Stream Analytics.
 
 ## <a name="next-steps"></a>Próximas etapas
 
