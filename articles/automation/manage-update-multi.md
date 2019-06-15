@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 04/02/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 16fe2d23fdd07f8f150cc010b0a1d232c761c77f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 024a2dbbd46fa2ab60da0f9682dbe298eaf73e86
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61300019"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67055571"
 ---
 # <a name="manage-updates-for-multiple-machines"></a>Gerenciar atualizações de vários computadores
 
@@ -85,7 +85,7 @@ Computadores que foram habilitados recentemente para o Gerenciamento de Atualiza
 
 - **Sem conformidade**: Computadores que não têm pelo menos uma atualização crítica ou de segurança.
 
-- **Não avaliado**: Os dados da avaliação de atualização não foram recebidos do computador dentro do período de tempo esperado. Para computadores Linux, o intervalo de tempo esperado é nas últimas 3 horas. Para computadores Windows, o período de tempo esperado é nas últimas 12 horas.
+- **Não avaliado**: Os dados da avaliação de atualização não foram recebidos do computador dentro do período de tempo esperado. Para computadores Linux, o período de tempo esperado é na última hora. Para computadores Windows, o período de tempo esperado é nas últimas 12 horas.
 
 Para exibir o status do agente, selecione o link na coluna **PREPARAÇÃO PARA ATUALIZAÇÃO DO AGENTE**. Selecionar essa opção abre o painel **Hybrid Worker** e exibe o status do Hybrid Worker. A imagem a seguir mostra um exemplo de um agente que não foi conectado ao Gerenciamento de Atualizações por um longo período de tempo:
 
@@ -108,7 +108,7 @@ A tabela a seguir descreve as fontes conectadas às quais essa solução dá sup
 | Agentes do Windows |Sim |O Gerenciamento de Atualizações coleta informações sobre atualizações do sistema de agentes do Windows e, em seguida, inicia a instalação das atualizações necessárias. |
 | Agentes do Linux |Sim |O Gerenciamento de Atualizações coleta informações sobre atualizações do sistema de agentes para Linux e, em seguida, inicia a instalação das atualizações necessárias nas distribuições com suporte. |
 | Grupo de gerenciamento do Operations Manager |Sim |O Gerenciamento de Atualizações coleta informações sobre atualizações do sistema de agentes em um grupo de gerenciamento conectado. |
-| Conta de Armazenamento do Azure |Não  |O Armazenamento do Microsoft Azure não inclui informações sobre atualizações do sistema. |
+| Conta de Armazenamento do Azure |Não |O Armazenamento do Microsoft Azure não inclui informações sobre atualizações do sistema. |
 
 ### <a name="collection-frequency"></a>Frequência de coleta
 
@@ -116,7 +116,7 @@ Após um computador de uma verificação de conformidade da atualização, o age
 
 Além do agendamento da verificação, a verificação de conformidade de atualizações será iniciada em 15 minutos se o MMA estiver sendo reiniciado antes da instalação da atualização e após a instalação da atualização.
 
-Para um computador Linux, a verificação de conformidade é executada a cada 3 horas por padrão. Se o agente MMA for reiniciado, uma verificação de conformidade é iniciada dentro de 15 minutos.
+Para um computador Linux, a verificação de conformidade é executada a cada hora por padrão. Se o agente MMA for reiniciado, uma verificação de conformidade é iniciada dentro de 15 minutos.
 
 Pode demorar entre 30 minutos e 6 horas para o painel exibir os dados atualizados dos computadores gerenciados.
 
@@ -130,7 +130,7 @@ No painel **Nova implantação de atualização**, especifique as seguintes info
 
 - **Nome**: Insira um nome exclusivo para identificar a implantação de atualizações.
 - **Sistema operacional**: Selecione **Windows** ou **Linux**.
-- **Grupos para atualizar (versão prévia)**: Defina uma consulta com base em uma combinação de assinatura, grupos de recursos, locais e tags para criar um grupo dinâmico de VMs do Azure para incluir em sua implantação. Para saber mais, consulte [Grupos dinâmicos](automation-update-management.md#using-dynamic-groups)
+- **Grupos para atualizar (versão prévia)** : Defina uma consulta com base em uma combinação de assinatura, grupos de recursos, locais e tags para criar um grupo dinâmico de VMs do Azure para incluir em sua implantação. Para saber mais, consulte [Grupos dinâmicos](automation-update-management.md#using-dynamic-groups)
 - **Computadores para atualizar**: Selecione uma pesquisa salva, um grupo importado ou selecione Máquinas, para escolher as máquinas que você deseja atualizar. Se você escolher **Machines**, a prontidão da máquina é mostrada na coluna **UPDATE AGENT READINESS**. É possível ver o estado de integridade do computador antes de agendar a implantação de atualização. Para saber mais sobre os diferentes métodos de criação de grupos de computadores nos logs do Azure Monitor, veja [Grupos de computadores nos logs do Azure Monitor](../azure-monitor/platform/computer-groups.md)
 
   ![Painel da nova implantação de atualizações](./media/manage-update-multi/update-select-computers.png)
@@ -154,7 +154,7 @@ No painel **Nova implantação de atualização**, especifique as seguintes info
    ![Caixa de diálogo Configurações de agendamento](./media/manage-update-multi/update-set-schedule.png)
 
 - **Pré-scripts + pós-scripts**: Selecione os scripts a serem executados antes e depois de sua implantação. Para saber mais, consulte [Gerenciar pré e pós-scripts](pre-post-scripts.md).
-- **Janela de manutenção (minutos)**: Especifique o período de tempo em que deseja que a implantação da atualização ocorra. Essa configuração ajuda a garantir que as alterações sejam executadas dentro das janelas de serviço definidas.
+- **Janela de manutenção (minutos)** : Especifique o período de tempo em que deseja que a implantação da atualização ocorra. Essa configuração ajuda a garantir que as alterações sejam executadas dentro das janelas de serviço definidas.
 
 - **Reinicialize o controle** -essa configuração determina como as reinicializações são tratadas para a implantação de atualização.
 

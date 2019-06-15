@@ -3,20 +3,20 @@ title: Instalar e executar contêineres
 titlesuffix: Face - Azure Cognitive Services
 description: Baixar, instalar e executar contêineres para Face neste tutorial passo a passo.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: article
-ms.date: 05/28/2019
-ms.author: diberry
-ms.openlocfilehash: 26ebeb463f42dce06c29a5bd3f69585430a2ee90
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.date: 06/10/2019
+ms.author: dapine
+ms.openlocfilehash: 4d3f3e64e109d0b1dc010be39b62b4f0bdc0573d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306648"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063606"
 ---
 # <a name="install-and-run-face-containers"></a>Instalar e executar os contêineres de detecção facial
 
@@ -47,9 +47,9 @@ Você deve atender aos seguintes pré-requisitos antes de usar os contêineres d
 
 A tabela a seguir descreve os núcleos de CPU e a memória mínimos e recomendados a serem alocados para cada contêiner da API de Detecção Facial.
 
-| Contêiner | Mínimo | Recomendado | Transações por segundo<br>(No mínimo, máximo)|
+| Contêiner | Mínimo | Recomendadas | Transações por segundo<br>(No mínimo, máximo)|
 |-----------|---------|-------------|--|
-|Detecção Facial | 1 núcleo, 2 GB de memória | 1 núcleo, memória de 4 GB |10, 20|
+|Face | 1 núcleo, 2 GB de memória | 1 núcleo, memória de 4 GB |10, 20|
 
 * Cada núcleo deve ser pelo menos 2,6 GHz ou mais rápido.
 * Transações por segundo (TPS).
@@ -62,7 +62,7 @@ Imagens de contêiner para a API de detecção facial estão disponíveis.
 
 | Contêiner | Repositório |
 |-----------|------------|
-| Detecção Facial | `containerpreview.azurecr.io/microsoft/cognitive-services-face:latest` |
+| Face | `containerpreview.azurecr.io/microsoft/cognitive-services-face:latest` |
 
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
 
@@ -83,7 +83,7 @@ Depois que o contêiner estiver na [computador host](#the-host-computer), use o 
 
 Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar qualquer um dos três contêineres. O comando usa os seguintes parâmetros.
 
-| Espaço reservado | Value |
+| Placeholder | Value |
 |-------------|-------|
 |{BILLING_KEY} | Essa chave é usada para iniciar o contêiner e está disponível no Azure `Cognitive Services` **chaves** página. |
 |{BILLING_ENDPOINT_URI} | O valor do URI de ponto de extremidade cobrança está disponível no Azure `Cognitive Services` **visão geral** página. Um exemplo é `https://westus.api.cognitive.microsoft.com/face/v1.0`.|
