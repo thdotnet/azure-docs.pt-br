@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 1bf7f3c15b40590c400e8a730de20c199bb1b4c2
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66238799"
 ---
 ---
@@ -14,6 +14,6 @@ ms.locfileid: "66238799"
 | Número máximo de saídas por trabalho |60 |Há um limite rígido de 60 saídas por trabalho do Stream Analytics. |
 | Número máximo de funções por trabalho |60 |Há um limite rígido de 60 funções por trabalho do Stream Analytics. |
 | Número máximo de unidades de streaming por trabalho |192 |Há um limite rígido de 192 unidades de streaming por trabalho do Stream Analytics. |
-| Número máximo de trabalhos por região |1.500 |Cada assinatura pode ter até 1500 trabalhos por região geográfica. |
+| Número máximo de trabalhos por região |1\.500 |Cada assinatura pode ter até 1500 trabalhos por região geográfica. |
 | Blob de dados de referência MB | 300 | Blobs de dados de referência não podem ser maiores que 300 MB. |
 

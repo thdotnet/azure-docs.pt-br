@@ -1,5 +1,5 @@
 ---
-title: Políticas de proteção de linha de base de acesso condicional - Azure Active Directory
+title: Políticas de proteção de linha de base acesso condicionais - Azure Active Directory
 description: Políticas de acesso condicional de linha de base para proteger as empresas contra ataques comuns
 services: active-directory
 ms.service: active-directory
@@ -11,18 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca062f4024bb5b0946812e00c8ccc1254b56d333
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 39a591a335d022ef7b2b99fdec930ddf0496cd47
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66003290"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112583"
 ---
 # <a name="what-are-baseline-policies"></a>Quais são as políticas de linha de base?
 
 Diretivas de linha de base são um conjunto de políticas predefinidas que ajudam a proteger as organizações contra vários ataques comuns. Esses ataques comuns podem incluir phishing, reprodução e spray de senha. Diretivas de linha de base estão disponíveis em todas as edições do AD do Azure. Microsoft está disponibilizando essas políticas de proteção de linha de base para todas as pessoas porque ataques baseados em identidade tem sido aumentando ao longo dos últimos anos. A meta dessas políticas quatro é garantir que todas as organizações têm um nível de linha de base de segurança habilitada sem nenhum custo extra.  
 
-Gerenciar políticas de acesso condicional personalizada requer uma licença Azure AD Premium.
+Gerenciando políticas de acesso condicional personalizadas requer uma licença Azure AD Premium.
 
 ## <a name="baseline-policies"></a>Políticas de linha de base
 
@@ -95,7 +95,7 @@ Para habilitar uma política de linha de base:
 Para obter mais informações, consulte:
 
 * [Cinco etapas para proteger a infraestrutura de identidade](../../security/azure-ad-secure-steps.md)
-* [O que é o acesso condicional no Azure Active Directory?](overview.md)
+* [O que é acesso condicional no Azure Active Directory?](overview.md)
 * [Exigir MFA para administradores](howto-baseline-protect-administrators.md)
 * [Proteção do usuário final (visualização)](howto-baseline-protect-end-users.md)
 * [Autenticação herdada do bloco (visualização)](howto-baseline-protect-legacy-auth.md)

@@ -8,42 +8,43 @@ ms.topic: conceptual
 ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 6bdfeefc366734aa10dbaccec69bac8e0b41103f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6eeca062bdc17ec207910b9ba4aa8cea4048f849
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61451287"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080497"
 ---
 # <a name="deploy-opc-twin-to-an-existing-project"></a>Implantar o gêmeo de OPC para um projeto existente
 
-O módulo gêmeo de OPC é executado no IoT Edge e fornece vários serviços de borda para o gêmeo de OPC e os serviços de registro. 
+O módulo gêmeo de OPC é executado no IoT Edge e fornece vários serviços de borda para o gêmeo de OPC e os serviços de registro.
 
 O serviço de micro gêmeos OPC facilita a comunicação entre dispositivos de servidor OPC UA no chão de fábrica, por meio de um módulo do IoT Edge OPC gêmeo e operadores de fábrica. O serviço micro expõe os serviços de OPC UA (Procurar, leitura, gravação e execução) por meio de sua API REST. 
 
 O microsserviço de registro de dispositivo OPC UA fornece acesso a aplicativos de OPC UA registrados e seus pontos de extremidade. Operadores e administradores podem registrar e cancelar o registro de novos aplicativos de OPC UA e procurar os existentes, incluindo seus pontos de extremidade. Além de aplicativo e gerenciamento de ponto de extremidade, o serviço de registro também cataloga módulos do IoT Edge do OPC gêmeo registrados. A API do serviço lhe dá controle da funcionalidade de módulo de borda, por exemplo, iniciar ou parar de descoberta do servidor (serviços de verificação) ou ativar novo Gêmeos de ponto de extremidade que podem ser acessados usando o serviço de micro Gêmeos de OPC.
 
-O núcleo do módulo é a identidade do Supervisor. O supervisor gerencia Gêmeos de ponto de extremidade, que corresponde aos pontos de extremidade de servidor de OPC UA que são ativados usando a API de registro de OPC UA correspondente. Gêmeos esse ponto de extremidade traduzem OPC UA JSON recebido do serviço micro gêmeos OPC em execução na nuvem em mensagens binárias OPC UA, que são enviadas por um canal seguro com monitoração de estado para o ponto de extremidade gerenciado. O supervisor também fornece serviços de descoberta que enviam eventos de descoberta do dispositivo para o serviço de integração do dispositivo OPC UA para processamento, em que esses eventos resultam em atualizações para o registro de OPC UA.  Este artigo mostra como implantar o módulo gêmeo OPC em um projeto existente. 
+O núcleo do módulo é a identidade do Supervisor. O supervisor gerencia Gêmeos de ponto de extremidade, que corresponde aos pontos de extremidade de servidor de OPC UA que são ativados usando a API de registro de OPC UA correspondente. Gêmeos esse ponto de extremidade traduzem OPC UA JSON recebido do serviço micro gêmeos OPC em execução na nuvem em mensagens binárias OPC UA, que são enviadas por um canal seguro com monitoração de estado para o ponto de extremidade gerenciado. O supervisor também fornece serviços de descoberta que enviam eventos de descoberta do dispositivo para o serviço de integração do dispositivo OPC UA para processamento, em que esses eventos resultam em atualizações para o registro de OPC UA.  Este artigo mostra como implantar o módulo gêmeo OPC em um projeto existente.
 
 > [!NOTE]
 > Para obter mais informações sobre detalhes de implantação e instruções, consulte o GitHub [repositório](https://github.com/Azure/azure-iiot-opc-twin-module).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Verifique se você tem o PowerShell e [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) extensões instaladas.   Se você não o fez ainda, clone este repositório GitHub.  Abra um prompt de comando ou terminal e execute:
+Verifique se você tem o PowerShell e [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) extensões instaladas. Se você ainda não tiver feito isso, clone este repositório GitHub. Execute os seguintes comandos no PowerShell:
 
-```bash
-git clone --recursive https://github.com/Azure/azure-iiot-components 
+```powershell
+git clone --recursive https://github.com/Azure/azure-iiot-components.git
 cd azure-iiot-components
 ```
 
 ## <a name="deploy-industrial-iot-services-to-azure"></a>Implantar serviços de IoT industriais no Azure
 
-1. No prompt de comando aberta ou terminal, execute:
+1. Na sua sessão do PowerShell, execute:
 
-   ```bash
-   deploy
-   ```
+    ```powershell
+    set-executionpolicy -ExecutionPolicy Unrestricted -Scope Process
+    .\deploy.cmd
+    ```
 
 2. Siga os prompts para atribuir um nome para o grupo de recursos da implantação e um nome para o site.   O script implanta os microsserviços e suas dependências de plataforma do Azure no grupo de recursos em sua assinatura do Azure.  O script também registra um aplicativo em seu locatário do Azure Active Directory (AAD) para dar suporte à autenticação com base em OAUTH.  Implantação levará vários minutos.  Um exemplo de que você veria depois que a solução é implantada com êxito:
 
@@ -77,11 +78,12 @@ O script de implantação tenta registrar dois aplicativos AAD no Azure Active D
 
 Em vez de apenas a serviços e dependências, você também pode implantar uma demonstração do all-in-one.  Todos em uma demonstração contém três servidores OPC UA, o módulo gêmeo OPC, todos os microsserviços e um aplicativo Web de exemplo.  Ele é apenas para fins de demonstração.
 
-1. Verifique se que você tem um clone do repositório (veja acima). Abra um prompt de comando ou terminal na raiz do repositório e execute:
+1. Verifique se que você tem um clone do repositório (veja acima). Abra um prompt do PowerShell na raiz do repositório e execute:
 
-   ```bash
-   deploy -type demo
-   ```
+    ```powershell
+    set-executionpolicy -ExecutionPolicy Unrestricted -Scope Process
+    .\deploy -type demo
+    ```
 
 2. Siga os prompts para atribuir um novo nome para o grupo de recursos e um nome para o site.  Uma vez implantado com êxito, o script exibirá a URL do ponto de extremidade de aplicativo web.
 
@@ -89,49 +91,49 @@ Em vez de apenas a serviços e dependências, você também pode implantar uma d
 
 O script usa os seguintes parâmetros:
 
-```bash
+```powershell
 -type
 ```
 
 O tipo de implantação (vm, local, demonstração)
 
-```bash
+```powershell
 -resourceGroupName
 ```
 
 Pode ser o nome de um novo grupo de recursos ou um existente.
 
-```bash
+```powershell
 -subscriptionId
 ```
 
 Opcional, a ID da assinatura em que os recursos serão implantados.
 
-```bash
+```powershell
 -subscriptionName
 ```
 
 Ou o nome da assinatura.
 
-```bash
+```powershell
 -resourceGroupLocation
 ```
 
 Opcional, um local do grupo de recursos. Se especificado, tentará criar um novo grupo de recursos neste local.
 
-```bash
+```powershell
 -aadApplicationName
 ```
 
-Um nome para o aplicativo do AAD registrar com. 
+Um nome para o aplicativo do AAD registrar com.
 
-```bash
+```powershell
 -tenantId
 ```
 
 Locatário do AAD para usar.
 
-```bash
+```powershell
 -credentials
 ```
 

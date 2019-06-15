@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: zhshang
 ms.openlocfilehash: 7660e1405598676599cab30467d22ac979438deb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128269"
 ---
 # <a name="azure-signalr-service-authentication"></a>autenticação do Serviço do Azure SignalR
@@ -61,7 +61,7 @@ Para concluir o tutorial, você deve ter os pré-requisitos a seguir:
     | Nome da configuração | Valor sugerido | DESCRIÇÃO |
     | ------------ | --------------- | ----------- |
     | Nome do aplicativo | *Azure SignalR Chat* | O usuário do GitHub deve ser capaz de reconhecer e confiar no aplicativo com o qual está autenticando.   |
-    | URL da home page | `http://localhost:5000/home` | |
+    | URL da homepage | `http://localhost:5000/home` | |
     | Descrição do aplicativo | *Um exemplo de sala de chat usando o Serviço do Azure SignalR com a autenticação do GitHub* | Uma descrição útil do aplicativo que ajuda os usuários de aplicativos a compreender o contexto de autenticação que está sendo usado. |
     | URL de retorno de chamada da autorização | `http://localhost:5000/signin-github` | Essa configuração é a configuração mais importante para seu aplicativo OAuth. É a URL de retorno de chamada GitHub retorna ao usuário após uma autenticação bem-sucedida. Neste tutorial, você deve usar a URL de retorno de chamada padrão para o *pacote AspNet.Security.OAuth.GitHub* pacote, */signin-github*.  |
 
@@ -563,7 +563,7 @@ Caso contrário, se você não for mais usar o aplicativo de exemplo do início 
 
 Entre no [portal do Azure](https://portal.azure.com) e clique em **Grupos de recursos**.
 
-Na caixa de texto **Filtrar por nome...**, digite o nome do seu grupo de recursos. As instruções deste artigo usaram um grupo de recursos chamado *SignalRTestResources*. Em seu grupo de recursos, na lista de resultados, clique em **...**, depois em **Excluir grupo de recursos**.
+Na caixa de texto **Filtrar por nome...** , digite o nome do seu grupo de recursos. As instruções deste artigo usaram um grupo de recursos chamado *SignalRTestResources*. Em seu grupo de recursos, na lista de resultados, clique em **...** , depois em **Excluir grupo de recursos**.
 
 ![Excluir](./media/signalr-concept-authenticate-oauth/signalr-delete-resource-group.png)
 

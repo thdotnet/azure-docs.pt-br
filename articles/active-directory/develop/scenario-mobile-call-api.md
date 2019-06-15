@@ -16,12 +16,12 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44b6c203583a082228c2ba1f4c5f6fdb04d059be
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 7fc8c21db0f42bbb6804c00e27e82f840d7038c2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65962393"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111181"
 ---
 # <a name="mobile-app-that-calls-web-apis---call-a-web-api"></a>Aplicativo móvel que chama APIs - web chamar uma API web
 
@@ -131,7 +131,7 @@ HttpResponseMessage response = await _httpClient.GetAsync(apiUri);
 Se você precisar chamar a mesma API várias vezes, ou se você precisar chamar várias APIs, leve em consideração o seguinte quando você compila seu aplicativo:
 
 - **Consentimento incremental**: Plataforma de identidade da Microsoft permite aos aplicativos obter consentimento do usuário, como as permissões são necessárias, em vez de tudo no início. Cada vez que seu aplicativo está pronto para chamar uma API, ele deve solicitar apenas os escopos que ele precisa usar.
-- **Acesso condicional**: Em determinados cenários, você poderá obter os requisitos adicionais de acesso condicional ao fazer várias solicitações de API. Isso pode acontecer se a primeira solicitação não tem nenhuma política de acesso condicional aplicada e o aplicativo tenta acessar silenciosamente uma nova API que exige o acesso condicional. Para manipular esse cenário, certifique-se de capturar erros de solicitações silenciosas e estar preparado para fazer uma solicitação interativa.  Para obter mais informações, consulte [diretrizes para acesso condicional](conditional-access-dev-guide.md).
+- **Acesso condicional**: Em determinados cenários, você poderá obter os requisitos de acesso condicional adicionais ao fazer várias solicitações de API. Isso pode acontecer se a primeira solicitação não tem nenhuma política de acesso condicional aplicada e o aplicativo tenta acessar silenciosamente uma nova API que exige o acesso condicional. Para manipular esse cenário, certifique-se de capturar erros de solicitações silenciosas e estar preparado para fazer uma solicitação interativa.  Para obter mais informações, consulte [diretrizes para acesso condicional](conditional-access-dev-guide.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

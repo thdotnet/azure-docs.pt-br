@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b69dca5abddd56b29abf3e482e51b3d2a41612e7
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 81b7030d0f45222a1641e34b341885d2ecc051e3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65864462"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107659"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Relatórios de atividades de entrada no portal do Azure Active Directory
 
@@ -86,7 +86,7 @@ Selecione um item na exibição de lista para obter informações mais detalhada
 ![Atividade de entrada](./media/concept-sign-ins/03.png "Atividade de entrada")
 
 > [!NOTE]
-> Os clientes agora podem solucionar problemas de políticas de acesso condicional por meio de todos os relatórios de login. Ao clicar na guia **Acesso condicional** para um registro de entrada, os clientes podem rever o status de acesso condicional e analisar os detalhes das políticas aplicadas ao login e o resultado de cada política.
+> Os clientes agora podem solucionar problemas de políticas de acesso condicional por meio de todos os relatórios de entrada. Ao clicar na **acesso condicional** guia para um registro de entrada, os clientes podem examinar o status de acesso condicional e informações detalhadas sobre os detalhes das políticas que são aplicadas na entrada e o resultado para cada política.
 > Para obter mais informações, consulte as [Perguntas frequentes sobre as informações de CA em todos os logins](reports-faq.md#conditional-access).
 
 ![Atividade de entrada](./media/concept-sign-ins/ConditionalAccess.png "Atividade de entrada")
@@ -100,7 +100,7 @@ Para restringir os dados relatados a um nível que funciona para você, filtre o
 - Aplicativo
 - Status de entrada
 - Acesso Condicional
-- Date
+- Data
 
 ![Atividade de entrada](./media/concept-sign-ins/04.png "Atividade de entrada")
 
@@ -111,15 +111,15 @@ O filtro **Aplicativo** permite que você especifique o nome do aplicativo desej
 O filtro **status de entrada** permite que você selecione:
 
 - Todos
-- Sucesso
-- Falha
+- Êxito
+- Failure
 
 O filtro **Acesso Condicional** permite que você selecione o status da política de Autoridade de Certificação para a entrada:
 
 - Todos
-- Não Aplicado
-- Sucesso
-- Falha
+- Não aplicado
+- Êxito
+- Failure
 
 O filtro **Data** permite definir um período de tempo para os dados retornados.  
 Os valores possíveis são:
@@ -190,7 +190,7 @@ Cada linha na lista de atividades de entrada mostra:
 
 Ao clicar em um item, você verá mais detalhes sobre a operação de entrada:
 
-- ID de usuário
+- Id de Usuário
 - Usuário
 - Nome de Usuário
 - ID do aplicativo
@@ -198,8 +198,8 @@ Ao clicar em um item, você verá mais detalhes sobre a operação de entrada:
 - Cliente
 - Local padrão
 - Endereço IP
-- Date
-- MFA Necessário
+- Data
+- MFA obrigatório
 - Status de entrada
 
 > [!NOTE]

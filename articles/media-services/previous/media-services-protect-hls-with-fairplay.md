@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: c30a32466cbac795ef037a3295816e87995ad749
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 8d5683cb060b63aebad7c68672c78f5b350a25d3
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64868402"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073578"
 ---
 # <a name="protect-your-hls-content-with-apple-fairplay-or-microsoft-playready"></a>Proteger o conteúdo do HLS com o Apple FairPlay ou Microsoft PlayReady
 
@@ -59,7 +59,7 @@ Veja a seguir o que é necessário ao usar os Serviços de Mídia para distribui
 
 Os seguintes itens devem ser definidos no lado de distribuição de chaves dos Serviços de Mídia:
 
-  * **Certificado do aplicativo (AC)**: Trata-se de um arquivo .pfx que contém a chave privada. Você cria esse arquivo e o criptografa com uma senha.
+  * **Certificado do aplicativo (AC)** : Trata-se de um arquivo .pfx que contém a chave privada. Você cria esse arquivo e o criptografa com uma senha.
 
        Ao configurar a política de distribuição de chaves, você deve fornecer a senha e o .pfx no formato Base64.
 
@@ -82,7 +82,7 @@ Os seguintes itens devem ser definidos no lado de distribuição de chaves dos S
 
 Os seguintes itens devem ser definidos pelo lado do cliente FPS:
 
-  * **Certificado do aplicativo (AC)**: Trata-se de um arquivo .cer/.der que contém a chave pública que o sistema operacional usa para criptografar conteúdo. Os Serviços de Mídia precisam ter conhecimento sobre ele, uma vez que ele é exibido pelo player. O serviço de distribuição de chaves descriptografa-o usando a chave privada correspondente.
+  * **Certificado do aplicativo (AC)** : Trata-se de um arquivo .cer/.der que contém a chave pública que o sistema operacional usa para criptografar conteúdo. Os Serviços de Mídia precisam ter conhecimento sobre ele, uma vez que ele é exibido pelo player. O serviço de distribuição de chaves descriptografa-o usando a chave privada correspondente.
 
 Para reproduzir uma transmissão criptografada do FairPlay, obtenha a ASK real primeiro e, em seguida, gere um certificado real. Esse processo cria três partes:
 
@@ -513,7 +513,7 @@ namespace DynamicEncryptionWithFairPlay
             // Get a reference to the streaming manifest file from the  
             // collection of files in the asset.
 
-            var assetFile = asset.AssetFiles.Where(f => f.Name.ToLower().
+            var assetFile = asset.AssetFiles.LoList().Where(f => f.Name.ToLower().
                          EndsWith(".ism")).
                          FirstOrDefault();
 

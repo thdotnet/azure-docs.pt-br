@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/28/2019
+ms.date: 06/06/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: dcb128d8793e3438d87e728bde069d07c72cf97b
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
-ms.translationtype: MT
+ms.openlocfilehash: a5187ed299f77c11892c6e34c8dfd3f904c7e075
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66493017"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67067705"
 ---
 # <a name="integrate-your-app-with-an-azure-virtual-network"></a>Integrar seu aplicativo Web a uma Rede Virtual do Azure
 Este documento descreve o recurso de integração de rede virtual do serviço de aplicativo do Azure e como configurá-lo com os aplicativos na [serviço de aplicativo do Azure](https://go.microsoft.com/fwlink/?LinkId=529714). As VNets ([Redes Virtuais do Azure][VNETOverview]) permitem que você coloque qualquer um dos recursos do Azure em uma rede não roteável para a Internet com acesso controlado.  
@@ -33,8 +33,8 @@ Este documento percorre os dois recursos de integração de rede virtual, que é
 
 Há duas formas para o recurso de integração de rede virtual
 
-1. Uma versão permite a integração com redes virtuais na mesma região. Essa forma do recurso requer uma sub-rede em uma rede virtual na mesma região
-2. A outra versão permite a integração com redes virtuais em outras regiões ou com redes virtuais clássicas. Esta versão do recurso requer a implantação de um Gateway de rede Virtual em sua rede virtual.
+1. Uma versão permite a integração com redes virtuais na mesma região. Essa forma do recurso requer uma sub-rede em uma rede virtual na mesma região. Este recurso ainda está em visualização, mas há suporte para cargas de trabalho de produção de aplicativos Windows com algumas restrições indicadas abaixo.
+2. A outra versão permite a integração com redes virtuais em outras regiões ou com redes virtuais clássicas. Esta versão do recurso requer a implantação de um Gateway de rede Virtual em sua rede virtual. Esse é o recurso VPN com base em point-to-site.
 
 Um aplicativo só pode usar uma forma do recurso de integração de rede virtual por vez. Em seguida, a pergunta é quais recursos você deve usar. Você pode usar qualquer uma para muitas coisas. Embora sejam os diferenciais claros:
 
@@ -72,7 +72,7 @@ Quando a integração VNet é usada com redes virtuais na mesma região que seu 
 * acessar recursos na VNet que você está conectado a
 * acessar recursos em conexões emparelhadas, incluindo conexões do ExpressRoute
 
-Esse recurso está em visualização, mas há suporte para cargas de trabalho de produção com as seguintes limitações:
+Esse recurso está em visualização, mas há suporte para cargas de produção de aplicativo do Windows com as seguintes limitações:
 
 * Você só pode acessar os endereços que estão no intervalo RFC 1918. Esses são os endereços 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 blocos de endereço.
 * Você não pode acessar recursos em conexões de emparelhamento globais
@@ -80,11 +80,12 @@ Esse recurso está em visualização, mas há suporte para cargas de trabalho de
 * o recurso só está disponível de unidades de escala de serviço de aplicativo mais recentes que dão suporte a planos de serviço de aplicativo PremiumV2.
 * o recurso não pode ser usado por aplicativos de plano isolado que estão em um ambiente de serviço de aplicativo
 * o recurso requer uma sub-rede não utilizada com pelo menos 32 endereços na VNet do Resource Manager.
-* O aplicativo e a rede virtual devem estar na mesma região
+* O aplicativo e a VNet devem estar na mesma região
 * Um endereço é usado para cada instância de plano do serviço de aplicativo. Uma vez que o tamanho da sub-rede não pode ser alterado após a atribuição, use uma sub-rede que possa cobrir com folga seu tamanho máximo de escala. Um /27 com 32 endereços é o tamanho recomendado, pois acomodará um plano de Serviço de Aplicativo dimensionado para 20 instâncias.
-* Você não pode excluir uma rede virtual com um aplicativo integrado. Você deve primeiro remover a integração 
+* Você não pode excluir uma VNet com um aplicativo integrado. Você deve primeiro remover a integração 
+* Você pode ter apenas uma integração de VNet regional por plano do serviço de aplicativo. Vários aplicativos no mesmo plano do serviço de aplicativo podem usar a mesma rede virtual. 
 
-Para usar o recurso Integração VNet com uma VNet do Resource Manager na mesma região:
+O recurso está em versão prévia também para Linux. Para usar o recurso Integração VNet com uma VNet do Resource Manager na mesma região:
 
 1. Vá para a interface do usuário de rede no portal. Se seu aplicativo for capaz de usar o novo recurso, você verá uma opção para adicionar rede virtual (versão prévia).  
 
@@ -110,7 +111,7 @@ Aplicativos no serviço de aplicativo são hospedados em funções de trabalho. 
 
 Ao habilitar a integração VNet, seu aplicativo ainda fará as chamadas de saída à internet por meio dos canais mesmos como de costume. Os endereços de saída são listados no portal de propriedades do aplicativo ainda são os endereços usados pelo seu aplicativo. Quais são as alterações para seu aplicativo que serviços protegidos de chamadas para o ponto de extremidade de serviço ou endereços RFC 1918 entra em sua rede virtual. 
 
-O recurso dá suporte apenas a uma interface virtual por trabalho.  Uma interface virtual por trabalho significa que uma interface virtual por plano do serviço de aplicativo. Todos os aplicativos no mesmo plano do serviço de aplicativo podem usar a integração VNet com o mesmo, mas se você precisar se conectar a uma rede de virtual adicional, você precisará criar outro plano de serviço de aplicativo. A interface virtual usada não é um recurso que os clientes têm acesso direto ao.
+O recurso dá suporte apenas a uma interface virtual por trabalho.  Uma interface virtual por trabalho significa uma integração de VNet regional por plano do serviço de aplicativo. Todos os aplicativos no mesmo plano do serviço de aplicativo podem usar a integração VNet com o mesmo, mas se você precisar de um aplicativo para se conectar a uma rede de virtual adicional, você precisará criar outro plano de serviço de aplicativo. A interface virtual usada não é um recurso que os clientes têm acesso direto ao.
 
 Devido à natureza de como funciona essa tecnologia, o tráfego que é usado com a integração VNet não aparecem nos logs de fluxo do observador de rede ou NSG.  
 
@@ -119,16 +120,17 @@ Devido à natureza de como funciona essa tecnologia, o tráfego que é usado com
 O Gateway necessário recurso Integração VNet:
 
 * pode ser usado para se conectar a redes virtuais em qualquer região sejam eles Resource Manager ou clássicas
-* permite que um aplicativo se conecte somente a uma VNet por vez
-* permite a integração de até cinco VNets com um Plano do Serviço de Aplicativo 
+* permite que um aplicativo para se conectar à rede virtual apenas 1 por vez
+* permite que até cinco VNets sejam integrados em um plano de serviço de aplicativo 
 * permite que a mesma rede virtual a ser usado por vários aplicativos em um plano do serviço de aplicativo sem afetar o número total que pode ser usado por um plano de serviço de aplicativo.  Se você tiver 6 aplicativos que usam a mesma rede virtual no mesmo plano do serviço de aplicativo, que conta como 1 rede virtual que está sendo usado. 
-* requer um Gateway de Rede Virtual configurado com a VPN de Ponto a Site
-* dá suporte a um SLA de 99,9% devido ao SLA no gateway
+* requer um Gateway de rede Virtual que está configurado com a VPN ponto a Site
+* Não há suporte para uso com aplicativos do Linux
+* Dá suporte a um SLA de 99,9% devido ao SLA no gateway
 
 Esse recurso não oferece suporte:
 
-* acessar recursos por ExpressRoute 
-* acessar recursos por pontos de extremidade de serviço 
+* Acessando recursos no ExpressRoute 
+* Acessando recursos entre Pontos de Extremidade de Serviço 
 
 ### <a name="getting-started"></a>Introdução
 
@@ -200,7 +202,7 @@ A interface do usuário da Integração VNet do ASP mostrará todas as redes vir
 * **Sincronizar rede**. A operação de rede de sincronização é apenas para o recurso de integração de rede virtual dependente do gateway. Executar uma operação de rede de sincronização garante que seus certificados e informações de rede estão em sincronia. Se você adicionar ou alterar o DNS da VNet, será necessário executar uma operação **Sincronizar rede**. Esta operação reiniciará todos os aplicativos usando essa VNet.
 * **Adicionar rotas** A adição de rotas orientará o tráfego de saída em sua VNet.
 
-**Roteamento** As rotas que são definidas em sua VNet são usadas para direcionar o tráfego para sua VNet vindo de seu aplicativo. Se você precisar enviar o tráfego de saída adicional para a VNet, você poderá adicionar esses blocos de endereço aqui. Isso capabilty só funciona com o gateway necessária integração VNet.
+**Roteamento** As rotas que são definidas em sua VNet são usadas para direcionar o tráfego para sua VNet vindo de seu aplicativo. Se você precisar enviar o tráfego de saída adicional para a VNet, você poderá adicionar esses blocos de endereço aqui. Este recurso só funciona com o gateway necessária integração VNet.
 
 **Certificados** quando o gateway necessária a integração VNet foi habilitada, há uma troca de certificados para garantir a segurança da conexão necessária. Juntamente com os certificados, há a configuração do DNS, as rotas e outros itens semelhantes que descrevem a rede.
 Se os certificados ou as informações de rede forem alterados, você precisará clicar em "Sincronizar Rede". Quando clica em "Sincronizar Rede", você causa uma breve interrupção na conectividade entre o aplicativo e a VNet. Embora seu aplicativo não seja reiniciado, a perda de conectividade pode fazer com que seu site não funcione corretamente. 

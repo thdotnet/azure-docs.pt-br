@@ -12,10 +12,10 @@ ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seoapril2019
 ms.openlocfilehash: c5043d99dd130bc7dc7b35eaa5ecadf11d7644db
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65851534"
 ---
 # <a name="table-statistics-in-azure-sql-data-warehouse"></a>Estatísticas de tabela no Azure SQL Data Warehouse
@@ -46,7 +46,7 @@ SET AUTO_CREATE_STATISTICS ON
 
 Essas instruções irá disparar a criação automática de estatísticas:
 
-- SELECT
+- SELECIONAR
 - INSERT-SELECT
 - CTAS
 - UPDATE
@@ -406,7 +406,7 @@ Há várias exibições e funções do sistema que podem ser utilizadas para loc
 
 Essas exibições do sistema fornecem informações sobre estatísticas:
 
-| Exibição do catálogo | Descrição |
+| Exibição do catálogo | DESCRIÇÃO |
 |:--- |:--- |
 | [sys.columns](/sql/relational-databases/system-catalog-views/sys-columns-transact-sql) |Uma linha para cada coluna. |
 | [sys.objects](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql) |Uma linha para cada objeto no banco de dados. |
@@ -420,7 +420,7 @@ Essas exibições do sistema fornecem informações sobre estatísticas:
 
 Essas funções de sistema são úteis para trabalhar com estatísticas:
 
-| Função do sistema | Descrição |
+| Função do sistema | DESCRIÇÃO |
 |:--- |:--- |
 | [STATS_DATE](/sql/t-sql/functions/stats-date-transact-sql) |Data da última atualização do objeto de estatísticas. |
 | [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql) |Nível de resumo e informações detalhadas sobre a distribuição de valores conforme entendido pelo objeto de estatísticas. |

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: alkohli
 ms.openlocfilehash: 9aeae0ab68d809b36a3316054f12a5a9657721f1
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65468598"
 ---
 # <a name="return-your-azure-data-box-edge-device"></a>Retornar o seu dispositivo de borda de caixa de dados do Azure
@@ -71,7 +71,7 @@ Para iniciar o processo de retorno, execute as seguintes etapas.
 3. Desconecte os cabos de alimentação e remova todos os cabos de rede do dispositivo.
 4. Prepare o pacote de remessa usando sua própria caixa ou a caixa vazia recebidas do Azure. Coloque o dispositivo e os cabos de energia que foram fornecidos com o dispositivo na caixa.
 5. Fixar a etiqueta de remessa que você recebeu do Azure no pacote.
-6. Agende uma retirada com sua operadora regional. Se retornar o dispositivo nos Estados Unidos, sua operadora é no-break. Para agendar uma retirada:
+6. Agende uma retirada com sua transportadora regional. Se retornar o dispositivo nos Estados Unidos, sua operadora é no-break. Para agendar uma retirada:
 
     1. Ligue para o serviço de no-break local (linha gratuita específica do país).
     2. Em sua chamada citar a remessa reversa conforme mostrado no seu rótulo impresso de número de controle.

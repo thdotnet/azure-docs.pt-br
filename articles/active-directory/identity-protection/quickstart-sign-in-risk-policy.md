@@ -1,8 +1,8 @@
 ---
 title: Início rápido - Bloquear acesso quando um risco de sessão é detectado com o Azure Active Directory Identity Protection | Microsoft Docs
-description: Neste início rápido, você aprenderá como configurar uma política de acesso condicional de risco de entrada do Azure AD (Azure Active Directory) Identity Protection para bloquear entradas com base em riscos de sessão.
+description: Neste início rápido, você aprenderá como você pode configurar uma Azure Active Directory (Azure AD) Identity Protection entrada arriscada a política de acesso condicional para bloquear entradas com base em riscos de sessão.
 services: active-directory
-keywords: identity protection, acesso condicional a aplicativos, acesso condicional com Azure AD, acesso seguro a recursos da empresa, políticas de acesso condicional
+keywords: proteção de identidade e acesso condicional para aplicativos, acesso condicional com o Azure AD, acesso seguro aos recursos da empresa, políticas de acesso condicional
 documentationcenter: ''
 author: MicrosoftGuyJFlo
 manager: daveba
@@ -17,18 +17,18 @@ ms.date: 09/13/2018
 ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f5127342f97a90103ef56efbd7465832440ec0f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: c04d1a01c0ffd69e70dfa3b88b4f3c7f4b3576d4
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/13/2019
-ms.locfileid: "60381769"
+ms.locfileid: "67108799"
 ---
 # <a name="quickstart-block-access-when-a-session-risk-is-detected-with-azure-active-directory-identity-protection"></a>Início Rápido: Bloquear o acesso quando um risco de sessão for detectado com o Azure Active Directory Identity Protection  
 
-Para manter o ambiente protegido, convém bloquear a conexão de usuários suspeitos. O Azure AD (Azure Active Directory) Identity Protection analisa cada entrada e calcula a probabilidade de uma tentativa de entrada não ter sido realizada pelo proprietário legítimo de uma conta de usuário. A probabilidade (baixa, média, alta) é indicada na forma de um valor calculado chamado níveis de risco de entrada. Ao definir a condição de risco de entrada, é possível configurar uma política de acesso condicional de risco de entrada para responder a níveis de risco de entrada específicos. 
+Para manter o ambiente protegido, convém bloquear a conexão de usuários suspeitos. O Azure AD (Azure Active Directory) Identity Protection analisa cada entrada e calcula a probabilidade de uma tentativa de entrada não ter sido realizada pelo proprietário legítimo de uma conta de usuário. A probabilidade (baixa, média, alta) é indicada na forma de um valor calculado chamado níveis de risco de entrada. Definindo a condição de risco de entrada, você pode configurar um risco de entrada a política de acesso condicional para responder aos níveis de risco de entrada específico. 
 
-Este início rápido mostra como configurar uma política de acesso condicional de risco de entrada que bloqueia uma entrada quando um nível de risco médio e superior foi detectado. 
+Neste início rápido mostra como configurar um risco de entrada que bloqueia uma entrada quando um meio de política de acesso condicional e acima de risco de entrada nível foi detectado. 
 
 ![Criar política](./media/quickstart-sign-in-risk-policy/1004.png)
 
@@ -61,11 +61,11 @@ O objetivo desta etapa é certificar-se de que sua conta de teste pode acessar s
 2. Saia. 
 
 
-## <a name="create-your-conditional-access-policy"></a>Criar sua política de acesso condicional 
+## <a name="create-your-conditional-access-policy"></a>Crie sua política de acesso condicional 
 
 O cenário neste início rápido usa uma entrada de um Tor Browser para gerar um evento de risco detectado **entradas de endereços IP anônimos**. O nível de risco desse evento de risco é médio. Para responder a esse evento de risco, defina a condição de risco de entrada como média. 
 
-Esta seção mostra como criar a política de acesso condicional de risco de entrada necessária. Em sua política, defina:
+Esta seção mostra como criar o risco de entrada necessário política de acesso condicional. Em sua política, defina:
 
 |Configuração |Value|
 |---     | --- |
@@ -79,7 +79,7 @@ Esta seção mostra como criar a política de acesso condicional de risco de ent
  
 
 
-**Para configurar sua política de acesso condicional:**
+**Para configurar a política de acesso condicional:**
 
 1. Entre no seu [portal do Azure](https://portal.azure.com) como administrador global.
 
@@ -119,7 +119,7 @@ Para testar sua política, tente entrar em sua [portal do Azure](https://portal.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Quando não for mais necessário, exclua o usuário de teste, o Navegador Tor e desabilite a política de acesso condicional de risco de entrada:
+Quando não for mais necessário, exclua o usuário de teste, o Tor Browser e desabilitar o risco de entrada política de acesso condicional:
 
 - Se você não souber excluir um usuário do Azure AD, consulte [Como adicionar ou excluir usuários](../fundamentals/add-users-azure-active-directory.md#delete-a-user).
 

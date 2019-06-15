@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
 ms.openlocfilehash: 318e71b68bbabeeef34c75a412f9fdd5b6db754a
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65073019"
 ---
 # <a name="entity-roles-for-contextual-subtypes"></a>Funções de entidade para os subtipos contextuais
@@ -37,8 +37,8 @@ As funções dão um nome para essas diferenças:
 
 |Tipo de entidade|Nome da entidade|Função|Finalidade|
 |--|--|--|--|
-|Simples|Local padrão|origem|de onde o avião parte|
-|Simples|Local padrão|destino|onde o avião pousa|
+|Simples|Local padrão|origin|de onde o avião parte|
+|Simples|Local padrão|destination|onde o avião pousa|
 
 ## <a name="non-machine-learned-entity-example-of-roles"></a>Exemplo de entidade não computador aprendeu de funções
 
