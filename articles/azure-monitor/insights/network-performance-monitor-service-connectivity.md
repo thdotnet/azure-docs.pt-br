@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: absha
-ms.openlocfilehash: 5b1c0212205575f1d40f320fb959d98e55d87fb9
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: c5285ac95a2f5813949f22aae3849fd7f55b1ada
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65963600"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052096"
 ---
 # <a name="service-connectivity-monitor"></a>Monitor de Conectividade de Serviço
 
@@ -64,7 +64,7 @@ Comece criando os testes para monitorar a conectividade de rede aos pontos de ex
 
     * Selecione o **Web** para monitorar a conectividade a um serviço que responde às solicitações HTTP/S, como outlook.office365.com ou bing.com.<br>
     * Selecione a **Rede** para monitorar a conectividade a um serviço que responde à solicitação TCP, mas não responde à solicitação HTTP/S, como um SQL server, servidor FTP ou porta SSH etc. 
-    * Por exemplo: Para criar um teste da web para uma conta de armazenamento de blob, selecione **Web** e insira o destino como *yourstorageaccount*. blob.core.windows.net. Da mesma forma, você pode criar testes para outro armazenamento de tabelas, armazenamento de filas e arquivos do Azure usando [este link.](https://docs.microsoft.com/azure/storage/common/storage-account-overview#storage-account-endpoints)
+    * Por exemplo:  Para criar um teste da web para uma conta de armazenamento de blob, selecione **Web** e insira o destino como *yourstorageaccount*. blob.core.windows.net. Da mesma forma, você pode criar testes para outro armazenamento de tabelas, armazenamento de filas e arquivos do Azure usando [este link.](https://docs.microsoft.com/azure/storage/common/storage-account-overview#storage-account-endpoints)
 4. Se você não deseja executar medidas de rede, como latência de rede, perda de pacotes e descoberta de topologia, desmarque a caixa de seleção **Executar medidas de rede**. Mantenha selecionado para obter o máximo benefício da funcionalidade. 
 5. Em **Destino**, insira o endereço IP/FQDN/URL para o qual você deseja monitorar a conectividade de rede.
 6. Em **Número da porta**, insira o número da porta do serviço de destino. 
@@ -129,7 +129,7 @@ Se você observar uma anormalidade, siga estas etapas:
 * Se o aplicativo está sendo executado lentamente, determine se o desempenho insatisfatório do aplicativo é devido à rede ou devido a algum problema no final do provedor de aplicativo.
 
 ## <a name="gcc-office-urls-for-us-government-customers"></a>URLs de GCC do Office para os clientes do governo dos EUA
-Para a região do US Government Virgínia, apenas as URLs do DOD são NPM internos. Os clientes que usam URLs de GCC precisam criar testes personalizados e adicionar cada inidividually de URL.
+Para a região do US Government Virgínia, apenas as URLs do DOD são NPM internos. Os clientes que usam URLs de GCC precisam criar testes personalizados e adicionar cada URL individualmente.
 
 | Campo | GCC |
 |:---   |:--- |

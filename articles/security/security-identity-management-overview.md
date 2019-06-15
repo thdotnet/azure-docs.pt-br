@@ -1,6 +1,6 @@
 ---
 title: Recursos de segurança do Azure que ajudam com o gerenciamento de identidade | Microsoft Docs
-description: " Este artigo fornece uma visão geral dos recursos de segurança centrais do Azure que ajudam com o gerenciamento de identidades. As soluções de gerenciamento de acesso e identidade da Microsoft ajudam a TI a proteger o acesso a aplicativos e recursos no datacenter corporativo e na nuvem, permitindo níveis de validação adicionais, como a Autenticação Multifator e as políticas de acesso condicional. "
+description: " Este artigo fornece uma visão geral dos recursos de segurança centrais do Azure que ajudam com o gerenciamento de identidades. Microsoft acesso e identidade gerenciamento soluções ajudam a TI proteger o acesso a aplicativos e recursos no datacenter corporativo e na nuvem, permitindo níveis adicionais de validação, como a autenticação multifator e acesso condicional políticas. "
 services: security
 documentationcenter: na
 author: TerryLanfear
@@ -15,16 +15,16 @@ ms.workload: na
 ms.date: 09/19/2018
 ms.author: terrylan
 Customer intent: As an IT Pro or decision maker I am trying to learn about identity management capabilities in Azure
-ms.openlocfilehash: 29c04fc04b5d277e982a37402a128b2dbe787e2c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 758ed2e44718da709acec1379cfc79936c8b7cdf
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60444224"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67083632"
 ---
 # <a name="azure-identity-management-security-overview"></a>Visão geral da segurança de gerenciamento de identidade do Azure
 
- Gerenciamento de identidade é o processo de autenticação e autorização [das entidades de segurança](https://docs.microsoft.com/windows/security/identity-protection/access-control/security-principals). Também envolve controlar informações sobre as entidades (identidades). Entidades de segurança (identidades) podem incluir serviços, aplicativos, usuários, grupos, etc. Soluções de gerenciamento e de identidade da Microsoft ajudam a TI a proteger o acesso a aplicativos e recursos pelo datacenter corporativo e para a nuvem. Esse tipo de proteção permite níveis adicionais de validação, tais como Autenticação Multifator e políticas de acesso condicional. O monitoramento de atividade suspeita por meio de alertas, auditoria e relatórios de segurança avançados ajuda a reduzir potenciais problemas de segurança. O [Azure Active Directory Premium](../active-directory/active-directory-editions.md) fornece SSO (logon único) para milhares de aplicativos SaaS (software como serviço) de nuvem e acesso a aplicativos Web executados localmente.
+ Gerenciamento de identidade é o processo de autenticação e autorização [das entidades de segurança](https://docs.microsoft.com/windows/security/identity-protection/access-control/security-principals). Também envolve controlar informações sobre as entidades (identidades). Entidades de segurança (identidades) podem incluir serviços, aplicativos, usuários, grupos, etc. Soluções de gerenciamento e de identidade da Microsoft ajudam a TI a proteger o acesso a aplicativos e recursos pelo datacenter corporativo e para a nuvem. Esse tipo de proteção permite que os níveis adicionais de validação, como políticas de acesso condicional e autenticação multifator. O monitoramento de atividade suspeita por meio de alertas, auditoria e relatórios de segurança avançados ajuda a reduzir potenciais problemas de segurança. O [Azure Active Directory Premium](../active-directory/active-directory-editions.md) fornece SSO (logon único) para milhares de aplicativos SaaS (software como serviço) de nuvem e acesso a aplicativos Web executados localmente.
  
 Aproveitando os benefícios de segurança do Microsoft Azure AD (Azure Active Directory), você pode:
 
@@ -129,9 +129,9 @@ Saiba mais:
 
 ## <a name="device-registration"></a>Registro de dispositivos
 
-O registro de dispositivos do Azure AD é a base para cenários de [acesso condicional](../active-directory/active-directory-conditional-access-device-registration-overview.md) baseado em dispositivo. Quando um dispositivo é registrado, o registro de dispositivos do Azure AD fornece ao dispositivo uma identidade que ele usa para autenticar o dispositivo quando um usuário entra. O dispositivo autenticado e os atributos desse dispositivo podem então ser usados para impor políticas de acesso condicional para aplicativos locais e hospedados em nuvem.
+Registro de dispositivo do Azure AD é a base para baseado em dispositivo [acesso condicional](../active-directory/active-directory-conditional-access-device-registration-overview.md) cenários. Quando um dispositivo é registrado, o registro de dispositivos do Azure AD fornece ao dispositivo uma identidade que ele usa para autenticar o dispositivo quando um usuário entra. O dispositivo autenticado e os atributos do dispositivo, em seguida, podem ser usados para impor políticas de acesso condicional para aplicativos que são hospedados na nuvem e locais.
 
-Quando combinada com uma solução de gerenciamento de dispositivo móvel, como o Intune, os atributos do dispositivo no Azure AD são atualizados com informações adicionais sobre o dispositivo. Você pode então criar regras de acesso condicional que imponham que o acesso dos dispositivos atendam aos padrões de segurança e conformidade.
+Quando combinada com uma solução de gerenciamento de dispositivo móvel, como o Intune, os atributos do dispositivo no Azure AD são atualizados com informações adicionais sobre o dispositivo. Em seguida, você pode criar regras de acesso condicional que impõe o acesso de dispositivos para atender aos padrões de segurança e conformidade.
 
 Saiba mais:
 

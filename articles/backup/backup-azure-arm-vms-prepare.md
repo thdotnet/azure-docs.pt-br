@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: raynew
-ms.openlocfilehash: bac61342f39821b6181a6a0e61bf0b11fb311007
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 06a7623fed0205d927fca9406469737faeda3a4b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66239329"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67076799"
 ---
 # <a name="back-up-azure-vms-in-a-recovery-services-vault"></a>Fazer backup de máquinas virtuais do Azure em um cofre dos Serviços de Recuperação
 
@@ -70,6 +70,9 @@ Além disso, há algumas coisas que você talvez precise fazer em algumas circun
  Depois que o cofre é criado, ele aparece na lista de cofres dos serviços de recuperação. Se você não encontrar seu cofre, selecione **Atualizar**.
 
 ![Lista de cofres de backup](./media/backup-azure-arm-vms-prepare/rs-list-of-vaults.png)
+
+> [!NOTE]
+> Serviço de Backup do Azure cria um grupo de recursos separado (que não seja o grupo de recursos VM) para armazenar o instantâneo, com o formato de nomenclatura **AzureBackupRG_geography_number** (exemplo: AzureBackupRG_northeurope_1). Os dados nesse grupo de recursos serão mantidos para a duração em dias, conforme especificado na *instantâneo de recuperação instantânea de reter* seção da política de Backup de máquinas virtuais do Azure.  Aplicar um bloqueio para esse grupo de recursos pode causar falhas de backup.
 
 ### <a name="modify-storage-replication"></a>Modificar a replicação de armazenamento
 

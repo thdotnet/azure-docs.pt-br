@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/19/2018
 ms.author: martincoetzer
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e1fa72f8c7edf76ec46663fd62ee40a3a16e8cd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ff59b93603af61fd8ea571966a3c43a06929ae04
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60414946"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113481"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Criar uma estratégia de gerenciamento de controle de acesso resiliente com o Azure Active Directory
 
@@ -37,8 +37,8 @@ Este documento fornece diretrizes sobre as estratégias que uma organização de
 Há quatro observações principais neste documento:
 
 * Evite o bloqueio do administrador usando contas de acesso de emergência.
-* Implemente a MFA usando o CA (acesso condicional) em vez de MFA por usuário.
-* Mitigue o bloqueio do usuário usando vários controles de CA (acesso condicional).
+* Implemente a autenticação Multifator usando o acesso condicional (CA) em vez de MFA por usuário.
+* Reduzir o bloqueio do usuário por meio de vários controles de acesso condicional (CA).
 * Reduza o bloqueio do usuário provisionando vários métodos de autenticação ou equivalentes para cada usuário.
 
 ## <a name="before-a-disruption"></a>Antes de uma interrupção
@@ -58,11 +58,11 @@ Para desbloquear o acesso de administrador para o locatário, é necessário cri
 
 ### <a name="mitigating-user-lockout"></a>Mitigar bloqueio do usuário
 
- Para mitigar o risco de bloqueio do usuário, use políticas de acesso condicional com vários controles para dar aos usuários uma escolha de como eles acessarão aplicativos e recursos. Permitir que um usuário escolha entre, por exemplo, entrar com MFA **ou** entrar a partir de um dispositivo gerenciado **ou** entrar a partir da rede corporativa, se um dos controles de acesso não estiver disponível, proporciona ao usuário outras opções para continuar a trabalhar.
+ Para atenuar o risco de bloqueio do usuário, use políticas de acesso condicional com vários controles para dar aos usuários uma escolha de como eles acessarão recursos e aplicativos. Permitir que um usuário escolha entre, por exemplo, entrar com MFA **ou** entrar a partir de um dispositivo gerenciado **ou** entrar a partir da rede corporativa, se um dos controles de acesso não estiver disponível, proporciona ao usuário outras opções para continuar a trabalhar.
 
 #### <a name="microsoft-recommendations"></a>Recomendações da Microsoft
 
-Incorpore os seguintes controles de acesso nas políticas de acesso condicional existentes da organização:
+Incorpore os seguintes controles de acesso em suas políticas de acesso condicional existentes para a organização:
 
 1. Provisione vários métodos de autenticação para cada usuário que dependa de canais de comunicação diferentes, por exemplo, o aplicativo Microsoft Authenticator (baseado na internet), token OATH (gerado no dispositivo) e SMS (telefônico).
 2. Implante o Windows Hello para Empresas em dispositivos Windows 10 para atender aos requisitos de MFA diretamente do logon de dispositivo.
@@ -109,7 +109,7 @@ Reconhecer sua exposição durante uma interrupção ajuda a reduzir o risco e �
 
 #### <a name="microsoft-recommendations"></a>Recomendações da Microsoft
 
-Uma política de acesso condicional de contingência é uma **política desabilitada** que omite controles com base em risco ou com base em dispositivo, MFA do Azure e MFA de terceiros. Então, quando sua organização decidir ativar o plano de contingência, os administradores poderão habilitar a política e desabilitar as políticas com base em controle regulares.
+Uma política de acesso condicional de contingência é uma **desabilitado política** que omite os controles de Azure MFA, a MFA de terceiros, com base em dispositivo ou risco. Então, quando sua organização decidir ativar o plano de contingência, os administradores poderão habilitar a política e desabilitar as políticas com base em controle regulares.
 
 >[!IMPORTANT]
 > Desabilitar políticas que impõem segurança nos usuários, mesmo temporariamente, reduzirá a postura de segurança enquanto o plano de contingência estiver vigente.
@@ -117,7 +117,7 @@ Uma política de acesso condicional de contingência é uma **política desabili
 * Configure um conjunto de políticas de fallback se uma interrupção em um mecanismo de controle de acesso ou um tipo de credencial afete o acesso aos seus aplicativos. Configure uma política em um estado desabilitado que requer ingresso no domínio como um controle, como um backup para uma política ativa que requer um provedor MFA de terceiros.
 * Reduza o risco de atores maliciosos detectarem senhas, quando a MFA não é necessária, seguindo as práticas no white paper [diretrizes de senha](https://aka.ms/passwordguidance).
 * Implante [SSPR (Redefinição de Senha de Autoatendimento do Azure AD)](https://docs.microsoft.com/azure/active-directory/authentication/quickstart-sspr) e [Proteção por Senha do Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises-deploy) para certificar-se de que os usuários não usem uma senha comum e os termos que você quer vetar.
-* Use as políticas que restringem o acesso dentro dos aplicativos se um determinado nível de autenticação não for atingido, em vez de simplesmente fazer fallback para acesso completo. Por exemplo: 
+* Use as políticas que restringem o acesso dentro dos aplicativos se um determinado nível de autenticação não for atingido, em vez de simplesmente fazer fallback para acesso completo. Por exemplo:
   * Configure uma política de backup que envia a declaração de sessão restrita para Exchange e SharePoint.
   * Se sua organização usa o Microsoft Cloud App Security, considere fazer fallback para uma política que envolve o MCAS e, então, o MCAS permite acesso somente leitura, mas não uploads.
 * Dê um nome às suas políticas para garantir que seja fácil encontrá-las durante uma interrupção. Inclua os seguintes elementos no nome da política:
@@ -247,7 +247,7 @@ Desfaça as alterações feitas como parte do plano de contingência ativado qua
 
 ## <a name="emergency-options"></a>Opções de emergência
 
- No caso de uma emergência e sua organização não implementou previamente um plano de contingência ou mitigação, siga as recomendações na seção [Contingências para bloqueio do usuário](#contingencies-for-user-lockout) se eles já usam políticas de acesso condicional para impor a MFA.
+ No caso de emergência e sua organização antes não eram implementar um plano de contingência ou atenuação e siga as recomendações a [contingências para bloqueio do usuário](#contingencies-for-user-lockout) seção se eles já usam o acesso condicional políticas para impor o MFA.
 Se sua organização estiver usando políticas herdadas de MFA por usuário, você pode considerar a seguinte alternativa:
 
 1. Se você tiver o endereço IP de saída de rede corporativa, é possível adicioná-las como IPs confiáveis para habilitar a autenticação somente para a rede corporativa.
@@ -269,4 +269,4 @@ Se sua organização estiver usando políticas herdadas de MFA por usuário, voc
 * [Guia de implantação do Windows Hello for Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
   * [Diretrizes de senha - Microsoft Research](https://research.microsoft.com/pubs/265143/microsoft_password_guidance.pdf)
 * [Quais são as condições no acesso condicional do Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/conditions)
-* [O que são controles de acesso no acesso condicional do Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)
+* [Quais são os controles de acesso no acesso condicional do Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)

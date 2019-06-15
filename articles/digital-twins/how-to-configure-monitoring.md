@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 06/03/2018
 ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: 9765af13a22a0ae9db8a45c396e7d5a32b71b79c
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: 5dc2587a0c127106d5afb41e20eca43919065f1b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66730314"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67118778"
 ---
 # <a name="how-to-configure-monitoring-in-azure-digital-twins"></a>Como configurar o monitoramento nos Gêmeos Digitais do Azure
 
@@ -68,11 +68,11 @@ Exemplos de registro de log de diagnóstico incluem:
 Para habilitar logs de diagnóstico, siga estas etapas:
 
 1. Abra os recursos no portal do Azure.
-1. Clique em **Configurações de Diagnóstico**:
+1. Selecione **configurações de diagnóstico**:
 
     [![Configurações de diagnóstico um](media/how-to-configure-monitoring/diagnostic-settings-one.png)](media/how-to-configure-monitoring/diagnostic-settings-one.png#lightbox)
 
-1. Clique em **Ativar diagnósticos** para coletar dados (se habilitado anteriormente).
+1. Selecione **ativar o diagnóstico** para coletar dados (se habilitado não anteriormente).
 1. Preencha os campos solicitados e selecione como e onde os dados serão salvos:
 
     [![Duas configurações de diagnóstico](media/how-to-configure-monitoring/diagnostic-settings-two.png)](media/how-to-configure-monitoring/diagnostic-settings-two.png#lightbox)
@@ -101,7 +101,7 @@ Consultar log completo é fornecido por meio [registra em log do Azure Monitor](
 
     [![O log analytics](media/how-to-configure-monitoring/log-analytics.png)](media/how-to-configure-monitoring/log-analytics.png#lightbox)
 
-1. Se você ainda não tiver um **espaço de trabalho do Log Analytics** instância, você pode criar um espaço de trabalho clicando o **Add** botão:
+1. Se você ainda não tiver um **espaço de trabalho do Log Analytics** instância, você pode criar um espaço de trabalho, selecionando a **Add** botão:
 
     [![Criar o OMS](media/how-to-configure-monitoring/log-analytics-oms.png)](media/how-to-configure-monitoring/log-analytics-oms.png#lightbox)
 
@@ -114,7 +114,7 @@ Para obter mais informações sobre as operações de consulta avançada, confir
 > [!NOTE]
 > Você pode ter um atraso de 5 minutos, ao enviar eventos a serem **espaço de trabalho do Log Analytics** pela primeira vez.
 
-Os logs do Azure Monitor também fornecem o erro poderoso e serviços de notificação de alerta, que podem ser exibidos clicando **diagnosticar e resolver problemas**:
+Os logs do Azure Monitor também fornecem o erro poderoso e serviços de notificação de alerta, que podem ser exibidos marcando **diagnosticar e resolver problemas**:
 
    [![Notificações de alerta e erro](media/how-to-configure-monitoring/log-analytics-notifications.png)](media/how-to-configure-monitoring/log-analytics-notifications.png#lightbox)
 

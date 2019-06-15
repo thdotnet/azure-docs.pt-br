@@ -4,14 +4,14 @@ description: Mostra quais tipos de recursos do Azure suportam tags. Fornece deta
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 05/10/2019
+ms.date: 06/07/2019
 ms.author: tomfitz
-ms.openlocfilehash: 7ef37323fb8150e3a6b52800bfafa2585ae328c2
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 8b7e6d234984e84f5b238d657281dd8b1b9ec423
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65523228"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056875"
 ---
 # <a name="tag-support-for-azure-resources"></a>Suporte a marcas para recursos do Azure
 Este artigo descreve se um tipo de recurso dá suporte a [marcas](resource-group-using-tags.md). A coluna rotulada **dá suporte a marcas** indica se o tipo de recurso tem uma propriedade para a marca. A coluna rotulada **marca no relatório de custo** indica se esse tipo de recurso passa a marca para o relatório de custo.
@@ -44,7 +44,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | anonymousapiusers | Não |  Não |
 | configuração | Não |  Não |
 | logs | Não |  Não |
-| Relatórios | Não |  Não |
+| relatórios | Não |  Não |
 | services | Não |  Não |
 
 ## <a name="microsoftadvisor"></a>Microsoft.Advisor
@@ -52,7 +52,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | ------------- | ----------- | ----------- |
 | configurações | Não |  Não |
 | generateRecommendations | Não |  Não |
-| recomendações | Não |  Não |
+| filmes | Não |  Não |
 | suppressions | Não |  Não |
 
 ## <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
@@ -70,13 +70,13 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| servidores | Sim | Sim |
+| servers | Sim | Sim |
 
 ## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
 | reportFeedback | Não |  Não |
-| serviço | Sim | Sim |
+| propriedade serviço | Sim | Sim |
 | validateServiceName | Não |  Não |
 
 ## <a name="microsoftattestation"></a>Microsoft.Attestation
@@ -301,8 +301,8 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
 | recursos | Não |  Não |
-| discos | Não |  Não |
-| imagens | Não |  Não |
+| disks | Não |  Não |
+| images | Não |  Não |
 | osImages | Não |  Não |
 | osPlatformImages | Não |  Não |
 | publicImages | Não |  Não |
@@ -316,7 +316,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| contas | Sim | Sim |
+| accounts | Sim | Sim |
 
 ## <a name="microsoftcommerce"></a>Microsoft.Commerce
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
@@ -328,13 +328,13 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
 | availabilitySets | Sim | Sim |
-| discos | Sim | Sim |
-| imagens | Sim | Sim |
+| disks | Sim | Sim |
+| images | Sim | Sim |
 | restorePointCollections | Sim | Sim |
 | restorePointCollections/restorePoints | Não |  Não |
 | sharedVMImages | Sim | Sim |
 | sharedVMImages/versions | Sim | Sim |
-| instantâneos | Sim | Sim |
+| snapshots | Sim | Sim |
 | virtualMachines | Sim | Sim |
 | virtualMachines/diagnosticSettings | Não |  Não |
 | virtualMachines/extensions | Sim | Sim |
@@ -409,13 +409,13 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftcontentmoderator"></a>Microsoft.ContentModerator
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| aplicativos | Sim | Sim |
+| de dimensionamento da Web | Sim | Sim |
 | updateCommunicationPreference | Não |  Não |
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| contas | Sim | Sim |
+| accounts | Sim | Sim |
 
 ## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
@@ -451,7 +451,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| trabalhos | Sim | Sim |
+| jobs | Sim | Sim |
 
 ## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
@@ -486,7 +486,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| contas | Sim | Sim |
+| accounts | Sim | Sim |
 | accounts/dataLakeStoreAccounts | Não |  Não |
 | accounts/storageAccounts | Não |  Não |
 | accounts/storageAccounts/containers | Não |  Não |
@@ -494,7 +494,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftdatalakestore"></a>Microsoft.DataLakeStore
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| contas | Sim | Sim |
+| accounts | Sim | Sim |
 | accounts/eventGridFilters | Não |  Não |
 | accounts/firewallRules | Não |  Não |
 
@@ -507,21 +507,21 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| servidores | Sim | Sim |
+| servers | Sim | Sim |
 | servers/recoverableServers | Não |  Não |
 | servers/virtualNetworkRules | Não |  Não |
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| servidores | Sim | Sim |
+| servers | Sim | Sim |
 | servers/recoverableServers | Não |  Não |
 | servers/virtualNetworkRules | Não |  Não |
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| servidores | Sim | Sim |
+| servers | Sim | Sim |
 | servers/advisors | Não |  Não |
 | servers/queryTexts | Não |  Não |
 | servers/recoverableServers | Não |  Não |
@@ -635,7 +635,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| trabalhos | Sim | Sim |
+| jobs | Sim | Sim |
 
 ## <a name="microsoftinformationprotection"></a>Microsoft.InformationProtection
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
@@ -676,7 +676,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | scheduledqueryrules | Sim | Sim |
 | vmInsightsOnboardingStatuses | Não |  Não |
 | webtests | Sim | Sim |
-| pastas de trabalho | Sim | Sim |
+| workbooks | Sim | Sim |
 
 ## <a name="microsoftintune"></a>Microsoft.Intune
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
@@ -714,17 +714,17 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
 | labaccounts | Sim | Sim |
-| Usuários | Não |  Não |
+| users | Não |  Não |
 
 ## <a name="microsoftlocationbasedservices"></a>Microsoft.LocationBasedServices
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| contas | Sim | Sim |
+| accounts | Sim | Sim |
 
 ## <a name="microsoftlocationservices"></a>Microsoft.LocationServices
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| contas | Sim | Sim |
+| accounts | Sim | Sim |
 
 ## <a name="microsoftloganalytics"></a>Microsoft.LogAnalytics
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
@@ -747,7 +747,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftmachinelearningexperimentation"></a>Microsoft.MachineLearningExperimentation
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| contas | Sim | Sim |
+| accounts | Sim | Sim |
 | accounts/workspaces | Sim | Sim |
 | accounts/workspaces/projects | Sim | Sim |
 | teamAccounts | Sim | Sim |
@@ -757,7 +757,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftmachinelearningmodelmanagement"></a>Microsoft.MachineLearningModelManagement
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| contas | Sim | Sim |
+| accounts | Sim | Sim |
 
 ## <a name="microsoftmachinelearningservices"></a>Microsoft.MachineLearningServices
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
@@ -783,7 +783,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftmaps"></a>Microsoft.Maps
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| contas | Sim | Sim |
+| accounts | Sim | Sim |
 | accounts/eventGridFilters | Não |  Não |
 
 ## <a name="microsoftmarketplace"></a>Microsoft.Marketplace
@@ -845,7 +845,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | azureFirewallFqdnTags | Não |  Não |
 | azureFirewalls | Sim | Não |
 | bgpServiceCommunities | Não |  Não |
-| conexões | Sim | Sim |
+| connections | Sim | Sim |
 | ddosCustomPolicies | Sim | Sim |
 | ddosProtectionPlans | Sim | Sim |
 | dnsOperationStatuses | Não |  Não |
@@ -922,7 +922,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | managementassociations | Não |  Não |
 | managementconfigurations | Sim | Sim |
 | solutions | Sim | Sim |
-| exibições | Sim | Sim |
+| Modos de exibição | Sim | Sim |
 
 ## <a name="microsoftpolicyinsights"></a>Microsoft.PolicyInsights
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
@@ -952,7 +952,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftprojectoxford"></a>Microsoft.ProjectOxford
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| contas | Sim | Sim |
+| accounts | Sim | Sim |
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
@@ -984,19 +984,19 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | childResources | Não |  Não |
 | events | Não |  Não |
 | impactedResources | Não |  Não |
-| notificações | Não |  Não |
+| Notificações | Não |  Não |
 
 ## <a name="microsoftresources"></a>Microsoft.Resources
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| implantações | Não |  Não |
+| deployments | Não |  Não |
 | deployments/operations | Não |  Não |
 | links | Não |  Não |
 | notifyResourceJobs | Não |  Não |
 | providers | Não |  Não |
 | resourceGroups | Não |  Não |
 | recursos | Não |  Não |
-| assinaturas | Não |  Não |
+| subscriptions | Não |  Não |
 | subscriptions/providers | Não |  Não |
 | subscriptions/resourceGroups | Não |  Não |
 | subscriptions/resourcegroups/resources | Não |  Não |
@@ -1008,13 +1008,13 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| aplicativos | Sim | Sim |
+| de dimensionamento da Web | Sim | Sim |
 | saasresources | Não |  Não |
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| fluxos | Sim | Sim |
+| flows | Sim | Sim |
 | jobcollections | Sim | Sim |
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
@@ -1088,9 +1088,9 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 | Tipo de recurso | Suporte de Tags | Marcar no relatório de custo |
 | ------------- | ----------- | ----------- |
-| aplicativos | Sim | Sim |
+| de dimensionamento da Web | Sim | Sim |
 | gateways | Sim | Sim |
-| redes | Sim | Sim |
+| networks | Sim | Sim |
 | segredos | Sim | Sim |
 | volumes | Sim | Sim |
 
@@ -1105,7 +1105,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | applianceDefinitions | Sim | Sim |
 | appliances | Sim | Sim |
 | applicationDefinitions | Sim | Sim |
-| aplicativos | Sim | Sim |
+| de dimensionamento da Web | Sim | Sim |
 | jitRequests | Sim | Sim |
 
 ## <a name="microsoftsql"></a>Microsoft.SQL
@@ -1121,7 +1121,7 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | managedInstances/keys | Não | Não |
 | managedInstances/restorableDroppedDatabases/backupShortTermRetentionPolicies | Não | Não |
 | managedInstances/vulnerabilityAssessments | Não | Não |
-| servidores | Sim | Sim |
+| servers | Sim | Sim |
 | servers/administrators | Não |  Não |
 | servers/communicationLinks | Não |  Não |
 | servers/databases | Sim (veja a observação a seguir) | Sim |
@@ -1225,19 +1225,19 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | apiManagementAccounts/connectionAcls | Não |  Não |
 | apiManagementAccounts/connections | Não |  Não |
 | billingMeters | Não |  Não |
-| certificados | Sim | Sim |
+| certificates | Sim | Sim |
 | connectionGateways | Sim | Sim |
-| conexões | Sim | Sim |
+| connections | Sim | Sim |
 | customApis | Sim | Sim |
 | deletedSites | Não |  Não |
 | funções | Não |  Não |
-| hostingEnvironments | Sim | Não |
+| hostingEnvironments | Sim | Sim |
 | hostingEnvironments/multiRolePools | Não |  Não |
 | hostingEnvironments/multiRolePools/instances | Não |  Não |
 | hostingEnvironments/multiRolePools | Não |  Não |
 | hostingEnvironments/workerPools/instances | Não |  Não |
 | publishingUsers | Não |  Não |
-| recomendações | Não |  Não |
+| filmes | Não |  Não |
 | resourceHealthMetadata | Não |  Não |
 | runtimes | Não |  Não |
 | serverFarms | Sim | Sim |

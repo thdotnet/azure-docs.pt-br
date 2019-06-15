@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 6/7/2019
 ms.author: victorh
-ms.openlocfilehash: ff71eb7d1386226e29b3f0846e0894a553f978e5
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: 0d52e84ba027f902cebf543ae019b5e4b53400b7
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66754239"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059689"
 ---
 # <a name="azure-dns-alias-records-overview"></a>Visão geral dos registros de alias do DNS do Azure
 
@@ -53,7 +53,7 @@ Este cenário é semelhante ao anterior. Talvez um aplicativo seja movido ou a m
 
 ### <a name="host-load-balanced-applications-at-the-zone-apex"></a>Hospedar aplicativos com balanceamento de carga no ápice da zona
 
-O protocolo DNS previne a atribuição de registros CNAME no ápice da zona. Por exemplo, se o domínio for contoso.com, você poderá criar registros CNAME para somelable.contoso.com, mas não poderá criar um CNAME para contoso.com em si.
+O protocolo DNS previne a atribuição de registros CNAME no ápice da zona. Por exemplo, se seu domínio for contoso.com; Você pode criar registros CNAME para somelabel.contoso.com; mas é possível criar um CNAME para contoso.com em si.
 Essa restrição apresenta um problema para os proprietários de aplicativos que têm aplicativos com balanceamento de carga por trás do [Gerenciador de Tráfego do Azure](../traffic-manager/traffic-manager-overview.md). Uma vez que usar um perfil do Gerenciador de tráfego exige a criação de um registro CNAME, que não é possível apontar o perfil do Gerenciador de tráfego do apex da zona.
 
 Esse problema é resolvido usando os registros de alias. Ao contrário de registros CNAME, registros de alias são criados no ápice da zona e os proprietários do aplicativo podem usá-lo para apontar seu registro apex de zona para um perfil do Gerenciador de tráfego que tem pontos de extremidade externos. Os proprietários do aplicativo apontam para o mesmo perfil do Gerenciador de tráfego que é usado para qualquer outro domínio em sua zona DNS.

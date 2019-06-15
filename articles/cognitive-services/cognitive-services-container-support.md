@@ -3,19 +3,19 @@ title: Suporte a contêiner
 titleSuffix: Azure Cognitive Services
 description: Saiba como os contêineres do Docker podem tornar os Serviços Cognitivos mais próximos de seus dados.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: article
-ms.date: 05/28/2019
-ms.author: diberry
-ms.openlocfilehash: 3d09ee542b98e1c365aceaf86b051d706c7882d4
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.date: 06/11/2019
+ms.author: dapine
+ms.openlocfilehash: 8faa524d7d88f09835d26439b772b8d57c84cc73
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66304277"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67122235"
 ---
 # <a name="container-support-in-azure-cognitive-services"></a>Suporte de contêiner nos Serviços Cognitivos do Azure
 
@@ -53,7 +53,7 @@ Recursos dos serviços cognitivos estão disponíveis no [Microsoft Azure](https
 
 Os contêineres dos Serviços Cognitivos do Azure fornecem o seguinte conjunto de contêineres do Docker, cada um contendo um subconjunto de funcionalidades dos serviços dos Serviços Cognitivos do Azure:
 
-| Serviço | Suporte para o tipo de preço | Contêiner | Descrição |
+| Serviço | Suporte para o tipo de preço | Contêiner | DESCRIÇÃO |
 |---------|----------|----------|-------------|
 |[Detector de anomalias](https://go.microsoft.com/fwlink/?linkid=2083925&clcid=0x409) |F0, S0|**Detector de anomalias** |A API do Detector de anomalias permite monitorar e detectar anormalidades nos seus dados de série temporal com aprendizado de máquina.<br>[Solicitar acesso](https://aka.ms/adcontainer)|
 |[Pesquisa Visual Computacional](Computer-vision/computer-vision-how-to-install-containers.md) |F0, S1|**Reconhecimento de Texto** |Extrai texto impresso de imagens de vários objetos com diferentes superfícies e planos de fundo como recibos, pôsters e cartões de visita.<br/><br/>**Importante:** O contêiner de Reconhecimento de Texto atualmente funciona somente em inglês.<br>[Solicitar acesso](Computer-vision/computer-vision-how-to-install-containers.md#request-access-to-the-private-container-registry)|
@@ -72,17 +72,17 @@ Os contêineres dos Serviços Cognitivos do Azure fornecem o seguinte conjunto d
 
 Além disso, alguns contêineres têm suporte nos serviços Cognitivos [ **All-In-One oferta** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne) chaves de recurso. Você pode criar um recurso de tudo em um único dos serviços Cognitivos e usar a mesma chave de cobrança em todos os serviços com suporte para os seguintes serviços:
 
-* Pesquisa Visual Computacional
-* Detecção Facial
+* Visual Computacional
+* Face
 * LUIS
-* Análise de Texto
+* Análise de texto
 
 ## <a name="container-availability-in-azure-cognitive-services"></a>Disponibilidade de contêiner nos Serviços Cognitivos do Azure
 
 Os contêineres dos Serviços Cognitivos do Azure estão disponíveis publicamente por meio da assinatura do Azure e as imagens do contêiner do Docker podem ser obtidas do Registro de Contêiner a Microsoft ou Hub do Docker. É possível usar o comando [docker pull](https://docs.docker.com/engine/reference/commandline/pull/) para baixar uma imagem de contêiner do registro apropriado.
 
 > [!IMPORTANT]
-> No momento, você deve concluir um processo de inscrição para acessar os contêineres seguintes, em que você pode preenche e enviar um questionário com perguntas sobre você, sua empresa e o caso de uso para o qual você deseja implementar os contêineres. Quando você tiver acesso e as credenciais fornecidas, poderá extrair as imagens de contêiner dos contêineres de Detecção Facial e Reconhecimento de Texto de um registro de contêiner particular hospedado pelo Registro de Contêiner do Azure.
+> No momento, você deve concluir um processo de inscrição para acessar os contêineres seguintes, em que você pode preenche e enviar um questionário com perguntas sobre você, sua empresa e o caso de uso para o qual você deseja implementar os contêineres. Depois do acesso concedido e forneceu as credenciais, você pode efetuar pull das imagens de contêiner de um registro de contêiner privado hospedado pelo registro de contêiner do Azure.
 > * [Anomalias dectector](Anomaly-Detector/anomaly-detector-container-howto.md#request-access-to-the-container-registry)
 > * [Detecção Facial](Face/face-how-to-install-containers.md)
 > * [Reconhecedor de formulário](form-recognizer/form-recognizer-container-howto.md#request-access-to-the-container-registry)

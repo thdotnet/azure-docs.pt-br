@@ -12,10 +12,10 @@ ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 1cbf1514ac5eba4e288ecb78944878217fc5ba3e
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65954526"
 ---
 # <a name="basic-concepts"></a>Conceitos básicos
@@ -160,9 +160,9 @@ As respostas de transcrição retornam o texto convertido de áudio para cliente
 
 - `RecognitionStatus` especifica o status de reconhecimento. Os valores possíveis são fornecidos na tabela a seguir.
 
-| Status | Descrição |
+| Status | DESCRIÇÃO |
 | ------------- | ---------------- |
-| Sucesso | O reconhecimento foi bem-sucedido e o campo de texto para exibição está presente |
+| Êxito | O reconhecimento foi bem-sucedido e o campo de texto para exibição está presente |
 | NoMatch | A fala foi detectada no fluxo de áudio, mas nenhuma palavra do idioma de destino foi combinada. Consulte [Status de Reconhecimento NoMatch (#nomatch-recognition-status) para obter mais detalhes  |
 | InitialSilenceTimeout | O início do fluxo de áudio continha apenas silêncio e o serviço de tempo limite de espera de fala |
 | BabbleTimeout | O início do fluxo de áudio continha apenas silêncio e o serviço de tempo limite de espera de fala |
@@ -190,7 +190,7 @@ O Serviço de fala da Microsoft pode retornar uma variedade de formatos de conte
 
 Você pode controlar o formato do resultado de frase especificando o `format` parâmetro de consulta de URL. Por padrão, o serviço retorna `simple` resultados.
 
-| Formatar | Descrição |
+| Formatar | DESCRIÇÃO |
 |-----|-----|
 | `simple` | Um resultado de frase simplificada que contém o status de reconhecimento e o texto reconhecido no formato de exibição. |
 | `detailed` | Um status de reconhecimento e uma lista de melhor N dos resultados de frase em que o resultado de cada frase contém todas as quatro formas de reconhecimento e uma pontuação de confiança. |
@@ -307,7 +307,7 @@ O formato de conteúdo do `detailed` resultado da frase:
 
 O serviço de fala Microsoft reconhece todos os formatos de fala humana, incluindo palavras e frases que muitas pessoas deseja classificar como "obscenidades". Você pode controlar como o serviço trata obscenidades usando o parâmetro de consulta de *obscenidades*. Por padrão, o serviço mascara obscenidades nos resultados *speech.phrase* e não retorna mensagens *speech.hypothesis* que contêm obscenidades.
 
-| *Valor de Obscenidades* | Descrição |
+| *Valor de Obscenidades* | DESCRIÇÃO |
 | - | - |
 | `masked` | Máscaras obscenidades com asteriscos. Esse é o comportamento padrão. |
 | `removed` | Remove obscenidades de todos os resultados. |

@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 03/22/2019
+ms.date: 06/13/2019
 ms.author: raynew
-ms.openlocfilehash: d96b898c8f72abd7e4eb3522ae046e9fc926f387
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 54449d9ea14fef6b2373aa8e0ea3341417c2d3fe
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60809332"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67057993"
 ---
 # <a name="enable-backup-when-you-create-an-azure-vm"></a>Habilitar o backup ao criar uma VM do Azure
 
@@ -27,7 +27,7 @@ Este artigo fornece detalhes sobre como habilitar o backup quando você cria uma
 ## <a name="sign-in-to-azure"></a>Entrar no Azure
 
 Se você não tiver entrado sua conta, entrar para o [portal do Azure](https://portal.azure.com).
- 
+
 ## <a name="create-a-vm-with-backup-configured"></a>Criar uma VM com Backup configurado
 
 1. No portal do Azure, clique em **criar um recurso**.
@@ -41,28 +41,32 @@ Se você não tiver entrado sua conta, entrar para o [portal do Azure](https://p
 6. Aceite o nome do cofre sugerido ou especifique seu próprio.
 7. Especificar ou criar um grupo de recursos no qual o cofre estará localizado. O cofre do grupo de recursos pode ser diferente do grupo de recursos VM.
 
-    ![Habilitar o backup de uma VM](./media/backup-during-vm-creation/enable-backup.png) 
+    ![Habilitar o backup de uma VM](./media/backup-during-vm-creation/enable-backup.png)
 
 8. Aceite a política de backup padrão ou modifique as configurações.
-    - Uma política de backup Especifica a frequência de instantâneos de backup da VM e por quanto tempo manter as cópias de backup. 
+    - Uma política de backup Especifica a frequência de instantâneos de backup da VM e por quanto tempo manter as cópias de backup.
     - A política padrão faz backup da VM, uma vez por dia.
     - Você pode personalizar sua própria política de backup para uma VM do Azure fazer backups diários ou semanais.
     - [Saiba mais](backup-azure-vms-introduction.md#backup-and-restore-considerations) sobre considerações de backup para VMs do Azure.
     - [Saiba mais](backup-instant-restore-capability.md) sobre o instante restaurar a funcionalidade.
 
-      ![Política de backup padrão](./media/backup-during-vm-creation/daily-policy.png) 
+      ![Política de backup padrão](./media/backup-during-vm-creation/daily-policy.png)
 
 
-## <a name="start-a-backup-after-creating-the-vm"></a>Iniciar um backup após a criação da VM 
+> [!NOTE]
+> Serviço de Backup do Azure cria um grupo de recursos separado (que não seja o grupo de recursos VM) para armazenar o instantâneo, com o formato de nomenclatura **AzureBackupRG_geography_number** (exemplo: AzureBackupRG_northeurope_1). Os dados nesse grupo de recursos serão mantidos para a duração em dias, conforme especificado na *instantâneo de recuperação instantânea de reter* seção da política de Backup de máquinas virtuais do Azure.  Aplicar um bloqueio para esse grupo de recursos pode causar falhas de backup.
 
-O backup VM será executado de acordo com a política de backup. No entanto, é recomendável que você execute um backup inicial. 
+
+## <a name="start-a-backup-after-creating-the-vm"></a>Iniciar um backup após a criação da VM
+
+O backup VM será executado de acordo com a política de backup. No entanto, é recomendável que você execute um backup inicial.
 
 Depois que a VM for criada, faça o seguinte:
 
 1. Nas propriedades da VM, clique em **Backup**. O status da VM está inicial Backup pendente até que seja executado o backup inicial
 2. Clique em **fazer backup agora** para executar um backup sob demanda.
 
-    ![Executar um backup sob demanda](./media/backup-during-vm-creation/run-backup.png) 
+    ![Executar um backup sob demanda](./media/backup-during-vm-creation/run-backup.png)
 
 ## <a name="use-a-resource-manager-template-to-deploy-a-protected-vm"></a>Usar um modelo do Resource Manager para implantar uma VM protegida
 
@@ -70,11 +74,11 @@ As etapas anteriores explicam como usar o portal do Azure para criar uma máquin
 
 
 
-## <a name="next-steps"></a>Próximas etapas 
+## <a name="next-steps"></a>Próximas etapas
 
 Agora que você protegeu sua VM, saiba como gerenciar e restaurá-los.
 
-- [Gerenciar e monitorar VMs](backup-azure-manage-vms.md) 
-- [Restaurar VM](backup-azure-arm-restore-vms.md) 
+- [Gerenciar e monitorar VMs](backup-azure-manage-vms.md)
+- [Restaurar VM](backup-azure-arm-restore-vms.md)
 
 Se você tiver algum problema [examine](backup-azure-vms-troubleshoot.md) o guia de solução de problemas.

@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f4ab484b76bb536dd4e9d3c4fff2c85d93e4a41
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: bc352c6867779fd8f4487acdb1d11c0fabe4b9f7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235201"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110985"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Chamadas de serviço a serviço que usam a identidade do usuário delegado no fluxo On-Behalf-Of
 
@@ -112,10 +112,10 @@ Ao usar um segredo compartilhado, uma solicitação de token de acesso de servi�
 | Parâmetro |  | DESCRIÇÃO |
 | --- | --- | --- |
 | grant_type |obrigatório | O tipo da solicitação de token. Uma solicitação OBO usa um JWT (Token Web JSON), de modo que o valor deve ser **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
-| asserção |obrigatório | O valor do token de acesso usado na solicitação. |
+| assertion |obrigatório | O valor do token de acesso usado na solicitação. |
 | client_id |obrigatório | A ID do aplicativo atribuída ao serviço de chamada durante o registro com o Azure AD. Para localizar a ID do aplicativo no portal do Azure, selecione **Active Directory**, escolha o diretório e selecione o nome do aplicativo. |
 | client_secret |obrigatório | A chave registrada para o serviço de chamada no Azure AD. Esse valor deve ter sido observado no momento do registro. |
-| Recurso |obrigatório | O URI da ID do aplicativo do serviço de recebimento (recurso protegido). Para localizar o URI da ID do aplicativo no portal do Azure, selecione **Active Directory** e escolha o diretório. Selecione o nome do aplicativo, escolha **Todas as configurações** e, em seguida, selecione **Propriedades**. |
+| resource |obrigatório | O URI da ID do aplicativo do serviço de recebimento (recurso protegido). Para localizar o URI da ID do aplicativo no portal do Azure, selecione **Active Directory** e escolha o diretório. Selecione o nome do aplicativo, escolha **Todas as configurações** e, em seguida, selecione **Propriedades**. |
 | requested_token_use |obrigatório | Especifica como a solicitação deve ser processada. No fluxo em nome de, o valor deve ser **on_behalf_of**. |
 | scope |obrigatório | Lista de escopos separados por espaço para a solicitação de token. Para OpenID Connect, a **openid** do escopo deve ser especificada.|
 
@@ -146,11 +146,11 @@ Uma solicitação de token de acesso de serviço para serviço com certificado c
 | Parâmetro |  | DESCRIÇÃO |
 | --- | --- | --- |
 | grant_type |obrigatório | O tipo da solicitação de token. Uma solicitação OBO usa um token de acesso JWT, de modo que o valor deve ser **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
-| asserção |obrigatório | O valor do token usado na solicitação. |
+| assertion |obrigatório | O valor do token usado na solicitação. |
 | client_id |obrigatório | A ID do aplicativo atribuída ao serviço de chamada durante o registro com o Azure AD. Para localizar a ID do aplicativo no portal do Azure, selecione **Active Directory**, escolha o diretório e selecione o nome do aplicativo. |
 | client_assertion_type |obrigatório |O valor deve ser `urn:ietf:params:oauth:client-assertion-type:jwt-bearer` |
 | client_assertion |obrigatório | Um Token Web JSON que você cria e assina com o certificado registrado como credenciais de seu aplicativo. Confira [credenciais de certificado](active-directory-certificate-credentials.md) para saber mais sobre o formato da declaração e sobre como registrar seu certificado.|
-| Recurso |obrigatório | O URI da ID do aplicativo do serviço de recebimento (recurso protegido). Para localizar o URI da ID do aplicativo no portal do Azure, selecione **Active Directory** e escolha o diretório. Selecione o nome do aplicativo, escolha **Todas as configurações** e, em seguida, selecione **Propriedades**. |
+| resource |obrigatório | O URI da ID do aplicativo do serviço de recebimento (recurso protegido). Para localizar o URI da ID do aplicativo no portal do Azure, selecione **Active Directory** e escolha o diretório. Selecione o nome do aplicativo, escolha **Todas as configurações** e, em seguida, selecione **Propriedades**. |
 | requested_token_use |obrigatório | Especifica como a solicitação deve ser processada. No fluxo em nome de, o valor deve ser **on_behalf_of**. |
 | scope |obrigatório | Lista de escopos separados por espaço para a solicitação de token. Para OpenID Connect, a **openid** do escopo deve ser especificada.|
 
@@ -187,7 +187,7 @@ Uma resposta bem-sucedida é uma resposta JSON do OAuth 2.0 com os parâmetros a
 | scope |O escopo do acesso concedido no token. |
 | expires_in |O período de tempo pelo qual o token de acesso é válido (em segundos). |
 | expires_on |A hora de expiração do token de acesso. A data é representada como o número de segundos de 1970-01-01T0:0:0Z UTC até a hora de expiração. Esse valor é usado para determinar o tempo de vida de tokens em cache. |
-| Recurso |O URI da ID do aplicativo do serviço de recebimento (recurso protegido). |
+| resource |O URI da ID do aplicativo do serviço de recebimento (recurso protegido). |
 | access_token |O token de acesso solicitado. O serviço de chamada pode usar esse token para se autenticar no serviço de recebimento. |
 | id_token |O token de ID solicitado. O serviço de chamada pode usar esse token para verificar a identidade do usuário e iniciar uma sessão com o usuário. |
 | refresh_token |O token de atualização para o token de acesso solicitado. O serviço de chamada poderá usar esse token para solicitar outro token de acesso depois que o token de acesso atual expirar. |
@@ -213,7 +213,7 @@ O exemplo a seguir mostra uma resposta bem-sucedida a uma solicitação para um 
 
 ### <a name="error-response-example"></a>Exemplo de resposta de erro
 
-O ponto de extremidade do token do Azure AD retorna uma resposta de erro ao tentar obter um token de acesso para uma API downstream configurada com uma política de acesso condicional (por exemplo, com autenticação multifator). O serviço de camada intermediária deve revelar esse erro para o aplicativo cliente de modo que este possa fornecer a interação do usuário para satisfazer a política de acesso condicional.
+O ponto de extremidade de token do Azure AD retorna uma resposta de erro ao tentar adquirir um token de acesso para a API downstream que é definida com uma política de acesso condicional (por exemplo, a autenticação multifator). O serviço de camada intermediária deve revelar esse erro para o aplicativo cliente para que o aplicativo cliente possa fornecer a interação do usuário para atender à política de acesso condicional.
 
 ```
 {
@@ -256,10 +256,10 @@ Uma solicitação de serviço a serviço para obter uma declaração SAML conté
 | Parâmetro |  | DESCRIÇÃO |
 | --- | --- | --- |
 | grant_type |obrigatório | O tipo da solicitação de token. Para uma solicitação que usa um JWT, o valor deve ser **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
-| asserção |obrigatório | O valor do token de acesso usado na solicitação.|
+| assertion |obrigatório | O valor do token de acesso usado na solicitação.|
 | client_id |obrigatório | A ID do aplicativo atribuída ao serviço de chamada durante o registro com o Azure AD. Para localizar a ID do aplicativo no portal do Azure, selecione **Active Directory**, escolha o diretório e selecione o nome do aplicativo. |
 | client_secret |obrigatório | A chave registrada para o serviço de chamada no Azure AD. Esse valor deve ter sido observado no momento do registro. |
-| Recurso |obrigatório | O URI da ID do aplicativo do serviço de recebimento (recurso protegido). Esse é o recurso que será a Audiência do token SAML. Para localizar o URI da ID do aplicativo no portal do Azure, selecione **Active Directory** e escolha o diretório. Selecione o nome do aplicativo, escolha **Todas as configurações** e, em seguida, selecione **Propriedades**. |
+| resource |obrigatório | O URI da ID do aplicativo do serviço de recebimento (recurso protegido). Esse é o recurso que será a Audiência do token SAML. Para localizar o URI da ID do aplicativo no portal do Azure, selecione **Active Directory** e escolha o diretório. Selecione o nome do aplicativo, escolha **Todas as configurações** e, em seguida, selecione **Propriedades**. |
 | requested_token_use |obrigatório | Especifica como a solicitação deve ser processada. No fluxo em nome de, o valor deve ser **on_behalf_of**. |
 | requested_token_type | obrigatório | Especifica o tipo de token solicitado. O valor pode ser **urn:ietf:params:oauth:token-type:saml2** ou **urn:ietf:params:oauth:token-type:saml1**, dependendo dos requisitos do recurso acessado. |
 
@@ -278,7 +278,7 @@ A resposta contém um token SAML codificado em Base64url e UTF8.
 | scope |O escopo do acesso concedido no token. |
 | expires_in |O período de tempo pelo qual o token de acesso é válido (em segundos). |
 | expires_on |A hora de expiração do token de acesso. A data é representada como o número de segundos de 1970-01-01T0:0:0Z UTC até a hora de expiração. Esse valor é usado para determinar o tempo de vida de tokens em cache. |
-| Recurso |O URI da ID do aplicativo do serviço de recebimento (recurso protegido). |
+| resource |O URI da ID do aplicativo do serviço de recebimento (recurso protegido). |
 | access_token |O parâmetro que retorna a declaração SAML. |
 | refresh_token |O token de atualização. O serviço de chamada poderá usar esse token para solicitar outro token de acesso depois que a declaração SAML atual expirar. |
 

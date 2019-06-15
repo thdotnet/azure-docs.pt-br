@@ -7,12 +7,12 @@ ms.author: nakhanha
 ms.reviewer: hrasheed
 ms.topic: conceptual
 ms.date: 04/29/2019
-ms.openlocfilehash: b2b3d1ac0a7c0e917f87be1dd131120f63a70f8e
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: b245661ab8f26c1f529a049d326d2c72838c7a17
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65142806"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056731"
 ---
 # <a name="integrate-apache-spark-and-apache-hive-with-the-hive-warehouse-connector"></a>Integrar o Apache Spark e Apache Hive com o conector de Warehouse do Hive
 
@@ -20,7 +20,7 @@ O Apache Hive Warehouse Connector (HWC) é uma biblioteca que permite que você 
 
 O conector de Warehouse do Hive permite que você aproveite os recursos exclusivos do Hive e Spark para criar aplicativos poderosos de big data. Apache Hive oferece suporte para transações de banco de dados que são atômico, consistente, isolado e durável (ACID). Para obter mais informações sobre ACID e transações no Hive, consulte [transações Hive](https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions). Hive também oferece controles de segurança detalhada por meio do Apache Ranger e baixa latência de processamento analítico não está disponível no Apache Spark.
 
-Apache Spark, tem uma API de Streaming estruturado que fornece recursos de streaming não está disponíveis no Apache Hive. Começando com a Hortonworks Data Platform (HDP) 3.0, Apache Spark e Apache Hive tem metastores separado, que pode dificultar a interoperabilidade. O conector de Warehouse do Hive torna mais fácil de usar o Spark e Hive juntos. A biblioteca HWC carrega dados de daemons LLAP para executores Spark em paralelo, tornando mais eficiente e escalonável do que usar uma conexão JDBC padrão do Spark ao Hive.
+Apache Spark, tem uma API de Streaming estruturado que fornece recursos de streaming não está disponíveis no Apache Hive. Começando com o HDInsight 4.0, 2.3.1 do Apache Spark e Apache Hive 3.1.0 tem metastores separado, que pode dificultar a interoperabilidade. O conector de Warehouse do Hive torna mais fácil de usar o Spark e Hive juntos. A biblioteca HWC carrega dados de daemons LLAP para executores Spark em paralelo, tornando mais eficiente e escalonável do que usar uma conexão JDBC padrão do Spark ao Hive.
 
 ![Arquitetura](./media/apache-hive-warehouse-connector/hive-warehouse-connector-architecture.png)
 
@@ -239,5 +239,5 @@ Siga as etapas abaixo para criar um exemplo de conector de Warehouse do Hive que
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Usar a consulta interativa com o HDInsight](https://docs.microsoft.com/azure/hdinsight/interactive-query/apache-interactive-query-get-started)
+* [Usar a Consulta Interativa com o HDInsight](https://docs.microsoft.com/azure/hdinsight/interactive-query/apache-interactive-query-get-started)
 * [Exemplos de interagir com o conector de Warehouse do Hive usando o Zeppelin, Livy, spark-submit e o pyspark](https://community.hortonworks.com/articles/223626/integrating-apache-hive-with-apache-spark-hive-war.html)

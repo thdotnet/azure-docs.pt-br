@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 12/12/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: a33525e44b2e294b7ce85c7081864dbef0856588
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 70e478ac70b7ab53f1357394f3a3cb0d92f41f00
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62130804"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075773"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure"></a>Conecte-se a uma máquina virtual do SQL Server no Azure
 
@@ -94,13 +94,15 @@ Server=mysqlvm;Integrated Security=true
 
 ## <a id="change"></a> Alterar as configurações de conectividade do SQL
 
+[!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
+
 Você pode alterar as configurações de conectividade de sua máquina de virtual do SQL Server no Portal do Azure.
 
-1. No Portal do Azure, selecione **Máquinas Virtuais**.
+1. No portal do Azure, selecione **máquinas virtuais do SQL**.
 
 2. Selecione sua VM do SQL Server.
 
-3. Em **Configurações**, clique em **Configuração do SQL Server**.
+3. Sob **as configurações**, selecione **segurança**.
 
 4. Altere o **Nível de conectividade do SQL** para sua configuração exigida. Como opção, você pode usar essa área para alterar a porta do SQL Server ou as configurações da Autenticação SQL.
 

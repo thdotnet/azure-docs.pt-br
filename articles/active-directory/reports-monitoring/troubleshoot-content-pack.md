@@ -13,16 +13,16 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/13/2018
+ms.date: 06/07/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78676ac2f2dcff74a27e0260a5d83e924f7c246f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6ee49ae56122fe596a4490914677d91d2f0348f6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60284952"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66807532"
 ---
 # <a name="troubleshooting-azure-active-directory-activity-logs-content-pack-errors"></a>Solução de erros do pacote de conteúdo dos Logs de atividades do Azure Active Directory 
 
@@ -47,7 +47,7 @@ Este artigo fornece informações sobre as possíveis causas e como corrigir ess
 | Causa | Como corrigir |
 | ---   | ---        |
 | Erros de falha na atualização podem ser causados quando as credenciais dos usuários que se conectam ao pacote de conteúdo foram redefinidas, mas não atualizadas nas configurações de conexão do pacote de conteúdo. | No Power BI, localize o conjunto de dados correspondente ao painel de logs de atividades do Azure AD (**Logs de atividades do Azure Active Directory**), escolha programar atualização e insira as credenciais do Azure AD. |
-| Uma atualização poderá falhar devido a problemas de dados no pacote de conteúdo subjacente. | [Registre um tíquete de suporte](../fundamentals/active-directory-troubleshooting-support-howto.md).|
+| Uma atualização pode falhar devido a grandes conjuntos de dados. | Atualmente, o pacote de conteúdo do Azure AD com o Power BI pode dar suporte a apenas pequenos conjuntos de dados (linhas menor que 500,00) devido às limitações em torno de tempos limite no serviço do Power BI. Se você encontrar erros de limitação ou se a atualização falhar devido a problemas de tempo limite, isso pode ser porque você está tentando buscar um grande conjunto de dados. Reduza o período de tempo na consulta e tente novamente.|
  
  
 ## <a name="failed-to-update-data-source-credentials"></a>Falha ao atualizar as credenciais de fonte de dados 
@@ -69,7 +69,7 @@ Este artigo fornece informações sobre as possíveis causas e como corrigir ess
 | ---   | ---        |
 | Dependendo do tamanho do locatário, essa etapa poderá demorar de alguns minutos a 30 minutos. | Se a mensagem não for alterada para mostrar o painel dentro de uma hora, [registre um ticket de suporte](../fundamentals/active-directory-troubleshooting-support-howto.md).|
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Instalar o pacote de conteúdo do Power BI para relatórios do Azure AD](quickstart-install-power-bi-content-pack.md).
 * [Usar o pacote de conteúdo do Power BI para relatórios do Azure AD para visualizar os dados](howto-power-bi-content-pack.md)

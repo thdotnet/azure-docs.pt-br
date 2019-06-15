@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/29/2019
 ms.author: roiyz
-ms.openlocfilehash: 270b3ae49a815c9e12fce9377c8298192237f28a
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: fb931d5ce72b21cb17abbcd11095dbc8d611f0c9
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65790381"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67064439"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-windows"></a>Extensão da máquina virtual do Azure Monitor para Windows
 
@@ -38,17 +38,18 @@ A extensão do agente do Log Analytics para o Windows dá suporte aos seguintes 
 - Windows Server 2008 R2, 2012, 2012 R2, 2016, versão 1709 e 1803
 
 ### <a name="agent-and-vm-extension-version"></a>Versão do Agente e da Extensão de VM
-A tabela a seguir fornece um mapeamento da versão da extensão de VM do Azure Monitor e o pacote do agente do Log Analytics para cada versão. 
+A tabela a seguir fornece um mapeamento da versão da extensão de VM do Windows Azure Monitor e o pacote do agente do Log Analytics para cada versão. 
 
-| Versão da extensão de VM do Linux de Monitor do Azure | Versão do pacote do agente do Log Analytics | Data do Lançamento | Notas de versão |
+| Versão do pacote de agente do log Analytics Windows | Versão de extensão de VM do Windows de Monitor do Azure | Data do lançamento | Notas de versão |
 |--------------------------------|--------------------------|--------------------------|--------------------------|
-| 8.0.11049.0 | 1.0.11049.1 | Fevereiro de 2017 | |
-| 8.0.11072.0 | 1.0.11072.1 | Setembro de 2017 | |
-| 8.0.11081.0 | 1.0.11081.5 | Novembro de 2017 | | 
-| 8.0.11103.0 | n/d |  Abril de 2018 | |
-| 8.0.11136.0 | n/d | Setembro de 2018 |  <ul><li> Adicionado suporte para a detecção de alteração da ID de recurso na mudança da VM </li><li> Adicionado suporte para instalar ID ao usar sem extensão de recurso de relatório </li></ul>| 
-| 10.19.10006.0 | n/d | Dezembro de 2018 | <ul><li> Correções de estabilização secundária </li></ul> | 
-| 10.19.13515.0 | 1.0.13515.1 | Março de 2019 | <ul><li>Correções de estabilização secundária </li></ul> |
+| 10.20.18001 | 1.0.18001 | Junho de 2019 | <ul><li> Aprimoramentos de estabilização e correções de bugs secundários </li><li> Adicionada a capacidade para desabilitar as credenciais padrão ao fazer a conexão de proxy (suporte para WINHTTP_AUTOLOGON_SECURITY_LEVEL_HIGH) </li></ul>|
+| 10.19.13515 | 1.0.13515 | Março de 2019 | <ul><li>Correções de estabilização secundária </li></ul> |
+| 10.19.10006 | n/d | Dezembro de 2018 | <ul><li> Correções de estabilização secundária </li></ul> | 
+| 8.0.11136 | n/d | Setembro de 2018 |  <ul><li> Adicionado suporte para a detecção de alteração da ID de recurso na mudança da VM </li><li> Adicionado suporte para instalar ID ao usar sem extensão de recurso de relatório </li></ul>| 
+| 8.0.11103 | n/d |  Abril de 2018 | |
+| 8.0.11081 | 1.0.11081 | Novembro de 2017 | | 
+| 8.0.11072 | 1.0.11072 | Setembro de 2017 | |
+| 8.0.11049 | 1.0.11049 | Fevereiro de 2017 | |
 
 ### <a name="azure-security-center"></a>Central de Segurança do Azure
 

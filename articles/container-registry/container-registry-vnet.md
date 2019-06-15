@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 04/03/2019
 ms.author: danlep
-ms.openlocfilehash: 15b67218b129b5e017e67651587c389af412d7a1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: dc08fd5cc4abbf5d16f9d49874ec2c70cace165b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60867359"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67067959"
 ---
 # <a name="restrict-access-to-an-azure-container-registry-using-an-azure-virtual-network-or-firewall-rules"></a>Restringir o acesso a um registro de contêiner do Azure usando uma rede virtual do Azure ou regras de firewall
 
@@ -216,7 +216,7 @@ Continuar a [verificar o acesso ao registro](#verify-access-to-the-registry).
 
 ## <a name="allow-access-from-an-ip-address"></a>Permitir o acesso de um endereço IP
 
-Nesta seção, configura o registro de contêiner para permitir o acesso de uma sub-rede em uma rede virtual do Azure. São fornecidas etapas equivalentes usando a CLI do Azure e o portal do Azure.
+Nesta seção, configura o registro de contêiner para permitir o acesso de um endereço IP específico ou intervalo. São fornecidas etapas equivalentes usando a CLI do Azure e o portal do Azure.
 
 ### <a name="allow-access-from-an-ip-address---cli"></a>Permitir o acesso de um endereço IP - CLI
 
@@ -326,7 +326,7 @@ Para ver uma lista de regras de rede configurado para o registro, execute o segu
 az acr network-rule list--name mycontainerregistry 
 ```
 
-Para cada regra está configurada, execute as [remover regra de rede az acr] [ az-acr-network-rule-remove] comando removê-lo. Por exemplo: 
+Para cada regra está configurada, execute as [remover regra de rede az acr] [ az-acr-network-rule-remove] comando removê-lo. Por exemplo:
 
 ```azurecli
 # Remove a rule that allows access for a subnet. Substitute the subnet resource ID.

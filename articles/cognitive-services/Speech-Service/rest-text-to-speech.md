@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 8ebd871c314d3ecbc0c89e6c9081926558b181fd
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 59155b41906ffd401b971bee1248a225d0c33657
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65237106"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072464"
 ---
 # <a name="text-to-speech-rest-api"></a>API REST conversão de texto em fala
 
@@ -68,7 +68,7 @@ O `voices/list` ponto de extremidade permite que você obtenha uma lista complet
 
 Esta tabela lista os cabeçalhos obrigatórios e opcionais para solicitações de texto em fala.
 
-| Cabeçalho | Descrição | Obrigatório/Opcional |
+| Cabeçalho | DESCRIÇÃO | Obrigatório/Opcional |
 |--------|-------------|---------------------|
 | `Authorization` | Um token de autorização precedido pela palavra `Bearer`. Para obter mais informações, consulte [Autenticação](#authentication). | Obrigatório |
 
@@ -136,13 +136,13 @@ Essa resposta foi truncada para ilustrar a estrutura de uma resposta.
 
 O código de status HTTP para cada resposta indica sucesso ou erros comuns.
 
-| Código de status HTTP | Descrição | Possível motivo |
+| Código de status HTTP | DESCRIÇÃO | Possível motivo |
 |------------------|-------------|-----------------|
 | 200 | OK | A solicitação foi bem-sucedida. |
-| 400 | Solicitação Inválida | Um parâmetro obrigatório está ausente, vazio ou nulo. Ou então, o valor passado como um parâmetro obrigatório ou opcional é inválido. Um problema comum é um cabeçalho que é muito longo. |
+| 400 | Solicitação incorreta | Um parâmetro obrigatório está ausente, vazio ou nulo. Ou então, o valor passado como um parâmetro obrigatório ou opcional é inválido. Um problema comum é um cabeçalho que é muito longo. |
 | 401 | Não Autorizado | A solicitação não foi autorizada. Verifique se a chave de assinatura ou o token são válidos e se estão na região correta. |
 | 429 | Número Excessivo de Solicitações | Você excedeu a cota ou a taxa de solicitações permitidas para a sua assinatura. |
-| 502 | Gateway Incorreto | Problema de rede ou do servidor. Também pode indicar cabeçalhos inválidos. |
+| 502 | Gateway incorreto | Problema de rede ou do servidor. Também pode indicar cabeçalhos inválidos. |
 
 
 ## <a name="convert-text-to-speech"></a>Converter texto em fala
@@ -159,7 +159,7 @@ Essas regiões são suportadas para text-to-speech usando a API REST. Certifique
 
 Esta tabela lista os cabeçalhos obrigatórios e opcionais para solicitações de texto em fala.
 
-| Cabeçalho | Descrição | Obrigatório/Opcional |
+| Cabeçalho | DESCRIÇÃO | Obrigatório/Opcional |
 |--------|-------------|---------------------|
 | `Authorization` | Um token de autorização precedido pela palavra `Bearer`. Para obter mais informações, consulte [Autenticação](#authentication). | Obrigatório |
 | `Content-Type` | Especifica o tipo de conteúdo para o texto fornecido. Aceita o valor: `application/ssml+xml`. | Obrigatório |
@@ -168,7 +168,7 @@ Esta tabela lista os cabeçalhos obrigatórios e opcionais para solicitações d
 
 ### <a name="audio-outputs"></a>Saídas de áudio
 
-Esta é uma lista de formatos de áudio suportados que são enviados em cada solicitação como o cabeçalho `X-Microsoft-OutputFormat`. Cada um incorpora um tipo de taxa de bits e codificação. Os serviços de fala dá suporte a 24 KHz, KHz 16, e saídas de áudio de 8 KHz.
+Esta é uma lista de formatos de áudio suportados que são enviados em cada solicitação como o cabeçalho `X-Microsoft-OutputFormat`. Cada um incorpora um tipo de taxa de bits e codificação. Os serviços de fala dá suporte a 24 kHz, kHz 16, e saídas de áudio de 8 kHz.
 
 |||
 |-|-|
@@ -181,7 +181,7 @@ Esta é uma lista de formatos de áudio suportados que são enviados em cada sol
 | `audio-24khz-48kbitrate-mono-mp3` | |
 
 > [!NOTE]
-> Se sua voz selecionada e o formato de saída tiverem diferentes taxas de bits, o áudio é aumentado conforme necessário. Contudo, vozes de 24 kHz não são compatíveis com os formatos de saída `audio-16khz-16kbps-mono-siren` e `riff-16khz-16kbps-mono-siren`.
+> Se sua voz selecionada e o formato de saída tiverem diferentes taxas de bits, o áudio é aumentado conforme necessário. No entanto, vozes kHz 24 não dão suporte a `audio-16khz-16kbps-mono-siren` e `riff-16khz-16kbps-mono-siren` formatos de saída.
 
 ### <a name="request-body"></a>Corpo da solicitação
 
@@ -219,14 +219,14 @@ Confira nossos guias de início rápido para obter exemplos específicos de idio
 
 O código de status HTTP para cada resposta indica sucesso ou erros comuns.
 
-| Código de status HTTP | Descrição | Possível motivo |
+| Código de status HTTP | DESCRIÇÃO | Possível motivo |
 |------------------|-------------|-----------------|
 | 200 | OK | A solicitação foi bem-sucedida. O corpo da resposta é um arquivo de áudio. |
-| 400 | Solicitação Inválida | Um parâmetro obrigatório está ausente, vazio ou nulo. Ou então, o valor passado como um parâmetro obrigatório ou opcional é inválido. Um problema comum é um cabeçalho que é muito longo. |
+| 400 | Solicitação incorreta | Um parâmetro obrigatório está ausente, vazio ou nulo. Ou então, o valor passado como um parâmetro obrigatório ou opcional é inválido. Um problema comum é um cabeçalho que é muito longo. |
 | 401 | Não Autorizado | A solicitação não foi autorizada. Verifique se a chave de assinatura ou o token são válidos e se estão na região correta. |
 | 413 | Entidade de solicitação muito grande | A entrada de SSML tem mais de 1024 caracteres. |
 | 429 | Número Excessivo de Solicitações | Você excedeu a cota ou a taxa de solicitações permitidas para a sua assinatura. |
-| 502 | Gateway Incorreto | Problema de rede ou do servidor. Também pode indicar cabeçalhos inválidos. |
+| 502 | Gateway incorreto | Problema de rede ou do servidor. Também pode indicar cabeçalhos inválidos. |
 
 Se o status HTTP for `200 OK`, o corpo da resposta conterá um arquivo de áudio no formato solicitado. Este arquivo pode ser reproduzido enquanto é transferido, salvo em um buffer ou salvo em um arquivo.
 
