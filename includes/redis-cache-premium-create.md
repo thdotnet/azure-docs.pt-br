@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: wesmc
 ms.openlocfilehash: 2627554647c6c20cbdedfec53c1028b3edfa9c9c
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66132979"
 ---
 Para criar um cache Premium, entre no [portal do Azure](https://portal.azure.com) e clique em **Criar um recurso** > **Bancos de dados** > **Cache do Azure para Redis**.
@@ -22,5 +22,5 @@ Para criar um cache Premium, entre no [portal do Azure](https://portal.azure.com
 
 Para configurar recursos premium, primeiro selecione um dos tipos de preço premium na lista suspensa **Tipo de preço**. Para saber mais sobre cada tipo de preço, clique em **Exibir detalhes completos de preços** e selecione um tipo de preço na folha **Escolher tipo de preços**.
 
-![Escolha seu tipo de preço](media/redis-cache-premium-create/redis-cache-premium-pricing-tier.png)
+![Escolha o tipo de preço](media/redis-cache-premium-create/redis-cache-premium-pricing-tier.png)
 

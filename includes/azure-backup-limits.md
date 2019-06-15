@@ -9,10 +9,10 @@ ms.date: 12/07/2018
 ms.author: raynew
 ms.custom: include file
 ms.openlocfilehash: 9e9c09c1825f5c8383a708e8bd343146396f878e
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66238204"
 ---
 Os limites a seguir se aplicam ao Backup do Azure.
@@ -24,4 +24,4 @@ Os limites a seguir se aplicam ao Backup do Azure.
 | Cofres de backup em uma assinatura do Azure. |500 cofres por região. |
 | Agende backups diários. |Windows Server/Client: Três por dia.<br/> System Center DPM: Dois por dia. <br/> VMs de IaaS: Uma vez por dia.  |
 | Discos de dados anexados a uma VM do Azure para backup. | 16 |
-| Anexado à VM do Azure para backup de discos de dados individuais.| 4.095 GB|
+| Anexado à VM do Azure para backup de discos de dados individuais.| 4\.095 GB|

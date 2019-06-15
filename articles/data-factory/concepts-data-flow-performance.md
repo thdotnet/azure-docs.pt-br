@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.date: 05/16/2019
-ms.openlocfilehash: 46be01c57be0e4f5fa74f8e8b0d91db3d78f441c
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: d4acc620fb2a4c41615c745516e5ccfafd59d848
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66480422"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67057968"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Desempenho de fluxos de dados de mapeamento e guia de ajuste
 
@@ -41,7 +41,7 @@ Clicar nesse ícone exibirá o plano de execução e o perfil de desempenho subs
 
 ## <a name="optimizing-for-azure-sql-database-and-azure-sql-data-warehouse"></a>Otimização para o banco de dados SQL do Azure e Azure SQL Data Warehouse
 
-![Parte de origem](media/data-flow/sourcepart2.png "parte de origem")
+![Parte de origem](media/data-flow/sourcepart3.png "parte de origem")
 
 ### <a name="partition-your-source-data"></a>Particionar seus dados de origem
 
@@ -122,8 +122,8 @@ Clicar nesse ícone exibirá o plano de execução e o perfil de desempenho subs
 * Para evitar o esgotamento de recursos do nó de computação, você pode manter o padrão ou o esquema de particionamento explícita no ADF, que otimiza o desempenho de, e, em seguida, adicione uma atividade de cópia subsequentes no pipeline que mescla todos da parte de arquivos da pasta de saída para um único novo arquivo. Essencialmente, essa técnica separa a ação de transformação de mesclagem de arquivos e alcança o mesmo resultado que a configuração "saída para um arquivo único".
 
 ## <a name="next-steps"></a>Próximas etapas
-Consulte os outros artigos de fluxo de dados:
+Consulte os outros de fluxo de dados artigos relacionados ao desempenho:
 
-- [Visão geral do fluxo de dados](concepts-data-flow-overview.md)
+- [Guia de otimizar o fluxo de dados](concepts-data-flow-optimize-tab.md)
 - [Atividade de fluxo de dados](control-flow-execute-data-flow-activity.md)
 - [Monitorar o desempenho de fluxo de dados](concepts-data-flow-monitoring.md)

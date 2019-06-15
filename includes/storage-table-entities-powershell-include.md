@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 03/27/2019
 ms.author: tamram
 ms.openlocfilehash: 9a60c624b181a1efd2f6deebd349daa82214a8a4
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66159759"
 ---
 <!--created by Robin Shahan to go in the articles for table storage w/powershell.
@@ -70,9 +70,9 @@ Get-AzTableRow -table $cloudTable | ft
 
 Este comando gera resultados semelhantes à seguinte tabela:
 
-| userid | username | partição | rowkey |
+| userid | username | partition | rowkey |
 |----|---------|---------------|----|
-| 1 | Chris | partition1 | AC |
+| 1 | Chris | partition1 | CA |
 | 3 | Christine | partition1 | WA |
 | 2 | Jessie | partition2 | NM |
 | 4 | Steven | partition2 | TX |
@@ -85,9 +85,9 @@ Get-AzTableRow -table $cloudTable -partitionKey $partitionKey1 | ft
 
 Os resultados são parecidos com a seguinte tabela:
 
-| userid | username | partição | rowkey |
+| userid | username | partition | rowkey |
 |----|---------|---------------|----|
-| 1 | Chris | partition1 | AC |
+| 1 | Chris | partition1 | CA |
 | 3 | Christine | partition1 | WA |
 
 #### <a name="retrieve-entities-for-a-specific-value-in-a-specific-column"></a>Recuperar entidades de um valor específico em uma coluna específica
@@ -106,7 +106,7 @@ Essa consulta recupera um registro.
 | userid | 1 |
 | username | Chris |
 | PartitionKey | partition1 |
-| RowKey      | AC |
+| RowKey      | CA |
 
 #### <a name="retrieve-entities-using-a-custom-filter"></a>Recuperar entidades usando um filtro personalizado 
 
@@ -123,7 +123,7 @@ Essa consulta recupera um registro.
 | userid | 1 |
 | username | Chris |
 | PartitionKey | partition1 |
-| RowKey      | AC |
+| RowKey      | CA |
 
 ### <a name="updating-entities"></a>Atualizando entidades 
 

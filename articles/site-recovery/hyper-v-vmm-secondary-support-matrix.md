@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: raynew
 ms.openlocfilehash: e8b8f9856fe7e0fa591ceb42aab97e92642b6098
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66399360"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-hyper-v-vms-to-a-secondary-site"></a>Matriz de suporte para recuperação de desastres de VMs do Hyper-V para um site secundário
@@ -58,10 +58,10 @@ Somente computadores Linux com o armazenamento a seguir podem ser replicados:
 Host - Agrupamento NIC | Sim 
 Host - VLAN | Sim 
 Host - IPv4 | Sim 
-Host - IPv6 | Não  
-VM Convidada - Agrupamento NIC | Não 
+Host - IPv6 | Não 
+VM Convidada - Agrupamento NIC | Não
 VM Convidada - IPv4 | Sim
-VM Convidada - IPv6 | Não 
+VM Convidada - IPv6 | Não
 VM convidada – Windows/Linux – Endereço IP estático | Sim
 VM Convidada - Multi-NIC | Sim
 
@@ -84,16 +84,16 @@ Múltiplos caminhos (MPIO) | Sim
 VMDK |  N/D
 VHD/VHDX | Sim (até 16 discos)
 VM ger 2 | Sim
-Disco de cluster compartilhado | Não 
-Disco criptografado | Não 
+Disco de cluster compartilhado | Não
+Disco criptografado | Não
 UEFI| N/D
-NFS | Não 
-SMB 3.0 | Não 
+NFS | Não
+SMB 3.0 | Não
 RDM | N/D
 Disco > 1 TB | Sim
 Volume com discos distribuídos > 1 TB<br/><br/> LVM | Sim
 Espaços de Armazenamento | Sim
-Adição/remoção de disco a quente | Não 
+Adição/remoção de disco a quente | Não
 Exclusão de disco | Sim
 Múltiplos caminhos (MPIO) | Sim
 
@@ -101,8 +101,8 @@ Múltiplos caminhos (MPIO) | Sim
 
 **Ação** | **Com suporte**
 --- | --- 
-Mover cofres entre grupos de recursos (dentro de uma assinatura ou entre assinaturas) |  Não 
-Mover armazenamento, rede, VMs do Azure entre grupos de recursos (dentro de uma assinatura ou entre assinaturas) | Não 
+Mover cofres entre grupos de recursos (dentro de uma assinatura ou entre assinaturas) |  Não
+Mover armazenamento, rede, VMs do Azure entre grupos de recursos (dentro de uma assinatura ou entre assinaturas) | Não
 
 ## <a name="azure-site-recovery-provider"></a>Provedor do Azure Site Recovery
 

@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 3/26/2018
 ms.author: victorh
 ms.openlocfilehash: 10bc4e4c440e5495afd820f588270b7990108b68
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66135259"
 ---
 # <a name="create-an-application-gateway-with-path-based-routing-rules-using-the-azure-portal"></a>Criar um gateway de aplicativo com regras de roteamentos com base no caminho usando o portal do Azure
@@ -143,8 +143,8 @@ Neste exemplo, você criará três máquinas virtuais a serem usadas como servid
 
 1. Clique em **Regras** e, em seguida, clique em **Baseadas no caminho**.
 2. Digite *rule2* para o nome.
-3. Digite *Imagens* para o nome do primeiro caminho. Insira */images/*\* para o caminho. Selecione **imagesBackendPool** para o pool de back-end.
-4. Digite *Vídeo* para o nome do segundo caminho. Insira */video/*\* para o caminho. Selecione **videoBackendPool** para o pool de back-end.
+3. Digite *Imagens* para o nome do primeiro caminho. Insira */images/* \* para o caminho. Selecione **imagesBackendPool** para o pool de back-end.
+4. Digite *Vídeo* para o nome do segundo caminho. Insira */video/* \* para o caminho. Selecione **videoBackendPool** para o pool de back-end.
 
     ![Criar uma regra baseada em caminho](./media/application-gateway-create-url-route-portal/application-gateway-route-rule.png)
 

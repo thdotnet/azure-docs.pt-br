@@ -3,20 +3,21 @@ title: Configurar o método de roteamento de tráfego round robin ponderado usan
 description: Este artigo explica como balancear a carga do tráfego usando um método round robin no Gerenciador de Tráfego
 services: traffic-manager
 documentationcenter: ''
-author: kumudd
+author: asudbring
+manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
-ms.author: kumud
-ms.openlocfilehash: ef39c09d4fc411937fdd6f4b5b5aec491efd0c5f
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.author: allensu
+ms.openlocfilehash: 4ca43bf958606a71911bf5d35f31e4fe0b342601
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62113280"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071264"
 ---
 # <a name="configure-the-weighted-traffic-routing-method-in-traffic-manager"></a>Configurar o método de roteamento de tráfego ponderado no Gerenciador de Tráfego
 
@@ -34,7 +35,7 @@ Um padrão comum de roteamento de tráfego é fornecer um conjunto de pontos de 
     1. Para **configurações do método de roteamento de tráfego**, verifique se o método de roteamento de tráfego é **Ponderado**. Se não for, clique em **Ponderado** na lista suspensa.
     2. Defina as **Configurações do monitor de ponto de extremidade** de forma idêntica para todos os pontos de extremidade nesse perfil, da seguinte maneira:
         1. Selecione o **Protocolo** apropriado e especifique o número da **Porta**. 
-        2. Para **Caminho**, digite uma barra "/" */*. Para monitorar os pontos de extremidade, especifique um caminho e um nome de arquivo. A barra "/" é uma entrada válida para o caminho relativo e implica que o arquivo está no diretório raiz (padrão).
+        2. Para **Caminho**, digite uma barra "/" */* . Para monitorar os pontos de extremidade, especifique um caminho e um nome de arquivo. A barra "/" é uma entrada válida para o caminho relativo e implica que o arquivo está no diretório raiz (padrão).
         3. Na parte superior da página, clique em **Salvar**.
 5. Teste as alterações na configuração da seguinte maneira:
     1.  Na barra de pesquisa do portal, pesquise o nome do perfil do Gerenciador de Tráfego e clique no perfil do Gerenciador de Tráfego nos resultados exibidos.

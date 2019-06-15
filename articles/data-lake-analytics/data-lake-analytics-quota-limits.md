@@ -10,10 +10,10 @@ ms.assetid: 49416f38-fcc7-476f-a55e-d67f3f9c1d34
 ms.topic: conceptual
 ms.date: 03/15/2018
 ms.openlocfilehash: d3601fd8c32c70cf828cd08fada71258ec8fa5d4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60812663"
 ---
 # <a name="adjust-quotas-and-limits-in-azure-data-lake-analytics"></a>Ajustar cotas e limites no Azure Data Lake Analytics
@@ -34,7 +34,7 @@ Se você deseja ultrapassar esse limite, tente estas opções:
 
 **Número máximo de unidades de análise (AUs) por conta:** 32
 
-Esse é o número máximo de AUs que podem ser executadas simultaneamente em sua conta. Se o número total de AUs em execução em todos os trabalhos exceder esse limite, novos trabalhos serão colocados na fila automaticamente. Por exemplo: 
+Esse é o número máximo de AUs que podem ser executadas simultaneamente em sua conta. Se o número total de AUs em execução em todos os trabalhos exceder esse limite, novos trabalhos serão colocados na fila automaticamente. Por exemplo:
 
 * Caso você tenha um só trabalho em execução com 32 AUs, ao enviar um segundo trabalho, ele permanecerá na fila até que o primeiro trabalho seja concluído.
 * Se você já tiver quatro trabalhos em execução e cada um deles estiver usando 8 AUs, ao adicionar um quinto trabalho que precise de 8 AUs, ele permanecerá na fila até que 8 AUs fiquem disponíveis.

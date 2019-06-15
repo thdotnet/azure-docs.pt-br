@@ -8,10 +8,10 @@ ms.date: 05/30/2019
 ms.topic: article
 ms.service: azure-app-configuration
 ms.openlocfilehash: 601124aef37d2b285db71130f5c63b3620c7768f
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66735640"
 ---
 # <a name="reacting-to-azure-app-configuration-events"></a>Reagir a eventos de configuração de aplicativo do Azure
@@ -41,14 +41,14 @@ Eventos de configuração de aplicativo do Azure contêm todas as informações 
 > |-------------------|------------------------|-----------------------------------------------------------------------|
 > |topic|cadeia de caracteres|Id completa do Azure Resource Manager da configuração do aplicativo que emite o evento.|
 > |subject|cadeia de caracteres|O URI de chave-valor que é o assunto do evento.|
-> |eventTime|string|A data/hora que o evento foi gerado, no formato ISO 8601.|
+> |eventTime|cadeia de caracteres|A data/hora que o evento foi gerado, no formato ISO 8601.|
 > |eventType|cadeia de caracteres|"Microsoft.AppConfiguration.KeyValueModified" ou "Microsoft.AppConfiguration.KeyValueDeleted".|
-> |ID|string|Um identificador exclusivo deste evento.|
-> |dataVersion|cadeia de caracteres|A versão do esquema do objeto de dados.|
-> |metadataVersion|string|A versão do esquema de propriedades de nível superior.|
+> |ID|cadeia de caracteres|Um identificador exclusivo deste evento.|
+> |dataVersion|string|A versão do esquema do objeto de dados.|
+> |metadataVersion|cadeia de caracteres|A versão do esquema de propriedades de nível superior.|
 > |data|objeto|Coleta de dados de evento específicas de configuração de aplicativo do Azure|
 > |data.key|cadeia de caracteres|A chave da chave-valor que foi modificada ou excluída.|
-> |data.label|string|O rótulo, se houver, de chave-valor que foi modificado ou excluído.|
+> |data.label|cadeia de caracteres|O rótulo, se houver, de chave-valor que foi modificado ou excluído.|
 > |data.etag|cadeia de caracteres|Para `KeyValueModified` a etag do novo valor de chave. Para `KeyValueDeleted` etag de chave-valor que foi excluído.|
 
 Aqui está um exemplo de um evento KeyValueModified:

@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0dad74f75fd7b73e7dab0b2dddbdfda193d5b2ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 50779f8a37713bda8b27c1cfd2ca37eed4edbd11
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61073923"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67054700"
 ---
 # <a name="forward-azure-automation-state-configuration-reporting-data-to-azure-monitor-logs"></a>Encaminhar configuração de estado de automação do Azure relatando dados para logs do Azure Monitor
 
@@ -49,26 +49,26 @@ Para começar a importar dados do DSC de automação do Azure para logs do Azure
 
    ```powershell
    # Find the ResourceId for the Automation Account
-   Get-AzureRmResource -ResourceType 'Microsoft.Automation/automationAccounts'
+   Get-AzResource -ResourceType 'Microsoft.Automation/automationAccounts'
    ```
 
 1. Obtenha o _ResourceId_ de seu espaço de trabalho do Log Analytics executando o seguinte comando do PowerShell: (se você tiver mais de um espaço de trabalho, escolha o _ResourceID_ para o que deseja configurar).
 
    ```powershell
    # Find the ResourceId for the Log Analytics workspace
-   Get-AzureRmResource -ResourceType 'Microsoft.OperationalInsights/workspaces'
+   Get-AzResource -ResourceType 'Microsoft.OperationalInsights/workspaces'
    ```
 
 1. Execute o seguinte comando do PowerShell, substituindo `<AutomationResourceId>` e `<WorkspaceResourceId>` pelos valores de _ResourceId_ de cada uma das etapas anteriores:
 
    ```powershell
-   Set-AzureRmDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <WorkspaceResourceId> -Enabled $true -Categories 'DscNodeStatus'
+   Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <WorkspaceResourceId> -Enabled $true -Category 'DscNodeStatus'
    ```
 
 Se você quiser parar de importar dados de configuração de estado de automação do Azure nos logs do Azure Monitor, execute o seguinte comando do PowerShell:
 
 ```powershell
-Set-AzureRmDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <WorkspaceResourceId> -Enabled $false -Categories 'DscNodeStatus'
+Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <WorkspaceResourceId> -Enabled $false -Category 'DscNodeStatus'
 ```
 
 ## <a name="view-the-state-configuration-logs"></a>Exibir os logs de configuração de estado
@@ -133,10 +133,10 @@ O diagnóstico da automação do Azure cria duas categorias de registros nos log
 | NodeName_s |O nome do nó gerenciado. |
 | NodeComplianceStatus_s |Se o nó está em conformidade. |
 | DscReportStatus |Se a verificação de conformidade foi executada com êxito. |
-| ConfigurationMode | Como a configuração é aplicada ao nó. Os valores possíveis são __"ApplyOnly"__,__"ApplyandMonitior"__ e __"ApplyandAutoCorrect"__. <ul><li>__ApplyOnly__: O DSC somente aplica a configuração e nada mais, exceto se uma nova configuração for enviada por push ao nó de destino ou quando uma nova configuração é efetuada por pull de um servidor. Depois da aplicação inicial de uma nova configuração, o DSC não procura descompasso de um estado previamente configurado. O DSC tenta aplicar a configuração até que seja bem-sucedida antes __ApplyOnly__ entrar em vigor. </li><li> __ApplyAndMonitor__: Esse é o valor padrão. O LCM aplica as novas configurações. Depois da aplicação inicial de uma nova configuração, se o nó de destino tiver um descompasso do estado desejado, o DSC relatará a discrepância nos logs. O DSC tenta aplicar a configuração até que seja bem-sucedida antes __ApplyAndMonitor__ entrar em vigor.</li><li>__ApplyAndAutoCorrect__: O DSC aplica novas configurações. Depois da aplicação inicial de uma nova configuração, se o nó de destino tiver um descompasso do estado desejado, o DSC relatará a discrepância nos logs e, em seguida, reaplicará a configuração atual.</li></ul> |
+| ConfigurationMode | Como a configuração é aplicada ao nó. Os valores possíveis são __"ApplyOnly"__ , __"ApplyandMonitior"__ e __"ApplyandAutoCorrect"__ . <ul><li>__ApplyOnly__: O DSC somente aplica a configuração e nada mais, exceto se uma nova configuração for enviada por push ao nó de destino ou quando uma nova configuração é efetuada por pull de um servidor. Depois da aplicação inicial de uma nova configuração, o DSC não procura descompasso de um estado previamente configurado. O DSC tenta aplicar a configuração até que seja bem-sucedida antes __ApplyOnly__ entrar em vigor. </li><li> __ApplyAndMonitor__: Esse é o valor padrão. O LCM aplica as novas configurações. Depois da aplicação inicial de uma nova configuração, se o nó de destino tiver um descompasso do estado desejado, o DSC relatará a discrepância nos logs. O DSC tenta aplicar a configuração até que seja bem-sucedida antes __ApplyAndMonitor__ entrar em vigor.</li><li>__ApplyAndAutoCorrect__: O DSC aplica novas configurações. Depois da aplicação inicial de uma nova configuração, se o nó de destino tiver um descompasso do estado desejado, o DSC relatará a discrepância nos logs e, em seguida, reaplicará a configuração atual.</li></ul> |
 | HostName_s | O nome do nó gerenciado. |
 | IPAddress | O endereço IPv4 do nó gerenciado. |
-| Categoria | DscNodeStatus |
+| Category | DscNodeStatus |
 | Resource | O nome da conta de Automação do Azure. |
 | Tenant_g | GUID que identifica o locatário para o Chamador. |
 | NodeId_g |A GUID que identifica o nó gerenciado. |
@@ -162,7 +162,7 @@ O diagnóstico da automação do Azure cria duas categorias de registros nos log
 | OperationName |DscResourceStatusData|
 | ResultType |Se o recurso está em conformidade. |
 | NodeName_s |O nome do nó gerenciado. |
-| Categoria | DscNodeStatus |
+| Category | DscNodeStatus |
 | Resource | O nome da conta de Automação do Azure. |
 | Tenant_g | GUID que identifica o locatário para o Chamador. |
 | NodeId_g |A GUID que identifica o nó gerenciado. |

@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 02/15/2019
 ms.author: tomfitz
 ms.openlocfilehash: f6ebeb1d9953311ad1cb85d8ab33c83d5e92d687
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128628"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Solução de erros comuns de implantação do Azure com o Azure Resource Manager
@@ -30,7 +30,7 @@ Este artigo descreve alguns erros comuns de implantação do Azure e fornece inf
 
 ## <a name="error-codes"></a>Códigos do Erro
 
-| Código do erro | Atenuação | Mais informações |
+| Código do erro | Redução | Mais informações |
 | ---------- | ---------- | ---------------- |
 | AccountNameInvalid | Siga as restrições de nomenclatura para as contas de armazenamento. | [Resolver o nome da conta de armazenamento](resource-manager-storage-account-name-errors.md) |
 | AccountPropertyCannotBeSet | Verifique as propriedades da conta de armazenamento disponível. | [storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |

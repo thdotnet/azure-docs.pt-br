@@ -6,12 +6,12 @@ ms.author: janeng
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: ed534f910fa1e44d3d53ab61ee86378eba788036
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 42f290109ca380464cb07ac9f684cdde25b8fdcd
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66240377"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063762"
 ---
 # <a name="pricing-tiers-in-azure-database-for-postgresql---single-server"></a>Tipos de preço no banco de dados do Azure para PostgreSQL – servidor único
 
@@ -54,6 +54,26 @@ O armazenamento provisionado é a quantidade de capacidade de armazenamento disp
 Você pode adicionar mais capacidade de armazenamento durante e após a criação do servidor e permitir que o sistema crescer automaticamente com base no consumo de armazenamento de sua carga de trabalho de armazenamento. A camada Básico não oferece garantia de IOPS. Nos tipos de preço Uso Geral e Otimizado para Memória, o IOPS é dimensionado com o tamanho de armazenamento provisionado a uma taxa de 3:1.
 
 Você pode monitorar o consumo de E/S no Portal do Azure ou usando os comandos da CLI do Azure. As métricas relevantes para monitorar são o [limite de armazenamento, porcentagem de armazenamento, armazenamento usado e porcentagem de E/S](concepts-monitoring.md).
+
+### <a name="large-storage-preview"></a>Armazenamento de grande (visualização)
+
+Estamos aumentando os limites de armazenamento em camadas nosso uso geral e otimizado para memória. Recém-criados em servidores que participar da visualização pode provisionar até 16 TB de armazenamento. O IOPS é dimensionado em uma taxa de 3:1 até 20.000 IOPS. Assim como acontece com o armazenamento disponível atual, você pode adicionar mais capacidade de armazenamento após a criação do servidor e permitir que o sistema crescer automaticamente com base no consumo de armazenamento de sua carga de trabalho de armazenamento.
+
+|              | **Uso geral** | **Otimizado para memória** |
+|:-------------|:--------------------|:---------------------|
+| Tipo de armazenamento | Armazenamento Premium do Azure | Armazenamento Premium do Azure |
+| Tamanho do armazenamento | 32 GB a 16 TB| 32 a 16 TB |
+| Tamanho do incremento de armazenamento | 1 GB | 1 GB |
+| IOPS | 3 IOPS/GB<br/>Mín 100 IOPS<br/>20\.000 IOPS máxima| 3 IOPS/GB<br/>Mín 100 IOPS<br/>20\.000 IOPS máxima |
+
+> [!IMPORTANT]
+> Armazenamento de grande está atualmente em visualização pública nas seguintes regiões: Leste dos EUA, Leste dos EUA 2, centro dos EUA, oeste dos EUA, oeste dos EUA 2, Europa Setentrional, Europa Ocidental, Sudeste Asiático, Leste do Japão, Coreia Central, Leste da Austrália.
+>
+>A visualização do armazenamento de grandes atualmente não dá suporte:
+>
+> * Conexões de entrada por meio de pontos de extremidade de serviço de rede virtual
+> * Backups com redundância geográfica
+> * Replicação de região cruzada
 
 ### <a name="reaching-the-storage-limit"></a>Alcançando o limite de armazenamento
 

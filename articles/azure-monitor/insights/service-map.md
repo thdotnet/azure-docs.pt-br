@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 10/28/2018
 ms.author: magoedte
 ms.openlocfilehash: 09755922da78a3e856c491c01ce9f34f50063d71
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65606498"
 ---
 # <a name="using-service-map-solution-in-azure"></a>Usando a solução Mapa do Serviço no Azure
@@ -297,7 +297,7 @@ Os registros nessas tabelas são gerados a partir dos dados relatados pelo agent
 
 Para gerenciar o custo e a complexidade, os registros de conexão não representam as conexões de rede física individuais. Várias conexões de rede física são agrupadas em uma conexão lógica, o que é refletido na respectiva tabela.  Ou seja, os registros na tabela *VMConnection* representam um agrupamento lógico, não as conexões físicas individuais sendo observadas. As conexões de rede física que compartilham o mesmo valor para os atributos a seguir durante o intervalo especificado de um minuto são agregadas em um único registro lógico em *VMConnection*. 
 
-| Propriedade | Descrição |
+| Propriedade | DESCRIÇÃO |
 |:--|:--|
 | `Direction` |Direção da conexão, o valor é *entrada* ou *saída* |
 | `Machine` |O FQDN do computador |
@@ -309,7 +309,7 @@ Para gerenciar o custo e a complexidade, os registros de conexão não represent
 
 Para levar em conta o impacto do agrupamento, são fornecidas informações sobre o número de conexões físicas agrupadas nas seguintes propriedades do registro:
 
-| Propriedade | Descrição |
+| Propriedade | DESCRIÇÃO |
 |:--|:--|
 | `LinksEstablished` |O número de conexões de rede física que foram estabelecidas durante o intervalo de tempo de geração de relatórios |
 | `LinksTerminated` |O número de conexões de rede física que foram terminadas durante o intervalo de tempo de geração de relatórios |
@@ -320,7 +320,7 @@ Para levar em conta o impacto do agrupamento, são fornecidas informações sobr
 
 Além das métricas de contagem de conexões, as informações sobre o volume de dados enviados e recebidos em determinada conexão lógica ou porta de rede também estão incluídas nas seguintes propriedades do registro:
 
-| Propriedade | Descrição |
+| Propriedade | DESCRIÇÃO |
 |:--|:--|
 | `BytesSent` |Número total de bytes enviados durante o intervalo de tempo de geração de relatórios |
 | `BytesReceived` |Número total de bytes recebidos durante o intervalo de tempo de geração de relatórios |
@@ -346,7 +346,7 @@ Para sua conveniência, o endereço IP da extremidade remota de uma conexão é 
 #### <a name="geolocation"></a>Geolocalização
 *VMConnection* também inclui informações de localização geográfica para a extremidade remota de cada registro de conexão nas seguintes propriedades do registro: 
 
-| Propriedade | Descrição |
+| Propriedade | DESCRIÇÃO |
 |:--|:--|
 | `RemoteCountry` |O nome do país/região RemoteIp de hospedagem.  Por exemplo: *Estados Unidos* |
 | `RemoteLatitude` |A latitude da localização geográfica.  Por exemplo: *47,68* |
@@ -355,7 +355,7 @@ Para sua conveniência, o endereço IP da extremidade remota de uma conexão é 
 #### <a name="malicious-ip"></a>IP malicioso
 Todas as propriedades RemoteIp na tabela *VMConnection* são verificadas em um conjunto de IPs com atividades maliciosas conhecidas. Se RemoteIp for identificado como malicioso, as propriedades a seguir serão preenchidas (elas ficam em branco quando o IP não é considerado malicioso) nas seguintes propriedades do registro:
 
-| Propriedade | Descrição |
+| Propriedade | DESCRIÇÃO |
 |:--|:--|
 | `MaliciousIp` |Endereço de RemoteIp |
 | `IndicatorThreadType` |O indicador de ameaça detectado é um dos seguintes valores, *Botnet*, *C2*, *CryptoMining*, *Darknet*, *DDos*, *MaliciousUrl*, *Malware*, *Phishing*, *Proxy*, *PUA*, *Watchlist*.   |
@@ -397,7 +397,7 @@ Registros com um tipo de *ServiceMapComputer_CL* têm dados de inventário para 
 ### <a name="servicemapprocesscl-type-records"></a>Registros do tipo ServiceMapProcess_CL Type
 Registros com um tipo de *ServiceMapProcess_CL* têm dados de inventário para processos conectados com TCP em servidores com agentes do Mapa do Serviço. Esses registros têm as propriedades descritas na tabela a seguir:
 
-| Propriedade | Descrição |
+| Propriedade | DESCRIÇÃO |
 |:--|:--|
 | `Type` | *ServiceMapProcess_CL* |
 | `SourceSystem` | *OpsManager* |

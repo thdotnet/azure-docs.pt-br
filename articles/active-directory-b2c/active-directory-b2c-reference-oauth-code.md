@@ -11,10 +11,10 @@ ms.date: 02/19/2019
 ms.author: marsma
 ms.subservice: B2C
 ms.openlocfilehash: 7157682d7952529f9dfa98e8bc8707df9cfe944f
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66509237"
 ---
 # <a name="oauth-20-authorization-code-flow-in-azure-active-directory-b2c"></a>Fluxo de código de autorização do OAuth 2.0 no Azure Active Directory B2C
@@ -197,7 +197,7 @@ grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&client_s
 | client_id |Obrigatório |A ID do aplicativo atribuída ao seu aplicativo no [portal do Azure](https://portal.azure.com). |
 | client_secret |Obrigatório |O client_secret associado ao client_id no [Portal do Azure](https://portal.azure.com). |
 | grant_type |Obrigatório |O tipo de concessão. Para este segmento do fluxo de código de autorização, o tipo de concessão deve ser `refresh_token`. |
-| scope |Recomendadas |Uma lista de escopos separados por espaços. Um valor de escopo único indica ao Azure AD que ambas as permissões estão sendo solicitadas. O uso da ID do cliente como o escopo indica que seu aplicativo precisa de um token de acesso que possa ser usado em relação a seu próprio serviço ou API Web, representado pela mesma ID de cliente.  O escopo `offline_access` indica que o aplicativo precisará de um token de atualização para acessar os recursos de longa duração.  Você também pode usar o escopo `openid` para solicitar um token de ID do Azure AD B2C. |
+| scope |Recomendado |Uma lista de escopos separados por espaços. Um valor de escopo único indica ao Azure AD que ambas as permissões estão sendo solicitadas. O uso da ID do cliente como o escopo indica que seu aplicativo precisa de um token de acesso que possa ser usado em relação a seu próprio serviço ou API Web, representado pela mesma ID de cliente.  O escopo `offline_access` indica que o aplicativo precisará de um token de atualização para acessar os recursos de longa duração.  Você também pode usar o escopo `openid` para solicitar um token de ID do Azure AD B2C. |
 | redirect_uri |Opcional |O URI de redirecionamento do aplicativo em que você recebeu o código de autorização. |
 | refresh_token |Obrigatório |O token de atualização original que você adquiriu na segunda ramificação do fluxo. |
 

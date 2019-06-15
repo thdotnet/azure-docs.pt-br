@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 05/23/2019
 ms.author: evansma
 ms.openlocfilehash: da23b90e44869dcbd21acf9b2c4e04f30153ae09
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66751781"
 ---
 # <a name="saas-fulfillment-apis-version-2"></a>APIs de preenchimento SaaS versão 2 
@@ -107,7 +107,7 @@ O ponto de extremidade de resolução permite que o Editor resolver um token do 
 |  Tipo de conteúdo      | `application/json` |
 |  x-ms-requestid    |  Valor de cadeia de caracteres exclusiva para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 |  x-ms-correlationid |  Valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
-|  autorização     |  [Obter o token de portador do JSON web token (JWT)](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app) |
+|  authorization     |  [Obter o token de portador do JSON web token (JWT)](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app) |
 |  x-ms-marketplace-token  |  Parâmetro de consulta de token na URL quando o usuário é redirecionado ao site do ISV SaaS do Azure (por exemplo: `https://contoso.com/signup?token=..`). *Observação:* A URL decodifica o valor do token do navegador antes de usá-lo.  |
 
 *Códigos de resposta:*
@@ -171,7 +171,7 @@ Lista todas as assinaturas para um publicador do SaaS.
 | Tipo de conteúdo       |  `application/json`  |
 | x-ms-requestid     |  Valor de cadeia de caracteres exclusiva para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 | x-ms-correlationid |  Valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
-| autorização      |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+| authorization      |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Códigos de resposta:*
 
@@ -241,7 +241,7 @@ Obtém a assinatura especificada de SaaS. Use essa chamada para obter informaç�
 |  Tipo de conteúdo      |  `application/json`  |
 |  x-ms-requestid    |  Valor de cadeia de caracteres exclusiva para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 |  x-ms-correlationid |  Valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
-|  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+|  authorization     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Códigos de resposta:*
 
@@ -305,7 +305,7 @@ Use essa chamada para descobrir se há qualquer oferta privada/pública para o p
 |   Tipo de conteúdo     |  `application/json` |
 |   x-ms-requestid   |   Valor de cadeia de caracteres exclusiva para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 |  x-ms-correlationid  | Valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
-|  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app) |
+|  authorization     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app) |
 
 *Códigos de resposta:*
 
@@ -359,7 +359,7 @@ Erro interno do servidor<br>
 |  Tipo de conteúdo      | `application/json`  |
 |  x-ms-requestid    | Valor de cadeia de caracteres exclusiva para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  x-ms-correlationid  | Valor de cadeia de caracteres exclusiva para a operação no cliente. Essa cadeia de caracteres se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
-|  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app) |
+|  authorization     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app) |
 
 *Solicitação:*
 
@@ -416,7 +416,7 @@ Atualize o plano na assinatura.
 |  Tipo de conteúdo      | `application/json` |
 |  x-ms-requestid    |   Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  x-ms-correlationid  |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.    |
-| autorização      |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+| authorization      |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Carga de solicitação:*
 
@@ -482,7 +482,7 @@ Atualize a quantidade na assinatura.
 |  Tipo de conteúdo      | `application/json` |
 |  x-ms-requestid    |   Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  x-ms-correlationid  |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.    |
-| autorização      |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+| authorization      |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Carga de solicitação:*
 
@@ -548,7 +548,7 @@ Cancelar a assinatura e exclua a assinatura especificada.
 |   Tipo de conteúdo     |  `application/json` |
 |  x-ms-requestid    |   Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.   |
 |  x-ms-correlationid  |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.   |
-|  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+|  authorization     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Códigos de resposta:*
 
@@ -601,7 +601,7 @@ Lista as operações pendentes para o publicador atual.
 |   Tipo de conteúdo     |  `application/json` |
 |  x-ms-requestid    |  Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  x-ms-correlationid |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
-|  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+|  authorization     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Códigos de resposta:*
 
@@ -664,7 +664,7 @@ Permite que o Editor acompanhar o status da operação especificada assíncrona 
 |  Tipo de conteúdo      |  `application/json`   |
 |  x-ms-requestid    |   Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
 |  x-ms-correlationid |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta.  |
-|  autorização     |[Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+|  authorization     |[Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Códigos de resposta:* Código: 200<br> Obtém especificado SaaS operação pendente<br>
 Carga de resposta:
@@ -727,7 +727,7 @@ Atualize o status de uma operação para indicar êxito/falha com os valores for
 |   Tipo de conteúdo     | `application/json`   |
 |   x-ms-requestid   |   Um valor de cadeia de caracteres exclusivo para acompanhamento da solicitação do cliente, preferencialmente um GUID. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
 |  x-ms-correlationid |  Um valor de cadeia de caracteres exclusiva para a operação no cliente. Esse parâmetro se correlaciona a todos os eventos da operação de cliente com eventos no lado do servidor. Se esse valor não for fornecido, um será gerado e fornecido nos cabeçalhos de resposta. |
-|  autorização     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+|  authorization     |  [Obter o token de portador do JSON web token (JWT).](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Carga de solicitação:*
 

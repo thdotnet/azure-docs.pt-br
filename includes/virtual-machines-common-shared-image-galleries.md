@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 05/06/2019
 ms.author: akjosh; cynthn
 ms.custom: include file
-ms.openlocfilehash: 7a0e628eed861767d1eeb50b0ded7bb3d8807328
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 3ea41a16f79f903b5ff7d2b93f74f7d3d2a0dd83
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66271504"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67133027"
 ---
 Galeria de imagens compartilhadas é um serviço que ajuda você a criar a estrutura e a organização em torno de suas imagens gerenciadas. Galerias de imagens compartilhadas fornecem:
 
 - Replicação global gerenciado de imagens.
 - Controle de versão e o agrupamento de imagens para facilitar o gerenciamento.
-- Imagens altamente disponíveis com contas de armazenamento com redundância de zona (ZRS) em regiões que dão suporte a zonas de disponibilidade. O ZRS oferece uma melhor resiliência contra falhas de zona.
+- Imagens altamente disponíveis com contas de armazenamento com redundância de zona (ZRS) em regiões que dão suporte a zonas de disponibilidade. O ZRS oferece melhor resiliência em relação às falhas de zona.
 - Compartilhando entre assinaturas e até mesmo entre locatários do Active Directory (AD), usando o RBAC.
 - Dimensionar suas implantações com réplicas de imagem em cada região.
 
@@ -78,15 +78,15 @@ Regiões de origem são listados na tabela a seguir. Todas as regiões públicas
 
 | Regiões de origem |
 |---------------------|-----------------|------------------|-----------------|
-| Austrália Central   | EUA Central EUAP | Coreia Central    | Sul do Reino Unido 2      |
-| Austrália Central 2 | Ásia Oriental       | Sul da Coreia      | Oeste do Reino Unido         |
-| Leste da Austrália      | Leste dos EUA         | Centro-Norte dos EUA | Centro-Oeste dos EUA |
-| Sudeste da Austrália | Leste dos EUA 2       | Norte da Europa     | Europa Ocidental     |
-| Sul do Brasil        | Leste dos EUA 2 EUAP  | Centro-Sul dos Estados Unidos | Índia Ocidental      |
-| Canadá Central      | França Central  | Sul da Índia      | Oeste dos EUA         |
-| Leste do Canadá         | Sul da França    | Sudeste Asiático   | Oeste dos EUA         |
-| Índia Central       | Leste do Japão      | Norte do Reino Unido         | Oeste dos EUA 2       |
-| Centro dos EUA          | Oeste do Japão      | Sul do Reino Unido         |                 |
+| Austrália Central   | EUA Central EUAP | Coreia Central    | Centro-Oeste dos EUA |
+| Austrália Central 2 | Ásia Oriental       | Sul da Coreia      | Europa Ocidental     |
+| Leste da Austrália      | Leste dos EUA         | Centro-Norte dos EUA | Índia Ocidental      |
+| Sudeste da Austrália | Leste dos EUA 2       | Norte da Europa     | Oeste dos EUA         |
+| Sul do Brasil        | Leste dos EUA 2 EUAP  | Centro-Sul dos Estados Unidos | Oeste dos EUA 2       |
+| Canadá Central      | França Central  | Sul da Índia      |                 |
+| Leste do Canadá         | Sul da França    | Sudeste Asiático   |                 |
+| Índia Central       | Leste do Japão      | Sul do Reino Unido         |                 |
+| Centro dos EUA          | Oeste do Japão      | Oeste do Reino Unido          |                 |
 
 
 
@@ -94,7 +94,7 @@ Regiões de origem são listados na tabela a seguir. Todas as regiões públicas
 
 Há limites por assinatura, para a implantação de recursos usando Shared galerias de imagens:
 - 100 galerias de imagem compartilhada, por assinatura por região
-- 1.000 definições de imagem, por assinatura por região
+- 1\.000 definições de imagem, por assinatura por região
 - versões de imagem de 10.000, por assinatura por região
 
 Para obter mais informações, consulte [verificar o uso de recursos em relação aos limites](https://docs.microsoft.com/azure/networking/check-usage-against-limits) para obter exemplos sobre como verificar seu uso atual.
@@ -140,7 +140,7 @@ Como a Galeria de imagens compartilhadas, a definição de imagem e a versão da
 | Compartilhado com o usuário     | Galeria de imagens compartilhadas | Definição de imagem | Versão da imagem |
 |----------------------|----------------------|--------------|----------------------|
 | Galeria de imagens compartilhadas | Sim                  | sim          | Sim                  |
-| Definição de imagem     | Não                    | sim          | Sim                  |
+| Definição de imagem     | Não                   | sim          | Sim                  |
 
 É recomendável que o compartilhamento no nível de galeria para a melhor experiência. Não é recomendável compartilhar versões de imagem individuais. Para obter mais informações sobre o RBAC, consulte [gerenciar o acesso aos recursos do Azure usando o RBAC](../articles/role-based-access-control/role-assignments-portal.md).
 

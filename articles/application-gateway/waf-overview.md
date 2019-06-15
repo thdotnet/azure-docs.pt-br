@@ -8,10 +8,10 @@ ms.date: 5/22/2019
 ms.author: amsriva
 ms.topic: conceptual
 ms.openlocfilehash: 9c2759222198f5df682d9e7a5363c0d9679e0fad
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65991395"
 ---
 # <a name="web-application-firewall-for-azure-application-gateway"></a>Firewall do aplicativo Web para o Gateway de aplicativo do Azure
@@ -82,7 +82,7 @@ O WAF protege contra vulnerabilidades da web a seguir:
 
 CRS 3.0 inclui 13 grupos de regras, conforme mostrado na tabela a seguir. Cada grupo contém várias regras, que podem ser desabilitadas.
 
-|Grupo de regras|Descrição|
+|Grupo de regras|DESCRIÇÃO|
 |---|---|
 |**[REQUEST-911-METHOD-ENFORCEMENT](application-gateway-crs-rulegroups-rules.md#crs911)**|Bloquear métodos (PUT, PATCH)|
 |**[REQUEST-913-SCANNER-DETECTION](application-gateway-crs-rulegroups-rules.md#crs913)**|Proteção contra scanners de porta e ambiente|
@@ -100,7 +100,7 @@ CRS 3.0 inclui 13 grupos de regras, conforme mostrado na tabela a seguir. Cada g
 
 O CRS 2.2.9 inclui 10 grupos de regras, conforme mostrado na tabela a seguir. Cada grupo contém várias regras, que podem ser desabilitadas.
 
-|Grupo de regras|Descrição|
+|Grupo de regras|DESCRIÇÃO|
 |---|---|
 |**[crs_20_protocol_violations](application-gateway-crs-rulegroups-rules.md#crs20)**|Proteção contra violações de protocolo (como caracteres inválidos ou um GET com um corpo de solicitação)|
 |**[crs_21_protocol_anomalies](application-gateway-crs-rulegroups-rules.md#crs21)**|Proteção contra informações de cabeçalho incorretas|
@@ -130,7 +130,7 @@ No modo de pontuação de anomalias, o tráfego que corresponde a qualquer regra
 
 |Severity  |Value  |
 |---------|---------|
-|Crítica     |5|
+|Crítico     |5|
 |Erro        |4|
 |Aviso      |3|
 |Aviso       |2|
@@ -156,7 +156,7 @@ Logs de Gateway de aplicativo são integrados com [do Azure Monitor](../monitori
 
 ![Janela de visão geral da Central de segurança](./media/waf-overview/figure1.png)
 
-#### <a name="logging"></a>Registro em Log
+#### <a name="logging"></a>Registrando em log
 
 O WAF do Gateway de aplicativo fornece relatórios detalhados sobre cada ameaça detectado. Registro em log é integrado aos logs de diagnóstico do Azure. Alertas são registrados no formato. JSON. Esses logs podem ser integrados aos [logs do Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md).
 

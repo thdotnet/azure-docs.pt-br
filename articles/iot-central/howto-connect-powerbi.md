@@ -5,14 +5,14 @@ ms.service: iot-central
 services: iot-central
 author: viv-liu
 ms.author: viviali
-ms.date: 02/15/2019
+ms.date: 06/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 322be1e13662d92a3cb0a805a9ccaacd05928f7d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 16d7691d59e0805c7f8cf565a599ca5e6a78a7cf
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60886739"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67053036"
 ---
 # <a name="visualize-and-analyze-your-azure-iot-central-data-in-a-power-bi-dashboard"></a>Visualize e analise seus dados do Azure IoT Central em um painel do Power BI
 
@@ -63,7 +63,7 @@ O aplicativo Azure Functions é disparado sempre que um novo arquivo é gravado 
 ### <a name="azure-data-factory"></a>Fábrica de dados do Azure
 O Azure Data Factory se conecta ao Banco de Dados SQL como um serviço vinculado. Ele executa as atividades de procedimento armazenado que processa os dados e os armazena nas tabelas de análise.
 
-### <a name="azure-sql-database"></a>Banco de Dados SQL do Azure
+### <a name="azure-sql-database"></a>Banco de dados SQL do Azure
 Essas tabelas são criadas automaticamente para popular os relatórios padrão. Explore esses esquemas no Power BI e será possível criar suas próprias visualizações nesses dados.
 
 | Nome da tabela |

@@ -9,21 +9,21 @@ ms.date: 06/04/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 0074696fe61570b7595179cbf953308f75ed14bd
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66730514"
 ---
-Este artigo usa cmdlets do PowerShell. Para executar os cmdlets, você pode usar o Azure Cloud Shell, um ambiente de shell interativo hospedado no Azure e usado por meio do navegador. O Azure Cloud Shell vem com cmdlets do Azure PowerShell pré-instalado.
+Este artigo usa cmdlets do PowerShell. Para executar os cmdlets, é possível usar o Azure Cloud Shell, um ambiente de shell interativo hospedado no Azure e usado por meio do navegador. O Azure Cloud Shell vem com cmdlets do Azure PowerShell pré-instalados.
 
-Para executar qualquer código contido neste artigo no Azure Cloud Shell, abra uma sessão do Cloud Shell, use o **cópia** botão em um bloco de código para copiar o código e cole-o para a sessão do Cloud Shell com __Ctrl + Shift + V__ em Windows e Linux, ou __Cmd + Shift + V__ no macOS. Texto colado não será executado automaticamente, portanto, pressione **Enter** para executar o código.
+Para executar qualquer código contido neste artigo no Azure Cloud Shell, abra uma sessão do Cloud Shell, use o botão **Copiar** em um bloco de códigos para copiar o código e colá-lo na sessão do Cloud Shell com __Ctrl+Shift+V__ no Windows e no Linux ou __Cmd+Shift+V__ no macOS. O texto colado não é executado automaticamente; portanto, pressione **Enter** para executar o código.
 
-Você pode iniciar o Azure Cloud Shell com:
+É possível iniciar o Azure Cloud Shell com:
 
 |  |   |
 |-----------------------------------------------|---|
-| Selecione **Experimente** no canto superior direito de um bloco de código. Isso __não__ copiar automaticamente o texto para o Cloud Shell. | ![Exemplo de “Experimente” no Azure Cloud Shell](./media/cloud-shell-try-it/cli-try-it.png) |
+| Selecione **Experimente** no canto superior direito de um bloco de código. Isso __não__ copia automaticamente o texto para o Cloud Shell. | ![Exemplo de “Experimente” no Azure Cloud Shell](./media/cloud-shell-try-it/cli-try-it.png) |
 | Abra [shell.azure.com](https://shell.azure.com) no seu navegador. | [![Botão Iniciar o Azure Cloud Shell](./media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com) |
 | Selecione o botão **Cloud Shell** no menu no canto superior direito do [Portal do Azure](https://portal.azure.com). | ![Botão Cloud Shell no portal do Azure](./media/cloud-shell-try-it/cloud-shell-menu.png) |
 

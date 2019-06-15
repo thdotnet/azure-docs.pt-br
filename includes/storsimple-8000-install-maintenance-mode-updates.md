@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 560c9c177bfa693580979101e5b9343fcff7fe40
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66171172"
 ---
 ### <a name="install-maintenance-mode-updates-via-windows-powershell-for-storsimple"></a>Instalar atualizações do modo de manutenção por meio do Windows PowerShell para StorSimple
@@ -27,13 +27,13 @@ Quando você aplicar atualizações do modo de manutenção para o dispositivo S
 
     Ambos os controladores são reiniciados no modo de manutenção.
 
-3. Instale suas atualizações no modo de manutenção. Tipo:
+3. Instale suas atualizações no modo de manutenção. Digite:
 
     `Start-HcsUpdate`
 
     Você recebe uma solicitação para fornecer sua confirmação. Depois de confirmar as atualizações, elas serão instaladas no controlador que está sendo atualmente acessado por você. Depois que as atualizações forem instaladas, o controlador é reiniciado.
 
-4. Monitore o status das atualizações. Faça logon no outro controlador já que o controlador atual está sendo atualizado e não é capaz de processar nenhum outro comando. Tipo:
+4. Monitore o status das atualizações. Faça logon no outro controlador já que o controlador atual está sendo atualizado e não é capaz de processar nenhum outro comando. Digite:
 
     `Get-HcsUpdateStatus`
 

@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 09/05/2018
+ms.date: 05/24/2019
 ms.author: mbullwin
-ms.openlocfilehash: 3f4ef7f333525d7408d0345b917102cddb295386
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 6ad2ab00060528557f618eb684ccfa710c3f09b9
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66255476"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67074170"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-status-monitor"></a>Instrumentar aplicativos Web no tempo de execução com o Status Monitor do Application Insights
 
@@ -48,10 +48,10 @@ Aqui está um resumo do que você tem com cada rota:
 | [Exceções mais detalhadas](../../azure-monitor/app/asp-net-exceptions.md) | |Sim |
 | [Diagnóstico de dependência](../../azure-monitor/app/asp-net-dependencies.md) |No .NET 4.6+, mas menos detalhes |Sim, detalhes completos: códigos de resultado, texto do comando SQL, verbo HTTP|
 | [Contadores de desempenho do sistema](../../azure-monitor/app/performance-counters.md) |Sim |Sim |
-| [API de telemetria personalizada][api] |Sim |Não  |
+| [API de telemetria personalizada][api] |Sim |Não |
 | [Integração do log de rastreamento](../../azure-monitor/app/asp-net-trace-logs.md) |Sim |Não |
-| [Exibição da página e dados do usuário](../../azure-monitor/app/javascript.md) |Sim |Não  |
-| É necessário recompilar o código |Sim | Não  |
+| [Exibição da página e dados do usuário](../../azure-monitor/app/javascript.md) |Sim |Não |
+| É necessário recompilar o código |Sim | Não |
 
 
 

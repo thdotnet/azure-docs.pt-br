@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: hrasheed
 ms.openlocfilehash: 6ec981164de0ff61b0e83d54255d046a1418ed96
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66000097"
 ---
 # <a name="automatically-scale-azure-hdinsight-clusters-preview"></a>Dimensionar automaticamente os clusters de HDInsight do Azure (visualização)
@@ -33,7 +33,7 @@ A tabela a seguir descreve os tipos de cluster e versões que são compatíveis 
 | HDInsight 3.6 com ESP | Sim | sim | Não | Não | Não | Não | Não |
 | HDInsight 3.6 com ESP | Sim | sim | Não | Não | Não | Não | Não |
 
-## <a name="how-it-works"></a>Como funciona
+## <a name="how-it-works"></a>Como ele funciona
 
 Você pode escolher dimensionamento com base em carga ou com base no agendamento de dimensionamento para seu cluster HDInsight. Dimensionamento com base em carga altera o número de nós no cluster, dentro de um intervalo que você definir, para garantir que a utilização da CPU ideal e minimizar os custos em execução.
 
@@ -221,7 +221,7 @@ Todas as mensagens de status do cluster que você pode ver são explicadas na li
 
 | Status do cluster | Explicação |
 |---|---|
-| Em execução | O cluster está funcionando normalmente. Todas as atividades de dimensionamento automático anteriores foram concluídas com êxito. |
+| Executando | O cluster está funcionando normalmente. Todas as atividades de dimensionamento automático anteriores foram concluídas com êxito. |
 | Atualizando  | A configuração de dimensionamento automático do cluster está sendo atualizada.  |
 | Configuração do HDInsight  | Um cluster de escalar verticalmente ou reduzir verticalmente a operação está em andamento.  |
 | Erro de atualização  | HDInsight problemas encontrados durante a atualização de configuração de dimensionamento automático. Os clientes podem escolher repetir a atualização ou desabilitar o dimensionamento automático.  |

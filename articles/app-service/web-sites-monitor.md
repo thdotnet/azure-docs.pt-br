@@ -16,10 +16,10 @@ ms.date: 01/11/2019
 ms.author: byvinyal
 ms.custom: seodec18
 ms.openlocfilehash: a5d4d13d8e60cd7f273363a9bc385098e15cbb71
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60832520"
 ---
 # <a name="monitor-apps-in-azure-app-service"></a>Monitorar aplicativos no Serviço de Aplicativo do Azure
@@ -53,7 +53,7 @@ Para saber mais sobre cotas, limites e recursos específicos disponíveis para o
 
 ### <a name="quota-enforcement"></a>Aplicação de cota
 
-Se um aplicativo exceder a cota *CPU (Curto)*, *CPU (Dia)* ou *largura de banda*, o aplicativo será interrompido até que a cota seja redefinida. Durante esse tempo, todas as solicitações de entrada resultarão em um erro HTTP 403.
+Se um aplicativo exceder a cota *CPU (Curto)* , *CPU (Dia)* ou *largura de banda*, o aplicativo será interrompido até que a cota seja redefinida. Durante esse tempo, todas as solicitações de entrada resultarão em um erro HTTP 403.
 
 ![Mensagem de erro 403][http403]
 

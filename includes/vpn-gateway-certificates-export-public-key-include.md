@@ -9,10 +9,10 @@ ms.date: 02/13/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: afd4836229c60ebef1536d4fa1ca4206a492e56d
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66150316"
 ---
 Após criar um certificado raiz autoassinado, exporte o arquivo .cer de chave pública do certificado raiz (não a chave privada). Posteriormente, será feito upload desse arquivo para o Azure. As etapas a seguir ajudarão você a exportar o arquivo .cer para seu certificado raiz autoassinado:
@@ -37,7 +37,7 @@ Após criar um certificado raiz autoassinado, exporte o arquivo .cer de chave p�
    ![Concluir](./media/vpn-gateway-certificates-export-public-key-include/finish.png)
 7. O certificado foi exportado com êxito.
 
-   ![Sucesso](./media/vpn-gateway-certificates-export-public-key-include/success.png)
+   ![Êxito](./media/vpn-gateway-certificates-export-public-key-include/success.png)
 8. O certificado exportado é semelhante a este:
 
    ![Exportado](./media/vpn-gateway-certificates-export-public-key-include/exported.png)

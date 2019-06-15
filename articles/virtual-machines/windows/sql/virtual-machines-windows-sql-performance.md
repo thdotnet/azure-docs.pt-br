@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 09/26/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: c1f40c62fce61ba16dfdf289d54cd19c3739ce21
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: 3fda34e46ddb7ea17c98795ad6632841b79764eb
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393758"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67076923"
 ---
 # <a name="performance-guidelines-for-sql-server-in-azure-virtual-machines"></a>Diretrizes de desempenho para o SQL Server em Máquinas Virtuais do Azure
 
@@ -55,7 +55,7 @@ Para aplicativos sensíveis ao desempenho, é recomendável o uso dos seguintes 
 * **SQL Server Enterprise Edition**: DS3_v2 ou superior
 * **SQL Server Standard e Web Editions**: DS2_v2 ou superior
 
-As VMs da [série DSv2](../sizes-general.md#dsv2-series) dão suporte ao armazenamento premium, que é recomendado para obter o melhor desempenho. Os tamanhos recomendados aqui são linhas de base, mas o tamanho real da máquina a ser selecionado dependerá das suas demandas de carga de trabalho. As VMs da série DSv2 são VMs de uso geral, ideais para uma variedade de cargas de trabalho, enquanto outros tamanhos de máquinas são otimizados para tipos de carga de trabalho específicos. Por exemplo, a [série M](../sizes-memory.md#m-series) oferece o nível mais alto de contagem de vCPU e de memória, para as maiores cargas de trabalho do SQL Server. A [série GS](../sizes-memory.md#gs-series) e a [série DSv2 11 a 15](../sizes-memory.md#dsv2-series-11-15) são otimizadas para requisitos de memória grande. Essas duas série também estão disponíveis em [tamanhos limitados de núcleos](../../windows/constrained-vcpu.md), o que economiza em custos de cargas de trabalho com demandas de computação inferiores. As máquinas da [série Ls](../sizes-storage.md) são otimizadas para níveis altos de taxa de transferência e de E/S de disco. É importante considerar sua carga de trabalho específica do SQL Server e aplicá-la à sua seleção de série e tamanho de VM.
+As VMs da [série DSv2](../sizes-general.md#dsv2-series) dão suporte ao armazenamento premium, que é recomendado para obter o melhor desempenho. Os tamanhos recomendados aqui são linhas de base, mas o tamanho real da máquina a ser selecionado dependerá das suas demandas de carga de trabalho. As VMs da série DSv2 são VMs de uso geral, ideais para uma variedade de cargas de trabalho, enquanto outros tamanhos de máquinas são otimizados para tipos de carga de trabalho específicos. Por exemplo, a [série M](../sizes-memory.md#m-series) oferece o nível mais alto de contagem de vCPU e de memória, para as maiores cargas de trabalho do SQL Server. A [série GS](../sizes-previous-gen.md#gs-series) e a [série DSv2 11 a 15](../sizes-memory.md#dsv2-series-11-15) são otimizadas para requisitos de memória grande. Essas duas série também estão disponíveis em [tamanhos limitados de núcleos](../../windows/constrained-vcpu.md), o que economiza em custos de cargas de trabalho com demandas de computação inferiores. As máquinas da [série Ls](../sizes-storage.md) são otimizadas para níveis altos de taxa de transferência e de E/S de disco. É importante considerar sua carga de trabalho específica do SQL Server e aplicá-la à sua seleção de série e tamanho de VM.
 
 ## <a name="storage-guidance"></a>Orientação de armazenamento
 

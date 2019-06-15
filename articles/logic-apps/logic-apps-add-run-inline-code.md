@@ -10,10 +10,10 @@ ms.reviewer: derek1ee, LADocs
 ms.topic: article
 ms.date: 05/14/2019
 ms.openlocfilehash: 0bfa98396ee3afb80b486a5a17959664dfbe603c
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65602125"
 ---
 # <a name="add-and-run-code-snippets-by-using-inline-code-in-azure-logic-apps"></a>Adicionar e executar trechos de código usando o código embutido em aplicativos lógicos do Azure
@@ -52,7 +52,7 @@ Neste artigo, os gatilhos de aplicativo lógico do exemplo quando um novo email 
 
    * Para adicionar a ação no final do fluxo de trabalho, escolha **nova etapa**.
 
-   * Para adicionar a ação entre etapas existentes, mova o ponteiro do mouse sobre a seta que conecta-se essas etapas. Escolha o sinal de adição (**+**) e selecione **adicionar uma ação**.
+   * Para adicionar a ação entre etapas existentes, mova o ponteiro do mouse sobre a seta que conecta-se essas etapas. Escolha o sinal de adição ( **+** ) e selecione **adicionar uma ação**.
 
    Este exemplo adiciona o **código embutido** ação sob o disparador do Outlook do Office 365.
 
@@ -127,7 +127,7 @@ O `workflowContext` objeto tem esta estrutura, que inclui o `actions`, `trigger`
 
 Esta tabela contém mais informações sobre estas subpropriedades:
 
-| Propriedade | Type | Descrição |
+| Propriedade | Type | DESCRIÇÃO |
 |----------|------|-------|
 | `actions` | Coleção de objetos | Objetos de resultado de ações que são executadas antes de seu trecho de código é executado. Cada objeto tem um *chave-valor* par em que a chave é o nome de uma ação e o valor é equivalente a chamar o [função actions()](../logic-apps/workflow-definition-language-functions-reference.md#actions) com `@actions('<action-name>')`. Nome da ação usa o mesmo nome de ação que é usado na definição de fluxo de trabalho subjacente, que substitui espaços ("") no nome da ação por sublinhados (_). Esse objeto fornece acesso aos valores de propriedade de ação da instância atual do fluxo de trabalho execute. |
 | `trigger` | Object | Objeto de resultado do gatilho e equivalente a chamar o [trigger() função](../logic-apps/workflow-definition-language-functions-reference.md#trigger). Esse objeto fornece acesso aos valores de propriedade de gatilho da instância atual do fluxo de trabalho execute. |
@@ -217,7 +217,7 @@ Para adicionar esses parâmetros, abra o **adicionar novo parâmetro** lista e, 
 
    ![Adicionar parâmetros](./media/logic-apps-add-run-inline-code/inline-code-action-add-parameters.png)
 
-   | Parâmetro | Descrição |
+   | Parâmetro | DESCRIÇÃO |
    |-----------|-------------|
    | **Ações** | Inclua resultados de ações anteriores. Ver [incluir resultados de ação](#action-results). |
    | **Gatilho** | Inclua resultados do gatilho. Ver [resultados de gatilho de inclusão](#trigger-results). |

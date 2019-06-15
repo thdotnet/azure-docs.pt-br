@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 08/01/2016
 ms.author: mlearned
 ms.openlocfilehash: 692c075b55efd138f6d731ffae43608f141abfdc
-ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66019764"
 ---
 # <a name="continuous-integration-in-azure-devops-services-using-azure-resource-group-deployment-projects"></a>Integração contínua no Azure DevOps Services usando projetos de implantação do Grupo de Recursos do Azure
@@ -78,8 +78,8 @@ Os procedimentos a seguir percorrer as etapas necessárias para configurar impla
       ![Opção da entidade de serviço][5]
    5. Adicione as informações de assinatura do Azure à caixa de diálogo **Adicionar Assinatura do Azure** . Você precisa fornecer os seguintes itens:
       
-      * ID da Assinatura
-      * Nome da Assinatura
+      * ID da assinatura
+      * Nome da assinatura
       * Id da Entidade de serviço
       * Chave da Entidade de serviço
       * ID do locatário
@@ -109,9 +109,9 @@ Os procedimentos a seguir percorrer as etapas necessárias para configurar impla
     ![Editar caminho para script][10]
 8. Na caixa **Argumentos do Script** , digite os parâmetros a seguir (em uma única linha). Ao executar o script no Visual Studio, você pode ver como o VS usa os parâmetros na janela **Saída** . Você pode usar isso como um ponto de partida para definir os valores do parâmetro na etapa de compilação.
    
-   | Parâmetro | Descrição |
+   | Parâmetro | DESCRIÇÃO |
    | --- | --- |
-   | -ResourceGroupLocation |O valor da localização geográfica na qual o grupo de recursos está localizado, por exemplo, **eastus** ou **'Leste dos EUA'**. (Adicione aspas se houver um espaço no nome). Veja [Regiões do Azure](https://azure.microsoft.com/regions/) para saber mais. |
+   | -ResourceGroupLocation |O valor da localização geográfica na qual o grupo de recursos está localizado, por exemplo, **eastus** ou **'Leste dos EUA'** . (Adicione aspas se houver um espaço no nome). Veja [Regiões do Azure](https://azure.microsoft.com/regions/) para saber mais. |
    | -ResourceGroupName |O nome do grupo de recursos usado para essa implantação. |
    | -UploadArtifacts |Esse parâmetro, quando presente, especifica que artefatos do sistema local precisam ser carregados no Azure. Você só precisa definir essa opção se a implantação de seu modelo exigir artefatos adicionais que você deseja testar usando o script do PowerShell (como scripts de configuração ou modelos aninhados). |
    | -StorageAccountName |O nome da conta de armazenamento usada para artefatos de preparação para essa implantação. Esse parâmetro será usado somente se você estiver preparando artefatos para implantação. Se esse parâmetro for fornecido, uma nova conta de armazenamento será criada caso o script não tenha criado uma durante a implantação anterior. Se o parâmetro for especificado, a conta de armazenamento já deverá existir. |

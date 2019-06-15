@@ -14,12 +14,12 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: f0ae734ac8814cc605ce03756fde5545c77c837d
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 18aeaccef724ba94a9c18240fb77ea33897e8d26
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65992063"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063866"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-php"></a>Como usar tópicos e assinaturas do Barramento de Serviço com PHP
 
@@ -51,7 +51,23 @@ O único requisito para a criação de um aplicativo PHP que acessa o serviço B
 Este artigo descreve como usar os recursos de serviços que podem ser chamados em um aplicativo PHP localmente ou no código em execução em uma função web, uma função de trabalho ou um site do Azure.
 
 ## <a name="get-the-azure-client-libraries"></a>Obter as bibliotecas de cliente do Azure
-[!INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
+
+### <a name="install-via-composer"></a>Instalar por meio do Composer
+1. Crie um arquivo chamado **composer.json** na raiz do seu projeto e adicione o seguinte código a ele:
+   
+    ```json
+    {
+      "require": {
+        "microsoft/windowsazure": "*"
+      }
+    }
+    ```
+2. Baixe **[Phar] [composer-phar]** na raiz do projeto.
+3. Abra um prompt de comando e execute o seguinte comando na raiz do projeto
+   
+    ```
+    php composer.phar install
+    ```
 
 ## <a name="configure-your-application-to-use-service-bus"></a>Configurar seu aplicativo para usar o Barramento de serviço
 Para usar as APIs do barramento de serviço:
@@ -67,7 +83,7 @@ O exemplo a seguir mostra como incluir o arquivo de carregador automático e faz
 > 
 
 ```php
-require_once 'vendor\autoload.php';
+require_once 'vendor/autoload.php';
 use WindowsAzure\Common\ServicesBuilder;
 ```
 
@@ -345,7 +361,7 @@ $serviceBusRestProxy->deleteSubscription("mytopic", "mysubscription");
 ```
 
 > [!NOTE]
-> Você pode gerenciar recursos do barramento de serviço com [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). O Service Bus Explorer permite aos usuários para se conectar a um namespace do barramento de serviço e administrar entidades de mensagens de uma maneira fácil. A ferramenta fornece recursos avançados, como a funcionalidade de importação/exportação ou a capacidade de testar tópico, filas, assinaturas, serviços de retransmissão, os hubs de notificação e os hubs de eventos. 
+> É possível gerenciar os recursos do Barramento de Serviço com o [Gerenciador de Barramento de Serviço](https://github.com/paolosalvatori/ServiceBusExplorer/). O Gerenciador de Barramento de Serviço permite que usuários se conectem a um namespace de serviço do Barramento de Serviço e administrem entidades de mensagens de uma maneira fácil. A ferramenta fornece recursos avançados, como a funcionalidade de importação/exportação ou a capacidade de testar tópicos, filas, assinaturas, serviços de retransmissão, hubs de notificação e hubs de eventos. 
 
 ## <a name="next-steps"></a>Próximas etapas
 Para obter mais informações, confira [Filas, tópicos e assinaturas][Queues, topics, and subscriptions].

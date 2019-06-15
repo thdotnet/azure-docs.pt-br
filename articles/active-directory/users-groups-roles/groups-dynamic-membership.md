@@ -15,10 +15,10 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5a0e0508babdd9ae703e38d58b079ab5fa16f68c
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66397875"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Associação dinâmica do Azure Active Directory para grupos
@@ -60,7 +60,7 @@ Parênteses são opcionais para uma única expressão. O comprimento total do co
 
 Há três tipos de propriedades que podem ser usadas para construir uma regra de associação.
 
-* BOOLEAN
+* Boolean
 * Cadeia de caracteres
 * Coleção de Cadeias de Caracteres
 
@@ -80,7 +80,7 @@ Estas são todas as propriedades do usuário que você pode usar para criar uma 
 | city |Qualquer valor de cadeia de caracteres ou *null* |(user.city -eq "valor") |
 | country |Qualquer valor de cadeia de caracteres ou *null* |(user.country -eq "valor") |
 | companyName | Qualquer valor de cadeia de caracteres ou *null* | (user.companyName -eq "value") |
-| department |Qualquer valor de cadeia de caracteres ou *null* |(user.department -eq "value") A propriedade  |
+| department |Qualquer valor de cadeia de caracteres ou *null* |(user.department -eq "value") A propriedade |
 | displayName |Um valor de cadeia de caracteres. |(user. DisplayName -eq "valor") |
 | employeeId |Um valor de cadeia de caracteres. |(user.employeeId -eq "valor")<br>(user.employeeId -ne *null*) |
 | facsimileTelephoneNumber |Qualquer valor de cadeia de caracteres ou *null* |user.facsimileTelephoneNumber -eq ("valor") |
@@ -96,7 +96,7 @@ Estas são todas as propriedades do usuário que você pode usar para criar uma 
 | postalCode |Qualquer valor de cadeia de caracteres ou *null* |(user.postalCode - eq "valor") |
 | preferredLanguage |ISO 639-1 code |(user.preferredLanguage - eq "en-US") |
 | sipProxyAddress |Qualquer valor de cadeia de caracteres ou *null* |(user.sipProxyAddress -eq "valor") |
-| state |Qualquer valor de cadeia de caracteres ou *null* |(user.state -eq "valor") |
+| estado |Qualquer valor de cadeia de caracteres ou *null* |(user.state -eq "valor") |
 | streetAddress |Qualquer valor de cadeia de caracteres ou *null* |(user.streetAddress -eq "valor") |
 | sobrenome |Qualquer valor de cadeia de caracteres ou *null* |(user.surname -eq "valor") |
 | telephoneNumber |Qualquer valor de cadeia de caracteres ou *null* |(user.telephoneNumber -eq "valor") |

@@ -13,12 +13,12 @@ ms.date: 09/18/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee64fe8643362c6a75e288d78e163317fd8a44d8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: 5d6cce859aa26935f0b6007fe8e5ff2c2239b210
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/13/2019
-ms.locfileid: "60243713"
+ms.locfileid: "67109443"
 ---
 # <a name="azure-ad-connect-and-azure-ad-connect-health-installation-roadmap"></a>Roteiro de instalação do Azure AD Connect e do Azure AD Connect Health
 
@@ -68,7 +68,7 @@ O Azure Connect AD vem com vários recursos que você pode ativar opcionalmente 
 
 [write-back de senha](../authentication/quickstart-sspr.md) permitirá aos usuários alterar e redefinir suas senhas na nuvem e ter sua política de senha local aplicada.
 
-[write-back do dispositivo](how-to-connect-device-writeback.md) permitirá que um dispositivo registrado no Azure AD seja gravado de volta no Active Directory local, para que possa ser usado para acesso condicional.
+[Write-back de dispositivo](how-to-connect-device-writeback.md) permitirá que um dispositivo registrado no AD do Azure a serem gravados novamente no Active Directory local para que possa ser usado para acesso condicional.
 
 O recurso para [impedir exclusões acidentais](how-to-connect-sync-feature-prevent-accidental-deletes.md) é ativado por padrão e protege seu diretório na nuvem contra muitas exclusões ao mesmo tempo. Por padrão, ele permite 500 exclusões por execução. Você pode alterar essa configuração, dependendo do tamanho de sua organização.
 

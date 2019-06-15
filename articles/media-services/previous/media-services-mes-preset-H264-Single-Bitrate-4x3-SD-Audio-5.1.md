@@ -1,8 +1,8 @@
 ---
 title: H264 Taxa de Bits Única 4x3 SD Audio 5.1 | Microsoft Docs
 description: O tópico fornece uma visão geral da predefinição de tarefa **H264 Taxa de Bits Única 4x3 SD Audio 5.1**.
-author: WenJason
-manager: digimobile
+author: Juliako
+manager: femila
 editor: ''
 services: media-services
 documentationcenter: ''
@@ -12,14 +12,13 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 03/19/2019
-ms.date: 04/01/2019
-ms.author: v-jay
+ms.date: 03/19/2019
+ms.author: juliako
 ms.openlocfilehash: b3d31116ec30415a741b6175e7a50ed0169f6073
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61463541"
 ---
 # <a name="h264-single-bitrate-4x3-sd-audio-51"></a>H264 Taxa de Bits Única 4x3 SD Audio 5.1

@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 02/11/2016
 ms.author: genli
 ms.openlocfilehash: 9e7a5772dd1e10abf43eddf0548833d625ecfb24
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60742103"
 ---
 # <a name="ip-address-types-and-allocation-methods-classic-in-azure"></a>Tipos de endereço IP e métodos de alocação (clássico) no Azure
@@ -87,12 +87,12 @@ O [Application Gateway](../application-gateway/application-gateway-introduction.
 ### <a name="at-a-glance"></a>Visão rápida
 A tabela a seguir mostra cada tipo de recurso com os métodos de alocação possíveis (dinâmico/estático) e capacidade de atribuir vários endereços IP públicos.
 
-| Resource | Dinâmico | estático | Vários endereços IP |
+| Resource | Dinâmico | Estático | Vários endereços IP |
 | --- | --- | --- | --- |
 | serviço de nuvem |Sim |sim |Sim |
-| Instância de função de PaaS ou VM de IaaS |Sim |Não |Não  |
-| gateway de VPN |Sim |Não |Não  |
-| Gateway de Aplicativo |Sim |Não |Não  |
+| Instância de função de PaaS ou VM de IaaS |Sim |Não |Não |
+| gateway de VPN |Sim |Não |Não |
+| Gateway de Aplicativo |Sim |Não |Não |
 
 ## <a name="private-ip-addresses"></a>Endereços IP privados
 Endereços IP privados permitem que os recursos do Azure comuniquem-se com outros recursos em um serviço de nuvem ou em uma VNet ( [rede virtual](virtual-networks-overview.md)), ou na rede local (por meio de um gateway de VPN ou circuito de ExpressRoute), sem usar um endereço IP acessível pela Internet.
@@ -137,10 +137,10 @@ Você pode atribuir um endereço IP privado para a configuração de **front end
 ### <a name="at-a-glance"></a>Visão rápida
 A tabela a seguir mostra cada tipo de recurso com os métodos de alocação possíveis (dinâmico/estático) e capacidade de atribuir vários endereços IP privados.
 
-| Resource | Dinâmico | estático | Vários endereços IP |
+| Resource | Dinâmico | Estático | Vários endereços IP |
 | --- | --- | --- | --- |
 | VM (em uma VNet ou um serviço de nuvem *autônomo*) |Sim |sim |Sim |
-| Instância de função de PaaS (em uma VNet ou um serviço de nuvem *autônomo*) |Sim |Não |Não  |
+| Instância de função de PaaS (em uma VNet ou um serviço de nuvem *autônomo*) |Sim |Não |Não |
 | Front-end do balanceador de carga interno |Sim |sim |Sim |
 | Front-end do Application Gateway |Sim |sim |Sim |
 

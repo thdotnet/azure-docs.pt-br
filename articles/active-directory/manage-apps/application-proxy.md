@@ -12,12 +12,12 @@ ms.date: 05/09/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2ecc458183006872d5a4c6712cdf00a97993dbc
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 780dedd52e492aceaab1aa00eedb631d0814ebf3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65825547"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108373"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-active-directorys-application-proxy"></a>Acesso remoto a aplicativos locais por meio do Proxy de Aplicativo do Azure Active Directory 
 
@@ -27,7 +27,7 @@ O Proxy de Aplicativo do Azure AD é:
 
 - **Simples de usar**. Os usuários podem acessar seus aplicativos locais da mesma forma que acessam o O365 e outros aplicativos SaaS integrados ao Azure AD. Você não precisa alterar ou atualizar seus aplicativos para que funcionem com o Proxy de Aplicativo. 
 
-- **Seguro**. Os aplicativos locais podem usar os controles de autorização e análise de segurança do Azure. Por exemplo, os aplicativos de locais podem usar o acesso condicional e a verificação em duas etapas. O Proxy de Aplicativo não exige que você abra conexões de entrada através do firewall.
+- **Seguro**. Os aplicativos locais podem usar os controles de autorização e análise de segurança do Azure. Por exemplo, no local os aplicativos podem usar a verificação em duas etapas e acesso condicional. O Proxy de Aplicativo não exige que você abra conexões de entrada através do firewall.
  
 - **Econômico**. As soluções locais geralmente exigem que você configure e mantenha redes de perímetro, servidores de borda ou outras infraestruturas complexas. O Proxy de Aplicativo é executado na nuvem, o que o torna fácil de usar. Para usar o Proxy de Aplicativo, você não precisa alterar a infraestrutura de rede ou instalar dispositivos adicionais no seu ambiente local.
 
@@ -59,10 +59,10 @@ O diagrama a seguir mostra como o Azure AD e o Proxy de Aplicativo trabalham jun
 5. O conector envia a solicitação para o aplicativo no local.  
 6. A resposta é enviada por meio do conector e do serviço Proxy de Aplicativo para o usuário.
 
-| Componente | Descrição |
+| Componente | DESCRIÇÃO |
 | --------- | ----------- |
 | Ponto de extremidade  | O ponto de extremidade é uma URL ou um [portal do usuário final](end-user-experiences.md). Os usuários podem acessar aplicativos enquanto estão fora de sua rede ao acessar uma URL externa. Usuários dentro de sua rede podem acessar o aplicativo por meio de uma URL ou de um portal do usuário final. Quando os usuários acessam um desses pontos de extremidade, eles são autenticados no Azure AD e, em seguida, são direcionados por meio do conector até o aplicativo local.|
-| Azure AD | O Azure AD executa a autenticação usando o diretório do locatário armazenado na nuvem. |
+| AD do Azure | O Azure AD executa a autenticação usando o diretório do locatário armazenado na nuvem. |
 | Serviço do Proxy de Aplicativo | Esse serviço de Proxy de Aplicativo é executado na nuvem como parte do Azure AD. Ele passa o token de logon do usuário para o Conector de Proxy de Aplicativo. O Proxy de Aplicativo encaminha qualquer cabeçalho acessível na solicitação e define os cabeçalhos de acordo com seu protocolo para o endereço IP do cliente. Se a solicitação de entrada para o proxy já tiver esse cabeçalho, o endereço IP do cliente será adicionado ao final da lista separada por vírgulas que é o valor do cabeçalho.|
 | Conector de Proxy de Aplicativo | O conector é um agente leve executado em um Windows Server na sua rede. Ele gerencia a comunicação entre o serviço de Proxy de Aplicativo na nuvem e o aplicativo local. O conector usa apenas conexões de saída, portanto você não precisa abrir portas de entrada nem colocar nada na DMZ. Os conectores são sem monitoração de estado e efetuam pull de informações da nuvem conforme necessário. Para obter mais informações sobre conectores, como eles fazem o balanceamento de carga e a autenticação, consulte [Noções básicas sobre conectores de Proxy de Aplicativo do Azure AD](application-proxy-connectors.md).|
 | AD (Active Directory) | O Active Directory é executado localmente para realizar a autenticação para contas de domínio. Quando o logon único está configurado, o conector se comunica com o AD para realizar qualquer autenticação adicional necessária.

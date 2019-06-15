@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 04/29/2019
 ms.author: absha
 ms.openlocfilehash: 9160d300270bf1ab5043bee632d27bcc4b7bf332
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66476040"
 ---
 # <a name="rewrite-http-headers-with-application-gateway"></a>Reescreva cabeçalhos HTTP com o Gateway de aplicativo
@@ -20,7 +20,7 @@ ms.locfileid: "66476040"
 
 Cabeçalhos HTTP permitem que um cliente e servidor passar informações adicionais com uma solicitação ou resposta. Reescrevendo esses cabeçalhos, você pode realizar tarefas importantes, como adição de campos de cabeçalho relacionados à segurança, como a HSTS / X-XSS-Protection, removendo campos de cabeçalho de resposta que podem revelar informações confidenciais e remover informações de porta Cabeçalhos X-Forwarded-For.
 
-O Gateway de aplicativo permite que você adicionar, remover ou atualizar os cabeçalhos de solicitação e resposta HTTP durante a solicitação e pacotes de resposta se mover entre o cliente e os pools de back-end. E ele permite que você adicione condições para garantir que os cabeçalhos especificados são reescritos somente quando determinadas condições forem atendidas.
+O Gateway de Aplicativo permite adicionar, remover ou atualizar solicitações HTTP e cabeçalhos de resposta, enquanto os pacotes de solicitação e resposta são transferidos entre os pools de cliente e de back-end. Ele também permite adicionar condições para garantir que os cabeçalhos especificados sejam reescritos somente quando determinadas condições forem atendidas.
 
 O Gateway de aplicativo também dá suporte a vários [variáveis de servidor](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers#server-variables) que ajudam a você armazena informações adicionais sobre solicitações e respostas. Isso torna mais fácil para você criar regras de reescrita poderosas.
 

@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4efe7fabb503cbfdc855d46ffea24dda2cb9c05f
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.openlocfilehash: 327111182a4ad8958f2d852a88ba0608d8510c51
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65849931"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67055919"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Exemplos de código de plataforma do Microsoft identity (ponto de extremidade v 2.0)
 
@@ -47,7 +47,7 @@ Você também pode contribuir com os exemplos no GitHub. Para saber como, consul
 
 Estes exemplos mostram como escrever um aplicativo de página única protegido com a plataforma de identidade da Microsoft. Os exemplos usam um dos sabores do MSAL.js:
 
-| Plataforma | Descrição | Vincular |
+| Plataforma | DESCRIÇÃO | Link |
 | -------- | --------------------- | -------- |
 | ![JavaScript](media/sample-v2-code/logo_js.png) [JavaScript (msal.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) | Chama o Microsoft Graph |[javascript-graphapi-web-v2](https://github.com/Azure-Samples/active-directory-javascript-graphapi-web-v2) |
 | ![JavaScript](media/sample-v2-code/logo_js.png) [JavaScript (msal.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) | Chama o B2C |[b2c-javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) |
@@ -61,7 +61,7 @@ Os exemplos a seguir ilustram os aplicativos Web que iniciam sessão de usuário
 
 | Plataforma | Conecta apenas usuários | Conecta usuários e chama o Microsoft Graph |
 | -------- | ------------------- | --------------------------------- |
-| ![ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core 2.1 | [Tutorial do ASP.NET Core WebApp usuários entrar](https://aka.ms/aspnetcore-webapp-sign-in) | Mesmo exemplo na [aplicativo Web ASP.NET Core chama o Microsoft Graph](https://aka.ms/aspnetcore-webapp-call-msgraph) fase |
+| ![ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core 2.2 | [Tutorial do ASP.NET Core WebApp usuários entrar](https://aka.ms/aspnetcore-webapp-sign-in) | Mesmo exemplo na [aplicativo Web ASP.NET Core chama o Microsoft Graph](https://aka.ms/aspnetcore-webapp-call-msgraph) fase |
 | ![ASP.NET](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET | [Início rápido do ASP.NET](https://github.com/AzureAdQuickstarts/AppModelv2-WebApp-OpenIDConnect-DotNet) </p> [dotnet-webapp-openidconnect-v2](https://github.com/azure-samples/active-directory-dotnet-webapp-openidconnect-v2)  |  [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) </p> |[msgraph-training-aspnetmvcapp](https://github.com/microsoftgraph/msgraph-training-aspnetmvcapp)
 | ![Node.js](media/sample-v2-code/logo_nodejs.png)  |                   | [Início rápido do Node.js](https://github.com/azureadquickstarts/appmodelv2-webapp-openidconnect-nodejs) |
 | ![Ruby](media/sample-v2-code/logo_ruby.png) |                   | [msgraph-training-rubyrailsapp](https://github.com/microsoftgraph/msgraph-training-rubyrailsapp) |
@@ -98,11 +98,12 @@ O exemplo a seguir mostra um aplicativo cliente público em execução em um dis
 
 ## <a name="web-apis"></a>APIs da Web
 
-O exemplo a seguir mostra como proteger uma API web com o ponto de extremidade de plataforma do Microsoft identity. Essa API é utilizada por um aplicativo WPF, mas pode ser chamada por qualquer aplicativo. A API da web também chama o Microsoft Graph.
+Os exemplos a seguir mostra como proteger uma API web com o ponto de extremidade de plataforma de identidade do Microsoft e como chamar a API downstream da API Web.
 
 | Plataforma | Amostra |
 | -------- | ------------------- |
-| ![.NET/C#](media/sample-v2-code/logo_NET.png) | WebAPI (serviço) do [dotnet-native-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi-calls-msgraph) |
+| ![ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core 2.2 | ASP.NET Core Web API (serviço) de [dotnet-native-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi-calls-msgraph)  |
+| ![ASP.NET](media/sample-v2-code/logo_NET.png)</p>ASP.NET MVC | Web API (serviço) de [ms-identity-aspnet-webapi-onbehalfof](https://github.com/Azure-Samples/ms-identity-aspnet-webapi-onbehalfof) |
 
 ## <a name="other-microsoft-graph-samples"></a>Outros exemplos do Microsoft Graph
 

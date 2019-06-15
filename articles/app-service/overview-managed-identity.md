@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 11/20/2018
 ms.author: mahender
 ms.openlocfilehash: 0942d5ba7b31ddb2c0dec5fe979f1331d1bf3bfd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66136960"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Como usar identidades gerenciadas para o Serviço de Aplicativo e o Azure Functions
@@ -179,7 +179,7 @@ Primeiro, você precisará criar um recurso de identidade atribuído pelo usuár
 
 4. Selecione **Identidade gerenciada**.
 
-5. Dentro de **usuário atribuído (versão prévia)**, clique em **Add**.
+5. Dentro de **usuário atribuído (versão prévia)** , clique em **Add**.
 
 6. Procure a identidade que você criou anteriormente e selecione-a. Clique em **Adicionar**.
 

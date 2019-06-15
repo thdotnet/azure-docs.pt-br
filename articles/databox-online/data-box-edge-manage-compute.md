@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.author: alkohli
 ms.openlocfilehash: a9daf1d59b03d283be999aaab559c6d60f6405dd
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65953130"
 ---
 # <a name="manage-compute-on-your-azure-data-box-edge"></a>Gerenciar computação no Azure Data Box Edge
@@ -34,7 +34,7 @@ Os eventos são coisas que acontecem dentro de seu ambiente de nuvem ou em seu d
 - **Scheduled**: esses gatilhos são em resposta a uma agenda que você pode definir com uma data de início, hora de início e o intervalo de repetição.
 
 
-### <a name="add-a-trigger"></a>Adicione um gatilho
+### <a name="add-a-trigger"></a>Adicionar um gatilho
 
 Siga estas etapas no portal do Azure para criar um gatilho.
 

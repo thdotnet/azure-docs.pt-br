@@ -9,10 +9,10 @@ ms.date: 05/17/2018
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: ab55441650085f6ca89f05613fe74dd4ae3cba54
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128762"
 ---
 1. Para exibir as marcas de um recurso ou um grupo de recursos, procura marcas existentes na visão geral. Se você não tiver aplicado marcas anteriormente, a lista estará vazia.
@@ -46,7 +46,7 @@ Para atribuir marcas em massa para vários recursos:
 
      ![Atribuir marcas](./media/resource-manager-tag-resources/assign-tags.png)
 
-1. Depois de cada nome e valor, selecione **+**. Ao terminar, escolha **Atribuir**.
+1. Depois de cada nome e valor, selecione **+** . Ao terminar, escolha **Atribuir**.
 
      ![Selecione atribuir](./media/resource-manager-tag-resources/select-assign.png)
 

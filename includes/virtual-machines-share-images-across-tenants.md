@@ -9,10 +9,10 @@ ms.date: 04/25/2019
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: 499aeccdf00980eeb66ac6ee06e45267fd515143
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66145896"
 ---
 Galerias de imagens compartilhadas permitem que você tenha imagens de compartilhamento usando o RBAC. Você pode usar o RBAC para compartilhar imagens dentro do seu locatário e até mesmo pessoas fora do seu locatário. Mas, se você quiser compartilhar imagens fora do seu locatário do Azure, em grande escala, você deve criar um registro de aplicativo para facilitar o compartilhamento.  Usar um registro de aplicativo pode habilitar cenários de compartilhamento mais complexos, como: 
@@ -40,7 +40,7 @@ Conceda a permissão de registro de aplicativo para usar a Galeria de imagens co
 1. No portal do Azure, selecione a Galeria de imagens compartilhado que você deseja compartilhar com outro locatário.
 1. Selecione **selecione o controle de acesso (IAM)** e, em **Adicionar atribuição de função** selecionar *adicionar*. 
 1. Sob **função**, selecione **leitor**.
-1. Sob **atribuir acesso a:**, mantenha-o como **usuário, grupo ou entidade de serviço do Azure AD**.
+1. Sob **atribuir acesso a:** , mantenha-o como **usuário, grupo ou entidade de serviço do Azure AD**.
 1. Sob **selecionar**, digite *myGalleryApp* e selecione-o quando ele aparece na lista. Quando você terminar, selecione **salvar**.
 
 
@@ -54,9 +54,9 @@ https://login.microsoftonline.com/<Tenant 2 ID>/oauth2/authorize?client_id=<Appl
 
 No [portal do Azure](https://portal.azure.com) entre como o locatário 2 e conceder o acesso de registro de aplicativo para o grupo de recursos onde você deseja criar a VM.
 
-1. Selecione o grupo de recursos e, em seguida, selecione **controle de acesso (IAM)**. Sob **Adicionar atribuição de função** selecionar **Add**. 
+1. Selecione o grupo de recursos e, em seguida, selecione **controle de acesso (IAM)** . Sob **Adicionar atribuição de função** selecionar **Add**. 
 1. Sob **função**, digite **Colaborador**.
-1. Sob **atribuir acesso a:**, mantenha-o como **usuário, grupo ou entidade de serviço do Azure AD**.
+1. Sob **atribuir acesso a:** , mantenha-o como **usuário, grupo ou entidade de serviço do Azure AD**.
 1. Sob **selecionar** tipo *myGalleryApp* , em seguida, selecione-o quando ele aparece na lista. Quando você terminar, selecione **salvar**.
 
 > [!NOTE]

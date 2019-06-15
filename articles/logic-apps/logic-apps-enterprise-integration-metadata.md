@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: bb7d9432-b697-44db-aa88-bd16ddfad23f
 ms.date: 01/17/2019
 ms.openlocfilehash: 5ebdf45bec4e7cfceb75354af40c7a21c22c6eef
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60846090"
 ---
 # <a name="manage-artifact-metadata-in-integration-accounts-with-azure-logic-apps-and-enterprise-integration-pack"></a>Gerenciar metadados de artefato em contas de integração a Aplicativos Lógicos do Azure e o Enterprise Integration Pack
@@ -89,11 +89,11 @@ ms.locfileid: "60846090"
       |----------|----------|-------|-------------| 
       | **Método** | Sim | <*operation-to-run*> | A operação de HTTP a ser executada no artefato. Por exemplo, essa ação HTTP usa p método **GET**. | 
       | **URI** | Sim | <*metadata-location*> | Para acessar o valor de metadados `routingUrl` do artefato recuperado, você poderá usar uma expressão, por exemplo: <p>`@{outputs('Integration_Account_Artifact_Lookup')['properties']['metadata']['routingUrl']}` | 
-      | **Cabeçalhos** | Não  | <*header-values*> | Qualquer cabeçalho de saídas do gatilho que você deseja passar para a ação HTTP. Por exemplo, para passar o valor de propriedade `headers` do gatinho: é possível usar uma expressão: <p>`@triggeroutputs()['headers']` | 
-      | **Corpo** | Não  | <*conteúdo do corpo*> | Qualquer outro conteúdo que você deseje passar por meio da propriedade `body` da ação HTTP. Este exemplo passa os valores `properties` do artefato para a ação HTTP: <p>1. Clique dentro da propriedade **Corpo** para que seja exibida a lista de conteúdo dinâmico. Se nenhuma propriedade aparecer, escolha **Ver mais**. <br>2. Na lista de conteúdo dinâmico, em **Pesquisa de artefato da conta de integração**, selecione **Propriedades**. | 
+      | **Cabeçalhos** | Não | <*header-values*> | Qualquer cabeçalho de saídas do gatilho que você deseja passar para a ação HTTP. Por exemplo, para passar o valor de propriedade `headers` do gatinho: é possível usar uma expressão: <p>`@triggeroutputs()['headers']` | 
+      | **Corpo** | Não | <*conteúdo do corpo*> | Qualquer outro conteúdo que você deseje passar por meio da propriedade `body` da ação HTTP. Este exemplo passa os valores `properties` do artefato para a ação HTTP: <p>1. Clique dentro da propriedade **Corpo** para que seja exibida a lista de conteúdo dinâmico. Se nenhuma propriedade aparecer, escolha **Ver mais**. <br>2. Na lista de conteúdo dinâmico, em **Pesquisa de artefato da conta de integração**, selecione **Propriedades**. | 
       |||| 
 
-      Por exemplo: 
+      Por exemplo:
 
       ![Especificar valores e expressões para a ação HTTP](media/logic-apps-enterprise-integration-metadata/add-http-action-values.png)
 

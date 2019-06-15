@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
 ms.openlocfilehash: 297317ff33d88d6390220980ef35f2538579e310
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66165544"
 ---
 ### <a name="open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine"></a>Abrir portas TCP no firewall do Windows para a instância padrão do Mecanismo de Banco de Dados
@@ -57,10 +57,10 @@ O Mecanismo de Banco de Dados do SQL Server não pode usar a Autenticação do W
     Na primeira vez que você abrir o Management Studio ele deve criar o ambiente do Management Studio dos usuários. Isso pode demorar alguns instantes.
 2. O Management Studio apresenta a caixa de diálogo **Conectar ao Servidor** . Na caixa **Nome do servidor**, digite o nome da máquina virtual para conectar ao Mecanismo de Banco de Dados com o Pesquisador de Objetos (em vez do nome de máquina virtual, você também pode usar **(local)** ou um único ponto como o **Nome do servidor**). Selecione **autenticação do Windows**e deixe ***your_VM_name\your_local_administrator*** no **nome de usuário** caixa. Clique em **Conectar**.
    
-    ![Conectar ao Servidor](./media/virtual-machines-sql-server-connection-steps/19Connect-to-Server.png)
+    ![Conectar-se ao servidor](./media/virtual-machines-sql-server-connection-steps/19Connect-to-Server.png)
 3. No SQL Server Management Studio Object Explorer, clique com o botão direito do mouse no nome da instância do SQL Server (o nome da máquina virtual) e, em seguida, clique em **Propriedades**.
    
-    ![Propriedades do Servidor](./media/virtual-machines-sql-server-connection-steps/20Server-Properties.png)
+    ![Propriedades do servidor](./media/virtual-machines-sql-server-connection-steps/20Server-Properties.png)
 4. Na página **Segurança**, em **Autenticação do servidor**, selecione **Modo de Autenticação do SQL Server e do Windows** e clique em **OK**.
    
     ![Selecionar modo de autenticação](./media/virtual-machines-sql-server-connection-steps/21Mixed-Mode.png)
@@ -74,7 +74,7 @@ O Mecanismo de Banco de Dados do SQL Server não pode usar a Autenticação do W
 Para conectar-se ao Mecanismo de Banco de Dados de outro computador, você deve criar pelo menos um logon de autenticação do SQL Server.
 
 1. No SQL Server Management Studio Object Explorer, expanda a pasta da instância do servidor na qual você deseja criar o novo logon.
-2. Clique com o botão direito do mouse na pasta **Segurança**, aponte para **Novo** e selecione **Logon...**.
+2. Clique com o botão direito do mouse na pasta **Segurança**, aponte para **Novo** e selecione **Logon...** .
    
     ![Novo Logon](./media/virtual-machines-sql-server-connection-steps/23New-Login.png)
 3. Na caixa de diálogo **Logon - Novo**, na página **Geral**, digite o nome do novo usuário na caixa **Nome de logon**.

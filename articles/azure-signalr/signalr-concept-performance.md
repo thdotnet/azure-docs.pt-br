@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: zhshang
 ms.openlocfilehash: f7cc05c8c2a299d809c4386d119fef58fa2548d5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61269370"
 ---
 # <a name="performance-guide-for-azure-signalr-service"></a>Guia de desempenho do serviço do Azure SignalR
@@ -122,14 +122,14 @@ Fazer *não* exceder os valores realçados nas duas tabelas a seguir.
 
 |       Echo                        | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |-----------------------------------|-------|-------|-------|--------|--------|--------|---------|
-| conexões                       | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000 | 100.000 |
+| conexões                       | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000 | 100\.000 |
 | **Largura de banda de entrada** | **2 MBps**    | **4 MBps**    | **10 MBps**   | **20 MBps**    | **40 MBps**    | **100 MBps**   | **200 MBps**    |
 | Largura de banda de saída | 2 Mbps   | 4 Mbps   | 10 Mbps  | 20 MBps   | 40 MBps   | 100 MBps  | 200 MBps   |
 
 
 |     Difusão             | Unit1 | Unit2 | Unit5  | Unit10 | Unit20 | Unit50  | Unit100 |
 |---------------------------|-------|-------|--------|--------|--------|---------|---------|
-| conexões               | 1.000 | 2.000 | 5.000  | 10.000 | 20.000 | 50.000  | 100.000 |
+| conexões               | 1\.000 | 2\.000 | 5\.000  | 10\.000 | 20\.000 | 50\.000  | 100\.000 |
 | Largura de banda de entrada  | 4 kBps   | 4 kBps   | 4 kBps    | 4 kBps    | 4 kBps    | 4 kBps     | 4 kBps    |
 | **Largura de banda de saída** | **4 MBps**    | **8 MBps**    | **20 MBps**    | **40 MBps**    | **80 MBps**    | **200 MBps**    | **400 MBps**   |
 
@@ -159,8 +159,8 @@ A tabela a seguir mostra um caso de uso real de **difusão**. Mas o tamanho da m
 
 | Difusão  | Tamanho da mensagem | Mensagens de entrada por segundo | conexões | Enviar intervalos |
 |---|---------------------|--------------------------|-------------|-------------------------|
-| 1 | 20 KB                | 1                        | 100.000     | 5 segundos                      |
-| 2 | 256 KB               | 1                        | 8.000       | 5 segundos                      |
+| 1 | 20 KB                | 1                        | 100\.000     | 5 segundos                      |
+| 2 | 256 KB               | 1                        | 8\.000       | 5 segundos                      |
 
 A fórmula a seguir é fácil inferir com base na fórmula anterior:
 
@@ -213,8 +213,8 @@ O comportamento de **echo** determina que a máxima largura de banda de entrada 
 
 |       Echo                        | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |-----------------------------------|-------|-------|-------|--------|--------|--------|---------|
-| conexões                       | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000 | 100.000 |
-| Mensagens de entrada/saída por segundo | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000 | 100.000 |
+| conexões                       | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000 | 100\.000 |
+| Mensagens de entrada/saída por segundo | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000 | 100\.000 |
 | Largura de banda de entrada/saída | 2 Mbps   | 4 Mbps   | 10 Mbps  | 20 MBps   | 40 MBps   | 100 MBps  | 200 MBps   |
 
 Nesse caso, cada cliente invoca o hub definido no servidor de aplicativo. O hub apenas chama o método definido no lado do cliente original. Esse hub é o hub mais leve para **echo**.
@@ -231,7 +231,7 @@ Mesmo para esse hub simple, a pressão de tráfego no servidor do aplicativo est
 
 |    Echo          | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |------------------|-------|-------|-------|--------|--------|--------|---------|
-| conexões      | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000 | 100.000 |
+| conexões      | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000 | 100\.000 |
 | Contagem de servidor de aplicativo | 2     | 2     | 2     | 3      | 3      | 10     | 20      |
 
 > [!NOTE]
@@ -249,9 +249,9 @@ A tabela a seguir resume as conexões de cliente máximo, contagem de mensagens 
 
 |     Difusão             | Unit1 | Unit2 | Unit5  | Unit10 | Unit20 | Unit50  | Unit100 |
 |---------------------------|-------|-------|--------|--------|--------|---------|---------|
-| conexões               | 1.000 | 2.000 | 5.000  | 10.000 | 20.000 | 50.000  | 100.000 |
+| conexões               | 1\.000 | 2\.000 | 5\.000  | 10\.000 | 20\.000 | 50\.000  | 100\.000 |
 | Mensagens de entrada por segundo  | 2     | 2     | 2      | 2      | 2      | 2       | 2       |
-| Mensagens de saída por segundo | 2.000 | 4.000 | 10.000 | 20.000 | 40.000 | 100.000 | 200.000 |
+| Mensagens de saída por segundo | 2\.000 | 4\.000 | 10\.000 | 20\.000 | 40\.000 | 100\.000 | 200,000 |
 | Largura de banda de entrada  | 4 kBps   | 4 kBps   | 4 kBps    | 4 kBps    | 4 kBps    | 4 kBps     | 4 kBps     |
 | Largura de banda de saída | 4 Mbps   | 8 Mbps   | 20 MBps   | 40 MBps   | 80 MBps   | 200 MBps   | 400 MBps   |
 
@@ -259,7 +259,7 @@ Os clientes de difusão que postagem mensagens são não mais do que quatro. Ele
 
 |   Difusão      | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |------------------|-------|-------|-------|--------|--------|--------|---------|
-| conexões      | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000 | 100.000 |
+| conexões      | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000 | 100\.000 |
 | Contagem de servidor de aplicativo | 2     | 2     | 2     | 2      | 2      | 2      | 2       |
 
 > [!NOTE]
@@ -287,19 +287,19 @@ O custo de roteamento é significativo para enviar mensagens para muitos pequeno
 
 |   Enviar para um pequeno grupo     | Unit1 | Unit2 | Unit5  | Unit10 | Unit20 | Unit50 | Unit100 |
 |---------------------------|-------|-------|--------|--------|--------|--------|---------|
-| conexões               | 1.000 | 2.000 | 5.000  | 10.000 | 20.000 | 50.000 | 100.000
+| conexões               | 1\.000 | 2\.000 | 5\.000  | 10\.000 | 20\.000 | 50\.000 | 100\.000
 | Contagem de membros do grupo        | 10    | 10    | 10     | 10     | 10     | 10     | 10 
-| Contagem de grupo               | 100   | 200   | 500    | 1.000  | 2.000  | 5.000  | 10.000 
-| Mensagens de entrada por segundo  | 200   | 400   | 1.000  | 2.500  | 4.000  | 7.000  | 7.000   |
+| Contagem de grupo               | 100   | 200   | 500    | 1\.000  | 2\.000  | 5\.000  | 10\.000 
+| Mensagens de entrada por segundo  | 200   | 400   | 1\.000  | 2\.500  | 4\.000  | 7\.000  | 7\.000   |
 | Largura de banda de entrada  | 400 kBps  | 800 kBps  | 2 Mbps     | 5 Mbps     | 8 Mbps     | 14 MBps    | 14 MBps     |
-| Mensagens de saída por segundo | 2.000 | 4.000 | 10.000 | 25.000 | 40.000 | 70,000 | 70,000  |
+| Mensagens de saída por segundo | 2\.000 | 4\.000 | 10\.000 | 25\.000 | 40\.000 | 70,000 | 70,000  |
 | Largura de banda de saída | 4 Mbps    | 8 Mbps    | 20 MBps    | 50 MBps     | 80 MBps    | 140 MBps   | 140 MBps    |
 
 Muitas conexões de cliente estão chamando o hub, para que o número de servidor de aplicativo também é fundamental para o desempenho. A tabela a seguir lista as contagens de servidor de aplicativo sugeridas.
 
 |  Enviar para um pequeno grupo   | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |------------------|-------|-------|-------|--------|--------|--------|---------|
-| conexões      | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000 | 100.000 |
+| conexões      | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000 | 100\.000 |
 | Contagem de servidor de aplicativo | 2     | 2     | 2     | 3      | 3      | 10     | 20      |
 
 > [!NOTE]
@@ -311,19 +311,19 @@ Para **enviar para um grande grupo**, a largura de banda de saída se torna o ga
 
 |    Enviar para um grupo grande      | Unit1 | Unit2 | Unit5  | Unit10 | Unit20 | Unit50  | Unit100 |
 |---------------------------|-------|-------|--------|--------|--------|---------|---------|
-| conexões               | 1.000 | 2.000 | 5.000  | 10.000 | 20.000 | 50.000  | 100.000
-| Contagem de membros do grupo        | 100   | 200   | 500    | 1.000  | 2.000  | 5.000   | 10.000 
+| conexões               | 1\.000 | 2\.000 | 5\.000  | 10\.000 | 20\.000 | 50\.000  | 100\.000
+| Contagem de membros do grupo        | 100   | 200   | 500    | 1\.000  | 2\.000  | 5\.000   | 10\.000 
 | Contagem de grupo               | 10    | 10    | 10     | 10     | 10     | 10      | 10
 | Mensagens de entrada por segundo  | 20    | 20    | 20     | 20     | 20     | 20      | 20      |
 | Largura de banda de entrada  | 80 kBps   | 40 kBps   | 40 kBps    | 20 kBps    | 40 kBps    | 40 kBps     | 40 kBps     |
-| Mensagens de saída por segundo | 2.000 | 4.000 | 10.000 | 20.000 | 40.000 | 100.000 | 200.000 |
+| Mensagens de saída por segundo | 2\.000 | 4\.000 | 10\.000 | 20\.000 | 40\.000 | 100\.000 | 200,000 |
 | Largura de banda de saída | 8 Mbps    | 8 Mbps    | 20 MBps    | 40 MBps    | 80 MBps    | 200 MBps    | 400 MBps    |
 
 A contagem de conexão de envio é não mais do que 40. A carga do servidor de aplicativo é pequena, portanto, o número sugerido de aplicativos web é pequeno.
 
 |  Enviar para um grupo grande  | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |------------------|-------|-------|-------|--------|--------|--------|---------|
-| conexões      | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000 | 100.000 |
+| conexões      | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000 | 100\.000 |
 | Contagem de servidor de aplicativo | 2     | 2     | 2     | 2      | 2      | 2      | 2       |
 
 > [!NOTE]
@@ -345,15 +345,15 @@ A tabela a seguir está um resumo estatístico após a muitas rodadas de executa
 
 |   Enviar para a conexão   | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50          | Unit100         |
 |------------------------------------|-------|-------|-------|--------|--------|-----------------|-----------------|
-| conexões                        | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000          | 100.000         |
-| Mensagens de entrada/saída por segundo | 1.000 | 2.000 | 5.000 | 8.000  | 9.000  | 20.000 | 20.000 |
+| conexões                        | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000          | 100\.000         |
+| Mensagens de entrada/saída por segundo | 1\.000 | 2\.000 | 5\.000 | 8\.000  | 9\.000  | 20\.000 | 20\.000 |
 | Largura de banda de entrada/saída | 2 Mbps    | 4 Mbps    | 10 Mbps   | 16 MBps    | 18 MBps    | 40 MBps       | 40 MBps       |
 
 Esse caso de uso requer alta carga no lado do servidor de aplicativo. Ver o servidor de aplicativo sugerido contagem na tabela a seguir.
 
 |  Enviar para a conexão  | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |------------------|-------|-------|-------|--------|--------|--------|---------|
-| conexões      | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000 | 100.000 |
+| conexões      | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000 | 100\.000 |
 | Contagem de servidor de aplicativo | 2     | 2     | 2     | 3      | 3      | 10     | 20      |
 
 > [!NOTE]
@@ -369,21 +369,21 @@ A tabela a seguir fornece a contagem de aplicativo web sugeridas para ASP.NET Si
 
 |   Echo           | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |------------------|-------|-------|-------|--------|--------|--------|---------|
-| conexões      | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000 | 100.000 |
+| conexões      | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000 | 100\.000 |
 | Contagem de servidor de aplicativo | 2     | 2     | 4     | 4      | 8      | 32      | 40       |
 
 A tabela a seguir fornece a contagem de aplicativo web sugeridas para ASP.NET SignalR **difusão**.
 
 |  Difusão       | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |------------------|-------|-------|-------|--------|--------|--------|---------|
-| conexões      | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000 | 100.000 |
+| conexões      | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000 | 100\.000 |
 | Contagem de servidor de aplicativo | 2     | 2     | 2     | 2      | 2      | 2      | 2       |
 
 A tabela a seguir fornece a contagem de aplicativo web sugeridas para ASP.NET SignalR **enviar para um pequeno grupo**.
 
 |  Enviar para um pequeno grupo     | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |------------------|-------|-------|-------|--------|--------|--------|---------|
-| conexões      | 1.000 | 2.000 | 5.000 | 10.000 | 20.000 | 50.000 | 100.000 |
+| conexões      | 1\.000 | 2\.000 | 5\.000 | 10\.000 | 20\.000 | 50\.000 | 100\.000 |
 | Contagem de servidor de aplicativo | 2     | 2     | 4     | 4      | 8      | 32      | 40       |
 
 ### <a name="serverless-mode"></a>Modo sem servidor
@@ -397,9 +397,9 @@ Todos os clientes estabelecem conexões WebSocket com o serviço do Azure Signal
 
 |   Transmissão por meio da API REST     | Unit1 | Unit2 | Unit5  | Unit10 | Unit20 | Unit50  | Unit100 |
 |---------------------------|-------|-------|--------|--------|--------|---------|---------|
-| conexões               | 1.000 | 2.000 | 5.000  | 10.000 | 20.000 | 50.000  | 100.000 |
+| conexões               | 1\.000 | 2\.000 | 5\.000  | 10\.000 | 20\.000 | 50\.000  | 100\.000 |
 | Mensagens de entrada por segundo  | 2     | 2     | 2      | 2      | 2      | 2       | 2       |
-| Mensagens de saída por segundo | 2.000 | 4.000 | 10.000 | 20.000 | 40.000 | 100.000 | 200.000 |
+| Mensagens de saída por segundo | 2\.000 | 4\.000 | 10\.000 | 20\.000 | 40\.000 | 100\.000 | 200,000 |
 | Largura de banda de entrada  | 4 kBps    | 4 kBps    | 4 kBps     | 4 kBps     | 4 kBps     | 4 kBps      | 4 kBps      |
 | Largura de banda de saída | 4 Mbps    | 8 Mbps    | 20 MBps    | 40 MBps    | 80 MBps    | 200 MBps    | 400 MBps    |
 
@@ -408,9 +408,9 @@ O parâmetro de comparação atribui nomes de usuário para todos os clientes an
 
 |   Enviar para o usuário por meio da API REST | Unit1 | Unit2 | Unit5  | Unit10 | Unit20 | Unit50  | Unit100 |
 |---------------------------|-------|-------|--------|--------|--------|---------|---------|
-| conexões               | 1.000 | 2.000 | 5.000  | 10.000 | 20.000 | 50.000  | 100.000 |
-| Mensagens de entrada por segundo  | 300   | 600   | 900    | 1,300  | 2.000  | 10.000  | 18,000  |
-| Mensagens de saída por segundo | 300   | 600   | 900    | 1,300  | 2.000  | 10.000  | 18,000 |
+| conexões               | 1\.000 | 2\.000 | 5\.000  | 10\.000 | 20\.000 | 50\.000  | 100\.000 |
+| Mensagens de entrada por segundo  | 300   | 600   | 900    | 1,300  | 2\.000  | 10\.000  | 18,000  |
+| Mensagens de saída por segundo | 300   | 600   | 900    | 1,300  | 2\.000  | 10\.000  | 18,000 |
 | Largura de banda de entrada  | 600 kBps  | 1.2 MBps  | 1.8 MBps   | 2.6 MBps   | 4 Mbps     | 10 Mbps     | 36 MBps    |
 | Largura de banda de saída | 600 kBps  | 1.2 MBps  | 1.8 MBps   | 2.6 MBps   | 4 Mbps     | 10 Mbps     | 36 MBps    |
 
@@ -434,5 +434,5 @@ Neste artigo, você obteve uma visão geral do desempenho do serviço do Azure S
 
 Para obter detalhes sobre as operações internas do serviço e colocação em escala para ele, leia os guias a seguir:
 
-* [Componentes internos do SignalR Service do Azure](signalr-concept-internals.md)
+* [Componentes internos do Serviço do Azure SignalR](signalr-concept-internals.md)
 * [Azure SignalR Service dimensionamento](signalr-howto-scale-multi-instances.md)

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 09/15/2017
 ms.author: robinsh
 ms.openlocfilehash: fe548b0e8c791d5e7e3bdbc7bd4612a130ff8168
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65873279"
 ---
 # <a name="get-started-with-device-management-netnet"></a>Introdução ao gerenciamento de dispositivos (.NET/.NET)
@@ -56,7 +56,7 @@ Para concluir este tutorial, você precisará do seguinte:
 
 Nesta seção, você criará um aplicativo do console .NET (usando C#) que inicia uma reinicialização remota em um dispositivo usando um método direto. O aplicativo usa consultas de dispositivo gêmeo para descobrir o último horário de reinicialização para esse dispositivo.
 
-1. No Visual Studio, adicione um projeto da Área de Trabalho Clássica do Windows no Visual C# a uma nova solução usando o modelo de projeto **Aplicativo do Console (.NET Framework)**. Verifique se a versão do .NET Framework é 4.5.1 ou posterior. Nomeie o projeto como **TriggerReboot**.
+1. No Visual Studio, adicione um projeto da Área de Trabalho Clássica do Windows no Visual C# a uma nova solução usando o modelo de projeto **Aplicativo do Console (.NET Framework)** . Verifique se a versão do .NET Framework é 4.5.1 ou posterior. Nomeie o projeto como **TriggerReboot**.
 
     ![Novo projeto da Área de Trabalho Clássica do Windows no Visual C#](./media/iot-hub-csharp-csharp-device-management-get-started/createserviceapp.png)
 
@@ -137,7 +137,7 @@ Nesta seção, você fará o seguinte:
    
     ![Novo aplicativo de dispositivo Visual C# Windows clássico](./media/iot-hub-csharp-csharp-device-management-get-started/createdeviceapp.png)
     
-2. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **SimulateManagedDevice** e clique em **Gerenciar Pacotes NuGet...**.
+2. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **SimulateManagedDevice** e clique em **Gerenciar Pacotes NuGet...** .
 
 3. Na janela **Gerenciador de Pacotes NuGet**, selecione **Procurar** e pesquise por **Microsoft.Azure.Devices.Client**. Selecione **Instalar** para instalar o pacote **Microsoft.Azure.Devices.Client** e aceite os termos de uso. O procedimento baixa, instala e adiciona uma referência ao pacote NuGet do [SDK do Dispositivo IoT do Azure](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/) e suas dependências.
    
@@ -218,7 +218,7 @@ Nesta seção, você fará o seguinte:
    }
    ```
         
-8. No Visual Studio, no Gerenciador de Soluções, clique com o botão direito na solução e clique em **Definir Projetos de Inicialização...**. Selecione **Projeto único de inicialização** e, em seguida, selecione o projeto **SimulateManagedDevice** no menu suspenso. Compilar a solução.       
+8. No Visual Studio, no Gerenciador de Soluções, clique com o botão direito na solução e clique em **Definir Projetos de Inicialização...** . Selecione **Projeto único de inicialização** e, em seguida, selecione o projeto **SimulateManagedDevice** no menu suspenso. Compilar a solução.       
 
 > [!NOTE]
 > Para simplificar, este tutorial não implementa nenhuma política de repetição. No código de produção, implemente políticas de repetição (como uma retirada exponencial), conforme sugerido no artigo [Tratamento de falhas transitórias](/azure/architecture/best-practices/transient-faults).

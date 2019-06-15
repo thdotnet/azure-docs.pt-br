@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 06/18/2018
 ms.author: martincoetzer
-ms.openlocfilehash: 8e9101a1e23d361e66c5c30969069cbd4b971590
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: f63ceb6a80f253ea1661d215939705f8e39f3e58
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236776"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67119293"
 ---
 # <a name="five-steps-to-securing-your-identity-infrastructure"></a>Cinco etapas para proteger sua infraestrutura de identidade
 
@@ -36,7 +36,7 @@ Esta lista de verificação ajudará você a implantar rapidamente ações recom
 
 As recomendações neste documento estão alinhadas com a [Classificação de Segurança de Identidade](https://docs.microsoft.com/azure/active-directory/fundamentals/identity-secure-score), uma avaliação automatizada da configuração de segurança de identidade do locatário do Azure AD. As organizações podem usar a página de Classificação de Segurança de Identidade no portal do Azure AD para localizar lacunas na configuração de segurança atual e assegurar que sigam as melhores práticas atuais da Microsoft para segurança. Implementar cada recomendação na página de Classificação de Segurança aumentará sua classificação e permitirá que você acompanhe o progresso, além de ajudá-lo a comparar a implementação com outras organizações de porte semelhante ou do setor.
 
-![Classificação de Segurança de Identidade](media/azure-ad/azure-ad-sec-steps0.png)
+![Classificação de segurança de identidade](media/azure-ad/azure-ad-sec-steps0.png)
 
 ## <a name="before-you-begin-protect-privileged-accounts-with-mfa"></a>Antes de começar: Proteja contas com privilégios com MFA
 
@@ -95,15 +95,15 @@ Considerando a propagação do comprometimento de senha, minimizar a superfície
 
 ### <a name="block-legacy-authentication"></a>Bloquear a autenticação herdada
 
-Os aplicativos que usam seus próprios métodos herdados para realizar a autenticação com o Azure AD e acessar dados da empresa representam outro risco para as organizações. Exemplos de aplicativos que usam autenticação herdada são clientes POP3, IMAP4 ou SMTP. Os aplicativos de autenticação herdados realizam a autenticação em nome do usuário e impedem que o Azure AD realize avaliações de segurança avançadas. A autenticação moderna alternativa reduzirá seu risco de segurança, pois é compatível com o acesso condicional e com a autenticação multifator. Recomendamos as três ações a seguir:
+Os aplicativos que usam seus próprios métodos herdados para realizar a autenticação com o Azure AD e acessar dados da empresa representam outro risco para as organizações. Exemplos de aplicativos que usam autenticação herdada são clientes POP3, IMAP4 ou SMTP. Os aplicativos de autenticação herdados realizam a autenticação em nome do usuário e impedem que o Azure AD realize avaliações de segurança avançadas. A autenticação moderna, alternativa, reduzirá o risco de segurança, porque ele dá suporte a acesso condicional e autenticação multifator. Recomendamos as três ações a seguir:
 
 1. Bloquear a [autenticação herdada se você usar o AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/access-control-policies-w2k12).
 2. Configurar o [SharePoint Online e o Exchange Online para usar a autenticação moderna](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-no-modern-authentication).
-3. Usar [Políticas de acesso condicional para bloquear a autenticação herdada](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-conditions).
+3. Use [políticas de acesso condicional para bloquear autenticação herdados](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-conditions).
 
 ### <a name="block-invalid-authentication-entry-points"></a>Bloquear pontos de entrada de autenticação inválidos
 
-Usando a mentalidade de pressuposição de violação, você deve reduzir o impacto de credenciais de usuário comprometidas quando elas ocorrem. Para cada aplicativo em seu ambiente, considere os casos de uso válidos: quais grupos, quais redes, quais dispositivos e outros elementos são autorizados e bloqueie o restante. Com o [acesso condicional do Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal), você pode controlar como os usuários autorizados acessam os aplicativos e os recursos com base em condições especificas definidas por você.
+Usando a mentalidade de pressuposição de violação, você deve reduzir o impacto de credenciais de usuário comprometidas quando elas ocorrem. Para cada aplicativo em seu ambiente, considere os casos de uso válidos: quais grupos, quais redes, quais dispositivos e outros elementos são autorizados e bloqueie o restante. Com o [acesso condicional do Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal), você pode controlar o acesso de usuários autorizados como seus aplicativos e recursos com base em condições específicas que você definir.
 
 ### <a name="block-end-user-consent"></a>Bloquear o consentimento do usuário final
 
@@ -130,13 +130,13 @@ O Azure Active Directory tem muitos recursos que interceptam automaticamente ata
 
 ### <a name="implement-user-risk-security-policy-using-azure-ad-identity-protection"></a>Implementar a política de segurança de risco do usuário usando o Azure AD Identity Protection
 
-O risco do usuário indica a probabilidade de a identidade de um usuário ter sido comprometida e é calculada com base nos [eventos de risco do usuário](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) associados à identidade de um usuário. Uma política de risco de usuário é uma política de acesso condicional que avalia o nível de risco para um grupo ou usuário específico. Com base no nível de risco Baixo, Médio ou Alto, é possível configurar uma política para bloquear o acesso ou exigir uma mudança de senha segura usando a autenticação multifator. A recomendação da Microsoft é a de exigir uma mudança de senha segura para usuários com risco alto.
+O risco do usuário indica a probabilidade de a identidade de um usuário ter sido comprometida e é calculada com base nos [eventos de risco do usuário](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) associados à identidade de um usuário. Uma política de risco do usuário é uma política de acesso condicional que avalia o nível de risco para um usuário ou grupo específico. Com base no nível de risco Baixo, Médio ou Alto, é possível configurar uma política para bloquear o acesso ou exigir uma mudança de senha segura usando a autenticação multifator. A recomendação da Microsoft é a de exigir uma mudança de senha segura para usuários com risco alto.
 
-![Usuários sinalizados para risco](media/azure-ad/azure-ad-sec-steps1.png)
+![Usuários sinalizados por risco](media/azure-ad/azure-ad-sec-steps1.png)
 
 ### <a name="implement-sign-in-risk-policy-using-azure-ad-identity-protection"></a>Implementar a política de risco de entrada usando o Azure AD Identity Protection
 
-O risco de entrada é a probabilidade de alguém que não o proprietário da conta estar tentando entrar usando a identidade. Uma [política de risco de entrada](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) é uma política de acesso condicional que avalia o nível de risco para um grupo ou usuário específico. Com base no nível de risco (baixo/médio/alto), é possível configurar uma política para bloquear o acesso ou forçar a autenticação multifator. Certifique-se de forçar a autenticação multifator em entradas de risco Médio ou acima.
+O risco de entrada é a probabilidade de alguém que não o proprietário da conta estar tentando entrar usando a identidade. Um [política de risco de entrada](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) é uma política de acesso condicional que avalia o nível de risco para um usuário ou grupo específico. Com base no nível de risco (baixo/médio/alto), é possível configurar uma política para bloquear o acesso ou forçar a autenticação multifator. Certifique-se de forçar a autenticação multifator em entradas de risco Médio ou acima.
 
 ![Entrada de IPs anônimos](media/azure-ad/azure-ad-sec-steps2.png)
 
@@ -162,7 +162,7 @@ O Azure AD Identity Protection fornece dois relatórios importantes que devem se
 1. Os relatórios de entradas arriscadas exibirão as atividades de entrada do usuário que você deve investigar, pois o proprietário legítimo pode não ter sido verificado na entrada.
 2. Os relatórios de usuário arriscados exibirão as contas de usuários que poderão ter sido comprometidas, como as credenciais perdidas detectadas ou usuário que entrou a partir de localizações diferentes causando um evento de viagem impossível. 
 
-![Usuários sinalizados para risco](media/azure-ad/azure-ad-sec-steps3.png)
+![Usuários sinalizados por risco](media/azure-ad/azure-ad-sec-steps3.png)
 
 ### <a name="audit-apps-and-consented-permissions"></a>Auditar aplicativos e permissões de consentimento
 

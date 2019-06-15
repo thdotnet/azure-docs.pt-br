@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: 5c1b1e15-3b6c-49dc-98a6-bdbe7cb75339
 ms.date: 07/21/2017
 ms.openlocfilehash: 80776f9284752e8554486cb458096ccc9319949e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61323632"
 ---
 # <a name="monitor-status-set-up-diagnostics-logging-and-turn-on-alerts-for-azure-logic-apps"></a>Monitorar o status, configurar o log de diagnósticos e ativar alertas para os Aplicativos Lógicos do Azure
@@ -35,7 +35,7 @@ Para obter notificações sobre falhas ou outros possíveis problemas, configure
 
 2. Selecione o aplicativo lógico e, em seguida, escolha **Visão geral**.
 
-   O portal do Azure mostra o histórico de execuções e o histórico de gatilhos do aplicativo lógico. Por exemplo: 
+   O portal do Azure mostra o histórico de execuções e o histórico de gatilhos do aplicativo lógico. Por exemplo:
 
    ![Histórico de execuções e histórico de gatilhos do aplicativo lógico](media/logic-apps-monitor-your-logic-apps/overview.png)
 
@@ -49,7 +49,7 @@ Para obter notificações sobre falhas ou outros possíveis problemas, configure
 
 3. Para exibir as etapas de uma execução específica, em **Histórico de execuções**, selecione essa execução. 
 
-   A exibição de monitor mostra cada etapa dessa execução. Por exemplo: 
+   A exibição de monitor mostra cada etapa dessa execução. Por exemplo:
 
    ![Ações de uma execução específica](media/logic-apps-monitor-your-logic-apps/monitor-view-updated.png)
 
@@ -59,7 +59,7 @@ Para obter notificações sobre falhas ou outros possíveis problemas, configure
 
    Por exemplo, você pode obter a **ID de Correlação** da execução, que pode ser útil ao usar a [API REST dos Aplicativos Lógicos](https://docs.microsoft.com/rest/api/logic).
 
-5. Para obter detalhes sobre uma etapa específica, escolha essa etapa. Agora você pode examinar detalhes como entradas, saídas e todos os erros que ocorreram nessa etapa. Por exemplo: 
+5. Para obter detalhes sobre uma etapa específica, escolha essa etapa. Agora você pode examinar detalhes como entradas, saídas e todos os erros que ocorreram nessa etapa. Por exemplo:
 
    ![Detalhes da etapa](media/logic-apps-monitor-your-logic-apps/monitor-view-details.png)
    
@@ -160,7 +160,7 @@ Juntamente com os logs do Azure Monitor, você pode estender como usar dados de 
 * [Arquivar logs do Diagnóstico do Azure no Armazenamento do Azure](../azure-monitor/platform/archive-diagnostic-logs.md)
 * [Transmitir logs do Diagnóstico do Azure para os Hubs de Eventos do Azure](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md) 
 
-Depois, obtenha o monitoramento em tempo real usando a telemetria e a análise de outros serviços, como o [Stream Analytics do Azure](../stream-analytics/stream-analytics-introduction.md) e o [Power BI](../azure-monitor/platform/powerbi.md). Por exemplo: 
+Depois, obtenha o monitoramento em tempo real usando a telemetria e a análise de outros serviços, como o [Stream Analytics do Azure](../stream-analytics/stream-analytics-introduction.md) e o [Power BI](../azure-monitor/platform/powerbi.md). Por exemplo:
 
 * [Transmitir dados dos Hubs de Eventos para o Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
 * [Analisar dados de streaming com o Stream Analytics e criar um painel de análise em tempo real no Power BI](../stream-analytics/stream-analytics-power-bi-dashboard.md)

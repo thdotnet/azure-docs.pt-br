@@ -17,11 +17,11 @@ ms.date: 05/23/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
 ms.openlocfilehash: e1ed419892412c1fb9334fed74b82c53154723ed
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60252414"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64708423"
 ---
 # <a name="how-to-create-an-unmanaged-vm-image-from-an-azure-vm"></a>Como criar uma imagem de VM não gerenciada a partir de uma VM do Azure
 
@@ -89,7 +89,7 @@ Você também pode generalizar uma VM Linux usando `sudo waagent -deprovision+us
     Stop-AzVM -ResourceGroupName <resourceGroup> -Name <vmName>
     ```
    
-    O *Status* da VM no Portal do Azure muda de **Parado** para **Parado (desalocado)**.
+    O *Status* da VM no Portal do Azure muda de **Parado** para **Parado (desalocado)** .
 2. Defina o status da máquina virtual como **Generalizado**. 
    
     ```powershell
@@ -257,7 +257,7 @@ Ao concluir, você deverá ver a VM recém-criada no [portal do Azure](https://p
     $vmList.Name
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Para gerenciar sua nova máquina virtual com o Azure PowerShell, consulte [Gerenciar máquinas virtuais usando o PowerShell e o Azure Resource Manager](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 

@@ -17,22 +17,22 @@ ms.date: 04/10/2019
 ms.author: joflore
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64dd8067654246f7c9a077d027c068df820f439d
-ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
+ms.openlocfilehash: 54a1c349ae7cdd66c09db412331c344d6512ecd3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66688708"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110604"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Como: Planejar a sua implementação do ingresso do Azure Active Directory híbrido
 
-De maneira semelhante a um usuário, um dispositivo é outra identidade de núcleo que você deseja proteger e usá-lo para proteger os recursos a qualquer momento e em qualquer local. Você pode atingir essa meta, trazendo e gerenciamento de identidades de dispositivo no Azure AD usando um dos seguintes métodos:
+De maneira semelhante a um usuário, um dispositivo é outra identidade principal que você deseja proteger e usá-la para proteger seus recursos a qualquer hora e em qualquer local. É possível atingir essa meta colocando e gerenciando identidades de dispositivo no Azure AD usando um dos métodos a seguir:
 
 - Ingresso no Azure AD
 - Ingresso no Azure AD Híbrido
 - Registro do Azure AD
 
-Ao colocar os dispositivos no Azure AD, você maximiza a produtividade dos usuários por meio de SSO (logon único) em toda a nuvem e recursos locais. Ao mesmo tempo, é possível proteger o acesso à sua nuvem e aos recursos locais com [acesso condicional](../active-directory-conditional-access-azure-portal.md).
+Ao colocar os dispositivos no Azure AD, você maximiza a produtividade dos usuários por meio de SSO (logon único) em toda a nuvem e recursos locais. Ao mesmo tempo, você pode proteger o acesso aos seus recursos de nuvem e locais com [acesso condicional](../active-directory-conditional-access-azure-portal.md).
 
 Se você tiver um ambiente do Active Directory (AD) local e você deseja ingressar os computadores ingressados no domínio do AD para o Azure AD, você pode fazer isso seguindo o ingresso no Azure AD híbrido. Este artigo fornece as etapas relacionadas para implementar uma associação híbrida do Azure AD em seu ambiente. 
 
@@ -113,7 +113,7 @@ Ingresso híbrido do Azure AD funciona com os ambientes, gerenciados e federados
 
 ### <a name="managed-environment"></a>Ambiente de leitura
 
-Um ambiente gerenciado pode ser implantado por meio [senha Hash PHS (sincronização)](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-phs) ou [passar por meio de autenticação (PTA)](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta) com [logon único contínuo](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso).
+Um ambiente gerenciado pode ser implantado por meio da [PHS (Sincronização de Hash de Senha)](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-phs) ou [PTA (Autenticação de Passagem)](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta) com [Logon Único Contínuo](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso).
 
 Esses cenários não exigem que você configure um servidor de federação para autenticação.
 

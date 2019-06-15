@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/14/2016
 ms.author: jeconnoc
-ms.openlocfilehash: 8b521ebe869210b66ac3b3efeebda873f7c0e50b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4fa3885f9c273cf6aaf9173ebd3fee3d4499be34
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60519423"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808105"
 ---
 # <a name="enable-communication-for-role-instances-in-azure"></a>Habilitar a comunicação para instâncias de função no Azure
 As funções de serviço de nuvem se comunicam por meio de conexões internas e externas. As conexões externas são chamadas de **pontos de extremidade de entrada**, enquanto as conexões internas são chamadas de **pontos de extremidade internos**. Este tópico descreve como modificar a [definição de serviço](cloud-services-model-and-package.md#csdef) para criar pontos de extremidade.
 
 ## <a name="input-endpoint"></a>Ponto de extremidade de entrada
-O ponto de extremidade de entrada é usado quando você deseja expor uma porta para o exterior. Você especifica o tipo de protocolo e a porta do ponto de extremidade e então o aplica às portas externa e interna do ponto de extremidade. Se desejar, você pode especificar uma porta interna diferente para o ponto de extremidade com o atributo [localPort](/previous-versions/azure/reference/gg557552(v=azure.100)#InputEndpoint) .
+O ponto de extremidade de entrada é usado quando você deseja expor uma porta para o exterior. Você especifica o tipo de protocolo e a porta do ponto de extremidade e então o aplica às portas externa e interna do ponto de extremidade. Se desejar, você pode especificar uma porta interna diferente para o ponto de extremidade com o atributo [localPort](/previous-versions/azure/reference/gg557552(v=azure.100)#inputendpoint) .
 
 O ponto de extremidade de entrada pode usar os seguintes protocolos: **http, https, tcp, udp**.
 
@@ -370,6 +370,6 @@ Permita apenas o tráfego de rede de **WebRole1** para **WorkerRole1**, de **Web
 
 Veja uma referência de esquema XML para os elementos usados acima [aqui](/previous-versions/azure/reference/gg557551(v=azure.100)).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 Leia mais sobre o [modelo](cloud-services-model-and-package.md)de Serviço de Nuvem.
 

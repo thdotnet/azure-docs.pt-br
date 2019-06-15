@@ -13,10 +13,10 @@ ms.date: 01/07/2019
 ms.reviewer: sergkanz
 ms.author: mbullwin
 ms.openlocfilehash: fef016d87cc60bc916fdcb08f92171e115221fe5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60900505"
 ---
 # <a name="request-telemetry-application-insights-data-model"></a>Telemetria da solicitação: Modelo de dados do Application Insights
@@ -45,7 +45,7 @@ URL de solicitação com todos os parâmetros de cadeia de consulta.
 
 Tamanho máx: 2048 caracteres
 
-## <a name="source"></a>Fonte
+## <a name="source"></a>source
 
 A origem da solicitação. Os exemplos são a chave de instrumentação do chamador ou o endereço IP do chamador. Para obter mais informações, consulte a página de [correlação](../../azure-monitor/app/correlation.md).
 
@@ -61,7 +61,7 @@ Resultado de uma execução de solicitação. Código de status HTTP para solici
 
 Tamanho máx: 1024 caracteres
 
-## <a name="success"></a>Sucesso
+## <a name="success"></a>Êxito
 
 Indicação de chamada bem-sucedida ou malsucedida. Esse campo é obrigatório. Quando não definido explicitamente como `false`, uma solicitação é considerada bem-sucedida. Defina esse valor como `false` se a operação for interrompida por exceção ou tiver retornado um código de resultado do erro.
 

@@ -14,10 +14,10 @@ ms.workload: NA
 ms.date: 03/22/2019
 ms.author: aljo
 ms.openlocfilehash: c31fc43729bcb58c755959db0c8bc5185b8197f4
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66471404"
 ---
 # <a name="enable-disk-encryption-for-azure-service-fabric-cluster-nodes-in-windows"></a>Habilitar a criptografia de disco para nós de cluster do Azure Service Fabric no Windows 
@@ -61,7 +61,7 @@ A visualização da criptografia de disco para o conjunto de dimensionamento de 
 2. Instale a versão mais recente do [CLI do Azure](/cli/azure/install-azure-cli), que tem os novos comandos de criptografia.
 3. Instale a versão mais recente do [SDK do Azure com o Azure PowerShell](https://github.com/Azure/azure-powershell/releases) de versão. A seguir está os cmdlets de Azure Disk Encryption para habilitar de conjunto de dimensionamento de máquinas virtuais ([definir](/powershell/module/az.compute/set-azvmssdiskencryptionextension)) a criptografia, recuperar ([obter](/powershell/module/az.compute/get-azvmssvmdiskencryption)) o status de criptografia e remover ([desabilitar](/powershell/module/az.compute/disable-azvmssdiskencryption)) instância do conjunto de criptografia na escala.
 
-| Comando | Version |  `Source`  |
+| Comando | Version |  source  |
 | ------------- |-------------| ------------|
 | Get-AzVmssDiskEncryptionStatus   | 1.0.0 ou posterior | Az.Compute |
 | Get-AzVmssVMDiskEncryptionStatus   | 1.0.0 ou posterior | Az.Compute |

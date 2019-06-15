@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/23/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 8ceb84ab9e9c41ff6a9cbde62571fb12ae67d790
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65596082"
 ---
 # <a name="durable-functions-20-preview-azure-functions"></a>Versão prévia 2.0 de funções durável (Azure Functions)
@@ -26,7 +26,7 @@ As funções duráveis é um recurso de GA (disponibilidade geral) do Azure Func
 > [!NOTE]
 > Estes recursos de visualização são parte de uma versão 2.0 de funções duráveis, o que é atualmente uma **versão alfa qualidade** com várias alterações significativas. O Azure Functions durável compilações do pacote de extensão podem ser encontrada em nuget.org com versões na forma de **2.0.0-alpha**. Essas compilações não são adequadas para quaisquer cargas de trabalho de produção e versões posteriores podem conter alterações significativas adicionais.
 
-## <a name="breaking-changes"></a>Alterações da falha
+## <a name="breaking-changes"></a>Alterações de última hora
 
 Várias alterações significativas são apresentadas no 2.0 de funções duráveis. Os aplicativos existentes não devem ser compatíveis com 2.0 de funções duráveis sem alterações de código. Esta seção lista algumas das alterações:
 
@@ -154,8 +154,8 @@ Suporte ao Entity envolve várias APIs. Por exemplo, há uma nova API para defin
 A execução de uma operação em uma entidade pode chamar esses membros no objeto de contexto (`IDurableEntityContext` no .NET):
 
 * **OperationName**: obtém o nome da operação.
-* **GetInput\<T >**: obtém a entrada para a operação.
-* **GetState\<T >**: obtém o estado atual da entidade.
+* **GetInput\<T >** : obtém a entrada para a operação.
+* **GetState\<T >** : obtém o estado atual da entidade.
 * **SetState**: atualiza o estado da entidade.
 * **SignalEntity**: envia uma mensagem unidirecional para uma entidade.
 * **Self**: obtém a ID da entidade.
@@ -172,7 +172,7 @@ As operações são menos restritas que orquestrações:
 
 Entidades duráveis podem ser chamadas de funções comuns por meio de `orchestrationClient` associação (`IDurableOrchestrationClient` no .NET). Há suporte para os seguintes métodos:
 
-* **ReadEntityStateAsync\<T >**: lê o estado de uma entidade.
+* **ReadEntityStateAsync\<T >** : lê o estado de uma entidade.
 * **SignalEntityAsync**: envia uma mensagem unidirecional para uma entidade e aguarda até que ele seja enfileirado.
 
 Esses métodos priorizar desempenho sobre a consistência: `ReadEntityStateAsync` pode retornar um valor obsoleto, e `SignalEntityAsync` pode retornar antes da operação for concluída. Por outro lado, é altamente consistente chamando entidades de orquestrações (conforme descrito a seguir).
@@ -183,7 +183,7 @@ Orquestrações podem acessar entidades usando o objeto de contexto. Eles podem 
 
 * **SignalEntity**: envia uma mensagem unidirecional para uma entidade.
 * **CallEntityAsync**: envia uma mensagem para uma entidade e aguarda uma resposta que indica se a operação foi concluída.
-* **CallEntityAsync\<T >**: envia uma mensagem a uma entidade e aguarda uma resposta que contém um resultado do tipo T.
+* **CallEntityAsync\<T >** : envia uma mensagem a uma entidade e aguarda uma resposta que contém um resultado do tipo T.
 
 Ao usar a comunicação bidirecional, todas as exceções geradas durante a execução da operação também são transmitidas novamente para a orquestração chamada e gerada novamente. Por outro lado, ao usar disparar e esquecer, as exceções não são observadas.
 
@@ -279,7 +279,7 @@ O [DurableTask.Redis](https://www.nuget.org/packages/Microsoft.Azure.DurableTask
 }
 ```
 
-O `connectionStringName` deve fazer referência ao nome de uma variável de ambiente ou configuração de aplicativo. Essa variável de ambiente ou configuração de aplicativo deve conter um valor de cadeia de caracteres de conexão do Redis na forma de *porta do servidor:*. Por exemplo, `localhost:6379` para se conectar a um cluster local do Redis.
+O `connectionStringName` deve fazer referência ao nome de uma variável de ambiente ou configuração de aplicativo. Essa variável de ambiente ou configuração de aplicativo deve conter um valor de cadeia de caracteres de conexão do Redis na forma de *porta do servidor:* . Por exemplo, `localhost:6379` para se conectar a um cluster local do Redis.
 
 > [!NOTE]
 > O provedor de Redis está atualmente experimental e só oferece suporte a aplicativos de função em execução em um único nó.
