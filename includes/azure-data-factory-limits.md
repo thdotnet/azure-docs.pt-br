@@ -9,10 +9,10 @@ ms.date: 5/30/2019
 ms.author: jingwang
 ms.custom: include file
 ms.openlocfilehash: ac0747dcff4e74363a58dc9aaf6da4dbd4c6a1c7
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66427590"
 ---
 O Azure Data Factory é um serviço multilocatário que tem os seguintes limites padrão em vigor para certificar-se de assinaturas de clientes são protegidas contra umas das outras cargas de trabalho. Para aumentar os limites até o máximo de sua assinatura, contate o suporte.
@@ -22,9 +22,9 @@ O Azure Data Factory é um serviço multilocatário que tem os seguintes limites
 | Resource | Limite padrão | Limite máximo |
 | -------- | ------------- | ------------- |
 | Data factories em uma assinatura do Azure | 50 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Número total de entidades, como pipelines, conjuntos de dados, gatilhos, serviços vinculados e tempos de execução de integração, em um data factory | 5.000 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Número total de entidades, como pipelines, conjuntos de dados, gatilhos, serviços vinculados e tempos de execução de integração, em um data factory | 5\.000 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Total de núcleos de CPU para tempos de execução de integração do Azure-SSIS em uma assinatura | 256 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Execuções de pipeline simultâneas por data factory que é compartilhado entre todos os pipelines na fábrica | 10.000  | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Execuções de pipeline simultâneas por data factory que é compartilhado entre todos os pipelines na fábrica | 10\.000  | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | As execuções de atividade de externa simultânea por assinatura por [região de tempo de execução de integração do Azure](../articles/data-factory/concepts-integration-runtime.md#integration-runtime-location)<br><small>Atividades externas são gerenciadas no tempo de execução de integração, mas executados em serviços vinculados, incluindo Databricks, procedimento armazenado, HDInsights e outras pessoas.</small> | 3000 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | As execuções de atividade de Pipeline simultânea por assinatura por [região de tempo de execução de integração do Azure](../articles/data-factory/concepts-integration-runtime.md#integration-runtime-location) <br><small>Atividades do pipeline execute no tempo de execução de integração, incluindo Lookup, GetMetadata e excluam. </small>| 1000 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Simultâneas de criação de operações por assinatura por [região de tempo de execução de integração do Azure](../articles/data-factory/concepts-integration-runtime.md#integration-runtime-location)<br><small>Incluindo a conexão de teste, lista de pastas de navegação e lista de tabelas, visualize dados. | 200 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
@@ -32,17 +32,17 @@ O Azure Data Factory é um serviço multilocatário que tem os seguintes limites
 | Máximo atividades por pipeline, que inclui atividades internas para contêineres | 40 | 40 |
 | Número máximo de tempos de execução de integração vinculada que podem ser criados em um único integration runtime auto-hospedado | 100 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Máximo de parâmetros por pipeline | 50 | 50 |
-| Itens ForEach | 100.000 | 100.000 |
+| Itens ForEach | 100\.000 | 100\.000 |
 | Para cada paralelismo | 20 | 50 |
-| Caracteres por expressão | 8.192 | 8.192 |
+| Caracteres por expressão | 8\.192 | 8\.192 |
 | Intervalo do gatilho de janela em cascata mínimo | 15 min | 15 min |
 | Tempo limite máximo para a atividade de pipeline é executado | 7 dias | 7 dias |
 | Bytes por objeto para objetos do pipeline<sup>3</sup> | 200 KB | 200 KB |
-| Bytes por objeto de conjunto de dados e objetos de serviço vinculado<sup>3</sup> | 100 KB | 2.000 KB |
+| Bytes por objeto de conjunto de dados e objetos de serviço vinculado<sup>3</sup> | 100 KB | 2\.000 KB |
 | Unidades de dados de integração<sup>1</sup> por execução de atividade de cópia | 256 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Gravar chamadas à API | 2.500/h<br/><br/> Esse limite é imposto pelo Azure Resource Manager, não pelo Azure Data Factory. | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Gravar chamadas à API | 2\.500/h<br/><br/> Esse limite é imposto pelo Azure Resource Manager, não pelo Azure Data Factory. | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Ler chamadas à API | 12,500/h<br/><br/> Esse limite é imposto pelo Azure Resource Manager, não pelo Azure Data Factory. | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Consultas de monitoramento por minuto | 1.000 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Consultas de monitoramento por minuto | 1\.000 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Operações CRUD de entidade por minuto | 50 | [Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 
 <sup>1</sup> a unidade de integração de dados (DIU) é usada em uma operação de cópia de nuvem para a nuvem, saiba mais sobre [unidades de dados de integração (versão 2)](../articles/data-factory/copy-activity-performance.md#data-integration-units). Para obter informações sobre a cobrança, consulte [preços do Azure Data Factory](https://azure.microsoft.com/pricing/details/data-factory/).
@@ -62,14 +62,14 @@ O Azure Data Factory é um serviço multilocatário que tem os seguintes limites
 | **Recurso** | **Limite padrão** | **Limite máximo** |
 | --- | --- | --- |
 | Data factories em uma assinatura do Azure |50 |[Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Pipelines em um data factory |2.500 |[Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Conjuntos de dados em um data factory |5.000 |[Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Pipelines em um data factory |2\.500 |[Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Conjuntos de dados em um data factory |5\.000 |[Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Fatias simultâneas por conjunto de dados |10 |10 |
 | Bytes por objeto para objetos do pipeline<sup>1</sup> |200 KB |200 KB |
-| Bytes por objeto para dados de definir e objetos de serviço vinculados<sup>1</sup> |100 KB |2.000 KB |
+| Bytes por objeto para dados de definir e objetos de serviço vinculados<sup>1</sup> |100 KB |2\.000 KB |
 | Núcleos de cluster sob demanda do HDInsight do Azure dentro de uma assinatura<sup>2</sup> |60 |[Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Unidades de movimentação de dados por execução de atividade de cópia de nuvem<sup>3</sup> |32 |[Contate o suporte](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Contagem novas tentativas de execução de atividade do pipeline |1.000 |MaxInt (32 bits) |
+| Contagem novas tentativas de execução de atividade do pipeline |1\.000 |MaxInt (32 bits) |
 
 <sup>1</sup> pipeline, conjunto de dados e objetos de serviço vinculado representam um agrupamento lógico de sua carga de trabalho. Os limites desses objetos não estão relacionadas à quantidade de dados que você pode mover e processar com o Azure Data Factory. Data Factory é projetado para dimensionar para lidar com petabytes de dados.
 

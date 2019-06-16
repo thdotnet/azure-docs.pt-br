@@ -9,10 +9,10 @@ ms.date: 08/07/2018
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: f3e05f213821b053f8cf6abbbc50a14e9ea62295
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66166336"
 ---
 # <a name="internet-of-things-iot-security-architecture"></a>Arquitetura de segurança da Internet das Coisas (IoT)
@@ -169,15 +169,15 @@ Esta seção explora a arquitetura descrita anteriormente do ponto de vista de m
 
 Em cada uma das categorias descritas na arquitetura de IoT do Azure, este exemplo tenta atenuar diversas ameaças nos diferentes estágios em que há dados/informações: processo, comunicação e armazenamento. Veja a seguir uma visão geral das ameaças mais comuns para a categoria "processo", assim como práticas recomendadas de mitigação:
 
-**Falsificação (S)**: Um invasor pode extrair o material da chave de criptografia de um dispositivo, no nível de software ou hardware, e posteriormente acessar o sistema com outro dispositivo físico ou virtual sob a identidade do dispositivo do qual o material da chave foi obtido. Uma boa ilustração são os controles remotos que podem ligar qualquer TV e são ferramentas populares dos pregadores de peças.
+**Falsificação (S)** : Um invasor pode extrair o material da chave de criptografia de um dispositivo, no nível de software ou hardware, e posteriormente acessar o sistema com outro dispositivo físico ou virtual sob a identidade do dispositivo do qual o material da chave foi obtido. Uma boa ilustração são os controles remotos que podem ligar qualquer TV e são ferramentas populares dos pregadores de peças.
 
-**Negação de Serviço (D)**: Um dispositivo pode ficar incapaz de funcionar ou de se comunicar interferindo em frequências de rádio ou cortando fios. Por exemplo, uma câmera de vigilância que teve sua conexão de rede ou de energia intencionalmente suprimida não relata dados, de maneira alguma.
+**Negação de Serviço (D)** : Um dispositivo pode ficar incapaz de funcionar ou de se comunicar interferindo em frequências de rádio ou cortando fios. Por exemplo, uma câmera de vigilância que teve sua conexão de rede ou de energia intencionalmente suprimida não relata dados, de maneira alguma.
 
-**Violação (T)**: Um invasor pode substituir parcial ou totalmente o software em execução no dispositivo, potencialmente permitindo que o software substituído aproveite a identidade original do dispositivo se o material da chave ou os recursos de criptografia mantendo os materiais de chave estavam disponíveis para o programa ilícito. Por exemplo, um invasor pode aproveitar o material da chave extraído para interceptar e suprimir os dados do dispositivo no caminho de comunicação e substituí-los por dados falsos que são autenticados com o material da chave roubado.
+**Violação (T)** : Um invasor pode substituir parcial ou totalmente o software em execução no dispositivo, potencialmente permitindo que o software substituído aproveite a identidade original do dispositivo se o material da chave ou os recursos de criptografia mantendo os materiais de chave estavam disponíveis para o programa ilícito. Por exemplo, um invasor pode aproveitar o material da chave extraído para interceptar e suprimir os dados do dispositivo no caminho de comunicação e substituí-los por dados falsos que são autenticados com o material da chave roubado.
 
-**Divulgação de informações confidenciais (I)**: Se o dispositivo estivesse executando software manipulado, tal software manipulado poderia potencialmente vazar dados para partes não autorizadas. Por exemplo, um invasor pode aproveitar o material da chave extraído para se injetar no caminho de comunicação entre o dispositivo e um controlador ou gateway de campo ou um gateway de nuvem para desviar as informações.
+**Divulgação de informações confidenciais (I)** : Se o dispositivo estivesse executando software manipulado, tal software manipulado poderia potencialmente vazar dados para partes não autorizadas. Por exemplo, um invasor pode aproveitar o material da chave extraído para se injetar no caminho de comunicação entre o dispositivo e um controlador ou gateway de campo ou um gateway de nuvem para desviar as informações.
 
-**Elevação de privilégio (E)**: Um dispositivo que realiza uma função específica pode ser forçado a fazer algo diferente. Por exemplo, uma válvula é programada para abrir a metade do caminho pode ser levada para abrir completamente.
+**Elevação de privilégio (E)** : Um dispositivo que realiza uma função específica pode ser forçado a fazer algo diferente. Por exemplo, uma válvula é programada para abrir a metade do caminho pode ser levada para abrir completamente.
 
 | **Componente** | **Ameaça** | **Mitigação** | **Risco** | **Implementação** |
 | --- | --- | --- | --- | --- |

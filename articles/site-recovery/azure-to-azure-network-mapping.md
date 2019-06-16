@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
 ms.openlocfilehash: b25806044dd74092a5404ad7ef24ddd386dffbc3
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65521747"
 ---
 # <a name="set-up-network-mapping-and-ip-addressing-for-vnets"></a>Configurar mapeamento de rede e endereçamento IP para VNets
@@ -85,8 +85,8 @@ Espaço de endereço diferente<br/><br/> O próximo endereço IP disponível na 
 
 **Rede de destino** | **Detalhes**
 --- | ---
-Rede de destino é a VNet de failover | - O endereço IP de destino é estático, mas não o mesmo endereço IP daquele reservado para failover.<br/><br/>  - O endereço atribuído é o próximo endereço disponível no final do intervalo de sub-rede.<br/><br/> Por exemplo: Se o endereço IP de origem for 10.0.0.19 e a rede de failover usar o intervalo 10.0.0.0/24, o próximo endereço IP atribuído à VM de destino será 10.0.0.254.
-A rede de destino não é a VNet de failover | - O endereço IP de destino será estático com o mesmo endereço IP reservado para failover.<br/><br/>  -Se o mesmo endereço IP já está atribuído, o endereço IP é o seguinte só disponível no final do intervalo de sub-rede.<br/><br/> Por exemplo: Se o endereço IP estático de origem for 10.0.0.19 e o failover estiver em uma rede que não seja a de failover, com o intervalo 10.0.0.0/24, o endereço IP estático de destino será 10.0.0.0.19 se disponível, e caso contrário, será 10.0.0.254.
+Rede de destino é a VNet de failover | - O endereço IP de destino é estático, mas não o mesmo endereço IP daquele reservado para failover.<br/><br/>  - O endereço atribuído é o próximo endereço disponível no final do intervalo de sub-rede.<br/><br/> Por exemplo:  Se o endereço IP de origem for 10.0.0.19 e a rede de failover usar o intervalo 10.0.0.0/24, o próximo endereço IP atribuído à VM de destino será 10.0.0.254.
+A rede de destino não é a VNet de failover | - O endereço IP de destino será estático com o mesmo endereço IP reservado para failover.<br/><br/>  -Se o mesmo endereço IP já está atribuído, o endereço IP é o seguinte só disponível no final do intervalo de sub-rede.<br/><br/> Por exemplo:  Se o endereço IP estático de origem for 10.0.0.19 e o failover estiver em uma rede que não seja a de failover, com o intervalo 10.0.0.0/24, o endereço IP estático de destino será 10.0.0.0.19 se disponível, e caso contrário, será 10.0.0.254.
 
 - A rede virtual de failover é a rede de destino selecionada quando você configura a recuperação de desastre.
 - É recomendável sempre usar uma rede de não produção para failover de teste.

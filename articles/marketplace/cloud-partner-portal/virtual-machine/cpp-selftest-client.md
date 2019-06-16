@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: pabutler
 ms.openlocfilehash: 117249feea04381b34f8fc1d95f77c2c1a567dba
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64938715"
 ---
 # <a name="create-a-self-test-client-to-pre-validate-an-azure-virtual-machine-image"></a>Criar um cliente de autoteste para validar previamente uma imagem de máquina virtual do Azure
@@ -264,7 +264,7 @@ Use as etapas a seguir para registrar o aplicativo cliente.
     ![Configurar o multilocatário para o aplicativo](./media/stclient-select-api.png)
 
 12. Em **Adicionar acesso à API**, escolha **Selecionar permissões**.
-13. Selecione **Acessar a “API de Gerenciamento de Serviços do Microsoft Azure”**.
+13. Selecione **Acessar a “API de Gerenciamento de Serviços do Microsoft Azure”** .
 
     ![Habilitar o acesso à API para o aplicativo](./media/stclient-enable-api-access.png)
 
@@ -293,7 +293,7 @@ Use as etapas a seguir para registrar o aplicativo cliente.
 
 Use um dos seguintes programas para criar e obter um token usando a API REST OAuth:
 
-- postman
+- Postman
 - cURL no Linux
 - C&#35;
 - PowerShell

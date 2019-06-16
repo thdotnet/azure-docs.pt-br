@@ -10,10 +10,10 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 04/22/2019
 ms.openlocfilehash: b494f6524e5105a95bc8a24a6fa2521abcca3f7b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64729406"
 ---
 # <a name="exchange-as2-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Trocar mensagens AS2 para Enterprise Integration B2B nos Aplicativos Lógicos do Azure com Enterprise Integration Pack
@@ -73,7 +73,7 @@ Este artigo mostra como adicionar o AS2 de codificação e decodificação de a�
 
 1. No designer, adicione uma nova ação para seu aplicativo lógico. 
 
-1. Sob **escolher uma ação** e a pesquisa, escolha **todos os**. Na caixa de pesquisa, digite "codificar as2" e selecione esta ação: **Codificar mensagem AS2**.
+1. Em **Escolha uma ação** e na caixa de pesquisa, escolha **Todas**. Na caixa de pesquisa, digite "codificar as2" e selecione esta ação: **Codificar mensagem AS2**.
 
    ![Selecione "Codificar mensagem AS2"](./media/logic-apps-enterprise-integration-as2/select-as2-encode.png)
 
@@ -90,7 +90,7 @@ Este artigo mostra como adicionar o AS2 de codificação e decodificação de a�
    | **body** | A carga da mensagem |
    |||
 
-   Por exemplo: 
+   Por exemplo:
 
    ![Propriedades de codificação de mensagem](./media/logic-apps-enterprise-integration-as2/as2-message-encoding-details.png)
 
@@ -102,7 +102,7 @@ Este artigo mostra como adicionar o AS2 de codificação e decodificação de a�
 
 1. No designer, adicione uma nova ação para seu aplicativo lógico. 
 
-1. Sob **escolher uma ação** e a pesquisa, escolha **todos os**. Na caixa de pesquisa, digite "decodificar as2" e selecione esta ação: **Decodificar mensagem AS2**
+1. Em **Escolha uma ação** e na caixa de pesquisa, escolha **Todas**. Na caixa de pesquisa, digite "decodificar as2" e selecione esta ação: **Decodificar mensagem AS2**
 
    ![Selecione "Mensagem de decodificação AS2"](media/logic-apps-enterprise-integration-as2/select-as2-decode.png)
 

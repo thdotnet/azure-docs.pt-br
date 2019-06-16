@@ -16,10 +16,10 @@ ms.date: 03/01/2019
 ms.author: genli
 ms.custom: seodec18
 ms.openlocfilehash: c0584a69349c2785b5b6bce1d17c023c95b36151
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66136188"
 ---
 # <a name="troubleshoot-domain-and-ssl-certificate-problems-in-azure-app-service"></a>Solucionar problemas de domínio e de certificado SSL nos Serviço de Aplicativo do Azure
@@ -269,7 +269,7 @@ Esse problema ocorre por um dos seguintes motivos:
 
     |Tipo de registro|Host|Apontar para|
     |------|------|-----|
-    |O |@|Endereço IP para um aplicativo|
+    |O|@|Endereço IP para um aplicativo|
     |TXT|@|`<app-name>.azurewebsites.net`|
     |CNAME|www|`<app-name>.azurewebsites.net`|
 

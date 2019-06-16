@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/18/2019
 ms.openlocfilehash: 37c9a11b806ff49fce27120d03f67182037dc693
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64726874"
 ---
 # <a name="tutorial-create-on-demand-apache-hadoop-clusters-in-hdinsight-using-azure-data-factory"></a>Tutorial: Criar clusters do Apache Hadoop sob demanda no HDInsight usando o Azure Data Factory
@@ -28,14 +28,14 @@ Este tutorial cobre as seguintes tarefas:
 > * Criar serviços vinculados
 > * Criar um pipeline
 > * Disparar um pipeline
-> * Como monitorar um pipeline
+> * Monitorar um pipeline
 > * Verificar a saída
 
 Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* O PowerShell [Az módulo](https://docs.microsoft.com/powershell/azure/overview) instalado.
+* O [Módulo Az](https://docs.microsoft.com/powershell/azure/overview) do PowerShell instalado.
 
 * Uma entidade de serviço do Azure Active Directory. Depois de criar a entidade de serviço, certifique-se de recuperar o **ID do aplicativo** e **chave de autenticação** usando as instruções no artigo vinculado. Você precisa dos seguintes valores mais tarde neste tutorial. Além disso, verifique se a entidade de serviço é um membro da função de *Colaborador* da assinatura ou do grupo de recursos em que o cluster é criado. Para obter instruções para recuperar os valores necessários e atribuir as funções corretas, consulte [Criar uma entidade de serviço do Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md).
 
@@ -177,7 +177,7 @@ Neste artigo, você deve configurar a atividade de Hive para criar um cluster Ha
     
 3. O cluster HDInsight Hadoop é excluído depois que o processamento é concluído e o cluster está ocioso pelo período de tempo configurado (configuração timeToLive). Se a próxima fatia de dados estiver disponível para processamento nesse tempo ocioso timeToLive, o mesmo cluster será usado para processar a fatia.  
 
-## <a name="create-a-data-factory"></a>Criar uma data factory
+## <a name="create-a-data-factory"></a>Criar um data factory
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
 
@@ -314,7 +314,7 @@ Nesta seção, você pode criar dois serviços vinculados no data factory.
 
 2. Selecione **Concluir** na barra lateral do pop-up.
 
-## <a name="monitor-a-pipeline"></a>Como monitorar um pipeline
+## <a name="monitor-a-pipeline"></a>Monitorar um pipeline
 
 1. Alterne para a guia **Monitorar** à esquerda. Você vê uma execução de pipeline na lista **Execuções de Pipeline**. Observe o status da execução na coluna **Status**.
 
@@ -332,7 +332,7 @@ Nesta seção, você pode criar dois serviços vinculados no data factory.
 
     - Você verá um **adfgerstarted/outputfolder** que contém a saída do script de Hive que foi executado como parte do pipeline.
 
-    - Você verá um contêiner **adfhdidatafactory-\<linked-service-name>-\<timestamp >**. Esse contêiner é o local de armazenamento padrão do cluster HDInsight que foi criado como parte da execução do pipeline.
+    - Você verá um contêiner **adfhdidatafactory-\<linked-service-name>-\<timestamp >** . Esse contêiner é o local de armazenamento padrão do cluster HDInsight que foi criado como parte da execução do pipeline.
 
     - Você verá um contêiner **adfjobs** que possui logs de trabalho do Azure Data Factory.  
 

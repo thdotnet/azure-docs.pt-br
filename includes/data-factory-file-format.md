@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: 89d5483347f93cd3b57a02ced19b1e8b099a5ab0
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66151600"
 ---
 ## <a name="specifying-formats"></a>Especificando formatos
@@ -25,15 +25,15 @@ Se você quiser analisar os arquivos de texto ou gravar os dados no formato de t
 
 | Propriedade | DESCRIÇÃO | Valores permitidos | Obrigatório |
 | --- | --- | --- | --- |
-| columnDelimiter |O caractere usado para separar as colunas em um arquivo. Você pode considerar o uso de um caractere raro não imprimível que provavelmente não existe nos dados: por exemplo, especifique "\u0001" que representa o Início do Título (SOH). |Somente um caractere é permitido. O valor **padrão** é **vírgula (‘,’)**. <br/><br/>Para usar um caractere Unicode, consulte [Caracteres Unicode](https://en.wikipedia.org/wiki/List_of_Unicode_characters) para obter o código correspondente. |Não |
-| rowDelimiter |O caractere usado para separar as linhas em um arquivo. |Somente um caractere é permitido. O valor **padrão** é um dos seguintes valores na leitura: **["\r\n", "\r" e "\n"]** e **"\r\n"** na gravação. |Não  |
-| escapeChar |O caractere especial usado como escape do delimitador de coluna no conteúdo do arquivo de entrada. <br/><br/>Não é possível especificar ambos escapeChar e quoteChar para uma tabela. |Somente um caractere é permitido. Nenhum valor padrão. <br/><br/>Exemplo: se você tem a vírgula (', ') como o delimitador de coluna, mas deseja ter o caractere de vírgula no texto (exemplo: "Olá, mundo"), você pode definir '$' como o caractere de escape e usar a cadeia de caracteres "Olá$, mundo" na fonte. |Não  |
-| quoteChar |O caractere usado para citar um valor de cadeia de caracteres. Os delimitadores de linha e coluna dentro dos caracteres de aspas seriam tratados como parte do valor de cadeia de caracteres. Essa propriedade é aplicável a ambos os conjuntos de dados de entrada e de saída.<br/><br/>Não é possível especificar ambos escapeChar e quoteChar para uma tabela. |Somente um caractere é permitido. Nenhum valor padrão. <br/><br/>Por exemplo, se tiver a vírgula (,) como o delimitador de coluna, mas quiser ter o caractere de vírgula no texto (exemplo: <Hello, world>), você poderá definir " (aspas duplas) como o caractere de citação e usar a cadeia de caracteres "Hello, world" na origem. |Não  |
-| nullValue |Um ou mais caracteres usados para representar um valor nulo. |Um ou mais caracteres. Os valores **padrão** são **"\N" e "NULL"** na leitura e **"\N"** na gravação. |Não  |
-| encodingName |Especifique o nome de codificação. |Um nomes de codificação válido. Consulte [Propriedade Encoding.EncodingName](/dotnet/api/system.text.encoding). Por exemplo: windows-1250 ou shift_jis. O valor **padrão** é **UTF-8**. |Não  |
-| firstRowAsHeader |Especifica se a primeira linha será considerada como cabeçalho. Para um conjunto de dados de entrada, o Data Factory lê a primeira linha como cabeçalho. Para um conjunto de dados de saída, o Data Factory lê a primeira linha como cabeçalho. <br/><br/>Veja [Cenários para usar o `firstRowAsHeader` e o `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount) para cenários de exemplo. |True<br/>**False (padrão)** |Não  |
-| skipLineCount |Indica o número de linhas a serem ignoradas ao ler dados de arquivos de entrada. Se skipLineCount e firstRowAsHeader forem especificados, as linhas serão ignoradas pela primeira vez e, em seguida, as informações de cabeçalho serão lidas do arquivo de entrada. <br/><br/>Veja [Cenários para usar o `firstRowAsHeader` e o `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount) para cenários de exemplo. |Número inteiro |Não  |
-| treatEmptyAsNull |Especifica se uma cadeia de caracteres nula ou vazia será ou não tratada como um valor nulo ao ler dados de um arquivo de entrada. |**True (padrão)**<br/>Falso |Não  |
+| columnDelimiter |O caractere usado para separar as colunas em um arquivo. Você pode considerar o uso de um caractere raro não imprimível que provavelmente não existe nos dados: por exemplo, especifique "\u0001" que representa o Início do Título (SOH). |Somente um caractere é permitido. O valor **padrão** é **vírgula (‘,’)** . <br/><br/>Para usar um caractere Unicode, consulte [Caracteres Unicode](https://en.wikipedia.org/wiki/List_of_Unicode_characters) para obter o código correspondente. |Não |
+| rowDelimiter |O caractere usado para separar as linhas em um arquivo. |Somente um caractere é permitido. O valor **padrão** é um dos seguintes valores na leitura: **["\r\n", "\r" e "\n"]** e **"\r\n"** na gravação. |Não |
+| escapeChar |O caractere especial usado como escape do delimitador de coluna no conteúdo do arquivo de entrada. <br/><br/>Não é possível especificar ambos escapeChar e quoteChar para uma tabela. |Somente um caractere é permitido. Nenhum valor padrão. <br/><br/>Exemplo: se você tem a vírgula (', ') como o delimitador de coluna, mas deseja ter o caractere de vírgula no texto (exemplo: "Olá, mundo"), você pode definir '$' como o caractere de escape e usar a cadeia de caracteres "Olá$, mundo" na fonte. |Não |
+| quoteChar |O caractere usado para citar um valor de cadeia de caracteres. Os delimitadores de linha e coluna dentro dos caracteres de aspas seriam tratados como parte do valor de cadeia de caracteres. Essa propriedade é aplicável a ambos os conjuntos de dados de entrada e de saída.<br/><br/>Não é possível especificar ambos escapeChar e quoteChar para uma tabela. |Somente um caractere é permitido. Nenhum valor padrão. <br/><br/>Por exemplo, se tiver a vírgula (,) como o delimitador de coluna, mas quiser ter o caractere de vírgula no texto (exemplo: <Hello, world>), você poderá definir " (aspas duplas) como o caractere de citação e usar a cadeia de caracteres "Hello, world" na origem. |Não |
+| nullValue |Um ou mais caracteres usados para representar um valor nulo. |Um ou mais caracteres. Os valores **padrão** são **"\N" e "NULL"** na leitura e **"\N"** na gravação. |Não |
+| encodingName |Especifique o nome de codificação. |Um nomes de codificação válido. Consulte [Propriedade Encoding.EncodingName](/dotnet/api/system.text.encoding). Por exemplo: windows-1250 ou shift_jis. O valor **padrão** é **UTF-8**. |Não |
+| firstRowAsHeader |Especifica se a primeira linha será considerada como cabeçalho. Para um conjunto de dados de entrada, o Data Factory lê a primeira linha como cabeçalho. Para um conjunto de dados de saída, o Data Factory lê a primeira linha como cabeçalho. <br/><br/>Veja [Cenários para usar o `firstRowAsHeader` e o `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount) para cenários de exemplo. |True<br/>**False (padrão)** |Não |
+| skipLineCount |Indica o número de linhas a serem ignoradas ao ler dados de arquivos de entrada. Se skipLineCount e firstRowAsHeader forem especificados, as linhas serão ignoradas pela primeira vez e, em seguida, as informações de cabeçalho serão lidas do arquivo de entrada. <br/><br/>Veja [Cenários para usar o `firstRowAsHeader` e o `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount) para cenários de exemplo. |Número inteiro |Não |
+| treatEmptyAsNull |Especifica se uma cadeia de caracteres nula ou vazia será ou não tratada como um valor nulo ao ler dados de um arquivo de entrada. |**True (padrão)**<br/>Falso |Não |
 
 #### <a name="textformat-example"></a>Exemplo de TextFormat
 O exemplo a seguir mostra algumas das propriedades de formato para TextFormat.
@@ -75,11 +75,11 @@ Se você quiser analisar os arquivos de JSON ou gravar os dados no formato JSON,
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 | --- | --- | --- |
-| filePattern |Indique o padrão de dados armazenados em cada arquivo JSON. Os valores permitidos são: **setOfObjects** e **arrayOfObjects**. O valor **padrão** é **setOfObjects**. Veja a seção [Padrões de arquivo JSON](#json-file-patterns) para obter detalhes sobre esses padrões. |Não  |
-| jsonNodeReference | Se você quiser fazer uma iteração e extrair dados de objetos dentro de um campo de matriz com o mesmo padrão, especifique o caminho JSON da matriz. Esta propriedade só terá suporte na cópia de dados de arquivos JSON. | Não  |
-| jsonPathDefinition | Especifique a expressão de caminho JSON para cada mapeamento de coluna com um nome de coluna personalizado (iniciar com letra minúscula). Esta propriedade só terá suporte na cópia de dados de arquivos JSON, e você pode extrair dados de objeto ou de matriz. <br/><br/> Para os campos sob o objeto root, comece com root $; para os campos dentro da matriz escolhidos pela propriedade `jsonNodeReference`, comece do elemento de matriz. Veja a seção [Exemplo de JsonFormat](#jsonformat-example) sobre como configurar. | Não  |
-| encodingName |Especifique o nome de codificação. Para obter a lista de nomes de codificação válidos, confira: Propriedade [Encoding.EncodingName](/dotnet/api/system.text.encoding). Por exemplo: windows-1250 ou shift_jis. O valor **padrão** é: **UTF-8**. |Não  |
-| nestingSeparator |Caractere que é usado para separar os níveis de aninhamento. O valor padrão é '.' (ponto). |Não  |
+| filePattern |Indique o padrão de dados armazenados em cada arquivo JSON. Os valores permitidos são: **setOfObjects** e **arrayOfObjects**. O valor **padrão** é **setOfObjects**. Veja a seção [Padrões de arquivo JSON](#json-file-patterns) para obter detalhes sobre esses padrões. |Não |
+| jsonNodeReference | Se você quiser fazer uma iteração e extrair dados de objetos dentro de um campo de matriz com o mesmo padrão, especifique o caminho JSON da matriz. Esta propriedade só terá suporte na cópia de dados de arquivos JSON. | Não |
+| jsonPathDefinition | Especifique a expressão de caminho JSON para cada mapeamento de coluna com um nome de coluna personalizado (iniciar com letra minúscula). Esta propriedade só terá suporte na cópia de dados de arquivos JSON, e você pode extrair dados de objeto ou de matriz. <br/><br/> Para os campos sob o objeto root, comece com root $; para os campos dentro da matriz escolhidos pela propriedade `jsonNodeReference`, comece do elemento de matriz. Veja a seção [Exemplo de JsonFormat](#jsonformat-example) sobre como configurar. | Não |
+| encodingName |Especifique o nome de codificação. Para obter a lista de nomes de codificação válidos, confira: Propriedade [Encoding.EncodingName](/dotnet/api/system.text.encoding). Por exemplo: windows-1250 ou shift_jis. O valor **padrão** é: **UTF-8**. |Não |
+| nestingSeparator |Caractere que é usado para separar os níveis de aninhamento. O valor padrão é '.' (ponto). |Não |
 
 #### <a name="json-file-patterns"></a>Padrões de arquivo JSON
 
@@ -337,7 +337,7 @@ O conjunto de dados de entrada com o tipo **JsonFormat** é definido da seguinte
 
 Se você tiver a tabela a seguir no Banco de Dados SQL:
 
-| ID | order_date | order_price | order_by |
+| id | order_date | order_price | order_by |
 | --- | --- | --- | --- |
 | 1 | 20170119 | 2000 | Davi |
 | 2 | 20170120 | 3500 | Pedro |

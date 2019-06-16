@@ -9,10 +9,10 @@ ms.date: 04/30/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.openlocfilehash: e0f93b0a95a228b26fae266129aea4b595b05e0f
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65148370"
 ---
 # <a name="manage-anonymous-read-access-to-containers-and-blobs"></a>Gerenciar o acesso de leitura anônimo aos contêineres e blobs
@@ -160,4 +160,4 @@ A tabela a seguir mostra quais operações podem ser chamadas anonimamente quand
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Autorização para os serviços de armazenamento do Azure](https://docs.microsoft.com/rest/api/storageservices/authorization-for-the-azure-storage-services)
-* [Uso de SAS (Assinaturas de Acesso Compartilhado)](../common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+* [Usando assinaturas de acesso compartilhado (SAS)](../common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)

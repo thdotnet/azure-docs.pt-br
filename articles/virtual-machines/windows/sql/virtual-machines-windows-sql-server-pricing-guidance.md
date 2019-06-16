@@ -17,10 +17,10 @@ ms.date: 08/09/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: ce07c6c19c19f134cc322309bb338b94ef11ea85
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66393851"
 ---
 # <a name="pricing-guidance-for-sql-server-azure-vms"></a>Diretrizes de preços para VMs do Azure do SQL Server
@@ -143,8 +143,8 @@ Há novos tamanhos de computador que funcionam bem com certos tipos de cargas de
 
 | Tamanho da VM | vCPUs | Memória | Máx. de discos | Taxa máxima de transferência de E/S | Custos de licenciamento de SQL | Custo total (computação + licenciamento) |
 |---|---|---|---|---|---|---|
-| **Standard_DS14v2** | 16 | 112 GB | 32 | 51.200 IOPS ou 768 MB/s | | |
-| **Standard_DS14-4v2** | 4 | 112 GB | 32 | 51.200 IOPS ou 768 MB/s | 75% inferior | 57% inferior |
+| **Standard_DS14v2** | 16 | 112 GB | 32 | 51\.200 IOPS ou 768 MB/s | | |
+| **Standard_DS14-4v2** | 4 | 112 GB | 32 | 51\.200 IOPS ou 768 MB/s | 75% inferior | 57% inferior |
 
 > [!IMPORTANT]
 > Este é um exemplo pontual. Para as especificações mais recentes, consulte os artigos sobre tamanhos de computador e página de preços do Azure para [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) e [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/).

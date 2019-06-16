@@ -9,10 +9,10 @@ ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
 ms.openlocfilehash: 653db1497fcce5981bba7416f073b0330ca2861f
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66398146"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-in-vmm-clouds-to-azure"></a>Configurar a recuperação de desastre de VMs locais do Hyper-V em nuvens do VMM para o Azure
@@ -64,7 +64,7 @@ Quando você configura o ambiente de origem, você pode instala o provedor Azure
 1. Na **preparar infraestrutura**, selecione **origem**.
 2. Na **preparar origem**, selecione **+ VMM** para adicionar um servidor do VMM. Em **Adicionar Servidor**, verifique se o **Servidor do System Center VMM** aparece em **Tipo de servidor**.
 3. Baixe o instalador do Provedor do Microsoft Azure Site Recovery.
-4. Baixar a chave de registro do cofre. Você precisa dessa chave quando você executa a instalação do provedor. A chave é válida por cinco dias após ser gerada.
+4. Baixe a chave do registro do cofre. Você precisa dessa chave quando você executa a instalação do provedor. A chave é válida por cinco dias após ser gerada.
 5. Baixe o instalador para o agente de serviços de recuperação do Microsoft Azure.
 
     ![Baixe o provedor e chave de registro do agente](./media/hyper-v-vmm-azure-tutorial/download-vmm.png)

@@ -12,10 +12,10 @@ ms.date: 05/22/2019
 ms.author: tulasim
 ms.custom: seodec18
 ms.openlocfilehash: ce6c5f3059041d8dbb097470cf4a415e73d9156b
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66237248"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Limites e limites de base de dados de conhecimento do QnA Maker
@@ -40,7 +40,7 @@ Lista abrangente dos limites no QnA Maker.
 
 |**Camada do Azure Search** | **Gratuito** | **Básico** |**S1** | **S2**| **S3** |**S3 HD**|
 |---|---|---|---|---|---|----|
-|Máximo de campos de metadados por serviço QnA Maker (entre todas as bases de dados de conhecimento)|1.000|100*|1.000|1.000|1.000|1.000|
+|Máximo de campos de metadados por serviço QnA Maker (entre todas as bases de dados de conhecimento)|1\.000|100*|1\.000|1\.000|1\.000|1\.000|
 
 ## <a name="knowledge-base-content-limits"></a>Limites de conteúdo da Base de Dados de Conhecimento
 Limites gerais sobre o conteúdo na base de dados de conhecimento:

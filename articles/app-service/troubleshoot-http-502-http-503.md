@@ -18,10 +18,10 @@ ms.date: 07/06/2016
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: 5edd3e51e83b5ab324d1e110a1882b20d935a9b5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60833028"
 ---
 # <a name="troubleshoot-http-errors-of-502-bad-gateway-and-503-service-unavailable-in-azure-app-service"></a>Solucionar problemas de erros HTTP de "502 Gateway Incorreto" e "503 Serviço Indisponível" em seu Serviço de Aplicativo do Azure
@@ -83,7 +83,7 @@ Para acessar o diagnóstico do Serviço de Aplicativo, navegue até seu aplicati
 #### <a name="use-the-kudu-debug-console"></a>Usar o Console de Depuração Kudu
 O Serviço de Aplicativo vem com um console de depuração que você pode usar para depurar, explorar e carregar arquivos, incluindo pontos de extremidade JSON para obter informações sobre o ambiente. Chama-se *Console Kudu* ou *Painel SCM* de seu aplicativo.
 
-Você pode acessar este painel acessando o link **https://&lt;Nome do aplicativo>.scm.azurewebsites.net/**.
+Você pode acessar este painel acessando o link **https://&lt;Nome do aplicativo>.scm.azurewebsites.net/** .
 
 Estas são algumas das coisas que o Kudu fornece:
 

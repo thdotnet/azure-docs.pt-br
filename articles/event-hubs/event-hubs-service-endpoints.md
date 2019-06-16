@@ -11,12 +11,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 03/12/2019
 ms.author: shvija
-ms.openlocfilehash: 7b5a62f81238d1ae2b627c395613066350b36efe
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 15912ce2e100a4317e775d72972ca6eacfac0d42
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60343436"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080529"
 ---
 # <a name="use-virtual-network-service-endpoints-with-azure-event-hubs"></a>Usar pontos de extremidade de serviço de Rede Virtual com Hubs de Eventos do Azure
 
@@ -41,7 +41,7 @@ O resultado é um relacionamento privado e isolado entre as cargas de trabalho a
 > - Azure Data Explorer
 >
 > Os serviços da Microsoft abaixo devem estar em uma rede virtual
-> - Aplicativos Web do Azure 
+> - Aplicativos Web do Azure
 > - Funções do Azure
 
 > [!IMPORTANT]
@@ -71,10 +71,10 @@ Parâmetros de modelo:
 
 * **namespaceName**: namespace dos Hubs de Eventos.
 * **vnetRuleName**: nome da regra da Rede Virtual a ser criada.
-* **virtualNetworkingSubnetId**: caminho do Resource Manager totalmente qualificado para a sub-rede da rede virtual, por exemplo, `subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` para a sub-rede padrão de uma rede virtual.
+* **virtualNetworkingSubnetId**: caminho do Resource Manager totalmente qualificado para a sub-rede da rede virtual, por exemplo, `/subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` para a sub-rede padrão de uma rede virtual.
 
 > [!NOTE]
-> Embora não haja nenhuma regra de negação possível, o modelo do Azure Resource Manager tem a ação padrão definida como **"Allow"**, o que não restringe as conexões.
+> Embora não haja nenhuma regra de negação possível, o modelo do Azure Resource Manager tem a ação padrão definida como **"Allow"** , o que não restringe as conexões.
 > Ao criar as regras de rede virtual ou de firewalls, devemos alterar a ***"defaultAction"***
 > 
 > de

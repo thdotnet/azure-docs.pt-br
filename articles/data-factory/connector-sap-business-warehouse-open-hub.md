@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: jingwang
 ms.openlocfilehash: 6fb989632d3165ac5e54e540aae4385fc2258c85
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66256901"
 ---
 # <a name="copy-data-from-sap-business-warehouse-via-open-hub-using-azure-data-factory"></a>Copiar dados do SAP Business Warehouse via Open Hub com o Azure Data Factory
@@ -143,7 +143,7 @@ Para copiar dados de e para o SAP BW Open Hub, defina a propriedade type do conj
 | type | A propriedade type deve ser definida como **SapOpenHubTable**.  | Sim |
 | openHubDestinationName | O nome de Destino do Open Hub do qual copiar dados. | Sim |
 | excludeLastRequest | Se você deseja excluir os registros da última solicitação. | Não (o padrão é **true**) |
-| baseRequestId | A ID da solicitação do carregamento delta. Depois que ele for definido, somente os dados com requestId **maior do que** o valor dessa propriedade serão recuperados.  | Não  |
+| baseRequestId | A ID da solicitação do carregamento delta. Depois que ele for definido, somente os dados com requestId **maior do que** o valor dessa propriedade serão recuperados.  | Não |
 
 >[!TIP]
 >Se a tabela do Open Hub contém apenas os dados gerados por ID de solicitação única, por exemplo, você sempre realiza carga completa e substitui os dados existentes na tabela ou somente executa o DTP uma vez para teste; lembre-se de desmarcar a opção "excludeLastRequest" para copiar os dados.

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/03/2016
 ms.author: estfan
 ms.openlocfilehash: fe726986b3f93ab3bb447b8973727a658ac1c706
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66149299"
 ---
 ### <a name="prerequisites"></a>Pré-requisitos
@@ -18,7 +18,7 @@ Antes de usar a conta do GoogleDrive em um aplicativo lógico, você deve autori
 
 Aqui estão as etapas para autorizar seu aplicativo lógico a se conectar à sua conta do GoogleDrive:  
 
-1. Para criar uma conexão com o GoogleDrive, no designer do Aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa e, em seguida, digite *GoogleDrive* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:   
+1. Para criar uma conexão com o GoogleDrive, no designer do Aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa e, em seguida, digite *GoogleDrive* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:  
    ![Etapa de criação da conexão com o GoogleDrive](./media/connectors-create-api-googledrive/googledrive-1.png)  
 2. Se você não tiver criado quaisquer conexões com o GoogleDrive antes, suas credenciais do GoogleDrive serão solicitadas. Essas credenciais serão usadas para autorizar seu Aplicativo lógico a se conectar e acessar os dados da sua conta do GoogleDrive:  
    ![Etapa de criação da conexão com o GoogleDrive](./media/connectors-create-api-googledrive/googledrive-2.png)  
@@ -28,6 +28,6 @@ Aqui estão as etapas para autorizar seu aplicativo lógico a se conectar à sua
    ![Etapa de criação da conexão com o GoogleDrive](./media/connectors-create-api-googledrive/googledrive-4.png)
 5. Permita a conexão com o GoogleDrive  
    ![Etapa de criação da conexão com o GoogleDrive](./media/connectors-create-api-googledrive/googledrive-5.png)  
-6. Observe que a conexão foi criada e agora você pode continuar com as outras etapas no seu aplicativo lógico:   
+6. Observe que a conexão foi criada e agora você pode continuar com as outras etapas no seu aplicativo lógico:  
    ![Etapa de criação da conexão com o GoogleDrive](./media/connectors-create-api-googledrive/googledrive-6.png)  
 

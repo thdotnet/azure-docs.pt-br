@@ -10,10 +10,10 @@ ms.date: 04/03/2019
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
 ms.openlocfilehash: cc60a8ca0e0b04a5fcec5300fbeb1a0f34d1c7b4
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64686376"
 ---
 # <a name="connect-to-hdinsight-apache-hadoop-using-ssh"></a>Conectar o HDInsight (Apache Hadoop) usando SSH
@@ -62,7 +62,7 @@ Se a conta SSH for protegida usando uma chave, o cliente deverá fornecer a chav
 
 * A maioria dos clientes pode ser configurada para usar uma __chave padrão__. Por exemplo, o cliente `ssh` procura uma chave privada em `~/.ssh/id_rsa` em ambientes Unix e Linux.
 
-* Você pode especificar o __caminho para uma chave particular__. Com o cliente `ssh`, o parâmetro `-i` é usado para especificar o caminho para a chave privada. Por exemplo, `ssh -i ~/.ssh/id_rsa sshuser@myedge.mycluster-ssh.azurehdinsight.net`.
+* Você pode especificar o __caminho para uma chave particular__. Com o cliente `ssh`, o parâmetro `-i` é usado para especificar o caminho para a chave privada. Por exemplo: `ssh -i ~/.ssh/id_rsa sshuser@myedge.mycluster-ssh.azurehdinsight.net`.
 
 * Se você tiver __várias chaves privadas__ para uso com servidores diferentes, considere usar um utilitário como [ssh-agent (https://en.wikipedia.org/wiki/Ssh-agent)](https://en.wikipedia.org/wiki/Ssh-agent). O utilitário `ssh-agent` pode ser usado para selecionar a chave a ser usada ao estabelecer uma sessão SSH automaticamente.
 
@@ -157,7 +157,7 @@ Os nós principais e o nó de borda (se houver) podem ser acessados pela Interne
     ```
 
 > [!IMPORTANT]  
-> Os exemplos anteriores supõem que você está usando a autenticação de senha ou que a autenticação do certificado está ocorrendo automaticamente. Se você usar um par de chaves SSH para a autenticação e o certificado não for usado automaticamente, use o parâmetro `-i` para especificar a chave privada. Por exemplo, `ssh -i ~/.ssh/mykey sshuser@clustername-ssh.azurehdinsight.net`.
+> Os exemplos anteriores supõem que você está usando a autenticação de senha ou que a autenticação do certificado está ocorrendo automaticamente. Se você usar um par de chaves SSH para a autenticação e o certificado não for usado automaticamente, use o parâmetro `-i` para especificar a chave privada. Por exemplo: `ssh -i ~/.ssh/mykey sshuser@clustername-ssh.azurehdinsight.net`.
 
 Uma vez conectado, o prompt muda para indicar o nome de usuário SSH e o nó ao qual você está conectado. Por exemplo, quando conectado ao nó principal primário como `sshuser`, o prompt é `sshuser@hn0-clustername:~$`.
 

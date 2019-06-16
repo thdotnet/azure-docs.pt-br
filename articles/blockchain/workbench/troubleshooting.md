@@ -11,10 +11,10 @@ ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
 ms.openlocfilehash: b0263761a4aaf663b16584fbf9caa11bb124d5c4
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65510082"
 ---
 # <a name="azure-blockchain-workbench-troubleshooting"></a>Solução de problemas do Azure Blockchain Workbench
@@ -39,7 +39,7 @@ git clone https://github.com/Azure-Samples/blockchain.git
 ## <a name="run-the-script"></a>Execute o script
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install.md)]
 
-Execute o `collectBlockchainWorkbenchTroubleshooting.ps1` script para coletar logs e criar um arquivo ZIP que contém uma pasta de informações de solução de problemas. Por exemplo: 
+Execute o `collectBlockchainWorkbenchTroubleshooting.ps1` script para coletar logs e criar um arquivo ZIP que contém uma pasta de informações de solução de problemas. Por exemplo:
 
 ``` powershell
 collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>" -ResourceGroupName "workbench-resource-group-name"
@@ -50,11 +50,11 @@ Este script aceita os seguintes parâmetros:
 |---------|---------|----|
 | SubscriptionID | SubscriptionID para criar ou localizar todos os recursos. | Sim |
 | ResourceGroupName | Nome do grupo de recursos do Azure onde o Blockchain Workbench foi implantado. | Sim |
-| OutputDirectory | Caminho para criar a saída do arquivo ZIP. Se não for especificado, o diretório atual é o padrão. | Não  |
-| LookbackHours | Número de horas a utilizar ao efetuar pull de telemetria. O valor padrão é de 24 horas. O valor máximo é de 90 horas | Não  |
-| OmsSubscriptionId | A ID da assinatura em que o Azure Monitor registra é implantada. Apenas passe esse parâmetro se os logs do Azure Monitor para a rede de blockchain é implantado fora do grupo de recursos do Blockchain Workbench.| Não  |
-| OmsResourceGroup |O grupo de recursos em que o Azure Monitor registra é implantado. Apenas passe esse parâmetro se os logs do Azure Monitor para a rede de blockchain é implantado fora do grupo de recursos do Blockchain Workbench.| Não  |
-| OmsWorkspaceName | O nome do espaço de trabalho do Log Analytics. Passar esse parâmetro somente se os logs do Azure Monitor para a rede de blockchain é implantado fora do grupo de recursos do Blockchain Workbench | Não  |
+| OutputDirectory | Caminho para criar a saída do arquivo ZIP. Se não for especificado, o diretório atual é o padrão. | Não |
+| LookbackHours | Número de horas a utilizar ao efetuar pull de telemetria. O valor padrão é de 24 horas. O valor máximo é de 90 horas | Não |
+| OmsSubscriptionId | A ID da assinatura em que o Azure Monitor registra é implantada. Apenas passe esse parâmetro se os logs do Azure Monitor para a rede de blockchain é implantado fora do grupo de recursos do Blockchain Workbench.| Não |
+| OmsResourceGroup |O grupo de recursos em que o Azure Monitor registra é implantado. Apenas passe esse parâmetro se os logs do Azure Monitor para a rede de blockchain é implantado fora do grupo de recursos do Blockchain Workbench.| Não |
+| OmsWorkspaceName | O nome do espaço de trabalho do Log Analytics. Passar esse parâmetro somente se os logs do Azure Monitor para a rede de blockchain é implantado fora do grupo de recursos do Blockchain Workbench | Não |
 
 ## <a name="what-is-collected"></a>O que é coletado?
 

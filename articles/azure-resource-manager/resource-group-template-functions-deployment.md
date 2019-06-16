@@ -13,10 +13,10 @@ ms.workload: na
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.openlocfilehash: c5bd40741ec0fe047f98b4b4431819d90e188385
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128674"
 ---
 # <a name="deployment-functions-for-azure-resource-manager-templates"></a>Funções de implantação para modelos do Azure Resource Manager 
@@ -33,7 +33,7 @@ Para obter valores de recursos, de grupos de recursos ou de assinaturas, veja [F
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="deployment"></a>Implantação
+## <a name="deployment"></a>implantação
 `deployment()`
 
 Retorna informações sobre a operação de implantação atual.
@@ -165,9 +165,9 @@ Retorna um valor de parâmetro. O nome do parâmetro especificado deve ser defin
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| parameterName |Sim |string |O nome do parâmetro a retornar. |
+| parameterName |Sim |cadeia de caracteres |O nome do parâmetro a retornar. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -254,11 +254,11 @@ A saída do exemplo anterior com os valores padrão é:
 
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| stringOutput | String | opção 1 |
+| stringOutput | Cadeia de caracteres | opção 1 |
 | intOutput | Int | 1 |
 | objectOutput | Object | {"one": "a", "two": "b"} |
 | arrayOutput | Matriz | [1, 2, 3] |
-| crossOutput | String | opção 1 |
+| crossOutput | Cadeia de caracteres | opção 1 |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -281,9 +281,9 @@ Retorna o valor da variável. O nome do parâmetro especificado deve ser definid
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| variableName |Sim |String |O nome da variável a retornar. |
+| variableName |Sim |Cadeia de caracteres |O nome da variável a retornar. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -357,9 +357,9 @@ A saída do exemplo anterior com os valores padrão é:
 
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| exampleOutput1 | String | myVariable |
+| exampleOutput1 | Cadeia de caracteres | myVariable |
 | exampleOutput2 | Matriz | [1, 2, 3, 4] |
-| exampleOutput3 | String | myVariable |
+| exampleOutput3 | Cadeia de caracteres | myVariable |
 | exampleOutput4 |  Object | {"property1": "value1", "property2": "value2"} |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:

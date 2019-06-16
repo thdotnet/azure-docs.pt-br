@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 05/29/2019
 ms.author: bwren
 ms.openlocfilehash: 4c7e1225a8da1e20bc90986d1530b781f7f2c11a
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66357572"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Solução de gerenciamento do Office 365 no Microsoft Azure | (Versão prévia)
@@ -25,7 +25,7 @@ ms.locfileid: "66357572"
 
 
 > [!NOTE]
-> O método recomendado para instalar e configurar a solução do Office 365 é a habilitação de [conector do Office 365](../../sentinel/connect-office-365.md) na [Azure Sentinel](../../sentinel/overview.md) em vez de usar as etapas neste artigo. Isso é uma versão atualizada da solução do Office 365 com uma experiência aprimorada de configuração. Para conectar os logs do Azure AD, use o [conector de sentinela do Azure AD do Azure](../../sentinel/connect-azure-active-directory.md), que fornece dados de log avançados que os logs de gerenciamento do Office 365. 
+> O método recomendado para instalar e configurar a solução do Office 365 é a habilitação de [conector do Office 365](../../sentinel/connect-office-365.md) na [Azure Sentinel](../../sentinel/overview.md) em vez de usar as etapas neste artigo. Isso é uma versão atualizada da solução do Office 365 com uma experiência aprimorada de configuração. Para conectar os logs do Azure AD, use o [conector do Azure Sentinel Azure AD](../../sentinel/connect-azure-active-directory.md), que fornece dados de log mais avançados que os logs de gerenciamento do Office 365. 
 >
 > Quando você [Sentinel integrados do Azure](../../sentinel/quickstart-onboard.md), especifique o espaço de trabalho do Log Analytics que você deseja que a solução do Office 365 instalada no. Depois de habilitar o conector, a solução estará disponível no espaço de trabalho e usado exatamente como outras soluções de monitoramento que você instalou.
 >

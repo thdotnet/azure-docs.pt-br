@@ -9,16 +9,16 @@ ms.date: 5/3/2019
 ms.author: victorh
 ms.custom: include file
 ms.openlocfilehash: 8709d4d903bd31ff94d04ec61e226857e4190407
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66238424"
 ---
 | Resource | Limite padrão |
 | --- | --- |
 | Taxa de transferência de dados |30 Gbps<sup>1</sup> |
-|Regras|10.000, regra tipos combinados.|
+|Regras|10\.000, regra tipos combinados.|
 |Tamanho mínimo de AzureFirewallSubnet |/ 26|
 |Intervalo de portas em regras de rede e de aplicativo|0-64.000. Estamos trabalhando para flexibilizar essa limitação.|
 |Tabela de rotas|Por padrão, AzureFirewallSubnet tem uma rota 0.0.0.0/0 com o valor de NextHopType definido como **Internet**.<br><br>O Firewall do Azure deve ter conectividade direta com a Internet. Se seu AzureFirewallSubnet aprender uma rota padrão para sua rede local via BGP, você deve substituir isso por um UDR 0.0.0.0/0 com o valor **NextHopType** definido como **Internet** para manter a conectividade direta com a Internet. Por padrão, o Firewall do Azure não dá suporte ao túnel forçado para uma rede local.<br><br>No entanto, se sua configuração exigir um túnel forçado para uma rede local, a Microsoft dará suporte de acordo com cada caso. Entre em contato com o suporte para que possamos analisar seu caso. Se aprovado, vamos colocar sua assinatura na lista de permissões e garantir que a conectividade necessária do firewall com a Internet seja mantida.|

@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 05/02/2019
 ms.author: spelluru
 ms.openlocfilehash: 2ad81ae97414abbf3266cc5728febf9abe836151
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65522956"
 ---
 # <a name="automate-adding-a-lab-user-to-a-lab-in-azure-devtest-labs"></a>Automatizar a adição de um usuário de laboratório a um laboratório no Azure DevTest Labs
@@ -104,7 +104,7 @@ No modelo, o nome da atribuição de função é definido pelo `fullDevTestLabUs
 ### <a name="role-assignment-resource-properties"></a>Propriedades do recurso de atribuição de função
 Uma atribuição de função define três propriedades. Ele precisa de `roleDefinitionId`, `principalId`, e `scope`.
 
-### <a name="role-definition"></a>Definição de Função
+### <a name="role-definition"></a>Definição de função
 A ID de definição de função é o identificador de cadeia de caracteres para a definição de função existente. A função ID está no formato `/subscriptions/{subscription-id}/providers/Microsoft.Authorization/roleDefinitions/{role-definition-id}`. 
 
 A ID é obtida por meio de assinatura `subscription().subscriptionId` função de modelo.  
@@ -121,7 +121,7 @@ A ID de função é definida na seção de variáveis e nomeada `devTestLabUserR
 "devTestLabUserRoleId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/111111111-0000-0000-11111111111111111')]",
 ```
 
-### <a name="principal-id"></a>ID da Entidade
+### <a name="principal-id"></a>ID da entidade
 ID da entidade é a ID de objeto de usuário do Active Directory, grupo ou entidade de serviço que você deseja adicionar como um usuário de laboratório ao laboratório. O modelo usa o `ObjectId` como um parâmetro.
 
 Você pode obter a ID de objeto, usando o [Get-AzureRMADUser](/powershell/module/azurerm.resources/get-azurermaduser?view=azurermps-6.13.0), [Get-AzureRMADGroup, ou [Get-AzureRMADServicePrincipal](/powershell/module/azurerm.resources/get-azurermadserviceprincipal?view=azurermps-6.13.0) cmdlets do PowerShell. Esses cmdlets retornam um único ou listas de objetos do Active Directory que têm uma propriedade de ID, que é a ID de objeto que você precisa. O exemplo a seguir mostra como obter a ID de objeto de um usuário individual em uma empresa.

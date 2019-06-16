@@ -9,10 +9,10 @@ ms.date: 03/09/2018
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
 ms.openlocfilehash: 24fbab2bb637edf6c7e31215cdc7ac82bdb0ebab
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66158496"
 ---
 Algumas cargas de trabalho de banco de dados como o SQL Server ou Oracle exigem alto de memória, armazenamento e largura de banda I/O, mas não número alto de núcleos. Muitas cargas de trabalho do banco de dados não são de uso intensivo de CPU. O Azure oferece determinados tamanhos de VM, onde você pode restringir a contagem de vCPU VM para reduzir o custo de licenciamento de software, mantendo a mesma memória, armazenamento e largura de banda I/O.
@@ -21,7 +21,7 @@ A contagem de vCPU pode ser restrita para a metade ou um quarto do tamanho da VM
 
 Por exemplo, o tamanho da VM atual Standard_GS5 acompanha 32 vCPUs, 448 GB de RAM, 64 discos (até 256 TB) e 80.000 IOPs ou 2 GB/s de largura de banda I/O. Os novos tamanhos de VM Standard_GS5-16 e 8 Standard_GS5 vêm com 8 e 16 vCPUs activas respectivamente, mantendo o restante das especificações de Standard_GS5 para memória, armazenamento e largura de banda I/O.
 
-Os valores de licenciamento cobrados para SQL Server ou Oracle são restritos à nova contagem de vCPU e outros produtos devem ser cobrados com base na contagem de vCPU nova. Isso resulta em um aumento de 50% a 75% na razão entre as especificações VM para vCPUs ativas (Faturável). Esses novos tamanhos VM permitem que as cargas de trabalho do cliente usar a mesma memória, armazenamento e largura de banda de e/s ao otimizar seu custos de licenciamento de software. Neste momento, o custo de computação, que inclui o licenciamento do sistema operacional, permanece o mesmo com o tamanho original. Para obter mais informações, consulte [tamanhos de VM do Azure para cargas de trabalho do banco de dados mais econômicos](https://azure.microsoft.com/blog/announcing-new-azure-vm-sizes-for-more-cost-effective-database-workloads/).
+Os valores de licenciamento cobrados para SQL Server ou Oracle são restritos à nova contagem de vCPU e outros produtos devem ser cobrados com base na contagem de vCPU nova. Isso resulta em um aumento de 50% a 75% na razão entre as especificações VM para vCPUs ativas (Faturável). Estes novos tamanhos de VM permitem que as cargas de trabalho dos clientes usem a mesma largura de banda de memória, armazenamento e E/S, enquanto otimiza o custo de licenciamento de software. Neste momento, o custo de computação, que inclui o licenciamento do sistema operacional, permanece o mesmo com o tamanho original. Para obter mais informações, consulte [tamanhos de VM do Azure para cargas de trabalho do banco de dados mais econômicos](https://azure.microsoft.com/blog/announcing-new-azure-vm-sizes-for-more-cost-effective-database-workloads/).
 
 
 | NOME                | vCPU | Especificações           |
