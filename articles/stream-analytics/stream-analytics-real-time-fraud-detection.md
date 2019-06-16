@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 38353ed68469ac35f04d68e19afd11ac4b47f2ae
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: cfb7dc8ef41c8829caebed6fff2d881093dbbe4d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64943962"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67076233"
 ---
 # <a name="get-started-using-azure-stream-analytics-real-time-fraud-detection"></a>Introdução ao uso do Stream Analytics do Azure: Detecção de fraude em tempo real
 
@@ -131,11 +131,12 @@ Antes de iniciar o aplicativo TelcoGenerator, você deve configurá-lo para que 
 
 ### <a name="start-the-app"></a>Iniciar o aplicativo
 1.  Abra uma janela de comando e altere para a pasta onde o aplicativo TelcoGenerator é descompactado.
+
 2.  Digite o seguinte comando:
 
-        ```cmd
-        telcodatagen.exe 1000 0.2 2
-        ```
+   ```cmd
+   telcodatagen.exe 1000 0.2 2
+   ```
 
     Os parâmetros são: 
 
@@ -150,7 +151,7 @@ Alguns dos campos-chave que você vai usar neste aplicativo de detecção de fra
 |**Registro**|**Definição**|
 |----------|--------------|
 |`CallrecTime`|Carimbo de data/hora para a hora de início da chamada. |
-|`SwitchNum`|Chave do telefone usada para se conectar à chamada. Neste exemplo, as opções são cadeias de caracteres que representam o país/região de origem (EUA, China, Reino Unido, Alemanha ou Austrália). |
+|`SwitchNum`|Chave do telefone usada para se conectar à chamada. Neste exemplo, as opções são cadeias de caracteres que representam o país/região de origem (Estados Unidos, China, Reino Unido, Alemanha ou Austrália). |
 |`CallingNum`|Número de telefone do autor da chamada. |
 |`CallingIMSI`|A Identidade do Assinante Móvel Internacional (IMSI). Este é o identificador exclusivo do autor da chamada. |
 |`CalledNum`|O número de telefone do destinatário da chamada. |

@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce0c1c4dcf7e4ff0c82157af83aa15544cf092e2
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 1bdd91f8ee1228febe71244530a63fe992df56d9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544736"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110855"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-on-behalf-of-flow"></a>Plataforma de identidade da Microsoft e de fluxo em nome do OAuth 2.0
 
@@ -135,7 +135,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 Uma resposta bem-sucedida é uma resposta JSON do OAuth 2.0 com os parâmetros a seguir.
 
-| Parâmetro | Descrição |
+| Parâmetro | DESCRIÇÃO |
 | --- | --- |
 | `token_type` | Indica o valor do tipo de token. O único tipo que a Microsoft dá suporte à plataforma de identidade é `Bearer`. Para saber mais sobre os tokens de portador, confira o artigo [Estrutura de Autorização do OAuth 2.0: Uso do Token de Portador (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
 | `scope` | O escopo do acesso concedido no token. |
@@ -163,7 +163,7 @@ O exemplo a seguir mostra uma resposta bem-sucedida a uma solicitação para um 
 
 ### <a name="error-response-example"></a>Exemplo de resposta de erro
 
-Uma resposta de erro retornará pelo ponto de extremidade do token durante a tentativa de adquirir um token de acesso para a API downstream, se esta tiver definida nela uma política de acesso condicional (como a autenticação multifator). O serviço de camada intermediária deve revelar esse erro para o aplicativo cliente de modo que este possa fornecer a interação do usuário para satisfazer a política de acesso condicional.
+Uma resposta de erro é retornada pelo ponto de extremidade token ao tentar adquirir um token de acesso para a API downstream, se a API downstream tem uma política de acesso condicional (como a autenticação multifator) definido nela. O serviço de camada intermediária deve revelar esse erro para o aplicativo cliente para que o aplicativo cliente possa fornecer a interação do usuário para atender à política de acesso condicional.
 
 ```
 {

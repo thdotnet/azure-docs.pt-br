@@ -10,12 +10,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: sstein
-ms.openlocfilehash: d527c4fed9c43e62d815078c049d4d8e6f8a46b7
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 04c19c9a8603fee46914eb94b50c4f97e34e9c42
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65787709"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070224"
 ---
 # <a name="sql-database-release-notes"></a>Notas de versão do banco de dados SQL
 
@@ -32,7 +32,6 @@ Este artigo lista os novos recursos e melhorias no serviço de banco de dados SQ
 | Trabalhos de banco de dados elástico | Para obter informações, consulte [criar, configurar e gerenciar trabalhos Elásticos](elastic-jobs-overview.md). |
 | Consultas elásticas | Para obter informações, consulte [visão geral de consulta elástica](sql-database-elastic-query-overview.md). |
 | Transações elásticas | [Transações distribuídas entre bancos de dados de nuvem](sql-database-elastic-transactions-overview.md). |
-| Agrupamento de instância com instâncias gerenciadas |Para obter informações, consulte [usar o PowerShell com o modelo do Resource Manager para criar uma instância gerenciada no Azure SQL Database](./scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md).|
 |Comentários de concessão de memória (modo de linha) (em nível de compatibilidade 150)|Para obter informações, consulte [comentários de concessão de memória (modo de linha)](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#row-mode-memory-grant-feedback).|
 | Editor de consultas no portal do Azure |Para obter informações, consulte [usar o editor de consultas SQL do portal do Azure para conectar e consultar dados](sql-database-connect-query-portal.md).|
 | R services / machine learning com bancos de dados únicos e pools Elásticos |Para obter informações, consulte [serviços de Machine Learning no Azure SQL Database](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services?view=sql-server-2017#machine-learning-services-in-azure-sql-database).|
@@ -42,9 +41,20 @@ Este artigo lista os novos recursos e melhorias no serviço de banco de dados SQ
 |Análise de SQL|Para obter informações, consulte [análise de SQL do Azure](../azure-monitor/insights/azure-sql.md).|
 |Tabela variável adiada compilação (no nível de compatibilidade 150)|Para obter informações, consulte [compilação adiada variável da tabela](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#table-variable-deferred-compilation).|
 | Detecção de ameaças com instâncias gerenciadas |Para obter informações, consulte [instância gerenciada de configurar a detecção de ameaças no banco de dados SQL](sql-database-managed-instance-threat-detection.md).|
-| Suporte a fuso horário para instâncias gerenciadas|Para obter mais informações, consulte [fuso horário no banco de dados de instância gerenciada do SQL](sql-database-managed-instance-timezone.md).|
 | Transparent data encryption (TDE) com Traga sua própria chave (BYOK) com instâncias gerenciadas |Para obter informações, consulte [Azure SQL Transparent Data Encryption com chaves gerenciadas pelo cliente no Azure Key Vault: Oferecer suporte de sua própria chave](transparent-data-encryption-byok-azure-sql.md).|
 | &nbsp; |
+
+## <a name="june-2019"></a>Junho de 2019
+
+### <a name="service-improvements"></a>Melhorias nos serviços
+
+| Melhorias nos serviços | Detalhes |
+| --- | --- |
+| instância gerenciada do 4 vCores na geração de hardware Gen5| Para obter mais informações, consulte https://aka.ms/four-cores-sql-mi-update. |
+| Instância gerenciada - suporte para assinaturas com um crédito mensal do Azure para assinantes do Visual Studio | Para obter mais informações, consulte https://aka.ms/sql-mi-visual-studio-subscribers. |
+|Limites maiores de regionais para a instância gerenciada| Para obter mais informações, consulte [limitações de recursos regionais](sql-database-managed-instance-resource-limits.md#regional-resource-limitations).
+| &nbsp; |
+
 
 ## <a name="may-2019"></a>Maio de 2019
 
@@ -54,6 +64,8 @@ Este artigo lista os novos recursos e melhorias no serviço de banco de dados SQ
 | --- | --- |
 |Camada de serviço em hiperescala lançada para disponibilidade geral| Para obter mais informações, consulte [camada de serviço em hiperescala para até 100 TB](sql-database-service-tier-hyperscale.md) e [obter alto desempenho, colocação em escala para suas cargas de trabalho de banco de dados do Azure com em hiperescala](https://azure.microsoft.com/blog/get-high-performance-scaling-for-your-azure-database-workloads-with-hyperscale/).|
 |Camada de computação sem servidor liberada para visualização pública | Para obter mais informações, consulte [banco de dados SQL sem servidor (visualização)](sql-database-serverless.md).|
+|Suporte a fuso horário para instâncias gerenciadas lançado para disponibilidade geral |Para obter mais informações, consulte [fuso horário no banco de dados de instância gerenciada do SQL](sql-database-managed-instance-timezone.md).|
+|Agrupamento de instância com instâncias gerenciadas lançado para disponibilidade geral |Para obter informações, consulte [usar o PowerShell com o modelo do Resource Manager para criar uma instância gerenciada no Azure SQL Database](./scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md).|
 | Taxas de log de transação e IOPS de destino aumentaram para bancos de dados usando o modelo de compra baseado em vCore| Para obter mais informações, consulte [limites de recursos para bancos de dados individuais usando o modelo de compra baseado em vCore](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-single-databases) e [limites de recursos para bancos de dados individuais usando o modelo de compra baseado em DTU](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits-single-databases).
 | &nbsp; |
 

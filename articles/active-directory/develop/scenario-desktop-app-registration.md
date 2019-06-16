@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5da934709274d90668d94dfea3a9c223e191d032
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 5ab2701a82da0b8f7bc4e23a3d947be905593e85
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65076054"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67057225"
 ---
 # <a name="desktop-app-that-calls-web-apis---app-registration"></a>Aplicativo da área de trabalho que chama APIs - registro do aplicativo de web
 
@@ -46,12 +46,13 @@ Se seu aplicativo da área de trabalho usa a autenticação interativa, você po
 
 Novamente o redirecionamento de URIs a serem usados no aplicativo da área de trabalho dependerá do fluxo que você deseja usar.
 
-- Se você estiver usando a autenticação interativa, você desejará usar `https://login.microsoftonline.com/common/oauth2/nativeclient`. Você alcançará essa configuração clicando na URL correspondente na **autenticação** seção para seu aplicativo
+- Se você estiver usando o **autenticação interativa** ou **fluxo de código de dispositivo**, você vai querer usar `https://login.microsoftonline.com/common/oauth2/nativeclient`. Você alcançará essa configuração clicando na URL correspondente na **autenticação** seção para seu aplicativo
   
   > [!IMPORTANT]
   > Hoje em dia MSAL.NET usa outro URI de redirecionamento por padrão em aplicativos da área de trabalho em execução no Windows (`urn:ietf:wg:oauth:2.0:oob`). No futuro, vai querer alterar esse padrão e, portanto, é recomendável que você use `https://login.microsoftonline.com/common/oauth2/nativeclient`
 
-- Se seu aplicativo só está usando a autenticação do Windows integrada, nome de usuário/senha ou o fluxo de código de dispositivo, você não precisará registrar um URI de redirecionamento para seu aplicativo. Na verdade, esses fluxos de fazer uma ida e volta para o ponto de extremidade de v 2.0 de plataforma de identidade de Microsoft e seu aplicativo não seja chamado novamente no qualquer URI específico. Para distingui-las a partir de um fluxo de aplicativo cliente confidencial, que não tem URIs de redirecionamento ambos (fluxo do cliente credencial usado em aplicativos daemon), você precisa expressar o que seu aplicativo é um aplicativo cliente público. Essa configuração é obtida, vá para o **autenticação** seção para seu aplicativo e, no **configurações avançadas** subseção, escolha **Sim**, para a pergunta **Trate o aplicativo como um cliente público** (na **tipo de cliente padrão** parágrafo)
+- Se seu aplicativo só está usando a autenticação do Windows integrada, nome de usuário/senha, você não precisará registrar um URI de redirecionamento para seu aplicativo. Na verdade, esses fluxos de fazer uma ida e volta para o ponto de extremidade de v 2.0 de plataforma de identidade de Microsoft e seu aplicativo não seja chamado novamente no qualquer URI específico. 
+- Fim de distinguir o fluxo de código do dispositivo, a autenticação integrada do Windows e o nome de usuário e senha de um fluxo de aplicativo cliente confidencial, que não tem URIs de redirecionamento ambos (fluxo do cliente credencial usado em aplicativos daemon), você precisará express que seu aplicativo é um aplicativo cliente público. Essa configuração é obtida, vá para o **autenticação** seção para seu aplicativo e, no **configurações avançadas** subseção, escolha **Sim**, para a pergunta **Trate o aplicativo como um cliente público** (na **tipo de cliente padrão** parágrafo)
 
   ![Permitir que o cliente público](media/scenarios/default-client-type.png)
 

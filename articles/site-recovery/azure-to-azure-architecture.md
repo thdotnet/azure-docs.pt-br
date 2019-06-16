@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: raynew
 ms.openlocfilehash: 25cf3914274e73e0789aa87e9288649d1b0cb1eb
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66399586"
 ---
 # <a name="azure-to-azure-disaster-recovery-architecture"></a>Arquitetura de recuperação de desastre do Azure para o Azure
@@ -134,7 +134,7 @@ Se o acesso de saída para as VMs for controlado com URLs, permita estas URLs.
 | *.blob.core.windows.net | Permite que os dados sejam gravados da VM para a conta de armazenamento de cache da região de origem. |
 | login.microsoftonline.com | Fornece autorização e autenticação para as URLs do serviço Site Recovery. |
 | *.hypervrecoverymanager.windowsazure.com | Permite que a VM se comunique com o serviço Site Recovery. |
-| * .servicebus.windows.net | Permite que a VM grave o monitoramento do Site Recovery e os dados de diagnóstico. |
+| *.servicebus.windows.net | Permite que a VM grave o monitoramento do Site Recovery e os dados de diagnóstico. |
 
 ### <a name="outbound-connectivity-for-ip-address-ranges"></a>Conectividade de saída para intervalos de endereços IP
 

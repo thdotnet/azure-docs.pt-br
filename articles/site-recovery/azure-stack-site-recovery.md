@@ -9,10 +9,10 @@ ms.service: site-recovery
 ms.date: 05/30/2019
 ms.author: raynew
 ms.openlocfilehash: 11d409f904c43c0df4bbbd44fdb24531f2f989f6
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66399588"
 ---
 # <a name="replicate-azure-stack-vms-to-azure"></a>Replicar VMs do Azure Stack para Azure
@@ -68,7 +68,7 @@ A seguir, o que é necessário para configurar esse cenário.
 **Requisito** | **Detalhes**
 --- | ---
 **conta de assinatura do Azure** | Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/pricing/free-trial/).
-**Permissões da conta do Azure** | A conta do Azure utilizada deverá ter permissões para:<br/><br/> - Criar um cofre do Serviço de recuperação<br/><br/> - Criar uma máquina virtual no grupo de recursos e na rede virtual usada para o cenário<br/><br/> - Gravar na conta de armazenamento que você especificar<br/><br/> Observe que:<br/><br/> - Se você criar uma conta, será o administrador da assinatura e poderá executar todas as ações.<br/><br/> - Se você usar uma assinatura existente e não for o administrador, será necessário trabalhar com o administrador para receber permissões de Proprietário ou de Colaborador.<br/><br/> - Se forem necessárias permissões mais granulares, revise [este artigo](https://docs.microsoft.com/azure/site-recovery/site-recovery-role-based-linked-access-control). 
+**Permissões da conta do Azure** | A conta do Azure utilizada deverá ter permissões para:<br/><br/> - Criar um cofre do Serviço de recuperação<br/><br/> - Criar uma máquina virtual no grupo de recursos e na rede virtual usada para o cenário<br/><br/> - Gravar na conta de armazenamento que você especificar<br/><br/> Observe que:<br/><br/> \- Se você criar uma conta, será o administrador da assinatura e poderá executar todas as ações.<br/><br/> - Se você usar uma assinatura existente e não for o administrador, será necessário trabalhar com o administrador para receber permissões de Proprietário ou de Colaborador.<br/><br/> - Se forem necessárias permissões mais granulares, revise [este artigo](https://docs.microsoft.com/azure/site-recovery/site-recovery-role-based-linked-access-control). 
 **VM do Azure Stack** | É necessário ter uma VM do Azure Stack na assinatura do locatário, que será implantada como o servidor de configuração do Site Recovery. 
 
 

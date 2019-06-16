@@ -16,12 +16,12 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df5b53ccdcd33e2542834769baff5b759ff7b170
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 0f007ad1d5bf99136328ec5706f7ccbb5f6593c8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65962371"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111222"
 ---
 # <a name="scenario-mobile-application-that-calls-web-apis"></a>Cenário: Aplicativo móvel que chamadas às APIs da web
 
@@ -52,7 +52,7 @@ Considerações para aplicativos móveis:
 
 - **Experiência do usuário é a chave**: Permitir que os usuários ver o valor do seu aplicativo antes de solicitar para entrar e solicitar apenas as permissões necessárias.
 - **Suporte a todas as configurações de usuário**: Muitos usuários de negócios móveis estão sob o acesso condicional e políticas de conformidade do dispositivo. Certifique-se de dar suporte a esses cenários-chave.
-- **Implementar o logon único (SSO)**: MSAL e plataforma de identidade Microsoft simplificam habilitar logon único por meio do navegador do dispositivo ou o Microsoft Authenticator (e Portal da empresa do Intune no Android).
+- **Implementar o logon único (SSO)** : MSAL e plataforma de identidade Microsoft simplificam habilitar logon único por meio do navegador do dispositivo ou o Microsoft Authenticator (e Portal da empresa do Intune no Android).
 
 ## <a name="specifics"></a>Informações específicas
 

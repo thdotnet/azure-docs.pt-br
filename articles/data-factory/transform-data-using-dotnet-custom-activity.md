@@ -11,16 +11,16 @@ ms.date: 11/26/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: ea409d6705d0146e9cb32ba11e6b785cf527739c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8076ae81b111aa6b524b7e286ed15ca0661d748b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66165971"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062121"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Usar atividades personalizadas em um pipeline do Data Factory do Azure
 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](v1/data-factory-use-custom-activities.md)
 > * [Versão atual](transform-data-using-dotnet-custom-activity.md)
 
@@ -102,9 +102,9 @@ A tabela a seguir descreve os nomes e as descrições de propriedades que são e
 
 | Propriedade              | DESCRIÇÃO                              | Obrigatório |
 | :-------------------- | :--------------------------------------- | :------- |
-| nome                  | Nome da atividade no pipeline     | Sim      |
+| name                  | Nome da atividade no pipeline     | Sim      |
 | description           | Texto que descreve o que a atividade faz.  | Não       |
-| tipo                  | Para a atividade personalizada, o tipo de atividade é **Personalizado**. | Sim      |
+| type                  | Para a atividade personalizada, o tipo de atividade é **Personalizado**. | Sim      |
 | linkedServiceName     | Serviço vinculado ao Lote do Azure. Para saber mais sobre esse serviço vinculado, consulte o artigo [Compute linked services](compute-linked-services.md) (Serviços de computação vinculados).  | Sim      |
 | command               | Comando do aplicativo personalizado a ser executado. Se o aplicativo já estiver disponível no nó do pool do Lote do Azure, resourceLinkedService e folderPath poderão ser ignorados. Por exemplo, você pode especificar o comando como `cmd /c dir`, que tem suporte nativo no nó do pool do Lote do Windows. | Sim      |
 | resourceLinkedService | Serviço de vinculado do Armazenamento do Azure para a conta de armazenamento na qual o aplicativo personalizado é armazenado | Nenhum &#42;       |
@@ -301,7 +301,7 @@ Activity Error section:
 Se você deseja consumir o conteúdo de stdout.txt nas atividades de downstream, você pode obter o caminho para o arquivo stdout.txt na expressão "\@activity('MyCustomActivity').output.outputs [0]".
 
 > [!IMPORTANT]
-> - O activity.json, o linkedServices.json e o datasets.json são armazenados na pasta de tempo de execução da tarefa Batch. Para esse exemplo, o activity.json, linkedServices.json e o datasets.json são armazenados no caminho "https://adfv2storage.blob.core.windows.net/adfjobs/\<GUID>/runtime/". Caso seja necessário, limpe-os separadamente.
+> - O activity.json, o linkedServices.json e o datasets.json são armazenados na pasta de tempo de execução da tarefa Batch. Neste exemplo, o Activity. JSON, linkedservices. JSON e DataSets. JSON são armazenados em `"https://adfv2storage.blob.core.windows.net/adfjobs/\<GUID>/runtime/"` caminho. Caso seja necessário, limpe-os separadamente.
 > - Como os serviços vinculados que usam o Integration Runtime (auto-hospedado), as informações confidenciais, como chaves ou senhas, são criptografadas pelo Integration Runtime (auto-hospedado) para garantir que a credencial permaneça no ambiente de rede privada definido pelo cliente. Por esse motivo, alguns campos confidenciais podem ficar faltando na referência do código do aplicativo personalizado. Use SecureString em extendedProperties em vez de usar a referência do serviço vinculado, se necessário.
 
 ## <a name="pass-outputs-to-another-activity"></a>Saídas de passagem para outra atividade
@@ -345,7 +345,7 @@ A tabela a seguir descreve as diferenças entre a Atividade Personalizada do Dat
 |Conjunto de dados necessário      |Opcional      |Necessário para atividades de cadeia e transmitir informações      |
 |Transmitir informações de atividade para lógica personalizada      |Por meio de ReferenceObjects (LinkedServices e conjuntos de dados) e ExtendedProperties (propriedades personalizadas)      |Por meio de conjuntos de dados de ExtendedProperties (propriedades personalizadas), de entrada e de saída      |
 |Recuperar informações em lógica personalizada      |Analisa o activity.json, o linkedServices.json e o datasets.json armazenados na mesma pasta do executável      |Por meio do .NET SDK (quadro para .NET 4.5.2)      |
-|Registro em Log      |Grava diretamente no STDOUT      |Implementando agente na DLL do .NET      |
+|Registrando em log      |Grava diretamente no STDOUT      |Implementando agente na DLL do .NET      |
 
 Se você tiver um código .NET escrito para uma versão 1 atividade de DotNet (personalizada), você precisa modificar o código para que ele funcione com a versão atual da atividade personalizada. Atualize seu código seguindo estas diretrizes de alto nível:
 

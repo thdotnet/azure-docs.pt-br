@@ -5,60 +5,73 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 12/14/2018
+ms.date: 06/12/2019
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.reviewer: mal
+ms.reviewer: elisol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99fe386ec75e60a16f3095f22dccc3852883f8aa
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: a80eaa134130195fce00ee6a4d68851e478c4532
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66304524"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052497"
 ---
 # <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Resgate do convite de colaboração do Azure Active Directory B2B
 
-Para colaborar com usuários de organizações parceiras por meio de colaboração B2B do Azure Active Directory (Azure AD), você pode convidar usuários para acessar aplicativos compartilhados. Depois que um usuário convidado é adicionado ao diretório por meio da interface de usuário ou o usuário é convidado por meio do PowerShell, os usuários convidados devem passar por um processo de consentimento pela primeira vez, afirmando que concordam com os [termos de privacidade](#privacy-policy-agreement). Esse processo acontece de qualquer uma das seguintes maneiras:
+Este artigo descreve as maneiras em que os usuários convidados podem acessar seus recursos e o processo de consentimento que encontrará. Se você enviar um email de convite ao convidado, o convite inclui um link que o convidado pode resgatar para obter acesso a seu aplicativo ou o portal. O email de convite é apenas uma das maneiras de convidados podem ter acesso aos seus recursos. Como alternativa, você pode adicionar convidados a seu diretório e conceda a um link direto para o portal ou o aplicativo que você deseja compartilhar. Independentemente do método usarem, convidados são orientados por meio de um processo de consentimento pela primeira vez. Esse processo garante que os convidados concordar com os termos de privacidade e aceitam qualquer [termos de uso](https://docs.microsoft.com/azure/active-directory/governance/active-directory-tou) você configurou.
 
-- O emissor do convite envia um link direto para um aplicativo compartilhado. O convidado clica no link para entrar, aceita os termos de privacidade e acessa diretamente o recurso compartilhado. (O usuário convidado ainda recebe um email de convite com uma URL de resgate, mas diferente de alguns casos especiais, não é mais necessário para usar o email de convite.)  
-- O usuário convidado recebe um email de convite e clica na URL de resgate. Como parte do primeiro logon, os usuários serão solicitados a aceitar os termos de privacidade.
-
-## <a name="redemption-through-a-direct-link"></a>Resgate por meio de um link direto
-
-Um emissor do convite pode convidar um usuário convidado enviando um [link direto para um aplicativo compartilhado](../manage-apps/end-user-experiences.md#direct-sign-on-links). Para o usuário convidado, a experiência de resgate é simples: basta entrar no aplicativo que foi compartilhado com ele. Os usuários convidados podem clicar em um link para o aplicativo, analisar e aceitar os termos de privacidade e acessar diretamente o aplicativo. Na maioria dos casos, os usuários convidados não precisam mais clicar em uma URL de resgate em um email de convite.
-
-Se você convidou usuários por meio da interface do usuário, ou optou por enviar o email de convite como parte da experiência de convite do PowerShell, o usuário convidado ainda recebe um email de convite. Este email é útil para seguintes casos especiais:
-
-- O usuário não tem uma conta do Azure AD ou uma conta da Microsoft (MSA). Nesse caso, o usuário deve criar uma MSA antes de clicar no link ou usar a URL de resgate no email de convite. O processo de resgate solicita automaticamente ao usuário para criar uma MSA.
-- Às vezes, o objeto de usuário convidado não pode ter um endereço de email devido a um conflito com um objeto de contato (por exemplo, um objeto de contato Outlook). Nesse caso, o usuário deve clicar na URL de resgate no email de convite.
-- O usuário pode entrar com um alias do endereço de email que foi convidado. (Um alias é um endereço de email adicional associado a uma conta de email.) Nesse caso, o usuário deve clicar na URL de resgate no email de convite.
-
-Se esses casos especiais forem importantes para sua organização, é recomendável que você convide usuários usando métodos que ainda enviam emails de convite. Além disso, se um usuário não estiver em um desses casos especiais, ele ainda poderá clicar na URL em um email de convite para obter acesso.
+Quando você adiciona um usuário convidado ao diretório, a conta de usuário convidado tem um status de consentimento (visível no PowerShell) que é inicialmente definido como **PendingAcceptance**. Essa configuração permanece até que o convidado aceita o convite e concorda em sua política de privacidade e termos de uso. Depois disso, o status de consentimento é alterado para **aceito**, e as páginas de consentimento não serão apresentadas para o convidado.
 
 ## <a name="redemption-through-the-invitation-email"></a>Resgate por meio de email de convite
 
-Se o usuário for convidado por meio de um método que envia um email de convite, ele também podem resgatar um convite por email de convite. Um usuário convidado pode clicar na URL de resgate no email e, em seguida, ler e aceitar os termos de privacidade. O processo é descrito com mais detalhes aqui:
+Quando você adiciona um usuário convidado ao diretório pelo [usando o portal do Azure](https://docs.microsoft.com/azure/active-directory/b2b/b2b-quickstart-add-guest-users-portal), um email de convite é enviado para o convidado no processo. Você também pode optar por enviar emails de convite, quando você estiver [usando o PowerShell](https://docs.microsoft.com/azure/active-directory/b2b/b2b-quickstart-invite-powershell) para adicionar usuários convidados ao seu diretório. Aqui está uma descrição da experiência do convidado quando eles resgatar o link no email.
 
-1.  Depois de ser convidado, o usuário recebe um convite por email enviado pelo **Microsoft Invitations**.
-2.  O convidado seleciona a opção **Começar** no email.
-3.  Se o convidado não tiver uma conta do Azure AD ou uma MSA, ele será solicitado a criar uma MSA.
-4.  O convidado é redirecionado para a tela **Revisar permissões**, onde ele poderá analisar a declaração de privacidade da organização que convida e aceitar os termos.
+1. O convidado recebe um [email de convite](https://docs.microsoft.com/azure/active-directory/b2b/invitation-email-elements) que é enviada do **Invitations Microsoft**.
+2. O convidado selecionará **começar** no email.
+3. Se o convidado não tiver uma conta do AD do Azure, uma conta da Microsoft (MSA) ou uma conta de email em uma organização federada, ele será solicitado a criar uma MSA (a menos que o [senha de uso único](https://docs.microsoft.com/azure/active-directory/b2b/one-time-passcode) recurso estiver habilitado, o que não exige uma MSA ).
+4. O convidado será guiado através do [experiência de consentimento](#consent-experience-for-the-guest) descrito abaixo.
 
-## <a name="privacy-policy-agreement"></a>Contrato de política de privacidade
+## <a name="redemption-through-a-direct-link"></a>Resgate por meio de um link direto
 
-Depois que qualquer usuário convidado fizer logon para acessar os recursos em uma organização parceira pela primeira vez, surgirá a tela **Revisar permissões**. Nela, eles podem analisar a declaração de privacidade da organização que convida. Um usuário deve aceitar o uso de suas informações de acordo com as políticas de privacidade da organização que convida para continuar.
+Como uma alternativa para o email de convite, você pode dar um convidado um link direto para o aplicativo ou o portal. Primeiro, você precisa adicionar o usuário convidado ao seu diretório por meio de [portal do Azure](https://docs.microsoft.com/azure/active-directory/b2b/b2b-quickstart-add-guest-users-portal) ou [PowerShell](https://docs.microsoft.com/azure/active-directory/b2b/b2b-quickstart-invite-powershell). Em seguida, você pode usar qualquer um dos [maneiras personalizáveis de implantar aplicativos para usuários](https://docs.microsoft.com/azure/active-directory/manage-apps/end-user-experiences), incluindo links diretos logon. Quando um convidado usa um link direto em vez de email de convite, eles ainda serão guiados através da experiência de consentimento pela primeira vez.
 
-![Captura de tela mostrando as configurações do usuário no Painel de Acesso](media/redemption-experience/ConsentScreen.png) 
+> [!IMPORTANT]
+> O link direto deve ser específico do locatário. Em outras palavras, ele deve incluir uma ID de locatário ou domínio verificado para que o convidado pode ser autenticado em seu locatário, onde o aplicativo compartilhado está localizado. Uma URL comuns, como https://myapps.microsoft.com não funcionará para um convidado porque ele será redirecionado para seu locatário inicial para autenticação. Aqui estão alguns exemplos de links diretos com o contexto de locatário:
+ > - Painel de acesso de aplicativos: https://myapps.microsoft.com/?tenantid=&lt; id do locatário&gt; 
+ > - Painel de acesso de aplicativos para um domínio verificado: https://myapps.microsoft.com/&lt; verificado domínio&gt;
+ > - Portal do Azure: https://portal.azure.com/&lt; id do locatário&gt;
+ > - Aplicativos individuais: Veja como usar um [link de logon direto](../manage-apps/end-user-experiences.md#direct-sign-on-links)
 
-Para obter informações sobre como você, como administrador de locatários, pode fornecer um link para a política de privacidade de sua organização, confira [Como: Adicionar informações de privacidade de sua organização ao Azure Active Directory](https://aka.ms/adprivacystatement).
+Há alguns casos em que o email de convite é recomendável em vez de um link direto. Se esses casos especiais são importantes para sua organização, é recomendável que você convidar usuários por meio de métodos que ainda enviar o email de convite:
+ - O usuário não tem uma conta do AD do Azure, uma MSA ou uma conta de email em uma organização federada. A menos que você estiver usando o recurso de senha de uso único, o convidado precisa resgatar o email de convite para ser guiado pelas etapas para criar uma MSA.
+ - Às vezes, o objeto de usuário convidado não pode ter um endereço de email devido a um conflito com um objeto de contato (por exemplo, um objeto de contato Outlook). Nesse caso, o usuário deve clicar na URL de resgate no email de convite.
+ - O usuário pode entrar com um alias do endereço de email que foi convidado. (Um alias é um endereço de email adicional associado a uma conta de email.) Nesse caso, o usuário deve clicar na URL de resgate no email de convite.
 
-## <a name="terms-of-use"></a>Termos de uso
+## <a name="consent-experience-for-the-guest"></a>Experiência de consentimento para o convidado
 
-Você pode apresentar termos de uso para o usuário convidado durante o processo de resgate inicial usando os termos do AD do Azure do recurso de uso. No Azure Active Directory, acesse esse recurso em **Gerenciar** > **Relações organizacionais** > **Termos de uso** ou em **Segurança** > **Acesso Condicional** > **Termos de uso**. Para obter detalhes, consulte [recurso de termos de uso do Azure AD](../conditional-access/terms-of-use.md).
+Quando um convidado entra acessar recursos em uma organização parceira pela primeira vez, eles são guiados por meio de páginas a seguir. 
 
-![Captura de tela mostrando os novos termos de uso](media/redemption-experience/organizational-relationships-terms-of-use.png) 
+1. As revisões de convidado a **revisar permissões** página que descreve a declaração de privacidade da organização emissora do convite. Um usuário deve **Accept** o uso de suas informações de acordo com as políticas de privacidade da organização emissora do convite para continuar.
+
+   ![Captura de tela mostrando a página Analisar as permissões](media/redemption-experience/review-permissions.png) 
+
+   > [!NOTE]
+   > Para obter informações sobre como você, como administrador de locatários, pode fornecer um link para a política de privacidade de sua organização, confira [Como: Adicionar informações de privacidade de sua organização ao Azure Active Directory](https://aka.ms/adprivacystatement).
+
+2. Se os termos de uso são configurados, o convidado abre e revisa os termos de uso e, em seguida, seleciona **Accept**. 
+
+   ![Captura de tela mostrando os novos termos de uso](media/redemption-experience/terms-of-use-accept.png) 
+
+   > [!NOTE]
+   > Você pode configurar, confira [termos de uso](../governance/active-directory-tou.md) na **gerenciar** > **relações organizacionais** > **termos de uso**.
+
+3. A menos que especificado o contrário, o convidado é redirecionado para o painel de acesso de aplicativos, que lista os aplicativos que o convidado pode acessar.
+
+   ![Captura de tela mostrando o painel de acesso de aplicativos](media/redemption-experience/myapps.png) 
+
+Em seu diretório, o convidado **Convite aceito** valor é alterado para **Sim**. Se uma MSA foi criado, o convidado **fonte** mostra **Account da Microsoft**. Para obter mais informações sobre as propriedades de conta de usuário convidado, consulte [propriedades de um usuário de colaboração B2B do Azure AD](user-properties.md). 
 
 ## <a name="next-steps"></a>Próximas etapas
 

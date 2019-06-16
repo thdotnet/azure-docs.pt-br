@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 22b21512c78a06f2639ca9339f3b7a20c7f5bfa3
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64713801"
 ---
 # <a name="call-http-or-https-endpoints-with-azure-logic-apps"></a>Chamar pontos de extremidade HTTP ou HTTPS com os Aplicativos Lógicos do Azure
@@ -71,7 +71,7 @@ Se ainda não estiver familiarizado com os aplicativos lógicos, veja [O que é 
    ![Selecionar a ação HTTP](./media/connectors-native-http/select-http-action.png)
 
    Para adicionar uma ação entre as etapas, mova o ponteiro sobre a seta entre as etapas. 
-   Escolha o sinal de adição (**+**) que aparece e, em seguida, selecione **Adicionar uma ação**.
+   Escolha o sinal de adição ( **+** ) que aparece e, em seguida, selecione **Adicionar uma ação**.
 
 1. Forneça os [parâmetros e valores da ação HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md##http-action) que deseja incluir na chamada para o ponto de extremidade de destino. 
 

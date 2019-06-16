@@ -10,10 +10,10 @@ ms.date: 12/26/2018
 ms.author: lyrana
 ms.custom: seodec18
 ms.openlocfilehash: 72155799971760e9ddc93746dceafb1ea554d88b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66162090"
 ---
 # <a name="create-and-manage-role-assignments-in-azure-digital-twins"></a>Criar e gerenciar atribuições de função nos Gêmeos Digitais do Azure
@@ -39,13 +39,13 @@ Cada atribuição de função está em conformidade com a seguinte definição:
 
 A tabela abaixo descreve cada atributo:
 
-| Atributo | NOME | Obrigatório | Type | Descrição |
+| Atributo | NOME | Obrigatório | Type | DESCRIÇÃO |
 | --- | --- | --- | --- | --- |
-| roleId | Identificador de definição de função | Sim | String | A ID exclusiva da atribuição de função desejada. Encontre definições de funções e seus identificadores consultando a API do Sistema ou examinando a tabela abaixo. |
-| objectId | Identificador de objeto | Sim | String | Uma ID do Azure Active Directory, ID de objeto de entidade de serviço ou nome de domínio. Para o que atribuições de função é atribuída. A atribuição de função precisa ser formatada de acordo com seu tipo associado. Para o ObjectIdType `DomainName`, ObjectId precisa começar com o caractere `“@”`. |
-| objectIdType | Tipo de identificador de objeto | Sim | String | O tipo de identificador de Objeto usado. Consulte **ObjectIdTypes com suporte** abaixo. |
-| cpath | Caminho de espaço | Sim | String | O caminho de acesso completo para o objeto `Space`. Um exemplo é `/{Guid}/{Guid}`. Se um identificador precisar da atribuição de função para todo o gráfico, especifique `"/"`. Esse caractere designa a raiz, mas seu uso é desencorajado. Sempre siga o princípio de privilégios mínimos. |
-| tenantId | Identificador de locatário | Varia | String | Na maioria dos casos, uma ID de locatário do Azure Active Directory. Não permitido para ObjectIdTypes `DeviceId` e `TenantId`. Obrigatório para ObjectIdTypes `UserId` e `ServicePrincipalId`. Opcional para o ObjectIdType DomainName. |
+| roleId | Identificador de definição de função | Sim | Cadeia de caracteres | A ID exclusiva da atribuição de função desejada. Encontre definições de funções e seus identificadores consultando a API do Sistema ou examinando a tabela abaixo. |
+| objectId | Identificador de objeto | Sim | Cadeia de caracteres | Uma ID do Azure Active Directory, ID de objeto de entidade de serviço ou nome de domínio. Para o que atribuições de função é atribuída. A atribuição de função precisa ser formatada de acordo com seu tipo associado. Para o ObjectIdType `DomainName`, ObjectId precisa começar com o caractere `“@”`. |
+| objectIdType | Tipo de identificador de objeto | Sim | Cadeia de caracteres | O tipo de identificador de Objeto usado. Consulte **ObjectIdTypes com suporte** abaixo. |
+| caminho | Caminho de espaço | Sim | Cadeia de caracteres | O caminho de acesso completo para o objeto `Space`. Um exemplo é `/{Guid}/{Guid}`. Se um identificador precisar da atribuição de função para todo o gráfico, especifique `"/"`. Esse caractere designa a raiz, mas seu uso é desencorajado. Sempre siga o princípio de privilégios mínimos. |
+| tenantId | Identificador de locatário | Varia | Cadeia de caracteres | Na maioria dos casos, uma ID de locatário do Azure Active Directory. Não permitido para ObjectIdTypes `DeviceId` e `TenantId`. Obrigatório para ObjectIdTypes `UserId` e `ServicePrincipalId`. Opcional para o ObjectIdType DomainName. |
 
 ### <a name="supported-role-definition-identifiers"></a>Identificadores de definição de função com suporte
 
@@ -165,10 +165,10 @@ YOUR_MANAGEMENT_API_URL/roleassignments/check?userId=YOUR_USER_ID&path=YOUR_PATH
 
 | **Valor de parâmetro** | **Obrigatório** |  **Tipo** |  **Descrição** |
 | --- | --- | --- | --- |
-| YOUR_USER_ID |  True | String |   A objectId para o UserId objectIdType. |
-| YOUR_PATH | True | String |   O caminho escolhido para verificar o acesso. |
-| YOUR_ACCESS_TYPE |  True | String |   O tipo de acesso para verificar. |
-| YOUR_RESOURCE_TYPE | True | String |  O recurso para verificar. |
+| YOUR_USER_ID |  True | Cadeia de caracteres |   A objectId para o UserId objectIdType. |
+| YOUR_PATH | True | Cadeia de caracteres |   O caminho escolhido para verificar o acesso. |
+| YOUR_ACCESS_TYPE |  True | Cadeia de caracteres |   O tipo de acesso para verificar. |
+| YOUR_RESOURCE_TYPE | True | Cadeia de caracteres |  O recurso para verificar. |
 
 Uma solicitação bem-sucedida retornará um booliano `true` ou `false` para indicar se o tipo de acesso foi atribuído ao usuário para o caminho especificado e o recurso determinado.
 

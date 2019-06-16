@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 06/05/2019
 ms.author: stefanmsft
 ms.custom: seodec18
-ms.openlocfilehash: 455e78c63960103f5facae764aff3d2b3b2a590d
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: 4d772b8cad64f138d93d91e87f6e6364c5a5d602
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66735196"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808900"
 ---
 # <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Como depurar funções definidas pelo usuário em Gêmeos Digitais do Azure
 
@@ -34,7 +34,7 @@ Uma variedade de registro em log, análise e ferramentas de diagnóstico são fo
 Os Gêmeos Digitais do Azure dão suporte a registro em log, monitoramento e análise robustos. Os desenvolvedores de soluções podem usar os logs, logs de diagnóstico, logs de atividade e outros serviços do Azure Monitor para suportar as necessidades de monitoramento complexas de um aplicativo de IoT. As opções de registro em log podem ser combinadas para consultar ou exibir registros em vários serviços e para fornecer cobertura de registro em log granular para muitos serviços.
 
 * Para a configuração de log específica para gêmeos Digital do Azure, leia [como configurar o monitoramento e registro em log](./how-to-configure-monitoring.md).
-* Consulte à [do Azure Monitor](../azure-monitor/overview.md) visão geral para saber mais sobre as configurações de log poderosa habilitadas por meio do Azure Monitor.
+* Consulte a [do Azure Monitor](../azure-monitor/overview.md) visão geral para saber mais sobre as configurações de log poderosa habilitadas por meio do Azure Monitor.
 * Examine o artigo [coletar e consumir dados de log de seus recursos do Azure](../azure-monitor/platform/diagnostic-logs-overview.md) para definir configurações de log de diagnóstico em gêmeos Digital do Azure por meio do Portal do Azure, CLI do Azure ou PowerShell.
 
 Uma vez configurado, você poderá selecionar todas as categorias de log, métricas e usar a poderosos do Azure Monitor log analytics os espaços de trabalho para dar suporte a seus esforços de depuração.

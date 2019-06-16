@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: raynew
 ms.openlocfilehash: bce9f3b3a574d27e2fb47fb9b2da9470c43fd2eb
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66399421"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Matriz de suporte para recuperação de desastre de VMs do Hyper-V locais para o Azure
@@ -63,11 +63,11 @@ Rede do host: Agrupamento NIC | Sim | Sim
 Rede do host: VLAN | Sim | Sim
 Rede do host: IPv4 | Sim | Sim
 Rede do host: IPv6 | Não | Não
-Rede de VMs convidadas: Agrupamento NIC | Não | Não 
+Rede de VMs convidadas: Agrupamento NIC | Não | Não
 Rede de VMs convidadas: IPv4 | Sim | Sim
-Rede de VMs convidadas: IPv6 | Não  | Sim
+Rede de VMs convidadas: IPv6 | Não | Sim
 Rede de VMs convidadas: IP estático (Windows) | Sim | Sim
-Rede de VMs convidadas: IP estático (Linux) | Não | Não 
+Rede de VMs convidadas: IP estático (Linux) | Não | Não
 Rede de VMs convidadas: NIC múltipla | Sim | Sim
 
 
@@ -105,7 +105,7 @@ VMDK | ND | ND
 VHD/VHDX | Sim | Sim
 VM geração 2 | Sim | Sim
 EFI/UEFI| Sim | Sim
-Disco de cluster compartilhado | Não  | Não 
+Disco de cluster compartilhado | Não | Não
 Disco criptografado | Não | Não
 NFS | ND | ND
 SMB 3.0 | Não | Não
@@ -116,7 +116,7 @@ Disco: 4K setor lógico e 512 bytes setor físico | Sim |  Sim
 Gerenciamento de volumes lógicos (LVM). Há suporte para o LVM para discos de dados somente. As VMs do Azure tem apenas um único disco de sistema operacional. | Sim | Sim
 Volume com discos distribuídos >1 TB | Sim | Sim
 Espaços de Armazenamento | Sim | Sim
-Adição/remoção de disco a quente | Não  | Não 
+Adição/remoção de disco a quente | Não | Não
 Exclusão de disco | Sim | Sim
 Múltiplos caminhos (MPIO) | Sim | Sim
 
@@ -127,13 +127,13 @@ Múltiplos caminhos (MPIO) | Sim | Sim
 Armazenamento com redundância local | Sim | Sim
 Armazenamento com redundância geográfica | Sim | Sim
 Armazenamento com redundância geográfica com acesso de leitura | Sim | Sim
-Armazenamento frio | Não | Não 
-Armazenamento quente| Não  | Não
-Blobs de bloco | Não  | Não 
+Armazenamento frio | Não | Não
+Armazenamento quente| Não | Não
+Blobs de bloco | Não | Não
 Criptografia em repouso (SSE)| Sim | Sim
 Armazenamento Premium | Sim | Sim
-Serviço de importação/exportação | Não  | Não
-Firewalls de armazenamento do Azure para redes virtuais configurados na conta de armazenamento de cache/armazenamento de destino (usada para armazenar dados de replicação) | Não  | Não 
+Serviço de importação/exportação | Não | Não
+Firewalls de armazenamento do Azure para redes virtuais configurados na conta de armazenamento de cache/armazenamento de destino (usada para armazenar dados de replicação) | Não | Não
 
 
 ## <a name="azure-compute-features"></a>Recursos de computação do Azure
@@ -159,7 +159,7 @@ Tamanho do VHD do disco de dados | Até 4.095 GB | A verificação de pré-requi
 Adaptadores de rede | Há suporte para vários adaptadores |
 VHD compartilhado | Sem suporte | A verificação de pré-requisitos falha quando não há suporte para ela.
 Disco FC | Sem suporte | A verificação de pré-requisitos falha quando não há suporte para ela.
-Formato de disco rígido | VHD  <br/><br/> VHDX | O Site Recovery converterá automaticamente o VHDX em VHD ao realizar o failover para o Azure. Quando você executa o failback para o local, as máquinas virtuais continuam a usar o formato VHDX.
+Formato de disco rígido | VHD <br/><br/> VHDX | O Site Recovery converterá automaticamente o VHDX em VHD ao realizar o failover para o Azure. Quando você executa o failback para o local, as máquinas virtuais continuam a usar o formato VHDX.
 BitLocker | Sem suporte | O Bitlocker deve ser desabilitado antes de habilitar a replicação para uma VM.
 Nome da VM | Entre 1 e 63 caracteres. Restrito a letras, números e hifens. O nome da VM deve começar e terminar com uma letra ou um número. | Atualize o valor nas propriedades da VM no Site Recovery.
 Tipo de VM | Geração 1<br/><br/> Geração 2--Windows | VMs da Geração 2 com um tipo de disco básico de SO (que inclui um ou dois volumes de dados formatados como VHDX) e suporte para menos de 300 GB de espaço em disco.<br></br>Não há suporte para VMs Linux da Geração 2. [Saiba mais](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/).|
@@ -168,8 +168,8 @@ Tipo de VM | Geração 1<br/><br/> Geração 2--Windows | VMs da Geração 2 com
 
 **Ação** |  **Hyper-V com Virtual Machine Manager** | **Hyper-V sem Virtual Machine Manager**
 --- | --- | ---
-Mover cofre entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não | Não 
-Mover armazenamento, rede, VMs do Azure entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não  | Não 
+Mover cofre entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não | Não
+Mover armazenamento, rede, VMs do Azure entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não | Não
 
 > [!NOTE]
 > Ao replicar Hyper-VMs (gerenciadas com/sem o SCVMM) do local para o Azure, você pode replicar para apenas um locatário do AD de um ambiente específico – site do Hyper-V ou SCVMM, conforme aplicável.

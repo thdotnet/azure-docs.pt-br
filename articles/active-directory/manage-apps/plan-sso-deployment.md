@@ -12,12 +12,12 @@ ms.date: 05/22/2019
 ms.author: baselden
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 29569302d20e23c95b6508a5b58c7ed96e005885
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: bd8cebbd7c60715bc90412d9f53458edfee6c56d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66499243"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108196"
 ---
 # <a name="plan-a-single-sign-on-deployment"></a>Planejar uma implantação de logon única
 
@@ -146,7 +146,7 @@ Para obter informações sobre MCAS, consulte o [visão geral do Microsoft Cloud
 
 Com acesso condicional, você pode automatizar decisões de controle de acesso com base em critérios para seus aplicativos de nuvem.
 
-As políticas de acesso condicional são impostas após a conclusão da autenticação multifator. Portanto, acesso condicional não foi projetado como uma primeira linha de defesa para cenários, como ataques de (DoS) de negação de serviço, mas pode usar os sinais desses eventos para determinar o acesso. Por exemplo, o nível de risco de entrada, pode ser usado o local da solicitação e assim por diante. Para obter mais informações sobre o acesso condicional, consulte [visão geral](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access) e o [plano de implantação](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access).
+Políticas de acesso condicional são impostas após a autenticação multifator primeiro ter sido concluída. Portanto, acesso condicional não foi projetado como uma primeira linha de defesa para cenários, como ataques de (DoS) de negação de serviço, mas pode usar os sinais desses eventos para determinar o acesso. Por exemplo, o nível de risco de entrada, pode ser usado o local da solicitação e assim por diante. Para obter mais informações sobre o acesso condicional, consulte [visão geral](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access) e o [plano de implantação](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access).
 
 ## <a name="azure-sso-technical-requirements"></a>Requisitos técnicos de SSO do Azure
 

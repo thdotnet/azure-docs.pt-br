@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: 2be67c604bebbe9b4c4356e241d1480ca0778d4a
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64688559"
 ---
 # <a name="synchronize-azure-active-directory-users-to-an-hdinsight-cluster"></a>Sincronizar usuários do Azure Active Directory para um cluster HDInsight
@@ -45,7 +45,7 @@ Os grupos de usuários especificados durante o processo de criação de cluster 
 
 O método a seguir usa o POST com a API REST do Ambari. Para obter mais informações, consulte [Gerenciar clusters do HDInsight usando a API REST do Apache Ambari](hdinsight-hadoop-manage-ambari-rest-api.md).
 
-1. [Conectar ao seu cluster com SSH](hdinsight-hadoop-linux-use-ssh-unix.md). No painel de visão geral do seu cluster no portal do Azure, selecione o botão **Secure Shell (SSH)**.
+1. [Conectar ao seu cluster com SSH](hdinsight-hadoop-linux-use-ssh-unix.md). No painel de visão geral do seu cluster no portal do Azure, selecione o botão **Secure Shell (SSH)** .
 
     ![Secure Shell (SSH)](./media/hdinsight-sync-aad-users-to-cluster/ssh.png)
 
@@ -127,7 +127,7 @@ O método a seguir usa o POST com a API REST do Ambari. Para obter mais informa�
 
 ## <a name="verify-the-newly-added-azure-ad-user"></a>Verifique se o usuário recém-adicionado do Azure AD
 
-Abra a [Interface do Usuário do Apache Ambari](hdinsight-hadoop-manage-ambari.md) para verificar se o novo usuário do Azure AD foi adicionado. Acesse a interface do usuário do Ambari Web navegando até **`https://<YOUR CLUSTER NAME>.azurehdinsight.net`**. Insira o nome de usuário de administrador do cluster.
+Abra a [Interface do Usuário do Apache Ambari](hdinsight-hadoop-manage-ambari.md) para verificar se o novo usuário do Azure AD foi adicionado. Acesse a interface do usuário do Ambari Web navegando até **`https://<YOUR CLUSTER NAME>.azurehdinsight.net`** . Insira o nome de usuário de administrador do cluster.
 
 1. No painel do Ambari, selecione **Gerenciar Ambari** abaixo do menu **admin**.
 

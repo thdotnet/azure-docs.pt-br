@@ -9,10 +9,10 @@ ms.date: 01/31/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: c0f19e3ea4f5952ac96b589fa267a2136c85e4f3
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64711660"
 ---
 # <a name="monitor-azure-file-sync"></a>Monitorar a Sincronização de Arquivos do Azure
@@ -68,12 +68,12 @@ As métricas a seguir para a Sincronização de Arquivos do Azure estão dispon�
 
 | Nome da métrica | DESCRIÇÃO |
 |-|-|
-| Bytes sincronizados | Tamanho dos dados transferidos (upload e download).<br><br>Unidade: Bytes<br>Tipo de agregação: Soma<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
-| Recall da camada de nuvem | Tamanho dos dados em recall.<br><br>Unidade: Bytes<br>Tipo de agregação: Soma<br>Dimensão aplicável: Nome do Servidor |
-| Arquivos não sincronizando | Contagem de arquivos que estão falhando em sincronizar.<br><br>Unidade: Contagem<br>Tipo de agregação: Soma<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
-| Arquivos sincronizados | Contagem dos arquivos transferidos (upload e download).<br><br>Unidade: Contagem<br>Tipo de agregação: Soma<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
-| Status online do servidor | Contagem de pulsações recebidas do servidor.<br><br>Unidade: Contagem<br>Tipo de agregação: Máximo<br>Dimensão aplicável: Nome do Servidor |
-| Resultado da sessão de sincronização | Resultado da sessão de sincronização (1 = sessão de sincronização bem-sucedida; 0 = sessão de sincronização com falha)<br><br>Unidade: Contagem<br>Tipos de agregação: Máximo<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
+| Bytes sincronizados | Tamanho dos dados transferidos (upload e download).<br><br>Unidade: Bytes<br>Tipo de agregação: Sum<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
+| Recall da camada de nuvem | Tamanho dos dados em recall.<br><br>Unidade: Bytes<br>Tipo de agregação: Sum<br>Dimensão aplicável: Nome do Servidor |
+| Arquivos não sincronizando | Contagem de arquivos que estão falhando em sincronizar.<br><br>Unidade: Count<br>Tipo de agregação: Sum<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
+| Arquivos sincronizados | Contagem dos arquivos transferidos (upload e download).<br><br>Unidade: Contagem<br>Tipo de agregação: Sum<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
+| Status online do servidor | Contagem de pulsações recebidas do servidor.<br><br>Unidade: Count<br>Tipo de agregação: Máximo<br>Dimensão aplicável: Nome do Servidor |
+| Resultado da sessão de sincronização | Resultado da sessão de sincronização (1 = sessão de sincronização bem-sucedida; 0 = sessão de sincronização com falha)<br><br>Unidade: Count<br>Tipos de agregação: Máximo<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
 
 ## <a name="windows-server"></a>Windows Server
 
@@ -81,7 +81,7 @@ No Windows Server, você pode exibir as camadas, de nuvem servidor registrado e 
 
 ### <a name="event-logs"></a>Logs de eventos
 
-Use o log de eventos de telemetria no servidor para monitorar a integridade do servidor registrado, da sincronização e das camadas de nuvem. O log de eventos de telemetria está localizado no Visualizador de eventos sob *aplicativos e services\microsoft\filesync\agent.*.
+Use o log de eventos de telemetria no servidor para monitorar a integridade do servidor registrado, da sincronização e das camadas de nuvem. O log de eventos de telemetria está localizado no Visualizador de eventos sob *aplicativos e services\microsoft\filesync\agent.* .
 
 Integridade de sincronização:
 
@@ -98,18 +98,18 @@ Integridade do servidor registrado:
 
 Integridade de camadas de nuvem:
 
-- Para monitorar atividade em camadas em um servidor, use o evento ID 9003, 9016 e 9029 no log de eventos de telemetria, que está localizado no Visualizador de eventos em *aplicativos e services\microsoft\filesync\agent.*.
+- Para monitorar atividade em camadas em um servidor, use o evento ID 9003, 9016 e 9029 no log de eventos de telemetria, que está localizado no Visualizador de eventos em *aplicativos e services\microsoft\filesync\agent.* .
 
   - A identificação de evento 9003 fornece distribuição de erro para um terminal do servidor. Por exemplo:  Contagem total de erros e o código de erro. Um evento é registrado por código de erro.
   - A identificação de evento 9016 fornece resultados de fantasma para um volume. Por exemplo:  Porcentagem de espaço livre é, número de arquivos fantasma na sessão, e o número de arquivos não puderam ser fantasmas.
   - A ID do evento 9029 fornece informações de sessão de conversão em fantasma para um ponto de extremidade de servidor. Por exemplo:  Número de arquivos tentada na sessão, o número de arquivos em camadas na sessão e o número de arquivos já em camadas.
   
-- Para monitorar a atividade de recuperação em um servidor, use o evento ID 9005, 9006, 9009 e 9059 no log de eventos de telemetria, que está localizado no Visualizador de eventos em *aplicativos e services\microsoft\filesync\agent.*.
+- Para monitorar a atividade de recuperação em um servidor, use o evento ID 9005, 9006, 9009 e 9059 no log de eventos de telemetria, que está localizado no Visualizador de eventos em *aplicativos e services\microsoft\filesync\agent.* .
 
   - A ID de evento 9005 fornece confiabilidade de recall para um ponto de extremidade do servidor. Por exemplo:  Total de arquivos exclusivos acessados e Total de arquivos exclusivos com falhas de acesso.
-  - ID do evento 9006 fornece Lembre-se a distribuição de erro para um ponto de extremidade do servidor. Por exemplo:  Total de solicitações com falha e o código de erro. Um evento é registrado por código de erro.
-  - A ID do evento 9009 fornece informações de sessão de recall para um ponto de extremidade de servidor. Por exemplo:  DurationSeconds, CountFilesRecallSucceeded e CountFilesRecallFailed.
-  - A ID do evento 9059 fornece distribuição de recall do aplicativo para um ponto de extremidade de servidor. Por exemplo:  ShareId, nome do aplicativo e TotalEgressNetworkBytes.
+  - ID do evento 9006 fornece Lembre-se a distribuição de erro para um ponto de extremidade do servidor. Por exemplo: Total de solicitações com falha e o código de erro. Um evento é registrado por código de erro.
+  - A ID do evento 9009 fornece informações de sessão de recall para um ponto de extremidade de servidor. Por exemplo: DurationSeconds, CountFilesRecallSucceeded e CountFilesRecallFailed.
+  - A ID do evento 9059 fornece distribuição de recall do aplicativo para um ponto de extremidade de servidor. Por exemplo: ShareId, nome do aplicativo e TotalEgressNetworkBytes.
 
 ### <a name="performance-counters"></a>contadores de desempenho
 

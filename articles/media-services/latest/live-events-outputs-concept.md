@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 06/06/2019
+ms.date: 06/12/2019
 ms.author: juliako
-ms.openlocfilehash: f04ae727957d988e75ea0984d0005a6a140ca63f
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
-ms.translationtype: MT
+ms.openlocfilehash: 49ab52f031e24ac77a534c86061fe831bbec39ce
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66732980"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67114664"
 ---
 # <a name="live-events-and-live-outputs"></a>Eventos ao Vivo e Saídas Dinâmicas
 
@@ -54,14 +54,14 @@ Veja um exemplo de código do .NET no [MediaV3LiveApp](https://github.com/Azure-
 
 ![Codificação ativa](./media/live-streaming/live-encoding.svg)
 
-Usando a codificação dinâmica com os Serviços de Mídia, você configuraria seu codificador dinâmico local para enviar um vídeo de taxa de bits única como o feed de contribuição para o Evento ao vivo (usando o protocolo RTMP ou MP4 fragmentado). O Evento ao vivo codifica esse fluxo de entrada de taxa de bits única para um [fluxo de vídeo de taxa de bits múltipla](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming), tornando-o disponível para entrega para reproduzir dispositivos através de protocolos como MPEG-DASH, HLS e Smooth Streaming. Ao criar esse tipo de Evento ao vivo, especifique o tipo de codificação como **Padrão** (LiveEventEncodingType.Standard).
+Usando a codificação dinâmica com os Serviços de Mídia, você configuraria seu codificador dinâmico local para enviar um vídeo de taxa de bits única como o feed de contribuição para o Evento ao vivo (usando o protocolo RTMP ou MP4 fragmentado). Você poderia então definir um evento ao vivo, de modo que ele codifica essa taxa de bits única entrada de fluxo para um [transmissão de vídeo de taxa de bits múltiplas](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming)e disponibiliza a saída para entrega para reproduzir a dispositivos através de protocolos, como MPEG-DASH, HLS e Smooth Streaming.
 
-Você pode enviar a alimentação de contribuição com resolução de até 1080p a uma taxa de quadros de 30 quadros/segundo, com codec de vídeo H.264/AVC e codec de áudio AAC (AAC-LC, HE-AAC v1 ou HE-AAC v2). Confira o artigo [Comparação de tipos de Eventos ao Vivo](live-event-types-comparison.md) para saber mais.
+Quando você usa a codificação ativa, você pode enviar a contribuição do feed somente em resoluções-se a resolução de 1080p em uma taxa de quadros de 30 quadros/segundo, com o codec de vídeo H.264/AVC e AAC (AAC-LC, HE-AACv1 ou HE-AACv2) codec de áudio. Observe que passagem de eventos ao vivo pode dar suporte a resoluções de até 4K em 60 quadros por segundo. Confira o artigo [Comparação de tipos de Eventos ao Vivo](live-event-types-comparison.md) para saber mais.
 
-Ao usar a codificação ao vivo (Eventos ao vivo definidos como **Padrão**), a predefinição de codificação define como o fluxo de entrada é codificado em várias taxas de bits ou camadas. Para obter informações, confira [Predefinições do sistema](live-event-types-comparison.md#system-presets).
+As resoluções e taxas de bits contidas na saída do codificador ao vivo é determinado pela predefinição. Se usando um **Standard** live encoder (LiveEventEncodingType.Standard), em seguida, a *Default720p* predefinição Especifica um conjunto de pares de taxa de bits/resolução 6, indo de 720p em 3.5Mbps até p 192 Kbps 200. Caso contrário, se usar um **Premium1080p** live encoder (LiveEventEncodingType.Premium1080p), em seguida, a *Default1080p* predefinição Especifica um conjunto de pares de taxa de bits/resolução 6, indo de 1080p em 3.5Mbps até 180 p 200 Kbps. Para obter informações, confira [Predefinições do sistema](live-event-types-comparison.md#system-presets).
 
 > [!NOTE]
-> No momento, a única predefinição de valor permitida para o tipo Padrão de Evento ao vivo é *Default720p*. Caso precise usar uma predefinição de codificação ao vivo personalizada, entre em contato com amshelp@microsoft.com. Você deve especificar a tabela desejada da resolução e das taxas de bits. Verifique se há apenas uma camada em 720p e no máximo seis camadas.
+> Se você precisar personalizar a predefinição de codificação ao vivo, abra um tíquete de suporte por meio do portal do Azure. Você deve especificar a tabela desejada da resolução e das taxas de bits. Verifique se há apenas uma camada em 720p (se solicitando uma predefinição para um codificador dinâmico padrão) ou em 1080p (se solicitando uma predefinição para um codificador ao vivo de Premium1080p) e no máximo de 6 camadas.
 
 ## <a name="live-event-creation-options"></a>Opções de criação de Evento ao vivo
 
@@ -93,6 +93,14 @@ Você pode usar URLs intuitivas ou não intuitivas.
 
     O token de acesso precisa ser exclusivo em seu data center. Se seu aplicativo precisar usar uma URL intuitivo, é recomendável sempre criar uma nova instância GUID para seu token de acesso (em vez de reutilizar qualquer GUID existente). 
 
+    Use as seguintes APIs para habilitar a URL intuitivo e defina o token de acesso como um GUID válido (por exemplo `"accessToken": "1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`):
+    
+    |Linguagem|Habilitar o URL personalizado|Definir token de acesso|
+    |---|---|---|
+    |REST|[properties.vanityUrl](https://docs.microsoft.com/rest/api/media/liveevents/create#liveevent)|[LiveEventInput.accessToken](https://docs.microsoft.com/rest/api/media/liveevents/create#liveeventinput)|
+    |CLI|[--vanity-url](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--access-token](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|
+    |.NET|[LiveEvent.VanityUrl](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.liveevent.vanityurl?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[LiveEventInput.AccessToken](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
+    
 ### <a name="live-ingest-url-naming-rules"></a>Regras de nomenclatura de URL de ingestão dinâmica
 
 A cadeia de caracteres *aleatória* abaixo é um número hexadecimal de 128 bits composto de 32 caracteres de “0” a “9” e “a” a “f”.<br/>

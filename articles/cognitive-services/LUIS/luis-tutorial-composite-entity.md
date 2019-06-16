@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 02/19/2019
 ms.author: diberry
 ms.openlocfilehash: a5cedec4937da276a4848498ad29a723f6e41ba3
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65073697"
 ---
 # <a name="tutorial-group-and-extract-related-data"></a>Tutorial: Agrupar e extrair dados relacionados
@@ -93,7 +93,7 @@ O LUIS fornece várias entidades predefinidas para extração de dados comuns.
 
     ![Captura de tela de inserir um nome composto na lista suspensa da caixa de diálogo](./media/luis-tutorial-composite-entity/hr-create-composite-entity-2.png)
 
-1. Em **Que tipo de entidade você quer criar?**, quase todos os campos necessários estão na lista: `personName` e `Department`. Selecione **Concluído**. Observe que a entidade predefinida, personName, foi adicionada à entidade composta. Se você pudesse fazer uma entidade predefinida ser exibida entre os tokens de início e fim de uma entidade composta, ela deveria conter essas entidades predefinidas. Se as entidades predefinidas não forem incluídas, a entidade composta não será prevista corretamente, mas, sim, cada elemento individual.
+1. Em **Que tipo de entidade você quer criar?** , quase todos os campos necessários estão na lista: `personName` e `Department`. Selecione **Concluído**. Observe que a entidade predefinida, personName, foi adicionada à entidade composta. Se você pudesse fazer uma entidade predefinida ser exibida entre os tokens de início e fim de uma entidade composta, ela deveria conter essas entidades predefinidas. Se as entidades predefinidas não forem incluídas, a entidade composta não será prevista corretamente, mas, sim, cada elemento individual.
 
     ![Captura de tela de inserir um nome composto na lista suspensa da caixa de diálogo](./media/luis-tutorial-composite-entity/hr-create-composite-entity-3.png)
 

@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
 ms.openlocfilehash: eec99bde0ea73a99a9dc1345f938b821a95a7c05
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60736269"
 ---
 # <a name="how-front-door-matches-requests-to-a-routing-rule"></a>Como o Front Door faz a correspondência com uma regra de roteamento
@@ -50,7 +50,7 @@ Para explicar esse processo ainda mais, vamos examinar um exemplo de configuraç
 
 | Regra de roteamento | Hosts de front-end | Caminho |
 |-------|--------------------|-------|
-| O  | foo.contoso.com | /\* |
+| O | foo.contoso.com | /\* |
 | b | foo.contoso.com | /users/\* |
 | C | www\.fabrikam.com, foo.adventure-works.com  | /\*, /images/\* |
 
@@ -80,7 +80,7 @@ Para explicar melhor, vejamos outro conjunto de exemplos:
 
 | Regra de roteamento | Host de front-end    | Caminho     |
 |-------|---------|----------|
-| O      | www\.contoso.com | /        |
+| O     | www\.contoso.com | /        |
 | b     | www\.contoso.com | /\*      |
 | C     | www\.contoso.com | /ab      |
 | D     | www\.contoso.com | /abc     |
@@ -93,7 +93,7 @@ Dada essa configuração, a tabela de correspondência de exemplo a seguir resul
 
 | Solicitação de entrada    | Rota correspondente |
 |---------------------|---------------|
-| www\.contoso.com/            | O              |
+| www\.contoso.com/            | O             |
 | www\.contoso.com/a           | b             |
 | www\.contoso.com/ab          | C             |
 | www\.contoso.com/abc         | D             |
@@ -114,7 +114,7 @@ Dada essa configuração, a tabela de correspondência de exemplo a seguir resul
 >
 > | Rota | Host             | Caminho    |
 > |-------|------------------|---------|
-> | O      | profile.contoso.com | /api/\* |
+> | O     | profile.contoso.com | /api/\* |
 >
 > Tabela de correspondência:
 >

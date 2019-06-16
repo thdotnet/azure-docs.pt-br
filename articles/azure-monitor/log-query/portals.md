@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 04/05/2019
 ms.author: bwren
 ms.openlocfilehash: 0e5b9b43e528b37fd994f9131f145abadb33c53b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61425922"
 ---
 # <a name="viewing-and-analyzing-log-data-in-azure-monitor"></a>Exibir e analisar dados de log no Azure Monitor
@@ -57,9 +57,9 @@ Seu navegador requer acesso aos endereços a seguir para acessar o Log Analytics
 
 | Uri | IP | Portas |
 |:---|:---|:---|
-| portal.loganalytics.io | Dinâmico | 80.443 |
-| api.loganalytics.io    | Dinâmico | 80.443 |
-| docs.loganalytics.io   | Dinâmico | 80.443 |
+| portal.loganalytics.io | Dinâmico | 80\.443 |
+| api.loganalytics.io    | Dinâmico | 80\.443 |
+| docs.loganalytics.io   | Dinâmico | 80\.443 |
 
 
 ## <a name="next-steps"></a>Próximas etapas

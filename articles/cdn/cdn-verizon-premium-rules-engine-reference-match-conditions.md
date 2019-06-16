@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/31/2019
 ms.author: magattus
 ms.openlocfilehash: 5197fdfe78b1b091de713754967f58157cc4a1b3
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66481648"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-match-conditions"></a>Condições de correspondência CDN do Azure do mecanismo de regras da Verizon Premium
@@ -804,7 +804,7 @@ Informações de chave:
 - Uma URL CNAME de borda é reescrita para uma URL CDN antes da comparação de URL.
 
     Por exemplo, ambas as URLs a seguir apontam para o mesmo ativo e, portanto, têm o mesmo caminho de URL:
-     - URL da CDN: http://wpc.0001.&lt;domain&gt;/800001/CustomerOrigin/path/asset.htm
+     - URL da CDN: http://wpc.0001.&lt ;domain&gt; /800001/CustomerOrigin/path/asset.htm
      - URL de CNAME de borda: http:\//&lt;endpoint&gt;.azureedge.net/path/asset.htm
     
     Informações adicionais:
@@ -1036,7 +1036,7 @@ Informações de chave:
 
 - Especifique vários valores delimitando cada um deles com um único espaço.
 
-   Por exemplo:  *Parameter1=ValueA* *ValueB* *Parameter1=ValueC&Parameter2=ValueD*
+   Por exemplo: *Parameter1=ValueA* *ValueB* *Parameter1=ValueC&Parameter2=ValueD*
 
 - Apenas as correspondências exatas a pelo menos um dos padrões de cadeia de caracteres de consulta especificados satisfazem essa condição de correspondência.
     

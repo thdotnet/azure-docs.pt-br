@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: spelluru
 ms.openlocfilehash: abb85d568e26e4b6f85b960a2560aae570daf201
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61320184"
 ---
 # <a name="run-an-image-factory-from-azure-devops"></a>Executar uma fábrica de imagem do Azure DevOps
@@ -72,7 +72,7 @@ Neste ponto, você tem os arquivos de origem armazenados em um repositório Git 
 4. Nesse estágio, você pode escolher **hospedado** para o agente de compilação.
 5. **Salvar** a definição de compilação.
 
-    ![Definição da compilação](./media/set-up-devops-lab/build-definition.png)
+    ![Definição de compilação](./media/set-up-devops-lab/build-definition.png)
 
 ## <a name="configure-the-build-variables"></a>Configurar as variáveis de compilação
 Para simplificar os parâmetros de linha de comando, encapsule os valores de chave que orientam a fábrica de imagem para um conjunto de variáveis de compilação. Selecione o **variáveis** guia e você verá uma lista das diversas variáveis de padrão. Aqui está a lista de variáveis para entrar no Azure DevOps:

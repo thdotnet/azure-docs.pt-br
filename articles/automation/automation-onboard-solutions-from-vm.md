@@ -10,10 +10,10 @@ ms.service: automation
 ms.custom: mvc
 manager: carmonm
 ms.openlocfilehash: 38b5b233d21c0c5d79d7bcb6a145e6232b238b0e
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66133114"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions-from-an-azure-virtual-machine"></a>Integrar soluções de Gerenciamento de Atualizações, Controle de Alterações e Inventário a partir de uma máquina virtual do Azure
@@ -51,7 +51,7 @@ Se o workspace selecionado ainda não tiver as soluções Gerenciamento de Atual
 
 Se o workspace selecionado já tiver a solução, a solução não será implantada novamente e a configuração do escopo não será adicionada.
 
-Selecione as reticências (**...**) em qualquer uma das configurações e, em seguida, selecione **Editar**. No painel **Editar configuração de escopo**, selecione **Selecionar Grupos de Computadores**. O painel **Grupos de Computadores** mostra as pesquisas salvas que são usadas para criar a configuração de escopo.
+Selecione as reticências ( **...** ) em qualquer uma das configurações e, em seguida, selecione **Editar**. No painel **Editar configuração de escopo**, selecione **Selecionar Grupos de Computadores**. O painel **Grupos de Computadores** mostra as pesquisas salvas que são usadas para criar a configuração de escopo.
 
 ## <a name="saved-searches"></a>Pesquisas salvas
 

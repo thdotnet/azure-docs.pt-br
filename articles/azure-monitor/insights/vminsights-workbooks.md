@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 04/05/2019
 ms.author: magoedte
 ms.openlocfilehash: 90c236347380bb5d5e51db56d0f431d2659a7258
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61387012"
 ---
 # <a name="create-interactive-reports-with-azure-monitor-workbooks"></a>Crie relatórios interativos com pastas de trabalho do Azure Monitor
@@ -33,7 +33,7 @@ Pastas de trabalho são úteis para cenários como:
 
 O Azure Monitor para VMs inclui várias pastas de trabalho para você começar e a tabela a seguir resume-los.
 
-| Pasta de trabalho | DESCRIÇÃO | Escopo |
+| Pasta de trabalho | DESCRIÇÃO | Scope |
 |----------|-------------|-------|
 | Desempenho | Fornece uma versão personalizável de nossa lista de N principais e o modo de exibição de gráficos em uma única pasta de trabalho que utiliza todos os contadores de desempenho do Log Analytics que você tiver habilitado.| Em grande escala |
 | contadores de desempenho | Uma exibição de gráfico Top N em um amplo conjunto de contadores de desempenho. | Em grande escala |
@@ -57,7 +57,7 @@ Uma pasta de trabalho composta por seções consiste em gráficos editáveis de 
 
 3. Na lista, selecione uma VM.
 
-4. Na página da VM, na seção **Monitoramento**, selecione **Insights (versão prévia)**.
+4. Na página da VM, na seção **Monitoramento**, selecione **Insights (versão prévia)** .
 
 5. Na página de insights de VM, selecione **desempenho** ou **mapas** e, em seguida, selecione **pastas de trabalho do modo de exibição** do link na página. 
 
@@ -173,7 +173,7 @@ Há quatro tipos diferentes de parâmetros, que atualmente têm suporte:
 
 ### <a name="using-a-text-parameter"></a>Usando um parâmetro de texto
 
-O valor de um usuário digita na caixa de texto é substituído diretamente na consulta, sem escape ou aspas. Se o valor que você precisa é uma cadeia de caracteres, a consulta deve ter aspas ao redor do parâmetro (como **'{parameter}'**).
+O valor de um usuário digita na caixa de texto é substituído diretamente na consulta, sem escape ou aspas. Se o valor que você precisa é uma cadeia de caracteres, a consulta deve ter aspas ao redor do parâmetro (como **'{parameter}'** ).
 
 O parâmetro de texto permite que o valor em uma caixa de texto a ser usado em qualquer lugar. Pode ser um nome de tabela, o nome da coluna, nome da função, operador, etc.  O tipo de parâmetro de texto tem uma configuração **obter o valor padrão de consulta do analytics**, que permite ao autor da pasta de trabalho usar uma consulta para preencher o valor padrão para essa caixa de texto.
 
