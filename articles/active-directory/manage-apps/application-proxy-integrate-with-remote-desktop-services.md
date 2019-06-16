@@ -16,12 +16,12 @@ ms.author: mimart
 ms.custom: it-pro
 ms.reviewer: harshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 621ca9a7a55f86a92f0c809b6e220245f47dfd39
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: d6ca64e2de5734c567173fc735776074f4c87fbc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66233720"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108457"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Publicar a Área de Trabalho Remota com o Proxy de Aplicativo do Azure AD
 
@@ -58,6 +58,8 @@ Em uma implantação do RDS, a função Web da Área de Trabalho Remota e a fun�
 
 - No Internet Explorer, habilite o complemento ActiveX do RDS.
 
+- Para o fluxo de pré-autenticação do AD do Azure, os usuários somente podem se conectar aos recursos publicados para eles na **RemoteApp e áreas de trabalho** painel. Usuários não podem se conectar a uma área de trabalho usando o **conectar-se a um computador remoto** painel.
+
 ## <a name="deploy-the-joint-rds-and-application-proxy-scenario"></a>Implantar o cenário conjunto de RDS e Proxy de Aplicativo
 
 Depois de configurar o RDS e o Proxy de Aplicativo do Azure AD em seu ambiente, siga as etapas para combinar as duas soluções. Essas etapas explicam passo a passo como publicar os dois pontos de extremidade de RDS voltados para a Web (Web da Área de Trabalho Remota e Gateway de Área de Trabalho Remota) como aplicativos, direcionando depois o tráfego em seu RDS para passar pelo Proxy de Aplicativo.
@@ -68,7 +70,7 @@ Depois de configurar o RDS e o Proxy de Aplicativo do Azure AD em seu ambiente, 
    - URL interna: `https://\<rdhost\>.com/`, em que `\<rdhost\>` é a raiz comum que a Web da Área de Trabalho Remota e o Gateway de Área de Trabalho Remota compartilham.
    - URL Externa: Esse campo é preenchido automaticamente com base no nome do aplicativo, mas é possível modificá-lo. Os usuários serão levados a essa URL quando acessarem o RDS.
    - Método de pré-autenticação: Azure Active Directory
-   - Converter cabeçalhos de URL: Não 
+   - Converter cabeçalhos de URL: Não
 2. Atribua usuários ao aplicativo de Área de Trabalho Remota publicado. Certifique-se também de que todos eles tenham acesso ao RDS.
 3. Deixe o método de logon único para o aplicativo como **Logon único do Azure AD desabilitado**. É solicitado aos usuários que autentiquem uma vez no Azure AD e uma vez para a Web da Área de Trabalho Remota, eles têm logon único para o Gateway de Área de Trabalho Remota.
 4. Selecione **do Azure Active Directory**e então **registros de aplicativo**. Escolha seu aplicativo na lista.
@@ -127,7 +129,7 @@ A configuração descrita neste artigo é para usuários no Windows 7 ou 10, com
 | Pré-autenticação    | Windows 7/10 usando o Internet Explorer + complemento ActiveX do RDS |
 | Passagem | Qualquer outro sistema operacional que dê suporte ao aplicativo de Área de Trabalho Remota da Microsoft |
 
-O fluxo de pré-autenticação oferece mais benefícios de segurança que o fluxo de passagem. Com a pré-autenticação, você pode usar os recursos de autenticação do Azure AD, como o logon único, o acesso condicional e a verificação em duas etapas, para os seus recursos locais. Você também pode garantir que somente tráfego autenticado alcance sua rede.
+O fluxo de pré-autenticação oferece mais benefícios de segurança que o fluxo de passagem. Com a pré-autenticação, você pode usar recursos de autenticação do Azure AD, como verificação de logon, acesso condicional e em duas etapas simples para os seus recursos locais. Você também pode garantir que somente tráfego autenticado alcance sua rede.
 
 Para usar a autenticação de passagem, há apenas duas modificações às etapas listadas neste artigo:
 1. Na etapa 1, [Publicar o ponto de extremidade do host de RD](#publish-the-rd-host-endpoint), defina o método de pré-autenticação como **Passagem**.

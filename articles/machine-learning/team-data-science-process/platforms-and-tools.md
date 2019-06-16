@@ -11,10 +11,10 @@ ms.date: 09/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 31c6c1258b6d20eb2d2802cf23244cb59df682c0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61428608"
 ---
 # <a name="platforms-and-tools-for-data-science-projects"></a>Plataformas e ferramentas para projetos de ciência de dados
@@ -62,7 +62,7 @@ Quando você cria um cluster do Spark no HDInsight, cria recursos de computaçã
 A equipe de TDSP da Microsoft publicou duas explicações passo a passo completas sobre como usar os clusters do Azure HDInsight Spark para criar soluções de ciência de dados, uma usando Python e outra usando o Scala. Para saber mais sobre os **clusters do Azure HDInsight Spark**, confira [Visão geral: Apache Spark no HDInsight Linux](../../hdinsight/spark/apache-spark-overview.md). Para aprender a criar uma solução de ciência de dados usando **Python** em um cluster do Azure HDInsight Spark, consulte [Visão geral de Ciência de Dados usando o Spark no Azure HDInsight](spark-overview.md). Para aprender a criar uma solução de ciência de dados usando **Scala** em um cluster do Azure HDInsight Spark, consulte [Ciência de Dados usando o Scala e o Spark no Azure](scala-walkthrough.md). 
 
 
-##  <a name="azure-sql-data-warehouse"></a>SQL Data Warehouse do Azure
+##  <a name="azure-sql-data-warehouse"></a>Azure SQL Data Warehouse
 
 O SQL Data Warehouse do Azure permite que você dimensione recursos de computação facilmente e em segundos sem excesso de provisionamento ou excesso de pagamento. Ele também oferece a opção exclusiva de fazer uma pausa nos recursos de computação, dando mais liberdade para você gerenciar melhor seus custos de nuvem. A capacidade de implantar recursos de computação escalonáveis torna possível colocar todos os seus dados no SQL Data Warehouse do Azure. Os custos de armazenamento são mínimos e você pode executar a computação somente nas partes dos conjuntos de dados que você deseja analisar. 
 

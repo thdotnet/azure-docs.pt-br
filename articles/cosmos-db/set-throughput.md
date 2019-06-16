@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: rimman
-ms.openlocfilehash: f30155c0fbdbdd93ab4ffc3ae85ef2ad62b188c9
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: ce059e542ee7bfa67e899b4923e3410e13e4930e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66389243"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67067514"
 ---
 # <a name="provision-throughput-on-containers-and-databases"></a>Aprovisionar a taxa de transferência para contêineres e bancos de dados
 
@@ -87,7 +87,7 @@ Você pode recuperar a taxa de transferência mínima de um contêiner ou um ban
 
 Ao usar o SDK do .NET, o [DocumentClient.ReadOfferAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.readofferasync?view=azure-dotnet) método permite que você recupere a taxa de transferência mínima de um contêiner ou um banco de dados. 
 
-Você pode dimensionar a taxa de transferência provisionada de um contêiner ou um banco de dados a qualquer momento. 
+Você pode dimensionar a taxa de transferência provisionada de um contêiner ou um banco de dados a qualquer momento. Quando uma operação de escala é executada para aumentar a taxa de transferência, pode levar mais tempo devido às tarefas do sistema para provisionar os recursos necessários. Você pode verificar o status da operação de escala no portal do Azure ou programaticamente usando os SDKs. Ao usar o SDK do .net, você pode obter o status da operação de escala usando o `DocumentClient.ReadOfferAsync` método.
 
 ## <a name="comparison-of-models"></a>Comparação de modelos
 

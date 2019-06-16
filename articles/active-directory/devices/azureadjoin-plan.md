@@ -17,12 +17,12 @@ ms.date: 11/21/2018
 ms.author: joflore
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12d603ddbba9e36d562c8dcd6e3844af28c91255
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: fc638c515af59f6872f2dae262a6910318abdd0e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64918828"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110769"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Como: Planejar sua implementação de ingresso no Azure AD
 
@@ -50,7 +50,7 @@ Para planejar sua implementação de junção do Azure AD, você deve se familia
 |![Verificação][1]|Entenda as considerações para aplicativos e recursos|
 |![Verificação][1]|Entenda suas opções de provisionamento|
 |![Verificação][1]|Configurar o roaming de estado|
-|![Verificação][1]|Configurar acesso condicional|
+|![Verificação][1]|Configurar o acesso condicional|
 
 
 
@@ -240,11 +240,11 @@ Aqui está uma comparação dessas três abordagens
  
 ||Instalação do autoatendimento|Windows Autopilot|Registro em massa|
 |---|---|---|---|
-|Requer interação do usuário para configurar|Sim|sim|Não |
-|Requer trabalho de TI|Não |sim|Sim|
+|Requer interação do usuário para configurar|Sim|sim|Não|
+|Requer trabalho de TI|Não|sim|Sim|
 |Fluxos aplicáveis|OOBE e Configurações|OOBE somente|OOBE somente|
-|Direitos de administrador local para o usuário primário|Sim, por padrão|Configurável|Não |
-|Precisar de suporte do OEM|Não |Sim|Não |
+|Direitos de administrador local para o usuário primário|Sim, por padrão|Configurável|Não|
+|Precisar de suporte do OEM|Não|Sim|Não|
 |Versões com suporte|1511+|1709+|1703+|
  
 Escolha sua abordagem de implantação ou abordagens examinando a tabela acima e revisar as considerações para adotar a qualquer uma das abordagens a seguir:  
@@ -349,13 +349,13 @@ Se você quiser habilitar o roaming de estado para o Azure Active Directory para
 **Recomendação**: Habilite essa configuração mesmo para dispositivos híbridos ingressados no Azure AD.
 
 
-## <a name="configure-conditional-access"></a>Configurar acesso condicional
+## <a name="configure-conditional-access"></a>Configurar o acesso condicional
 
 Se você tiver um provedor MDM configurado para os dispositivos Azure Active Directory ingressados, o provedor sinaliza o dispositivo como conformidade assim que o dispositivo está sob gerenciamento. 
 
 ![Dispositivo em conformidade](./media/azureadjoin-plan/46.png)
 
-Você pode usar essa implementação para [exigir os dispositivos gerenciados para acesso de aplicativo de nuvem com acesso condicional](../conditional-access/require-managed-devices.md).
+Você pode usar essa implementação para [exigir que os dispositivos gerenciados para acesso de aplicativo de nuvem com acesso condicional](../conditional-access/require-managed-devices.md).
 
 
 

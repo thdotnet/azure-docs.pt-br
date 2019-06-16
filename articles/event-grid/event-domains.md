@@ -8,10 +8,10 @@ ms.author: babanisa
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.openlocfilehash: 61821caa2450096bdbdde3461316ad21a82f6f18
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66304290"
 ---
 # <a name="understand-event-domains-for-managing-event-grid-topics"></a>Entenda os domínios de eventos para gerenciar tópicos do Event Grid
@@ -101,9 +101,9 @@ Aqui estão os limites e cotas relacionadas aos domínios de evento:
 
 - tópicos de 100.000 por domínio de evento 
 - domínios de evento 100 por assinatura do Azure 
-- assinaturas de evento 500 por tópico em um domínio de evento
+- 500 assinaturas de evento por tópico em um domínio de eventos
 - 50 assinaturas de escopo de domínio 
-- 5.000 eventos por segundo taxa de ingestão (em um domínio)
+- 5\.000 eventos por segundo taxa de ingestão (em um domínio)
 
 Se esses limites não adequados a você, entre em contato a equipe de produto, abrindo um tíquete de suporte ou enviando um email para [ askgrid@microsoft.com ](mailto:askgrid.microsoft.com). 
 

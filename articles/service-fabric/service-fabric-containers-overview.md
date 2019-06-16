@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 8/8/2018
 ms.author: aljo
 ms.openlocfilehash: 5a45f14e5ac1da5152f320bd92b1ebb42be1d214
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60881396"
 ---
 # <a name="service-fabric-and-containers"></a>Service Fabric e contêineres
@@ -80,7 +80,7 @@ Estes são exemplos típicos em que um contêiner é uma boa opção:
 
 * **Misturar contêineres e microsserviços do Service Fabric**: Use uma imagem de contêiner existente para parte de seu aplicativo. Por exemplo, é possível usar o [contêiner NGINX](https://hub.docker.com/_/nginx/) para o front-end da Web do seu aplicativo e serviços com estado para obter a computação mais intensiva de back-end.
 
-* **Reduzir o impacto de serviços "vizinhos ruidosos"**: Você pode usar a capacidade de governança de recursos de contêineres para restringir os recursos que usa um serviço em um host. Se os serviços consumirem muitos recursos e afetarem o desempenho dos outros (como uma operação demorada, parecida com uma consulta), considere colocar esses serviços em contêineres com governança de recursos.
+* **Reduzir o impacto de serviços "vizinhos ruidosos"** : Você pode usar a capacidade de governança de recursos de contêineres para restringir os recursos que usa um serviço em um host. Se os serviços consumirem muitos recursos e afetarem o desempenho dos outros (como uma operação demorada, parecida com uma consulta), considere colocar esses serviços em contêineres com governança de recursos.
 
 ## <a name="service-fabric-support-for-containers"></a>Suporte ao Service Fabric para contêineres
 

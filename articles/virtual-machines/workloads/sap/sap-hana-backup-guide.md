@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 07/05/2018
 ms.author: rclaus
 ms.openlocfilehash: 89896fab7b1c359007ed23d4f9d9771e366ca68a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60936919"
 ---
 # <a name="backup-guide-for-sap-hana-on-azure-virtual-machines"></a>Guia de backup para SAP HANA em Máquinas Virtuais do Azure
@@ -29,7 +29,7 @@ O guia de backup do SAP HANA em execução em máquinas virtuais do Azure descre
 O foco deste artigo é sobre as duas principais possibilidades de backup para SAP HANA em máquinas virtuais do Azure:
 
 - Backup do HANA para o sistema de arquivos em uma Máquina Virtual do Linux Azure (consulte [Backup do Azure do SAP HANA para arquivo](sap-hana-backup-file-level.md))
-- Backup do HANA baseado em instantâneos de armazenamento usando o recurso de instantâneo do Azure Storage Blob manualmente ou o Serviço de Backup do Azure (consulte [Backup do SAP HANA baseado em instantâneos de armazenamento](sap-hana-backup-storage-snapshots.md)) 
+- Backup do HANA baseado em instantâneos de armazenamento usando o recurso de instantâneo do Azure Storage Blob manualmente ou o Serviço de Backup do Azure (consulte [Backup do SAP HANA baseado em instantâneos de armazenamento](sap-hana-backup-storage-snapshots.md))
 
 O SAP HANA oferece uma API de backup, que permite que as ferramentas de backup de terceiros sejam integradas diretamente no SAP HANA. (Isto não está dentro do escopo deste guia.) Não há nenhuma integração direta do SAP HANA com o Serviço de Backup do Azure disponível nessa API no momento.
 

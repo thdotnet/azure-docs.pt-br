@@ -11,17 +11,17 @@ ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 03/13/2017
 ms.openlocfilehash: 9590728cec663b36c889dc26a6216c3d474244e4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60735261"
 ---
 # <a name="perform-analytics-with-azure-machine-learning-studio-using-an-on-premises-sql-server-database"></a>Executar análise com o Azure Machine Learning Studio usando um banco de dados do SQL Server local
 
 Muitas vezes, empresas que trabalham com dados locais gostariam de aproveitar a escala e a agilidade da nuvem para sua cargas de trabalho de aprendizado de máquina. Mas elas não querem interromper seus fluxos de trabalho e processos de negócios atuais, movendo seus dados locais para a nuvem. Agora, o Azure Machine Learning Studio dá suporte a leitura dos dados de um banco de dados do SQL Server local e, em seguida, treinamento e pontuação de modelos com esses dados. Você não precisa mais copiar manualmente e sincronizar os dados entre a nuvem e o servidor local. Em vez disso, o módulo **Importar Dados** no Estúdio do Azure Machine Learning agora pode ler diretamente do banco de dados do SQL Server local para seus trabalhos de treinamento e pontuação.
 
-Este artigo fornece uma visão geral de como ingressar dados do SQL Server local no Azure Machine Learning Studio. Ele pressupõe que você esteja familiarizado com conceitos de Studio, como espaços de trabalho, módulos, conjuntos de dados, experimentos, *etc.*.
+Este artigo fornece uma visão geral de como ingressar dados do SQL Server local no Azure Machine Learning Studio. Ele pressupõe que você esteja familiarizado com conceitos de Studio, como espaços de trabalho, módulos, conjuntos de dados, experimentos, *etc.* .
 
 > [!NOTE]
 > Esse recurso não está disponível para os workspaces gratuitos. Para obter mais informações sobre preços e camadas do Machine Learning, consulte [Preços do Azure Machine Learning](https://azure.microsoft.com/pricing/details/machine-learning/).

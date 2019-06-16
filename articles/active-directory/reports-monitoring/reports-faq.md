@@ -16,12 +16,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fc90d62f889bfd9f439a7e8955f049c6c979746
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 09270d89ecaff02716d9916527d21ba2c5d30716
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60437032"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107546"
 ---
 # <a name="frequently-asked-questions-around-azure-active-directory-reports"></a>Perguntas frequentes sobre os relatórios do Azure Active Directory
 
@@ -131,11 +131,11 @@ Este artigo inclui respostas a perguntas frequentes sobre os relatórios do Azur
 
 ---
 
-## <a name="conditional-access"></a>Acesso condicional
+## <a name="conditional-access"></a>Acesso Condicional
 
 **P: Quais são as novidades com esse recurso?**
 
-**R:** Os clientes agora podem solucionar problemas de políticas de acesso condicional por meio de todo o relatório de entradas. Os clientes podem rever o status de acesso condicional e analisar os detalhes das políticas aplicadas ao login e o resultado de cada política.
+**R:** Os clientes agora podem solucionar problemas de políticas de acesso condicional por meio do relatório de todas as entradas. Os clientes podem analisar o status de acesso condicional e informações detalhadas sobre os detalhes das políticas que são aplicadas na entrada e o resultado para cada política.
 
 **P: Como fazer para começar?**
 
@@ -143,11 +143,11 @@ Este artigo inclui respostas a perguntas frequentes sobre os relatórios do Azur
 
 * Navegue até o relatório de logins no [Portal do Azure](https://portal.azure.com).
 * Clique no login que você deseja solucionar.
-* Navegue até a guia **Acesso condicional**. Aqui, você pode exibir todas as políticas que afetados na entrada e o resultado para cada política. 
+* Navegue até a **acesso condicional** guia. Aqui, você pode exibir todas as políticas que afetados na entrada e o resultado para cada política. 
     
 **P: Quais são todos os valores possíveis para o status de acesso condicional?**
 
-**R:** O status de acesso condicional pode ter os valores a seguir:
+**R:** Status de acesso condicional pode ter os seguintes valores:
 
 * **Não aplicado**: Isso significa que não havia uma política de Autoridade de Certificação com o usuário e o aplicativo no escopo. 
 * **Êxito**: Isso significa que havia uma política de Autoridade de Certificação com o usuário e o aplicativo no escopo e as políticas de Autoridade de Certificação foram atendidas com êxito. 
@@ -166,6 +166,6 @@ Este artigo inclui respostas a perguntas frequentes sobre os relatórios do Azur
 
 **R:** O nome da política no relatório de entrada todo é baseado no nome da política de Autoridade de Certificação no momento da entrada. Isso pode ser inconsistente com o nome da política na autoridade de certificação, se você tiver atualizado o nome da política mais tarde, ou seja, após o logon.
 
-**P: Minha entrada foi bloqueada devido a uma política de acesso condicional, mas o relatório de atividades de entrada mostra que a entrada houve êxito ao entrar. Por quê?**
+**P: Minha entrada foi bloqueada devido a uma política de acesso condicional, mas o relatório de atividade de entrada mostra que a entrada foi bem-sucedida. Por quê?**
 
-**R:** Atualmente, o relatório de entrada pode não mostrar resultados precisos para cenários do Exchange ActiveSync quando o acesso condicional é aplicado. Pode haver casos em que o resultado do login no relatório mostra um login bem-sucedido, mas o login realmente falhou devido a uma política de acesso condicional. 
+**R:** Atualmente, o relatório de entrada não pode mostrar resultados precisos para cenários do Exchange ActiveSync ao acesso condicional é aplicado. Pode haver casos quando o resultado de entrar no relatório mostra uma entrada bem-sucedida, mas a entrada do realmente falhou devido a uma política de acesso condicional. 

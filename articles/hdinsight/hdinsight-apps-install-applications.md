@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: hrasheed
 ms.openlocfilehash: b916cbf690544d5887569e052a0456ca952140c8
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65409531"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Instalar aplicativos Apache Hadoop de terceiros no Azure HDInsight
@@ -23,7 +23,7 @@ Um aplicativo do HDInsight é um aplicativo que os usuários podem instalar em u
 
 A lista a seguir mostra os aplicativos publicados:
 
-|Aplicativo |Tipo de cluster (s) | Descrição |
+|Aplicativo |Tipo de cluster (s) | DESCRIÇÃO |
 |---|---|---|
 |[Plataforma de inteligência AtScale](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/atscale.atscale) |O Hadoop |AtScale transforma seu cluster do HDInsight em um servidor OLAP de expansão, permitindo que você consultar bilhões de linhas de dados interativamente usando as ferramentas de BI, você já sabe, o proprietário e adora – do Microsoft Excel, Power BI, Tableau Software para QlikView. |
 |[CDAP para HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cask.cdap-for-hdinsight) |HBase |A CDAP é a primeira plataforma de integração unificada para big data que acelera a implantação para o Hadoop e permite que a TI fornecer dados de autoatendimento. Código-fonte aberto e extensível, a CDAP remove as barreiras à inovação. Requisitos: 4 nós região, min D3 v2. |
@@ -81,13 +81,13 @@ O portal mostra uma lista dos aplicativos do HDInsight instalados para um cluste
     ![Aplicativos instalados de aplicativos do HDInsight](./media/hdinsight-apps-install-applications/hdinsight-apps-installed-apps-with-apps.png)
 5. Selecione um dos aplicativos instalados para mostrar a propriedade. A propriedades lista:
 
-    |Propriedade | Descrição |
+    |Propriedade | DESCRIÇÃO |
     |---|---|
     |Nome do aplicativo |Nome do aplicativo. |
     |Status |Status do aplicativo. |
     |Página da web |A URL do aplicativo Web que você implantou no nó de borda. A credencial é igual às credenciais de usuário HTTP que você configurou para o cluster. |
     |Ponto de extremidade SSH |Você pode usar o SSH para conectar-se ao nó de borda. As credenciais SSH são iguais às credenciais de usuário SSH que você configurou para o cluster. Para obter informações, consulte [Usar SSH com HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md). |
-    |Descrição | Descrição do aplicativo. |
+    |DESCRIÇÃO | Descrição do aplicativo. |
 
 6. Para excluir um aplicativo, clique nele com o botão direito do mouse e clique em **Excluir** no menu de contexto.
 

@@ -8,12 +8,12 @@ ms.service: batch
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: lahugh
-ms.openlocfilehash: a6c2c343b13b77048c772cb1e5c2ba06cf8add50
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9b6b28b9f55623fbdff6ab80c889141c8815600f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60616850"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071527"
 ---
 # <a name="configure-or-disable-remote-access-to-compute-nodes-in-an-azure-batch-pool"></a>Configurar ou desabilitar o acesso remoto a nós de computação em um pool do Lote do Azure
 
@@ -27,7 +27,7 @@ A configuração de ponto de extremidade consiste em um ou mais [pools de NAT (C
 Cada configuração de pool de NAT inclui uma ou mais [Regras de NSG (Grupo de Segurança de Rede)](/rest/api/batchservice/pool/add#networksecuritygrouprule). Cada regra de NSG permite ou nega determinado tráfego de rede para o ponto de extremidade. Você pode optar por permitir ou negar todo o tráfego, o tráfego identificado por uma [marca de serviço](../virtual-network/security-overview.md#service-tags) (como "Internet") ou o tráfego de endereços IP ou sub-redes específicas.
 
 ### <a name="considerations"></a>Considerações
-* A configuração de ponto de extremidade do pool é parte da [configuração de rede](/rest/api/batchservice/pool/add#NetworkConfiguration) do pool. A configuração de rede, opcionalmente, pode incluir configurações para ingressar o pool em uma [rede virtual do Azure](batch-virtual-network.md). Se você configurar o pool em uma rede virtual, poderá criar regras de NSG que usarão configurações de endereço na rede virtual.
+* A configuração de ponto de extremidade do pool é parte da [configuração de rede](/rest/api/batchservice/pool/add#networkconfiguration) do pool. A configuração de rede, opcionalmente, pode incluir configurações para ingressar o pool em uma [rede virtual do Azure](batch-virtual-network.md). Se você configurar o pool em uma rede virtual, poderá criar regras de NSG que usarão configurações de endereço na rede virtual.
 * Você pode configurar várias regras de NSG ao configurar um pool de NAT. As regras são verificadas na ordem de prioridade. Depois que uma regra se aplica, outras regras não são testadas quanto à correspondência.
 
 

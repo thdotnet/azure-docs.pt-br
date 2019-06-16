@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: philmea
 ms.openlocfilehash: 130ca6bc946d44d80cddba5486d405bfb15523cb
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66235875"
 ---
 # <a name="connect-an-mxchip-iot-devkit-device-to-your-azure-iot-central-application"></a>Conectar um dispositivo MXChip IoT DevKit ao aplicativo Azure IoT Central
@@ -212,7 +212,7 @@ Um aplicativo criado com base no modelo de aplicativo de Devkits de Exemplo incl
 | ------------- | -------------- | ------ | ------- | ------ | 
 | DeviceState   | Estado do dispositivo   | Verde  | Laranja  | Vermelho    | 
 
-#### <a name="events"></a>Eventos 
+#### <a name="events"></a>Events 
 | NOME             | Display name      | 
 | ---------------- | ----------------- | 
 | ButtonBPressed   | Botão B Pressionado  | 

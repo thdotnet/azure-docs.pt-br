@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 02/22/2019
 ms.author: absha
 ms.openlocfilehash: 66f61b5d6fcb86ed93e4dbae802ae7a80613c83d
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66397849"
 ---
 # <a name="troubleshoot-azure-application-gateway-session-affinity-issues"></a>Solucionar problemas de afinidade de sessão de Gateway de aplicativo do Azure
@@ -82,7 +82,7 @@ Para identificar esse problema, siga as instruções:
     **Dica** se você não souber como usar o Fiddler, marque a opção "**quero coletar o tráfego de rede e analise-os usando o depurador da web**" na parte inferior.
 
 2. Verificar e analisar os logs de sessão, para determinar se os cookies fornecidos pelo cliente têm os detalhes de ARRAffinity. Se você não encontrar os detalhes de ARRAffinity, tal como "**ARRAffinity =** *ARRAffinityValue*" dentro do conjunto de cookie, o que significa que o cliente não está respondendo com o cookie ARRANJAR, que é fornecido pelo Gateway de aplicativo.
-    Por exemplo: 
+    Por exemplo:
 
     ![solução de problemas-sessão-afinidade-problemas-3](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-3.png)
 

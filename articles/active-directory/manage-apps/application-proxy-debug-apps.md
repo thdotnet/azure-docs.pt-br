@@ -12,10 +12,10 @@ ms.date: 05/21/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.openlocfilehash: d0a12bde119e9dae3f950603fac4bce060bb5f91
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66172259"
 ---
 # <a name="debug-application-proxy-application-issues"></a>Depurar problemas de aplicativos de Proxy de aplicativo 
@@ -39,7 +39,7 @@ Este fluxograma orienta você pelas etapas para depuração de alguns dos proble
 
 ![Fluxograma mostrando as etapas para depurar um aplicativo](media/application-proxy-debug-apps/application-proxy-apps-debugging-flowchart.png)
 
-|  | Ação | Descrição | 
+|  | Ação | DESCRIÇÃO | 
 |---------|---------|---------|
 |1 | Abra um navegador, acessar o aplicativo e insira suas credenciais | Tente usar suas credenciais para entrar no aplicativo e verificação de erros relacionados ao usuário, como [este aplicativo corporativo não pode ser acessado](application-proxy-sign-in-bad-gateway-timeout-error.md). |
 |2 | Verifique se a atribuição de usuário para o aplicativo | Verifique se sua conta de usuário tem permissão para acessar o aplicativo de dentro da rede corporativa e, em seguida, entrar no aplicativo, seguindo as etapas de teste [teste o aplicativo](application-proxy-add-on-premises-application.md#test-the-application). Se os problemas de conexão persistirem, consulte [como solucionar problemas de erros de entrada](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-troubleshoot-sign-in-errors).  |

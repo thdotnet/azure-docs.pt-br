@@ -1,5 +1,5 @@
 ---
-title: Como autenticar e autorizar pela API no Azure Time Series Insights | Microsoft Docs
+title: Autenticar e autorizar usando uma API no Azure Time Series Insights | Microsoft Docs
 description: Este artigo descreve como configurar a autenticação e autorização para um aplicativo personalizado que chama a API do Azure Time Series Insights.
 ms.service: time-series-insights
 services: time-series-insights
@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9b6cd993e9f6c6dbf173c161de638c6c4a8b18d3
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 385fa0e714c66b4798dfcc3874810d97b76b2a1b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66237047"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67115799"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Autenticação e autorização para API do Azure Time Series Insights
 
@@ -28,7 +28,7 @@ Este artigo explica como configurar a autenticação e autorização usados em u
 
 ## <a name="service-principal"></a>Entidade de serviço
 
-Isso e as seções a seguir descrevem como configurar um aplicativo para acessar a API do Time Series Insights em nome do aplicativo. O aplicativo pode consultar ou publicar dados de referência no ambiente do Time Series Insights com credenciais do aplicativo em vez de credenciais do usuário.
+As seções a seguir descrevem como configurar um aplicativo para acessar a API do Time Series Insights para o aplicativo. O aplicativo pode consultar ou publicar dados de referência no ambiente do Time Series Insights com credenciais do aplicativo em vez de credenciais do usuário.
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -37,21 +37,21 @@ Quando você tiver um aplicativo que precisa acessar o Time Series Insights:
 1. Configure um aplicativo do Azure Active Directory.
 1. [Atribuir políticas de acesso de dados](./time-series-insights-data-access.md) no ambiente do Time Series Insights.
 
-Usar o aplicativo em vez de suas credenciais de usuário é desejável desde:
+Usando as credenciais do aplicativo em vez de suas credenciais de usuário é desejável porque:
 
 * Você pode atribuir permissões para a identidade do aplicativo que são diferentes das suas próprias permissões. Normalmente, essas permissões são restritas a apenas o que o aplicativo exige. Por exemplo, você pode permitir que o aplicativo apenas leia dados em um ambiente de análises de séries temporais específico.
-* Você não precisa alterar as credenciais do aplicativo, se alterar suas responsabilidades.
-* Você pode usar um certificado ou uma chave de aplicativo para automatizar a autenticação ao executar um script autônomo.
+* Você não precisa alterar as credenciais do aplicativo se alterar suas responsabilidades.
+* Você pode usar um certificado ou uma chave de aplicativo para automatizar a autenticação quando você executa um script autônomo.
 
-As seções a seguir demonstram como executar essas etapas no portal do Azure. O artigo se concentra em um aplicativo de único locatário em que o aplicativo destina-se para ser executado em uma única organização. Normalmente, você usará aplicativos de locatário único para aplicativos de linha de negócios que são executados em sua organização.
+As seções a seguir demonstram como executar essas etapas no portal do Azure. O artigo se concentra em um aplicativo de único locatário em que o aplicativo destina-se para ser executado em uma única organização. Você normalmente usa os aplicativos com um único locatário para os aplicativos da linha de negócios executados em sua organização.
 
-## <a name="set-up-summary"></a>Configurar o resumo
+## <a name="setup-summary"></a>Resumo da instalação
 
 O fluxo de instalação consiste em três etapas:
 
 1. Criar um aplicativo no Azure Active Directory.
 1. Autorizar esse aplicativo para acessar o ambiente de análises de séries temporais.
-1. Use a ID do aplicativo e a chave para adquirir um token do `https://api.timeseries.azure.com/`. O token, em seguida, pode ser usado para chamar a API de análises de séries temporais.
+1. Use a ID do aplicativo e a chave para adquirir um token do `https://api.timeseries.azure.com/`. O token, em seguida, pode ser usado para chamar a API do Time Series Insights.
 
 ## <a name="detailed-setup"></a>Detalhadas de instalação
 
@@ -59,7 +59,7 @@ O fluxo de instalação consiste em três etapas:
 
    [![Novo registro de aplicativo no Azure Active Directory](media/authentication-and-authorization/active-directory-new-application-registration.png)](media/authentication-and-authorization/active-directory-new-application-registration.png#lightbox)
 
-1. Nomeie o aplicativo, selecione o tipo a ser assinar**aplicativo Web / API**, selecione qualquer URI válido para **URL de logon**e clique em **Criar**.
+1. Dê um nome de aplicativo, selecione o tipo a ser **aplicativo Web / API**, selecione qualquer URI válido para **URL de logon**e selecione **criar**.
 
    [![Criar o aplicativo no Azure Active Directory](media/authentication-and-authorization/active-directory-create-web-api-application.png)](media/authentication-and-authorization/active-directory-create-web-api-application.png#lightbox)
 
@@ -67,33 +67,33 @@ O fluxo de instalação consiste em três etapas:
 
    [![Copie a ID do aplicativo](media/authentication-and-authorization/active-directory-copy-application-id.png)](media/authentication-and-authorization/active-directory-copy-application-id.png#lightbox)
 
-1. Selecione **Chaves**, insira o nome da chave, selecione a expiração e clique em **Salvar**.
+1. Selecione **teclas**, insira o nome da chave, selecione a expiração e selecione **salvar**.
 
    [![Selecione as chaves de aplicativo](media/authentication-and-authorization/active-directory-application-keys.png)](media/authentication-and-authorization/active-directory-application-keys.png#lightbox)
 
-   [![Insira o nome da chave e a expiração e clique em Salvar](media/authentication-and-authorization/active-directory-application-keys-save.png)](media/authentication-and-authorization/active-directory-application-keys-save.png#lightbox)
+   [![Insira o nome da chave e a expiração e selecione Salvar](media/authentication-and-authorization/active-directory-application-keys-save.png)](media/authentication-and-authorization/active-directory-application-keys-save.png#lightbox)
 
 1. Copie a chave para o seu editor de texto favorito.
 
    [![Copie a chave de aplicativo](media/authentication-and-authorization/active-directory-copy-application-key.png)](media/authentication-and-authorization/active-directory-copy-application-key.png#lightbox)
 
-1. Para o ambiente de análises de séries temporais, selecione **Políticas de acesso de dados** e clique em **Adicionar**.
+1. Para o ambiente do Time Series Insights, selecione **políticas de acesso de dados** e selecione **Add**.
 
    [![Adicionar nova política de acesso de dados para o ambiente do Time Series Insights](media/authentication-and-authorization/time-series-insights-data-access-policies-add.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-add.png#lightbox)
 
-1. No **Selecionar usuário** diálogo caixa, cole o nome do aplicativo (da **etapa 2**) ou ID do aplicativo (da **etapa 3**).
+1. No **Selecionar usuário** caixa de diálogo, cole o nome do aplicativo da etapa 2 ou a ID do aplicativo da etapa 3.
 
    [![Localizar um aplicativo na caixa de diálogo Selecionar usuário](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png#lightbox)
 
-1. Selecione a função (**Reader** para consultar os dados, **Colaborador** para consultar dados e alterar dados de referência) e clique em **Okey**.
+1. Selecione a função. Selecione **Reader** para consultar dados ou **Colaborador** para consultar dados e alterar dados de referência. Selecione **OK**.
 
-   [![Escolher a leitor ou colaborador na caixa de diálogo Selecionar função](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png#lightbox)
+   [![Escolher a leitor ou colaborador na caixa de diálogo Selecionar função de usuário](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png#lightbox)
 
-1. Salvar a política clicando **Okey**.
+1. Salve a política selecionando **Okey**.
 
-1. Use a ID do aplicativo (de **etapa 3**) e a chave de aplicativo (da **etapa 5**) para adquirir o token em nome do aplicativo. O token, em seguida, pode ser passado ao `Authorization` cabeçalho quando o aplicativo chama a API de análises de séries temporais.
+1. Use a ID do aplicativo da etapa 3 e a chave de aplicativo da etapa 5 para adquirir o token para o aplicativo. O token, em seguida, pode ser passado a `Authorization` cabeçalho quando o aplicativo chama a API do Time Series Insights.
 
-    Se você estiver usando C#, você pode usar o código a seguir para adquirir o token em nome do aplicativo. Para obter um exemplo completo, consulte [Consultar dados usando o C#](time-series-insights-query-data-csharp.md).
+    Se você usar C#, você pode usar o código a seguir para adquirir o token para o aplicativo. Para obter um exemplo completo, consulte [Consultar dados usando o C#](time-series-insights-query-data-csharp.md).
 
     ```csharp
     // Enter your Active Directory tenant domain name
@@ -119,7 +119,5 @@ Use o **ID do aplicativo** e **chave** em seu aplicativo para autenticar com o A
 ## <a name="next-steps"></a>Próximas etapas
 
 - Para código de exemplo que chama a API de análises de séries temporais, consulte [Consultar dados usando o C#](time-series-insights-query-data-csharp.md).
-
 - Para obter informações de referência da API, confira [Referência da API de Consulta](/rest/api/time-series-insights/ga-query-api).
-
 - Saiba como [criar uma entidade de serviço](../active-directory/develop/howto-create-service-principal-portal.md).

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1ce48126c3e8867ac7f2696d8cf7db992a9a60a
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 4f8b7f281ad5ed8424110696544ffdb49e50ce59
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66003275"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112436"
 ---
 # <a name="baseline-policy-require-mfa-for-admins"></a>Política de linha de base: Exigir MFA para administradores
 
@@ -78,4 +78,4 @@ Para obter mais informações, consulte:
 
 * [Políticas de proteção de linha de base de acesso condicional](concept-baseline-protection.md)
 * [Cinco etapas para proteger a infraestrutura de identidade](../../security/azure-ad-secure-steps.md)
-* [O que é o acesso condicional no Azure Active Directory?](overview.md)
+* [O que é acesso condicional no Azure Active Directory?](overview.md)

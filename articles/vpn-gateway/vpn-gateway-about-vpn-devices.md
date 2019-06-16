@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/29/2019
 ms.author: yushwang
 ms.openlocfilehash: 6535949767999e04b11106ff8a294e912a6d0fb8
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66388863"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>Sobre dispositivos VPN e os parâmetros IPsec/IKE para conexões do Gateway de VPN site a site
@@ -133,7 +133,7 @@ Nas tabelas a seguir:
 | Grupo Diffie-Hellman  |Grupo 2 (1024 bits) |Grupo 2 (1024 bits) |
 | Método de autenticação |Chave Pré-Compartilhada     |Chave Pré-Compartilhada     |
 | Criptografia e algoritmos de hash |1. AES256, SHA256<br>2. AES256, SHA1<br>3. AES128, SHA1<br>4. 3DES, SHA1 |1. AES256, SHA1<br>2. AES256, SHA256<br>3. AES128, SHA1<br>4. AES128, SHA256<br>5. 3DES, SHA1<br>6. 3DES, SHA256 |
-| Tempo de vida da SA           |28.800 segundos     |28.800 segundos     |
+| Tempo de vida da SA           |28\.800 segundos     |28\.800 segundos     |
 
 ### <a name="ike-phase-2-quick-mode-parameters"></a>Parâmetros da Fase 2 de IKE (Modo Rápido)
 
@@ -141,9 +141,9 @@ Nas tabelas a seguir:
 | ---                           | ---           | ---                                         |
 | Versão IKE                   |IKEv1          |IKEv2                                        |
 | Criptografia e algoritmos de hash |1. AES256, SHA256<br>2. AES256, SHA1<br>3. AES128, SHA1<br>4. 3DES, SHA1 |[Ofertas QM SA RouteBased](#RouteBasedOffers) |
-| Tempo de vida da SA (Tempo)            |3.600 segundos  |27.000 segundos                                |
-| Tempo de vida da SA (Bytes)           |102.400.000 KB | -                                           |
-| PFS (Perfect Forward Secrecy) |Não              |[Ofertas QM SA RouteBased](#RouteBasedOffers) |
+| Tempo de vida da SA (Tempo)            |3\.600 segundos  |27\.000 segundos                                |
+| Tempo de vida da SA (Bytes)           |102\.400.000 KB | -                                           |
+| PFS (Perfect Forward Secrecy) |Não             |[Ofertas QM SA RouteBased](#RouteBasedOffers) |
 | Detecção de par inativo (DPD)     |Sem suporte  |Com suporte                                    |
 
 

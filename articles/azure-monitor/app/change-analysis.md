@@ -1,6 +1,6 @@
 ---
-title: Aplicativo do Azure Monitor alterar análise - descobrir alterações que possam afetar a problemas de site ativo/interrupções com o aplicativo do Azure Monitor alteram análise | Microsoft Docs
-description: Solucionar problemas de site ao vivo do aplicativo em serviços de aplicativo do Azure com análise de alterações de aplicativo do Azure Monitor
+title: Usar análise de alterações de aplicativo no Azure Monitor para localizar problemas de aplicativo web | Microsoft Docs
+description: Use análise de alterações de aplicativo no Azure Monitor para solucionar problemas de aplicativos em sites ao vivo no serviço de aplicativo do Azure.
 services: application-insights
 author: cawams
 manager: carmonm
@@ -10,131 +10,134 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: cawa
-ms.openlocfilehash: 5bd3816e65398283de85b4551a137b3f97db4cc7
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 2a31131b662d01f9841a3f1c5b0a6c459a117e77
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66226312"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075375"
 ---
-# <a name="application-change-analysis-public-preview"></a>Análise de alterações de aplicativo (visualização pública)
+# <a name="use-application-change-analysis-preview-in-azure-monitor"></a>Usar análise de alterações de aplicativo (visualização) no Azure Monitor
 
-Quando ocorre uma problema/interrupção do site ativo, determinar a causa raiz rapidamente é fundamental. Padrão de soluções de monitoramento pode ajudar você a identificar rapidamente o que há um problema e muitas vezes até mesmo componente que está falhando. Mas isso não será sempre levar a uma explicação imediata por que a falha está ocorrendo. Seu site trabalhou cinco minutos atrás, agora ele está quebrado. O que mudou nos últimos cinco minutos? Esta é a pergunta que o novo recurso do Azure Monitor, análise de alterações de aplicativo é projetado para responder. Criando o poder da [grafo de recursos do Azure](https://docs.microsoft.com/azure/governance/resource-graph/overview) análise de alterações de aplicativo fornece informações sobre as alterações de aplicativo do Azure para aumentar a observação e reduzir o MTTR (tempo médio para reparo).
+Quando um problema de site ativo ou uma interrupção ocorre, é essencial determinar rapidamente a causa raiz. Soluções de monitoramento padrão podem alertá-lo a um problema. Eles ainda podem indicar qual componente está falhando. Mas esse alerta não ocorrem sempre imediatamente explica a causa da falha. Você sabe que seu site trabalhado há cinco minutos, e agora estiver quebrado. O que mudou nos últimos cinco minutos? Esta é a pergunta que a análise de alterações de aplicativo é projetado para responder no Azure Monitor. 
+
+Criando o poder das [grafo de recursos do Azure](https://docs.microsoft.com/azure/governance/resource-graph/overview), análise de alterações fornece percepções sobre as alterações de aplicativo do Azure para aumentar a observação e reduzir o MTTR (tempo médio para reparo).
 
 > [!IMPORTANT]
-> Análise de alteração de aplicativo do Azure Monitor está atualmente em visualização pública.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
-> Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Análise de alterações está atualmente em visualização. Esta versão de visualização é fornecida sem um contrato de nível de serviço. Esta versão não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter recursos restritos. Para obter mais informações, consulte [termos de uso complementares para visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="overview-of-change-analysis-service"></a>Visão geral do serviço de análise de alterações
-O serviço de análise de alteração detecta vários tipos de alterações da camada de infraestrutura para implantação do aplicativo. Ele é um provedor de recursos do Azure de nível de assinatura que se parece em alterações de recursos na assinatura e fornece dados de várias ferramentas de diagnóstico ajudar os usuários a entender quais alterações podem ter causado problemas.
+## <a name="overview"></a>Visão geral
 
-O diagrama a seguir ilustra a arquitetura do serviço de análise de alteração: ![Diagrama da arquitetura para como o serviço de análise de alteração obtém dados de alteração e fornecer dados para as ferramentas de cliente](./media/change-analysis/overview.png)
+Análise de alterações detecta vários tipos de alterações, da camada de infraestrutura para implantação do aplicativo. Ele é um provedor de recursos de nível de assinatura do Azure que verifica as alterações de recursos na assinatura. Análise de alterações fornece dados de várias ferramentas de diagnóstico ajudar os usuários a entender quais alterações podem ter causado problemas.
 
-Atualmente, a ferramenta é integrada em serviços de aplicativo do aplicativo web diagnosticar e resolver problemas de experiência. Ver *serviço de análise de alterações para o aplicativo Web de serviços de aplicativo* seção sobre como habilitar e exibir as alterações feitas em um aplicativo web.
+O diagrama a seguir ilustra a arquitetura de análise de alterações:
+
+![Diagrama da arquitetura de como alterar análise obtém dados de alteração e fornece-o a ferramentas de cliente](./media/change-analysis/overview.png)
+
+Atualmente, a análise de alterações é integrado ao **diagnosticar e resolver problemas** experiência no aplicativo serviço de aplicativo web. Para habilitar a detecção de alteração e exibir as alterações no aplicativo web, consulte a *alterar análise para o recurso aplicativos Web* seção mais adiante neste artigo.
 
 ### <a name="azure-resource-manager-deployment-changes"></a>Alterações na implantação do Gerenciador de recursos do Azure
-Aproveitando [grafo de recursos do Azure](https://docs.microsoft.com/azure/governance/resource-graph/overview) a ferramenta de análise de alterações fornece um registro histórico de como os recursos do Azure que hospedam seu aplicativo foram alterados ao longo do tempo. Por exemplo, se um aplicativo web tiver uma marca adicionados a ele, a alteração será refletida na ferramenta de análise de alteração.
-Essas informações estão sempre disponíveis, desde o `Microsoft.ChangeAnalysis` provedor de recursos estiver integrado à assinatura do Azure.
 
-### <a name="web-application-deployment-and-configuration-changes"></a>Alterações de configuração e implantação de aplicativo da Web
-Ferramenta de análise de alteração captura o estado de implantação e configuração de um aplicativo a cada 4 horas para computar as diferenças e apresentar o que mudou. Exemplos de tais alterações incluem alterações de variável de ambiente do aplicativo, as alterações de regra de configuração de IP, alterações de identidade de serviço gerenciado, alterações nas configurações de SSL e assim por diante.
-Ao contrário de alterações do Gerenciador de recursos, esse tipo de informação de alteração não estejam disponível imediatamente na ferramenta. Para exibir as alterações mais recentes, use o botão 'Altera verificação agora' na ferramenta.
+Usando o [grafo de recursos do Azure](https://docs.microsoft.com/azure/governance/resource-graph/overview), análise de alterações fornece um registro histórico de como os recursos do Azure que hospedam seu aplicativo foram alterados ao longo do tempo. Por exemplo, análise de alterações pode detectar, alterações em regras de configuração de IP, identidades gerenciadas e as configurações de SSL. Portanto, se uma marca é adicionada a um aplicativo web, análise alterar reflete a alteração. Essas informações estão disponíveis, desde o `Microsoft.ChangeAnalysis` provedor de recursos está habilitado na assinatura do Azure.
 
-![Captura de tela de verificação para que as alterações agora botão diagnosticar e resolver a ferramenta de problemas com a integração de análise de alteração para o aplicativo web do serviço de aplicativo](./media/change-analysis/scan-changes.png)
+### <a name="changes-in-web-app-deployment-and-configuration"></a>Alterações na configuração e implantação de aplicativo web
+
+Análise de alteração captura o estado de implantação e configuração de um aplicativo a cada 4 horas. Ele pode detectar, por exemplo, as alterações nas variáveis de ambiente do aplicativo. A ferramenta calcula as diferenças e apresenta o que mudou. Ao contrário de alterações do Gerenciador de recursos, informações de alteração de implantação de código podem não estar disponíveis imediatamente na ferramenta. Para exibir as alterações mais recentes na análise de alterações, selecione **verificação agora altera**.
+
+![Captura de tela do botão "Verificação de alterações agora"](./media/change-analysis/scan-changes.png)
 
 ### <a name="dependency-changes"></a>Alterações de dependência
-O recurso de dependências também pode ser a causa dos problemas. Por exemplo, se um aplicativo web chama um cache Redis, o desempenho do aplicativo web pode ser afetado pelo cache Redis SKU. Ao examinar o registro DNS do aplicativo web altere analysis service também apresentam as dependências de informações de alteração para identificar alterações em todos os componentes de um aplicativo que possa ter causado problemas.
 
+Alterações em dependências de recursos também podem causar problemas em um aplicativo web. Por exemplo, se um aplicativo web chama um cache Redis, o SKU do cache Redis pode afetar o desempenho do aplicativo web. Para detectar alterações em dependências, análise de alterações verifica o registro DNS do aplicativo web. Dessa forma, ele identifica as alterações em todos os componentes de aplicativo que poderia causar problemas.
 
-## <a name="change-analysis-service-for-app-services-web-app"></a>Serviço de análise de alteração para o aplicativo Web de serviços de aplicativo
+## <a name="change-analysis-for-the-web-apps-feature"></a>Análise de alterações para o recurso de aplicativos Web
 
-Análise de alteração de aplicativo do Azure Monitor atualmente é integrado ao autoatendimento **diagnosticar e solucionar problemas** experiência, que podem ser acessado da **visão geral** seção do serviço de aplicativo do Azure aplicativo:
+No Azure Monitor, a análise de alterações atualmente é integrado ao autoatendimento **diagnosticar e resolver problemas** experiência. Acessar essa experiência da **visão geral** página do seu aplicativo de serviço de aplicativo.
 
-![Visão geral da captura de tela do serviço de aplicativo do Azure com as caixas vermelhas em torno do botão visão geral de página e diagnosticar e resolver o botão de problemas](./media/change-analysis/change-analysis.png)
+![Captura de tela do botão "Visão geral" e "diagnosticar e solucionar problemas de" botão](./media/change-analysis/change-analysis.png)
 
-### <a name="enable-change-analysis-in-diagnose-and-solve-problems-tool"></a>Habilitar a análise de alteração em diagnosticar e resolver a ferramenta de problemas
+### <a name="enable-change-analysis-in-the-diagnose-and-solve-problems-tool"></a>Habilitar a análise de alteração em diagnosticar e resolver a ferramenta de problemas
 
-1. Selecione **disponibilidade e desempenho**
+1. Selecione **disponibilidade e desempenho**.
 
-    ![captura de tela de opções de solução de problemas de desempenho e disponibilidade](./media/change-analysis/availability-and-performance.png)
+    ![Captura de tela do "Disponibilidade e desempenho" opções de solução de problemas](./media/change-analysis/availability-and-performance.png)
 
-2. Clique o **aplicativo travar** lado a lado.
+1. Selecione **falhas do aplicativo**.
 
-   ![Captura de tela com o bloco de falhas do aplicativo](./media/change-analysis/application-crashes-tile.png)
+   ![Captura de tela do botão "Falha de aplicativo"](./media/change-analysis/application-crashes-tile.png)
 
-3. Para habilitar **análise de alterações** selecionar **habilitar agora**.
+1. Para habilitar a análise de alterações, selecione **habilitar agora**.
 
-   ![captura de tela de opções de solução de problemas de desempenho e disponibilidade](./media/change-analysis/application-crashes.png)
+   ![Captura de tela das opções de "Falha de aplicativo"](./media/change-analysis/application-crashes.png)
 
-4. Para tirar proveito de todo o alterar conjunto de funcionalidades de análise **alterar Analysis**, **examinar alterações de código de**, e **Always on** para **em** e selecione **salvar**.
+1. Para aproveitar a funcionalidade de análise de alterações completa, ative **análise de alterações**, **examinar alterações de código de**, e **Always on**. Em seguida, selecione **Salvar**.
 
-    ![Captura de tela de habilitar o serviço de aplicativo do Azure alterar a interface do usuário de análise](./media/change-analysis/change-analysis-on.png)
+    ![Captura de tela da interface do usuário "Habilitar análise de alterações"](./media/change-analysis/change-analysis-on.png)
 
-    Se **análise de alterações** é habilitado, você será capaz de detectar alterações no nível do recurso. Se **examinar alterações de código de** é habilitado, você verá também os arquivos de implantação e as alterações de configuração do site. Habilitando **Always on** otimizará a desempenho da verificação de alteração, mas pode incorrer em custos adicionais de uma perspectiva de cobrança.
+    - Habilitar **análise de alterações** para detectar alterações de nível de recurso. 
+    - Habilitar **examinar alterações de código de** para ver os arquivos de implantação e as alterações de configuração do site. 
+    - Habilitar **Always on** para otimizar o desempenho do exame de alteração. Mas tenha em mente que essa configuração pode resultar em cobranças adicionais.
 
-5.  Depois que tudo estiver habilitada, selecionando **diagnosticar e solucionar problemas** > **desempenho e disponibilidade** > **aplicativo travar** permitirá que você acesse a experiência de análise de alteração. O grafo resume o tipo de alterações que ocorreram ao longo do tempo, juntamente com detalhes sobre essas alterações:
+1. Para acessar a análise de alterações, selecione **diagnosticar e solucionar problemas** > **desempenho e disponibilidade** > **aplicativo travar**. Você verá um gráfico que resume o tipo de alterações ao longo do tempo, juntamente com detalhes sobre essas alterações:
 
      ![Captura de tela da exibição de comparação de alteração](./media/change-analysis/change-view.png)
 
 
-### <a name="enable-change-analysis-service-at-scale"></a>Habilitar o serviço de análise de alterações em grande escala
-Se você tiver muitos aplicativos web em sua assinatura, habilitar o serviço no nível do aplicativo web será ineficiente. Aqui estão algumas instruções de integração alternativo.
+### <a name="enable-change-analysis-at-scale"></a>Habilitar a análise de alteração em grande escala
 
-#### <a name="registering-change-analysis-resource-provider-for-your-subscription"></a>Registrando provedor de recursos de análise de alterações para a sua assinatura
+Se sua assinatura inclui vários aplicativos web, permitindo que o serviço no nível do aplicativo web seria ineficiente. Nesse caso, siga estas instruções alternativas.
 
-1. Registre-se o sinalizador de recursos de visualização de análise de alterações
+### <a name="register-the-change-analysis-resource-provider-for-your-subscription"></a>Registrar o provedor de recursos de análise de alterações para a sua assinatura
 
-    Como esse recurso está em visualização, você precisa em primeiro lugar, registrar o sinalizador de recurso para que ele fique visível à sua assinatura.
-    - Abra o [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/).
+1. Registre-se o sinalizador de recursos de análise de alterações (versão prévia). Porque o sinalizador de recurso está em visualização, você precisa registrá-lo para torná-lo visível à sua assinatura:
 
-    ![Captura de tela de alteração do Azure Cloud Shell](./media/change-analysis/cloud-shell.png)
+   1. Abra o [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/).
 
-    - Altere o tipo de shell para PowerShell:
+      ![Captura de tela de alteração do Cloud Shell](./media/change-analysis/cloud-shell.png)
 
-    ![Captura de tela de alteração do Azure Cloud Shell](./media/change-analysis/choose-powershell.png)
+   1. Altere o tipo de shell para **PowerShell**.
 
-    - Execute o seguinte comando do PowerShell:
+      ![Captura de tela de alteração do Cloud Shell](./media/change-analysis/choose-powershell.png)
 
-    ``` PowerShell
+   1. Execute o seguinte comando do PowerShell:
 
-    Set-AzContext -Subscription <your_subscription_id> #set script execution context to the subscription you are trying to onboard
-    Get-AzureRmProviderFeature -ProviderNamespace "Microsoft.ChangeAnalysis" -ListAvailable #Check for feature flag availability
-    Register-AzureRmProviderFeature -FeatureName PreviewAccess -ProviderNamespace Microsoft.ChangeAnalysis #Register feature flag
+        ``` PowerShell
+        Set-AzContext -Subscription <your_subscription_id> #set script execution context to the subscription you are trying to enable
+        Get-AzureRmProviderFeature -ProviderNamespace "Microsoft.ChangeAnalysis" -ListAvailable #Check for feature flag availability
+        Register-AzureRmProviderFeature -FeatureName PreviewAccess -ProviderNamespace Microsoft.ChangeAnalysis #Register feature flag
+        ```
+    
+1. Registre o provedor de recursos de análise de alterações para a assinatura.
 
-    ```
+   - Vá para **assinaturas**e selecione a assinatura que você deseja habilitar no serviço de alteração. Em seguida, selecione os provedores de recursos:
 
-2. Registrar o provedor de recursos de análise de alteração para a assinatura
+        ![Captura de tela mostrando como registrar o provedor de recursos de análise de alterações](./media/change-analysis/register-rp.png)
 
-    - Navegue até as assinaturas, selecione a assinatura que você deseja integrar o serviço de alteração e clique em provedores de recursos:
+       - Selecione **Microsoft.ChangeAnalysis**. Em seguida, na parte superior da página, selecione **registrar**.
 
-        ![Captura de tela de registro RP de análise de alterações na folha de assinaturas](./media/change-analysis/register-rp.png)
+       - Depois que o provedor de recursos é habilitado, você pode definir uma marca oculta no aplicativo web para detectar alterações no nível da implantação. Para definir uma marca oculta, siga as instruções em **não é possível buscar informações de análise de alterações**.
 
-    - Selecione *Microsoft.ChangeAnalysis* e clique em *registrar* no topo da página.
+   - Como alternativa, você pode usar um script do PowerShell para registrar o provedor de recursos:
 
-    - Depois que o provedor de recursos estiver integrado, siga as instruções da *não é possível buscar informações de análise alterar* abaixo para definir a marca oculta no aplicativo web para habilitar a implantação de nível de detecção de alterações no aplicativo web.
+        ```PowerShell
+        Get-AzureRmResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState #Check if RP is ready for registration
+    
+        Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.ChangeAnalysis" #Register the Change Analysis RP
+        ```
 
-3. Como alternativa para a etapa 2 acima, você pode se registrar para o provedor de recursos por meio de script do PowerShell:
+        Para usar o PowerShell para definir um marcador oculto em um aplicativo web, execute o seguinte comando:
+    
+        ```powershell
+        $webapp=Get-AzWebApp -Name <name_of_your_webapp>
+        $tags = $webapp.Tags
+        $tags[“hidden-related:diagnostics/changeAnalysisScanEnabled”]=$true
+        Set-AzResource -ResourceId <your_webapp_resourceid> -Tag $tag
+        ```
 
-    ```PowerShell
-    Get-AzureRmResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState #Check if RP is ready for registration
-
-    Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.ChangeAnalysis" #Register the Change Analysis RP
-    ```
-
-4. Para definir uma marca oculta em um aplicativo web usando o PowerShell, execute o seguinte comando:
-
-    ```powershell
-    $webapp=Get-AzWebApp -Name <name_of_your_webapp>
-    $tags = $webapp.Tags
-    $tags[“hidden-related:diagnostics/changeAnalysisScanEnabled”]=$true
-    Set-AzResource -ResourceId <your_webapp_resourceid> -Tag $tag
-    ```
-
-> [!NOTE]
-> Depois que a marca ocultada é adicionada, você ainda precisa inicialmente aguardar até quatro horas para ser capaz de exibir primeiro a alterações. Isso ocorre porque o freqeuncy de 4 horas que o serviço de análise de alteração usa para verificar seu aplicativo web enquanto os limita o impacto no desempenho da verificação.
+     > [!NOTE]
+     > Depois de adicionar a marca ocultada, ainda convém aguardar até quatro horas antes de você começar a ver as alterações. Os resultados são atrasados porque a análise de alterações examina seu aplicativo web somente a cada 4 horas. O agendamento de 4 horas limita o impacto no desempenho do exame.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Melhorar o monitoramento dos serviços de aplicativo do Azure [, permitindo que os recursos do Application Insights](azure-web-apps.md) do Azure Monitor.
-- Aprimorar seu entendimento do [grafo de recursos do Azure](https://docs.microsoft.com/azure/governance/resource-graph/overview) que ajuda a aplicativo do Azure Monitor power alterar análise.
+- Monitorar o serviço de aplicativo com mais eficiência por [habilitação de recursos do Application Insights](azure-web-apps.md) no Azure Monitor.
+- Saiba mais sobre [grafo de recursos do Azure](https://docs.microsoft.com/azure/governance/resource-graph/overview), que ajuda a análise de alterações de energia.

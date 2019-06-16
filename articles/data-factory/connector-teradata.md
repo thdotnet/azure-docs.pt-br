@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
 ms.openlocfilehash: e9fd818990c8a985a77c2e7eeea19bf63c440e4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61347642"
 ---
 # <a name="copy-data-from-teradata-using-azure-data-factory"></a>Copiar dados do Teradata usando o Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](v1/data-factory-onprem-teradata-connector.md)
 > * [Versão atual](connector-teradata.md)
 
@@ -167,7 +167,7 @@ Ao copiar dados do Teradata, os seguintes mapeamentos são usados de tipos de da
 | Blob |Byte[] |
 | Byte |Byte[] |
 | ByteInt |Int16 |
-| Char |String |
+| Char |Cadeia de caracteres |
 | Clob |String |
 | Date |DateTime |
 | Decimal |Decimal |
@@ -175,31 +175,31 @@ Ao copiar dados do Teradata, os seguintes mapeamentos são usados de tipos de da
 | Graphic |String |
 | Integer |Int32 |
 | Interval Day |TimeSpan |
-| Interval Day To Hour |TimeSpan |
-| Interval Day To Minute |TimeSpan |
+| Intervalo - dia para hora |TimeSpan |
+| Intervalo - dia para minuto |TimeSpan |
 | Interval Day To Second |TimeSpan |
-| Interval Hour |TimeSpan |
-| Interval Hour To Minute |TimeSpan |
+| Intervalo - hora |TimeSpan |
+| Intervalo - hora para minuto |TimeSpan |
 | Interval Hour To Second |TimeSpan |
 | Interval Minute |TimeSpan |
 | Interval Minute To Second |TimeSpan |
 | Interval Month |String |
 | Interval Second |TimeSpan |
-| Interval Year |String |
+| Interval Year |Cadeia de caracteres |
 | Interval Year To Month |String |
 | Number |Double |
-| Period(Date) |String |
-| Period(Time) |String |
-| Period(Time With Time Zone) |String |
-| Period(Timestamp) |String |
+| Period(Date) |Cadeia de caracteres |
+| Period(Time) |Cadeia de caracteres |
+| Period(Time With Time Zone) |Cadeia de caracteres |
+| Period(Timestamp) |Cadeia de caracteres |
 | Period(Timestamp With Time Zone) |String |
 | SmallInt |Int16 |
 | Time |TimeSpan |
-| Hora com fuso horário |String |
+| Hora com fuso horário |Cadeia de caracteres |
 | Timestamp |DateTime |
 | Timestamp With Time Zone |DateTimeOffset |
 | VarByte |Byte[] |
-| VarChar |String |
+| VarChar |Cadeia de caracteres |
 | VarGraphic |String |
 | Xml |String |
 

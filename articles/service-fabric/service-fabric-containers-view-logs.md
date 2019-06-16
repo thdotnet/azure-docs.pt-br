@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 05/15/2018
 ms.author: aljo
 ms.openlocfilehash: 0408010a49b8ec83aa02c74887139f663788ad80
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60881464"
 ---
 # <a name="view-logs-for-a-service-fabric-container-service"></a>Exibir logs para um serviço de contêiner do Service Fabric
@@ -29,7 +29,7 @@ Logs de contêiner podem ser acessados usando [Service Fabric Explorer](service-
 
 Logs de contêiner estão localizados no nó de cluster que está executando a instância de serviço de contêiner. Por exemplo, obtenha os logs do contêiner do front-end da Web do [aplicativo de exemplo do Linux Voting](service-fabric-quickstart-containers-linux.md). No modo de exibição de árvore, expanda **Cluster**>**Aplicativos**>**VotingType**>**fabric:/Voting/azurevotefront**.  Em seguida, expanda a partição (d1aa737e-f22a-e347-be16-eec90be24bc1, neste exemplo) e veja que o contêiner está em execução no nó de cluster *_lnxvm_0*.
 
-No modo de exibição de árvore, localize o pacote de código no nó *_lnxvm_0* expandindo **Nós**>**_lnxvm_0**>**fabric:/Voting** > **azurevotfrontPkg**>**Pacotes de códigos**>**código**.  Selecione a opção **Logs do Contêiner** para exibir os logs do contêiner.
+No modo de exibição de árvore, localize o pacote de código no nó *_lnxvm_0* expandindo **Nós**> **_lnxvm_0**>**fabric:/Voting** > **azurevotfrontPkg**>**Pacotes de códigos**>**código**.  Selecione a opção **Logs do Contêiner** para exibir os logs do contêiner.
 
 ![Plataforma Service Fabric][Image1]
 

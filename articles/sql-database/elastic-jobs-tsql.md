@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 59e0e4cf82af9851dacf3ec030575ed392571331
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61475805"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>Usar o T-SQL (Transact-SQL) para criar e gerenciar trabalhos de Banco de Dados Elástico
@@ -178,7 +178,7 @@ Em muitos cenários de coleta de dados, pode ser útil incluir algumas dessas va
 - $(job_execution_create_time)
 - $(target_group_name)
 
-Por exemplo, para agrupar todos os resultados da mesma execução de trabalho, use o *$(job_execution_id)*, como é mostrado no comando a seguir:
+Por exemplo, para agrupar todos os resultados da mesma execução de trabalho, use o *$(job_execution_id)* , como é mostrado no comando a seguir:
 
 
 ```sql
@@ -456,7 +456,7 @@ A descrição do trabalho. a descrição é nvarchar(512), com um padrão NULL. 
 [  **\@habilitado =** ] habilitado  
 Se a agenda do trabalho está habilitada. Habilitado é bit, com o padrão 0 (desabilitado). Se for 0, o trabalho não estará habilitado e não será executado de acordo com sua agenda. No entanto, ele poderá ser executado manualmente. Se for 1, o trabalho será executado de acordo com sua agenda e também poderá ser executado manualmente.
 
-[  **\@schedule_interval_type =**] schedule_interval_type  
+[  **\@schedule_interval_type =** ] schedule_interval_type  
 O valor indica quando o trabalho será executado. schedule_interval_type é nvarchar(50), com o padrão Once e pode ser um dos seguintes valores:
 - 'Once',
 - 'Minutes',

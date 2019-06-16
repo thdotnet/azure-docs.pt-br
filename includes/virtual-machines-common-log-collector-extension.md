@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 072864d565e2edbddd4b7df851ad0e30daf7e5fa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60387922"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "67120191"
 ---
 O diagnóstico de problemas com um serviço de nuvem do Microsoft Azure exige a coleta dos arquivos de log do serviço em máquinas virtuais à medida que os problemas ocorrem. É possível usar a extensão AzureLogCollector sob demanda para executar uma coleta avulsa de logs de uma ou mais VMs do Serviço de Nuvem (de funções Web e funções de trabalho) e transferir os arquivos coletados para uma conta de armazenamento do Azure – tudo sem precisar fazer logon remotamente em qualquer uma das VMs.
 
@@ -21,7 +21,7 @@ O diagnóstico de problemas com um serviço de nuvem do Microsoft Azure exige a 
 Há dois modos de coleta, dependendo dos tipos de arquivos a serem coletados.
 
 * **Somente Logs de GA (Agente Convidado) do Azure**. Esse modo de coleta inclui todos os logs relacionados a agentes convidados do Azure e a outros componentes do Azure.
-* **Todos os Logs (Completo)**. Esse modo de coleta obtém todos os arquivos do modo GA e:
+* **Todos os Logs (Completo)** . Esse modo de coleta obtém todos os arquivos do modo GA e:
   
   * logs de eventos do sistema e do aplicativo
   * logs de erros de HTTP

@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
 ms.openlocfilehash: a249cf96981957de2c445079c0172b9c0c2ce543
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60799466"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Usar o Console Serial para acessar GRUB e Modo de Usuário Único
@@ -98,7 +98,7 @@ Se não percorrer as etapas acima para habilitar que o usuário raiz, você pode
     - Isso interromperá o processo de inicialização antes de o controle ser passado de `initramfs` a `systemd`, conforme descrito na documentação do Red Hat [aqui](https://aka.ms/rhel7rootpassword).
 1. Pressione Ctrl + X para sair e reinicializar com as configurações aplicadas
 1. Depois que você inicializar, ocorrerá a alternância para o modo de emergência com um sistema de arquivos somente leitura. Insira `mount -o remount,rw /sysroot` no shell para montar novamente o sistema de arquivos raiz com permissões de leitura/gravação
-1. Depois que você inicializar no modo de usuário único, digite `chroot /sysroot` para alternar para o `sysroot` jail 
+1. Depois que você inicializar no modo de usuário único, digite `chroot /sysroot` para alternar para o `sysroot` jail
 1. Você agora é a raiz. Você pode redefinir sua senha raiz com `passwd` e, em seguida, usar as instruções acima para entrar no modo de usuário único. Digite `reboot -f` para reinicializar quando terminar.
 
 ![](../media/virtual-machines-serial-console/virtual-machine-linux-serial-console-rhel-emergency-mount-no-root.gif)
@@ -126,7 +126,7 @@ Por padrão, as imagens do Ubuntu não mostram automaticamente a tela do GRUB. I
 1. Altere o valor `GRUB_TIMEOUT` para um valor diferente de zero
 1. Abra `/etc/default/grub` em um editor de texto da sua escolha
 1. Comente na linha `GRUB_HIDDEN_TIMEOUT=1`
-1. Execute o `sudo update-grub`
+1. Execute `sudo update-grub`
 
 ### <a name="single-user-mode-in-ubuntu"></a>Modo de usuário único no Ubuntu
 O Ubuntu alternará para o modo de usuário único automaticamente se ele não conseguir inicializar normalmente. Para entrar manualmente no modo de usuário único, siga estas instruções:

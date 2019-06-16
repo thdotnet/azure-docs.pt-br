@@ -10,12 +10,12 @@ ms.reviewer: estfan, LADocs
 ms.assetid: f8f528f5-51c5-4006-b571-54ef74532f32
 ms.topic: article
 ms.date: 05/22/2019
-ms.openlocfilehash: 20e84482b31c4da991f3fdc9c7bbf6ee0e7f902a
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: 776f79d7f32cf23943ecab4133e055993d30c7cd
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66299095"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075054"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Modelo de preços para os Aplicativos Lógicos do Azure
 
@@ -89,7 +89,7 @@ Depois de desativar um aplicativo lógico, qualquer instância em execução no 
 
 ## <a name="integration-accounts"></a>Contas de integração
 
-Preço por consumo aplica-se ao [contas de integração](logic-apps-enterprise-integration-create-integration-account.md) onde você pode explorar, desenvolver e testar o [B2B e EDI](logic-apps-enterprise-integration-b2b.md) e [processamento XML](logic-apps-enterprise-integration-xml.md) recursos em aplicativos lógicos do Azure sem nenhum custo adicional.
+O modelo de preço fixo se aplica ao [contas de integração](logic-apps-enterprise-integration-create-integration-account.md) onde você pode explorar, desenvolver e testar o [B2B e EDI](logic-apps-enterprise-integration-b2b.md) e [processamento XML](logic-apps-enterprise-integration-xml.md) recursos em aplicativos lógicos do Azure sem nenhum custo adicional.
 Você pode ter uma conta de integração em cada região do Azure. Cada conta de integração pode armazenar até [números específicos de artefatos](../logic-apps/logic-apps-limits-and-config.md), que incluem parceiros comerciais, contratos, mapas, esquemas, montagens, certificados, configurações de lote e assim por diante.
 
 Aplicativos lógicos do Azure oferece as contas de integração gratuita, Basic e Standard. As camadas básica e Standard têm suporte pelo contrato de nível de serviço (SLA), aplicativos lógicos enquanto a camada gratuita não é suportada por um SLA e tem limites sobre o uso e a taxa de transferência.

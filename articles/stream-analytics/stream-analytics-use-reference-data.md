@@ -4,19 +4,19 @@ description: Este artigo descreve como usar dados de referência para pesquisar 
 services: stream-analytics
 author: jseb225
 ms.author: jeanb
-manager: kfile
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 01/29/2019
-ms.openlocfilehash: 93c65429ef7581f4a7d2e268034e4056d6f000c8
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.date: 06/11/2019
+ms.openlocfilehash: 99917fa01fcdb3faf731e9d0909d67ff41222f22
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393131"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066775"
 ---
 # <a name="using-reference-data-for-lookups-in-stream-analytics"></a>Usar dados de referência para pesquisas no Stream Analytics
+
 Dados de referência (também conhecidos como tabela de pesquisa) são um conjunto finito de dados estáticos ou com alteração lenta por natureza, usados para executar uma pesquisa ou para correlacionar com seu fluxo de dados. Por exemplo, em um cenário de IoT, você pode armazenar metadados sobre sensores (que não são alterados com frequência) em dados de referência e uni-los a fluxos de dados de IoT em tempo real. O Azure Stream Analytics carrega dados de referência na memória para obter um processamento de fluxo de baixa latência. Para usar dados de referência no seu trabalho do Azure Stream Analytics geralmente é preciso usar uma [União de dados de referência](https://msdn.microsoft.com/library/azure/dn949258.aspx) em sua consulta. 
 
 O Stream Analytics dá suporte ao Armazenamento de Blobs do Azure e ao Banco de Dados SQL do Azure como a camada de armazenamento para dados de referência. Você também pode transformar e/ou copiar os dados de referência para o Armazenamento de Blobs do Azure Data Factory para usar [qualquer número de armazenamentos de dados locais e baseados em nuvem](../data-factory/copy-activity-overview.md).
@@ -43,7 +43,7 @@ Para configurar os dados de referência, você primeiro precisa criar uma entrad
 
 ### <a name="static-reference-data"></a>Dados de referência estática
 
-Se os dados de referência não forem alterados, em seguida, então o suporte para dados são habilitados especificando um caminho estático na configuração de entrada de referência estática. O Azure Stream Analytics pega o blob do caminho especificado. substituição de {data} e {hora} não é necessária. Dados de referência são imutáveis no Stream Analytics. Portanto, não é recomendável substituir um blob de dados de referência estática.
+Se os dados de referência não forem alterados, em seguida, então o suporte para dados são habilitados especificando um caminho estático na configuração de entrada de referência estática. O Azure Stream Analytics pega o blob do caminho especificado. substituição de {data} e {hora} não é necessária. Como os dados de referência são imutáveis no Stream Analytics, não é recomendável substituir um blob de dados de referência estática.
 
 ### <a name="generate-reference-data-on-a-schedule"></a>Gerar dados de referência de acordo com um agendamento
 
@@ -54,7 +54,7 @@ O Azure Stream Analytics verifica automaticamente os blobs de dados de referênc
 > [!NOTE]
 > Atualmente os trabalhos do Stream Analytics procuram pela atualização de blob somente quando a hora do computador avança até a hora codificada no nome do blob. Por exemplo o trabalho irá procurar `sample/2015-04-16/17-30/products.csv` assim que possível, mas não antes das 17:30 UTC do dia 16 de abril de 2015. Ele *nunca* procurará um blob com uma hora codificada anterior ao último que foi descoberto.
 > 
-> Por exemplo Depois que o trabalho localiza o blob `sample/2015-04-16/17-30/products.csv`, ele ignora todos os arquivos com uma data codificada anterior às 17:30 de 16 de abril de 2015. Portanto, se um blob `sample/2015-04-16/17-25/products.csv` atrasado for criado no mesmo contêiner, o trabalho não o usará.
+> Por exemplo, depois que o trabalho localiza o blob `sample/2015-04-16/17-30/products.csv` ele ignora todos os arquivos com uma data codificada anterior às 17:30 de 16 de abril de 2015 portanto, se um atrasado `sample/2015-04-16/17-25/products.csv` blob é criado no mesmo contêiner o trabalho não o usará.
 > 
 > Da mesma forma, se `sample/2015-04-16/17-30/products.csv` só é produzido às 22:03 do dia 16 de abril de 2015, mas nenhum blob com uma data anterior está presente no contêiner, o trabalho usa esse arquivo começando às 22:03 do dia 16 de abril de 2015 e usando os dados de referência anteriores.
 > 
@@ -72,7 +72,7 @@ O Azure Stream Analytics verifica automaticamente os blobs de dados de referênc
 3. Blobs de dados de referência são **não** ordenados pela hora "Última modificação" do blob, mas apenas pela hora e pela data especificadas no nome do blob usando as substituições {date} e {time}.
 3. Para evitar a necessidade de listar um grande número de blobs, considere excluir blobs muito antigos para os quais o processamento não será mais feito. Observe que o ASA talvez tenha que reprocessar uma pequena quantidade em alguns cenários, como um reinício.
 
-## <a name="azure-sql-database"></a>Banco de Dados SQL do Azure
+## <a name="azure-sql-database"></a>Banco de dados SQL do Azure
 
 Os dados de referência do Banco de Dados SQL do Azure são recuperados pelo trabalho do Stream Analytics e armazenados como um instantâneo na memória para processamento. O instantâneo dos dados de referência também é armazenado em um contêiner em uma conta de armazenamento especificada nas definições de configuração. O contêiner é criado automaticamente quando o trabalho é iniciado. Se o trabalho for interrompido ou entrar em um estado de falha, os contêineres criados automaticamente serão excluídos quando o trabalho for reiniciado.  
 

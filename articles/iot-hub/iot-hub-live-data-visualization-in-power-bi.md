@@ -7,25 +7,24 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.tgt_pltfrm: arduino
-ms.date: 4/11/2018
+ms.date: 6/06/2019
 ms.author: robinsh
-ms.openlocfilehash: 3e932048b41e9af149f14a814a1c92d86bd26f29
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 7deb1b501d30c8af0cb190f4722d46435afa9b8e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66479874"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67065924"
 ---
 # <a name="visualize-real-time-sensor-data-from-azure-iot-hub-using-power-bi"></a>Visualizar dados de sensor em tempo real do Hub IoT usando o Power BI
 
 ![Diagrama de ponta a ponta](./media/iot-hub-live-data-visualization-in-power-bi/1_end-to-end-diagram.png)
 
-
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
 ## <a name="what-you-learn"></a>O que você aprenderá
 
-Você aprenderá a visualizar dados do sensor em tempo real que recebe o hub IoT do Azure usando o Power BI. Se você quiser experimentar toe visualizar os dados em seu hub IoT com um aplicativo web, consulte [usar um aplicativo web para visualizar dados de sensor em tempo real do IoT Hub do Azure](iot-hub-live-data-visualization-in-web-apps.md).
+Você aprenderá a visualizar dados do sensor em tempo real que recebe o hub IoT do Azure usando o Power BI. Se você quiser tentar visualizar os dados em seu hub IoT com um aplicativo web, consulte [usar um aplicativo web para visualizar dados de sensor em tempo real do IoT Hub do Azure](iot-hub-live-data-visualization-in-web-apps.md).
 
 ## <a name="what-you-do"></a>O que fazer
 
@@ -37,7 +36,7 @@ Você aprenderá a visualizar dados do sensor em tempo real que recebe o hub IoT
 
 ## <a name="what-you-need"></a>O que você precisa
 
-* Conclua o [simulador online Raspberry Pi](iot-hub-raspberry-pi-web-simulator-get-started.md) tutorial ou um dos tutoriais dispositivo; por exemplo, [Raspberry Pi com Node. js](iot-hub-raspberry-pi-kit-node-get-started.md). Estes abrangem os seguintes requisitos:
+* Conclua o [simulador online Raspberry Pi](iot-hub-raspberry-pi-web-simulator-get-started.md) tutorial ou um dos tutoriais dispositivo; por exemplo, [Raspberry Pi com Node. js](iot-hub-raspberry-pi-kit-node-get-started.md). Esses artigos abordam os seguintes requisitos:
   
   * Uma assinatura ativa do Azure.
   * Um hub IoT do Azure em sua assinatura.
@@ -53,7 +52,7 @@ Vamos começar criando um trabalho do Stream Analytics. Depois de criar o trabal
 
 ### <a name="create-a-stream-analytics-job"></a>Criar um trabalho de Stream Analytics
 
-1. No [Portal do Azure](https://portal.azure.com), clique em **Criar um recurso** > **Internet das Coisas** > **Trabalho do Stream Analytics**.
+1. No [portal do Azure](https://portal.azure.com), selecione **Criar um recurso** > **Internet das Coisas** > **Trabalho do Stream Analytics**.
 
 2. Insira as seguintes informações para o trabalho.
 
@@ -63,39 +62,51 @@ Vamos começar criando um trabalho do Stream Analytics. Depois de criar o trabal
 
    **Localização**: Use o mesmo local do grupo de recursos.
 
-   **Fixar no painel**: Marque essa opção para facilitar o acesso ao hub IoT no painel.
+   ![Criar um trabalho do Stream Analytics no Azure](./media/iot-hub-live-data-visualization-in-power-bi/create-stream-analytics-job-azure.png)
 
-   ![Criar um trabalho do Stream Analytics no Azure](./media/iot-hub-live-data-visualization-in-power-bi/2_create-stream-analytics-job-azure.png)
-
-3. Clique em **Criar**.
+3. Selecione **Criar**.
 
 ### <a name="add-an-input-to-the-stream-analytics-job"></a>Adicionar uma entrada ao trabalho do Stream Analytics
 
 1. Abra o trabalho do Stream Analytics.
 
-2. Em **Topologia do Trabalho**, clique em **Entradas**.
+2. Em **Topologia do Trabalho**, selecione **Entradas**.
 
-3. No painel **Entradas**, clique em **Adicionar entrada de fluxo** e, em seguida, insira as seguintes informações:
+3. No **entradas** painel, selecione **Adicionar entrada de fluxo**, em seguida, selecione **IoT Hub** na lista suspensa. No novo painel de entrada, insira as seguintes informações:
 
-   **Alias de entrada**: O alias exclusivo da entrada; selecione **Fornecer configurações do Hub IoT manualmente** abaixo.
+   **Alias de entrada**: Insira um alias exclusivo para a entrada.
 
-   **Fonte**: Selecione **Hub IoT**.
-   
-   **Ponto de extremidade**: Clique em **Mensagens**.
+   **Forneça o IoT Hub da sua assinatura**: Selecione este botão de opção.
 
-   **Grupo de consumidores**: Selecione o grupo de consumidores recém-criado.
+   **Assinatura**: Selecione a assinatura do Azure que você está usando para este tutorial.
 
-4. Clique em **Criar**.
+   **Hub IoT**: Selecione o IoT Hub que você está usando para este tutorial.
 
-   ![Adicionar uma entrada a um trabalho do Stream Analytics no Azure](./media/iot-hub-live-data-visualization-in-power-bi/3_add-input-to-stream-analytics-job-azure.png)
+   **Ponto de extremidade**: selecione **Mensagens**.
+
+   **Nome da política de acesso compartilhado**: Selecione o nome da política de acesso compartilhado que você deseja que o trabalho de Stream Analytics a ser usado para o hub IoT. Para este tutorial, você pode selecionar *serviço*. O *serviço* política é criada por padrão em novos hubs IoT e concede permissão para enviar e receber no lado da nuvem de pontos de extremidade expostos pelo hub IoT. Para obter mais informações, consulte [controle de acesso e permissões](iot-hub-devguide-security.md#access-control-and-permissions).
+
+   **Chave de política de acesso compartilhado**: Este campo é preenchida automaticamente com base em sua seleção para o nome da política de acesso compartilhado.
+
+   **Grupo de consumidores**: Selecione o grupo de consumidores criado anteriormente.
+
+   Deixe todos os outros campos com seus valores padrão.
+
+   ![Adicionar uma entrada a um trabalho do Stream Analytics no Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-input-to-stream-analytics-job-azure.png)
+
+4. Clique em **Salvar**.
 
 ### <a name="add-an-output-to-the-stream-analytics-job"></a>Adicionar uma saída ao trabalho do Stream Analytics
 
-1. Em **Topologia do Trabalho**, clique em **Saídas**.
+1. Em **Topologia do Trabalho**, selecione **Saídas**.
 
-2. No painel **Saídas**, clique em **Adicionar** e em **Power BI** e, em seguida, insira as seguintes informações:
+2. No **saídas** painel, selecione **Add** e **Power BI**.
 
-   **Alias de saída**: o alias exclusivo para a saída.
+3. Sobre o **Power BI - nova saída** painel, selecione **autorizar** e siga os prompts para entrar em sua conta do Power BI.
+
+4. Depois que você tiver entrado no Power BI, insira as seguintes informações:
+
+   **Alias de saída**: Um alias exclusivo para a saída.
 
    **Workspace de Grupo**: Selecione o workspace do grupo de destino.
 
@@ -103,29 +114,27 @@ Vamos começar criando um trabalho do Stream Analytics. Depois de criar o trabal
 
    **Nome da tabela**: Insira um nome de tabela.
 
-3. Clique em **Autorizar** e depois entre na sua conta do Power BI.
+   ![Adicionar uma saída a um trabalho do Stream Analytics no Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-output-to-stream-analytics-job-azure.png)
 
-4. Clique em **Criar**.
-
-   ![Adicionar uma saída a um trabalho do Stream Analytics no Azure](./media/iot-hub-live-data-visualization-in-power-bi/4_add-output-to-stream-analytics-job-azure.png)
+5. Clique em **Salvar**.
 
 ### <a name="configure-the-query-of-the-stream-analytics-job"></a>Configurar a consulta do trabalho do Stream Analytics
 
-1. Em **Topologia do Trabalho**, clique em **Consulta**.
+1. Em **Topologia do trabalho**, selecione **Consulta**.
 
 2. Substitua `[YourInputAlias]` pelo alias de entrada do trabalho.
 
 3. Substitua `[YourOutputAlias]` pelo alias de saída do trabalho.
 
-4. Clique em **Salvar**.
+   ![Adicionar uma consulta a um trabalho do Stream Analytics no Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-query-stream-analytics-job-azure.png)
 
-   ![Adicionar uma consulta a um trabalho do Stream Analytics no Azure](./media/iot-hub-live-data-visualization-in-power-bi/5_add-query-stream-analytics-job-azure.png)
+4. Clique em **Salvar**.
 
 ### <a name="run-the-stream-analytics-job"></a>Executar o trabalho do Stream Analytics
 
-No trabalho do Stream Analytics, clique em **Iniciar** > **Agora** > **Iniciar**. Depois que o trabalho é iniciado com êxito, o status do trabalho muda de **parado** para **executando**.
+No trabalho do Stream Analytics, selecione **visão geral**, em seguida, selecione **inicie** > **agora** > **iniciar**. Depois que o trabalho é iniciado com êxito, o status do trabalho muda de **parado** para **executando**.
 
-![Executar um trabalho do Stream Analytics no Azure](./media/iot-hub-live-data-visualization-in-power-bi/6_run-stream-analytics-job-azure.png)
+![Executar um trabalho do Stream Analytics no Azure](./media/iot-hub-live-data-visualization-in-power-bi/run-stream-analytics-job-azure.png)
 
 ## <a name="create-and-publish-a-power-bi-report-to-visualize-the-data"></a>Criar e publicar um relatório do Power BI para visualizar os dados
 
@@ -133,45 +142,45 @@ No trabalho do Stream Analytics, clique em **Iniciar** > **Agora** > **Iniciar**
 
 2. Entre na sua conta do [Power BI](https://powerbi.microsoft.com/en-us/).
 
-3. Clique no workspace usado, **Meu Workspace**.
+3. Selecione o espaço de trabalho que você usou, **meu espaço de trabalho**.
 
-4. Clique em **Conjuntos de dados**.
+4. Selecione **Conjuntos de dados**.
 
    Você deverá ver o conjunto de dados especificado quando você criou a saída para o trabalho do Stream Analytics.
 
-5. Para obter o conjunto de dados criado, clique em **Adicionar Relatório** (o primeiro ícone à direita do nome do conjunto de dados).
+5. Para o conjunto de dados que você criou, selecione **Adicionar relatório** (o primeiro ícone à direita do nome do conjunto de dados).
 
-   ![Criar um relatório do Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/7_create-power-bi-report-microsoft.png)
+   ![Criar um relatório do Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/start-power-bi.png)
 
 6. Crie um gráfico de linhas para mostrar a temperatura em tempo real ao longo do tempo.
 
-   1. Na página de criação de relatório, adicione um gráfico de linhas.
+   1. Sobre o **visualizações** painel da página de criação de relatório, selecione o ícone de gráfico de linha para adicionar um gráfico de linhas.
 
    2. Sobre o **campos** painel, expanda a tabela que você especificou quando criou a saída para o trabalho do Stream Analytics.
-   
+
    3. Arraste **EventEnqueuedUtcTime** para **eixo** sobre o **visualizações** painel.
-   
+
    4. Arraste **temperatura** para **Valores**.
 
       Um gráfico de linhas é criado. O eixo x exibe a data e a hora no fuso horário UTC. O eixo y mostra a temperatura do sensor.
 
-      ![Adicionar um gráfico de linhas para a temperatura a um relatório do Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/8_add-line-chart-for-temperature-to-power-bi-report-microsoft.png)
+      ![Adicionar um gráfico de linhas para a temperatura a um relatório do Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-add-temp.png)
 
 7. Crie outro gráfico de linhas para mostrar umidade em tempo real ao longo do tempo. Para fazer isso, siga as mesmas etapas acima e coloque **EventEnqueuedUtcTime** no eixo x e **umidade** no eixo y.
 
-   ![Adicionar um gráfico de linhas para umidade a um relatório do Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/9_add-line-chart-for-humidity-to-power-bi-report-microsoft.png)
+   ![Adicionar um gráfico de linhas para umidade a um relatório do Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-add-humidity.png)
 
-8. Clique em **Salvar** para salvar o relatório.
+8. Selecione **Salvar** para salvar o relatório.
 
-9. Clique em **Relatórios** no painel esquerdo e, em seguida, clique no relatório recém-criado.
+9. Selecione **relatórios** no painel esquerdo e, em seguida, selecione o relatório que você acabou de criado.
 
-10. Clique em **Arquivo** > **Publicar na Web**.
+10. Selecione **arquivo** > **publicar na web**.
 
-11. Clique em **Criar código incorporado** e clique em **Publicar**.
+11. Selecione **criar código de inserção**e, em seguida, selecione **publicar**.
 
-São fornecidas no link do relatório que você pode compartilhar com ninguém para acesso a relatórios e um snippet de código para integrar o relatório em seu blog ou site.
+São fornecidas no link do relatório que você pode compartilhar com ninguém para acesso ao relatório e um trecho de código que você pode usar para integrar o relatório em seu blog ou site.
 
-![Publicar um relatório do Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/10_publish-power-bi-report-microsoft.png)
+![Publicar um relatório do Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-publish.png)
 
 A Microsoft também oferece o [aplicativos móveis do Power BI](https://powerbi.microsoft.com/en-us/documentation/powerbi-power-bi-apps-for-mobile-devices/) para exibir e interagir com seus relatórios e painéis do Power BI em seu dispositivo móvel.
 

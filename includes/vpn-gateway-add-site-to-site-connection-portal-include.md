@@ -9,10 +9,10 @@ ms.date: 04/04/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 19ad4e39ca4e402c37b2cfa69c7c306b6e5a2766
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66170171"
 ---
 1. Navegue até a página do seu gateway de rede virtual e a abra. Há várias maneiras de navegar. Você pode navegar para o gateway “VNet1GW” acessando **TestVNet1 -> Visão geral -> Dispositivos conectados -> VNet1GW**.
@@ -22,7 +22,7 @@ ms.locfileid: "66170171"
 3. Na página **Adicionar conexão**, configure os valores da sua conexão.
 
    - **Nome:** Nomeie sua conexão.
-   - **Tipo de conexão**: Selecione **Site a site (IPSec)**.
+   - **Tipo de conexão**: Selecione **Site a site (IPSec)** .
    - **Gateway de rede virtual:** O valor é fixo porque você está conectando por esse gateway.
    - **Gateway de rede local:** Clique em **Escolher um gateway de rede local** e selecione o gateway de rede local que você quer usar.
    - **Chave Compartilhada:** o valor aqui deve corresponder ao valor usado para seu dispositivo VPN local. O exemplo usa “abc123”, mas você pode (e deve) usar algo mais complexo. O importante é que o valor especificado aqui deve ser o mesmo valor especificado ao configurar seu dispositivo VPN.

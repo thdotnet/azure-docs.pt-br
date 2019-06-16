@@ -12,12 +12,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f430a832ffb35b95d0bf4eff2d82be5ecc3d865c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 42de060d81539030ef1970e01e753383662e924f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60472342"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67083903"
 ---
 # <a name="manage-emergency-access-accounts-in-azure-ad"></a>Gerenciar contas de acesso de emergência no Microsoft Azure Active Directory
 
@@ -43,7 +43,7 @@ Crie duas ou mais contas de acesso de emergência. Elas devem ser contas somente
 Ao configurar essas contas, os seguintes requisitos devem ser atendidos:
 
 - As contas de emergência não devem ser associadas a nenhum usuário individual na organização. Certifique-se de que suas contas não estejam conectadas a nenhum telefone celular fornecido pelo funcionário, tokens de hardware que viajam com funcionários específicos ou outras credenciais específicas do funcionário. Essa precaução abrange instâncias em que um funcionário individual está inacessível quando a credencial é necessária. É importante garantir que todos os dispositivos registrados sejam mantidos em uma localização segura e conhecida que tenha vários meios de comunicação com o Azure AD.
-- O mecanismo de autenticação usado para uma conta de acesso de emergência deve ser diferente do usado por outras contas administrativas, incluindo outras contas de acesso de emergência.  Por exemplo, se sua entrada normal no administrador é por meio da Autenticação Multifator do Microsoft Azure (MFA) local, o Azure MFA seria um mecanismo diferente.  No entanto, se Azure MFA é a parte primária de autenticação para suas contas administrativas, considere uma abordagem diferente para elas, como o uso de acesso condicional com um provedor MFA de terceiros.
+- O mecanismo de autenticação usado para uma conta de acesso de emergência deve ser diferente do usado por outras contas administrativas, incluindo outras contas de acesso de emergência.  Por exemplo, se sua entrada normal no administrador é por meio da Autenticação Multifator do Microsoft Azure (MFA) local, o Azure MFA seria um mecanismo diferente.  No entanto se a MFA do Azure é sua parte primário de autenticação para suas contas administrativas, considere uma abordagem diferente para eles, como o uso de acesso condicional com um provedor MFA de terceiros.
 - O dispositivo ou a credencial não deve expirar ou estar no escopo de limpeza automatizado devido à falta de uso.  
 - A atribuição de função de Administrador Global deve ser permanente para suas contas de acesso de emergência. 
 
@@ -52,11 +52,11 @@ Ao configurar essas contas, os seguintes requisitos devem ser atendidos:
 
 Para reduzir o risco de um ataque resultante de uma senha comprometida, o Microsoft Azure Active Directory recomenda que você exija a autenticação multifator para todos os usuários individuais. Este grupo deve incluir os administradores e todos os outros (por exemplo, gerentes financeiros) cuja conta comprometida teria um impacto significativo.
 
-No entanto, pelo menos uma de suas contas de acesso de emergência não deve ter o mesmo mecanismo de autenticação multifator como outras contas não emergenciais. Isso inclui soluções de autenticação multifator de terceiros. Se você tiver uma política de acesso condicional para exigir a [ Autenticação Multifator para todos os administradores](../authentication/howto-mfa-userstates.md) para o Microsoft Azure Active Directory e outros aplicativos SaaS (Software como Serviço), é necessário excluir as contas de acesso de emergência desse requisito e configurar um diferente mecanismo no seu lugar. Além disso, verifique se que as contas não têm uma política de autenticação multifator por usuário.
+No entanto, pelo menos uma de suas contas de acesso de emergência não deve ter o mesmo mecanismo de autenticação multifator como outras contas não emergenciais. Isso inclui soluções de autenticação multifator de terceiros. Se você tiver uma política de acesso condicional para exigir [a autenticação multifator para todos os administradores](../authentication/howto-mfa-userstates.md) para o Azure AD e outros softwares conectados como um aplicativos de serviço (SaaS), você deve excluir as contas de acesso de emergência deste requisito e configurar um mecanismo diferente em vez disso. Além disso, verifique se que as contas não têm uma política de autenticação multifator por usuário.
 
-### <a name="exclude-at-least-one-account-from-conditional-access-policies"></a>Exclua pelo menos uma conta de políticas de acesso condicional
+### <a name="exclude-at-least-one-account-from-conditional-access-policies"></a>Excluir pelo menos uma conta de políticas de acesso condicional
 
-Durante uma emergência, não é desejável uma política para bloquear o acesso para corrigir um problema. Ao menos uma conta de acesso de emergência deve ser excluída de todas as políticas de acesso condicionais. Se tiver habilitado uma [política de linha de base](../conditional-access/baseline-protection.md), exclua as contas de acesso de emergência.
+Durante uma emergência, não é desejável uma política para bloquear o acesso para corrigir um problema. Pelo menos uma conta de acesso de emergência deve ser excluída de todas as políticas de acesso condicional. Se tiver habilitado uma [política de linha de base](../conditional-access/baseline-protection.md), exclua as contas de acesso de emergência.
 
 ## <a name="additional-guidance-for-hybrid-customers"></a>Orientações adicionais para clientes híbridos
 
@@ -90,7 +90,7 @@ Essas etapas devem ser realizadas em intervalos regulares e para alterações de
 - Quando houve uma alteração recente na equipe de TI, como uma alteração de cargo, uma saída ou uma nova contratação
 - Quando as assinaturas do Microsoft Azure Active Directory da organização foram alteradas
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - [Protegendo o acesso privilegiado para implantações de nuvem e híbridos no Azure AD](directory-admin-roles-secure.md)
 - [Adicionar um usuário usando o Microsoft Azure Active Directory](../fundamentals/add-users-azure-active-directory.md) e [atribuir ao novo usuário à função de administrador global](../fundamentals/active-directory-users-assign-role-azure-portal.md)

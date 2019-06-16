@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/22/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: d2daafa6bf5f9a28ad2b61a97e7a8bd2246ae18d
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 4abf50e11070f2060309ae9b9cd045c874a2c52e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66147869"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67133223"
 ---
 # <a name="what-disk-types-are-available-in-azure"></a>Quais tipos de disco estão disponíveis no Azure?
 
@@ -27,13 +27,13 @@ A tabela a seguir oferece uma comparação entre discos ultra SSD (unidade de es
 |---------|---------|---------|---------|---------|
 |Tipo de disco   |SSD   |SSD   |SSD   |HDD   |
 |Cenário   |Cargas de trabalho de E/S intensiva, como SAP HANA, bancos de dados de camada superior (por exemplo, SQL, Oracle) e outras cargas de trabalho de transações pesadas.   |Cargas de trabalho confidenciais produção e desempenho   |Servidores Web, aplicativos empresariais pouco usados e desenvolvimento/teste   |Backup, não crítico, acesso não frequente   |
-|Tamanho do disco   |65.536 GiB (GibiByte) (versão prévia)   |32,767 GiB    |32,767 GiB   |32,767 GiB   |
-|Taxa de transferência máxima   |2.000 MiB/s (versão prévia)   |900 MiB/s   |750 MiB/s   |500 MiB/s   |
-|IOPS Máx.   |160.000 (versão prévia)   |20.000   |6.000   |2.000   |
+|Tamanho do disco   |65\.536 GiB (GibiByte) (versão prévia)   |32,767 GiB    |32,767 GiB   |32,767 GiB   |
+|Taxa de transferência máxima   |2\.000 MiB/s (versão prévia)   |900 MiB/s   |750 MiB/s   |500 MiB/s   |
+|IOPS Máxima   |160\.000 (versão prévia)   |20\.000   |6\.000   |2\.000   |
 
 ## <a name="ultra-ssd-preview"></a>SSD Ultra (versão prévia)
 
-O SSD Ultra do Azure (versão prévia) proporciona alta taxa de transferência, alta IOPS e armazenamento em disco de baixa latência consistente para VMs de IaaS do Azure. Alguns benefícios adicionais do SSD Ultra incluem a capacidade de alterar dinamicamente o desempenho do disco, juntamente com suas cargas de trabalho, sem a necessidade de reiniciar as máquinas virtuais. Os SSDs Ultra são adequados para cargas de trabalho de grande volume de dados, como SAP HANA, bancos de dados de camada superior e cargas de trabalho de transações pesadas. Os SSDs Ultra só podem ser usados como discos de dados. É recomendável usar SSDs Premium como discos de sistema operacional.
+SSD ultra do Azure (visualização) fornece alta taxa de transferência, IOPS alta e armazenamento de disco de baixa latência consistente para VMs IaaS do Azure. Alguns benefícios adicionais do SSD Ultra incluem a capacidade de alterar dinamicamente o desempenho do disco, juntamente com suas cargas de trabalho, sem a necessidade de reiniciar as máquinas virtuais. Ultra SSDs é adequado para cargas de trabalho de grande volume de dados, como SAP HANA, bancos de dados de camada superior e cargas de trabalho pesadas de transação. Os SSDs Ultra só podem ser usados como discos de dados. É recomendável usar SSDs Premium como discos de sistema operacional.
 
 ### <a name="performance"></a>Desempenho
 
@@ -50,15 +50,15 @@ Alguns recursos importantes do SSD Ultra são:
 
 |Tamanho do Disco (GiB)  |Limites de IOPS  |Limite de taxa de transferência (MBps)  |
 |---------|---------|---------|
-|4     |1.200         |300         |
-|8     |2.400         |600         |
-|16     |4.800         |1.200         |
-|32     |9.600         |2.000         |
-|64     |19.200         |2.000         |
-|128     |38.400         |2.000         |
-|256     |76.800         |2.000         |
-|512     |80.000         |2.000         |
-|1.024 a 65.536 (os tamanhos nesse intervalo aumentam em incrementos de 1 TiB)     |160.000         |2.000         |
+|4     |1\.200         |300         |
+|8     |2\.400         |600         |
+|16     |4\.800         |1\.200         |
+|32     |9\.600         |2\.000         |
+|64     |19\.200         |2\.000         |
+|128     |38\.400         |2\.000         |
+|256     |76\.800         |2\.000         |
+|512     |80\.000         |2\.000         |
+|1\.024 a 65.536 (os tamanhos nesse intervalo aumentam em incrementos de 1 TiB)     |160\.000         |2\.000         |
 
 ### <a name="transactions"></a>Transações
 
@@ -73,7 +73,8 @@ Durante a versão prévia, SSDs Ultra:
 - Serão compatíveis somente com VMs ES/DS v3
 - Só estarão disponíveis como discos de dados e serão compatíveis somente com tamanho de setor físico de 4k  
 - Só podem ser criados como discos vazios  
-- Atualmente, só podem ser implantados usando os modelos do Azure Resource Manager, a CLI e o SDK do Python.
+- No momento, só pode ser implantado usando modelos do Azure Resource Manager, CLI, PowerShell e o SDK do Python.
+- Não pode ser implantado com o portal do Azure (ainda).
 - Não são compatíveis ainda com instantâneos de disco, imagens de VM, conjuntos de disponibilidade, conjuntos de dimensionamento de máquinas virtuais nem com a criptografia de disco do Azure.
 - Não são compatíveis ainda com a integração com o Backup do Azure nem com o Azure Site Recovery.
 - Assim como acontece com a [maioria das versões prévias](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), esse recurso não deve ser usado em cargas de trabalho de produção até a GA (disponibilidade geral).

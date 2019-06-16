@@ -7,27 +7,24 @@ ms.reviewer: kgremban
 ms.service: iot-edge
 services: iot-edge
 ms.topic: conceptual
-ms.date: 03/29/2019
+ms.date: 06/12/2019
 ms.author: gregman
-ms.openlocfilehash: be7479d3f042d6e64428a07e0509907b78595200
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 9e3f7e3b23cba3fab87ee35aa2a15b6305d9ece4
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65159774"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67054186"
 ---
 # <a name="run-azure-iot-edge-on-windows-server-virtual-machines"></a>Executar o Azure IoT Edge em máquinas virtuais do Windows Server
 O tempo de execução do Azure IoT Edge é o que transforma um dispositivo em um dispositivo do IoT Edge. O tempo de execução pode ser implantado em dispositivos pequenos como um Raspberry Pi ou grandes como um servidor industrial. Após um dispositivo ser configurado com o tempo de execução do IoT Edge, você poderá começar a implantar a lógica de negócios da nuvem nele.
 
 Para saber mais sobre como funciona o tempo de execução do IoT Edge e quais componentes estão incluídos, veja [Entender o tempo de execução do Azure IoT Edge e sua arquitetura](iot-edge-runtime.md).
 
-Este artigo lista as etapas para executar o tempo de execução do IoT Edge do Azure em uma máquina virtual do Windows Server 2019 usando o [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview) oferta do Azure Marketplace. Siga as instruções em [instalar o tempo de execução do Azure IoT Edge](how-to-install-iot-edge-windows.md) no Windows para uso com outras versões.
-
-> [!NOTE]
-> O tempo de execução do IoT Edge no Windows Server está em [visualização pública](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+Este artigo lista as etapas para executar o tempo de execução do IoT Edge do Azure em uma máquina virtual do Windows Server 2019 usando o [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview) oferta do Azure Marketplace. Siga as instruções em [instalar o tempo de execução do Azure IoT Edge](how-to-install-iot-edge-windows.md) no Windows para uso com outras versões.
 
 ## <a name="deploy-from-the-azure-marketplace"></a>Implantar do Azure Marketplace
-1.  Navegue até a [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview) oferta do Azure Marketplace ou procure por "Windows Server" em [Azure Marketplace](https://azuremarketplace.microsoft.com/)
+1.  Navegue até a [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview) oferta do Azure Marketplace ou procure por "Windows Server" em [Azure Marketplace](https://azuremarketplace.microsoft.com/)
 2.  Selecione **obter agora** 
 3.  Na **plano de Software**, localize "2019 Datacenter Server Core com contêineres do Windows Server" e, em seguida, selecione **continuar** na próxima caixa de diálogo.
     * Você também pode usar estas instruções para outras versões do Windows Server com contêineres

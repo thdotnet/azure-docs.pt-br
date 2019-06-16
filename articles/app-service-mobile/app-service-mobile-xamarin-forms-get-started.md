@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: crdun
-ms.openlocfilehash: b0719f6ac2f99f9e665b1265665752dd53ccbaf0
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: b47e498754bad6917efca5b7f19f8ebce9cf0330
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66242653"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062216"
 ---
 # <a name="create-a-xamarinforms-app-with-azure"></a>Criar um aplicativo Xamarin.Forms com Azure
 
@@ -48,19 +48,7 @@ Para concluir este tutorial, você precisará do seguinte:
 
 As Ferramentas do Visual Studio para Xamarin são necessárias para abrir a solução, consulte as [instruções de instalação do Xamarin][Install Xamarin]. Se as ferramentas já estiverem instaladas, execute estas etapas para baixar e abrir a solução:
 
-### <a name="visual-studio"></a>Visual Studio
-
-1. Vá para o [Portal do Azure](https://portal.azure.com/).
-
-2. Na folha configurações do seu Aplicativo Móvel, clique em **Início Rápido** (em Implantação) > **Xamarin.Forms**. Na etapa 3, clique em **Criar um novo aplicativo** se essa opção ainda não tiver sido selecionada.  Em seguida, clique no botão **Baixar** .
-
-   Essa ação baixa um projeto que contém um aplicativo cliente conectado ao seu aplicativo móvel. Salve o arquivo do projeto compactado em seu computador local e anote onde ele foi salvo.
-
-3. Extraia o projeto que você baixou e abra-o no Visual Studio.
-
-4. Siga as instruções abaixo para executar os projetos Android ou Windows e, se houver um computador Mac em rede disponível, o projeto iOS.
-
-### <a name="visual-studio-for-mac"></a>Visual Studio para Mac
+### <a name="visual-studio-windows-and-mac"></a>Visual Studio (Windows e Mac)
 
 1. Vá para o [portal do Azure](https://portal.azure.com/) e navegue até o aplicativo móvel que você criou. Sobre o `Overview` folha, procure a URL que é o ponto de extremidade público para seu aplicativo móvel. Exemplo – o nome do site para o meu nome de aplicativo "test123" será https://test123.azurewebsites.net.
 

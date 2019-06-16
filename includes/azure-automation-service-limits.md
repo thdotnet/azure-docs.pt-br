@@ -9,10 +9,10 @@ ms.date: 12/13/2018
 ms.author: gwallace
 ms.custom: include file
 ms.openlocfilehash: 2823a33b25812a69ad463433bacd9710655c9176
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66238222"
 ---
 #### <a name="process-automation"></a>Automação de processos
@@ -28,10 +28,10 @@ ms.locfileid: "66238222"
 | Trabalho de tempo de execução, camada gratuita |500 minutos por assinatura por mês ||
 | Quantidade máxima de espaço em disco permitida por área restrita<sup>1</sup> |1 GB |Aplica-se a áreas de segurança do Azure.|
 | Quantidade máxima de memória fornecida a uma área restrita<sup>1</sup> |400 MB |Aplica-se a áreas de segurança do Azure.|
-| Número máximo de soquetes de rede permitido por área restrita<sup>1</sup> |1.000 |Aplica-se a áreas de segurança do Azure.|
+| Número máximo de soquetes de rede permitido por área restrita<sup>1</sup> |1\.000 |Aplica-se a áreas de segurança do Azure.|
 | Tempo de execução máximo permitido por runbook<sup>1</sup> |3 horas |Aplica-se a áreas de segurança do Azure.|
 | Número máximo de contas de automação em uma assinatura |Sem limite ||
-| Número máximo de grupos do Hybrid Worker por conta de automação|4.000||
+| Número máximo de grupos do Hybrid Worker por conta de automação|4\.000||
 |Número máximo de trabalhos simultâneos que podem ser executados em um único trabalho de Runbook híbrido|50 ||
 | Tamanho do parâmetro de trabalho de runbook máximo   | 512 Kbps||
 | Parâmetros de runbook máximo   | 50|Se você atingir o limite de 50 parâmetros, você pode passar uma cadeia de caracteres JSON ou XML para um parâmetro e analisá-lo com o runbook.|

@@ -10,10 +10,10 @@ ms.reviewer: klam, LADocs
 ms.topic: reference
 ms.date: 08/15/2018
 ms.openlocfilehash: 506076e2d9b171e1ec1ff604519cbbfbe4339e87
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66733063"
 ---
 # <a name="functions-reference-for-workflow-definition-language-in-azure-logic-apps-and-microsoft-flow"></a>Referência de funções para a linguagem de definição de fluxo de trabalho em aplicativos lógicos do Azure e Microsoft Flow
@@ -1813,7 +1813,7 @@ E retornam estes resultados:
 
 <a name="float"></a>
 
-### <a name="float"></a>flutuante
+### <a name="float"></a>float
 
 Converter uma versão de cadeia de caracteres para um número de ponto flutuante em um número de ponto flutuante real.
 Você pode usar essa função somente quando passar parâmetros personalizados para um aplicativo, por exemplo, um aplicativo lógico ou fluxo.
@@ -2953,7 +2953,7 @@ E retornam estes resultados:
 
 <a name="parameters"></a>
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>parameters
 
 Retorne o valor para um parâmetro que é descrito em sua definição de fluxo de trabalho.
 
@@ -3344,7 +3344,7 @@ E retorna este resultado: `false`
 
 <a name="string"></a>
 
-### <a name="string"></a>string
+### <a name="string"></a>cadeia de caracteres
 
 Retornar a versão de cadeia de caracteres para um valor.
 

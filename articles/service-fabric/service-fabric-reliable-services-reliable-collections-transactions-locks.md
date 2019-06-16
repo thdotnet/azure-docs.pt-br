@@ -15,10 +15,10 @@ ms.workload: required
 ms.date: 5/1/2017
 ms.author: aljo
 ms.openlocfilehash: 9785a09a3ac3e119507b4ac28075d887c7edc619
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60774056"
 ---
 # <a name="transactions-and-lock-modes-in-azure-service-fabric-reliable-collections"></a>Transações e modos de bloqueio em Coleções Confiáveis do Azure Service Fabric
@@ -46,7 +46,7 @@ Há dois níveis de isolamento com suporte nas Coleções Confiáveis:
 As Coleções Confiáveis escolhem automaticamente o nível de isolamento a ser usado para uma determinada operação de leitura dependendo da operação e da função da réplica no momento da criação da transação.
 A seguir está a tabela que descreve os padrões de nível de isolamento para operações de Dicionário Confiável e Fila.
 
-| Operação\função | Primário | Secundário |
+| Operação\função | Primária | Secundário |
 | --- |:--- |:--- |
 | Leitura de entidade única |Leitura repetida |Instantâneo |
 | Enumeração, Contagem |Instantâneo |Instantâneo |

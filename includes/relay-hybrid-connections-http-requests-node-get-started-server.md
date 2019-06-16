@@ -9,10 +9,10 @@ ms.date: 05/02/2018
 ms.author: clemensv
 ms.custom: include file
 ms.openlocfilehash: fdd4e26839661ab9765b7d496e7f60c3686ba637
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66166162"
 ---
 ### <a name="create-a-nodejs-application"></a>Criar um aplicativo do Node.js
@@ -37,7 +37,7 @@ Execute `npm install hyco-https` em um prompt de comando do Node na pasta do pro
    3. `const keyrule` - o nome da chave SAS.
    4. `const key` - o valor da chave SAS.
 
-3. Adicione o seguinte código ao arquivo `listener.js`. : 
+3. Adicione o seguinte código ao arquivo `listener.js`. :
 
     Você perceberá que o código não é muito diferente de qualquer exemplo de servidor HTTP simples que você encontra em tutoriais de iniciantes do Node.js, com a exceção do uso de `createRelayedServer`, em vez da função `createServer` típica.
 

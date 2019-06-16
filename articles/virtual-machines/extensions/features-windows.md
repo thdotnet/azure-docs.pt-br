@@ -17,10 +17,10 @@ ms.date: 03/30/2018
 ms.author: roiyz
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: ce13f053c2adee6a9a347a4162b60cc6d6b40eda
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66160260"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Recursos e extensões da máquina virtual para Windows
@@ -62,7 +62,7 @@ Para fornecer a melhor experiência possível, há versões mínimas do agente. 
 O agente Convidado do Windows é executado em vários sistemas operacionais. No entanto, a estrutura de extensões tem um limite para os sistemas operacionais com extensões. Para obter mais informações, consulte [este artigo](https://support.microsoft.com/en-us/help/4078134/azure-extension-supported-operating-systems
 ).
 
-Algumas extensões não têm suporte em todos os sistemas de operacionais e podem emitir *Código de Erro 51, 'SO sem suporte'*. Consulte a documentação da extensão individual sobre a capacidade de suporte.
+Algumas extensões não têm suporte em todos os sistemas de operacionais e podem emitir *Código de Erro 51, 'SO sem suporte'* . Consulte a documentação da extensão individual sobre a capacidade de suporte.
 
 #### <a name="network-access"></a>Acesso à rede
 
@@ -291,7 +291,7 @@ Para verificar qual versão você está executando, consulte [Detectando o Agent
 
 #### <a name="extension-updates"></a>Atualizações de extensão
 
-Quando uma atualização da extensão estiver disponível, o Agente de Convidado do Windows baixará e atualizará a extensão. Atualizações automáticas de extensão são *Secundárias* ou *Hotfix*. Você pode aceitar ou recusar atualizações de extensões *Secundárias* ao provisionar a extensão. O exemplo a seguir mostra como atualizar automaticamente as versões secundárias em um modelo do Resource Manager com *autoUpgradeMinorVersion": true,'*:
+Quando uma atualização da extensão estiver disponível, o Agente de Convidado do Windows baixará e atualizará a extensão. Atualizações automáticas de extensão são *Secundárias* ou *Hotfix*. Você pode aceitar ou recusar atualizações de extensões *Secundárias* ao provisionar a extensão. O exemplo a seguir mostra como atualizar automaticamente as versões secundárias em um modelo do Resource Manager com *autoUpgradeMinorVersion": true,'* :
 
 ```json
     "properties": {
@@ -368,7 +368,7 @@ As seguintes etapas de solução de problemas aplicam-se a todas as extensões d
 
 ### <a name="view-extension-status"></a>Exibir o status da extensão
 
-Após executar uma extensão de VM em uma máquina virtual, use [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm) para retornar o status da extensão. O *Substatus [0]* mostra que o provisionamento de extensão foi bem-sucedido, o que significa que foi implantado com sucesso na VM, mas que houve falha na execução da extensão dentro da VM, *Substatus [1]*.
+Após executar uma extensão de VM em uma máquina virtual, use [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm) para retornar o status da extensão. O *Substatus [0]* mostra que o provisionamento de extensão foi bem-sucedido, o que significa que foi implantado com sucesso na VM, mas que houve falha na execução da extensão dentro da VM, *Substatus [1]* .
 
 ```powershell
 Get-AzVM -ResourceGroupName "myResourceGroup" -VMName "myVM" -Status
@@ -418,7 +418,7 @@ Você também pode remover uma extensão no portal do Azure da seguinte maneira:
 4. Escolha **Desinstalar**.
 
 ## <a name="common-vm-extensions-reference"></a>Referência a extensões de VM comuns
-| Nome da extensão | Descrição | Mais informações |
+| Nome da extensão | DESCRIÇÃO | Mais informações |
 | --- | --- | --- |
 | Extensão de script personalizado para o Windows |Executar scripts em uma máquina virtual do Azure |[Extensão de script personalizado para o Windows](custom-script-windows.md) |
 | Extensão de DSC para o Windows |Extensão PowerShell DSC (Configuração de Estado Desejado) |[Extensão DSC para Windows](dsc-overview.md) |

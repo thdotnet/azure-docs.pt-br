@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 5/5/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: c4928050f945ac88dd1f86e2a13b5d26d385e55a
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: c765c3e29166358f3504949136a67d8d0db96be8
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190023"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67078159"
 ---
 # <a name="azure-files-scalability-and-performance-targets"></a>Metas de desempenho e escalabilidade do Arquivos do Azure
 
@@ -42,16 +42,18 @@ Por exemplo:  Um único compartilhamento pode alcançar a 100.000 IOPS e um úni
 
 ### <a name="premium-filestorage-account-limits"></a>Limites de conta FileStorage Premium
 
-Compartilhamentos de arquivos do Premium são provisionados em uma conta de armazenamento especial chamada **filestorage (visualização)**. Essa conta tem destinos de escala ligeiramente diferente da conta de armazenamento usada para compartilhamentos de arquivos padrão. Para os destinos de escala de conta de armazenamento, consulte a tabela na [destinos de escala de conta de armazenamento do Azure](#azure-storage-account-scale-targets) seção.
+Compartilhamentos de arquivos do Premium são provisionados em uma conta de armazenamento especial chamada **filestorage (visualização)** . Essa conta tem destinos de escala ligeiramente diferente da conta de armazenamento usada para compartilhamentos de arquivos padrão. Para os destinos de escala de conta de armazenamento, consulte a tabela na [destinos de escala de conta de armazenamento do Azure](#azure-storage-account-scale-targets) seção.
 
 > [!IMPORTANT]
 > Limites da conta de armazenamento se aplicam a todos os compartilhamentos. Expandindo para o máximo de contas de armazenamento só é possível se houver apenas um compartilhamento por conta de armazenamento.
 
 [!INCLUDE [storage-files-scale-targets](../../../includes/storage-files-scale-targets.md)]
 
+[!INCLUDE [storage-files-premium-scale-targets](../../../includes/storage-files-premium-scale-targets.md)]
+
 ## <a name="azure-file-sync-scale-targets"></a>Destinos de escala de Sincronização de Arquivos do Azure
 
-Com a Sincronização de Arquivos do Azure, fizemos o possível para conseguir um design com uso ilimitado, no entanto, isso nem sempre é possível. A tabela a seguir indica os limites de nossos testes e as metas que realmente são limites fixos:
+A sincronização de Arquivos do Azure foi projetado com o objetivo de uso ilimitado, mas o uso ilimitado nem sempre é possível. A tabela a seguir indica os limites do teste da Microsoft e também indica quais destinos são limites rígidos:
 
 [!INCLUDE [storage-sync-files-scale-targets](../../../includes/storage-sync-files-scale-targets.md)]
 
@@ -82,11 +84,11 @@ Para ajudá-lo a planejar a implantação para cada um dos estágios, abaixo sã
 | Carregue a taxa de transferência | 20 objetos por segundo |
 | Fazer o download do Namespace * | 400 objetos por segundo |
 
-* Quando um novo ponto de extremidade do servidor é criado, o agente do Azure File Sync não faz o download de nenhum conteúdo do arquivo. Sincronizar primeiro namespace completo e, em seguida, os gatilhos em segundo plano Lembre-se de fazer o download dos arquivos, em sua totalidade ou, se camadas na nuvem está habilitado para a política de camadas de nuvem definido no ponto de extremidade do servidor.
+\* Quando um novo ponto de extremidade do servidor é criado, o agente do Azure File Sync não faz o download de nenhum conteúdo do arquivo. Sincronizar primeiro namespace completo e, em seguida, os gatilhos em segundo plano Lembre-se de fazer o download dos arquivos, em sua totalidade ou, se camadas na nuvem está habilitado para a política de camadas de nuvem definido no ponto de extremidade do servidor.
 
 | Sincronização contínua  |   |
 |-|--|
-| Número de objetos sincronizados| 125.000 objetos (aproximadamente 1% rotatividade) |
+| Número de objetos sincronizados| 125\.000 objetos (aproximadamente 1% rotatividade) |
 | Tamanho do conjunto de dados| 50 GiB |
 | Tamanho médio de arquivo | ~500 KiB |
 | Carregue a taxa de transferência | 30 objetos por segundo |

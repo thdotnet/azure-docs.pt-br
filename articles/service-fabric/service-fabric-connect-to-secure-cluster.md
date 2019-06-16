@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/29/2019
 ms.author: aljo
 ms.openlocfilehash: 703830778edb73781a263ae4d92529f7f79a0eb2
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66306853"
 ---
 # <a name="connect-to-a-secure-cluster"></a>Conectar a um cluster seguro
@@ -41,7 +41,7 @@ openssl pkcs12 -in your-cert-file.pfx -out your-cert-file.pem -nodes -passin pas
 
 Se o arquivo .pfx não for protegido por senha, use -passin pass: para o último parâmetro.
 
-Para especificar o certificado do cliente como um arquivo pem, especifique o caminho do arquivo no argumento `--pem`. Por exemplo: 
+Para especificar o certificado do cliente como um arquivo pem, especifique o caminho do arquivo no argumento `--pem`. Por exemplo:
 
 ```azurecli
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem
@@ -55,7 +55,7 @@ Para especificar um certificado, o par de chaves usa os argumentos `--cert` e `-
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --cert ./client.crt --key ./keyfile.key
 ```
 
-Às vezes, os certificados usados para proteger clusters de teste ou de desenvolvimento falham na validação do certificado. Para ignorar a verificação do certificado, especifique a opção `--no-verify`. Por exemplo: 
+Às vezes, os certificados usados para proteger clusters de teste ou de desenvolvimento falham na validação do certificado. Para ignorar a verificação do certificado, especifique a opção `--no-verify`. Por exemplo:
 
 > [!WARNING]
 > Não use a opção `no-verify` ao se conectar aos clusters de produção do Service Fabric.
@@ -64,7 +64,7 @@ sfctl cluster select --endpoint https://testsecurecluster.com:19080 --cert ./cli
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem --no-verify
 ```
 
-Além disso, você pode especificar caminhos para diretórios de certificados de CA confiáveis ou certificados individuais. Para especificar esses caminhos, use o argumento `--ca`. Por exemplo: 
+Além disso, você pode especificar caminhos para diretórios de certificados de CA confiáveis ou certificados individuais. Para especificar esses caminhos, use o argumento `--ca`. Por exemplo:
 
 ```azurecli
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem --ca ./trusted_ca

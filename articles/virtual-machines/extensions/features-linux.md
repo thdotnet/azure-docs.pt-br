@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
-ms.openlocfilehash: bf6eca33eb1448eb84065fb7fe184d01e77feb61
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c83eb1f6525c54bc44386f84498789b50bf19043
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60387258"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64721142"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Recursos e extensões da máquina virtual para Linux
 
@@ -57,7 +57,7 @@ Para fornecer a melhor experiência possível, há versões mínimas do agente. 
 O agente para Linux executa em vários sistemas operacionais. No entanto, a estrutura de extensões tem um limite para os sistemas operacionais com extensões. Para obter mais informações, consulte [este artigo](https://support.microsoft.com/en-us/help/4078134/azure-extension-supported-operating-systems
 ).
 
-Algumas extensões não têm suporte em todos os sistemas de operacionais e podem emitir *Código de Erro 51, 'SO sem suporte'*. Consulte a documentação da extensão individual sobre a capacidade de suporte.
+Algumas extensões não têm suporte em todos os sistemas de operacionais e podem emitir *Código de Erro 51, 'SO sem suporte'* . Consulte a documentação da extensão individual sobre a capacidade de suporte.
 
 #### <a name="network-access"></a>Acesso à rede
 
@@ -264,7 +264,7 @@ O 'Agente de estado de meta' é a versão de atualização automática.
 
 #### <a name="extension-updates"></a>Atualizações de extensão
 
-Quando uma atualização de extensão está disponível, o Agente para Linux baixa e atualiza a extensão. Atualizações automáticas de extensão são *Secundárias* ou *Hotfix*. Você pode aceitar ou recusar atualizações de extensões *Secundárias* ao provisionar a extensão. O exemplo a seguir mostra como atualizar automaticamente as versões secundárias em um modelo do Resource Manager com *autoUpgradeMinorVersion": true,'*:
+Quando uma atualização de extensão está disponível, o Agente para Linux baixa e atualiza a extensão. Atualizações automáticas de extensão são *Secundárias* ou *Hotfix*. Você pode aceitar ou recusar atualizações de extensões *Secundárias* ao provisionar a extensão. O exemplo a seguir mostra como atualizar automaticamente as versões secundárias em um modelo do Resource Manager com *autoUpgradeMinorVersion": true,'* :
 
 ```json
     "publisher": "Microsoft.Azure.Extensions",
@@ -337,7 +337,7 @@ As seguintes etapas de solução de problemas aplicam-se a todas as extensões d
 
 1. Para verificar o Log do agente do Linux, observe a atividade em que a extensão estava sendo provisionada em */var/log/waagent.log*
 
-2. Verifique os logs de extensão reais para mais detalhes em */var/log/azure/<extensionName>*
+2. Verifique os logs de extensão real para obter mais detalhes no */var/log/azure/\<extensionName >*
 
 3. Verifique as seções de solução de problemas da documentação específica da extensão para códigos de erro, problemas conhecidos etc.
 
@@ -411,6 +411,6 @@ Você também pode remover uma extensão no portal do Azure da seguinte maneira:
 | Extensão de Diagnóstico do Azure |Gerenciar Diagnóstico do Azure |[Extensão de Diagnóstico do Azure](https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/) |
 | Extensão de Acesso à VM do Azure |Gerenciar usuários e credenciais |[Extensão de Acesso à VM para Linux](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Para obter mais informações sobre extensões de VM, consulte [Visão geral de recursos e extensões de máquina virtual do Azure](overview.md).

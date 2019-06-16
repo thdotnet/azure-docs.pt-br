@@ -13,12 +13,12 @@ ms.date: 11/12/2018
 ms.author: lizross
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06112361434a8217df6714a70d0059c175e98ac8
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: df20c8b863a6abb1cdb4d53c0057b223fe9fdaf5
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65521712"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110437"
 ---
 # <a name="frequently-asked-questions-about-azure-active-directory"></a>Perguntas frequentes sobre o Azure Active Directory
 O Azure AD (Azure Active Directory) é uma solução abrangente de IDaaS (identidade como um serviço) que inclui todos os aspectos de identidade, gerenciamento de acesso e segurança.
@@ -59,7 +59,7 @@ Além disso, os serviços pagos do Azure AD, como Enterprise Mobility + Security
 - - -
 **P: Existe um relatório que mostra quando minhas licenças de usuário do Microsoft Azure Active Directory irão expirar?**
 
-**R:** Não.  Isso não está disponível atualmente.
+**R:**  Não.  Isso não está disponível atualmente.
 
 - - -
 
@@ -196,7 +196,7 @@ Para saber mais, confira [Como fornecer acesso remoto seguro a aplicativos locai
 - - -
 **P: Como exigir a autenticação multifator para usuários que acessam determinado aplicativo?**
 
-**R:** Com o acesso condicional do Microsoft Azure Active Directory, você pode atribuir uma política de acesso exclusiva para cada aplicativo. Em sua política, você pode sempre exigir autenticação multifator ou quando os usuários não estiverem conectados à rede local.  
+**R:** Com acesso condicional do Azure AD, você pode atribuir uma política de acesso exclusivo para cada aplicativo. Em sua política, você pode sempre exigir autenticação multifator ou quando os usuários não estiverem conectados à rede local.  
 
 Para saber mais, confira [Proteger o acesso ao Office 365 e a outros aplicativos conectados ao Azure Active Directory](../active-directory-conditional-access-azure-portal.md).
 
@@ -210,4 +210,4 @@ Para saber mais, confira [Automatizar o provisionamento e o desprovisionamento d
 - - -
 **P:  Posso configurar uma conexão LDAP segura com o Microsoft Azure Active Directory?**
 
-**R:**  Não. Azure AD não oferece suporte a protocolo Lightweight Directory Access Protocol (LDAP) ou o LDAP seguro diretamente. No entanto, é possível habilitar a instância de serviços de domínio do Azure AD (Azure AD DS) em seu locatário do AD do Azure com grupos de segurança de rede corretamente configurada por meio de rede do Azure para obter conectividade de LDAP. Para obter mais informações, consulte https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-admin-guide-configure-secure-ldap.
+**R:**   Não. Azure AD não oferece suporte a protocolo Lightweight Directory Access Protocol (LDAP) ou o LDAP seguro diretamente. No entanto, é possível habilitar a instância de serviços de domínio do Azure AD (Azure AD DS) em seu locatário do AD do Azure com grupos de segurança de rede corretamente configurada por meio de rede do Azure para obter conectividade de LDAP. Para obter mais informações, consulte https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-admin-guide-configure-secure-ldap.

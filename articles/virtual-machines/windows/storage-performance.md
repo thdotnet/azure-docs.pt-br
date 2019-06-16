@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/17/2019
 ms.author: joelpell
-ms.openlocfilehash: f84e81a5a9e9c9cf6f477adefa0869d776f7dd71
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ec6a6ea5d00d43f6dffa3aabc367d94ebb8db198
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61487334"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075598"
 ---
 # <a name="optimize-performance-on-the-lsv2-series-virtual-machines"></a>Otimizar o desempenho em máquinas virtuais série Lsv2
 
@@ -24,7 +24,7 @@ Máquinas virtuais da série Lsv2 suporte a uma variedade de cargas de trabalho 
 
 O design das máquinas virtuais (VMs) série Lsv2 maximiza o processador AMD EPYC™ 7551 para fornecer o melhor desempenho entre o processador, memória, dispositivos NVMe e as VMs. Além de maximizar o desempenho de hardware, as VMs da série Lsv2 são projetadas para trabalhar com as necessidades dos sistemas operacionais Windows e Linux para um melhor desempenho com o hardware e software.
 
-Ajuste de software e hardware resultou na versão otimizada [Datacenter do Windows Server 2019](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview), lançado no início de dezembro de 2018 no Azure Marketplace, que dá suporte ao máximo de desempenho nos dispositivos NVMe série Lsv2 VMs.
+Ajuste de software e hardware resultou na versão otimizada [Datacenter do Windows Server 2019](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview), lançado no início de dezembro de 2018 no Azure Marketplace, que dá suporte ao máximo de desempenho nos dispositivos NVMe série Lsv2 VMs.
 
 Este artigo fornece dicas e sugestões para garantir que seus aplicativos e cargas de trabalho atingir o máximo desempenho projetado para as VMs. As informações nesta página serão atualizadas continuamente conforme mais imagens Lsv2 otimizado são adicionadas ao Azure Marketplace.
 

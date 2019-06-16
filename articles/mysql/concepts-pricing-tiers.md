@@ -6,12 +6,12 @@ ms.author: janeng
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.openlocfilehash: 8e3d12db8d2500a2675e451580bee7072d22d41c
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 20fb352e65a570063d9a0f55667db073f8a4ee27
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66225440"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062418"
 ---
 # <a name="azure-database-for-mysql-pricing-tiers"></a>Tipos de preço no Banco de Dados do Azure para MySQL
 
@@ -54,6 +54,25 @@ O armazenamento provisionado é a quantidade de capacidade de armazenamento disp
 Você pode adicionar mais capacidade de armazenamento durante e após a criação do servidor e permitir que o sistema crescer automaticamente com base no consumo de armazenamento de sua carga de trabalho de armazenamento. A camada Básico não oferece garantia de IOPS. Nos tipos de preço Uso Geral e Otimizado para Memória, o IOPS é dimensionado com o tamanho de armazenamento provisionado a uma taxa de 3:1.
 
 Você pode monitorar o consumo de E/S no Portal do Azure ou usando os comandos da CLI do Azure. As métricas relevantes para monitorar são o [limite de armazenamento, porcentagem de armazenamento, armazenamento usado e porcentagem de E/S](concepts-monitoring.md).
+
+### <a name="large-storage-preview"></a>Armazenamento de grande (visualização)
+
+Estamos aumentando os limites de armazenamento em camadas nosso uso geral e otimizado para memória. Recém-criados em servidores que participar da visualização pode provisionar até 16 TB de armazenamento. O IOPS é dimensionado em uma taxa de 3:1 até 20.000 IOPS. Assim como acontece com o armazenamento disponível atual, você pode adicionar mais capacidade de armazenamento após a criação do servidor e permitir que o sistema crescer automaticamente com base no consumo de armazenamento de sua carga de trabalho de armazenamento.
+
+|              | **Uso geral** | **Otimizado para memória** |
+|:-------------|:--------------------|:---------------------|
+| Tipo de armazenamento | Armazenamento Premium do Azure | Armazenamento Premium do Azure |
+| Tamanho do armazenamento | 32 GB a 16 TB| 32 a 16 TB |
+| Tamanho do incremento de armazenamento | 1 GB | 1 GB |
+| IOPS | 3 IOPS/GB<br/>Mín 100 IOPS<br/>20\.000 IOPS máxima| 3 IOPS/GB<br/>Mín 100 IOPS<br/>20\.000 IOPS máxima |
+
+> [!IMPORTANT]
+> Armazenamento de grande está atualmente em visualização pública nas seguintes regiões: Leste dos EUA, Leste dos EUA 2, centro dos EUA, oeste dos EUA, oeste dos EUA 2, Europa Setentrional, Europa Ocidental, Sudeste Asiático, Leste do Japão, Coreia Central, Leste da Austrália.
+>
+> A visualização do armazenamento de grandes atualmente não dá suporte:
+>
+> * Backups com redundância geográfica
+> * Replicação de região cruzada
 
 ### <a name="reaching-the-storage-limit"></a>Alcançando o limite de armazenamento
 

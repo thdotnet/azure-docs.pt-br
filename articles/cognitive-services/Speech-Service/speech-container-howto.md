@@ -3,19 +3,19 @@ title: Instalar os contêineres de fala
 titleSuffix: Azure Cognitive Services
 description: Instalar e executar os contêineres de fala. A conversão de fala em texto transcreve, em tempo real, fluxos de áudio em texto que seus aplicativos, ferramentas ou dispositivos podem consumir ou exibir. A conversão de texto em fala converte o texto de entrada em uma fala sintetizada semelhante à humana.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/28/2019
-ms.author: diberry
-ms.openlocfilehash: 763e7bc9298eee1ab602968360bbc79a58243e5b
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.date: 06/11/2019
+ms.author: dapine
+ms.openlocfilehash: 93ae5dd00a7be929f7aa4ac8c35a30b856f0b3ad
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66752431"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072466"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Instalar e executar contêineres do serviço de fala
 
@@ -23,7 +23,7 @@ Contêineres de fala permitem que os clientes criar uma arquitetura de aplicativ
 
 São os contêineres de duas fala **fala em texto** e **texto em fala**. 
 
-|Função|Recursos|Mais recente|
+|Função|Recursos|mais recente|
 |-|-|--|
 |Conversão de fala em texto| <li>Transcreve contínua em tempo real de fala ou lote gravações de áudio em texto com os resultados intermediários.|1.1.1|
 |Conversão de texto em fala| <li>Converte o texto em fala que soa natural. com a entrada de texto sem formatação ou Speech Synthesis Markup Language (SSML). |1.1.0|
@@ -71,14 +71,13 @@ A tabela a seguir descreve os núcleos de CPU e memória para alocar para cada c
 
 * Cada núcleo precisa ser de pelo menos 2,6 GHz (gigahertz) ou mais rápido.
 
-
 Memória e núcleo correspondem às configurações `--cpus` e `--memory`, que são usadas como parte do comando `docker run`.
 
-**Observação**; Mínimos e recomendados são baseadas em limites de Docker *não* recursos do computador host. Por exemplo, partes de mapa de memória de contêineres de fala em texto de um modelo de linguagem grande e ele é _recomendado_ que o arquivo inteiro se ajuste na memória, que é um adicional de 4 a 6 GB. Além disso, a primeira execução de qualquer contêiner poderá demorar mais, uma vez que os modelos estão sendo paginados na memória.
+**Observação**; Mínimos e recomendados são baseadas em limites de Docker *não* recursos do computador host. Por exemplo, partes de mapa de memória de contêineres de fala em texto de um modelo de linguagem grande e ele é _recomendado_ que o arquivo inteiro se ajuste na memória, que é um adicional de 4 a 6 GB. Além disso, a primeira execução de um contêiner pode demorar mais, uma vez que os modelos estão sendo paginados na memória.
 
 ## <a name="get-the-container-image-with-docker-pull"></a>Obter a imagem de contêiner com `docker pull`
 
-Imagens de contêiner para conversão de fala estão disponíveis. 
+Imagens de contêiner para conversão de fala estão disponíveis.
 
 | Contêiner | Repositório |
 |-----------|------------|
@@ -89,7 +88,7 @@ Imagens de contêiner para conversão de fala estão disponíveis.
 
 ### <a name="language-locale-is-in-container-tag"></a>Localidade do idioma é na marca de contêiner
 
-O `latest` pulls de marca a `en-us` localidade e `jessarus` voz. 
+O `latest` pulls de marca a `en-us` localidade e `jessarus` voz.
 
 #### <a name="speech-to-text-locales"></a>Conversão de fala em localidades de texto
 
@@ -118,7 +117,6 @@ A tabela a seguir lista as localidades com suporte para **fala em texto** na 1.1
 |Coreano|`ko-kr`|
 |Português|`pt-br`|
 |Espanhol|`es-es`<br>`es-mx`|
-
 
 #### <a name="text-to-speech-locales"></a>Localidades de texto em fala
 
@@ -171,8 +169,8 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 
 Depois que o contêiner estiver no [computador host](#the-host-computer), use o processo a seguir para trabalhar com o contêiner.
 
-1. [Execute o contêiner](#run-the-container-with-docker-run) com as configurações de cobrança necessárias, mas não utilizadas. Há outros [exemplos](speech-container-configuration.md#example-docker-run-commands) do comando `docker run` disponíveis. 
-1. [Consulte o ponto de extremidade de previsão do contêiner](#query-the-containers-prediction-endpoint). 
+1. [Execute o contêiner](#run-the-container-with-docker-run) com as configurações de cobrança necessárias, mas não utilizadas. Há outros [exemplos](speech-container-configuration.md#example-docker-run-commands) do comando `docker run` disponíveis.
+1. [Consulte o ponto de extremidade de previsão do contêiner](#query-the-containers-prediction-endpoint).
 
 ## <a name="run-the-container-with-docker-run"></a>Executar o contêiner com `docker run`
 
@@ -194,7 +192,7 @@ docker run --rm -it -p 5000:5000 --memory 2g --cpus 1 \
 containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech \
 Eula=accept \
 Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY} 
+ApiKey={BILLING_KEY}
 ```
 
 ### <a name="speech-to-text"></a>Conversão de fala em texto
@@ -204,7 +202,7 @@ docker run --rm -it -p 5000:5000 --memory 2g --cpus 2 \
 containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text \
 Eula=accept \
 Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY} 
+ApiKey={BILLING_KEY}
 ```
 
 Esse comando:
@@ -212,7 +210,7 @@ Esse comando:
 * Execute um contêiner de fala a partir da imagem de contêiner
 * Aloca os núcleos de CPU de 2 a 2 gigabytes (GB) de memória
 * Expõe a porta TCP 5000 e aloca um pseudo-TTY para o contêiner
-* Remove automaticamente o contêiner depois que ele sai. A imagem de contêiner ainda fica disponível no computador host. 
+* Remove automaticamente o contêiner depois que ele sai. A imagem de contêiner ainda fica disponível no computador host.
 
 > [!IMPORTANT]
 > As opções `Eula`, `Billing` e `ApiKey` devem ser especificadas para executar o contêiner; caso contrário, o contêiner não será iniciado.  Para mais informações, consulte [Faturamento](#billing).
@@ -241,7 +239,9 @@ var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRe
 use esta chamada usando o ponto de extremidade do contêiner:
 
 ```C#
-var config = SpeechConfig.FromEndpoint("ws://localhost:5000/speech/recognition/dictation/cognitiveservices/v1", "YourSubscriptionKey");
+var config = SpeechConfig.FromEndpoint(
+    new Uri("ws://localhost:5000/speech/recognition/dictation/cognitiveservices/v1"),
+    "YourSubscriptionKey");
 ```
 
 #### <a name="for-python"></a>Para o Python
@@ -262,9 +262,7 @@ speech_config = speechsdk.SpeechConfig(subscription=speech_key, endpoint="ws://l
 
 O contêiner fornece o ponto de extremidade REST APIs que podem ser encontradas [aqui](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech) e os exemplos podem ser encontrados [aqui](https://azure.microsoft.com/resources/samples/cognitive-speech-tts/).
 
-
 [!INCLUDE [Validate container is running - Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
-
 
 ## <a name="stop-the-container"></a>Parar o contêiner
 
@@ -272,11 +270,11 @@ O contêiner fornece o ponto de extremidade REST APIs que podem ser encontradas 
 
 ## <a name="troubleshooting"></a>solução de problemas
 
-Quando você executa o contêiner, ele usa **StdOut** e **stderr** para gerar informações úteis para solucionar problemas que ocorrem durante a inicialização ou a execução do contêiner. 
+Quando você executa o contêiner, ele usa **StdOut** e **stderr** para gerar informações úteis para solucionar problemas que ocorrem durante a inicialização ou a execução do contêiner.
 
 ## <a name="billing"></a>Cobrança
 
-O envio de contêineres de fala cobrança informações do Azure, usando um _fala_ recurso em sua conta do Azure. 
+O envio de contêineres de fala cobrança informações do Azure, usando um _fala_ recurso em sua conta do Azure.
 
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 

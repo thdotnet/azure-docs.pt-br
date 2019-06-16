@@ -10,10 +10,10 @@ ms.date: 05/14/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 0ac34f1d1e7fc2a967c7608f31f3b943f9380d01
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65786200"
 ---
 # <a name="variable-assets-in-azure-automation"></a>Ativos variáveis na Automação do Azure
@@ -41,17 +41,17 @@ Você pode armazenar vários valores para uma única variável criando uma matri
 
 A seguir está uma lista de tipos de variáveis disponíveis na automação:
 
-* String
-* Integer
+* Cadeia de caracteres
+* Número inteiro
 * DateTime
 * Boolean
-* Null
+* Nulo
 
 ## <a name="azurerm-powershell-cmdlets"></a>Cmdlets do AzureRM PowerShell
 
 Para o AzureRM, os cmdlets na tabela a seguir são usados para criar e gerenciar ativos de credenciais de automação com o Windows PowerShell. Eles são fornecidos como parte dos [módulo Azurerm](/powershell/azure/overview), que está disponível para uso em runbooks de automação e configurações de DSC.
 
-| Cmdlets | Descrição |
+| Cmdlets | DESCRIÇÃO |
 |:---|:---|
 |[Get-AzureRmAutomationVariable](/powershell/module/AzureRM.Automation/Get-AzureRmAutomationVariable)|Recupera o valor de uma variável existente.|
 |[New-AzureRmAutomationVariable](/powershell/module/AzureRM.Automation/New-AzureRmAutomationVariable)|Cria uma nova variável e define o seu valor.|
@@ -62,7 +62,7 @@ Para o AzureRM, os cmdlets na tabela a seguir são usados para criar e gerenciar
 
 As atividades na tabela a seguir são usadas para acessar credenciais em um runbook ou em uma configuração DSC.
 
-| Atividades | Descrição |
+| Atividades | DESCRIÇÃO |
 |:---|:---|
 |Get-AutomationVariable|Recupera o valor de uma variável existente.|
 |Set-AutomationVariable|Define o valor de uma variável existente.|
@@ -72,7 +72,7 @@ As atividades na tabela a seguir são usadas para acessar credenciais em um runb
 
 As funções na tabela a seguir são usadas para acessar e recuperar variáveis em um runbook Python2.
 
-|Funções Python2|Descrição|
+|Funções Python2|DESCRIÇÃO|
 |:---|:---|
 |automationassets.get_automation_variable|Recupera o valor de uma variável existente. |
 |automationassets.set_automation_variable|Define o valor de uma variável existente. |
@@ -114,7 +114,7 @@ $vmName = $vmValue.Name
 $vmIpAddress = $vmValue.IpAddress
 ```
 
-## <a name="using-a-variable-in-a-runbook-or-dsc-configuration"></a>Usando uma variável em um runbook ou configuração DSC 
+## <a name="using-a-variable-in-a-runbook-or-dsc-configuration"></a>Usando uma variável em um runbook ou configuração DSC
 
 Use a atividade **Set-AutomationVariable** para definir o valor de uma variável da Automação em um runbook do PowerShell ou uma configuração DSC e **Get-AutomationVariable** para recuperá-la. Você não deve usar os cmdlets **Set-AzureRMAutomationVariable** ou **Get-AzureRMAutomationVariable** em um runbook ou configuração DSC, já que eles são menos eficientes do que as atividades de fluxo de trabalho. Também não é possível recuperar o valor de variáveis protegidas com o **Get-AzureRMAutomationVariable**. A única maneira de criar uma nova variável de dentro de um runbook ou configuração DSC é usar o cmdlet [New-AzureRMAutomationVariable](/powershell/module/AzureRM.Automation/New-AzureRmAutomationVariable).
 

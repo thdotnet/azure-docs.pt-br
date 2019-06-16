@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/19/2018
 ms.author: atsenthi
-ms.openlocfilehash: 5e93bb3b206fbef6beb09b7aca6df0742a80ccf1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e5fb28b176ce14a9b871b2a6a775e0017fcc993d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60621506"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052674"
 ---
 # <a name="service-fabric-application-and-service-manifests"></a>Manifestos de serviço e aplicativo do Service Fabric
 Este artigo descreve como os serviços e aplicativos do Service Fabric são definidos e atualizados usando os arquivos. ServiceManifest.xml e ApplicationManifest.xml.  Para obter exemplos mais detalhados, confira [Exemplos de manifesto de aplicativo e de serviço](service-fabric-manifest-examples.md).  O esquema XML para esses arquivos de manifesto está documentado em [documentação do esquema ServiceFabricServiceModel.xsd](service-fabric-service-model-schema.md).
@@ -74,7 +74,7 @@ O manifesto do serviço declarativamente define o tipo de serviço e a versão. 
 
 O executável especificado pelo **EntryPoint** normalmente é o host de serviço de longa duração. **SetupEntryPoint** é um ponto de entrada privilegiado que é executado com as mesmas credenciais da Malha do Serviço (normalmente, a conta *LocalSystem* ) antes de qualquer outro ponto de entrada.  A presença de um ponto de entrada de instalação separado evita a necessidade de executar o host de serviço com altos privilégios por longos períodos de tempo. O executável especificado pelo **EntryPoint** é executado depois que o **SetupEntryPoint** é encerrado com êxito. Se o processo terminar ou falhar, o processo resultante é monitorado e reiniciado (começando novamente com **SetupEntryPoint**) .  
 
-Cenários típicos de uso do **SetupEntryPoint** quando você executa um executável antes do início do serviço ou você executa uma operação com privilégios elevados. Por exemplo: 
+Cenários típicos de uso do **SetupEntryPoint** quando você executa um executável antes do início do serviço ou você executa uma operação com privilégios elevados. Por exemplo:
 
 * Configurar e inicializar as variáveis de ambiente que o serviço executável precisa. Isso não é limitado a apenas executáveis gravados usando os modelos de programação do Service Fabric. Por exemplo, npm.exe precisa de algumas variáveis de ambiente configurados para implantar um aplicativo node.js.
 * Configurando o controle de acesso, instalando certificados de segurança.
@@ -96,7 +96,7 @@ Para obter mais informações sobre como configurar o SetupEntryPoint, consulte 
 </Settings>
 ```
 
-Um **ponto de extremidade** de serviço do Service Fabric é um exemplo de um recurso do Service Fabric; um recurso do Service Fabric pode ser declarado/alterado sem alterar o código compilado. O acesso aos recursos do Service Fabric que são especificados no manifesto do serviço pode ser controlado por meio do **SecurityGroup** no manifesto do aplicativo. Quando um recurso de ponto de extremidade é definido no manifesto do serviço, o Service Fabric atribui portas do intervalo de portas reservadas do aplicativo quando uma porta não é explicitamente especificada. Leia mais sobre [especificar ou substituir os recursos de endpoint](service-fabric-service-manifest-resources.md).
+Um serviço do Service Fabric **ponto de extremidade** é um exemplo de um recurso de malha do serviço. Um recurso de malha de serviço podem ser declarados/alterados sem alterar o código compilado. O acesso aos recursos do Service Fabric que são especificados no manifesto do serviço pode ser controlado por meio do **SecurityGroup** no manifesto do aplicativo. Quando um recurso de ponto de extremidade é definido no manifesto do serviço, o Service Fabric atribui portas do intervalo de portas reservadas do aplicativo quando uma porta não é explicitamente especificada. Leia mais sobre [especificar ou substituir os recursos de endpoint](service-fabric-service-manifest-resources.md).
 
 
 <!--
@@ -163,7 +163,11 @@ Manifestos de serviço, como atributos **Versão** , são cadeias de caracteres 
 
 **Certificados** (não definido no exemplo anterior) declara os certificados usados para [configurar endpoints HTTPS](service-fabric-service-manifest-resources.md#example-specifying-an-https-endpoint-for-your-service) ou [criptografar segredos no manifesto do aplicativo](service-fabric-application-secret-management.md).
 
-**Políticas** (não definido no exemplo anterior) descreve a coleta de log, [executar como padrão](service-fabric-application-runas-security.md), [integridade](service-fabric-health-introduction.md#health-policies) e políticas de [acesso de segurança](service-fabric-application-runas-security.md) a serem definidas no nível do aplicativo.
+**As políticas** (não definido no exemplo anterior) descreve a coleta de log [executar como padrão](service-fabric-application-runas-security.md), [integridade](service-fabric-health-introduction.md#health-policies), e [acesso de segurança](service-fabric-application-runas-security.md) políticas definir no nível de aplicativo, incluindo se os serviços têm acesso ao tempo de execução do Service Fabric.
+
+> [!NOTE] 
+> Por padrão, os aplicativos do Service Fabric têm acesso ao tempo de execução do Service Fabric, na forma de um ponto de extremidade aceitando solicitações específicas do aplicativo e as variáveis de ambiente que aponta para os caminhos de arquivo no host que contém arquivos específicos do aplicativo e malha . Considere desabilitar esse acesso quando o aplicativo hospeda o código não confiável (ou seja, código cujo provenance é desconhecido ou que sabe que o proprietário do aplicativo não deve para ser seguro para execução). Para obter mais informações, consulte [práticas recomendadas de segurança no Service Fabric](service-fabric-best-practices-security.md#platform-isolation). 
+>
 
 **Entidades** (não definido no exemplo anterior) descrevem as entidades de segurança (usuários ou grupos) necessárias para [executar serviços e proteger recursos do serviço](service-fabric-application-runas-security.md).  As entidades de segurança são referenciadas nas seções de **Políticas**.
 

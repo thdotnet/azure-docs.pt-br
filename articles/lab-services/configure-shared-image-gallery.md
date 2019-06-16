@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: spelluru
-ms.openlocfilehash: fba969b70ae052c928f33888d3c93eb7683ae9f7
-ms.sourcegitcommit: ec7b0bf593645c0d1ef401a3350f162e02c7e9b8
+ms.openlocfilehash: de857498aeb51c9b3711c90338d983e85b61cb70
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455737"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67065431"
 ---
 # <a name="configure-a-shared-image-gallery-in-azure-devtest-labs"></a>Configurar uma galeria de imagem compartilhada no Azure DevTest Labs
-Laboratórios de desenvolvimento/teste agora é compatível com o [Galeria de imagens compartilhadas](/virtual-machines/windows/shared-image-galleries.md) recurso. Ele permite que os usuários do laboratório acessem imagens de um local compartilhado durante a criação de recursos de laboratório. Ele também ajuda você a criar estrutura e organização em torno de suas imagens de VM gerenciadas de modo personalizado. O recurso de galeria de imagens compartilhadas dá suporte a:
+Laboratórios de desenvolvimento/teste agora é compatível com o [Galeria de imagens compartilhadas](../virtual-machines/windows/shared-image-galleries.md) recurso. Ele permite que os usuários do laboratório acessem imagens de um local compartilhado durante a criação de recursos de laboratório. Ele também ajuda você a criar estrutura e organização em torno de suas imagens de VM gerenciadas de modo personalizado. O recurso de galeria de imagens compartilhadas dá suporte a:
 
 - Replicação global gerenciada de imagens
 - Controle de versão e agrupamento de imagens para que o gerenciamento seja mais fácil

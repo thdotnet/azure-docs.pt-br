@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshoot
 ms.date: 04/08/2019
 ms.author: v-chjenk
-ms.openlocfilehash: 8e344d6908ba19f8e2294c7777b9c1016eafaf52
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 43f940c3c5b0fcf06fb5aa9be268f85db19fc8a6
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64927636"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077656"
 ---
 # <a name="troubleshooting-overview-feedback-and-support"></a>Visão geral da solução de problemas, comentários e suporte
 
@@ -24,7 +24,7 @@ Atualmente, não estamos usando casos de suporte durante a versão prévia da Á
 
 ## <a name="escalation-tracks"></a>Faixas de escalonamento de bloqueios
 
-Use a tabela a seguir para identificar e resolver problemas que você pode encontrar ao configurar um ambiente de locatário usando o cliente de área de trabalho remota.
+Use a tabela a seguir para identificar e resolver problemas que você pode encontrar ao configurar um ambiente de locatário usando o cliente de área de trabalho remota. Depois de configurar seu locatário, você pode usar nosso novo [serviço de diagnóstico](https://docs.microsoft.com/azure/virtual-desktop/diagnostics-role-service) para identificar problemas para cenários comuns.
 
 >[!NOTE]
 >Atualmente, não estamos usando casos de suporte durante a versão prévia da Área de Trabalho Virtual do Windows. Sempre que fazemos referência ao suporte da área de trabalho Virtual do Windows, acesse nosso fórum da comunidade de tecnologia por enquanto. Visite o [comunidade de tecnologia de área de trabalho Virtual do Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop) para discutir problemas com a equipe de produto e os membros da comunidade do Active Directory. Se você precisar resolver um problema de suporte, inclua a ID de atividade e o período de tempo aproximado para quando o problema ocorreu.
@@ -34,8 +34,8 @@ Use a tabela a seguir para identificar e resolver problemas que você pode encon
 | Criação de um locatário                                                    | Se houver uma interrupção do Azure, entre em contato com [suporte do Azure](https://azure.microsoft.com/support/options/); caso contrário, entre em contato com **suporte remoto Desktop Windows/serviços de área de trabalho Virtual**.|
 | Acessando modelos do Marketplace no portal do Azure       | Se houver uma interrupção do Azure, entre em contato com [suporte do Azure](https://azure.microsoft.com/support/options/). <br> <br> Modelos de área de trabalho Virtual do Windows Marketplace do Azure estão disponíveis gratuitamente.|
 | Acessando o Azure Resource Manager templates do GitHub                                  | Consulte a seção "Host de sessão da área de trabalho Virtual do Windows Criando VMs" [criação de pool de locatário e host](troubleshoot-set-up-issues.md). Se o problema ainda não foi resolvido, entre em contato com o [equipe de suporte do GitHub](https://github.com/contact). <br> <br> Se o erro ocorrer depois de acessar o modelo no GitHub, entre em contato com [suporte do Azure](https://azure.microsoft.com/support/options/).|
-| Configurações de rede Virtual do Azure (VNET) e a rota expressa de pool de host do sessão               | Entre em contato com **suporte do Azure (rede)**. |
-| Pool de host de sessão criação de máquina Virtual (VM) quando os modelos do Azure Resource Manager fornecidos com a área de trabalho Virtual do Windows não estão sendo usados. | Entre em contato com **suporte do Azure (computação)**. <br> <br> Para problemas com os modelos do Azure Resource Manager que são fornecidos com a área de trabalho Virtual do Windows, consulte a seção de locatário de criação de Desktop Virtual do Windows do [criação de pool de locatário e host](troubleshoot-set-up-issues.md). |
+| Configurações de rede Virtual do Azure (VNET) e a rota expressa de pool de host do sessão               | Entre em contato com **suporte do Azure (rede)** . |
+| Pool de host de sessão criação de máquina Virtual (VM) quando os modelos do Azure Resource Manager fornecidos com a área de trabalho Virtual do Windows não estão sendo usados. | Entre em contato com **suporte do Azure (computação)** . <br> <br> Para problemas com os modelos do Azure Resource Manager que são fornecidos com a área de trabalho Virtual do Windows, consulte a seção de locatário de criação de Desktop Virtual do Windows do [criação de pool de locatário e host](troubleshoot-set-up-issues.md). |
 | Gerenciando o ambiente de host de sessão de área de trabalho Virtual do Windows no portal do Azure    | Entre em contato com **suporte do Azure**. <br> <br> Para problemas de gerenciamento ao usar o Remote Desktop Services/Windows Virtual da área de trabalho PowerShell, consulte [Windows PowerShell de área de trabalho Virtual](troubleshoot-powershell.md) ou entre em contato com o **equipe de suporte ao Remote Desktop Services/Windows área de trabalho Virtual** . |
 | Gerenciamento de configuração de área de trabalho Virtual do Windows vinculados aos pools de host e grupos de aplicativos (grupos de aplicativos)      | Ver [Windows PowerShell de área de trabalho Virtual](troubleshoot-powershell.md), ou entre em contato com o **equipe de suporte ao Remote Desktop Services/Windows área de trabalho Virtual**. <br> <br> Se os problemas estão vinculados a interface gráfica do usuário (GUI) exemplo, fale com a comunidade do Yammer.|
 | Mau funcionamento de clientes de área de trabalho remota em Iniciar                                                 | Ver [conexões de cliente de área de trabalho remota](troubleshoot-client-connection.md) e, se isso não resolver o problema, contate **equipe de suporte ao Remote Desktop Services/Windows área de trabalho Virtual**.  <br> <br> Se for um problema de rede, os usuários precisam entrar em contato com seu administrador de rede. |

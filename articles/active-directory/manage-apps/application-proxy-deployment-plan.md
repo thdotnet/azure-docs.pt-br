@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: baselden
 ms.reviewer: ''
-ms.openlocfilehash: 04a2e9968e8716818637a34adea86de88e1f848c
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 24429c5596494082b526b9648a1405bc397b9d2f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66388318"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108476"
 ---
 # <a name="plan-an-azure-ad-application-proxy-deployment"></a>Planejar uma implantação do Proxy de aplicativo do Azure AD
 
@@ -62,9 +62,9 @@ Você precisa cumprir os seguintes pré-requisitos antes de iniciar sua implemen
 
 Os seguintes requisitos principais devem ser atendidos para configurar e implementar o Proxy de aplicativo do Azure AD.
 
-*  **Integração do Azure**: Antes de implantar o proxy de aplicativo, as identidades de usuário devem ser sincronizadas de um diretório local ou criadas diretamente em seus locatários do AD do Azure. Sincronização de identidades permite que o Azure AD para autenticar previamente os usuários antes de conceder acesso ao Proxy de aplicativo a aplicativos publicados e ter as informações de identificador de usuário necessárias para executar logon único (SSO).
+*  **Integração do Azure**: Antes de implantar o proxy de aplicativo, as identidades de usuário devem ser sincronizadas de um diretório local ou criadas diretamente em seus locatários do AD do Azure. A Sincronização de Identidades permite que o Azure AD pré-autentique os usuários antes de permitir acesso a eles aos aplicativos publicados pelo Proxy de Aplicativo e tenha as informações de identificador de usuário necessárias para realizar o SSO (logon único).
 
-* **Requisitos de acesso condicional**: Não recomendamos o uso de Proxy de aplicativo para acesso à intranet porque isso adiciona latência que terá impacto sobre os usuários. É recomendável usar o Proxy de aplicativo com políticas de acesso condicional e pré-autenticação para acesso remoto da internet.  Uma abordagem para fornecer acesso condicional para o uso da intranet é modernizar os aplicativos para que eles possam diretly autenticar com o AAD. Consulte a [recursos para migrar aplicativos para o AAD](https://docs.microsoft.com/azure/active-directory/manage-apps/migration-resources) para obter mais informações. 
+* **Requisitos de acesso condicionais**: Não recomendamos o uso de Proxy de aplicativo para acesso à intranet porque isso adiciona latência que terá impacto sobre os usuários. É recomendável usar o Proxy de aplicativo com pré-autenticação e políticas de acesso condicional para acesso remoto da internet.  Uma abordagem para fornecer acesso condicional para o uso da intranet é modernizar os aplicativos para que eles possam diretly autenticar com o AAD. Consulte a [recursos para migrar aplicativos para o AAD](https://docs.microsoft.com/azure/active-directory/manage-apps/migration-resources) para obter mais informações. 
 
 * **Limites de serviço**: Para se proteger contra consumo excessivo de recursos por locatários individuais lá são os limites de limitação definida por aplicativo e de locatário. Para ver esses limites se referem [restrições e limites de serviço do AD do Azure](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-service-limits-restrictions). Esses limites de limitação se baseiam em um parâmetro de comparação muito acima de volume de uso típico e fornece buffer suficiente para a maioria das implantações.
 
@@ -82,7 +82,7 @@ Os seguintes requisitos principais devem ser atendidos para configurar e impleme
 
    * **Instalação do conector** requer direitos de administrador local no servidor do Windows que está sendo instalado. Ele também requer um mínimo de um *administrador do aplicativo* função para autenticar e registrar a instância do conector para seu locatário do AD do Azure. 
 
-   * **Administração e publicação de aplicativos** exigem o *administrador de aplicativos* função. Os administradores de aplicativos podem gerenciar todos os aplicativos no diretório, incluindo registros, configurações de SSO, usuário e as atribuições de grupo e licenciamento, as configurações de Proxy de aplicativo e consentimento. Ele não concede a capacidade de gerenciar o acesso condicional. O *administrador de aplicativos de nuvem* função tem todas as habilidades do administrador do aplicativo, exceto que ele não permite o gerenciamento das configurações de Proxy de aplicativo.
+   * **Administração e publicação de aplicativos** exigem o *administrador de aplicativos* função. Os administradores de aplicativos podem gerenciar todos os aplicativos no diretório, incluindo registros, configurações de SSO, usuário e as atribuições de grupo e licenciamento, as configurações de Proxy de aplicativo e consentimento. Ela não concede a capacidade de gerenciar o Acesso Condicional. O *administrador de aplicativos de nuvem* função tem todas as habilidades do administrador do aplicativo, exceto que ele não permite o gerenciamento das configurações de Proxy de aplicativo.
 
 * **Licenciamento**: O Proxy de aplicativo está disponível por meio da assinatura do Azure AD Basic. Consulte a [página de preços do Active Directory do Azure](https://azure.microsoft.com/pricing/details/active-directory/) para obter uma lista completa de recursos e opções de licenciamento.  
 
@@ -92,7 +92,7 @@ Compile um inventário de todos os aplicativos dentro do escopo que estão sendo
 
 | Tipo de informação| Informações a serem coletadas |
 |---|---|
-| Tipo de serviço| Por exemplo:  SharePoint, SAP, CRM, API, aplicativo Web personalizado |
+| Tipo de serviço| Por exemplo: SharePoint, SAP, CRM, API, aplicativo Web personalizado |
 | Plataforma de aplicativos | Por exemplo:  Windows IIS, Apache no Linux, o Tomcat, o NGINX |
 | Associação de domínio| Nome de domínio totalmente qualificado do servidor Web (FQDN) |
 | Local do aplicativo | Onde o servidor web ou farm está localizado em sua infraestrutura |
