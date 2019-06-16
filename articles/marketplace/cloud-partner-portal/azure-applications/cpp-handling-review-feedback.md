@@ -7,25 +7,25 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 02/05/2019
 ms.author: pabutler
-ms.openlocfilehash: 57efbfe12df8072d619cf71f4b08da2e2e5be3ce
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 1a45af2cb5eed8daa4b50bb6f0b504f9653c827a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942953"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67068950"
 ---
 # <a name="handling-review-feedback"></a>Tratar comentários de revisão
 
 Este artigo explica como acessar o ambiente do Azure DevOps utilizado pela equipe de revisão do Microsoft Azure Marketplace.  Se problemas críticos forem localizados na oferta de aplicativo Azure durante a etapa de **revisão da Microsoft**, você poderá entrar nesse sistema para exibir informações detalhadas sobre esses problemas (revisar comentários).  Após corrigir todos esses problemas, será necessário reenviar a oferta para continuar a publicá-la no Azure Marketplace.  O diagrama a seguir ilustra como esse processo de comentários se relaciona com o processo de publicação.
 
-![Etapas de publicação com comentários do VSTS](./media/pub-flow-vsts-access.png)
+![Etapas de publicação com comentários de DevOps do Azure](./media/pub-flow-vsts-access.png)
 
 Normalmente, problemas de revisão são referenciados como uma PR (solicitação de pull).  Cada PR é vinculada a um item online do [Azure DevOps](https://azure.microsoft.com/services/devops/) (anteriormente nomeado VSTS (Visual Studio Team Services)), que contém detalhes sobre o problema.  A imagem a seguir exibe um exemplo de uma referência de PR de revisão.  Para situações complexas, as equipes de suporte e revisão também poderão enviar-lhe um email. 
 
 ![Comentários de revisão de exibição da guia de Status](./media/status-tab-ms-review.png)
 
 
-## <a name="vsts-access"></a>Acesso do VSTS
+## <a name="azure-devops-access"></a>Acesso de DevOps do Azure
 
 Para exibir os itens de PR referenciados nos comentários de revisão, os publicadores deverão primeiro receber a devida autorização.  Caso contrário, novos publicadores receberão uma `401 - Not Authorized` página de resposta ao tentarem exibir as PRs.  Para solicitar acesso a esse repositório do Azure DevOps, execute as seguintes etapas:
 
@@ -40,7 +40,7 @@ Para exibir os itens de PR referenciados nos comentários de revisão, os public
     ![Categoria de tíquete de suporte](./media/support-incident1.png)
 
 4. Na página **Etapa 1 de 2**, forneça suas informações de contato e selecione **Continuar**.
-5. Na página **Etapa 2 de 2**, especifique um título do incidente (por exemplo `Request VSTS access`) e forneça as informações coletadas na primeira etapa (acima).  Leia e aceite o contrato e selecione **Enviar**.
+5. Na página **Etapa 2 de 2**, especifique um título do incidente (por exemplo `Request Azure DevOps access`) e forneça as informações coletadas na primeira etapa (acima).  Leia e aceite o contrato e selecione **Enviar**.
 
 Se a criação de incidentes for bem-sucedida, uma página de confirmação será exibida.  Salve as informações de confirmação nessa página para sua referência.  A Equipe de Suporte da Microsoft deverá responder à sua solicitação de acesso dentro de alguns dias úteis.
 
