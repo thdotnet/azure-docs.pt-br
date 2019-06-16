@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: rimman
 ms.openlocfilehash: ddbec882675dba4724406ad1ea8079df377c34fc
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65967310"
 ---
 # <a name="optimize-provisioned-throughput-cost-in-azure-cosmos-db"></a>Otimizar a taxa de transferência provisionada no Azure Cosmos DB
@@ -58,8 +58,8 @@ Conforme mostrado na tabela a seguir, dependendo da opção de API, você pode p
 |API do SQL|Banco de dados|Contêiner|
 |API do Azure Cosmos DB para MongoDB|Banco de dados|Coleção|
 |API Cassandra|Keyspace|Tabela|
-|API do Gremlin|Conta do banco de dados|Grafo|
-|API de Tabela|Conta do banco de dados|Tabela|
+|API do Gremlin|Conta de banco de dados|Grafo|
+|API de Tabela|Conta de banco de dados|Tabela|
 
 Ao provisionar a produtividade em níveis diferentes, você pode otimizar seus custos com base nas características da carga de trabalho. Como mencionado anteriormente, você pode, programaticamente e a qualquer hora, aumentar ou diminuir a taxa de transferência fornecida para os contêineres individuais ou, coletivamente, em um conjunto de contêineres. Ao escalar a taxa de transferência com flexibilidade de acordo com as alterações da carga de trabalho, você paga apenas pela taxa de transferência configurada. Se o contêiner, ou um conjunto de contêineres, está distribuído entre várias regiões, a taxa de transferência que você configura no contêiner ou conjunto de contêineres tem a disponibilidade garantida em todas as regiões.
 

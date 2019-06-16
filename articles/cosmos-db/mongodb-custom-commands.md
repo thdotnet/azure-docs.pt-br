@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: sngun
 ms.openlocfilehash: 94b1048befc8716caf5f7f51adb1f95d047d4077
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64925649"
 ---
 # <a name="use-mongodb-extension-commands-to-manage-data-stored-in-azure-cosmos-dbs-api-for-mongodb"></a>Use comandos de extensão do MongoDB para gerenciar dados armazenados na API do Azure Cosmos DB para MongoDB 
@@ -45,7 +45,7 @@ A tabela a seguir descreve os parâmetros no comando:
 
 |**Campo**|**Tipo** |**Descrição** |
 |---------|---------|---------|
-| customAction   |  string  |   Nome do comando personalizado, ele deve ser "CreateDatabase".      |
+| customAction   |  cadeia de caracteres  |   Nome do comando personalizado, ele deve ser "CreateDatabase".      |
 | offerThroughput | int  | Taxa de transferência provisionada que podem ser definidas no banco de dados. Esse parâmetro é opcional. |
 
 ### <a name="output"></a>Saída
@@ -87,7 +87,7 @@ A tabela a seguir descreve os parâmetros no comando:
 
 |**Campo**|**Tipo** |**Descrição** |
 |---------|---------|---------|
-| customAction    |    string     |   Nome do comando personalizado. Deve ser "UpdateDatabase".      |
+| customAction    |    cadeia de caracteres     |   Nome do comando personalizado. Deve ser "UpdateDatabase".      |
 |  offerThroughput   |  int       |     Nova taxa de transferência provisionada que você deseja definir no banco de dados.    |
 
 ### <a name="output"></a>Saída
@@ -120,7 +120,7 @@ A tabela a seguir descreve os parâmetros no comando:
 
 |**Campo**|**Tipo** |**Descrição** |
 |---------|---------|---------|
-|  customAction   |   string      |   Nome do comando personalizado. Deve ser "GetDatabase"|
+|  customAction   |   cadeia de caracteres      |   Nome do comando personalizado. Deve ser "GetDatabase"|
         
 ### <a name="output"></a>Saída
 
@@ -162,10 +162,10 @@ A tabela a seguir descreve os parâmetros no comando:
 
 |**Campo**|**Tipo** |**Descrição** |
 |---------|---------|---------|
-| customAction    | string | Nome do comando personalizado. Deve ser "CreateCollection"     |
-| collection      | string | Nome da coleção                                   |
+| customAction    | cadeia de caracteres | Nome do comando personalizado. Deve ser "CreateCollection"     |
+| collection      | cadeia de caracteres | Nome da coleção                                   |
 | offerThroughput | int    | Taxa de transferência provisionada para definir o banco de dados. Ele é um parâmetro opcional |
-| shardKey        | string | Caminho da chave de fragmento para criar uma coleção fragmentada. Ele é um parâmetro opcional |
+| shardKey        | cadeia de caracteres | Caminho da chave de fragmento para criar uma coleção fragmentada. Ele é um parâmetro opcional |
 
 ### <a name="output"></a>Saída
 
@@ -207,8 +207,8 @@ A tabela a seguir descreve os parâmetros no comando:
 
 |**Campo**|**Tipo** |**Descrição** |
 |---------|---------|---------|
-|  customAction   |   string      |   Nome do comando personalizado. Deve ser "UpdateCollection".      |
-|  collection   |   string      |   Nome da coleção.       |
+|  customAction   |   cadeia de caracteres      |   Nome do comando personalizado. Deve ser "UpdateCollection".      |
+|  collection   |   cadeia de caracteres      |   Nome da coleção.       |
 | offerThroughput   |int|   Taxa de transferência provisionada para definir na coleção.|
 
 ## <a name="output"></a>Saída
@@ -242,8 +242,8 @@ A tabela a seguir descreve os parâmetros no comando:
 
 |**Campo**|**Tipo** |**Descrição** |
 |---------|---------|---------|
-| customAction    |   string      |   Nome do comando personalizado. Deve ser "GetCollection".      |
-| collection    |    string     |    Nome da coleção.     |
+| customAction    |   cadeia de caracteres      |   Nome do comando personalizado. Deve ser "GetCollection".      |
+| collection    |    cadeia de caracteres     |    Nome da coleção.     |
 
 ### <a name="output"></a>Saída
 

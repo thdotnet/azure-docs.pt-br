@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: kumud
 ms.openlocfilehash: 50092db9e2e3670168cbb3440b8cb99eb0c2ac20
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64714715"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-the-portal"></a>Gerenciar as capturas de pacotes com o Observador de Rede do Azure usando o portal
@@ -54,7 +54,7 @@ Se um grupo de segurança de rede estiver associado ao adaptador de rede ou à s
 
    - **Máximo de bytes por pacote**: O número de bytes de cada pacote que são capturados. Se deixado em branco, todos os bytes serão capturados.
    - **Máximo de bytes por sessão**: O número total de bytes capturados. Quando o valor é atingido, a captura de pacotes é interrompida.
-   - **Tempo limite (segundos)**: O limite de tempo antes que a captura de pacotes é interrompida. O padrão é de 18 mil segundos.
+   - **Tempo limite (segundos)** : O limite de tempo antes que a captura de pacotes é interrompida. O padrão é de 18 mil segundos.
    - Filtragem (Opcional). Selecione **+Adicionar filtro**
      - **Protocolo**: O protocolo de filtragem da captura de pacote. Os valores disponíveis são TCP, UDP e Qualquer.
      - **Endereço IP local**: Filtra a captura de pacote para pacotes onde o endereço IP local corresponde ao valor.

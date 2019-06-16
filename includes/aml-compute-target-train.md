@@ -10,10 +10,10 @@ ms.custom: include file
 ms.topic: include
 ms.date: 05/30/2019
 ms.openlocfilehash: 50905eb987defac612f1055b450b682726f0a56f
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66752971"
 ---
 |Treinamento &nbsp;destinos| Suporte de GPU |[ML automatizado](../articles/machine-learning/service/concept-automated-ml.md) | [Pipelines do ML](../articles/machine-learning/service/concept-ml-pipelines.md) | [Interface Visual](../articles/machine-learning/service/ui-concept-visual-interface.md)

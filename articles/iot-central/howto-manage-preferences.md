@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: peterpr
 ms.openlocfilehash: 00d40b9910f9b549443373c84b079c543037ce62
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65236327"
 ---
 # <a name="manage-your-application-preferences"></a>Gerenciar as preferências do aplicativo
@@ -32,7 +32,7 @@ Temos suporte para o tema escuro e o tema claro. Enquanto o tema claro é o padr
 ![Seletor de tema do IoT Central](media/howto-manage-preferences/settings.png)
 
 > [!NOTE]
-> A opção de escolher entre os temas claras e escuros não estará disponível se o administrador tiver configurado um tema personalizado para o aplicativo.
+> A opção de escolher entre os temas claro e escuro não estará disponível se o administrador tiver configurado um tema personalizado para o aplicativo.
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -9,10 +9,10 @@ ms.date: 04/25/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 9144165a3ce593dce11b5e50ce5f0af9f0afa480
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66237667"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planejando uma implantação de Arquivos do Azure
@@ -115,12 +115,12 @@ A tabela a seguir ilustra alguns exemplos dessas fórmulas para os tamanhos do c
 |---------|---------|---------|---------|---------|
 |100         | 100     | Até 300     | 66   | 44   |
 |500         | 500     | Até 1500   | 90   | 60   |
-|1.024       | 1.024   | Até 3.072   | 122   | 81   |
-|5.120       | 5.120   | Até 15.360  | 368   | 245   |
+|1\.024       | 1\.024   | Até 3.072   | 122   | 81   |
+|5\.120       | 5\.120   | Até 15.360  | 368   | 245   |
 |10,240      | 10,240  | Até 30.720  | 675 | 450   |
 |33,792      | 33,792  | Até 100.000 | 2,088 | 1,392   |
-|51,200      | 51,200  | Até 100.000 | 3.132 | 2,088   |
-|102,400     | 100.000 | Até 100.000 | 6,204 | 4,136   |
+|51,200      | 51,200  | Até 100.000 | 3\.132 | 2,088   |
+|102,400     | 100\.000 | Até 100.000 | 6,204 | 4,136   |
 
 ### <a name="bursting"></a>Intermitência
 

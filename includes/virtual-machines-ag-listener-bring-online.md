@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 760bb5b62e9bba9b7a83f99760f7fe5d8c399dfb
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66165357"
 ---
 1. No Gerenciador de Cluster de Failover, expanda **funções** e realce seu grupo de disponibilidade.  
@@ -31,7 +31,7 @@ ms.locfileid: "66165357"
 
 8. Inicie o SQL Server Management Studio e conecte-se à réplica principal.
 
-9. Vá até **Alta Disponibilidade do AlwaysOn** > **Grupos de Disponibilidade** > **\<AvailabilityGroupName\>** > **Ouvintes do Grupo de Disponibilidade**.  
+9. Vá até **Alta Disponibilidade do AlwaysOn** > **Grupos de Disponibilidade** >  **\<AvailabilityGroupName\>**  > **Ouvintes do Grupo de Disponibilidade**.  
     O nome do ouvinte que você criou no Gerenciador de Cluster de Failover deve ser exibido.
 
 10. Clique com o botão direito do mouse no nome do ouvinte e, em seguida, clique em **Propriedades**.

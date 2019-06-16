@@ -12,10 +12,10 @@ ms.date: 05/11/2018
 ms.author: tdsp
 ms.custom: seodec18, previous-author=fboylu, previous-ms.author=fboylu
 ms.openlocfilehash: f0faad91e9e3ff9384dcae57ed27c21fa21946b5
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64573776"
 ---
 # <a name="azure-ai-guide-for-predictive-maintenance-solutions"></a>Guia de IA do Azure para soluções de manutenção preditiva
@@ -227,7 +227,7 @@ As especificações técnicas do equipamento, como data de fabricação, número
 
 Os esforços de preparação de dados discutidos até aqui devem gerar os dados sendo organizados conforme mostrado abaixo. Dados de treinamento, teste e validação devem ter esse esquema lógico (este exemplo mostra o tempo em unidades de dias).
 
-| ID do ativo | Hora | \<Colunas de recursos > | Rótulo |
+| ID do ativo | Hora | \<Colunas de recursos > | Rotular |
 | ---- | ---- | --- | --- |
 | A123 |Dia 1 | . . . | . |
 | A123 |Dia 2 | . . . | . |
@@ -291,7 +291,7 @@ A questão aqui é: “Qual é a probabilidade de o ativo falhar nas próximas X
 
 ![Figura 5. Rótulos de previsão da hora da falha para classificação de multiclasse](./media/cortana-analytics-playbook-predictive-maintenance/labelling-for-multiclass-classification-for-failure-time-prediction.png) Figura 5. Rotulação da classificação multiclasse para a previsão da hora da falha
 
-A questão aqui é: “Qual é a probabilidade de o ativo falhar nas próximas X unidades de tempo? devido à causa raiz/problema _P<sub>i</sub>_?“ onde _i_ é o número de causas raízes possíveis. Para responder essa pergunta, rótulo X registros antes da falha de um ativo como “prestes a falhar devido à causa raiz _P<sub>i</sub>_" (rótulo = _P<sub>i</sub>_). Rotule todos os outros registros como "normal" (rótulo = 0). Nesse método, os rótulos são categóricos (veja a Figura 6).
+A questão aqui é: “Qual é a probabilidade de o ativo falhar nas próximas X unidades de tempo? devido à causa raiz/problema _P<sub>i</sub>_ ?“ onde _i_ é o número de causas raízes possíveis. Para responder essa pergunta, rótulo X registros antes da falha de um ativo como “prestes a falhar devido à causa raiz _P<sub>i</sub>_ " (rótulo = _P<sub>i</sub>_ ). Rotule todos os outros registros como "normal" (rótulo = 0). Nesse método, os rótulos são categóricos (veja a Figura 6).
 
 ![Figura 6. Rótulos de previsão da causa raiz para classificação de multiclasse](./media/cortana-analytics-playbook-predictive-maintenance/labelling-for-multiclass-classification-for-root-cause-prediction.png) Figura 6. Rotulação da classificação multiclasse para a previsão da causa-raiz
 
@@ -305,7 +305,7 @@ O [Processo de Ciência de Dados de Equipe](https://docs.microsoft.com/azure/mac
 ### <a name="cross-validation"></a>Validação cruzada
 O objetivo da [validação cruzada](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) é definir um conjunto de dados para "testar" o modelo na fase de treinamento. Esse conjunto de dados é chamado de _validação de conjunto_. Essa técnica ajuda a limitar problemas como _sobreajuste_ e fornece um insight sobre como o modelo irá generalizar a um conjunto de ddos independente. Ou seja, um conjunto de dados descibgecudi que pode ser um problema real. A rotina de treinamento e teste para PdM precisa levar em conta os aspectos de tempo diferentes para generalizar melhor sobre dados futuros despercebidos.
 
-Muitos algoritmos de aprendizado de máquina dependem de um número de hiperparâmetros que pode alterar significativamente o desempenho do modelo. Os valores ideais desses hiperparâmetros não são calculados automaticamente durante o treinamento do modelo.  Eles devem ser especificados pelo cientista de dados. Há várias maneiras de localizar bons valores de hiperparâmetros.
+Muitos algoritmos de aprendizado de máquina dependem de um número de hiperparâmetros que pode alterar significativamente o desempenho do modelo. Os valores ideais desses hiperparâmetros não são calculados automaticamente durante o treinamento do modelo. Eles devem ser especificados pelo cientista de dados. Há várias maneiras de localizar bons valores de hiperparâmetros.
 
 O mais comum é a _validação cruzada k vezes_, que divide os exemplos aleatoriamente em _k_ dobras. Para cada conjunto de valores de hiperparâmetros, o algoritmo de aprendizado é executado _k_ vezes. Em cada iteração, os exemplos na dobra atual são usados como um conjunto de validação; o restante dos exemplos é usado como um conjunto de treinamento. Treine o algoritmo com exemplos de treinamento e as métricas de desempenho são calculadas sobre exemplos de validação. No final desse loop, calcule a média de métricas de desempenho _k_. Para cada conjunto de valores de hiperparâmetro, escolha aqueles que têm o melhor desempenho médio. A tarefa de escolher hiperparâmetros geralmente é experimental por natureza.
 

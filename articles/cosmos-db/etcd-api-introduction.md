@@ -8,10 +8,10 @@ ms.date: 05/06/2019
 ms.author: dech
 ms.reviewer: sngun
 ms.openlocfilehash: 6c7fcb1429438ee024cb226b63cfcdcab05ed9f8
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65205797"
 ---
 # <a name="introduction-to-the-azure-cosmos-db-etcd-api-preview"></a>Introdução ao etcd do Azure Cosmos DB API (versão prévia)
@@ -20,7 +20,7 @@ O Azure Cosmos DB é um serviço de banco de dados multimodelo globalmente distr
 
 [Etcd](https://github.com/etcd-io/etcd) é um repositório de chave/valor distribuídas. Na [Kubernetes](https://kubernetes.io/), etcd é usado para armazenar o estado e a configuração de clusters Kubernetes. Assegurar a disponibilidade, confiabilidade e desempenho de etcd é crucial para a integridade geral do cluster, escalabilidade, disponibilidade de elasticidade e desempenho de um cluster Kubernetes. 
 
-A API etcd no Azure Cosmos DB permite que você use o Azure Cosmos DB como armazenamento de back-end para [Kubernetes do Azure](../aks/index.yml). etcd API no Azure Cosmos DB está atualmente em visualização. O Azure Cosmos DB implementa o protocolo de transmissão etcd. Com etcd API no Azure Cosmos DB, os desenvolvedores automaticamente terão altamente confiáveis, [disponível](high-availability.md), [distribuído globalmente](distribute-data-globally.md) Kubernetes. Essa API permite aos desenvolvedores escalar o gerenciamento de estado do Kubernetes em um serviço de PaaS nativo de nuvem totalmente gerenciado. 
+A API etcd no Azure Cosmos DB permite que você use o Azure Cosmos DB como armazenamento de back-end para [Kubernetes do Azure](../aks/index.yml). A API do etcd no Azure Cosmos DB está atualmente em versão prévia. O Azure Cosmos DB implementa o protocolo de transmissão etcd. Com etcd API no Azure Cosmos DB, os desenvolvedores automaticamente terão altamente confiáveis, [disponível](high-availability.md), [distribuído globalmente](distribute-data-globally.md) Kubernetes. Essa API permite aos desenvolvedores escalar o gerenciamento de estado do Kubernetes em um serviço de PaaS nativo de nuvem totalmente gerenciado. 
 
 > [!NOTE]
 > Ao contrário de outras APIs no Azure Cosmos DB, você não pode provisionar uma conta da API etcd por meio do portal do Azure, SDKs ou CLI. Você pode provisionar uma conta da API etcd Implantando o modelo do Resource Manager. Para obter etapas detalhadas, consulte [como provisionar o Azure Kubernetes com o Azure Cosmos DB](bootstrap-kubernetes-cluster.md) artigo. A API do Azure Cosmos DB etcd está atualmente em versão prévia limitada. Você pode [inscrição para a versão prévia](https://aka.ms/cosmosetcdapi-signup), preenchendo o formulário de inscrição.

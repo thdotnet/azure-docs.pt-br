@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
 ms.openlocfilehash: 8dd55032c933cdc31b848addfdac991550376dcf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60729216"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Transferência de dados para grandes conjuntos de dados com largura de banda de rede moderada a alta
@@ -69,7 +69,7 @@ Se estiver usando transferência de dados offline, use a tabela a seguir para en
 |    Fator forma                      |    5 SSDs por pedido             |    1 X 50 lb dispositivo do tamanho da área de trabalho por pedido    |    1 X ~500 lb. dispositivo grande por pedido    |    Até 10 HDDs/SSDs por pedido        |
 |    Tempo de preparação inicial               |    Baixo <br>(15 min)            |    Baixo a moderado <br> (<30 min)               |    Moderado<br>(1 a 2 horas)               |    Moderado a difícil<br>(variável) |
 |    Enviar dados para o Azure               |    Sim                          |    sim                                           |    sim                                   |    Sim                                 |
-|    Exportar dados do Azure           |    Não                            |    Não                                            |    Não                                     |    Sim                                 |
+|    Exportar dados do Azure           |    Não                           |    Não                                            |    Não                                    |    Sim                                 |
 |    Criptografia                       |    AES 128 bits                  |    AES 256 bits                                   |    AES 256 bits                           |    AES 128 bits                         |
 |    Hardware                         |     Fornecido pela Microsoft          |    Fornecido pela Microsoft                            |    Fornecido pela Microsoft                    |    Fornecido pelo cliente                   |
 |    interface de rede                |    USB 3.1/SATA                 |    RJ 45, SFP+                                   |    RJ-45, QSFP+                           |    SATA II/SATA III                    |
@@ -88,8 +88,8 @@ Se estiver usando a transferência de dados online, use a tabela na seção a se
 |    Tipo de dados                  |    Blobs do Azure, Azure Files, Tabelas do Azure    |    Blobs do Azure, Azure Files, Tabelas do Azure    |    Blobs do Azure, Azure Files                           |   Dá suporte a mais de 70 conectores de dados para os formatos e armazenamentos de dados    |
 |    Fator forma                |    Ferramentas da linha de comando                        |    Interface programática                    |    A Microsoft fornece um dispositivo virtual <br>ou físico     |    Serviço no portal do Azure                                            |
 |    Configuração única inicial     |    Fácil               |    Moderado                       |    Fácil (<30 minutos) para moderar (1 a 2 horas)            |    Amplo                                                          |
-|    Pré-processamento de dados              |    Não                                         |    Não                                         |    Sim (com computação de borda)                               |    Sim                                                                |
-|    Transferência de outras nuvens       |    Não                                         |    Não                                        |    Não                                                     |    Sim                                                                |
+|    Pré-processamento de dados              |    Não                                        |    Não                                        |    Sim (com computação de borda)                               |    Sim                                                                |
+|    Transferência de outras nuvens       |    Não                                        |    Não                                        |    Não                                                    |    Sim                                                                |
 |    Tipo de usuário                        |    Profissional ou desenvolvedor de TI                                       |    Desenvolvimento                                       |    Profissional de TI                                                |    Profissional de TI                                                             |
 |    Preços                          |    Gratuito, são cobrados encargos de saída de dados         |    Gratuito, são cobrados encargos de saída de dados         |    [Preços](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                                               |    [Preços](https://azure.microsoft.com/pricing/details/data-factory/)                                                            |
 

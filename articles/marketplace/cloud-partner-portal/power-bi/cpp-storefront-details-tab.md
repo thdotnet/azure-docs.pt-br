@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/24/2019
 ms.author: pabutler
 ms.openlocfilehash: 0816e7a7add430a65af9b3948aa8626f9567053a
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64942634"
 ---
 # <a name="power-bi-app-storefront-details-tab"></a>Guia de detalhes da vitrine eletrônica de aplicativo do Power BI
@@ -74,7 +74,7 @@ Para concluir os campos nesta seção, use a tabela a seguir. Os campos obrigat�
 | **Arquivo**                             | Carregue um arquivo PDF.                             |
 | *Capturas de tela\**                      | Adicione até cinco capturas de tela.                        |
 | **Nome**                             | Insira um nome ou o título de uma captura de tela.                                       |
-| **Imagem**                            | Carrega uma captura de tela PNG. Sua resolução deve ser 1280 x 720 px.  | 
+| **Image**                            | Carrega uma captura de tela PNG. Sua resolução deve ser 1280 x 720 px.  | 
 |   |   |
 
 Os logotipos que você carregar para [Portal do Cloud Partner](https://cloudpartner.azure.com) deve *não*:

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.author: rajanaki
 ms.openlocfilehash: 1d36145b2a38c0f1106b4468eab226996e270ae1
-ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65922137"
 ---
 # <a name="automatic-update-of-the-mobility-service-in-azure-to-azure-replication"></a>Atualização automática do serviço de mobilidade na replicação do Azure para
@@ -520,7 +520,7 @@ Se houver um problema com as atualizações automáticas, você verá uma notifi
 
 Se você não foi possível habilitar as atualizações automáticas, consulte os seguintes erros comuns e as ações recomendadas:
 
-- **Erro**: Você não tem permissão para criar uma conta Executar como do Azure (entidade de serviço) nem conceder a função Colaborador à entidade de serviço.
+- **Erro**: Você não tem permissões para criar uma conta Executar como do Azure (entidade de serviço) e conceder a função Colaborador à entidade de serviço.
 
    **Ação recomendada**: Certifique-se de que a conta de logon é atribuída como Colaborador e tente novamente. Consulte a seção permissões necessárias no [usar o portal para criar aplicativo e entidade de serviço que pode acessar recursos de um Azure AD](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) para obter mais informações sobre como atribuir permissões.
  

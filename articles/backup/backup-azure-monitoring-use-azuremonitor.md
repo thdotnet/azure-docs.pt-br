@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: pullabhk
 ms.assetid: 01169af5-7eb0-4cb0-bbdb-c58ac71bf48b
-ms.openlocfilehash: 2d7c158b32c15fb8be153511136eafb73147afa6
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
-ms.translationtype: MT
+ms.openlocfilehash: 1e85b633024b5a3e85874707ae9a1f068e7a328d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66734848"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808513"
 ---
 # <a name="monitoring-at-scale-using-azure-monitor"></a>Monitoramento em escala usando o Azure Monitor
 
@@ -257,7 +257,7 @@ Aqui, o recurso é o cofre do serviço de recuperação em si e, portanto, você
 Embora a notificação por meio dos logs de atividade pode ser usada, ***serviço de Backup do Azure recomenda usar LA para monitorar os logs de escala e a atividade não pelos seguintes motivos***.
 
 - **Cenários limitados:** Aplicável somente para backups de VM do Azure e deve ser repetido para cada cofre RS.
-- **Ajustar a definição:** A atividade de backup agendada não couber com a definição mais recente dos logs de atividades e se alinha com [logs de diagnóstico](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview#what-are-azure-monitor-diagnostic-logs). Isso levava a impacto inesperado quando os dados de bombeamento por meio do canal de log de atividade são alterados conforme indicado abaixo.
+- **Ajustar a definição:** A atividade de backup agendada não couber com a definição mais recente dos logs de atividades e se alinha com [logs de diagnóstico](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview#what-you-can-do-with-diagnostic-logs). Isso levava a impacto inesperado quando os dados de bombeamento por meio do canal de log de atividade são alterados conforme indicado abaixo.
 - **Problemas com o canal de log de atividade:** Mudamos para um novo modelo de bombeamento logs de atividade do Backup do Azure em cofres dos Serviços de Recuperação. Infelizmente, a mudança tiver afetado a geração de logs de atividades em nuvens Soberanas do Azure. Se os usuários de nuvem soberana do Azure criado/configuraram todos os alertas de logs de atividade por meio do Azure Monitor, eles não deverá ser disparados. Além disso, em todas as regiões públicas do Azure, se um usuário estiver coletando logs de atividade dos Serviços de Recuperação em um espaço de trabalho de Análise de log, conforme mencionado [aqui](https://docs.microsoft.com/azure/azure-monitor/platform/collect-activity-logs), esses logs também não seriam exibidos.
 
 Portanto, é altamente recomendável usar o espaço de trabalho do Log analítico para o monitoramento e alertas em grande escala para todos os seus Azure Backup de cargas de trabalho protegidas.

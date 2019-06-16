@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 05/08/19
 ms.author: jgao
 ms.openlocfilehash: 41b16498fb79166b2c77c77a517ee5c443ebec75
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65796253"
 ---
 # <a name="introduce-health-integration-rollout-to-azure-deployment-manager-public-preview"></a>Introduzir a distribuição de integração de integridade para o Azure Deployment Manager (visualização pública)
@@ -140,7 +140,7 @@ Para percorrer um exemplo, consulte [Tutorial: Usar a verificação de integrida
 
 Neste momento o Gerenciador de implantação do Azure sabe como consultar a integridade do seu serviço e em quais fases em sua distribuição para fazer isso. No entanto, o Gerenciador de implantação do Azure também permite configuração profunda do cronograma dessas verificações. Uma etapa de verificação de integridade é executada em 3 fases sequenciais, todas com durações configuráveis: 
 
-1. Aguardar
+1. Aguarde
 
     1. Após uma operação de implantação, as VMs podem ser reinicializar, reconfigurar com base nos novos dados ou até mesmo sendo iniciado pela primeira vez. Ele também leva tempo para os serviços começar a emitir sinais de integridade agregados pelo provedor de monitoramento em algo útil de integridade. Durante esse processo tumultuado, talvez não faça sentido para verificar a integridade do serviço, pois a atualização ainda não atingiu um estado estável. Na verdade, o serviço pode ser oscilando para parar entre estados íntegros e não íntegros como liquidar os recursos. 
     1. Durante a fase de espera, a integridade do serviço não é monitorada. Isso é usado para permitir que os recursos implantados o tempo para colocá-lo antes de iniciar o processo de verificação de integridade. 

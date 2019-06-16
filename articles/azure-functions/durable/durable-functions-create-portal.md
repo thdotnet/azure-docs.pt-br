@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: azfuncdf, glenga
 ms.openlocfilehash: 705a43f1ef35f953d1b87c7c44bbc45fcb4334be
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65872853"
 ---
 # <a name="create-durable-functions-using-the-azure-portal"></a>Criar Durable Functions usando o portal do Azure
@@ -38,7 +38,7 @@ Por padrão, o aplicativo de função criado usa a versão 2.x do Azure Function
 
 Se você estiver criando Durable Functions do JavaScript, precisará instalar o [pacote npm `durable-functions`](https://www.npmjs.com/package/durable-functions).
 
-1. Selecione o nome do seu aplicativo de funções, seguido pelos **Recursos da Plataforma** e **Ferramentas avançadas (Kudu)**.
+1. Selecione o nome do seu aplicativo de funções, seguido pelos **Recursos da Plataforma** e **Ferramentas avançadas (Kudu)** .
 
    ![Recursos da plataforma funções, escolha Kudu](./media/durable-functions-create-portal/function-app-platform-features-choose-kudu.png)
 

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/03/2016
 ms.author: estfan
 ms.openlocfilehash: 20729d1e73dd0ff9010201a1c6597b616b364a09
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66149683"
 ---
 ### <a name="prerequisites"></a>Pré-requisitos
@@ -18,12 +18,12 @@ Antes de usar a conta do Vídeo do Office 365 em um aplicativo lógico, você de
 
 Aqui estão as etapas para autorizar seu aplicativo lógico a se conectar à sua conta do Vídeo do Office 365:  
 
-1. Para criar uma conexão com o Vídeo do Office 365, no designer do aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa, em seguida, digite *Vídeo do Office 365* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:   
+1. Para criar uma conexão com o Vídeo do Office 365, no designer do aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa, em seguida, digite *Vídeo do Office 365* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:  
    ![Etapa de criação da conexão com o Vídeo do Office 365](./media/connectors-create-api-office365video/office365video-1.png)  
-2. Se você não tiver criado quaisquer conexões com o Vídeo do Office 365 antes, suas credenciais do Vídeo do Office 365 serão solicitadas. Essas credenciais serão usadas para autorizar seu aplicativo lógico a se conectar aos dados da sua conta do Vídeo do Office 365 e usá-los:   
+2. Se você não tiver criado quaisquer conexões com o Vídeo do Office 365 antes, suas credenciais do Vídeo do Office 365 serão solicitadas. Essas credenciais serão usadas para autorizar seu aplicativo lógico a se conectar aos dados da sua conta do Vídeo do Office 365 e usá-los:  
    ![Etapa de criação da conexão com o Vídeo do Office 365](./media/connectors-create-api-office365video/office365video-2.png)  
-3. Forneça suas credenciais para se conectar ao Vídeo do Office 365:   
+3. Forneça suas credenciais para se conectar ao Vídeo do Office 365:  
    ![Etapa de criação da conexão com o Vídeo do Office 365](./media/connectors-create-api-office365video/office365video-3.png)  
-4. Observe que a conexão foi criada e agora você pode continuar com as outras etapas no seu aplicativo lógico:   
+4. Observe que a conexão foi criada e agora você pode continuar com as outras etapas no seu aplicativo lógico:  
    ![Etapa de criação da conexão com o Vídeo do Office 365](./media/connectors-create-api-office365video/office365video-4.png)  
 

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 03/27/2019
 ms.author: mlottner
 ms.openlocfilehash: 5c76cce5a3d9add8a1dcd8acc439a70c4a8655a9
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65200560"
 ---
 # <a name="select-and-deploy-a-security-agent-on-your-iot-device"></a>Selecione e implantar um agente de segurança em seu dispositivo IoT
@@ -48,7 +48,7 @@ O agente de segurança com base em C tem uma menor superfície de memória e é 
 | --- | ----------- | --------- |
 | Código-fonte aberto | Disponível em [licença MIT](https://en.wikipedia.org/wiki/MIT_License) em [Github](https://aka.ms/iot-security-github-cs) | Disponível em [licença MIT](https://en.wikipedia.org/wiki/MIT_License) em [Github](https://aka.ms/iot-security-github-c) |
 | Linguagem de desenvolvimento    | C | C# |
-| Plataformas com suporte do Windows? | Não  | Sim |
+| Plataformas com suporte do Windows? | Não | Sim |
 | Pré-requisitos do Windows | --- | [WMI](https://docs.microsoft.com/windows/desktop/wmisdk/) |
 | Plataformas com suporte do Linux? | Sim, x64 e x86 | Sim, somente x64 |
 | Pré-requisitos do Linux | libunwind8, libcurl3, tempo de execução de uuid, auditd, plug-ins de audispd | libunwind8, libcurl3, tempo de execução de uuid, auditd, plug-ins de audispd, sudo, netstat, iptables |
