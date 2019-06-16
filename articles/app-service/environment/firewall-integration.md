@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/12/2019
+ms.date: 06/11/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 6ae7037ad4cd532b6661a56e6e37a88df3eb54a2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6dae2d40650b9fdb8df2d3bdb74b2df78639dc11
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60766452"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058053"
 ---
 # <a name="locking-down-an-app-service-environment"></a>Bloqueando um Ambiente do Serviço de Aplicativo
 
@@ -30,6 +30,21 @@ Um ASE tem várias dependências de entrada. O tráfego de gerenciamento de entr
 As dependências de saída do ASE são quase que totalmente definidas com FQDNs, que não têm endereços estáticos por trás delas. A falta de endereços estáticos significa que os NSGs (Grupos de Segurança de Rede) não podem ser usados para bloquear o tráfego de saída de um ASE. Os endereços mudam com frequência suficiente para que não seja possível configurar regras com base na resolução atual e usá-las para criar NSGs. 
 
 A solução para proteger os endereços de saída está em usar um dispositivo de firewall que possa controlar o tráfego de saída com base em nomes de domínio. Firewall do Azure pode restringir o tráfego de HTTP e HTTPS de saída com base no FQDN de destino.  
+
+## <a name="system-architecture"></a>Arquitetura do sistema
+
+Implantar um ASE com tráfego de saída, passando por um dispositivo de firewall exige a alteração de rotas na sub-rede do ASE. Rotas operam em um nível de IP. Se não for cuidadoso na definição de suas rotas, você pode forçar o tráfego de resposta TCP para outro endereço de origem. Isso é chamado de roteamento assimétrico e ele será interrompido TCP.
+
+Deve haver rotas definidas para que o tráfego de entrada para o ASE poderá responder novamente que da mesma forma que o tráfego chegou. Isso é verdadeiro para solicitações de gerenciamento de entrada e é verdadeiro para solicitações de entrada do aplicativo.
+
+O tráfego em um ASE deve obedecer as convenções a seguir
+
+* Não há suporte para o tráfego para o SQL Azure, armazenamento e o Hub de eventos com o uso de um dispositivo de firewall. Esse tráfego deve ser enviado diretamente para esses serviços. A maneira de fazer o que acontece é configurar pontos de extremidade de serviço para esses três serviços. 
+* Regras de tabela de rota devem ser definidas que enviam tráfego de gerenciamento de entrada de onde ele veio.
+* Regras de tabela de rota devem ser definidas que enviam tráfego de entrada do aplicativo novamente de onde ele veio. 
+* Todos os outros tráfegos, deixando o ASE podem ser enviado ao seu dispositivo de firewall com uma regra de tabela de rota.
+
+![ASE com o fluxo de conexão do Firewall do Azure][5]
 
 ## <a name="configuring-azure-firewall-with-your-ase"></a>Como configurar o Firewall do Azure com seu ASE 
 
@@ -69,11 +84,9 @@ Se seus aplicativos tiverem dependências, precisarão ser adicionados ao Firewa
 
 Se você souber o intervalo de endereços do qual seu tráfego de solicitação de aplicativo virá, poderá adicioná-lo à tabela de rotas atribuída à sua sub-rede do ASE. Se o intervalo de endereços for grande ou não estiver especificado, você poderá usar um dispositivo de rede, como o Gateway de Aplicativo para fornecer um endereço para adicionar à sua tabela de rotas. Para obter detalhes sobre como configurar um Gateway de Aplicativo com seu ILB ASE, leia [Como integrar seu ILB ASE a um Gateway de Aplicativo](https://docs.microsoft.com/azure/app-service/environment/integrate-with-application-gateway)
 
-![ASE com o fluxo de conexão do Firewall do Azure][5]
-
 Esse uso do Gateway de Aplicativo é apenas um exemplo de como configurar o sistema. Se você seguiu esse caminho, você precisa adicionar uma rota à tabela de rotas da sub-rede do ASE, de modo que o tráfego de resposta enviado ao Gateway de Aplicativo acesse-o diretamente. 
 
-## <a name="logging"></a>Registro em log 
+## <a name="logging"></a>Registrando em log 
 
 O Firewall do Azure pode enviar logs para o Armazenamento do Azure, o Hub de Eventos ou os Logs do Azure Monitor. Para integrar seu aplicativo com qualquer destino compatível, acesse o portal do Firewall do Azure > Logs de Diagnóstico e habilite os logs para o destino desejado. Se você fizer a integração com os logs do Azure Monitor, poderá ver os logs de qualquer tráfego enviado para o Firewall do Azure. Para ver o tráfego que está sendo negado, abra o portal de espaços de trabalho do Log Analytics existentes &gt; Logs e insira uma consulta como 
 

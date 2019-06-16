@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: saurse
-ms.openlocfilehash: d8a1d261808eb8f97d1e0dab78b767b37ae6802f
-ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
+ms.openlocfilehash: 2c2ed46ed6e4a5d6663387777d3425d18b50500e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66743150"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67060209"
 ---
 # <a name="troubleshoot-microsoft-azure-recovery-services-mars-agent"></a>Solucionar problemas do agente do MARS (Serviços de Recuperação do Microsoft Azure)
 
@@ -41,9 +41,29 @@ Recomendamos que você execute o abaixo de validação, antes de começar a solu
 
 ## <a name="invalid-vault-credentials-provided"></a>Credenciais do cofre fornecidas inválidas
 
-| Detalhes do erro | Possíveis causas | Ações recomendadas |
-| ---     | ---     | ---    |
-| **Erro** </br> *Credenciais do cofre inválidas fornecidas. O arquivo está corrompido ou não possui as credenciais mais recentes associadas ao serviço de recuperação. (ID: 34513)* | <ul><li> As credenciais do cofre são inválidas (ou seja, elas são baixadas mais de 48 horas antes da hora de registro).<li>MARS Agent não consegue fazer o download de arquivos para o diretório Temp do Windows. <li>As credenciais do cofre estão em um local de rede. <li>TLS 1.0 está desabilitado<li> Um servidor proxy configurado está bloqueando a conexão. <br> |  <ul><li>Faça o download das novas credenciais do cofre. (**Observação**: Se vários arquivos de credenciais do cofre forem baixados anteriormente, somente o último arquivo baixado será válido dentro de 48 horas.) <li>Inicie **IE** > **Configuração** > **Opções da Internet** > **Segurança** > **Internet**. Em seguida, selecione **Nível personalizado** e role até encontrar a seção de download de arquivo. Em seguida, selecione **Habilitar**.<li>Você também precisará adicionar esses sites no IE [sites confiáveis](https://docs.microsoft.com/azure/backup/backup-configure-vault#verify-internet-access).<li>Altere as configurações para usar um servidor proxy. Em seguida, forneça os detalhes do servidor proxy. <li> Sincronize a data e a hora com as de seu computador.<li>Se você receber um erro informando que os downloads de arquivos não são permitidos, é provável que haja um grande número de arquivos no diretório C: / Windows / Temp directory.<li>Vá para C:/Windows/Temp e verifique se há mais de 60.000 ou 65.000 arquivos com a extensão .tmp. Se houver, exclua esses arquivos.<li>Certifique-se de que tenha o .NET Framework 4.6.2 instalado. <li>Se você desabilitou o TLS 1.0 devido à conformidade de PCI, consulte esta [página de solução de problemas](https://support.microsoft.com/help/4022913). <li>Se você tiver um antivírus instalado no servidor, exclua os seguintes arquivos da verificação de antivírus: <ul><li>CBengine.exe<li>CSC.exe, relacionado ao .NET Framework. Há um CSC.exe para cada versão .NET instalada no servidor. Exclua os arquivos CSC.exe vinculados a todas as versões do .NET Framework no servidor afetado. <li>Pasta de Rascunho ou local do cache. <br>*O local padrão para a pasta de rascunho ou o caminho do local do cache é C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch*.<br><li>A pasta bin C: \ Arquivos de Programas \ Microsoft Agente dos Serviços de Recuperação do Azure \ Bin
+**Mensagem de erro**: Credenciais do cofre fornecidas inválidas. O arquivo está corrompido ou não possui as credenciais mais recentes associadas ao serviço de recuperação. (ID: 34513)
+
+| Causa | Ação recomendada |
+| ---     | ---    |
+| **As credenciais do cofre são inválidas** <br/> <br/> Arquivos de credencial do cofre podem estar corrompidos ou podem ter expirado (ou seja, baixado mais de 48 horas antes da hora de registro)| Baixe uma nova credencial do cofre dos serviços de recuperação no portal do Azure (consulte *etapa 6* sob [ **baixar o agente de MARS** ](https://docs.microsoft.com/azure/backup/backup-configure-vault#download-the-mars-agent) seção) e executar a abaixo: <ul><li> Se você já tiver instalado e registrado o agente de Backup do Microsoft Azure, em seguida, abra o console do MMC do agente de Backup do Microsoft Azure e escolha **registrar servidor** no painel de ação para concluir o registro com o baixado recentemente credenciais <br/> <li> Se a nova instalação do falha, em seguida, tente instalar novamente usando as novas credenciais</ul> **Observação**: Se vários arquivos de credencial de cofre são baixados anteriormente, somente o último arquivo baixado é válido dentro de 48 horas. Portanto, é recomendável baixar a nova novo arquivo de credenciais do cofre.
+| **Servidor proxy/firewall está bloqueando <br/>ou <br/>conectividade com a Internet não** <br/><br/> Se seu computador ou servidor Proxy tem acesso limitado à Internet, em seguida, listando as URLs necessárias o registro falhará.| Para resolver esse problema, execute a abaixo:<br/> <ul><li> Trabalhar com sua equipe de TI para garantir que o sistema tem conectividade com a Internet<li> Se você não tem o servidor Proxy, verifique se a opção de proxy é desmarcada ao registrar o agente, verifique se as etapas de configurações de proxy listadas [aqui](#verifying-proxy-settings-for-windows)<li> Se você tiver um servidor de firewall/proxy, em seguida, trabalhe com a equipe de rede para garantir que abaixo IP e URLs do endereço têm acesso<br/> <br> **URLs**<br> - *www.msftncsi.com* <br>-  *.Microsoft.com* <br> -  *.WindowsAzure.com* <br>-  *.microsoftonline.com* <br>-  *.windows.net* <br>**Endereço IP**<br> - *20.190.128.0/18* <br> - *40.126.0.0/18* <br/></ul></ul>Tente registrar novamente depois de concluir as etapas de solução de problemas acima
+| **Um software antivírus está bloqueando** | Se você tiver um software antivírus instalado no servidor, em seguida, adicione regras de exclusão necessários para os seguintes arquivos da verificação antivírus: <br/><ui> <li> *CBengine.exe* <li> *CSC.exe*<li> Pasta de rascunho, o local padrão é *C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch* <li> A pasta bin em *C:\Program Files\Microsoft Azure Recovery Services Agent\Bin*
+
+### <a name="additional-recommendations"></a>Recomendações adicionais
+- Vá para *c: / Windows/Temp* e verifique se há mais de 60.000 ou 65.000 arquivos com a extensão. tmp. Se houver, exclua esses arquivos
+- Certifique-se de que corresponda a data e a hora do computador com o fuso horário local
+- Verifique se o [seguir](backup-configure-vault.md#verify-internet-access) sites serão adicionados ao IE sites confiáveis
+
+### <a name="verifying-proxy-settings-for-windows"></a>Verificando configurações de proxy para Windows
+
+- Baixe **psexec** de [aqui](https://docs.microsoft.com/sysinternals/downloads/psexec)
+- Execute este `psexec -i -s "c:\Program Files\Internet Explorer\iexplore.exe"` comando do prompt com privilégios elevados:
+- Isso inicializará *Internet Explorer* janela
+- Vá para *ferramentas* -> *opções da Internet* -> *conexões* -> *configurações da LAN*
+- Verifique as configurações de proxy para *sistema* conta
+- Se nenhum proxy estiver configurado e os detalhes de proxy são fornecidos, em seguida, remova os detalhes
+-   Se o proxy estiver configurado e detalhes do proxy estão incorretas, em seguida, certifique-se *IP de Proxy* e *porta* detalhes são precisos
+- Fechar *do Internet Explorer*
 
 ## <a name="unable-to-download-vault-credential-file"></a>Não é possível baixar o arquivo de credenciais do cofre
 
@@ -85,34 +105,31 @@ Se os backups agendados não forem acionados automaticamente, mas os backups man
 
 - Verifique se o status de Backup Online é definido como **habilitar**. Para verificar o status de executar a abaixo:
 
-  - Acesse o **Painel de Controle** > **Ferramentas Administrativas** > **Agendador de Tarefas**.
-    - Expanda **Microsoft** e selecione **Backup Online**.
+  - Abra **Agendador de tarefas** e expanda **Microsoft**e selecione **Backup Online**.
   - Clique duas vezes em **Microsoft-OnlineBackup** e acesse a guia **Gatilhos**.
-  - Verificar se o status está definido como **Enabled**. Se não estiver, selecione **Editar**, selecione a caixa de seleção **Habilitado** e clique em **OK**.
+  - Verificar se o status está definido como **Enabled**. Se não estiver, selecione **edite** > **Enabled** caixa de seleção e clique em **Okey**.
 
-- Certifique-se a conta de usuário selecionada para executar a tarefa seja **SYSTEM** ou **grupo de administradores locais** no servidor. Para verificar a conta de usuário, vá para o **gerais** guia e verifique o **opções de segurança**.
+- Certifique-se a conta de usuário selecionada para executar a tarefa seja **SYSTEM** ou **grupo de administradores locais** no servidor. Para verificar a conta de usuário, vá para o **gerais** guia e verifique o **segurança** opções.
 
-- Verifique se o PowerShell 3.0 ou posterior está instalado no servidor. Para verificar a versão do PowerShell, execute o seguinte comando e verifique se o número da versão *Principal* é igual ou maior do que 3.
+- Verifique se o que PowerShell 3.0 ou posterior está instalado no servidor. Para verificar a versão do PowerShell, execute o seguinte comando e verifique se o número da versão *Principal* é igual ou maior do que 3.
 
   `$PSVersionTable.PSVersion`
 
-- Verifique se o caminho a seguir faz parte da variável de ambiente *PSMODULEPATH*.
+- Verifique se o caminho a seguir faz parte do *PSMODULEPATH* variável de ambiente
 
   `<MARS agent installation path>\Microsoft Azure Recovery Services Agent\bin\Modules\MSOnlineBackup`
 
-- Se a política de execução do powershell para *LocalMachine* estiver definida como restrita, o cmdlet do PowerShell que aciona a tarefa de backup poderá falhar. Execute os comandos a seguir no modo elevado para verificar e definir a política de execução como *Unrestricted* ou *RemoteSigned*.
+- Se a política de execução do powershell para *LocalMachine* estiver definida como restrita, o cmdlet do PowerShell que aciona a tarefa de backup poderá falhar. Execute os seguintes comandos no modo elevado, verificar e definir a política de execução para um *Unrestricted* ou *RemoteSigned*
 
   `PS C:\WINDOWS\system32> Get-ExecutionPolicy -List`
 
   `PS C:\WINDOWS\system32> Set-ExecutionPolicy Unrestricted`
 
-- Verifique se o servidor foi reiniciado após a instalação do agente de backup
+- Verifique se há ausentes ou corrompidos **PowerShell** módulo **MSonlineBackup**. Caso haja qualquer arquivo ausente ou corrompido, para resolver esse problema, execute a abaixo:
 
-- Verifique se há ausentes ou corrompidos **PowerShell** módulo **MSonlineBackup**. Caso haja qualquer arquivo ausente ou corrompido, para resolver o problema, execute a abaixo:
-
-  - De outro computador (Windows 2008 R2) que o agente de MARS funcionando corretamente, copie a pasta de MSOnlineBackup partir *(C:\Program Files\Microsoft Azure Recovery Services Agent\bin\Modules)* caminho.
+  - De qualquer computador com o agente de MARS está funcionando corretamente, copie a pasta de MSOnlineBackup da *(C:\Program Files\Microsoft Azure Recovery Services Agent\bin\Modules)* caminho.
   - Colar isto no computador problemático no mesmo caminho *(C:\Program Files\Microsoft Azure Recovery Services Agent\bin\Modules)* .
-  - Se **MSOnlineBackup** pasta já está existe na máquina, colar/substituir os arquivos de conteúdo dentro dele.
+  - Se **MSOnlineBackup** pasta já existia na máquina, colar ou substituir os arquivos de conteúdo dentro dele.
 
 
 > [!TIP]

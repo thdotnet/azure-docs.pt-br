@@ -9,18 +9,18 @@ ms.date: 05/28/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 9f7f9b1504533e0ec503e97c086c380da71671a0
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66299699"
 ---
 | Resource | Limite máximo/padrão |
 | --- | --- |
 | Circuitos do ExpressRoute por assinatura |10 |
 | Circuitos do ExpressRoute por região por assinatura, com o Azure Resource Manager |10 |
-| Número máximo de rotas anunciadas para o emparelhamento privado do Azure com o padrão do ExpressRoute |4.000 |
-| Número máximo de rotas anunciadas para o emparelhamento privado do Azure com o complemento ExpressRoute Premium |10.000 |
+| Número máximo de rotas anunciadas para o emparelhamento privado do Azure com o padrão do ExpressRoute |4\.000 |
+| Número máximo de rotas anunciadas para o emparelhamento privado do Azure com o complemento ExpressRoute Premium |10\.000 |
 | Número máximo de rotas anunciadas do emparelhamento privado do Azure do espaço de endereço de rede virtual para uma conexão de ExpressRoute |200 |
 | Número máximo de rotas anunciadas para emparelhamento da Microsoft com o padrão do ExpressRoute |200 |
 | Número máximo de rotas anunciadas para emparelhamento da Microsoft com o complemento ExpressRoute Premium |200 |
@@ -42,4 +42,4 @@ ms.locfileid: "66299699"
 | 40 Gbps * |10 |100 |
 | Gbps de 100 * |10 |100 |
 
-* Somente diretos do ExpressRoute
+\* Somente diretos do ExpressRoute

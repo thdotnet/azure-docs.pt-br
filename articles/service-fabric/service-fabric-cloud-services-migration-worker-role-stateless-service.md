@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: 10fb44b0e76282ad78e7687beaa2e50e819e5cd9
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62109986"
 ---
 # <a name="guide-to-converting-web-and-worker-roles-to-service-fabric-stateless-services"></a>Guia de conversão de funções de trabalho e Web em serviços sem estado do Service Fabric
@@ -41,7 +41,7 @@ Semelhante à função de trabalho, uma função Web também representa uma carg
 
 | **Aplicativo** | **Com suporte** | **Caminho de migração** |
 | --- | --- | --- |
-| Web Forms do ASP.NET |Não  |Converter em MVC do ASP.NET Core 1 |
+| Web Forms do ASP.NET |Não |Converter em MVC do ASP.NET Core 1 |
 | ASP.NET MVC |Com migração |Atualizar para o ASP.NET Core 1 MVC |
 | ASP.NET Web API |Com migração |Usar o servidor auto-hospedado ou o ASP.NET Core 1 |
 | ASP.NET Core 1 |Sim |N/D |

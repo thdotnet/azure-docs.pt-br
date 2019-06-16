@@ -15,10 +15,10 @@ ms.workload: required
 ms.date: 11/03/2017
 ms.author: bharatn
 ms.openlocfilehash: 6ce6f1f6559b43a64fb7edd0773a20f8ee0cf8a3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60837924"
 ---
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Proxy reverso no Azure Service Fabric
@@ -77,7 +77,7 @@ http(s)://<Cluster FQDN | internal IP>:Port/<ServiceInstanceName>/<Suffix path>?
 * **http(s):** O proxy reverso pode ser configurado para aceitar tráfego HTTP ou HTTPS. Para o encaminhamento HTTPS, consulte [Conectar-se a um serviço seguro com o proxy reverso](service-fabric-reverseproxy-configure-secure-communication.md) após a configuração do proxy reverso para escutar o HTTPS.
 * **FQDN (nome de domínio totalmente qualificado) do cluster | IP interno:** Para clientes externos, é possível configurar o proxy reverso para que seja acessível através do domínio do cluster como, por exemplo, mycluster.eastus.cloudapp.azure.com. Por padrão, o proxy reverso é executado em todos os nós. Para o tráfego interno, o proxy reverso pode ser alcançado no localhost ou em qualquer IP de nó interno (por exemplo, 10.0.0.1).
 * **Porta:** Essa é a porta, como 19081, que foi especificada para o proxy reverso.
-* **ServiceInstanceName:** Esse é o nome totalmente qualificado da instância de serviço implantada que você está tentando acessar sem o esquema "fabric:/". Por exemplo, para alcançar o serviço *fabric:/myapp/myservice/*, você usaria *myapp/myservice*.
+* **ServiceInstanceName:** Esse é o nome totalmente qualificado da instância de serviço implantada que você está tentando acessar sem o esquema "fabric:/". Por exemplo, para alcançar o serviço *fabric:/myapp/myservice/* , você usaria *myapp/myservice*.
 
     O nome da instância de serviço diferencia maiúsculas de minúsculas. O uso de maiúsculas e minúsculas diferentes no nome da instância de serviço da URL causa uma falha das solicitações com 404 (Não Encontrado).
 * **Sufixo do caminho:** Esse é o caminho real da URL, como *myapi/values/add/3*, para o serviço que você quer conectar.

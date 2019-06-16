@@ -8,10 +8,10 @@ ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
 ms.openlocfilehash: 67a6eec938a4a18455e4063925e21e26fe362f76
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66243478"
 ---
 # <a name="diagnostic-logging-in-azure-cosmos-db"></a>Log de diagnósticos no Azure Cosmos DB 
@@ -266,7 +266,7 @@ Os valores de data e hora usam UTC.
 
 Como a mesma conta de armazenamento pode ser usada para coletar logs de vários recursos, você pode usar a ID totalmente qualificada do recurso no nome do blob para acessar e baixar os blobs de que você precisa. Antes de fazer isso, primeiro vamos mostrar como baixar todos os blobs.
 
-Primeiro, crie uma pasta para baixar os blobs. Por exemplo: 
+Primeiro, crie uma pasta para baixar os blobs. Por exemplo:
 
 ```powershell
 New-Item -Path 'C:\Users\username\ContosoCosmosDBLogs'`
@@ -288,7 +288,7 @@ $blobs | Get-AzStorageBlobContent `
 
 Quando você executa esse segundo comando, o delimitador **/** nos nomes de blob cria uma estrutura de pastas completa na pasta de destino. Essa estrutura de pastas é usada para baixar e armazenar os blobs como arquivos.
 
-Use caracteres curinga para baixar seletivamente os blobs. Por exemplo: 
+Use caracteres curinga para baixar seletivamente os blobs. Por exemplo:
 
 * Caso você tenha vários bancos de dados e deseje baixar apenas os logs de um banco de dados chamado**CONTOSOCOSMOSDB3**, use o comando:
 

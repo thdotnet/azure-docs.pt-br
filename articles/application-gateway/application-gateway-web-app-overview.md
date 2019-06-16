@@ -7,18 +7,18 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: victorh
-ms.openlocfilehash: 8434340bb7ed95cc36115c05048b2b67682b5796
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 256fb42be8fec056ed7d10cfc4197a1b5a33fac1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60831278"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66807170"
 ---
 # <a name="application-gateway-support-for-multi-tenant-back-ends-such-as-app-service"></a>Suporte do Gateway de aplicativo para vários locatário back termina, como o serviço de aplicativo
 
 Designs de arquiteturas de multilocatário em servidores web, vários sites estão em execução na mesma instância do servidor web. Os nomes de host são usadas para diferenciar entre os diferentes aplicativos que são hospedados. Por padrão, o gateway de aplicativo não altera o cabeçalho de host HTTP recebido do cliente e envia o cabeçalho inalterado para o back-end. Isso funciona bem para membros do pool de back-end, como NICs, dimensionamento de máquinas virtuais define, endereços IP públicos, endereços IP internos e FQDN conforme elas não dependem de um cabeçalho de host específico ou a extensão SNI para resolver para o ponto de extremidade correto. No entanto, há muitos serviços, como aplicativos web do serviço de aplicativo do Azure e o gerenciamento de API do Azure que têm vários locatários por natureza e contam com um cabeçalho de host específico ou a extensão SNI para resolver para o ponto de extremidade correto. Normalmente, o nome DNS do aplicativo, que por sua vez, é o nome DNS associado com o gateway de aplicativo, é diferente do nome de domínio do serviço de back-end. Portanto, o cabeçalho de host na solicitação original recebido pelo gateway de aplicativo não é igual ao nome de host do serviço de back-end. Por isso, a menos que o cabeçalho de host na solicitação de gateway de aplicativo para o back-end é alterado para o nome do host do serviço de back-end, back-ends multilocatário não são capazes de resolver a solicitação para o ponto de extremidade correto. 
 
-O gateway de aplicativo fornece uma funcionalidade que permite aos usuários substituir o cabeçalho de host HTTP na solicitação com base no nome do host do back-end. Esse recurso habilita o suporte para o back-ends multilocatário como aplicativos web do serviço de aplicativo do Azure e o gerenciamento de API. Esse recurso está disponível para o v1 e v2 standard e SKUs do WAF. 
+O Gateway de Aplicativo fornece uma funcionalidade que permite aos usuários substituir o cabeçalho do host HTTP na solicitação com base no nome do host do back-end. Esse recurso habilita o suporte a back-ends com vários locatários, como os aplicativos Web do Azure e ao gerenciamento de APIs. Esse recurso está disponível para as SKUs v1 e v2 padrão e WAF. 
 
 ![substituição do host](./media/application-gateway-web-app-overview/host-override.png)
 
@@ -31,7 +31,7 @@ A capacidade de especificar uma substituição de host é definida na [configura
 
 - A capacidade de definir o nome do host como um valor fixo explicitamente inserido nas configurações de HTTP. Essa funcionalidade garante que o cabeçalho de host seja substituído para esse valor para todo o tráfego para o pool de back-end em que as configurações de HTTP específicas são aplicadas. Ao usar SSL de ponta a ponta, esse nome de host substituído é usado na extensão de SNI. Esse recurso habilita cenários onde um farm de pool de back-end espera um cabeçalho de host que seja diferente do cabeçalho de host de entrada do cliente.
 
-- A capacidade de derivar o nome do host do IP ou FQDN dos membros do pool de back-end. Configurações HTTP também fornecem uma opção para selecionar dinamicamente o nome do host do FQDN de um membro pool de back-end se configurado com a opção para derivar o nome do host de um membro do pool de back-end individual. Ao usar SSL de ponta a ponta, esse nome de host é derivado do FQDN e é usado na extensão de SNI. Esse recurso habilita cenários em que um pool de back-end pode ter dois ou mais serviços PaaS com vários locatários, como aplicativos Web do Azure, e o cabeçalho de host da solicitação para cada membro pode conter o nome de host derivado do seu FQDN. Para implementar esse cenário, usamos uma opção nas configurações de HTTP denominado [escolher um nome de host do endereço de back-end](https://docs.microsoft.com/azure/application-gateway/configuration-overview#pick-host-name-from-backend-address) dinamicamente que substituirá o cabeçalho de host na solicitação original para mencionada no pool de back-end.  Por exemplo, se o FQDN do pool de back-end contém "contoso11.azurewebsites.net" e "contoso22.azurewebsites.net", cabeçalho de host da solicitação original que é contoso.com será substituído contoso11.azurewebsites.net ou contoso22.azurewebsites.net Quando a solicitação é enviada para o servidor de back-end apropriado. 
+- A capacidade de derivar o nome do host do IP ou FQDN dos membros do pool de back-end. Configurações HTTP também fornecem uma opção para selecionar dinamicamente o nome do host do FQDN de um membro pool de back-end se configurado com a opção para derivar o nome do host de um membro do pool de back-end individual. Ao usar SSL de ponta a ponta, esse nome de host é derivado do FQDN e é usado na extensão de SNI. Esse recurso habilita cenários em que um pool de back-end pode ter dois ou mais serviços PaaS com vários locatários, como aplicativos Web do Azure, e o cabeçalho de host da solicitação para cada membro pode conter o nome de host derivado do seu FQDN. Para implementar esse cenário, usamos uma opção nas configurações de HTTP denominado [escolher um nome de host do endereço de back-end](https://docs.microsoft.com/azure/application-gateway/configuration-overview#pick-host-name-from-back-end-address) dinamicamente que substituirá o cabeçalho de host na solicitação original para mencionada no pool de back-end.  Por exemplo, se o FQDN do pool de back-end contém "contoso11.azurewebsites.net" e "contoso22.azurewebsites.net", cabeçalho de host da solicitação original que é contoso.com será substituído contoso11.azurewebsites.net ou contoso22.azurewebsites.net Quando a solicitação é enviada para o servidor de back-end apropriado. 
 
   ![cenário de aplicativo Web](./media/application-gateway-web-app-overview/scenario.png)
 

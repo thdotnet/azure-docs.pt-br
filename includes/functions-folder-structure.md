@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 09/12/2018
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 27dc1b1315a8e33b8ac13b34d4a86ad0343388b4
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 9f74365f3fe935be45fa9c45e5b12c45b97b2f8a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66131509"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67068425"
 ---
 O código para todas as funções em um aplicativo de funções específico está localizado em uma pasta do projeto raiz que contém um arquivo de configuração do host e uma ou mais subpastas. Cada subpasta contém o código para uma função separada, como na seguinte representação:
 
@@ -31,7 +31,7 @@ FunctionApp
  | - bin
 ```
 
-Na versão 2.x do tempo de execução do Functions, todas as funções no aplicativo de funções devem compartilhar o mesmo trabalhado de idioma.  
+Na versão 2.x do tempo de execução de funções, todas as funções no aplicativo de funções devem compartilhar a mesma pilha de linguagem.  
 
 O arquivo [host.json](../articles/azure-functions/functions-host-json.md), que contém algumas configurações específicas de tempo de execução, está na pasta raiz do aplicativo de funções. Uma pasta `bin` contém pacotes e outros arquivos de biblioteca exigidos pelo aplicativo de funções. Consulte os requisitos específicos a um idioma para um projeto de aplicativo de função:
 

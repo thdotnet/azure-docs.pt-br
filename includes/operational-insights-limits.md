@@ -5,40 +5,56 @@ services: log-analytics
 author: MGoedtel
 ms.service: log-analytics
 ms.topic: include
-ms.date: 05/16/2018
+ms.date: 06/10/2019
 ms.author: magoedte
 ms.custom: include file
-ms.openlocfilehash: 34f2ab8f7ccafb8b30e298cd71e09171ad8c87cb
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: c5fedc59c80c68fc222693a67664ef60ddd210a9
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66238579"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67133185"
 ---
-Os seguintes limites se aplicam aos recursos do Azure Log Analytics por assinatura.
+Os seguintes limites se aplicam a cada espaço de trabalho do Log Analytics no atual com base no consumo de tipo de preço introduzido em abril de 2018:
 
-| Resource | Limite padrão | Comentários
-| --- | --- | --- |
-| Número de workspaces gratuitos por assinatura | 10 | Esse limite não pode ser aumentado. |
-| Número de workspaces pagos por assinatura | N/D | Você está limitado pelo número de recursos dentro de um grupo de recursos e o número de grupos de recursos por assinatura. | 
+|     | Por GB de 2018 |
+| --- | --- | 
+| Volume de dados coletado por dia | Nenhum |
+| Período de retenção de dados | 30 a 730 dias<sup>1</sup> |
+
+Os limites a seguir se aplicam a cada espaço de trabalho de análise de Log mais recente herdado tipos de preço:
+
+|  | Grátis | Autônomo (por GB) | Por nó (OMS) |
+| --- | --- | --- | --- | --- | --- |--- |
+| Volume de dados coletado por dia |500 MB<sup>2</sup> |Nenhum |Nenhum |
+| Período de retenção de dados |7 dias | 30 a 730 dias<sup>1</sup> | 30 a 730 dias<sup>1</sup> |
+
+Os seguintes limites se aplicam a cada espaço de trabalho do Log Analytics herdado mais antigo que tipos de preço:
+
+|  | Standard | Premium | 
+| --- | --- | --- | --- | --- | --- |--- |
+| Volume de dados coletado por dia | Nenhum | Nenhum | 
+| Período de retenção de dados |30 dias | 365 dias |
+
+<sup>1</sup>retenção de dados além dos 31 dias está disponível para encargos adicionais. Saiba mais sobre o [preço do Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
+
+<sup>2</sup>quando seu espaço de trabalho atinge o limite de transferência de dados diário 500 MB, a análise de dados será interrompida e reiniciada no início do dia seguinte. Um dia é baseado em UTC.
 
 >[!NOTE]
->A partir de 2 de abril de 2018 novos espaços de trabalho em uma nova assinatura usam automaticamente o *por GB* plano de preços. Para assinaturas existentes criadas antes de 2 de abril ou uma assinatura associada a um registro existente do Enterprise Agreement, você pode continuar a escolher entre três tipos de preço para novos espaços de trabalho. 
+>Dependendo do quanto você usou o Log Analytics, você pode ter acesso para as camadas de preços herdado. Saiba mais sobre [herdado do Log Analytics que tipos de preço](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers). 
 >
 
-Os seguintes limites se aplicam a cada espaço de trabalho do Log Analytics.
+Os seguintes limites se aplicam aos recursos do Azure Log Analytics (espaços de trabalho) por assinatura.
 
-|  | Grátis | Standard | Premium | Autônomo | OMS | Por GB |
-| --- | --- | --- | --- | --- | --- |--- |
-| Volume de dados coletado por dia |500 MB<sup>1</sup> |Nenhum |Nenhum | Nenhum | Nenhum | Nenhum
-| Período de retenção de dados |7 dias |1 mês |12 meses | 1 mês<sup>2</sup> | 1 mês<sup>2</sup>| 1 mês<sup>2</sup>|
+| Tipo de preço    | Número de espaços de trabalho por assinatura | Comentários
+| --- | --- | --- |
+| Camada gratuita  | 10 | Esse limite não pode ser aumentado. |
+| Todos os tipos diferentes de gratuito | N/D | Você está limitado pelo número de recursos dentro de um grupo de recursos e o número de grupos de recursos por assinatura. | 
 
-<sup>1</sup>quando os clientes atingirem os seus 500 MB limite diário de transferência de dados, análise de dados será interrompida e reiniciada no início do dia seguinte. Um dia é baseado em UTC.
-
-<sup>2</sup>o período de retenção de dados para o autônomo, OMS e os planos de preços por GB pode ser aumentado para 730 dias.
+Os seguintes limites se aplicam para as APIs de análise de Log:
 
 | Categoria | limites | Comentários
 | --- | --- | --- |
 | API do Coletor de Dados | Tamanho máximo para uma única postagem é de 30 MB.<br>Tamanho máximo para valores de campo é 32 KB. | Dividir volumes maiores em várias postagens.<br>Campos com mais de 32 KB são truncados. |
-| API de Pesquisa | 5.000 registros retornados para dados não agregados.<br>500.000 registros para os dados agregados. | Os dados agregados são uma pesquisa que inclui o `summarize` comando.
+| API de Pesquisa | 5\.000 registros retornados para dados não agregados.<br>500\.000 registros para os dados agregados. | Os dados agregados são uma pesquisa que inclui o `summarize` comando.
  

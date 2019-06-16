@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: raynew
 ms.openlocfilehash: e96aafe61c0d8547ffca9e97bfd9e90c9529155f
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66237273"
 ---
 # <a name="set-up-disaster-recovery-at-scale-for-vmware-vmsphysical-servers"></a>Configurar a recuperação de desastre em grande escala para VMs VMware/servidores físicos
@@ -101,7 +101,7 @@ O que está em conformidade média? Para iniciar uma VM do Azure, o Azure requer
 **Computador está em conformidade com o Azure?** | **Limites VM do Azure (failover de disco gerenciado)**
 --- | --- 
 Sim | 2000
-Não  | 1000
+Não | 1000
 
 - Limites de supõem que mínimo que outros trabalhos estão em andamento na região de destino para a assinatura.
 - Algumas regiões do Azure são menores e podem ter limites de um pouco menores.

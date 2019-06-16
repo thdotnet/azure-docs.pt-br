@@ -3,8 +3,8 @@ title: Versão prévia da implantação do Docker Compose no Azure Service Fabri
 description: O Azure Service Fabric aceita o formato do Docker Compose para facilitar a orquestração dos contêineres existentes usando o Service Fabric. No momento, esse suporte está na versão prévia.
 services: service-fabric
 documentationcenter: .net
-author: rockboyfor
-manager: digimobile
+author: aljo-microsoft
+manager: chackdan
 editor: ''
 ms.assetid: ab49c4b9-74a8-4907-b75b-8d2ee84c6d90
 ms.service: service-fabric
@@ -12,14 +12,13 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-origin.date: 02/23/2018
-ms.date: 04/29/2019
-ms.author: v-yeche
+ms.date: 2/23/2018
+ms.author: aljo, subramar
 ms.openlocfilehash: da86ed9a3e6979bd1dc05aef6ef70c7b8533a8c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60948827"
 ---
 # <a name="docker-compose-deployment-support-in-azure-service-fabric-preview"></a>Suporte à implantação do Docker Compose no Azure Service Fabric (Versão prévia)
@@ -139,8 +138,8 @@ Configure o cluster para impor limites de recursos, conforme descrito na [Govern
 ### <a name="ports-section"></a>Seção Portas
 
 Especifique o protocolo http ou https na seção Portas que será usada pelo ouvinte de serviço do Service Fabric. Isso garantirá que o protocolo de ponto de extremidade seja publicado corretamente com o serviço de nomenclatura para permitir que o proxy inverso encaminhe as solicitações:
-* Para rotear para serviços do Service Fabric Compose não seguros, especifique **/http**. Por exemplo, – **“80:80/http”**.
-* Para rotear para serviços do Service Fabric Compose seguros, especifique **/https**. Por exemplo, – **“443:443/https”**.
+* Para rotear para serviços do Service Fabric Compose não seguros, especifique **/http**. Por exemplo, – **“80:80/http”** .
+* Para rotear para serviços do Service Fabric Compose seguros, especifique **/https**. Por exemplo, – **“443:443/https”** .
 
 > [!NOTE]
 > A sintaxe de seção das Portas /http e /https é específica para o Service Fabric registrar a URL correta do ouvinte do Service Fabric.  Se a sintaxe do arquivo do Docker Compose for validada programaticamente, poderá provocar um erro de validação.
@@ -166,5 +165,3 @@ Embora esse modelo ofereça flexibilidade, também estamos planejando dar suport
 
 * Leia sobre o [modelo de aplicativo do Service Fabric](service-fabric-application-model.md)
 * [Introdução à CLI do Service Fabric](service-fabric-cli.md)
-
-<!-- Update_Description: wording update -->

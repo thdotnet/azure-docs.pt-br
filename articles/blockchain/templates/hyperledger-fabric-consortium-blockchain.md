@@ -11,10 +11,10 @@ ms.service: azure-blockchain
 ms.reviewer: caleteet
 manager: femila
 ms.openlocfilehash: 80de4e1479fac7296889e45289a5f20e586e3f57
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65510762"
 ---
 # <a name="hyperledger-fabric-consortium-network"></a>Rede de consórcio Hyperledger Fabric
@@ -76,7 +76,7 @@ Em **Noções básicas**, especifique valores para parâmetros padrão para qual
 
 ![Noções básicas](./media/hyperledger-fabric-consortium-blockchain/basics.png)
 
-| Nome do Parâmetro | Descrição | Valores permitidos |
+| Nome do Parâmetro | DESCRIÇÃO | Valores permitidos |
 |---|---|---|
 **Prefixo do recurso** | Prefixo do nome para os recursos provisionados como parte da implantação |6 caracteres ou menos |
 **Nome de Usuário** | O nome de usuário do administrador de cada uma das máquinas virtuais implementadas para esse membro |1 a 64 caracteres |
@@ -95,7 +95,7 @@ Em **Configurações de rede**, especifique entradas para criar ou ingressar em 
 
 ![Configurações de rede do consórcio](./media/hyperledger-fabric-consortium-blockchain/network-settings.png)
 
-| Nome do Parâmetro | Descrição | Valores permitidos |
+| Nome do Parâmetro | DESCRIÇÃO | Valores permitidos |
 |---|---|---|
 **Configuração de rede** |Você pode optar por criar uma nova rede ou ingressar em uma existente. Se você escolher *Ingressar na existente*, você precisa fornecer valores adicionais. |Nova rede <br/> Ingressar na existente |
 **Senha de AC de HLF** |Uma senha usada para certificados gerados por autoridades de certificação que são criadas como parte da implantação. A senha precisa conter três dos seguintes tipos de caractere: 1 caractere maiúsculo, 1 caractere minúsculo, 1 número e 1 caractere especial.<br /><br />Embora todas as máquinas virtuais tenham inicialmente a mesma senha, você pode alterar a senha após o provisionamento.|1 a 25 caracteres |
@@ -110,7 +110,7 @@ Em **Configuração da malha**, configure o tamanho da rede e o desempenho e esp
 
 ![Configurações de tecido](./media/hyperledger-fabric-consortium-blockchain/fabric-specific-settings.png)
 
-| Nome do Parâmetro | Descrição | Valores permitidos |
+| Nome do Parâmetro | DESCRIÇÃO | Valores permitidos |
 |---|---|---|
 **Tipo de escala** |O tipo de implantação de uma única máquina virtual com vários contêineres ou várias máquinas virtuais em um modelo de expansão.|VM individual ou várias VMs |
 **Tipo de disco da VM** |O tipo de armazenamento que suporta cada um dos nós implementados. <br/> Para saber mais sobre os tipos de disco disponíveis, acesse [escolher um tipo de disco](../../virtual-machines/windows/disks-types.md).|SSD Standard <br/> SSD Premium |
@@ -119,7 +119,7 @@ Em **Configuração da malha**, configure o tamanho da rede e o desempenho e esp
 
 ![Configurações de malha para implantações de várias VMs](./media/hyperledger-fabric-consortium-blockchain/multiple-vm-deployment.png)
 
-| Nome do Parâmetro | Descrição | Valores permitidos |
+| Nome do Parâmetro | DESCRIÇÃO | Valores permitidos |
 |---|---|---|
 **Número de nós do comprador** |O número de nós que ordenam (organizam) as transações em um bloco. <br />Para obter detalhes adicionais sobre o serviço de pedidos, visite a [documentação](https://hyperledger-fabric.readthedocs.io/en/release-1.1/ordering-service-faq.html) do Hyperledger |1-4 |
 **Tamanho da máquina virtual do nó do comprador** |O tamanho da máquina virtual usada para os nós do comprador na rede|Standard Bs,<br />Standard Ds,<br />Standard FS |

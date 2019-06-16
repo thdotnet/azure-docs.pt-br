@@ -15,10 +15,10 @@ ms.workload: tbd
 ms.date: 07/18/2017
 ms.author: jeconnoc
 ms.openlocfilehash: 21fbfe22901de677209b55639cd8871ab408375b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64719027"
 ---
 # <a name="sizes-for-cloud-services"></a>Tamanhos dos serviços de nuvem
@@ -86,9 +86,9 @@ As tabelas a seguir mostram os tamanhos e as capacidades oferecidas.
 | Tamanho            | Núcleos de CPU | Memória: GiB  | Armazenamento temporário: GiB       | NICs máximas / largura de banda da rede |
 |---------------- | --------- | ------------ | -------------------- | ---------------------------- |
 | ExtraSmall      | 1         | 0,768        | 20                   | 1 / baixa |
-| Pequena           | 1         | 1,75         | 225                  | 1 / moderada |
+| Pequeno           | 1         | 1,75         | 225                  | 1 / moderada |
 | Média          | 2         | 3,5          | 490                  | 1 / moderada |
-| grande           | 4         | 7            | 1000                 | 2 / alta |
+| Grande           | 4         | 7            | 1000                 | 2 / alta |
 | ExtraLarge      | 8         | 14           | 2040                 | 4 / alta |
 | A5              | 2         | 14           | 490                  | 1 / moderada |
 | A6              | 4         | 28           | 1000                 | 2 / alta |
@@ -143,7 +143,7 @@ Para obter informações e considerações sobre o uso desses tamanhos, veja [Ta
 | Standard_D12_v2 | 4         | 28           | 200                  | 4 / alta |
 | Standard_D13_v2 | 8         | 56           | 400                  | 8 / alta |
 | Standard_D14_v2 | 16        | 112          | 800                  | 8 / extremamente alta |
-| Standard_D15_v2 | 20        | 140          | 1.000                | 8 / extremamente alta |
+| Standard_D15_v2 | 20        | 140          | 1\.000                | 8 / extremamente alta |
 
 ## <a name="dv3-series"></a>Dv3-series
 
@@ -184,9 +184,9 @@ Para obter informações e considerações sobre o uso desses tamanhos, veja [Ta
 |---------------- | --------- | ------------ | -------------------- | ---------------------------- |
 | Standard_G1     | 2         | 28           | 384                  |1 / alta |
 | Standard_G2     | 4         | 56           | 768                  |2 / alta |
-| Standard_G3     | 8         | 112          | 1.536                |4 / muito alta |
-| Standard_G4     | 16        | 224          | 3.072                |8 / extremamente alta |
-| Standard_G5     | 32        | 448          | 6.144                |8 / extremamente alta |
+| Standard_G3     | 8         | 112          | 1\.536                |4 / muito alta |
+| Standard_G4     | 16        | 224          | 3,072                |8 / extremamente alta |
+| Standard_G5     | 32        | 448          | 6\.144                |8 / extremamente alta |
 
 ## <a name="h-series"></a>Série H
 As máquinas virtuais da série H do Azure são a próxima geração de VMs de computação de alto desempenho voltadas para as necessidades computacionais de alto nível, como modelagem molecular e dinâmica de fluido computacional. Essas VMs de 8 e 16 núcleos baseiam-se na tecnologia do processador Intel Haswell E5-2667 V3 apresentando memória DDR4 e armazenamento local baseado em SSD.

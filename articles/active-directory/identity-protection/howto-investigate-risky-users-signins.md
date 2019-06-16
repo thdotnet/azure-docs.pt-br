@@ -17,12 +17,12 @@ ms.devlang: na
 ms.topic: article
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 646119f223067fac5ee36574fb10273819251cce
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: 4a90195a2d0899b0a157cc67badd2f9873164987
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/13/2019
-ms.locfileid: "60295813"
+ms.locfileid: "67108961"
 ---
 # <a name="how-to-investigate-risky-users-and-sign-ins"></a>Como: Investigar entradas e usuários arriscados 
 
@@ -199,7 +199,7 @@ O relatório de entradas arriscadas tem uma exibição padrão que mostra:
 
 - Nível de risco (tempo real)
 
-- Acesso condicional
+- Acesso Condicional
 
 - MFA necessário  
  
@@ -228,7 +228,7 @@ A exibição de detalhes mostra:
 
 - Informações de MFA
 
-- Acesso condicional
+- Acesso Condicional
 
 
 
@@ -257,7 +257,7 @@ Para restringir os dados relatados a um nível que funciona para você, filtre o
 - Estado do risco
 - Nível de risco (agregação)
 - Nível de risco (tempo real)
-- Acesso condicional
+- Acesso Condicional
 - Data
 - Tipo de nível de risco
 
@@ -298,7 +298,7 @@ O filtro **Nível de risco (tempo real)** permite que você selecione:
 - Baixo
 
 
-O filtro **Acesso condicional** permite que você selecione:
+O **acesso condicional** filtro permite que você selecione:
 
 - Todos
 - Não aplicado

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: b8f9ca96ac9386037460ad5c1c9f56fe7b9c2e18
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64939994"
 ---
 # <a name="hosted-test-drive"></a>Test drive hospedado
@@ -41,7 +41,7 @@ Forneça os seguintes campos na seção \'Configurações Técnicas\':
 
 - **Tipo de teste de unidade**: Escolha \'Microsoft Hosted (exemplo do Dynamics 365 for Customer Engagement)' opção. Isso indica que a Microsoft hospedará e manterá o serviço que executa o provisionamento e o desprovisionamento de usuários do test drive.
 - **Simultânea máxima Test Drives**: Defina esse campo como o número de usuários simultâneos que podem ter uma unidade de teste ativa em qualquer determinado momento. Cada usuário consumirá uma licença do Dynamics enquanto seu test drive estiver ativo, portanto, verifique se você tem pelo menos esse número de licenças do Dynamics disponíveis para usuários do test drive. O valor recomendado é de 3 a 5.
-- **Teste de unidade de duração (horas)**: Defina esse campo como o número de horas que os usuários do para que Test Drive ficará ativo. Depois desse número de horas, o usuário será desprovisionado do locatário. O valor recomendado é de 2 a 24 horas, dependendo da complexidade do aplicativo. O usuário sempre poderá solicitar outro test drive quando atingir o tempo limite e desejar acessar o test drive novamente.
+- **Teste de unidade de duração (horas)** : Defina esse campo como o número de horas que os usuários do para que Test Drive ficará ativo. Depois desse número de horas, o usuário será desprovisionado do locatário. O valor recomendado é de 2 a 24 horas, dependendo da complexidade do aplicativo. O usuário sempre poderá solicitar outro test drive quando atingir o tempo limite e desejar acessar o test drive novamente.
 - **URL da instância**: Forneça uma URL que o usuário de teste de unidade será inicialmente para onde navegar quando os usuários iniciarem o Test Drive. Normalmente, essa é a URL da instância do Dynamics 365 que contém o aplicativo e os dados de exemplo instalados. Valor de exemplo: https:\//testdrive.crm.dynamics.com
 - **ID de locatário do Azure AD**: Forneça a ID do locatário do Azure para sua instância do Dynamics 365. Para recuperar esse valor, faça logon no portal do Azure e navegue até o \'Azure Active Directory\' -\> Selecione Propriedades na folha de menu −\> Copiar a ID do Diretório. Valor de exemplo: 72f988bf-86f1-41af-91ab-2d7cd0111234
 - **A ID de aplicativo do Azure AD**: ID do aplicativo do Azure AD criado na etapa 7. \ valor de exemplo: 53852862-a2ae-4e43-9461-faa49650a096

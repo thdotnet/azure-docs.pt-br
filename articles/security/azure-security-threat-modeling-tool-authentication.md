@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.openlocfilehash: 3b170a214c7c3c464f7ea645fa1dc42cce0a0580
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65951720"
 ---
 # <a name="security-frame-authentication--mitigations"></a>Quadro de segurança: Autenticação | Mitigações 
@@ -48,7 +48,7 @@ ms.locfileid: "65951720"
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
 | **Referências**              | N/D  |
-| Detalhes | <p>A autenticação é o processo em que uma entidade comprova sua identidade, normalmente por meio de credenciais, como um nome de usuário e uma senha. Há vários protocolos de autenticação disponíveis que podem ser considerados. Alguns deles são listados abaixo:</p><ul><li>Certificados de cliente</li><li>Baseado no Windows</li><li>Baseado em formulários</li><li>Federação - ADFS</li><li>Federação – Azure AD</li><li>Federação - Servidor de Identidade</li></ul><p>Considere usar um mecanismo de autenticação padrão para identificar o processo de origem</p>|
+| Detalhes | <p>A autenticação é o processo em que uma entidade comprova sua identidade, normalmente por meio de credenciais, como um nome de usuário e uma senha. Há vários protocolos de autenticação disponíveis que podem ser considerados. Alguns deles são listados abaixo:</p><ul><li>Certificados do cliente</li><li>Baseado no Windows</li><li>Baseado em formulários</li><li>Federação - ADFS</li><li>Federação – Azure AD</li><li>Federação - Servidor de Identidade</li></ul><p>Considere usar um mecanismo de autenticação padrão para identificar o processo de origem</p>|
 
 ## <a id="handle-failed-authn"></a>Os aplicativos devem lidar com segurança com os cenários de autenticação com falha
 
@@ -340,13 +340,13 @@ O elemento `<netMsmqBinding/>` do arquivo de configuração WCF abaixo instrui o
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
 | **Referências**              | [Autenticação e Autorização na ASP.NET Web API](https://www.asp.net/web-api/overview/security/authentication-and-authorization-in-aspnet-web-api), [Serviços de Autenticação Externa com a API Web do ASP.NET (C#)](https://www.asp.net/web-api/overview/security/external-authentication-services) |
-| **Etapas** | <p>A autenticação é o processo em que uma entidade comprova sua identidade, normalmente por meio de credenciais, como um nome de usuário e uma senha. Há vários protocolos de autenticação disponíveis que podem ser considerados. Alguns deles são listados abaixo:</p><ul><li>Certificados de cliente</li><li>Baseado no Windows</li><li>Baseado em formulários</li><li>Federação - ADFS</li><li>Federação – Azure AD</li><li>Federação - Servidor de Identidade</li></ul><p>Os links na seção de referências fornecem detalhes de baixo nível sobre como cada um dos esquemas de autenticação pode ser implementado para proteger uma API Web.</p>|
+| **Etapas** | <p>A autenticação é o processo em que uma entidade comprova sua identidade, normalmente por meio de credenciais, como um nome de usuário e uma senha. Há vários protocolos de autenticação disponíveis que podem ser considerados. Alguns deles são listados abaixo:</p><ul><li>Certificados do cliente</li><li>Baseado no Windows</li><li>Baseado em formulários</li><li>Federação - ADFS</li><li>Federação – Azure AD</li><li>Federação - Servidor de Identidade</li></ul><p>Os links na seção de referências fornecem detalhes de baixo nível sobre como cada um dos esquemas de autenticação pode ser implementado para proteger uma API Web.</p>|
 
 ## <a id="authn-aad"></a>Use cenários de autenticação padrão com suporte no Azure Active Directory
 
 | Title                   | Detalhes      |
 | ----------------------- | ------------ |
-| **Componente**               | Azure AD | 
+| **Componente**               | AD do Azure | 
 | **Fase do SDL**               | Compilação |  
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
@@ -357,7 +357,7 @@ O elemento `<netMsmqBinding/>` do arquivo de configuração WCF abaixo instrui o
 
 | Title                   | Detalhes      |
 | ----------------------- | ------------ |
-| **Componente**               | Azure AD | 
+| **Componente**               | AD do Azure | 
 | **Fase do SDL**               | Compilação |  
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
@@ -368,7 +368,7 @@ O elemento `<netMsmqBinding/>` do arquivo de configuração WCF abaixo instrui o
 
 | Title                   | Detalhes      |
 | ----------------------- | ------------ |
-| **Componente**               | Azure AD | 
+| **Componente**               | AD do Azure | 
 | **Fase do SDL**               | Compilação |  
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
@@ -429,7 +429,7 @@ Observe que, para testar a eficácia dessa configuração, faça logon no aplica
 
 | Title                   | Detalhes      |
 | ----------------------- | ------------ |
-| **Componente**               | Azure AD | 
+| **Componente**               | AD do Azure | 
 | **Fase do SDL**               | Compilação |  
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |

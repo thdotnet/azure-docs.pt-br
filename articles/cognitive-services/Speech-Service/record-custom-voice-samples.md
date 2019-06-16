@@ -12,10 +12,10 @@ ms.date: 12/06/2018
 ms.author: erhopf
 ms.custom: seodec18
 ms.openlocfilehash: a4a8212906f384494a9e2e005eee8c4dbdfa14a3
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65954647"
 ---
 # <a name="record-voice-samples-to-create-a-custom-voice"></a>Gravar amostras de voz para criar uma voz personalizada
@@ -105,7 +105,7 @@ Sob a lei de direitos autorais, a leitura de um texto com direitos autorais pelo
 
 Felizmente, é possível evitar completamente esses problemas. Há muitas fontes de texto que podem ser utilizadas sem permissão ou licença.
 
-|Fonte de texto|Descrição|
+|Fonte de texto|DESCRIÇÃO|
 |-|-|
 |[Corpus CMU Arctic](http://festvox.org/cmu_arctic/)|Cerca de 1100 frases selecionadas de obras que não possuem direitos autorais, especificamente para uso em projetos de sintetização de fala. Um excelente ponto de partida.|
 |Obras que não estão mais<br>sob direitos autorais|Normalmente, obras publicadas antes de 1923. Para inglês, o [Project Gutenberg](https://www.gutenberg.org/) oferece dezenas de milhares de obras desse tipo. Talvez seja conveniente concentra-se em textos mais recentes, pois a linguagem estará mais próxima do inglês moderno.|

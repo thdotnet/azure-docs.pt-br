@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
 ms.openlocfilehash: 250aea52de63a6397ce00e9cadcadf3a8ba39858
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60870499"
 ---
 # <a name="delegated-access-in-windows-virtual-desktop-preview"></a>Acesso delegado na visualização de área de trabalho Virtual do Windows
@@ -25,7 +25,7 @@ Visualização de área de trabalho Virtual do Windows tem um modelo de acesso d
     * Entidades de serviço
 * Definição de função
     * Funções internas
-* Escopo
+* Scope
     * Grupos de locatários
     * Locatários
     * Pools de host

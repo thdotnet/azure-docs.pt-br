@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 12/06/2017
 ms.author: aljo
 ms.openlocfilehash: d95d2802398a61b948ff6c59fb3eab0e1ddddbc5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66147468"
 ---
 # <a name="open-ports-for-a-service-fabric-cluster"></a>Abrir portas para um cluster do Service Fabric
@@ -61,7 +61,7 @@ az network lb rule create --backend-port 40000 --frontend-port 39999 --protocol 
 
 O comando da CLI do Azure tem alguns parâmetros que são descritos na seguinte tabela:
 
-| Parâmetro | Descrição |
+| Parâmetro | DESCRIÇÃO |
 | --------- | ----------- |
 | `--backend-port`  | A porta em que o aplicativo do Service Fabric está escutando. |
 | `--frontend-port` | A porta que o balanceador de carga expõe para conexões externas. |

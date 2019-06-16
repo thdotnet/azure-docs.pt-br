@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: kumud
 ms.openlocfilehash: 65ce9e7d298131486ae4e5f3584c7975ca81e1ab
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64684237"
 ---
 # <a name="introduction-to-resource-troubleshooting-in-azure-network-watcher"></a>Introdução à solução de problemas do recurso no Observador de Rede do Azure
@@ -52,13 +52,13 @@ As tabelas a seguir mostram os diversos tipos de falha (id em resultados da list
 | Tipo de Falha | Motivo | Registro|
 |---|---|---|
 | NoFault | Quando nenhum erro é detectado |Sim|
-| GatewayNotFound | Não é possível localizar o gateway ou o gateway não está provisionado |Não |
-| PlannedMaintenance |  A instância do gateway está em manutenção  |Não |
-| UserDrivenUpdate | Essa falha ocorre quando uma atualização de um usuário está em andamento. A atualização pode ser uma operação de redimensionamento. | Não  |
-| VipUnResponsive | Essa falha ocorre quando a instância primária do gateway não pode ser acessada devido a uma falha de investigação de integridade. | Não  |
-| PlatformInActive | Há um problema com a plataforma. | Não |
-| ServiceNotRunning | O serviço subjacente não está em execução. | Não |
-| NoConnectionsFoundForGateway | Não existem conexões no gateway. Essa falha é apenas um aviso.| Não |
+| GatewayNotFound | Não é possível localizar o gateway ou o gateway não está provisionado |Não|
+| PlannedMaintenance |  A instância do gateway está em manutenção  |Não|
+| UserDrivenUpdate | Essa falha ocorre quando uma atualização de um usuário está em andamento. A atualização pode ser uma operação de redimensionamento. | Não |
+| VipUnResponsive | Essa falha ocorre quando a instância primária do gateway não pode ser acessada devido a uma falha de investigação de integridade. | Não |
+| PlatformInActive | Há um problema com a plataforma. | Não|
+| ServiceNotRunning | O serviço subjacente não está em execução. | Não|
+| NoConnectionsFoundForGateway | Não existem conexões no gateway. Essa falha é apenas um aviso.| Não|
 | ConnectionsNotConnected | As conexões não estão conectadas. Essa falha é apenas um aviso.| Sim|
 | GatewayCPUUsageExceeded | O uso de CPU do gateway atual é > 95%. | Sim |
 
@@ -67,12 +67,12 @@ As tabelas a seguir mostram os diversos tipos de falha (id em resultados da list
 | Tipo de Falha | Motivo | Registro|
 |---|---|---|
 | NoFault | Quando nenhum erro é detectado |Sim|
-| GatewayNotFound | Não é possível localizar o gateway ou o gateway não está provisionado |Não |
-| PlannedMaintenance | A instância do gateway está em manutenção  |Não |
-| UserDrivenUpdate | Essa falha ocorre quando uma atualização de um usuário está em andamento. A atualização pode ser uma operação de redimensionamento.  | Não  |
-| VipUnResponsive | Essa falha ocorre quando a instância primária do gateway não pode ser acessada devido a uma falha de investigação de integridade. | Não  |
-| ConnectionEntityNotFound | A configuração da conexão está ausente | Não  |
-| ConnectionIsMarkedDisconnected | A conexão está marcada como "desconectada" |Não |
+| GatewayNotFound | Não é possível localizar o gateway ou o gateway não está provisionado |Não|
+| PlannedMaintenance | A instância do gateway está em manutenção  |Não|
+| UserDrivenUpdate | Essa falha ocorre quando uma atualização de um usuário está em andamento. A atualização pode ser uma operação de redimensionamento.  | Não |
+| VipUnResponsive | Essa falha ocorre quando a instância primária do gateway não pode ser acessada devido a uma falha de investigação de integridade. | Não |
+| ConnectionEntityNotFound | A configuração da conexão está ausente | Não |
+| ConnectionIsMarkedDisconnected | A conexão está marcada como "desconectada" |Não|
 | ConnectionNotConfiguredOnGateway | O serviço subjacente não tem a conexão configurada. | Sim |
 | ConnectionMarkedStandby | O serviço subjacente está marcado como em espera.| Sim|
 | Authentication | Incompatibilidade de chave pré-compartilhada | Sim|
