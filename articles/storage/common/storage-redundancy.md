@@ -10,10 +10,10 @@ ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
 ms.openlocfilehash: 078c62913b903eafe9e0fcfcef4189f5ca735d0f
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66002815"
 ---
 # <a name="azure-storage-redundancy"></a>Redundância do Armazenamento do Azure
@@ -39,8 +39,8 @@ A tabela a seguir fornece uma visão geral rápida do escopo de durabilidade e d
 | :------------------------------------------------------------------------------------------------------- | :------------------------------ | :------------------------------- | :----------------------------------- | :----------------------------------- |
 | Indisponibilidade de nó dentro de um datacenter                                                                 | Sim                             | sim                              | sim                                  | Sim                                  |
 | Um data center inteiro (zonal ou não zonal) fica indisponível                                           | Não                              | sim                              | sim                                  | Sim                                  |
-| Uma interrupção em toda a região                                                                                     | Não                              | Não                                | sim                                  | Sim                                  |
-| Acesso de leitura aos dados (em uma região remota e replicada geograficamente) no caso de indisponibilidade em toda a região | Não                              | Não                               | Não                                    | Sim                                  |
+| Uma interrupção em toda a região                                                                                     | Não                              | Não                               | sim                                  | Sim                                  |
+| Acesso de leitura aos dados (em uma região remota e replicada geograficamente) no caso de indisponibilidade em toda a região | Não                              | Não                               | Não                                   | Sim                                  |
 | Projetado para fornecer \_\_ durabilidade de objetos em um determinado ano                                          | no mínimo 99,999999999% (11 9's) | no mínimo 99,9999999999% (12 9's) | no mínimo 99,99999999999999% (16 9's) | no mínimo 99,99999999999999% (16 9's) |
 | Tipos de conta de armazenamento suportados                                                                   | GPv2, GPv1, Blob                | GPv2                             | GPv2, GPv1, Blob                     | GPv2, GPv1, Blob                     |
 | SLA de disponibilidade para solicitações de leitura | Pelo menos 99,9% (99% para a camada de acesso esporádico) | Pelo menos 99,9% (99% para a camada de acesso esporádico) | Pelo menos 99,9% (99% para a camada de acesso esporádico) | Pelo menos 99,99% (99,9% para a camada de acesso estática) |

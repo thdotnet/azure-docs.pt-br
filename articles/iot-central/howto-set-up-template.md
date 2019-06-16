@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: peterpr
 ms.openlocfilehash: d1704220a13b6d6b5a48b7167d7912a38057127d
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65466493"
 ---
 # <a name="set-up-a-device-template"></a>Configurar um modelo de dispositivo
@@ -70,7 +70,7 @@ Para adicionar uma nova medida de telemetria, selecione **+ nova medição**, es
 > Os nomes de campo no modelo de dispositivo precisarão corresponder aos nomes de propriedade no código do dispositivo correspondente para que a medida de telemetria seja exibida no aplicativo quando um dispositivo real estiver conectado. Faça o mesmo ao definir configurações, propriedades do dispositivo e comandos enquanto você continua a definir o modelo de dispositivo nas seções a seguir.
 . png, por exemplo, você pode adicionar uma nova medida de telemetria de temperatura:
 
-| Nome para exibição        | Nome do Campo    |  Unidades    | Min.   |Máx|
+| Nome para exibição        | Nome do campo    |  Unidades    | Min   |max|
 | --------------------| ------------- |-----------|-------|---|
 | Temperatura         | temp          |  degC     |  0    |100|
 
@@ -91,7 +91,7 @@ Forneça os detalhes **Nome para exibição**, **Nome do campo** e **Gravidade**
 
 Por exemplo, você pode adicionar um novo evento **Fan Motor Error**.
 
-| Nome para exibição        | Nome do Campo    |  Severidade Padrão |
+| Nome para exibição        | Nome do campo    |  Gravidade padrão |
 | --------------------| ------------- |-----------|
 | Erro do motor do ventilador     | fanmotorerror |  Erro    |
 
@@ -114,7 +114,7 @@ Forneça os detalhes para **Nome de exibição**, **Nome do campo** e **Valores*
 
 Por exemplo, você pode adicionar um novo **estado do Modo de fãs** que tenha dois valores possíveis que o dispositivo pode enviar, **Em funcionamento** e **Parado**.
 
-| Nome para exibição | Nome do Campo    |  Valor 1   | Nome para exibição | Valor 2    |Nome para exibição  | 
+| Nome para exibição | Nome do campo    |  Valor 1   | Nome para exibição | Valor 2    |Nome para exibição  | 
 | -------------| ------------- |----------- | -------------| -----------| -------------|
 | Modo ventilação     | fanmode       |  1         | Operacional    |     0      | Parado      |
 
@@ -141,7 +141,7 @@ As configurações podem estar em um dos três estados. O dispositivo informa es
 
 Por exemplo, você pode adicionar uma nova configuração de velocidade do ventilador, selecionando **as configurações** e inserindo na nova **número** configuração:
 
-| Nome para exibição  | Nome do Campo    |  Unidades  | Decimais |Inicial|
+| Nome para exibição  | Nome do campo    |  Unidades  | Decimais |Inicial|
 | --------------| ------------- |---------| ---------|---- |
 | Velocidade da ventoinha     | fanSpeed      | RPM     | 2        | 0   |
 
@@ -160,7 +160,7 @@ Existem duas categorias de propriedades:
 
 Por exemplo, adicione a última data de manutenção do dispositivo como uma nova propriedade **Data** (uma propriedade do aplicativo) à guia **Propriedades**:
 
-| Nome para exibição  | Nome do Campo | Valor Inicial   |
+| Nome para exibição  | Nome do campo | Valor inicial   |
 | --------------| -----------|-----------------|
 | Atendido por último      | lastServiced        | 29/01/2019     |
 
@@ -189,7 +189,7 @@ Você pode criar uma propriedade de local como uma propriedade de aplicativo usa
 
 3. Configure **Nome de exibição**, **Nome do campo** e (opcionalmente) **Valor inicial** para o local.
 
-    | Nome para exibição  | Nome do Campo | Valor Inicial |
+    | Nome para exibição  | Nome do campo | Valor inicial |
     | --------------| -----------|---------| 
     | Endereço de instalação | installAddress | Microsoft, 1 Microsoft Way, Redmond, WA 98052   |
 
@@ -211,7 +211,7 @@ Você pode criar uma propriedade de localização como uma propriedade de dispos
 
 3. Configure o nome de exibição e o nome de campo e selecione **Localização** como o tipo de dados:
 
-    | Nome para exibição  | Nome do Campo | Tipo de Dados |
+    | Nome para exibição  | Nome do campo | Tipo de Dados |
     | --------------| -----------|-----------|
     | Localização do dispositivo | deviceLocation | location  |
 
@@ -234,7 +234,7 @@ Como um comando é diferente de um cenário?
 
 Por exemplo, você pode adicionar um novo **Echo** comando selecionando o **comandos** guia, em seguida, selecionando **+ novo comando**e inserindo os detalhes do novo comando:
 
-| Nome para exibição  | Nome do Campo | Tempo Limite Padrão | Tipo de Dados |
+| Nome para exibição  | Nome do campo | Tempo limite padrão | Tipo de Dados |
 | --------------| -----------|---------------- | --------- |
 | Comando echo  | echo       |  30             | text      |
 

@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: dobett
-ms.openlocfilehash: 7d4e95d066e191e1d5b6d083ede65843dbe73f31
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6062f8b3992732e0e0f9bbdae9549e69c393f4ff
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61450344"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080478"
 ---
 # <a name="customize-how-the-connected-factory-solution-displays-data-from-your-opc-ua-servers"></a>Personalizar como a solução Connected Factory exibe dados dos servidores OPC UA
 
@@ -39,7 +39,7 @@ Este artigo descreve:
 
 ## <a name="data-sources"></a>Fontes de dados
 
-A solução Connected Factory exibe dados dos servidores OPC UA conectados à solução. A instalação padrão inclui vários servidores OPC UA que executam uma simulação de fábrica. Você pode adicionar seus próprios servidores OPC UA que [se conectam por meio de um gateway][lnk-connect-cf] à solução.
+A solução Connected Factory exibe dados dos servidores OPC UA conectados à solução. A instalação padrão inclui vários servidores OPC UA que executam uma simulação de fábrica. Você pode adicionar seus próprios servidores OPC UA que [se conectar por meio de um gateway] [lnk-connect-cf] à sua solução.
 
 Você pode procurar itens de dados que um servidor OPC UA conectado pode enviar para a solução no painel:
 
@@ -79,8 +79,6 @@ O repositório **azure-iot-connected-factory** inclui um script **build.ps1** do
 
 Saiba mais sobre o acelerador de solução Connected Factory lendo os seguintes artigos:
 
-* [Passo a passo do acelerador de solução da Connected Factory][lnk-rm-walkthrough]
-* [Implantar um gateway para a Connected Factory][lnk-connect-cf]
 * [Permissões no site azureiotsolutions.com][lnk-permissions]
 * [Perguntas frequentes sobre o Connected Factory](iot-accelerators-faq-cf.md)
 * [Perguntas frequentes][lnk-faq]
@@ -93,7 +91,5 @@ Saiba mais sobre o acelerador de solução Connected Factory lendo os seguintes 
 [img-published]: ./media/iot-accelerators-connected-factory-customize/published.png
 
 
-[lnk-rm-walkthrough]:iot-accelerators-connected-factory-sample-walkthrough.md
-[lnk-connect-cf]:iot-accelerators-connected-factory-gateway-deployment.md
 [lnk-permissions]: iot-accelerators-permissions.md
 [lnk-faq]: iot-accelerators-faq.md

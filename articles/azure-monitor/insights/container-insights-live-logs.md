@@ -11,17 +11,17 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/04/2019
+ms.date: 06/12/2019
 ms.author: magoedte
-ms.openlocfilehash: 8d4cc5e46066ad2f18d596d0484f62f478b4cc23
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 71c6f1936f8cbc700a24d0ffb497947c8c8d3a50
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66514317"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075244"
 ---
 # <a name="how-to-view-logs-and-events-in-real-time-preview"></a>Como exibir logs e eventos em tempo real (versão prévia)
-O Azure Monitor para contêineres inclui um recurso, que está atualmente em versão prévia, que fornece uma exibição em tempo real em seus logs de contêiner do serviço de Kubernetes do Azure (AKS) (stdout/stderr) e eventos sem ter de executar comandos kubectl. Quando você seleciona uma dessas opções, um novo painel é exibida abaixo da tabela de dados de desempenho sobre o **nós**, **controladores**, e **contêineres** exibição. Ele mostra eventos gerados pelo mecanismo de contêiner para ajudá-lo ainda mais na solução de problemas em tempo real e registro em log em tempo real. 
+O Azure Monitor para contêineres inclui um recurso, que está atualmente em versão prévia, que fornece uma exibição em tempo real em seus logs de contêiner do serviço de Kubernetes do Azure (AKS) (stdout/stderr) e eventos sem ter de executar comandos kubectl. Quando você seleciona uma dessas opções, um novo painel é exibida abaixo da tabela de dados de desempenho sobre o **nós**, **controladores**, e **contêineres** exibição. Ele mostra eventos gerados pelo mecanismo de contêiner para ajudá-lo ainda mais na solução de problemas em tempo real e registro em log em tempo real.
 
 >[!NOTE]
 >**Colaborador** acesso para o recurso de cluster é necessário para esse recurso funcione.
@@ -29,9 +29,9 @@ O Azure Monitor para contêineres inclui um recurso, que está atualmente em ver
 
 Logs dinâmicos dão suporte a três métodos diferentes para controlar o acesso aos logs:
 
-1. AKS sem autorização do RBAC do Kubernetes habilitada 
+1. AKS sem autorização do RBAC do Kubernetes habilitada
 2. AKS habilitado com autorização do RBAC do Kubernetes
-3. AKS habilitado com o Azure Active Directory (AD) logon único baseado em SAML no 
+3. AKS habilitado com o Azure Active Directory (AD) logon único baseado em SAML no
 
 ## <a name="kubernetes-cluster-without-rbac-enabled"></a>Cluster do Kubernetes sem RBAC habilitado
  
@@ -66,21 +66,21 @@ Se você habilitou a autorização do RBAC do Kubernetes, precisará aplicar a a
          apiGroup: rbac.authorization.k8s.io
     ```
 
-2. Se você estiver configurando-lo pela primeira vez, você cria a associação de regra de cluster executando o seguinte comando: `kubectl create -f LogReaderRBAC.yaml`. Se você tiver habilitado o suporte para a versão prévia de logs dinâmicos antes, apresentamos os logs de eventos ao vivo, para atualizar sua configuração, execute o seguinte comando: `kubectl apply -f LogReaderRBAC.yml`. 
+2. Se você estiver configurando-lo pela primeira vez, você cria a associação de regra de cluster executando o seguinte comando: `kubectl create -f LogReaderRBAC.yaml`. Se você tiver habilitado o suporte para a versão prévia de logs dinâmicos antes, apresentamos os logs de eventos ao vivo, para atualizar sua configuração, execute o seguinte comando: `kubectl apply -f LogReaderRBAC.yml`.
 
 ## <a name="configure-aks-with-azure-active-directory"></a>Configurar o AKS com o Azure Active Directory
-O AKS pode ser configurado para usar o Azure AD (Active Directory) na autenticação do usuário. Se você estiver configurando-lo pela primeira vez, consulte [integrar o Azure Active Directory com o serviço Kubernetes do Azure](../../aks/azure-ad-integration.md). Durante as etapas para criar o [aplicativo cliente](../../aks/azure-ad-integration.md#create-client-application), você precisa especificar dois **URI de redirecionamento** entradas. Os dois URIs são:
 
-- https://ininprodeusuxbase.microsoft.com/*
-- https://afd.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html  
+O AKS pode ser configurado para usar o Azure AD (Active Directory) na autenticação do usuário. Se você estiver configurando-lo pela primeira vez, consulte [integrar o Azure Active Directory com o serviço Kubernetes do Azure](../../aks/azure-ad-integration.md). Durante as etapas para criar o [aplicativo cliente](../../aks/azure-ad-integration.md#create-the-client-application), especifique o seguinte:
+
+- **(Opcional) do URI de redirecionamento**: Esse é um **Web** tipo de aplicativo e o valor da URL base devem ser `https://afd.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`.
+- Depois de registrar o aplicativo, do **visão geral** página, selecione **autenticação** do painel esquerdo. Sobre o **autenticação** página em **configurações avançadas** implicitamente conceder **tokens de acesso** e **tokens de ID** e, em seguida, salve sua alterações.
 
 >[!NOTE]
->A configuração da autenticação com o Azure Active Directory para logon único só pode ser realizada durante a implantação inicial de um novo cluster do AKS. Não é possível configurar o logon único em um cluster do AKS já implantado. Você deve configurar a autenticação do **registro do aplicativo (herdado)** opção no Azure AD para o suporte ao uso de um caractere curinga no URI e enquanto adicioná-lo à lista, registre-o como um **nativo** aplicativo.
-> 
+>Configuração de autenticação com o Azure Active Directory para logon único só pode ser feito durante a implantação inicial de um novo cluster do AKS. Não é possível configurar o logon único em um cluster do AKS já implantado.
 
 ## <a name="view-live-logs-and-events"></a>Exibir logs em tempo real e eventos
 
-Você pode exibir eventos de log em tempo real, como eles são gerados pelo mecanismo de contêiner da **nós**, **controladores**, e **contêineres** modo de exibição. No painel Propriedades, você seleciona **exibir dados em tempo real (versão prévia)** opção e um painel é apresentada abaixo da tabela de dados de desempenho onde você pode exibir o log e eventos em um fluxo contínuo. 
+Você pode exibir eventos de log em tempo real, como eles são gerados pelo mecanismo de contêiner da **nós**, **controladores**, e **contêineres** modo de exibição. No painel Propriedades, você seleciona **exibir dados em tempo real (versão prévia)** opção e um painel é apresentada abaixo da tabela de dados de desempenho onde você pode exibir o log e eventos em um fluxo contínuo.
 
 ![Opção de logs dinâmicos de exibição de painel do nó propriedades](./media/container-insights-live-logs/node-properties-live-logs-01.png)  
 
@@ -100,9 +100,11 @@ Depois de autenticar com êxito, o painel de log em tempo real será exibido na 
     
   ![Dados recuperados do painel de logs em tempo real](./media/container-insights-live-logs/live-logs-pane-01.png)  
 
-Na barra de pesquisa, você pode filtrar por palavra-chave para destacar que o texto no evento ou log e na barra de pesquisa à direita, ele mostra quantos resultados correspondem horizontalmente o filtro.   
+Na barra de pesquisa, você pode filtrar por palavra-chave para destacar que o texto no evento ou log e na barra de pesquisa à direita, ele mostra quantos resultados correspondem horizontalmente o filtro.
 
   ![Exemplo de filtro do painel de logs em tempo real](./media/container-insights-live-logs/live-logs-pane-filter-example-01.png)
+
+Ao exibir os eventos, você pode adicionalmente limitar os resultados usando o **filtro** com conteúdo malicioso encontrado para a direita da barra de pesquisa. Dependendo de quais recursos você tiver selecionado, o com conteúdo malicioso lista um pod, o namespace ou o cluster à sua escolha.  
 
 Para suspender a rolagem automática e controlar o comportamento do painel e permitem que você percorra manualmente os novos dados de leitura, clique no **rolagem** opção. Para habilitar novamente a rolagem automática, basta clicar o **rolagem** opção novamente. Você também pode pausar a recuperação de dados de log ou eventos clicando na **pausar** opção e quando estiver pronto para continuar, basta clicar **reproduzir**.  
 

@@ -9,12 +9,12 @@ ms.author: robreed
 manager: carmonm
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: 582533d23757de748b9cc7d40e45acc00240d384
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 83a65be50a3cec9cea47682ab5e207bd4ad9e984
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60599722"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072567"
 ---
 # <a name="configure-servers-to-a-desired-state-and-manage-drift"></a>Configurar servidores para um estado desejado e gerenciar dessincronização
 
@@ -145,6 +145,27 @@ $reports = Get-AzureRmAutomationDscNodeReport -ResourceGroupName 'MyResourceGrou
 # Display the most recent report
 $reports[0]
 ```
+
+## <a name="removing-nodes-from-service"></a>Remover nós de serviço
+
+Quando você adiciona um nó a configuração de estado de automação do Azure, as configurações no Gerenciador de configurações Local são definidas para registrar as configurações de serviço e pull e os módulos necessários para configurar a máquina.
+Se você optar por remover o nó do serviço, você pode fazer isso usando o portal do Azure ou os cmdlets do Az.
+
+> [!NOTE]
+> Cancelar o registro de um nó do serviço apenas define as configurações do Gerenciador de configurações Local para que o nó não está se conectando ao serviço.
+> Isso não afeta a configuração atualmente aplicado ao nó.
+> Para remover a configuração atual, use o [PowerShell](https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument?view=powershell-5.1) ou exclua o arquivo de configuração local (essa é a única opção para nós do Linux).
+
+### <a name="azure-portal"></a>Portal do Azure
+
+Automação do Azure, clique em **State configuration (DSC)** no sumário.
+Em seguida clique **nós** para exibir a lista de nós que estão registrados com o serviço.
+Clique no nome do nó que você deseja remover.
+Na exibição do nó que é aberta, clique em **Unregister**.
+
+### <a name="powershell"></a>PowerShell
+
+Para cancelar o registro de um nó do serviço de configuração de estado de automação do Azure usando o PowerShell, siga a documentação para o cmdlet [Unregister-AzAutomationDscNode](https://docs.microsoft.com/en-us/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-2.0.0).
 
 ## <a name="next-steps"></a>Próximas etapas
 

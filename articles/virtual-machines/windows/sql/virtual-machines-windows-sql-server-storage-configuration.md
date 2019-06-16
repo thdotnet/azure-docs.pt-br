@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/05/2017
 ms.author: ninarn
-ms.openlocfilehash: da850b8ff9174fa310c5247cd7e99af69db28a8b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 360ffb3d2c682d6bd2344cb3ae95447ff3df278d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61477363"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67076852"
 ---
 # <a name="storage-configuration-for-sql-server-vms"></a>Configuração de armazenamento para VMs do SQL Server
 
@@ -55,7 +55,7 @@ Com base em suas opções, o Azure realiza as seguintes tarefas de configuraçã
 * Associa o pool de armazenamento a uma nova unidade na máquina virtual.
 * Otimiza essa nova unidade com base em seu tipo de carga de trabalho especificado (Data warehouse, Processamento transacional ou Geral).
 
-Para obter mais detalhes sobre como o Azure define as configurações de armazenamento, confira a [Seção de configuração de armazenamento](#storage-configuration). Para obter uma explicação completa de como criar uma VM do SQL Server no Portal do Azure, veja [o tutorial provisionamento](virtual-machines-windows-portal-sql-server-provision.md).
+Para obter mais detalhes sobre como o Azure define as configurações de armazenamento, confira a [Seção de configuração de armazenamento](#storage-configuration). Para obter uma explicação completa de como criar uma VM do SQL Server no portal do Azure, consulte [o tutorial provisionamento](virtual-machines-windows-portal-sql-server-provision.md).
 
 ### <a name="resource-manage-templates"></a>Modelos do Resource Manager
 
@@ -67,24 +67,24 @@ Se você usar os modelos do Resource Manager a seguir, dois discos de dados prem
 
 ## <a name="existing-vms"></a>VMs existentes
 
-Para VMs do SQL Server existente, você pode modificar algumas configurações de armazenamento no Portal do Azure. Selecione sua VM, vá até a área de Configurações e, em seguida, selecione Configuração do SQL Server. A folha Configuração do SQL Server mostra o uso do armazenamento atual da VM. Todas as unidades que existem na sua VM são exibidas neste gráfico. Para cada unidade, o espaço de armazenamento é exibido em quatro seções:
+[!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
+
+Para VMs do SQL Server existente, você pode modificar algumas configurações de armazenamento no Portal do Azure. Abra seu [recurso de máquinas virtuais do SQL](virtual-machines-windows-sql-manage-portal.md#access-sql-virtual-machine-resource)e selecione **visão geral**. A página de visão geral do SQL Server mostra o uso de armazenamento atual da sua VM. Todas as unidades que existem na sua VM são exibidas neste gráfico. Para cada unidade, o espaço de armazenamento é exibido em quatro seções:
 
 * Dados SQL
 * Log do SQL
 * Outros (armazenamento não SQL)
 * Disponível
 
-![Configurar o armazenamento para a VM do SQL Server existente](./media/virtual-machines-windows-sql-storage-configuration/sql-vm-storage-configuration-existing.png)
+Para modificar as configurações de armazenamento, selecione **configurar** sob **configurações**. 
 
-Para configurar o armazenamento a fim de adicionar uma nova unidade ou estender uma unidade existente, clique no link Editar acima do gráfico.
+![Configurar o armazenamento para a VM do SQL Server existente](./media/virtual-machines-windows-sql-storage-configuration/sql-vm-storage-configuration-existing.png)
 
 As opções de configuração que você vê variam de acordo com o uso se desse recurso anteriormente. Ao usar pela primeira vez, você pode especificar os requisitos de armazenamento para uma nova unidade. Se você tiver usado esse recurso para criar uma unidade, opte por estender o armazenamento da unidade.
 
 ### <a name="use-for-the-first-time"></a>Uso pela primeira vez
 
 Se esta for a primeira vez que você usa esse recurso, especifique os limites de tamanho e desempenho de armazenamento para uma nova unidade. Essa experiência é semelhante ao que você veria no tempo de provisionamento. A principal diferença é que você não tem permissão para especificar o tipo de carga de trabalho. Essa restrição impede a interrupção de quaisquer configurações existentes do SQL Server na máquina virtual.
-
-![Configurar controles deslizantes de armazenamento do SQL Server](./media/virtual-machines-windows-sql-storage-configuration/sql-vm-storage-usage-sliders.png)
 
 O Azure cria uma nova unidade com base em suas especificações. Nesse cenário, o Azure realiza as seguintes tarefas de configuração de armazenamento:
 
@@ -99,19 +99,17 @@ Para obter mais detalhes sobre como o Azure define as configurações de armazen
 
 Se você já tiver configurado o armazenamento na sua VM do SQL Server, a expansão do armazenamento apresenta duas opções novas. A primeira opção é adicionar uma nova unidade, que pode aumentar o nível de desempenho da VM.
 
-![Adicionar uma nova unidade a uma VM do SQL](./media/virtual-machines-windows-sql-storage-configuration/sql-vm-storage-configuration-add-new-drive.png)
-
 No entanto, depois de adicionar a unidade, você deve executar alguma configuração manual extra para alcançar o aumento de desempenho.
 
 ### <a name="extend-the-drive"></a>Estender a unidade
 
-A outra opção para expandir o armazenamento é estender a unidade existente. Essa opção aumenta o armazenamento disponível para sua unidade, mas ele não aumenta o desempenho. Com os pools de armazenamento, você não pode alterar o número de colunas após a criação do pool de armazenamento. O número de colunas determina o número de gravações paralelas, que podem ser distribuídas entre os discos de dados. Portanto, os discos de dados não podem aumentar o desempenho. Eles só podem fornecer mais armazenamento para os dados que estão sendo gravados. Essa limitação também significa que, ao estender a unidade, o número de colunas determina o número mínimo de discos de dados que você pode adicionar. Então se você criar um pool de armazenamento com quatro discos de dados, o número de colunas também será quatro. Sempre que você estender o armazenamento, deverá adicionar pelo menos quatro discos de dados.
+A outra opção para expandir o armazenamento é estender a unidade existente. Essa opção aumenta o armazenamento disponível para sua unidade, mas ele não aumenta o desempenho. Com os pools de armazenamento, você não pode alterar o número de colunas após a criação do pool de armazenamento. O número de colunas determina o número de gravações paralelas, que podem ser distribuídas entre os discos de dados. Portanto, os discos de dados não podem aumentar o desempenho. Eles só podem fornecer mais armazenamento para os dados que estão sendo gravados. Essa limitação também significa que, ao estender a unidade, o número de colunas determina o número mínimo de discos de dados que você pode adicionar. Então se você criar um pool de armazenamento com quatro discos de dados, o número de colunas também será quatro. Sempre que você estender o armazenamento, você deve adicionar pelo menos quatro discos de dados.
 
 ![Estender uma unidade para uma VM do SQL](./media/virtual-machines-windows-sql-storage-configuration/sql-vm-storage-extend-a-drive.png)
 
 ## <a name="storage-configuration"></a>Configuração de armazenamento
 
-Esta seção fornece uma referência para as alterações de configuração de armazenamento realizadas automaticamente pelo Azure durante a configuração ou provisionamento de VM do SQL no Portal do Azure.
+Esta seção fornece uma referência para as alterações de configuração de armazenamento realizadas automaticamente pelo Azure durante o provisionamento da VM SQL ou a configuração no portal do Azure.
 
 * Se você tiver selecionado menos de dois TBs de armazenamento para sua VM, o Azure não criará um pool de armazenamento.
 * Se você tiver selecionado pelo menos de dois TBs de armazenamento para sua VM, o Azure configurará um pool de armazenamento. A próxima seção deste tópico fornece os detalhes sobre a configuração do pool de armazenamento.

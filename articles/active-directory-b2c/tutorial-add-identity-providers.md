@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 02/01/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 76e12dc6bf9bcb50dc58e7730f3a08dd6a9d4440
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: ceae908b37c825721a42c49db4503382eb35c71c
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66512207"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67055089"
 ---
 # <a name="tutorial-add-identity-providers-to-your-applications-in-azure-active-directory-b2c"></a>Tutorial: Adicionar provedores de identidade a seus aplicativos no Azure Active Directory B2C
 
@@ -46,7 +46,7 @@ Para habilitar a entrada para usuários do Azure AD, você precisará registrar 
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 2. Verifique se você está usando o diretório que contém seu locatário do Azure AD clicando nos **filtros de assinatura e diretório** no menu superior e escolhendo o diretório que contém o locatário do Azure AD.
-3. Escolha **Todos os serviços** no canto superior esquerdo do portal do Azure e pesquise e selecione **Registros de aplicativo**.
+3. Escolher **todos os serviços** no canto superior esquerdo do portal do Azure e, em seguida, procure e selecione **registros de aplicativo (herdado)** .
 4. Selecione **Novo registro de aplicativo**.
 5. Insira um nome para seu aplicativo. Por exemplo: `Azure AD B2C App`.
 6. Para o **Tipo de aplicativo**, selecione `Web app / API`.
@@ -106,7 +106,7 @@ Depois de criar o aplicativo para o provedor de identidade que você deseja adic
     Por exemplo: `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`.
 
 8. Para **ID do cliente**, insira a ID do aplicativo que você registrou anteriormente e, para **Segredo do cliente**, insira o valor da chave que você registrou anteriormente.
-9. Opcionalmente, digite um valor para **Domain_hint**. Por exemplo: `ContosoAD`. 
+9. Opcionalmente, digite um valor para **Domain_hint**. Por exemplo: `ContosoAD`. Dicas de domínio (https://docs.microsoft.com/azure/active-directory/manage-apps/configure-authentication-for-federated-users-portal) são diretivas incluídas na solicitação de autenticação de um aplicativo. Elas podem ser usadas para agilizar o usuário até a página de entrada IdP. Ou elas podem ser usadas por um aplicativo multilocatário para agilizar o usuário diretamente para a página de entrada do Azure AD da marca do locatário.
 10. Clique em **OK**.
 11. Selecione **Mapear declarações do provedor de identidade** e defina as seguintes declarações:
     

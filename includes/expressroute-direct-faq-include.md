@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/25/2019
 ms.author: jaredro
 ms.custom: include file
-ms.openlocfilehash: 1bcadc18172535649a0ceb482939ca6a75477e25
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: ab74c331bdc8b72612aa848688e1de080314337a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66170699"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67132957"
 ---
 ### <a name="what-is-expressroute-direct"></a>O que é o ExpressRoute Direct?
 
@@ -28,11 +28,10 @@ Os clientes precisarão trabalhar com suas operadoras locais e fornecedores de c
 As portas disponíveis serão dinâmicas e estarão disponíveis pelo PowerShell para exibir a capacidade. Os locais incluem e *estão sujeitos a alterações com base na disponibilidade*:
 
 * Amsterdã
-* Camberra
 * Chicago
 * Washington, D.C.
 * Dallas 
-* Região Administrativa Especial de Hong Kong
+* RAE de Hong Kong
 * Londres
 * Los Angeles
 * Cidade de Nova York
@@ -43,7 +42,7 @@ As portas disponíveis serão dinâmicas e estarão disponíveis pelo PowerShell
 * Seattle
 * Seul
 * Vale do Silício
-* Cingapura 
+* Singapura 
 * Sydney
 
 ### <a name="what-is-the-sla-for-expressroute-direct"></a>O que é o SLA para ExpressRoute Direct?

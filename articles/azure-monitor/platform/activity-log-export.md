@@ -9,10 +9,10 @@ ms.date: 05/20/2019
 ms.author: bwren
 ms.subservice: logs
 ms.openlocfilehash: acf2526e79519e610614dc5217efbfe5e327b90f
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66248138"
 ---
 # <a name="export-azure-activity-log-to-storage-or-azure-event-hubs"></a>Exportar log de atividades do Azure para armazenamento ou Hubs de eventos do Azure
@@ -112,11 +112,11 @@ Se um perfil de log já existir, você precisa primeiro remover o perfil de log 
     | Propriedade | Obrigatório | DESCRIÇÃO |
     | --- | --- | --- |
     | Name |Sim |Nome de seu perfil de log. |
-    | StorageAccountId |Não  |ID do recurso da conta de armazenamento onde o Log de atividades deve ser salvo. |
-    | serviceBusRuleId |Não  |ID da Regra de Barramento de Serviço para o namespace do Barramento de Serviço no qual você gostaria que os hubs de eventos fossem criados. Isso é uma cadeia de caracteres com o formato: `{service bus resource ID}/authorizationrules/{key name}`. |
+    | StorageAccountId |Não |ID do recurso da conta de armazenamento onde o Log de atividades deve ser salvo. |
+    | serviceBusRuleId |Não |ID da Regra de Barramento de Serviço para o namespace do Barramento de Serviço no qual você gostaria que os hubs de eventos fossem criados. Isso é uma cadeia de caracteres com o formato: `{service bus resource ID}/authorizationrules/{key name}`. |
     | Local padrão |Sim |Lista separada por vírgulas de regiões para as quais você gostaria de coletar eventos do Log de Atividades. |
     | RetentionInDays |Sim |Número de dias para os quais eventos devem ser mantidos na conta de armazenamento, entre 1 e 2147483647. Um valor de zero armazena os logs indefinidamente. |
-    | Categoria |Não  |Lista separada por vírgulas de categorias de eventos que devem ser coletados. Os valores possíveis são _escrever_, _excluir_, e _ação_. |
+    | Categoria |Não |Lista separada por vírgulas de categorias de eventos que devem ser coletados. Os valores possíveis são _escrever_, _excluir_, e _ação_. |
 
 ### <a name="example-script"></a>Script de exemplo
 A seguir está um exemplo de script do PowerShell para criar um perfil de log que grava o Log de atividades em ambos os um armazenamento conta e hub de eventos.
@@ -235,7 +235,7 @@ Os elementos neste JSON são descritos na tabela a seguir.
 | callerIpAddress |Endereço IP do usuário que realizou a operação, declaração UPN ou declaração SPN com base na disponibilidade. |
 | correlationId |Geralmente, um GUID no formato de cadeia de caracteres. Os eventos que compartilham um correlationId pertencem à mesma ação superior. |
 | identidade |Blob JSON que descreve a autorização e as declarações. |
-| autorização |Blob de propriedades RBAC do evento. Geralmente, inclui as propriedades "action", "role" e "scope". |
+| authorization |Blob de propriedades RBAC do evento. Geralmente, inclui as propriedades "action", "role" e "scope". |
 | level |Nível do evento. Um dos seguintes valores: _Críticos_, _erro_, _aviso_, _informativa_, e _detalhado_ |
 | location |Região na qual ocorreu o local (ou global). |
 | propriedades |Conjunto de pares de `<Key, Value>` (ou seja, Dicionário) que descreve os detalhes do evento. |

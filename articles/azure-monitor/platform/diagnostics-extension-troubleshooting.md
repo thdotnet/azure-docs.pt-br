@@ -9,27 +9,27 @@ ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: robb
 ms.openlocfilehash: 99ac4ffc288773e52183d371ef2c20f6153bc0f3
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65471777"
 ---
 # <a name="azure-diagnostics-troubleshooting"></a>Solução de problemas do Diagnóstico do Azure
 Este artigo descreve informações de solução de problemas relevantes para o uso do Diagnóstico do Azure. Para mais informações sobre o Diagnóstico do Azure, consulte [Visão geral do Diagnóstico do Azure](diagnostics-extension-overview.md).
 
 ## <a name="logical-components"></a>Componentes lógicos
-**Iniciador do plug-in de diagnóstico (DiagnosticsPluginLauncher.exe)**: inicia a extensão do Diagnóstico do Azure. Serve como o processo do ponto de entrada.
+**Iniciador do plug-in de diagnóstico (DiagnosticsPluginLauncher.exe)** : inicia a extensão do Diagnóstico do Azure. Serve como o processo do ponto de entrada.
 
-**Plug-in de diagnóstico (DiagnosticsPlugin.exe)**: configura, inicia e gerencia o tempo de vida do agente de monitoramento. É o principal processo inicializado pelo inicializador.
+**Plug-in de diagnóstico (DiagnosticsPlugin.exe)** : configura, inicia e gerencia o tempo de vida do agente de monitoramento. É o principal processo inicializado pelo inicializador.
 
-**Agente de monitoramento (processos MonAgent\*.exe)**: monitora, coleta e transfere os dados de diagnóstico.  
+**Agente de monitoramento (processos MonAgent\*.exe)** : monitora, coleta e transfere os dados de diagnóstico.  
 
 ## <a name="logartifact-paths"></a>Caminhos do log/artefato
 A seguir, são apresentados os caminhos para alguns logs e artefatos importantes. Estas informações serão referidas ao longo de todo o documento.
 
-### <a name="azure-cloud-services"></a>Serviços de Nuvem do Azure
-| Artefato | `Path` |
+### <a name="azure-cloud-services"></a>Serviços de nuvem do Azure
+| Artefato | Caminho |
 | --- | --- |
 | **Arquivo de configuração de Diagnóstico do Microsoft Azure** | %SystemDrive%\Packages\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<version>\Config.txt |
 | **Arquivos de log** | C:\Logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<version>\ |
@@ -40,7 +40,7 @@ A seguir, são apresentados os caminhos para alguns logs e artefatos importantes
 | **Arquivo de log MonAgentHost** | C:\Resources\Directory\<CloudServiceDeploymentID>.\<RoleName>.DiagnosticStore\WAD0107\Configuration\MonAgentHost.<seq_num>.log |
 
 ### <a name="virtual-machines"></a>Máquinas virtuais
-| Artefato | `Path` |
+| Artefato | Caminho |
 | --- | --- |
 | **Arquivo de configuração de Diagnóstico do Microsoft Azure** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<version>\RuntimeSettings |
 | **Arquivos de log** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<DiagnosticsVersion>\ |
@@ -230,9 +230,9 @@ Para a função de serviço de nuvem, se você escolher a configuração a parti
 ### <a name="azure-diagnostics-plugin-exit-codes"></a>Códigos de saída do plug-in do Diagnóstico do Microsoft Azure
 O plug-in retorna os seguintes códigos de saída:
 
-| Código de saída | Descrição |
+| Código de saída | DESCRIÇÃO |
 | --- | --- |
-| 0 |Êxito. |
+| 0 |Sucesso. |
 | -1 |Erro genérico. |
 | -2 |Não foi possível carregar o arquivo rcf.<p>Este erro interno somente deverá ocorrer se o iniciador do plug-in do agente convidado for invocado manualmente e incorretamente na VM. |
 | -3 |Não é possível carregar o arquivo de configuração do Diagnóstico.<p><p>Solução: Causado por um arquivo de configuração que não passa pela validação de esquema. A solução é fornecer um arquivo de configuração que cumpre com o esquema. |

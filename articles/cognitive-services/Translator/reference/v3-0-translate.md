@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-pawal
 ms.openlocfilehash: be61d8932288b9a6b2cc96e53d3630124ec0f610
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66389762"
 ---
 # <a name="translator-text-api-30-translate"></a>API de Tradução de Texto 3.0: Translate
@@ -401,7 +401,7 @@ Para <code>ProfanityMarker=Tag</code>, palavras ofensivas são circundadas por m
   </tr>
 </table> 
 
-Por exemplo: 
+Por exemplo:
 
 # <a name="curltabcurl"></a>[curl](#tab/curl)
 

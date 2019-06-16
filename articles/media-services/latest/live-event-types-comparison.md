@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: juliako
-ms.openlocfilehash: 9952a7bbac1eb79de0d3425f839e3bd30196844e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: bd4899374c06246ddd4d5fa81d0f6e3a6a1e7017
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60322277"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075013"
 ---
 # <a name="live-event-types-comparison"></a>Comparação de tipos de Eventos ao Vivo
 
@@ -26,42 +26,43 @@ Nos Serviços de Mídia do Azure, um [Evento ao vivo](https://docs.microsoft.com
 
 ## <a name="types-comparison"></a>Comparação de tipos 
 
-A tabela a seguir compara os recursos dos dois tipos de Evento ao Vivo.
+A tabela a seguir compara os recursos dos tipos de evento ao vivo.
 
-| Recurso | Evento ao vivo de passagem | Evento ao vivo padrão |
+| Recurso | Evento ao vivo de passagem | Padrão ou Premium1080p de evento ao vivo |
 | --- | --- | --- |
-| A entrada de taxa de bits única é codificada em várias taxas de bits na nuvem |Não  |Sim |
+| A entrada de taxa de bits única é codificada em várias taxas de bits na nuvem |Não |Sim |
 | Resolução máxima de vídeo para feed de contribuição |4K (4096 x 2160 a 60 quadros / seg) |1080p de (1920 x 1088 em 30 quadros por segundo)|
 | Camadas máximas recomendadas no feed de contribuição|Até 12|Um áudio|
 | Camadas máximo na saída| Igual à entrada|Até 6 (veja abaixo as predefinições de sistema)|
 | Largura de banda agregada máxima de feed de contribuição|60 Mbps|N/D|
 | Taxa de bits máxima para uma única camada de contribuição |20 Mbps|20 Mbps|
-| Suporte para várias faixas de áudio de idioma|Sim|Não |
+| Suporte para várias faixas de áudio de idioma|Sim|Não|
 | Codecs de vídeo de entrada com suporte |H.264/AVC e H.265/HEVC|H.264/AVC|
 | Codecs de vídeo de saída com suporte|Igual à entrada|H.264/AVC|
 | Suporte para a profundidade de bits de vídeo, entrada e saída|Até 10 bits incluindo HDR 10/HLG|8 bits|
 | Codecs de áudio de entrada com suporte|AAC-LC, HE-AAC v1, HE-AAC v2|AAC-LC, HE-AAC v1, HE-AAC v2|
 | Codecs de áudio de saída com suporte|Igual à entrada|AAC-LC|
-| Resolução máxima de vídeo do vídeo de saída|Igual à entrada|720p (em 30 quadros/segundo)|
+| Resolução máxima de vídeo do vídeo de saída|Igual à entrada|Standard - 720p, Premium1080p - 1080p|
+| Taxa máxima de quadros de vídeo de entrada|60 quadros por segundo|Padrão ou Premium1080p - 30 quadros por segundo|
 | Protocolos de entrada|RTMP, MP4 fragmentado (Smooth Streaming)|RTMP, MP4 fragmentado (Smooth Streaming)|
 | Preço|Confira a [página de preços](https://azure.microsoft.com/pricing/details/media-services/) e clique na guia “Vídeo ao vivo”|Confira a [página de preços](https://azure.microsoft.com/pricing/details/media-services/) e clique na guia “Vídeo ao vivo”|
 | Tempo de execução máximo| 24 horas x 365 dias, linha ao vivo | Até 24 horas|
 | Capacidade de passar por meio do embedded CEA 608/708 legendas de dados|Sim|Sim|
-| Suporte para inserção de imagens fixas|Não |Não |
-| Suporte para sinalização de anúncios via API| Não |Não |
+| Suporte para inserção de imagens fixas|Não|Não|
+| Suporte para sinalização de anúncios via API| Não|Não|
 | Suporte para o ad sinalização por meio de mensagens na faixa de SCTE-35|Sim|Sim|
-| Capacidade de recuperação de interrupções breves no feed de contribuição|Sim|Não (O Evento ao Vivo começará a ficar com imagem fixa após + de 6 segundos sem dados de entrada)|
+| Capacidade de recuperação de interrupções breves no feed de contribuição|Sim|Parcial|
 | Suporte para GOPs de entrada não uniforme|Sim|Não – entrada deve ter GOP duração fixa|
-| Suporte para entrada de taxa de quadros variável|Sim|Não – a entrada deve ser uma taxa de quadros fixa. Pequenas variações são toleradas, por exemplo, durante cenas ricas em movimento. Mas o feed de contribuição não é possível descartar a taxa de quadros (por exemplo, para 15 quadros por segundo).|
-| Desligamento automático do Evento ao Vivo quando há perda do feed de entrada|Não |Após 12 horas, se não houver nenhum LiveOutput em execução|
+| Suporte para entrada de taxa de quadros variável|Sim|Não – a entrada deve ser uma taxa de quadros fixa. Pequenas variações são toleradas, por exemplo, durante cenas ricas em movimento. Mas o feed de contribuição não é possível descartar a taxa de quadros (por exemplo, a 15 quadros/segundo).|
+| Desligamento automático do Evento ao Vivo quando há perda do feed de entrada|Não|Após 12 horas, se não houver nenhum LiveOutput em execução|
 
 ## <a name="system-presets"></a>Predefinições do sistema
 
-Ao usar a codificação ao vivo (Eventos ao vivo definidos como **Padrão**), a predefinição de codificação define como o fluxo de entrada é codificado em várias taxas de bits ou camadas. Atualmente, o único valor permitido para é a predefinição *Default720p* (padrão).
+As resoluções e taxas de bits contidas na saída do codificador ao vivo é determinado pelo [presetName](https://docs.microsoft.com/rest/api/media/liveevents/create#liveeventencoding). Se usando um **Standard** live encoder (LiveEventEncodingType.Standard), em seguida, a *Default720p* predefinição Especifica um conjunto de pares de taxa de bits/resolução 6 descrito abaixo. Caso contrário, se usar um **Premium1080p** live encoder (LiveEventEncodingType.Premium1080p), em seguida, a *Default1080p* specifiesthe predefinido de conjunto de pares de taxa de bits/resolução de saída. 
 
-**Default720p** codificará o vídeo nas seis camadas a seguir.
+### <a name="output-video-streams-for-default720p"></a>Fluxos de vídeo de saída para Default720p
 
-### <a name="output-video-stream"></a>Fluxo de vídeo de saída
+**Default720p** codificará o vídeo de entrada em 6 camadas a seguir.
 
 | Taxa de bits | Largura | Altura | MáxFPS | Perfil | Nome do fluxo de saída |
 | --- | --- | --- | --- | --- | --- |
@@ -73,11 +74,27 @@ Ao usar a codificação ao vivo (Eventos ao vivo definidos como **Padrão**), a 
 | 200 |340 |192 |30 |Alto |Video_340x192_200kbps |
 
 > [!NOTE]
-> Caso precise usar uma predefinição de codificação ao vivo personalizada, entre em contato com amshelp@microsoft.com. Você deve especificar a tabela desejada da resolução e das taxas de bits. Verifique se há apenas uma camada em 720p e no máximo seis camadas.
+> Se você precisar personalizar a predefinição de codificação ao vivo, abra um tíquete de suporte por meio do Portal do Azure. Você deve especificar a tabela desejada da resolução e das taxas de bits. Verifique se há apenas uma camada em 720p e no máximo seis camadas. Também especifique que você está solicitando uma predefinição para um codificador dinâmico padrão.
 
-### <a name="output-audio-stream"></a>Fluxo de áudio de saída
+### <a name="output-video-streams-for-default1080p"></a>Fluxos de vídeo de saída para Default1080p
 
-O áudio é codificado para AAC-LC estéreo a 128 kbps, taxa de amostragem de 48 kHz.
+**Default1080p** codificará o vídeo de entrada em 6 camadas a seguir.
+
+| Taxa de bits | Largura | Altura | MáxFPS | Perfil | Nome do fluxo de saída |
+| --- | --- | --- | --- | --- | --- |
+| 5500 |1920 |1080 |30 |Alto |Video_1920x1080_5500kbps |
+| 3000 |1280 |720 |30 |Alto |Video_1280x720_3000kbps |
+| 1600 |960 |540 |30 |Alto |Video_960x540_1600kbps |
+| 800 |640 |360 |30 |Alto |Video_640x360_800kbps |
+| 400 |480 |270 |30 |Alto |Video_480x270_400kbps |
+| 200 |320 |180 |30 |Alto |Video_320x180_200kbps |
+
+> [!NOTE]
+> Se você precisar personalizar a predefinição de codificação ao vivo, abra um tíquete de suporte por meio do Portal do Azure. Você deve especificar a tabela desejada da resolução e das taxas de bits. Verifique se há apenas uma camada em 1080p e no máximo de 6 camadas. Também especifique que você está solicitando uma predefinição para um codificador ao vivo de Premium1080p.
+
+### <a name="output-audio-stream-for-default720p-and-default1080p"></a>Stream de áudio de saída para Default720p e Default1080p
+
+Para ambos *Default720p* e *Default1080p* predefinições de áudio é codificado como estéreo AAC-LC 128 Kbps, amostragem de taxa de 48 kHz.
 
 ## <a name="next-steps"></a>Próximas etapas
 

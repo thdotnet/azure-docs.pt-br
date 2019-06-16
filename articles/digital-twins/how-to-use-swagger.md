@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: 842c35a1575c7bcf6f547fb04d5680178b3bee78
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: c402b82b91b02f8d9619c851d09c689fd103c9fe
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66730379"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67116447"
 ---
 # <a name="azure-digital-twins-swagger-reference-documentation"></a>Documentação de referência do Swagger de Gêmeos Digitais do Azure
 
@@ -112,7 +112,7 @@ Para saber mais sobre solicitações de teste interativas protegidas pelo OAuth 
 
     ![API de registros do aplicativo do Azure Active Directory](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)
 
-4. Configure o manifesto de aplicativo para permitir fluxo implícito do OAuth 2.0. Clique em **Manifesto** para abrir o manifesto do aplicativo para seu aplicativo. Definir *oauth2AllowImplicitFlow* para `true`.
+4. Configure o manifesto de aplicativo para permitir fluxo implícito do OAuth 2.0. Selecione **manifesto** para abrir o manifesto do aplicativo para seu aplicativo. Definir *oauth2AllowImplicitFlow* para `true`.
 
     ![Fluxo implícito do Azure AD](../../includes/media/digital-twins-permissions/aad-app-allow-implicit-flow.png)
 
@@ -120,9 +120,9 @@ Para saber mais sobre solicitações de teste interativas protegidas pelo OAuth 
 
 Depois de concluir o registro do Active Directory do Azure:
 
-6. Clique o **autorizar** botão na página do swagger.
+6. Selecione o **autorizar** botão na página do swagger.
 
-    [![Clique em Swagger botão Autorizar](media/how-to-use-swagger/swagger-select-authorize-btn.png)](media/how-to-use-swagger/swagger-select-authorize-btn.png#lightbox)
+    [![Selecione o Swagger autoriza botão](media/how-to-use-swagger/swagger-select-authorize-btn.png)](media/how-to-use-swagger/swagger-select-authorize-btn.png#lightbox)
 
 7. Cole a ID do aplicativo para o **client_id** campo.
 

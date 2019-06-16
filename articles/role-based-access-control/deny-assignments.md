@@ -11,27 +11,40 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/13/2019
+ms.date: 06/13/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 497571a65510f806d7d7994c9dc37f9a00b65a5f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: 432703b5acb4cd56dac9b25edf99165ca26b0aa0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/13/2019
-ms.locfileid: "60197129"
+ms.locfileid: "67118267"
 ---
 # <a name="understand-deny-assignments-for-azure-resources"></a>Compreender atribuições de negação dos recursos do Azure
 
-Semelhante a uma atribuição de função, uma *negação de atribuição* anexa um conjunto de ações de negação a um usuário, grupo ou entidade de serviço em um escopo específico com o objetivo de negar acesso. As atribuições de negação impedem que os usuários executem ações específicas, mesmo que uma atribuição de função conceda o acesso a eles. Alguns provedores de recursos no Azure agora incluem designações de negação.
-
-De certa forma, as designações de negação são diferentes das designações de função. Negar atribuições pode excluir entidades e impedir a herança para escopos filho. Negar atribuições também se aplicam a [atribuições do administrador de assinatura clássico](rbac-and-directory-admin-roles.md).
+Semelhante a uma atribuição de função, uma *negação de atribuição* anexa um conjunto de ações de negação a um usuário, grupo ou entidade de serviço em um escopo específico com o objetivo de negar acesso. As atribuições de negação impedem que os usuários executem ações específicas, mesmo que uma atribuição de função conceda o acesso a eles.
 
 Este artigo descreve como as atribuições de negação são definidas.
 
-> [!NOTE]
-> Neste momento, a única maneira de adicionar suas próprias atribuições de negação é usando o Azure Blueprints. Para obter mais informações, consulte [Proteger novos recursos com bloqueios de recurso do Azure Blueprints](../governance/blueprints/tutorials/protect-new-resources.md).
+## <a name="how-deny-assignments-are-created"></a>Como negar as atribuições são criadas
+
+Nega as atribuições são criadas e gerenciadas pelo Azure para proteger recursos. Por exemplo, especificações técnicas do Azure e o Azure aplicativos gerenciados use negar atribuições para proteger os recursos gerenciados pelo sistema. Para obter mais informações, consulte [Proteger novos recursos com bloqueios de recurso do Azure Blueprints](../governance/blueprints/tutorials/protect-new-resources.md).
+
+## <a name="compare-role-assignments-and-deny-assignments"></a>Comparar as atribuições de função e atribuições de negação
+
+Nega atribuições seguem um padrão semelhante como Negar atribuições, mas também têm algumas diferenças.
+
+| Recurso | Atribuição de função | Negar atribuição |
+| --- | --- | --- |
+| Conceder acesso | :heavy_check_mark: |  |
+| Negar acesso |  | :heavy_check_mark: |
+| Pode ser criado diretamente | :heavy_check_mark: |  |
+| Aplicar a um escopo | :heavy_check_mark: | :heavy_check_mark: |
+| Excluir entidades de segurança |  | :heavy_check_mark: |
+| Impedir a herança de escopos filho |  | :heavy_check_mark: |
+| Aplicar a [administrador de assinatura clássicos](rbac-and-directory-admin-roles.md) atribuições |  | :heavy_check_mark: |
 
 ## <a name="deny-assignment-properties"></a>Propriedades de atribuição de negação
 
@@ -54,14 +67,24 @@ Este artigo descreve como as atribuições de negação são definidas.
 > | `ExcludePrincipals[i].Type` | Não | String[] | Uma matriz de tipos de objeto representados por ExcludePrincipals[i].Id. |
 > | `IsSystemProtected` | Não | Boolean | Especifica se esta atribuição de negação foi ou não criada pelo Azure e não pode ser editada ou excluída. Atualmente, todas as atribuições de negação são protegidas pelo sistema. |
 
-## <a name="system-defined-principal"></a>Entidade definida pelo sistema
+## <a name="the-all-principals-principal"></a>A entidade de segurança de todas as entidades de segurança
 
-Para suportar negar atribuições, o **Principal definido pelo sistema** foi introduzido. Essa entidade representa todos os usuários, grupos, entidades de serviço e identidades gerenciadas em um diretório do Microsoft Azure Active Directory. Se o ID principal for um zero GUID `00000000-0000-0000-0000-000000000000` e o tipo principal for `SystemDefined`, o principal representará todos os principais. `SystemDefined` pode ser combinado com `ExcludePrincipals` para negar todos os principais, exceto alguns usuários. `SystemDefined` tem as seguintes restrições:
+Para suporte a negar as atribuições de uma entidade definida pelo sistema denominada *todas as entidades de* foi introduzido. Essa entidade representa todos os usuários, grupos, entidades de serviço e identidades gerenciadas em um diretório do Microsoft Azure Active Directory. Se o ID principal for um zero GUID `00000000-0000-0000-0000-000000000000` e o tipo principal for `SystemDefined`, o principal representará todos os principais. Na saída do PowerShell do Azure, todas as entidades é semelhante ao seguinte:
+
+```azurepowershell
+Principals              : {
+                          DisplayName:  All Principals
+                          ObjectType:   SystemDefined
+                          ObjectId:     00000000-0000-0000-0000-000000000000
+                          }
+```
+
+Todas as entidades podem ser combinadas com `ExcludePrincipals` para negar todas as entidades, exceto alguns usuários. Todas as entidades de segurança tem as seguintes restrições:
 
 - Pode ser usada apenas em `Principals` e não pode ser usada em `ExcludePrincipals`.
 - `Principals[i].Type` deve ser definido como `SystemDefined`.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Modo de exibição negar as atribuições de recursos do Azure usando o portal do Azure](deny-assignments-portal.md)
+* [Lista Negar as atribuições de recursos do Azure usando o portal do Azure](deny-assignments-portal.md)
 * [Noções básicas sobre definições de função para recursos do Azure](role-definitions.md)

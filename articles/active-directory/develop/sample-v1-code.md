@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b14dcb5f5af971b10c83ea7fd9064a08cde3ab35
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 1858b3e8d659d8810c54cab96566d03c24c92adf
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545442"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111272"
 ---
 # <a name="azure-active-directory-code-samples-v10-endpoint"></a>Exemplos de código do Azure Active Directory (ponto de extremidade v1.0)
 
@@ -98,7 +98,7 @@ Aplicativo cliente | Plataforma | Fluxo/Concessão | Chama uma API da Web ASP.NE
 ------------------ | -------- | ---------- | -------------------- 
 Aplicativo de daemon (Console)          | ![.NET](media/sample-v2-code/logo_NETframework.png) | Credenciais do cliente com o segredo do aplicativo ou certificado | [dotnet-daemon](https://github.com/azure-samples/active-directory-dotnet-daemon)</p> [dotnet-daemon-certificate-credential](https://github.com/azure-samples/active-directory-dotnet-daemon-certificate-credential)
 Aplicativo de daemon (Console)         | ![.NET](media/sample-v2-code/logo_NETcore.png) | Credenciais do cliente com certificado| [dotnetcore-daemon-certificate-credential](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-certificate-credential)
-Aplicativo Web ASP.NET  | ![.NET](media/sample-v2-code/logo_NETframework.png) | Credenciais de cliente | [dotnet-webapp-webapi-oauth2-appidentity](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-oauth2-appidentity)
+Aplicativo Web ASP.NET  | ![.NET](media/sample-v2-code/logo_NETframework.png) | Credenciais do cliente | [dotnet-webapp-webapi-oauth2-appidentity](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-oauth2-appidentity)
 
 ## <a name="web-apis"></a>APIs da Web
 
@@ -114,7 +114,7 @@ Plataforma | Amostra
 
 ### <a name="web-api-calling-microsoft-graph-or-another-web-api"></a>API da Web chamando o Microsoft Graph ou outra API da Web
 
-Os exemplos a seguir demonstram uma API da web que chama outra API da web. O segundo exemplo mostra como tratar o acesso condicional.
+Os exemplos a seguir demonstram uma API da web que chama outra API da web. O segundo exemplo mostra como lidar com acesso condicional.
 
  Plataforma |  Chama o Microsoft Graph | Chama outra API da Web ASP.NET ou ASP.NET Core 2.0
  -------- |  --------------------- | -------------------------

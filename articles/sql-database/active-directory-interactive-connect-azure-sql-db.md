@@ -13,10 +13,10 @@ ms.reviewer: GeneMi
 ms.date: 03/12/2019
 manager: craigg
 ms.openlocfilehash: bc7274308b8a349d16866f107eac4a57e115be9e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66160812"
 ---
 # <a name="connect-to-azure-sql-database-with-azure-multi-factor-authentication"></a>Conectar-se ao banco de dados SQL do Azure com autenticação multifator do Azure
@@ -122,7 +122,7 @@ Para o programa C# ser executado com êxito, você precisará atribuir os valore
 | AzureAD_UserID | "auser\@abc.onmicrosoft.com" | **Azure Active Directory** > **Usuário** > **Novo usuário convidado** |
 | Initial_DatabaseName | "myDatabase" | **Servidores SQL** > **Bancos de dados SQL** |
 | ClientApplicationID | "a94f9c62-97fe-4d19-b06d-111111111111" | **Azure Active Directory** > **Registros de aplicativo** > **Pesquisar por nome** > **ID do aplicativo** |
-| RedirectUri | new Uri("https://mywebserver.com/") | **O Azure Active Directory** > **registros de aplicativo** > **pesquisar por nome** > *[Your-App-registration]*  >  **Configurações** > **RedirectURIs**<br /><br />Neste artigo, qualquer valor válido é bom para o RedirectUri, porque ele não é usado aqui. |
+| RedirectUri | new Uri("https://mywebserver.com/") | **O Azure Active Directory** > **registros de aplicativo** > **pesquisar por nome** >  *[Your-App-registration]*  >  **Configurações** > **RedirectURIs**<br /><br />Neste artigo, qualquer valor válido é bom para o RedirectUri, porque ele não é usado aqui. |
 | &nbsp; | &nbsp; | &nbsp; |
 
 ## <a name="verify-with-sql-server-management-studio"></a>Verificar com o SQL Server Management Studio

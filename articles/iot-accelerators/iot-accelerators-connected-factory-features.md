@@ -6,14 +6,14 @@ manager: timlt
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.topic: conceptual
-ms.date: 03/08/2019
+ms.date: 06/10/2019
 ms.author: dobett
-ms.openlocfilehash: 25812e10b4c2b90aa4f40c38610c30a26ab11d9d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2a11640959a8c7fdd0d238aba92698eb47934969
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61449983"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080460"
 ---
 # <a name="what-is-connected-factory-iot-solution-accelerator"></a>O que é um acelerador da solução de IoT Fábrica Conectada?
 
@@ -65,7 +65,4 @@ A Fábrica Conectada inclui os recursos a seguir:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Saiba mais sobre a solução pré-configurada de Fábrica Conectada lendo os seguintes artigos:
-
-* [Passo a passo de solução pré-configurada de Fábrica Conectada](iot-accelerators-connected-factory-sample-walkthrough.md)
-* [Implantar um gateway para a Fábrica Conectada]( iot-accelerators-connected-factory-gateway-deployment.md)
+Para saber mais sobre o Acelerador de solução de fábrica conectada, consulte o guia de início rápido [tentar uma solução baseada em nuvem para gerenciar meus dispositivos de IoT industriais](quickstart-connected-factory-deploy.md).

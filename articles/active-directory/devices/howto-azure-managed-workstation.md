@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: frasim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 242926c0821e4951d2a2bd2f858f63691baf1017
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: ae7c823b9aea262556081354a108ac9509a284ab
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66307221"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110679"
 ---
 # <a name="deploy-a-secure-workstation"></a>Implantar uma estação de trabalho segura
 
@@ -104,7 +104,7 @@ No portal do Azure, navegue até **Azure Active Directory** > **mobilidade (MDM 
 
 #### <a name="azure-ad-conditional-access"></a>Acesso condicional do Azure AD
 
-Acesso condicional do Azure AD pode ajudar a manter essas tarefas administrativas privilegiadas em dispositivos compatíveis. Os usuários que definimos como membros do **Proteja usuários da estação de trabalho** grupo precisarão realizar a autenticação multifator ao entrar em aplicativos de nuvem. Vamos seguir as diretrizes de práticas recomendadas e excluir nossas contas de acesso de emergência da política. Informações adicionais podem ser encontradas no artigo [gerenciar contas de acesso de emergência no Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-emergency-access)
+Acesso condicional do AD do Azure pode ajudar a manter essas tarefas administrativas privilegiadas em dispositivos compatíveis. Os usuários que definimos como membros do **Proteja usuários da estação de trabalho** grupo precisarão realizar a autenticação multifator ao entrar em aplicativos de nuvem. Vamos seguir as diretrizes de práticas recomendadas e excluir nossas contas de acesso de emergência da política. Informações adicionais podem ser encontradas no artigo [gerenciar contas de acesso de emergência no Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-emergency-access)
 
 Para configurar o acesso condicional no portal do Azure, navegue até **Azure Active Directory** > **acesso condicional** > **nova política**.
 
@@ -122,7 +122,7 @@ Para configurar o acesso condicional no portal do Azure, navegue até **Azure Ac
       * Para vários controles - **exigir todos os controles selecionados**
 * Habilitar política - **em**
 
-As organizações podem, opcionalmente, criar políticas para países de bloco em que os usuários não acessaria os recursos da empresa. Para obter mais informações sobre as políticas de acesso condicional com base no local de IP podem ser encontradas no artigo [o que é a condição de localização no acesso condicional do Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/location-condition)
+As organizações podem, opcionalmente, criar políticas para países de bloco em que os usuários não acessaria os recursos da empresa. Para obter mais informações sobre as políticas de acesso condicional com base no local IP podem ser encontradas no artigo [o que é a condição de localização no acesso condicional do Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/location-condition)
 
 ## <a name="intune-configuration"></a>Configuração do Intune
 

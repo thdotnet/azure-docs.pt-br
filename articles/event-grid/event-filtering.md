@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: spelluru
 ms.openlocfilehash: 76a4c16afc9edef0a88ac9f2892de9738fd30289
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66305068"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Compreender a filtragem para assinaturas da Grade de Eventos
@@ -117,7 +117,7 @@ Para eventos no esquema de Grade de Eventos do Azure, use os seguintes valores p
 Para eventos no esquema de Eventos de Nuvem, use os seguintes valores para a chave:
 
 * EventId
-* `Source`
+* source
 * EventType
 * EventTypeVersion
 * Dados de evento (como Data.key1)
@@ -129,7 +129,7 @@ Para o esquema de entrada personalizada, use os campos de dados de evento (como 
 Os valores podem ser:
 
 * número
-* string
+* cadeia de caracteres
 * boolean
 * matriz
 

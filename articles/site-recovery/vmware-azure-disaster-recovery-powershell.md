@@ -8,10 +8,10 @@ ms.date: 04/08/2019
 ms.topic: conceptual
 ms.author: sutalasi
 ms.openlocfilehash: 5490149f199c2d7887716ceae3f035527ad33961
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66170046"
 ---
 # <a name="set-up-disaster-recovery-of-vmware-vms-to-azure-with-powershell"></a>Configurar a recuperação de desastre de VMs VMware para o Azure usando o PowerShell
@@ -105,7 +105,7 @@ Select-AzSubscription -SubscriptionName "ASR Test Subscription"
 Defina o contexto do cofre usando o cmdlet Set-ASRVaultContext. Após a definição, operações posteriores do Azure Site Recovery na sessão do PowerShell serão executadas no contexto do cofre selecionado.
 
 > [!TIP]
-> O módulo do PowerShell do Azure Site Recovery (módulo Az.RecoveryServices) vem com aliases fáceis de usar para a maioria dos cmdlets. Os cmdlets no módulo assumem a forma  *\<operação >-**AzRecoveryServicesAsr**\<objeto >* e têm aliases equivalentes que assumem a forma  *\< Operação >-**ASR**\<objeto >*. Este artigo usa os aliases de cmdlet para facilitar a leitura.
+> O módulo do PowerShell do Azure Site Recovery (módulo Az.RecoveryServices) vem com aliases fáceis de usar para a maioria dos cmdlets. Os cmdlets no módulo assumem a forma  *\<operação >-**AzRecoveryServicesAsr**\<objeto >* e têm aliases equivalentes que assumem a forma  *\< Operação >-**ASR**\<objeto >* . Este artigo usa os aliases de cmdlet para facilitar a leitura.
 
 No exemplo a seguir, os detalhes do cofre da variável $vault são usados para especificar o contexto do cofre para a sessão do PowerShell.
 
@@ -339,7 +339,7 @@ Você precisará dos detalhes a seguir para proteger uma máquina virtual descob
 
 * O item de proteção a ser replicado.
 * A conta de armazenamento para a qual replicar a máquina virtual. Além disso, um armazenamento de log é necessário para proteger as máquinas virtuais para uma conta de armazenamento premium.
-* O Servidor de Processo usado para replicação. A lista de servidores de processo disponíveis foi recuperada e salva nas variáveis ***$ProcessServers[0]***  *(ScaleOut-ProcessServer)* e ***$ProcessServers[1]*** *(ConfigurationServer)*.
+* O Servidor de Processo usado para replicação. A lista de servidores de processo disponíveis foi recuperada e salva nas variáveis ***$ProcessServers[0]***  *(ScaleOut-ProcessServer)* e ***$ProcessServers[1]*** *(ConfigurationServer)* .
 * A conta a ser usada para a instalação por push do software do serviço de mobilidade nas máquinas. A lista de contas disponíveis foi recuperada e armazenada na variável ***$AccountHandles***.
 * O mapeamento de contêiner de proteção para a política de replicação a ser usada para replicação.
 * O grupo de recursos no qual máquinas virtuais devem ser criadas no failover.
@@ -348,7 +348,7 @@ Você precisará dos detalhes a seguir para proteger uma máquina virtual descob
 Agora, replique as seguintes máquinas virtuais usando as configurações especificadas nesta tabela
 
 
-|Máquina virtual  |Process Server        |Conta de Armazenamento              |Conta de armazenamento de log  |Política           |Conta para instalação do serviço de mobilidade|Grupo de recursos de destino  | Rede virtual de destino  |Sub-rede de destino  |
+|Máquina virtual  |Servidor de processo        |Conta de armazenamento              |Conta de armazenamento de log  |Política           |Conta para instalação do serviço de mobilidade|Grupo de recursos de destino  | Rede virtual de destino  |Sub-rede de destino  |
 |-----------------|----------------------|-----------------------------|---------------------|-----------------|-----------------------------------------|-----------------------|-------------------------|---------------|
 |Win2K12VM1       |ScaleOut-ProcessServer|premiumstorageaccount1       |logstorageaccount1   |ReplicationPolicy|WindowsAccount                           |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
 |CentOSVM1       |ConfigurationServer   |replicationstdstorageaccount1| N/D                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   

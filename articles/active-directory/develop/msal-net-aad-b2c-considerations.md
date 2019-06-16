@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c26a5007c2dcaa5d41be46f685f0f259866ca2c
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 8240a487bdb01cdbe9017ddc7cb95ce4fc0e1503
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544068"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052371"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Use MSAL.NET para conectar os usuários com identidades sociais
 
@@ -177,12 +177,12 @@ A solução alternativa sugerida é usar o [pela política de cache](#acquire-a-
 Como alternativa, você pode usar o `tid` de declaração, se você estiver usando o [políticas personalizadas do B2C](https://aka.ms/ief), pois ele fornece a capacidade de retornar declarações adicionais para o aplicativo. Para saber mais sobre [transformação de declarações](/azure/active-directory-b2c/claims-transformation-technical-profile)
 
 #### <a name="mitigation-for-missing-from-the-token-response"></a>Mitigação para "Ausente da resposta de token"
-Uma opção é usar a declaração de "nome" como o nome de usuário preferido. O processo é mencionado neste [B2C doc](/azure/active-directory-b2c/active-directory-b2c-reference-policies#frequently-asked-questions) -> "na coluna de declaração de retorno, escolha as declarações que você quer retornar nos tokens de autorização enviados ao aplicativo após uma experiência de edição de perfil bem-sucedida. Por exemplo, selecione o nome de exibição, CEP".
+Uma opção é usar a declaração de "nome" como o nome de usuário preferido. O processo é mencionado neste [B2C doc](../../active-directory-b2c/active-directory-b2c-reference-policies.md) -> "na coluna de declaração de retorno, escolha as declarações que você quer retornar nos tokens de autorização enviados ao aplicativo após uma experiência de edição de perfil bem-sucedida. Por exemplo, selecione o nome de exibição, CEP".
 
 ## <a name="next-steps"></a>Próximas etapas 
 
 Para obter mais detalhes sobre a aquisição de tokens interativamente com MSAL.NET para aplicativos do Azure AD B2C são fornecidos no exemplo a seguir.
 
-| Amostra | Plataforma | Descrição|
+| Amostra | Plataforma | DESCRIÇÃO|
 |------ | -------- | -----------|
 |[active-directory-b2c-xamarin-native](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Xamarin iOS, Xamarin Android, UWP | Um aplicativo Xamarin Forms simples, mostrando como usar MSAL.NET para autenticar usuários por meio do Azure AD B2C e acessar uma API Web com os tokens resultantes.|

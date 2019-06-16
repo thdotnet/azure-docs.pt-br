@@ -10,10 +10,10 @@ ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.openlocfilehash: bd1f06c93a75673f86f0c52f78cad8a60f7a1a1e
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65961457"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Conectar redes virtuais do Azure a partir dos Aplicativos Lógicos do Azure, usando um ISE (Ambiente de Serviço de Integração)
@@ -161,7 +161,7 @@ Na caixa de pesquisa, digite “ambiente de serviço de integração” como fil
    1. No painel **Adicionar sub-rede**, forneça estas informações.
 
       * **Nome**: o nome da sub-rede
-      * **Intervalo de endereços (bloco CIDR)**: o intervalo da sub-rede em sua rede virtual e no formato CIDR
+      * **Intervalo de endereços (bloco CIDR)** : o intervalo da sub-rede em sua rede virtual e no formato CIDR
 
       ![Adicionar detalhes da sub-rede](./media/connect-virtual-network-vnet-isolated-environment/subnet-details.png)
 
@@ -183,7 +183,7 @@ Na caixa de pesquisa, digite “ambiente de serviço de integração” como fil
 
    Se a implantação for concluída com êxito, o Azure mostrará esta notificação:
 
-   ![Implantação com êxito](./media/connect-virtual-network-vnet-isolated-environment/deployment-success.png)
+   ![Implantação bem-sucedida](./media/connect-virtual-network-vnet-isolated-environment/deployment-success.png)
 
    Caso contrário, siga as instruções do portal do Azure para implantação de solução de problemas.
 

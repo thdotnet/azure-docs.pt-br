@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/10/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 326382339e2b4aeaa488d3d7f76b7ff35f9bc620
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 7515c061467419412608bb8103136791845ae093
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66147774"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67133805"
 ---
 # <a name="enable-and-deploy-azure-ultra-ssds-preview"></a>Habilitar e implantar o SSDs ultra do Azure (visualização)
 
@@ -35,9 +35,10 @@ Preservar os **zonas** valor, ele representa a zona de disponibilidade e você p
 
 |ResourceType  |NOME  |Local padrão  |Zonas  |Restrição  |Recurso  |Value  |
 |---------|---------|---------|---------|---------|---------|---------|
-|discos     |UltraSSD_LRS         |eastus2         |X         |         |         |         |
+|disks     |UltraSSD_LRS         |eastus2         |X         |         |         |         |
 
-Se não houve resposta do comando e, em seguida, seu registro para o recurso é ainda pendente ou aprovado ainda.
+> [!NOTE]
+> Se não houve resposta do comando e, em seguida, seu registro para o recurso é ainda pendente ou aprovado ainda.
 
 Agora que você sabe em qual zona implantar, siga as etapas neste artigo para fazer sua primeira implantação de VMs com o ultra SSD.
 

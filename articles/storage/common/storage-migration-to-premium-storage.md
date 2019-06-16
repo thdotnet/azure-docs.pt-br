@@ -10,10 +10,10 @@ ms.author: rogarana
 ms.reviewer: yuemlu
 ms.subservice: common
 ms.openlocfilehash: 5cfb96bd3115c8f3116a28926e93df89dff54351
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65153774"
 ---
 # <a name="migrating-to-azure-premium-storage-unmanaged-disks"></a>Migrando para o Armazenamento Premium do Azure (Discos não gerenciados)
@@ -58,7 +58,7 @@ Há cinco tipos de discos que podem ser usados com a VM e cada um tem IOPs espec
 | Tipo de discos premium  | P10   | P20   | P30            | P40            | P50            | 
 |:-------------------:|:-----:|:-----:|:--------------:|:--------------:|:--------------:|
 | Tamanho do disco           | 128 GB| 512 GB| 1024 GB (1 TB) | 2048 GB (2 TB) | 4095 GB (4 TB) | 
-| IOPS por disco       | 500   | 2.300  | 5.000           | 7500           | 7500           | 
+| IOPS por disco       | 500   | 2\.300  | 5\.000           | 7500           | 7500           | 
 | Taxa de transferência por disco | 100 MB por segundo | 150 MB por segundo | 200 MB por segundo | 250 MB por segundo | 250 MB por segundo |
 
 Dependendo da carga de trabalho, determine se discos de dados adicionais são necessários para sua VM. Você pode anexar diversos discos de dados persistentes à sua VM. Se necessário, pode distribuir entre os discos para aumentar a capacidade e o desempenho do volume. (Veja o que é a distribuição de disco [aqui](../../virtual-machines/windows/premium-storage-performance.md#disk-striping).) Se você distribuir discos de dados do Armazenamento Premium usando [Espaços de Armazenamento][4], deverá configurá-lo com uma coluna para cada disco usado. Caso contrário, o desempenho geral do volume distribuído pode ser menor que o esperado devido a uma distribuição irregular de tráfego entre os discos. Para as VMs do Linux, você pode usar o utilitário *mdadm* para obter o mesmo resultado. Consulte o artigo [Configurar o Software RAID no Linux](../../virtual-machines/linux/configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) para obter detalhes.
@@ -180,11 +180,11 @@ Usando o AzCopy, é possível carregar o VHD facilmente pela Internet. Dependend
 
     Aqui estão as descrições dos parâmetros usados no comando AzCopy:
 
-   * **/Source:  *&lt;source&gt;:*** Local da pasta ou URL do contêiner de armazenamento que contém o VHD.
-   * **/SourceKey: *&lt;source-account-key&gt;:*** Chave de conta de armazenamento de origem.
-   * **/Dest:  *&lt;destination&gt;:*** A URL do contêiner de armazenamento para a qual copiar o VHD.
-   * **/DestKey: *&lt;dest-account-key&gt;:*** Chave de conta de armazenamento de destino.
-   * **/ Padrão:  *&lt;nome de arquivo&gt;:*** Especifica o nome do arquivo do VHD a ser copiado.
+   * **/Source:  *&lt;source&gt;:* ** Local da pasta ou URL do contêiner de armazenamento que contém o VHD.
+   * **/SourceKey: *&lt;source-account-key&gt;:* ** Chave de conta de armazenamento de origem.
+   * **/Dest:  *&lt;destination&gt;:* ** A URL do contêiner de armazenamento para a qual copiar o VHD.
+   * **/DestKey: *&lt;dest-account-key&gt;:* ** Chave de conta de armazenamento de destino.
+   * **/ Padrão:  *&lt;nome de arquivo&gt;:* ** Especifica o nome do arquivo do VHD a ser copiado.
 
 Para obter detalhes sobre como usar a ferramenta AzCopy, consulte [Transferir dados com o Utilitário de Linha de Comando AzCopy](storage-use-azcopy.md).
 
@@ -277,12 +277,12 @@ Usando o AzCopy, é possível carregar o VHD facilmente pela Internet. Dependend
 
     Aqui estão as descrições dos parâmetros usados no comando AzCopy:
 
-   * **/Source:  *&lt;source&gt;:*** Local da pasta ou URL do contêiner de armazenamento que contém o VHD.
-   * **/SourceKey: *&lt;source-account-key&gt;:*** Chave de conta de armazenamento de origem.
-   * **/Dest:  *&lt;destination&gt;:*** A URL do contêiner de armazenamento para a qual copiar o VHD.
-   * **/DestKey: *&lt;dest-account-key&gt;:*** Chave de conta de armazenamento de destino.
+   * **/Source:  *&lt;source&gt;:* ** Local da pasta ou URL do contêiner de armazenamento que contém o VHD.
+   * **/SourceKey: *&lt;source-account-key&gt;:* ** Chave de conta de armazenamento de origem.
+   * **/Dest:  *&lt;destination&gt;:* ** A URL do contêiner de armazenamento para a qual copiar o VHD.
+   * **/DestKey: *&lt;dest-account-key&gt;:* ** Chave de conta de armazenamento de destino.
    * **/BlobType: page:** Especifica que o destino é um blob de páginas.
-   * **/ Padrão:  *&lt;nome de arquivo&gt;:*** Especifica o nome do arquivo do VHD a ser copiado.
+   * **/ Padrão:  *&lt;nome de arquivo&gt;:* ** Especifica o nome do arquivo do VHD a ser copiado.
 
 Para obter detalhes sobre como usar a ferramenta AzCopy, consulte [Transferir dados com o Utilitário de Linha de Comando AzCopy](storage-use-azcopy.md).
 

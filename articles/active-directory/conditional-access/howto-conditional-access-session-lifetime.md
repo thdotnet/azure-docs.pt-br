@@ -1,5 +1,5 @@
 ---
-title: Configurar o gerenciamento de sessão de autenticação com o acesso condicional do Azure Active Directory
+title: Configurar o gerenciamento de sessão de autenticação com acesso condicional do Azure Active Directory
 description: Personalize a configuração de sessão de autenticação do AD do Azure incluindo de entrada do usuário na persistência de sessão de frequência e o navegador.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8897de5ee86d20e52b948f21afaef4acf196539
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: e15cf9b2e10a581c72a5035b52be47c3e2c9dfda
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65988570"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112332"
 ---
 # <a name="configure-authentication-session-management-with-conditional-access"></a>Configurar o gerenciamento de sessão de autenticação com o acesso condicional
 
@@ -27,7 +27,7 @@ Em implantações complexas, as organizações podem ter a necessidade de restri
 * Usuários de alto impacto
 * Aplicativos de negócios críticos
 
-Controles de acesso condicional permitem que você crie políticas que se destinam a casos de uso específicos em sua organização sem afetar todos os usuários.
+Controles de acesso condicionais permitem que você crie políticas que se destinam a casos de uso específicos em sua organização sem afetar todos os usuários.
 
 Antes de mergulhar em detalhes sobre como configurar a política, vamos examinar a configuração padrão.
 
@@ -50,10 +50,10 @@ O padrão do AD do Azure para persistência de sessão de navegador permite que 
 
 ## <a name="configuring-authentication-session-controls"></a>Configurando controles de sessão de autenticação
 
-Acesso condicional é um recurso do Azure AD Premium e requer uma licença premium. Se você quiser saber mais sobre acesso condicional, consulte [O que é acesso condicional no Azure Active Directory?](overview.md#license-requirements)
+Acesso condicional é um recurso do Azure AD Premium e requer uma licença premium. Se você quiser saber mais sobre o acesso condicional, consulte [o que é acesso condicional no Azure Active Directory?](overview.md#license-requirements)
 
 > [!WARNING]
-> Se você estiver usando o [tempo de vida de token configurável](../develop/active-directory-configurable-token-lifetimes.md) recurso atualmente em visualização pública, observe que não oferecemos suporte ao criar duas políticas diferentes para a mesma combinação de usuário ou aplicativo: uma com esse recurso e outro com recurso de tempo de vida de token configurável. A Microsoft planeja desativar o recurso de tempo de vida de token configurável no dia 15 de outubro e substituí-lo com o recurso de gerenciamento de sessão de autenticação de acesso condicional.  
+> Se você estiver usando o [tempo de vida de token configurável](../develop/active-directory-configurable-token-lifetimes.md) recurso atualmente em visualização pública, observe que não oferecemos suporte ao criar duas políticas diferentes para a mesma combinação de usuário ou aplicativo: uma com esse recurso e outro com recurso de tempo de vida de token configurável. A Microsoft planeja desativar o recurso de tempo de vida de token configurável em 1º de novembro e substituí-lo com o recurso de gerenciamento de sessão de autenticação de acesso condicional.  
 
 ### <a name="policy-1-sign-in-frequency-control"></a>Política 1: Frequência de entrada de controle
 
@@ -95,7 +95,7 @@ Se você tiver configurado a frequência de entrada diferente para aplicativos d
 
 Use a ferramenta de hipotéticos para simular um logon do usuário para o aplicativo de destino e outras condições com base em como você configurou sua política. Os controles de gerenciamento de sessão de autenticação são exibidos no resultado da ferramenta.
 
-![Acesso condicional e se a ferramenta de resultados](media/howto-conditional-access-session-lifetime/conditional-access-what-if-tool-result.png)
+![Resultados da ferramenta de acesso e se condicional](media/howto-conditional-access-session-lifetime/conditional-access-what-if-tool-result.png)
 
 ## <a name="policy-deployment"></a>Implantação de política
 

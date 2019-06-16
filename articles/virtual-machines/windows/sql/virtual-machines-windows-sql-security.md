@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/23/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 69b6bd07699d179fc87ac6c5364a7a34b23d14eb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d5d10562a70b7d37908bc272bf555fd967831009
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61477497"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67076976"
 ---
 # <a name="security-considerations-for-sql-server-in-azure-virtual-machines"></a>Considerações sobre Segurança para SQL Server em Máquinas Virtuais do Azure
 
@@ -42,7 +42,7 @@ As próximas seções fornecem sugestões sobre como considerar esses pontos.
 
 ## <a name="secure-connections"></a>Conexões seguras
 
-Quando você cria uma máquina virtual do SQL Server com uma imagem da galeria, a opção **Conectividade do SQL Server** fornece as opções **Local (dentro da VM)**, **Privada (dentro da Rede Virtual)** ou **Pública (Internet)**.
+Quando você cria uma máquina virtual do SQL Server com uma imagem da galeria, a opção **Conectividade do SQL Server** fornece as opções **Local (dentro da VM)** , **Privada (dentro da Rede Virtual)** ou **Pública (Internet)** .
 
 ![Conectividade do SQL Server](./media/virtual-machines-windows-sql-security/sql-vm-connectivity-option.png)
 
@@ -62,9 +62,11 @@ Por fim, considere a possibilidade de habilitar as conexões criptografadas na i
 
 Por padrão, o SQL Server escuta uma porta conhecida, 1433. Para uma maior segurança, configure o SQL Server para escutar uma porta não padrão, como 1401. Se você provisionar uma imagem da galeria do SQL Server no portal do Azure, poderá especificar essa porta na folha **Configurações do SQL Server**.
 
+[!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
+
 Para configurar isso após o provisionamento, você tem duas opções:
 
-- Para VMs do Resource Manager, selecione **Configuração do SQL Server** na folha de visão geral da VM. Isso fornece uma opção para alterar a porta.
+- Para VMs do Resource Manager, você pode selecionar **segurança** da [recursos de máquinas virtuais do SQL](virtual-machines-windows-sql-manage-portal.md#access-sql-virtual-machine-resource). Isso fornece uma opção para alterar a porta.
 
   ![Alteração da porta TCP no portal](./media/virtual-machines-windows-sql-security/sql-vm-change-tcp-port.png)
 

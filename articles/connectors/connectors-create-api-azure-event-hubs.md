@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/23/2019
 tags: connectors
 ms.openlocfilehash: 882bae14678d8bfff15b35c63c666a20aeee3d1d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64720047"
 ---
 # <a name="monitor-receive-and-send-events-with-azure-event-hubs-and-azure-logic-apps"></a>Monitorar, receber e enviar eventos com Hubs de Eventos do Azure e Aplicativos Lógicos do Azure
@@ -80,9 +80,9 @@ Este exemplo mostra como é possível iniciar um fluxo de trabalho de aplicativo
    | Propriedade | Obrigatório | DESCRIÇÃO |
    |----------|----------|-------------|
    | **Nome do Hub de Eventos** | Sim | O nome para o Hub de eventos que você deseja monitorar |
-   | **Tipo de conteúdo** | Não  | Tipo de conteúdo do evento. O padrão é `application/octet-stream`. |
-   | **Nome do grupo de consumidor** | Não  | O [nome para o grupo de consumidores do Hub de eventos](../event-hubs/event-hubs-features.md#consumer-groups) a ser usado para ler eventos. Se não especificado, será usado o grupo de consumidores padrão. |
-   | **Contagem de eventos máxima** | Não  | O número máximo de eventos. O gatilho retorna entre um e o número de eventos especificado por essa propriedade. |
+   | **Tipo de conteúdo** | Não | Tipo de conteúdo do evento. O padrão é `application/octet-stream`. |
+   | **Nome do grupo de consumidor** | Não | O [nome para o grupo de consumidores do Hub de eventos](../event-hubs/event-hubs-features.md#consumer-groups) a ser usado para ler eventos. Se não especificado, será usado o grupo de consumidores padrão. |
+   | **Contagem de eventos máxima** | Não | O número máximo de eventos. O gatilho retorna entre um e o número de eventos especificado por essa propriedade. |
    | **Intervalo** | Sim | Um inteiro positivo que descreve a frequência com que o fluxo de trabalho é executada com base na frequência |
    | **Frequência** | Sim | A unidade de tempo para a recorrência |
    ||||
@@ -91,11 +91,11 @@ Este exemplo mostra como é possível iniciar um fluxo de trabalho de aplicativo
 
    | Propriedade | Obrigatório | DESCRIÇÃO |
    |----------|----------|-------------|
-   | **Esquema de conteúdo** | Não  | O esquema de conteúdo JSON para os eventos ler do Hub de eventos. Por exemplo, se você especificar o esquema de conteúdo, você pode disparar o aplicativo lógico somente dos eventos que correspondem ao esquema. |
-   | **Chave de partição mínima** | Não  | Insira a ID de [partição](../event-hubs/event-hubs-features.md#partitions) mínima para leitura. Por padrão, todas as partições são lidas. |
-   | **Chave de partição máxima** | Não  | Insira a ID de [participação](../event-hubs/event-hubs-features.md#partitions) para leitura. Por padrão, todas as partições são lidas. |
-   | **Fuso horário** | Não  | Aplica-se somente quando você especificar uma hora de início, porque o gatilho não aceita o deslocamento do UTC. Selecione o fuso horário que você deseja aplicar. <p>Para obter mais informações, consulte [criar e executar tarefas recorrentes e fluxos de trabalho com aplicativos lógicos do Azure](../connectors/connectors-native-recurrence.md). |
-   | **Hora de início** | Não  | Forneça uma hora de início neste formato: <p>AAAA-MM-DDThh:mm:ss se você selecionar um fuso horário<p>-ou-<p>AAAA-MM-DDThh:mm:ssZ se você não selecionar um fuso horário<p>Para obter mais informações, consulte [criar e executar tarefas recorrentes e fluxos de trabalho com aplicativos lógicos do Azure](../connectors/connectors-native-recurrence.md). |
+   | **Esquema de conteúdo** | Não | O esquema de conteúdo JSON para os eventos ler do Hub de eventos. Por exemplo, se você especificar o esquema de conteúdo, você pode disparar o aplicativo lógico somente dos eventos que correspondem ao esquema. |
+   | **Chave de partição mínima** | Não | Insira a ID de [partição](../event-hubs/event-hubs-features.md#partitions) mínima para leitura. Por padrão, todas as partições são lidas. |
+   | **Chave de partição máxima** | Não | Insira a ID de [participação](../event-hubs/event-hubs-features.md#partitions) para leitura. Por padrão, todas as partições são lidas. |
+   | **Fuso horário** | Não | Aplica-se somente quando você especificar uma hora de início, porque o gatilho não aceita o deslocamento do UTC. Selecione o fuso horário que você deseja aplicar. <p>Para obter mais informações, consulte [criar e executar tarefas recorrentes e fluxos de trabalho com aplicativos lógicos do Azure](../connectors/connectors-native-recurrence.md). |
+   | **Hora de início** | Não | Forneça uma hora de início neste formato: <p>AAAA-MM-DDThh:mm:ss se você selecionar um fuso horário<p>-ou-<p>AAAA-MM-DDThh:mm:ssZ se você não selecionar um fuso horário<p>Para obter mais informações, consulte [criar e executar tarefas recorrentes e fluxos de trabalho com aplicativos lógicos do Azure](../connectors/connectors-native-recurrence.md). |
    ||||
 
 1. Quando terminar, selecione **Salvar** na barra de ferramentas do designer.
@@ -120,7 +120,7 @@ Em Aplicativos Lógicos do Azure, uma [ação](../logic-apps/logic-apps-overview
 1. No gatilho ou ação, escolha **nova etapa**.
 
    Para adicionar uma ação entre etapas existentes, mova o mouse sobre a seta de conexão. 
-   Escolha o sinal de adição (**+**) que aparece e, em seguida, selecione **Adicionar uma ação**.
+   Escolha o sinal de adição ( **+** ) que aparece e, em seguida, selecione **Adicionar uma ação**.
 
 1. Na caixa de pesquisa, insira "hubs de eventos" como filtro.
 Na lista de ações, selecione esta ação: **Enviar evento - Hubs de eventos**
@@ -136,9 +136,9 @@ Na lista de ações, selecione esta ação: **Enviar evento - Hubs de eventos**
    | Propriedade | Obrigatório | DESCRIÇÃO |
    |----------|----------|-------------|
    | **Nome do Hub de Eventos** | Sim | O Hub de eventos em que você deseja enviar o evento |
-   | **Conteúdo** | Não  | O conteúdo do evento que você quer enviar |
-   | **Propriedades** | Não  | As propriedades e os valores do aplicativo a serem enviados |
-   | **Chave de partição** | Não  | O [partição](../event-hubs/event-hubs-features.md#partitions) ID para onde enviar o evento |
+   | **Conteúdo** | Não | O conteúdo do evento que você quer enviar |
+   | **Propriedades** | Não | As propriedades e os valores do aplicativo a serem enviados |
+   | **Chave de partição** | Não | O [partição](../event-hubs/event-hubs-features.md#partitions) ID para onde enviar o evento |
    ||||
 
    Por exemplo, você pode enviar a saída do gatilho dos Hubs de eventos para outro Hub de eventos:
@@ -161,7 +161,7 @@ Na lista de ações, selecione esta ação: **Enviar evento - Hubs de eventos**
    | **Namespace de Hubs de eventos** | Sim | <*event-hubs-namespace*> | Selecione o namespace do Hubs de Eventos que você quer usar. |
    |||||  
 
-   Por exemplo: 
+   Por exemplo:
 
    ![Criar conexão do Hub de Eventos](./media/connectors-create-api-azure-event-hubs/create-event-hubs-connection-1.png)
 

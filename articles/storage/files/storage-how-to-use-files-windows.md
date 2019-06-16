@@ -9,10 +9,10 @@ ms.date: 06/07/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 899bf4bbf201ae785a4f49c7f278de75fb48945e
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64926267"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Usar um compartilhamento de arquivos do Azure com o Windows
@@ -31,8 +31,8 @@ Você pode usar compartilhamentos de arquivos do Azure em uma instalação do Wi
 | Windows 8.1            | SMB 3.0     | Sim                   | Sim                  |
 | Windows Server 2012 R2 | SMB 3.0     | Sim                   | Sim                  |
 | Windows Server 2012    | SMB 3.0     | Sim                   | Sim                  |
-| Windows 7              | SMB 2.1     | Sim                   | Não                    |
-| Windows Server 2008 R2 | SMB 2.1     | Sim                   | Não                    |
+| Windows 7              | SMB 2.1     | Sim                   | Não                   |
+| Windows Server 2008 R2 | SMB 2.1     | Sim                   | Não                   |
 
 <sup>1</sup>Windows 10, versões 1507, 1607, 1703, 1709, 1803 e 1809.  
 <sup>2</sup>Windows Server, versão 1709 e 1803.

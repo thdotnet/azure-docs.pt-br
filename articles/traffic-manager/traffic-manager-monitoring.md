@@ -2,20 +2,20 @@
 title: Monitoramento de ponto de extremidade do Gerenciador de Tráfego do Azure | Microsoft Docs
 description: Este artigo pode ajudar você a entender como o Gerenciador de Tráfego usa o monitoramento de ponto de extremidade e o failover automático do ponto de extremidade para ajudar clientes do Azure a implantarem aplicativos de alta disponibilidade
 services: traffic-manager
-author: KumudD
+author: asudbring
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/04/2018
-ms.author: kumud
-ms.openlocfilehash: 083bdf9c5aec640fbbd7757b307ac47178e0b14b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: allensu
+ms.openlocfilehash: 7aee68ef41b696549aa1db4386d467b55cd2d981
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60329881"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071065"
 ---
 # <a name="traffic-manager-endpoint-monitoring"></a>Monitoramento de ponto de extremidade do Gerenciador de Tráfego
 
@@ -74,7 +74,7 @@ O status do monitor do ponto de extremidade é um valor gerado pelo Gerenciador 
 | Enabled |Enabled |Online |O ponto de extremidade é monitorado e está íntegro. Ele é incluído em respostas DNS e pode receber tráfego. |
 | Enabled |Enabled |Degradado |As verificações de integridade de monitoramento do ponto de extremidade estão falhando. O ponto de extremidade não é incluído em respostas DNS e não recebe tráfego. <br>Uma exceção a isso é se todos os pontos de extremidade estiverem degradados, caso em que todos eles serão considerados para devolução na resposta da consulta.</br>|
 | Enabled |Enabled |Verificando ponto de extremidade |O ponto de extremidade é monitorado, mas os resultados da primeira investigação ainda não foram recebidos. CheckingEndpoint é um estado temporário que geralmente ocorre imediatamente depois de adicionar ou habilitar um ponto de extremidade no perfil. Um ponto de extremidade nesse estado é incluído em respostas DNS e pode receber tráfego. |
-| Enabled |Enabled |Parada |O serviço de nuvem ou aplicativo Web para o qual o ponto de extremidade aponta não está em execução. Verifique as configurações do serviço de nuvem ou aplicativo Web. Isso também poderá ocorrer se o ponto de extremidade for do tipo aninhado e o perfil filho estiver desabilitado ou inativo. <br>Um ponto de extremidade com um status Parado não é monitorado. Ele não é incluído em respostas DNS e não recebe tráfego. Uma exceção a isso é se todos os pontos de extremidade estiverem degradados, caso em que todos eles serão considerados para devolução na resposta da consulta.</br>|
+| Enabled |Enabled |Parado |O aplicativo web que o ponto de extremidade aponta não está em execução. Verifique as configurações de aplicativo web. Isso também poderá ocorrer se o ponto de extremidade for do tipo aninhado e o perfil filho estiver desabilitado ou inativo. <br>Um ponto de extremidade com um status Parado não é monitorado. Ele não é incluído em respostas DNS e não recebe tráfego. Uma exceção a isso é se todos os pontos de extremidade estiverem degradados, caso em que todos eles serão considerados para devolução na resposta da consulta.</br>|
 
 Para obter detalhes sobre como o status do monitor de ponto de extremidade é calculado para pontos de extremidade aninhados, veja [Perfis aninhados do Gerenciador de Tráfego](traffic-manager-nested-profiles.md).
 
@@ -98,6 +98,7 @@ O status do monitor de perfil é uma combinação dos valores do status do perfi
 O Gerenciador de Tráfego verifica periodicamente a integridade de cada ponto de extremidade, incluindo pontos de extremidade não íntegros. O Gerenciador de Tráfego detecta quando um ponto de extremidade se torna íntegro e coloca-o de volta em rotação.
 
 Um ponto de extremidade não está íntegro quando qualquer um dos seguintes eventos ocorrem:
+
 - Se o protocolo de monitoramento for HTTP ou HTTPS:
     - Uma resposta diferente de 200 ou que não inclua o intervalo de status especificado na configuração **Intervalos de código de status esperados** foi recebida (incluindo um código diferente de 2xx ou um redirecionamento 301/302).
 - Se o protocolo de monitoramento for TCP: 
@@ -151,8 +152,6 @@ Para obter mais informações, consulte [Métodos de roteamento de tráfego do G
 > A consequência deste comportamento é que quando as verificações de integridade do Gerenciador de Tráfego não estiverem configuradas corretamente, o roteamento de tráfego pode fazer parecer que o Gerenciador de Tráfego *está* funcionando corretamente. No entanto, neste caso, o failover do ponto de extremidade não acontece e isso afeta a disponibilidade geral do aplicativo. É importante verificar se o perfil mostra um status Online em vez de Degradado. Um status Online indica que as verificações de integridade do Gerenciador de Tráfego estão funcionando corretamente.
 
 Para obter mais informações sobre como solucionar problemas de verificações de integridade com falha, consulte [Solução de problemas de status Degradado no Gerenciador de Tráfego do Azure](traffic-manager-troubleshooting-degraded.md).
-
-
 
 ## <a name="next-steps"></a>Próximas etapas
 

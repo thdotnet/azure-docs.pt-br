@@ -16,12 +16,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8d377db827a6548c380128624c21f4ae7896aff
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: fd2da6baecdce3ab85a45347f27f573bf814445d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65075319"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67055757"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Aplicativo daemon que chamadas às APIs - configuração de código da web
 
@@ -39,9 +39,11 @@ As bibliotecas da Microsoft que dão suporte a aplicativos daemon são:
 
 ## <a name="configuration-of-the-authority"></a>Configuração da autoridade
 
-Considerando que os aplicativos daemon não usam permissões delegadas, mas as permissões de aplicativo, seus *suporte para o tipo de conta* não pode ser *(de contas de contas em qualquer diretório organizacional e o pessoal da Microsoft Por exemplo, o Skype, Xbox, Outlook.com)*. Na verdade, não há nenhum administrador de locatário para dar consentimento para o aplicativo de daemon para contas pessoais da Microsoft. Você precisará escolher *contas em minha organização* ou *contas de qualquer organização*.
+Considerando que os aplicativos daemon não usam permissões delegadas, mas as permissões de aplicativo, seus *suporte para o tipo de conta* não pode ser *(de contas de contas em qualquer diretório organizacional e o pessoal da Microsoft Por exemplo, o Skype, Xbox, Outlook.com)* . Na verdade, não há nenhum administrador de locatário para dar consentimento para o aplicativo de daemon para contas pessoais da Microsoft. Você precisará escolher *contas em minha organização* ou *contas de qualquer organização*.
 
-Portanto, a autoridade especificada na configuração do aplicativo deve ser ed de locatário (especificando uma ID de locatário ou um nome de domínio associado com sua organização). Se você for um ISV e quiser fornecer uma ferramenta de multilocatário, você pode usar `organizations`. Mas tenha em mente que você também precisará explicar aos seus clientes como conceder consentimento do administrador. Ver [solicitar o consentimento para um locatário inteiro](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant) para obter detalhes
+Portanto, a autoridade especificada na configuração do aplicativo deve ser ed de locatário (especificando uma ID de locatário ou um nome de domínio associado com sua organização).
+
+Se você for um ISV e quiser fornecer uma ferramenta de multilocatário, você pode usar `organizations`. Mas tenha em mente que você também precisará explicar aos seus clientes como conceder consentimento do administrador. Ver [solicitar o consentimento para um locatário inteiro](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant) para obter detalhes. Também no momento, há uma limitação na MSAL que `organizations` só é permitido quando as credenciais do cliente são um segredo do aplicativo (não um certificado). Consulte [MSAL.NET bug #891](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/891)
 
 ## <a name="application-configuration-and-instantiation"></a>Instanciação e a configuração de aplicativo
 

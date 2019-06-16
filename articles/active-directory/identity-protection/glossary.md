@@ -17,12 +17,12 @@ ms.date: 01/15/2018
 ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5def46b6c12dc08c273ea7334516b63b7606477f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c371254f344b321969dcc9b3c36212b7536aa95a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60452816"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109016"
 ---
 # <a name="azure-active-directory-identity-protection-glossary"></a>Glossário do Azure Active Directory Identity Protection
 ### <a name="at-risk-user"></a>Em risco (Usuário)
@@ -34,8 +34,8 @@ Uma entrada de um local geográfico incomum para o usuário específico, usuári
 ### <a name="azure-ad-identity-protection"></a>Azure AD Identity Protection
 Um módulo de segurança do Azure Active Directory que fornece uma exibição consolidada dos eventos de risco e das possíveis vulnerabilidades que afetam as identidades de uma organização.
 
-### <a name="conditional-access"></a>Acesso condicional
-Uma política para proteger o acesso aos recursos. Regras de acesso condicional são armazenadas no Azure Active Directory e são avaliadas pelo Azure AD antes de conceder acesso ao recurso.  As regras de exemplo incluem restrição baseada na localização do usuário, integridade do dispositivo ou método de autenticação do usuário.
+### <a name="conditional-access"></a>Acesso Condicional
+Uma política para proteger o acesso aos recursos. Regras de acesso condicional são armazenadas no Active Directory do Azure e são avaliadas pelo Azure AD antes de conceder acesso ao recurso.  As regras de exemplo incluem restrição baseada na localização do usuário, integridade do dispositivo ou método de autenticação do usuário.
 
 ### <a name="credentials"></a>Credenciais
 Informações que incluem a identificação e prova de identificação usadas para obter acesso ao local e aos recursos da rede. Exemplos de credenciais são nomes de usuário e senhas, cartões inteligentes e certificados.
@@ -155,7 +155,7 @@ Consulte Nível de risco (comprometimento do usuário)
 Consulte Nível de risco (comprometimento do usuário).
 
 ### <a name="user-risk-policy"></a>Política de risco do usuário
-Uma política de acesso condicional que considera a entrada e aplica mitigações com base em regras e condições predefinidas.
+Uma política de acesso condicional que considera na entrada e aplica mitigações com base em regras e condições predefinidas.
 
 ### <a name="users-flagged-for-risk"></a>Usuários sinalizados por risco
 Usuários que têm eventos de risco ativos ou corrigidos

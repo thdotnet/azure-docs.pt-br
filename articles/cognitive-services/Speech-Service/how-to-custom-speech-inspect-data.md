@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: 682f3df362a7fbb0e95a07aa8a8f3a068367eef2
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 132e355abbdbe147a843c51efd018cc759c06836
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025813"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67064033"
 ---
 # <a name="inspect-custom-speech-data"></a>Inspecione os dados de fala personalizado
 
@@ -34,7 +34,7 @@ Siga estas instruções para criar um teste:
 
 1. Navegue até **fala em texto > fala personalizado > teste**.
 2. Clique em **adicionar teste**.
-3. Selecione **inspecionar qualidade (dados somente de áudio)**. Dê um nome, descrição, de teste e selecione seu conjunto de dados de áudio.
+3. Selecione **inspecionar qualidade (dados somente de áudio)** . Dê um nome, descrição, de teste e selecione seu conjunto de dados de áudio.
 4. Selecione até dois modelos que você deseja testar.
 5. Clique em **Criar**.
 
@@ -46,7 +46,7 @@ Quando o status do teste está *bem-sucedido*, clique no nome do item de teste p
 
 Para ajudar a inspecionar a comparação lado a lado, você pode alternar a vários tipos de erro, incluindo a inserção, exclusão e substituição. Ao ouvir o áudio e comparando os resultados do reconhecimento em cada coluna (mostrando transcrição rotulada como humanos e os resultados dos dois modelos de fala em texto), você pode decidir qual modelo atende às suas necessidades e onde os aprimoramentos são necessários.
 
-Inspecionando a testes de qualidade é útil para validar se a qualidade de um ponto de extremidade de reconhecimento de fala é suficiente para um aplicativo.  Para uma medida objetiva da precisão, exigindo transcrito áudio, siga as instruções encontradas em teste: Avalie a precisão.
+Inspecionando a testes de qualidade é útil para validar se a qualidade de um ponto de extremidade de reconhecimento de fala é suficiente para um aplicativo.  Para uma medida objetiva da precisão, exigindo transcrito áudio, siga as instruções encontradas no [avaliar a precisão](how-to-custom-speech-evaluate-data.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

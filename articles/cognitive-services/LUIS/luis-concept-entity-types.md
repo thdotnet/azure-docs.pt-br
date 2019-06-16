@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 04/01/2019
+ms.date: 06/12/2019
 ms.author: diberry
-ms.openlocfilehash: 7fd9ae3ab1f50dc91118ba11bc357a0f6dc0e771
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 628a96c4e912341226d67a7ed8f241194e7b7825
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65141037"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080051"
 ---
 # <a name="entity-types-and-their-purposes-in-luis"></a>Tipos de entidade e suas finalidades no LUIS
 
@@ -109,6 +109,30 @@ As entidades Pattern.any devem ser marcadas nos exemplos de modelo [Padrão](lui
 
 Entidades mistas usam uma combinação de métodos de detecção de entidade.
 
+## <a name="machine-learned-entities-use-context"></a>Contexto de uso de entidades de computador aprendeu
+
+Entidades de computador aprendeu saiba de contexto na declaração. Isso torna a variação de posicionamento em declarações de exemplo significativos. 
+
+## <a name="non-machine-learned-entities-dont-use-context"></a>Entidades não computador aprendeu não usam o contexto
+
+A seguinte máquina não aprendeu entidades não consideram o contexto de expressão durante a correspondência de entidades: 
+
+* [Entidades predefinidas](#prebuilt-entity)
+* [Entidades de regex](#regular-expression-entity)
+* [Entidades de lista](#list-entity) 
+
+Essas entidades não exigem rotulagem ou treinamento do modelo. Depois que você adiciona ou configurar a entidade, as entidades são extraídas. A desvantagem é que essas entidades podem ser overmatched, em que se o contexto foi levado em conta, a correspondência seria não foram feita. 
+
+Isso acontece com as entidades de lista em novos modelos com frequência. Compilar e testar o modelo com uma entidade de lista, mas quando você publica seu modelo e recebe consultas de ponto de extremidade, você percebe que seu modelo é overmatching devido à falta de contexto. 
+
+Se você deseja corresponder palavras ou frases e consideram contexto, você tem duas opções. A primeira é usar uma entidade simples emparelhada com uma lista de frases. A lista de frase não será usada para correspondência, mas em vez disso, o ajudará a palavras relativamente semelhantes de sinal (intercambiável lista). Se você deve ter uma correspondência exata, em vez de variações de uma lista de frases, use uma entidade de lista com uma função, descrita abaixo.
+
+### <a name="context-with-non-machine-learned-entities"></a>Contexto com entidades não computador aprendeu
+
+Se desejar que o contexto da declaração para ter importância para entidades aprendidas da máquina não, você deve usar [funções](luis-concept-roles.md).
+
+Se você tiver uma entidade não computador aprendeu, como [as entidades predefinidas](#prebuilt-entity), [regex](#regular-expression-entity) entidades ou [lista](#list-entity) entidades, que corresponda a além da instância que você deseja, considere Criando uma entidade com duas funções. Uma função irá capturar o que você está procurando e uma função irá capturar o que você não está procurando. Ambas as versões precisará ser rotulada em declarações de exemplo.  
+
 ## <a name="composite-entity"></a>Entidade composta
 
 Entidade composta é composta por outras entidades, como as entidades predefinidas, simples, expressão regular e listar entidades. As entidades separadas formam uma entidade inteira. 
@@ -133,8 +157,9 @@ As entidades de lista representam um conjunto fixo e fechado de palavras relacio
 A entidade é uma boa opção quando os dados de texto:
 
 * São um conjunto conhecido.
+* Não é alterado com frequência. Se você precisar alterar a lista com frequência ou deseja que a lista para expandir automaticamente, uma entidade simples aumentada com uma lista de frases é uma opção melhor. 
 * O conjunto não excede os [limites](luis-boundaries.md) máximos do LUIS para esse tipo de entidade.
-* O texto no enunciado corresponde exatamente a um sinônimo ou ao nome canônico. LUIS não usa a lista além das correspondências de texto exatas. Lematização, plurais e outras variações não são resolvidas com uma entidade de lista. Para gerenciar variações, considere usar um [padrão](luis-concept-patterns.md#syntax-to-mark-optional-text-in-a-template-utterance) com a sintaxe de texto opcional.
+* O texto no enunciado corresponde exatamente a um sinônimo ou ao nome canônico. LUIS não usa a lista além das correspondências de texto exatas. Correspondência difusa, fazer isso, lematização, plurais e outras variações não são resolvidas com uma entidade da lista. Para gerenciar variações, considere usar um [padrão](luis-concept-patterns.md#syntax-to-mark-optional-text-in-a-template-utterance) com a sintaxe de texto opcional.
 
 ![entidade de lista](./media/luis-concept-entities/list-entity.png)
 
@@ -158,10 +183,11 @@ Na tabela a seguir, cada linha tem duas versões do enunciado. O enunciado super
 
 |Enunciado|
 |--|
-|' Era o homem que confundiu com His esposa para um chapéu e outras histórias clínicos escrito por um americano deste ano?<br>**The Man Who Mistook His Wife for a Hat and Other Clinical Tales** foi escrito por um americano este ano?|
-|`Was Half Asleep in Frog Pajamas written by an American this year?`<br>`Was **Half Asleep in Frog Pajamas** written by an American this year?`|
-|`Was The Particular Sadness of Lemon Cake: A Novel written by an American this year?`<br>`Was **The Particular Sadness of Lemon Cake: A Novel** written by an American this year?`|
-|`Was There's A Wocket In My Pocket! written by an American this year?`<br>`Was **There's A Wocket In My Pocket!** written by an American this year?`|
+|Foi Man Who Mistook His Wife for a Hat and Other Clinical Tales escrito por um americano este ano?<br><br>**The Man Who Mistook His Wife for a Hat and Other Clinical Tales** foi escrito por um americano este ano?|
+|Foi Half Asleep in Frog Pajamas escrito por um americano este ano?<br><br>**Half Asleep in Frog Pajamas** foi escrito por uma americano este ano?|
+|Foi The Particular Sadness of Lemon Cake: Um romance escrito por um americano este ano?<br><br>**The Particular Sadness of Lemon Cake: foi um romance escrito** por um americano este ano?|
+|Foi There's A Wocket In My Pocket! escrito por um americano este ano?<br><br>**There's A Wocket In My Pocket!** foi escrito por um americano este ano?|
+||
 
 ## <a name="prebuilt-entity"></a>Entidade predefinida
 
@@ -225,6 +251,18 @@ A entidade é uma boa opção quando:
 
 [Tutorial](luis-quickstart-intents-regex-entity.md)<br>
 [Exemplo de resposta JSON para entidade](luis-concept-data-extraction.md#regular-expression-entity-data)<br>
+
+Expressões regulares podem corresponder a mais do que o esperado corresponder. Um exemplo disso é numérica palavra correspondência, como `one` e `two`. Um exemplo é a expressão regular a seguir, que corresponde ao número `one` juntamente com outros números:
+
+```javascript
+(plus )?(zero|one|two|three|four|five|six|seven|eight|nine)(\s+(zero|one|two|three|four|five|six|seven|eight|nine))*
+``` 
+
+Essa expressão regex também corresponde a todas as palavras que terminam com esses números, tal como `phone`. Para corrigir problemas como esse, verifique se que a expressão regular corresponde ao leva em limites de palavra de conta. A expressão regular a usar limites de palavras para este exemplo é usada na expressão regular a seguir:
+
+```javascript
+\b(plus )?(zero|one|two|three|four|five|six|seven|eight|nine)(\s+(zero|one|two|three|four|five|six|seven|eight|nine))*\b
+```
 
 ## <a name="simple-entity"></a>Entidade simples 
 

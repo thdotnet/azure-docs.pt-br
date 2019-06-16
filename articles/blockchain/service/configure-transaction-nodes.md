@@ -11,10 +11,10 @@ ms.service: azure-blockchain
 ms.reviewer: seal
 manager: femila
 ms.openlocfilehash: dffeb81ae1eb244c38639a1241c0581e6fcdf94a
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65027954"
 ---
 # <a name="configure-azure-blockchain-service-transaction-nodes"></a>Configurar nós de transação de serviço do Azure Blockchain
@@ -23,7 +23,7 @@ Para interagir com o serviço do Azure Blockchain, fazer isso por meio de se con
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* [Criar um membro de Blockchain do Azure](create-member.md)
+* [Criar um membro do Azure Blockchain](create-member.md)
 
 ## <a name="transaction-node-overview"></a>Visão geral de nó de transação
 
@@ -32,9 +32,9 @@ Nós de transação são usados para enviar as transações de blockchain no ser
 Para exibir os detalhes do nó de transação padrão:
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-1. Navegue até seu membro de serviço de Blockchain do Azure. Selecione **nós de transação**.
+1. Navegue para o membro do serviço Azure Blockchain. Selecione **nós de transação**.
 
-    ![Selecione o nó da transação padrão](./media/configure-transaction-nodes/nodes.png)
+    ![Selecionar o nó de transação padrão](./media/configure-transaction-nodes/nodes.png)
 
     Detalhes de visão geral incluem endereços de ponto de extremidade público e a chave pública.
 
@@ -51,12 +51,12 @@ Para adicionar um nó de transação:
 
     | Configuração | DESCRIÇÃO |
     |---------|-------------|
-    | NOME | Nome do nó de transação. O nome é usado para criar o endereço DNS para o ponto de extremidade do nó de transação. Por exemplo, `newnode-myblockchainmember.blockchain.azure.com`. O nome do nó não pode ser alterado depois que ele é criado. |
+    | NOME | Nome do nó de transação. O nome é usado para criar o endereço DNS para o ponto de extremidade do nó de transação. Por exemplo: `newnode-myblockchainmember.blockchain.azure.com`. O nome do nó não pode ser alterado depois que ele é criado. |
     | Senha | Defina uma senha forte. Use a senha para acessar o ponto de extremidade do nó de transação com a autenticação básica.
 
 1. Selecione **Criar**.
 
-    Um novo nó de transação de provisionamento leva cerca de 10 minutos. Nós de transações adicionais incorrer em custos. Para obter mais informações sobre os custos, consulte [os preços do Azure](https://aka.ms/ABSPricing).
+    O provisionamento de um novo nó de transação leva cerca de 10 minutos. Nós de transações adicionais incorrer em custos. Para obter mais informações sobre os custos, consulte [os preços do Azure](https://aka.ms/ABSPricing).
 
 ## <a name="endpoints"></a>Pontos de extremidade
 

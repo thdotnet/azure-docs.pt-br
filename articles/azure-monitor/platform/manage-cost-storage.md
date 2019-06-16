@@ -11,15 +11,15 @@ ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 06/03/2019
+ms.date: 06/06/2019
 ms.author: magoedte
 ms.subservice: ''
-ms.openlocfilehash: 8eeb29b2d1fe17ae5581dab81c34d5c2c635a6c2
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: 3cad3722a9d0a52b1a0e66c760e948ceb3c1671c
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66496334"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67061042"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Gerenciar o uso e os custos com Logs do Azure Monitor
 
@@ -108,10 +108,12 @@ As etapas a seguir descrevem como configurar por quanto tempo os dados de log s�
 
 ## <a name="legacy-pricing-tiers"></a>Tipos de preço legados
 
-Assinaturas que tinham um espaço de trabalho do Log Analytics ou o recurso do Application Insights nele antes de 2 de abril de 2018 ou vinculadas a um contrato Enterprise que foi iniciado antes do dia 1 de fevereiro de 2019 continuarão tendo acesso aos tipos de preços herdado: Gratuito, autônomo (por GB) e por nó (OMS).  Espaços de trabalho no tipo de preço gratuito terá diária ingestão de dados é limitado a 500 MB (exceto para tipos de dados de segurança coletados pela Central de segurança do Azure) e a retenção de dados é limitada a sete dias. O tipo de preço gratuito é destinado apenas a fins de avaliação. Espaços de trabalho no autônomo ou tipos de preço por nó tem acesso a retenção de dados de até 2 anos. 
+Assinaturas que tinham um espaço de trabalho do Log Analytics ou o recurso do Application Insights nele antes de 2 de abril de 2018 ou vinculadas a um contrato Enterprise que foi iniciado antes do dia 1 de fevereiro de 2019 continuarão tendo acesso aos tipos de preços herdado: **Livre**, **autônomo (por GB)** e **por nó (OMS)** .  Espaços de trabalho no tipo de preço gratuito terá diária ingestão de dados é limitado a 500 MB (exceto para tipos de dados de segurança coletados pela Central de segurança do Azure) e a retenção de dados é limitada a sete dias. O tipo de preço gratuito é destinado apenas a fins de avaliação. Espaços de trabalho no autônomo ou tipos de preço por nó tem retenção configurável pelo usuário de até 2 anos. 
 
 > [!NOTE]
 > Para usar os direitos provenientes da aquisição de OMS E1 Suite, OMS E2 Suite OMS ou Complemento do OMS para System Center, escolha o tipo de preço *Por Nó* do Log Analytics.
+
+Os usuários pioneiros mais antigos do Log Analytics também tem acesso para os tipos de preço originais **Standard** e **Premium**, que corrigiram retenção de dados de 30 e 365 dias, respectivamente. 
 
 ## <a name="changing-pricing-tier"></a>Alterando o tipo de preço
 
@@ -410,6 +412,11 @@ Ao criar o alerta para a segunda consulta, quando existe a previsão de que have
 Especifique um já existente ou crie um novo [Grupo de ação](action-groups.md) para que, quando o alerta de log corresponder aos critérios, você seja notificado.
 
 Ao receber um alerta, use as etapas na seção a seguir para solucionar problemas relativos ao uso acima do esperado.
+
+## <a name="limits-summary"></a>Resumo de limites
+
+Há alguns limites adicionais do Log Analytics, algumas das quais dependem do tipo de preço do Log Analytics. Essas situações são documentadas [aqui](https://docs.microsoft.com/azure/azure-subscription-service-limits#log-analytics-limits).
+
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -5,28 +5,31 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 03/13/2019
+ms.date: 06/13/2019
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f5164130c5850b37d1e1323d172f9f9c46b4b30
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 26d9eb883cc014c1bea092a12e22b6d144a37994
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65768292"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112982"
 ---
 # <a name="leave-an-organization-as-a-guest-user"></a>Deixar uma organização como um usuário convidado
 
 Um usuário convidado do Azure Active Directory B2B (Azure AD) pode optar por deixar uma organização a qualquer momento se ele não precisar mais usar aplicativos da organização ou manter qualquer associação. Um usuário pode deixar uma organização por conta própria, sem a necessidade de contatar um administrador.
 
+> [!NOTE]
+> Um usuário convidado não pode deixar uma organização, se sua conta está desabilitada no locatário inicial ou Locatário do recurso. Se a conta está desativada, o usuário convidado será necessário entrar em contato com o administrador de locatário, que pode excluir a conta de convidado ou habilitar a conta de convidado para que o usuário pode deixar a organização.
+
 ## <a name="leave-an-organization"></a>Sair da organização
 
 Para deixar uma organização, siga estas etapas.
 
-1. Acesse a página de perfil do painel de acesso, seguindo um destes procedimentos:
+1. Acesse a página de perfil do painel de acesso de uma das seguintes etapas:
    
    - No [portal do Azure](https://portal.azure.com), clique em seu nome no canto superior direito e selecione **exibir conta**.
    - Abra seu [painel de acesso](https://myapps.microsoft.com), clique no nome no canto superior direito e próximo a **organizações**, selecione o ícone de configurações (engrenagem).
@@ -44,7 +47,7 @@ Para deixar uma organização, siga estas etapas.
 
 ## <a name="account-removal"></a>Remoção de conta
 
-Quando um usuário deixar uma organização, a conta de usuário é "excluída de forma reversível" no diretório. Por padrão, o objeto de usuário será movido para a área de **Usuários excluídos** no Azure AD, mas não é permanentemente excluído por 30 dias. Essa exclusão reversível permite ao administrador restaurar a conta de usuário (incluindo grupos e permissões), se o usuário faz uma solicitação para restaurar a conta dentro do período de 30 dias.
+Quando um usuário deixar uma organização, a conta de usuário é "excluída de forma reversível" no diretório. Por padrão, o objeto de usuário será movido para o **usuários excluídos** área no Azure AD, mas não é excluído permanentemente por 30 dias. Essa exclusão reversível permite ao administrador restaurar a conta de usuário (incluindo grupos e permissões), se o usuário faz uma solicitação para restaurar a conta dentro do período de 30 dias.
 
 Se desejar, um administrador de locatários pode excluir permanentemente a conta a qualquer momento durante o período de 30 dias. Para fazer isso:
 

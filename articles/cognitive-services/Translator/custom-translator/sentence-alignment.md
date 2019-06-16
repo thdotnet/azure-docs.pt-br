@@ -10,10 +10,10 @@ ms.date: 02/21/2019
 ms.author: v-pawal
 ms.topic: conceptual
 ms.openlocfilehash: 99538fd18067377efcc9e744e9ec611e0f685273
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66389611"
 ---
 # <a name="sentence-pairing-and-alignment-in-parallel-documents"></a>Emparelhamento de frases e alinhamento em documentos paralelos
@@ -36,9 +36,9 @@ Para que um treinamento seja bem-sucedido, a tabela abaixo mostra o número mín
 
 | Conjunto de dados   | Sugerido contagem mínima de sentença extraídos | Sugerido contagem mínima de sentença alinhado | Contagem máxima de sentença alinhado |
 |------------|--------------------------------------------|------------------------------------------|--------------------------------|
-| Treinamento   | 10.000                                     | 2.000                                    | Nenhum limite superior                 |
-| Ajuste     | 2.000                                      | 500                                      | 2.500                          |
-| Testes    | 2.000                                      | 500                                      | 2.500                          |
+| Treinamento   | 10\.000                                     | 2\.000                                    | Nenhum limite superior                 |
+| Ajuste     | 2\.000                                      | 500                                      | 2\.500                          |
+| Testes    | 2\.000                                      | 500                                      | 2\.500                          |
 | Dicionário | 0                                          | 0                                        | Nenhum limite superior                 |
 
 ## <a name="next-steps"></a>Próximas etapas
