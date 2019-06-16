@@ -9,10 +9,10 @@ ms.date: 05/21/2018
 ms.author: estfan
 ms.custom: include file
 ms.openlocfilehash: 4d9d0f132a2cc754cd9f69bb54ef4dbb78a2c493
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66145242"
 ---
 1. Quando for solicitado a fornecer informações de conexão, forneça estes detalhes:
@@ -22,7 +22,7 @@ ms.locfileid: "66145242"
    | Propriedade | Valor | Descrição | 
    |----------|-------|-------------| 
    | Nome da Conexão | <*connection-name*> | O nome a criar para a conexão | 
-   | Conta de Armazenamento | <*storage-account*> | Selecione sua conta de armazenamento na lista. | 
+   | Conta de armazenamento | <*storage-account*> | Selecione sua conta de armazenamento na lista. | 
    ||| 
 
    Por exemplo:

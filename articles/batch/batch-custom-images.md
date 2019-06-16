@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.author: lahugh
 ms.openlocfilehash: 886dea0e53519870aaa27dea721a9eb78515cf86
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64706317"
 ---
 # <a name="use-a-custom-image-to-create-a-pool-of-virtual-machines"></a>Usar uma imagem personalizada para criar um pool de máquinas virtuais 
@@ -27,7 +27,7 @@ Usar uma imagem personalizada economiza tempo ao preparar os nós de computaçã
 
 Usar uma imagem personalizada configurada para o seu cenário pode fornecer várias vantagens:
 
-- **Configurar o SO (sistema operacional)**. Você pode personalizar a configuração do disco do sistema operacional da imagem. 
+- **Configurar o SO (sistema operacional)** . Você pode personalizar a configuração do disco do sistema operacional da imagem. 
 - **Pré-instalação aplicativos.** Faça a pré-instalação de aplicativos no disco do SO, o que é mais eficiente e menos propenso a que instalar aplicativos após o provisionamento de nós de computação usando uma tarefa start.
 - **Economize tempo de reinicialização em VMs.** A instalação de aplicativo normalmente requer a reinicialização da VM, o que é demorado. Você pode economizar tempo de reinicialização pré-instalando aplicativos. 
 - **Copie grandes quantidades de dados de uma só vez.** Torne os dados estáticos parte da imagem personalizada gerenciada copiando-os para os discos de dados de uma imagem gerenciada. Isso só precisa ser feito uma vez e disponibiliza dados para cada nó do pool.
@@ -41,7 +41,7 @@ Usar uma imagem personalizada configurada para o seu cenário pode fornecer vár
   - Para criar um pool com a imagem usando as APIs de Lote, especifique a **ID de recurso** da imagem, que tem a forma `/subscriptions/xxxx-xxxxxx-xxxxx-xxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myImage`. Para usar o portal, use o **nome** da imagem.  
   - O recurso de imagem gerenciada deve existir pelo tempo de vida do pool para permitir a expansão e pode ser removido após a exclusão do pool.
 
-- **Autenticação do AAD (Azure Active Directory)**. A API do cliente de Lote deve usar a autenticação do AAD. O suporte ao Lote do Azure para AAD está documentado em [Autenticar soluções do serviço de Lote com o Active Directory](batch-aad-auth.md).
+- **Autenticação do AAD (Azure Active Directory)** . A API do cliente de Lote deve usar a autenticação do AAD. O suporte ao Lote do Azure para AAD está documentado em [Autenticar soluções do serviço de Lote com o Active Directory](batch-aad-auth.md).
 
 ## <a name="prepare-a-custom-image"></a>Preparar uma imagem personalizada
 

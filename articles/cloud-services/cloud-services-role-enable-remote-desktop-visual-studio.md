@@ -4,22 +4,20 @@ description: Como configurar seu aplicativo de serviço de nuvem do Azure para p
 services: cloud-services
 author: ghogen
 manager: douge
-editor: ''
 ms.assetid: f5727ebe-9f57-4d7d-aff1-58761e8de8c1
-ms.service: multiple
-ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-origin.date: 03/06/2018
-ms.date: 10/22/2018
-ms.author: v-yiso
+ms.prod: visual-studio-dev15
+ms.technology: vs-azure
+ms.custom: vs-azure
+ms.topic: conceptual
+ms.workload: azure-vs
+ms.date: 03/06/2018
+ms.author: ghogen
 ms.openlocfilehash: 924719a8371f4d41cb9ead09252d8f3d3424326a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60406439"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64717746"
 ---
 # <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-using-visual-studio"></a>Habilitar a Conexão de Área de Trabalho Remota para uma função nos Serviços de Nuvem do Azure usando o Visual Studio
 
@@ -48,10 +46,8 @@ Ao usar o Visual Studio 2017 versão 15.4 e anteriores, você pode usar a opçã
 
    > [!Note]
    > Os certificados necessários para uma conexão de área de trabalho remota são diferentes dos certificados que você usa para outras operações do Azure. O certificado de acesso remoto deve ter uma chave privada.
-   >
-   >
 
-5. Selecione um certificado da lista ou escolha **&lt;Criar...&gt;**. Se criar um novo certificado, forneça um nome amigável para o novo certificado quando solicitado e selecione **OK**. O novo certificado é exibido na caixa de listagem suspensa.
+5. Selecione um certificado da lista ou escolha **&lt;Criar...&gt;** . Se criar um novo certificado, forneça um nome amigável para o novo certificado quando solicitado e selecione **OK**. O novo certificado é exibido na caixa de listagem suspensa.
 
 6. Forneça um nome de usuário e uma senha. Você não pode usar uma conta existente. Não use "Administrador" como o nome de usuário para a nova conta.
 
@@ -90,7 +86,7 @@ Você pode implantar um projeto de serviço de nuvem de um servidor de build (po
 
 Para usar a extensão RDP do Azure DevOps Services, inclua os seguintes detalhes na pipeline de build:
 
-1. Incluir `/p:ForceRDPExtensionOverPlugin=true` em seus argumentos de MSBuild para verificar se a implantação funciona com a extensão RDP em vez de plug-in do RDP. Por exemplo: 
+1. Incluir `/p:ForceRDPExtensionOverPlugin=true` em seus argumentos de MSBuild para verificar se a implantação funciona com a extensão RDP em vez de plug-in do RDP. Por exemplo:
 
     ```
     msbuild AzureCloudService5.ccproj /t:Publish /p:TargetProfile=Cloud /p:DebugType=None

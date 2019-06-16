@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 2abfa29671bd804ee75194ef621fe07f06c015e9
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66118321"
 ---
 #### <a name="to-create-a-volume"></a>Para criar um volume
@@ -47,7 +47,7 @@ ms.locfileid: "66118321"
 
       1. Clique em **Criar**. Será criado um volume com as configurações especificadas.
 
-         ![Clique em Criar. ](./media/storsimple-8000-create-volume-u2/step5createvol3.png)
+         ![Clique em Criar.](./media/storsimple-8000-create-volume-u2/step5createvol3.png)
 
          > [!NOTE]
          > Lembre-se de que o volume que você criou aqui não está protegido. Você precisará criar e associar políticas de backup a este volume para fazer backups agendados. 

@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c342eac5460d8d52422b0497b1283f367660eb3c
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66298827"
 ---
 # <a name="azure-ad-connect-special-considerations-for-instances"></a>Azure AD Connect: Considerações especiais para instâncias
@@ -33,7 +33,7 @@ O [Microsoft Cloud Alemanha](https://www.microsoft.de/cloud-deutschland) é uma 
 | --- |
 | \*.microsoftonline.de |
 | \*.windows.net |
-| + Listas de revogação de certificados |
+| \+ Listas de revogação de certificados |
 
 Ao entrar em seu locatário do Azure AD, você deverá usar uma conta com o domínio onmicrosoft.de.
 
@@ -53,7 +53,7 @@ Esta nuvem teve suporte em versões mais antigas do DirSync. A partir da build 1
 | \*.microsoftonline.us |
 | \*. windows.net (necessário para a detecção automática de locatário do Azure governamental) |
 | \*.gov.us.microsoftonline.com |
-| + Listas de revogação de certificados |
+| \+ Listas de revogação de certificados |
 
 > [!NOTE]
 > A partir do Azure AD Connect versão 1.1.647.0, definir o valor AzureInstance no registro não é mais necessário desde que *. windows.net esteja aberto nos seus servidores proxy. No entanto, para os clientes que não permitem conectividade com a Internet de seus servidores do Azure AD Connect, a seguinte configuração manual pode ser usada.

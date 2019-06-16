@@ -16,10 +16,10 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: 52e092e6e48f004656860cb5d078e780039584ab
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66730231"
 ---
 # <a name="overview-of-event-hubs-dedicated"></a>Visão geral de Hubs de Eventos Dedicados
@@ -59,7 +59,7 @@ A oferta de Hubs de eventos dedicados é cobrada por um preço mensal fixo, com 
 | Tamanho da mensagem | 1 milhão de Bytes | 1 milhão de Bytes |
 | Partições | 40 por namespace | 2000 por CU |
 | Grupos de consumidores | 20 por Hub de eventos | Nenhum limite por CU, 1000 por hub de eventos |
-| Conexões orientadas | 1.000 incluído, o máximo de 5.000 | 100 mil incluídos e max |
+| Conexões orientadas | 1\.000 incluído, o máximo de 5.000 | 100 mil incluídos e max |
 | Retenção de mensagem | 7 dias, 84 GB incluído por TU | 90 dias, 10 TB incluído por CU |
 | Captura | Pagamento por hora | Incluso |
 

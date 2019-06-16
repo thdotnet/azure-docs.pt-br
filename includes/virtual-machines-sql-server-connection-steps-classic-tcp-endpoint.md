@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
 ms.openlocfilehash: d4e8d99cd7c67136f359772664eb017c6207e6e4
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66165501"
 ---
 ### <a name="create-a-tcp-endpoint-for-the-virtual-machine"></a>Criar um ponto de extremidade TCP para a máquina virtual
@@ -19,7 +19,7 @@ Para acessar o SQL Server da Internet, a máquina virtual deve ter um ponto de e
 > 
 > 
 
-1. No Portal do Azure, selecione **Máquinas virtuais (clássico)**.
+1. No Portal do Azure, selecione **Máquinas virtuais (clássico)** .
 2. Em seguida, selecione a máquina virtual do SQL Server.
 3. Selecione **Pontos de Extremidade** e clique no botão **Adicionar** na parte superior da folha de Pontos de extremidade.
    

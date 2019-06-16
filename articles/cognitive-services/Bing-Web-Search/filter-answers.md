@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: scottwhi
 ms.openlocfilehash: 8d8fd03d9c3d912788e9893377bbab3efac86f8a
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66383847"
 ---
 # <a name="filtering-the-answers-that-the-search-response-includes"></a>Filtrar as respostas que a resposta da pesquisa inclui  
@@ -46,7 +46,7 @@ Quando você realiza uma consulta na Web, o Bing retorna todo o conteúdo releva
 ```
 Você pode filtrar os tipos de conteúdo que receberá (para imagens, vídeos e notícias, por exemplo) usando o parâmetro de consulta [responseFilter](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter). Se o Bing localizar conteúdo relevante para as respostas especificadas, este conteúdo será retornado. O filtro de respostas é uma lista de respostas delimitada por vírgulas. 
 
-Para excluir tipos específicos de conteúdo da resposta, como imagens, você pode adicionar um caractere `-` ao início do valor `responseFilter`. Você pode separar os tipos excluídos com uma vírgula (`,`). Por exemplo: 
+Para excluir tipos específicos de conteúdo da resposta, como imagens, você pode adicionar um caractere `-` ao início do valor `responseFilter`. Você pode separar os tipos excluídos com uma vírgula (`,`). Por exemplo:
 
 ```
 &responseFilter=-images,-videos

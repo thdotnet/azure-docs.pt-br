@@ -10,10 +10,10 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: f4828b59ffa43365f48c002262368d383dfcff05
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66389361"
 ---
 # <a name="learn-how-to-deploy-modules-and-establish-routes-in-iot-edge"></a>Aprenda a implantar módulos e estabelecer rotas no IoT Edge
@@ -135,7 +135,7 @@ As rotas são declaradas nas propriedades desejadas do **$edgeHub** com a seguin
 Cada rota precisa de uma origem e um coletor, mas a condição é uma parte opcional que você pode usar para filtrar mensagens. 
 
 
-### <a name="source"></a>`Source`
+### <a name="source"></a>source
 
 A origem especifica de onde as mensagens são provenientes. Borda de IoT pode rotear as mensagens de módulos ou dispositivos de folha. 
 
@@ -143,7 +143,7 @@ Usando os SDKs de IoT, os módulos podem declarar filas de saída específicos p
 
 A propriedade da fonte pode ser qualquer um dos valores a seguir:
 
-| `Source` | DESCRIÇÃO |
+| source | DESCRIÇÃO |
 | ------ | ----------- |
 | `/*` | Todas as mensagens do dispositivo para a nuvem ou gêmeo alteração as notificações de qualquer módulo ou dispositivo de folha |
 | `/twinChangeNotifications` | Qualquer alteração de gêmeo (propriedades relatadas) proveniente de qualquer dispositivo de módulo ou folha |
