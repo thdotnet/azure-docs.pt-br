@@ -9,10 +9,10 @@ ms.date: 2/7/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 7cbb934b87440d23e65fce53d7da40c5ffbd3150
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65597080"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planejando uma implantação da Sincronização de Arquivos do Azure
@@ -110,7 +110,7 @@ Para exibir os resultados em CSV:
     $errors | Select-Object -Property Type, Path, Level, Description | Export-Csv -Path <csv path>
 ```
 
-### <a name="system-requirements"></a>Requisitos do sistema
+### <a name="system-requirements"></a>Requisitos do Sistema
 - Um servidor executando o Windows Server 2012 R2, o Windows Server 2016 ou o Windows Server 2019:
 
     | Version | SKUs com suporte | Opções de implantação com suporte |
@@ -178,9 +178,9 @@ Para volumes que não têm a disposição em camadas de nuvem habilitada, a Sinc
 ### <a name="distributed-file-system-dfs"></a>DFS (Sistema de Arquivos Distribuído)
 A Sincronização de Arquivos do Azure fornece suporte para interoperabilidade com Namespaces de DFS (DFS-N) e Replicação do DFS (DFS-R).
 
-**DFS-N (Namespaces de DFS)**: A Sincronização de Arquivos do Azure é totalmente suportada em servidores DFS-N. É possível instalar o agente Sincronização de arquivos do Azure em um ou mais membros DFS-N para sincronizar dados entre os pontos de extremidade de servidor e o ponto de extremidade da nuvem. Para obter mais informações, consulte [visão geral de Namespaces de DFS](https://docs.microsoft.com/windows-server/storage/dfs-namespaces/dfs-overview).
+**DFS-N (Namespaces de DFS)** : A Sincronização de Arquivos do Azure é totalmente suportada em servidores DFS-N. É possível instalar o agente Sincronização de arquivos do Azure em um ou mais membros DFS-N para sincronizar dados entre os pontos de extremidade de servidor e o ponto de extremidade da nuvem. Para obter mais informações, consulte [visão geral de Namespaces de DFS](https://docs.microsoft.com/windows-server/storage/dfs-namespaces/dfs-overview).
  
-**DFS-R (Replicação do DFS)**: Quando tanto DFS-R como a Sincronização de arquivos do Azure forem soluções de replicação, na maioria dos casos é recomendável substituir DFS-R pela Sincronização de Arquivos do Azure. No entanto, existem vários cenários em que você deseja usar DFS-R e Sincronização de arquivos do Azure em conjunto:
+**DFS-R (Replicação do DFS)** : Quando tanto DFS-R como a Sincronização de arquivos do Azure forem soluções de replicação, na maioria dos casos é recomendável substituir DFS-R pela Sincronização de Arquivos do Azure. No entanto, existem vários cenários em que você deseja usar DFS-R e Sincronização de arquivos do Azure em conjunto:
 
 - Você está migrando de uma implantação de DFS-R para uma implantação de Sincronização de arquivos do Azure. Para obter mais informações, consulte [Migrar uma implantação de DFS-R (Replicação do DFS) para Sincronização de arquivos do Azure](storage-sync-files-deployment-guide.md#migrate-a-dfs-replication-dfs-r-deployment-to-azure-file-sync).
 - Nem todo servidor local que precisa de uma cópia dos dados do seu arquivo pode ser conectado diretamente à internet.
@@ -236,13 +236,13 @@ A Sincronização de Arquivos do Azure está disponível apenas nas seguintes re
 | Região | Localização do Datacenter |
 |--------|---------------------|
 | Leste da Austrália | Nova Gales do Sul |
-| Sudeste da Austrália | Victoria |
+| Sudeste da Austrália | Vitória |
 | Sul do Brasil | Estado de Paolo são |
 | Canadá Central | Toronto |
 | Leste do Canadá | Cidade de Quebec |
 | Índia Central | Pune |
 | Centro dos EUA | Iowa |
-| Ásia Oriental | Região Administrativa Especial de Hong Kong |
+| Ásia Oriental | RAE de Hong Kong |
 | Leste dos EUA | Virgínia |
 | Leste dos EUA 2 | Virgínia |
 | Coreia Central| Seul |
@@ -253,7 +253,7 @@ A Sincronização de Arquivos do Azure está disponível apenas nas seguintes re
 | Norte da Europa | Irlanda |
 | Centro-Sul dos Estados Unidos | Texas |
 | Sul da Índia | Chennai |
-| Sudeste Asiático | Cingapura |
+| Sudeste Asiático | Singapura |
 | Sul do Reino Unido | Londres |
 | Oeste do Reino Unido | Cardiff |
 | US gov – Arizona (visualização) | Arizona |
@@ -300,9 +300,9 @@ Para dar suporte à integração de failover entre o armazenamento com redundân
 | Sudeste Asiático      | Ásia Oriental          |
 | Sul do Reino Unido            | Oeste do Reino Unido            |
 | Oeste do Reino Unido             | Sul do Reino Unido           |
-| US Gov – Arizona      | US Gov – Texas       |
+| Governo dos EUA do Arizona      | Governo dos EUA do Texas       |
 | US Gov Iowa         | Gov. dos EUA – Virgínia    |
-| US Gov Virgini      | US Gov – Texas       |
+| US Gov Virgini      | Governo dos EUA do Texas       |
 | Europa Ocidental         | Norte da Europa       |
 | Centro-Oeste dos EUA     | Oeste dos EUA 2          |
 | Oeste dos EUA             | Leste dos EUA            |

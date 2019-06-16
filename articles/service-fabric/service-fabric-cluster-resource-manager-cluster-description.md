@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 082abd89cd84fc34180f333b54664d7dddfa0ccf
-ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65561204"
 ---
 # <a name="describing-a-service-fabric-cluster"></a>Descrevendo um cluster do Service Fabric
@@ -32,7 +32,7 @@ Os recursos do Gerenciador de Recursos de Cluster oferecem suporte a vários rec
 * Propriedades de nó
 * Capacidades de nó
 
-## <a name="fault-domains"></a>Domínios com falha
+## <a name="fault-domains"></a>Domínios de falha
 Um domínio de falha é qualquer área da falha coordenada. Um único computador é um domínio de falha (já que ele pode falhar sozinho por vários motivos diferentes, desde falhas de fornecimento de energia até falhas de unidade devido a firmware NIC inválido). Computadores conectados ao mesmo comutador Ethernet estão no mesmo domínio de falha, assim como computadores que compartilham uma única fonte de alimentação ou em um único local. Uma vez que é natural para falhas de hardware se sobreponham, os domínios de falha são hierárquicos por natureza e são representados como URIs no Service Fabric.
 
 É importante que os domínios de falha sejam definidos corretamente uma vez que o Service Fabric usa essas informações para posicionar os serviços com segurança. O Service Fabric não quer posicionar os serviços de modo que a perda de um domínio de falha (causada pela falha de algum componente) faça com que os serviços fiquem inativos. No ambiente do Azure, o Service Fabric usa as informações do domínio de falha fornecidas pelo ambiente para configurar corretamente os nós no cluster em seu nome. Para o Service Fabric Autônomo, os Domínios de Falha são definidos no momento em que o cluster é configurado 

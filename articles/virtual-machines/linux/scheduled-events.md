@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ericrad
 ms.openlocfilehash: 0831f08eaa3e8e6f6a0d3f68bc50cd927167b7ba
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65507918"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-linux-vms"></a>Serviço de Metadados do Azure: Eventos Agendados para VMs do Linux
@@ -79,7 +79,7 @@ O serviço de Eventos Agendados tem controle de versão. As versões são obriga
 | - | - | - | - | 
 | 2017-11-01 | Disponibilidade geral | Todos | <li> Adicionado suporte para remoção de VMs de baixa prioridade EventType 'Preempt'<br> | 
 | 2017-08-01 | Disponibilidade geral | Todos | <li> Removido o sublinhado inicial dos nomes de recursos para as VMs de IaaS<br><li>Requisito de cabeçalho de metadados imposto para todas as solicitações | 
-| 2017-03-01 | Visualizar | Todos | <li>Versão inicial
+| 2017-03-01 | Visualização | Todos | <li>Versão inicial
 
 
 > [!NOTE] 
@@ -127,7 +127,7 @@ No caso de haver eventos agendados, a resposta contém uma matriz de eventos.
 ```
 
 ### <a name="event-properties"></a>Propriedades do evento
-|Propriedade  |  Descrição |
+|Propriedade  |  DESCRIÇÃO |
 | - | - |
 | EventId | Identificador global exclusivo para esse evento. <br><br> Exemplo: <br><ul><li>602d9444-d2cd-49c7-8624-8643e7171297  |
 | EventType | Impacto desse evento. <br><br> Valores: <br><ul><li> `Freeze`: A máquina Virtual está agendada para pausar por alguns segundos. Conectividade de rede e CPU pode ser suspenso, mas não há nenhum impacto na memória ou em arquivos abertos.<li>`Reboot`: A Máquina Virtual está agendada para ser reinicializada (a memória não persistente é perdida). <li>`Redeploy`: A Máquina Virtual está agendada para ser movida para outro nó (os discos efêmeros são perdidos). <li>`Preempt`: A máquina Virtual de baixa prioridade está sendo excluída (discos efêmeros são perdidos).|
@@ -142,7 +142,7 @@ Cada evento é agendado uma quantidade mínima de tempo no futuro com base no ti
 |EventType  | Aviso mínimo |
 | - | - |
 | Congelamento| 15 minutos |
-| Reinicializar | 15 minutos |
+| Reboot | 15 minutos |
 | Reimplantar | 10 minutos |
 | Antecipe | 30 segundos |
 

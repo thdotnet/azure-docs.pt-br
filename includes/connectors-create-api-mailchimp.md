@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/03/2016
 ms.author: estfan
 ms.openlocfilehash: 752c43604349a2361a8f5b26cd6d0bce7b516bc0
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66149763"
 ---
 ### <a name="prerequisites"></a>Pré-requisitos
@@ -18,12 +18,12 @@ Antes de usar sua conta do MailChimp em um aplicativo lógico, você deve autori
 
 Aqui estão as etapas para autorizar seu aplicativo lógico a se conectar à sua conta do MailChimp:
 
-1. Para criar uma conexão com o MailChimp, no designer do Aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa e, em seguida, digite *MailChimp* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:   
+1. Para criar uma conexão com o MailChimp, no designer do Aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa e, em seguida, digite *MailChimp* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:  
    ![Etapa 1 do MailChimp](./media/connectors-create-api-mailchimp/mailchimp-1.png)
 2. Se você não tiver criado quaisquer conexões MailChimp antes, será solicitado a fornecer suas credenciais do MailChimp. Essas credenciais serão usadas para autorizar seu Aplicativo lógico a se conectar e acessar os dados da sua conta do MailChimp:  
    ![Etapa 2 do MailChimp](./media/connectors-create-api-mailchimp/mailchimp-2.png)
 3. Forneça seu nome de usuário do MailChimp e a senha para autorizar seu Aplicativo lógico:  
    ![Etapa 3 do MailChimp](./media/connectors-create-api-mailchimp/mailchimp-3.png)   
-4. Observe que a conexão foi criada e agora você pode continuar com as outras etapas no seu aplicativo lógico:   
+4. Observe que a conexão foi criada e agora você pode continuar com as outras etapas no seu aplicativo lógico:  
    ![Etapa 4 do MailChimp](./media/connectors-create-api-mailchimp/mailchimp-4.png)
 

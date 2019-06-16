@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 05/02/2019
 ms.author: spelluru
 ms.openlocfilehash: 865ae0b3f7a7965698a67183a4c820ba71f49cd8
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65833923"
 ---
 # <a name="use-platform-as-a-service-paas-services-in-azure-devtest-labs"></a>Usar os serviços de plataforma-como um serviço (PaaS) no Azure DevTest Labs
@@ -39,7 +39,7 @@ Em grandes organizações, as equipes de desenvolvimento normalmente fornecem am
 
 ## <a name="customizations"></a>Personalizações
 
-#### <a name="sandbox"></a>Área Restrita 
+#### <a name="sandbox"></a>Área restrita 
 O proprietário de laboratório pode personalizar os ambientes de laboratório para alterar a função do usuário do **reader** à **Colaborador** dentro do grupo de recursos. Esse recurso está no **configurações do laboratório** página sob a **configuração e políticas** do laboratório. Essa alteração na função permite que o usuário adicionar ou remover recursos dentro desse ambiente. Se você quiser restringir ainda mais o acesso, use as políticas do Azure. Essa funcionalidade permite que você personalize os recursos ou a configuração sem o acesso no nível da assinatura.
 
 #### <a name="custom-tokens"></a>Tokens personalizados
@@ -57,7 +57,7 @@ DevTest Labs oferece suporte ao uso de [modelos do Gerenciador de recursos aninh
 
 ## <a name="user-experience"></a>Experiência do usuário
 
-## <a name="developer"></a>Desenvolvedor
+## <a name="developer"></a>Desenvolvedores
 Os desenvolvedores usam o mesmo fluxo de trabalho para a criação de uma VM para criar um ambiente específico. Eles selecione o ambiente versus a imagem de máquina e insira as informações necessárias pelo modelo. Cada desenvolvedor ter um ambiente permite a implantação das alterações e depuração aprimorada de loop interno. O ambiente pode ser criado a qualquer momento usando o modelo mais recente.  Esse recurso permite que os ambientes para ser destruída e recriada para ajudar a reduzir o tempo de inatividade de ter que manualmente criando o sistema ou recuperação de teste de falha.  
 
 ### <a name="testing"></a>Testes

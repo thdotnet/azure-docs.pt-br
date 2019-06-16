@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: benshy
 ms.custom: seodec18
 ms.openlocfilehash: b39296e18b38180e1081866d6e8197973dc782b1
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66002153"
 ---
 # <a name="connect-an-amazon-web-services-account"></a>Conectar uma conta do Amazon Web Services
@@ -36,7 +36,7 @@ A primeira etapa é obter a frase secreta de conexão exclusiva do portal do Clo
 
 1. Abra o portal da Cloudyn por meio do portal do Azure ou navegue até [https://azure.cloudyn.com](https://azure.cloudyn.com) e entre.
 2. Clique no símbolo de engrenagem e, em seguida, selecione **Contas de Nuvem**.
-3. Em Gerenciamento de Contas, selecione a guia **Contas do AWS** e, em seguida, clique em **Adicionar novo +**.
+3. Em Gerenciamento de Contas, selecione a guia **Contas do AWS** e, em seguida, clique em **Adicionar novo +** .
 4. Na caixa de diálogo **Adicionar Conta do AWS**, copie a **ID Externa** e salve o valor para as etapas de criação da Função do AWS na próxima seção. A ID externa é exclusiva para a sua conta. Na imagem a seguir, a ID externa de exemplo é _Contoso_ seguida por um número. Sua ID é diferente.  
     ![ID externa mostrada na caixa Adicionar conta do AWS](./media/connect-aws-account/external-id.png)
 
@@ -57,7 +57,7 @@ A primeira etapa é obter a frase secreta de conexão exclusiva do portal do Clo
 
 1. Abra o portal da Cloudyn por meio do portal do Azure ou navegue até https://azure.cloudyn.com/ e entre.
 2. Clique no símbolo de engrenagem e, em seguida, selecione **Contas de Nuvem**.
-3. Em Gerenciamento de Contas, selecione a guia **Contas do AWS** e, em seguida, clique em **Adicionar novo +**.
+3. Em Gerenciamento de Contas, selecione a guia **Contas do AWS** e, em seguida, clique em **Adicionar novo +** .
 4. Em **Nome da Conta**, digite um nome para a conta.
 5. Próximo ao **Tipo de Acesso**, selecione **Função do IAM**.
 6. No campo **ARN da Função**, cole o valor copiado anteriormente e, em seguida, clique em **Salvar**.  
@@ -94,7 +94,7 @@ As seções a seguir detalham como criar um usuário somente leitura para propor
 
 1. Abra o portal da Cloudyn por meio do portal do Azure ou navegue até https://azure.cloudyn.com/ e entre.
 2. Clique no símbolo de engrenagem e, em seguida, selecione **Contas de Nuvem**.
-3. Em Gerenciamento de Contas, selecione a guia **Contas do AWS** e, em seguida, clique em **Adicionar novo +**.
+3. Em Gerenciamento de Contas, selecione a guia **Contas do AWS** e, em seguida, clique em **Adicionar novo +** .
 4. Para **Nome da Conta**, digite um nome da conta.
 5. Próximo ao **Tipo de Acesso**, selecione o **Usuário do IAM**.
 6. Em **Chave de Acesso**, cole o valor da **ID da chave de acesso**  do arquivo credentials.csv.

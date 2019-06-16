@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: v-pawal
 ms.openlocfilehash: 166c152828a91889d7d1d7eb6f8c03dac48172f5
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66389385"
 ---
 # <a name="how-to-use-collaborative-translation-framework-ctf-reporting"></a>Como usar o relatório do CTF (Collaborative Translation Framework)
@@ -101,7 +101,7 @@ O conjunto de resultados contém uma matriz do **UserTranslationCount**. Cada Us
 | Classificação| A classificação que é aplicada pelo remetente na chamada do método AddTranslation()|
 | Para| O idioma de destino|
 | Uri| O URI aplicado na chamada de método AddTranslation()|
-| User| O nome de usuário|
+| Usuário| O nome de usuário|
 
 **Exceções**
 
@@ -174,7 +174,7 @@ O conjunto de resultados contém a matriz do **UserTranslation**. Cada UserTrans
 |Para|    O idioma de destino|
 |TranslatedText|    A tradução como enviada na chamada de método AddTranslation()|
 |Uri|   O URI aplicado na chamada de método AddTranslation()|
-|User   |O nome de usuário|
+|Usuário   |O nome de usuário|
 
 **Exceções**
 

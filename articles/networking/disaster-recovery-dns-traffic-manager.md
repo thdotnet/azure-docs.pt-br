@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 06/08/2018
 ms.author: kumud
 ms.openlocfilehash: a560cc526e73f3ce7e851f2a545f9b16fa53b423
-ms.sourcegitcommit: 1d257ad14ab837dd13145a6908bc0ed7af7f50a2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65501733"
 ---
 # <a name="disaster-recovery-using-azure-dns-and-traffic-manager"></a>Recuperação de desastres usando o DNS do Azure e o Gerenciador de Tráfego
@@ -140,7 +140,7 @@ As etapas para configurar o failover com o Gerenciador de Tráfego do Azure são
 ### <a name="step-1-create-a-new-azure-traffic-manager-profile"></a>Etapa 1: Criar um novo perfil do Gerenciador de Tráfego do Azure
 Criar um novo perfil do Gerenciador de Tráfego do Azure com o nome contoso123 e selecione o Método de roteamento como Prioritário. Se você tiver um grupo de recursos já existente que você deseja associar, então você pode selecionar um grupo de recursos existente, caso contrário, crie um novo grupo de recursos.
 
-![Criar perfil do Gerenciador de Tráfego](./media/disaster-recovery-dns-traffic-manager/create-traffic-manager-profile.png)
+![Criar perfil do Gerenciador de tráfego](./media/disaster-recovery-dns-traffic-manager/create-traffic-manager-profile.png)
 
 *Figura - criar um perfil do Gerenciador de tráfego*
 

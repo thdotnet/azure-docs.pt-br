@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: hrasheed
 ms.openlocfilehash: 0a278cd98b0dd6c6d8f0fe9bfee81e5bafd4f543
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65597690"
 ---
 # <a name="create-hdinsight-clusters-using-the-azure-cli"></a>Criar os clusters do HDInsight usando a CLI do Azure
@@ -27,13 +27,13 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-CLI do Azure. Se você ainda não instalou a CLI do Azure, consulte [instalar a CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) para obter as etapas.
+CLI do Azure. Se você ainda não tiver instalado a CLI do Azure, confira [Instalar a CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) para obter as etapas.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-a-cluster"></a>Criar um cluster
 
-1. Faça logon em sua assinatura do Azure. Se você planeja usar o Azure Cloud Shell, basta selecionar **Experimente** no canto superior direito do bloco de código. Caso contrário, digite o comando a seguir:
+1. Faça logon em sua assinatura do Azure. Se você planeja usar o Azure Cloud Shell, basta selecionar **Experimente** no canto superior direito do bloco de código. Caso contrário, insira o comando a seguir:
 
     ```azurecli-interactive
     az login
@@ -42,9 +42,9 @@ CLI do Azure. Se você ainda não instalou a CLI do Azure, consulte [instalar a 
     # az account set --subscription "SUBSCRIPTIONID"
     ```
 
-2. Definir variáveis de ambiente. O uso de variáveis neste artigo se baseia em Bash. Pequenas variações serão necessárias para outros ambientes. Ver [az-hdinsight-create](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) para obter uma lista completa de parâmetros possíveis para a criação do cluster.
+2. Configure as variáveis de ambiente. O uso de variáveis neste artigo se baseia em Bash. Pequenas variações serão necessárias para outros ambientes. Ver [az-hdinsight-create](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) para obter uma lista completa de parâmetros possíveis para a criação do cluster.
 
-    |Parâmetro | Descrição |
+    |Parâmetro | DESCRIÇÃO |
     |---|---|
     |`--size`| O número de nós de trabalho no cluster. Este artigo usa a variável `clusterSizeInNodes` como o valor passado para `--size`. |
     |`--version`| a versão do cluster do HDInsight. Este artigo usa a variável `clusterVersion` como o valor passado para `--version`. Consulte também: [Suporte para versões do HDInsight](./hdinsight-component-versioning.md#supported-hdinsight-versions).|

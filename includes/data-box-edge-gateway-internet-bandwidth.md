@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 02/14/2019
 ms.author: alkohli
 ms.openlocfilehash: 69f77bf969c5d9adfb084682fbbc9eb9e762c8b4
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66161055"
 ---
 Os dispositivos são projetados para continuar a operar quando sua conexão com a Internet está lenta ou é interrompida. Em condições normais de operação, é recomendável utilizar: 

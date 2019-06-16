@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/30/2019
 ms.author: tulasim
 ms.openlocfilehash: b18d47b4b09c6fa9c4d5f0ef87d7ebe73f151c60
-ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66693235"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Obter uma resposta com a API GenerateAnswer e metadados
@@ -70,9 +70,9 @@ https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 |Propriedade de solicitação HTTP|NOME|Type|Finalidade|
 |--|--|--|--|
 |Parâmetro de rota de URL|ID da base de dados de Conhecimento|cadeia de caracteres|o GUID da base de dados de conhecimento.|
-|Parâmetro de rota de URL|Host do ponto de extremidade QnAMaker|string|o nome do host do ponto de extremidade implantado na sua assinatura do Azure. Isso está disponível na **configurações** página depois de publicar a base de Conhecimento. |
-|Cabeçalho|Tipo de conteúdo|string|o tipo de mídia do corpo enviado para a API. Valor padrão é: '|
-|Cabeçalho|Autorização|string|sua chave de ponto de extremidade (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|
+|Parâmetro de rota de URL|Host do ponto de extremidade QnAMaker|cadeia de caracteres|o nome do host do ponto de extremidade implantado na sua assinatura do Azure. Isso está disponível na **configurações** página depois de publicar a base de Conhecimento. |
+|Cabeçalho|Tipo de conteúdo|cadeia de caracteres|o tipo de mídia do corpo enviado para a API. Valor padrão é: '|
+|Cabeçalho|Autorização|cadeia de caracteres|sua chave de ponto de extremidade (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|
 |Corpo do POST|Objeto JSON|JSON|A pergunta com as configurações.|
 
 

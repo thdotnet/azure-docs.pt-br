@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: tomfitz
 ms.openlocfilehash: ea9499da3dac67635a48704f439f6592c6ed467e
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65515378"
 ---
 # <a name="single-and-multi-resource-export-to-template-in-azure-portal"></a>Exportação de única e vários recurso para o modelo no portal do Azure
@@ -88,7 +88,7 @@ Para exportar um recurso:
 
 1. Depois de passar a validação, mas antes de iniciar a implantação, selecione **baixar um modelo para a automação**.
 
-   ![Baixar modelo](./media/export-template-portal/download-before-deployment.png)
+   ![Baixar o modelo](./media/export-template-portal/download-before-deployment.png)
 
 1. O modelo é exibido e está disponível para download.
 

@@ -10,10 +10,10 @@ ms.date: 09/03/2018
 ms.author: raynew
 ms.custom: include file
 ms.openlocfilehash: afeae4af9b41bf434b26833a3bd927118a4697ae
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66160360"
 ---
 **Requisitos do servidor de Configuração/Processo para replicação de servidor físico**
@@ -33,7 +33,7 @@ Localidade do sistema operacional | Inglês (en-us)
 Funções do Windows Server | Não habilite essas funções: <br> - Active Directory Domain Services <br>- Serviços de Informações da Internet <br> - Hyper-V 
 Políticas de grupo | Não habilite estas políticas de grupo: <br> - Impedir o acesso ao prompt de comando. <br> - Impedir o acesso às ferramentas de edição do registro. <br> - Lógica de confiança para anexos de arquivo. <br> - Ativar a execução do script. <br> [Saiba mais](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)
 IIS | - Nenhum site da Web padrão já existente <br> - Nenhum aplicativo/site da Web pré-existente escutando na porta 443 <br>- Habilitar [autenticação anônima](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx) <br> - Habilitar configuração [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx).
-Tipo de endereço IP | Static 
+Tipo de endereço IP | Estático 
 | 
 **CONFIGURAÇÕES DE ACESSO** | 
 MySQL | O MySQL deve ser instalado no servidor de configuração. Você pode instalar manualmente, ou o Azure Site Recovery pode instalá-lo durante a implantação. Para o Azure Site Recovery realizar a instalação, verifique se o computador pode acessar http://cdn.mysql.com/archives/mysql-5.5/mysql-5.5.37-win32.msi.

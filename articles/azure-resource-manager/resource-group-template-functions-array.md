@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/8/2018
 ms.author: tomfitz
 ms.openlocfilehash: c80625fb36709f66319b4966e210785864f30d09
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128703"
 ---
 # <a name="array-and-object-functions-for-azure-resource-manager-templates"></a>Funções de matriz e objeto para modelos do Azure Resource Manager
@@ -56,7 +56,7 @@ Converte o valor em uma matriz.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | convertToArray |Sim |int, string, array ou object |O valor a ser convertido em uma matriz. |
 
@@ -134,7 +134,7 @@ Retorna o primeiro valor não nulo dos parâmetros. Cadeias de caracteres vazias
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |int, string, array ou object |O primeiro valor para testar se é nulo. |
 | argumentos adicionais |Não |int, string, array ou object |Valores adicionais para testar se são nulos. |
@@ -195,7 +195,7 @@ A saída do exemplo anterior com os valores padrão é:
 
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| stringOutput | String | padrão |
+| stringOutput | Cadeia de caracteres | padrão |
 | intOutput | Int | 1 |
 | objectOutput | Object | {"first": "default"} |
 | arrayOutput | Matriz | [1] |
@@ -222,7 +222,7 @@ Combina várias matrizes e retorna a matriz concatenada, ou combina vários valo
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz ou cadeia de caracteres |A primeira matriz ou cadeia de caracteres para concatenação. |
 | argumentos adicionais |Não |matriz ou cadeia de caracteres |Matrizes ou cadeias de caractere adicionais em ordem sequencial para concatenação. |
@@ -313,7 +313,7 @@ A saída do exemplo anterior com os valores padrão é:
 
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| concatOutput | String | prefix-5yj4yjf5mbg72 |
+| concatOutput | Cadeia de caracteres | prefix-5yj4yjf5mbg72 |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -329,14 +329,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="contains" />
 
-## <a name="contains"></a>contém
+## <a name="contains"></a>contains
 `contains(container, itemToFind)`
 
 Verifica se uma matriz contém um valor, um objeto contém uma chave ou uma cadeia de caracteres contém uma subcadeia de caracteres. A comparação de cadeia de caracteres diferencia maiúsculas de minúsculas. No entanto, ao testar se um objeto contém uma chave, a comparação não diferencia maiúsculas de minúsculas.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | contêiner |Sim |matriz, objeto ou cadeia de caracteres |O valor que contém o valor a ser encontrado. |
 | itemToFind |Sim |cadeia de caracteres ou inteiro |O valor a ser encontrado. |
@@ -430,7 +430,7 @@ Cria uma matriz de parâmetros.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |String, Inteiro, Matriz ou Objeto |O primeiro valor na matriz. |
 | argumentos adicionais |Não |String, Inteiro, Matriz ou Objeto |Valores adicionais na matriz. |
@@ -511,7 +511,7 @@ Determina se uma matriz, objeto ou uma cadeia de caracteres está vazio.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | itemToTest |Sim |matriz, objeto ou cadeia de caracteres |O valor a ser verificado, caso esteja vazio. |
 
@@ -589,7 +589,7 @@ Retorna o primeiro elemento da matriz ou o primeiro caractere da cadeia de carac
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz ou cadeia de caracteres |O valor para recuperar o primeiro elemento ou caractere. |
 
@@ -630,8 +630,8 @@ A saída do exemplo anterior com os valores padrão é:
 
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| arrayOutput | String | one |
-| stringOutput | String | O |
+| arrayOutput | Cadeia de caracteres | one |
+| stringOutput | Cadeia de caracteres | O |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -654,7 +654,7 @@ Retorna uma única matriz ou objeto com os elementos comuns dos parâmetros.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |objeto ou matriz |O primeiro valor a ser usado para localizar elementos comuns. |
 | arg2 |Sim |objeto ou matriz |O segundo valor a ser usado para localizar elementos comuns. |
@@ -731,9 +731,9 @@ Retorna um objeto JSON.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| arg1 |Sim |string |O valor a ser convertido para JSON. |
+| arg1 |Sim |cadeia de caracteres |O valor a ser convertido para JSON. |
 
 
 ### <a name="return-value"></a>Valor de retorno
@@ -806,7 +806,7 @@ Retorna o último elemento da matriz ou o último caractere da cadeia de caracte
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz ou cadeia de caracteres |O valor para recuperar o último elemento ou caractere. |
 
@@ -847,8 +847,8 @@ A saída do exemplo anterior com os valores padrão é:
 
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
-| arrayOutput | String | três |
-| stringOutput | String | e |
+| arrayOutput | Cadeia de caracteres | três |
+| stringOutput | Cadeia de caracteres | e |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -871,7 +871,7 @@ Retorna o número de elementos em uma matriz ou os caracteres em uma cadeia de c
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz ou cadeia de caracteres |A matriz a ser usada para obter o número de elementos ou a cadeia de caracteres a ser usada para obter o número de caracteres. |
 
@@ -947,14 +947,14 @@ Para saber mais sobre como usar essa função com uma matriz, confira [Criar vá
 
 <a id="max" />
 
-## <a name="max"></a>máx.
+## <a name="max"></a>max
 `max(arg1)`
 
 Retorna o valor máximo de uma matriz de inteiros ou uma lista de inteiros separados por vírgulas.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz de inteiros ou lista de inteiros separados por vírgulas |A coleção para obtenção do valor máximo. |
 
@@ -1011,14 +1011,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="min" />
 
-## <a name="min"></a>min
+## <a name="min"></a>Min
 `min(arg1)`
 
 Retorna o valor mínimo de uma matriz de inteiros ou uma lista de inteiros separados por vírgulas.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz de inteiros ou lista de inteiros separados por vírgulas |A coleção para obtenção do valor mínimo. |
 
@@ -1082,7 +1082,7 @@ Cria uma matriz de inteiros a partir de um inteiro inicial e contendo um número
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | startingInteger |Sim |int |O primeiro inteiro na matriz. |
 | numberofElements |Sim |int |O número de inteiros na matriz. |
@@ -1139,14 +1139,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="skip" />
 
-## <a name="skip"></a>pular
+## <a name="skip"></a>skip
 `skip(originalValue, numberToSkip)`
 
 Retorna uma matriz com todos os elementos após o número especificado na matriz, ou retorna uma cadeia de caracteres com todos os caracteres após o número especificado na cadeia de caracteres.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | originalValue |Sim |matriz ou cadeia de caracteres |A matriz ou cadeia de caracteres a ser usada para ignorar. |
 | numberToSkip |Sim |int |O número de elementos ou caracteres a ser ignorado. Se esse valor for 0 ou menos, todos os elementos ou caracteres no valor serão retornados. Se for maior que o tamanho da matriz ou cadeia de caracteres, uma matriz ou cadeia de caracteres vazia será retornada. |
@@ -1204,7 +1204,7 @@ A saída do exemplo anterior com os valores padrão é:
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
 | arrayOutput | Matriz | ["three"] |
-| stringOutput | String | two three |
+| stringOutput | Cadeia de caracteres | two three |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -1227,7 +1227,7 @@ Retorna uma matriz com o número especificado de elementos desde o início da ma
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | originalValue |Sim |matriz ou cadeia de caracteres |A matriz ou cadeia de caracteres da qual extrair os elementos. |
 | numberToTake |Sim |int |O número de elementos ou caracteres a ser extraído. Se esse valor for 0 ou menos, uma matriz ou cadeia de caracteres vazia será retornada. Se for maior que o tamanho da matriz ou cadeia de caracteres especificada, todos os elementos da matriz ou cadeia de caracteres serão retornados. |
@@ -1285,7 +1285,7 @@ A saída do exemplo anterior com os valores padrão é:
 | NOME | Tipo | Value |
 | ---- | ---- | ----- |
 | arrayOutput | Matriz | ["one", "two"] |
-| stringOutput | String | em |
+| stringOutput | Cadeia de caracteres | em |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -1308,7 +1308,7 @@ Retorna uma única matriz ou objeto com todos os elementos dos parâmetros. Valo
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |objeto ou matriz |O primeiro valor a ser usado para unir elementos. |
 | arg2 |Sim |objeto ou matriz |O segundo valor a ser usado para unir elementos. |

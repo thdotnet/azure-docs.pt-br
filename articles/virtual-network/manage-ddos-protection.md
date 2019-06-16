@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
 ms.openlocfilehash: 53185caa6a0492702035041a893f20a78cf1ea4d
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65911250"
 ---
 # <a name="manage-azure-ddos-protection-standard-using-the-azure-portal"></a>Gerenciar a Proteção contra DDoS do Azure Standard usando o Portal do Azure
@@ -186,9 +186,9 @@ Os Logs de Fluxo de Mitigação de Ataque permitem examinar o tráfego ignorado,
 1. Para exibir os dados de logs de fluxo no painel de análise do Azure, você pode importar o painel de exemplo do https://github.com/Anupamvi/Azure-DDoS-Protection/raw/master/flowlogsbyip.zip
 
 Os logs de fluxo terão os seguintes campos: 
-- IP da Origem
-- IP de Destino
-- Porta de Origem 
+- IP de origem
+- IP de destino
+- Porta de origem 
 - Porta de destino 
 - Tipo de protocolo 
 - Ação executada durante a mitigação

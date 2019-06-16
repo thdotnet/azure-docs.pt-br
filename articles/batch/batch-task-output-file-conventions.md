@@ -16,10 +16,10 @@ ms.date: 11/14/2018
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: d4e16ca40e8026861d492f950396d6aa39d4c445
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65791552"
 ---
 # <a name="persist-job-and-task-data-to-azure-storage-with-the-batch-file-conventions-library-for-net"></a>Persistir dados de tarefa e trabalho no Armazenamento do Microsoft Azure com a biblioteca de Convenções de Arquivo em Lotes para .NET
@@ -59,7 +59,7 @@ Para manter os dados de saída no Armazenamento do Azure usando a biblioteca Con
 
 1. Navegue até sua conta do Lote no portal do Azure.
 1. Em **Configurações**, selecione **Conta de Armazenamento**.
-1. Se você ainda não tiver uma conta de Armazenamento associada à sua conta do Lote, clique em **Conta de Armazenamento (Nenhuma)**.
+1. Se você ainda não tiver uma conta de Armazenamento associada à sua conta do Lote, clique em **Conta de Armazenamento (Nenhuma)** .
 1. Selecione uma conta de Armazenamento na lista para sua assinatura. Para melhor desempenho, use uma conta de Armazenamento do Azure que esteja na mesma região que a conta do Lote em que as tarefas estão em execução.
 
 ## <a name="persist-output-data"></a>Manter os dados de saída

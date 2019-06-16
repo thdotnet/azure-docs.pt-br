@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: pabutler
 ms.openlocfilehash: a1bcab9816627b453ba8b20b7bcd9402c2dfd151
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66240653"
 ---
 # <a name="lead-management-instructions-for-azure-table"></a>Instruções de gerenciamento de leads para tabelas do Azure
@@ -127,7 +127,7 @@ No próximo conjunto de etapas, você vai se conectar à sua tabela do Azure e c
 12. Na janela **Enviar um email**, forneça informações para os seguintes campos:
 
     - **Para** -Insira um endereço de email para todos que obterão essa notificação.
-    - **Assunto** – Indique o assunto do email. Por exemplo:  Novos clientes potenciais!
+    - **Assunto** – Indique o assunto do email. Por exemplo: Novos clientes potenciais!
     - **Corpo**:   Adicione o texto que você deseja incluir em cada email (opcional) e, em seguida, cole no corpo `body('Get_entities')?['value']` como uma função para inserir informações de cliente potencial.
 
       >[!NOTE] 

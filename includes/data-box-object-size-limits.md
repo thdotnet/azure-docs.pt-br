@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 05/21/2019
 ms.author: alkohli
 ms.openlocfilehash: eb12adf8f8523686b1d8deda2776eb203a76e954
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66244637"
 ---
 Aqui estão os tamanhos dos objetos do Azure que podem ser gravados. Verifique se todos os arquivos que são carregados estão em conformidade com esses limites.
