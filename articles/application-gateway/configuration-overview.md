@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 6/1/2019
 ms.author: absha
-ms.openlocfilehash: 55c7670821ee6c6f5b924bf18b5f7ad01d4b6d51
-ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
+ms.openlocfilehash: c5cc39c2f2a7f2a79b8d6bc2bd95506ee5532a84
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66431310"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073972"
 ---
 # <a name="application-gateway-configuration-overview"></a>Visão geral da configuração de Gateway de aplicativo
 
@@ -71,7 +71,10 @@ Para este cenário, use os NSGs na sub-rede do Gateway de aplicativo. Coloque as
 
 Para o SKU de v1, rotas definidas pelo usuário (UDRs) têm suporte na sub-rede do Gateway de aplicativo, desde que elas não alteram a comunicação de solicitação/resposta de ponta a ponta. Por exemplo, você pode configurar uma UDR na sub-rede do Gateway de aplicativo para apontar para um dispositivo de firewall para inspeção de pacotes. Mas, certifique-se de que o pacote pode atingir seu destino pretendido após a inspeção. Falha ao fazer isso pode resultar na investigação de integridade incorreta ou o comportamento de roteamento de tráfego. Isso inclui aprendidas rotas ou padrão 0.0.0.0/0 que são propagadas pelos gateways VPN ou ExpressRoute do Azure na rede virtual.
 
-Para a SKU do v2, UDRs não são suportadas na sub-rede do Gateway de aplicativo. Para obter mais informações, consulte [SKU do Gateway de aplicativo do Azure v2](application-gateway-autoscaling-zone-redundant.md#differences-with-v1-sku).
+Para a SKU do v2, UDRs não têm suporte na sub-rede do Gateway de aplicativo. Para obter mais informações, consulte [SKU do Gateway de aplicativo do Azure v2](application-gateway-autoscaling-zone-redundant.md#differences-with-v1-sku).
+
+> [!NOTE]
+> UDRs não têm suporte para a SKU de v2.  Se você precisar de UDRs, você deve continuar a implantar o SKU de v1.
 
 > [!NOTE]
 > Usar UDRs na sub-rede do Gateway de aplicativo faz com que o status de integridade na [modo de exibição de integridade do back-end](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics#back-end-health) seja exibido como "Desconhecido". Ele também faz com que a geração de logs do Gateway de aplicativo e métricas de falha. É recomendável que você não usar UDRs na sub-rede do Gateway de aplicativo para que você possa exibir a integridade do back-end, logs e métricas.
@@ -84,7 +87,7 @@ Um IP público não é necessário para um ponto de extremidade interno não exp
 
 Há suporte para apenas 1 endereço IP público ou 1 endereço IP privado. Quando você cria o gateway de aplicativo, você escolher o IP de front-end.
 
-- Para um IP público, você pode criar um novo endereço IP público ou usar um IP público existente no mesmo local que o gateway de aplicativo. Se você criar um novo IP público, o tipo de endereço IP que você seleciona (estático ou dinâmico) não pode ser alterado posteriormente. Para obter mais informações, consulte [estática versus o endereço IP público dinâmico](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#static-vs-dynamic-public-ip-address).
+- Para um IP público, você pode criar um novo endereço IP público ou usar um IP público existente no mesmo local que o gateway de aplicativo. Se você criar um novo IP público, o tipo de endereço IP que você seleciona (estático ou dinâmico) não pode ser alterado posteriormente. Para obter mais informações, consulte [estática versus o endereço IP público dinâmico](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#static-versus-dynamic-public-ip-address).
 
 - Para um endereço IP privado, você pode especificar um endereço IP privado da sub-rede onde o gateway de aplicativo é criado. Se você não for especificado, um endereço IP arbitrário é selecionado automaticamente da sub-rede. Para obter mais informações, consulte [criar um gateway de aplicativo com um balanceador de carga interno](https://docs.microsoft.com/azure/application-gateway/application-gateway-ilb-arm).
 
@@ -124,7 +127,7 @@ Escolha HTTP ou HTTPS:
 
 - Se você optar por HTTP, o tráfego entre o cliente e o gateway de aplicativo não criptografado.
 
-- Escolha HTTPS se quiser [terminação SSL](https://docs.microsoft.com/azure/application-gateway/overview#secure-sockets-layer-ssl-terminationl) ou [criptografia de SSL de ponta a ponta](https://docs.microsoft.com/azure/application-gateway/ssl-overview). O tráfego entre o cliente e o gateway de aplicativo é criptografado. E será encerrado a conexão SSL no gateway de aplicativo. Se desejar que a criptografia SSL de ponta a ponta, você deve escolher o HTTPS e configurar o **HTTP de back-end** configuração. Isso garante que o tráfego é criptografado novamente quando são transmitidos entre o gateway de aplicativo e o back-end.
+- Escolha HTTPS se quiser [terminação SSL](https://docs.microsoft.com/azure/application-gateway/overview#secure-sockets-layer-ssltls-termination) ou [criptografia de SSL de ponta a ponta](https://docs.microsoft.com/azure/application-gateway/ssl-overview). O tráfego entre o cliente e o gateway de aplicativo é criptografado. E será encerrado a conexão SSL no gateway de aplicativo. Se desejar que a criptografia SSL de ponta a ponta, você deve escolher o HTTPS e configurar o **HTTP de back-end** configuração. Isso garante que o tráfego é criptografado novamente quando são transmitidos entre o gateway de aplicativo e o back-end.
 
 Para configurar a terminação SSL e criptografia de SSL de ponta a ponta, você deve adicionar um certificado para o ouvinte para habilitar o gateway de aplicativo derivar uma chave simétrica. Isso é determinado pela especificação do protocolo SSL. A chave simétrica é usada para criptografar e descriptografar o tráfego que é enviado para o gateway. O certificado de gateway deve estar no formato de troca de informações pessoais (PFX). Esse formato permite exportar a chave privada que o gateway usa para criptografar e descriptografar o tráfego.
 
@@ -172,7 +175,7 @@ Quando você cria um gateway de aplicativo usando o portal do Azure, você cria 
 
 ### <a name="rule-type"></a>Tipo de regra
 
-Quando você cria uma regra, você a escolher entre [ *básicas* e *com base em caminho*](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#request-routing-rule).
+Quando você cria uma regra, você a escolher entre [ *básicas* e *com base em caminho*](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#request-routing-rules).
 
 - Escolha básica, se você quiser encaminhar todas as solicitações no ouvinte associado (por exemplo, *blog<i></i>.contoso.com/\*)* para um único pool de back-end.
 - Escolha o caminho com base em se você quiser rotear as solicitações de caminhos de URL específicas para pools de back-end específicos. O padrão de caminho é aplicado somente para o caminho da URL, não para seus parâmetros de consulta.
@@ -245,7 +248,7 @@ Para obter mais informações sobre o redirecionamento, consulte:
 Essa configuração adiciona, remove ou cabeçalhos de solicitação e resposta HTTP durante a solicitação de atualizações e pacotes de resposta se mover entre o cliente e os pools de back-end. Você só pode configurar essa funcionalidade por meio do PowerShell. Portal do Azure e o suporte da CLI ainda não estão disponíveis. Para obter mais informações, consulte:
 
  - [Reescreva a visão geral de cabeçalhos HTTP](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers)
- - [Configurar a reconfiguração do cabeçalho HTTP](https://docs.microsoft.com/azure/application-gateway/add-http-header-rewrite-rule-powershell#specify-your-http-header-rewrite-rule-configuration)
+ - [Configurar a reconfiguração do cabeçalho HTTP](https://docs.microsoft.com/azure/application-gateway/add-http-header-rewrite-rule-powershell#specify-the-http-header-rewrite-rule-configuration)
 
 ## <a name="http-settings"></a>Configurações de HTTP
 

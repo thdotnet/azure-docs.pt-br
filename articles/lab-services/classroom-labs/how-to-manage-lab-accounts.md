@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: spelluru
 ms.openlocfilehash: 6f283ce007e96547e01a01a3753ddcb60574bfc3
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65412795"
 ---
 # <a name="manage-lab-accounts-in-azure-lab-services"></a>Gerenciar contas de laboratório no Azure Lab Services 
@@ -38,9 +38,9 @@ As etapas a seguir ilustram como usar o portal do Azure para criar uma conta de 
     2. Selecione a **Assinatura do Azure** na qual você quer criar a conta de laboratório.
     3. Para **Grupo de recursos**, selecione **Criar novo** e digite um nome para o grupo de recursos.
     4. Para **Local**, selecione um local/região em que você deseja que a conta de laboratório seja criada. 
-    5. Selecione uma existente **Galeria de imagens compartilhadas** ou criar um. Você pode salvar o modelo de VM na Galeria de imagens de compartilhado para que ele seja reutilizado por outros. Para obter informações detalhadas sobre galerias de imagens compartilhadas, consulte [usa uma galeria de imagens compartilhadas no Azure Lab Services](how-to-use-shared-image-gallery.md).
+    5. Selecione uma **galeria de imagens compartilhadas** existente ou crie uma. Você pode salvar a VM do modelo na galeria de imagens compartilhadas para que ela seja reutilizada por outros. Para obter informações detalhadas sobre galerias de imagens compartilhadas, confira [Usar uma galeria de imagens compartilhadas no Azure Lab Services](how-to-use-shared-image-gallery.md).
     6. Para **Emparelhar rede virtual**, selecione uma VNet (rede virtual) de emparelhamento para a rede de laboratório. Os laboratórios criados nesta conta são conectados à VNet selecionada e têm acesso aos recursos na rede virtual selecionada. 
-    7. Especifique um **intervalo de endereços** para VMs do laboratório. O intervalo de endereços deve estar na notação CIDR (CIDR) (exemplo: 10.20.0.0/23). Máquinas virtuais no laboratório serão criadas nesse intervalo de endereço. Para obter mais informações, consulte [especificar um intervalo de endereços para VMs no laboratório](how-to-configure-lab-accounts.md#specify-an-address-range-for-vms-in-the-lab).    
+    7. Especifique um **intervalo de endereços** para VMs do laboratório. O intervalo de endereços deve estar na notação CIDR (Roteamento entre Domínios sem Classificação) (exemplo: 10.20.0.0/23). As máquinas virtuais do laboratório serão criadas nesse intervalo de endereços. Para obter mais informações, confira [Especificar um intervalo de endereços para as VMs do laboratório](how-to-configure-lab-accounts.md#specify-an-address-range-for-vms-in-the-lab).    
     8. Para o campo **Permitir que o criador de laboratório escolha a localização do laboratório**, especifique se deseja que os criadores de laboratório possam selecionar uma localização para o laboratório. Por padrão, a opção está desabilitada. Quando ela estiver desabilitada, os criadores de laboratório não poderão especificar uma localização para o laboratório que estão criando. Os laboratórios são criados na localização geográfica mais próxima da conta de laboratório. Quando ela estiver habilitada, um criador de laboratório poderá selecionar uma localização no momento da criação de um laboratório.      
     9. Selecione **Criar**. 
 

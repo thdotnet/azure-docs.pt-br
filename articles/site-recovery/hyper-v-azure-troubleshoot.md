@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/14/2019
 ms.author: rajanaki
 ms.openlocfilehash: a7fcd4deb0446577af310ff5380ffddf05ba87be
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64719829"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Solucionar problemas de Hyper-V para replicação e failover do Azure
@@ -145,7 +145,7 @@ Um instantâneo consistente com o aplicativo é um instantâneo em um ponto no t
 
 Todos os eventos de replicação do Hyper-V são registrados no log do Hyper-V-VMMS\Admin localizado em **Logs de Aplicativos e Serviços** > **Microsoft** > **Windows**. Além disso, você pode habilitar um log analítico para o Serviço de Gerenciamento de Máquinas Virtuais do Hyper-V, como a seguir:
 
-1. Exiba os logs analíticos e de depuração no Visualizador de Eventos. Para disponibilizar os logs, no Visualizador de Eventos, clique em **Visualizar** > **Mostrar Logs Analíticos e de Depuração.**. O log Analítico aparece em **VMMS do Hyper-V**.
+1. Exiba os logs analíticos e de depuração no Visualizador de Eventos. Para disponibilizar os logs, no Visualizador de Eventos, clique em **Visualizar** > **Mostrar Logs Analíticos e de Depuração.** . O log Analítico aparece em **VMMS do Hyper-V**.
 2. No painel **Ações**, clique em **Habilitar Log**. 
 
     ![Habilitar log](media/hyper-v-azure-troubleshoot/enable-log.png)

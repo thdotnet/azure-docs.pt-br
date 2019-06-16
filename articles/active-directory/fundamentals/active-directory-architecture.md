@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ba36825805ff54165a3e6c4e221550cc30b07d3
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: aed332f32fa9fdc154c72e45914e642a9dad4993
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235179"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67055706"
 ---
 # <a name="what-is-the-azure-active-directory-architecture"></a>Qual é a arquitetura do Active Directory do Azure?
 O Azure AD (Azure Active Directory) o habilita a gerenciar o acesso a recursos e serviços do Azure para os usuários. Está incluído no Azure AD um conjunto completo de recursos de gerenciamento de identidade. Para obter informações sobre os recursos do Azure AD, confira [O que é o Azure Active Directory?](active-directory-whatis.md)
@@ -95,7 +95,7 @@ O modelo de diretório é uma das consistências eventuais. Um problema típico 
 
 O Azure AD oferece consistência de leitura e gravação para aplicativos destinados a uma réplica secundária roteando suas gravações para a réplica principal e incluindo as gravações de forma síncrona novamente na réplica secundária.
 
-As gravações de aplicativo usando a API do Graph do Azure AD são abstraídas da afinidade de manutenção para uma réplica do diretório para consistência de leitura/gravação. O serviço Azure AD Graph mantém uma sessão lógica, que tem afinidade para uma réplica secundária usada para leituras; a afinidade é capturada em um "token de réplica" que o serviço do graph armazena em cache usando um cache distribuído. Esse token é usado para operações subsequentes na mesma sessão lógica. 
+As gravações de aplicativo usando a API do Graph do Azure AD são abstraídas da afinidade de manutenção para uma réplica do diretório para consistência de leitura/gravação. O serviço do Azure AD Graph mantém uma sessão lógica, que tem afinidade para uma réplica secundária usada para leituras; afinidade é capturada em um "token de réplica" que o serviço do graph armazena em cache usando um cache distribuído no datacenter réplica secundária. Esse token é usado para operações subsequentes na mesma sessão lógica. Para continuar usando a mesma sessão lógica, as solicitações subsequentes devem ser roteadas para o mesmo datacenter do Azure AD. Não é possível continuar uma sessão lógica, se o cliente do solicitações estão sendo roteadas para vários datacenters do Azure AD; Se isso acontecer, em seguida, o cliente tem várias sessões de lógicas que têm as consistências de leitura / gravação independentes.
 
  >[!NOTE]
  >As gravações são replicadas imediatamente para a réplica secundária para a qual foram emitidas leituras lógicas da sessão.

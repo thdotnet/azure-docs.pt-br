@@ -1,8 +1,8 @@
 ---
-title: Quais são as condições no acesso condicional do Active Directory do Azure? | Microsoft Docs
-description: Saiba como as condições são usadas no acesso condicional do Active Directory do Azure para acionar uma política.
+title: Quais são as condições no acesso condicional do Azure Active Directory? | Microsoft Docs
+description: Saiba como as condições são usadas no acesso condicional do Azure Active Directory para disparar uma política.
 services: active-directory
-keywords: acesso condicional para aplicativos, acesso condicional com o Azure AD, acesso seguro aos recursos da empresa, políticas de acesso condicional
+keywords: Acesso condicional para aplicativos, acesso condicional com o Azure AD, acesso seguro aos recursos da empresa, políticas de acesso condicional
 documentationcenter: ''
 author: MicrosoftGuyJFlo
 manager: daveba
@@ -18,28 +18,28 @@ ms.date: 05/17/2019
 ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2caedeb5cd4d0f920ffa49b33b0dca8bea9938cb
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 83263b3536100ce16819002c833754d18ac12816
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65861538"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112605"
 ---
-# <a name="what-are-conditions-in-azure-active-directory-conditional-access"></a>Quais são as condições no acesso condicional do Active Directory do Azure?
+# <a name="what-are-conditions-in-azure-active-directory-conditional-access"></a>Quais são as condições no acesso condicional do Azure Active Directory?
 
-Você pode controlar como usuários acessam seus aplicativos na nuvem usando [acesso condicional do Azure AD (Azure Active Directory)](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal). Em uma política de acesso condicional, você define a resposta ("Então, faça isso") para o motivo do acionamento de sua política ("Quando isso acontecer").
+Você pode controlar como os usuários acessam seus aplicativos de nuvem por meio [acesso condicional do Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal). Em uma política de acesso condicional, você define a resposta (", em seguida, faça isso") para o motivo do acionamento de sua política ("quando isso acontece").
 
 ![Motivo e resposta](./media/conditions/10.png)
 
 
-No contexto do acesso condicional, **Quando isso acontece,** é chamado de **condição**. **Então, isso** é chamado de **controle de acesso**. A combinação de suas condições e seus controles de acesso representa uma política de acesso condicional.
+No contexto de acesso condicional, **quando isso acontece** é chamado um **condição**. **Então, isso** é chamado de **controle de acesso**. A combinação de suas condições e seus controles de acesso representa uma política de acesso condicional.
 
 ![Política de acesso condicional](./media/conditions/61.png)
 
 
-As condições que você não configurou em uma política de acesso condicional não são aplicadas. Algumas condições foram [obrigatórias](best-practices.md) para aplicar uma política de acesso condicional para um ambiente.
+As condições que você não tiver configurado em uma política de acesso condicional não são aplicadas. Algumas condições sejam [obrigatório](best-practices.md) para aplicar uma política de acesso condicional para um ambiente.
 
-Este artigo é uma visão geral das condições e como elas são usadas em uma política de acesso condicional. 
+Este artigo é uma visão geral das condições e como eles são usados em uma política de acesso condicional. 
 
 ## <a name="users-and-groups"></a>Usuários e grupos
 
@@ -73,11 +73,11 @@ As organizações podem escolher entre as seguintes opções:
 > [!NOTE]
 > Você pode excluir aplicativos específicos de uma política. No entanto, esses aplicativos ainda estão sujeitos às políticas aplicadas aos serviços que acessam.
 
-**Ações do usuário** são tarefas que podem ser executadas por um usuário. É a única ação com suporte no momento **registrar informações de segurança (visualização)**, que permite que a política de acesso condicional para impor quando os usuários que estão habilitados para registro combinado tentam registrar sua segurança informações. Mais informações podem ser encontradas no artigo [combinados de habilitar o registro de informações de segurança (visualização)](../authentication/howto-registration-mfa-sspr-combined.md).
+**Ações do usuário** são tarefas que podem ser executadas por um usuário. É a única ação com suporte no momento **registrar informações de segurança (visualização)** , que permite que a política de acesso condicional para impor quando os usuários que estão habilitados para registro combinado tentam registrar sua segurança informações. Mais informações podem ser encontradas no artigo [combinados de habilitar o registro de informações de segurança (visualização)](../authentication/howto-registration-mfa-sspr-combined.md).
 
 ## <a name="sign-in-risk"></a>Risco de entrada
 
-Um risco de entrada é um indicador de probabilidade (alta, média ou baixa) de que uma tentativa de entrada não tenha sido feita pelo proprietário legítimo de uma conta de usuário. O Azure AD calcula o nível de risco de entrada durante a entrada do usuário. Você pode usar o nível de risco de conexão calculado como uma condição em uma política de acesso condicional.
+Um risco de entrada é um indicador de probabilidade (alta, média ou baixa) de que uma tentativa de entrada não tenha sido feita pelo proprietário legítimo de uma conta de usuário. O Azure AD calcula o nível de risco de entrada durante a entrada do usuário. Você pode usar o nível de risco de entrada calculado como condição em uma política de acesso condicional.
 
 ![Níveis de risco de login](./media/conditions/22.png)
 
@@ -90,7 +90,7 @@ Casos de uso comuns para essa condição são políticas que possuem as seguinte
 
 Para obter mais informações, veja [bloquear acesso quando for detectado um risco na sessão](app-sign-in-risk.md).  
 
-## <a name="device-platforms"></a>Plataforma de dispositivo
+## <a name="device-platforms"></a>Plataformas de dispositivo
 
 A plataforma do dispositivo é caracterizada pelo sistema operacional que é executado no seu dispositivo. O Microsoft Azure Active Directory identifica a plataforma usando as informações fornecidas pelo dispositivo, como o agente do usuário. Esta informação não é verificada. Recomendamos que todas as plataformas tenham uma política aplicada a elas. A política deve bloquear o acesso, exigir conformidade com as políticas do Microsoft Intune ou exigir que o dispositivo seja associado ao domínio. O padrão é aplicar uma política a todas as plataformas de dispositivos. 
 
@@ -100,13 +100,13 @@ A plataforma do dispositivo é caracterizada pelo sistema operacional que é exe
 Para obter uma lista das plataformas de dispositivos compatíveis, consulte [condição da plataforma de dispositivos](technical-reference.md#device-platform-condition).
 
 
-Um caso de uso comum para essa condição é uma política que restringe o acesso aos seus aplicativos de nuvem para [dispositivos gerenciados](require-managed-devices.md). Para ver mais cenários, incluindo a condição de plataforma do dispositivo, confira [Acesso condicional com base em aplicativo do Azure Active Directory](app-based-conditional-access.md).
+Um caso de uso comum para essa condição é uma política que restringe o acesso aos seus aplicativos de nuvem para [dispositivos gerenciados](require-managed-devices.md). Para obter mais cenários incluindo a condição de plataforma do dispositivo, consulte [acesso condicional baseado no aplicativo do Azure Active Directory](app-based-conditional-access.md).
 
 
 
 ## <a name="device-state"></a>Estado do dispositivo
 
-A condição de estado do dispositivo exclui dispositivos e dispositivos associados híbridos do Azure AD e dispositivos marcados como compatíveis a partir de uma política de acesso condicional. 
+A condição de estado do dispositivo exclui o Azure AD híbrido dispositivos e marcado como compatível com de uma política de acesso condicional. 
 
 
 ![Configurar o estado do dispositivo](./media/conditions/112.png)
@@ -125,7 +125,7 @@ Casos de uso comuns para essa condição são políticas com as seguintes prote�
 
 - Bloquear o acesso para usuários que acessam um serviço de países ou regiões específicas. 
 
-Para obter mais informações, consulte [Qual é a condição de local no acesso condicional do Active Directory do Azure?](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-locations).
+Para obter mais informações, consulte [qual é a condição de localização no acesso condicional do Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-locations).
 
 
 ## <a name="client-apps"></a>Aplicativos cliente
@@ -164,11 +164,11 @@ Você só pode selecionar **clientes do Exchange ActiveSync** se:
 
 - O Microsoft Office 365 Exchange Online é o único aplicativo de nuvem que você selecionou.
 
-    ![Aplicativos de nuvem](./media/conditions/32.png)
+    ![Aplicativos na nuvem](./media/conditions/32.png)
 
 - Você não tem outras condições configuradas em uma política. No entanto, você pode restringir o escopo dessa condição para se aplicar apenas a [plataformas compatíveis](technical-reference.md#device-platform-condition).
  
-    ![Aplicar a política somente para as plataformas com suporte](./media/conditions/33.png)
+    ![Aplicar política apenas a plataformas suportadas](./media/conditions/33.png)
 
 
 Quando o acesso é bloqueado porque um [dispositivo gerenciado](require-managed-devices.md) é necessário, os usuários afetados obtêm um único email orientando-os a usar o Intune. 
@@ -177,20 +177,20 @@ Se um aplicativo aprovado é necessário, os usuários afetados obtêm diretrize
 
 Em outros casos, por exemplo, se a MFA é necessária, os usuários afetados são bloqueados, porque os clientes que usam autenticação básica não dão suporte à MFA.
 
-Você só pode direcionar essa configuração a usuários e grupos. Não oferece suporte a convidados ou funções. Se uma condição de convidado ou de função estiver configurada, todos os usuários poderão ser bloqueados porque o acesso condicional não poderá determinar se a política deve se aplicar ao usuário ou não.
+Você só pode direcionar essa configuração a usuários e grupos. Não oferece suporte a convidados ou funções. Se uma condição de convidado ou a função for configurada, todos os usuários são bloqueados porque o acesso condicional não pode determinar se a política deve ser aplicada ao usuário ou não.
 
 
  Para obter mais informações, consulte:
 
-- [Configure o SharePoint Online e o Exchange Online para acesso condicional do Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-no-modern-authentication).
+- [Configurar o SharePoint Online e Exchange Online para acesso condicional do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-no-modern-authentication).
  
-- [Acesso condicional baseado no aplicativo do Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access). 
+- [Acesso condicional baseado no aplicativo do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access). 
 
 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Para descobrir como configurar uma política de acesso condicional, consulte [Início Rápido: exigir MFA para aplicativos específicos com acesso condicional ao Azure Active Directory](app-based-mfa.md).
+- Para saber como configurar uma política de acesso condicional, consulte [guia de início rápido: Exigir MFA para aplicativos específicos com acesso condicional do Azure Active Directory](app-based-mfa.md).
 
-- Para configurar políticas de acesso condicional para o seu ambiente, consulte as [Práticas recomendadas para acesso condicional no Active Directory do Azure](best-practices.md). 
+- Para configurar políticas de acesso condicional para o seu ambiente, consulte a [práticas recomendadas para acesso condicional no Azure Active Directory](best-practices.md). 
 

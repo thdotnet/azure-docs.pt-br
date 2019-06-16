@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7bb07fa00babb00d1b2af03f89ae6857cb79f5f
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: fa7b5c82f0b057e2eb029b9cc632d8da02206678
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782862"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108404"
 ---
 # <a name="security-considerations-for-accessing-apps-remotely-with-azure-ad-application-proxy"></a>Considerações de segurança para acessar aplicativos remotamente com o Proxy de Aplicativo do Azure AD
 
@@ -43,13 +43,13 @@ Proxy de Aplicativo do Azure AD depende do Azure AD serviço de token de seguran
 
 Se você escolher Passagem como seu método de pré-autenticação, não terá esse benefício. 
 
-### <a name="conditional-access"></a>Acesso condicional
+### <a name="conditional-access"></a>Acesso Condicional
 
 Aplique controles de política mais rígidos antes que as conexões com sua rede sejam estabelecidas.
 
-Com [acesso condicional](../conditional-access/overview.md), você pode definir restrições em relação ao que o tráfego pode acessar nos seus aplicativos de back-end. É possível criar políticas que restrinjam entradas com base no local, na força da autenticação e no perfil de risco do usuário.
+Com o [acesso condicional](../conditional-access/overview.md), você pode definir restrições em qual tráfego é permitido para acessar seus aplicativos de back-end. É possível criar políticas que restrinjam entradas com base no local, na força da autenticação e no perfil de risco do usuário.
 
-Você também pode usar o acesso condicional para configurar políticas de Autenticação Multifator, adicionando outra camada de segurança para suas autenticações de usuário. Além disso, os seus aplicativos também podem ser roteados para o Microsoft Cloud App Security por meio do acesso condicional do Azure Active Directory para fornecer controles e monitoramento em tempo real via políticas de [acesso](https://docs.microsoft.com/cloud-app-security/access-policy-aad) e [sessão](https://docs.microsoft.com/cloud-app-security/session-policy-aad)
+Você também pode usar o acesso condicional para configurar políticas de autenticação multifator, adicionando outra camada de segurança para suas autenticações de usuário. Além disso, os aplicativos também podem ser roteados para o Microsoft Cloud App Security por meio do acesso condicional do Azure AD para fornecer monitoramento em tempo real e controles, por meio [acesso](https://docs.microsoft.com/cloud-app-security/access-policy-aad) e [sessão](https://docs.microsoft.com/cloud-app-security/session-policy-aad) políticas
 
 ### <a name="traffic-termination"></a>Encerramento de tráfego
 
@@ -144,7 +144,7 @@ Se você configurou o aplicativo para usar Passagem como seu método de pré-aut
 
 Se você configurou o aplicativo para pré-autenticar com o Azure AD, os usuários são redirecionados para o STS do Azure AD para autenticar e as seguintes etapas são executadas:
 
-1. O Proxy de Aplicativo verifica todos os requisitos da política de acesso condicional para o aplicativo específico. Esta etapa garante que o usuário foi atribuído ao aplicativo. Se uma verificação em duas etapas for necessária, a sequência de autenticação solicitará ao usuário um segundo método de autenticação.
+1. O Proxy de aplicativo verifica quaisquer requisitos de política de acesso condicional para o aplicativo específico. Esta etapa garante que o usuário foi atribuído ao aplicativo. Se uma verificação em duas etapas for necessária, a sequência de autenticação solicitará ao usuário um segundo método de autenticação.
 
 2. Depois de realizadas todas as verificações, o STS do Azure AD emite um token assinado para o aplicativo e redireciona o usuário de volta ao serviço de Proxy de Aplicativo.
 

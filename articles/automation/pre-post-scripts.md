@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 05/17/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 7317b634ee4c8886ce5c99bb2b3395d7d1f646d5
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 8a11602919a8b68a078b0b2690411358b4b5f814
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65913868"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063503"
 ---
 # <a name="manage-pre-and-post-scripts"></a>Gerenciar scripts pré e pós
 
@@ -42,7 +42,7 @@ Termine de configurar sua Implantação de Atualização.
 
 Quando sua Implantação de Atualização for concluída, você poderá acessar **Implantações de atualização** para exibir os resultados. Como pode ver, são informados os status do pré-script e do pós-script.
 
-![Atualizar Resultados](./media/pre-post-scripts/update-results.png)
+![Atualizar resultados](./media/pre-post-scripts/update-results.png)
 
 Ao clicar na execução da implantação de atualização, você recebe detalhes adicionais dos pré-scripts e pós-scripts. Um link para a fonte do script no momento da execução é fornecido.
 
@@ -64,11 +64,11 @@ Ao configurar pré-scripts e pós-scripts, você pode passar parâmetros, assim 
 
 Se precisar de outro tipo de objeto, você poderá convertê-lo em outro tipo usando com sua própria lógica no runbook.
 
-Além dos parâmetros do runbook padrão, um parâmetro adicional é fornecido. Esse parâmetro é **SoftwareUpdateConfigurationRunContext**. Esse parâmetro é uma cadeia de caracteres JSON; se você definir o parâmetro no pré-script ou no pós-script, ele será passado automaticamente pela implantação de atualização. O parâmetro contém informações sobre a implantação de atualização, que é um subconjunto das informações devolvidas pela [API SoftwareUpdateconfigurations](/rest/api/automation/softwareupdateconfigurations/getbyname#updateconfiguration). A tabela a seguir mostra as propriedades que são fornecidas na variável:
+Além dos parâmetros do runbook padrão, um parâmetro adicional é fornecido. Esse parâmetro é **SoftwareUpdateConfigurationRunContext**. Esse parâmetro é uma cadeia de caracteres JSON e, se você definir o parâmetro no script pré ou pós-implantação, ele automaticamente é passado pela implantação de atualizações. O parâmetro contém informações sobre a implantação de atualização, que é um subconjunto das informações devolvidas pela [API SoftwareUpdateconfigurations](/rest/api/automation/softwareupdateconfigurations/getbyname#updateconfiguration). A tabela a seguir mostra as propriedades que são fornecidas na variável:
 
 ## <a name="stopping-a-deployment"></a>Parada de uma implantação
 
-Se você deseja parar uma implantação com base em um script de versão anterior, você deve [lançar](automation-runbook-execution.md#throw) uma exceção. Se você não lançar uma exceção, a implantação e o pós-script ainda serão executado. O [exemplo de runbook](https://gallery.technet.microsoft.com/Update-Management-Run-6949cc44?redir=0) na galeria mostra como você pode fazer isso. A seguir está um trecho de código do runbook.
+Se você quiser parar uma implantação com base em um script de versão anterior, você deve [lançar](automation-runbook-execution.md#throw) uma exceção. Se você não lançar uma exceção, a implantação e o pós-script ainda serão executado. O [exemplo de runbook](https://gallery.technet.microsoft.com/Update-Management-Run-6949cc44?redir=0) na galeria mostra como você pode fazer isso. A seguir está um trecho de código do runbook.
 
 ```powershell
 #In this case, we want to terminate the patch job if any run fails.
@@ -85,7 +85,7 @@ foreach($summary in $finalStatus)
 
 ### <a name="softwareupdateconfigurationruncontext-properties"></a>Propriedades de SoftwareUpdateConfigurationRunContext
 
-|Propriedade  |Descrição  |
+|Propriedade  |DESCRIÇÃO  |
 |---------|---------|
 |SoftwareUpdateConfigurationName     | O nome da configuração da atualização de software        |
 |SoftwareUpdateConfigurationRunId     | A ID exclusiva para a execução.        |
@@ -206,11 +206,11 @@ $variable = Get-AutomationVariable -Name $runId
 
 ## <a name="interacting-with-machines"></a>Interagir com computadores
 
-Tarefas de pré e pós são executados como um runbook na sua conta de automação e não diretamente nos computadores em sua implantação. Tarefas de pré e pós também executado no contexto do Azure e não tem acesso a computadores não Azure. As seções a seguir mostram como você pode interagir com as máquinas diretamente se eles são uma VM do Azure ou em um computador não Azure:
+Tarefas de pré e pós são executados como um runbook na sua conta de automação e não diretamente nos computadores em sua implantação. Tarefas de pré e pós também executado no contexto do Azure e não tem acesso a computadores não Azure. As seções a seguir mostram como você pode interagir com as máquinas diretamente se elas são uma VM do Azure ou em um computador não Azure:
 
 ### <a name="interacting-with-azure-machines"></a>Interagindo com as máquinas do Azure
 
-Tarefas de pré e pós são executados como runbooks e não são executados nativamente em suas VMs do Azure em sua implantação. Para interagir com suas VMs do Azure, você deve ter os seguintes itens:
+Tarefas de pré e pós são executadas como runbooks e não são executados nativamente em suas VMs do Azure em sua implantação. Para interagir com suas VMs do Azure, você deve ter os seguintes itens:
 
 * Uma conta Executar como
 * Um runbook que você deseja executar
@@ -239,9 +239,10 @@ if (<My custom error logic>)
     throw "There was an error, abort deployment"
 }
 ```
+
 ## <a name="known-issues"></a>Problemas conhecidos
 
-* Não é permitido passar objetos ou matrizes aos parâmetros ao usar pré-scripts e pós-scripts. Ocorrerá uma falha no runbook.
+* Você não pode passar um valor booliano, objetos ou matrizes aos parâmetros ao usar scripts de pré e pós. Ocorrerá uma falha no runbook. Para obter uma lista completa dos tipos com suporte, consulte [parâmetros](#passing-parameters).
 
 ## <a name="next-steps"></a>Próximas etapas
 

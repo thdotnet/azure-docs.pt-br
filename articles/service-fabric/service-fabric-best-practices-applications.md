@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 04/26/2019
 ms.author: msfussell
 ms.openlocfilehash: 55f043effc7cdb102acea856e89c58f660d0cde5
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65237741"
 ---
 # <a name="azure-service-fabric-application-design-best-practices"></a>Azure Service Fabric application práticas recomendadas de design
@@ -79,7 +79,7 @@ Reliable Actors permite que você crie facilmente atores com monitoração de es
 - Se comunicando-se com outros serviços usando o [comunicação remota do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-remoting) e você estiver criando um `ServiceProxyFactory`, em seguida, crie a fábrica no [serviço de ator](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-using) nível e *não*no nível de ator.
 
 
-## <a name="application-diagnostics"></a>Diagnóstico de aplicativos
+## <a name="application-diagnostics"></a>Diagnóstico de aplicativo
 - Seja criterioso ao adicionando [log de aplicativo](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-generation-app) em chamadas de serviço. Ele ajuda no diagnóstico de cenários em que os serviços chamam uns aos outros. Por exemplo, quando A -> B -> C -> D chamada poderia falhar em qualquer lugar; Se não for suficiente registro em log, é difícil de diagnosticar. Se os serviços estão fazendo muito por causa de volumes de chamada, pelo menos não se esqueça de registrar erros e avisos.
 
 ## <a name="iot-and-messaging-applications"></a>Aplicativos de mensagens e IoT

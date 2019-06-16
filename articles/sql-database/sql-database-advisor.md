@@ -13,10 +13,10 @@ ms.reviewer: jrasnik
 manager: craigg
 ms.date: 12/19/2018
 ms.openlocfilehash: d09adbfa7cb2782d710ef3116cbd7bc68ee247b7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61417576"
 ---
 # <a name="performance-recommendations-for-sql-database"></a>Recomendações de desempenho do Banco de Dados SQL
@@ -79,7 +79,7 @@ A recomendação para “Corrigir problemas do esquema” aparece quando o servi
 
 | Código do erro SQL | Mensagem |
 | --- | --- |
-| 201 |Procedimento ou função '*' espera o parâmetro '*', que não foi fornecido. |
+| 201 |Procedimento ou função ' *' espera o parâmetro '* ', que não foi fornecido. |
 | 207 |Nome de coluna inválido '*'. |
 | 208 |Nome de objeto inválido '*'. |
 | 213 |O nome da coluna ou o número de valores fornecidos não corresponde à definição da tabela. |

@@ -1,8 +1,8 @@
 ---
-title: Práticas recomendadas para o acesso condicional no Azure Active Directory | Microsoft Docs
-description: Saiba sobre o que você deve saber e o que você deve evitar fazer ao configurar políticas de acesso condicional.
+title: Práticas recomendadas para acesso condicional no Azure Active Directory | Microsoft Docs
+description: Saiba mais sobre o que você deve saber e o que você deve evitar fazer ao configurar políticas de acesso condicional.
 services: active-directory
-keywords: acesso condicional para aplicativos, acesso condicional com o Azure AD, acesso seguro aos recursos da empresa, políticas de acesso condicional
+keywords: Acesso condicional para aplicativos, acesso condicional com o Azure AD, acesso seguro aos recursos da empresa, políticas de acesso condicional
 documentationcenter: ''
 author: MicrosoftGuyJFlo
 manager: daveba
@@ -18,21 +18,21 @@ ms.date: 01/25/2019
 ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67811e03bfa87a991b9eeb6f80ddddd87f781335
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 8e7b77376989031dc1697d155cccf59954233a85
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66305747"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112648"
 ---
-# <a name="best-practices-for-conditional-access-in-azure-active-directory"></a>Práticas recomendadas para o acesso condicional no Azure Active Directory
+# <a name="best-practices-for-conditional-access-in-azure-active-directory"></a>Práticas recomendadas para acesso condicional no Azure Active Directory
 
-Com o [acesso condicional do Azure AD (Azure Active Directory)](../active-directory-conditional-access-azure-portal.md), você pode controlar como os usuários autorizados acessam seus aplicativos de nuvem. Este artigo fornece informações sobre:
+Com o [acesso condicional do Azure Active Directory (Azure AD)](../active-directory-conditional-access-azure-portal.md), você pode controlar o acesso de usuários autorizados como seus aplicativos de nuvem. Este artigo fornece informações sobre:
 
 - O que você deve saber 
-- O que deve é necessário evitar ao configurar as políticas de acesso condicional. 
+- O que é necessário evitar ao configurar políticas de acesso condicional. 
 
-Este artigo pressupõe que você conhece os conceitos e a terminologia descritos em [ O que é o acesso condicional no Active Directory do Azure? ](../active-directory-conditional-access-azure-portal.md)
+Este artigo pressupõe que está familiarizado os conceitos e a terminologia descrita em [o que é acesso condicional no Azure Active Directory?](../active-directory-conditional-access-azure-portal.md)
 
 
 
@@ -48,7 +48,7 @@ Para que a política funcione, você deve configurar:
 
 | O que           | Como                                  | Porque |
 | :--            | :--                                  | :-- |
-| **Aplicativos na nuvem** |Selecione um ou mais aplicativos.  | A meta de uma política de acesso condicional é permitir que você controle como os usuários autorizados podem acessar aplicativos na nuvem.|
+| **Aplicativos na nuvem** |Selecione um ou mais aplicativos.  | O objetivo de uma política de acesso condicional é permitem controlar como os usuários autorizados podem acessar aplicativos na nuvem.|
 | **Usuários e grupos** | Selecione pelo menos um usuário ou grupo autorizado para acessar os aplicativos na nuvem selecionados. | Uma política de acesso condicional que não tenha usuários e grupos atribuídos nunca será disparada. |
 | **Controles de acesso** | Selecione pelo menos um controle de acesso. | Se as condições forem atendidas, o processador de política precisará saber o que fazer. |
 
@@ -59,9 +59,9 @@ Para que a política funcione, você deve configurar:
 
 
 
-### <a name="how-are-conditional-access-policies-applied"></a>Como as políticas de acesso condicional são aplicadas?
+### <a name="how-are-conditional-access-policies-applied"></a>Como são aplicadas as políticas de acesso condicional?
 
-Mais de uma política de acesso condicional pode ser aplicada quando você acessa um aplicativo de nuvem. Nesse caso, todas as políticas que se aplicam devem ser atendidas. Por exemplo, se uma política exigir a MFA e a segunda exigir um dispositivo em conformidade, você deverá passar pela MFA e usar um dispositivo de conformidade. 
+Mais de uma política de acesso condicional pode se aplicar ao acessar um aplicativo de nuvem. Nesse caso, todas as políticas que se aplicam devem ser atendidas. Por exemplo, se uma política exigir a MFA e a segunda exigir um dispositivo em conformidade, você deverá passar pela MFA e usar um dispositivo de conformidade. 
 
 Todas as políticas são impostas em duas fases:
 
@@ -87,11 +87,11 @@ Se for necessário configurar uma condição de local que se aplique a todas as 
 
 ### <a name="what-to-do-if-you-are-locked-out-of-the-azure-ad-admin-portal"></a>O que fazer se você estiver bloqueado no portal de administração do Azure Active Directory?
 
-Se você estiver bloqueado do Portal do Azure Active Directory devido a uma configuração incorreta em uma política de acesso condicional:
+Se você estiver bloqueado do portal do Azure AD devido a uma configuração incorreta em uma política de acesso condicional:
 
 - Verifique se existem outros administradores em sua organização que ainda não estão bloqueados. Um administrador com acesso ao Portal do Azure pode desabilitar a política que está afetando sua entrada. 
 
-- Se nenhum dos administradores da sua organização puder atualizar a política, será necessário enviar uma solicitação de suporte. O suporte da Microsoft pode analisar e atualizar as políticas de acesso condicional que estão impedindo o acesso.
+- Se nenhum dos administradores da sua organização puder atualizar a política, será necessário enviar uma solicitação de suporte. O suporte da Microsoft pode revisar e atualizar as políticas de acesso condicional que estão impedindo o acesso.
 
 
 ### <a name="what-happens-if-you-have-policies-in-the-azure-classic-portal-and-azure-portal-configured"></a>O que acontece se você tiver políticas configuradas no portal clássico do Azure e no portal do Azure?  
@@ -107,9 +107,9 @@ Ambas as políticas são aplicadas pelo Azure Active Directory e o usuário só 
 Para cada entrada, o Azure Active Directory avalia todas as políticas e garante que todos os requisitos sejam atendidos antes que o acesso seja concedido ao usuário. Bloquear o acesso supera todas as outras definições de configuração. 
 
 
-### <a name="does-conditional-access-work-with-exchange-activesync"></a>O acesso condicional funciona com o Exchange ActiveSync?
+### <a name="does-conditional-access-work-with-exchange-activesync"></a>Acesso condicional funciona com o Exchange ActiveSync?
 
-Sim, você pode usar o Exchange ActiveSync em uma política de acesso condicional com algumas [limitações](https://docs.microsoft.com/azure/active-directory/conditional-access/conditional-access-for-exo-and-spo#exchange-activesync). 
+Sim, você pode usar o Exchange ActiveSync em uma política de acesso condicional com algumas [limitações](https://docs.microsoft.com/azure/active-directory/conditional-access/conditional-access-for-exo-and-spo). 
 
 ### <a name="how-should-you-configure-conditional-access-with-office-365-apps"></a>Como você configurar o acesso condicional com aplicativos do Office 365?
 
@@ -171,7 +171,7 @@ Considere migrar as políticas que você não tiver criado no Portal do Azure po
 
 - Você pode consolidar as políticas e, dessa forma, reduzir o número de políticas a serem gerenciadas.   
 
-- Você pode gerenciar todas as políticas de acesso condicional em um local central.
+- Você pode gerenciar todas as suas políticas de acesso condicional em um local central.
 
 - O Portal Clássico do Azure foi desativado.   
 
@@ -183,5 +183,5 @@ Para obter mais informações, consulte [Migrar políticas clássicas no portal 
 
 Se você quiser saber:
 
-- Como configurar uma política de acesso condicional, confira [Exigir MFA para aplicativos específicos com acesso condicional do Azure Active Directory](app-based-mfa.md).
-- Como planejar as políticas de acesso condicional, confira [Como planejar a implantação do acesso condicional no Azure Active Directory](plan-conditional-access.md).
+- Como configurar uma política de acesso condicional, consulte [exigir MFA para aplicativos específicos com acesso condicional do Azure Active Directory](app-based-mfa.md).
+- Como planejar as políticas de acesso condicional, consulte [como planejar sua implantação do acesso condicional no Azure Active Directory](plan-conditional-access.md).

@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f3bfe067b7a927f800f88958ee2ffca09711c10
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: c012ebfb00b57079e43b74b4f6570744db980860
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65812804"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113152"
 ---
 # <a name="conditional-access-for-b2b-collaboration-users"></a>Acesso condicional para usuários de colaboração B2B
 
@@ -46,7 +46,7 @@ Confira a animação abaixo para ver a experiência de resgate:
 ### <a name="mfa-reset-for-b2b-collaboration-users"></a>Redefinição de MFA para usuários de colaboração B2B
 Atualmente, o administrador pode exigir que os usuários de colaboração B2B façam uma verificação novamente usando somente os seguintes cmdlets do PowerShell:
 
-1. Conectar ao Azure AD
+1. Conecte-se ao AD do Azure
 
    ```
    $cred = Get-Credential
@@ -87,17 +87,17 @@ Finalmente, a MFA de locatários de recursos também funciona para IDs sociais e
 
 Portanto, a recomendação para MFA para usuários B2B é sempre exigir MFA no locatário que convida. Esse requisito pode levar a um MFA duplo em alguns casos, mas sempre que se acessa o locatário de convite a experiência dos usuários finais é previsível: Sara precisará se registrar no MFA com o locatário de convite.
 
-### <a name="device-based-location-based-and-risk-based-conditional-access-for-b2b-users"></a>Acesso condicional com base em risco, no local e no dispositivo para usuários B2B
+### <a name="device-based-location-based-and-risk-based-conditional-access-for-b2b-users"></a>Acesso condicional baseado em dispositivo, com base no local e baseadas em risco para usuários B2B
 
-Quando a Contoso habilita políticas de acesso condicional com base em dispositivo para seus dados corporativos, o acesso é impedido em dispositivos não gerenciados pela Contoso e incompatíveis com as políticas de dispositivo da Contoso.
+Quando a Contoso habilita políticas de acesso condicional baseado em dispositivo para seus dados corporativos, o acesso é impedido em dispositivos que não são gerenciados pela Contoso e incompatíveis com as políticas de dispositivo da Contoso.
 
-Se o dispositivo do usuário B2B não for gerenciado pela Contoso, o acesso de usuários B2B das organizações parceiras será bloqueado em quaisquer contextos em que essas políticas são impostas. Entretanto, a Contoso pode criar listas de exclusão contendo usuários parceiros específicos para excluí-los da política de acesso condicional com base em dispositivo.
+Se o dispositivo do usuário B2B não for gerenciado pela Contoso, o acesso de usuários B2B das organizações parceiras será bloqueado em quaisquer contextos em que essas políticas são impostas. No entanto, a Contoso pode criar listas de exclusão contendo usuários parceiros específicos para excluí-los da política de acesso condicional com base no dispositivo.
 
-#### <a name="location-based-conditional-access-for-b2b"></a>Acesso condicional com base em local para B2B
+#### <a name="location-based-conditional-access-for-b2b"></a>Acesso condicional baseado em local para B2B
 
-Políticas de acesso condicional com base em local podem ser impostas para usuários B2B se a organização que convida for capaz de criar um intervalo de endereços IP confiável que define suas organizações parceiras.
+Políticas de acesso condicional com base no local podem ser impostas para usuários B2B se a organização que convida for capaz de criar um intervalo de endereços IP confiável que define suas organizações parceiras.
 
-#### <a name="risk-based-conditional-access-for-b2b"></a>Acesso condicional com base em risco para B2B
+#### <a name="risk-based-conditional-access-for-b2b"></a>Acesso condicional baseado em risco para B2B
 
 Atualmente, as políticas de entrada baseadas em risco não podem ser aplicadas a usuários B2B, pois a avaliação de risco é realizada na organização inicial do usuário B2B.
 

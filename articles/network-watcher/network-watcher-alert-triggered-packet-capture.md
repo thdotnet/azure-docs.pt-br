@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
 ms.openlocfilehash: 37e42b05046be27254d2ceb15a59fbdb931ae161
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64711916"
 ---
 # <a name="use-packet-capture-for-proactive-network-monitoring-with-alerts-and-azure-functions"></a>Usar a captura de pacotes para fazer um monitoramento de rede proativo com alertas e o Azure Functions
@@ -84,7 +84,7 @@ A primeira etapa é criar uma função do Azure para processar o alerta e criar 
     |**Localidade**|Centro dos EUA| A região na qual um aplicativo de funções será criado.|
     |**Conta de armazenamento**|{gerado automaticamente}| A conta de armazenamento que o Azure Functions usa para armazenamento de finalidade geral.|
 
-3. Na folha **Aplicativos do Functions PacketCaptureExample**, selecione **Functions** > **Função personalizada** >**+**.
+3. Na folha **Aplicativos do Functions PacketCaptureExample**, selecione **Functions** > **Função personalizada** > **+** .
 
 4. Selecione **HttpTrigger-Powershell** e, em seguida, insira as informações restantes. Finalmente, para criar a função, selecione **Criar**.
 
@@ -208,7 +208,7 @@ A ID do cliente é a ID de um aplicativo no Azure Active Directory.
    > [!NOTE]
    > A senha que você usa ao criar o aplicativo deve ser a mesma senha criada anteriormente ao salvar o arquivo de chave.
 
-1. No Portal do Azure, selecione **Assinaturas**. Selecione a assinatura para usar e, em seguida, selecione **Controle de Acesso (IAM)**.
+1. No Portal do Azure, selecione **Assinaturas**. Selecione a assinatura para usar e, em seguida, selecione **Controle de Acesso (IAM)** .
 
     ![IAM de funções][functions9]
 

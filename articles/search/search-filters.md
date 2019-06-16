@@ -6,15 +6,15 @@ manager: cgronlun
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 05/13/2019
+ms.date: 06/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 1871fee2734d347ff54d6aa70d90d1c28bd1f6f1
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 8676ad48bc4fab6149db00d778349ac1acd7223d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65597289"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062393"
 ---
 # <a name="filters-in-azure-search"></a>Filtros no Azure Search 
 
@@ -158,11 +158,11 @@ Cadeias de caracteres de texto diferenciam minúsculas e maiúsculas. Não há n
 
 ### <a name="approaches-for-filtering-on-text"></a>Abordagens para filtragem no texto
 
-| Abordagem | Descrição | Quando usar | 
+| Abordagem | DESCRIÇÃO | Quando usar |
 |----------|-------------|-------------|
-| [search.in](query-odata-filter-orderby-syntax.md) | Uma função que corresponde a um campo em relação a uma lista delimitada de cadeias de caracteres. | Recomendado para [filtros de segurança](search-security-trimming-for-azure-search.md) e para todos os filtros em que precisam de muitos valores de texto bruto a ser correspondido com um campo de cadeia de caracteres. O **search.in** função é projetada para velocidade e muito mais rápido que comparar explicitamente o campo em relação a cada cadeia de caracteres usando `eq` e `or`. | 
-| [search.ismatch](query-odata-filter-orderby-syntax.md) | Uma função que permite a combinação de operações de pesquisa de texto completo com operações de filtro estritamente booliano na mesma expressão de filtro. | Use **IsMatch** (ou seu equivalente de pontuação **ismatchscoring**) quando desejar que várias combinações de filtro de pesquisa em uma solicitação. Você também pode usá-la para um filtro de *contém* para filtrar em uma cadeia de caracteres parcial dentro de uma cadeia de caracteres maior. |
-| [$filter=field operator string](query-odata-filter-orderby-syntax.md) | Uma expressão definida pelo usuário é composta por campos, operadores e valores. | Use esta opção quando você deseja localizar correspondências exatas entre um campo de cadeia de caracteres e um valor de cadeia de caracteres. |
+| [`search.in`](search-query-odata-search-in-function.md) | Uma função que corresponde a um campo em relação a uma lista delimitada de cadeias de caracteres. | Recomendado para [filtros de segurança](search-security-trimming-for-azure-search.md) e para todos os filtros em que precisam de muitos valores de texto bruto a ser correspondido com um campo de cadeia de caracteres. O **search.in** função é projetada para velocidade e muito mais rápido que comparar explicitamente o campo em relação a cada cadeia de caracteres usando `eq` e `or`. | 
+| [`search.ismatch`](search-query-odata-full-text-search-functions.md) | Uma função que permite a combinação de operações de pesquisa de texto completo com operações de filtro estritamente booliano na mesma expressão de filtro. | Use **IsMatch** (ou seu equivalente de pontuação **ismatchscoring**) quando desejar que várias combinações de filtro de pesquisa em uma solicitação. Você também pode usá-la para um filtro de *contém* para filtrar em uma cadeia de caracteres parcial dentro de uma cadeia de caracteres maior. |
+| [`$filter=field operator string`](search-query-odata-comparison-operators.md) | Uma expressão definida pelo usuário é composta por campos, operadores e valores. | Use esta opção quando você deseja localizar correspondências exatas entre um campo de cadeia de caracteres e um valor de cadeia de caracteres. |
 
 ## <a name="numeric-filter-fundamentals"></a>Conceitos básicos do filtro numérico
 

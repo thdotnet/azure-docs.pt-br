@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: peterpr
 ms.openlocfilehash: 3e77494eacaf16ac23a531cb7a16fe8bf6117006
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64714425"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-c"></a>Conectar um Raspberry Pi ao aplicativo Azure IoT Central (C#)
@@ -46,7 +46,7 @@ Um aplicativo criado a partir do modelo de aplicativo de **Devkits de Exemplo** 
   - Alternar IR.
 - propriedades
   - Propriedade do dispositivo número de dado
-  - Propriedade de localização da nuvem 
+  - Propriedade de localização da nuvem
 
 Para obter os detalhes completos sobre a configuração do modelo de dispositivo, consulte a [detalhes do modelo de dispositivo do Raspberry Pi](#raspberry-pi-device-template-details).
 
@@ -340,7 +340,7 @@ Um aplicativo criado a partir do modelo de aplicativo de **Devkits de Exemplo** 
 
 Configurações numéricas
 
-| Nome de exibição | Nome do campo | Unidades | Casas decimais | Mínimo | Máximo | Inicial |
+| Display name | Nome do campo | Unidades | Casas decimais | Mínimo | Máximo | Inicial |
 | ------------ | ---------- | ----- | -------------- | ------- | ------- | ------- |
 | Voltagem      | setVoltage | Volts | 0              | 0       | 240     | 0       |
 | Atual      | setCurrent | Amps  | 0              | 0       | 100     | 0       |
@@ -348,13 +348,13 @@ Configurações numéricas
 
 Configurações de alternância
 
-| Nome de exibição | Nome do campo | Texto ativado | Texto desativado | Inicial |
+| Display name | Nome do campo | Texto ativado | Texto desativado | Inicial |
 | ------------ | ---------- | ------- | -------- | ------- |
 | IR           | activateIR | ATIVADO      | DESATIVADO      | Desativar     |
 
 ### <a name="properties"></a>propriedades
 
-| Type            | Nome de exibição | Nome do campo | Tipo de dados |
+| Type            | Display name | Nome do campo | Tipo de dados |
 | --------------- | ------------ | ---------- | --------- |
 | Propriedade de dispositivo | Número impresso   | dieNumber  | número    |
 | Text            | Local padrão     | location   | N/D       |

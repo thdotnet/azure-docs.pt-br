@@ -6,13 +6,13 @@ ms.author: raagyema
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: conceptual
-ms.date: 11/10/2018
-ms.openlocfilehash: 403f111882b1bd151b26af56fd614355e7ba88e3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 06/12/2019
+ms.openlocfilehash: 9fff9f13e5ce6bf8a7805f7794d3e71eb4030104
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61040751"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67065693"
 ---
 # <a name="configure-and-access-server-logs-by-using-azure-cli"></a>Configurar e acessar logs de servidor usando a CLI do Azure
 É possível baixar os logs do servidor do Banco de Dados do Azure para MariaDB usando a CLI do Azure, o utilitário de linha de comando do Azure.
@@ -38,7 +38,7 @@ az mariadb server configuration list --resource-group myresourcegroup --server m
 ```
 
 ## <a name="list-logs-for-azure-database-for-mariadb-server"></a>Listar logs para o servidor do Banco de Dados do Azure para MariaDB
-Para listar os arquivos de log disponíveis para o servidor, execute o comando [az mariadb server-logs list](/cli/azure/mariadb/server-logs#az-mariadb-server-logs-list).
+Para listar os arquivos de log de consultas lentas disponíveis para seu servidor, execute as [lista de logs do servidor do az mariadb](/cli/azure/mariadb/server-logs#az-mariadb-server-logs-list) comando.
 
 Você pode listar os arquivos de log para o servidor **mydemoserver.mariadb.database.azure.com** no grupo de recursos **myresourcegroup**. Em seguida, direcione-os para um arquivo de texto chamado **log\_files\_list.txt**.
 ```azurecli-interactive
@@ -53,4 +53,4 @@ az mariadb server-logs download --name mysql-slow-mydemoserver-2018110800.log --
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
-- Saiba mais sobre os [logs do servidor no Banco de Dados do Azure para MariaDB](concepts-server-logs.md).
+- Saiba mais sobre [logs de consulta lenta no banco de dados do Azure para MariaDB](concepts-server-logs.md).

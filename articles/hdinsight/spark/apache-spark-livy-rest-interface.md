@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 11/06/2018
-ms.openlocfilehash: 2c1497589153f1dc5a79cc1d3414966deaf11f21
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.date: 06/11/2019
+ms.openlocfilehash: f5b3500e1e700abf894fc4e21fb540eb258d5e35
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65228112"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066066"
 ---
 # <a name="use-apache-spark-rest-api-to-submit-remote-jobs-to-an-hdinsight-spark-cluster"></a>Use a API REST do Apache Spark para enviar trabalhos remotos para um cluster do HDInsight Spark
 
@@ -21,52 +21,79 @@ Saiba como usar [Apache Livy](https://livy.incubator.apache.org/), a API REST do
 
 Você pode usar a Livy para executar shells interativos do Spark ou enviar trabalhos em lotes a serem executados no Spark. Este artigo aborda como usar a Livy para enviar trabalhos em lotes. Os snippets nesse artigo usam cURL para fazer chamadas à API REST para o ponto de extremidade da Livy Spark.
 
-**Pré-requisitos:**
+## <a name="prerequisites"></a>Pré-requisitos
 
 * Um cluster do Apache Spark no HDInsight. Para obter instruções, consulte o artigo sobre como [Criar clusters do Apache Spark no Azure HDInsight](apache-spark-jupyter-spark-sql.md).
 
 * [cURL](https://curl.haxx.se/). Este artigo usa cURL para demonstrar como fazer chamadas à API REST em relação a um cluster do HDInsight Spark.
 
 ## <a name="submit-an-apache-livy-spark-batch-job"></a>Enviar um trabalho em lotes do Apache Livy Spark
-Antes de enviar um trabalho em lotes, você deve carregar o jar do aplicativo no armazenamento de cluster associado ao cluster. Você pode usar [**AzCopy**](../../storage/common/storage-use-azcopy.md), um utilitário de linha de comando, para fazer isso. Há muitos outros clientes que podem ser usados para carregar dados. É possível saber mais sobre eles em [Carregar dados para trabalhos do Apache Hadoop no HDInsight](../hdinsight-upload-data.md).
 
-    curl -k --user "<hdinsight user>:<user password>" -v -H "Content-Type: application/json" -X POST -d '{ "file":"<path to application jar>", "className":"<classname in jar>" }' 'https://<spark_cluster_name>.azurehdinsight.net/livy/batches' -H "X-Requested-By: admin"
+Antes de enviar um trabalho em lotes, você deve carregar o jar do aplicativo no armazenamento de cluster associado ao cluster. Você pode usar [AzCopy](../../storage/common/storage-use-azcopy.md), um utilitário de linha de comando, para fazer isso. Há muitos outros clientes que podem ser usados para carregar dados. É possível saber mais sobre eles em [Carregar dados para trabalhos do Apache Hadoop no HDInsight](../hdinsight-upload-data.md).
 
-**Exemplos**:
+```cmd
+curl -k --user "<hdinsight user>:<user password>" -v -H "Content-Type: application/json" -X POST -d '{ "file":"<path to application jar>", "className":"<classname in jar>" }' 'https://<spark_cluster_name>.azurehdinsight.net/livy/batches' -H "X-Requested-By: admin"
+```
+
+### <a name="examples"></a>Exemplos
 
 * Se o arquivo jar estiver no armazenamento de cluster (WASB)
-  
-        curl -k --user "admin:mypassword1!" -v -H "Content-Type: application/json" -X POST -d '{ "file":"wasb://mycontainer@mystorageaccount.blob.core.windows.net/data/SparkSimpleTest.jar", "className":"com.microsoft.spark.test.SimpleFile" }' "https://mysparkcluster.azurehdinsight.net/livy/batches" -H "X-Requested-By: admin"
+
+    ```cmd  
+    curl -k --user "admin:mypassword1!" -v -H "Content-Type: application/json" -X POST -d '{ "file":"wasb://mycontainer@mystorageaccount.blob.core.windows.net/data/SparkSimpleTest.jar", "className":"com.microsoft.spark.test.SimpleFile" }' "https://mysparkcluster.azurehdinsight.net/livy/batches" -H "X-Requested-By: admin"
+    ```
+
 * Se quiser passar o nome do arquivo jar e o nome da classe como parte de um arquivo de entrada (nesse exemplo, input.txt)
-  
-        curl -k  --user "admin:mypassword1!" -v -H "Content-Type: application/json" -X POST --data @C:\Temp\input.txt "https://mysparkcluster.azurehdinsight.net/livy/batches" -H "X-Requested-By: admin"
+
+    ```cmd
+    curl -k  --user "admin:mypassword1!" -v -H "Content-Type: application/json" -X POST --data @C:\Temp\input.txt "https://mysparkcluster.azurehdinsight.net/livy/batches" -H "X-Requested-By: admin"
+    ```
 
 ## <a name="get-information-on-livy-spark-batches-running-on-the-cluster"></a>Obter informações sobre lotes Livy Spark em execução no cluster
-    curl -k --user "<hdinsight user>:<user password>" -v -X GET "https://<spark_cluster_name>.azurehdinsight.net/livy/batches"
 
-**Exemplos**:
+Sintaxe:
+
+```cmd
+curl -k --user "<hdinsight user>:<user password>" -v -X GET "https://<spark_cluster_name>.azurehdinsight.net/livy/batches"
+```
+
+### <a name="examples"></a>Exemplos
 
 * Se quiser recuperar todos os lotes Livy spark em execução no cluster:
-  
-        curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches" 
-* Se quiser recuperar um lote específico com uma batchID fornecida
-  
-        curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches/{batchId}"
+
+    ```cmd
+    curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches" 
+    ```
+
+* Se você quiser recuperar um lote específico com uma ID de lote determinada
+
+    ```cmd
+    curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches/{batchId}"
+    ```
 
 ## <a name="delete-a-livy-spark-batch-job"></a>Excluir um trabalho em lotes do Livy Spark
-    curl -k --user "<hdinsight user>:<user password>" -v -X DELETE "https://<spark_cluster_name>.azurehdinsight.net/livy/batches/{batchId}"
 
-**Exemplo**:
+```cmd
+curl -k --user "<hdinsight user>:<user password>" -v -X DELETE "https://<spark_cluster_name>.azurehdinsight.net/livy/batches/{batchId}"
+```
 
-    curl -k --user "admin:mypassword1!" -v -X DELETE "https://mysparkcluster.azurehdinsight.net/livy/batches/{batchId}"
+### <a name="example"></a>Exemplo
+
+Excluindo um trabalho em lotes com a ID de lote `5`.
+
+```cmd
+curl -k --user "admin:mypassword1!" -v -X DELETE "https://mysparkcluster.azurehdinsight.net/livy/batches/5"
+```
 
 ## <a name="livy-spark-and-high-availability"></a>Livy Spark e alta disponibilidade
+
 O Livy fornece alta disponibilidade para trabalhos Spark em execução no cluster. Aqui estão alguns exemplos.
 
 * Se o serviço Livy falhar depois de você enviar um trabalho remotamente a um cluster Spark, o trabalho continuará em execução em segundo plano. Quando o Livy for backup, ele restaurará o status do trabalho e enviará o relatório de volta.
 * Os blocos de notas Jupyter para HDInsight são ativados pelo Livy no back-end. Se um bloco de anotações estiver executando um trabalho do Spark e o serviço Livy for reiniciado, o bloco de notas continuará a executar as células de código. 
 
 ## <a name="show-me-an-example"></a>Mostrar um exemplo
+
 Nesta seção, vamos examinar exemplos sobre como usar a Livy Spark para enviar um trabalho em lotes, monitorar o progresso do trabalho e excluir o trabalho. O aplicativo que usamos neste exemplo é o desenvolvido no artigo [Criar um aplicativo Scala autônomo para ser executado no cluster Spark no HDInsight](apache-spark-create-standalone-application.md). As etapas aqui supõem que:
 
 * Você já copiou o jar do aplicativo para a conta de armazenamento associada ao cluster.
@@ -75,97 +102,110 @@ Nesta seção, vamos examinar exemplos sobre como usar a Livy Spark para enviar 
 Execute as seguintes etapas:
 
 1. Primeiramente, vamos verificar se a Livy Spark está em execução no cluster. Podemos fazer isso obtendo uma lista de lotes em execução. Se estiver executando um trabalho usando a Livy pela primeira vez, a saída deverá ser zero.
-   
-        curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches"
-   
+
+    ```cmd
+    curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches"
+    ```
+
     Você deverá obter uma saída semelhante ao seguinte snippet:
-   
-        < HTTP/1.1 200 OK
-        < Content-Type: application/json; charset=UTF-8
-        < Server: Microsoft-IIS/8.5
-        < X-Powered-By: ARR/2.5
-        < X-Powered-By: ASP.NET
-        < Date: Fri, 20 Nov 2015 23:47:53 GMT
-        < Content-Length: 34
-        <
-        {"from":0,"total":0,"sessions":[]}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
-   
+
+    ```output
+    < HTTP/1.1 200 OK
+    < Content-Type: application/json; charset=UTF-8
+    < Server: Microsoft-IIS/8.5
+    < X-Powered-By: ARR/2.5
+    < X-Powered-By: ASP.NET
+    < Date: Fri, 20 Nov 2015 23:47:53 GMT
+    < Content-Length: 34
+    <
+    {"from":0,"total":0,"sessions":[]}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
+    ```
+
     Observe que a última linha da saída informa **total:0**, o que sugere que não há lotes em execução.
 
 2. Agora vamos enviar um trabalho em lotes. O snippet a seguir usa um arquivo de entrada (input.txt) para passar o nome do jar e o nome de classe como parâmetros. Se você estiver executando essas etapas em um computador Windows, usar um arquivo de entrada será a abordagem recomendada.
-   
-        curl -k --user "admin:mypassword1!" -v -H "Content-Type: application/json" -X POST --data @C:\Temp\input.txt "https://mysparkcluster.azurehdinsight.net/livy/batches" -H "X-Requested-By: admin"
-   
+
+    ```cmd
+    curl -k --user "admin:mypassword1!" -v -H "Content-Type: application/json" -X POST --data @C:\Temp\input.txt "https://mysparkcluster.azurehdinsight.net/livy/batches" -H "X-Requested-By: admin"
+    ```
+
     Os parâmetros no arquivo **input.txt** são definidos da seguinte maneira:
-   
-        { "file":"wasb:///example/jars/SparkSimpleApp.jar", "className":"com.microsoft.spark.example.WasbIOTest" }
-   
+
+    ```text
+    { "file":"wasb:///example/jars/SparkSimpleApp.jar", "className":"com.microsoft.spark.example.WasbIOTest" }
+    ```
+
     Você deverá ver uma saída semelhante ao seguinte snippet:
-   
-        < HTTP/1.1 201 Created
-        < Content-Type: application/json; charset=UTF-8
-        < Location: /0
-        < Server: Microsoft-IIS/8.5
-        < X-Powered-By: ARR/2.5
-        < X-Powered-By: ASP.NET
-        < Date: Fri, 20 Nov 2015 23:51:30 GMT
-        < Content-Length: 36
-        <
-        {"id":0,"state":"starting","log":[]}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
-   
+
+    ```output
+    < HTTP/1.1 201 Created
+    < Content-Type: application/json; charset=UTF-8
+    < Location: /0
+    < Server: Microsoft-IIS/8.5
+    < X-Powered-By: ARR/2.5
+    < X-Powered-By: ASP.NET
+    < Date: Fri, 20 Nov 2015 23:51:30 GMT
+    < Content-Length: 36
+    <
+    {"id":0,"state":"starting","log":[]}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
+    ```
+
     Observe que a última linha da saída informa **state:starting**. Assim como, **id:0**. Aqui, **0** é a ID do lote.
 
 3. Agora você pode recuperar o status desse lote específico usando a ID do lote.
-   
-        curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches/0"
-   
+
+    ```cmd
+    curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches/0"
+    ```
+
     Você deverá ver uma saída semelhante ao seguinte snippet:
-   
-        < HTTP/1.1 200 OK
-        < Content-Type: application/json; charset=UTF-8
-        < Server: Microsoft-IIS/8.5
-        < X-Powered-By: ARR/2.5
-        < X-Powered-By: ASP.NET
-        < Date: Fri, 20 Nov 2015 23:54:42 GMT
-        < Content-Length: 509
-        <
-        {"id":0,"state":"success","log":["\t diagnostics: N/A","\t ApplicationMaster host: 10.0.0.4","\t ApplicationMaster RPC port: 0","\t queue: default","\t start time: 1448063505350","\t final status: SUCCEEDED","\t tracking URL: http://hn0-myspar.lpel1gnnvxne3gwzqkfq5u5uzh.jx.internal.cloudapp.net:8088/proxy/application_1447984474852_0002/","\t user: root","15/11/20 23:52:47 INFO Utils: Shutdown hook called","15/11/20 23:52:47 INFO Utils: Deleting directory /tmp/spark-b72cd2bf-280b-4c57-8ceb-9e3e69ac7d0c"]}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
-   
+
+    ```output
+    < HTTP/1.1 200 OK
+    < Content-Type: application/json; charset=UTF-8
+    < Server: Microsoft-IIS/8.5
+    < X-Powered-By: ARR/2.5
+    < X-Powered-By: ASP.NET
+    < Date: Fri, 20 Nov 2015 23:54:42 GMT
+    < Content-Length: 509
+    <
+    {"id":0,"state":"success","log":["\t diagnostics: N/A","\t ApplicationMaster host: 10.0.0.4","\t ApplicationMaster RPC port: 0","\t queue: default","\t start time: 1448063505350","\t final status: SUCCEEDED","\t tracking URL: http://hn0-myspar.lpel1gnnvxne3gwzqkfq5u5uzh.jx.internal.cloudapp.net:8088/proxy/application_1447984474852_0002/","\t user: root","15/11/20 23:52:47 INFO Utils: Shutdown hook called","15/11/20 23:52:47 INFO Utils: Deleting directory /tmp/spark-b72cd2bf-280b-4c57-8ceb-9e3e69ac7d0c"]}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
+    ```
+
     Agora a saída mostra **state:success**, o que sugere que o trabalho foi concluído com êxito.
 
 4. Se quiser, você pode excluir o lote.
-   
-        curl -k --user "admin:mypassword1!" -v -X DELETE "https://mysparkcluster.azurehdinsight.net/livy/batches/0"
-   
+
+    ```cmd
+    curl -k --user "admin:mypassword1!" -v -X DELETE "https://mysparkcluster.azurehdinsight.net/livy/batches/0"
+    ```
+
     Você deverá ver uma saída semelhante ao seguinte snippet:
-   
-        < HTTP/1.1 200 OK
-        < Content-Type: application/json; charset=UTF-8
-        < Server: Microsoft-IIS/8.5
-        < X-Powered-By: ARR/2.5
-        < X-Powered-By: ASP.NET
-        < Date: Sat, 21 Nov 2015 18:51:54 GMT
-        < Content-Length: 17
-        <
-        {"msg":"deleted"}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
-   
+
+    ```output
+    < HTTP/1.1 200 OK
+    < Content-Type: application/json; charset=UTF-8
+    < Server: Microsoft-IIS/8.5
+    < X-Powered-By: ARR/2.5
+    < X-Powered-By: ASP.NET
+    < Date: Sat, 21 Nov 2015 18:51:54 GMT
+    < Content-Length: 17
+    <
+    {"msg":"deleted"}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
+    ```
+
     A última linha da saída mostra que o lote foi excluído com êxito. Excluir um trabalho, enquanto ele está em execução, também encerra o trabalho. Se você excluir um trabalho que foi concluído, com êxito ou não, essa ação excluirá por completo as informações sobre o trabalho.
 
 ## <a name="updates-to-livy-configuration-starting-with-hdinsight-35-version"></a>Atualizações para a configuração do Livy começando com a versão do HDInsight 3.5
 
-Os clusters HDInsight 3.5 e posteriores, por padrão, desabilitam o uso de caminhos de arquivos locais para acessar arquivos de dados de amostra ou jars. Incentivamos o uso do caminho `wasb://` em vez disso, para acessar os jars ou os arquivos de dados de exemplo do cluster. 
+Os clusters HDInsight 3.5 e posteriores, por padrão, desabilitam o uso de caminhos de arquivos locais para acessar arquivos de dados de amostra ou jars. Incentivamos o uso do caminho `wasb://` em vez disso, para acessar os jars ou os arquivos de dados de exemplo do cluster.
 
 ## <a name="submitting-livy-jobs-for-a-cluster-within-an-azure-virtual-network"></a>Enviar trabalhos da Livy para um cluster em uma rede virtual do Azure
 
 Se você se conectar a um cluster do HDInsight Spark de dentro de uma Rede Virtual do Azure, você poderá se conectar diretamente à Livy no cluster. Nesse caso, a URL de ponto de extremidade da Livy é `http://<IP address of the headnode>:8998/batches`. Aqui, **8998** é a porta na qual a Livy é executada em um nó de cabeçalho do cluster. Para obter mais informações sobre como acessar serviços em portas não públicas, consulte [Portas usadas pelos serviços de Apache Hadoop no HDInsight](../hdinsight-hadoop-port-settings-for-services.md).
 
-
-
-
-
-## <a name="next-step"></a>Próxima etapa
+## <a name="next-steps"></a>Próximas etapas
 
 * [Documentação API REST Apache Livy](https://livy.incubator.apache.org/docs/latest/rest-api.html)
 * [Gerenciar os recursos de cluster do Apache Spark no Azure HDInsight](apache-spark-resource-manager.md)
 * [Rastrear e depurar trabalhos em execução em um cluster do Apache Spark no HDInsight](apache-spark-job-debugging.md)
-

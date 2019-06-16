@@ -1,20 +1,19 @@
 ---
 title: Guia Otimizar Fluxo de Dados de Mapeamento do Azure Data Factory
-description: Otimizar Fluxos de Dados de Mapeamento do Azure Data Factory com Configurações de Partição da Guia Otimizar
+description: Otimizar o Azure Data Factory mapeamento de fluxos de dados usando a guia otimizar com configurações de partição
 author: kromerm
 ms.author: makromer
-ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/31/2019
-ms.openlocfilehash: 3802a8475d8a39a2f275dbc7fcf21ce69892a117
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 372922fff600aaa12fddfeeb86ff4522eca3e602
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61262221"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075094"
 ---
-# <a name="mapping-data-flow-transformation-optimize-tab"></a>Guia Otimizar Transformação de Fluxo de Dados de Mapeamento
+# <a name="mapping-data-flow-transformation-optimize-tab"></a>Mapeando dados de transformação de fluxo de guia otimizar
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
@@ -51,3 +50,8 @@ O intervalo dinâmico usará intervalos dinâmicos do Spark com base nas colunas
 ### <a name="key"></a>Chave
 
 Se você tiver uma boa compreensão da cardinalidade dos dados, o particionamento de chaves poderá ser uma boa estratégia de partição. O particionamento de chaves criará partições para cada valor exclusivo na sua coluna. Não é possível definir o número de partições porque esse número será baseado em valores exclusivos nos dados.
+
+## <a name="next-steps"></a>Próximas etapas
+
+[Guia de desempenho de fluxo de dados de mapeamento](concepts-data-flow-performance.md)
+[de fluxo de dados de monitoramento](concepts-data-flow-monitoring.md)

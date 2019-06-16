@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 04/23/2019
-ms.openlocfilehash: e1bc99cdc089050fbfa931bbbc7b9a6a316a3a75
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 8699533cd64e6b1778c5e78b8c51eb1efe518c75
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66240186"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67126226"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Configurar um cluster HDInsight com o Enterprise Security Package usando o Azure Active Directory Domain Services DS
 
@@ -27,7 +27,7 @@ Neste artigo, você aprenderá como configurar um cluster HDInsight com ESP usan
 ## <a name="enable-azure-ad-ds"></a>Habilitar o Microsoft Azure Active Directory DS
 
 > [!NOTE]  
-> Somente administradores de inquilinos têm os privilégios para habilitar o Azure Active Directory -DS. Se o armazenamento de cluster é o armazenamento do Azure Data Lake (ADLS) Gen1 ou Gen2, você deve desabilitar a autenticação multifator (MFA) somente para usuários que precisam acessar o cluster usando as autenticações básicas de Kerberos. Use [IPs confiáveis](../../active-directory/authentication/howto-mfa-mfasettings.md#trusted-ips) ou o [acesso condicional](../../active-directory/conditional-access/overview.md) para desabilitar o MFA para usuários específicos SOMENTE quando eles estiverem acessando o intervalo de IP de VNET do cluster HDInsight. Se estiver usando o acesso condicional, verifique se esse ponto de extremidade de serviço do AD está habilitado na VNET do HDInsight.
+> Somente administradores de inquilinos têm os privilégios para habilitar o Azure Active Directory -DS. Se o armazenamento de cluster é o armazenamento do Azure Data Lake (ADLS) Gen1 ou Gen2, você deve desabilitar a autenticação multifator (MFA) somente para usuários que precisam acessar o cluster usando as autenticações básicas de Kerberos. Você pode usar [IPs confiáveis](../../active-directory/authentication/howto-mfa-mfasettings.md#trusted-ips) ou [acesso condicional](../../active-directory/conditional-access/overview.md) para desabilitar o MFA para usuários específicos somente quando eles estão acessando o intervalo de IP de VNET do cluster HDInsight. Se você estiver usando acesso condicional, verifique se que habilitado do ponto de extremidade de serviço de AD na VNET HDInsight.
 >
 > Se o armazenamento de cluster for o Armazenamento de Blobs do Azure (WASB), não desabilite a MFA.
 

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: pabutler
 ms.openlocfilehash: b0bf7af9b81025202c2fffa2a264982c9986e10b
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64943433"
 ---
 # <a name="cloud-partner-portal-tour"></a>Página tour pelo Portal do Cloud Partner
@@ -19,7 +19,7 @@ ms.locfileid: "64943433"
 Este artigo fornece uma introdução para o [Portal do Cloud Partner](https://cloudpartner.azure.com): seu conteúdo, mecanismos de navegação e funcionalidade.   Este portal permite que os parceiros registrados criem novas ofertas e gerenciam as ofertas existentes para do [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com) e do [Microsoft AppSource Marketplace](https://azuremarketplace.microsoft.com).  O Portal do Cloud Partner é acessível somente aos parceiros registrados. Para obter mais informações, consulte [Torne-se um editor do Marketplace de Nuvem](https://docs.microsoft.com/azure/marketplace/become-publisher).
 
 [![Portal do Cloud Partner exibindo a página de Perfil](./media/portal-window_001a.png)](./media/portal-window_001b.png#lightbox)
-<br/>   (*Clique na imagem para ampliá-la.*)
+<br/>   (*Clique na imagem para ampliá-la.* )
 
 
 ## <a name="section-contents"></a>Conteúdo da seção
