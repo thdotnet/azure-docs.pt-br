@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 05/13/2019
 ms.author: anavin
 ms.openlocfilehash: 26d8ee34c735cab8f1033a9aad897ec0b1bed524
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65952689"
 ---
 # <a name="create-change-or-delete-a-public-ip-address-prefix"></a>Criar, alterar ou excluir um prefixo de endereço IP público
@@ -55,7 +55,7 @@ Prefixos do endereço IP público têm um encargo. Para detalhes, consulte o [pr
 
 **Comandos**
 
-|Tool|Comando|
+|Ferramenta|Comando|
 |---|---|
 |CLI|[az network public-ip prefix create](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-create)|
 |PowerShell|[New-AzPublicIpPrefix](/powershell/module/az.network/new-azpublicipprefix)|
@@ -76,7 +76,7 @@ Após criar um prefixo, você deverá criar endereços IP estáticos a partir do
 
 Como alternativa, você pode usar a CLI e PS comandos abaixo com--public-ip-prefix (CLI) e o recurso de endereço de parâmetros - PublicIpPrefix (PS), para criar um IP público. 
 
-|Tool|Comando|
+|Ferramenta|Comando|
 |---|---|
 |CLI|[az network public-ip create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create)|
 |PowerShell|[New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress?view=azps-2.0.0)|
@@ -91,7 +91,7 @@ Como alternativa, você pode usar a CLI e PS comandos abaixo com--public-ip-pref
 
 **Comandos**
 
-|Tool|Comando|
+|Ferramenta|Comando|
 |---|---|
 |CLI|[az network public-ip prefix list](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-list) para listar endereços IP públicos, [az network public-ip prefix show](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-show) para mostrar configurações; [az network public-ip prefix update](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-update) para atualizar; [az network public-ip prefix delete](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-delete) para excluir|
 |PowerShell|[Get-AzPublicIpPrefix](/powershell/module/az.network/get-azpublicipprefix) para recuperar um objeto de endereço IP público e exibir suas configurações [AzPublicIpPrefix conjunto](/powershell/module/az.network/set-azpublicipprefix) ao atualizar configurações; [AzPublicIpPrefix remover](/powershell/module/az.network/remove-azpublicipprefix) para excluir|

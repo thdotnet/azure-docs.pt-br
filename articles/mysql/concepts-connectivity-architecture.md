@@ -6,18 +6,18 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 05/22/2019
-ms.openlocfilehash: fa92c836fc967f67b46f0417ec5182b41e980b18
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: 7a7ac843960e253b3172d1ed22fe5b59633897dc
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66735400"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062473"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-mysql"></a>Arquitetura de conectividade no banco de dados do Azure para MySQL
 Este artigo explica o banco de dados do Azure para MySQL, arquitetura de conectividade, bem como o tráfego é direcionado para seu banco de dados do Azure para a instância do MySQL de clientes, tanto dentro quanto fora do Azure.
 
 ## <a name="connectivity-architecture"></a>Arquitetura de conectividade
-Conexão ao banco de dados do Azure para MySQL SQL é estabelecida por meio de um gateway que é responsável pelo roteamentos conexões de entrada para o local físico do seu servidor na nossa clusters. O diagrama a seguir ilustra o fluxo de tráfego.
+Conexão ao banco de dados do Azure para MySQL é estabelecida por meio de um gateway que é responsável pelo roteamentos conexões de entrada para o local físico do seu servidor na nossa clusters. O diagrama a seguir ilustra o fluxo de tráfego.
 
 ![Visão geral da arquitetura de conectividade](./media/concepts-connectivity-architecture/connectivity-architecture-overview-proxy.png)
 

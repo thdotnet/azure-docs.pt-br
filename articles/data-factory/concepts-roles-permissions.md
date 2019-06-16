@@ -12,10 +12,10 @@ author: gauravmalhot
 ms.author: gamal
 manager: craigg
 ms.openlocfilehash: 19666eb668dd120c1705c6a62a8ba1abd2321026
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61261799"
 ---
 # <a name="roles-and-permissions-for-azure-data-factory"></a>Funções e permissões do Azure Data Factory
@@ -57,7 +57,7 @@ As permissões no Azure Repos e no GitHub são independentes das permissões do 
 
 ### <a name="custom-scenarios-and-custom-roles"></a>Cenários personalizados e funções personalizadas
 
-Às vezes, você precisa conceder diferentes níveis de acesso para diferentes usuários do data factory. Por exemplo: 
+Às vezes, você precisa conceder diferentes níveis de acesso para diferentes usuários do data factory. Por exemplo:
 - Você pode precisar de um grupo em que os usuários só têm permissões em um data factory específico.
 - Ou você pode precisar de um grupo em que os usuários só podem monitorar um data factory (ou factories), mas não podem modificá-lo.
 
@@ -78,7 +78,7 @@ Aqui estão alguns exemplos que demonstram o que você pode obter com as funçõ
   Esse cenário requer duas atribuições de função.
 
   1. Atribuir a função interna **Colaborador** no nível do data factory.
-  2. Crie uma função personalizada com a permissão **Microsoft.Resources/deployments/**. Atribua essa função personalizada ao usuário no nível do grupo de recursos.
+  2. Crie uma função personalizada com a permissão **Microsoft.Resources/deployments/** . Atribua essa função personalizada ao usuário no nível do grupo de recursos.
 
 - Permitir que um usuário atualize um data factory usando o PowerShell ou o SDK, mas não o portal do Azure.
 

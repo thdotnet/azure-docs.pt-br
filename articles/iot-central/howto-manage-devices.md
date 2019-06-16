@@ -3,17 +3,17 @@ title: Gerenciar os dispositivos no aplicativo Azure IoT Central | Microsoft Doc
 description: Como um operador, saiba como gerenciar dispositivos no aplicativo Azure IoT Central.
 author: ellenfosborne
 ms.author: elfarber
-ms.date: 01/30/2019
+ms.date: 06/09/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: e4746620f083996bf64e77617ec472c3d3894d91
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: a4a22cc2161af444ba2169cc2f83124e80c7ec11
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65464266"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052983"
 ---
 # <a name="manage-devices-in-your-azure-iot-central-application"></a>Gerenciar dispositivos no aplicativo Azure IoT Central
 

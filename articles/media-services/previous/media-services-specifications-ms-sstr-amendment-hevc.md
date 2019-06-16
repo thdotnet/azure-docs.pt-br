@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: johndeu;
 ms.openlocfilehash: b9756920d25891dbe6b71fa24c06ed8f0c8eabb0
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65963246"
 ---
 # <a name="smooth-streaming-protocol-ms-sstr-amendment-for-hevc"></a>Aditamento do Protocolo Smooth Streaming para HEVC 
@@ -34,7 +34,7 @@ O uso de uma entrega de estrutura de dados MPEG-4 ([[MPEG4-RA])](https://go.micr
 
 ## <a name="11-glossary"></a>1.1 Glossário 
 
-Os termos a seguir são definidos em *[MS-GLOS]*:
+Os termos a seguir são definidos em *[MS-GLOS]* :
 
 >   **GUID (Identificador Global Exclusivo) UUID (Identificador Universal Exclusivo)**
 
@@ -205,7 +205,7 @@ O ProtectionElement DEVERÁ estar presente quando a Criptografia Comum (CENC) fo
 
 #### <a name="2247-trunbox"></a>2.2.4.7 TrunBox 
 
->   O **TrunBox** e os campos relacionados encapsulam por metadados de amostra para o fragmento solicitado. A sintaxe de **TrunBox** é um subconjunto estrito da caixa track fragment run Versão 1 definido em [[ISO/IEC-14496-](https://go.microsoft.com/fwlink/?LinkId=183695)*12]*, seção 8.8.8.
+>   O **TrunBox** e os campos relacionados encapsulam por metadados de amostra para o fragmento solicitado. A sintaxe de **TrunBox** é um subconjunto estrito da caixa track fragment run Versão 1 definido em [[ISO/IEC-14496-](https://go.microsoft.com/fwlink/?LinkId=183695)*12]* , seção 8.8.8.
 > 
 >   **SampleCompositionTimeOffset (4 bytes):** o deslocamento de tempo de composição de amostra de cada amostra ajustado, de modo que o tempo de apresentação da primeira amostra apresentada no fragmento seja igual ao tempo de decodificação da primeira amostra decodificada. Deslocamentos de composição de amostra de vídeo negativo DEVERÃO ser utilizados,
 > 

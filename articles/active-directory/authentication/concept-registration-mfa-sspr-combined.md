@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 572f8694d31728a3ca570f6ddb60475e13d71e80
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: f2d1a5a342bfe4527c15a0721a8f852a269bef67
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235582"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113510"
 ---
 # <a name="combined-security-information-registration-preview"></a>Registro de informações de segurança combinada (visualização)
 
@@ -44,17 +44,17 @@ Minhas páginas de perfil são localizadas de acordo com as configurações de i
 
 Combinados registro suporta os seguintes métodos de autenticação e ações:
 
-|   | Registrar  | Alterar | Excluir |
+|   | Registrar | Alterar | Excluir |
 | --- | --- | --- | --- |
-| Microsoft Authenticator | Sim (máximo de 5) | Não  | Sim |
-| Outro aplicativo autenticador | Sim (máximo de 5) | Não  | Sim |
-| token de hardware | Não  | Não  | Sim |
+| Microsoft Authenticator | Sim (máximo de 5) | Não | Sim |
+| Outro aplicativo autenticador | Sim (máximo de 5) | Não | Sim |
+| token de hardware | Não | Não | Sim |
 | Telefone | Sim | sim | Sim |
 | Telefone alternativo | Sim | sim | Sim |
-| Telefone comercial | Não | Não | Não  |
+| Telefone comercial | Não | Não | Não |
 | Email | Sim | sim | Sim |
-| Perguntas de segurança | Sim | Não  | Sim |
-| Senhas de aplicativo | Sim | Não  | Sim |
+| Perguntas de segurança | Sim | Não | Sim |
+| Senhas de aplicativo | Sim | Não | Sim |
 
 > [!NOTE]
 > As senhas de aplicativo estão disponíveis somente para usuários que têm sido impostos para a autenticação multifator. As senhas de aplicativo não estão disponíveis para os usuários que estão habilitados para a autenticação multifator por meio de uma política de acesso condicional.

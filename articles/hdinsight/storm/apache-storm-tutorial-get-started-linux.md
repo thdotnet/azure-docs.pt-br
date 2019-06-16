@@ -9,21 +9,18 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 40757c80878ef5a06d3368d4c20f65ebfa11e47b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 299e8990d9211eadc33a7e3348ba0364adfafb92
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64708245"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67078166"
 ---
 # <a name="get-started-with-apache-storm-on-hdinsight-using-the-storm-starter-examples"></a>Introdução ao Apache Storm no HDInsight usando os exemplos do storm-starter
 
 Aprenda a usar o [Apache Storm](https://storm.apache.org/) no HDInsight usando os exemplos de início de tempestade.
 
 O Apache Storm é um sistema de computação escalável, tolerante a falhas, distribuído e em tempo real para o processamento de fluxos de dados. Com o Storm no Azure HDInsight, você pode criar um cluster Storm baseado em nuvem que execute análise de big data em tempo real.
-
-> [!IMPORTANT]  
-> O Linux é o único sistema operacional usado no HDInsight versão 3.4 ou superior. Para obter mais informações, confira [baixa do HDInsight no Windows](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -48,7 +45,7 @@ Use as seguintes etapas para criar um cluster Storm no HDInsight:
     * **Nome do cluster**: O nome do cluster HDInsight.
     * **Assinatura**: Selecione a assinatura a ser usada.
     * **Nome de usuário de logon do cluster** e **Senha de logon do cluster**: O logon ao acessar o cluster por HTTPS. Você pode usar essas credenciais para acessar serviços como a interface do usuário da Web do Ambari ou a API REST.
-    * **Nome de usuário do SSH (Secure Shell)**: O logon usado ao acessar o cluster via SSH. Por padrão, a senha é a mesma do logon do cluster.
+    * **Nome de usuário do SSH (Secure Shell)** : O logon usado ao acessar o cluster via SSH. Por padrão, a senha é a mesma do logon do cluster.
     * **Grupo de recursos**: O grupo de recursos no qual criar o cluster.
     * **Localização**: A região do Azure na qual criar o cluster.
 

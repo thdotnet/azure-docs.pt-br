@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/16/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
-ms.openlocfilehash: 87fca23cab27ec27bfc9799066c126994167f46e
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 499b5ac77728bc14aadd5a2ef235e28b6ca83516
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66391451"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67133105"
 ---
 Os tamanhos de VM otimizados para memória oferecem uma taxa de memória alta para CPU que são ideais para servidores de banco de dados relacionais, caches médio a grande e análises in-memory. Este artigo fornece informações sobre o número de vCPUs, discos de dados e NICs, bem como a taxa de transferência de armazenamento e largura de banda de rede para cada tamanho neste agrupamento. 
 
@@ -167,14 +167,14 @@ Acelerador de Gravação:  [Com suporte](https://docs.microsoft.com/azure/virtua
 | Standard_M32ts | 32 | 192    | 1024 | 32 | 40000 / 400 (3174) | 20000 / 500 | 8 / 8000 |
 | Standard_M32ls | 32 | 256    | 1024 | 32 | 40000 / 400 (3174) | 20000 / 500 | 8 / 8000 |
 | Standard_M32ms&nbsp;<sup>3</sup>   | 32 | 875    | 1024 | 32 | 40000 / 400 (3174) | 20000 / 500 | 8 / 8000 |
-| Standard_M64s  | 64 | 1024   | 2.048 | 64 | 80000 / 800 (6348)| 40000 / 1000 | 8 / 16000          |
-| Standard_M64ls  | 64 | 512    | 2.048 | 64 | 80000 / 800 (6348) | 40000 / 1000 | 8 / 16000 |
-| Standard_M64ms&nbsp;<sup>3</sup>  | 64   | 1792 | 2.048 | 64 | 80000 / 800 (6348)| 40000 / 1000 | 8 / 16000          |
-| Standard_M128s&nbsp;<sup>2</sup> | 128  | 2.048        | 4096  | 64 | 160000 / 1600 (12696) | 80000 / 2000                            | 8 / 30000          |
+| Standard_M64s  | 64 | 1024   | 2\.048 | 64 | 80000 / 800 (6348)| 40000 / 1000 | 8 / 16000          |
+| Standard_M64ls  | 64 | 512    | 2\.048 | 64 | 80000 / 800 (6348) | 40000 / 1000 | 8 / 16000 |
+| Standard_M64ms&nbsp;<sup>3</sup>  | 64   | 1792 | 2\.048 | 64 | 80000 / 800 (6348)| 40000 / 1000 | 8 / 16000          |
+| Standard_M128s&nbsp;<sup>2</sup> | 128  | 2\.048        | 4096  | 64 | 160000 / 1600 (12696) | 80000 / 2000                            | 8 / 30000          |
 | Standard_M128ms&nbsp;<sup>2,&nbsp;3,&nbsp;4</sup> | 128  | 3892  | 4096 | 64 | 160000 / 1600 (12696) | 80000 / 2000                            | 8 / 30000          |
 | Standard_M64   | 64  | 1024 | 7168  | 64 | 80000  / 800  (1228) | 40000 / 1000 | 8 / 16000 |
 | Standard_M64m  | 64  | 1792 | 7168  | 64 | 80000  / 800  (1228) | 40000 / 1000 | 8 / 16000 |
-| Standard_M128&nbsp;<sup>2  | 128 | 2.048 | 14336 | 64 | 250000 / 1600 (2456) | 80000 / 2000 | 8 / 32000 |
+| Standard_M128&nbsp;<sup>2  | 128 | 2\.048 | 14336 | 64 | 250000 / 1600 (2456) | 80000 / 2000 | 8 / 32000 |
 | Standard_M128m&nbsp;<sup>2 | 128 | 3892 | 14336 | 64 | 250000 / 1600 (2456) | 80000 / 2000 | 8 / 32000 |
 
 
@@ -188,48 +188,6 @@ Acelerador de Gravação:  [Com suporte](https://docs.microsoft.com/azure/virtua
 <sup>4</sup> A instância é isolada em hardware dedicado a um único cliente.
 <br>
 
-## <a name="gs-series"></a>Série GS 
-
-ACU: 180 - 240 <sup>1</sup>
-
-Armazenamento Premium:  Com suporte
-
-Cache de armazenamento Premium:  Com suporte
-
-| Tamanho | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Discos de dados máximos | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps (tamanho do cache em GiB) | Taxa de transferência de disco sem cache: IOPS / MBps | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
-|---|---|---|---|---|---|---|---|
-| Standard_GS1 |2 |28 |56 |8 |10000 / 100 (264) |5000 / 125 |2 / 2000 |
-| Standard_GS2 |4 |56 |112 |16 |20000 / 200 (528) |10000 / 250 |2 / 4000 |
-| Standard_GS3 |8 |112 |224 |32 |40000 / 400 (1056) |20000 / 500 |4 / 8000 |
-| Standard_GS4&nbsp;<sup>3</sup> |16 |224 |448 |64 |80000 / 800 (2112) |40000 / 1000 |8 / 16000 |
-| Standard_GS5&nbsp;<sup>2,&nbsp;3</sup> |32 |448 |896 |64 |160000 / 1600 (4224) |80000 / 2000 |8 / 20000 |
-
-<sup>1</sup> A taxa de transferência máxima possível do disco (IOPS ou MBps) com uma VM da série GS pode ser limitada pelo número, tamanho e distribuição dos discos anexados. Para ver os detalhes, confira [Projetar para alto desempenho](../articles/virtual-machines/windows/premium-storage-performance.md).
-
-<sup>2</sup> A instância é isolada em hardware dedicado a um único cliente.
-
-<sup>3</sup> Tamanhos limitados de núcleos disponíveis.
-
-<br>
-
-## <a name="g-series"></a>Série G
-
-ACU: 180 - 240
-
-Armazenamento Premium:  Sem suporte
-
-Cache de armazenamento Premium:  Sem suporte
-
-| Tamanho         | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps de leitura / MBps de gravação | Discos de dados máximos / taxa de transferência: IOPS | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
-|--------------|-----------|-------------|----------------|----------------------------------------------------------|-----------------------------------|------------------------------|
-| Standard_G1  | 2         | 28          | 384            | 6000 / 93 / 46                                           | 8 / 8 x 500                       | 2 / 2000                     |
-| Standard_G2  | 4         | 56          | 768            | 12000 / 187 / 93                                         | 16 / 16 x 500                       | 2 / 4000                     |
-| Standard_G3  | 8         | 112         | 1536          | 24000 / 375 / 187                                        | 32 / 32 x 500                     | 4 / 8000                |
-| Standard_G4  | 16        | 224         | 3072          | 48000 / 750 / 375                                        | 64 / 64 x 500                     | 8 / 16000          |
-| Standard_G5&nbsp;<sup>1</sup> | 32        | 448         | 6144          | 96000 / 1500 / 750                                       | 64 / 64 x 500                     | 8 / 20000           |
-
-<sup>1</sup> A instância é isolada em hardware dedicado a um único cliente.
-<br>
 
 ## <a name="dsv2-series-11-15"></a>Série DSv2 11-15
 

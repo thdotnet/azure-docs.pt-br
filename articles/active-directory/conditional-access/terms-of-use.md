@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1abae0a454e17e8f633f68bc5853bfb4a4b24d14
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 0534613a9df3177290e9b4b57e9830fe62f9741a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66383171"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112124"
 ---
 # <a name="azure-active-directory-terms-of-use"></a>Termos de uso do Active Directory do Azure
 
@@ -99,14 +99,14 @@ Depois de preparar os seus termos de uso de documento, use o procedimento a segu
 
    Por exemplo, se você definir a expiração a partir da data para **1 de janeiro** e a frequência para **Mensal**, segue como ocorreriam as expirações para dois usuários:
 
-   | User | Primeira data de aceitação | Primeira data de expiração | Segunda data de expiração | Terceira data de expiração |
+   | Usuário | Primeira data de aceitação | Primeira data de expiração | Segunda data de expiração | Terceira data de expiração |
    | --- | --- | --- | --- | --- |
    | Alice | 1 de janeiro | 1 de fevereiro | 1 de março | 1 de abril |
    | Roberto | 15 de janeiro | 1 de fevereiro | 1 de março | 1 de abril |
 
 1. Use o **duração antes de (dias) requer o re-aceitação** configuração para especificar o número de dias antes que o usuário deve aceitem novamente os termos de uso. Isso permite que os usuários sigam seu próprio cronograma. Por exemplo, se você definir a duração como **30** dias, segue como ocorreriam as expirações para dois usuários:
 
-   | User | Primeira data de aceitação | Primeira data de expiração | Segunda data de expiração | Terceira data de expiração |
+   | Usuário | Primeira data de aceitação | Primeira data de expiração | Segunda data de expiração | Terceira data de expiração |
    | --- | --- | --- | --- | --- |
    | Alice | 1 de janeiro | 31 de janeiro | 2 de março | 1 de abril |
    | Roberto | 15 de janeiro | 14 de fevereiro | 16 de março | 15 de abril |
@@ -115,23 +115,23 @@ Depois de preparar os seus termos de uso de documento, use o procedimento a segu
 
 1. Sob **acesso condicional**, use o **impor com o modelo de política de acesso condicional** lista para selecionar o modelo para impor os termos de uso.
 
-   ![Políticas de acesso condicional](./media/terms-of-use/conditional-access-templates.png)
+   ![Modelos de acesso condicionais](./media/terms-of-use/conditional-access-templates.png)
 
    | Modelo | DESCRIÇÃO |
    | --- | --- |
    | **Acesso a aplicativos de nuvem para todos os convidados** | Uma política de acesso condicional será criada para todos os convidados e todos os aplicativos de nuvem. Essa política afeta o portal do Azure. Após ela ser criada, talvez seja necessário sair e entrar novamente. |
    | **Acesso a aplicativos de nuvem para todos os usuários** | Uma política de acesso condicional será criada para todos os usuários e todos os aplicativos de nuvem. Essa política afeta o portal do Azure. Após ela ser criada, será necessário sair e entrar novamente. |
    | **Política personalizada** | Selecione os usuários, grupos e aplicativos que serão aplicados a estes termos de uso. |
-   | **Criar a política de acesso condicional mais tarde** | Estes termos de uso serão exibidos na lista de controle de concessão ao criar uma política de acesso condicional. |
+   | **Criar política de acesso condicional mais tarde** | Estes termos de uso aparecerá na lista de controle de concessão ao criar uma política de acesso condicional. |
 
    >[!IMPORTANT]
-   >Controles de política de acesso condicional (incluindo termos de uso) não dão suporte à imposição em contas de serviço. Recomenda-se excluir todas as contas de serviço da política de acesso condicional.
+   >Controles de política de acesso condicionais (incluindo termos de uso) não dá suporte à imposição em contas de serviço. É recomendável excluir todas as contas de serviço da política de acesso condicional.
 
     Políticas de acesso condicional personalizadas permitem termos de uso, para baixo até um aplicativo de nuvem específica ou um grupo de usuários granulares. Para saber mais, confira [Início Rápido: Exigir a aceitação dos termos de uso antes de acessar os aplicativos de nuvem](require-tou.md).
 
 1. Clique em **Criar**.
 
-   Se você selecionou um modelo de acesso condicional personalizado, será exibida uma nova tela que permite personalizar a política de acesso condicional.
+   Se você tiver selecionado um modelo de acesso condicional personalizado, uma nova tela é exibida que permite que você crie a política de acesso condicional personalizada.
 
    ![Política personalizada](./media/terms-of-use/custom-policy.png)
 
@@ -302,12 +302,12 @@ Por padrão, um usuário excluído permanece excluído no Azure AD por 30 dias, 
 
 ## <a name="policy-changes"></a>Alterações na política
 
-As políticas de acesso condicional entram em vigor imediatamente. Quando isso acontece, o administrador começa a ver uma imagem de "nuvens tristes" ou "problemas de token do Azure AD". O administrador precisa sair e entrar novamente para atender à nova política.
+Políticas de acesso condicional entram em vigor imediatamente. Quando isso acontece, o administrador começa a ver uma imagem de "nuvens tristes" ou "problemas de token do Azure AD". O administrador precisa sair e entrar novamente para atender à nova política.
 
 > [!IMPORTANT]
 > Os usuários que estão no escopo precisarão sair e entrar novamente para atender a uma nova política se:
 >
-> - uma política de acesso condicional for habilitada nos termos de uso
+> - uma política de acesso condicional é habilitada em termos de uso
 > - ou se outros termos de uso forem criados
 
 ## <a name="b2b-guests-preview"></a>Convidados B2B (versão prévia)
@@ -364,10 +364,10 @@ R: Sim. Atualmente, há 108 idiomas diferentes, um administrador pode configurar
 R: Os termos de uso é disparada durante a experiência de entrada.
 
 **P: Quais aplicativos posso empregar os termos de uso para?**<br />
-R: Você pode criar uma política de acesso condicional nos aplicativos empresariais usando autenticação moderna. Para obter mais informações, consulte [aplicativos empresariais](./../manage-apps/view-applications-portal.md).
+R: Você pode criar uma política de acesso condicional em aplicativos empresariais usando autenticação moderna. Para obter mais informações, consulte [aplicativos empresariais](./../manage-apps/view-applications-portal.md).
 
 **P: Pode adicionar vários termos de uso para um determinado usuário ou aplicativo?**<br />
-R: Sim, criando várias políticas de acesso condicional direcionadas a esses grupos ou aplicativos. Se um usuário estiver no escopo de vários termos de uso, eles aceitam uma termos de uso por vez.
+R: Sim, com a criação de várias políticas de acesso condicional direcionar esses grupos ou aplicativos. Se um usuário estiver no escopo de vários termos de uso, eles aceitam uma termos de uso por vez.
 
 **P: O que acontece se um usuário recusar os termos de uso?**<br />
 R: O usuário é impedido de acessar o aplicativo. O usuário precisa entrar novamente e aceitar os termos para obter acesso.
@@ -384,4 +384,4 @@ R: Termos de uso utiliza os seguintes pontos de extremidade para autenticação:
 ## <a name="next-steps"></a>Próximas etapas
 
 - [Início rápido: Exigir a aceitação dos termos de uso antes de acessar os aplicativos de nuvem](require-tou.md)
-- [Práticas recomendadas para o acesso condicional no Azure Active Directory](best-practices.md)
+- [Práticas recomendadas para acesso condicional no Azure Active Directory](best-practices.md)

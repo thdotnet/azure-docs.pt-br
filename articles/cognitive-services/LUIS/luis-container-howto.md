@@ -3,20 +3,20 @@ title: Contêineres do Docker
 titleSuffix: Language Understanding - Azure Cognitive Services
 description: O contêiner do LUIS carrega seu aplicativo treinado ou publicado para um contêiner do Docker e fornece acesso às previsões de consulta dos pontos de extremidade da API do contêiner.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/28/2019
-ms.author: diberry
-ms.openlocfilehash: 02ac7b91622a3c8fe877ea9bcbc7224a67eb0ae5
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.date: 06/11/2019
+ms.author: dapine
+ms.openlocfilehash: 68ff6a156e0d159816b184452f1f945cbce65216
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306619"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052039"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Instalar e executar os contêineres de docker LUIS
  
@@ -108,8 +108,8 @@ O diretório de montagem de entrada pode conter as versões de **Produção**, *
 
 |Tipo de pacote|API do ponto de extremidade de consulta|Disponibilidade de consulta|Formato do nome de arquivo do pacote|
 |--|--|--|--|
-|Treinamento concluído|Get, Post|Somente contêiner|`{APPLICATION_ID}_v{APPLICATION_VERSION}.gz`|
-|Preparo|Get, Post|Azure e contêiner|`{APPLICATION_ID}_STAGING.gz`|
+|Treinado|Get, Post|Somente contêiner|`{APPLICATION_ID}_v{APPLICATION_VERSION}.gz`|
+|Staging|Get, Post|Azure e contêiner|`{APPLICATION_ID}_STAGING.gz`|
 |Produção|Get, Post|Azure e contêiner|`{APPLICATION_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
@@ -168,7 +168,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Espaço reservado | Value |
+| Placeholder | Value |
 |-------------|-------|
 |{APPLICATION_ID} | A ID de aplicativo do aplicativo LUIS publicado. |
 |{APPLICATION_ENVIRONMENT} | O ambiente do aplicativo LUIS publicado. Use um dos seguintes valores:<br/>```PRODUCTION```<br/>```STAGING``` |
@@ -196,7 +196,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Espaço reservado | Value |
+| Placeholder | Value |
 |-------------|-------|
 |{APPLICATION_ID} | A ID de aplicativo do aplicativo LUIS treinado. |
 |{APPLICATION_VERSION} | A versão de aplicativo do aplicativo LUIS treinado. |
@@ -218,7 +218,7 @@ Se for bem-sucedido, a resposta será um arquivo de pacote do LUIS. Salve o arqu
 
 Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar o contêiner. O comando usa os seguintes parâmetros:
 
-| Espaço reservado | Value |
+| Placeholder | Value |
 |-------------|-------|
 |{ENDPOINT_KEY} | Essa chave é usada para iniciar o contêiner. Não use a chave de inicialização. |
 |{BILLING_ENDPOINT} | O valor de ponto de extremidade de cobrança está disponível no portal do Azure `Cognitive Services` página de visão geral. Você precisará adicionar o `luis/v2.0` roteamento para o URI do ponto de extremidade, conforme mostrado no exemplo a seguir: `https://westus.api.cognitive.microsoft.com/luis/v2.0`.|
@@ -273,13 +273,13 @@ Use o host, `https://localhost:5000`, para APIs de contêiner.
 |Tipo de pacote|Método|Rota|Parâmetros de consulta|
 |--|--|--|--|
 |Publicado|[Get](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78), [Post](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee79)|/luis/v2.0/apps/{appId}?|q={q}<br>&staging<br>[&timezoneOffset]<br>[&verbose]<br>[&log]<br>|
-|Treinamento concluído|Get, Post|/luis/v2.0/apps/{appId}/versions/{versionId}?|q={q}<br>[&timezoneOffset]<br>[&verbose]<br>[&log]|
+|Treinado|Get, Post|/luis/v2.0/apps/{appId}/versions/{versionId}?|q={q}<br>[&timezoneOffset]<br>[&verbose]<br>[&log]|
 
 Os parâmetros de consulta configuram como e o que é retornado na resposta da consulta:
 
 |Parâmetro de consulta|Type|Finalidade|
 |--|--|--|
-|`q`|string|A declaração do usuário.|
+|`q`|cadeia de caracteres|A declaração do usuário.|
 |`timezoneOffset`|número|O timezoneOffset permite [alterar o fuso horário](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity) usado pela datetimeV2 predefinida da entidade.|
 |`verbose`|boolean|Retorna todas as intenções e suas pontuações quando definido como true. O padrão é false, o que retorna apenas a intenção principal.|
 |`staging`|boolean|Retorna a consulta dos resultados do ambiente de preparo quando definido como true. |
@@ -366,7 +366,7 @@ Configurações de aplicativo sem suporte|Detalhes|
 |Entidades sem suporte para todas as culturas|Entidade predefinida [KeyPhrase](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-keyphrase) para todas as culturas|
 |Entidades sem suporte para a cultura Inglês (en-US)|Entidades predefinidas [GeographyV2](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-geographyv2)|
 |Preparação da fala|Não há suporte para dependências externas no contêiner.|
-|Análise de Sentimento|Não há suporte para dependências externas no contêiner.|
+|Análise de sentimento|Não há suporte para dependências externas no contêiner.|
 
 <!--blogs/samples/video coures -->
 

@@ -5,21 +5,21 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 04/29/2019
-ms.openlocfilehash: 8a78a9b8f0772a83e45ac2b926878e61e6ee2e61
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.date: 06/12/2019
+ms.openlocfilehash: 7a517be49a249b0b73c901137381bd05946aa4cc
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64926326"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67065710"
 ---
-# <a name="server-logs-in-azure-database-for-mariadb"></a>Logs de servidor no Banco de Dados do Azure para MariaDB
+# <a name="slow-query-logs-in-azure-database-for-mariadb"></a>Logs de consulta lenta no banco de dados do Azure para MariaDB
 No Banco de Dados do Azure para MariaDB, o log de consultas lentas está disponível para os usuários. No entanto, não há suporte para acesso ao log de transação. O log de consultas lentas pode ser usado para identificar gargalos de desempenho para solução de problemas.
 
 Para obter mais informações sobre o log de consulta lenta, leia a documentação do MariaDB para [log de consulta lenta](https://mariadb.com/kb/en/library/slow-query-log-overview/).
 
-## <a name="access-server-logs"></a>Acessar logs do servidor
-É possível listar e baixar logs de servidor do Banco de Dados do Azure para MariaDB usando o portal do Azure e a CLI do Azure.
+## <a name="access-slow-query-logs"></a>Acessar logs de consulta lenta
+Você pode listar e baixar o banco de dados do Azure para logs de consulta lenta do MariaDB usando o portal do Azure e a CLI do Azure.
 
 No portal do Azure, selecione o servidor do Banco de Dados do Azure para MariaDB. Sob o título **Monitoramento**, selecione a página **Logs do Servidor**.
 
@@ -30,7 +30,7 @@ Logs estão disponíveis por até sete dias desde a criação deles. Se o tamanh
 
 Logs são reciclados a cada 24 horas ou 7 GB, o que ocorrer primeiro.
 
-## <a name="configure-logging"></a>Configurar o registro em log
+## <a name="configure-slow-query-logging"></a>Configurar o log de consultas lentas
 Por padrão, o log de consultas lentas está desabilitado. Para habilitá-lo, defina slow_query_log para ON.
 
 Outros parâmetros que você pode ajustar incluem:

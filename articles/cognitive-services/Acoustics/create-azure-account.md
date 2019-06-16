@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 03/20/2019
 ms.author: kegodin
 ms.openlocfilehash: 7a7f5f6738b4bc96b6248deb062c7b3f63048148
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61335581"
 ---
 # <a name="project-acoustics-azure-batch-account-setup"></a>Configuração da conta de lote do Azure do projeto acústica
@@ -62,6 +62,6 @@ As contas do Azure Batch são aprovisionadas na criação de contas com um limit
 
 ![Página de captura de tela de cota do Azure](media/azure-quotas.png)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 * Integrar o plug-in do projeto acústica em seu [Unity](unity-integration.md) ou [Unreal](unreal-integration.md) projeto
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: bd0160073898a5a83af2e7b2bba2dba007c04513
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: 5bebdd77afb9e9c77624ea4266ca217567dbf143
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66425677"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072388"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Início Rápido: Executar o aplicativo de exemplo do SDK de dispositivos de fala no Android
 
@@ -37,7 +37,7 @@ Antes de começar a usar o SDK de dispositivos de fala, você precisará:
 
 * Para obter um [chave de assinatura do Azure para serviços de fala](get-started.md)
 
-* Se você planeja usar a transcrição de conversa que você deve usar um [dispositivo microfone circular](get-speech-devices-sdk.md) e o serviço atualmente só está disponível para "en-US" e "zh-CN" em regiões, "centralus" e "eastasia". Você deve ter uma chave de conversão de fala em uma dessas regiões para usar a transcrição de conversa.
+* Se você planeja usar a transcrição de conversa que você deve usar um [dispositivo microfone circular](get-speech-devices-sdk.md) e esse recurso só está disponível para "en-US" e "zh-CN" em regiões, "centralus" e "eastasia" no momento. Você deve ter uma chave de conversão de fala em uma dessas regiões para usar a transcrição de conversa.
 
 * Se você planeja usar os serviços de fala para identificar tentativas (ou ações) de declarações de usuário, será necessário um [Service (Luis reconhecimento vocal)](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription) assinatura. Para saber mais sobre o LUIS e reconhecimento de intenção, consulte [reconhecer intenções de fala com o LUIS, C# ](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp).
 

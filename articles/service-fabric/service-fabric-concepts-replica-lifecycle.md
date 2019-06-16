@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 01/10/2018
 ms.author: aprameyr
 ms.openlocfilehash: 7f8638365b40395a5dd82457c40e5c15209ba1a7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60882365"
 ---
 # <a name="replicas-and-instances"></a>Réplicas e instâncias 
@@ -116,11 +116,11 @@ A função da réplica não é relevante no estado em espera.
 ## <a name="replica-role"></a>Função da réplica 
 A função da réplica determina sua função no conjunto de réplicas:
 
-- **Primary (P)**: Há uma primária no conjunto de réplicas é responsável por executar operações leitura e gravação. 
-- **ActiveSecondary (S)**: Essas são réplicas que recebem atualizações de estado da primária, aplicação-las e, em seguida, enviam confirmações de volta. Há várias secundárias ativas no conjunto de réplicas. O número dessas secundárias ativas determina o número de falhas que o serviço pode manipular.
-- **IdleSecondary (I)**: Essas réplicas estão sendo criadas pela primária. Elas estão recebendo o estado da primária antes de poderem ser promovidas para a secundária ativa. 
-- **None (N)**: Essas réplicas não têm uma responsabilidade no conjunto de réplicas.
-- **Unknown (U)**: Essa é a função inicial de uma réplica antes de receber qualquer **ChangeRole** chamada à API do Service Fabric.
+- **Primary (P)** : Há uma primária no conjunto de réplicas é responsável por executar operações leitura e gravação. 
+- **ActiveSecondary (S)** : Essas são réplicas que recebem atualizações de estado da primária, aplicação-las e, em seguida, enviam confirmações de volta. Há várias secundárias ativas no conjunto de réplicas. O número dessas secundárias ativas determina o número de falhas que o serviço pode manipular.
+- **IdleSecondary (I)** : Essas réplicas estão sendo criadas pela primária. Elas estão recebendo o estado da primária antes de poderem ser promovidas para a secundária ativa. 
+- **None (N)** : Essas réplicas não têm uma responsabilidade no conjunto de réplicas.
+- **Unknown (U)** : Essa é a função inicial de uma réplica antes de receber qualquer **ChangeRole** chamada à API do Service Fabric.
 
 O diagrama a seguir ilustra as transições da função de réplica e alguns cenários de exemplo no qual elas podem ocorrer:
 

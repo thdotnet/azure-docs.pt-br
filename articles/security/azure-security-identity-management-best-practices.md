@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/03/2019
 ms.author: barclayn
-ms.openlocfilehash: 2a669f5b46db4d5de7d1d6863b94e6c117667aee
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 2b57ec7727e8f5b648bcb97e5fae26c63724411c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153235"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67127201"
 ---
 # <a name="azure-identity-management-and-access-control-security-best-practices"></a>Práticas recomendadas de Gerenciamento de Identidade do Azure e segurança de controle de acesso
 Neste artigo, abordaremos uma coleção de práticas recomendadas de segurança de controle de acesso e gerenciamento de identidades do Azure. Essas práticas recomendadas derivam da nossa experiência com o [Azure AD](../active-directory/fundamentals/active-directory-whatis.md) e da experiência de clientes como você.
@@ -40,7 +40,7 @@ As práticas recomendadas de segurança de controle de acesso e gerenciamento de
 * Centralizar o gerenciamento de identidade
 * Gerenciar Locatários conectados
 * Habilitar logon único
-* Ativar acesso condicional
+* Ativar o acesso condicional
 * Habilitar o gerenciamento de senhas
 * Impor a verificação de autenticação multifator para usuários
 * Use o controle de acesso baseado em função
@@ -109,14 +109,14 @@ Use o SSO para permitir que os usuários acessem seus [aplicativos de SaaS](../a
 
 As organizações que não criam uma identidade comum para estabelecer SSO para seus usuários e aplicativos estão mais expostas a cenários em que os usuários têm várias senhas. Nesses cenários aumentam a probabilidade de reutilização de senhas ou usar senhas fracas.
 
-## <a name="turn-on-conditional-access"></a>Ativar acesso condicional
+## <a name="turn-on-conditional-access"></a>Ativar o acesso condicional
 
 Os usuários podem acessar os recursos da organização usando uma grande variedade de dispositivos e aplicativos de qualquer lugar. Como um administrador de TI, você deseja certificar-se de que esses dispositivos atendem aos padrões de segurança e conformidade. Por causa disso, concentrar-se apenas em quem pode acessar um recurso que não é mais suficiente.
 
 Para balancear a segurança e a produtividade, você precisa pensar sobre como um recurso é acessado antes que você pode tomar uma decisão sobre o controle de acesso. Com acesso condicional do Azure AD, você pode atender a esse requisito. Com acesso condicional, você pode tomar decisões de controle de acesso automatizado com base nas condições para acessar seus aplicativos de nuvem.
 
 **Melhor prática**: Gerenciar e controlar o acesso aos recursos corporativos.  
-**Detalhe**: Configure o [acesso condicional](../active-directory/active-directory-conditional-access-azure-portal.md) do Azure AD com base em um grupo, localização e sensibilidade de aplicativo para aplicativos SaaS e aplicativos conectados ao Azure AD.
+**Detalhe**: Configurar o Azure AD [acesso condicional](../active-directory/active-directory-conditional-access-azure-portal.md) com base em um grupo, localização e sensibilidade de aplicativo para aplicativos SaaS e aplicativos conectados ao AD do Azure.
 
 **Melhor prática**: Bloquear protocolos de autenticação herdados.
 **Detalhe**: Os invasores exploram pontos fracos em protocolos mais antigos todos os dias, particularmente para ataques de senha de spray. Configure o acesso condicional para bloquear protocolos herdados. Consulte o vídeo [do Azure AD: Regras de](https://www.youtube.com/watch?v=wGk0J4z90GI) para obter mais informações.
@@ -143,16 +143,16 @@ Há várias opções para exigir a verificação em duas etapas. A melhor opçã
 Estas são as opções e benefícios para habilitar a verificação em duas etapas:
 
 **Opção 1**: [Habilitar a Autenticação Multifator alterando o estado do usuário](../active-directory/authentication/howto-mfa-userstates.md).   
-**Benefício**: Esse é o método tradicional para exigir a verificação em duas etapas. Funciona com ambos [Autenticação Multifator do Azure na nuvem e o Servidor de Autenticação Multifator do Microsoft Azure](../active-directory/authentication/concept-mfa-whichversion.md). O uso desse método exigirá que os usuários realizem a verificação em duas etapas sempre que entrarem e substituírem as políticas de acesso condicional.
+**Benefício**: Esse é o método tradicional para exigir a verificação em duas etapas. Funciona com ambos [Autenticação Multifator do Azure na nuvem e o Servidor de Autenticação Multifator do Microsoft Azure](../active-directory/authentication/concept-mfa-whichversion.md). Usando esse método requer que os usuários executar a verificação em duas etapas sempre que entrarem e substitui as políticas de acesso condicional.
 
 Para determinar onde a autenticação multifator precisa ser habilitado, consulte [qual versão do MFA do Azure é ideal para minha organização?](../active-directory/authentication/concept-mfa-whichversion.md).
 
-**Opção 2**: [Habilitar a Autenticação Multifator com a política de acesso condicional](../active-directory/authentication/howto-mfa-getstarted.md).
-**Benefício**: Essa opção permite que você solicite a verificação em duas etapas sob condições específicas usando o [acesso condicional](../active-directory/active-directory-conditional-access-azure-portal.md). As condições específicas podem ser entrada do usuário de locais diferentes, não confiável de dispositivos ou aplicativos que você considere arriscadas. Definir condições específicas em que você exige verificação em duas etapas permite que você evite solicitação constante para seus usuários, que podem ser uma experiência de usuário desagradáveis.
+**Opção 2**: [Habilitar a autenticação multifator com a política de acesso condicional](../active-directory/authentication/howto-mfa-getstarted.md).
+**Benefício**: Essa opção permite que você solicitar a verificação em duas etapas sob condições específicas usando [acesso condicional](../active-directory/active-directory-conditional-access-azure-portal.md). As condições específicas podem ser entrada do usuário de locais diferentes, não confiável de dispositivos ou aplicativos que você considere arriscadas. Definir condições específicas em que você exige verificação em duas etapas permite que você evite solicitação constante para seus usuários, que podem ser uma experiência de usuário desagradáveis.
 
-Essa é a maneira mais flexível para habilitar a verificação em duas etapas para seus usuários. Habilitar uma política de acesso condicional funciona apenas para autenticação multifator do Azure na nuvem e é um recurso premium do Microsoft Azure Active Directory. Você pode encontrar mais informações sobre esse método em [implantar autenticação de multifator do Azure baseado em nuvem](../active-directory/authentication/howto-mfa-getstarted.md).
+Essa é a maneira mais flexível para habilitar a verificação em duas etapas para seus usuários. Habilitar uma política de acesso condicional funciona apenas para a autenticação multifator Azure na nuvem e é um recurso premium do Azure AD. Você pode encontrar mais informações sobre esse método em [implantar autenticação de multifator do Azure baseado em nuvem](../active-directory/authentication/howto-mfa-getstarted.md).
 
-**Opção 3**: Habilitar a Autenticação Multifator com políticas de acesso condicional ao avaliar o usuário e o risco de entrada do [Azure AD Identity Protection](../active-directory/authentication/tutorial-risk-based-sspr-mfa.md).   
+**Opção 3**: Habilitar a autenticação multifator com políticas de acesso condicional ao avaliar o risco de usuário e a entrada de [do Azure AD Identity Protection](../active-directory/authentication/tutorial-risk-based-sspr-mfa.md).   
 **Benefício**: Essa opção permite que você:
 
 - Detecte possíveis vulnerabilidades que afetam as identidades da organização.
@@ -162,7 +162,7 @@ Essa é a maneira mais flexível para habilitar a verificação em duas etapas p
 Este método usa a avaliação de risco do Azure AD Identity Protection para determinar se a verificação em duas etapas é necessária com base no usuário e risco de entrada para todos os aplicativos de nuvem. Este método requer o licenciamento do Azure Active Directory P2. Você pode encontrar mais informações sobre esse método no [Azure Active Directory Identity Protection](../active-directory/identity-protection/overview.md).
 
 > [!Note]
-> A opção 1, que habilita a Autenticação Multifator do Microsoft Azure alterando o estado do usuário, substitui as políticas de acesso condicionais. Como opções 2 e 3 usam políticas de acesso condicional, você não pode usar a opção 1 com eles.
+> Opção 1, habilitando a autenticação multifator, alterando o estado do usuário, substitui as políticas de acesso condicional. Como opções 2 e 3 usam políticas de acesso condicional, você não pode usar a opção 1 com eles.
 
 As organizações que não adicionam camadas adicionais de proteção de identidade, como verificação em duas etapas, são mais suscetíveis a ataques de roubo de credencial. Um ataque de roubo de credencial pode levar ao comprometimento de dados.
 

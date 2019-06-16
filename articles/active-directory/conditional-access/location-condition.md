@@ -1,5 +1,5 @@
 ---
-title: Quais são as condições de localização no acesso condicional do Active Directory do Azure? | Microsoft Docs
+title: O que é a condição de localização no acesso condicional do Azure Active Directory? | Microsoft Docs
 description: Saiba como usar a condição de localização para controlar o acesso aos seus aplicativos na nuvem com base no local de rede de um usuário.
 services: active-directory
 ms.service: active-directory
@@ -12,16 +12,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98588e0c25439fd4988fe39e06e7042cfa9113cb
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 886118614427bea61f745e1ded28824b60225919
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66305674"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112305"
 ---
-# <a name="what-is-the-location-condition-in-azure-active-directory-conditional-access"></a>Quais são as condições de localização no acesso condicional do Active Directory do Azure? 
+# <a name="what-is-the-location-condition-in-azure-active-directory-conditional-access"></a>O que é a condição de localização no acesso condicional do Azure Active Directory? 
 
-Com o [acesso condicional do Azure AD (Azure Active Directory)](../active-directory-conditional-access-azure-portal.md), você pode controlar como os usuários autorizados podem acessar seus aplicativos na nuvem. A condição de localização de uma política de acesso condicional permite que você ligue as configurações de controle de acesso para os locais de rede dos usuários.
+Com o [acesso condicional do Azure Active Directory (Azure AD)](../active-directory-conditional-access-azure-portal.md), você pode controlar como os usuários autorizados podem acessar seus aplicativos de nuvem. A condição de localização de uma política de acesso condicional permite que você ligue as configurações de controles de acesso para os locais de rede dos seus usuários.
 
 Este artigo fornece as informações necessárias para configurar a condição de localização.
 
@@ -38,7 +38,7 @@ Um local é um rótulo para um local de rede que representa um local nomeado ou 
 
 Com localizações nomeadas, você pode criar agrupamentos lógicos de intervalos de endereços IP ou países e regiões.
 
-Você pode acessar suas localizações nomeadas na seção **Gerenciar** da página de acesso condicional.
+Você pode acessar suas localizações nomeadas na **gerenciar** seção da página de acesso condicional.
 
 ![Localizações nomeadas no acesso condicional](./media/location-condition/02.png)
 
@@ -52,7 +52,7 @@ A localização nomeada tem os seguintes componentes:
    > [!NOTE]
    > Rangess de endereço IPv6 no momento, não pode ser incluído em uma localização nomeada. Esse intervalos de IPv6 de measn não podem ser excluídos da política de acesso condicional.
 
-- **Marcar como local confiável** – Um sinalizador que você pode definir para uma localização nomeada indicar um local confiável. Normalmente, os locais confiáveis são áreas de rede controladas pelo departamento de TI. Além de acesso condicional, localizações nomeadas confiáveis também são usadas por relatórios de segurança de proteção de identidade do Azure e do Microsoft Azure AD para reduzir [falsos positivos](../reports-monitoring/concept-risk-events.md#impossible-travel-to-atypical-locations-1).
+- **Marcar como local confiável** – Um sinalizador que você pode definir para uma localização nomeada indicar um local confiável. Normalmente, os locais confiáveis são áreas de rede controladas pelo departamento de TI. Além do acesso condicional, localizações nomeadas confiáveis também são usadas pelos relatórios de segurança do Azure Identity Protection e o Azure AD para reduzir [falsos positivos](../reports-monitoring/concept-risk-events.md#impossible-travel-to-atypical-locations-1).
 - **Países/regiões** - esta opção permite que você selecione um ou mais países ou regiões para definir uma localização nomeada.
 - **Incluir áreas desconhecidas** -alguns endereços IP não são mapeados para um país ou região específica. Esta opção permite que você escolha se esses endereços IP devem ser incluídos na localização nomeada. Use essa configuração quando a política usando a localização nomeada deve aplicar-se a localizações desconhecidas.
 
@@ -73,7 +73,7 @@ Se você tiver o recurso IPs confiáveis configurados, eles aparecem como **IPS 
 
 ### <a name="skipping-multi-factor-authentication"></a>Ignorando a autenticação multifator
 
-Na página de configurações do serviço de autenticação multifator, você pode identificar os usuários da Intranet corporativa selecionando **Ignorar autenticação multifator para solicitações de usuários federados na minha Intranet**. Essa configuração indica que a declaração de rede corporativa interna, que é emitida pelo AD FS, deve ser confiável e usada para identificar o usuário como estando na rede corporativa. Para obter mais informações, consulte [Habilitar o recurso de IPs confiáveis por meio do acesso condicional](../authentication/howto-mfa-mfasettings.md#enable-the-trusted-ips-feature-by-using-conditional-access).
+Na página de configurações do serviço de autenticação multifator, você pode identificar os usuários da Intranet corporativa selecionando **Ignorar autenticação multifator para solicitações de usuários federados na minha Intranet**. Essa configuração indica que a declaração de rede corporativa interna, que é emitida pelo AD FS, deve ser confiável e usada para identificar o usuário como estando na rede corporativa. Para obter mais informações, consulte [habilitar o recurso IPs confiáveis usando o acesso condicional](../authentication/howto-mfa-mfasettings.md#enable-the-trusted-ips-feature-by-using-conditional-access).
 
 Depois de marcar essa opção, incluindo a localização nomeada **IPS confiáveis de MFA** serão aplicadas a todas as políticas com essa opção selecionada.
 
@@ -141,9 +141,9 @@ Quando um proxy na nuvem está em uso, uma política que é usada para solicitar
 
 ### <a name="api-support-and-powershell"></a>Suporte à API e PowerShell
 
-Ainda não há suporte para API e PowerShell para localizações nomeadas ou políticas de acesso condicional.
+API e PowerShell ainda não é suportado para localizações nomeadas ou políticas de acesso condicional.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Se você quiser saber como configurar uma política de acesso condicional, consulte [Exigir MFA para aplicativos específicos com acesso condicional do Azure Active Directory](app-based-mfa.md).
-- Se você estiver pronto para configurar políticas de acesso condicional para seu ambiente, confira as [melhores práticas para o acesso condicional no Azure Active Directory](best-practices.md).
+- Se você quiser saber como configurar uma política de acesso condicional, consulte [exigir MFA para aplicativos específicos com acesso condicional do Azure Active Directory](app-based-mfa.md).
+- Se você estiver pronto para configurar políticas de acesso condicional para o seu ambiente, consulte a [práticas recomendadas para acesso condicional no Azure Active Directory](best-practices.md).

@@ -1,6 +1,6 @@
 ---
-title: Migrar uma Instância do SQL Server para uma Instância Gerenciada do Banco de Dados SQL do Azure | Microsoft Docs
-description: Saiba como migrar uma Instância do SQL Server para uma Instância Gerenciada do Banco de Dados SQL do Azure.
+title: Migrar o banco de dados da instância do SQL Server para o banco de dados SQL - instância gerenciada | Microsoft Docs
+description: Saiba como migrar um banco de dados da instância do SQL Server para o banco de dados SQL - instância gerenciada.
 services: sql-database
 ms.service: sql-database
 ms.subservice: migration
@@ -12,12 +12,12 @@ ms.author: bonova
 ms.reviewer: douglas, carlrab
 manager: craigg
 ms.date: 02/11/2019
-ms.openlocfilehash: 1460b595e8887fc932d5be335ae51b07a000b9fb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9fe6ab797eaa325ad802702e95f5a0e5b8e4fef4
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61315516"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070420"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Migração de uma Instância do SQL Server para uma Instância Gerenciada do Banco de Dados SQL do Azure
 
@@ -46,14 +46,37 @@ Se houver problemas de bloqueio relatados que não foram removidos com a opção
 
 - Se você precisar de acesso direto ao sistema operacional ou ao sistema de arquivos, por exemplo, para instalar agentes personalizados ou de terceiros na mesma máquina virtual com o SQL Server.
 - Se você tiver uma dependência estrita de recursos que ainda não têm suporte, como transações entre instâncias, PolyBase e FileStream/FileTable.
-- Se for absolutamente necessário permanecer em uma versão específica do SQL Server (2012, por instância).
+- Se absolutamente necessário permanecer em uma versão específica do SQL Server (2012, por exemplo).
 - Se os requisitos de computação forem muito menores do que o oferecido pela instância gerenciada (um vCore, por exemplo) e a fusão de banco de dados não for uma opção aceitável.
+
+Se você tiver resolvido todos os identificados bloqueadores de migração e continuar a migração para a instância gerenciada, observe que algumas das alterações podem afetar o desempenho da carga de trabalho:
+- Modelo de recuperação completa obrigatório e o agendamento de backup automatizado regular podem afetar o desempenho de sua carga de trabalho ou ações de manutenção/ETL se você tiver usado o modelo simples/bulk-logged periodicamente ou interrompidos backups sob demanda.
+- Servidor ou banco de dados nível configurações diferentes, como sinalizadores de rastreamento ou níveis de compatibilidade
+- Novos recursos que você está usando, como grupos de failover automático ou de criptografia de banco de dados transparente (TDE) podem afetar o uso da CPU e e/s.
+
+Gerenciado instância garantia de 99,99% de disponibilidade até mesmo em cenários críticos, portanto, a sobrecarga causada por esses recursos não pode ser desabilitada. Para obter mais informações, consulte [as causas raiz que podem causar desempenho diferente no SQL Server e instância gerenciada](https://azure.microsoft.com/blog/key-causes-of-performance-differences-between-sql-managed-instance-and-sql-server/).
+
+### <a name="create-performance-baseline"></a>Criar linha de base de desempenho
+
+Se você precisar comparar o desempenho da carga de trabalho na instância gerenciada com sua carga de trabalho original em execução no SQL Server, você precisaria criar uma linha de base de desempenho que será usada para comparação. Estes são alguns dos parâmetros que você precisaria de medidas em sua instância do SQL Server: 
+- [Monitorar o uso de CPU em sua instância do SQL Server](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Monitor-CPU-usage-on-SQL-Server/ba-p/680777#M131) e registre a média e de pico de uso da CPU.
+- [Monitorar o uso de memória na instância do SQL Server](https://docs.microsoft.com/sql/relational-databases/performance-monitor/monitor-memory-usage) e determinar a quantidade de memória usada por componentes diferentes, como o pool de buffers, cache, o pool de repositório de coluna do plano [OLTP na memória](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/monitor-and-troubleshoot-memory-usage?view=sql-server-2017), etc. Além disso, você deve encontrar os valores médios e de pico de contador de desempenho de memória de expectativa de vida da página.
+- Monitorar o uso de e/s de disco em que a instância de SQL Server de origem usando [DM io_virtual_file_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql) modo de exibição ou [contadores de desempenho](https://docs.microsoft.com/sql/relational-databases/performance-monitor/monitor-disk-usage).
+- Monitorar o desempenho de consulta e a carga de trabalho ou sua instância do SQL Server examinando exibições de gerenciamento dinâmico ou consulta Store se você estiver migrando da versão do SQL Server 2016 +. Identificar duração média e o uso da CPU das consultas mais importantes na sua carga de trabalho para compará-los com as consultas que estão executando na instância gerenciada.
+
+> [!Note]
+> Se você perceber algum problema com sua carga de trabalho do SQL Server, como uso elevado da CPU, pressão de memória constante, tempdb ou parametrização problemas, você deve tentar resolvê-los em sua instância do SQL Server de origem antes de colocar a linha de base e a migração. Migrando Conheça os problemas para qualquer novo migh de sistema causam resultados inesperados e invalidam qualquer comparação de desempenho.
+
+Como resultado dessa atividade deve documentar média e valores de pico de CPU, memória e uso de e/s em seu sistema de origem, bem como duração média e máxima e uso da CPU do dominante e as consultas mais importantes em sua carga de trabalho. Você deve usar esses valores posteriormente para comparar o desempenho da carga de trabalho na instância gerenciada com o desempenho de linha de base da carga de trabalho no SQL Server de origem.
 
 ## <a name="deploy-to-an-optimally-sized-managed-instance"></a>Implantar em uma instância gerenciada de tamanho ideal
 
-A instância gerenciada é adaptada para cargas de trabalho locais cuja movimentação para a nuvem é planejada. Ela introduz um [novo modelo de compra](sql-database-service-tiers-vcore.md) que oferece maior flexibilidade na seleção do nível certo de recursos para as cargas de trabalho. No ambiente local, você provavelmente está acostumado a dimensionar essas cargas de trabalho usando núcleos físicos e largura de banda de E/S. O modelo de compra para a instância gerenciada baseia-se em núcleos virtuais, ou “vCores”, com armazenamento adicional e E/S disponíveis separadamente. O modelo vCore é uma maneira mais simples de compreender os requisitos de computação na nuvem em relação ao que você utiliza no local atualmente. Esse novo modelo permite que você dimensione adequadamente o ambiente de destino na nuvem.
+A instância gerenciada é adaptada para cargas de trabalho locais cuja movimentação para a nuvem é planejada. Ela introduz um [novo modelo de compra](sql-database-service-tiers-vcore.md) que oferece maior flexibilidade na seleção do nível certo de recursos para as cargas de trabalho. No ambiente local, você provavelmente está acostumado a dimensionar essas cargas de trabalho usando núcleos físicos e largura de banda de E/S. O modelo de compra para a instância gerenciada baseia-se em núcleos virtuais, ou “vCores”, com armazenamento adicional e E/S disponíveis separadamente. O modelo vCore é uma maneira mais simples de compreender os requisitos de computação na nuvem em relação ao que você utiliza no local atualmente. Esse novo modelo permite que você dimensione adequadamente o ambiente de destino na nuvem. Algumas diretrizes gerais que podem ajudar você a escolher a camada de serviço certa e as características são descritas aqui:
+- [Monitorar o uso de CPU em sua instância do SQL Server](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Monitor-CPU-usage-on-SQL-Server/ba-p/680777#M131) e seleção quanto você usa atualmente (usando exibições de gerenciamento dinâmico, o SQL Server Management Studio ou outras ferramentas de monitoramento) de potência de computação. Você pode provisionar uma instância gerenciada que corresponde ao número de núcleos que você está usando no SQL Server, tendo em mente que talvez precisem ser dimensionados de acordo com características de CPU [características da VM em que a instância gerenciada está instalada](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-resource-limits#hardware-generation-characteristics).
+- Verifique a quantidade de memória disponível em sua instância do SQL Server e, em seguida, escolha [a camada de serviço que tem memória correspondente](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-resource-limits#hardware-generation-characteristics). Seria útil medir a expectativa de vida da página na instância do SQL Server para determinar [precisa de mais memória](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Do-you-need-more-memory-on-Azure-SQL-Managed-Instance/ba-p/563444).
+- Medir a latência de e/s do subsistema de arquivo para escolher entre as camadas de serviço de uso geral e comercialmente crítico.
 
-É possível selecionar recursos de armazenamento e computação em tempo de implantação e, depois, alterá-lo posteriormente sem introduzir o tempo de inatividade para o aplicativo usando o [portal do Azure](sql-database-scale-resources.md):
+Você pode escolher a computação e recursos de armazenamento na implantação de tempo e, em seguida, alteração-lo posteriormente sem introduzir tempo de inatividade para seu aplicativo usando o [portal do Azure](sql-database-scale-resources.md):
 
 ![dimensionamento da instância gerenciada](./media/sql-database-managed-instance-migration/managed-instance-sizing.png)
 
@@ -111,18 +134,52 @@ Para obter um Início Rápido que mostra como restaurar um backup de banco de da
 
 > [!VIDEO https://www.youtube.com/embed/RxWYojo_Y3Q]
 
+
 ## <a name="monitor-applications"></a>Monitorar aplicativos
 
-Acompanhe o comportamento e desempenho do aplicativo após a migração. Na instância gerenciada, algumas alterações são habilitadas somente quando o [nível de compatibilidade do banco de dados é alterado](https://docs.microsoft.com/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database). A migração de banco de dados para o Banco de Dados SQL do Azure mantém o nível de compatibilidade original na maioria dos casos. Se o nível de compatibilidade de um banco de dados de usuário fosse 100 ou superior antes da migração, ele permaneceria o mesmo após a migração. Se o nível de compatibilidade de um banco de dados de usuário era 90 antes da migração, no banco de dados atualizado, o nível de compatibilidade é definido como 100, que é o nível de compatibilidade mais baixo compatível com a instância gerenciada. O nível de compatibilidade dos bancos de dados do sistema é 140.
+Depois de concluir a migração para a instância gerenciada, você deve controlar o comportamento do aplicativo e o desempenho da carga de trabalho. Esse processo inclui as seguintes atividades:
+- [Comparar o desempenho da carga de trabalho em execução na instância gerenciada](#compare-performance-with-the-baseline) com o [linha de base de desempenho que você criou no SQL Server de origem](#create-performance-baseline).
+- Continuamente [monitorar o desempenho da carga de trabalho](#monitor-performance) para identificar possíveis problemas e melhoria.
 
-Para reduzir os riscos de migração, altere o nível de compatibilidade do banco de dados somente após o monitoramento do desempenho. Utilize o Repositório de Dados de Consultas como ferramenta ideal para obter informações sobre o desempenho da carga de trabalho, antes e após alterar o nível de compatibilidade do banco de dados, conforme explicado em [Manter a estabilidade do desempenho durante a atualização para a versão mais recente do SQL Server](https://docs.microsoft.com/sql/relational-databases/performance/query-store-usage-scenarios#CEUpgrade).
+### <a name="compare-performance-with-the-baseline"></a>Comparar o desempenho com a linha de base
 
-Quando estiver em uma plataforma totalmente gerenciada, aproveite as vantagens que são fornecidas automaticamente como parte do serviço de Banco de Dados SQL. Por exemplo, não é necessário criar backups na instância gerenciada – o serviço faz backups para você automaticamente. Não é mais necessário preocupar-se com agendamento, execução e gerenciamento de backups. A instância gerenciada fornece a capacidade de restauração para qualquer momento no período de retenção usando o [PITR (Recuperação Pontual)](sql-database-recovery-using-backups.md#point-in-time-restore). Além disso, não é necessário preocupar-se com a configuração de alta disponibilidade, pois a [alta disponibilidade](sql-database-high-availability.md) é interna.
+A primeira atividade que você precisa executar imediatamente após a migração bem-sucedida é comparar o desempenho da carga de trabalho com o desempenho da carga de trabalho de linha de base. O objetivo dessa atividade é confirmar que o desempenho de carga de trabalho em sua instância gerenciada atende às suas necessidades. 
 
-Para fortalecer a segurança, considere utilizar alguns dos recursos disponíveis:
+Migração de banco de dados para a instância gerenciada mantém as configurações de banco de dados e seu nível de compatibilidade original na maioria dos casos. As configurações originais são preservadas sempre que possível para reduzir o risco de algumas degradações de desempenho em comparação comparada o SQL Server de origem. Se o nível de compatibilidade de um banco de dados de usuário fosse 100 ou superior antes da migração, ele permaneceria o mesmo após a migração. Se o nível de compatibilidade de um banco de dados de usuário era 90 antes da migração, no banco de dados atualizado, o nível de compatibilidade é definido como 100, que é o nível de compatibilidade mais baixo compatível com a instância gerenciada. O nível de compatibilidade dos bancos de dados do sistema é 140. Uma vez que a migração para a instância gerenciada, na verdade, está migrando para a versão mais recente do mecanismo de banco de dados do SQL Server, você deve estar ciente de que você precisa testar novamente o desempenho da carga de trabalho para evitar alguns problemas de desempenho surpreendente.
 
-- Autenticação do Azure Active Directory no nível do banco de dados
-- Use [recursos de segurança avançados](sql-database-security-overview.md), como [Auditoria](sql-database-managed-instance-auditing.md), [Detecção de Ameaças](sql-database-advanced-data-security.md), [Segurança em Nível de Linha](https://docs.microsoft.com/sql/relational-databases/security/row-level-security) e [Máscara de Dados Dinâmicos](https://docs.microsoft.com/sql/relational-databases/security/dynamic-data-masking), para proteger sua instância.
+Como pré-requisito, certifique-se de que você tenha concluído as seguintes atividades:
+- Alinhe as configurações na instância gerenciada com as configurações da instância do SQL Server de origem investigando vários instância, banco de dados, configurações de tempdb e configurações. Certifique-se de que você não alterou as configurações, como níveis de compatibilidade ou criptografia antes de executar a comparação de desempenho do primeiro ou aceitar o risco de que alguns dos novos recursos que você habilitou podem afetar algumas consultas. Para reduzir os riscos de migração, altere o nível de compatibilidade do banco de dados somente após o monitoramento do desempenho.
+- Implemente [diretrizes de práticas recomendadas do armazenamento de finalidade geral](https://techcommunity.microsoft.com/t5/DataCAT/Storage-performance-best-practices-and-considerations-for-Azure/ba-p/305525) como pré-alocando o tamanho dos arquivos para obter o melhor desempenho.
+- Saiba mais sobre o [as principais diferenças de ambiente que podem fazer com que as diferenças de desempenho entre a instância gerenciada e SQL Server]( https://azure.microsoft.com/blog/key-causes-of-performance-differences-between-sql-managed-instance-and-sql-server/) e identificar os riscos que podem afetar o desempenho.
+- Certifique-se de que você mantenha habilitado Store de consulta e o ajuste automático em sua instância gerenciada. Esses recursos permitem que você medir o desempenho da carga de trabalho e corrigir automaticamente os problemas potenciais de desempenho. Saiba como usar consulta Store como uma ferramenta ideal para obter informações sobre o desempenho da carga de trabalho antes e após a alteração de nível de compatibilidade de banco de dados, conforme explicado em [manter a estabilidade do desempenho durante a atualização para a versão mais recente do SQL Server](https://docs.microsoft.com/sql/relational-databases/performance/query-store-usage-scenarios#CEUpgrade).
+Depois de preparar o ambiente que é comparável tanto quanto possível com o seu ambiente local, você pode começar a executar sua carga de trabalho e medir o desempenho. Processo de medição deve incluir os mesmos parâmetros que você medido [enquanto cria o desempenho de linha de base de suas medidas de carga de trabalho no SQL Server de origem](#create-performance-baseline).
+Como resultado, você deve comparar os parâmetros de desempenho com a linha de base e identificar diferenças críticas.
+
+> [!NOTE]
+> Em muitos casos, não seria capaz de obter desempenho exatamente correspondente na instância gerenciada e SQL Server. A instância gerenciada é um mecanismo de banco de dados do SQL Server, mas a infraestrutura e a configuração de alta disponibilidade na instância gerenciada podem introduzir alguma diferença. Você pode esperar que algumas consultas seria mais rápidas enquanto outro pode ser mais lento. O objetivo de comparação é verificar se o desempenho da carga de trabalho na instância gerenciada corresponde o desempenho no SQL Server (em média) e identificar existem todas as consultas críticas com o desempenho que não coincidem com o desempenho do original.
+
+O resultado da comparação de desempenho pode ser:
+- Desempenho da carga de trabalho na instância gerenciada é alinhado ou melhor que o desempenho da carga de trabalho no SQL Server. Nesse caso você tenha confirmado com êxito que a migração seja bem-sucedida.
+- Maioria dos parâmetros de desempenho e as consultas no trabalho de carga de trabalho muito bem, com algumas exceções com degradação de desempenho. Nesse caso, você precisaria identificar as diferenças e sua importância. Se houver algumas consultas importantes com degradação de desempenho, você deve investigar são alterados de planos de SQL subjacentes ou as consultas estão atingindo alguns limites de recursos. Nesse caso, mitigação pode ser aplicar algumas dicas nas consultas essenciais (por exemplo alterados nível de compatibilidade, o avaliador de cardinalidade herdada) seja diretamente ou usando guias de plano, recompilar ou criar índices que podem afetar os planos e estatísticas. 
+- A maioria das consultas é mais lenta na instância gerenciada, em comparação com o SQL Server de origem. Nesse caso, tente identificar as causas raiz da diferença como [atingir um limite de recurso]( sql-database-managed-instance-resource-limits.md#instance-level-resource-limits) como limites de e/s, o limite de memória, o limite de taxa de log de instância, etc. Se não há nenhum limite de recursos que pode causar a diferença, tente alterar o nível de compatibilidade do banco de dados ou alterar as configurações de banco de dados, como a estimativa de cardinalidade herdada e inicie novamente o teste. Examine as recomendações fornecidas por modos de exibição de instância gerenciada ou Store de consulta para identificar as consultas com regressão recente de desempenho.
+
+> [!IMPORTANT]
+> A instância gerenciada tem o recurso de correção de plano automático interno que é habilitado por padrão. Esse recurso garante que consultas que funcionaram bem em Colar seriam prejudicam no futuro. Certifique-se de que esse recurso está habilitado e que foram executadas a tempo suficiente de carga de trabalho com as configurações antigas antes de alterar as novas configurações para habilitar a instância gerenciada saber mais sobre o desempenho de linha de base e os planos.
+
+Faça a alteração dos parâmetros ou atualizar as camadas de serviço para convergir para a configuração ideal, até que você obtenha o desempenho da carga de trabalho que atende às suas necessidades.
+
+### <a name="monitor-performance"></a>Monitorar o desempenho
+
+Depois que você estiver usando uma plataforma totalmente gerenciada e você verificou que o desempenho de carga de trabalho forem correspondentes desempenho da carga de trabalho do SQL Server, aproveite as vantagens que são fornecidas automaticamente como parte do serviço de banco de dados SQL. 
+
+Mesmo se você não faça algumas alterações na instância gerenciada durante a migração, há chances de alta transformaria em alguns dos novos recursos enquanto estiver operando sua instância para aproveitar um os aprimoramentos mais recentes de mecanismo de banco de dados. Algumas alterações são habilitadas somente quando o [nível de compatibilidade do banco de dados foi alterado](https://docs.microsoft.com/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database).
+
+
+Por exemplo, não é necessário criar backups na instância gerenciada – o serviço faz backups para você automaticamente. Não é mais necessário preocupar-se com agendamento, execução e gerenciamento de backups. A instância gerenciada fornece a capacidade de restauração para qualquer momento no período de retenção usando o [PITR (Recuperação Pontual)](sql-database-recovery-using-backups.md#point-in-time-restore). Além disso, não é necessário preocupar-se com a configuração de alta disponibilidade, pois a [alta disponibilidade](sql-database-high-availability.md) é interna.
+
+Para aumentar a segurança, considere o uso de [autenticação do Azure Active Directory](sql-database-security-overview.md), [auditoria](sql-database-managed-instance-auditing.md), [detecção de ameaças](sql-database-advanced-data-security.md), [desegurançaemníveldelinha](https://docs.microsoft.com/sql/relational-databases/security/row-level-security), e [mascaramento de dados dinâmicos](https://docs.microsoft.com/sql/relational-databases/security/dynamic-data-masking) ).
+
+Além de gerenciamento avançado e recursos de segurança, a instância gerenciada fornece um conjunto de ferramentas avançadas que podem ajudar você a [monitorar e ajustar sua carga de trabalho](sql-database-monitor-tune-overview.md). [Análise do SQL Azure](https://docs.microsoft.com/azure/azure-monitor/insights/azure-sql) permite monitorar um grande conjunto de instâncias gerenciadas e centralizar o monitoramento de um grande número de instâncias e bancos de dados. [O ajuste automático](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning#automatic-plan-correction) na instância gerenciada monitorar continuamente o desempenho de suas estatísticas de execução do plano SQL e corrigir automaticamente os problemas de desempenho identificados.
 
 ## <a name="next-steps"></a>Próximas etapas
 

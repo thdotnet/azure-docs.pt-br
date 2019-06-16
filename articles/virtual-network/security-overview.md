@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/26/2018
 ms.author: malop;kumud
-ms.openlocfilehash: 751a3a940dad74cbc8c7343ee70309736b381d5b
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: ee976f163bdb00511e2a8f85906aa59aaebbfa47
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66478875"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056548"
 ---
 # <a name="security-groups"></a>Grupos de segurança
 <a name="network-security-groups"></a>
@@ -81,6 +81,7 @@ As regras de segurança aumentada simplificam a definição de segurança para r
 * **ServiceFabric** (somente Resource Manager): Essa tag indica os prefixos de endereço do serviço ServiceFabric. Se você especificar *ServiceFabric* para o valor, o tráfego será permitido ou negado para o ServiceFabric. 
 * **AzureMachineLearning** (somente Resource Manager): Essa tag indica os prefixos de endereço do serviço AzureMachineLearning. Se você especificar *AzureMachineLearning* para o valor, o tráfego será permitido ou negado para o AzureMachineLearning. 
 * **BatchNodeManagement** (somente Resource Manager): Essa marca denota os prefixos de endereço do serviço Azure BatchNodeManagement. Se você especificar *BatchNodeManagement* para o valor, o tráfego é permitido ou negado do serviço do lote em nós de computação.
+* **AzureBackup**(somente Resource Manager): essa marca denota os prefixos de endereço do serviço AzureBackup. Se você especificar AzureBackup para o valor, o tráfego é permitido ou negado para AzureBackup.
 
 > [!NOTE]
 > Marcas de serviço dos serviços do Microsoft Azure indicam os prefixos de endereço da nuvem específica que está sendo usada. 

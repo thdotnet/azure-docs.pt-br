@@ -11,10 +11,10 @@ ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 85a4aca0c4b80eaab1f43bcbec33dc9cf37aa655
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65950106"
 ---
 # <a name="tasks-for-a-group-manager-on-a-data-science-team-project"></a>Tarefas para um gerente do grupo em um projeto de equipe de ciência de dados
@@ -86,7 +86,7 @@ Depois de entrar, clique em **Criar Nova Conta** no canto superior direito, conf
 Preencha as informações para o Azure DevOps Services que você deseja criar no assistente **Criar sua conta** com os seguintes valores:
 
 - **URL do Servidor**: Substitua *mysamplegroup* pelo seu próprio *nome do servidor*. A URL do servidor será: *https://\<servername\>.visualstudio.com*.
-- **Gerenciar código usando:** Selecione **_Git_**.
+- **Gerenciar código usando:** Selecione **_Git_** .
 - **Nome do projeto:** Insira *GroupCommon*.
 - **Organizar o trabalho usando:** Escolha *Agile*.
 - **Hospedar os projetos em:** Escolha uma localização geográfica. Neste exemplo, escolhemos *Centro-Sul dos EUA*.

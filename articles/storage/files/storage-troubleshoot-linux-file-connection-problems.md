@@ -9,18 +9,51 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 0a6b48dbba232c06945b00d5107581d8d0c017b0
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 9c08cd52bba6391660bc5f28e5db2dbec1126951
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66472420"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67118721"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Solucionar problemas de Arquivos do Azure no Linux
 
 Este artigo lista os problemas comuns relacionados aos Arquivos do Azure quando você se conecta de clientes Linux. Também fornece as possíveis causas e resoluções para esses problemas. 
 
 Além das etapas de solução de problemas deste artigo, você pode usar [AzFileDiagnostics](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-02184089) para garantir que o cliente Linux tenha pré-requisitos corretos. O AzFileDiagnostics automatiza a detecção da maioria dos sintomas mencionados neste artigo. Isso ajuda a configurar seu ambiente para obter um desempenho ideal. Você também pode encontrar essas informações na solução de problemas do [Compartilhamento de arquivos do Azure](https://support.microsoft.com/help/4022301/troubleshooter-for-azure-files-shares). A solução de problemas fornece etapas para ajudá-lo com problemas de conexão, o mapeamento e montar os compartilhamentos de arquivos do Azure.
+
+## <a name="cannot-connect-to-or-mount-an-azure-file-share"></a>Não é possível se conectar a ou montar um compartilhamento de arquivos do Azure
+
+### <a name="cause"></a>Causa
+
+Causas comuns para esse problema são:
+
+- Você está usando um cliente de distribuição Linux incompatível. Recomendamos que você use as seguintes distribuições do Linux para se conectar a um compartilhamento de arquivos do Azure:
+
+|   | SMB 2.1 <br>(Montagens em VMs na mesma região do Azure) | SMB 3.0 <br>(Montagens de local e entre regiões) |
+| --- | :---: | :---: |
+| Ubuntu Server | 14.04+ | 16.04+ |
+| RHEL | 7+ | 7.5+ |
+| CentOS | 7+ |  7.5+ |
+| Debian | 8+ |   |
+| openSUSE | 13.2+ | 42.3+ |
+| SUSE Linux Enterprise Server | 12 | 12 SP3+ |
+
+- Os utilitários CIFS (cfs-utils) não estão instalados no cliente.
+- A versão mínima do SMB / CIFS, 2.1, não está instalada no cliente.
+- A criptografia SMB 3.0 não é suportada no cliente. A tabela anterior fornece uma lista de distribuições do Linux que suporte a montagem de local e entre regiões usando a criptografia. Outras distribuições requerem o kernel 4.11 e versões posteriores.
+- Você está tentando se conectar a uma conta de armazenamento pela porta TCP 445, que não é suportada.
+- Você está tentando se conectar a um compartilhamento de arquivos do Azure de uma VM do Azure, e a VM não está na mesma região que a conta de armazenamento.
+- Se a configuração [Transferência segura necessária]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) estiver ativada na conta de armazenamento, os Arquivos do Azure só permitirão conexões que usem o SMB 3.0 com criptografia.
+
+### <a name="solution"></a>Solução
+
+Para resolver o problema, use o [ferramenta de solução de problemas para os arquivos do Azure erros de montagem no Linux](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-02184089). Essa ferramenta:
+
+* Ajuda a validar o ambiente de execução de cliente.
+* Detecta a configuração de cliente incompatível que causaria falha de acesso para arquivos do Azure.
+* Dá orientação prescritiva sobre auto-fixação.
+* Coleta os rastreamentos de diagnóstico.
 
 <a id="mounterror13"></a>
 ## <a name="mount-error13-permission-denied-when-you-mount-an-azure-file-share"></a>"Error de montagem(13): Permissão negada" quando você monta um compartilhamento de arquivos do Azure
@@ -55,9 +88,11 @@ No Linux, você recebe uma mensagem de erro semelhante à seguinte:
 
 Você atingiu o limite máximo de identificadores abertos simultâneos permitidos para um arquivo.
 
+Há uma cota de 2.000 identificadores abertos em um único arquivo. Quando você tem 2.000 identificadores abertos, uma mensagem de erro é exibida informando que a cota foi atingida.
+
 ### <a name="solution"></a>Solução
 
-Reduza o número de identificadores abertos simultâneos fechando alguns deles e repita a operação. Para obter mais informações, consulte [Lista de verificação de desempenho e escalabilidade do Armazenamento do Microsoft Azure](../common/storage-performance-checklist.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
+Reduza o número de identificadores abertos simultâneos fechando alguns deles e repita a operação.
 
 <a id="slowfilecopying"></a>
 ## <a name="slow-file-copying-to-and-from-azure-files-in-linux"></a>Cópia de arquivos bidirecional lenta dos Arquivos do Azure no Linux
@@ -66,36 +101,12 @@ Reduza o número de identificadores abertos simultâneos fechando alguns deles e
 - Se você sabe o tamanho final de um arquivo que está sendo estendido usando gravações, e seu software não apresenta problemas de compatibilidade quando uma cauda não escrita no arquivo contém zeros, defina o tamanho do arquivo antecipadamente em vez de tornar cada gravação estendendo a gravação.
 - Use o método de cópia correto:
     - Use o [AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) para todas as transferências entre dois compartilhamentos de arquivo.
-    - Use o [Robocopy](https://blogs.msdn.microsoft.com/granth/2009/12/07/multi-threaded-robocopy-for-faster-copies/) entre compartilhamentos de arquivos e um computador local.
-
-<a id="error112"></a>
-## <a name="mount-error112-host-is-down-because-of-a-reconnection-time-out"></a>"Erro de montagem(112): o host está inativo" devido a um tempo limite de reconexão
-
-Um erro de montagem “112” ocorre no cliente Linux quando o cliente ficou ocioso por um longo período. Após um tempo ocioso estendido, o cliente se desconecta e a conexão atinge o tempo limite.  
-
-### <a name="cause"></a>Causa
-
-A conexão pode ficar ociosa pelos seguintes motivos:
-
--   Falhas de comunicação de rede que impedem o restabelecimento de uma conexão TCP com o servidor quando a opção de montagem "soft" padrão é usada
--   Correções de reconexão recentes que não estão presentes nos kernels mais antigos
-
-### <a name="solution"></a>Solução
-
-Esse problema de reconexão no kernel do Linux agora foi corrigido como parte das seguintes alterações:
-
-- [Corrigir a reconexão para não adiar a sessão smb3 por muito tempo após a reconexão do soquete](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/fs/cifs?id=4fcd1813e6404dd4420c7d12fb483f9320f0bf93)
-- [Chamar o serviço de eco imediatamente após a reconexão do soquete](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b8c600120fc87d53642476f48c8055b38d6e14c7)
-- [CIFS: corrija uma possível corrupção de memória durante a reconexão](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=53e0e11efe9289535b060a51d4cf37c25e0d0f2b)
-- [CIFS: corrija um possível bloqueio duplo de mutex durante a reconexão (para kernel v4.9 e posterior)](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=96a988ffeb90dba33a71c3826086fe67c897a183)
-
-No entanto, essas alterações ainda podem não ter sido portadas para todas as distribuições do Linux. Esta correção e outras correções de reconexão estão nos seguintes kernels populares do Linux: 4.4.40, 4.8.16 e 4.9.1. Obtenha essa correção fazendo upgrade para uma dessas versões recomendadas de kernel.
-
-### <a name="workaround"></a>Solução alternativa
-
-Resolva esse problema especificando uma montagem rígida. Uma montagem rígida força o cliente a esperar até que uma conexão seja estabelecida ou até que seja explicitamente interrompida. Você pode usá-lo para evitar erros devido a tempos limite da rede. No entanto, essa solução alternativa pode causar esperas indefinidas. Esteja preparado para interromper conexões, conforme necessário.
-
-Se você não pode atualizar para as versões mais recentes do kernel, você pode contornar esse problema mantendo um arquivo no compartilhamento de arquivos do Azure que você grava a cada 30 segundos ou menos. Essa deve ser uma operação de gravação, como regravar a data de criação ou de modificação no arquivo. Caso contrário, você poderá obter resultados em cache e a operação poderá não disparar a reconexão.
+    - Usando cp com paralelo pode aumentar a velocidade de cópia, o número de threads depende do seu caso de uso e a carga de trabalho. Este exemplo usa seis: `find * -type f | parallel --will-cite -j 6 cp {} /mntpremium/ &`.
+    - Abra ferramentas de terceiros do código-fonte, como:
+        - [Paralelo de GNU](http://www.gnu.org/software/parallel/).
+        - [Fpart](https://github.com/martymac/fpart) - classifica os arquivos e empacota-los em partições.
+        - [Fpsync](https://github.com/martymac/fpart/blob/master/tools/fpsync) -Fpart usa e uma ferramenta de cópia gerar várias instâncias para migrar dados de src_dir para dst_url.
+        - [Várias](https://github.com/pkolano/mutil) -multithread de cp e md5sum com base em coreutils GNU.
 
 <a id="error115"></a>
 ## <a name="mount-error115-operation-now-in-progress-when-you-mount-azure-files-by-using-smb-30"></a>"Erro de montagem(115): a operação está em andamento" durante a montagem dos Arquivos do Azure usando o SMB 3.0
@@ -106,7 +117,7 @@ Algumas distribuições Linux ainda não suportam recursos de criptografia no SM
 
 ### <a name="solution"></a>Solução
 
-O recurso de criptografia para SMB 3.0 para Linux foi introduzido no kernel 4.11. Esse recurso permite a montagem de um compartilhamento de arquivos do Azure de local ou de uma região diferente do Azure. No momento da publicação deste artigo, essa funcionalidade foi retrocompatibilizada para o Ubuntu 17.04 e Ubuntu 16.10. 
+O recurso de criptografia para SMB 3.0 para Linux foi introduzido no kernel 4.11. Esse recurso permite a montagem de um compartilhamento de arquivos do Azure de local ou de uma região diferente do Azure. Essa funcionalidade está incluída nas distribuições de Linux listadas no [mínimo recomendado de versões com recursos de montagem correspondentes (vs versão 2.1 do SMB SMB versão 3.0)](storage-how-to-use-files-linux.md#minimum-recommended-versions-with-corresponding-mount-capabilities-smb-version-21-vs-smb-version-30). Outras distribuições requerem o kernel 4.11 e versões posteriores.
 
 Se o seu cliente SMB do Linux não oferecer suporte à criptografia, monte os arquivos do Azure usando o SMB 2.1 de uma VM do Azure Linux que esteja no mesmo datacenter do compartilhamento de arquivos. Verifique se a configuração [Transferência segura necessária]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) está desativada na conta de armazenamento. 
 
@@ -133,13 +144,13 @@ Verifique se regras de firewall e de rede virtual estão configuradas corretamen
 <a id="slowperformance"></a>
 ## <a name="slow-performance-on-an-azure-file-share-mounted-on-a-linux-vm"></a>Desempenho lento em um compartilhamento de arquivos do Azure montado em uma VM Linux
 
-### <a name="cause"></a>Causa
+### <a name="cause-1-caching"></a>Causa 1: Cache
 
-Uma possível causa da lentidão no desempenho é o cache desabilitado.
+Uma possível causa da lentidão no desempenho é o cache desabilitado. Armazenamento em cache pode ser útil que se você estiver acessando um arquivo repetidamente, caso contrário, ele pode ser uma sobrecarga. Verifique se você estiver usando o cache antes de desabilitá-lo.
 
-### <a name="solution"></a>Solução
+### <a name="solution-for-cause-1"></a>Solução para a causa 1
 
-Para verificar se o cache está desabilitado, procure a entrada **cache=** . 
+Para verificar se o cache está desabilitado, procure a entrada **cache=** .
 
 **Cache=none** indica que o cache está desabilitado. Remonte o compartilhamento usando o comando de montagem padrão ou adicionando explicitamente a opção **cache=strict** ao comando de montagem para garantir que o modo de cache padrão ou de cache “strict” seja habilitado.
 
@@ -154,6 +165,14 @@ Você também pode verificar se as opções corretas estão sendo usadas executa
 ```
 
 Se a opção **cache=strict** ou **serverino** não estiver presente, desmonte e monte os Arquivos do Azure novamente executando o comando de montagem da [documentação](../storage-how-to-use-files-linux.md). Em seguida, verifique novamente se a entrada **/etc/fstab** tem as opções corretas.
+
+### <a name="cause-2-throttling"></a>Causa 2: Limitação
+
+É possível que você está enfrentando limitação e suas solicitações estão sendo enviadas para uma fila. Você pode verificar isso, aproveitando [métricas de armazenamento do Azure no Azure Monitor](../common/storage-metrics-in-azure-monitor.md).
+
+### <a name="solution-for-cause-2"></a>Solução para a causa 2
+
+Verifique se seu aplicativo está dentro de [destinos de escala do arquivos do Azure](storage-files-scale-targets.md#azure-files-scale-targets).
 
 <a id="timestampslost"></a>
 ## <a name="time-stamps-were-lost-in-copying-files-from-windows-to-linux"></a>Os carimbos de data/hora foram perdidos durante a cópia de arquivos do Windows para o Linux
@@ -172,40 +191,6 @@ Use o usuário da conta de armazenamento para copiar os arquivos:
 - `Passwd [storage account name]`
 - `Su [storage account name]`
 - `Cp -p filename.txt /share`
-
-## <a name="cannot-connect-to-or-mount-an-azure-file-share"></a>Não é possível se conectar a ou montar um compartilhamento de arquivos do Azure
-
-### <a name="cause"></a>Causa
-
-Causas comuns para esse problema são:
-
-
-- Você está usando um cliente de distribuição Linux incompatível. Recomendamos que você use as seguintes distribuições do Linux para se conectar a um compartilhamento de arquivos do Azure:
-
-    |   | SMB 2.1 <br>(Montagens em VMs na mesma região do Azure) | SMB 3.0 <br>(Montagens de local e entre regiões) |
-    | --- | :---: | :---: |
-    | Ubuntu Server | 14.04+ | 16.04+ |
-    | RHEL | 7+ | 7.5+ |
-    | CentOS | 7+ |  7.5+ |
-    | Debian | 8+ |   |
-    | openSUSE | 13.2+ | 42.3+ |
-    | SUSE Linux Enterprise Server | 12 | 12 SP3+ |
-
-- Os utilitários CIFS (cfs-utils) não estão instalados no cliente.
-- A versão mínima do SMB / CIFS, 2.1, não está instalada no cliente.
-- A criptografia SMB 3.0 não é suportada no cliente. A criptografia SMB 3.0 está disponível no Ubuntu 16.4 e em versões posteriores, junto com o SUSE 12.3 e versões posteriores. Outras distribuições requerem o kernel 4.11 e versões posteriores.
-- Você está tentando se conectar a uma conta de armazenamento pela porta TCP 445, que não é suportada.
-- Você está tentando se conectar a um compartilhamento de arquivos do Azure de uma VM do Azure, e a VM não está na mesma região que a conta de armazenamento.
-- Se a configuração [Transferência segura necessária]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) estiver ativada na conta de armazenamento, os Arquivos do Azure só permitirão conexões que usem o SMB 3.0 com criptografia.
-
-### <a name="solution"></a>Solução
-
-Para resolver o problema, use o [ferramenta de solução de problemas para os arquivos do Azure erros de montagem no Linux](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-02184089). Essa ferramenta:
-
-* Ajuda a validar o ambiente de execução de cliente.
-* Detecta a configuração de cliente incompatível que causaria falha de acesso para arquivos do Azure.
-* Dá orientação prescritiva sobre auto-fixação.
-* Coleta os rastreamentos de diagnóstico.
 
 ## <a name="ls-cannot-access-ltpathgt-inputoutput-error"></a>Is: não é possível acessar "&lt;caminho&gt;": Erro de entrada/saída
 
@@ -248,6 +233,35 @@ sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <
 Em seguida, você pode criar links simbólicos como sugerido na [wiki](https://wiki.samba.org/index.php/UNIX_Extensions#Storing_symlinks_on_Windows_servers).
 
 [!INCLUDE [storage-files-condition-headers](../../../includes/storage-files-condition-headers.md)]
+
+<a id="error112"></a>
+## <a name="mount-error112-host-is-down-because-of-a-reconnection-time-out"></a>"Erro de montagem(112): o host está inativo" devido a um tempo limite de reconexão
+
+Um erro de montagem “112” ocorre no cliente Linux quando o cliente ficou ocioso por um longo período. Após um tempo ocioso estendido, o cliente se desconecta e a conexão atinge o tempo limite.  
+
+### <a name="cause"></a>Causa
+
+A conexão pode ficar ociosa pelos seguintes motivos:
+
+-   Falhas de comunicação de rede que impedem o restabelecimento de uma conexão TCP com o servidor quando a opção de montagem "soft" padrão é usada
+-   Correções de reconexão recentes que não estão presentes nos kernels mais antigos
+
+### <a name="solution"></a>Solução
+
+Esse problema de reconexão no kernel do Linux agora foi corrigido como parte das seguintes alterações:
+
+- [Corrigir a reconexão para não adiar a sessão smb3 por muito tempo após a reconexão do soquete](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/fs/cifs?id=4fcd1813e6404dd4420c7d12fb483f9320f0bf93)
+- [Chamar o serviço de eco imediatamente após a reconexão do soquete](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b8c600120fc87d53642476f48c8055b38d6e14c7)
+- [CIFS: corrija uma possível corrupção de memória durante a reconexão](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=53e0e11efe9289535b060a51d4cf37c25e0d0f2b)
+- [CIFS: corrija um possível bloqueio duplo de mutex durante a reconexão (para kernel v4.9 e posterior)](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=96a988ffeb90dba33a71c3826086fe67c897a183)
+
+No entanto, essas alterações ainda podem não ter sido portadas para todas as distribuições do Linux. Essa correção e outras correções de reconexão podem ser encontradas na [mínimo recomendado de versões com recursos de montagem correspondentes (vs versão 2.1 do SMB SMB versão 3.0)](storage-how-to-use-files-linux.md#minimum-recommended-versions-with-corresponding-mount-capabilities-smb-version-21-vs-smb-version-30) seção o [usar arquivos do Azure com Linux](storage-how-to-use-files-linux.md)artigo. Obtenha essa correção fazendo upgrade para uma dessas versões recomendadas de kernel.
+
+### <a name="workaround"></a>Solução alternativa
+
+Resolva esse problema especificando uma montagem rígida. Uma montagem rígida força o cliente a esperar até que uma conexão seja estabelecida ou até que seja explicitamente interrompida. Você pode usá-lo para evitar erros devido a tempos limite da rede. No entanto, essa solução alternativa pode causar esperas indefinidas. Esteja preparado para interromper conexões, conforme necessário.
+
+Se você não pode atualizar para as versões mais recentes do kernel, você pode contornar esse problema mantendo um arquivo no compartilhamento de arquivos do Azure que você grava a cada 30 segundos ou menos. Essa deve ser uma operação de gravação, como regravar a data de criação ou de modificação no arquivo. Caso contrário, você poderá obter resultados em cache e a operação poderá não disparar a reconexão.
 
 ## <a name="need-help-contact-support"></a>Precisa de ajuda? Entre em contato com o suporte.
 

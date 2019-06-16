@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 18e1bb486c47baf7648a74e31451e2db73f72250
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 23ba45804632163cc5de41ac2353091b7cf850c1
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65156854"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063184"
 ---
 # <a name="prepare-data-to-create-a-custom-voice"></a>Preparar dados para criar uma voz personalizadas
 
@@ -49,7 +49,7 @@ Você pode preparar gravações de declarações individuais e a transcrição c
 Para produzir uma fonte de voz BOM, crie as gravações em uma sala silenciosa com um microfone de alta qualidade. Volume consistente, falando em taxa de fala pitch e detectar expressivos gestos de fala são essenciais.
 
 > [!TIP]
-> Para criar uma voz para uso de produção, é recomendável utilizar um estúdio de gravação profissional e um talento de voz. Para mais informações, consulte [Como gravar amostras de voz para uma voz personalizada](https://review.docs.microsoft.com/azure/cognitive-services/speech-service/record-custom-voice-samples).
+> Para criar uma voz para uso de produção, é recomendável utilizar um estúdio de gravação profissional e um talento de voz. Para mais informações, consulte [Como gravar amostras de voz para uma voz personalizada](record-custom-voice-samples.md).
 
 ### <a name="audio-files"></a>Arquivos de áudio
 

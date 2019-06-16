@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/24/2018
 ms.author: lizross
 ms.custom: include file
-ms.openlocfilehash: 20eb51aea676db0feaf21c2c7889f6cf93206709
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: f2927bb10c282218e378f0f12a22cb1bfcdc9154
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66113382"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112983"
 ---
->[!Note] 
->Se você estiver interessado em exibir ou excluir os dados pessoais, consulte [Solicitações do Azure Data Subject para o artigo do GDPR](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure). Se você estiver buscando informações gerais sobre o GDPR, confira a [Seção do GDPR do portal de Confiança do Serviço](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+>[!NOTE] 
+>Para obter informações sobre como exibir ou excluir dados pessoais, consulte [solicitações de entidade de dados do Azure para o GDPR](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure). Para obter mais informações sobre o GDPR, consulte o [seção GDPR do portal de confiança do serviço](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).

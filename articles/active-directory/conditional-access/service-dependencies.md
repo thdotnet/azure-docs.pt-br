@@ -1,8 +1,8 @@
 ---
 title: Quais são as dependências de serviço no acesso condicional do Azure Active Directory? | Microsoft Docs
-description: Saiba como as condições são usadas no acesso condicional do Active Directory do Azure para acionar uma política.
+description: Saiba como as condições são usadas no acesso condicional do Azure Active Directory para disparar uma política.
 services: active-directory
-keywords: acesso condicional para aplicativos, acesso condicional com o Azure AD, acesso seguro aos recursos da empresa, políticas de acesso condicional
+keywords: Acesso condicional para aplicativos, acesso condicional com o Azure AD, acesso seguro aos recursos da empresa, políticas de acesso condicional
 documentationcenter: ''
 author: MicrosoftGuyJFlo
 manager: daveba
@@ -18,12 +18,12 @@ ms.date: 03/18/2019
 ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f727fc7133ebc9ee124e63253e8a266862b0d908
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 54e5de5fdb03cfaff4d4ed53da94b512f30db58a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60354343"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112090"
 ---
 # <a name="what-are-service-dependencies-in-azure-active-directory-conditional-access"></a>Quais são as dependências de serviço no acesso condicional do Azure Active Directory? 
 
@@ -77,6 +77,6 @@ A tabela a seguir lista as dependências de serviço adicionais, onde os aplicat
 
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
-Para saber como implementar o acesso condicional em seu ambiente, confira [Planejar a implantação do acesso condicional no Azure Active Directory](plan-conditional-access.md).
+Para saber como implementar o acesso condicional em seu ambiente, consulte [planejar a implantação de acesso condicional no Azure Active Directory](plan-conditional-access.md).

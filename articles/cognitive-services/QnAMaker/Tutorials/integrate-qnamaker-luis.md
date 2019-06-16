@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 01/30/2019
+ms.date: 06/11/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: fa79f519c8f3eb8baeaab04870f22a1cfefa59ab
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1792cf2359caef3211b4ce1ac86928eeb85d682b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61431257"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67053166"
 ---
 # <a name="use-bot-with-qna-maker-and-luis-to-distribute-your-knowledge-base"></a>Usar um bot com o QnA Maker e o LUIS para distribuir uma base de dados de conhecimento
 À medida que sua base de dados de conhecimento do QnA Maker aumentar, ficará difícil mantê-la como um único conjunto monolítico definido e haverá a necessidade de dividir a base de dados de conhecimento em partes lógicas menores.
@@ -27,7 +27,7 @@ Este artigo usa a estrutura do Bot v3 SDK. Consulte este [artigo do Bot Framewor
 
 ## <a name="architecture"></a>Arquitetura
 
-![Arquitetura luis do QnA Maker](../media/qnamaker-tutorials-qna-luis/qnamaker-luis-architecture.PNG)
+![O QnA Maker com a arquitetura de reconhecimento vocal](../media/qnamaker-tutorials-qna-luis/qnamaker-luis-architecture.PNG)
 
 No cenário anterior, primeiro o QnA Maker obtém a intenção do ponto de entrada de um modelo LUIS e então usa isso para roteá-lo para a base de dados de conhecimento QnA Maker correta.
 
@@ -51,7 +51,7 @@ No cenário anterior, primeiro o QnA Maker obtém a intenção do ponto de entra
 
 ## <a name="web-app-bot"></a>Bot do aplicativo Web
 
-1. [Criar um bot do aplicativo Web](https://docs.microsoft.com/azure/cognitive-services/luis/luis-csharp-tutorial-build-bot-framework-sample) com o modelo do LUIS. Selecione o SDK 3.x e a linguagem de programação C#.
+1. [Crie um bot de aplicativo Web "Básico"](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart?view=azure-bot-service-4.0) que inclui automaticamente um aplicativo LUIS. Selecione SDK 4.x e o C# linguagem de programação.
 
 1. Após a criação do bot do aplicativo Web, selecione-o no portal do Azure.
 1. Selecione **Configurações do Aplicativo** na navegação do bot do aplicativo Web, depois role para baixo até a seção **Configurações do aplicativo** nas configurações disponíveis.
@@ -237,7 +237,7 @@ No portal do Azure, selecione **Testar no Webchat** para testar o bot. Digite me
 
 ![teste de chat na Web](../media/qnamaker-tutorials-qna-luis/qnamaker-web-chat.png)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
 > [Criar um plano de continuidade de negócios para o QnA Maker](../How-To/business-continuity-plan.md)

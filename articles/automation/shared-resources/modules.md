@@ -6,19 +6,19 @@ ms.service: automation
 ms.subservice: shared-resources
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/13/2019
+ms.date: 06/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: fa7f5d3fb38eb1dbca51dec9b73dca3c998436aa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 54ebe7df9523a863ae14bc55c6ae4c9635468755
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60500292"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063461"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Gerenciar os módulos na automação do Azure
 
-A automação do Azure fornece a capacidade para importar módulos do PowerShell para sua conta de automação a ser usada por runbooks baseados no PowerShell. Esses módulos podem ser módulos personalizados que você criou, da Galeria do PowerShell, ou os módulos AzureRM e Az para o Azure.
+A automação do Azure fornece a capacidade para importar módulos do PowerShell para sua conta de automação a ser usada por runbooks baseados no PowerShell. Esses módulos podem ser módulos personalizados que você criou, da Galeria do PowerShell, ou os módulos AzureRM e Az para o Azure. Quando você cria uma conta de automação alguns módulos são importados por padrão.
 
 ## <a name="import-modules"></a>Importar módulos
 
@@ -50,6 +50,22 @@ Para importar um módulo da Galeria do PowerShell, vá para https://www.powershe
 Você também pode importar os módulos da Galeria do PowerShell diretamente da sua conta de automação. Na sua conta de automação, selecione **módulos** sob **recursos compartilhados**. Na página módulos, clique em **procurar na galeria**. Isso abre o **procurar na galeria** página. Você pode usar essa página para pesquisar na Galeria do PowerShell para um módulo. Selecione o módulo que você deseja importar e clique em **importação**. Sobre o **importe** , clique em **Okey** para iniciar o processo de importação.
 
 ![Importação de galeria do PowerShell do portal do Azure](../media/modules/gallery-azure-portal.png)
+
+## <a name="delete-modules"></a>Excluir módulos
+
+Se você tiver problemas com um módulo ou se você precisa reverter para uma versão anterior de um módulo, você pode excluí-lo em sua conta de automação. Não é possível excluir a versão original do [padrão módulos](#default-modules) que são importados quando você cria uma conta de automação. Se o módulo que você deseja excluir é uma versão mais recente de um dos [padrão módulos](#default-modules) instalado, ele será reverter para a versão que foi instalada com sua conta de automação. Caso contrário, qualquer módulo que você excluir da sua conta de automação será removido.
+
+### <a name="azure-portal"></a>Portal do Azure
+
+No portal do Azure, navegue até sua conta de automação e selecione **módulos** sob **recursos compartilhados**. Selecione o módulo que você deseja remover. Sobre o **módulo** página, clcick **excluir**. Se esse módulo é um dos [padrão módulos](#default-modules) será possível revertê-lo para a versão que estava presente quando a conta de automação foi criada.
+
+### <a name="powershell"></a>PowerShell
+
+Para remover um módulo por meio do PowerShell, execute o seguinte comando:
+
+```azurepowershell-interactive
+Remove-AzureRmAutomationModule -Name <moduleName> -AutomationAccountName <automationAccountName> -ResourceGroupName <resourceGroupName>
+```
 
 ## <a name="internal-cmdlets"></a>Cmdlets internos
 
@@ -210,6 +226,37 @@ Recomendamos que você considere o seguinte ao criar um módulo do PowerShell pa
 
 * Se estiver fazendo referência aos [módulos Az do Azure PowerShell](/powershell/azure/new-azureps-module-az?view=azps-1.1.0) em seu módulo, certifique-se de que não esteja fazendo referência também a `AzureRM`. O módulo `Az` não pode ser usado em conjunto com os módulos `AzureRM`. Há suporte para `Az` em runbooks, mas não são importados por padrão. Para saber mais sobre os módulos `Az` e considerações nas quais prestar atenção, confira [Suporte ao módulo Az na Automação do Azure](../az-modules.md).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="default-modules"></a>Módulos padrão
+
+A tabela a seguir lista os módulos que são importados por padrão, quando uma conta de automação é criada. Os módulos listados abaixo podem ter versões mais recentes deles importadas, mas a versão original não pode ser removida da sua conta de automação, mesmo se você excluir uma versão mais recente deles.
+
+|nome do módulo|Version|
+|---|---|
+| AuditPolicyDsc | 1.1.0.0 |
+| Azure | 1.0.3 |
+| Azure.Storage | 1.0.3 |
+| AzureRM.Automation | 1.0.3 |
+| AzureRM.Compute | 1.2.1 |
+| AzureRM.profile | 1.0.3 |
+| AzureRM.Resources | 1.0.3 |
+| AzureRM.Sql | 1.0.3 |
+| AzureRM.Storage | 1.0.3 |
+| ComputerManagementDsc | 5.0.0.0 |
+| GPRegistryPolicyParser | 0,2 |
+| Microsoft.PowerShell.Core | 0 |
+| Microsoft.PowerShell.Diagnostics |  |
+| Microsoft.PowerShell.Management |  |
+| Microsoft.PowerShell.Security |  |
+| Microsoft.PowerShell.Utility |  |
+| Microsoft.WSMan.Management |  |
+| Orchestrator.AssetManagement.Cmdlets | 1 |
+| PSDscResources | 2.9.0.0 |
+| SecurityPolicyDsc | 2.1.0.0 |
+| StateConfigCompositeResources | 1 |
+| xDSCDomainjoin | 1,1 |
+| xPowerShellExecutionPolicy | 1.1.0.0 |
+| xRemoteDesktopAdmin | 1.1.0.0 |
+
+## <a name="next-steps"></a>Próximas etapas
 
 * Para saber mais sobre como criar os Módulos do PowerShell, consulte [Escrevendo um Módulo do Windows PowerShell](https://msdn.microsoft.com/library/dd878310%28v=vs.85%29.aspx)

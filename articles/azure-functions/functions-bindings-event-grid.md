@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/04/2018
 ms.author: cshoe
-ms.openlocfilehash: b2ab07e40ac2652d97e912f8c7bd3b8893bfc114
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: e11446b961727663961e4d3fa295a9b7f64860c9
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61438635"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059660"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Gatilho de Grade de Eventos para o Azure Functions
 
@@ -322,7 +322,7 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 |Propriedade function.json |DESCRIÇÃO|
 |---------|---------|
-| **tipo** | Obrigatório – deve ser definido como `eventGridTrigger`. |
+| **type** | Obrigatório – deve ser definido como `eventGridTrigger`. |
 | **direction** | Obrigatório – deve ser definido como `in`. |
 | **name** | Obrigatório - o nome da variável usado no código de função para o parâmetro que recebe os dados de eventos. |
 
@@ -555,7 +555,7 @@ A função de gatilho da Grade de Eventos executa e mostra logs semelhantes ao e
 
 ## <a name="local-testing-with-ngrok"></a>Teste local com ngrok
 
-Outra maneira de testar um gatilho de Grade de Eventos localmente é automatizar a conexão HTTP entre a Internet e o computador de desenvolvimento. Você pode fazer isso com uma ferramenta de software livre nomeada [ngrok](https://ngrok.com/):
+Outra maneira de testar um gatilho de Grade de Eventos localmente é automatizar a conexão HTTP entre a Internet e o computador de desenvolvimento. Você pode fazer isso com uma ferramenta como o [ngrok](https://ngrok.com/):
 
 1. [Criar um ponto de extremidade ngrok](#create-an-ngrok-endpoint).
 1. [Executar a função de gatilho de Grade de Eventos ](#run-the-event-grid-trigger-function).

@@ -10,12 +10,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: tyleonha, glenga
-ms.openlocfilehash: 46b1e5c99dd86fed6f87ac3b8f0ff6555187899b
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: fa82725174645a0e5f1d957d8423c97547682542
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65833514"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67065490"
 ---
 # <a name="azure-functions-powershell-developer-guide"></a>Guia do desenvolvedor do PowerShell de funções do Azure
 
@@ -60,7 +60,7 @@ Na raiz do projeto, há um compartilhado [ `host.json` ](functions-host-json.md)
 
 Determinadas associações exigem a presença de um `extensions.csproj` arquivo. Associando extensões, necessárias no [versão 2. x](functions-versions.md) de tempo de execução de funções, são definidos na `extensions.csproj` arquivo, com os arquivos de biblioteca real no `bin` pasta. Ao desenvolver localmente, você precisa [registrar as extensões de associação](functions-bindings-register.md#local-development-with-azure-functions-core-tools-and-extension-bundles). Ao desenvolver funções no portal do Azure, esse registro é feito para você.
 
-Em aplicativos de funções do PowerShell, você pode, opcionalmente, ter uma `profile.ps1` que é executado quando um aplicativo de função começa a ser executado (caso contrário, conhecido como um  *[inicialização a frio](#cold-start)*. Para obter mais informações, consulte [perfil do PowerShell](#powershell-profile).
+Em aplicativos de funções do PowerShell, você pode, opcionalmente, ter uma `profile.ps1` que é executado quando um aplicativo de função começa a ser executado (caso contrário, conhecido como um  *[inicialização a frio](#cold-start)* . Para obter mais informações, consulte [perfil do PowerShell](#powershell-profile).
 
 ## <a name="defining-a-powershell-script-as-a-function"></a>Definindo um script do PowerShell como uma função
 
@@ -84,8 +84,8 @@ $TriggerMetadata.sys
 | Propriedade   | Description                                     | Type     |
 |------------|-------------------------------------------------|----------|
 | UtcNow     | Quando, no UTC, a função foi disparada        | DateTime |
-| MethodName | O nome da função que foi disparado     | string   |
-| RandGuid   | um guid exclusivo para a execução da função | string   |
+| MethodName | O nome da função que foi disparado     | cadeia de caracteres   |
+| RandGuid   | um guid exclusivo para a execução da função | cadeia de caracteres   |
 
 Cada tipo de gatilho tem um conjunto diferente de metadados. Por exemplo, o `$TriggerMetadata` para `QueueTrigger` contém o `InsertionTime`, `Id`, `DequeueCount`, entre outras coisas. Para obter mais informações sobre os metadados do gatilho de fila, vá para o [documentação oficial para gatilhos de fila](functions-bindings-storage-queue.md#trigger---message-metadata). Verifique a documentação sobre o [gatilhos](functions-triggers-bindings.md) você está trabalhando para ver o que vem de dentro de metadados de gatilho.
 
@@ -133,9 +133,9 @@ Produce-MyOutputValue | Push-OutputBinding -Name myQueue
 
 Estes são os parâmetros válidos para a chamada `Push-OutputBinding`:
 
-| NOME | Type | Posição | Descrição |
+| NOME | Type | Position | DESCRIÇÃO |
 | ---- | ---- |  -------- | ----------- |
-| **`-Name`** | String | 1 | O nome da associação de saída que você deseja definir. |
+| **`-Name`** | Cadeia de caracteres | 1 | O nome da associação de saída que você deseja definir. |
 | **`-Value`** | Object | 2 | O valor da associação de saída você deseja definir, que é aceito na pipeline ByValue. |
 | **`-Clobber`** | SwitchParameter | nomeado | (Opcional) Quando especificado, obrigará o valor a ser definido para uma associação de saída especificado. | 
 
@@ -234,7 +234,7 @@ MyQueue                        myData
 
 Caracteres curinga (*) têm suporte no `Get-OutputBinding`.
 
-## <a name="logging"></a>Registro em Log
+## <a name="logging"></a>Registrando em log
 
 Registro em log em funções do PowerShell funciona como log regular do PowerShell. Você pode usar os cmdlets de registro em log para gravar cada fluxo de saída. Cada cmdlet é mapeado para um nível de log usado pelas funções.
 
@@ -253,7 +253,7 @@ Além desses cmdlets, todos os elementos escritos para o pipeline é redireciona
 
 ### <a name="configure-the-function-app-log-level"></a>Configurar o nível de log do aplicativo de funções
 
-Funções permite definir o nível de limite para que seja fácil para as funções de maneira grava os logs de controle. Para definir o limite para todos os rastreamentos gravados no console, use o `logging.logLevel.default` propriedade em de [ `host.json` arquivo][referência de host. json]. Essa configuração se aplica a todas as funções em seu aplicativo de função.
+O Azure Functions permite definir o nível de limite para que seja fácil para as funções de maneira grava os logs de controle. Para definir o limite para todos os rastreamentos gravados no console, use o `logging.logLevel.default` propriedade em de [ `host.json` arquivo][referência de host. json]. Essa configuração se aplica a todas as funções em seu aplicativo de função.
 
 O exemplo a seguir define o limite para habilitar o log detalhado para todas as funções, mas define o limite para habilitar o log de depuração para uma função chamada `MyFunction`:
 
@@ -283,7 +283,7 @@ Há um número de gatilhos e associações para usar com seu aplicativo de funç
 Todos os gatilhos e associações são representadas no código, como alguns tipos de dados real:
 
 * Tabela de hash
-* string
+* cadeia de caracteres
 * byte[]
 * int
 * double
@@ -306,10 +306,10 @@ O objeto de solicitação que é passado para o script é do tipo `HttpRequestCo
 |-----------|----------------------------------------------------------------|---------------------------|
 | **`Body`**    | Um objeto que contém o corpo da solicitação. `Body` é serializado no melhor tipo com base nos dados. Por exemplo, se os dados JSON, ele é passado como uma tabela de hash. Se os dados forem uma cadeia de caracteres, ele é passado como uma cadeia de caracteres. | objeto |
 | **`Headers`** | Um dicionário que contém os cabeçalhos de solicitação.                | Dicionário < cadeia de caracteres, cadeia de caracteres ><sup>*</sup> |
-| **`Method`** | O método HTTP da solicitação.                                | string                    |
+| **`Method`** | O método HTTP da solicitação.                                | cadeia de caracteres                    |
 | **`Params`**  | Um objeto que contém os parâmetros de roteamento da solicitação. | Dicionário < cadeia de caracteres, cadeia de caracteres ><sup>*</sup> |
 | **`Query`** | Um objeto que contém os parâmetros da consulta.                  | Dicionário < cadeia de caracteres, cadeia de caracteres ><sup>*</sup> |
-| **`Url`** | A URL da solicitação.                                        | string                    |
+| **`Url`** | A URL da solicitação.                                        | cadeia de caracteres                    |
 
 <sup>*</sup> Todos os `Dictionary<string,string>` chaves diferenciam maiusculas de minúsculas.
 
@@ -320,7 +320,7 @@ O objeto de resposta que você deve enviar de volta é do tipo `HttpResponseCont
 | Propriedade      | Description                                                 | Type                      |
 |---------------|-------------------------------------------------------------|---------------------------|
 | **`Body`**  | Um objeto que contém o corpo da resposta.           | objeto                    |
-| **`ContentType`** | Uma mão curta para definir o tipo de conteúdo para a resposta. | string                    |
+| **`ContentType`** | Uma mão curta para definir o tipo de conteúdo para a resposta. | cadeia de caracteres                    |
 | **`Headers`** | Um objeto que contém os cabeçalhos da resposta.               | Dicionário ou tabela de hash   |
 | **`StatusCode`**  | O código de status HTTP da resposta.                       | cadeia de caracteres ou inteiro             |
 
@@ -598,7 +598,7 @@ Ao desenvolver funções do Azure na [modelo de hospedagem sem servidor](functio
 
 ### <a name="bundle-modules-instead-of-using-install-module"></a>Módulos de pacote em vez de usar `Install-Module`
 
-O script é executado em cada invocação. Evite usar `Install-Module` em seu script. Em vez disso use `Save-Module` antes da publicação para que sua função não tem a perder tempo para baixar o módulo. Se inicializações a frio têm impacto sobre suas funções, considere implantar seu aplicativo de funções para um [plano do serviço de aplicativo](functions-scale.md#app-service-plan) definido como *AlwaysOn* ou uma [plano Premium](functions-scale.md#premium-plan-public-preview).
+O script é executado em cada invocação. Evite usar `Install-Module` em seu script. Em vez disso use `Save-Module` antes da publicação para que sua função não tem a perder tempo para baixar o módulo. Se inicializações a frio têm impacto sobre suas funções, considere implantar seu aplicativo de funções para um [plano do serviço de aplicativo](functions-scale.md#app-service-plan) definido como *AlwaysOn* ou uma [plano Premium](functions-scale.md#premium-plan).
 
 ## <a name="next-steps"></a>Próximas etapas
 

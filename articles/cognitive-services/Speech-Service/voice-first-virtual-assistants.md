@@ -12,10 +12,10 @@ ms.date: 05/02/2019
 ms.author: travisw
 ms.custom: ''
 ms.openlocfilehash: 1c5712fa8bbdb158992127f8f48d810a0a9b6f79
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65603484"
 ---
 # <a name="about-custom-voice-first-virtual-assistants-preview"></a>Sobre a visualização de assistentes de virtual primeiro de voz personalizada
@@ -30,14 +30,14 @@ Fala de linha direta e sua funcionalidade associada para assistentes de virtuais
 
 ## <a name="core-features"></a>Principais recursos
 
-| Category | Recursos |
+| Categoria | Recursos |
 |----------|----------|
 |[Palavra de ativação personalizado](speech-devices-sdk-create-kws.md) | Você pode permitir que os usuários iniciar conversas com os bots usando uma palavra-chave personalizada, como "Ei Contoso". Essa tarefa é realizada com um mecanismo de word ativação personalizado no SDK do fala, que pode ser configurado com uma palavra personalizada wake [que você pode gerar aqui](speech-devices-sdk-create-kws.md). O canal de fala de linha direta inclui a verificação de palavra no lado do serviço de ativação que aumenta a precisão da ativação de word wake versus o dispositivo sozinho.
 |[Conversão de fala em texto](speech-to-text.md) | O canal de fala de linha direta inclui transcrição em tempo real de áudio em texto reconhecido usando [fala em texto](speech-to-text.md) fala dos serviços do Azure. Esse texto está disponível para seu bot e seu aplicativo cliente conforme ele é transcrita.
 |[Texto em fala](text-to-speech.md) | Respostas textuais do seu bot serão ser sintetizadas usando [fala](text-to-speech.md) fala dos serviços do Azure. Este síntese será, em seguida, disponibilizado para o aplicativo cliente como um fluxo de áudio. A Microsoft oferece a capacidade de criar sua própria voz TTS Neural personalizado e de alta qualidade que oferece uma voz à sua marca, para saber mais [entre em contato conosco](mailto:mstts@microsoft.com).
 |[Fala de linha direta](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech) | Como um canal dentro da estrutura de Bot, fala de linha direta permite que uma conexão simples e direta entre o aplicativo cliente, um bot compatível e os recursos dos serviços de fala do Azure. Para obter mais informações sobre como configurar seu bot para usar o canal de fala de linha direta, consulte [sua página na documentação do Bot Framework](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
 
-## <a name="sample-code"></a>Código de exemplo
+## <a name="sample-code"></a>Exemplo de código
 
 Código de exemplo para a criação de um Assistente de voz-first virtual está disponível no GitHub. Esses exemplos abrangem o aplicativo cliente para se conectar ao seu bot em várias linguagens de programação populares.
 

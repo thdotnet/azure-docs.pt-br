@@ -17,12 +17,12 @@ ms.date: 05/08/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3208afc7ec18013c6e70e148995d33114cf7e06c
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 760eb5a37a09687cd98ca7abbdcb0bc42667f830
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66513661"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107617"
 ---
 # <a name="sign-in-activity-report-error-codes"></a>Códigos de erro do relatório de atividade de login 
 
@@ -66,7 +66,7 @@ Você também pode acessar programaticamente os dados de login usando a [API de 
 |50001|O nome da entidade de serviço não foi encontrado neste locatário. Isso pode acontecer se o aplicativo não tiver sido instalado pelo administrador do locatário ou se o principal do recurso não tiver sido encontrado no diretório ou for inválido.|
 |50002|Falha ao entrar devido ao acesso de proxy restrito no locatário. Se for sua própria política de inquilino, você poderá alterar suas configurações de inquilino restrito para corrigir esse problema.|
 |50003|Falha ao entrar devido à ausência de chave de assinatura ou de certificado. Isso pode ocorre porque não existia nenhuma chave de assinatura configurada no aplicativo. Confira as resoluções descritas em [https://docs.microsoft.com/azure/active-directory/application-sign-in-problem-federated-sso-gallery#certificate-or-key-not-configured](https://docs.microsoft.com/azure/active-directory/application-sign-in-problem-federated-sso-gallery#certificate-or-key-not-configured). Se o problema persistir, entre em contato com o proprietário do aplicativo ou com o administrador do aplicativo.|
-|50005|O usuário tentou fazer login em um dispositivo a partir de uma plataforma que atualmente não é suportada pela política de acesso condicional.|
+|50005|O usuário tentou fazer logon em um dispositivo de uma plataforma que não é suportada atualmente por meio da política de acesso condicional.|
 |50006| Falha na verificação de assinatura devido a uma assinatura inválida. Confira a resolução descrita em [https://docs.microsoft.com/azure/active-directory/application-sign-in-problem-federated-sso-gallery](https://docs.microsoft.com/azure/active-directory/application-sign-in-problem-federated-sso-gallery). Se o problema persistir, entre em contato com o proprietário do aplicativo ou com o administrador do aplicativo.|
 |50007|O certificado de criptografia do parceiro não foi encontrado para esse aplicativo. [Abra um tíquete de suporte](../fundamentals/active-directory-troubleshooting-support-howto.md) com a Microsoft para obter esse fixo.|
 |50008|A instrução de declaração SAML está ausente ou foi configurada incorretamente no token. Entre em contato com seu provedor de federação.|
@@ -133,7 +133,7 @@ Você também pode acessar programaticamente os dados de login usando a [API de 
 |52004|Usuário não forneceu autorização para acessar os recursos do LinkedIn. |
 |53000|Política de acesso condicional requer um dispositivo compatível, e o dispositivo não é compatível. Solicite que o usuário registre seu dispositivo com um provedor de MDM aprovado, como o Intune.|
 |53001|A política de acesso condicional requer um dispositivo com ingresso no domínio, e o dispositivo não o é. O usuário use um domínio tenha ingressado no dispositivo.|
-|53002|O aplicativo usado não é aprovado para o acesso condicional. O usuário precisa usar um dos aplicativos da lista de aplicativos aprovados para uso para obter acesso.|
+|53002|Aplicativo usado não é um aplicativo aprovado para acesso condicional. O usuário precisa usar um dos aplicativos da lista de aplicativos aprovados para uso para obter acesso.|
 |53003|Acesso foi bloqueado devido a políticas de acesso condicional.|
 |53004|O usuário precisa concluir o processo de registro de autenticação multifator antes de acessar este conteúdo. O usuário deve se registrar para a autenticação multifator.|
 |65001|O aplicativo X não tem permissão para acessar o aplicativo Y ou a permissão foi revogada. Outra possibilidade: o usuário ou administrador não aceitou usar o aplicativo com a ID X. Envie uma solicitação de autorização interativa para esse usuário e recurso. Outra possibilidade: o usuário ou administrador não aceitou usar o aplicativo com a ID X. Envie uma solicitação de autorização ao administrador do seu locatário para atuar em nome do Aplicativo: Y para o Recurso: Z.|
@@ -180,7 +180,7 @@ Você também pode acessar programaticamente os dados de login usando a [API de 
 |500021|Multilocatário é restrita pelo proxy da empresa. Negando o acesso aos recursos.|
 |500121| Falha de autenticação durante a solicitação de autenticação forte.|
 |500133| A declaração não está dentro de seu intervalo de tempo válido. Certifique-se de que o token de acesso não expirou antes de usá-lo para a declaração de usuário ou antes de solicitar um novo token.|
-|530021|Aplicativo não atende os requisitos de aplicativo de acesso condicional aprovado.|
+|530021|Aplicativo não atende os requisitos de aplicativo de acesso condicional aprovada.|
 |7000218|O corpo da solicitação deve conter o seguinte parâmetro: 'client_assertion' ou 'client_secret'.|
 
 

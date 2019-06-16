@@ -8,21 +8,16 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
-ms.openlocfilehash: 8b27ad34bdc6fcbd7a1eb46515fbf33c96d02528
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c8b05886ae338bb73b0f4ddce4d02a1f1a926a45
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64682907"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67078239"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Implantar e gerenciar topologias Apache Storm no Microsoft Azure HDInsight 
 
 Neste documento, conheça as noções básicas de gerenciamento e monitoramento de topologias [Apache Storm](https://storm.apache.org/) em execução no Storm em clusters HDInsight.
-
-> [!IMPORTANT]  
-> As etapas deste artigo exigem um Storm baseado em Linux no cluster HDInsight. O Linux é o único sistema operacional usado no HDInsight versão 3.4 ou superior. Para obter mais informações, confira [baixa do HDInsight no Windows](../hdinsight-component-versioning.md#hdinsight-windows-retirement). 
->
-
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -159,7 +154,7 @@ Rebalancear uma topologia permite que o sistema revise o paralelismo da topologi
 
 ## <a name="monitor-and-manage-storm-ui"></a>Monitore e gerencie: Interface do Usuário do Storm
 
-A IU do Storm fornece uma interface Web para trabalhar com as topologias em funcionamento, e é incluída no seu cluster HDInsight. Para exibir a interface do Storm, use um navegador da Web para abrir **https://CLUSTERNAME.azurehdinsight.net/stormui**, onde **CLUSTERNAME** é o nome do cluster.
+A IU do Storm fornece uma interface Web para trabalhar com as topologias em funcionamento, e é incluída no seu cluster HDInsight. Para exibir a interface do Storm, use um navegador da Web para abrir **https://CLUSTERNAME.azurehdinsight.net/stormui** , onde **CLUSTERNAME** é o nome do cluster.
 
 > [!NOTE]  
 > Se solicitado a forneça um nome de usuário e senha, insira o administrador de cluster (admin) e a senha que você usou ao criar o cluster.
@@ -213,7 +208,7 @@ Para obter mais informações, veja [API REST da interface do usuário do Apache
 
 ### <a name="base-uri"></a>URI de base
 
-O URI de base para a API REST em clusters HDInsight baseados em Linux está disponível no nó principal em **https:\//HEADNODEFQDN:8744/api/v1/**. O nome de domínio do nó de cabeçalho é gerado durante a criação do cluster e não é estático.
+O URI de base para a API REST em clusters HDInsight baseados em Linux está disponível no nó principal em **https:\//HEADNODEFQDN:8744/api/v1/** . O nome de domínio do nó de cabeçalho é gerado durante a criação do cluster e não é estático.
 
 Você pode encontrar o FQDN (Nome de Domínio Totalmente Qualificado) para o nó de cabeçalho do cluster de várias maneiras diferentes:
 

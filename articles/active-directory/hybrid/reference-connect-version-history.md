@@ -16,12 +16,12 @@ ms.date: 05/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 235877ac8f84e695e5f81770d33b6fed89a5f241
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: fafd853250ed76b49b66b86ffda9c91240c8ce48
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66298791"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109169"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect: Histórico de lançamento de versões
 A equipe do Azure AD (Azure Active Directory) atualiza regularmente o Azure AD Connect com novos recursos e funcionalidades. Nem todas as adições são aplicáveis a todos os públicos.
@@ -252,7 +252,7 @@ Novos recursos e aprimoramentos
 - Um novo Módulo do PowerShell chamado ADSyncTools.psm1 foi adicionado e pode ser usado para solucionar problemas de conectividade do SQL e vários outros utilitários de solução de problemas. Leia mais sobre o módulo ADSyncTools [aqui](tshoot-connect-tshoot-sql-connectivity.md). 
 - Foi adicionada uma nova tarefa “Configurar opções de dispositivo”. Você pode usar a tarefa para configurar as duas operações a seguir: 
   - **Ingresso no Azure AD Híbrido**: Se seu ambiente tiver um espaço local do AD e você também quiser se beneficiar dos recursos fornecidos pelo Azure Active Directory, será possível implementar dispositivos adicionados ao Azure AD híbrido. Esses dispositivos são adicionados ao Active Directory local e ao Azure Active Directory.
-  - **Write-back de dispositivo**: usado para habilitar o acesso condicional baseado em dispositivos para os dispositivos protegidos do AD FS (2012 R2 ou superior)
+  - **Write-back de dispositivo**: Write-back de dispositivo é usado para habilitar o acesso condicional com base em dispositivos para o AD FS (2012 R2 ou superior) dispositivos protegidos
 
     >[!NOTE] 
     > - A opção para habilitar o write-back de dispositivo em Personalizar opções de sincronização ficará esmaecida. 

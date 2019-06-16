@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/27/2018
 ms.author: rajanaki
 ms.openlocfilehash: eabb7d194a3ef65282befab1ae59e85ba56f2f5b
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65472152"
 ---
 # <a name="reprotect-failed-over-azure-vms-to-the-primary-region"></a>Proteger novamente VMs do Azure que sofreram failover para a região primária
@@ -84,7 +84,7 @@ Na maioria dos casos, o Azure Site Recovery não replica os dados completos para
 1.  Se a fonte de dados da VM for excluído, corrompido ou inacessível por alguma razão, como o grupo de recursos altera/exclui, em seguida, durante a IR completo da nova proteção acontecerá, pois não há nenhum dado disponível na região de origem para usar.
 2.  Se a fonte de dados da VM está acessível apenas diferenciais são calculados comparando dois discos e, então, transferidos. Verifique a tabela a seguir para obter o tempo estimado 
 
-|* * Situação de exemplo * * | * * Tempo necessário para a nova proteção * * |
+|\* * Situação de exemplo * * | \* * Tempo necessário para a nova proteção * * |
 |--- | --- |
 |Região de origem tem 1 VM com 1 TB de disco padrão<br/>-Somente os dados de 127 GB são usados e o restante do disco está vazio<br/>-Tipo de disco é o padrão com taxa de transferência 60 MiB/S<br/>-Nenhuma alteração de dados após o failover| Tempo aproximado 45 minutos – 1,5 horas<br/> -Durante a nova proteção, recuperação de Site preencherá a soma de verificação de dados inteiros, que o levará a 127 GB / 45 MBs aproximadamente 45 minutos<br/>-Algum tempo de sobrecarga é necessário para o Site Recovery automaticamente a escala é de 20 a 30 minutos<br/>-Sem nenhum encargo |
 |Região de origem tem 1 VM com 1 TB de disco padrão<br/>-Somente os dados de 127 GB são usados e o restante do disco está vazio<br/>-Tipo de disco é o padrão com taxa de transferência 60 MiB/S<br/>-As alterações de dados 45 GB após o failover| Tempo aproximado horas 1 – 2 horas<br/>-Durante a nova proteção, recuperação de Site preencherá a soma de verificação de dados inteiros, que o levará a 127 GB / 45 MBs aproximadamente 45 minutos<br/>-Tempo para aplicar as alterações de 45 GB é 45 GB de transferência / 45 MBps ~ 17 minutos<br/>-Encargos de saída seria apenas para 45 GB de dados não para a soma de verificação|

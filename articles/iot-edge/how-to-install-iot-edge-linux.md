@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: b519ed21b4d2e0e258c48bd1dc12750176281c9e
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 86ca3080229f2a286e8aa4725fe13c40e2a38549
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65152860"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67054285"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-linux-x64"></a>Instalar o tempo de execução do Azure IoT Edge no Linux (x64)
 
@@ -82,6 +82,18 @@ Instale a interface de linha de comando Moby (CLI). A CLI é útil para desenvol
    ```bash
    sudo apt-get install moby-cli
    ```
+
+### <a name="verify-your-linux-kernel-for-moby-compatibility"></a>Verifique se o kernel do Linux para compatibilidade Moby
+
+Muitos fabricantes de dispositivos inseridos enviar imagens de dispositivo que contêm os kernels do Linux personalizados que podem estar faltando recursos necessários para a compatibilidade de tempo de execução do contêiner. Se você encontrar problemas ao instalar o recomendada [Moby](https://github.com/moby/moby) tempo de execução do contêiner, você talvez possa solucionar problemas de sua configuração de kernel Linux usando o [seleção-config](https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh) script fornecido no oficial [repositório Moby Github](https://github.com/moby/moby) executando os comandos a seguir no dispositivo.
+
+   ```bash
+   curl -sSL https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh -o check-config.sh
+   chmod +x check-config.sh
+   ./check-config.sh
+   ```
+
+Isso fornecerá uma saída detalhada que contém o status dos recursos de kernel que são usadas pelo tempo de execução Moby. Você desejará garantir que todos os itens sob `Generally Necessary` e `Network Drivers` estão habilitados para garantir que seu kernel é totalmente compatível com o tempo de execução Moby.  Se você tiver identificado os recursos ausentes, você pode habilitá-las recompilar seu kernel da fonte e selecionando os módulos associados para inclusão no config kernel apropriado.  Da mesma forma, se você estiver usando um gerador de configuração de kernel como defconfig ou menuconfig, você precisará localizar e ativar os respectivos recursos e recompilar seu kernel adequadamente.  Depois que você implantou seu kernel modificado mais recentemente, execute o script de configuração de verificação novamente para verificar se seus recursos identificados foi habilitados com êxito.
 
 ## <a name="install-the-azure-iot-edge-security-daemon"></a>Instalar o daemon de segurança do Azure IoT Edge
 

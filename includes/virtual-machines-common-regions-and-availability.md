@@ -9,10 +9,10 @@ ms.date: 03/27/2018
 ms.author: zarhoads
 ms.custom: include file
 ms.openlocfilehash: 7f33312d0a5fbe383d438408d471dd9ae09d0332
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66156238"
 ---
 # <a name="regions-and-availability-for-virtual-machines-in-azure"></a>Regiões e disponibilidade para máquinas virtuais do Azure
@@ -40,7 +40,7 @@ Cada região do Azure é emparelhada com outra região na mesma área geográfic
 
 Exemplos de pares de regiões incluem:
 
-| Principal | Secundário |
+| Primária | Secundário |
 |:--- |:--- |
 | Oeste dos EUA |Leste dos EUA |
 | Norte da Europa |Europa Ocidental |
@@ -63,7 +63,7 @@ Compreender as áreas e regiões do Azure torna-se importante quando você consi
   * Replica seus dados três vezes dentro da região em que você criou sua conta de armazenamento.
 * ZRS (Armazenamento com redundância de zona)
   * Replica seus dados três vezes para duas ou três instalações, em uma única região ou em duas regiões.
-* GRS (armazenamento com redundância geográfica)
+* Armazenamento com redundância geográfica (GRS)
   * Replica seus dados para uma região secundária a centenas de quilômetros da região primária.
 * Armazenamento com redundância geográfica com acesso de leitura (RA-GRS)
   * Replica os dados para uma região secundária, assim como acontece com o GRS, mas também fornece acesso somente leitura aos dados na localização secundária.
@@ -73,7 +73,7 @@ A tabela a seguir oferece uma visão geral das diferenças entre os tipos de rep
 | Estratégia de replicação | LRS | ZRS | GRS | RA-GRS |
 |:--- |:--- |:--- |:--- |:--- |
 | Os dados são replicados entre várias instalações. |Não |sim |sim |Sim |
-| Os dados podem ser lidos do local secundário e do local primário. |Não |Não |Não  |Sim |
+| Os dados podem ser lidos do local secundário e do local primário. |Não |Não |Não |Sim |
 | Número de cópias de dados mantidas em nós separados. |3 |3 |6 |6 |
 
 Você pode ler mais sobre as [Opções de replicação de armazenamento do Azure aqui](../articles/storage/common/storage-redundancy.md). Para saber mais sobre discos gerenciados, veja [Visão geral dos Azure Managed Disks](../articles/virtual-machines/windows/managed-disks-overview.md).
@@ -98,10 +98,10 @@ Um conjunto de disponibilidade é composto por dois agrupamentos adicionais que 
 
 Ao alocar vários recursos de computação que não usam as construções de alta disponibilidade de domínios de falha não há uma alta probabilidade de antiafinidade, porém este antiafinidade não é garantida.
 
-### <a name="fault-domains"></a>Domínios com falha
+### <a name="fault-domains"></a>Domínios de falha
 Um domínio de falha é um grupo lógico de hardwares subjacentes que compartilham a mesma fonte de alimentação e o mesmo comutador de rede, de forma semelhante a um rack em um datacenter local. À medida que você cria máquinas virtuais em um conjunto de disponibilidade, a plataforma Windows Azure distribui automaticamente suas VMs entre esses domínios de falha. Essa abordagem limita o impacto de possíveis falhas de hardware físico, interrupções de rede ou interrupções de energia.
 
-### <a name="update-domains"></a>Domínios de atualização
+### <a name="update-domains"></a>Atualizar domínios
 Um domínio de atualização é um grupo lógico de hardwares subjacentes que podem passar por manutenção ou ser reinicializados ao mesmo tempo. À medida que você cria máquinas virtuais em um conjunto de disponibilidade, a plataforma Windows Azure distribui automaticamente suas VMs entre esses domínios de atualização. Essa abordagem garante que pelo menos uma instância do aplicativo sempre permaneça em execução enquanto a plataforma Windows Azure passar por manutenção periódica. A ordem de reinicialização dos domínios de atualização pode não ser sequencial durante a manutenção planejada, mas apenas um domínio de atualização é reinicializado por vez.
 
 ![Conjuntos de disponibilidade](./media/virtual-machines-common-manage-availability/ud-fd-configuration.png)

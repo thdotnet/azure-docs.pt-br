@@ -16,12 +16,12 @@ ms.date: 03/22/2019
 ms.author: joflore
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af10596fb1ddf4a4f9eba2b8265eb77221a19f4c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e29c58c0e9a31b2eb3e3d7e237a3db8173214faf
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60353118"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110644"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Perguntas frequentes sobre o gerenciamento de dispositivos do Azure Active Directory
 
@@ -49,7 +49,7 @@ Apenas os dispositivos a seguir estão listados sob os **dispositivos do usuári
 
 ### <a name="q-i-see-the-device-record-under-the-user-info-in-the-azure-portal-and-i-see-the-state-as-registered-on-the-device-am-i-set-up-correctly-to-use-conditional-access"></a>P: Eu vejo o registro do dispositivo nas informações do usuário no portal do Azure. E posso ver o estado como registrado no dispositivo. Estou configurar corretamente para usar o acesso condicional?
 
-**R:** O estado do ingresso do dispositivo, refletido por **deviceID**, deve corresponder ao estado no Azure AD e atender a qualquer critério de avaliação para acesso condicional. Para obter mais informações, consulte [Exigir dispositivos gerenciados para acesso ao aplicativo em nuvem com acesso condicional](../conditional-access/require-managed-devices.md).
+**R:** O estado de junção de dispositivo, mostrado pela **deviceID**, deve coincidir com o estado no Azure AD e atender a qualquer critério de avaliação para acesso condicional. Para obter mais informações, consulte [exigir dispositivos para acesso de aplicativo de nuvem com acesso condicional gerenciados](../conditional-access/require-managed-devices.md).
 
 ---
 
@@ -119,7 +119,7 @@ Para versões de sistema operacional do Windows de nível inferior que ingressar
 
 **R:** Sim. O Windows tem uma funcionalidade de armazenamento em cache de nome de usuário e senha que permite aos usuários que se conectaram anteriormente acessarem a área de trabalho rapidamente, mesmo sem conectividade de rede. 
 
-Quando um dispositivo é excluído ou desabilitado no Azure AD, ele não é reconhecido pelo dispositivo do Windows. Portanto, os usuários que se conectaram anteriormente continuam a acessar a área de trabalho com o nome de usuário e a senha armazenados em cache. No entanto, assim que o dispositivo for excluído ou desabilitado, os usuários não poderão acessar nenhum recurso protegido pelo acesso condicional com base em dispositivo. 
+Quando um dispositivo é excluído ou desabilitado no Azure AD, ele não é reconhecido pelo dispositivo do Windows. Portanto, os usuários que se conectaram anteriormente continuam a acessar a área de trabalho com o nome de usuário e a senha armazenados em cache. Mas, como o dispositivo for excluído ou desabilitado, os usuários não podem acessar todos os recursos protegidos pelo acesso condicional baseado no dispositivo. 
 
 Os usuários que não se conectaram anteriormente não podem acessar o dispositivo. Não há nenhum nome de usuário e senha armazenados em cache habilitados para eles. 
 
@@ -155,7 +155,7 @@ Os usuários excluídos ou desabilitados que não se conectaram anteriormente n�
 
 ### <a name="q-why-do-my-users-see-you-cant-get-there-from-here"></a>P: Por que meus usuários veem *você não pode ir daqui até lá*?
 
-**R:** Você configurou regras de acesso condicional específicas para exigir um estado de dispositivo específico? Se o dispositivo não atender aos critérios, os usuários são bloqueados e veem essa mensagem. Avalie as regras de política de acesso condicional. Verifique se o dispositivo atende aos critérios para evitar a mensagem.
+**R:** Você configurou a certas regras de acesso condicional para exigir um estado de dispositivo específico? Se o dispositivo não atender aos critérios, os usuários são bloqueados e veem essa mensagem. Avalie as regras de política de acesso condicional. Verifique se o dispositivo atende aos critérios para evitar a mensagem.
 
 ---
 
@@ -224,7 +224,7 @@ Esse comportamento:
 
 **R:** Quando os usuários adicionam a respectiva conta aos aplicativos em um dispositivo incluído no domínio, eles podem ser solicitados a **Adicionar a conta ao Windows?** Se o usuário escolher **Sim** no prompt, o dispositivo registra com o Azure AD. O tipo de relação de confiança é marcado como registrado no Azure AD. Depois de habilitar o ingresso do Azure AD híbrido na organização, o dispositivo também será incluído no Azure AD híbrido. Em seguida, dois estados de dispositivo aparecem para o mesmo dispositivo. 
 
-O ingresso do Azure AD híbrido tem precedência sobre o estado de registrado pelo Azure AD. Desse modo, o dispositivo é considerado ingressado do Azure AD híbrido para qualquer autenticação e avaliação de acesso condicional. Você pode excluir com segurança o registro do dispositivo registrado pelo Azure AD no portal do Azure AD. Saiba como [evitar ou limpar esse estado duplo no computador com Windows 10](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan#review-things-you-should-know). 
+O ingresso do Azure AD híbrido tem precedência sobre o estado de registrado pelo Azure AD. Portanto, seu dispositivo é considerado o Azure AD híbrido para qualquer autenticação e a avaliação de acesso condicional. Você pode excluir com segurança o registro do dispositivo registrado pelo Azure AD no portal do Azure AD. Saiba como [evitar ou limpar esse estado duplo no computador com Windows 10](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan#review-things-you-should-know). 
 
 
 ---
@@ -263,7 +263,7 @@ O ingresso do Azure AD híbrido tem precedência sobre o estado de registrado pe
 
 **Comentários:**
 
-- Os usuários incluídos em sua política de acesso condicional precisam de uma [versão com suporte do Office para macOS](../conditional-access/technical-reference.md#client-apps-condition) para acessar os recursos. 
+- Os usuários incluídos em sua necessidade de política de acesso condicional um [suporte para a versão do Office para macOS](../conditional-access/technical-reference.md#client-apps-condition) para acessar os recursos. 
 
 - Durante a primeira tentativa de acesso, os usuários são solicitados a registrar o dispositivo usando o portal da empresa.
 

@@ -7,12 +7,12 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/12/2019
-ms.openlocfilehash: 51c1ea7b554178f7fb3f264bf731ffd5872ceea2
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 5b53819c1d30f6cd62c5941d4b44d70a4996daad
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66234557"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67117889"
 ---
 # <a name="source-transformation-for-mapping-data-flow"></a>Transformação de origem para o mapeamento de fluxo de dados 
 
@@ -65,13 +65,13 @@ Posteriormente, você pode alterar os nomes de coluna em uma transformação de 
 
 Sobre o **otimizar** guia para a transformação de origem, você poderá ver um **origem** tipo de partição. Essa opção está disponível somente quando seu código-fonte é o banco de dados SQL. Isso ocorre porque a fábrica de dados tenta fazer conexões em paralelo para executar consultas grandes no seu código-fonte do banco de dados SQL.
 
-![Configurações de partição de origem](media/data-flow/sourcepart2.png "particionamento")
+![Configurações de partição de origem](media/data-flow/sourcepart3.png "particionamento")
 
 Você não precisa particionar os dados em sua fonte de banco de dados SQL, mas as partições são úteis para consultas grandes. Você pode basear a partição em uma coluna ou uma consulta.
 
 ### <a name="use-a-column-to-partition-data"></a>Usar uma coluna para particionar dados
 
-Da sua tabela de origem, selecione uma coluna de partição no. Também defina o número máximo de conexões.
+Da sua tabela de origem, selecione uma coluna de partição no. Também defina o número de partições.
 
 ### <a name="use-a-query-to-partition-data"></a>Use uma consulta para dados de partição
 
@@ -84,9 +84,39 @@ Escolha as configurações para gerenciar arquivos em seu código-fonte.
 ![Novas configurações de origem](media/data-flow/source2.png "novas configurações")
 
 * **Caminho curinga**: Na sua pasta de origem, escolha uma série de arquivos que correspondem a um padrão. Essa configuração substitui qualquer arquivo em sua definição de conjunto de dados.
+
+Exemplos de curinga:
+
+* ```*``` Representa qualquer conjunto de caracteres
+* ```**``` Representa o aninhamento de diretório recursiva
+* ```?``` Substitui um caractere
+* ```[]``` Corresponde a um dos mais caracteres entre colchetes
+
+* ```/data/sales/**/*.csv``` Obtém todos os arquivos csv /data/sales
+* ```/data/sales/20??/**``` Obtém todos os arquivos no século 20
+* ```/data/sales/2004/*/12/[XY]1?.csv``` Obtém todos os arquivos csv em 2004 em dezembro, começando com X ou Y prefixado por um número de dígitos de 2
+
+Contêiner deve ser especificada no conjunto de dados. Seu caminho curinga, portanto, também deve incluir o caminho da pasta na pasta raiz.
+
 * **Lista de arquivos**: Isso é um conjunto de arquivos. Crie um arquivo de texto que inclui uma lista de arquivos do caminho relativo para processar. Aponte para esse arquivo de texto.
 * **Coluna para armazenar o nome do arquivo**: Store o nome do arquivo de origem em uma coluna em seus dados. Insira um novo nome para armazenar a cadeia de caracteres de nome de arquivo.
 * **Após a conclusão**: Optar por não fazer nada com o arquivo de origem depois que os dados de execuções de fluxo, exclua o arquivo de origem ou mover o arquivo de origem. Os caminhos para a movimentação são relativos.
+
+Para mover arquivos de origem para o pós-processamento de outro local, primeiro selecione "Mover" para a operação de arquivo. Em seguida, defina o diretório "de". Se você não estiver usando curingas para seu caminho, em seguida, a "configuração de" será a mesma pasta que sua pasta de origem.
+
+Se você tiver um caminho de origem com curinga, por exemplo:
+
+```/data/sales/20??/**/*.csv```
+
+Você pode especificar "de" como
+
+```/data/sales```
+
+E "para" como
+
+```/backup/priorSales```
+
+Nesse caso, todos os subdiretórios em /data/sales que foram originados são movidos em relação ao /backup/priorSales.
 
 ### <a name="sql-datasets"></a>Conjuntos de dados SQL
 

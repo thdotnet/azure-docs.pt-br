@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/07/2019
 ms.author: barclayn
 ms.openlocfilehash: d0974b98975b8f7d09760be964024f92e9690a4e
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65596390"
 ---
 # <a name="azure-data-encryption-at-rest"></a>Criptografia de dados em repouso no Azure
@@ -245,7 +245,7 @@ Todos os serviços de Armazenamento do Azure (armazenamento de Blob, armazenamen
 - Lado do servidor: Todos os serviços de Armazenamento do Microsoft Azure habilitam a criptografia do servidor por padrão que usa chaves de serviço gerenciado, que é transparente para o aplicativo. Para obter mais informações, consulte [Criptografia de serviço do Armazenamento do Azure para dados em repouso](https://docs.microsoft.com/azure/storage/storage-service-encryption). O Armazenamento de Blobs do Azure e os Arquivos do Azure também dão suporte a chaves gerenciadas pelo cliente RSA de 2048 bits no Azure Key Vault. Para obter mais informações, consulte [Criptografia do Serviço de Armazenamento usando chaves gerenciadas pelo cliente no Azure Key Vault](https://docs.microsoft.com/azure/storage/common/storage-service-encryption-customer-managed-keys).
 - Lado do cliente: Blobs do Azure, tabelas e filas oferecem suporte para criptografia de cliente. Ao usar criptografia do cliente, os clientes criptografam os dados e carregam os dados como um blob criptografado. O gerenciamento de chaves é feito pelo cliente. Para obter mais informações, consulte [Criptografia do lado do cliente e Azure Key Vault para o Armazenamento do Microsoft Azure](https://docs.microsoft.com/azure/storage/storage-client-side-encryption).
 
-#### <a name="azure-sql-database"></a>Banco de Dados SQL do Azure
+#### <a name="azure-sql-database"></a>Banco de dados SQL do Azure
 
 O Banco de Dados SQL do Azure dá suporte à criptografia em repouso para cenários de criptografia gerenciada pela Microsoft no lado do cliente e no lado do serviço.
 
@@ -271,11 +271,11 @@ A criptografia do cliente dos dados do Banco de Dados SQL do Azure tem suporte p
 | Repositório Azure Data Lake            | Sim                | Sim, RSA 2048-bit  | -                  |
 | **Computação**                      |                    |                    |                    |
 | Máquinas Virtuais                 | -                  | Sim, RSA 2048-bit  | -                  |
-| Conjunto de Escalas da Máquina Virtual        | -                  | Sim, RSA 2048-bit  | -                  |
+| Conjunto de dimensionamento de máquina virtual        | -                  | Sim, RSA 2048-bit  | -                  |
 | **Bancos de dados**                    |                    |                    |                    |
 | SQL Server em máquinas virtuais   | Sim                | Sim, RSA 2048-bit  | Sim                |
-| Banco de Dados SQL do Azure               | Sim                | Sim, RSA 2048-bit  | Sim                |
-| SQL Data Warehouse do Azure         | Sim                | Sim, RSA 2048-bit  | Sim                |
+| Banco de dados SQL do Azure               | Sim                | Sim, RSA 2048-bit  | Sim                |
+| Azure SQL Data Warehouse         | Sim                | Sim, RSA 2048-bit  | Sim                |
 | SQL Server Stretch Database      | Sim                | Sim, RSA 2048-bit  | Sim                |
 | Armazenamento de Tabelas                    | Sim                | -                  | Sim                |
 | Azure Cosmos DB                  | Sim                | -                  | -                  |
@@ -294,9 +294,9 @@ A criptografia do cliente dos dados do Banco de Dados SQL do Azure tem suporte p
 | **Governança e gerenciamento**    |                    |                    |                    |
 | Azure Site Recovery              | Sim                | Sim, RSA 2048-bit  | Sim                |
 | **Mídia**                        |                    |                    |                    |
-| Serviços de Mídia                   | Sim                | -                  | Sim                |
+| Serviços de mídia                   | Sim                | -                  | Sim                |
 | **Armazenamento**                      |                    |                    |                    |
-| Armazenamento de Blob                     | Sim                | Sim, RSA 2048-bit  | Sim                |
+| Armazenamento de Blobs                     | Sim                | Sim, RSA 2048-bit  | Sim                |
 | Armazenamento em disco                     | Sim                | -                  | -                  |
 | Armazenamento em Managed Disks             | Sim                | -                  | -                  |
 | Armazenamento de Arquivos                     | Sim                | Sim, RSA 2048-bit  | -                  |

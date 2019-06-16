@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 60a0d7c2da25f63d0728dbb86f9a6c2328def811
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2a6a0e6219a45821e2a4416a4e563aa6edb86eba
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60611234"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67127180"
 ---
 # <a name="azure-advanced-threat-detection"></a>Detecção avançada de ameaças do Azure
 
@@ -37,11 +37,11 @@ O Identity Protection usa algoritmos de aprendizado de máquina adaptáveis e he
 
 O Azure Active Directory Identity Protection é mais do que apenas uma ferramenta de monitoramento e criação de relatórios. Com base em eventos de risco, o Identity Protection calcula um nível de risco do usuário para cada usuário, permitindo que você configure políticas baseadas em risco para proteger automaticamente as identidades da sua organização.
 
-Essas políticas baseadas em risco, entre outros [controles de acesso condicional](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access) fornecidos pelo Azure Active Directory e pelo [EMS](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access), podem bloquear automaticamente ou oferecer ações de correção adaptáveis que incluem redefinições de senha e a imposição da autenticação multifator.
+Essas políticas baseadas em risco, além de outras [controla o acesso condicional](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access) que são fornecidas pelo Azure Active Directory e [EMS](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access), automaticamente pode bloquear ou oferecer ações de correção adaptáveis que incluem redefinições de senha e a imposição de autenticação multifator.
 
 ### <a name="identity-protection-capabilities"></a>Recursos do Identity Protection
 
-O Azure Active Directory Identity Protection é mais do que apenas uma ferramenta de monitoramento e criação de relatórios. Para proteger as identidades da sua organização, você pode configurar políticas de risco que respondem automaticamente a problemas detectados quando um nível de risco especificado foi alcançado. Essas políticas, entre outros controles de acesso condicional fornecidos pelo Azure Active Directory e pelo EMS, podem bloquear ou iniciar automaticamente ações de correção adaptáveis que incluem redefinições de senha e a imposição de autenticação multifator.
+O Azure Active Directory Identity Protection é mais do que apenas uma ferramenta de monitoramento e criação de relatórios. Para proteger as identidades da sua organização, você pode configurar políticas de risco que respondem automaticamente a problemas detectados quando um nível de risco especificado foi alcançado. Essas políticas, além de outros controles de acesso condicional fornecidos pelo Azure Active Directory e o EMS, podem bloquear automaticamente ou iniciar ações de correção adaptáveis que incluem redefinições de senha e a imposição de autenticação multifator.
 
 Os exemplos de algumas das maneiras como o Azure Identity Protection pode ajudar a proteger suas contas e identidades incluem:
 
@@ -95,7 +95,7 @@ O painel de Segurança e Auditoria do Log Analytics é organizado em quatro cate
 
 -   **Problemas Importantes**: Permite identificar rapidamente o número de problemas ativos e sua gravidade.
 
--   **Detecções (Versão Prévia)**: Permite identificar padrões de ataque exibindo os alertas de segurança à medida que eles ocorrem nos recursos.
+-   **Detecções (Versão Prévia)** : Permite identificar padrões de ataque exibindo os alertas de segurança à medida que eles ocorrem nos recursos.
 
 -   **Inteligência contra Ameaças**: Permite identificar padrões de ataque exibindo o número total de servidores com tráfego IP de saída mal-intencionado, o tipo de ameaça mal-intencionada e um mapa dos locais desses IPs.
 

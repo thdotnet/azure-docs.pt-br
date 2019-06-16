@@ -10,10 +10,10 @@ ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
 ms.openlocfilehash: 10a6e5c33f6a3c23d98e6eb3380de0d6dc6ac216
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65544468"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Instalar o gateway de dados no local para os Aplicativos Lógicos do Azure
@@ -32,7 +32,7 @@ O gateway dá suporte a [conectores locais](../connectors/apis-list.md#on-premis
 *   IBM Informix
 *   IBM MQ
 *   MySQL
-*   Oracle Database
+*   Banco de dados Oracle
 *   PostgreSQL
 *   Servidor de aplicativos SAP 
 *   Servidor de mensagens SAP
@@ -238,7 +238,7 @@ O gateway cria uma conexão de saída para o [Barramento de Serviço do Azure](h
 
 O gateway usa estes nomes de domínio totalmente qualificados:
 
-| Nomes de domínio | Portas de saída | Descrição | 
+| Nomes de domínio | Portas de saída | DESCRIÇÃO | 
 | ------------ | -------------- | ----------- | 
 | *.analysis.windows.net | 443 | HTTPS | 
 | *.core.windows.net | 443 | HTTPS | 
@@ -246,8 +246,8 @@ O gateway usa estes nomes de domínio totalmente qualificados:
 | *.login.windows.net | 443 | HTTPS | 
 | *.microsoftonline p.com | 443 | Usado para autenticação, dependendo da configuração. | 
 | *.msftncsi.com | 443 | Usado para testar a conectividade com a Internet quando o gateway não puder ser acessado pelo serviço do Power BI. | 
-| * .servicebus.windows.net | 443, 9350-9354 | Ouvintes de Retransmissão do Barramento de Serviço por meio de TCP (requer 443 para aquisição de token de Controle de Acesso) | 
-| * .servicebus.windows.net | 5671-5672 | Advanced Message Queuing Protocol (AMQP) | 
+| *.servicebus.windows.net | 443, 9350-9354 | Ouvintes de Retransmissão do Barramento de Serviço por meio de TCP (requer 443 para aquisição de token de Controle de Acesso) | 
+| *.servicebus.windows.net | 5671-5672 | Advanced Message Queuing Protocol (AMQP) | 
 | login.microsoftonline.com | 443 | HTTPS | 
 ||||
 
@@ -363,7 +363,7 @@ Estas etapas descrevem o que acontece quando um usuário na nuvem interage com u
 **P**: O serviço Windows do gateway pode ser executado com uma conta do Azure Active Directory? <br/>
 **R**: Não, o serviço Windows deve ter uma conta do Windows válida.
 
-### <a name="disaster-recovery"></a>Recuperação de desastres
+### <a name="disaster-recovery"></a>Recuperação de desastre
 
 **P**: Quais opções estão disponíveis para recuperação de desastre? <br/>
 **R**: Você pode usar a chave de recuperação para restaurar ou mover um gateway. Ao instalar o gateway, especifique a chave de recuperação.
@@ -430,7 +430,7 @@ Aqui estão outros locais onde é possível encontrar vários logs:
 Para localizar os logs de eventos do gateway, siga estas etapas:
 
 1. No computador com a instalação do gateway, abra o **Visualizador de Eventos**. 
-2. Expanda o **Visualizador de Eventos (Local)** > **Logs de Aplicativos e Serviços**. 
+2. Expanda o **Visualizador de Eventos (Local)**  > **Logs de Aplicativos e Serviços**. 
 3. Selecione **Serviço de gateway de dados local**.
 
    ![Exibir logs de eventos do gateway](./media/logic-apps-gateway-install/event-viewer.png)
@@ -485,7 +485,7 @@ Para determinar a duração de uma consulta, siga estas etapas:
 
    2. Para localizar uma consulta, pesquise um tipo de atividade, por exemplo: 
 
-      | Tipo de atividade | Descrição | 
+      | Tipo de atividade | DESCRIÇÃO | 
       |---------------|-------------| 
       | MGEQ | Consultas que são executadas no ADO.NET. | 
       | MGEO | Consultas que são executadas no OLEDB. | 

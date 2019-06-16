@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 06/12/2018
 ms.author: cawa
 ms.openlocfilehash: b753b565b7dae6cdc244d05d051df964eda3c6f2
-ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65620482"
 ---
 # <a name="microsoft-azure-storage-explorer-release-notes"></a>Notas de versão do Gerenciador de Armazenamento do Microsoft Azure
@@ -49,7 +49,7 @@ O [Gerenciador de Armazenamento do Microsoft Azure](./vs-azure-tools-storage-man
 * Para carregamentos do AzCopy, o sinalizador para calcular e definir o hash MD5 agora está habilitado. [#1223](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1223)
 
 
-### <a name="preview-features"></a>Recursos de visualização
+### <a name="preview-features"></a>Recursos de Visualização
 
 * Entrada de fluxo de código de dispositivo no agora está disponível para visualização. Para habilitá-lo, vá para "Preview" → "Use código fluxo de logon de dispositivo". Recomendamos que todos os usuários que tiveram problemas com o windows de entrada em branco para experimentar este recurso, ele pode se revelar uma forma mais confiável de entrar.
 * O Gerenciador de armazenamento integrado com o AzCopy está disponível para visualização. Para habilitá-lo, vá para "Preview" → "Use AzCopy para aprimorado Blob carregar e baixar". Transferências de blob concluídas com o AzCopy devem ser mais rápidas e mais funcionais.
@@ -145,7 +145,7 @@ O [Gerenciador de Armazenamento do Microsoft Azure](./vs-azure-tools-storage-man
 * Para carregamentos do AzCopy, o sinalizador para calcular e definir o hash MD5 agora está habilitado. [#1223](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1223)
 
 
-### <a name="preview-features"></a>Recursos de visualização
+### <a name="preview-features"></a>Recursos de Visualização
 
 * Entrada de fluxo de código de dispositivo no agora está disponível para visualização. Para habilitá-lo, vá para "Preview" → "Use código fluxo de logon de dispositivo". Recomendamos que todos os usuários que tiveram problemas com o windows de entrada em branco para experimentar este recurso, ele pode se revelar uma forma mais confiável de entrar.
 * O Gerenciador de armazenamento integrado com o AzCopy está disponível para visualização. Para habilitá-lo, vá para "Preview" → "Use AzCopy para aprimorado Blob carregar e baixar". Transferências de blob concluídas com o AzCopy devem ser mais rápidas e mais funcionais.
@@ -198,7 +198,7 @@ O [Gerenciador de Armazenamento do Microsoft Azure](./vs-azure-tools-storage-man
 * Agora você pode alterar o proprietário e o grupo proprietário ao gerenciar o acesso para um contêiner de Gen2 ADLS, arquivo ou pasta.
 * No Windows, atualizar o Gerenciador de armazenamento de dentro do produto agora é uma instalação incremental. Isso deve resultar em uma experiência de atualização mais rápida. Se você preferir uma instalação limpa e, em seguida, você pode baixar o [installer](https://azure.microsoft.com/features/storage-explorer/) por conta própria e, em seguida, instale manualmente. #1089
 
-### <a name="preview-features"></a>Recursos de visualização
+### <a name="preview-features"></a>Recursos de Visualização
 
 * Entrada de fluxo de código de dispositivo no agora está disponível para visualização. Para habilitá-lo, vá para "Preview" → "Use código fluxo de logon de dispositivo". Recomendamos que todos os usuários que tiveram problemas com o windows de entrada em branco para experimentar este recurso, ele pode se revelar uma forma mais confiável de entrar. #938
 * O Gerenciador de armazenamento integrado com o AzCopy está disponível para visualização. Para habilitá-lo, vá para "Preview" → "Use AzCopy para aprimorado Blob carregar e baixar". Transferências de blob concluídas com o AzCopy devem ser mais rápidas e mais funcionais.
@@ -471,7 +471,7 @@ Por fim, o suporte para o uso do AzCopy com Compartilhamentos de Arquivos será 
 * Quebrar concessões agora só pode ser executado em um blob de cada vez. Além disso, você tem que digitar o nome do blob cujo aluguel você está quebrando. Essa alteração foi feita para reduzir a probabilidade de quebra acidental de uma concessão, especialmente para VMs. #394
 * Se você encontrar problemas de login, poderá tentar redefinir a autenticação. Vá para o menu "Ajuda" e clique em "Redefinir" para acessar essa funcionalidade. #419
 
-### <a name="fix"></a>Corrigir
+### <a name="fix"></a>Correção
 
 * Após um forte feedback do usuário, o nó do emulador padrão foi reativado. Você ainda pode adicionar mais conexões de emulador por meio da caixa de diálogo Conectar, mas se o emulador estiver configurado para usar as portas padrão, você também poderá usar o nó "Emulator * Default Ports" em "Contas locais e anexadas / armazenamento". #669
 * O Storage Explorer não permitirá mais que você defina valores de metadados de blob com espaço em branco à esquerda ou à direita. #760
