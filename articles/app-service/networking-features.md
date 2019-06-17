@@ -16,10 +16,10 @@ ms.date: 05/28/2019
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 666430a11fb95871eb601b2a38eb7b97ad16119f
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66498943"
 ---
 # <a name="app-service-networking-features"></a>Recursos de rede do serviço de aplicativo
@@ -46,8 +46,8 @@ Para qualquer determinado caso de uso, pode haver algumas maneiras de resolver o
  
 | Casos de uso de entrada | Recurso |
 |---------------------|-------------------|
-| Dar suporte às necessidades SSL com base em IP para seu aplicativo | atribuído o endereço de aplicativo |
-| Não compartilhado, o endereço de entrada dedicado para seu aplicativo | atribuído o endereço de aplicativo |
+| Dar suporte às necessidades SSL com base em IP para seu aplicativo | Atribuído o endereço de aplicativo |
+| Não compartilhado, o endereço de entrada dedicado para seu aplicativo | Atribuído o endereço de aplicativo |
 | Restringir o acesso ao seu aplicativo de um conjunto de endereços bem definidos | Restrições de acesso |
 | Expor o meu aplicativo em IPs privados na minha VNet | ILB ASE </br> Gateway de aplicativo com pontos de extremidade de serviço |
 | Restringir o acesso ao meu aplicativo de recursos em uma rede virtual | Pontos de extremidade de serviço </br> ILB ASE |

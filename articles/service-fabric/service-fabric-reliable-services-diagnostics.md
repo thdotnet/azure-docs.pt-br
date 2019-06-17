@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 8/24/2018
 ms.author: dekapur
 ms.openlocfilehash: f49176f944aa2abfa1d355ce0bd207d1b544c275
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60772951"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Funcionalidade de diagnóstico para Reliable Services com monitoração de estado
@@ -29,7 +29,7 @@ O nome do EventSource da classe StatefulServiceBase de Reliable Services com est
 
 Exemplos de ferramentas e tecnologias que ajudam a coletar e/ou exibir eventos EventSource são [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [Diagnóstico do Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) e [Microsoft TraceEvent Library](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
-## <a name="events"></a>Eventos
+## <a name="events"></a>Events
 | Nome do evento | ID do evento | Nível | Descrição do evento |
 | --- | --- | --- | --- |
 | StatefulRunAsyncInvocation |1 |Informativo |Emitido quando a tarefa RunAsync do serviço é iniciada |
@@ -50,7 +50,7 @@ StatefulRunAsyncSlowCancellation é emitido sempre que uma solicitação de canc
 ## <a name="performance-counters"></a>contadores de desempenho
 O tempo de execução dos Reliable Services define as categorias de contador de desempenho a seguir:
 
-| Category | DESCRIÇÃO |
+| Categoria | DESCRIÇÃO |
 | --- | --- |
 | Replicador Transacional do Service Fabric |Contadores específicos para o Replicador Transacional do Azure Service Fabric |
 | Service Fabric TStore |Contadores específicos para o Replicador Transacional |
@@ -106,7 +106,7 @@ O tempo de execução de Serviços Confiáveis emite os eventos a seguir na `Ser
 | --- | --- |
 | Operações de Início de Trans./s | Número de novas transações de gravação criadas por segundo.|
 | Operações de Transação/s | O número de operações de adicionar/atualizar/excluir executadas em coleções confiáveis por segundo.|
-| Bytes de Liberação de Log/s | O número de bytes que estão sendo liberados para o disco pelo Replicador Transacional por segundo |
+| Bytes de liberação/s de log | O número de bytes que estão sendo liberados para o disco pelo Replicador Transacional por segundo |
 | Operações Limitadas/s | O número de operações rejeitadas a cada segundo pelo Replicador Transacional devido à limitação. |
 | Média Transação em ms/confirmação | Latência de confirmação média por transação em milissegundos |
 | Média Latência Média de Liberação (ms) | Duração média das operações de limpeza de disco iniciada pelo Replicador Transacional em milissegundos |

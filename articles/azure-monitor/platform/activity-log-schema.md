@@ -9,10 +9,10 @@ ms.date: 1/16/2019
 ms.author: dukek
 ms.subservice: logs
 ms.openlocfilehash: ba5e0f696f54f46fb14086b542dc3b2e64155975
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66244946"
 ---
 # <a name="azure-activity-log-event-schema"></a>Esquema sobre eventos do Log de Atividades do Azure
@@ -112,10 +112,10 @@ Essa categoria contém o registro de todas as operações de criação, atualiza
 ### <a name="property-descriptions"></a>Descrições de propriedade
 | Nome do elemento | DESCRIÇÃO |
 | --- | --- |
-| autorização |Blob de propriedades RBAC do evento. Geralmente, inclui as propriedades "action", "role" e "scope". |
+| authorization |Blob de propriedades RBAC do evento. Geralmente, inclui as propriedades "action", "role" e "scope". |
 | chamador |Endereço de email do usuário que realizou a operação, declaração UPN ou declaração SPN com base na disponibilidade. |
 | canais |Um dos seguintes valores: "Admin", "Operação" |
-| declarações |O token JWT usado pelo Active Directory para autenticar o usuário ou o aplicativo a fim de executar essa operação no Resource Manager. |
+| claims |O token JWT usado pelo Active Directory para autenticar o usuário ou o aplicativo a fim de executar essa operação no Resource Manager. |
 | correlationId |Geralmente, um GUID no formato de cadeia de caracteres. Os eventos que compartilham um correlationId pertencem à mesma ação superior. |
 | description |Descrição de texto estático de um evento. |
 | eventDataId |Identificador exclusivo de um evento. |
@@ -354,7 +354,7 @@ Essa categoria contém o registro de todas as ativações de alertas do Azure. U
 | --- | --- |
 | chamador | Always Microsoft.Insights/alertRules |
 | canais | Sempre "Administrador, Operação" |
-| declarações | Blob JSON com o SPN (nome da entidade de serviço) ou tipo de recurso do mecanismo de alerta. |
+| claims | Blob JSON com o SPN (nome da entidade de serviço) ou tipo de recurso do mecanismo de alerta. |
 | correlationId | Um GUID no formato de cadeia de caracteres. |
 | description |Descrição de texto estático do evento de alerta. |
 | eventDataId |Identificador exclusivo do alerta de evento. |
@@ -558,7 +558,7 @@ Esta categoria contém o registro de todos os alertas gerados pela Central de Se
 | eventDataId |Identificador exclusivo do evento de segurança. |
 | eventName |Nome amigável do evento de segurança. |
 | category | Sempre "segurança" |
-| ID |Identificador de recursos exclusivo do evento de segurança. |
+| id |Identificador de recursos exclusivo do evento de segurança. |
 | level |Nível do evento. Um dos seguintes valores: "Crítico", "Erro", "Aviso" ou "Informativo" |
 | resourceGroupName |Nome do grupo de recursos para o recurso. |
 | resourceProviderName |Nome do provedor de recursos para a Central de Segurança do Azure. Sempre "Microsoft.Security". |
@@ -638,7 +638,7 @@ Esta categoria contém o registro das novas recomendações geradas para os serv
 | description |Descrição de texto estático do evento de recomendação |
 | eventDataId | Identificador exclusivo do evento de recomendação. |
 | category | Sempre "Recomendação" |
-| ID |Identificador exclusivo do recurso do evento de recomendação. |
+| id |Identificador exclusivo do recurso do evento de recomendação. |
 | level |Nível do evento. Um dos seguintes valores: "Crítico", "Erro", "Aviso" ou "Informativo" |
 | operationName |Nome da operação.  Sempre "Microsoft.Advisor/generateRecommendations/action"|
 | resourceGroupName |Nome do grupo de recursos para o recurso. |
@@ -743,17 +743,17 @@ Essa categoria contém registros de todas as operações de ação de efeito exe
 
 | Nome do elemento | DESCRIÇÃO |
 | --- | --- |
-| autorização | Matriz de propriedades RBAC do evento. Para os novos recursos, estes são a ação e o escopo da solicitação que disparou a avaliação. Para recursos existentes, a ação é "Microsoft.Resources/checkPolicyCompliance/read". |
+| authorization | Matriz de propriedades RBAC do evento. Para os novos recursos, estes são a ação e o escopo da solicitação que disparou a avaliação. Para recursos existentes, a ação é "Microsoft.Resources/checkPolicyCompliance/read". |
 | chamador | Para novos recursos, a identidade que iniciou uma implantação. Para recursos existentes, o GUID do grupo de recursos de Insights do Microsoft Azure Policy. |
 | canais | Eventos do Policy usam apenas o canal "Operation". |
-| declarações | O token JWT usado pelo Active Directory para autenticar o usuário ou o aplicativo a fim de executar essa operação no Resource Manager. |
+| claims | O token JWT usado pelo Active Directory para autenticar o usuário ou o aplicativo a fim de executar essa operação no Resource Manager. |
 | correlationId | Geralmente, um GUID no formato de cadeia de caracteres. Os eventos que compartilham um correlationId pertencem à mesma ação superior. |
 | description | Este campo fica em branco para eventos do Policy. |
 | eventDataId | Identificador exclusivo de um evento. |
 | eventName | "BeginRequest" ou "EndRequest". "BeginRequest" é usado para avaliações de auditIfNotExists e deployIfNotExists atrasadas e quando um efeito deployIfNotExists inicia uma implantação de modelo. Todas as outras operações retornam "EndRequest". |
 | category | Declara um evento de log de atividades como pertencente a "Policy". |
 | eventTimestamp | Carimbo de hora quando o evento foi gerado pelo serviço do Azure que está processando a solicitação correspondente ao evento. |
-| ID | Identificador exclusivo do evento no recurso específico. |
+| id | Identificador exclusivo do evento no recurso específico. |
 | level | Nível do evento. Audit usa "Warning" e Deny usa "Error". Um erro auditIfNotExists ou deployIfNotExists pode gerar "Warning" ou "Error", dependendo da gravidade. Todos os outros eventos do Policy usam "Informational". |
 | operationId | Um GUID compartilhado entre os eventos que correspondem a uma única operação. |
 | operationName | Nome da operação e se correlaciona diretamente com o efeito do Policy. |
@@ -777,7 +777,7 @@ Ao transmitir o Log de Atividades do Azure para uma conta de armazenamento ou um
 
 | Propriedade do esquema de logs de diagnóstico | Propriedade de esquema da API REST do Log de Atividades | Observações |
 | --- | --- | --- |
-| tempo real | eventTimestamp |  |
+| time | eventTimestamp |  |
 | ResourceId | ResourceId | subscriptionId, resourceType e resourceGroupName são todos inferidos da resourceId. |
 | operationName | operationName.value |  |
 | category | Parte do nome da operação | Detalhamento do tipo de operação – "Gravação"/"Exclusão"/"Ação" |

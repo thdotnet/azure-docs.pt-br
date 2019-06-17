@@ -1,25 +1,25 @@
 ---
 title: Logs do servidor para Banco de Dados do Azure para MySQL
-description: Descreve os logs disponíveis no Banco de Dados do Azure para MySQL para os parâmetros disponíveis para habilitar níveis de log diferentes.
+description: Descreve os logs de consulta lenta disponíveis no banco de dados do Azure para MySQL e os parâmetros disponíveis para habilitar níveis de log diferentes.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 02/28/2019
-ms.openlocfilehash: c5087a038e31c4819ef1ef173bb32faa41e04c97
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/29/2019
+ms.openlocfilehash: 1a8956d40ef30e8d52fbdded3448019e14ab16a5
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60525833"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062410"
 ---
-# <a name="server-logs-in-azure-database-for-mysql"></a>Logs de servidor no Banco de Dados do Azure para MySQL
-No Banco de Dados do Azure para MySQL, o log de consultas lentas está disponível para os usuários. No entanto, não há suporte para acesso ao log de transação. O log de consultas lentas pode ser usado para identificar gargalos de desempenho para solução de problemas. 
+# <a name="slow-query-logs-in-azure-database-for-mysql"></a>Logs de consulta lenta no banco de dados do Azure para MySQL
+No Banco de Dados do Azure para MySQL, o log de consultas lentas está disponível para os usuários. No entanto, não há suporte para acesso ao log de transação. O log de consultas lentas pode ser usado para identificar gargalos de desempenho para solução de problemas.
 
 Para obter mais informações sobre o log de consultas lentas do MySQL, consulte o manual de referência de MySQL [seção de log de consulta lenta](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).
 
-## <a name="access-server-logs"></a>Acessar logs do servidor
-Você pode listar e baixar logs de servidor do Banco de Dados do Azure para MySQL usando o Portal do Azure a CLI do Azure.
+## <a name="access-slow-query-logs"></a>Acessar logs de consulta lenta
+Você pode listar e baixar o banco de dados do Azure para logs de consulta lenta do MySQL usando o portal do Azure e a CLI do Azure.
 
 No Portal do Azure, selecione o servidor do Banco de Dados do Azure para MySQL. Sob o título **Monitoramento**, selecione a página **Logs do Servidor**.
 
@@ -30,8 +30,7 @@ Logs estão disponíveis por até sete dias desde a criação deles. Se o tamanh
 
 Logs são reciclados a cada 24 horas ou 7 GB, o que ocorrer primeiro.
 
-
-## <a name="configure-logging"></a>Configurar o registro em log 
+## <a name="configure-slow-query-logging"></a>Configurar o log de consultas lentas 
 Por padrão, o log de consultas lentas está desabilitado. Para habilitá-lo, defina slow_query_log para ON.
 
 Outros parâmetros que você pode ajustar incluem:
@@ -73,10 +72,10 @@ A tabela a seguir descreve o que está em cada log. Dependendo do método de sa�
 | `rows_sent_s` | Número de linhas enviadas |
 | `rows_examined_s` | Número de linhas verificadas |
 | `last_insert_id_s` | [last_insert_id](https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_last-insert-id) |
-| `insert_id_s` | Inserir id |
+| `insert_id_s` | Inserir ID |
 | `sql_text_s` | Consulta completa |
-| `server_id_s` | Id do servidor |
-| `thread_id_s` | id do thread |
+| `server_id_s` | ID do servidor |
+| `thread_id_s` | ID do thread |
 | `\_ResourceId` | URI de recurso |
 
 ## <a name="next-steps"></a>Próximas etapas

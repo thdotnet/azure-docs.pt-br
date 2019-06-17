@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/23/2019
 ms.author: rogarana
 ms.subservice: common
-ms.openlocfilehash: e3e0e9ae4a1939aad9ab2ae42a1b51b1b00e2462
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: a61c2577f79f32f97fe2ef10a2ac67fdbbc1feda
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62101452"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073763"
 ---
 # <a name="azure-storage-scalability-and-performance-targets-for-storage-accounts"></a>Azure metas de desempenho e escalabilidade do armazenamento para contas de armazenamento
 
@@ -43,6 +43,9 @@ Quando seu aplicativo atinge o limite de processamento de uma partição para su
 
 Para saber mais sobre as metas de escala e desempenho para Arquivos do Azure e da Sincronização de Arquivos do Azure, consulte [Metas de escala e de desempenho de Arquivos do Azure](../files/storage-files-scale-targets.md).
 
+> [!IMPORTANT]
+> Limites da conta de armazenamento se aplicam a todos os compartilhamentos. Expandindo para o máximo de contas de armazenamento só é possível se houver apenas um compartilhamento por conta de armazenamento.
+
 [!INCLUDE [storage-files-scale-targets](../../../includes/storage-files-scale-targets.md)]
 
 ### <a name="premium-files-scale-targets"></a>Arquivos Premium dimensionar destinos
@@ -53,27 +56,7 @@ Por exemplo:  Um único compartilhamento pode alcançar a 100.000 IOPS e um úni
 
 #### <a name="premium-file-share-limits"></a>Limites de compartilhamento de arquivo do Premium
 
-> [!IMPORTANT]
-> Limites da conta de armazenamento se aplicam a todos os compartilhamentos. Expandindo para o máximo de contas de armazenamento só é possível se houver apenas um compartilhamento por conta de armazenamento.
-
-|Área  |Destino  |
-|---------|---------|
-|Tamanho mínimo provisionado                        |100 GiB      |
-|Max provisionado tamanho                        |100 TiB      |
-|Aumentar/diminuir de tamanho mínimo    |1 GiB      |
-|IOPS de linha de base    |1 IOPS por GiB até 100.000|
-|IOPS de intermitência    |3 x IOPS por GiB até 100.000|
-|Taxa de saída         |60 MiB/s + 0,06 * provisionado GiB        |
-|Taxa de entrada| 40 MiB/s + 0,04 * provisionado GiB |
-|Número máximo de instantâneos        |200       |
-
-#### <a name="premium-file-limits"></a>Limites de arquivo do Premium
-
-|Área  |Destino  |
-|---------|---------|
-|Tamanho                  |1 TiB         |
-|IOPS máxima por arquivo     |5.000         |
-|Identificadores simultâneos    |2.000         |
+[!INCLUDE [storage-files-premium-scale-targets](../../../includes/storage-files-premium-scale-targets.md)]
 
 ### <a name="azure-file-sync-scale-targets"></a>Destinos de escala de Sincronização de Arquivos do Azure
 

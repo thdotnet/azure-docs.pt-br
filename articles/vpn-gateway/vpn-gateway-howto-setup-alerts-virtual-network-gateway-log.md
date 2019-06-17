@@ -5,18 +5,26 @@ services: vpn-gateway
 author: anzaman
 ms.service: vpn-gateway
 ms.topic: conceptional
-ms.date: 04/22/2019
+ms.date: 06/12/2019
 ms.author: alzam
-ms.openlocfilehash: 3880c847c54136dfd3ba1ecfe0178565091e229f
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 48725ed8cdf3df30f8df31966aa632bfb2a4ef1f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510213"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066902"
 ---
 # <a name="set-up-alerts-on-diagnostic-log-events-from-vpn-gateway"></a>Configurar alertas em eventos de log de diagnóstico do Gateway de VPN
 
-Este artigo ajuda você a configurar alertas com base em eventos de log de diagnóstico do Gateway de VPN do Azure.
+Este artigo ajuda você a configurar alertas com base em eventos de log de diagnóstico do Gateway de VPN do Azure. Os logs a seguir estão disponíveis.
+
+|***Nome*** | ***Descrição*** |
+|---        | ---               |
+|GatewayDiagnosticLog | Contém os logs de diagnóstico para eventos de configuração de gateway, principais alterações e eventos de manutenção |
+|TunnelDiagnosticLog | Contém eventos de alteração de estado do túnel. Túnel conectar/desconectar eventos tem um motivo resumido para que a alteração de estado, se aplicável |
+|RouteDiagnosticLog | Logs de alterações em rotas estáticas e eventos BGP que ocorrem no gateway |
+|IKEDiagnosticLog | Registra mensagens de controle de IKE e eventos no gateway |
+|P2SDiagnosticLog | Registra mensagens de controle de ponto a site e eventos no gateway |
 
 ## <a name="setup"></a>Configurar alertas
 

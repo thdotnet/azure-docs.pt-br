@@ -9,10 +9,10 @@ ms.date: 03/23/2019
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 7b75e24e5d59206ee8330c3ca9eaf86eacbad13d
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66114775"
 ---
 ### <a name="premium-performance-block-blob-storage"></a>Armazenamento de blob de bloco de desempenho Premium
@@ -21,13 +21,13 @@ Uma conta de armazenamento de blob de bloco do premium desempenho é otimizada p
 
 ### <a name="premium-performance-filestorage-preview"></a>Desempenho Premium FileStorage (visualização)
 
-Arquivos Premium usam uma conta de armazenamento exclusivo chamada **FileStorage (visualização)**. Esse tipo de conta é projetado para cargas de trabalho com IOPS alto, alta taxa de transferência com baixa latência consistente. O armazenamento de arquivos Premium pode ser dimensionado com o tamanho do compartilhamento provisionado.
+Arquivos Premium usam uma conta de armazenamento exclusivo chamada **FileStorage (visualização)** . Esse tipo de conta é projetado para cargas de trabalho com IOPS alto, alta taxa de transferência com baixa latência consistente. O armazenamento de arquivos Premium pode ser dimensionado com o tamanho do compartilhamento provisionado.
 
 |Área  |Destino  |
 |---------|---------|
 |Max provisionado tamanho     |100 TiB     |
 |Compartilhamentos   |Ilimitado  |
-|IOPS     |100.000    |
+|IOPS     |100\.000    |
 |Entrada|4,136 MiB/s     |
 |Saída|6,204 MiB/s |
 

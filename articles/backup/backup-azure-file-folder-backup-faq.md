@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: dacurwin
-ms.openlocfilehash: 1ac3cdecc79cafb9ea2697cca3c87b2ebe083d40
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 56dc87b1cdf36d761c46133004a05f8fa225a091
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66254858"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808306"
 ---
 # <a name="common-questions-about-backing-up-files-and-folders"></a>Perguntas comuns sobre como fazer backup de arquivos e pastas 
 
@@ -83,11 +83,11 @@ Quando você renomeia uma máquina Windows, todos os backups atualmente configur
 - Se você precisar recuperar dados de backup no cofre com o nome antigo do servidor, use a opção para restaurar para um local alternativo no Assistente para recuperar dados. [Saiba mais](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine). 
 
 ### <a name="what-is-the-maximum-file-path-length-for-backup"></a>O que é o comprimento do caminho de arquivo máximo para o backup?
-O agente do MARS se baseia em NTFS e usa a especificação de comprimento de caminho do arquivo limitada pela [API do Windows](/windows/desktop/FileIO/naming-a-file#fully_qualified_vs._relative_paths). Se os arquivos que você deseja proteger são maiores do que o valor permitido, faça backup da pasta pai ou a unidade de disco.  
+O agente do MARS se baseia em NTFS e usa a especificação de comprimento de caminho do arquivo limitada pela [API do Windows](/windows/desktop/FileIO/naming-a-file#fully-qualified-vs-relative-paths). Se os arquivos que você deseja proteger são maiores do que o valor permitido, faça backup da pasta pai ou a unidade de disco.  
 
 ### <a name="what-characters-are-allowed-in-file-paths"></a>Quais caracteres são permitidos em caminhos de arquivo?
 
-O agente do MARS se baseia em NTFS e permite [suporte para caracteres](/windows/desktop/FileIO/naming-a-file#naming_conventions) em nomes ou caminhos de arquivo.
+O agente do MARS se baseia em NTFS e permite [suporte para caracteres](/windows/desktop/FileIO/naming-a-file#naming-conventions) em nomes ou caminhos de arquivo.
 
 ### <a name="the-warning-azure-backups-have-not-been-configured-for-this-server-appears"></a>O aviso "Backups do Azure não foram configurados para este servidor" é exibida.
 Esse aviso pode aparecer mesmo que você configurou uma política de backup, quando as configurações de agendamento de backup armazenadas no servidor local não são as mesmas que as configurações armazenadas no cofre de backup.

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 04/25/2019
 ms.author: pabutler
 ms.openlocfilehash: d9b259ba93be369658638d034f109a3a6ba4c4a4
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64938197"
 ---
 # <a name="virtual-machine-marketplace-tab"></a>Guia de Marketplace de máquina virtual
@@ -33,7 +33,7 @@ A tabela a seguir descreve o objetivo e o conteúdo desses campos. Os campos obr
 | **Resumo longo\***          | Finalidade ou a função da solução.  Comprimento máximo de 256 caracteres. |
 | **Descrição\***           | Descrição da solução  Comprimento máximo de 3000 caracteres, suporta formatação HTML simples. |
 | **Canal de revendedor CSP da Microsoft\*** | Cloud Solution Providers (CSP) parceiro canal participar agora está disponível.  Consulte [Cloud Solution Providers](../../cloud-solution-providers.md) para obter mais informações sobre sua oferta por meio do Microsoft CSP de marketing de parceiros canais. |
-| **Identificador de marketing\***  | Um URL exclusivo para associar a essa oferta geralmente inclui sua organização e o nome da solução, com um comprimento máximo de 50 caracteres.  Por exemplo:  <br/> `https://azuremarketplace.microsoft.com/marketplace/apps/contoso.sampleApp`  |
+| **Identificador de marketing\***  | Um URL exclusivo para associar a essa oferta geralmente inclui sua organização e o nome da solução, com um comprimento máximo de 50 caracteres.  Por exemplo: <br/> `https://azuremarketplace.microsoft.com/marketplace/apps/contoso.sampleApp`  |
 | **Visualizar IDs de assinatura\*** | Adicione de um a 100 identificadores de assinatura de pré-visualizadores. Essas assinaturas listadas na lista de permissões terão acesso à oferta assim que forem publicadas antes de serem publicadas. |
 | **Links úteis**          | Adicione URLs a documentações, notas de versão, perguntas frequentes e assim por diante. |
 | **Sugerido categorias (máx. 5)\*** | A seleção múltipla de categorias comerciais e técnicas que oferecem pode ser melhor associada.  Máximo permitido de cinco.  |
@@ -58,7 +58,7 @@ A tabela a seguir descreve o objetivo e o conteúdo desses campos. Os campos obr
 | **Hero**                  | bitmap de 815 x 290.  Opcional, no entanto, uma vez carregado, o ícone do herói não pode ser excluído. |
 | *Capturas de tela*  | Opcional, mas no máximo cinco capturas de tela por SKU. |
 | **Nome**                  | Nome ou o título <!-- TODO - max char length? none specified in UI -->                               |
-| **Imagem**                 | Imagem de captura de tela, 533, 324 pixel                                         |
+| **Image**                 | Imagem de captura de tela, 533, 324 pixel                                         |
 | *Vídeos*  |  |
 | **Nome**                  | Nome ou o título  <!-- TODO - max char length? -->                              |
 | **Link**                  | URL do vídeo, hospedado no YouTube ou Vimeo                                        |

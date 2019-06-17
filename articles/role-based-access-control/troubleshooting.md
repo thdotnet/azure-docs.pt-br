@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/13/2019
+ms.date: 06/12/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1
-ms.openlocfilehash: 5dda2eafe86d037faab6284c2af0d8026c194d11
-ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
+ms.openlocfilehash: 59ece9c37a563efba6329a30c06c1b596b1a5d57
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65921151"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058163"
 ---
 # <a name="troubleshoot-rbac-for-azure-resources"></a>Solução de problemas com o RBAC para recursos do Azure
 
@@ -36,7 +36,7 @@ Este artigo responde a perguntas comuns sobre o RBAC (controle de acesso baseado
 - Se você precisar que as etapas para criar uma função personalizada, consulte os tutoriais de função personalizada usando [Azure PowerShell](tutorial-custom-role-powershell.md) ou [CLI do Azure](tutorial-custom-role-cli.md).
 - Se você não é possível atualizar uma função personalizada existente, verifique se você está atualmente registrado com um usuário que é atribuído a uma função que tenha o `Microsoft.Authorization/roleDefinition/write` permissão como [proprietário](built-in-roles.md#owner) ou [acesso de usuário administrador](built-in-roles.md#user-access-administrator).
 - A impossibilidade de excluir uma função personalizada e a mensagem de erro "Existem atribuições de função que fazem referência à função (código: RoleDefinitionHasAssignments)" significam que há atribuições de função que ainda estão usando a função personalizada. Remova essas atribuições de função e tente excluir a função personalizada novamente.
-- Se você receber a mensagem de erro "Limite de definição de função excedido. Sem as definições de função podem ser criadas (código: RoleDefinitionLimitExceeded) "ao tentar criar uma nova função personalizada, exclua as funções personalizadas que não estão sendo usadas. Azure dá suporte a até **5000** funções personalizadas em um locatário. (Para nuvens especializados, como o Azure governamental, Azure Alemanha e Azure China 21Vianet, o limite é de funções personalizadas de 2000.)
+- Se você receber a mensagem de erro "Limite de definição de função excedido. Sem as definições de função podem ser criadas (código: RoleDefinitionLimitExceeded) "ao tentar criar uma nova função personalizada, exclua as funções personalizadas que não estão sendo usadas. Azure dá suporte a até **5000** funções personalizadas em um locatário. (Para nuvens especializados, como o Azure Governamental, Azure Alemanha e Azure China 21Vianet, o limite é de 2000 funções personalizadas.)
 - Se você receber um erro semelhante a "o cliente tem permissão para executar a ação 'Microsoft.Authorization/roleDefinitions/write' no escopo '/ assinaturas / {subscriptionid}', no entanto, a assinatura vinculada não foi encontrada" ao tentar atualizar uma função personalizada, verifique Se um ou mais [escopos atribuíveis](role-definitions.md#assignablescopes) ter sido excluída no locatário. Se o escopo tiver sido excluído, crie um tíquete de suporte, pois não há nenhuma solução de autoatendimento disponível no momento.
 
 ## <a name="recover-rbac-when-subscriptions-are-moved-across-tenants"></a>Recuperar RBAC quando as assinaturas são movidas entre locatários
@@ -53,6 +53,61 @@ Este artigo responde a perguntas comuns sobre o RBAC (controle de acesso baseado
 
 - Se você receber o erro de permissões "O cliente com o ID de objeto não tem autorização para executar a ação no escopo (código: AuthorizationFailed)" ao tentar criar um recurso, verifique se está atualmente conectado como um usuário com atribuição de função que tenha permissão de gravação para o recurso no escopo selecionado. Por exemplo, para gerenciar máquinas virtuais em um grupo de recursos, você deverá ter a função [Colaborador da Máquina Virtual](built-in-roles.md#virtual-machine-contributor) no grupo de recursos (ou escopo pai). Para obter uma lista das permissões de cada função interna, confira [Funções internas para recursos do Azure](built-in-roles.md).
 - Se você receber o erro de permissões "Você não tem permissão para criar uma solicitação de suporte" ao tentar criar ou atualizar um tíquete de suporte, verifique se você está atualmente registrado com um usuário que é atribuído a uma função que tenha o `Microsoft.Support/supportTickets/write` permissão, como [Colaborador de solicitação de suporte](built-in-roles.md#support-request-contributor).
+
+## <a name="role-assignments-without-a-security-principal"></a>Atribuições de função sem uma entidade de segurança
+
+Quando você lista as atribuições de função usando o Azure PowerShell, você poderá ver as atribuições com vazia `DisplayName` e um `ObjectType` definido como desconhecido. Por exemplo, [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment) retorna uma atribuição de função é semelhante ao seguinte:
+
+```azurepowershell
+RoleAssignmentId   : /subscriptions/11111111-1111-1111-1111-111111111111/providers/Microsoft.Authorization/roleAssignments/22222222-2222-2222-2222-222222222222
+Scope              : /subscriptions/11111111-1111-1111-1111-111111111111
+DisplayName        :
+SignInName         :
+RoleDefinitionName : Storage Blob Data Contributor
+RoleDefinitionId   : ba92f5b4-2d11-453d-a403-e96b0029c9fe
+ObjectId           : 33333333-3333-3333-3333-333333333333
+ObjectType         : Unknown
+CanDelegate        : False
+```
+
+Da mesma forma, quando você lista as atribuições de função usando a CLI do Azure, você poderá ver as atribuições com um vazio `principalName`. Por exemplo, [lista de atribuições de função az](/cli/azure/role/assignment#az-role-assignment-list) retorna uma atribuição de função é semelhante ao seguinte:
+
+```azurecli
+{
+    "canDelegate": null,
+    "id": "/subscriptions/11111111-1111-1111-1111-111111111111/providers/Microsoft.Authorization/roleAssignments/22222222-2222-2222-2222-222222222222",
+    "name": "22222222-2222-2222-2222-222222222222",
+    "principalId": "33333333-3333-3333-3333-333333333333",
+    "principalName": "",
+    "roleDefinitionId": "/subscriptions/11111111-1111-1111-1111-111111111111/providers/Microsoft.Authorization/roleDefinitions/ba92f5b4-2d11-453d-a403-e96b0029c9fe",
+    "roleDefinitionName": "Storage Blob Data Contributor",
+    "scope": "/subscriptions/11111111-1111-1111-1111-111111111111",
+    "type": "Microsoft.Authorization/roleAssignments"
+}
+```
+
+Essas atribuições de função ocorrem quando você atribuir uma função a uma entidade de segurança (usuário, grupo, entidade de serviço ou identidade gerenciada) e excluir essa entidade de segurança mais tarde. Essas atribuições de função não são exibidas no portal do Azure e ele não é um problema para deixá-los. No entanto, se desejar, você pode remover essas atribuições de funções.
+
+Para remover essas atribuições de função, use o [remover AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment) ou [Excluir atribuição de função az](/cli/azure/role/assignment#az-role-assignment-delete) comandos.
+
+No PowerShell, se você tentar remover as atribuições de função usando a ID de objeto e nome da definição de função e mais de uma atribuição de função corresponde aos seus parâmetros, você receberá a mensagem de erro: "As informações fornecidas não mapeiam para uma atribuição de função". O exemplo a seguir mostra um exemplo da mensagem de erro:
+
+```Example
+PS C:\> Remove-AzRoleAssignment -ObjectId 33333333-3333-3333-3333-333333333333 -RoleDefinitionName "Storage Blob Data Contributor"
+
+Remove-AzRoleAssignment : The provided information does not map to a role assignment.
+At line:1 char:1
++ Remove-AzRoleAssignment -ObjectId 33333333-3333-3333-3333-333333333333 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : CloseError: (:) [Remove-AzRoleAssignment], KeyNotFoundException
++ FullyQualifiedErrorId : Microsoft.Azure.Commands.Resources.RemoveAzureRoleAssignmentCommand
+```
+
+Se você receber essa mensagem de erro, certifique-se de especificar também a `-Scope` ou `-ResourceGroupName` parâmetros.
+
+```Example
+PS C:\> Remove-AzRoleAssignment -ObjectId 33333333-3333-3333-3333-333333333333 -RoleDefinitionName "Storage Blob Data Contributor" - Scope /subscriptions/11111111-1111-1111-1111-111111111111
+```
 
 ## <a name="rbac-changes-are-not-being-detected"></a>Não estão sendo detectadas alterações de RBAC
 
@@ -120,7 +175,7 @@ Se você não conseguir acessar nenhum desses blocos, solicite ao administrador 
 
 ## <a name="azure-functions-and-write-access"></a>Azure Functions e acesso para gravação
 
-Alguns recursos do [Azure Functions](../azure-functions/functions-overview.md) exigem acesso de gravação. Por exemplo, se um usuário receber a função Leitor, ele não poderá exibir as funções em um aplicativo de funções. O portal exibirá **(Sem acesso)**.
+Alguns recursos do [Azure Functions](../azure-functions/functions-overview.md) exigem acesso de gravação. Por exemplo, se um usuário receber a função Leitor, ele não poderá exibir as funções em um aplicativo de funções. O portal exibirá **(Sem acesso)** .
 
 ![Aplicativos de funções sem acesso](./media/troubleshooting/functionapps-noaccess.png)
 

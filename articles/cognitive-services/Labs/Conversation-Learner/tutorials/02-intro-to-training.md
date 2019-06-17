@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
 ms.openlocfilehash: 0bf5b71a4b0f51a586febbdaeaf8caba03c5b25a
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66387914"
 ---
 # <a name="introduction-to-training"></a>Introdução ao treinamento
@@ -80,7 +80,7 @@ Este tutorial exige que o bot de tutorial geral esteja em execução
 7. Clique no botão “+ ação”. 
     - para que criar uma nova ação para responder com o bot.
 8. Digite no bot de resposta "Sem problemas! Tenha um ótimo dia!"
-9. Clique em Criar. 
+9. Clique em Criar.
 10. Observe que o bot responde imediatamente.
 11. Clique no botão “Salvar”.
 

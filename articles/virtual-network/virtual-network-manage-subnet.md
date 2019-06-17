@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 02/09/2018
 ms.author: kumud
 ms.openlocfilehash: 8a8feb0f12fbf5eadcddf239ff2e13c058a566fe
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64693312"
 ---
 # <a name="add-change-or-delete-a-virtual-network-subnet"></a>Adicionar, alterar ou excluir uma sub-rede da rede virtual
@@ -87,7 +87,7 @@ Uma sub-rede somente pode ser excluída se não houver recursos na sub-rede. Se 
 1. Na caixa de pesquisa na parte superior do portal, digite *redes virtuais* na caixa de pesquisa. Quando **Redes virtuais** aparecer nos resultados da pesquisa, selecione essa opção.
 2. Na lista de redes virtuais, selecione a rede virtual que contém a sub-rede que você deseja excluir.
 3. Em **CONFIGURAÇÕES**, selecione **Sub-redes**.
-4. Na lista de sub-redes, selecione **...**, à direita, para a sub-rede que deseja excluir
+4. Na lista de sub-redes, selecione **...** , à direita, para a sub-rede que deseja excluir
 5. Selecione **Excluir** e, em seguida, selecione **Sim**.
 
 **Comandos**

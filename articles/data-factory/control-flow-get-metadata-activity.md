@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: jingwang
 ms.openlocfilehash: 78f63b4f46fe5479d4d0fd5849ad80536d8a137c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61346801"
 ---
 # <a name="get-metadata-activity-in-azure-data-factory"></a>A atividade de obtenção de metadados no Azure Data Factory
@@ -43,7 +43,7 @@ A Atividade GetMetadata coleta um conjunto de dados como uma entrada obrigatóri
 
 **Armazenamento de Arquivos**
 
-| Conector/metadados | itemName<br>(arquivo/pasta) | itemType<br>(arquivo/pasta) | tamanho<br>(arquivo) | criado<br>(arquivo/pasta) | lastModified<br>(arquivo/pasta) |childItems<br>(pasta) |contentMD5<br>(arquivo) | estrutura<br/>(arquivo) | ColumnCount<br>(arquivo) | exists<br>(arquivo/pasta) |
+| Conector/metadados | itemName<br>(arquivo/pasta) | itemType<br>(arquivo/pasta) | size<br>(arquivo) | criado<br>(arquivo/pasta) | lastModified<br>(arquivo/pasta) |childItems<br>(pasta) |contentMD5<br>(arquivo) | estrutura<br/>(arquivo) | ColumnCount<br>(arquivo) | exists<br>(arquivo/pasta) |
 |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |
 | Amazon S3 | √/√ | √/√ | √ | x/x | √/√* | √ | x | √ | √ | √/√* |
 | Google Cloud Storage | √/√ | √/√ | √ | x/x | √/√* | √ | x | √ | √ | √/√* |
@@ -62,9 +62,9 @@ A Atividade GetMetadata coleta um conjunto de dados como uma entrada obrigatóri
 
 | Conector/metadados | estrutura | ColumnCount | exists |
 |:--- |:--- |:--- |:--- |
-| Banco de Dados SQL do Azure | √ | √ | √ |
+| Banco de dados SQL do Azure | √ | √ | √ |
 | Instância Gerenciada do Banco de Dados SQL do Azure | √ | √ | √ |
-| SQL Data Warehouse do Azure | √ | √ | √ |
+| Azure SQL Data Warehouse | √ | √ | √ |
 | SQL Server | √ | √ | √ |
 
 ### <a name="metadata-options"></a>Opções de metadados
@@ -75,7 +75,7 @@ Os seguintes tipos de metadados podem ser especificados na lista de campos de at
 |:--- |:--- |
 | itemName | Nome do arquivo ou pasta. |
 | itemType | Tipo do arquivo ou pasta. Valor de saída é `File` ou `Folder`. |
-| tamanho | Tamanho do arquivo de ativo em bytes. Aplicável somente para arquivo. |
+| size | Tamanho do arquivo de ativo em bytes. Aplicável somente para arquivo. |
 | criado | O datetime da última modificação do arquivo ou da pasta. |
 | lastModified | O datetime da última modificação do arquivo ou da pasta. |
 | childItems | Lista de subpastas e arquivos dentro da pasta determinada. Aplicável somente a pasta. Valor de saída é uma lista de nome e tipo de cada item filho. |

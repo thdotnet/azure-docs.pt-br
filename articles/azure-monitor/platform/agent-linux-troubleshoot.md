@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
-ms.openlocfilehash: b79f8a44f0fc38dd7e5f9ae7e3ac1fe6e9f6b7b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 83f9cc050694344cdc5f4f5a2070bc875fcba3d9
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60776026"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071670"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Como solucionar problemas com o agente do Log Analytics para Linux 
 
@@ -187,6 +187,33 @@ Abaixo do plug-in de saída, remova o comentário da seção a seguir removendo 
 
 ## <a name="issue-you-see-a-500-and-404-error-in-the-log-file-right-after-onboarding"></a>Problema: Você recebe os erros 404 e 500 no arquivo de log imediatamente após a integração
 Esse é um problema conhecido que ocorre durante o primeiro upload de dados do Linux em um espaço de trabalho do Log Analytics. Isso não afeta os dados sendo enviados ou a experiência do serviço.
+
+
+## <a name="issue-you-see-omiagent-using-100-cpu"></a>Problema: Você verá omiagent usando 100% da CPU
+
+### <a name="probable-causes"></a>Causas prováveis
+Uma regressão no pacote de pem nss [v1.0.3 5.el7](https://centos.pkgs.org/7/centos-x86_64/nss-pem-1.0.3-5.el7.x86_64.rpm.html) causado um problema de desempenho graves, o que estamos tem visto surgem muito em distribuições do Redhat/Centos 7. x. Para saber mais sobre esse problema, verifique a documentação a seguir: Bug [1667121 regressão de desempenho em libcurl](https://bugzilla.redhat.com/show_bug.cgi?id=1667121).
+
+Relacionados ao desempenho bugs não ocorram o tempo todo, e eles são muito difíceis de reproduzir. Se você tiver esse problema com omiagent, você deve usar o omiHighCPUDiagnostics.sh de script que irá coletar o rastreamento de pilha do omiagent ao exceder um certo limite.
+
+1. Baixe o script <br/>
+`wget https://raw.githubusercontent.com/microsoft/OMS-Agent-for-Linux/master/tools/LogCollector/source/omiHighCPUDiagnostics.sh`
+
+2. Execute o diagnóstico para 24 horas com limite de 30% de CPU <br/>
+`bash omiHighCPUDiagnostics.sh --runtime-in-min 1440 --cpu-threshold 30`
+
+3. Pilha de chamadas será ser despejada no arquivo omiagent_trace, se você perceber que muitos de rotação e chamadas de função do NSS, siga as etapas de resolução abaixo.
+
+### <a name="resolution-step-by-step"></a>Resolução (passo a passo)
+
+1. Atualize o pacote de pem nss para [v1.0.3 5.el7_6.1](https://centos.pkgs.org/7/centos-updates-x86_64/nss-pem-1.0.3-5.el7_6.1.x86_64.rpm.html). <br/>
+`sudo yum upgrade nss-pem`
+
+2. Se nss pem não está disponível para atualização (ocorre principalmente em Centos), em seguida, fazer downgrade de curl para 7.29.0-46. Se, por engano executar "atualização do yum", curl será atualizado para 7.29.0-51 e o problema ocorrerá novamente. <br/>
+`sudo yum downgrade curl libcurl`
+
+3. Reinicie o OMI: <br/>
+`sudo scxadmin -restart`
 
 ## <a name="issue-you-are-not-seeing-any-data-in-the-azure-portal"></a>Problema: Você não vê os dados no portal do Azure
 

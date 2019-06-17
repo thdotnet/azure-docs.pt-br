@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/26/2018
+ms.date: 06/06/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 40ff05e9fbc00747145c653878010ad9da0c37ec
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: 4b125649dee51680625ac5a92b31bdc9f6830529
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653383"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67069586"
 ---
 # <a name="azure-app-service-hybrid-connections"></a>Conexões Híbridas do Serviço de Aplicativo do Azure #
 
@@ -41,7 +41,6 @@ Quando seu aplicativo faz uma solicitação DNS que corresponde a um ponto de ex
 > [!NOTE]
 > Isso significa que você deve tentar sempre usar um nome DNS para sua Conexão Híbrida. Se em vez disso o ponto de extremidade usar um endereço IP, alguns softwares cliente não farão uma pesquisa de DNS.
 >
-
 
 ### <a name="app-service-hybrid-connection-benefits"></a>Benefícios da Conexão Híbrida do Serviço de Aplicativo ###
 
@@ -140,7 +139,7 @@ Para adicionar uma ou mais Conexões Híbridas a seu HCM:
 2. Selecione **Configurar outra Conexão Híbrida**.
 ![Captura de tela de Configurar novas Conexões Híbridas][8]
 
-1. Faça logon usando sua conta do Azure.
+1. Entrar com sua conta do Azure para obter suas conexões híbridas disponíveis com suas assinaturas. O HCM não continuar a usar sua conta do Azure Além disso. 
 1. Escolha uma assinatura.
 1. Selecione as Conexões Híbridas que você deseja que o HCM retransmita.
 ![Captura de tela de Conexões Híbridas][9]
@@ -226,7 +225,9 @@ O status “Conectado” significa que pelo menos um HCM está configurado com e
 
 O principal motivo pelo qual os clientes não podem se conectar ao ponto de extremidade é porque o ponto de extremidade foi especificado usando um endereço IP em vez de um nome DNS. Se seu aplicativo não puder acessar o ponto de extremidade desejado e você tiver usado um endereço IP, mude e passe a usar um nome DNS válido no host em que o HCM está em execução. Verifique também se o nome DNS resolve corretamente no host onde o HCM está em execução. Confirme se há conectividade entre o host onde a HCM está em execução no ponto de extremidade de Conexão Híbrida.  
 
-No Serviço de Aplicativo, a ferramenta tcpping pode ser invocada do console Ferramentas Avançadas (Kudu). Essa ferramenta pode informar se você tem acesso a um ponto de extremidade TCP, mas ela não diz se você tem acesso a um ponto de extremidade de Conexão Híbrida. Quando você usar a ferramenta no console em relação a um ponto de extremidade de Conexão Híbrida, apenas confirmará que ele usa uma combinação host:porta.  
+No serviço de aplicativo, o **tcpping** ferramenta de linha de comando pode ser invocada a partir do console de ferramentas avançadas (Kudu). Essa ferramenta pode informar se você tem acesso a um ponto de extremidade TCP, mas ela não diz se você tem acesso a um ponto de extremidade de Conexão Híbrida. Quando você usar a ferramenta no console em relação a um ponto de extremidade de Conexão Híbrida, apenas confirmará que ele usa uma combinação host:porta.  
+
+Se você tiver um cliente de linha de comando para seu ponto de extremidade, você pode testar a conectividade do console do aplicativo. Por exemplo, você pode testar o acesso aos pontos de extremidade de servidor web usando o curl.
 
 ## <a name="biztalk-hybrid-connections"></a>Conexões Híbridas do BizTalk ##
 

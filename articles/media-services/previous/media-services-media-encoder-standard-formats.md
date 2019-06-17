@@ -14,15 +14,15 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako;anilmur
 ms.openlocfilehash: c862de2eec4e6c116218457a20b567dc02778685
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61463728"
 ---
 # <a name="media-encoder-standard-formats-and-codecs"></a>Codecs e formatos padrão do codificador de mídia
 
-> [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão dos serviços de mídia que você está usando:"]
 > * [Versão 2](media-services-media-encoder-standard-formats.md)
 > * [Versão 3](../latest/media-encoder-standard-formats.md)
 
@@ -68,7 +68,7 @@ ou o
 | MPEG-2 (até perfil e de alto nível 422; incluindo variantes como XDCAM, XDCAM HD, XDCAM IMX, CableLabs ® e D10) |Até perfil 422 |
 | MPEG-1 |Sim |
 | VC-1/WMV9 |Sim |
-| Canopus HQ/HQX |Não  |
+| Canopus HQ/HQX |Não |
 | MPEG-4, parte 2 |Sim |
 | [Theora](https://en.wikipedia.org/wiki/Theora) |Sim |
 | YUV420 descompactado, ou mezzanine |Sim |
@@ -92,17 +92,17 @@ ou o
 | [Opus](https://go.microsoft.com/fwlink/?LinkId=822667) |Sim |
 | [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a> |Sim |
 | AMR (multitaxa adaptável) |Sim |
-| AES (SMPTE 331M e 302M, AES3-2003) |Não  |
-| Dolby® E |Não  |
-| Dolby® Digital (AC3) |Não  |
-| Dolby® Digital Plus (E-AC3) |Não  |
+| AES (SMPTE 331M e 302M, AES3-2003) |Não |
+| Dolby® E |Não |
+| Dolby® Digital (AC3) |Não |
+| Dolby® Digital Plus (E-AC3) |Não |
 
 ## <a name="output-formats-and-codecs"></a>Codecs e formatos de saída
 A tabela a seguir lista os codecs e formatos de arquivo com suporte para exportação.
 
 | Formato de arquivo | Codec de vídeo | Codec de áudio |
 | --- | --- | --- |
-| MP4  <br/><br/>(incluindo contêineres MP4 de múltiplas taxas de bits) |H.264 (Perfis Alto, Principal e Linha de base) |AAC-LC, HE-AAC v1, HE-AAC v2 |
+| MP4 <br/><br/>(incluindo contêineres MP4 de múltiplas taxas de bits) |H.264 (Perfis Alto, Principal e Linha de base) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 | MPEG2-TS |H.264 (Perfis Alto, Principal e Linha de base) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 
 ## <a name="media-services-learning-paths"></a>Roteiros de aprendizagem dos Serviços de Mídia

@@ -9,15 +9,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 06/25/2018
+ms.date: 05/20/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: f57d80adc7c77f2d874d13a68214cd638a2ac2a0
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: f22cb620bf8cf56110bec60a4dd809066393a8ff
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65957295"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67067652"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Automatizar relatórios personalizados com dados do Azure Application Insights
 
@@ -92,7 +92,7 @@ availabilityResults
 
    ![Criar um novo screenshot de funções](./media/automate-custom-reports/function-app-03.png)
 
-5. Selecionar **_Modelo de resumo agendado de Application Insights_**.
+5. Selecionar **_Modelo de resumo agendado de Application Insights_** .
 
      > [!NOTE]
      > Por padrão, os aplicativos de funções são criados com a versão de tempo de execução 2.x. Você deve [versão de tempo de execução de funções do Azure de destino](https://docs.microsoft.com/azure/azure-functions/set-runtime-version) 1.x para usar o Application Insights agendada modelo digest.
@@ -120,7 +120,7 @@ availabilityResults
      > [!NOTE]
      > Se não tiver uma conta SendGrip, você poderá criar uma. Documentação SendGrip para Funções do Azure está [aqui](https://docs.microsoft.com/azure/azure-functions/functions-bindings-sendgrid). Se você quiser uma explicação mínima sobre como configurar SendGrip e gerar uma chave API, ela será fornecida no final deste artigo. 
 
-9. Selecionar **Integrar** e sob Saídas clique **SendGrip ($retorno)**.
+9. Selecionar **Integrar** e sob Saídas clique **SendGrip ($retorno)** .
 
      ![Captura de tela de saída](./media/automate-custom-reports/function-app-09.png)
 

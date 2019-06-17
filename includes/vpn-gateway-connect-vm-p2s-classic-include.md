@@ -9,10 +9,10 @@ ms.date: 12/06/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 6d0737a7300b2a6025f776c1ed65a05cacf2141a
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66157653"
 ---
 Criar uma Conexão de Área de Trabalho Remota para conectar-se a uma VM implantada na sua VNet. A melhor maneira de verificar se você pode se conectar à sua VM é usando seu endereço IP privado em vez do nome do computador. Dessa forma, você está testando para ver se pode conectar-se e não se a resolução de nomes está configurada corretamente. 

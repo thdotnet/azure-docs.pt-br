@@ -9,10 +9,10 @@ ms.date: 05/23/2019
 ms.author: raiye
 ms.custom: include file
 ms.openlocfilehash: 7b9b30f1598f7e50d25b15aaf2fda896ee9e5012
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66249025"
 ---
 # <a name="enable-write-accelerator"></a>Habilitar acelerador de gravação
@@ -51,7 +51,7 @@ Há limites de VHDs de Armazenamento Premium do Azure por VM que podem ter supor
 | M208ms_v2, M208s_v2| 8 | 10000 |
 | M128ms, 128s | 16 | 20000 |
 | M64ms, M64ls, M64s | 8 | 10000 |
-| M32ms, M32ls, M32ts, M32s | 4 | 5.000 |
+| M32ms, M32ls, M32ts, M32s | 4 | 5\.000 |
 | M16ms, M16s | 2 | 2500 |
 | M8ms, M8s | 1 | 1250 |
 
@@ -170,7 +170,7 @@ Você pode usar a [CLI do Azure](https://docs.microsoft.com/cli/azure/?view=azur
 
 Para habilitar o Acelerador de Gravação em um disco existente, use [atualização az vm](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-update), você pode usar os seguintes exemplos, se você substituir o diskName, VMName e ResourceGroup para seus próprios valores: `az vm update -g group1 -n vm1 -write-accelerator 1=true`
 
-Para anexar um disco com o Acelerador de Gravação habilitado, use [anexar disco de vm az](https://docs.microsoft.com/cli/azure/vm/disk?view=azure-cli-latest#az-vm-disk-attach), você pode usar o exemplo a seguir, se você substituir em seus próprios valores: `az vm disk attach -g group1 -vm-name vm1 -disk d1 --enable-write-accelerator` 
+Para anexar um disco com o Acelerador de Gravação habilitado, use [anexar disco de vm az](https://docs.microsoft.com/cli/azure/vm/disk?view=azure-cli-latest#az-vm-disk-attach), você pode usar o exemplo a seguir, se você substituir em seus próprios valores: `az vm disk attach -g group1 -vm-name vm1 -disk d1 --enable-write-accelerator`
 
 Para desativar a Aceleração de Gravação, use [atualização de vm az](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-update), definindo as propriedades como falsas: `az vm update -g group1 -n vm1 -write-accelerator 0=false 1=false`
 

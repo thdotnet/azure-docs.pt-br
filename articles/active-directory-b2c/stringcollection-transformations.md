@@ -11,10 +11,10 @@ ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
 ms.openlocfilehash: 98453daeb34d093b49cdcc636f68c3d7ae017126
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66512431"
 ---
 # <a name="stringcollection-claims-transformations"></a>Transformações de declarações StringCollection
@@ -99,7 +99,7 @@ Obtém o primeiro item da coleção de cadeia de caracteres fornecida.
 | item | TransformationClaimType | Tipo de Dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | collection | stringCollection | Os ClaimTypes que são usados pela transformação de declarações para obter o item. |
-| OutputClaim | extractedItem | string | Os ClaimTypes produzidos depois de invocar este ClaimsTransformation. O primeiro item na coleção. |
+| OutputClaim | extractedItem | cadeia de caracteres | Os ClaimTypes produzidos depois de invocar este ClaimsTransformation. O primeiro item na coleção. |
 
 O exemplo a seguir lê a declaração **otherMails** e retorna o primeiro item para a declaração **email**. 
 

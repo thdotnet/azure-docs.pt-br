@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2017
 ms.author: kasing
-ms.openlocfilehash: b8bb3db58538263ea60520d4537a76c6ebb6abf7
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: d3e1995682569e5ef7b356bd85ad6c7dba6cdbdb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58112510"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64689484"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Planejamento da migração de recursos de IaaS do clássico para o Azure Resource Manager
 Embora o Azure Resource Manager ofereça vários recursos incríveis, é fundamental planejar sua jornada de migração para garantir que tudo ocorra sem problemas. Gastar tempo no planejamento garantirá que não ocorram problemas durante a execução das atividades de migração.
@@ -116,7 +116,7 @@ Veja a seguir os problemas descobertos em muitas das migrações de maior porte.
 
 - **Implantações de função web/de trabalho** – Serviços de Nuvem que contém funções web e de trabalho não podem migrar para o Azure Resource Manager. As funções web/de trabalho devem primeiro ser removidas da rede virtual para que a migração possa ser iniciada.  Uma solução típica é apenas mover as instâncias de função web/de trabalho para uma rede virtual Clássica separada que também está vinculada a um circuito do ExpressRoute ou migrar o código para Serviços de Aplicativo de PaaS mais novos (essa discussão está além do escopo deste documento). No primeiro caso de reimplantação, crie uma nova rede virtual Clássica, mova/reimplante as funções web/de trabalho nessa nova rede virtual e, depois, exclua as implantações da rede virtual que está sendo movida. Não é necessário alterar o código. A nova funcionalidade [Emparelhamento de Rede Virtual](../../virtual-network/virtual-network-peering-overview.md) pode ser usada para emparelhar a rede virtual clássica que contém as funções web/de trabalho e outras redes virtuais na mesma região do Azure, como a rede virtual que está sendo migrada (**após a conclusão da migração da rede virtual, já que redes virtuais emparelhadas não podem ser migradas**), fornecendo as mesmas funcionalidades, sem perda de desempenho e sem penalidades de latência/largura de banda. Considerando a adição do [Emparelhamento de Rede Virtual](../../virtual-network/virtual-network-peering-overview.md), as implantações de função web/de trabalho agora podem ser facilmente atenuadas e não impedem a migração para o Azure Resource Manager.
 
-- **Cotas do Azure Resource Manager** – as regiões do Azure têm cotas/limites separados para o Clássico e o Azure Resource Manager. Mesmo que em um cenário de migração o novo hardware não esteja sendo consumido *(estamos trocando VMs existentes do Clássico para o Azure Resource Manager)*, as cotas do Azure Resource Manager ainda precisam estar em vigor com capacidade suficiente antes que a migração possa ser iniciada. Veja abaixo uma lista dos principais limites que observamos que causam problemas.  Abra um tíquete de suporte de cota para aumentar os limites.
+- **Cotas do Azure Resource Manager** – as regiões do Azure têm cotas/limites separados para o Clássico e o Azure Resource Manager. Mesmo que em um cenário de migração o novo hardware não esteja sendo consumido *(estamos trocando VMs existentes do Clássico para o Azure Resource Manager)* , as cotas do Azure Resource Manager ainda precisam estar em vigor com capacidade suficiente antes que a migração possa ser iniciada. Veja abaixo uma lista dos principais limites que observamos que causam problemas.  Abra um tíquete de suporte de cota para aumentar os limites.
 
     > [!NOTE]
     > Esses limites precisam ser acionados na mesma região do ambiente atual a ser migrado.
@@ -132,7 +132,7 @@ Veja a seguir os problemas descobertos em muitas das migrações de maior porte.
 
     Você pode verificar suas cotas atuais do Azure Resource Manager usando os comandos a seguir com a última versão do Azure PowerShell.
     
-    [!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
+    [!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
     **Computação** *(Núcleos, Conjuntos de Disponibilidade)*
 

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/25/2018
 ms.author: apimpm
 ms.openlocfilehash: 9e1b1953520c5502668fbbae70a37a140253b035
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66241685"
 ---
 # <a name="how-to-use-named-values-in-azure-api-management-policies"></a>Como usar Valores Nomeados nas políticas de Gerenciamento de API do Azure
@@ -27,8 +27,8 @@ Cada instância de serviço do Gerenciamento de API tem uma coleção de proprie
 
 | Atributo | Type | DESCRIÇÃO |
 | --- | --- | --- |
-| `Display name` |string |Cadeia de caracteres alfanuméricos usada para referenciar a propriedade nas políticas. |
-| `Value`        |string |O valor da propriedade. Ele não pode ficar vazio ou conter apenas espaços em branco. |
+| `Display name` |cadeia de caracteres |Cadeia de caracteres alfanuméricos usada para referenciar a propriedade nas políticas. |
+| `Value`        |cadeia de caracteres |O valor da propriedade. Ele não pode ficar vazio ou conter apenas espaços em branco. |
 | `Secret`       |boolean|Determina se o valor é um segredo e se deve ser criptografado ou não.|
 | `Tags`         |matriz de cadeias de caracteres |Marcas opcionais que, quando fornecidas, podem ser usadas para filtrar a lista de propriedades. |
 
@@ -98,7 +98,7 @@ Os valores nomeados também podem conter expressões de política. No exemplo a 
 
 Quando essa política é avaliada, `{{ExpressionProperty}}` é substituído por seu valor: `@(DateTime.Now.ToString())`. Como o valor é uma expressão de política, a expressão é avaliada e a política prossegue com a execução.
 
-Você pode testar isso no portal do desenvolvedor chamando uma operação que tenha uma política com valores nomeados no escopo. No exemplo a seguir, uma operação é chamada com os dois exemplos de políticas `set-header` anteriores com valores nomeados. Observe que a resposta contém dois cabeçalhos personalizados configurados usando políticas com valores nomeados. 
+Você pode testar isso no portal do desenvolvedor chamando uma operação que tenha uma política com valores nomeados no escopo. No exemplo a seguir, uma operação é chamada com os dois exemplos de políticas `set-header` anteriores com valores nomeados. Observe que a resposta contém dois cabeçalhos personalizados configurados usando políticas com valores nomeados.
 
 ![Portal do desenvolvedor][api-management-send-results]
 

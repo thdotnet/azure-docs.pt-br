@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: vitavor
 ms.custom: seodec18
 ms.openlocfilehash: b83368b913bf1303b49e3a56e3a15248af222cbe
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66002061"
 ---
 # <a name="view-key-cost-metrics-with-dashboards"></a>Exibir chave métricas com painéis de custo
@@ -42,7 +42,7 @@ Para iniciar rapidamente com um painel personalizado, você pode duplicar uma ex
 
 Para criar um painel personalizado:
 
-1. Na home page, clique em **adicionar novo +**. A página de meu painel é exibida.  
+1. Na home page, clique em **adicionar novo +** . A página de meu painel é exibida.  
     ![Minha página de painel na qual você adiciona novos relatórios](./media/dashboards/my-dashboard.png)
 2. Clique em **Adicionar nova regra**. A caixa Adicionar relatório é exibida.
 3. Selecione o relatório que você deseja adicionar ao widget de painel. O widget é adicionado ao painel.

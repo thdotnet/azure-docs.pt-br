@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 07/23/2018
 ms.author: allensu
 ms.openlocfilehash: 304beeae02da5836ba88a56d7166fc681e263501
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66258351"
 ---
 # <a name="tutorial-improve-website-response-using-traffic-manager"></a>Tutorial: Melhorar a resposta de site usando o Gerenciador de Tráfego
@@ -54,23 +54,23 @@ Nesta seção, você criará duas instâncias de site que fornecem os dois ponto
 
 #### <a name="create-vms-for-running-websites"></a>Criar VMs para a execução de sites
 
-Nesta seção, você criará duas VMs *myIISVMEastUS* e *myIISVMWestEurope* no **Leste dos EUA** e **Europa Ocidental** regiões do Azure.
+Nesta seção, você criará duas VMs *myIISVMEastUS* e *myIISVMWestEurope* nas regiões do Azure **Leste dos EUA** e **Oeste da Europa**.
 
-1. No canto superior esquerda do portal do Azure, selecione **criar um recurso** > **computação** > **Windows Server Datacenter de 2019**.
+1. No canto superior esquerdo do portal do Azure, selecione **Criar um recurso** > **Computação** > **Datacenter do Windows Server 2019**.
 2. Em **Criar uma máquina virtual**, insira ou selecione os seguintes valores na guia **Configurações básicas**:
 
-   - **Assinatura** > **Grupo de Recursos**: Selecione **criar novo** e, em seguida, digite **myResourceGroupTM1**.
-   - **Detalhes da Instância** > **Nome da máquina virtual**: Tipo de *myIISVMEastUS*.
-   - **Detalhes da instância** > **região**:  Selecione **Leste dos EUA**.
-   - **Conta de administrador** > **nome de usuário**:  Insira um nome de usuário de sua escolha.
-   - **Conta de administrador** > **senha**:  Insira uma senha de sua escolha. A senha deve ter no mínimo 12 caracteres e atender a [requisitos de complexidade definidos](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).
-   - **Regras de porta de entrada** > **portas de entrada públicas**: Selecione **Permitir portas selecionadas**.
-   - **Regras de porta de entrada** > **selecione as portas de entrada**: Selecione **RDP** e **HTTP** na caixa suspenso.
+   - **Assinatura** > **Grupo de Recursos**: Selecione **Criar novo** e, em seguida, digite **myResourceGroupTM1**.
+   - **Detalhes da Instância** > **Nome da máquina virtual**: Digite *myIISVMEastUS*.
+   - **Detalhes da instância** > **Região**:  Selecione **Leste dos EUA**.
+   - **Conta Administrador** > **Nome de Usuário**:  Insira um nome de usuário de sua escolha.
+   - **Conta Administrador** > **Senha**:  Insira uma senha de sua escolha. A senha deve ter no mínimo 12 caracteres e atender a [requisitos de complexidade definidos](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).
+   - **Regras de Porta de Entrada** > **Portas de entrada públicas**: Selecione **Permitir portas selecionadas**.
+   - **Regras de Porta de Entrada** > **Selecionar as portas de entrada**: Selecione **RDP** e **HTTP** na caixa suspensa.
 
-3. Selecione o **Management** , ou selecione **Avançar: Discos**, em seguida, **Avançar: Sistema de rede**, em seguida, **Avançar: Gerenciamento**. Em **Monitoramento**, defina **Diagnóstico de inicialização** como **Desativado**.
+3. Selecione a guia **Gerenciamento** ou selecione **Avançar: Discos**, em seguida, **Avançar: Rede** e, em seguida, **Avançar: Gerenciamento**. Em **Monitoramento**, defina **Diagnóstico de inicialização** como **Desativado**.
 4. Selecione **Examinar + criar**.
-5. Examine as configurações e, em seguida, clique em **criar**.  
-6. Siga as etapas para criar uma segunda VM denominada *myIISVMWestEurope*, com um **grupo de recursos** nome do *myResourceGroupTM2*, um **local**dos *Europa Ocidental*e todas as outras configurações igual *myIISVMEastUS*.
+5. Examine as configurações e, em seguida, clique em **Criar**.  
+6. Siga as etapas para criar uma segunda VM chamada *myIISVMWestEurope*, com o nome de **Grupo de recursos** *myResourceGroupTM2*, a **localização** *Oeste da Europa* e todas as outras configurações iguais a *myIISVMEastUS*.
 7. As VMs podem levar alguns minutos para serem criadas. Não continue com as etapas restantes até que ambas as VMs sejam criadas.
 
    ![Criar uma máquina virtual](./media/tutorial-traffic-manager-improve-website-response/createVM.png)
@@ -104,32 +104,32 @@ Nesta seção, você deve instalar o servidor IIS em duas VMs *myIISVMEastUS* e 
 
 #### <a name="configure-dns-names-for-the-vms-running-iis"></a>Configurar nome DNS para as VMs que executam IIS
 
-O Gerenciador de Tráfego roteia o tráfego de usuário com base no nome DNS dos pontos de extremidade de serviço. Nesta seção, você configura os nomes DNS para os servidores IIS - *myIISVMEastUS* e *myIISVMWestEurope*.
+O Gerenciador de Tráfego roteia o tráfego de usuário com base no nome DNS dos pontos de extremidade de serviço. Nesta seção, você configurará os nomes DNS dos servidores IIS: *myIISVMEastUS* e *myIISVMWestEurope*.
 
 1. Clique em **Todos os Recursos** no menu esquerdo e, em seguida, na lista de recursos, selecione *myIISVMEastUS*, que está localizado no grupo de recursos *myResourceGroupTM1*.
 2. Na página **Visão Geral**, em **Nome DNS**, selecione **Configurar**.
 3. Na página **Configuração**, em rótulo de nome DNS, adicione um nome exclusivo e, em seguida, selecione **Salvar**.
-4. Repita as etapas de 1 a 3 para a VM denominada *myIISVMWestEurope* que está localizado na *myResourceGroupTM2* grupo de recursos.
+4. Repita as etapas 1 a 3 para a VM denominada *myIISVMWestEurope* que está localizada no grupo de recursos *myResourceGroupTM2*.
 
 ### <a name="create-test-vms"></a>Criar VMs de teste
 
-Nesta seção, você pode criar uma VM (*myVMEastUS* e *myVMWestEurope*) em cada região do Azure (**Leste dos EUA** e **Europa Ocidental**). Você usará essas máquinas virtuais para testar como o Gerenciador de Tráfego roteia o tráfego para o servidor mais próximo do IIS ao navegar até o site.
+Nesta seção, você criará uma VM (*myVMEastUS* e *myVMWestEurope*) em cada região do Azure (**Leste dos EUA** e **Oeste da Europa**). Você usará essas máquinas virtuais para testar como o Gerenciador de Tráfego roteia o tráfego para o servidor mais próximo do IIS ao navegar até o site.
 
-1. No canto superior esquerda do portal do Azure, selecione **criar um recurso** > **computação** > **Windows Server Datacenter de 2019**.
+1. No canto superior esquerdo do portal do Azure, selecione **Criar um recurso** > **Computação** > **Datacenter do Windows Server 2019**.
 2. Em **Criar uma máquina virtual**, insira ou selecione os seguintes valores na guia **Configurações básicas**:
 
    - **Assinatura** > **Grupo de Recursos**: Selecione **myResourceGroupTM1**.
-   - **Detalhes da Instância** > **Nome da máquina virtual**: Tipo de *myVMEastUS*.
-   - **Detalhes da instância** > **região**:  Selecione **Leste dos EUA**.
-   - **Conta de administrador** > **nome de usuário**:  Insira um nome de usuário de sua escolha.
-   - **Conta de administrador** > **senha**:  Insira uma senha de sua escolha. A senha deve ter no mínimo 12 caracteres e atender a [requisitos de complexidade definidos](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).
-   - **Regras de porta de entrada** > **portas de entrada públicas**: Selecione **Permitir portas selecionadas**.
-   - **Regras de porta de entrada** > **selecione as portas de entrada**: Selecione **RDP** na caixa suspenso.
+   - **Detalhes da Instância** > **Nome da máquina virtual**: Digite *myVMEastUS*.
+   - **Detalhes da instância** > **Região**:  Selecione **Leste dos EUA**.
+   - **Conta Administrador** > **Nome de Usuário**:  Insira um nome de usuário de sua escolha.
+   - **Conta Administrador** > **Senha**:  Insira uma senha de sua escolha. A senha deve ter no mínimo 12 caracteres e atender a [requisitos de complexidade definidos](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).
+   - **Regras de Porta de Entrada** > **Portas de entrada públicas**: Selecione **Permitir portas selecionadas**.
+   - **Regras de Porta de Entrada** > **Selecionar as portas de entrada**: Selecione **RDP** na caixa suspensa.
 
-3. Selecione o **Management** , ou selecione **Avançar: Discos**, em seguida, **Avançar: Sistema de rede**, em seguida, **Avançar: Gerenciamento**. Em **Monitoramento**, defina **Diagnóstico de inicialização** como **Desativado**.
+3. Selecione a guia **Gerenciamento** ou selecione **Avançar: Discos**, em seguida, **Avançar: Rede** e, em seguida, **Avançar: Gerenciamento**. Em **Monitoramento**, defina **Diagnóstico de inicialização** como **Desativado**.
 4. Selecione **Examinar + criar**.
-5. Examine as configurações e, em seguida, clique em **criar**.  
-6. Siga as etapas para criar uma segunda VM denominada *myVMWestEurope*, com um **grupo de recursos** nome do *myResourceGroupTM2*, um **local** dos *Europa Ocidental*e todas as outras configurações igual *myVMEastUS*.
+5. Examine as configurações e, em seguida, clique em **Criar**.  
+6. Execute as etapas para criar uma segunda VM chamada *myVMWestEurope*, com o nome de **Grupo de recursos** *myResourceGroupTM2*, a **localização** *Oeste da Europa* e todas as outras configurações iguais a *myVMEastUS*.
 7. As VMs podem levar alguns minutos para serem criadas. Não continue com as etapas restantes até que ambas as VMs sejam criadas.
 
 ## <a name="create-a-traffic-manager-profile"></a>Criar um perfil do Gerenciador de Tráfego
@@ -178,7 +178,7 @@ Nesta seção, você testa como o Gerenciador de Tráfego do Microsoft Azure rot
 1. Determine o nome DNS do seu perfil do Gerenciador de Tráfego.
 2. Visualizar o Gerenciador de Tráfego em ação conforme a seguir:
     - Na VM de teste (*myVMEastUS*) que está localizada na região do **Leste dos EUA**, em um navegador da web, navegue até o nome DNS do seu perfil do Gerenciador de Tráfego.
-    - Na VM de teste (*myVMWestEurope*) que está localizado na **Europa Ocidental** região, em um navegador da web, navegue até o nome DNS do seu perfil do Gerenciador de tráfego.
+    - Na VM de teste (*myVMWestEurope*) que está localizada na região do **Europa Ocidental**, em um navegador da Web, navegue até o nome DNS do seu perfil do Gerenciador de Tráfego.
 
 ### <a name="determine-dns-name-of-traffic-manager-profile"></a>Determinar o nome DNS do Perfil do Gerenciador de Tráfego
 

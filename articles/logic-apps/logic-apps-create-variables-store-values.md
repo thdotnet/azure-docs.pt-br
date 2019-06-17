@@ -11,10 +11,10 @@ ms.service: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.openlocfilehash: e525e5584e4835b0f2b73203c818c3f799b77cf5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61004383"
 ---
 # <a name="create-variables-for-saving-and-managing-values-in-azure-logic-apps"></a>Criar variáveis para salvar e gerenciar valores nos Aplicativos Lógicos do Azure
@@ -76,7 +76,7 @@ Você pode criar uma variável e declarar seu tipo de dados e o valor inicial, t
    |----------|----------|-------|--------------|
    | Name | Sim | <*variable-name*> | O nome da variável para incrementar | 
    | Type | Sim | <*variable-type*> | O tipo de dados para a variável | 
-   | Value | Não  | <*start-value*> | O valor inicial da variável <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para que você sempre saiba o valor inicial da variável. | 
+   | Value | Não | <*start-value*> | O valor inicial da variável <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para que você sempre saiba o valor inicial da variável. | 
    ||||| 
 
    ![Inicializar variável](./media/logic-apps-create-variables-store-values/initialize-variable.png)
@@ -182,7 +182,7 @@ Confira exemplos de outros tipos de variáveis:
 Para recuperar ou fazer referência ao conteúdo de uma variável, também é possível usar a função [variables()](../logic-apps/workflow-definition-language-functions-reference.md#variables) no Designer de Aplicativo Lógico e no editor do modo de exibição de código.
 Ao fazer referência a uma variável, use o nome da variável como o token, não como o nome da ação, que é a maneira comum de fazer referência as saídas de uma ação. 
 
-Por exemplo, essa expressão obtém os itens a partir da variável de matriz [criada anteriormente neste artigo](#append-value) usando a função **variables()**. A função **string()** retorna o conteúdo da variável no formato de cadeia de caracteres: `"1, 2, 3, red"`
+Por exemplo, essa expressão obtém os itens a partir da variável de matriz [criada anteriormente neste artigo](#append-value) usando a função **variables()** . A função **string()** retorna o conteúdo da variável no formato de cadeia de caracteres: `"1, 2, 3, red"`
 
 ```json
 @{string(variables('myArrayVariable'))}
@@ -211,10 +211,10 @@ Para aumentar ou *incrementar* uma variável com um valor constante, adicione a 
    | Propriedade | Necessário | Value |  DESCRIÇÃO |
    |----------|----------|-------|--------------|
    | Name | Sim | <*variable-name*> | O nome da variável para incrementar | 
-   | Value | Não  | <*increment-value*> | O valor usado para incrementar a variável. O valor padrão é um. <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para que você sempre saiba o valor específico para incrementar sua variável. | 
+   | Value | Não | <*increment-value*> | O valor usado para incrementar a variável. O valor padrão é um. <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para que você sempre saiba o valor específico para incrementar sua variável. | 
    |||| 
 
-   Por exemplo:  
+   Por exemplo: 
    
    ![Exemplo de valor de incremento](./media/logic-apps-create-variables-store-values/increment-variable-action-information.png)
 
@@ -331,7 +331,7 @@ Estas são as propriedades para a ação **Diminuir variável**:
 | Propriedade | Necessário | Value |  DESCRIÇÃO |
 |----------|----------|-------|--------------|
 | Name | Sim | <*variable-name*> | O nome da variável para diminuir | 
-| Value | Não  | <*increment-value*> | O valor para diminuição da variável. O valor padrão é um. <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para sempre conhecer o valor específico para diminuir a variável. | 
+| Value | Não | <*increment-value*> | O valor para diminuição da variável. O valor padrão é um. <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para sempre conhecer o valor específico para diminuir a variável. | 
 ||||| 
 
 Se você alternar do editor do modo de exibição de designer para código, veja como a ação **Diminuir variável** aparece dentro da sua definição de aplicativo lógico, que está no formato JSON.
@@ -420,7 +420,7 @@ Para variáveis que armazenam cadeias de caracteres ou matrizes, você pode inse
 2. Forneça o valor para acrescentar como o último item na cadeia de caracteres ou matriz. 
    Esse valor é obrigatório. 
 
-Estas são as propriedades para as ações **Acrescentar a...**:
+Estas são as propriedades para as ações **Acrescentar a...** :
 
 | Propriedade | Necessário | Value |  DESCRIÇÃO | 
 |----------|----------|-------|--------------| 

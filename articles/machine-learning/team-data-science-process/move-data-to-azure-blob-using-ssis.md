@@ -12,10 +12,10 @@ ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 688ef059387dc4c312873051c7c9d1eae259b1ae
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61429869"
 ---
 # <a name="move-data-to-or-from-azure-blob-storage-using-ssis-connectors"></a>Mover dados para ou do Armazenamento de Blobs do Azure usando conectores SSIS
@@ -42,7 +42,7 @@ Para realizar as tarefas descritas neste artigo, você deve ter uma assinatura d
 
 Para usar os **conectores SSIS**, você deverá baixar:
 
-* **SQL Server 2014 ou 2016 Standard (ou superior)**: A instalação inclui o SQL Server Integration Services.
+* **SQL Server 2014 ou 2016 Standard (ou superior)** : A instalação inclui o SQL Server Integration Services.
 * **Feature Pack do Microsoft SQL Server 2014 ou 2016 Integration Services para o Azure**: Eles podem ser baixados, respectivamente, nas páginas do [SQL Server 2014 Integration Services](https://www.microsoft.com/download/details.aspx?id=47366) e do [SQL Server 2016 Integration Services](https://www.microsoft.com/download/details.aspx?id=49492).
 
 > [!NOTE]

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: maheshb
 ms.openlocfilehash: bbad72b41a177bdbafd6cf98bfd2025190d98b16
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62128950"
 ---
 # <a name="configure-your-custom-autosuggest-experience"></a>Configurar experiência de sugestão automática personalizada
@@ -36,7 +36,7 @@ Para habilitar as sugestões do Bing, alterne o controle deslizante **Sugestões
 
 ## <a name="add-your-own-suggestions"></a>Adicionar suas próprias sugestões
 
-Para adicionar suas próprias sugestões de cadeia de consulta, adicione-as à lista em **Sugestões definidas pelo usuário**. Depois de adicionar uma sugestão na lista, pressione a tecla Enter ou clique no ícone **+**. Você pode especificar a sugestão em qualquer idioma. Você pode adicionar no máximo 5 mil sugestões de cadeia de consulta.
+Para adicionar suas próprias sugestões de cadeia de consulta, adicione-as à lista em **Sugestões definidas pelo usuário**. Depois de adicionar uma sugestão na lista, pressione a tecla Enter ou clique no ícone **+** . Você pode especificar a sugestão em qualquer idioma. Você pode adicionar no máximo 5 mil sugestões de cadeia de consulta.
 
 ## <a name="upload-suggestions"></a>Carregar sugestões
 
@@ -48,7 +48,7 @@ Para remover uma sugestão de cadeia de consulta, clique no ícone de remoção 
 
 ## <a name="block-suggestions"></a>Bloquear sugestões
 
-Ao incluir as sugestões do Bing, você poderá adicionar uma lista de cadeias de consulta de pesquisa, que você não quer o Bing retorne. Para adicionar cadeias de consulta bloqueadas, clique em **Mostrar sugestões bloqueadas**. Adicione a cadeia de consulta à lista e pressione a tecla Enter ou clique no ícone **+**. Você pode adicionar no máximo 50 cadeias de consulta bloqueadas.
+Ao incluir as sugestões do Bing, você poderá adicionar uma lista de cadeias de consulta de pesquisa, que você não quer o Bing retorne. Para adicionar cadeias de consulta bloqueadas, clique em **Mostrar sugestões bloqueadas**. Adicione a cadeia de consulta à lista e pressione a tecla Enter ou clique no ícone **+** . Você pode adicionar no máximo 50 cadeias de consulta bloqueadas.
 
 
 

@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 5df666dc2bd574c168d6b5f65dd6a909564a921f
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64868421"
 ---
 # <a name="get-started-with-delivering-content-on-demand-by-using-the-azure-portal"></a>Introdução ao fornecimento de conteúdo sob demanda usando o portal do Azure
@@ -101,8 +101,8 @@ Para monitorar o andamento do trabalho de codificação, selecione **Configuraç
 ## <a name="publish-content"></a>Publicar conteúdo
 Para fornecer a seus usuários uma URL que eles podem usar para transmitir ou baixar seu conteúdo, primeiro você deve publicar o ativo criando um localizador. Os localizadores fornecem acesso aos arquivos que estão no ativo. Os Serviços de Mídia dão suporte a dois tipos de localizadores: 
 
-* **Localizadores de streaming (OnDemandOrigin)**. Os localizadores de streaming são usados para streaming adaptável. HLS, Smooth Streaming e MPEG-DASH são exemplos de streaming adaptável. Para criar um localizador de streaming, seu ativo deve conter um arquivo .ism. 
-* **Localizadores de URL por SAS (Assinatura de Acesso Compartilhado)**. Localizadores progressivos são usados para a entrega de vídeo por meio do download progressivo.
+* **Localizadores de streaming (OnDemandOrigin)** . Os localizadores de streaming são usados para streaming adaptável. HLS, Smooth Streaming e MPEG-DASH são exemplos de streaming adaptável. Para criar um localizador de streaming, seu ativo deve conter um arquivo .ism. 
+* **Localizadores de URL por SAS (Assinatura de Acesso Compartilhado)** . Localizadores progressivos são usados para a entrega de vídeo por meio do download progressivo.
 
 Para criar uma URL de streaming de HLS, anexe *(format=m3u8-aapl)* à URL:
 
