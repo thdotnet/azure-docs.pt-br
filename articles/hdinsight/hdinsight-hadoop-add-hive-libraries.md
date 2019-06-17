@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: fe8f97368531ed572083834256d84cd1ed6dd8a1
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c3ef5362c4d97b8d805212f9cf813c7bc9c8c18c
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64687219"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059454"
 ---
 # <a name="add-custom-apache-hive-libraries-when-creating-your-hdinsight-cluster"></a>Adicionar bibliotecas Apache Hive personalizadas ao criar seu cluster HDInsight
 
@@ -39,9 +39,6 @@ Para **Clusters baseados em Linux**: [https://hdiconfigactions.blob.core.windows
 
 Para **Clusters baseados no Windows**: [https://hdiconfigactions.blob.core.windows.net/setupcustomhivelibsv01/setup-customhivelibs-v01.ps1](https://hdiconfigactions.blob.core.windows.net/setupcustomhivelibsv01/setup-customhivelibs-v01.ps1)
 
-> [!IMPORTANT]  
-> O Linux é o único sistema operacional usado no HDInsight versão 3.4 ou superior. Para obter mais informações, confira [baixa do HDInsight no Windows](hdinsight-component-versioning.md#hdinsight-windows-retirement).
-
 **Requisitos**
 
 * Os scripts devem ser aplicados nos**Nós do cabeçalho** e nos **Nós de trabalho**.
@@ -50,7 +47,7 @@ Para **Clusters baseados no Windows**: [https://hdiconfigactions.blob.core.windo
 
 * A conta de armazenamento contendo a biblioteca de arquivos jar **deve** ser vinculada ao cluster HDInsight durante a criação. Esta deve ser a conta de armazenamento padrão ou uma conta adicionada por meio da __configuração opcional__.
 
-* O caminho WASB para o contêiner deve ser especificado como um parâmetro para a Ação de Script. Por exemplo, se os jars estivessem armazenados em um contêiner denominado **libs** em uma conta de armazenamento denominada **mystorage**, o parâmetro seria **wasb://libs\@ mystorage.blob.Core.Windows.NET/**.
+* O caminho WASB para o contêiner deve ser especificado como um parâmetro para a Ação de Script. Por exemplo, se os jars estivessem armazenados em um contêiner denominado **libs** em uma conta de armazenamento denominada **mystorage**, o parâmetro seria **wasb://libs\@ mystorage.blob.Core.Windows.NET/** .
 
   > [!NOTE]  
   > Este documento supõe que você já criou uma conta de armazenamento, um contêiner de blobs e carregou os arquivos nele.
@@ -78,7 +75,7 @@ Para **Clusters baseados no Windows**: [https://hdiconfigactions.blob.core.windo
 
    * **ZOOKEEPER**: Deixe em branco.
 
-   * **PARAMETERS**: Insira o endereço WASB para o contêiner e a conta de armazenamento que contém os jars. Por exemplo, **wasb://libs\@mystorage.blob.core.windows.net/**.
+   * **PARAMETERS**: Insira o endereço WASB para o contêiner e a conta de armazenamento que contém os jars. Por exemplo, **wasb://libs\@mystorage.blob.core.windows.net/** .
 
 3. Na parte inferior das **Ações de Script**, use o botão **Selecionar** para salvar a configuração.
 

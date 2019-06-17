@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 4cfbfc4bed5438ed901fca86d8c2939d3860c68e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 8ef9da86377ac6f1b012cb0ebfd9d6866bc0c620
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64684167"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67061582"
 ---
 # <a name="introduction-to-variable-packet-capture-in-azure-network-watcher"></a>Introdução à captura de pacote de varáveis no Observador de Rede do Azure
 
-A captura de pacote de variáveis do Observador de Rede permite que você crie sessões de captura de pacote para controlar o tráfego em uma máquina virtual. A captura de pacote ajuda a diagnosticar anomalias de rede reativas e proativas. Outros usos incluem a coleta de estatísticas de rede, obter informações sobre as invasões de rede, para depurar comunicações cliente-servidor e muito mais.
+A captura de pacote de variáveis do Observador de Rede permite que você crie sessões de captura de pacote para controlar o tráfego em uma máquina virtual. Captura de pacote ajuda a diagnosticar problemas de rede reativo e proativo. Outros usos incluem a coleta de estatísticas de rede, obter informações sobre as invasões de rede, para depurar comunicações cliente-servidor e muito mais.
 
 A captura de pacote é uma extensão de máquina virtual iniciada remotamente por meio do Observador de Rede. Esse recurso alivia o transtorno que é executar manualmente uma captura de pacote na máquina virtual desejada, o que economiza um tempo precioso. A captura de pacote pode ser disparada por meio do portal, do PowerShell, da CLI ou da API REST. Os alertas de Máquina Virtual são um exemplo de como a captura de pacote pode ser disparada. Os filtros são fornecidos para a sessão de captura a fim de garantir que somente o tráfego que você deseja monitorar seja capturado. Os filtros têm base em informações de cinco tuplas (protocolo, endereço IP local, endereço IP remoto, porta local e porta remota). Os dados capturados são armazenados no disco local ou um blob de armazenamento. Há um limite de 10 sessões de captura de pacote por região e assinatura. Esse limite se aplica somente às sessões e não aos arquivos de captura de pacote salvos localmente na VM ou em uma conta de armazenamento.
 
