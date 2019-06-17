@@ -110,16 +110,16 @@ Esses itens devem ser tratados como dados confidenciais e especificados na confi
 | Nome | Valor/Exemplo | Tipo de Dados | 
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publicador | Microsoft.Compute.Extensions | cadeia de caracteres |
-| type | CustomScript | cadeia de caracteres |
+| publicador | Microsoft.Compute.Extensions | string |
+| type | CustomScript | string |
 | typeHandlerVersion | 2,0 | int |
-| fileUris (por exemplo) | https://github.com/MyProject/Archive/MyPythonScript.py | matriz |
-| commandToExecute (por exemplo) | Python MyPythonScript.py \<meu param1 > | cadeia de caracteres |
-| script | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | cadeia de caracteres |
+| fileUris (por exemplo) | https://github.com/MyProject/Archive/MyPythonScript.py | array |
+| commandToExecute (por exemplo) | Python MyPythonScript.py \<meu param1 > | string |
+| script | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | string |
 | skipDos2Unix (exemplo) | falso | boolean |
-| carimbo de data/hora (exemplo) | 123456789 | Inteiro de 32 bits |
-| storageAccountName (por exemplo) | examplestorageacct | cadeia de caracteres |
-| storageAccountKey (por exemplo) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | cadeia de caracteres |
+| timestamp (exemplo) | 123456789 | Inteiro de 32 bits |
+| storageAccountName (por exemplo) | examplestorageacct | string |
+| storageAccountKey (por exemplo) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
 
 ### <a name="property-value-details"></a>Detalhes de valor de propriedade
 * `skipDos2Unix`: (opcional, booliano) ignore a conversão de dos2unix das URLs de arquivos baseado no script ou do script.
