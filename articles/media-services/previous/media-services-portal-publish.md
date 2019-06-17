@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 2639d47a6c9d8da53c9d6bccde0d317698d5d9fd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61127835"
 ---
 # <a name="publish-content-in-the-azure-portal"></a>Publicar conteúdo no Portal do Azure  
@@ -37,8 +37,8 @@ ms.locfileid: "61127835"
 
 Para fornecer a seus usuários uma URL que eles podem usar para transmitir ou baixar seu conteúdo, primeiro você deve publicar o ativo criando um localizador. Os localizadores fornecem acesso aos arquivos de ativo. Os Serviços de Mídia do Azure dão suporte a dois tipos de localizadores: 
 
-* **Localizadores de streaming (OnDemandOrigin)**. Os localizadores de streaming são usados para streaming adaptável. Exemplos de streaming adaptável incluem Apple HLS (HTTP Live Streaming), Microsoft Smooth Streaming e DASH (Dynamic Adaptive Streaming por HTTP), também chamado de MPEG-DASH. Para criar um localizador de streaming, seu ativo deve conter um arquivo .ism. Por exemplo, http://amstest.streaming.mediaservices.windows.net/61b3da1d-96c7-489e-bd21-c5f8a7494b03/scott.ism/manifest.
-* **Localizadores de URL por SAS (Assinatura de Acesso Compartilhado)**. Localizadores progressivos são usados para a entrega de vídeo por meio do download progressivo.
+* **Localizadores de streaming (OnDemandOrigin)** . Os localizadores de streaming são usados para streaming adaptável. Exemplos de streaming adaptável incluem Apple HLS (HTTP Live Streaming), Microsoft Smooth Streaming e DASH (Dynamic Adaptive Streaming por HTTP), também chamado de MPEG-DASH. Para criar um localizador de streaming, seu ativo deve conter um arquivo .ism. Por exemplo: http://amstest.streaming.mediaservices.windows.net/61b3da1d-96c7-489e-bd21-c5f8a7494b03/scott.ism/manifest.
+* **Localizadores de URL por SAS (Assinatura de Acesso Compartilhado)** . Localizadores progressivos são usados para a entrega de vídeo por meio do download progressivo.
 
 Para criar uma URL de streaming de HLS, anexe *(format=m3u8-aapl)* à URL:
 

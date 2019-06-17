@@ -5,17 +5,17 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: wesmc
 ms.openlocfilehash: 77019068279261a36f8ba40247e5f5694ca77892
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66238645"
 ---
 | Resource | Limite |
 | --- | --- |
 | Tamanho do cache |530 GB |
 | Bancos de dados |64 |
-| Máximo de clientes conectado |40.000 |
+| Máximo de clientes conectado |40\.000 |
 | Cache do Azure para Redis réplicas, para alta disponibilidade |1 |
 | Fragmentos em um cache premium com clustering |10 |
 

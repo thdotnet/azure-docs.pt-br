@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: 4834688496330210b273f40f1d6f11230a6ae1c8
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66234119"
 ---
 # <a name="multi-tenant-applications-with-elastic-database-tools-and-row-level-security"></a>Aplicativos multilocatários com ferramentas de banco de dados elástico e segurança em nível de linha
@@ -339,7 +339,7 @@ GO
 ```
 
 
-### <a name="maintenance"></a>Manutenção 
+### <a name="maintenance"></a>Manutenção
 
 - **Adicionando novo fragmentos**: Execute o script T-SQL para habilitar RLS em qualquer novo fragmento; do contrário, as consultas nesses fragmentos não serão filtradas.
 - **Adicionando novas tabelas**: Adicione um predicado de FILTER e BLOCK à política de segurança em todos os fragmentos sempre que uma nova tabela for criada. Caso contrário, consultas na nova tabela não serão filtrados. Essa adição pode ser automatizada usando um gatilho DDL, conforme é descrito em [Aplicar Segurança em Nível de Linha automaticamente a tabelas recém-criadas (blog)](https://blogs.msdn.com/b/sqlsecurity/archive/20../../apply-row-level-security-automatically-to-newly-created-tables.aspx).

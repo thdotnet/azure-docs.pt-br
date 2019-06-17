@@ -10,10 +10,10 @@ ms.date: 09/10/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 847c928681451b4fef93198e2f2272d5bb04b1b8
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64919794"
 ---
 # <a name="compiling-dsc-configurations-in-azure-automation-state-configuration"></a>Compilação das configurações DSC na Configuração do Estado de Automação do Azure
@@ -41,7 +41,7 @@ Depois de decidir sobre um método de compilação, é possível seguir os respe
 
 ## <a name="compiling-a-dsc-configuration-with-the-azure-portal"></a>Compilando uma Configuração DSC com o portal do Azure
 
-1. Em sua conta de Automação, clique em **Configuração de estado (DSC)**.
+1. Em sua conta de Automação, clique em **Configuração de estado (DSC)** .
 1. Clique na guia **Configurações** e, em seguida, clique no nome da configuração para compilar.
 1. Clique em **Compilar**.
 1. Se a configuração não tiver parâmetros, você será solicitado a confirmar se deseja compilá-la. Se a configuração tiver parâmetros, a folha **Compilar Configuração** será aberta para que você possa fornecer os valores de parâmetro. Consulte a seguinte seção de [**Parâmetros Básicos**](#basic-parameters) para obter mais detalhes sobre os parâmetros.
@@ -308,7 +308,7 @@ Para obter mais informações sobre como assinar configurações de nó, consult
 ### <a name="importing-a-node-configuration-in-the-azure-portal"></a>Importar uma configuração de nó no Portal do Azure
 
 1. Na página Conta de Automação, clique em **Configuração de estado (DSC)** em **Gerenciamento de Configuração**.
-1. Na página **Configuração de estado (DSC)**, clique na guia **Configurações** e, em seguida, em **+ Adicionar**.
+1. Na página **Configuração de estado (DSC)** , clique na guia **Configurações** e, em seguida, em **+ Adicionar**.
 1. Na página **Importar**, clique no ícone de pasta próximo à caixa de texto **Arquivo de Configuração de Nó** para procurar um arquivo de configuração de nó (MOF) no computador local.
 
    ![Procurar arquivo local](./media/automation-dsc-compile/import-browse.png)

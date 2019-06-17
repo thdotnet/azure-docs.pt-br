@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.custom: H1Hack27Feb2017,hdinsightactive
 ms.openlocfilehash: 6f3140f412f9d36ca36cef440bd4e60f1a9197d4
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64702234"
 ---
 # <a name="use-python-user-defined-functions-udf-with-apache-hive-and-apache-pig-in-hdinsight"></a>Usar funções definidas pelo usuário (UDF) do Python com o Apache Hive e o Apache Pig no HDInsight
@@ -27,7 +27,7 @@ O HDInsight também inclui o Jython, que é uma implementação do Python gravad
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* **Um cluster Hadoop no HDInsight**. Ver [Introdução ao HDInsight no Linux](apache-hadoop-linux-tutorial-get-started.md).
+* **Um cluster Hadoop no HDInsight**. Consulte [Introdução ao HDInsight no Linux](apache-hadoop-linux-tutorial-get-started.md).
 * **Um cliente SSH**. Para saber mais, confira [Conectar-se ao HDInsight (Apache Hadoop) usando SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 * O [esquema de URI](../hdinsight-hadoop-linux-information.md#URI-and-scheme) para seu armazenamento primário de clusters. Isso seria wasb: / / para o armazenamento do Azure, abfs: / / para o armazenamento do Azure Data Lake Gen2 ou adl: / / para o Azure Data Lake armazenamento Gen1. Se a transferência segura é habilitada para o armazenamento do Azure ou Data Lake armazenamento Gen2, o URI seria wasbs: / / ou abfss: / /, respectivamente, consulte também [transferência segura](../../storage/common/storage-require-secure-transfer.md).
 * **Possível alteração à configuração de armazenamento.**  Ver [configuração de armazenamento](#storage-configuration) se usando o tipo de conta de armazenamento `BlobStorage`.
@@ -99,7 +99,7 @@ O script executa as ações a seguir:
 1. Lê uma linha de dados do STDIN.
 2. O caractere de nova linha é removido usando `string.strip(line, "\n ")`.
 3. Ao realizar processamento de fluxo, uma única linha contém todos os valores com um caractere de tabulação entre cada par de valores. Assim, `string.split(line, "\t")` pode ser usado para dividir a entrada em cada guia, retornando somente os campos.
-4. Quando o processamento está concluído, a saída precisa ser gravada em STDOUT como uma linha única, com uma tabulação entre cada par de campos. Por exemplo, `print "\t".join([clientid, phone_label, hashlib.md5(phone_label).hexdigest()])`.
+4. Quando o processamento está concluído, a saída precisa ser gravada em STDOUT como uma linha única, com uma tabulação entre cada par de campos. Por exemplo: `print "\t".join([clientid, phone_label, hashlib.md5(phone_label).hexdigest()])`.
 5. O loop `while` é repetido até que nenhum `line` seja lido.
 
 A saída do script é uma concatenação dos valores de entrada para `devicemake` e `devicemodel`, e um hash do valor concatenado.

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/09/2018
 ms.author: dekapur
 ms.openlocfilehash: 77b9b20f99f00ef87c4907c2890cb3a21d20ec75
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62096259"
 ---
 # <a name="upgrade-the-configuration-of-a-cluster-in-azure"></a>Atualizar a configuração de um cluster no Azure 
@@ -36,7 +36,7 @@ Este artigo descreve como personalizar as várias configurações de malha e a p
 Clusters do Azure podem ser configurados por meio do modelo do Resource Manager do JSON. Para saber mais sobre as diferentes configurações, consulte [Definições de configuração para clusters](service-fabric-cluster-fabric-settings.md). Por exemplo, as etapas a seguir mostram como adicionar uma nova configuração *MaxDiskQuotaInMB* à seção *diagnóstico* usando o Gerenciador de recursos do Azure.
 
 1. Acesse https://resources.azure.com
-2. Navegue até sua assinatura expandindo **assinaturas** -> **\<Sua assinatura >** -> **resourceGroups** -> **\<Seu grupo de recursos>** -> **provedores** -> **Microsoft.ServiceFabric** -> **clusters** -> **\<Nome do seu cluster>**
+2. Navegue até sua assinatura expandindo **assinaturas** ->  **\<Sua assinatura >**  -> **resourceGroups** ->  **\<Seu grupo de recursos>**  -> **provedores** -> **Microsoft.ServiceFabric** -> **clusters** ->  **\<Nome do seu cluster>**
 3. No canto superior direito, selecione **Leitura/Gravação.**
 4. Selecione **Editar** e atualize o elemento `fabricSettings` JSON e adicione um novo elemento:
 

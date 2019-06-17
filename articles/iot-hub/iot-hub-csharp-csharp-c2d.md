@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: robinsh
 ms.openlocfilehash: 0d83bdc3fd3f644013a2d2b80128839658524db9
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65864438"
 ---
 # <a name="send-messages-from-the-cloud-to-your-device-with-iot-hub-net"></a>Enviar mensagens de nuvem para seu dispositivo com o Hub IoT (.NET)
@@ -113,11 +113,11 @@ Primeiro, recupere a cadeia de caracteres de conexão do IoT Hub no portal.
 
 Agora você pode escrever um aplicativo de console .NET que envia mensagens da nuvem para dispositivo para o aplicativo do dispositivo.
 
-1. Na solução atual do Visual Studio, clique com botão direito na solução e selecione Adicionar > Novo projeto. Selecione **área de trabalho do Windows** e, em seguida **aplicativo do Console (.NET Framework)**. Nomeie o projeto **SendCloudToDevice** e selecione a versão mais recente do .NET Framework e, em seguida, selecione **Okey** para criar o projeto.
+1. Na solução atual do Visual Studio, clique com botão direito na solução e selecione Adicionar > Novo projeto. Selecione **área de trabalho do Windows** e, em seguida **aplicativo do Console (.NET Framework)** . Nomeie o projeto **SendCloudToDevice** e selecione a versão mais recente do .NET Framework e, em seguida, selecione **Okey** para criar o projeto.
 
    ![Novo projeto no Visual Studio](./media/iot-hub-csharp-csharp-c2d/create-identity-csharp1.png)
 
-2. No Gerenciador de Soluções, clique com o botão direito do mouse na solução e, então, clique em **Gerenciar Pacotes NuGet para Solução...**.
+2. No Gerenciador de Soluções, clique com o botão direito do mouse na solução e, então, clique em **Gerenciar Pacotes NuGet para Solução...** .
 
    Essa ação abre a janela **Gerenciar Pacotes NuGet**.
 
@@ -163,7 +163,7 @@ Agora você pode escrever um aplicativo de console .NET que envia mensagens da n
    Console.ReadLine();
    ```
 
-8. No Visual Studio, clique com o botão direito do mouse na solução e selecione **Definir Projetos de inicialização...**. Selecione **Vários projetos de inicialização** e, em seguida, selecione a ação **Iniciar** para **ProcessDeviceToCloudMessages**, **SimulatedDevice** e **SendCloudToDevice**.
+8. No Visual Studio, clique com o botão direito do mouse na solução e selecione **Definir Projetos de inicialização...** . Selecione **Vários projetos de inicialização** e, em seguida, selecione a ação **Iniciar** para **ProcessDeviceToCloudMessages**, **SimulatedDevice** e **SendCloudToDevice**.
 
 9. Pressione **F5**. Todos os três aplicativos devem ser iniciados. Selecione as janelas **SendCloudToDevice** e pressione **Enter**. Você deve ver a mensagem que está sendo recebida pelo aplicativo do dispositivo.
 

@@ -9,10 +9,10 @@ ms.date: 04/10/2019
 ms.author: absha
 ms.custom: mvc
 ms.openlocfilehash: e144214a58f9fe383cf4edd878554792d9d6a6f9
-ms.sourcegitcommit: ed66a704d8e2990df8aa160921b9b69d65c1d887
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64947157"
 ---
 # <a name="rewrite-http-request-and-response-headers-with-azure-application-gateway---azure-portal"></a>Reescreva cabeçalhos de solicitação e resposta HTTP com o Gateway de aplicativo do Azure - portal do Azure
@@ -97,7 +97,7 @@ Neste exemplo, modificaremos a uma URL de redirecionamento reescrevendo o cabeç
 
    - Sob **diferencia maiusculas de minúsculas**, selecione **não**.
 
-   - No **operador** lista, selecione **igual (=)**.
+   - No **operador** lista, selecione **igual (=)** .
 
    - Insira uma expressão regular padrão. Neste exemplo, vamos usar o padrão de `(https?):\/\/.*azurewebsites\.net(.*)$`.
 

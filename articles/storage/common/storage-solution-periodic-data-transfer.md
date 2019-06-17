@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
 ms.openlocfilehash: 8f106674c1b1ec90477c7c030dc55085fcf10656
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60729912"
 ---
 # <a name="solutions-for-periodic-data-transfer"></a>Soluções para transferência de dados periódica
@@ -58,9 +58,9 @@ A tabela a seguir resume as diferenças nas principais funcionalidades.
 | Hardware                                      | Seu hipervisor            | Fornecido pela Microsoft    | ND                                                            |
 | Esforço de configuração inicial                          | Baixo (< 30 min.)            | Moderado (~ acoplar horas) | Grande (~dias)                                                 |
 | Formato de Dados                                   | Blobs do Azure, Azure Files   | Blobs do Azure, Azure Files | [Dá suporte a mais de 70 conectores de dados para os formatos e armazenamentos de dados](https://docs.microsoft.com/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats)|
-| Pré-processamento de dados                           | Não                          | Sim, via computação de borda    | Sim                                                           |
-| Cache local<br>(para armazenar dados locais)    | Sim                        | sim                      | Não                                                             |
-| Transferência de outras nuvens                    | Não                          | Não                        | Sim                                                           |
+| Pré-processamento de dados                           | Não                         | Sim, via computação de borda    | Sim                                                           |
+| Cache local<br>(para armazenar dados locais)    | Sim                        | sim                      | Não                                                            |
+| Transferência de outras nuvens                    | Não                         | Não                       | Sim                                                           |
 | Preços                                       | [Preços](https://azure.microsoft.com/pricing/details/storage/databox/gateway/)                    | [Preços](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                  | [Preços](https://azure.microsoft.com/pricing/details/data-factory/)                                                       |
 
 ## <a name="next-steps"></a>Próximas etapas

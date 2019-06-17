@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 05/07/2019
 ms.author: magoedte
 ms.openlocfilehash: c83a862a37dbf28c6933877bf4a0aecc4364e6c5
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65522082"
 ---
 # <a name="how-to-chart-performance-with-azure-monitor-for-vms-preview"></a>Como mapear o desempenho com o Azure Monitor para VMs (versão prévia)
@@ -68,7 +68,7 @@ Os seguintes gráficos de utilização de capacidade são fornecidos:
 
 Você também pode alterar a granularidade dos gráficos dentro do intervalo de tempo, selecionando **Avg**, **Min**, **Max**, **percentis 50**,  **90 º**, e **95 º** no seletor de percentil.   
 
-Para exibir a utilização de recursos por VM individual em uma exibição de lista e ver qual máquina está tendências com maior utilização, selecione a guia **Top N lista**.  A página **Top N List** mostra as 20 principais máquinas classificadas pelas mais utilizadas pelo percentil 95 da métrica *CPU Utilization%*.  Você pode ver mais máquinas, selecionando **carga mais**, e os resultados se expandem para mostrar as máquinas da parte superior a 500. 
+Para exibir a utilização de recursos por VM individual em uma exibição de lista e ver qual máquina está tendências com maior utilização, selecione a guia **Top N lista**.  A página **Top N List** mostra as 20 principais máquinas classificadas pelas mais utilizadas pelo percentil 95 da métrica *CPU Utilization%* .  Você pode ver mais máquinas, selecionando **carga mais**, e os resultados se expandem para mostrar as máquinas da parte superior a 500. 
 
 >[!NOTE]
 >A lista não é possível mostrar mais de 500 máquinas cada vez.  
@@ -86,7 +86,7 @@ A seleção de uma máquina virtual a partir da lista abre o painel **Propriedad
 Para acessar diretamente a partir de uma máquina virtual, execute as seguintes etapas.
 
 1. No Portal do Azure, selecione **Máquinas Virtuais**. 
-2. Na lista, escolha uma máquina virtual e, na **Monitoring** seção escolher **Insights (visualização)**.  
+2. Na lista, escolha uma máquina virtual e, na **Monitoring** seção escolher **Insights (visualização)** .  
 3. Selecione o **desempenho** guia. 
 
 Esta página inclui não apenas gráficos de utilização de desempenho, mas também uma tabela mostrando cada disco lógico descoberto, sua capacidade, utilização e média total de cada medida.  
@@ -119,7 +119,7 @@ Clicar no ícone de pino no canto superior direito de qualquer um dos pinos grá
 ![Exibição do conjunto de desempenho de insights VM diretamente do dimensionamento de máquinas virtuais](./media/vminsights-performance/vminsights-performance-directvmss-01.png)
 
 >[!NOTE]
->Você também pode acessar um modo de exibição de desempenho detalhados para uma instância específica do modo de exibição de instâncias para seu conjunto de dimensionamento. Navegue até **instâncias** sob o **configurações** seção e, em seguida, escolha **Insights (visualização)**.
+>Você também pode acessar um modo de exibição de desempenho detalhados para uma instância específica do modo de exibição de instâncias para seu conjunto de dimensionamento. Navegue até **instâncias** sob o **configurações** seção e, em seguida, escolha **Insights (visualização)** .
 
 ## <a name="alerts"></a>Alertas  
 As métricas de desempenho ativadas como parte do Monitor do Azure para VMs não incluem regras de alerta pré-configuradas. Há [alertas de integridade](vminsights-health.md#alerts) correspondentes a problemas de desempenho detectados em sua VM do Azure, como alta utilização da CPU, espaço em disco disponível, baixa memória baixa, etc.  No entanto, esses alertas de integridade só se aplicam a todas as VMs habilitadas para o Azure Monitor para VMs. 

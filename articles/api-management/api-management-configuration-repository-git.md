@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/12/2019
 ms.author: apimpm
 ms.openlocfilehash: c371333dcc7db0b60ffa5f94d6e2d55ae500a4f6
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66241179"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Como salvar e definir a configuração de seu serviço de Gerenciamento de API usando o Git
@@ -204,19 +204,19 @@ As primeiras quatro configurações (`RegistrationEnabled`, `UserRegistrationTer
 | Configuração de identidade | É mapeada para |
 | --- | --- |
 | RegistrationEnabled |Presença **nome de usuário e senha** provedor de identidade |
-| UserRegistrationTerms |**Termos de uso na inscrição do usuário**  |
-| UserRegistrationTermsEnabled |**Mostrar os termos de uso na página de entrada**  |
-| UserRegistrationTermsConsentRequired |**Exigir consentimento**  |
-| RequireUserSigninEnabled |**Redirecionar usuários anônimos para a página de entrada**  |
+| UserRegistrationTerms |**Termos de uso na inscrição do usuário** |
+| UserRegistrationTermsEnabled |**Mostrar os termos de uso na página de entrada** |
+| UserRegistrationTermsConsentRequired |**Exigir consentimento** |
+| RequireUserSigninEnabled |**Redirecionar usuários anônimos para a página de entrada** |
 
 As quatro configurações seguintes (`DelegationEnabled`, `DelegationUrl`, `DelegatedSubscriptionEnabled` e `DelegationValidationKey`) são mapeadas para as seguintes configurações na guia **Delegação** da seção **Segurança**.
 
 | Configuração de delegação | É mapeada para |
 | --- | --- |
 | DelegationEnabled |Caixa de seleção **Delegar entrada e inscrição** |
-| DelegationUrl |**URL do ponto de extremidade da delegação**  |
-| DelegatedSubscriptionEnabled |**Delegar assinatura do produto**  |
-| DelegationValidationKey |**Delegar Chave de Validação**  |
+| DelegationUrl |**URL do ponto de extremidade da delegação** |
+| DelegatedSubscriptionEnabled |**Delegar assinatura do produto** |
+| DelegationValidationKey |**Delegar Chave de Validação** |
 
 A configuração final, `$ref-policy`, é mapeada para o arquivo de instruções de política global da instância do serviço.
 

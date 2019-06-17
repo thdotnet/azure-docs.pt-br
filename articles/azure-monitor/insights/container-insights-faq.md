@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 04/17/2019
 ms.author: magoedte
 ms.openlocfilehash: afa332b40884a79b5114b3b8093cd27108c39984
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65780001"
 ---
 # <a name="azure-monitor-for-containers-frequently-asked-questions"></a>Perguntas frequentes sobre o Azure Monitor para contêineres
@@ -71,7 +71,7 @@ Para detalhes sobre esse problema, examine o seguinte [link do github](https://g
 
 ## <a name="how-do-i-resolve-azure-ad-errors-when-i-enable-live-logs"></a>Como resolver erros de AD do Azure quando habilitar logs dinâmicos? 
 
-Você poderá ver o seguinte erro: **A resposta à url especificada na solicitação não coincide com as urls de resposta configuradas para o aplicativo: ' < ID do aplicativo\>'**. A solução para resolvê-lo pode ser encontrada no artigo [como exibir contêiner logs em tempo real com o Azure Monitor para contêineres](container-insights-live-logs.md#configure-aks-with-azure-active-directory). 
+Você poderá ver o seguinte erro: **A resposta à url especificada na solicitação não coincide com as urls de resposta configuradas para o aplicativo: ' < ID do aplicativo\>'** . A solução para resolvê-lo pode ser encontrada no artigo [como exibir contêiner logs em tempo real com o Azure Monitor para contêineres](container-insights-live-logs.md#configure-aks-with-azure-active-directory). 
 
 ## <a name="why-cant-i-upgrade-cluster-after-onboarding"></a>Por que não é possível atualizar cluster após a integração?
 

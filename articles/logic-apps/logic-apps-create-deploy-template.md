@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: 85928ec6-d7cb-488e-926e-2e5db89508ee
 ms.date: 10/18/2016
 ms.openlocfilehash: 624539557b0bf57e9d919a3a46337f1cf93a4f07
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62128593"
 ---
 # <a name="create-azure-resource-manager-templates-for-deploying-logic-apps"></a>Criar modelos do Azure Resource Manager para implantar aplicativos lógicos
@@ -27,7 +27,7 @@ Os aplicativos lógicos do Azure fornecem uma [modelo de Azure Resource Manager 
 Para obter mais informações sobre modelos do Azure Resource Manager, consulte estes artigos:
 
 * [Criar modelos do Gerenciador de Recursos do Azure](../azure-resource-manager/resource-group-authoring-templates.md)
-* [Desenvolver modelos do Azure Resource Manager para consistência de nuvem](../azure-resource-manager/templates-cloud-consistency.md)
+* [Desenvolva modelos do Azure Resource Manager para consistência de nuvem](../azure-resource-manager/templates-cloud-consistency.md)
 
 ## <a name="logic-app-structure"></a>Estrutura de aplicativo lógico
 
@@ -79,7 +79,7 @@ Depois de criar seu modelo de aplicativo lógico, você pode adicionar e editar 
 
 * Definição de fluxo de trabalho do aplicativo lógico tem seu próprio [ `parameters` seção](../logic-apps/logic-apps-workflow-definition-language.md#parameters) onde é possível definir todos os parâmetros que seu aplicativo lógico usa para aceitar entradas na implantação.
 
-* Modelo do Resource Manager tem seu próprio [ `parameters` seção](../azure-resource-manager/resource-group-authoring-templates.md#parameters)separado do aplicativo lógico `parameters` seção. Por exemplo: 
+* Modelo do Resource Manager tem seu próprio [ `parameters` seção](../azure-resource-manager/resource-group-authoring-templates.md#parameters)separado do aplicativo lógico `parameters` seção. Por exemplo:
 
   [!INCLUDE [logic-deploy-parameters](../../includes/app-service-logic-deploy-parameters.md)]
 

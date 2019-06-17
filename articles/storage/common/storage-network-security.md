@@ -10,10 +10,10 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: 56a25c95d9bc01078b3eff3729a8a693ee3cf510
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65520248"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Configurar redes virtuais e firewalls do Armazenamento do Microsoft Azure
@@ -229,7 +229,7 @@ Forneça intervalos de endereços de Internet permitidos usando a [notação CID
    > [!NOTE]
    > Os intervalos de endereços pequenos usando o prefixo "/31" ou "/32" não têm suporte. Esses intervalos devem ser configurados usando regras de endereço IP individuais.
 
-As regras de rede de IP são permitidas apenas para endereços IP de **Internet pública**. Intervalos de endereços IP reservados para redes privadas (conforme definido em [RFC 1918](https://tools.ietf.org/html/rfc1918#section-3)) não são permitidos nas regras de IP. Redes privadas incluem endereços que começam com _10.*_, _172.16.*_ - _172.31.*_, e _192.168.*_.
+As regras de rede de IP são permitidas apenas para endereços IP de **Internet pública**. Intervalos de endereços IP reservados para redes privadas (conforme definido em [RFC 1918](https://tools.ietf.org/html/rfc1918#section-3)) não são permitidos nas regras de IP. Redes privadas incluem endereços que começam com _10.*_ , _172.16.*_  - _172.31.*_ , e _192.168.*_ .
 
    > [!NOTE]
    > As regras de rede IP não terão efeito sobre solicitações originadas da mesma região do Azure que a conta de armazenamento. Use as [regras de rede Virtual](#grant-access-from-a-virtual-network) para permitir solicitações da mesma região.
@@ -346,7 +346,7 @@ Alguns serviços da Microsoft que interagem com contas de armazenamento operam a
 
 Para ajudar esse tipo de serviço a funcionar como esperado, você pode permitir que o conjunto de serviços Microsoft confiáveis ignore as regras de rede. Esses serviços usarão então a autenticação forte para acessar a conta de armazenamento.
 
-Se você habilitar a exceção **Permitir serviços Microsoft confiáveis...**, os serviços a seguir (quando registrados em sua assinatura), são concedidos acessos para a conta de armazenamento:
+Se você habilitar a exceção **Permitir serviços Microsoft confiáveis...** , os serviços a seguir (quando registrados em sua assinatura), são concedidos acessos para a conta de armazenamento:
 
 |Serviço|Nome do provedor de recursos|Finalidade|
 |:------|:---------------------|:------|

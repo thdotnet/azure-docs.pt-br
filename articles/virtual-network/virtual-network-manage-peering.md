@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 04/01/2019
 ms.author: anavin
 ms.openlocfilehash: ee7ffba182cdbc2a77df5edf112e29c49cd610ad
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65519666"
 ---
 # <a name="create-change-or-delete-a-virtual-network-peering"></a>Criar, alterar ou excluir um emparelhamento da rede virtual
@@ -33,7 +33,7 @@ Saiba como criar, alterar ou excluir um emparelhamento de rede virtual. O peerin
 Conclua as seguintes tarefas antes de concluir as etapas em qualquer seção deste artigo:
 
 - Caso ainda não tenha uma conta do Azure, inscreva-se para obter uma [conta de avaliação gratuita](https://azure.microsoft.com/free).
-- Se estiver usando o portal, abra https://portal.azure.come faça logon com uma conta que tenha as [permissões necessárias](#permissions) para trabalhar com emparelhamentos.
+- Se estiver usando o portal, abra https://portal.azure.com e faça logon com uma conta que tenha as [permissões necessárias](#permissions) para trabalhar com emparelhamentos.
 - Se usar os comandos do PowerShell para concluir as tarefas neste artigo, execute os comandos no [Azure Cloud Shell](https://shell.azure.com/powershell) ou então executando o PowerShell do computador. O Azure Cloud Shell é um shell interativo grátis que pode ser usado para executar as etapas neste artigo. Ele tem ferramentas do Azure instaladas e configuradas para usar com sua conta. Este tutorial exige o módulo do Azure PowerShell versão 1.0.0 ou posterior. Execute `Get-Module -ListAvailable Az` para localizar a versão instalada. Se você precisa atualizar, consulte [Instalar o módulo do Azure PowerShell](/powershell/azure/install-az-ps). Se você estiver executando o PowerShell localmente, também precisará executar `Connect-AzAccount` com uma conta que tenha [permissões necessárias](#permissions) para trabalhar com o emparelhamento, para criar uma conexão com o Azure.
 - Se usar os comandos da CLI (interface de linha de comando) do Azure para concluir as tarefas neste artigo, execute os comandos no [Azure Cloud Shell](https://shell.azure.com/bash) ou então executando a CLI do computador. Este tutorial requer a CLI do Azure versão 2.0.31 ou posterior. Execute `az --version` para localizar a versão instalada. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure](/cli/azure/install-azure-cli). Se você estiver executando a CLI do Azure localmente, também precisará executar `az login` com uma conta que tenha [permissões necessárias](#permissions) para trabalhar com o emparelhamento, para criar uma conexão com o Azure.
 
@@ -100,7 +100,7 @@ Se você deseja que as redes virtuais se comuniquem, às vezes, mas não sempre,
 1. Na caixa de pesquisa na parte superior do portal, digite *redes virtuais* na caixa de pesquisa. Quando **Redes virtuais** aparecer nos resultados da pesquisa, selecione essa opção. Não selecione **redes virtuais (clássicas)** se for exibido na lista, pois não é possível criar um emparelhamento de uma rede virtual implantada por meio do modelo de implantação clássico.
 2. Selecione na lista a rede virtual para a qual você deseja excluir um emparelhamento.
 3. Em **CONFIGURAÇÕES**, selecione **Emparelhamentos**.
-4. No lado direito do emparelhamento que deseja excluir, selecione **...**, selecione **Excluir** e, em seguida, selecione **Sim** para excluir o emparelhamento da primeira rede virtual.
+4. No lado direito do emparelhamento que deseja excluir, selecione **...** , selecione **Excluir** e, em seguida, selecione **Sim** para excluir o emparelhamento da primeira rede virtual.
 5. Conclua as etapas anteriores para excluir o emparelhamento de outra rede virtual no emparelhamento.
 
 **Comandos**

@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: diberry
 ms.openlocfilehash: e7577dcf4859b1192121fe0406d0efb63a9f5990
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65148646"
 ---
 # <a name="datetimev2-prebuilt-entity-for-a-luis-app"></a>Entidade DatetimeV2 predefinida para um aplicativo LUIS
@@ -53,7 +53,7 @@ A resposta JSON de exemplo a seguir tem uma entidade `datetimeV2` com um subtipo
 |Nome da propriedade |Tipo e descrição da propriedade|
 |---|---|
 |Entidade|**cadeia de caracteres** – texto extraído do enunciado com tipo de data, hora, intervalo de datas ou intervalo de tempo.|
-|Tipo|**cadeia de caracteres** – um do [subtipos de datetimeV2](#subtypes-of-datetimev2)
+|type|**cadeia de caracteres** – um do [subtipos de datetimeV2](#subtypes-of-datetimev2)
 |startIndex|**int** – o índice no enunciado em que a entidade começa.|
 |endIndex|**int** – o índice no enunciado em que a entidade termina.|
 |resolução|Tem uma matriz `values` com um, dois ou quatro [valores de resolução](#values-of-resolution).|
@@ -82,7 +82,7 @@ Cada elemento da matriz `values` pode ter os seguintes campos:
 |Nome da propriedade|Descrição da propriedade|
 |--|--|
 |timex|hora, data ou intervalo de datas expressado no formato TIMEX que segue o [padrão ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) e os atributos TIMEX3 para anotação usando a linguagem TimeML. Essa anotação é descrita nas [diretrizes TIMEX](http://www.timeml.org/tempeval2/tempeval2-trial/guidelines/timex3guidelines-072009.pdf).|
-|Tipo|O subtipo, que pode ser um dos seguintes itens: `datetime`, `date`, `time`, `daterange`, `timerange`, `datetimerange`, `duration`, `set`.|
+|type|O subtipo, que pode ser um dos seguintes itens: `datetime`, `date`, `time`, `daterange`, `timerange`, `datetimerange`, `duration`, `set`.|
 |value|**Opcional** Um objeto datetime no formato yyyy:MM:dd (date), HH:mm:ss (time) yyyy:MM:dd HH:mm:ss (datetime). Se `type` for `duration`, o valor será o número de segundos (duration) <br/> Usado somente se `type` for `datetime` ou `date`, `time` ou `duration.|
 
 ## <a name="valid-date-values"></a>Valores de data válidos

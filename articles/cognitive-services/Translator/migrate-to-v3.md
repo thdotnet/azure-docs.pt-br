@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: v-pawal
 ms.openlocfilehash: 81b2e5c9c659a3811d7417d87b811a86f4350a52
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66382930"
 ---
 # <a name="translator-text-api-v2-to-v3-migration"></a>Migração da API de Tradução de Texto V2 para V3
@@ -118,8 +118,8 @@ A tradução neural com a API de texto V3 não dá suporte ao uso de categorias 
 
 | |Ponto de extremidade|    Conformidade de processador do RGPD|  Usar o Hub do Tradutor| Usar o Tradutor Personalizado (Versão Prévia)|
 |:-----|:-----|:-----|:-----|:-----|
-|API de Tradução de Texto Versão 2| api.microsofttranslator.com|    Não   |Sim    |Não |
-|API de Tradução de Texto Versão 3| api.cognitive.microsofttranslator.com|  Sim|    Não | Sim|
+|API de Tradução de Texto Versão 2| api.microsofttranslator.com|    Não  |Sim    |Não|
+|API de Tradução de Texto Versão 3| api.cognitive.microsofttranslator.com|  Sim|    Não| Sim|
 
 **API de Tradução de Texto Versão 3**
 * Está geralmente disponível e tem suporte completo.

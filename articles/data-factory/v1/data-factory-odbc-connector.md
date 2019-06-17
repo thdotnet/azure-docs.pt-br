@@ -14,14 +14,14 @@ ms.date: 11/19/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 0db301109da657083d121cc8b986372adcb54171
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66389039"
 ---
 # <a name="move-data-from-odbc-data-stores-using-azure-data-factory"></a>Mover dados de armazenamentos de dados ODBC usando o Azure Data Factory
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](data-factory-odbc-connector.md)
 > * [Versão 2 (versão atual)](../connector-odbc.md)
 
@@ -71,8 +71,8 @@ A tabela a seguir fornece a descrição para elementos JSON específicos do serv
 | connectionString |A parte da credencial que não está relacionada ao acesso da cadeia de conexão e uma credencial criptografada opcional. Veja os exemplos nas seções a seguir. <br/><br/>Você pode especificar a cadeia de conexão com um padrão como `"Driver={SQL Server};Server=Server.database.windows.net; Database=TestDatabase;"` ou usar DSN (nome da fonte de dados) do sistema que você configurou no computador do gateway com o `"DSN=<name of the DSN>;"` (é necessário ainda especificar a parte de credencial no serviço vinculado adequadamente). |Sim |
 | credential |A parte da credencial de acesso da cadeia de conexão especificada no formato propriedade-valor específico do driver. Exemplo: `"Uid=<user ID>;Pwd=<password>;RefreshToken=<secret refresh token>;"`. |Não |
 | authenticationType |Tipo de autenticação usado para se conectar ao armazenamento de dados ODBC. Os valores possíveis são: Anônimo e Básico. |Sim |
-| userName |Especifique o nome de usuário, se você estiver usando autenticação básica. |Não  |
-| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não  |
+| userName |Especifique o nome de usuário, se você estiver usando autenticação básica. |Não |
+| password |Especifique a senha da conta de usuário que você especificou para o nome de usuário. |Não |
 | gatewayName |O nome do gateway que o serviço Data Factory deve usar para se conectar ao armazenamento de dados ODBC. |Sim |
 
 ### <a name="using-basic-authentication"></a>Usando a autenticação Básica
