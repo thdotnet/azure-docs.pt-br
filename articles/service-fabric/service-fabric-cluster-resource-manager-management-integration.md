@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: c201945e94474d54b8a19918f3b55a0b40995a97
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60743506"
 ---
 # <a name="cluster-resource-manager-integration-with-service-fabric-cluster-management"></a>Integração do Gerenciador de Recursos de Cluster com o gerenciamento de cluster do Service Fabric
@@ -114,7 +114,7 @@ A inclusão na lista de bloqueio não é uma condição permanente. Após alguns
 
 Em todas essas restrições, você pode ter pensado “Ei, acho que restrições de domínio de falha são a coisa mais importante em meu sistema. Para garantir a não violação da restrição de domínio de falha, estou disposto(a) a violar outras restrições."
 
-As restrições podem ser configuradas com níveis de prioridade diferentes. Estes são:
+As restrições podem ser configuradas com níveis de prioridade diferentes. Elas são:
 
    - "inflexível" (0)
    - "flexível" (1)

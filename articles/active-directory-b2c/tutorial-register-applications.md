@@ -1,5 +1,5 @@
 ---
-title: Tutorial – Registrar um aplicativo – Azure Active Directory B2C | Microsoft Docs
+title: Tutorial - registrar um aplicativo - Azure Active Directory B2C
 description: Saiba como registrar seus aplicativo Web no Azure Active Directory B2C usando o portal do Azure.
 services: active-directory-b2c
 author: mmacy
@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
-ms.date: 02/05/2019
+ms.date: 06/07/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 380fc1633f94f2365162c1a4e4087c9113e5f663
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 5c46d3153bdc5768836bce198af115f82e8469f3
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66511939"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056288"
 ---
 # <a name="tutorial-register-an-application-in-azure-active-directory-b2c"></a>Tutorial: Registrar um aplicativo no Azure Active Directory B2C
 
@@ -40,7 +40,9 @@ Se você ainda não criou seu próprio [locatário do Azure AD B2C](tutorial-cre
 3. Selecione **Aplicativos** e, em seguida, selecione **Adicionar**.
 4. Insira um nome para o aplicativo. Por exemplo, *webapp1*.
 5. Para **Incluir aplicativo da Web / API da Web** e **Permitir fluxo implícito**, selecione **Sim**.
-6. Para a **URL de resposta**, insira um ponto de extremidade em que o Azure AD B2C deve retornar os tokens solicitados pelo seu aplicativo. Por exemplo, pode defini-lo para escutar localmente em `https://localhost:44316` Se você ainda não souber o número da porta, poderá inserir um valor de espaço reservado e alterá-lo posteriormente. Para fins de teste, é possível defini-lo como `https://jwt.ms`, que exibe o conteúdo de um token para inspeção. Para este tutorial, defina-o como `https://jwt.ms`. 
+6. Para a **URL de resposta**, insira um ponto de extremidade em que o Azure AD B2C deve retornar os tokens solicitados pelo seu aplicativo. Por exemplo, você pode defini-lo para escutar localmente na `https://localhost:44316`. Se você ainda não souber o número da porta, poderá inserir um valor de espaço reservado e alterá-lo posteriormente.
+
+    Para testes como este tutorial, você pode defini-lo `https://jwt.ms` que exibe o conteúdo de um token para inspeção. Neste tutorial, defina as **URL de resposta** para `https://jwt.ms`.
 
     A URL de resposta deve começar com o esquema `https` e todos os valores de URL de resposta devem compartilhar um único domínio DNS. Por exemplo, se o aplicativo tiver uma URL de resposta de `https://login.contoso.com`, você poderá adicioná-la como essa URL `https://login.contoso.com/new`. Ou pode fazer referência a um subdomínio DNS de `login.contoso.com`, como `https://new.login.contoso.com`. Se você quiser um aplicativo com `login-east.contoso.com` e `login-west.contoso.com` como URLs de resposta, adicione essas URLs de resposta nesta ordem: `https://contoso.com`, `https://login-east.contoso.com`, `https://login-west.contoso.com`. As duas últimas podem ser adicionadas porque são subdomínios da primeira URL de resposta: `contoso.com`.
 
@@ -50,8 +52,9 @@ Se você ainda não criou seu próprio [locatário do Azure AD B2C](tutorial-cre
 
 Se seu aplicativo troca um código para um token, você precisará criar um segredo do aplicativo.
 
-1. Selecione **teclas** e, em seguida, clique em **gerar chave**.
-2. Selecione **salvar** para exibir a chave. Anote o valor da **Chave do Aplicativo**. Use o valor como o segredo do aplicativo no código do seu aplicativo.
+1. No **do Azure AD B2C – aplicativos** , selecione o aplicativo que você criou, por exemplo *webapp1*.
+2. Selecione **teclas** e, em seguida, selecione **gerar chave**.
+3. Selecione **salvar** para exibir a chave. Anote o valor da **Chave do Aplicativo**. Você usa esse valor como o segredo do aplicativo no código do seu aplicativo.
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -61,5 +64,7 @@ Neste artigo, você aprendeu a:
 > * Registrar um aplicativo Web
 > * Criar um segredo do cliente
 
+Em seguida, Aprenda a criar fluxos de usuário para permitir que seus usuários para se inscrever, entrar e gerenciam seus perfis.
+
 > [!div class="nextstepaction"]
-> [Criar fluxos dos usuários no Azure Active Directory B2C](tutorial-create-user-flows.md)
+> [Criar fluxos de usuário no Azure Active Directory B2C >](tutorial-create-user-flows.md)

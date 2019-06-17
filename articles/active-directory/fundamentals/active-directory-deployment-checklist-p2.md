@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b0844030d069fba40bfd2fdf55252d8b9e3b1c2
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: e668a5238859d8cd8c2a7797200a12197ce72be9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235138"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110467"
 ---
 # <a name="azure-active-directory-feature-deployment-guide"></a>Guia de implantação de recursos do Azure Active Directory
 
@@ -53,7 +53,7 @@ Nessa fase, os administradores habilitam recursos de segurança básicos para cr
 | [Desabilitar redefinições de senha periódicas para contas de usuário baseadas em nuvem](../authentication/concept-sspr-policy.md#set-a-password-to-never-expire) | As redefinições de senha periódicas incentivam os usuários a incrementar as senhas existentes. Siga as orientações do documento de diretrizes de senha da Microsoft e espelhe a política local para os usuários apenas de nuvem. | AD do Azure Gratuito |
 | [Personalizar o bloqueio inteligente do Azure Active Directory](../authentication/howto-password-smart-lockout.md) | Impeça que os bloqueios de usuários baseados na nuvem sejam replicados para os usuários locais do Active Directory | AD Basic do Azure |
 | [Habilitar o bloqueio inteligente da Extranet para o AD FS](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection) | O bloqueio de Extranet do AD FS protege contra ataques de detecção de senha de força bruta, ao mesmo tempo que permite aos usuários com AD FS válido continuar usando as respectivas contas. | |
-| [Implantar a autenticação de vários fatores do Azure AD usando políticas de acesso condicional](../authentication/howto-mfa-getstarted.md) | Exija que os usuários façam uma verificação em duas etapas ao acessar aplicativos confidenciais usando políticas de acesso condicional. | Azure AD Premium P1 |
+| [Implantar a autenticação multifator do Azure AD usando políticas de acesso condicional](../authentication/howto-mfa-getstarted.md) | Exigir que os usuários executar a verificação em duas etapas ao acessar a aplicativos confidenciais usando políticas de acesso condicional. | Azure AD Premium P1 |
 | [Ativar a proteção de identidade do Active Directory do Azure](../identity-protection/enable.md) | Habilite o rastreamento de conexões arriscadas e credenciais comprometidas para usuários da sua organização. | Azure AD Premium P2 |
 | [Usar eventos de risco para disparar a autenticação multifator e alterações de senha](../authentication/tutorial-risk-based-sspr-mfa.md) | Habilite a automação que pode disparar eventos como autenticação multifator, redefinição de senha e bloqueio de conexões com base no risco. | Azure AD Premium P2 |
 | [Habilite o registro convergente para redefinição de senha de autoatendimento e Autenticação de Vários Fator do Azure AD (visualização)](../authentication/concept-registration-mfa-sspr-converged.md) | Permita que os usuários se registrem de uma experiência comum na Autenticação Multifator do Microsoft Azure e no autoatendimento de redefinição de senha. | Azure AD Premium P1 |

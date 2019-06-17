@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 06/04/2019
 ms.author: rogirdh
 ms.custom: ''
-ms.openlocfilehash: 711fce9627537e68171c3b170121900d6b14ca1e
-ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
+ms.openlocfilehash: 8827feaf1d541edc7c0b54d8af951ddab79c5aaa
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66743644"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808628"
 ---
 # <a name="oracle-application-solutions-integrating-microsoft-azure-and-oracle-cloud-infrastructure-preview"></a>Soluções de aplicativos Oracle a integração do Microsoft Azure e infraestrutura de nuvem da Oracle (versão prévia)
 
@@ -45,7 +45,7 @@ Você pode executar em uma configuração de nuvem entre os aplicativos incluem:
 * Aplicativos de varejo do Oracle
 * Gerenciamento financeiro do Oracle Hyperion
 
-O diagrama a seguir é uma visão geral da solução conectada. Para simplificar, o diagrama mostra apenas uma camada de aplicativo e uma camada de dados. Dependendo do aplicativo architecutre, sua solução pode incluir camadas adicionais, como uma camada da web no Azure. Para obter mais informações, consulte as próximas seções.
+O diagrama a seguir é uma visão geral da solução conectada. Para simplificar, o diagrama mostra apenas uma camada de aplicativo e uma camada de dados. Dependendo da arquitetura do aplicativo, sua solução pode incluir camadas adicionais, como uma camada da web no Azure. Para obter mais informações, consulte as próximas seções.
 
 ![Visão geral da solução do Azure OCI](media/oracle-oci-overview/crosscloud.png)
 

@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/02/2019
+ms.date: 06/10/2019
 ms.author: kumud;tyao
-ms.openlocfilehash: 05d01851d0a3dc9df6c396e862ce93defd957c70
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 91ee8b6e614cf12deccd1429ad67323c277954a0
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61461962"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67061490"
 ---
 # <a name="frequently-asked-questions-for-azure-web-application-firewall"></a>Perguntas frequentes sobre o firewall do aplicativo web do Azure
 
@@ -31,9 +31,6 @@ Uma política de WAF do Azure pode ser aplicada a aplicativos web hospedados nos
 ## <a name="what-is-waf-for-azure-front-door-service"></a>O que é o WAF da frente do serviço do Azure? 
 
 Porta da frente do Azure é uma rede de distribuição de conteúdo e aplicativos altamente escalonável, distribuído globalmente. O WAF do Azure, quando integrada com a porta da frente, para de negação de serviço e ataques de aplicativo na borda da rede do Azure direcionados, fontes de ataque antes de entrar na rede virtual, oferece proteção sem sacrificar o desempenho.
-
-## <a name="how-will-i-be-charged-for-azure-waf-for-front-door"></a>Como serei cobrado do WAF do Azure para a porta da frente?
-Durante a visualização pública, o uso do WAF na frente são gratuitos. Observe que o encargo de porta da frente é extra. Consulte o preço do serviço de porta da frente [aqui](https://azure.microsoft.com/pricing/details/frontdoor/).
 
 ## <a name="does-azure-waf-support-https"></a>O WAF do Azure dá suporte a HTTPS?
 
@@ -77,5 +74,5 @@ Distribuído globalmente nas bordas de rede do Azure, porta de entrada do Azure 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba mais sobre [firewall do aplicativo web do Azure](waf-overview.md).
+- Saiba mais sobre o [Firewall do aplicativo Web do Azure](waf-overview.md).
 - Saiba mais sobre [do Azure da frente](front-door-overview.md).

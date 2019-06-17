@@ -6,18 +6,18 @@ documentationcenter: ''
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 05/21/2018
+ms.date: 06/12/2019
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.reviewer: sasubram
+ms.reviewer: elisol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5db5eb9c0e0493d906345892fcc5f2872a3e0e14
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 81aad3ef9a4a53532d19fdb81bc48fc50931d49c
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65812452"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056070"
 ---
 # <a name="add-b2b-collaboration-guest-users-without-an-invitation-link-or-email"></a>Adicionar os usuários convidados de colaboração B2B sem um link de convite ou um email
 
@@ -29,7 +29,7 @@ Antes desse novo método ser disponibilizado, era possível convidar usuários s
 2. O administrador da organização host [define as políticas](delegate-invitations.md) que permitem ao Sam identificar e adicionar outros usuários da organização parceira (Litware). (Sam deve ser adicionado à função **emissor do convite convidado**.)
 3. Agora, Sam pode adicionar outros usuários da Litware ao diretório, grupos ou aplicativos da WoodGrove sem a necessidade de resgatar os convites. Se Davi tiver os privilégios apropriados de enumeração na Litware, isso ocorrerá automaticamente.
  
-Esse método original ainda funciona. No entanto, há uma pequena diferença no comportamento. Se você usar o PowerShell, observará que uma conta de convidado agora tem um status **PendingAcceptance** em vez de mostrar imediatamente **Accepted**. Embora o status esteja pendente, o usuário convidado ainda pode entrar e acessar o aplicativo sem clicar em um link de convite por email. O status pendente significa que o usuário ainda não passou pela [experiência de consentimento](redemption-experience.md#privacy-policy-agreement), em que aceita os termos de privacidade da organização que o convidou. O usuário convidado vê esta tela de consentimento quando entra pela primeira vez. 
+Esse método original ainda funciona. No entanto, há uma pequena diferença no comportamento. Se você usar o PowerShell, observará que uma conta de convidado agora tem um status **PendingAcceptance** em vez de mostrar imediatamente **Accepted**. Embora o status esteja pendente, o usuário convidado ainda pode entrar e acessar o aplicativo sem clicar em um link de convite por email. O status pendente significa que o usuário ainda não passou pela [experiência de consentimento](redemption-experience.md#consent-experience-for-the-guest), em que aceita os termos de privacidade da organização que o convidou. O usuário convidado vê esta tela de consentimento quando entra pela primeira vez. 
 
 Se você convidar um usuário para o diretório, o convidado deverá acessar o portal do Azure do recurso específico do locatário diretamente na URL (como https://portal.azure.com/*resourcetenant*.onmicrosoft.com) para exibir e aceitar os termos de privacidade.
 

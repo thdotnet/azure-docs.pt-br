@@ -3,18 +3,18 @@ title: Instalar e executar contêineres - detector de anomalias
 titleSuffix: Azure Cognitive Services
 description: Use algoritmos avançados da API de Detector de anomalias para identificar anomalias em seus dados de série temporal.
 services: cognitive-services
-author: aahill
+author: IEvangelist
 ms.service: cognitive-services
 ms.subservice: anomaly-detection
 ms.topic: article
-ms.date: 05/28/2019
-ms.author: aahi
-ms.openlocfilehash: ec32d5de9e3af14abbf14f79f37ab00f3346b1c1
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.date: 06/10/2019
+ms.author: dapine
+ms.openlocfilehash: 0369e27e7a260c50fc4de690dd3261421356799a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306973"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073322"
 ---
 # <a name="install-and-run-anomaly-detector-containers"></a>Instalar e executar contêineres do Detector de anomalias
 
@@ -57,7 +57,7 @@ Você deve primeiro concluir e enviar o [formulário de solicitação de contêi
 
 A tabela a seguir descreve os núcleos de CPU e memória para alocar para o contêiner do Detector de anomalias mínimos e recomendados.
 
-| QPS (consultas por segundo) | Mínimo | Recomendado |
+| QPS (consultas por segundo) | Mínimo | Recomendadas |
 |-----------|---------|-------------|
 | 10 QPS | 4 núcleos, 1GB de memória | 2GB de memória de 8 núcleos |
 | 20 QPS | 8 núcleos, 2GB de memória | 4GB de memória de 16 núcleos |
@@ -97,7 +97,7 @@ Depois que o contêiner estiver no [computador host](#the-host-computer), use o 
 
 Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar qualquer um dos três contêineres. O comando usa os seguintes parâmetros:
 
-| Espaço reservado | Value |
+| Placeholder | Value |
 |-------------|-------|
 |{BILLING_KEY} | Essa chave é usada para iniciar o contêiner e está disponível na página de chaves do Detector de anomalias do portal do Azure.  |
 |{BILLING_ENDPOINT_URI} | O valor do URI de ponto de extremidade cobrança está disponível na página de visão geral de Detector de anomalias do portal do Azure.|

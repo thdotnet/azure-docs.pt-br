@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: ab5b50433b85416ff471546171998e992293b0ea
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bb0726fdddf6d20a9c8c5f20d6cec0cae68322ce
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60586883"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67119254"
 ---
 # <a name="azure-operational-security"></a>Segurança Operacional do Azure
 ## <a name="introduction"></a>Introdução
@@ -115,13 +115,13 @@ Quando você cria uma implantação, os runbooks na [Automação do Azure](https
 
 A Central de Segurança do Azure ajuda a proteger os recursos do Azure. Ela fornece monitoramento de segurança integrado e gerenciamento de políticas em suas assinaturas do Azure. Dentro do serviço, você pode definir políticas não apenas em relação a suas assinaturas do Azure, mas também aos [Grupos de Recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups); portanto, é possível ser mais granular.
 
-### <a name="security-policies-and-recommendations"></a>Políticas de segurança e recomendações 
+### <a name="security-policies-and-recommendations"></a>Políticas de segurança e recomendações
 
 Uma política de segurança define o conjunto de controles que são recomendados para os recursos na assinatura ou grupo de recursos especificado.
 
 Na Central de Segurança, você define as políticas de acordo com os requisitos de segurança de sua empresa e com o tipo de aplicativo ou confidencialidade dos dados.
 
-![Políticas de segurança e recomendações ](./media/azure-operational-security/azure-operational-security-fig5.png)
+![Políticas de segurança e recomendações](./media/azure-operational-security/azure-operational-security-fig5.png)
 
 
 As políticas habilitadas no nível da assinatura são propagadas automaticamente para todos os grupos de recursos na assinatura, conforme mostrado no diagrama do lado direito:
@@ -196,7 +196,7 @@ Por exemplo, os logs de eventos do sistema Windows são uma categoria de Log de 
 
 Os logs de diagnóstico diferem do [Log de Atividades (anteriormente conhecido como Log de Auditoria ou Log Operacional)](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs). O Log de Atividades fornece informações sobre as operações executadas em recursos em sua assinatura. Os Logs de Diagnóstico fornecem informações em operações que o recurso realizou por conta própria.
 
-### <a name="metrics"></a>Métricas
+### <a name="metrics"></a>metrics
 
 O Azure Monitor permite consumir a telemetria para ter visibilidade do desempenho e da integridade de suas cargas de trabalho no Azure. Os tipos de dados de telemetria do Azure mais importantes são as métricas (também chamadas de contadores de desempenho) emitidas pela maioria dos recursos do Azure. O Azure Monitor fornece várias maneiras de configurar e consumir essas [métricas](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics) para monitoramento e solução de problemas. As métricas são uma fonte valiosa de telemetria e permitem que você realize as seguintes tarefas:
 
@@ -276,7 +276,7 @@ Os tipos de solicitações autenticadas e anônimas a seguir são registrados.
 
 O Azure AD também inclui um pacote completo de funcionalidades de gerenciamento de identidade, incluindo autenticação multifator, registro de dispositivos, gerenciamento de senhas de autoatendimento, gerenciamento de grupos de autoatendimento, gerenciamento de contas com privilégios, controle de acesso baseado em função, monitoramento de uso de aplicativos, auditoria avançada, alertas e monitoramento de segurança.
 
--   Aprimore a segurança dos aplicativos com o acesso condicional e a autenticação multifator do AD do Azure.
+-   Aprimore a segurança de aplicativo com autenticação multifator do Azure AD e o acesso condicional.
 
 -   Monitore o uso dos aplicativos e proteja sua empresa contra ameaças avançadas com monitoramento e relatórios de segurança.
 
@@ -309,7 +309,7 @@ Para clientes interessados no armazenamento de seus [eventos de auditoria](https
 
 ## <a name="summary"></a>Resumo
 
-Este artigo resume a proteção de sua privacidade e de seus dados, oferecendo softwares e serviços que ajudam você a gerenciar a infraestrutura de TI de sua organização. A Microsoft reconhece que, quando confia seus dados a terceiros, essa relação de confiança exige uma segurança rigorosa. A Microsoft obedece às diretrizes rígidas de conformidade e segurança — da codificação à operação de um serviço.  Segurança e proteção de dados é uma prioridade principal da Microsoft.
+Este artigo resume a proteção de sua privacidade e de seus dados, oferecendo softwares e serviços que ajudam você a gerenciar a infraestrutura de TI de sua organização. A Microsoft reconhece que, quando confia seus dados a terceiros, essa relação de confiança exige uma segurança rigorosa. A Microsoft obedece às diretrizes rígidas de conformidade e segurança — da codificação à operação de um serviço. Segurança e proteção de dados é uma prioridade principal da Microsoft.
 
 Este artigo explica
 

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 04/08/2019
+ms.date: 06/11/2019
 ms.author: tulasim
-ms.openlocfilehash: 85b0004288a06a834b61f6e3d50017d35d66ce86
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b3bae01d65685aa9ea7bfc95d1f1454741d37b5e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60599097"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67053231"
 ---
 # <a name="tutorial-create-a-qna-bot-with-azure-bot-service-v4"></a>Tutorial: Crie um Bot do QnA com o Azure Bot Service v4
 
@@ -55,7 +55,7 @@ Crie um bot como um aplicativo cliente para a base de Conhecimento.
     |Local padrão|`west us`|Local do recurso do Azure do bot.|
     |Tipo de preço|`F0`|A camada gratuita para o serviço de bot do Azure.|
     |Nome do aplicativo|`my-tutorial-kb-bot-app`|Isso é um aplicativo web para dar suporte a apenas seu bot. Isso não deve ser o mesmo nome do aplicativo, pois o serviço QnA Maker já está usando. Não há suporte para o compartilhamento de aplicativo de web do QnA Maker com qualquer outro recurso.|
-    |Idioma do SDK|C#|Isso é a linguagem de programação subjacente usada pelo bot framework SDK. Suas opções são C# ou Node. js.|
+    |Idioma do SDK|C#|Isso é a linguagem de programação subjacente usada pelo bot framework SDK. Suas opções são [ C# ](https://github.com/Microsoft/botbuilder-dotnet) ou [Node. js](https://github.com/Microsoft/botbuilder-js).|
     |Chave de autenticação do QnA|**Não alterar**|Esse valor é preenchido para você.|
     |Local/plano de serviço de aplicativo|**Não alterar**|Para este tutorial, o local não é importante.|
     |Armazenamento do Azure|**Não alterar**|Dados de conversa são armazenados nas tabelas de armazenamento do Azure.|

@@ -16,12 +16,12 @@ ms.date: 09/10/2018
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 504c1bdeb05ecb6372be0edf023c480acac8a8a7
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 7ee8802aeb2a760e255ab4f5e99010dfedc45e0d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956852"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108309"
 ---
 # <a name="problems-signing-in-to-a-microsoft-application"></a>Problemas ao entrar em um aplicativo Microsoft
 
@@ -67,9 +67,9 @@ A seguir, são apresentados alguns problemas comuns que as pessoas se deparam qu
 
   * Certifique-se de que a **Autenticação Multifator** não está bloqueando o acesso do usuário. [Verificar o status de autenticação multifator do usuário](#check-a-users-multi-factor-authentication-status) ou [Verificar informações de contato de autenticação do usuário](#check-a-users-authentication-contact-info)
 
-  * Certifique-se de que uma **Política de Acesso Condicional** ou política de **Proteção de Identidade** não está bloqueando o acesso do usuário. [Verificar uma política específica de acesso condicional ](#problems-with-conditional-access-policies) ou [Verificar uma política específica de acesso condicional do aplicativo](#check-a-specific-applications-conditional-access-policy) ou [Desabilitar uma política específica de acesso condicional ](#disable-a-specific-conditional-access-policy)
+  * Verifique se uma **Política de acesso condicional** ou política de **Proteção de Identidade** não está bloqueando o acesso do usuário. [Verificar uma política de acesso condicional específica](#problems-with-conditional-access-policies) ou [verificar política de acesso condicional de um aplicativo específico](#check-a-specific-applications-conditional-access-policy) ou [desabilitar uma política específica de acesso condicional](#disable-a-specific-conditional-access-policy)
 
-  * Certifique-se de que as **informações de contato de autenticação** de um usuário estão atualizadas para permitir que as políticas de Acesso Condicional ou Autenticação Multifator sejam impostas. [Verificar o status de autenticação multifator do usuário](#check-a-users-multi-factor-authentication-status) ou [Verificar informações de contato de autenticação do usuário](#check-a-users-authentication-contact-info)
+  * Verifique se as **informações de contato de autenticação** de um usuário estão atualizadas para permitir a aplicação da Autenticação Multifator ou de políticas de Acesso Condicional. [Verificar o status de autenticação multifator do usuário](#check-a-users-multi-factor-authentication-status) ou [Verificar informações de contato de autenticação do usuário](#check-a-users-authentication-contact-info)
 
 - Para aplicativos **Microsoft** **que exigem uma licença** (como o Office365), aqui estão alguns problemas específicos para verificar após ter excluído os problemas gerais acima:
 
@@ -419,9 +419,9 @@ Para atribuir uma licença a um grupo, siga estas etapas:
 
 ## <a name="problems-with-conditional-access-policies"></a>Problemas com políticas de acesso condicional
 
-### <a name="check-a-specific-conditional-access-policy"></a>Verificar uma política específica de acesso condicional
+### <a name="check-a-specific-conditional-access-policy"></a>Verificar uma política de acesso condicional específica
 
-Para verificar ou validar uma política de acesso condicional única:
+Para verificar ou validar uma única política de acesso condicional:
 
 1. Abra o [**Portal do Azure**](https://portal.azure.com/) e entre como um **Administrador Global.**
 
@@ -431,7 +431,7 @@ Para verificar ou validar uma política de acesso condicional única:
 
 4. clique em **Aplicativos empresariais** no menu de navegação.
 
-5. clique no item de navegação **Acesso condicional**.
+5. Clique o **acesso condicional** item de navegação.
 
 6. clique na política que você pretende inspecionar.
 
@@ -442,9 +442,9 @@ Para verificar ou validar uma política de acesso condicional única:
    >
    >
 
-### <a name="check-a-specific-applications-conditional-access-policy"></a>Verificar uma política específica de acesso condicional do aplicativo
+### <a name="check-a-specific-applications-conditional-access-policy"></a>Verificar a política de acesso condicional específica do aplicativo
 
-Para verificar ou validar uma política de acesso condicional configurada atualmente de aplicativo único:
+Para verificar ou validar um único aplicativo atualmente configurado a política de acesso condicional:
 
 1.  Abra o [**Portal do Azure**](https://portal.azure.com/) e entre como um **Administrador Global.**
 
@@ -463,7 +463,7 @@ Para verificar ou validar uma política de acesso condicional configurada atualm
      >
      >
 
-7.  clique no item de navegação **Acesso condicional**.
+7.  Clique o **acesso condicional** item de navegação.
 
 8.  clique na política que você pretende inspecionar.
 
@@ -476,7 +476,7 @@ Para verificar ou validar uma política de acesso condicional configurada atualm
 
 ### <a name="disable-a-specific-conditional-access-policy"></a>Desabilitar uma política específica de acesso condicional
 
-Para verificar ou validar uma política de acesso condicional única:
+Para verificar ou validar uma única política de acesso condicional:
 
 1.  Abra o [**Portal do Azure**](https://portal.azure.com/) e entre como um **Administrador Global.**
 
@@ -486,7 +486,7 @@ Para verificar ou validar uma política de acesso condicional única:
 
 4.  clique em **Aplicativos empresariais** no menu de navegação.
 
-5.  clique no item de navegação **Acesso condicional**.
+5.  Clique o **acesso condicional** item de navegação.
 
 6.  clique na política que você pretende inspecionar.
 
@@ -512,7 +512,7 @@ O acesso do aplicativo pode ser bloqueado porque a operação de consentimento d
 
 ### <a name="perform-administrator-level-consent-operation-for-any-application"></a>Executar operação de consentimento de nível de administrador para qualquer aplicativo
 
--   Somente **para aplicativos desenvolvidos usando o modelo de aplicativo V1**, você pode forçar que esse consentimento de nível de administrador ocorra, adicionando “**?prompt=admin\_consent**” ao final da URL de entrada do aplicativo.
+-   Somente **para aplicativos desenvolvidos usando o modelo de aplicativo V1**, você pode forçar que esse consentimento de nível de administrador ocorra, adicionando “ **?prompt=admin\_consent**” ao final da URL de entrada do aplicativo.
 
 -   Para **qualquer aplicativo desenvolvido usando o modelo de aplicativo V2**, você pode impor que esse consentimento de nível de administrador ocorra, seguindo as instruções na seção **Solicitar permissões de um administrador de diretório** de [Usando o ponto de extremidade de consentimento do administrador](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes#using-the-admin-consent-endpoint).
 

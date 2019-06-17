@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/18/2017
 ms.author: danlep
-ms.openlocfilehash: 8b76e1a168d39d2f39098754f43bae73c21c2049
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: ac1a6136eae79700c427b27c8869bc9241c62abc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60799831"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64717790"
 ---
 # <a name="azure-cli-commands-in-resource-manager-mode"></a>Comandos da CLI do Azure no modo do Gerenciador de Recursos
 Este artigo fornece a sintaxe e as opções de comandos da CLI (interface de linha de comando) do Azure que normalmente seriam usadas para criar e gerenciar recursos do Azure no modelo de implantação do Azure Resource Manager. É possível acessar esses comandos executando a CLI no modo ARM (Resource Manager). Essa não é uma referência completa, e sua versão da CLI poderá mostrar comandos ou parâmetros um pouco diferentes. Para obter uma visão geral dos recursos e dos grupos de recursos do Azure, confira [Visão geral do Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).  
@@ -969,6 +969,7 @@ Opções de parâmetro:
      -s, --subscription <subscription>      the subscription identifier
 
 <BR>
+
     network lb address-pool delete [options] <resource-group> <lb-name> <name>
 
 Remove o recurso de intervalo de pool de IP de back-end do balanceador de carga.
@@ -1333,7 +1334,9 @@ Opções de parâmetro:
     -s, --subscription <subscription>            the subscription identifier
 
 <br>
-     network public-ip list [options] <resource-group> Lista todos os recursos de IP público em um grupo de recursos.
+
+    network public-ip list [options] <resource-group>
+Lista todos os recursos IP público dentro de um grupo de recursos.
 
     azure network public-ip list -g myresourcegroup
 
@@ -1353,7 +1356,9 @@ Opções de parâmetro:
     --json                                 use json output
     -g, --resource-group <resource-group>  the name of the resource group
     -s, --subscription <subscription>      the subscription identifier
+
 <BR>
+
     network public-ip show [options] <resource-group> <name>
 
 Exibe as propriedades de ip público de um recurso de ip público dentro de um grupo de recursos.

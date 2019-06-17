@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b40fc631e84336b684f981a2fef1515a1febec0
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: df4f06528d0dd261dd92ab84b07bb705e23f7fd6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65811916"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113067"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Perguntas frequentes sobre a colaboração B2B do Azure Active Directory
 
@@ -57,13 +57,13 @@ Com certeza. Para obter mais informações, consulte [Adicionando usuários conv
 A menos que um usuário é atribuído a função de administrador limitado, os usuários de colaboração B2B não precisarão de acesso ao portal do Azure. No entanto, os usuários de colaboração de B2B que recebem a função de administrador limitado podem acessar o portal. Além disso, se um usuário convidado que não tenha uma dessas funções administrativas acessa o portal, o usuário poderá acessar determinadas partes da experiência. A função de usuário convidado tem algumas permissões no diretório.
 
 ### <a name="can-i-block-access-to-the-azure-portal-for-guest-users"></a>Posso bloquear o acesso ao Portal do Azure para usuários convidados?
- Sim! Ao configurar essa política, tenha cuidado para evitar o bloqueio acidental do acesso a membros e administradores.
-Para bloquear o acesso de um usuário convidado ao [Portal do Azure](https://portal.azure.com), use uma política de acesso condicional na API do modelo de implantação clássico do Windows Azure:
+Sim! Ao configurar essa política, tenha cuidado para evitar o bloqueio acidental do acesso a membros e administradores.
+Para bloquear o acesso de um usuário convidado para o [portal do Azure](https://portal.azure.com), usar uma política de acesso condicional na API do modelo de implantação clássica do Windows Azure:
 1. Modifique o grupo **Todos os Usuários** para que ele contenha somente os membros.
    ![Captura de tela mostrando que o grupo todos os usuários em que o UserType não é igual convidado](media/faq/modify-all-users-group.png)
 2. Crie um grupo dinâmico que contém usuários convidados.
    ![Captura de tela mostrando um novo grupo de todos os usuários convidados](media/faq/group-with-guest-users.png)
-3. Configure uma política de acesso condicional para impedir que os usuários convidados acessem o portal, conforme mostrado no seguinte vídeo:
+3. Configure uma política de acesso condicional para convidado de impedir que os usuários acessem o portal, conforme mostrado no vídeo a seguir:
   
    > [!VIDEO https://channel9.msdn.com/Blogs/Azure/b2b-block-guest-user/Player] 
 
@@ -111,7 +111,7 @@ Estamos removendo as diferenças entre a colaboração B2B e B2C (entre clientes
 Todos os aplicativos integrados ao AD do Azure podem dar suporte a usuários convidados de B2B do Azure, mas eles devem usar um ponto de extremidade configurado como um locatário para autenticar os usuários convidados. Talvez você também precise [personalizar as declarações](claims-mapping.md) no token SAML que é emitido quando um usuário convidado se autentica no aplicativo. 
 
 ### <a name="can-we-force-multi-factor-authentication-for-b2b-guest-users-if-our-partners-dont-have-multi-factor-authentication"></a>Podemos forçar a autenticação multifator para usuários convidados B2B se os parceiros não têm a autenticação multifator?
-Sim. Para obter mais informações, consulte [Acesso condicional para usuários de colaboração B2B](conditional-access.md).
+Sim. Para obter mais informações, consulte [acesso condicional para usuários de colaboração B2B](conditional-access.md).
 
 ### <a name="in-sharepoint-you-can-define-an-allow-or-deny-list-for-external-users-can-we-do-this-in-azure"></a>No SharePoint, é possível definir uma lista de “permissões” ou “negações” para usuários externos. Podemos fazer isso no Azure?
 Sim. A colaboração do Azure AD B2B dá suporte a listas de permissões e negações. 

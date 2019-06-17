@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s '
-ms.openlocfilehash: 693abccd7e54a1dfef92cd57a715ac96bfd56a8c
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 53571fdd7c5a93fef4df0832253542a5a6dfbec5
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66234014"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058547"
 ---
 # <a name="troubleshooting-guide"></a>Guia de Solução de Problemas
 
@@ -36,24 +36,26 @@ Neste momento, o Azure Dev Spaces funciona melhor ao depurar uma única instânc
 
 ## <a name="error-failed-to-create-azure-dev-spaces-controller"></a>Erro "Falha ao criar o controlador do Azure Dev Spaces"
 
+### <a name="reason"></a>Motivo
 Você pode ver esse erro quando algo der errado com a criação do controlador. Se esse for um erro transitório, exclua e recrie o controlador para corrigi-lo.
 
-### <a name="try"></a>Experimente:
+### <a name="try"></a>Experimente
 
-Para excluir o controlador, use a CLI do Azure Dev Spaces. Não é possível fazê-lo no Visual Studio ou no Cloud Shell. Para instalar a CLI do AZDS, primeiro instale a CLI do Azure e, em seguida, execute este comando:
+Exclua o controlador:
+
+```bash
+azds remove -g <resource group name> -n <cluster name>
+```
+
+Você deve usar a CLI de espaços de desenvolvimento do Azure para excluir um controlador. Não é possível excluir um controlador do Visual Studio. Você também não é possível instalar a CLI de espaços de desenvolvimento do Azure no Azure Cloud Shell para que você não pode excluir um controlador do Azure Cloud Shell.
+
+Se você não tiver a CLI de espaços de desenvolvimento do Azure instalado, você pode instalá-lo usando o seguinte comando pela primeira vez e excluir seu controlador:
 
 ```cmd
 az aks use-dev-spaces -g <resource group name> -n <cluster name>
 ```
 
-E, em seguida, execute este comando para excluir o controlador:
-
-```cmd
-azds remove -g <resource group name> -n <cluster name>
-```
-
-Recriar o controlador pode ser feito a partir do CLI ou Visual Studio. Siga as instruções nos tutoriais como se estivesse começando pela primeira vez.
-
+Recriar o controlador pode ser feito a partir do CLI ou Visual Studio. Consulte a [desenvolvimento de equipe](quickstart-team-development.md) ou [desenvolver com o .NET Core](quickstart-netcore-visualstudio.md) guias de início rápido para obter exemplos.
 
 ## <a name="error-service-cannot-be-started"></a>Erro "O serviço não pode ser iniciado."
 
@@ -408,4 +410,7 @@ azds controller create --name my-controller --target-name MyAKS --resource-group
 ## <a name="enabling-dev-spaces-failing-when-windows-node-pools-are-added-to-an-aks-cluster"></a>Habilitar espaços de desenvolvimento falhando quando pools de nós do Windows são adicionados a um cluster do AKS
 
 ### <a name="reason"></a>Motivo
-Atualmente, espaços de desenvolvimento do Azure destina-se para ser executado no Linux pods e apenas nós. Neste momento, você não pode habilitar espaços de desenvolvimento do Azure em um cluster do AKS com um pool de nós do Windows.
+Atualmente, espaços de desenvolvimento do Azure destina-se para ser executado no Linux pods e apenas nós. Quando você tiver um cluster AKS com um pool de nós do Windows, você deve garantir que os pods de espaços de desenvolvimento do Azure são agendados somente em nós do Linux. Se um pod de espaços de desenvolvimento do Azure está agendado para ser executado em um nó do Windows, que pod não será iniciado e habilitar espaços de desenvolvimento falhará.
+
+### <a name="try"></a>Experimente
+[Adicionar um prejudicar](../aks/operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations) ao seu cluster do AKS para garantir que o Linux os pods não estão agendados para execução em um nó do Windows.

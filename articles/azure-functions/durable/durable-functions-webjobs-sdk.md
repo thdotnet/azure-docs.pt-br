@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
 ms.openlocfilehash: 39a757900b4307d702a0ce0ce1c20694418aa8dd
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65872830"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Como executar as funções duráveis como WebJobs
@@ -53,9 +53,9 @@ Este artigo explica como desenvolver um projeto de 2. x do SDK do WebJobs (equiv
 
 Para executar as funções duráveis como WebJobs, crie primeiro um aplicativo de console. Um projeto do SDK do WebJobs é apenas um projeto de aplicativo de console com os pacotes do NuGet apropriados instalados.
 
-No Visual Studio **novo projeto** caixa de diálogo, selecione **área de trabalho clássica do Windows** > **aplicativo de Console (.NET Framework)**. No arquivo de projeto, o `TargetFrameworkVersion` deve ser `v4.6.1`.
+No Visual Studio **novo projeto** caixa de diálogo, selecione **área de trabalho clássica do Windows** > **aplicativo de Console (.NET Framework)** . No arquivo de projeto, o `TargetFrameworkVersion` deve ser `v4.6.1`.
 
-O Visual Studio também tem um modelo de projeto trabalho Web, que pode ser usado, selecionando **Cloud** > **Azure WebJob (.NET Framework)**. Este modelo instala muitos pacotes, alguns dos quais você talvez não precise.
+O Visual Studio também tem um modelo de projeto trabalho Web, que pode ser usado, selecionando **Cloud** > **Azure WebJob (.NET Framework)** . Este modelo instala muitos pacotes, alguns dos quais você talvez não precise.
 
 ## <a name="install-nuget-packages"></a>Instalar os pacotes NuGet
 
@@ -198,7 +198,7 @@ Esta seção fornece uma visão geral de como executar o [projeto de exemplo](ht
 
 1. Se você quiser ver os logs no Application Insights quando você executa o projeto localmente:
 
-     a. Criar um recurso do Application Insights e usar o **geral** tipo de aplicativo para ele.
+    a. Criar um recurso do Application Insights e usar o **geral** tipo de aplicativo para ele.
 
     b. Salvar a chave de instrumentação no arquivo *App.config*.
 
@@ -222,7 +222,7 @@ Este artigo explica como desenvolver um projeto de 2.x do SDK de WebJobs. Se voc
 
 A principal alteração apresentada é o uso do .NET Core em vez do .NET Framework. Para criar um projeto do SDK de WebJobs 3. x, as instruções são os mesmos, com as seguintes exceções:
 
-1. Criar um aplicativo de console do aplicativo .NET Core. No Visual Studio **novo projeto** caixa de diálogo, selecione **.NET Core** > **aplicativo de Console (.NET Core)**. O arquivo de projeto especifica que `TargetFramework` é `netcoreapp2.x`.
+1. Criar um aplicativo de console do aplicativo .NET Core. No Visual Studio **novo projeto** caixa de diálogo, selecione **.NET Core** > **aplicativo de Console (.NET Core)** . O arquivo de projeto especifica que `TargetFramework` é `netcoreapp2.x`.
 
 1. Escolha a versão de lançamento do SDK de WebJobs 3.x dos seguintes pacotes:
 

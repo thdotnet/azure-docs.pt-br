@@ -16,12 +16,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e206cb29338445e30a7462bcbaf0079236e75510
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: bdd68d9ec5d0dd83df4628f39785ce255482245d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65074959"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111161"
 ---
 # <a name="protected-web-api---code-configuration"></a>API - configuração do código web protegida
 
@@ -159,4 +159,4 @@ Os validadores são todos associados a propriedades do `TokenValidationParameter
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Mover para a produção](scenario-protected-web-api-production.md)
+> [Verifique se a escopos e funções de aplicativo no seu código](scenario-protected-web-api-verification-scope-app-roles.md)

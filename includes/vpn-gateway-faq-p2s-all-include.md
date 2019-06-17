@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/23/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 20f0d6a88fead155225cff69ab89635de587a46d
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: 3cffd2de0763ea6984b64b965ce1214951d3d569
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66455170"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056491"
 ---
 ### <a name="how-many-vpn-client-endpoints-can-i-have-in-my-point-to-site-configuration"></a>Quantos pontos de extremidade de cliente VPN posso ter em minha configuração ponto a site?
 
@@ -40,11 +40,11 @@ Há suporte para os seguintes sistemas operacionais de cliente:
 
 Azure dá suporte a três tipos de opções de VPN ponto a site:
 
-* SSTP (Secure Socket Tunneling Protocol). SSTP é uma solução baseada em SSL da Microsoft que pode invadir firewalls, já que a maioria dos firewalls abre a porta TCP, que usa SSL 443.
+* SSTP (Secure Socket Tunneling Protocol). O SSTP é uma Microsoft baseada em SSL solução proprietária que pode invadir firewalls, já que a maioria dos firewalls abra a porta TCP de saída que usa SSL 443.
 
-* OpenVPN. OpenVPN é uma solução baseada em SSL que pode invadir firewalls, já que a maioria dos firewalls abra a porta TCP que usa SSL 443.
+* OpenVPN. OpenVPN é uma solução baseada em SSL que pode invadir firewalls, já que a maioria dos firewalls abra a porta TCP de saída que usa SSL 443.
 
-* VPN IKEv2. A VPN IKEv2 é uma solução de VPN IPsec baseada em padrões que usa as portas UDP 500 e 4500 e o protocolo IP número 50. Nem sempre os firewalls abrem essas portas, por isso, há uma possibilidade de a VPN IKEv2 não conseguir atravessar proxies e firewalls.
+* VPN IKEv2. VPN IKEv2 é uma solução de VPN IPsec baseada em padrões que usa o protocolo IP e portas de saída UDP 500 e 4500 não. 50. Nem sempre os firewalls abrem essas portas, por isso, há uma possibilidade de a VPN IKEv2 não conseguir atravessar proxies e firewalls.
 
 ### <a name="if-i-restart-a-client-computer-configured-for-point-to-site-will-the-vpn-automatically-reconnect"></a>Se eu reiniciar um computador cliente configurado para ponto a site, a VPN se reconectará automaticamente?
 

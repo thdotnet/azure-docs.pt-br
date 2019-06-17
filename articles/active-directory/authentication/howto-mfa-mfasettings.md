@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6a74548d0dc965127c5568708155341f60dbc65
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: 618377d532dc932eb21f282ac8ba7f6c07df16f2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66496758"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113450"
 ---
 # <a name="configure-azure-multi-factor-authentication-settings"></a>Configurar a Autenticação Multifator do Azure
 
@@ -259,7 +259,7 @@ Os usuários também podem criar senhas de aplicativo após o registro. Para obt
 O recurso _IPs confiáveis_ da Autenticação Multifator do Azure é usado por administradores de um locatário gerenciado ou federado. O recurso ignora a verificação em duas etapas para os usuários que se conectam pela intranet da empresa. O recurso está disponível na versão completa da Autenticação Multifator do Azure e não na versão gratuita para administradores. Para saber como obter a versão completa da Autenticação Multifator do Azure, consulte [Autenticação Multifator do Azure](multi-factor-authentication.md).
 
 > [!NOTE]
-> IPs confiáveis da MFA e locais nomeados pelo acesso condicional funcionam apenas com endereços IPV4.
+> IPs e acesso condicional, localizações nomeadas só funcionam com endereços IPV4 confiáveis de MFA.
 
 Se sua organização implantar a extensão NPS para fornecer MFA a aplicativos locais, o endereço IP de origem sempre parecerá ser o servidor NPS que passa pela tentativa de autenticação.
 
@@ -280,20 +280,20 @@ Quando o recurso IPs Confiáveis é habilitado, a verificação em duas etapas *
 
 Independentemente se o recurso IPs Confiáveis estiver habilitado, a verificação em duas etapas será necessária para fluxos de navegador. As senhas de aplicativo são necessárias para aplicativos cliente avançados mais antigos.
 
-### <a name="enable-named-locations-by-using-conditional-access"></a>Habilitar locais nomeados usando o acesso condicional
+### <a name="enable-named-locations-by-using-conditional-access"></a>Habilitar locais nomeados por meio do acesso condicional
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. À esquerda, selecione **Azure Active Directory** > **Acesso condicional** > **Locais nomeados**.
+2. À esquerda, selecione **Azure Active Directory** > **acesso condicional** > **localizações nomeadas**.
 3. Selecione **Novo local**.
 4. Insira um nome para o local.
 5. Selecione **Marcar como local confiável**.
 6. Insira o intervalo de IP em notação CIDR, como **192.168.1.1/24**.
 7. Selecione **Criar**.
 
-### <a name="enable-the-trusted-ips-feature-by-using-conditional-access"></a>Habilitar o recurso IPs Confiáveis usando o acesso condicional
+### <a name="enable-the-trusted-ips-feature-by-using-conditional-access"></a>Habilitar o recurso IPs confiáveis usando o acesso condicional
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. À esquerda, selecione **Azure Active Directory** > **Acesso condicional** > **Locais nomeados**.
+2. À esquerda, selecione **Azure Active Directory** > **acesso condicional** > **localizações nomeadas**.
 3. Selecione **Configurar IPs confiáveis de MFA**.
 4. Na página **Configuração do Serviço**, em **IPs Confiáveis**, escolha uma das duas opções a seguir:
 

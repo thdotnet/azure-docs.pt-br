@@ -12,15 +12,15 @@ ms.workload: big-compute
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/13/2019
+ms.date: 05/28/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 820eddff7da3bb52ca94ea0cb7e2361d89892a4a
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: de32ae16ea4d3c52b8017f35ae5af6009ab59205
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595314"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080927"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Cotas e limites de serviço do Lote
 
@@ -32,12 +32,13 @@ Você pode executar várias cargas de trabalho do Lote em uma única conta do Lo
 
 Se você planeja executar cargas de trabalho de produção em Lote, talvez seja necessário aumentar uma ou mais cotas para acima do padrão. Se desejar aumentar a cota, você poderá abrir uma [solicitação de atendimento ao cliente](#increase-a-quota) online gratuitamente.
 
-> [!NOTE]
-> Uma cota é um limite de crédito, não uma garantia de capacidade. Se você precisar de capacidade em larga escala, entre em contato com o suporte do Azure.
-
 ## <a name="resource-quotas"></a>Cotas de recursos
-[!INCLUDE [azure-batch-limits](../../includes/azure-batch-limits.md)]
 
+Uma cota é um limite de crédito, não uma garantia de capacidade. Se você precisar de capacidade em larga escala, entre em contato com o suporte do Azure.
+
+Também Observe que as cotas não são garantia de valores. As cotas podem variar com base nas alterações do serviço do lote ou uma solicitação de usuário para alterar um valor de cota.
+
+[!INCLUDE [azure-batch-limits](../../includes/azure-batch-limits.md)]
 
 ### <a name="cores-quotas-in-user-subscription-mode"></a>Cotas de núcleo no modo de assinatura de usuário
 
@@ -45,18 +46,22 @@ Se você tiver criado uma conta de Lote com modo de alocação de pool definido 
 
 ## <a name="pool-size-limits"></a>Limites de tamanho do pool
 
+Limites de tamanho do pool são definidos pelo serviço de lote. Diferentemente [as cotas de recursos](#resource-quotas), esses valores não podem ser alterados. Somente pools com a comunicação entre nós e imagens personalizadas têm restrições diferentes do que a cota padrão.
+
 | **Recurso** | **Limite máximo** |
 | --- | --- |
 | **Nós de computação em [pool de computação entre nós habilitado](batch-mpi.md)**  ||
 | Modo de alocação de pool de serviço de Lote | 100 |
 | Modo de alocação de pool de assinatura do Lote | 80 |
-| **Nós de computação dedicados em [pool criado com imagem de VM personalizada](batch-custom-images.md)**<sup>1</sup> ||
+| **Nós de computação dedicados em [pool criado com imagem de VM personalizada](batch-custom-images.md)** <sup>1</sup> ||
 | Nós dedicados | 2000 |
 | Nós de baixa prioridade | 1000 |
 
 <sup>1</sup> Para pools que não têm comunicação entre nós ativada.
 
 ## <a name="other-limits"></a>Outros limites
+
+Limites adicionais definidos pelo serviço de lote. Diferentemente [as cotas de recursos](#resource-quotas), esses valores não podem ser alterados.
 
 | **Recurso** | **Limite máximo** |
 | --- | --- |
@@ -84,11 +89,11 @@ Siga estas etapas para solicitar uma cota aumentam para sua conta de lote ou sua
 
 ### <a name="increase-cores-quota-in-batch"></a>Aumentar a cota de núcleos em lote 
 
-1. Selecione o bloco **Ajuda + suporte** no painel do portal ou o ponto de interrogação (**?**) no canto superior direito do portal.
+1. Selecione o bloco **Ajuda + suporte** no painel do portal ou o ponto de interrogação ( **?** ) no canto superior direito do portal.
 1. Selecione **Nova solicitação de suporte** > **Fundamentos**.
 1. Em **Noções básicas**:
    
-     a. **Tipo de problema** > **limites de serviço e assinatura (cotas)**
+    a. **Tipo de problema** > **limites de serviço e assinatura (cotas)**
    
     b. Selecione sua assinatura.
    
@@ -98,7 +103,7 @@ Siga estas etapas para solicitar uma cota aumentam para sua conta de lote ou sua
     
 1. Em **Detalhes**:
       
-     a. Na **fornecem detalhes**, especifique o local, o tipo de cota e conta do lote.
+    a. Na **fornecem detalhes**, especifique o local, o tipo de cota e conta do lote.
     
     ![Aumento de cota do lote][quota_increase]
 
@@ -118,7 +123,7 @@ Siga estas etapas para solicitar uma cota aumentam para sua conta de lote ou sua
 
 1. Em **Informações de contato**:
    
-     a. Selecione um **método de contato preferencial**.
+    a. Selecione um **método de contato preferencial**.
    
     b. Verifique e insira os detalhes de contato necessários.
    

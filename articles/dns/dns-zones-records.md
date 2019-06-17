@@ -15,12 +15,12 @@ ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 12/18/2017
 ms.author: victorh
-ms.openlocfilehash: 7da382a644c1db92b9915f1d3f1f3a459e8893b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 2b9c8f1bb7407dd36623fd8ad68f9489172a1caf
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60563321"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64712229"
 ---
 # <a name="overview-of-dns-zones-and-records"></a>Visão geral de zonas e registros DNS
 
@@ -28,7 +28,7 @@ Esta página explica os principais conceitos de domínios, zonas DNS, conjuntos 
 
 ## <a name="domain-names"></a>Nomes de domínio
 
-O Sistema de Nomes de Domínio é uma hierarquia de domínios. A hierarquia começa no domínio 'raiz', cujo nome é simplesmente '**.**'.  Abaixo dele vêm domínios de nível superior, como 'com', 'net', 'org', 'uk' ou 'jp'.  Abaixo desses estão domínios de segundo nível, como 'org.uk' ou 'co.jp'. Os domínios na hierarquia de DNS são distribuídos globalmente, hospedados por servidores de nomes DNS em todo o mundo.
+O Sistema de Nomes de Domínio é uma hierarquia de domínios. A hierarquia começa no domínio 'raiz', cujo nome é simplesmente ' **.** '.  Abaixo dele vêm domínios de nível superior, como 'com', 'net', 'org', 'uk' ou 'jp'.  Abaixo desses estão domínios de segundo nível, como 'org.uk' ou 'co.jp'. Os domínios na hierarquia de DNS são distribuídos globalmente, hospedados por servidores de nomes DNS em todo o mundo.
 
 Um registrador de nomes de domínio é uma organização que permite a você adquirir um nome de domínio, como 'contoso.com'.  A aquisição de um nome de domínio lhe dá o direito de controlar a hierarquia de DNS com esse nome, por exemplo, permitindo que você direcione o nome 'www.contoso.com' para o site da sua empresa. O registrador pode hospedar o domínio em seus próprios servidores de nomes em seu nome ou você permitir que você especifique servidores de nomes alternativos.
 
@@ -111,7 +111,7 @@ As várias cadeias de caracteres em um registro DNS não devem ser confundidas c
 
 ## <a name="tags-and-metadata"></a>Marcas e metadados
 
-### <a name="tags"></a>Marcas
+### <a name="tags"></a>tags
 
 As marcas consistem em uma lista de pares de nome/valor e são usadas pelo Azure Resource Manager na rotulagem de recursos.  O Azure Resource Manager usa marcas para habilitar exibições filtradas de sua fatura do Azure e também permite que você defina uma política sobre as marcas que são obrigatórias. Para obter mais informações sobre marcas, consulte [Usando marcas para organizar os recursos do Azure](../azure-resource-manager/resource-group-using-tags.md).
 
@@ -134,7 +134,7 @@ No nível da API REST do DNS do Azure, as Etags são especificadas usando cabeç
 | Cabeçalho | Comportamento |
 | --- | --- |
 | Nenhum |PUT sempre terá êxito (nenhuma verificação de Etag) |
-| If-match <etag> |PUT só terá êxito se o recurso existir e a Etag corresponder |
+| If-match \<etag> |PUT só terá êxito se o recurso existir e a Etag corresponder |
 | If-match * |PUT só terá êxito se houver recursos |
 | If-none-match * |PUT só terá êxito se não houver recursos |
 

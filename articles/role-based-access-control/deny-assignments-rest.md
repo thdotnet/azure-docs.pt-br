@@ -1,6 +1,6 @@
 ---
 title: Listar atribuições de negação para recursos do Azure usando a API REST – Microsoft Azure | Microsoft Docs
-description: Saiba como listar atribuições de negação para usuários, grupos e aplicativos usando RBAC (controle de acesso baseado em função) para recursos do Azure e API REST.
+description: Saiba como listar as atribuições para usuários, grupos e aplicativos usando o controle de acesso baseado em função (RBAC) para recursos do Azure e a API REST de negar.
 services: active-directory
 documentationcenter: na
 author: rolyon
@@ -12,22 +12,22 @@ ms.workload: multiple
 ms.tgt_pltfrm: rest-api
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/13/2019
+ms.date: 06/10/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 59bcf2b33d203ae216b4965b963a727a6b34ae72
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: 0bc49456f5965846a2de542b4a063bab2d1838bf
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/13/2019
-ms.locfileid: "60194660"
+ms.locfileid: "67118298"
 ---
 # <a name="list-deny-assignments-for-azure-resources-using-the-rest-api"></a>Listar atribuições de negação para recursos do Azure usando a API REST
 
-As [atribuições de negação](deny-assignments.md) impedem que os usuários executem ações específicas, mesmo que uma atribuição de função conceda o acesso a elas. Este artigo descreve como usar a API REST para a lista de atribuições de negar.
+As [atribuições de negação](deny-assignments.md) impedem que os usuários executem ações específicas, mesmo que uma atribuição de função conceda o acesso a elas. Este artigo descreve como listar negar atribuições usando a API REST.
 
 > [!NOTE]
-> Neste momento, a única maneira de adicionar suas próprias atribuições de negação é usando o Azure Blueprints. Para obter mais informações, consulte [Proteger novos recursos com bloqueios de recurso do Azure Blueprints](../governance/blueprints/tutorials/protect-new-resources.md).
+> Você não pode criar diretamente seus próprios negar atribuições. Para obter informações sobre como negar as atribuições são criadas, consulte [negar atribuições](deny-assignments.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

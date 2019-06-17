@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 03/23/2018
 ms.author: chackdan
 ms.openlocfilehash: a5f8735df2b230de2b0ddcdcccff09430bada9e3
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64684685"
 ---
 # <a name="azure-service-fabric-node-types-and-virtual-machine-scale-sets"></a>Tipos de nó do Service Fabric e os conjuntos de dimensionamento da máquina virtual
@@ -34,7 +34,7 @@ Conforme mostrado na figura anterior, as instâncias do conjunto de dimensioname
 Quando você escala um conjunto de dimensionamento verticalmente, uma nova instância é criada. O novo nome da instância do conjunto de dimensionamento geralmente será o nome do conjunto de dimensionamento mais o número de instância seguinte. Em nosso exemplo, é BackEnd_5.
 
 ## <a name="map-scale-set-load-balancers-to-node-types-and-scale-sets"></a>Mapear balanceadores de carga do conjunto de dimensionamento para tipos de nó e conjuntos de dimensionamento
-Se você tiver implantado o cluster no portal do Azure ou usado o modelo do exemplo do Azure Resource Manager, todos os recursos em um grupo de recursos serão listados. Você pode ver os balanceadores de carga para cada conjunto de dimensionamento ou tipo de nó. O nome do balanceador de carga usa o seguinte formato: **LB -&lt;nome do tipo de nó&gt;**. Um exemplo é LB-sfcluster4doc-0, conforme mostrado na figura a seguir:
+Se você tiver implantado o cluster no portal do Azure ou usado o modelo do exemplo do Azure Resource Manager, todos os recursos em um grupo de recursos serão listados. Você pode ver os balanceadores de carga para cada conjunto de dimensionamento ou tipo de nó. O nome do balanceador de carga usa o seguinte formato: **LB -&lt;nome do tipo de nó&gt;** . Um exemplo é LB-sfcluster4doc-0, conforme mostrado na figura a seguir:
 
 ![Recursos][Resources]
 
@@ -76,17 +76,17 @@ A seguir estão as descrições de propriedade:
 
 | **Nome** | **Valores permitidos** | ** --- ** | **Diretrizes ou descrição resumida** |
 | --- | --- | --- | --- |
-| name | string | --- | nome exclusivo para a extensão |
+| name | cadeia de caracteres | --- | nome exclusivo para a extensão |
 | type | "ServiceFabricLinuxNode" or "ServiceFabricWindowsNode | --- | Identifica malha de serviço do sistema operacional estiver inicializando para |
 | autoUpgradeMinorVersion | true ou false | --- | Habilitar atualização automática de versões secundárias do tempo de execução do SF |
 | publicador | Microsoft.Azure.ServiceFabric | --- | nome do publicador de extensão do Service Fabric |
-| clusterEndpont | string | --- | URI:port ao ponto de extremidade de gerenciamento |
-| nodeTypeRef | string | --- | nome do tipo de nó |
+| clusterEndpont | cadeia de caracteres | --- | URI:port ao ponto de extremidade de gerenciamento |
+| nodeTypeRef | cadeia de caracteres | --- | nome do tipo de nó |
 | durabilityLevel | Bronze, Prata, ouro e Platina | --- | tempo permitido para pausar a infraestrutura imutável do Azure |
 | enableParallelJobs | true ou false | --- | Habilitar ParallelJobs de computação, como remover a VM e reinicie a VM na mesma escala definida em paralelo |
-| nicPrefixOverride | string | --- | Prefixo de sub-rede, como "10.0.0.0/24" |
+| nicPrefixOverride | cadeia de caracteres | --- | Prefixo de sub-rede, como "10.0.0.0/24" |
 | commonNames | string[] | --- | Nomes comuns dos certificados de cluster instalado |
-| x509StoreName | string | --- | Nome do Store onde se encontra o certificado de cluster instalado |
+| x509StoreName | cadeia de caracteres | --- | Nome do Store onde se encontra o certificado de cluster instalado |
 | typeHandlerVersion | 1,1 | --- | Versão da extensão. 1.0 versão de clássico de extensão são recomendadas para atualizar para 1.1 |
 
 ## <a name="next-steps"></a>Próximas etapas

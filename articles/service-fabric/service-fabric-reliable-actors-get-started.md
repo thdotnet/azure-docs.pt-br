@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 03/16/2018
 ms.author: vturecek
 ms.openlocfilehash: b6ca4810d86bb3c8413f0a740ac4483a848b8e10
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60726248"
 ---
 # <a name="getting-started-with-reliable-actors"></a>Introdução aos Reliable Actors
@@ -50,11 +50,11 @@ O projeto criado mostra a seguinte estrutura:
 
 A solução contém dois projetos:
 
-* **Projeto de aplicativo (MyApplication)**. Este projeto agrupa todos os serviços para implantação. Ele contém os scripts do PowerShell e o *ApplicationManifest.xml* para gerenciamento do aplicativo.
+* **Projeto de aplicativo (MyApplication)** . Este projeto agrupa todos os serviços para implantação. Ele contém os scripts do PowerShell e o *ApplicationManifest.xml* para gerenciamento do aplicativo.
 
-* **Projeto de interface (HelloWorld.Interfaces)**. Este projeto contém a definição de interface para o ator. As interfaces de ator podem ser definidas em qualquer projeto com qualquer nome.  A interface define o contrato de ator que é compartilhado pela implementação do ator e os clientes que chamam o ator.  Como os projetos de clientes podem depender disso, geralmente faz sentido defini-los em um assembly separado da implementação do ator.
+* **Projeto de interface (HelloWorld.Interfaces)** . Este projeto contém a definição de interface para o ator. As interfaces de ator podem ser definidas em qualquer projeto com qualquer nome.  A interface define o contrato de ator que é compartilhado pela implementação do ator e os clientes que chamam o ator.  Como os projetos de clientes podem depender disso, geralmente faz sentido defini-los em um assembly separado da implementação do ator.
 
-* **Projeto de serviço de ator (HelloWorld)**. Esse projeto define o serviço do Service Fabric que vai hospedar o ator. Ele contém a implementação do ator, *HelloWorld.cs*. Uma implementação de ator é uma classe que deriva do tipo de base `Actor` e implementa as interfaces definidas no projeto *MyActor.Interfaces*. Uma classe de ator também deve implementar um construtor que aceita uma instância `ActorService` e um `ActorId` e as passem para a classe de base `Actor`.
+* **Projeto de serviço de ator (HelloWorld)** . Esse projeto define o serviço do Service Fabric que vai hospedar o ator. Ele contém a implementação do ator, *HelloWorld.cs*. Uma implementação de ator é uma classe que deriva do tipo de base `Actor` e implementa as interfaces definidas no projeto *MyActor.Interfaces*. Uma classe de ator também deve implementar um construtor que aceita uma instância `ActorService` e um `ActorId` e as passem para a classe de base `Actor`.
     
     Este projeto também contém *Program.cs*, que registra classes de ator com o tempo de execução do Service Fabric usando `ActorRuntime.RegisterActorAsync<T>()`. A classe `HelloWorld` já está registrada. Todas as implementações de ator adicionais, adicionadas ao projeto, também devem ser registradas no método `Main()`.
 
@@ -95,9 +95,9 @@ Pressione **Ctrl-Shift-B** para compilar o projeto e certificar-se de que tudo �
 
 Crie um aplicativo de console simples para chamar o serviço de ator.
 
-1. Clique com o botão direito do mouse na solução no Gerenciador de Soluções > **Adicionar** > **Novo Projeto...**.
+1. Clique com o botão direito do mouse na solução no Gerenciador de Soluções > **Adicionar** > **Novo Projeto...** .
 
-2. Nos tipos de projeto **.NET Core**, selecione **Console App (.NET Core)**.  Nomeie o projeto *ActorClient*.
+2. Nos tipos de projeto **.NET Core**, selecione **Console App (.NET Core)** .  Nomeie o projeto *ActorClient*.
     
     ![Caixa de diálogo Adicionar novo projeto][6]    
     
@@ -116,7 +116,7 @@ Crie um aplicativo de console simples para chamar o serviço de ator.
 
     O pacote NuGet e todas as suas dependências estão instaladas no projeto ActorClient.
 
-5. O projeto de cliente também requer uma referência ao projeto de interfaces.  No projeto ActorClient, clique com o botão direito do mouse em **Dependências** e, em seguida, em **Adicionar referência...**.  Selecione **Projetos > Solução** (se ainda não estiver selecionado) e, em seguida, tique a caixa de seleção ao lado de **HelloWorld.Interfaces**.  Clique em **OK**.
+5. O projeto de cliente também requer uma referência ao projeto de interfaces.  No projeto ActorClient, clique com o botão direito do mouse em **Dependências** e, em seguida, em **Adicionar referência...** .  Selecione **Projetos > Solução** (se ainda não estiver selecionado) e, em seguida, tique a caixa de seleção ao lado de **HelloWorld.Interfaces**.  Clique em **OK**.
     
     ![Caixa de diálogo Adicionar referência][7]
 

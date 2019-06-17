@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 4/16/2019
 ms.author: yoafr
 ms.openlocfilehash: 069345f9c2d0fff0b580365153d8be13bb4ba204
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65952144"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Desativação de recursos da Central de segurança (julho de 2019)
@@ -100,7 +100,7 @@ Podemos está removendo o **ir para o mapa de eventos de segurança** botão e o
 
 Quando você seleciona os **ir para o mapa de eventos de segurança** botão, você abre o painel de inteligência contra ameaças. Podemos está se aposentando o painel inteligência contra ameaças.  
 
-![Painel Inteligência Contra Ameaças][11]
+![Painel Inteligência contra ameaças][11]
 
 Quando você escolhe um espaço de trabalho para exibir o painel de inteligência de ameaça, você abrir a tela de mapa (visualização) de alertas de segurança no Log Analytics. Podemos está se aposentando nesta tela.
 
@@ -110,7 +110,7 @@ Os dados existentes permanecerão disponíveis na solução de segurança do Log
 
 ### <a name="security-events-map---the-new-experience"></a>Mapa de eventos de segurança – a nova experiência
 
-Incentivamos você a usar a funcionalidade de mapa de alertas criada à Central de segurança: **Mapa de alertas de segurança (visualização)**. Essa funcionalidade fornece uma experiência otimizada e funciona em todas as assinaturas e espaços de trabalho associados. Ele fornece uma exibição de alto nível em seu ambiente e não está focalizado em um único espaço de trabalho.
+Incentivamos você a usar a funcionalidade de mapa de alertas criada à Central de segurança: **Mapa de alertas de segurança (visualização)** . Essa funcionalidade fornece uma experiência otimizada e funciona em todas as assinaturas e espaços de trabalho associados. Ele fornece uma exibição de alto nível em seu ambiente e não está focalizado em um único espaço de trabalho.
 
 ## Regras de alerta personalizadas (versão prévia)<a name="menu_customalerts"></a>
 

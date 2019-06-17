@@ -9,18 +9,18 @@ ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.date: 01/07/2019
+ms.date: 06/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: a815ec4ac97f8476403f773aeedb19ff84092b03
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: 0b35ef5ca3aaa7ad4169f99e2830ebea76d2759e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66752951"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67074941"
 ---
 # <a name="set-up-compute-targets-for-model-training"></a>Configurar destinos de computação para treinamento de modelo 
 
-Com o Serviço do Azure Machine Learning, você pode treinar seu modelo em uma variedade de recursos ou ambientes, coletivamente denominados [__destinos de computação__](concept-azure-machine-learning-architecture.md#compute-target). Um destino de computação pode ser um computador local ou um recurso de nuvem, como Computação do Azure Machine Learning, Azure HDInsight ou uma máquina virtual remota.  Você também pode criar destinos de computação para a implantação de modelo conforme descrito em ["em que local e como implantar seus modelos"](how-to-deploy-and-where.md).
+Com o Serviço do Azure Machine Learning, você pode treinar seu modelo em uma variedade de recursos ou ambientes, coletivamente denominados [__destinos de computação__](concept-azure-machine-learning-architecture.md#compute-targets). Um destino de computação pode ser um computador local ou um recurso de nuvem, como Computação do Azure Machine Learning, Azure HDInsight ou uma máquina virtual remota.  Você também pode criar destinos de computação para a implantação de modelo conforme descrito em ["em que local e como implantar seus modelos"](how-to-deploy-and-where.md).
 
 Você pode criar e gerenciar um destino de computação usando o SDK do Azure Machine Learning, o portal do Azure, a extensão de CLI do Azure ou Azure Machine Learning VS Code. Se você tiver destinos de computação criados por meio de outro serviço (por exemplo, um cluster HDInsight), poderá usá-los anexando-os ao workspace de serviço do Azure Machine Learning.
  
@@ -31,7 +31,7 @@ Neste artigo, você aprende a usar vários destinos de computação para treinam
 
 
 >[!NOTE]
-> O código neste artigo foi testado com o SDK de aprendizado de máquina do Azure versão 1.0.39.
+> O código deste artigo foi testado com a versão 1.0.39 do SDK do Azure Machine Learning.
 
 ## <a name="compute-targets-for-training"></a>Destinos de computação para treinamento
 
@@ -75,7 +75,7 @@ O código a seguir está um exemplo de configuração de execuções de treiname
 
 [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/runconfig.py?name=run_user_managed)]
   
-## <a name="set-up-compute-targets-with-python"></a>Configurar destinos de computação com o Python
+## <a name="set-up-in-python"></a>Configurar em Python
 
 Use as seções a seguir para configurar estes destinos de computação:
 
@@ -271,7 +271,7 @@ except ComputeTargetException:
 print("Using Batch compute:{}".format(batch_compute.cluster_resource_id))
 ```
 
-## <a name="set-up-compute-in-the-azure-portal"></a>Configurar computação no portal do Azure
+## <a name="set-up-in-azure-portal"></a>Configurar no portal do Azure
 
 Você pode acessar quais destinos de computação são associados com seu workspace no portal do Azure.  Você pode usar o portal para:
 
@@ -357,7 +357,7 @@ Siga as etapas anteriores para exibir a lista de destinos de computação. Em se
 1. Selecionar __Anexar__. 
 1. Exiba o status da operação de anexação, selecionando o destino de computação na lista.
 
-## <a name="set-up-compute-with-the-cli"></a>Configurar a computação com a CLI
+## <a name="set-up-with-cli"></a>Configurar com a CLI
 
 Você pode acessar os destinos de computação associados ao seu workspace usando a [extensão da CLI](reference-azure-machine-learning-cli.md) para o Serviço do Azure Machine Learning.  Você pode usar a CLI para:
 
@@ -367,7 +367,7 @@ Você pode acessar os destinos de computação associados ao seu workspace usand
 
 Para obter mais informações, veja [Gerenciamento de recursos](reference-azure-machine-learning-cli.md#resource-management).
 
-## <a name="set-up-compute-with-vs-code"></a>Configurar a computação com o VS Code
+## <a name="set-up-with-vs-code"></a>Configurar o VS Code
 
 Você pode acessar, criar e gerenciar os destinos de computação que estão associados ao seu espaço de trabalho usando o [extensão do VS Code](how-to-vscode-tools.md#create-and-manage-compute-targets) para o serviço de Azure Machine Learning.
 
@@ -384,7 +384,7 @@ Depois de criar uma configuração de execução, você pode usá-la para execut
 >
 > Para impedir que arquivos sejam incluídos no instantâneo, crie uma [. gitignore](https://git-scm.com/docs/gitignore) ou `.amlignore` arquivo no diretório e adicione os arquivos para ele. O `.amlignore` arquivo usa a mesma sintaxe e padrões como o [. gitignore](https://git-scm.com/docs/gitignore) arquivo. Se os dois arquivos existem, o `.amlignore` arquivo terá precedência.
 > 
-> Para obter mais informações, veja [cópias de sombra](concept-azure-machine-learning-architecture.md#snapshot).
+> Para obter mais informações, veja [cópias de sombra](concept-azure-machine-learning-architecture.md#snapshots).
 
 ### <a name="create-an-experiment"></a>Criar uma experiência
 

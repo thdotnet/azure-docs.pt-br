@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 05/31/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: 52b132b45bd90d7d21bb072e9a94d8588d5cf301
-ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
+ms.openlocfilehash: 6a25444f0207ec5eceb029c5d31d222a31813e22
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66431158"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066834"
 ---
 # <a name="enable-safe-deployment-practices-with-azure-deployment-manager-public-preview"></a>Habilitar práticas de implantação segura com o Azure Deployment Manager (visualização pública)
 
 Para implantar seu serviço em várias regiões e garantir que ele esteja sendo executado conforme o esperado em cada região, você pode usar o Azure Deployment Manager para coordenar uma implementação gradual do serviço. Assim como você faria em qualquer implantação do Azure, defina os recursos para seu serviço em [ modelos do Resource Manager ](resource-group-authoring-templates.md). Depois de criar os modelos, use o Deployment Manager para descrever a topologia do seu serviço e como ele deve ser implementado.
 
-Gerenciador de implantação é um recurso do Gerenciador de recursos. Ele expande seus recursos durante a implantação. Use o Gerenciador de implantação quando você tiver um serviço complexo que precisa ser implantado em várias regiões. Ao preparar a distribuição do seu serviço, você poderá encontrar problemas em potencial antes de ele ter sido implantado para todas as regiões. Se você não precisar das precauções extras de um lançamento gradual, use as [opções de implantação](resource-group-template-deploy-portal.md) padrão para o Gerenciador de recursos. O Deployment Manager integra-se perfeitamente a todas as ferramentas de terceiros existentes que oferecem suporte a implantações do Resource Manager, como ofertas de integração contínua e entrega contínua (CI/CD). 
+Gerenciador de implantação é um recurso do Gerenciador de recursos. Ele expande seus recursos durante a implantação. Use o Gerenciador de implantação quando você tiver um serviço complexo que precisa ser implantado em várias regiões. Ao preparar a distribuição do seu serviço, você poderá encontrar problemas em potencial antes de ele ter sido implantado para todas as regiões. Se você não precisar das precauções extras de um lançamento gradual, use as [opções de implantação](resource-group-template-deploy-portal.md) padrão para o Gerenciador de recursos. O Deployment Manager integra-se perfeitamente a todas as ferramentas de terceiros existentes que oferecem suporte a implantações do Resource Manager, como ofertas de integração contínua e entrega contínua (CI/CD).
 
 O Gerenciador de implantação do Azure está em visualização. Ajude-na melhorar o recurso, fornecendo [comentários](https://aka.ms/admfeedback).
 
@@ -31,7 +31,12 @@ Para usar o Deployment Manager, você precisa criar quatro arquivos:
 
 Você implanta o modelo de topologia antes de implantar o modelo de implementação.
 
-A referência à API REST do Gerenciador de Implantação do Azure pode ser encontrada [aqui](https://docs.microsoft.com/rest/api/deploymentmanager/).
+Recursos adicionais:
+
+- O [referência da API de REST do Gerenciador de implantação do Azure](https://docs.microsoft.com/rest/api/deploymentmanager/).
+- [Tutorial: Usar o Gerenciador de Implantação do Azure com modelos do Resource Manager](./deployment-manager-tutorial.md).
+- [Tutorial: Usar a verificação de integridade no Gerenciador de Implantação do Azure](./deployment-manager-tutorial-health-check.md).
+- [Um exemplo de Gerenciador de implantação do Azure](https://github.com/Azure-Samples/adm-quickstart).
 
 ## <a name="identity-and-access"></a>Identidade e acesso
 
@@ -191,7 +196,7 @@ No modelo de implementação, você cria uma fonte de artefato para os binários
 
 ### <a name="steps"></a>Etapas
 
-Você pode definir uma etapa a ser executada antes ou depois de sua operação de implantação. Atualmente, apenas o `wait` etapa e a 'verificação de integridade' estão disponíveis. 
+Você pode definir uma etapa a ser executada antes ou depois de sua operação de implantação. Atualmente, apenas o `wait` etapa e a 'verificação de integridade' estão disponíveis.
 
 A etapa de espera faz uma pausa na implantação antes de continuar. Ele permite que você verifique se seu serviço está sendo executado conforme o esperado antes de implantar a próxima unidade de serviço. O exemplo a seguir mostra o formato geral de uma etapa de espera.
 
@@ -262,13 +267,13 @@ Para obter mais informações, consulte [referência de modelo de distribuiçõe
 
 ## <a name="parameter-file"></a>Arquivo de parâmetro.
 
-Você cria dois arquivos de parâmetro. Um arquivo de parâmetro é usado ao implantar a topologia de serviço e o outro é usado para a implantação de rollout. Existem alguns valores que você precisa para ter certeza de que são os mesmos em ambos os arquivos de parâmetros.  
+Você cria dois arquivos de parâmetro. Um arquivo de parâmetro é usado ao implantar a topologia de serviço e o outro é usado para a implantação de rollout. Existem alguns valores que você precisa para ter certeza de que são os mesmos em ambos os arquivos de parâmetros.
 
 ## <a name="containerroot-variable"></a>variável de containerRoot
 
 Com implantações com versão, o caminho para seus artefatos muda a cada nova versão. Na primeira vez que você executa uma implementação, o caminho pode ser `https://<base-uri-blob-container>/binaries/1.0.0.0`. A segunda vez pode ser `https://<base-uri-blob-container>/binaries/1.0.0.1`. O Deployment Manager simplifica a obtenção do caminho raiz correto para a implementação atual usando a variável `$containerRoot`. Esse valor muda com cada versão e não é conhecido antes da implantação.
 
-Use a variável `$containerRoot` no arquivo de parâmetros do modelo para implantar os recursos do Azure. No momento da implementação, essa variável é substituída pelos valores reais do rollout. 
+Use a variável `$containerRoot` no arquivo de parâmetros do modelo para implantar os recursos do Azure. No momento da implementação, essa variável é substituída pelos valores reais do rollout.
 
 Por exemplo, durante o rollout, você cria uma fonte de artefatos para os artefatos binários.
 

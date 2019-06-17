@@ -8,15 +8,15 @@ ms.topic: article
 ms.date: 3/14/2019
 ms.author: absha
 ms.openlocfilehash: 72ee9123ad959c0c7240d4f7a906adc1a4dd1a93
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60831477"
 ---
 # <a name="create-certificates-for-whitelisting-backend-with-azure-application-gateway"></a>Criar certificados para o back-end de lista de permissões com o Gateway de aplicativo do Azure
 
-Para executar o SSL de ponta a ponta, o gateway de aplicativo requer as instâncias de back-end para estar na lista branca ao carregar/confiável para autenticação de certificados de raiz. No caso de SKU do v1, certificados de autenticação são necessários, enquanto que no caso de SKU do v2, trusted certificados raiz são necessários para a lista de permissões os certificados
+Para executar o SSL de ponta a ponta, o gateway de aplicativo requer as instâncias de back-end para estar na lista branca ao carregar/confiável para autenticação de certificados de raiz. No caso da SKU da v1, certificados de autenticação são necessários, enquanto que no caso da SKU da v2, os certificados raiz confiáveis são necessários para a lista de permissões dos certificados
 
 Neste artigo, você aprenderá a:
 
@@ -61,7 +61,7 @@ Em seu certificado SSL, exporte o arquivo. cer de chave pública (não a chave p
 
 7. O certificado foi exportado com êxito.
 
-   ![Sucesso](./media/certificates-for-backend-authentication/success.png)
+   ![Êxito](./media/certificates-for-backend-authentication/success.png)
 
    O certificado exportado é semelhante a este:
 

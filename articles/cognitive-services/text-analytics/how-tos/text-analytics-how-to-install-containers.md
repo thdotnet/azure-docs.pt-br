@@ -3,20 +3,20 @@ title: Instalar e executar contêineres
 titleSuffix: Text Analytics -  Azure Cognitive Services
 description: Como baixar, instalar e executar contêineres para Análise de Texto neste tutorial passo a passo.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 05/28/2019
-ms.author: diberry
-ms.openlocfilehash: f9f68b74c09bf0122ba856680a60bdb14ffa868f
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.date: 06/10/2019
+ms.author: dapine
+ms.openlocfilehash: fc9e2b6e5ab2d2103cab2681fe603c1ca9b725c8
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306520"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67069210"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Instalar e executar contêineres da Análise de Texto
 
@@ -46,10 +46,10 @@ Você deve cumprir os seguintes pré-requisitos antes de usar os contêineres de
 
 A tabela a seguir descreve os núcleos de CPU mínimos e recomendados, pelo menos 2,6 gigahertz (GHz) ou mais rápidos, bem como a memória, em gigabytes (GB), para alocar para cada contêiner de Análise de Texto.
 
-| Contêiner | Mínimo | Recomendado | TPS<br>(No mínimo, máximo)|
+| Contêiner | Mínimo | Recomendadas | TPS<br>(No mínimo, máximo)|
 |-----------|---------|-------------|--|
-|Extração de Frases-chave | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|
-|Detecção de idioma | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|
+|Extração de Frases-Chave | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|
+|Detecção de Idioma | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|
 |Análise de Sentimento | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|
 
 * Cada núcleo precisa ser de pelo menos 2,6 GHz (gigahertz) ou mais rápido.
@@ -63,8 +63,8 @@ Imagens de contêiner para Análise de Texto estão disponíveis no Registro de 
 
 | Contêiner | Repositório |
 |-----------|------------|
-|Extração de Frases-chave | `mcr.microsoft.com/azure-cognitive-services/keyphrase` |
-|Detecção de idioma | `mcr.microsoft.com/azure-cognitive-services/language` |
+|Extração de Frases-Chave | `mcr.microsoft.com/azure-cognitive-services/keyphrase` |
+|Detecção de Idioma | `mcr.microsoft.com/azure-cognitive-services/language` |
 |Análise de Sentimento | `mcr.microsoft.com/azure-cognitive-services/sentiment` |
 
 Use o [ `docker pull` ](https://docs.docker.com/engine/reference/commandline/pull/) comando para baixar uma imagem de contêiner do registro de contêiner do Microsoft.
@@ -110,7 +110,7 @@ Depois que o contêiner estiver no [computador host](#the-host-computer), use o 
 
 Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar qualquer um dos três contêineres. O comando usa os seguintes parâmetros:
 
-| Espaço reservado | Value |
+| Placeholder | Value |
 |-------------|-------|
 |{BILLING_KEY} | Essa chave é usada para iniciar o contêiner e está disponível no portal do Azure `Cognitive Services` página chaves.  |
 |{BILLING_ENDPOINT_URI} | O valor do URI de ponto de extremidade cobrança está disponível no Azure `Cognitive Services` página de visão geral. <br><br>Exemplo:<br>`Billing=https://westus.api.cognitive.microsoft.com/text/analytics/v2.0`|

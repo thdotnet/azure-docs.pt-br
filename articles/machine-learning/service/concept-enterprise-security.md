@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 03/10/2019
-ms.openlocfilehash: 9762b8cadde86a2e64f8fa74a4e794bdf1109ec4
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: e9002b96467d6fa3a5c4fb03fb20bde4e1bf87a1
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66151185"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059346"
 ---
 # <a name="enterprise-security-for-azure-machine-learning-service"></a>Segurança corporativa para o serviço Azure Machine Learning
 
@@ -62,7 +62,7 @@ A tabela a seguir lista algumas das principais operações de serviço de Azure 
 
 | Operação de serviço de Azure Machine Learning | Proprietário | Colaborador | Leitor |
 | ---- |:----:|:----:|:----:|
-| Criar Workspace | ✓ | ✓ | |
+| Criar espaço de trabalho | ✓ | ✓ | |
 | Compartilhar o espaço de trabalho | ✓ | |  |
 | Criar de computação | ✓ | ✓ | |
 | Anexar a computação | ✓ | ✓ | |
@@ -75,7 +75,7 @@ A tabela a seguir lista algumas das principais operações de serviço de Azure 
 | Modelos de exibição/imagens | ✓ | ✓ | ✓ |
 | Chamar o serviço web | ✓ | ✓ | ✓ |
 
-Se as funções internas não forem suficientes para suas necessidades, você também pode criar funções personalizadas. Observe que as funções personalizadas somente que oferecemos suporte para operações no espaço de trabalho e computação do Machine Learning. As funções personalizadas podem ter ler, gravar ou excluir as permissões no espaço de trabalho e o recurso de computação no espaço de trabalho. Você pode disponibilizar a função em um nível de espaço de trabalho específico, um nível de grupo de recursos específico ou um nível de assinatura específica. Para obter mais informações, consulte [gerenciar usuários e funções em um espaço de trabalho do Azure Machine Learning](how-to-assign-roles.md)
+Se as funções internas não forem suficientes para suas necessidades, você também pode criar funções personalizadas. São as funções personalizadas somente que oferecemos suporte para operações no espaço de trabalho e computação do Machine Learning. As funções personalizadas podem ter ler, gravar ou excluir as permissões no espaço de trabalho e o recurso de computação no espaço de trabalho. Você pode disponibilizar a função em um nível de espaço de trabalho específico, um nível de grupo de recursos específico ou um nível de assinatura específica. Para obter mais informações, consulte [gerenciar usuários e funções em um espaço de trabalho do Azure Machine Learning](how-to-assign-roles.md)
 
 ### <a name="securing-compute-and-data"></a>Protegendo dados e computação
 Proprietários e colaboradores podem usar todos os repositórios de dados e destinos de computação que estão anexados ao espaço de trabalho.  
@@ -86,7 +86,7 @@ Para obter mais informações sobre identidades gerenciadas, consulte [identidad
 | Resource | Permissões |
 | ----- | ----- |
 | Workspace | Colaborador | 
-| Conta de Armazenamento | Colaborador de Dados do Storage Blob | 
+| Conta de armazenamento | Colaborador de dados de Blob de armazenamento | 
 | Key Vault | Acesso a todos os certificados de chaves, segredos, | 
 | Registro de Contêiner do Azure | Colaborador | 
 | Grupo de recursos que contém o espaço de trabalho | Colaborador | 
@@ -94,7 +94,7 @@ Para obter mais informações sobre identidades gerenciadas, consulte [identidad
 
 É recomendável que os administradores não revogam o acesso de identidade gerenciada para os recursos mencionados acima. O acesso pode ser restaurado com a operação de ressincronização de chaves.
 
-Serviço de Machine Learning do Azure cria um aplicativo adicional (nome começa com aml-) com o acesso de nível de Colaborador em sua assinatura para cada região do espaço de trabalho. Para ex. Se você tiver um espaço de trabalho no Leste dos EUA e outro espaço de trabalho na Europa Setentrional na mesma assinatura, você verá 2 tais aplicativos. Isso é necessário para que o Azure Machine Learning, o serviço pode ajudar a gerenciar os recursos de computação.
+Serviço de Machine Learning do Azure cria um aplicativo adicional (nome começa com `aml-`) com o acesso de nível de Colaborador em sua assinatura para cada região do espaço de trabalho. Para ex. Se você tiver um espaço de trabalho no Leste dos EUA e outro espaço de trabalho na Europa Setentrional na mesma assinatura, você verá dois aplicativos. Isso é necessário para que o Azure Machine Learning, o serviço pode ajudar a gerenciar os recursos de computação.
 
 
 ## <a name="network-security"></a>Segurança de rede
@@ -112,6 +112,8 @@ Serviço de Machine Learning do Azure armazena instantâneos, saídas e logs na 
 Para obter mais informações sobre como trazer suas próprias chaves para os dados armazenados no armazenamento de BLOBs do Azure, consulte [criptografia do serviço de armazenamento usando chaves gerenciadas pelo cliente no Azure Key Vault](https://docs.microsoft.com/azure/storage/common/storage-service-encryption-customer-managed-keys).
 
 Os dados de treinamento normalmente também é armazenado no armazenamento de BLOBs do Azure para que ele seja acessível para computação de treinamento. Esse armazenamento não é gerenciado pelo Azure Machine Learning mas montado para computação como um sistema de arquivos remoto.
+
+Para obter informações sobre a regeneração das chaves de acesso para as contas de armazenamento do Azure usadas com seu espaço de trabalho, consulte o [regenerar chaves de acesso de armazenamento](how-to-change-storage-access-key.md) artigo.
 
 #### <a name="cosmos-db"></a>Cosmos DB
 Serviço de Machine Learning do Azure armazena as métricas e metadados para o Cosmos DB que reside em uma assinatura gerenciada pelo serviço de Azure Machine Learning da Microsoft. Todos os dados armazenados no Cosmos DB são criptografados em repouso usando chaves gerenciadas da Microsoft.
@@ -149,7 +151,7 @@ Detalhes da solicitação de pontuação são armazenados em AppInsights, que é
 
 ## <a name="data-flow-diagram"></a>Diagrama de fluxo de dados
 
-### <a name="create-workspace"></a>Criar Workspace
+### <a name="create-workspace"></a>Criar espaço de trabalho
 O diagrama a seguir mostra o fluxo de trabalho do espaço de trabalho de criar.
 Usuário faz logon no AD do Azure de qualquer um dos clientes de serviço com suporte do Azure Machine Learning (portal do Azure da CLI, SDK do Python) e solicita o token do Azure Resource Manager apropriado.  Usuário, em seguida, chama o Azure Resource Manager para criar o espaço de trabalho.  Provedor de recursos para provisionar o espaço de trabalho de serviço do Azure Resource Manager contatos do Azure Machine Learning.  Recursos adicionais são criados na assinatura do cliente durante a criação do espaço de trabalho:
 * KeyVault (para armazenar segredos)

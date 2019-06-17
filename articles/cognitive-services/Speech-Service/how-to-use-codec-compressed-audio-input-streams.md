@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: amishu
-ms.openlocfilehash: 41a55eca321cbe1bfa23a889b8e3ce7c701ce769
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 8717dad27786450e4275c9fd91523c0e9379f375
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65468044"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073057"
 ---
 # <a name="using-codec-compressed-audio-input-with-the-speech-sdk"></a>Usar o codec compactados a entrada de áudio com o SDK de fala
 
@@ -23,6 +23,7 @@ O SDK de fala **Stream de entrada de áudio compactados** API fornece uma maneir
 
 > [!IMPORTANT]
 > Fluxo de áudio compactado somente há suporte para C++, C#e o Java no Linux (Ubuntu 16.04, 18.04 Ubuntu, Debian 9).
+> O Speech SDK versão 1.4.0 ou posterior é necessário.
 
 Para wav/PCM, consulte a documentação de fala de linha principal.  Fora de wav PCM, há suporte para os seguintes formatos de entrada de codec compactado:
 

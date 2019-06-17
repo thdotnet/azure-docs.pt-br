@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: 194ae477bb3cba4ac7e3350da6b793c6fea6ecdb
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: e12cef052db6aabad94b47283eda11f60f3b2b13
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025852"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063927"
 ---
 # <a name="train-a-model-for-custom-speech"></a>Treinar um modelo de fala personalizado
 
@@ -27,7 +27,7 @@ Se você estiver encontrando problemas de reconhecimento com seu modelo, usando 
 
 | Caso de uso | Tipo de dados | Quantidade de dados |
 |----------|-----------|---------------|
-| Nomes próprios são não reconhecida corretamente | Relacionar texto (sentenças/declarações) | 10 MB a 500 MB |
+| Nomes próprios são não reconhecida corretamente | Texto relacionado (sentenças/declarações) | 10 MB a 500 MB |
 | Palavras são não reconhecida corretamente devido a um acento | Texto relacionado (pronúncia) | Forneça as palavras misrecognized |
 | Palavras comuns são excluídas ou não reconhecida corretamente | Transcrições de áudio + rotulada como humanos | horas de 10 a 1.000 transcrição |
 

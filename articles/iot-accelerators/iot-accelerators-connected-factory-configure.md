@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
-ms.openlocfilehash: e059762cbbf5de2ac03a8a74397e59c9b3bdb97e
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 042277899ff22066cfa890e64f5c6c0f2e0134f9
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66387112"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080469"
 ---
 # <a name="configure-the-connected-factory-solution-accelerator"></a>Configurar o acelerador da solução Connected Factory
 
@@ -340,4 +340,4 @@ O **OpCode** na configuração configura a lógica de cálculo para calcular o r
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Sugerimos como próxima etapa aprender a [Implantar um gateway no Windows ou no Linux para o acelerador de solução Connected Factory](iot-accelerators-connected-factory-gateway-deployment.md).
+A próxima etapa sugerida é aprender como [personalizar a solução de fábrica conectada](iot-accelerators-connected-factory-customize.md).

@@ -3,26 +3,26 @@ title: Configurações de contêiner do Docker
 titleSuffix: Language Understanding - Azure Cognitive Services
 description: O ambiente de tempo de execução do contêiner do LUIS é configurado usando argumentos de comando `docker run`. O LUIS tem várias configurações obrigatórias e outras configurações opcionais.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/23/2019
-ms.author: diberry
-ms.openlocfilehash: afd29c1689d6d467a42a7c3c60f9a1dccd1a66f0
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.date: 06/11/2019
+ms.author: dapine
+ms.openlocfilehash: 4a9f7762b7960c74acad8203f70bc1e7c7cbd90f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66242605"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063228"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Configurar contêineres do Docker do Serviço Inteligente de Reconhecimento Vocal 
 
 O ambiente de tempo de execução do contêiner do LUIS (**Serviço Inteligente de Reconhecimento Vocal**) é configurado usando argumentos de comando `docker run`. O LUIS tem várias configurações obrigatórias e outras configurações opcionais. Há vários [exemplos](#example-docker-run-commands) do comando disponíveis. As configurações específicas do contêiner são as [configurações de montagem](#mount-settings) de entrada e as configurações de cobrança. 
 
-## <a name="configuration-settings"></a>Parâmetros de configuração
+## <a name="configuration-settings"></a>Definições de configuração
 
 Esse contêiner tem as seguintes configurações:
 
@@ -67,7 +67,7 @@ Essa configuração pode ser localizada no seguinte local:
 Lembre-se de incluir o `luis/v2.0` roteamento na URL, conforme mostrado na tabela a seguir:
 
 
-|Obrigatório| NOME | Tipo de dados | Descrição |
+|Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
 |--|------|-----------|-------------|
 |Sim| `Billing` | Cadeia de caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus.api.cognitive.microsoft.com/luis/v2.0` |
 
@@ -99,10 +99,10 @@ A sintaxe exata do local da montagem do host varia de acordo com o sistema opera
 
 A tabela a seguir descreve as configurações com suporte.
 
-|Obrigatório| NOME | Tipo de dados | Descrição |
+|Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
 |-------|------|-----------|-------------|
-|Sim| `Input` | String | O destino de montagem de entrada. O valor padrão é `/input`. Esse é o local dos arquivos de pacote do LUIS. <br><br>Exemplo:<br>`--mount type=bind,src=c:\input,target=/input`|
-|Não| `Output` | String | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de consulta do LUIS e logs do contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Sim| `Input` | Cadeia de caracteres | O destino de montagem de entrada. O valor padrão é `/input`. Esse é o local dos arquivos de pacote do LUIS. <br><br>Exemplo:<br>`--mount type=bind,src=c:\input,target=/input`|
+|Não| `Output` | Cadeia de caracteres | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de consulta do LUIS e logs do contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Comandos docker run de exemplo
 
@@ -116,7 +116,7 @@ Lembre-se de incluir o `luis/v2.0` roteamento na URL, conforme mostrado na tabel
 
 Substitua {_argument_name_} pelos seus próprios valores:
 
-| Espaço reservado | Value | Formato ou exemplo |
+| Placeholder | Value | Formato ou exemplo |
 |-------------|-------|---|
 |{ENDPOINT_KEY} | A chave do ponto de extremidade do aplicativo LUIS treinado. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{BILLING_ENDPOINT} | O valor de ponto de extremidade de cobrança está disponível no Azure `Cognitive Services` página de visão geral. |https://westus.api.cognitive.microsoft.com/luis/v2.0|

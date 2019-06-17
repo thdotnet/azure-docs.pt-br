@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 2/01/2019
 ms.author: brkhande
 ms.openlocfilehash: ccc0399b6ac886ec8d9ef7d207c3539f1d078070
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65951941"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Patch do sistema operacional Windows em seu cluster do Service Fabric
@@ -152,7 +152,7 @@ O comportamento do aplicativo de orquestração de patch pode ser configurado pa
 |MaxResultsToCache    |long                              | Número máximo de resultados do Windows Update, que devem ser armazenados em cache. <br>O valor padrão é 3000, supondo que o: <br> - Número de nós é 20. <br> - Número de atualizações acontecendo em um nó por mês seja de cinco. <br> – Número de resultados por operação possa ser de 10. <br> - Resultados para os últimos três meses devem ser armazenados. |
 |TaskApprovalPolicy   |Enum <br> { NodeWise, UpgradeDomainWise }                          |A TaskApprovalPolicy indica a política a ser usada pelo Serviço do Coordinator para instalar atualizações do Windows em todos os nós de cluster do Service Fabric.<br>                         Valores permitidos são: <br>                                                           <b>NodeWise</b>. O Windows Update é instalado em um nó por vez. <br>                                                           <b>UpgradeDomainWise</b>. O Windows Update é instalado em um domínio de atualização por vez. (No máximo, todos os nós que pertencem a um domínio de atualização podem ir para o Windows Update.)<br> Consulte a seção [Perguntas Frequentes](#frequently-asked-questions) sobre como decidir qual é a política mais adequada para seu cluster.
 |LogsDiskQuotaInMB   |long  <br> (Padrão: 1024)               |Tamanho máximo dos logs do aplicativo de orquestração de patch em MB, que pode ser mantido localmente no nó.
-| WUQuery               | string<br>(Padrão: "IsInstalled=0")                | Consulta para obter atualizações do Windows. Para obter mais informações, consulte [WuQuery.](https://msdn.microsoft.com/library/windows/desktop/aa386526(v=vs.85).aspx)
+| WUQuery               | cadeia de caracteres<br>(Padrão: "IsInstalled=0")                | Consulta para obter atualizações do Windows. Para obter mais informações, consulte [WuQuery.](https://msdn.microsoft.com/library/windows/desktop/aa386526(v=vs.85).aspx)
 | InstallWindowsOSOnlyUpdates | Boolean <br> (padrão: false)                 | Use esse sinalizador para controlar quais atualizações devem ser baixadas e instaladas. Os seguintes valores são permitidos <br>true – instala somente as atualizações do sistema operacional Windows.<br>false – instala todas as atualizações disponíveis no computador.          |
 | WUOperationTimeOutInMinutes | Int <br>(Padrão: 90)                   | Especifica o tempo limite para qualquer operação do Windows Update (pesquisar, baixar ou instalar). Se a operação não for concluída dentro do tempo limite especificado, ela será anulada.       |
 | WURescheduleCount     | Int <br> (Padrão: 5)                  | O número máximo de vezes que o serviço reagendaria o Windows Update no caso de falha persistente na operação.          |
@@ -293,7 +293,7 @@ Cria o NodeAgentNTService [reparar tarefas](https://docs.microsoft.com/dotnet/ap
 
    Se não houver ainda mais a ser localizada em seguida, entre no VM/VMs específicas para encontrar mais informações sobre o problema usando logs de eventos do Windows. As opções acima mencionadas a tarefa de reparo pode ter apenas esses estados subpropriedades do executor:
 
-      ExecutorSubState | Detalhe
+      ExecutorSubState | Detalhes
     -- | -- 
       None=1 |  Implica que não havia uma operação em andamento no nó. Transições de estado possíveis.
       DownloadCompleted=2 | Implica uma operação de download foi concluída com êxito, parcial falha ou falha.
@@ -378,7 +378,7 @@ P. **Quanto tempo leva a aplicação de patch a um cluster inteiro?**
 a. O tempo necessário para aplicação de patch a um cluster inteiro depende dos seguintes fatores:
 
 - Tempo necessário para aplicar o patch a um nó.
-- A política do Serviço do Coordinator. – A política padrão, `NodeWise`, resulta na aplicação de patch em apenas um nó por vez, o que seria mais lento que `UpgradeDomainWise`. Por exemplo: Se um nó leva cerca de 1 hora para ser corrigido, a fim de corrigir um cluster de 20 nós (do mesmo tipo de nós) com 5 domínios de atualização, cada um contendo 4 nós.
+- A política do Serviço do Coordinator. – A política padrão, `NodeWise`, resulta na aplicação de patch em apenas um nó por vez, o que seria mais lento que `UpgradeDomainWise`. Por exemplo:  Se um nó leva cerca de 1 hora para ser corrigido, a fim de corrigir um cluster de 20 nós (do mesmo tipo de nós) com 5 domínios de atualização, cada um contendo 4 nós.
     - Deve levar aproximadamente 20 horas para aplicar o patch em todo o cluster, se a política é `NodeWise`
     - Deve levar cerca de 5 horas se a política é `UpgradeDomainWise`
 - Carga do cluster – cada operação de aplicação de patch exige realocação da carga de trabalho do cliente para outros nós disponíveis no cluster. O nó passando por aplicação de patch estaria no estado [Desabilitando](https://docs.microsoft.com/dotnet/api/system.fabric.query.nodestatus?view=azure-dotnet#System_Fabric_Query_NodeStatus_Disabling) durante esse tempo. Se o cluster está executando perto de carga de pico, o processo de desabilitação levaria mais tempo. Portanto, o processo geral de aplicação de patch pode parecer lento em condições assim, sob pressão.

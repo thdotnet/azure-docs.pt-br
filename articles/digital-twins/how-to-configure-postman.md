@@ -8,12 +8,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 06/05/2019
 ms.author: v-adgera
-ms.openlocfilehash: 31944c08bad503c20832ea7e4e682c0063ab0f9f
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: cd67f1065f47b758f2a7e0e5be3c60169c30273e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66735046"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67116560"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Como configurar o Postman para os Gêmeos Digitais do Azure
 
@@ -41,7 +41,7 @@ Configurar seu aplicativo Azure Active Directory para usar o fluxo de concessão
 
     [![Api de adicionar registros de aplicativo do Active Directory do Azure](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
 
-1. Clique em **Manifesto** para abrir o manifesto do aplicativo para seu aplicativo. Definir *oauth2AllowImplicitFlow* para `true`.
+1. Selecione **manifesto** para abrir o manifesto do aplicativo para seu aplicativo. Definir *oauth2AllowImplicitFlow* para `true`.
 
     [![Fluxo implícito do Azure Active Directory](media/how-to-configure-postman/implicit-flow.png)](media/how-to-configure-postman/implicit-flow.png#lightbox)
 
@@ -111,7 +111,7 @@ Depois de concluir as etapas anteriores, configure o Postman para fazer uma soli
    > * Você não precisará especificar esses cabeçalhos para cada parte.
    > * É necessário selecionar `multipart/mixed` ou outro **Content-Type** adequado para a solicitação inteira.
 
-1. Por fim, clique em **Enviar** para enviar sua solicitação POST HTTP com várias partes.
+1. Por fim, selecione **enviar** para enviar sua solicitação HTTP POST com diversas partes.
 
 ## <a name="next-steps"></a>Próximas etapas
 

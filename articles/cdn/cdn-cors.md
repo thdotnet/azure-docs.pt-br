@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 337f2a31d60d54b47c692b06b5d63c28c0964061
-ms.sourcegitcommit: 2c09af866f6cc3b2169e84100daea0aac9fc7fd0
+ms.openlocfilehash: 5092872433529f11f699aa8a0c5e87d110cb59f7
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64876214"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077417"
 ---
 # <a name="using-azure-cdn-with-cors"></a>Usar a CDN do Azure com o CORS
 ## <a name="what-is-cors"></a>O que é CORS?
@@ -36,7 +36,7 @@ Há dois tipos de solicitações CORS, *solicitações simples* e *solicitaçõe
 
 2. O servidor pode responder com um dos seguintes:
 
-   * Um cabeçalho **Access-Control-Allow-Origin** em sua resposta indicando qual site de origem é permitido. Por exemplo: 
+   * Um cabeçalho **Access-Control-Allow-Origin** em sua resposta indicando qual site de origem é permitido. Por exemplo:
 
      `Access-Control-Allow-Origin: https://www.contoso.com`
 
@@ -85,7 +85,7 @@ Se a expressão regular for correspondente, a regra substituirá o cabeçalho **
 ![Exemplo de regras com expressões regulares](./media/cdn-cors/cdn-cors-regex.png)
 
 #### <a name="request-header-rule-for-each-origin"></a>Solicitar a regra de cabeçalho para cada origem.
-Em vez de expressões regulares, você pode criar uma regra separada para cada origem que deseja permitir usando a **condição de correspondência** [Curinga do Cabeçalho de Solicitação](/previous-versions/azure/mt757336(v=azure.100)#Anchor_1). Assim como acontece com o método de expressão regular, apenas o mecanismo de regras define os cabeçalhos do CORS. 
+Em vez de expressões regulares, você pode criar uma regra separada para cada origem que deseja permitir usando a **condição de correspondência** [Curinga do Cabeçalho de Solicitação](/previous-versions/azure/mt757336(v=azure.100)#match-conditions). Assim como acontece com o método de expressão regular, apenas o mecanismo de regras define os cabeçalhos do CORS. 
 
 ![Exemplo de regras sem expressões regulares](./media/cdn-cors/cdn-cors-no-regex.png)
 

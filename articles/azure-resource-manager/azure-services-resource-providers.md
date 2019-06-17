@@ -7,10 +7,10 @@ ms.topic: reference
 ms.date: 04/25/2019
 ms.author: tomfitz
 ms.openlocfilehash: 54493efdc0bffcbb4654b65676554f6707716968
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65235579"
 ---
 # <a name="resource-providers-for-azure-services"></a>Provedores de recursos para serviços do Azure
@@ -113,7 +113,7 @@ Este artigo mostra como os namespaces do provedor de recursos são mapeados para
 | Microsoft.MarketplaceOrdering | core |
 | Microsoft.Media | [Serviços de Mídia](../media-services/index.yml) |
 | Microsoft.Migrate | [Migrações para Azure](../migrate/migrate-overview.md) |
-| Microsoft.MixedReality | [Âncoras espaciais do Azure](/azure/spatial-anchors/) |
+| Microsoft.MixedReality | [Âncoras Espaciais do Azure](/azure/spatial-anchors/) |
 | Microsoft.NetApp | [Azure NetApp Files](../azure-netapp-files/index.yml) |
 | Microsoft.Network | [Rede Virtual](../virtual-network/index.yml)<br />[Balanceador de Carga](../load-balancer/index.yml)<br />[Gateway de Aplicativo](../application-gateway/index.yml)<br />[Azure DNS](../dns/index.yml)<br />[ExpressRoute](../expressroute/index.yml)<br />[Gateway de VPN](../vpn-gateway/index.yml)<br />[Gerenciador de Tráfego](../traffic-manager/index.yml)<br />[Observador de Rede](../network-watcher/index.yml)<br />[Firewall do Azure](../firewall/index.yml)<br />[Serviço do Azure da frente](../frontdoor/index.yml) |
 | Microsoft.NotificationHubs | [Hubs de Notificação](../notification-hubs/index.yml) |

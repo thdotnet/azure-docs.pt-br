@@ -4,14 +4,14 @@ description: Use o Azure Resource Manager para mover recursos para um novo grupo
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 05/17/2019
+ms.date: 06/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: 046b8e75be0247f335bcf1d29117f5900b70aeb6
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: bb7715a7eaa2cb499ed80b78130571f315ef0c95
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66477260"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67083534"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Mover recursos para um novo grupo de recursos ou uma nova assinatura
 
@@ -88,7 +88,6 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que podem ser mo
 * Aplicativos Lógicos
 * Aprendizado de Máquina - os serviços Web do Machine Learning Studio podem ser movidos para um grupo de recursos na mesma assinatura, mas não uma assinatura diferente. Outros recursos de Microsoft Machine Learning podem ser movidos entre assinaturas.
 * Managed Disks - Managed Disks em zonas de disponibilidade não podem ser movidos para uma assinatura diferente
-* Identidade gerenciada - atribuída pelo usuário
 * Serviços de mídia
 * Monitor - verifique se mover para nova assinatura não excede as [cotas de assinatura](../azure-subscription-service-limits.md#monitor-limits)
 * Hubs de Notificação
@@ -128,7 +127,7 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que não podem s
 * Migração de banco de dados do Azure
 * Azure Databricks
 * Firewall do Azure
-* AKS (Serviço do Kubernetes do Azure)
+* AKS (Serviço de Kubernetes do Azure)
 * Migrações para Azure
 * Azure NetApp Files
 * Certificados - Os certificados do Serviço de Aplicativo podem ser movidos, mas os certificados carregados têm [limitações](#app-service-limitations).
@@ -141,6 +140,7 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que não podem s
 * ExpressRoute
 * Serviços de laboratório - laboratórios de sala de aula não podem ser movidos para um novo grupo de recursos ou assinatura. DevTest Labs podem ser movidos para um novo grupo de recursos na mesma assinatura, mas não entre assinaturas.
 * Aplicativos gerenciados
+* Identidade gerenciada - atribuída pelo usuário
 * Microsoft Genomics
 * Segurança
 * Site Recovery

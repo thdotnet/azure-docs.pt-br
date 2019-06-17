@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/11/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 3ceaed2b1e27a1f5b910865f6e9d0e70ef347b71
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fbe6fe25b5ff0cd5148e3bba22dec4648399510d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60515387"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072304"
 ---
 # <a name="webhooks-for-speech-services"></a>Webhooks para serviços de fala
 
@@ -39,7 +39,7 @@ Em seguida, vamos criar um webhook.
 
 Vamos criar um webhook para uma transcrição offline. O cenário: um usuário tem um arquivo de áudio de longa execução que gostaria de transcrição de forma assíncrona com a API de transcrição de lote. 
 
-Para criar um web hook POST https://<region>.cris.ai/api/speechtotext/v2.1/transcriptions/hooks
+Webhooks podem ser criados por meio de uma solicitação POST para https://\<região\>.cris.ai/api/speechtotext/v2.1/transcriptions/hooks.
 
 Parâmetros de configuração para a solicitação são fornecidos como JSON:
 
@@ -136,7 +136,7 @@ Envia uma solicitação POST para a URL registrada, se uma entidade para o tipo 
 
 Um teste rápido pode ser feito usando o site https://bin.webhookrelay.com. A partir daí, você pode obter chamada fazer URLs ser passado como parâmetro para o HTTP POST para criar um webhook descrito anteriormente neste documento.
 
-Clique em 'Criar Bucket' e siga na tela instruções para obter um gancho. Em seguida, use as informações fornecidas nesta página para registrar o gancho com o serviço de fala. A carga de uma retransmissão de mensagens - em resposta à realização de uma pesquisa de transcrição da seguinte maneira:
+Clique em 'Criar Bucket' e siga na tela instruções para obter um gancho. Em seguida, use as informações fornecidas nesta página para registrar o gancho com o serviço de fala. A carga de uma mensagem de retransmissão – em resposta à realização de uma transcrição – será semelhante ao seguinte:
 
 ```json
 {
@@ -180,6 +180,6 @@ Clique em 'Criar Bucket' e siga na tela instruções para obter um gancho. Em se
 ```
 A mensagem contém a URL de gravação e os modelos usados para transcrever dessa gravação.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * [Obtenha sua assinatura de avaliação de Fala](https://azure.microsoft.com/try/cognitive-services/)
