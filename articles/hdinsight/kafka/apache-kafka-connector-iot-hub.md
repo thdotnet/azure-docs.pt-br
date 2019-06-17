@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.openlocfilehash: 420800e718c8f98bfd3d5d7383829d5aa5472828
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64698172"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Use o Apache Kafka no HDInsight com o Microsoft Azure Hub IoT
@@ -167,7 +167,7 @@ Para recuperar informações de Hub IoT usadas pelo conector, use as seguintes e
 
 1. Obtenha o ponto de extremidade compatível com o evento de Hub e nome de ponto de extremidade compatível para o seu Hub IoT. Para obter essas informações, use um dos métodos a seguir:
 
-   * __Do [portal do Azure](https://portal.azure.com/)__, use as etapas a seguir:
+   * __Do [portal do Azure](https://portal.azure.com/)__ , use as etapas a seguir:
 
      1. Navegue até seu Hub IoT e clique em __Pontos de Extremidade__.
      2. Em __Pontos de extremidade internos__, selecione __Eventos__.
@@ -196,7 +196,7 @@ Para recuperar informações de Hub IoT usadas pelo conector, use as seguintes e
 
 2. Obtenha a __política de acesso compartilhado__ e __chave__. Para este exemplo, use a chave de __serviço__. Para obter essas informações, use um dos métodos a seguir:
 
-    * __Do [portal do Azure](https://portal.azure.com/)__, use as etapas a seguir:
+    * __Do [portal do Azure](https://portal.azure.com/)__ , use as etapas a seguir:
 
         1. Selecione __Políticas de acesso compartilhado__ e selecione __serviço__.
         2. Copie o valor da __chave primária__.
