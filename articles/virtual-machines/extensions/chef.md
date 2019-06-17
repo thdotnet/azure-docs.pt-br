@@ -72,7 +72,7 @@ O JSON a seguir mostra o esquema para a extensão para VM do Chef. A extensão e
 | ---- | ---- | ---- 
 | apiVersion | `2017-12-01` | string (date) |
 | publicador | `Chef.Bootstrap.WindowsAzure` | string |
-| Tipo | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
+| type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
 | typeHandlerVersion | `1210.12` | string (double) |
 
 ### <a name="settings"></a>Configurações
