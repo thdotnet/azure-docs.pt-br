@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: b45fb5cbfbef334b40ccadecd32f65fa9a59a610
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a03a778b2a057235b31d02e90e5ce87e9559b38a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64685660"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058567"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---motivation-and-benefits"></a>Migrar clusters do Apache Hadoop local para o Azure HDInsight – motivação e benefícios
 
@@ -21,7 +21,7 @@ Este artigo é o primeiro de uma série sobre as melhores práticas para a migra
 
 ## <a name="why-to-migrate-to-azure-hdinsight"></a>Por que migrar para o Azure HDInsight
 
-O Azure HDInsight é uma distribuição em nuvem dos componentes do Hadoop da [HDP (Hortonworks Data Platform)](https://hortonworks.com/products/data-center/hdp/). O Azure HDInsight torna mais fácil, rápido e econômico processar grandes quantidades de dados. O HDInsight inclui as estruturas de software livre mais populares, como:
+HDInsight do Azure é uma distribuição de nuvem dos componentes do Hadoop. O Azure HDInsight torna mais fácil, rápido e econômico processar grandes quantidades de dados. O HDInsight inclui as estruturas de software livre mais populares, como:
 
 - Apache Hadoop
 - Apache Spark
@@ -61,7 +61,7 @@ O Azure HDInsight é uma distribuição em nuvem dos componentes do Hadoop da [
     - Armazenamento do Blobs do Azure
     - Azure Data Lake Storage Gen2
     - Azure Cosmos DB
-    - Banco de Dados SQL do Azure
+    - Banco de dados SQL do Azure
     - Azure Analysis Services
 
 - **Processos e componentes de autorrecuperação** – o HDInsight verifica constantemente os componentes de infraestrutura e software livre usando sua própria infraestrutura de monitoramento. Ele também recupera automaticamente de falhas críticas, como de não disponibilidade de nós e de componentes de software livre. Os alertas serão disparados no Ambari se qualquer componente do OSS falhar.
@@ -90,14 +90,13 @@ Esta seção apresenta questionários de modelo para ajudar a coletar informaç�
 | **Pergunta** | **Exemplo** | **Resposta** |
 |---|---|---|
 |**Tópico**: **Ambiente**|||
-|Tipo de Distribuição de Cluster|Hortonworks, Cloudera, MapR| |
 |Versão de Distribuição do Cluster|HDP 2.6.5, CDH 5.7|
 |Componentes do ecossistema de Big Data|HDFS, YARN, Hive, LLAP, Impala, Kudu, HBase, Spark, MapReduce, Kafka, ZooKeeper, Solr, Sqoop, Oozie, Ranger, Atlas, Falcon, Zeppelin, R|
 |Tipos de cluster|Hadoop, Spark, Confluent Kafka, Storm, Solr|
 |Número de clusters|4|
-|Número de Nós Mestres|2|
-|Número de Nós de Trabalho|100|
-|Número de Nós de Borda| 5|
+|Número de nós mestres|2|
+|Número de nós de trabalho|100|
+|Número de nós de borda| 5|
 |Total de Espaço em Disco|100 TB|
 |Configuração do Nó Mestre|m/y, cpu, disk, etc.|
 |Configuração de Nós de Dados|m/y, cpu, disk, etc.|
@@ -184,7 +183,7 @@ Esta seção apresenta questionários de modelo para ajudar a coletar informaç�
 |Não. de usuários do AD a sincronizar?|          100||
 |OK sincronizar senhas com a nuvem?|    Sim||
 |Somente usuários de nuvem?|                 Sim||
-|MFA necessária?|                       Não || 
+|MFA necessária?|                       Não|| 
 |Requisitos de autorização de dados?|  Sim||
 |Controle de Acesso Baseado em Função?|        Sim||
 |Auditoria necessária?|                  Sim||
@@ -198,8 +197,7 @@ Esta seção apresenta questionários de modelo para ajudar a coletar informaç�
 |Usar um metastore remoto?|Sim||
 |Compartilhar metastores entre clusters diferentes?|Sim||
 |Desconstruir cargas de trabalho?|Substituir trabalhos do Hive por trabalhos do Spark||
-|Usar ADF para orquestração de dados?|Não ||
-|HDInsight vs. Hortonworks Data Platform no IaaS?|HDInsight||
+|Usar ADF para orquestração de dados?|Não||
 
 ## <a name="next-steps"></a>Próximas etapas
 

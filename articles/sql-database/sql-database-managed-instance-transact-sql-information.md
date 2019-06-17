@@ -12,12 +12,12 @@ ms.reviewer: sstein, carlrab, bonova
 manager: craigg
 ms.date: 03/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 5c8a15aa5198983a56a0238c1bb56f9345d07acc
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 2ca2e4e98f56f7df5e81217bcda00179f05ff69e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66258589"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070352"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Diferenças de T-SQL da Instância Gerenciada do Banco de Dados SQL do Azure em relação ao SQL Server
 
@@ -60,7 +60,7 @@ Instâncias gerenciadas têm backups automáticos, para que os usuários podem c
   - As opções de fita: `REWIND`, `NOREWIND`, `UNLOAD`, e `NOUNLOAD` não são suportados.
   - Opções específicas de log: `NORECOVERY`, `STANDBY`, e `NO_TRUNCATE` não são suportados.
 
- Limitações: 
+Limitações: 
 
 - Com uma instância gerenciada, você pode fazer backup de uma instância de banco de dados para um backup com até 32 faixas, que é o suficiente para bancos de dados de até 4 TB se a compactação de backup for usada.
 - O tamanho máximo de backup distribuído usando o `BACKUP` comando em uma instância gerenciada é 195 GB, que é o tamanho máximo do blob. Aumente o número de faixas no comando de backup para reduzir o tamanho de faixas individuais e permanecer dentro desse limite.
@@ -276,6 +276,7 @@ Para saber mais, confira [ALTERAR BANCO DE DADOS](https://docs.microsoft.com/sql
 
 ### <a name="sql-server-agent"></a>SQL Server Agent
 
+- Habilitando e desabilitando o SQL Server Agent não é suportado atualmente na instância gerenciada. O SQL Agent sempre está em execução.
 - Configurações do SQL Server Agent são somente leitura. O procedimento `sp_set_agent_properties` não tem suporte na instância gerenciada. 
 - Trabalhos
   - As etapas de trabalho T-SQL têm suporte.
@@ -427,7 +428,7 @@ As seguintes opções de banco de dados são definidas ou substituídas e não p
 - Qualquer grupo de arquivos existente com otimização de memória é renomeado para XTP. 
 - `SINGLE_USER` e `RESTRICTED_USER` as opções são convertidas em `MULTI_USER`.
 
- Limitações: 
+Limitações: 
 
 - `.BAK` arquivos que contêm vários conjuntos de backup não podem ser restaurados. 
 - `.BAK` arquivos que contêm vários arquivos de log não podem ser restaurados.
@@ -456,13 +457,13 @@ Não há suporte para agente de serviços entre instâncias:
 - `Extended stored procedures` não são compatíveis, que inclui `sp_addextendedproc`  e `sp_dropextendedproc`. Ver [procedimentos armazenados estendidos](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/general-extended-stored-procedures-transact-sql).
 - Não há suporte para `sp_attach_db`, `sp_attach_single_file_db` e `sp_detach_db`. Consulte [sp_attach_db](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-db-transact-sql), [sp_attach_single_file_db](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-single-file-db-transact-sql) e [sp_detach_db](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-detach-db-transact-sql).
 
-## <a name="Environment"></a>Restrições de Environmet
+## <a name="Environment"></a>Restrições de ambiente
 
 ### <a name="subnet"></a>Sub-rede
 - Na sub-rede reservada para sua instância gerenciada, você não pode colocar outros recursos (por exemplo máquinas virtuais). Coloque esses recursos em outras sub-redes.
 - Subrede deve ter um número suficiente de disponíveis [endereços IP](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Mínimo é 16, enquanto a recomendação é ter pelo menos 32 endereços IP na sub-rede.
 - [Pontos de extremidade de serviço não podem ser associados a sub-rede da instância gerenciada](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Certifique-se de que a opção de pontos de extremidade de serviço é desabilitada quando você cria a rede virtual.
-- O número e tipos de instâncias que você possa colocar na sub-rede tem alguns [limites e restrições](sql-database-managed-instance-resource-limits.md#strategies-for-deploying-mixed-general-purpose-and-business-critical-instances)
+- O número de vCores e os tipos de instâncias que podem ser implantados em uma região têm algumas [restrições e limites de](sql-database-managed-instance-resource-limits.md#regional-resource-limitations).
 - Há algumas [regras de segurança que devem ser aplicadas na sub-rede](sql-database-managed-instance-connectivity-architecture.md#network-requirements).
 
 ### <a name="vnet"></a>VNET

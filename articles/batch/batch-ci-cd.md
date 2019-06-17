@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: fasttrack-new
 services: batch
 ms.openlocfilehash: a811a9cb1b124aff7c64d25cf71a1b84bff0c173
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65541735"
 ---
 # <a name="use-azure-pipelines-to-build-and-deploy-hpc-solutions"></a>Usar Pipelines do Azure para criar e implantar soluções HPC
@@ -325,7 +325,7 @@ Neste exemplo, nos concentraremos na **aplicativo de hpc** pasta. O **aplicativo
 
 1. Você tem duas opções para criar um pipeline de compilação:
 
-     a. [Usando o Designer Visual](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=azure-devops&tabs=new-nav). Para usar isso, clique em "Usar o designer visual" sobre o **novo pipeline** página.
+    a. [Usando o Designer Visual](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=azure-devops&tabs=new-nav). Para usar isso, clique em "Usar o designer visual" sobre o **novo pipeline** página.
 
     b. [Usando YAML compilações](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml?view=azure-devops). Você pode criar um novo pipeline YAML clicando no repositórios do Azure ou a opção do GitHub na nova página de pipeline. Como alternativa, você pode armazenar o exemplo a seguir em seu controle de origem e fazer referência a um arquivo YAML existente clicando em um Designer Visual e, em seguida, usando o modelo YAML.
 
@@ -418,13 +418,13 @@ Há uma série de etapas envolvidas na implantação da infra-estrutura. Como us
     * **Ação**: Criar ou atualizar o grupo de recursos
     * **Grupo de recursos**: $(resourceGroupName)
     * **Local**: $(location)
-    * **Template**: $(System.ArtifactsDirectory)/**{YourAzureRepoArtifactSourceAlias}**/arm-templates/storageAccount.json
+    * **Template**: $(System.ArtifactsDirectory)/ **{YourAzureRepoArtifactSourceAlias}** /arm-templates/storageAccount.json
     * **Substituir parâmetros de modelo**: accountName - $(storageAccountName)
 
 1. Carregue os artefatos do controle de origem para a conta de armazenamento. Há uma tarefa de Pipeline do Azure para executar esse procedimento. Como parte dessa tarefa, a URL de contêiner da conta de armazenamento e o Token de SAS podem ter saída a uma variável em Pipelines do Azure. Isso significa que ele possa ser reutilizado durante essa fase de agente.
 
     Adicione a **do Azure File Copy** de tarefa e defina as seguintes propriedades:
-    * **Source:** $(System.ArtifactsDirectory)/**{YourAzureRepoArtifactSourceAlias}**/arm-templates/
+    * **Source:** $(System.ArtifactsDirectory)/ **{YourAzureRepoArtifactSourceAlias}** /arm-templates/
     * **Tipo de Conexão do Azure**: Azure Resource Manager
     * **Assinatura do Azure:** Selecione a assinatura apropriada do Azure
     * **Tipo de destino**: blob do Azure
@@ -441,7 +441,7 @@ Há uma série de etapas envolvidas na implantação da infra-estrutura. Como us
     * **Ação**: Criar ou atualizar o grupo de recursos
     * **Grupo de recursos**: $(resourceGroupName)
     * **Local**: $(location)
-    * **Template**: $(System.ArtifactsDirectory)/**{YourAzureRepoArtifactSourceAlias}**/arm-templates/deployment.json
+    * **Template**: $(System.ArtifactsDirectory)/ **{YourAzureRepoArtifactSourceAlias}** /arm-templates/deployment.json
     * **Substituir parâmetros de modelo**: ```-templateContainerUri $(templateContainerUri) -templateContainerSasToken $(templateContainerSasToken) -batchAccountName $(batchAccountName) -batchAccountPoolName $(batchAccountPoolName) -applicationStorageAccountName $(applicationStorageAccountName)```
 
 Uma prática comum é usar tarefas do Azure Key Vault. Se a entidade de serviço (conexão à sua assinatura do Azure) tem um políticas de acesso apropriado definido, ele pode fazer o download de segredos de um Azure Key Vault e ser usado como variáveis em seu pipeline. O nome do segredo será definido com o valor associado. Por exemplo, um segredo de sshPassword pode ser referenciado com $(sshPassword) na definição da versão.

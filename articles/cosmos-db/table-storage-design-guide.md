@@ -9,10 +9,10 @@ author: wmengmsft
 ms.author: wmeng
 ms.custom: seodec18
 ms.openlocfilehash: af155b5adb2e4b45412a8b84818852ed1b1c5e72
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65966101"
 ---
 # <a name="azure-storage-table-design-guide-designing-scalable-and-performant-tables"></a>Guia de design de Tabela do Armazenamento do Azure: Criar tabelas escalonáveis e de alto desempenho
@@ -47,8 +47,8 @@ O exemplo a seguir mostra uma estrutura de tabela simples para armazenar entidad
 <td>
 <table>
 <tr>
-<th>FirstName</th>
-<th>LastName</th>
+<th>Nome</th>
+<th>Sobrenome</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -67,8 +67,8 @@ O exemplo a seguir mostra uma estrutura de tabela simples para armazenar entidad
 <td>
 <table>
 <tr>
-<th>FirstName</th>
-<th>LastName</th>
+<th>Nome</th>
+<th>Sobrenome</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -82,7 +82,7 @@ O exemplo a seguir mostra uma estrutura de tabela simples para armazenar entidad
 </tr>
 <tr>
 <td>Marketing</td>
-<td>Departamento</td>
+<td>department</td>
 <td>2014-08-22T00:50:30Z</td>
 <td>
 <table>
@@ -104,8 +104,8 @@ O exemplo a seguir mostra uma estrutura de tabela simples para armazenar entidad
 <td>
 <table>
 <tr>
-<th>FirstName</th>
-<th>LastName</th>
+<th>Nome</th>
+<th>Sobrenome</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -162,19 +162,19 @@ Essas listas resumem algumas as diretrizes importantes que você deve ter em men
 
 Criando sua solução do serviço Tabela para ser eficiente em *leitura* :
 
-* ***Design para consulta em aplicativos com alta taxa de leitura.***  Quando você está criando tabelas, pense sobre as consultas (especialmente aquelas sensíveis a latência) que você executará antes de pensar em como atualizará as entidades. Isso normalmente resulta em uma solução eficiente e de alto desempenho.  
+* ***Design para consulta em aplicativos com alta taxa de leitura.*** Quando você está criando tabelas, pense sobre as consultas (especialmente aquelas sensíveis a latência) que você executará antes de pensar em como atualizará as entidades. Isso normalmente resulta em uma solução eficiente e de alto desempenho.  
 * ***Especifique PartitionKey e RowKey em suas consultas.*** *Consultas de ponto* como essas são as consultas de serviço Tabela mais eficientes.  
-* ***Considere armazenar cópias duplicadas de entidades.***  O armazenamento de tabela é barato, portanto, considere armazenar a mesma entidade várias vezes (com chaves diferentes) para permitir consultas mais eficientes.  
-* ***Considere a desnormalização de seus dados.***  O armazenamento de tabela é barato, então considere desnormalizar seus dados. Por exemplo, armazene entidades resumidas para que consultas a dados agregados só tenham de acessar uma única entidade.  
+* ***Considere armazenar cópias duplicadas de entidades.*** O armazenamento de tabela é barato, portanto, considere armazenar a mesma entidade várias vezes (com chaves diferentes) para permitir consultas mais eficientes.  
+* ***Considere a desnormalização de seus dados.*** O armazenamento de tabela é barato, então considere desnormalizar seus dados. Por exemplo, armazene entidades resumidas para que consultas a dados agregados só tenham de acessar uma única entidade.  
 * ***Use valores de chave composta.*** As únicas chaves que você tem são **PartitionKey** e **RowKey**. Por exemplo, use valores de chave composta para habilitar caminhos alternativo com chave de acesso para entidades.  
-* ***Use a projeção de consulta.***  Você pode reduzir a quantidade de dados transferidos pela rede por meio de consultas que selecionam apenas os campos necessários.  
+* ***Use a projeção de consulta.*** Você pode reduzir a quantidade de dados transferidos pela rede por meio de consultas que selecionam apenas os campos necessários.  
 
 Criar a solução de serviço Tabela para ser eficiente em *gravação* :  
 
-* ***Não crie partições ativas.***  Escolha chaves que permitam que você distribua suas solicitações por várias partições em qualquer momento.  
-* ***Evite picos no tráfego.***  Suavize o tráfego por um período razoável de tempo e evite picos no tráfego.
-* ***Não crie, necessariamente, uma tabela separada para cada tipo de entidade.***  Quando você precisar de transações atômicas nos tipos de entidade, pode armazenar esses vários tipos de entidade na mesma partição, na mesma tabela.
-* ***Considere a produtividade máxima que deve ser atingida.***  Você deve estar ciente dos destinos de escalabilidade para o serviço Tabela e garantir que seu design não fará com que você os exceda.  
+* ***Não crie partições ativas.*** Escolha chaves que permitam que você distribua suas solicitações por várias partições em qualquer momento.  
+* ***Evite picos no tráfego.*** Suavize o tráfego por um período razoável de tempo e evite picos no tráfego.
+* ***Não crie, necessariamente, uma tabela separada para cada tipo de entidade.*** Quando você precisar de transações atômicas nos tipos de entidade, pode armazenar esses vários tipos de entidade na mesma partição, na mesma tabela.
+* ***Considere a produtividade máxima que deve ser atingida.*** Você deve estar ciente dos destinos de escalabilidade para o serviço Tabela e garantir que seu design não fará com que você os exceda.  
 
 À medida que você ler este guia, verá exemplos que colocam todos esses princípios em prática.  
 
@@ -200,12 +200,12 @@ Os exemplos a seguir pressupõem que o serviço Tabela é armazenar entidades de
 
 | *Nome da coluna* | *Tipo de dados* |
 | --- | --- |
-| **PartitionKey** (nome de departamento) |String |
-| **RowKey** (Id do funcionário) |String |
-| **Nome** |String |
-| **Sobrenome** |String |
-| **Idade** |Integer |
-| **EmailAddress** |String |
+| **PartitionKey** (nome de departamento) |Cadeia de caracteres |
+| **RowKey** (Id do funcionário) |Cadeia de caracteres |
+| **Nome** |Cadeia de caracteres |
+| **Sobrenome** |Cadeia de caracteres |
+| **Idade** |Número inteiro |
+| **EmailAddress** |Cadeia de caracteres |
 
 A seção anterior, Visão geral do serviço Tabela do Azure, descreve alguns dos principais recursos do serviço Tabela do Azure, que têm uma influência direta no design para consulta. Isso resulta nas seguintes diretrizes gerais para a criação de consultas do serviço Tabela. A sintaxe de filtro usada nos exemplos a seguir é proveniente da API REST do serviço Tabela. Para obter mais informações, veja [Consultar Entidades](https://msdn.microsoft.com/library/azure/dd179421.aspx).  
 
@@ -1122,8 +1122,8 @@ O serviço Tabela é um armazenamento de tabela *sem esquema* , o que significa 
 <td>
 <table>
 <tr>
-<th>FirstName</th>
-<th>LastName</th>
+<th>Nome</th>
+<th>Sobrenome</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1142,8 +1142,8 @@ O serviço Tabela é um armazenamento de tabela *sem esquema* , o que significa 
 <td>
 <table>
 <tr>
-<th>FirstName</th>
-<th>LastName</th>
+<th>Nome</th>
+<th>Sobrenome</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1162,7 +1162,7 @@ O serviço Tabela é um armazenamento de tabela *sem esquema* , o que significa 
 <td>
 <table>
 <tr>
-<th>Nome do Departamento</th>
+<th>DepartmentName</th>
 <th>EmployeeCount</th>
 </tr>
 <tr>
@@ -1179,8 +1179,8 @@ O serviço Tabela é um armazenamento de tabela *sem esquema* , o que significa 
 <td>
 <table>
 <tr>
-<th>FirstName</th>
-<th>LastName</th>
+<th>Nome</th>
+<th>Sobrenome</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1215,8 +1215,8 @@ Cada entidade deve ter ainda os valores de **PartitionKey**, **RowKey** e **Time
 <table>
 <tr>
 <th>EntityType</th>
-<th>FirstName</th>
-<th>LastName</th>
+<th>Nome</th>
+<th>Sobrenome</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1237,8 +1237,8 @@ Cada entidade deve ter ainda os valores de **PartitionKey**, **RowKey** e **Time
 <table>
 <tr>
 <th>EntityType</th>
-<th>FirstName</th>
-<th>LastName</th>
+<th>Nome</th>
+<th>Sobrenome</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1259,11 +1259,11 @@ Cada entidade deve ter ainda os valores de **PartitionKey**, **RowKey** e **Time
 <table>
 <tr>
 <th>EntityType</th>
-<th>Nome do Departamento</th>
+<th>DepartmentName</th>
 <th>EmployeeCount</th>
 </tr>
 <tr>
-<td>Departamento</td>
+<td>department</td>
 <td></td>
 <td></td>
 </tr>
@@ -1278,8 +1278,8 @@ Cada entidade deve ter ainda os valores de **PartitionKey**, **RowKey** e **Time
 <table>
 <tr>
 <th>EntityType</th>
-<th>FirstName</th>
-<th>LastName</th>
+<th>Nome</th>
+<th>Sobrenome</th>
 <th>Idade</th>
 <th>Email</th>
 </tr>
@@ -1515,7 +1515,7 @@ Neste exemplo assíncrono, você pode ver as seguintes alterações da versão s
 
 O aplicativo cliente pode chamar vários métodos assíncronos como esse, e cada invocação de método será executado em um thread separado.  
 
-### <a name="credits"></a>Créditos
+### <a name="credits"></a>Credits
 Gostaríamos de agradecer os seguintes membros da equipe do Azure por suas contribuições: Dominic Betts, Jason Hogg, Jean Ghanem, Jai Haridas, Jeff Irwin, Vamshidhar Kommineni, Vinay Shah e Serdar Ozler, bem como Tom Hollander da Microsoft DX. 
 
 Também gostaríamos de agradecer aos seguintes MVPs da Microsoft por seus valiosos comentários durante os ciclos de revisão: Igor Papirov e Edward Bakker.

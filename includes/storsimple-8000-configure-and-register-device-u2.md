@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 56514f5dcf4bfe205ef46ee64dcf4dcf638d4f62
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66171530"
 ---
 #### <a name="to-configure-and-register-the-device"></a>Para configurar e registrar o dispositivo
@@ -20,7 +20,7 @@ ms.locfileid: "66171530"
 3. Você deverá escolher o idioma que deseja definir para seu dispositivo. Especifique a linguagem e pressione **Enter**.
 
 4. No menu do console serial apresentado, escolha a opção 1 para **Fazer logon com acesso completo**.
-     Conclua as etapas de 5 a 12 para definir as configurações de rede necessárias e mínimas para seu dispositivo. **Essas etapas de configuração devem ser executadas no controlador ativo do dispositivo.**  O menu do console serial indica o estado do controlador na mensagem de faixa. Se você não estiver conectado ao controlador ativo, desconecte e conecte-se ao controlador ativo.
+     Conclua as etapas de 5 a 12 para definir as configurações de rede necessárias e mínimas para seu dispositivo. **Essas etapas de configuração devem ser executadas no controlador ativo do dispositivo.** O menu do console serial indica o estado do controlador na mensagem de faixa. Se você não estiver conectado ao controlador ativo, desconecte e conecte-se ao controlador ativo.
 
 5. No prompt de comando, digite sua senha. A senha do dispositivo padrão é **Senha1**.
 

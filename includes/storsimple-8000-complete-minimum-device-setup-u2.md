@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: c44effe0bde3c7e880e53706fcb59d91a8605e7b
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66118136"
 ---
 #### <a name="to-complete-the-minimum-storsimple-device-setup"></a>Para concluir a configuração mínima do dispositivo StorSimple
@@ -28,7 +28,7 @@ ms.locfileid: "66118136"
 
        1. Sua interface de rede DATA 0 aparece como habilitada com as configurações de rede (IP, sub-rede, gateway) definidas por meio do assistente de configuração. DATA 0 também é habilitada automaticamente para a nuvem e iSCSI.
 
-       2. Forneça os endereços IP fixos para os Controladores 0 e 1. **Os endereços IP fixos do controlador precisam ser IPs gratuitos dentro da sub-rede acessível pelo endereço IP do dispositivo.**  Se a interface DADOS 0 foi configurada para o IPv4, os endereços IP fixos precisam ser fornecidos no formato IPv4. Se você forneceu um prefixo para a configuração de IPv6, os endereços IP fixos serão preenchidos automaticamente nesses campos.
+       2. Forneça os endereços IP fixos para os Controladores 0 e 1. **Os endereços IP fixos do controlador precisam ser IPs gratuitos dentro da sub-rede acessível pelo endereço IP do dispositivo.** Se a interface DADOS 0 foi configurada para o IPv4, os endereços IP fixos precisam ser fornecidos no formato IPv4. Se você forneceu um prefixo para a configuração de IPv6, os endereços IP fixos serão preenchidos automaticamente nesses campos.
 
             ![Interfaces de rede da instalação mínima do dispositivo do StorSimple](./media/storsimple-8000-complete-minimum-device-setup-u2/step4minconfig2.png)
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2019
 ms.author: mikhegn
-ms.openlocfilehash: cbeb0a8944b35af2a68080a2b2f1bb4436c6e58d
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 88fe73988f6a90fd5041445a561c0f77f25eddc1
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306690"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67060380"
 ---
 # <a name="visualize-your-cluster-with-service-fabric-explorer"></a>Visualizando o cluster com o Service Fabric Explorer
 
@@ -29,7 +29,7 @@ Service Fabric Explorer (SFX) é uma ferramenta de código-fonte aberto para ins
 
 Use os links a seguir para fazer o download do Service Fabric Explorer como um aplicativo de área de trabalho:
 
--  Windows
+- Windows
   - https://aka.ms/sfx-windows
 
 - Linux
@@ -123,16 +123,22 @@ O EventStore é um recurso oferecido pela plataforma que fornece eventos de plat
 >[!NOTE]
 >A partir do Service Fabric 6.4. as APIs do EventStore estão apenas disponíveis para clusters do Windows somente na execução no Azure. Estamos trabalhando mover essa funcionalidade para Linux, assim como para nossos clusters independentes.
 
+## <a name="image-store-viewer"></a>Visualizador de imagem Store
+Visualizador de repositório de imagem é que um recurso oferecido se usando Store de imagem nativa que permite exibir o conteúdo atual da imagem armazena e obter informações de arquivo e pasta, juntamente com a remoção de arquivos/pastas.
+
+![Mapa de clusters do Explorador do Service Fabric][sfx-imagestore]
+
 
 ## <a name="next-steps"></a>Próximas etapas
 * [Gerenciando aplicativos da Malha do Serviço no Visual Studio](service-fabric-manage-application-in-visual-studio.md)
 * [Implantação de aplicativos de Malha do Serviço usando o PowerShell](service-fabric-deploy-remove-applications.md)
 
 <!--Image references-->
-[sfx-cluster-dashboard]: ./media/service-fabric-visualizing-your-cluster/SfxClusterDashboard.png
-[sfx-cluster-map]: ./media/service-fabric-visualizing-your-cluster/SfxClusterMap.png
-[sfx-application-tree]: ./media/service-fabric-visualizing-your-cluster/SfxApplicationTree.png
-[sfx-service-essentials]: ./media/service-fabric-visualizing-your-cluster/SfxServiceEssentials.png
-[sfx-delete-application]: ./media/service-fabric-visualizing-your-cluster/SfxDeleteApplication.png
-[sfx-create-app-instance]: ./media/service-fabric-visualizing-your-cluster/SfxCreateAppInstance.png
+[sfx-cluster-dashboard]: ./media/service-fabric-visualizing-your-cluster/sfx-cluster-dashboard.png
+[sfx-cluster-map]: ./media/service-fabric-visualizing-your-cluster/sfx-cluster-map.png
+[sfx-application-tree]: ./media/service-fabric-visualizing-your-cluster/sfx-application-tree.png
+[sfx-service-essentials]: ./media/service-fabric-visualizing-your-cluster/sfx-service-essentials.png
+[sfx-delete-application]: ./media/service-fabric-visualizing-your-cluster/sfx-delete-application.png
+[sfx-create-app-instance]: ./media/service-fabric-visualizing-your-cluster/sfx-create-app-instance.png
 [sfx-eventstore]: ./media/service-fabric-diagnostics-eventstore/eventstore.png
+[sfx-imagestore]: ./media/service-fabric-visualizing-your-cluster/sfx-image-store.png

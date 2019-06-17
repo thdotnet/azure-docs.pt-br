@@ -18,10 +18,10 @@ ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 28b3851a52ec5fe69eaa531e2e08f66fb73cb1e0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60936123"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
@@ -206,7 +206,7 @@ ms.locfileid: "60936123"
 
 # <a name="cluster-an-sap-ascsscs-instance-on-a-windows-failover-cluster-by-using-a-file-share-in-azure"></a>Clustering de uma instância do SAP ASCS/SCS em um cluster de failover do Windows usando o arquivo compartilhado de cluster no Azure
 
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 
 O Windows Server Failover Clustering é a base de uma instalação do SAP ASCS/SCS de alta disponibilidade e DBMS no Windows.

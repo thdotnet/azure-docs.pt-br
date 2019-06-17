@@ -9,10 +9,10 @@ ms.date: 11/01/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: cd3b7d6cc75afc5d83ff02a15b920d9f8b05f608
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66391361"
 ---
 Ao criar uma VM (máquina virtual) do Azure, você deve criar uma [VNet](../articles/virtual-network/virtual-networks-overview.md) (rede virtual) ou usar uma VNet existente. Você também precisa decidir como suas VMs devem ser acessadas na VNet. É importante [planejar antes de criar recursos](../articles/virtual-network/virtual-network-vnet-plan-design-arm.md) e compreender os [limites de recursos de rede](../articles/azure-subscription-service-limits.md#networking-limits).
@@ -102,7 +102,7 @@ Os NSGs contêm dois conjuntos de regras: entrada e saída. A prioridade de uma 
 
 Todos os NSGs contêm um conjunto de regras padrão. As regras padrão não podem ser excluídas, mas como recebem a prioridade mais baixa, elas podem ser substituídas pelas regras que você criar. 
 
- Quando um NSG é associado a uma NIC, as regras de acesso à rede no NSG são aplicadas somente a essa NIC. Se um NSG for aplicado a uma única NIC em uma VM com várias NICS, isso não afetará o tráfego para as outras NICs. É possível associar diferentes NSGs a um NIC (ou VM, dependendo do modelo de implantação) e à sub-rede a qual uma NIC ou VM está associada. A prioridade é fornecida com base na direção do tráfego.
+Quando um NSG é associado a uma NIC, as regras de acesso à rede no NSG são aplicadas somente a essa NIC. Se um NSG for aplicado a uma única NIC em uma VM com várias NICS, isso não afetará o tráfego para as outras NICs. É possível associar diferentes NSGs a um NIC (ou VM, dependendo do modelo de implantação) e à sub-rede a qual uma NIC ou VM está associada. A prioridade é fornecida com base na direção do tráfego.
 
 Não se esqueça de [planejar](../articles/virtual-network/virtual-network-vnet-plan-design-arm.md) seus NSGs ao planejar suas VMs e a VNet.
 

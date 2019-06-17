@@ -12,10 +12,10 @@ ms.date: 05/16/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: bac897178c8220abe72a92a5cf14fc4767cdd3bf
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66755063"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Monitorar a atividade de consulta e o consumo de recursos no Azure Search
@@ -114,10 +114,10 @@ Os blobs que contêm os logs de tráfego do serviço de pesquisa são estruturad
 | NOME | Type | Exemplo | Observações |
 | --- | --- | --- | --- |
 | time |Datetime |"2018-12-07T00:00:43.6872559Z" |Carimbo de data/hora da operação |
-| ResourceId |string |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/> MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Seu ResourceId |
+| ResourceId |cadeia de caracteres |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/> MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Seu ResourceId |
 | operationName |cadeia de caracteres |"Query.Search" |O nome da operação |
 | operationVersion |cadeia de caracteres |"2019-05-06" |A api-version usada |
-| category |string |"OperationLogs" |constante |
+| category |cadeia de caracteres |"OperationLogs" |constante |
 | resultType |cadeia de caracteres |"Success" |Valores possíveis: Êxito ou Falha |
 | resultSignature |int |200 |Código do resultado HTTP |
 | durationMS |int |50 |Duração da operação em milissegundos |

@@ -8,17 +8,17 @@ ms.topic: article
 ms.date: 08/20/2018
 ms.author: pabutler
 ms.openlocfilehash: 6113c10cd152a22bd31e7212d86925b0c2107e58
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64938405"
 ---
 # <a name="create-technical-assets-for-a-virtual-machine-offer"></a>Criar recursos técnicos para uma oferta de máquina virtual
 
 Esta seção irá guiá-lo na criação e configuração dos recursos técnicos para uma oferta de VM (máquina virtual) do Azure Marketplace.  Uma VM contém dois componentes: o VHD (disco rígido virtual) da solução e os discos de dados associados opcionais.  
 
-- *VHDs (discos rígidos virtuais)*, contendo o sistema operacional e a solução que você implantará com a oferta do Azure Marketplace. O processo de preparação de VHD será diferente dependendo se é uma VM baseada em Linux, baseada em Windows ou em uma VM personalizada.
+- *VHDs (discos rígidos virtuais)* , contendo o sistema operacional e a solução que você implantará com a oferta do Azure Marketplace. O processo de preparação de VHD será diferente dependendo se é uma VM baseada em Linux, baseada em Windows ou em uma VM personalizada.
 - *Discos de dados* representam armazenamento dedicado e persistente para uma máquina virtual. *Não* use a solução de VHD (por exemplo, a unidade) `C:` para armazenar informações persistentes.
 
 Uma imagem de VM contém um disco de sistema operacional e zero ou mais discos de dados. É necessário um VHD por disco. Mesmo discos de dados em branco exigem a criação de um VHD.
@@ -28,7 +28,7 @@ Uma imagem de VM contém um disco de sistema operacional e zero ou mais discos d
 > Independentemente de qual sistema operacional que você usa, adicione apenas o número mínimo de discos de dados necessários para a SKU. Os clientes não podem remover discos que fazem parte de uma imagem no momento da implantação, mas podem sempre adicionar discos durante ou após a implantação. 
 
 > [!IMPORTANT]
-> *Não altere a contagem de discos em uma nova versão da imagem.*  Se você precisar reconfigurar os discos de Dados da imagem, defina um novo SKU. A publicação de uma nova versão de imagem com diferentes contagens de disco terá o potencial de quebrar a nova implantação com base na nova versão de imagem em casos de escalonamento automático, implantações automáticas de soluções por meio de modelos do Azure Resource Manager e outros cenários.
+> *Não altere a contagem de discos em uma nova versão da imagem.* Se você precisar reconfigurar os discos de Dados da imagem, defina um novo SKU. A publicação de uma nova versão de imagem com diferentes contagens de disco terá o potencial de quebrar a nova implantação com base na nova versão de imagem em casos de escalonamento automático, implantações automáticas de soluções por meio de modelos do Azure Resource Manager e outros cenários.
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 

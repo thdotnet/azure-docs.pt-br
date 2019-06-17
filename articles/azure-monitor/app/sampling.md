@@ -14,10 +14,10 @@ ms.date: 03/14/2019
 ms.reviewer: vitalyg
 ms.author: cithomas
 ms.openlocfilehash: c94167929782a2deca7bba19924bfe67dd46bf29
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66388382"
 ---
 # <a name="sampling-in-application-insights"></a>Amostragem no Application Insights
@@ -483,7 +483,7 @@ O SDK do lado do cliente (JavaScript) participa da amostragem de taxa fixa em co
 
 *Telemetria pode ser exemplificada mais de uma vez?*
 
-*  Não. SamplingTelemetryProcessors Ignorar itens da amostragem considerações, se o item já é obtida como amostra. O mesmo é verdadeiro para amostragem de ingestão como bem, que aplicará a amostragem a esses itens já obtida como amostras no SDK em si.'
+* Não. SamplingTelemetryProcessors Ignorar itens da amostragem considerações, se o item já é obtida como amostra. O mesmo é verdadeiro para amostragem de ingestão como bem, que aplicará a amostragem a esses itens já obtida como amostras no SDK em si.'
 
 *Por que a amostragem não se trata apenas de “coletar X% de cada tipo de telemetria”?*
 

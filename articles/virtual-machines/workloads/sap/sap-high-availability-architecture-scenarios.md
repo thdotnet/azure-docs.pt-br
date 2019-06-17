@@ -18,10 +18,10 @@ ms.date: 01/21/2019
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 37f5040585681a53743fb3426b7f7ffac36de51c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60936156"
 ---
 # <a name="high-availability-architecture-and-scenarios-for-sap-netweaver"></a>Arquitetura de alta disponibilidade e cenários para SAP NetWeaver
@@ -250,7 +250,7 @@ A alta disponibilidade do SAP no Azure pode ser classificada em três tipos:
 
 * **Alta disponibilidade de aplicativo SAP**: 
 
-    Para obter toda a alta disponibilidade do sistema SAP, você precisa proteger todos os componentes essenciais do sistema SAP. Por exemplo: 
+    Para obter toda a alta disponibilidade do sistema SAP, você precisa proteger todos os componentes essenciais do sistema SAP. Por exemplo:
     * Servidores de aplicativos SAP redundantes.
     * Componentes exclusivos. Um exemplo pode ser um componente SPOF (ponto único de falha), como uma instância SAP ASCS/SCS ou um DBMS (sistema de gerenciamento de banco de dados).
 
@@ -268,7 +268,7 @@ A base para o cálculo é 30 dias por mês, ou 43.200 minutos. Por exemplo, um t
 
 (Serviço de disponibilidade nº 1/100) * (Serviço de disponibilidade nº 2/100) * (Serviço de disponibilidade nº 3/100) \*…
 
-Por exemplo: 
+Por exemplo:
 
 (99,95/100) * (99,9/100) * (99,9/100) = 0,9975 ou uma disponibilidade geral de 99,75%.
 
@@ -335,7 +335,7 @@ Para saber mais sobre essa abordagem, confira [Usar reinicialização de VM da i
 
 ## <a name="baed0eb3-c662-4405-b114-24c10a62954e"></a>Alta disponibilidade de aplicativos SAP no Azure IaaS
 
-Para obter toda a alta disponibilidade do sistema SAP, você precisa proteger todos os componentes essenciais do sistema SAP. Por exemplo: 
+Para obter toda a alta disponibilidade do sistema SAP, você precisa proteger todos os componentes essenciais do sistema SAP. Por exemplo:
   * Servidores de aplicativos SAP redundantes.
   * Componentes exclusivos. Um exemplo pode ser um componente SPOF (ponto único de falha), como uma instância SAP ASCS/SCS ou um DBMS (sistema de gerenciamento de banco de dados).
 
@@ -345,7 +345,7 @@ As seções a seguir abordam como alcançar alta disponibilidade para todos os t
 
 > Esta seção aplica-se a:
 >
-> ![ Windows][Logo_Windows] Windows e ![Linux][Logo_Linux] Linux
+> ![Windows][Logo_Windows] Windows e ![Linux][Logo_Linux] Linux
 >
 
 Normalmente, não é necessária uma solução específica de alta disponibilidade para servidor de aplicativos SAP e instâncias de diálogo. Você atinge alta disponibilidade por redundância e configura várias instâncias de caixa de diálogo em várias instâncias de máquinas virtuais do Azure. Você deve ter pelo menos duas instâncias do aplicativo SAP instaladas em duas máquinas virtuais do Azure.
@@ -369,7 +369,7 @@ O número de domínios de falha e atualização que podem ser usados por um conj
 Se você implanta algumas instâncias do servidor de aplicativos SAP em suas VMs dedicadas e supondo que temos cinco domínios de atualização, o quadro a seguir surge no final. O número máximo real de domínios de falha e atualização dentro de um conjunto de disponibilidade pode vir a mudar no futuro:
 
 ![Figura 2: Alta disponibilidade dos servidores de aplicativos SAP em um conjunto de disponibilidade do Azure][planning-guide-figure-3000]
-_**Figura 2:** Alta disponibilidade dos servidores de aplicativos SAP em um conjunto de disponibilidade do Azure_
+ _**Figura 2:** Alta disponibilidade dos servidores de aplicativos SAP em um conjunto de disponibilidade do Azure_
 
 Para saber mais, consulte [Gerenciar a disponibilidade de máquinas virtuais Windows no Azure][azure-virtual-machines-manage-availability].
 
@@ -383,7 +383,7 @@ Para saber mais, confira a seção [Conjuntos de disponibilidade do Azure] [ pla
 
 ### <a name="high-availability-architecture-for-an-sap-ascsscs-instance-on-windows"></a>Arquitetura de alta disponibilidade para uma instância do SAP ASCS/SCS no Windows
 
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 
 Você pode usar uma solução WSFC para proteger a instância SAP ASCS/SCS. A solução tem duas variantes:
@@ -403,7 +403,7 @@ Para obter mais informações sobre como agrupar a instância do SAP ASCS/SCS em
 
 ### <a name="sap-netweaver-multi-sid-configuration-for-a-clustered-sap-ascsscs-instance"></a>Configuração multi-SID do SAP NetWeaver para uma instância do SAP ASCS/SCS em cluster
 
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 > 
 > Atualmente, o multi-SID tem suporte apenas com o WSFC. Há suporte para multi-SID usando compartilhamento de arquivos e disco compartilhado.
 > 

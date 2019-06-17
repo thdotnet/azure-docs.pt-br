@@ -83,6 +83,10 @@
           href: plan-sso-deployment.md
     - name: Portais do usuário final
       href: end-user-experiences.md
+    - name: SSO de um clique
+      items:
+        - name: O que é o SSO de um clique
+          href: one-click-sso-tutorial.md
 - name: Guias de instruções
   items:
     - name: Adicionar um aplicativo de nuvem

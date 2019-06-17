@@ -10,10 +10,10 @@ ms.date: 02/28/2017
 ms.author: seguler
 ms.subservice: common
 ms.openlocfilehash: 4b47af857fada453e36fcb0c23e6d89e5ad90e42
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65154351"
 ---
 # <a name="using-azure-storage-with-a-hudson-continuous-integration-solution"></a>Usando o Armazenamento do Azure com uma solução Hudson Continuous Integration
@@ -73,7 +73,7 @@ Para usar o serviço Blob com o Hudson, você deverá instalar o plug-in Armazen
 2. Na página **Gerenciar Hudson**, clique em **Configurar Sistema**.
 3. Na seção **Configuração da Conta de Armazenamento do Microsoft Azure** :
    
-     a. Insira o nome da conta de armazenamento, que pode ser obtido no [portal do Azure](https://portal.azure.com).
+    a. Insira o nome da conta de armazenamento, que pode ser obtido no [portal do Azure](https://portal.azure.com).
    
     b. Insira a chave de conta de armazenamento, que também pode ser obtida no [portal do Azure](https://portal.azure.com).
    
@@ -111,12 +111,12 @@ Para fins de instrução, primeiro será necessário criar um trabalho que crie 
 8. Clique em **Tornar o novo contêiner público por padrão** para este exemplo. Se desejar usar um contêiner particular, você precisará criar uma assinatura de acesso compartilhado para permitir o acesso. Isso está além do escopo deste artigo. Você pode saber mais sobre assinaturas de acesso compartilhado em [Uso de SAS (Assinaturas de Acesso Compartilhado)](../storage-dotnet-shared-access-signature-part-1.md).
 9. [Opcional] Clique em **Limpar contêiner antes de carregar** se quiser que o contêiner seja limpo de conteúdo antes que os artefatos de compilação sejam carregados (deixe a opção desmarcada se não quiser limpar o conteúdo do contêiner).
 10. Em **Lista de artefatos a serem carregados**, insira **text/*.txt**.
-11. Em **Common virtual path for uploaded artifacts**, digite **${BUILD\_ID}/${BUILD\_NUMBER}**.
+11. Em **Common virtual path for uploaded artifacts**, digite **${BUILD\_ID}/${BUILD\_NUMBER}** .
 12. Para salvar suas configurações, clique em **Salvar** .
 13. No painel do Hudson, clique em **Build Now** para executar **MyJob**. Examine a saída do console para o status. As mensagens de status do Armazenamento do Azure serão incluídas na saída do console quando a ação de pós-compilação iniciar o carregamento dos artefatos de compilação.
 14. Após a conclusão bem-sucedida do trabalho, você poderá examinar os artefatos de compilação abrindo o blob público.
     
-     a. Entre no [Portal do Azure](https://portal.azure.com).
+    a. Entre no [Portal do Azure](https://portal.azure.com).
     
     b. Clique em **Armazenamento**.
     
@@ -134,7 +134,7 @@ As etapas a seguir mostram como configurar uma etapa de compilação para baixar
 1. Na seção **Compilar** da configuração do trabalho, clique em **Adicionar etapa de compilação** e selecione **Baixar no armazenamento de Blob do Azure**.
 2. Em **Nome de conta de armazenamento**, selecione a conta de armazenamento a ser usada.
 3. Em **Nome do contêiner**, especifique o nome do contêiner que contém os blobs que você quer baixar. É possível usar variáveis de ambiente.
-4. Em **Nome do blob**, especifique o nome do blob. É possível usar variáveis de ambiente. Além disso, você pode usar um asterisco como um curinga depois de especificar a letra inicial do nome do blob. Por exemplo, **project\\*** especificaria todos os blobs cujos nomes começam com **projeto**.
+4. Em **Nome do blob**, especifique o nome do blob. É possível usar variáveis de ambiente. Além disso, você pode usar um asterisco como um curinga depois de especificar a letra inicial do nome do blob. Por exemplo, **project\\** * especificaria todos os blobs cujos nomes começam com **projeto**.
 5. [Opcional] Em **Caminho do download**, especifique o caminho no computador Hudson, onde você quer baixar arquivos do armazenamento de Blob do Azure. Também é possível usar variáveis de ambiente. (Se você não fornecer um valor para **Caminho do download**, os arquivos no armazenamento de Blob do Azure serão baixados no workspace da tarefa).
 
 Se houver itens adicionais que deseja baixar do armazenamento de Blob do Azure, você poderá criar etapas de compilação adicionais.
@@ -153,7 +153,7 @@ Segue abaixo uma visão geral dos componentes do serviço Blob.
   
     (O formato acima aplica-se a uma nuvem pública do Azure. Se estiver usando uma nuvem do Azure diferente, use o ponto de extremidade localizado no [portal do Azure](https://portal.azure.com) para determinar o ponto de extremidade de sua URL).
   
-    No formato acima, `storageaccount` representa o nome da sua conta de armazenamento, `container_name` representa o nome do seu contêiner e `blob_name` representa o nome do seu blob, respectivamente. Dentro do nome do contêiner, é possível ter vários caminhos, separados por uma barra, **/**. O exemplo de nome do contêiner neste tutorial foi **MyJob** e **${BUILD\_ID}/${BUILD\_NUMBER}** foi usado para o caminho virtual comum, fazendo com que o blob tivesse uma URL no seguinte formato:
+    No formato acima, `storageaccount` representa o nome da sua conta de armazenamento, `container_name` representa o nome do seu contêiner e `blob_name` representa o nome do seu blob, respectivamente. Dentro do nome do contêiner, é possível ter vários caminhos, separados por uma barra, **/** . O exemplo de nome do contêiner neste tutorial foi **MyJob** e **${BUILD\_ID}/${BUILD\_NUMBER}** foi usado para o caminho virtual comum, fazendo com que o blob tivesse uma URL no seguinte formato:
   
     `http://example.blob.core.windows.net/myjob/2014-05-01_11-56-22/1/hello.txt`
 

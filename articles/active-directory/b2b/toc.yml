@@ -51,6 +51,8 @@
     - name: Guias de instruções
       expanded: true
       items:
+        - name: Gerenciar compartilhamento B2B
+          href: delegate-invitations.md
         - name: Gerenciar convites
           items:
             - name: Administradores adicionando usuários de B2B
@@ -61,8 +63,6 @@
               href: google-federation.md
             - name: Autenticação de senha avulsa
               href: one-time-passcode.md
-            - name: Políticas de compartilhamento de B2B
-              href: delegate-invitations.md
             - name: Permitir ou bloquear convites
               href: allow-deny-list.md
             - name: Adicionar usuários de B2B sem um convite

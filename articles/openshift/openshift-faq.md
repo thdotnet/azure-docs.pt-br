@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 05/08/2019
-ms.openlocfilehash: 2001b849e9c43d552889475ca237c52b141f3f04
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 32eb2c47ed46aed8e2e3755a83437a21391295c5
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306274"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67122958"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Azure Red Hat OpenShift perguntas Frequentes
 
@@ -35,7 +35,7 @@ Ver [recursos com suporte](supported-resources.md#azure-regions) para obter uma 
 
 ## <a name="can-i-deploy-a-cluster-into-an-existing-virtual-network"></a>Posso implantar um cluster em uma rede virtual existente?
 
- Não. Mas você pode se conectar a um cluster do Azure Red Hat OpenShift para uma rede virtual existente por meio de emparelhamento. Ver [conectar-se a rede virtual de um cluster para uma rede virtual existente ](tutorial-create-cluster.md#optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network) para obter detalhes.
+Não. Mas você pode se conectar a um cluster do Azure Red Hat OpenShift para uma rede virtual existente por meio de emparelhamento. Ver [conectar-se a rede virtual de um cluster para uma rede virtual existente ](tutorial-create-cluster.md#optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network) para obter detalhes.
 
 ## <a name="what-cluster-operations-are-available"></a>Quais operações de cluster estão disponíveis?
 
@@ -49,7 +49,11 @@ Ver [tamanhos de máquina virtual do Azure Red Hat OpenShift](supported-resource
 
 Por padrão, há a criptografia em repouso. A plataforma de armazenamento do Azure criptografa automaticamente seus dados antes de persisti-lo e descriptografa os dados antes da recuperação. Ver [criptografia do serviço de armazenamento do Azure para dados em repouso](https://docs.microsoft.com/azure/storage/common/storage-service-encryption) para obter detalhes.
 
-## <a name="can-i-use-prometheusgrafana-to-monitor-containers-and-manage-capacity"></a>Pode usar o Prometheus/Grafana para monitorar os contêineres e gerenciar a capacidade?
+## <a name="can-i-use-prometheusgrafana-to-monitor-my-applications"></a>Pode usar o Prometheus/Grafana para monitorar meus aplicativos?
+
+Sim, você pode implantar Prometeu em seus aplicativos de namespace e o monitor no seu namespace.
+
+## <a name="can-i-use-prometheusgrafana-to-monitor-metrics-related-to-cluster-health-and-capacity"></a>Pode usar o Prometheus/Grafana para monitorar as métricas relacionadas à capacidade e integridade do cluster?
 
 Não, não no momento atual.
 
@@ -71,12 +75,16 @@ Sim. Você pode restringir quais Azure usuários do AD podem entrar em um cluste
 
 ## <a name="can-a-cluster-have-compute-nodes-across-multiple-azure-regions"></a>Pode um cluster tiver nós de computação em várias regiões do Azure?
 
- Não. Todos os nós em um cluster do Azure Red Hat OpenShift devem ser obtidos da mesma região do Azure.
+Não. Todos os nós em um cluster do Azure Red Hat OpenShift devem ser obtidos da mesma região do Azure.
 
 ## <a name="are-master-and-infrastructure-nodes-abstracted-away-as-they-are-with-azure-kubernetes-service-aks"></a>São nós mestre e de infraestrutura abstraídos como estão com o serviço de Kubernetes do Azure (AKS)?
 
- Não. Todos os recursos, incluindo o mestre do cluster, execute em sua assinatura do cliente. Esses tipos de recursos são colocados em um grupo de recursos somente leitura.
+Não. Todos os recursos, incluindo o mestre do cluster, execute em sua assinatura do cliente. Esses tipos de recursos são colocados em um grupo de recursos somente leitura.
 
 ## <a name="is-open-service-broker-for-azure-osba-supported"></a>É o Service Broker aberto para Azure (OSBA) tem suportada?
 
 Sim. Você pode usar OSBA com Azure Red Hat OpenShift. Ver [Service Broker aberto para Azure](https://github.com/Azure/open-service-broker-azure#openshift-project-template) para obter mais informações.
+
+## <a name="i-am-trying-to-peer-into-a-virtual-network-in-a-different-subscription-but-getting-failed-to-get-vnet-cidr-error"></a>Eu estou tentando emparelhar em uma rede virtual em uma assinatura diferente, mas obtendo `Failed to get vnet CIDR` erro.
+
+A assinatura que tem a rede virtual, certifique-se de registrar `Microsoft.ContainerService` provedor com `az provider register -n Microsoft.ContainerService --wait` 

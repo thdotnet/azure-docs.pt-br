@@ -9,17 +9,17 @@ ms.date: 05/10/2019
 ms.author: anavin
 ms.custom: include file
 ms.openlocfilehash: 5aeb0e01192c0635def8eef0c73aa2d14b7921e2
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66170765"
 ---
 ## <a name="os-config"></a>Adicionar endereços IP em um sistema operacional da VM
 
 Conecte-se e faça logon em uma VM criada com vários endereços IP privados. Você deve adicionar manualmente todos os endereços IP privados (incluindo o principal) que você adicionou à VM. Complete as etapas a seguir para seu sistema operacional VM.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 1. Em um prompt de comando, digite *ipconfig /all*.  Você vê apenas o endereço IP privado *Primário* (por meio do DHCP).
 2. Digite *ncpa.cpl* no prompt de comando para abrir a janela **Conexões de rede**.

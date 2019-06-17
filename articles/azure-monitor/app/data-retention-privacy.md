@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: mbullwin
 ms.openlocfilehash: 38723a5dd306c2a4b594d95e5cc660d117966bc4
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65518835"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Coleta, retenção e armazenamento de dados no Application Insights
@@ -195,7 +195,7 @@ Não é recomendável definir explicitamente seu aplicativo para usar somente o 
 
 |Plataforma/linguagem | Suporte | Mais informações |
 | --- | --- | --- |
-| Serviços de Aplicativos do Azure  | Configuração com suporte pode ser necessária. | O suporte foi anunciado em abril de 2018. Leia o comunicado para [detalhes de configuração](https://blogs.msdn.microsoft.com/appserviceteam/2018/04/17/app-service-and-functions-hosted-apps-can-now-update-tls-versions/).  |
+| Serviços de Aplicativo do Azure  | Configuração com suporte pode ser necessária. | O suporte foi anunciado em abril de 2018. Leia o comunicado para [detalhes de configuração](https://blogs.msdn.microsoft.com/appserviceteam/2018/04/17/app-service-and-functions-hosted-apps-can-now-update-tls-versions/).  |
 | Aplicativos de Funções do Azure | Configuração com suporte pode ser necessária. | O suporte foi anunciado em abril de 2018. Leia o comunicado para [detalhes de configuração](https://blogs.msdn.microsoft.com/appserviceteam/2018/04/17/app-service-and-functions-hosted-apps-can-now-update-tls-versions/). |
 |.NET | Configuração com suporte varia de acordo com a versão. | Para obter informações de configuração detalhadas para .NET 4.7 e versões anteriores, consulte [estas instruções](https://docs.microsoft.com/dotnet/framework/network-programming/tls#support-for-tls-12).  |
 |Monitor de status | Configuração com suporte exigida | Monitor de status depende [configuração do sistema operacional](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) + [configuração do .NET](https://docs.microsoft.com/dotnet/framework/network-programming/tls#support-for-tls-12) para dar suporte ao TLS 1.2.
@@ -206,7 +206,7 @@ Não é recomendável definir explicitamente seu aplicativo para usar somente o 
 | Windows Server 2012 - 2016 | Suporte e habilitado por padrão. | Para confirmar que você ainda está usando o [as configurações padrão](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) |
 | Windows Server 7 SP1 e Windows Server 2008 R2 SP1 | Com suporte, mas não habilitado por padrão. | Consulte a página [configurações do registro de segurança de camada de transporte (TLS)](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) para obter detalhes sobre como habilitar.  |
 | Windows Server 2008 SP2 | Suporte para TLS 1.2 requer uma atualização. | Ver [atualização para adicionar suporte para TLS 1.2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s) no Windows Server 2008 SP2. |
-|Windows Vista |  Sem suporte. | N/D
+|Windows Vista | Sem suporte. | N/D
 
 ### <a name="check-what-version-of-openssl-your-linux-distribution-is-running"></a>Verifique qual versão do OpenSSL sua distribuição do Linux está em execução
 
@@ -240,10 +240,10 @@ Os SDKs variam entre diferentes plataformas, e há vários componentes que você
 
 | Sua ação | Classes de dados coletados (consulte a tabela a seguir) |
 | --- | --- |
-| [Adicionar o Application Insights SDK a um projeto Web .NET][greenbrown] |ServerContext<br/>Inferido<br/>Contadores de desempenho<br/>Requests<br/>**Exceções**<br/>Session<br/>Usuários |
+| [Adicionar o Application Insights SDK a um projeto Web .NET][greenbrown] |ServerContext<br/>Inferido<br/>Contadores de desempenho<br/>Requests<br/>**Exceções**<br/>Session<br/>users |
 | [Instalar o Monitor de Status no IIS][redfield] |Dependências<br/>ServerContext<br/>Inferido<br/>Contadores de desempenho |
-| [Adicionar o Application Insights SDK a um aplicativo Web Java][java] |ServerContext<br/>Inferido<br/>Solicitação<br/>Session<br/>Usuários |
-| [Adicionar SDK do JavaScript à página da Web][client] |ClientContext  <br/>Inferido<br/>Página<br/>ClientPerf<br/>Ajax |
+| [Adicionar o Application Insights SDK a um aplicativo Web Java][java] |ServerContext<br/>Inferido<br/>Solicitação<br/>Session<br/>users |
+| [Adicionar SDK do JavaScript à página da Web][client] |ClientContext <br/>Inferido<br/>Página<br/>ClientPerf<br/>Ajax |
 | [Definir propriedades padrão][apiproperties] |**Propriedades** em todos os eventos padrão e personalizados |
 | [Chamar TrackMetric][api] |Valores numéricos<br/>**Propriedades** |
 | [Chamar Track*][api] |Nome do evento<br/>**Propriedades** |
@@ -258,12 +258,12 @@ Para [SDKs para outras plataformas][platforms], consulte seus respectivos docume
 | --- | --- |
 | **Propriedades** |**Quaisquer dados - determinados pelo seu código** |
 | DeviceContext |ID, IP, localidade, modelo de dispositivo, rede, tipo de rede, nome OEM, resolução de tela, instância de função, nome da função, tipo de dispositivo |
-| ClientContext  |Sistema operacional, localidade, linguagem, rede, resolução da janela |
+| ClientContext |Sistema operacional, localidade, linguagem, rede, resolução da janela |
 | Session |ID da sessão |
 | ServerContext |Nome do computador, localidade, sistema operacional, dispositivo, sessão de usuário, contexto de usuário, operação |
 | Inferido |localização geográfica do endereço IP, carimbo de data/hora, sistema operacional, navegador |
-| Métricas |Valor e nome da métrica |
-| Eventos |Valor e nome do evento |
+| metrics |Valor e nome da métrica |
+| Events |Valor e nome do evento |
 | PageViews |URL e nome da página ou o nome de tela |
 | Desempenho do cliente |URL/nome de página, tempo de carregamento do navegador |
 | Ajax |Chamadas HTTP da página da Web para o servidor |
@@ -281,7 +281,7 @@ Você pode [desativar alguns dos dados editando ApplicationInsights.config][conf
 > [!NOTE]
 > O IP do cliente é usado para inferir a localização geográfica mas, por padrão, os dados do IP não são mais armazenados e todos os zeros são gravados no campo associado. Para compreender mais sobre tratamento de dados pessoais, recomendamos este [artigo](../../azure-monitor/platform/personal-data-mgmt.md#application-data). Se você precisar armazenar o endereço IP, poderá fazer isso com um [inicializador de telemetria](./../../azure-monitor/app/api-filtering-sampling.md#add-properties-itelemetryinitializer).
 
-## <a name="credits"></a>Créditos
+## <a name="credits"></a>Credits
 Este produto inclui dados GeoLite2 criados pelo MaxMind, disponíveis em [https://www.maxmind.com](https://www.maxmind.com).
 
 

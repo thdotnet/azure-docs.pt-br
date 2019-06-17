@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 09/21/2018
 ms.author: roiyz
 ms.openlocfilehash: 6bd3ea4e664523fe8014be40c51d573ed5158ecf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60800274"
 ---
 # <a name="chef-vm-extension-for-linux-and-windows"></a>Extensão para VM do Chef para Linux e Windows
@@ -72,7 +72,7 @@ O JSON a seguir mostra o esquema para a extensão para VM do Chef. A extensão e
 | ---- | ---- | ---- 
 | apiVersion | `2017-12-01` | string (date) |
 | publicador | `Chef.Bootstrap.WindowsAzure` | string |
-| Tipo | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
+| type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
 | typeHandlerVersion | `1210.12` | string (double) |
 
 ### <a name="settings"></a>Configurações
@@ -80,14 +80,14 @@ O JSON a seguir mostra o esquema para a extensão para VM do Chef. A extensão e
 | NOME | Valor/Exemplo | Tipo de Dados | Obrigatório?
 | ---- | ---- | ---- | ----
 | settings/bootstrap_options/chef_server_url | `https://api.chef.io/organizations/myorg` | string (url) | S |
-| settings/bootstrap_options/validation_client_name | `myorg-validator` | string | S |
-| settings/runlist | `recipe[mycookbook::default]` | string | S |
+| settings/bootstrap_options/validation_client_name | `myorg-validator` | cadeia de caracteres | S |
+| settings/runlist | `recipe[mycookbook::default]` | cadeia de caracteres | S |
 
 ### <a name="protected-settings"></a>Configurações protegidas
 
 | NOME | Exemplo | Tipo de Dados | Obrigatório?
 | ---- | ---- | ---- | ---- |
-| protectedSettings/validation_key | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | string | S |
+| protectedSettings/validation_key | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | cadeia de caracteres | S |
 
 <!--
 ### Linux-specific settings
@@ -139,7 +139,7 @@ A saída de execução da extensão é registrada no seguinte arquivo:
 /var/lib/waagent/Chef.Bootstrap.WindowsAzure.LinuxChefClient
 ```
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 ```powershell
 C:\Packages\Plugins\Chef.Bootstrap.WindowsAzure.ChefClient\

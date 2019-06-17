@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: d5b6f183a59e3f47aa5867b5e09e06541a6a67db
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60803232"
 ---
 # <a name="azure-service-fabric-cli"></a>CLI do Azure Service Fabric
@@ -37,7 +37,7 @@ A CLI do Service Fabric serve para dar suporte à versão de tempo de execução
 | 6.0.0         | 6.3                       |
 | 5.0.0         | 6.2                       |
 | 4.0.0         | 6.1                       |
-| 3.0.0         | 6,0                       |
+| 3.0.0         | 6.0                       |
 | 1.1.0         | 5.6, 5.7                  |
 
 Opcionalmente, você pode especificar uma versão de destino da CLI para instalação acrescentando ao comando `pip install` o sufixo `==<version>`. Por exemplo, para a versão 1.1.0, a sintaxe seria:
@@ -54,7 +54,7 @@ Para saber mais sobre as versões da CLI do Service Fabric, veja a [documentaç�
 
 Há várias maneiras de instalar o pip e o Python em sua plataforma. Aqui estão algumas etapas para obter os principais sistemas operacionais configurar rapidamente com Python 3 e pip.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 Para o Windows 10, o Windows Server 2016 e o Windows Server 2012 R2, use as instruções de instalação oficial padrão. O instalador do Python também instala o pip por padrão.
 

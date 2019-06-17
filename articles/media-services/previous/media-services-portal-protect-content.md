@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 65e5b5502b7d63d89845781487443f539a708816
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64866959"
 ---
 # <a name="configure-content-protection-policies-by-using-the-azure-portal"></a>Configurar políticas de proteção de conteúdo usando o portal do Azure
@@ -105,7 +105,7 @@ A criptografia da chave não criptografada AES é habilitada em todos os protoco
 #### <a name="drm"></a>DRM
 1. Depois de selecionar o **DRM**, você vê políticas de proteção de conteúdo diferentes (que devem ser configuradas neste ponto) e um conjunto de protocolos de streaming:
 
-     a. **PlayReady e Widevine com o MPEG-DASH** – criptografam dinamicamente seu stream MPEG DASH com os DRMs do PlayReady e do Widevine.
+    a. **PlayReady e Widevine com o MPEG-DASH** – criptografam dinamicamente seu stream MPEG DASH com os DRMs do PlayReady e do Widevine.
 
     b. **PlayReady e Widevine com o MPEG-DASH+ FairPlay com HLS** – criptografam dinamicamente seu stream MPEG DASH com os DRMs do PlayReady e do Widevine. Essa opção também criptografa seus streams HLS com o FairPlay.
 

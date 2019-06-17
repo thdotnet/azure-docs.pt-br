@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/09/2018
+ms.date: 06/12/2019
 ms.author: alkohli
-ms.openlocfilehash: b968cc29a7139a4a6db5d2dea8dd6f8f4e1c7ccd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d6d4a5b9688540e5aa96dd8789dbb609aedeca97
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60630729"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077848"
 ---
 # <a name="configure-mpio-on-a-storsimple-host-running-centos"></a>Configurar o MPIO em um host do StorSimple executando o CentOS
 Este artigo explica as etapas necessárias para a configuração do Multipathing IO (MPIO) em seu servidor host do Centos 6.6. O servidor host está conectado ao dispositivo Microsoft Azure StorSimple para alta disponibilidade por meio de iniciadores iSCSI. Ele descreve detalhadamente a descoberta automática de dispositivos de vários caminhos e a configuração específica somente para volumes do StorSimple.
@@ -56,11 +56,11 @@ O arquivo de configuração `/etc/multipath.conf` faz com que muitos dos recurso
 
 O arquivo multipath.conf tem cinco seções:
 
-- **Os padrões de nível de sistema** *(o padrão é)*: Você pode substituir os padrões de nível de sistema.
-- **Dispositivos incluídos em listas negras** *(blacklist)*: Você pode especificar a lista de dispositivos que não devem ser controlados pelo device-mapper.
-- **Exceções de lista de bloqueios** *(blacklist_exceptions)*: Você pode identificar dispositivos específicos a serem tratados como dispositivos de vários caminhos, mesmo se listado na lista negra.
-- **Configurações específicas do controlador de armazenamento** *(dispositivos)*: Você pode especificar definições de configuração que serão aplicadas a dispositivos que têm informações de fornecedor e o produto.
-- **As configurações específicas de dispositivo** *(multipaths)*: Você pode usar esta seção para ajustar as definições de configuração para LUNs individuais.
+- **Os padrões de nível de sistema** *(o padrão é)* : Você pode substituir os padrões de nível de sistema.
+- **Dispositivos incluídos em listas negras** *(blacklist)* : Você pode especificar a lista de dispositivos que não devem ser controlados pelo device-mapper.
+- **Exceções de lista de bloqueios** *(blacklist_exceptions)* : Você pode identificar dispositivos específicos a serem tratados como dispositivos de vários caminhos, mesmo se listado na lista negra.
+- **Configurações específicas do controlador de armazenamento** *(dispositivos)* : Você pode especificar definições de configuração que serão aplicadas a dispositivos que têm informações de fornecedor e o produto.
+- **As configurações específicas de dispositivo** *(multipaths)* : Você pode usar esta seção para ajustar as definições de configuração para LUNs individuais.
 
 ## <a name="configure-multipathing-on-storsimple-connected-to-linux-host"></a>Configurar vários caminhos no StorSimple conectado ao host Linux
 Um dispositivo StorSimple conectado a um host Linux pode ser configurado para alta disponibilidade e balanceamento de carga. Por exemplo, se o host Linux tiver duas interfaces conectadas à SAN e o dispositivo tem duas interfaces conectadas à SAN, de modo que essas interfaces estejam na mesma sub-rede, então haverá 4 caminhos disponíveis. No entanto, se cada interface DATA na interface do dispositivo e do host estiver em uma sub-rede IP diferente (e não roteável), então somente dois caminhos estarão disponíveis. Você pode configurar vários caminhos para descobrir automaticamente todos os caminhos disponíveis, escolher um algoritmo de balanceamento de carga para esses caminhos, aplicar as configurações específicas a volumes só do StorSimple e então habilitar e verificar vários caminhos.
@@ -262,7 +262,7 @@ Esse algoritmo de balanceamento de carga usa todos os vários caminhos disponív
 ### <a name="step-5-verify-multipathing"></a>Etapa 5: Verificar vários caminhos
 1. Primeiro, verifique se a conexão iSCSI foi estabelecida como dispositivo StorSimple da seguinte maneira:
    
-    a. Descubra seu dispositivo StorSimple. Digite:
+   a. Descubra seu dispositivo StorSimple. Digite:
       
     ```
     iscsiadm -m discovery -t sendtargets -p  <IP address of network interface on the device>:<iSCSI port on StorSimple device>
@@ -335,7 +335,7 @@ Esta seção fornece algumas dicas úteis se você tiver algum problema durante 
 
 P. Não vejo as alterações no arquivo `multipath.conf` entrarem em vigor.
 
-a. Se você tiver alguma alteração no arquivo `multipath.conf` , precisará reiniciar o serviço de vários caminhos. Digite o seguinte comando: 
+a. Se você tiver alguma alteração no arquivo `multipath.conf` , precisará reiniciar o serviço de vários caminhos. Digite o seguinte comando:
 
     service multipathd restart
 
@@ -371,7 +371,7 @@ Uma causa menos provável, mas possível, também poderia ser um pid iscsid obso
 
     iscsiadm -m node --logout -p <Target_IP>
 
-Repita esse comando para todas as interfaces de rede conectadas no destino iSCSI, que é o seu dispositivo StorSimple. Depois de fazer logoff de todas as sessões iSCSI, use o IQN de destino iSCSI para restabelecer a sessão iSCSI. Digite o seguinte comando: 
+Repita esse comando para todas as interfaces de rede conectadas no destino iSCSI, que é o seu dispositivo StorSimple. Depois de fazer logoff de todas as sessões iSCSI, use o IQN de destino iSCSI para restabelecer a sessão iSCSI. Digite o seguinte comando:
 
     iscsiadm -m node --login -T <TARGET_IQN>
 
@@ -417,10 +417,10 @@ a. Para verificar se seu dispositivo está na lista branca, use o seguinte coman
     dm-3 devnode blacklisted, unmonitored
 
 
-Para saber mais, veja como [usar o comando interativo de solução de problemas para múltiplos caminhos](http://www.centos.org/docs/5/html/5.1/DM_Multipath/multipath_config_confirm.html).
+Para obter mais informações, acesse [solução de problemas para vários caminhos](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/dm_multipath/mpio_admin-troubleshoot).
 
 ## <a name="list-of-useful-commands"></a>Lista de comandos úteis
-| Digite  | Comando | DESCRIÇÃO |
+| Digite | Comando | DESCRIÇÃO |
 | --- | --- | --- |
 | **iSCSI** |`service iscsid start` |Iniciar o serviço iSCSI |
 | &nbsp; |`service iscsid stop` |Parar o serviço iSCSI |
@@ -444,6 +444,6 @@ Para saber mais, veja como [usar o comando interativo de solução de problemas 
 ## <a name="next-steps"></a>Próximas etapas
 Já que você está configurando o MPIO no host Linux, talvez também seja necessário consultar os seguintes documentos do CentoS 6.6:
 
-* [Configurando o MPIO no CentOS](http://www.centos.org/docs/5/html/5.1/DM_Multipath/setup_procedure.html)
+* [Configurando o MPIO no CentOS](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/dm_multipath/index)
 * [Guia de treinamento do Linux](http://linux-training.be/linuxsys.pdf)
 

@@ -6,14 +6,14 @@ author: hrasheed-msft
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 03/05/2019
+ms.date: 06/06/2019
 ms.author: hrasheed
-ms.openlocfilehash: 5e9cd4c2a14f94c39c7058f45bf727df8198c053
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 489685485af4e3c8868f7e0281d2f81464a166f6
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64691304"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066188"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Instalar o bloco de anotações do Jupyter em seu computador e conectar-se ao Apache Spark no HDInsight
 
@@ -28,48 +28,69 @@ Há quatro etapas principais envolvidas na instalação do Jupyter e conectar-se
 
 Para saber mais sobre os kernels personalizados e a sobre a mágica Spark disponível para blocos de notas Jupyter com o cluster HDInsight, confira [Kernels disponíveis para blocos de notas Jupyter com clusters do Apache Spark Linux no HDInsight](apache-spark-jupyter-notebook-kernels.md).
 
-> [!IMPORTANT]  
-> As etapas neste artigo só funcionam para o Spark versão 2.1.0.
-
 ## <a name="prerequisites"></a>Pré-requisitos
+
 Os pré-requisitos listados aqui não são para a instalação do Jupyter. Eles são para conectar o bloco de notas Jupyter a um cluster HDInsight depois que o bloco de notas está instalado.
 
-* Uma assinatura do Azure. Consulte [Obter a avaliação gratuita do Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-* Um cluster do Apache Spark (versão 2.1.0 ou inferior) no HDInsight. Para obter instruções, consulte o artigo sobre como [Criar clusters do Apache Spark no Azure HDInsight](apache-spark-jupyter-spark-sql.md).
-
-
+* Um cluster do Apache Spark no HDInsight. Para obter instruções, consulte o artigo sobre como [Criar clusters do Apache Spark no Azure HDInsight](apache-spark-jupyter-spark-sql.md).
 
 ## <a name="install-jupyter-notebook-on-your-computer"></a>Instalar bloco de notas Jupyter em seu computador
 
-Você deve instalar o Python antes de instalar notebooks do Jupyter. Ambos o Python e o Jupyter estão disponíveis como parte da [distribuição do Anaconda](https://www.anaconda.com/download/). Quando instala o Anaconda, você instala uma distribuição do Python. Quando o Anaconda é instalado, você adiciona a instalação do Jupyter executando comandos apropriados.
+Você deve instalar o Python antes de instalar blocos de notas Jupyter. O [distribuição do Anaconda](https://www.anaconda.com/download/) instalará, Python e o bloco de anotações do Jupyter.
 
-1. Baixe o [instalador do Anaconda](https://www.anaconda.com/download/) para sua plataforma e execute a instalação. Ao executar o assistente de instalação, não deixe de selecionar a opção de adicionar o Anaconda à variável PATH.
+Baixe o [instalador do Anaconda](https://www.anaconda.com/download/) para sua plataforma e execute a instalação. Ao executar o assistente de instalação, não deixe de selecionar a opção de adicionar o Anaconda à variável PATH.  Consulte também [instalando o Jupyter usando Anaconda](https://jupyter.readthedocs.io/en/latest/install.html).
 
-2. Execute o comando a seguir para instalar o Jupyter.
+## <a name="install-spark-magic"></a>Instalar a mágica do Spark
 
-        conda install jupyter
+1. Digite um dos comandos a seguir para instalar a mágica do Spark. Consulte também [documentação do sparkmagic](https://github.com/jupyter-incubator/sparkmagic#installation).
 
-    Para obter mais informações sobre a instalação do Jupyter, confira [Installing Jupyter using Anaconda](https://jupyter.readthedocs.io/en/latest/install.html)(Instalando o Jupyter usando o Anaconda).
+    |Versão do cluster | O comando de instalação |
+    |---|---|
+    |v 3.6 e v 3.5 |`pip install sparkmagic==0.12.7`|
+    |v3.4|`pip install sparkmagic==0.2.3`|
 
-## <a name="install-the-kernels-and-spark-magic"></a>Instalar os kernels e a mágica do Spark
+1. Certifique-se de `ipywidgets` está instalado corretamente, executando o seguinte comando:
 
-Para obter instruções sobre como instalar a mágica do Spark, os kernels PySpark e Spark, siga as instruções da instalação na [documentação do sparkmagic](https://github.com/jupyter-incubator/sparkmagic#installation) no GitHub. A primeira etapa na documentação da mágica do Spark solicita a instalação da mágica do Spark. Substitua essa primeira etapa no link com os seguintes comandos, dependendo da versão do cluster do HDInsight de conexão. Depois disso, siga as etapas restantes na documentação da mágica do Spark. Se quiser instalar os kernels diferentes, você deverá executar a Etapa 3 na seção de instruções da instalação da mágica do Spark.
+    ```cmd
+    jupyter nbextension enable --py --sys-prefix widgetsnbextension
+    ```
 
-* Para clusters v3.5 e v3.6, instale sparkmagic 0.11.2 executando `pip install sparkmagic==0.11.2`
+## <a name="install-pyspark-and-spark-kernels"></a>Instalar os kernels PySpark e Spark
 
-* Para clusters v3.4, instale sparkmagic 0.2.3 executando `pip install sparkmagic==0.2.3`
+1. Identifique onde `sparkmagic` está instalado digitando o seguinte comando:
+
+    ```cmd
+    pip show sparkmagic
+    ```
+
+    Em seguida, altere o seu diretório de trabalho para o local identificado com o comando acima.
+
+1. Em seu novo diretório de trabalho, digite um ou mais dos comandos a seguir para instalar o kernel(s) desejado:
+
+    |Kernel | Comando |
+    |---|---|
+    |Spark|`jupyter-kernelspec install sparkmagic/kernels/sparkkernel`|
+    |SparkR|`jupyter-kernelspec install sparkmagic/kernels/sparkrkernel`|
+    |PySpark|`jupyter-kernelspec install sparkmagic/kernels/pysparkkernel`|
+    |PySpark3|`jupyter-kernelspec install sparkmagic/kernels/pyspark3kernel`|
+
+1. Opcional. Insira o comando a seguir para habilitar a extensão do servidor:
+
+    ```cmd
+    jupyter serverextension enable --py sparkmagic
+    ```
 
 ## <a name="configure-spark-magic-to-connect-to-hdinsight-spark-cluster"></a>Configurar a mágica do Spark para se conectar ao cluster do HDInsight Spark
 
-Nesta seção, você configura a mágica do Spark instalada anteriormente para se conectar a um cluster do Apache Spark que você já deve ter criado no Azure HDInsight.
+Nesta seção, você configura a mágica do Spark instalada anteriormente para se conectar a um cluster Apache Spark.
 
 1. Inicie o shell do Python com o seguinte comando:
 
-    ```
+    ```cmd
     python
     ```
 
-2. As informações de configuração do Jupyter normalmente são armazenadas no diretório base dos usuários. Insira o comando a seguir para identificar o diretório base e crie uma pasta chamada **sparkmagic**.  O caminho completo será podem ser exportado.
+2. As informações de configuração do Jupyter normalmente são armazenadas no diretório base dos usuários. Digite o seguinte comando para identificar o diretório base e crie uma pasta chamada **sparkmagic**.  O caminho completo será podem ser exportado.
 
     ```python
     import os
@@ -100,14 +121,15 @@ Nesta seção, você configura a mágica do Spark instalada anteriormente para s
       "heartbeat_retry_seconds": 1
     }
     ```
+
 4. Faça as seguintes edições no arquivo:
 
     |Valor do modelo | Novo valor |
     |---|---|
-    |{USERNAME}|Logon do cluster, o padrão é Admin.|
+    |{USERNAME}|Logon do cluster, o padrão é `admin`.|
     |{CLUSTERDNSNAME}|Nome do cluster|
     |{BASE64ENCODEDPASSWORD}|Base64 codificado a senha para sua senha real.  Você pode gerar uma senha de base64 no [ https://www.url-encode-decode.com/base64-encode-decode/ ](https://www.url-encode-decode.com/base64-encode-decode/).|
-    |`"livy_server_heartbeat_timeout_seconds": 60`|Lembre-se usando `sparkmagic 0.11.23` (clusters v3.5 e v3.6).  Se usando `sparkmagic 0.2.3` (clusters v3.4), substitua `"should_heartbeat": true`.|
+    |`"livy_server_heartbeat_timeout_seconds": 60`|Lembre-se usando `sparkmagic 0.12.7` (clusters v3.5 e v3.6).  Se usando `sparkmagic 0.2.3` (clusters v3.4), substitua `"should_heartbeat": true`.|
 
     Você pode ver um arquivo de exemplo completo em [config. JSON de exemplo](https://github.com/jupyter-incubator/sparkmagic/blob/master/sparkmagic/example_config.json).
 
@@ -116,11 +138,13 @@ Nesta seção, você configura a mágica do Spark instalada anteriormente para s
 
 5. Inicie o Jupyter. Use o comando do prompt de comando a seguir.
 
-        jupyter notebook
+    ```cmd
+    jupyter notebook
+    ```
 
 6. Verifique se que você pode usar a mágica Spark disponível com os kernels. Execute as seguintes etapas:
 
-     a. Crie um novo bloco de anotações. No canto superior direito, selecione **New**. Você deve ver o kernel padrão **Python 2** ou **Python 3** e os kernels que você instalou. Os valores reais podem variar, dependendo de suas opções de instalação.  Selecione **PySpark**.
+    a. Crie um novo bloco de anotações. No canto superior direito, selecione **New**. Você deve ver o kernel padrão **Python 2** ou **Python 3** e os kernels que você instalou. Os valores reais podem variar, dependendo de suas opções de instalação.  Selecione **PySpark**.
 
     ![Kernels no bloco de anotações do Jupyter](./media/apache-spark-jupyter-notebook-install-locally/jupyter-kernels.png "Kernels no bloco de anotações do Jupyter")
 
@@ -151,26 +175,8 @@ Pode haver vários motivos pelos quais você pode querer instalar o Jupyter em s
 > [!WARNING]  
 > Com o Jupyter instalado no computador local, vários usuários podem executar o mesmo bloco de notas no mesmo cluster Spark ao mesmo tempo. Nessa situação, várias sessões Livy são criadas. Se você tiver um problema e desejar depurá-lo, será uma tarefa complexa rastrear qual sessão Livy pertence a qual usuário.  
 
-## <a name="seealso"></a>Consulte também
-* [Visão geral: Apache Spark no Azure HDInsight](apache-spark-overview.md)
+## <a name="next-steps"></a>Próximas etapas
 
-### <a name="scenarios"></a>Cenários
+* [Visão geral: Apache Spark no Azure HDInsight](apache-spark-overview.md)
 * [Apache Spark com BI: Executar análise de dados interativa usando o Spark no HDInsight com ferramentas de BI](apache-spark-use-bi-tools.md)
 * [Apache Spark com Machine Learning: Usar o Spark no HDInsight para analisar a temperatura de prédios usando dados do sistema de HVAC](apache-spark-ipython-notebook-machine-learning.md)
-* [Apache Spark com Machine Learning: Usar o Spark no HDInsight para prever resultados da inspeção de alimentos](apache-spark-machine-learning-mllib-ipython.md)
-* [Análise de log do site usando o Apache Spark no HDInsight](apache-spark-custom-library-website-log-analysis.md)
-
-### <a name="create-and-run-applications"></a>Criar e executar aplicativos
-* [Criar um aplicativo autônomo usando Scala](apache-spark-create-standalone-application.md)
-* [Execute trabalhos remotamente em um cluster do Apache Spark usando o Apache Livy](apache-spark-livy-rest-interface.md)
-
-### <a name="tools-and-extensions"></a>Ferramentas e extensões
-* [Use o Plug-in de Ferramentas do HDInsight para IntelliJ IDEA para criar e enviar aplicativos Spark Scala](apache-spark-intellij-tool-plugin.md)
-* [Use o Plugin do HDInsight Tools para o IntelliJ IDEA para depurar os aplicativos do Apache Spark remotamente](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
-* [Use os blocos de anotações do Apache Zeppelin com um cluster do Apache Spark no HDInsight](apache-spark-zeppelin-notebook.md)
-* [Kernels disponíveis para o notebook Jupyter no cluster do Apache Spark para HDInsight](apache-spark-jupyter-notebook-kernels.md)
-* [Usar pacotes externos com blocos de notas Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
-
-### <a name="manage-resources"></a>Gerenciar recursos
-* [Gerenciar os recursos de cluster do Apache Spark no Azure HDInsight](apache-spark-resource-manager.md)
-* [Rastrear e depurar trabalhos em execução em um cluster do Apache Spark no HDInsight](apache-spark-job-debugging.md)

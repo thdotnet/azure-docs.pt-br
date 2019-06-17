@@ -10,12 +10,12 @@ ms.subservice: acoustics
 ms.topic: resources
 ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: 3426681aad19bbe01c0f7e88ca16e79c0b490c36
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 1f2b4d25b39e9b3ebc6659e736d47640964251dc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61335323"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64693893"
 ---
 # <a name="project-acoustics-frequently-asked-questions"></a>Perguntas frequentes sobre o projeto acústica
 
@@ -27,7 +27,7 @@ O pacote do projeto acústica de plug-ins é um sistema de acústica que calcula
 
 Você pode baixar o [plug-in do projeto acústica Unity](https://www.microsoft.com/download/details.aspx?id=57346) ou o [plug-in do projeto acústica Unreal](https://www.microsoft.com/download/details.aspx?id=58090).
 
-## <a name="does-project-acoustics-support-x-platform"></a>Oferece suporte a projeto acústica <x> plataforma?
+## <a name="does-project-acoustics-support-ltxgt-platform"></a>Oferece suporte a projeto acústica &lt;x&gt; plataforma?
 
 Suporte à plataforma do projeto acústica evolui com base nas necessidades do cliente. Entre em contato conosco sobre o [fóruns do projeto acústica](https://social.msdn.microsoft.com/Forums/en-US/home?forum=projectacoustics) para saber mais sobre o suporte para outras plataformas.
 

@@ -13,10 +13,10 @@ ms.author: gamal
 ms.reviewer: maghan
 manager: craigg
 ms.openlocfilehash: 76962975705ff53a292f41a0a54e42c5f2991a2c
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66002669"
 ---
 # <a name="continuous-integration-and-delivery-cicd-in-azure-data-factory"></a>Integração e entrega contínua (CI / CD) no Azure Data Factory
@@ -101,7 +101,7 @@ Aqui estão as etapas para configurar uma versão do Azure Pipelines para que vo
 
 1.  Adicione uma tarefa de Implantação do Azure Resource Manager:
 
-     a.  Crie a nova tarefa, procure **Implantação de Grupo de Recursos do Azure**e adicione-o.
+    a.  Crie a nova tarefa, procure **Implantação de Grupo de Recursos do Azure**e adicione-o.
 
     b.  Na tarefa de Implantação, escolha a assinatura, o grupo de recursos e o local para o Data Factory de destino e forneça credenciais se necessário.
 

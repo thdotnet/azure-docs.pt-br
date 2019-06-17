@@ -16,12 +16,12 @@ ms.date: 04/15/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b00afa3d1001ee7c48997e41fd6042763bcc9aa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cd41bdfb90e5e8428a747832c10fe23a2cac4560
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60347610"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109397"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Autenticação de passagem do Azure Active Directory: Perguntas frequentes
 
@@ -39,9 +39,9 @@ A Autenticação de Passagem é um recurso gratuito. Você não precisa de nenhu
 
 Não. A Autenticação de Passagem está disponível apenas na instância mundial do Azure AD.
 
-## <a name="does-conditional-accessactive-directory-conditional-access-azure-portalmd-work-with-pass-through-authentication"></a>O [acesso condicional](../active-directory-conditional-access-azure-portal.md) funciona com a Autenticação de Passagem?
+## <a name="does-conditional-accessactive-directory-conditional-access-azure-portalmd-work-with-pass-through-authentication"></a>O [Acesso Condicional](../active-directory-conditional-access-azure-portal.md) funciona com a Autenticação de Passagem?
 
-Sim. Todos os recursos de acesso condicional, incluindo a Autenticação Multifator do Azure, funcionam com a Autenticação de Passagem.
+Sim. Todos os recursos de acesso condicional, incluindo a autenticação multifator, trabalham com a autenticação de passagem.
 
 ## <a name="does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname"></a>A Autenticação de Passagem dá suporte à "ID alternativa" como nome de usuário, em vez de "userPrincipalName"?
 

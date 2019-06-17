@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: cbabdde2dd5df2ca40ee45fe0f7b0437f095673b
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 84e8eedfb206e28f245128a4e30aba44e96277ab
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020373"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072428"
 ---
 # <a name="what-is-text-to-speech"></a>O que é o texto em fala?
 
@@ -32,7 +32,7 @@ Vozes padrão são criadas usando técnicas de síntese paramétrica estatístic
 
 Vozes neurais usam redes neurais profundas para superar os limites dos sistemas tradicionais de texto em fala na correspondência de padrões de estresse e entonação no idioma falado e resumir as unidades de conversão de fala em uma voz de computador. Texto em fala padrão divide-se a métrica em análise linguística separado e etapas de previsão acústico controladas por modelos independentes. Isso pode resultar na síntese de voz muffled, buzzy. Nossa funcionalidade neural faz síntese de voz e previsão de métrica simultaneamente, o que resulta em uma voz mais fluida e alarme natural.
 
-Vozes neurais podem ser usadas para interagir com chatbots e assistentes virtuais de forma mais natural e participativa para converter textos digitais, como livros eletrônicos, em audiolivros, e aprimorar sistemas de navegação de carros. Com a métrica de natural humana e clara Articulação das palavras, vozes Neural reduzem significativamente fadiga escuta ao interagir com sistemas de inteligência Artificial. 
+Vozes neurais podem ser usadas para interagir com chatbots e assistentes virtuais de forma mais natural e participativa para converter textos digitais, como livros eletrônicos, em audiolivros, e aprimorar sistemas de navegação de carros. Com a métrica de natural humana e clara Articulação das palavras, vozes neurais reduzem significativamente fadiga escuta ao interagir com sistemas de inteligência Artificial. 
 
 Vozes neurais dão suporte a estilos diferentes, como neutra e alegre. Por exemplo, a voz Jessa (en-US) pode falar cheerfully, que é otimizado para conversas de passiva, feliz. Você pode ajustar a saída de voz, como tom, tom e acelere o aprendizado usando [linguagem de marcação de síntese de fala](speech-synthesis-markup.md). Para obter uma lista completa das vozes disponíveis, consulte [idiomas com suporte](language-support.md#text-to-speech).
 
@@ -49,11 +49,11 @@ Esta tabela lista os principais recursos de texto em fala:
 | Caso de uso | . | REST |
 |----------|-----|------|
 | Converta texto em fala. | Sim | Sim |
-| Carrega conjuntos de dados para a adaptação de voz. | Não  | Sim\* |
-| Criar e gerenciar modelos de fonte de voz. | Não  | Sim\* |
-| Criar e gerenciar implantações de fonte de voz. | Não  | Sim\* |
-| Criar e gerenciar testes de fonte de voz. | Não  | Sim\* |
-| Gerencie assinaturas. | Não  | Sim\* |
+| Carrega conjuntos de dados para a adaptação de voz. | Não | Sim\* |
+| Criar e gerenciar modelos de fonte de voz. | Não | Sim\* |
+| Criar e gerenciar implantações de fonte de voz. | Não | Sim\* |
+| Criar e gerenciar testes de fonte de voz. | Não | Sim\* |
+| Gerencie assinaturas. | Não | Sim\* |
 
 \* *Esses serviços estão disponíveis usando o ponto de extremidade cris.ai. Ver [Swagger referência](https://westus.cris.ai/swagger/ui/index). Esses treinamento de voz personalizadas e as APIs de gerenciamento de implementam a limitação que limitar as solicitações a 25 por 5 segundos, enquanto a síntese de fala, API em si implementa a limitação que permite a 200 solicitações por segundo, o mais alto. Quando a limitação ocorre, você será notificado por meio de cabeçalhos de mensagem.*
 
@@ -65,8 +65,8 @@ Nós oferecemos guias de início rápido foi projetados para ter está executand
 
 | Guia de início rápido (SDK) | Plataforma | Referência de API |
 |------------|----------|---------------|
-| [C#, .NET Framework](quickstart-text-to-speech-dotnet-windows.md) |  Windows | [Browse](https://aka.ms/csspeech/csharpref) |
-| [C++](quickstart-text-to-speech-cpp-windows.md) |  Windows | [Browse](https://aka.ms/csspeech/cppref) |
+| [C#, .NET Framework](quickstart-text-to-speech-dotnet-windows.md) | Windows | [Browse](https://aka.ms/csspeech/csharpref) |
+| [C++](quickstart-text-to-speech-cpp-windows.md) | Windows | [Browse](https://aka.ms/csspeech/cppref) |
 | [C++](quickstart-text-to-speech-cpp-linux.md) | Linux | [Browse](https://aka.ms/csspeech/cppref) |
 
 ### <a name="rest-quickstarts"></a>Guias de início rápido REST

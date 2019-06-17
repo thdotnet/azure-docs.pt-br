@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f63aebb9a9bbefe84ac36b92cd69e0d93de0ab76
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66298751"
 ---
 # <a name="troubleshooting-errors-during-synchronization"></a>Solucionando erros durante a sincronização
@@ -172,11 +172,11 @@ O motivo mais comum para o erro AttributeValueMustBeUnique é que dois objetos c
 O Azure Active Directory impõe várias restrições nos dados antes de permitir que dados sejam gravados no diretório. Essas restrições têm a finalidade de garantir que os usuários finais tenham as melhores experiências possíveis ao usar os aplicativos que dependem desses dados.
 
 #### <a name="scenarios"></a>Cenários
- a. O valor do atributo UserPrincipalName tem caracteres inválidos ou sem suporte.
+a. O valor do atributo UserPrincipalName tem caracteres inválidos ou sem suporte.
 b. O atributo UserPrincipalName não segue o formato necessário.
 
 #### <a name="how-to-fix-identitydatavalidationfailed-error"></a>Como corrigir o erro IdentityDataValidationFailed
- a. Certifique-se de que o atributo userPrincipalName tem caracteres com suporte e o formato necessário.
+a. Certifique-se de que o atributo userPrincipalName tem caracteres com suporte e o formato necessário.
 
 #### <a name="related-articles"></a>Artigos relacionados
 * [Prepare to provision users through directory synchronization to Office 365](https://support.office.com/article/Prepare-to-provision-users-through-directory-synchronization-to-Office-365-01920974-9e6f-4331-a370-13aea4e82b3e) (Preparar para provisionar usuários por meio da sincronização de diretório para o Office 365)

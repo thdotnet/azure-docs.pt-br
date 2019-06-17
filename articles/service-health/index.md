@@ -5,33 +5,48 @@ author: stephbaron
 layout: LandingPage
 ms.service: service-health
 ms.topic: landing-page
-ms.date: 03/4/2019
+ms.date: 06/05/2019
 ms.author: stbaron
-ms.openlocfilehash: aa00d4b08725eaf4b667fc7b53b225198db95a02
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.openlocfilehash: 05ea33076f329a6244d4259bf3f973b88bf1f2b5
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65441649"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073403"
 ---
 # <a name="azure-service-health-documentation"></a>Documentação do Azure Service Health
 
-O Azure oferece um conjunto de experiências para manter você informado sobre a integridade de seus recursos de nuvem, incluindo problemas atuais e futuros, como serviço que afeta eventos, manutenção planejada e outras alterações que podem afetar a disponibilidade.
+A integridade do serviço do Azure é um conjunto de experiências que fornece orientação personalizada e suporte quando ocorrem problemas nos serviços do Azure. A Integridade do Serviço do Azure pode notificá-lo, ajudá-lo a entender o efeito de um problema e mantê-lo atualizado durante a resolução do problema. Ela também ajuda a preparar manutenção planejada e alterações que possam afetar a disponibilidade dos recursos.
 
-Talvez você esteja familiarizado com a **[página de Status do Azure](https://status.azure.com)**, uma exibição global da integridade de todos os serviços do Azure em todas as regiões do Azure. A página de status é uma boa referência para incidentes com impacto generalizado, mas é altamente recomendável que os usuários atuais do Azure aproveitem a **Integridade do Serviço do Azure** para se manterem informados sobre incidentes e manutenção do Azure.
+A Integridade do Serviço do Azure é composta de:
 
-A **[Integridade do Serviço do Azure](service-health-overview.md)** fornece uma exibição personalizada da integridade dos serviços do Azure e das regiões que você está usando. Esse é o melhor lugar para procurar por serviço que afete as comunicações sobre interrupções, atividades de manutenção planejada e outros avisos de integridade porque a experiência autenticada da Integridade do Serviço do Azure sabe quais serviços e recursos você usa atualmente. A melhor maneira de usar a Integridade do Serviço é configurar alertas de Integridade do Serviço para notificá-lo por meio de seus canais de comunicação preferenciais quando problemas de serviço, manutenção planejada ou outras alterações podem afetar os serviços do Azure e as regiões que você usa.
-
-O **[Azure Resource Health](resource-health-overview.md)** fornece informações sobre a integridade de seus recursos de nuvem individuais, como uma instância de máquina virtual específica. Usando o Azure Monitor, você também pode configurar alertas para notificá-lo de alterações de disponibilidade para seus recursos de nuvem. O Azure Resource Health juntamente com as notificações do Azure Monitor ajudará você a ficar mais bem informado sobre a disponibilidade de seus recursos de minuto a minuto e avaliar rapidamente se um problema ocorreu devido a uma complicação no seu lado ou está relacionado a um evento da plataforma do Azure.
+ * **Status do Azure** - uma exibição global da integridade dos serviços do Azure
+ * **Integridade do serviço** - uma exibição personalizada da integridade de seus serviços do Azure
+ * **Resource Health** - uma visão mais profunda da integridade dos recursos individuais fornecidos a você pelos serviços do Azure
 
 Juntas, essas experiências fornecem uma visão abrangente da integridade do Azure, na granularidade mais relevante para você.
 
-### <a name="watch-an-overview-of-the-azure-status-page-azure-service-health-and-azure-resource-health"></a>Assista a uma visão geral da página Status do Azure, Integridade do Serviço do Azure e Azure Resource Health
-
->[!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2OgX6]
-
+Para obter informações mais detalhadas sobre cada serviço, confira [Visão geral da Integridade do Serviço](overview.md)
 
 <ul class="panelContent cardsFTitle">
+    <li>
+        <a href="https://www.microsoft.com/en-us/videoplayer/embed/RE2OgX6">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="media/index/video-library.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Exibir um vídeo de introdução da Integridade do Serviço</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
     <li>
         <a href="/azure/service-health/azure-status-overview">
         <div class="cardSize">
@@ -80,24 +95,6 @@ Juntas, essas experiências fornecem uma visão abrangente da integridade do Azu
                     </div>
                     <div class="cardText">
                         <h3>Saiba mais sobre o Resource Health</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="https://azure.microsoft.com/resources/videos/announcing-azure-service-health/">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/video-library.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Exibir uma introdução de vídeo no Service Health</h3>
                     </div>
                 </div>
             </div>

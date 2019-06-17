@@ -9,17 +9,17 @@ ms.date: 01/11/2019
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 9c59b98fb615266c193f997c01c83922c18d4408
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66147902"
 ---
 *Aquecendo o cache*  
 O disco com o cache de host ReadOnly pode oferecer IOPS mais alta do que o limite do disco. Para atingir esse desempenho máximo de leitura do cache de host, primeiramente você deve aquecer o cache desse disco. Isso faz com que as E/S de leitura que a ferramenta de parâmetros de comparação impulsionará no volume CacheReads realmente alcancem o cache, não o disco diretamente. Os acertos no cache resultam em IOPS adicional do único disco habilitado para cache.
 
 > [!IMPORTANT]
->  você deve aquecer o cache antes de executar os parâmetros de comparação, toda vez que a VM é reinicializada.
+> você deve aquecer o cache antes de executar os parâmetros de comparação, toda vez que a VM é reinicializada.
 
 ## <a name="tools"></a>Ferramentas
 
@@ -35,12 +35,12 @@ O Iometer usa um arquivo de teste que fica armazenado no volume no qual você ex
 
 As especificações, o tamanho da E/S de solicitação, a % de leitura/gravação, a % aleatória/sequencial são configurados usando a guia "Especificações de Acesso" no Iometer. Crie uma especificação de acesso para cada um dos cenários descritos abaixo. Crie as especificações de acesso e "Salve" com um nome apropriado como – RandomWrites\_8K, RandomReads\_8K. Selecione a especificação correspondente ao executar o cenário de teste.
 
-Um exemplo de especificações de acesso para o cenário de IOPS de gravação máxima é mostrado abaixo,   
+Um exemplo de especificações de acesso para o cenário de IOPS de gravação máxima é mostrado abaixo,  
     ![Exemplo de especificações de acesso para a IOPS de gravação máxima](../articles/virtual-machines/linux/media/premium-storage-performance/image8.png)
 
 #### <a name="maximum-iops-test-specifications"></a>Especificações de teste de IOPS máxima
 
- Para demonstrar a IOPS máxima, use o tamanho de solicitação menor. Use o tamanho de solicitação de 8 K e crie especificações para gravações e leituras aleatórias.
+Para demonstrar a IOPS máxima, use o tamanho de solicitação menor. Use o tamanho de solicitação de 8 K e crie especificações para gravações e leituras aleatórias.
 
 | Especificação de acesso | Tamanho da solicitação | Aleatório % | Leitura % |
 | --- | --- | --- | --- |
@@ -49,7 +49,7 @@ Um exemplo de especificações de acesso para o cenário de IOPS de gravação m
 
 #### <a name="maximum-throughput-test-specifications"></a>Especificações de teste de taxa de transferência máxima
 
- Para demonstrar a Taxa de Transferência máxima, use o tamanho de solicitação maior. Use o tamanho de solicitação de 64K e crie especificações para gravações e leituras aleatórias.
+Para demonstrar a Taxa de Transferência máxima, use o tamanho de solicitação maior. Use o tamanho de solicitação de 64K e crie especificações para gravações e leituras aleatórias.
 
 | Especificação de acesso | Tamanho da solicitação | Aleatório % | Leitura % |
 | --- | --- | --- | --- |
@@ -58,7 +58,7 @@ Um exemplo de especificações de acesso para o cenário de IOPS de gravação m
 
 #### <a name="run-the-iometer-test"></a>Executar o teste Iometer
 
- Execute as etapas abaixo para aquecer o cache
+Execute as etapas abaixo para aquecer o cache
 
 1. Crie duas especificações de acesso com os valores mostrados abaixo:
 
@@ -68,7 +68,7 @@ Um exemplo de especificações de acesso para o cenário de IOPS de gravação m
    | RandomReads\_1MB |1 MB |100 |100 |
 1. Execute o teste Iometer para inicializar o disco do cache com os parâmetros a seguir. Use três threads de trabalho para o volume de destino e uma profundidade de fila de 128. Defina a duração do teste "Tempo de execução" como 2 horas na guia "Configuração do teste".
 
-   | Cenário | Volume de destino | NOME | Duração |
+   | Cenário | Volume de destino | NOME | Duration |
    | --- | --- | --- | --- |
    | Inicializar disco do cache |CacheReads |RandomWrites\_1MB |2 horas |
 1. Execute o teste Iometer para aquecer o disco do cache com os parâmetros a seguir. Use três threads de trabalho para o volume de destino e uma profundidade de fila de 128. Defina a duração do teste "Tempo de execução" como 2 horas na guia "Configuração do teste".
@@ -81,9 +81,9 @@ Depois de aquecer o disco do cache, prossiga com os cenários de teste listados 
 
 | Cenário de teste | Volume de destino | NOME | Result |
 | --- | --- | --- | --- |
-| Máx. IOPS de leitura |CacheReads |RandomWrites\_8K |50.000 IOPS  |
-| Máx. IOPS de gravação |NoCacheWrites |RandomReads\_8K |64.000 IOPS |
-| Máx. IOPS combinada |CacheReads |RandomWrites\_8K |100.000 IOPS |
+| Máx. IOPS de leitura |CacheReads |RandomWrites\_8K |50\.000 IOPS |
+| Máx. IOPS de gravação |NoCacheWrites |RandomReads\_8K |64\.000 IOPS |
+| Máx. IOPS combinada |CacheReads |RandomWrites\_8K |100\.000 IOPS |
 | NoCacheWrites |RandomReads\_8K | &nbsp; | &nbsp; |
 | Máx. MB/s de leitura |CacheReads |RandomWrites\_64K |524 MB/s |
 | Máx. MB/s de gravação |NoCacheWrites |RandomReads\_64K |524 MB/s |
@@ -116,7 +116,7 @@ Usamos quatro threads de trabalho para impulsionar operações de gravação e q
 
 #### <a name="maximum-write-iops"></a>IOPS máxima de gravação
 
- Crie o arquivo de trabalho com as especificações a seguir para obter IOPS máxima de gravação. Dê o nome de "fiowrite.ini".
+Crie o arquivo de trabalho com as especificações a seguir para obter IOPS máxima de gravação. Dê o nome de "fiowrite.ini".
 
 ```ini
 [global]
@@ -157,7 +157,7 @@ Enquanto o teste é executado, você pode ver o número de IOPS de gravação fo
 
 #### <a name="maximum-read-iops"></a>IOPS máxima de leitura
 
- Crie o arquivo de trabalho com as especificações a seguir para obter IOPS máxima de leitura. Dê o nome de "fioread.ini".
+Crie o arquivo de trabalho com as especificações a seguir para obter IOPS máxima de leitura. Dê o nome de "fioread.ini".
 
 ```ini
 [global]
@@ -198,7 +198,7 @@ Enquanto o teste é executado, você pode ver o número de IOPS de leitura forne
 
 #### <a name="maximum-read-and-write-iops"></a>IOPS máxima de leitura e gravação
 
- Crie o arquivo de trabalho com as especificações a seguir para obter a IOPS Máxima de Leitura e Gravação. Dê o nome de "fioreadwrite.ini".
+Crie o arquivo de trabalho com as especificações a seguir para obter a IOPS Máxima de Leitura e Gravação. Dê o nome de "fioreadwrite.ini".
 
 ```ini
 [global]
@@ -256,4 +256,4 @@ Enquanto o teste é executado, você pode ver o número de IOPS de leitura e gra
 
 #### <a name="maximum-combined-throughput"></a>Taxa de transferência máxima combinada
 
- Para atingir a Taxa de Transferência máxima de Leitura e Gravação combinadas, use um tamanho de bloco maior e uma profundidade de fila grande com vários threads executando leituras e gravações. É possível usar um tamanho de bloco de 64 KB e uma profundidade de fila de 128.
+Para atingir a Taxa de Transferência máxima de Leitura e Gravação combinadas, use um tamanho de bloco maior e uma profundidade de fila grande com vários threads executando leituras e gravações. É possível usar um tamanho de bloco de 64 KB e uma profundidade de fila de 128.

@@ -13,12 +13,12 @@ ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/26/2019
-ms.openlocfilehash: b1e952d9af474e2318ef91a6bdcc2605a3c30018
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: af6cec22ae455e6a6ead4c45fead2d7ff5b708d2
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60702278"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070500"
 ---
 # <a name="controlling-and-granting-database-access-to-sql-database-and-sql-data-warehouse"></a>Controlando e concedendo acesso de banco de dados a Banco de Dados SQL e SQL Data Warehouse
 
@@ -64,7 +64,7 @@ Quando o firewall no nível do servidor é configurado para um endereço IP indi
 
 Quando o firewall no nível de servidor é configurado corretamente, o **Administrador do servidor SQL** e o **Administrador do Azure Active Directory** podem se conectar usando ferramentas de cliente, como o SQL Server Management Studio ou o SQL Server Data Tools. Somente as ferramentas mais recentes fornecem todos os recursos e capacidades. O diagrama a seguir mostra uma configuração típica para as duas contas de administrador.
 
-![Caminho de acesso do administrador](./media/sql-database-manage-logins/1sql-db-administrator-access.png)
+![configuração das contas de administração de dois](./media/sql-database-manage-logins/1sql-db-administrator-access.png)
 
 Ao usar uma porta aberta no firewall no nível do servidor, os administradores podem se conectar a qualquer Banco de Dados SQL.
 
@@ -214,7 +214,7 @@ Ao gerenciar logons e usuários no Banco de Dados SQL, considere o seguinte:
 - Ao executar a instrução `CREATE USER` com a opção `FOR/FROM LOGIN`, ela deve ser a única instrução em um lote do Transact-SQL.
 - Ao executar a instrução `ALTER USER` com a opção `WITH LOGIN`, ela deve ser a única instrução em um lote do Transact-SQL.
 - Para o `CREATE/ALTER/DROP`, um usuário requer a permissão `ALTER ANY USER` no banco de dados.
-- Quando o proprietário de uma função de banco de dados tenta adicionar ou remover outro usuário de banco de dados de ou para essa função de banco de dados, pode ocorrer o seguinte erro: **Usuário ou função 'Nome' não existe neste banco de dados.**  Esse erro ocorre porque o usuário não está visível para o proprietário. Para resolver esse problema, conceda ao proprietário da função a permissão `VIEW DEFINITION` no usuário. 
+- Quando o proprietário de uma função de banco de dados tenta adicionar ou remover outro usuário de banco de dados de ou para essa função de banco de dados, pode ocorrer o seguinte erro: **Usuário ou função 'Nome' não existe neste banco de dados.** Esse erro ocorre porque o usuário não está visível para o proprietário. Para resolver esse problema, conceda ao proprietário da função a permissão `VIEW DEFINITION` no usuário. 
 
 
 ## <a name="next-steps"></a>Próximas etapas

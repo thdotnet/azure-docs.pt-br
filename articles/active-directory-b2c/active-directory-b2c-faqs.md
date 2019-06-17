@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 9198bd4f88533a8eb5817dcb6edb75931c40ec80
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: b8c649ad9bdc80f64b9c3a8ca33a544830d88d52
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66510049"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67116217"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure Active Directory B2C: Perguntas frequentes (FAQ) 
 Esta página responde a perguntas frequentes sobre o Azure AD (Azure Active Directory) B2C. Continue verificando as atualizações.
@@ -27,7 +27,7 @@ Há duas razões comuns para porque a extensão do AD do Azure não está funcio
 O Azure AD e o Azure AD B2C são ofertas de produtos separadas e não podem coexistir no mesmo locatário.  Um locatário do Azure AD representa uma organização.  Um locatário do Azure AD B2C representa uma coleção de identidades a serem usadas com aplicativos de terceira parte confiável.  Com as políticas personalizadas (em visualização pública), o Azure AD B2C pode se federar ao Azure AD, permitindo a autenticação de funcionários em uma organização.
 
 ### <a name="can-i-use-azure-ad-b2c-to-provide-social-login-facebook-and-google-into-office-365"></a>Posso usar AD B2C do Azure para fornecer logon social (Facebook e Google+) no Office 365?
-O Azure AD B2C não pode ser usado para autenticar usuários para o Microsoft Office 365.  O Azure AD é a solução da Microsoft para gerenciar o acesso de funcionários a aplicativos SaaS e tem recursos projetados para essa finalidade, como acesso condicional e licenciamento.  O Azure AD B2C fornece uma plataforma de gerenciamento de identidade e acesso para a criação de aplicativos Web e móveis.  Quando o Azure AD B2C é configurado para federar-se a um locatário do Azure AD, o locatário do Azure AD gerencia o acesso de funcionários a aplicativos que dependem do Azure AD B2C.
+O Azure AD B2C não pode ser usado para autenticar usuários para o Microsoft Office 365.  O Azure AD é a solução da Microsoft para gerenciar o acesso de funcionários a aplicativos SaaS e tem recursos projetados para essa finalidade, como o acesso condicional e licenciamento.  O Azure AD B2C fornece uma plataforma de gerenciamento de identidade e acesso para a criação de aplicativos Web e móveis.  Quando o Azure AD B2C é configurado para federar-se a um locatário do Azure AD, o locatário do Azure AD gerencia o acesso de funcionários a aplicativos que dependem do Azure AD B2C.
 
 ### <a name="what-are-local-accounts-in-azure-ad-b2c-how-are-they-different-from-work-or-school-accounts-in-azure-ad"></a>O que são contas locais no AD B2C do Azure? Como elas são diferentes de contas corporativas ou de estudante no AD do Azure?
 Em um locatário do Azure AD, os usuários que pertencem ao locatário entram com um endereço de email no formato `<xyz>@<tenant domain>`.  O `<tenant domain>` é um dos domínios verificados no locatário ou no domínio inicial `<...>.onmicrosoft.com`. Esse tipo de conta é uma conta corporativa ou de estudante.

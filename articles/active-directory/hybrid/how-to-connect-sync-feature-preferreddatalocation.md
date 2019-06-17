@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 927987237b51a47d0c8b7c66054842b0a7ff09a7
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66473031"
 ---
 # <a name="azure-active-directory-connect-sync-configure-preferred-data-location-for-office-365-resources"></a>Sincronização do Azure AD Connect: configurar o local de dados preferencial para recursos do Office 365
@@ -137,7 +137,7 @@ A regra de sincronização de entrada permite que o valor do atributo flua do at
 5. Mantenha o **Filtro de escopo** vazio para incluir todos os objetos. Talvez seja necessário ajustar o filtro de escopo de acordo com sua implantação do Azure AD Connect.
 6. Acesse a guia **Transformação** e implemente a seguinte regra de transformação:
 
-    | Tipo de fluxo | Atributo de destino | `Source` | Aplicar uma vez | Tipo de mesclagem |
+    | Tipo de fluxo | Atributo de destino | source | Aplicar uma vez | Tipo de mesclagem |
     | --- | --- | --- | --- | --- |
     |Direta | preferredDataLocation | Selecione o atributo de origem | Desmarcado | Atualizar |
 
@@ -174,7 +174,7 @@ A regra de sincronização de saída permite que o valor do atributo flua do met
 
 6. Acesse a guia **Transformação** e implemente a seguinte regra de transformação:
 
-    | Tipo de fluxo | Atributo de destino | `Source` | Aplicar uma vez | Tipo de mesclagem |
+    | Tipo de fluxo | Atributo de destino | source | Aplicar uma vez | Tipo de mesclagem |
     | --- | --- | --- | --- | --- |
     | Direta | preferredDataLocation | preferredDataLocation | Desmarcado | Atualizar |
 

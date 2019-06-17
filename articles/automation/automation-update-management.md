@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 4df40febefa872fa52afdfaaf31b94dba7000af5
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
-ms.translationtype: MT
+ms.openlocfilehash: b28d590390cd1a1ef1c6651e6943ac2a7fa0af29
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66729492"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075511"
 ---
 # <a name="update-management-solution-in-azure"></a>Solução Gerenciamento de Atualizações no Azure
 
@@ -45,7 +45,7 @@ Após um computador de uma verificação de conformidade da atualização, o age
 
 Além do agendamento da verificação, a verificação de conformidade de atualizações será iniciada em 15 minutos se o MMA estiver sendo reiniciado antes da instalação da atualização e após a instalação da atualização.
 
-Para um computador Linux, a verificação de conformidade é executada a cada 3 horas por padrão. Se o agente MMA for reiniciado, uma verificação de conformidade é iniciada dentro de 15 minutos.
+Para um computador Linux, a verificação de conformidade é executada a cada hora por padrão. Se o agente MMA for reiniciado, uma verificação de conformidade é iniciada dentro de 15 minutos.
 
 A solução relata o grau de atualização do computador com base na fonte com a qual você está configurado para realizar a sincronização. Se o computador do Windows estiver configurado para relatar para o WSUS, dependendo de quando o WSUS foi sincronizado pela última vez com o Microsoft Update, os resultados poderão diferir do que é mostrado pelo Microsoft Updates. Esse comportamento é o mesmo para computadores Linux configurados para relatar a um repositório local em vez de para um repositório público.
 
@@ -303,7 +303,7 @@ O Gerenciamento de Atualizações se baseia no Windows Update para baixar e inst
 
 ### <a name="pre-download-updates"></a>Pré-download de atualizações
 
-Para configurar automaticamente o download de atualizações na Política de Grupo, você pode definir a [configuração Configurar atualizações automáticas](/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates#BKMK_comp5) como **3**. Isso baixa as atualizações necessárias em segundo plano, mas não as instala. Isso mantém o Gerenciamento de Atualizações no controle das agendas, mas permite que as atualizações sejam baixadas fora da janela de manutenção do Gerenciamento de Atualizações. Isso pode impedir erros de **Janela de manutenção excedida** no Gerenciamento de Atualizações.
+Para configurar automaticamente o download de atualizações na Política de Grupo, você pode definir a [configuração Configurar atualizações automáticas](/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates##configure-automatic-updates) como **3**. Isso baixa as atualizações necessárias em segundo plano, mas não as instala. Isso mantém o Gerenciamento de Atualizações no controle das agendas, mas permite que as atualizações sejam baixadas fora da janela de manutenção do Gerenciamento de Atualizações. Isso pode impedir erros de **Janela de manutenção excedida** no Gerenciamento de Atualizações.
 
 Você também pode definir isso com o PowerShell. Execute o PowerShell a seguir em um sistema que você deseje baixar automaticamente as atualizações.
 

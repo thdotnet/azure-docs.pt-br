@@ -16,7 +16,7 @@ metadata:
   ms.date: 08/14/2018
   ms.author: joflore
 abstract:
-  description: 'Por meio de dispositivos no Azure AD, os usuários têm acesso aos ativos corporativos. Para proteger os ativos corporativos, como um administrador de TI, você quer gerenciar essas identidades de dispositivo no Azure AD. Desse modo, você tem a certeza de que os usuários estão acessando os recursos de dispositivos que atendem aos padrões de segurança e conformidade.<br>O gerenciamento de Identidades do dispositivo também é a base para acesso condicional com base no dispositivo. Com o acesso condicional com base no dispositivo, você pode garantir que o acesso a recursos em seu ambiente somente seja possível com dispositivos gerenciados.'
+  description: 'Por meio de dispositivos no Azure AD, os usuários têm acesso aos ativos corporativos. Para proteger os ativos corporativos, como um administrador de TI, você quer gerenciar essas identidades de dispositivo no Azure AD. Desse modo, você tem a certeza de que os usuários estão acessando os recursos de dispositivos que atendem aos padrões de segurança e conformidade.<br>O gerenciamento de identidade do dispositivo também é a base para o acesso condicional com base no dispositivo. Com o acesso condicional com base no dispositivo, você pode garantir que o acesso a recursos em seu ambiente somente seja possível com dispositivos gerenciados.'
 sections:
   - title: Tutoriais passo a passo
     items:

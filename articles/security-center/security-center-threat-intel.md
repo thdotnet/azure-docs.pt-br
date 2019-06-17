@@ -14,15 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/3/2018
 ms.author: rkarlin
-ms.openlocfilehash: f1e238890b777e2816648ec407e2581f636d1c12
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 36201bad64e5516375afe1ec9ce141c3fd311d48
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60906016"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64574356"
 ---
 # <a name="security-alerts-map-and-threat-intelligence"></a>Inteligência contra ameaças e mapa de alertas de segurança
 Este artigo ajuda você a usar o mapa de alertas da Central de Segurança do Azure e o mapa de inteligência de ameaças baseada em eventos de segurança para solucionar problemas relacionados à segurança.
+
+> [!NOTE]
+> A segurança *eventos* botão mapa será desativado em 31 de julho de 2019. Para obter mais informações e serviços alternativos, consulte [recursos de desativação da Central de segurança (julho de 2019)](security-center-features-retirement-july2019.md#menu_securityeventsmap).
+
 
 ## <a name="how-the-security-alerts-map-works"></a>Como mapear os trabalhos do mapa de alertas
 A Central de Segurança fornece a você com um mapa que ajuda você a identifica ameaças de segurança no ambiente. Por exemplo, você pode identificar se determinado computador faz parte de um botnet, e onde a ameaça é proveniente. Computadores podem se tornar nós em um botnet quando os invasores instalam de forma ilícita malware que secretamente interage com o comando e controle que gerencia o botnet. 
@@ -70,7 +74,7 @@ Para exibir o mapa de inteligência contra ameaças com base em eventos de segur
 
 6. O painel é dividido em quatro blocos:
 
-     a.  **Tipos de ameaça**. Resume os tipos de ameaça que foram detectados no workspace selecionado.
+    a.  **Tipos de ameaça**. Resume os tipos de ameaça que foram detectados no workspace selecionado.
 
     b.  **País de origem**. Agrega a quantidade de tráfego de acordo com seu local de origem.
 

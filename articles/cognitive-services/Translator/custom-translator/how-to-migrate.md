@@ -10,10 +10,10 @@ ms.date: 02/21/2019
 ms.author: v-pawal
 ms.topic: conceptual
 ms.openlocfilehash: 901b5312d216c241331b90a6b61d263437ab5c70
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66389299"
 ---
 # <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Migrar espaço de trabalho e projetos do Hub para o Tradutor Personalizado
@@ -80,7 +80,7 @@ Para migrar um espaço de trabalho:
 
 4. Na próxima página, selecione uma destas duas opções:
 
-     a. Somente treinamentos implantados: selecionar essa opção migrará apenas os sistemas implantados e documentos relacionados.
+    a. Somente treinamentos implantados: selecionar essa opção migrará apenas os sistemas implantados e documentos relacionados.
 
     b. Todos os treinamentos bem-sucedidos: selecionar essa opção migrará todos os treinamentos e documentos relacionados.
 
@@ -134,9 +134,9 @@ Esta tabela compara os recursos entre o Microsoft Translator Hub e o conversor p
 |:-----|:----:|:----:|
 |Status do recurso de personalização   | Disponibilidade geral  | Disponibilidade geral |
 | Versão da API de texto  | V2    | V3  |
-| Personalização de SMT | Sim   | Não  |
-| Personalização de NMT | Não     | Sim |
-| Nova personalização de serviços de Fala unificados | Não     | Sim |
+| Personalização de SMT | Sim   | Não |
+| Personalização de NMT | Não    | Sim |
+| Nova personalização de serviços de Fala unificados | Não    | Sim |
 | Sem rastreamento | Sim | Sim |
 
 ## <a name="new-languages"></a>Novos idiomas

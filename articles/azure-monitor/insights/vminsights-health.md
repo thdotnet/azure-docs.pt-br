@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 05/22/2019
 ms.author: magoedte
 ms.openlocfilehash: 9fa76c9637a6dcdca48bf45e8ee2aa9305a4f64f
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66130447"
 ---
 # <a name="understand-the-health-of-your-azure-virtual-machines"></a>Entender a integridade de suas máquinas virtuais do Azure
@@ -34,7 +34,7 @@ Para obter informações sobre como configurar o Monitor do Azure para VMs, cons
 
 Esta seção descreve os critérios de integridade padrão definidos para monitorar as máquinas virtuais do Windows e Linux do Azure. Todos os critérios de integridade são pré-configurados para o alerta quando a condição não íntegra é atendida. 
 
-### <a name="windows-vms"></a>VMs do Windows
+### <a name="windows-vms"></a>VMs Windows
 
 - Megabytes Disponíveis de Memória 
 - Média de Segundos de Disco por Gravação (Disco Lógico)
@@ -65,7 +65,7 @@ Esta seção descreve os critérios de integridade padrão definidos para monito
 - Integridade de serviço de Firewall do Windows
 - Integridade de serviço de gerenciamento remoto do Windows
 
-### <a name="linux-vms"></a>VMs do Linux
+### <a name="linux-vms"></a>VMs Linux
 - Disk Avg. de segundos/Transferência do Disco 
 - Disk Avg. de segundos/Leitura do Disco 
 - Disk Avg. de segundos/Gravação do Disco 
@@ -95,10 +95,10 @@ Na guia **Integridade**, na seção **Integridade Convidada da VM**, a tabela mo
 
 Os estados de integridade definidos para uma VM estão descritos na seguinte tabela: 
 
-|Ícone |Estado de integridade |Significado |
+|ícone |Estado de integridade |Significado |
 |-----|-------------|---------------|
-| |Adequado |O estado de integridade é íntegro se está dentro das condições de integridade definidas, que indicam ausência de problemas detectados na VM e que ela funciona conforme necessário. Com um monitor de acumulação pai, o Rollup de integridade e ele reflete o estado mais favorável, ou pior do filho.|
-| |Crítica |O estado de integridade é crítico se ele não está dentro da condição de integridade definida, o que indica que um ou mais problemas críticos foram detectados e precisam ser resolvidos para restaurar a funcionalidade normal. Com um monitor de acumulação pai, o Rollup de integridade e ele reflete o estado mais favorável, ou pior do filho.|
+| |Healthy |O estado de integridade é íntegro se está dentro das condições de integridade definidas, que indicam ausência de problemas detectados na VM e que ela funciona conforme necessário. Com um monitor de acumulação pai, o Rollup de integridade e ele reflete o estado mais favorável, ou pior do filho.|
+| |Crítico |O estado de integridade é crítico se ele não está dentro da condição de integridade definida, o que indica que um ou mais problemas críticos foram detectados e precisam ser resolvidos para restaurar a funcionalidade normal. Com um monitor de acumulação pai, o Rollup de integridade e ele reflete o estado mais favorável, ou pior do filho.|
 | |Aviso |O estado de integridade será de Aviso se estiver entre dois limites para a condição de integridade definida, em que um indica um estado de *Aviso* e o outro indica um estado *Crítico* (três limites de estado de integridade podem ser configurados), ou quando um problema não crítico é detectado, podendo vir a causar problemas críticos se não for resolvido. Com rollup pai monitor, se um ou mais filhos estão em um estado de aviso, em seguida, o pai refletirá *aviso* estado. Se houver um filho que esteja em um *Crítico* e outro filho em um estado *Aviso*, o pacote pai mostrará um estado de integridade de *Crítico*.|
 | |Desconhecido |Estado de integridade estiver *desconhecido* quando não puder ser calculado por vários motivos. Consulte a nota de rodapé seguinte <sup>1</sup> para obter detalhes adicionais e possíveis soluções para resolvê-los. |
 
@@ -120,7 +120,7 @@ Ao acessar a integridade de uma VM do Azure executando o sistema operacional Win
 
 ### <a name="aggregate-virtual-machine-perspective"></a>Perspectiva de máquina de virtual de agregação
 
-Para exibir a coleta de integridade de todas as suas máquinas virtuais em um grupo de recursos, na lista de navegação do portal, selecione **Monitor do Azure** e, em seguida, selecione **Máquinas Virtuais (visualização)**.  
+Para exibir a coleta de integridade de todas as suas máquinas virtuais em um grupo de recursos, na lista de navegação do portal, selecione **Monitor do Azure** e, em seguida, selecione **Máquinas Virtuais (visualização)** .  
 
 ![Exibição do Azure Monitor de monitoramento de Insights de VM](./media/vminsights-health/vminsights-aggregate-health.png)
 
@@ -154,7 +154,7 @@ Aqui, ele mostra um **Status de integridade** para a máquina virtual e **Alerta
 Selecionar **Visualizar todos os critérios de integridade** abre uma página mostrando uma lista de todos os critérios de integridade disponíveis com esse recurso.  As informações podem ser filtradas com base nas seguintes opções:
 
 * **Tipo** - Existem três tipos de critérios de integridade para avaliar condições e acumular o estado geral de integridade da VM monitorada.  
-     a. **Unidade** – medem alguns aspectos da máquina virtual. Esse tipo de critério de integridade pode estar verificando um contador de desempenho para determinar o desempenho do componente, executando um script para executar uma transação sintética ou observando um evento que indica um erro.  Por padrão, o filtro está definido para a unidade.  
+    a. **Unidade** – medem alguns aspectos da máquina virtual. Esse tipo de critério de integridade pode estar verificando um contador de desempenho para determinar o desempenho do componente, executando um script para executar uma transação sintética ou observando um evento que indica um erro.  Por padrão, o filtro está definido para a unidade.  
     b. **Dependência** - Fornece acúmulo de integridade entre diferentes entidades. Esse critério de integridade permite que a integridade de uma entidade dependa da integridade de outro tipo de entidade da qual depende para uma operação bem-sucedida.  
     c. **Agregado** - Fornece um estado de integridade combinado de critérios de integridade semelhantes. O critério de integridade de unidade e dependência geralmente será configurado em um critério de integridade agregado. Além de fornecer uma melhor organização geral dos diversos critérios de integridade direcionados a uma entidade, o critério de integridade agregado fornece um estado de saúde exclusivo para categorias distintas das entidades.
 
@@ -239,7 +239,7 @@ As três colunas são interconectadas uns com os outros. Quando você seleciona 
 
 ![Exemplo de seleção de instância monitorada e resultados](./media/vminsights-health/health-diagnostics-vm-example-01.png)
 
-No exemplo acima, quando você escolhe **Disco - 1 D:**, a árvore de Critérios de Integridade é filtrada como **Disco - 1 D:**. A coluna **Alteração de Estado** mostra a mudança de estado com base na disponibilidade de **Disco - 1 D:**. 
+No exemplo acima, quando você escolhe **Disco - 1 D:** , a árvore de Critérios de Integridade é filtrada como **Disco - 1 D:** . A coluna **Alteração de Estado** mostra a mudança de estado com base na disponibilidade de **Disco - 1 D:** . 
 
 Para ver o estado de integridade atualizado, você pode atualizar a página de Diagnósticos de Integridade clicando no link **Atualizar**.  Se houver uma atualização no estado de integridade do critério de integridade com base no intervalo de pesquisa predefinido, essa tarefa permitirá que você evite esperar e reflita o estado de integridade mais recente.  O **Estado de Critérios de Integridade** é um filtro que permite que você defina o escopo dos resultados com base no estado de integridade selecionado – *Íntegro*, *Aviso*, *Crítico*, *Desconhecido* e *Todos*.  A hora de **Última Atualização** no canto superior direito representa a última vez em que a página Diagnósticos de Integridade foi atualizada.  
 
@@ -259,15 +259,15 @@ Alertas de outros tipos de recursos ou serviços não devem ser incluídos nessa
 
 É possível filtrar essa exibição, selecionando valores nos menus suspensos na parte superior da página.
 
-|Coluna |Descrição | 
+|Coluna |DESCRIÇÃO | 
 |-------|------------| 
 |Assinatura |Selecione uma assinatura do Azure. Apenas alertas na assinatura selecionada são incluídos na exibição. | 
 |Grupo de recursos |Selecione um único grupo de recursos. Somente alertas com destinos no grupo de recursos selecionado são incluídos na exibição. | 
 |Tipo de recurso |Selecione um ou mais tipos de recurso. Por padrão, somente os alertas de destino **Máquinas virtuais** estão selecionados e incluídos nessa exibição. Essa coluna somente estará disponível depois que um grupo de recursos for especificado. | 
 |Resource |Selecione um recurso. Apenas alertas com esse recurso como um destino são incluídos na exibição. Essa coluna somente estará disponível depois que um tipo de recurso for especificado. | 
 |Severity |escolha uma gravidade de alerta ou selecione *Tudo* para incluir alertas de todas as gravidades. | 
-|Condição do Monitor |Selecione uma condição de monitor para filtrar alertas se eles foram *Disparados* pelo sistema ou *Resolvidos* pelo sistema se a condição não estiver mais ativa. Ou selecione *todos* para incluir alertas de todas as condições. | 
-|Estado do alerta |Selecione um estado de alerta, *Novo*, *Confirme*, *Fechado* ou selecione *Todos* para incluir alertas de todos os estados. | 
+|Monitorar condição |Selecione uma condição de monitor para filtrar alertas se eles foram *Disparados* pelo sistema ou *Resolvidos* pelo sistema se a condição não estiver mais ativa. Ou selecione *todos* para incluir alertas de todas as condições. | 
+|Estado de alerta |Selecione um estado de alerta, *Novo*, *Confirme*, *Fechado* ou selecione *Todos* para incluir alertas de todos os estados. | 
 |Monitorar serviço |Selecione um serviço ou selecione *Todos* para incluir todos os serviços. Apenas alertas do *VM Insights* são compatíveis com esse recurso.| 
 |Intervalo de tempo| Apenas alertas acionados dentro da janela de tempo selecionada são incluídos na exibição. Os valores com suporte são a última hora, as últimas 24 horas, os últimos 7 dias e os últimos 30 dias. | 
 

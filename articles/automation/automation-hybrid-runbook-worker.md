@@ -10,10 +10,10 @@ ms.date: 04/05/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 785cf5159615b4a81740e853f2b513f0e6d74aec
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65198465"
 ---
 # <a name="automate-resources-in-your-datacenter-or-cloud-by-using-hybrid-runbook-worker"></a>Automatize recursos em seu datacenter ou nuvem usando o Hybrid Runbook Worker
@@ -36,7 +36,7 @@ Para instalar e configurar um Windows Hybrid Runbook Worker, você pode usar doi
 
 |SO  |Tipos de implantação  |
 |---------|---------|
-| Windows     | [PowerShell](automation-windows-hrw-install.md#automated-deployment)<br>[Manual](automation-windows-hrw-install.md#manual-deployment)        |
+|Windows     | [PowerShell](automation-windows-hrw-install.md#automated-deployment)<br>[Manual](automation-windows-hrw-install.md#manual-deployment)        |
 |Linux     | [Python](automation-linux-hrw-install.md#installing-a-linux-hybrid-runbook-worker)        |
 
 > [!NOTE]
@@ -53,7 +53,7 @@ Você pode remover um ou mais trabalhadores de runbook híbridos de um grupo ou 
 1. No portal do Azure, vá para sua conta de automação.
 2. Em **Configurações da conta**, selecione **Chaves** e anote os valores para **URL** e **Chave de acesso primária**. Você precisará dessas informações para a próxima etapa.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 Abra uma sessão do PowerShell no modo de Administrador e execute o comando a seguir ‑ . Use a opção **-Verbose** para obter um log detalhado do processo de remoção.
 

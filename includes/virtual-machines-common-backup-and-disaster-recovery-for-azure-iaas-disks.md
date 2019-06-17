@@ -9,11 +9,11 @@ ms.date: 06/05/2018
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: d242b2815d59676432beb878bbc955a9f39de0f1
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65535882"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "67119119"
 ---
 # <a name="backup-and-disaster-recovery-for-azure-iaas-disks"></a>Backup e recuperação de desastre de discos de IaaS do Azure
 
@@ -144,7 +144,7 @@ Use as etapas a seguir para habilitar backups das VMs usando o [portal do Azure]
 
 1.  Crie um cofre dos serviços de recuperação para uma VM:
 
-     a. No [portal do Azure](https://portal.azure.com/), procure **Todos os recursos** e localize **Cofres dos Serviços de Recuperação**.
+    a. No [portal do Azure](https://portal.azure.com/), procure **Todos os recursos** e localize **Cofres dos Serviços de Recuperação**.
 
     b. No menu **Cofres dos Serviços de Recuperação**, clique em **Adicionar** e siga as etapas para criar um novo cofre na mesma região da VM. Por exemplo, se a VM estiver na região Oeste dos EUA, escolha Oeste dos EUA para o cofre.
 

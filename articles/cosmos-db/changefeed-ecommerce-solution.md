@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: sngun
 ms.openlocfilehash: a53a62a7bc7a5c7f8d9bdabdf411588fdf7bd5e7
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66257061"
 ---
 # <a name="use-azure-cosmos-db-change-feed-to-visualize-real-time-data-analytics"></a>Usar feed de alterações do Azure Cosmos DB para visualizar análise de dados em tempo real
@@ -254,7 +254,7 @@ O Power BI é um conjunto de ferramentas de análise de negócios para analisar 
 
 7. Agora, se você quiser visualizar mais métricas, volte para **streamjob1** e crie mais três saídas com os seguintes campos.
 
-    a. **Alias de saída:** incomingRevenueOutput, nome do Conjunto de Dados: incomingRevenue, nome da Tabela: incomingRevenue  
+   a. **Alias de saída:** incomingRevenueOutput, nome do Conjunto de Dados: incomingRevenue, nome da Tabela: incomingRevenue  
    b. **Alias de saída:** top5Output, nome do Conjunto de Dados: top5, nome da Tabela: top5  
    c. **Alias de saída:** uniqueVisitorCountOutput, nome do Conjunto de Dados: uniqueVisitorCount, nome da Tabela: uniqueVisitorCount
 

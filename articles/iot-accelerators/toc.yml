@@ -147,16 +147,12 @@
       items:
         - name: Arquitetura de OPC gêmeo
           href: overview-opc-twin-architecture.md
-        - name: Arquitetura da fábrica conectada
-          href: iot-accelerators-connected-factory-sample-walkthrough.md
     - name: Guias de instruções
       items:
         - name: Fábrica conectada
           items:
             - name: Usar o painel
               href: iot-accelerators-connected-factory-dashboard.md
-            - name: Implantar um gateway
-              href: iot-accelerators-connected-factory-gateway-deployment.md
             - name: Usar publicador OPC
               href: 'https://github.com/Azure/iot-edge-opc-publisher/blob/master/README.md'
             - name: Configurar o acelerador de solução
@@ -209,7 +205,7 @@
           href: iot-accelerators-device-simulation-advanced-device.md
         - name: Visualizar telemetria com Análises de Séries Temporais
           href: iot-accelerators-device-simulation-time-series-insights.md
-        - name: Serializar telemetria usando Protbuf
+        - name: Serializar a telemetria usando o Protobuf
           href: iot-accelerators-device-simulation-protobuf.md
         - name: Implantar imagem personalizada do Docker
           href: iot-accelerators-device-simulation-deploy-image.md

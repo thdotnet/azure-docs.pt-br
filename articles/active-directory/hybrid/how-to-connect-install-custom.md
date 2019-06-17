@@ -14,12 +14,12 @@ ms.date: 03/26/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 706a826d1b256e95e459d2a44cdb13ee56c70599
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 969d08888002c97453cb2af18f42371227676597
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60352098"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109491"
 ---
 # <a name="custom-installation-of-azure-ad-connect"></a>Instalação personalizada do Azure AD Connect
 As **Configurações personalizadas** do Azure AD Connect são usadas quando você deseja mais opções para a instalação. Essa opção é usada se você tem várias florestas ou se quer configurar recursos opcionais não incluídos na instalação expressa. Ela é usada em todos os casos em que a opção de [**instalação expressa**](how-to-connect-install-express.md) não satisfaz à sua implantação ou a topologia.
@@ -113,7 +113,7 @@ Se você planeja usar a [filtragem baseada em grupo](#sync-filtering-based-on-gr
 
 Também é possível que alguns domínios não estejam acessíveis devido a restrições de firewall. Esses domínios estão desmarcados por padrão e têm um aviso.  
 ![Domínios inacessíveis](./media/how-to-connect-install-custom/unreachable.png)  
- Se for mostrado este aviso, verifique se os domínios realmente não podem ser acessados e se o aviso é esperado.
+Se for mostrado este aviso, verifique se os domínios realmente não podem ser acessados e se o aviso é esperado.
 
 ### <a name="uniquely-identifying-your-users"></a>Identificando seus usuários com exclusividade
 
@@ -171,13 +171,13 @@ Essa tela permite que você selecione os recursos opcionais para seus cenários 
 
 | Recursos opcionais | DESCRIÇÃO |
 | --- | --- |
-| Implantação híbrida do Exchange  |O recurso de implantação híbrida do Exchange permite a coexistência de caixas de correio do Exchange no local e no Office 365. O Azure AD Connect está sincronizando um conjunto específico de [atributos](reference-connect-sync-attributes-synchronized.md#exchange-hybrid-writeback) do Azure AD em seu diretório local. |
+| Implantação híbrida do Exchange |O recurso de implantação híbrida do Exchange permite a coexistência de caixas de correio do Exchange no local e no Office 365. O Azure AD Connect está sincronizando um conjunto específico de [atributos](reference-connect-sync-attributes-synchronized.md#exchange-hybrid-writeback) do Azure AD em seu diretório local. |
 | Pastas públicas do Exchange Mail | O recurso Pastas públicas do Exchange Mail permite sincronizar objetos de pasta pública habilitada para email do seu Active Directory local com o Azure AD. |
 | Aplicativo AD do Azure e filtragem de atributos |Ao habilitar o aplicativo AD do Azure e filtragem de atributo, o conjunto de atributos sincronizados pode ser adaptado. Essa opção adiciona mais duas páginas de configuração ao assistente. Para saber mais, confira [Aplicativo e filtragem de atributos do Azure AD](#azure-ad-app-and-attribute-filtering). |
 | Sincronização de hash de senha |Se você tiver selecionado a federação como a solução de entrada, então poderá habilitar essa opção. A sincronização de hash de senha pode, então, ser usada como uma opção de backup. Para obter mais informações, consulte [Sincronização de hash de senha](how-to-connect-password-hash-synchronization.md). </br></br>Se você selecionou Autenticação de Passagem, essa opção também poderá ser habilitada para garantir suporte para clientes herdados e como uma opção de backup. Para obter mais informações, consulte [Sincronização de hash de senha](how-to-connect-password-hash-synchronization.md).|
 | write-back de senha |Ao habilitar o write-back de senha, as alterações de senha que se originam no AD do Azure serão gravadas no diretório local. Para saber mais, confira [Introdução ao gerenciamento de senhas](../authentication/quickstart-sspr.md). |
 | Write-back de grupo |Se usar o recurso **Grupos do Office 365** , você poderá ter esses grupos representados no Active Directory local. Essa opção só estará disponível se você tiver o Exchange presente no seu Active Directory local. Para saber mais, confira [Write-back de grupo](how-to-connect-preview.md#group-writeback). |
-| Write-back de dispositivo |Permite o write-back de objetos de dispositivo no AD do Azure para seu Active Directory local para cenários de acesso condicional. Para saber mais, confira [Habilitar o write-back de dispositivo no Azure AD Connect](how-to-connect-device-writeback.md). |
+| Write-back de dispositivo |Permite que você os objetos de dispositivo de write-back no Azure AD ao Active Directory local para cenários de acesso condicional. Para saber mais, confira [Habilitar o write-back de dispositivo no Azure AD Connect](how-to-connect-device-writeback.md). |
 | Sincronização de atributo de extensão de diretório |Ao habilitar a sincronização de atributo de extensão de diretório, os atributos especificados serão sincronizados com o AD do Azure. Para saber mais, confira [Extensões de diretório](how-to-connect-sync-feature-directory-extensions.md). |
 
 ### <a name="azure-ad-app-and-attribute-filtering"></a>Aplicativo AD do Azure e filtragem de atributos

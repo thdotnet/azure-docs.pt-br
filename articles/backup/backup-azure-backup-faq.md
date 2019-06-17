@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/08/2019
 ms.author: raynew
 ms.openlocfilehash: a0a2bc58603a81ba23ff3f1feb05f4d2350cfe72
-ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66688735"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Backup do Azure — Perguntas frequentes
@@ -119,9 +119,9 @@ Os limites de tamanho são os seguintes:
 
 Sistema operacional/computador | Limite de tamanho da fonte de dados
 --- | --- 
-Windows 8 ou superior | 54.400 GB
+Windows 8 ou superior | 54\.400 GB
 Windows 7 |1700 GB
-Windows Server 2012 ou posterior | 54.400 GB
+Windows Server 2012 ou posterior | 54\.400 GB
 Windows Server 2008, Windows Server 2008 R2 | 1700 GB
 VM do Azure | 16 discos de dados<br/><br/> Disco de dados de até 4095 GB
 

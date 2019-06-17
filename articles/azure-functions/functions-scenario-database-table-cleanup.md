@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 10/28/2018
 ms.author: glenga
 ms.openlocfilehash: 19a5fe4c087d477ff15d2237a36d1c4ecaa0e070
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65908137"
 ---
 # <a name="use-azure-functions-to-connect-to-an-azure-sql-database"></a>Usar o Azure Functions para conectar a um banco de dados SQL do Azure
@@ -50,7 +50,7 @@ Um aplicativo de funções hospeda a execução de suas funções no Azure. Como
 
 Você precisa ter publicado o aplicativo anteriormente no Azure. Se você ainda não fez isso, [publique o aplicativo de funções no Azure](functions-develop-vs.md#publish-to-azure).
 
-1. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto do aplicativo de funções e escolha **Publicar** > **Gerenciar configurações do aplicativo...**. Selecione **Adicionar configuração**, em **Novo nome de configuração do aplicativo**, digite `sqldb_connection` e selecione **OK**.
+1. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto do aplicativo de funções e escolha **Publicar** > **Gerenciar configurações do aplicativo...** . Selecione **Adicionar configuração**, em **Novo nome de configuração do aplicativo**, digite `sqldb_connection` e selecione **OK**.
 
     ![Configurações de aplicativo para o aplicativo de funções.](./media/functions-scenario-database-table-cleanup/functions-app-service-add-setting.png)
 
@@ -139,6 +139,6 @@ Em seguida, aprenda como usar. Functions com Aplicativos Lógicos para integraç
 Para obter mais informações sobre o Functions, veja os seguintes artigos:
 
 + [Referência do desenvolvedor do Azure Functions](functions-reference.md)  
-   Referência do programador para codificação de funções e definição de gatilhos e de associações.
+  Referência do programador para codificação de funções e definição de gatilhos e de associações.
 + [Testando o Azure Functions](functions-test-a-function.md)  
-   Descreve várias ferramentas e técnicas para testar suas funções.  
+  Descreve várias ferramentas e técnicas para testar suas funções.  

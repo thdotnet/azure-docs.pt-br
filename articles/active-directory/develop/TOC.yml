@@ -139,6 +139,8 @@
                   href: scenario-protected-web-api-app-registration.md
                 - name: Configuração do código
                   href: scenario-protected-web-api-app-configuration.md
+                - name: Verificação de escopos ou funções de aplicativo
+                  href: scenario-protected-web-api-verification-scope-app-roles.md
                 - name: Mover para ambiente de produção
                   href: scenario-protected-web-api-production.md
             - name: API Web que chama as APIs Web
@@ -531,7 +533,7 @@
               href: consent-framework.md
             - name: Experiências de consentimento de aplicativo
               href: application-consent-experience.md
-        - name: Acesso condicional
+        - name: Acesso Condicional
           href: conditional-access-dev-guide.md
         - name: Nuvens nacionais
           href: authentication-national-cloud.md

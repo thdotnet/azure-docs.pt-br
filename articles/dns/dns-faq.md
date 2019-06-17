@@ -5,14 +5,14 @@ services: dns
 author: vhorne
 ms.service: dns
 ms.topic: article
-ms.date: 3/21/2019
+ms.date: 6/15/2019
 ms.author: victorh
-ms.openlocfilehash: 4f0800dfd264059e1dc8aac32a54f216f777647f
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: bb5c4d508344f391d610aeaa7e0be54a93c997dc
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62096158"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080011"
 ---
 # <a name="azure-dns-faq"></a>Perguntas frequentes do DNS do Azure
 
@@ -110,7 +110,7 @@ Consulte a seção de cenários na [visão geral dos registros de alias do DNS d
 
 Os conjuntos de registros de alias são suportados para os seguintes tipos de registro em uma zona DNS do Azure:
  
-- O  
+- O 
 - AAAA
 - CNAME 
 
@@ -118,7 +118,7 @@ Os conjuntos de registros de alias são suportados para os seguintes tipos de re
 
 - **Aponte para um recurso IP público de um conjunto de registros DNS A / AAAA.** Você pode criar um conjunto de registros A / AAAA e torná-lo um conjunto de registros de alias para apontar para um recurso IP público.
 - **Aponte para um perfil do Gerenciador de Tráfego de um conjunto de registros DNS A / AAAA / CNAME.** Você pode apontar para o CNAME de um perfil do Gerenciador de Tráfego a partir de um conjunto de registros CNAME do DNS. Um exemplo é contoso.trafficmanager.net. Agora, você também pode apontar para um perfil do Gerenciador de Tráfego que tenha pontos de extremidade externos de um registro A ou AAAA definido em sua zona DNS.
-- **Aponte para um ponto de extremidade do Azure Content Delivery Network (CDN)**. Isso é útil quando você cria sites estático usando o armazenamento do Azure e CDN do Azure.
+- **Aponte para um ponto de extremidade do Azure Content Delivery Network (CDN)** . Isso é útil quando você cria sites estático usando o armazenamento do Azure e CDN do Azure.
 - **Apontar para outro conjunto de registros DNS dentro da mesma zona.** Registros de alias podem fazer referência a outros conjuntos de registros do mesmo tipo. Por exemplo, você pode ter um conjunto de registros DNS CNAME como um alias para outro conjunto de registros CNAME do mesmo tipo. Essa organização é útil se você quiser que alguns conjuntos de registros sejam aliases e alguns não-aliases.
 
 ### <a name="can-i-create-and-update-alias-records-from-the-azure-portal"></a>Posso criar e atualizar os registros de alias do portal do Azure?
@@ -194,87 +194,6 @@ Sim. Os servidores de nomes DNS do Azure são de pilha dupla. Pilha dupla signif
 Os nomes de domínio internacionalizados (IDNs) codificam cada nome DNS usando [punycode](https://en.wikipedia.org/wiki/Punycode). Consultas DNS são feitas usando esses nomes codificados com punycode.
 
 Para configurar IDNs no DNS do Azure, converta o nome da zona ou o nome do conjunto de registros em punycode. No momento, o DNS do Azure não oferece suporte à conversão interna de ou para o punycode.
-
-## <a name="private-dns"></a>DNS privado
-
-[!INCLUDE [private-dns-public-preview-notice](../../includes/private-dns-public-preview-notice.md)]
-
-### <a name="does-azure-dns-support-private-domains"></a>O DNS do Azure oferece suporte a domínios particulares?
-
-O suporte para domínios privados é implementado usando o recurso Zonas Privadas. Esse recurso está disponível atualmente em visualização pública. As zonas privadas são gerenciadas usando as mesmas ferramentas que as zonas DNS do Azure voltadas para a Internet. Eles são resolvíveis apenas de dentro de suas redes virtuais especificadas. Para mais informações, consulte a [visão geral](private-dns-overview.md).
-
-Atualmente, as zonas privadas não têm suporte no portal do Azure.
-
-Para obter informações sobre outras opções de DNS interno no Azure, consulte [Resolução de nomes para VMs e instâncias de função](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
-
-### <a name="whats-the-difference-between-registration-virtual-network-and-resolution-virtual-network-in-the-context-of-private-zones"></a>Qual é a diferença entre a rede virtual de registro e a rede virtual de resolução no contexto de zonas privadas?
-
-Você pode vincular redes virtuais a uma zona privada do DNS como uma rede virtual de Registro ou como uma rede virtual de Resolução. Em qualquer um dos casos, as máquinas virtuais na rede virtual resolvem com êxito os registros na zona privada. Com uma rede virtual de Registro, os registros DNS são automaticamente registrados na zona para as máquinas virtuais na rede virtual. Quando uma máquina virtual em uma rede virtual de registro é excluída, o registro DNS correspondente da zona privada vinculada é automaticamente removido. 
-
-### <a name="will-azure-dns-private-zones-work-across-azure-regions"></a>As Zonas Privadas do DNS do Azure funcionarão em todas as regiões do Azure?
-
-Sim. As zonas privadas são suportadas para resolução de DNS entre redes virtuais nas regiões do Azure. As zonas privadas funcionam mesmo sem espiar explicitamente as redes virtuais. Todas as redes virtuais devem ser especificadas como redes virtuais de resolução para a zona privada. Os clientes podem precisar que as redes virtuais sejam analisadas para que o tráfego TCP / HTTP flua de uma região para outra.
-
-### <a name="is-connectivity-to-the-internet-from-virtual-networks-required-for-private-zones"></a>A conectividade com a Internet de redes virtuais é necessária para zonas privadas?
-
-Não. As zonas privadas funcionam junto com as redes virtuais. Os clientes os usam para gerenciar domínios para máquinas virtuais ou outros recursos dentro e entre redes virtuais. A conectividade com a Internet não é necessária para a resolução de nomes. 
-
-### <a name="can-the-same-private-zone-be-used-for-several-virtual-networks-for-resolution"></a>A mesma zona privada pode ser usada para várias redes virtuais para resolução?
-
-Sim. Os clientes podem associar até 10 redes virtuais de resolução com uma única zona privada.
-
-### <a name="can-a-virtual-network-that-belongs-to-a-different-subscription-be-added-as-a-resolution-virtual-network-to-a-private-zone"></a>Uma rede virtual que pertence a uma assinatura diferente pode ser adicionada como uma rede virtual de resolução a uma zona privada?
-
-Sim. Você precisa ter permissão de operação de gravação nas redes virtuais e na zona DNS privado. A permissão de gravação pode ser concedida para várias funções do RBAC. Por exemplo, a função de RBAC do Colaborador da Rede Clássica tem permissões de gravação nas redes virtuais. Para obter mais informações sobre funções do RBAC, consulte [Controle de acesso baseado em função](../role-based-access-control/overview.md).
-
-### <a name="will-the-automatically-registered-virtual-machine-dns-records-in-a-private-zone-be-automatically-deleted-when-the-virtual-machines-are-deleted-by-the-customer"></a>Os registros DNS da máquina de virtual que são registrados automaticamente em uma zona privada serão excluídos automaticamente quando as máquinas virtuais forem excluídas pelo cliente?
-
-Sim. Se você excluir uma máquina virtual em uma rede virtual de Registro, os registros DNS registrados na zona serão excluídos automaticamente. 
-
-### <a name="can-an-automatically-registered-virtual-machine-record-in-a-private-zone-from-a-registration-virtual-network-be-deleted-manually"></a>Um registro de máquina virtual registrado automaticamente em uma zona privada de uma rede virtual de Registro pode ser excluído manualmente?
-
-Não. Os registros DNS da máquina virtual que são registrados automaticamente em uma zona privada a partir de uma rede virtual de Registro não são visíveis ou editáveis pelos clientes. Você pode regravar os registros DNS registrados automaticamente com um registro DNS criado manualmente na zona. A pergunta e resposta a seguir abordam este tópico.
-
-### <a name="what-happens-when-we-try-to-manually-create-a-new-dns-record-into-a-private-zone-that-has-the-same-hostname-as-an-automatically-registered-existing-virtual-machine-in-a-registration-virtual-network"></a>O que acontece quando tentamos criar manualmente um novo registro DNS em uma zona privada que tenha o mesmo nome de host de uma máquina virtual existente registrada automaticamente em uma rede virtual de Registro?
-
-Você tenta criar manualmente um novo registro DNS em uma zona privada que tenha o mesmo nome de host de uma máquina virtual registrada automaticamente existente em uma rede virtual de registro. Quando você faz isso, o novo registro DNS sobrescreve o registro de máquina virtual registrado automaticamente. Se você tentar excluir esse registro DNS criado manualmente da zona novamente, a exclusão será bem-sucedida. O registro automático acontece novamente, contanto que a máquina virtual ainda exista e tenha um IP privado anexado a ela. O registro DNS é recriado automaticamente na zona.
-
-### <a name="what-happens-when-we-unlink-a-registration-virtual-network-from-a-private-zone-will-the-automatically-registered-virtual-machine-records-from-the-virtual-network-be-removed-from-the-zone-too"></a>O que acontece quando desvinculamos uma rede virtual de registro de uma zona privada? Os registros da máquina virtual registrados automaticamente da rede virtual também serão removidos da zona?
-
-Sim. Para desvincular uma rede virtual de registro de uma zona privada, atualize a zona DNS para remover a rede virtual de registro associada. Nesse processo, os registros da máquina virtual que foram registrados automaticamente são removidos da zona. 
-
-### <a name="what-happens-when-we-delete-a-registration-or-resolution-virtual-network-thats-linked-to-a-private-zone-do-we-have-to-manually-update-the-private-zone-to-unlink-the-virtual-network-as-a-registration-or-resolution--virtual-network-from-the-zone"></a>O que acontece quando excluímos uma rede virtual de registro ou resolução vinculada a uma zona privada? Precisamos atualizar manualmente a zona privada para desvincular a rede virtual como uma rede virtual de registro ou de resolução da zona?
-
-Sim. Quando você exclui uma rede virtual de Registro ou Resolução sem desvinculá-la de uma zona privada primeiro, sua operação de exclusão é bem-sucedida. Mas a rede virtual não é desvinculada automaticamente da sua zona privada, se houver. Você deve desvincular manualmente a rede virtual da zona privada. Por esse motivo, desvincule sua rede virtual da sua zona privada antes de excluí-la.
-
-### <a name="will-dns-resolution-by-using-the-default-fqdn-internalcloudappnet-still-work-even-when-a-private-zone-for-example-privatecontosocom-is-linked-to-a-virtual-network"></a>Resolução DNS, usando o padrão FQDN (internal.cloudapp.net) ainda funciona mesmo quando uma zona privada (por exemplo, private.contoso.com) é vinculada a uma rede virtual?
-
-Sim. As zonas privadas não substituem as resoluções DNS padrão usando a zona interna.cloudapp.net fornecida pelo Azure. É oferecido como um recurso ou aprimoramento adicional. Independentemente de você confiar no internal.cloudapp.net fornecido pelo Azure ou em sua própria zona privada, use o FQDN da zona que deseja resolver. 
-
-### <a name="will-the-dns-suffix-on-virtual-machines-within-a-linked-virtual-network-be-changed-to-that-of-the-private-zone"></a>O sufixo DNS em máquinas virtuais em uma rede virtual vinculada será alterado para o da zona privada?
-
-Não. O sufixo DNS nas máquinas virtuais em sua rede virtual vinculada permanece como o sufixo fornecido pelo Azure padrão ("*.internal.cloudapp.net"). Você pode alterar manualmente esse sufixo DNS em suas máquinas virtuais para aquela da zona privada. 
-
-### <a name="are-there-any-limitations-for-private-zones-during-this-preview"></a>Há alguma limitação para zonas privadas durante essa visualização?
-
-Sim. Durante a pré-visualização pública, existem as seguintes limitações.
-* Uma rede virtual de registro por zona privada.
-* Até 10 redes virtuais de resolução por zona privada.
-* Uma determinada rede virtual vincula-se a apenas uma zona privada como uma rede virtual de registro.
-* Uma determinada rede virtual é vinculada a até 10 zonas privadas como uma rede virtual de resolução.
-* Se uma rede virtual de registro for especificada, os registros DNS das VMs dessa rede virtual que estão registradas na zona privada não poderão ser visualizados ou recuperados do PowerShell, da CLI ou das APIs. Os registros da VM são registrados e resolvidos com sucesso.
-* O DNS reverso funciona apenas para o espaço IP privado na rede virtual de registro.
-* O DNS reverso de um IP privado que não está registrado na zona privada retorna "internal.cloudapp.net" como o sufixo DNS. Este sufixo não pode ser resolvido. Um exemplo é um IP privado para uma máquina virtual em uma rede virtual vinculada como uma rede virtual de Resolução a uma zona privada.
-* Uma rede virtual precisa estar vazia quando é vinculada pela primeira vez a uma zona privada como uma rede virtual de registro ou de resolução. A rede virtual pode, então, não ficar vazia para futuras vinculações como uma rede virtual de Registro ou Resolução a outras zonas privadas.
-* O encaminhamento condicional não é suportado, por exemplo, para permitir a resolução entre o Azure e as redes locais. Saiba como os clientes podem realizar esse cenário por meio de outros mecanismos. Veja [Resolução de nomes para VMs e instâncias de função](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md)
-
-### <a name="are-there-any-quotas-or-limits-on-zones-or-records-for-private-zones"></a>Existem cotas ou limites em zonas ou registros para zonas privadas?
-
-Não há limites para o número de zonas permitidas por assinatura para zonas privadas. Não há limites no número de conjuntos de registros por zona para zonas privadas. Ambas as zonas públicas e privadas contam para os limites gerais do DNS. Para obter mais informações, consulte os [limites de assinatura e serviço do Azure](../azure-subscription-service-limits.md#azure-dns-limits)
-
-### <a name="is-there-portal-support-for-private-zones"></a>Existe suporte de portal para zonas privadas?
-
-As zonas privadas que já são criadas por meio de APIs, PowerShell, CLI e SDKs são visíveis no portal do Azure. Mas os clientes não podem criar novas zonas privadas ou gerenciar associações com redes virtuais. Para redes virtuais associadas como redes virtuais de registro, os registros de VM registrados automaticamente não são visíveis no portal. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

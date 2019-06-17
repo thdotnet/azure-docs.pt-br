@@ -89,12 +89,20 @@
           href: concepts-business-continuity.md
         - name: Backup e restauração
           href: concepts-backup.md
-    - name: Monitoramento
+    - name: Monitorar e ajustar
       items:
-        - name: Monitoramento
+        - name: Monitorar e ajustar
           href: concepts-monitoring.md
-        - name: Logs do servidor
+        - name: Logs de consulta lentos
           href: concepts-server-logs.md
+        - name: Logs de auditoria
+          href: concepts-audit-logs.md
+        - name: Repositório de Consultas
+          href: concepts-query-store.md
+        - name: Análise de Desempenho de Consultas
+          href: concepts-query-performance-insight.md
+        - name: Recomendações de desempenho
+          href: concepts-performance-recommendations.md
     - name: Desenvolvimento
       items:
         - name: Compatibilidade de drivers e ferramentas
@@ -165,10 +173,16 @@
           href: howto-auto-grow-storage-portal.md
     - name: Acessar logs do servidor
       items:
-        - name: Portal do Azure
-          href: howto-configure-server-logs-in-portal.md
-        - name: CLI do Azure
-          href: howto-configure-server-logs-in-cli.md
+        - name: Logs de consulta lentos
+          items:
+            - name: Portal do Azure
+              href: howto-configure-server-logs-in-portal.md
+            - name: CLI do Azure
+              href: howto-configure-server-logs-in-cli.md
+        - name: Logs de auditoria
+          items:
+            - name: Portal do Azure
+              href: howto-configure-audit-logs-portal.md
     - name: Monitoramento
       items:
         - name: Criar alertas nas métricas

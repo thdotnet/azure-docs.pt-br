@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 7596670e794c090b04f81cf6b235a4bc54c1f3c4
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: fcb09720d188150736dbe7da0c925f5762ff6a10
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65800094"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072327"
 ---
 # <a name="what-is-speech-to-text"></a>O que é a conversão de fala em texto?
 
@@ -30,7 +30,7 @@ Você pode facilmente capturar áudio do microfone, ler de um fluxo ou acessar a
 
 Aqui estão os recursos disponíveis por meio do SDK de fala e APIs REST:
 
-| Caso de uso | SDK | REST |
+| Caso de uso | . | REST |
 |----------|-----|------|
 | Transcrever declarações curtas (< 15 segundos). Suporta apenas o resultado final de transcrição. | Sim | Sim |
 | Transcrição contínua de declarações longo e fluxo de áudio (> 15 segundos). Oferece suporte a resultados de transcrição intermediárias e finais. | Sim | Não |
@@ -49,15 +49,15 @@ Aqui estão os recursos disponíveis por meio do SDK de fala e APIs REST:
 
 Nós oferecemos guias de início rápido nas linguagens de programação mais populares, todos eles desenvolvidos para que você executar o código em menos de 10 minutos. Essa tabela inclui uma lista completa dos guias de início rápido do SDK de fala organizados por idioma.
 
-| Início rápido | Plataforma | Referência da API |
+| Início rápido | Plataforma | Referência de API |
 |------------|----------|---------------|
-| [C#, .NET Core](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnetcore-windows) |  Windows | [Browse](https://aka.ms/csspeech/csharpref) |
-| [C#, .NET Framework](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows) |  Windows | [Browse](https://aka.ms/csspeech/csharpref) |
-| [C#, UWP](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-uwp) |  Windows | [Browse](https://aka.ms/csspeech/csharpref) |
-| [C++](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-cpp-windows) |  Windows | [Browse](https://aka.ms/csspeech/cppref)|
+| [C#, .NET Core](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnetcore-windows) | Windows | [Browse](https://aka.ms/csspeech/csharpref) |
+| [C#, .NET Framework](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows) | Windows | [Browse](https://aka.ms/csspeech/csharpref) |
+| [C#, UWP](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-uwp) | Windows | [Browse](https://aka.ms/csspeech/csharpref) |
+| [C++](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-cpp-windows) | Windows | [Browse](https://aka.ms/csspeech/cppref)|
 | [C++](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-cpp-linux) | Linux | [Browse](https://aka.ms/csspeech/cppref) |
 | [Java](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-java-android) | Android | [Browse](https://aka.ms/csspeech/javaref) |
-| [Java](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-java-jre) | Windows, Linux | [Browse](https://aka.ms/csspeech/javaref) |
+| [Java](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-java-jre) | Windows, Linux, macOS | [Browse](https://aka.ms/csspeech/javaref) |
 | [JavaScript, o navegador](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-js-browser) | Browser, Windows, Linux, macOS | [Browse](https://aka.ms/AA434tv) |
 | [JavaScript, Node.js](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-js-node) | Windows, Linux, macOS | [Browse](https://aka.ms/AA434tv) |
 | [Objective-C](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-objectivec-ios) | iOS | [Browse](https://aka.ms/csspeech/objectivecref) |
@@ -80,7 +80,7 @@ Código de exemplo para o Speech SDK está disponível no GitHub. Esses exemplos
 
 Além do modelo Universal usado pelos serviços de fala, você pode criar modelos personalizados de acústicos, idioma e pronúncia específica à sua experiência. Aqui está uma lista de opções de personalização:
 
-| Modelo | Descrição |
+| Modelo | DESCRIÇÃO |
 |-------|-------------|
 | [Modelo acústico](how-to-customize-acoustic-models.md) | Criar um modelo acústico personalizado é útil se seu aplicativo, ferramentas ou dispositivos são usados em um ambiente específico, como em um carro ou fábrica com condições específicas de gravação. Os exemplos envolvem fala e ruídos de fundo específicos ou o uso de um microfone específico para gravação. |
 | [Modelo de linguagem](how-to-customize-language-model.md) | Crie um modelo de linguagem personalizado para melhorar a transcrição do vocabulário e da gramática específicos de um setor, por exemplo, terminologia médica ou jargão de TI. |

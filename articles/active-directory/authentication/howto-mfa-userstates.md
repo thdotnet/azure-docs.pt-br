@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3928a47abf07ab7e6dad0e0a5883162363805df8
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 6cd26f7bdf928dcbd2cf841526857dc44623f133
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235568"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67057432"
 ---
 # <a name="how-to-require-two-step-verification-for-a-user"></a>Como exigir a verificação em duas etapas para um usuário
 
@@ -43,8 +43,8 @@ As contas de usuário na Autenticação Multifator do Azure apresentam os três 
 
 | Status | DESCRIÇÃO | Aplicativos que não usam navegador afetados | Aplicativos que usam o navegador afetados | Autenticação moderna afetada |
 |:---:|:---:|:---:|:--:|:--:|
-| Desabilitado |O estado padrão para um novo usuário não inscrito na MFA do Azure. |Não  |Não |Não |
-| Enabled |O usuário foi inscrito no MFA do Azure, mas não foi registrado. Eles receberão uma solicitação para se registrarem na próxima vez que entrarem. | Não.  Eles continuarão a trabalhar até o processo ser concluído. | Sim. Depois que a sessão expirar, será exigido o registro da MFA do Azure.| Sim. Depois que o token de acesso expirar, será exigido o registro da MFA do Azure. |
+| Desabilitado |O estado padrão para um novo usuário não inscrito na MFA do Azure. |Não |Não |Não |
+| Enabled |O usuário foi inscrito no MFA do Azure, mas não foi registrado. Eles receberão uma solicitação para se registrarem na próxima vez que entrarem. |Não.  Eles continuarão a trabalhar até o processo ser concluído. | Sim. Depois que a sessão expirar, será exigido o registro da MFA do Azure.| Sim. Depois que o token de acesso expirar, será exigido o registro da MFA do Azure. |
 | Imposto |O usuário foi inscrito e concluiu o processo de registro para usar a MFA do Azure. |Sim. Os aplicativos exigem senhas de aplicativo. |Sim. A MFA do Azure é exigida no logon. | Sim. A MFA do Azure é exigida no logon. |
 
 O estado de um usuário reflete se um administrador o registrou na MFA do Azure e se ele concluiu o processo de registro.
@@ -125,7 +125,7 @@ Usar o PowerShell é uma boa opção quando você precisa habilitar usuários em
 Para desabilitar a MFA, use este script:
 
    ```PowerShell
-   Get-MsolUser -UserPrincipalName user@domain.com | Set-MsolUser -StrongAuthenticationRequirements @()
+   Get-MsolUser -UserPrincipalName user@domain.com | Set-MsolUser -StrongAuthenticationMethods @()
    ```
 
 que também pode ser encurtado para:

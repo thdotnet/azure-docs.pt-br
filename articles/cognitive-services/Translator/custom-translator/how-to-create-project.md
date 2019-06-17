@@ -10,10 +10,10 @@ ms.date: 02/21/2019
 ms.author: v-pawal
 ms.topic: conceptual
 ms.openlocfilehash: 456860c74810a692b4839e4204ec0b78d5620864
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66383004"
 ---
 # <a name="create-a-project"></a>Criar um projeto
@@ -30,7 +30,7 @@ Criar um projeto é o primeiro passo para construir um modelo.
 
 2.  Digite os seguintes detalhes sobre o seu projeto na caixa de diálogo:
 
-     a.  Nome do projeto (obrigatório): Dê um nome exclusivo e significativo ao projeto. Não é necessário mencionar os idiomas dentro do título.
+    a.  Nome do projeto (obrigatório): Dê um nome exclusivo e significativo ao projeto. Não é necessário mencionar os idiomas dentro do título.
 
     b.  Descrição: Um breve resumo sobre o projeto. Essa descrição não tem influência sobre o comportamento do Custom Translator ou de seu sistema personalizado resultante, mas pode ajudá-lo a diferenciar entre diferentes projetos.
 
@@ -44,7 +44,7 @@ Criar um projeto é o primeiro passo para construir um modelo.
 
     ![Criar caixa de diálogo do projeto](media/how-to/how-to-create-project-dialog.png)
 
-3.  Clique em Criar. 
+3.  Clique em Criar.
 
 ## <a name="view-project-details"></a>Exibir detalhes do projeto
 

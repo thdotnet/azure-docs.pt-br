@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: wolfma
 ms.openlocfilehash: 2bfe111cbe1e352c16c9cbdd6d2ecc999bbe444f
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66003002"
 ---
 # <a name="about-the-speech-sdk"></a>Sobre o SDK de Fala
@@ -27,7 +27,7 @@ Fala Software Development Kit (SDK) fornece o acesso de aplicativos para as fun�
 
 ## <a name="get-the-sdk"></a>Obter o SDK
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 Para o Windows, suportamos os seguintes idiomas:
 
@@ -66,7 +66,7 @@ sudo apt-get install libssl1.0.2 libasound2
 
 * C++: baixe o SDK como um [pacote .tar](https://aka.ms/csspeech/linuxbinary) e descompacte os arquivos em um diretório de sua escolha. A tabela a seguir mostra a estrutura da pasta do SDK:
 
-  |`Path`|Descrição|
+  |Caminho|DESCRIÇÃO|
   |-|-|
   |`license.md`|Licença|
   |`ThirdPartyNotices.md`|Avisos de terceiros|

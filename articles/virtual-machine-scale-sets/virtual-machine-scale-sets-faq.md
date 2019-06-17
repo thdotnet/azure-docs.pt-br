@@ -17,10 +17,10 @@ ms.date: 05/24/2019
 ms.author: manayar
 ms.custom: na
 ms.openlocfilehash: 0674d8c98f4bf37bbf9417de60ff4c60910d802a
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66258297"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Perguntas frequentes sobre os conjuntos de dimensionamento de máquinas virtuais do Azure
@@ -69,7 +69,7 @@ Um conjunto de dimensionamento regional (não zonal) usa *grupos de veiculaçõe
 
 ### <a name="do-scale-sets-work-with-azure-availability-zones"></a>Os conjuntos de dimensionamento funcionam com as zonas de disponibilidade do Azure?
 
- Sim! Para obter mais informações, confira a [documentação de zona de conjunto de dimensionamento](./virtual-machine-scale-sets-use-availability-zones.md).
+Sim! Para obter mais informações, confira a [documentação de zona de conjunto de dimensionamento](./virtual-machine-scale-sets-use-availability-zones.md).
 
 
 ## <a name="autoscale"></a>Autoscale
@@ -134,7 +134,7 @@ Para configurar o dimensionamento automático em um conjunto de dimensionamento 
 
 ### <a name="if-i-have-stopped-deallocated-a-vm-is-that-vm-started-as-part-of-an-autoscale-operation"></a>Se eu tiver interrompido (desalocado) uma VM, essa VM será iniciada como parte de uma operação de dimensionamento automático?
 
- Não. Se as regras de dimensionamento automático exigirem outras instâncias de VM como parte de um conjunto de dimensionamento, uma nova instância de VM será criada. Instâncias VM que são interrompidas (desalocadas) não são iniciadas como parte de um evento de dimensionamento automático. No entanto, essas VMs interrompidas (desalocadas) poderão ser excluídas como parte de um evento de dimensionamento automático que aumenta o número de instâncias, da mesma maneira que qualquer instância de VM pode ser excluída com base na ordem de ID da instância de VM.
+Não. Se as regras de dimensionamento automático exigirem outras instâncias de VM como parte de um conjunto de dimensionamento, uma nova instância de VM será criada. Instâncias VM que são interrompidas (desalocadas) não são iniciadas como parte de um evento de dimensionamento automático. No entanto, essas VMs interrompidas (desalocadas) poderão ser excluídas como parte de um evento de dimensionamento automático que aumenta o número de instâncias, da mesma maneira que qualquer instância de VM pode ser excluída com base na ordem de ID da instância de VM.
 
 
 
@@ -231,7 +231,7 @@ Você pode fornecer as chaves públicas SSH em texto sem formatação ao criar u
 
 Nome do elemento linuxConfiguration | Obrigatório | Type | DESCRIÇÃO
 --- | --- | --- | ---
-ssh | Não  | Coleção | Especifica a configuração da chave SSH para um SO Linux
+ssh | Não | Coleção | Especifica a configuração da chave SSH para um SO Linux
 caminho | Sim | Cadeia de caracteres | Especifica o caminho de arquivo do Linux no qual as chaves SSH ou o certificado deve estar localizado
 keyData | Sim | Cadeia de caracteres | Especifica uma chave pública SSH codificada em base64
 

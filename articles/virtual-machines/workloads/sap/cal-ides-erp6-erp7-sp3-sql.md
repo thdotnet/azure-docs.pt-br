@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 09/16/2016
 ms.author: hermannd
 ms.openlocfilehash: 413e449f005d288f66da0257f5b800733e58eb94
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60836387"
 ---
 # <a name="deploy-sap-ides-ehp7-sp3-for-sap-erp-60-on-azure"></a>Implantar SAP IDES EHP7 SP3 para SAP ERP 6.0 no Azure
@@ -40,7 +40,7 @@ Depois de entrar na SAP CAL, a primeira página geralmente leva você para a pá
 ### <a name="create-an-account-in-the-sap-cal"></a>Criar uma conta na SAP CAL
 1. Para entrar na SAP CAL pela primeira vez, use o seu SAP S-User ou outro usuário registrado com a SAP. Em seguida, defina uma conta da SAP CAL que é usada pela SAP CAL para implantar dispositivos no Azure. Na definição de conta, você precisa:
 
-     a. Selecionar o modelo de implantação no Azure (Resource Manager ou clássico).
+    a. Selecionar o modelo de implantação no Azure (Resource Manager ou clássico).
 
     b. Inserir sua assinatura do Azure. Uma conta da SAP CAL pode ser atribuída a apenas uma assinatura. Se você precisar de mais de uma assinatura, precisará criar uma outra conta da SAP CAL.
     
@@ -51,7 +51,7 @@ Depois de entrar na SAP CAL, a primeira página geralmente leva você para a pá
 
 1. Para criar uma nova conta da SAP CAL, a página **Contas** mostra duas opções para o Azure: 
 
-     a. **Microsoft Azure (clássico)** é o modelo de implantação clássico e não é mais preferencial.
+    a. **Microsoft Azure (clássico)** é o modelo de implantação clássico e não é mais preferencial.
 
     b. **Microsoft Azure** é o novo modelo de implantação do Resource Manager.
 
@@ -98,7 +98,7 @@ Você criou com êxito uma conta da SAP CAL que é capaz de:
 
 1. No **Modo Básico: Criar Instância**, é necessário:
 
-     a. Inserir um **Nome** para a instância.
+    a. Inserir um **Nome** para a instância.
 
     b. Selecionar uma **Região** do Azure. Talvez seja necessário uma assinatura da SAP CAL para obter várias regiões do Azure oferecidas.
 

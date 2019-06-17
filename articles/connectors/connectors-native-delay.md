@@ -11,10 +11,10 @@ tags: connectors
 ms.topic: conceptual
 ms.date: 05/25/2019
 ms.openlocfilehash: 27475fb3f086dbc5166a473e9d657d2dab723938
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66297675"
 ---
 # <a name="delay-running-the-next-action-in-azure-logic-apps"></a>Atraso em execução a próxima ação em aplicativos lógicos do Azure
@@ -55,7 +55,7 @@ Aqui estão algumas maneiras de exemplo para usar essas ações:
 
    | Propriedade | Nome JSON | Obrigatório | Type | DESCRIÇÃO |
    |----------|-----------|----------|------|-------------|
-   | Count | count | Sim | Número inteiro | O número de unidades de tempo a serem atrasadas |
+   | Contagem | count | Sim | Número inteiro | O número de unidades de tempo a serem atrasadas |
    | Unidade | unit | Sim | Cadeia de caracteres | A unidade de tempo, por exemplo: `Second`, `Minute`, `Hour`, `Day`, `Week`, ou `Month` |
    ||||||
 
@@ -81,7 +81,7 @@ Aqui estão algumas maneiras de exemplo para usar essas ações:
 
    | Propriedade | Nome JSON | Obrigatório | Type | DESCRIÇÃO |
    |----------|-----------|----------|------|-------------|
-   | Timestamp |  timestamp | Sim | Cadeia de caracteres | A data de término e a hora para retomar o fluxo de trabalho usando este formato: <p>YYYY-MM-DDThh:mm:ssZ <p>Por exemplo, se você quiser 18 de setembro de 2017 às 14H, especifique "2017-09-18T14:00:00Z". <p>**Observação:** Esse formato de hora deve seguir a [especificação de tempo de data ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) na [formato de hora UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), mas sem uma [deslocamento UTC](https://en.wikipedia.org/wiki/UTC_offset). Sem um fuso horário, você deve adicionar a letra "Z" no final sem espaços. Essa letra "Z" refere-se ao equivalente em [hora náutica](https://en.wikipedia.org/wiki/Nautical_time). |
+   | Timestamp | timestamp | Sim | Cadeia de caracteres | A data de término e a hora para retomar o fluxo de trabalho usando este formato: <p>YYYY-MM-DDThh:mm:ssZ <p>Por exemplo, se você quiser 18 de setembro de 2017 às 14H, especifique "2017-09-18T14:00:00Z". <p>**Observação:** Esse formato de hora deve seguir a [especificação de tempo de data ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) na [formato de hora UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), mas sem uma [deslocamento UTC](https://en.wikipedia.org/wiki/UTC_offset). Sem um fuso horário, você deve adicionar a letra "Z" no final sem espaços. Essa letra "Z" refere-se ao equivalente em [hora náutica](https://en.wikipedia.org/wiki/Nautical_time). |
    ||||||
 
 1. Adicione quaisquer outras ações que você deseja executar no fluxo de trabalho.

@@ -59,7 +59,7 @@
       href: Face-API-How-to-Topics/HowtoIdentifyFacesinImage.md
     - name: Adicionar faces
       href: Face-API-How-to-Topics/how-to-add-faces.md
-    - name: Usar HeadPose para girar um retângulo
+    - name: Usar o atributo HeadPose
       href: Face-API-How-to-Topics/how-to-use-headpose.md
     - name: Especificar um modelo de reconhecimento facial
       href: Face-API-How-to-Topics/specify-recognition-model.md

@@ -13,10 +13,10 @@ ms.reviewer: anjangsh,billgib,genemi
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: 6115d7f70c2c75898b18a27af298a44ca87ca1bd
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66240877"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---single-tenant-app"></a>Análise entre locatários usando dados extraídos – Aplicativo de locatário único
@@ -169,7 +169,7 @@ Os dados na tabela de esquema em estrela fornecem todos os dados de vendas de t�
 Use as seguintes etapas para se conectar ao Power BI e importar os modos de exibição que você criou anteriormente:
 
 1. Inicie o Power BI desktop.
-2. Na faixa de opções Página Inicial, selecione **Obter Dados** e **Mais...**  no menu.
+2. Na faixa de opções Página Inicial, selecione **Obter Dados** e **Mais...** no menu.
 3. Na janela **Obter Dados**, selecione Banco de Dados SQL do Azure.
 4. Na janela de logon do banco de dados, digite o nome do servidor (catalog-dpt-&lt;User&gt;.database.windows.net). Selecione **Importar** para **Modo de Conectividade de Dados**e clique em OK. 
 

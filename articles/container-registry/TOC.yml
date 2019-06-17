@@ -89,17 +89,19 @@
               href: container-registry-auth-aks.md
         - name: Confiança em conteúdo
           href: container-registry-content-trust.md
-    - name: Compilar e corrigir
+    - name: Tarefas do ACR
       items:
-        - name: Tarefas do ACR
+        - name: Visão geral das Tarefas do ACR
           href: container-registry-tasks-overview.md
         - name: Tarefas de várias etapas
           href: container-registry-tasks-multi-step.md
+        - name: Usar com identidade gerenciada
+          href: container-registry-tasks-authentication-managed-identity.md
     - name: Registros e outros serviços do Azure
       items:
         - name: Instâncias de Contêiner do Azure
           href: ../container-instances/container-instances-tutorial-prepare-app.md
-        - name: AKS (Serviço do Kubernetes do Azure)
+        - name: AKS (Serviço de Kubernetes do Azure)
           href: ../aks/tutorial-kubernetes-prepare-app.md
         - name: Service Fabric
           href: ../service-fabric/service-fabric-tutorial-create-container-images.md

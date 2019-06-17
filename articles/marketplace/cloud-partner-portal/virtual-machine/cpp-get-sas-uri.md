@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/19/2018
 ms.author: pabutler
 ms.openlocfilehash: 4da82b2f6aaa3fc664d2e91b80722329533b0cd0
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64938676"
 ---
 # <a name="get-shared-access-signature-uri-for-your-vm-image"></a>Obtenha o URI de assinatura de acesso compartilhado para suas imagens VM
@@ -97,7 +97,7 @@ Use as etapas a seguir para gerar um URI de SAS com o Gerenciador de Armazenamen
 6. A caixa de diálogo **Assinatura de Acesso Compartilhado** é exibida. Insira os valores dos campos a seguir:
    - **Hora de início** - Data de início de permissão para acesso VHD. Forneça uma data que é um dia antes da data atual.
    - **Hora de expiração** - data de expiração de permissão para acesso ao VHD.  Forneça uma data de pelo menos três semanas após a data atual.
-   -  **Permissões** - Selecione o `Read` e `List` permissões. 
+   - **Permissões** - Selecione o `Read` e `List` permissões. 
 
      ![Caixa de diálogo SAS no Gerenciador do Azure](./media/publishvm_035.png)
 

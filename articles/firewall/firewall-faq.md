@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 5/30/2019
 ms.author: victorh
 ms.openlocfilehash: 75b1131f2853cb444481b9c7a6c96e28f8537538
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66384667"
 ---
 # <a name="azure-firewall-faq"></a>Perguntas frequentes do Firewall do Azure
@@ -89,7 +89,7 @@ Ver [Firewall do Azure preços](https://azure.microsoft.com/pricing/details/azur
 
 Use os métodos *deallocate* e *allocate* do Azure PowerShell.
 
-Por exemplo: 
+Por exemplo:
 
 ```azurepowershell
 # Stop an existing firewall
@@ -138,7 +138,7 @@ Sim. O firewall, a sub-rede, a rede virtual e o endereço IP público devem esta
 
 ## <a name="when-configuring-dnat-for-inbound-network-traffic-do-i-also-need-to-configure-a-corresponding-network-rule-to-allow-that-traffic"></a>Ao configurar DNAT para tráfego entrada de rede, também preciso configurar uma regra de rede correspondente para permitir esse tráfego?
 
- Não. As regras DNAT adicionam implicitamente uma regra de rede correspondente para permitir o tráfego convertido. Você pode substituir esse comportamento adicionando explicitamente uma coleção de regras de rede com regras de negação que correspondem ao tráfego convertido. Para saber mais sobre a lógica de processamento de regra do Firewall do Azure, confira [Lógica de processamento de regra do Firewall no Azure](rule-processing.md).
+Não. As regras DNAT adicionam implicitamente uma regra de rede correspondente para permitir o tráfego convertido. Você pode substituir esse comportamento adicionando explicitamente uma coleção de regras de rede com regras de negação que correspondem ao tráfego convertido. Para saber mais sobre a lógica de processamento de regra do Firewall do Azure, confira [Lógica de processamento de regra do Firewall no Azure](rule-processing.md).
 
 ## <a name="how-do-wildcards-work-in-an-application-rule-target-fqdn"></a>Como os curingas funcionam em um FQDN de destino da regra de aplicativo?
 

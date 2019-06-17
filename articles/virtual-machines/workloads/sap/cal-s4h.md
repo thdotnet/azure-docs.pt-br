@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 09/15/2016
 ms.author: hermannd
 ms.openlocfilehash: c59fcf43cb4767f1d95d769dfce4d5c8755e45ee
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60836612"
 ---
 # <a name="deploy-sap-s4hana-or-bw4hana-on-azure"></a>Implantar o SAP S/4HANA ou o BW/4HANA no Azure
@@ -43,7 +43,7 @@ A página **Soluções** mostra algumas soluções baseadas no SAP CAL HANA disp
 ### <a name="create-an-account-in-the-sap-cal"></a>Criar uma conta na SAP CAL
 1. Para entrar na SAP CAL pela primeira vez, use o seu SAP S-User ou outro usuário registrado com a SAP. Em seguida, defina uma conta da SAP CAL que é usada pela SAP CAL para implantar dispositivos no Azure. Na definição de conta, você precisa:
 
-     a. Selecionar o modelo de implantação no Azure (Resource Manager ou clássico).
+    a. Selecionar o modelo de implantação no Azure (Resource Manager ou clássico).
 
     b. Inserir sua assinatura do Azure. Uma conta da SAP CAL pode ser atribuída a apenas uma assinatura. Se você precisar de mais de uma assinatura, precisará criar uma outra conta da SAP CAL.
 
@@ -54,7 +54,7 @@ A página **Soluções** mostra algumas soluções baseadas no SAP CAL HANA disp
 
 1. Crie uma nova conta do SAP CAL. A página **Contas** mostra três opções para o Azure: 
 
-     a. **Microsoft Azure (clássico)** é o modelo de implantação clássico e não é mais preferencial.
+    a. **Microsoft Azure (clássico)** é o modelo de implantação clássico e não é mais preferencial.
 
     b. **Microsoft Azure** é o novo modelo de implantação do Resource Manager.
 
@@ -112,7 +112,7 @@ Demonstramos o caminho básico para implantação aqui.
 
 1. Na página **Detalhes da conta**, você precisa:
 
-     a. Selecionar uma conta da SAP CAL. (Use uma conta que está associada à implantação com o modelo de implantação do Resource Manager.)
+    a. Selecionar uma conta da SAP CAL. (Use uma conta que está associada à implantação com o modelo de implantação do Resource Manager.)
 
     b. Inserir um **Nome** para a instância.
 

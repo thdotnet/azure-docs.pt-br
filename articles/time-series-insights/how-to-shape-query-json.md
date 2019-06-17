@@ -10,10 +10,10 @@ ms.date: 05/09/2019
 ms.author: dpalled
 ms.custom: seodec18
 ms.openlocfilehash: 089285637bb740fea47f1fd07de0906dfe46662b
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66244469"
 ---
 # <a name="shape-json-to-maximize-query-performance"></a>Forma JSON para maximizar o desempenho de consulta 
@@ -97,7 +97,7 @@ Carga JSON de exemplo:
 
 * Análise de séries evento tabela tempo, após nivelar:
 
-   | deviceId | messageId | deviceLocation |  timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
+   | deviceId | messageId | deviceLocation | timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
    | --- | --- | --- | --- | --- | --- |
    | FXXX | DADOS\_LINHA | UE | 2018-01-17T01:17:00Z | 1,0172575712203979 | 34,7 |
    | FXXX | DADOS\_LINHA | UE | 2018-01-17T01:17:00Z | 2,445906400680542 | 49,2 |
@@ -170,7 +170,7 @@ Carga JSON de exemplo:
 
 * Análise de séries evento tabela tempo, após nivelar:
 
-   | deviceId | series.tagId | messageId | deviceLocation | type | unit |  timestamp | series.value |
+   | deviceId | series.tagId | messageId | deviceLocation | type | unit | timestamp | series.value |
    | --- | --- | --- | --- | --- | --- | --- | --- |
    | FXXX | pumpRate | DADOS\_LINHA | UE | Taxa de Fluxo | ft3/s | 2018-01-17T01:17:00Z | 1,0172575712203979 | 
    | FXXX | oilPressure | DADOS\_LINHA | UE | Pressão de óleo do motor | psi | 2018-01-17T01:17:00Z | 34,7 |

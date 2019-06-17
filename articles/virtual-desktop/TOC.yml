@@ -16,6 +16,10 @@
       href: manage-app-groups.md
     - name: 5. Criar um pool de hosts para validar as atualizações de serviço
       href: create-validation-host-pool.md
+    - name: 6. Implantar uma ferramenta de gerenciamento
+      href: manage-resources-using-ui.md
+    - name: 7. Configurar alertas de serviço
+      href: set-up-service-alerts.md
 - name: Instruções
   items:
     - name: Conectar-se a recursos de Área de Trabalho Virtual do Windows
@@ -40,6 +44,8 @@
       href: configure-vm-gpu.md
     - name: Dimensionar automaticamente hosts da sessão
       href: set-up-scaling-script.md
+    - name: Personalizar as propriedades RDP
+      href: customize-rdp-properties.md
 - name: Conceitos
   items:
     - name: Ambiente da Área de Trabalho Virtual do Windows

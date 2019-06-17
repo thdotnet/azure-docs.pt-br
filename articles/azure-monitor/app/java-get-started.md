@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 03/14/2019
+ms.date: 05/24/2019
 ms.author: lagayhar
-ms.openlocfilehash: 4cc1456aa9928cbd4a24c203eab62e3e75b4d7c1
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: a453e82f47bb9eed25c8d5caf986bc854085e8ac
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66256177"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67061208"
 ---
 # <a name="get-started-with-application-insights-in-a-java-web-project"></a>Introdução ao Application Insights em um projeto Web Java
 
@@ -71,7 +71,7 @@ Em seguida, atualize as dependências do projeto para obter os binários baixado
 ```
 
 * *Erros de build ou validação de soma de verificação?* Tente usar uma versão específica, como: `<version>2.0.n</version>`. Você encontrará a versão mais recente nas [notas de versão do SDK](https://github.com/Microsoft/ApplicationInsights-Java#release-notes) ou nos [artefatos Maven](https://search.maven.org/#search%7Cga%7C1%7Capplicationinsights).
-* *Precisa atualizar para um novo SDK?*  Atualize as dependências do seu projeto.
+* *Precisa atualizar para um novo SDK?* Atualize as dependências do seu projeto.
 
 #### <a name="if-youre-using-gradle-a-namegradle-setup-"></a>Se você estiver usando o Gradle... <a name="gradle-setup" />
 Se o seu projeto já estiver configurado para usar o Gradle para compilação, realize a mesclagem do trecho de código a seguir ao seu arquivo build.gradle.

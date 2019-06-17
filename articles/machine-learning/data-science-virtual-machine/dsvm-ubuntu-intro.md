@@ -17,10 +17,10 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
 ms.openlocfilehash: 5a9fdebc8db0c2a1acc20a894f80cfcc87fb89d5
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66236484"
 ---
 # <a name="provision-the-data-science-virtual-machine-for-linux-ubuntu"></a>Provisionar a Máquina Virtual de Ciência de Dados para Linux (Ubuntu)
@@ -89,7 +89,7 @@ Veja as etapas para criar uma instância da Máquina Virtual de Ciência de Dado
 1. Clique em **Criar** (na parte inferior) para abrir o assistente. ![configure-data-science-vm](./media/dsvm-ubuntu-intro/configure-data-science-virtual-machine.png)
 1. As seções a seguir fornecem as entradas para cada uma das etapas no assistente (enumeradas à direita da figura acima) que são usadas para criar a Máquina Virtual de Ciência de Dados da Microsoft. Aqui estão as entradas necessárias para configurar cada uma das seguintes etapas:
 
-    a. **Noções básicas**:
+   a. **Noções básicas**:
 
    * **Nome**: O nome do servidor de ciência de dados que você está criando.
    * **Tipo de disco da VM**: Escolha **SSD Premium** se preferir uma unidade de estado sólido (SSD). Caso contrário, escolha **HDD Standard**. 

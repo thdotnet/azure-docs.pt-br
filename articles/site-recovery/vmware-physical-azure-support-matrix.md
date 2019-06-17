@@ -6,14 +6,14 @@ manager: carmonm
 ms.service: site-recovery
 services: site-recovery
 ms.topic: conceptual
-ms.date: 05/10/2019
+ms.date: 06/07/2019
 ms.author: raynew
-ms.openlocfilehash: 514aaaf7a274e60a17bbae62b3c62e7cf3668e7a
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 8b1f3740018d9f6d9eacdae573054a6d9fa8542f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66237311"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073965"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Matriz de suporte para recuperação de desastre de VMs VMware e servidores físicos para o Azure
 
@@ -74,16 +74,15 @@ Sistema operacional Linux | Red Hat Enterprise Linux: 5.2 a 5.11<b>\*\*</b>, 6.1
 
 **Versão com suporte** | **Serviço de Mobilidade do Azure Site Recovery versão** | **Versão do kernel** |
 --- | --- | --- |
+14.04 LTS | [9.24][9.25 UR]  | 3.13.0-24-Generic para 3.13.0-169-generic,<br/>3.16.0-25-generic para 3.16.0-77-generic,<br/>3.19.0-18-generic para 3.19.0-80-generic,<br/>4.2.0-18-generic para 4.2.0-42-generic,<br/>4.4.0-21 para 4.4.0-146-generic,<br/>4.15.0-1023-Azure para 4.15.0-1042-azure |
 14.04 LTS | [9.24][9.24 UR] | 3.13.0-24-Generic para 3.13.0-167-generic,<br/>3.16.0-25-generic para 3.16.0-77-generic,<br/>3.19.0-18-generic para 3.19.0-80-generic,<br/>4.2.0-18-generic para 4.2.0-42-generic,<br/>4.4.0-21 para 4.4.0-143-generic,<br/>4.15.0-1023-Azure para 4.15.0-1040-azure |
 14.04 LTS | [9.23][9.23 UR] | 3.13.0-24-Generic para 3.13.0-165-generic,<br/>3.16.0-25-generic para 3.16.0-77-generic,<br/>3.19.0-18-generic para 3.19.0-80-generic,<br/>4.2.0-18-generic para 4.2.0-42-generic,<br/>4.4.0-21 para 4.4.0-142-generic,<br/>4.15.0-1023-Azure para 4.15.0-1037-azure |
 14.04 LTS | [9.22][9.22 UR] | 3.13.0-24-generic a 3.13.0-164-generic,<br/>3.16.0-25-generic para 3.16.0-77-generic,<br/>3.19.0-18-generic para 3.19.0-80-generic,<br/>4.2.0-18-generic para 4.2.0-42-generic,<br/>4.4.0-21-generic para 4.4.0-140-generic,<br/>4.15.0-1023-azure a 4.15.0-1036-azure |
-14.04 LTS | [9.21][9.21 UR] | 3.13.0-24-generic para 3.13.0-163-generic,<br/>3.16.0-25-generic para 3.16.0-77-generic,<br/>3.19.0-18-generic para 3.19.0-80-generic,<br/>4.2.0-18-generic para 4.2.0-42-generic,<br/>4.4.0-21-generic para 4.4.0-140-generic,<br/>4.15.0-1023-azure para 4.15.0-1035-azure |
 |||
-16.04 LTS | [9.23] [9,24 UR] | 4.4.0-21 para 4.4.0-143-generic,<br/>4.8.0-34-generic a 4.8.0-58-generic,<br/>4.10.0-14-generic para 4.10.0-42-generic,<br/>4.11.0-13-generic para 4.11.0-14-generic,<br/>4.13.0-16-generic a 4.13.0-45-generic,<br/>4.15.0-13-Generic para 4.15.0-46-generic<br/>4.11.0-1009-Azure para 4.11.0-1018-azure,<br/>4.13.0-1005-azure a 4.13.0-1018-azure <br/>4.15.0-1012-Azure para 4.15.0-1040-azure|
+16.04 LTS | [9.25][9.25 UR] | 4.4.0-21 para 4.4.0-146-generic,<br/>4.8.0-34-generic a 4.8.0-58-generic,<br/>4.10.0-14-generic para 4.10.0-42-generic,<br/>4.11.0-13-generic para 4.11.0-14-generic,<br/>4.13.0-16-generic a 4.13.0-45-generic,<br/>4.15.0-13-Generic para 4.15.0-48-generic<br/>4.11.0-1009-azure para 4.11.0-1016-azure,<br/>4.13.0-1005-azure a 4.13.0-1018-azure <br/>4.15.0-1012-Azure para 4.15.0-1042-azure|
+16.04 LTS | [9.24][9.24 UR] | 4.4.0-21 para 4.4.0-143-generic,<br/>4.8.0-34-generic a 4.8.0-58-generic,<br/>4.10.0-14-generic para 4.10.0-42-generic,<br/>4.11.0-13-generic para 4.11.0-14-generic,<br/>4.13.0-16-generic a 4.13.0-45-generic,<br/>4.15.0-13-Generic para 4.15.0-46-generic<br/>4.11.0-1009-azure para 4.11.0-1016-azure,<br/>4.13.0-1005-azure a 4.13.0-1018-azure <br/>4.15.0-1012-Azure para 4.15.0-1040-azure|
 16.04 LTS | [9.23][9.23 UR] | 4.4.0-21 para 4.4.0-142-generic,<br/>4.8.0-34-generic a 4.8.0-58-generic,<br/>4.10.0-14-generic para 4.10.0-42-generic,<br/>4.11.0-13-generic para 4.11.0-14-generic,<br/>4.13.0-16-generic a 4.13.0-45-generic,<br/>4.15.0-13-Generic para 4.15.0-45-generic<br/>4.11.0-1009-azure para 4.11.0-1016-azure,<br/>4.13.0-1005-azure a 4.13.0-1018-azure <br/>4.15.0-1012-Azure para 4.15.0-1037-azure|
 16.04 LTS | [9.22][9.22 UR] | 4.4.0-21-generic para 4.4.0-140-generic,<br/>4.8.0-34-generic a 4.8.0-58-generic,<br/>4.10.0-14-generic para 4.10.0-42-generic,<br/>4.11.0-13-generic para 4.11.0-14-generic,<br/>4.13.0-16-generic a 4.13.0-45-generic,<br/>4.15.0-13-generic a 4.15.0-43-generic<br/>4.11.0-1009-azure para 4.11.0-1016-azure,<br/>4.13.0-1005-azure a 4.13.0-1018-azure <br/>4.15.0-1012-azure a 4.15.0-1036-azure|
-16.04 LTS | [9.21][9.21 UR] | 4.4.0-21-generic para 4.4.0-140-generic,<br/>4.8.0-34-generic a 4.8.0-58-generic,<br/>4.10.0-14-generic para 4.10.0-42-generic,<br/>4.11.0-13-generic para 4.11.0-14-generic,<br/>4.13.0-16-generic a 4.13.0-45-generic,<br/>4.15.0-13-generic para 4.15.0-42-generic<br/>4.11.0-1009-azure para 4.11.0-1016-azure,<br/>4.13.0-1005-azure a 4.13.0-1018-azure <br/>4.15.0-1012-azure para 4.15.0-1035-azure|
-16.04 LTS | [9.20][9.20 UR] | 4.4.0-21-generic para 4.4.0-138-generic,<br/>4.8.0-34-generic a 4.8.0-58-generic,<br/>4.10.0-14-generic para 4.10.0-42-generic,<br/>4.11.0-13-generic para 4.11.0-14-generic,<br/>4.13.0-16-generic a 4.13.0-45-generic,<br/>4.15.0-13-generic para 4.15.0-38-generic<br/>4.11.0-1009-azure para 4.11.0-1016-azure,<br/>4.13.0-1005-azure a 4.13.0-1018-azure <br/>4.15.0-1012-azure a 4.15.0-1025-azure|
 
 ### <a name="debian-kernel-versions"></a>Versões de Kernel do Debian
 
@@ -92,17 +91,18 @@ Sistema operacional Linux | Red Hat Enterprise Linux: 5.2 a 5.11<b>\*\*</b>, 6.1
 --- | --- | --- |
 Debian 7 | [9.21][9.21 UR], [9.22][9.22 UR],[9.23][9.23 UR], [9.24][9.24 UR]| 3.2.0-4-amd64 a 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
 |||
-Debian 8 | [9.21][9.21 UR],[9.22][9.22 UR],[9.23][9.23 UR], [9.24][9.24 UR] | 3.16.0-4-amd64 a 3.16.0-7-amd64, 4.9.0-0.bpo.4-amd64 a 4.9.0-0.bpo.8-amd64 |
+Debian 8 | [9.25][9.25 UR] | 3.16.0-4-amd64 to 3.16.0-8-amd64, 4.9.0-0.bpo.4-amd64 to 4.9.0-0.bpo.8-amd64 |
+Debian 8 | [9.22][9.22 UR],[9.23][9.23 UR], [9.24][9.24 UR] | 3.16.0-4-amd64 a 3.16.0-7-amd64, 4.9.0-0.bpo.4-amd64 a 4.9.0-0.bpo.8-amd64 |
 
 
 ### <a name="suse-linux-enterprise-server-12-supported-kernel-versions"></a>SUSE Linux Enterprise Server 12 versões de kernel com suporte
 
 **Versão** | **Versão de serviço de mobilidade** | **Versão do kernel** |
 --- | --- | --- |
-SUSE Linux Enterprise Server 12 (SP1,SP2,SP3,SP4) | [9.24][9.24 UR] | SP1 3.12.49-11-default a 3.12.74-60.64.40-default</br></br> SP1(LTSS) 3.12.74-60.64.45-default a 3.12.74-60.64.107-default</br></br> SP2 4.4.21-69-default a 4.4.120-92.70-default</br></br>4.4.121-92.73-default SP2(LTSS) para 4.4.121-92.101-default</br></br>4.4.73-5-default SP3 para 4.4.175-94.79-default</br></br>4.12.14-94.41-default SP4 para 4.12.14-95.6-default |
-SUSE Linux Enterprise Server 12 (SP1,SP2,SP3,SP4) | [9.23][9.23 UR] | SP1 3.12.49-11-default a 3.12.74-60.64.40-default</br></br> SP1(LTSS) 3.12.74-60.64.45-default a 3.12.74-60.64.107-default</br></br> SP2 4.4.21-69-default a 4.4.120-92.70-default</br></br>4.4.121-92.73-default SP2(LTSS) para 4.4.121-92.101-default</br></br>SP3 4.4.73-5-default a 4.4.162-94.69-default</br></br>4.12.14-94.41-default SP4 para 4.12.14-95.6-default |
+SUSE Linux Enterprise Server 12 (SP1,SP2,SP3,SP4) | [9.25][9.25 UR] | SP1 3.12.49-11-default a 3.12.74-60.64.40-default</br></br> SP1(LTSS) 3.12.74-60.64.45-default a 3.12.74-60.64.107-default</br></br> SP2 4.4.21-69-default a 4.4.120-92.70-default</br></br>4\.4.121-92.73-default SP2(LTSS) para 4.4.121-92.104-default</br></br>4\.4.73-5-default SP3 para 4.4.176-94.88-default</br></br>4\.12.14-94.41-default SP4 para 4.12.14-95.13-default |
+SUSE Linux Enterprise Server 12 (SP1,SP2,SP3,SP4) | [9.24][9.24 UR] | SP1 3.12.49-11-default a 3.12.74-60.64.40-default</br></br> SP1(LTSS) 3.12.74-60.64.45-default a 3.12.74-60.64.107-default</br></br> SP2 4.4.21-69-default a 4.4.120-92.70-default</br></br>4\.4.121-92.73-default SP2(LTSS) para 4.4.121-92.101-default</br></br>4\.4.73-5-default SP3 para 4.4.175-94.79-default</br></br>4\.12.14-94.41-default SP4 para 4.12.14-95.6-default |
+SUSE Linux Enterprise Server 12 (SP1,SP2,SP3,SP4) | [9.23][9.23 UR] | SP1 3.12.49-11-default a 3.12.74-60.64.40-default</br></br> SP1(LTSS) 3.12.74-60.64.45-default a 3.12.74-60.64.107-default</br></br> SP2 4.4.21-69-default a 4.4.120-92.70-default</br></br>4\.4.121-92.73-default SP2(LTSS) para 4.4.121-92.101-default</br></br>SP3 4.4.73-5-default a 4.4.162-94.69-default</br></br>4\.12.14-94.41-default SP4 para 4.12.14-95.6-default |
 SUSE Linux Enterprise Server 12 (SP1,SP2,SP3) | [9.22][9.22 UR] | SP1 3.12.49-11-default a 3.12.74-60.64.40-default</br></br> SP1(LTSS) 3.12.74-60.64.45-default a 3.12.74-60.64.107-default</br></br> SP2 4.4.21-69-default a 4.4.120-92.70-default</br></br>SP2(LTSS) 4.4.121-92.73-default a 4.4.121-92.98-default</br></br>SP3 4.4.73-5-default a 4.4.162-94.72-default |
-SUSE Linux Enterprise Server 12 (SP1,SP2,SP3) | [9.21][9.21 UR] | SP1 3.12.49-11-default a 3.12.74-60.64.40-default</br></br> SP1(LTSS) 3.12.74-60.64.45-default a 3.12.74-60.64.107-default</br></br> SP2 4.4.21-69-default a 4.4.120-92.70-default</br></br>SP2(LTSS) 4.4.121-92.73-default a 4.4.121-92.98-default</br></br>SP3 4.4.73-5-default a 4.4.156-94.72-default |
 
 
 ## <a name="linux-file-systemsguest-storage"></a>Sistemas de arquivos Linux/armazenamento convidado
@@ -125,7 +125,7 @@ BTRFS |Da versão 9.22, BTRFS tem suporte, exceto para os seguintes cenários</b
 
 **Ação** | **Detalhes**
 --- | ---
-Redimensionar o disco na VM replicada |  Com suporte.
+Redimensionar o disco na VM replicada | Com suporte.
 Adicionar disco na VM replicada | Desabilitar a replicação para a VM, adicionar o disco e, em seguida, reabilitar a replicação. Adição de um disco em uma máquina virtual de replicação não é suportado atualmente.
 
 ## <a name="network"></a>Rede
@@ -135,10 +135,10 @@ Adicionar disco na VM replicada | Desabilitar a replicação para a VM, adiciona
 Agrupamento NIC da rede do host | Compatível com VMs da VMware. <br/><br/>Sem suporte para a replicação de computador físico.
 VLAN da rede do host | Sim.
 IPv4 da rede do host | Sim.
-IPv6 da rede do host |  Não.
-Agrupamento NIC da rede do convidado/servidor |  Não.
+IPv6 da rede do host | Não.
+Agrupamento NIC da rede do convidado/servidor | Não.
 IPv4 da rede do convidado/servidor | Sim.
-IPv6 da rede do convidado/servidor |  Não.
+IPv6 da rede do convidado/servidor | Não.
 IP estático da rede do convidado/servidor (Windows) | Sim.
 IP estático da rede do convidado/servidor (Linux) | Sim. <br/><br/>As VMs são configuradas para usar o DHCP no failback.
 Várias NICs da rede do convidado/servidor | Sim.
@@ -157,40 +157,40 @@ Endereço IP Reservado | Sim
 IPv4 | Sim
 Manter endereço IP de origem | Sim
 Pontos de extremidade de serviço de Rede Virtual do Azure<br/> | Sim
-Rede Acelerada | Não 
+Rede Acelerada | Não
 
 ## <a name="storage"></a>Armazenamento
 **Componente** | **Com suporte**
 --- | ---
 Dados dinâmicos | O disco do Sistema Operacional precisa ser um disco básico. <br/><br/>Os discos de Dados podem ser discos dinâmicos
-Configuração de disco do Docker | Não 
+Configuração de disco do Docker | Não
 NFS do host | Sim para VMware<br/><br/> Não para servidores físicos
 Host SAN iSCSI/FC) | Sim
 Host vSAN | Sim para VMware<br/><br/> N/D para servidores físicos
 MPIO (Múltiplos caminhos) do host | Sim, testado com Microsoft DSM, EMC PowerPath 5.7 SP4, EMC PowerPath DSM for CLARiiON
 Volumes de host Virtual (VVols) | Sim para VMware<br/><br/> N/D para servidores físicos
 VMDK do convidado/servidor | Sim
-Disco de cluster compartilhado do convidado/servidor | Não 
+Disco de cluster compartilhado do convidado/servidor | Não
 Disco criptografado do convidado/servidor | Não
-NFS do convidado/servidor | Não 
-Convidado/servidor iSCSI | Não 
-SMB 3.0 do convidado/servidor | Não 
+NFS do convidado/servidor | Não
+Convidado/servidor iSCSI | Não
+SMB 3.0 do convidado/servidor | Não
 RDM do convidado/servidor | Sim<br/><br/> N/D para servidores físicos
 Disco do convidado/servidor > 1 TB | Sim<br/><br/>Até 4.095 GB<br/><br/> O disco deve ser maior que 1024 MB.
 Disco do convidado/servidor com tamanho de setor lógico e físico de 4.000 cada | Sim
 Disco do convidado/servidor com tamanho de setor lógico de 4.000 e físico de 512 bytes | Sim
 Volume do convidado/servidor com discos distribuídos >4 TB <br/><br/>Gerenciamento de volumes lógicos (LVM)| Sim
-Convidado/servidor - espaços de armazenamento | Não 
+Convidado/servidor - espaços de armazenamento | Não
 Adicionar/remover disco a quente por convidado/servidor | Não
 Convidado/servidor - excluir disco | Sim
-MPIO (Múltiplos caminhos) de convidado/servidor | Não 
+MPIO (Múltiplos caminhos) de convidado/servidor | Não
 Inicialização EFI/UEFI do convidado/servidor | Suporte ao migrar VMs VMware ou servidores físicos que executam o Windows Server 2012 ou posterior para o Azure.<br/><br/> Você só pode replicar VMs para a migração. Não há suporte para failback no local.<br/><br/> O servidor não deve ter mais de quatro partições no disco do sistema operacional.<br/><br/> Exige o Serviço de Mobilidade versão 9.13 ou posterior.<br/><br/> Apenas NTFS tem suporte.
 
 ## <a name="replication-channels"></a>Canais de replicação
 
 |**Tipo de replicação**   |**Com suporte**  |
 |---------|---------|
-|Transferências de dados descarregados (ODX)    |       Não   |
+|Transferências de dados descarregados (ODX)    |       Não  |
 |Propagação Offline        |   Não      |
 | Azure Data Box | Não
 
@@ -202,12 +202,12 @@ Inicialização EFI/UEFI do convidado/servidor | Suporte ao migrar VMs VMware ou
 Armazenamento com redundância local | Sim
 Armazenamento com redundância geográfica | Sim
 Armazenamento com redundância geográfica com acesso de leitura | Sim
-Armazenamento frio | Não 
+Armazenamento frio | Não
 Armazenamento quente| Não
-Blobs de bloco | Não 
+Blobs de bloco | Não
 Criptografia em repouso (Criptografia do Serviço de Armazenamento)| Sim
 Armazenamento Premium | Sim
-Serviço de importação/exportação | Não 
+Serviço de importação/exportação | Não
 Firewalls de armazenamento do Azure para redes virtuais configurados na conta de armazenamento de cache/armazenamento de destino (usada para armazenar dados de replicação) | Sim
 Contas de armazenamento v2 de uso geral (camadas hot e cool) | Não
 
@@ -216,7 +216,7 @@ Contas de armazenamento v2 de uso geral (camadas hot e cool) | Não
 **Recurso** | **Com suporte**
 --- | ---
 Conjuntos de disponibilidade | Sim
-Zonas de disponibilidade | Não 
+Zonas de disponibilidade | Não
 HUB | Sim
 Discos gerenciados | Sim
 
@@ -263,15 +263,15 @@ Esses são números médios, pressupondo uma sobreposição de E/S de 30%. O Sit
 
 **Ação** | **Com suporte**
 --- | ---
-Mover cofre entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não 
-Mover armazenamento, rede, VMs do Azure entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não 
+Mover cofre entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não
+Mover armazenamento, rede, VMs do Azure entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não
 
 
 ## <a name="download-latest-azure-site-recovery-components"></a>Baixe os últimos componentes do Azure Site Recovery
 
 **Nome** | **Descrição** | **Instruções de download da última versão**
 --- | --- | ---
-Servidor de configuração | Coordena as comunicações entre servidores VMware locais e o Azure  <br/><br/>  Instalado nos servidores VMware no locais | Para obter mais informações, visite nossas diretrizes sobre [nova instalação](vmware-azure-deploy-configuration-server.md) e [atualização de componente existente para a versão mais recente](vmware-azure-manage-configuration-server.md#upgrade-the-configuration-server).
+Servidor de configuração | Coordena as comunicações entre servidores VMware locais e o Azure <br/><br/> Instalado nos servidores VMware no locais | Para obter mais informações, visite nossas diretrizes sobre [nova instalação](vmware-azure-deploy-configuration-server.md) e [atualização de componente existente para a versão mais recente](vmware-azure-manage-configuration-server.md#upgrade-the-configuration-server).
 Servidor de processo|Instalado por padrão no servidor de configuração. Recebe dados de replicação, otimiza-os com caching, compactação e criptografia e os envia para o Armazenamento do Microsoft Azure. À medida que a implantação cresce, você pode adicionar outros servidores de processo separados para lidar com volumes maiores de tráfego de replicação.| Para obter mais informações, visite nossas diretrizes sobre [nova instalação](vmware-azure-set-up-process-server-scale.md) e [atualização de componente existente para a versão mais recente](vmware-azure-manage-process-server.md#upgrade-a-process-server).
 Serviço de Mobilidade | Coordena a replicação entre servidores VMware/servidores físicos locais e o Azure/site secundário<br/><br/> Instalado na VM VMware ou nos servidores físicos que você deseja replicar | Para obter mais informações, visite nossas diretrizes sobre [nova instalação](vmware-azure-install-mobility-service.md) e [atualização de componente existente para a versão mais recente](vmware-physical-manage-mobility-service.md#update-mobility-service-from-azure-portal).
 
@@ -281,7 +281,9 @@ Para saber mais sobre os recursos mais recentes, visite [notas de versão mais r
 ## <a name="next-steps"></a>Próximas etapas
 [Saiba como](tutorial-prepare-azure.md) para preparar o Azure para recuperação de desastres de máquinas virtuais da VMware.
 
-[9.23 UR]: https://support.microsoft.com/help/4489582/update-rollup-33-for-azure-site-recovery
+[9.25 UR]: https://support.microsoft.com/en-in/help/4503156
+[9.24 UR]: https://support.microsoft.com/en-in/help/4503156
+[9.23 UR]: https://support.microsoft.com/en-in/help/4494485/update-rollup-35-for-azure-site-recovery
 [9.22 UR]: https://support.microsoft.com/help/4489582/update-rollup-33-for-azure-site-recovery
 [9.21 UR]: https://support.microsoft.com/help/4485985/update-rollup-32-for-azure-site-recovery
 [9.20 UR]: https://support.microsoft.com/help/4478871/update-rollup-31-for-azure-site-recovery

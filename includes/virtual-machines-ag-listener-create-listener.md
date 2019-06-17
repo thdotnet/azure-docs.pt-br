@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 394b242ab46da7821f77e8d008836753f4e358e2
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66165471"
 ---
 Nesta etapa, você cria manualmente o ouvinte do grupo de disponibilidade no Gerenciador de Cluster de Failover e no Server Management Studio.
@@ -33,13 +33,13 @@ Nesta etapa, você cria manualmente o ouvinte do grupo de disponibilidade no Ger
    
    * Para configurar uma solução híbrida:
      
-         a. Clique no botão direito do mouse no recurso de endereço IP que corresponde à sua sub-rede local e selecione **Propriedades**. Observe o nome do endereço IP e o nome da rede.
+        a. Clique no botão direito do mouse no recurso de endereço IP que corresponde à sua sub-rede local e selecione **Propriedades**. Observe o nome do endereço IP e o nome da rede.
    
         b. Selecione o **Endereço IP estático**, atribua um endereço IP não utilizado e clique em **OK**.
  
    * Para configurar uma solução somente no Azure:
 
-         a. Clique no botão direito do mouse no recurso de endereço IP que corresponde à sua sub-rede do Azure e selecione **Propriedades**.
+        a. Clique no botão direito do mouse no recurso de endereço IP que corresponde à sua sub-rede do Azure e selecione **Propriedades**.
        
        > [!NOTE]
        > Se o ouvinte posteriormente não ficar online, devido a um endereço IP problemático selecionado pelo DHCP, você pode configurar um endereço IP estático válido nessa janela de propriedades.

@@ -16,10 +16,10 @@ ms.date: 02/26/2019
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 86747b72c436c4dac3bbf0a752fee4d24cb47f60
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60722458"
 ---
 # <a name="create-a-batch-account-with-the-azure-portal"></a>Criar uma conta do Lote com o Portal do Azure
@@ -42,7 +42,7 @@ Para saber mais sobre contas do Lote e cenários, confira a [visão geral do rec
 
     ![Criar uma conta do Batch][account_portal]
 
-     a. **Assinatura**: a assinatura na qual a conta do Lote será criada. Se você tiver somente uma assinatura, ela será selecionada por padrão.
+    a. **Assinatura**: a assinatura na qual a conta do Lote será criada. Se você tiver somente uma assinatura, ela será selecionada por padrão.
 
     b. **Grupo de recursos**: selecione um grupo de recursos existente para sua nova conta do Lote ou, opcionalmente, crie um novo.
 
@@ -92,7 +92,7 @@ Ao criar sua primeira conta do Lote no modo de assinatura do usuário, é precis
 
     ![Registrar o provedor Microsoft.Batch][register_provider]
 
-1. Na página **Assinatura**, selecione **Controle de acesso (IAM)** > **Atribuições de função** > **Adicionar atribuição de função**.
+1. Na página **Assinatura**, selecione **Controle de acesso (IAM)**  > **Atribuições de função** > **Adicionar atribuição de função**.
 
     ![Controle de acesso de assinatura][subscription_access]
 

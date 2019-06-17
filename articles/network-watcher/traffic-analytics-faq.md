@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: kumud
-ms.openlocfilehash: 88acfebcc6dd8489703014d790f09313ab9302ec
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: e4e9ef4f3a50aeac4db4d2cc2f2b6cbafcc47268
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64939900"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67051631"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Perguntas frequentes sobre Análise de Tráfego
 
@@ -95,12 +95,19 @@ Você pode usar a análise de tráfego para NSGs em qualquer uma das seguintes r
 O espaço de trabalho do Log Analytics deve existir nas seguintes regiões:
 - Canadá Central
 - Centro-Oeste dos EUA
+- Oeste dos EUA
 - Oeste dos EUA 2
+- Centro-Sul dos Estados Unidos
+- Centro dos EUA
 - Leste dos EUA
+- Leste dos EUA 2
 - França Central
 - Europa Ocidental
+- Norte da Europa
 - Sul do Reino Unido
+- Leste da Austrália
 - Sudeste da Austrália
+- Ásia Oriental
 - Sudeste Asiático 
 - Coreia Central
 - Índia Central
@@ -125,7 +132,7 @@ Sim, sua conta de Armazenamento do Microsoft Azure pode estar em uma assinatura 
 
 ## <a name="can-i-store-raw-logs-in-a-different-subscription"></a>Posso armazenar logs brutos em uma assinatura diferente?
 
- Não. Você pode armazenar logs brutos em qualquer conta de armazenamento em que um NSG está habilitado para logs de fluxo. No entanto, a conta de armazenamento e os logs brutos devem estar na mesma assinatura e região.
+Não. Você pode armazenar logs brutos em qualquer conta de armazenamento em que um NSG está habilitado para logs de fluxo. No entanto, a conta de armazenamento e os logs brutos devem estar na mesma assinatura e região.
 
 ## <a name="what-if-i-cant-configure-an-nsg-for-traffic-analytics-due-to-a-not-found-error"></a>E se eu não conseguir configurar um NSG para análise de tráfego devido a um erro "Não encontrado"?
 

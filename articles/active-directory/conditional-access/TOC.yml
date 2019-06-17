@@ -2,7 +2,7 @@
   href: index.yml
 - name: Visão geral
   items:
-    - name: O que é acesso condicional?
+    - name: O que é Acesso Condicional?
       href: overview.md
 - name: Guia de início rápido
   items:

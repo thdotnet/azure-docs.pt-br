@@ -11,10 +11,10 @@ ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/12/2019
 ms.openlocfilehash: 4b4f3877b56752756050de0af226571ac2a93293
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60750416"
 ---
 # <a name="execute-python-machine-learning-scripts-in-azure-machine-learning-studio"></a>Executar scripts Python de aprendizado de máquina no Azure Machine Learning Studio
@@ -169,11 +169,11 @@ O tempo de execução do Python é uma área restrita no momento e não permite 
 
 ### <a name="lack-of-sophisticated-development-and-debugging-support"></a>Falta de sofisticadas de desenvolvimento e suporte de depuração
 
- O módulo Python atualmente não dá suporte a recursos de IDE, como IntelliSense e depuração. Além disso, se o módulo falhar em tempo de execução, o rastreamento de pilha do Python completo estará disponível. Porém, ele deve ser exibido no log de saída para o módulo. No momento, recomendamos que você desenvolva e depure scripts Python em um ambiente como IPython e depois importe o código para o módulo.
+O módulo Python atualmente não dá suporte a recursos de IDE, como IntelliSense e depuração. Além disso, se o módulo falhar em tempo de execução, o rastreamento de pilha do Python completo estará disponível. Porém, ele deve ser exibido no log de saída para o módulo. No momento, recomendamos que você desenvolva e depure scripts Python em um ambiente como IPython e depois importe o código para o módulo.
 
 ### <a name="single-data-frame-output"></a>Saída de quadro de dados único
 
- O ponto de entrada do Python para retornar somente uma estrutura de dados como saída. Não é possível no momento retornar objetos arbitrários do Python como modelos treinados diretamente para o tempo de execução do Studio. Assim como o módulo [Executar Script R][execute-r-script], que tem a mesma limitação, é possível em muitos casos serializar objetos em uma matriz de bytes e retorná-la dentro de um quadro de dados.
+O ponto de entrada do Python para retornar somente uma estrutura de dados como saída. Não é possível no momento retornar objetos arbitrários do Python como modelos treinados diretamente para o tempo de execução do Studio. Assim como o módulo [Executar Script R][execute-r-script], que tem a mesma limitação, é possível em muitos casos serializar objetos em uma matriz de bytes e retorná-la dentro de um quadro de dados.
 
 ### <a name="inability-to-customize-python-installation"></a>Incapacidade de personalizar a instalação do Python
 

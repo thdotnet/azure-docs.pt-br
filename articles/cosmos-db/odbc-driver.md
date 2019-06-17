@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: sngun
 ms.openlocfilehash: 352cd23f00e911b895e52aacaced1bfba38f7f84
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66257245"
 ---
 # <a name="connect-to-azure-cosmos-db-using-bi-analytics-tools-with-the-odbc-driver"></a>Conectar ao Azure Cosmos DB usando ferramentas de análise de BI com o driver ODBC
@@ -112,7 +112,7 @@ As etapas a seguir criam um esquema para os dados em uma ou mais coleções usan
 
 1. Selecione uma coleção na guia **Exibição de Exemplo**, na coluna **Definição do Mapeamento** da coleção, clique em **Editar**. Em seguida, na janela **Definição do Mapeamento**, selecione o método **Delimitadores de Tabela**. Faremos o seguinte:
 
-     a. Na caixa **Atributos**, digite o nome de uma propriedade de delimitador. Esta é uma propriedade do documento para a qual você deseja definir o escopo de amostragem, por exemplo, Cidade, e pressione Enter. 
+    a. Na caixa **Atributos**, digite o nome de uma propriedade de delimitador. Esta é uma propriedade do documento para a qual você deseja definir o escopo de amostragem, por exemplo, Cidade, e pressione Enter. 
 
     b. Se você quiser definir o escopo de amostragem para determinados valores para o atributo inserido acima, selecione o atributo na caixa de seleção, insira um valor na caixa **Valor** ( por exemplo, Seattle) e pressione Enter. Você pode continuar a adicionar vários valores para atributos. Apenas certifique-se de que o atributo correto esteja selecionado quando estiver inserindo valores.
 

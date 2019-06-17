@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/30/2019
 ms.custom: seodec18
 ms.openlocfilehash: f0e1a79073596dcabfacb7163e12b33bb582b7c3
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66238924"
 ---
 # <a name="shape-events-with-azure-time-series-insights-preview"></a>Formatar eventos com Versão Prévia do Azure Time Series Insights
@@ -110,7 +110,7 @@ No exemplo a seguir, há uma única mensagem do IoT Hub do Azure em que a matriz
 
 A Versão Prévia do Time Series Insights une uma tabela (após o nivelamento) durante o tempo de consulta. A tabela inclui colunas adicionais, como **Tipo**. O exemplo a seguir demonstra como você pode [forma](./time-series-insights-send-events.md#json) os dados de telemetria.
 
-| deviceId  | Type | L1 | L2 |  timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
+| deviceId  | Type | L1 | L2 | timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | `FXXX` | Default_Type | SIMULADOR | Sistema de Bateria | 2018-01-17T01:17:00Z |   1,0172575712203979 |    34,7 |
 | `FXXX` | Default_Type | SIMULADOR |   Sistema de Bateria |    2018-01-17T01:17:00Z | 2,445906400680542 |  49,2 |

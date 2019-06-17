@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 02/20/2018
 ms.author: marayerm
 ms.openlocfilehash: aa42d6b898a3cc474575f6c8dae65ff420fc8e30
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60457228"
 ---
 # <a name="storage-explorer-accessibility"></a>Acessibilidade do Gerenciador de Armazenamento
@@ -29,7 +29,7 @@ O Gerenciador de Armazenamento dá suporte ao uso de um leitor de tela no Window
 
 Plataforma | Leitor de tela
 ---------|--------------
- Windows  | NVDA
+Windows  | NVDA
 Mac      | Voice Over
 Linux    | (os leitores de tela não têm suporte no Linux)
 

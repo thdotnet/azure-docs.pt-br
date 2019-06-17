@@ -6,6 +6,11 @@
   href: create-manage-support-requests-using-access-control.md
 - name: Solicitações de um aumento de cota
   href: resource-manager-core-quotas-request.md
+  items:
+    - name: Aumento de limite de vCPU da série de VM
+      href: per-vm-quota-requests.md
+    - name: Aumento de limite de vCPU regional total
+      href: regional-quota-requests.md
 - name: Solucionando problemas de assinatura de SKU ou região
   href: sku-series-unavailable.md
 - name: Referência

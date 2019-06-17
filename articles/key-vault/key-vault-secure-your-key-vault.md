@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: ambapat
-ms.openlocfilehash: a88451403f242c39212c80e3c7425a901c6819cc
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 67925f2123f2a4f2524002eb075754c38fad4b42
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64725275"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67118992"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Proteger o acesso a um cofre de chaves
 
@@ -53,7 +53,7 @@ A tabela a seguir mostra os pontos de extremidade para os planos de gerenciament
 
 | Plano de&nbsp;acesso | Pontos de extremidade de acesso | Operações | Mecanismo de controle de&nbsp;acesso |
 | --- | --- | --- | --- |
-| Plano de gerenciamento | **Global:**<br> management.azure.com:443<br><br> **Azure China 21Vianet:**<br> management.chinacloudapi.cn:443<br><br> **Azure Governo dos EUA:**<br> management.usgovcloudapi.net:443<br><br> **Azure Alemanha:**<br>  management.microsoftazure.de:443 | Criar, ler, atualizar e excluir cofres de chaves<br><br>Definir políticas de acesso do Key Vault<br><br>Definir marcas do Key Vault | RBAC do Azure Resource Manager |
+| Plano de gerenciamento | **Global:**<br> management.azure.com:443<br><br> **Azure China 21Vianet:**<br> management.chinacloudapi.cn:443<br><br> **Azure Governo dos EUA:**<br> management.usgovcloudapi.net:443<br><br> **Azure Alemanha:**<br> management.microsoftazure.de:443 | Criar, ler, atualizar e excluir cofres de chaves<br><br>Definir políticas de acesso do Key Vault<br><br>Definir marcas do Key Vault | RBAC do Azure Resource Manager |
 | Plano de dados | **Global:**<br> &lt;vault-name&gt;.vault.azure.net:443<br><br> **Azure China 21Vianet:**<br> &lt;vault-name&gt;.vault.azure.cn:443<br><br> **Azure Governo dos EUA:**<br> &lt;vault-name&gt;.vault.usgovcloudapi.net:443<br><br> **Azure Alemanha:**<br> &lt;vault-name&gt;.vault.microsoftazure.de:443 | Chaves: descriptografar, criptografar,<br> desencapsular, encapsular, verificar, assinar,<br> obter, listar, atualizar, criar,<br> importar, excluir, fazer backup, restaurar<br><br> Segredos: obter, listar, definir, excluir | Política de acesso ao cofre de chaves |
 
 ## <a name="management-plane-and-rbac"></a>RBAC e o plano de gerenciamento
